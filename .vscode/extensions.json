@@ -1,0 +1,42 @@
+{
+  // Extensions recommandées pour le workspace schoolsWP
+  "recommendations": [
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+
+    // JavaScript / JSON
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // YAML
+    "redhat.vscode-yaml",
+
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+
+    // EditorConfig
+    "EditorConfig.EditorConfig",
+
+    // Git
+    "eamodio.gitlens",
+
+    // REST API testing
+    "humao.rest-client",
+
+    // Shell scripting
+    "foxundermoon.shell-format",
+
+    // ENV files
+    "mikestead.dotenv",
+
+    // JSON with comments
+    "ZainChen.json"
+  ],
+  "unwantedRecommendations": []
+}
