@@ -1,0 +1,6 @@
+# Telegram Bot PoC - Dépendances
+# Installer avec : pip install -r requirements.txt
+
+python-telegram-bot>=21.0
+mistune>=3.0
+python-dotenv>=1.0

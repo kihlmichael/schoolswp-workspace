@@ -1,0 +1,27 @@
+# Secrets - NE JAMAIS COMMIT
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Sessions Claude (contient des IDs)
+.telegram-claude-sessions.json

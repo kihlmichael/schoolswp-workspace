@@ -1,0 +1,399 @@
+{
+  "name": "[Template] Error Handler: Mission Control Enhanced",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "error-handler",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-error-input",
+      "name": "Webhook Error Input",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "error-handler-centralized"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and enrich error context from webhook payload\nconst items = $input.all();\n\nconst enrichedErrors = items.map(item => {\n  // CRITICAL: Webhook data is under .body\n  const errorData = item.json.body || item.json;\n  \n  const now = new Date();\n  const errorId = `ERR-${now.getTime()}-${Math.random().toString(36).substr(2, 9)}`;\n  \n  // Extract error details\n  const workflowName = errorData.workflow?.name || 'Unknown Workflow';\n  const executionId = errorData.execution?.id || 'Unknown';\n  const nodeName = errorData.node?.name || 'Unknown Node';\n  const errorMessage = errorData.error?.message || errorData.message || 'No error message';\n  const errorStack = errorData.error?.stack || '';\n  \n  // Determine severity based on error patterns\n  let severity = 'WARNING';\n  const criticalKeywords = ['timeout', 'connection refused', 'authentication failed', 'database', 'payment', 'critical'];\n  const errorLower = errorMessage.toLowerCase();\n  \n  if (criticalKeywords.some(keyword => errorLower.includes(keyword))) {\n    severity = 'CRITICAL';\n  } else if (errorLower.includes('warning') || errorLower.includes('retry')) {\n    severity = 'WARNING';\n  } else if (errorLower.includes('info') || errorLower.includes('debug')) {\n    severity = 'INFO';\n  }\n  \n  // Extract performance metrics\n  const executionTime = errorData.execution?.stoppedAt \n    ? new Date(errorData.execution.stoppedAt) - new Date(errorData.execution.startedAt)\n    : null;\n  \n  return {\n    json: {\n      errorId,\n      timestamp: now.toISOString(),\n      severity,\n      workflow: {\n        name: workflowName,\n        id: errorData.workflow?.id,\n        executionId\n      },\n      node: {\n        name: nodeName,\n        type: errorData.node?.type\n      },\n      error: {\n        message: errorMessage,\n        stack: errorStack,\n        type: errorData.error?.name || 'Error'\n      },\n      context: {\n        environment: process.env.NODE_ENV || 'production',\n        n8nVersion: errorData.n8nVersion,\n        executionTime,\n        retryCount: errorData.retryCount || 0\n      },\n      metadata: {\n        userId: errorData.userId,\n        tags: errorData.tags || [],\n        customData: errorData.customData || {}\n      }\n    }\n  };\n});\n\nreturn enrichedErrors;"
+      },
+      "id": "extract-error-context",
+      "name": "Extract Error Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Record Prometheus metrics\nconst items = $input.all();\n\nconst metrics = items.map(item => {\n  const { severity, workflow, error, context } = item.json;\n  \n  // Increment error counter by severity\n  const metricLabels = {\n    severity: severity.toLowerCase(),\n    workflow: workflow.name,\n    error_type: error.type,\n    environment: context.environment\n  };\n  \n  // Format for Prometheus Pushgateway\n  const prometheusMetrics = [\n    `# TYPE n8n_workflow_errors_total counter`,\n    `n8n_workflow_errors_total{severity=\"${metricLabels.severity}\",workflow=\"${metricLabels.workflow}\",error_type=\"${metricLabels.error_type}\",environment=\"${metricLabels.environment}\"} 1`,\n    ``,\n    `# TYPE n8n_workflow_execution_time_seconds gauge`,\n    context.executionTime ? `n8n_workflow_execution_time_seconds{workflow=\"${metricLabels.workflow}\"} ${context.executionTime / 1000}` : '',\n    ``,\n    `# TYPE n8n_workflow_retry_count gauge`,\n    `n8n_workflow_retry_count{workflow=\"${metricLabels.workflow}\"} ${context.retryCount}`\n  ].filter(Boolean).join('\\n');\n  \n  return {\n    json: {\n      ...item.json,\n      metrics: {\n        prometheus: prometheusMetrics,\n        labels: metricLabels\n      }\n    }\n  };\n});\n\nreturn metrics;"
+      },
+      "id": "record-metrics",
+      "name": "Record Prometheus Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.PROMETHEUS_PUSHGATEWAY_URL || 'http://localhost:9091' }}/metrics/job/n8n_errors/instance/{{ $json.workflow.name }}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawBody": "={{ $json.metrics.prometheus }}",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "id": "push-to-prometheus",
+      "name": "Push to Prometheus",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [900, 300],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.severity }}",
+              "operation": "equals",
+              "value2": "CRITICAL"
+            }
+          ]
+        }
+      },
+      "id": "route-by-severity",
+      "name": "Route by Severity",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $env.SLACK_CRITICAL_CHANNEL }}",
+          "mode": "name"
+        },
+        "text": "=🚨 **CRITICAL ERROR**\\n\\n**Error ID:** `{{ $json.errorId }}`\\n**Workflow:** {{ $json.workflow.name }}\\n**Node:** {{ $json.node.name }}\\n**Message:** {{ $json.error.message }}\\n**Execution:** {{ $json.workflow.executionId }}\\n**Time:** {{ $json.timestamp }}\\n**Environment:** {{ $json.context.environment }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": true
+        }
+      },
+      "id": "slack-critical",
+      "name": "Slack: Critical Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [1340, 180],
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "slack-prod",
+          "name": "Slack Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.ALERT_EMAIL_FROM || 'alerts@n8n.local' }}",
+        "toEmail": "={{ $env.CRITICAL_ALERT_EMAIL || 'oncall@company.com' }}",
+        "subject": "=🚨 CRITICAL: {{ $json.workflow.name }} - {{ $json.error.message }}",
+        "emailFormat": "html",
+        "html": "=<h2 style=\"color: #d32f2f;\">🚨 CRITICAL ERROR</h2>\\n<table style=\"border-collapse: collapse; width: 100%;\">\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Error ID:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.errorId }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Workflow:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.workflow.name }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Node:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.node.name }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Message:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.error.message }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Execution ID:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.workflow.executionId }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Timestamp:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.timestamp }}</td></tr>\\n  <tr><td style=\"padding: 8px; border: 1px solid #ddd;\"><strong>Environment:</strong></td><td style=\"padding: 8px; border: 1px solid #ddd;\">{{ $json.context.environment }}</td></tr>\\n</table>\\n<h3>Stack Trace</h3>\\n<pre style=\"background: #f5f5f5; padding: 10px; overflow-x: auto;\">{{ $json.error.stack }}</pre>\\n<p><a href=\"{{ $env.N8N_URL }}/workflow/{{ $json.workflow.id }}/executions/{{ $json.workflow.executionId }}\" style=\"background: #1976d2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;\">View Execution</a></p>",
+        "options": {}
+      },
+      "id": "email-critical",
+      "name": "Email: Critical Alert",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1560, 180],
+      "credentials": {
+        "smtp": {
+          "id": "smtp-prod",
+          "name": "SMTP Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.PAGERDUTY_API_URL || 'https://api.pagerduty.com/incidents' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Token token={{ $env.PAGERDUTY_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "incident",
+              "value": "={{ { \"type\": \"incident\", \"title\": `CRITICAL: ${$json.workflow.name} - ${$json.error.message}`, \"service\": { \"id\": $env.PAGERDUTY_SERVICE_ID, \"type\": \"service_reference\" }, \"urgency\": \"high\", \"body\": { \"type\": \"incident_body\", \"details\": `Error ID: ${$json.errorId}\\nWorkflow: ${$json.workflow.name}\\nNode: ${$json.node.name}\\nMessage: ${$json.error.message}\\nExecution: ${$json.workflow.executionId}` } } }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "pagerduty-critical",
+      "name": "PagerDuty: Critical Incident",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1780, 180],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $env.SLACK_ERRORS_CHANNEL }}",
+          "mode": "name"
+        },
+        "text": "=⚠️ **{{ $json.severity }} Error**\\n\\n**Error ID:** `{{ $json.errorId }}`\\n**Workflow:** {{ $json.workflow.name }}\\n**Node:** {{ $json.node.name }}\\n**Message:** {{ $json.error.message }}\\n**Execution:** {{ $json.workflow.executionId }}\\n**Time:** {{ $json.timestamp }}",
+        "otherOptions": {}
+      },
+      "id": "slack-warning",
+      "name": "Slack: Warning/Info",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [1340, 420],
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "slack-prod",
+          "name": "Slack Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=INSERT INTO error_logs (\\n  error_id, timestamp, severity, workflow_name, workflow_id, \\n  execution_id, node_name, node_type, error_message, error_stack, \\n  error_type, environment, execution_time_ms, retry_count, user_id, \\n  tags, custom_data\\n) VALUES (\\n  '{{ $json.errorId }}',\\n  '{{ $json.timestamp }}',\\n  '{{ $json.severity }}',\\n  '{{ $json.workflow.name }}',\\n  '{{ $json.workflow.id }}',\\n  '{{ $json.workflow.executionId }}',\\n  '{{ $json.node.name }}',\\n  '{{ $json.node.type }}',\\n  '{{ $json.error.message }}',\\n  '{{ $json.error.stack }}',\\n  '{{ $json.error.type }}',\\n  '{{ $json.context.environment }}',\\n  {{ $json.context.executionTime || 'NULL' }},\\n  {{ $json.context.retryCount }},\\n  {{ $json.metadata.userId ? `'${$json.metadata.userId}'` : 'NULL' }},\\n  '{{ JSON.stringify($json.metadata.tags) }}',\\n  '{{ JSON.stringify($json.metadata.customData) }}'\\n)",
+        "options": {}
+      },
+      "id": "log-to-database",
+      "name": "Log to PostgreSQL",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1340, 660],
+      "credentials": {
+        "postgres": {
+          "id": "postgres-prod",
+          "name": "PostgreSQL Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Cleanup old error logs (retention: 90 days)\nDELETE FROM error_logs \nWHERE timestamp < NOW() - INTERVAL '90 days';\n\n-- Return cleanup stats\nSELECT \n  COUNT(*) as total_errors,\n  COUNT(CASE WHEN severity = 'CRITICAL' THEN 1 END) as critical_count,\n  COUNT(CASE WHEN severity = 'WARNING' THEN 1 END) as warning_count,\n  COUNT(CASE WHEN severity = 'INFO' THEN 1 END) as info_count,\n  MIN(timestamp) as oldest_log,\n  MAX(timestamp) as newest_log\nFROM error_logs;",
+        "options": {}
+      },
+      "id": "cleanup-old-logs",
+      "name": "Cleanup Old Logs (90d retention)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1560, 660],
+      "credentials": {
+        "postgres": {
+          "id": "postgres-prod",
+          "name": "PostgreSQL Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"errorId\": $json.errorId, \"severity\": $json.severity, \"message\": \"Error logged successfully\", \"timestamp\": $json.timestamp } }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1780, 660]
+    }
+  ],
+  "connections": {
+    "Webhook Error Input": {
+      "main": [
+        [
+          {
+            "node": "Extract Error Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Error Context": {
+      "main": [
+        [
+          {
+            "node": "Record Prometheus Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Record Prometheus Metrics": {
+      "main": [
+        [
+          {
+            "node": "Push to Prometheus",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Push to Prometheus": {
+      "main": [
+        [
+          {
+            "node": "Route by Severity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Severity": {
+      "main": [
+        [
+          {
+            "node": "Slack: Critical Alert",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log to PostgreSQL",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack: Warning/Info",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log to PostgreSQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack: Critical Alert": {
+      "main": [
+        [
+          {
+            "node": "Email: Critical Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email: Critical Alert": {
+      "main": [
+        [
+          {
+            "node": "PagerDuty: Critical Incident",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack: Warning/Info": {
+      "main": [
+        [
+          {
+            "node": "Cleanup Old Logs (90d retention)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log to PostgreSQL": {
+      "main": [
+        [
+          {
+            "node": "Cleanup Old Logs (90d retention)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cleanup Old Logs (90d retention)": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PagerDuty: Critical Incident": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Template",
+      "id": "template"
+    },
+    {
+      "name": "Error Handling",
+      "id": "error-handling"
+    },
+    {
+      "name": "Monitoring",
+      "id": "monitoring"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2026-01-30T00:00:00.000Z",
+  "versionId": "1.0.0"
+}

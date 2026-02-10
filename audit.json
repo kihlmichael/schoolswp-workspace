@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "date": "2026-02-04T12:30:00Z",
+    "repo_path": "d:/VS Code/CLAUDE CODE",
+    "language": "python",
+    "secondary_languages": ["markdown", "json"],
+    "files_analyzed": 95,
+    "lines_analyzed": 2190,
+    "health_score": 82,
+    "severity_level": "balanced",
+    "excluded_patterns": [
+      "node_modules",
+      "venv",
+      "__pycache__",
+      ".git",
+      "*.min.js"
+    ]
+  },
+  "findings": [
+    {
+      "id": "DUP-001",
+      "category": "duplication",
+      "severity": "P1",
+      "title": "Code dupliqué : Configuration Google API",
+      "description": "Les 4 scripts Google Drive partagent ~40 lignes identiques d'imports, configuration et encodage UTF-8",
+      "files": [
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/audit_drive.py",
+          "start_line": 1,
+          "end_line": 41
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase1.py",
+          "start_line": 1,
+          "end_line": 41
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase2_doublons.py",
+          "start_line": 1,
+          "end_line": 41
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase3_structure.py",
+          "start_line": 1,
+          "end_line": 41
+        }
+      ],
+      "metrics": {
+        "similarity": 85,
+        "lines": 160,
+        "occurrences": 4
+      },
+      "impact": "Maintenance difficile - toute modification nécessite 4 changements",
+      "recommendation": "Créer google_drive_common.py pour factoriser imports et configuration",
+      "effort_hours": 2,
+      "tags": ["google-drive", "refactoring"]
+    },
+    {
+      "id": "DUP-002",
+      "category": "duplication",
+      "severity": "P1",
+      "title": "Méthode authenticate() dupliquée",
+      "description": "Logique d'authentification OAuth2 répétée dans chaque script Google Drive",
+      "files": [
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/audit_drive.py",
+          "start_line": 88,
+          "end_line": 110
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase1.py",
+          "method": "authenticate"
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase2_doublons.py",
+          "method": "authenticate"
+        },
+        {
+          "path": ".claude/skills/08_GoogleDrive/scripts/migrate_phase3_structure.py",
+          "method": "authenticate"
+        }
+      ],
+      "metrics": {
+        "similarity": 90,
+        "lines": 80,
+        "occurrences": 4
+      },
+      "impact": "Risque d'incohérence si mise à jour sécurité OAuth nécessaire",
+      "recommendation": "Extraire dans google_drive_common.py",
+      "effort_hours": 0,
+      "note": "Inclus dans effort DUP-001",
+      "tags": ["google-drive", "authentication"]
+    },
+    {
+      "id": "DEP-001",
+      "category": "dependency",
+      "severity": "P2",
+      "title": "Dépendance fpdf non déclarée",
+      "description": "Le script skills_list.py utilise fpdf sans requirements.txt associé",
+      "files": [
+        {
+          "path": "skills_list.py",
+          "line": 1
+        }
+      ],
+      "packages": [
+        {
+          "name": "fpdf2",
+          "version": "unknown",
+          "type": "runtime",
+          "declared": false
+        }
+      ],
+      "impact": "Mineur - script utilitaire ponctuel",
+      "recommendation": "Ajouter commentaire de prérequis ou créer requirements.txt",
+      "effort_hours": 0.17,
+      "tags": ["documentation", "dependencies"]
+    }
+  ],
+  "summary": {
+    "total_findings": 3,
+    "by_severity": {
+      "P0": 0,
+      "P1": 2,
+      "P2": 1
+    },
+    "duplication": {
+      "count": 2,
+      "total_lines": 240,
+      "percentage": 11,
+      "by_severity": {
+        "P0": 0,
+        "P1": 2,
+        "P2": 0
+      }
+    },
+    "todo": {
+      "count": 0,
+      "by_type": {
+        "TODO": 0,
+        "FIXME": 0,
+        "HACK": 0,
+        "XXX": 0
+      },
+      "false_positives_ignored": 1
+    },
+    "patterns": {
+      "count": 0,
+      "naming_consistency": 98,
+      "architecture_type": "organized-by-skill",
+      "by_severity": {
+        "P0": 0,
+        "P1": 0,
+        "P2": 0
+      }
+    },
+    "dependencies": {
+      "unused_count": 0,
+      "undeclared_count": 1,
+      "by_severity": {
+        "P0": 0,
+        "P1": 0,
+        "P2": 1
+      }
+    },
+    "estimated_effort_hours": 2.17
+  },
+  "positives": [
+    {
+      "category": "organization",
+      "description": "Structure des skills excellente avec préfixes numériques cohérents"
+    },
+    {
+      "category": "documentation",
+      "description": "Chaque skill dispose d'un SKILL.md bien structuré"
+    },
+    {
+      "category": "todo",
+      "description": "Aucun TODO/FIXME oublié dans le code source"
+    },
+    {
+      "category": "naming",
+      "description": "Conventions de nommage Python respectées à 100%"
+    },
+    {
+      "category": "separation",
+      "description": "Séparation claire des responsabilités par script"
+    }
+  ],
+  "recommendations": {
+    "priority_1": [
+      {
+        "action": "Créer google_drive_common.py",
+        "finding_ids": ["DUP-001", "DUP-002"],
+        "effort_hours": 2,
+        "steps": [
+          {"step": 1, "action": "Créer le module commun", "minutes": 30},
+          {"step": 2, "action": "Tester authentification", "minutes": 15},
+          {"step": 3, "action": "Refactorer audit_drive.py", "minutes": 20},
+          {"step": 4, "action": "Refactorer migrate_phase1.py", "minutes": 20},
+          {"step": 5, "action": "Refactorer migrate_phase2_doublons.py", "minutes": 20},
+          {"step": 6, "action": "Refactorer migrate_phase3_structure.py", "minutes": 20},
+          {"step": 7, "action": "Tests de non-régression", "minutes": 15}
+        ],
+        "expected_gains": {
+          "lines_removed": 240,
+          "maintenance_points_reduced": "4 → 1",
+          "code_reduction_percent": 11
+        }
+      }
+    ],
+    "priority_2": [
+      {
+        "action": "Documenter dépendances scripts utilitaires",
+        "finding_ids": ["DEP-001"],
+        "effort_hours": 0.17
+      },
+      {
+        "action": "Créer requirements.txt pour Google Drive scripts",
+        "packages": [
+          "google-api-python-client>=2.0",
+          "google-auth-httplib2>=0.1",
+          "google-auth-oauthlib>=1.0"
+        ],
+        "effort_hours": 0.1
+      }
+    ]
+  }
+}

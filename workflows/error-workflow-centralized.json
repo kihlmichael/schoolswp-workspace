@@ -1,0 +1,353 @@
+{
+  "name": "[Prod] Error Handler: Mission Control",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "error-trigger-1",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract Complete Error Context\nconst items = $input.all();\nconst error = items[0];\n\nconst errorContext = {\n  // Error details\n  message: error.json.message || 'Unknown error',\n  stack: error.json.stack || '',\n  code: error.json.code || '',\n  \n  // Workflow context\n  workflowId: $workflow.id,\n  workflowName: $workflow.name,\n  executionId: $execution.id,\n  mode: $execution.mode,\n  \n  // Node context\n  nodeName: error.json.node?.name || 'Unknown',\n  nodeType: error.json.node?.type || 'Unknown',\n  \n  // Timing\n  timestamp: new Date().toISOString(),\n  executionTime: $execution.endedAt ? ($execution.endedAt - $execution.startedAt) : 0,\n  \n  // Input data (truncated to 1000 chars)\n  inputData: JSON.stringify(error.json.input || {}).substring(0, 1000),\n  \n  // Environment\n  environment: process.env.NODE_ENV || process.env.DEPLOYMENT_ENVIRONMENT || 'unknown',\n  \n  // Error classification will be added in next node\n  severity: 'unknown'\n};\n\nreturn [{ json: errorContext }];"
+      },
+      "id": "extract-context-1",
+      "name": "Extract Error Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Classify Error Severity\nconst error = $json;\n\nlet severity = 'info';\nlet color = '#36a64f'; // green\nlet emoji = '\u2139\ufe0f';\n\n// Critical: Production errors affecting users or core functionality\nif (error.environment === 'production') {\n  if (\n    error.code === 'ECONNREFUSED' ||\n    error.message.toLowerCase().includes('database') ||\n    error.message.toLowerCase().includes('payment') ||\n    error.message.toLowerCase().includes('authentication') ||\n    error.message.toLowerCase().includes('critical')\n  ) {\n    severity = 'critical';\n    color = '#ff0000'; // red\n    emoji = '\ud83d\udea8';\n  }\n  // Warning: Production errors but non-critical\n  else if (\n    error.code === 'ETIMEDOUT' ||\n    error.message.toLowerCase().includes('timeout') ||\n    error.message.toLowerCase().includes('retry')\n  ) {\n    severity = 'warning';\n    color = '#ffa500'; // orange\n    emoji = '\u26a0\ufe0f';\n  }\n}\n\n// Warning: Staging errors\nif (error.environment === 'staging') {\n  severity = 'warning';\n  color = '#ffff00'; // yellow\n  emoji = '\ud83d\udd36';\n}\n\n// Info: Development errors\nif (error.environment === 'development' || error.environment === 'dev') {\n  severity = 'info';\n  color = '#36a64f'; // green\n  emoji = '\u2139\ufe0f';\n}\n\nerror.severity = severity;\nerror.color = color;\nerror.emoji = emoji;\n\nreturn [{ json: error }];"
+      },
+      "id": "classify-error-1",
+      "name": "Classify Error Severity",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.severity }}",
+                    "rightValue": "critical",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "critical"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.severity }}",
+                    "rightValue": "warning",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "warning"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": false,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.severity }}",
+                    "rightValue": "info",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "info"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "route-by-severity-1",
+      "name": "Route by Severity",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [910, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format Slack Message for Critical Errors\nconst error = $json;\n\nconst slackMessage = {\n  channel: process.env.SLACK_ALERTS_CHANNEL || '#alerts',\n  text: `${error.emoji} CRITICAL ERROR in ${error.workflowName}`,\n  blocks: [\n    {\n      type: \"header\",\n      text: {\n        type: \"plain_text\",\n        text: `${error.emoji} CRITICAL Error in ${error.workflowName}`\n      }\n    },\n    {\n      type: \"section\",\n      fields: [\n        {\n          type: \"mrkdwn\",\n          text: `*Environment:*\\n${error.environment}`\n        },\n        {\n          type: \"mrkdwn\",\n          text: `*Node:*\\n${error.nodeName}`\n        },\n        {\n          type: \"mrkdwn\",\n          text: `*Time:*\\n${error.timestamp}`\n        },\n        {\n          type: \"mrkdwn\",\n          text: `*Execution ID:*\\n\`${error.executionId}\``\n        }\n      ]\n    },\n    {\n      type: \"section\",\n      text: {\n        type: \"mrkdwn\",\n        text: `*Error Message:*\\n\`\`\`${error.message.substring(0, 500)}\`\`\``\n      }\n    },\n    {\n      type: \"section\",\n      text: {\n        type: \"mrkdwn\",\n        text: `*Input Data:*\\n\`\`\`${error.inputData}\`\`\``\n      }\n    },\n    {\n      type: \"context\",\n      elements: [\n        {\n          type: \"mrkdwn\",\n          text: `Workflow ID: \`${error.workflowId}\` | Execution Time: ${error.executionTime}ms`\n        }\n      ]\n    },\n    {\n      type: \"actions\",\n      elements: [\n        {\n          type: \"button\",\n          text: {\n            type: \"plain_text\",\n            text: \"View Execution\"\n          },\n          url: `${process.env.N8N_EDITOR_BASE_URL || 'http://localhost:5678'}/execution/${error.executionId}`,\n          style: \"danger\"\n        }\n      ]\n    }\n  ],\n  attachments: [\n    {\n      color: error.color,\n      fields: [\n        {\n          title: \"Node Type\",\n          value: error.nodeType,\n          short: true\n        },\n        {\n          title: \"Error Code\",\n          value: error.code || 'N/A',\n          short: true\n        }\n      ]\n    }\n  ]\n};\n\nreturn [{ json: slackMessage }];"
+      },
+      "id": "format-slack-critical-1",
+      "name": "Format Slack Alert (Critical)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1130, 180]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format Slack Message for Warnings\nconst error = $json;\n\nconst slackMessage = {\n  channel: process.env.SLACK_WARNINGS_CHANNEL || '#warnings',\n  text: `${error.emoji} Warning in ${error.workflowName}`,\n  blocks: [\n    {\n      type: \"header\",\n      text: {\n        type: \"plain_text\",\n        text: `${error.emoji} Warning in ${error.workflowName}`\n      }\n    },\n    {\n      type: \"section\",\n      fields: [\n        {\n          type: \"mrkdwn\",\n          text: `*Environment:*\\n${error.environment}`\n        },\n        {\n          type: \"mrkdwn\",\n          text: `*Node:*\\n${error.nodeName}`\n        },\n        {\n          type: \"mrkdwn\",\n          text: `*Time:*\\n${error.timestamp}`\n        }\n      ]\n    },\n    {\n      type: \"section\",\n      text: {\n        type: \"mrkdwn\",\n        text: `*Error Message:*\\n\`\`\`${error.message.substring(0, 300)}\`\`\``\n      }\n    },\n    {\n      type: \"actions\",\n      elements: [\n        {\n          type: \"button\",\n          text: {\n            type: \"plain_text\",\n            text: \"View Execution\"\n          },\n          url: `${process.env.N8N_EDITOR_BASE_URL || 'http://localhost:5678'}/execution/${error.executionId}`\n        }\n      ]\n    }\n  ]\n};\n\nreturn [{ json: slackMessage }];"
+      },
+      "id": "format-slack-warning-1",
+      "name": "Format Slack Message (Warning)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1130, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log Info Errors (development/staging)\nconst error = $json;\n\nconsole.log(`[INFO ERROR] ${error.workflowName} - ${error.nodeName}: ${error.message}`);\n\nreturn [{ json: error }];"
+      },
+      "id": "log-info-1",
+      "name": "Log Info Error",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1130, 420]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ process.env.SLACK_WEBHOOK_URL }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "send-slack-critical-1",
+      "name": "Send Slack Alert (Critical)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1350, 180],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ process.env.SLACK_WEBHOOK_URL }}",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "send-slack-warning-1",
+      "name": "Send Slack Message (Warning)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1350, 300],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO error_logs (workflow_id, workflow_name, execution_id, node_name, error_message, severity, environment, timestamp, error_data)\nVALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+        "options": {
+          "queryParams": "={{ [\n  $json.workflowId,\n  $json.workflowName,\n  $json.executionId,\n  $json.nodeName,\n  $json.message,\n  $json.severity,\n  $json.environment,\n  $json.timestamp,\n  JSON.stringify($json)\n] }}"
+        }
+      },
+      "id": "log-to-database-1",
+      "name": "Log to Database",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [1570, 300],
+      "continueOnFail": true,
+      "credentials": {
+        "postgres": {
+          "id": "1",
+          "name": "PostgreSQL_Production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Update Error Metrics\nconst error = $json;\n\n// Increment error counter (this would typically be sent to Prometheus)\nconst metrics = {\n  metric: 'n8n_errors_total',\n  labels: {\n    workflow_id: error.workflowId,\n    workflow_name: error.workflowName,\n    severity: error.severity,\n    environment: error.environment,\n    node_type: error.nodeType\n  },\n  value: 1,\n  timestamp: Date.now()\n};\n\nconsole.log(`[METRICS] Error logged: ${JSON.stringify(metrics)}`);\n\nreturn [{ json: { ...error, metrics } }];"
+      },
+      "id": "update-metrics-1",
+      "name": "Update Error Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1790, 300]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Extract Error Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Error Context": {
+      "main": [
+        [
+          {
+            "node": "Classify Error Severity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Error Severity": {
+      "main": [
+        [
+          {
+            "node": "Route by Severity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Severity": {
+      "main": [
+        [
+          {
+            "node": "Format Slack Alert (Critical)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Slack Message (Warning)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Info Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Slack Alert (Critical)": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Alert (Critical)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Slack Message (Warning)": {
+      "main": [
+        [
+          {
+            "node": "Send Slack Message (Warning)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Info Error": {
+      "main": [
+        [
+          {
+            "node": "Log to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Slack Alert (Critical)": {
+      "main": [
+        [
+          {
+            "node": "Log to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Slack Message (Warning)": {
+      "main": [
+        [
+          {
+            "node": "Log to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log to Database": {
+      "main": [
+        [
+          {
+            "node": "Update Error Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "n8n-framework-1"
+  },
+  "id": "error-workflow-centralized",
+  "tags": [
+    {
+      "name": "error-handling"
+    },
+    {
+      "name": "production"
+    },
+    {
+      "name": "critical-infrastructure"
+    }
+  ]
+}
