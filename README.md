@@ -1,13 +1,13 @@
-# n8n Automation Framework
+# schoolsWP — n8n Automation Framework
 
-**Version**: 1.0.0
-**Production-Ready**: Enterprise-Grade n8n Automation Framework
+**Projet** : [schoolsWP](https://schoolswp.com) | **Version** : 1.0.0
+**Owner** : Michael KIHL | **Licence** : Propriétaire
 
 ---
 
 ## Vue d'ensemble
 
-Framework complet d'automatisation n8n avec support MCP (Model Context Protocol), workflows production-ready, scripts d'automatisation et monitoring intégré.
+Framework d'automatisation n8n pour schoolsWP avec support MCP (Model Context Protocol), workflows production-ready, scripts d'automatisation et monitoring intégré.
 
 ### Fonctionnalités clés
 
@@ -386,13 +386,7 @@ Pour la documentation exhaustive, voir :
 
 ## Contribution
 
-Ce framework est conçu pour évoluer. Pour contribuer :
-
-1. Créer un workflow selon les conventions
-2. Tester thoroughly
-3. Documenter dans le README
-4. Commit avec message descriptif
-5. Déployer en staging puis production
+Voir [CONTRIBUTING.md](./CONTRIBUTING.md) pour le guide complet.
 
 ---
 
@@ -410,6 +404,4 @@ Propriétaire - Usage interne uniquement
 
 ---
 
-**Framework créé avec ❤️ par l'équipe n8n Automation**
-
-_Dernière mise à jour : 2026-01-30_
+**schoolsWP** — Michael KIHL | [schoolswp.com](https://schoolswp.com)
