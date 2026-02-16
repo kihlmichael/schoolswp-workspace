@@ -10,6 +10,7 @@ n8n_data/
 # Credentials & Secrets
 *credentials*.json
 *secrets*.json
+token-*.json
 *.key
 *.pem
 
@@ -54,6 +55,7 @@ docker-compose.override.yml
 # Build Output
 dist/
 build/
+output/
 *.tgz
 
 # Cache
@@ -77,6 +79,12 @@ venv/
 
 # MCP config (contains API keys)
 .mcp.json
+
+# MCP local tools
+tools/
+
+# Python lock (uv)
+uv.lock
 
 # Database
 *.sqlite
