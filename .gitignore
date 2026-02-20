@@ -89,3 +89,4 @@ uv.lock
 # Database
 *.sqlite
 *.db
+artifacts/

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse SEO — schoolsWP.com — Février 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap');
+
+    :root {
+      --green:   #00D400;
+      --green2:  #00A100;
+      --pink:    #E668D4;
+      --dark:    #0f1117;
+      --grey:    #f4f5f7;
+      --text:    #1e2029;
+      --muted:   #6b7280;
+      --border:  #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 11pt;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      background: var(--dark);
+      color: #fff;
+      padding: 60px 50px 50px;
+      page-break-after: always;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover-logo {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .cover-logo span { color: var(--green); }
+    .cover-tagline {
+      font-size: 10pt;
+      color: #9ca3af;
+      margin-top: 4px;
+      font-style: italic;
+    }
+    .cover-title {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 32pt;
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .cover-title .accent { color: var(--green); }
+    .cover-subtitle {
+      font-size: 14pt;
+      color: #d1fae5;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+    .cover-meta {
+      font-size: 9.5pt;
+      color: #6b7280;
+    }
+    .cover-meta strong { color: #9ca3af; }
+    .cover-bar {
+      width: 60px;
+      height: 4px;
+      background: var(--green);
+      border-radius: 2px;
+      margin: 20px 0;
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      padding: 40px 50px;
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* ── SECTIONS ── */
+    h1.section {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 18pt;
+      font-weight: 800;
+      color: var(--dark);
+      border-left: 5px solid var(--green);
+      padding-left: 14px;
+      margin-bottom: 22px;
+      margin-top: 6px;
+    }
+    h2 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 24px 0 10px;
+    }
+    h3 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--green2);
+      margin: 18px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    p { margin-bottom: 10px; }
+
+    /* ── SCORE CARDS ── */
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .score-card {
+      background: var(--grey);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+      border-top: 4px solid var(--border);
+    }
+    .score-card.perfect { border-top-color: var(--green); }
+    .score-card.good    { border-top-color: #60a5fa; }
+    .score-card.warn    { border-top-color: #f59e0b; }
+    .score-card .val {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 26pt;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .score-card.perfect .val { color: var(--green2); }
+    .score-card.good .val    { color: #2563eb; }
+    .score-card.warn .val    { color: #d97706; }
+    .score-card .label {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    /* ── METRIC GRID ── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .metric-item {
+      background: var(--grey);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .metric-item .m-val {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 16pt;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .metric-item .m-label { font-size: 8.5pt; color: var(--muted); }
+
+    /* ── KPI HERO ROW ── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .kpi {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+    .kpi .kval {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 22pt;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .kpi .klabel { font-size: 8pt; color: #9ca3af; margin-top: 4px; }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin: 14px 0;
+    }
+    thead th {
+      background: var(--dark);
+      color: #fff;
+      padding: 8px 10px;
+      text-align: left;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    tbody tr:nth-child(even) { background: var(--grey); }
+    tbody td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+    .pos-good { color: var(--green2); font-weight: 700; }
+    .pos-mid  { color: #d97706; font-weight: 600; }
+    .pos-bad  { color: #ef4444; }
+    .tag {
+      display: inline-block;
+      background: #dcfce7;
+      color: var(--green2);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 8pt;
+      font-weight: 600;
+    }
+    .tag.orange { background: #fef3c7; color: #92400e; }
+    .tag.blue   { background: #dbeafe; color: #1e40af; }
+
+    /* ── TREND TABLE ── */
+    .trend-bar {
+      display: inline-block;
+      height: 10px;
+      background: var(--green);
+      border-radius: 3px;
+      vertical-align: middle;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: #f0fdf4;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+    .callout.warn {
+      background: #fffbeb;
+      border-left-color: #f59e0b;
+    }
+    .callout.danger {
+      background: #fef2f2;
+      border-left-color: #ef4444;
+    }
+    .callout strong { font-weight: 700; }
+
+    /* ── PRIORITY CARDS ── */
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 14px 0;
+    }
+    .priority-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .priority-card .p-num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 26pt;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+    }
+    .priority-card h4 {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 4px 0 6px;
+    }
+    .priority-card p { font-size: 9.5pt; color: #374151; margin: 0; }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 8.5pt;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer strong { color: var(--green2); }
+
+    /* ── PRINT ── */
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding: 32px 44px; }
+      .cover { padding: 52px 44px 44px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ COVER ══════════════════ -->
+<div class="cover">
+  <div>
+    <div class="cover-logo">schools<span>WP</span></div>
+    <div class="cover-tagline">WordPress. Clair. Structuré. Utile.</div>
+  </div>
+
+  <div>
+    <div class="cover-bar"></div>
+    <h1 class="cover-title">Analyse SEO<br><span class="accent">schoolsWP.com</span></h1>
+    <div class="cover-subtitle">Rapport DataForSEO — Google France</div>
+  </div>
+
+  <div class="cover-meta">
+    <strong>Généré le :</strong> 19 février 2026 &nbsp;·&nbsp;
+    <strong>Source :</strong> DataForSEO Labs + Lighthouse &nbsp;·&nbsp;
+    <strong>Marché :</strong> France / Google FR
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE 1 — PERFORMANCE TECHNIQUE ══════════════════ -->
+<div class="page">
+  <h1 class="section">Performance technique</h1>
+
+  <h2>Scores Lighthouse (homepage)</h2>
+  <div class="score-grid">
+    <div class="score-card perfect">
+      <div class="val">100</div>
+      <div class="label">Performance</div>
+    </div>
+    <div class="score-card perfect">
+      <div class="val">100</div>
+      <div class="label">Best Practices</div>
+    </div>
+    <div class="score-card good">
+      <div class="val">92</div>
+      <div class="label">SEO on-page</div>
+    </div>
+    <div class="score-card good">
+      <div class="val">91</div>
+      <div class="label">Accessibilité</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Socle technique exceptionnel.</strong> Un score de performance à 100/100 est rare — moins de 1 % des sites WordPress l'atteignent. Aucune action corrective requise côté vitesse.
+  </div>
+
+  <h2>Core Web Vitals</h2>
+  <div class="metric-grid">
+    <div class="metric-item">
+      <div class="m-val">0,3 s</div>
+      <div class="m-label">First Contentful Paint</div>
+    </div>
+    <div class="metric-item">
+      <div class="m-val">0,6 s</div>
+      <div class="m-label">Largest Contentful Paint</div>
+    </div>
+    <div class="metric-item">
+      <div class="m-val">0,4 s</div>
+      <div class="m-label">Speed Index</div>
+    </div>
+    <div class="metric-item">
+      <div class="m-val">0 ms</div>
+      <div class="m-label">Total Blocking Time</div>
+    </div>
+    <div class="metric-item">
+      <div class="m-val">0</div>
+      <div class="m-label">Cumulative Layout Shift</div>
+    </div>
+    <div class="metric-item">
+      <div class="m-val">40 ms</div>
+      <div class="m-label">Time to First Byte</div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <strong>Points à optimiser :</strong> Le score SEO on-page (92) et accessibilité (91) laissent ~8 points sur la table. Les causes probables : balises alt manquantes, contrastes insuffisants, meta descriptions absentes sur certaines pages secondaires. Un audit on-page page par page permettrait d'identifier les 3–4 corrections à faire.
+  </div>
+
+  <div class="footer">
+    <span>schoolsWP.com — Analyse SEO — Février 2026</span>
+    <span><strong>1</strong> / 4</span>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE 2 — VISIBILITÉ ORGANIQUE ══════════════════ -->
+<div class="page">
+  <h1 class="section">Visibilité organique — France</h1>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kval">176</div>
+      <div class="klabel">Mots-clés top 100</div>
+    </div>
+    <div class="kpi">
+      <div class="kval">1 790</div>
+      <div class="klabel">ETV (visites/mois estimées)</div>
+    </div>
+    <div class="kpi">
+      <div class="kval">5 350 €</div>
+      <div class="klabel">Valeur équivalente SEA</div>
+    </div>
+    <div class="kpi">
+      <div class="kval">pos. 24</div>
+      <div class="klabel">Position moyenne</div>
+    </div>
+  </div>
+
+  <h2>Distribution des positions</h2>
+  <table>
+    <thead>
+      <tr><th>Zone</th><th>Mots-clés</th><th>% du total</th><th>Interprétation</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Top 3</strong></td>
+        <td class="pos-good"><strong>15</strong></td>
+        <td>8,5 %</td>
+        <td>Trafic solide garanti</td>
+      </tr>
+      <tr>
+        <td><strong>Top 10</strong></td>
+        <td class="pos-good"><strong>79</strong></td>
+        <td>44,9 %</td>
+        <td>Très bon ratio pour un site en croissance</td>
+      </tr>
+      <tr>
+        <td>11–20</td>
+        <td class="pos-mid">34</td>
+        <td>19,3 %</td>
+        <td>Potentiel de montée immédiat</td>
+      </tr>
+      <tr>
+        <td>21–50</td>
+        <td class="pos-mid">33</td>
+        <td>18,8 %</td>
+        <td>À travailler avec enrichissement contenu</td>
+      </tr>
+      <tr>
+        <td>51–100</td>
+        <td class="pos-bad">30</td>
+        <td>17,0 %</td>
+        <td>Long tail, visibilité quasi nulle</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Tendance historique (sep. 2025 → fév. 2026)</h2>
+  <table>
+    <thead>
+      <tr><th>Mois</th><th>Mots-clés</th><th>ETV</th><th>Progression ETV</th><th>Signal</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sep 2025</td><td>148</td><td>561</td>
+        <td><span class="trend-bar" style="width:18px"></span></td>
+        <td>Référence</td>
+      </tr>
+      <tr>
+        <td>Oct 2025</td><td>153</td><td>1 006</td>
+        <td><span class="trend-bar" style="width:34px"></span> <span style="color:#16a34a;font-size:8pt">+79 %</span></td>
+        <td><span class="tag">Accélération</span></td>
+      </tr>
+      <tr>
+        <td>Nov 2025</td><td>159</td><td>1 378</td>
+        <td><span class="trend-bar" style="width:46px"></span> <span style="color:#16a34a;font-size:8pt">+37 %</span></td>
+        <td><span class="tag">Forte hausse</span></td>
+      </tr>
+      <tr>
+        <td>Déc 2025</td><td>173</td><td>1 728</td>
+        <td><span class="trend-bar" style="width:58px"></span> <span style="color:#16a34a;font-size:8pt">+25 %</span></td>
+        <td><span class="tag">Solide</span></td>
+      </tr>
+      <tr>
+        <td>Jan 2026</td><td>183</td><td>1 781</td>
+        <td><span class="trend-bar" style="width:59px"></span> <span style="color:#6b7280;font-size:8pt">+3 %</span></td>
+        <td><span class="tag orange">Plateau</span></td>
+      </tr>
+      <tr>
+        <td><strong>Fév 2026</strong></td><td><strong>176</strong></td><td><strong>1 790</strong></td>
+        <td><span class="trend-bar" style="width:60px"></span> <span style="color:#6b7280;font-size:8pt">~stable</span></td>
+        <td><span class="tag orange">Consolidation</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>+219 % d'ETV en 6 mois</strong> (561 → 1 790). La courbe de croissance montre une phase d'explosion Oct–Déc 2025 suivie d'une stabilisation normale. Le chiffre à surveiller : <strong>76 mots-clés perdus</strong> ce mois vs 49 nouveaux — solde négatif à analyser.
+  </div>
+
+  <div class="footer">
+    <span>schoolsWP.com — Analyse SEO — Février 2026</span>
+    <span><strong>2</strong> / 4</span>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE 3 — MOTS-CLÉS & CONCURRENTS ══════════════════ -->
+<div class="page">
+  <h1 class="section">Mots-clés & Concurrents</h1>
+
+  <h2>Top 13 mots-clés (par volume de recherche)</h2>
+  <table>
+    <thead>
+      <tr><th>Mot-clé</th><th>Vol./mois</th><th>Position</th><th>ETV</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>o2switch</td><td>33 100</td><td class="pos-mid">38</td><td>69</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>manychat</td><td>12 100</td><td class="pos-mid">31</td><td>25</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>5euros.com</td><td>8 100</td><td class="pos-good"><strong>6</strong></td><td>274</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>5 euros</td><td>4 400</td><td class="pos-good"><strong>7</strong></td><td>113</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>divi</td><td>4 400</td><td class="pos-mid">37</td><td>9</td><td><span class="tag blue">Outil WP</span></td></tr>
+      <tr><td>linkuma</td><td>3 600</td><td class="pos-mid">22</td><td>8</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>5euros</td><td>2 900</td><td class="pos-good"><strong>6</strong></td><td>98</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>local wp</td><td>1 600</td><td class="pos-good">13</td><td>9</td><td><span class="tag blue">Outil WP</span></td></tr>
+      <tr><td>maintenance wordpress</td><td>1 600</td><td class="pos-bad">79</td><td>3</td><td><span class="tag">Core WP</span></td></tr>
+      <tr><td>linksgarden</td><td>1 300</td><td class="pos-good"><strong>4</strong></td><td>86</td><td><span class="tag orange">Avis affiliation</span></td></tr>
+      <tr><td>thot seo</td><td>1 300</td><td class="pos-good"><strong>8</strong></td><td>26</td><td><span class="tag orange">Avis SEO</span></td></tr>
+      <tr><td>référencement wordpress</td><td>1 000</td><td class="pos-bad">76–85</td><td>2</td><td><span class="tag">Core WP</span></td></tr>
+      <tr><td>plugin wordpress</td><td>1 000</td><td class="pos-bad">80</td><td>2</td><td><span class="tag">Core WP</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <strong>Diagnostic stratégique :</strong> ~70 % du trafic vient d'articles avis/affiliation (5euros.com, linksgarden, thot seo…). Les termes WordPress core (maintenance WP, plugin WP, référencement WP) — cœur de marque de schoolsWP — sont en positions 76–85. Gap identitaire à combler en priorité.
+  </div>
+
+  <h2>Concurrents directs (intersections de mots-clés)</h2>
+  <table>
+    <thead>
+      <tr><th>Domaine</th><th>Intersections</th><th>ETV domaine</th><th>Statut</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>wpmarmite.com</strong></td><td><strong>105</strong></td><td>57 647</td><td><span class="tag">Concurrent FR #1</span></td></tr>
+      <tr><td>webandseo.fr</td><td>77</td><td>21 983</td><td><span class="tag blue">Concurrent FR SEO</span></td></tr>
+      <tr><td>wpbeginner.com</td><td>70</td><td>8 593</td><td><span class="tag blue">Concurrent EN/FR</span></td></tr>
+      <tr><td>wordpress.org</td><td>128</td><td>93 829</td><td><span class="tag orange">Référence mondiale</span></td></tr>
+      <tr><td>weadown.com</td><td>47</td><td>411</td><td><span class="tag">Cible tactique</span></td></tr>
+      <tr><td>elegantthemes.com</td><td>52</td><td>6 496</td><td><span class="tag blue">Concurrent thèmes</span></td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:9.5pt;color:#374151">
+    <strong>wpmarmite.com</strong> est le benchmark français : 2 166 mots-clés, ETV 57 647. L'écart montre le potentiel atteignable. <strong>weadown.com</strong> (ETV 411, 47 intersections) est une cible atteignable à court terme.
+  </p>
+
+  <div class="footer">
+    <span>schoolsWP.com — Analyse SEO — Février 2026</span>
+    <span><strong>3</strong> / 4</span>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE 4 — PRIORITÉS ══════════════════ -->
+<div class="page">
+  <h1 class="section">Priorités d'action</h1>
+
+  <div class="priority-grid">
+    <div class="priority-card">
+      <div class="p-num">01</div>
+      <h4>Pousser o2switch (33 100 vol, pos. 38)</h4>
+      <p>Le plus grand levier de trafic disponible. Monter de la pos. 38 à la pos. 10 = +600 visites/mois estimées. Enrichir l'article, ajouter une FAQ, renforcer le maillage interne depuis les articles WordPress liés.</p>
+    </div>
+    <div class="priority-card">
+      <div class="p-num">02</div>
+      <h4>Activer les 34 mots-clés en pos. 11–20</h4>
+      <p>Ces termes sont à une optimisation des titres et d'un renforcement de contenu de passer en top 10. C'est le gain rapide le plus accessible : +200 à +400 ETV potentiels sans créer de nouvelle page.</p>
+    </div>
+    <div class="priority-card">
+      <div class="p-num">03</div>
+      <h4>Rattraper les termes WordPress core</h4>
+      <p><em>maintenance wordpress</em>, <em>plugin wordpress</em>, <em>référencement wordpress</em> (1 000 vol, pos. 76–85). Ces mots-clés forment l'identité de schoolsWP. Les pages existent probablement mais manquent d'optimisation ou d'autorité interne.</p>
+    </div>
+    <div class="priority-card">
+      <div class="p-num">04</div>
+      <h4>Investiguer les 76 mots-clés perdus</h4>
+      <p>Ce mois : 49 nouveaux / 76 perdus = solde négatif de 27. Identifier les pages concernées (crawl, Search Console) pour distinguer désindexation temporaire, contenu mis à jour par un concurrent, ou problème technique.</p>
+    </div>
+    <div class="priority-card">
+      <div class="p-num">05</div>
+      <h4>Analyse d'intersection avec wpmarmite</h4>
+      <p>105 mots-clés en commun. Une analyse page par page permettrait d'identifier les articles où wpmarmite est mieux positionné et pourquoi (longueur, expertise, netlinking). C'est la feuille de route contenu pour H1 2026.</p>
+    </div>
+    <div class="priority-card">
+      <div class="p-num">06</div>
+      <h4>Activer l'audit backlinks</h4>
+      <p>L'accès backlinks DataForSEO n'est pas souscrit. Pour un site en croissance rapide, connaître son profil de liens entrants (quantité, qualité, ancres) est indispensable pour piloter une stratégie netlinking cohérente.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:28px">Données non couvertes dans ce rapport</h2>
+  <table>
+    <thead>
+      <tr><th>Donnée manquante</th><th>Impact</th><th>Source recommandée</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Profil backlinks</td><td>Élevé</td><td>DataForSEO Backlinks (abonnement à activer)</td></tr>
+      <tr><td>Clics réels / CTR</td><td>Élevé</td><td>Google Search Console</td></tr>
+      <tr><td>Taux de rebond / sessions</td><td>Moyen</td><td>GA4 / Plausible</td></tr>
+      <tr><td>Pages secondaires Lighthouse</td><td>Moyen</td><td>Audit on-page complet (top 10 pages)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:20px">
+    <strong>Résumé exécutif :</strong> schoolsWP.com est techniquement irréprochable et affiche une croissance organique de +219 % en 6 mois. La priorité N°1 est de faire converger le contenu vers les termes WordPress core — aujourd'hui sous-représentés — pour aligner la visibilité SEO avec l'identité de marque. Le potentiel de trafic à 6–12 mois est estimé à <strong>4 000–6 000 visites/mois</strong> avec les optimisations identifiées.
+  </div>
+
+  <div class="footer">
+    <span>schoolsWP.com — Analyse SEO — Février 2026 &nbsp;·&nbsp; Données : DataForSEO Labs + Lighthouse</span>
+    <span><strong>4</strong> / 4</span>
+  </div>
+</div>
+
+</body>
+</html>

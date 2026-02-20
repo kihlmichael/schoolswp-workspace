@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AuditReport",
+  "description": "Schéma normalisé des données d'audit SEO mensuel schoolsWP",
+  "type": "object",
+  "required": ["meta", "organic", "positions", "momentum", "top_keywords", "competitors", "lighthouse"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["domain", "reportKey", "generatedAt", "period", "source"],
+      "properties": {
+        "domain":      { "type": "string", "example": "schoolswp.com" },
+        "reportKey":   { "type": "string", "pattern": "^audit-\\d{4}-\\d{2}$" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "period": {
+          "type": "object",
+          "properties": {
+            "start": { "type": "string", "format": "date" },
+            "end":   { "type": "string", "format": "date" },
+            "label": { "type": "string", "example": "Janvier 2026" }
+          }
+        },
+        "source": { "type": "string", "enum": ["dataforseo", "mock", "gsc"] }
+      }
+    },
+    "organic": {
+      "type": "object",
+      "required": ["keywords_total", "keywords_top3", "keywords_top10", "etv", "etv_previous", "etv_change_pct", "traffic_value_eur"],
+      "properties": {
+        "keywords_total":    { "type": "integer" },
+        "keywords_top3":     { "type": "integer" },
+        "keywords_top10":    { "type": "integer" },
+        "etv":               { "type": "number", "description": "Estimated Traffic Volume (visites/mois)" },
+        "etv_previous":      { "type": "number" },
+        "etv_change_pct":    { "type": "number", "description": "% de variation vs mois précédent" },
+        "traffic_value_eur": { "type": "number", "description": "Valeur équivalente SEA en EUR" }
+      }
+    },
+    "positions": {
+      "type": "object",
+      "properties": {
+        "pos_1":      { "type": "integer" },
+        "pos_2_3":    { "type": "integer" },
+        "pos_4_10":   { "type": "integer" },
+        "pos_11_20":  { "type": "integer" },
+        "pos_21_30":  { "type": "integer" },
+        "pos_31_100": { "type": "integer" }
+      }
+    },
+    "momentum": {
+      "type": "object",
+      "description": "Mouvement des mots-clés vs mois précédent",
+      "properties": {
+        "keywords_new":  { "type": "integer" },
+        "keywords_up":   { "type": "integer" },
+        "keywords_down": { "type": "integer" },
+        "keywords_lost": { "type": "integer" }
+      }
+    },
+    "top_keywords": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["keyword", "volume", "position", "etv", "type"],
+        "properties": {
+          "keyword":  { "type": "string" },
+          "volume":   { "type": "integer" },
+          "position": { "type": "integer" },
+          "etv":      { "type": "number" },
+          "type":     { "type": "string", "enum": ["core", "affiliation", "brand", "tool", "other"] },
+          "trend":    { "type": "string", "enum": ["up", "down", "stable", "new"] }
+        }
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["domain", "intersections"],
+        "properties": {
+          "domain":        { "type": "string" },
+          "intersections": { "type": "integer" },
+          "etv":           { "type": "number" },
+          "avg_position":  { "type": "number" }
+        }
+      }
+    },
+    "lighthouse": {
+      "type": "object",
+      "properties": {
+        "performance":     { "type": "integer", "minimum": 0, "maximum": 100 },
+        "best_practices":  { "type": "integer", "minimum": 0, "maximum": 100 },
+        "seo":             { "type": "integer", "minimum": 0, "maximum": 100 },
+        "accessibility":   { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "ai_analysis": {
+      "type": "object",
+      "description": "Contenu généré par l'IA (optionnel)",
+      "properties": {
+        "summary":          { "type": "string" },
+        "top_insights":     { "type": "array", "items": { "type": "string" } },
+        "priority_actions": { "type": "array", "items": { "type": "string" } },
+        "risks":            { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
