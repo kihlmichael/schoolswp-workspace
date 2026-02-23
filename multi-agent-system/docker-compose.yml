@@ -5,13 +5,18 @@ services:
       - "8000:8000"
     env_file: .env
     environment:
+      # Ces vars surchargent .env pour pointer vers les chemins Docker
       - DATABASE_URL=sqlite+aiosqlite:///./data/memory.db
       - DECISIONS_DIR=./data/decisions
     volumes:
+      # Persistance SQLite + fichiers décisions entre redémarrages
       - ./data:/app/data
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      # python:3.11-slim n'a pas curl — on utilise urllib de la stdlib
+      test: ["CMD", "python", "-c",
+             "import urllib.request, sys; urllib.request.urlopen('http://localhost:8000/health') or sys.exit(1)"]
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 15s
