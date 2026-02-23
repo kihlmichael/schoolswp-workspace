@@ -1,0 +1,75 @@
+{
+  "name": "[InDev] Agent Orchestrator: Async + Callback",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "agent-callback",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-callback",
+      "name": "Webhook: Agent Callback",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 400],
+      "webhookId": "agent-callback"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "field-summary",
+              "name": "summary",
+              "value": "={{ $json.synthesis.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "field-run-id",
+              "name": "run_id",
+              "value": "={{ $json.run_id }}",
+              "type": "string"
+            },
+            {
+              "id": "field-next-steps",
+              "name": "next_steps",
+              "value": "={{ JSON.stringify($json.synthesis.next_steps) }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "process-callback",
+      "name": "Process Callback Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [220, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\"received\": true}) }}"
+      },
+      "id": "respond-ok",
+      "name": "Respond 200 OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [440, 300]
+    }
+  ],
+  "connections": {
+    "Webhook: Agent Callback": {
+      "main": [
+        [
+          { "node": "Process Callback Result", "type": "main", "index": 0 },
+          { "node": "Respond 200 OK", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "notes": "Workflow récepteur. L'URL du webhook est à passer en callback_url dans POST /api/run.\nExemple: {\"task\": \"...\", \"callback_url\": \"https://schoolswp-n8n.wp1.host/webhook/agent-callback\"}"
+}

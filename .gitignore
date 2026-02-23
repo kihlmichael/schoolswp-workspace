@@ -90,3 +90,7 @@ uv.lock
 *.sqlite
 *.db
 artifacts/
+
+# Telegram bot config (contains bot token)
+telegram-bot/ccpa.config.json
+telegram-bot/pnpm-lock.yaml

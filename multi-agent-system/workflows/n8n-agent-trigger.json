@@ -1,0 +1,117 @@
+{
+  "name": "[InDev] Agent Orchestrator: Trigger > Sync",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "task-field",
+              "name": "task",
+              "value": "Créer une page blog WordPress avec un composant React ArticleCard, une API REST WP et une optimisation SEO complète",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "set-task",
+      "name": "Set Task",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [220, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8000/api/run-sync",
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\n  \"task\": \"{{ $json.task }}\"\n}",
+        "options": {
+          "timeout": 90000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "run-agent",
+      "name": "Run Agent Orchestrator",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary-field",
+              "name": "summary",
+              "value": "={{ $json.synthesis.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "run-id-field",
+              "name": "run_id",
+              "value": "={{ $json.run_id }}",
+              "type": "string"
+            },
+            {
+              "id": "priority-field",
+              "name": "priority_actions",
+              "value": "={{ JSON.stringify($json.synthesis.priority_actions) }}",
+              "type": "string"
+            },
+            {
+              "id": "conflicts-field",
+              "name": "conflicts",
+              "value": "={{ JSON.stringify($json.synthesis.conflicts) }}",
+              "type": "string"
+            },
+            {
+              "id": "tokens-field",
+              "name": "tokens_estimated",
+              "value": "={{ $json.meta.total_tokens_estimated }}",
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "id": "extract-result",
+      "name": "Extract Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [660, 200]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [{ "node": "Set Task", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set Task": {
+      "main": [
+        [{ "node": "Run Agent Orchestrator", "type": "main", "index": 0 }]
+      ]
+    },
+    "Run Agent Orchestrator": {
+      "main": [
+        [{ "node": "Extract Result", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
