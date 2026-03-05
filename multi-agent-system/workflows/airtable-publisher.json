@@ -1,0 +1,85 @@
+{
+  "name": "[InDev] Webhook > Airtable: Publisher V2 schoolsWP",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "airtable-pub",
+        "options": {}
+      },
+      "id": "n01",
+      "name": "Webhook - Receive Article",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "webhookId": "airtable-publisher"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const data = $input.first().json.body || $input.first().json;\nconst keyword = data.keyword || 'Sans titre';\nconst sujet = data.sujet || keyword;\nconst intent = data.intent || 'informationnelle';\nconst pilier = data.pilier || 'SEO WP';\nconst objectif = data.objectif || '';\nconst audience = data.audience || '';\nconst priority = data.priority || 'C';\nconst ps = data.publish_score || 0;\nconst scoreSeo = (data.audit_seo && data.audit_seo.score_seo) || 0;\nconst scoreConv = (data.audit_conv && data.audit_conv.score_conversion) || 0;\nconst scoreAuth = (data.audit_auth && data.audit_auth.score_autorite) || 0;\nconst docId = data.documentId || '';\nconst docUrl = docId ? `https://docs.google.com/document/d/${docId}/edit` : null;\nconst generatedAt = data.generated_at || new Date().toISOString().split('T')[0];\nconst clusterRole = (data.cluster && data.cluster.role) || 'Satellite';\nconst aiOverview = data.ai_overview === true || data.ai_overview === 'oui';\nconst optimiseLlm = !!(data.optimise_llm || data.llm_score);\n\n// Normalise la valeur Pilier vers les options Airtable\nconst pilierMap = {\n  'SEO': 'SEO WP', 'seo': 'SEO WP', 'seo wp': 'SEO WP',\n  'LMS': 'LMS', 'CRM': 'CRM', 'Performance': 'Performance',\n  'Automatisation': 'Automatisation', 'Ecommerce': 'Ecommerce'\n};\nconst pilierNorm = pilierMap[pilier] || pilier;\n\nconst fields = {\n  'Mot-clé principal': keyword,\n  'Sujet': sujet,\n  'Type de contenu': clusterRole,\n  'Pilier': pilierNorm,\n  'Intention': intent,\n  'Audience cible': audience,\n  'Objectif business': objectif,\n  'Score SEO': scoreSeo,\n  'Score Conversion': scoreConv,\n  'Score Autorité': scoreAuth,\n  'Optimisé LLM ?': optimiseLlm,\n  'AI Overview': aiOverview,\n  'Priorité': priority,\n  'Statut': 'Généré ✓',\n  'Date création': generatedAt\n};\nif (docUrl) fields['Lien Google Doc'] = docUrl;\n\nconst airtablePayload = {\n  performUpsert: { fieldsToMergeOn: ['Mot-clé principal'] },\n  records: [{ fields }]\n};\n\nreturn [{ json: { airtablePayload, keyword, ps, priority } }];"
+      },
+      "id": "n02",
+      "name": "Code - Map V2 to Airtable",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "https://api.airtable.com/v0/VOTRE_BASE_ID/Articles",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer VOTRE_AIRTABLE_TOKEN"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.airtablePayload) }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "n03",
+      "name": "HTTP - Airtable Upsert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const response = $input.first().json;\nconst prev = $('Code - Map V2 to Airtable').first().json;\nconst created = (response.createdRecords || []).length;\nconst updated = (response.updatedRecords || []).length;\nconst records = response.records || [];\nconst firstRecord = records[0] || {};\nconst recordId = firstRecord.id || '';\nconst action = created > 0 ? 'created' : (updated > 0 ? 'updated' : 'upserted');\nreturn [{ json: {\n  success: true,\n  action,\n  record_id: recordId,\n  keyword: prev.keyword,\n  publish_score: prev.ps,\n  priority: prev.priority,\n  created_count: created,\n  updated_count: updated\n} }];"
+      },
+      "id": "n04",
+      "name": "Code - Return Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Receive Article": {
+      "main": [[{"node": "Code - Map V2 to Airtable", "type": "main", "index": 0}]]
+    },
+    "Code - Map V2 to Airtable": {
+      "main": [[{"node": "HTTP - Airtable Upsert", "type": "main", "index": 0}]]
+    },
+    "HTTP - Airtable Upsert": {
+      "main": [[{"node": "Code - Return Status", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

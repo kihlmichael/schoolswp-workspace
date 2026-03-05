@@ -1,0 +1,174 @@
+{
+  "name": "[InDev] Schedule > GSC > GSheets: KPI Dashboard schoolsWP",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [1],
+              "triggerAtHour": 7,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "n01",
+      "name": "Schedule - Weekly Monday 7h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "documentId": {"__rl": true, "value": "VOTRE_GOOGLE_SHEET_ID", "mode": "id"},
+        "sheetName": {"__rl": true, "value": "DASHBOARD", "mode": "name"},
+        "filtersUI": {},
+        "options": {}
+      },
+      "id": "n02",
+      "name": "GSheets - Read DASHBOARD",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [420, 300],
+      "credentials": {"googleSheetsOAuth2Api": {"id": "", "name": "Google Sheets"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const items = $input.all();\nconst today = new Date();\nconst endDate = today.toISOString().split('T')[0];\nconst start = new Date(today.getTime() - 28 * 24 * 60 * 60 * 1000);\nconst startDate = start.toISOString().split('T')[0];\nconst articles = items\n  .map(i => i.json)\n  .filter(r => r['URL publiée'] && String(r['URL publiée']).startsWith('http'));\nif (articles.length === 0) {\n  throw new Error('Aucun article avec URL publiée dans DASHBOARD. Ajoute des URLs dans la colonne \"URL publiée\".');\n}\nreturn [{ json: { articles, startDate, endDate, total: articles.length } }];"
+      },
+      "id": "n03",
+      "name": "Code - Filter & Build Dates",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $input.first().json;\nconst siteUrl = 'https://schoolswp.com/';\nconst encodedSite = encodeURIComponent(siteUrl);\nconst gscQuery = {\n  startDate: prev.startDate,\n  endDate: prev.endDate,\n  dimensions: ['page'],\n  rowLimit: 25000,\n  startRow: 0\n};\nconst gscUrl = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodedSite}/searchAnalytics/query`;\nreturn [{ json: { ...prev, gscQuery, gscUrl } }];"
+      },
+      "id": "n04",
+      "name": "Code - Build GSC Query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.gscUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.gscQuery) }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "n05",
+      "name": "HTTP - GSC API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1080, 300],
+      "credentials": {"oAuth2Api": {"id": "", "name": "Google Search Console OAuth2"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Build GSC Query').first().json;\nconst gscRaw = $input.first().json;\n\n// Build GSC map : URL → metrics\nconst gscMap = {};\nif (gscRaw.rows && Array.isArray(gscRaw.rows)) {\n  for (const row of gscRaw.rows) {\n    const url = (row.keys && row.keys[0]) || '';\n    if (url) {\n      gscMap[url] = {\n        clics: Math.round(row.clicks || 0),\n        impressions: Math.round(row.impressions || 0),\n        ctr: Math.round((row.ctr || 0) * 1000) / 10,\n        position: Math.round((row.position || 0) * 10) / 10\n      };\n    }\n  }\n}\n\n// Compute Score Global + GSC enrichment for each article\nconst results = prev.articles.map(article => {\n  const url = article['URL publiée'] || '';\n  const gsc = gscMap[url] || {};\n\n  const scoreSeo = parseFloat(article['Score SEO']) || 0;\n  const scoreConv = parseFloat(article['Score Conversion']) || 0;\n  const scoreAuth = parseFloat(article['Score Autorité']) || 0;\n  const llmScore = parseFloat(article['LLM Score']) || 50;\n\n  // SEO réel = composite internal + GSC signals\n  const ctrBonus = gsc.ctr ? Math.min(100, Math.round((gsc.ctr / 4) * 100)) : 0;\n  const posBonus = gsc.position > 0 ? Math.max(0, Math.round(110 - (gsc.position * 5.5))) : 0;\n  const seoReal = gsc.position > 0\n    ? Math.round((scoreSeo + ctrBonus + posBonus) / 3)\n    : scoreSeo;\n\n  // Score Global = SEO×25% + LLM×15% + Conversion×30% + Autorité×30%\n  const scoreGlobal = Math.round(\n    (seoReal * 0.25) +\n    (llmScore * 0.15) +\n    (scoreConv * 0.30) +\n    (scoreAuth * 0.30)\n  );\n\n  const action = scoreGlobal >= 95 ? '✅ Actif premium'\n    : scoreGlobal >= 85 ? '🟢 Actif performant'\n    : scoreGlobal >= 70 ? '🟡 Optimiser'\n    : '🔴 Révision stratégique';\n\n  const aiOverview = article['AI Overview'] === 'oui' ? 100 : article['AI Overview'] === 'non' ? 0 : 50;\n  const citationLLM = article['Citation LLM'] === 'oui' ? 100 : article['Citation LLM'] === 'non' ? 0 : 50;\n  const llmComputed = Math.round((aiOverview + citationLLM) / 2);\n\n  return {\n    'Mot-clé': article['Mot-clé'] || '',\n    'Sujet': article['Sujet'] || '',\n    'URL publiée': url,\n    'Type': article['Type'] || '',\n    'Pilier': article['Pilier'] || '',\n    'Score SEO': scoreSeo,\n    'Score Conversion': scoreConv,\n    'Score Autorité': scoreAuth,\n    'LLM Score': llmComputed || llmScore,\n    'Score Global': scoreGlobal,\n    'Action': action,\n    '[GSC] Position': gsc.position || '',\n    '[GSC] CTR %': gsc.ctr || 0,\n    '[GSC] Impressions': gsc.impressions || 0,\n    '[GSC] Clics': gsc.clics || 0,\n    'Dernière MAJ': prev.endDate,\n    'Lien Google Doc': article['Lien Google Doc'] || ''\n  };\n});\n\nreturn results.map(r => ({ json: r }));"
+      },
+      "id": "n06",
+      "name": "Code - Parse GSC + Compute Scores",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {"__rl": true, "value": "VOTRE_GOOGLE_SHEET_ID", "mode": "id"},
+        "sheetName": {"__rl": true, "value": "DASHBOARD", "mode": "name"},
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["Mot-clé"],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "n07",
+      "name": "GSheets - Update DASHBOARD",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1520, 300],
+      "credentials": {"googleSheetsOAuth2Api": {"id": "", "name": "Google Sheets"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const articles = $('Code - Parse GSC + Compute Scores').all().map(i => i.json);\nconst week = $('Code - Build GSC Query').first().json.endDate;\n\n// Sort by Score Global\nconst sorted = [...articles].sort((a, b) => (b['Score Global'] || 0) - (a['Score Global'] || 0));\nconst top5 = sorted.slice(0, 5);\nconst alerts = articles.filter(a => (a['Score Global'] || 0) < 70);\nconst needsOpt = articles.filter(a => { const s = a['Score Global'] || 0; return s >= 70 && s < 85; });\nconst premium = articles.filter(a => (a['Score Global'] || 0) >= 85);\n\n// Cluster aggregation\nconst clusters = {};\nfor (const a of articles) {\n  const pilier = a['Pilier'] || 'Non classé';\n  if (!clusters[pilier]) clusters[pilier] = { count: 0, totalScore: 0, totalClics: 0 };\n  clusters[pilier].count++;\n  clusters[pilier].totalScore += a['Score Global'] || 0;\n  clusters[pilier].totalClics += a['[GSC] Clics'] || 0;\n}\nconst clusterLines = Object.entries(clusters)\n  .sort((a, b) => b[1].totalClics - a[1].totalClics)\n  .map(([pilier, d]) =>\n    `*${pilier}* : ${d.count} articles · Score moy ${Math.round(d.totalScore / d.count)}/100 · ${d.totalClics} clics/28j`\n  ).join('\\n');\n\nconst top5Lines = top5.map((a, i) =>\n  `${i + 1}. *${a['Mot-clé']}* — ${a['Score Global']}/100 | Pos ${a['[GSC] Position'] || '—'} | CTR ${a['[GSC] CTR %'] || 0}% | ${a['[GSC] Clics'] || 0} clics`\n).join('\\n');\n\nconst alertLines = alerts.length > 0\n  ? alerts.slice(0, 5).map(a => `🔴 *${a['Mot-clé']}* — ${a['Score Global']}/100 → ${a['Action']}`).join('\\n')\n  : '✅ Aucun article en alerte cette semaine.';\n\nconst optLines = needsOpt.length > 0\n  ? needsOpt.slice(0, 5).map(a => `🟡 *${a['Mot-clé']}* — ${a['Score Global']}/100`).join('\\n')\n  : '✅ Aucun article à optimiser.';\n\nconst totalClics = articles.reduce((s, a) => s + (a['[GSC] Clics'] || 0), 0);\nconst avgGlobal = Math.round(articles.reduce((s, a) => s + (a['Score Global'] || 0), 0) / (articles.length || 1));\n\nconst slackPayload = {\n  text: `📊 schoolsWP KPI — semaine du ${week}`,\n  blocks: [\n    {\n      type: 'header',\n      text: { type: 'plain_text', text: `📊 schoolsWP — KPI Dashboard (${week})` }\n    },\n    {\n      type: 'section',\n      fields: [\n        { type: 'mrkdwn', text: `*Articles analysés*\\n${articles.length}` },\n        { type: 'mrkdwn', text: `*Score Global moyen*\\n${avgGlobal}/100` },\n        { type: 'mrkdwn', text: `*Clics organiques (28j)*\\n${totalClics}` },\n        { type: 'mrkdwn', text: `*Actifs premium (≥85)*\\n${premium.length}` }\n      ]\n    },\n    { type: 'divider' },\n    {\n      type: 'section',\n      text: { type: 'mrkdwn', text: `*🏆 Top 5 articles :*\\n${top5Lines}` }\n    },\n    { type: 'divider' },\n    {\n      type: 'section',\n      text: { type: 'mrkdwn', text: `*📦 Par pilier :*\\n${clusterLines || '—'}` }\n    },\n    { type: 'divider' },\n    {\n      type: 'section',\n      text: { type: 'mrkdwn', text: `*🔴 Alertes (Score < 70) :*\\n${alertLines}` }\n    },\n    {\n      type: 'section',\n      text: { type: 'mrkdwn', text: `*🟡 À optimiser (70–84) :*\\n${optLines}` }\n    }\n  ]\n};\nreturn [{ json: { slackPayload, totalArticles: articles.length, alerts: alerts.length, avgGlobal } }];"
+      },
+      "id": "n08",
+      "name": "Code - Build Slack Digest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "VOTRE_SLACK_WEBHOOK_URL",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.slackPayload) }}",
+        "options": {"timeout": 15000}
+      },
+      "id": "n09",
+      "name": "HTTP - Slack Weekly Digest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1960, 300]
+    }
+  ],
+  "connections": {
+    "Schedule - Weekly Monday 7h": {
+      "main": [[{"node": "GSheets - Read DASHBOARD", "type": "main", "index": 0}]]
+    },
+    "GSheets - Read DASHBOARD": {
+      "main": [[{"node": "Code - Filter & Build Dates", "type": "main", "index": 0}]]
+    },
+    "Code - Filter & Build Dates": {
+      "main": [[{"node": "Code - Build GSC Query", "type": "main", "index": 0}]]
+    },
+    "Code - Build GSC Query": {
+      "main": [[{"node": "HTTP - GSC API", "type": "main", "index": 0}]]
+    },
+    "HTTP - GSC API": {
+      "main": [[{"node": "Code - Parse GSC + Compute Scores", "type": "main", "index": 0}]]
+    },
+    "Code - Parse GSC + Compute Scores": {
+      "main": [[{"node": "GSheets - Update DASHBOARD", "type": "main", "index": 0}]]
+    },
+    "GSheets - Update DASHBOARD": {
+      "main": [[{"node": "Code - Build Slack Digest", "type": "main", "index": 0}]]
+    },
+    "Code - Build Slack Digest": {
+      "main": [[{"node": "HTTP - Slack Weekly Digest", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

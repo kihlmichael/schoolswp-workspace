@@ -1,5 +1,33 @@
 # schoolsWP — Workspace Claude Code
 
+## Data safety — suppressions
+
+- Interdiction totale d'utiliser `rm` (dont `rm -rf`, `rm -fr`, `rm -r`, `rm -R`), meme pour "nettoyer".
+- Interdiction d'utiliser `sudo` / `doas` et toute commande destructrice.
+- Toute suppression doit passer par la corbeille.
+
+### Regle
+Quand tu dois supprimer des fichiers/dossiers :
+1) utilise `trash <chemin>` (au lieu de `rm ...`)
+2) verifie avec `git status` (si repo git)
+3) ne vide jamais la corbeille automatiquement
+
+### Exemples
+- Supprimer un fichier :
+  - `trash path/to/file`
+- Supprimer un dossier :
+  - `trash path/to/folder`
+- Supprimer via glob :
+  - `trash dist/*`
+
+### Prerequis
+Si `trash` n'existe pas sur la machine, demande l'installation d'un binaire `trash`.
+
+Notes utiles (doc Claude Code) :
+- bypassPermissions desactive les checks de permissions : tes deny/allow ne protègent plus.
+- CLAUDE.md est lu au demarrage de chaque session : parfait pour imposer cette regle.
+
+
 Projet : schoolsWP (schoolswp.com)
 Owner : Michael KIHL
 Stack : n8n automation, Python scripting, Docker, WordPress (via API)

@@ -1,0 +1,12 @@
+{
+  "access": {
+    "allowedUserIds": [1020689775]
+  },
+  "claude": {
+    "command": "claude",
+    "cwd": "/root/workspace"
+  },
+  "logging": {
+    "level": "info"
+  }
+}

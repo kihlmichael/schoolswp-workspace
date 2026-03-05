@@ -1,5 +1,5 @@
 {
-  "name": "[InDev] Agent Orchestrator: Trigger > Sync",
+  "name": "[InDev] Agent Orchestrator: Trigger > Async + Callback",
   "nodes": [
     {
       "parameters": {},
@@ -31,12 +31,13 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:8000/api/run-sync",
+        "url": "https://schoolswp-agents.serveo.net/api/run",
         "sendBody": true,
         "contentType": "json",
-        "body": "={\n  \"task\": \"{{ $json.task }}\"\n}",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({task: $json.task, callback_url: \"https://schoolswp-n8n.wp1.host/webhook/agent-callback\"}) }}",
         "options": {
-          "timeout": 90000,
+          "timeout": 15000,
           "response": {
             "response": {
               "responseFormat": "json"
@@ -44,8 +45,8 @@
           }
         }
       },
-      "id": "run-agent",
-      "name": "Run Agent Orchestrator",
+      "id": "run-agent-async",
+      "name": "Run Agent (Async)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [440, 200]
@@ -55,40 +56,28 @@
         "assignments": {
           "assignments": [
             {
-              "id": "summary-field",
-              "name": "summary",
-              "value": "={{ $json.synthesis.summary }}",
-              "type": "string"
-            },
-            {
               "id": "run-id-field",
               "name": "run_id",
               "value": "={{ $json.run_id }}",
               "type": "string"
             },
             {
-              "id": "priority-field",
-              "name": "priority_actions",
-              "value": "={{ JSON.stringify($json.synthesis.priority_actions) }}",
+              "id": "status-field",
+              "name": "status",
+              "value": "={{ $json.status }}",
               "type": "string"
             },
             {
-              "id": "conflicts-field",
-              "name": "conflicts",
-              "value": "={{ JSON.stringify($json.synthesis.conflicts) }}",
+              "id": "stream-field",
+              "name": "stream_url",
+              "value": "={{ $json.stream_url }}",
               "type": "string"
-            },
-            {
-              "id": "tokens-field",
-              "name": "tokens_estimated",
-              "value": "={{ $json.meta.total_tokens_estimated }}",
-              "type": "number"
             }
           ]
         }
       },
-      "id": "extract-result",
-      "name": "Extract Result",
+      "id": "log-run-id",
+      "name": "Log Run ID",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [660, 200]
@@ -102,16 +91,17 @@
     },
     "Set Task": {
       "main": [
-        [{ "node": "Run Agent Orchestrator", "type": "main", "index": 0 }]
+        [{ "node": "Run Agent (Async)", "type": "main", "index": 0 }]
       ]
     },
-    "Run Agent Orchestrator": {
+    "Run Agent (Async)": {
       "main": [
-        [{ "node": "Extract Result", "type": "main", "index": 0 }]
+        [{ "node": "Log Run ID", "type": "main", "index": 0 }]
       ]
     }
   },
   "settings": {
     "executionOrder": "v1"
-  }
+  },
+  "notes": "Déclenche l'orchestrateur multi-agents en mode async.\nL'API répond immédiatement avec un run_id.\nLe résultat arrive via callback dans le workflow 'Agent Callback'.\n\nURL stable serveo.net : https://schoolswp-agents.serveo.net\nRequiert clé SSH enregistrée sur console.serveo.net"
 }

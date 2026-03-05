@@ -1,0 +1,213 @@
+{
+  "name": "schoolsWP OS — Multi-Agent Orchestrator V2 (JSON strict)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "schoolswp-os-v2",
+        "responseMode": "lastNode"
+      },
+      "name": "Webhook In",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "mission", "value": "={{$json.body.mission || $json.mission}}" }
+          ],
+          "object": [
+            { "name": "context", "value": "={{$json.body.context || $json.context || {}}}" },
+            { "name": "data", "value": "={{$json.body.data || $json.data || {}}}" }
+          ]
+        }
+      },
+      "name": "Normalize Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es ROUTER du schoolsWP OS.\nDecide quels agents lancer.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nContraintes:\n- Reponds UNIQUEMENT en JSON valide.\n- Pas de texte hors JSON.\n- Agents possibles: \"seo\", \"wp\", \"automation\", \"monetization\"\n- Toujours inclure \"qa\".\n- Max 4 agents metier + qa.\n\nSortie JSON exacte:\n{\n  \"agents\": [\"seo\",\"monetization\",\"qa\"],\n  \"priority\": \"low|medium|high\",\n  \"expected_outputs\": [\"plan\",\"deliverables\",\"verification_checklist\"],\n  \"notes\": \"hypotheses de routing en 1 phrase\"\n}",
+        "options": { "temperature": 0.15, "maxTokens": 900 }
+      },
+      "name": "Router (LLM JSON)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\n\nfunction extractJson(str) {\n  const first = str.indexOf(\"{\");\n  const last = str.lastIndexOf(\"}\");\n  if (first === -1 || last === -1) throw new Error(\"No JSON object found\");\n  return str.slice(first, last + 1);\n}\n\nlet parsed;\ntry { parsed = JSON.parse(s); }\ncatch (e) { parsed = JSON.parse(extractJson(s)); }\n\nconst allowed = new Set([\"seo\",\"wp\",\"automation\",\"monetization\",\"qa\"]);\nlet agents = Array.isArray(parsed.agents) ? parsed.agents.filter(a => allowed.has(a)) : [];\nif (!agents.includes(\"qa\")) agents.push(\"qa\");\nagents = agents.slice(0, 5);\n\nreturn [{\n  json: {\n    ...$json,\n    router: {\n      agents,\n      priority: parsed.priority || \"medium\",\n      expected_outputs: parsed.expected_outputs || [\"plan\",\"deliverables\",\"verification_checklist\"],\n      notes: parsed.notes || \"\"\n    },\n    iteration: $json.iteration ?? 0\n  }\n}];"
+      },
+      "name": "Parse Router JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [980, 300]
+    },
+    {
+      "parameters": { "conditions": { "boolean": [{ "value1": "={{($json.router.agents || []).includes('seo')}}", "operation": "isTrue" }] } },
+      "name": "IF SEO",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1180, 160]
+    },
+    {
+      "parameters": { "conditions": { "boolean": [{ "value1": "={{($json.router.agents || []).includes('wp')}}", "operation": "isTrue" }] } },
+      "name": "IF WP",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1180, 260]
+    },
+    {
+      "parameters": { "conditions": { "boolean": [{ "value1": "={{($json.router.agents || []).includes('automation')}}", "operation": "isTrue" }] } },
+      "name": "IF Automation",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1180, 360]
+    },
+    {
+      "parameters": { "conditions": { "boolean": [{ "value1": "={{($json.router.agents || []).includes('monetization')}}", "operation": "isTrue" }] } },
+      "name": "IF Monetization",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1180, 460]
+    },
+    {
+      "parameters": {
+        "text": "Tu es SEO-ANALYST pour schoolsWP.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nReponds UNIQUEMENT en JSON valide.\n{\n  \"agent\": \"seo\",\n  \"findings\": [\"...\"],\n  \"recommendation\": [\"...\"],\n  \"internal_linking\": {\n    \"parent\": \"...\",\n    \"children\": [\"...\"],\n    \"peers\": [\"...\"]\n  },\n  \"ia_citable_blocks\": {\n    \"definitions\": [\"...\"],\n    \"checklists\": [\"...\"]\n  },\n  \"risks\": [\"...\"],\n  \"next_actions\": [\"...\"]\n}",
+        "options": { "temperature": 0.3, "maxTokens": 3000 }
+      },
+      "name": "SEO Agent (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1420, 160]
+    },
+    {
+      "parameters": {
+        "text": "Tu es WP-ARCHITECT pour schoolsWP.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nReponds UNIQUEMENT en JSON valide.\n{\n  \"agent\": \"wp\",\n  \"stack_choices\": [\"...\"],\n  \"risks_mitigations\": [\"...\"],\n  \"minimal_change_plan\": [\"...\"],\n  \"verification_checklist\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 3000 }
+      },
+      "name": "WP Agent (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1420, 260]
+    },
+    {
+      "parameters": {
+        "text": "Tu es AUTOMATION-ENGINEER pour schoolsWP.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nReponds UNIQUEMENT en JSON valide.\n{\n  \"agent\": \"automation\",\n  \"trigger_map\": [\"...\"],\n  \"tags_namespace\": [\"...\"],\n  \"sequence_steps\": [\"...\"],\n  \"guardrails\": [\"...\"],\n  \"tracking_kpis\": [\"...\"],\n  \"test_plan\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 3500 }
+      },
+      "name": "Automation Agent (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1420, 360]
+    },
+    {
+      "parameters": {
+        "text": "Tu es MONETIZATION pour schoolsWP.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nReponds UNIQUEMENT en JSON valide.\n{\n  \"agent\": \"monetization\",\n  \"primary_offer_cta\": [\"...\"],\n  \"secondary_offers\": [\"...\"],\n  \"placement_plan\": [\"...\"],\n  \"objections_answers\": [\"...\"],\n  \"kpi\": [\"...\"]\n}",
+        "options": { "temperature": 0.3, "maxTokens": 2500 }
+      },
+      "name": "Monetization Agent (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1420, 460]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\n\nfunction extractJson(str) {\n  const first = str.indexOf(\"{\");\n  const last = str.lastIndexOf(\"}\");\n  if (first === -1 || last === -1) throw new Error(\"No JSON object found\");\n  return str.slice(first, last + 1);\n}\n\nlet parsed;\ntry { parsed = JSON.parse(s); }\ncatch { parsed = JSON.parse(extractJson(s)); }\n\nreturn [{ json: { ...$json, agent_output: parsed } }];"
+      },
+      "name": "Parse Agent JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1660, 300]
+    },
+    {
+      "parameters": { "mode": "wait", "options": {} },
+      "name": "Merge Agents",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [1860, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const outputs = { seo_output: null, wp_output: null, automation_output: null, monetization_output: null };\nfor (const item of $input.all()) {\n  const o = item.json.agent_output;\n  if (!o || !o.agent) continue;\n  if (o.agent === \"seo\") outputs.seo_output = o;\n  if (o.agent === \"wp\") outputs.wp_output = o;\n  if (o.agent === \"automation\") outputs.automation_output = o;\n  if (o.agent === \"monetization\") outputs.monetization_output = o;\n}\nconst base = $input.first().json;\nreturn [{ json: { mission: base.mission, context: base.context, data: base.data, router: base.router, iteration: base.iteration ?? 0, ...outputs, qa_fixes_required: base.qa_fixes_required ?? [] } }];"
+      },
+      "name": "Aggregate Outputs",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2060, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es le schoolsWP OS (SYNTHESIZER).\nStyle: francais, phrases courtes, concret.\n\nEntree:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Routing: {{$json.router}}\n- Fixes QA: {{$json.qa_fixes_required}}\n\nAgents:\n- SEO: {{$json.seo_output}}\n- WP: {{$json.wp_output}}\n- Automation: {{$json.automation_output}}\n- Monetization: {{$json.monetization_output}}\n\nContraintes:\n- Reponds UNIQUEMENT en JSON valide.\n- Toujours inclure: plan, execution_steps, verification_proofs, deliverables, assumptions.\n\nSortie JSON exacte:\n{\n  \"module\": \"schoolsWP OS\",\n  \"plan\": [\"...\"],\n  \"execution_steps\": [\"...\"],\n  \"verification_proofs\": [\"...\"],\n  \"deliverables\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"notes\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 5000 }
+      },
+      "name": "SYNTHESIZER (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [2260, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es QA-VERIFIER.\nTu refuses toute conclusion si manque de preuves/tests, incoherences, ou plan non actionnable.\n\nEntree synthese:\n{{$json.text}}\n\nSortie JSON exacte:\n{\n  \"verdict\": \"PASS|FAIL\",\n  \"issues\": [\"...\"],\n  \"required_fixes\": [\"...\"],\n  \"proof_checklist\": [\"...\"]\n}",
+        "options": { "temperature": 0.1, "maxTokens": 2000 }
+      },
+      "name": "QA (LLM)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [2460, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){ const a = str.indexOf(\"{\"), b = str.lastIndexOf(\"}\"); if(a===-1||b===-1) throw new Error(\"No JSON found\"); return str.slice(a,b+1); }\nlet qa; try { qa = JSON.parse(s); } catch { qa = JSON.parse(extractJson(s)); }\nconst verdict = (qa.verdict || \"\").toUpperCase();\nconst required_fixes = Array.isArray(qa.required_fixes) ? qa.required_fixes : [];\nreturn [{ json: { ...$json, qa: { verdict: verdict === \"PASS\" ? \"PASS\" : \"FAIL\", issues: qa.issues || [], required_fixes, proof_checklist: qa.proof_checklist || [] } } }];"
+      },
+      "name": "Parse QA JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2660, 300]
+    },
+    {
+      "parameters": { "conditions": { "string": [{ "value1": "={{$json.qa.verdict}}", "operation": "equals", "value2": "PASS" }] } },
+      "name": "IF QA PASS",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [2860, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const iteration = ($json.iteration ?? 0) + 1;\nif (iteration > 2) {\n  return [{ json: { ...$json, iteration, loop_stopped: true, loop_reason: \"Max iterations reached\", qa_fixes_required: $json.qa.required_fixes || [] } }];\n}\nreturn [{ json: { ...$json, iteration, qa_fixes_required: $json.qa.required_fixes || [] } }];"
+      },
+      "name": "Append Fixes + Increment",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [3060, 380]
+    }
+  ],
+  "connections": {
+    "Webhook In": { "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]] },
+    "Normalize Input": { "main": [[{ "node": "Router (LLM JSON)", "type": "main", "index": 0 }]] },
+    "Router (LLM JSON)": { "main": [[{ "node": "Parse Router JSON", "type": "main", "index": 0 }]] },
+    "Parse Router JSON": { "main": [[{ "node": "IF SEO", "type": "main", "index": 0 }, { "node": "IF WP", "type": "main", "index": 0 }, { "node": "IF Automation", "type": "main", "index": 0 }, { "node": "IF Monetization", "type": "main", "index": 0 }]] },
+    "IF SEO": { "main": [[{ "node": "SEO Agent (LLM)", "type": "main", "index": 0 }]] },
+    "IF WP": { "main": [[{ "node": "WP Agent (LLM)", "type": "main", "index": 0 }]] },
+    "IF Automation": { "main": [[{ "node": "Automation Agent (LLM)", "type": "main", "index": 0 }]] },
+    "IF Monetization": { "main": [[{ "node": "Monetization Agent (LLM)", "type": "main", "index": 0 }]] },
+    "SEO Agent (LLM)": { "main": [[{ "node": "Parse Agent JSON", "type": "main", "index": 0 }]] },
+    "WP Agent (LLM)": { "main": [[{ "node": "Parse Agent JSON", "type": "main", "index": 0 }]] },
+    "Automation Agent (LLM)": { "main": [[{ "node": "Parse Agent JSON", "type": "main", "index": 0 }]] },
+    "Monetization Agent (LLM)": { "main": [[{ "node": "Parse Agent JSON", "type": "main", "index": 0 }]] },
+    "Parse Agent JSON": { "main": [[{ "node": "Merge Agents", "type": "main", "index": 0 }]] },
+    "Merge Agents": { "main": [[{ "node": "Aggregate Outputs", "type": "main", "index": 0 }]] },
+    "Aggregate Outputs": { "main": [[{ "node": "SYNTHESIZER (LLM)", "type": "main", "index": 0 }]] },
+    "SYNTHESIZER (LLM)": { "main": [[{ "node": "QA (LLM)", "type": "main", "index": 0 }]] },
+    "QA (LLM)": { "main": [[{ "node": "Parse QA JSON", "type": "main", "index": 0 }]] },
+    "Parse QA JSON": { "main": [[{ "node": "IF QA PASS", "type": "main", "index": 0 }]] },
+    "IF QA PASS": { "main": [[], [{ "node": "Append Fixes + Increment", "type": "main", "index": 0 }]] },
+    "Append Fixes + Increment": { "main": [[{ "node": "SYNTHESIZER (LLM)", "type": "main", "index": 0 }]] }
+  },
+  "active": false
+}

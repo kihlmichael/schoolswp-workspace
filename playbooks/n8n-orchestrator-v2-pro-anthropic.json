@@ -1,0 +1,247 @@
+{
+  "name": "schoolsWP OS — Multi-Agent Orchestrator (Anthropic only) — V2 PRO",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "schoolswp-os-anthropic",
+        "responseMode": "lastNode"
+      },
+      "name": "Webhook In",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [280, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "mission", "value": "={{$json.body?.mission || $json.mission || ''}}" }
+          ],
+          "object": [
+            { "name": "context", "value": "={{$json.body?.context || $json.context || {}}}" },
+            { "name": "data", "value": "={{$json.body?.data || $json.data || {}}}" }
+          ],
+          "number": [
+            { "name": "iteration", "value": "={{$json.iteration || 0}}" }
+          ]
+        }
+      },
+      "name": "Normalize Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es ROUTER du schoolsWP OS.\nTu dois décider quels agents lancer.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n\nContraintes:\n- Réponds UNIQUEMENT en JSON valide.\n- Pas de texte hors JSON.\n- Agents possibles: \"seo\", \"wp\", \"automation\", \"monetization\"\n- Toujours inclure \"qa\".\n- Max 4 agents métier + qa.\n\nSortie JSON EXACTE:\n{\n  \"agents\": [\"seo\",\"monetization\",\"qa\"],\n  \"priority\": \"low|medium|high\",\n  \"expected_outputs\": [\"plan\",\"deliverables\",\"verification_checklist\"],\n  \"notes\": \"hypothèses de routing en 1 phrase\"\n}",
+        "options": { "temperature": 0.15, "maxTokens": 1000 }
+      },
+      "name": "Router (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\n\nfunction extractJson(str) {\n  const first = str.indexOf(\"{\");\n  const last = str.lastIndexOf(\"}\");\n  if (first === -1 || last === -1) throw new Error(\"No JSON object found\");\n  return str.slice(first, last + 1);\n}\n\nlet parsed;\ntry { parsed = JSON.parse(s); }\ncatch { parsed = JSON.parse(extractJson(s)); }\n\nconst allowed = new Set([\"seo\",\"wp\",\"automation\",\"monetization\",\"qa\"]);\nlet agents = Array.isArray(parsed.agents) ? parsed.agents.filter(a => allowed.has(a)) : [];\nif (!agents.includes(\"qa\")) agents.push(\"qa\");\nagents = agents.filter((v,i,a)=>a.indexOf(v)===i).slice(0,5);\n\nreturn [{\n  json: {\n    ...$json,\n    router: {\n      agents,\n      priority: parsed.priority || \"medium\",\n      expected_outputs: parsed.expected_outputs || [\"plan\",\"deliverables\",\"verification_checklist\"],\n      notes: parsed.notes || \"\"\n    },\n    routing_summary: agents.join(\", \")\n  }\n}];"
+      },
+      "name": "Parse Router JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es SEO-ANALYST pour schoolsWP.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Agents actifs: {{$json.router.agents}}\n\nRÈGLE:\nSi \"seo\" n’est PAS dans la liste d’agents actifs, réponds EXACTEMENT:\n{\"agent\":\"seo\",\"skipped\":true}\n\nSinon, réponds UNIQUEMENT en JSON valide:\n{\n  \"agent\": \"seo\",\n  \"findings\": [\"...\"],\n  \"recommendation\": [\"...\"],\n  \"internal_linking\": {\"parent\":\"...\",\"children\":[\"...\"],\"peers\":[\"...\"]},\n  \"ia_citable_blocks\": {\"definitions\":[\"...\"],\"checklists\":[\"...\"]},\n  \"risks\": [\"...\"],\n  \"next_actions\": [\"...\"]\n}",
+        "options": { "temperature": 0.3, "maxTokens": 3500 }
+      },
+      "name": "SEO Agent (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1240, 140]
+    },
+    {
+      "parameters": {
+        "text": "Tu es WP-ARCHITECT pour schoolsWP.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Agents actifs: {{$json.router.agents}}\n\nRÈGLE:\nSi \"wp\" n’est PAS dans la liste d’agents actifs, réponds EXACTEMENT:\n{\"agent\":\"wp\",\"skipped\":true}\n\nSinon, réponds UNIQUEMENT en JSON valide:\n{\n  \"agent\": \"wp\",\n  \"stack_choices\": [\"...\"],\n  \"risks_mitigations\": [\"...\"],\n  \"minimal_change_plan\": [\"...\"],\n  \"verification_checklist\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 3000 }
+      },
+      "name": "WP Agent (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1240, 240]
+    },
+    {
+      "parameters": {
+        "text": "Tu es AUTOMATION-ENGINEER pour schoolsWP.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Agents actifs: {{$json.router.agents}}\n\nRÈGLE:\nSi \"automation\" n’est PAS dans la liste d’agents actifs, réponds EXACTEMENT:\n{\"agent\":\"automation\",\"skipped\":true}\n\nSinon, réponds UNIQUEMENT en JSON valide:\n{\n  \"agent\": \"automation\",\n  \"trigger_map\": [\"...\"],\n  \"tags_namespace\": [\"...\"],\n  \"sequence_steps\": [\"...\"],\n  \"guardrails\": [\"...\"],\n  \"tracking_kpis\": [\"...\"],\n  \"test_plan\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 3500 }
+      },
+      "name": "Automation Agent (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1240, 340]
+    },
+    {
+      "parameters": {
+        "text": "Tu es MONETIZATION pour schoolsWP.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Agents actifs: {{$json.router.agents}}\n\nRÈGLE:\nSi \"monetization\" n’est PAS dans la liste d’agents actifs, réponds EXACTEMENT:\n{\"agent\":\"monetization\",\"skipped\":true}\n\nSinon, réponds UNIQUEMENT en JSON valide:\n{\n  \"agent\": \"monetization\",\n  \"primary_offer_cta\": [\"...\"],\n  \"secondary_offers\": [\"...\"],\n  \"placement_plan\": [\"...\"],\n  \"objections_answers\": [\"...\"],\n  \"kpi\": [\"...\"]\n}",
+        "options": { "temperature": 0.3, "maxTokens": 2500 }
+      },
+      "name": "Monetization Agent (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [1240, 440]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\");\n  const b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet parsed;\ntry { parsed = JSON.parse(s); } catch { parsed = JSON.parse(extractJson(s)); }\nreturn [{ json: { ...$json, agent_output: parsed } }];"
+      },
+      "name": "Parse SEO JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1460, 140]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\");\n  const b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet parsed;\ntry { parsed = JSON.parse(s); } catch { parsed = JSON.parse(extractJson(s)); }\nreturn [{ json: { ...$json, agent_output: parsed } }];"
+      },
+      "name": "Parse WP JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1460, 240]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\");\n  const b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet parsed;\ntry { parsed = JSON.parse(s); } catch { parsed = JSON.parse(extractJson(s)); }\nreturn [{ json: { ...$json, agent_output: parsed } }];"
+      },
+      "name": "Parse Automation JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1460, 340]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\");\n  const b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet parsed;\ntry { parsed = JSON.parse(s); } catch { parsed = JSON.parse(extractJson(s)); }\nreturn [{ json: { ...$json, agent_output: parsed } }];"
+      },
+      "name": "Parse Monetization JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1460, 440]
+    },
+    {
+      "parameters": { "mode": "wait" },
+      "name": "Merge Agents (wait all)",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [1700, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const outputs = { seo_output: null, wp_output: null, automation_output: null, monetization_output: null };\nfor (const item of $input.all()) {\n  const o = item.json.agent_output;\n  if (!o || !o.agent) continue;\n  if (o.agent === 'seo') outputs.seo_output = o;\n  if (o.agent === 'wp') outputs.wp_output = o;\n  if (o.agent === 'automation') outputs.automation_output = o;\n  if (o.agent === 'monetization') outputs.monetization_output = o;\n}\nconst base = $input.first().json;\nreturn [{\n  json: {\n    mission: base.mission,\n    context: base.context,\n    data: base.data,\n    router: base.router,\n    routing_summary: base.routing_summary,\n    iteration: base.iteration ?? 0,\n    qa_fixes_required: base.qa_fixes_required ?? [],\n    ...outputs\n  }\n}];"
+      },
+      "name": "Aggregate Agent Outputs",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1920, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es le schoolsWP OS (SYNTHESIZER).\nStyle schoolsWP: français, phrases courtes. Concret.\nTu dois produire un résultat exécutable + vérifiable.\n\nEntrée:\n- Mission: {{$json.mission}}\n- Contexte: {{$json.context}}\n- Data: {{$json.data}}\n- Routing: {{$json.router}}\n- Fixes QA (si présents): {{$json.qa_fixes_required}}\n\nAgents:\n- SEO: {{$json.seo_output}}\n- WP: {{$json.wp_output}}\n- Automation: {{$json.automation_output}}\n- Monetization: {{$json.monetization_output}}\n\nContraintes:\n- Réponds UNIQUEMENT en JSON valide.\n- Pas de texte hors JSON.\n- Toujours inclure: plan, execution_steps, verification_proofs, deliverables, assumptions.\n\nSortie JSON EXACTE:\n{\n  \"module\": \"schoolsWP OS\",\n  \"plan\": [\"...\"],\n  \"execution_steps\": [\"...\"],\n  \"verification_proofs\": [\"...\"],\n  \"deliverables\": [\"...\"],\n  \"assumptions\": [\"...\"],\n  \"notes\": [\"...\"]\n}",
+        "options": { "temperature": 0.25, "maxTokens": 5500 }
+      },
+      "name": "Synthesizer (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [2140, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\"), b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet parsed;\ntry { parsed = JSON.parse(s); } catch { parsed = JSON.parse(extractJson(s)); }\nreturn [{ json: { ...$json, synth_output: parsed } }];"
+      },
+      "name": "Parse Synth JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2360, 300]
+    },
+    {
+      "parameters": {
+        "text": "Tu es QA-VERIFIER.\nTu refuses toute conclusion si manque de preuves/tests, incohérences, ou plan non actionnable.\n\nEntrée synthèse:\n{{$json.synth_output}}\n\nContraintes:\n- Réponds UNIQUEMENT en JSON valide.\n- Pas de texte hors JSON.\n\nSortie JSON EXACTE:\n{\n  \"verdict\": \"PASS|FAIL\",\n  \"issues\": [\"...\"],\n  \"required_fixes\": [\"...\"],\n  \"proof_checklist\": [\"...\"]\n}",
+        "options": { "temperature": 0.1, "maxTokens": 2200 }
+      },
+      "name": "QA (Claude)",
+      "type": "n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1,
+      "position": [2580, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const raw = $json.text ?? $json.content ?? $json.message ?? $json;\nconst s = typeof raw === \"string\" ? raw : JSON.stringify(raw);\nfunction extractJson(str){\n  const a = str.indexOf(\"{\"), b = str.lastIndexOf(\"}\");\n  if(a === -1 || b === -1) throw new Error(\"No JSON found\");\n  return str.slice(a,b+1);\n}\nlet qa;\ntry { qa = JSON.parse(s); } catch { qa = JSON.parse(extractJson(s)); }\nconst verdict = (qa.verdict || \"\").toUpperCase() === \"PASS\" ? \"PASS\" : \"FAIL\";\nreturn [{\n  json: {\n    ...$json,\n    qa: {\n      verdict,\n      issues: qa.issues || [],\n      required_fixes: Array.isArray(qa.required_fixes) ? qa.required_fixes : [],\n      proof_checklist: qa.proof_checklist || []\n    }\n  }\n}];"
+      },
+      "name": "Parse QA JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2800, 300]
+    },
+    {
+      "parameters": {
+        "conditions": { "boolean": [{ "value1": "={{$json.qa.verdict === 'PASS'}}", "operation": "isTrue" }] }
+      },
+      "name": "IF QA PASS",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [3020, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "const iteration = ($json.iteration ?? 0) + 1;\nif (iteration > 2) {\n  return [{ json: { ...$json, iteration, loop_stopped: true, loop_reason: 'Max iterations reached', qa_fixes_required: $json.qa.required_fixes || [] } }];\n}\nreturn [{ json: { ...$json, iteration, qa_fixes_required: $json.qa.required_fixes || [] } }];"
+      },
+      "name": "Append Fixes + Increment iteration",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [3240, 420]
+    },
+    {
+      "parameters": {
+        "functionCode": "const s = $json.synth_output;\nconst md = [\n  `Module activé : ${s.module}`,\n  '',\n  '## Plan',\n  ...(s.plan || []).map(x => `- [ ] ${x}`),\n  '',\n  '## Exécution',\n  ...(s.execution_steps || []).map((x,i)=>`${i+1}. ${x}`),\n  '',\n  '## Vérification (preuves)',\n  ...(s.verification_proofs || []).map(x => `- [ ] ${x}`),\n  '',\n  '## Livrables',\n  ...(s.deliverables || []).map(x => `- ${x}`),\n  '',\n  '## Hypothèses',\n  ...(s.assumptions || []).map(x => `- ${x}`)\n].join('\\n');\nreturn [{ json: { ...$json, final_markdown: md } }];"
+      },
+      "name": "Render Markdown",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [3240, 220]
+    }
+  ],
+  "connections": {
+    "Webhook In": { "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]] },
+    "Normalize Input": { "main": [[{ "node": "Router (Claude)", "type": "main", "index": 0 }]] },
+    "Router (Claude)": { "main": [[{ "node": "Parse Router JSON", "type": "main", "index": 0 }]] },
+    "Parse Router JSON": {
+      "main": [
+        [{ "node": "SEO Agent (Claude)", "type": "main", "index": 0 }],
+        [{ "node": "WP Agent (Claude)", "type": "main", "index": 0 }],
+        [{ "node": "Automation Agent (Claude)", "type": "main", "index": 0 }],
+        [{ "node": "Monetization Agent (Claude)", "type": "main", "index": 0 }]
+      ]
+    },
+    "SEO Agent (Claude)": { "main": [[{ "node": "Parse SEO JSON", "type": "main", "index": 0 }]] },
+    "WP Agent (Claude)": { "main": [[{ "node": "Parse WP JSON", "type": "main", "index": 0 }]] },
+    "Automation Agent (Claude)": { "main": [[{ "node": "Parse Automation JSON", "type": "main", "index": 0 }]] },
+    "Monetization Agent (Claude)": { "main": [[{ "node": "Parse Monetization JSON", "type": "main", "index": 0 }]] },
+    "Parse SEO JSON": { "main": [[{ "node": "Merge Agents (wait all)", "type": "main", "index": 0 }]] },
+    "Parse WP JSON": { "main": [[{ "node": "Merge Agents (wait all)", "type": "main", "index": 1 }]] },
+    "Parse Automation JSON": { "main": [[{ "node": "Merge Agents (wait all)", "type": "main", "index": 2 }]] },
+    "Parse Monetization JSON": { "main": [[{ "node": "Merge Agents (wait all)", "type": "main", "index": 3 }]] },
+    "Merge Agents (wait all)": { "main": [[{ "node": "Aggregate Agent Outputs", "type": "main", "index": 0 }]] },
+    "Aggregate Agent Outputs": { "main": [[{ "node": "Synthesizer (Claude)", "type": "main", "index": 0 }]] },
+    "Synthesizer (Claude)": { "main": [[{ "node": "Parse Synth JSON", "type": "main", "index": 0 }]] },
+    "Parse Synth JSON": { "main": [[{ "node": "QA (Claude)", "type": "main", "index": 0 }]] },
+    "QA (Claude)": { "main": [[{ "node": "Parse QA JSON", "type": "main", "index": 0 }]] },
+    "Parse QA JSON": { "main": [[{ "node": "IF QA PASS", "type": "main", "index": 0 }]] },
+    "IF QA PASS": {
+      "main": [
+        [{ "node": "Render Markdown", "type": "main", "index": 0 }],
+        [{ "node": "Append Fixes + Increment iteration", "type": "main", "index": 0 }]
+      ]
+    },
+    "Append Fixes + Increment iteration": { "main": [[{ "node": "Synthesizer (Claude)", "type": "main", "index": 0 }]] }
+  },
+  "active": false
+}

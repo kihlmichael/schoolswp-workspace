@@ -1,0 +1,155 @@
+{
+  "name": "[InDev] Schedule > GSC > Notion: KPI Sync schoolsWP",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [1],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "n01",
+      "name": "Schedule - Weekly Monday 8h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.notion.com/v1/databases/VOTRE_ARTICLES_DB_ID/query",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization",  "value": "Bearer VOTRE_NOTION_API_KEY"},
+            {"name": "Notion-Version", "value": "2022-06-28"},
+            {"name": "Content-Type",   "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"page_size\":100,\"filter\":{\"property\":\"URL\",\"url\":{\"is_not_empty\":true}}}",
+        "options": {
+          "timeout": 30000,
+          "response": {"response": {"responseFormat": "json"}}
+        }
+      },
+      "id": "n02",
+      "name": "HTTP - Notion Query Articles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const data = $input.first().json;\nconst today = new Date();\nconst end   = today.toISOString().split('T')[0];\nconst start = new Date(today.getTime() - 28 * 86400000).toISOString().split('T')[0];\n\n// Construire la map URL → pageId depuis les résultats Notion\nconst notionMap = {};\nfor (const page of (data.results || [])) {\n  const url = page.properties?.URL?.url || '';\n  if (url && url.startsWith('http')) {\n    notionMap[url] = page.id;\n  }\n}\n\nconst count = Object.keys(notionMap).length;\nif (count === 0) throw new Error('Aucun article avec URL dans Notion. Vérifier la colonne \"URL\".');\n\n// Construire la requête GSC\nconst siteUrl    = 'https://schoolswp.com/';\nconst encodedUrl = encodeURIComponent(siteUrl);\nconst gscUrl  = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodedUrl}/searchAnalytics/query`;\nconst gscBody = { startDate: start, endDate: end, dimensions: ['page'], rowLimit: 25000, startRow: 0 };\n\nreturn [{ json: { notionMap, notionCount: count, gscUrl, gscBody, endDate: end } }];"
+      },
+      "id": "n03",
+      "name": "Code - Extract Notion + Build GSC Query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.gscUrl }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.gscBody) }}",
+        "options": {
+          "timeout": 30000,
+          "response": {"response": {"responseFormat": "json"}}
+        }
+      },
+      "id": "n04",
+      "name": "HTTP - GSC API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [860, 300],
+      "credentials": {"oAuth2Api": {"id": "", "name": "Google Search Console OAuth2"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const gscRaw   = $input.first().json;\nconst prev     = $('Code - Extract Notion + Build GSC Query').first().json;\nconst notionMap = prev.notionMap;\nconst endDate   = prev.endDate;\n\n// Construire la map GSC : URL → métriques\nconst gscMap = {};\nfor (const row of (gscRaw.rows || [])) {\n  const url = row.keys && row.keys[0];\n  if (url) {\n    gscMap[url] = {\n      clics:       Math.round(row.clicks      || 0),\n      impressions: Math.round(row.impressions || 0),\n      ctr:         Math.round((row.ctr        || 0) * 10000) / 10000,\n      position:    Math.round((row.position   || 0) * 10) / 10\n    };\n  }\n}\n\n// Joindre : garder uniquement les articles présents dans GSC ET dans Notion\nconst updates = [];\nfor (const [url, pageId] of Object.entries(notionMap)) {\n  const gsc = gscMap[url];\n  if (!gsc) continue;\n  updates.push({\n    pageId,\n    url,\n    clics:       gsc.clics,\n    impressions: gsc.impressions,\n    ctr:         gsc.ctr,\n    position:    gsc.position,\n    endDate\n  });\n}\n\nif (updates.length === 0) {\n  throw new Error(`Aucune correspondance URL entre Notion (${Object.keys(notionMap).length}) et GSC (${Object.keys(gscMap).length}). Vérifier les URLs dans Notion.`);\n}\n\nreturn updates.map(u => ({ json: u }));"
+      },
+      "id": "n05",
+      "name": "Code - Join GSC + Notion",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/pages/{{ $json.pageId }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization",  "value": "Bearer VOTRE_NOTION_API_KEY"},
+            {"name": "Notion-Version", "value": "2022-06-28"},
+            {"name": "Content-Type",   "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ properties: { \"Impressions\": { number: $json.impressions }, \"Clics\": { number: $json.clics }, \"CTR\": { number: $json.ctr }, \"Position moyenne\": { number: $json.position }, \"Position actuelle\": { number: $json.position }, \"Dernière MAJ\": { date: { start: $json.endDate } } } }) }}",
+        "options": {
+          "timeout": 20000,
+          "response": {"response": {"responseFormat": "json"}}
+        }
+      },
+      "id": "n06",
+      "name": "HTTP - Notion PATCH Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const results = $input.all();\nconst success = results.filter(r => !r.json.object?.includes('error')).length;\nconst prev    = $('Code - Join GSC + Notion').all();\nconst total   = prev.length;\nconst week    = prev[0]?.json.endDate || new Date().toISOString().split('T')[0];\n\nreturn [{ json: {\n  status:  'done',\n  week,\n  updated: success,\n  total,\n  message: `GSC → Notion sync ${week} : ${success}/${total} articles mis à jour`\n} }];"
+      },
+      "id": "n07",
+      "name": "Code - Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300]
+    }
+  ],
+  "connections": {
+    "Schedule - Weekly Monday 8h": {
+      "main": [[{"node": "HTTP - Notion Query Articles", "type": "main", "index": 0}]]
+    },
+    "HTTP - Notion Query Articles": {
+      "main": [[{"node": "Code - Extract Notion + Build GSC Query", "type": "main", "index": 0}]]
+    },
+    "Code - Extract Notion + Build GSC Query": {
+      "main": [[{"node": "HTTP - GSC API", "type": "main", "index": 0}]]
+    },
+    "HTTP - GSC API": {
+      "main": [[{"node": "Code - Join GSC + Notion", "type": "main", "index": 0}]]
+    },
+    "Code - Join GSC + Notion": {
+      "main": [[{"node": "HTTP - Notion PATCH Page", "type": "main", "index": 0}]]
+    },
+    "HTTP - Notion PATCH Page": {
+      "main": [[{"node": "Code - Summary", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

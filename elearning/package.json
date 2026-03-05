@@ -1,0 +1,14 @@
+{
+  "name": "schoolswp-elearning",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pipeline e-learning schoolsWP : ElevenLabs + HeyGen + Remotion",
+  "scripts": {
+    "voice": "node scripts/generate-voice.js",
+    "avatar": "node scripts/generate-avatar.js",
+    "pipeline": "node scripts/pipeline.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

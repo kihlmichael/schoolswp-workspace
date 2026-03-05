@@ -1,0 +1,180 @@
+{
+  "name": "[Prod] Schedule > Thruuu: Token Health Check & Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "hours", "hoursInterval": 10 }]
+        }
+      },
+      "id": "n01",
+      "name": "Schedule - Every 10h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "09_CONFIG",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "n02",
+      "name": "GSheets - 09_CONFIG",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.2,
+      "position": [220, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const rows = $input.all();\nconst tokenRow = rows.find(r => r.json.key === 'THRUUU_TOKEN');\nconst expiresRow = rows.find(r => r.json.key === 'THRUUU_EXPIRES_AT' || r.json.key === 'THRUUU_TOKEN');\n\nif (!tokenRow) {\n  return [{ json: { token: '', isExpired: true, remainingHours: 0, expiresAt: '', error: 'THRUUU_TOKEN not found in 09_CONFIG' } }];\n}\n\nconst token = tokenRow.json.value || '';\nconst expiresAt = tokenRow.json.expires_at || '';\nconst now = Date.now();\nconst expires = expiresAt ? new Date(expiresAt).getTime() : 0;\nconst remainingMs = expires - now;\nconst remainingHours = expires > 0 ? Math.round(remainingMs / 3600000) : -1;\n\nreturn [{\n  json: {\n    token,\n    expiresAt,\n    remainingHours,\n    isExpiringSoon: remainingHours < 2,\n    isExpired: remainingMs < 0,\n    alert: remainingHours < 2\n  }\n}];"
+      },
+      "id": "n03",
+      "name": "Code - Check Expiry",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.thruuu.com/api/v2/serps",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ $json.token }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"keywords\":[\"test\"],\"parameters\":{\"search_engine\":\"google.fr\",\"country\":\"fr\",\"language\":\"fr\",\"device\":\"desktop\",\"search_volume\":true,\"num\":1}}",
+        "options": {
+          "timeout": 10000,
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "n04",
+      "name": "HTTP - Test Thruuu Token",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const r = $input.first().json;\nconst status = r.statusCode || r.status || 0;\nconst body = r.body || r;\nconst isAuthError = status === 401 ||\n  (typeof body === 'object' && JSON.stringify(body).toLowerCase().includes('not supplied')) ||\n  (typeof body === 'object' && JSON.stringify(body).toLowerCase().includes('unauthorized'));\n\nreturn [{ json: { status, isAuthError, body, tokenOk: !isAuthError } }];"
+      },
+      "id": "n05",
+      "name": "Code - Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [{
+            "id": "auth_error",
+            "leftValue": "={{ $json.isAuthError }}",
+            "rightValue": true,
+            "operator": { "type": "boolean", "operation": "equal" }
+          }],
+          "combinator": "and"
+        }
+      },
+      "id": "n06",
+      "name": "IF - Token Invalid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://discord.com/api/webhooks/1476290432118947991/JJSsTey4jPvFpwhnFrHeqHK5t-RAmt7EHWc8n25mlNHZdb557lbDZbw-_6_z9tqkihKP",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  content: '🔑 **Token Thruuu expiré — Action requise**\\n\\n**Étapes :**\\n1. Va sur https://thruuu.com → Paramètres API\\n2. Clique **Changer la clé**\\n3. Copie le nouveau token\\n4. Dans n8n → Settings → Credentials → **Thruuu_Production_Bearer** → Value: `Bearer <token>`\\n5. Dans Google Sheets → **09_CONFIG** → mets à jour `value` et `expires_at`\\n\\n⏰ Lancé le ' + new Date().toLocaleString('fr-FR', {timeZone: 'Europe/Paris'}) + '\\nworkflow geo-architect **bloqué** jusqu\\'à mise à jour'\n}) }}"
+      },
+      "id": "n07",
+      "name": "HTTP - Discord Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1320, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "noData",
+        "options": {}
+      },
+      "id": "n08",
+      "name": "Token OK - Stop",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1320, 400]
+    },
+    {
+      "parameters": {
+        "content": "Thruuu — Token Health Check\n━━━━━━━━━━━━━━━━━━━━━━━━━━━\nPlanifié : toutes les 10 heures\n\nFLUX\n  1. Lit 09_CONFIG Google Sheets\n  2. Vérifie expires_at + teste l'API\n  3. Si token invalide → Discord Alert\n\nCONFIGURATION REQUISE\n1. Créer l'onglet 09_CONFIG\n   dans le Google Sheet :\n   GSheet ID: 1u_t04od77oD-49...\n\n   Colonnes : key | value | expires_at\n   Ligne 1 : THRUUU_TOKEN | Bearer eyJh... | 2026-02-26T04:13:34Z\n\n2. Remplacer DISCORD_WEBHOOK_URL_ICI\n   dans le nœud HTTP - Discord Alert\n   Format : https://discord.com/api/webhooks/...\n\n3. Assigner le credential Google Sheets\n   sur le nœud GSheets - 09_CONFIG\n\nMISE A JOUR DU TOKEN\nQuand le token expire :\n  → thruuu.com → Changer la clé\n  → Mettre à jour 09_CONFIG colonne value\n  → Mettre à jour 09_CONFIG colonne expires_at\n  → ET mettre à jour le credential n8n\n    Thruuu_Production_Bearer",
+        "height": 580,
+        "width": 360,
+        "color": 5
+      },
+      "id": "n09",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-440, 60]
+    }
+  ],
+  "connections": {
+    "Schedule - Every 10h": {
+      "main": [[{ "node": "GSheets - 09_CONFIG", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 09_CONFIG": {
+      "main": [[{ "node": "Code - Check Expiry", "type": "main", "index": 0 }]]
+    },
+    "Code - Check Expiry": {
+      "main": [[{ "node": "HTTP - Test Thruuu Token", "type": "main", "index": 0 }]]
+    },
+    "HTTP - Test Thruuu Token": {
+      "main": [[{ "node": "Code - Parse Response", "type": "main", "index": 0 }]]
+    },
+    "Code - Parse Response": {
+      "main": [[{ "node": "IF - Token Invalid?", "type": "main", "index": 0 }]]
+    },
+    "IF - Token Invalid?": {
+      "main": [
+        [{ "node": "HTTP - Discord Alert", "type": "main", "index": 0 }],
+        [{ "node": "Token OK - Stop", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
