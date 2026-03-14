@@ -10,8 +10,8 @@ REM    brain.bat --keyword "fluentcrm avis" --intent informationnelle --pillar C
 REM    brain.bat --keyword "tutor lms vs learndash" --intent comparative --pillar LMS --include-ner
 REM
 REM  MODE AUDIT (article existant) :
-REM    brain.bat --file articles/lms-pilier/v3.md --kw "lms wordpress" --intent décisionnelle
-REM    brain.bat --file articles/crm/fluentcrm.md --kw "fluentcrm wordpress" --pillar CRM
+REM    brain.bat --file content/articles/lms-pilier/v3.md --kw "lms wordpress" --intent décisionnelle
+REM    brain.bat --file content/articles/crm/fluentcrm.md --kw "fluentcrm wordpress" --pillar CRM
 REM
 REM  OPTIONS :
 REM    --keyword      Mot-clé principal → mode génération (requis en génération)
@@ -30,4 +30,4 @@ REM    --model        Modèle Claude (défaut: claude-sonnet-4-6)
 REM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 cd /d "%~dp0"
-scripts\.venv\Scripts\python -m agents.content_factory.cli %*
+tools\scripts\legacy\scripts\.venv\Scripts\python -m agents.content_factory.cli %*

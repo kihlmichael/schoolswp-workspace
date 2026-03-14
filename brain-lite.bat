@@ -7,7 +7,7 @@ REM
 REM  Usage :
 REM    brain-lite.bat --keyword "lms wordpress rentable" --intent décisionnelle
 REM    brain-lite.bat --keyword "fluentcrm vs activecampaign" --intent comparative --pilier crm
-REM    brain-lite.bat --keyword "tutor lms avis" --intent informationnelle --save-dir articles/lms/
+REM    brain-lite.bat --keyword "tutor lms avis" --intent informationnelle --save-dir content/articles/lms/
 REM
 REM  Options complètes :
 REM    --keyword      Mot-clé principal (requis)
@@ -20,4 +20,4 @@ REM    --model        Modèle Claude (défaut: claude-sonnet-4-6)
 REM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 cd /d "%~dp0"
-scripts\.venv\Scripts\python -m agents.article_pipeline.brain_lite_cli %*
+tools\scripts\legacy\scripts\.venv\Scripts\python -m agents.article_pipeline.brain_lite_cli %*

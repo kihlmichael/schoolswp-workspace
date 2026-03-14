@@ -1,3 +1,6 @@
+# Claude Code local overrides
+CLAUDE.local.md
+
 # n8n Data
 .n8n/
 n8n_data/
@@ -7,12 +10,39 @@ n8n_data/
 .env.local
 .env.*.local
 
-# Credentials & Secrets
+# Credentials & Secrets — FORTERESSE
+# OAuth / tokens Google
 *credentials*.json
 *secrets*.json
 token-*.json
+*token*.json
+*oauth*.json
+*service-account*.json
+*service_account*.json
+# Clés & certificats
 *.key
 *.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+# API keys génériques
+*api_key*
+*api-key*
+*apikey*
+# AWS
+.aws/
+*aws_credentials*
+# SSH
+id_rsa
+id_ed25519
+*.ppk
+# Tout fichier qui ressemble à un secret
+*secret*
+*password*
+*passwd*
+*private_key*
+*privatekey*
 
 # Logs
 logs/
@@ -76,6 +106,8 @@ __pycache__/
 *.pyo
 *.egg-info/
 venv/
+.venv/
+*.venv
 
 # MCP config (contains API keys)
 .mcp.json
@@ -93,4 +125,23 @@ artifacts/
 
 # Telegram bot config (contains bot token)
 telegram-bot/ccpa.config.json
+apps/telegram-bot/telegram-bot/ccpa.config.json
 telegram-bot/pnpm-lock.yaml
+
+# Config files pouvant contenir des secrets
+ccpa.config.json
+*.config.local.json
+
+# Google Drive / GCP
+gdrive-*.json
+gcp-*.json
+google-*.json
+
+# Output / data locale — jamais commité
+data/reports/
+tools/scripts/legacy/scripts/output/
+tools/scripts/legacy/scripts/token-*.json
+tools/scripts/credentials-*.json
+
+# Autres lock files
+pnpm-lock.yaml

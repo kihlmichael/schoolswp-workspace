@@ -39,10 +39,10 @@ docs: add troubleshooting for webhook timeout
 ## Adding an n8n Workflow
 
 1. Create the workflow in the n8n UI
-2. Export as JSON to `workflows/`
+2. Export as JSON to `systems/workflows/workflows/`
 3. Follow the naming convention: `[Status] Source > Destination: Description (ID)`
 4. Sanitize all credentials before committing
-5. Add a README in `workflows/templates/` if it's a reusable template
+5. Add a README in `systems/workflows/workflows/templates/` if it's a reusable template
 
 ### Workflow Status Tags
 
@@ -96,6 +96,6 @@ Examples: `Salesforce_Production_OAuth`, `PostgreSQL_Staging_Password`
 
 ## Documentation
 
-- Document new workflows with a README in `workflows/templates/`
-- Keep `docs/` up to date for troubleshooting guides
+- Document new workflows with a README in `systems/workflows/workflows/templates/`
+- Keep `content/docs/` up to date for troubleshooting guides
 - Write documentation in French (project language)
