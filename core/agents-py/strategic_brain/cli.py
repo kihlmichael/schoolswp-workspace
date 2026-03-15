@@ -37,6 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.strategic_brain.agent import StrategicBrainAgent
 
 
@@ -160,10 +161,14 @@ async def main() -> None:
     def _load(path_str: str | None, label: str) -> str | None:
         if not path_str:
             return None
-        p = Path(path_str)
-        if not p.exists():
+        try:
+            p = safe_read_path(path_str)
+        except ValueError as e:
+            print(f"[strategic-brain] Erreur accès refusé : {e} — ignoré", flush=True)
+            return None
+        except FileNotFoundError:
             print(
-                f"[strategic-brain] ⚠ {label} introuvable : {p} — ignoré",
+                f"[strategic-brain] ⚠ {label} introuvable : {path_str} — ignoré",
                 flush=True,
             )
             return None
@@ -221,7 +226,11 @@ async def main() -> None:
     print("", flush=True)
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[strategic-brain] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(report, encoding="utf-8")
         print(f"[strategic-brain] Decision Board sauvegardé → {output_path}")

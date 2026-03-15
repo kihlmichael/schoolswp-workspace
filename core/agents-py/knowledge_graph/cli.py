@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.knowledge_graph.agent import KnowledgeGraphAgent
 
 
@@ -91,10 +92,17 @@ async def main() -> None:
     if args.ner_files:
         ner_data = []
         for ner_path_str in args.ner_files:
-            ner_path = Path(ner_path_str)
-            if not ner_path.exists():
+            try:
+                ner_path = safe_read_path(ner_path_str)
+            except ValueError as e:
                 print(
-                    f"[knowledge-graph] ⚠ Fichier NER introuvable : {ner_path} — ignoré",
+                    f"[knowledge-graph] Erreur accès refusé : {e} — ignoré",
+                    flush=True,
+                )
+                continue
+            except FileNotFoundError:
+                print(
+                    f"[knowledge-graph] ⚠ Fichier NER introuvable : {ner_path_str} — ignoré",
                     flush=True,
                 )
                 continue
@@ -139,7 +147,11 @@ async def main() -> None:
     print("", flush=True)
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[knowledge-graph] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(graph, encoding="utf-8")
         print(f"[knowledge-graph] Knowledge Graph sauvegardé → {output_path}")

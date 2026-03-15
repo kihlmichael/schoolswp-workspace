@@ -26,6 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.roi_editorial_plan.agent import RoiEditorialPlanAgent
 
 # Piliers disponibles — aligné avec pillar_authority et cocon_builder
@@ -200,10 +201,14 @@ async def main() -> None:
     def _load_file(path_str: str | None, label: str) -> str | None:
         if not path_str:
             return None
-        p = Path(path_str)
-        if not p.exists():
+        try:
+            p = safe_read_path(path_str)
+        except ValueError as e:
+            print(f"[roi-editorial-plan] Erreur accès refusé : {e} — ignoré", flush=True)
+            return None
+        except FileNotFoundError:
             print(
-                f"[roi-editorial-plan] ⚠ {label} introuvable : {p} — ignoré",
+                f"[roi-editorial-plan] ⚠ {label} introuvable : {path_str} — ignoré",
                 flush=True,
             )
             return None
@@ -221,7 +226,7 @@ async def main() -> None:
         1 for x in [graph_content, authority_content, cocon_content] if x
     )
 
-    print(f"\n[roi-editorial-plan] Génération du plan éditorial ROI", flush=True)
+    print("\n[roi-editorial-plan] Génération du plan éditorial ROI", flush=True)
     print(f"  Focus       : {pillar_label}", flush=True)
     print(f"  Idées       : {count}", flush=True)
     print(f"  Données     : {data_loaded}/3 fichier(s) chargé(s)", flush=True)
@@ -259,7 +264,11 @@ async def main() -> None:
     print("", flush=True)
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[roi-editorial-plan] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(plan, encoding="utf-8")
         print(f"[roi-editorial-plan] Plan sauvegardé → {output_path}")

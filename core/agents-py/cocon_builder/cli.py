@@ -19,6 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.cocon_builder.agent import PILLARS, CoconBuilderAgent
 
 
@@ -139,27 +140,31 @@ async def main() -> None:
     # Charger les fichiers optionnels
     graph_content: str | None = None
     if args.graph_file:
-        graph_path = Path(args.graph_file)
-        if not graph_path.exists():
-            print(
-                f"[cocon-builder] ⚠ Fichier graph introuvable : {graph_path} — ignoré",
-                flush=True,
-            )
-        else:
+        try:
+            graph_path = safe_read_path(args.graph_file)
             graph_content = graph_path.read_text(encoding="utf-8")
             print(f"[cocon-builder] Knowledge Graph chargé : {graph_path}", flush=True)
+        except ValueError as e:
+            print(f"[cocon-builder] Erreur accès refusé : {e} — ignoré", flush=True)
+        except FileNotFoundError:
+            print(
+                f"[cocon-builder] ⚠ Fichier graph introuvable : {args.graph_file} — ignoré",
+                flush=True,
+            )
 
     authority_content: str | None = None
     if args.authority_file:
-        auth_path = Path(args.authority_file)
-        if not auth_path.exists():
-            print(
-                f"[cocon-builder] ⚠ Fichier autorité introuvable : {auth_path} — ignoré",
-                flush=True,
-            )
-        else:
+        try:
+            auth_path = safe_read_path(args.authority_file)
             authority_content = auth_path.read_text(encoding="utf-8")
             print(f"[cocon-builder] Score autorité chargé : {auth_path}", flush=True)
+        except ValueError as e:
+            print(f"[cocon-builder] Erreur accès refusé : {e} — ignoré", flush=True)
+        except FileNotFoundError:
+            print(
+                f"[cocon-builder] ⚠ Fichier autorité introuvable : {args.authority_file} — ignoré",
+                flush=True,
+            )
 
     agent = CoconBuilderAgent(model=args.model)
 
@@ -194,7 +199,11 @@ async def main() -> None:
     print("", flush=True)
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[cocon-builder] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(cocon, encoding="utf-8")
         print(f"[cocon-builder] Cocon sauvegardé → {output_path}")

@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.pillar_authority.agent import PILLARS, PillarAuthorityAgent
 
 # Seuils de diagnostic
@@ -165,15 +166,17 @@ async def main() -> None:
     # Charger le Knowledge Graph si fourni
     graph_content: str | None = None
     if args.graph_file:
-        graph_path = Path(args.graph_file)
-        if not graph_path.exists():
-            print(
-                f"[pillar-authority] ⚠ Fichier graph introuvable : {graph_path} — ignoré",
-                flush=True,
-            )
-        else:
+        try:
+            graph_path = safe_read_path(args.graph_file)
             graph_content = graph_path.read_text(encoding="utf-8")
             print(f"[pillar-authority] Knowledge Graph chargé : {graph_path}", flush=True)
+        except ValueError as e:
+            print(f"[pillar-authority] Erreur accès refusé : {e} — ignoré", flush=True)
+        except FileNotFoundError:
+            print(
+                f"[pillar-authority] ⚠ Fichier graph introuvable : {args.graph_file} — ignoré",
+                flush=True,
+            )
 
     agent = PillarAuthorityAgent(model=args.model)
 
@@ -201,7 +204,11 @@ async def main() -> None:
             )
 
         if args.output:
-            output_path = Path(args.output)
+            try:
+                output_path = safe_write_path(args.output)
+            except ValueError as e:
+                print(f"[pillar-authority] Erreur : {e}", file=sys.stderr)
+                sys.exit(1)
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(result, encoding="utf-8")
             print(f"[pillar-authority] Sauvegardé → {output_path}")
@@ -256,7 +263,11 @@ async def main() -> None:
 
         # Sauvegarde
         if args.output:
-            output_dir = Path(args.output)
+            try:
+                output_dir = safe_write_path(args.output)
+            except ValueError as e:
+                print(f"[pillar-authority] Erreur : {e}", file=sys.stderr)
+                sys.exit(1)
             output_dir.mkdir(parents=True, exist_ok=True)
 
             # Un fichier par pilier
