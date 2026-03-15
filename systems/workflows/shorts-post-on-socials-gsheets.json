@@ -175,7 +175,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Return only the first matching item (oldest = FIFO publishing queue)\nreturn [$input.first()];"
+        "jsCode": "// FIX: stoppe silencieusement si aucune vidéo n'est prête à publier\nconst items = $input.all();\nif (items.length === 0) {\n  return [];\n}\n\n// Queue FIFO : publie la vidéo la plus ancienne en premier (ligne du haut)\nreturn [items[0]];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -272,12 +272,68 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "prep-title",
+              "name": "title",
+              "value": "={{ $('Limit to 1').item.json.Title }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-keywords",
+              "name": "keywords",
+              "value": "={{ $('Limit to 1').item.json.Keywords }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-video-url",
+              "name": "video_url",
+              "value": "={{ $('Limit to 1').item.json['Video URL'] }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-row-id",
+              "name": "row_id",
+              "value": "={{ $('Limit to 1').item.json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-desc-ig",
+              "name": "description_ig",
+              "value": "={{ $json['Description Insta'] }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-desc-yt",
+              "name": "description_yt",
+              "value": "={{ $json['Description YT'] }}",
+              "type": "string"
+            },
+            {
+              "id": "prep-desc-tt",
+              "name": "description_tt",
+              "value": "={{ $json['Description TikTok'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [560, -700],
+      "id": "a1b2c3d4-0017-4000-8000-000000000017",
+      "name": "Prepare Post Data"
+    },
+    {
+      "parameters": {
         "resource": "media",
-        "mediaUrl": "={{ $('Limit to 1').item.json['Video URL'] }}"
+        "mediaUrl": "={{ $json.video_url }}"
       },
       "type": "@blotato/n8n-nodes-blotato.blotato",
       "typeVersion": 2,
-      "position": [580, -700],
+      "position": [760, -700],
       "id": "a1b2c3d4-0010-4000-8000-000000000010",
       "name": "Upload media",
       "credentials": {
@@ -295,15 +351,16 @@
           "mode": "list",
           "cachedResultName": "your-instagram-handle"
         },
-        "postContentText": "={{ $('Save Descriptions').item.json.Title }}\n\n{{ $('Save Descriptions').item.json['Description Insta'] }}\n\n{{ $('Save Descriptions').item.json.Keywords }}",
+        "postContentText": "={{ $('Prepare Post Data').item.json.title }}\n\n{{ $('Prepare Post Data').item.json.description_ig }}\n\n{{ $('Prepare Post Data').item.json.keywords }}",
         "postContentMediaUrls": "={{ $json.url }}",
         "options": {}
       },
       "type": "@blotato/n8n-nodes-blotato.blotato",
       "typeVersion": 2,
-      "position": [820, -900],
+      "position": [1000, -900],
       "id": "a1b2c3d4-0011-4000-8000-000000000011",
       "name": "Instagram - Post",
+      "continueOnFail": true,
       "credentials": {
         "blotatoApi": {
           "id": "CONFIGURE_YOUR_BLOTATO_CREDENTIAL_ID",
@@ -320,15 +377,16 @@
           "mode": "list",
           "cachedResultName": "your-tiktok-handle"
         },
-        "postContentText": "={{ $('Save Descriptions').item.json.Title }}\n\n{{ $('Save Descriptions').item.json['Description TikTok'] }}\n\n{{ $('Save Descriptions').item.json.Keywords }}",
+        "postContentText": "={{ $('Prepare Post Data').item.json.title }}\n\n{{ $('Prepare Post Data').item.json.description_tt }}\n\n{{ $('Prepare Post Data').item.json.keywords }}",
         "postContentMediaUrls": "={{ $json.url }}",
         "options": {}
       },
       "type": "@blotato/n8n-nodes-blotato.blotato",
       "typeVersion": 2,
-      "position": [820, -700],
+      "position": [1000, -700],
       "id": "a1b2c3d4-0012-4000-8000-000000000012",
       "name": "TikTok Post",
+      "continueOnFail": true,
       "credentials": {
         "blotatoApi": {
           "id": "CONFIGURE_YOUR_BLOTATO_CREDENTIAL_ID",
@@ -345,16 +403,17 @@
           "mode": "list",
           "cachedResultName": "your-youtube-channel"
         },
-        "postContentText": "={{ $('Save Descriptions').item.json['Description YT'] }}\n\n{{ $('Save Descriptions').item.json.Keywords }}",
+        "postContentText": "={{ $('Prepare Post Data').item.json.description_yt }}\n\n{{ $('Prepare Post Data').item.json.keywords }}",
         "postContentMediaUrls": "={{ $json.url }}",
-        "postCreateYoutubeOptionTitle": "={{ $('Save Descriptions').item.json.Title }}",
+        "postCreateYoutubeOptionTitle": "={{ $('Prepare Post Data').item.json.title }}",
         "options": {}
       },
       "type": "@blotato/n8n-nodes-blotato.blotato",
       "typeVersion": 2,
-      "position": [820, -500],
+      "position": [1000, -500],
       "id": "a1b2c3d4-0013-4000-8000-000000000013",
       "name": "Youtube Post",
+      "continueOnFail": true,
       "credentials": {
         "blotatoApi": {
           "id": "CONFIGURE_YOUR_BLOTATO_CREDENTIAL_ID",
@@ -379,7 +438,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "id": "={{ $('Limit to 1').item.json.id }}",
+            "id": "={{ $('Prepare Post Data').item.json.row_id }}",
             "Instagram": true
           },
           "matchingColumns": ["id"]
@@ -388,7 +447,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [1060, -900],
+      "position": [1240, -900],
       "id": "a1b2c3d4-0014-4000-8000-000000000014",
       "name": "Instagram Post ✅",
       "credentials": {
@@ -415,7 +474,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "id": "={{ $('Limit to 1').item.json.id }}",
+            "id": "={{ $('Prepare Post Data').item.json.row_id }}",
             "TikTok": true
           },
           "matchingColumns": ["id"]
@@ -424,7 +483,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [1060, -700],
+      "position": [1240, -700],
       "id": "a1b2c3d4-0015-4000-8000-000000000015",
       "name": "TikTok Post ✅",
       "credentials": {
@@ -451,7 +510,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "id": "={{ $('Limit to 1').item.json.id }}",
+            "id": "={{ $('Prepare Post Data').item.json.row_id }}",
             "Youtube": true
           },
           "matchingColumns": ["id"]
@@ -460,7 +519,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [1060, -500],
+      "position": [1240, -500],
       "id": "a1b2c3d4-0016-4000-8000-000000000016",
       "name": "Youtube Post ✅",
       "credentials": {
@@ -472,22 +531,22 @@
     },
     {
       "parameters": {
-        "content": "## ⚠️ CONFIGURATION REQUISE\n\n**1. Google Sheets** : Remplacer `YOUR_SPREADSHEET_ID_HERE` dans tous les nodes Google Sheets\n\n**2. Blotato** : Installer le community node `@blotato/n8n-nodes-blotato`, configurer le credential API, et renseigner les Account IDs (Instagram, TikTok, YouTube)\n\n**3. Anthropic** : Configurer le credential API Anthropic pour Claude Sonnet 4.5\n\n**4. Structure du Google Sheet** (onglet \"Videos\") :\n| id | Title | Script | Keywords | Video URL | Description Insta | Description YT | Description TikTok | To Publish | Instagram | TikTok | Youtube |\n\n- `id` : identifiant unique (1, 2, 3...)\n- `To Publish`, `Instagram`, `TikTok`, `Youtube` : cases à cocher (checkbox)\n- `Video URL` : URL directe vers le fichier vidéo",
-        "height": 380,
-        "width": 660,
+        "content": "## ⚠️ CONFIGURATION REQUISE\n\n**1. Google Sheets** : Remplacer `YOUR_SPREADSHEET_ID_HERE` dans les 5 nodes Google Sheets\n\n**2. Blotato** : Installer le community node `@blotato/n8n-nodes-blotato`, configurer le credential API, et renseigner les Account IDs (Instagram, TikTok, YouTube)\n\n**3. Anthropic** : Configurer le credential API Anthropic pour Claude Sonnet 4.5\n\n**4. Structure du Google Sheet** (onglet \"Videos\") :\n`id | Title | Script | Keywords | Video URL | Description Insta | Description YT | Description TikTok | To Publish ☑ | Instagram ☑ | TikTok ☑ | Youtube ☑`\n\n- `id` : identifiant unique (1, 2, 3...)\n- Colonnes ☑ : cases à cocher (Insert > Checkbox)\n- `Video URL` : URL directe vers le fichier vidéo\n\n→ Utiliser le workflow `setup-shorts-gsheet.json` pour créer le sheet automatiquement",
+        "height": 420,
+        "width": 700,
         "color": 1
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [-200, -1360],
+      "position": [-200, -1420],
       "id": "a1b2c3d4-1001-4000-8000-000000001001",
       "name": "Sticky Note - Config"
     },
     {
       "parameters": {
-        "content": "## 📥 Get Videos & Generate Descriptions\nGoogle Sheets → Filter → Limit 1 → AI Agent → Save",
+        "content": "## 📥 Fetch & Generate\nSchedule → Google Sheets → Filter (8 cond.) → Limit 1 (FIFO) → AI Agent → Save",
         "height": 580,
-        "width": 980,
+        "width": 1040,
         "color": 5
       },
       "type": "n8n-nodes-base.stickyNote",
@@ -498,40 +557,53 @@
     },
     {
       "parameters": {
-        "content": "## Instagram",
+        "content": "## 📦 Prepare Post Data\nSource unique pour toutes les données de publication.\nTitle + Keywords → Limit to 1\nDescriptions → Save Descriptions",
+        "height": 180,
+        "width": 340,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [520, -760],
+      "id": "a1b2c3d4-1006-4000-8000-000000001006",
+      "name": "Sticky Note - PrepareData"
+    },
+    {
+      "parameters": {
+        "content": "## Instagram\n`continueOnFail` activé",
         "height": 200,
         "width": 480,
         "color": 6
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [780, -960],
+      "position": [960, -960],
       "id": "a1b2c3d4-1003-4000-8000-000000001003",
       "name": "Sticky Note - Instagram"
     },
     {
       "parameters": {
-        "content": "## TikTok",
+        "content": "## TikTok\n`continueOnFail` activé",
         "height": 200,
         "width": 480,
         "color": 7
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [780, -760],
+      "position": [960, -760],
       "id": "a1b2c3d4-1004-4000-8000-000000001004",
       "name": "Sticky Note - TikTok"
     },
     {
       "parameters": {
-        "content": "## Youtube",
+        "content": "## Youtube\n`continueOnFail` activé",
         "height": 200,
         "width": 480,
         "color": 3
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
-      "position": [780, -560],
+      "position": [960, -560],
       "id": "a1b2c3d4-1005-4000-8000-000000001005",
       "name": "Sticky Note - Youtube"
     }
@@ -627,6 +699,17 @@
       ]
     },
     "Save Descriptions": {
+      "main": [
+        [
+          {
+            "node": "Prepare Post Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Post Data": {
       "main": [
         [
           {

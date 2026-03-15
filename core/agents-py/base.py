@@ -1,7 +1,9 @@
+import logging
 import os
 from pathlib import Path
 
 from anthropic import AsyncAnthropic
+
 
 # Charge automatiquement ANTHROPIC_API_KEY depuis les .env connus
 # (priorité : agents/.env > racine workspace > multi-agent-system/.env)
@@ -25,6 +27,38 @@ def _load_env() -> None:
 
 
 _load_env()
+
+_logger = logging.getLogger("agents")
+
+
+def safe_read_path(file_arg: str) -> Path:
+    """Résout et valide un chemin de lecture — protection path traversal.
+
+    Lève ValueError si le chemin sort du répertoire de travail courant.
+    """
+    p = Path(file_arg).resolve()
+    cwd = Path.cwd().resolve()
+    if not str(p).startswith(str(cwd)):
+        raise ValueError(
+            f"Accès refusé : '{file_arg}' est hors du répertoire de travail ({cwd})"
+        )
+    if not p.exists():
+        raise FileNotFoundError(f"Fichier introuvable : {p}")
+    return p
+
+
+def safe_write_path(path_arg: str) -> Path:
+    """Résout et valide un chemin d'écriture — protection path traversal.
+
+    Lève ValueError si le chemin sort du répertoire de travail courant.
+    """
+    p = Path(path_arg).resolve()
+    cwd = Path.cwd().resolve()
+    if not str(p).startswith(str(cwd)):
+        raise ValueError(
+            f"Accès refusé : '{path_arg}' est hors du répertoire de travail ({cwd})"
+        )
+    return p
 
 
 class BaseContentAgent:

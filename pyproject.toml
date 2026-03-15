@@ -3,6 +3,15 @@ name = "schoolswp-automation"
 version = "1.0.0"
 description = "n8n automation framework for schoolsWP"
 requires-python = ">=3.11"
+dependencies = [
+  "anthropic>=0.49.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.15.0",
+]
 
 [tool.ruff]
 target-version = "py311"

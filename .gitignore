@@ -137,6 +137,11 @@ gdrive-*.json
 gcp-*.json
 google-*.json
 
+# n8n backup/deploy workflows (peuvent contenir des credentials hardcodés)
+*backup_deploy*.json
+*_deploy.json
+systems/n8n-backup/
+
 # Output / data locale — jamais commité
 data/reports/
 tools/scripts/legacy/scripts/output/

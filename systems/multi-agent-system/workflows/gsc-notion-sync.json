@@ -27,7 +27,7 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {"name": "Authorization",  "value": "Bearer VOTRE_NOTION_API_KEY"},
+            {"name": "Authorization",  "value": "={{ 'Bearer ' + $env.NOTION_API_KEY }}"},
             {"name": "Notion-Version", "value": "2022-06-28"},
             {"name": "Content-Type",   "value": "application/json"}
           ]
@@ -96,7 +96,7 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {"name": "Authorization",  "value": "Bearer VOTRE_NOTION_API_KEY"},
+            {"name": "Authorization",  "value": "={{ 'Bearer ' + $env.NOTION_API_KEY }}"},
             {"name": "Notion-Version", "value": "2022-06-28"},
             {"name": "Content-Type",   "value": "application/json"}
           ]

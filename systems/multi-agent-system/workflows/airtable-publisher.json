@@ -32,7 +32,7 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {"name": "Authorization", "value": "Bearer VOTRE_AIRTABLE_TOKEN"},
+            {"name": "Authorization", "value": "={{ 'Bearer ' + $env.AIRTABLE_TOKEN }}"},
             {"name": "Content-Type", "value": "application/json"}
           ]
         },

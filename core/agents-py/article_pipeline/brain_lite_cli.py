@@ -24,6 +24,7 @@ import argparse
 import asyncio
 import io
 import json
+import logging
 import re
 import sys
 import time
@@ -37,8 +38,8 @@ if sys.stderr.encoding and sys.stderr.encoding.lower() not in ("utf-8", "utf8"):
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from agents.base import BaseContentAgent  # noqa: E402
 from agents.article_pipeline.pipeline import ArticlePipeline  # noqa: E402
+from agents.base import BaseContentAgent  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Brain Lite Agent — Step 0 : stratégie éditoriale
@@ -96,7 +97,8 @@ class BrainLiteAgent(BaseContentAgent):
         raw = re.sub(r"```json\s*|\s*```", "", raw).strip()
         try:
             return json.loads(raw)
-        except Exception:
+        except Exception as e:
+            logging.warning("[brain-lite] JSON parse error: %s — retour aux valeurs par défaut", e)
             return {
                 "topic": keyword.title(),
                 "angle": "Vision système et rentabilité — concret, actionnable",

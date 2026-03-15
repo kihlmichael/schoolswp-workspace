@@ -14,9 +14,9 @@ KPI:
 
 ## Plan
 
-- [ ] Define intent, outline, and internal links
-- [ ] Draft IA-citable blocks (definition, steps, table, FAQ, TL;DR)
-- [ ] Add CTA + monetization block
+- [x] Define intent, outline, and internal links
+- [x] Draft IA-citable blocks (definition, steps, table, FAQ, TL;DR)
+- [x] Add CTA + monetization block
 - [ ] Verify intent match and internal links
 
 ---

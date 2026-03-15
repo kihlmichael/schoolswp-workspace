@@ -18,7 +18,7 @@
         "operation": "read",
         "documentId": {
           "__rl": true,
-          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "value": "YOUR_GOOGLE_SHEET_ID_HERE",
           "mode": "id"
         },
         "sheetName": {
@@ -114,7 +114,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://discord.com/api/webhooks/1476290432118947991/JJSsTey4jPvFpwhnFrHeqHK5t-RAmt7EHWc8n25mlNHZdb557lbDZbw-_6_z9tqkihKP",
+        "url": "YOUR_DISCORD_WEBHOOK_URL_HERE",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={{ JSON.stringify({\n  content: '🔑 **Token Thruuu expiré — Action requise**\\n\\n**Étapes :**\\n1. Va sur https://thruuu.com → Paramètres API\\n2. Clique **Changer la clé**\\n3. Copie le nouveau token\\n4. Dans n8n → Settings → Credentials → **Thruuu_Production_Bearer** → Value: `Bearer <token>`\\n5. Dans Google Sheets → **09_CONFIG** → mets à jour `value` et `expires_at`\\n\\n⏰ Lancé le ' + new Date().toLocaleString('fr-FR', {timeZone: 'Europe/Paris'}) + '\\nworkflow geo-architect **bloqué** jusqu\\'à mise à jour'\n}) }}"

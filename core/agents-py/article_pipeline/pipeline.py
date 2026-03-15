@@ -30,9 +30,9 @@ from dataclasses import dataclass, field
 
 from agents.article_pipeline.auditor import PipelineAuditorAgent
 from agents.article_pipeline.editor import PipelineEditorAgent
+from agents.article_pipeline.internal_link_strategist import InternalLinkStrategistAgent
 from agents.article_pipeline.llm_optimizer import LlmOptimizerAgent
 from agents.article_pipeline.meta_extractor import PipelineMetaExtractorAgent
-from agents.article_pipeline.internal_link_strategist import InternalLinkStrategistAgent
 from agents.article_pipeline.ner_analyzer import NerAnalyzerAgent
 from agents.article_pipeline.semantic_enricher import SemanticEnricherAgent
 from agents.article_pipeline.serp_comparator import SerpComparatorAgent
@@ -361,6 +361,7 @@ class ArticlePipeline:
 
 # Injection des méthodes de parse dans PipelineResult (évite import circulaire)
 import json  # noqa: E402
+import logging  # noqa: E402
 import re  # noqa: E402
 
 # Mapping mots-clés → attribut PipelineResult
@@ -507,7 +508,8 @@ def _parse_ner_data(self: PipelineResult) -> None:
             raw = raw.rsplit("```", 1)[0]
         data = json.loads(raw.strip())
         self.score_ner_coherence = str(data.get("coherence_score", ""))
-    except (json.JSONDecodeError, AttributeError, IndexError):
+    except (json.JSONDecodeError, AttributeError, IndexError) as e:
+        logging.warning("[pipeline] NER JSON parse error: %s — fallback regex", e)
         # Fallback regex si le JSON est mal formé
         match = re.search(r'"coherence_score"\s*:\s*"([^"]+)"', self.ner_json)
         if match:

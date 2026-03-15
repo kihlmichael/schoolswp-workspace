@@ -61,6 +61,7 @@ if hasattr(sys.stderr, "buffer") and sys.stderr.encoding.lower() not in ("utf-8"
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.content_factory.agent import ContentFactoryAgent, ContentFactoryResult
 
 _INTENTS = ["informationnelle", "comparative", "décisionnelle", "transactionnelle"]
@@ -251,7 +252,7 @@ async def main() -> None:
         if not keyword:
             parser.error("En mode --file, spécifie le mot-clé via --kw 'mot-clé'")
         intent = args.intent
-        article_content = Path(args.file).read_text(encoding="utf-8")
+        article_content = safe_read_path(args.file).read_text(encoding="utf-8")
         wc = len(article_content.split())
         mode_label = "Audit seul"
         print(f"\n[brain] Fichier chargé : {args.file} ({wc} mots)", flush=True)
@@ -316,7 +317,7 @@ async def main() -> None:
 
     # ── Sauvegarde ──────────────────────────────────────────────────
     if args.save_dir:
-        save_path = Path(args.save_dir)
+        save_path = safe_write_path(args.save_dir)
     else:
         save_path = _auto_save_dir(keyword, args.pillar)
 
