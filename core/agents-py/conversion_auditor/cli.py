@@ -228,7 +228,11 @@ async def main() -> None:
 
     # --- Chargement du contenu ---
     if args.file:
-        p = safe_read_path(args.file)
+        try:
+            p = safe_read_path(args.file)
+        except (ValueError, FileNotFoundError) as e:
+            print(f"[conversion-auditor] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         article = p.read_text(encoding="utf-8")
         word_count = len(article.split())
         print(f"\n[conversion-auditor] Fichier chargé : {p} ({word_count} mots)", flush=True)
