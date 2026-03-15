@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.plugin_comparator.agent import PluginComparatorAgent
 
 
@@ -79,7 +80,7 @@ async def main() -> None:
     agent = PluginComparatorAgent(model=args.model)
 
     plugins_display = " vs ".join(plugins)
-    print(f"\n[plugin-comparator] Comparaison en cours...", flush=True)
+    print("\n[plugin-comparator] Comparaison en cours...", flush=True)
     print(f"  Plugins : {plugins_display}", flush=True)
     if args.context:
         print(f"  Contexte : {args.context}", flush=True)
@@ -88,7 +89,11 @@ async def main() -> None:
     article = await agent.run(plugins=plugins, context=args.context)
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[plugin-comparator] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(article, encoding="utf-8")
         print(f"[plugin-comparator] Comparatif sauvegardé → {output_path}")

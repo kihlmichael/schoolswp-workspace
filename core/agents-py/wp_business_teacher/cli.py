@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.wp_business_teacher.agent import WpBusinessTeacherAgent
 
 _SUGGESTED_TOPICS = [
@@ -168,7 +169,7 @@ async def main() -> None:
 
     agent = WpBusinessTeacherAgent(model=args.model)
 
-    print(f"\n[wp-business-teacher] Préparation de la leçon...", flush=True)
+    print("\n[wp-business-teacher] Préparation de la leçon...", flush=True)
     print(f"  Sujet   : {args.topic}", flush=True)
     if args.project:
         print(f"  Projet  : {args.project}", flush=True)
@@ -185,7 +186,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[wp-business-teacher] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(lesson, encoding="utf-8")
         print(f"[wp-business-teacher] Leçon sauvegardée → {output_path}")

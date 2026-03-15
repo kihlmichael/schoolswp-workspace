@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.wp_profit_architect.agent import WpProfitArchitectAgent
 
 _SUGGESTED_TOPICS = [
@@ -171,7 +172,7 @@ async def main() -> None:
 
     agent = WpProfitArchitectAgent(model=args.model)
 
-    print(f"\n[wp-profit-architect] Analyse en cours...", flush=True)
+    print("\n[wp-profit-architect] Analyse en cours...", flush=True)
     print(f"  Sujet         : {args.topic}", flush=True)
     if args.business_model:
         print(f"  Modèle éco.   : {args.business_model}", flush=True)
@@ -190,7 +191,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[wp-profit-architect] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(lesson, encoding="utf-8")
         print(f"[wp-profit-architect] Leçon sauvegardée → {output_path}")

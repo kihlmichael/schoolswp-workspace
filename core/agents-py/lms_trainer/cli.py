@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.lms_trainer.agent import LmsTrainerAgent
 
 
@@ -78,7 +79,7 @@ async def main() -> None:
 
     agent = LmsTrainerAgent(model=args.model)
 
-    print(f"\n[lms-trainer] Génération en cours...", flush=True)
+    print("\n[lms-trainer] Génération en cours...", flush=True)
     print(f"  Sujet   : {args.subject}", flush=True)
     if args.plugins:
         print(f"  Plugins : {', '.join(args.plugins)}", flush=True)
@@ -93,7 +94,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[lms-trainer] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(article, encoding="utf-8")
         print(f"[lms-trainer] Tutoriel sauvegardé → {output_path}")

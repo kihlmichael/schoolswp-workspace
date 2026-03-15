@@ -46,6 +46,7 @@ if hasattr(sys.stderr, "buffer") and sys.stderr.encoding.lower() not in ("utf-8"
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.llm_seo.agent import CitationSignalResult, LlmSeoAgent
 
 _INTENTS = ["informationnelle", "comparative", "décisionnelle", "transactionnelle"]
@@ -224,9 +225,10 @@ async def main() -> None:
 
     # --- Chargement du contenu ---
     if args.file:
-        p = Path(args.file)
-        if not p.exists():
-            print(f"[llm-seo] Fichier introuvable : {p}", file=sys.stderr)
+        try:
+            p = safe_read_path(args.file)
+        except (ValueError, FileNotFoundError) as e:
+            print(f"[llm-seo] Erreur : {e}", file=sys.stderr)
             sys.exit(1)
         article = p.read_text(encoding="utf-8")
         word_count = len(article.split())
@@ -275,7 +277,11 @@ async def main() -> None:
 
     # --- Sauvegarde ---
     if args.save_dir:
-        save_path = Path(args.save_dir)
+        try:
+            save_path = safe_write_path(args.save_dir)
+        except ValueError as e:
+            print(f"[llm-seo] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         save_path.mkdir(parents=True, exist_ok=True)
 
         report_file = save_path / "citation-audit.md"
@@ -291,7 +297,11 @@ async def main() -> None:
         print(f"  {' | '.join(saved)}")
 
     elif args.output:
-        out = Path(args.output)
+        try:
+            out = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[llm-seo] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(result.report, encoding="utf-8")
         print(f"\n  Rapport sauvegardé → {out}")
