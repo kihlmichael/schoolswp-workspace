@@ -1,147 +1,93 @@
-# Claude Code local overrides
-CLAUDE.local.md
+# ============================================================
+# schoolsWP OS — .gitignore fortress
+# ============================================================
 
-# n8n Data
-.n8n/
-n8n_data/
-
-# Environment Variables
+# --- Secrets & credentials (NEVER commit) ---
 .env
-.env.local
-.env.*.local
-
-# Credentials & Secrets — FORTERESSE
-# OAuth / tokens Google
-*credentials*.json
-*secrets*.json
-token-*.json
-*token*.json
-*oauth*.json
-*service-account*.json
-*service_account*.json
-# Clés & certificats
-*.key
-*.pem
-*.p12
-*.pfx
-*.crt
-*.cer
-# API keys génériques
-*api_key*
-*api-key*
-*apikey*
-# AWS
-.aws/
-*aws_credentials*
-# SSH
-id_rsa
-id_ed25519
-*.ppk
-# Tout fichier qui ressemble à un secret
-*secret*
-*password*
-*passwd*
-*private_key*
-*privatekey*
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Dependencies
-node_modules/
-package-lock.json
-yarn.lock
-
-# OS Files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# IDE - track shared VS Code config, ignore local settings
-.vscode/*
-!.vscode/extensions.json
-!.vscode/tasks.json
-!.vscode/launch.json
-.idea/
-*.swp
-*.swo
-*.swn
-*.sublime-*
-
-# Backup Files
-*.bak
-*.tmp
-*.temp
-~*
-
-# Docker
-docker-compose.override.yml
-.docker/
-
-# Build Output
-dist/
-build/
-output/
-*.tgz
-
-# Cache
-.cache/
-.npm/
-.eslintcache
-
-# Test Coverage
-coverage/
-.nyc_output/
-
-# Claude Code local config
-.claude/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.egg-info/
-venv/
-.venv/
-*.venv
+.env.*
+!.env.example
+*.env
 
 # MCP config (contains API keys)
 .mcp.json
 
-# MCP local tools
-tools/
+# OAuth tokens & credentials
+*token*.json
+*credentials*.json
+*oauth*.json
+gtoken.json
+.gws-cli/
 
-# Python lock (uv)
-uv.lock
-
-# Database
-*.sqlite
-*.db
-artifacts/
-
-# Telegram bot config (contains bot token)
-telegram-bot/ccpa.config.json
-apps/telegram-bot/telegram-bot/ccpa.config.json
-telegram-bot/pnpm-lock.yaml
-
-# Config files pouvant contenir des secrets
+# API keys / certs
+*.key
+*.pem
+*.p12
+*.pfx
 ccpa.config.json
-*.config.local.json
 
-# Google Drive / GCP
-gdrive-*.json
-gcp-*.json
-google-*.json
+# --- n8n sensitive files ---
+systems/n8n-backup/
+*backup_deploy*.json
+n8n_workflows_backup_deploy.json
 
-# Output / data locale — jamais commité
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# --- Node.js ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- IDE / OS ---
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Temp / output ---
+*.tmp
+*.bak
+*.orig
+dist/
+
+# --- Data & reports (large files) ---
 data/reports/
-tools/scripts/legacy/scripts/output/
-tools/scripts/legacy/scripts/token-*.json
-tools/scripts/credentials-*.json
+data/exports/
 
-# Autres lock files
-pnpm-lock.yaml
+# --- Remotion ---
+apps/brand-reveal/node_modules/
+apps/brand-reveal/out/

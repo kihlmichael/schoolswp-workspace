@@ -20,6 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.schoolswp_brain.agent import SchoolswpBrainAgent
 
 _MODES = ["seo-writer", "plugin-comparator", "wp-architect", "automation-consultant"]
@@ -50,7 +51,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  python -m agents.schoolswp_brain.cli \\\n"
             '    --query "Mettre en place un tunnel de vente formation WordPress" \\\n'
             "    --mode automation-consultant \\\n"
-            '    --context "Tutor LMS + WooCommerce + FluentCRM, budget 0€/mois d\\'outils SaaS" \\\n'
+            "    --context \"Tutor LMS + WooCommerce + FluentCRM, budget 0\u20ac/mois d'outils SaaS\" \\\n"
             "    --output content/articles/tunnel-formation-wordpress.md"
         ),
     )
@@ -90,7 +91,7 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Contexte supplémentaire : audience, contraintes, plugins impliqués, "
             "concurrents à éviter, budget, etc. "
-            "(ex: 'freelance WordPress 3 ans d\\'expérience, budget hébergement < 30€/mois')"
+            "(ex: 'freelance WordPress 3 ans d\'expérience, budget hébergement < 30€/mois')"
         ),
     )
     parser.add_argument(
@@ -124,6 +125,10 @@ async def main() -> None:
         print(f"  Contexte : {args.context}", flush=True)
     print("", flush=True)
 
+    # Validation --context (longueur max 500 chars)
+    if args.context and len(args.context) > 500:
+        parser.error("--context ne peut pas dépasser 500 caractères")
+
     result = await agent.run(
         query=args.query,
         mode=args.mode,
@@ -132,7 +137,7 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        output_path = safe_write_path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(result, encoding="utf-8")
         print(f"[schoolswp-brain] Contenu sauvegardé → {output_path}")

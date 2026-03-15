@@ -1,86 +1,57 @@
 {
-  "name": "[InDev] Webhook > Notion: KPI Tracker schoolsWP",
+  "name": "[Prod] Webhook > Notion: KPI Tracker",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "notion-kpi",
+        "path": "notion-kpi-tracker",
+        "authentication": "headerAuth",
         "options": {}
       },
-      "id": "n01",
-      "name": "Webhook - Receive Article",
+      "id": "wh-001",
+      "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [200, 300],
+      "typeVersion": 2,
+      "position": [240, 300],
       "webhookId": "notion-kpi-tracker"
     },
     {
       "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const data = $input.first().json.body || $input.first().json;\nconst keyword = data.keyword || 'Sans titre';\nconst sujet = data.sujet || keyword;\nconst intent = data.intent || 'informationnelle';\nconst pilier = data.pilier || 'SEO';\nconst objectif = data.objectif || '—';\nconst audience = data.audience || '—';\nconst opportunite = data.opportunite || '—';\nconst ps = data.publish_score || 0;\nconst emoji = data.emoji || '⚪';\nconst priority = data.priority || 'C';\nconst diag = data.diag || '—';\nconst weakest = data.weakest || '—';\nconst scoreSeo = (data.audit_seo && data.audit_seo.score_seo) || 0;\nconst scoreConv = (data.audit_conv && data.audit_conv.score_conversion) || 0;\nconst scoreAuth = (data.audit_auth && data.audit_auth.score_autorite) || 0;\nconst docId = data.documentId || '';\nconst docUrl = docId ? `https://docs.google.com/document/d/${docId}/edit` : null;\nconst generatedAt = data.generated_at || new Date().toISOString().split('T')[0];\nconst clusterRole = (data.cluster && data.cluster.role) || 'Satellite';\nconst satellites = ((data.cluster && data.cluster.satellites) || []).map(s => s.titre).join(', ') || '—';\nconst maillage = ((data.cluster && data.cluster.maillage) || []).join(' | ') || '—';\nconst psColor = ps >= 85 ? 'green_background' : (ps >= 75 ? 'yellow_background' : 'red_background');\nconst psIcon = ps >= 85 ? '✅' : (ps >= 75 ? '🟡' : '🔴');\nconst properties = {\n  'Sujet': { title: [{ text: { content: sujet } }] },\n  'Mot-clé': { rich_text: [{ text: { content: keyword } }] },\n  'Intent': { select: { name: intent } },\n  'Type': { select: { name: clusterRole } },\n  'Pilier': { select: { name: pilier } },\n  'Objectif': { rich_text: [{ text: { content: objectif } }] },\n  'Score SEO': { number: scoreSeo },\n  'Score Conversion': { number: scoreConv },\n  'Score Autorité': { number: scoreAuth },\n  'Publish Score': { number: ps },\n  'Priorité': { select: { name: priority } },\n  'Statut': { select: { name: 'Généré ✓' } },\n  'Date création': { date: { start: generatedAt } }\n};\nif (docUrl) properties['Lien Google Doc'] = { url: docUrl };\nconst rt = (content) => [{ type: 'text', text: { content } }];\nconst children = [\n  {\n    type: 'callout',\n    callout: {\n      rich_text: rt(`Publish Score : ${ps}/100 ${emoji}  |  ${diag}  |  Priorité : ${priority}`),\n      icon: { emoji: psIcon },\n      color: psColor\n    }\n  },\n  { type: 'divider', divider: {} },\n  { type: 'heading_2', heading_2: { rich_text: rt('1️⃣ Stratégie') } },\n  {\n    type: 'paragraph',\n    paragraph: {\n      rich_text: rt(`Mot-clé : ${keyword}\\nIntent : ${intent}\\nPublic : ${audience}\\nObjectif : ${objectif}\\nType CTA : ${opportunite}`)\n    }\n  },\n  { type: 'divider', divider: {} },\n  { type: 'heading_2', heading_2: { rich_text: rt('4️⃣ Scores détaillés') } },\n  {\n    type: 'paragraph',\n    paragraph: {\n      rich_text: rt(`Score SEO        : ${scoreSeo}/100\\nScore Conversion : ${scoreConv}/100\\nScore Autorité   : ${scoreAuth}/100\\n\\nPublish Score    : ${ps}/100 ${emoji}\\nBloc faible      : ${weakest}`)\n    }\n  },\n  { type: 'divider', divider: {} },\n  { type: 'heading_2', heading_2: { rich_text: rt('5️⃣ Cluster sémantique') } },\n  {\n    type: 'paragraph',\n    paragraph: {\n      rich_text: rt(`Position   : ${clusterRole}\\nSatellites : ${satellites}\\nMaillage   : ${maillage}`)\n    }\n  }\n];\nif (docUrl) {\n  children.push({ type: 'divider', divider: {} });\n  children.push({\n    type: 'bookmark',\n    bookmark: { url: docUrl, caption: rt('Ouvrir dans Google Docs') }\n  });\n}\nconst notionPayload = {\n  parent: { database_id: 'VOTRE_NOTION_DATABASE_ID' },\n  properties,\n  children\n};\nreturn [{ json: { notionPayload, keyword, ps, priority } }];"
+        "jsCode": "const secret = $input.first().headers['x-webhook-secret'];\nif (secret !== $vars.WEBHOOK_SECRET) {\n  throw new Error('Unauthorized');\n}\nreturn $input.all();"
       },
-      "id": "n02",
-      "name": "Code - Build Notion Payload",
+      "id": "code-001",
+      "name": "Validate Secret",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [420, 300]
+      "position": [460, 300]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.notion.com/v1/pages",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {"name": "Authorization", "value": "Bearer VOTRE_NOTION_API_KEY"},
-            {"name": "Notion-Version", "value": "2022-06-28"},
-            {"name": "Content-Type", "value": "application/json"}
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "={{$vars.NOTION_ARTICLES_DB_ID}}",
+        "title": "={{$json.body.title}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "Keyword", "type": "richText", "textContent": "={{$json.body.keyword}}" },
+            { "key": "Publish Score", "type": "number", "numberValue": "={{$json.body.publish_score}}" },
+            { "key": "SEO Score", "type": "number", "numberValue": "={{$json.body.seo_score}}" },
+            { "key": "LLM Score", "type": "number", "numberValue": "={{$json.body.llm_score}}" },
+            { "key": "Status", "type": "select", "selectValue": "={{$json.body.status}}" },
+            { "key": "Doc URL", "type": "url", "urlValue": "={{$json.body.doc_url}}" }
           ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify($json.notionPayload) }}",
-        "options": {
-          "timeout": 30000,
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
         }
       },
-      "id": "n03",
-      "name": "HTTP - Notion Create Page",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [640, 300]
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const notionPage = $input.first().json;\nconst prev = $('Code - Build Notion Payload').first().json;\nconst pageId = notionPage.id || '';\nconst pageUrl = notionPage.url || `https://www.notion.so/${pageId.replace(/-/g, '')}`;\nreturn [{ json: {\n  success: true,\n  notion_page_id: pageId,\n  notion_page_url: pageUrl,\n  keyword: prev.keyword,\n  publish_score: prev.ps,\n  priority: prev.priority\n} }];"
-      },
-      "id": "n04",
-      "name": "Code - Return URL",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [860, 300]
+      "id": "notion-001",
+      "name": "Create Article KPI",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [680, 300]
     }
   ],
   "connections": {
-    "Webhook - Receive Article": {
-      "main": [[{"node": "Code - Build Notion Payload", "type": "main", "index": 0}]]
-    },
-    "Code - Build Notion Payload": {
-      "main": [[{"node": "HTTP - Notion Create Page", "type": "main", "index": 0}]]
-    },
-    "HTTP - Notion Create Page": {
-      "main": [[{"node": "Code - Return URL", "type": "main", "index": 0}]]
-    }
+    "Webhook": { "main": [[{ "node": "Validate Secret", "type": "main", "index": 0 }]] },
+    "Validate Secret": { "main": [[{ "node": "Create Article KPI", "type": "main", "index": 0 }]] }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "staticData": null
+  "settings": { "executionOrder": "v1" }
 }

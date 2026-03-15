@@ -1,179 +1,95 @@
 {
-  "name": "[InDev] Webhook > OpenAI > GSheets > Discord: Auto-Scorer schoolsWP",
+  "name": "[Prod] Webhook > GSheets: Article Auto-Scorer",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "score-article",
+        "path": "article-auto-scorer",
+        "authentication": "headerAuth",
         "options": {}
       },
-      "id": "n01",
-      "name": "Webhook - Score Article",
+      "id": "wh-001",
+      "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [200, 300],
-      "webhookId": "auto-scorer"
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "article-auto-scorer"
     },
     {
       "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const data = $input.first().json.body || $input.first().json;\nconst keyword = data.keyword || '';\nconst content = data.content || data.article || '';\nconst notionPageId = data.notion_page_id || '';\nconst gsheetKeyword = data.keyword || '';\n\nif (!content) throw new Error('Champ \"content\" manquant dans le payload');\n\nconst SYSTEM_SCORING = `Tu es schoolsWP Brain en mode Audit Scoring strict.\n\nContexte : schoolsWP (schoolswp.com) — WordPress pédagogique francophone.\nPublic : freelances et indépendants WordPress, débutants à intermédiaires.\nTon attendu : direct, tutoiement, pédagogique, sans jargon.\nMots interdits à pénaliser : disruptif, game changer, scalable, révolutionnaire, incroyable, en un clic, sans effort.\n\nAnalyse l'article et retourne UNIQUEMENT un JSON valide — aucun texte avant ni après.\n\nCRITÈRES :\n\nSEO (0-100) : structuration H1/H2/H3, mot-clé dans titre+intro+H2, champs sémantiques, FAQ présente, intro répondant immédiatement à l'intention.\n\nLLM (0-100) : bloc Réponse rapide ou définition en 2-3 phrases, format Q/R explicite, entités nommées claires (plugins, versions, chiffres), phrases courtes et factuelles.\n\nConversion (0-100) : 1 CTA principal ciblé, lien offre/formation/affilié, argumentation ROI, tunnel logique (problème→solution→bénéfice→action), objection traitée.\n\nAutorité (0-100) : expérience terrain (dans mon cas / j'ai testé), données chiffrées ou sources, positionnement expert non générique, comparaisons objectives, zéro promesse non prouvée.\n\nRETOUR JSON strict :\n{\n  \"keyword\": \"mot-clé détecté\",\n  \"seo\":        { \"score\": 0, \"justification\": \"max 200 chars\", \"improvements\": [\"\",\"\"] },\n  \"llm\":        { \"score\": 0, \"justification\": \"max 200 chars\", \"improvements\": [\"\",\"\"] },\n  \"conversion\": { \"score\": 0, \"justification\": \"max 200 chars\", \"improvements\": [\"\",\"\"] },\n  \"autorite\":   { \"score\": 0, \"justification\": \"max 200 chars\", \"improvements\": [\"\",\"\"] },\n  \"score_global\": 0,\n  \"diagnostic\": \"max 300 chars\",\n  \"priority\": \"A|B|C\"\n}`;\n\nconst userMsg = keyword ? `Mot-clé cible : \"${keyword}\"\\n\\n---\\n\\n${content}` : content;\n\nconst openaiPayload = {\n  model: 'gpt-4o',\n  input: [\n    { role: 'system', content: SYSTEM_SCORING },\n    { role: 'user',   content: userMsg }\n  ],\n  temperature: 0.2,\n  text: { format: { type: 'json_object' } }\n};\n\nreturn [{ json: { openaiPayload, keyword, notionPageId, gsheetKeyword, contentLength: content.length } }];"
+        "jsCode": "const secret = $input.first().headers['x-webhook-secret'];\nif (secret !== $vars.WEBHOOK_SECRET) {\n  throw new Error('Unauthorized');\n}\nreturn $input.all();"
       },
-      "id": "n02",
-      "name": "Code - Build Scoring Payload",
+      "id": "code-001",
+      "name": "Validate Secret",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [420, 300]
+      "position": [460, 300]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.openai.com/v1/responses",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {"name": "Authorization", "value": "Bearer VOTRE_OPENAI_API_KEY"},
-            {"name": "Content-Type",  "value": "application/json"}
+        "model": "gpt-4o-mini",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "Tu es un auditeur SEO expert. Score cet article /100 sur : Structure (25pts), Intent (25pts), Pédagogie (25pts), Business (25pts). Réponds uniquement avec un JSON : {\"score\": 82, \"breakdown\": {...}, \"top3_issues\": [...]}"
+            },
+            {
+              "role": "user",
+              "content": "={{$json.body.content}}"
+            }
           ]
         },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify($json.openaiPayload) }}",
-        "options": {
-          "timeout": 60000,
-          "response": {
-            "response": {
-              "responseFormat": "json"
-            }
-          }
-        }
+        "options": { "maxTokens": 1000 }
       },
-      "id": "n03",
-      "name": "HTTP - OpenAI Responses API",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [640, 300]
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const resp = $input.first().json;\nconst prev = $('Code - Build Scoring Payload').first().json;\n\n// Extraire le texte JSON de la Responses API\nconst raw = resp.output_text\n  || (resp.output && resp.output[0] && resp.output[0].content && resp.output[0].content[0] && resp.output[0].content[0].text)\n  || '';\n\nif (!raw) throw new Error('Réponse OpenAI vide : ' + JSON.stringify(resp).slice(0, 300));\n\nlet scores;\ntry {\n  scores = JSON.parse(raw);\n} catch {\n  const match = raw.match(/\\{[\\s\\S]*\\}/);\n  if (!match) throw new Error('JSON non parseable : ' + raw.slice(0, 200));\n  scores = JSON.parse(match[0]);\n}\n\n// Validation et recalcul Score Global\nconst clamp  = (v) => Math.min(100, Math.max(0, Math.round(parseFloat(v) || 0)));\nconst scoreSeo  = clamp(scores.seo?.score);\nconst scoreLlm  = clamp(scores.llm?.score);\nconst scoreConv = clamp(scores.conversion?.score);\nconst scoreAuth = clamp(scores.autorite?.score);\nconst scoreGlobal = Math.round((scoreSeo * 0.25) + (scoreLlm * 0.15) + (scoreConv * 0.30) + (scoreAuth * 0.30));\n\nconst action = scoreGlobal >= 95 ? '✅ Actif Premium'\n  : scoreGlobal >= 85 ? '🟢 Actif Performant'\n  : scoreGlobal >= 70 ? '🟡 Optimiser'\n  : '🔴 Révision Stratégique';\n\nconst priority = scoreGlobal >= 85 ? 'A' : scoreGlobal >= 70 ? 'B' : 'C';\n\n// Préparer top améliorations (les 2 dimensions les plus faibles)\nconst dims = [\n  { key: 'SEO',        score: scoreSeo,  imps: scores.seo?.improvements  || [] },\n  { key: 'LLM',        score: scoreLlm,  imps: scores.llm?.improvements  || [] },\n  { key: 'Conversion', score: scoreConv, imps: scores.conversion?.improvements || [] },\n  { key: 'Autorité',   score: scoreAuth, imps: scores.autorite?.improvements || [] }\n].sort((a, b) => a.score - b.score);\n\nconst topImprovements = dims\n  .filter(d => d.score < 85)\n  .slice(0, 2)\n  .flatMap(d => d.imps.slice(0, 1).map(i => `[${d.key}] ${i}`))\n  .join(' | ');\n\nconst today = new Date().toISOString().split('T')[0];\n\nreturn [{ json: {\n  keyword:          prev.keyword || scores.keyword || '',\n  notionPageId:     prev.notionPageId,\n  'Score SEO':      scoreSeo,\n  'Score LLM':      scoreLlm,\n  'Score Conversion': scoreConv,\n  'Score Autorité': scoreAuth,\n  'Score Global':   scoreGlobal,\n  'Action':         action,\n  'Priority':       priority,\n  'Diagnostic':     scores.diagnostic || '',\n  topImprovements,\n  'Dernière MAJ':   today,\n  dims,\n  needsAction:      scoreGlobal < 85,\n  rawScores:        scores\n} }];"
-      },
-      "id": "n04",
-      "name": "Code - Parse & Compute Scores",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [860, 300]
+      "id": "openai-001",
+      "name": "Score Article",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [680, 300]
     },
     {
       "parameters": {
         "operation": "appendOrUpdate",
-        "documentId": {"__rl": true, "value": "VOTRE_GOOGLE_SHEET_ID", "mode": "id"},
-        "sheetName":  {"__rl": true, "value": "DASHBOARD", "mode": "name"},
+        "documentId": { "__rl": true, "value": "={{$vars.GSHEET_SCORES_ID}}", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "scores", "mode": "name" },
         "columns": {
-          "mappingMode": "autoMapInputData",
-          "value": {},
-          "matchingColumns": ["keyword"],
-          "schema": []
+          "mappingMode": "defineBelow",
+          "value": {
+            "keyword": "={{$('Webhook').item.json.body.keyword}}",
+            "score": "={{JSON.parse($json.message.content).score}}",
+            "scored_at": "={{new Date().toISOString()}}"
+          },
+          "matchingColumns": ["keyword"]
         },
         "options": {}
       },
-      "id": "n05",
-      "name": "GSheets - Update DASHBOARD",
+      "id": "gsheet-001",
+      "name": "Save Score",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [1080, 300],
-      "credentials": {"googleSheetsOAuth2Api": {"id": "", "name": "Google Sheets"}}
+      "position": [900, 300]
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
-          "conditions": [
-            {
-              "id": "score-check",
-              "leftValue": "={{ $json.needsAction }}",
-              "rightValue": true,
-              "operator": {"type": "boolean", "operation": "equal"}
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "n06",
-      "name": "IF - Score Global < 85 ?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [1300, 300]
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const s = $input.first().json;\nconst sg = s['Score Global'];\nconst color = sg >= 70 ? 16750848 : 16711680;\n\nconst fields = [\n  { name: 'Score Global', value: `**${sg}/100** — ${s.Action}`, inline: false },\n  { name: 'SEO',          value: `${s['Score SEO']}/100`,        inline: true },\n  { name: 'LLM',          value: `${s['Score LLM']}/100`,        inline: true },\n  { name: 'Conversion',   value: `${s['Score Conversion']}/100`, inline: true },\n  { name: 'Autorité',     value: `${s['Score Autorité']}/100`,   inline: true }\n];\n\nif (s.Diagnostic) fields.push({ name: 'Diagnostic', value: s.Diagnostic, inline: false });\nif (s.topImprovements) fields.push({ name: 'Top améliorations', value: s.topImprovements, inline: false });\n\nconst discordPayload = {\n  embeds: [{\n    title:       `${s.Action} — ${s.keyword || 'Article'}`,\n    description: `Score Global : **${sg}/100** · Priorité **${s.Priority}**`,\n    color,\n    fields,\n    footer:      { text: `schoolsWP Auto-Scorer · ${s['Dernière MAJ']}` }\n  }]\n};\n\nreturn [{ json: { discordPayload } }];"
-      },
-      "id": "n07",
-      "name": "Code - Build Discord Alert",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [1520, 180]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "VOTRE_DISCORD_WEBHOOK_URL",
+        "url": "={{$vars.DISCORD_WEBHOOK_SEO}}",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify($json.discordPayload) }}",
-        "options": {"timeout": 10000}
+        "jsonBody": "={\"content\": \"**Score article** `\" + $('Webhook').item.json.body.keyword + \"`\\nScore : **\" + JSON.parse($('Score Article').item.json.message.content).score + \"/100**\"}",
+        "options": {}
       },
-      "id": "n08",
-      "name": "HTTP - Discord Alert",
+      "id": "discord-001",
+      "name": "Notify Discord",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1740, 180]
-    },
-    {
-      "parameters": {
-        "mode": "runOnceForAllItems",
-        "jsCode": "const s = $input.first().json;\nreturn [{ json: {\n  status:       'premium',\n  keyword:      s.keyword,\n  score_global: s['Score Global'],\n  action:       s.Action\n} }];"
-      },
-      "id": "n09",
-      "name": "Code - Log Premium",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [1520, 420]
+      "position": [1120, 300]
     }
   ],
   "connections": {
-    "Webhook - Score Article": {
-      "main": [[{"node": "Code - Build Scoring Payload", "type": "main", "index": 0}]]
-    },
-    "Code - Build Scoring Payload": {
-      "main": [[{"node": "HTTP - OpenAI Responses API", "type": "main", "index": 0}]]
-    },
-    "HTTP - OpenAI Responses API": {
-      "main": [[{"node": "Code - Parse & Compute Scores", "type": "main", "index": 0}]]
-    },
-    "Code - Parse & Compute Scores": {
-      "main": [[{"node": "GSheets - Update DASHBOARD", "type": "main", "index": 0}]]
-    },
-    "GSheets - Update DASHBOARD": {
-      "main": [[{"node": "IF - Score Global < 85 ?", "type": "main", "index": 0}]]
-    },
-    "IF - Score Global < 85 ?": {
-      "main": [
-        [{"node": "Code - Build Discord Alert", "type": "main", "index": 0}],
-        [{"node": "Code - Log Premium",         "type": "main", "index": 0}]
-      ]
-    },
-    "Code - Build Discord Alert": {
-      "main": [[{"node": "HTTP - Discord Alert", "type": "main", "index": 0}]]
-    }
+    "Webhook": { "main": [[{ "node": "Validate Secret", "type": "main", "index": 0 }]] },
+    "Validate Secret": { "main": [[{ "node": "Score Article", "type": "main", "index": 0 }]] },
+    "Score Article": { "main": [[{ "node": "Save Score", "type": "main", "index": 0 }]] },
+    "Save Score": { "main": [[{ "node": "Notify Discord", "type": "main", "index": 0 }]] }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "staticData": null
+  "settings": { "executionOrder": "v1" }
 }
