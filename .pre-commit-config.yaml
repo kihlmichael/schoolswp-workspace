@@ -1,0 +1,29 @@
+# schoolsWP — Pre-commit hooks (reproductibles)
+# Installation : pip install pre-commit && pre-commit install
+# Mise à jour   : pre-commit autoupdate
+
+repos:
+  - repo: local
+    hooks:
+      - id: secrets-scan
+        name: Scan secrets (patterns schoolsWP)
+        language: script
+        entry: .git/hooks/pre-commit
+        pass_filenames: false
+        stages: [pre-commit]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.0
+    hooks:
+      - id: ruff
+        name: Ruff lint
+        args: [--fix]
+      - id: ruff-format
+        name: Ruff format
+
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.7.3
+    hooks:
+      - id: pip-audit
+        name: pip-audit (vulnérabilités dépendances)
+        args: [--skip-editable, -q]

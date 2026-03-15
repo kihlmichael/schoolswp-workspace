@@ -1,64 +1,80 @@
-"""Base class for all schoolsWP content agents."""
-from __future__ import annotations
-
+import logging
 import os
 from pathlib import Path
-from typing import Optional
 
-import anthropic
-from dotenv import load_dotenv
-
-# Auto-load .env — search order: agents/.env → .env → multi-agent-system/.env
-for _env_candidate in [
-    Path(__file__).parent.parent / "agents" / ".env",
-    Path(__file__).parent.parent / ".env",
-    Path(__file__).parent.parent / "multi-agent-system" / ".env",
-]:
-    if _env_candidate.exists():
-        load_dotenv(_env_candidate)
-        break
-
-_CWD = Path.cwd().resolve()
-_DEFAULT_MODEL = os.environ.get("MODEL_WRITER", "claude-sonnet-4-6")
+from anthropic import AsyncAnthropic
 
 
-def safe_read_path(path: str | Path) -> Path:
-    """Resolve and validate a read path — must stay within CWD."""
-    resolved = Path(path).resolve()
-    if not str(resolved).startswith(str(_CWD)):
-        raise ValueError(f"Path traversal detected: {path!r} resolves outside CWD ({_CWD})")
-    return resolved
+# Charge automatiquement ANTHROPIC_API_KEY depuis les .env connus
+# (priorité : agents/.env > racine workspace > multi-agent-system/.env)
+def _load_env() -> None:
+    if os.getenv("ANTHROPIC_API_KEY"):
+        return  # déjà défini — pas besoin de charger
+    try:
+        from dotenv import load_dotenv  # type: ignore[import-untyped]
+        _root = Path(__file__).parent.parent
+        for candidate in [
+            _root / "agents" / ".env",
+            _root / ".env",
+            _root / "multi-agent-system" / ".env",
+        ]:
+            if candidate.exists():
+                load_dotenv(candidate, override=False)
+                if os.getenv("ANTHROPIC_API_KEY"):
+                    break
+    except ImportError:
+        pass  # python-dotenv absent — l'utilisateur doit exporter la variable manuellement
 
 
-def safe_write_path(path: str | Path) -> Path:
-    """Resolve and validate a write path — must stay within CWD."""
-    resolved = Path(path).resolve()
-    if not str(resolved).startswith(str(_CWD)):
-        raise ValueError(f"Path traversal detected: {path!r} resolves outside CWD ({_CWD})")
-    return resolved
+_load_env()
+
+_logger = logging.getLogger("agents")
+
+
+def safe_read_path(file_arg: str) -> Path:
+    """Résout et valide un chemin de lecture — protection path traversal.
+
+    Lève ValueError si le chemin sort du répertoire de travail courant.
+    """
+    p = Path(file_arg).resolve()
+    cwd = Path.cwd().resolve()
+    if not p.is_relative_to(cwd):
+        raise ValueError(
+            f"Accès refusé : '{file_arg}' est hors du répertoire de travail ({cwd})"
+        )
+    if not p.exists():
+        raise FileNotFoundError(f"Fichier introuvable : {p}")
+    return p
+
+
+def safe_write_path(path_arg: str) -> Path:
+    """Résout et valide un chemin d'écriture — protection path traversal.
+
+    Lève ValueError si le chemin sort du répertoire de travail courant.
+    """
+    p = Path(path_arg).resolve()
+    cwd = Path.cwd().resolve()
+    if not p.is_relative_to(cwd):
+        raise ValueError(
+            f"Accès refusé : '{path_arg}' est hors du répertoire de travail ({cwd})"
+        )
+    return p
 
 
 class BaseContentAgent:
-    """Base class for all schoolsWP content agents.
+    """
+    Agent de base pour la génération de contenu schoolsWP.
 
-    Provides:
-    - Anthropic client initialization with auto-loaded API key
-    - Default model resolution (MODEL_WRITER env var → claude-sonnet-4-6)
-    - Async run() interface returning markdown str
+    Contrairement aux agents techniques du multi-agent-system (qui analysent du code
+    et retournent du JSON), ces agents produisent du contenu éditorial (markdown, etc.).
     """
 
-    name: str = "base-agent"
-    system_prompt: str = "Tu es un assistant schoolsWP."
+    name: str = "base"
+    system_prompt: str = ""
 
-    def __init__(self, model: Optional[str] = None) -> None:
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        if not api_key:
-            raise ValueError(
-                "ANTHROPIC_API_KEY not found. Add it to agents/.env or .env"
-            )
-        self._client = anthropic.AsyncAnthropic(api_key=api_key)
-        self.model = model or _DEFAULT_MODEL
+    def __init__(self, model: str | None = None) -> None:
+        self.model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
+        self._client = AsyncAnthropic()
 
     async def run(self, **kwargs) -> str:
-        """Override in subclasses. Must return a markdown string."""
-        raise NotImplementedError
+        raise NotImplementedError(f"L'agent '{self.name}' doit implémenter run()")
