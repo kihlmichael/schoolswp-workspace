@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from agents.automation_consultant.agent import AutomationConsultantAgent
+from agents.base import safe_write_path
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -81,7 +82,7 @@ async def main() -> None:
 
     agent = AutomationConsultantAgent(model=args.model)
 
-    print(f"\n[automation-consultant] Architecture en cours...", flush=True)
+    print("\n[automation-consultant] Architecture en cours...", flush=True)
     print(f"  Objectif    : {args.objective}", flush=True)
     if args.tools:
         print(f"  Stack       : {', '.join(args.tools)}", flush=True)
@@ -96,7 +97,7 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        output_path = safe_write_path(args.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(plan, encoding="utf-8")
         print(f"[automation-consultant] Plan sauvegardé → {output_path}")

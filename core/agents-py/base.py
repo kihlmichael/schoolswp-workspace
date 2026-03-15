@@ -38,7 +38,7 @@ def safe_read_path(file_arg: str) -> Path:
     """
     p = Path(file_arg).resolve()
     cwd = Path.cwd().resolve()
-    if not str(p).startswith(str(cwd)):
+    if not p.is_relative_to(cwd):
         raise ValueError(
             f"Accès refusé : '{file_arg}' est hors du répertoire de travail ({cwd})"
         )
@@ -54,7 +54,7 @@ def safe_write_path(path_arg: str) -> Path:
     """
     p = Path(path_arg).resolve()
     cwd = Path.cwd().resolve()
-    if not str(p).startswith(str(cwd)):
+    if not p.is_relative_to(cwd):
         raise ValueError(
             f"Accès refusé : '{path_arg}' est hors du répertoire de travail ({cwd})"
         )

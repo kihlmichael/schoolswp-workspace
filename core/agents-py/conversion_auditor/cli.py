@@ -47,7 +47,8 @@ if hasattr(sys.stderr, "buffer") and sys.stderr.encoding.lower() not in ("utf-8"
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from agents.conversion_auditor.agent import ConversionAuditResult, ConversionAuditorAgent
+from agents.base import safe_read_path, safe_write_path
+from agents.conversion_auditor.agent import ConversionAuditorAgent, ConversionAuditResult
 
 _INTENTS = ["informationnelle", "comparative", "décisionnelle", "transactionnelle"]
 _OBJECTIVES = ["email", "affiliation", "formation", "offre"]
@@ -227,10 +228,7 @@ async def main() -> None:
 
     # --- Chargement du contenu ---
     if args.file:
-        p = Path(args.file)
-        if not p.exists():
-            print(f"[conversion-auditor] Fichier introuvable : {p}", file=sys.stderr)
-            sys.exit(1)
+        p = safe_read_path(args.file)
         article = p.read_text(encoding="utf-8")
         word_count = len(article.split())
         print(f"\n[conversion-auditor] Fichier chargé : {p} ({word_count} mots)", flush=True)
@@ -288,7 +286,7 @@ async def main() -> None:
 
     # --- Sauvegarde ---
     if args.save_dir:
-        save_path = Path(args.save_dir)
+        save_path = safe_write_path(args.save_dir)
         save_path.mkdir(parents=True, exist_ok=True)
 
         report_file = save_path / "conversion-audit.md"
@@ -304,7 +302,7 @@ async def main() -> None:
         print(f"  {' | '.join(saved)}")
 
     elif args.output:
-        out = Path(args.output)
+        out = safe_write_path(args.output)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(result.report, encoding="utf-8")
         print(f"\n  Rapport sauvegardé → {out}")
