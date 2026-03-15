@@ -1,8 +1,49 @@
 import logging
+import logging.handlers
 import os
 from pathlib import Path
 
 from anthropic import AsyncAnthropic
+
+
+def _setup_logging() -> None:
+    """Configure le logging centralisé avec rotation automatique.
+
+    - Fichier : logs/agents.log (10 MB max, 5 fichiers conservés)
+    - Console : WARNING et plus seulement
+    - Format  : timestamp | niveau | logger | message
+    """
+    log_dir = Path(__file__).parent.parent / "logs"
+    log_dir.mkdir(exist_ok=True)
+
+    root = logging.getLogger("agents")
+    if root.handlers:
+        return  # déjà configuré (import multiple)
+
+    root.setLevel(logging.DEBUG)
+
+    fmt = logging.Formatter(
+        "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+        datefmt="%Y-%m-%dT%H:%M:%S",
+    )
+
+    # Handler fichier rotatif — 10 MB × 5 = 50 MB max
+    fh = logging.handlers.RotatingFileHandler(
+        log_dir / "agents.log",
+        maxBytes=10 * 1024 * 1024,
+        backupCount=5,
+        encoding="utf-8",
+    )
+    fh.setLevel(logging.DEBUG)
+    fh.setFormatter(fmt)
+
+    # Handler console — WARNING+ uniquement (ne pollue pas le stdout des CLIs)
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.WARNING)
+    ch.setFormatter(fmt)
+
+    root.addHandler(fh)
+    root.addHandler(ch)
 
 
 # Charge automatiquement ANTHROPIC_API_KEY depuis les .env connus
@@ -27,6 +68,7 @@ def _load_env() -> None:
 
 
 _load_env()
+_setup_logging()
 
 _logger = logging.getLogger("agents")
 

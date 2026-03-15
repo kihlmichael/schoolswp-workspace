@@ -220,7 +220,11 @@ async def main() -> None:
 
     # Sauvegarde
     if args.save_dir:
-        save_path = safe_write_path(args.save_dir)
+        try:
+            save_path = safe_write_path(args.save_dir)
+        except ValueError as e:
+            print(f"[article-pipeline] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         save_path.mkdir(parents=True, exist_ok=True)
         (save_path / "v1.md").write_text(result.v1, encoding="utf-8")
         (save_path / "audit.md").write_text(result.audit, encoding="utf-8")

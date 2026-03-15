@@ -1,8 +1,12 @@
 {
+  "name": "schoolswp-os",
+  "version": "1.0.0",
+  "description": "schoolsWP OS — automation stack (n8n, Python agents, WordPress)",
+  "private": true,
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.2.62",
-    "@mendable/firecrawl-js": "^4.15.0",
-    "@pinecone-database/pinecone": "^6.1.4",
-    "@wordpress/data": "^10.33.0"
+    "@anthropic-ai/claude-agent-sdk": "^0.0.14",
+    "@mendable/firecrawl-js": "^1.17.0",
+    "@pinecone-database/pinecone": "^4.1.0",
+    "@wordpress/data": "^10.14.0"
   }
 }

@@ -91,7 +91,7 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Contexte supplémentaire : audience, contraintes, plugins impliqués, "
             "concurrents à éviter, budget, etc. "
-            "(ex: 'freelance WordPress 3 ans d\\'expérience, budget hébergement < 30€/mois')"
+            "(ex: 'freelance WordPress 3 ans d\'expérience, budget hébergement < 30€/mois')"
         ),
     )
     parser.add_argument(

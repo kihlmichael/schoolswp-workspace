@@ -43,6 +43,7 @@ if sys.stderr.encoding and sys.stderr.encoding.lower() not in ("utf-8", "utf8"):
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.kpi_dashboard.agent import KpiDashboardAgent
 
 # ──────────────────────────────────────────────
@@ -355,9 +356,13 @@ async def main() -> None:
     def _load(path_str: str | None, label: str) -> str | None:
         if not path_str:
             return None
-        p = Path(path_str)
-        if not p.exists():
-            print(f"[kpi-dashboard] ⚠ {label} introuvable : {p} — ignoré", flush=True)
+        try:
+            p = safe_read_path(path_str)
+        except ValueError as e:
+            print(f"[kpi-dashboard] Erreur accès refusé : {e} — ignoré", flush=True)
+            return None
+        except FileNotFoundError:
+            print(f"[kpi-dashboard] ⚠ {label} introuvable : {path_str} — ignoré", flush=True)
             return None
         content = p.read_text(encoding="utf-8", errors="replace")
         print(f"[kpi-dashboard] {label} chargé ({len(content):,} chars)", flush=True)
@@ -373,7 +378,7 @@ async def main() -> None:
         pillar_scores = parse_pillar_scores(authority_content)
         if pillar_scores:
             print(
-                f"[kpi-dashboard] Scores piliers extraits : "
+                "[kpi-dashboard] Scores piliers extraits : "
                 + ", ".join(f"{k}={v}/100" for k, v in pillar_scores.items()),
                 flush=True,
             )
@@ -389,8 +394,11 @@ async def main() -> None:
 
     llm_scores: list[dict] = []
     if args.scan_articles:
-        scan_dir = Path(args.scan_articles)
-        if scan_dir.exists():
+        scan_dir = Path(args.scan_articles).resolve()
+        if not scan_dir.is_relative_to(Path.cwd()):
+            print("[kpi-dashboard] Erreur : --scan-articles pointe hors du projet — ignoré", file=sys.stderr)
+            scan_dir = None
+        if scan_dir and scan_dir.exists():
             llm_scores = parse_llm_scores_from_dir(scan_dir)
             if llm_scores:
                 print(
@@ -417,7 +425,11 @@ async def main() -> None:
             "article_kpis": article_kpis,
             "llm_scores": llm_scores,
         }
-        json_path = Path(args.export_json)
+        try:
+            json_path = safe_write_path(args.export_json)
+        except ValueError as e:
+            print(f"[kpi-dashboard] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         json_path.parent.mkdir(parents=True, exist_ok=True)
         json_path.write_text(
             json.dumps(export_data, ensure_ascii=False, indent=2),
@@ -442,7 +454,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[kpi-dashboard] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(dashboard, encoding="utf-8")
         print(f"[kpi-dashboard] Dashboard sauvegardé → {output_path}")

@@ -34,7 +34,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Lit le vrai sheetId assigné par Google depuis la réponse de création\nconst data = $input.first().json;\nconst sheetId = data.sheets[0].properties.sheetId;\nconst spreadsheetId = data.spreadsheetId;\n\n// Corps du batchUpdate : formatage en-têtes + checkboxes + largeurs colonnes\nconst batchBody = JSON.stringify({\n  requests: [\n    {\n      repeatCell: {\n        range: { sheetId, startRowIndex: 0, endRowIndex: 1, startColumnIndex: 0, endColumnIndex: 12 },\n        cell: {\n          userEnteredFormat: {\n            textFormat: { bold: true },\n            backgroundColor: { red: 0.93, green: 0.93, blue: 0.93 }\n          }\n        },\n        fields: \"userEnteredFormat(textFormat,backgroundColor)\"\n      }\n    },\n    {\n      setDataValidation: {\n        range: { sheetId, startRowIndex: 1, endRowIndex: 1000, startColumnIndex: 8, endColumnIndex: 12 },\n        rule: { condition: { type: \"BOOLEAN\" }, showCustomUi: true }\n      }\n    },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 0, endIndex: 1 }, properties: { pixelSize: 40 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 1, endIndex: 2 }, properties: { pixelSize: 200 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 2, endIndex: 4 }, properties: { pixelSize: 300 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 4, endIndex: 5 }, properties: { pixelSize: 350 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 5, endIndex: 8 }, properties: { pixelSize: 250 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 8, endIndex: 12 }, properties: { pixelSize: 100 }, fields: \"pixelSize\" } }\n  ]\n});\n\nreturn [{ json: { spreadsheetId, sheetId, batchBody } }];"
+        "jsCode": "const data = $input.first().json;\nconst sheetId = data.sheets[0].properties.sheetId;\nconst spreadsheetId = data.spreadsheetId;\nconst batchBody = JSON.stringify({\n  requests: [\n    { repeatCell: { range: { sheetId, startRowIndex: 0, endRowIndex: 1, startColumnIndex: 0, endColumnIndex: 12 }, cell: { userEnteredFormat: { textFormat: { bold: true }, backgroundColor: { red: 0.93, green: 0.93, blue: 0.93 } } }, fields: \"userEnteredFormat(textFormat,backgroundColor)\" } },\n    { setDataValidation: { range: { sheetId, startRowIndex: 1, endRowIndex: 1000, startColumnIndex: 8, endColumnIndex: 12 }, rule: { condition: { type: \"BOOLEAN\" }, showCustomUi: true } } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 0, endIndex: 1 }, properties: { pixelSize: 40 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 1, endIndex: 2 }, properties: { pixelSize: 200 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 2, endIndex: 4 }, properties: { pixelSize: 300 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 4, endIndex: 5 }, properties: { pixelSize: 350 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 5, endIndex: 8 }, properties: { pixelSize: 250 }, fields: \"pixelSize\" } },\n    { updateDimensionProperties: { range: { sheetId, dimension: \"COLUMNS\", startIndex: 8, endIndex: 12 }, properties: { pixelSize: 100 }, fields: \"pixelSize\" } }\n  ]\n});\nreturn [{ json: { spreadsheetId, sheetId, batchBody } }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -92,30 +92,10 @@
       "parameters": {
         "assignments": {
           "assignments": [
-            {
-              "id": "out-id",
-              "name": "spreadsheetId",
-              "value": "={{ $('Build Requests').item.json.spreadsheetId }}",
-              "type": "string"
-            },
-            {
-              "id": "out-url",
-              "name": "spreadsheetUrl",
-              "value": "={{ $('Create Spreadsheet').item.json.spreadsheetUrl }}",
-              "type": "string"
-            },
-            {
-              "id": "out-sheet-id",
-              "name": "sheetId",
-              "value": "={{ $('Build Requests').item.json.sheetId }}",
-              "type": "number"
-            },
-            {
-              "id": "out-msg",
-              "name": "next_step",
-              "value": "Copiez le spreadsheetId et remplacez YOUR_SPREADSHEET_ID_HERE dans les 5 nodes Google Sheets du workflow principal.",
-              "type": "string"
-            }
+            { "id": "out-id", "name": "spreadsheetId", "value": "={{ $('Build Requests').item.json.spreadsheetId }}", "type": "string" },
+            { "id": "out-url", "name": "spreadsheetUrl", "value": "={{ $('Create Spreadsheet').item.json.spreadsheetUrl }}", "type": "string" },
+            { "id": "out-sheet-id", "name": "sheetId", "value": "={{ $('Build Requests').item.json.sheetId }}", "type": "number" },
+            { "id": "out-msg", "name": "next_step", "value": "Copiez le spreadsheetId et remplacez YOUR_SPREADSHEET_ID_HERE dans les 5 nodes Google Sheets du workflow principal.", "type": "string" }
           ]
         },
         "options": {}
@@ -125,86 +105,18 @@
       "position": [940, 0],
       "id": "b1000001-0004-4000-8000-000000000004",
       "name": "Output Info"
-    },
-    {
-      "parameters": {
-        "content": "## Setup - Shorts CMS Google Sheet\n\n**Instructions** :\n1. Supprimer l'ancien workflow setup (celui qui échoue)\n2. Importer CE fichier : `setup-shorts-gsheet.json`\n3. Vérifier le credential \"Google Sheets - schoolsWP\"\n4. Cliquer sur **Test workflow**\n\n**Ce que fait le workflow :**\n- Crée le spreadsheet vide (sans data inline)\n- Lit le vrai `sheetId` depuis la réponse Google\n- batchUpdate : en-têtes gras + fond gris + checkboxes (colonnes I-L) + largeurs\n- Écrit les en-têtes + 1 ligne exemple via `values.append`\n- Affiche le `spreadsheetId` à copier\n\n**À exécuter UNE SEULE FOIS**",
-        "height": 380,
-        "width": 600,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [-240, -420],
-      "id": "b1000001-1001-4000-8000-000000001001",
-      "name": "Sticky Note - Instructions"
     }
   ],
   "pinData": {},
   "connections": {
-    "Run Once": {
-      "main": [
-        [
-          {
-            "node": "Create Spreadsheet",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Spreadsheet": {
-      "main": [
-        [
-          {
-            "node": "Build Requests",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Build Requests": {
-      "main": [
-        [
-          {
-            "node": "Format & Checkboxes",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Format & Checkboxes": {
-      "main": [
-        [
-          {
-            "node": "Write Headers & Example",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Write Headers & Example": {
-      "main": [
-        [
-          {
-            "node": "Output Info",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
+    "Run Once": { "main": [[{ "node": "Create Spreadsheet", "type": "main", "index": 0 }]] },
+    "Create Spreadsheet": { "main": [[{ "node": "Build Requests", "type": "main", "index": 0 }]] },
+    "Build Requests": { "main": [[{ "node": "Format & Checkboxes", "type": "main", "index": 0 }]] },
+    "Format & Checkboxes": { "main": [[{ "node": "Write Headers & Example", "type": "main", "index": 0 }]] },
+    "Write Headers & Example": { "main": [[{ "node": "Output Info", "type": "main", "index": 0 }]] }
   },
   "active": false,
-  "settings": {
-    "executionOrder": "v1"
-  },
-  "meta": {
-    "templateCredsSetupCompleted": false,
-    "instanceId": ""
-  },
+  "settings": { "executionOrder": "v1" },
+  "meta": { "templateCredsSetupCompleted": false, "instanceId": "" },
   "tags": []
 }

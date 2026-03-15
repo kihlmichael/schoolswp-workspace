@@ -33,14 +33,19 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.seo_competitor_analyst.agent import SeoCompetitorAnalystAgent
 
 
 def _read_data(file_path: str | None, inline_data: str | None, label: str) -> str:
     """Lit les données depuis un fichier ou retourne les données inline."""
     if file_path:
-        path = Path(file_path)
-        if not path.exists():
+        try:
+            path = safe_read_path(file_path)
+        except ValueError as e:
+            print(f"[seo-analyst] Erreur accès refusé : {e} — ignoré", file=sys.stderr)
+            return ""
+        except FileNotFoundError:
             print(f"[seo-analyst] ERREUR : fichier '{file_path}' introuvable.", file=sys.stderr)
             sys.exit(1)
         content = path.read_text(encoding="utf-8")
@@ -144,7 +149,7 @@ async def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
-    print(f"\n[seo-competitor-analyst] Analyse en cours...", flush=True)
+    print("\n[seo-competitor-analyst] Analyse en cours...", flush=True)
     print(f"  Concurrent   : {args.competitor_name}", flush=True)
     if args.focus:
         print(f"  Focus        : {args.focus}", flush=True)
@@ -163,7 +168,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[seo-competitor-analyst] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(analysis, encoding="utf-8")
         print(f"[seo-competitor-analyst] Analyse sauvegardée → {output_path}")

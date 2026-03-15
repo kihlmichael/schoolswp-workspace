@@ -1,76 +1,42 @@
-# Skill : gsc-opportunity-scanner
+# GSC Opportunity Scanner
 
-## Utilité
+## Rôle
 
-Analyser les exports GSC pour identifier les opportunités de trafic prioritaires : pages à CTR faible, positions 8-20, cannibalisations.
+Identifie et classe les opportunités SEO depuis les données Google Search Console.
 
-## Tâches concernées
+## 4 Types d'opportunités
 
-- T3 (Analyse GSC) — usage principal
+### A — CTR faible (impressions élevées)
+- Critères : impressions > 100, CTR < 3%, position <= 20
+- Action : Réécrire title + meta description
+- Impact : Trafic sans nouveau contenu
 
-## Déclenchement
+### B — Position 8-20 (page 2)
+- Critères : position entre 8 et 20, clics > 0
+- Action : Enrichir contenu + maillage entrant
+- Impact : Passer en top 5 = x3-x5 clics
 
-Utiliser ce skill quand :
+### C — Cannibalization
+- Critères : 2+ URLs sur la même requête
+- Action : Fusionner ou redéfinir le focus keyword
+- Impact : Consolider l'autorité sur la requête
 
-- Des exports GSC CSV sont disponibles (Pages + Requêtes)
-- On veut prioriser les interventions SEO par impact trafic réel
-- On cherche des cannibalisations entre pages
+### D — 0 impression (contenu non indexé)
+- Critères : URL dans sitemap, 0 impression sur 90j
+- Action : Audit noindex + qualité contenu + maillage
+- Impact : Activer des pages dormantes
 
-## Processus
+## Formule de scoring
 
-### Étape 1 — Segmentation des opportunités
-
-**Type A — CTR faible malgré impressions**
-
-- Condition : impressions > 500 ET ctr < 0.03 (3%)
-- Diagnostic : title/meta non optimisé pour la requête
-- Action : réécrire le title + meta description
-
-**Type B — Pages en positions 8-20**
-
-- Condition : position entre 8.0 et 20.0
-- Diagnostic : contenu proche du Top 3 mais pas suffisamment fort
-- Action : renforcer le contenu + améliorer le maillage interne entrant
-
-**Type C — Cannibalisation**
-
-- Condition : même requête génère des impressions sur 2+ URLs différentes
-- Diagnostic : deux pages ciblent le même mot-clé
-- Action : fusionner / définir une page canonique / améliorer la différenciation
-
-**Type D — Pages sans impressions**
-
-- Condition : page dans l'inventaire mais 0 impression sur 12m
-- Diagnostic : page non indexée ou non pertinente
-- Action : vérifier indexation via GSC Coverage
-
-### Étape 2 — Scoring des opportunités
-
-Score = (impressions / 1000) × (1 / ctr) × (1 / position)
+```
+Score = (impressions / 100) * (1 / CTR) * (20 - position)
+```
 
 Plus le score est élevé, plus l'opportunité est prioritaire.
 
-### Étape 3 — Quick wins
+## Output attendu
 
-Critères quick win :
+Tableau trié par score décroissant :
 
-- Type A avec impressions > 2000 et ctr < 2% → effort S, impact potentiel H
-- Type B avec position 8-12 → effort M, impact H
-- Type C avec requête à volume élevé → effort M, impact H
-
-## Règles de preuve
-
-- **Observable** : impressions, clics, CTR, position = données GSC réelles
-- **À VALIDER** : volume exact de recherche (GSC = impressions filtrées, pas volume total)
-- **À VALIDER** : impact réel d'une réécriture de title sur le CTR (tester, mesurer à 28j)
-- Ne jamais extrapoler de trafic hors des données GSC fournies
-
-## Format de sortie
-
-JSON : `url, query, impressions, clics, ctr, position, type_opportunite, action, score, priority`
-
-## Limites
-
-- GSC ne montre que les requêtes avec ≥1 clic ou impression récente — les requêtes sans données sont invisibles
-- CTR GSC inclut les rich snippets (peut biaiser la comparaison avec des pages normales)
-- Cannibalisation confirmée uniquement si 2+ URLs ont des impressions sur la même requête dans la même période
+| URL | Requête | Type | Impressions | CTR | Position | Score |
+|-----|---------|------|------------|-----|----------|-------|

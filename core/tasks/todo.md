@@ -1,56 +1,43 @@
-# schoolsWP Task Board
+# Mission en cours — schoolsWP OS
 
-## Current Mission
-
-Objective:
-Build the “FluentCRM guide complet” money page with IA-citable structure.
-
-KPI:
-- 1,000 monthly visits
-- 3%+ affiliate CTR
-- 2%+ conversion
+**Date** : 2026-03-15
+**Priorité** : FluentCRM guide complet money page
 
 ---
 
-## Plan
+## Tâche active
 
-- [x] Define intent, outline, and internal links
-- [x] Draft IA-citable blocks (definition, steps, table, FAQ, TL;DR)
-- [x] Add CTA + monetization block
-- [ ] Verify intent match and internal links
+### FluentCRM — Guide complet (Money Page)
 
----
+**Objectif** : Produire la money page FluentCRM définitive pour schoolswp.com
 
-## Execution Notes
+**Keyword** : `fluentcrm` (intent : décisionnelle)
+**Pilier** : CRM
+**Objectif business** : affiliation
 
-Step 1:
-- Map intent (Do/Choose)
-- Build H2/H3 outline
-- List parent/child links
+**Commande** :
+```bash
+brain.bat --keyword "fluentcrm" --intent décisionnelle --pillar CRM --objective affiliation
+```
 
-Step 2:
-- Draft definition + steps + decision table
-- Add FAQ + TL;DR
-
-Step 3:
-- Insert CTA + affiliate block
-- Check tone and structure
+**Statut** : En attente
 
 ---
 
-## Verification
+## Backlog
 
-- Tests performed: outline review + CTA placement
-- Logs checked: N/A
-- Performance validated: N/A
+- [ ] Cluster CRM complet (8 articles satellites)
+- [ ] Audit pilier LMS (pillar_authority --all)
+- [ ] Knowledge graph mise à jour
+- [ ] Plan ROI éditorial Q2 2026
+- [ ] YouTube intro Remotion (85s) — voir `plans/youtube-intro-remotion.md`
 
 ---
 
-## Result
+## Complété récemment
 
-Summary:
-- Draft ready for SEO review
-- Internal links mapped
-
-Status:
-[ ] Done
+- [x] Security audit 5-volet (path traversal, webhook auth, STRIDE, GDPR)
+- [x] `.gitignore` fortress — ccpa.config.json + tokens untracké
+- [x] SEO workflow 10 tâches
+- [x] Multi-agent system (4 agents spécialisés)
+- [x] Monthly SEO audit automation

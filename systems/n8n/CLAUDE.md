@@ -1,79 +1,76 @@
 # CLAUDE.md — systems/n8n/
 
-Contexte spécifique aux workflows n8n schoolsWP.
+Règles et conventions pour les workflows n8n schoolsWP.
 
-## Instance
+## typeVersions confirmées (max)
 
-- **URL** : `https://schoolswp-n8n.wp1.host` (hébergé — pas Docker local)
-- **Accès** : via MCP `n8n-mcp` (config dans `.mcp.json` à la racine du projet)
-- **Règles complètes** : `Règles du jeu – automatisation n8n.md` (ce répertoire)
+| Node | Version max | Notes |
+|------|-------------|-------|
+| scheduleTrigger | 1.2 | |
+| httpRequest | 4.2 | |
+| googleSheets | 4.5 | |
+| openAi (langchain) | 1.8 | `@n8n/n8n-nodes-langchain.openAi` |
+| code | 2 | |
+| set | 3.4 | |
+| if | 2.2 | |
+| merge | 3.1 | |
+| webhook | 2 | |
+| notion | 2.2 | |
+| airtable | 2.1 | |
 
-## typeVersions — CRITIQUE
+## Webhook auth pattern
 
-Le MCP retourne les dernières versions disponibles dans sa base, qui peuvent être plus récentes que ce que l'instance supporte. **Toujours utiliser les versions confirmées** (stockées dans l'auto-memory).
+Tous les webhooks exposés doivent valider le secret via un Code node :
 
-Versions max confirmées sur cette instance :
+```javascript
+// Validate Secret (Code node — toujours en premier après le Webhook)
+const secret = $input.first().headers['x-webhook-secret'];
+if (secret !== $vars.WEBHOOK_SECRET) {
+  throw new Error('Unauthorized: invalid webhook secret');
+}
+return $input.all();
+```
 
-| Node | Version max |
-|---|---|
-| scheduleTrigger | 1.2 |
-| httpRequest | 4.2 |
-| googleSheets | 4.5 |
-| openAi (langchain) | 1.8 |
-| code | 2 |
-| set | 3.4 |
-| if | 2.2 |
-| merge | 3.1 |
+**Ne jamais hardcoder le secret** — toujours lire depuis `$vars.WEBHOOK_SECRET`.
 
-## Nommage obligatoire
+## Variables n8n ($vars)
 
-**Workflows** : `[Status] Source > Destination: Description (ID)`
-**Status** : `[InDev]` `[InTesting]` `[Staging]` `[Prod]` `[Offline]` `[ForDeletion]`
-**Credentials** : `Service_Environment_Type` — ex: `GoogleSheets_Production_OAuth`
+Toutes les valeurs sensibles sont stockées dans n8n Variables (Settings → Variables) :
 
-## Workflows exportés
+| Variable | Usage |
+|----------|-------|
+| `WEBHOOK_SECRET` | Auth webhooks |
+| `DISCORD_WEBHOOK_SEO` | Notifications Discord canal SEO |
+| `THRUUU_JWT` | Bearer token API Thruuu (rotation 90j) |
+| `AIRTABLE_BASE_ID` | ID base Airtable articles |
+| `NOTION_KPI_DB_ID` | ID DB Notion KPI semaine |
+| `NOTION_ARTICLES_DB_ID` | ID DB Notion articles |
+| `GSHEET_SCORES_ID` | ID Google Sheet scores |
+| `N8N_API_KEY` | Clé API n8n (backup workflow) |
 
-Fichiers JSON dans `workflows/` — exports manuels depuis l'interface n8n.
-Ne jamais modifier les JSON à la main : passer par le MCP ou l'interface.
+## Thruuu JWT — rotation
+
+Le JWT Thruuu expire tous les ~30 jours. Procédure :
+1. Récupérer nouveau token sur app.thruuu.com
+2. Mettre à jour `THRUUU_JWT` dans n8n Variables
+3. Le workflow `[Prod] Thruuu Token Health Check` alerte sur Discord si 401
 
 ## Code node — contraintes
 
 - `$helpers.httpRequest()` **non disponible** dans le task runner n8n 2.0
-- Pour les appels HTTP depuis un Code node : utiliser un nœud HTTP Request séparé
-- `appendOrUpdate` (Google Sheets) : `matchingColumns` ne peut pas être vide
+- Utiliser un nœud **HTTP Request séparé** pour les appels HTTP depuis le Code
+- `$vars.*` disponible en lecture dans les Code nodes et expressions
 
-## Gestion des secrets — Variables n8n ($vars)
+## Google Sheets — appendOrUpdate
 
-**Règle** : aucun token ou clé API ne doit être hardcodé dans un nœud Code ou HTTP.
-Passer par `Settings → Variables` dans l'interface n8n.
+Le champ `matchingColumns` **ne peut pas être vide** — toujours spécifier au moins une colonne de matching (ex: `keyword`, `workflow_id`, `id`).
 
-### Variables à configurer (Settings → Variables)
+## Nommage workflows
 
-| Variable | Usage | Workflows concernés |
-|---|---|---|
-| `WEBHOOK_SECRET_GEO_FILL` | Auth webhook GEO Architect Bulk Fill | `3JE0YzrhoiusJZ6T` |
-| `WEBHOOK_SECRET_THRUUU` | Auth webhook Thruuu Monitoring Results | `Im1Khan3gJwhJkuu` |
-| `WEBHOOK_SECRET_AGENT` | Auth webhook Agent Orchestrator Callback | `WocLwnUAZPaZFitG` |
-| `THRUUU_TOKEN` | Bearer token API Thruuu (JWT) | GEO Architect Bulk Fill |
+`[Status] Source > Destination: Description`
 
-### Pattern d'authentification webhook (standard schoolsWP)
+Status valides : `[InDev]` `[InTesting]` `[Staging]` `[Prod]` `[Offline]` `[ForDeletion]`
 
-Insérer un nœud Code `Validate Secret` juste après chaque Webhook :
+## Nommage credentials
 
-```javascript
-const expectedSecret = ($vars && $vars.WEBHOOK_SECRET_XXX) ? $vars.WEBHOOK_SECRET_XXX.trim() : '';
-const providedSecret = ($input.first().headers['x-webhook-secret'] || '').trim();
-if (!expectedSecret) { throw new Error('Security: WEBHOOK_SECRET_XXX not configured in n8n Variables'); }
-if (providedSecret !== expectedSecret) { throw new Error('401 Unauthorized: invalid webhook secret'); }
-return $input.all();
-```
-
-### Pattern lecture token depuis $vars (ex: Thruuu)
-
-Dans un nœud Code, lire le token via :
-```javascript
-const token = ($vars && $vars.THRUUU_TOKEN) ? $vars.THRUUU_TOKEN.trim() : '';
-if (!token) throw new Error('THRUUU_TOKEN non configuré dans n8n Variables');
-```
-
-**Note Thruuu** : le JWT expire tous les ~30 jours. À renouveler dans n8n Settings → Variables et dans le dashboard Thruuu. Voir `systems/security/rotation-policy.md` pour le calendrier.
+`Service_Environment_Type` — ex: `GoogleSheets_Production_OAuth`, `Anthropic_Production_API`

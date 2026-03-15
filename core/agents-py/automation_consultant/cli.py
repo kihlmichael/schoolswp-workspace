@@ -97,7 +97,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = safe_write_path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[automation-consultant] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(plan, encoding="utf-8")
         print(f"[automation-consultant] Plan sauvegardé → {output_path}")

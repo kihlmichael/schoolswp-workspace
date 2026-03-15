@@ -1,52 +1,11 @@
 flowchart TD
-  A["⏰ Trigger\n(Manuel ou Cron hebdo)"]
-
-  subgraph T1_FLOW["Flux T1 — Inventaire"]
-    B1["HTTP Request\nGET schoolswp.com/plan-de-site"]
-    B2["Code Node\nParse URLs + classify\n(type, cluster, langue, role)"]
-    B3["Google Sheets\nAppend → 01_Inventory"]
-  end
-
-  subgraph T2_FLOW["Flux T2 — Hygiène crawl"]
-    C1["HTTP Request\nImport CSV crawl"]
-    C2["Code Node\nFilter utilitaires + erreurs\nClassifier actions"]
-    C3["Google Sheets\nAppend → 02_Hygiene"]
-  end
-
-  subgraph T3_FLOW["Flux T3 — GSC"]
-    D1["HTTP Request\nGSC API ou import CSV"]
-    D2["Code Node\nCalcul score opportunité\n(impressions/ctr/position)"]
-    D3["Google Sheets\nAppend → 03_GSC"]
-  end
-
-  subgraph T4_FLOW["Flux T4 — DataForSEO"]
-    E1["HTTP Request\nDataForSEO SERP API\n(batch par cluster)"]
-    E2["Code Node\nParse top_domains + format\nIdentifier gaps"]
-    E3["Google Sheets\nAppend → 04_Competitors"]
-  end
-
-  subgraph AI_FLOW["Flux AI — Analyse clusters (T5)"]
-    F1["Google Sheets Read\n01_Inventory + 03_GSC\n+ 04_Competitors"]
-    F2["HTTP Request\nClaude API\n(cluster-architect prompt)"]
-    F3["Google Sheets\nAppend → 05_Clusters"]
-    F4["Google Docs\nCreate Doc 05_Clusters"]
-  end
-
-  subgraph BACKLOG_FLOW["Mise à jour Backlog"]
-    G1["Code Node\nConsolider actions\ntous onglets → 10_Backlog"]
-    G2["Google Sheets\nUpdate → 10_Backlog"]
-    G3["Gmail / Slack\nNotification résumé"]
-  end
-
-  A --> B1
-  B1 --> B2 --> B3
-  B3 --> C1
-  C1 --> C2 --> C3
-  C3 --> D1
-  D1 --> D2 --> D3
-  D3 --> E1
-  E1 --> E2 --> E3
-  E3 --> F1
-  F1 --> F2 --> F3 --> F4
-  F4 --> G1
-  G1 --> G2 --> G3
+    A[Schedule Trigger\n1ère du mois] --> B[HTTP: Fetch Sitemap\nsitemapUrl]
+    B --> C[Code: Parse URLs\nextract + filter]
+    C --> D[Split in Batches\nbatch 50]
+    D --> E[HTTP: DataForSEO\nBulk Keyword Data]
+    E --> F[Code: Aggregate\nclics + impressions]
+    F --> G[GSheets: appendOrUpdate\nT1_INVENTAIRE]
+    G --> H[Code: Filter Opportunities\nCTR < 3% OR pos 8-20]
+    H --> I[GSheets: appendOrUpdate\nT2_OPPORTUNITES]
+    I --> J[HTTP: Webhook\nnotion-kpi-tracker]
+    J --> K[Discord: Notify\nWorkflow terminé]

@@ -49,6 +49,7 @@ if hasattr(sys.stderr, "buffer") and sys.stderr.encoding.lower() not in ("utf-8"
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_read_path, safe_write_path
 from agents.publish_ready.agent import PublishReadyAgent, PublishReadyResult
 
 _INTENTS = ["informationnelle", "comparative", "décisionnelle", "transactionnelle"]
@@ -172,9 +173,10 @@ async def main() -> None:
     args = parser.parse_args()
 
     if args.file:
-        p = Path(args.file)
-        if not p.exists():
-            print(f"[publish-ready] Fichier introuvable : {p}", file=sys.stderr)
+        try:
+            p = safe_read_path(args.file)
+        except (ValueError, FileNotFoundError) as e:
+            print(f"[publish-ready] Erreur : {e}", file=sys.stderr)
             sys.exit(1)
         article = p.read_text(encoding="utf-8")
         wc = len(article.split())
@@ -220,7 +222,11 @@ async def main() -> None:
     _print_result(result, elapsed)
 
     if args.save_dir:
-        save_path = Path(args.save_dir)
+        try:
+            save_path = safe_write_path(args.save_dir)
+        except ValueError as e:
+            print(f"[publish-ready] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         save_path.mkdir(parents=True, exist_ok=True)
         saved = []
 
@@ -268,7 +274,11 @@ async def main() -> None:
             print(f"  • {f}")
 
     elif args.output:
-        out = Path(args.output)
+        try:
+            out = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[publish-ready] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(result.dashboard, encoding="utf-8")
         print(f"\n  Dashboard sauvegardé → {out}")

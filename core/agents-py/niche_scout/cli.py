@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from agents.base import safe_write_path
 from agents.niche_scout.agent import NicheScoutAgent
 
 
@@ -96,7 +97,11 @@ async def main() -> None:
     )
 
     if args.output:
-        output_path = Path(args.output)
+        try:
+            output_path = safe_write_path(args.output)
+        except ValueError as e:
+            print(f"[niche-scout] Erreur : {e}", file=sys.stderr)
+            sys.exit(1)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(result, encoding="utf-8")
         print(f"[niche-scout] Analyse sauvegardée → {output_path}")
