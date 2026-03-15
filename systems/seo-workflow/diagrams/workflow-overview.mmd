@@ -1,0 +1,16 @@
+flowchart LR
+    subgraph P1[Phase 1 - Inventaire]
+        T1[T1: Inventaire SEO\nCrawl + CSV] --> T2[T2: Analyse GSC\nOpportunités]
+        T2 --> T3[T3: Audit Technique\nIssues]
+    end
+    subgraph P2[Phase 2 - Analyse]
+        T4[T4: Analyse SERP\nGaps] --> T5[T5: Gap Analysis\nConcurrents]
+    end
+    subgraph P3[Phase 3 - Production]
+        T6[T6: Content Brief\nBrain] --> T7[T7: Optim Existant\nScores]
+        T7 --> T8[T8: Maillage\nInterne]
+    end
+    subgraph P4[Phase 4 - Autorité]
+        T9[T9: E-E-A-T\nSignaux] --> T10[T10: Roadmap\nFinale]
+    end
+    P1 --> P2 --> P3 --> P4
