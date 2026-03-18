@@ -25,6 +25,10 @@ gtoken.json
 *.pfx
 ccpa.config.json
 
+# One-shot patch scripts (contain hardcoded n8n JWT)
+patch_*.py
+fix_workflow.py
+
 # --- n8n sensitive files ---
 systems/n8n-backup/
 *backup_deploy*.json
