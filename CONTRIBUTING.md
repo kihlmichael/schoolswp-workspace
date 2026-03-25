@@ -8,33 +8,49 @@ Project: schoolsWP (schoolswp.com)
 - Always write **schoolsWP** (lowercase "schools", uppercase "WP")
 - Never use "SchoolsWP", "schoolswp", or "Schoolswp"
 
-## Git Workflow
+## Git Governance
 
 ### Branches
 
-- `main` — stable, production-ready
-- `feature/*` — new features
-- `fix/*` — bug fixes
-- `chore/*` — maintenance, tooling, config
+| Branch | Role | Protected |
+|--------|------|-----------|
+| `main` | Stable, production-ready. Single source of truth. | Yes |
+| `feature/*` | New features | No |
+| `fix/*` | Bug fixes | No |
+| `chore/*` | Maintenance, tooling, config | No |
+| `docs/*` | Documentation only | No |
+
+### Rules
+
+1. **Never commit directly to `main`** — always branch, then merge via PR or fast-forward.
+2. **One working branch at a time** — finish or shelve before starting another.
+3. **Pre-commit hooks are mandatory** — `--no-verify` only when the hook itself is broken (document why in the commit message).
+4. **No secrets in git** — `.env`, `.mcp.json`, `settings.local.json` stay in `.gitignore`. Pre-commit hook scans for patterns.
+5. **Conventional commits in English** — prefix with `feat:`, `fix:`, `chore:`, `docs:`, `security:`, `refactor:`, `test:`.
 
 ### Commit Messages
-
-Use conventional commits (English):
 
 ```
 feat: add new workflow for SEO monitoring
 fix: correct error handler in backup script
 chore: update docker-compose config
 docs: add troubleshooting for webhook timeout
+security: add path traversal protection
 ```
 
-### Pull Request Process
+### Workflow
 
-1. Create a branch from `main`
-2. Make your changes with atomic commits
-3. Test locally (health check, lint)
-4. Submit a pull request with a clear description
-5. Wait for review before merging
+```
+main ──────────────────────────────────── (protected)
+  \                                  /
+   feature/my-feature ──────────────  (branch, work, merge back)
+```
+
+1. `git checkout -b feature/my-feature main`
+2. Work with atomic commits
+3. Test locally (lint, tests)
+4. Push and merge to `main` (PR or fast-forward)
+5. Delete the feature branch after merge
 
 ## Adding an n8n Workflow
 
