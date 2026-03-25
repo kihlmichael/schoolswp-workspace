@@ -95,6 +95,12 @@ dist/
 data/reports/
 data/exports/
 
-# --- Remotion ---
-apps/brand-reveal/node_modules/
-apps/brand-reveal/out/
+# --- Apps: build outputs & heavy deps ---
+apps/brand-reveal/brand-reveal/node_modules/
+apps/brand-reveal/brand-reveal/out/
+apps/video-marketing/video-marketing/node_modules/
+apps/video-marketing/video-marketing/out/
+apps/vscode-agent-visual/node_modules/
+apps/vscode-agent-visual/dist/
+apps/telegram-bot/telegram-bot/node_modules/
+apps/_archive/claude-telegram-poc/venv/

@@ -1,4 +1,5 @@
 """ArticlePipeline — orchestrateur multi-agents pour la production d'articles SEO."""
+
 from __future__ import annotations
 
 import asyncio
@@ -26,6 +27,13 @@ class PipelineResult:
     authority_score: Optional[int] = None
     publish_score: Optional[float] = None
     errors: list[str] = field(default_factory=list)
+    # Version aliases used by ContentFactoryResult
+    v1: str = ""
+    v2: str = ""
+    v3: str = ""
+    v4: str = ""
+    score_global: Optional[int] = None
+    score_llm_global: Optional[int] = None
 
     def compute_publish_score(self) -> Optional[float]:
         """Calcule le Publish Score pondéré si tous les scores sont disponibles."""
@@ -33,10 +41,7 @@ class PipelineResult:
         if any(s is None for s in scores):
             return None
         return (
-            self.seo_score * 0.30
-            + self.llm_score * 0.25
-            + self.conversion_score * 0.25
-            + self.authority_score * 0.20
+            self.seo_score * 0.30 + self.llm_score * 0.25 + self.conversion_score * 0.25 + self.authority_score * 0.20
         )
 
 
@@ -86,38 +91,40 @@ class ArticlePipeline(BaseContentAgent):
 
         writer = SeoWriterAgent(model=self.model)
         result.draft = await writer.run(topic=topic, keyword=keyword, intent=intent, angle=angle)
+        result.v1 = result.draft
 
         # Étape 2 — Audit SEO (parallèle avec LLM SEO)
-        from agents.seo_auditor.agent import SeoAuditorAgent
         from agents.llm_seo.agent import LlmSeoAgent
+        from agents.seo_auditor.agent import SeoAuditorAgent
 
         auditor = SeoAuditorAgent(model=self.model)
         llm_agent = LlmSeoAgent(model=self.model)
 
         result.audit, result.llm_seo = await asyncio.gather(
-            auditor.run(content=result.draft, keyword=keyword),
-            llm_agent.run(content=result.draft, keyword=keyword),
+            auditor.run(article=result.draft, keyword=keyword),
+            llm_agent.run(article=result.draft, keyword=keyword),
         )
 
         # Étape 3 — Édition
-        from agents.seo_auditor.agent import SeoEditorAgent  # type: ignore[attr-defined]
-
         try:
+            from agents.seo_auditor.agent import SeoEditorAgent  # type: ignore[attr-defined]
+
             editor = SeoEditorAgent(model=self.model)
             result.final = await editor.run(
                 draft=result.draft,
                 audit=result.audit,
                 keyword=keyword,
             )
-        except ImportError:
+        except (ImportError, AttributeError):
             result.final = result.draft
             result.errors.append("SeoEditorAgent non disponible — draft utilisé comme final")
+        result.v2 = result.final
 
         # Étape 4 — Cluster sémantique
         from agents.cluster_architect.agent import ClusterArchitectAgent
 
         cluster = ClusterArchitectAgent(model=self.model)
-        result.cluster = await cluster.run(keyword=keyword, pillar=pillar or keyword)
+        result.cluster = await cluster.run(thematique=keyword, objectif=pillar or keyword)
 
         result.publish_score = result.compute_publish_score()
         return result
@@ -142,23 +149,25 @@ class ArticlePipeline(BaseContentAgent):
 
         writer = SeoWriterAgent(model=self.model)
         result.draft = await writer.run(topic=keyword, keyword=keyword, intent=intent, angle=strategy[:500])
+        result.v1 = result.draft
 
-        from agents.seo_auditor.agent import SeoAuditorAgent
         from agents.llm_seo.agent import LlmSeoAgent
+        from agents.seo_auditor.agent import SeoAuditorAgent
 
         auditor = SeoAuditorAgent(model=self.model)
         llm_agent = LlmSeoAgent(model=self.model)
 
         result.audit, result.llm_seo = await asyncio.gather(
-            auditor.run(content=result.draft, keyword=keyword),
-            llm_agent.run(content=result.draft, keyword=keyword),
+            auditor.run(article=result.draft, keyword=keyword),
+            llm_agent.run(article=result.draft, keyword=keyword),
         )
 
         result.final = result.draft  # pas d'édition en mode lite
+        result.v2 = result.final
 
         from agents.cluster_architect.agent import ClusterArchitectAgent
 
         cluster = ClusterArchitectAgent(model=self.model)
-        result.cluster = await cluster.run(keyword=keyword, pillar=pilier or keyword)
+        result.cluster = await cluster.run(thematique=keyword, objectif=pilier or keyword)
 
         return result

@@ -181,7 +181,7 @@ projects/schoolswp/
 ├── systems/
 │   ├── n8n/            # n8n rules doc and config
 │   └── workflows/      # n8n workflow JSON exports
-├── apps/               # Applications: brand-reveal/ (Remotion), elearning/, telegram-bot/, vscode-agent-visual/
+├── apps/               # 1 app active (vscode-agent-visual), 4 archivées (_archive/), 2 prototypes lourds
 ├── content/
 │   ├── articles/       # Generated articles (save-dir outputs from pipeline)
 │   ├── docs/           # Brand rules, SEO reports
@@ -252,7 +252,11 @@ Installation (une seule fois) : `pip install pre-commit && pre-commit install`
 
 Hooks exécutés dans l'ordre : 1. `secrets-scan` (détecte clés/tokens), 2. `ruff` lint + format (`--fix` auto-repair), 3. `pip-audit` (vulnérabilités dépendances). Mise à jour : `pre-commit autoupdate`.
 
-> **Note** : pas de CI/CD GitHub Actions configuré — les pre-commit hooks sont la seule barrière de qualité avant merge.
+## CI (GitHub Actions)
+
+Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
+
+3 checks : `ruff check` (lint) → `ruff format --check` → `pytest tests/ -v`. Pas de deploy, pas de secrets — juste la barriere anti-regression.
 
 ## Security
 

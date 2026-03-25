@@ -5,6 +5,7 @@ brain-lite CLI — Pipeline allégé 5 étapes
 Usage:
   python -m agents.article_pipeline.brain_lite_cli --keyword "fluentcrm avis" --intent informationnelle --pilier crm
 """
+
 import argparse
 import asyncio
 import sys
@@ -13,7 +14,47 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from agents.article_pipeline.pipeline import ArticlePipeline
-from agents.base import safe_write_path
+from agents.base import BaseContentAgent, safe_write_path
+
+
+class BrainLiteAgent(BaseContentAgent):
+    """Agent stratégique léger — retourne un dict avec topic, angle, audience, roi_ok.
+
+    Utilisé par ContentFactoryAgent comme étape 1 (stratégie) avant le pipeline article.
+    Un seul appel LLM (~15s) pour déterminer l'angle éditorial optimal.
+    """
+
+    name = "brain-lite-strategy"
+    system_prompt = (
+        "Tu es le stratège éditorial schoolsWP. "
+        "Analyse le mot-clé et l'intention pour déterminer le meilleur angle de contenu.\n\n"
+        "Réponds UNIQUEMENT en JSON valide avec ces clés :\n"
+        '{"topic": "Titre H1 proposé", "angle": "Angle différenciant", '
+        '"audience": "Profil lecteur cible", "roi_ok": true}\n\n'
+        "roi_ok = false si le sujet n'a pas de potentiel business pour schoolsWP."
+    )
+
+    async def run(self, *, keyword: str, intent: str, pilier: str = "", **kwargs) -> dict:  # type: ignore[override]
+        """Retourne un dict stratégique {topic, angle, audience, roi_ok}."""
+        import json as _json
+
+        user_msg = f"Mot-clé : {keyword}\nIntention : {intent}"
+        if pilier:
+            user_msg += f"\nPilier : {pilier}"
+
+        response = await self._client.messages.create(
+            model=self.model,
+            max_tokens=500,
+            system=self.system_prompt,
+            messages=[{"role": "user", "content": user_msg}],
+        )
+        raw = response.content[0].text
+
+        try:
+            return _json.loads(raw)
+        except _json.JSONDecodeError:
+            return {"topic": keyword.title(), "angle": "", "audience": "", "roi_ok": True}
+
 
 _INTENTS = ["informationnelle", "commerciale", "décisionnelle", "comparative", "navigationnelle"]
 _PILIERS = ["lms", "crm", "seo", "automatisation", "ecommerce", "freelance", "formation"]
@@ -40,8 +81,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help=f"Pilier thématique : {' | '.join(_PILIERS)}",
     )
-    parser.add_argument("--save-dir", metavar="DIR", default=None, help="Dossier de sauvegarde des fichiers intermédiaires")
-    parser.add_argument("--model", default=None, metavar="MODEL", help="Modèle Claude (défaut : $MODEL_WRITER ou claude-sonnet-4-6)")
+    parser.add_argument(
+        "--save-dir", metavar="DIR", default=None, help="Dossier de sauvegarde des fichiers intermédiaires"
+    )
+    parser.add_argument(
+        "--model", default=None, metavar="MODEL", help="Modèle Claude (défaut : $MODEL_WRITER ou claude-sonnet-4-6)"
+    )
     return parser
 
 
