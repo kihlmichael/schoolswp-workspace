@@ -1,0 +1,20 @@
+# Tutor LMS Settings: Design
+
+## Metadonnees
+
+| Champ | Valeur |
+|-------|--------|
+| URL | https://www.youtube.com/watch?v=5i0ucXQCLjY |
+| Chaine | Tutor LMS |
+| Vues | 26 132 |
+| Likes | 140 |
+| Date | 2022-06-23 |
+| Duree | 5:10 |
+
+## Description
+
+Learn the uses of the individual options in the Design Settings of Tutor LMS and have a look at how they impact the frontend view of your eLearning site.
+
+## Transcript
+
+[Music] good day tudor lms users today we are going to be talking about the design settings of our favorite tutor lms so let's get started first up we have the option to change the course builder page logo so we can upload an image here so this picture if you're wondering will show up on the top left of the front and course builder as we can see right here moving on we have a bunch of features that we can tinker with here and all of these will be affecting the course list page on the front end so we can set the number of columns to display in the column per row option so let's go ahead and set it to two then we can decide to turn on or off the course filter of the course details page so let's go ahead and turn this on after that we can change how many courses we want to display per page on the course list page before a user has to go to the next page so we're gonna go ahead and set it to six and lastly we can toggle which specific course filters we want to show on our course filter that we turned on earlier so let's select keyword search category and price type okay so now that we're done with that let's go ahead and hit save changes and let's take a look at what all of this actually looks like on the front end so now we're on the course list page and we can see that there are only two courses being displayed per column since we set it up to be two then we have the course filter by the left and only the filter types we selected are showing up here lastly we can see that we have exactly six courses on this page and to go to the next course we have to go to the second page this is of course because we set it up to show six courses per page up next we can set how we want the instructor list layout to look like so go ahead and set it to however you prefer after that we can set the layout for the instructor's public profile making a change here would affect the instructor's public profile page so let's go ahead and set it to minimal and then we can see that since we have set the layout to be minimal this is what the layout looks like the next option is the same as whatever layout you select here will affect a student's public profile on your site alright so now we come to the course details section of the design settings so there's a lot to take in here but trust us it's very simple the toggles themselves are very self-explanatory where you can either choose to toggle on or off a specific option so let's say we decided to turn on q a instructor info material and let's say progress bar so now since these toggles are on on the course details page we can see that we get the added tabs corresponding to the toggles if we then turn them off they will simply not appear so all of the toggles here work in exactly the same way so toggle to show or hide the options basically all right so moving on we have the option to tweak the preset colors of tutor lms so if we go ahead and select ocean then on the front end we can notice that the colors of the buttons and some of the ui also changes with it you can customize it to your liking and how you see fit we can already tell that the entire design settings is basically for the customization of your site visually and functionally as well and lastly we have two toggles to turn on the tutor player for youtube or vimeo videos so if you prefer to have your students use the tutor player for videos then you can go ahead and turn these two on well that's it everyone we hope that this tutorial helped you out and as always like this video if you found it helpful and of course comment down below if you have any questions bye bye [Music]

@@ -1,0 +1,31 @@
+{
+  "eval_id": 3,
+  "eval_name": "nested-json-two-levels-deep",
+  "prompt": "JSON imbriqué sur 2 niveaux (data.contact.* et data.booking.*), champ 'status' inutile à ignorer, 6 colonnes à mapper",
+  "assertions": [
+    {
+      "id": "has_7_sections",
+      "description": "Les 7 sections structurées sont présentes dans la réponse"
+    },
+    {
+      "id": "nested_expressions_correct",
+      "description": "Les expressions utilisent le chemin imbriqué correct : {{ $json[\"data\"][\"contact\"][\"full_name\"] }}, {{ $json[\"data\"][\"booking\"][\"activity\"] }}, etc."
+    },
+    {
+      "id": "all_6_columns_mapped",
+      "description": "Les 6 colonnes (Nom complet, Email, Téléphone, Activité, Date, Nombre de places) sont toutes mappées avec leur expression exacte"
+    },
+    {
+      "id": "status_field_ignored",
+      "description": "Le champ 'status' du JSON est ignoré ou mentionné comme inutilisé — il ne doit pas être mappé vers une colonne inexistante"
+    },
+    {
+      "id": "no_flat_path_error",
+      "description": "La réponse ne produit pas d'expressions plates incorrectes comme {{ $json[\"full_name\"] }} pour un champ imbriqué"
+    },
+    {
+      "id": "slots_as_number",
+      "description": "Le champ 'slots' (valeur numérique 2) est correctement mappé vers 'Nombre de places' sans conversion forcée en texte"
+    }
+  ]
+}

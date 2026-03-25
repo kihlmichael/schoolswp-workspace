@@ -1,0 +1,23 @@
+{
+  "skill_name": "wp-image-metadata-seo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Génère les métadonnées complètes pour une image d'article schoolsWP sur FluentCRM. Sujet : FluentCRM, mot-clé principal : fluentcrm avis, catégorie : CRM, usage : gérer des contacts et automatiser des emails marketing, angle : avis, année : 2025.",
+      "expected_output": "Bloc complet avec XPTitle, XPSubject, XPKeywords (8-12), XPComment, XPAuthor, Copyright, ImageDescription, Slug web, Variante Google Images, Alt text (120-125 car.), Titre image (55-60 car.), Légende, Description (3-4 phrases). Orthographe schoolsWP correcte partout.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "J'ai besoin des métadonnées SEO pour l'image de couverture de mon article comparatif TutorLMS vs LearnDash sur schoolsWP. Plugin : TutorLMS vs LearnDash, kw : tutor lms vs learndash, catégorie : LMS, usage : créer des cours en ligne, angle : comparatif, année : 2025.",
+      "expected_output": "Bloc complet avec tous les champs. XPKeywords variés sans répétition. Alt text descriptif avec mot-clé en début. Slug sans accents. Cohérence branding schoolsWP.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Optimise l'image de mon guide Rank Math sur schoolsWP. Sujet : Rank Math, mot-clé : rank math seo plugin wordpress, catégorie : SEO, usage : optimiser le référencement naturel d'un site WordPress, angle : guide, année : 2026.",
+      "expected_output": "Bloc complet avec tous les champs. Titre image et XPTitle dans les limites de caractères. Variante Google Images structurée. XPAuthor et Copyright corrects.",
+      "files": []
+    }
+  ]
+}

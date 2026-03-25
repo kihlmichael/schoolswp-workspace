@@ -1,0 +1,20 @@
+# How to Migrate from Zoom JWT App to Server-To-Server oAuth App
+
+## Metadonnees
+
+| Champ | Valeur |
+|-------|--------|
+| URL | https://www.youtube.com/watch?v=ndKDQhRbJ2M |
+| Chaine | Tutor LMS |
+| Vues | 9 003 |
+| Likes | 42 |
+| Date | 2023-08-08 |
+| Duree | 4:16 |
+
+## Description
+
+This tutorial is all about the workarounds on how to switch from Zoom JWT to Server-To-Server oAuth app system as Zoom has recently deprecated the JWT integration method.
+
+## Transcript
+
+[Music] welcome back everyone to tutor LMS Academy today we'll show you how to switch from Zoom JWT to an oauth app system Zoom has recently deprecated the JWT integration method and with it tutor LMS has also updated to support the latest integration method so without wasting any time let's see how you can migrate from Zoom JWT app to the server to server oauth app if you use a JWT app type to integrate Zoom with tutor LMS you will need to migrate to the server to server app type since JWT is being deprecated you won't be able to create any new meetings and furthermore you will not be able to edit any of the existing meetings that you have already created so make sure to update your API setup by September 1st 2023 first we'll need to go to zoom app Marketplace developer dashboard and log in with your Zoom account so after logging in if you have an existing JWT app the create page on the app Marketplace will say that your account already has JWT credentials but since we're gonna do this from scratch we won't see that message so once you make your way to the Zoom app Marketplace go ahead and from this drop down click on build app we're going to be brought to this screen from where we'll scroll down to find the server to server oauth app type and we're gonna hit create so it's going to ask us to create an app name so let's go ahead and call this tutor LMS once you hit create you're going to be met with your new app credentials we're gonna have an account ID client ID and a client secret ID we'll need these for when we go back to Twitter LMS and create our new Zoom integration for now we're going to hit continue we'll have to add an an app name which was already done we add a short description and we fill it out with all the required information so once you've filled out your information go over to the Scopes Tab and we're going to need to add some scopes for our integration to work so once you're at the scope screen we recommend enabling all the scopes for meeting webinar recording and user you need to make sure to enable all the Scopes before you hit done and go on to the next step after you've added all the Scopes click done and now you can see all the Scopes that you've added on this screen hit continue and after you hit continue you can come to this screen and click on this button to activate your app congratulations your app is now activated so once your app has been activated we need to go back to the app credentials page and copy these three information for pasting it back into tutor LMS so back in WordPress we're going to go to tutorial elements Pro and the add-ons tab we're going to scroll down to find the zoom integration add-on and we need to enable this add-on once you activate the add-on we're going to find a new tab under tutor LMS called Zoom and we can see that tutor LMS has a message that API update is required so over here we need to paste our account ID client ID and client secret that we'll get from Zoom so head over back to zoom copy these three IDs and paste it back into tutor LMS so once you've added all the information and the IDS that tutor LMS needs click on Save and check connection and that's it that's all you have to do and your integration should be updated with the new credentials make sure to thoroughly test your tutor LMS integration with zoom using the updated credentials check if the integration functionality such as creating meetings are working as expected and that's all everyone we hope this tutorial on migrating from Zoom JWT to oauth was helpful for you all do let us know in the comments if you face any issues with the setup and as always we'll catch you in the next one foreign

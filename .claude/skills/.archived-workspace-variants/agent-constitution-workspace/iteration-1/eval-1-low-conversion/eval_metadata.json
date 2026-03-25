@@ -1,0 +1,27 @@
+{
+  "eval_id": 1,
+  "eval_name": "low-conversion",
+  "prompt": "J'ai un problème sur schoolsWP : mes articles LMS reçoivent du trafic mais presque personne ne clique sur les CTAs vers mes formations TutorLMS. Le taux de conversion est très faible. Analyse le problème et dis-moi quoi faire.",
+  "assertions": [
+    {
+      "id": "a1",
+      "description": "Analyse multi-dimensionnelle : touche au moins SEO/contenu ET conversion (pas seulement un angle)"
+    },
+    {
+      "id": "a2",
+      "description": "Plan d'action séquencé et priorisé, pas une simple liste de conseils vagues"
+    },
+    {
+      "id": "a3",
+      "description": "Identifie des causes racines possibles (pas juste des symptômes)"
+    },
+    {
+      "id": "a4",
+      "description": "Au moins 3 actions concrètes et actionnables spécifiques à schoolsWP/TutorLMS"
+    },
+    {
+      "id": "a5",
+      "description": "Distingue les quick wins des actions long terme"
+    }
+  ]
+}

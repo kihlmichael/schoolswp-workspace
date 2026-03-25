@@ -17,38 +17,26 @@ Ne jamais vider la corbeille automatiquement.
 
 ## Setup initial
 
-**Python (une seule fois après un clone) :**
-
-```powershell
-# Depuis projects/schoolswp/ dans PowerShell
-pip install uv
-uv sync          # installe les dépendances depuis uv.lock
-```
-
-Si `uv` n'est pas dans le PATH après installation, utiliser le chemin complet :
-
-```powershell
-& "$env:APPDATA\Python\Python313\Scripts\uv.exe" sync
-```
-
-**JS (si usage des packages Node) :**
-
 ```bash
-npm install
+pip install uv && uv sync                    # Python deps (une seule fois)
+cp .env.example .env                         # puis remplir les clés
+cp .mcp.json.example .mcp.json               # puis remplir les clés API MCP
+npm install                                   # JS deps (optionnel)
 ```
 
----
+Si `uv` n'est pas dans le PATH : `& "$env:APPDATA\Python\Python313\Scripts\uv.exe" sync`
+
+Variables clés `.env` : `ANTHROPIC_API_KEY` (obligatoire), `MODEL_WRITER` (défaut: `claude-sonnet-4-6`), `FIRECRAWL_API_KEY`, `N8N_*`, `GOOGLE_WORKSPACE_CLI_CLIENT_ID/SECRET`. Recherche : `agents/.env` → `.env` → `multi-agent-system/.env`.
 
 ## Python Environment
 
-Toutes les commandes Python doivent être lancées depuis `projects/schoolswp/` avec l'un des deux venvs — ne jamais mélanger :
+Projet `schoolswp-agents` v0.1.0 — Python `>=3.11`. Gestionnaire : `uv` (lock file `uv.lock`). Synchroniser : `uv sync` depuis la racine projet.
 
-| Venv | Chemin | Utilisé par |
-| --- | --- | --- |
-| Root venv | `.venv/Scripts/python` | Tous les `python -m agents.*` |
-| Legacy venv | `tools/scripts/legacy/scripts/.venv/Scripts/python` | `brain.bat` et `brain-lite.bat` uniquement |
+Dépendances principales : `anthropic>=0.49.0`, `python-dotenv>=1.0.0`. Dev : `pytest>=8.0`, `pytest-asyncio>=0.24`.
 
-Sur Windows + Bash, `source .venv/Scripts/activate` ne persiste pas entre les appels. Toujours utiliser le chemin complet.
+**Venv** : `.venv/Scripts/python` — seul venv actif. Sur Windows + Bash, `activate` ne persiste pas — utiliser le chemin complet.
+
+> **Note** : `brain.bat` et `brain-lite.bat` référencent un legacy venv (`tools/scripts/legacy/scripts/.venv/`) qui n'existe plus. Utiliser le root venv directement : `.venv/Scripts/python -m agents.content_factory.cli ...`
 
 ## Key Commands
 
@@ -72,86 +60,100 @@ Flags `brain.bat` : `--keyword` | `--file` + `--kw`, `--intent`, `--pillar`, `--
 brain-lite.bat --keyword "fluentcrm avis" --intent informationnelle --pilier crm
 ```
 
-**Agents individuels :**
+Entry point réel : `agents.article_pipeline.brain_lite_cli` (le `.bat` est un wrapper).
+
+**Agents individuels** (pattern : `.venv/Scripts/python -m agents.<module>.cli`) :
 
 ```bash
 .venv/Scripts/python -m agents.schoolswp_brain.cli --query "..." --mode seo-writer
-# modes : seo-writer | plugin-comparator | wp-architect | automation-consultant
-
-.venv/Scripts/python -m agents.article_pipeline.cli --topic "..." --keyword "..." --intent comparative --angle "..."
+.venv/Scripts/python -m agents.article_pipeline.cli --topic "..." --keyword "..." --intent comparative
 .venv/Scripts/python -m agents.publish_ready.cli --file article.md --keyword "..."
 .venv/Scripts/python -m agents.seo_auditor.cli --file article.md --keyword "..." [--fix]
-.venv/Scripts/python -m agents.strategic_brain.cli
-
-# Exploration de niches (syntaxe spécifique — utilise --thematique, pas --keyword)
-.venv/Scripts/python -m agents.niche_scout.cli --thematique "LMS WordPress" [--focus "automatisation"] [--context "..."]
-.venv/Scripts/python -m agents.niche_scout.scorer_cli --niches niches.md        # score /10 par niche
-.venv/Scripts/python -m agents.niche_scout.batch_scorer_cli --file niches.md    # batch scoring
-.venv/Scripts/python -m agents.niche_scout.data_scorer_cli --csv data.csv       # scoring depuis CSV
+.venv/Scripts/python -m agents.niche_scout.cli --thematique "LMS WordPress" [--focus "auto"]
 ```
+
+Table complète des 28 modules dans `.claude/rules/python-agents.md`.
 
 **Linting :**
 
 ```bash
-.venv/Scripts/python -m ruff check core/agents-py/
-.venv/Scripts/python -m ruff format core/agents-py/
+.venv/Scripts/python -m ruff check core/agents-py/    # lint
+.venv/Scripts/python -m ruff format core/agents-py/   # format
 ```
+
+Hook `ruff-check.sh` auto-exécuté après chaque Edit/Write sur `.py`.
+
+**Tests :**
+
+```bash
+.venv/Scripts/python -m pytest tests/                  # tous les tests
+.venv/Scripts/python -m pytest tests/test_base.py -v   # un fichier
+.venv/Scripts/python -m pytest tests/test_base.py::test_safe_read_path_rejects_traversal -v  # un test
+```
+
+pytest configuré avec `asyncio_mode = "auto"` — pas besoin de décorateur `@pytest.mark.asyncio` sur les tests async.
+
+Fixtures (`tests/conftest.py`) : `fake_env` (mock `ANTHROPIC_API_KEY` + `MODEL_WRITER`), `mock_anthropic_client` (factory — appeler pour obtenir un mock, pas un mock direct), `tmp_article` (fichier .md dans `tmp_path`). Note import : conftest.py enregistre `core/agents-py/` comme package `agents` dans `sys.modules` — pas besoin de path hack dans les tests.
+
+**Fichiers de test existants :**
+
+| Fichier | Couverture |
+| --- | --- |
+| `test_base.py` | `safe_read_path` / `safe_write_path` — protection path traversal |
+| `test_agent_contract.py` | Contrat agent async (héritage BaseContentAgent, signature `run()`) |
+| `test_seo_auditor_agent.py` | Agent SEO auditor — logique métier |
+| `test_seo_auditor_cli.py` | CLI parsing seo_auditor |
+
+**Skills slash commands** (`.claude/skills/`) : `/audit`, `/brain-lite`, `/publish-repo`, `/skill-creator`, `/todo`
 
 ## JS Dependencies
 
-`package.json` contient des dépendances JS (pas de bundler configuré — usage direct via Node) :
-
-| Package | Usage |
-| --- | --- |
-| `@anthropic-ai/claude-agent-sdk` | SDK Agent Claude côté JS |
-| `@mendable/firecrawl-js` | Web scraping |
-| `@pinecone-database/pinecone` | Recherche vectorielle |
-| `@wordpress/data` | Accès au store WordPress (Gutenberg) |
+`package.json` : `@anthropic-ai/claude-agent-sdk`, `@mendable/firecrawl-js`, `@pinecone-database/pinecone`, `@wordpress/data`. Pas de bundler — usage direct via Node.
 
 ## Agent Architecture
 
-Deux couches complémentaires :
+→ Détails complets dans `.claude/rules/python-agents.md` (chargé auto quand tu travailles dans `core/agents-py/`)
 
-- `core/agents-md/` — System prompts Markdown par agent (index : `core/agents-md/INDEX.md`)
-- `core/agents-py/` — Implémentations Python (`agent.py` + `cli.py` par agent)
+Résumé : 28 agents Python héritant de `BaseContentAgent`, async, retourne markdown. Chaque agent = `agent.py` + `cli.py`. **La table complète des 28 modules CLI est dans `.claude/rules/python-agents.md`** — ne pas dupliquer ici.
 
-Tous les agents héritent de `BaseContentAgent` (`core/agents-py/base.py`) — async, retourne `str` (markdown).
+**BaseContentAgent contract** (`core/agents-py/base.py`) :
 
-**Modules principaux :**
+```python
+class BaseContentAgent:
+    name: str = "base"                    # identifiant agent
+    system_prompt: str = ""               # prompt système
+    def __init__(self, model: str | None = None):
+        self.model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
+        self._client = AsyncAnthropic()
+    async def run(self, **kwargs) -> str:  # DOIT retourner du markdown
+```
+
+**Path traversal protection** — tout CLI utilisant des chemins fichiers doit passer par :
+- `safe_read_path(file_arg)` → valide + résout un chemin en lecture (lève `ValueError` si hors CWD)
+- `safe_write_path(path_arg)` → idem pour l'écriture
+
+Logger racine : `logging.getLogger("agents")` — les sous-agents utilisent `logging.getLogger("agents.mon_agent")`.
+
+**Principaux entry points :**
 
 | Module | Rôle |
 | --- | --- |
 | `agents.content_factory.cli` | Pipeline complet : strategy → article → audit → cluster (`brain.bat`) |
 | `agents.article_pipeline.cli` | Pipeline séquentiel 5-7 agents (Writer→Auditor→Editor→LLM→Meta) |
-| `agents.article_pipeline.brain_lite_cli` | Pipeline simplifié 5 étapes (`brain-lite.bat`) |
-| `agents.publish_ready.cli` | 4 audits parallèles (SEO + LLM + Conversion + Topical) |
 | `agents.schoolswp_brain.cli` | Agent stratégique (4 modes : seo-writer, plugin-comparator, wp-architect, automation-consultant) |
-| `agents.schoolswp_brain.workflow_cli` | Workflows W1 (SeoAudit), W2 (Competitive), W3 (ContentFactory) |
-| `agents.seo_auditor.cli` | Audit SEO /100 + `--fix` |
-| `agents.llm_seo.cli` | Citabilité IA /100 + `--inject` |
-| `agents.conversion_auditor.cli` | Audit conversion /100 + `--inject` |
-| `agents.topical_authority.cli` | Autorité thématique /100 + `--expand` |
-| `agents.knowledge_graph.cli` | Graphe éditorial — inventaire sujets + gaps |
-| `agents.pillar_authority.cli` | Audit autorité par pilier (`--all` → `audit/piliers/summary.md`) |
-| `agents.cocon_builder.cli` | Cocon sémantique par pilier |
-| `agents.roi_editorial_plan.cli` | Plan éditorial auto-priorisé ROI |
+| `agents.publish_ready.cli` | 4 audits parallèles (SEO + LLM + Conversion + Topical) |
 | `agents.strategic_brain.cli` | Orchestrateur décisionnel → commandes CLI prêtes |
-| `agents.kpi_dashboard.cli` | Dashboard KPI éditorial + `--export-json` pour Sheets/Notion |
-| `agents.seo_competitor_analyst.cli` | Gap analysis SEO vs concurrent |
-| `agents.niche_scout.cli` | Exploration niches SEO + scoring |
-| `agents.cluster_architect.cli` | Architecture cluster sémantique |
-| `agents.seo_writer.cli` | Rédaction SEO standalone |
-| `agents.automation_consultant.cli` | Conseil automation n8n / WordPress |
-| `agents.plugin_comparator.cli` | Comparaison plugins WordPress (tableaux, scoring) |
-| `agents.lms_trainer.cli` | Spécialiste LMS (LearnDash, TutorLMS, LifterLMS) |
-| `agents.wp_business_teacher.cli` | Stratégie business enseignant WordPress |
-| `agents.wp_digital_sales.cli` | Optimisation ventes digitales WordPress |
-| `agents.wp_freelance_teacher.cli` | Guide freelance formateur WordPress |
-| `agents.wp_premium_freelance.cli` | Positionnement premium freelance WordPress |
-| `agents.wp_profit_architect.cli` | Architecture rentabilité WordPress |
-| `agents.wp_teacher.cli` | Conseiller pédagogique WordPress enseignant |
+| `agents.seo_auditor.cli` | Audit SEO /100 + `--fix` auto-correct |
 
-**Pipeline stratégique recommandé (ordre) :**
+**Publish Score (publish_ready.cli) :**
+
+```text
+Publish Score = SEO×0.30 + LLM×0.25 + Conversion×0.25 + Autorité×0.20
+```
+
+Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-79 → révision ciblée | <70 → réécriture
+
+**Pipeline stratégique recommandé (exécuter dans l'ordre) :**
 
 ```bash
 .venv/Scripts/python -m agents.knowledge_graph.cli            # → content/docs/knowledge-graph.md
@@ -161,24 +163,57 @@ Tous les agents héritent de `BaseContentAgent` (`core/agents-py/base.py`) — a
 .venv/Scripts/python -m agents.strategic_brain.cli            # → decisions/brain-report.md
 ```
 
-**Publish Score formula :**
+**Logs** : `logs/agents.log` (rotation 10 MB × 5 fichiers). Format : `YYYY-MM-DDTHH:MM:SS | LEVEL | logger | message`. DEBUG → fichier uniquement, WARNING+ → console + fichier.
+
+**Fichiers intermédiaires pipeline** (`--save-dir`) : `strategy.md` → `v1.md` → `audit-seo.md` → `audit-llm.md` → `audit-conversion.md` → `audit-topical.md` → `v2.md` → `cluster.md` → `meta.md`. Pour `article_pipeline` : `v1.md` → `audit.md` → `serp-sim.md` → `v2.md` → `v3.md` → `ner.json` → `meta.md`.
+
+## Workspace Structure
 
 ```text
-Score = SEO×0.30 + LLM×0.25 + Conversion×0.25 + Autorité×0.20
+projects/schoolswp/
+├── agents/             # Namespace stub (__init__.py redirige vers core/agents-py/ via sys.modules)
+├── core/
+│   ├── agents-md/      # Agent system prompts as .md files (INDEX.md is the index)
+│   ├── agents-py/      # Python agent source files (base.py + one subdir per agent)
+│   ├── playbooks/      # Strategic playbooks (.md)
+│   ├── skills/         # Local Claude Code skills
+│   └── tasks/          # Active mission (todo.md) and lessons (lessons.md)
+├── systems/
+│   ├── n8n/            # n8n rules doc and config
+│   └── workflows/      # n8n workflow JSON exports
+├── apps/               # Applications: brand-reveal/ (Remotion), elearning/, telegram-bot/, vscode-agent-visual/
+├── content/
+│   ├── articles/       # Generated articles (save-dir outputs from pipeline)
+│   ├── docs/           # Brand rules, SEO reports
+│   └── pages/          # WordPress pages draft
+├── tools/
+│   └── scripts/        # Python utility scripts, gdrive tools
+├── infra/              # Docker, Prometheus config
+├── data/               # Reports, artifacts, outputs
+├── tests/              # pytest tests (asyncio_mode = auto)
+└── .claude/            # Claude Code rules, commands, local skills
 ```
 
-Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-79 → révision ciblée | <70 → réécriture
+## schoolsWP OS — Strategic Layers (apply in order)
+
+When reasoning about schoolsWP strategy, always work through these layers in sequence:
+
+1. Positionnement
+2. Intent SEO
+3. Architecture WordPress
+4. Automation
+5. Monétisation
+6. Autorité
 
 ## Branding
 
-- Toujours `schoolsWP` — jamais `SchoolsWP`, `schoolswp`, `Schoolswp`
-- Site : `schoolswp.com` (sans `www.`)
-- Mots interdits : disruptif, game changer, scalable, hack, révolutionnaire, incroyable, en un clic, sans effort, il suffit de
-- Source de vérité : `content/docs/BRAND_RULES.md`
+→ Détails dans `.claude/rules/branding.md` (chargé auto quand tu travailles dans `content/`)
+
+Résumé : toujours `schoolsWP`, tutoiement, mots interdits. Source de vérité : `content/docs/BRAND_RULES.md`
 
 ## Code Conventions
 
-**Python** — PEP 8, 4 espaces, ruff, Python 3.11+, line-length 120
+**Python** — PEP 8, 4 espaces, ruff (rules: E/F/W/I, ignore E501), Python 3.11+, line-length 120
 
 **JSON/JS** — 2 espaces, pas de trailing comma, UTF-8, LF
 
@@ -188,45 +223,43 @@ Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-7
 
 **Commits** — conventionnel en anglais : `feat:`, `fix:`, `chore:`, `docs:`
 
-**Branches** — `feature/*` ou `fix/*` depuis `main`
+**Branches** — `feature/*`, `fix/*`, `chore/*` depuis `main`
 
-**Nommage workflows n8n** — `[Status] Source > Destination: Description (ID)`
+## Scoped Rules (`.claude/rules/`)
 
-**Status** : `[InDev]` `[InTesting]` `[Staging]` `[Prod]` `[Offline]` `[ForDeletion]`
+Regles chargees automatiquement selon le dossier de travail :
+
+| Fichier | Scope | Contenu |
+| --- | --- | --- |
+| `python-agents.md` | `core/agents-py/**` | Architecture agents, modules CLI, pipeline |
+| `n8n-integration.md` | `systems/**` | typeVersions, contraintes Code node, nommage |
+| `branding.md` | `content/**` | Nom, ton, mots interdits |
+| `tools-services.md` | `tools/**` | Scripts utilitaires, services |
 
 ## n8n Integration
 
-- **Instance** : `https://schoolswp-n8n.wp1.host` (hébergé — pas Docker local)
-- **MCP** : configuré dans `.mcp.json` (ne pas modifier sans accord)
-- **Règles complètes** : `systems/n8n/CLAUDE.md` et `systems/n8n/Règles du jeu – automatisation n8n.md`
-- Ne jamais modifier les JSON de workflows à la main : passer par le MCP ou l'interface n8n
+→ Détails complets dans `.claude/rules/n8n-integration.md` (chargé auto quand tu travailles dans `systems/`)
 
-**typeVersions max confirmées :**
+Résumé : instance `https://schoolswp-n8n.wp1.host`, MCP dans `.mcp.json`, ne jamais modifier les JSON a la main. typeVersions, contraintes Code node et nommage dans la rule.
 
-| Node | Version max |
-| --- | --- |
-| scheduleTrigger | 1.2 |
-| httpRequest | 4.2 |
-| googleSheets | 4.5 |
-| openAi (langchain) | 1.8 |
-| code | 2 |
-| set | 3.4 |
-| if | 2.2 |
-| merge | 3.1 |
+## Tools & Services
 
-Contrainte Code node : `$helpers.httpRequest()` non disponible dans le task runner n8n 2.0 — utiliser un nœud HTTP Request séparé.
+→ Détails dans `.claude/rules/tools-services.md` (chargé auto quand tu travailles dans `tools/`)
 
-Contrainte Google Sheets : `appendOrUpdate` — le champ `matchingColumns` ne peut pas être vide.
+## Pre-commit Hooks
 
-**Nommage credentials** : `Service_Environment_Type` — ex: `GoogleSheets_Production_OAuth`
+Installation (une seule fois) : `pip install pre-commit && pre-commit install`
 
-**Backup n8n** : scripts dans `systems/n8n-backup/` (`backup-n8n.sh`, `restore-n8n.sh`). Déployer sur le serveur n8n, pas en local. Voir `systems/n8n-backup/README.md` pour le déploiement complet.
+Hooks exécutés dans l'ordre : 1. `secrets-scan` (détecte clés/tokens), 2. `ruff` lint + format (`--fix` auto-repair), 3. `pip-audit` (vulnérabilités dépendances). Mise à jour : `pre-commit autoupdate`.
+
+> **Note** : pas de CI/CD GitHub Actions configuré — les pre-commit hooks sont la seule barrière de qualité avant merge.
 
 ## Security
 
 - `.env` jamais versionné. `.mcp.json` dans `.gitignore` — utiliser `.mcp.json.example` comme template.
 - Credentials n8n sanitisés avant export.
 - Vérifier `.gitignore` avant tout commit.
+- Dependabot configuré (`.github/dependabot.yml`) : mises à jour pip + npm hebdomadaires (lundi), max 5 PRs.
 
 ## Execution Protocol
 
@@ -263,11 +296,22 @@ Skills Claude Code pour ce projet répartis sur :
 
 ### Disponibles à la demande (via `@`)
 
-- `.claude/docs/schoolswp-seo-engine.md` — moteur SEO
-- `.claude/docs/schoolswp-content-engine.md` — pipeline de production
-- `.claude/docs/schoolswp-authority-engine.md` — système d'autorité
-- `.claude/docs/schoolswp-auto-router.md` — logique de routage automatique
-- `.claude/docs/schoolswp-gsc-radar.md` — intégration Google Search Console
-- `.claude/docs/schoolswp-seo-ops-brain.md` — orchestration SEO ops
-- `.claude/docs/schoolswp-authority-domination-24m.md` — plan autorité 24 mois
-- `core/agents-py/CLAUDE.md` — conventions Python agents, patterns, pipeline flags
+| Document | Contenu |
+| --- | --- |
+| `schoolswp-auto-router.md` | 6 modes opérationnels (Architect, Strategist, Producer, Transformer, Experiment, Optimizer) |
+| `schoolswp-seo-engine.md` | Philosophie SEO (pillar pages, clusters, optimisation continue) |
+| `schoolswp-content-engine.md` | Système de production et repurposing de contenu |
+| `schoolswp-authority-engine.md` | Construction d'autorité (3 niveaux : pilier, cluster, satellite) |
+| `schoolswp-gsc-radar.md` | Analyse d'opportunités GSC |
+| `schoolswp-seo-ops-brain.md` | SEO opérationnel (schéma, scoring, prompts internes) |
+| `schoolswp-seo-agent.md` | Agent SEO automatisé (3 boucles : Radar, Ops, Publishing) |
+| `schoolswp-authority-domination-24m.md` | Plan stratégique 24 mois (4 piliers) |
+
+### Sub-CLAUDE.md (chargés automatiquement selon le dossier actif)
+
+- `core/agents-py/CLAUDE.md` — conventions Python agents, patterns, création d'agent
+- `systems/n8n/CLAUDE.md` — typeVersions confirmées, nommage, contraintes Code node
+
+### Contribution
+
+- `CONTRIBUTING.md` — guidelines de contribution (structure PR, conventions, checklist)

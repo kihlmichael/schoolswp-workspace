@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "run_type": "without_skill",
+  "expectations": [
+    {"text": "has-recap-table", "passed": false, "evidence": "Récap en fin de document, pas en début comme attendu"},
+    {"text": "correct-email-count", "passed": true, "evidence": "3 emails produits"},
+    {"text": "has-ab-subjects", "passed": false, "evidence": "Un seul objet par email, pas d'alternative A/B"},
+    {"text": "tutoiement-only", "passed": true, "evidence": "Utilise 'tu/ton' — mais signature '{signature}' au lieu de 'Michaël'"},
+    {"text": "no-hype-words", "passed": true, "evidence": "Aucun mot interdit"},
+    {"text": "has-fluentcrm-automation", "passed": false, "evidence": "Automation présente mais simpliste : pas d'anti-doublon explicite, pas de condition de vérification tag converti entre chaque email"},
+    {"text": "has-checklist", "passed": false, "evidence": "Pas de checklist pré-lancement"},
+    {"text": "has-kpi-table", "passed": false, "evidence": "4 KPIs listés en bullet points, pas de format tableau avec seuils et actions"},
+    {"text": "model-adaptation", "passed": true, "evidence": "Freemium traité, gratuit recommandé en premier"},
+    {"text": "mentions-limit", "passed": false, "evidence": "Pas de limite réelle explicitement mentionnée"}
+  ]
+}

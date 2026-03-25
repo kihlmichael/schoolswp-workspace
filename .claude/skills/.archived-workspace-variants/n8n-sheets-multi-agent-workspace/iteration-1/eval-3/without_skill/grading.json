@@ -1,0 +1,39 @@
+{
+  "eval_id": 3,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Spawne 3 agents en parallèle (JSON Analyst, Columns Analyst, Mapper) avec leurs rapports distincts",
+      "passed": false,
+      "evidence": "Réponse directe sans agents — pas d'orchestration"
+    },
+    {
+      "text": "Les 7 sections obligatoires sont présentes",
+      "passed": false,
+      "evidence": "Structure simple — pas les 7 sections requises"
+    },
+    {
+      "text": "Toutes les expressions utilisent {{ $json[\"...\"] }} avec doubles guillemets",
+      "passed": false,
+      "evidence": "Notation point $json.xxx sans doubles guillemets (confirmé dans le résumé agent)"
+    },
+    {
+      "text": "Détecte les incohérences JSON/colonnes (items_count sans colonne, noms différents)",
+      "passed": true,
+      "evidence": "Note sur items_count sans colonne dédiée — signalé correctement"
+    },
+    {
+      "text": "Aucun champ inventé absent du JSON fourni",
+      "passed": true,
+      "evidence": "Champs du JSON uniquement"
+    },
+    {
+      "text": "Bloc final récapitulatif copy-paste présent",
+      "passed": true,
+      "evidence": "Structure minimale du workflow avec mapping des 6 colonnes"
+    }
+  ],
+  "score": 3,
+  "max_score": 6,
+  "pass_rate": 0.5
+}

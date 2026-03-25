@@ -1,0 +1,27 @@
+{
+  "eval_id": 3,
+  "eval_name": "content-system",
+  "prompt": "Je veux créer un système de contenu récurrent pour schoolsWP. Chaque semaine : 1 article SEO, 1 newsletter FluentCRM, 1 post LinkedIn. Je veux que tout soit cohérent et le moins chronophage possible. Comment je structure ça ?",
+  "assertions": [
+    {
+      "id": "a1",
+      "description": "Propose une logique de réutilisation : article → newsletter → LinkedIn (ou autre ordre logique)"
+    },
+    {
+      "id": "a2",
+      "description": "Identifie les étapes de production avec un ordre logique"
+    },
+    {
+      "id": "a3",
+      "description": "Mentionne ou suggère une automatisation possible (n8n, FluentCRM, autre)"
+    },
+    {
+      "id": "a4",
+      "description": "Distingue la phase de production de la phase de distribution"
+    },
+    {
+      "id": "a5",
+      "description": "Résultat présenté comme un système réutilisable, pas juste un conseil hebdomadaire"
+    }
+  ]
+}

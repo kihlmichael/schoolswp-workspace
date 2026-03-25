@@ -1,0 +1,41 @@
+{
+  "run_id": "eval-3-with_skill",
+  "assertions": [
+    {
+      "text": "no-preamble",
+      "passed": true,
+      "evidence": "Starts with: '<svg xmlns=\"http://www.w3.org/'"
+    },
+    {
+      "text": "has-style-block",
+      "passed": true,
+      "evidence": "Found <style>"
+    },
+    {
+      "text": "has-hover-states",
+      "passed": true,
+      "evidence": "Found :hover"
+    },
+    {
+      "text": "has-translate-animation",
+      "passed": true,
+      "evidence": "Found translateY()"
+    },
+    {
+      "text": "has-6-groups",
+      "passed": true,
+      "evidence": "Found 7 <g elements"
+    },
+    {
+      "text": "no-external-deps",
+      "passed": true,
+      "evidence": "No external URLs"
+    },
+    {
+      "text": "svg-closes-properly",
+      "passed": true,
+      "evidence": "Ends with: ' </g>\\n\\n  </g>\\n</svg>'"
+    }
+  ],
+  "summary": "7/7 passed"
+}

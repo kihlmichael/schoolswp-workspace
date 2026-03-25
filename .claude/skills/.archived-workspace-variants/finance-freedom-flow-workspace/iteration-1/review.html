@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "finance-freedom-flow", "runs": [{"id": "eval-dette-isolee-with_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Plan Destruction de Dettes\n\nDate : 19 mars 2026\n\n---\n\n## Inventaire\n\n| Dette | Montant | Taux annuel | Taux mensuel | Minimum/mois |\n|-------|---------|-------------|-------------|-------------|\n| Credit auto | 12 000 EUR | 4,5% | 0,375% | 280 EUR |\n| Credit conso | 5 000 EUR | 7,2% | 0,600% | 120 EUR |\n| Carte revolving | 2 800 EUR | 19,8% | 1,650% | 85 EUR |\n| **Total** | **19 800 EUR** | | | **485 EUR** |\n\nBudget supplementaire disponible : **200 EUR/mois**\n\nBudget total mensuel consacre aux dettes : **685 EUR/mois**\n\n---\n\n## Methode 1 : Snowball (plus petite dette d'abord)\n\n- **Ordre d'attaque** : Carte revolving (2 800 EUR) \u00e2\u2020\u2019 Credit conso (5 000 EUR) \u00e2\u2020\u2019 Credit auto (12 000 EUR)\n- **Logique** : on cible le solde le plus faible pour l'eliminer vite, puis on redirige la mensualite liberee vers la dette suivante\n\n### Deroulement\n\n**Phase 1 \u00e2\u20ac\u201d Revolving (mois 1 a 11)**\n- Paiement revolving : 285 EUR/mois (85 minimum + 200 extra)\n- Paiement conso : 120 EUR/mois (minimum)\n- Paiement auto : 280 EUR/mois (minimum)\n- Revolving elimine au mois 11 (dernier versement : 230,40 EUR)\n- Interets payes sur revolving : 280,40 EUR\n\n**Phase 2 \u00e2\u20ac\u201d Conso (mois 12 a 21)**\n- Paiement conso : 405 EUR/mois (120 minimum + 285 liberes du revolving)\n- Paiement auto : 280 EUR/mois (minimum)\n- Conso elimine au mois 21 (dernier versement : 468,99 EUR)\n- Solde conso au debut de phase 2 : 3 979,76 EUR\n- Interets payes sur conso (total) : 433,99 EUR\n\n**Phase 3 \u00e2\u20ac\u201d Auto (mois 22 a 32)**\n- Paiement auto : 685 EUR/mois (280 + 405 liberes du conso et revolving)\n- Auto elimine au mois 32 (dernier versement : 171,57 EUR)\n- Solde auto au debut de phase 3 : 6 875,47 EUR\n- Interets payes sur auto (total) : 901,57 EUR\n\n### Resultats Snowball\n\n| Metrique | Valeur |\n|----------|--------|\n| Date liberation totale | **Mois 32 (novembre 2028)** |\n| Interets totaux payes | **1 615,96 EUR** |\n| Cout total (principal + interets) | **21 415,96 EUR** |\n| 1ere victoire (dette eliminee) | Mois 11 \u00e2\u20ac\u201d revolving |\n| 2eme victoire | Mois 21 \u00e2\u20ac\u201d conso |\n\n**Avantage** : victoires psychologiques rapides, effet boule de neige motivant.\n\n---\n\n## Methode 2 : Avalanche (taux le plus eleve d'abord)\n\n- **Ordre d'attaque** : Carte revolving (19,8%) \u00e2\u2020\u2019 Credit conso (7,2%) \u00e2\u2020\u2019 Credit auto (4,5%)\n- **Logique** : on cible le taux le plus toxique pour minimiser les interets totaux\n\n### Constat important\n\nDans ton cas precis, la methode Avalanche produit **exactement le meme ordre** que la methode Snowball. Pourquoi ? Parce que ta dette la plus petite (revolving, 2 800 EUR) est aussi celle avec le taux le plus eleve (19,8%), et ta dette intermediaire (conso, 5 000 EUR) a le deuxieme taux le plus eleve (7,2%). Les deux logiques convergent.\n\n### Resultats Avalanche\n\n| Metrique | Valeur |\n|----------|--------|\n| Date liberation totale | **Mois 32 (novembre 2028)** |\n| Interets totaux payes | **1 615,96 EUR** |\n| Cout total (principal + interets) | **21 415,96 EUR** |\n| Economie vs Snowball | **0 EUR** (ordres identiques) |\n\n**Avantage** : mathematiquement optimal ET psychologiquement motivant \u00e2\u20ac\u201d tu as le meilleur des deux mondes.\n\n---\n\n## Methode 3 : Hybride (revolving d'abord, puis repartition)\n\n- **Ordre** : Revolving d'abord (unanimite des 2 methodes), puis repartition de l'extra entre conso et auto simultanement\n- **Logique** : apres l'elimination du revolving, repartir les 285 EUR liberes : 185 EUR extra vers conso (total 305 EUR/mois) et 100 EUR extra vers auto (total 380 EUR/mois) \u00e2\u20ac\u201d pour accelerer les deux en parallele\n\n### Deroulement\n\n**Phase 1 \u00e2\u20ac\u201d Revolving (mois 1 a 11)** : identique aux methodes 1 et 2\n\n**Phase 2 \u00e2\u20ac\u201d Conso + Auto en parallele (mois 12 a 25)**\n- Paiement conso : 305 EUR/mois (120 + 185 extra)\n- Paiement auto : 380 EUR/mois (280 + 100 extra)\n- Conso elimine au mois 25 (dernier versement : 191,83 EUR)\n- Interets payes sur conso (total) : 476,83 EUR\n\n**Phase 3 \u00e2\u20ac\u201d Auto seul (mois 26 a 32)**\n- Paiement auto : 685 EUR/mois (tout le budget)\n- Auto elimine au mois 32 (dernier versement : 371,27 EUR)\n- Interets payes sur auto (total) : 881,27 EUR\n\n### Resultats Hybride\n\n| Metrique | Valeur |\n|----------|--------|\n| Date liberation totale | **Mois 32 (novembre 2028)** |\n| Interets totaux payes | **1 638,50 EUR** |\n| Cout total (principal + interets) | **21 438,50 EUR** |\n| Surcout vs Avalanche/Snowball | **+22,54 EUR** |\n| 1ere victoire | Mois 11 \u00e2\u20ac\u201d revolving |\n| 2eme victoire | Mois 25 \u00e2\u20ac\u201d conso (4 mois plus tard que Snowball/Avalanche) |\n\n**Avantage** : le solde auto descend plus vite pendant la phase 2, ce qui peut rassurer psychologiquement. **Inconvenient** : on paie 22,54 EUR d'interets en plus et la 2eme victoire arrive 4 mois plus tard.\n\n---\n\n## Comparatif des 3 methodes\n\n| Critere | Snowball | Avalanche | Hybride |\n|---------|----------|-----------|---------|\n| Ordre | Revolving \u00e2\u2020\u2019 Conso \u00e2\u2020\u2019 Auto | Revolving \u00e2\u2020\u2019 Conso \u00e2\u2020\u2019 Auto | Revolving \u00e2\u2020\u2019 Conso+Auto \u00e2\u2020\u2019 Auto |\n| Duree totale | **32 mois** | **32 mois** | **32 mois** |\n| Interets totaux | **1 615,96 EUR** | **1 615,96 EUR** | **1 638,50 EUR** |\n| Cout total | **21 415,96 EUR** | **21 415,96 EUR** | **21 438,50 EUR** |\n| 1ere dette eliminee | Mois 11 | Mois 11 | Mois 11 |\n| 2eme dette eliminee | Mois 21 | Mois 21 | Mois 25 |\n| Victoires rapides | Excellent | Excellent | Moyen |\n| Economies interets | Optimal | Optimal | -22,54 EUR |\n| Complexite | Simple | Simple | Plus complexe |\n\n---\n\n## Recommandation pour TOI : Avalanche (= Snowball dans ton cas)\n\n**Pourquoi c'est un sans-faute :**\n\nTu es dans la situation ideale ou les deux methodes les plus efficaces convergent vers le meme plan d'action. Le revolving a 19,8% est a la fois ta plus petite dette et ta plus toxique \u00e2\u20ac\u201d pas de dilemme.\n\n**Pourquoi pas l'hybride :**\n\nL'hybride te couterait 22,54 EUR de plus, retarderait ta deuxieme victoire de 4 mois, et ajouterait de la complexite de suivi pour zero benefice. Quand on peut avoir la motivation ET l'optimisation mathematique, on ne dilue pas.\n\n**Le plan est limpide :**\n1. Tout l'extra sur le revolving \u00e2\u2020\u2019 mort en 11 mois\n2. Tout l'extra sur le conso \u00e2\u2020\u2019 mort en 10 mois de plus\n3. Tout le budget sur l'auto \u00e2\u2020\u2019 mort en 11 mois de plus\n4. Libre en 32 mois. Termin\u00c3\u00a9.\n\n---\n\n## Calendrier mois par mois (methode recommandee : Avalanche/Snowball)\n\n### Phase 1 : Elimination du revolving (mois 1-11)\n\n| Mois | Date | Paiement revolving | Solde revolving | Paiement conso | Solde conso | Paiement auto | Solde auto | Paiement total | Solde total |\n|------|------|-------------------|----------------|---------------|------------|--------------|-----------|---------------|------------|\n| M0 | Mars 2026 | \u00e2\u20ac\u201d | 2 800,00 | \u00e2\u20ac\u201d | 5 000,00 | \u00e2\u20ac\u201d | 12 000,00 | \u00e2\u20ac\u201d | 19 800,00 |\n| M1 | Avr. 2026 | 285,00 | 2 561,20 | 120,00 | 4 910,00 | 280,00 | 11 765,00 | 685,00 | 19 236,20 |\n| M2 | Mai 2026 | 285,00 | 2 318,46 | 120,00 | 4 819,46 | 280,00 | 11 529,12 | 685,00 | 18 667,04 |\n| M3 | Juin 2026 | 285,00 | 2 071,71 | 120,00 | 4 728,38 | 280,00 | 11 292,35 | 685,00 | 18 092,44 |\n| M4 | Juil. 2026 | 285,00 | 1 820,89 | 120,00 | 4 636,75 | 280,00 | 11 054,70 | 685,00 | 17 512,34 |\n| M5 | Aout 2026 | 285,00 | 1 565,93 | 120,00 | 4 544,57 | 280,00 | 10 816,16 | 685,00 | 16 926,66 |\n| M6 | Sept. 2026 | 285,00 | 1 306,77 | 120,00 | 4 451,84 | 280,00 | 10 576,72 | 685,00 | 16 335,33 |\n| M7 | Oct. 2026 | 285,00 | 1 043,33 | 120,00 | 4 358,55 | 280,00 | 10 336,38 | 685,00 | 15 738,26 |\n| M8 | Nov. 2026 | 285,00 | 775,55 | 120,00 | 4 264,70 | 280,00 | 10 095,14 | 685,00 | 15 135,39 |\n| M9 | Dec. 2026 | 285,00 | 503,35 | 120,00 | 4 170,29 | 280,00 | 9 853,00 | 685,00 | 14 526,64 |\n| M10 | Janv. 2027 | 285,00 | 226,66 | 120,00 | 4 075,31 | 280,00 | 9 609,95 | 685,00 | 13 911,92 |\n| M11 | Fev. 2027 | **230,40** | **0,00** | 120,00 | 3 979,76 | 280,00 | 9 365,99 | **630,40** | **13 345,75** |\n\n**VICTOIRE #1 \u00e2\u20ac\u201d Carte revolving ELIMINEE. Interets economises sur le reste de la vie : des centaines d'euros/an a 19,8%.**\n\n### Phase 2 : Elimination du credit conso (mois 12-21)\n\n| Mois | Date | Paiement conso | Solde conso | Paiement auto | Solde auto | Paiement total | Solde total |\n|------|------|---------------|------------|--------------|-----------|---------------|------------|\n| M12 | Mars 2027 | 405,00 | 3 598,64 | 280,00 | 9 121,11 | 685,00 | 12 719,75 |\n| M13 | Avr. 2027 | 405,00 | 3 215,23 | 280,00 | 8 875,31 | 685,00 | 12 090,54 |\n| M14 | Mai 2027 | 405,00 | 2 829,52 | 280,00 | 8 628,59 | 685,00 | 11 458,11 |\n| M15 | Juin 2027 | 405,00 | 2 441,50 | 280,00 | 8 380,95 | 685,00 | 10 822,45 |\n| M16 | Juil. 2027 | 405,00 | 2 051,15 | 280,00 | 8 132,38 | 685,00 | 10 183,53 |\n| M17 | Aout 2027 | 405,00 | 1 658,46 | 280,00 | 7 882,88 | 685,00 | 9 541,34 |\n| M18 | Sept. 2027 | 405,00 | 1 263,41 | 280,00 | 7 632,44 | 685,00 | 8 895,85 |\n| M19 | Oct. 2027 | 405,00 | 865,99 | 280,00 | 7 381,06 | 685,00 | 8 247,05 |\n| M20 | Nov. 2027 | 405,00 | 466,19 | 280,00 | 7 128,74 | 685,00 | 7 594,93 |\n| M21 | Dec. 2027 | **468,99** | **0,00** | 280,00 | 6 875,47 | **748,99** | **6 875,47** |\n\n**VICTOIRE #2 \u00e2\u20ac\u201d Credit conso ELIMINE. Tu passes de 3 dettes a 1 seule. Le mois prochain, 685 EUR attaquent l'auto.**\n\n### Phase 3 : Elimination du credit auto (mois 22-32)\n\n| Mois | Date | Paiement auto | Solde auto | Solde total |\n|------|------|--------------|-----------|------------|\n| M22 | Janv. 2028 | 685,00 | 6 216,25 | 6 216,25 |\n| M23 | Fev. 2028 | 685,00 | 5 554,56 | 5 554,56 |\n| M24 | Mars 2028 | 685,00 | 4 890,39 | 4 890,39 |\n| M25 | Avr. 2028 | 685,00 | 4 223,73 | 4 223,73 |\n| M26 | Mai 2028 | 685,00 | 3 554,57 | 3 554,57 |\n| M27 | Juin 2028 | 685,00 | 2 882,90 | 2 882,90 |\n| M28 | Juil. 2028 | 685,00 | 2 208,71 | 2 208,71 |\n| M29 | Aout 2028 | 685,00 | 1 531,99 | 1 531,99 |\n| M30 | Sept. 2028 | 685,00 | 852,73 | 852,73 |\n| M31 | Oct. 2028 | 685,00 | 170,93 | 170,93 |\n| M32 | Nov. 2028 | **171,57** | **0,00** | **0,00** |\n\n**VICTOIRE FINALE \u00e2\u20ac\u201d ZERO DETTE. 685 EUR/mois deviennent 100% disponibles pour epargne et investissement.**\n\n---\n\n## Resume des jalons\n\n| Jalon | Date | Evenement | Solde restant |\n|-------|------|-----------|--------------|\n| Mois 11 | Fevrier 2027 | Revolving elimine (19,8%) | 13 345,75 EUR |\n| Mois 21 | Decembre 2027 | Conso elimine (7,2%) | 6 875,47 EUR |\n| Mois 32 | **Novembre 2028** | **Auto elimine \u00e2\u20ac\u201d DETTE ZERO** | **0 EUR** |\n\n---\n\n## Chiffres cles\n\n| Metrique | Valeur |\n|----------|--------|\n| Dettes totales de depart | 19 800 EUR |\n| Interets totaux payes | 1 615,96 EUR |\n| Cout total | 21 415,96 EUR |\n| Duree totale | 32 mois (2 ans et 8 mois) |\n| Interets revolving (evites apres M11) | 280,40 EUR |\n| Date de liberation | **Novembre 2028** |\n| Budget libere apres dette zero | **685 EUR/mois** |\n\n---\n\n## Tactiques motivation\n\n- **Barre de progression** : chaque mois, calcule ton pourcentage de dette eliminee. Tu demarres a 0/19 800. A M11 tu seras a 33% (revolving elimine + reduction des autres). A M21, tu seras a 65%. La courbe accelere.\n- **Celebrer chaque victoire** : quand le revolving tombe a zero (M11), offre-toi quelque chose avec le budget plaisir \u00e2\u20ac\u201d pas une nouvelle dette. Idem pour le conso (M21).\n- **La regle des 48h** : envie de depenser l'extra ailleurs ? Attends 48 heures. 9 fois sur 10, l'envie passe.\n- **Le compteur toxique** : a chaque fin de mois, note combien d'interets tu as payes ce mois. Regarde ce chiffre baisser. Le revolving coutait 46 EUR/mois d'interets au debut \u00e2\u20ac\u201d a M10, seulement 8 EUR. C'est de l'argent que tu gardes.\n- **La projection apres dettes** : 685 EUR/mois investis a 7% annuel pendant 10 ans = environ 118 000 EUR. C'est ca que tes dettes te coutent en cout d'opportunite. Chaque mois de remboursement te rapproche de ce capital.\n- **Automatise les paiements** : programme les virements en automatique le lendemain du salaire. Pas de decision a prendre, pas de tentation de reporter.\n"}], "grading": {"expectations": [{"text": "3 dettes inventoriees", "passed": true, "evidence": "Found 109 debt references"}, {"text": "Methode Snowball presente avec ordre", "passed": true, "evidence": "Snowball found: True"}, {"text": "Methode Avalanche : revolving (19.8%) en premier", "passed": true, "evidence": "Avalanche found: True, revolving priority indicated: True"}, {"text": "Calendrier mois par mois present", "passed": true, "evidence": "Monthly calendar found: True"}, {"text": "Recommandation personnalisee avec justification", "passed": true, "evidence": "Recommendation found: True"}, {"text": "Interets totaux compares entre methodes", "passed": true, "evidence": "Interest comparison found: True"}], "summary": "6/6 assertions passed"}}, {"id": "eval-dette-isolee-without_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Etape 4 : Destruction de dettes -- Analyse complete\n\n## Situation initiale\n\n| Dette | Solde | Taux annuel | Taux mensuel | Paiement minimum |\n|-------|-------|-------------|--------------|------------------|\n| Credit auto | 12 000 EUR | 4.5% | 0.375% | 280 EUR/mois |\n| Credit conso | 5 000 EUR | 7.2% | 0.600% | 120 EUR/mois |\n| Carte revolving | 2 800 EUR | 19.8% | 1.650% | 85 EUR/mois |\n\n- **Total des dettes** : 19 800 EUR\n- **Paiements minimums cumules** : 485 EUR/mois\n- **Budget supplementaire** : 200 EUR/mois\n- **Budget total disponible** : 685 EUR/mois\n\n---\n\n## Methode 1 : Avalanche (taux le plus eleve d'abord)\n\n### Principe\n\nOn paie le minimum sur toutes les dettes sauf celle au taux le plus eleve, qui recoit tout le surplus. Ordre d'attaque : Revolving (19.8%) \u00e2\u2020\u2019 Credit conso (7.2%) \u00e2\u2020\u2019 Credit auto (4.5%).\n\n### Allocation mensuelle\n\n- Credit auto : 280 EUR (minimum)\n- Credit conso : 120 EUR (minimum)\n- Revolving : 85 + 200 = **285 EUR** (minimum + surplus)\n\nQuand une dette est soldee, son minimum est redirige vers la dette suivante au taux le plus eleve.\n\n### Calendrier mois par mois -- Methode Avalanche\n\n**Phase 1 : Attaque du Revolving (mois 1-11)**\n\nLe revolving recoit 285 EUR/mois. Les autres recoivent leur minimum.\n\n| Mois | Revolving (solde) | Interets revolving | Paiement revolving | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|-------------------|--------------------|--------------------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 0 | 2 800.00 | -- | -- | 5 000.00 | -- | -- | 12 000.00 | -- | -- | -- |\n| 1 | 2 561.20 | 46.20 | 285.00 | 4 910.00 | 30.00 | 120.00 | 11 765.00 | 45.00 | 280.00 | 685.00 |\n| 2 | 2 318.47 | 42.26 | 285.00 | 4 819.46 | 29.46 | 120.00 | 11 529.12 | 44.12 | 280.00 | 685.00 |\n| 3 | 2 071.73 | 38.25 | 285.00 | 4 728.38 | 28.92 | 120.00 | 11 292.35 | 43.23 | 280.00 | 685.00 |\n| 4 | 1 820.91 | 34.18 | 285.00 | 4 636.76 | 28.37 | 120.00 | 11 054.69 | 42.35 | 280.00 | 685.00 |\n| 5 | 1 565.93 | 30.03 | 285.00 | 4 544.59 | 27.82 | 120.00 | 10 816.13 | 41.44 | 280.00 | 685.00 |\n| 6 | 1 306.72 | 25.84 | 285.00 | 4 451.87 | 27.27 | 120.00 | 10 576.67 | 40.54 | 280.00 | 685.00 |\n| 7 | 1 043.18 | 21.56 | 285.00 | 4 358.58 | 26.71 | 120.00 | 10 336.31 | 39.64 | 280.00 | 685.00 |\n| 8 | 775.40 | 17.21 | 285.00 | 4 264.73 | 26.15 | 120.00 | 10 095.04 | 38.74 | 280.00 | 685.00 |\n| 9 | 503.19 | 12.80 | 285.00 | 4 170.31 | 25.58 | 120.00 | 9 852.85 | 37.82 | 280.00 | 685.00 |\n| 10 | 226.49 | 8.30 | 285.00 | 4 075.32 | 25.02 | 120.00 | 9 609.75 | 36.90 | 280.00 | 685.00 |\n| 11 | 0.00 | 3.74 | 230.23 | 3 979.76 | 24.45 | 120.00 | 9 365.73 | 35.98 | 280.00 | 630.23 |\n\n**Revolving solde au mois 11.** Surplus restant au mois 11 : 285 - 230.23 = 54.77 EUR (redirige vers le conso).\n\n**Phase 2 : Attaque du Credit conso (mois 12-22)**\n\nLe credit conso recoit maintenant : 120 (son minimum) + 200 (surplus) + 85 (ancien minimum revolving) = **405 EUR/mois**.\n\n| Mois | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 12 | 3 598.63 | 23.87 | 405.00 | 9 120.79 | 35.06 | 280.00 | 685.00 |\n| 13 | 3 215.22 | 21.59 | 405.00 | 8 874.99 | 34.20 | 280.00 | 685.00 |\n| 14 | 2 829.50 | 19.29 | 405.00 | 8 628.26 | 33.28 | 280.00 | 685.00 |\n| 15 | 2 441.48 | 16.98 | 405.00 | 8 380.61 | 32.35 | 280.00 | 685.00 |\n| 16 | 2 051.13 | 14.65 | 405.00 | 8 132.03 | 31.43 | 280.00 | 685.00 |\n| 17 | 1 658.44 | 12.31 | 405.00 | 7 882.52 | 30.49 | 280.00 | 685.00 |\n| 18 | 1 263.39 | 9.95 | 405.00 | 7 632.08 | 29.56 | 280.00 | 685.00 |\n| 19 | 865.97 | 7.58 | 405.00 | 7 380.70 | 28.62 | 280.00 | 685.00 |\n| 20 | 466.17 | 5.20 | 405.00 | 7 128.38 | 27.68 | 280.00 | 685.00 |\n| 21 | 63.97 | 2.80 | 405.00 | 6 875.11 | 26.73 | 280.00 | 685.00 |\n| 22 | 0.00 | 1.06 | 65.02 | 6 620.89 | 25.78 | 280.00 | 345.02 |\n\n**Credit conso solde au mois 22.** Surplus restant au mois 22 : 405 - 65.02 = 339.98 EUR (redirige vers l'auto).\n\n**Phase 3 : Attaque du Credit auto (mois 23-34)**\n\nLe credit auto recoit maintenant : 280 (son minimum) + 200 (surplus) + 85 (revolving) + 120 (conso) = **685 EUR/mois** (tout le budget).\n\n| Mois | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|--------------|---------------|---------------|------------|\n| 23 | 5 960.72 | 24.83 | 685.00 | 685.00 |\n| 24 | 5 298.07 | 22.35 | 685.00 | 685.00 |\n| 25 | 4 632.94 | 19.87 | 685.00 | 685.00 |\n| 26 | 3 965.31 | 17.37 | 685.00 | 685.00 |\n| 27 | 3 295.18 | 14.87 | 685.00 | 685.00 |\n| 28 | 2 622.53 | 12.35 | 685.00 | 685.00 |\n| 29 | 1 947.36 | 9.83 | 685.00 | 685.00 |\n| 30 | 1 269.66 | 7.30 | 685.00 | 685.00 |\n| 31 | 589.42 | 4.76 | 685.00 | 685.00 |\n| 32 | 0.00 | 2.21 | 591.63 | 591.63 |\n\n**Credit auto solde au mois 32.**\n\n### Resume Methode Avalanche\n\n- **Revolving solde** : Mois 11\n- **Credit conso solde** : Mois 22\n- **Credit auto solde** : Mois 32\n- **Duree totale** : 32 mois (2 ans et 8 mois)\n- **Total paye** : 20 997.88 EUR\n- **Total interets payes** : 1 197.88 EUR\n\n---\n\n## Methode 2 : Snowball (solde le plus petit d'abord)\n\n### Principe\n\nOn paie le minimum sur toutes les dettes sauf celle au solde le plus petit, qui recoit tout le surplus. Ordre d'attaque : Revolving (2 800 EUR) \u00e2\u2020\u2019 Credit conso (5 000 EUR) \u00e2\u2020\u2019 Credit auto (12 000 EUR).\n\n### Allocation mensuelle\n\nIdentique au debut car le revolving est a la fois le plus petit solde ET le taux le plus eleve. La difference apparait en Phase 2.\n\n### Calendrier mois par mois -- Methode Snowball\n\n**Phase 1 : Attaque du Revolving (mois 1-11)**\n\nIdentique a la methode Avalanche -- meme ordre d'attaque pour la premiere dette.\n\n| Mois | Revolving (solde) | Interets revolving | Paiement revolving | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|-------------------|--------------------|--------------------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 0 | 2 800.00 | -- | -- | 5 000.00 | -- | -- | 12 000.00 | -- | -- | -- |\n| 1 | 2 561.20 | 46.20 | 285.00 | 4 910.00 | 30.00 | 120.00 | 11 765.00 | 45.00 | 280.00 | 685.00 |\n| 2 | 2 318.47 | 42.26 | 285.00 | 4 819.46 | 29.46 | 120.00 | 11 529.12 | 44.12 | 280.00 | 685.00 |\n| 3 | 2 071.73 | 38.25 | 285.00 | 4 728.38 | 28.92 | 120.00 | 11 292.35 | 43.23 | 280.00 | 685.00 |\n| 4 | 1 820.91 | 34.18 | 285.00 | 4 636.76 | 28.37 | 120.00 | 11 054.69 | 42.35 | 280.00 | 685.00 |\n| 5 | 1 565.93 | 30.03 | 285.00 | 4 544.59 | 27.82 | 120.00 | 10 816.13 | 41.44 | 280.00 | 685.00 |\n| 6 | 1 306.72 | 25.84 | 285.00 | 4 451.87 | 27.27 | 120.00 | 10 576.67 | 40.54 | 280.00 | 685.00 |\n| 7 | 1 043.18 | 21.56 | 285.00 | 4 358.58 | 26.71 | 120.00 | 10 336.31 | 39.64 | 280.00 | 685.00 |\n| 8 | 775.40 | 17.21 | 285.00 | 4 264.73 | 26.15 | 120.00 | 10 095.04 | 38.74 | 280.00 | 685.00 |\n| 9 | 503.19 | 12.80 | 285.00 | 4 170.31 | 25.58 | 120.00 | 9 852.85 | 37.82 | 280.00 | 685.00 |\n| 10 | 226.49 | 8.30 | 285.00 | 4 075.32 | 25.02 | 120.00 | 9 609.75 | 36.90 | 280.00 | 685.00 |\n| 11 | 0.00 | 3.74 | 230.23 | 3 979.76 | 24.45 | 120.00 | 9 365.73 | 35.98 | 280.00 | 630.23 |\n\n**Revolving solde au mois 11.** (Identique a Avalanche.)\n\n**Phase 2 : Attaque du Credit conso (mois 12-22)**\n\nDans la methode Snowball, le credit conso (4 000 EUR restant environ) est le plus petit solde, donc il est attaque en second. C'est le meme ordre que l'Avalanche dans ce cas, car le conso est a la fois le 2e plus petit solde ET le 2e taux le plus eleve.\n\nLe calendrier est donc **identique a l'Avalanche** pour cette phase aussi.\n\n| Mois | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 12 | 3 598.63 | 23.87 | 405.00 | 9 120.79 | 35.06 | 280.00 | 685.00 |\n| 13 | 3 215.22 | 21.59 | 405.00 | 8 874.99 | 34.20 | 280.00 | 685.00 |\n| 14 | 2 829.50 | 19.29 | 405.00 | 8 628.26 | 33.28 | 280.00 | 685.00 |\n| 15 | 2 441.48 | 16.98 | 405.00 | 8 380.61 | 32.35 | 280.00 | 685.00 |\n| 16 | 2 051.13 | 14.65 | 405.00 | 8 132.03 | 31.43 | 280.00 | 685.00 |\n| 17 | 1 658.44 | 12.31 | 405.00 | 7 882.52 | 30.49 | 280.00 | 685.00 |\n| 18 | 1 263.39 | 9.95 | 405.00 | 7 632.08 | 29.56 | 280.00 | 685.00 |\n| 19 | 865.97 | 7.58 | 405.00 | 7 380.70 | 28.62 | 280.00 | 685.00 |\n| 20 | 466.17 | 5.20 | 405.00 | 7 128.38 | 27.68 | 280.00 | 685.00 |\n| 21 | 63.97 | 2.80 | 405.00 | 6 875.11 | 26.73 | 280.00 | 685.00 |\n| 22 | 0.00 | 1.06 | 65.02 | 6 620.89 | 25.78 | 280.00 | 345.02 |\n\n**Credit conso solde au mois 22.**\n\n**Phase 3 : Attaque du Credit auto (mois 23-32)**\n\nIdentique a l'Avalanche.\n\n| Mois | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|--------------|---------------|---------------|------------|\n| 23 | 5 960.72 | 24.83 | 685.00 | 685.00 |\n| 24 | 5 298.07 | 22.35 | 685.00 | 685.00 |\n| 25 | 4 632.94 | 19.87 | 685.00 | 685.00 |\n| 26 | 3 965.31 | 17.37 | 685.00 | 685.00 |\n| 27 | 3 295.18 | 14.87 | 685.00 | 685.00 |\n| 28 | 2 622.53 | 12.35 | 685.00 | 685.00 |\n| 29 | 1 947.36 | 9.83 | 685.00 | 685.00 |\n| 30 | 1 269.66 | 7.30 | 685.00 | 685.00 |\n| 31 | 589.42 | 4.76 | 685.00 | 685.00 |\n| 32 | 0.00 | 2.21 | 591.63 | 591.63 |\n\n**Credit auto solde au mois 32.**\n\n### Resume Methode Snowball\n\n- **Revolving solde** : Mois 11\n- **Credit conso solde** : Mois 22\n- **Credit auto solde** : Mois 32\n- **Duree totale** : 32 mois (2 ans et 8 mois)\n- **Total paye** : 20 997.88 EUR\n- **Total interets payes** : 1 197.88 EUR\n\n### Note importante sur la convergence Snowball/Avalanche\n\nDans ton cas specifique, **Snowball et Avalanche donnent exactement le meme resultat**. C'est parce que l'ordre des soldes (du plus petit au plus grand : revolving 2 800 < conso 5 000 < auto 12 000) correspond exactement a l'ordre inverse des taux (du plus eleve au plus bas : revolving 19.8% > conso 7.2% > auto 4.5%). Les deux methodes attaquent les dettes dans le meme ordre.\n\nC'est une situation ideale mais relativement rare. Normalement, la dette avec le plus petit solde n'est pas celle avec le taux le plus eleve, et les deux methodes divergent.\n\n---\n\n## Methode 3 : Hybride (optimisation mathematique + victoires psychologiques)\n\n### Principe\n\nLa methode hybride combine les avantages des deux approches :\n1. Commence par la dette qui offre a la fois un gain psychologique rapide ET un gain financier (revolving = petit solde + taux eleve)\n2. Ensuite, repartit le surplus de facon ponderee entre les dettes restantes en tenant compte du ratio interets/solde\n3. Acceleration progressive grace a l'effet boule de neige\n\nEtant donne que dans ton cas Snowball = Avalanche, la methode hybride va tenter une approche differente : **attaque simultanee ponderee** sur les deux dettes les plus couteuses, pour reduire le montant total d'interets en cours a tout moment.\n\n### Variante Hybride : Split proportionnel au taux\n\nAu lieu de concentrer 100% du surplus sur une seule dette, on repartit le surplus au prorata des taux d'interet :\n\n- Revolving (19.8%) : 19.8 / (19.8 + 7.2) = 73.3% du surplus\n- Credit conso (7.2%) : 7.2 / (19.8 + 7.2) = 26.7% du surplus\n- Credit auto : minimum seulement\n\nSurplus de 200 EUR :\n- Revolving recoit : 85 + 146.67 = **231.67 EUR**\n- Credit conso recoit : 120 + 53.33 = **173.33 EUR**\n- Credit auto recoit : **280 EUR**\n\n### Calendrier mois par mois -- Methode Hybride\n\n**Phase 1 : Attaque simultanee Revolving + Conso (mois 1-14)**\n\n| Mois | Revolving (solde) | Interets revolving | Paiement revolving | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|-------------------|--------------------|--------------------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 0 | 2 800.00 | -- | -- | 5 000.00 | -- | -- | 12 000.00 | -- | -- | -- |\n| 1 | 2 614.53 | 46.20 | 231.67 | 4 856.67 | 30.00 | 173.33 | 11 765.00 | 45.00 | 280.00 | 685.00 |\n| 2 | 2 425.98 | 43.14 | 231.67 | 4 712.49 | 29.14 | 173.33 | 11 529.12 | 44.12 | 280.00 | 685.00 |\n| 3 | 2 234.34 | 40.03 | 231.67 | 4 567.43 | 28.27 | 173.33 | 11 292.35 | 43.23 | 280.00 | 685.00 |\n| 4 | 2 039.55 | 36.87 | 231.67 | 4 421.51 | 27.40 | 173.33 | 11 054.69 | 42.35 | 280.00 | 685.00 |\n| 5 | 1 841.53 | 33.65 | 231.67 | 4 274.72 | 26.54 | 173.33 | 10 816.13 | 41.44 | 280.00 | 685.00 |\n| 6 | 1 640.25 | 30.39 | 231.67 | 4 127.05 | 25.65 | 173.33 | 10 576.67 | 40.54 | 280.00 | 685.00 |\n| 7 | 1 435.64 | 27.06 | 231.67 | 3 978.48 | 24.76 | 173.33 | 10 336.31 | 39.64 | 280.00 | 685.00 |\n| 8 | 1 227.66 | 23.69 | 231.67 | 3 829.02 | 23.87 | 173.33 | 10 095.04 | 38.74 | 280.00 | 685.00 |\n| 9 | 1 016.24 | 20.26 | 231.67 | 3 678.67 | 22.97 | 173.33 | 9 852.85 | 37.82 | 280.00 | 685.00 |\n| 10 | 801.34 | 16.77 | 231.67 | 3 527.41 | 22.07 | 173.33 | 9 609.75 | 36.90 | 280.00 | 685.00 |\n| 11 | 582.89 | 13.22 | 231.67 | 3 375.25 | 21.17 | 173.33 | 9 365.73 | 35.98 | 280.00 | 685.00 |\n| 12 | 360.84 | 9.62 | 231.67 | 3 222.17 | 20.25 | 173.33 | 9 120.79 | 35.06 | 280.00 | 685.00 |\n| 13 | 135.13 | 5.96 | 231.67 | 3 068.18 | 19.34 | 173.33 | 8 874.93 | 34.14 | 280.00 | 685.00 |\n| 14 | 0.00 | 2.23 | 137.36 | 2 913.26 | 18.41 | 173.33 | 8 628.14 | 33.21 | 280.00 | 590.69 |\n\n**Revolving solde au mois 14.** Surplus restant au mois 14 : 231.67 - 137.36 = 94.31 EUR redirige vers le conso.\n\n**Phase 2 : Attaque du Credit conso (mois 15-22)**\n\nLe conso recoit maintenant : 120 (minimum) + 200 (surplus) + 85 (ancien revolving) = **405 EUR/mois**.\n\n| Mois | Conso (solde) | Interets conso | Paiement conso | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|---------------|----------------|----------------|--------------|---------------|---------------|------------|\n| 15 | 2 525.74 | 17.48 | 405.00 | 8 380.46 | 32.32 | 280.00 | 685.00 |\n| 16 | 2 135.89 | 15.15 | 405.00 | 8 131.87 | 31.42 | 280.00 | 685.00 |\n| 17 | 1 743.71 | 12.81 | 405.00 | 7 882.36 | 30.49 | 280.00 | 685.00 |\n| 18 | 1 349.17 | 10.46 | 405.00 | 7 631.92 | 29.56 | 280.00 | 685.00 |\n| 19 | 952.27 | 8.10 | 405.00 | 7 380.54 | 28.62 | 280.00 | 685.00 |\n| 20 | 553.01 | 5.71 | 405.00 | 7 128.22 | 27.68 | 280.00 | 685.00 |\n| 21 | 151.33 | 3.32 | 405.00 | 6 874.95 | 26.73 | 280.00 | 685.00 |\n| 22 | 0.00 | 0.91 | 152.24 | 6 620.73 | 25.78 | 280.00 | 432.24 |\n\n**Credit conso solde au mois 22.**\n\n**Phase 3 : Attaque du Credit auto (mois 23-32)**\n\nLe credit auto recoit tout : **685 EUR/mois**.\n\n| Mois | Auto (solde) | Interets auto | Paiement auto | Total paye |\n|------|--------------|---------------|---------------|------------|\n| 23 | 5 960.56 | 24.83 | 685.00 | 685.00 |\n| 24 | 5 297.91 | 22.35 | 685.00 | 685.00 |\n| 25 | 4 632.78 | 19.87 | 685.00 | 685.00 |\n| 26 | 3 965.15 | 17.37 | 685.00 | 685.00 |\n| 27 | 3 295.02 | 14.87 | 685.00 | 685.00 |\n| 28 | 2 622.37 | 12.35 | 685.00 | 685.00 |\n| 29 | 1 947.20 | 9.83 | 685.00 | 685.00 |\n| 30 | 1 269.50 | 7.30 | 685.00 | 685.00 |\n| 31 | 589.26 | 4.76 | 685.00 | 685.00 |\n| 32 | 0.00 | 2.21 | 591.47 | 591.47 |\n\n**Credit auto solde au mois 32.**\n\n### Resume Methode Hybride\n\n- **Revolving solde** : Mois 14 (3 mois plus tard qu'Avalanche)\n- **Credit conso solde** : Mois 22\n- **Credit auto solde** : Mois 32\n- **Duree totale** : 32 mois (2 ans et 8 mois)\n- **Total paye** : 21 089.40 EUR\n- **Total interets payes** : 1 289.40 EUR\n\n---\n\n## Comparaison des trois methodes\n\n| Critere | Avalanche | Snowball | Hybride |\n|---------|-----------|----------|---------|\n| **Duree totale** | 32 mois | 32 mois | 32 mois |\n| **Total interets payes** | 1 197.88 EUR | 1 197.88 EUR | 1 289.40 EUR |\n| **Total paye** | 20 997.88 EUR | 20 997.88 EUR | 21 089.40 EUR |\n| **1ere dette soldee** | Mois 11 (revolving) | Mois 11 (revolving) | Mois 14 (revolving) |\n| **2e dette soldee** | Mois 22 (conso) | Mois 22 (conso) | Mois 22 (conso) |\n| **3e dette soldee** | Mois 32 (auto) | Mois 32 (auto) | Mois 32 (auto) |\n| **Economies vs hybride** | 91.52 EUR | 91.52 EUR | Reference |\n| **Avantage psychologique** | Eleve | Eleve | Moyen |\n| **Optimisation mathematique** | Maximale | Maximale | Bonne |\n\n### Economie d'interets totale (vs minimums seuls)\n\nPour reference, si tu ne payais que les minimums (485 EUR/mois) sans les 200 EUR supplementaires :\n\n- Le revolving mettrait environ 44 mois a se rembourser (avec 1 264 EUR d'interets rien que pour cette dette)\n- Le credit conso mettrait environ 48 mois\n- Le credit auto mettrait environ 49 mois\n- **Total interets sans acceleration** : environ 3 850 EUR\n\nAvec tes 200 EUR supplementaires en methode Avalanche/Snowball :\n- **Interets payes** : 1 197.88 EUR\n- **Interets economises** : environ 2 652 EUR\n- **Temps gagne** : environ 17 mois\n\n---\n\n## Recommandation finale\n\n### La methode recommandee : Avalanche (= Snowball dans ton cas)\n\n**Dans ta situation specifique, Avalanche et Snowball sont strictement identiques** car l'ordre de tes dettes par taux decroissant (revolving 19.8% > conso 7.2% > auto 4.5%) correspond exactement a l'ordre par solde croissant (revolving 2 800 < conso 5 000 < auto 12 000). Tu beneficies simultanement de :\n\n1. **L'optimisation mathematique maximale** (tu attaques d'abord le taux le plus eleve)\n2. **La victoire psychologique la plus rapide** (tu soldes d'abord la plus petite dette)\n\nC'est la configuration ideale.\n\n### Pourquoi PAS la methode hybride\n\nLa methode hybride coute **91.52 EUR de plus en interets** pour aucun gain supplementaire. Elle retarde la premiere victoire (mois 14 au lieu de mois 11) sans accelerer la liberation totale. Le seul interet d'une hybride serait dans un scenario ou les ordres taux/solde divergent fortement, ce qui n'est pas ton cas.\n\n### Plan d'action concret\n\n| Periode | Action | Budget mensuel |\n|---------|--------|----------------|\n| **Mois 1-11** | Minimum sur auto (280) + conso (120), surplus total sur revolving (285) | 685 EUR |\n| **Mois 11** | Revolving solde ! Rediriger les 85 EUR vers le conso | -- |\n| **Mois 12-22** | Minimum sur auto (280), tout le reste sur conso (405) | 685 EUR |\n| **Mois 22** | Conso solde ! Rediriger les 120 EUR vers l'auto | -- |\n| **Mois 23-32** | Tout sur le credit auto (685) | 685 EUR |\n| **Mois 32** | **DETTE ZERO.** | 0 EUR |\n\n### Jalons et celebrations\n\n- **Mois 11** : Revolving elimine -- tu recuperes 85 EUR/mois de capacite\n- **Mois 22** : Credit conso elimine -- tu recuperes 120 EUR/mois supplementaires\n- **Mois 32** : Credit auto elimine -- tu recuperes **685 EUR/mois de flux de tresorerie libre**\n- **Apres mois 32** : ces 685 EUR/mois peuvent aller directement vers l'epargne, l'investissement, ou le fonds d'urgence\n\n### Risques et garde-fous\n\n1. **Ne pas diminuer le paiement quand une dette est soldee** : la tentation est de \"profiter\" des 85 EUR liberes au mois 11. Resiste. Redirige-les immediatement vers la dette suivante.\n2. **Pas de nouvelle dette pendant ces 32 mois** : surtout pas de revolving. Coupe la carte si necessaire.\n3. **Fonds d'urgence minimal** : si tu n'as pas 1 000 EUR de cote, mets 100 EUR/mois de cote les 10 premiers mois au lieu de tout mettre sur la dette. Ca ralentit le plan de 2-3 mois mais ca evite de reprendre du revolving en cas d'imprevue.\n4. **Revenus supplementaires** : tout bonus, prime, 13e mois, ou revenu freelance devrait aller en paiement anticipe sur la dette en cours d'attaque.\n\n---\n\n## Annexe : Formules utilisees\n\n**Interet mensuel** : `solde_debut \u00c3\u2014 (taux_annuel / 12)`\n\n**Nouveau solde** : `solde_debut + interets - paiement`\n\n**Taux mensuels** :\n- Credit auto : 4.5% / 12 = 0.375%\n- Credit conso : 7.2% / 12 = 0.600%\n- Revolving : 19.8% / 12 = 1.650%\n\n**Hypotheses** :\n- Les paiements minimums restent fixes (ne diminuent pas avec le solde)\n- Pas de frais de remboursement anticipe\n- Pas d'assurance emprunteur dans le calcul\n- Interets calcules sur le solde de debut de mois\n- Les paiements sont effectues en fin de mois apres calcul des interets\n"}], "grading": {"expectations": [{"text": "3 dettes inventoriees", "passed": true, "evidence": "Found 201 debt references"}, {"text": "Methode Snowball presente avec ordre", "passed": true, "evidence": "Snowball found: True"}, {"text": "Methode Avalanche : revolving (19.8%) en premier", "passed": true, "evidence": "Avalanche found: True, revolving priority indicated: True"}, {"text": "Calendrier mois par mois present", "passed": true, "evidence": "Monthly calendar found: True"}, {"text": "Recommandation personnalisee avec justification", "passed": true, "evidence": "Recommendation found: True"}, {"text": "Interets totaux compares entre methodes", "passed": true, "evidence": "Interest comparison found: True"}], "summary": "6/6 assertions passed"}}, {"id": "eval-flow-complet-with_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Finance Freedom Flow \u00e2\u20ac\u201d Document Complet\n\n**Date** : 19 mars 2026\n**Profil** : 34 ans, CDI stable, celibataire, France\n\n---\n\n# Etape 1 \u00e2\u20ac\u201d Radiographie Financiere\n\n## Tableau de bord\n\n| Metrique | Valeur |\n|----------|--------|\n| Revenus mensuels | 3 200 EUR |\n| Depenses mensuelles (hors dettes) | 2 070 EUR |\n| Paiements dettes mensuels | 240 EUR |\n| Depenses totales | 2 310 EUR |\n| Capacite d'epargne | 890 EUR |\n| Taux d'epargne | 27,8% |\n| Total dettes | 9 200 EUR |\n| Total actifs | 2 500 EUR |\n| Patrimoine net | -6 700 EUR |\n| Score sante financiere | **4/10** |\n\n### Detail revenus\n\n| Source | Montant/mois |\n|--------|-------------|\n| Salaire net CDI | 3 200 EUR |\n| Revenus secondaires | 0 EUR |\n| **Total revenus** | **3 200 EUR** |\n\n### Detail depenses\n\n| Poste | Montant/mois | % revenus |\n|-------|-------------|-----------|\n| Loyer | 850 EUR | 26,6% |\n| Alimentation | 400 EUR | 12,5% |\n| Transport | 150 EUR | 4,7% |\n| Abonnements | 120 EUR | 3,8% |\n| Autres fixes | 200 EUR | 6,3% |\n| Depenses variables | 350 EUR | 10,9% |\n| Minimum credit conso | 180 EUR | 5,6% |\n| Minimum decouvert carte | 60 EUR | 1,9% |\n| **Total** | **2 310 EUR** | **72,2%** |\n\n### Detail dettes\n\n| Dette | Capital restant | Taux | Minimum/mois | Cout mensuel interets |\n|-------|----------------|------|-------------|----------------------|\n| Credit consommation | 8 000 EUR | 5,9% | 180 EUR | ~39 EUR |\n| Decouvert carte | 1 200 EUR | 18,0% | 60 EUR | ~18 EUR |\n| **Total** | **9 200 EUR** | | **240 EUR** | **~57 EUR** |\n\n## Fuites financieres (argent gaspille)\n\n1. **Decouvert carte a 18%** \u00e2\u20ac\u201d 18 EUR/mois en interets purs \u00e2\u20ac\u201d C'est le taux d'un pret usuraire. Chaque mois ou ce decouvert reste ouvert, tu brules un billet de 20.\n2. **Abonnements a 120 EUR/mois** \u00e2\u20ac\u201d Potentiellement 30-50 EUR/mois de trop \u00e2\u20ac\u201d A 120 EUR, il y a statistiquement 2-3 abonnements que tu n'utilises plus ou presque pas. Un audit abonnement par abonnement s'impose.\n3. **Depenses variables non trackees a 350 EUR/mois** \u00e2\u20ac\u201d Montant inconnu de gaspillage \u00e2\u20ac\u201d \"Variables\" = pas de visibilite. Sans tracking, c'est la ou l'argent disparait sans que tu t'en rendes compte.\n4. **Zero revenu secondaire** \u00e2\u20ac\u201d 0 EUR de diversification \u00e2\u20ac\u201d En CDI stable a 34 ans, ne pas avoir de revenu complementaire meme modeste (200-300 EUR/mois) est une opportunite manquee.\n\n## Points aveugles (risques invisibles)\n\n1. **Patrimoine net negatif (-6 700 EUR)** \u00e2\u20ac\u201d Tu es techniquement insolvable. Si demain tu perds ton job, tu n'as meme pas de quoi rembourser tes dettes avec ton epargne.\n2. **Fonds d'urgence quasi inexistant** \u00e2\u20ac\u201d 2 500 EUR = 1,08 mois de depenses totales. Un seul impr\u00c3\u00a9vu (panne voiture, probleme dentaire, licenciement) et c'est la spirale.\n3. **Dependance 100% a un salaire unique** \u00e2\u20ac\u201d Zero diversification. Si le CDI saute, il n'y a rien derriere. Le chomage couvre ~57% du salaire brut, pas du net.\n4. **Zero investissement a 34 ans** \u00e2\u20ac\u201d Chaque annee sans investir, c'est des milliers d'euros de rendements composes perdus a jamais. A 34 ans, tu as deja \"perdu\" 10-12 ans de capitalisation.\n5. **Decouvert revolving non maitrise** \u00e2\u20ac\u201d Le decouvert carte a 18% peut devenir une spirale si les depenses variables depassent. C'est la dette la plus dangereuse du tableau.\n\n## Opportunites manquees\n\n1. **Renegociation credit conso** \u00e2\u20ac\u201d Gain potentiel : 500-1 000 EUR sur la duree du pret \u00e2\u20ac\u201d A 5,9%, selon ton profil CDI stable, une renegociation ou un rachat a 3-4% est envisageable.\n2. **Optimisation fiscale** \u00e2\u20ac\u201d Gain potentiel : 200-500 EUR/an \u00e2\u20ac\u201d Aucune enveloppe fiscale utilisee (PEA, assurance-vie). Meme le Livret A a 3% est sous-utilise (plafond 22 950 EUR).\n3. **Revenu complementaire** \u00e2\u20ac\u201d Gain potentiel : 200-500 EUR/mois \u00e2\u20ac\u201d Freelance ponctuel, cours particuliers, vente de competences en ligne. En CDI, c'est autorise tant que ce n'est pas concurrent.\n4. **Transfert du Livret A vers destruction de dette** \u00e2\u20ac\u201d Gain net : ~150 EUR/an \u00e2\u20ac\u201d Le Livret A rapporte 3%. Le decouvert coute 18%. Rembourser le decouvert avec le Livret A = gain net de 15% sur 1 200 EUR.\n\n## Plan d'action 30 jours\n\n- [ ] **Semaine 1** : Liquider le decouvert carte immediatement avec le Livret A (1 200 EUR du Livret A \u00e2\u2020\u2019 remboursement integral du decouvert). Gain : 18 EUR/mois d'interets economises.\n- [ ] **Semaine 2** : Audit abonnements \u00e2\u20ac\u201d lister les 120 EUR un par un. Couper tout ce qui n'a pas ete utilise dans les 30 derniers jours. Objectif : passer sous 80 EUR.\n- [ ] **Semaine 3** : Tracker chaque depense variable pendant 7 jours (note sur telephone, pas d'app compliquee). Identifier les 3 plus gros postes.\n- [ ] **Semaine 4** : Mettre en place les virements automatiques du systeme anti-budget (etape 3). Ouvrir un PEA en ligne (Boursorama ou Fortuneo \u00e2\u20ac\u201d 0 frais de garde).\n\n---\n\n# Etape 2 \u00e2\u20ac\u201d Profil Financier Comportemental\n\n## Archetype principal : L'Eviteur\n\nTu ne regardes pas tes comptes. Tu sais vaguement que \"ca passe\" chaque mois mais tu evites les details. Le decouvert carte a 18% qui traine, l'absence totale d'investissement a 34 ans, le Livret A a 2 500 EUR jamais optimise \u00e2\u20ac\u201d tout pointe vers quelqu'un qui repousse les decisions financieres. Ce n'est pas de la paresse, c'est un mecanisme de defense : ne pas regarder = ne pas stresser. Sauf que ne pas regarder, ca coute cher. Litteralement 57 EUR/mois en interets.\n\n## Archetype secondaire : L'Anxieux\n\nParadoxalement, quand tu es FORCE de regarder tes finances (relev\u00c3\u00a9 bancaire, imprev\u00c3\u00ba), l'anxiete monte. C'est le cercle vicieux classique Eviteur-Anxieux : tu evites parce que ca stresse, et ca stresse parce que tu evites. Le fait d'avoir quand meme 2 500 EUR sur un Livret A (plutot que zero) montre que la partie Anxieuse de toi SAIT qu'il faut un filet de securite \u00e2\u20ac\u201d mais la partie Eviteuse empeche d'aller plus loin.\n\n## Croyances qui sabotent tes finances\n\n1. **\"Tant que le salaire tombe, ca ira\"** \u00e2\u2020\u2019 Tu repousses toute optimisation parce que le salaire couvre le minimum. Resultat : tu paies 684 EUR/an en interets de dettes evitables, et tu ne construis rien.\n2. **\"L'investissement c'est complique / risque / pas pour moi\"** \u00e2\u2020\u2019 Tu gardes tout sur Livret A a 3% au lieu de faire travailler ton argent a 7-8% en moyenne sur le long terme. Chaque annee de retard te coute des milliers en rendements composes.\n3. **\"Je m'en occuperai quand je gagnerai plus\"** \u00e2\u2020\u2019 Le probleme n'est pas le montant du salaire (3 200 net c'est correct). Le probleme c'est l'absence de systeme. Quelqu'un qui gagne 5 000 EUR sans systeme est dans la meme situation.\n4. **\"Regarder mes comptes va me deprimer\"** \u00e2\u2020\u2019 L'ignorance est plus couteuse que la realite. 57 EUR/mois d'interets de dettes, c'est le prix mensuel de l'evitement.\n\n## Le shift d'identite #1\n\n**De** : \"Je ne suis pas bon avec l'argent, c'est comme ca.\"\n**Vers** : \"Je mets en place un SYSTEME qui gere l'argent a ma place \u00e2\u20ac\u201d je n'ai pas besoin d'etre bon, j'ai besoin d'un systeme.\"\n\nC'est la cle pour un Eviteur : le systeme doit fonctionner en pilote automatique. Pas de decisions quotidiennes, pas de tracking obsessionnel, pas de culpabilite. Des virements automatiques, des regles simples, et un check de 2 minutes par semaine. C'est tout.\n\n## Tactiques adaptees a TON profil\n\n1. **Automatise TOUT** \u00e2\u20ac\u201d Virements automatiques J+1 apres le salaire. Tu ne dois JAMAIS avoir a \"decider\" d'epargner ou de rembourser. La decision est prise une fois, le systeme execute.\n2. **Regarde tes comptes 1 seule fois par semaine** \u00e2\u20ac\u201d Pas plus, pas moins. Un seul chiffre : le solde du compte courant. Si c'est au-dessus du seuil, ferme l'app. Ca prend 30 secondes.\n3. **Celebre les micro-victoires** \u00e2\u20ac\u201d L'Eviteur a besoin de feedback positif pour ne pas retomber dans l'evitement. Chaque mois ou le systeme tourne = une victoire. Note-la.\n4. **Commence ridiculement petit** \u00e2\u20ac\u201d Mieux vaut investir 50 EUR/mois pendant 6 mois que planifier d'investir 500 EUR/mois et ne jamais commencer. L'habitude d'abord, le montant ensuite.\n5. **Un seul changement a la fois** \u00e2\u20ac\u201d L'Eviteur se paralyse face a trop d'actions. Cette semaine : le decouvert. La semaine prochaine : les abonnements. Pas tout en meme temps.\n\n## Pieges specifiques a eviter\n\n1. **Le \"je ferai ca ce weekend\"** \u00e2\u20ac\u201d Le weekend arrive, tu ne le fais pas, tu culpabilises, tu evites encore plus. Solution : fixer un creneau de 15 minutes dans l'agenda, MAINTENANT.\n2. **L'analyse paralysante** \u00e2\u20ac\u201d \"Quel est le MEILLEUR courtier ? Le MEILLEUR ETF ?\" L'Eviteur utilise la recherche infinie comme excuse pour ne pas agir. La reponse : n'importe quel courtier en ligne + MSCI World. GO.\n3. **Le \"tout ou rien\"** \u00e2\u20ac\u201d \"Si je ne peux pas investir 500 EUR/mois, a quoi bon ?\" C'est faux. 100 EUR/mois investis pendant 30 ans a 7% = 113 000 EUR. C'est mieux que 0.\n4. **L'auto-sabotage post-progres** \u00e2\u20ac\u201d Tu mets en place le systeme, ca marche 2 mois, puis tu \"oublies\" de checker. Le rituel mensuel (etape 7) est ton garde-fou.\n\n---\n\n# Etape 3 \u00e2\u20ac\u201d Systeme Anti-Budget\n\n## Tes Buckets\n\nRevenus nets : 3 200 EUR/mois\n\n| Bucket | Allocation | Montant/mois | Compte |\n|--------|-----------|-------------|--------|\n| Necessites | 53,9% | 1 720 EUR | Compte courant principal |\n| Destruction de dettes | 14,1% | 450 EUR | Virement auto vers credit conso |\n| Epargne/Investissement | 18,8% | 600 EUR | Livret A (phase 1) puis PEA (phase 2) |\n| Depenses plaisir | 8,4% | 270 EUR | Sous-compte ou carte prepayee |\n| Buffer securite | 5,0% | 160 EUR | Sous-compte compte courant |\n\n**Explication des montants** :\n\n- **Necessites (1 720 EUR)** : Loyer 850 + Transport 150 + Alimentation 400 + Abonnements optimises 80 (objectif apres audit) + Autres fixes 200 + Ajustement 40.\n- **Destruction de dettes (450 EUR)** : Au lieu du minimum de 180 EUR pour le credit conso, on passe a 450 EUR. Le decouvert carte est liquide en semaine 1 avec le Livret A, donc plus de paiement minimum de 60 EUR. Le surplus (210 EUR au-dessus du minimum) accelere massivement le remboursement.\n- **Epargne/Investissement (600 EUR)** : Phase 1 = reconstituer le Livret A a 4 000 EUR (mini fonds urgence). Phase 2 = DCA sur PEA.\n- **Plaisir (270 EUR)** : C'est non-negociable. Un Eviteur qui se sent prive va craquer et tout exploser. 270 EUR/mois de depenses sans aucune culpabilite.\n- **Buffer (160 EUR)** : Coussin pour absorber les variations de depenses variables sans toucher aux autres buckets.\n\n## Automatisations a mettre en place\n\nToutes les automatisations se declenchent le **2 du mois** (J+1 apres le virement de salaire au 1er) :\n\n- J+2 : Virement auto 450 EUR \u00e2\u2020\u2019 Remboursement anticipe credit conso\n- J+2 : Virement auto 600 EUR \u00e2\u2020\u2019 Livret A (phase 1) / PEA (phase 2)\n- J+2 : Virement auto 270 EUR \u00e2\u2020\u2019 Compte plaisir / carte prepayee\n- J+2 : Virement auto 160 EUR \u00e2\u2020\u2019 Sous-compte buffer\n\n**Ce qui reste sur le compte courant** : ~1 720 EUR pour les necessites. C'est l'argent qui \"disparait\" naturellement dans les charges fixes. Tu n'as rien a gerer.\n\n## Regles du jeu\n\n- Le bucket \"Plaisir\" (270 EUR) : depense TOUT sans culpabilite. Restaurant, fringues, sorties, jeux video \u00e2\u20ac\u201d aucun jugement. C'est fait pour ca. Si tu ne depenses pas tout, ca roule au mois suivant (bonus).\n- Si un bucket est vide avant fin de mois : on attend. Pas de transfert entre buckets. Le buffer absorbe les petits depassements sur les necessites.\n- 1 seul chiffre a checker par semaine : le solde du compte courant.\n- Si le solde courant descend sous 300 EUR avant le 25 du mois : alerte. Revoir les depenses necessites du mois.\n\n## Check hebdo (2 minutes)\n\nChaque **dimanche soir** : ouvrir l'app bancaire, verifier que le solde courant est > 400 EUR. Si oui, fermer l'app. C'est tout.\n\nSi non : identifier OU le depassement s'est produit (un achat exceptionnel ? une facture oubliee ?). Ajuster le mois suivant si necessaire, pas de culpabilite.\n\n---\n\n# Etape 4 \u00e2\u20ac\u201d Playbook Destruction de Dettes\n\n## Inventaire\n\n| Dette | Montant | Taux | Minimum/mois | Cout mensuel interets |\n|-------|---------|------|-------------|----------------------|\n| Credit consommation | 8 000 EUR | 5,9% | 180 EUR | ~39 EUR |\n| Decouvert carte | 1 200 EUR | 18,0% | 60 EUR | ~18 EUR |\n| **Total** | **9 200 EUR** | | **240 EUR** | **~57 EUR** |\n\n**Action immediate (avant toute methode)** : Liquider le decouvert carte avec 1 200 EUR du Livret A. C'est un no-brainer mathematique : le Livret A rapporte 3%, le decouvert coute 18%. En remboursant immediatement, tu gagnes 15% de rendement \"garanti\" sur 1 200 EUR, soit 180 EUR/an d'economie. Le Livret A passe a 1 300 EUR, mais tu elimines 18 EUR/mois d'interets et 60 EUR/mois de paiement minimum.\n\n**Apres liquidation du decouvert** :\n\n| Dette restante | Montant | Taux | Paiement prevu/mois |\n|---------------|---------|------|---------------------|\n| Credit consommation | 8 000 EUR | 5,9% | 450 EUR |\n\nBudget destruction de dettes : 450 EUR/mois (allocation du systeme anti-budget).\n\n## Methode 1 : Snowball (plus petite dette d'abord)\n\n- Ordre : Decouvert carte (1 200 EUR) \u00e2\u2020\u2019 Credit conso (8 000 EUR)\n- Le decouvert est liquide immediatement avec le Livret A (pas de snowball necessaire)\n- Credit conso a 450 EUR/mois : **18 mois** pour solder (aout 2027)\n- Interets totaux payes sur le credit conso : ~420 EUR\n- Avantage : victoire immediate avec le decouvert, boost psychologique\n\n## Methode 2 : Avalanche (taux le plus eleve d'abord)\n\n- Ordre : Decouvert carte (18%) \u00e2\u2020\u2019 Credit conso (5,9%)\n- Identique a la Snowball dans ce cas \u00e2\u20ac\u201d le decouvert EST la dette au taux le plus eleve ET la plus petite\n- Date liberation : **aout 2027** (18 mois pour le credit conso)\n- Interets totaux payes : ~420 EUR\n- Economie vs Snowball : 0 EUR (les deux methodes convergent ici)\n\n## Methode 3 : Hybride (nucleaire)\n\n- Liquider le decouvert immediatement (Livret A)\n- Payer 450 EUR/mois sur le credit conso\n- A chaque rentr\u00c3\u00a9e d'argent exceptionnelle (prime, 13eme mois, remboursement impots, vente d'objets), injecter 100% dans le credit conso\n- Date liberation estimee : **14-16 mois** (mai-juillet 2027) si 500-1000 EUR de bonus trouves\n- Interets totaux payes : ~320 EUR\n\n## Recommandation pour TOI : Methode Hybride\n\nPourquoi ? Parce que ton archetype Eviteur-Anxieux a besoin de :\n1. **Une victoire immediate** (le decouvert liquide en 1 jour \u00e2\u20ac\u201d pas en 3 mois)\n2. **Un plan simple et automatise** (450 EUR/mois en virement auto, tu n'y penses plus)\n3. **Une date de fin visible** (aout 2027 au plus tard, probablement plus tot)\n\nL'Eviteur ne doit pas avoir a \"decider\" chaque mois combien payer. C'est automatique. L'Anxieux a besoin de voir la date de fin. Les deux sont satisfaits.\n\n## Calendrier mois par mois (credit conso a 450 EUR/mois)\n\n| Mois | Paiement | Interets | Capital rembourse | Solde restant |\n|------|----------|----------|-------------------|---------------|\n| M1 (avril 2026) | 450 EUR | 39 EUR | 411 EUR | 7 589 EUR |\n| M2 | 450 EUR | 37 EUR | 413 EUR | 7 176 EUR |\n| M3 | 450 EUR | 35 EUR | 415 EUR | 6 761 EUR |\n| M4 | 450 EUR | 33 EUR | 417 EUR | 6 344 EUR |\n| M5 | 450 EUR | 31 EUR | 419 EUR | 5 925 EUR |\n| M6 | 450 EUR | 29 EUR | 421 EUR | 5 504 EUR |\n| M7 | 450 EUR | 27 EUR | 423 EUR | 5 081 EUR |\n| M8 | 450 EUR | 25 EUR | 425 EUR | 4 656 EUR |\n| M9 | 450 EUR | 23 EUR | 427 EUR | 4 229 EUR |\n| M10 | 450 EUR | 21 EUR | 429 EUR | 3 800 EUR |\n| M11 | 450 EUR | 19 EUR | 431 EUR | 3 369 EUR |\n| M12 | 450 EUR | 17 EUR | 433 EUR | 2 936 EUR |\n| M13 | 450 EUR | 14 EUR | 436 EUR | 2 500 EUR |\n| M14 | 450 EUR | 12 EUR | 438 EUR | 2 062 EUR |\n| M15 | 450 EUR | 10 EUR | 440 EUR | 1 622 EUR |\n| M16 | 450 EUR | 8 EUR | 442 EUR | 1 180 EUR |\n| M17 | 450 EUR | 6 EUR | 444 EUR | 736 EUR |\n| M18 (sept 2027) | 740 EUR | 4 EUR | 736 EUR | **0 EUR** |\n\n**Date de liberation totale : septembre 2027** (18 mois)\n**Interets totaux payes : ~390 EUR**\n**Interets economises vs minimum seul (180 EUR/mois pendant ~52 mois) : ~780 EUR**\n\n## Tactiques motivation\n\n- **Barre de progression visuelle** : a chaque revue mensuelle, calcule le % rembourse. M6 = 31% rembourse. M12 = 63%. Ca monte vite.\n- **Celebrer chaque palier de 2 000 EUR rembourses** \u00e2\u20ac\u201d Utilise le budget plaisir (pas un nouveau credit).\n- **Si envie d'un achat impulsif** : attendre 48h. Dans 90% des cas, l'envie passe.\n- **Compte a rebours** : affiche \"J-X mois avant liberation\" quelque part que tu vois chaque jour (fond d'ecran, post-it frigo).\n- **Rappel des interets economises** : chaque mois ou tu paies 450 EUR au lieu de 180 EUR, tu raccourcis ta dette de presque 3 semaines. C'est concret.\n\n---\n\n# Etape 5 \u00e2\u20ac\u201d Fonds d'Urgence & Chiffre Liberte\n\n## Partie 1 : Fonds d'Urgence Personnalise\n\n| Facteur | Situation | Impact |\n|---------|-----------|--------|\n| Stabilite emploi | CDI stable | Baseline : 4 mois |\n| Personnes a charge | 0 (celibataire) | -1 mois (pas de bouches supplementaires) |\n| Couverture assurance | Securite sociale + mutuelle employeur, chomage (ARE ~57% brut) | -0,5 mois (bonne couverture de base) |\n| Source de revenus | Unique (salaire) | +1 mois (zero diversification) |\n| Dettes actives | Credit conso en cours | +0,5 mois (filet de securite pour paiements) |\n\n**Calcul des depenses essentielles (stricte survie)** :\n- Loyer : 850 EUR\n- Alimentation : 350 EUR (reduit)\n- Transport : 100 EUR (reduit)\n- Abonnements essentiels : 40 EUR (internet + telephone uniquement)\n- Paiement dette minimum : 180 EUR\n- **Total essentiel : 1 520 EUR/mois**\n\n**Montant recommande : 6 100 EUR** (4 mois de depenses essentielles)\n\n**Justification** : Pas 3 mois (trop juste avec une seule source de revenus et des dettes actives), pas 6 mois (le CDI stable et l'absence de personnes a charge reduisent le risque). 4 mois laissent le temps de retrouver un emploi ou de pivoter en cas de coup dur, tout en couvrant les minimums de dettes pendant la transition.\n\n### Plan pour atteindre le fonds d'urgence\n\n**Phase actuelle** : 1 300 EUR sur Livret A (apres remboursement du decouvert).\n\n**Phase 1 (pendant la destruction de dettes, mois 1-18)** :\n- Epargne mensuelle vers Livret A : 600 EUR/mois\n- Le Livret A monte a ~12 100 EUR en 18 mois\n- Mais : une fois le fonds d'urgence a 6 100 EUR (atteint au mois 8), le surplus bascule vers investissement\n\n**Chronologie** :\n- Mois 1-8 : Livret A passe de 1 300 EUR a 6 100 EUR (600 EUR/mois x 8 = 4 800 + 1 300 = 6 100)\n- Mois 9+ : fonds d'urgence complet, rediriger le surplus (600 EUR/mois) vers PEA\n\n**Ou le placer** : Livret A (taux actuel 3%, disponible immediatement, garanti par l'Etat, zero fiscalite). C'est le seul placement adapte a un fonds d'urgence : liquidite immediate, zero risque de perte.\n\n## Partie 2 : Chiffre Liberte Financiere\n\nHypotheses de calcul :\n- Inflation : 2,5%/an\n- Rendements reels (apres inflation) : 6%/an (moyenne historique MSCI World)\n- Regle de retrait : 4%/an (Trinity Study)\n- Age actuel : 34 ans\n- Capacite d'investissement post-dettes (a partir de mois 19) : 1 050 EUR/mois (450 ex-dettes + 600 epargne)\n\n### Niveau 1 \u00e2\u20ac\u201d Lean FI (liberte partielle)\n\nDepenses essentielles couvertes sans travailler.\n\n- Depenses essentielles : 1 520 EUR/mois = **18 240 EUR/an**\n- Capital necessaire (regle 4%) : **456 000 EUR**\n- A 1 050 EUR/mois investis a 6% reel : **~18 ans** (age 52-53)\n\n### Niveau 2 \u00e2\u20ac\u201d FI (liberte confortable)\n\nStyle de vie actuel integralement couvert.\n\n- Depenses actuelles totales : 2 070 EUR/mois = **24 840 EUR/an**\n- Capital necessaire : **621 000 EUR**\n- A 1 050 EUR/mois investis a 6% reel : **~21 ans** (age 55-56)\n\n### Niveau 3 \u00e2\u20ac\u201d Fat FI (liberte totale)\n\nStyle de vie ameliore (voyages, loisirs, zero contrainte).\n\n- Budget cible : 3 000 EUR/mois = **36 000 EUR/an**\n- Capital necessaire : **900 000 EUR**\n- A 1 050 EUR/mois investis a 6% reel : **~26 ans** (age 60)\n\n**Note importante** : ces timelines supposent un investissement constant de 1 050 EUR/mois. Toute augmentation de salaire, revenu secondaire ou bonus injecte dans l'investissement raccourcit drastiquement le calendrier. Une augmentation de 200 EUR/mois de l'investissement (1 250 EUR/mois au lieu de 1 050) gagne environ 2 ans sur le Lean FI.\n\n## Roadmap jalonnee\n\n- [ ] **Jalon 0** : Decouvert carte liquide \u00e2\u2020\u2019 **Mars 2026** (cette semaine)\n- [ ] **Jalon 1** : Fonds urgence complet (6 100 EUR) \u00e2\u2020\u2019 **Novembre 2026** (mois 8)\n- [ ] **Jalon 2** : Credit conso solde (0 EUR de dettes) \u00e2\u2020\u2019 **Septembre 2027** (mois 18)\n- [ ] **Jalon 3** : Patrimoine net positif \u00e2\u2020\u2019 **Decembre 2026** (mois 9, des que Livret A > 9 200 EUR historiques de dettes)\n- [ ] **Jalon 4** : Premier 10 000 EUR investi en PEA \u00e2\u2020\u2019 **Fin 2028** (mois 30)\n- [ ] **Jalon 5** : 100 000 EUR de patrimoine \u00e2\u2020\u2019 **2032** (age 40)\n- [ ] **Jalon 6** : 25% du Lean FI (114 000 EUR) \u00e2\u2020\u2019 **2033** (age 41)\n- [ ] **Jalon 7** : Lean FI atteint (456 000 EUR) \u00e2\u2020\u2019 **2044** (age 52)\n- [ ] **Jalon 8** : FI confortable (621 000 EUR) \u00e2\u2020\u2019 **2047** (age 55)\n\n---\n\n# Etape 6 \u00e2\u20ac\u201d Portefeuille Investissement Paresseux\n\n## Profil investisseur\n\n| Parametre | Valeur |\n|-----------|--------|\n| Age | 34 ans |\n| Pays | France |\n| Horizon d'investissement | 20-25 ans (objectif FI vers 55 ans) |\n| Tolerance au risque | 5/10 (profil Eviteur-Anxieux : a besoin de simplicite, pas de volatilite extreme) |\n| Montant mensuel | 600 EUR (phase 1, mois 9-18) puis 1 050 EUR (phase 2, mois 19+) |\n| Capital initial | 0 EUR (tout est dans le fonds d'urgence ou les dettes) |\n| Connaissances | Debutant |\n\n## Allocation recommandee\n\n| Classe | Allocation | ETF suggere | ISIN | Frais/an | Justification |\n|--------|-----------|-------------|------|----------|---------------|\n| Actions monde (pays developpes) | 80% | Amundi MSCI World UCITS ETF (CW8) | LU1681043599 | 0,38% | Coeur du portefeuille \u00e2\u20ac\u201d 1 500+ entreprises mondiales, diversification geographique maximale |\n| Actions marches emergents | 10% | Amundi MSCI Emerging Markets UCITS ETF (PAEEM) | LU1681045370 | 0,20% | Exposition Chine, Inde, Bresil \u00e2\u20ac\u201d moteurs de croissance long terme |\n| Obligations euro | 5% | Amundi Euro Govt Bond 7-10Y (GOVS alternative) | LU1931975152 | 0,15% | Amortisseur en cas de krach actions, rendement modeste mais stable |\n| Cash/Livret A | 5% | \u00e2\u20ac\u201d | \u00e2\u20ac\u201d | 0% | Fonds d'urgence deja constitue, ce 5% est le coussin supplementaire |\n\n**Justification globale** : A 34 ans avec un horizon de 20+ ans, une allocation 90/10 actions/obligations est justifiee. L'Eviteur a besoin d'un portefeuille qui se gere tout seul \u00e2\u20ac\u201d 2 ETF (CW8 + PAEEM) suffisent. On garde 5% en obligations pour limiter la volatilite psychologique (un Anxieux qui voit -30% sans amortisseur risque de paniquer et de vendre). Le 5% cash est le fonds d'urgence deja en place.\n\n## Regles de gestion\n\n- **DCA mensuel** : Acheter pour X EUR d'ETF le **5 du mois** (apres reception du salaire et virements auto). Pas de market timing, pas de \"j'attends que ca baisse\".\n- **Repartition mensuelle** :\n  - Sur 600 EUR (phase 1) : 480 EUR CW8 + 60 EUR PAEEM + 30 EUR obligations + 30 EUR cash\n  - Sur 1 050 EUR (phase 2) : 840 EUR CW8 + 105 EUR PAEEM + 53 EUR obligations + 52 EUR cash\n- **Reequilibrage** : 1 fois par an, en **janvier**. Si une classe devie de plus de 5 points de son allocation cible, reequilibrer en orientant les achats mensuels (pas en vendant).\n- **En cas de krach (-30% ou plus)** : CONTINUER le DCA. Ne rien vendre. Historiquement, les krachs sont les meilleures opportunites d'achat pour un investisseur long terme. Rappel : tu n'as pas besoin de cet argent avant 20 ans.\n- **Ajustement age** : a partir de 45 ans, augmenter la poche obligations de 1-2% par an (reduire progressivement le risque en approchant de la phase de retrait).\n\n## Courtiers recommandes pour la France\n\n1. **Boursorama (PEA)** \u00e2\u20ac\u201d 0 EUR de frais de garde, ordres a 1,99 EUR pour les ETF Amundi/iShares, interface simple. Ideal pour un debutant Eviteur : c'est le courtier \"set and forget\" par excellence. Carte bancaire gratuite en bonus.\n2. **Fortuneo (PEA)** \u00e2\u20ac\u201d 0 EUR de frais de garde, ordres gratuits sous 500 EUR/mois (offre \"0 courtage\"). Tres bien si tu investis moins de 500 EUR/mois en phase 1. Interface un peu moins intuitive que Boursorama.\n3. **Trade Republic (CTO)** \u00e2\u20ac\u201d 1 EUR par ordre, plans d'investissement automatiques gratuits. Pour le CTO uniquement (pas de PEA). Utile en complement si le PEA est plein (plafond 150 000 EUR de versements).\n\n**Recommandation** : Ouvre un **PEA chez Boursorama**. Point final. Ne perds pas 3 semaines a comparer 12 courtiers \u00e2\u20ac\u201d c'est le piege classique de l'Eviteur qui utilise la recherche comme procrastination.\n\n## Fiscalite basique France\n\n**Enveloppes fiscales, ordre de remplissage** :\n\n1. **PEA (Plan d'Epargne en Actions)** \u00e2\u20ac\u201d PRIORITE ABSOLUE\n   - Plafond : 150 000 EUR de versements\n   - Fiscalite apres 5 ans : 0% d'impot sur les plus-values, seulement 17,2% de prelevements sociaux\n   - Avant 5 ans : 12,8% IR + 17,2% PS = 30% (flat tax)\n   - CW8 et PAEEM sont eligibles PEA\n   - **Ouvre-le MAINTENANT meme si tu n'investis pas encore** \u00e2\u20ac\u201d le compteur des 5 ans demarre a l'ouverture\n\n2. **Assurance-vie** \u00e2\u20ac\u201d SECOND\n   - Pas de plafond de versements\n   - Fiscalite avantageuse apres 8 ans (abattement de 4 600 EUR/an sur les gains pour un celibataire)\n   - Plus flexible que le PEA (obligations, fonds euros, immobilier papier)\n   - Ouvrir chez Linxea Spirit 2 ou Lucya Cardif (frais les plus bas du marche)\n\n3. **CTO (Compte Titre Ordinaire)** \u00e2\u20ac\u201d DERNIER\n   - Aucun avantage fiscal (flat tax 30% sur tout)\n   - A utiliser uniquement quand PEA et AV sont remplis\n\n**Pieges a eviter** :\n- Ne JAMAIS investir via ta banque traditionnelle (frais 3-5x plus eleves)\n- Ne pas confondre PEA et PEA-PME (le PME est un autre produit, plus risque)\n- Ne pas fermer le PEA avant 5 ans (perte de l'avantage fiscal)\n- Ignorer les \"produits structures\" ou \"fonds maison\" proposes par les conseillers bancaires (frais caches enormes)\n\n## Plan de demarrage cette semaine\n\n- [ ] **Jour 1** : Ouvrir un PEA en ligne chez Boursorama (ou Fortuneo). Ca prend 15 minutes. Pieces necessaires : CNI, justificatif de domicile, RIB.\n- [ ] **Jour 2** : Pendant que le PEA est en cours de validation (5-10 jours), ouvrir une assurance-vie en ligne chez Linxea Spirit 2. Le compteur des 8 ans demarre.\n- [ ] **Jour 3** : Configurer un virement automatique mensuel du compte courant vers le PEA (montant = 0 EUR pour l'instant, a activer au mois 9 quand le fonds d'urgence sera complet).\n- [ ] **Jour 4** : Mettre un rappel dans le calendrier pour le 5 janvier 2027 : \"Reequilibrage annuel portefeuille\".\n- [ ] **Mois 9 (novembre 2026)** : Premier achat reel \u00e2\u20ac\u201d 480 EUR de CW8 + 60 EUR de PAEEM sur le PEA.\n\n---\n\n# Etape 7 \u00e2\u20ac\u201d Rituel Revue Mensuelle (20 min)\n\n## Template Revue Mensuelle\n\nA effectuer le **1er dimanche de chaque mois**. Duree cible : 20 minutes. Pas plus.\n\n```\n# Revue Mensuelle \u00e2\u20ac\u201d [Mois / Annee]\n\n## Date : [__/__/____]\n\n### Minutes 1-5 : Patrimoine Net\n\n| Element | Montant |\n|---------|---------|\n| Livret A | ___ EUR |\n| PEA (valeur marche) | ___ EUR |\n| Assurance-vie | ___ EUR |\n| Autres actifs | ___ EUR |\n| **Total actifs** | **___ EUR** |\n| Credit conso restant | - ___ EUR |\n| Autres dettes | - ___ EUR |\n| **Patrimoine net** | **___ EUR** |\n\n| Mois | Patrimoine net | Evolution | Tendance 3 mois |\n|------|---------------|-----------|-----------------|\n| [Mois actuel] | ___ EUR | +/- ___ EUR (+/-___%) | (fleche haut) / (fleche bas) / (fleche droite) |\n\n### Minutes 6-10 : Taux d'Epargne\n\n- Revenus ce mois : ___ EUR\n- Epargne + investissement ce mois : ___ EUR\n- Remboursement dettes (hors minimum) : ___ EUR\n- Taux d'epargne effectif : ___% (cible : 28%)\n- Objectif atteint : Oui / Non\n- Si non, ecart : ___ points \u00e2\u20ac\u201d cause : ___\n\n### Minutes 11-13 : Score Comportemental\n\n- Virements automatiques tous executes : Oui / Non\n- Buckets respectes (aucun transfert entre buckets) : Oui / Non\n- Achats impulsifs > 50 EUR : ___ EUR (nombre : ___)\n- Emotion declencheur principale : [stress / ennui / celebration / pression sociale / autre]\n- Check hebdo fait chaque dimanche : ___ / 4 semaines\n- Score comportement : ___/10\n\n### Minutes 14-17 : Victoires & Lecons\n\n1. Victoire 1 : ___\n2. Victoire 2 : ___\n3. Victoire 3 : ___\n\n- Erreur du mois : ___\n- Lecon tiree : ___\n- Est-ce que j'ai evite de regarder mes comptes cette semaine ? Oui / Non (signal d'alerte Eviteur)\n\n### Minutes 18-20 : 3 Ajustements Mois Prochain\n\n1. Fuite a colmater : ___\n2. Automatisation a ajouter ou ameliorer : ___\n3. Objectif focus du mois : ___\n\n---\nProchain rendez-vous : [Date] (1er dimanche du mois prochain)\n```\n\n## Conseils specifiques pour ton profil Eviteur-Anxieux\n\n- **Meilleur jour** : 1er dimanche du mois, apres le cafe du matin. Pas le soir (fatigue = evitement).\n- **Creer un rappel recurrent** dans Google Calendar avec notification 1h avant + 15 min avant.\n- **Associer un plaisir** : fais ta revue dans ton cafe prefere, avec un bon podcast en fond. Conditionne ton cerveau a associer \"revue financiere\" avec \"moment agreable\".\n- **Si tu rates un mois** : ZERO culpabilite. Fais une revue double le mois suivant (2 colonnes dans le tableau). L'important c'est de ne pas rater 2 mois de suite.\n- **Le signal d'alarme** : si tu sens que tu evites la revue 2 mois de suite, c'est ton archetype Eviteur qui reprend le dessus. Force-toi a ouvrir le template \u00e2\u20ac\u201d meme si tu ne le remplis qu'a moitie. Commencer est plus important que finir.\n- **Le plus important** n'est pas la precision des chiffres mais la regularite du rituel. Mieux vaut une revue approximative chaque mois qu'une revue parfaite tous les 6 mois.\n\n## Premiere revue : avril 2026\n\nPour ta premiere revue, voici ce que tu devrais voir si tu as suivi le plan :\n\n| Element | Cible avril 2026 |\n|---------|-----------------|\n| Decouvert carte | 0 EUR (liquide) |\n| Credit conso | ~7 589 EUR |\n| Livret A | ~1 900 EUR (1 300 + 600) |\n| Patrimoine net | ~-5 689 EUR (en amelioration vs -6 700) |\n| Taux d'epargne | ~28% |\n\nL'amelioration du patrimoine net de ~1 000 EUR en un seul mois, c'est ta premiere victoire concrete. Note-la.\n\n---\n\n# Finance Freedom Flow \u00e2\u20ac\u201d Synthese\n\n## Score global : 4/10\n## Archetype : Eviteur (principal) / Anxieux (secondaire)\n## Patrimoine net actuel : -6 700 EUR\n## Objectif Lean FI : 456 000 EUR (dans ~18 ans, age 52)\n\n## Situation en un regard\n\n| Indicateur | Valeur | Statut |\n|------------|--------|--------|\n| Revenus | 3 200 EUR/mois | Correct pour la France |\n| Taux d'epargne potentiel | 27,8% | Bon (si systematise) |\n| Dettes | 9 200 EUR (5,9% + 18%) | Urgence sur le decouvert |\n| Fonds d'urgence | 2 500 EUR (1 mois) | Insuffisant |\n| Investissement | 0 EUR | Retard significatif a 34 ans |\n| Patrimoine net | -6 700 EUR | Negatif \u00e2\u20ac\u201d priorite absolue |\n\n## Chronologie du plan complet\n\n| Phase | Periode | Objectif | Montant cle |\n|-------|---------|----------|-------------|\n| Phase 0 | Mars 2026 (imm\u00c3\u00a9diat) | Liquider le decouvert carte | -1 200 EUR du Livret A |\n| Phase 1 | Avril - Nov 2026 (8 mois) | Fonds d'urgence complet | 6 100 EUR sur Livret A |\n| Phase 2 | Avril 2026 - Sept 2027 (18 mois) | Credit conso solde | 0 EUR de dettes |\n| Phase 3 | Dec 2026+ | Debut investissement PEA | 600 EUR/mois puis 1 050 EUR |\n| Phase 4 | Oct 2027+ | Acceleration investissement | 1 050 EUR/mois en DCA |\n| Phase 5 | 2032 | Cap des 100 000 EUR patrimoine | 100 000 EUR |\n| Phase 6 | 2044 | Lean FI atteint | 456 000 EUR |\n\n## Les 5 actions prioritaires\n\n1. **Cette semaine** : Virer 1 200 EUR du Livret A pour solder le decouvert carte a 18%. Gain immediat : 18 EUR/mois d'interets et 60 EUR/mois de paiement minimum liberes. Duree : 10 minutes sur l'app bancaire.\n\n2. **Ce mois (mars 2026)** : Ouvrir un PEA chez Boursorama et une assurance-vie chez Linxea. Tu n'investis pas encore \u00e2\u20ac\u201d tu fais demarrer les compteurs fiscaux (5 ans PEA, 8 ans AV). Duree : 30 minutes en ligne.\n\n3. **Ce mois (mars 2026)** : Audit des 120 EUR d'abonnements. Lister chacun, couper ceux non utilises dans les 30 derniers jours. Objectif : passer a 80 EUR. Gain : 40 EUR/mois = 480 EUR/an.\n\n4. **Debut avril 2026** : Mettre en place les 4 virements automatiques du systeme anti-budget le 2 du mois (450 EUR dettes + 600 EUR epargne + 270 EUR plaisir + 160 EUR buffer). Une fois en place, tu n'y touches plus.\n\n5. **1er dimanche d'avril 2026** : Premiere revue mensuelle de 20 minutes. Remplir le template, constater les progres, noter la premiere victoire. Mettre le rappel recurrent dans le calendrier pour chaque 1er dimanche du mois.\n\n## Le mot de la fin\n\nTa situation n'est pas catastrophique \u00e2\u20ac\u201d elle est juste non-optimisee. Le salaire est la, la capacite d'epargne est la (presque 28%). Ce qui manque, c'est un systeme. Pas de la motivation, pas de la discipline, pas de la connaissance \u00e2\u20ac\u201d un systeme automatique qui fait le travail pendant que tu vis ta vie.\n\nDans 18 mois, tu auras zero dette et un patrimoine net positif pour la premiere fois. Dans 5 ans, tu auras un portefeuille a 6 chiffres. Dans 18 ans, tu seras financierement libre au niveau Lean FI.\n\nTout ca avec un seul check de 30 secondes par semaine et une revue de 20 minutes par mois. C'est concu pour un Eviteur. Pas de tracking quotidien, pas de tableaux Excel, pas de culpabilite. Juste un systeme qui tourne.\n\nLa seule chose que tu dois faire MAINTENANT : liquider ce decouvert carte. 10 minutes. Go.\n"}], "grading": {"expectations": [{"text": "7 steps present (Audit, Archetype, Budget, Dettes, Fonds urgence, Portefeuille, Rituel)", "passed": true, "evidence": "Found 7/7: ['Etape 1 Audit', 'Etape 2 Archetype', 'Etape 3 Budget', 'Etape 4 Dettes', 'Etape 5 Fonds urgence', 'Etape 6 Portefeuille', 'Etape 7 Rituel']"}, {"text": "Score sante financiere /10 present", "passed": true, "evidence": "Score /10 found: True"}, {"text": "Systeme buckets avec allocations en EUR", "passed": true, "evidence": "Buckets: True, EUR amounts: True"}, {"text": "3 methodes de dette comparees (snowball, avalanche, hybride)", "passed": true, "evidence": "Found 3/3 methods"}, {"text": "3 niveaux FI calcules (Lean, FI, Fat)", "passed": true, "evidence": "Found 3/3 FI levels"}, {"text": "Allocation ETF avec tickers", "passed": true, "evidence": "ETF/tickers found: True"}, {"text": "Template revue mensuelle present", "passed": true, "evidence": "Monthly template found: True"}, {"text": "Plan d'action priorise present", "passed": true, "evidence": "Action plan found: True"}], "summary": "8/8 assertions passed"}}, {"id": "eval-flow-complet-without_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Audit Financier Complet\n\n**Date :** 19 mars 2026\n**Profil :** 34 ans, CDI stable, celibataire, France\n\n---\n\n## 1. Diagnostic Financier Global\n\n### 1.1 Tableau des revenus\n\n| Poste | Montant mensuel |\n|---|---|\n| Salaire net | 3 200 EUR |\n| Revenus secondaires | 0 EUR |\n| **Total revenus** | **3 200 EUR** |\n\n### 1.2 Tableau des depenses fixes et variables\n\n| Poste | Montant | % du revenu |\n|---|---|---|\n| Loyer | 850 EUR | 26,6 % |\n| Transport | 150 EUR | 4,7 % |\n| Alimentation | 400 EUR | 12,5 % |\n| Abonnements | 120 EUR | 3,8 % |\n| Autres charges fixes | 200 EUR | 6,3 % |\n| Depenses variables | 350 EUR | 10,9 % |\n| **Total depenses courantes** | **2 070 EUR** | **64,7 %** |\n\n### 1.3 Tableau des dettes\n\n| Dette | Capital restant | Taux | Mensualite minimum | Cout mensuel interet |\n|---|---|---|---|---|\n| Credit conso | 8 000 EUR | 5,9 % | 180 EUR | ~39 EUR |\n| Decouvert carte | 1 200 EUR | 18,0 % | variable (~minimum bancaire) | ~18 EUR |\n| **Total dettes** | **9 200 EUR** | | **~180 EUR** (hors decouvert) | **~57 EUR** |\n\nNote : le decouvert a 18 % genere environ 18 EUR d'interets par mois. Si tu ne fais que payer les interets sans rembourser le capital, cette dette ne diminue jamais. C'est une hemorragie silencieuse.\n\n### 1.4 Bilan mensuel actuel\n\n| Element | Montant |\n|---|---|\n| Revenus | 3 200 EUR |\n| Depenses courantes | -2 070 EUR |\n| Remboursement credit conso | -180 EUR |\n| Interets decouvert (estimes) | -18 EUR |\n| **Reste disponible** | **932 EUR** |\n\nCe reste disponible de 932 EUR est ton levier. C'est la matiere premiere de ta liberation financiere. Aujourd'hui, si ce montant n'est pas affecte de facon deliberee, il disparait dans des depenses non tracees ou reste sur le compte courant sans travailler.\n\n### 1.5 Ratios cles\n\n| Indicateur | Valeur | Norme recommandee | Statut |\n|---|---|---|---|\n| Taux d'effort logement | 26,6 % | < 30 % | OK |\n| Taux d'endettement | 5,6 % (credit seul) | < 33 % | OK |\n| Taux d'endettement total (avec decouvert) | ~6,2 % | < 33 % | OK |\n| Taux d'epargne actuel | 0 % (aucune epargne reguliere) | > 20 % | CRITIQUE |\n| Epargne de precaution | 2 500 EUR | 3 a 6 mois de depenses | INSUFFISANT |\n| Mois de survie financiere | ~1,1 mois | 3 a 6 mois | CRITIQUE |\n| Patrimoine net | 2 500 - 9 200 = **-6 700 EUR** | positif | NEGATIF |\n| Ratio dette/revenu annuel | 9 200 / 38 400 = 24 % | < 20 % | ATTENTION |\n\n### 1.6 Diagnostic synthetique\n\n**Situation : Phase de reconstruction \u00e2\u20ac\u201d dette nette negative, epargne insuffisante, zero investissement.**\n\nLes bons points :\n- Le taux d'effort logement est maitrise (26,6 %).\n- Le CDI stable est un actif puissant : il te donne du temps et de la previsibilite.\n- Le reste disponible de 932 EUR/mois est significatif : c'est plus que ce que beaucoup de gens ont comme marge.\n- Les depenses fixes sont relativement contenues.\n\nLes points critiques :\n- Le decouvert a 18 % est une urgence absolue. C'est le taux le plus destructeur de ton bilan.\n- Le patrimoine net est negatif de 6 700 EUR. Tu travailles actuellement pour rembourser le passe, pas pour construire l'avenir.\n- Zero investissement a 34 ans signifie que les interets composes n'ont pas encore commence a travailler pour toi. Chaque mois perdu compte.\n- L'epargne de precaution ne couvre qu'un mois de depenses. Un impr\u00c3\u00a9vu (panne voiture, perte emploi, sante) te remettrait immediatement en decouvert.\n\n---\n\n## 2. Profil Comportemental Financier\n\n### 2.1 Analyse des signaux\n\nA partir des chiffres fournis, plusieurs patterns comportementaux emergent :\n\n**Le decouvert carte a 1 200 EUR** : ce n'est pas un accident. Un decouvert qui persiste indique un schema de depense ou les sorties depassent regulierement les entrees a certains moments du mois. C'est souvent lie a :\n- Des depenses impulsives en fin de mois quand le solde semble encore confortable\n- Une absence de systeme d'allocation pre-defini (l'argent est vu comme une masse unique)\n- Un manque de friction entre l'envie et l'achat\n\n**Les 120 EUR d'abonnements** : ce poste merite un audit detaille. A 120 EUR/mois, cela represente 1 440 EUR/an. C'est souvent un agregat de petits montants (streaming, apps, salle de sport, box, etc.) dont certains ne sont plus utilises ou peuvent etre regroupes.\n\n**Les 350 EUR de depenses variables** : sans categorie precise, c'est un poste \"fourre-tout\" qui cache probablement des fuites budgetaires. C'est la ou l'argent s'evapore sans decision consciente.\n\n**Le credit conso a 8 000 EUR** : selon la duree restante, tu paies entre 500 et 2 000+ EUR d'interets au total. A 180 EUR/mois minimum, si c'est le seul montant verse, le remboursement prend environ 50 mois (plus de 4 ans) avec environ 1 000 EUR d'interets cumules.\n\n### 2.2 Profil identifie : \"Le Navigateur a Vue\"\n\nTu gagnes correctement, tu depenses raisonnablement, mais tu n'as pas de systeme. L'argent entre, les depenses sortent, et ce qui reste a la fin du mois n'est affecte a rien de precis. Cela donne l'illusion de gerer ses finances alors qu'en realite :\n- Pas d'epargne automatique\n- Des dettes qui trainent\n- Zero construction patrimoniale\n\nCe profil est tres courant chez les 30-35 ans en CDI. La bonne nouvelle : c'est le profil qui progresse le plus vite une fois qu'un systeme est en place, parce que les fondamentaux (revenu stable, depenses raisonnables) sont deja la.\n\n### 2.3 Biais a surveiller\n\n- **Biais du statu quo** : \"Ca marche comme ca depuis des annees, pourquoi changer ?\" \u00e2\u20ac\u201d Parce que chaque mois sans systeme te coute des centaines d'euros en interets payes et en interets composes non gagnes.\n- **Comptabilite mentale** : tendance a voir le decouvert comme \"de l'argent disponible\" alors que c'est une dette a 18 %.\n- **Actualisation hyperbolique** : preferer un plaisir immediat (achat) a un benefice futur plus grand (investissement). Les 350 EUR de depenses variables sont probablement la zone ou ce biais s'exprime le plus.\n\n---\n\n## 3. Systeme Budgetaire\n\n### 3.1 Methode recommandee : le systeme par enveloppes avec virements automatiques\n\nLe principe : le jour ou ton salaire arrive, l'argent est immediatement reparti dans des enveloppes (comptes ou sous-comptes) dediees. Ce qui reste sur le compte courant est la seule somme disponible pour les depenses discretionnaires. Tu ne decides plus chaque jour combien depenser \u00e2\u20ac\u201d le systeme decide pour toi.\n\n### 3.2 Architecture du budget cible (Phase 1 : elimination des dettes)\n\nCette repartition s'applique pendant la phase d'elimination des dettes (estimee a 8-12 mois).\n\n| Enveloppe | Montant | Timing | Support |\n|---|---|---|---|\n| Loyer | 850 EUR | Prelevement automatique | Compte courant |\n| Charges fixes (transport + autres fixes) | 350 EUR | Virement auto J+1 salaire | Sous-compte ou compte dedie |\n| Alimentation | 400 EUR | Retrait especes ou carte dediee | Enveloppe physique ou carte a debit immediat |\n| Abonnements | 80 EUR (apres audit, objectif -40 EUR) | Prelevements automatiques | Compte courant |\n| Remboursement decouvert (priorite 1) | 400 EUR | Virement auto J+1 salaire | Vers le compte carte |\n| Remboursement credit conso (minimum) | 180 EUR | Prelevement automatique | Compte courant |\n| Epargne de precaution | 200 EUR | Virement auto J+1 salaire | Livret A |\n| Depenses variables / plaisir | 300 EUR | Ce qui reste | Compte courant |\n| Buffer imprevus | 40 EUR | Virement auto | Livret A |\n| **Total** | **2 800 EUR** | | |\n\nReste non affecte : 400 EUR. Ce surplus sera realloue selon la phase (voir section dette puis investissement).\n\n**Attends** \u00e2\u20ac\u201d ou passent les 400 EUR restants ? C'est le \"surplus d'attaque de dette\" detaille dans la section 4. Pendant la phase 1, ces 400 EUR supplementaires vont integralement sur le decouvert, puis sur le credit conso.\n\n### 3.3 Audit des abonnements \u00e2\u20ac\u201d action immediate\n\nFais la liste de tous tes abonnements actifs. Pour chacun, pose trois questions :\n1. L'ai-je utilise cette semaine ?\n2. Existe-t-il une alternative gratuite ou moins chere ?\n3. Si je ne l'avais pas, le racheterais-je aujourd'hui ?\n\nObjectif : passer de 120 EUR a 80 EUR/mois. Les 40 EUR recuperes vont directement au remboursement du decouvert.\n\nCandidats frequents a la suppression :\n- Deuxieme service de streaming (garder un seul, alterner tous les 3 mois)\n- Salle de sport non utilisee (remplacer par activite gratuite pendant la phase dette)\n- Apps premium dont la version gratuite suffit\n- Box mensuelles (beaute, nourriture, etc.)\n\n### 3.4 Outils recommandes\n\n- **Banque en ligne avec sous-comptes gratuits** : Boursorama, Fortuneo, ou N26 permettent de creer des \"espaces\" ou sous-comptes pour materialiser les enveloppes.\n- **Application de suivi** : Bankin' (gratuit) ou Linxo pour categoriser automatiquement les depenses et voir les fuites.\n- **Virements automatiques** : configurer le jour du salaire (J+1) pour que l'argent parte avant que tu puisses le toucher. C'est le mecanisme cle : tu ne depenses que ce que le systeme te laisse.\n\n### 3.5 Regle des 24 heures\n\nPour toute depense non prevue superieure a 50 EUR : attendre 24 heures. Si tu en as toujours envie et que l'enveloppe \"variables\" le permet, achete. Cette friction simple elimine 60-70 % des achats impulsifs.\n\n---\n\n## 4. Plan d'Elimination des Dettes\n\n### 4.1 Strategie : methode Avalanche (taux d'interet le plus eleve d'abord)\n\nDeux methodes existent :\n- **Boule de neige (Snowball)** : rembourser la plus petite dette d'abord pour la satisfaction psychologique.\n- **Avalanche** : rembourser la dette au taux le plus eleve d'abord pour minimiser les interets payes.\n\nDans ton cas, les deux methodes convergent vers la meme decision : **le decouvert carte a 18 % est a la fois la plus petite dette ET celle au taux le plus eleve**. C'est la cible numero 1, sans debat possible.\n\n### 4.2 Phase 1 : Exterminer le decouvert (mois 1 a 3)\n\n**Budget d'attaque mensuel disponible pour le decouvert :**\n- Allocation dediee : 400 EUR/mois\n- Surplus budget realloue : 400 EUR/mois (le reste non affecte du budget)\n- **Total : 800 EUR/mois sur le decouvert**\n\n**Calendrier previsionnel :**\n\n| Mois | Versement | Interets (~1,5 %/mois) | Capital restant |\n|---|---|---|---|\n| Debut | \u00e2\u20ac\u201d | \u00e2\u20ac\u201d | 1 200 EUR |\n| Mois 1 | 800 EUR | ~18 EUR | 418 EUR |\n| Mois 2 | 800 EUR | ~6 EUR | 0 EUR (solde apres ~424 EUR) |\n\n**Le decouvert est elimine en 2 mois.** Les interets totaux payes seront d'environ 24 EUR. Chaque mois de retard coute 18 EUR d'interets purs \u00e2\u20ac\u201d donc agir immediatement.\n\n**Action concrete** : le jour ou tu mets ce plan en place, fais un virement de 800 EUR vers le compte carte. Demande aussi a ta banque de reduire le plafond de decouvert autorise a 0 EUR une fois rembourse. Supprimer la tentation est plus efficace que resister a la tentation.\n\n### 4.3 Phase 2 : Accelerer le credit conso (mois 3 a 12)\n\nUne fois le decouvert elimine, les 800 EUR/mois qui y etaient consacres sont rediriges vers le credit conso, en plus de la mensualite minimale.\n\n**Budget d'attaque mensuel sur le credit conso :**\n- Mensualite minimum : 180 EUR\n- Transfert depuis ex-budget decouvert : 800 EUR\n- **Total : 980 EUR/mois**\n\n**Calendrier previsionnel :**\n\n| Mois | Versement | Interets (~0,49 %/mois) | Capital restant |\n|---|---|---|---|\n| Mois 3 | 980 EUR | ~39 EUR | 7 059 EUR |\n| Mois 4 | 980 EUR | ~35 EUR | 6 114 EUR |\n| Mois 5 | 980 EUR | ~30 EUR | 5 164 EUR |\n| Mois 6 | 980 EUR | ~25 EUR | 4 209 EUR |\n| Mois 7 | 980 EUR | ~21 EUR | 3 250 EUR |\n| Mois 8 | 980 EUR | ~16 EUR | 2 286 EUR |\n| Mois 9 | 980 EUR | ~11 EUR | 1 317 EUR |\n| Mois 10 | 980 EUR | ~6 EUR | 343 EUR |\n| Mois 11 | 345 EUR | ~2 EUR | 0 EUR |\n\n**Le credit conso est elimine au mois 11.** Interets totaux payes sur cette periode : environ 185 EUR (au lieu de ~1 000 EUR si tu avais garde le minimum de 180 EUR/mois pendant 50+ mois).\n\n**Economie realisee : environ 800 EUR d'interets evites.**\n\n**Action concrete** : verifie aupres de ta banque qu'il n'y a pas de penalite de remboursement anticipe sur le credit conso. En France, pour les credits a la consommation, les penalites de remboursement anticipe sont plafonnees a 1 % du montant rembourse par anticipation (ou 0,5 % si la duree restante est inferieure a 1 an). Dans la plupart des cas, le gain en interets depasse largement cette penalite.\n\n### 4.4 Verification : capacite a maintenir le plan\n\nPendant toute la phase dette (11 mois), ton budget \"plaisir / variables\" est reduit a 300 EUR/mois. C'est serr\u00c3\u00a9 mais tenable. Si un mois est particulierement difficile, tu peux reduire le versement supplementaire de 100-200 EUR sans casser le plan \u00e2\u20ac\u201d tu rallonges juste d'un mois. L'essentiel est de ne jamais retoucher au decouvert.\n\n### 4.5 Resume du calendrier dette\n\n| Periode | Action | Resultat |\n|---|---|---|\n| Mois 1-2 | Attaque decouvert (800 EUR/mois) | Decouvert 1 200 EUR elimine |\n| Mois 3-11 | Attaque credit conso (980 EUR/mois) | Credit 8 000 EUR elimine |\n| **Mois 12** | **Zero dette** | **980 EUR/mois liberes** |\n\nA partir du mois 12, tu passes de \"patrimoine net negatif\" a \"capacite d'investissement de 980 EUR/mois\". C'est un changement de trajectoire.\n\n---\n\n## 5. Fonds d'Urgence\n\n### 5.1 Cible\n\nLe fonds d'urgence doit couvrir 3 a 6 mois de depenses incompressibles. Pour ton profil (CDI stable, celibataire, pas de charge familiale), 4 mois est un bon objectif.\n\n**Depenses mensuelles incompressibles** (le strict minimum si tu perds ton emploi) :\n\n| Poste | Montant |\n|---|---|\n| Loyer | 850 EUR |\n| Alimentation (reduit) | 300 EUR |\n| Transport (reduit) | 100 EUR |\n| Abonnements essentiels (tel + internet) | 40 EUR |\n| Assurances / mutuelle | 100 EUR (estime) |\n| **Total minimum** | **1 390 EUR** |\n\n**Cible fonds d'urgence : 4 x 1 390 = 5 560 EUR** (arrondi a 5 600 EUR).\n\n### 5.2 Situation actuelle\n\nTu as 2 500 EUR sur Livret A. C'est deja une base.\n\n**Montant a constituer : 5 600 - 2 500 = 3 100 EUR.**\n\n### 5.3 Plan de constitution (Phase 2 : mois 12 a 16)\n\nA partir du mois 12, tu es libre de dettes et tu disposes de 980 EUR/mois liberes.\n\n**Allocation post-dette :**\n\n| Enveloppe | Montant |\n|---|---|\n| Epargne de precaution (completement fonds urgence) | 600 EUR |\n| Debut investissement (voir section 6) | 200 EUR |\n| Augmentation budget plaisir | 180 EUR |\n| **Total** | **980 EUR** |\n\n**Calendrier :**\n\n| Mois | Versement | Solde Livret A |\n|---|---|---|\n| Mois 12 (debut) | \u00e2\u20ac\u201d | 2 500 EUR + epargne accumulee pendant phase dette |\n| | | |\n\nPendant la phase dette (mois 1-11), tu continues aussi a epargner 200 EUR/mois + 40 EUR buffer.\n\n**Epargne accumulee pendant la phase dette** : 11 x 240 = 2 640 EUR.\n\n**Solde Livret A au mois 12** : 2 500 + 2 640 = **5 140 EUR**.\n\nIl ne manque que 460 EUR pour atteindre la cible de 5 600 EUR. Avec 600 EUR/mois d'epargne au mois 12, le fonds d'urgence est complet **au mois 13**.\n\n### 5.4 Ou placer le fonds d'urgence\n\n**Livret A** : c'est le bon choix pour un fonds d'urgence en France.\n- Disponibilite immediate (virement sous 24h)\n- Capital garanti\n- Exonere d'impots\n- Taux actuel : 2,4 % (mars 2026, susceptible de varier)\n- Plafond : 22 950 EUR (largement suffisant)\n\n**Ne pas placer le fonds d'urgence** sur un PEA, une assurance-vie en unites de compte, ou tout support volatile. Le fonds d'urgence n'est pas un investissement \u00e2\u20ac\u201d c'est une assurance.\n\n### 5.5 Regles du fonds d'urgence\n\n1. **Ne le toucher que pour les vraies urgences** : perte d'emploi, probleme de sante grave, reparation indispensable. Un week-end en derniere minute n'est pas une urgence.\n2. **Le reconstituer en priorite** : si tu dois piocher dedans, la reconstitution passe avant tout investissement.\n3. **Ne pas depasser la cible** : au-dela de 5 600 EUR, l'argent supplementaire doit etre investi pour travailler (le Livret A ne bat pas l'inflation sur le long terme).\n\n---\n\n## 6. Portefeuille d'Investissement\n\n### 6.1 Pourquoi investir est non-negociable a 34 ans\n\nA 34 ans, tu as environ 30 ans avant la retraite. C'est un horizon suffisamment long pour que les interets composes fassent un travail considerable, mais chaque annee perdue a un cout reel.\n\n**Illustration concrete** :\n- 200 EUR/mois investis de 34 a 64 ans (30 ans) a 7 % net annualise = **~243 000 EUR** (dont 171 000 EUR d'interets \u00e2\u20ac\u201d l'argent qui travaille pour toi).\n- Si tu commences a 37 ans (3 ans de retard) avec le meme montant = **~195 000 EUR**. Tu perds **~48 000 EUR** pour 3 ans de retard.\n- A 500 EUR/mois de 34 a 64 ans a 7 % = **~607 000 EUR**.\n\nCes chiffres ne sont pas des promesses \u00e2\u20ac\u201d ils illustrent la puissance du temps. Le rendement moyen du MSCI World sur les 30 dernieres annees est d'environ 8-10 % brut annualise. Avec 7 % net apres frais, on est conservateur.\n\n### 6.2 Vehicules d'investissement recommandes (contexte France)\n\n#### PEA (Plan d'Epargne en Actions) \u00e2\u20ac\u201d PRIORITAIRE\n\n**Pourquoi le PEA en premier :**\n- Fiscalite imbattable : apres 5 ans de detention, les plus-values sont exonerees d'impot sur le revenu (seuls les prelevements sociaux de 17,2 % s'appliquent). Compar\u00c3\u00a9 au CTO (30 % de flat tax), c'est un avantage massif.\n- Plafond de versement : 150 000 EUR.\n- Plus tot tu l'ouvres, plus tot le compteur fiscal de 5 ans demarre. **Meme avec 100 EUR, ouvre-le maintenant.**\n\n**Ou ouvrir un PEA** : Boursorama, Fortuneo, ou Bourse Direct. Criteres : frais de courtage bas (< 1 EUR par ordre sur ETF), pas de frais de garde, interface simple.\n\n**Quoi mettre dedans** :\n\n| ETF | Allocation | Frais annuels | Justification |\n|---|---|---|---|\n| MSCI World (ex: Amundi MSCI World UCITS ETF \u00e2\u20ac\u201d CW8, ou iShares MSCI World Swap PEA) | 90 % | 0,38 % | Diversification mondiale : ~1 500 entreprises, 23 pays developpes |\n| MSCI Emerging Markets (ex: Amundi PEA MSCI Emerging Markets) | 10 % | 0,20 % | Exposition aux marches emergents pour la croissance long terme |\n\n**Pourquoi un seul ETF World suffit pour commencer** : avec un ETF MSCI World, tu es investi dans Apple, Microsoft, Nestle, LVMH, Toyota, etc. C'est deja ultra-diversifie. Pas besoin de stock-picking ou de timing de marche. Tu achetes regulierement (DCA \u00e2\u20ac\u201d Dollar Cost Averaging), et tu ne touches pas.\n\n#### Assurance-vie \u00e2\u20ac\u201d SECONDAIRE (a ouvrir pour prendre date)\n\n**Pourquoi** : meme logique que le PEA \u00e2\u20ac\u201d la fiscalite s'ameliore avec le temps (avantage apres 8 ans). Ouvrir une assurance-vie avec un versement minimum (50-100 EUR) pour demarrer le compteur.\n\n**Ou** : Linxea Spirit 2, Lucya Cardif, ou Placement-direct.fr. Criteres : 0 % de frais d'entree, large choix d'ETF en unites de compte, fonds euros correct.\n\n**Usage** : complementaire au PEA pour les montants au-dela de 150 000 EUR, ou pour des objectifs a moyen terme (5-10 ans).\n\n### 6.3 Plan d'investissement par phase\n\n#### Phase 1 : Pendant l'elimination des dettes (mois 1 a 11)\n\n- **Investissement : 0 EUR/mois** en bourse.\n- **Action immediate** : ouvrir un PEA et une assurance-vie avec le minimum possible (100 EUR chacun) pour demarrer les compteurs fiscaux. Cet argent peut etre place sur un fonds monetaire ou ETF World, peu importe \u00e2\u20ac\u201d l'objectif est d'ancrer la date d'ouverture.\n\n#### Phase 2 : Fonds d'urgence + debut investissement (mois 12 a 13)\n\n- **200 EUR/mois sur le PEA** (ETF MSCI World).\n- 600 EUR/mois vers le fonds d'urgence.\n- C'est modeste mais ca pose l'habitude.\n\n#### Phase 3 : Montee en puissance (mois 14+)\n\nUne fois le fonds d'urgence complet (mois 13), reallocation :\n\n| Enveloppe | Montant |\n|---|---|\n| Investissement PEA | 500 EUR/mois |\n| Epargne projets moyen terme (assurance-vie UC ou Livret) | 200 EUR/mois |\n| Augmentation budget qualite de vie | 280 EUR/mois |\n| **Total reaffecte** | **980 EUR** |\n\n#### Phase 4 : Optimisation (mois 24+)\n\nA partir de la deuxieme annee, si ton salaire augmente (progression normale en CDI), allouer **au moins 50 % de chaque augmentation a l'investissement**. Si tu recois 100 EUR net de plus par mois, 50 EUR vont sur le PEA. L'autre moitie ameliore ta qualite de vie. Cela evite l'inflation du train de vie (lifestyle creep), qui est le premier ennemi de la construction patrimoniale.\n\n### 6.4 Projections patrimoniales\n\nEn partant de zero investissement aujourd'hui, avec le plan ci-dessus :\n\n| Horizon | Capital investi (cumule) | Valeur estimee (7 % annualise) |\n|---|---|---|\n| Fin annee 1 | ~200 EUR (ouverture PEA) | ~200 EUR |\n| Fin annee 2 | ~6 200 EUR | ~6 500 EUR |\n| Fin annee 3 | ~12 200 EUR | ~13 500 EUR |\n| Fin annee 5 | ~24 200 EUR | ~29 000 EUR |\n| Fin annee 10 | ~54 200 EUR | ~80 000 EUR |\n| Fin annee 20 | ~114 200 EUR | ~250 000 EUR |\n| Fin annee 30 (age 64) | ~174 200 EUR | ~550 000+ EUR |\n\nCes projections supposent 500 EUR/mois a partir du mois 14, sans augmentation. En realite, avec les augmentations de salaire et l'optimisation progressive, les chiffres seront superieurs.\n\n### 6.5 Regles d'investissement non-negociables\n\n1. **Automatiser** : virement automatique vers le PEA le jour du salaire. Pas de decision a prendre.\n2. **Ne jamais vendre en panique** : les marches baissent regulierement (-20 % a -40 %). C'est normal. Sur 30 ans, toutes les crises passees ont ete surmontees. Vendre au pire moment est la seule facon de perdre definitivement.\n3. **Investir regulierement (DCA)** : meme montant chaque mois, quelles que soient les conditions de marche. Ca lisse le cout d'achat et elimine le stress du timing.\n4. **Pas de stock-picking** : les ETF indiciels battent 90 % des gestionnaires professionnels sur le long terme. Ne pas essayer d'etre plus malin que le marche.\n5. **Pas de crypto, de trading, de \"bons plans\"** : pendant la phase de construction (5 premieres annees minimum), rester sur du solide et simple.\n6. **Reviser l'allocation une fois par an** : pas plus. Reequilibrer si l'allocation devie de plus de 5 % de la cible (ex: World passe de 90 % a 85 % du portefeuille).\n\n---\n\n## 7. Rituel de Revue Mensuelle\n\n### 7.1 Pourquoi un rituel mensuel\n\nSans suivi regulier, meme le meilleur plan derive. Le rituel mensuel prend 30 a 45 minutes par mois \u00e2\u20ac\u201d c'est le cout de ne pas perdre le controle. C'est aussi le moment de celebrer les progres, ce qui renforce la motivation.\n\n### 7.2 Quand\n\n**Le dernier dimanche du mois, a un moment fixe.** Mets une alarme recurrente. Ce n'est pas negociable. Si tu rates un mois, tu le fais le premier jour du mois suivant \u00e2\u20ac\u201d jamais de \"je rattraperai\".\n\n### 7.3 Checklist de revue mensuelle\n\n#### Bloc 1 : Etat des lieux (10 min)\n\n- [ ] **Solde de chaque compte** : courant, Livret A, PEA, assurance-vie, carte credit.\n- [ ] **Patrimoine net** : total des actifs (epargne + investissements) moins total des dettes. Ce chiffre doit monter chaque mois. Si ce n'est pas le cas, identifier pourquoi.\n- [ ] **Depenses du mois** : ouvrir l'app de suivi (Bankin'/Linxo), verifier les categories. Y a-t-il eu des depenses non prevues ? Quelle categorie a derape ?\n\n#### Bloc 2 : Verification des objectifs (10 min)\n\n- [ ] **Phase en cours** : suis-je en phase dette, fonds d'urgence, ou investissement ? Est-ce que je suis dans les temps du calendrier previsionnel ?\n- [ ] **Dettes restantes** : capital restant sur le credit conso ? Sur le decouvert ? Comparer avec le previsionnel.\n- [ ] **Epargne de precaution** : suis-je en progression vers les 5 600 EUR ?\n- [ ] **Investissement** : montant investi ce mois ? Virement automatique OK ?\n\n#### Bloc 3 : Ajustements (10 min)\n\n- [ ] **Abonnements** : un nouvel abonnement a ete pris ce mois ? Est-il necessaire ? Un abonnement existant peut-il etre coupe ?\n- [ ] **Depenses variables** : ai-je respecte l'enveloppe de 300 EUR ? Si non, qu'est-ce qui a cause le depassement ?\n- [ ] **Virements automatiques** : sont-ils tous actifs et aux bons montants ? Faut-il ajuster en fonction d'un changement (augmentation, nouvelle depense fixe) ?\n- [ ] **Prochains evenements financiers** : y a-t-il une depense importante prevue le mois prochain (vacances, reparation, cadeau) ? Provisionner maintenant.\n\n#### Bloc 4 : Indicateurs cles (5 min)\n\nRemplir ce mini-tableau chaque mois et le garder dans un fichier ou un tableur :\n\n| Indicateur | Ce mois | Mois precedent | Tendance |\n|---|---|---|---|\n| Patrimoine net | ... EUR | ... EUR | hausse / baisse |\n| Dettes restantes | ... EUR | ... EUR | hausse / baisse |\n| Taux d'epargne | ... % | ... % | hausse / baisse |\n| Investissement cumule | ... EUR | ... EUR | hausse / baisse |\n| Fonds urgence | ... EUR | ... EUR | hausse / baisse |\n\n#### Bloc 5 : Motivation (5 min)\n\n- [ ] **Une victoire du mois** : noter un progres concret, meme petit. \"J'ai coupe un abonnement de 15 EUR.\" \"J'ai resiste a un achat impulsif.\" \"Le credit conso est passe sous 5 000 EUR.\"\n- [ ] **Rappel de l'objectif** : relire la projection patrimoniale a 10 ou 30 ans. Se rappeler pourquoi on fait ca.\n- [ ] **Prochaine etape** : quel est le prochain jalon ? \"Eliminer le decouvert ce mois.\" \"Atteindre 5 000 EUR sur le PEA.\" Avoir un objectif proche maintient l'engagement.\n\n### 7.4 Revue trimestrielle (en supplement)\n\nTous les 3 mois, ajouter 15 minutes pour :\n- Revoir la performance du PEA (sans reagir emotionnellement).\n- Verifier si les frais bancaires sont optimises.\n- Evaluer si les abonnements sont toujours pertinents.\n- Se demander : \"Y a-t-il une source de revenu supplementaire que je pourrais developper ?\" (freelance, formation, revente, etc.)\n\n### 7.5 Revue annuelle\n\nUne fois par an (janvier de preference) :\n- Bilan patrimonial complet.\n- Comparaison avec les projections du plan.\n- Reequilibrage du portefeuille si necessaire.\n- Revision de la strategie si changement de situation (couple, enfant, achat immobilier, etc.).\n- Declaration fiscale : verifier que les placements sont optimises fiscalement.\n\n---\n\n## 8. Calendrier Global \u00e2\u20ac\u201d Feuille de Route sur 24 Mois\n\n| Periode | Phase | Actions cles | Objectif atteint |\n|---|---|---|---|\n| Jour 1 | Demarrage | Ouvrir PEA + assurance-vie (100 EUR chacun). Configurer virements auto. Faire l'audit des abonnements. Demander info penalites remboursement anticipe credit. | Systeme en place |\n| Mois 1-2 | Elimination decouvert | 800 EUR/mois sur decouvert + 240 EUR/mois epargne | Decouvert 1 200 EUR elimine |\n| Mois 3-11 | Elimination credit conso | 980 EUR/mois sur credit + 240 EUR/mois epargne | Credit 8 000 EUR elimine |\n| Mois 12 | Liberation | Zero dette. Patrimoine net positif (~5 140 EUR). | Fin de la phase dette |\n| Mois 12-13 | Completement fonds urgence | 600 EUR/mois epargne + 200 EUR/mois PEA | Fonds urgence complet (5 600 EUR) |\n| Mois 14-24 | Construction patrimoniale | 500 EUR/mois PEA + 200 EUR/mois epargne projets | ~8 000-10 000 EUR investis en bourse |\n| **Fin mois 24** | **Bilan** | **Zero dette, fonds urgence OK, ~10 000 EUR investis, systeme rode** | **Base solide posee** |\n\n### Situation projetee a 24 mois\n\n| Element | Aujourd'hui | Dans 24 mois |\n|---|---|---|\n| Dettes | 9 200 EUR | 0 EUR |\n| Fonds urgence | 2 500 EUR | 5 600 EUR |\n| Investissements | 0 EUR | ~10 000 EUR |\n| Patrimoine net | -6 700 EUR | ~15 600 EUR |\n| **Variation** | | **+22 300 EUR** |\n\nEn 24 mois, tu passes d'un patrimoine net de -6 700 EUR a +15 600 EUR. C'est un basculement de 22 300 EUR \u00e2\u20ac\u201d avec le meme salaire, les memes depenses de base. La seule difference : un systeme.\n\n---\n\n## 9. Actions Immediates \u00e2\u20ac\u201d Les 7 Premiers Jours\n\nNe pas attendre. Chaque jour d'inaction coute des interets et du temps perdu sur les interets composes.\n\n| Jour | Action | Duree estimee |\n|---|---|---|\n| Jour 1 | Lister tous les abonnements actifs. Identifier ceux a couper. | 20 min |\n| Jour 1 | Telecharger Bankin' ou Linxo, connecter tous les comptes. | 15 min |\n| Jour 2 | Appeler la banque : demander les conditions de remboursement anticipe du credit conso. | 10 min |\n| Jour 2 | Configurer les virements automatiques (epargne + remboursement decouvert) pour le prochain salaire. | 15 min |\n| Jour 3 | Ouvrir un PEA en ligne (Boursorama, Fortuneo, ou Bourse Direct). Versement initial : 100 EUR. | 20 min |\n| Jour 3 | Ouvrir une assurance-vie en ligne (Linxea Spirit 2 ou equivalent). Versement initial : 100 EUR. | 20 min |\n| Jour 4-5 | Resilier les abonnements identifies comme superflus. | 30 min |\n| Jour 6 | Faire le premier virement de 800 EUR vers le compte carte (attaque decouvert). | 5 min |\n| Jour 7 | Planifier le premier rituel de revue mensuelle (dernier dimanche du mois, alarme recurrente). | 5 min |\n\n**Temps total : environ 2h30 reparties sur une semaine.** C'est le cout de demarrage. Apres ca, le systeme tourne en automatique.\n\n---\n\n## 10. Risques et Points de Vigilance\n\n### 10.1 Risques identifies\n\n| Risque | Probabilite | Impact | Mitigation |\n|---|---|---|---|\n| Perte d'emploi | Faible (CDI stable) | Eleve | Fonds d'urgence 4 mois + assurance chomage France |\n| Depense imprevue majeure (>2000 EUR) | Moyenne | Moyen | Fonds d'urgence + possibilite de ralentir le remboursement credit d'un mois |\n| Retour au decouvert | Moyenne | Eleve | Supprimer le decouvert autorise une fois rembourse |\n| Lassitude / abandon du plan | Moyenne | Eleve | Rituel mensuel + celebrations des jalons + budget plaisir maintenu |\n| Krach boursier | Certaine (a un moment) | Faible (horizon long) | DCA + ne jamais vendre en panique + horizon 30 ans |\n\n### 10.2 Scenario de secours\n\nSi un mois est trop serr\u00c3\u00a9 :\n1. Reduire le versement supplementaire sur la dette (pas la mensualite minimum).\n2. Puiser dans le budget variables (pas dans l'epargne).\n3. Ne jamais reprendre du decouvert.\n4. Reprendre le rythme normal le mois suivant.\n\nLe plan tolere des ecarts ponctuels. Ce qui compte, c'est la direction sur 12-24 mois, pas la perfection chaque mois.\n\n---\n\n## 11. Synthese\n\n**Ton diagnostic** : tu n'as pas un probleme de revenus ni de depenses. Tu as un probleme de systeme. L'argent est la \u00e2\u20ac\u201d 932 EUR/mois de marge \u00e2\u20ac\u201d mais il n'est pas dirige.\n\n**Le plan en une phrase** : eliminer les dettes en 11 mois (decouvert d'abord, credit ensuite), constituer un fonds d'urgence au mois 13, puis investir 500 EUR/mois sur un PEA en ETF World pour le reste de ta vie active.\n\n**Les 3 leviers qui changent tout** :\n1. L'automatisation des virements (tu ne decides plus, le systeme execute).\n2. La suppression du decouvert autorise (tu ne peux plus retomber).\n3. L'investissement regulier en ETF (les interets composes travaillent 24h/24).\n\n**Dans 24 mois** : zero dette, 5 600 EUR de securite, ~10 000 EUR investis, patrimoine net de +15 600 EUR au lieu de -6 700 EUR aujourd'hui.\n\n**Dans 30 ans (age 64)** : si tu maintiens le cap, un capital de 500 000 a 600 000 EUR est atteignable \u00e2\u20ac\u201d uniquement avec de l'epargne reguliere et la patience de laisser le temps faire son travail.\n\nLe plus dur, c'est de commencer. Et commencer, c'est les 7 premiers jours ci-dessus. 2h30 de ton temps. Le reste est de la discipline \u00e2\u20ac\u201d et le systeme s'occupe de la discipline a ta place.\n\n---\n\n*Audit genere le 19 mars 2026 \u00e2\u20ac\u201d a reviser annuellement ou en cas de changement de situation.*\n"}], "grading": {"expectations": [{"text": "7 steps present (Audit, Archetype, Budget, Dettes, Fonds urgence, Portefeuille, Rituel)", "passed": false, "evidence": "Found 6/7: ['Etape 1 Audit', 'Etape 3 Budget', 'Etape 4 Dettes', 'Etape 5 Fonds urgence', 'Etape 6 Portefeuille', 'Etape 7 Rituel']"}, {"text": "Score sante financiere /10 present", "passed": false, "evidence": "Score /10 found: False"}, {"text": "Systeme buckets avec allocations en EUR", "passed": true, "evidence": "Buckets: True, EUR amounts: True"}, {"text": "3 methodes de dette comparees (snowball, avalanche, hybride)", "passed": false, "evidence": "Found 2/3 methods"}, {"text": "3 niveaux FI calcules (Lean, FI, Fat)", "passed": false, "evidence": "Found 0/3 FI levels"}, {"text": "Allocation ETF avec tickers", "passed": true, "evidence": "ETF/tickers found: True"}, {"text": "Template revue mensuelle present", "passed": true, "evidence": "Monthly template found: True"}, {"text": "Plan d'action priorise present", "passed": false, "evidence": "Action plan found: False"}], "summary": "3/8 assertions passed"}}, {"id": "eval-portefeuille-with_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Portefeuille Investissement Paresseux\n\n**Profil investisseur** : 38 ans | France | Horizon 20 ans | Tolerance risque 7/10 | DCA 300 EUR/mois | Capital initial 5 000 EUR | Debutant\n\n---\n\n## Allocation recommandee\n\n| Classe | Allocation | ETF suggere | Justification |\n|--------|-----------|-------------|---------------|\n| Actions monde (pays developpes) | 65% | Amundi MSCI World UCITS ETF Acc \u00e2\u20ac\u201d **CW8** (LU1681043599) | Coeur du portefeuille. 1 500+ entreprises mondiales. Eligible PEA. TER 0.38%. Diversification maximale en un seul ETF. A 38 ans avec un horizon 20 ans et une tolerance 7/10, la part actions doit dominer largement. |\n| Actions marches emergents | 15% | Amundi MSCI Emerging Markets UCITS ETF Acc \u00e2\u20ac\u201d **PAEEM** (LU1681045370) | Exposition Chine, Inde, Bresil, Taiwan. Moteurs de croissance long terme. Eligible PEA. TER 0.20%. Complemente le MSCI World qui ne couvre que les pays developpes. |\n| Obligations euro | 15% | iShares Core Euro Government Bond UCITS ETF \u00e2\u20ac\u201d **IEGA** (IE00B4WXJJ64) | Stabilisateur du portefeuille. Amortit les krachs. Obligations souveraines zone euro, risque faible. TER 0.07%. A 7/10 de tolerance, 15% en obligations est le minimum pour dormir tranquille sans sacrifier la performance. Non eligible PEA \u00e2\u20ac\u201d a loger en assurance-vie ou CTO. |\n| Cash / Liquidites | 5% | \u00e2\u20ac\u201d (Livret A ou fonds euros assurance-vie) | Matelas de securite pour reequilibrage opportuniste. Permet d'acheter lors de baisses prononcees sans toucher le fonds d'urgence. Rendement Livret A actuel : 2.4% net. |\n\n**Justification globale** : A 38 ans, tu as 20 ans devant toi \u00e2\u20ac\u201d c'est largement assez pour encaisser 2 ou 3 krachs et en sortir gagnant. Avec une tolerance a 7/10, tu acceptes la volatilite en echange de rendements superieurs. L'allocation 80/15/5 (actions/obligations/cash) est agressive mais adaptee a ton profil. La repartition World + Emergents (65/15) donne une couverture de 90%+ de la capitalisation mondiale. Simple, efficace, style Bogleheads.\n\n**Projection indicative (hypotheses : 7% rendement annuel brut moyen actions, 3% obligations, 2.4% cash)** :\n\n| Horizon | Capital projete (estimation) |\n|---------|------------------------------|\n| 5 ans | ~28 000 EUR |\n| 10 ans | ~60 000 EUR |\n| 15 ans | ~107 000 EUR |\n| 20 ans | ~175 000 EUR |\n\n*Ces projections sont indicatives et basees sur des moyennes historiques. Les performances passees ne presagent pas des performances futures. La volatilite sera reelle \u00e2\u20ac\u201d certaines annees seront negatives.*\n\n---\n\n## Regles de gestion\n\n### DCA (Dollar Cost Averaging) \u00e2\u20ac\u201d Investissement programme\n\n- **DCA mensuel : 300 EUR le 5 de chaque mois** (J+4 apres reception du salaire, laisse le temps au virement)\n- **Repartition mensuelle** :\n  - 195 EUR \u00e2\u2020\u2019 CW8 (Actions monde \u00e2\u20ac\u201d 65%)\n  - 45 EUR \u00e2\u2020\u2019 PAEEM (Emergents \u00e2\u20ac\u201d 15%)\n  - 45 EUR \u00e2\u2020\u2019 IEGA (Obligations \u00e2\u20ac\u201d 15%)\n  - 15 EUR \u00e2\u2020\u2019 Livret A / Fonds euros (Cash \u00e2\u20ac\u201d 5%)\n- **Capital initial (5 000 EUR)** : investir en 3 tranches sur 3 mois pour lisser l'entree\n  - Mois 1 : 1 700 EUR + DCA 300 EUR\n  - Mois 2 : 1 700 EUR + DCA 300 EUR\n  - Mois 3 : 1 600 EUR + DCA 300 EUR\n  - Meme repartition proportionnelle a chaque tranche\n\n### Reequilibrage\n\n- **1 fois par an en janvier** \u00e2\u20ac\u201d pas plus souvent (les frais et la fiscalite detruisent la performance si tu reequilibres trop)\n- **Methode** : reequilibrer par les flux (orienter les achats mensuels vers la classe sous-ponderes) plutot que par la vente (evite les evenements fiscaux)\n- **Seuil de declenchement** : reequilibrer si un ecart > 5 points par rapport a l'allocation cible (ex: si les actions montent a 72% au lieu de 65%)\n\n### En cas de krach boursier\n\n- **Baisse de -20%** : continuer le DCA normalement. Ne rien changer. C'est normal, ca arrive en moyenne tous les 3-5 ans.\n- **Baisse de -30%** : continuer le DCA + envisager de puiser dans la poche cash (5%) pour acheter des actions a prix brade. Les soldes boursiers sont les meilleurs moments pour investir.\n- **Baisse de -40% ou plus** : continuer le DCA. NE RIEN VENDRE. C'est la que les fortunes se construisent. Historiquement, chaque krach a ete suivi d'une reprise. Si tu vends au plus bas, tu cristallises la perte.\n- **Regle d'or** : fermer les applications de suivi boursier si le stress monte. Le DCA automatise fait le travail. Ton seul job : ne pas intervenir.\n\n### Ajustement lie a l'age\n\n- **A partir de 48 ans (dans 10 ans)** : augmenter la poche obligations de 1% par an, en reduisant les actions emergents d'abord puis les actions monde\n- **Objectif a 58 ans (horizon atteint)** : allocation ~55% actions / 35% obligations / 10% cash \u00e2\u20ac\u201d plus conservative pour proteger le capital accumule\n- **Logique** : plus tu te rapproches de l'utilisation du capital, plus tu reduis la volatilite\n\n---\n\n## Courtiers recommandes pour la France\n\n### 1. Bourse Direct \u00e2\u20ac\u201d Le meilleur compromis pour debuter en PEA\n\n| Critere | Detail |\n|---------|--------|\n| **PEA** | Oui \u00e2\u20ac\u201d 0% de frais de garde |\n| **Frais ordre PEA** | 0.99 EUR jusqu'a 500 EUR, 1.90 EUR de 500 a 1 000 EUR |\n| **Interface** | Fonctionnelle mais datee. Suffisante pour du DCA mensuel. |\n| **Avantage principal** | Les frais les plus bas du marche francais pour un PEA. C'est tout ce qui compte pour du lazy investing. |\n| **Inconvenient** | Interface pas sexy, app mobile moyenne. Mais tu ne dois l'ouvrir qu'une fois par mois pour passer un ordre. |\n| **Acces ETF** | CW8 et PAEEM disponibles sur Euronext Paris |\n\n### 2. Fortuneo \u00e2\u20ac\u201d Alternative solide\n\n| Critere | Detail |\n|---------|--------|\n| **PEA** | Oui \u00e2\u20ac\u201d 0% frais de garde |\n| **Frais ordre PEA** | 1.95 EUR jusqu'a 500 EUR (offre Starter) |\n| **Interface** | Plus moderne que Bourse Direct. App correcte. |\n| **Avantage principal** | Interface agreable + banque en ligne integree (si tu veux centraliser). |\n| **Inconvenient** | Frais legerement plus eleves que Bourse Direct. |\n| **Bonus** | Offre Starter 0 EUR pour les premiers ordres (conditions) |\n\n### 3. Trade Republic \u00e2\u20ac\u201d Pour le CTO et les obligations (complement)\n\n| Critere | Detail |\n|---------|--------|\n| **PEA** | Non \u00e2\u20ac\u201d CTO uniquement |\n| **Frais** | 1 EUR par ordre |\n| **DCA automatise** | Oui \u00e2\u20ac\u201d plans d'investissement programmes sans frais. C'est LE point fort. |\n| **Avantage principal** | DCA automatique integre : tu configures une fois, ca achete tout seul chaque mois. Parfait pour un debutant paresseux. |\n| **Inconvenient** | Pas de PEA. Fiscalite CTO moins avantageuse (flat tax 30%). |\n| **Usage recommande** | Pour IEGA (obligations, non eligible PEA) en plan programme |\n\n**Recommandation pour ton profil debutant** :\n- **Choix principal : Bourse Direct pour le PEA** \u00e2\u20ac\u201d c'est la que tu mets CW8 et PAEEM (80% de ton investissement)\n- **Complement : Trade Republic pour le CTO** \u00e2\u20ac\u201d pour IEGA (obligations) avec le plan programme automatique\n- **Ou version simplifiee** : Bourse Direct uniquement (PEA pour actions + CTO chez eux pour obligations)\n\n---\n\n## Fiscalite basique France\n\n### Enveloppes fiscales avantageuses\n\n| Enveloppe | Fiscalite | Plafond | Ce que tu y mets |\n|-----------|-----------|---------|-----------------|\n| **PEA (Plan d'Epargne en Actions)** | 0% d'impot sur les plus-values apres 5 ans (seulement 17.2% prelevements sociaux) | 150 000 EUR de versements | CW8 + PAEEM \u00e2\u20ac\u201d le coeur du portefeuille. Priorite absolue. |\n| **Assurance-Vie** | Abattement apres 8 ans (4 600 EUR/an de gains exoneres, puis 24.7% au lieu de 30%). Transmission avantageuse. | Pas de plafond de versement | Fonds euros (poche cash) + eventuellement obligations en UC. Pas prioritaire avant le PEA. |\n| **CTO (Compte-Titres Ordinaire)** | Flat tax 30% (12.8% IR + 17.2% PS) sur chaque plus-value et dividende | Pas de plafond | IEGA (obligations). Uniquement ce qui n'est pas eligible PEA. |\n| **Livret A** | 0% d'impot, 0% prelevements sociaux | 22 950 EUR | Reserve cash / fonds urgence. Pas pour investir. |\n\n### Ordre de remplissage recommande\n\n```\n1er \u00e2\u2020\u2019 PEA (ouvrir MAINTENANT pour faire demarrer le compteur des 5 ans)\n2e  \u00e2\u2020\u2019 Assurance-vie (ouvrir MAINTENANT aussi pour le compteur des 8 ans, meme avec 100 EUR)\n3e  \u00e2\u2020\u2019 CTO (pour ce qui ne rentre pas dans PEA : obligations, ETF non eligibles)\n```\n\n**Regle critique** : ouvre PEA et assurance-vie cette semaine meme si tu ne mets que le minimum. Ce qui compte, c'est la date d'ouverture. Les avantages fiscaux sont lies a l'anciennete du contrat.\n\n### Pieges a eviter\n\n1. **Ne jamais faire de retrait du PEA avant 5 ans** \u00e2\u20ac\u201d ca entraine la cloture du plan et tu perds l'avantage fiscal. Apres 5 ans, les retraits partiels sont possibles sans cloture.\n2. **Eviter les ETF a dividendes distribuants en CTO** \u00e2\u20ac\u201d chaque dividende est un evenement fiscal (flat tax 30%). Privilegier les ETF capitalisant (Acc) qui reinvestissent automatiquement.\n3. **Ne pas confondre plafond de versement et valeur du PEA** \u00e2\u20ac\u201d tu peux verser 150 000 EUR max, mais la valeur du PEA peut depasser ce plafond grace aux plus-values. Pas de souci.\n4. **Mefiez-toi des assurances-vie bancaires** \u00e2\u20ac\u201d frais d'entree 2-3%, frais de gestion 1%+. Privilegier les contrats en ligne : Linxea Spirit 2, Lucya Cardif, ou Placement-Direct.\n5. **Declaration fiscale CTO** \u00e2\u20ac\u201d les plus-values CTO doivent etre declarees. La plupart des courtiers fournissent l'IFU (Imprime Fiscal Unique) qui simplifie la declaration.\n6. **Ne jamais investir l'argent du fonds d'urgence** \u00e2\u20ac\u201d le fonds d'urgence reste sur Livret A, pas sur le portefeuille. Ce sont deux poches separees.\n\n---\n\n## Plan de demarrage cette semaine\n\n### Jour 1 (lundi) : Ouverture des comptes\n\n- [ ] **Ouvrir un PEA chez Bourse Direct** \u00e2\u20ac\u201d aller sur boursoirect.fr, section PEA. Preparer : piece d'identite, justificatif de domicile, RIB. Delai d'ouverture : 2-5 jours ouvrables.\n- [ ] **Ouvrir une assurance-vie en ligne** \u00e2\u20ac\u201d Linxea Spirit 2 (assureur Spirica, 0% frais d'entree) ou Lucya Cardif (assureur BNP Cardif). Versement initial minimum : 500 EUR sur fonds euros (pris sur le capital initial de 5 000 EUR). Meme si tu n'investis pas activement dessus, tu lances le compteur des 8 ans.\n- [ ] Si tu veux automatiser le DCA obligations : **ouvrir un CTO Trade Republic** (1 min sur l'app, validation en 24h).\n\n### Jour 2 (mardi) : Configuration des virements automatiques\n\n- [ ] **Configurer un virement automatique mensuel de 300 EUR** depuis ton compte courant vers ton PEA Bourse Direct, le 5 de chaque mois.\n- [ ] **Allouer les 5 000 EUR de capital initial** :\n  - 500 EUR \u00e2\u2020\u2019 assurance-vie (fonds euros) \u00e2\u20ac\u201d versement initial\n  - 4 500 EUR \u00e2\u2020\u2019 PEA Bourse Direct (sera investi en 3 tranches mensuelles)\n- [ ] Mettre un rappel dans ton calendrier : \"Investissement mensuel\" le 6 de chaque mois (lendemain de l'arrivee des fonds)\n\n### Jour 3 (mercredi) : Premier achat ETF\n\n- [ ] **Des que le PEA est actif et approvisionne**, passer le premier ordre :\n  - Acheter CW8 (Amundi MSCI World) pour ~975 EUR (65% de la premiere tranche de 1 500 EUR)\n  - Acheter PAEEM (Amundi Emergents) pour ~225 EUR (15% de la tranche)\n  - Note : les ETF s'achetent en parts entieres. CW8 cote autour de 500 EUR la part \u00e2\u20ac\u201d ajuster les montants en consequence. Si le prix de la part est trop eleve vs le montant disponible, privilegier CW8 d'abord.\n- [ ] Si CTO Trade Republic ouvert : configurer le plan d'investissement programme IEGA pour 45 EUR/mois.\n\n### Jour 4 (jeudi) : Systeme de suivi et protection anti-panique\n\n- [ ] **Creer un tableur simple** (Google Sheets ou Excel) avec 4 colonnes :\n  - Date | Montant investi ce mois | Valeur totale portefeuille | Allocation actuelle (% actions / obligations / cash)\n  - Remplir une ligne par mois, pas plus. Pas de suivi quotidien.\n- [ ] **Mettre un rappel annuel** : \"Reequilibrage portefeuille\" en janvier.\n- [ ] **Ecrire et coller cette note sur ton ecran** (ou dans ton app de notes) :\n\n```\nREGLES D'OR \u00e2\u20ac\u201d NE PAS TOUCHER\n1. Le DCA tourne le 5 de chaque mois. Je ne change rien.\n2. Krach boursier = soldes. Je continue d'acheter.\n3. Je ne vends JAMAIS sur une panique. Jamais.\n4. Reequilibrage 1x/an en janvier. C'est tout.\n5. Prochaine revision d'allocation dans 10 ans (2036).\n```\n\n### Jour 5 (vendredi) : Education minimale\n\n- [ ] **Lire un seul livre** pour comprendre la philosophie long terme : *Epargnant 3.0* d'Edouard Petit \u00e2\u20ac\u201d 100 pages, clair, adapte au contexte francais. Disponible sur Amazon (~12 EUR).\n- [ ] **S'abonner a un seul blog** : avenue des investisseurs (avenuedesinvestisseurs.fr) \u00e2\u20ac\u201d pas de bullshit, adapte au contexte fiscal francais.\n- [ ] **Ne PAS** : s'abonner a des chaines YouTube de trading, installer des applis de suivi en temps reel, lire des forums boursiers quotidiennement. Le lazy investing fonctionne PARCE QU'on n'y touche pas.\n\n---\n\n## Recapitulatif des frais annuels estimes\n\n| Poste | Cout annuel estime |\n|-------|-------------------|\n| Frais de gestion CW8 (TER 0.38%) | ~0.38% du capital investi |\n| Frais de gestion PAEEM (TER 0.20%) | ~0.20% du capital investi |\n| Frais de gestion IEGA (TER 0.07%) | ~0.07% du capital investi |\n| Frais de courtage PEA (12 ordres/an) | ~12-24 EUR/an |\n| Frais de garde PEA Bourse Direct | 0 EUR |\n| **Cout total effectif moyen** | **~0.32% + ~18 EUR/an** |\n\nC'est extremement bas. A titre de comparaison, un fonds gere activement par ta banque couterait 1.5 a 2.5% par an \u00e2\u20ac\u201d soit 5 a 8 fois plus. Sur 20 ans, cette difference de frais represente des dizaines de milliers d'euros de performance en moins.\n\n---\n\n## Ce que tu NE fais PAS (liste anti-erreurs debutant)\n\n1. **Tu ne fais pas de stock-picking** \u00e2\u20ac\u201d pas d'achat d'actions individuelles (Tesla, Apple, etc.). Tu n'as ni le temps, ni l'expertise, ni l'edge sur les professionnels.\n2. **Tu ne fais pas de market timing** \u00e2\u20ac\u201d \"j'attends que ca baisse pour acheter\" est une strategie perdante prouvee. Le DCA neutralise ce biais.\n3. **Tu ne changes pas d'ETF tous les 6 mois** \u00e2\u20ac\u201d CW8 + PAEEM + IEGA, c'est tout. Pas d'optimisation perpetuelle, pas de chasse au dernier ETF a la mode.\n4. **Tu ne regardes pas ton portefeuille tous les jours** \u00e2\u20ac\u201d une fois par mois au moment d'investir, une fois par an pour reequilibrer. C'est tout.\n5. **Tu n'investis pas en crypto sur ce portefeuille** \u00e2\u20ac\u201d si tu veux t'exposer aux cryptos, c'est une poche separee avec de l'argent que tu es pret a perdre a 100%. Pas sur le portefeuille lazy.\n6. **Tu ne prends pas de levier** \u00e2\u20ac\u201d pas de SRD, pas d'ETF leveraged (x2, x3). Le levier tue les debutants.\n7. **Tu ne suis pas les \"conseils\" de ton banquier** \u00e2\u20ac\u201d il vend des produits maison avec des frais eleves. Tu as deja un plan superieur.\n"}], "grading": {"expectations": [{"text": "Tickers ETF mentionnes", "passed": true, "evidence": "Found tickers: ['PAEEM', 'CW8']"}, {"text": "PEA mentionne comme enveloppe prioritaire", "passed": true, "evidence": "PEA found: True"}, {"text": "Au moins 2 courtiers FR recommandes", "passed": true, "evidence": "Found brokers: ['Linxea', 'Trade Republic', 'Fortuneo', 'Bourse Direct']"}, {"text": "Strategie DCA a 300 EUR/mois", "passed": true, "evidence": "DCA strategy found: True"}, {"text": "Tableau allocation avec pourcentages", "passed": true, "evidence": "Found 55 percentage values"}, {"text": "Plan d'action premiere semaine present", "passed": true, "evidence": "Week-1 plan found: True"}], "summary": "6/6 assertions passed"}}, {"id": "eval-portefeuille-without_skill", "prompt": "(No prompt found)", "eval_id": null, "outputs": [{"name": "result.md", "type": "text", "content": "# Portefeuille Lazy \u00e2\u20ac\u201d Recommandation Personnalisee\n\n**Profil investisseur :**\n- Age : 38 ans\n- Pays : France\n- Horizon d'investissement : 20 ans\n- Tolerance au risque : 7/10 (moderee-elevee)\n- Capacite d'epargne mensuelle : 300 EUR/mois\n- Capital initial : 5 000 EUR\n- Experience : debutant\n\n---\n\n## 1. Allocation d'actifs recommandee\n\nAvec un horizon de 20 ans et une tolerance au risque de 7/10, l'allocation cible est orientee croissance avec une poche defensive limitee.\n\n| Classe d'actifs | Allocation | Justification |\n|---|---|---|\n| Actions monde (pays developpes) | 60% | Moteur de performance principal, diversification geographique maximale |\n| Actions marches emergents | 15% | Complement de diversification, potentiel de croissance superieur a long terme |\n| Actions Europe (surponderation) | 10% | Avantage fiscal PEA, exposition devise euro, reduction du risque de change |\n| Obligations mondiales | 10% | Amortisseur de volatilite, decorrelation partielle avec les actions |\n| Immobilier cote (REITs/foncier) | 5% | Diversification sectorielle, rendement complementaire |\n\n**Ratio global : 85% actions / 10% obligations / 5% immobilier cote**\n\nCe ratio est adapte a un profil 7/10 avec 20 ans devant soi. A mesure que l'horizon se reduit (apres 50 ans environ), il faudra progressivement augmenter la part obligataire (regle empirique : part obligations = age - 20, donc a 38 ans : ~18%, arrondi ici a 10% vu l'horizon long et la tolerance elevee).\n\n---\n\n## 2. Selection des ETF \u00e2\u20ac\u201d Tickers et details\n\n### Portefeuille principal (PEA \u00e2\u20ac\u201d enveloppe prioritaire)\n\n| ETF | Ticker | ISIN | Frais (TER) | Allocation | Indice replique |\n|---|---|---|---|---|---|\n| Amundi MSCI World UCITS ETF Acc | CW8 | LU1681043599 | 0.38% | 60% | MSCI World (replication synthetique, eligible PEA) |\n| Amundi MSCI Emerging Markets UCITS ETF Acc | PAEEM | LU1681045370 | 0.20% | 15% | MSCI Emerging Markets (synthetique, eligible PEA) |\n| Amundi STOXX Europe 600 UCITS ETF Acc | C6E | LU0908500753 | 0.07% | 10% | STOXX Europe 600 (capitalisant, eligible PEA) |\n\n**Sous-total PEA : 85% de l'allocation totale**\n\n### Complement hors PEA (Assurance-vie ou CTO)\n\n| ETF | Ticker | ISIN | Frais (TER) | Allocation | Indice replique |\n|---|---|---|---|---|---|\n| iShares Global Aggregate Bond UCITS ETF EUR Hedged Acc | AGGH | IE00BDBRDM35 | 0.10% | 10% | Bloomberg Global Aggregate (couvert en EUR) |\n| Amundi FTSE EPRA Europe Real Estate UCITS ETF Acc | EPRE | LU1437018838 | 0.40% | 5% | FTSE EPRA Nareit Developed Europe (immobilier cote) |\n\n**Sous-total hors PEA : 15% de l'allocation totale**\n\n### Alternatives si les ETF ci-dessus ne sont pas disponibles chez votre courtier\n\n| Role | Alternative | Ticker | ISIN | TER |\n|---|---|---|---|---|\n| World PEA | Amundi PEA MSCI World ESG Leaders | WPEA | IE0002XZSHO1 | 0.20% |\n| Emergents PEA | Amundi PEA MSCI Emerging Markets ESG Leaders | PAEA | IE000GWA2J58 | 0.30% |\n| Europe PEA | BNP Paribas Easy STOXX Europe 600 | ETZ | FR0011550193 | 0.20% |\n| Obligations | Lyxor Euro Government Bond | GOVH | LU1650490474 | 0.14% |\n| Immobilier | Lyxor FTSE EPRA/NAREIT Global Developed | MWO | LU1832418773 | 0.45% |\n\n---\n\n## 3. Repartition concrete du capital\n\n### Capital initial : 5 000 EUR\n\n| ETF | Allocation | Montant |\n|---|---|---|\n| CW8 (MSCI World) | 60% | 3 000 EUR |\n| PAEEM (Emergents) | 15% | 750 EUR |\n| C6E (Europe 600) | 10% | 500 EUR |\n| AGGH (Obligations) | 10% | 500 EUR |\n| EPRE (Immobilier) | 5% | 250 EUR |\n| **Total** | **100%** | **5 000 EUR** |\n\n### Versement mensuel DCA : 300 EUR/mois\n\n| ETF | Allocation | Montant mensuel |\n|---|---|---|\n| CW8 (MSCI World) | 60% | 180 EUR |\n| PAEEM (Emergents) | 15% | 45 EUR |\n| C6E (Europe 600) | 10% | 30 EUR |\n| AGGH (Obligations) | 10% | 30 EUR |\n| EPRE (Immobilier) | 5% | 15 EUR |\n| **Total** | **100%** | **300 EUR** |\n\n**Note pratique :** Les montants de 45, 30 et 15 EUR peuvent etre insuffisants pour acheter une part entiere chaque mois (CW8 cote autour de 500 EUR la part). Deux solutions :\n\n1. **Fractions de parts** : certains courtiers (Trade Republic, BUX Zero) permettent d'acheter des fractions. Mais ces courtiers ne proposent pas de PEA.\n2. **Regroupement trimestriel** (recommande pour PEA) : investir 900 EUR tous les 3 mois au lieu de 300 EUR/mois. Repartition trimestrielle :\n   - CW8 : 540 EUR (1 part environ)\n   - PAEEM : 135 EUR (peut necessiter un regroupement semestriel de 270 EUR)\n   - C6E : 90 EUR (1 part environ selon le cours)\n   - AGGH : 90 EUR\n   - EPRE : 45 EUR\n\n**Simplification possible pour debutant :** Commencer avec seulement CW8 (100% des versements PEA) pendant les 6-12 premiers mois, puis diversifier progressivement. Un seul ETF World est deja tres diversifie (1 500+ entreprises, 23 pays developpes).\n\n---\n\n## 4. Strategie DCA (Dollar Cost Averaging)\n\n### Principe\n\nLe DCA consiste a investir un montant fixe a intervalles reguliers, independamment du cours de bourse. Cette methode :\n\n- Elimine le risque de \"market timing\" (essayer de deviner le meilleur moment)\n- Lisse le prix d'achat moyen sur la duree\n- Reduit le stress psychologique lie aux fluctuations\n- Est particulierement adaptee aux debutants\n\n### Mise en oeuvre concrete\n\n**Frequence recommandee :** Mensuelle (ou trimestrielle si les montants unitaires sont trop faibles pour acheter des parts entieres).\n\n**Jour d'investissement :** Choisir un jour fixe (ex: le 5 de chaque mois, apres reception du salaire). Le jour exact n'a statistiquement aucune importance sur 20 ans.\n\n**Procedure mensuelle (15 minutes maximum) :**\n\n1. Se connecter au courtier le jour choisi\n2. Verifier le solde especes disponible (virement automatique programme)\n3. Passer les ordres d'achat au marche (pas d'ordre limite \u00e2\u20ac\u201d on ne cherche pas a \"timer\")\n4. Verifier que les ordres sont executes\n5. Deconnexion \u00e2\u20ac\u201d ne pas regarder le portefeuille entre les sessions\n\n**Regle absolue :** Ne jamais modifier le plan en reaction aux mouvements de marche. Les krachs sont des opportunites d'achat a prix reduit grace au DCA (on achete plus de parts quand les prix baissent).\n\n### Gestion du capital initial (5 000 EUR)\n\nDeux options :\n\n**Option A \u00e2\u20ac\u201d Investissement immediat (lump sum)** : Investir les 5 000 EUR d'un coup. Statistiquement, le lump sum bat le DCA dans environ 65% des cas sur des periodes longues, car les marches sont haussiers sur le long terme.\n\n**Option B \u00e2\u20ac\u201d DCA sur 6 mois** : Diviser les 5 000 EUR en 6 versements de ~833 EUR en plus des 300 EUR mensuels. Cette option est psychologiquement plus confortable pour un debutant.\n\n**Recommandation pour votre profil :** Option B (DCA sur 6 mois). Comme vous etes debutant, le confort psychologique prime sur l'optimisation statistique marginale. Pendant les 6 premiers mois :\n- Mois 1-6 : 833 EUR (capital initial) + 300 EUR (epargne) = 1 133 EUR/mois\n- Mois 7+ : 300 EUR/mois (DCA classique)\n\n---\n\n## 5. Optimisation fiscale \u00e2\u20ac\u201d Enveloppes francaises\n\n### PEA (Plan d'Epargne en Actions) \u00e2\u20ac\u201d Enveloppe prioritaire\n\n**Plafond de versement :** 150 000 EUR (votre objectif sur 20 ans : environ 77 000 EUR de versements, largement dans la limite).\n\n**Fiscalite :**\n- Avant 5 ans : flat tax 30% (12.8% IR + 17.2% prelevements sociaux) sur les plus-values en cas de retrait. Le retrait entraine la cloture du PEA.\n- Apres 5 ans : seuls les prelevements sociaux de 17.2% s'appliquent. Les retraits partiels sont possibles sans cloture.\n\n**Avantage concret :** Sur 20 ans, avec un rendement moyen de 7-8% par an, la difference entre la flat tax (30%) et les seuls prelevements sociaux (17.2%) represente plusieurs milliers d'euros d'economie.\n\n**ETF eligibles au PEA :** Uniquement les ETF ayant leur siege dans l'UE et investissant au moins 75% en actions europeennes (ou utilisant la replication synthetique pour contourner cette contrainte \u00e2\u20ac\u201d c'est le cas de CW8, PAEEM et C6E recommandes ci-dessus).\n\n**Strategie :** Placer les 85% actions (CW8 + PAEEM + C6E) dans le PEA. C'est la quasi-totalite de votre portefeuille.\n\n### Assurance-vie \u00e2\u20ac\u201d Complement pour les 15% restants\n\n**Pour la poche obligataire (10%) et immobilier cote (5%)**, utiliser une assurance-vie en ligne en gestion libre (pas en gestion pilotee qui genere des frais eleves).\n\n**Fiscalite :**\n- Avant 8 ans : flat tax 30% sur les gains en cas de rachat\n- Apres 8 ans : abattement annuel de 4 600 EUR (celibataire) ou 9 200 EUR (couple) sur les gains, puis prelevements sociaux de 17.2% + IR a 7.5% (ou flat tax sur option)\n- Succession : abattement de 152 500 EUR par beneficiaire pour les versements avant 70 ans\n\n**Avantage :** L'assurance-vie offre un cadre fiscal avantageux apres 8 ans et des avantages successoraux significatifs. En l'ouvrant maintenant (38 ans), vous aurez largement depasse les 8 ans a l'horizon de votre objectif.\n\n**Contrats recommandes :** Voir section courtiers ci-dessous.\n\n### CTO (Compte-Titres Ordinaire) \u00e2\u20ac\u201d A eviter en priorite\n\nLe CTO applique la flat tax de 30% sur toutes les plus-values et dividendes, sans avantage fiscal particulier. A n'utiliser que si :\n- Le PEA est plein (150 000 EUR de versements)\n- Vous voulez investir dans des ETF non eligibles PEA et non disponibles en assurance-vie\n- Vous avez besoin de liquidite immediate (pas de contrainte de duree)\n\n**Pour votre profil : pas de CTO necessaire pendant au moins 10-15 ans.**\n\n### Schema d'optimisation fiscale complet\n\n```\n300 EUR/mois\n    |\n    +---> 255 EUR/mois --> PEA (85% du portefeuille)\n    |         |\n    |         +---> CW8 : 180 EUR (World)\n    |         +---> PAEEM : 45 EUR (Emergents)\n    |         +---> C6E : 30 EUR (Europe)\n    |\n    +---> 45 EUR/mois --> Assurance-vie (15% du portefeuille)\n              |\n              +---> AGGH ou fonds euros : 30 EUR (Obligations)\n              +---> EPRE ou SCPI en UC : 15 EUR (Immobilier)\n```\n\n---\n\n## 6. Recommandations de courtiers en France\n\n### Pour le PEA\n\n| Courtier | Frais par ordre | Frais de garde | Points forts | Points faibles |\n|---|---|---|---|---|\n| **Bourse Direct** | 0.99 EUR (< 500 EUR), 1.90 EUR (500-1000 EUR) | Gratuit | Tarifs les plus bas du marche, interface correcte, PEA complet | Interface un peu datee, app mobile basique |\n| **Fortuneo** | 1.95 EUR (< 500 EUR en offre Optimum) | Gratuit | Bonne interface, app mobile, service client correct | Frais legerement plus eleves que Bourse Direct |\n| **Boursorama (Bourso)** | 1.99 EUR (decouverte), 0.60% (classique) | Gratuit | Ecosysteme bancaire complet, interface moderne | Frais par ordre plus eleves, gamme ETF plus restreinte |\n\n**Recommandation pour votre profil : Bourse Direct** pour le PEA. Les frais les plus bas du marche sont un avantage significatif sur 20 ans de DCA (des centaines d'ordres). L'interface moins \"sexy\" n'est pas un probleme pour une strategie lazy ou vous passez des ordres une fois par mois.\n\n### Pour l'assurance-vie\n\n| Contrat | Assureur | Frais de gestion UC | Frais d'entree | Points forts |\n|---|---|---|---|---|\n| **Linxea Spirit 2** | Spirica (Credit Agricole Assurances) | 0.50%/an sur UC | 0% | Meilleur rapport frais/gamme du marche, 700+ UC dont ETF, SCPI a 100% |\n| **Linxea Avenir 2** | Suravenir (Credit Mutuel Arkea) | 0.60%/an sur UC | 0% | Bon fonds euros (historiquement ~2-2.5%), large gamme ETF |\n| **Lucya Cardif** | BNP Paribas Cardif | 0.50%/an sur UC | 0% | Assureur solide, gamme ETF iShares complete |\n\n**Recommandation pour votre profil : Linxea Spirit 2.** Les frais de gestion les plus bas (0.50%), une gamme ETF tres large, et 0% de frais d'entree. L'assureur Spirica (filiale Credit Agricole) est parfaitement solide.\n\n**Important :** Ouvrir l'assurance-vie le plus tot possible, meme avec un versement minimum (souvent 500 EUR), pour faire courir l'anciennete fiscale des 8 ans.\n\n---\n\n## 7. Projection financiere sur 20 ans\n\n### Hypotheses\n\n- Rendement annuel moyen : 7% (hypothese conservatrice pour un portefeuille 85% actions)\n- Inflation : 2%/an (rendement reel : ~5%)\n- Versement mensuel : 300 EUR constant (pas d'augmentation prevue, mais recommandee)\n- Capital initial : 5 000 EUR\n\n### Projection nominale (avant inflation)\n\n| Annee | Age | Capital investi | Valeur estimee (7%) | Valeur estimee (5%) | Valeur estimee (9%) |\n|---|---|---|---|---|---|\n| 0 | 38 | 5 000 | 5 000 | 5 000 | 5 000 |\n| 1 | 39 | 8 600 | 8 867 | 8 775 | 8 961 |\n| 5 | 43 | 23 000 | 27 547 | 25 921 | 29 361 |\n| 10 | 48 | 41 000 | 57 898 | 51 046 | 66 263 |\n| 15 | 53 | 59 000 | 99 780 | 82 227 | 123 210 |\n| 20 | 58 | 77 000 | 158 116 | 121 369 | 211 799 |\n\n**Scenario central (7%) : ~158 000 EUR a 58 ans**, dont 77 000 EUR de versements et ~81 000 EUR de gains.\n\n**En pouvoir d'achat reel (ajuste inflation 2%) : ~106 000 EUR environ.**\n\n### Impact des frais sur 20 ans\n\n| Scenario | TER moyen pondere | Valeur a 20 ans | Perte vs 0% frais |\n|---|---|---|---|\n| Sans frais (theorique) | 0.00% | 163 000 EUR | - |\n| Portefeuille recommande | ~0.30% | 158 000 EUR | -5 000 EUR |\n| Gestion pilotee classique | ~1.50% | 139 000 EUR | -24 000 EUR |\n| Banque traditionnelle (fonds maison) | ~2.50% | 123 000 EUR | -40 000 EUR |\n\nLes frais faibles des ETF representent un avantage de **19 000 a 35 000 EUR** par rapport aux solutions bancaires traditionnelles sur 20 ans. C'est l'argument principal du lazy investing.\n\n---\n\n## 8. Rebalancement du portefeuille\n\n### Quand rebalancer ?\n\n**Methode recommandee : rebalancement par bandes de tolerance (5%)**\n\nNe rebalancer que lorsqu'une classe d'actifs s'ecarte de plus de 5 points de pourcentage de son allocation cible. Exemple :\n- CW8 cible : 60%. Rebalancer si < 55% ou > 65%.\n- PAEEM cible : 15%. Rebalancer si < 10% ou > 20%.\n\nEn pratique, pour un portefeuille de cette taille, le rebalancement sera necessaire environ 1 fois par an, voire moins.\n\n### Comment rebalancer ?\n\n**Methode preferee : rebalancement par flux entrants (zero vente)**\n\nAu lieu de vendre les actifs surponderes pour acheter les sous-ponderes (ce qui genere des frais et potentiellement des impots), orienter les prochains versements DCA vers les classes sous-ponderees.\n\nExemple : si apres une bonne annee boursiere, les actions representent 90% au lieu de 85%, orienter temporairement 100% des versements mensuels vers l'assurance-vie (obligations/immobilier) jusqu'a retour a l'equilibre.\n\n**Verification annuelle :** Chaque annee a date fixe (ex: janvier), verifier l'allocation globale et ajuster les flux si necessaire. Temps estime : 30 minutes par an.\n\n---\n\n## 9. Gestion des risques et pieges a eviter\n\n### Risques principaux sur 20 ans\n\n| Risque | Probabilite | Impact | Mitigation |\n|---|---|---|---|\n| Krach boursier (-30 a -50%) | Quasi-certain (2-3 fois sur 20 ans) | Fort a court terme, faible a long terme | DCA automatique, ne pas vendre en panique |\n| Inflation elevee persistante | Moderee | Erode le rendement reel | Actions = meilleure protection long terme |\n| Risque devise (USD/EUR) | Permanent | Volatilite supplementaire | Diversification geographique, poche Europe |\n| Fermeture d'un emetteur ETF | Faible | Nul (les actifs sont restitues) | Diversifier les emetteurs si portefeuille > 50k |\n| Changement fiscal (PEA/AV) | Moderee | Variable | Grandfathering probable, diversifier les enveloppes |\n\n### Pieges classiques du debutant\n\n1. **Regarder son portefeuille tous les jours** : Generateur d'anxiete. Verifier 1x/mois (jour du DCA) suffit.\n2. **Vendre en panique pendant un krach** : C'est la pire erreur en investissement. Un investisseur qui a vendu en mars 2020 (COVID) a rate le rebond de +75% en 12 mois.\n3. **Chercher \"le bon moment\" pour entrer** : Le meilleur moment etait hier, le deuxieme meilleur moment est aujourd'hui. Le DCA resout ce probleme.\n4. **Ajouter des ETF sectoriels/thematiques** : IA, crypto, clean energy... Ces ETF ont des frais eleves et sous-performent generalement le World a long terme. Rester simple.\n5. **Suivre les \"conseils\" des reseaux sociaux** : Les influenceurs finance ne sont pas des conseillers agrees. Le lazy portfolio est ennuyeux mais efficace.\n6. **Ne pas constituer un fonds d'urgence d'abord** : Voir section plan d'action ci-dessous.\n\n---\n\n## 10. Plan d'action \u00e2\u20ac\u201d Startup en 8 semaines\n\n### Semaine 1 : Fondations\n\n- [ ] **Fonds d'urgence** : Verifier que vous disposez de 3 a 6 mois de depenses courantes sur un Livret A ou LDDS (non investi en bourse). Si ce n'est pas le cas, consacrer les premiers mois d'epargne a le constituer avant de commencer le DCA.\n- [ ] **Bilan financier** : Lister toutes vos depenses mensuelles. Confirmer que les 300 EUR/mois sont reellement disponibles apres depenses courantes et fonds d'urgence.\n- [ ] **Objectifs** : Definir clairement pourquoi vous investissez (retraite anticipee ? complement retraite ? achat immobilier ?). Ecrire ces objectifs quelque part \u00e2\u20ac\u201d vous les relirez quand les marches baisseront.\n\n### Semaine 2 : Ouverture des comptes\n\n- [ ] **Ouvrir un PEA chez Bourse Direct** (ou Fortuneo) : Processus en ligne, 15-20 minutes. Documents necessaires : piece d'identite, justificatif de domicile, RIB. Delai d'ouverture : 5-10 jours ouvrables.\n- [ ] **Ouvrir une assurance-vie chez Linxea Spirit 2** : Processus en ligne similaire. Versement initial minimum generalement de 500 EUR (pris sur le capital initial de 5 000 EUR).\n- [ ] **Mettre en place un virement automatique** : 300 EUR le 2 du mois vers le PEA (255 EUR) et l'assurance-vie (45 EUR). Ou un seul virement vers un compte especes, a repartir manuellement.\n\n### Semaine 3-4 : Premiers investissements (une fois les comptes ouverts)\n\n- [ ] **PEA \u00e2\u20ac\u201d Premier achat** : Investir 4 250 EUR (85% de 5 000 EUR) selon l'allocation cible :\n  - CW8 : 3 000 EUR\n  - PAEEM : 750 EUR\n  - C6E : 500 EUR\n- [ ] **Assurance-vie \u00e2\u20ac\u201d Premier versement** : 750 EUR (15% de 5 000 EUR) :\n  - Fonds euros ou ETF obligataire : 500 EUR\n  - UC immobilier (SCPI ou ETF EPRE) : 250 EUR\n- [ ] **Verifier les ordres** : S'assurer que tous les achats sont bien executes. Noter les prix d'achat dans un fichier de suivi simple (Google Sheets suffit).\n\n### Semaine 5-6 : Automatisation\n\n- [ ] **DCA automatise (si disponible)** : Certains courtiers proposent des achats programmes. Sinon, mettre un rappel recurrent dans votre calendrier (\"Investir DCA\" le 5 de chaque mois).\n- [ ] **Template de suivi** : Creer un tableur simple avec :\n  - Date d'achat\n  - ETF achete\n  - Quantite\n  - Prix unitaire\n  - Montant total\n  - Allocation reelle vs cible\n- [ ] **Desactiver les notifications bourse** : Sur votre app de courtage, desactiver toutes les alertes de cours. Elles ne servent qu'a generer du stress inutile.\n\n### Semaine 7-8 : Education continue\n\n- [ ] **Lire un livre de reference** : \"Epargnant 3.0\" d'Edouard Petit (le guide de reference en francais pour le lazy investing, ~10 EUR, ~150 pages).\n- [ ] **Suivre une source d'information fiable** : Forum investissement du site Avenue des Investisseurs (avenuedesinvestisseurs.fr) \u00e2\u20ac\u201d articles pedagogiques et objectifs sur PEA, assurance-vie, ETF.\n- [ ] **Ne rien changer pendant 6 mois** : Le plus important. Suivre le plan mecaniquement pendant au moins 6 mois avant toute reflexion sur des ajustements.\n\n### Mois 3 : Premiere revue\n\n- [ ] Verifier que les virements automatiques fonctionnent\n- [ ] Verifier l'allocation reelle vs cible\n- [ ] Ajuster les flux si necessaire (rebalancement par flux)\n- [ ] Ne rien vendre\n\n### Mois 12 : Revue annuelle\n\n- [ ] Bilan complet : allocation, performance, frais\n- [ ] Rebalancement si necessaire (bandes de 5%)\n- [ ] Revoir le montant d'epargne (augmentation possible ?)\n- [ ] Verifier que le fonds d'urgence est toujours adequat\n- [ ] Relire vos objectifs initiaux\n\n---\n\n## 11. Evolution du portefeuille dans le temps\n\n### Augmentation progressive de l'epargne\n\nSi vos revenus augmentent, augmenter le DCA proportionnellement. Meme 50 EUR/mois de plus font une difference significative sur 20 ans :\n\n| DCA mensuel | Valeur a 20 ans (7%) |\n|---|---|\n| 300 EUR | ~158 000 EUR |\n| 350 EUR | ~181 000 EUR |\n| 400 EUR | ~204 000 EUR |\n| 500 EUR | ~250 000 EUR |\n\n### Glissement progressif vers la prudence (apres 50 ans)\n\nA partir de 50 ans (horizon residuel 8 ans), commencer a reduire l'exposition actions :\n\n| Age | Actions | Obligations | Immobilier |\n|---|---|---|---|\n| 38-50 | 85% | 10% | 5% |\n| 50-53 | 75% | 17% | 8% |\n| 53-56 | 65% | 25% | 10% |\n| 56-58 | 55% | 35% | 10% |\n\nCe glissement se fait uniquement par reorientation des flux DCA (pas de vente).\n\n### Simplification possible (portefeuille ultra-lazy)\n\nSi meme 5 ETF vous semblent trop complexes, un portefeuille a 1 seul ETF est parfaitement viable :\n\n**100% CW8 (MSCI World) en PEA** \u00e2\u20ac\u201d c'est deja 1 500+ entreprises dans 23 pays. Beaucoup d'investisseurs experimentes utilisent cette approche. Vous pouvez commencer ainsi et complexifier plus tard si vous le souhaitez.\n\n---\n\n## 12. Ressources complementaires\n\n### Livres (par ordre de priorite)\n\n1. **\"Epargnant 3.0\"** \u00e2\u20ac\u201d Edouard Petit (2017, mis a jour) : Le guide de reference francais sur le lazy investing. Court, clair, actionnable.\n2. **\"Creer et piloter un portefeuille d'ETF\"** \u00e2\u20ac\u201d Edouard Petit : Complement plus technique du precedent.\n3. **\"The Simple Path to Wealth\"** \u00e2\u20ac\u201d JL Collins (en anglais) : Philosophie lazy investing, tres motivant.\n\n### Sites web\n\n- **Avenue des Investisseurs** (avenuedesinvestisseurs.fr) : Comparatifs PEA, assurance-vie, guides ETF. Reference francophone.\n- **JustETF** (justetf.com/fr) : Screener ETF, comparaison de frais, listes d'ETF eligibles PEA.\n- **Backtest Portfolio** (curvo.eu) : Backtesting gratuit de portefeuilles ETF (performance historique).\n\n### Communautes (a consommer avec moderation)\n\n- **r/vosfinances** (Reddit) : Communaute francaise, wiki tres complet pour debutants.\n- **Forum Hardware.fr (sous-forum Finance)** : Discussions approfondies, communaute ancienne et experimentee.\n\n---\n\n## 13. Recapitulatif \u00e2\u20ac\u201d Fiche action\n\n| Element | Choix recommande |\n|---|---|\n| **Enveloppe principale** | PEA (Bourse Direct) |\n| **Enveloppe secondaire** | Assurance-vie (Linxea Spirit 2) |\n| **ETF coeur** | CW8 (60%), PAEEM (15%), C6E (10%) en PEA |\n| **ETF complement** | AGGH (10%), EPRE (5%) en assurance-vie |\n| **DCA** | 300 EUR/mois, jour fixe, automatise |\n| **Rebalancement** | Par flux, verification annuelle |\n| **Horizon** | 20 ans (ne pas toucher avant) |\n| **Frais totaux estimes** | ~0.30%/an (ETF) + ~0.50%/an (assurance-vie sur 15% du portefeuille) = ~0.37%/an ponderes |\n| **Valeur cible a 20 ans** | ~158 000 EUR (scenario central 7%) |\n| **Temps mensuel requis** | 15 minutes |\n\n---\n\n*Document genere le 2026-03-19. Les frais, les tickers et les conditions fiscales sont bases sur les informations disponibles a cette date. Verifier les conditions actuelles avant de passer a l'action. Ce document ne constitue pas un conseil en investissement au sens reglementaire \u00e2\u20ac\u201d il s'agit d'une recommandation educative basee sur les principes du lazy investing.*\n"}], "grading": {"expectations": [{"text": "Tickers ETF mentionnes", "passed": true, "evidence": "Found tickers: ['EPRE', 'PAEEM', 'CW8', 'AGGH']"}, {"text": "PEA mentionne comme enveloppe prioritaire", "passed": true, "evidence": "PEA found: True"}, {"text": "Au moins 2 courtiers FR recommandes", "passed": true, "evidence": "Found brokers: ['Trade Republic', 'Bourse Direct', 'Fortuneo', 'Boursorama', 'Linxea']"}, {"text": "Strategie DCA a 300 EUR/mois", "passed": true, "evidence": "DCA strategy found: True"}, {"text": "Tableau allocation avec pourcentages", "passed": true, "evidence": "Found 123 percentage values"}, {"text": "Plan d'action premiere semaine present", "passed": true, "evidence": "Week-1 plan found: True"}], "summary": "6/6 assertions passed"}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "finance-freedom-flow", "iteration": 1, "configurations": [{"name": "with_skill", "evals": [{"eval_name": "eval-flow-complet", "pass_rate": 1.0, "passed": 8, "total": 8, "tokens": 42194, "duration_seconds": 315.6}, {"eval_name": "eval-dette-isolee", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 40277, "duration_seconds": 229.0}, {"eval_name": "eval-portefeuille", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 34263, "duration_seconds": 143.1}], "aggregate": {"mean_pass_rate": 1.0, "mean_tokens": 38911, "mean_duration_seconds": 229.2}}, {"name": "without_skill", "evals": [{"eval_name": "eval-flow-complet", "pass_rate": 0.375, "passed": 3, "total": 8, "tokens": 34161, "duration_seconds": 316.4}, {"eval_name": "eval-dette-isolee", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 33085, "duration_seconds": 176.6}, {"eval_name": "eval-portefeuille", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 47794, "duration_seconds": 541.2}], "aggregate": {"mean_pass_rate": 0.792, "mean_tokens": 38347, "mean_duration_seconds": 344.7}}], "delta": {"pass_rate": "+20.8pp", "tokens": "+1.5%", "duration": "-33%"}}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

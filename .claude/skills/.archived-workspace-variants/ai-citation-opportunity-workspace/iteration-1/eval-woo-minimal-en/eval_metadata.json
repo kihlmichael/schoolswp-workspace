@@ -1,0 +1,16 @@
+{
+  "eval_id": 3,
+  "eval_name": "eval-woo-minimal-en",
+  "prompt": "I need 5 AI search queries that WooCommerce store owners would ask ChatGPT about automating their e-commerce operations. Skip the proof angles, just the queries with intentions and formats.",
+  "assertions": [
+    {"text": "Contains exactly 5 numbered queries", "type": "count"},
+    {"text": "At least 3 different intention types used", "type": "coverage"},
+    {"text": "At least 2 different content formats used", "type": "coverage"},
+    {"text": "Each query contains at least 2 explicit constraints", "type": "quality"},
+    {"text": "Exactly 5 common denominators listed", "type": "count"},
+    {"text": "No proof angles section present (user disabled it)", "type": "structure"},
+    {"text": "Output has 2 main sections: Denominateurs and Requetes (no Angles)", "type": "structure"},
+    {"text": "All queries are in English", "type": "language"},
+    {"text": "All queries are natural language (>10 words each, not keyword-style)", "type": "quality"}
+  ]
+}

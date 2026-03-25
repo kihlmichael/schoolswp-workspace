@@ -1,0 +1,693 @@
+{
+  "name": "[InDev] LinkedIn Post > Claude: Prospecting Pipeline V4",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "linkedin-prospecting",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-001",
+      "name": "Webhook: Receive Post URL",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 460]
+    },
+    {
+      "parameters": {
+        "jsCode": "// SOP-00 — Validation des inputs et auth webhook\nconst body = items[0].json.body || items[0].json;\nconst headers = items[0].json.headers || {};\n\n// Auth check — secret defini en dur (Community Edition, pas de $vars)\nconst WEBHOOK_SECRET = 'REPLACE_WITH_YOUR_SECRET';\nconst secret = headers['x-webhook-secret'];\nif (secret !== WEBHOOK_SECRET) {\n  throw new Error('Unauthorized: invalid webhook secret');\n}\n\n// Validation inputs obligatoires\nconst required = ['linkedin_post_url', 'offre', 'icp_principal', 'roles_cibles', 'secteurs_cibles', 'signaux_forts', 'ton_message'];\nconst missing = required.filter(k => !body[k]);\nif (missing.length > 0) {\n  throw new Error('Missing required fields: ' + missing.join(', '));\n}\n\n// Defaults\nconst config = {\n  linkedin_post_url: body.linkedin_post_url,\n  offre: body.offre,\n  icp_principal: body.icp_principal,\n  roles_cibles: body.roles_cibles,\n  secteurs_cibles: body.secteurs_cibles,\n  tailles_entreprise_cibles: body.tailles_entreprise_cibles || '',\n  zones_geographiques: body.zones_geographiques || 'France',\n  langues_cibles: body.langues_cibles || 'francais',\n  signaux_forts: body.signaux_forts,\n  signaux_faibles: body.signaux_faibles || '',\n  exclusions: body.exclusions || '',\n  ton_message: body.ton_message,\n  enable_hunter: body.enable_hunter || false,\n  score_contact_threshold: body.score_contact_threshold || 70,\n  score_review_threshold: body.score_review_threshold || 45,\n  campaign_name: body.campaign_name || 'LinkedIn Post Prospecting',\n  run_id: 'run_' + new Date().toISOString().slice(0,10).replace(/-/g,'_') + '_' + Math.random().toString(36).slice(2,6)\n};\n\nreturn [{ json: config }];"
+      },
+      "id": "code-001",
+      "name": "Code: Validate Inputs & Auth",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 460]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/curious_coder~linkedin-post-search-scraper/runs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ \"urls\": [$json.linkedin_post_url], \"maxComments\": 500, \"includeComments\": true }) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "http-001",
+      "name": "HTTP: Apify Run Actor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 460],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "APIFY_QUERY_AUTH_ID",
+          "name": "Apify_Production_QueryAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Attendre que le run Apify soit termine\nconst runData = items[0].json;\nconst runId = runData.data?.id || runData.id;\n\nif (!runId) {\n  throw new Error('Apify run ID not found in response');\n}\n\nreturn [{ json: { run_id_apify: runId, status: 'waiting' } }];"
+      },
+      "id": "code-002",
+      "name": "Code: Extract Apify Run ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 460]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $json.run_id_apify }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "http-002",
+      "name": "HTTP: Poll Apify Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 460],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "APIFY_QUERY_AUTH_ID",
+          "name": "Apify_Production_QueryAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-apify-done",
+              "leftValue": "={{ $json.data?.status || $json.status }}",
+              "rightValue": "SUCCEEDED",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-001",
+      "name": "IF: Apify Run Succeeded?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1320, 460]
+    },
+    {
+      "parameters": {
+        "amount": 15,
+        "unit": "seconds"
+      },
+      "id": "wait-001",
+      "name": "Wait: 15s Apify Poll",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1320, 660]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $('Code: Extract Apify Run ID').item.json.run_id_apify + '/dataset/items' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "http-003",
+      "name": "HTTP: Fetch Apify Results",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 460],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "APIFY_QUERY_AUTH_ID",
+          "name": "Apify_Production_QueryAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "set-apify-raw",
+              "name": "apify_raw_output",
+              "value": "={{ JSON.stringify($json) }}",
+              "type": "string"
+            },
+            {
+              "id": "set-config",
+              "name": "config",
+              "value": "={{ JSON.stringify($('Code: Validate Inputs & Auth').item.json) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-001",
+      "name": "Set: Prepare Claude Input Phase 1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1760, 460]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Tu executes la SOP-01 : Collecte et normalisation des donnees source d\\'un post LinkedIn.\\n\\n## Objectif\\nTransformer les donnees brutes issues d\\'Apify en un JSON propre, normalise et exploitable.\\n\\n## Input\\nPayload brut Apify :\\n```json\\n' + $json.apify_raw_output + '\\n```\\n\\n## Procedure\\n1. Extraire les metadonnees du post (url, texte, auteur, date, reactions, commentaires)\\n2. Extraire chaque commentaire (id, texte, auteur, url profil, date)\\n3. Supprimer les commentaires vides\\n4. Dedoublonner par commenter_profile_url\\n5. Normaliser les espaces\\n6. Conserver les emojis\\n7. Generer un lead_id unique par commentateur (format: lead_XXX)\\n8. Lister les anomalies dans warnings\\n\\n## Format de sortie\\nRetourne uniquement un JSON strict avec cette structure :\\n{\"post_metadata\":{\"post_url\":\"\",\"post_text\":\"\",\"post_author_name\":\"\",\"post_author_profile_url\":\"\",\"post_date\":\"\",\"reaction_count\":0,\"comment_count\":0},\"comments\":[{\"comment_id\":\"\",\"comment_text\":\"\",\"commenter_name\":\"\",\"commenter_profile_url\":\"\",\"comment_date\":\"\"}],\"raw_leads\":[{\"lead_id\":\"\",\"source_comment_id\":\"\",\"commenter_name\":\"\",\"commenter_profile_url\":\"\"}],\"warnings\":[]}\\n\\nPas de texte hors du JSON. Dedoublonnage obligatoire. Si un champ est absent, mettre null.' }}"
+      },
+      "id": "chain-001",
+      "name": "Claude: SOP-01 Normalize Apify",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [1980, 460]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-6-20250514"
+        },
+        "options": {
+          "maxTokensToSample": 4096,
+          "temperature": 0
+        }
+      },
+      "id": "model-001",
+      "name": "Anthropic: SOP-01",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.8,
+      "position": [2000, 660],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_API_ID",
+          "name": "Anthropic_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parser la reponse Claude SOP-01\nconst raw = items[0].json.text || items[0].json.response?.text || '';\n\n// Extraire le JSON de la reponse\nlet jsonStr = raw;\nconst jsonMatch = raw.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) {\n  jsonStr = jsonMatch[0];\n}\n\nlet normalized;\ntry {\n  normalized = JSON.parse(jsonStr);\n} catch (e) {\n  throw new Error('SOP-01: Failed to parse Claude response as JSON: ' + e.message);\n}\n\n// Validation minimale\nif (!normalized.post_metadata && !normalized.comments) {\n  throw new Error('SOP-01: Missing post_metadata or comments in normalized output');\n}\n\nconst config = JSON.parse($('Set: Prepare Claude Input Phase 1').item.json.config);\n\nreturn [{ json: { normalized, config } }];"
+      },
+      "id": "code-003",
+      "name": "Code: Parse SOP-01 Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 460]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Tu executes la SOP-02 : Analyse d\\'intention et pertinence business.\\n\\n## Objectif\\nEvaluer les commentaires pour detecter signaux d\\'intention business, mots-cles et pertinence commerciale.\\n\\n## Input\\nJSON normalise :\\n```json\\n' + JSON.stringify($json.normalized) + '\\n```\\n\\nContexte metier :\\n- offre = ' + $json.config.offre + '\\n- icp_principal = ' + $json.config.icp_principal + '\\n- signaux_forts = ' + $json.config.signaux_forts + '\\n- signaux_faibles = ' + $json.config.signaux_faibles + '\\n- exclusions = ' + $json.config.exclusions + '\\n\\n## Niveaux d\\'intention\\n- high_intent : besoin explicite, demande concrete\\n- medium_intent : interet implicite, engagement reel\\n- low_intent : engagement faible, reaction sociale\\n- no_intent : aucun signal\\n\\n## Signaux forts\\nDemande explicite, besoin exprime, probleme concret, recherche d\\'outil, volonte d\\'echanger, question operationnelle.\\n\\n## Signaux faibles\\nAccord generique, reaction simple, compliment vide, commentaire flou, tag sans contexte.\\n\\n## Format de sortie\\nRetourne uniquement un JSON strict :\\n{\"detected_keywords\":[],\"intent_analysis\":[{\"comment_id\":\"\",\"commenter_name\":\"\",\"comment_text\":\"\",\"intent_level\":\"high_intent|medium_intent|low_intent|no_intent\",\"intent_signals\":[],\"business_relevance\":\"high|medium|low|none\",\"intent_reason\":\"\"}],\"warnings\":[]}\\n\\nPas de texte hors du JSON. Chaque commentaire doit etre analyse.' }}"
+      },
+      "id": "chain-002",
+      "name": "Claude: SOP-02 Intent Detection",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [2420, 460]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-6-20250514"
+        },
+        "options": {
+          "maxTokensToSample": 8192,
+          "temperature": 0
+        }
+      },
+      "id": "model-002",
+      "name": "Anthropic: SOP-02",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.8,
+      "position": [2440, 660],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_API_ID",
+          "name": "Anthropic_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parser la reponse Claude SOP-02 et fusionner avec les donnees existantes\nconst raw = items[0].json.text || items[0].json.response?.text || '';\nlet jsonStr = raw;\nconst jsonMatch = raw.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) jsonStr = jsonMatch[0];\n\nlet intentData;\ntry {\n  intentData = JSON.parse(jsonStr);\n} catch (e) {\n  throw new Error('SOP-02: Failed to parse Claude response: ' + e.message);\n}\n\n// Recuperer les donnees precedentes\nconst prev = $('Code: Parse SOP-01 Output').item.json;\nconst normalized = prev.normalized;\nconst config = prev.config;\n\n// Fusionner intent dans raw_leads\nconst rawLeads = (normalized.raw_leads || []).map(lead => {\n  const intent = (intentData.intent_analysis || []).find(i => i.comment_id === lead.source_comment_id);\n  return {\n    ...lead,\n    intent_level: intent?.intent_level || 'no_intent',\n    intent_signals: intent?.intent_signals || [],\n    business_relevance: intent?.business_relevance || 'none'\n  };\n});\n\nreturn [{ json: {\n  post_metadata: normalized.post_metadata,\n  raw_leads: rawLeads,\n  detected_keywords: intentData.detected_keywords || [],\n  intent_analysis: intentData.intent_analysis || [],\n  config: config,\n  warnings_phase1: normalized.warnings || [],\n  warnings_phase2: intentData.warnings || []\n}}];"
+      },
+      "id": "code-004",
+      "name": "Code: Merge SOP-01 + SOP-02",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, 460]
+    },
+    {
+      "parameters": {
+        "jsCode": "// SOP-03 Phase A — Preparer les URLs de profil pour Unipile batch\nconst rawLeads = items[0].json.raw_leads || [];\n\n// Filtrer les leads avec URL de profil\nconst leadsWithUrl = rawLeads.filter(l => l.commenter_profile_url);\nconst leadsWithoutUrl = rawLeads.filter(l => !l.commenter_profile_url);\n\n// Paginer par lots de 100 (limite Unipile)\nconst batches = [];\nfor (let i = 0; i < leadsWithUrl.length; i += 100) {\n  batches.push(leadsWithUrl.slice(i, i + 100));\n}\n\nconst output = batches.map((batch, idx) => ({\n  json: {\n    batch_index: idx,\n    batch_size: batch.length,\n    leads: batch,\n    profile_urls: batch.map(l => l.commenter_profile_url)\n  }\n}));\n\n// Ajouter un warning pour les leads sans URL\nif (leadsWithoutUrl.length > 0) {\n  output[0].json.warnings = [\n    leadsWithoutUrl.length + ' leads sans URL de profil — enrichissement par nom requis'\n  ];\n}\n\nreturn output;"
+      },
+      "id": "code-005",
+      "name": "Code: SOP-03 Prepare Unipile Batches",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2860, 460]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.unipile.com/api/v1/linkedin/profile/batch",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ \"profile_urls\": $json.profile_urls }) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "http-004",
+      "name": "HTTP: Unipile Enrich Profiles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3080, 460],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "UNIPILE_HEADER_AUTH_ID",
+          "name": "Unipile_Production_HeaderAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// SOP-03 Phase B — Fusionner les donnees Unipile avec les leads\nconst enrichedProfiles = items[0].json.data || items[0].json.profiles || items[0].json || [];\nconst prevData = $('Code: Merge SOP-01 + SOP-02').item.json;\nconst rawLeads = prevData.raw_leads || [];\n\n// Mapping seniority\nfunction estimateSeniority(title) {\n  if (!title) return 'unknown';\n  const t = title.toLowerCase();\n  if (/\\b(ceo|cto|cmo|coo|cfo|founder|co-founder|president)\\b/.test(t)) return 'c_level';\n  if (/\\b(vp|vice president)\\b/.test(t)) return 'vp';\n  if (/\\b(director|directeur|directrice)\\b/.test(t)) return 'director';\n  if (/\\b(head of|responsable)\\b/.test(t)) return 'head';\n  if (/\\b(manager|chef de projet)\\b/.test(t)) return 'manager';\n  if (/\\b(senior|lead|principal)\\b/.test(t)) return 'senior';\n  if (/\\b(junior|stagiaire|intern|assistant)\\b/.test(t)) return 'junior';\n  return 'mid';\n}\n\n// Completude\nfunction calcCompleteness(profile) {\n  const fields = ['first_name','last_name','headline','current_role','current_company','industry','location','company_size'];\n  const filled = fields.filter(f => profile[f] && profile[f] !== 'unknown').length;\n  return Math.round((filled / fields.length) * 100) / 100;\n}\n\nconst enrichedLeads = rawLeads.map(lead => {\n  // Match par URL profil\n  const profile = Array.isArray(enrichedProfiles)\n    ? enrichedProfiles.find(p => p.profile_url === lead.commenter_profile_url || p.linkedin_url === lead.commenter_profile_url)\n    : null;\n\n  const enriched = {\n    lead_id: lead.lead_id,\n    source_comment_id: lead.source_comment_id,\n    full_name: profile?.full_name || profile?.first_name && profile?.last_name ? (profile.first_name + ' ' + profile.last_name) : lead.commenter_name,\n    first_name: profile?.first_name || '',\n    last_name: profile?.last_name || '',\n    linkedin_profile_url: lead.commenter_profile_url || '',\n    headline: profile?.headline || '',\n    current_role: profile?.current_position?.title || profile?.headline || '',\n    seniority_estimated: estimateSeniority(profile?.current_position?.title || profile?.headline),\n    current_company: profile?.current_position?.company_name || profile?.company || '',\n    company_domain: profile?.company_domain || '',\n    industry: profile?.industry || '',\n    location: profile?.location || '',\n    company_size: profile?.company_size || '',\n    profile_summary: profile?.summary || '',\n    enrichment_status: profile ? 'success' : 'not_found',\n    comment_text: '',\n    intent_level: lead.intent_level || 'no_intent',\n    intent_signals: lead.intent_signals || [],\n    manual_review_required: !profile\n  };\n\n  enriched.data_completeness_ratio = calcCompleteness(enriched);\n\n  // Recuperer le texte du commentaire\n  const comment = (prevData.intent_analysis || []).find(c => c.comment_id === lead.source_comment_id);\n  enriched.comment_text = comment?.comment_text || '';\n\n  return enriched;\n});\n\nreturn [{ json: {\n  post_metadata: prevData.post_metadata,\n  enriched_leads: enrichedLeads,\n  detected_keywords: prevData.detected_keywords,\n  intent_analysis: prevData.intent_analysis,\n  config: prevData.config,\n  warnings: [\n    ...(prevData.warnings_phase1 || []),\n    ...(prevData.warnings_phase2 || []),\n    ...enrichedLeads.filter(l => l.enrichment_status === 'not_found').map(l => 'Enrichissement echoue pour ' + l.full_name)\n  ]\n}}];"
+      },
+      "id": "code-006",
+      "name": "Code: SOP-03 Merge Enrichment",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3300, 460]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Tu executes la SOP-04 (Qualification ICP) et la SOP-05 (Scoring commercial).\\n\\n## Objectif\\nPour chaque lead enrichi : attribuer un statut (qualified/review/rejected), calculer un score /100, definir une action.\\n\\n## Input\\nLeads enrichis :\\n```json\\n' + JSON.stringify($json.enriched_leads) + '\\n```\\n\\nContexte metier :\\n- offre = ' + $json.config.offre + '\\n- icp_principal = ' + $json.config.icp_principal + '\\n- roles_cibles = ' + $json.config.roles_cibles + '\\n- secteurs_cibles = ' + $json.config.secteurs_cibles + '\\n- tailles_entreprise_cibles = ' + ($json.config.tailles_entreprise_cibles || 'non specifie') + '\\n- exclusions = ' + ($json.config.exclusions || 'aucune') + '\\n- signaux_forts = ' + $json.config.signaux_forts + '\\n- score_contact_threshold = ' + $json.config.score_contact_threshold + '\\n- score_review_threshold = ' + $json.config.score_review_threshold + '\\n\\n## Grille de scoring\\n- ICP fit : /30\\n- Role/seniorite : /20\\n- Secteur : /15\\n- Intention : /20\\n- Completude : /10\\n- Bonus contextuel : /5\\nTotal : /100\\n\\n## Seuils\\n- contact_now : score >= ' + $json.config.score_contact_threshold + '\\n- manual_review : score >= ' + $json.config.score_review_threshold + ' et < contact\\n- ignore : score < ' + $json.config.score_review_threshold + '\\n\\n## Format de sortie\\nJSON strict :\\n{\"summary_stats\":{\"total_scored\":0,\"qualified_count\":0,\"review_count\":0,\"rejected_count\":0,\"avg_score_qualified\":0,\"max_score\":0},\"qualified_leads\":[{\"lead_id\":\"\",\"full_name\":\"\",\"current_role\":\"\",\"current_company\":\"\",\"industry\":\"\",\"qualification_status\":\"qualified\",\"qualification_reason\":\"\",\"icp_fit_score\":0,\"role_seniority_score\":0,\"industry_score\":0,\"intent_score\":0,\"data_completeness_score\":0,\"contextual_bonus_score\":0,\"final_score\":0,\"recommended_action\":\"contact_now\"}],\"review_leads\":[],\"rejected_leads\":[],\"warnings\":[]}\\n\\nPas de texte hors du JSON. qualification_reason obligatoire.' }}"
+      },
+      "id": "chain-003",
+      "name": "Claude: SOP-04+05 Qualify & Score",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [3520, 460]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-6-20250514"
+        },
+        "options": {
+          "maxTokensToSample": 8192,
+          "temperature": 0
+        }
+      },
+      "id": "model-003",
+      "name": "Anthropic: SOP-04+05",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.8,
+      "position": [3540, 660],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_API_ID",
+          "name": "Anthropic_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parser la reponse Claude SOP-04+05\nconst raw = items[0].json.text || items[0].json.response?.text || '';\nlet jsonStr = raw;\nconst jsonMatch = raw.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) jsonStr = jsonMatch[0];\n\nlet scoringData;\ntry {\n  scoringData = JSON.parse(jsonStr);\n} catch (e) {\n  throw new Error('SOP-04+05: Failed to parse Claude response: ' + e.message);\n}\n\nconst prevData = $('Code: SOP-03 Merge Enrichment').item.json;\n\n// Enrichir les qualified_leads avec les donnees de profil completes\nconst enrichedLeads = prevData.enriched_leads || [];\nconst qualifiedFull = (scoringData.qualified_leads || []).map(ql => {\n  const full = enrichedLeads.find(el => el.lead_id === ql.lead_id);\n  return { ...full, ...ql };\n});\n\nreturn [{ json: {\n  post_metadata: prevData.post_metadata,\n  enriched_leads: prevData.enriched_leads,\n  detected_keywords: prevData.detected_keywords,\n  scoring: scoringData,\n  qualified_leads_full: qualifiedFull,\n  review_leads: scoringData.review_leads || [],\n  rejected_leads: scoringData.rejected_leads || [],\n  config: prevData.config,\n  warnings: [...(prevData.warnings || []), ...(scoringData.warnings || [])]\n}}];"
+      },
+      "id": "code-007",
+      "name": "Code: Parse SOP-04+05 Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3740, 460]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-has-qualified",
+              "leftValue": "={{ ($json.qualified_leads_full || []).length }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-002",
+      "name": "IF: Has Qualified Leads?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3960, 460]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Tu executes la SOP-06 : Generation de messages outbound personnalises.\\n\\n## Objectif\\nProduire des messages de prospection LinkedIn personnalises pour chaque lead qualifie.\\n\\n## Input\\nLeads qualifies :\\n```json\\n' + JSON.stringify($json.qualified_leads_full) + '\\n```\\n\\n- offre = ' + $json.config.offre + '\\n- ton_message = ' + $json.config.ton_message + '\\n\\n## Angles\\n- curiosity : question ou curiosite\\n- problem : probleme concret evoque\\n- benchmark : secteur comparable\\n- useful_resource : ressource pertinente\\n- quick_exchange : echange rapide\\n\\n## Contraintes\\n- Max 500 caracteres par message\\n- Tutoiement\\n- Ton = ' + $json.config.ton_message + '\\n- Relier au commentaire ou profil\\n- CTA leger\\n- INTERDIT : compliments creux, pitch agressif, promesse forte, copie-colle, mots interdits (disruptif, game changer, scalable, hack, revolutionnaire, incroyable, en un clic, sans effort, il suffit de)\\n\\n## Format de sortie\\nJSON strict :\\n{\"generated_messages\":[{\"lead_id\":\"\",\"lead_name\":\"\",\"personalization_reason\":\"\",\"message_angle\":\"\",\"first_message_soft\":\"\",\"first_message_direct\":\"\",\"first_message_expert\":\"\"}],\"warnings\":[]}\\n\\nPas de texte hors du JSON.' }}"
+      },
+      "id": "chain-004",
+      "name": "Claude: SOP-06 Generate Messages",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [4180, 360]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-6-20250514"
+        },
+        "options": {
+          "maxTokensToSample": 8192,
+          "temperature": 0.3
+        }
+      },
+      "id": "model-004",
+      "name": "Anthropic: SOP-06",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.8,
+      "position": [4200, 560],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_API_ID",
+          "name": "Anthropic_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parser messages + preparer le JSON final pre-rapport\nconst raw = items[0].json.text || items[0].json.response?.text || '';\nlet jsonStr = raw;\nconst jsonMatch = raw.match(/\\{[\\s\\S]*\\}/);\nif (jsonMatch) jsonStr = jsonMatch[0];\n\nlet messagesData;\ntry {\n  messagesData = JSON.parse(jsonStr);\n} catch (e) {\n  throw new Error('SOP-06: Failed to parse Claude response: ' + e.message);\n}\n\nconst prevData = $('Code: Parse SOP-04+05 Output').item.json;\n\nreturn [{ json: {\n  post_metadata: prevData.post_metadata,\n  scoring: prevData.scoring,\n  qualified_leads_full: prevData.qualified_leads_full,\n  review_leads: prevData.review_leads,\n  rejected_leads: prevData.rejected_leads,\n  generated_messages: messagesData.generated_messages || [],\n  config: prevData.config,\n  warnings: [...(prevData.warnings || []), ...(messagesData.warnings || [])]\n}}];"
+      },
+      "id": "code-008",
+      "name": "Code: Parse SOP-06 Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4400, 360]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-hunter",
+              "leftValue": "={{ $json.config.enable_hunter }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-003",
+      "name": "IF: Hunter Enabled?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [4620, 360]
+    },
+    {
+      "parameters": {
+        "jsCode": "// SOP-07 — Preparer les candidats Hunter\nconst qualifiedLeads = items[0].json.qualified_leads_full || [];\nconst threshold = items[0].json.config.score_contact_threshold || 70;\n\nconst hunterCandidates = qualifiedLeads\n  .filter(l => l.final_score >= threshold && l.current_company && l.first_name && l.last_name)\n  .map(l => ({\n    lead_id: l.lead_id,\n    first_name: l.first_name,\n    last_name: l.last_name,\n    company_domain: l.company_domain || '',\n    company_name: l.current_company,\n    final_score: l.final_score,\n    hunter_priority: l.final_score >= 85 ? 'high' : 'medium'\n  }));\n\nreturn hunterCandidates.map(c => ({ json: c }));"
+      },
+      "id": "code-009",
+      "name": "Code: SOP-07 Prepare Hunter Candidates",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4840, 260]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.hunter.io/v2/email-finder?first_name=' + encodeURIComponent($json.first_name) + '&last_name=' + encodeURIComponent($json.last_name) + '&domain=' + encodeURIComponent($json.company_domain || $json.company_name) }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "http-005",
+      "name": "HTTP: Hunter Email Finder",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [5060, 260],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "HUNTER_QUERY_AUTH_ID",
+          "name": "Hunter_Production_QueryAuth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// SOP-07 — Parser les resultats Hunter\nconst hunterResult = items[0].json.data || items[0].json;\n\nconst email = hunterResult?.email || null;\nconst confidence = hunterResult?.confidence || hunterResult?.score || 0;\n\nreturn [{ json: {\n  lead_id: $('Code: SOP-07 Prepare Hunter Candidates').item.json.lead_id,\n  hunter_priority: $('Code: SOP-07 Prepare Hunter Candidates').item.json.hunter_priority,\n  email_lookup_status: email ? 'success' : 'not_found',\n  email: email,\n  email_confidence: confidence,\n  email_source_type: hunterResult?.type || 'unknown',\n  email_usable: confidence >= 80\n}}];"
+      },
+      "id": "code-010",
+      "name": "Code: Parse Hunter Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5280, 260]
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch",
+        "output": "empty"
+      },
+      "id": "merge-001",
+      "name": "Merge: Collect Hunter + No-Hunter",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [5500, 360]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assembler le JSON final du pipeline (SOP-08 prep)\nconst msgData = $('Code: Parse SOP-06 Output').item.json;\nconst config = msgData.config;\n\n// Collecter les resultats Hunter si disponibles\nlet hunterResults = [];\ntry {\n  const hunterItems = $('Code: Parse Hunter Results').all();\n  hunterResults = hunterItems.map(i => i.json);\n} catch (e) {\n  // Hunter non active ou pas de resultats\n}\n\nconst finalJson = {\n  pipeline_metadata: {\n    campaign_name: config.campaign_name,\n    run_id: config.run_id,\n    run_date: new Date().toISOString().slice(0, 10),\n    source: config.linkedin_post_url,\n    pipeline_version: 'V4'\n  },\n  source_post: msgData.post_metadata,\n  summary_stats: {\n    ...msgData.scoring.summary_stats,\n    messages_generated_count: (msgData.generated_messages || []).length,\n    hunter_candidates_count: hunterResults.length,\n    hunter_verified_count: hunterResults.filter(h => h.email_usable).length\n  },\n  qualified_leads: msgData.qualified_leads_full || [],\n  review_leads: msgData.review_leads || [],\n  rejected_leads: msgData.rejected_leads || [],\n  generated_messages: msgData.generated_messages || [],\n  optional_email_verification: hunterResults,\n  warnings: msgData.warnings || []\n};\n\nreturn [{ json: { final_pipeline_json: finalJson, config: config } }];"
+      },
+      "id": "code-011",
+      "name": "Code: Assemble Final JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5720, 360]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ 'Tu executes la SOP-08 : Generation du rapport HTML final.\\n\\n## Objectif\\nProduire un rapport HTML complet, propre, lisible et sobre.\\n\\n## Input\\n```json\\n' + JSON.stringify($json.final_pipeline_json) + '\\n```\\n\\n## Structure HTML\\n1. Header : titre, campagne, date, URL post\\n2. Resume du post : auteur, texte (tronque 300 car), date, stats\\n3. Stats globales : tableau recapitulatif\\n4. Leads qualifies : tableau (Nom, Role, Entreprise, Secteur, Score, Action) fond #e8f5e9\\n5. Leads a revoir : tableau (Nom, Role, Entreprise, Score, Raison) fond #fff3e0\\n6. Leads rejetes : nombre + top raisons, fond #fce4ec\\n7. Messages generes : 1 bloc par lead, 3 variantes\\n8. Verification email : tableau si Hunter active, sinon mention\\n9. Warnings\\n\\n## Contraintes HTML\\n- HTML simple autonome, CSS inline leger\\n- font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif\\n- max-width: 960px; margin: 0 auto\\n- Tableaux : border: 1px solid #ddd; border-collapse: collapse; padding: 8px 12px\\n- Sobre et professionnel\\n\\nRetourne uniquement le HTML complet. Commence par <!DOCTYPE html> et termine par </html>.' }}"
+      },
+      "id": "chain-005",
+      "name": "Claude: SOP-08 Generate HTML Report",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [5940, 360]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-6-20250514"
+        },
+        "options": {
+          "maxTokensToSample": 16384,
+          "temperature": 0
+        }
+      },
+      "id": "model-005",
+      "name": "Anthropic: SOP-08",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.8,
+      "position": [5960, 560],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_API_ID",
+          "name": "Anthropic_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assembler la reponse finale\nconst htmlRaw = items[0].json.text || items[0].json.response?.text || '';\n\n// Extraire le HTML\nlet html = htmlRaw;\nconst htmlMatch = htmlRaw.match(/<!DOCTYPE html>[\\s\\S]*<\\/html>/i);\nif (htmlMatch) html = htmlMatch[0];\n\nconst finalJson = $('Code: Assemble Final JSON').item.json.final_pipeline_json;\n\nreturn [{ json: {\n  status: 'success',\n  pipeline_json: finalJson,\n  report_html: html,\n  summary: {\n    qualified: finalJson.summary_stats.qualified_count || 0,\n    review: finalJson.summary_stats.review_count || 0,\n    rejected: finalJson.summary_stats.rejected_count || 0,\n    messages: finalJson.summary_stats.messages_generated_count || 0,\n    emails_verified: finalJson.summary_stats.hunter_verified_count || 0\n  }\n}}];"
+      },
+      "id": "code-012",
+      "name": "Code: Final Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [6160, 360]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Branche sans leads qualifies — retourner un rapport vide\nconst prevData = $('Code: Parse SOP-04+05 Output').item.json;\n\nreturn [{ json: {\n  status: 'no_qualified_leads',\n  pipeline_json: {\n    pipeline_metadata: { run_id: prevData.config.run_id, run_date: new Date().toISOString().slice(0,10) },\n    source_post: prevData.post_metadata,\n    summary_stats: prevData.scoring?.summary_stats || {},\n    qualified_leads: [],\n    review_leads: prevData.review_leads || [],\n    rejected_leads: prevData.rejected_leads || [],\n    generated_messages: [],\n    optional_email_verification: [],\n    warnings: [...(prevData.warnings || []), 'Aucun lead qualifie — pipeline arrete avant generation de messages']\n  },\n  report_html: '<html><body><h1>Aucun lead qualifie</h1><p>Le pipeline n\\'a identifie aucun lead correspondant a l\\'ICP.</p></body></html>',\n  summary: { qualified: 0, review: (prevData.review_leads || []).length, rejected: (prevData.rejected_leads || []).length, messages: 0, emails_verified: 0 }\n}}];"
+      },
+      "id": "code-013",
+      "name": "Code: No Qualified Leads Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4180, 560]
+    }
+  ],
+  "connections": {
+    "Webhook: Receive Post URL": {
+      "main": [[{ "node": "Code: Validate Inputs & Auth", "type": "main", "index": 0 }]]
+    },
+    "Code: Validate Inputs & Auth": {
+      "main": [[{ "node": "HTTP: Apify Run Actor", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Apify Run Actor": {
+      "main": [[{ "node": "Code: Extract Apify Run ID", "type": "main", "index": 0 }]]
+    },
+    "Code: Extract Apify Run ID": {
+      "main": [[{ "node": "HTTP: Poll Apify Status", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Poll Apify Status": {
+      "main": [[{ "node": "IF: Apify Run Succeeded?", "type": "main", "index": 0 }]]
+    },
+    "IF: Apify Run Succeeded?": {
+      "main": [
+        [{ "node": "HTTP: Fetch Apify Results", "type": "main", "index": 0 }],
+        [{ "node": "Wait: 15s Apify Poll", "type": "main", "index": 0 }]
+      ]
+    },
+    "Wait: 15s Apify Poll": {
+      "main": [[{ "node": "HTTP: Poll Apify Status", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Fetch Apify Results": {
+      "main": [[{ "node": "Set: Prepare Claude Input Phase 1", "type": "main", "index": 0 }]]
+    },
+    "Set: Prepare Claude Input Phase 1": {
+      "main": [[{ "node": "Claude: SOP-01 Normalize Apify", "type": "main", "index": 0 }]]
+    },
+    "Claude: SOP-01 Normalize Apify": {
+      "main": [[{ "node": "Code: Parse SOP-01 Output", "type": "main", "index": 0 }]]
+    },
+    "Anthropic: SOP-01": {
+      "ai_languageModel": [[{ "node": "Claude: SOP-01 Normalize Apify", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Code: Parse SOP-01 Output": {
+      "main": [[{ "node": "Claude: SOP-02 Intent Detection", "type": "main", "index": 0 }]]
+    },
+    "Claude: SOP-02 Intent Detection": {
+      "main": [[{ "node": "Code: Merge SOP-01 + SOP-02", "type": "main", "index": 0 }]]
+    },
+    "Anthropic: SOP-02": {
+      "ai_languageModel": [[{ "node": "Claude: SOP-02 Intent Detection", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Code: Merge SOP-01 + SOP-02": {
+      "main": [[{ "node": "Code: SOP-03 Prepare Unipile Batches", "type": "main", "index": 0 }]]
+    },
+    "Code: SOP-03 Prepare Unipile Batches": {
+      "main": [[{ "node": "HTTP: Unipile Enrich Profiles", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Unipile Enrich Profiles": {
+      "main": [[{ "node": "Code: SOP-03 Merge Enrichment", "type": "main", "index": 0 }]]
+    },
+    "Code: SOP-03 Merge Enrichment": {
+      "main": [[{ "node": "Claude: SOP-04+05 Qualify & Score", "type": "main", "index": 0 }]]
+    },
+    "Claude: SOP-04+05 Qualify & Score": {
+      "main": [[{ "node": "Code: Parse SOP-04+05 Output", "type": "main", "index": 0 }]]
+    },
+    "Anthropic: SOP-04+05": {
+      "ai_languageModel": [[{ "node": "Claude: SOP-04+05 Qualify & Score", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Code: Parse SOP-04+05 Output": {
+      "main": [[{ "node": "IF: Has Qualified Leads?", "type": "main", "index": 0 }]]
+    },
+    "IF: Has Qualified Leads?": {
+      "main": [
+        [{ "node": "Claude: SOP-06 Generate Messages", "type": "main", "index": 0 }],
+        [{ "node": "Code: No Qualified Leads Response", "type": "main", "index": 0 }]
+      ]
+    },
+    "Claude: SOP-06 Generate Messages": {
+      "main": [[{ "node": "Code: Parse SOP-06 Output", "type": "main", "index": 0 }]]
+    },
+    "Anthropic: SOP-06": {
+      "ai_languageModel": [[{ "node": "Claude: SOP-06 Generate Messages", "type": "ai_languageModel", "index": 0 }]]
+    },
+    "Code: Parse SOP-06 Output": {
+      "main": [[{ "node": "IF: Hunter Enabled?", "type": "main", "index": 0 }]]
+    },
+    "IF: Hunter Enabled?": {
+      "main": [
+        [{ "node": "Code: SOP-07 Prepare Hunter Candidates", "type": "main", "index": 0 }],
+        [{ "node": "Merge: Collect Hunter + No-Hunter", "type": "main", "index": 1 }]
+      ]
+    },
+    "Code: SOP-07 Prepare Hunter Candidates": {
+      "main": [[{ "node": "HTTP: Hunter Email Finder", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Hunter Email Finder": {
+      "main": [[{ "node": "Code: Parse Hunter Results", "type": "main", "index": 0 }]]
+    },
+    "Code: Parse Hunter Results": {
+      "main": [[{ "node": "Merge: Collect Hunter + No-Hunter", "type": "main", "index": 0 }]]
+    },
+    "Merge: Collect Hunter + No-Hunter": {
+      "main": [[{ "node": "Code: Assemble Final JSON", "type": "main", "index": 0 }]]
+    },
+    "Code: Assemble Final JSON": {
+      "main": [[{ "node": "Claude: SOP-08 Generate HTML Report", "type": "main", "index": 0 }]]
+    },
+    "Claude: SOP-08 Generate HTML Report": {
+      "main": [[{ "node": "Code: Final Response", "type": "main", "index": 0 }]]
+    },
+    "Anthropic: SOP-08": {
+      "ai_languageModel": [[{ "node": "Claude: SOP-08 Generate HTML Report", "type": "ai_languageModel", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "prospecting" },
+    { "name": "linkedin" },
+    { "name": "apify" }
+  ]
+}

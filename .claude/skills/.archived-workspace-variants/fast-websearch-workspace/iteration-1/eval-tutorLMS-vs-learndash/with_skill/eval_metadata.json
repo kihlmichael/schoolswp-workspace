@@ -1,0 +1,32 @@
+{
+  "eval_id": 1,
+  "eval_name": "tutorLMS-vs-learndash-prix",
+  "prompt": "TutorLMS vs LearnDash prix 2025, lequel est le moins cher pour un seul site ?",
+  "assertions": [
+    {
+      "text": "cite_les_deux_plugins: mentionne TutorLMS ET LearnDash",
+      "passed": true,
+      "evidence": "Les deux sont dans le tableau"
+    },
+    {
+      "text": "contient_un_prix: contient au moins un montant ($)",
+      "passed": true,
+      "evidence": "149 $/an et 199 $/an"
+    },
+    {
+      "text": "donne_une_reponse_tranchee: dit clairement lequel est moins cher",
+      "passed": true,
+      "evidence": "Première ligne: 'TutorLMS est moins cher pour un seul site.'"
+    },
+    {
+      "text": "pas_intro_bavarde: pas de H1 titre, pas de section 'Ce qui est pertinent'",
+      "passed": true,
+      "evidence": "Commence directement par la réponse en gras"
+    },
+    {
+      "text": "longueur_raisonnable: moins de 300 mots",
+      "passed": true,
+      "evidence": "~80 mots"
+    }
+  ]
+}

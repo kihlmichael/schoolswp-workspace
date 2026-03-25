@@ -1,0 +1,537 @@
+{
+  "name": "schoolsWP - CTR Hunter (Workflow A)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [1],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/webmasters/v3/sites/sc-domain:schoolswp.com/searchAnalytics/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"startDate\": \"{{$now.minus({days: 90}).toFormat('yyyy-MM-dd')}}\",\n  \"endDate\": \"{{$now.minus({days: 3}).toFormat('yyyy-MM-dd')}}\",\n  \"dimensions\": [\"page\"],\n  \"type\": \"web\",\n  \"rowLimit\": 25000\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "2",
+      "name": "GSC Pages",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300],
+      "credentials": {
+        "googleOAuth2Api": {
+          "id": "YOUR_GOOGLE_OAUTH_CREDENTIAL_ID",
+          "name": "Google OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $json.rows || [];\n\nfunction getTargetCtr(position) {\n  if (position <= 3) return 0.15;\n  if (position <= 4) return 0.12;\n  if (position <= 5) return 0.10;\n  if (position <= 6) return 0.08;\n  if (position <= 7) return 0.06;\n  if (position <= 10) return 0.05;\n  if (position <= 12) return 0.04;\n  return 0.03;\n}\n\nconst today = new Date().toISOString().slice(0, 10);\n\nreturn rows\n  .map(row => {\n    const url = row.keys?.[0] || '';\n    const clicks = row.clicks || 0;\n    const impressions = row.impressions || 0;\n    const ctr = row.ctr || 0;\n    const position = row.position || 999;\n    const targetCtr = getTargetCtr(position);\n    const opportunityScore = impressions * Math.max(targetCtr - ctr, 0);\n\n    return {\n      json: {\n        id: `${today}-${Buffer.from(url).toString('base64').slice(0, 12)}`,\n        date_scan: today,\n        url,\n        clicks_before: Number(clicks.toFixed ? clicks.toFixed(2) : clicks),\n        impressions_before: Number(impressions.toFixed ? impressions.toFixed(0) : impressions),\n        ctr_before: Number((ctr * 100).toFixed(2)),\n        ctr_before_raw: ctr,\n        position_before: Number(position.toFixed(2)),\n        target_ctr_percent: Number((targetCtr * 100).toFixed(2)),\n        opportunity_score: Number(opportunityScore.toFixed(2)),\n        status: 'À lancer',\n        test_type: 'Title',\n        title_tested: '',\n        meta_tested: '',\n        test_start_date: '',\n        review_date: '',\n        verdict: '',\n        test_hypothesis: '',\n        final_recommendation: '',\n        notes: '',\n        is_quick_win: position >= 3 && position <= 12 && impressions > 500 && ctr < targetCtr\n      }\n    };\n  })\n  .filter(item => item.json.is_quick_win)\n  .sort((a, b) => b.json.opportunity_score - a.json.opportunity_score)\n  .slice(0, 20);"
+      },
+      "id": "3",
+      "name": "Score CTR Opportunities",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [740, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "4",
+      "name": "Loop Over Opportunities",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/webmasters/v3/sites/sc-domain:schoolswp.com/searchAnalytics/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"startDate\": \"{{$now.minus({days: 90}).toFormat('yyyy-MM-dd')}}\",\n  \"endDate\": \"{{$now.minus({days: 3}).toFormat('yyyy-MM-dd')}}\",\n  \"dimensions\": [\"query\"],\n  \"type\": \"web\",\n  \"rowLimit\": 20,\n  \"dimensionFilterGroups\": [\n    {\n      \"filters\": [\n        {\n          \"dimension\": \"page\",\n          \"operator\": \"equals\",\n          \"expression\": \"{{$json.url}}\"\n        }\n      ]\n    }\n  ]\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "5",
+      "name": "GSC Queries By Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1220, 300],
+      "credentials": {
+        "googleOAuth2Api": {
+          "id": "YOUR_GOOGLE_OAUTH_CREDENTIAL_ID",
+          "name": "Google OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const pageData = $('Loop Over Opportunities').item.json;\nconst rows = $json.rows || [];\n\nconst topQueries = rows\n  .map(row => ({\n    query: row.keys?.[0] || '',\n    clicks: row.clicks || 0,\n    impressions: row.impressions || 0,\n    ctr_percent: +((row.ctr || 0) * 100).toFixed(2),\n    position: +(row.position || 999).toFixed(2)\n  }))\n  .sort((a, b) => b.impressions - a.impressions)\n  .slice(0, 10);\n\nreturn [{\n  json: {\n    ...pageData,\n    top_queries: topQueries,\n    top_queries_text: topQueries\n      .map((q, i) => `${i + 1}. ${q.query} | CTR ${q.ctr_percent}% | Pos ${q.position} | Imp ${q.impressions}`)\n      .join('\\n')\n  }\n}];"
+      },
+      "id": "6",
+      "name": "Attach Top Queries",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1460, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "prompt",
+              "value": "=Tu es un expert SEO spécialisé dans l'optimisation du CTR organique dans Google.\\n\\nTa mission : proposer 10 titles SEO optimisés pour améliorer le CTR d'une page déjà positionnée dans Google.\\n\\nContexte :\\n- URL : {{$json.url}}\\n- CTR actuel : {{$json.ctr_before}}%\\n- Position moyenne : {{$json.position_before}}\\n- Impressions : {{$json.impressions_before}}\\n- CTR cible : {{$json.target_ctr_percent}}%\\n- Top queries :\\n{{$json.top_queries_text}}\\n\\nContraintes :\\n- rester crédible\\n- éviter le clickbait trompeur\\n- inclure naturellement le sujet principal\\n- varier les angles\\n- viser des titles clairs, concrets, différenciants\\n- privilégier des titles adaptés à une audience WordPress experte et pédagogique\\n- répondre en français\\n- style direct, utile, concret\\n\\nTu dois produire exactement :\\n1) 10 titles numérotés\\n2) 3 titles prioritaires à tester\\n3) 1 hypothèse de test CTR\\n4) 1 recommandation finale en une phrase\\n\\nFormat de sortie JSON strict :\\n{\\n  \\\"titles\\\": [\\n    \\\"title 1\\\",\\n    \\\"title 2\\\",\\n    \\\"title 3\\\",\\n    \\\"title 4\\\",\\n    \\\"title 5\\\",\\n    \\\"title 6\\\",\\n    \\\"title 7\\\",\\n    \\\"title 8\\\",\\n    \\\"title 9\\\",\\n    \\\"title 10\\\"\\n  ],\\n  \\\"top_3\\\": [\\n    \\\"title x\\\",\\n    \\\"title y\\\",\\n    \\\"title z\\\"\\n  ],\\n  \\\"test_hypothesis\\\": \\\"…\\\",\\n  \\\"final_recommendation\\\": \\\"…\\\"\\n}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1700, 300]
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "complete",
+        "model": "gpt-4.1-mini",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "={{ $json.prompt }}"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "8",
+      "name": "Generate Titles (OpenAI)",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.8,
+      "position": [1940, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const source = $('Attach Top Queries').item.json;\n\nlet raw = '';\n\nif ($json.choices?.[0]?.message?.content) {\n  raw = $json.choices[0].message.content;\n} else if ($json.data?.[0]?.content?.[0]?.text?.value) {\n  raw = $json.data[0].content[0].text.value;\n} else if ($json.text) {\n  raw = $json.text;\n} else if ($json.response) {\n  raw = $json.response;\n} else {\n  raw = JSON.stringify($json);\n}\n\nraw = String(raw).trim();\nraw = raw.replace(/^```json\\s*/i, '').replace(/^```\\s*/i, '').replace(/```$/i, '').trim();\n\nlet parsed;\ntry {\n  parsed = JSON.parse(raw);\n} catch (e) {\n  parsed = {\n    titles: [],\n    top_3: [],\n    test_hypothesis: 'Impossible de parser la réponse JSON du modèle.',\n    final_recommendation: 'Vérifier le format de sortie du node OpenAI.'\n  };\n}\n\nconst generatedTitles = Array.isArray(parsed.titles) ? parsed.titles : [];\nconst top3 = Array.isArray(parsed.top_3) ? parsed.top_3 : [];\n\nreturn [{\n  json: {\n    ...source,\n    generated_titles: generatedTitles,\n    generated_titles_text: generatedTitles.join(' | '),\n    top_3_titles: top3,\n    top_3_titles_text: top3.join(' | '),\n    recommended_title: top3[0] || '',\n    test_hypothesis: parsed.test_hypothesis || '',\n    final_recommendation: parsed.final_recommendation || ''\n  }\n}];"
+      },
+      "id": "9",
+      "name": "Parse LLM JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2180, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "CTR Tests",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "date_scan": "={{ $json.date_scan }}",
+            "url": "={{ $json.url }}",
+            "top_queries_text": "={{ $json.top_queries_text }}",
+            "generated_titles": "={{ $json.generated_titles_text }}",
+            "top_3_titles": "={{ $json.top_3_titles_text }}",
+            "recommended_title": "={{ $json.recommended_title }}",
+            "title_tested": "={{ $json.title_tested }}",
+            "meta_tested": "={{ $json.meta_tested }}",
+            "test_type": "={{ $json.test_type }}",
+            "status": "={{ $json.status }}",
+            "test_start_date": "={{ $json.test_start_date }}",
+            "review_date": "={{ $json.review_date }}",
+            "ctr_before": "={{ $json.ctr_before }}",
+            "position_before": "={{ $json.position_before }}",
+            "impressions_before": "={{ $json.impressions_before }}",
+            "ctr_after": "",
+            "position_after": "",
+            "impressions_after": "",
+            "delta_ctr": "",
+            "delta_position": "",
+            "delta_impressions": "",
+            "verdict": "={{ $json.verdict }}",
+            "test_hypothesis": "={{ $json.test_hypothesis }}",
+            "final_recommendation": "={{ $json.final_recommendation }}",
+            "notes": "={{ $json.notes }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_scan",
+              "displayName": "date_scan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "top_queries_text",
+              "displayName": "top_queries_text",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "generated_titles",
+              "displayName": "generated_titles",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "top_3_titles",
+              "displayName": "top_3_titles",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "recommended_title",
+              "displayName": "recommended_title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "title_tested",
+              "displayName": "title_tested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "meta_tested",
+              "displayName": "meta_tested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "test_type",
+              "displayName": "test_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "test_start_date",
+              "displayName": "test_start_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "review_date",
+              "displayName": "review_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "ctr_before",
+              "displayName": "ctr_before",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "position_before",
+              "displayName": "position_before",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "impressions_before",
+              "displayName": "impressions_before",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "ctr_after",
+              "displayName": "ctr_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "position_after",
+              "displayName": "position_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "impressions_after",
+              "displayName": "impressions_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_ctr",
+              "displayName": "delta_ctr",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_position",
+              "displayName": "delta_position",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_impressions",
+              "displayName": "delta_impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "verdict",
+              "displayName": "verdict",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "test_hypothesis",
+              "displayName": "test_hypothesis",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "final_recommendation",
+              "displayName": "final_recommendation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "id": "10",
+      "name": "Append To CTR Tests Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [2420, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "you@example.com",
+        "subject": "=[CTR Hunter] Opportunité détectée : {{$json.url}}",
+        "emailType": "text",
+        "message": "=URL : {{$json.url}}\\nCTR actuel : {{$json.ctr_before}}%\\nPosition : {{$json.position_before}}\\nImpressions : {{$json.impressions_before}}\\nCTR cible : {{$json.target_ctr_percent}}%\\nScore opportunité : {{$json.opportunity_score}}\\n\\nTop queries :\\n{{$json.top_queries_text}}\\n\\nTop 3 titles :\\n- {{ $json.top_3_titles[0] || '' }}\\n- {{ $json.top_3_titles[1] || '' }}\\n- {{ $json.top_3_titles[2] || '' }}\\n\\nHypothèse :\\n{{$json.test_hypothesis}}\\n\\nReco :\\n{{$json.final_recommendation}}"
+      },
+      "id": "11",
+      "name": "Send Gmail Alert",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2660, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[{ "node": "GSC Pages", "type": "main", "index": 0 }]]
+    },
+    "GSC Pages": {
+      "main": [
+        [{ "node": "Score CTR Opportunities", "type": "main", "index": 0 }]
+      ]
+    },
+    "Score CTR Opportunities": {
+      "main": [
+        [{ "node": "Loop Over Opportunities", "type": "main", "index": 0 }]
+      ]
+    },
+    "Loop Over Opportunities": {
+      "main": [
+        [{ "node": "GSC Queries By Page", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "GSC Queries By Page": {
+      "main": [[{ "node": "Attach Top Queries", "type": "main", "index": 0 }]]
+    },
+    "Attach Top Queries": {
+      "main": [[{ "node": "Build Prompt", "type": "main", "index": 0 }]]
+    },
+    "Build Prompt": {
+      "main": [
+        [{ "node": "Generate Titles (OpenAI)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Generate Titles (OpenAI)": {
+      "main": [[{ "node": "Parse LLM JSON", "type": "main", "index": 0 }]]
+    },
+    "Parse LLM JSON": {
+      "main": [
+        [{ "node": "Append To CTR Tests Sheet", "type": "main", "index": 0 }]
+      ]
+    },
+    "Append To CTR Tests Sheet": {
+      "main": [[{ "node": "Send Gmail Alert", "type": "main", "index": 0 }]]
+    },
+    "Send Gmail Alert": {
+      "main": [
+        [{ "node": "Loop Over Opportunities", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "id": "schoolswp-ctr-hunter-workflow-a",
+  "tags": []
+}

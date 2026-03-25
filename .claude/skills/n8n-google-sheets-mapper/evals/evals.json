@@ -1,0 +1,20 @@
+{
+  "skill_name": "n8n-google-sheets-mapper",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Voici le JSON de sortie de mon nœud précédent dans n8n :\n\n{\n  \"Nom\": \"Eva Martin\",\n  \"Email\": \"eva@email.com\",\n  \"Téléphone\": \"0612345678\",\n  \"Activité_souhaitée\": \"Surf débutant\",\n  \"Date_activité\": \"2025-01-25\"\n}\n\nEt mes colonnes Google Sheet (ligne 1) :\nNom | Email | Téléphone | Activité_souhaitée | Date_activité\n\nDis-moi exactement comment configurer mon nœud Google Sheets dans n8n.",
+      "expected_output": "Diagnostic confirmant que les noms correspondent, réglages du nœud (Resource, Operation, Mode), mapping exact avec expressions {{ $json[\"Nom\"] }} etc., checklist, et bloc final copy-paste."
+    },
+    {
+      "id": 2,
+      "prompt": "Mon workflow n8n reçoit ces données du nœud précédent :\n\n{\n  \"prenom\": \"Lucas\",\n  \"email\": \"lucas@test.fr\",\n  \"telephone\": \"0698765432\",\n  \"activite\": \"Yoga\",\n  \"date\": \"2025-03-10\",\n  \"source\": \"Instagram\"\n}\n\nMes colonnes dans Google Sheets sont : Prénom | Email | Téléphone | Activité souhaitée | Date activité | Statut\n\nComment je configure le nœud Google Sheets ? Il y a des erreurs dans mon mapping actuel, je mets {{ $json.prenom }} dans la colonne Prénom mais ça ne marche pas.",
+      "expected_output": "Détection des incohérences : 'activite' vs 'Activité souhaitée', 'date' vs 'Date activité', colonne 'Statut' absente du JSON. Correction des expressions (guillemets doubles). Signal sur les accents/espaces. Mapping corrigé complet."
+    },
+    {
+      "id": 3,
+      "prompt": "J'ai un webhook n8n qui reçoit des données imbriquées d'un formulaire. Voici le JSON de sortie du nœud HTTP Request qui précède mon nœud Google Sheets :\n\n{\n  \"status\": \"success\",\n  \"data\": {\n    \"contact\": {\n      \"full_name\": \"Marie Dupont\",\n      \"email_address\": \"marie@dupont.fr\",\n      \"phone\": \"+33612345678\"\n    },\n    \"booking\": {\n      \"activity\": \"Pilates avancé\",\n      \"date\": \"2025-04-15\",\n      \"slots\": 2\n    }\n  }\n}\n\nMes colonnes Google Sheet : Nom complet | Email | Téléphone | Activité | Date | Nombre de places\n\nJe veux créer une nouvelle ligne avec ces données. Comment je fais ?",
+      "expected_output": "Détection de la structure imbriquée, expressions avec double niveau ($json[\"data\"][\"contact\"][\"full_name\"] etc.), mapping complet des 6 colonnes, mention du champ 'status' inutilisé, checklist."
+    }
+  ]
+}

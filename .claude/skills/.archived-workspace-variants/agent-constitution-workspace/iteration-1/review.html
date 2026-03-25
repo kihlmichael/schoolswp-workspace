@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "schoolswp-agent-constitution", "runs": [{"id": "eval-1-low-conversion-with_skill", "prompt": "J'ai un probl\u00e8me sur schoolsWP : mes articles LMS re\u00e7oivent du trafic mais presque personne ne clique sur les CTAs vers mes formations TutorLMS. Le taux de conversion est tr\u00e8s faible. Analyse le probl\u00e8me et dis-moi quoi faire.", "eval_id": 1, "outputs": [{"name": "analysis.md", "type": "text", "content": "# Analyse : Faible conversion CTA sur articles LMS \u2014 schoolsWP\n\n**Contexte** : articles LMS avec trafic, mais quasi-z\u00e9ro clics sur les CTAs vers formations TutorLMS.\n**Cadre appliqu\u00e9** : schoolswp-agent-constitution (multi-r\u00f4les, correction racine, plan prioris\u00e9)\n\n---\n\n## 1. Diagnostic par r\u00f4les\n\n### R\u00f4le : Analyste SEO \u2014 lecture du trafic\n\n**Hypoth\u00e8se de d\u00e9part** : le trafic re\u00e7u ne correspond pas aux visiteurs cibles.\n\nUn article LMS qui attire du trafic peut \u00eatre positionn\u00e9 sur des requ\u00eates informationnelles pures (\"qu'est-ce qu'un LMS\", \"LMS comparatif\", \"TutorLMS avis\") dont l'intention est de comprendre \u2014 pas d'acheter ni de s'inscrire.\n\nCes visiteurs arrivent avec une question, obtiennent une r\u00e9ponse, et repartent. Ils ne sont pas en intention d'achat.\n\n**Signal d'alerte** : si le taux de rebond est \u00e9lev\u00e9 et la dur\u00e9e de session courte, c'est confirm\u00e9.\n\n**Ce qu'il faut v\u00e9rifier** :\n\n- Quels mots-cl\u00e9s apportent le trafic ? (Search Console)\n- Quelle est l'intention dominante derri\u00e8re ces requ\u00eates ? (informationnelle vs transactionnelle vs d\u00e9cisionnelle)\n- Les articles qui convertissent le moins \u2014 quel est leur mot-cl\u00e9 principal ?\n\n---\n\n### R\u00f4le : Strat\u00e8ge contenu \u2014 lecture de la promesse\n\n**Hypoth\u00e8se** : le contenu n'encha\u00eene pas sur une progression logique vers l'offre.\n\nUn article informationnelle explique, compare, classe. Mais il ne cr\u00e9e pas le besoin ressenti. Il r\u00e9pond \u00e0 une question sans cr\u00e9er la prochaine.\n\nPour qu'un CTA soit cliqu\u00e9, le lecteur doit :\n\n1. avoir compris son probl\u00e8me pr\u00e9cis\n2. sentir que la formation est LA r\u00e9ponse adapt\u00e9e\n3. avoir confiance que \u00e7a marche pour son cas\n\nSi l'article fait 1 mais pas 2 et 3, le CTA reste invisible \u2014 m\u00eame bien plac\u00e9.\n\n**Ce qu'il faut v\u00e9rifier** :\n\n- Est-ce que l'article cr\u00e9e une tension non r\u00e9solue avant le CTA ?\n- Est-ce que le CTA parle du probl\u00e8me du lecteur, ou de la formation ?\n- Est-ce que l'article contient des preuves (exemples concrets, cas schoolsWP, r\u00e9sultats) ?\n\n---\n\n### R\u00f4le : Expert conversion \u2014 lecture des CTAs\n\n**Hypoth\u00e8se** : les CTAs sont pr\u00e9sents mais pas con\u00e7us pour d\u00e9clencher l'action.\n\nLes CTAs de faible conversion ont souvent un ou plusieurs de ces d\u00e9fauts :\n\n| D\u00e9faut             | Manifestation                                                       |\n| ------------------ | ------------------------------------------------------------------- |\n| Trop g\u00e9n\u00e9riques    | \"D\u00e9couvrez ma formation\" \u2014 aucune promesse sp\u00e9cifique               |\n| Mal positionn\u00e9s    | En bas de page uniquement, apr\u00e8s abandon du lecteur                 |\n| D\u00e9connect\u00e9s        | Le CTA ne rebondit pas sur ce qui vient d'\u00eatre lu                   |\n| Sans preuve        | Pas de social proof, pas de r\u00e9sultat, pas d'engagement              |\n| Trop d'\u00e9tapes      | L'action demand\u00e9e est floue ou le chemin vers la formation est long |\n| Vocabulaire faible | Verbes passifs (\"acc\u00e9dez\", \"consultez\") vs verbes de transformation |\n\n**Ce qu'il faut v\u00e9rifier sur chaque article LMS** :\n\n- Combien de CTAs par article ?\n- O\u00f9 sont-ils positionn\u00e9s (d\u00e9but, milieu, fin) ?\n- Quel est le texte exact du CTA ?\n- Le CTA renvoie-t-il vers une page de vente ou directement vers une inscription ?\n\n---\n\n### R\u00f4le : Architecte WordPress \u2014 lecture du parcours\n\n**Hypoth\u00e8se** : la page de destination (formation TutorLMS) ne convertit pas non plus.\n\nSi le lecteur clique mais n'ach\u00e8te pas ou ne s'inscrit pas, le probl\u00e8me est sur la page de destination. Si le lecteur ne clique pas, le probl\u00e8me est dans l'article.\n\n**Ce qu'il faut v\u00e9rifier** :\n\n- La page formation TutorLMS a-t-elle une structure de vente (probl\u00e8me \u2192 solution \u2192 preuve \u2192 offre \u2192 CTA) ?\n- Le temps de chargement de cette page est-il acceptable ?\n- Y a-t-il friction entre l'article et la page (ton diff\u00e9rent, promesse qui change, design qui d\u00e9croche) ?\n\n---\n\n## 2. Causes racines identifi\u00e9es\n\nApr\u00e8s analyse multi-r\u00f4les, trois causes racines probables, class\u00e9es par fr\u00e9quence :\n\n### Cause A \u2014 D\u00e9salignement intention / offre (tr\u00e8s probable)\n\nLe trafic vient de requ\u00eates informationnelles. Ces visiteurs cherchent \u00e0 apprendre, pas \u00e0 acheter. Le CTA vers une formation payante arrive trop t\u00f4t dans leur parcours de d\u00e9cision.\n\n**Ils ne sont pas pr\u00eats.**\n\n### Cause B \u2014 CTA non contextualis\u00e9 (probable)\n\nLe CTA propose la formation sans faire le pont entre \"ce que tu viens de lire\" et \"ce que la formation r\u00e9sout pour toi\". Le lecteur voit un bouton, pas une r\u00e9ponse \u00e0 son probl\u00e8me pr\u00e9cis.\n\n### Cause C \u2014 Absence de preuve avant le CTA (probable)\n\nAvant de cliquer, un lecteur a besoin de confiance. Sans t\u00e9moignages, sans exemple de r\u00e9sultat, sans cas concret schoolsWP, le CTA demande un effort de foi que le lecteur ne fait pas.\n\n---\n\n## 3. Plan d'action prioris\u00e9\n\n### Quick wins \u2014 \u00e0 faire en moins de 48h\n\n**QW1 \u2014 Auditer l'intention des 5 articles LMS avec le plus de trafic**\n\nDans Google Search Console :\n\n- Identifier les 3 requ\u00eates principales par article\n- Classer chaque requ\u00eate : informationnelle / comparative / d\u00e9cisionnelle / transactionnelle\n- Si majoritairement informationnelle \u2192 l'article n'est pas fait pour convertir directement\n\n**QW2 \u2014 R\u00e9\u00e9crire les CTAs existants avec une promesse sp\u00e9cifique**\n\nNe pas \u00e9crire : \"D\u00e9couvrez ma formation TutorLMS\"\n\n\u00c9crire : \"Tu veux cr\u00e9er ta premi\u00e8re formation avec TutorLMS ? Voici exactement comment je l'ai fait sur schoolsWP \u2014 avec les param\u00e8tres, les pi\u00e8ges \u00e0 \u00e9viter, et le r\u00e9sultat.\"\n\nLe CTA doit prolonger l'article, pas le refermer.\n\n**QW3 \u2014 Ajouter un CTA contextuel en milieu d'article**\n\nLa majorit\u00e9 des lecteurs ne vont pas jusqu'au bout. Placer un CTA contextualis\u00e9 au moment pr\u00e9cis o\u00f9 le besoin est cr\u00e9\u00e9 dans l'article (juste apr\u00e8s avoir d\u00e9crit le probl\u00e8me que la formation r\u00e9sout).\n\n---\n\n### Actions structurantes \u2014 \u00e0 planifier sur 2-4 semaines\n\n**S1 \u2014 Cr\u00e9er des articles \u00e0 intention d\u00e9cisionnelle cibl\u00e9s**\n\nProduire des articles sur des requ\u00eates comme :\n\n- \"TutorLMS vaut-il la peine en 2025 pour un formateur ind\u00e9pendant ?\"\n- \"Cr\u00e9er une formation en ligne WordPress : TutorLMS vs LearnDash \u2014 mon choix\"\n- \"Lancer une formation WordPress sans budget agence : est-ce possible ?\"\n\nCes requ\u00eates am\u00e8nent des visiteurs d\u00e9j\u00e0 en phase de d\u00e9cision. Le CTA vers la formation est naturel.\n\n**S2 \u2014 Ajouter une section preuve dans chaque article LMS**\n\nAvant chaque CTA, ins\u00e9rer un bloc court :\n\n- Un r\u00e9sultat chiffr\u00e9 ou concret (\"j'ai param\u00e9tr\u00e9 TutorLMS en 3h sur schoolsWP\")\n- Un retour d'exp\u00e9rience (\"la principale erreur que j'ai faite et comment l'\u00e9viter\")\n- Un lien vers un t\u00e9moignage ou cas concret si disponible\n\n**S3 \u2014 Cr\u00e9er un lead magnet comme \u00e9tape interm\u00e9diaire**\n\nPour les visiteurs informationnels pas encore pr\u00eats \u00e0 acheter :\n\n- Proposer un contenu gratuit (checklist, mini-guide PDF, email de bienvenue avec un exemple de formation structur\u00e9e)\n- Capturer l'email via FluentCRM\n- Mettre en place une s\u00e9quence email courte (3-5 emails) qui fait progresser vers la d\u00e9cision d'achat\n\n**S4 \u2014 Tester la page de destination formation**\n\nV\u00e9rifier que la page TutorLMS cible :\n\n- R\u00e9pond \u00e0 l'objection principale (\"est-ce que \u00e7a marche pour mon cas ?\")\n- A un CTA principal visible sans scrolling\n- Ne demande pas trop d'\u00e9tapes entre le clic et l'inscription\n\n---\n\n### Actions long terme \u2014 1 \u00e0 3 mois\n\n**LT1 \u2014 Construire un cluster de conversion autour des formations TutorLMS**\n\nArchitecture cible :\n\n- Page pilier : \"Cr\u00e9er et vendre des formations avec TutorLMS sur WordPress\"\n- Satellites informationnels : comparatifs, tutoriels, avis \u2192 nourrissent le trafic\n- Satellites d\u00e9cisionnels : cas d'usage, ROI, r\u00e9sultats \u2192 poussent vers la formation\n- Maillage interne : tous les satellites pointent vers la page pilier et vers la formation\n\n**LT2 \u2014 S\u00e9quence FluentCRM automatis\u00e9e post-lecture**\n\nSc\u00e9nario :\n\n1. Lecteur lit un article LMS \u2192 popup ou inline form apr\u00e8s 60s\n2. Capture email \u2192 tag \"int\u00e9ress\u00e9 LMS\"\n3. S\u00e9quence 4 emails sur 10 jours : probl\u00e8me \u2192 m\u00e9thode \u2192 preuve \u2192 offre\n4. Email 5 : invitation \u00e0 rejoindre la formation avec offre de bienvenue\n\n**LT3 \u2014 Mesurer pour d\u00e9cider**\n\nMettre en place un tracking minimal :\n\n- \u00c9v\u00e9nement \"CTA cliqu\u00e9\" dans Google Analytics 4 (ou Plausible)\n- Suivi du taux de conversion par article\n- Identifier quel article convertit le mieux \u2192 comprendre pourquoi \u2192 dupliquer\n\n---\n\n## 4. Matrice de priorisation\n\n| Action                               | Impact     | Effort | D\u00e9lai    | Priorit\u00e9 |\n| ------------------------------------ | ---------- | ------ | -------- | -------- |\n| QW2 \u2014 R\u00e9\u00e9crire CTAs                  | \u00c9lev\u00e9      | Faible | 48h      | 1        |\n| QW1 \u2014 Audit intention Search Console | Moyen      | Faible | 48h      | 2        |\n| QW3 \u2014 CTA milieu article             | \u00c9lev\u00e9      | Faible | 48h      | 3        |\n| S2 \u2014 Bloc preuve avant CTA           | \u00c9lev\u00e9      | Moyen  | 1 sem    | 4        |\n| S1 \u2014 Articles d\u00e9cisionnels           | \u00c9lev\u00e9      | Moyen  | 2 sem    | 5        |\n| S3 \u2014 Lead magnet + FluentCRM         | Tr\u00e8s \u00e9lev\u00e9 | \u00c9lev\u00e9  | 3 sem    | 6        |\n| S4 \u2014 Audit page formation            | \u00c9lev\u00e9      | Faible | 1 sem    | 7        |\n| LT1 \u2014 Cluster de conversion          | Tr\u00e8s \u00e9lev\u00e9 | \u00c9lev\u00e9  | 1-2 mois | 8        |\n| LT2 \u2014 S\u00e9quence email automatis\u00e9e     | Tr\u00e8s \u00e9lev\u00e9 | \u00c9lev\u00e9  | 2-3 mois | 9        |\n| LT3 \u2014 Tracking GA4                   | Moyen      | Moyen  | 2 sem    | 10       |\n\n---\n\n## 5. Checklist de contr\u00f4le qualit\u00e9 (avant/apr\u00e8s chaque article LMS)\n\n- [ ] L'intention de recherche du mot-cl\u00e9 principal est identifi\u00e9e\n- [ ] Si informationnelle : une \u00e9tape interm\u00e9diaire (lead magnet, email) est pr\u00e9vue avant la vente\n- [ ] Au moins un CTA est positionn\u00e9 au moment o\u00f9 le probl\u00e8me est cr\u00e9\u00e9 dans l'article\n- [ ] Chaque CTA a une promesse sp\u00e9cifique li\u00e9e au contenu de l'article\n- [ ] Un bloc preuve (r\u00e9sultat, cas concret, exp\u00e9rience directe) pr\u00e9c\u00e8de chaque CTA\n- [ ] La page de destination est coh\u00e9rente avec la promesse du CTA\n- [ ] Le parcours lecteur \u2192 page formation comporte au maximum 2 \u00e9tapes\n\n---\n\n## R\u00e9sum\u00e9 d\u00e9cisionnel\n\n**Le probl\u00e8me n'est pas la visibilit\u00e9 des CTAs. Le probl\u00e8me est le d\u00e9salignement entre le stade du visiteur et l'action demand\u00e9e.**\n\nLes visiteurs arrivent en mode \"je comprends\" \u2014 le CTA leur demande de passer en mode \"j'ach\u00e8te\". Ce saut est trop grand.\n\n**Les trois leviers qui changent la donne :**\n\n1. \u00c9crire des articles pour des intentions d\u00e9cisionnelles (pas seulement informationnelles)\n2. Construire la confiance avant chaque CTA (preuve, exemple, r\u00e9sultat concret)\n3. Cr\u00e9er une \u00e9tape interm\u00e9diaire (email) pour les visiteurs pas encore pr\u00eats\n\nCommencer par QW1 + QW2 + QW3 cette semaine. Mesurer sur 14 jours. Ajuster ensuite.\n\n---\n\n_Analyse produite avec le cadre schoolswp-agent-constitution \u2014 multi-r\u00f4les (SEO, Contenu, Conversion, WordPress), correction racine, plan prioris\u00e9._\n"}], "grading": null}, {"id": "eval-1-low-conversion-without_skill", "prompt": "J'ai un probl\u00e8me sur schoolsWP : mes articles LMS re\u00e7oivent du trafic mais presque personne ne clique sur les CTAs vers mes formations TutorLMS. Le taux de conversion est tr\u00e8s faible. Analyse le probl\u00e8me et dis-moi quoi faire.", "eval_id": 1, "outputs": [{"name": "analysis.md", "type": "text", "content": "# Analyse : Faible taux de conversion CTAs formations TutorLMS\n\n## Contexte\n\nArticles LMS sur schoolsWP re\u00e7oivent du trafic organique, mais les clics vers les formations TutorLMS sont tr\u00e8s faibles. Probl\u00e8me de conversion entre lecteur et acheteur/inscrit.\n\n---\n\n## Diagnostic des causes probables\n\n### 1. D\u00e9salignement intent SEO vs offre commerciale\n\nLes articles LMS attirent principalement des internautes en phase **informationnelle** (\"qu'est-ce que TutorLMS ?\", \"comparatif LMS WordPress\") \u2014 pas en phase d\u00e9cisionnelle (\"acheter une formation\"). Le lecteur cherche de l'info, pas une formation.\n\n**Cons\u00e9quence** : le CTA vers une formation payante arrive trop t\u00f4t dans son parcours d'achat.\n\n### 2. CTAs g\u00e9n\u00e9riques et peu contextuels\n\nUn CTA type \"D\u00e9couvrir ma formation\" en bas d'article ne cr\u00e9e pas de lien entre ce que le lecteur vient de lire et ce qu'on lui propose. Le pont entre le contenu et l'offre est absent.\n\n**Cons\u00e9quence** : le lecteur ne per\u00e7oit pas la valeur imm\u00e9diate de cliquer.\n\n### 3. Positionnement de l'offre trop t\u00f4t dans le tunnel\n\nSi le CTA pointe directement vers une page de vente payante, c'est un saut trop important pour quelqu'un qui vient de lire un article de blog. Il n'a pas encore confiance, ni urgence.\n\n**Cons\u00e9quence** : taux de rebond \u00e9lev\u00e9 sur la page formation.\n\n### 4. Placement et densit\u00e9 des CTAs sous-optimaux\n\nUn unique CTA en bas d'article perd la majorit\u00e9 des lecteurs qui ne scrollent pas jusqu'au bout (taux de scroll moyen : 50-60%). Pas de CTA contextuel dans le corps de l'article aux moments de forte valeur ajout\u00e9e.\n\n### 5. Manque de preuve sociale visible\n\nSans avis, t\u00e9moignages, nombre d'inscrits ou r\u00e9sultats concrets affich\u00e9s pr\u00e8s des CTAs, le lecteur n'a pas de signal de r\u00e9assurance avant de cliquer.\n\n### 6. Absence de capture email interm\u00e9diaire\n\nSans \u00e9tape de capture (lead magnet, ressource gratuite, acc\u00e8s \u00e0 un module offert), les lecteurs qui ne sont pas pr\u00eats \u00e0 acheter repartent sans laisser de trace \u2014 impossible de les relancer via FluentCRM.\n\n---\n\n## Plan d'action prioritaire\n\n### Priorit\u00e9 1 \u2014 Aligner le CTA sur l'intent de l'article\n\n| Type d'article                | Intent           | CTA recommand\u00e9                            |\n| ----------------------------- | ---------------- | ----------------------------------------- |\n| Comparatif LMS                | Informationnelle | Ressource gratuite (checklist, guide PDF) |\n| \"Comment configurer TutorLMS\" | Transactionnelle | Acc\u00e8s module gratuit ou d\u00e9mo              |\n| \"Meilleur LMS WordPress\"      | D\u00e9cisionnelle    | CTA direct vers la formation              |\n\nNe pas mettre le m\u00eame CTA partout. Adapter l'offre \u00e0 l'intention de recherche de l'article.\n\n### Priorit\u00e9 2 \u2014 Introduire une \u00e9tape interm\u00e9diaire (lead magnet)\n\nProposer une ressource gratuite contextualis\u00e9e avant la vente :\n\n- Checklist \"Lancer son LMS WordPress en 7 \u00e9tapes\"\n- Acc\u00e8s au module 1 d'une formation TutorLMS\n- Guide PDF t\u00e9l\u00e9chargeable\n\nObjectif : capturer l'email via FluentCRM, puis activer une s\u00e9quence de nurturing avant le CTA commercial.\n\n### Priorit\u00e9 3 \u2014 Multiplier et contextualiser les CTAs dans le corps de l'article\n\n- CTA ancr\u00e9 dans le texte au moment o\u00f9 le lecteur a un probl\u00e8me que ta formation r\u00e9sout (ex : apr\u00e8s un paragraphe sur la difficult\u00e9 de configurer un LMS)\n- CTA visuel (encadr\u00e9, couleur `#00D400`) \u00e0 mi-article\n- CTA final avec r\u00e9sum\u00e9 de la valeur + preuve sociale\n\n### Priorit\u00e9 4 \u2014 Ajouter de la preuve sociale pr\u00e8s des CTAs\n\n- Nombre d'inscrits (\"d\u00e9j\u00e0 200 formateurs form\u00e9s\")\n- T\u00e9moignage court (1-2 phrases) juste avant ou apr\u00e8s le bouton\n- R\u00e9sultat concret (\"mes \u00e9tudiants configurent leur LMS en moins de 2h\")\n\n### Priorit\u00e9 5 \u2014 Audit de conversion sur les pages formation TutorLMS\n\nSi le clic existe mais pas la conversion finale :\n\n- V\u00e9rifier la clart\u00e9 de la proposition de valeur above the fold\n- V\u00e9rifier la coh\u00e9rence entre le texte de l'article et la promesse de la page formation\n- Tester le prix (friction principale \u00e0 l'achat)\n\n---\n\n## S\u00e9quence FluentCRM recommand\u00e9e (post-capture)\n\n```\nJ+0  Email de bienvenue + livraison du lead magnet\nJ+2  Email \"Le probl\u00e8me que tu cherches \u00e0 r\u00e9soudre\" (\u00e9ducatif)\nJ+4  Email \"Comment j'ai r\u00e9solu ce probl\u00e8me\" (storytelling + preuve)\nJ+6  Email pr\u00e9sentation formation (b\u00e9n\u00e9fices, pas fonctionnalit\u00e9s)\nJ+8  Email objections + FAQ\nJ+10 Email urgence / offre limit\u00e9e (si pertinent)\n```\n\n---\n\n## M\u00e9triques \u00e0 suivre\n\n| M\u00e9trique                             | Outil                         | Objectif                 |\n| ------------------------------------ | ----------------------------- | ------------------------ |\n| CTR des CTAs dans articles           | Heatmap (Hotjar) ou clics GA4 | > 3%                     |\n| Taux de capture lead magnet          | FluentCRM + GA4               | > 8% des visiteurs       |\n| Taux d'ouverture s\u00e9quence email      | FluentCRM                     | > 40%                    |\n| Taux de conversion email \u2192 formation | FluentCRM                     | > 2%                     |\n| Scroll depth des articles            | GA4                           | > 70% jusqu'au CTA final |\n\n---\n\n## R\u00e9sum\u00e9 ex\u00e9cutif\n\nLe probl\u00e8me n'est probablement pas le trafic, mais le **saut trop brutal** entre un contenu informatif et une offre commerciale directe. La priorit\u00e9 est d'introduire une \u00e9tape interm\u00e9diaire (lead magnet + s\u00e9quence FluentCRM), de contextualiser les CTAs selon l'intent de chaque article, et d'ajouter de la preuve sociale. Le taux de conversion doit \u00eatre mesur\u00e9 \u00e0 chaque \u00e9tape du tunnel, pas seulement sur le clic final.\n"}], "grading": null}, {"id": "eval-2-n8n-workflow-with_skill", "prompt": "Je veux construire un workflow n8n qui : 1) capte les nouveaux abonn\u00e9s via Fluent Forms, 2) les ajoute dans FluentCRM avec les bons tags, 3) d\u00e9marre une s\u00e9quence email de bienvenue, 4) notifie par email si une erreur se produit. Comment je con\u00e7ois ce workflow proprement ?", "eval_id": 2, "outputs": [{"name": "workflow-design.md", "type": "text", "content": "# Workflow n8n \u2014 Capture abonn\u00e9 Fluent Forms \u2192 FluentCRM \u2192 S\u00e9quence bienvenue\n\nAppliqu\u00e9 via : schoolswp-agent-constitution (cadre automatisation n8n 9 dimensions + CRM segment/\u00e9tat/intention)\n\n---\n\n## 1. Objectif\n\nTransformer chaque soumission de formulaire en contact qualifi\u00e9 dans FluentCRM, d\u00e9clencher une s\u00e9quence email de bienvenue automatis\u00e9e, et capturer toute erreur de mani\u00e8re visible et actionnable.\n\n---\n\n## 2. Plan avant ex\u00e9cution\n\n**Entr\u00e9es requises :**\n\n- Formulaire Fluent Forms configur\u00e9 avec les champs : pr\u00e9nom, email (obligatoires), source ou pilier optionnel\n- FluentCRM op\u00e9rationnel avec les listes et tags cibles d\u00e9j\u00e0 cr\u00e9\u00e9s\n- S\u00e9quence email de bienvenue existante dans FluentCRM\n- Adresse email de notification d'erreur d\u00e9finie\n\n**Contraintes :**\n\n- Doublons possibles (m\u00eame email soumis plusieurs fois)\n- Champs manquants ou mal format\u00e9s c\u00f4t\u00e9 formulaire\n- API FluentCRM peut \u00e9chouer (timeout, limite de taux)\n- La s\u00e9quence ne doit se d\u00e9clencher qu'une seule fois par contact\n\n**Sorties attendues :**\n\n- Contact cr\u00e9\u00e9 ou mis \u00e0 jour dans FluentCRM\n- Tags et liste attribu\u00e9s correctement\n- S\u00e9quence de bienvenue d\u00e9marr\u00e9e\n- Notification email envoy\u00e9e en cas d'erreur\n\n---\n\n## 3. Architecture du workflow\n\n### Vue d'ensemble des blocs\n\n```\n[Trigger] \u2192 [Valider entr\u00e9es] \u2192 [V\u00e9rifier doublon] \u2192 [Cr\u00e9er/MAJ contact]\n         \u2192 [Attribuer tags] \u2192 [Ajouter \u00e0 la liste] \u2192 [D\u00e9marrer s\u00e9quence]\n         \u2192 [Log succ\u00e8s]\n\nToute branche d'erreur \u2192 [Formater message erreur] \u2192 [Notifier par email] \u2192 [Log erreur]\n```\n\n---\n\n## 4. D\u00e9tail n\u0153ud par n\u0153ud\n\n### BLOC 1 \u2014 D\u00c9CLENCHEUR\n\n**Node : `Fluent Forms \u2014 Webhook Trigger`**\n\n- Type : Webhook (POST)\n- URL expos\u00e9e : `/webhook/fluent-forms-new-subscriber`\n- M\u00e9thode : POST, r\u00e9ponse imm\u00e9diate 200 (ne pas laisser le form en attente)\n- Donn\u00e9es attendues : `{ \"first_name\": \"...\", \"email\": \"...\", \"source\": \"...\" }`\n\nContrainte : configurer Fluent Forms pour envoyer vers cette URL \u00e0 la soumission du formulaire cible.\n\n---\n\n### BLOC 2 \u2014 VALIDATION DES ENTR\u00c9ES\n\n**Node : `Validate \u2014 Check Required Fields`**\n\n- Type : Code (JavaScript)\n- R\u00f4le : v\u00e9rifier que `email` est pr\u00e9sent et au format valide, que `first_name` n'est pas vide\n- Logique :\n\n```javascript\nconst email = $json.email?.trim().toLowerCase();\nconst firstName = $json.first_name?.trim();\nconst emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n\nif (!email || !emailRegex.test(email)) {\n  throw new Error(`Email invalide ou manquant : \"${email}\"`);\n}\nif (!firstName) {\n  throw new Error(`Pr\u00e9nom manquant pour ${email}`);\n}\n\nreturn [\n  {\n    json: {\n      email,\n      first_name: firstName,\n      source: $json.source?.trim() || \"fluent-forms\",\n      received_at: new Date().toISOString(),\n    },\n  },\n];\n```\n\n- Branche erreur : si exception \u2192 aller vers `Format Error Message`\n\n---\n\n### BLOC 3 \u2014 V\u00c9RIFICATION DOUBLON\n\n**Node : `FluentCRM \u2014 Search Contact by Email`**\n\n- Type : HTTP Request\n- M\u00e9thode : GET\n- URL : `https://[domaine]/wp-json/fluentcrm/v2/subscribers?search={{ $json.email }}`\n- Auth : Basic Auth (utilisateur WordPress avec r\u00f4le CRM Manager minimum)\n- Retourne : liste de contacts correspondants\n\n**Node : `Route \u2014 New or Existing Contact`**\n\n- Type : IF\n- Condition : `{{ $json.data.length }}` > 0\n- Branche TRUE (contact existant) \u2192 `Update Existing Contact`\n- Branche FALSE (nouveau contact) \u2192 `Create New Contact`\n\n---\n\n### BLOC 4A \u2014 CR\u00c9ER UN NOUVEAU CONTACT\n\n**Node : `FluentCRM \u2014 Create New Contact`**\n\n- Type : HTTP Request\n- M\u00e9thode : POST\n- URL : `https://[domaine]/wp-json/fluentcrm/v2/subscribers`\n- Body :\n\n```json\n{\n  \"email\": \"{{ $json.email }}\",\n  \"first_name\": \"{{ $json.first_name }}\",\n  \"status\": \"subscribed\",\n  \"tags\": [\"nouveau-abonn\u00e9\", \"source-{{ $json.source }}\"],\n  \"lists\": [1]\n}\n```\n\n- `lists: [1]` \u2192 ID de la liste principale (\u00e0 adapter selon config FluentCRM)\n- En cas d'erreur API \u2192 branche vers `Format Error Message`\n\n---\n\n### BLOC 4B \u2014 METTRE \u00c0 JOUR UN CONTACT EXISTANT\n\n**Node : `FluentCRM \u2014 Update Existing Contact`**\n\n- Type : HTTP Request\n- M\u00e9thode : PUT\n- URL : `https://[domaine]/wp-json/fluentcrm/v2/subscribers/{{ $json.data[0].id }}`\n- Body :\n\n```json\n{\n  \"first_name\": \"{{ $json.first_name }}\",\n  \"status\": \"subscribed\"\n}\n```\n\nLogique : on r\u00e9active un \u00e9ventuel contact d\u00e9sinscrit, on ne re-d\u00e9clenche pas la s\u00e9quence (voir bloc 5).\n\n---\n\n### BLOC 5 \u2014 ATTRIBUER LES TAGS\n\n**Node : `FluentCRM \u2014 Apply Tags to Contact`**\n\n- Type : HTTP Request\n- M\u00e9thode : POST\n- URL : `https://[domaine]/wp-json/fluentcrm/v2/subscribers/{{ $json.contact_id }}/tags`\n- Body :\n\n```json\n{\n  \"tags\": [\"nouveau-abonn\u00e9\", \"source-{{ $json.source }}\"],\n  \"action\": \"attach\"\n}\n```\n\nLogique de tag bas\u00e9e sur la source :\n\n| Valeur `source`  | Tag appliqu\u00e9          | Segment CRM       |\n| ---------------- | --------------------- | ----------------- |\n| `formulaire-lms` | `source-lms`          | Int\u00e9r\u00eat LMS       |\n| `formulaire-crm` | `source-crm`          | Int\u00e9r\u00eat CRM       |\n| `pop-up-blog`    | `source-blog`         | Lecteur blog      |\n| (vide/inconnu)   | `source-fluent-forms` | Segment g\u00e9n\u00e9rique |\n\nTous les nouveaux contacts re\u00e7oivent aussi : `nouveau-abonn\u00e9`, `onboarding-en-cours`\n\n---\n\n### BLOC 6 \u2014 D\u00c9MARRER LA S\u00c9QUENCE DE BIENVENUE\n\n**Node : `Route \u2014 Only Start Sequence for New Contacts`**\n\n- Type : IF\n- Condition : le contact vient du n\u0153ud `Create New Contact` (pas de `Update`)\n- Branche TRUE \u2192 `FluentCRM \u2014 Start Welcome Sequence`\n- Branche FALSE \u2192 `Log \u2014 Contact Updated, No Sequence`\n\n**Node : `FluentCRM \u2014 Start Welcome Sequence`**\n\n- Type : HTTP Request\n- M\u00e9thode : POST\n- URL : `https://[domaine]/wp-json/fluentcrm/v2/subscribers/{{ $json.contact_id }}/sequences`\n- Body :\n\n```json\n{\n  \"sequence_id\": 12\n}\n```\n\n- `sequence_id: 12` \u2192 ID de la s\u00e9quence de bienvenue dans FluentCRM (\u00e0 adapter)\n- En cas d'erreur \u2192 branche vers `Format Error Message`\n\n---\n\n### BLOC 7 \u2014 LOG SUCC\u00c8S\n\n**Node : `Log \u2014 Record Successful Subscription`**\n\n- Type : Code ou Google Sheets (selon pr\u00e9f\u00e9rence)\n- Donn\u00e9es logu\u00e9es : `email`, `first_name`, `source`, `contact_id`, `is_new`, `timestamp`\n- Destination recommand\u00e9e : Google Sheets \"Abonn\u00e9s \u2014 Log temps r\u00e9el\"\n\nColonnes : `date`, `email`, `pr\u00e9nom`, `source`, `statut` (nouveau/existant), `s\u00e9quence d\u00e9marr\u00e9e` (oui/non)\n\n---\n\n### BLOC 8 \u2014 GESTION DES ERREURS\n\n**Node : `Format Error Message`**\n\n- Type : Code\n- R\u00f4le : formater un message d'erreur lisible\n\n```javascript\nconst errorMessage = $json.message || $json.error || \"Erreur inconnue\";\nconst step = $runIndex || \"\u00e9tape inconnue\";\n\nreturn [\n  {\n    json: {\n      subject: `[schoolsWP] Erreur workflow abonn\u00e9 \u2014 ${new Date().toLocaleDateString(\"fr-FR\")}`,\n      body: `Une erreur s'est produite dans le workflow \"Capture Abonn\u00e9 Fluent Forms\".\\n\\n\u00c9tape : ${step}\\nErreur : ${errorMessage}\\n\\nDonn\u00e9es re\u00e7ues :\\n${JSON.stringify($(\"Fluent Forms \u2014 Webhook Trigger\").item.json, null, 2)}\\n\\nAction requise : v\u00e9rifier le contact dans FluentCRM et relancer manuellement si n\u00e9cessaire.`,\n      error_at: new Date().toISOString(),\n    },\n  },\n];\n```\n\n**Node : `Email \u2014 Notify Admin on Error`**\n\n- Type : Send Email (SMTP ou Gmail node)\n- Destinataire : `contact@michaelkihl.fr`\n- Sujet : `{{ $json.subject }}`\n- Corps : `{{ $json.body }}`\n\n**Node : `Log \u2014 Record Error`**\n\n- Type : Google Sheets ou Code\n- Destination : onglet \"Erreurs\" du m\u00eame Google Sheet\n- Colonnes : `date`, `email_re\u00e7u`, `\u00e9tape_\u00e9chou\u00e9e`, `message_erreur`\n\n---\n\n## 5. Sch\u00e9ma complet des flux\n\n```\nFluent Forms \u2014 Webhook Trigger\n  \u2502\n  \u25bc\nValidate \u2014 Check Required Fields\n  \u2502 [ERREUR] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u25bc                                                     \u2502\nFluentCRM \u2014 Search Contact by Email                     \u2502\n  \u2502 [ERREUR] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n  \u25bc                                                     \u2502\nRoute \u2014 New or Existing Contact                         \u2502\n  \u2502                    \u2502                               \u2502\n  \u25bc [NOUVEAU]          \u25bc [EXISTANT]                    \u2502\nCreate New Contact   Update Existing Contact           \u2502\n  \u2502 [ERREUR] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n  \u25bc                    \u25bc                               \u2502\nFluentCRM \u2014 Apply Tags to Contact                      \u2502\n  \u2502 [ERREUR] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n  \u25bc                                                     \u2502\nRoute \u2014 Only Start Sequence for New Contacts           \u2502\n  \u2502 [NOUVEAU]          \u2502 [EXISTANT]                    \u2502\n  \u25bc                    \u25bc                               \u2502\nStart Welcome Seq   Log \u2014 Contact Updated              \u2502\n  \u2502 [ERREUR] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n  \u25bc                                                     \u2502\nLog \u2014 Record Successful Subscription                   \u2502\n                                                       \u25bc\n                              Format Error Message\n                                     \u2502\n                                     \u25bc\n                         Email \u2014 Notify Admin on Error\n                                     \u2502\n                                     \u25bc\n                              Log \u2014 Record Error\n```\n\n---\n\n## 6. Logique CRM \u2014 Segment / \u00c9tat / Intention\n\n### Qui est ce contact ?\n\n- Nouveau abonn\u00e9 issu d'un formulaire Fluent Forms\n- Segment d\u00e9termin\u00e9 par la valeur du champ `source`\n\n### O\u00f9 en est-il ?\n\n- \u00c9tat initial : `subscribed`, tag `onboarding-en-cours`\n- Apr\u00e8s compl\u00e9tion de la s\u00e9quence de bienvenue : retirer `onboarding-en-cours`, ajouter `bienvenue-compl\u00e9t\u00e9` (g\u00e9r\u00e9 dans FluentCRM directement, hors scope de ce workflow)\n\n### Quelle est son intention ?\n\n- D\u00e9termin\u00e9e par la valeur `source` du formulaire\n- Exemple : `formulaire-lms` \u2192 intention de d\u00e9couvrir les LMS WordPress \u2192 s\u00e9quence bienvenue peut \u00eatre d\u00e9clin\u00e9e par pilier si plusieurs s\u00e9quences existent\n\n### Quelle progression vise-t-on ?\n\n- Court terme : valider l'inscription, livrer la promesse du formulaire (lead magnet ou confirmation)\n- Moyen terme : amener le contact \u00e0 lire un article pilier, cliquer sur une ressource, r\u00e9pondre \u00e0 un email\n\n### R\u00e8gle anti-spam\n\n- La s\u00e9quence de bienvenue ne se d\u00e9clenche que pour les nouveaux contacts\n- Un contact existant est mis \u00e0 jour (statut, pr\u00e9nom) mais pas re-onboard\u00e9\n\n---\n\n## 7. Nommage des n\u0153uds (r\u00e9capitulatif)\n\n| N\u0153ud                                           | Type          | R\u00f4le                                |\n| ---------------------------------------------- | ------------- | ----------------------------------- |\n| `Fluent Forms \u2014 Webhook Trigger`               | Webhook       | R\u00e9ception soumission formulaire     |\n| `Validate \u2014 Check Required Fields`             | Code          | Validation email + pr\u00e9nom           |\n| `FluentCRM \u2014 Search Contact by Email`          | HTTP Request  | V\u00e9rification doublon                |\n| `Route \u2014 New or Existing Contact`              | IF            | Branchement cr\u00e9ation vs mise \u00e0 jour |\n| `FluentCRM \u2014 Create New Contact`               | HTTP Request  | Cr\u00e9ation du contact                 |\n| `FluentCRM \u2014 Update Existing Contact`          | HTTP Request  | Mise \u00e0 jour contact existant        |\n| `FluentCRM \u2014 Apply Tags to Contact`            | HTTP Request  | Attribution des tags                |\n| `Route \u2014 Only Start Sequence for New Contacts` | IF            | Protection anti-doublon s\u00e9quence    |\n| `FluentCRM \u2014 Start Welcome Sequence`           | HTTP Request  | D\u00e9marrage s\u00e9quence email            |\n| `Log \u2014 Record Successful Subscription`         | Google Sheets | Log succ\u00e8s                          |\n| `Log \u2014 Contact Updated, No Sequence`           | Google Sheets | Log contact existant                |\n| `Format Error Message`                         | Code          | Formatage message erreur lisible    |\n| `Email \u2014 Notify Admin on Error`                | Send Email    | Notification admin                  |\n| `Log \u2014 Record Error`                           | Google Sheets | Log erreur                          |\n\n---\n\n## 8. Checklist de validation avant mise en production\n\n- [ ] Fluent Forms configur\u00e9 pour envoyer en POST vers l'URL webhook n8n\n- [ ] Les IDs de liste FluentCRM et de s\u00e9quence sont renseign\u00e9s dans les n\u0153uds HTTP\n- [ ] Les tags cibles (`nouveau-abonn\u00e9`, `onboarding-en-cours`, `source-*`) existent dans FluentCRM\n- [ ] Auth Basic Auth test\u00e9e sur l'API FluentCRM (200 en retour sur un GET /subscribers)\n- [ ] Adresse email de notification d'erreur configur\u00e9e et test\u00e9e\n- [ ] Google Sheet de log cr\u00e9\u00e9 avec les bons onglets (Succ\u00e8s + Erreurs)\n- [ ] Test bout-en-bout avec un email de test (nouveau + doublon)\n- [ ] V\u00e9rifier que la s\u00e9quence ne se d\u00e9clenche pas deux fois sur un contact existant\n- [ ] Nommage de tous les n\u0153uds v\u00e9rifi\u00e9 (aucun \"Set1\", \"HTTP Request2\", etc.)\n\n---\n\n## 9. Points de maintenance\n\n- Si Fluent Forms change la structure du payload \u2192 mettre \u00e0 jour `Validate \u2014 Check Required Fields`\n- Si FluentCRM change son API REST \u2192 mettre \u00e0 jour les URLs dans les n\u0153uds HTTP\n- Les IDs de liste et s\u00e9quence sont des constantes : les documenter dans un n\u0153ud `Sticky Note` en t\u00eate de workflow\n- V\u00e9rifier le log d'erreurs hebdomadairement au d\u00e9but, puis mensuel si stable\n- Ajouter un nouveau tag `source-*` dans la table de correspondance \u00e0 chaque nouveau formulaire cr\u00e9\u00e9\n\n---\n\n_Con\u00e7u selon le cadre schoolswp-agent-constitution \u2014 automatisation n8n 9 dimensions + CRM segment/\u00e9tat/intention._\n"}], "grading": null}, {"id": "eval-2-n8n-workflow-without_skill", "prompt": "Je veux construire un workflow n8n qui : 1) capte les nouveaux abonn\u00e9s via Fluent Forms, 2) les ajoute dans FluentCRM avec les bons tags, 3) d\u00e9marre une s\u00e9quence email de bienvenue, 4) notifie par email si une erreur se produit. Comment je con\u00e7ois ce workflow proprement ?", "eval_id": 2, "outputs": [{"name": "workflow-design.md", "type": "text", "content": "# Workflow n8n \u2014 Abonn\u00e9s Fluent Forms \u2192 FluentCRM + S\u00e9quence de bienvenue\n\n## Vue d'ensemble\n\nCe workflow couvre 4 objectifs :\n\n1. Capter les soumissions Fluent Forms\n2. Cr\u00e9er/mettre \u00e0 jour le contact dans FluentCRM avec les bons tags\n3. D\u00e9marrer une s\u00e9quence email de bienvenue\n4. Notifier par email en cas d'erreur\n\n---\n\n## Architecture du workflow\n\n### N\u0153uds (dans l'ordre d'ex\u00e9cution)\n\n```\n[1] Webhook (Fluent Forms)\n       \u2193\n[2] Set \u2014 Normaliser les donn\u00e9es\n       \u2193\n[3] HTTP Request \u2014 Cr\u00e9er/MAJ contact FluentCRM\n       \u2193\n[4] IF \u2014 Contact cr\u00e9\u00e9 avec succ\u00e8s ?\n      \u2193 YES                  \u2193 NO\n[5] HTTP Request          [6] Send Email\n    Appliquer tags             (notification erreur)\n       \u2193\n[7] HTTP Request\n    D\u00e9marrer s\u00e9quence email\n       \u2193\n[8] IF \u2014 S\u00e9quence d\u00e9marr\u00e9e ?\n      \u2193 YES        \u2193 NO\n  (fin OK)      [9] Send Email\n                    (notification erreur)\n```\n\n---\n\n## D\u00e9tail n\u0153ud par n\u0153ud\n\n### N\u0153ud 1 \u2014 Webhook trigger\n\n**Type** : Webhook\n**typeVersion** : 1\n**M\u00e9thode** : POST\n**Path** : `/fluent-forms-subscriber`\n**Authentication** : Header Auth (cl\u00e9 secr\u00e8te partag\u00e9e avec Fluent Forms)\n\nConfiguration c\u00f4t\u00e9 Fluent Forms : dans les param\u00e8tres du formulaire, ajouter une int\u00e9gration \"Webhook\" pointant vers l'URL n8n avec le header `X-Webhook-Secret: <valeur>`.\n\nChamps attendus dans le payload (exemple) :\n\n```json\n{\n  \"first_name\": \"Marie\",\n  \"last_name\": \"Dupont\",\n  \"email\": \"marie@exemple.fr\",\n  \"form_id\": \"12\",\n  \"source\": \"landing-lms\"\n}\n```\n\n---\n\n### N\u0153ud 2 \u2014 Set (normalisation des donn\u00e9es)\n\n**Type** : Set\n**typeVersion** : 3.4\n\nObjectif : cr\u00e9er des variables propres et stables pour la suite du workflow, ind\u00e9pendamment des noms de champs Fluent Forms qui peuvent varier selon les formulaires.\n\nChamps \u00e0 d\u00e9finir :\n\n```\nemail       \u2192 {{ $json.email | trim | lower }}\nfirst_name  \u2192 {{ $json.first_name | trim }}\nlast_name   \u2192 {{ $json.last_name | trim }}\nfull_name   \u2192 {{ $json.first_name }} {{ $json.last_name }}\nform_id     \u2192 {{ $json.form_id }}\nsource      \u2192 {{ $json.source || 'fluent-forms' }}\ntags        \u2192 d\u00e9termin\u00e9s par logique (voir ci-dessous)\n```\n\n**Logique de tags** : utiliser un n\u0153ud Code (typeVersion 2) juste apr\u00e8s le Set si la logique est complexe, par exemple :\n\n```javascript\nconst formId = $input.first().json.form_id;\nconst tagMap = {\n  12: [\"prospect-lms\", \"top-of-funnel\"],\n  15: [\"prospect-crm\", \"top-of-funnel\"],\n  18: [\"webinaire\", \"cold-lead\"],\n};\nconst tags = tagMap[formId] || [\"subscriber-generique\"];\nreturn [{ json: { ...$input.first().json, tags } }];\n```\n\n---\n\n### N\u0153ud 3 \u2014 HTTP Request \u2014 Cr\u00e9er/MAJ contact FluentCRM\n\n**Type** : HTTP Request\n**typeVersion** : 4.2\n**M\u00e9thode** : POST\n**URL** : `https://votre-site.fr/wp-json/fluent-crm/v2/subscribers`\n\n**Authentication** : Basic Auth (user WP avec acc\u00e8s API FluentCRM, ou Application Password)\n\n**Body** (JSON) :\n\n```json\n{\n  \"email\": \"{{ $json.email }}\",\n  \"first_name\": \"{{ $json.first_name }}\",\n  \"last_name\": \"{{ $json.last_name }}\",\n  \"status\": \"subscribed\",\n  \"tags\": \"{{ $json.tags.join(',') }}\",\n  \"custom_values\": {\n    \"source\": \"{{ $json.source }}\",\n    \"form_id\": \"{{ $json.form_id }}\"\n  }\n}\n```\n\n**Options importantes** :\n\n- Activer \"Continue on Fail\" = true (pour capturer les erreurs dans le IF suivant)\n- Timeout : 10 secondes\n\n**Note** : L'API FluentCRM fait un upsert par d\u00e9faut \u2014 si le contact existe d\u00e9j\u00e0, il est mis \u00e0 jour. Les tags sont ajout\u00e9s sans \u00e9craser les existants si l'on passe par `tags` (pas `replace_tags`).\n\n---\n\n### N\u0153ud 4 \u2014 IF \u2014 Succ\u00e8s de la cr\u00e9ation\n\n**Type** : IF\n**typeVersion** : 2.2\n\nCondition :\n\n```\n$json.id  EXISTS  (le contact FluentCRM retourne un champ \"id\" si cr\u00e9\u00e9/mis \u00e0 jour)\n```\n\nOu en cas d'erreur HTTP :\n\n```\n$json.statusCode  NOT EQUAL  200\n```\n\nBranching :\n\n- **TRUE** (succ\u00e8s) \u2192 vers n\u0153ud 5\n- **FALSE** (erreur) \u2192 vers n\u0153ud 6 (notification erreur)\n\n---\n\n### N\u0153ud 5 \u2014 HTTP Request \u2014 Appliquer les tags\n\n**Type** : HTTP Request\n**typeVersion** : 4.2\n**M\u00e9thode** : POST\n**URL** : `https://votre-site.fr/wp-json/fluent-crm/v2/subscribers/{{ $json.id }}/tags`\n\n**Body** :\n\n```json\n{\n  \"tags\": \"{{ $('Set').first().json.tags.join(',') }}\"\n}\n```\n\n**Note** : Ce n\u0153ud est optionnel si le n\u0153ud 3 applique d\u00e9j\u00e0 les tags. Il devient utile si on veut appliquer des tags conditionnels suppl\u00e9mentaires (ex : tag \"doublon\" si le contact existait d\u00e9j\u00e0 avant cette soumission).\n\n---\n\n### N\u0153ud 6 \u2014 Send Email \u2014 Erreur cr\u00e9ation contact\n\n**Type** : Send Email (ou Gmail/SMTP selon config)\n**typeVersion** : 2\n\n**To** : `contact@michaelkihl.fr`\n**Subject** : `[schoolsWP] Erreur workflow abonn\u00e9 \u2014 FluentCRM`\n**Body** :\n\n```\nUn abonn\u00e9 n'a pas pu \u00eatre cr\u00e9\u00e9 dans FluentCRM.\n\nEmail soumis : {{ $('Set').first().json.email }}\nFormulaire : {{ $('Set').first().json.form_id }}\nErreur : {{ $json.message || 'R\u00e9ponse inattendue de l'API' }}\nTimestamp : {{ $now.toISO() }}\n\nV\u00e9rifier dans FluentCRM et relancer manuellement si n\u00e9cessaire.\n```\n\n---\n\n### N\u0153ud 7 \u2014 HTTP Request \u2014 D\u00e9marrer la s\u00e9quence email\n\n**Type** : HTTP Request\n**typeVersion** : 4.2\n**M\u00e9thode** : POST\n**URL** : `https://votre-site.fr/wp-json/fluent-crm/v2/sequences/{{ SEQUENCE_ID }}/subscribe`\n\nRemplacer `SEQUENCE_ID` par l'ID de la s\u00e9quence de bienvenue (visible dans FluentCRM > Email Sequences > URL de la s\u00e9quence).\n\n**Body** :\n\n```json\n{\n  \"subscriber_id\": \"{{ $('HTTP Request - FluentCRM').first().json.id }}\"\n}\n```\n\n**Continue on Fail** : true\n\n---\n\n### N\u0153ud 8 \u2014 IF \u2014 S\u00e9quence d\u00e9marr\u00e9e ?\n\n**Type** : IF\n**typeVersion** : 2.2\n\nCondition :\n\n```\n$json.success  EQUAL  true\n```\n\nOu :\n\n```\n$json.statusCode  EQUAL  200\n```\n\n- **TRUE** \u2192 fin du workflow (succ\u00e8s complet)\n- **FALSE** \u2192 n\u0153ud 9 (notification erreur s\u00e9quence)\n\n---\n\n### N\u0153ud 9 \u2014 Send Email \u2014 Erreur s\u00e9quence\n\n**Type** : Send Email\n**Subject** : `[schoolsWP] Erreur d\u00e9marrage s\u00e9quence email`\n**Body** :\n\n```\nLa s\u00e9quence de bienvenue n'a pas pu \u00eatre d\u00e9marr\u00e9e.\n\nContact : {{ $('Set').first().json.email }} (ID: {{ $('HTTP Request - FluentCRM').first().json.id }})\nErreur : {{ $json.message || 'R\u00e9ponse inattendue' }}\nTimestamp : {{ $now.toISO() }}\n\nLe contact est bien cr\u00e9\u00e9 dans FluentCRM \u2014 seul le d\u00e9marrage de s\u00e9quence a \u00e9chou\u00e9.\nRelancer manuellement depuis FluentCRM > Contacts > [email] > Sequences.\n```\n\n---\n\n## Configuration c\u00f4t\u00e9 Fluent Forms\n\nDans l'interface Fluent Forms :\n\n1. Aller dans **Int\u00e9grations** du formulaire concern\u00e9\n2. Ajouter une int\u00e9gration **Webhook**\n3. URL : `https://schoolswp-n8n.wp1.host/webhook/fluent-forms-subscriber`\n4. M\u00e9thode : POST\n5. Ajouter un header : `X-Webhook-Secret: <valeur_secr\u00e8te>`\n6. Format : JSON\n7. Mapper les champs du formulaire vers les noms attendus (`email`, `first_name`, etc.)\n\n---\n\n## Bonnes pratiques appliqu\u00e9es\n\n### Nommage des n\u0153uds\n\nUtiliser des noms explicites en fran\u00e7ais ou en anglais clair :\n\n- \"Webhook \u2014 Fluent Forms\"\n- \"Set \u2014 Normaliser donn\u00e9es\"\n- \"HTTP \u2014 Cr\u00e9er contact FluentCRM\"\n- \"IF \u2014 Contact OK ?\"\n- \"HTTP \u2014 Appliquer tags\"\n- \"HTTP \u2014 D\u00e9marrer s\u00e9quence bienvenue\"\n- \"Email \u2014 Erreur contact\"\n- \"Email \u2014 Erreur s\u00e9quence\"\n\n### Gestion des erreurs\n\n- Chaque n\u0153ud HTTP Request critique a `Continue on Fail` activ\u00e9\n- Les deux points de d\u00e9faillance (cr\u00e9ation contact, d\u00e9marrage s\u00e9quence) ont chacun leur branche d'erreur avec notification distincte\n- Le message d'erreur inclut syst\u00e9matiquement : email, timestamp, contexte de l'\u00e9chec\n\n### S\u00e9curit\u00e9\n\n- Ne jamais stocker les credentials dans les n\u0153uds directement \u2014 utiliser le gestionnaire de credentials n8n\n- Le webhook utilise un secret partag\u00e9 pour \u00e9viter les appels non authentifi\u00e9s\n- Les Application Passwords WordPress sont pr\u00e9f\u00e9r\u00e9s aux mots de passe WP directs\n\n### Idempotence\n\n- FluentCRM fait un upsert par d\u00e9faut : si l'email existe d\u00e9j\u00e0, le contact est mis \u00e0 jour sans doublon\n- La s\u00e9quence FluentCRM v\u00e9rifie nativement si l'abonn\u00e9 est d\u00e9j\u00e0 inscrit \u00e0 la s\u00e9quence\n\n### typeVersions compatibles (n8n 2.0.3)\n\n| N\u0153ud         | Version utilis\u00e9e |\n| ------------ | ---------------- |\n| Webhook      | 1                |\n| Set          | 3.4              |\n| Code         | 2                |\n| HTTP Request | 4.2              |\n| IF           | 2.2              |\n| Send Email   | 2                |\n\n---\n\n## Variante : tags par liste de formulaires\n\nSi les formulaires schoolsWP varient fr\u00e9quemment, externaliser la table de correspondance `form_id \u2192 tags` dans un Google Sheet (n\u0153ud googleSheets v4.5) en d\u00e9but de workflow :\n\n```\n[Webhook] \u2192 [Google Sheets \u2014 Lire table tags] \u2192 [Code \u2014 R\u00e9soudre tags] \u2192 [Set] \u2192 ...\n```\n\nCela permet de modifier les tags sans toucher au workflow.\n\n---\n\n## R\u00e9sum\u00e9 des credentials \u00e0 configurer dans n8n\n\n| Credential       | Type        | Usage                                |\n| ---------------- | ----------- | ------------------------------------ |\n| `FluentCRM API`  | Basic Auth  | HTTP Requests vers WP REST API       |\n| `Webhook Secret` | Header Auth | Authentifier les appels Fluent Forms |\n| `SMTP schoolsWP` | SMTP        | Envoi des emails d'erreur            |\n"}], "grading": null}, {"id": "eval-3-content-system-with_skill", "prompt": "Je veux cr\u00e9er un syst\u00e8me de contenu r\u00e9current pour schoolsWP. Chaque semaine : 1 article SEO, 1 newsletter FluentCRM, 1 post LinkedIn. Je veux que tout soit coh\u00e9rent et le moins chronophage possible. Comment je structure \u00e7a ?", "eval_id": 3, "outputs": [{"name": "content-system.md", "type": "text", "content": "# Syst\u00e8me de contenu r\u00e9current schoolsWP\n\n**Objectif** : produire chaque semaine 1 article SEO + 1 newsletter FluentCRM + 1 post LinkedIn, de mani\u00e8re coh\u00e9rente et peu chronophage.\n\n**Principe central** : un article = une source. Tout le reste en d\u00e9coule.\n\n---\n\n## Architecture du syst\u00e8me\n\n### Flux de r\u00e9utilisation : Article \u2192 Newsletter \u2192 LinkedIn\n\n```\n[Article SEO] (source principale)\n      \u2502\n      \u251c\u2500\u2192 [Newsletter FluentCRM] \u2014 angle \"praticien\" : ce que j'ai appris, comment l'appliquer\n      \u2502\n      \u2514\u2500\u2192 [Post LinkedIn] \u2014 angle \"preuve\" : r\u00e9sultat concret, chiffre, ou question ouverte\n```\n\nL'article est produit en premier. Les deux autres formats en extraient un angle diff\u00e9rent \u2014 sans r\u00e9\u00e9crire le fond, juste en changeant le prisme.\n\n---\n\n## Production vs Distribution\n\n### Production (une fois par semaine, id\u00e9alement lundi ou mardi)\n\n| Livrable      | R\u00f4le                               | Source                      | Temps estim\u00e9            |\n| ------------- | ---------------------------------- | --------------------------- | ----------------------- |\n| Article SEO   | Actif long terme, trafic organique | Brief + brain.bat           | 45-90 min (avec agents) |\n| Newsletter    | Relation abonn\u00e9s, nurturing        | Article de la semaine       | 20-30 min               |\n| Post LinkedIn | Visibilit\u00e9, acquisition            | Article ou r\u00e9sultat concret | 10-15 min               |\n\n**Temps total production** : 1h30 \u00e0 2h30 par semaine (avec automatisation partielle).\n\n### Distribution (programm\u00e9e, ne n\u00e9cessite pas de pr\u00e9sence active)\n\n| Canal          | Outil           | Moment             | Action                      |\n| -------------- | --------------- | ------------------ | --------------------------- |\n| Blog schoolsWP | WordPress       | Mercredi matin     | Publication programm\u00e9e      |\n| Newsletter     | FluentCRM       | Jeudi matin        | Envoi automatique ou manuel |\n| LinkedIn       | Buffer / manuel | Vendredi 9h ou 18h | Publication programm\u00e9e      |\n\n---\n\n## Logique de r\u00e9utilisation par format\n\n### Article SEO \u2014 la pi\u00e8ce centrale\n\nStructure cible :\n\n- Intention claire d\u00e8s le titre (informationnelle / comparative / d\u00e9cisionnelle)\n- Introduction : probl\u00e8me + promesse de r\u00e9ponse\n- Corps : \u00e9tapes, cas concrets, comparatifs si besoin\n- Conclusion : r\u00e9cap + CTA vers ressource ou formation\n\nProduit avec : `brain.bat --keyword \"...\" --intent d\u00e9cisionnelle --pillar LMS`\n\nCe que l'article doit contenir pour alimenter les formats suivants :\n\n- Au moins un enseignement praticien (\"j'ai test\u00e9 X, r\u00e9sultat : Y\")\n- Au moins un chiffre ou exemple concret\n- Une conclusion avec prise de position claire\n\n### Newsletter FluentCRM \u2014 angle \"praticien\"\n\nLongueur cible : 200-350 mots. Format : texte, pas de mise en page lourde.\n\nStructure :\n\n1. **Accroche** (1-2 phrases) \u2014 le probl\u00e8me que l'article r\u00e9sout\n2. **Enseignement principal** (3-5 phrases) \u2014 ce que le lecteur doit retenir\n3. **Extrait cibl\u00e9** \u2014 un passage de l'article (insight, erreur \u00e0 \u00e9viter, m\u00e9thode)\n4. **CTA unique** \u2014 \"Lire l'article complet\" \u2192 lien\n\nSegments FluentCRM \u00e0 cibler :\n\n- Liste principale schoolsWP (tous abonn\u00e9s actifs)\n- Sous-segment si le sujet est tr\u00e8s sp\u00e9cifique (ex : LMS uniquement)\n\nR\u00e8gle : ne jamais r\u00e9\u00e9crire l'article dans la newsletter. Extraire une id\u00e9e et donner envie de lire.\n\n### Post LinkedIn \u2014 angle \"preuve ou question\"\n\nLongueur cible : 150-300 mots. Format : lignes courtes, pas de bullet points excessifs.\n\nDeux angles possibles (choisir selon la semaine) :\n\n**Option A \u2014 Preuve** :\n\n- Ligne d'accroche : r\u00e9sultat ou observation concr\u00e8te\n- 3-5 lignes : contexte + ce qui a chang\u00e9\n- Fin : question ouverte ou lien vers l'article\n\n**Option B \u2014 Question** :\n\n- Ligne d'accroche : question provocante li\u00e9e au sujet\n- 3-5 lignes : ce que j'observe / ma r\u00e9ponse\n- Fin : appel \u00e0 partager un avis + lien article\n\nR\u00e8gle : le post LinkedIn ne vend rien. Il cr\u00e9e de la curiosit\u00e9 ou de la conversation.\n\n---\n\n## Calendrier type \u2014 semaine standard\n\n| Jour     | Action                                                               | Dur\u00e9e               |\n| -------- | -------------------------------------------------------------------- | ------------------- |\n| Lundi    | Choisir le sujet (backlog ou pilier en cours), lancer brain.bat      | 15 min + g\u00e9n\u00e9ration |\n| Mardi    | Relire l'article, corriger, programmer sur WordPress                 | 30-45 min           |\n| Mercredi | R\u00e9diger newsletter depuis l'article, programmer FluentCRM pour jeudi | 20-30 min           |\n| Jeudi    | Newsletter envoy\u00e9e automatiquement \u2014 r\u00e9diger post LinkedIn           | 10-15 min           |\n| Vendredi | Post LinkedIn publi\u00e9 (manuel ou Buffer)                              | 5 min               |\n\n---\n\n## Backlog de sujets \u2014 comment le maintenir\n\nTenir une liste simple (Notion ou fichier Markdown) avec :\n\n```\n[sujet] | [pilier] | [intention] | [statut : id\u00e9e / en cours / publi\u00e9]\n```\n\nR\u00e8gle de priorisation : choisir le sujet qui correspond au pilier le moins couvert dans le cocon actuel. Utiliser `agents.roi_editorial_plan.cli` une fois par mois pour re-prioriser.\n\n---\n\n## Automatisation possible (n8n)\n\n### Niveau 1 \u2014 Notification de d\u00e9marrage (quick win)\n\n**Trigger** : Webhook ou Schedule (lundi 8h)\n**Action** : envoyer un message Telegram ou email avec le sujet de la semaine depuis le backlog\n\n```\nscheduleTrigger (lundi 8h)\n  \u2192 Read Backlog Sheet (Google Sheets)\n  \u2192 Filter [statut = \"id\u00e9e\"] \u2192 [0] premier r\u00e9sultat\n  \u2192 Send Telegram: \"Sujet de la semaine : [titre] | Pilier : [pilier]\"\n```\n\n### Niveau 2 \u2014 Pipeline article \u2192 newsletter (semi-automatis\u00e9)\n\n**Trigger** : webhook d\u00e9clench\u00e9 apr\u00e8s publication WordPress\n**Action** : cr\u00e9er un draft FluentCRM avec l'intro + lien article\n\n```\nWebhook (WordPress post published)\n  \u2192 Extract [title, excerpt, url, category]\n  \u2192 OpenAI node: \"R\u00e9dige une newsletter de 250 mots \u00e0 partir de cet article...\"\n  \u2192 Create FluentCRM Campaign Draft\n  \u2192 Send Telegram: \"Draft newsletter cr\u00e9\u00e9, \u00e0 valider\"\n```\n\nPoint de contr\u00f4le humain obligatoire : valider le draft avant envoi.\n\n### Niveau 3 \u2014 Draft LinkedIn (optionnel)\n\nM\u00eame d\u00e9clencheur que niveau 2, branche parall\u00e8le :\n\n```\n  \u2192 OpenAI node: \"R\u00e9dige un post LinkedIn angle preuve, 200 mots...\"\n  \u2192 Save to Google Sheets (colonne \"LinkedIn draft cette semaine\")\n```\n\nR\u00e8gle : les drafts IA sont des points de d\u00e9part. Toujours relire et ajuster le ton avant publication.\n\n---\n\n## Coh\u00e9rence entre les 3 formats\n\nPour que la semaine soit coh\u00e9rente :\n\n- **Un seul sujet par semaine** \u2014 pas de dispersion\n- **Un seul CTA dominant** \u2014 article \u2192 newsletter \u2192 LinkedIn pointent vers la m\u00eame page ou ressource\n- **M\u00eame angle pilier** \u2014 ne pas traiter LMS sur l'article et CRM sur LinkedIn\n- **Ton constant** : direct, p\u00e9dagogique, bas\u00e9 sur l'exp\u00e9rience \u2014 pas de teasing creux\n\n---\n\n## Indicateurs \u00e0 suivre (mensuel, 15 min)\n\n| Indicateur                       | Source             | Seuil d'alerte                              |\n| -------------------------------- | ------------------ | ------------------------------------------- |\n| Articles publi\u00e9s dans le mois    | WordPress          | < 3 = retard                                |\n| Taux d'ouverture newsletter      | FluentCRM          | < 35% = probl\u00e8me sujet ou liste             |\n| Impressions LinkedIn             | LinkedIn Analytics | tendance \u00e0 surveiller, pas un objectif fixe |\n| Articles avec Publish Score < 70 | publish_ready.cli  | \u00e0 r\u00e9viser avant publication                 |\n\n---\n\n## Actifs r\u00e9utilisables issus de ce syst\u00e8me\n\n1. **Template brief semaine** \u2014 5 champs : sujet, pilier, intention, CTA cible, angle LinkedIn\n2. **Prompt newsletter** \u2014 extracteur de l'insight principal d'un article (r\u00e9utilisable dans n8n ou manuellement)\n3. **Prompt post LinkedIn** \u2014 deux variantes (preuve / question) \u00e0 copier-coller\n4. **Workflow n8n** \u2014 pipeline article \u2192 draft newsletter \u2192 draft LinkedIn (niveau 2+3)\n5. **Backlog Google Sheets** \u2014 colonnes : sujet / pilier / intention / statut / date publication / Publish Score / taux ouverture\n\n---\n\n## Ce qu'il ne faut pas faire\n\n- Produire la newsletter sans avoir l'article finalis\u00e9\n- Publier 3 sujets diff\u00e9rents sur 3 canaux la m\u00eame semaine\n- Automatiser sans checkpoint humain sur les drafts IA\n- Cr\u00e9er un calendrier \u00e9ditorial sur 3 mois sans backlog vivant\n- Optimiser le post LinkedIn avant d'avoir l'article index\u00e9\n"}], "grading": null}, {"id": "eval-3-content-system-without_skill", "prompt": "Je veux cr\u00e9er un syst\u00e8me de contenu r\u00e9current pour schoolsWP. Chaque semaine : 1 article SEO, 1 newsletter FluentCRM, 1 post LinkedIn. Je veux que tout soit coh\u00e9rent et le moins chronophage possible. Comment je structure \u00e7a ?", "eval_id": 3, "outputs": [{"name": "content-system.md", "type": "text", "content": "# Syst\u00e8me de contenu r\u00e9current \u2014 schoolsWP\n\n## Principe directeur : 1 id\u00e9e, 3 formats\n\nChaque semaine part d'un seul sujet central. L'article SEO est la source primaire. La newsletter et le post LinkedIn en sont des d\u00e9riv\u00e9s. Tu \u00e9cris une fois, tu distribues trois fois.\n\n---\n\n## Structure hebdomadaire\n\n### Lundi \u2014 Choix du sujet (15 min)\n\nS\u00e9lectionne le sujet de la semaine depuis ton plan \u00e9ditorial ROI (`agents.roi_editorial_plan`).\n\nCrit\u00e8res de s\u00e9lection (dans l'ordre) :\n\n1. Mot-cl\u00e9 avec volume + intent claire (d\u00e9cisionnelle > informationnelle)\n2. Coh\u00e9rence avec le pilier en cours (LMS, CRM, Freelance\u2026)\n3. Lien avec une question r\u00e9elle re\u00e7ue (email, commentaire, DM LinkedIn)\n\nDocumente dans un fichier `weekly-brief.md` :\n\n```\n- Sujet : [titre provisoire]\n- Mot-cl\u00e9 cible : [keyword]\n- Intent : [d\u00e9cisionnelle / informationnelle / comparative]\n- Pilier : [LMS / CRM / Freelance / WP Business]\n- Angle : [probl\u00e8me sp\u00e9cifique que \u00e7a r\u00e9sout pour le lecteur]\n- Accroche LinkedIn : [1 phrase tension ou question]\n- Fait ou chiffre cl\u00e9 \u00e0 mettre en avant : [...]\n```\n\n---\n\n### Mardi\u2013Mercredi \u2014 Article SEO (production principale)\n\n**Outil** : `brain.bat` ou `brain-lite.bat` selon profondeur souhait\u00e9e.\n\n```bash\nbrain-lite.bat --keyword \"...\" --intent d\u00e9cisionnelle --pillar lms\n```\n\nR\u00e9sultat attendu : article \u22651500 mots, structur\u00e9 H2/H3, avec intro orient\u00e9e intent, CTA utile, disclosure si affiliation.\n\n**R\u00e8gle branding** : v\u00e9rifier les 5 crit\u00e8res Brand QA avant publication (Ton / Clart\u00e9 / Valeurs / Interdits / Vocabulaire). Mots interdits : disruptif, scalable, hack, en un clic, il suffit de.\n\n**Checklist avant mise en ligne** :\n\n- [ ] Publish Score \u2265 80 (`agents.publish_ready`)\n- [ ] Titre H1 contient le mot-cl\u00e9\n- [ ] Meta description r\u00e9dig\u00e9e (\u2264155 caract\u00e8res)\n- [ ] Maillage interne vers 1\u20132 articles du m\u00eame pilier\n- [ ] CTA en bas d'article (newsletter ou ressource)\n\n---\n\n### Jeudi \u2014 Newsletter FluentCRM (d\u00e9riv\u00e9 de l'article)\n\n**Format** : email court (250\u2013400 mots), pas un r\u00e9sum\u00e9 \u2014 une extension ou un angle diff\u00e9rent.\n\n**Structure type** :\n\n```\nObjet : [Question ou tension \u2014 ex: \"Tu penses que TutorLMS est trop cher ?\"]\n\n[Accroche 2-3 lignes \u2014 contexte ou observation terrain]\n\n[Corps : 1 insight ou conseil concret que l'article d\u00e9veloppe mais ne donne pas tout]\n\n[1 paragraphe \"sur schoolsWP\" \u2014 ce que tu as fait/test\u00e9/observ\u00e9 personnellement]\n\n[CTA unique : lien vers l'article + 1 phrase d'invitation]\n\n\u2014\n[Signature courte]\n```\n\n**R\u00e8gles FluentCRM** :\n\n- Segment : liste principale ou segment pilier si tu as segment\u00e9 par int\u00e9r\u00eat\n- Heure d'envoi : jeudi 9h ou 17h (teste sur ta liste, retiens le meilleur)\n- Objet A/B si ta liste d\u00e9passe 500 contacts\n- Pas de CTA multiple \u2014 un seul lien principal\n\n**Temps estim\u00e9** : 30\u201345 min en partant du draft article d\u00e9j\u00e0 \u00e9crit.\n\n---\n\n### Vendredi \u2014 Post LinkedIn (d\u00e9riv\u00e9 de l'article)\n\n**Format** : post texte natif, 800\u20131500 caract\u00e8res, sans lien dans le corps du post.\n\n**Structure type** :\n\n```\n[Accroche ligne 1 \u2014 fait contre-intuitif, question ou tension]\n[Ligne 2 \u2014 d\u00e9veloppe ou cr\u00e9e la curiosit\u00e9]\n\n[Corps \u2014 3 \u00e0 5 points courts, ou mini-storytelling terrain]\n[Chaque point = 1-2 lignes max]\n\n[Conclusion \u2014 ton verdict ou recommandation directe]\n\n[CTA discret : \"L'article complet en commentaire\" ou \"Je d\u00e9taille \u00e7a dans la newsletter\"]\n```\n\n**R\u00e8gles LinkedIn schoolsWP** :\n\n- Tutoiement syst\u00e9matique\n- Premier mot de chaque bloc = fort (verbe d'action ou chiffre)\n- Pas de hashtags en bloc final \u2014 int\u00e9gr\u00e9s naturellement si utilis\u00e9s (max 2-3)\n- Lien en commentaire \u00e9pingl\u00e9, pas dans le post\n- Publier vendredi 8h\u201310h ou mardi 9h (selon ta fen\u00eatre d'audience)\n\n**Temps estim\u00e9** : 20\u201330 min.\n\n---\n\n## Vue calendrier type\n\n| Jour      | Action                               | Dur\u00e9e estim\u00e9e |\n| --------- | ------------------------------------ | ------------- |\n| Lundi     | Choix sujet + brief semaine          | 15 min        |\n| Mardi     | Lancement `brain.bat` + review       | 45 min        |\n| Mercredi  | Finalisation article + mise en ligne | 30 min        |\n| Jeudi     | R\u00e9daction + envoi newsletter         | 45 min        |\n| Vendredi  | R\u00e9daction + publication LinkedIn     | 30 min        |\n| **Total** |                                      | **~2h45/sem** |\n\n---\n\n## Coh\u00e9rence entre les 3 formats\n\n| \u00c9l\u00e9ment        | Article SEO         | Newsletter           | LinkedIn             |\n| -------------- | ------------------- | -------------------- | -------------------- |\n| Sujet          | Complet, structur\u00e9  | 1 angle ou insight   | 1 tension ou verdict |\n| Longueur       | 1500\u20133000 mots      | 250\u2013400 mots         | 800\u20131500 caract\u00e8res  |\n| Ton            | P\u00e9dagogique/direct  | Proche/personnel     | Direct/terrain       |\n| CTA            | Ressource ou outil  | Lien article         | Lien en commentaire  |\n| Intent lecteur | Cherche \u00e0 apprendre | Veut aller plus loin | D\u00e9couvre le sujet    |\n\nLa r\u00e8gle : **jamais le m\u00eame contenu copi\u00e9-coll\u00e9**. L'article prouve l'expertise, la newsletter cr\u00e9e la relation, LinkedIn attire de nouveaux lecteurs.\n\n---\n\n## Outillage recommand\u00e9\n\n**G\u00e9n\u00e9ration article** :\n\n```bash\n# Depuis projects/schoolswp/\nbrain-lite.bat --keyword \"[mot-cl\u00e9]\" --intent [intent] --pillar [pilier]\n# ou version compl\u00e8te avec SERP + NER :\nbrain.bat --keyword \"[mot-cl\u00e9]\" --intent [intent] --pillar [pilier] --include-ner\n```\n\n**Audit avant publication** :\n\n```bash\n.venv/Scripts/python -m agents.publish_ready.cli --file content/articles/[fichier].md --keyword \"[mot-cl\u00e9]\"\n```\n\n**Suivi pilier** :\n\n```bash\n.venv/Scripts/python -m agents.pillar_authority.cli --all\n```\n\n---\n\n## Syst\u00e8me de planification (suggestion minimaliste)\n\nUn simple fichier `content/planning/weekly-log.md` avec une entr\u00e9e par semaine :\n\n```markdown\n## Semaine 12 \u2014 2026\n\n- Sujet : TutorLMS vs LearnDash en 2026\n- Mot-cl\u00e9 : tutor lms vs learndash\n- Pilier : LMS\n- Article : content/articles/lms/tutor-vs-learndash.md\n- Publish Score : 84/100\n- Newsletter envoy\u00e9e : jeudi 20 mars, 9h\n- LinkedIn publi\u00e9 : vendredi 21 mars, 8h30\n- Notes : fort engagement LinkedIn (87 r\u00e9actions) \u2014 relancer en cluster\n```\n\nPas d'outil externe n\u00e9cessaire pour d\u00e9marrer. Notion ou Google Sheets si tu veux visualiser sur plusieurs semaines.\n\n---\n\n## R\u00e8gles de maintenance\n\n- **Mensuel** : relire les 4 articles publi\u00e9s, identifier le meilleur performer, l'enrichir (maillage, donn\u00e9es) \u2014 1h.\n- **Trimestriel** : relancer `agents.roi_editorial_plan` pour reprioriser le planning selon les r\u00e9sultats r\u00e9els.\n- **Si tu rates une semaine** : pas de rattrapage double. Tu d\u00e9cales juste d'une semaine. La r\u00e9gularit\u00e9 sur 3 mois vaut plus que l'intensit\u00e9 sur 2 semaines.\n"}], "grading": null}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "schoolswp-agent-constitution", "skill_path": "<path/to/skill>", "executor_model": "<model-name>", "analyzer_model": "<model-name>", "timestamp": "2026-03-13T21:59:19Z", "evals_run": [1, 2, 3], "runs_per_configuration": 3}, "runs": [{"eval_id": 1, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 128.8, "tokens": 27470, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Analyse multi-dimensionnelle : touche au moins SEO/contenu ET conversion (pas seulement un angle)", "passed": true, "evidence": "4 r\u00f4les distincts : Analyste SEO (intention trafic), Strat\u00e8ge contenu (promesse), Expert conversion (d\u00e9fauts CTAs), Architecte WordPress (page destination)"}, {"text": "Plan d'action s\u00e9quenc\u00e9 et prioris\u00e9, pas une simple liste de conseils vagues", "passed": true, "evidence": "Matrice de priorisation avec 10 actions class\u00e9es par Impact/Effort/D\u00e9lai/Priorit\u00e9 + 3 horizons temporels (quick wins 48h, structurant 2-4 sem, long terme 1-3 mois)"}, {"text": "Identifie des causes racines possibles (pas juste des sympt\u00f4mes)", "passed": true, "evidence": "Section 2 explicite 3 causes racines : Cause A (d\u00e9salignement intention/offre), Cause B (CTA non contextualis\u00e9), Cause C (absence de preuve)"}, {"text": "Au moins 3 actions concr\u00e8tes et actionnables sp\u00e9cifiques \u00e0 schoolsWP/TutorLMS", "passed": true, "evidence": "QW2 : r\u00e9\u00e9crire CTAs avec exemple TutorLMS concret ; S3 : lead magnet + FluentCRM ; LT2 : s\u00e9quence FluentCRM automatis\u00e9e tag 'int\u00e9ress\u00e9 LMS'"}, {"text": "Distingue les quick wins des actions long terme", "passed": true, "evidence": "Trois cat\u00e9gories nomm\u00e9es : 'Quick wins \u2014 \u00e0 faire en moins de 48h' (QW1-3), 'Actions structurantes \u2014 2-4 semaines' (S1-4), 'Actions long terme \u2014 1 \u00e0 3 mois' (LT1-3)"}], "notes": []}, {"eval_id": 2, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 126.9, "tokens": 29830, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Structure le workflow par \u00e9tapes logiques (trigger, validation, logique, action, erreur)", "passed": true, "evidence": "8 blocs s\u00e9quentiels : Trigger \u2192 Validate \u2192 Search Contact \u2192 Route (IF) \u2192 Create/Update \u2192 Apply Tags \u2192 Start Sequence \u2192 Log, avec branche erreur centrale"}, {"text": "Mentionne explicitement la gestion des doublons ou la v\u00e9rification d'existence", "passed": true, "evidence": "BLOC 3 d\u00e9di\u00e9 'V\u00e9rification doublon' via GET FluentCRM + Route IF 'New or Existing Contact' + BLOC 6 'Only Start Sequence for New Contacts'"}, {"text": "D\u00e9crit la branche erreur avec notification email", "passed": true, "evidence": "BLOC 8 complet : Format Error Message (Code JS) \u2192 Email \u2014 Notify Admin on Error \u2192 Log \u2014 Record Error ; email vers contact@michaelkihl.fr avec sujet et corps d\u00e9taill\u00e9s"}, {"text": "Recommande des noms de nodes descriptifs (pas Set1, HTTP Request2)", "passed": true, "evidence": "Tableau section 7 liste 14 n\u0153uds avec noms explicites : 'Fluent Forms \u2014 Webhook Trigger', 'Validate \u2014 Check Required Fields', checklist finale mentionne 'aucun Set1, HTTP Request2'"}, {"text": "Aborde la logique CRM : tags, segment, s\u00e9quence d\u00e9marr\u00e9e selon \u00e9tat du contact", "passed": true, "evidence": "Section 6 d\u00e9di\u00e9e 'Logique CRM \u2014 Segment/\u00c9tat/Intention' : table source\u2192tag\u2192segment, \u00e9tat 'onboarding-en-cours', s\u00e9quence uniquement pour nouveaux contacts"}], "notes": []}, {"eval_id": 3, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 114.0, "tokens": 25779, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Propose une logique de r\u00e9utilisation : article \u2192 newsletter \u2192 LinkedIn (ou autre ordre logique)", "passed": true, "evidence": "Diagramme ASCII explicite : [Article SEO] \u2192 [Newsletter FluentCRM] angle praticien ET \u2192 [Post LinkedIn] angle preuve ; 'un article = une source, tout le reste en d\u00e9coule'"}, {"text": "Identifie les \u00e9tapes de production avec un ordre logique", "passed": true, "evidence": "Calendrier type jour par jour : Lundi (sujet+brain.bat) \u2192 Mardi (relecture+prog WP) \u2192 Mercredi (newsletter+FluentCRM) \u2192 Jeudi (LinkedIn) \u2192 Vendredi (publication)"}, {"text": "Mentionne ou sugg\u00e8re une automatisation possible (n8n, FluentCRM, autre)", "passed": true, "evidence": "3 niveaux d'automatisation n8n : Niveau 1 (scheduleTrigger lundi 8h \u2192 Telegram), Niveau 2 (webhook WP published \u2192 OpenAI \u2192 FluentCRM draft), Niveau 3 (draft LinkedIn \u2192 Google Sheets)"}, {"text": "Distingue la phase de production de la phase de distribution", "passed": true, "evidence": "Tableau 'Production vs Distribution' : production (lundi-mardi, temps estim\u00e9) vs distribution (outils, moments programm\u00e9s sans pr\u00e9sence active)"}, {"text": "R\u00e9sultat pr\u00e9sent\u00e9 comme un syst\u00e8me r\u00e9utilisable, pas juste un conseil hebdomadaire", "passed": true, "evidence": "Section 'Actifs r\u00e9utilisables' liste 5 \u00e9l\u00e9ments : template brief, prompt newsletter, prompt LinkedIn, workflow n8n, backlog Google Sheets \u2014 plus checklist avant publication et r\u00e8gles de maintenance"}], "notes": []}, {"eval_id": 1, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 67.6, "tokens": 19712, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Analyse multi-dimensionnelle : touche au moins SEO/contenu ET conversion (pas seulement un angle)", "passed": true, "evidence": "Diagnostic couvre : d\u00e9salignement intent SEO, CTAs g\u00e9n\u00e9riques (contenu), positionnement offre dans tunnel, placement CTAs, preuve sociale, capture email"}, {"text": "Plan d'action s\u00e9quenc\u00e9 et prioris\u00e9, pas une simple liste de conseils vagues", "passed": true, "evidence": "5 priorit\u00e9s num\u00e9rot\u00e9es avec tableau intent\u2192CTA recommand\u00e9, s\u00e9quence FluentCRM J+0 \u00e0 J+10, m\u00e9triques \u00e0 suivre avec objectifs chiffr\u00e9s"}, {"text": "Identifie des causes racines possibles (pas juste des sympt\u00f4mes)", "passed": true, "evidence": "Cause 1 : visiteurs en phase informationnelle pas d\u00e9cisionnelle ; Cause 3 : saut trop important entre article et page de vente payante"}, {"text": "Au moins 3 actions concr\u00e8tes et actionnables sp\u00e9cifiques \u00e0 schoolsWP/TutorLMS", "passed": true, "evidence": "Lead magnet 'checklist LMS WordPress 7 \u00e9tapes' ; s\u00e9quence FluentCRM 6 emails J+0 \u00e0 J+10 ; CTA couleur #00D400 \u00e0 mi-article ; audit page formation TutorLMS"}, {"text": "Distingue les quick wins des actions long terme", "passed": true, "evidence": "5 priorit\u00e9s ordonn\u00e9es par ordre d'impact court terme (Priorit\u00e9 1 = aligner CTA) vs Priorit\u00e9 5 = audit page destination ; notion de nurturing avant CTA commercial"}], "notes": []}, {"eval_id": 2, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.8, "passed": 4, "failed": 1, "total": 5, "time_seconds": 106.8, "tokens": 23735, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Structure le workflow par \u00e9tapes logiques (trigger, validation, logique, action, erreur)", "passed": true, "evidence": "9 n\u0153uds s\u00e9quentiels : Webhook \u2192 Set (normalisation) \u2192 HTTP (cr\u00e9er/MAJ) \u2192 IF (succ\u00e8s?) \u2192 HTTP (tags) \u2192 HTTP (s\u00e9quence) \u2192 IF (s\u00e9quence OK?) avec branches erreur Send Email"}, {"text": "Mentionne explicitement la gestion des doublons ou la v\u00e9rification d'existence", "passed": true, "evidence": "Section 'Idempotence' : 'FluentCRM fait un upsert par d\u00e9faut \u2014 si l'email existe d\u00e9j\u00e0, le contact est mis \u00e0 jour sans doublon' ; 'La s\u00e9quence FluentCRM v\u00e9rifie nativement si l'abonn\u00e9 est d\u00e9j\u00e0 inscrit'"}, {"text": "D\u00e9crit la branche erreur avec notification email", "passed": true, "evidence": "N\u0153ud 6 (erreur cr\u00e9ation contact) et N\u0153ud 9 (erreur s\u00e9quence) sont deux Send Email distincts avec corps incluant email, timestamp, contexte et instructions de relance manuelle"}, {"text": "Recommande des noms de nodes descriptifs (pas Set1, HTTP Request2)", "passed": true, "evidence": "Section 'Nommage des n\u0153uds' liste 8 noms explicites : 'Webhook \u2014 Fluent Forms', 'HTTP \u2014 Cr\u00e9er contact FluentCRM', 'IF \u2014 Contact OK ?'"}, {"text": "Aborde la logique CRM : tags, segment, s\u00e9quence d\u00e9marr\u00e9e selon \u00e9tat du contact", "passed": false, "evidence": "Tags d\u00e9finis par form_id (table tagMap), mais pas de logique de segment explicite ni de condition sur l'\u00e9tat du contact pour d\u00e9marrer la s\u00e9quence ; s\u00e9quence d\u00e9marr\u00e9e sur tous les contacts sans v\u00e9rification \u00e9tat"}], "notes": []}, {"eval_id": 3, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 102.7, "tokens": 20957, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Propose une logique de r\u00e9utilisation : article \u2192 newsletter \u2192 LinkedIn (ou autre ordre logique)", "passed": true, "evidence": "'Principe directeur : 1 id\u00e9e, 3 formats' \u2014 article SEO source primaire, newsletter et LinkedIn en sont des d\u00e9riv\u00e9s ; tableau de coh\u00e9rence comparant les 3 formats"}, {"text": "Identifie les \u00e9tapes de production avec un ordre logique", "passed": true, "evidence": "Calendrier type : Lundi (choix sujet 15min) \u2192 Mardi-Mercredi (article brain.bat 45min) \u2192 Jeudi (newsletter 45min) \u2192 Vendredi (LinkedIn 30min) avec dur\u00e9es estim\u00e9es"}, {"text": "Mentionne ou sugg\u00e8re une automatisation possible (n8n, FluentCRM, autre)", "passed": true, "evidence": "Section 'Outillage recommand\u00e9' : brain.bat, brain-lite.bat, publish_ready.cli, pillar_authority.cli ; section 'Syst\u00e8me de planification' avec weekly-log.md et Notion/Google Sheets"}, {"text": "Distingue la phase de production de la phase de distribution", "passed": true, "evidence": "Production = Mardi-Mercredi (article) + Jeudi (newsletter) + Vendredi (LinkedIn) ; distribution = FluentCRM 'jeudi 9h ou 17h', LinkedIn 'vendredi 8h-10h ou mardi 9h'"}, {"text": "R\u00e9sultat pr\u00e9sent\u00e9 comme un syst\u00e8me r\u00e9utilisable, pas juste un conseil hebdomadaire", "passed": true, "evidence": "Template weekly-brief.md avec 7 champs r\u00e9utilisables chaque semaine, weekly-log.md pour tra\u00e7abilit\u00e9, r\u00e8gles de maintenance mensuelle et trimestrielle, r\u00e8gle 'si tu rates une semaine'"}], "notes": []}], "run_summary": {"with_skill": {"pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0}, "time_seconds": {"mean": 123.2333, "stddev": 8.0525, "min": 114.0, "max": 128.8}, "tokens": {"mean": 27693.0, "stddev": 2034.686, "min": 25779, "max": 29830}}, "without_skill": {"pass_rate": {"mean": 0.9333, "stddev": 0.1155, "min": 0.8, "max": 1.0}, "time_seconds": {"mean": 92.3667, "stddev": 21.5463, "min": 67.6, "max": 106.8}, "tokens": {"mean": 21468.0, "stddev": 2059.6051, "min": 19712, "max": 23735}}, "delta": {"pass_rate": "+0.07", "time_seconds": "+30.9", "tokens": "+6225"}}, "notes": []}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

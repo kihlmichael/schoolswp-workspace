@@ -1,0 +1,14 @@
+Template d'activation (RUN MODE)
+
+<task>
+  <email_promo>[COLLER ICI L'EMAIL PROMOTIONNEL]</email_promo>
+  <brand>schoolsWP</brand>
+  <author>Michael KIHL</author>
+  <audience>freelances WordPress</audience>
+  <constraints>
+    <anti_invention>true</anti_invention>
+    <cta_affilie>true</cta_affilie>
+    <single_response>true</single_response>
+  </constraints>
+  <output_format>sections strictes en 11 blocs</output_format>
+</task>

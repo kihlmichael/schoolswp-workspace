@@ -1,0 +1,111 @@
+{
+  "$schema": "Schema JSON final du pipeline — SOP-08",
+  "pipeline_metadata": {
+    "campaign_id": "camp_001",
+    "campaign_name": "LinkedIn Post Prospecting - Outbound Automation",
+    "run_id": "run_2026_03_20_001",
+    "run_date": "2026-03-20",
+    "source": "linkedin_post_url",
+    "pipeline_version": "V4"
+  },
+  "source_post": {
+    "post_url": "https://www.linkedin.com/posts/johndoe_outbound-automation-activity-123456789",
+    "post_text": "Comment transformer les commentaires LinkedIn en pipeline de leads qualifies ? Voici notre methode en 8 etapes...",
+    "post_author_name": "John Doe",
+    "post_author_profile_url": "https://www.linkedin.com/in/johndoe",
+    "post_date": "2026-03-15",
+    "reaction_count": 234,
+    "comment_count": 47
+  },
+  "summary_stats": {
+    "total_comments_raw": 47,
+    "total_comments_cleaned": 42,
+    "total_raw_leads": 42,
+    "total_enriched_leads": 38,
+    "qualified_count": 12,
+    "review_count": 8,
+    "rejected_count": 18,
+    "avg_score_qualified": 79,
+    "max_score": 90,
+    "messages_generated_count": 12,
+    "hunter_candidates_count": 5,
+    "hunter_verified_count": 4
+  },
+  "qualified_leads": [
+    {
+      "lead_id": "lead_001",
+      "full_name": "Jane Doe",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "linkedin_profile_url": "https://www.linkedin.com/in/janedoe",
+      "headline": "Head of Growth at Acme SaaS",
+      "current_role": "Head of Growth",
+      "seniority_estimated": "head",
+      "current_company": "Acme SaaS",
+      "company_domain": "acme-saas.com",
+      "industry": "SaaS / B2B Tech",
+      "location": "Paris, France",
+      "company_size": "51-200",
+      "comment_text": "Interessant, on cherche justement a structurer notre outbound LinkedIn. Tu utilises quoi comme stack ?",
+      "intent_level": "high_intent",
+      "intent_signals": ["cherche solution", "question operationnelle"],
+      "qualification_status": "qualified",
+      "qualification_reason": "Role cible, secteur prioritaire, intention forte.",
+      "final_score": 90,
+      "recommended_action": "contact_now",
+      "email": "jane@acme-saas.com",
+      "email_confidence": 92,
+      "email_usable": true
+    }
+  ],
+  "review_leads": [
+    {
+      "lead_id": "lead_010",
+      "full_name": "Pierre Leroy",
+      "linkedin_profile_url": "https://www.linkedin.com/in/pierreleroy",
+      "current_role": "Consultant SEO",
+      "current_company": "Independant",
+      "qualification_status": "review",
+      "qualification_reason": "Role potentiellement pertinent mais secteur non confirme, enrichissement partiel.",
+      "final_score": 52,
+      "recommended_action": "manual_review"
+    }
+  ],
+  "rejected_leads": [
+    {
+      "lead_id": "lead_002",
+      "full_name": "Marc Dupont",
+      "qualification_status": "rejected",
+      "qualification_reason": "Commentaire sans signal, profil hors ICP.",
+      "final_score": 18,
+      "recommended_action": "ignore"
+    }
+  ],
+  "generated_messages": [
+    {
+      "lead_id": "lead_001",
+      "lead_name": "Jane Doe",
+      "personalization_reason": "A commente sur la structuration outbound LinkedIn, occupe un role Growth en SaaS B2B.",
+      "message_angle": "useful_resource",
+      "first_message_soft": "Bonjour Jane, j'ai vu ton commentaire sur la structuration de l'outbound LinkedIn. On travaille justement sur ce type de pipeline. Je peux te partager une approche simple si utile.",
+      "first_message_direct": "Bonjour Jane, ton commentaire sur l'outbound m'a interpelle. J'ai une methode concrete pour transformer les interactions LinkedIn en pipeline qualifie. Partante pour que je te montre le framework ?",
+      "first_message_expert": "Bonjour Jane, ton point sur l'outbound LinkedIn touche un vrai sujet : passer du signal social au lead exploitable sans bruit. On a modelise ce process. Je peux t'envoyer le schema si pertinent."
+    }
+  ],
+  "optional_email_verification": [
+    {
+      "lead_id": "lead_001",
+      "hunter_priority": "high",
+      "email_lookup_status": "success",
+      "email": "jane@acme-saas.com",
+      "email_confidence": 92,
+      "email_source_type": "pattern_match",
+      "email_usable": true
+    }
+  ],
+  "warnings": [
+    "5 commentaires supprimes (vides ou doublons)",
+    "4 profils avec enrichissement partiel (completude < 0.5)",
+    "1 lead avec URL profil manquante — matching par nom"
+  ]
+}

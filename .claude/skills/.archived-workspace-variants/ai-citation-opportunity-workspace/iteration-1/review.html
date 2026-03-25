@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "ai-citation-opportunity", "runs": [{"id": "eval-lms-default-with_skill", "prompt": "Genere-moi des requetes conversationnelles IA pour le pilier LMS WordPress. Je veux identifier les questions que mes lecteurs posent a ChatGPT sur les formations en ligne avec WordPress.", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "## Denominateurs communs\n\n1. Choisir le bon LMS WordPress selon son budget et son niveau technique\n   - Sous-cat : budget inferieur a 500 EUR | zero competence technique (debutant complet)\n2. Creer et structurer une formation en ligne rentable avec WordPress\n   - Sous-cat : premier lancement sans audience | optimisation d'une formation existante qui ne vend pas\n3. Automatiser la gestion des eleves et le suivi pedagogique sans coder\n   - Sous-cat : formateur solo (tout gerer seul) | petite equipe avec process manuels a eliminer\n4. Monetiser une expertise avec un LMS WordPress (modele economique)\n   - Sous-cat : vente de formations unitaires vs abonnement | completer avec du coaching ou du consulting\n5. Integrer le LMS avec le reste de la stack WordPress (CRM, paiement, email)\n   - Sous-cat : connecter LMS + CRM + email marketing | gerer les paiements et acces sans plugin supplementaire\n\n## Requetes conversationnelles AI Search\n\n1. **Requete** : Quel LMS WordPress choisir entre TutorLMS, LearnDash et LifterLMS si j'ai moins de 300 EUR de budget annuel et que je n'ai jamais installe de plugin moi-meme ?\n   **Intention** : comparaison\n   **Format conseille** : comparatif + tableau\n\n2. **Requete** : Comment structurer ma premiere formation en ligne sur WordPress pour qu'elle se vende, sachant que je n'ai pas d'audience et que je veux la lancer en moins de 30 jours ?\n   **Intention** : how-to\n   **Format conseille** : guide pas-a-pas\n\n3. **Requete** : Quelle est la checklist complete a verifier avant de mettre en vente une formation sur TutorLMS quand on est formateur independant et qu'on gere tout seul ?\n   **Intention** : checklist\n   **Format conseille** : checklist\n\n4. **Requete** : Est-ce que mon setup WordPress avec TutorLMS et WooCommerce suffit pour vendre des formations a plus de 200 eleves simultanement, ou est-ce que je dois changer d'hebergement ?\n   **Intention** : diagnostic\n   **Format conseille** : FAQ structuree\n\n5. **Requete** : Dois-je vendre mes formations WordPress a l'unite ou passer en abonnement mensuel si j'ai moins de 500 abonnes email et un catalogue de 3 formations ?\n   **Intention** : decision\n   **Format conseille** : template\n\n6. **Requete** : Comment connecter TutorLMS avec FluentCRM pour envoyer automatiquement une sequence email quand un eleve termine un module, sans utiliser Zapier ni ecrire de code ?\n   **Intention** : how-to\n   **Format conseille** : guide pas-a-pas\n\n7. **Requete** : Quels sont les 5 criteres mesurables pour savoir si ma formation WordPress est bien structuree pour l'apprentissage en ligne, avant de depenser en publicite ?\n   **Intention** : diagnostic\n   **Format conseille** : checklist\n\n8. **Requete** : TutorLMS gratuit vs TutorLMS Pro : est-ce que la version gratuite suffit pour lancer une premiere formation avec quiz et certificat, ou je perds des fonctions critiques ?\n   **Intention** : comparaison\n   **Format conseille** : comparatif + tableau\n\n9. **Requete** : Quelle stack WordPress complete recommandes-tu pour un formateur qui veut vendre des cours en ligne, gerer ses leads et automatiser ses emails, le tout pour moins de 50 EUR par mois ?\n   **Intention** : decision\n   **Format conseille** : stack recommandee\n\n10. **Requete** : Comment automatiser l'envoi d'un certificat de completion et d'une demande d'avis Google quand un eleve finit ma formation sur WordPress, sans savoir coder et avec un budget de zero ?\n    **Intention** : how-to\n    **Format conseille** : guide pas-a-pas\n\n## Angles de preuve\n\n1. **Test reel** : \"J'ai installe TutorLMS, FluentCRM et Fluent Forms sur un WordPress vierge en 2h \u00e2\u20ac\u201d voici le cout total, les blocages rencontres et le temps reel pour chaque etape.\"\n2. **Critere mesurable** : \"J'ai compare TutorLMS, LearnDash et LifterLMS sur 5 criteres concrets : prix annuel, facilite d'installation (temps chronometre), nombre d'integrations natives, qualite du support en francais, et fonctionnalites incluses sans addon.\"\n3. **Mini etude de cas** : \"Voici comment un formateur WordPress avec 200 abonnes email a genere ses 15 premieres ventes de formation en 45 jours, en utilisant uniquement TutorLMS + FluentCRM + une sequence de 5 emails.\"\n"}], "grading": {"expectations": [{"text": "Contains exactly 10 numbered queries", "passed": true, "evidence": "Found 10 queries (expected 10)"}, {"text": "At least 5 intention types represented", "passed": true, "evidence": "Found 5 intentions: ['checklist', 'comparaison', 'decision', 'diagnostic', 'how-to']"}, {"text": "At least 3 different content formats used", "passed": true, "evidence": "Found 6 formats: ['FAQ structuree', 'checklist', 'comparatif + tableau', 'guide pas-a-pas', 'stack recommandee', 'template']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": true, "evidence": "10/10 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": true, "evidence": "Found 5 denominators with sous-categories"}, {"text": "3 proof angles present in dedicated section", "passed": true, "evidence": "Section present: True, items found: 3"}, {"text": "3 main sections present (Denominateurs, Requetes, Angles)", "passed": true, "evidence": "Denom: True, Queries: True, Proof: True"}, {"text": "All queries are natural language (>10 words each)", "passed": true, "evidence": "10/10 queries have 10+ words"}], "summary": "8/8 assertions passed"}}, {"id": "eval-lms-default-without_skill", "prompt": "Genere-moi des requetes conversationnelles IA pour le pilier LMS WordPress. Je veux identifier les questions que mes lecteurs posent a ChatGPT sur les formations en ligne avec WordPress.", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "# Requetes conversationnelles IA \u00e2\u20ac\u201d Pilier LMS WordPress\n\n> Objectif : identifier les questions que les lecteurs posent a ChatGPT, Perplexity, Claude et autres IA conversationnelles sur les formations en ligne avec WordPress. Ces requetes representent des opportunites de citation IA pour schoolsWP.\n\n---\n\n## 1. Choix et comparaison de LMS WordPress\n\n### Questions generales de choix\n\n- Quel est le meilleur plugin LMS pour WordPress en 2026 ?\n- Je veux creer une formation en ligne sur WordPress, par ou je commence ?\n- Quels plugins WordPress permettent de vendre des formations en ligne ?\n- Est-ce que WordPress est adapte pour creer une plateforme de formation ?\n- WordPress ou Teachable : lequel choisir pour vendre des cours en ligne ?\n- Vaut-il mieux utiliser WordPress ou une plateforme SaaS comme Podia pour mes formations ?\n- Je suis formateur independant, est-ce que WordPress est le bon choix pour heberger mes formations ?\n- Quelle est la difference entre un LMS WordPress et une plateforme comme Udemy ?\n- Est-ce que je peux creer un site de formation serieux avec WordPress sans savoir coder ?\n- Quel budget prevoir pour lancer une plateforme de formation sur WordPress ?\n\n### Comparatifs directs entre plugins\n\n- TutorLMS ou LearnDash : lequel choisir en 2026 ?\n- Quelles sont les differences entre LearnDash et LifterLMS ?\n- TutorLMS vs LearnDash vs LifterLMS : comparatif complet\n- LearnDash est-il toujours le meilleur LMS WordPress ou y a-t-il de meilleures alternatives ?\n- TutorLMS Pro vaut-il le prix par rapport a la version gratuite ?\n- Sensei LMS de WooCommerce est-il une bonne alternative a LearnDash ?\n- MasterStudy LMS vs TutorLMS : lequel est le plus complet ?\n- Quel LMS WordPress a le meilleur rapport qualite-prix ?\n- Quel plugin LMS WordPress est le plus facile a utiliser pour un debutant ?\n- LearnPress est-il suffisant pour une petite formation ou faut-il passer a TutorLMS ?\n\n### Criteres de selection specifiques\n\n- Quel LMS WordPress gere le mieux les quiz et evaluations ?\n- Quel plugin LMS WordPress est le plus compatible avec WooCommerce ?\n- Quel LMS WordPress permet de creer des certificats automatiquement ?\n- Quel plugin LMS WordPress offre le meilleur suivi de progression des etudiants ?\n- Quel LMS WordPress fonctionne bien avec Elementor ?\n- Existe-t-il un LMS WordPress qui supporte le drip content (contenu progressif) ?\n- Quel LMS WordPress permet de creer des parcours de formation personnalises ?\n- Quel plugin LMS est le plus performant en termes de vitesse de chargement ?\n- Quel LMS WordPress gere le mieux les groupes et les classes ?\n- Quel LMS WordPress propose la meilleure experience mobile pour les apprenants ?\n\n---\n\n## 2. Installation et configuration technique\n\n### Mise en place initiale\n\n- Comment installer TutorLMS sur WordPress etape par etape ?\n- Comment configurer LearnDash pour ma premiere formation ?\n- Quels sont les reglages essentiels apres l'installation d'un LMS WordPress ?\n- Comment creer ma premiere formation avec TutorLMS ?\n- Quel hebergement choisir pour un site WordPress avec un LMS ?\n- Mon hebergement actuel est-il suffisant pour un LMS WordPress ou faut-il upgrader ?\n- Comment configurer les emails automatiques dans TutorLMS ?\n- Comment parametrer les inscriptions etudiants dans LearnDash ?\n- Faut-il un theme specifique pour utiliser un LMS WordPress ?\n- Quels plugins complementaires installer avec un LMS WordPress ?\n\n### Structure des cours\n\n- Comment organiser mes cours en modules et lecons dans WordPress ?\n- Comment creer un parcours de formation structure avec TutorLMS ?\n- Comment ajouter des prerequis entre les cours dans LearnDash ?\n- Comment configurer le drip content pour debloquer les lecons progressivement ?\n- Comment creer des quiz avec correction automatique dans WordPress ?\n- Comment ajouter des videos a mes lecons dans TutorLMS ?\n- Comment integrer des contenus interactifs (H5P) dans mon LMS WordPress ?\n- Comment creer des devoirs et exercices pratiques dans LearnDash ?\n- Comment structurer un cours gratuit d'appel et un cours premium payant sur le meme site ?\n- Comment importer mes formations existantes (PDF, videos) dans TutorLMS ?\n\n### Problemes techniques courants\n\n- Mon LMS WordPress est lent, comment l'optimiser ?\n- TutorLMS entre en conflit avec mon theme, comment resoudre ca ?\n- Les videos de mes cours ne se chargent pas correctement, que faire ?\n- Comment corriger les erreurs 404 sur les pages de cours WordPress ?\n- La progression des etudiants ne s'enregistre pas dans LearnDash, pourquoi ?\n- Comment resoudre les problemes de compatibilite entre WooCommerce et mon LMS ?\n- Les emails de notification ne partent pas dans TutorLMS, comment corriger ca ?\n- Comment migrer mes formations de LearnDash vers TutorLMS ?\n- Comment sauvegarder correctement un site WordPress avec un LMS ?\n- Mon LMS WordPress consomme trop de ressources serveur, que faire ?\n\n---\n\n## 3. Monetisation et vente de formations\n\n### Modeles economiques\n\n- Comment vendre des formations en ligne avec WordPress ?\n- Quel modele choisir : vente a l'unite, abonnement ou pack de formations ?\n- Comment mettre en place un abonnement mensuel pour acceder a mes formations WordPress ?\n- Est-ce rentable de vendre des formations sur son propre site WordPress ?\n- Comment fixer le prix de ma formation en ligne ?\n- Quelle strategie de prix adopter quand on lance sa premiere formation ?\n- Comment proposer un modele freemium (cours gratuit + cours payant) avec TutorLMS ?\n- Comment creer des bundles de formations sur WordPress ?\n- Faut-il proposer un paiement en plusieurs fois pour ses formations ?\n- Comment creer une offre de lancement pour ma formation WordPress ?\n\n### Configuration des paiements\n\n- Comment configurer Stripe avec TutorLMS pour recevoir les paiements ?\n- Comment vendre des formations avec WooCommerce et LearnDash ?\n- Comment mettre en place des paiements recurrents pour un abonnement formation sur WordPress ?\n- Quel processeur de paiement choisir pour vendre des formations en ligne en France ?\n- Comment gerer la TVA sur les formations en ligne vendues via WordPress ?\n- Comment proposer PayPal et carte bancaire sur mon LMS WordPress ?\n- Comment creer des coupons de reduction pour mes formations WordPress ?\n- Comment gerer les remboursements sur WooCommerce pour les formations ?\n- Comment configurer les factures automatiques pour mes ventes de formation ?\n- Comment integrer un systeme d'affiliation pour que d'autres vendent ma formation ?\n\n### Tunnels de vente\n\n- Comment creer un tunnel de vente pour ma formation WordPress ?\n- Comment creer une page de vente efficace pour une formation en ligne sur WordPress ?\n- Quel plugin WordPress utiliser pour creer une landing page de formation ?\n- Comment creer une sequence email qui vend ma formation automatiquement ?\n- Comment utiliser un lead magnet pour attirer des prospects vers ma formation ?\n- Comment creer un webinaire automatise qui vend ma formation sur WordPress ?\n- Comment faire un lancement de formation (methode Jeff Walker) avec WordPress ?\n- Comment optimiser le taux de conversion de ma page de vente de formation ?\n- Comment creer une page de checkout optimisee pour vendre ma formation ?\n- Comment reduire les abandons de panier pour les formations sur WooCommerce ?\n\n---\n\n## 4. Marketing et acquisition d'etudiants\n\n### SEO pour les formations\n\n- Comment optimiser le SEO d'un site de formation WordPress ?\n- Quelles pages creer pour que mes formations soient trouvees sur Google ?\n- Comment rediger du contenu SEO autour de mes formations en ligne ?\n- Comment utiliser un blog pour attirer du trafic vers mes formations WordPress ?\n- Quels mots-cles cibler pour vendre des formations en ligne sur WordPress ?\n- Comment creer un cocon semantique autour de ma thematique de formation ?\n- Comment utiliser les donnees structurees (schema.org) pour les cours en ligne ?\n- Faut-il creer des articles de blog pour chaque module de formation ?\n- Comment apparaitre dans les resultats enrichis Google pour les formations ?\n- Comment optimiser les pages de cours pour le SEO avec Rank Math ?\n\n### Reseaux sociaux et contenu\n\n- Comment promouvoir ma formation WordPress sur LinkedIn ?\n- Quelle strategie de contenu adopter sur YouTube pour vendre des formations ?\n- Comment utiliser Instagram pour vendre une formation en ligne ?\n- Comment transformer mes articles de blog en teasers pour ma formation ?\n- Faut-il creer une chaine YouTube pour promouvoir mes formations WordPress ?\n- Comment utiliser les temoignages d'eleves pour promouvoir ma formation ?\n- Comment creer du contenu gratuit qui donne envie d'acheter ma formation ?\n- Comment utiliser les reseaux sociaux sans passer des heures a publier ?\n- Quel type de contenu publier pour attirer des prospects qualifies pour mes formations ?\n- Comment creer une communaute autour de ma formation en ligne ?\n\n### Email marketing\n\n- Comment configurer une sequence de bienvenue pour les inscrits a ma formation ?\n- Comment relancer les prospects qui n'ont pas achete ma formation ?\n- Quel outil d'email marketing utiliser avec un LMS WordPress ?\n- Comment segmenter ma liste email en fonction des formations achetees ?\n- Comment automatiser les emails de suivi pour mes etudiants ?\n- FluentCRM est-il adapte pour gerer le marketing d'un site de formation ?\n- Comment creer une newsletter qui fait vendre mes formations ?\n- Comment utiliser le lead scoring pour identifier les prospects prets a acheter ?\n- Combien d'emails envoyer avant de proposer une formation payante ?\n- Comment ecrire des emails de vente qui ne font pas \"spammy\" ?\n\n---\n\n## 5. Experience apprenant et pedagogie\n\n### Design pedagogique\n\n- Comment structurer une formation en ligne pour qu'elle soit vraiment efficace ?\n- Quelle duree ideale pour un module de formation en ligne ?\n- Comment creer des quiz qui aident vraiment a l'apprentissage ?\n- Comment garder les etudiants motives tout au long d'une formation en ligne ?\n- Quel format choisir pour mes lecons : video, texte, audio, ou mix ?\n- Comment creer une formation en ligne engageante et pas ennuyeuse ?\n- Comment integrer des exercices pratiques dans une formation WordPress ?\n- Faut-il des lecons courtes (microlearning) ou des modules longs ?\n- Comment rendre ma formation accessible aux debutants sans ennuyer les avances ?\n- Comment mesurer l'efficacite pedagogique de ma formation en ligne ?\n\n### Gamification et engagement\n\n- Comment ajouter de la gamification a mes cours WordPress ?\n- Comment utiliser les certificats pour motiver les apprenants ?\n- Comment mettre en place un systeme de badges dans TutorLMS ?\n- Comment creer un classement entre etudiants dans mon LMS WordPress ?\n- Comment ajouter des barres de progression pour chaque cours ?\n- Comment envoyer des rappels automatiques aux etudiants inactifs ?\n- Quels plugins WordPress ajoutent des fonctionnalites de gamification a un LMS ?\n- Comment creer un parcours d'apprentissage personnalise en fonction du niveau ?\n- Comment utiliser les forums de discussion pour creer de l'engagement dans ma formation ?\n- Comment integrer BuddyPress pour creer une communaute d'apprenants sur WordPress ?\n\n### Support et accompagnement\n\n- Comment gerer le support des etudiants de ma formation en ligne ?\n- Faut-il proposer du coaching en plus de la formation en ligne ?\n- Comment creer un espace de discussion pour les apprenants sur WordPress ?\n- Comment organiser des sessions de questions-reponses en direct pour mes etudiants ?\n- Quel outil utiliser pour le support etudiant sur un LMS WordPress ?\n- Comment automatiser les reponses aux questions frequentes des etudiants ?\n- Comment gerer les demandes de remboursement de formation ?\n- Comment collecter les feedbacks des etudiants pour ameliorer ma formation ?\n- Comment creer un systeme de mentorat dans ma plateforme de formation WordPress ?\n- Comment gerer un volume croissant d'etudiants sans y passer tout mon temps ?\n\n---\n\n## 6. Automatisation et integration\n\n### Automatisation des processus\n\n- Comment automatiser l'inscription aux cours apres achat sur WordPress ?\n- Comment envoyer automatiquement les acces a la formation apres paiement ?\n- Comment automatiser les emails de bienvenue et d'onboarding des etudiants ?\n- Comment creer des automatisations avec FluentCRM et TutorLMS ?\n- Comment envoyer un certificat automatiquement quand un etudiant termine un cours ?\n- Comment automatiser les rappels pour les etudiants qui n'ont pas termine leur formation ?\n- Comment synchroniser les donnees entre mon LMS et mon CRM ?\n- Comment automatiser la creation de comptes etudiants sur WordPress ?\n- Peut-on connecter n8n a TutorLMS pour automatiser des workflows ?\n- Comment automatiser le suivi de progression et les rapports pour les formateurs ?\n\n### Integrations avec d'autres outils\n\n- Comment connecter TutorLMS a Zoom pour les sessions en direct ?\n- Comment integrer Google Meet avec mon LMS WordPress ?\n- Comment connecter mon LMS WordPress a Zapier ?\n- Comment integrer un outil de visioconference dans mes cours WordPress ?\n- Comment connecter TutorLMS a un groupe Telegram ou Discord ?\n- Comment synchroniser mes formations WordPress avec Google Sheets ?\n- Comment integrer un outil de sondage ou feedback dans mes cours WordPress ?\n- Comment connecter mon LMS WordPress a Notion pour le suivi des etudiants ?\n- Peut-on integrer un chatbot IA dans un LMS WordPress pour aider les etudiants ?\n- Comment connecter mon LMS a Google Analytics pour suivre les performances ?\n\n### Automatisation marketing\n\n- Comment creer un tunnel automatise : lead magnet \u00e2\u2020\u2019 sequence email \u00e2\u2020\u2019 vente formation ?\n- Comment declencher des emails differents selon la progression de l'etudiant dans le cours ?\n- Comment automatiser les relances pour les paniers abandonnes de formation ?\n- Comment creer des upsells automatiques apres l'achat d'une formation ?\n- Comment segmenter automatiquement les contacts selon les cours achetes avec FluentCRM ?\n- Comment automatiser le processus de collecte de temoignages apres une formation ?\n- Comment mettre en place un programme d'affiliation automatise pour mes formations ?\n- Comment automatiser les publications sur les reseaux sociaux quand je lance une formation ?\n- Comment creer un pipeline de vente automatise pour mes formations avec WordPress ?\n- Comment utiliser le scoring des leads pour automatiser les offres de formation ?\n\n---\n\n## 7. Aspects juridiques et administratifs\n\n### Conformite et reglementaire\n\n- Quelles sont les obligations legales pour vendre des formations en ligne en France ?\n- Faut-il etre certifie Qualiopi pour vendre des formations sur WordPress ?\n- Comment gerer les CGV pour la vente de formations en ligne ?\n- Quel statut juridique choisir pour vendre des formations en ligne ?\n- Comment se mettre en conformite RGPD pour un site de formation WordPress ?\n- Faut-il declarer ses revenus de formation en ligne differemment ?\n- Comment gerer les droits d'auteur sur les contenus de formation ?\n- Quelles mentions legales mettre sur un site de formation WordPress ?\n- Comment proteger ses contenus de formation contre le piratage ?\n- Faut-il une assurance professionnelle pour vendre des formations en ligne ?\n\n### Gestion administrative\n\n- Comment generer des attestations de formation automatiquement avec WordPress ?\n- Comment gerer la facturation de mes formations en ligne ?\n- Comment suivre les revenus de mes formations dans un tableau de bord ?\n- Comment creer des rapports de suivi des etudiants pour mes clients entreprise ?\n- Comment gerer les acces multi-utilisateurs (equipe, entreprise) dans mon LMS ?\n- Comment mettre en place des licences de groupe pour les formations WordPress ?\n- Faut-il un expert-comptable specialise pour les formations en ligne ?\n- Comment gerer les impots sur les ventes internationales de formation ?\n- Comment creer des contrats de formation pour les entreprises clientes ?\n- Comment parametrer les relances automatiques pour les abonnements expires ?\n\n---\n\n## 8. Cas d'usage specifiques\n\n### Formateurs independants et coachs\n\n- Comment creer une academie en ligne avec WordPress quand on est coach ?\n- Quel est le meilleur setup WordPress pour un formateur solo ?\n- Comment lancer ma premiere formation en ligne avec un petit budget ?\n- Comment vendre une formation a 500 euros sur son site WordPress ?\n- Est-ce que je peux vivre de mes formations en ligne avec WordPress ?\n- Comment passer d'un accompagnement individuel a une formation en ligne ?\n- Comment creer une offre premium (formation + coaching) sur WordPress ?\n- Comment gerer mon temps entre creation de contenu et accompagnement des eleves ?\n- Comment scaler mon activite de formateur sans travailler plus ?\n- Quel revenu attendre de la vente de formations en ligne la premiere annee ?\n\n### Entreprises et organismes de formation\n\n- Comment creer un portail de formation interne avec WordPress ?\n- Comment deployer un LMS WordPress pour former les employes de mon entreprise ?\n- Comment gerer des parcours de formation differents par departement ?\n- Comment creer un systeme de formation client avec WordPress ?\n- WordPress est-il adapte pour un organisme de formation certifie Qualiopi ?\n- Comment gerer les inscriptions de groupe et les licences entreprise sur WordPress ?\n- Comment creer des rapports de completion pour les RH ?\n- Comment integrer un LMS WordPress avec un SIRH existant ?\n- Comment securiser les contenus de formation pour eviter le partage non autorise ?\n- Comment creer un espace de formation marque blanc pour mes clients ?\n\n### Niches specifiques\n\n- Comment creer une formation en ligne pour enseigner un instrument de musique ?\n- Quel LMS WordPress pour une ecole de langues en ligne ?\n- Comment vendre des formations WordPress sur la photographie ?\n- Comment creer un site de formation au code / developpement web avec WordPress ?\n- Comment monter une formation fitness / bien-etre en ligne sur WordPress ?\n- Comment creer une plateforme de formation culinaire avec WordPress ?\n- Quel LMS choisir pour des formations de preparation aux concours ?\n- Comment creer un site de formation professionnelle continue sur WordPress ?\n- Comment monter une plateforme de tutorat en ligne avec WordPress ?\n- Comment creer un site de formation en marketing digital avec WordPress ?\n\n---\n\n## 9. IA et formations en ligne\n\n### Creation de contenu avec l'IA\n\n- Comment utiliser ChatGPT pour creer le contenu de ma formation en ligne ?\n- Peut-on utiliser l'IA pour generer des quiz et exercices pour un LMS WordPress ?\n- Comment utiliser l'IA pour rediger les descriptions de cours sur WordPress ?\n- L'IA peut-elle m'aider a structurer le plan de ma formation ?\n- Comment utiliser Claude pour ameliorer les textes de ma formation WordPress ?\n- Comment generer des sous-titres et transcriptions automatiques pour mes videos de formation ?\n- Est-il ethique de creer une formation entierement avec l'IA ?\n- Comment combiner IA et expertise personnelle pour creer des formations de qualite ?\n- Comment utiliser l'IA pour personnaliser l'experience d'apprentissage de chaque etudiant ?\n- Quels outils IA utiliser pour accelerer la production de ma formation WordPress ?\n\n### IA et experience apprenant\n\n- Comment integrer un assistant IA dans ma plateforme de formation WordPress ?\n- Existe-t-il des plugins WordPress qui ajoutent un chatbot IA aux cours ?\n- Comment l'IA peut-elle adapter le parcours d'apprentissage au niveau de l'etudiant ?\n- Comment utiliser l'IA pour corriger automatiquement les devoirs des etudiants ?\n- Est-ce que l'IA va remplacer les formateurs en ligne ?\n- Comment differencier ma formation face aux contenus gratuits generes par l'IA ?\n- Comment utiliser l'IA pour fournir du feedback personnalise aux apprenants ?\n- Quels sont les plugins WordPress qui utilisent l'IA pour les LMS ?\n- Comment creer des recommandations de cours personnalisees avec l'IA sur WordPress ?\n- Comment l'IA change-t-elle le marche de la formation en ligne en 2026 ?\n\n---\n\n## 10. Scaling et optimisation\n\n### Performance et croissance\n\n- Comment gerer 1000+ etudiants sur un LMS WordPress sans problemes de performance ?\n- Quel hebergement choisir quand mon site de formation WordPress grossit ?\n- Comment optimiser la vitesse de mon LMS WordPress avec beaucoup de contenus video ?\n- Comment utiliser un CDN pour accelerer la diffusion des videos de formation ?\n- Faut-il passer a un hebergement dedie quand on a beaucoup d'etudiants ?\n- Comment optimiser la base de donnees WordPress quand on a des milliers d'etudiants ?\n- Comment gerer les pics de connexion pendant un lancement de formation ?\n- Vaut-il mieux heberger les videos sur Vimeo, YouTube ou sur son propre serveur ?\n- Comment mettre en cache un site WordPress avec un LMS sans casser les sessions etudiants ?\n- Comment surveiller les performances de mon LMS WordPress en temps reel ?\n\n### Diversification et expansion\n\n- Comment creer plusieurs formations sur le meme site WordPress ?\n- Comment lancer une marketplace de formations sur WordPress ?\n- Comment permettre a d'autres formateurs de vendre sur ma plateforme WordPress ?\n- Comment creer un programme d'affiliation pour mes formations ?\n- Comment internationaliser mon site de formation WordPress ?\n- Comment proposer mes formations en plusieurs langues avec WordPress ?\n- Comment diversifier mes revenus au-dela de la vente de formations ?\n- Comment creer un membership qui combine contenu et formation ?\n- Comment lancer un mastermind payant en complement de mes formations WordPress ?\n- Comment vendre des formations en B2B avec WordPress ?\n\n### Analyse et optimisation\n\n- Comment suivre les metriques cles de mon LMS WordPress ?\n- Quels KPI suivre pour mesurer le succes de ma formation en ligne ?\n- Comment analyser le taux de completion de mes formations sur WordPress ?\n- Comment identifier les lecons ou les etudiants decrochent ?\n- Comment utiliser les donnees du LMS pour ameliorer mes formations ?\n- Comment mettre en place des tests A/B sur les pages de vente de formation ?\n- Comment calculer le ROI de ma plateforme de formation WordPress ?\n- Comment mesurer la satisfaction des etudiants de maniere automatisee ?\n- Comment utiliser Google Analytics avec un LMS WordPress ?\n- Quels rapports generer pour piloter mon activite de formation en ligne ?\n\n---\n\n## 11. Migration et transition\n\n### Migration vers WordPress\n\n- Comment migrer mes formations de Teachable vers WordPress ?\n- Comment passer de Podia a un LMS WordPress sans perdre mes etudiants ?\n- Comment migrer de Thinkific a WordPress ?\n- Comment transferer mes etudiants et leur progression vers un nouveau LMS WordPress ?\n- Comment migrer mes contenus de formation sans perdre le SEO ?\n- Combien de temps prend une migration de plateforme SaaS vers WordPress ?\n- Quels sont les risques de migrer ses formations vers WordPress ?\n- Comment preparer mes etudiants a une migration de plateforme de formation ?\n- Comment rediriger les anciennes URL de formation apres une migration vers WordPress ?\n- Faut-il migrer d'un coup ou progressivement vers WordPress ?\n\n### Migration entre plugins WordPress\n\n- Comment migrer de LearnDash vers TutorLMS ?\n- Comment passer de LifterLMS a TutorLMS sans perdre les donnees ?\n- Existe-t-il des outils de migration entre LMS WordPress ?\n- Comment exporter les donnees etudiants d'un LMS WordPress a un autre ?\n- Comment migrer les quiz et evaluations entre deux plugins LMS ?\n- Comment conserver les certificats deja delivres apres un changement de plugin LMS ?\n- Quels sont les pieges a eviter lors d'une migration entre plugins LMS ?\n- Comment tester un nouveau LMS en parallele avant de migrer completement ?\n- Comment migrer les abonnements en cours vers un nouveau plugin LMS ?\n- Faut-il reconstruire ses cours from scratch ou essayer de migrer automatiquement ?\n\n---\n\n## Methodologie d'utilisation de ces requetes\n\n### Priorisation\n\nClasser chaque requete selon trois criteres :\n\n1. **Volume potentiel** \u00e2\u20ac\u201d Combien de personnes posent cette question aux IA ?\n2. **Intent business** \u00e2\u20ac\u201d La requete mene-t-elle vers un achat, un outil, une decision ?\n3. **Capacite de reponse schoolsWP** \u00e2\u20ac\u201d schoolsWP a-t-il l'expertise et le contenu pour y repondre de maniere authoritative ?\n\n### Formats de contenu recommandes\n\n| Type de requete | Format ideal | Exemple |\n|---|---|---|\n| Comparatif (\"X vs Y\") | Article comparatif + tableau | \"TutorLMS vs LearnDash\" |\n| \"Comment faire\" | Tutoriel etape par etape | \"Comment configurer TutorLMS\" |\n| \"Quel est le meilleur\" | Guide de selection + scoring | \"Meilleur LMS WordPress\" |\n| Question strategique | Article pilier + avis d'expert | \"Vendre des formations sur WordPress\" |\n| Probleme technique | Guide de depannage structure | \"LMS WordPress lent\" |\n| Question financiere | Etude de cas + calculs concrets | \"Rentabilite formation WordPress\" |\n\n### Strategie de citabilite IA\n\nPour maximiser les chances d'etre cite par les IA conversationnelles :\n\n- **Repondre directement** a la question dans les 2-3 premieres phrases de l'article\n- **Structurer avec des listes et tableaux** que les IA peuvent extraire facilement\n- **Inclure des definitions claires** pour les termes techniques\n- **Fournir des chiffres concrets** issus de tests reels\n- **Creer des comparaisons factuelles** plutot que des opinions vagues\n- **Utiliser des FAQ structurees** en fin d'article avec le schema FAQ\n- **Couvrir les angles connexes** dans le meme article (questions \"People Also Ask\")\n- **Mettre a jour regulierement** les contenus avec la date de derniere mise a jour visible\n\n---\n\n*Document genere pour le pilier LMS de schoolsWP \u00e2\u20ac\u201d 230+ requetes conversationnelles IA couvrant l'ensemble du parcours utilisateur, du choix de plugin jusqu'au scaling de la plateforme de formation.*\n"}], "grading": {"expectations": [{"text": "Contains exactly 10 numbered queries", "passed": false, "evidence": "Found 3 queries (expected 10)"}, {"text": "At least 5 intention types represented", "passed": false, "evidence": "Found 0 intentions: []"}, {"text": "At least 3 different content formats used", "passed": false, "evidence": "Found 2 formats: ['FAQ structuree', 'comparatif + tableau']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": false, "evidence": "0/1 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": false, "evidence": "Found 0 denominators with sous-categories"}, {"text": "3 proof angles present in dedicated section", "passed": false, "evidence": "Section present: False, items found: 0"}, {"text": "3 main sections present (Denominateurs, Requetes, Angles)", "passed": false, "evidence": "Denom: False, Queries: False, Proof: False"}, {"text": "All queries are natural language (>10 words each)", "passed": false, "evidence": "0/1 queries have 10+ words"}], "summary": "0/8 assertions passed"}}, {"id": "eval-coach-custom-with_skill", "prompt": "Je cible des coachs sportifs qui veulent vendre leurs programmes en ligne avec WordPress. Donne-moi 15 requetes AI search qu'ils poseraient a Perplexity, avec les formats de contenu pour maximiser les citations.", "eval_id": 2, "outputs": [{"name": "result.md", "type": "text", "content": "## Denominateurs communs\n\n1. Choisir la bonne stack WordPress pour vendre des programmes sportifs en ligne\n   - Sous-cat : budget limite (moins de 500 EUR/an) | niveau technique debutant (pas de code)\n2. Structurer et packager ses programmes d'entrainement pour la vente en ligne\n   - Sous-cat : programmes video vs PDF vs coaching hybride | monetisation par abonnement vs achat unique\n3. Attirer des clients sans audience existante ni budget publicitaire\n   - Sous-cat : SEO et contenu organique pour le fitness | reseaux sociaux vers WordPress (Instagram, YouTube)\n4. Automatiser la gestion des clients et la livraison des programmes\n   - Sous-cat : emails automatises et relances | acces aux contenus et suivi de progression\n5. Se differencier face aux plateformes tout-en-un (Trainerize, TotalCoaching, Teachable)\n   - Sous-cat : arguments pour WordPress vs SaaS ferme | construction d'une marque personnelle durable\n\n## Requetes conversationnelles AI Search\n\n1. **Requete** : Quel plugin WordPress choisir pour vendre des programmes d'entrainement en video si j'ai moins de 300 EUR de budget annuel et aucune competence technique ?\n   **Intention** : comparaison\n   **Format conseille** : comparatif + tableau\n\n2. **Requete** : Comment configurer WooCommerce avec un LMS WordPress pour vendre des programmes sportifs par abonnement mensuel quand on part de zero et qu'on veut etre operationnel en un week-end ?\n   **Intention** : how-to\n   **Format conseille** : guide pas-a-pas\n\n3. **Requete** : Est-ce que LearnDash ou TutorLMS est plus adapte pour un coach sportif qui vend des programmes en video avec suivi de progression et qui a deja une communaute Instagram de 5000 abonnes ?\n   **Intention** : decision\n   **Format conseille** : comparatif + tableau\n\n4. **Requete** : Comment structurer un programme d'entrainement de 12 semaines sur WordPress pour qu'il soit vendable en ligne avec un drip content hebdomadaire et des exercices en video ?\n   **Intention** : how-to\n   **Format conseille** : guide pas-a-pas\n\n5. **Requete** : Quel format de programme sportif en ligne se vend le mieux entre un pack PDF telechargeable, un acces plateforme avec videos, et un coaching hybride avec appels Zoom, quand on debute sans liste email ?\n   **Intention** : comparaison\n   **Format conseille** : comparatif + tableau\n\n6. **Requete** : Faut-il vendre ses programmes sportifs a l'unite ou par abonnement sur WordPress quand on a moins de 100 clients et un panier moyen vise de 47 EUR par mois ?\n   **Intention** : decision\n   **Format conseille** : FAQ structuree\n\n7. **Requete** : Comment attirer mes premiers clients pour un programme fitness en ligne sur WordPress sans budget pub et sans audience existante, en utilisant uniquement le SEO et du contenu gratuit sur mon blog ?\n   **Intention** : how-to\n   **Format conseille** : guide pas-a-pas\n\n8. **Requete** : Quels types d'articles de blog un coach sportif doit publier sur son site WordPress pour etre visible sur Google et convertir les visiteurs en acheteurs de programmes en moins de 6 mois ?\n   **Intention** : checklist\n   **Format conseille** : checklist\n\n9. **Requete** : Comment transformer mes abonnes Instagram en acheteurs de programmes sur mon site WordPress si je poste deja du contenu fitness trois fois par semaine mais que je ne fais aucune vente ?\n   **Intention** : diagnostic\n   **Format conseille** : template\n\n10. **Requete** : Quelle sequence d'emails automatises configurer avec FluentCRM pour relancer les visiteurs qui ont telecharge mon programme gratuit mais n'ont pas achete le programme payant en 7 jours ?\n    **Intention** : how-to\n    **Format conseille** : template\n\n11. **Requete** : Que verifier dans mon WordPress avant de lancer la vente d'un programme sportif en ligne pour eviter les problemes de paiement, d'acces aux contenus et de delivrabilite des emails ?\n    **Intention** : checklist\n    **Format conseille** : checklist\n\n12. **Requete** : Comment automatiser l'acces aux videos d'entrainement et le suivi de progression de mes clients sur WordPress sans devoir gerer manuellement chaque inscription et chaque module debloque ?\n    **Intention** : how-to\n    **Format conseille** : guide pas-a-pas\n\n13. **Requete** : Est-ce que ca vaut le coup de rester sur WordPress pour vendre mes programmes sportifs ou je devrais passer sur Trainerize si j'ai deja 50 clients actifs et que je veux passer a 200 ?\n    **Intention** : decision\n    **Format conseille** : FAQ structuree\n\n14. **Requete** : Comment un coach sportif peut construire une marque personnelle forte sur WordPress pour ne pas dependre d'une plateforme tierce et justifier un prix premium de 97 EUR par mois pour ses programmes ?\n    **Intention** : diagnostic\n    **Format conseille** : stack recommandee\n\n15. **Requete** : Quelle stack WordPress complete installer pour un coach sportif qui veut vendre des programmes, envoyer des emails automatiques, gerer les abonnements et suivre ses KPI de vente, le tout pour moins de 500 EUR par an ?\n    **Intention** : checklist\n    **Format conseille** : stack recommandee\n\n## Angles de preuve\n\n1. **Test reel** : \"J'ai lance un programme sportif de 8 semaines sur WordPress avec TutorLMS + WooCommerce Subscriptions : voici le setup complet, les couts reels mois par mois, et les 47 premiers clients obtenus en 90 jours.\"\n2. **Critere mesurable** : \"Chaque stack WordPress pour coach sportif est comparee sur 6 criteres concrets : cout annuel total, temps de mise en place, gestion video integree, suivi de progression, automatisation email, et taux de retention client a 3 mois.\"\n3. **Mini etude de cas** : \"Voici comment Julie, coach fitness avec 3000 abonnes Instagram et zero site web, a genere 2800 EUR de ventes recurrentes mensuelles en 4 mois avec un WordPress + LearnDash + FluentCRM, sans depenser un euro en publicite.\"\n"}], "grading": {"expectations": [{"text": "Contains exactly 15 numbered queries", "passed": true, "evidence": "Found 15 queries (expected 15)"}, {"text": "At least 5 intention types represented", "passed": true, "evidence": "Found 5 intentions: ['checklist', 'comparaison', 'decision', 'diagnostic', 'how-to']"}, {"text": "At least 3 different content formats used", "passed": true, "evidence": "Found 6 formats: ['FAQ structuree', 'checklist', 'comparatif + tableau', 'guide pas-a-pas', 'stack recommandee', 'template']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": true, "evidence": "15/15 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": true, "evidence": "Found 5 denominators with sous-categories"}, {"text": "3 proof angles present in dedicated section", "passed": true, "evidence": "Section present: True, items found: 3"}, {"text": "3 main sections present (Denominateurs, Requetes, Angles)", "passed": true, "evidence": "Denom: True, Queries: True, Proof: True"}, {"text": "All queries are natural language (>10 words each)", "passed": true, "evidence": "15/15 queries have 10+ words"}], "summary": "8/8 assertions passed"}}, {"id": "eval-coach-custom-without_skill", "prompt": "Je cible des coachs sportifs qui veulent vendre leurs programmes en ligne avec WordPress. Donne-moi 15 requetes AI search qu'ils poseraient a Perplexity, avec les formats de contenu pour maximiser les citations.", "eval_id": 2, "outputs": [{"name": "result.md", "type": "text", "content": "# 15 requetes AI Search pour coachs sportifs vendant des programmes en ligne avec WordPress\n\n**Cible** : Coachs sportifs qui veulent vendre leurs programmes d'entrainement en ligne via WordPress\n**Plateforme de reference** : Perplexity, ChatGPT Search, Google AI Overviews\n**Objectif** : Identifier les requetes conversationnelles que cette audience pose aux moteurs IA, et definir les formats de contenu optimaux pour maximiser les citations dans les reponses generees.\n\n---\n\n## Requete 1\n\n**Requete AI Search** : \"Quel est le meilleur plugin WordPress pour vendre des programmes d'entrainement en ligne ?\"\n\n**Intention** : Comparative / decisionnelle\n\n**Format de contenu recommande** : Article comparatif long format (2500-3500 mots) avec tableau recapitulatif en debut d'article.\n\n---\n\n## Requete 2\n\n**Requete AI Search** : \"Comment creer un site WordPress pour vendre mon programme de coaching sportif etape par etape ?\"\n\n**Intention** : Informationnelle / tutoriel\n\n**Format de contenu recommande** : Guide tutorial ultra-structure (3000-4000 mots) avec des etapes numerotees.\n\n---\n\n## Requete 3\n\n**Requete AI Search** : \"LearnDash vs TutorLMS pour vendre des cours de fitness en ligne, lequel choisir ?\"\n\n**Intention** : Comparative directe\n\n**Format de contenu recommande** : Article VS format (2000-2500 mots) avec tableau comparatif dans les 200 premiers mots.\n\n---\n\n## Requete 4\n\n**Requete AI Search** : \"Combien ca coute de creer une plateforme de vente de programmes sportifs en ligne avec WordPress ?\"\n\n**Intention** : Informationnelle / budgetaire\n\n**Format de contenu recommande** : Article \"Budget complet\" (2000-3000 mots) avec 3 scenarios budgetaires.\n\n---\n\n## Requete 5\n\n**Requete AI Search** : \"Comment structurer un programme d'entrainement en ligne pour le vendre sur WordPress ?\"\n\n**Intention** : Informationnelle / strategique\n\n**Format de contenu recommande** : Guide methodologique (2500-3500 mots) avec un framework proprietaire.\n\n---\n\n## Requete 6\n\n**Requete AI Search** : \"Quels sont les meilleurs themes WordPress pour un site de coaching sportif ?\"\n\n**Intention** : Comparative / decisionnelle\n\n**Format de contenu recommande** : Listicle structure (2000-2500 mots) avec 8-10 themes.\n\n---\n\n## Requete 7\n\n**Requete AI Search** : \"Comment accepter les paiements recurrents sur WordPress pour un abonnement coaching sportif ?\"\n\n**Intention** : Informationnelle / technique\n\n**Format de contenu recommande** : Guide technique accessible (2000-3000 mots).\n\n---\n\n## Requete 8\n\n**Requete AI Search** : \"WordPress ou Kajabi pour vendre des programmes de coaching sportif, quelle plateforme choisir ?\"\n\n**Intention** : Comparative / decisionnelle\n\n**Format de contenu recommande** : Article comparatif \"VS\" (2500-3000 mots) avec calcul de cout sur 3 ans.\n\n---\n\n## Requete 9\n\n**Requete AI Search** : \"Comment proteger mes videos de programmes sportifs sur WordPress contre le piratage ?\"\n\n**Intention** : Informationnelle / technique\n\n**Format de contenu recommande** : Guide securite contenu (2000-2500 mots) avec solutions classees par niveau.\n\n---\n\n## Requete 10\n\n**Requete AI Search** : \"Comment automatiser l'onboarding des clients sur mon site de coaching sportif WordPress ?\"\n\n**Intention** : Informationnelle / operationnelle\n\n**Format de contenu recommande** : Article workflow (2000-3000 mots) avec schema visuel du parcours client.\n\n---\n\n## Requete 11\n\n**Requete AI Search** : \"Comment utiliser le SEO sur WordPress pour attirer des clients vers mon programme de coaching sportif ?\"\n\n**Intention** : Informationnelle / strategique\n\n**Format de contenu recommande** : Guide strategique SEO niche (3000-4000 mots) avec liste de mots-cles.\n\n---\n\n## Requete 12\n\n**Requete AI Search** : \"Comment integrer un suivi de progression des eleves dans mon site WordPress de coaching sportif ?\"\n\n**Intention** : Informationnelle / technique\n\n**Format de contenu recommande** : Article technique accessible (2000-2500 mots) avec 3 approches par complexite.\n\n---\n\n## Requete 13\n\n**Requete AI Search** : \"Comment creer une page de vente efficace pour un programme de coaching sportif sur WordPress ?\"\n\n**Intention** : Informationnelle / conversion\n\n**Format de contenu recommande** : Guide conversion (3000-3500 mots) avec template de page section par section.\n\n---\n\n## Requete 14\n\n**Requete AI Search** : \"Comment vendre des programmes sportifs par abonnement et a l'unite sur le meme site WordPress ?\"\n\n**Intention** : Informationnelle / technique / strategique\n\n**Format de contenu recommande** : Guide architecture e-commerce (2500-3000 mots) avec schema d'architecture.\n\n---\n\n## Requete 15\n\n**Requete AI Search** : \"Quels emails automatiques configurer sur WordPress pour fideliser mes clients coaching sportif ?\"\n\n**Intention** : Informationnelle / operationnelle\n\n**Format de contenu recommande** : Guide operationnel (2500-3000 mots) avec 5 sequences detaillees.\n"}], "grading": {"expectations": [{"text": "Contains exactly 15 numbered queries", "passed": false, "evidence": "Found 0 queries (expected 15)"}, {"text": "At least 5 intention types represented", "passed": false, "evidence": "Found 0 intentions: []"}, {"text": "At least 3 different content formats used", "passed": false, "evidence": "Found 1 formats: ['template']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": false, "evidence": "0/1 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": false, "evidence": "Found 0 denominators with sous-categories"}, {"text": "3 proof angles present in dedicated section", "passed": false, "evidence": "Section present: False, items found: 0"}, {"text": "3 main sections present (Denominateurs, Requetes, Angles)", "passed": false, "evidence": "Denom: False, Queries: True, Proof: False"}, {"text": "All queries are natural language (>10 words each)", "passed": false, "evidence": "0/1 queries have 10+ words"}], "summary": "0/8 assertions passed"}}, {"id": "eval-woo-minimal-en-with_skill", "prompt": "I need 5 AI search queries that WooCommerce store owners would ask ChatGPT about automating their e-commerce operations. Skip the proof angles, just the queries with intentions and formats.", "eval_id": 3, "outputs": [{"name": "result.md", "type": "text", "content": "## Common denominators\n\n1. Managing order fulfillment and inventory without manual overhead\n   - Sub-cat: dropshipping / multi-warehouse sync | small catalog with frequent restocks\n2. Recovering lost revenue from abandoned carts and failed payments\n   - Sub-cat: high-ticket products with long decision cycles | impulse-buy stores with high cart volume\n3. Connecting WooCommerce to external tools (CRM, email, accounting) without a developer\n   - Sub-cat: budget-constrained solo operators | growing teams needing multi-tool sync\n4. Automating customer communication (post-purchase, reviews, support)\n   - Sub-cat: single-product stores needing repeat buyers | large catalogs needing segmented messaging\n5. Choosing and configuring the right automation plugins for a specific store setup\n   - Sub-cat: stores under $5K/month revenue | stores scaling past $20K/month with complex workflows\n\n## AI Search conversational queries\n\n1. **Query**: How can I automatically sync my WooCommerce inventory across three sales channels without paying for a developer or using Zapier?\n   **Intention**: how-to\n   **Recommended format**: guide pas-a-pas\n\n2. **Query**: What's the best abandoned cart recovery setup for a WooCommerce store selling $200+ products where most customers take a week to decide?\n   **Intention**: decision\n   **Recommended format**: stack recommandee\n\n3. **Query**: I'm running WooCommerce with FluentCRM and WooCommerce Subscriptions -- how do I check that my post-purchase email automation isn't missing any critical trigger?\n   **Intention**: checklist\n   **Recommended format**: checklist\n\n4. **Query**: AutomateWoo vs FunnelKit Automations for a WooCommerce store doing under $10K/month with no coding skills -- which one handles conditional discounts and follow-ups better?\n   **Intention**: comparaison\n   **Recommended format**: comparatif + tableau\n\n5. **Query**: My WooCommerce store sends order data to QuickBooks manually and I lose about 2 hours a day on it -- is there a no-code way to automate this or is my current plugin stack the problem?\n   **Intention**: diagnostic\n   **Recommended format**: FAQ structuree\n"}], "grading": {"expectations": [{"text": "Contains exactly 5 numbered queries", "passed": true, "evidence": "Found 5 queries (expected 5)"}, {"text": "At least 3 intention types represented", "passed": true, "evidence": "Found 5 intentions: ['checklist', 'comparaison', 'decision', 'diagnostic', 'how-to']"}, {"text": "At least 2 different content formats used", "passed": true, "evidence": "Found 5 formats: ['FAQ structuree', 'checklist', 'comparatif + tableau', 'guide pas-a-pas', 'stack recommandee']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": true, "evidence": "5/5 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": false, "evidence": "Found 0 denominators with sous-categories"}, {"text": "No proof angles section present (user disabled it)", "passed": true, "evidence": "Proof section found: False"}, {"text": "2 main sections: Denominateurs and Requetes only", "passed": true, "evidence": "Denom: True, Queries: True"}, {"text": "All queries are natural language (>10 words each)", "passed": true, "evidence": "5/5 queries have 10+ words"}], "summary": "7/8 assertions passed"}}, {"id": "eval-woo-minimal-en-without_skill", "prompt": "I need 5 AI search queries that WooCommerce store owners would ask ChatGPT about automating their e-commerce operations. Skip the proof angles, just the queries with intentions and formats.", "eval_id": 3, "outputs": [{"name": "result.md", "type": "text", "content": "# AI Search Queries \u00e2\u20ac\u201d WooCommerce Automation\n\n5 queries that WooCommerce store owners would ask ChatGPT about automating their e-commerce operations.\n\n---\n\n## Query 1\n\n**Query:** \"How do I automatically send a discount code to customers who abandon their cart in WooCommerce?\"\n\n**Search Intent:** Informational / How-to \u00e2\u20ac\u201d The user wants a step-by-step method to set up automated abandoned cart recovery emails that include a personalized discount coupon, using either native WooCommerce features or third-party plugins.\n\n**Expected Response Format:** Step-by-step tutorial with plugin recommendations (e.g., AutomateWoo, FunnelKit Automations, Mailchimp for WooCommerce), configuration walkthrough for trigger timing (30 min, 1 hour, 24 hours), coupon generation settings, and email template best practices. Should include a comparison of free vs. paid solutions and mention of WooCommerce's built-in cart handling limitations.\n\n---\n\n## Query 2\n\n**Query:** \"What is the best way to automatically sync my WooCommerce inventory with my Shopify store and Amazon seller account?\"\n\n**Search Intent:** Commercial / Solution comparison \u00e2\u20ac\u201d The user runs a multi-channel e-commerce business and needs a reliable system that keeps stock levels synchronized in real time across WooCommerce, Shopify, and Amazon to prevent overselling and manual reconciliation.\n\n**Expected Response Format:** Comparison of multi-channel inventory sync tools (e.g., Sellbrite, LitCommerce, Codisto, WP-Lister for Amazon, Stock Sync) with a breakdown of pricing tiers, sync frequency (real-time vs. scheduled), supported marketplaces, ease of setup, and known limitations. Should include a recommended architecture diagram or workflow description showing how the sync operates, plus a mention of middleware/iPaaS options like n8n, Make, or Zapier for custom sync logic.\n\n---\n\n## Query 3\n\n**Query:** \"How can I automate WooCommerce order fulfillment so that orders are automatically sent to my 3PL warehouse and tracking numbers are updated on the order?\"\n\n**Search Intent:** Informational / Implementation guide \u00e2\u20ac\u201d The user wants to eliminate manual copy-pasting of orders into their third-party logistics (3PL) provider's system and wants tracking numbers to flow back into WooCommerce automatically to trigger shipping confirmation emails.\n\n**Expected Response Format:** End-to-end guide covering: (1) connecting WooCommerce to a 3PL via API or plugin (ShipStation, ShipBob, Shippo, Easyship), (2) configuring webhook or scheduled export of new orders, (3) mapping order data fields (SKU, quantity, shipping address) to the 3PL's expected format, (4) setting up the return webhook or API callback that writes the tracking number back to WooCommerce and marks the order as \"Completed,\" (5) email notification triggers. Should mention WooCommerce REST API endpoints (`/wp-json/wc/v3/orders`) and provide a basic automation flow using either a plugin or an iPaaS tool.\n\n---\n\n## Query 4\n\n**Query:** \"How do I set up automatic dynamic pricing rules in WooCommerce that adjust prices based on quantity purchased, customer role, and time of day?\"\n\n**Search Intent:** Informational / Technical setup \u00e2\u20ac\u201d The user wants to implement a flexible, rule-based pricing engine inside WooCommerce that can handle bulk/tiered discounts, wholesale vs. retail pricing by user role, and flash sale scheduling without manually editing product prices each time.\n\n**Expected Response Format:** Detailed configuration guide organized by pricing rule type: (1) quantity/tiered pricing \u00e2\u20ac\u201d plugin setup (e.g., WooCommerce Dynamic Pricing & Discounts, YITH Dynamic Pricing, Discount Rules for WooCommerce), rule creation with examples (buy 5-9 units get 10% off, 10+ get 20% off); (2) role-based pricing \u00e2\u20ac\u201d creating custom WordPress user roles, assigning price adjustments per role, combining with membership plugins (WooCommerce Memberships, Wholesale Suite); (3) time-based pricing \u00e2\u20ac\u201d scheduling price changes using cron jobs or plugin schedulers, setting start/end dates for flash sales, integrating with cache invalidation so prices display correctly. Should include performance considerations (caching conflicts, database query load with many rules) and code snippets for custom implementations using the `woocommerce_product_get_price` filter hook.\n\n---\n\n## Query 5\n\n**Query:** \"What is the best no-code workflow to automatically create an invoice, send it to the customer, log the sale in Google Sheets, and notify my team on Slack every time a WooCommerce order is completed?\"\n\n**Search Intent:** Informational / Workflow architecture \u00e2\u20ac\u201d The user wants a fully automated post-purchase workflow that chains together multiple actions across different services without writing code, triggered by the WooCommerce \"order completed\" event.\n\n**Expected Response Format:** Full workflow blueprint covering: (1) trigger setup \u00e2\u20ac\u201d WooCommerce webhook on `order.completed` status or plugin-based trigger; (2) invoice generation \u00e2\u20ac\u201d using WooCommerce PDF Invoices & Packing Slips plugin or a service like Invoicely/Zoho Invoice via API; (3) email delivery \u00e2\u20ac\u201d attaching the PDF invoice to the order completion email or sending a separate transactional email via SendGrid/Mailgun; (4) Google Sheets logging \u00e2\u20ac\u201d appending a row with order ID, customer name, email, products, total, date using Sheets API; (5) Slack notification \u00e2\u20ac\u201d posting a formatted message to a channel with order summary using Slack incoming webhooks. Should provide a concrete implementation path using a no-code platform (Zapier, Make, or n8n), including the specific nodes/modules to use, data mapping between steps, error handling (retry logic, dead letter queue), and estimated monthly cost at different order volumes. Include an alternative fully-plugin-based approach for users who prefer to stay within WordPress.\n"}], "grading": {"expectations": [{"text": "Contains exactly 5 numbered queries", "passed": false, "evidence": "Found 0 queries (expected 5)"}, {"text": "At least 3 intention types represented", "passed": false, "evidence": "Found 0 intentions: []"}, {"text": "At least 2 different content formats used", "passed": false, "evidence": "Found 1 formats: ['template']"}, {"text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)", "passed": false, "evidence": "0/1 queries have 12+ words"}, {"text": "Exactly 5 common denominators listed", "passed": false, "evidence": "Found 0 denominators with sous-categories"}, {"text": "No proof angles section present (user disabled it)", "passed": true, "evidence": "Proof section found: False"}, {"text": "2 main sections: Denominateurs and Requetes only", "passed": false, "evidence": "Denom: False, Queries: False"}, {"text": "All queries are natural language (>10 words each)", "passed": false, "evidence": "0/1 queries have 10+ words"}], "summary": "1/8 assertions passed"}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "ai-citation-opportunity", "iteration": 1, "configurations": [{"name": "with_skill", "evals": [{"eval_name": "eval-lms-default", "pass_rate": 1.0, "passed": 8, "total": 8, "tokens": 32977, "duration_seconds": 105.5}, {"eval_name": "eval-coach-custom", "pass_rate": 1.0, "passed": 8, "total": 8, "tokens": 34176, "duration_seconds": 147.9}, {"eval_name": "eval-woo-minimal-en", "pass_rate": 0.875, "passed": 7, "total": 8, "tokens": 26572, "duration_seconds": 46.0}], "aggregate": {"mean_pass_rate": 0.958, "mean_tokens": 31242, "mean_duration_seconds": 99.8}}, {"name": "without_skill", "evals": [{"eval_name": "eval-lms-default", "pass_rate": 0.0, "passed": 0, "total": 8, "tokens": 48719, "duration_seconds": 375.5}, {"eval_name": "eval-coach-custom", "pass_rate": 0.0, "passed": 0, "total": 8, "tokens": 32641, "duration_seconds": 225.1}, {"eval_name": "eval-woo-minimal-en", "pass_rate": 0.125, "passed": 1, "total": 8, "tokens": 23889, "duration_seconds": 57.5}], "aggregate": {"mean_pass_rate": 0.042, "mean_tokens": 35083, "mean_duration_seconds": 219.4}}], "delta": {"pass_rate": "+91.6pp", "tokens": "-11%", "duration": "-55%"}}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

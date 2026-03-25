@@ -1,0 +1,30 @@
+{
+  "summary": { "pass_rate": 0.8, "passed": 4, "failed": 1, "total": 5 },
+  "expectations": [
+    {
+      "text": "Structure le workflow par étapes logiques (trigger, validation, logique, action, erreur)",
+      "passed": true,
+      "evidence": "9 nœuds séquentiels : Webhook → Set (normalisation) → HTTP (créer/MAJ) → IF (succès?) → HTTP (tags) → HTTP (séquence) → IF (séquence OK?) avec branches erreur Send Email"
+    },
+    {
+      "text": "Mentionne explicitement la gestion des doublons ou la vérification d'existence",
+      "passed": true,
+      "evidence": "Section 'Idempotence' : 'FluentCRM fait un upsert par défaut — si l'email existe déjà, le contact est mis à jour sans doublon' ; 'La séquence FluentCRM vérifie nativement si l'abonné est déjà inscrit'"
+    },
+    {
+      "text": "Décrit la branche erreur avec notification email",
+      "passed": true,
+      "evidence": "Nœud 6 (erreur création contact) et Nœud 9 (erreur séquence) sont deux Send Email distincts avec corps incluant email, timestamp, contexte et instructions de relance manuelle"
+    },
+    {
+      "text": "Recommande des noms de nodes descriptifs (pas Set1, HTTP Request2)",
+      "passed": true,
+      "evidence": "Section 'Nommage des nœuds' liste 8 noms explicites : 'Webhook — Fluent Forms', 'HTTP — Créer contact FluentCRM', 'IF — Contact OK ?'"
+    },
+    {
+      "text": "Aborde la logique CRM : tags, segment, séquence démarrée selon état du contact",
+      "passed": false,
+      "evidence": "Tags définis par form_id (table tagMap), mais pas de logique de segment explicite ni de condition sur l'état du contact pour démarrer la séquence ; séquence démarrée sur tous les contacts sans vérification état"
+    }
+  ]
+}

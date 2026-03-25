@@ -72,3 +72,53 @@
 
 25. **Français** : branding complet appliqué (tutoiement, ton, vocabulaire).
 26. **Anglais** (code, commits, docs techniques) : anglais neutre professionnel. Le branding ne s'applique pas aux contenus EN sauf le naming "schoolsWP".
+
+
+---
+
+## Messaging (key messages)
+
+27. **Messages clés** (à utiliser naturellement) :
+   - WordPress peut travailler pour toi, pas l'inverse.
+   - Tu n'as pas besoin d'être développeur pour avoir un site performant.
+   - La clarté bat toujours la complexité.
+   - Un bon site se juge à ses résultats, pas à son design.
+   - Automatiser, c'est se libérer du temps pour ce qui compte.
+
+---
+
+## Objections & réponses (si contexte sales/conversion)
+
+28. **Objections anticipées** :
+   - "WordPress, c'est compliqué" → "C'est ce que pensent 90 % des gens avant d'avoir une méthode claire. schoolsWP te guide étape par étape."
+   - "Pas le budget pour un dev" → "Avec les bons plugins et la bonne méthode, tu peux tout faire toi-même."
+   - "Il y a déjà plein de tutos gratuits" → "Des tutos, oui. Une méthode structurée qui relie WordPress, SEO et automatisation ? C'est plus rare."
+   - "L'automatisation, c'est froid" → "Mal utilisée, oui. Bien pensée, elle te libère du temps pour ta relation audience."
+
+---
+
+## Exemples de référence
+
+29. **Bons exemples** (patterns à reproduire) :
+   - Accroche blog : "Tu envoies encore tes emails un par un ? Jusqu'à 50 abonnés, ça passe. Au-delà, c'est ingérable."
+   - Intro newsletter : "Cette semaine, j'ai refait l'intro d'un article. Résultat : +40 % de temps passé sur la page."
+   - CTA : "Tu veux aller plus loin ? Découvre le guide complet. Lien affilié — je recommande uniquement les outils que j'utilise."
+
+30. **Mauvais exemples** (anti-patterns à bannir) :
+   - Marketing creux : "Découvrez LA solution révolutionnaire qui va transformer votre business en un clic !"
+   - Trop technique : "Configure ton reverse proxy avec Nginx pour load-balancer tes instances WP."
+   - Générique : "WordPress est un CMS très populaire utilisé par des millions de sites."
+   - Condescendant : "Si tu ne sais même pas ce qu'est un plugin, commence par les bases."
+
+---
+
+## Source de données complète
+
+Le Brand Kit JSON complet (audiences, messaging, exemples, visuels) est dans :
+- `content/docs/BRAND_KIT.json`
+- `.claude/skills/branding/references/BRAND_KIT.json`
+
+> Dernière mise à jour : 2026-03-17
+
+- `content/docs/BRAND_CONTEXT.json`
+- `.claude/skills/branding/references/BRAND_CONTEXT.json`

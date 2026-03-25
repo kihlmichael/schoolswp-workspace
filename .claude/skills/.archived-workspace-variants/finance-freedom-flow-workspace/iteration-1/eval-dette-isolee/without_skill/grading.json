@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "3 dettes inventoriees",
+      "passed": true,
+      "evidence": "Found 201 debt references"
+    },
+    {
+      "text": "Methode Snowball presente avec ordre",
+      "passed": true,
+      "evidence": "Snowball found: True"
+    },
+    {
+      "text": "Methode Avalanche : revolving (19.8%) en premier",
+      "passed": true,
+      "evidence": "Avalanche found: True, revolving priority indicated: True"
+    },
+    {
+      "text": "Calendrier mois par mois present",
+      "passed": true,
+      "evidence": "Monthly calendar found: True"
+    },
+    {
+      "text": "Recommandation personnalisee avec justification",
+      "passed": true,
+      "evidence": "Recommendation found: True"
+    },
+    {
+      "text": "Interets totaux compares entre methodes",
+      "passed": true,
+      "evidence": "Interest comparison found: True"
+    }
+  ],
+  "summary": "6/6 assertions passed"
+}

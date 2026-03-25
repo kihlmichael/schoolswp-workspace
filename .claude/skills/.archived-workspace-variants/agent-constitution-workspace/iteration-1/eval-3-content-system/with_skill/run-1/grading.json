@@ -1,0 +1,30 @@
+{
+  "summary": { "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5 },
+  "expectations": [
+    {
+      "text": "Propose une logique de réutilisation : article → newsletter → LinkedIn (ou autre ordre logique)",
+      "passed": true,
+      "evidence": "Diagramme ASCII explicite : [Article SEO] → [Newsletter FluentCRM] angle praticien ET → [Post LinkedIn] angle preuve ; 'un article = une source, tout le reste en découle'"
+    },
+    {
+      "text": "Identifie les étapes de production avec un ordre logique",
+      "passed": true,
+      "evidence": "Calendrier type jour par jour : Lundi (sujet+brain.bat) → Mardi (relecture+prog WP) → Mercredi (newsletter+FluentCRM) → Jeudi (LinkedIn) → Vendredi (publication)"
+    },
+    {
+      "text": "Mentionne ou suggère une automatisation possible (n8n, FluentCRM, autre)",
+      "passed": true,
+      "evidence": "3 niveaux d'automatisation n8n : Niveau 1 (scheduleTrigger lundi 8h → Telegram), Niveau 2 (webhook WP published → OpenAI → FluentCRM draft), Niveau 3 (draft LinkedIn → Google Sheets)"
+    },
+    {
+      "text": "Distingue la phase de production de la phase de distribution",
+      "passed": true,
+      "evidence": "Tableau 'Production vs Distribution' : production (lundi-mardi, temps estimé) vs distribution (outils, moments programmés sans présence active)"
+    },
+    {
+      "text": "Résultat présenté comme un système réutilisable, pas juste un conseil hebdomadaire",
+      "passed": true,
+      "evidence": "Section 'Actifs réutilisables' liste 5 éléments : template brief, prompt newsletter, prompt LinkedIn, workflow n8n, backlog Google Sheets — plus checklist avant publication et règles de maintenance"
+    }
+  ]
+}

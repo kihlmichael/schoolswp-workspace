@@ -81,3 +81,13 @@
 **Brand QA** — schoolsWP
 Ton : X/5 | Clarté : X/5 | Valeurs : X/5 | Interdits : X/5 | Vocabulaire : X/5
 ```
+
+
+---
+
+## Référence complète
+
+Pour les audiences détaillées, objections, exemples annotés et palette visuelle complète :
+→ `content/docs/BRAND_KIT.json`
+
+> Dernière mise à jour : 2026-03-17

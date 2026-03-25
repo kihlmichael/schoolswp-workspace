@@ -1,0 +1,1043 @@
+[{
+  "available_languages": [
+    "English (United States)",
+    "English (auto-generated)"
+  ],
+  "channel_id": "UCiyeXfnGx9e06hXWf0Hz7ow",
+  "channel_name": "WPManageNinja",
+  "comment_count": 13,
+  "description": "FluentCRM is powering over 20 thousand businesses and helping them run email marketing campaigns effortlessly. With its unique automation features, you can eliminate hours of hard work and invest those in strategic planning. \n\nThis video showed you the easy installation procedure and activation. We also covered the upgrading and licensing procedure as well. And in the next video, we’ll see how you can import your contacts from different sources. \n\nFluentCRM offers 30+ integrations, including WooCommerce, Learndash, Fluent Forms, easy digital downloads, Buddyboss, Lifterlms, etc. Not just that, here are some other key features \n\nUnlimited contacts and emails \nEasy to import contacts from WordPress or other platforms \nEasy to create and save templates \nComplete CRM system with granular reporting \nContact segmentation \nEmail sequencing \nOverall performance analysis \nAutomation triggers \n\nHopefully, You learned the installation, activation, upgrading, and licensing procedure from this video. Subscribe to Wpmanageninja and hit the bell icon to get an instant notification. So you never miss an update on tutorials. \n\n00:00 - Intro\n00:16 - Installation\n02:24 - Upgrade to Pro\n03:37 -SMTP Setup\n\n🛒 Get Product pro ► https://fluentcrm.com/#pricing\n🛒 Try Product for free ►https://wordpress.org/plugins/fluent-crm/\n\n🎯𝗡𝗘𝗖𝗘𝗦𝗦𝗔𝗥𝗬 𝗟𝗜𝗡𝗞𝗦 :\nSmtp plugin ► https://wordpress.org/plugins/fluent-smtp/\nDocumentation ► https://fluentcrm.com/docs/how-to-install-upgrade-and-activate-license/\n\n🎬 𝐏𝐋𝐀𝐘𝐋𝐈𝐒𝐓 :\nFluentCRM Tutorial ➤ https://youtube.com/playlist?list=PLXpD0vT4thWG-ZPeM6cco7BS5cJY9bTjL\n\n💜 𝐋𝐄𝐓'𝐒 𝐂𝐎𝐍𝐍𝐄𝐂𝐓!\nAnd Join our Facebook Community ►  https://www.facebook.com/groups/fluentcrm\n\n➶➶ Got any specific questions regarding this video? \nComment down below. We will get back to you soon! ➷➷ :)\n\n#FluentCRM  #Getting_started #wpmanageninja",
+  "duration_seconds": 315,
+  "geo_restrict": null,
+  "is_auto_generated": false,
+  "language": "en",
+  "like_count": 107,
+  "message": "Successfully fetched the transcript for the video with ID '8LO6NuL9Bhg'",
+  "published_at": "2022-08-08T10:00:04Z",
+  "selected_language": "English (United States)",
+  "status": "success",
+  "subscriber_count": 11800,
+  "thumbnail": "https://i.ytimg.com/vi/8LO6NuL9Bhg/hqdefault.jpg",
+  "timestamp": 1659952804,
+  "title": "A Quickstart Guide to Configure FluentCRM | The Right Way",
+  "transcript": [
+    {
+      "duration": 1.36,
+      "end": 3.54,
+      "start": 2.18,
+      "text": "Installing FluentCRM is"
+    },
+    {
+      "duration": 1.54,
+      "end": 5.08,
+      "start": 3.54,
+      "text": "as easy as installing"
+    },
+    {
+      "duration": 2.276,
+      "end": 7.356,
+      "start": 5.08,
+      "text": "any other WordPress plugin."
+    },
+    {
+      "duration": 1.35,
+      "end": 8.706,
+      "start": 7.356,
+      "text": "And the upgrading,"
+    },
+    {
+      "duration": 1.01,
+      "end": 9.774,
+      "start": 8.764,
+      "text": "activating license,"
+    },
+    {
+      "duration": 1.302,
+      "end": 11.076,
+      "start": 9.774,
+      "text": "renewing, etc."
+    },
+    {
+      "duration": 0.919,
+      "end": 12.064,
+      "start": 11.145,
+      "text": "it just keeps on"
+    },
+    {
+      "duration": 0.888,
+      "end": 12.952,
+      "start": 12.064,
+      "text": "getting easier compared"
+    },
+    {
+      "duration": 1.29,
+      "end": 14.242,
+      "start": 12.952,
+      "text": "to other plugins."
+    },
+    {
+      "duration": 1.141,
+      "end": 15.581,
+      "start": 14.44,
+      "text": "Let’s see how."
+    },
+    {
+      "duration": 1.526,
+      "end": 17.49,
+      "start": 15.964,
+      "text": "From your WordPress Dashboard,"
+    },
+    {
+      "duration": 1.12,
+      "end": 18.61,
+      "start": 17.49,
+      "text": "choose Plugins"
+    },
+    {
+      "duration": 1.66,
+      "end": 20.27,
+      "start": 18.61,
+      "text": "from the left sidebar,"
+    },
+    {
+      "duration": 1.59,
+      "end": 21.86,
+      "start": 20.27,
+      "text": "and then click Add New."
+    },
+    {
+      "duration": 1.32,
+      "end": 23.18,
+      "start": 21.86,
+      "text": "It will redirect you"
+    },
+    {
+      "duration": 2.21,
+      "end": 25.39,
+      "start": 23.18,
+      "text": "to the WordPress Plugin directory."
+    },
+    {
+      "duration": 1.11,
+      "end": 26.5,
+      "start": 25.39,
+      "text": "Type FluentCRM"
+    },
+    {
+      "duration": 2.38,
+      "end": 28.88,
+      "start": 26.5,
+      "text": "in the search field."
+    },
+    {
+      "duration": 2.93,
+      "end": 31.81,
+      "start": 28.88,
+      "text": "Here it is,"
+    },
+    {
+      "duration": 3.56,
+      "end": 35.37,
+      "start": 31.81,
+      "text": "just install it,"
+    },
+    {
+      "duration": 1,
+      "end": 36.37,
+      "start": 35.37,
+      "text": "and Don’t forget"
+    },
+    {
+      "duration": 3.49,
+      "end": 39.86,
+      "start": 36.37,
+      "text": "to activate it as well."
+    },
+    {
+      "duration": 3.78,
+      "end": 43.64,
+      "start": 39.86,
+      "text": "FluentCRM is now installed"
+    },
+    {
+      "duration": 1.349,
+      "end": 44.989,
+      "start": 43.64,
+      "text": "and you can locate it"
+    },
+    {
+      "duration": 1.09,
+      "end": 46.079,
+      "start": 44.989,
+      "text": "from the left sidebar"
+    },
+    {
+      "duration": 1.171,
+      "end": 47.25,
+      "start": 46.079,
+      "text": "of your dashboard."
+    },
+    {
+      "duration": 1.42,
+      "end": 48.67,
+      "start": 47.25,
+      "text": "Let’s set up your business"
+    },
+    {
+      "duration": 1.11,
+      "end": 49.78,
+      "start": 48.67,
+      "text": "and other basic information"
+    },
+    {
+      "duration": 1.5,
+      "end": 51.28,
+      "start": 49.78,
+      "text": "to work with FluentCRM,"
+    },
+    {
+      "duration": 1.85,
+      "end": 53.13,
+      "start": 51.28,
+      "text": "It’s not that complicated,"
+    },
+    {
+      "duration": 2.589,
+      "end": 55.719,
+      "start": 53.13,
+      "text": "just follow a few simple steps."
+    },
+    {
+      "duration": 3.171,
+      "end": 58.89,
+      "start": 55.719,
+      "text": "First, provide your business information."
+    },
+    {
+      "duration": 1.599,
+      "end": 60.489,
+      "start": 58.89,
+      "text": "Enter the name of your business,"
+    },
+    {
+      "duration": 2.621,
+      "end": 63.11,
+      "start": 60.489,
+      "text": "business address,"
+    },
+    {
+      "duration": 6.41,
+      "end": 69.52,
+      "start": 63.11,
+      "text": "and upload your company logo."
+    },
+    {
+      "duration": 1.34,
+      "end": 70.86,
+      "start": 69.52,
+      "text": "This information will be used"
+    },
+    {
+      "duration": 1.11,
+      "end": 71.97,
+      "start": 70.86,
+      "text": "on your email footer"
+    },
+    {
+      "duration": 1,
+      "end": 72.97,
+      "start": 71.97,
+      "text": "as they are mandatory"
+    },
+    {
+      "duration": 2.67,
+      "end": 75.64,
+      "start": 72.97,
+      "text": "for sending marketing emails."
+    },
+    {
+      "duration": 1,
+      "end": 76.64,
+      "start": 75.64,
+      "text": "You may create"
+    },
+    {
+      "duration": 1,
+      "end": 77.64,
+      "start": 76.64,
+      "text": "the necessary lists"
+    },
+    {
+      "duration": 1.47,
+      "end": 79.11,
+      "start": 77.64,
+      "text": "to segment your contacts."
+    },
+    {
+      "duration": 2.13,
+      "end": 81.24,
+      "start": 79.11,
+      "text": "Add a segment name."
+    },
+    {
+      "duration": 1,
+      "end": 82.24,
+      "start": 81.24,
+      "text": "You can add"
+    },
+    {
+      "duration": 1.82,
+      "end": 84.06,
+      "start": 82.24,
+      "text": "multiple segments if you want."
+    },
+    {
+      "duration": 1.66,
+      "end": 85.72,
+      "start": 84.06,
+      "text": "Simply click on the Add More"
+    },
+    {
+      "duration": 1.56,
+      "end": 87.28,
+      "start": 85.72,
+      "text": "to add more lists."
+    },
+    {
+      "duration": 1,
+      "end": 88.28,
+      "start": 87.28,
+      "text": "No worries,"
+    },
+    {
+      "duration": 1.911,
+      "end": 90.191,
+      "start": 88.28,
+      "text": "you can do it afterward as well."
+    },
+    {
+      "duration": 1.53,
+      "end": 91.721,
+      "start": 90.191,
+      "text": "Then press Next."
+    },
+    {
+      "duration": 1.24,
+      "end": 93.089,
+      "start": 91.849,
+      "text": "For filtering your contacts"
+    },
+    {
+      "duration": 1.419,
+      "end": 94.508,
+      "start": 93.089,
+      "text": "in a more targeted way,"
+    },
+    {
+      "duration": 2.291,
+      "end": 97.043,
+      "start": 94.752,
+      "text": "you will need tags in your contacts."
+    },
+    {
+      "duration": 4.057,
+      "end": 101.216,
+      "start": 97.159,
+      "text": "Let’s add some tags as well."
+    },
+    {
+      "duration": 1.439,
+      "end": 106.744,
+      "start": 105.305,
+      "text": "We are nearly done."
+    },
+    {
+      "duration": 1.289,
+      "end": 108.579,
+      "start": 107.29,
+      "text": "If you want to create forms"
+    },
+    {
+      "duration": 1.43,
+      "end": 110.009,
+      "start": 108.579,
+      "text": "and collect email leads,"
+    },
+    {
+      "duration": 1.161,
+      "end": 111.17,
+      "start": 110.009,
+      "text": "you can also install"
+    },
+    {
+      "duration": 1.38,
+      "end": 112.55,
+      "start": 111.17,
+      "text": "Fluent Forms by keeping"
+    },
+    {
+      "duration": 1.929,
+      "end": 114.479,
+      "start": 112.55,
+      "text": "the checkbox enabled."
+    },
+    {
+      "duration": 1,
+      "end": 115.479,
+      "start": 114.479,
+      "text": "Consider keeping"
+    },
+    {
+      "duration": 1.03,
+      "end": 116.509,
+      "start": 115.479,
+      "text": "the Share Essentials option"
+    },
+    {
+      "duration": 1.5,
+      "end": 118.009,
+      "start": 116.509,
+      "text": "and enter your email address"
+    },
+    {
+      "duration": 1.771,
+      "end": 119.78,
+      "start": 118.009,
+      "text": "to receive marketing advice"
+    },
+    {
+      "duration": 1.08,
+      "end": 120.86,
+      "start": 119.78,
+      "text": "and learn about"
+    },
+    {
+      "duration": 2.47,
+      "end": 123.33,
+      "start": 120.86,
+      "text": "advanced FluentCRM features."
+    },
+    {
+      "duration": 1,
+      "end": 124.33,
+      "start": 123.33,
+      "text": "Now click on"
+    },
+    {
+      "duration": 1.42,
+      "end": 125.75,
+      "start": 124.33,
+      "text": "Complete Installation."
+    },
+    {
+      "duration": 2.94,
+      "end": 128.69,
+      "start": 125.75,
+      "text": "Our FluentCRM is ready to roll."
+    },
+    {
+      "duration": 1.689,
+      "end": 130.379,
+      "start": 128.69,
+      "text": "Select GO to CRM Dashboard"
+    },
+    {
+      "duration": 1.44,
+      "end": 131.819,
+      "start": 130.379,
+      "text": "to get an overview."
+    },
+    {
+      "duration": 2.64,
+      "end": 134.459,
+      "start": 131.819,
+      "text": "Here, you can monitor your contacts,"
+    },
+    {
+      "duration": 3.081,
+      "end": 137.54,
+      "start": 134.459,
+      "text": "tags, and other information."
+    },
+    {
+      "duration": 1.209,
+      "end": 138.749,
+      "start": 137.54,
+      "text": "In the right sidebar,"
+    },
+    {
+      "duration": 1,
+      "end": 139.749,
+      "start": 138.749,
+      "text": "you may get"
+    },
+    {
+      "duration": 1,
+      "end": 140.749,
+      "start": 139.749,
+      "text": "the essential suggestions"
+    },
+    {
+      "duration": 1.901,
+      "end": 142.65,
+      "start": 140.749,
+      "text": "and some quick links."
+    },
+    {
+      "duration": 1.11,
+      "end": 143.76,
+      "start": 142.65,
+      "text": "If you want to use"
+    },
+    {
+      "duration": 1.46,
+      "end": 145.22,
+      "start": 143.76,
+      "text": "the FluentCRM Pro edition,"
+    },
+    {
+      "duration": 1,
+      "end": 146.22,
+      "start": 145.22,
+      "text": "click on Get Pro"
+    },
+    {
+      "duration": 1,
+      "end": 147.22,
+      "start": 146.22,
+      "text": "from the right corner"
+    },
+    {
+      "duration": 1.139,
+      "end": 148.359,
+      "start": 147.22,
+      "text": "or you can choose"
+    },
+    {
+      "duration": 2.071,
+      "end": 150.43,
+      "start": 148.359,
+      "text": "Upgrade to Pro Now."
+    },
+    {
+      "duration": 1,
+      "end": 151.43,
+      "start": 150.43,
+      "text": "This will take you"
+    },
+    {
+      "duration": 2.04,
+      "end": 153.47,
+      "start": 151.43,
+      "text": "straight to the FluentCRM website,"
+    },
+    {
+      "duration": 2.239,
+      "end": 155.709,
+      "start": 153.47,
+      "text": "from where you can purchase it."
+    },
+    {
+      "duration": 1.5,
+      "end": 160.969,
+      "start": 159.469,
+      "text": "Once your done purchasing,"
+    },
+    {
+      "duration": 1.61,
+      "end": 162.579,
+      "start": 160.969,
+      "text": "you will receive a zip file"
+    },
+    {
+      "duration": 1.53,
+      "end": 164.109,
+      "start": 162.579,
+      "text": "and a license key"
+    },
+    {
+      "duration": 1.19,
+      "end": 165.299,
+      "start": 164.109,
+      "text": "Let's look at the zip file"
+    },
+    {
+      "duration": 1.131,
+      "end": 166.43,
+      "start": 165.299,
+      "text": "installation process."
+    },
+    {
+      "duration": 1.557,
+      "end": 168.905,
+      "start": 167.348,
+      "text": "Go back to the Plugins option."
+    },
+    {
+      "duration": 1.508,
+      "end": 170.413,
+      "start": 168.905,
+      "text": "Click on Add New."
+    },
+    {
+      "duration": 1.89,
+      "end": 173.93,
+      "start": 172.04,
+      "text": "Select Upload Plugin this time."
+    },
+    {
+      "duration": 1.389,
+      "end": 176.108,
+      "start": 174.719,
+      "text": "Choose your .zip file"
+    },
+    {
+      "duration": 0.988,
+      "end": 177.096,
+      "start": 176.108,
+      "text": "from where you saved it"
+    },
+    {
+      "duration": 1.438,
+      "end": 178.534,
+      "start": 177.096,
+      "text": "on your computer."
+    },
+    {
+      "duration": 1.465,
+      "end": 179.999,
+      "start": 178.534,
+      "text": "Upload your .zip file."
+    },
+    {
+      "duration": 1.437,
+      "end": 181.68,
+      "start": 180.243,
+      "text": "Click on Install Now."
+    },
+    {
+      "duration": 1.899,
+      "end": 183.579,
+      "start": 181.68,
+      "text": "Then activate it."
+    },
+    {
+      "duration": 1.789,
+      "end": 186.019,
+      "start": 184.23,
+      "text": "The procedure is fairly simple."
+    },
+    {
+      "duration": 1.14,
+      "end": 187.542,
+      "start": 186.402,
+      "text": "You are now using"
+    },
+    {
+      "duration": 1.578,
+      "end": 189.12,
+      "start": 187.542,
+      "text": "the Pro version of FluentCRM."
+    },
+    {
+      "duration": 1.909,
+      "end": 191.029,
+      "start": 189.12,
+      "text": "But it needs to be activated"
+    },
+    {
+      "duration": 1.82,
+      "end": 192.849,
+      "start": 191.029,
+      "text": "with a valid license key."
+    },
+    {
+      "duration": 1,
+      "end": 193.849,
+      "start": 192.849,
+      "text": "And that’s pretty easy"
+    },
+    {
+      "duration": 1.31,
+      "end": 195.159,
+      "start": 193.849,
+      "text": "to do as well."
+    },
+    {
+      "duration": 1.06,
+      "end": 196.219,
+      "start": 195.159,
+      "text": "Wondering how to activate"
+    },
+    {
+      "duration": 1.111,
+      "end": 197.33,
+      "start": 196.219,
+      "text": "the license?"
+    },
+    {
+      "duration": 1.1,
+      "end": 198.43,
+      "start": 197.33,
+      "text": "To activate the license,"
+    },
+    {
+      "duration": 1.279,
+      "end": 199.709,
+      "start": 198.43,
+      "text": "go to FluentCRM’s"
+    },
+    {
+      "duration": 1.2,
+      "end": 200.909,
+      "start": 199.709,
+      "text": "settings panel."
+    },
+    {
+      "duration": 2.039,
+      "end": 206.096,
+      "start": 204.057,
+      "text": "Choose the License Management tab."
+    },
+    {
+      "duration": 2.064,
+      "end": 208.16,
+      "start": 206.096,
+      "text": "Here paste the License Key."
+    },
+    {
+      "duration": 2.42,
+      "end": 212.067,
+      "start": 209.647,
+      "text": "Then Hit the Verify License button."
+    },
+    {
+      "duration": 1,
+      "end": 213.479,
+      "start": 212.479,
+      "text": "Your license has now"
+    },
+    {
+      "duration": 1.421,
+      "end": 214.9,
+      "start": 213.479,
+      "text": "been successfully activated!"
+    },
+    {
+      "duration": 2.158,
+      "end": 217.29,
+      "start": 215.132,
+      "text": "Only one more thing!"
+    },
+    {
+      "duration": 1.379,
+      "end": 218.669,
+      "start": 217.29,
+      "text": "FluentCRM will use"
+    },
+    {
+      "duration": 1.451,
+      "end": 220.12,
+      "start": 218.669,
+      "text": "the default mailing system"
+    },
+    {
+      "duration": 1.39,
+      "end": 221.51,
+      "start": 220.12,
+      "text": "of WordPress."
+    },
+    {
+      "duration": 1,
+      "end": 222.51,
+      "start": 221.51,
+      "text": "If you’re not using"
+    },
+    {
+      "duration": 1.729,
+      "end": 224.239,
+      "start": 222.51,
+      "text": "any SMTP service yet,"
+    },
+    {
+      "duration": 1.75,
+      "end": 225.989,
+      "start": 224.239,
+      "text": "we recommend using FluentSMTP."
+    },
+    {
+      "duration": 1.052,
+      "end": 227.692,
+      "start": 226.64,
+      "text": "To do that,"
+    },
+    {
+      "duration": 2.013,
+      "end": 229.705,
+      "start": 227.692,
+      "text": "click View Email sending Service Settings"
+    },
+    {
+      "duration": 1.05,
+      "end": 230.859,
+      "start": 229.809,
+      "text": "from the right sidebar"
+    },
+    {
+      "duration": 2.05,
+      "end": 232.909,
+      "start": 230.859,
+      "text": "of your FluentCRM dashboard."
+    },
+    {
+      "duration": 2.78,
+      "end": 235.689,
+      "start": 232.909,
+      "text": "Then, click install FluentSMTP."
+    },
+    {
+      "duration": 1.121,
+      "end": 236.81,
+      "start": 235.689,
+      "text": "Once installed,"
+    },
+    {
+      "duration": 1.989,
+      "end": 238.799,
+      "start": 236.81,
+      "text": "click configure FluentSMTP."
+    },
+    {
+      "duration": 1.711,
+      "end": 240.51,
+      "start": 238.799,
+      "text": "FluentSMTP lets you use"
+    },
+    {
+      "duration": 2.5,
+      "end": 243.01,
+      "start": 240.51,
+      "text": "any email service of your choice."
+    },
+    {
+      "duration": 1,
+      "end": 244.01,
+      "start": 243.01,
+      "text": "For now,"
+    },
+    {
+      "duration": 1.549,
+      "end": 245.559,
+      "start": 244.01,
+      "text": "let's configure Sendinblue."
+    },
+    {
+      "duration": 1.91,
+      "end": 247.469,
+      "start": 245.559,
+      "text": "SendinBlue configuration requires"
+    },
+    {
+      "duration": 1,
+      "end": 248.469,
+      "start": 247.469,
+      "text": "your From Address,"
+    },
+    {
+      "duration": 1.511,
+      "end": 249.98,
+      "start": 248.469,
+      "text": "a From Name,"
+    },
+    {
+      "duration": 1.438,
+      "end": 251.418,
+      "start": 249.98,
+      "text": "and your API key."
+    },
+    {
+      "duration": 1.081,
+      "end": 257.239,
+      "start": 256.158,
+      "text": "The from address is"
+    },
+    {
+      "duration": 1.68,
+      "end": 258.919,
+      "start": 257.239,
+      "text": "the address from which you want to"
+    },
+    {
+      "duration": 1.19,
+      "end": 260.109,
+      "start": 258.919,
+      "text": "send your emails"
+    },
+    {
+      "duration": 1.981,
+      "end": 262.09,
+      "start": 260.109,
+      "text": "and the From Name will be used"
+    },
+    {
+      "duration": 1.49,
+      "end": 263.58,
+      "start": 262.09,
+      "text": "as the sender name."
+    },
+    {
+      "duration": 1.29,
+      "end": 264.87,
+      "start": 263.58,
+      "text": "For the API key,"
+    },
+    {
+      "duration": 1,
+      "end": 265.87,
+      "start": 264.87,
+      "text": "you need to check"
+    },
+    {
+      "duration": 2.639,
+      "end": 268.509,
+      "start": 265.87,
+      "text": "your email service provider's documentation."
+    },
+    {
+      "duration": 1,
+      "end": 269.509,
+      "start": 268.509,
+      "text": "We have already"
+    },
+    {
+      "duration": 1.44,
+      "end": 270.949,
+      "start": 269.509,
+      "text": "filled out all the fields"
+    },
+    {
+      "duration": 1.762,
+      "end": 272.711,
+      "start": 270.949,
+      "text": "and pasted the API key"
+    },
+    {
+      "duration": 2.559,
+      "end": 275.27,
+      "start": 272.711,
+      "text": "we have acquired from Sendinblue."
+    },
+    {
+      "duration": 1.19,
+      "end": 276.46,
+      "start": 275.27,
+      "text": "Let's save the setting"
+    },
+    {
+      "duration": 1.47,
+      "end": 277.93,
+      "start": 276.46,
+      "text": "and there you have it!"
+    },
+    {
+      "duration": 1.36,
+      "end": 279.29,
+      "start": 277.93,
+      "text": "Our WordPress site is now"
+    },
+    {
+      "duration": 2.04,
+      "end": 281.33,
+      "start": 279.29,
+      "text": "all set to send emails"
+    },
+    {
+      "duration": 3.2,
+      "end": 284.53,
+      "start": 281.33,
+      "text": "using Sendinblue email service."
+    },
+    {
+      "duration": 2.06,
+      "end": 286.59,
+      "start": 284.53,
+      "text": "Note that SMTP configuration"
+    },
+    {
+      "duration": 2.855,
+      "end": 289.445,
+      "start": 286.59,
+      "text": "may be different for other email services."
+    },
+    {
+      "duration": 1.73,
+      "end": 293.22,
+      "start": 291.49,
+      "text": "Check FluentSMTP documentation"
+    },
+    {
+      "duration": 1.689,
+      "end": 294.909,
+      "start": 293.22,
+      "text": "to configure an email service"
+    },
+    {
+      "duration": 1.316,
+      "end": 296.225,
+      "start": 294.909,
+      "text": "of your choice."
+    },
+    {
+      "duration": 2.761,
+      "end": 301.286,
+      "start": 298.525,
+      "text": "—--\nNow, go back to FluentCRM."
+    },
+    {
+      "duration": 1.02,
+      "end": 302.69,
+      "start": 301.67,
+      "text": "That’s how you configure"
+    },
+    {
+      "duration": 2.629,
+      "end": 305.319,
+      "start": 302.69,
+      "text": "and get started with FluentCRM."
+    },
+    {
+      "duration": 1,
+      "end": 306.319,
+      "start": 305.319,
+      "text": "Now you’re all set"
+    },
+    {
+      "duration": 1.87,
+      "end": 308.189,
+      "start": 306.319,
+      "text": "to use the plugin as your go-to"
+    },
+    {
+      "duration": 1.991,
+      "end": 310.18,
+      "start": 308.189,
+      "text": "email marketing automation tool."
+    },
+    {
+      "duration": 1.91,
+      "end": 312.09,
+      "start": 310.18,
+      "text": "That’s all for this video,"
+    },
+    {
+      "duration": 1.419,
+      "end": 313.509,
+      "start": 312.09,
+      "text": "see you in the next one."
+    }
+  ],
+  "transcript_text": "Installing FluentCRM is as easy as installing any other WordPress plugin. And the upgrading, activating license, renewing, etc. it just keeps on getting easier compared to other plugins. Let’s see how. From your WordPress Dashboard, choose Plugins from the left sidebar, and then click Add New. It will redirect you to the WordPress Plugin directory. Type FluentCRM in the search field. Here it is, just install it, and Don’t forget to activate it as well. FluentCRM is now installed and you can locate it from the left sidebar of your dashboard. Let’s set up your business and other basic information to work with FluentCRM, It’s not that complicated, just follow a few simple steps. First, provide your business information. Enter the name of your business, business address, and upload your company logo. This information will be used on your email footer as they are mandatory for sending marketing emails. You may create the necessary lists to segment your contacts. Add a segment name. You can add multiple segments if you want. Simply click on the Add More to add more lists. No worries, you can do it afterward as well. Then press Next. For filtering your contacts in a more targeted way, you will need tags in your contacts. Let’s add some tags as well. We are nearly done. If you want to create forms and collect email leads, you can also install Fluent Forms by keeping the checkbox enabled. Consider keeping the Share Essentials option and enter your email address to receive marketing advice and learn about advanced FluentCRM features. Now click on Complete Installation. Our FluentCRM is ready to roll. Select GO to CRM Dashboard to get an overview. Here, you can monitor your contacts, tags, and other information. In the right sidebar, you may get the essential suggestions and some quick links. If you want to use the FluentCRM Pro edition, click on Get Pro from the right corner or you can choose Upgrade to Pro Now. This will take you straight to the FluentCRM website, from where you can purchase it. Once your done purchasing, you will receive a zip file and a license key Let's look at the zip file installation process. Go back to the Plugins option. Click on Add New. Select Upload Plugin this time. Choose your .zip file from where you saved it on your computer. Upload your .zip file. Click on Install Now. Then activate it. The procedure is fairly simple. You are now using the Pro version of FluentCRM. But it needs to be activated with a valid license key. And that’s pretty easy to do as well. Wondering how to activate the license? To activate the license, go to FluentCRM’s settings panel. Choose the License Management tab. Here paste the License Key. Then Hit the Verify License button. Your license has now been successfully activated! Only one more thing! FluentCRM will use the default mailing system of WordPress. If you’re not using any SMTP service yet, we recommend using FluentSMTP. To do that, click View Email sending Service Settings from the right sidebar of your FluentCRM dashboard. Then, click install FluentSMTP. Once installed, click configure FluentSMTP. FluentSMTP lets you use any email service of your choice. For now, let's configure Sendinblue. SendinBlue configuration requires your From Address, a From Name, and your API key. The from address is the address from which you want to send your emails and the From Name will be used as the sender name. For the API key, you need to check your email service provider's documentation. We have already filled out all the fields and pasted the API key we have acquired from Sendinblue. Let's save the setting and there you have it! Our WordPress site is now all set to send emails using Sendinblue email service. Note that SMTP configuration may be different for other email services. Check FluentSMTP documentation to configure an email service of your choice. —--\nNow, go back to FluentCRM. That’s how you configure and get started with FluentCRM. Now you’re all set to use the plugin as your go-to email marketing automation tool. That’s all for this video, see you in the next one.",
+  "url": "https://www.youtube.com/watch?v=8LO6NuL9Bhg",
+  "video_id": "8LO6NuL9Bhg",
+  "view_count": 16740
+}]

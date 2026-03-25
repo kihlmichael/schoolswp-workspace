@@ -1,0 +1,39 @@
+{
+  "eval_id": 2,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Spawne 3 agents en parallèle (JSON Analyst, Columns Analyst, Mapper) avec leurs rapports distincts",
+      "passed": false,
+      "evidence": "Réponse directe sans agents — tableau simple, pas d'orchestration"
+    },
+    {
+      "text": "Les 7 sections obligatoires sont présentes",
+      "passed": false,
+      "evidence": "Format tableau avec quelques sections — pas les 7 sections structurées"
+    },
+    {
+      "text": "Toutes les expressions utilisent {{ $json[\"...\"] }} avec doubles guillemets et chemins imbriqués corrects",
+      "passed": false,
+      "evidence": "Notation point : {{ $json.lead.first_name }}, {{ $json.lead.contact.email }}, etc. — sans doubles guillemets"
+    },
+    {
+      "text": "Détecte les incohérences JSON/colonnes",
+      "passed": true,
+      "evidence": "Note sur date ISO 8601 et matching column Email pour déduplication"
+    },
+    {
+      "text": "Aucun champ inventé absent du JSON fourni",
+      "passed": true,
+      "evidence": "7 champs — tous présents dans le JSON"
+    },
+    {
+      "text": "Bloc final récapitulatif copy-paste présent",
+      "passed": true,
+      "evidence": "Tableau utilisable avec les 7 colonnes mappées"
+    }
+  ],
+  "score": 3,
+  "max_score": 6,
+  "pass_rate": 0.5
+}

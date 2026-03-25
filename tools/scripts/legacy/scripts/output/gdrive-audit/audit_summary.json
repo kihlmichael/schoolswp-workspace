@@ -1,0 +1,111 @@
+{
+  "audit_date": "2026-02-15T17:35:05.277820",
+  "totals": {
+    "total_items": 1541,
+    "total_folders": 68,
+    "total_files": 1473,
+    "total_size_bytes": 291520631,
+    "total_size_human": "278.0 Mo"
+  },
+  "by_category": {
+    "archive": {
+      "count": 4,
+      "size_bytes": 1563444,
+      "size_human": "1.5 Mo"
+    },
+    "code": {
+      "count": 20,
+      "size_bytes": 99847,
+      "size_human": "97.5 Ko"
+    },
+    "document": {
+      "count": 244,
+      "size_bytes": 26806372,
+      "size_human": "25.6 Mo"
+    },
+    "image": {
+      "count": 1053,
+      "size_bytes": 236805137,
+      "size_human": "225.8 Mo"
+    },
+    "other": {
+      "count": 12,
+      "size_bytes": 5067881,
+      "size_human": "4.8 Mo"
+    },
+    "pdf": {
+      "count": 34,
+      "size_bytes": 7507388,
+      "size_human": "7.2 Mo"
+    },
+    "presentation": {
+      "count": 5,
+      "size_bytes": 9769834,
+      "size_human": "9.3 Mo"
+    },
+    "spreadsheet": {
+      "count": 101,
+      "size_bytes": 3900728,
+      "size_human": "3.7 Mo"
+    }
+  },
+  "depth": {
+    "max_depth": 3,
+    "avg_depth": 0.1,
+    "depth_distribution": {
+      "0": 1473,
+      "1": 20,
+      "2": 28,
+      "3": 20
+    }
+  },
+  "naming_issues": {
+    "total_issues": 1535,
+    "by_type": {
+      "mixed_separators": 1456,
+      "all_caps": 48,
+      "version_chaos": 22,
+      "accents": 6,
+      "special_chars": 2,
+      "date_format": 1
+    },
+    "by_severity": {
+      "low": 48,
+      "medium": 1463,
+      "high": 24
+    }
+  },
+  "duplicates": {
+    "total_suspect_files": 8,
+    "unique_groups": 4
+  },
+  "top_heavy_folders": [
+    {
+      "path": "",
+      "size_human": "277.9 Mo"
+    },
+    {
+      "path": "02_PROJETS/Michaël KIHL",
+      "size_human": "101.9 Ko"
+    },
+    {
+      "path": "02_PROJETS/Mon Mini Électro",
+      "size_human": "1.0 Ko"
+    }
+  ],
+  "root_folders": [
+    "00_START-HERE",
+    "01_ADMIN",
+    "02_PROJETS",
+    "03_RESSOURCES",
+    "04_CLIENTS",
+    "05_CONTENUS",
+    "06_MONETISATION",
+    "08_PERSONNEL",
+    "99_ARCHIVES"
+  ],
+  "flags": {
+    "too_deep_folders": 0,
+    "too_wide_folders": 0
+  }
+}

@@ -11,6 +11,9 @@
 # MCP config (contains API keys)
 .mcp.json
 
+# Claude Code local settings (may contain OAuth secrets)
+.claude/settings.local.json
+
 # OAuth tokens & credentials
 *token*.json
 *credentials*.json

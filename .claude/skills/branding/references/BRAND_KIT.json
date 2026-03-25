@@ -1,0 +1,229 @@
+{
+  "brand_identity": {
+    "name": "schoolsWP",
+    "tagline": "WordPress. Clair. Structuré. Utile.",
+    "mission": "Rendre WordPress plus humain, plus pédagogique et plus accessible en combinant stratégie, automatisation et clarté.",
+    "vision": "Que chaque créateur ait un site WordPress qui travaille vraiment pour lui.",
+    "positioning_one_liner": "schoolsWP enseigne WordPress comme outil stratégique au service des créateurs, pas comme une fin en soi.",
+    "differentiators": [
+      "Approche pédagogique structurée (méthode en 5 étapes IA + SEO + pédagogie)",
+      "Contenu toujours actionnable et ancré dans des cas concrets",
+      "Combinaison unique : WordPress + automatisation + stratégie SEO",
+      "Écosystème communautaire complet : blog, newsletter, YouTube et Academy"
+    ]
+  },
+  "audiences": [
+    {
+      "segment": "Freelances WordPress",
+      "level": "intermédiaire",
+      "pain_points": [
+        "Sites clients pas optimisés pour le SEO",
+        "Perte de temps sur des tâches répétitives sans automatisation",
+        "Difficulté à proposer des systèmes complets (CRM, tunnels, LMS)"
+      ],
+      "desired_outcome": [
+        "Livrer des sites performants et autonomes",
+        "Gagner du temps grâce à l'automatisation",
+        "Monter en compétence pour facturer plus"
+      ]
+    },
+    {
+      "segment": "Créateurs / formateurs / infopreneurs",
+      "level": "débutant",
+      "pain_points": [
+        "WordPress perçu comme technique et confus",
+        "Pas de méthode claire pour structurer leur site",
+        "Ne savent pas par où commencer (thème, plugins, contenu)"
+      ],
+      "desired_outcome": [
+        "Un site qui vend ou convertit sans aide technique externe",
+        "Comprendre WordPress étape par étape",
+        "Automatiser leurs emails, ventes et contenus"
+      ]
+    },
+    {
+      "segment": "Entrepreneurs / TPE",
+      "level": "débutant",
+      "pain_points": [
+        "Budget limité, pas de développeur dédié",
+        "Site vitrine qui ne génère ni trafic ni leads",
+        "Pas de stratégie SEO ni de contenu structuré"
+      ],
+      "desired_outcome": [
+        "Un site WordPress rentable et autonome",
+        "Attirer du trafic organique grâce au SEO",
+        "Transformer leur site en levier de croissance"
+      ]
+    }
+  ],
+  "voice_and_tone": {
+    "voice_attributes": [
+      "direct",
+      "pédagogique",
+      "chaleureux",
+      "structuré",
+      "authentique"
+    ],
+    "tone_by_context": {
+      "support": "Patient, rassurant, jamais condescendant. On accompagne sans juger le niveau.",
+      "sales": "Transparent et éducatif. On montre la valeur avant de proposer. Jamais de pression.",
+      "social": "Conversationnel et engageant. On partage des leçons concrètes, pas du contenu creux.",
+      "technical": "Clair et progressif. Chaque terme technique est expliqué simplement. On part du concret vers le concept."
+    },
+    "addressing": "Tutoiement systématique, partout, sans exception"
+  },
+  "style_guide": {
+    "writing_rules": [
+      "Tutoiement systématique, partout, sans exception",
+      "Phrases courtes : 8 à 15 mots en moyenne, 20 mots max",
+      "Structure simple : sujet + verbe + complément",
+      "Paragraphes de 2 à 4 phrases, une idée par paragraphe",
+      "Alterner phrases courtes (impact) et moyennes (rythme)",
+      "Pas d'italique sauf noms d'outils ou logiciels",
+      "Gras avec parcimonie, uniquement sur les concepts clés",
+      "Emojis : 1 par section max, et seulement si pertinent",
+      "Toujours aérer : espace entre chaque paragraphe"
+    ],
+    "words_to_use": [
+      "en clair",
+      "concrètement",
+      "étape par étape",
+      "testé et approuvé",
+      "actionnable",
+      "automatiser",
+      "structurer",
+      "optimiser",
+      "gagner du temps",
+      "levier de croissance",
+      "écosystème",
+      "méthode",
+      "système"
+    ],
+    "words_to_avoid": [
+      "disruptif",
+      "game changer",
+      "scalable",
+      "leverage",
+      "hack / growth hack",
+      "révolutionnaire",
+      "incroyable",
+      "le meilleur du marché",
+      "en un clic",
+      "sans effort",
+      "simplement (quand c'est pas simple)",
+      "il suffit de (minimise la difficulté)"
+    ],
+    "claims_policy": "Pas de promesses non prouvées. Pas de chiffres sans source ou expérience personnelle. Toujours ancrer dans un cas concret ou un test réel. Préférer 'dans mon cas' ou 'sur schoolsWP' plutôt que des affirmations universelles."
+  },
+  "messaging": {
+    "key_messages": [
+      "WordPress peut travailler pour toi, pas l'inverse.",
+      "Tu n'as pas besoin d'être développeur pour avoir un site performant.",
+      "La clarté bat toujours la complexité.",
+      "Un bon site se juge à ses résultats, pas à son design.",
+      "Automatiser, c'est se libérer du temps pour ce qui compte."
+    ],
+    "proof_points": [
+      "schoolsWP existe depuis 2021, avec des centaines d'articles publiés",
+      "Méthode de rédaction en 5 étapes testée et documentée (IA + SEO + pédagogie)",
+      "Tous les outils recommandés sont testés personnellement sur schoolsWP",
+      "Résultats concrets partagés : analytics, trafic, conversions",
+      "Écosystème complet : blog, newsletter, YouTube, Academy"
+    ],
+    "objections_and_answers": [
+      {
+        "objection": "WordPress, c'est compliqué et pas fait pour moi",
+        "answer": "C'est ce que pensent 90 % des gens avant d'avoir une méthode claire. schoolsWP te guide étape par étape."
+      },
+      {
+        "objection": "Je n'ai pas le budget pour un développeur",
+        "answer": "Justement. Avec les bons plugins et la bonne méthode, tu peux tout faire toi-même. C'est l'objectif de schoolsWP."
+      },
+      {
+        "objection": "Il y a déjà plein de tutos WordPress gratuits partout",
+        "answer": "Des tutos, oui. Une méthode structurée qui relie WordPress, SEO et automatisation dans un parcours cohérent ? C'est plus rare."
+      },
+      {
+        "objection": "L'automatisation, ça fait froid et impersonnel",
+        "answer": "Mal utilisée, oui. Bien pensée, elle te libère du temps pour te concentrer sur la relation avec ton audience."
+      }
+    ],
+    "cta_preferences": [
+      "Toujours un CTA utile, jamais agressif",
+      "Privilégier : 'Teste par toi-même', 'Découvre comment faire', 'Lis le guide complet'",
+      "Liens affiliés toujours signalés de manière transparente",
+      "Inviter à répondre, commenter ou partager plutôt qu'à 'acheter maintenant'",
+      "Un seul CTA principal par contenu, éventuellement un secondaire soft"
+    ]
+  },
+  "examples": {
+    "good_examples": [
+      {
+        "context": "Accroche article de blog",
+        "text": "Tu envoies encore tes emails un par un à chaque nouveau contact ? Jusqu'à 50 abonnés, ça passe. Au-delà, c'est ingérable. La solution : automatiser avec FluentCRM."
+      },
+      {
+        "context": "Intro newsletter",
+        "text": "Cette semaine, j'ai refait l'intro d'un article publié il y a 6 mois. Résultat : +40 % de temps passé sur la page. La seule différence ? J'ai simplifié la première phrase."
+      },
+      {
+        "context": "Post LinkedIn / Bluesky",
+        "text": "WordPress ne fait pas le SEO à ta place. Installer Yoast ne suffit pas. Ce qui compte : une structure claire, une réponse directe à une intention de recherche, et des liens internes intelligents. Le plugin, c'est l'outil. La stratégie, c'est toi."
+      },
+      {
+        "context": "CTA fin d'article",
+        "text": "Tu veux aller plus loin ? Découvre le guide complet FluentCRM sur schoolsWP. Lien affilié — je recommande uniquement les outils que j'utilise au quotidien."
+      }
+    ],
+    "bad_examples": [
+      {
+        "context": "Trop marketing / promesse exagérée",
+        "text": "Découvrez LA solution révolutionnaire qui va transformer votre business en un clic ! Ne ratez pas cette opportunité incroyable !"
+      },
+      {
+        "context": "Trop technique sans explication",
+        "text": "Configure ton reverse proxy avec Nginx pour load-balancer tes instances WP sur un cluster Kubernetes multi-node."
+      },
+      {
+        "context": "Trop générique / pas ancré",
+        "text": "WordPress est un CMS très populaire utilisé par des millions de sites dans le monde. Il permet de créer facilement des sites web."
+      },
+      {
+        "context": "Ton condescendant",
+        "text": "Si tu ne sais même pas ce qu'est un plugin, commence peut-être par les bases avant de lire cet article."
+      }
+    ]
+  },
+  "visual_optional": {
+    "colors": {
+      "primary": "#00D400",
+      "secondary": "#00A100",
+      "accent_complement": "#E668D4",
+      "contrast_1_darkest": "#12111F",
+      "contrast_2_dark": "#212121",
+      "contrast_3_medium": "#57556D",
+      "contrast_4_light": "#8F8DA5",
+      "base_1_subtle_bg": "#EDF0F8",
+      "base_2_lighter_bg": "#F4F6FB",
+      "base_3_white_bg": "#FAFBFD",
+      "notice_success": "#13612E",
+      "notice_info": "#1159AF",
+      "notice_alert": "#B82105",
+      "notice_warning": "#F7630C",
+      "notice_rating": "#F5A524"
+    },
+    "typography": {
+      "headings": "Nunito Sans — bold 700 — H1:2rem / H2:1.75rem / H3:1.5rem / H4:1.375rem / H5:1.25rem / H6:1.125rem",
+      "body": "Roboto — regular 400 — 1.2rem"
+    },
+    "ui_style_keywords": [
+      "épuré",
+      "aéré",
+      "lisible",
+      "professionnel sans être froid",
+      "structuré avec des espaces généreux",
+      "moderne",
+      "accessible"
+    ]
+  }
+}

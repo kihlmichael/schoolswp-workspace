@@ -64,6 +64,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--no-cluster", action="store_true", help="Désactiver la génération de cluster")
     parser.add_argument("--force", action="store_true", help="Forcer la régénération même si les fichiers existent")
     parser.add_argument("--save-dir", metavar="DIR", default=None, help="Dossier de sauvegarde")
+    parser.add_argument("--output", metavar="FILE", default=None, help="Fichier de sortie unique pour l'article final (v2)")
     parser.add_argument("--model", default=None, metavar="MODEL", help="Modèle Claude (défaut : $MODEL_WRITER ou claude-sonnet-4-6)")
     return parser
 
@@ -140,6 +141,14 @@ async def main() -> None:
             else "Réécriture"
         )
         print(f"\n[content-factory] Publish Score: {score:.1f}/100 — {label}")
+
+    if args.output:
+        final = result.final or result.draft
+        if final:
+            out = safe_write_path(args.output)
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(final, encoding="utf-8")
+            print(f"[content-factory] Article final → {out}")
 
     print(f"\n[content-factory] Pipeline terminé. Fichiers dans : {save_dir}")
 

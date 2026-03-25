@@ -20,4 +20,4 @@ REM    --model        Modèle Claude (défaut: claude-sonnet-4-6)
 REM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 cd /d "%~dp0"
-tools\scripts\legacy\scripts\.venv\Scripts\python -m agents.article_pipeline.brain_lite_cli %*
+.venv\Scripts\python -m agents.article_pipeline.brain_lite_cli %*

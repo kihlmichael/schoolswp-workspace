@@ -19,6 +19,16 @@ ignore = ["E501"]
 [tool.ruff.lint.isort]
 known-first-party = ["agents"]
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

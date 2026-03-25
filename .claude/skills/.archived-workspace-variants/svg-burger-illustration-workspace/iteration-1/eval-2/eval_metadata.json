@@ -1,0 +1,14 @@
+{
+  "eval_id": 2,
+  "eval_name": "burger-svg-en-landing-page",
+  "prompt": "I need a clean SVG burger icon for my landing page. It should have an exploded-layer hover animation — each ingredient separates vertically on hover and snaps back together on mouseout. Minimalist style, self-contained SVG, no external files.",
+  "assertions": [
+    {"id": "no-preamble", "description": "Output starts with <svg (no text/markdown before the tag)"},
+    {"id": "has-style-block", "description": "SVG contains a <style> block with CSS"},
+    {"id": "has-hover-states", "description": "CSS contains :hover selector"},
+    {"id": "has-translate-animation", "description": "CSS uses translateY or transform for layer separation"},
+    {"id": "has-6-groups", "description": "SVG contains at least 6 <g elements for ingredient layers"},
+    {"id": "no-external-deps", "description": "No external URLs or dependencies (no http:// in src or href)"},
+    {"id": "svg-closes-properly", "description": "Output ends with </svg>"}
+  ]
+}

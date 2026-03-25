@@ -1,11 +1,17 @@
-FROM python:3.11-slim
+# ── schoolsWP Multi-Agent System — FastAPI/Uvicorn (optimized) ───────────
+# Multi-stage: deps → runtime (non-root, healthcheck, minimal image)
 
-WORKDIR /app
+# ── Stage 1: Build & install dependencies ────────────────────────────────
+FROM python:3.11-slim AS builder
 
-# Étape 1 : installer les dépendances en premier (layer cache Docker)
-# Si seul pyproject.toml change → pas de re-download des packages
+WORKDIR /build
+
+# Install build tools
+RUN pip install --no-cache-dir hatchling
+
+# Install deps from pyproject.toml (single source of truth)
 COPY pyproject.toml .
-RUN pip install --no-cache-dir hatchling \
+RUN pip install --no-cache-dir --prefix=/install \
     "anthropic>=0.40.0" \
     "fastapi>=0.115.0" \
     "uvicorn[standard]>=0.32.0" \
@@ -15,13 +21,34 @@ RUN pip install --no-cache-dir hatchling \
     "python-dotenv>=1.0.0" \
     "httpx>=0.27.0"
 
-# Étape 2 : copier le source et installer le package (sans re-télécharger les deps)
+# Install package itself (no deps, already installed above)
 COPY . .
-RUN pip install --no-cache-dir --no-deps .
+RUN pip install --no-cache-dir --no-deps --prefix=/install .
 
-# Répertoire de données (surchargé par le volume en prod)
-RUN mkdir -p data/decisions
+# ── Stage 2: Production runtime ──────────────────────────────────────────
+FROM python:3.11-slim AS runtime
+
+WORKDIR /app
+
+# Copy installed packages from builder
+COPY --from=builder /install /usr/local
+
+# Create non-root user
+RUN groupadd -g 1001 appuser && \
+    useradd -u 1001 -g appuser -s /bin/false -M appuser && \
+    mkdir -p /app/data/decisions && \
+    chown -R appuser:appuser /app
+
+# Copy source (api + packages only — what hatch builds)
+COPY --chown=appuser:appuser api/ ./api/
+COPY --chown=appuser:appuser packages/ ./packages/
+COPY --chown=appuser:appuser pyproject.toml ./
+
+USER 1001
 
 EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+  CMD python -c "import urllib.request, sys; urllib.request.urlopen('http://localhost:8000/health') or sys.exit(1)"
 
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]

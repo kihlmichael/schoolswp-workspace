@@ -1,0 +1,699 @@
+{
+  "applied_at": "2026-02-15T17:42:00.372659",
+  "target_folder": "1oFMl1i2no8uSyl9sHNjqPxmXj7W4uFCe",
+  "total": 115,
+  "success": 115,
+  "errors": 0,
+  "operations": [
+    {
+      "id": "1IMyaQNX2uY-9rw7Y9gF0IWCL9DF6LqneSAmdGuOn72Q",
+      "name": "2023-11-10 - Plugins SEO WordPress Seopress vs Yoast - Article - FR",
+      "timestamp": "2026-02-15T17:40:35.707170",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "12dzjj_HBix6fuSLleemZ7WLWOTsEzy33h_PwVTneQjQ",
+      "name": "2023-11-10 - Dropshipping Shopify vs WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:36.508115",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1zgtALSVJYnSt-Hx2dvHNeSWkRyvbmlEYCWWrR_u4Ltw",
+      "name": "2024-06-15 - WordPress.com vs WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:37.267246",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1fshPCVHi8FiFv7v9cioH9T_u4EvDXhP9nYkeV-Q3MCY",
+      "name": "2024-07-11 - Divi Builder vs Elementor Pro Le Duel des Extensions WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:38.014757",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1FRetb21ZsvIn-QJLFTqoHDWhLXwk3-F5lkRh1fdVTLw",
+      "name": "2024-08-19 - ElementsKit pour Elementor addons tout-en-un et widgets essentiels - Article - FR",
+      "timestamp": "2026-02-15T17:40:38.707343",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1-gHUHkzxWN7kCSDya7HhtEGdM-6l1Lvp3qrasuG8JVk",
+      "name": "2024-10-21 - Local WP Choisir entre Local by Flywheel ou Xampp pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:39.490478",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1iV3dsKcpEpn0Qu0KrE90GDJ8gJ7xQKB13s2fbRZKI9M",
+      "name": "2025-01-11 - Traduire Sans Migraine Test du Plugin WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:40.530219",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1WIG76ZYL0geh4ngCklq572GyqeM4pQ5hveUhst1Qz0Y",
+      "name": "2025-01-09 - Qu’est-ce que Gutenberg dans WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:41.254121",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1O5Gv1T_4-ufDVBrJBzCV7j3kI8irxku-tGMd2aBELgM",
+      "name": "2024-12-11 - WP Marmite Pay simplifie vos paiements sur WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:41.957537",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "132zsZhii2B57Iq9xnA5a2XpTDlr4r0qzm_kYDTmVQvg",
+      "name": "2024-05-13 - InstaWP, avis comment construire un site WordPress en un clic - Article - FR",
+      "timestamp": "2026-02-15T17:40:42.791970",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1leK79ogKrBVfYS4flJF8lowesJS6YXRwCTLta6ELVp4",
+      "name": "2024-05-07 - ClickWhale vs Pretty Links Quel est le meilleur raccourcisseur et gestionnair... - Article - FR",
+      "timestamp": "2026-02-15T17:40:43.637143",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1xujLu7ZYUGI3PLAu8Xze565xhbP5y-VXBxbXC8HM-SE",
+      "name": "2024-08-29 - SEOKEY, le plugin SEO essentiel pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:44.470966",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "13YmG6O1d-ABXr8m807xc4EJxnhOTmHo4ayPJr48UY9Y",
+      "name": "2024-08-15 - Plugin Traduction Wordpress Top 10 pour Globaliser votre Site - Article - FR",
+      "timestamp": "2026-02-15T17:40:45.279804",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1scigfUReq_aOkzcqJkTgMF-B05KYaJv3mSUMxY_lWjQ",
+      "name": "2023-11-20 - Fluent Forms, le plugin WP pour vos formulaires - Article - FR",
+      "timestamp": "2026-02-15T17:40:46.049892",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1Rmdf4ZNeRrQVQWrwqTDpBzO0Cfyu-ORzSG6TaZHUAAc",
+      "name": "2024-07-21 - SureMembers vs Wishlist Members quelle extension choisir - Article - FR",
+      "timestamp": "2026-02-15T17:40:46.830168",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1f-jtMNuEKmWZXfQJ80UAxXz2ianBHicgFkB8bXNQ_5E",
+      "name": "2024-10-21 - Tunnel de vente WordPress guide complet pour optimiser vos conversions - Article - FR",
+      "timestamp": "2026-02-15T17:40:47.596564",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1b3EboNZiDT0Ar_CoGOqRY5aaAqaAPCVCnghJesSMQng",
+      "name": "2024-12-10 - What is a WordPress plugin and how to use it effectively - Article - FR",
+      "timestamp": "2026-02-15T17:40:48.346485",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "196NCzvQfhiFyj3ObSs_7qlS1sEFikyT2Wh_ZuqUZ1Ik",
+      "name": "2023-11-10 - Qu’est-ce que le plugin Divi BodyCommerce - Article - FR",
+      "timestamp": "2026-02-15T17:40:48.998916",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1xeSursEBbjFXjWvMko7gx4twDlSy01oYWwk1O2KaBAE",
+      "name": "2023-11-10 - Tout ce que vous devez savoir sur BuddyBoss - Article - FR",
+      "timestamp": "2026-02-15T17:40:49.764240",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1UbJJUfUavu-d_Si1e_iuzInjU-UNhxP7kGBbJP2sQZM",
+      "name": "2023-10-26 - Divi ToolBox, ce qu’il faut savoir sur ce plug in WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:50.538418",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1GNlLQQhW38CGvlstFyxFx9Ngflk8oR3p0Q1M-GKNrEM",
+      "name": "2023-11-24 - Fluent Support - Le Plugin Incontournable pour le Support Client sur WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:51.249851",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1zX3mIiEPDdhsftiv965s9y9KCuBwqesg9dp56dnug9E",
+      "name": "2023-11-24 - AIOSEO Le Plugin All in One SEO Ultime pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:51.969108",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1BzBU2gto-SIP1K2hLsB32Iw2ADsIpUFIsw9HoXqz3_8",
+      "name": "2023-11-24 - ClickWhale - Article - FR",
+      "timestamp": "2026-02-15T17:40:52.745635",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1x3RRCqIwoailKJF92EM4GpfT289XAl9wrZmthNDiFbY",
+      "name": "2023-11-24 - Manychat le Chatbot Messenger de Facebook - Article - FR",
+      "timestamp": "2026-02-15T17:40:53.483046",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1yByAbEJSUr0kPPBFKqZIUhj-3RWSiR6LidzTWjKFnBE",
+      "name": "2023-11-24 - SureCart, le plugin qui concurrence WooCommerce - Article - FR",
+      "timestamp": "2026-02-15T17:40:54.177276",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1WTrbazg2Gpq-X-k9vo2QyGeILcxSa-FhUfsU_Jd7c9k",
+      "name": "2023-11-24 - Tout ce que vous devez savoir sur Webflow - Article - FR",
+      "timestamp": "2026-02-15T17:40:55.080671",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1JzHbYnh5WzjyGSrwCTtSiMCwyE8bMCFSsSo8w7Ia1tw",
+      "name": "2023-11-24 - Solid Affiliate - Le Top Plugin d’affiliation pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:55.730798",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1BToRCEdqsUHfMdTJCRWrSBFFaCzDwxcKtfNa3nafTZI",
+      "name": "2023-11-22 - BeFreelancr La plateforme pour acheter et vendre des services en ligne - Article - FR",
+      "timestamp": "2026-02-15T17:40:56.562835",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1OlKghrDW9wI-aDWpCCtjzHEx5kfswezNDuKRa-R9eco",
+      "name": "2023-11-24 - WishList Member, tout savoir sur ce plugin WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:40:57.259672",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1VGUGcTzEtNjbkMDQNKAHrOFao-NTxKDUhziHKEzblgw",
+      "name": "2023-11-24 - Tout ce que vous devez savoir sur LaunchFlows - Article - FR",
+      "timestamp": "2026-02-15T17:40:58.012277",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1rXDu1FRXq-3TGkXvihbQs2l8UmyAH58NXLNLB9Bec3E",
+      "name": "2023-11-24 - WooFunnels Autonami, le CRM pour gagner toujours plus de clients - Article - FR",
+      "timestamp": "2026-02-15T17:40:58.651179",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1uy0qwAel7QtInFYmRE9t5HZ_FZ7R7aJ6vZV9hgZ84Yk",
+      "name": "2023-11-21 - Top 3 des addons Elementor - Article - FR",
+      "timestamp": "2026-02-15T17:40:59.331459",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1FY37XW1AIxUh8GDgBTvnXssDvWiej_R5t-lD8CxtHtE",
+      "name": "2023-11-21 - Spotlight Social Media Feeds - Article - FR",
+      "timestamp": "2026-02-15T17:41:00.137733",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1m3e3phZXeO74v3t_jgzophrvyLyC_7CUUDq-UaOPdjw",
+      "name": "2023-11-22 - Gagner de l’argent avec l’affiliation sur votre site WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:00.899246",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1f8toJqU9DlLpG8WLARMEOiBkUbQFpFN-6Of_muFYNDQ",
+      "name": "2023-11-21 - AAWP - Le meilleur plugin pour des sites de niche WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:01.644605",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1uW6tNU-ptlh3hnLW000gz9sAOUbgUVrsNiW8w_7J2cQ",
+      "name": "2023-11-13 - Ce que je pense de Divi Pixel - Article - FR",
+      "timestamp": "2026-02-15T17:41:02.440312",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1CffgAPe1cMn_dXx8YlgNKVRs_fcX38SE_-ZAUpPBP9c",
+      "name": "2023-11-14 - Jungle Scout, l’outil pour booster vos ventes sur Amazon - Article - FR",
+      "timestamp": "2026-02-15T17:41:03.130633",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1kObNFmf24S4mXdC7KAG7GWdPeT59JiVasZPrDNjxgNo",
+      "name": "2023-11-13 - Qu’est-ce que le pixel Facebook et comment l’installer - Article - FR",
+      "timestamp": "2026-02-15T17:41:03.765638",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1MlJp9bK4Z7UYORhZYJHpuy3spJz7hFkdVmpU8UVV8hw",
+      "name": "2023-11-13 - Mon avis sur Kadence WP - Article - FR",
+      "timestamp": "2026-02-15T17:41:04.458418",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1Ao8CL-BkQwIh3zIdmxXGhXs0nTKJHmzN5vQVT-Izacc",
+      "name": "2023-11-13 - On vous dit tout sur Google Web Stories pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:05.082004",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1WhILuXJLE3LaFI4gedrTyWBUUzxcNA0FK7wAfe4Sn9g",
+      "name": "2023-11-13 - Groundhogg, la marmotte qui va vous simplifier la vie - Article - FR",
+      "timestamp": "2026-02-15T17:41:05.784063",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1sdB84csafMbwImytHqp0YQ_11FoHq7BjeDo8rioMF7k",
+      "name": "2023-11-13 - Zoom sur Divi - Article - FR",
+      "timestamp": "2026-02-15T17:41:06.469154",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1yX9kPuQicj0j097P77xaLxe8Fa-WY-opx5nKk1Qxkuc",
+      "name": "2023-11-12 - On vous dit tout sur le plugin Elementor - Article - FR",
+      "timestamp": "2026-02-15T17:41:07.203821",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1uQ68PUEE5LLxfvJbFWLLlumMP7YnKgoMdfnZFpqSzTc",
+      "name": "2023-11-10 - Ce qu’il faut savoir sur la plateforme 5euros - Article - FR",
+      "timestamp": "2026-02-15T17:41:07.869961",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1nTERNpN2R33Q-bAjub6Eeg_jkM6INEVpPeSZ0kkPkhc",
+      "name": "2023-11-13 - Fiverr, zoom sur la plateforme qui permet de trouver des freelances - Article - FR",
+      "timestamp": "2026-02-15T17:41:08.619354",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1e9gUwA9g_D9mVUSlSBsUrJT1CriCaXagHwOw0LXMPvg",
+      "name": "2023-11-13 - Pourquoi utiliser WordPress Multisite - Article - FR",
+      "timestamp": "2026-02-15T17:41:09.500239",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1UTQtLj0KD8wzBTFDyR8fYCkLiNmik-8ah9o_vPEUIE0",
+      "name": "2023-11-24 - Barn2 Plugins - Des plugins pour booster ses performances sur WooCommerce - Article - FR",
+      "timestamp": "2026-02-15T17:41:10.202862",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1ysXkWYESEmO3L5lsj5Os3S0Rg0Xmxx_3HlumD9nhi28",
+      "name": "2026-02-04 - Modele de Prompt Structure - Template - Article - FR",
+      "timestamp": "2026-02-15T17:41:11.020451",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1f7fEnLZKAabr4IklxoHdGwuPU4KnRfZpXw7oIi4jqh0",
+      "name": "2023-11-24 - Bertha AI Le meilleur assistant d’ecriture IA pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:11.786140",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1patIGLI4xHOTHJltlJRqNOrA5WZINzXfXTe_A4LCQn8",
+      "name": "2025-01-23 - Skoatch Performance et Efficacite de la Redaction IA - Article - FR",
+      "timestamp": "2026-02-15T17:41:12.468897",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1Hi_WA_NwNOMDUQYBIzg2J4RGKWaULImjWiAvacKYro0",
+      "name": "2024-12-12 - FluentCommunity Construisez rapidement une communaute WordPress avec ce plugin - Article - FR",
+      "timestamp": "2026-02-15T17:41:13.192966",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1WgTMi_ugMW9qvoCrmeaZUa8t2rQCG1rR9Lw0j1pARh8",
+      "name": "2024-11-21 - Link Finder optimisez votre strategie de netlinking a moindre cout - Article - FR",
+      "timestamp": "2026-02-15T17:41:13.810201",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1cOevXGlUUI2-zoRXGhJfg-xOdCOR2moCdH1gaqJ8MS0",
+      "name": "2024-10-26 - TasteWP Decouvrez Comment Creer Facilement Votre Site WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:14.609229",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1vBJEjxa2osZrOWOSsXBGISX5n6YVaZuySR3CBBsRxwM",
+      "name": "2024-09-16 - Full Site Editing (FSE) WordPress Maitrise Le Futur Du Web WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:15.352002",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1QK_MkROtNXGqJtgXbuDx3GgnE5ci_93vDzqdzPGs9qo",
+      "name": "2024-08-13 - WPBoutik reinvente le commerce en ligne sur WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:16.036108",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1hOAImEBfAFSFuSvw47R0tX6Af1IBd-jfo-tMoa6Rba8",
+      "name": "2024-08-03 - Avis sur Linkuma est-elle la reference du netlinking - Article - FR",
+      "timestamp": "2026-02-15T17:41:16.745689",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1oYGxsoTra_TG5cdRutPSFt7nH9ZBST5eZ48lUjk9lZE",
+      "name": "2024-07-26 - Suremembers decouvrez le meilleur plugin d’adhesion pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:17.523397",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1kLK3BQYn38SDrG4gJyGCEcpWlZ0_WBzRkeVPDnSEt30",
+      "name": "2024-06-29 - Copilhost Hebergement Rapide et Securise pour WordPress v2 - Article - FR",
+      "timestamp": "2026-02-15T17:41:18.122898",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "18G8GRboe_E5K8PEBBPN45gZ_vnMKJyqWy3ZZexbs-_c",
+      "name": "2024-10-21 - Nettoyer base de donnees WordPress guide complet et plugins - Article - FR",
+      "timestamp": "2026-02-15T17:41:18.822326",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1DQN5qmopOe3HKb1okPlp6zUSmGiVUO2UHamYPeCSqF4",
+      "name": "2024-06-18 - FluentBoards Decouvrez tout sur ce plugin de gestion de projet pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:19.533759",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1hWMzIFzZip3EoiontYKsm70-h9HCpAZ_9KLrHZyznWg",
+      "name": "2024-05-03 - Creer une plateforme de formation en ligne avec WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:20.263322",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1w_TZiqxBVfqksWwcHddpljP8TkLPHhvs1qAO2SX4mRc",
+      "name": "2024-10-20 - ZipWP Revolutionnez la creation de sites WordPress en IA - Article - FR",
+      "timestamp": "2026-02-15T17:41:20.979754",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1_37iiYa6a7iPhHFuMfYsyLxVA8AULYWjVKKaDjuQGeo",
+      "name": "2024-09-22 - SureTriggers La Revolution de l’Automatisation et de l’Integration sur WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:21.856085",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1va47TnhoPjLxEtb5czOdBTq9xMQPxMj6-FtvgqaXgYw",
+      "name": "2023-11-10 - Le plug in AliDropship en details - Article - FR",
+      "timestamp": "2026-02-15T17:41:22.681994",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1eJDX-cvsVO83yCCMzQjWdPR1Ze51RxGDJ9RgwWRo1Ps",
+      "name": "2023-11-10 - ClickFunnels peut-il etre utile a votre business - Article - FR",
+      "timestamp": "2026-02-15T17:41:23.525217",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1vGoGrfUeKrjG0U2H5lHKGq0Ic899GorZ9cS0PBmTju8",
+      "name": "2023-11-10 - 6 Facons de Booster votre Blog WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:24.205875",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1tB9iseMrQCbZ4drD7w292U9_DDMBVvcDO07CTeGn9Mc",
+      "name": "2023-11-24 - Microthemer Editeur CSS visuel pour WordPress - Personnalisez facilement votr... - Article - FR",
+      "timestamp": "2026-02-15T17:41:24.848517",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1EnzRqd542K_-y4JcYSxXA2qqiTQKwziIlTEem4HFHSg",
+      "name": "2023-11-24 - Ninja Tables Avis Decouvrez le meilleur plugin de tableau pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:25.590371",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1wwDwIUuf88nBy9eRMYB-7qWEMtyZdQ4uNl4tzHW7VFQ",
+      "name": "2023-11-24 - StoreBuilder - La meilleure alternative a Shopify - Article - FR",
+      "timestamp": "2026-02-15T17:41:26.448632",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1ldcfKh3ORmULvQc8k0C8tjbBFMRIm5qd1TiJbqXxJF0",
+      "name": "2023-11-22 - CodeaProd Le site pour avoir un blog d’affiliation cle en main - Article - FR",
+      "timestamp": "2026-02-15T17:41:27.108614",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1jskkfpU3ft_jM5HFVMManISuek6yBgnKAJnLARu7dRM",
+      "name": "2023-11-24 - WP Funnels est une alternative parfaite a Clickfunnels - Article - FR",
+      "timestamp": "2026-02-15T17:41:27.713363",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "10ndGO1Jr0RlRnFF1VyJ9fd9K9-9CYWUWxm67iA7qxEU",
+      "name": "2023-11-21 - Creer sa plateforme de formation en ligne avec Tutor LMS - Article - FR",
+      "timestamp": "2026-02-15T17:41:28.394898",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1TTTgV0cLSOuE2dnlr1KmT40ZDKVAZ6qFiJfh8Z7E4do",
+      "name": "2023-11-21 - Crocoblock Decouvrez la boite a outils indispensable pour ameliorer votre sit... - Article - FR",
+      "timestamp": "2026-02-15T17:41:29.053485",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1Xv-eztNm1OAME0DVOGYgg6r9iai2unRGOWiaJnNVIh0",
+      "name": "2023-11-17 - Systeme de reservations et rendez-vous avec AmeliaWP - Article - FR",
+      "timestamp": "2026-02-15T17:41:29.764856",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1DqxJQ9BjLE5YmVWOHMyqQLMq2KD0Sxlk9iPFqn1fxg0",
+      "name": "2023-11-17 - Decouvrez GetResponse Campagnes Email et Automatisation - Article - FR",
+      "timestamp": "2026-02-15T17:41:30.427021",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1m17OcH32H_2HXeVtFJ5b0RFZwmLKvBtG2kJMkZKxPzI",
+      "name": "2023-11-10 - CartFlows Creez des Tunnels de Vente WordPress Puissants avec WooCommerce - Article - FR",
+      "timestamp": "2026-02-15T17:41:31.205356",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1jjVbDhGtkMLH1d-nhraLo7U4jADaYCKVmJEek6mHNsI",
+      "name": "2023-11-12 - Ce qu’il faut savoir sur le referencement Google - Article - FR",
+      "timestamp": "2026-02-15T17:41:32.023862",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1k6Xr6nCvPgbjkywWu9fzk9VYws6Ur0FtF5CwW0y2HGM",
+      "name": "2023-11-14 - Nouveautes 2021 chez EasyHoster securite, backups, performances, SEO et plus - Article - FR",
+      "timestamp": "2026-02-15T17:41:32.748102",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1CiZxUDrJA4Tfn92-Fu1O7QefYfOMfBaYSxZG4WY7RHI",
+      "name": "2023-10-16 - Analyse approfondie de thruuu Loutil de scraping et danalyse de la SERP - Article - FR",
+      "timestamp": "2026-02-15T17:41:33.409635",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1ZuE_IpcYjpsKkBGb_83q4sYRJb2hcnJNuZ2xLMhtkjA",
+      "name": "2024-10-20 - FluentBooking vs Amelia Booking pour WordPress quel plugin choisir - Article - FR",
+      "timestamp": "2026-02-15T17:41:34.148313",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1ZRnFLgSQg5B506ugBvZsrn5BtHDpkqdNCogve7v8LNI",
+      "name": "2024-09-21 - Suretriggers vs Zapier trouvez la meilleure solution dautomation - Article - FR",
+      "timestamp": "2026-02-15T17:41:34.772055",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1C8CLgSgm9wQ7H870wc6bCy0V6vlSe1yT59PgJAX3yyg",
+      "name": "2024-06-07 - Launchflows vs cartflows lequel choisir pour votre funnel WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:35.494602",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1I9Bm9nKGMFaHRAj0ie6u-TWl5974_s-92dLsbaByuxM",
+      "name": "2024-11-11 - SureForms Createur de Formulaires WordPress Alimente par lIA - Article - FR",
+      "timestamp": "2026-02-15T17:41:36.381369",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1vRiux3InVmkMiww6ePcyu7wZ-XIjKLLpMk7UGClTols",
+      "name": "2025-01-16 - LatePoint Plugin de reservation WordPress intuitif et rapide - Article - FR",
+      "timestamp": "2026-02-15T17:41:37.133877",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1rNrNmKdUaWMTbMHP31mmR6hUTGzXgm9YIoeJRoulNo0",
+      "name": "2025-01-11 - WP Umbrella Pourquoi les Agences WordPress ladorent - Article - FR",
+      "timestamp": "2026-02-15T17:41:38.033696",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1BTsTGhJQWddxASd006fhmhbc3epQxnLMvPyOAQ1JUR8",
+      "name": "2025-01-09 - Pourquoi Thot SEO est-il l’outil d’optimisation semantique n°1 - Article - FR",
+      "timestamp": "2026-02-15T17:41:38.837541",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1_6AlLP1p8Ztxi2XIgVD3wN0AdS-m9FU6f_7T36b0QRw",
+      "name": "2024-12-06 - Qu’est-ce que la creation de site WordPress sur mesure et ses avantages - Article - FR",
+      "timestamp": "2026-02-15T17:41:39.546588",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1qA4KpyzPRNc-njR_tapM9YpPfU1m5uzF1IbUAhZXrkk",
+      "name": "2024-11-25 - WordPress Playground cest quoi et comment lutiliser - Article - FR",
+      "timestamp": "2026-02-15T17:41:40.192391",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1E7UvyZ3Bha2FyFRMTJNtiibfQo5qikOWfCerpcXxlck",
+      "name": "2024-11-20 - Un slug dans WordPress cest quoi - Article - FR",
+      "timestamp": "2026-02-15T17:41:41.016499",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "13d7d2Vu-1STagh_-c3hZ4CMncAc5IDUP5RmSEbcNieM",
+      "name": "2024-05-04 - Comment creer un article de blog sur WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:41.678770",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1JZpIm5yv8bi9dwcWxc4BWC6VXrfNHFZR4H-_fqRMXRg",
+      "name": "2024-10-08 - ZipWP vs InstaWP quel est le meilleur pour lancer WordPress rapidement - Article - FR",
+      "timestamp": "2026-02-15T17:41:42.360965",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1jhFJjQDVJnvBwbFoc8v9-shE4rfm3g8_CZrrTauV8XU",
+      "name": "2024-09-30 - SureMembers vs Restrict Content Pro comparatif des plugins dadhesion - Article - FR",
+      "timestamp": "2026-02-15T17:41:43.094970",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1r-WFq-A85DKDn-xysXDRmH4UQcJ3SALCWoNHh1jG5eQ",
+      "name": "2024-08-02 - Quest-ce quun theme WordPress Guide complet et utilisation - Article - FR",
+      "timestamp": "2026-02-15T17:41:43.842957",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1_jj2fnk-pNmTMQW2vFxp1kR43UKn7jRdEePewaN6ezM",
+      "name": "2024-07-09 - Funnelkit avis le meilleur plugin pour creer des tunnels de vente - Article - FR",
+      "timestamp": "2026-02-15T17:41:44.612249",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1BAZkoPtiZsxQSIXNnSG2biL8inoU_pdTTfJTQjyS0DI",
+      "name": "2024-07-08 - Comment structurer un article sur WordPress pour ameliorer la lisibilite - Article - FR",
+      "timestamp": "2026-02-15T17:41:45.425284",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1GRcHh_8vb08mvEpNpZDfoGUtVasamjGFoMTgUleRhvQ",
+      "name": "2024-08-01 - FlyingPress, avis 2024 devriez-vous l’adopter plutot que WP Rocket - Article - FR",
+      "timestamp": "2026-02-15T17:41:46.154150",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1VNz5xCpHRzR0BPclDwXWll41U8CK4KhpJp84Wi4Q46Y",
+      "name": "2024-10-21 - Qu’est-ce qu’un plugin WordPress et comment fonctionne-t-il - Article - FR",
+      "timestamp": "2026-02-15T17:41:46.840130",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1_uIIHjHsTuGmnOmVifzqhJLVcsiyVJhtZMAe1GZCPAA",
+      "name": "2023-11-24 - Comment creer un site web professionnel en utilisant WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:47.536574",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1czeYoKXuNJzjvsCsJuTAAvtfLntnwEdiXyoJTD1DzjQ",
+      "name": "2023-11-24 - Brief “Qu’est-ce que WP Social Ninja ” Mot-cle cible wp social ninja Extrait... - Article - FR",
+      "timestamp": "2026-02-15T17:41:48.170066",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1EA0Viy3paZL5TSHX2vmDx8RJfBIzgWNZdzkPFS6coEc",
+      "name": "2023-11-24 - Qu’est-ce que WP Social Ninja - Article - FR",
+      "timestamp": "2026-02-15T17:41:48.880887",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1xvgbBx60HS50gF4K-kFGJPZr7l7R9tAnJCstLdR0oDk",
+      "name": "2023-11-24 - Presto Player - Le meilleur lecteur video pour WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:49.528626",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1UjYuZwlAxPmnL1oYFEv4nY21sYCLpt_WAX2DvCsrfcI",
+      "name": "2023-11-21 - Missinglettr, l’outil qui travaille pour vous - Article - FR",
+      "timestamp": "2026-02-15T17:41:50.171142",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1iJ0sZLOKUSFs9KHIvcARyx_4GP0pvePw5bhaHlBLkJc",
+      "name": "2023-11-22 - WooFunnels Funnel Builder est-il un bon choix - Article - FR",
+      "timestamp": "2026-02-15T17:41:50.871643",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1B2zDYYQlqD2HKuxJOaU1RgKkOv30AZpWbGlmIktEnB0",
+      "name": "2023-11-21 - Divi Machine, le plugin Divi qu’il vous faut - Article - FR",
+      "timestamp": "2026-02-15T17:41:51.526480",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1heYiYkH-BkYs-meAaKUaEfGw1ZesBjY9pc519xVqUKo",
+      "name": "2023-11-14 - Devez-vous installer Rank Math PRO - Article - FR",
+      "timestamp": "2026-02-15T17:41:52.261513",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "10mWoYewpH5CZqu2URD0DU91qTOvDWT-PkRNnZ_YdWps",
+      "name": "2023-11-14 - Qui est Pierre-Eliott Lallemant, le createur de Skeall - Article - FR",
+      "timestamp": "2026-02-15T17:41:52.952419",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1usEQYOR3JAMGW_8noIhNtGreXdr6sERXjB1pYaSPJNs",
+      "name": "2023-11-14 - Qui est Frank Houbre - Article - FR",
+      "timestamp": "2026-02-15T17:41:53.646056",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1jMP4m3NFDkmbqTlUrufl2eRtEfEgioaHUtkJxEiS9pA",
+      "name": "2023-11-14 - Qu’est-ce que l’AMP de Google - Article - FR",
+      "timestamp": "2026-02-15T17:41:54.577407",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1y8Yz7VLKLPzPhQXMFI-nHjyLSR7D3TWZEwCZpYHkm7Y",
+      "name": "2023-11-14 - Qu’est-ce que l’affiliation marketing - Article - FR",
+      "timestamp": "2026-02-15T17:41:55.272199",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1gWTvJxiNbodgq8rIqfKvqiirT0XHWSfjOTfPRKVpcWc",
+      "name": "2023-11-13 - Qu’est-ce que WP Rocket Plugin - Article - FR",
+      "timestamp": "2026-02-15T17:41:55.906915",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "19AyMFF0WQqd6bnCPshkTq38cwMBrwzeoiFTWSeeZC70",
+      "name": "2023-11-14 - Semrush, l’outil SEO le plus performant - Article - FR",
+      "timestamp": "2026-02-15T17:41:56.585441",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "10e1v0JK2AYU7eueUsyXw6zzh7sskhYaw4ifC-h_ghdA",
+      "name": "2023-11-13 - FluentCRM est-il le meilleur CRM WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:57.278206",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1HnerNL1DAW11OLu0nIotpZpXQ0LLJsmPzg7BjFFuakA",
+      "name": "2023-11-14 - Beaver Builder, le meilleur constructeur de pages WordPress - Article - FR",
+      "timestamp": "2026-02-15T17:41:58.116021",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1MDQ-iXX5r9Ut1DZwnlSV6mmQwuIrfVf7VdHZGWiAPEo",
+      "name": "2023-11-24 - Perfmatters, l’optimisation WordPress pour ameliorer la vitesse de son site - Article - FR",
+      "timestamp": "2026-02-15T17:41:58.815529",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "16SsBrnYMnJaxyL_ZX-3b3qWx0FGzp6Fjy6-CNX3MAgo",
+      "name": "2024-01-16 - systeme-io-avis - article - fr",
+      "timestamp": "2026-02-15T17:41:59.667587",
+      "result": "SUCCESS"
+    }
+  ]
+}

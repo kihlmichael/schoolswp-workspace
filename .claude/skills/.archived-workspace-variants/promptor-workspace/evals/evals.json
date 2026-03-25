@@ -1,0 +1,93 @@
+{
+  "skill_name": "promptor",
+  "version": "2.1.0",
+  "evals": [
+    {
+      "id": 1,
+      "name": "claude-code-skill",
+      "prompt": "Génère-moi le prompt parfait pour Claude Code. Je veux créer un skill Claude Code qui analyse automatiquement les articles Markdown de mon blog WordPress, détecte les mots-clés manquants par rapport à une liste CSV, et propose des insertions naturelles. L'IA cible est Claude Code.",
+      "expected_output": "Le prompt généré doit être un SKILL.md complet avec frontmatter YAML (name, description déclencheuse), processus step-by-step, format de sortie précis, et exemples. Le calibrage doit mentionner les spécificités Claude Code (fichier de config, pas prompt conversationnel). La grille /25 doit être renseignée. Le prompt final doit être dans un bloc de code.",
+      "assertions": [
+        {
+          "name": "calibrage_claude_code_specifique",
+          "description": "Le calibrage mentionne explicitement que Claude Code génère des fichiers de configuration (SKILL.md/CLAUDE.md), pas des prompts conversationnels",
+          "type": "content_check"
+        },
+        {
+          "name": "prompt_en_bloc_code",
+          "description": "Le prompt généré est dans un bloc de code Markdown (```)",
+          "type": "format_check"
+        },
+        {
+          "name": "grille_25_presente",
+          "description": "Une grille d'évaluation /25 avec 5 critères est présente dans la réponse",
+          "type": "format_check"
+        },
+        {
+          "name": "format_skill_md",
+          "description": "Le prompt généré contient un frontmatter YAML avec 'name' et 'description'",
+          "type": "content_check"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "midjourney-portrait",
+      "prompt": "promptor pour Midjourney V7 : je veux générer un portrait professionnel d'un entrepreneur tech français, style magazine économique, ambiance lumineuse et sérieuse. Le résultat sera utilisé comme photo de profil LinkedIn.",
+      "expected_output": "Le calibrage doit identifier les spécificités Midjourney V7 (format /imagine, paramètres --ar, --s, --sref, etc.). Le prompt généré doit être en anglais avec des termes photographiques précis. La grille /25 doit être renseignée.",
+      "assertions": [
+        {
+          "name": "prompt_en_anglais",
+          "description": "Le prompt Midjourney généré est rédigé en anglais (pas en français)",
+          "type": "language_check"
+        },
+        {
+          "name": "contient_parametres_midjourney",
+          "description": "Le prompt contient au moins un paramètre Midjourney (--ar, --s, --v, --sref, --chaos, --weird)",
+          "type": "content_check"
+        },
+        {
+          "name": "format_slash_imagine",
+          "description": "Le prompt commence par /imagine ou décrit le format /imagine",
+          "type": "format_check"
+        },
+        {
+          "name": "termes_photographiques",
+          "description": "Le prompt contient des termes photographiques spécifiques (lighting, shot on, lens, f/, mm)",
+          "type": "content_check"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "chatgpt-amelioration",
+      "prompt": "Mode amélioration — voici mon prompt ChatGPT actuel que je veux optimiser : 'Tu es un expert WordPress. Écris-moi un email de vente pour mon cours WordPress débutant. L'email doit donner envie d'acheter.' Améliore-le.",
+      "expected_output": "Le skill doit reconnaître le mode amélioration (prompt existant fourni). Il doit d'abord évaluer le prompt existant avec la grille /25, identifier les lacunes précises, puis proposer une version améliorée avec système prompt + user prompt distincts.",
+      "assertions": [
+        {
+          "name": "evaluation_prompt_existant",
+          "description": "La réponse évalue d'abord le prompt original avec la grille /25 avant de proposer une amélioration",
+          "type": "sequence_check"
+        },
+        {
+          "name": "identifie_lacunes",
+          "description": "La réponse identifie au moins 2 lacunes concrètes du prompt original",
+          "type": "content_check"
+        },
+        {
+          "name": "structure_chatgpt_systeme_user",
+          "description": "Le prompt amélioré distingue un System Prompt et un User Prompt",
+          "type": "content_check"
+        },
+        {
+          "name": "score_ameliore",
+          "description": "Le prompt amélioré obtient un score supérieur au prompt original dans la grille",
+          "type": "content_check"
+        }
+      ],
+      "files": []
+    }
+  ]
+}

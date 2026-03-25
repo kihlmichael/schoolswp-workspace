@@ -1,0 +1,3769 @@
+{
+  "applied_at": "2026-02-11T11:13:33.037573",
+  "success": 627,
+  "errors": 0,
+  "operations": [
+    {
+      "id": "1gMURVSvaTfRAfJ36vLzhyeeeb3G7w10Z",
+      "old_name": "2025-02-16 – Performance-efficiency-ai-editing-skoatch – Ressource.jpg",
+      "new_name": "2025-02-16 - Performance-efficiency-ai-editing-skoatch.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fsmcCsD0di1D66qc5KCiPF9sToeOH9lZ",
+      "old_name": "2025-02-15 – Academy-lms – Ressource.webp",
+      "new_name": "2025-02-15 - Academy-lms.webp",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fXYOOCWrMNRLIS3T0RUDtXBb-zvJyHYv",
+      "old_name": "2025-02-13 – Integrations-add-ons-lms-fonctionnalites-premium – Ressource.jpg",
+      "new_name": "2025-02-13 - Integrations-add-ons-lms-fonctionnalites-premium.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dxFarn3nFrHetLPqJzhDb3Cd6mgr2zvX",
+      "old_name": "2025-02-11 – Academy-lms-interface-choix-instructeur-marketplace – Ressource.jpg",
+      "new_name": "2025-02-11 - Academy-lms-interface-choix-instructeur-marketplace.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dx2WzP-ZrqBSf4hF1Wc2u5GcEPrt3zCm",
+      "old_name": "2025-02-11 – Academy-lms-2-0-welcome-page-e-learning – Ressource.jpg",
+      "new_name": "2025-02-11 - Academy-lms-2-0-welcome-page-e-learning.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dt3OSRw-kKT245TEBOd2aqWxpnI7zYR_",
+      "old_name": "2025-02-10 – Academy-lms-comparatif-prix-lifetime – Ressource.jpg",
+      "new_name": "2025-02-10 - Academy-lms-comparatif-prix-lifetime.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1diPFXzatNCEae1Ap5eYId0j84f9ps_l-",
+      "old_name": "2025-02-10 – Academy-lms-comparatif-plans-prix – Ressource.jpg",
+      "new_name": "2025-02-10 - Academy-lms-comparatif-plans-prix.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1AxQ_81ZgAOXEhtI1USU4vBmE42k77ndH",
+      "old_name": "2025-12-29 – 20251229 135310 – Ressource.jpg",
+      "new_name": "2025-12-29 - 20251229 135310.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18I080orMYxVPp_R8JQxesuXvcdZAsslm",
+      "old_name": "2025-12-29 – 20251229 135238 – Ressource.jpg",
+      "new_name": "2025-12-29 - 20251229 135238.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tgAIK4jy10gqzcBwQexOVZ7MfBVz9Kub",
+      "old_name": "2025-03-28 – Ad Banner 2 Vertical 400x600 px – Ressource.png",
+      "new_name": "2025-03-28 - Ad Banner 2 Vertical 400x600 px.png",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11qWJWCnbxmSza7dKF_Swd7ysvf6FIGAM",
+      "old_name": "2025-05-10 – Wp-rocket-boostez-vitesse-seo-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-10 - Wp-rocket-boostez-vitesse-seo-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11reXIBSKEcgi5Nb3-oRYNweOq6FFVKGX",
+      "old_name": "2025-05-10 – Wp-rocket-plugin-cache-wordpress-rapide-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-10 - Wp-rocket-plugin-cache-wordpress-rapide-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ns1GM__wmVHRNQpjO6IIu4nAC8QFnOFf",
+      "old_name": "2025-03-09 – Amelia-wp-plugin-reservation-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Amelia-wp-plugin-reservation-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nyUIiAlVEWcR3Dc_ivQW962qmZ6N9fNa",
+      "old_name": "2025-03-09 – Amelia-wp-reservations-rendez-vous-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Amelia-wp-reservations-rendez-vous-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rU8Mys5yD_PikDqKUOdd7QPXJAyN7ZdS",
+      "old_name": "2025-03-17 – Crocoblock-wordpress-elementor – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-17 - Crocoblock-wordpress-elementor - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rTCYKLcI9x5FfGLhfa7M3JAA4AezoF8k",
+      "old_name": "2025-03-17 – Crocoblock-boite-outils-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-17 - Crocoblock-boite-outils-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12f63NoE9MnDLvLLmolY8N0z7CfbQg1ki",
+      "old_name": "2025-07-20 – Spotlightwp-avis-plugin-instagram-test – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-20 - Spotlightwp-avis-plugin-instagram-test - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DLvzAIbj8RYtSO7zyz6R69QTtBvctvCT",
+      "old_name": "2025-07-20 – Spotlightwp-avis-plugin-instagram-wordpress-test – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-20 - Spotlightwp-avis-plugin-instagram-wordpress-test - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cZOwIiAZ2gOHNjY2t2wz48HVGU8_960J",
+      "old_name": "2024-07-21 – Wishlist-member-boostez-votre-site-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-21 - Wishlist-member-boostez-votre-site-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cQZbquRoidXtoikvtV4KJRSamfbn14wn",
+      "old_name": "2024-07-21 – Wishlist-member-tout-savoir-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-21 - Wishlist-member-tout-savoir-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18VOhNqhhJK4Q7fytKh7eg4t2zbATqeKt",
+      "old_name": "2024-11-15 – Surecart-solution-vente-produits-numeriques-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-15 - Surecart-solution-vente-produits-numeriques-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18SN5KL3siR9eqlYk56t1BDaSE4EwE_rW",
+      "old_name": "2024-11-15 – Surecart-plugin-ecommerce-produits-numeriques-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-15 - Surecart-plugin-ecommerce-produits-numeriques-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TqYUcvkJNBvMLIxm1BLpsWYfo80K__Y1",
+      "old_name": "2025-01-09 – Nettoyer-base-de-donnees-wordpress-guide-complet-plugins – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-09 - Nettoyer-base-de-donnees-wordpress-guide-complet-plugins - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TvZRM549BHrs9WD1h9vD-zrHCa9lVc62",
+      "old_name": "2025-01-09 – Nettoyer-base-de-donnees-wordpress-guide-complet – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-09 - Nettoyer-base-de-donnees-wordpress-guide-complet - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_pGE2GwFHSAAN6-ToUNQcKm5pVR_X2Uh",
+      "old_name": "2024-07-09 – Structurer-articles-wordpress-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-09 - Structurer-articles-wordpress-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1i-xkTqPYGiN6U61lizftkkUQVRpdvNX1",
+      "old_name": "2024-07-27 – Suremembers-meilleur-plugin-adhesion-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-27 - Suremembers-meilleur-plugin-adhesion-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1i1t7qDc7w_SWg9B0tx6OJiCUVldD5swk",
+      "old_name": "2024-07-27 – Suremembers-decouvrez-meilleur-plugin-adhesion-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-27 - Suremembers-decouvrez-meilleur-plugin-adhesion-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1a6q-Dn1UNkaZvYeRRfL-Fyh1lfSIG8ly",
+      "old_name": "2024-07-09 – Avis-funnelkit-meilleur-plugin-tunnels-de-vente – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-09 - Avis-funnelkit-meilleur-plugin-tunnels-de-vente - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aDHNEFtfDVj6WD4traKvMICH-YESAIiv",
+      "old_name": "2024-07-09 – Avis-funnelkit-meilleur-plugin-tunnels-de-vente-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-09 - Avis-funnelkit-meilleur-plugin-tunnels-de-vente-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fe4MlcvJGahMgt435m8puCu8Q6YBf35V",
+      "old_name": "2024-07-21 – Suremembers-vs-wishlist-members-quelle-extension-choisir – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-21 - Suremembers-vs-wishlist-members-quelle-extension-choisir - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kxU7SZz8I2YBtHgXCG3_V9Zn5FsPyPYm",
+      "old_name": "2024-08-03 – Linkuma-avis-reference-netlinking – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-03 - Linkuma-avis-reference-netlinking - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1n7Zzau0xFNuu7HLLk_-xxAit55WBX-GJ",
+      "old_name": "2024-08-13 – Avis-wpboutik-reinvention-commerce-en-ligne-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-13 - Avis-wpboutik-reinvention-commerce-en-ligne-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1n7_9yxz8vVMWpdCJ2TWSUzvjkVIgu48N",
+      "old_name": "2024-08-13 – Wpboutik-avis-boost-ecommerce-wordpress-facilement – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-13 - Wpboutik-avis-boost-ecommerce-wordpress-facilement - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1naNnm-2IuFGMV2nUV2uVVn_Or6zad2Xg",
+      "old_name": "2024-08-15 – Top-10-plugins-traduction-wordpress-globaliser-site – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-15 - Top-10-plugins-traduction-wordpress-globaliser-site - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nhygrjjdAEM6_nfA-PIagb71aYzWuY7Y",
+      "old_name": "2024-08-15 – Top-10-plugins-traduction-wordpress-site-multilingue – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-15 - Top-10-plugins-traduction-wordpress-site-multilingue - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pSNWQPoYWrEX2cxTQlmlG0stNylNo9px",
+      "old_name": "2024-08-29 – Seokey-plugin-wordpress-seo-indispensable – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-29 - Seokey-plugin-wordpress-seo-indispensable - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rWRV6W0b8NBfSzlvFdqATWqOdjF3PMef",
+      "old_name": "2024-09-16 – Full-site-editing-fse-wordpress-maitrise-web-moderne – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-16 - Full-site-editing-fse-wordpress-maitrise-web-moderne - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rVwX51ESGnhoeoYaAR7BPW8PxfAAA9_1",
+      "old_name": "2024-09-16 – Wordpress-full-site-editing-fse-personnalisez-sans-code – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-16 - Wordpress-full-site-editing-fse-personnalisez-sans-code - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1w8FtVAPnhJEtx6fYdr42Ssct1MMYrqVG",
+      "old_name": "2024-09-30 – SureMembers vs Restrict Content Pro   Quel plugin WordPress choisir en 2024 – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-30 - SureMembers vs Restrict Content Pro Quel plugin WordPress choisir en 2024 - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11_GW7z2tIsZfCvQBS-lrWWVjSa54ikSL",
+      "old_name": "2024-11-06 – Tastewp-creer-facilement-site-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-06 - Tastewp-creer-facilement-site-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18mD7IJQGDvuQeIzWE0Vwv-XMupx35K_Y",
+      "old_name": "2024-11-20 – Optimiser-slugs-wordpress-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-20 - Optimiser-slugs-wordpress-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18g3gDHS8unTBBRzsSKaxeGAGKQyOH4IJ",
+      "old_name": "2024-11-20 – Slug-wordpress-meilleurs-pratiques-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-20 - Slug-wordpress-meilleurs-pratiques-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "19tVFTlsfGtnm7ZASQLt6kC_mXjnotXP1",
+      "old_name": "2024-11-24 – Link-finder-optimisation-strategie-netlinking – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-24 - Link-finder-optimisation-strategie-netlinking - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BPUF35O4vRvH_nr2RqwGO34N6WYZbwSp",
+      "old_name": "2024-11-25 – Wordpress-playground-guide-introduction – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-25 - Wordpress-playground-guide-introduction - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BSjaojpjEJXSj-Csr07pYhxWCm_mZ_wM",
+      "old_name": "2024-11-25 – Tester-wordpress-playground-en-ligne – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-25 - Tester-wordpress-playground-en-ligne - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EtuN53Ot9UcHmfM28WlLU6_XP4fr2gXm",
+      "old_name": "2024-12-05 – Creation-site-wordpress-sur-mesure – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-05 - Creation-site-wordpress-sur-mesure - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Eso7rl_O0SSWfU8LVhVdfW3I0f5gbIt8",
+      "old_name": "2024-12-05 – Avantages-site-wordpress-sur-mesure – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-05 - Avantages-site-wordpress-sur-mesure - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1L9d5hfICoa_9Q11xn4Of9Wxo_MIrYHpz",
+      "old_name": "2024-12-18 – Creez-communaute-wordpress-fluentcommunity-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-18 - Creez-communaute-wordpress-fluentcommunity-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1L86QWUJs4jbR7cxA3dZj5E0i6HdUnWCE",
+      "old_name": "2024-12-18 – Fluentcommunity-construire-communaute-wordpress-facilement – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-18 - Fluentcommunity-construire-communaute-wordpress-facilement - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OszjGjYs-_ugATBRbHiZFdsn_1Tkw1VR",
+      "old_name": "2024-12-30 – Thot-seo-outil-optimisation-semantique – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-30 - Thot-seo-outil-optimisation-semantique - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OtmvfcMaNseIvv4Wmi6Mpohr3xkuXf0M",
+      "old_name": "2024-12-30 – Thot-seo-outil-semantique-dominer-google – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-30 - Thot-seo-outil-semantique-dominer-google - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Pvh6K16MCbrQzQ1-FkSTQ5LTKtD1HGrC",
+      "old_name": "2025-01-02 – Quest-ce-que-gutenberg-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-02 - Quest-ce-que-gutenberg-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZzWc_xn24UQyZak_hEAekOKEfjWb1yuN",
+      "old_name": "2025-01-16 – Plugin-wordpress-traduction-optimise-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Plugin-wordpress-traduction-optimise-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_4CVWPVAZnwVBcGrLkhEpFa-AB2qUXNy",
+      "old_name": "2025-01-16 – Traduire-sans-migraine-test-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Traduire-sans-migraine-test-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1alBBdu-nzb-KbFWWoKHyc_cWSHxtKSXQ",
+      "old_name": "2025-01-24 – Skoatch-performance-efficacite-redaction-ia – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-24 - Skoatch-performance-efficacite-redaction-ia - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1alYE_lnLlYtesmr9a5umQVnACZv7DHuN",
+      "old_name": "2025-01-24 – Skoatch-avis-outil-ia-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-24 - Skoatch-avis-outil-ia-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1d6KGFPdgIr36Al-yBvkTlCuozmW3FZNo",
+      "old_name": "2025-02-10 – Academy-lms-wordpress-lancer-academie-1-clic – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-10 - Academy-lms-wordpress-lancer-academie-1-clic - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lCn-m-sLid1ZMeiB9KRbT5FudNPsmxIT",
+      "old_name": "2025-03-03 – Hebergement-wordpress-performant-rapyd-cloud – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-03 - Hebergement-wordpress-performant-rapyd-cloud - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qe-MZJvgbGdB0EPV_MiPHupkGlHlufeb",
+      "old_name": "2025-03-14 – Link-whisper-plugin-wordpress-maillage-interne-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-14 - Link-whisper-plugin-wordpress-maillage-interne-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qf_hMTbkMFtSN9Tu-GOUKoaT2tEbvE48",
+      "old_name": "2025-03-14 – Link-whisper-outil-seo-incontournable-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-14 - Link-whisper-outil-seo-incontournable-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xdQGTbzF3b1SdJZ7COYuAHgb7Z4Ln0ps",
+      "old_name": "2025-04-17 – Learndash-plugin-wordpress-formations – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Learndash-plugin-wordpress-formations - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xeN25K57_Ej0OpBButCTPy175HioYSd0",
+      "old_name": "2025-04-17 – Learndash-plugin-wordpress-lms – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Learndash-plugin-wordpress-lms - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zv3LjdoA700ksZV78fxNbEsCh-ZDnF01",
+      "old_name": "2025-05-02 – Apprendre-wordpress-sans-coder – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-02 - Apprendre-wordpress-sans-coder - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zx5h01P990R2di6ZkkatxpDQbiFipgLe",
+      "old_name": "2025-05-02 – Apprendre-wordpress-guide-debutant-autonomie – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-02 - Apprendre-wordpress-guide-debutant-autonomie - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12cdqnyAP2lvV5eDjaUWV3sh5HBNPf0xd",
+      "old_name": "2025-05-17 – O2switch-avis-hebergeur-francais – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-17 - O2switch-avis-hebergeur-francais - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12cFAJhy55L-QKvRghUjWyR4EC0hbozrI",
+      "old_name": "2025-05-17 – O2switch-avis-hebergeur-francais-ultra-fiable – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-17 - O2switch-avis-hebergeur-francais-ultra-fiable - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14AVECfrhS6u9xdQIyTJImyNeT4wihvZq",
+      "old_name": "2025-05-24 – Code-promo-fluentcrm-offre-exclusive-schoolswp – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-24 - Code-promo-fluentcrm-offre-exclusive-schoolswp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "147LGXFr_wpVRVCs7xRKjwi5zedS9rJTz",
+      "old_name": "2025-05-24 – Code-promotionnel-fluentcrm-20-pourcent-schoolswp – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-24 - Code-promotionnel-fluentcrm-20-pourcent-schoolswp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CBSYwGmbF8N3BEw1BM3MCyWc8YwlTW4r",
+      "old_name": "2025-06-09 – Code-promo-rapyd-cloud-25-remise-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-09 - Code-promo-rapyd-cloud-25-remise-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-b3ZEmVQDFWC95ct0S_JFzLVWcIEJHQ2",
+      "old_name": "2025-06-09 – Code-promo-rapyd-cloud-reduction-hebergement-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-09 - Code-promo-rapyd-cloud-reduction-hebergement-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aAGxnO7HdDvW3eIbyPVC5J5Zq1gCeX6g",
+      "old_name": "2025-08-01 – Droip-alternative-wordpress-webflow-sans-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-01 - Droip-alternative-wordpress-webflow-sans-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ky02djbNpORVCagvWt9xInrPfr-8LdJ7",
+      "old_name": "2025-08-01 – Droip-avis-webflow-wordpress-sans-code – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-01 - Droip-avis-webflow-wordpress-sans-code - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZexZdb7OejptY6usWE4xtYHubu0nBZqY",
+      "old_name": "2025-01-16 – Latepoint-plugin-reservation-wordpress-intuitif-rapide – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Latepoint-plugin-reservation-wordpress-intuitif-rapide - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZcTpeWVJjMF9MrklF2ReFD5QCA3A8YQX",
+      "old_name": "2025-01-16 – Latepoint-plugin-wordpress-reservation – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Latepoint-plugin-wordpress-reservation - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15vFM3rX3Lc0_Ru5A6Jq25CtzwBf3yFd1",
+      "old_name": "2024-11-11 – Sureforms-createur-formulaires-wordpress-ia – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-11 - Sureforms-createur-formulaires-wordpress-ia - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15wmVUIpppc-hi-E0-iz1XwOcLx5UncI8",
+      "old_name": "2024-11-11 – Sureforms-plugin-formulaires-wordpress-ia-simple-puissant – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-11 - Sureforms-plugin-formulaires-wordpress-ia-simple-puissant - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10ggvz0l5P-ksXNoqzI9Bs_7XtWGUJY1Y",
+      "old_name": "2024-10-26 – Local-by-flywheel-vs-xampp-installation-wordpress-local – Thumbnail Pinterest.jpg",
+      "new_name": "2024-10-26 - Local-by-flywheel-vs-xampp-installation-wordpress-local - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10cPRazWwB2DZWQxQpGT1BnF-XEoPzSjR",
+      "old_name": "2024-10-26 – Local-wp-local-by-flywheel-vs-xampp-pour-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-10-26 - Local-wp-local-by-flywheel-vs-xampp-pour-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1s2gwLL_cWBR7wnwhMlzrfwhCF-7PboLQ",
+      "old_name": "2024-09-21 – Suretriggers-vs-zapier-outil-automatisation – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-21 - Suretriggers-vs-zapier-outil-automatisation - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ry7NbQZCnDtEcfY7aDvKEMZYiIJBnhPc",
+      "old_name": "2024-09-21 – Suretriggers-vs-zapier-meilleure-solution-automation – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-21 - Suretriggers-vs-zapier-meilleure-solution-automation - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1b9jyMjPHoL87aPXRStg5RaEUCZOSBqz0",
+      "old_name": "2024-07-13 – Comparatif-elementor-pro-vs-divi-builder – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-13 - Comparatif-elementor-pro-vs-divi-builder - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1b7Ppa0BT11cGzd8PrHWZgN-AXgnmDst-",
+      "old_name": "2024-07-13 – Divi-builder-vs-elementor-pro-duel-extensions-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-07-13 - Divi-builder-vs-elementor-pro-duel-extensions-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VPXv9zNuuN46QcK1if_Fj0xwOeB0hT2F",
+      "old_name": "2024-03-13 – Comparaison-fluentbooking-amelia-booking-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-03-13 - Comparaison-fluentbooking-amelia-booking-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VN8NYveHEbsW_id3XVXTTK4n1mgeaNy6",
+      "old_name": "2024-03-13 – Fluentbooking-vs-amelia-booking-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-03-13 - Fluentbooking-vs-amelia-booking-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14lYfG9vGVzyR10r2kxHVnAoCsN4s6Q8l",
+      "old_name": "2024-11-07 – Erstellen-wordpress-website-ohne-installation-tastewp – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-07 - Erstellen-wordpress-website-ohne-installation-tastewp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14k5JEIGciW7vsufT6DFB8r7CwlaMM_M-",
+      "old_name": "2024-11-07 – Tastewp-wordpress-website-einfach-erstellen – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-07 - Tastewp-wordpress-website-einfach-erstellen - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15MsCwqh3I94P4sgEZYULf6G7Yy4m3eI7",
+      "old_name": "2024-11-09 – Seokey-essentielles-seo-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-09 - Seokey-essentielles-seo-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15O4EmH7TZdbHWLK_4MDLayRJMQ3NotcM",
+      "old_name": "2024-11-09 – Seokey-seo-plugin-sichtbarkeit-wordpress-website – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-09 - Seokey-seo-plugin-sichtbarkeit-wordpress-website - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16BMbf-d4GgAPkWLHVeY1TgmBojHrKn0_",
+      "old_name": "2024-11-12 – Linkuma-hochwertige-backlinks-netlinking-vereinfacht-7-euro – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-12 - Linkuma-hochwertige-backlinks-netlinking-vereinfacht-7-euro - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16FQZc88Sh3hVIXOItC7LEk5fs2_9d6Lv",
+      "old_name": "2024-11-12 – Meinungen-ueber-linkuma-referenz-fuer-netlinking – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-12 - Meinungen-ueber-linkuma-referenz-fuer-netlinking - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ClnkqSjsUfeBc5UfESRg9flO2EuTcR8D",
+      "old_name": "2024-11-30 – Ein-slug-in-wordpress-optimieren – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-30 - Ein-slug-in-wordpress-optimieren - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CshxdOr2a93wrOZi5rmechRrydjZdkyK",
+      "old_name": "2024-11-30 – Wordpress-slugs-seo-optimieren – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-30 - Wordpress-slugs-seo-optimieren - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EY_85RvH8KdH_sPDbxRJp4YFC2fz0T3N",
+      "old_name": "2024-12-05 – Suremembers-bestes-mitgliedschafts-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-05 - Suremembers-bestes-mitgliedschafts-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1E_VzOOHX9WHvXzg-iVjsPpB0bFNmstP5",
+      "old_name": "2024-12-05 – Suremembers-wordpress-membership-plugin-verdiene-mehr – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-05 - Suremembers-wordpress-membership-plugin-verdiene-mehr - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GOI4HHnxk2z4DkdhSPIpAA70XQFg786q",
+      "old_name": "2024-12-10 – Sureforms-wordpress-formular-ersteller – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Sureforms-wordpress-formular-ersteller - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GNeBTWMgxgzvjR64UdSkmFySEl8zdLhF",
+      "old_name": "2024-12-10 – Sureforms-wordpress-ki-formular-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Sureforms-wordpress-ki-formular-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1G0e_iOHyL_xDw2LJFC9HKsX4yfS4e6Y1",
+      "old_name": "2024-12-09 – Erstellung-massgeschneiderte-wordpress-website-heben-sie-ab – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-09 - Erstellung-massgeschneiderte-wordpress-website-heben-sie-ab - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1G0b_c-6WDEb1YKDa3zCONJS00C0npRER",
+      "old_name": "2024-12-09 – Was ist die Erstellung einer maßgeschneiderten WordPress-Website und welche V... – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-09 - Was ist die Erstellung einer maßgeschneiderten WordPress-Website und welche V... - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IKnNHunT-pYMvM0ShqBMirb-_-AqEol9",
+      "old_name": "2024-12-10 – Was-ist-ein-wordpress-plugin-effektive-nutzung – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Was-ist-ein-wordpress-plugin-effektive-nutzung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1INUvgToXs_z7BsuX3pcia2fN-RKQq1se",
+      "old_name": "2024-12-10 – Wordpress-plugins-transformieren-ohne-coden – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Wordpress-plugins-transformieren-ohne-coden - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KCesT9xUU7CDFjn2ObPz0GjmmdZrhPhM",
+      "old_name": "2024-12-16 – Wordpress-playground-online-testen – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-16 - Wordpress-playground-online-testen - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LbI-sUdoTBDafe-AVVrsLz0ZCDa86Aa6",
+      "old_name": "2024-12-20 – Wpboutik-e-commerce-wordpress-optimierung – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Wpboutik-e-commerce-wordpress-optimierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LaU4X7z_blngQo4s5kHEl2p5qwHwK8Tg",
+      "old_name": "2024-12-20 – Wpboutik-online-handel-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Wpboutik-online-handel-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ODrdSdkhl8oP4FpQbAm-M7MtrGNiZfaw",
+      "old_name": "2024-12-21 – Zipwp-wordpress-website-rekordzeit-ki – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-21 - Zipwp-wordpress-website-rekordzeit-ki - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1O8u_c1mg_Nwup8xH9oDk70UGDqwOJEmq",
+      "old_name": "2024-12-21 – Zipwp-revolution-wordpress-seiten-ki – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-21 - Zipwp-revolution-wordpress-seiten-ki - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OdFsGfauJeWO9UFyg6dao05JHmBkrew0",
+      "old_name": "2024-12-23 – Wp-marmite-pay-einfach-online-verkaufen-mit-stripe – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-23 - Wp-marmite-pay-einfach-online-verkaufen-mit-stripe - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OgrXduXf3Q_Y9PTly9W8MvEUlz7wJ-lN",
+      "old_name": "2024-12-23 – Wp-marmite-pay-vereinfacht-zahlungen-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-23 - Wp-marmite-pay-vereinfacht-zahlungen-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ReY35ynv3qXDbURk1sHGDOI9LjiKh0cl",
+      "old_name": "2025-01-07 – Entdecken-sie-gutenberg-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Entdecken-sie-gutenberg-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Rfwmv714hu8K1RXxHN-1kdk8l6rXzGZ0",
+      "old_name": "2025-01-07 – Was-ist-gutenberg-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Was-ist-gutenberg-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RtGU7A25jaRcIBBywxmyM6OgEE-qWFBY",
+      "old_name": "2025-01-07 – Wordpress-community-mit-fluentcommunity-erstellen – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Wordpress-community-mit-fluentcommunity-erstellen - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RuVHtrJKJA3Pek6c4BjURcdY2p29e-n9",
+      "old_name": "2025-01-07 – Wordpress-community-fluentcommunity-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Wordpress-community-fluentcommunity-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UBSx9iRRC1j25-lg-sP0KiCG80d9TUTU",
+      "old_name": "2025-01-09 – Wordpress-datenbank-bereinigen-guide-plugins – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-09 - Wordpress-datenbank-bereinigen-guide-plugins - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1U2Jqy5w3apHh1Y51Ncs80YiNwnFMHMCb",
+      "old_name": "2025-01-09 – Wordpress-datenbank-bereinigen-anleitung-plugins – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-09 - Wordpress-datenbank-bereinigen-anleitung-plugins - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Uc0V-MSZo2nttFu2pkxMSxn6eTIBtdYo",
+      "old_name": "2025-01-10 – Thot-seo-semantisches-tool-google-dominieren – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Thot-seo-semantisches-tool-google-dominieren - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UhPTsVFDqjjs5xyHuFDeNfXkC443I33l",
+      "old_name": "2025-01-10 – Thot-seo-nr-1-tool-semantische-optimierung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Thot-seo-nr-1-tool-semantische-optimierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XqgdhNXLmN-WvbhpCAx1s3IYO825M2gR",
+      "old_name": "2025-01-11 – Wp-umbrella-wordpress-agenturen-lieben – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-11 - Wp-umbrella-wordpress-agenturen-lieben - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Xm9EkELjgIO9hmbpXUBWFUI9vFJUTSDd",
+      "old_name": "2025-01-11 – Wp-umbrella-wordpress-websites-verwalten – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-11 - Wp-umbrella-wordpress-websites-verwalten - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZEUPz5PruWcdlOtLbnZ-1RVhEZ82QRuL",
+      "old_name": "2025-01-16 – Wishlist-member-wordpress-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Wishlist-member-wordpress-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Z8aI-txv24ZTFqEgvgNO3oiDNYanMilU",
+      "old_name": "2025-01-16 – Wishlist-member-wordpress-plugin-mitgliederverwaltung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Wishlist-member-wordpress-plugin-mitgliederverwaltung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cnWx0KY3-SIt3Ptc4qBVMY6upH7GhBlq",
+      "old_name": "2025-02-03 – Wordpress-uebersetzung-plugin-seo-optimiert – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Wordpress-uebersetzung-plugin-seo-optimiert - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1chlhe-ItEN5iqGmIiaosO6G-RW6L8pYw",
+      "old_name": "2025-02-03 – Wordpress-uebersetzung-plugin-test – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Wordpress-uebersetzung-plugin-test - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gsheoOJl1SwnITf5SpnefNvuvwvBJ3B_",
+      "old_name": "2025-02-16 – Skoatch-leistung-ki-redaktion – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-16 - Skoatch-leistung-ki-redaktion - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gptqOnYj4TkryeRaeC8fZdlbqg6ckS2_",
+      "old_name": "2025-02-16 – Skoatch-bewertungen-ki-seo-tool – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-16 - Skoatch-bewertungen-ki-seo-tool - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ikdp47I3tX4QsQHa5S73uPenxGA31tVN",
+      "old_name": "2025-02-21 – Tutor-lms-beste-lms-loesung-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-21 - Tutor-lms-beste-lms-loesung-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iiB0PorYjeIbksB_7ZsUZ6atrxvKKKY9",
+      "old_name": "2025-02-21 – Tutor-lms-bewertungen-wordpress-beste-loesung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-21 - Tutor-lms-bewertungen-wordpress-beste-loesung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jnCIvx-rQc7YXz9lGaAaeTCkmrfsG4a7",
+      "old_name": "2025-02-24 – Academy-lms-wordpress-plugin-online-kurse – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-24 - Academy-lms-wordpress-plugin-online-kurse - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jntrcvIpJvrFvgpYdRS_P-IqONp019R8",
+      "old_name": "2025-02-24 – Academy-lms-wordpress-online-akademie-starten – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-24 - Academy-lms-wordpress-online-akademie-starten - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1k1WYX1WfUxNwTITzobRhOuXrL-7GLZYc",
+      "old_name": "2025-02-27 – Wordpress-wartung-leitfaden-optimierung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Wordpress-wartung-leitfaden-optimierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1k280zfNMbD4P0fEkh1D6ncnvgJ8Ivt2c",
+      "old_name": "2025-02-27 – Wordpress-wartung-sicherheit-leistung-optimierung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Wordpress-wartung-sicherheit-leistung-optimierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kR_Yd_NDv_gjDWeqK9iHI5Ae_oADl5bm",
+      "old_name": "2025-02-27 – Divi-builder-vs-elementor-pro-wordpress-vergleich – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Divi-builder-vs-elementor-pro-wordpress-vergleich - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kKfS9UgMsRWYBIUGh0QRAaYBCdyEpmU9",
+      "old_name": "2025-02-27 – Divi-builder-vs-elementor-pro-welcher-besser – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Divi-builder-vs-elementor-pro-welcher-besser - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ovY1Ov_BRqJzx0UnwQ4XJJOZgcexek7b",
+      "old_name": "2025-03-10 – Surecart-ecommerce-wordpress-digitale-produkte – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-10 - Surecart-ecommerce-wordpress-digitale-produkte - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ozi8lS2GdShkWhy6QqrJAsMtFFKPEnk-",
+      "old_name": "2025-03-10 – Surecart-ecommerce-plugin-digitale-produkte-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-10 - Surecart-ecommerce-plugin-digitale-produkte-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qLCyuslCY6yUiF4i6waw9rx0fzodI8pl",
+      "old_name": "2025-03-12 – Link-finder-netlinking-guenstige-backlinks – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-12 - Link-finder-netlinking-guenstige-backlinks - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qLA_FPS-ab7RhGukHgaVTIwcHyoZabv7",
+      "old_name": "2025-03-12 – Link-finder-netlinking-strategie-optimieren – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-12 - Link-finder-netlinking-strategie-optimieren - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tInXblxhZCg2rt5xuANzU1q4o1q2LUnX",
+      "old_name": "2025-03-27 – Rapyd-cloud-bewertungen-effizientes-hosting – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Rapyd-cloud-bewertungen-effizientes-hosting - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tJZV_8uvlUsFwE4IZTb7t6RXyU9hd0lu",
+      "old_name": "2025-03-27 – Rapyd-cloud-wordpress-hosting-leistungsstark – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Rapyd-cloud-wordpress-hosting-leistungsstark - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wHUAElavISYK7EJNkOPJX_17-m7suyDn",
+      "old_name": "2025-04-10 – Crocoblock-tool-wordpress-elementor-boost – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-10 - Crocoblock-tool-wordpress-elementor-boost - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wCdL3xpw1ahVY8pe3JYQ-7yaP3B2gGtr",
+      "old_name": "2025-04-10 – Crocoblock-toolbox-wordpress-werkzeugkasten – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-10 - Crocoblock-toolbox-wordpress-werkzeugkasten - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1u1RKmIUL0qlaYtXMHOPTIhmRDi4ZfAO0",
+      "old_name": "2025-03-31 – Link-whisper-bewertungen-seo-tool – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-31 - Link-whisper-bewertungen-seo-tool - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1u4BM4NpE2viLbbaTIcwJl_CPW4hN-kkA",
+      "old_name": "2025-03-31 – Linkwhisper-wordpress-plugin-interne-vernetzung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-31 - Linkwhisper-wordpress-plugin-interne-vernetzung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vqVXepqoFfF1bnTdzlv4glxCnPugt_Z6",
+      "old_name": "2025-04-05 – Wordpress-lokal-flywheel-vs-xampp-vergleich – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-05 - Wordpress-lokal-flywheel-vs-xampp-vergleich - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vv7qCyD4FhPnX0Lx6hCrXhonDZ_ZzL-t",
+      "old_name": "2025-04-05 – Local-wp-wordpress-lokal-mit-xampp-oder-flywheel – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-05 - Local-wp-wordpress-lokal-mit-xampp-oder-flywheel - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1x8uLIydAx-50goIyBlh0MG6h-kIBacP3",
+      "old_name": "2025-04-17 – Vergleich-wordpress-buchungsplugins-fluentbooking-amelia – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Vergleich-wordpress-buchungsplugins-fluentbooking-amelia - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1x2lktZn2x46P2_92R3_yMV4RwUxYy_vO",
+      "old_name": "2025-04-17 – Fluentbooking-amelia-wordpress-reservierungsplugin-vergleich – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Fluentbooking-amelia-wordpress-reservierungsplugin-vergleich - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xUzO3_DM3q9RxqvibjvYNZ01NhLq0r9n",
+      "old_name": "2025-04-17 – Top10-wordpress-uebersetzungsplugin-schnell-effektiv – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Top10-wordpress-uebersetzungsplugin-schnell-effektiv - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xRMLHc6HZ_w5BkoDBTS-Zpj4YbKvhQGj",
+      "old_name": "2025-04-17 – Wordpress-uebersetzungsplugin-top10-globalisierung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-17 - Wordpress-uebersetzungsplugin-top10-globalisierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-Foh-Q6FEpWGFDI5nVv6lfLIaShnEFNF",
+      "old_name": "2025-05-07 – Learndash-wordpress-lms-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-07 - Learndash-wordpress-lms-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-KinUiKw9vo6eXwJ5uyFFXnwdBfTlJLA",
+      "old_name": "2025-05-07 – Learndash-wordpress-lms-online-schulungen – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-07 - Learndash-wordpress-lms-online-schulungen - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "104LLGIZuOJfrdzI8C68hzxXDL9q83KvU",
+      "old_name": "2025-05-08 – Buddyboss-uebersicht – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Buddyboss-uebersicht - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1048ewc_x2fAbvb_ThnJuUNALqm23EOa9",
+      "old_name": "2025-05-08 – Buddyboss-wordpress-community-kurse-starten – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Buddyboss-wordpress-community-kurse-starten - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "114ytsaHX6u3ntB1_3fGlVTbRB66oP-7g",
+      "old_name": "2025-05-08 – Wordpress-multisite-guide-zentrale-verwaltung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Wordpress-multisite-guide-zentrale-verwaltung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "113PRzVU8wzPDTDidd5adnfSz4mjP_bRY",
+      "old_name": "2025-05-08 – Wordpress-multisite-mehrere-websites-clever-verwalten – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Wordpress-multisite-mehrere-websites-clever-verwalten - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MwkHVw9gdKakOQ1Tz9AMUTsn8DgLLS6_",
+      "old_name": "2025-06-05 – Webhosting-frankreich-o2switch-erfahrungen – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - Webhosting-frankreich-o2switch-erfahrungen - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-PXHaPvFiAB4v5vjqvyp-R9lsGddgYft",
+      "old_name": "2025-06-05 – O2switch-meinungen-webhosting-frankreich – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - O2switch-meinungen-webhosting-frankreich - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xXikGr0W_1eHM6vhL31kW5uulAZoTHCX",
+      "old_name": "2025-06-05 – Fluentcrm-gutscheincode-20-prozent-schoolswp20 – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - Fluentcrm-gutscheincode-20-prozent-schoolswp20 - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dR0gfzDUga2A13Gg1W6sWCEzQKBjNu8i",
+      "old_name": "2025-06-05 – Fluentcrm-promo-code-20-percent-schoolswp20-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - Fluentcrm-promo-code-20-percent-schoolswp20-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_J-irdMENWftrgjpcGOf7kg_SSB9o_Hm",
+      "old_name": "2025-06-16 – Rapyd-cloud-gutscheincode-wordpress-hosting-rabatt – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-16 - Rapyd-cloud-gutscheincode-wordpress-hosting-rabatt - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JhEWxwU452N-3b1scI3IuEm_WL4sST2N",
+      "old_name": "2025-06-16 – Rapyd-cloud-gutschein-25-prozent-wordpress-hosting – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-16 - Rapyd-cloud-gutschein-25-prozent-wordpress-hosting - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ONgupPBWuTnm0wcbupUoncKCmStsaXS5",
+      "old_name": "2025-07-05 – Wordpress-lernen-ohne-vorkenntnisse-anleitung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-05 - Wordpress-lernen-ohne-vorkenntnisse-anleitung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SAo7jcXAVzF4jsmI4_OMwz81O1CIHeJc",
+      "old_name": "2025-07-05 – Wordpress-selbststaendig-lernen-leitfaden-anfaenger – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-05 - Wordpress-selbststaendig-lernen-leitfaden-anfaenger - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jbq7KsRrgFK7U0Nd6pNTfJnQ87ns7rss",
+      "old_name": "2025-07-06 – Fluentcart-erfahrung-wordpress-ecommerce-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-06 - Fluentcart-erfahrung-wordpress-ecommerce-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tGOtj5yy63tZPd9dKdcmvgBdcGGorI6v",
+      "old_name": "2025-07-06 – Fluentcart-test-wordpress-shop-ecommerce-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-06 - Fluentcart-test-wordpress-shop-ecommerce-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12uKiIWbncgNK-VQxWsezbirVf9TJpXaC",
+      "old_name": "2025-07-26 – Copilhost-wordpress-hosting-schnell-sicher – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-26 - Copilhost-wordpress-hosting-schnell-sicher - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1J54l_bipvrxIHHiadzY7LnaSmUm45RXd",
+      "old_name": "2025-07-26 – Copilhost-hosting-sicher-schnell-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-26 - Copilhost-hosting-sicher-schnell-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pnWGm0IiwyAUNtLQvmeJBOXGak41Y3ip",
+      "old_name": "2025-03-12 – Latepoint-wordpress-plugin-online-reservierung – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-12 - Latepoint-wordpress-plugin-online-reservierung - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pjPgW7ZFXd0rCux30pIUUJU8k5KByuh6",
+      "old_name": "2025-03-12 – Latepoint-schnelles-buchungs-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-12 - Latepoint-schnelles-buchungs-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14QMNLKgd75pTv_VYWdF8KAjntCjlutft",
+      "old_name": "2024-11-07 – Create-wordpress-site-without-installation-tastewp – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-07 - Create-wordpress-site-without-installation-tastewp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14TqsPUGKCcV0kNieiX7paqS_kjVOUQ2J",
+      "old_name": "2024-11-07 – Tastewp-discover-how-to-easily-create-wordpress-website – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-07 - Tastewp-discover-how-to-easily-create-wordpress-website - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16o1Ho3GJ-uo-BLgbnF4UyqTRs5c8su_8",
+      "old_name": "2024-11-12 – Linkuma-quality-backlinks-7-euro-netlinking-simplified – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-12 - Linkuma-quality-backlinks-7-euro-netlinking-simplified - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16ji72rzX2bZEonMCh4aMWcmEqT6uaZwT",
+      "old_name": "2024-11-12 – Linkuma-gold-standard-netlinking-opinions-insights – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-12 - Linkuma-gold-standard-netlinking-opinions-insights - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CFsy2alrcE52kExtBb7BV3jxYiz5jCbs",
+      "old_name": "2024-11-30 – A-slug-in-wordpress-what-is-it-and-how-to-optimize – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-30 - A-slug-in-wordpress-what-is-it-and-how-to-optimize - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CL3wxun5hY5BIGyo3vGWXteDVyz8va3B",
+      "old_name": "2024-11-30 – Optimize-wordpress-slugs-boost-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2024-11-30 - Optimize-wordpress-slugs-boost-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DabSzexgiikgyhfULsI5DhfigPPGxxzM",
+      "old_name": "2024-12-03 – Suremembers-best-membership-plugin-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-03 - Suremembers-best-membership-plugin-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Dd-5tREF4upUSY-zzatyrRbXuedDS7ha",
+      "old_name": "2024-12-03 – Suremembers-wordpress-membership-plugin-earn-more – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-03 - Suremembers-wordpress-membership-plugin-earn-more - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1H4zSXSqNY4SioQCFF4I8PfORbmPcJUgf",
+      "old_name": "2024-12-10 – Bespoke-wordpress-site-seo-design – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Bespoke-wordpress-site-seo-design - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GxxGauA-YYgbY6e5A72NA8tU1srF-0i2",
+      "old_name": "2024-12-10 – Custom-wordpress-design-benefits – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Custom-wordpress-design-benefits - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HbGQKLGZpJgFkaNYuR7tZsANYiaLlrpB",
+      "old_name": "2024-12-10 – What-is-wordpress-plugin-effective-use – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - What-is-wordpress-plugin-effective-use - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HbeijHtFvfRbQkGaTuLsDkTOrfssjmAe",
+      "old_name": "2024-12-10 – Wordpress-plugins-transform-without-coding – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Wordpress-plugins-transform-without-coding - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cUFQGd7RozbMIouNLo0f2CpwTh2QLb1V",
+      "old_name": "2025-02-03 – Suremembers-vs-wishlist-members-wordpress-comparison – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Suremembers-vs-wishlist-members-wordpress-comparison - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cQXFXKQ39sQ3GdoZ_zVBU3ay6yxbosiD",
+      "old_name": "2025-02-03 – Suremembers-vs-wishlist-members-wordpress-plugin-comparison – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Suremembers-vs-wishlist-members-wordpress-plugin-comparison - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MJSmCrB09qawNRmEBeM-4RG8T3LvXoKy",
+      "old_name": "2024-12-20 – Wpboutik-boost-wordpress-ecommerce-ease – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Wpboutik-boost-wordpress-ecommerce-ease - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MGNM48e2YxjF5ac9FzV_oP4ea0ewdbti",
+      "old_name": "2024-12-20 – Wpboutik-reinvents-ecommerce-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Wpboutik-reinvents-ecommerce-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NrL9MmvM95XBE_ckIGOJrw4ntk9slIMb",
+      "old_name": "2024-12-20 – Zipwp-create-wordpress-site-fast-ai – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Zipwp-create-wordpress-site-fast-ai - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Noc-VlFbVdMOkx-ePcnNcRU3TC9T0NWH",
+      "old_name": "2024-12-20 – Zipwp-revolutionize-wordpress-site-ai – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-20 - Zipwp-revolutionize-wordpress-site-ai - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OUVI_sp6FR2bqaJm7gRvba6spa8fjA-b",
+      "old_name": "2024-12-23 – Wp-marmite-pay-easy-online-sales-stripe – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-23 - Wp-marmite-pay-easy-online-sales-stripe - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OVRpDl5O7RSKv19xhO-66xDDOEnrSYzI",
+      "old_name": "2024-12-23 – Wpmarmite-pay-simplifies-payments-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-23 - Wpmarmite-pay-simplifies-payments-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QSzkS7iMCBAAnlyIeH6oga037rHI9QBi",
+      "old_name": "2025-01-07 – Discover-gutenberg-wordpress-editor – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Discover-gutenberg-wordpress-editor - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QQNUukqQwXJFJksIisvHazT4qn6cKBq-",
+      "old_name": "2025-01-07 – What-is-gutenberg-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - What-is-gutenberg-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SbRXIpqQ19b37MoWxYqzMFFeRE0nzKqr",
+      "old_name": "2025-01-07 – Create-wordpress-community-fluentcommunity – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Create-wordpress-community-fluentcommunity - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SaVhCfe3x0WUXMoDHBjEy37aAdMKrHw8",
+      "old_name": "2025-01-07 – Fluentcommunity-plugin-build-wordpress-community – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-07 - Fluentcommunity-plugin-build-wordpress-community - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1V2cyeBewQS12YOklmKUSJc3SrfAS85w4",
+      "old_name": "2025-01-10 – Thot-seo-semantic-tool-dominating-google – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Thot-seo-semantic-tool-dominating-google - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Uyg0ogM7Slo6avSEkw2ubbQX0WwAw4_U",
+      "old_name": "2025-01-10 – Why-thot-seo-best-semantic-optimization-tool – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Why-thot-seo-best-semantic-optimization-tool - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VNCiUDtD70meg0Sg8sxakz29hkIzdn5p",
+      "old_name": "2025-01-10 – Clean-wordpress-database-guide-plugins – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Clean-wordpress-database-guide-plugins - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VLNeTKsEE4r7z1QK5jXV42oL-4303UuY",
+      "old_name": "2025-01-10 – Clean-wordpress-database-plugins-guide – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-10 - Clean-wordpress-database-plugins-guide - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1X9icYWVqpxNUISqzK8Ccqoz754M-gbC6",
+      "old_name": "2025-01-11 – Wp-umbrella-easily-manage-wordpress-websites – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-11 - Wp-umbrella-easily-manage-wordpress-websites - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1X9sjfhn6XNYo8fy9Jf9lrH2YUm2BUxQ1",
+      "old_name": "2025-01-11 – Wp-umbrella-why-wordpress-agencies-love-it – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-11 - Wp-umbrella-why-wordpress-agencies-love-it - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Z2zVv0qgckiz-dwSXZsqzskT0wuxn5TM",
+      "old_name": "2025-01-16 – Wishlist-member-guide-wordpress-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Wishlist-member-guide-wordpress-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Yox_R73UX5NMCh2WQHhFjTgc48ixIHcF",
+      "old_name": "2025-01-16 – Wishlist-member-successful-wordpress-membership-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-16 - Wishlist-member-successful-wordpress-membership-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1g_5cn51Ymwy0m2Cn75ck5oieCAabOJo6",
+      "old_name": "2025-02-16 – Skoatch-ai-seo-content-tool – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-16 - Skoatch-ai-seo-content-tool - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gaiuo3J7Q9f6YrXowa_Ubd9KbNwjnYY7",
+      "old_name": "2025-02-16 – Skoatch-ai-seo-content-editing – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-16 - Skoatch-ai-seo-content-editing - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cYxY8hSDqjQ5RCO0KnguZbvgu1WmgMub",
+      "old_name": "2025-02-03 – Latepoint-wordpress-plugin-online-booking – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Latepoint-wordpress-plugin-online-booking - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1c_H1f-05DKWexs7rMxA5wNcd8eWTR0gZ",
+      "old_name": "2025-02-03 – Latepoint-plugin-wordpress-booking – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-03 - Latepoint-plugin-wordpress-booking - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1c3LCC1Bhof62oeSlg0_S-OJ0Ex1K_yjQ",
+      "old_name": "2025-01-31 – Seo-wordpress-traduire-sans-migraine – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-31 - Seo-wordpress-traduire-sans-migraine - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1c3hsYQRhe4m7Z07BYqV496ib06RodSQa",
+      "old_name": "2025-01-31 – Testing-wordpress-traduire-sans-migraine – Thumbnail Pinterest.jpg",
+      "new_name": "2025-01-31 - Testing-wordpress-traduire-sans-migraine - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iPkdWi7qNL8vrMow2WC2FYrO39WWUsVS",
+      "old_name": "2025-02-19 – Tutor-lms-review-wordpress-lms-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-19 - Tutor-lms-review-wordpress-lms-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iNweILv1doycqc7hvlOFsuqZj0xdtzMZ",
+      "old_name": "2025-02-19 – Tutor-lms-review-wordpress-best-lms – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-19 - Tutor-lms-review-wordpress-best-lms - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jdQmU1aBkLCylgqjiV-8XP6SsaZZouAl",
+      "old_name": "2025-02-22 – Academy-lms-wordpress-launch-online-academy – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-22 - Academy-lms-wordpress-launch-online-academy - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jdrZUjvdc_TWZ2He0V0dQ-q2KiAXXLz9",
+      "old_name": "2025-02-22 – Academy-lms-wordpress-plugin-overview – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-22 - Academy-lms-wordpress-plugin-overview - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1l7sQhgBHz3v1O3BTs9f8UMT58JXXs70P",
+      "old_name": "2025-02-27 – Divi-builder-vs-elementor-pro-wordpress-comparison – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Divi-builder-vs-elementor-pro-wordpress-comparison - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1l1QDHv_qYWT8mWEuB3f2kzaExuEVKmah",
+      "old_name": "2025-02-27 – Divi-builder-vs-elementor-pro-best-page-builder – Thumbnail Pinterest.jpg",
+      "new_name": "2025-02-27 - Divi-builder-vs-elementor-pro-best-page-builder - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nbs_sWhCpZwZLSP0GZnPjxJLm-YwuTwV",
+      "old_name": "2025-03-09 – Surecart-digital-sales-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Surecart-digital-sales-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1n__3wmkQbNELSUCyw4lY-NnfE6NnV9C8",
+      "old_name": "2025-03-09 – Surecart-ecommerce-plugin-digital-products – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Surecart-ecommerce-plugin-digital-products - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nng4wBaycCp_bStoig1nmhuTOHsfpxnf",
+      "old_name": "2025-03-09 – Local-wp-compare-local-by-flywheel-xampp – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Local-wp-compare-local-by-flywheel-xampp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nmA4R5C3h_ado7GyyZhFNskuThZNYNiT",
+      "old_name": "2025-03-09 – Local-wp-flywheel-vs-xampp-best-wordpress-tool – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-09 - Local-wp-flywheel-vs-xampp-best-wordpress-tool - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oRyi7NrN26vv-E6uv1bHNNhqlYm7LNxJ",
+      "old_name": "2025-03-10 – Link-finder-boost-netlinking-affordable-backlinks – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-10 - Link-finder-boost-netlinking-affordable-backlinks - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oYP_7_9iuYBc6xJ2E9GP42kXkSFGXTi2",
+      "old_name": "2025-03-10 – Linkfinder-optimize-netlinking-strategy – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-10 - Linkfinder-optimize-netlinking-strategy - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pQetBCd8i3_iUhbax6eCKDkiRka_ZZ7I",
+      "old_name": "2025-03-11 – Fluentbooking-ameliawp-best-wordpress-booking-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-11 - Fluentbooking-ameliawp-best-wordpress-booking-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pGzePye2TSvqMZx9kbPx5JDi1vSi5TdD",
+      "old_name": "2025-03-11 – Fluentbooking-ameliawp-booking-wordpress-comparison – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-11 - Fluentbooking-ameliawp-booking-wordpress-comparison - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1scKhdr_MydNZKr6of6MKzZ6lU1saB0tJ",
+      "old_name": "2025-03-27 – Wordpress-playground-test-wordpress-online – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Wordpress-playground-test-wordpress-online - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1s_9BDME16z17sFG9jSKjxfENmt3-vGPC",
+      "old_name": "2025-03-27 – Wordpress-playground-how-to-test-wordpress-online – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Wordpress-playground-how-to-test-wordpress-online - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tdHqYT9-zU5Fd_pm4UvvdGa_Mz02wa-2",
+      "old_name": "2025-03-27 – Rapyd-cloud-review-efficient-hosting – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Rapyd-cloud-review-efficient-hosting - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1te3fUV-2BmQfh_qI-y24p31LmLVdxa8f",
+      "old_name": "2025-03-27 – Rapyd-cloud-high-performance-wordpress-hosting – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-27 - Rapyd-cloud-high-performance-wordpress-hosting - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ubTY6DCenGgConZ9nxJhznKLTX84vt-s",
+      "old_name": "2025-04-03 – Link-whisper-review-wordpress-seo-plugin-analysis – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-03 - Link-whisper-review-wordpress-seo-plugin-analysis - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uNeJhXZ4e7im0EuKkLmcekCVWUb5p83B",
+      "old_name": "2025-04-03 – Link-whisper-wordpress-plugin-internal-linking-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-03 - Link-whisper-wordpress-plugin-internal-linking-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sJ7QIDfBf2YZOsOucEoSEWG5iuiLFLQb",
+      "old_name": "2025-03-23 – Crocoblock-wordpress-elementor-tool-promotion – Thumbnail Pinterest.jpg",
+      "new_name": "2025-03-23 - Crocoblock-wordpress-elementor-tool-promotion - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1upr7_hxxih6RRHtgMGr-hz9sQ8lMdj1P",
+      "old_name": "2025-04-03 – Crocoblock-interface-wordpress-elementor – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-03 - Crocoblock-interface-wordpress-elementor - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1v5atFacv5XMg-O6yupvNAlxQejrxCaIK",
+      "old_name": "2025-04-03 – Crocoblock-toolbox-wordpress-websites – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-03 - Crocoblock-toolbox-wordpress-websites - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wVzDRT-PdIyASvGujZSah-0FXd_VO-Dc",
+      "old_name": "2025-04-10 – Wordpress-translation-plugins-top10-multilingual – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-10 - Wordpress-translation-plugins-top10-multilingual - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wbLSPO7lY5wOMKIyJbOBKuHGX05eT3G4",
+      "old_name": "2025-04-10 – Wordpress-translation-plugin-top10-globalization – Thumbnail Pinterest.jpg",
+      "new_name": "2025-04-10 - Wordpress-translation-plugin-top10-globalization - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-a1OuD9M9Lk8jJBoiIkhZF2gE1hs2hOt",
+      "old_name": "2025-05-07 – Learndash-review-worth-it-online-courses – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-07 - Learndash-review-worth-it-online-courses - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-jMopPpTh0oeVqE3RvUYSIlHqyCyV_uA",
+      "old_name": "2025-05-07 – Learndash-wordpress-plugin-online-training – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-07 - Learndash-wordpress-plugin-online-training - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10jukz8g2A50etDLGAPVescgjyKFiLITS",
+      "old_name": "2025-05-08 – Buddyboss-guide-cover – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Buddyboss-guide-cover - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10cICCPSX-Go3_b1cS3qFF-7fTCXY0P8B",
+      "old_name": "2025-05-08 – Buddyboss-create-online-community – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Buddyboss-create-online-community - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11JwTilcbi_OUwDE1hD27ylHHSfGbdETW",
+      "old_name": "2025-05-08 – Wordpress-multisite-guide-manage-multiple-sites – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Wordpress-multisite-guide-manage-multiple-sites - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11WY90dwJl-VmNAZFWlu1CQrdoFThAAg7",
+      "old_name": "2025-05-08 – Wordpress-multisite-manage-sites-one-click – Thumbnail Pinterest.jpg",
+      "new_name": "2025-05-08 - Wordpress-multisite-manage-sites-one-click - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BtMAUhXw6FP-GqNolVqboxbPr7lvzpdz",
+      "old_name": "2025-06-05 – O2switch-review-french-hosting-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - O2switch-review-french-hosting-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZcjhcU8akhcxZG6iXde3u1eEIX7zreF1",
+      "old_name": "2025-06-05 – O2switch-review-french-hosting-worth-it – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - O2switch-review-french-hosting-worth-it - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ov5C9pavWtUnGKAkGAd1z6UMaNZAja2l",
+      "old_name": "2025-06-05 – Fluentcrm-coupon-code-20-off-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - Fluentcrm-coupon-code-20-off-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14_8jpZNf1ITjYfzBYl13wXqCaTBdaej8",
+      "old_name": "2025-06-05 – Fluentcrm-promo-code-20-schoolswp20-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-05 - Fluentcrm-promo-code-20-schoolswp20-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UOFFhtgAeQ1JmjvL5eNWTXQf4JQg5ETT",
+      "old_name": "2025-06-13 – Rapyd-cloud-promo-wordpress-hosting-discount – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-13 - Rapyd-cloud-promo-wordpress-hosting-discount - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tys7zHRwk3bMIML8whBS8g8rmYhoyz50",
+      "old_name": "2025-06-13 – Promo-code-rapyd-cloud-wordpress-hosting-deal – Thumbnail Pinterest.jpg",
+      "new_name": "2025-06-13 - Promo-code-rapyd-cloud-wordpress-hosting-deal - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "101trsp91Q-hnTVL-0f0BVwMvo1llrBhK",
+      "old_name": "2025-07-05 – Learn-wordpress-own-start-from-scratch – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-05 - Learn-wordpress-own-start-from-scratch - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TGQT_eCq-u2c5p8FZ0_UCMvW59oF_CCk",
+      "old_name": "2025-07-05 – Learn-wordpress-guide-motivated-beginners – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-05 - Learn-wordpress-guide-motivated-beginners - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FHtI6M09aD9TkVY1ncAfiO7-7LHgZwyz",
+      "old_name": "2025-07-06 – Fluentcart-review-wordpress-plugin-schoolswp – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-06 - Fluentcart-review-wordpress-plugin-schoolswp - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OsIFNMyBRfaSi4S3dRAN4pmw1LvQh7OQ",
+      "old_name": "2025-07-06 – Fluentcart-review-no-fuss-wordpress-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-07-06 - Fluentcart-review-no-fuss-wordpress-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RZ_TdFhxbjQMGqADyWinQQpS6eOcei08",
+      "old_name": "2025-08-01 – Droip-wordpress-alternative-no-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-01 - Droip-wordpress-alternative-no-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1yKqVhWM3ncB0rQceyUEvUTyydEihv8Kx",
+      "old_name": "2025-08-01 – Droip-review-webflow-style-wordpress-builder – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-01 - Droip-review-webflow-style-wordpress-builder - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OvcX1hzzzkvHu4EpUYxj1ftQldkszpt6",
+      "old_name": "2025-08-07 – Wp-rocket-boost-wordpress-speed-seo – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-07 - Wp-rocket-boost-wordpress-speed-seo - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18vEdT9Krkl29fqKQkTEoDXVbKSeaKYsK",
+      "old_name": "2025-08-07 – Wprocket-wordpress-caching-plugin-speed – Thumbnail Pinterest.jpg",
+      "new_name": "2025-08-07 - Wprocket-wordpress-caching-plugin-speed - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KoP6hcPRTnIqH8KDVPdXLiXRtKonoZaI",
+      "old_name": "2024-12-16 – Wordpress-playground-what-is-it – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-16 - Wordpress-playground-what-is-it - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KrjBBh9TwIInMv1pVOFcX8uDcVMhAGVU",
+      "old_name": "2024-12-16 – Wordpress-playground-test-online – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-16 - Wordpress-playground-test-online - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GY3rzrcEHbf-G-YHsgtXd5y_ihcby69m",
+      "old_name": "2024-12-10 – Sureforms-ai-powered-wordpress-forms-plugin – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Sureforms-ai-powered-wordpress-forms-plugin - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GZtk6dy95wesQiTw1qznQKw3jxIgOX6l",
+      "old_name": "2024-12-10 – Sureforms-simple-powerful-wordpress-form-builder – Thumbnail Pinterest.jpg",
+      "new_name": "2024-12-10 - Sureforms-simple-powerful-wordpress-form-builder - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1K6Mx0cr15eGN5nYc43DnVlOEhqsg9oMk",
+      "old_name": "2025-10-24 – Offre-black-friday-schoolswp-wordpress – Ressource.jpg",
+      "new_name": "2025-10-24 - Offre-black-friday-schoolswp-wordpress.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QMQPsJHfQwmq3cb4lGa1Pzfsg69H7iwo",
+      "old_name": "2025-10-30 – Template o2switch black friday – Ressource.jpg",
+      "new_name": "2025-10-30 - Template o2switch black friday.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Loi06H2-ATpR_w6Iqdjyb6kZwSXAi10n",
+      "old_name": "03_Covers_ et _Thumbnails",
+      "new_name": "03_Covers_-et-_Thumbnails",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KesdOc4yeWIfUHbWUF3KjvTM4DK9qECjQ0mpjMBxz4M",
+      "old_name": "SEO Quick Wins Radar — schoolsWP",
+      "new_name": "SEO Quick Wins Radar - schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BdclmQC0xqQnUxHMcW5NbTsaUoo8cpBK",
+      "old_name": "02_Checklists-Qualite (pour SEO, email, prompt hygiene)",
+      "new_name": "02_Checklists-Qualite-(pour-SEO,-email,-prompt-hygiene)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15fEpEsqUdkp5fWV32f1cDyysfNiWEwHa",
+      "old_name": "00_README – schoolsWP",
+      "new_name": "00_README-schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fz-gPJIyRTK_YQt3mHJw6FXh1EBd7eLNapJcTsmkH7U",
+      "old_name": "README – schoolsWP",
+      "new_name": "README - schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14YvL3h2y473dUrLnAtihI1T3yoXHAcfL",
+      "old_name": "02_Produits_ et _Formations",
+      "new_name": "02_Produits_-et-_Formations",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qc-NVKNzb2n8hQRRwwf8aqCpK4H4xCxy",
+      "old_name": "00_README – Monetisation schoolsWP",
+      "new_name": "00_README-Monetisation-schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xAeT9DoaNDz55q_pulwzBW6iOR3XiX_ykOYoEtZ1cAw",
+      "old_name": "2023-07-21 – Liste des Affiliations – Affiliation",
+      "new_name": "2023-07-21 - Liste des Affiliations - Affiliation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pYnpd65DMZwrqT4ft_6Y_KIbg13nP3msp9BKJ1ZUrQ8",
+      "old_name": "2024-09-08 – SureTriggers Affiliate Marketing Guide (2024) – Affiliation",
+      "new_name": "2024-09-08 - SureTriggers Affiliate Marketing Guide (2024) - Affiliation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SgoQsf__u4wIM5rAZTooV22KTFf7lRBU",
+      "old_name": "2025-11-11 – Programme-ambassadeur-schoolswp-affiliation – Affiliation.jpg",
+      "new_name": "2025-11-11 - Programme-ambassadeur-schoolswp-affiliation - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "14qggcsvOjFWv4sP_W6sZMOzVke_ABCnZ",
+      "old_name": "2025-09-14 – Affiliatepress-wordpress-plugin-review – Affiliation.jpg",
+      "new_name": "2025-09-14 - Affiliatepress-wordpress-plugin-review - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tB-m18OsIOtfSAAJBbyQtlUviV6lRs26",
+      "old_name": "2025-08-11 – Affiliatepress-plugin-affiliation-wordpress-tableau-bord – Affiliation.jpg",
+      "new_name": "2025-08-11 - Affiliatepress-plugin-affiliation-wordpress-tableau-bord - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iyt1BDlBPk9VUcrf9bba94brlYAQrntK",
+      "old_name": "2025-08-09 – AffiliatePress-Logo-1 – Affiliation.png",
+      "new_name": "2025-08-09 - AffiliatePress-Logo-1 - Affiliation.png",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LdglGWPuxZz_TZzjGjr9snwE3VrtVcCf",
+      "old_name": "2025-08-12 – Affiliatepress-configuration-paypal-mass-payment – Affiliation.jpg",
+      "new_name": "2025-08-12 - Affiliatepress-configuration-paypal-mass-payment - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KvcANNqoXle5J7H5yLQQ9lNrs4kFEjwm",
+      "old_name": "2025-08-12 – Affiliatepress-tableau-de-bord-gestion-affilies – Affiliation.jpg",
+      "new_name": "2025-08-12 - Affiliatepress-tableau-de-bord-gestion-affilies - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GEl0adb2KiB27ynlb69rwkzb3xWAVO1X",
+      "old_name": "2025-08-11 – Affiliatepress-avis-test-plugin-affiliation-wordpress – Affiliation.jpg",
+      "new_name": "2025-08-11 - Affiliatepress-avis-test-plugin-affiliation-wordpress - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BonwpxDyVXdBst0nDgv1VokxKO6N3jW1",
+      "old_name": "2025-08-12 – Affiliatepress-tableau-bord-plugin-wordpress – Affiliation.jpg",
+      "new_name": "2025-08-12 - Affiliatepress-tableau-bord-plugin-wordpress - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10XyXx72wBVa4noahr4VB_4GGT2G-XGw0",
+      "old_name": "2025-08-12 – Affiliatepress-woocommerce-integrations-plugins-wordpress – Affiliation.jpg",
+      "new_name": "2025-08-12 - Affiliatepress-woocommerce-integrations-plugins-wordpress - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1h10CfYxeeZRW4DvHtIq1JnQjeFCFRJUx",
+      "old_name": "2025-12-29 – Affiliate Marketing for Beginners  How to Get Started as a BuddyBoss Affiliat... – Affiliation",
+      "new_name": "2025-12-29 - Affiliate Marketing for Beginners How to Get Started as a BuddyBoss Affiliat... – Affiliation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1G_S74anUKa8PTv7N8IxCPKsTFZMHQpfM",
+      "old_name": "02_Liens_ et _Tracking",
+      "new_name": "02_Liens_-et-_Tracking",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1X-2mRyUVh7u5UzR2vTp6T3ShNtKQ53_V",
+      "old_name": "03_Suivi_ et _Performances",
+      "new_name": "03_Suivi_-et-_Performances",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1m2m_BTNFYYFHEFl5Poq2IdnmqTGSaQ7V",
+      "old_name": "03_Contenus_ et _Pages",
+      "new_name": "03_Contenus_-et-_Pages",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HVMu9RYM4QflAa_7KNEr2PzNXTSyzEeU",
+      "old_name": "04_Suivi_ et _Notes",
+      "new_name": "04_Suivi_-et-_Notes",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wbgTgZ08vWFszFeNjF7FDQ0aWPIt-F4D",
+      "old_name": "00_README – Partenaire",
+      "new_name": "00_README-Partenaire",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uvkuCYoCxKazWwFJ8ynkdlpWuLGJ8nXl3FzsfXWp8bo",
+      "old_name": "README – Partenaire (Template)",
+      "new_name": "README - Partenaire (Template)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UwQP5tHtlUp9aolXblRAbGZyzim6ju9F",
+      "old_name": "03_Contenus_ et _Pages",
+      "new_name": "03_Contenus_-et-_Pages",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1p7JlURoCUWwXDniG74i8w6zCR7__7XcH",
+      "old_name": "04_Suivi_ et _Notes",
+      "new_name": "04_Suivi_-et-_Notes",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NM-mF7idsfFHRY7JenfhuzEmCOcP8rzl",
+      "old_name": "00_README – WPManageNinja",
+      "new_name": "00_README-WPManageNinja",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VcMD--bmDbHqKGiqtOz--jUG-GlJt2qM2B2Q6S1mBTg",
+      "old_name": "README – Partenaire WPManageNinja",
+      "new_name": "README - Partenaire WPManageNinja",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UjpCvAJOovHHOQL7jAFIYh45Lg7C3oKOVt7YswXcyDU",
+      "old_name": "README – Affiliation schoolsWP",
+      "new_name": "README - Affiliation schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18ysp16_TnS7KCuYNOPMouAIY77yjmqu7y7iM6Nd7tiU",
+      "old_name": "2025-10-26 – Make Nano Banana AffiSEO – SEO",
+      "new_name": "2025-10-26 - Make Nano Banana AffiSEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TnBmIRWxuegMuvCgIkvQZuD9ipinYhw4wSD2M4Fc-w4",
+      "old_name": "2021-10-14 – SEO ARMY – SEO",
+      "new_name": "2021-10-14 - SEO ARMY - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_k5nI2eS3lsooxVLRykvhf8PRJwci81ouTHEpP8lCTY",
+      "old_name": "2025-09-04 – Prospecteur de backlinks V1 – SEO",
+      "new_name": "2025-09-04 - Prospecteur de backlinks V1 - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IPsE8x-JduPdDBNcrna2Wlcx4Rb-Q1M1Ij3Ca2HHIq8",
+      "old_name": "2025-09-04 – Prospecteur de backlinks (achat ereferer) – SEO",
+      "new_name": "2025-09-04 - Prospecteur de backlinks (achat ereferer) - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1f7NFavKk-0O2RHVyWe8M_Evp89ZtR_o-PMXtGcfkhw0",
+      "old_name": "2025-10-26 – Keywords   Formation en ligne WordPress  CSV pr t Sheets – SEO",
+      "new_name": "2025-10-26 - Keywords Formation en ligne WordPress CSV pr t Sheets - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wOekvwg0xF7QB5aAe_BdwDoCXkWh3rL-",
+      "old_name": "2025-08-20 – Linksgarden-test-netlinking – SEO.jpg",
+      "new_name": "2025-08-20 - Linksgarden-test-netlinking - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pAFiXoq6Bla1geGbXbYXCCycR2_-RsM8",
+      "old_name": "2025-08-21 – Linksgarden-avis-interface-campagne-netlinking – SEO.jpg",
+      "new_name": "2025-08-21 - Linksgarden-avis-interface-campagne-netlinking - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1o-JFWjTx4zU0Qi_MTa17kqn9qvtbZxT1",
+      "old_name": "2025-08-21 – Linksgarden-avis-plateforme-netlinking – SEO.jpg",
+      "new_name": "2025-08-21 - Linksgarden-avis-plateforme-netlinking - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1khbXJddben9EruKqIFyypNM3d0HggilV",
+      "old_name": "2025-08-29 – Linksgarden-review-netlinking-platform – SEO.jpg",
+      "new_name": "2025-08-29 - Linksgarden-review-netlinking-platform - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kJARe1sk97poaFgnWNvPBO2NII6LJoBs",
+      "old_name": "2025-08-21 – Linksgarden-avis-thematiques-campagne-netlinking – SEO.jpg",
+      "new_name": "2025-08-21 - Linksgarden-avis-thematiques-campagne-netlinking - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aSwsho1K8HC7toJaz9g-bDAURYDeH6E6",
+      "old_name": "2025-08-21 – Linksgarden-avis-selection-sites-netlinking – SEO.jpg",
+      "new_name": "2025-08-21 - Linksgarden-avis-selection-sites-netlinking - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ka_gFRBOKqq2xNshguXNhv9mis_EMpr5",
+      "old_name": "2025-08-21 – Linksgarden-avis-logo-plateforme-netlinking – SEO.png",
+      "new_name": "2025-08-21 - Linksgarden-avis-logo-plateforme-netlinking - SEO.png",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qn_DCq7dnxrzl7zEgUmYugT1vEhx9_wz",
+      "old_name": "2025-03-14 – Linkwhisper-tarifs-seo-maillage-interne – SEO.jpg",
+      "new_name": "2025-03-14 - Linkwhisper-tarifs-seo-maillage-interne - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qkMZpo3r5udqPNDVkU4kxQzZIUfgneQL",
+      "old_name": "2025-03-14 – Linkwhisper-optimisation-seo-maillage-interne – SEO.jpg",
+      "new_name": "2025-03-14 - Linkwhisper-optimisation-seo-maillage-interne - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1q2me5kxsYhx_OG5nFtlWU-n_AUj4CF37",
+      "old_name": "2025-03-12 – Link-finder-netlinking-optimierung – SEO.jpg",
+      "new_name": "2025-03-12 - Link-finder-netlinking-optimierung - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oJs6LaN8AFylgWGe88y9Tq6Z-IW8I7v4",
+      "old_name": "2025-03-10 – Link-finder-optimize-netlinking-strategy – SEO.jpg",
+      "new_name": "2025-03-10 - Link-finder-optimize-netlinking-strategy - SEO.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oXpDPi-d6sEQUwHPHwV34z5tA1QB4d95",
+      "old_name": "2025-12-29 – Keywords formation wordpress – SEO.xlsx",
+      "new_name": "2025-12-29 - Keywords formation wordpress - SEO.xlsx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZlpW0WSZZPnymYi7b4Y4w0Xjgb-8qMOSdguHdD802m0",
+      "old_name": "2025-09-09 – Formation TBL Informations SEO et WordPress by Cyril Jouault – SEO",
+      "new_name": "2025-09-09 - Formation TBL Informations SEO et WordPress by Cyril Jouault - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1x7i9BSfuKGrYoipdcj_Ckha5QIjwTEwdN7zXQnPp7oQ",
+      "old_name": "2023-08-14 – AIOSEO Le Plugin All in One SEO Ultime pour WordPress – SEO",
+      "new_name": "2023-08-14 - AIOSEO Le Plugin All in One SEO Ultime pour WordPress - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1STv4RMtMu4X46zlh3IMlloT3Z9iXhDjvwqqBmenlKeY",
+      "old_name": "2023-03-06 – Impact IM Contenu IA et SEO – SEO",
+      "new_name": "2023-03-06 - Impact IM Contenu IA et SEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gOPtJ2WFC5nqYksCN1DeDmRNpDdzw3Ya",
+      "old_name": "05_IA_ et _LLM_SEO",
+      "new_name": "05_IA_-et-_LLM_SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vRBDSldpOwXNcMfDFYVbkuCigGVGgz0aeMPFvrm4ikM",
+      "old_name": "2024-11-07 – TasteWP Erfahren Sie, wie Sie Ihre WordPress-Website einfach erstellen können – Article – DE",
+      "new_name": "2024-11-07 - TasteWP Erfahren Sie, wie Sie Ihre WordPress-Website einfach erstellen konnen - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sewD84uRfWiV-o8sDw5mmr-3UMNFvsx9epuP3OFvw4s",
+      "old_name": "2024-11-30 – Ein Slug in WordPress Was ist das und wie kann man ihn optimieren – Article – DE",
+      "new_name": "2024-11-30 - Ein Slug in WordPress Was ist das und wie kann man ihn optimieren - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-eB1rjSWKG5ir7cPdyxTVxMgkAsjKBVlhTb_RI9GECo",
+      "old_name": "2024-11-14 – SureForms KI-gespeistes WordPress-Formular-Plugin – Article – DE",
+      "new_name": "2024-11-14 - SureForms KI-gespeistes WordPress-Formular-Plugin - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LG4pUfeQYtOVho2yZRFy5t57kbOTCJtiEyoZkA78-ig",
+      "old_name": "2024-12-09 – Was ist die Erstellung einer maßgeschneiderten WordPress-Website und welche V... – Article – DE",
+      "new_name": "2024-12-09 - Was ist die Erstellung einer maßgeschneiderten WordPress-Website und welche V... - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZKpUp1HmGdvQOu5hKoufwnrR08iy0a_avcIKjjYIfu4",
+      "old_name": "2024-12-10 – Was ein WordPress-Plugin ist und wie man es effektiv nutzt – Article – DE",
+      "new_name": "2024-12-10 - Was ein WordPress-Plugin ist und wie man es effektiv nutzt - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "15T0YjfNOltgZqOxZtqav-4FHaFI4ab4Gl66ZFq0ikbI",
+      "old_name": "2024-12-16 – WordPress Playground Was ist das und wie verwende ich es – Article – DE",
+      "new_name": "2024-12-16 - WordPress Playground Was ist das und wie verwende ich es - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1W895_wdHcHu0Cs2SwOPrZGDIyQQUBxyJNwpEueQXT74",
+      "old_name": "2024-12-20 – WPBoutik erfindet den Online-Handel mit WordPress neu – Article – DE",
+      "new_name": "2024-12-20 - WPBoutik erfindet den Online-Handel mit WordPress neu - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1f4PZDoLmO6tQvZTxuhcqaCq2D9TzxUxACg-M8ChWWQk",
+      "old_name": "2024-10-22 – SureMembers vs – Article – DE",
+      "new_name": "2024-10-22 - SureMembers vs - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1loSr5BY7viYnQdQRTKrixr3mvHpZbsUFltF07rWO3M8",
+      "old_name": "2024-10-25 – ZipWP vs – Article – EN",
+      "new_name": "2024-10-25 - ZipWP vs - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1b-HdQ7b7FxsWKjxuNWZlnePBQ7LvJI74CtZHQ4HvYV4",
+      "old_name": "2024-11-07 – TasteWP Discover how to easily create your WordPress website – Article – EN",
+      "new_name": "2024-11-07 - TasteWP Discover how to easily create your WordPress website - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oaH4vARgSPOnk64PMyLCYmP4JA-H6sBPb0A1uq5yTGM",
+      "old_name": "2024-11-08 – SEOKEY, the essential SEO plugin for WordPress – Article – EN",
+      "new_name": "2024-11-08 - SEOKEY, the essential SEO plugin for WordPress - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1r_-GIQ5i-7YTBeHdJXG-dfZ9HKi3iwXUErQdtrGKyxI",
+      "old_name": "2024-11-12 – Opinions on Linkuma is it the benchmark for netlinking – Article – EN",
+      "new_name": "2024-11-12 - Opinions on Linkuma is it the benchmark for netlinking - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1etyMh24t0rSQ_Ow0cAN8tN5xJ7LdeOoUV3Xlo92K_K4",
+      "old_name": "2024-11-30 – A slug in WordPress what is it and how can I optimize it – Article – EN",
+      "new_name": "2024-11-30 - A slug in WordPress what is it and how can I optimize it - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-yo7DtWJgEBrkyVgixLSAD6qqiuctZd_yGL7W4l0wiA",
+      "old_name": "2024-12-03 – Suremembers Discover the Best Membership Plugin for WordPress – Article – EN",
+      "new_name": "2024-12-03 - Suremembers Discover the Best Membership Plugin for WordPress - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_3oOdbxL6TM9SARfrd8bDBZg4MSGZkhNCyN4vJwR1Vs",
+      "old_name": "2024-12-20 – WPBoutik reinvents e-commerce on WordPress – Article – EN",
+      "new_name": "2024-12-20 - WPBoutik reinvents e-commerce on WordPress - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ua4WQmhYiq8TccyrGejgEFMmU7SqvH59IOku_kiXkjQ",
+      "old_name": "2024-10-22 – SureMembers vs Restrict Content Pro comparison of membership plugins – Article – EN",
+      "new_name": "2024-10-22 - SureMembers vs Restrict Content Pro comparison of membership plugins - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lHVarc8hKE-8doe-cqwa64rQ1XB0Wz5tT8Gwhec_8go",
+      "old_name": "2024-10-22 – FluentBoards Find out all about this project management plugin for WordPress – Article – EN",
+      "new_name": "2024-10-22 - FluentBoards Find out all about this project management plugin for WordPress - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gnVZX-3Vs_YshROpkMGuCOvDDnC6Mm9tuNvuxjnFrXg",
+      "old_name": "2024-12-10 – SureForms AI-Powered WordPress Forms Plugin – Article – EN",
+      "new_name": "2024-12-10 - SureForms AI-Powered WordPress Forms Plugin - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UTQtLj0KD8wzBTFDyR8fYCkLiNmik-8ah9o_vPEUIE0",
+      "old_name": "2023-11-24 – Barn2 Plugins – Des plugins pour booster ses performances sur WooCommerce – Article – FR",
+      "new_name": "2023-11-24 - Barn2 Plugins - Des plugins pour booster ses performances sur WooCommerce - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1e9gUwA9g_D9mVUSlSBsUrJT1CriCaXagHwOw0LXMPvg",
+      "old_name": "2023-11-13 – Pourquoi utiliser WordPress Multisite – Article – FR",
+      "new_name": "2023-11-13 - Pourquoi utiliser WordPress Multisite - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nTERNpN2R33Q-bAjub6Eeg_jkM6INEVpPeSZ0kkPkhc",
+      "old_name": "2023-11-13 – Fiverr, zoom sur la plateforme qui permet de trouver des freelances – Article – FR",
+      "new_name": "2023-11-13 - Fiverr, zoom sur la plateforme qui permet de trouver des freelances - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uQ68PUEE5LLxfvJbFWLLlumMP7YnKgoMdfnZFpqSzTc",
+      "old_name": "2023-11-10 – Ce qu’il faut savoir sur la plateforme 5euros – Article – FR",
+      "new_name": "2023-11-10 - Ce qu’il faut savoir sur la plateforme 5euros - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1yX9kPuQicj0j097P77xaLxe8Fa-WY-opx5nKk1Qxkuc",
+      "old_name": "2023-11-12 – On vous dit tout sur le plugin Elementor – Article – FR",
+      "new_name": "2023-11-12 - On vous dit tout sur le plugin Elementor - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sdB84csafMbwImytHqp0YQ_11FoHq7BjeDo8rioMF7k",
+      "old_name": "2023-11-13 – Zoom sur Divi – Article – FR",
+      "new_name": "2023-11-13 - Zoom sur Divi - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WhILuXJLE3LaFI4gedrTyWBUUzxcNA0FK7wAfe4Sn9g",
+      "old_name": "2023-11-13 – Groundhogg, la marmotte qui va vous simplifier la vie – Article – FR",
+      "new_name": "2023-11-13 - Groundhogg, la marmotte qui va vous simplifier la vie - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ao8CL-BkQwIh3zIdmxXGhXs0nTKJHmzN5vQVT-Izacc",
+      "old_name": "2023-11-13 – On vous dit tout sur Google Web Stories pour WordPress – Article – FR",
+      "new_name": "2023-11-13 - On vous dit tout sur Google Web Stories pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MlJp9bK4Z7UYORhZYJHpuy3spJz7hFkdVmpU8UVV8hw",
+      "old_name": "2023-11-13 – Mon avis sur Kadence WP – Article – FR",
+      "new_name": "2023-11-13 - Mon avis sur Kadence WP - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kObNFmf24S4mXdC7KAG7GWdPeT59JiVasZPrDNjxgNo",
+      "old_name": "2023-11-13 – Qu’est-ce que le pixel Facebook et comment l’installer – Article – FR",
+      "new_name": "2023-11-13 - Qu’est-ce que le pixel Facebook et comment l’installer - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CffgAPe1cMn_dXx8YlgNKVRs_fcX38SE_-ZAUpPBP9c",
+      "old_name": "2023-11-14 – Jungle Scout, l’outil pour booster vos ventes sur Amazon – Article – FR",
+      "new_name": "2023-11-14 - Jungle Scout, l’outil pour booster vos ventes sur Amazon - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uW6tNU-ptlh3hnLW000gz9sAOUbgUVrsNiW8w_7J2cQ",
+      "old_name": "2023-11-13 – Ce que je pense de Divi Pixel – Article – FR",
+      "new_name": "2023-11-13 - Ce que je pense de Divi Pixel - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1f8toJqU9DlLpG8WLARMEOiBkUbQFpFN-6Of_muFYNDQ",
+      "old_name": "2023-11-21 – AAWP – Le meilleur plugin pour des sites de niche WordPress – Article – FR",
+      "new_name": "2023-11-21 - AAWP - Le meilleur plugin pour des sites de niche WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1m3e3phZXeO74v3t_jgzophrvyLyC_7CUUDq-UaOPdjw",
+      "old_name": "2023-11-22 – Gagner de l’argent avec l’affiliation sur votre site WordPress – Article – FR",
+      "new_name": "2023-11-22 - Gagner de l’argent avec l’affiliation sur votre site WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FY37XW1AIxUh8GDgBTvnXssDvWiej_R5t-lD8CxtHtE",
+      "old_name": "2023-11-21 – Spotlight Social Media Feeds – Article – FR",
+      "new_name": "2023-11-21 - Spotlight Social Media Feeds - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uy0qwAel7QtInFYmRE9t5HZ_FZ7R7aJ6vZV9hgZ84Yk",
+      "old_name": "2023-11-21 – Top 3 des addons Elementor – Article – FR",
+      "new_name": "2023-11-21 - Top 3 des addons Elementor - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rXDu1FRXq-3TGkXvihbQs2l8UmyAH58NXLNLB9Bec3E",
+      "old_name": "2023-11-24 – WooFunnels Autonami, le CRM pour gagner toujours plus de clients – Article – FR",
+      "new_name": "2023-11-24 - WooFunnels Autonami, le CRM pour gagner toujours plus de clients - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VGUGcTzEtNjbkMDQNKAHrOFao-NTxKDUhziHKEzblgw",
+      "old_name": "2023-11-24 – Tout ce que vous devez savoir sur LaunchFlows – Article – FR",
+      "new_name": "2023-11-24 - Tout ce que vous devez savoir sur LaunchFlows - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OlKghrDW9wI-aDWpCCtjzHEx5kfswezNDuKRa-R9eco",
+      "old_name": "2023-11-24 – WishList Member, tout savoir sur ce plugin WordPress – Article – FR",
+      "new_name": "2023-11-24 - WishList Member, tout savoir sur ce plugin WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BToRCEdqsUHfMdTJCRWrSBFFaCzDwxcKtfNa3nafTZI",
+      "old_name": "2023-11-22 – BeFreelancr La plateforme pour acheter et vendre des services en ligne – Article – FR",
+      "new_name": "2023-11-22 - BeFreelancr La plateforme pour acheter et vendre des services en ligne - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JzHbYnh5WzjyGSrwCTtSiMCwyE8bMCFSsSo8w7Ia1tw",
+      "old_name": "2023-11-24 – Solid Affiliate – Le Top Plugin d’affiliation pour WordPress – Article – FR",
+      "new_name": "2023-11-24 - Solid Affiliate - Le Top Plugin d’affiliation pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WTrbazg2Gpq-X-k9vo2QyGeILcxSa-FhUfsU_Jd7c9k",
+      "old_name": "2023-11-24 – Tout ce que vous devez savoir sur Webflow – Article – FR",
+      "new_name": "2023-11-24 - Tout ce que vous devez savoir sur Webflow - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1yByAbEJSUr0kPPBFKqZIUhj-3RWSiR6LidzTWjKFnBE",
+      "old_name": "2023-11-24 – SureCart, le plugin qui concurrence WooCommerce – Article – FR",
+      "new_name": "2023-11-24 - SureCart, le plugin qui concurrence WooCommerce - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1x3RRCqIwoailKJF92EM4GpfT289XAl9wrZmthNDiFbY",
+      "old_name": "2023-11-24 – Manychat le Chatbot Messenger de Facebook – Article – FR",
+      "new_name": "2023-11-24 - Manychat le Chatbot Messenger de Facebook - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BzBU2gto-SIP1K2hLsB32Iw2ADsIpUFIsw9HoXqz3_8",
+      "old_name": "2023-11-24 – ClickWhale – Article – FR",
+      "new_name": "2023-11-24 - ClickWhale - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zX3mIiEPDdhsftiv965s9y9KCuBwqesg9dp56dnug9E",
+      "old_name": "2023-11-24 – AIOSEO Le Plugin All in One SEO Ultime pour WordPress – Article – FR",
+      "new_name": "2023-11-24 - AIOSEO Le Plugin All in One SEO Ultime pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GNlLQQhW38CGvlstFyxFx9Ngflk8oR3p0Q1M-GKNrEM",
+      "old_name": "2023-11-24 – Fluent Support – Le Plugin Incontournable pour le Support Client sur WordPress – Article – FR",
+      "new_name": "2023-11-24 - Fluent Support - Le Plugin Incontournable pour le Support Client sur WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UbJJUfUavu-d_Si1e_iuzInjU-UNhxP7kGBbJP2sQZM",
+      "old_name": "2023-10-26 – Divi ToolBox, ce qu’il faut savoir sur ce plug in WordPress – Article – FR",
+      "new_name": "2023-10-26 - Divi ToolBox, ce qu’il faut savoir sur ce plug in WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xeSursEBbjFXjWvMko7gx4twDlSy01oYWwk1O2KaBAE",
+      "old_name": "2023-11-10 – Tout ce que vous devez savoir sur BuddyBoss – Article – FR",
+      "new_name": "2023-11-10 - Tout ce que vous devez savoir sur BuddyBoss - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "196NCzvQfhiFyj3ObSs_7qlS1sEFikyT2Wh_ZuqUZ1Ik",
+      "old_name": "2023-11-10 – Qu’est-ce que le plugin Divi BodyCommerce – Article – FR",
+      "new_name": "2023-11-10 - Qu’est-ce que le plugin Divi BodyCommerce - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1b3EboNZiDT0Ar_CoGOqRY5aaAqaAPCVCnghJesSMQng",
+      "old_name": "2024-12-10 – What is a WordPress plugin and how to use it effectively – Article – FR",
+      "new_name": "2024-12-10 - What is a WordPress plugin and how to use it effectively - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1f-jtMNuEKmWZXfQJ80UAxXz2ianBHicgFkB8bXNQ_5E",
+      "old_name": "2024-10-21 – Tunnel de vente WordPress guide complet pour optimiser vos conversions – Article – FR",
+      "new_name": "2024-10-21 - Tunnel de vente WordPress guide complet pour optimiser vos conversions - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Rmdf4ZNeRrQVQWrwqTDpBzO0Cfyu-ORzSG6TaZHUAAc",
+      "old_name": "2024-07-21 – SureMembers vs Wishlist Members quelle extension choisir – Article – FR",
+      "new_name": "2024-07-21 - SureMembers vs Wishlist Members quelle extension choisir - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1scigfUReq_aOkzcqJkTgMF-B05KYaJv3mSUMxY_lWjQ",
+      "old_name": "2023-11-20 – Fluent Forms, le plugin WP pour vos formulaires – Article – FR",
+      "new_name": "2023-11-20 - Fluent Forms, le plugin WP pour vos formulaires - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13YmG6O1d-ABXr8m807xc4EJxnhOTmHo4ayPJr48UY9Y",
+      "old_name": "2024-08-15 – Plugin Traduction Wordpress Top 10 pour Globaliser votre Site – Article – FR",
+      "new_name": "2024-08-15 - Plugin Traduction Wordpress Top 10 pour Globaliser votre Site - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xujLu7ZYUGI3PLAu8Xze565xhbP5y-VXBxbXC8HM-SE",
+      "old_name": "2024-08-29 – SEOKEY, le plugin SEO essentiel pour WordPress – Article – FR",
+      "new_name": "2024-08-29 - SEOKEY, le plugin SEO essentiel pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1leK79ogKrBVfYS4flJF8lowesJS6YXRwCTLta6ELVp4",
+      "old_name": "2024-05-07 – ClickWhale vs Pretty Links Quel est le meilleur raccourcisseur et gestionnair... – Article – FR",
+      "new_name": "2024-05-07 - ClickWhale vs Pretty Links Quel est le meilleur raccourcisseur et gestionnair... - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "132zsZhii2B57Iq9xnA5a2XpTDlr4r0qzm_kYDTmVQvg",
+      "old_name": "2024-05-13 – InstaWP, avis comment construire un site WordPress en un clic – Article – FR",
+      "new_name": "2024-05-13 - InstaWP, avis comment construire un site WordPress en un clic - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1O5Gv1T_4-ufDVBrJBzCV7j3kI8irxku-tGMd2aBELgM",
+      "old_name": "2024-12-11 – WP Marmite Pay simplifie vos paiements sur WordPress – Article – FR",
+      "new_name": "2024-12-11 - WP Marmite Pay simplifie vos paiements sur WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WIG76ZYL0geh4ngCklq572GyqeM4pQ5hveUhst1Qz0Y",
+      "old_name": "2025-01-09 – Qu’est-ce que Gutenberg dans WordPress – Article – FR",
+      "new_name": "2025-01-09 - Qu’est-ce que Gutenberg dans WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iV3dsKcpEpn0Qu0KrE90GDJ8gJ7xQKB13s2fbRZKI9M",
+      "old_name": "2025-01-11 – Traduire Sans Migraine Test du Plugin WordPress – Article – FR",
+      "new_name": "2025-01-11 - Traduire Sans Migraine Test du Plugin WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-gHUHkzxWN7kCSDya7HhtEGdM-6l1Lvp3qrasuG8JVk",
+      "old_name": "2024-10-21 – Local WP Choisir entre Local by Flywheel ou Xampp pour WordPress – Article – FR",
+      "new_name": "2024-10-21 - Local WP Choisir entre Local by Flywheel ou Xampp pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FRetb21ZsvIn-QJLFTqoHDWhLXwk3-F5lkRh1fdVTLw",
+      "old_name": "2024-08-19 – ElementsKit pour Elementor addons tout-en-un et widgets essentiels – Article – FR",
+      "new_name": "2024-08-19 - ElementsKit pour Elementor addons tout-en-un et widgets essentiels - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fshPCVHi8FiFv7v9cioH9T_u4EvDXhP9nYkeV-Q3MCY",
+      "old_name": "2024-07-11 – Divi Builder vs Elementor Pro Le Duel des Extensions WordPress – Article – FR",
+      "new_name": "2024-07-11 - Divi Builder vs Elementor Pro Le Duel des Extensions WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zgtALSVJYnSt-Hx2dvHNeSWkRyvbmlEYCWWrR_u4Ltw",
+      "old_name": "2024-06-15 – WordPress.com vs WordPress – Article – FR",
+      "new_name": "2024-06-15 - WordPress.com vs WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12dzjj_HBix6fuSLleemZ7WLWOTsEzy33h_PwVTneQjQ",
+      "old_name": "2023-11-10 – Dropshipping Shopify vs WordPress – Article – FR",
+      "new_name": "2023-11-10 - Dropshipping Shopify vs WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IMyaQNX2uY-9rw7Y9gF0IWCL9DF6LqneSAmdGuOn72Q",
+      "old_name": "2023-11-10 – Plugins SEO WordPress Seopress vs Yoast – Article – FR",
+      "new_name": "2023-11-10 - Plugins SEO WordPress Seopress vs Yoast - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UN4eMO5ntVwcO9V2ETANEO5QjRvWI6uiKwYX410RV8M",
+      "old_name": "schoolsWP – Index Global",
+      "new_name": "schoolsWP - Index Global",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1mkzXeGAZIQSt1c6yyDKQCIjR0-AeAzJpzclbHVQVHa8",
+      "old_name": "2023-11-09 – Comment GetGenie, l’assistant de contenu AI, peut aider les entrepreneurs solos – Article – FR",
+      "new_name": "2023-11-09 - Comment GetGenie, l’assistant de contenu AI, peut aider les entrepreneurs solos - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vjT0n5nzZapRKjpjC9xFUjUVkKv0KzVvEbOua1dXOE0",
+      "old_name": "2023-11-09 – ClickWhale Gestionnaire de Liens d’Affiliation SEO pour WordPress – Mon Avis ... – Article – FR",
+      "new_name": "2023-11-09 - ClickWhale Gestionnaire de Liens d’Affiliation SEO pour WordPress - Mon Avis ... - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dvi27qXUecfP3cYKC2nTUGxSFAEbkZE8GBdaMQlwvnk",
+      "old_name": "2023-11-09 – WP Rocket Optimisez votre site WordPress avec le meilleur plugin de cache – Article – FR",
+      "new_name": "2023-11-09 - WP Rocket Optimisez votre site WordPress avec le meilleur plugin de cache - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1D_zHa1kJs4Pz_v3hsja0BI9GuViI5QJR",
+      "old_name": "2023-03-30 – Wordpress-topic-research-20200411 – Ressource.xlsx",
+      "new_name": "2023-03-30 - Wordpress-topic-research-20200411.xlsx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1m81_uoDzU9IKoWTVEFbM3-4yj1EtUeUc",
+      "old_name": "Vanessa PIVEC",
+      "new_name": "Vanessa-PIVEC",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Y00fAlW_iXgh5DtCFV655N7mgG3xH2X6",
+      "old_name": "Mon Mini Electro",
+      "new_name": "Mon-Mini-Electro",
+      "result": "RENAMED"
+    },
+    {
+      "id": "17eAiFU2WOkE7WBq53Bn2iFGixrRZsL15",
+      "old_name": "Jan 21, 2026 1808",
+      "new_name": "2026-01-21-1808",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jCrOu4JI3BeMgvEJgcWulcPSHhSlA76n",
+      "old_name": "Extensions Indispensables",
+      "new_name": "Extensions-Indispensables",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Iw6htjboAuciMF1GU6z-YgPQkMFQw327",
+      "old_name": "Petit Papier Magique",
+      "new_name": "Petit-Papier-Magique",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zQOixGIfmGpJBbirPO2brmwAy7u15G9Q",
+      "old_name": "03_Fiches produits",
+      "new_name": "03_Fiches-produits",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GthF0tdQuroN142Bk64tZ227TgzoZ546",
+      "old_name": "2023-06-15 – SHORTS DOMINATION™ – Ressource.xlsx",
+      "new_name": "2023-06-15 - SHORTS DOMINATIONTM.xlsx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VMbZqMu5Y8dwjZ0LYQC4ld7M5SWff9Lh",
+      "old_name": "2024-02-13 – Outro- version 01 – Ressource.mp4",
+      "new_name": "2024-02-13 - Outro- version 01.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GhA6PeqTIv0gLiCNKYaCJ5c4wm-4veoz",
+      "old_name": "2023-06-10 – FORUM BL LISTE COMPLETE – Ressource.csv",
+      "new_name": "2023-06-10 - FORUM BL LISTE COMPLETE.csv",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10xpDxFNDNru2A88K-zgBtBipMo5LJeoa",
+      "old_name": "2024-10-26 – Social Media Followers Data – Ressource.csv",
+      "new_name": "2024-10-26 - Social Media Followers Data.csv",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sVFoHK0uvJ6TM-1VnXu_Txpt4kTaJR6g",
+      "old_name": "2025-02-10 – Crawl Xenu – Ressource.txt",
+      "new_name": "2025-02-10 - Crawl Xenu.txt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xSH8VNEcoqRBq1Kk1ambXupL6VbkxaPF",
+      "old_name": "2025-03-13 – Clickwhale-links-export-2025-03-13 – Ressource.csv",
+      "new_name": "2025-03-13 - Clickwhale-links-export-2025-03-13.csv",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IUkYV2AA8a5I8h909Vzs68mevGV2w7Ts",
+      "old_name": "2025-12-28 – 20251019 111355 – Ressource.mp4",
+      "new_name": "2025-12-28 - 20251019 111355.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KKshWhpwolB_mZdyN3zVPIXgiwLhf3cE",
+      "old_name": "2025-12-28 – 20251114 132858 – Ressource.mp4",
+      "new_name": "2025-12-28 - 20251114 132858.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xiMy5JrJ0KsN28m_EkG37-AjByRc96jS",
+      "old_name": "2025-12-28 – Messenger creation F00EB697-CF8A-40C2-9E9F-AC3F9A1C1E8F – Ressource.mp4",
+      "new_name": "2025-12-28 - Messenger creation F00EB697-CF8A-40C2-9E9F-AC3F9A1C1E8F.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1W5igZ8kHVeIX95r4K13r-wXLfXaMwTDM",
+      "old_name": "2025-12-28 – 20251205 130728 – Ressource.mp4",
+      "new_name": "2025-12-28 - 20251205 130728.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NFj5wStjXYxhLo-VannJ8M_I_TmbQCqu",
+      "old_name": "2025-12-28 – Messenger creation B51218C7-50DE-4893-9565-D145F98C8379 – Ressource.mp4",
+      "new_name": "2025-12-28 - Messenger creation B51218C7-50DE-4893-9565-D145F98C8379.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-R4FsDkPDB4fdT2L_U0AEBL_VhpbWkjz",
+      "old_name": "2025-12-28 – 20251019 111527 – Ressource.mp4",
+      "new_name": "2025-12-28 - 20251019 111527.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZYbLvXF5ZtU5YKzeXH7O5QE1EaguO_Is",
+      "old_name": "2025-12-28 – 20251019 111134 – Ressource.mp4",
+      "new_name": "2025-12-28 - 20251019 111134.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iNKkfWQ8wNnSOUIDgYj0Y1Zqo2Pr6ZjJ",
+      "old_name": "2025-12-29 – BudgetmensuelVF – Ressource.xlsx",
+      "new_name": "2025-12-29 - BudgetmensuelVF.xlsx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SNVityiAZpbwl9gEvkn08wqPVrRjZKkE",
+      "old_name": "2025-12-29 – 20251229 105658 – Ressource.mp4",
+      "new_name": "2025-12-29 - 20251229 105658.mp4",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1P8aQ4C3wZGsuXygbJi-Tz4UMD-MaoyvT1h5E4XsppoA",
+      "old_name": "schoolsWP – Mapping Migration",
+      "new_name": "schoolsWP - Mapping Migration",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GHeRHhW4Quw3Y4_w4-ae5l2YcrFLBLMRd3eV4eefuYo",
+      "old_name": "schoolsWP – Full Drive Index",
+      "new_name": "schoolsWP - Full Drive Index",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1J-YjfMBtuieDcIkSEGMwMMNIZItoIYay700qLRqpiJQ",
+      "old_name": "schoolsWP – Archive Migration",
+      "new_name": "schoolsWP - Archive Migration",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16QHdxwkKGrAyawst69iZ7fU3Dujghn2vaFeCQPJDCvQ",
+      "old_name": "schoolsWP – Full Drive Mapping",
+      "new_name": "schoolsWP - Full Drive Mapping",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Vhb9XZafgxPMkt8ZDFNm5AIeMsDqudNF",
+      "old_name": "Google Search Console",
+      "new_name": "Google-Search-Console",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_Mla0Bs_pSNq2r2z_ao_oTW07yslZBfz",
+      "old_name": "Flux WordPress",
+      "new_name": "Flux-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SLFeDc_lMCddfuTf4hOXMqFSM_UTWvl_",
+      "old_name": "MASTERCLASS - E-Commerce Automation - Make, Airtable et",
+      "new_name": "MASTERCLASS-E-Commerce-Automation-Make,-Airtable-et",
+      "result": "RENAMED"
+    },
+    {
+      "id": "157H1uoCyeix1bUXfblakWLqAAMT2N6u_",
+      "old_name": "04. Comment GetGenie, l’assistant de contenu AI, peut",
+      "new_name": "04.-Comment-GetGenie,-l’assistant-de-contenu-AI,-peut",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HhPfx8y878zQj19AXgILug1NUMl09nd8",
+      "old_name": "07. ClickWhale - Gestionnaire de Liens d’Affiliation SEO",
+      "new_name": "07.-ClickWhale-Gestionnaire-de-Liens-d’Affiliation-SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rQ1_CVkWcwWGU5_oIdBZIbgwe3zjhdxe",
+      "old_name": "02. WP Rocket - Optimisez votre site WordPress avec le",
+      "new_name": "02.-WP-Rocket-Optimisez-votre-site-WordPress-avec-le",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16zr2pgXWmDENUHzND3Q214QgL32633Ec",
+      "old_name": "FLUENT CRM",
+      "new_name": "FLUENT-CRM",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Hw-b5HmSH-BM9dTJKXoCPoBG8GCTv5O4",
+      "old_name": "FLUENT FORMS",
+      "new_name": "FLUENT-FORMS",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TygIuzf2Vj5YuRVouGgxGEbKQ_wNEOhr",
+      "old_name": "CANVA BULK",
+      "new_name": "CANVA-BULK",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lJSzMxa83WPiVo46Nn9_m-eisgP-O7aG",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11M-J0ciJ7CCjbsFqO0l49F1fRWqB0t3o",
+      "old_name": "Couverture Article Blog",
+      "new_name": "Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1r_9tnMC41m0awAAdhFERKqKLBpU_8Ak8",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1n8tANPtECnoaVgJcPmVhF5gvMeXyDfX3",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1i2jeZzLevkKcwiZdhYYBsHAVrCzSGWHO",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Z95YH8UFZg73I8igDogPoGUdKb0fKomr",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jvrs7Zq7MQzLih84_dsbD2BYy0TYDMP1",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OP0lZOCfrkDmHP4ysNAMPUv7HMQ-kEH5",
+      "old_name": "52. Barn2 – Des plugins pour booster ses performances sur",
+      "new_name": "52.-Barn2-Des-plugins-pour-booster-ses-performances-sur",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IRvjnULqQW6ltQbfrUV4I0n_D_Yqqzj7",
+      "old_name": "16. Fiverr, zoom sur la plateforme qui permet de trouver",
+      "new_name": "16.-Fiverr,-zoom-sur-la-plateforme-qui-permet-de-trouver",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LNFoCxqtFOnPxUll47djlcpluelXOPMZ",
+      "old_name": "26. Beaver Builder, le meilleur constructeur de pages",
+      "new_name": "26.-Beaver-Builder,-le-meilleur-constructeur-de-pages",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1K2_i_Dg7gPGnh7gmvNM7MBgX-qMiCg-Z",
+      "old_name": "22. Qu’est-ce que le pixel Facebook et comment",
+      "new_name": "22.-Qu’est-ce-que-le-pixel-Facebook-et-comment",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LnrlcEcnZQyNBbUd1KyxdWKmaWZDTdre",
+      "old_name": "42. AAWP – Le meilleur plugin pour des sites de niche",
+      "new_name": "42.-AAWP-Le-meilleur-plugin-pour-des-sites-de-niche",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LTYofBWngKwaisubim1JzFxxenXGw5kC",
+      "old_name": "44. Gagner de l’argent avec l’affiliation sur votre site",
+      "new_name": "44.-Gagner-de-l’argent-avec-l’affiliation-sur-votre-site",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OWvLlEBu5x3TXYJqN-nqNokU1yw5nUUK",
+      "old_name": "50. WooFunnels Autonami, le CRM pour gagner toujours plus",
+      "new_name": "50.-WooFunnels-Autonami,-le-CRM-pour-gagner-toujours-plus",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MRNAoj8kquudu1Nvf7AojCGMxwtu6xy4",
+      "old_name": "46. BeFreelancr La plateforme pour acheter et vendre des",
+      "new_name": "46.-BeFreelancr-La-plateforme-pour-acheter-et-vendre-des",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LUtk6kaTnHghIJhPuvRYvzvjvp6lFCEc",
+      "old_name": "43. CodeaProd Le site pour avoir un blog d affiliation",
+      "new_name": "43.-CodeaProd-Le-site-pour-avoir-un-blog-d-affiliation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OKc2aXLuOst4t55esFG4sLm5bB6HXyn2",
+      "old_name": "54. Solid Affiliate – Le Top Plugin d’affiliation pour",
+      "new_name": "54.-Solid-Affiliate-Le-Top-Plugin-d’affiliation-pour",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NRXFt28TZNvCxO3BH_0PzrUtA6F2bKKd",
+      "old_name": "65. ClickWhale Votre ultime raccourcisseur de liens et",
+      "new_name": "65.-ClickWhale-Votre-ultime-raccourcisseur-de-liens-et",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NWGSZ_2AvtCl4RcSnDxi3tYlEd3H2ICT",
+      "old_name": "64. Fluent Support – Le Plugin Incontournable pour le",
+      "new_name": "64.-Fluent-Support-Le-Plugin-Incontournable-pour-le",
+      "result": "RENAMED"
+    },
+    {
+      "id": "105spJYb8YFFtNj2v0N3kPb774nYrOhvU",
+      "old_name": "02. Divi ToolBox, ce qu’il faut savoir sur ce plug in",
+      "new_name": "02.-Divi-ToolBox,-ce-qu’il-faut-savoir-sur-ce-plug-in",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tMuo99I5BMy_w6I4MMmoaS_UOPbiS67g",
+      "old_name": "71. GetGenie AI pour l’optimisation de votre contenu SEO",
+      "new_name": "71.-GetGenie-AI-pour-l’optimisation-de-votre-contenu-SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XNEhrYMBJ9A1d_RQsPmBJCJLH8O5_NSS",
+      "old_name": "74. Qu’est-ce qu’un plugin WordPress et comment",
+      "new_name": "74.-Qu’est-ce-qu’un-plugin-WordPress-et-comment",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xMpvlI7ajNnPZC0VYsB-pYCjbT9vtqLi",
+      "old_name": "75. Tunnel de vente WordPress - guide complet pour",
+      "new_name": "75.-Tunnel-de-vente-WordPress-guide-complet-pour",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ya29sLVKAVJpkOLEdvaRMOtyi3-Um6eh",
+      "old_name": "76. Maintenance WordPress - Guide Complet pour un Site",
+      "new_name": "76.-Maintenance-WordPress-Guide-Complet-pour-un-Site",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-wRB_n8EuuGAEzf4ueEMWDmZLmdjlkj0",
+      "old_name": "77. FlyingPress, avis 2024 - devriez-vous l’adopter",
+      "new_name": "77.-FlyingPress,-avis-2024-devriez-vous-l’adopter",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BBFv48BUoblVEbfmPoSi6eKe3TpAgJd4",
+      "old_name": "87. Comment structurer un article sur WordPress pour",
+      "new_name": "87.-Comment-structurer-un-article-sur-WordPress-pour",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aJxHh1B4gEY1Qjc9G_xvsB7EylMbLgdI",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1caFR97FqlPCGDuiG5NPPQhhomHbE93TK",
+      "old_name": "90. SureMembers vs Wishlist Members - quelle extension",
+      "new_name": "90.-SureMembers-vs-Wishlist-Members-quelle-extension",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gVwCzGg-LHbnxAvObB1XNgXFINFEW9w1",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1l8GT1BHNu16jgZsi4eCmUuSYoB0SQtzo",
+      "old_name": "95. Plugin Traduction Wordpress - Top 10 pour Globaliser",
+      "new_name": "95.-Plugin-Traduction-Wordpress-Top-10-pour-Globaliser",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1o6kC-Vb2vxApEagfnKbwLw9JlsoHKyQG",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vGaIC374fnofBFx7PP26V2GsXNmVXLkg",
+      "old_name": "100. SureMembers vs Restrict Content Pro comparatif des",
+      "new_name": "100.-SureMembers-vs-Restrict-Content-Pro-comparatif-des",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vzN8hbu00Kb-aJc_sAi_pU79e_4fHSvP",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vTnNYMQ60XRwGV_6hzflSKB5vEfkgkfF",
+      "old_name": "101. ZipWP vs InstaWP - quel est le meilleur pour lancer",
+      "new_name": "101.-ZipWP-vs-InstaWP-quel-est-le-meilleur-pour-lancer",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-BMqb-jRXA8ujc6qkXKiPWysqLuN7-EU",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1t3x4KibmMEZxII3B1meuZv62HkuugO9H",
+      "old_name": "79. ClickWhale vs Pretty Links - Quel est le meilleur",
+      "new_name": "79.-ClickWhale-vs-Pretty-Links-Quel-est-le-meilleur",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nJzsyAApLklgbAPZbYYe2kSHE4raVJBM",
+      "old_name": "80. InstaWP - Comment Construire un Site WordPress en un",
+      "new_name": "80.-InstaWP-Comment-Construire-un-Site-WordPress-en-un",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18YIRYhepOlwBQuK5a8Z_ABG62b6In75c",
+      "old_name": "105. Un slug dans WordPress - c est quoi et comment l",
+      "new_name": "105.-Un-slug-dans-WordPress-c-est-quoi-et-comment-l",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Y8yXEsPTTN760vt4vGWtAZdFdOmBJPlH",
+      "old_name": "110. FluentCommunity - Construisez rapidement une",
+      "new_name": "110.-FluentCommunity-Construisez-rapidement-une",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OjYP3S-Vrb4MFDwvi71VUlQ36KFftQoN",
+      "old_name": "111. Pourquoi Thot SEO est-il l’outil d’optimisation",
+      "new_name": "111.-Pourquoi-Thot-SEO-est-il-l’outil-d’optimisation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qRe8bgvTwHQJDTKZPAo15-DxCElwn0nl",
+      "old_name": "119. Link Whisper Le Plugin WordPress Ultime pour Votre",
+      "new_name": "119.-Link-Whisper-Le-Plugin-WordPress-Ultime-pour-Votre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zg14d2gMFU44RQ8nbB7WLIF0xeJkAWRF",
+      "old_name": "121. Apprendre WordPress en autonomie guide complet pour",
+      "new_name": "121.-Apprendre-WordPress-en-autonomie-guide-complet-pour",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1PHMrKVukvd7BR2Mem9_ls_TSavxpP17H",
+      "old_name": "127. AffiliatePress avis- mon test complet du plugin",
+      "new_name": "127.-AffiliatePress-avis-mon-test-complet-du-plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1c0VgHtco6OoCp-Ueq2bXx48HgycbFOwn",
+      "old_name": "129. Linksgarden avis 2025 test complet de la plateforme",
+      "new_name": "129.-Linksgarden-avis-2025-test-complet-de-la-plateforme",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uqGlVw0Fb2EboX5LbA2AuC8feeTyAmRv",
+      "old_name": "130. Pulse avis - Faut-il adopter cet outil pour vos",
+      "new_name": "130.-Pulse-avis-Faut-il-adopter-cet-outil-pour-vos",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EalSqDdx6xRffVRUORJyASNQ7YsrjVNr",
+      "old_name": "131. FluentSMTP avis 2025 le meilleur plugin SMTP gratuit",
+      "new_name": "131.-FluentSMTP-avis-2025-le-meilleur-plugin-SMTP-gratuit",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cNpBoiGAx_I3cQVkAzHJc1nNinc7Vig9",
+      "old_name": "132. Virfice avis - Personnalisez vos emails WooCommerce",
+      "new_name": "132.-Virfice-avis-Personnalisez-vos-emails-WooCommerce",
+      "result": "RENAMED"
+    },
+    {
+      "id": "182f8_sex3fG0duZ9mO1F2vB0GRIFDUg4",
+      "old_name": "133. PageRadar avis 2025 – L’outil SEO qui anticipe les",
+      "new_name": "133.-PageRadar-avis-2025-L’outil-SEO-qui-anticipe-les",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dqpIk7l7pMptIBDJCbtxr_jaiEcPVlFG",
+      "old_name": "134. Bit Flows Avis 2025 — L’automatisation WordPress",
+      "new_name": "134.-Bit-Flows-Avis-2025-L’automatisation-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aihtAuxI5_5CtY89d2ZFncWz8M6PADev",
+      "old_name": "135. EasyCommerce Avis 2025 le plugin e-commerce IA",
+      "new_name": "135.-EasyCommerce-Avis-2025-le-plugin-e-commerce-IA",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xBeTV8Foub0iSIvGm6V4IMugRCMdlzTT",
+      "old_name": "149. Personnaliser formulaire Fluent Forms Gutenberg sans",
+      "new_name": "149.-Personnaliser-formulaire-Fluent-Forms-Gutenberg-sans",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1o7QBH_SAhmggE8-SO9TbrIl6LPq5GPdG",
+      "old_name": "136. WPMissionControl avis 2025 Test complet du plugin de",
+      "new_name": "136.-WPMissionControl-avis-2025-Test-complet-du-plugin-de",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10LiG0ZRyENFYie7_RUTZL093Tie8Gse7",
+      "old_name": "125. FluentCart avis Faut-il l’adopter pour votre",
+      "new_name": "125.-FluentCart-avis-Faut-il-l’adopter-pour-votre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OdyzaQR3QCMenBN4FfvdeUrmSTFRn-57",
+      "old_name": "81. Launchflows vs cartflows lequel choisir pour votre",
+      "new_name": "81.-Launchflows-vs-cartflows-lequel-choisir-pour-votre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-HpPrw5OxwVoE9W7E69nWdp74RMKbOOQ",
+      "old_name": "102. Local WP Choisir entre Local by Flywheel ou Xampp",
+      "new_name": "102.-Local-WP-Choisir-entre-Local-by-Flywheel-ou-Xampp",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hTH4nZnwYnTZ4W7fsHmOmsHaiWnWZhDV",
+      "old_name": "99. Suretriggers vs Zapier - trouvez la meilleure",
+      "new_name": "99.-Suretriggers-vs-Zapier-trouvez-la-meilleure",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TAxqT_oR4kpkt3qnk0f-g0O7gdY34Gqe",
+      "old_name": "96. ElementsKit pour Elementor - addons tout-en-un et",
+      "new_name": "96.-ElementsKit-pour-Elementor-addons-tout-en-un-et",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_nd3VF8x4s0XwWk3PKYFbY4S8zCYr1Nu",
+      "old_name": "89. Divi Builder vs Elementor Pro - Le Duel des",
+      "new_name": "89.-Divi-Builder-vs-Elementor-Pro-Le-Duel-des",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1btXqS8kv7mud9OFGVmgTZA5nH4xu6RZe",
+      "old_name": "Instagram Publication Portrait - Couverture Article Blog",
+      "new_name": "Instagram-Publication-Portrait-Couverture-Article-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "19gF8Wnre950NrB3XtYFU_VuaVwOWBBCj",
+      "old_name": "83. WordPresscom vs WordPressorg - comparatif pour faire",
+      "new_name": "83.-WordPresscom-vs-WordPressorg-comparatif-pour-faire",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nnkI4V_4-NF6A11bapq3U64WhZUkX37S",
+      "old_name": "70. FluentBooking vs Amelia Booking pour WordPress quel",
+      "new_name": "70.-FluentBooking-vs-Amelia-Booking-pour-WordPress-quel",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DLt3wLLkSbuDVABPO_lL6C_4aeiyUkfU",
+      "old_name": "68. Analyse approfondie de thruuu - L outil de scraping",
+      "new_name": "68.-Analyse-approfondie-de-thruuu-L-outil-de-scraping",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Izw4W3mpEF-HD86tX6UlZAhtJ-r1OavG",
+      "old_name": "10. Plugins SEO Wordpress Seopress vs Yoast",
+      "new_name": "10.-Plugins-SEO-Wordpress-Seopress-vs-Yoast",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1J8aHtLpFNnmAxPx6_sROVEQUvgKJDvHK",
+      "old_name": "09. Dropshipping Shopify vs Wordpress",
+      "new_name": "09.-Dropshipping-Shopify-vs-Wordpress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Tu2eBwFtb5Cqjs-d7Hz6_bcqybO1bYmp",
+      "old_name": "150. CartFlows Les 4 meilleures alternatives 2026",
+      "new_name": "150.-CartFlows-Les-4-meilleures-alternatives-2026",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Q_eANGzHfGm5lWMouVExv8A1JQiMQzA3",
+      "old_name": "147. wpLingua avis Le meilleur plugin de traduction",
+      "new_name": "147.-wpLingua-avis-Le-meilleur-plugin-de-traduction",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Acw4Jk208Q0Z7O24v15BSuD2058Hy3v1",
+      "old_name": "144. Masteriyo LMS avis 2026 interface intuitive – schoolsWP",
+      "new_name": "144.-Masteriyo-LMS-avis-2026-interface-intuitive-schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zg9GBOW6cueFCW3CIP6RiD5jfXgCARzM",
+      "old_name": "140. Avis Metricool Notre test complet et verdict 2025",
+      "new_name": "140.-Avis-Metricool-Notre-test-complet-et-verdict-2025",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1cr0AMTJe422JRB1y0NotZihthaUtCOVi",
+      "old_name": "117. Academy LMS - Tout savoir sur le plugin WordPress LMS",
+      "new_name": "117.-Academy-LMS-Tout-savoir-sur-le-plugin-WordPress-LMS",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Y3Hw1bUJcrDSoQIvX0TC1v7dnIkn-vFe",
+      "old_name": "114. Traduire Sans Migraine - Test du Plugin WordPress",
+      "new_name": "114.-Traduire-Sans-Migraine-Test-du-Plugin-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1P0RRvN4RE0P7HDao9XhLM87GSWOfyDZS",
+      "old_name": "112. Qu’est-ce que Gutenberg dans WordPress",
+      "new_name": "112.-Qu’est-ce-que-Gutenberg-dans-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IPTReskZvFwvUeZm9dV3tWQ05-JlTD5T",
+      "old_name": "109. WP Marmite Pay simplifie vos paiements sur WordPress",
+      "new_name": "109.-WP-Marmite-Pay-simplifie-vos-paiements-sur-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1bKOy079S9FwIgc8A3TnLaYIdNtQcKall",
+      "old_name": "97. SEOKEY, le plugin SEO essentiel pour WordPress",
+      "new_name": "97.-SEOKEY,-le-plugin-SEO-essentiel-pour-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KvF7EOBPqvQAAHiLdeZbDk8zdnshFGde",
+      "old_name": "35. Fluent Forms, le plugin WP pour vos formulaires",
+      "new_name": "35.-Fluent-Forms,-le-plugin-WP-pour-vos-formulaires",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ARIlU51UFo-Wss8L0emf5hqaEjgfbmpI",
+      "old_name": "07. Qu’est-ce que le plugin Divi BodyCommerce",
+      "new_name": "07.-Qu’est-ce-que-le-plugin-Divi-BodyCommerce",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1E7OyImxopnVIb1qmpIgB5noRhkG0a20Z",
+      "old_name": "06. Tout ce que vous devez savoir sur BuddyBoss",
+      "new_name": "06.-Tout-ce-que-vous-devez-savoir-sur-BuddyBoss",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NO0qZFCx-oh32KvIMYPCS4Kb23dYGIhp",
+      "old_name": "66. AIOSEO - Le Plugin All in One SEO Ultime pour WordPress",
+      "new_name": "66.-AIOSEO-Le-Plugin-All-in-One-SEO-Ultime-pour-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OFJMD7RerAa7TBfJgudIpnJwWnsMRFnU",
+      "old_name": "55. Manychat le Chatbot Messenger de Facebook",
+      "new_name": "55.-Manychat-le-Chatbot-Messenger-de-Facebook",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1O7wR3K98FzRONZ3IEdvIglBuqQd-TM5D",
+      "old_name": "58. SureCart, le plugin qui concurrence WooCommerce",
+      "new_name": "58.-SureCart,-le-plugin-qui-concurrence-WooCommerce",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Nd99yFC7h7toJLYaHcxBU8qnKU3hgjcG",
+      "old_name": "60. Tout ce que vous devez savoir sur Webflow",
+      "new_name": "60.-Tout-ce-que-vous-devez-savoir-sur-Webflow",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NcRf4jFseuUaueOsewBLR-U56rdaCzQs",
+      "old_name": "61. Un beau site Wordpress avec Canva",
+      "new_name": "61.-Un-beau-site-Wordpress-avec-Canva",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NdabZswmkh6KW-RyrINNCmOLYonGQPU4",
+      "old_name": "59. Qu’est-ce que WP Social Ninja",
+      "new_name": "59.-Qu’est-ce-que-WP-Social-Ninja",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OAuwySgfEEom8Mq3Ztgn_sIhiOJKQcmv",
+      "old_name": "57. WishList Member, tout savoir sur ce plugin WordPress",
+      "new_name": "57.-WishList-Member,-tout-savoir-sur-ce-plugin-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OO6ztaTCpNHXwzBIiy8p29OVAAy2hR0k",
+      "old_name": "53. Tout ce que vous devez savoir sur LaunchFlows",
+      "new_name": "53.-Tout-ce-que-vous-devez-savoir-sur-LaunchFlows",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LRqtYY-h5jFqlIah1D2FasKRAb8xf4Lq",
+      "old_name": "45. WooFunnels Funnel Builder est-il un bon choix",
+      "new_name": "45.-WooFunnels-Funnel-Builder-est-il-un-bon-choix",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KtDoCQmIOWmb4iW9TU6ozv2W5yxFLIOG",
+      "old_name": "38. Top 3 des addons Elementor",
+      "new_name": "38.-Top-3-des-addons-Elementor",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KuVJkawi-RCts5Ofy-ORkn6DFuhlqXmZ",
+      "old_name": "37. Spotlight Social Media Feeds",
+      "new_name": "37.-Spotlight-Social-Media-Feeds",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1L0xUgAyA2P-ZlHDQhJC8rg91EoXazmhD",
+      "old_name": "32. Devez-vous installer Rank Math PRO",
+      "new_name": "32.-Devez-vous-installer-Rank-Math-PRO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LLXGLP1yedA5kA8h8zarM4ARX2r875p4",
+      "old_name": "27. Qu’est-ce que l’affiliation marketing",
+      "new_name": "27.-Qu’est-ce-que-l’affiliation-marketing",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LNdGC81JedyT1uxTbf3QC_FqhNTXu8yj",
+      "old_name": "25. Jungle Scout, l’outil pour booster vos ventes sur Amazon",
+      "new_name": "25.-Jungle-Scout,-l’outil-pour-booster-vos-ventes-sur-Amazon",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LHJO4XlQL-_c26p2RBO-5ZGaAeRjCbuh",
+      "old_name": "28. Qu’est-ce que l’AMP de Google",
+      "new_name": "28.-Qu’est-ce-que-l’AMP-de-Google",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1K1kw7QyyCZkcDbM5ozEnjC7gpWF2aEJN",
+      "old_name": "23. Ce que je pense de Divi Pixel",
+      "new_name": "23.-Ce-que-je-pense-de-Divi-Pixel",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LDX_o9d_jKbiZBUY58N40fKfrLpvhfue",
+      "old_name": "29. Qui est Frank Houbre",
+      "new_name": "29.-Qui-est-Frank-Houbre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1K4RJG_p_3_22qp_VnrJ56d96YDxkZ_2-",
+      "old_name": "21. Mon avis sur Kadence WP",
+      "new_name": "21.-Mon-avis-sur-Kadence-WP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IA7bhdWtG7WAq0ujQWmggzLPyJipLpoA",
+      "old_name": "19. Qu’est-ce que WP Rocket Plugin",
+      "new_name": "19.-Qu’est-ce-que-WP-Rocket-Plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JyfK8RKTN8svBUZZEodmoO84OKimSlXW",
+      "old_name": "24. Semrush, l’outil SEO les plus performant",
+      "new_name": "24.-Semrush,-l’outil-SEO-les-plus-performant",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1I8KdvC31C_2IMcv5Tkb1gev_pONodhx7",
+      "old_name": "20. On vous dit tout sur Google Web Stories pour WordPress",
+      "new_name": "20.-On-vous-dit-tout-sur-Google-Web-Stories-pour-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IF7Tgr50-iWNOoPwf5GXgypVGkUWw4n5",
+      "old_name": "18. FluentCRM est-il le meilleur CRM WordPress",
+      "new_name": "18.-FluentCRM-est-il-le-meilleur-CRM-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IHeyXj_O7pYNpKWhT0yXksnFMJhewrZa",
+      "old_name": "17. Groundhogg, la marmotte qui va vous simplifier la vie",
+      "new_name": "17.-Groundhogg,-la-marmotte-qui-va-vous-simplifier-la-vie",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IpQKkO67l8p_Vbsk-8AGMMmM4M_f2Dmw",
+      "old_name": "13. On vous dit tout sur le plugin Elementor",
+      "new_name": "13.-On-vous-dit-tout-sur-le-plugin-Elementor",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1I_3UC5VvA6TQGyTncdokOIVxbiCw6FYg",
+      "old_name": "14. Zoom sur Divi",
+      "new_name": "14.-Zoom-sur-Divi",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IyaGRoYmdLNr-HXoizPcBJwBft5vb_ME",
+      "old_name": "11. Ce qu’il faut savoir sur la plateforme 5euros.com",
+      "new_name": "11.-Ce-qu’il-faut-savoir-sur-la-plateforme-5euros.com",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ISSxpyREdx1Ls__7Q1fbChGEMU4-EhsQ",
+      "old_name": "15. Pourquoi utiliser Wordpress Multisite",
+      "new_name": "15.-Pourquoi-utiliser-Wordpress-Multisite",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tHuJeQ0a85iv71Uxx4jqCJq_bOiblPtP",
+      "old_name": "schoolsWP.com Couverture Article Blog (1200 × 675 px)",
+      "new_name": "schoolsWP.com-Couverture-Article-Blog-(1200-×-675-px)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lJjp04PVQsjCB-rUNMcgUTkrEsQn51Tw",
+      "old_name": "Black Friday",
+      "new_name": "Black-Friday",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-lezGjQuU9Gl45L9ctFVevmRSuUxqQij",
+      "old_name": "101. ZipWP vs. InstaWP - which is best for launching your",
+      "new_name": "101.-ZipWP-vs.-InstaWP-which-is-best-for-launching-your",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1C1T9ovtcroZbqxh6GSapFtahGzhTVqJe",
+      "old_name": "105. A slug in WordPress what is it and how can I",
+      "new_name": "105.-A-slug-in-WordPress-what-is-it-and-how-can-I",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Cup-RtwE9OA9JBYlydLdhSvsM7RfPGU8",
+      "old_name": "91. Suremembers Discover the Best Membership Plugin for",
+      "new_name": "91.-Suremembers-Discover-the-Best-Membership-Plugin-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FZE_L15JiSKpIUazYu9DP4vdjCPGqREJ",
+      "old_name": "108. What is custom WordPress website design and its",
+      "new_name": "108.-What-is-custom-WordPress-website-design-and-its",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HPvK2_yGi1m00hOlQVvIvTzGtfWaXJ1n",
+      "old_name": "90. SureMembers vs Wishlist Member - which extension to",
+      "new_name": "90.-SureMembers-vs-Wishlist-Member-which-extension-to",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RzbzJgaZr_S_IHXpxtcbQBQSm9IrEHbh",
+      "old_name": "110. FluentCommunity Build a WordPress community fast",
+      "new_name": "110.-FluentCommunity-Build-a-WordPress-community-fast",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1YgVt4l7jpUS4rAaaXJOORtZWu-Er49zE",
+      "old_name": "57. WishList Member Everything you need to know about",
+      "new_name": "57.-WishList-Member-Everything-you-need-to-know-about",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iCJrBS27-N6efKClcQUaktcSKR1vWlBa",
+      "old_name": "41. Tutor LMS Review 2025 The Best LMS Solution for",
+      "new_name": "41.-Tutor-LMS-Review-2025-The-Best-LMS-Solution-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jCh1F-GRsnZ8ImuZWZfjSfQB3JsQuVpi",
+      "old_name": "117. Academy LMS Everything you need to know about the",
+      "new_name": "117.-Academy-LMS-Everything-you-need-to-know-about-the",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kcer_oBWB6ulNqM_JkO7H25j_kmLJbXa",
+      "old_name": "89. Divi Builder vs Elementor Pro The Duel of WordPress",
+      "new_name": "89.-Divi-Builder-vs-Elementor-Pro-The-Duel-of-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nFex9eLEwajrlem9AYDfdIeQZ-EMx_jx",
+      "old_name": "58. SureCart the ideal solution for selling digital",
+      "new_name": "58.-SureCart-the-ideal-solution-for-selling-digital",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ncwAbvOujFKIWl1TN8as_-JRXDqQQIH8",
+      "old_name": "102. Local WP Choosing between Local by Flywheel or Xampp",
+      "new_name": "102.-Local-WP-Choosing-between-Local-by-Flywheel-or-Xampp",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oIYSgZCbdux2Pr5NQmWS05TtNlfeyqDl",
+      "old_name": "106. Link Finder optimize your netlinking strategy at",
+      "new_name": "106.-Link-Finder-optimize-your-netlinking-strategy-at",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1p28V_mhelP4MU8chYLv6au1jZE8EGb4S",
+      "old_name": "70. FluentBooking vs Amelia Booking for WordPress which",
+      "new_name": "70.-FluentBooking-vs-Amelia-Booking-for-WordPress-which",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1u8IKMhJPY3UVNmg8yNc6NZ-9-gCapI9n",
+      "old_name": "119. Link Whisper The Ultimate WordPress Plugin for",
+      "new_name": "119.-Link-Whisper-The-Ultimate-WordPress-Plugin-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1syJcjNvPOCKCANJhXLmkivMiy0hG8wAd",
+      "old_name": "40. Crocoblock the ultimate tool for boosting your",
+      "new_name": "40.-Crocoblock-the-ultimate-tool-for-boosting-your",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wJg6ScWeLi0ygTqJxjuIv5qc63fIF-yg",
+      "old_name": "95. Wordpress Translation Plugin Top 10 for Globalizing",
+      "new_name": "95.-Wordpress-Translation-Plugin-Top-10-for-Globalizing",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-RLE4zUsWl7P7nCvPz8c-wytrMEoMmZa",
+      "old_name": "120. LearnDash The ideal WordPress plugin for your online",
+      "new_name": "120.-LearnDash-The-ideal-WordPress-plugin-for-your-online",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1160AOjK-K2gG_rP-5uWf-zGvJL-r9Iyx",
+      "old_name": "15. Why have a WordPress multisite The complete guide to",
+      "new_name": "15.-Why-have-a-WordPress-multisite-The-complete-guide-to",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wrzNVxOvj3xckK1P98ady3I4vFT5Eihk",
+      "old_name": "121. Learn WordPress on your own a complete guide for",
+      "new_name": "121.-Learn-WordPress-on-your-own-a-complete-guide-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "110nwRHuNkqlDOY7u35o4sVVrf9zIJhEO",
+      "old_name": "125. FluentCart review Should you adopt it for your",
+      "new_name": "125.-FluentCart-review-Should-you-adopt-it-for-your",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zXhjPgJ8e9VzshqYqzgp1fzbnvSIPuSf",
+      "old_name": "126. Droip the WordPress alternative to Webflow, without",
+      "new_name": "126.-Droip-the-WordPress-alternative-to-Webflow,-without",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1blInMLFPI-sPhvmKYv3_M29RbIuBCNZ0",
+      "old_name": "19. WP Rocket the must-have caching plugin to speed up",
+      "new_name": "19.-WP-Rocket-the-must-have-caching-plugin-to-speed-up",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18MYGwHoLuTzJXe7Wkrll48yCPbVuuJGP",
+      "old_name": "65. ClickWhale Your ultimate link shortener and click",
+      "new_name": "65.-ClickWhale-Your-ultimate-link-shortener-and-click",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xuL6Tk02lc-etQtQXbzv51cu7nIhinmd",
+      "old_name": "59. WP Social Ninja - All-in-One Plugin for Social",
+      "new_name": "59.-WP-Social-Ninja-All-in-One-Plugin-for-Social",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1bBQejiqBrbk-XU-xybqFm7JBnUnYScBw",
+      "old_name": "67. Microthemer Visual CSS editor for WordPress Customize",
+      "new_name": "67.-Microthemer-Visual-CSS-editor-for-WordPress-Customize",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1P_WhCt5Ip3GyiO___Qb8bGGnk3RVRUe3",
+      "old_name": "51. Perfmatters - the Wordpress optimization tool for",
+      "new_name": "51.-Perfmatters-the-Wordpress-optimization-tool-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oS5EBZwtDnwFbI6BNwhe65-ax5IzwTov",
+      "old_name": "77. FlyingPress vs WP Rocket which is the best WordPress",
+      "new_name": "77.-FlyingPress-vs-WP-Rocket-which-is-the-best-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ubO370svC1J98lUQ9VkVw0aru4veSZ9Z",
+      "old_name": "129. Linksgarden review 2025 full test of the netlinking",
+      "new_name": "129.-Linksgarden-review-2025-full-test-of-the-netlinking",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1odkoShmiigPcU06xV1TGpf6NxtcbjgKK",
+      "old_name": "127. AffiliatePress review my full review of the",
+      "new_name": "127.-AffiliatePress-review-my-full-review-of-the",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1YcEbXDirpE1QPPbawWxHkP9JPrBor6y2",
+      "old_name": "83. WordPress.com vs WordPress.org Comparing to Make the",
+      "new_name": "83.-WordPress.com-vs-WordPress.org-Comparing-to-Make-the",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QcyzYXC1y8hfSGZeRXtgDhRRpuVR1SqS",
+      "old_name": "76. WordPress Maintenance A Complete Guide to Keeping",
+      "new_name": "76.-WordPress-Maintenance-A-Complete-Guide-to-Keeping",
+      "result": "RENAMED"
+    },
+    {
+      "id": "174U4Bb72Kpxq-7hyQHcss7cfn7yToSYO",
+      "old_name": "132. Virfice review Customize your WooCommerce emails",
+      "new_name": "132.-Virfice-review-Customize-your-WooCommerce-emails",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GaL49U479r7EfiUDk1WpNwY-1WUNH_5X",
+      "old_name": "79. ClickWhale vs Pretty Links - Which is the best",
+      "new_name": "79.-ClickWhale-vs-Pretty-Links-Which-is-the-best",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vExBWrfk68OwTjRxlHqbWaGxHp0WTlO3",
+      "old_name": "81. CartFlows vs LaunchFlows which one for your WordPress",
+      "new_name": "81.-CartFlows-vs-LaunchFlows-which-one-for-your-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wiDxBebMgB1zeTqd1X3mQyDiA8QGLZfP",
+      "old_name": "96. ElementsKit for Elementor all-in-one addons and",
+      "new_name": "96.-ElementsKit-for-Elementor-all-in-one-addons-and",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GQRF11POmHE3Fnqk8u8PTSwe1sotKDSW",
+      "old_name": "137. How to structure an article on WordPress to improve",
+      "new_name": "137.-How-to-structure-an-article-on-WordPress-to-improve",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1biKH3XZQe0Nm9q8r9NSNzstCx07Q3W1R",
+      "old_name": "131. FluentSMTP review 2025 the best free SMTP plugin for",
+      "new_name": "131.-FluentSMTP-review-2025-the-best-free-SMTP-plugin-for",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hxsdr76zd0fN1NNu8svcR4oYW1FiJ2SJ",
+      "old_name": "99. Suretriggers (OttoKit) vs Zapier find the best",
+      "new_name": "99.-Suretriggers-(OttoKit)-vs-Zapier-find-the-best",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1p_OAIKawM38wLXPajlRJfgcnRBhnAMe_",
+      "old_name": "136. WPMissionControl Comprehensive test of the WordPress",
+      "new_name": "136.-WPMissionControl-Comprehensive-test-of-the-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OUTx5DhZDlnlBhSBEFN_wFWiweRbeIJD",
+      "old_name": "138. Fluentcart WordPress the simple alternative to",
+      "new_name": "138.-Fluentcart-WordPress-the-simple-alternative-to",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gBZiq_O6ehGGgZxwy4UfZPdh_4pdSR6b",
+      "old_name": "63. Ninja Tables Review Discover the best table plugin",
+      "new_name": "63.-Ninja-Tables-Review-Discover-the-best-table-plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jCdADg5FHCoKAdulfwEdtA9OFgo9IBw5",
+      "old_name": "31. EasyHoster hosting security, backups, performance,",
+      "new_name": "31.-EasyHoster-hosting-security,-backups,-performance,",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DAQCrBZF6BzsOvJZqwKMLPsKb2DUphiI",
+      "old_name": "05. AliDropship Review One-Click AliExpress Store on",
+      "new_name": "05.-AliDropship-Review-One-Click-AliExpress-Store-on",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NH97vdpsahxGdxeXH2akoo1gZ4mtuV9N",
+      "old_name": "100. SureMembers vs Restrict Content Pro comparison of",
+      "new_name": "100.-SureMembers-vs-Restrict-Content-Pro-comparison-of",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1N3JDim6U6rQFIDgRccTNE-2PV7KZQKO7",
+      "old_name": "84. FluentBoards Find out all about this project",
+      "new_name": "84.-FluentBoards-Find-out-all-about-this-project",
+      "result": "RENAMED"
+    },
+    {
+      "id": "17vl3Si_WWNlVOlTqHP7juhtsFunjZWpR",
+      "old_name": "104. SureForms AI-Powered WordPress Forms Plugin",
+      "new_name": "104.-SureForms-AI-Powered-WordPress-Forms-Plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KJfJpHQ3ThK_kUKdT7qVp_ep4Qvta7cp",
+      "old_name": "107. WordPress Playground what is it and how do I use it",
+      "new_name": "107.-WordPress-Playground-what-is-it-and-how-do-I-use-it",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aZi5VgMC5dN2sRJhvbVaosVXFITIfu19",
+      "old_name": "13. Everything you need to know about the Elementor plugin",
+      "new_name": "13.-Everything-you-need-to-know-about-the-Elementor-plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SNoBlutsEcvk7LhjiyVOQdkImspe1GOc",
+      "old_name": "137. Is it difficult to learn how to use WordPress",
+      "new_name": "137.-Is-it-difficult-to-learn-how-to-use-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Eh0M0-NCjFwi0NwUZBdiBRRdIKR1_84d",
+      "old_name": "141. MailerPress 1.1 redesigned interface, custom fields",
+      "new_name": "141.-MailerPress-1.1-redesigned-interface,-custom-fields",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tYBARIK8o_9Ev-YocXTTejUszTJHps_3",
+      "old_name": "92. What is a WordPress theme Complete guide and use",
+      "new_name": "92.-What-is-a-WordPress-theme-Complete-guide-and-use",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VHHL6gTf9IAj-5BYgY-i8d5BKRdbdl8j",
+      "old_name": "80. InstaWP How to Build a WordPress Website in One Click",
+      "new_name": "80.-InstaWP-How-to-Build-a-WordPress-Website-in-One-Click",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ItXAjLmUTryOpOq9titVGKCC-lItJoVN",
+      "old_name": "142. Ninja Tables integrates FluentCart Interactive Tables",
+      "new_name": "142.-Ninja-Tables-integrates-FluentCart-Interactive-Tables",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Kst6sL6OodAlvTbA3AiY7JAiBnQI7IvL",
+      "old_name": "140. Opinion on Metricool my full review",
+      "new_name": "140.-Opinion-on-Metricool-my-full-review",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lrzoAjxaH1Tv_w1GGvH6HXC6v-P-Ei9W",
+      "old_name": "03. 6 Ways to Boost Your WordPress Blog",
+      "new_name": "03.-6-Ways-to-Boost-Your-WordPress-Blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xOJSzlRXE4OaVLw6JUjr1zyjSBt7vD6s",
+      "old_name": "34. Booking and appointment system with Amelia WP",
+      "new_name": "34.-Booking-and-appointment-system-with-Amelia-WP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_ag4DSydO68l1cBIySIIPiyAB1ipJmzn",
+      "old_name": "78. Create an online training platform with WordPress",
+      "new_name": "78.-Create-an-online-training-platform-with-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RVH4bpAZKmX2j8TOMtZkPi32WSPCFYA1",
+      "old_name": "134. Bit Flows Avis 2025 WordPress automation without limits",
+      "new_name": "134.-Bit-Flows-Avis-2025-WordPress-automation-without-limits",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wyLJp6ORskxVoCVkjm560fo8NYXLk6Ox",
+      "old_name": "82. How do I create a blog post on WordPress",
+      "new_name": "82.-How-do-I-create-a-blog-post-on-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gTMLeb4jX-91wS6h1rGjA5jyJtldOgGY",
+      "old_name": "128. ARMember review The ideal WordPress plugin for members",
+      "new_name": "128.-ARMember-review-The-ideal-WordPress-plugin-for-members",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FeMGvSQQwxmeP3nVHqcs0Hz7ndv-uTix",
+      "old_name": "68. thruuu the SERP scraping and analysis tool",
+      "new_name": "68.-thruuu-the-SERP-scraping-and-analysis-tool",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nIPZo5JqrKnCuhvdQ4BbELA9RdANOzJr",
+      "old_name": "28. What is Google AMP",
+      "new_name": "28.-What-is-Google-AMP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10FKXkjCR8pwAWMJqgAA-hsS0Yf4rRv88",
+      "old_name": "54. Solid Affiliate - The Top Affiliate Plugin for WordPress",
+      "new_name": "54.-Solid-Affiliate-The-Top-Affiliate-Plugin-for-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10Er7S2XyjqDlQTrKJLCKtlHfOUvBGH0O",
+      "old_name": "86. Copilhost - Fast and Secure WordPress Hosting",
+      "new_name": "86.-Copilhost-Fast-and-Secure-WordPress-Hosting",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hoOdLBM25tA3vLNEz6Kk8QQd95ayZB4A",
+      "old_name": "122. o2switch Review 2025 Is the French web host worth it",
+      "new_name": "122.-o2switch-Review-2025-Is-the-French-web-host-worth-it",
+      "result": "RENAMED"
+    },
+    {
+      "id": "104XzxrUlpT7_kIdWlcCRxM37-HGbM3Fg",
+      "old_name": "06. All you need to know about BuddyBoss",
+      "new_name": "06.-All-you-need-to-know-about-BuddyBoss",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sJqCjOknQsWOA4UDJPBBfv3HU4D24cvW",
+      "old_name": "107. WordPress Playground what is it and how do I use it",
+      "new_name": "107.-WordPress-Playground-what-is-it-and-how-do-I-use-it",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WdxmrDCqXpJ1VQvm9XUKWrnvHmUKJlAX",
+      "old_name": "113. WP Umbrella - Why do WordPress agencies love it",
+      "new_name": "113.-WP-Umbrella-Why-do-WordPress-agencies-love-it",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1V5grxPGIrJM0_cluqYPDXxkrjb3eH_ho",
+      "old_name": "85. Clean WordPress database - complete guide and plugins",
+      "new_name": "85.-Clean-WordPress-database-complete-guide-and-plugins",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QEuUfjOzbusVGp6I0mhS6pJtC-Pex2x3",
+      "old_name": "112. What is Gutenberg in WordPress",
+      "new_name": "112.-What-is-Gutenberg-in-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OEDHhiviMUKWs4GBrZ28_Bk-74uTp27X",
+      "old_name": "109. WP Marmite Pay simplifies payments on WordPress",
+      "new_name": "109.-WP-Marmite-Pay-simplifies-payments-on-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NT_ih4pC9MZp6P0ol4h3kxFSIikneZLy",
+      "old_name": "73. ZipWP Revolutionize WordPress site creation with AI",
+      "new_name": "73.-ZipWP-Revolutionize-WordPress-site-creation-with-AI",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ldp-jeJZKTIs-FFgDGzlQ8akLetfoY0s",
+      "old_name": "94. WPBoutik reinvents e-commerce on WordPress",
+      "new_name": "94.-WPBoutik-reinvents-e-commerce-on-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HKbnqRUMZODBDEBwOmdKSUTv8ObG-OSI",
+      "old_name": "74. What is a WordPress plugin and how to use it effectively",
+      "new_name": "74.-What-is-a-WordPress-plugin-and-how-to-use-it-effectively",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16L98erAOA_IoBRJiwnGPEO6ZgrQ_DtfX",
+      "old_name": "93. Opinions on Linkuma - is it the benchmark for netlinking",
+      "new_name": "93.-Opinions-on-Linkuma-is-it-the-benchmark-for-netlinking",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DtVeT6_drO9ccZ5M93UE9nQq5dijDRb-",
+      "old_name": "97. SEOKEY, the essential SEO plugin for WordPress",
+      "new_name": "97.-SEOKEY,-the-essential-SEO-plugin-for-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1-dhIvHb4QgAegrem1rp6uH1dhKh6927o",
+      "old_name": "101. ZipWP vs. InstaWP Was ist besser, um Ihre",
+      "new_name": "101.-ZipWP-vs.-InstaWP-Was-ist-besser,-um-Ihre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1270P3-mVjIRNiRJEWt0uwGhtJmJZLJwV",
+      "old_name": "103. TasteWP - Erfahren Sie, wie Sie Ihre",
+      "new_name": "103.-TasteWP-Erfahren-Sie,-wie-Sie-Ihre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CSFbo2ScXFfL7SZJdugX-rlmjYnQ-ya-",
+      "old_name": "105. Ein Slug in WordPress - Was ist das und wie kann man",
+      "new_name": "105.-Ein-Slug-in-WordPress-Was-ist-das-und-wie-kann-man",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ECJruRAvXK9KJ8KbRMmljd4pNpXmE3vl",
+      "old_name": "91. Suremembers - Entdecken Sie das beste",
+      "new_name": "91.-Suremembers-Entdecken-Sie-das-beste",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FchjayKlVoqCY9TFjF7k1H2A5rr5H6Z2",
+      "old_name": "108. Was ist die Erstellung einer maßgeschneiderten",
+      "new_name": "108.-Was-ist-die-Erstellung-einer-maßgeschneiderten",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HxBqZ42Sct4LJrytm6SPv_psknjL33-e",
+      "old_name": "74. Was ein WordPress-Plugin ist und wie man es effektiv",
+      "new_name": "74.-Was-ein-WordPress-Plugin-ist-und-wie-man-es-effektiv",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JpwT0dFBGWeFM-vuJHqc73p4qZgRTYQM",
+      "old_name": "107. WordPress Playground Was ist das und wie verwende",
+      "new_name": "107.-WordPress-Playground-Was-ist-das-und-wie-verwende",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Nuh7XevXbby3iCsadz1UKLiVP9NbZEt6",
+      "old_name": "73. ZipWP Revolutionieren Sie die Erstellung von",
+      "new_name": "73.-ZipWP-Revolutionieren-Sie-die-Erstellung-von",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Rknh7uGoJrV-HVyfWIoaGo3NX2C1gABc",
+      "old_name": "110. FluentCommunity Bauen Sie mit diesem Plugin schnell",
+      "new_name": "110.-FluentCommunity-Bauen-Sie-mit-diesem-Plugin-schnell",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TfAx0-k71AjgWWfRPm8YEjDDvDMApFFo",
+      "old_name": "85. WordPress-Datenbank bereinigen Komplette Anleitung",
+      "new_name": "85.-WordPress-Datenbank-bereinigen-Komplette-Anleitung",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kAuvboPsX46OLnsswMMmKLyLVQNr17uF",
+      "old_name": "89. Divi Builder vs. Elementor Pro Das Duell der",
+      "new_name": "89.-Divi-Builder-vs.-Elementor-Pro-Das-Duell-der",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pp_2u_NGeFbrjLBrz8JJY15xvH6lEDpk",
+      "old_name": "106. Link Finder Optimieren Sie Ihre Netlinking-Strategie",
+      "new_name": "106.-Link-Finder-Optimieren-Sie-Ihre-Netlinking-Strategie",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1smKqbBtstISUmqhi4echcOpqBhRMXo3i",
+      "old_name": "118. Rapyd Cloud Das ultra-leistungsstarke",
+      "new_name": "118.-Rapyd-Cloud-Das-ultra-leistungsstarke",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10xGh3gKuMOyFcRpDTN95q3X7bHp5cY1n",
+      "old_name": "15. WordPress Multisite Der komplette Guide zur zentralen",
+      "new_name": "15.-WordPress-Multisite-Der-komplette-Guide-zur-zentralen",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1aEF9X4QuyGVBs1-VL9dHREkfwXyVvODB",
+      "old_name": "122. o2switch Meinungen 2025 Ist der französische",
+      "new_name": "122.-o2switch-Meinungen-2025-Ist-der-franzosische",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Lj_ILwO2HNYn3s7_YNOlrcJYACaqtDDR",
+      "old_name": "68. Eingehende Analyse von thruuu Das SERP Scraping- und",
+      "new_name": "68.-Eingehende-Analyse-von-thruuu-Das-SERP-Scraping-und",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OMbqC__WJvaGuVSDzBOTQSz_rls5ypoR",
+      "old_name": "77. FlyingPress vs. WP Rocket Welches ist das beste",
+      "new_name": "77.-FlyingPress-vs.-WP-Rocket-Welches-ist-das-beste",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dnspqGOrXC4fjXjzI1XsfLaIZHheWilO",
+      "old_name": "126. Droip Die WordPress-Alternative zu Webflow, ohne",
+      "new_name": "126.-Droip-Die-WordPress-Alternative-zu-Webflow,-ohne",
+      "result": "RENAMED"
+    },
+    {
+      "id": "11BawUu7kIU79zER_hY-xcRuKnvm1Hm6D",
+      "old_name": "90. SureMembers vs. Wishlist Member Welche Erweiterung",
+      "new_name": "90.-SureMembers-vs.-Wishlist-Member-Welche-Erweiterung",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RRjExK1zC9u9VUHgG6ZG_jnKHLx2YH0D",
+      "old_name": "98. Full Site Editing (FSE) WordPress Beherrscht Die",
+      "new_name": "98.-Full-Site-Editing-(FSE)-WordPress-Beherrscht-Die",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hbwWGnkAPo59XMyiG-akzt0SN0gsaiwk",
+      "old_name": "132. Virfice Erfahrungsbericht Passen Sie Ihre",
+      "new_name": "132.-Virfice-Erfahrungsbericht-Passen-Sie-Ihre",
+      "result": "RENAMED"
+    },
+    {
+      "id": "134_Pcsk3ErStk3nccBGtqEM1T3Lel68U",
+      "old_name": "138. Fluentcart WordPress die einfache Alternative zu",
+      "new_name": "138.-Fluentcart-WordPress-die-einfache-Alternative-zu",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RbYQgA-R-DMbvdUrBXGvvQkW2P-iQecb",
+      "old_name": "127. AffiliatePress im Test Funktionen Auto-Payout et",
+      "new_name": "127.-AffiliatePress-im-Test-Funktionen-Auto-Payout-et",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pUprYrHIMbyvYJNlTYCOsBuTQuG4XAOS",
+      "old_name": "115. LatePoint Intuitives et schnelles",
+      "new_name": "115.-LatePoint-Intuitives-et-schnelles",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MdfVvLmRCTen8o_z7KyCiM3HqDoO2kle",
+      "old_name": "100. SureMembers vs. Restrict Content Pro Vergleich der",
+      "new_name": "100.-SureMembers-vs.-Restrict-Content-Pro-Vergleich-der",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1dYdF9DdnAwZgqn1W75z659xl9PjPK4OZ",
+      "old_name": "142. Ninja Tables integriert FluentCart Interaktive Tabellen",
+      "new_name": "142.-Ninja-Tables-integriert-FluentCart-Interaktive-Tabellen",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nl7Y2HsXsJ3F1vbyB3EWqgGhf9McqLPm",
+      "old_name": "141. MailerPress 1.1 Update Neues Dashboard - Custom Fields",
+      "new_name": "141.-MailerPress-1.1-Update-Neues-Dashboard-Custom-Fields",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1t-FZK78-MWoVeDo9mD3wrts0cSZ-Lsv2",
+      "old_name": "40. Crocoblock",
+      "new_name": "40.-Crocoblock",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XAQ9_UD3dLknMgsqD4-UTeu877Ne6pxu",
+      "old_name": "113. WP Umbrella - Warum WordPress-Agenturen es lieben",
+      "new_name": "113.-WP-Umbrella-Warum-WordPress-Agenturen-es-lieben",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QZxzy7GxL5IMB1V-H1CqxEbFWvRBmoh1",
+      "old_name": "112. Was ist Gutenberg in WordPress",
+      "new_name": "112.-Was-ist-Gutenberg-in-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OWwZR9Qy6lU240UyXY6ML_-6w-MD9wTv",
+      "old_name": "109. WP Marmite Pay vereinfacht Ihre Zahlungen in WordPress",
+      "new_name": "109.-WP-Marmite-Pay-vereinfacht-Ihre-Zahlungen-in-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LLgxphRK_njWn5tSiASQah_ILRts4hM-",
+      "old_name": "94. WPBoutik erfindet den Online-Handel mit WordPress neu",
+      "new_name": "94.-WPBoutik-erfindet-den-Online-Handel-mit-WordPress-neu",
+      "result": "RENAMED"
+    },
+    {
+      "id": "17pBbuBqxO-PH1VCW4k9r3xgsgIsJkqGK",
+      "old_name": "104. SureForms - KI-gespeistes WordPress-Formular-Plugin",
+      "new_name": "104.-SureForms-KI-gespeistes-WordPress-Formular-Plugin",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Em0lBik32FSamIjXMk23d6Y7DWDQHrsO",
+      "old_name": "Anciens projets",
+      "new_name": "Anciens-projets",
+      "result": "RENAMED"
+    }
+  ]
+}

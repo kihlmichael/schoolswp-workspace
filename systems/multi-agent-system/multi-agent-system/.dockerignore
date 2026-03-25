@@ -32,3 +32,14 @@ env/
 .pytest_cache/
 htmlcov/
 .coverage
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Docs & scripts (not needed in image)
+docs/
+scripts/
+workflows/
+*.md

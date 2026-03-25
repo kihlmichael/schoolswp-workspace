@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" width="400" height="340">
+  <style>
+    .burger:hover #layer-top-bun    { transform: translateY(-54px); }
+    .burger:hover #layer-lettuce    { transform: translateY(-36px); }
+    .burger:hover #layer-tomato     { transform: translateY(-18px); }
+    .burger:hover #layer-patty      { transform: translateY(0px);   }
+    .burger:hover #layer-cheese     { transform: translateY(18px);  }
+    .burger:hover #layer-bottom-bun { transform: translateY(36px);  }
+
+    #layer-top-bun,
+    #layer-lettuce,
+    #layer-tomato,
+    #layer-patty,
+    #layer-cheese,
+    #layer-bottom-bun {
+      transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+
+  <g class="burger" style="cursor: default;">
+
+    <g id="layer-bottom-bun">
+      <rect x="90" y="272" width="220" height="28" rx="14" fill="#c8883a"/>
+      <rect x="90" y="272" width="220" height="14" rx="7" fill="#d9994d"/>
+    </g>
+
+    <g id="layer-cheese">
+      <rect x="82" y="252" width="236" height="22" rx="4" fill="#f0c040"/>
+      <polygon points="82,274 94,258 82,258" fill="#e0ae30"/>
+      <polygon points="318,274 306,258 318,258" fill="#e0ae30"/>
+      <rect x="82" y="252" width="236" height="10" rx="4" fill="#f7d060"/>
+    </g>
+
+    <g id="layer-patty">
+      <rect x="94" y="220" width="212" height="38" rx="10" fill="#5c3317"/>
+      <rect x="94" y="220" width="212" height="16" rx="10" fill="#6e3f1e"/>
+      <rect x="110" y="228" width="60" height="4" rx="2" fill="#4a2810" opacity="0.5"/>
+      <rect x="184" y="228" width="60" height="4" rx="2" fill="#4a2810" opacity="0.5"/>
+    </g>
+
+    <g id="layer-tomato">
+      <rect x="98" y="205" width="204" height="18" rx="5" fill="#d93d2a"/>
+      <rect x="98" y="205" width="204" height="8" rx="5" fill="#e85040"/>
+      <line x1="150" y1="205" x2="150" y2="223" stroke="#c0321f" stroke-width="1" opacity="0.4"/>
+      <line x1="200" y1="205" x2="200" y2="223" stroke="#c0321f" stroke-width="1" opacity="0.4"/>
+      <line x1="250" y1="205" x2="250" y2="223" stroke="#c0321f" stroke-width="1" opacity="0.4"/>
+    </g>
+
+    <g id="layer-lettuce">
+      <path d="
+        M 86,212
+        C  96,197 108,206 120,198
+        C 132,190 144,202 158,196
+        C 170,190 180,200 194,195
+        C 206,190 218,200 230,195
+        C 242,190 254,200 266,196
+        C 278,192 290,202 304,198
+        C 314,195 320,203 314,212
+        Z
+      " fill="#4a9e3f"/>
+      <path d="
+        M 86,212
+        C  96,200 108,208 120,202
+        C 132,196 144,205 158,200
+        C 170,196 180,204 194,200
+        C 206,196 218,204 230,200
+        C 242,196 254,204 266,200
+        C 278,196 290,205 304,202
+        C 312,199 318,205 314,212
+        Z
+      " fill="#5cb84f"/>
+    </g>
+
+    <g id="layer-top-bun">
+      <ellipse cx="200" cy="148" rx="114" ry="64" fill="#c8883a"/>
+      <ellipse cx="200" cy="148" rx="114" ry="64" fill="url(#bun-grad)"/>
+      <rect x="86" y="195" width="228" height="18" rx="0" fill="#c8883a"/>
+      <rect x="86" y="195" width="228" height="8" fill="#d9994d"/>
+      <ellipse cx="200" cy="195" rx="114" ry="9" fill="#d9994d"/>
+      <ellipse cx="178" cy="132" rx="9" ry="5" fill="#e8a84a" transform="rotate(-15,178,132)"/>
+      <ellipse cx="200" cy="120" rx="9" ry="5" fill="#e8a84a" transform="rotate(0,200,120)"/>
+      <ellipse cx="222" cy="132" rx="9" ry="5" fill="#e8a84a" transform="rotate(15,222,132)"/>
+      <ellipse cx="162" cy="150" rx="8" ry="4.5" fill="#e8a84a" transform="rotate(-10,162,150)"/>
+      <ellipse cx="238" cy="150" rx="8" ry="4.5" fill="#e8a84a" transform="rotate(10,238,150)"/>
+    </g>
+
+  </g>
+
+  <defs>
+    <radialGradient id="bun-grad" cx="40%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#e8a84a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a06828" stop-opacity="0.3"/>
+    </radialGradient>
+  </defs>
+</svg>

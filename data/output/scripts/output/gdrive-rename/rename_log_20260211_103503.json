@@ -1,0 +1,1333 @@
+{
+  "applied_at": "2026-02-11T10:35:03.900596",
+  "success": 221,
+  "errors": 0,
+  "operations": [
+    {
+      "id": "1a_rwkWjBSThdnb3PxEq_Q5D4y9lDhbgCY1DJod4YIwc",
+      "old_name": "[ORIGINAL] 15 exemples de messages LinkedIn",
+      "new_name": "ORIGINAL 15 exemples de messages LinkedIn",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Vk7T4dCuMcys5sEKC0T4FcpzxKcDxx4aO8DLVh7_cuk",
+      "old_name": "Guide Complet : Comment trouver facilement et rapidement des clients sur LinkedIn",
+      "new_name": "Guide Complet Comment trouver facilement et rapidement des clients sur LinkedIn",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ij9NPuv0ne69lE44lPty3NkmMro2zVX2",
+      "old_name": "2025-07-16 – 20240607 CR d'imagerie médicale KIHL MICHAEL 022406070007 – Ressource.pdf",
+      "new_name": "2025-07-16 - 20240607 CR dimagerie medicale KIHL MICHAEL 022406070007.pdf",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kRn7f_7Fg5itiGth9B2XatF6pw0bIQY3aQ2mPBQCAMs",
+      "old_name": "2025-03-31 – Génération de contenu par l'IA – Ressource",
+      "new_name": "2025-03-31 - Generation de contenu par lIA",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CG4bSkLQxOiNtLrRcG1KzsH11P3zGcLg9BpQLrsMncg",
+      "old_name": "2026-01-30 – [ORIGINAL] PLUGIN QUEL CANAPE (Créer une copie) – Ressource",
+      "new_name": "2026-01-30 - ORIGINAL PLUGIN QUEL CANAPE (Creer une copie)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Lrk8F7RLtC2i4MC2q2o_hmjDTYQA8VU55LctomhppnM",
+      "old_name": "2023-09-18 – DU CONTENU DANS +10 LANGUES EN 3 MINUTES – Ressource",
+      "new_name": "2023-09-18 - DU CONTENU DANS 10 LANGUES EN 3 MINUTES",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1bXzosrzOVaLkNFbIRzm_mTmI_cZt6DimzhlgqZMEcpY",
+      "old_name": "2024-02-10 – Flux RSS | WordPress Réseaux Sociaux – Ressource",
+      "new_name": "2024-02-10 - Flux RSS WordPress Reseaux Sociaux",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SCRpa9Biyze_CcdMRroBIIrIlbYxmZBRq0bgwKuxQe4",
+      "old_name": "2024-03-20 – [Réseau Social] schoolsWP | Article vers Facebook – Ressource",
+      "new_name": "2024-03-20 - Reseau Social schoolsWP Article vers Facebook",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1IMRCcaZIDTWcTmdH2FdCkj4HOr8KbeTV9FLfCqWmG18",
+      "old_name": "2025-09-02 – Leçon 10 Module 2 Rédiger le rapport d'audit de contenu – Ressource",
+      "new_name": "2025-09-02 - Lecon 10 Module 2 Rediger le rapport daudit de contenu",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ttkd77DVuRzeGnMi8e997Djjtr_7Deire3v9rd_ILek",
+      "old_name": "2025-09-02 – Synthèse de l'audit de contenu – Ressource",
+      "new_name": "2025-09-02 - Synthese de laudit de contenu",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18rtaPQVcLdsVNFCQCOpPBRjmCM1s57k4mhkk28ALJwU",
+      "old_name": "2025-09-04 – Générateur de Stratégie de Contenu >> Créer une Copie pour Éditer << – Ressource",
+      "new_name": "2025-09-04 - Generateur de Strategie de Contenu Creer une Copie pour Editer",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1j6hdx8Q_T_5ApRvvtoweMUsZ8hOTLy92yzmDT_rx-KE",
+      "old_name": "2022-08-07 – Flux RSS Produits | Formations – Ressource",
+      "new_name": "2022-08-07 - Flux RSS Produits Formations",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hWV7CI84pmPCoTt57wB8GNClgbclZmJmCO8m_aFi56A",
+      "old_name": "2024-03-18 – [ORIGINAL] Check-list SEO ultime pour rédiger un article B2B – Checklist",
+      "new_name": "2024-03-18 - ORIGINAL Check-list SEO ultime pour rediger un article B2B - Checklist",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Gr8uClJjdQ6fTW2yXa6WK9TEbBzkwKEe",
+      "old_name": "2023-06-10 – [CheckList TBL] Analyse niche DEMO – Checklist.csv",
+      "new_name": "2023-06-10 - CheckList TBL Analyse niche DEMO - Checklist.csv",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_-RJhN2_DCMO1LAb1TpGa_Qp11BxxDvWIReNP1ofOaY",
+      "old_name": "2025-09-04 – Checklist de pré-rédaction de contenu >> Créer une Copie pour Éditer << – Checklist",
+      "new_name": "2025-09-04 - Checklist de pre-redaction de contenu Creer une Copie pour Editer - Checklist",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jHOPf-UOu-AtRJUmDBdMbw5cyDMuFa-swWb_qDNDjis",
+      "old_name": "2024-10-05 – [ORIGINAL] Roadmap Check-List Amazon Incubator [AMZ ACADEMY] – Checklist",
+      "new_name": "2024-10-05 - ORIGINAL Roadmap Check-List Amazon Incubator AMZ ACADEMY - Checklist",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RjJsmEv5tU_V04Fwp321sgWMvZb3GlWU466PuiagZjY",
+      "old_name": "Prompt schoolsWP — Analyse d'Intention de Recherche (SERP-first)",
+      "new_name": "Prompt schoolsWP - Analyse dIntention de Recherche (SERP-first)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XA7uXYRp9ax2STS2atrpvSHamLi5UTKB1u-gJFiP75Y",
+      "old_name": "[TEMPLATE] PROMPT MASTER BRIEF — PACK MARKETING & VENTE (schoolsWP)",
+      "new_name": "TEMPLATE PROMPT MASTER BRIEF - PACK MARKETING VENTE (schoolsWP)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18AWnURxEeDsTvf9i2jYE1LIpdRW2s4HqxjprG7518yk",
+      "old_name": "Prompt schoolsWP — Analyse d'Intention de Recherche (SERP-first)",
+      "new_name": "Prompt schoolsWP - Analyse dIntention de Recherche (SERP-first)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zsIeH2Sa8JX1GsICbhr6in0qyAyGm1cpkAelnGSTQeQ",
+      "old_name": "[TEMPLATE] PROMPT MASTER BRIEF — PACK MARKETING & VENTE (schoolsWP)",
+      "new_name": "TEMPLATE PROMPT MASTER BRIEF - PACK MARKETING VENTE (schoolsWP)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XT7MpS_9tw5AjX7Z4hM85Wk3Tv5lO70JNGfEtirL1Tk",
+      "old_name": "2023-08-02 – ORIGINAL | Gestionnaire de Prompts – Prompt",
+      "new_name": "2023-08-02 - ORIGINAL Gestionnaire de Prompts - Prompt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ddyRr61rVKJgpkSPISWxNag-2pDh_-y4cqTh7aadqpo",
+      "old_name": "2025-04-08 – [ORIGINAL] WP Sensei Prompt Affiliation Amazon – Prompt",
+      "new_name": "2025-04-08 - ORIGINAL WP Sensei Prompt Affiliation Amazon - Prompt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UqNjk_91KTtMiii25Fu3YrGtf42cVbJJ8D_2x8rIec8",
+      "old_name": "2024-04-26 – [ORIGINAL] Prompts PRO Vendeur Amazon – Prompt",
+      "new_name": "2024-04-26 - ORIGINAL Prompts PRO Vendeur Amazon - Prompt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "151vy_osunZ3xM3kpTXckitJpVvRmpyzxCtwtlduZbGk",
+      "old_name": "2023-08-02 – ORIGINAL | Prompts PRO Vendeur Amazon – Prompt",
+      "new_name": "2023-08-02 - ORIGINAL Prompts PRO Vendeur Amazon - Prompt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MiMAx6f_Mt1Nxh_y-2gpzp6Fo6Ut59Gp0iD5kApzJY0",
+      "old_name": "2023-02-25 – Automatiser le copywriting de ses pubs et PDV avec chat GPT – Prompt",
+      "new_name": "2023-02-25 - Automatiser le copywriting de ses pubs et PDV avec chat GPT - Prompt",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qfGJx_8FYm7p4em_rq4ptiF3oEVbv3HuSnsISkUGuIU",
+      "old_name": "2024-02-10 – Michaël KIHL Création Site Internet | Conception Web | Tunnel De Vente – Ressource",
+      "new_name": "2024-02-10 - Michael KIHL Creation Site Internet Conception Web Tunnel De Vente",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1L1f51xrbvgRfH2Pv2p5Ft6x_vqYL59v5WzidMtGhzIM",
+      "old_name": "2025-04-29 – Résumé de la Newsletter par l'Agent – Template Email",
+      "new_name": "2025-04-29 - Resume de la Newsletter par lAgent - Template Email",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pNH5qMkMa3Sa_nHbv96eCC9GpGA-8R66FSUTBFXTz10",
+      "old_name": "2022-03-13 – EBOOK L'indépendance financière pour tous | Aurélien AMACKER – Template Email",
+      "new_name": "2022-03-13 - EBOOK Lindependance financiere pour tous Aurelien AMACKER - Template Email",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ubxyRMjpSErQCmQ-5ROmm8DOyfgwxGUALjgbzfBVZng",
+      "old_name": "2022-03-13 – EBOOK Je gagne ma vie avec mon blog | Aurélien AMACKER – Template Email",
+      "new_name": "2022-03-13 - EBOOK Je gagne ma vie avec mon blog Aurelien AMACKER - Template Email",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hi9UKuV5tK1c2Vn8oby9NkgOvM6JsDc4znxJmGwmaYk",
+      "old_name": "2021-11-21 – ConvertKit Free Plan Email Swipe Copy – Template Email",
+      "new_name": "2021-11-21 - ConvertKit Free Plan Email Swipe Copy - Template Email",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XNci1UauyjUFN1UO8ZuqHDmdXucGRCG7RSCGo9_CHco",
+      "old_name": "2023-03-02 – [IMPÉ] Exemples email newsletter – Template Email",
+      "new_name": "2023-03-02 - IMPE Exemples email newsletter - Template Email",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HctD8f12iNwrrMfZoJ94ugot-Gdsfj7c5AHXMe45k7I",
+      "old_name": "2024-10-04 – Templates Pod'Pack (PRE) LANCEMENT – Template",
+      "new_name": "2024-10-04 - Templates PodPack (PRE) LANCEMENT - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "17tpokHa9LMC4DANO6nacEjWselvBL8q6UsA514LU3gU",
+      "old_name": "2024-10-04 – Templates Pod'Pack EXPERTISE – Template",
+      "new_name": "2024-10-04 - Templates PodPack EXPERTISE - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oiy2GKL8TQKnp2U029ciBXS5paqDpid4KHIM19ViDqo",
+      "old_name": "2024-10-04 – Templates Pod'Pack COLLABORATIF – Template",
+      "new_name": "2024-10-04 - Templates PodPack COLLABORATIF - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hJy69wVNE4bmq8IsL-CKJTatXJEusn45NE3WD59e4lA",
+      "old_name": "2024-10-04 – Templates Pod'Pack BONUS – Template",
+      "new_name": "2024-10-04 - Templates PodPack BONUS - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pHoaZy05hLjoeJyY_5aLD7q6frzEuIMMn6ZP03RJo40",
+      "old_name": "2024-10-04 – Templates Pod'Pack AUTRES – Template",
+      "new_name": "2024-10-04 - Templates PodPack AUTRES - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "17hIT8iXWFpjdauORznEuw8TKdhahrpQbywBCdr3xEX0",
+      "old_name": "2024-10-04 – Templates Pod'Pack COULISSES – Template",
+      "new_name": "2024-10-04 - Templates PodPack COULISSES - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NHlowwCp-2ENfpQfqOn90Jv6sFV0POa35OL_hHF_5EQ",
+      "old_name": "2024-03-28 – [ORIGINAL] 1 – Template",
+      "new_name": "2024-03-28 - ORIGINAL 1 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1A5yTVd4y3Y4GqnepWp8N4ngm9K1o8qTxVqS-CACHsFo",
+      "old_name": "2024-04-28 – [ORIGINAL] Modèles Newsletters KSTB – Template",
+      "new_name": "2024-04-28 - ORIGINAL Modeles Newsletters KSTB - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Em3PVCdj0myFpmvrQyWqH6AOrWQy4XXT9TPRZQBrrqg",
+      "old_name": "2024-04-28 – [ORIGINAL] 1 – Template",
+      "new_name": "2024-04-28 - ORIGINAL 1 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13F4g04p-93a8LNjD6kQxltKpJ9_QRGVjCp0_sQAArl0",
+      "old_name": "2025-04-12 – [ORIGINAL] Modèle de devis SEO – Template",
+      "new_name": "2025-04-12 - ORIGINAL Modele de devis SEO - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1109YJNG_ArmGLKCpNhUpbGss7Bijxy6OA6QyGNPnIVA",
+      "old_name": "2024-03-30 – [ORIGINAL] 2 – Template",
+      "new_name": "2024-03-30 - ORIGINAL 2 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ivKOFruP54YgiEHkznLxsJKKq7XrYhVY9VHzU0NpNsI",
+      "old_name": "2024-03-31 – [ORIGINAL] 4 – Template",
+      "new_name": "2024-03-31 - ORIGINAL 4 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1C9f7CTktrRdJJp7lb8OVz62u43cHYaohi9JVj9TJMHU",
+      "old_name": "2024-03-31 – [ORIGINAL] 3 – Template",
+      "new_name": "2024-03-31 - ORIGINAL 3 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MBdIY4X-mqIR6Z5ySOuRJxfWwFyHDC53ZHoTlomR8g4",
+      "old_name": "2024-09-17 – ORIGINAL [Template] Analyse Top Contenus Concurrents agenceonze – Template",
+      "new_name": "2024-09-17 - ORIGINAL Template Analyse Top Contenus Concurrents agenceonze - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BXKScwoJJDSlzVAJSwVQynGZ-ejeQjm5oop3be6BiU4",
+      "old_name": "2024-10-14 – [ORIGINAL] Template Article Local – Template",
+      "new_name": "2024-10-14 - ORIGINAL Template Article Local - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lWL-yDpHe4euY3rg0obPKnwIOnLyioadbYcLlhnntBc",
+      "old_name": "2024-10-15 – [ORIGINAL] Template article d'actualité – Template",
+      "new_name": "2024-10-15 - ORIGINAL Template article dactualite - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QUCB1x5wVB8k7Ta5j2QNcRs61SMggif1cSAb3eEEgl4",
+      "old_name": "2024-10-17 – [ORIGINAL] Modèle Social Media Metricool 2024 – Template",
+      "new_name": "2024-10-17 - ORIGINAL Modele Social Media Metricool 2024 - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ef3_7by5KBhwtXiY54BFPRu5qO0PS8UqIOAMsQ1qv2U",
+      "old_name": "2024-11-27 – [ORIGINAL] Modèle de Rapport SEO (GSheet) Maitrise ton SEO – Template",
+      "new_name": "2024-11-27 - ORIGINAL Modele de Rapport SEO (GSheet) Maitrise ton SEO - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KAPJgSmz_arRjbjlQ9pqZmDS1sOsCOI-IPejWQMBPGo",
+      "old_name": "2025-09-02 – Modèle Plan de Mesure >>CRÉER UNE COPIE POUR ÉDITER<< – Template",
+      "new_name": "2025-09-02 - Modele Plan de Mesure CREER UNE COPIE POUR EDITER - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DMIBFPKBmsvJGCXbr3d_97xt2UBTdzi0FQPx33SBkTI",
+      "old_name": "2025-09-02 – Modèle Automatisé pour l'Audit de Contenu >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-02 - Modele Automatise pour lAudit de Contenu Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "173dl1Y8N9ytxa-uPNmP6MBf2NHrxsZmeibVHKcb0dD8",
+      "old_name": "2025-09-04 – Modèle d'Audit SEO Technique >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele dAudit SEO Technique Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1F58VGDvsf4m21Q2h7laKbilniJYwEIgyoVPnC4033Cw",
+      "old_name": "2025-09-04 – Modèle de Rapport d'Audit Technique >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele de Rapport dAudit Technique Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EWk5H1AdcdCgrO_w7-GdT3plF8Jf0bmY63ndcbBgtLc",
+      "old_name": "2025-09-04 – Modèle de Migration de Site >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele de Migration de Site Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1p9LGdiRT-5fi-OcPZb7ihyGS1_M2dOxE67coFuizHbE",
+      "old_name": "2025-09-04 – Modèle de Stratégie de Mots-clés (REMPLI) >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele de Strategie de Mots-cles (REMPLI) Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "133_DzwYKm0VLjeYdCkdm7Sbor7vG4ByGq4w_ea-T_pY",
+      "old_name": "2025-09-04 – Modèle de Stratégie de Mots-clés (VIDE) >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele de Strategie de Mots-cles (VIDE) Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RJZ59Fkw0vsSu8geOYpchmG8CsB34yFDpAmCXuX664E",
+      "old_name": "2025-09-04 – Modèle de Stratégie de Contenu >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-04 - Modele de Strategie de Contenu Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sT6-afFjkdAOzc_H84qyziPmaQFv0-R4jmZbqqt9xSI",
+      "old_name": "2025-09-05 – Modèle de Suivi des Positions >> Créer une Copie pour Éditer << – Template",
+      "new_name": "2025-09-05 - Modele de Suivi des Positions Creer une Copie pour Editer - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xHXY6EbDUMVNVuGOlWXcOI7F0yOC5ZrMaWMXIwNgF_8",
+      "old_name": "2026-01-30 – [ORIGINAL] Prompt Template Service Page – Template",
+      "new_name": "2026-01-30 - ORIGINAL Prompt Template Service Page - Template",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ux8-I9hsRI7JePsXWtcwGkw3N8-vUybtpPoN7wf_U5Q",
+      "old_name": "Plan de formation : Apprendre les bases de WordPress pour créer un site vitrine simple",
+      "new_name": "Plan de formation Apprendre les bases de WordPress pour creer un site vitrine simple",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Peb-NuALjt0LYZVUzJhvke30NeJkt1l_I27Ed4Udf20",
+      "old_name": "2024-03-14 – [Réseau Social] Pinterest vers Google Sheets mon-mini-electro – Ressource",
+      "new_name": "2024-03-14 - Reseau Social Pinterest vers Google Sheets mon-mini-electro",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TWjjuIRhVJyKz733K7Mwf7XULqkH4IHHei564S0TMUc",
+      "old_name": "2024-03-14 – [Réseau Social] Pinterest vers Google Sheets Michaël KIHL – Ressource",
+      "new_name": "2024-03-14 - Reseau Social Pinterest vers Google Sheets Michael KIHL",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1FBZ5ajaY0qMbbVb-XiFoY5RpKZ3VRjb1u5J5U40lL2Q",
+      "old_name": "2024-03-14 – [Réseau Social] Pinterest vers Google Sheets schoolsWP – Ressource",
+      "new_name": "2024-03-14 - Reseau Social Pinterest vers Google Sheets schoolsWP",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1m5I-lykho_tqKnfcdkTVaZGl7Z4NGx2nys5Domp2HOo",
+      "old_name": "2026-01-22 – [ORIGINAL] Espionner chaines Youtube – Ressource",
+      "new_name": "2026-01-22 - ORIGINAL Espionner chaines Youtube",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1e7cCZHILFB3fTFDli-yCruVwCiXGOFua16jVq7pnCbY",
+      "old_name": "2024-05-01 – [ORIGINAL] Tableau de suivi gestion Pinterest – Ressource",
+      "new_name": "2024-05-01 - ORIGINAL Tableau de suivi gestion Pinterest",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tXLmjAiVjABtIqAS9geGI15Xh0WFMfN-PTDQUZeVxh4",
+      "old_name": "2024-02-07 – Qu’est-ce que WP Rocket Plugin ? – Audio",
+      "new_name": "2024-02-07 - Qu’est-ce que WP Rocket Plugin - Audio",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qrfI5pUMO3ydkJ3fF25XU6gpAZ2vCFE0Bjs3IRQcnzA",
+      "old_name": "2025-09-12 – FluentSMTP avis 2025 le meilleur plugin SMTP gratuit pour WordPress ? – Ressource",
+      "new_name": "2025-09-12 - FluentSMTP avis 2025 le meilleur plugin SMTP gratuit pour WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WlLKPnQePnzGV4aru9lt3rIkPoDgTPQObOoB2Ei82ks",
+      "old_name": "2023-03-03 – Formation Pin Lemonade | Tableau de suivi gestion Pinterest – Ressource",
+      "new_name": "2023-03-03 - Formation Pin Lemonade Tableau de suivi gestion Pinterest",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gEUB1b7E7ilBDJug_EoIB9hUq7Hki4Rn7PMWdzfzxIo",
+      "old_name": "2023-07-12 – Pabbly | Google Sheet Vers Twitter – Ressource",
+      "new_name": "2023-07-12 - Pabbly Google Sheet Vers Twitter",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ms1IYbxzdBCjS4RNUz4S10jvp0wmZ-PfqOfq6ZIWJIE",
+      "old_name": "2022-12-18 – ASTUCE CARROUSEL | Canva Bulk – Ressource",
+      "new_name": "2022-12-18 - ASTUCE CARROUSEL Canva Bulk",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1u89yFGOw67aFvVipbtjyDGVemiNJRqM3",
+      "old_name": "2024-09-22 – Suretriggers-etape-finale-connexion-compte – Cover article.jpg",
+      "new_name": "2024-09-22 - Suretriggers-etape-finale-connexion-compte - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1XM2MGx6iyv3gG4X9fSBIBxD8p-MsN9WD",
+      "old_name": "2024-06-24 – #222---'Modifier-l’article-«-WordPress.com-vs-WordPress.org- -(cut)--Choix-»-... – Cover article.jpg",
+      "new_name": "2024-06-24 - 222-Modifier-l’article-«-WordPress.com-vs-WordPress.org- -(cut)-Choix-»-... - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jJgQnrFgKwgh-vk2bTFmZ7jrZ-r4vDiT",
+      "old_name": "2024-08-02 – Definition-theme-wordpress – Cover article.jpg",
+      "new_name": "2024-08-02 - Definition-theme-wordpress - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_my6536wOsB6CvxycvMZdat1Iy6g6do9",
+      "old_name": "2025-10-24 – Easycommerce-ai-copy-writer-plugin-wordpress – Cover article.jpg",
+      "new_name": "2025-10-24 - Easycommerce-ai-copy-writer-plugin-wordpress - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VeIlVASXkWe_SvyoEmnpV4pGb86orS2G",
+      "old_name": "2024-06-08 – Comparatif Launchflows vs Cartflows   Boostez Vos Ventes! – Cover article.jpg",
+      "new_name": "2024-06-08 - Comparatif Launchflows vs Cartflows Boostez Vos Ventes - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WLJbrqfhE1cB4pVrwq21ab6Q7_vVg23H",
+      "old_name": "2024-06-15 – WordPress.com vs WordPress.org Choisissez la meilleure option! – Cover article.jpg",
+      "new_name": "2024-06-15 - WordPress.com vs WordPress.org Choisissez la meilleure option - Cover article.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1k04Sv9KKbfk-CTwq4vXIBLsb0Q7-D9xh",
+      "old_name": "2024-08-03 – Theme-wordpress-definition-choix-optimisation-facile – Ressource.jpg",
+      "new_name": "2024-08-03 - Theme-wordpress-definition-choix-optimisation-facile.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rgLiKrbKMfQ6iWsoDxlL92epV82H8MLh",
+      "old_name": "2024-09-16 – WordPress Full Site Editing (FSE)   Personnalisez tout, sans code ! – Ressource.jpg",
+      "new_name": "2024-09-16 - WordPress Full Site Editing (FSE) Personnalisez tout, sans code.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vzNVMTps0AwN31QVcRRFkuVx1bcI2yDI",
+      "old_name": "2024-09-30 – SureMembers vs Restrict Content Pro   comparatif des plugins d'adhésion – Ressource.jpg",
+      "new_name": "2024-09-30 - SureMembers vs Restrict Content Pro comparatif des plugins dadhesion.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "19-BsH3QGI7v3OUX7013mYyKRezZFvO7r",
+      "old_name": "2024-11-20 – Slug-wordpress-definition-optimisation – Ressource.jpg",
+      "new_name": "2024-11-20 - Slug-wordpress-definition-optimisation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1DuyEg8c1Sbzlzk9Bno1bQcMTT3GyMPLA",
+      "old_name": "2024-12-03 – SureMembers   WordPress membership plugin   Earn more ! – Ressource.jpg",
+      "new_name": "2024-12-03 - SureMembers WordPress membership plugin Earn more.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1zR8src48-fb7KHbnoC2hmpAKcPNiBYyf",
+      "old_name": "2025-12-28 – Messenger creation 4EFE9D2D-47E1-46F7-AEF0-4FA937DEF6D8 – Ressource.jpeg",
+      "new_name": "2025-12-28 - Messenger creation 4EFE9D2D-47E1-46F7-AEF0-4FA937DEF6D8.jpeg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jd6-gu2sUFTGdL0lUzED5OvP3U0ko338",
+      "old_name": "2024-08-03 – Theme-wordpress-definition – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-03 - Theme-wordpress-definition - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jg3MU6iObydjqmhgkLTYG2apRBCyW7Nl",
+      "old_name": "2024-08-03 – Definition-choix-optimisation-theme-wordpress – Thumbnail Pinterest.jpg",
+      "new_name": "2024-08-03 - Definition-choix-optimisation-theme-wordpress - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1w4fr9IX5kDAWBwGhRoEohkB9ffrUUzvA",
+      "old_name": "2024-09-30 – SureMembers vs Restrict Content Pro comparatif des plugins d'adhésionvs Zapie... – Thumbnail Pinterest.jpg",
+      "new_name": "2024-09-30 - SureMembers vs Restrict Content Pro comparatif des plugins dadhesionvs Zapie... - Thumbnail Pinterest.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BQj9o5QG5Dl_znc4nBosnuY3TFz2fw3bTf_m2WfjKx8",
+      "old_name": "https://schoolswp.com/-Performance-on-Search-2026-02-06",
+      "new_name": "httpsschoolswp.com-Performance-on-Search-2026-02-06",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18fMhdFtwVTdQWAyzXvr8UXCkY5TKBTPD",
+      "old_name": "01_Regles-et-Index (pour le document de règles et l'index-raccourcis)",
+      "new_name": "01_Regles-et-Index-(pour-le-document-de-regles-et-lindex-raccourcis)",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uoQl06eZwpaVCiogzwJNl0vRnfbJCGs1vfDGwCSy4KE",
+      "old_name": "2024-06-11 – [ORIGINAL] Prompts PRO Entreprenneur Produits – Affiliation",
+      "new_name": "2024-06-11 - ORIGINAL Prompts PRO Entreprenneur Produits - Affiliation",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1lWcYkMz1uAoKT_1NnSzB9n37RTe9OhDG",
+      "old_name": "2025-08-09 – FireShot Capture 1266 Affiliatepress I WordPress Affiliate M  [affiliatepress... – Affiliation.jpg",
+      "new_name": "2025-08-09 - FireShot Capture 1266 Affiliatepress I WordPress Affiliate M affiliatepress... - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1epCAisqTIYXUWglZiY-J2xHBlE0f5U0B",
+      "old_name": "2025-08-09 – FireShot Capture 1267 AffiliatePress Community I Facebook [www.facebook.com] – Affiliation.jpg",
+      "new_name": "2025-08-09 - FireShot Capture 1267 AffiliatePress Community I Facebook www.facebook.com - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1c5QfuqQARL8zgwtseMi0OeIojw14mkh_",
+      "old_name": "2025-08-09 – FireShot Capture 1265 AffiliatePress I The Ultimate WordPres  [affiliatepress... – Affiliation.jpg",
+      "new_name": "2025-08-09 - FireShot Capture 1265 AffiliatePress I The Ultimate WordPres affiliatepress... - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EptfW65dExvs55IX05EQ9hIEF_y5RGFY",
+      "old_name": "2025-08-09 – FireShot Capture 1268 AFFILIATEPRESS WORDPRESS PLUGIN Home [wpaffiliatepressp... – Affiliation.jpg",
+      "new_name": "2025-08-09 - FireShot Capture 1268 AFFILIATEPRESS WORDPRESS PLUGIN Home wpaffiliatepressp... - Affiliation.jpg",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1n7gj1RrMXMoAA3iB9nQbNv8Qm4d0kZKnzSlp-nN9wUk",
+      "old_name": "2024-02-16 – [ORIGINAL] Paul Grillet SEO Garden Party octobre 2023 – SEO",
+      "new_name": "2024-02-16 - ORIGINAL Paul Grillet SEO Garden Party octobre 2023 - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TsTofLheaNrJs2ezFTD1AR1RTeu0eR0AooqKIBB9vH0",
+      "old_name": "2024-03-18 – [ORIGINAL] Référentiel Débutant SEO Mayboutik – SEO",
+      "new_name": "2024-03-18 - ORIGINAL Referentiel Debutant SEO Mayboutik - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "16FYYuQfn1lNoKq5L3_4rV4isIzqymcyy_9wwf08flaw",
+      "old_name": "2024-03-28 – [ORIGINAL] Trouver une niche Challenge SEO – SEO",
+      "new_name": "2024-03-28 - ORIGINAL Trouver une niche Challenge SEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jf619SPvytcMC0hPSrXAXfFJoHXbVNoIhB27gUuW2pg",
+      "old_name": "2024-03-08 – ORIGINAL | Calcul de similarité SEO – SEO",
+      "new_name": "2024-03-08 - ORIGINAL Calcul de similarite SEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1mimRFbJRGqfn7EBm3TXjMcnEg5LDnnd9mb7Jrit5tZ0",
+      "old_name": "2024-10-05 – [ORIGINAL] Les 50 backlinks offerts – SEO",
+      "new_name": "2024-10-05 - ORIGINAL Les 50 backlinks offerts - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HN8Af_rDD3Zzyia_mn4FD91ja-FAzfqkJDIuh0DLwgQ",
+      "old_name": "2024-10-14 – [ORIGINAL] Exemple SEO local – SEO",
+      "new_name": "2024-10-14 - ORIGINAL Exemple SEO local - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1fu1o3z962HaoGoAA6mNdU024hczjDo5rXe-yT8A9wao",
+      "old_name": "2024-10-14 – [ORIGINAL] Structurer une page à propos en SEO local – SEO",
+      "new_name": "2024-10-14 - ORIGINAL Structurer une page a propos en SEO local - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KGQNtV2KQo0GvTiOfxPLJqMimqmyiFfzlGV89Zhf7eM",
+      "old_name": "2024-10-15 – [ORIGINAL] Rédaction article SEO thématique – SEO",
+      "new_name": "2024-10-15 - ORIGINAL Redaction article SEO thematique - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1eNgZGLwg7qUERaLYY2Zyx5Se7G-d5UGW9isp6EzGcG0",
+      "old_name": "2024-10-15 – [ORIGINAL] Collaborations backlinks – SEO",
+      "new_name": "2024-10-15 - ORIGINAL Collaborations backlinks - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SVYPSjgAotjiCWQZHpyZXfCzNLFGla6zMRvwxqQCEdM",
+      "old_name": "2024-10-15 – [ORIGINAL] Mettre en place ton plan d’action SEO – SEO",
+      "new_name": "2024-10-15 - ORIGINAL Mettre en place ton plan d’action SEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1l5CcxU97IRPUBffkX33LL-Gm_4Ad40O9dzVD0A3_f6c",
+      "old_name": "2024-11-28 – [ORIGINAL] Ressource Romain SEO Garden Party – SEO",
+      "new_name": "2024-11-28 - ORIGINAL Ressource Romain SEO Garden Party - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1RAI7nzsOBDvmKZ7mpLK37YsU2ZdFtGMxPQ3dBuzwiNQ",
+      "old_name": "2024-03-08 – ORIGINAL | Mes requêtes SEO – SEO",
+      "new_name": "2024-03-08 - ORIGINAL Mes requetes SEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10nEYB3PAE2nZ-d75IIaLm7_8QhAaQrY887Iy-i5Li6E",
+      "old_name": "2025-03-20 – [ORIGINAL] SERP Scraper et Keyword Grouper SammySEO – SEO",
+      "new_name": "2025-03-20 - ORIGINAL SERP Scraper et Keyword Grouper SammySEO - SEO",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kdHf2zXCOQF293DJXr7iUbOqVOxfVEbuIxbO0Z3vCXY",
+      "old_name": "2024-10-25 – ZipWP vs InstaWP Was ist besser für schnelles Starten einer WordPress-Website? – Article – DE",
+      "new_name": "2024-10-25 - ZipWP vs InstaWP Was ist besser fur schnelles Starten einer WordPress-Website - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1elyzTZWUNx-Q7LVIUm9tyHnZodT0uyEuA1V60EO4NUU",
+      "old_name": "2024-11-12 – Meinungen über Linkuma Ist sie die Referenz für Netlinking ? – Article – DE",
+      "new_name": "2024-11-12 - Meinungen uber Linkuma Ist sie die Referenz fur Netlinking - Article - DE",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1wzQw8d5oK2NYgUoeo_tbSGqEsqMS2TsAjazequm3gME",
+      "old_name": "2024-12-09 – What is custom WordPress website design and its benefits ? – Article – EN",
+      "new_name": "2024-12-09 - What is custom WordPress website design and its benefits - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1SFhqJmtZ2xMRcf35JdWWieQeBecLogjF7z7JD765esk",
+      "old_name": "2024-10-22 – SureMembers vs Wishlist Member which extension to choose ? – Article – EN",
+      "new_name": "2024-10-22 - SureMembers vs Wishlist Member which extension to choose - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1TCYoSoNwBB4D9Hmv81MMpZdj5cMsQb_GPDEie1yUNhQ",
+      "old_name": "2025-01-11 – WP Umbrella Why do WordPress agencies love it ? – Article – EN",
+      "new_name": "2025-01-11 - WP Umbrella Why do WordPress agencies love it - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vqC06YSzSnoHQ40vvVn2MRJkoi_fAQxXet5wmkWzl1M",
+      "old_name": "2024-12-16 – WordPress Playground what is it and how do I use it ? – Article – EN",
+      "new_name": "2024-12-16 - WordPress Playground what is it and how do I use it - Article - EN",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MDQ-iXX5r9Ut1DZwnlSV6mmQwuIrfVf7VdHZGWiAPEo",
+      "old_name": "2023-11-24 – Perfmatters, l’optimisation WordPress pour améliorer la vitesse de son site ? – Article – FR",
+      "new_name": "2023-11-24 - Perfmatters, l’optimisation WordPress pour ameliorer la vitesse de son site - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1v3fbwB0SgDPC3WXQigFuww2M1hTJVnY4",
+      "old_name": "2024-03-03 – Perfmatters, l’optimisation WordPress pour améliorer la vitesse de son site ? – Article – FR.docx",
+      "new_name": "2024-03-03 - Perfmatters, l’optimisation WordPress pour ameliorer la vitesse de son site - Article - FR.docx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1HnerNL1DAW11OLu0nIotpZpXQ0LLJsmPzg7BjFFuakA",
+      "old_name": "2023-11-14 – Beaver Builder, le meilleur constructeur de pages WordPress ? – Article – FR",
+      "new_name": "2023-11-14 - Beaver Builder, le meilleur constructeur de pages WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10e1v0JK2AYU7eueUsyXw6zzh7sskhYaw4ifC-h_ghdA",
+      "old_name": "2023-11-13 – FluentCRM est-il le meilleur CRM WordPress ? – Article – FR",
+      "new_name": "2023-11-13 - FluentCRM est-il le meilleur CRM WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "19AyMFF0WQqd6bnCPshkTq38cwMBrwzeoiFTWSeeZC70",
+      "old_name": "2023-11-14 – Semrush, l’outil SEO le plus performant ? – Article – FR",
+      "new_name": "2023-11-14 - Semrush, l’outil SEO le plus performant - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gWTvJxiNbodgq8rIqfKvqiirT0XHWSfjOTfPRKVpcWc",
+      "old_name": "2023-11-13 – Qu’est-ce que WP Rocket Plugin ? – Article – FR",
+      "new_name": "2023-11-13 - Qu’est-ce que WP Rocket Plugin - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1y8Yz7VLKLPzPhQXMFI-nHjyLSR7D3TWZEwCZpYHkm7Y",
+      "old_name": "2023-11-14 – Qu’est-ce que l’affiliation marketing ? – Article – FR",
+      "new_name": "2023-11-14 - Qu’est-ce que l’affiliation marketing - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jMP4m3NFDkmbqTlUrufl2eRtEfEgioaHUtkJxEiS9pA",
+      "old_name": "2023-11-14 – Qu’est-ce que l’AMP de Google ? – Article – FR",
+      "new_name": "2023-11-14 - Qu’est-ce que l’AMP de Google - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1usEQYOR3JAMGW_8noIhNtGreXdr6sERXjB1pYaSPJNs",
+      "old_name": "2023-11-14 – Qui est Frank Houbre ? – Article – FR",
+      "new_name": "2023-11-14 - Qui est Frank Houbre - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10mWoYewpH5CZqu2URD0DU91qTOvDWT-PkRNnZ_YdWps",
+      "old_name": "2023-11-14 – Qui est Pierre-Eliott Lallemant, le créateur de Skeall ? – Article – FR",
+      "new_name": "2023-11-14 - Qui est Pierre-Eliott Lallemant, le createur de Skeall - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1heYiYkH-BkYs-meAaKUaEfGw1ZesBjY9pc519xVqUKo",
+      "old_name": "2023-11-14 – Devez-vous installer Rank Math PRO ? – Article – FR",
+      "new_name": "2023-11-14 - Devez-vous installer Rank Math PRO - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1B2zDYYQlqD2HKuxJOaU1RgKkOv30AZpWbGlmIktEnB0",
+      "old_name": "2023-11-21 – Divi Machine, le plugin Divi qu’il vous faut ! – Article – FR",
+      "new_name": "2023-11-21 - Divi Machine, le plugin Divi qu’il vous faut - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iJ0sZLOKUSFs9KHIvcARyx_4GP0pvePw5bhaHlBLkJc",
+      "old_name": "2023-11-22 – WooFunnels Funnel Builder est-il un bon choix ? – Article – FR",
+      "new_name": "2023-11-22 - WooFunnels Funnel Builder est-il un bon choix - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UjYuZwlAxPmnL1oYFEv4nY21sYCLpt_WAX2DvCsrfcI",
+      "old_name": "2023-11-21 – Missinglettr, l’outil qui travaille pour vous ! – Article – FR",
+      "new_name": "2023-11-21 - Missinglettr, l’outil qui travaille pour vous - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1xvgbBx60HS50gF4K-kFGJPZr7l7R9tAnJCstLdR0oDk",
+      "old_name": "2023-11-24 – Presto Player – Le meilleur lecteur vidéo pour WordPress ! – Article – FR",
+      "new_name": "2023-11-24 - Presto Player - Le meilleur lecteur video pour WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1EA0Viy3paZL5TSHX2vmDx8RJfBIzgWNZdzkPFS6coEc",
+      "old_name": "2023-11-24 – Qu’est-ce que WP Social Ninja ? – Article – FR",
+      "new_name": "2023-11-24 - Qu’est-ce que WP Social Ninja - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1czeYoKXuNJzjvsCsJuTAAvtfLntnwEdiXyoJTD1DzjQ",
+      "old_name": "2023-11-24 – Brief “Qu’est-ce que WP Social Ninja ?” Mot-clé cible wp social ninja Extrait... – Article – FR",
+      "new_name": "2023-11-24 - Brief “Qu’est-ce que WP Social Ninja ” Mot-cle cible wp social ninja Extrait... - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_uIIHjHsTuGmnOmVifzqhJLVcsiyVJhtZMAe1GZCPAA",
+      "old_name": "2023-11-24 – Comment créer un site web professionnel en utilisant WordPress ? – Article – FR",
+      "new_name": "2023-11-24 - Comment creer un site web professionnel en utilisant WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VNz5xCpHRzR0BPclDwXWll41U8CK4KhpJp84Wi4Q46Y",
+      "old_name": "2024-10-21 – Qu’est-ce qu’un plugin WordPress et comment fonctionne-t-il ? – Article – FR",
+      "new_name": "2024-10-21 - Qu’est-ce qu’un plugin WordPress et comment fonctionne-t-il - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GRcHh_8vb08mvEpNpZDfoGUtVasamjGFoMTgUleRhvQ",
+      "old_name": "2024-08-01 – FlyingPress, avis 2024 devriez-vous l’adopter plutôt que WP Rocket ? – Article – FR",
+      "new_name": "2024-08-01 - FlyingPress, avis 2024 devriez-vous l’adopter plutot que WP Rocket - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BAZkoPtiZsxQSIXNnSG2biL8inoU_pdTTfJTQjyS0DI",
+      "old_name": "2024-07-08 – Comment structurer un article sur WordPress pour améliorer la lisibilité? – Article – FR",
+      "new_name": "2024-07-08 - Comment structurer un article sur WordPress pour ameliorer la lisibilite - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_jj2fnk-pNmTMQW2vFxp1kR43UKn7jRdEePewaN6ezM",
+      "old_name": "2024-07-09 – Funnelkit avis le meilleur plugin pour créer des tunnels de vente? – Article – FR",
+      "new_name": "2024-07-09 - Funnelkit avis le meilleur plugin pour creer des tunnels de vente - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1r-WFq-A85DKDn-xysXDRmH4UQcJ3SALCWoNHh1jG5eQ",
+      "old_name": "2024-08-02 – Qu'est-ce qu'un thème WordPress Guide complet et utilisation – Article – FR",
+      "new_name": "2024-08-02 - Quest-ce quun theme WordPress Guide complet et utilisation - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jhFJjQDVJnvBwbFoc8v9-shE4rfm3g8_CZrrTauV8XU",
+      "old_name": "2024-09-30 – SureMembers vs Restrict Content Pro comparatif des plugins d'adhésion – Article – FR",
+      "new_name": "2024-09-30 - SureMembers vs Restrict Content Pro comparatif des plugins dadhesion - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JZpIm5yv8bi9dwcWxc4BWC6VXrfNHFZR4H-_fqRMXRg",
+      "old_name": "2024-10-08 – ZipWP vs InstaWP quel est le meilleur pour lancer WordPress rapidement? – Article – FR",
+      "new_name": "2024-10-08 - ZipWP vs InstaWP quel est le meilleur pour lancer WordPress rapidement - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13d7d2Vu-1STagh_-c3hZ4CMncAc5IDUP5RmSEbcNieM",
+      "old_name": "2024-05-04 – Comment créer un article de blog sur WordPress? – Article – FR",
+      "new_name": "2024-05-04 - Comment creer un article de blog sur WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1E7UvyZ3Bha2FyFRMTJNtiibfQo5qikOWfCerpcXxlck",
+      "old_name": "2024-11-20 – Un slug dans WordPress c'est quoi – Article – FR",
+      "new_name": "2024-11-20 - Un slug dans WordPress cest quoi - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1qA4KpyzPRNc-njR_tapM9YpPfU1m5uzF1IbUAhZXrkk",
+      "old_name": "2024-11-25 – WordPress Playground c'est quoi et comment l'utiliser – Article – FR",
+      "new_name": "2024-11-25 - WordPress Playground cest quoi et comment lutiliser - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_6AlLP1p8Ztxi2XIgVD3wN0AdS-m9FU6f_7T36b0QRw",
+      "old_name": "2024-12-06 – Qu’est-ce que la création de site WordPress sur mesure et ses avantages ? – Article – FR",
+      "new_name": "2024-12-06 - Qu’est-ce que la creation de site WordPress sur mesure et ses avantages - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1BTsTGhJQWddxASd006fhmhbc3epQxnLMvPyOAQ1JUR8",
+      "old_name": "2025-01-09 – Pourquoi Thot SEO est-il l’outil d’optimisation sémantique n°1 ? – Article – FR",
+      "new_name": "2025-01-09 - Pourquoi Thot SEO est-il l’outil d’optimisation semantique n°1 - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1rNrNmKdUaWMTbMHP31mmR6hUTGzXgm9YIoeJRoulNo0",
+      "old_name": "2025-01-11 – WP Umbrella Pourquoi les Agences WordPress l'adorent ? – Article – FR",
+      "new_name": "2025-01-11 - WP Umbrella Pourquoi les Agences WordPress ladorent - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vRiux3InVmkMiww6ePcyu7wZ-XIjKLLpMk7UGClTols",
+      "old_name": "2025-01-16 – LatePoint Plugin de réservation WordPress intuitif et rapide ! – Article – FR",
+      "new_name": "2025-01-16 - LatePoint Plugin de reservation WordPress intuitif et rapide - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1I9Bm9nKGMFaHRAj0ie6u-TWl5974_s-92dLsbaByuxM",
+      "old_name": "2024-11-11 – SureForms Créateur de Formulaires WordPress Alimenté par l'IA – Article – FR",
+      "new_name": "2024-11-11 - SureForms Createur de Formulaires WordPress Alimente par lIA - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1C8CLgSgm9wQ7H870wc6bCy0V6vlSe1yT59PgJAX3yyg",
+      "old_name": "2024-06-07 – Launchflows vs cartflows lequel choisir pour votre funnel WordPress? – Article – FR",
+      "new_name": "2024-06-07 - Launchflows vs cartflows lequel choisir pour votre funnel WordPress - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZRnFLgSQg5B506ugBvZsrn5BtHDpkqdNCogve7v8LNI",
+      "old_name": "2024-09-21 – Suretriggers vs Zapier trouvez la meilleure solution d'automation – Article – FR",
+      "new_name": "2024-09-21 - Suretriggers vs Zapier trouvez la meilleure solution dautomation - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ZuE_IpcYjpsKkBGb_83q4sYRJb2hcnJNuZ2xLMhtkjA",
+      "old_name": "2024-10-20 – FluentBooking vs Amelia Booking pour WordPress quel plugin choisir? – Article – FR",
+      "new_name": "2024-10-20 - FluentBooking vs Amelia Booking pour WordPress quel plugin choisir - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CiZxUDrJA4Tfn92-Fu1O7QefYfOMfBaYSxZG4WY7RHI",
+      "old_name": "2023-10-16 – Analyse approfondie de thruuu L'outil de scraping et d'analyse de la SERP – Article – FR",
+      "new_name": "2023-10-16 - Analyse approfondie de thruuu Loutil de scraping et danalyse de la SERP - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1k6Xr6nCvPgbjkywWu9fzk9VYws6Ur0FtF5CwW0y2HGM",
+      "old_name": "2023-11-14 – Nouveautés 2021 chez EasyHoster sécurité, backups, performances, SEO et plus ! – Article – FR",
+      "new_name": "2023-11-14 - Nouveautes 2021 chez EasyHoster securite, backups, performances, SEO et plus - Article - FR",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pkteMCsQNzIQ7RpYzCuGNRyOqwBFILDiG93yMrhuLO0",
+      "old_name": "2025-01-11 – Enregistrer les pièces jointes d'un e-mail dans Google Sheets et Google Drive – Ressource",
+      "new_name": "2025-01-11 - Enregistrer les pieces jointes dun e-mail dans Google Sheets et Google Drive",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13EoIznYMNp53L2_F4PRvcvrFNx68yf7e",
+      "old_name": "2022-05-04 – ZqZcgp4wR4Sp62mhPldh+4mQWIahaHc3DCKB+zircz8= – Ressource",
+      "new_name": "2022-05-04 - ZqZcgp4wR4Sp62mhPldh4mQWIahaHc3DCKBzircz8",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OOjGWTmlWBbyVyjYFI8nBlDvEYdo4XVWPFdM3M4PZuA",
+      "old_name": "2025-05-09 – Etape 2 Création collections + Menu Haut – Ressource",
+      "new_name": "2025-05-09 - Etape 2 Creation collections Menu Haut",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KrKhVZzqn4kwjsqlU2s9-Uw4nLuuh2vAYJNd3RgrmfI",
+      "old_name": "2025-05-15 – Préparation de l'automatisation Fiches Produits KURA – Ressource",
+      "new_name": "2025-05-15 - Preparation de lautomatisation Fiches Produits KURA",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1CV6-A-_mLoTOUENpKm0zdm9oG-OHhDK4EkezpfBU5bY",
+      "old_name": "2025-07-18 – [ORIGINAL] Articles de blog – Ressource",
+      "new_name": "2025-07-18 - ORIGINAL Articles de blog",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1yCg-sGj2P4hMdIHyfNJAAfZuZy8FOPYtJSuh5UpZeJM",
+      "old_name": "2025-07-18 – [ORIGINAL] FEUILLE CALCUL TRADUCTION – Ressource",
+      "new_name": "2025-07-18 - ORIGINAL FEUILLE CALCUL TRADUCTION",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QDvADQ0ldMZ67laWyRF4JHlouoz0AOpDpmqgt6WHclY",
+      "old_name": "2023-07-27 – ORIGINAL | A2 Objectifs de la refonte – Ressource",
+      "new_name": "2023-07-27 - ORIGINAL A2 Objectifs de la refonte",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MKIva2lL5BcL0AIkJE1Q71koOrKQYrMXtD8jHc6igtQ",
+      "old_name": "2023-07-27 – ORIGINAL | A3 Audit du site existant – Ressource",
+      "new_name": "2023-07-27 - ORIGINAL A3 Audit du site existant",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1YazDrzyxcg1vUheK972fPdOjFQqgSlzDSxsbK8_Jvq4",
+      "old_name": "2023-07-27 – ORIGINAL | A4 Déterminer la cible de la refonte – Ressource",
+      "new_name": "2023-07-27 - ORIGINAL A4 Determiner la cible de la refonte",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1oEnP_m0azLoGkr9jszC3lS8yDY87JXmCd7wyCBXWjL4",
+      "old_name": "2023-07-27 – ORIGINAL | A5 Prioriser les objectifs – Ressource",
+      "new_name": "2023-07-27 - ORIGINAL A5 Prioriser les objectifs",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JIZfpapbiKropfk2cNSkTZXmDF1e7nWumS9_BKGIZgg",
+      "old_name": "2023-07-28 – ORIGINAL | Fiche suivi Michaël K. – Ressource",
+      "new_name": "2023-07-28 - ORIGINAL Fiche suivi Michael K.",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1bhmeb2uawTE4JL-buictWJPvfPu5VIVlDEWB3RE-VOc",
+      "old_name": "2023-07-31 – ORIGINAL | Pricing System – Ressource",
+      "new_name": "2023-07-31 - ORIGINAL Pricing System",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1PaC5VuyX14Y0iQYWExtwclxdW6KIMOBeQ1zT-yMtTkw",
+      "old_name": "2023-11-24 – Document type \"Avis sur X\" – Ressource",
+      "new_name": "2023-11-24 - Document type Avis sur X",
+      "result": "RENAMED"
+    },
+    {
+      "id": "12tWrBkOE5vmY4EpCRRSXsrRZBeylKoOGdAOVx0rILs8",
+      "old_name": "2024-01-06 – ORIGINAL | Suivi KPI et feedbacks CC – Ressource",
+      "new_name": "2024-01-06 - ORIGINAL Suivi KPI et feedbacks CC",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1iPjpcMwtH-d5vzNuWkK7fp7UDdKpwwYSKZ4VVX1AN1A",
+      "old_name": "2024-01-06 – ORIGINAL | Document type X vs Y – Ressource",
+      "new_name": "2024-01-06 - ORIGINAL Document type X vs Y",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1_pvd_gDhr9AWOIKWm1GshwDQi_Dw56c6TlkRpwNmXgQ",
+      "old_name": "2024-02-02 – [ORIGINAL] Lettre challenge – Ressource",
+      "new_name": "2024-02-02 - ORIGINAL Lettre challenge",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ijKRkQPFrfR4D2tOfewJ1VlQaH7iHkvRua6uQslDaaA",
+      "old_name": "2024-03-18 – [ORIGINAL] Référentiel de Recherche de Mots-clés Mayboutik – Ressource",
+      "new_name": "2024-03-18 - ORIGINAL Referentiel de Recherche de Mots-cles Mayboutik",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1uJaZ7f9P-HuHSFCSHQheNuYXWMgVlgTg",
+      "old_name": "2024-03-21 – [ORIGINAL] Rédigez vos règles serveur – Ressource.docx",
+      "new_name": "2024-03-21 - ORIGINAL Redigez vos regles serveur.docx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1hopmmxBNEQVD_OKL1FwwogSUI3ghV11T",
+      "old_name": "2024-03-21 – [ORIGINAL] Rédigez vos guides Discord – Ressource.docx",
+      "new_name": "2024-03-21 - ORIGINAL Redigez vos guides Discord.docx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1S0bNbZlX43g2IwOs9SpLpq2--eeZa88Vrcy0pa72gc0",
+      "old_name": "2024-03-28 – [ORIGINAL] 21 Types de Bullet Points – Ressource",
+      "new_name": "2024-03-28 - ORIGINAL 21 Types de Bullet Points",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1OLNfLlQtR0V5Kd0ALzXKX9-sIg5hB8661zEWU7x1kY4",
+      "old_name": "2024-04-23 – [ORIGINAL] Générateur de plan de redirections – Ressource",
+      "new_name": "2024-04-23 - ORIGINAL Generateur de plan de redirections",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18otMVx3DAQYbETWNBXSjYjHKOSv39iT5",
+      "old_name": "2024-05-02 – [ORIGINAL] Liste exemple – Ressource.xlsx",
+      "new_name": "2024-05-02 - ORIGINAL Liste exemple.xlsx",
+      "result": "RENAMED"
+    },
+    {
+      "id": "19OlVefqeYUWqWRAt73j3AIw7ZOEhKYCzdZhKdkxcCws",
+      "old_name": "2024-05-04 – [ORIGINAL] URL LEROYNICOLAS – Ressource",
+      "new_name": "2024-05-04 - ORIGINAL URL LEROYNICOLAS",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1K8FABVvm19Dm-BeCKxjmxhMfQMlFUdZEQRyQAkmO1ZA",
+      "old_name": "2025-04-12 – [ORIGINAL] Suivi KPI et feedbacks CC – Ressource",
+      "new_name": "2025-04-12 - ORIGINAL Suivi KPI et feedbacks CC",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JhT_kKa1cmkU5ImHyicRYx_XXKHLFS4KeusuRQQvsMw",
+      "old_name": "2025-04-13 – [ORIGINAL] Gestion prospect – Ressource",
+      "new_name": "2025-04-13 - ORIGINAL Gestion prospect",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1NydPifP3u0Vn15gzEs-VvcS2AejxfFLs61ahG5G8i_s",
+      "old_name": "2025-04-13 – [ORIGINAL] MCCF APPORT D'AFFAIRES – Ressource",
+      "new_name": "2025-04-13 - ORIGINAL MCCF APPORT DAFFAIRES",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Ogc9D5qgHAJuUq6SUzOyswgIMun6BrjABG_NVru5JNs",
+      "old_name": "2025-04-13 – [ORIGINAL] MCCF Suivi Marketing – Ressource",
+      "new_name": "2025-04-13 - ORIGINAL MCCF Suivi Marketing",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vuh1sSCAw6pxNUND3ZQpXKAmOc3mE5LyEAsQQ3Ka0vk",
+      "old_name": "2025-04-14 – [La Référence WP] Guide du propriétaire de site – Ressource",
+      "new_name": "2025-04-14 - La Reference WP Guide du proprietaire de site",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JN5jRCzRkRQ7qqO_WwD0M1c7hAEeO3ISM9e-Ej2cT1w",
+      "old_name": "2023-07-18 – ORIGINAL | Carnet de Bord – Ressource",
+      "new_name": "2023-07-18 - ORIGINAL Carnet de Bord",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1k2hRwEi9XOaB8ZX9ycwhlpxqp1k5LhUHjUrNslNpvys",
+      "old_name": "2024-03-05 – KW | FLUENTBOOKING – Ressource",
+      "new_name": "2024-03-05 - KW FLUENTBOOKING",
+      "result": "RENAMED"
+    },
+    {
+      "id": "10KJ5aroY7VIsbWSRyBLHjFrfFhS1onGbcaqQh51Gq8Q",
+      "old_name": "2024-03-18 – [ORIGINAL] Référentiel de Recherche de Mots-clés Mayboutik – Ressource",
+      "new_name": "2024-03-18 - ORIGINAL Referentiel de Recherche de Mots-cles Mayboutik",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Nhwz9O9LRe_xtZ1ZNm0gK8wzVPfeXQqelEvEANYojNA",
+      "old_name": "2024-05-19 – [ORIGINAL] Recherche de mots-clés – Ressource",
+      "new_name": "2024-05-19 - ORIGINAL Recherche de mots-cles",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jK8eYEzx2kUnpmdvM0TooZmAQp8wFCiDxZqan4jn0Z4",
+      "old_name": "2024-10-03 – [ORIGINAL]Mini-pack 3 scripts de podcast à personnaliser GREEN SLOW AGENCY – Ressource",
+      "new_name": "2024-10-03 - ORIGINALMini-pack 3 scripts de podcast a personnaliser GREEN SLOW AGENCY",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tfm_RSR5qMwwNtEnUsaZ6mExRFe8f-rRrDJ27Fg8rGs",
+      "old_name": "2024-10-14 – [ORIGINAL] Exemples de stratégies de mots-clés pour différents métiers – Ressource",
+      "new_name": "2024-10-14 - ORIGINAL Exemples de strategies de mots-cles pour differents metiers",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1nCL5FuwHM3bLKZk-zExWodCG-HXCvW5zeowngToweIE",
+      "old_name": "2024-10-14 – [ORIGINAL] Structurer une page d’accueil – Ressource",
+      "new_name": "2024-10-14 - ORIGINAL Structurer une page d’accueil",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1ILXPF-X38zV474vReKGNUUw7mFMAXEnG5jljDc7FFTQ",
+      "old_name": "2024-10-14 – [ORIGINAL] Structurer une page service – Ressource",
+      "new_name": "2024-10-14 - ORIGINAL Structurer une page service",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1P-98T5PiQuPufo-cfpUfwA27WyK0y7Kh-EraUpxodxo",
+      "old_name": "2024-10-14 – [ORIGINAL] Structurer une page contact – Ressource",
+      "new_name": "2024-10-14 - ORIGINAL Structurer une page contact",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1399CYDICoHdR-8WkXFG-FyVH6xIeaIqx1G_bP8hNW_M",
+      "old_name": "2024-10-15 – [ORIGINAL] Rédaction article satellite – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Redaction article satellite",
+      "result": "RENAMED"
+    },
+    {
+      "id": "195r48P1_24oTzlz3XZIEXvu_RyXrll9AJKrp8nubwVw",
+      "old_name": "2024-10-15 – [ORIGINAL] Idées pour des articles invités – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Idees pour des articles invites",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1GFNh-4FcSV8pk0uCqpnz7bSxNpkx6-iBAdt6PcuTUbM",
+      "old_name": "2024-10-15 – [ORIGINAL] Script Demande Article Invité – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Script Demande Article Invite",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1m2-ZmeQTgGPX4Otebo6PTH49ioAEIk5ELw7Wf6K3lBo",
+      "old_name": "2024-10-15 – [ORIGINAL] Exemple de brief pour un article sponsorisé – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Exemple de brief pour un article sponsorise",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18sOAGdXuFYXWHHNrZmTVRgESjeNvCaHupU9cNx5JP6Q",
+      "old_name": "2024-10-15 – [ORIGINAL] Suivi de positions sur Google – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Suivi de positions sur Google",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1LPvMlJ-hlYnVDJ5lJbp46mM3LJcPdcgcN6TbIoKG30w",
+      "old_name": "2024-10-23 – [ORIGINAL] PAGE REDACTION Page de vente – Ressource",
+      "new_name": "2024-10-23 - ORIGINAL PAGE REDACTION Page de vente",
+      "result": "RENAMED"
+    },
+    {
+      "id": "18353iYezdJPmWUYserLK7HTXkOm4IH8WOjiLBcQofew",
+      "old_name": "2024-10-23 – [ORIGINAL] GUIDE REDACTION Page de vente – Ressource",
+      "new_name": "2024-10-23 - ORIGINAL GUIDE REDACTION Page de vente",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1kDcb5AJI8EzC90fy4RWXhuaKhZ9LmrCQqFg_heIYgLY",
+      "old_name": "2025-01-27 – [ORIGINAL] AI-Powered Outbound Suggestion Guide – Ressource",
+      "new_name": "2025-01-27 - ORIGINAL AI-Powered Outbound Suggestion Guide",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1JKlrlH4W4H8G9gIOomR1jOv33g4CjlPoc8W0nQpjeAs",
+      "old_name": "2025-01-29 – [ORIGINAL] Ideal Customer Profile (ICP) for Rapyd Cloud – Ressource",
+      "new_name": "2025-01-29 - ORIGINAL Ideal Customer Profile (ICP) for Rapyd Cloud",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1WHaSG5ttU6qc8bMt1EkzT5q2Cx2KgUcKNo6hzClRwEM",
+      "old_name": "2025-04-15 – Copie de Suivi KPI et feedbacks CC – Ressource",
+      "new_name": "2025-04-15 - Copie de Suivi KPI et feedbacks CC",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1pnW6nCurnSfm9zA-ebMGYuw80zqE1Xdk60UHSjhHCN4",
+      "old_name": "2025-03-12 – [ORIGINAL] KW Position tracker – Ressource",
+      "new_name": "2025-03-12 - ORIGINAL KW Position tracker",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jl7LVK3Sjm_U6Vbqe5LicQmToxG8SvjU3l1X2vVqh4I",
+      "old_name": "2025-09-02 – Plan de Taggage >>CRÉER UNE COPIE POUR ÉDITER<< – Ressource",
+      "new_name": "2025-09-02 - Plan de Taggage CREER UNE COPIE POUR EDITER",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1MVbE9WKZe0bsxSZouhRsHG0SCJHGgN04Bf1zuBQgb90",
+      "old_name": "2025-09-02 – Leçon 7 Module 1 Utiliser l'outil de prévision du trafic – Ressource",
+      "new_name": "2025-09-02 - Lecon 7 Module 1 Utiliser loutil de prevision du trafic",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1mUEEoCTpabzitkTdh34eW8nAESm7nSp7iivlzf8zUFY",
+      "old_name": "2025-09-04 – Générateur de structure Hn >> Créer une copie pour l'utiliser << – Ressource",
+      "new_name": "2025-09-04 - Generateur de structure Hn Creer une copie pour lutiliser",
+      "result": "RENAMED"
+    },
+    {
+      "id": "111VgGnr3gEMoR8fWKTaK_gvfsRBlikaJjDJJ8b91Reg",
+      "old_name": "2025-04-14 – [ORIGINAL] CC DASHBOARD + ANNÉE + BUSINESS CC5* – Ressource",
+      "new_name": "2025-04-14 - ORIGINAL CC DASHBOARD ANNEE BUSINESS CC5",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VxWTjKl3mtPrbOOhYVgTIT7-VFKsDxXstfTt4gkdLMU",
+      "old_name": "2024-10-15 – [ORIGINAL] Challenge écrire un article de blog en 1 heure – Ressource",
+      "new_name": "2024-10-15 - ORIGINAL Challenge ecrire un article de blog en 1 heure",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vElEAplv7OjXmnn9QakBb8CaYYVp3xdr",
+      "old_name": "124. Rapyd Cloud promo code Save up to 25% on your",
+      "new_name": "124.-Rapyd-Cloud-promo-code-Save-up-to-25-on-your",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1jYXnEo6IlcVfvsT6_BDotZ6RqwxymjKV",
+      "old_name": "123. FluentCRM promo code 20% schoolsWP20 WordPress",
+      "new_name": "123.-FluentCRM-promo-code-20-schoolsWP20-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1tMy4acB73sVyD7aCsvkjiq2S_hp0ZIfx",
+      "old_name": "118. Rapyd Cloud High-performance WordPress hosting!",
+      "new_name": "118.-Rapyd-Cloud-High-performance-WordPress-hosting",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1UilQsnnavdN_aMAE6RjKgHXzMSKzBjrA",
+      "old_name": "111. Why is Thot SEO the #1 semantic optimization tool",
+      "new_name": "111.-Why-is-Thot-SEO-the-1-semantic-optimization-tool",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Dm08I8RI-Lz7dbWMTgDcQgS74uEyQGBA",
+      "old_name": "124. Rapyd Cloud Promo Code Sparen Sie bis zu -25 % auf",
+      "new_name": "124.-Rapyd-Cloud-Promo-Code-Sparen-Sie-bis-zu-25-auf",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1t64jqUUHhhKpf4ET2edDgNn1oDAAQLEh",
+      "old_name": "123. FluentCRM Promo Code 20% schoolsWP20 WordPress",
+      "new_name": "123.-FluentCRM-Promo-Code-20-schoolsWP20-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1vhWNRZz_wHCyrhSO_SrEh6pTeJEHgmSp",
+      "old_name": "92. Qu est-ce qu un thème WordPress ? Guide complet et",
+      "new_name": "92.-Qu-est-ce-qu-un-theme-WordPress-Guide-complet-et",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1gaKqhMDHV8h2NaCcaIggGDrb45zhgkoO",
+      "old_name": "124. Code promo Rapyd Cloud Économisez jusqu’à -25 % sur",
+      "new_name": "124.-Code-promo-Rapyd-Cloud-Economisez-jusqu’a-25-sur",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sKJoeZBkao0D7gL6ydKyacqJWH2tMVgs",
+      "old_name": "145. MailerPress WordPress L'emailing intégré et illimité",
+      "new_name": "145.-MailerPress-WordPress-Lemailing-integre-et-illimite",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1QXjccvKhPsyxd9h_BFp2z8qJ6acQaNVy",
+      "old_name": "151. Avis ChatSEO +35% trafic en 3 mois Test GSC IA",
+      "new_name": "151.-Avis-ChatSEO-35-trafic-en-3-mois-Test-GSC-IA",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1sVDRIRjqOxUDLYTG_J8bQKPilNIhiG4c",
+      "old_name": "148. SureForms WordPress le choix du stockage 100% local",
+      "new_name": "148.-SureForms-WordPress-le-choix-du-stockage-100-local",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1opR0RgDoSa9zGzx9mNt4bWLb4RTU3Xv0",
+      "old_name": "137. Est-il difficile d'apprendre à utiliser WordPress",
+      "new_name": "137.-Est-il-difficile-dapprendre-a-utiliser-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13FnDcx3ALr9MjyzwA-hXRhrfQaCqZuGA",
+      "old_name": "123. Code promo FluentCRM 20% schoolsWP20 WordPress",
+      "new_name": "123.-Code-promo-FluentCRM-20-schoolsWP20-WordPress",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1imiv3szR25CnTZZpBkSUlUsz9Ct_w-Xa",
+      "old_name": "118. Rapyd Cloud L'hébergement WordPress ultra-performant !",
+      "new_name": "118.-Rapyd-Cloud-Lhebergement-WordPress-ultra-performant",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1VPVm5MkaCVHVwQsw0mYm1cINRLjGgR0D",
+      "old_name": "113. WP Umbrella - Pourquoi les Agences l'adorent",
+      "new_name": "113.-WP-Umbrella-Pourquoi-les-Agences-ladorent",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1A74cj3jxsbszJySepHQ6Jpvd3muH8N-p",
+      "old_name": "107. WordPress Playground - c'est quoi et comment l'utiliser",
+      "new_name": "107.-WordPress-Playground-cest-quoi-et-comment-lutiliser",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1KhBLvpHqwU4yW3KxIHJMDn8NPKYDQBLC",
+      "old_name": "39. Missinglettr, l’outil qui travaille pour vous !",
+      "new_name": "39.-Missinglettr,-l’outil-qui-travaille-pour-vous",
+      "result": "RENAMED"
+    },
+    {
+      "id": "1Kv1wJa6mx7CquiRyqvjVFaPBVyPmMmfK",
+      "old_name": "36. Divi Machine, le plugin Divi qu'il vous faut !",
+      "new_name": "36.-Divi-Machine,-le-plugin-Divi-quil-vous-faut",
+      "result": "RENAMED"
+    },
+    {
+      "id": "13pEtxBSU3Jf6PvZYdenSN1lxD5JBjrSD",
+      "old_name": "Templates Pod'Pack",
+      "new_name": "Templates-PodPack",
+      "result": "RENAMED"
+    }
+  ]
+}

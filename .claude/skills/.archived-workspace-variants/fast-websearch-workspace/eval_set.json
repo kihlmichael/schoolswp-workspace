@@ -1,0 +1,82 @@
+[
+  {
+    "query": "c'est quoi le prix de FluentCRM pro en 2026 ?",
+    "should_trigger": true
+  },
+  {
+    "query": "TutorLMS a eu des problèmes de compatibilité avec WP 6.7 récemment ?",
+    "should_trigger": true
+  },
+  {
+    "query": "y'a un comparatif récent LearnDash vs LifterLMS ? lequel est recommandé pour une petite école en ligne",
+    "should_trigger": true
+  },
+  {
+    "query": "rank math a sorti un truc pour le GEO / AEO récemment ?",
+    "should_trigger": true
+  },
+  {
+    "query": "est-ce que elementor a toujours une version gratuite en 2026 ou ils ont tout mis en pro ?",
+    "should_trigger": true
+  },
+  {
+    "query": "quel est le prix d'une licence LearnDash pour 10 sites cette année",
+    "should_trigger": true
+  },
+  {
+    "query": "la dernière mise à jour de Divi, c'était quand ? y'a eu des changements importants ?",
+    "should_trigger": true
+  },
+  {
+    "query": "alternatives à WooCommerce pour vendre des formations WordPress en 2026 ?",
+    "should_trigger": true
+  },
+  {
+    "query": "RankMath free suffit pour du seo basique ou faut passer pro obligatoirement",
+    "should_trigger": true
+  },
+  {
+    "query": "FluentCRM 3.0 c'est sorti ou c'est encore en beta ?",
+    "should_trigger": true
+  },
+  {
+    "query": "compare les fonctionnalités de FluentCRM et MailPoet à partir de ce que tu sais déjà, j'ai pas besoin de données fraîches",
+    "should_trigger": true
+  },
+  {
+    "query": "comment je configure le maillage interne dans RankMath ? explique-moi les étapes",
+    "should_trigger": false
+  },
+  {
+    "query": "écris une intro engageante pour un article comparatif TutorLMS vs LearnDash",
+    "should_trigger": false
+  },
+  {
+    "query": "refactorise ce code Python qui appelle l'API FluentCRM — je veux que tu améliores la gestion des erreurs",
+    "should_trigger": false
+  },
+  {
+    "query": "c'est quoi les 6 couches stratégiques de schoolsWP ?",
+    "should_trigger": false
+  },
+  {
+    "query": "crée un workflow n8n qui envoie un tag FluentCRM quand un apprenant termine un cours TutorLMS",
+    "should_trigger": false
+  },
+  {
+    "query": "génère un plan d'article SEO complet sur 'meilleur lms wordpress 2025' avec H2 et H3",
+    "should_trigger": false
+  },
+  {
+    "query": "lis le fichier content/articles/lms/v3.md et dis-moi ce qui manque pour la publication",
+    "should_trigger": false
+  },
+  {
+    "query": "écris le meta title et meta description pour une page de comparaison TutorLMS vs LearnDash, max 160 caractères",
+    "should_trigger": false
+  },
+  {
+    "query": "c'est quoi les mots interdits dans le guide de style schoolsWP ?",
+    "should_trigger": false
+  }
+]

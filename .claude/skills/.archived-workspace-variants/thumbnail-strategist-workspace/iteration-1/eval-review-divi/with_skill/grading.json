@@ -1,0 +1,40 @@
+{
+  "eval_id": 2,
+  "run_id": "eval-review-divi-with_skill",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "has_diagnostic_table",
+      "passed": true,
+      "evidence": "Section I contains a 3-row markdown table: C1 7/10, C2 8/10, C3 5/10 with Diagnostic and Potentiel columns"
+    },
+    {
+      "text": "has_3_concept_optimizations",
+      "passed": true,
+      "evidence": "Section II details Concept 2 (La Note Franche), Concept 1 (Expression Mitigée + Logo Divi), Concept 3 (corrigé) — all 3"
+    },
+    {
+      "text": "has_all_7_subfields",
+      "passed": true,
+      "evidence": "All 3 concepts have: Composition Précise, Texte Miniature, Direction Michaël, Hiérarchie & Focus, Palette & Contraste, Éléments à Supprimer, Variante A/B Test"
+    },
+    {
+      "text": "has_final_recommendation",
+      "passed": true,
+      "evidence": "Section III: 'LE MEILLEUR CONCEPT : Concept 2 — La Note Franche. Le chiffre 6/10 est une ancre visuelle...' — 2 sentences"
+    },
+    {
+      "text": "has_title_combo",
+      "passed": true,
+      "evidence": "Texte Miniature Final: 'DIVI : 6/10' / Titre YouTube Associé: 'Mon avis honnête sur Divi après 6 mois d'utilisation...'"
+    },
+    {
+      "text": "has_strategic_angle",
+      "passed": true,
+      "evidence": "ANGLE STRATÉGIQUE present: 'Sur un feed saturé de thumbnails promotionnels ou de clickbait catastrophiste...'"
+    }
+  ],
+  "pass_count": 6,
+  "total_count": 6,
+  "pass_rate": 1.0
+}

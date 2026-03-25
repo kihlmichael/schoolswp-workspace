@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)",
+      "passed": true,
+      "evidence": "Tableau 'Points tranchÃ©s â€” rÃ©sumÃ© des dÃ©cisions' couvre : newsletter vs email â†’ newsletter ; LinkedIn â†’ linkedin minuscule ; YouTube medium â†’ video ; ClickWhale source â†’ clickwhale, medium â†’ lien-court ; affiliÃ©s â†’ affiliate ; tirets vs underscores â†’ tirets ; UTM liens internes â†’ Non ; utm_term â†’ Non."
+    },
+    {
+      "text": "Inclut une section ou liste 'Points tranchÃ©s' explicite",
+      "passed": true,
+      "evidence": "Section '## Points tranchÃ©s â€” rÃ©sumÃ© des dÃ©cisions' prÃ©sente en fin de document avec un tableau Ã  deux colonnes 'Question / DÃ©cision'."
+    },
+    {
+      "text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)",
+      "passed": true,
+      "evidence": "Section 'Liens internes dans les articles' : 'Non. Ne jamais mettre d'UTM sur les liens internes.' Avec 3 raisons dont : 'Les UTM rÃ©initialisent la session dans GA4 â€” un visiteur organique devient newsletter si tu cliques sur un lien interne taguÃ©' et 'Ã‡a fausse l'attribution source/medium sur toutes les pages en aval'."
+    },
+    {
+      "text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM",
+      "passed": true,
+      "evidence": "Tableau utm_source : 'Newsletter / emails | newsletter | Toujours newsletter, jamais email'. Tableau rÃ©capitulatif : 'Newsletter | newsletter | email | nom-campagne'. Points tranchÃ©s : 'newsletter ou email pour source ? â†’ newsletter'."
+    },
+    {
+      "text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')",
+      "passed": true,
+      "evidence": "Tableau utm_source : 'LinkedIn | linkedin | Minuscule, jamais LinkedIn'. Points tranchÃ©s : 'LinkedIn ou linkedin ? â†’ linkedin (minuscule)'."
+    },
+    {
+      "text": "Recommande tirets (pas underscores) avec justification cohÃ©rence",
+      "passed": true,
+      "evidence": "Section utm_campaign : 'Format : tirets uniquement â€” jamais d'underscores'. Points tranchÃ©s : 'Tirets ou underscores dans campaign ? â†’ tirets - uniquement'. Exemples corrects vs incorrects fournis : 'lms-wordpress' vs 'lms_wordpress'."
+    },
+    {
+      "text": "Explique utm_content et utm_term avec cas d'usage concrets",
+      "passed": true,
+      "evidence": "utm_content : 'Utiliser quand plusieurs liens pointent vers la mÃªme destination dans le mÃªme canal.' Cas d'usage : 'Deux boutons CTA dans un mÃªme email (ex: cta-haut vs cta-bas)', 'Deux visuels diffÃ©rents dans une campagne LinkedIn'. Format et exemples : bouton-hero, lien-bio, encart-article. utm_term : 'RÃ©servÃ© aux campagnes SEA / publicitÃ©s payantes au CPC' avec note 'Sur schoolsWP : pas de SEA actuellement â†’ ne pas utiliser utm_term'."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  }
+}
