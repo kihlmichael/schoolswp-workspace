@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: gen.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/gen.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: gsc_analysis.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/gsc_analysis.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
