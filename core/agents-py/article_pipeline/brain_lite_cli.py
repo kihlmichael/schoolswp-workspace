@@ -42,13 +42,7 @@ class BrainLiteAgent(BaseContentAgent):
         if pilier:
             user_msg += f"\nPilier : {pilier}"
 
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=500,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_msg}],
-        )
-        raw = response.content[0].text
+        raw = await self.call_llm(user_msg, max_tokens=500)
 
         try:
             return _json.loads(raw)
