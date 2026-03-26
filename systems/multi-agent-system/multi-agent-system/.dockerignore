@@ -1,0 +1,45 @@
+# Secrets — jamais dans l'image
+.env
+.env.local
+.env.*.local
+
+# Base de données locale (montée en volume)
+data/memory.db
+data/*.db
+
+# Cache Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Tests / coverage
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Docs & scripts (not needed in image)
+docs/
+scripts/
+workflows/
+*.md

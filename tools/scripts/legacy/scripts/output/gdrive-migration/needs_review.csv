@@ -1,0 +1,3 @@
+id,name,current_path,target_path,action,status,notes,mime_type,size
+1YTHvexGrsZgsTPTlnNfPuIimCbnyn7Nw,00_START-HERE,00_START-HERE,,REDISTRIBUTE,NEEDS_REVIEW,Contenu a redistribuer manuellement,application/vnd.google-apps.folder,
+1PgTi3-Mw2200rd764lCc3oAquKiMRIzZ,05_CLIENTS,05_CLIENTS,,REVIEW,NEEDS_REVIEW,"Evaluer : clients actifs -> projet, sinon archive",application/vnd.google-apps.folder,

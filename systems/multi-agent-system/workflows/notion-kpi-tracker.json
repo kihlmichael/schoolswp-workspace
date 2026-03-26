@@ -1,0 +1,57 @@
+{
+  "name": "[Prod] Webhook > Notion: KPI Tracker",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "notion-kpi-tracker",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "id": "wh-001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "notion-kpi-tracker"
+    },
+    {
+      "parameters": {
+        "jsCode": "const secret = $input.first().headers['x-webhook-secret'];\nif (secret !== $vars.WEBHOOK_SECRET) {\n  throw new Error('Unauthorized');\n}\nreturn $input.all();"
+      },
+      "id": "code-001",
+      "name": "Validate Secret",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "={{$vars.NOTION_ARTICLES_DB_ID}}",
+        "title": "={{$json.body.title}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "Keyword", "type": "richText", "textContent": "={{$json.body.keyword}}" },
+            { "key": "Publish Score", "type": "number", "numberValue": "={{$json.body.publish_score}}" },
+            { "key": "SEO Score", "type": "number", "numberValue": "={{$json.body.seo_score}}" },
+            { "key": "LLM Score", "type": "number", "numberValue": "={{$json.body.llm_score}}" },
+            { "key": "Status", "type": "select", "selectValue": "={{$json.body.status}}" },
+            { "key": "Doc URL", "type": "url", "urlValue": "={{$json.body.doc_url}}" }
+          ]
+        }
+      },
+      "id": "notion-001",
+      "name": "Create Article KPI",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Validate Secret", "type": "main", "index": 0 }]] },
+    "Validate Secret": { "main": [[{ "node": "Create Article KPI", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

@@ -1,0 +1,88 @@
+{
+  "applied_at": "2026-02-15T17:50:20.478601",
+  "lang": "DE",
+  "target_folder": "1ZvvmtgKZgb4QJ5ydKJ7Q3_lFCXRP_D1G",
+  "total": 13,
+  "success": 13,
+  "errors": 0,
+  "operations": [
+    {
+      "id": "1f4PZDoLmO6tQvZTxuhcqaCq2D9TzxUxACg-M8ChWWQk",
+      "name": "2024-10-22 - SureMembers vs - Article - DE",
+      "timestamp": "2026-02-15T17:50:10.426507",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1W895_wdHcHu0Cs2SwOPrZGDIyQQUBxyJNwpEueQXT74",
+      "name": "2024-12-20 - WPBoutik erfindet den Online-Handel mit WordPress neu - Article - DE",
+      "timestamp": "2026-02-15T17:50:11.222360",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "15T0YjfNOltgZqOxZtqav-4FHaFI4ab4Gl66ZFq0ikbI",
+      "name": "2024-12-16 - WordPress Playground Was ist das und wie verwende ich es - Article - DE",
+      "timestamp": "2026-02-15T17:50:11.918316",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1ZKpUp1HmGdvQOu5hKoufwnrR08iy0a_avcIKjjYIfu4",
+      "name": "2024-12-10 - Was ein WordPress-Plugin ist und wie man es effektiv nutzt - Article - DE",
+      "timestamp": "2026-02-15T17:50:12.708793",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1LG4pUfeQYtOVho2yZRFy5t57kbOTCJtiEyoZkA78-ig",
+      "name": "2024-12-09 - Was ist die Erstellung einer maßgeschneiderten WordPress-Website und welche V... - Article - DE",
+      "timestamp": "2026-02-15T17:50:13.734990",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1-eB1rjSWKG5ir7cPdyxTVxMgkAsjKBVlhTb_RI9GECo",
+      "name": "2024-11-14 - SureForms KI-gespeistes WordPress-Formular-Plugin - Article - DE",
+      "timestamp": "2026-02-15T17:50:14.448740",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1sewD84uRfWiV-o8sDw5mmr-3UMNFvsx9epuP3OFvw4s",
+      "name": "2024-11-30 - Ein Slug in WordPress Was ist das und wie kann man ihn optimieren - Article - DE",
+      "timestamp": "2026-02-15T17:50:15.223672",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1vRBDSldpOwXNcMfDFYVbkuCigGVGgz0aeMPFvrm4ikM",
+      "name": "2024-11-07 - TasteWP Erfahren Sie, wie Sie Ihre WordPress-Website einfach erstellen konnen - Article - DE",
+      "timestamp": "2026-02-15T17:50:15.968247",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1Z-uJsqqYC-_rX3TorcaZgwOSmPQ0JeTzUuiYo5XFXRw",
+      "name": "2024-10-22 - FluentBoards Erfahren Sie alles uber dieses Projektmanagement-Plugin fur Word... - Article - DE",
+      "timestamp": "2026-02-15T17:50:16.689121",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1vIS87z734Xca_UZd8waJDTjO6g01ABWFa4VwsRXVB2Y",
+      "name": "2024-11-09 - SEOKEY, das essentielle SEO-Plugin fur WordPress - Article - DE",
+      "timestamp": "2026-02-15T17:50:17.379714",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1YFthh_rlRCI2y9w7BOl_od_eIv2CuvmL3uH3KA4eU7o",
+      "name": "2024-09-09 - Prompt ChatGPT pour generer un article de blog qui RANKE sur Google en quelqu... - Prompt",
+      "timestamp": "2026-02-15T17:50:18.114510",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1elyzTZWUNx-Q7LVIUm9tyHnZodT0uyEuA1V60EO4NUU",
+      "name": "2024-11-12 - Meinungen uber Linkuma Ist sie die Referenz fur Netlinking - Article - DE",
+      "timestamp": "2026-02-15T17:50:19.066100",
+      "result": "SUCCESS"
+    },
+    {
+      "id": "1kdHf2zXCOQF293DJXr7iUbOqVOxfVEbuIxbO0Z3vCXY",
+      "name": "2024-10-25 - ZipWP vs InstaWP Was ist besser fur schnelles Starten einer WordPress-Website - Article - DE",
+      "timestamp": "2026-02-15T17:50:19.783762",
+      "result": "SUCCESS"
+    }
+  ]
+}

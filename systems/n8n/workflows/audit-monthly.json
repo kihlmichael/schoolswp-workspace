@@ -1,0 +1,580 @@
+{
+  "name": "[Prod] schoolsWP — Audit SEO Mensuel → PDF + Gmail + Discord + WhatsApp",
+  "nodes": [
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000001",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [260, 340],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 20-22 * *"
+            }
+          ]
+        }
+      },
+      "notes": "Déclenche à 09h00 les jours 20, 21 et 22 de chaque mois. Le node BuildConfig décide quel jour est valide (règle week-end). Timezone contrôlée via GENERIC_TIMEZONE=Europe/Paris dans docker-compose."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000002",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [260, 200],
+      "parameters": {}
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000003",
+      "name": "Build Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════════\n// BUILD CONFIG — Calcul de la période + règle week-end\n// ═══════════════════════════════════════════════════════════\n\n// Détecter si exécution manuelle\nconst isManual = $execution?.mode === 'manual';\n\n// Date courante en timezone Europe/Paris\nconst now = new Date();\nconst formatter = new Intl.DateTimeFormat('fr-FR', {\n  timeZone: 'Europe/Paris',\n  year: 'numeric', month: '2-digit', day: '2-digit'\n});\nconst parts = formatter.formatToParts(now);\nconst day   = parseInt(parts.find(p => p.type === 'day').value);\nconst month = parseInt(parts.find(p => p.type === 'month').value);\nconst year  = parseInt(parts.find(p => p.type === 'year').value);\n\n// Jour de semaine du 20 de ce mois (0=Dim, 6=Sam)\nconst twentieth = new Date(Date.UTC(year, month - 1, 20));\nconst dow20 = twentieth.getUTCDay();\nconst DOW_NAMES = ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];\n\n// ── Règle week-end ─────────────────────────────────────\n// - Jour 20 normal          → toujours run\n// - Jour 21, 20=Dim (0)     → run (Lundi de rattrapage)\n// - Jour 22, 20=Sam (6)     → run (Lundi de rattrapage)\nlet shouldRun = false;\nlet runReason = '';\n\nif (isManual) {\n  shouldRun = true;\n  runReason = 'Exécution manuelle — règle de date ignorée';\n} else if (day === 20) {\n  shouldRun = true;\n  runReason = `Exécution planifiée — 20 ${DOW_NAMES[dow20]} (jour ouvré)`;\n} else if (day === 21 && dow20 === 0) {\n  shouldRun = true;\n  runReason = 'Règle week-end : 20 était Dimanche → rattrapage Lundi 21';\n} else if (day === 22 && dow20 === 6) {\n  shouldRun = true;\n  runReason = 'Règle week-end : 20 était Samedi → rattrapage Lundi 22';\n} else {\n  runReason = `Pas de run : jour ${day}, 20 était ${DOW_NAMES[dow20]} — aucune règle ne correspond`;\n}\n\n// ── Période d'audit = mois précédent ─────────────────\nconst auditMonth = month === 1 ? 12 : month - 1;\nconst auditYear  = month === 1 ? year - 1 : year;\nconst auditMonthPad = String(auditMonth).padStart(2, '0');\nconst reportKey     = `audit-${auditYear}-${auditMonthPad}`;\nconst pdfFileName   = `${reportKey}.pdf`;\n\n// Jours dans le mois d'audit\nconst lastDay = new Date(auditYear, auditMonth, 0).getDate();\nconst periodStart = `${auditYear}-${auditMonthPad}-01`;\nconst periodEnd   = `${auditYear}-${auditMonthPad}-${String(lastDay).padStart(2, '0')}`;\n\nconst MONTH_NAMES_FR = ['','Janvier','Février','Mars','Avril','Mai','Juin',\n  'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];\nconst periodLabel = `${MONTH_NAMES_FR[auditMonth]} ${auditYear}`;\n\nreturn [{ json: {\n  shouldRun,\n  runReason,\n  isManual,\n  today: { day, month, year, dow20, dowName20: DOW_NAMES[dow20] },\n  reportKey,\n  pdfFileName,\n  periodStart,\n  periodEnd,\n  periodLabel,\n  auditMonth,\n  auditYear,\n  executedAt: now.toISOString()\n}}];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000004",
+      "name": "IF: Should Run Today?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [700, 280],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-should-run",
+              "leftValue": "={{ $json.shouldRun }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals", "rightType": "any" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000005",
+      "name": "Stop — Not Today",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [920, 400],
+      "parameters": {},
+      "notes": "Ce jour n'est pas un jour de run valide. Exécution terminée silencieusement."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000006",
+      "name": "Check Idempotence",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 200],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// IDEMPOTENCE — Vérifie si le rapport a déjà été généré\n// Utilise $getWorkflowStaticData() pour persister l'état\n// ═══════════════════════════════════════════════════════\n\nconst input = $input.first().json;\nconst { reportKey, isManual } = input;\n\n// Lire l'état persistant du workflow\nconst staticData = $getWorkflowStaticData('global');\nif (!staticData.completedReports) staticData.completedReports = {};\n\n// FORCE_RERUN : env var ou exécution manuelle\nconst forceRerun = $env.FORCE_RERUN === 'true' || isManual;\n\nconst previousRun  = staticData.completedReports[reportKey] || null;\nconst alreadyDone  = !!previousRun && !forceRerun;\n\nif (alreadyDone) {\n  console.log(`[idempotence] ${reportKey} déjà généré le ${previousRun.completedAt} — skip (FORCE_RERUN=false)`);\n} else if (previousRun && forceRerun) {\n  console.log(`[idempotence] ${reportKey} existait mais FORCE_RERUN=true — relance`);\n} else {\n  console.log(`[idempotence] ${reportKey} — premier run`);\n}\n\nreturn [{ json: {\n  ...input,\n  alreadyDone,\n  forceRerun,\n  previousRun\n}}];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000007",
+      "name": "IF: Already Done?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1140, 200],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-already-done",
+              "leftValue": "={{ $json.alreadyDone }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals", "rightType": "any" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000008",
+      "name": "Stop — Already Done",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1360, 120],
+      "parameters": {},
+      "notes": "Rapport déjà généré ce mois. Pour forcer : FORCE_RERUN=true dans .env ou lancer manuellement."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000020",
+      "name": "IF: Dry Run?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1360, 280],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-dry-run",
+              "leftValue": "={{ $env.DATAFORSEO_DRY_RUN === 'true' }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals", "rightType": "any" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "notes": "true (index 0) → Mock Data (tests sans API)\nfalse (index 1) → Chaîne DataForSEO réelle (production)"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000021",
+      "name": "Mock Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1580, 120],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// MOCK DATA — Données simulées pour dry run / tests\n// DATAFORSEO_DRY_RUN=true → ce node est actif\n// ═══════════════════════════════════════════════════════\n\nconst input  = $input.first().json;\nconst domain = $env.TARGET_DOMAIN || 'schoolswp.com';\n\nconsole.log(`[mock] DRY-RUN — données mock pour ${domain}`);\n\nreturn [{ json: {\n  ...input,\n  _source: 'mock',\n  domain,\n  organic: {\n    keywords_total:    176,\n    keywords_top3:     15,\n    keywords_top10:    79,\n    etv:               1790,\n    etv_previous:      1728,\n    etv_change_pct:    3.6,\n    traffic_value_eur: 5350\n  },\n  positions: {\n    pos_1: 2, pos_2_3: 13, pos_4_10: 64,\n    pos_11_20: 34, pos_21_30: 12, pos_31_100: 51\n  },\n  momentum: {\n    keywords_new: 49, keywords_up: 67,\n    keywords_down: 45, keywords_lost: 76\n  },\n  top_keywords: [\n    { keyword: 'o2switch',                volume: 33100, position: 38, etv: 69,  type: 'affiliation' },\n    { keyword: '5euros.com',              volume: 8100,  position: 6,  etv: 274, type: 'affiliation' },\n    { keyword: '5 euros',                 volume: 4400,  position: 7,  etv: 113, type: 'affiliation' },\n    { keyword: 'linksgarden',             volume: 1300,  position: 4,  etv: 86,  type: 'affiliation' },\n    { keyword: 'thot seo',                volume: 1300,  position: 8,  etv: 26,  type: 'affiliation' },\n    { keyword: 'local wp',                volume: 1600,  position: 13, etv: 9,   type: 'tool' },\n    { keyword: 'maintenance wordpress',   volume: 1600,  position: 79, etv: 3,   type: 'core' },\n    { keyword: 'plugin wordpress',        volume: 1000,  position: 80, etv: 2,   type: 'core' },\n    { keyword: 'r\\u00e9f\\u00e9rencement wordpress', volume: 1000, position: 76, etv: 2, type: 'core' }\n  ],\n  competitors: [\n    { domain: 'wpmarmite.com',  intersections: 105, etv: 57647 },\n    { domain: 'webandseo.fr',   intersections: 77,  etv: 21983 },\n    { domain: 'wpbeginner.com', intersections: 70,  etv: 8593  },\n    { domain: 'weadown.com',    intersections: 47,  etv: 411   }\n  ],\n  lighthouse: { performance: 100, best_practices: 100, seo: 92, accessibility: 91 }\n}}];"
+      },
+      "notes": "Données mock pour dry run. Reproduit la structure exacte de Build Collected Data."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000022",
+      "name": "DFS: Domain Rank",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1580, 440],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/dataforseo_labs/google/domain_rank_overview/live",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ 'Basic ' + btoa($env.DATAFORSEO_LOGIN + ':' + $env.DATAFORSEO_PASSWORD) }}" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify([{ target: $env.TARGET_DOMAIN || 'schoolswp.com', location_name: $env.DATAFORSEO_LOCATION || 'France', language_name: $env.DATAFORSEO_LANGUAGE || 'French' }]) }}",
+        "options": {
+          "timeout": 30000,
+          "retry": { "enabled": true, "maxTries": 3, "waitBetweenTries": 5000 }
+        }
+      },
+      "notes": "Retourne : tasks[0].result[0].metrics.organic (count, etv, pos_*, estimated_paid_traffic_cost, new/up/down/lost keywords)"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000023",
+      "name": "DFS: Ranked Keywords",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1800, 440],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/dataforseo_labs/google/ranked_keywords/live",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ 'Basic ' + btoa($env.DATAFORSEO_LOGIN + ':' + $env.DATAFORSEO_PASSWORD) }}" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify([{ target: $env.TARGET_DOMAIN || 'schoolswp.com', location_name: $env.DATAFORSEO_LOCATION || 'France', language_name: $env.DATAFORSEO_LANGUAGE || 'French', limit: 20, order_by: ['etv,desc'] }]) }}",
+        "options": {
+          "timeout": 30000,
+          "retry": { "enabled": true, "maxTries": 3, "waitBetweenTries": 5000 }
+        }
+      },
+      "notes": "Top 20 mots-clés triés par ETV décroissant.\nRetourne : tasks[0].result[0].items[]\nChaque item : keyword_data.keyword, keyword_data.keyword_info.search_volume, ranked_serp_element.serp_item.rank_absolute, ranked_serp_element.serp_item.etv"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000024",
+      "name": "DFS: Competitors",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2020, 440],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/dataforseo_labs/google/competitors_domain/live",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ 'Basic ' + btoa($env.DATAFORSEO_LOGIN + ':' + $env.DATAFORSEO_PASSWORD) }}" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify([{ target: $env.TARGET_DOMAIN || 'schoolswp.com', location_name: $env.DATAFORSEO_LOCATION || 'France', language_name: $env.DATAFORSEO_LANGUAGE || 'French', limit: 10 }]) }}",
+        "options": {
+          "timeout": 30000,
+          "retry": { "enabled": true, "maxTries": 3, "waitBetweenTries": 5000 }
+        }
+      },
+      "notes": "Top 10 concurrents par mots-clés en commun.\nRetourne : tasks[0].result[0].items[]\nChaque item : domain, intersections, competitor_metrics.organic.etv"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000025",
+      "name": "DFS: Lighthouse",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2240, 440],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/on_page/lighthouse/live",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ 'Basic ' + btoa($env.DATAFORSEO_LOGIN + ':' + $env.DATAFORSEO_PASSWORD) }}" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify([{ url: 'https://' + ($env.TARGET_DOMAIN || 'schoolswp.com') }]) }}",
+        "options": {
+          "timeout": 60000,
+          "retry": { "enabled": true, "maxTries": 3, "waitBetweenTries": 10000 }
+        }
+      },
+      "notes": "Audit Lighthouse via DataForSEO (délai plus long).\nRetourne : tasks[0].result[0].categories\nClés : performance.score, best-practices.score, seo.score, accessibility.score (float 0-1 → multiplier par 100)"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000026",
+      "name": "Build Collected Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2460, 440],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// BUILD COLLECTED DATA — Agrège les 4 réponses DataForSEO\n// ═══════════════════════════════════════════════════════\n\nconst config = $('Check Idempotence').first().json;\nconst domain = $env.TARGET_DOMAIN || 'schoolswp.com';\n\n// Helper d'accès sécurisé aux nodes précédents\nconst safe = (fn) => { try { return fn(); } catch(e) { return null; } };\n\n// ── Domain Rank Overview ───────────────────────────────\nconst rankRaw  = safe(() => $('DFS: Domain Rank').first().json);\nconst rankData = rankRaw?.tasks?.[0]?.result?.[0] || {};\nconst org      = rankData?.metrics?.organic || {};\n\nconst pos_1      = org.pos_1 || 0;\nconst pos_2_3    = org.pos_2_3 || 0;\nconst pos_4_10   = org.pos_4_10 || ((org.pos_4_6 || 0) + (org.pos_7_10 || 0));\nconst pos_11_20  = org.pos_11_20 || 0;\nconst pos_21_30  = org.pos_21_30 || 0;\nconst pos_31_100 = (org.pos_31_40 || 0) + (org.pos_41_50 || 0)\n                 + (org.pos_51_60 || 0) + (org.pos_61_70 || 0)\n                 + (org.pos_71_80 || 0) + (org.pos_81_90 || 0)\n                 + (org.pos_91_100 || 0);\n\n// ── Ranked Keywords ────────────────────────────────────\nconst kwRaw   = safe(() => $('DFS: Ranked Keywords').first().json);\nconst kwItems = kwRaw?.tasks?.[0]?.result?.[0]?.items || [];\n\nconst top_keywords = kwItems.slice(0, 20).map(item => {\n  const kd = item.keyword_data || {};\n  const si = item.ranked_serp_element?.serp_item || {};\n  return {\n    keyword:  kd.keyword || '',\n    volume:   kd.keyword_info?.search_volume || 0,\n    position: si.rank_absolute || si.rank_group || 99,\n    etv:      si.etv || 0,\n    type:     'organic'\n  };\n});\n\n// ── Competitors ────────────────────────────────────────\nconst compRaw   = safe(() => $('DFS: Competitors').first().json);\nconst compItems = compRaw?.tasks?.[0]?.result?.[0]?.items || [];\n\nconst competitors = compItems.slice(0, 5).map(item => {\n  const m = item.competitor_metrics?.organic\n           || item.metrics?.organic\n           || {};\n  return {\n    domain:        item.domain || '',\n    intersections: item.intersections || 0,\n    etv:           m.etv || 0\n  };\n});\n\n// ── Lighthouse ─────────────────────────────────────────\nconst lhRaw    = safe(() => $('DFS: Lighthouse').first().json);\nconst lhResult = lhRaw?.tasks?.[0]?.result?.[0] || {};\nconst cats     = lhResult.categories || {};\n\nconst lighthouse = {\n  performance:    Math.round((cats.performance?.score                          || 0) * 100),\n  best_practices: Math.round(((cats['best-practices'] || cats.best_practices)?.score || 0) * 100),\n  seo:            Math.round((cats.seo?.score                                  || 0) * 100),\n  accessibility:  Math.round((cats.accessibility?.score                        || 0) * 100)\n};\n\n// ── Momentum (new/up/down/lost) ────────────────────────\nconst momentum = {\n  keywords_new:  org.new_keywords   || 0,\n  keywords_up:   org.up_keywords    || 0,\n  keywords_down: org.down_keywords  || 0,\n  keywords_lost: org.lost_keywords  || 0\n};\n\n// ── Organic summary ────────────────────────────────────\nconst keywords_total = org.count || org.keywords_count || kwItems.length;\nconst keywords_top3  = pos_1 + pos_2_3;\nconst keywords_top10 = keywords_top3 + pos_4_10;\nconst etv            = org.etv || 0;\nconst traffic_value  = org.estimated_paid_traffic_cost || 0;\n\nconsole.log(`[collect] DataForSEO live data: ${keywords_total} kw, ETV ${etv}, ${top_keywords.length} top kw, ${competitors.length} competitors, LH perf=${lighthouse.performance}`);\n\nreturn [{ json: {\n  // Champs de routing issus du config\n  reportKey:   config.reportKey,\n  pdfFileName: config.pdfFileName,\n  periodStart: config.periodStart,\n  periodEnd:   config.periodEnd,\n  periodLabel: config.periodLabel,\n  executedAt:  config.executedAt,\n  _source: 'dataforseo',\n  domain,\n  organic: {\n    keywords_total,\n    keywords_top3,\n    keywords_top10,\n    etv,\n    etv_previous:      etv,\n    etv_change_pct:    0,\n    traffic_value_eur: traffic_value\n  },\n  positions: { pos_1, pos_2_3, pos_4_10, pos_11_20, pos_21_30, pos_31_100 },\n  momentum,\n  top_keywords,\n  competitors,\n  lighthouse\n}}];"
+      },
+      "notes": "Agrège les 4 réponses DataForSEO en une structure normalisée.\nRéférence les nodes précédents par nom via $('DFS: ...').first().json"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000010",
+      "name": "Normalize Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2680, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// NORMALIZE — Conforme à /report/schema.json\n// ═══════════════════════════════════════════════════════\n\nconst d = $input.first().json;\n\nconst normalized = {\n  meta: {\n    domain:      d.domain,\n    reportKey:   d.reportKey,\n    generatedAt: new Date().toISOString(),\n    period: {\n      start: d.periodStart,\n      end:   d.periodEnd,\n      label: d.periodLabel\n    },\n    source: d._source || 'dataforseo'\n  },\n  organic:      d.organic,\n  positions:    d.positions,\n  momentum:     d.momentum,\n  top_keywords: d.top_keywords,\n  competitors:  d.competitors,\n  lighthouse:   d.lighthouse,\n  // Champs de routing conservés\n  reportKey:    d.reportKey,\n  pdfFileName:  d.pdfFileName,\n  periodLabel:  d.periodLabel,\n  executedAt:   d.executedAt\n};\n\nreturn [{ json: normalized }];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000011",
+      "name": "OpenAI — Audit Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2900, 280],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $env.OPENAI_API_KEY }}" },
+            { "name": "Content-Type",  "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: $env.OPENAI_MODEL || 'gpt-4o-mini',\n  max_tokens: parseInt($env.OPENAI_MAX_TOKENS || '2000'),\n  response_format: { type: 'json_object' },\n  messages: [\n    {\n      role: 'system',\n      content: 'Tu es un expert SEO pour schoolsWP (schoolswp.com), un blog WordPress francophone. Tu analyses les données mensuelles et fournis une analyse structurée, directe et actionnelle. Tu réponds UNIQUEMENT en JSON valide.'\n    },\n    {\n      role: 'user',\n      content: `Analyse ces données SEO du mois de ${$json.meta.period.label} pour ${$json.meta.domain}.\\n\\nDONNÉES:\\n${JSON.stringify($json, null, 2)}\\n\\nRéponds en JSON avec cette structure exacte:\\n{\\n  \"summary\": \"Résumé exécutif en 2-3 phrases (résultats clés, tendance principale)\",\\n  \"top_insights\": [\"insight 1\", \"insight 2\", \"insight 3\"],\\n  \"risks\": [\"risque 1\", \"risque 2\"],\\n  \"priority_actions\": [\\n    { \"num\": 1, \"title\": \"Titre court\", \"description\": \"Description actionnable en 1-2 phrases\" },\\n    { \"num\": 2, \"title\": \"Titre court\", \"description\": \"Description actionnable\" },\\n    { \"num\": 3, \"title\": \"Titre court\", \"description\": \"Description actionnable\" },\\n    { \"num\": 4, \"title\": \"Titre court\", \"description\": \"Description actionnable\" }\\n  ]\\n}`\n    }\n  ]\n}) }}",
+        "options": {
+          "timeout": 60000,
+          "retry": {
+            "enabled": true,
+            "maxTries": 3,
+            "waitBetweenTries": 5000
+          }
+        }
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000012",
+      "name": "Merge Data + AI",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3120, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// MERGE — Combine les données normalisées et l'analyse IA\n// ═══════════════════════════════════════════════════════\n\nconst dataNode = $('Normalize Data').first().json;\nconst aiRaw    = $input.first().json;\n\n// Parser la réponse OpenAI\nlet aiAnalysis = {};\ntry {\n  const aiText = aiRaw.choices?.[0]?.message?.content || '{}';\n  aiAnalysis = JSON.parse(aiText);\n} catch(e) {\n  console.warn('[merge] Impossible de parser la réponse IA:', e.message);\n  aiAnalysis = {\n    summary: 'Analyse IA non disponible.',\n    top_insights: [],\n    risks: [],\n    priority_actions: []\n  };\n}\n\nreturn [{ json: { ...dataNode, ai_analysis: aiAnalysis } }];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000013",
+      "name": "Render HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3340, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// RENDER HTML — Injecte les données dans template.html\n// ═══════════════════════════════════════════════════════\n\nconst fs   = require('fs');\nconst d    = $input.first().json;\nconst ai   = d.ai_analysis || {};\nconst o    = d.organic;\nconst pos  = d.positions;\nconst mom  = d.momentum;\nconst lh   = d.lighthouse;\n\n// Lire le template\nlet html = fs.readFileSync('/report/template.html', 'utf8');\n\n// ── Helpers ──────────────────────────────────────────\nconst scoreClass = (v) => v >= 90 ? 'perfect' : v >= 70 ? 'good' : 'warn';\nconst posClass   = (p) => p <= 10 ? 'pos-good' : p <= 30 ? 'pos-mid' : 'pos-bad';\nconst fmt        = (n) => n?.toLocaleString('fr-FR') || '—';\nconst sign       = (n) => n >= 0 ? `+${n.toFixed(1)}%` : `${n.toFixed(1)}%`;\n\nconst typeTag = (t) => ({\n  'affiliation': '<span class=\"tag orange\">Affiliation</span>',\n  'core':        '<span class=\"tag\">Core WP</span>',\n  'tool':        '<span class=\"tag blue\">Outil WP</span>',\n  'brand':       '<span class=\"tag blue\">Brand</span>'\n})[t] || '<span class=\"tag\">Autre</span>';\n\n// ── Positions rows ────────────────────────────────────\nconst total  = o.keywords_total || 1;\nconst posRows = [\n  ['Top 3',    pos.pos_1 + pos.pos_2_3,       'Trafic solide garanti',              'pos-good'],\n  ['Top 10',   pos.pos_1 + pos.pos_2_3 + pos.pos_4_10, 'Potentiel maximal',         'pos-good'],\n  ['11–20',    pos.pos_11_20,                 'À optimiser — seuil top 10 proche',  'pos-mid'],\n  ['21–50',    (pos.pos_21_30 || 0),          'Enrichissement contenu nécessaire',  'pos-mid'],\n  ['51–100',   (pos.pos_31_100 || 0),         'Long tail — faible visibilité',      'pos-bad']\n].map(([zone, count, label, cls]) =>\n  `<tr><td><strong>${zone}</strong></td><td class=\"${cls}\"><strong>${count}</strong></td><td>${Math.round(count/total*100)} %</td><td>${label}</td></tr>`\n).join('\\n');\n\n// ── Top keywords rows ────────────────────────────────\nconst kwRows = (d.top_keywords || []).map(kw =>\n  `<tr><td>${kw.keyword}</td><td>${fmt(kw.volume)}</td><td class=\"${posClass(kw.position)}\"><strong>${kw.position}</strong></td><td>${kw.etv.toFixed(0)}</td><td>${typeTag(kw.type)}</td></tr>`\n).join('\\n');\n\n// ── Competitors rows ─────────────────────────────────\nconst compRows = (d.competitors || []).map((c, i) => {\n  const isMain = i === 0 ? '<span class=\"tag\">Concurrent FR #1</span>' : '';\n  return `<tr><td>${isMain ? '<strong>' + c.domain + '</strong>' : c.domain}</td><td><strong>${c.intersections}</strong></td><td>${fmt(c.etv)}</td><td>${isMain}</td></tr>`;\n}).join('\\n');\n\n// ── AI Insights ──────────────────────────────────────\nconst insightItems = (ai.top_insights || []).map(i => `<li>${i}</li>`).join('\\n');\nconst riskItems    = (ai.risks || []).map(r => `<li>${r}</li>`).join('\\n');\n\nconst priorityCards = (ai.priority_actions || []).map(a =>\n  `<div class=\"priority-card\"><div class=\"p-num\">0${a.num}</div><h4>${a.title}</h4><p>${a.description}</p></div>`\n).join('\\n');\n\n// ── Commentaires auto ────────────────────────────────\nconst lhComment = lh.performance === 100\n  ? '<strong>Socle technique exceptionnel.</strong> Performance 100/100 — moins de 1 % des sites WordPress l\\'atteignent.'\n  : `<strong>Performance Lighthouse : ${lh.performance}/100.</strong> Des optimisations sont possibles.`;\n\nconst etvChange = sign(o.etv_change_pct);\nconst kwStrategicComment = `<strong>Diagnostic :</strong> ${ai.summary || 'Analyse IA non disponible.'}`;\n\n// ── Substitutions ────────────────────────────────────\nconst replacements = {\n  '{{DOMAIN}}':           d.meta.domain,\n  '{{PERIOD_LABEL}}':     d.meta.period.label,\n  '{{GENERATED_AT}}':     new Date(d.meta.generatedAt).toLocaleDateString('fr-FR', { year:'numeric', month:'long', day:'numeric' }),\n  '{{LH_PERFORMANCE}}':   String(lh.performance),\n  '{{LH_BEST_PRACTICES}}':String(lh.best_practices),\n  '{{LH_SEO}}':           String(lh.seo),\n  '{{LH_ACCESSIBILITY}}': String(lh.accessibility),\n  '{{LH_PERF_CLASS}}':    scoreClass(lh.performance),\n  '{{LH_BP_CLASS}}':      scoreClass(lh.best_practices),\n  '{{LH_SEO_CLASS}}':     scoreClass(lh.seo),\n  '{{LH_A11Y_CLASS}}':    scoreClass(lh.accessibility),\n  '{{LH_COMMENT}}':       lhComment,\n  '{{KW_TOTAL}}':         String(o.keywords_total),\n  '{{ETV}}':              fmt(o.etv),\n  '{{ETV_CHANGE}}':       etvChange,\n  '{{TRAFFIC_VALUE}}':    fmt(o.traffic_value_eur) + ' €',\n  '{{KW_NEW}}':           String(mom.keywords_new),\n  '{{KW_UP}}':            String(mom.keywords_up),\n  '{{KW_DOWN}}':          String(mom.keywords_down),\n  '{{KW_LOST}}':          String(mom.keywords_lost),\n  '{{POSITIONS_ROWS}}':   posRows,\n  '{{TOP_KEYWORDS_ROWS}}':kwRows,\n  '{{COMPETITORS_ROWS}}': compRows,\n  '{{AI_SUMMARY}}':       ai.summary || '—',\n  '{{AI_INSIGHTS}}':      insightItems || '<li>Aucun insight généré.</li>',\n  '{{AI_RISKS}}':         riskItems    || '<li>Aucun risque identifié.</li>',\n  '{{PRIORITY_ACTIONS}}': priorityCards || '<p>Aucune action générée.</p>',\n  '{{KW_STRATEGIC_COMMENT}}': kwStrategicComment\n};\n\nfor (const [token, value] of Object.entries(replacements)) {\n  html = html.split(token).join(value);\n}\n\nreturn [{ json: { ...d, html } }];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000014",
+      "name": "PDF Service",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3560, 280],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.PDF_SERVICE_URL || 'http://pdf-service:3001' }}/generate",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ html: $json.html }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          },
+          "timeout": "={{ parseInt($env.PDF_TIMEOUT_MS || '30000') }}",
+          "retry": {
+            "enabled": true,
+            "maxTries": 3,
+            "waitBetweenTries": 5000
+          }
+        }
+      },
+      "notes": "Retourne le PDF binaire dans $binary.data"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000015",
+      "name": "Save PDF to Disk",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3780, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// SAVE PDF — Écrit le PDF sur le volume /artifacts\n// ═══════════════════════════════════════════════════════\n\nconst fs   = require('fs');\nconst path = require('path');\n\nconst metaNode    = $('Normalize Data').first().json;\nconst binaryData  = $input.first().binary?.data;\n\nif (!binaryData) {\n  throw new Error('PDF binary data manquant — le PDF Service a-t-il bien répondu ?');\n}\n\nconst artifactsPath = $env.ARTIFACTS_PATH || '/artifacts';\nif (!fs.existsSync(artifactsPath)) {\n  fs.mkdirSync(artifactsPath, { recursive: true });\n}\n\nconst pdfPath = path.join(artifactsPath, metaNode.pdfFileName);\nconst pdfBuffer = Buffer.from(binaryData.data, binaryData.mimeType === 'application/pdf' ? undefined : 'base64');\n\nfs.writeFileSync(pdfPath, pdfBuffer);\n\nconst stats = fs.statSync(pdfPath);\nconsole.log(`[save] PDF sauvegardé : ${pdfPath} (${Math.round(stats.size / 1024)} Ko)`);\n\nreturn [{ json: {\n  ...metaNode,\n  pdfPath,\n  pdfSizeKb: Math.round(stats.size / 1024),\n  savedAt:   new Date().toISOString()\n}, binary: $input.first().binary }];"
+      }
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000016",
+      "name": "Gmail — Send Report",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [4000, 200],
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "toList": "={{ $env.REPORT_EMAIL_TO }}",
+        "subject": "=📊 Audit SEO schoolsWP — {{ $('Save PDF to Disk').first().json.periodLabel }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;\">\n  <div style=\"background: #0f1117; padding: 24px; border-radius: 8px 8px 0 0;\">\n    <h1 style=\"color: #fff; margin: 0; font-size: 20px;\">schools<span style=\"color: #00D400;\">WP</span></h1>\n    <p style=\"color: #9ca3af; margin: 4px 0 0; font-size: 13px;\">Audit SEO Mensuel</p>\n  </div>\n  <div style=\"background: #f9fafb; padding: 24px; border: 1px solid #e5e7eb;\">\n    <h2 style=\"color: #0f1117; margin-top: 0;\">{{ $('Save PDF to Disk').first().json.periodLabel }}</h2>\n    <table style=\"width:100%; border-collapse: collapse;\">\n      <tr><td style=\"padding: 8px 0; color: #6b7280;\">Mots-clés top 100</td><td style=\"font-weight: bold; color: #00A100;\">{{ $('Save PDF to Disk').first().json.organic?.keywords_total }}</td></tr>\n      <tr><td style=\"padding: 8px 0; color: #6b7280;\">ETV estimé</td><td style=\"font-weight: bold;\">{{ $('Save PDF to Disk').first().json.organic?.etv?.toLocaleString('fr-FR') }} visites/mois</td></tr>\n      <tr><td style=\"padding: 8px 0; color: #6b7280;\">Valeur équivalente SEA</td><td style=\"font-weight: bold;\">{{ $('Save PDF to Disk').first().json.organic?.traffic_value_eur?.toLocaleString('fr-FR') }} €</td></tr>\n      <tr><td style=\"padding: 8px 0; color: #6b7280;\">Top 10</td><td style=\"font-weight: bold; color: #00A100;\">{{ $('Save PDF to Disk').first().json.organic?.keywords_top10 }} mots-clés</td></tr>\n    </table>\n    <p style=\"margin-top: 20px;\">Le rapport PDF complet ({{ $json.pdfSizeKb }} Ko) est joint à cet email.</p>\n  </div>\n  <div style=\"background: #fff; padding: 16px 24px; border: 1px solid #e5e7eb; border-top: 0; border-radius: 0 0 8px 8px;\">\n    <p style=\"color: #9ca3af; font-size: 12px; margin: 0;\">Généré automatiquement le {{ new Date($('Save PDF to Disk').first().json.savedAt).toLocaleDateString('fr-FR') }} via n8n + DataForSEO + OpenAI</p>\n  </div>\n</div>",
+        "attachmentsUi": {
+          "attachmentsBinary": [{ "property": "data" }]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "GMAIL_CREDENTIAL_ID",
+          "name": "Gmail schoolsWP"
+        }
+      },
+      "notes": "Créer le credential Gmail OAuth2 dans n8n (Settings > Credentials > Gmail OAuth2 API). Remplacer GMAIL_CREDENTIAL_ID par l'ID obtenu."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000017",
+      "name": "Discord Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4000, 380],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.DISCORD_WEBHOOK_URL }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  username: 'schoolsWP SEO Bot',\n  embeds: [{\n    title: `📊 Audit SEO — ${$('Save PDF to Disk').first().json.periodLabel}`,\n    color: 54272,\n    description: $('Merge Data + AI').first().json.ai_analysis?.summary || 'Rapport mensuel généré.',\n    fields: [\n      { name: 'Mots-clés top 100', value: String($('Save PDF to Disk').first().json.organic?.keywords_total), inline: true },\n      { name: 'ETV', value: $('Save PDF to Disk').first().json.organic?.etv?.toLocaleString('fr-FR') + ' vis/mois', inline: true },\n      { name: 'Top 10', value: String($('Save PDF to Disk').first().json.organic?.keywords_top10) + ' kw', inline: true },\n      { name: 'Valeur SEA', value: $('Save PDF to Disk').first().json.organic?.traffic_value_eur?.toLocaleString('fr-FR') + ' €', inline: true },\n      { name: 'Nouveaux kw', value: '+' + String($('Save PDF to Disk').first().json.momentum?.keywords_new), inline: true },\n      { name: 'Perdus', value: '-' + String($('Save PDF to Disk').first().json.momentum?.keywords_lost), inline: true }\n    ],\n    footer: { text: `schoolswp.com · PDF : ${$json.pdfFileName} (${$json.pdfSizeKb} Ko)` },\n    timestamp: new Date().toISOString()\n  }]\n}) }}",
+        "options": {
+          "timeout": 10000,
+          "retry": { "enabled": true, "maxTries": 2, "waitBetweenTries": 3000 }
+        }
+      },
+      "notes": "Créer un webhook Discord : Paramètres du serveur → Intégrations → Webhooks. Coller l'URL dans DISCORD_WEBHOOK_URL (.env)."
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000019",
+      "name": "WhatsApp Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4000, 540],
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.callmebot.com/whatsapp.php",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "phone",  "value": "={{ $env.WHATSAPP_PHONE }}" },
+            { "name": "text",   "value": "=*schoolsWP — Audit SEO {{ $('Save PDF to Disk').first().json.periodLabel }}*\n\n✅ Rapport généré\n📊 {{ $('Save PDF to Disk').first().json.organic?.keywords_total }} mots-clés top 100\n📈 ETV : {{ $('Save PDF to Disk').first().json.organic?.etv?.toLocaleString('fr-FR') }} visites/mois\n💶 Valeur SEA : {{ $('Save PDF to Disk').first().json.organic?.traffic_value_eur?.toLocaleString('fr-FR') }} €\n🏆 Top 10 : {{ $('Save PDF to Disk').first().json.organic?.keywords_top10 }} kw\n\n📁 PDF : {{ $json.pdfFileName }} ({{ $json.pdfSizeKb }} Ko)" },
+            { "name": "apikey", "value": "={{ $env.WHATSAPP_CALLMEBOT_APIKEY }}" }
+          ]
+        },
+        "options": {
+          "timeout": 15000,
+          "retry": { "enabled": true, "maxTries": 2, "waitBetweenTries": 5000 }
+        }
+      },
+      "notes": "Utilise CallMeBot (gratuit, WhatsApp personnel). Setup : 1) Ajouter +34 644 38 47 22 en contact 2) Envoyer 'I allow callmebot to send me messages' par WA 3) Recevoir son apikey 4) Renseigner WHATSAPP_PHONE et WHATSAPP_CALLMEBOT_APIKEY dans .env"
+    },
+
+    {
+      "id": "a1000000-0000-0000-0000-000000000018",
+      "name": "Mark Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4220, 280],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ═══════════════════════════════════════════════════════\n// MARK COMPLETE — Persiste l'état d'achèvement\n// ═══════════════════════════════════════════════════════\n\nconst d = $('Save PDF to Disk').first().json;\nconst staticData = $getWorkflowStaticData('global');\n\nif (!staticData.completedReports) staticData.completedReports = {};\n\nstaticData.completedReports[d.reportKey] = {\n  completedAt:  new Date().toISOString(),\n  pdfPath:      d.pdfPath,\n  pdfSizeKb:    d.pdfSizeKb,\n  reportKey:    d.reportKey,\n  periodLabel:  d.periodLabel\n};\n\n// Log de fin\nconst duration = Math.round((new Date() - new Date(d.executedAt)) / 1000);\nconsole.log(`\n╔══════════════════════════════════════════════╗\n║  ✅ AUDIT TERMINÉ — ${d.reportKey}        \n║  Durée     : ${duration}s\n║  PDF       : ${d.pdfFileName} (${d.pdfSizeKb} Ko)\n║  Statut    : marqué complet dans staticData\n╚══════════════════════════════════════════════╝`);\n\nreturn [{ json: {\n  ...d,\n  auditComplete: true,\n  durationSeconds: duration\n}}];"
+      }
+    }
+
+  ],
+
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[{ "node": "Build Config", "type": "main", "index": 0 }]]
+    },
+    "Manual Trigger": {
+      "main": [[{ "node": "Build Config", "type": "main", "index": 0 }]]
+    },
+    "Build Config": {
+      "main": [[{ "node": "IF: Should Run Today?", "type": "main", "index": 0 }]]
+    },
+    "IF: Should Run Today?": {
+      "main": [
+        [{ "node": "Check Idempotence", "type": "main", "index": 0 }],
+        [{ "node": "Stop — Not Today",  "type": "main", "index": 0 }]
+      ]
+    },
+    "Check Idempotence": {
+      "main": [[{ "node": "IF: Already Done?", "type": "main", "index": 0 }]]
+    },
+    "IF: Already Done?": {
+      "main": [
+        [{ "node": "Stop — Already Done", "type": "main", "index": 0 }],
+        [{ "node": "IF: Dry Run?",        "type": "main", "index": 0 }]
+      ]
+    },
+    "IF: Dry Run?": {
+      "main": [
+        [{ "node": "Mock Data",        "type": "main", "index": 0 }],
+        [{ "node": "DFS: Domain Rank", "type": "main", "index": 0 }]
+      ]
+    },
+    "Mock Data": {
+      "main": [[{ "node": "Normalize Data", "type": "main", "index": 0 }]]
+    },
+    "DFS: Domain Rank": {
+      "main": [[{ "node": "DFS: Ranked Keywords", "type": "main", "index": 0 }]]
+    },
+    "DFS: Ranked Keywords": {
+      "main": [[{ "node": "DFS: Competitors", "type": "main", "index": 0 }]]
+    },
+    "DFS: Competitors": {
+      "main": [[{ "node": "DFS: Lighthouse", "type": "main", "index": 0 }]]
+    },
+    "DFS: Lighthouse": {
+      "main": [[{ "node": "Build Collected Data", "type": "main", "index": 0 }]]
+    },
+    "Build Collected Data": {
+      "main": [[{ "node": "Normalize Data", "type": "main", "index": 0 }]]
+    },
+    "Normalize Data": {
+      "main": [[{ "node": "OpenAI — Audit Analysis", "type": "main", "index": 0 }]]
+    },
+    "OpenAI — Audit Analysis": {
+      "main": [[{ "node": "Merge Data + AI", "type": "main", "index": 0 }]]
+    },
+    "Merge Data + AI": {
+      "main": [[{ "node": "Render HTML", "type": "main", "index": 0 }]]
+    },
+    "Render HTML": {
+      "main": [[{ "node": "PDF Service", "type": "main", "index": 0 }]]
+    },
+    "PDF Service": {
+      "main": [[{ "node": "Save PDF to Disk", "type": "main", "index": 0 }]]
+    },
+    "Save PDF to Disk": {
+      "main": [[{ "node": "Gmail — Send Report", "type": "main", "index": 0 }]]
+    },
+    "Gmail — Send Report": {
+      "main": [[{ "node": "Discord Notification", "type": "main", "index": 0 }]]
+    },
+    "Discord Notification": {
+      "main": [[{ "node": "WhatsApp Notification", "type": "main", "index": 0 }]]
+    },
+    "WhatsApp Notification": {
+      "main": [[{ "node": "Mark Complete", "type": "main", "index": 0 }]]
+    }
+  },
+
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Paris",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": "all",
+    "errorWorkflow": "",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+
+  "staticData": {
+    "completedReports": {}
+  },
+
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  }
+}

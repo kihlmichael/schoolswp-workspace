@@ -1,0 +1,5 @@
+# Dependances pour gdrive-audit.py
+# Install : pip install -r requirements-gdrive-audit.txt
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0

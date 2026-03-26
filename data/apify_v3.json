@@ -1,0 +1,760 @@
+[{
+  "available_languages": [
+    "English"
+  ],
+  "channel_id": "UCiyeXfnGx9e06hXWf0Hz7ow",
+  "channel_name": "WPManageNinja",
+  "comment_count": 57,
+  "description": "FluentCRM is a free WordPress CRM plugin that comes with both free and premium email marketing automation features.\n\nIf you’re running an online business via WordPress, you’ll need a platform to keep track of your customers and reach out to them often. That’s exactly where Customer Relationship Management software comes in. It helps you keep track of your customers and enables you to create everlasting customer relationships. While other CRM’s can do it for you, there are many complexities from connecting your WordPress with the CRM to setting up your email marketing automation. \n\nFluentCRM is a free email marketing plugin that lives inside your WordPress dashboard and performs your customer relationship management duties like a charm. With this free WordPress CRM plugin, you can populate opt-in forms to collect genuine leads, segment them using both lists and tags, and set up email marketing automation to automate your email marketing.\n\nAs you all asked what this free WordPress CRM and email marketing plugin is capable of, we demonstrated how to use FluentCRM to maximize your business’s marketing potential. \n\nFluentCRM’s free features include:\n360 contact overview\nCommunication history\nForm submission log\nNote keeping\nContact segmentation\nEmail marketing campaigns\nTemplate management\nConditional content block\nMarketing automation\nBuilt-in analytics\nSmart links\nFluent Forms integration\nUncanny Automator integration\nWPFusion integration\n\nAlso, you can get more done with the powerful Pro add-on which comes with various features and more integrations.\nPro Features:\nDynamic segmentation\nEmail sequences\nA/B testing\nLink click tracking\nWebHooks\nWooCommerce and Easy Digital Downloads purchase history\n25+ of marketing automation triggers\n\nFluentCRM Pro also integrates with the below WordPress plugins to make your marketing automation smoother:\nWooCommerce\nLifterLMS\nEasy Digital Downloads\nAffiliateWP\nLearnDash\nPaid Membership Pro\nWPFusion\nMailOptin\nWishList\nMemberPress\nTutorLMS\nElementor Forms\nRestrict Content Pro\nUncanny Automator\nFluent Forms\n\nIntro: (0:00)\nBasic Installation: (0:30)\nImport contacts: (1:11)\nContact View: (1:40)\nTags and List Segmentation: (3:25)\nSetting up Email Campaign: (4:05)\nLead generation: (6:45)\nSetting up Automation Funnel: (8:22)\n\nGet FluentCRM now: https://fluentcrm.com/#pricing​\n\nFor the documentation visit:  https://fluentcrm.com/docs/\n\n#fluentcrm #wpmanageninja #emailmarketingsolutions",
+  "duration_seconds": 682,
+  "geo_restrict": null,
+  "is_auto_generated": false,
+  "language": "en",
+  "like_count": 405,
+  "message": "Successfully fetched the transcript for the video with ID 'QSVpos-WJFg'",
+  "published_at": "2021-03-11T12:00:17Z",
+  "selected_language": "English",
+  "status": "success",
+  "subscriber_count": 11800,
+  "thumbnail": "https://i.ytimg.com/vi/QSVpos-WJFg/hqdefault.jpg",
+  "timestamp": 1615464017,
+  "title": "Do More with A Free WordPress CRM Plugin - FluentCRM",
+  "transcript": [
+    {
+      "duration": 2.788,
+      "end": 2.868,
+      "start": 0.08,
+      "text": "Hello and welcome back to WPManageNinja!"
+    },
+    {
+      "duration": 8.092,
+      "end": 10.96,
+      "start": 2.868,
+      "text": "This video is all about FluentCRM's free features and how you can make the most out of the plugin without even going for the premium version!"
+    },
+    {
+      "duration": 2.549,
+      "end": 14.069,
+      "start": 11.52,
+      "text": "First off, what is FluentCRM?"
+    },
+    {
+      "duration": 8.009,
+      "end": 22.078,
+      "start": 14.069,
+      "text": "FluentCRM is an email marketing automation plugin for WordPress that lets you automate your email campaigns and user management"
+    },
+    {
+      "duration": 6.049,
+      "end": 28.127,
+      "start": 22.078,
+      "text": "even in the free version, you get a ton of features that you won't find even in premium saas platforms"
+    },
+    {
+      "duration": 2.255,
+      "end": 30.382,
+      "start": 28.127,
+      "text": "So let's jump right in!"
+    },
+    {
+      "duration": 3.064,
+      "end": 35.384,
+      "start": 32.32,
+      "text": "Installing FluenCRM on your WordPress is \nfairly simple!"
+    },
+    {
+      "duration": 3.838,
+      "end": 40.151,
+      "start": 36.313,
+      "text": "Head over to your WordPress admin dashboard and go to the plugins tab"
+    },
+    {
+      "duration": 1.352,
+      "end": 41.951,
+      "start": 40.599,
+      "text": "Click on add new"
+    },
+    {
+      "duration": 5.794,
+      "end": 47.987,
+      "start": 42.193,
+      "text": "Search for FluentCRM"
+    },
+    {
+      "duration": 1.744,
+      "end": 49.902,
+      "start": 48.158,
+      "text": "Click install and activate it"
+    },
+    {
+      "duration": 5.412,
+      "end": 56.467,
+      "start": 51.055,
+      "text": "Next, you'll have to set up your business information, email settings and then you're good to go"
+    },
+    {
+      "duration": 6.776,
+      "end": 78.541,
+      "start": 71.765,
+      "text": "With a fresh installation of FluentCRM setup, you first have to add your contacts list into FluentCRM"
+    },
+    {
+      "duration": 4.955,
+      "end": 83.6,
+      "start": 78.645,
+      "text": "You can choose to do it manually one at a time.\nbut who even does that any more?  "
+    },
+    {
+      "duration": 12.232,
+      "end": 95.832,
+      "start": 83.6,
+      "text": "Instead, you can simply import a CSV file or your \nWordPress users into FluentCRM's contact list!"
+    },
+    {
+      "duration": 5.328,
+      "end": 106.208,
+      "start": 100.88,
+      "text": "Now you can access all your contacts right \nfrom FluentCRM's contacts tab"
+    },
+    {
+      "duration": 4.727,
+      "end": 110.935,
+      "start": 106.208,
+      "text": "FluentCRM lets you store a large amount of information for each contact"
+    },
+    {
+      "duration": 4.596,
+      "end": 115.531,
+      "start": 110.935,
+      "text": "Aside from the usuals such as name, address and contact details"
+    },
+    {
+      "duration": 5.349,
+      "end": 120.88,
+      "start": 115.531,
+      "text": "FluentCRM shows total emails \nsent, open rates, and click rates for each contact"
+    },
+    {
+      "duration": 4.516,
+      "end": 126.196,
+      "start": 121.68,
+      "text": "You can even store additional info such as \nURL's that bring in leads"
+    },
+    {
+      "duration": 6.951,
+      "end": 133.25,
+      "start": 126.299,
+      "text": "Leads IP address, device information, browser version, etc if \nyour form plugin provides this information  "
+    },
+    {
+      "duration": 7.012,
+      "end": 144.052,
+      "start": 137.04,
+      "text": "FluentCRM's contact view is neatly organized \nletting you sort your contacts based on their subscription status"
+    },
+    {
+      "duration": 6.061,
+      "end": 150.113,
+      "start": 144.052,
+      "text": "This comes in handy when \nyou want to send different emails to your  subscribers and your regular customers "
+    },
+    {
+      "duration": 9.368,
+      "end": 159.481,
+      "start": 150.113,
+      "text": "Along with that FluentCRM lets you set the contact type between lead and customer to distinguish prospective customers from the existing ones"
+    },
+    {
+      "duration": 5.28,
+      "end": 165.28,
+      "start": 160,
+      "text": "You can also segment your contacts based on \ntags and lists but we'll get to that in a bit!"
+    },
+    {
+      "duration": 5.65,
+      "end": 172.53,
+      "start": 166.88,
+      "text": "when viewing individual contacts you can \nview their email interactions and their form submissions"
+    },
+    {
+      "duration": 4.59,
+      "end": 177.12,
+      "start": 172.53,
+      "text": " This way you have a complete \npicture for each individual on your contacts list  "
+    },
+    {
+      "duration": 2.646,
+      "end": 180.646,
+      "start": 178,
+      "text": "what about the contacts that are truly unique?"
+    },
+    {
+      "duration": 8.726,
+      "end": 189.888,
+      "start": 181.162,
+      "text": "For instance, will you be able to differentiate contacts who's claimed a refund or provided some actionable feedback from the rest of your users?"
+    },
+    {
+      "duration": 5.552,
+      "end": 195.44,
+      "start": 189.888,
+      "text": "Well in that case, you can store custom \nnotes or activities depending on what you need!"
+    },
+    {
+      "duration": 3.44,
+      "end": 199.92,
+      "start": 196.48,
+      "text": "This wraps up the basics of FluentCRM contacts  "
+    },
+    {
+      "duration": 4.8,
+      "end": 204.72,
+      "start": 199.92,
+      "text": "Now that your contacts are loaded onto FluentCRM, let's get them sorted and organized!"
+    },
+    {
+      "duration": 5.763,
+      "end": 213.043,
+      "start": 207.28,
+      "text": "Being able to anticipate a customer's next \npurchase interest is important for e-Commerce business"
+    },
+    {
+      "duration": 5.778,
+      "end": 218.821,
+      "start": 213.043,
+      "text": "FluentCRM lets you segment your \ncontacts based on lists and tags "
+    },
+    {
+      "duration": 5.462,
+      "end": 224.283,
+      "start": 218.821,
+      "text": "You can add contacts into specific lists or add tags to \nthem according to your needs"
+    },
+    {
+      "duration": 6.841,
+      "end": 232.259,
+      "start": 225.418,
+      "text": "FluentCRM features  a third option called dynamic segmentation which is only available in the pro version  "
+    },
+    {
+      "duration": 6.723,
+      "end": 239.603,
+      "start": 232.88,
+      "text": "It lets FluentCRM automatically segment your \ncontacts based on user activity and customized conditions"
+    },
+    {
+      "duration": 5.408,
+      "end": 245.665,
+      "start": 240.257,
+      "text": "Now let's get to how you can send those \nemails with FluentCRM's email campaign  "
+    },
+    {
+      "duration": 3.673,
+      "end": 249.51,
+      "start": 245.837,
+      "text": "FluentCRM's campaign tab is where all your campaigns live"
+    },
+    {
+      "duration": 2.074,
+      "end": 251.653,
+      "start": 249.579,
+      "text": "let's create a new campaign"
+    },
+    {
+      "duration": 3.758,
+      "end": 255.583,
+      "start": 251.825,
+      "text": "Type in an appropriate name and a new campaign is created"
+    },
+    {
+      "duration": 3.727,
+      "end": 259.31,
+      "start": 255.583,
+      "text": "Let's say the campaign is for promoting your upcoming webinar"
+    },
+    {
+      "duration": 1.608,
+      "end": 260.918,
+      "start": 259.31,
+      "text": "We'll name it webinar push"
+    },
+    {
+      "duration": 3.401,
+      "end": 265.007,
+      "start": 261.606,
+      "text": "next, you'll have to compose the email you want to send"
+    },
+    {
+      "duration": 8.75,
+      "end": 274.442,
+      "start": 265.692,
+      "text": "FluentCRMs email composer lets you choose from \nthree basic templates named simple boxed, plain centered, and classic email"
+    },
+    {
+      "duration": 7.398,
+      "end": 282.201,
+      "start": 274.803,
+      "text": " you can set custom \nbackground colors, exquisite fonts, and much more  "
+    },
+    {
+      "duration": 5.36,
+      "end": 287.76,
+      "start": 282.4,
+      "text": "Have a template that works well? Store custom \ntemplates for later use in other campaigns  "
+    },
+    {
+      "duration": 5.689,
+      "end": 294.089,
+      "start": 288.4,
+      "text": "if this seems like too much work you can always \nuse a custom HTML template instead"
+    },
+    {
+      "duration": 3.769,
+      "end": 298.202,
+      "start": 294.433,
+      "text": "in which case you simply paste it into the composer and \nyou're done!"
+    },
+    {
+      "duration": 4.733,
+      "end": 303.476,
+      "start": 298.743,
+      "text": "Remember to check the preview for any glitches that might sneak in with your HTML source"
+    },
+    {
+      "duration": 1.667,
+      "end": 306.192,
+      "start": 304.525,
+      "text": "When you're done with composing"
+    },
+    {
+      "duration": 3.263,
+      "end": 309.903,
+      "start": 306.64,
+      "text": "next comes your subject line and your email preheader"
+    },
+    {
+      "duration": 2.313,
+      "end": 312.216,
+      "start": 309.903,
+      "text": "this is where you get to be creative"
+    },
+    {
+      "duration": 5.258,
+      "end": 317.887,
+      "start": 312.629,
+      "text": "let's say you want some feedback from your contacts on \nyour next webinar's topics"
+    },
+    {
+      "duration": 4.232,
+      "end": 322.119,
+      "start": 317.887,
+      "text": "the ideal subject line should contain exactly what you want from a contact"
+    },
+    {
+      "duration": 6.006,
+      "end": 328.125,
+      "start": 322.119,
+      "text": "your subject line in this case could be something in the line of \"need your help!\" or \"say what you want?\""
+    },
+    {
+      "duration": 1.783,
+      "end": 330.098,
+      "start": 328.315,
+      "text": "Want to make it seem more personal?"
+    },
+    {
+      "duration": 7.157,
+      "end": 337.375,
+      "start": 330.218,
+      "text": "FluentCRM lets you add variables into the subject \nline such as Name, User ID, Business name etc  "
+    },
+    {
+      "duration": 4.96,
+      "end": 343.68,
+      "start": 338.72,
+      "text": "you could add the contact's name in the start of \nthe subject line to create a sense of familiarity  "
+    },
+    {
+      "duration": 5.52,
+      "end": 350.08,
+      "start": 344.56,
+      "text": "With the Pro version, you can also A/B test your \nsubject lines for better open or click rates  "
+    },
+    {
+      "duration": 4.605,
+      "end": 354.685,
+      "start": 350.08,
+      "text": "and add utm parameters to get better analytics \nof your users"
+    },
+    {
+      "duration": 4.371,
+      "end": 359.624,
+      "start": 355.253,
+      "text": "if you're not sure about your email just send a test mail to yourself"
+    },
+    {
+      "duration": 3.068,
+      "end": 362.829,
+      "start": 359.761,
+      "text": "Once you're done reviewing the email, it's time to select the recipients."
+    },
+    {
+      "duration": 6.036,
+      "end": 369.622,
+      "start": 363.586,
+      "text": "FluentCRM uses tags and lists to select recipients for your campaign"
+    },
+    {
+      "duration": 6.218,
+      "end": 375.84,
+      "start": 369.622,
+      "text": "Like here, for new subscribers that have joined \nin january we've created a list \"new subs January\""
+    },
+    {
+      "duration": 4.8,
+      "end": 381.28,
+      "start": 376.48,
+      "text": "you can either choose to send exclusively \nto the contacts in the new subs january list  "
+    },
+    {
+      "duration": 4.32,
+      "end": 387.04,
+      "start": 382.72,
+      "text": "or you can exclude contacts on other \nlists in the excluded contacts field  "
+    },
+    {
+      "duration": 2.117,
+      "end": 389.722,
+      "start": 387.605,
+      "text": "Whichever is easy!"
+    },
+    {
+      "duration": 3.924,
+      "end": 393.646,
+      "start": 389.722,
+      "text": "Similarly, you can include or exclude contacts based on tags"
+    },
+    {
+      "duration": 3.859,
+      "end": 398.175,
+      "start": 394.316,
+      "text": "Great you've set up your first campaign with FluenctCRM!"
+    },
+    {
+      "duration": 6.699,
+      "end": 404.874,
+      "start": 398.175,
+      "text": "Campaigns are good for revenue but if you really want to expand your prospects you need reliable contacts"
+    },
+    {
+      "duration": 7.031,
+      "end": 412.132,
+      "start": 405.101,
+      "text": "FluentCRM can help you grow your email lists and collect customer information with opt-in forms"
+    },
+    {
+      "duration": 3.1,
+      "end": 415.232,
+      "start": 412.132,
+      "text": "it requires a form plugin to create forms"
+    },
+    {
+      "duration": 3.936,
+      "end": 419.168,
+      "start": 415.232,
+      "text": "For the purpose of this video, we'll use Fluent \nForms integration"
+    },
+    {
+      "duration": 7.005,
+      "end": 426.345,
+      "start": 419.34,
+      "text": "Fluent forms is an incredible plugin with some of the most amazing features you could expect from a form plugin"
+    },
+    {
+      "duration": 4.657,
+      "end": 431.432,
+      "start": 426.775,
+      "text": "With over 50 000 websites using Fluent Forms, it's hard to \ngo wrong with it"
+    },
+    {
+      "duration": 6.808,
+      "end": 438.24,
+      "start": 431.432,
+      "text": "If you don't have it installed, no worries FluentCRM will automatically download and integrate Fluent Forms with your permission"
+    },
+    {
+      "duration": 3.84,
+      "end": 443.76,
+      "start": 439.92,
+      "text": "Now, let's create a form to gather \nsubscribers from your landing page  "
+    },
+    {
+      "duration": 4.337,
+      "end": 448.565,
+      "start": 444.228,
+      "text": "Simply click on the create a new form button and \nselect the template"
+    },
+    {
+      "duration": 4.505,
+      "end": 453.242,
+      "start": 448.737,
+      "text": "set a name for your form and choose what to do with contacts collected with this form"
+    },
+    {
+      "duration": 3.991,
+      "end": 458.145,
+      "start": 454.154,
+      "text": "we'll go with adding the contacts to the list landing subs"
+    },
+    {
+      "duration": 5.506,
+      "end": 463.84,
+      "start": 458.334,
+      "text": "once the template is created \nyou can edit the fields with Fluent Forms later on"
+    },
+    {
+      "duration": 3.36,
+      "end": 469.6,
+      "start": 466.24,
+      "text": "You can choose from 60+ \ntemplates which are free  "
+    },
+    {
+      "duration": 2.733,
+      "end": 472.333,
+      "start": 469.6,
+      "text": "and more if you have Fluent Forms Pro"
+    },
+    {
+      "duration": 5.507,
+      "end": 477.84,
+      "start": 472.333,
+      "text": "since it's a landing page form we'll keep it simple"
+    },
+    {
+      "duration": 7.458,
+      "end": 491.858,
+      "start": 484.4,
+      "text": "when you're done creating the form, simply add \nthe form's shortcode into the page or post and your form is up and running!"
+    },
+    {
+      "duration": 4.382,
+      "end": 497.476,
+      "start": 493.094,
+      "text": " the leads from this \nform are going to be automatically sorted into your landing subs list"
+    },
+    {
+      "duration": 4.465,
+      "end": 502.546,
+      "start": 498.081,
+      "text": " and these are the \nbasics of creating a form in FluentCRM  "
+    },
+    {
+      "duration": 3.058,
+      "end": 505.604,
+      "start": 502.546,
+      "text": "Now it's time for the feature that is at the heart \nof FluentCRM"
+    },
+    {
+      "duration": 1.599,
+      "end": 507.822,
+      "start": 506.223,
+      "text": "let's check out automation funnels!"
+    },
+    {
+      "duration": 4.72,
+      "end": 514.72,
+      "start": 510,
+      "text": "For this video, we're going to send a \ncustomized email to the new subscribers  "
+    },
+    {
+      "duration": 3.501,
+      "end": 518.221,
+      "start": 514.72,
+      "text": "we start by clicking on the create new automation \nbutton"
+    },
+    {
+      "duration": 2.579,
+      "end": 521.213,
+      "start": 518.634,
+      "text": "now you have to choose the type of trigger"
+    },
+    {
+      "duration": 2.139,
+      "end": 523.659,
+      "start": 521.52,
+      "text": "we'll go for the form submission"
+    },
+    {
+      "duration": 4.856,
+      "end": 528.515,
+      "start": 523.659,
+      "text": "the form we used for this automation is a landing page subscription form"
+    },
+    {
+      "duration": 4.499,
+      "end": 533.014,
+      "start": 528.515,
+      "text": "you can map the \nform fields, we'll skip this part for now"
+    },
+    {
+      "duration": 4.96,
+      "end": 541.36,
+      "start": 536.4,
+      "text": "you can also choose to update subscription status.\nwe'll add these contacts as subscribers  "
+    },
+    {
+      "duration": 3.6,
+      "end": 545.68,
+      "start": 542.08,
+      "text": "Now your automation is created.\nTime for the funnel steps!"
+    },
+    {
+      "duration": 5.04,
+      "end": 551.84,
+      "start": 546.8,
+      "text": "since these are new subscribers we'll first add them to a list,\nlet's say march targets!"
+    },
+    {
+      "duration": 3.805,
+      "end": 560.791,
+      "start": 556.986,
+      "text": "the next step is to send them the custom email."
+    },
+    {
+      "duration": 2.811,
+      "end": 563.602,
+      "start": 560.791,
+      "text": "So we bring that into our automation!"
+    },
+    {
+      "duration": 0.65,
+      "end": 569.69,
+      "start": 569.04,
+      "text": "but wait!"
+    },
+    {
+      "duration": 5.434,
+      "end": 575.124,
+      "start": 569.69,
+      "text": "Should email be sent right after they submit the form?\n That won't be the best idea."
+    },
+    {
+      "duration": 4.876,
+      "end": 580,
+      "start": 575.124,
+      "text": "So why not add a \ntwo-day delay before sending the custom email?"
+    },
+    {
+      "duration": 4.16,
+      "end": 586.56,
+      "start": 582.4,
+      "text": "Nice!\nnow we want to remove these contacts from the march targets list ."
+    },
+    {
+      "duration": 4.54,
+      "end": 591.74,
+      "start": 587.2,
+      "text": "So we'll go ahead and do that with the remove from \nlist action block"
+    },
+    {
+      "duration": 8.26,
+      "end": 600,
+      "start": 591.74,
+      "text": "In FluentCRM action blocks work as executable commands whereas benchmark blocks work as triggers inside your funnel"
+    },
+    {
+      "duration": 4.71,
+      "end": 604.998,
+      "start": 600.288,
+      "text": "lastly we want to add a tag so we can keep track of these \nnew subscribers"
+    },
+    {
+      "duration": 8.644,
+      "end": 614.175,
+      "start": 605.531,
+      "text": "simply bring in an add tag action!"
+    },
+    {
+      "duration": 2.019,
+      "end": 625.034,
+      "start": 623.015,
+      "text": "let's recap!"
+    },
+    {
+      "duration": 7.981,
+      "end": 633.015,
+      "start": 625.034,
+      "text": "your website gets a new form submission, add them to a list, wait two days, send a customized email, remove them from the list"
+    },
+    {
+      "duration": 2.528,
+      "end": 637.691,
+      "start": 635.163,
+      "text": "add an identifiable tag"
+    },
+    {
+      "duration": 2.16,
+      "end": 639.851,
+      "start": 637.691,
+      "text": "the automation is complete!"
+    },
+    {
+      "duration": 4.665,
+      "end": 644.516,
+      "start": 639.851,
+      "text": "once you're satisfied with the automation, publish the automation to get it up and running"
+    },
+    {
+      "duration": 3.88,
+      "end": 648.396,
+      "start": 644.516,
+      "text": "and our automation funnel is complete!"
+    },
+    {
+      "duration": 5.154,
+      "end": 653.55,
+      "start": 648.396,
+      "text": "you can now target the subscribers with the tags added for your next marketing campaign!"
+    },
+    {
+      "duration": 3.242,
+      "end": 657.067,
+      "start": 653.825,
+      "text": "this wraps up our take on FluentCRM's free features!"
+    },
+    {
+      "duration": 2.634,
+      "end": 660.134,
+      "start": 657.5,
+      "text": "honestly, there's a lot more to be done!"
+    },
+    {
+      "duration": 4.68,
+      "end": 664.814,
+      "start": 660.134,
+      "text": "So head over to fluencrm.com and get your free installation today!"
+    },
+    {
+      "duration": 3.697,
+      "end": 668.697,
+      "start": 665,
+      "text": "You can find us on Facebook and Twitter"
+    },
+    {
+      "duration": 2.498,
+      "end": 671.765,
+      "start": 669.267,
+      "text": "Stick around to our channel WPManageNinja"
+    },
+    {
+      "duration": 5.458,
+      "end": 677.378,
+      "start": 671.92,
+      "text": "Hit subscribe and the bell icon for more videos like this!"
+    }
+  ],
+  "transcript_text": "Hello and welcome back to WPManageNinja! This video is all about FluentCRM's free features and how you can make the most out of the plugin without even going for the premium version! First off, what is FluentCRM? FluentCRM is an email marketing automation plugin for WordPress that lets you automate your email campaigns and user management even in the free version, you get a ton of features that you won't find even in premium saas platforms So let's jump right in! Installing FluenCRM on your WordPress is \nfairly simple! Head over to your WordPress admin dashboard and go to the plugins tab Click on add new Search for FluentCRM Click install and activate it Next, you'll have to set up your business information, email settings and then you're good to go With a fresh installation of FluentCRM setup, you first have to add your contacts list into FluentCRM You can choose to do it manually one at a time.\nbut who even does that any more?   Instead, you can simply import a CSV file or your \nWordPress users into FluentCRM's contact list! Now you can access all your contacts right \nfrom FluentCRM's contacts tab FluentCRM lets you store a large amount of information for each contact Aside from the usuals such as name, address and contact details FluentCRM shows total emails \nsent, open rates, and click rates for each contact You can even store additional info such as \nURL's that bring in leads Leads IP address, device information, browser version, etc if \nyour form plugin provides this information   FluentCRM's contact view is neatly organized \nletting you sort your contacts based on their subscription status This comes in handy when \nyou want to send different emails to your  subscribers and your regular customers  Along with that FluentCRM lets you set the contact type between lead and customer to distinguish prospective customers from the existing ones You can also segment your contacts based on \ntags and lists but we'll get to that in a bit! when viewing individual contacts you can \nview their email interactions and their form submissions  This way you have a complete \npicture for each individual on your contacts list   what about the contacts that are truly unique? For instance, will you be able to differentiate contacts who's claimed a refund or provided some actionable feedback from the rest of your users? Well in that case, you can store custom \nnotes or activities depending on what you need! This wraps up the basics of FluentCRM contacts   Now that your contacts are loaded onto FluentCRM, let's get them sorted and organized! Being able to anticipate a customer's next \npurchase interest is important for e-Commerce business FluentCRM lets you segment your \ncontacts based on lists and tags  You can add contacts into specific lists or add tags to \nthem according to your needs FluentCRM features  a third option called dynamic segmentation which is only available in the pro version   It lets FluentCRM automatically segment your \ncontacts based on user activity and customized conditions Now let's get to how you can send those \nemails with FluentCRM's email campaign   FluentCRM's campaign tab is where all your campaigns live let's create a new campaign Type in an appropriate name and a new campaign is created Let's say the campaign is for promoting your upcoming webinar We'll name it webinar push next, you'll have to compose the email you want to send FluentCRMs email composer lets you choose from \nthree basic templates named simple boxed, plain centered, and classic email  you can set custom \nbackground colors, exquisite fonts, and much more   Have a template that works well? Store custom \ntemplates for later use in other campaigns   if this seems like too much work you can always \nuse a custom HTML template instead in which case you simply paste it into the composer and \nyou're done! Remember to check the preview for any glitches that might sneak in with your HTML source When you're done with composing next comes your subject line and your email preheader this is where you get to be creative let's say you want some feedback from your contacts on \nyour next webinar's topics the ideal subject line should contain exactly what you want from a contact your subject line in this case could be something in the line of \"need your help!\" or \"say what you want?\" Want to make it seem more personal? FluentCRM lets you add variables into the subject \nline such as Name, User ID, Business name etc   you could add the contact's name in the start of \nthe subject line to create a sense of familiarity   With the Pro version, you can also A/B test your \nsubject lines for better open or click rates   and add utm parameters to get better analytics \nof your users if you're not sure about your email just send a test mail to yourself Once you're done reviewing the email, it's time to select the recipients. FluentCRM uses tags and lists to select recipients for your campaign Like here, for new subscribers that have joined \nin january we've created a list \"new subs January\" you can either choose to send exclusively \nto the contacts in the new subs january list   or you can exclude contacts on other \nlists in the excluded contacts field   Whichever is easy! Similarly, you can include or exclude contacts based on tags Great you've set up your first campaign with FluenctCRM! Campaigns are good for revenue but if you really want to expand your prospects you need reliable contacts FluentCRM can help you grow your email lists and collect customer information with opt-in forms it requires a form plugin to create forms For the purpose of this video, we'll use Fluent \nForms integration Fluent forms is an incredible plugin with some of the most amazing features you could expect from a form plugin With over 50 000 websites using Fluent Forms, it's hard to \ngo wrong with it If you don't have it installed, no worries FluentCRM will automatically download and integrate Fluent Forms with your permission Now, let's create a form to gather \nsubscribers from your landing page   Simply click on the create a new form button and \nselect the template set a name for your form and choose what to do with contacts collected with this form we'll go with adding the contacts to the list landing subs once the template is created \nyou can edit the fields with Fluent Forms later on You can choose from 60+ \ntemplates which are free   and more if you have Fluent Forms Pro since it's a landing page form we'll keep it simple when you're done creating the form, simply add \nthe form's shortcode into the page or post and your form is up and running!  the leads from this \nform are going to be automatically sorted into your landing subs list  and these are the \nbasics of creating a form in FluentCRM   Now it's time for the feature that is at the heart \nof FluentCRM let's check out automation funnels! For this video, we're going to send a \ncustomized email to the new subscribers   we start by clicking on the create new automation \nbutton now you have to choose the type of trigger we'll go for the form submission the form we used for this automation is a landing page subscription form you can map the \nform fields, we'll skip this part for now you can also choose to update subscription status.\nwe'll add these contacts as subscribers   Now your automation is created.\nTime for the funnel steps! since these are new subscribers we'll first add them to a list,\nlet's say march targets! the next step is to send them the custom email. So we bring that into our automation! but wait! Should email be sent right after they submit the form?\n That won't be the best idea. So why not add a \ntwo-day delay before sending the custom email? Nice!\nnow we want to remove these contacts from the march targets list . So we'll go ahead and do that with the remove from \nlist action block In FluentCRM action blocks work as executable commands whereas benchmark blocks work as triggers inside your funnel lastly we want to add a tag so we can keep track of these \nnew subscribers simply bring in an add tag action! let's recap! your website gets a new form submission, add them to a list, wait two days, send a customized email, remove them from the list add an identifiable tag the automation is complete! once you're satisfied with the automation, publish the automation to get it up and running and our automation funnel is complete! you can now target the subscribers with the tags added for your next marketing campaign! this wraps up our take on FluentCRM's free features! honestly, there's a lot more to be done! So head over to fluencrm.com and get your free installation today! You can find us on Facebook and Twitter Stick around to our channel WPManageNinja Hit subscribe and the bell icon for more videos like this!",
+  "url": "https://www.youtube.com/watch?v=QSVpos-WJFg",
+  "video_id": "QSVpos-WJFg",
+  "view_count": 44550
+}]

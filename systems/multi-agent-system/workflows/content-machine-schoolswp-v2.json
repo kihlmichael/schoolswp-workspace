@@ -1,0 +1,590 @@
+{
+  "name": "[InDev] Google Sheets > Google Docs: Content Machine schoolsWP V2",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# Content Machine schoolsWP V2 — Brain + 3 Audits\n\nFLUX : Google Sheets → Brain → Writer V1 → LLM Optimizer → SEO Audit → Conversion Audit → Authority Audit → Publish Score → Editor V2 → Cluster → CTA → Meta → Google Docs → Sheets → Slack\n\nNOUVEAUTÉS V2 :\n• 3 modules d'audit indépendants (SEO /100 · Conversion /100 · Autorité /100)\n• Publish Score composite (SEO×35% + Conversion×30% + Autorité×35%)\n• Plan Cluster sémantique (3 satellites + maillage)\n• Bloc CTA aligné business (email|formation|affiliation|offre)\n• Meta title + description + JSON-LD automatiques\n\nPRÉREQUIS\n1. Credential « Google Sheets » (OAuth2) — sélectionner sur n01 et n28\n2. Credential « Google Docs » (OAuth2) — sélectionner sur n24 et n26\n3. Credential « Anthropic x-api-key » (HTTP Header Auth, header: x-api-key) — sélectionner sur n04, n06, n08, n10, n12, n14, n16, n18, n20, n22\n4. Remplacer VOTRE_GOOGLE_SHEET_ID dans n01 et n28\n5. Renseigner VOTRE_SLACK_WEBHOOK_URL dans n29\n\nFEUILLE IDEAS — colonnes attendues :\n  Sujet | Mot-clé principal | Intent | Pilier | Public | Objectif | Statut | Publish Score | Lien Google Doc\n\nPUBLISH SCORE\n  ≥ 85 ✅ Publication immédiate (Editor retourne V1 unchanged)\n  75–84 🟡 1–2 optimisations ciblées\n  < 75 🔴 Révision substantielle\n\nDURÉE : 14–20 min/article | COÛT Claude : ~0.40–0.60 USD/article",
+        "height": 620,
+        "width": 540,
+        "color": 3
+      },
+      "id": "n00",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [0, -300]
+    },
+    {
+      "parameters": {
+        "documentId": {"__rl": true, "value": "VOTRE_GOOGLE_SHEET_ID", "mode": "id"},
+        "sheetName": {"__rl": true, "value": "IDEAS", "mode": "name"},
+        "triggerOn": "rowAdded",
+        "pollTimes": {"item": [{"mode": "everyMinute"}]}
+      },
+      "id": "n01",
+      "name": "Trigger - Google Sheets",
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 4,
+      "position": [0, 300],
+      "credentials": {"googleSheetsOAuth2Api": {"id": "", "name": "Google Sheets"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const r = $input.first().json;\n\n// Sanitize: strip control chars, limit length\nconst clean = (s, maxLen) => {\n  if (!s) return '';\n  return String(s).replace(/[\\x00-\\x1F\\x7F]/g, ' ').trim().substring(0, maxLen);\n};\n\n// Whitelist enums\nconst VALID_INTENTS = ['informationnelle', 'comparative', 'décisionnelle', 'transactionnelle', 'navigationnelle'];\nconst VALID_PILIERS = ['SEO', 'LMS', 'CRM', 'Performance', 'Automatisation', 'Ecommerce', 'Formation', 'Freelance'];\nconst VALID_OBJECTIFS = ['email', 'affiliation', 'formation', 'offre'];\n\nconst rawIntent = (r['Intent'] || r.intent || '').trim();\nconst rawPilier = (r['Pilier'] || r.pilier || '').trim();\nconst rawObjectif = (r['Objectif'] || r.objectif || '').trim();\n\nconst intent = VALID_INTENTS.includes(rawIntent) ? rawIntent : 'informationnelle';\nconst pilier = VALID_PILIERS.includes(rawPilier) ? rawPilier : 'SEO';\nconst objectif = VALID_OBJECTIFS.includes(rawObjectif) ? rawObjectif : 'formation';\n\nconst sujet = clean(r['Sujet'] || r.sujet, 200);\nconst keyword = clean(r['Mot-clé principal'] || r.keyword, 120);\nconst audience = clean(r['Public'] || r.audience, 200);\n\nif (!sujet && !keyword) {\n  throw new Error('Ligne IDEAS invalide : Sujet et Mot-clé manquants — ligne ignorée');\n}\n\nreturn [{ json: {\n  row_number: r.row_number || 1,\n  sujet: sujet || keyword,\n  keyword: keyword || sujet,\n  intent,\n  pilier,\n  audience: audience || 'freelance WordPress',\n  objectif\n} }];"
+      },
+      "id": "n02",
+      "name": "Code - Map Inputs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const c = $input.first().json;\nconst sys = `Tu es schoolsWP Brain, stratège WordPress.\nRetourne UNIQUEMENT un JSON valide (sans backticks) :\n{\"angle\":\"string\",\"opportunite\":\"affilié|formation|lead magnet|agence\",\"audience\":\"string\",\"competition\":\"faible|moyen|élevé\",\"points_cles\":[\"p1\",\"p2\",\"p3\"]}\nschoolsWP (schoolswp.com) : freelances, formateurs, solopreneurs WordPress.`;\nconst msg = `Sujet : ${c.sujet}\nMot-clé : ${c.keyword}\nIntent : ${c.intent}\nPilier : ${c.pilier}\nAudience : ${c.audience}`;\nreturn [{ json: { ...c, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 800, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n03",
+      "name": "Code - Prepare Brain",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 60000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n04",
+      "name": "HTTP - Brain API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Map Inputs').first().json;\nlet brain = { angle: '', opportunite: 'formation', audience: prev.audience, competition: 'moyen', points_cles: [] };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  brain = { ...brain, ...JSON.parse(raw) };\n} catch(e) {}\nconst pts = (brain.points_cles || []).join(', ');\nconst sys = `Tu es le Rédacteur SEO de schoolsWP (schoolswp.com).\nRédige un article SEO complet en markdown — 1500-2500 mots.\nStructure : H1 optimisé (mot-clé dans le titre) → introduction (problème → solution, accroche directe) → corps H2/H3 logiques → tableau comparatif si pertinent → conclusion (3 points retenus + 1 action concrète).\nTutoiement systématique. Ton direct, pédagogique, chaleureux.\nMots interdits : disruptif, game changer, scalable, révolutionnaire, hack, incroyable, \"en un clic\", \"sans effort\", \"il suffit de\".\nChiffres réels ou estimations sourcées uniquement. CTA naturels et utiles (jamais agressifs).\nCommence directement par le H1. Zéro préambule, zéro commentaire.`;\nconst msg = `Mot-clé cible : ${prev.keyword}\nSujet : ${prev.sujet}\nIntent : ${prev.intent}\nAngle différenciant : ${brain.angle || 'à définir'}\nAudience : ${brain.audience}\nPoints obligatoires à couvrir : ${pts || 'non précisés'}`;\nreturn [{ json: { ...prev, angle: brain.angle, audience_refined: brain.audience, opportunite: brain.opportunite, competition: brain.competition, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 8000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n05",
+      "name": "Code - Parse Brain",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 180000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n06",
+      "name": "HTTP - Writer V1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse Brain').first().json;\nconst v1 = $input.first().json.content[0].text;\nconst sys = `Tu es l'Optimiseur LLM-SEO de schoolsWP.\nInjecte dans l'article les 3 blocs suivants, à l'endroit le plus logique (après le H1 ou avant la conclusion) :\n\n### Réponse rapide\n[≤60 mots, autonome, extractible par AI Overview]\n\n### Points clés\n– [point factuel 1]\n– [point factuel 2]\n– [point factuel 3]\n\n### En résumé\n[≤80 mots, synthèse de l'article]\n\nConserve intégralement le contenu existant. Commence directement par le H1. Aucun commentaire.`;\nconst msg = `Mot-clé : ${prev.keyword}\n\n${v1}`;\nreturn [{ json: { ...prev, v1, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 10000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n07",
+      "name": "Code - Parse V1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 180000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n08",
+      "name": "HTTP - LLM Optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse V1').first().json;\nconst v_llm = $input.first().json.content[0].text;\nconst sys = `Tu es l'Auditeur SEO de schoolsWP.\nAnalyse l'article et retourne UNIQUEMENT un JSON valide (sans backticks, sans commentaires) :\n{\"score_seo\":85,\"structure\":20,\"intention\":22,\"champ_lexical\":23,\"lisibilite\":20,\"faiblesses\":[\"...\",\"...\"],\"actions\":[\"action 1\",\"action 2\",\"action 3\"]}\nChaque sous-score sur 25. score_seo = somme des 4 (max 100).\nÉvalue : structure H1/H2/H3, alignement intention SEO, champ lexical, lisibilité.`;\nconst msg = `Mot-clé : ${prev.keyword}\nIntent : ${prev.intent}\n\n${v_llm}`;\nreturn [{ json: { ...prev, v_llm, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 1000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n09",
+      "name": "Code - Parse LLM",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 90000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n10",
+      "name": "HTTP - SEO Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1980, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse LLM').first().json;\nlet audit_seo = { score_seo: 70, structure: 17, intention: 17, champ_lexical: 18, lisibilite: 18, faiblesses: [], actions: [] };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  audit_seo = { ...audit_seo, ...JSON.parse(raw) };\n} catch(e) {}\nconst sys = `Tu es l'Auditeur Conversion de schoolsWP.\nAnalyse l'article et retourne UNIQUEMENT un JSON valide (sans backticks, sans commentaires) :\n{\"score_conversion\":75,\"clarte_probleme\":15,\"decision\":18,\"orientation_action\":16,\"cta\":10,\"business_alignment\":16,\"faiblesses\":[\"...\",\"...\"],\"actions\":[\"action 1\",\"action 2\"]}\nChaque sous-score sur 20. score_conversion = somme des 5 (max 100).\nÉvalue : clarté du problème, logique décisionnelle, orientation vers l'action, qualité CTA, cohérence business schoolsWP.`;\nconst msg = `Mot-clé : ${prev.keyword}\nIntent : ${prev.intent}\nObjectif business : ${prev.objectif}\n\n${prev.v_llm}`;\nreturn [{ json: { ...prev, audit_seo, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 1000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n11",
+      "name": "Code - Parse SEO Audit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 90000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n12",
+      "name": "HTTP - Conversion Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2420, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse SEO Audit').first().json;\nlet audit_conv = { score_conversion: 70, clarte_probleme: 14, decision: 14, orientation_action: 14, cta: 14, business_alignment: 14, faiblesses: [], actions: [] };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  audit_conv = { ...audit_conv, ...JSON.parse(raw) };\n} catch(e) {}\nconst sys = `Tu es l'Auditeur Topical Authority de schoolsWP.\nAnalyse l'article et retourne UNIQUEMENT un JSON valide (sans backticks, sans commentaires) :\n{\"score_autorite\":80,\"couverture\":18,\"connexions\":15,\"coherence\":16,\"positionnement\":16,\"potentiel_cluster\":15,\"manques\":[\"...\",\"...\"],\"actions\":[\"action 1\",\"action 2\"]}\nChaque sous-score sur 20. score_autorite = somme des 5 (max 100).\nÉvalue : couverture thématique, connexions avec l'écosystème WordPress, cohérence éditoriale, positionnement schoolsWP, potentiel de cluster sémantique.`;\nconst msg = `Mot-clé : ${prev.keyword}\nPilier schoolsWP : ${prev.pilier}\n\n${prev.v_llm}`;\nreturn [{ json: { ...prev, audit_conv, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 1000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n13",
+      "name": "Code - Parse Conversion Audit",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 90000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n14",
+      "name": "HTTP - Authority Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2860, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse Conversion Audit').first().json;\nlet audit_auth = { score_autorite: 70, couverture: 14, connexions: 14, coherence: 14, positionnement: 14, potentiel_cluster: 14, manques: [], actions: [] };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  audit_auth = { ...audit_auth, ...JSON.parse(raw) };\n} catch(e) {}\nconst seo = prev.audit_seo.score_seo || 70;\nconst conv = prev.audit_conv.score_conversion || 70;\nconst auth = audit_auth.score_autorite || 70;\nconst publish_score = Math.round(seo * 0.35 + conv * 0.30 + auth * 0.35);\nconst emoji = publish_score >= 85 ? '✅' : (publish_score >= 75 ? '🟡' : '🔴');\nconst diag = publish_score >= 85 ? 'Publication immédiate' : (publish_score >= 75 ? '1–2 optimisations ciblées' : 'Révision substantielle');\nconst weakest = seo <= conv && seo <= auth ? 'SEO' : (conv <= auth ? 'Conversion' : 'Autorité');\nconst all_actions = [\n  ...(prev.audit_seo.actions || []).slice(0, 2),\n  ...(prev.audit_conv.actions || []).slice(0, 2),\n  ...(audit_auth.actions || []).slice(0, 2)\n];\nconst faiblesses = [\n  ...(prev.audit_seo.faiblesses || []).slice(0, 2),\n  ...(prev.audit_conv.faiblesses || []).slice(0, 2)\n].join(' | ');\nconst sys = `Tu es l'Éditeur Senior de schoolsWP.\nSi le Publish Score indiqué est >= 85 : retourne l'article EXACTEMENT tel quel, sans aucune modification ni commentaire.\nSi Publish Score < 85 : améliore uniquement les sections faibles selon le diagnostic. Conserve la structure globale, le tutoiement, le ton. Commence directement par le H1.`;\nconst msg = `Publish Score : ${publish_score}/100 (${diag})\nBloc le plus faible : ${weakest}\nActions prioritaires : ${all_actions.join(' | ')}\nFaiblesses : ${faiblesses}\n\n--- ARTICLE ---\n\n${prev.v_llm}`;\nreturn [{ json: { ...prev, audit_auth, publish_score, emoji, diag, weakest, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 8000, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n15",
+      "name": "Code - Compute Publish Score",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3080, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 180000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n16",
+      "name": "HTTP - Editor V2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3300, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Compute Publish Score').first().json;\nconst article_final = $input.first().json.content[0].text;\nconst sys = `Tu es le Stratège Cluster de schoolsWP.\nRetourne UNIQUEMENT un JSON valide (sans backticks, sans commentaires) :\n{\"role\":\"Pilier|Satellite|À renforcer\",\"satellites\":[{\"titre\":\"string\",\"intention\":\"informationnelle|comparative|décisionnelle\",\"lien_logique\":\"string\",\"priorite\":1},{\"titre\":\"...\",\"intention\":\"...\",\"lien_logique\":\"...\",\"priorite\":2},{\"titre\":\"...\",\"intention\":\"...\",\"lien_logique\":\"...\",\"priorite\":3}],\"maillage\":[\"ancre naturelle → /url-relative\",\"ancre 2 → /url-2\"]}\nPiliers schoolsWP : SEO WordPress / LMS WordPress / CRM WordPress / Performance / Automatisation.`;\nconst msg = `Mot-clé : ${prev.keyword}\nPilier : ${prev.pilier}\nIntent : ${prev.intent}\n\n${article_final}`;\nreturn [{ json: { ...prev, article_final, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 1200, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n17",
+      "name": "Code - Parse V2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3520, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 90000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n18",
+      "name": "HTTP - Cluster Strategy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3740, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse V2').first().json;\nlet cluster = { role: 'Satellite', satellites: [], maillage: [] };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  cluster = { ...cluster, ...JSON.parse(raw) };\n} catch(e) {}\nconst sys = `Tu es le Copywriter CTA de schoolsWP.\nGénère 1 bloc CTA soft en markdown, tutoiement, max 80 mots.\nAdapte l'objectif business spécifié. Propose une ressource concrète (guide, checklist, formation).\nStyle : utile, direct, jamais agressif. Disclosure affilié si pertinent : \"(lien affilié — soutient schoolsWP sans surcoût)\".\nRetourne uniquement le bloc markdown. Aucun commentaire préliminaire.`;\nconst msg = `Mot-clé : ${prev.keyword}\nObjectif business : ${prev.objectif}\nOpportunité : ${prev.opportunite}\nPilier : ${prev.pilier}`;\nreturn [{ json: { ...prev, cluster, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 500, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n19",
+      "name": "Code - Parse Cluster",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3960, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 60000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n20",
+      "name": "HTTP - CTA Final",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4180, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse Cluster').first().json;\nconst cta_block = $input.first().json.content[0].text;\nconst sys = `Tu es l'Expert SEO Meta de schoolsWP.\nRetourne UNIQUEMENT un JSON valide (sans backticks, sans commentaires) :\n{\"title\":\"Titre SEO ≤60 chars\",\"description\":\"Meta description ≤155 chars, incite au clic\",\"json_ld\":{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"string\",\"description\":\"string\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"schoolsWP\",\"url\":\"https://schoolswp.com\"}}}\nLe title doit contenir le mot-clé principal. La description doit inclure un bénéfice clair et inciter au clic.`;\nconst msg = `Mot-clé : ${prev.keyword}\nSujet : ${prev.sujet}\nIntent : ${prev.intent}`;\nreturn [{ json: { ...prev, cta_block, requestBody: { model: 'claude-sonnet-4-6', max_tokens: 600, system: sys, messages: [{ role: 'user', content: msg }] } } }];"
+      },
+      "id": "n21",
+      "name": "Code - Parse CTA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4400, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [
+          {"name": "anthropic-version", "value": "2023-06-01"},
+          {"name": "content-type", "value": "application/json"}
+        ]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {"timeout": 60000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n22",
+      "name": "HTTP - Meta Generator",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4620, 300],
+      "credentials": {"httpHeaderAuth": {"id": "", "name": "Anthropic x-api-key"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Parse CTA').first().json;\nlet meta = { title: prev.keyword, description: '', json_ld: null };\ntry {\n  const raw = $input.first().json.content[0].text.replace(/```json\\s*|```\\s*/g, '').trim();\n  meta = { ...meta, ...JSON.parse(raw) };\n} catch(e) {}\nconst now = new Date().toISOString().split('T')[0];\nconst ps = prev.publish_score;\nconst scoreLabel = ps >= 85 ? 'A' : (ps >= 75 ? 'B' : 'C');\nconst satelliteTitles = (prev.cluster.satellites || []).map(s => s.titre).join(', ') || '—';\nconst satelliteLines = (prev.cluster.satellites || []).map(s =>\n  `  - ${s.titre} (${s.intention} — priorité ${s.priorite})`\n).join('\\n');\nconst maillageLines = (prev.cluster.maillage || []).map(m => `  - ${m}`).join('\\n') || '  —';\nconst allActions = [\n  ...(prev.audit_seo.actions || []),\n  ...(prev.audit_conv.actions || []),\n  ...(prev.audit_auth.actions || [])\n];\nconst topActions = allActions.slice(0, 2).map(a => `  – ${a}`).join('\\n') || '  – Aucune action requise';\nconst SEP = '━'.repeat(62);\nconst DIV = '─'.repeat(62);\nconst json_ld_str = meta.json_ld ? JSON.stringify(meta.json_ld, null, 2) : '{}';\nconst docTitle = `[schoolsWP] ${prev.keyword} — PS ${ps}/100 (${now})`;\nconst finalContent = [\n  SEP,\n  `  🧠 schoolsWP – Article Engine v1`,\n  SEP,\n  '',\n  `1️⃣ BLOC STRATÉGIQUE`,\n  DIV,\n  `SUJET             : ${prev.sujet || prev.keyword}`,\n  `MOT-CLÉ PRINCIPAL : ${prev.keyword}`,\n  `Intent            : ${prev.intent || '—'}`,\n  `Public cible      : ${prev.audience || '—'}`,\n  `Objectif business : ${prev.objectif || '—'}`,\n  `Type              : ${prev.cluster.role || '—'}`,\n  `Pilier            : ${prev.pilier || '—'}`,\n  `Cluster associé   : ${satelliteTitles}`,\n  '',\n  `2️⃣ BLOC RÉDACTION`,\n  DIV,\n  prev.article_final,\n  '',\n  `3️⃣ BLOC CONVERSION`,\n  DIV,\n  prev.cta_block,\n  '',\n  `Type CTA  : ${prev.opportunite || '—'}`,\n  `Objectif  : ${prev.objectif || '—'}`,\n  '',\n  `4️⃣ BLOC AUTO-AUDIT`,\n  DIV,\n  `Publish Score    : ${ps}/100 ${prev.emoji}`,\n  `Score SEO        : ${prev.audit_seo.score_seo}/100`,\n  `Score Conversion : ${prev.audit_conv.score_conversion}/100`,\n  `Score Autorité   : ${prev.audit_auth.score_autorite}/100`,\n  `Diagnostic : ${prev.diag}  |  Bloc faible : ${prev.weakest}`,\n  '',\n  `Axes d'amélioration :`,\n  topActions,\n  '',\n  `5️⃣ BLOC CLUSTER`,\n  DIV,\n  `Position : ${prev.cluster.role || '—'}`,\n  '',\n  `Maillage interne :`,\n  maillageLines,\n  '',\n  `Satellites complémentaires :`,\n  satelliteLines,\n  '',\n  SEP,\n  `🔍 SEO Meta`,\n  DIV,\n  `Title       : ${meta.title}`,\n  `Description : ${meta.description}`,\n  '',\n  '```json',\n  json_ld_str,\n  '```',\n  '',\n  `*Généré par Content Machine schoolsWP V2 — ${now}*`\n].join('\\n');\nreturn [{ json: { ...prev, meta, doc_title: docTitle, final_content: finalContent, priority: scoreLabel, generated_at: now } }];"
+      },
+      "id": "n23",
+      "name": "Code - Assemble Final",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4840, 300]
+    },
+    {
+      "parameters": {
+        "resource": "document",
+        "operation": "create",
+        "title": "={{ $json.doc_title }}"
+      },
+      "id": "n24",
+      "name": "Google Docs - Create",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 1,
+      "position": [5060, 300],
+      "credentials": {"googleDocsOAuth2Api": {"id": "", "name": "Google Docs"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Assemble Final').first().json;\nconst docId = $input.first().json.documentId || '';\nconst batchUpdateBody = {\n  requests: [{\n    insertText: {\n      location: { index: 1 },\n      text: prev.final_content\n    }\n  }]\n};\nreturn [{ json: { ...prev, documentId: docId, batchUpdateBody } }];"
+      },
+      "id": "n25",
+      "name": "Code - Prepare Doc Update",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5280, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://docs.googleapis.com/v1/documents/{{ $json.documentId }}:batchUpdate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.batchUpdateBody) }}",
+        "options": {"timeout": 30000, "response": {"response": {"responseFormat": "json"}}}
+      },
+      "id": "n26",
+      "name": "HTTP - Google Docs Update",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [5500, 300],
+      "credentials": {"oAuth2Api": {"id": "", "name": "Google Docs OAuth2"}}
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const prev = $('Code - Prepare Doc Update').first().json;\nconst docUrl = prev.documentId ? `https://docs.google.com/document/d/${prev.documentId}/edit` : 'N/D';\nreturn [{ json: {\n  'Sujet': prev.sujet,\n  'Mot-clé principal': prev.keyword,\n  'Statut': 'Généré ✓',\n  'Priorité': prev.priority,\n  'Publish Score': String(prev.publish_score),\n  'Lien Google Doc': docUrl\n} }];"
+      },
+      "id": "n27",
+      "name": "Code - Prepare Sheets Update",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5720, 300]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {"__rl": true, "value": "VOTRE_GOOGLE_SHEET_ID", "mode": "id"},
+        "sheetName": {"__rl": true, "value": "IDEAS", "mode": "name"},
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["Sujet"],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "n28",
+      "name": "GSheets - Update Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [5940, 300],
+      "credentials": {"googleSheetsOAuth2Api": {"id": "", "name": "Google Sheets"}}
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "VOTRE_SLACK_WEBHOOK_URL",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: '*✅ Article généré — Content Machine schoolsWP V2*', blocks: [{ type: 'section', text: { type: 'mrkdwn', text: '*' + $('Code - Assemble Final').first().json.keyword + '*\\nPublish Score : *' + $('Code - Assemble Final').first().json.publish_score + '/100* ' + $('Code - Assemble Final').first().json.emoji + ' | Priorité : *' + $('Code - Assemble Final').first().json.priority + '*\\nSEO : ' + $('Code - Parse SEO Audit').first().json.audit_seo.score_seo + '/100 · Conv : ' + $('Code - Parse Conversion Audit').first().json.audit_conv.score_conversion + '/100 · Auth : ' + $('Code - Compute Publish Score').first().json.audit_auth.score_autorite + '/100\\n<' + ('https://docs.google.com/document/d/' + $('Code - Prepare Doc Update').first().json.documentId + '/edit') + '|Ouvrir dans Google Docs>' } }] }) }}",
+        "options": {"timeout": 15000}
+      },
+      "id": "n29",
+      "name": "HTTP - Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [6160, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "VOTRE_NOTION_WEBHOOK_URL",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ keyword: $('Code - Assemble Final').first().json.keyword, sujet: $('Code - Assemble Final').first().json.sujet || $('Code - Assemble Final').first().json.keyword, intent: $('Code - Assemble Final').first().json.intent, pilier: $('Code - Assemble Final').first().json.pilier, objectif: $('Code - Assemble Final').first().json.objectif, audience: $('Code - Assemble Final').first().json.audience, opportunite: $('Code - Assemble Final').first().json.opportunite, publish_score: $('Code - Assemble Final').first().json.publish_score, emoji: $('Code - Assemble Final').first().json.emoji, priority: $('Code - Assemble Final').first().json.priority, diag: $('Code - Assemble Final').first().json.diag, weakest: $('Code - Assemble Final').first().json.weakest, audit_seo: $('Code - Assemble Final').first().json.audit_seo, audit_conv: $('Code - Assemble Final').first().json.audit_conv, audit_auth: $('Code - Assemble Final').first().json.audit_auth, cluster: $('Code - Assemble Final').first().json.cluster, documentId: $('Code - Prepare Doc Update').first().json.documentId, generated_at: $('Code - Assemble Final').first().json.generated_at }) }}",
+        "options": {"timeout": 30000}
+      },
+      "id": "n30",
+      "name": "HTTP - Notion KPI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [6380, 300]
+    }
+  ],
+  "connections": {
+    "Trigger - Google Sheets": {
+      "main": [[{"node": "Code - Map Inputs", "type": "main", "index": 0}]]
+    },
+    "Code - Map Inputs": {
+      "main": [[{"node": "Code - Prepare Brain", "type": "main", "index": 0}]]
+    },
+    "Code - Prepare Brain": {
+      "main": [[{"node": "HTTP - Brain API", "type": "main", "index": 0}]]
+    },
+    "HTTP - Brain API": {
+      "main": [[{"node": "Code - Parse Brain", "type": "main", "index": 0}]]
+    },
+    "Code - Parse Brain": {
+      "main": [[{"node": "HTTP - Writer V1", "type": "main", "index": 0}]]
+    },
+    "HTTP - Writer V1": {
+      "main": [[{"node": "Code - Parse V1", "type": "main", "index": 0}]]
+    },
+    "Code - Parse V1": {
+      "main": [[{"node": "HTTP - LLM Optimizer", "type": "main", "index": 0}]]
+    },
+    "HTTP - LLM Optimizer": {
+      "main": [[{"node": "Code - Parse LLM", "type": "main", "index": 0}]]
+    },
+    "Code - Parse LLM": {
+      "main": [[{"node": "HTTP - SEO Audit", "type": "main", "index": 0}]]
+    },
+    "HTTP - SEO Audit": {
+      "main": [[{"node": "Code - Parse SEO Audit", "type": "main", "index": 0}]]
+    },
+    "Code - Parse SEO Audit": {
+      "main": [[{"node": "HTTP - Conversion Audit", "type": "main", "index": 0}]]
+    },
+    "HTTP - Conversion Audit": {
+      "main": [[{"node": "Code - Parse Conversion Audit", "type": "main", "index": 0}]]
+    },
+    "Code - Parse Conversion Audit": {
+      "main": [[{"node": "HTTP - Authority Audit", "type": "main", "index": 0}]]
+    },
+    "HTTP - Authority Audit": {
+      "main": [[{"node": "Code - Compute Publish Score", "type": "main", "index": 0}]]
+    },
+    "Code - Compute Publish Score": {
+      "main": [[{"node": "HTTP - Editor V2", "type": "main", "index": 0}]]
+    },
+    "HTTP - Editor V2": {
+      "main": [[{"node": "Code - Parse V2", "type": "main", "index": 0}]]
+    },
+    "Code - Parse V2": {
+      "main": [[{"node": "HTTP - Cluster Strategy", "type": "main", "index": 0}]]
+    },
+    "HTTP - Cluster Strategy": {
+      "main": [[{"node": "Code - Parse Cluster", "type": "main", "index": 0}]]
+    },
+    "Code - Parse Cluster": {
+      "main": [[{"node": "HTTP - CTA Final", "type": "main", "index": 0}]]
+    },
+    "HTTP - CTA Final": {
+      "main": [[{"node": "Code - Parse CTA", "type": "main", "index": 0}]]
+    },
+    "Code - Parse CTA": {
+      "main": [[{"node": "HTTP - Meta Generator", "type": "main", "index": 0}]]
+    },
+    "HTTP - Meta Generator": {
+      "main": [[{"node": "Code - Assemble Final", "type": "main", "index": 0}]]
+    },
+    "Code - Assemble Final": {
+      "main": [[{"node": "Google Docs - Create", "type": "main", "index": 0}]]
+    },
+    "Google Docs - Create": {
+      "main": [[{"node": "Code - Prepare Doc Update", "type": "main", "index": 0}]]
+    },
+    "Code - Prepare Doc Update": {
+      "main": [[{"node": "HTTP - Google Docs Update", "type": "main", "index": 0}]]
+    },
+    "HTTP - Google Docs Update": {
+      "main": [[{"node": "Code - Prepare Sheets Update", "type": "main", "index": 0}]]
+    },
+    "Code - Prepare Sheets Update": {
+      "main": [[{"node": "GSheets - Update Row", "type": "main", "index": 0}]]
+    },
+    "GSheets - Update Row": {
+      "main": [[{"node": "HTTP - Slack", "type": "main", "index": 0}]]
+    },
+    "HTTP - Slack": {
+      "main": [[{"node": "HTTP - Notion KPI", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null
+}

@@ -1,0 +1,116 @@
+{
+  "total_images": 46,
+  "analysed": 46,
+  "kept": 44,
+  "excluded": 2,
+  "errors": [],
+  "cities": {
+    "Non_Classe": 40,
+    "Seville": 1,
+    "Xàbia": 1,
+    "Seingbouse": 1,
+    "Baccarat": 1
+  },
+  "top20": [
+    {
+      "name": "2025-12-28 - 78126997142 E417BA51-24A8-4A26-A210-560AA30B4A18.heic",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "2025-12-28 - IMG 9473.heic",
+      "city": "Seville",
+      "score": 8
+    },
+    {
+      "name": "2025-12-28 - IMG 9499.heic",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_0FFB2038-FA78-46B9-B4FF-91080D4C003C.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_4DBC9A2B-39BC-43AD-A5D7-39A4A010630D.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_4EE812E8-E81D-4827-B50E-E9FBAACB77C6.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_0BDA2169-FB9A-4492-9E56-30BF825F083B.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_4D929E6A-FF52-4342-980D-6AE77E884D4C.jpeg",
+      "city": "Xàbia",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_3BD69093-2A48-426B-B3BC-82DF5B8F4EA8.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_00E7D1E3-1DF4-4D21-BE3B-378330A33B62.jpeg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "20251001_124134.jpg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "597843838_1406206477964521_245362417513554571_n.jpg",
+      "city": "Non_Classe",
+      "score": 8
+    },
+    {
+      "name": "Messenger_creation_4BE32F6D-86F0-434B-B5BD-73CBAFA0578C.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_1F5962E7-47D0-4E7D-8BBA-EA88EE155E8B.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_2B2C1D3E-4F3D-4333-86D7-F20C441A6BE7.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_1C6A2BDD-E724-4CFF-90C6-9816FAA35062.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_1DCC7340-1D76-4B36-93B7-A34B37F65FFB.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_02B493F3-0997-40BD-87ED-0E7837ED4E77.png",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "Messenger_creation_3A76AFC0-1904-427C-9C28-09F403EBF3C1.jpeg",
+      "city": "Non_Classe",
+      "score": 7
+    },
+    {
+      "name": "20250908_161636.jpg",
+      "city": "Non_Classe",
+      "score": 7
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+version: "3.8"
+
+# ══════════════════════════════════════════════════════
+#  schoolsWP — n8n Monthly Audit Stack
+#  Services : n8n + pdf-service + postgres
+#  Usage    : docker compose --env-file .env up -d
+# ══════════════════════════════════════════════════════
+
+services:
+
+  # ── n8n ─────────────────────────────────────────────
+  n8n:
+    image: n8nio/n8n:2.0.3
+    container_name: schoolswp-n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    env_file:
+      - .env
+    environment:
+      # Timezone — OBLIGATOIRE pour que le scheduling soit correct
+      - TZ=${TZ:-Europe/Paris}
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-Europe/Paris}
+      # DB
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=${DB_POSTGRESDB_DATABASE:-n8n}
+      - DB_POSTGRESDB_USER=${DB_POSTGRESDB_USER:-n8n}
+      - DB_POSTGRESDB_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+      # Sécurité
+      - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE:-true}
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      # Code Node
+      - NODE_FUNCTION_ALLOW_BUILTIN=${NODE_FUNCTION_ALLOW_BUILTIN:-fs,path,crypto,os}
+      - NODE_FUNCTION_ALLOW_EXTERNAL=${NODE_FUNCTION_ALLOW_EXTERNAL:-}
+      # Task Runner
+      - N8N_RUNNERS_ENABLED=${N8N_RUNNERS_ENABLED:-true}
+      # Logs
+      - N8N_LOG_LEVEL=${N8N_LOG_LEVEL:-info}
+      - EXECUTIONS_DATA_SAVE_ON_ERROR=all
+      - EXECUTIONS_DATA_SAVE_ON_SUCCESS=all
+      - EXECUTIONS_DATA_MAX_AGE=${EXECUTIONS_DATA_MAX_AGE:-168}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      # Dossier de sortie des PDFs (partagé avec l'hôte)
+      - ../artifacts:/artifacts
+      # Template HTML et schéma accessibles depuis les Code nodes
+      - ../report:/report:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      pdf-service:
+        condition: service_started
+    networks:
+      - audit-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ── PDF Service (Playwright) ─────────────────────────
+  pdf-service:
+    build:
+      context: ../scripts/pdf-service
+      dockerfile: Dockerfile
+    container_name: schoolswp-pdf-service
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    networks:
+      - audit-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/health"]
+      interval: 20s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # ── PostgreSQL ───────────────────────────────────────
+  postgres:
+    image: postgres:15-alpine
+    container_name: schoolswp-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${DB_POSTGRESDB_DATABASE:-n8n}
+      - POSTGRES_USER=${DB_POSTGRESDB_USER:-n8n}
+      - POSTGRES_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - audit-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_POSTGRESDB_USER:-n8n} -d ${DB_POSTGRESDB_DATABASE:-n8n}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  n8n_data:
+    name: schoolswp_n8n_data
+  postgres_data:
+    name: schoolswp_postgres_data
+
+networks:
+  audit-network:
+    name: schoolswp-audit-network
+    driver: bridge

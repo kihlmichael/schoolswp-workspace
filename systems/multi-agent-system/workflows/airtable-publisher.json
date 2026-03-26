@@ -1,0 +1,59 @@
+{
+  "name": "[Prod] Webhook > Airtable: Article Publisher",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "airtable-publisher",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "id": "wh-001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "airtable-publisher"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate webhook secret\nconst secret = $input.first().headers['x-webhook-secret'];\nif (secret !== $vars.WEBHOOK_SECRET) {\n  throw new Error('Unauthorized: invalid webhook secret');\n}\nreturn $input.all();"
+      },
+      "id": "code-001",
+      "name": "Validate Secret",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "baseId": { "__rl": true, "value": "={{$vars.AIRTABLE_BASE_ID}}", "mode": "id" },
+        "tableId": { "__rl": true, "value": "tblArticles", "mode": "id" },
+        "fieldsUi": {
+          "fieldValues": [
+            { "fieldId": "Title", "fieldValue": "={{$json.body.title}}" },
+            { "fieldId": "Keyword", "fieldValue": "={{$json.body.keyword}}" },
+            { "fieldId": "Status", "fieldValue": "={{$json.body.status}}" },
+            { "fieldId": "Publish Score", "fieldValue": "={{$json.body.publish_score}}" },
+            { "fieldId": "Google Doc URL", "fieldValue": "={{$json.body.doc_url}}" }
+          ]
+        }
+      },
+      "id": "airtable-001",
+      "name": "Upsert Article",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Validate Secret", "type": "main", "index": 0 }]]
+    },
+    "Validate Secret": {
+      "main": [[{ "node": "Upsert Article", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}

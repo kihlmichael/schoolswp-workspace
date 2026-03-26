@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agences WordPress Strasbourg — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0f0f13;color:#e4e4e7;min-height:100vh}
+a{color:#818cf8;text-decoration:none;transition:color .2s}
+a:hover{color:#a5b4fc}
+
+/* Header */
+.header{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4c1d95 70%,#6d28d9 100%);padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+.header::after{content:'';position:absolute;top:0;right:0;width:400px;height:100%;background:radial-gradient(circle at 80% 50%,rgba(139,92,246,.3),transparent 70%)}
+.header h1{font-size:1.75rem;font-weight:700;color:#fff;position:relative;z-index:1}
+.header p{font-size:.95rem;color:#c4b5fd;margin-top:.4rem;position:relative;z-index:1}
+.header .meta{font-size:.75rem;color:#a78bfa;margin-top:.6rem;position:relative;z-index:1}
+
+/* Stats bar */
+.stats{display:flex;gap:1rem;padding:1.25rem 2rem;background:#18181b;border-bottom:1px solid #27272a;flex-wrap:wrap}
+.stat{flex:1;min-width:140px;background:#1f1f23;border-radius:10px;padding:1rem 1.25rem;border:1px solid #27272a}
+.stat .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#71717a;font-weight:600}
+.stat .value{font-size:1.6rem;font-weight:700;margin-top:.25rem;background:linear-gradient(135deg,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Controls */
+.controls{display:flex;gap:.75rem;padding:1rem 2rem;background:#18181b;align-items:center;flex-wrap:wrap}
+.search-box{flex:1;min-width:200px;position:relative}
+.search-box input{width:100%;padding:.6rem 1rem .6rem 2.5rem;background:#27272a;border:1px solid #3f3f46;border-radius:8px;color:#e4e4e7;font-size:.85rem;font-family:inherit;outline:none;transition:border-color .2s}
+.search-box input:focus{border-color:#818cf8}
+.search-box svg{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#71717a}
+.filter-btn{padding:.5rem 1rem;background:#27272a;border:1px solid #3f3f46;border-radius:8px;color:#a1a1aa;font-size:.8rem;cursor:pointer;font-family:inherit;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:#312e81;border-color:#6366f1;color:#e4e4e7}
+.export-btn{padding:.5rem 1rem;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:8px;color:#fff;font-size:.8rem;cursor:pointer;font-family:inherit;font-weight:500;transition:opacity .2s}
+.export-btn:hover{opacity:.85}
+
+/* Table */
+.table-wrap{padding:0 2rem 2rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+thead{position:sticky;top:0;z-index:2}
+th{background:#1f1f23;padding:.7rem 1rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#71717a;font-weight:600;border-bottom:1px solid #27272a;cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{color:#a5b4fc}
+th .sort-icon{margin-left:.3rem;opacity:.4;font-size:.6rem}
+th.sorted .sort-icon{opacity:1;color:#818cf8}
+td{padding:.65rem 1rem;border-bottom:1px solid #1f1f23;font-size:.82rem;vertical-align:middle}
+tr{transition:background .15s}
+tr:hover{background:#1a1a2e}
+
+/* Badges */
+.badge{display:inline-block;padding:.15rem .55rem;border-radius:20px;font-size:.68rem;font-weight:500;white-space:nowrap}
+.badge-dirigeant{background:rgba(99,102,241,.15);color:#818cf8}
+.badge-fondateur{background:rgba(168,85,247,.15);color:#c084fc}
+.badge-gerant{background:rgba(34,211,238,.15);color:#22d3ee}
+.badge-directeur{background:rgba(251,191,36,.15);color:#fbbf24}
+.badge-freelance{background:rgba(52,211,153,.15);color:#34d399}
+.badge-expert{background:rgba(244,114,182,.15);color:#f472b6}
+.badge-other{background:rgba(161,161,170,.12);color:#a1a1aa}
+
+.rating{display:flex;align-items:center;gap:.3rem}
+.stars{color:#fbbf24;font-size:.75rem}
+.rating-num{font-weight:600;font-size:.82rem}
+.reviews{color:#71717a;font-size:.72rem}
+
+.company-name{font-weight:600;color:#e4e4e7}
+.company-addr{font-size:.72rem;color:#71717a;margin-top:.15rem}
+
+.linkedin-link{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .5rem;background:rgba(99,102,241,.1);border-radius:6px;font-size:.75rem;color:#818cf8;transition:background .2s}
+.linkedin-link:hover{background:rgba(99,102,241,.2)}
+
+.no-data{color:#3f3f46;font-style:italic;font-size:.78rem}
+
+/* Responsive */
+@media(max-width:768px){
+  .header{padding:1.5rem 1rem}
+  .header h1{font-size:1.3rem}
+  .stats{padding:.75rem 1rem;gap:.5rem}
+  .controls{padding:.75rem 1rem}
+  .table-wrap{padding:0 .5rem 1rem}
+  td,th{padding:.5rem .6rem;font-size:.75rem}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Agences WordPress &amp; Web — Strasbourg</h1>
+  <p>Dashboard de prospection — 30 agences scrapées, décideurs identifiés via LinkedIn</p>
+  <div class="meta">Source : Google Maps + Apify + LinkedIn • Généré le 23 mars 2026</div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="controls">
+  <div class="search-box">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+    <input type="text" id="search" placeholder="Rechercher une agence, un décideur, un poste...">
+  </div>
+  <button class="filter-btn active" data-filter="all">Toutes</button>
+  <button class="filter-btn" data-filter="with-decideur">Avec décideur</button>
+  <button class="filter-btn" data-filter="top-rated">Note ≥ 4.9</button>
+  <button class="export-btn" id="exportBtn">⬇ Exporter CSV</button>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th data-col="nom">Entreprise <span class="sort-icon">▲▼</span></th>
+        <th data-col="note">Note <span class="sort-icon">▲▼</span></th>
+        <th data-col="avis">Avis <span class="sort-icon">▲▼</span></th>
+        <th data-col="tel">Téléphone</th>
+        <th data-col="site">Site Web</th>
+        <th data-col="decideur">Décideur <span class="sort-icon">▲▼</span></th>
+        <th data-col="poste">Poste</th>
+        <th data-col="linkedin">LinkedIn</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script>
+const DATA = [
+  {nom:"Agence Tiz",adresse:"104 Rue de Hochfelden, 67200 Strasbourg",tel:"+33 3 67 10 18 50",site:"https://www.tiz.fr/",note:4.9,avis:41,decideur:"Jef Marnette",poste:"Dirigeant d'entreprise",linkedin:"https://fr.linkedin.com/in/ACwAAA92lnsB1GTFkRYu1iRdDgezjOTVqUGDGhQ",maps:"https://www.google.com/maps/search/?api=1&query=Agence%20Tiz&query_place_id=ChIJyTepXw64lkcRs5uPTFBM02c"},
+  {nom:"Be BOLD",adresse:"Héliocentre, 104 Rue de Hochfelden, 67200 Strasbourg",tel:"+33 3 67 10 39 50",site:"https://www.be-bold.fr/",note:5,avis:14,decideur:"Alexandre Gireau",poste:"Fondateur (BOLD)",linkedin:"https://fr.linkedin.com/in/alexandregireau",maps:""},
+  {nom:"Wordesign",adresse:"42 Rue Baldner, 67100 Strasbourg",tel:"",site:"",note:5,avis:1,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Webalia",adresse:"37 Rue du Fossé des Treize, 67000 Strasbourg",tel:"+33 6 71 53 32 93",site:"https://webalia.fr/",note:5,avis:35,decideur:"Sakhavat Seyidmammadov",poste:"Gérant",linkedin:"https://fr.linkedin.com/in/sakhavat-seyidmammadov",maps:""},
+  {nom:"Agence web Qwenty",adresse:"4 Quai Koch, 67000 Strasbourg",tel:"+33 7 49 55 53 01",site:"https://qwenty.fr/",note:4.8,avis:45,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"19Media",adresse:"81 Rue du Rhin Napoléon, 67100 Strasbourg",tel:"+33 6 79 95 91 92",site:"https://www.19media.fr/",note:5,avis:10,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Agence WEBAST",adresse:"5 Quai Saint-Jean, 67000 Strasbourg",tel:"",site:"https://www.agence-webast.fr/",note:5,avis:20,decideur:"Gaël Lucas",poste:"Directeur associé",linkedin:"https://fr.linkedin.com/in/gaellucas",maps:""},
+  {nom:"Hexapress",adresse:"24 Rue Spielmann, 67000 Strasbourg",tel:"",site:"https://agence-web-armor.fr/",note:0,avis:0,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"WebCodeur",adresse:"1 Pl. de l'Homme de Fer, 67000 Strasbourg",tel:"+33 3 67 10 40 88",site:"https://webcodeur.fr/",note:5,avis:91,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Agence SEO Strasbourg",adresse:"Pl. de l'Homme de Fer, 67000 Strasbourg",tel:"+33 3 67 72 99 83",site:"https://www.agence-seo-strasbourg.net/",note:5,avis:22,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Hémisphère Web",adresse:"4 Quai Kellermann, 67000 Strasbourg",tel:"+33 6 28 30 44 22",site:"https://www.hemisphereweb.com/",note:5,avis:20,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Idealice",adresse:"LE HIGHTECH, 3 Rue Charles Péguy, 67200 Strasbourg",tel:"+33 3 88 30 17 41",site:"https://www.idealice.fr/",note:5,avis:18,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Jeremy Billey",adresse:"22 Rue des Roses, 67100 Strasbourg",tel:"+33 7 44 43 41 43",site:"https://www.jeremybilley.fr/",note:5,avis:9,decideur:"Jeremy Billey",poste:"Freelance WordPress",linkedin:"https://fr.linkedin.com/in/jeremybilley",maps:""},
+  {nom:"Hopla.design",adresse:"6 Rue des Dentelles, 67000 Strasbourg",tel:"+33 7 56 83 36 91",site:"https://hopla.design/",note:4.8,avis:10,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Stratflow",adresse:"22 Rue Lauth, 67000 Strasbourg",tel:"+33 6 48 83 84 30",site:"https://www.seostrasbourg.com/",note:5,avis:22,decideur:"Olivier CLUR",poste:"Fondateur & Consultant SEO",linkedin:"https://fr.linkedin.com/in/ACwAABOiT3oBWNtgK8m433A0nvExx9UCEj2muUs",maps:""},
+  {nom:"La couleur du Zèbre",adresse:"3 Pass. de la Cathédrale, 67000 Strasbourg",tel:"+33 3 69 96 41 69",site:"https://www.lacouleurduzebre.com/",note:5,avis:9,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Carlidev",adresse:"33 Bd de Lyon CD2A, 67000 Strasbourg",tel:"",site:"https://www.carlidev.fr/",note:5,avis:6,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Atadisp",adresse:"13 Rue Jacques Peirotes, 67000 Strasbourg",tel:"+33 7 56 88 21 07",site:"https://www.atadisp.com/",note:4,avis:4,decideur:"Quentin Haensler",poste:"Expert WordPress",linkedin:"https://fr.linkedin.com/in/qhaensler",maps:""},
+  {nom:"Webmarketing360",adresse:"24 Rue du Bataillon de Marche 24, 67200 Strasbourg",tel:"+49 7851 9562768",site:"https://www.webmarketing360.fr/",note:5,avis:1,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Weblance",adresse:"12 Rue des Écrivains, 67000 Strasbourg",tel:"+33 6 43 47 37 14",site:"https://weblance.fr/",note:5,avis:12,decideur:"Thibault Pailloux",poste:"Directeur artistique & Développeur web",linkedin:"https://fr.linkedin.com/in/thibaultpailloux",maps:""},
+  {nom:"Trois Sept et Art",adresse:"17 Rue de Fegersheim, 67100 Strasbourg",tel:"",site:"https://troisseptetart.wordpress.com/",note:0,avis:0,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"SEO Strasbourg Pro",adresse:"16 Rue Boussingault, 67000 Strasbourg",tel:"+33 7 66 61 59 54",site:"http://seo-strasbourg-pro.eu/",note:5,avis:3,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Adipso",adresse:"3 Rue de la Division Leclerc, 67000 Strasbourg",tel:"+33 3 88 67 14 64",site:"https://www.adipso.com/",note:4.8,avis:9,decideur:"Mikael BUCH",poste:"Dirigeant",linkedin:"https://fr.linkedin.com/in/buchmikael",maps:""},
+  {nom:"Alsacréations",adresse:"10 Pl. du Temple Neuf, 67000 Strasbourg",tel:"+33 9 54 96 50 50",site:"https://www.alsacreations.fr/",note:5,avis:8,decideur:"Raphaël Goetter",poste:"Fondateur Alsacréations",linkedin:"https://fr.linkedin.com/in/raphaelgoetter",maps:""},
+  {nom:"Hostay",adresse:"4 Quai Koch, 67000 Strasbourg",tel:"+33 7 49 55 53 01",site:"https://hostay.fr/",note:4.9,avis:20,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Jérôme Dicharry",adresse:"12 Rue du Maréchal-Joffre, 67000 Strasbourg",tel:"+33 6 86 41 10 11",site:"https://developpeur-web-strasbourg.fr/",note:5,avis:3,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"LUENCE — Groupe CYA",adresse:"9 Rue Paul-Éluard, 67200 Strasbourg",tel:"+33 3 88 99 02 50",site:"http://www.luence.fr/",note:4.1,avis:13,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"Stéphanie Arlt",adresse:"",tel:"+33 6 36 38 30 45",site:"https://stephaniearlt.fr/",note:0,avis:0,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"WPFORMA",adresse:"21 Rue de Cherbourg, 67100 Strasbourg",tel:"+33 6 23 62 73 77",site:"https://wpforma.fr/",note:5,avis:29,decideur:"",poste:"",linkedin:"",maps:""},
+  {nom:"WOOZUP",adresse:"2 Rue des Hallebardes, 67000 Strasbourg",tel:"+33 3 67 10 00 12",site:"https://www.woozup.com/",note:4.8,avis:17,decideur:"",poste:"",linkedin:"",maps:""}
+];
+
+// Stats
+const total = DATA.length;
+const withDecideur = DATA.filter(d => d.decideur).length;
+const withSite = DATA.filter(d => d.site).length;
+const rated = DATA.filter(d => d.note > 0);
+const avgNote = rated.length ? (rated.reduce((s,d) => s + d.note, 0) / rated.length).toFixed(1) : '—';
+const totalAvis = DATA.reduce((s,d) => s + d.avis, 0);
+
+document.getElementById('stats').innerHTML = `
+  <div class="stat"><div class="label">Agences</div><div class="value">${total}</div></div>
+  <div class="stat"><div class="label">Décideurs identifiés</div><div class="value">${withDecideur}</div></div>
+  <div class="stat"><div class="label">Avec site web</div><div class="value">${withSite}</div></div>
+  <div class="stat"><div class="label">Note moyenne</div><div class="value">${avgNote}/5</div></div>
+  <div class="stat"><div class="label">Total avis</div><div class="value">${totalAvis}</div></div>
+`;
+
+// Badge class helper
+function badgeClass(poste) {
+  if (!poste) return '';
+  const p = poste.toLowerCase();
+  if (p.includes('dirigeant')) return 'badge-dirigeant';
+  if (p.includes('fondateur') || p.includes('founder')) return 'badge-fondateur';
+  if (p.includes('gérant')) return 'badge-gerant';
+  if (p.includes('directeur')) return 'badge-directeur';
+  if (p.includes('freelance')) return 'badge-freelance';
+  if (p.includes('expert')) return 'badge-expert';
+  return 'badge-other';
+}
+
+function starsHTML(note) {
+  if (!note) return '<span class="no-data">—</span>';
+  const full = Math.floor(note);
+  const half = note % 1 >= 0.5 ? 1 : 0;
+  return `<div class="rating"><span class="rating-num">${note}</span><span class="stars">${'★'.repeat(full)}${half ? '½' : ''}${'☆'.repeat(5 - full - half)}</span></div>`;
+}
+
+function renderRow(d) {
+  const siteClean = d.site ? d.site.replace(/https?:\/\/(www\.)?/, '').replace(/\/.*/, '') : '';
+  return `<tr>
+    <td><div class="company-name">${d.nom}</div><div class="company-addr">${d.adresse || ''}</div></td>
+    <td>${starsHTML(d.note)}</td>
+    <td>${d.avis || '<span class="no-data">—</span>'}<span class="reviews"> avis</span></td>
+    <td>${d.tel || '<span class="no-data">—</span>'}</td>
+    <td>${d.site ? `<a href="${d.site}" target="_blank">${siteClean}</a>` : '<span class="no-data">—</span>'}</td>
+    <td>${d.decideur ? `<strong>${d.decideur}</strong>` : '<span class="no-data">—</span>'}</td>
+    <td>${d.poste ? `<span class="badge ${badgeClass(d.poste)}">${d.poste}</span>` : ''}</td>
+    <td>${d.linkedin ? `<a href="${d.linkedin}" target="_blank" class="linkedin-link">🔗 Profil</a>` : ''}</td>
+  </tr>`;
+}
+
+let currentData = [...DATA];
+let sortCol = null, sortAsc = true;
+
+function render() {
+  document.getElementById('tbody').innerHTML = currentData.map(renderRow).join('');
+}
+
+// Search
+document.getElementById('search').addEventListener('input', function() {
+  applyFilters();
+});
+
+// Filters
+let activeFilter = 'all';
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    activeFilter = this.dataset.filter;
+    applyFilters();
+  });
+});
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  currentData = DATA.filter(d => {
+    const matchSearch = !q || [d.nom, d.decideur, d.poste, d.adresse, d.tel].some(f => (f||'').toLowerCase().includes(q));
+    let matchFilter = true;
+    if (activeFilter === 'with-decideur') matchFilter = !!d.decideur;
+    if (activeFilter === 'top-rated') matchFilter = d.note >= 4.9;
+    return matchSearch && matchFilter;
+  });
+  if (sortCol) applySortToData();
+  render();
+}
+
+// Sort
+document.querySelectorAll('th[data-col]').forEach(th => {
+  th.addEventListener('click', function() {
+    const col = this.dataset.col;
+    if (sortCol === col) { sortAsc = !sortAsc; } else { sortCol = col; sortAsc = true; }
+    document.querySelectorAll('th').forEach(t => t.classList.remove('sorted'));
+    this.classList.add('sorted');
+    applySortToData();
+    render();
+  });
+});
+
+function applySortToData() {
+  const col = sortCol;
+  currentData.sort((a, b) => {
+    let va, vb;
+    if (col === 'nom') { va = a.nom; vb = b.nom; }
+    else if (col === 'note') { va = a.note || 0; vb = b.note || 0; }
+    else if (col === 'avis') { va = a.avis || 0; vb = b.avis || 0; }
+    else if (col === 'decideur') { va = a.decideur || ''; vb = b.decideur || ''; }
+    else return 0;
+    if (typeof va === 'number') return sortAsc ? va - vb : vb - va;
+    return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+}
+
+// Export CSV
+document.getElementById('exportBtn').addEventListener('click', function() {
+  const headers = ['Nom','Adresse','Téléphone','Site Web','Note','Avis','Décideur','Poste','LinkedIn'];
+  const rows = currentData.map(d => [d.nom, d.adresse, d.tel, d.site, d.note, d.avis, d.decideur, d.poste, d.linkedin].map(v => '"'+(v||'')+'"').join(','));
+  const csv = headers.join(',') + '\n' + rows.join('\n');
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'agences-wordpress-strasbourg.csv'; a.click();
+  URL.revokeObjectURL(url);
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>

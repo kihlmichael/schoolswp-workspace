@@ -1,0 +1,393 @@
+{
+  "name": "[InDev] Webhook > Google Sheets: GEO Architect — Bulk Fill",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "geo-fill",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "n01",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "webhookId": "geo-fill"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const seed = $input.first().json.body.seed;\n\nconst systemPrompt = `Tu es GEO Architect, agent GEO/AIO de schoolsWP (schoolswp.com).\n\nREGLE ABSOLUE : Reponds UNIQUEMENT avec du JSON valide. Aucun texte avant ou apres. Aucun markdown. Aucune balise backtick.\n\nPour ce seed, genere un objet JSON avec exactement 4 cles :\n\n\"seed\" : seed_query (string), univers (parmi: WP-Core|SEO|Perf|Security|Hosting|Ecommerce|LMS|CRM-Email|Automation|Builders|Analytics|Content), type (parmi: Guide|HowTo|Troubleshooting|Comparatif|Avis|Alternatives|Pricing|Checklist|Template), intent (COMM|INFO|NAV), objet (string), cluster_canon (format strict: Univers / Type / Intent / Objet), action_type (UPDATE|NEW|MERGE), priority (P1|P2|P3)\n\n\"prompts\" : tableau de 20 a 30 objets, chacun avec prompt_final (question naturelle en francais), category (principal|decisionnel|probleme_risque|solution_methode|specialise|checklist_cadre), intent (COMM|INFO), priority (P1|P2|P3). Prioriser COMM avant INFO.\n\n\"page\" : page_title (titre SEO optimise), primary_prompt (prompt principal du cluster), action_type (UPDATE|NEW|MERGE)\n\n\"brief\" : reponse_courte_60mots (60 a 70 mots exactement, reponse directe), structure_h2 (liste des H2 separes par /), has_tableau (oui|non), has_faq (oui), has_recommandation (oui), checklist_aio_score (X/8), internal_links (3-5 pages a lier, separees par virgule), external_sources (2-3 sources officielles)\n\nREGLES :\n- 20 a 30 prompts dans le tableau prompts\n- COMM avant INFO\n- cluster_canon format strict : [Univers] / [Type] / [Intent] / [Objet]\n- schoolsWP s ecrit toujours schoolsWP\n- 1 cluster = 1 page pilier`;\n\nreturn [{\n  json: {\n    seed: seed,\n    requestBody: {\n      model: 'claude-sonnet-4-6',\n      max_tokens: 4000,\n      system: systemPrompt,\n      messages: [{ role: 'user', content: 'Seed : ' + seed }]\n    }\n  }\n}];"
+      },
+      "id": "n02",
+      "name": "Code - Build Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "n03",
+      "name": "HTTP Request - Claude API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Anthropic x-api-key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const response = $input.first().json;\nconst rawText = response.content[0].text;\n\nlet data;\ntry {\n  data = JSON.parse(rawText);\n} catch(e) {\n  const cleaned = rawText\n    .replace(/^```json\\s*/m, '')\n    .replace(/^```\\s*/m, '')\n    .replace(/\\s*```$/m, '')\n    .trim();\n  try {\n    data = JSON.parse(cleaned);\n  } catch(e2) {\n    throw new Error('Claude JSON parse failed. Raw: ' + rawText.substring(0, 300));\n  }\n}\n\nconst ts = Date.now().toString().slice(-6);\nconst now = new Date().toISOString().split('T')[0];\nconst seedInput = $('Webhook').first().json.body.seed;\n\nreturn [{\n  json: {\n    seed_id: 'S' + ts,\n    page_id: 'PG' + ts,\n    brief_id: 'BR' + ts,\n    date_added: now,\n    seed_query: seedInput,\n    parsed: data\n  }\n}];"
+      },
+      "id": "n04",
+      "name": "Code - Parse All",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $input.first().json;\nconst s = d.parsed.seed;\n\nreturn [{\n  json: {\n    seed_id: d.seed_id,\n    seed_query: d.seed_query,\n    univers: s.univers,\n    type: s.type,\n    intent: s.intent,\n    objet: s.objet,\n    cluster_canon: s.cluster_canon,\n    action_type: s.action_type,\n    priority: s.priority,\n    target_url: '',\n    gsc_impr: '',\n    gsc_pos: '',\n    gsc_ctr: '',\n    score_qw: '',\n    status: 'todo',\n    date_added: d.date_added,\n    owner: 'Michael',\n    notes: ''\n  }\n}];"
+      },
+      "id": "n05",
+      "name": "Code - Seed Row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "02_SEEDS",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "n06",
+      "name": "GSheets - 02_SEEDS",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1100, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $('Code - Parse All').first().json;\nconst prompts = d.parsed.prompts || [];\n\nreturn prompts.map(function(p, i) {\n  return {\n    json: {\n      prompt_id: d.seed_id + '_P' + String(i + 1).padStart(2, '0'),\n      seed_id: d.seed_id,\n      cluster_canon: d.parsed.seed.cluster_canon,\n      prompt_final: p.prompt_final,\n      category: p.category,\n      intent: p.intent,\n      priority: p.priority,\n      status: 'todo',\n      thruuu_uploaded: 'pending',\n      thruuu_status: '',\n      date_added: d.date_added,\n      notes: ''\n    }\n  };\n});"
+      },
+      "id": "n07",
+      "name": "Code - Prompt Rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "03_PROMPTS",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "n08",
+      "name": "GSheets - 03_PROMPTS",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1540, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "09_CONFIG",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "n18",
+      "name": "GSheets - 09_CONFIG",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.2,
+      "position": [1760, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $('Code - Parse All').first().json;\nconst prompts = d.parsed.prompts || [];\n\n// Lire le token Thruuu depuis 09_CONFIG (3 formats supportes)\n// Configurer THRUUU_TOKEN dans la feuille 09_CONFIG (colonne key/value)\nconst THRUUU_TOKEN_FALLBACK = ''; // Ne pas hardcoder — utiliser 09_CONFIG\n\nlet thruuuToken = '';\ntry {\n  const configRows = $('GSheets - 09_CONFIG').all();\n  for (const row of configRows) {\n    const j = row.json;\n    if (j.key === 'THRUUU_TOKEN' && j.value) { thruuuToken = j.value; break; }\n    if (j.THRUUU_TOKEN) { thruuuToken = j.THRUUU_TOKEN; break; }\n    const vals = Object.values(j).filter(v => typeof v === 'string' && v.startsWith('Bearer '));\n    if (vals.length > 0) { thruuuToken = vals[0]; break; }\n  }\n} catch(e) {}\n\nif (!thruuuToken) { thruuuToken = THRUUU_TOKEN_FALLBACK; }\n\nconst seedId = d.parsed.seed.seed_id || d.seed_id || 'S000000';\n\n// NOTE: Thruuu /api/v2/serps n'accepte PAS async ni webhook_url dans le body\n// Le webhook est configure dans le dashboard Thruuu\nreturn [{ json: { seed_id: seedId, thruuu_token: thruuuToken, requestBody: {\n  keywords: prompts.map(p => p.prompt_final),\n  parameters: { search_engine: 'google.fr', country: 'fr', language: 'fr', device: 'desktop', search_volume: true, num: 10 },\n  reference: seedId\n} } }];"
+      },
+      "id": "n16",
+      "name": "Code - Prep Thruuu Batch",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.thruuu.com/api/v2/serps",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ $json.thruuu_token }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.requestBody) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "n17",
+      "name": "HTTP Request - Thruuu SERP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2200, 500]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $('Code - Parse All').first().json;\nconst p = d.parsed.page;\n\nreturn [{\n  json: {\n    page_id: d.page_id,\n    seed_id: d.seed_id,\n    cluster_canon: d.parsed.seed.cluster_canon,\n    page_title: p.page_title,\n    target_url: '',\n    action_type: p.action_type,\n    primary_prompt: p.primary_prompt,\n    brief_id: d.brief_id,\n    status: 'draft',\n    pub_date: '',\n    last_updated: '',\n    internal_links: '',\n    notes: ''\n  }\n}];"
+      },
+      "id": "n09",
+      "name": "Code - Page Row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "04_PAGES",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "n10",
+      "name": "GSheets - 04_PAGES",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [2200, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $('Code - Parse All').first().json;\nconst b = d.parsed.brief;\n\nreturn [{\n  json: {\n    brief_id: d.brief_id,\n    page_id: d.page_id,\n    cluster_canon: d.parsed.seed.cluster_canon,\n    primary_prompt: d.parsed.page.primary_prompt,\n    intent: d.parsed.seed.intent,\n    persona: 'freelance / createur WordPress',\n    outcome_user: '',\n    reponse_courte_60mots: b.reponse_courte_60mots,\n    structure_h2: b.structure_h2,\n    has_tableau: b.has_tableau,\n    has_faq: b.has_faq,\n    has_recommandation: b.has_recommandation,\n    checklist_aio_score: b.checklist_aio_score,\n    internal_links: b.internal_links || '',\n    external_sources: b.external_sources || '',\n    status: 'draft',\n    notes: ''\n  }\n}];"
+      },
+      "id": "n11",
+      "name": "Code - Brief Row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "05_BRIEFS",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "n12",
+      "name": "GSheets - 05_BRIEFS",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [2640, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const d = $('Code - Parse All').first().json;\n\nlet thruuuProcessId = '';\ntry {\n  const thruuuResp = $('HTTP Request - Thruuu SERP').first().json;\n  thruuuProcessId = thruuuResp.id || '';\n} catch(e) {}\n\nreturn [{\n  json: {\n    success: true,\n    seed_id: d.seed_id,\n    cluster: d.parsed.seed.cluster_canon,\n    action_type: d.parsed.seed.action_type,\n    priority: d.parsed.seed.priority,\n    prompts_count: d.parsed.prompts.length,\n    page_id: d.page_id,\n    brief_id: d.brief_id,\n    thruuu_process_id: thruuuProcessId,\n    sheets_updated: ['02_SEEDS', '03_PROMPTS', '04_PAGES', '05_BRIEFS']\n  }\n}];"
+      },
+      "id": "n13",
+      "name": "Code - Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2860, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "n14",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [3080, 300]
+    },
+    {
+      "parameters": {
+        "content": "GEO Architect — Bulk Fill\n━━━━━━━━━━━━━━━━━━━━━━━━━\nGoogle Sheet : 1u_t04od77oD-49typLpSvLem_75EcrAcF9UkAVrx4Ho\n\nPREREQUIS\n1. Credential HTTP Header Auth\n   Nom    : Anthropic x-api-key\n   Header : x-api-key\n   Value  : sk-ant-...\n\n2. Credential Google Sheets OAuth2\n   A selectionner sur chaque noeud GSheets\n\n3. Credential HTTP Header Auth\n   Nom    : Thruuu_Production_Bearer\n   Header : Authorization\n   Value  : Bearer <THRUUU_API_KEY>\n\n4. Dashboard Thruuu → URL du Webhook\n   https://schoolswp-n8n.wp1.host/webhook/thruuu-results\n   (activer d'abord le workflow thruuu-monitoring)\n\nUSAGE\ncurl -X POST [WEBHOOK_URL]\n  -H 'Content-Type: application/json'\n  -d '{\"seed\": \"maintenance wordpress\"}'\n\nRESULTAT PAR APPEL\n  02_SEEDS    +1 ligne\n  03_PROMPTS  +20 a 30 lignes  (thruuu_uploaded: pending)\n  04_PAGES    +1 ligne\n  05_BRIEFS   +1 ligne\n  Thruuu      +1 batch soumis  (resultats async via webhook)\n\nIDS AUTO GENERES\n  seed_id  : S[timestamp]\n  page_id  : PG[timestamp]\n  brief_id : BR[timestamp]",
+        "height": 460,
+        "width": 320,
+        "color": 5
+      },
+      "id": "n15",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-380, 100]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Code - Build Request", "type": "main", "index": 0 }]]
+    },
+    "Code - Build Request": {
+      "main": [[{ "node": "HTTP Request - Claude API", "type": "main", "index": 0 }]]
+    },
+    "HTTP Request - Claude API": {
+      "main": [[{ "node": "Code - Parse All", "type": "main", "index": 0 }]]
+    },
+    "Code - Parse All": {
+      "main": [[{ "node": "Code - Seed Row", "type": "main", "index": 0 }]]
+    },
+    "Code - Seed Row": {
+      "main": [[{ "node": "GSheets - 02_SEEDS", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 02_SEEDS": {
+      "main": [[{ "node": "Code - Prompt Rows", "type": "main", "index": 0 }]]
+    },
+    "Code - Prompt Rows": {
+      "main": [[{ "node": "GSheets - 03_PROMPTS", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 03_PROMPTS": {
+      "main": [[{ "node": "GSheets - 09_CONFIG", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 09_CONFIG": {
+      "main": [[{ "node": "Code - Prep Thruuu Batch", "type": "main", "index": 0 }]]
+    },
+    "Code - Prep Thruuu Batch": {
+      "main": [[{ "node": "HTTP Request - Thruuu SERP", "type": "main", "index": 0 }]]
+    },
+    "HTTP Request - Thruuu SERP": {
+      "main": [[{ "node": "Code - Page Row", "type": "main", "index": 0 }]]
+    },
+    "Code - Page Row": {
+      "main": [[{ "node": "GSheets - 04_PAGES", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 04_PAGES": {
+      "main": [[{ "node": "Code - Brief Row", "type": "main", "index": 0 }]]
+    },
+    "Code - Brief Row": {
+      "main": [[{ "node": "GSheets - 05_BRIEFS", "type": "main", "index": 0 }]]
+    },
+    "GSheets - 05_BRIEFS": {
+      "main": [[{ "node": "Code - Summary", "type": "main", "index": 0 }]]
+    },
+    "Code - Summary": {
+      "main": [[{ "node": "Respond to Webhook", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
