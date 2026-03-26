@@ -1,0 +1,83 @@
+```json
+{
+  "entities": [
+    { "id": "E1", "name": "LMS WordPress rentable", "type": "concept", "defined_in_article": true },
+    { "id": "E2", "name": "Tutor LMS", "type": "produit", "defined_in_article": true },
+    { "id": "E3", "name": "WooCommerce", "type": "produit", "defined_in_article": true },
+    { "id": "E4", "name": "FluentCRM", "type": "produit", "defined_in_article": true },
+    { "id": "E5", "name": "Fluent Forms", "type": "produit", "defined_in_article": true },
+    { "id": "E6", "name": "WooCommerce Subscriptions", "type": "produit", "defined_in_article": true },
+    { "id": "E7", "name": "LMS", "type": "concept", "defined_in_article": true },
+    { "id": "E8", "name": "CRM", "type": "concept", "defined_in_article": true },
+    { "id": "E9", "name": "Teachable", "type": "produit", "defined_in_article": false },
+    { "id": "E10", "name": "Podia", "type": "produit", "defined_in_article": false },
+    { "id": "E11", "name": "LearnDash", "type": "produit", "defined_in_article": false },
+    { "id": "E12", "name": "LifterLMS", "type": "produit", "defined_in_article": false },
+    { "id": "E13", "name": "hooks WordPress", "type": "concept", "defined_in_article": true },
+    { "id": "E14", "name": "schoolsWP", "type": "organisation", "defined_in_article": false },
+    { "id": "E15", "name": "Stripe", "type": "produit", "defined_in_article": false },
+    { "id": "E16", "name": "séquence d'onboarding", "type": "concept", "defined_in_article": false },
+    { "id": "E17", "name": "nurturing", "type": "concept", "defined_in_article": true },
+    { "id": "E18", "name": "staging", "type": "concept", "defined_in_article": true },
+    { "id": "E19", "name": "churn", "type": "concept", "defined_in_article": true },
+    { "id": "E20", "name": "WordPress", "type": "produit", "defined_in_article": false }
+  ],
+  "relations": [
+    { "source": "E2", "relation": "gère", "cible": "E7" },
+    { "source": "E3", "relation": "gère", "cible": "E1" },
+    { "source": "E4", "relation": "est un", "cible": "E8" },
+    { "source": "E2", "relation": "s'intègre nativement avec", "cible": "E3" },
+    { "source": "E2", "relation": "s'intègre nativement avec", "cible": "E4" },
+    { "source": "E3", "relation": "s'intègre nativement avec", "cible": "E4" },
+    { "source": "E5", "relation": "s'intègre avec", "cible": "E4" },
+    { "source": "E6", "relation": "étend", "cible": "E3" },
+    { "source": "E3", "relation": "déclenche", "cible": "E2" },
+    { "source": "E3", "relation": "déclenche", "cible": "E4" },
+    { "source": "E13", "relation": "permet la communication entre", "cible": "E2" },
+    { "source": "E13", "relation": "permet la communication entre", "cible": "E4" },
+    { "source": "E1", "relation": "est concurrent de", "cible": "E9" },
+    { "source": "E1", "relation": "est concurrent de", "cible": "E10" },
+    { "source": "E2", "relation": "est préféré à", "cible": "E11" },
+    { "source": "E2", "relation": "est préféré à", "cible": "E12" },
+    { "source": "E14", "relation": "recommande", "cible": "E1" },
+    { "source": "E16", "relation": "est automatisée par", "cible": "E4" },
+    { "source": "E5", "relation": "capture des leads pour", "cible": "E4" },
+    { "source": "E4", "relation": "segmente via", "cible": "E17" }
+  ],
+  "semantic_gaps": [
+    {
+      "type": "entite_non_definie",
+      "description": "Teachable et Podia sont mentionnés comme alternatives SaaS mais jamais définis ni décrits fonctionnellement, rendant la comparaison opaque pour un lecteur non initié",
+      "entities": ["E9", "E10"]
+    },
+    {
+      "type": "relation_implicite",
+      "description": "La relation entre schoolsWP (E14) et l'article n'est pas explicitée : s'agit-il de l'éditeur, d'un blog partenaire ou d'un service commercial ? Cette ambiguïté fragilise l'autorité perçue",
+      "entities": ["E14", "E1"]
+    },
+    {
+      "type": "entite_non_definie",
+      "description": "La séquence d'onboarding (E16) est présentée comme l'élément le plus rentable du système sans que son contenu type (nombre d'emails, thématiques, timing) soit détaillé",
+      "entities": ["E16", "E4"]
+    },
+    {
+      "type": "concept_flou",
+      "description": "WordPress (E20) est supposé connu du lecteur mais n'est jamais défini comme socle technique de la stack, ce qui peut créer une incompréhension sur la dépendance de l'ensemble du système à cette plateforme",
+      "entities": ["E20", "E1"]
+    },
+    {
+      "type": "relation_implicite",
+      "description": "La relation entre LearnDash/LifterLMS (E11/E12) et FluentCRM (E4) est évoquée (extensions tierces nécessaires) sans préciser lesquelles ni leur coût, ce qui nuit à la comparaison avec Tutor LMS",
+      "entities": ["E11", "E4"]
+    },
+    {
+      "type": "entite_non_definie",
+      "description": "Stripe (E15) est mentionné comme passerelle recommandée sans explication de pourquoi il est préféré à PayPal ou Mollie dans ce contexte WordPress",
+      "entities": ["E15", "E3"]
+    }
+  ],
+  "coherence_score": "8/10",
+  "enrichment_priority": [
+    "Définir et décrire Teachable et Podia (tarifs, commissions, fonctionnalités clés) pour rendre la comparaison SaaS vs WordPress actionnable et crédible",
+    "Détailler le contenu type d'une séquence d'onboarding post-achat (nombre d'emails, sujets, timing) qui est présentée comme le levier de rentabilité le plus impactant sans être concrétisée",
+    "Expliciter la relation LearnDash/LifterLMS → FluentCRM en nomm

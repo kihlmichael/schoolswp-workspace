@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "version": "1.2",
+    "last_updated": "2026-03-17",
+    "purpose": "Contexte factuel schoolsWP — données réelles, preuves, stack, concurrence. À utiliser en complément du BRAND_KIT.json pour ne jamais inventer de chiffres ou d'affirmations.",
+    "todo": [
+      "Ajouter codes promo par affilié",
+      "Mettre à jour les chiffres GSC/GA4 trimestriellement",
+      "Ajouter chiffres Academy quand disponibles"
+    ]
+  },
+  "proof_points": {
+    "content": {
+      "articles_published": "200+",
+      "pages_indexed_gsc": 936,
+      "languages": ["fr", "en", "de"],
+      "newsletter_subscribers": "<100",
+      "youtube_subscribers": "500+",
+      "site_live_since": 2021,
+      "youtube_stats_28d": {
+        "total_views": 406,
+        "watch_hours": 13.89,
+        "new_subscribers": 4,
+        "impressions": 1988,
+        "avg_ctr": "8.95%",
+        "new_viewers": 288,
+        "returning_viewers_growth": "+30.8%"
+      },
+      "ga4_stats_28d": {
+        "source": "GA4 schoolswp.com",
+        "period": "2026-02-17 → 2026-03-16",
+        "active_users_30d": 1292,
+        "page_views": 1455,
+        "sessions": 1357,
+        "traffic_sources": { "direct": 554, "organic_search": 436, "organic_social": 278, "unassigned": 71, "referral": 16, "organic_video": 2 },
+        "top_countries": { "CN": 328, "US": 194, "FR": 185, "SG": 143, "IN": 62, "DE": 41, "GB": 39 },
+        "avg_engagement_time_seconds": 18.5
+      }
+    },
+    "seo_performance": {
+      "source": "DataForSEO Labs + Google Search Console",
+      "report_date": "2026-02",
+      "gsc_period": "2025-12-15 → 2026-03-14 (90 jours)",
+      "lighthouse": { "performance": 100, "best_practices": 100, "seo_onpage": 92, "accessibility": 91 },
+      "core_web_vitals": { "fcp": "0.3s", "lcp": "0.6s", "speed_index": "0.4s", "tbt": "0ms", "cls": 0, "ttfb": "40ms" },
+      "organic_visibility": { "keywords_top100": 176, "keywords_top10": 79, "keywords_top3": 15, "etv_monthly": 1790, "sea_equivalent_value": "5 350 €", "average_position": 24 },
+      "gsc_real_data": { "total_clicks_90d": 1188, "total_impressions_90d": 434517, "estimated_clicks_per_month": 396, "clicks_by_lang": { "fr": 694, "en": 360, "de": 137 }, "clicks_by_device": { "desktop": 841, "mobile": 332 } },
+      "growth": { "etv_sept_2025": 561, "etv_feb_2026": 1790, "growth_6_months": "+219%", "trend": "Explosion Oct-Déc 2025, consolidation Jan-Fév 2026" }
+    },
+    "serp_authority": {
+      "source": "Thruuu Cluster Report",
+      "report_date": "2026-03-16",
+      "total_clusters_tracked": 456,
+      "clusters_positioned": 266,
+      "clusters_unpositioned": 190,
+      "cluster_visibility_rank": 1,
+      "cluster_visibility_note": "schoolsWP #1 en visibilité cluster devant Reddit, WordPress.org et WPMarmite",
+      "top_positioned_clusters": [
+        { "cluster": "5euros Com", "volume": 23060, "position": 2, "intent": "commercial" },
+        { "cluster": "Metricool", "volume": 18490, "position": 8, "intent": "commercial" },
+        { "cluster": "Linkuma Avis", "volume": 5200, "position": 14, "intent": "commercial" },
+        { "cluster": "Localwp", "volume": 1600, "position": 12, "intent": "informational" },
+        { "cluster": "Tutorlms", "volume": 1470, "position": 7, "intent": "commercial" },
+        { "cluster": "Divipixel", "volume": 1440, "position": 6, "intent": "commercial" },
+        { "cluster": "Learndash", "volume": 1180, "position": 8, "intent": "commercial" },
+        { "cluster": "Amelia Booking", "volume": 920, "position": 3, "intent": "commercial" },
+        { "cluster": "Theme Kadence", "volume": 910, "position": 2, "intent": "commercial" },
+        { "cluster": "Flyingpress", "volume": 590, "position": 1, "intent": "commercial" },
+        { "cluster": "Fluentcrm", "volume": 780, "position": 3, "intent": "commercial" },
+        { "cluster": "Link Whisper", "volume": 620, "position": 3, "intent": "commercial" },
+        { "cluster": "Buddyboss", "volume": 490, "position": 4, "intent": "commercial" },
+        { "cluster": "Befreelancr", "volume": 480, "position": 3, "intent": "commercial" },
+        { "cluster": "Wishlist Member", "volume": 790, "position": 2, "intent": "commercial" }
+      ]
+    }
+  },
+  "top_pages": {
+    "source": "Google Search Console (90 jours)",
+    "pages_fr": [
+      { "slug": "/ce-quil-faut-savoir-sur-la-plateforme-5euros-com", "clicks": 138, "impressions": 32568, "position": 7.81 },
+      { "slug": "/systeme-de-reservations-et-rendez-vous-avec-amelia-wp", "clicks": 51, "impressions": 4921, "position": 8.16 },
+      { "slug": "/mon-avis-sur-kadence-wp", "clicks": 41, "impressions": 4917, "position": 8.79 },
+      { "slug": "/un-beau-site-wordpress-avec-canva", "clicks": 36, "impressions": 1142, "position": 20.45 },
+      { "slug": "/comparaison-flyingpress-wp-rocket", "clicks": 23, "impressions": 1528, "position": 13.4 },
+      { "slug": "/qui-est-frank-houbre", "clicks": 20, "impressions": 829, "position": 9.56 },
+      { "slug": "/latepoint-avis", "clicks": 18, "impressions": 1578, "position": 8.94 },
+      { "slug": "/zipwp-revolution-creation-site-wordpress-ia", "clicks": 14, "impressions": 5709, "position": 6.4 },
+      { "slug": "/qui-est-pierre-eliott-lallemant-le-createur-de-skeall", "clicks": 13, "impressions": 416, "position": 7.22 },
+      { "slug": "/avis-metricool-test-complet", "clicks": 11, "impressions": 3188, "position": 8.15 }
+    ],
+    "pages_en": [
+      { "slug": "/en/flyingpress-wp-rocket-comparison", "clicks": 37, "impressions": 15011, "position": 9.05 },
+      { "slug": "/en/amelia-wp-review", "clicks": 25, "impressions": 32806, "position": 9.41 },
+      { "slug": "/en/fluentbooking-vs-amelia-booking-for-wordpress-which-plugin-to-choose", "clicks": 22, "impressions": 1348, "position": 23.9 },
+      { "slug": "/en/tastewp-review", "clicks": 20, "impressions": 9415, "position": 6.38 },
+      { "slug": "/en/local-wp-review", "clicks": 15, "impressions": 4731, "position": 7.73 },
+      { "slug": "/en/tutor-lms-review", "clicks": 15, "impressions": 3244, "position": 16.35 }
+    ]
+  },
+  "competitors": {
+    "source": "Thruuu + DataForSEO",
+    "landscape": [
+      { "domain": "wpmarmite.com", "role": "Concurrent FR #1", "cluster_visibility": 34, "top10_kw": 30, "etv": 57647, "kw_intersections": 105, "differentiation": "WPMarmite couvre WordPress généraliste. schoolsWP se différencie par stratégie + automatisation + avis actionnables." },
+      { "domain": "webandseo.fr", "role": "Concurrent FR SEO", "cluster_visibility": 13, "top10_kw": 7, "etv": 21983, "kw_intersections": 77, "differentiation": "WebandSEO orienté SEO technique pur. schoolsWP combine SEO + WordPress + automatisation." },
+      { "domain": "wpformation.com", "role": "Concurrent FR formation", "cluster_visibility": 8, "top10_kw": 7, "differentiation": "WPFormation centré formation WordPress classique. schoolsWP intègre IA, automatisation et CRM." },
+      { "domain": "wpbeginner.com", "role": "Concurrent EN/FR", "cluster_visibility": 9, "top10_kw": 3, "etv": 8593, "kw_intersections": 70, "differentiation": "WPBeginner anglophone, généraliste, débutant. schoolsWP francophone avec dimension stratégique." }
+    ],
+    "positioning_statement": "schoolsWP est #1 en visibilité cluster (52 clusters, devant Reddit 42 et WordPress.org 40). Benchmark : WPMarmite (ETV 57K vs 1.8K). Avantage : avis/comparatifs actionnables + WordPress + automatisation + SEO."
+  },
+  "social_channels": {
+    "youtube": { "url": "https://schoolswp.com/youtube", "subscribers": "500+", "status": "actif" },
+    "linkedin": { "url": "https://schoolswp.com/linkedin", "status": "actif" },
+    "x_twitter": { "url": "https://schoolswp.com/x", "status": "actif" },
+    "facebook": { "url": "https://schoolswp.com/facebook", "status": "actif" },
+    "instagram": { "url": "https://schoolswp.com/instagram", "status": "actif" },
+    "tiktok": { "url": "https://schoolswp.com/tiktok", "status": "actif" },
+    "pinterest": { "url": "https://schoolswp.com/pinterest", "status": "actif" },
+    "discord": { "url": "https://schoolswp.com/discord", "status": "actif" },
+    "bluesky": { "url": "https://schoolswp.com/bluesky", "status": "actif" }
+  },
+  "affiliate_links": {
+    "total_active": 164,
+    "management_tool": "ClickWhale (plugin WordPress)",
+    "base_url_pattern": "https://schoolswp.com/{slug}",
+    "redirect_type": 307,
+    "disclosure_rule": "Toujours signaler les liens affiliés avec la formule : 'Lien affilié — je recommande uniquement les outils que j'utilise au quotidien.'",
+    "key_affiliates": [
+      { "name": "FluentCRM", "slug": "fluentcrm", "promo_code": "TODO" },
+      { "name": "Fluent Forms", "slug": "fluent-forms", "promo_code": "schoolsWP20" },
+      { "name": "OttoKit", "slug": "ottokit", "promo_code": "SCHOOLSWP20" },
+      { "name": "FlyingPress", "slug": "flyingpress", "promo_code": "TODO" },
+      { "name": "WP Rocket", "slug": "wp-rocket", "promo_code": "TODO" },
+      { "name": "Tutor LMS", "slug": "tutor-lms", "promo_code": "TODO" },
+      { "name": "LearnDash", "slug": "learndash", "promo_code": "TODO" },
+      { "name": "Kadence WP", "slug": "kadence-wp", "promo_code": "TODO" },
+      { "name": "Amelia WP", "slug": "wp-amelia", "promo_code": "TODO" },
+      { "name": "Wishlist Member", "slug": "wishlist-member", "promo_code": "TODO" },
+      { "name": "Linkuma", "slug": "linkuma", "promo_code": "TODO" },
+      { "name": "LinksGarden", "slug": "linksgarden", "promo_code": "TODO" },
+      { "name": "Metricool", "slug": "metricool", "promo_code": "TODO" },
+      { "name": "o2switch", "slug": "o2switch", "promo_code": "TODO" },
+      { "name": "Thruuu", "slug": "thruuu", "promo_code": "TODO" },
+      { "name": "Bit Apps", "slug": "bit-apps", "promo_code": "TODO" },
+      { "name": "Droip", "slug": "droip", "promo_code": "TODO" }
+    ],
+    "affiliate_ecosystems": {
+      "fluent_suite": ["FluentCRM", "Fluent Forms", "FluentBooking", "FluentBoards", "FluentCommunity", "FluentCart", "Fluent Support"],
+      "stellar_wp": ["Kadence WP", "Restrict Content Pro", "SolidWP", "The Events Calendar", "GiveWP", "LearnDash"],
+      "bit_apps": ["Bit Integrations", "Bit Form", "Bit Social", "Bit Assist", "BitFlows"],
+      "divi_ecosystem": ["Divi", "DiviPixel", "Divi Engine", "Divi Lover", "Divi Toolbox"],
+      "seo_tools": ["SEOKEY", "SEOPress", "Rank Math", "AIOSEO", "Link Whisper", "Thruuu", "Thot SEO", "SE Ranking", "Semrush"],
+      "hosting": ["o2switch", "Hostinger", "EasyHoster", "CopilHost", "Turbo Host", "PlanetHoster", "Rapyd Cloud", "xCloud"],
+      "netlinking": ["Linkuma", "LinksGarden", "LinksClub", "Link Finder", "PBNFoxt", "Getfluence"]
+    }
+  },
+  "content_highlights": {
+    "methodology": "Croisement GA4 (vues/28j) + GSC (clics/90j) + Thruuu (positions SERP) — Mars 2026",
+    "top_performers": [
+      { "title": "5euros.com avis : la plateforme française de micro-services", "url": "https://schoolswp.com/ce-quil-faut-savoir-sur-la-plateforme-5euros-com/", "gsc_clicks_90d": 138, "ga4_views_28d": 26, "serp_position": 8, "cluster_volume": 23060, "cluster_rank": 2, "why": "Top performer SEO absolu" },
+      { "title": "FluentBooking vs Amelia : Le Meilleur Plugin de Réservation WordPress ?", "url": "https://schoolswp.com/fluentbooking-vs-amelia/", "gsc_clicks_90d": null, "ga4_views_28d": 31, "serp_position": 3, "cluster_volume": 920, "why": "Top engagement GA4 — comparatif bien positionné" },
+      { "title": "Kadence WP : Thème WordPress rapide et flexible", "url": "https://schoolswp.com/mon-avis-sur-kadence-wp/", "gsc_clicks_90d": 41, "ga4_views_28d": 22, "serp_position": 9, "cluster_volume": 910, "cluster_rank": 2, "why": "Performant sur toutes les métriques" },
+      { "title": "FlyingPress vs WP Rocket – Comparatif vitesse WordPress", "url": "https://schoolswp.com/comparaison-flyingpress-wp-rocket/", "gsc_clicks_90d": 23, "ga4_views_28d": 20, "serp_position": 13, "cluster_volume": 590, "cluster_rank": 1, "why": "Position #1 cluster FlyingPress" },
+      { "title": "Amelia WP : Plugin de réservation WordPress", "url": "https://schoolswp.com/systeme-de-reservations-et-rendez-vous-avec-amelia-wp/", "gsc_clicks_90d": 51, "ga4_views_28d": 20, "serp_position": 8, "cluster_volume": 920, "cluster_rank": 3, "why": "Article pilier niche booking WordPress" }
+    ],
+    "youtube_top_content": {
+      "note": "Chaîne en transition — contenu historique encore dominant. Le contenu WordPress/schoolsWP est en construction.",
+      "best_schoolswp_video": { "title": "schoolsWP : Maîtrisez WordPress — Votre allié pour une présence en ligne", "views_28d": 9, "retention": "75.9%", "retention_note": "Nettement supérieur à la moyenne (22-24%)." },
+      "overall_stats": { "total_videos": 64, "views_28d": 406, "avg_ctr": "8.95%", "top_video_views": 73, "top_video_title": "Fortuneo: Découvrez Comment Ouvrir Un Compte Bancaire" }
+    },
+    "linkedin_highlights": {
+      "source": "Captures LinkedIn — mars 2026",
+      "profile_views_28d": 42,
+      "post_impressions_28d": 22,
+      "best_post": {
+        "topic": "RGPD e-commerce WordPress",
+        "accroche": "Le RGPD fait peur. À tort.",
+        "structure": "Accroche percutante + 4 checkpoints + conclusion rassurante + CTA lien article",
+        "hashtags": ["#WordPress", "#RGPD", "#Ecommerce", "#FluentCart", "#Conformité", "#PetiteEntreprise", "#schoolsWP"],
+        "linked_article": "https://schoolswp.com/rgpd-ecommerce-wordpress/",
+        "why_it_works": "Accroche courte et contrariante, structure scannable en checkmarks, sujet anxiogène rendu accessible, CTA discret vers article"
+      },
+      "observations": [
+        "La portée LinkedIn est encore modeste (22 impressions/28j) — canal en construction",
+        "Le format checkmarks + accroche contrariante fonctionne bien pour le ton schoolsWP",
+        "Le profil est bien configuré : titre clair, localisation, badge vérifié"
+      ]
+    }
+  },
+  "claims_guardrails": {
+    "what_claude_can_affirm": [
+      "schoolsWP existe depuis 2021",
+      "200+ articles publiés",
+      "Site multilingue (FR, EN, DE)",
+      "Lighthouse Performance 100/100",
+      "Croissance organique de +219% en 6 mois (sept 2025 → fév 2026)",
+      "176 mots-clés dans le top 100 Google FR",
+      "79 mots-clés en top 10",
+      "#1 en visibilité cluster sur les requêtes trackées (Thruuu, mars 2026)",
+      "164 partenariats affiliés actifs",
+      "500+ abonnés YouTube",
+      "Présent sur 9 réseaux sociaux",
+      "Méthode de rédaction en 5 étapes (IA + SEO + pédagogie)",
+      "Tous les outils recommandés sont testés personnellement",
+      "1 292 utilisateurs actifs sur 30 jours (GA4, mars 2026)",
+      "436 sessions organiques par mois (GA4)",
+      "Audience internationale : FR, US, CN, SG, DE, GB, IN",
+      "YouTube : 406 vues/mois, CTR moyen 8.95%, 75.9% de rétention sur le dernier short schoolsWP",
+      "LinkedIn : 42 vues profil/mois, profil vérifié avec positionnement Formations & Tutoriels WordPress"
+    ],
+    "what_claude_must_not_invent": [
+      "Chiffres de revenus ou de CA",
+      "Nombre exact de visiteurs (utiliser les données GSC réelles)",
+      "Nombre d'étudiants ou inscrits Academy (pas encore de données)",
+      "Témoignages clients (aucun fourni pour l'instant)",
+      "Classements ou awards non documentés",
+      "Comparaisons chiffrées avec des concurrents sans source"
+    ],
+    "how_to_formulate": {
+      "preferred": ["D'après les données GSC...", "Sur schoolsWP, j'ai testé...", "Depuis 2021...", "Avec 200+ articles publiés..."],
+      "avoid": ["Des milliers de...", "Le meilleur site WordPress francophone...", "Des résultats garantis...", "Tous nos clients..."]
+    }
+  }
+}
