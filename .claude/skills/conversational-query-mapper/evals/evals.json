@@ -1,0 +1,130 @@
+{
+  "skill_name": "conversational-query-mapper",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je développe un pilier de contenu sur la traduction et le multilingue WordPress. Je veux identifier les questions conversationnelles réelles que des lecteurs peuvent poser à ChatGPT à propos des formations en ligne avec WordPress. Je cible : créer une plateforme de formation multilingue, traduire des cours/leçons/modules/espaces membres/pages de vente, choisir les bons plugins multilingues, comprendre les impacts SEO/UX/techniques/business, et répondre aux besoins des freelances, formateurs, créateurs, infopreneurs et organismes de formation. Génère entre 50 et 100 requêtes conversationnelles réalistes, regroupées par catégories thématiques.",
+      "expected_output": "50-100 requêtes conversationnelles en français, regroupées par 6-10 catégories thématiques, avec intentions et profils variés, ton naturel, structurées en markdown",
+      "files": [],
+      "assertions": [
+        {
+          "id": "volume",
+          "text": "Le résultat contient entre 50 et 100 requêtes numérotées",
+          "type": "count_range",
+          "min": 50,
+          "max": 100
+        },
+        {
+          "id": "categories",
+          "text": "Les requêtes sont organisées en au moins 6 catégories thématiques distinctes (titres H2)",
+          "type": "min_count",
+          "min": 6
+        },
+        {
+          "id": "natural_language",
+          "text": "Au moins 90% des requêtes sont formulées en langage naturel (question complète, pas mot-clé brut)",
+          "type": "percentage",
+          "min_pct": 90
+        },
+        {
+          "id": "profiles_varied",
+          "text": "Au moins 4 profils différents apparaissent dans les requêtes (débutant, freelance, formateur, entrepreneur, organisme...)",
+          "type": "min_count",
+          "min": 4
+        },
+        {
+          "id": "intentions_varied",
+          "text": "Au moins 7 types d'intention différents sont représentés",
+          "type": "min_count",
+          "min": 7
+        },
+        {
+          "id": "synthesis",
+          "text": "Le résultat inclut une synthèse éditoriale avec top requêtes, profil dominant, intention dominante et trous éditoriaux",
+          "type": "presence"
+        },
+        {
+          "id": "no_keyword_style",
+          "text": "Aucune requête ne ressemble à un mot-clé SEO brut (ex: 'formation wordpress multilingue prix')",
+          "type": "absence"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Je veux mapper toutes les questions que mon audience WordPress pose à ChatGPT sur le CRM et l'email marketing. Mon pilier de contenu couvre : FluentCRM, alternatives CRM WordPress, segmentation de listes, séquences email, automation marketing, intégration avec WooCommerce et LMS. Mon audience : freelances WordPress, créateurs de formations, e-commerçants et agences. Génère la carte complète des requêtes conversationnelles.",
+      "expected_output": "50-100 requêtes conversationnelles sur le CRM WordPress, regroupées par catégories, profils et intentions variés",
+      "files": [],
+      "assertions": [
+        {
+          "id": "volume",
+          "text": "Le résultat contient entre 50 et 100 requêtes numérotées",
+          "type": "count_range",
+          "min": 50,
+          "max": 100
+        },
+        {
+          "id": "categories",
+          "text": "Les requêtes sont organisées en au moins 6 catégories thématiques distinctes",
+          "type": "min_count",
+          "min": 6
+        },
+        {
+          "id": "crm_focus",
+          "text": "Au moins 80% des requêtes portent sur le CRM, l'email marketing ou l'automation (pas hors sujet)",
+          "type": "percentage",
+          "min_pct": 80
+        },
+        {
+          "id": "natural_language",
+          "text": "Au moins 90% des requêtes sont en langage naturel conversationnel",
+          "type": "percentage",
+          "min_pct": 90
+        },
+        {
+          "id": "synthesis",
+          "text": "Le résultat inclut une synthèse éditoriale",
+          "type": "presence"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Pilier LMS WordPress. Je veux toutes les questions que les gens posent à ChatGPT sur la création et la vente de formations en ligne avec WordPress. Couvre : TutorLMS vs LearnDash, monétisation, gamification, certificats, espace membre, tunnels de vente, SEO formation, et les besoins des formateurs indépendants, organismes de formation et infopreneurs. Carte complète svp.",
+      "expected_output": "50-100 requêtes conversationnelles sur le LMS WordPress, regroupées par catégories",
+      "files": [],
+      "assertions": [
+        {
+          "id": "volume",
+          "text": "Le résultat contient entre 50 et 100 requêtes numérotées",
+          "type": "count_range",
+          "min": 50,
+          "max": 100
+        },
+        {
+          "id": "categories",
+          "text": "Les requêtes sont organisées en au moins 6 catégories thématiques distinctes",
+          "type": "min_count",
+          "min": 6
+        },
+        {
+          "id": "lms_focus",
+          "text": "Au moins 80% des requêtes portent sur les LMS, formations en ligne ou WordPress éducatif",
+          "type": "percentage",
+          "min_pct": 80
+        },
+        {
+          "id": "formulation_variety",
+          "text": "Les requêtes utilisent au moins 5 types de formulations différentes (question directe, problème, doute, arbitrage, blocage, passage à l'action)",
+          "type": "min_count",
+          "min": 5
+        },
+        {
+          "id": "synthesis",
+          "text": "Le résultat inclut une synthèse éditoriale",
+          "type": "presence"
+        }
+      ]
+    }
+  ]
+}

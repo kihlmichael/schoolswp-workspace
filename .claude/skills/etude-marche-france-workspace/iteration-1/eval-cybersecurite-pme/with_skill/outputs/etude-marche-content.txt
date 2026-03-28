@@ -1,0 +1,11 @@
+# Etude Marche France — Cybersecurite pour PME (TPE/PME/ETI)
+
+Realisee le : 23 mars 2026
+Fenetre de recency : septembre 2024 - mars 2026
+Perimetre : France uniquement, B2B — TPE (1-10 salaries), PME (11-250 salaries), ETI (251-5000 salaries)
+
+---
+
+## A. EXECUTIVE SUMMARY
+
+Le marche francais de la cybersecurite pese 8 milliards d euros en 2026, en croissance annuelle de 10-12 % [web:1, web:2]. Il se structure autour de trois segments : les consultants independants / micro-cabinets (TJM 400-950 EUR), les MSSP et prestataires de taille intermediaire (abonnements 44-150 EUR/poste/mois), et les ESN / pure players premium (SOC manage 150 000-220 000 EUR/an). Le marche est tres fragmente — aucun acteur ne depasse 15 % de part de marche sur le segment PME, et la majorite des 15 000+ entites desormais concernees par NIS2 n ont pas encore engage leur mise en conformite [web:7, web:8]. 75 % des PME investissent moins de 2 000 EUR/an en cybersecurite, alors qu elles sont la cible de 77 % des cyberattaques [web:4, web:9]. Le cout moyen d une attaque reussie se situe entre 20 000 et 50 000 EUR, pouvant depasser 300 000 EUR [web:37]. Le fosse entre le risque reel et l investissement cree une opportunite massive pour des offres accessibles, pedagogiques et forfaitaires.

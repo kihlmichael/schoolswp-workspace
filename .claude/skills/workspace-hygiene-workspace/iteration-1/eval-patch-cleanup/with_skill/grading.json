@@ -1,0 +1,28 @@
+{
+  "eval_id": 1,
+  "eval_name": "patch-cleanup",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "all_files_classified",
+      "passed": true,
+      "evidence": "All 14 files listed individually in two tables (9 racine + 5 data/) with per-file classification"
+    },
+    {
+      "text": "archive_vs_trash_distinction",
+      "passed": true,
+      "evidence": "9 files marked archive, 5 marked trash — each with specific reasoning (docstring presence, supersession chain, self-cancelling pair)"
+    },
+    {
+      "text": "reads_file_content",
+      "passed": true,
+      "evidence": "Classifications reference specific code details: regex replacement, staticData, node Merge, specifyBody, getBinaryDataBuffer — clearly read the files"
+    },
+    {
+      "text": "no_destructive_commands",
+      "passed": true,
+      "evidence": "Uses 'archive' and 'trash' terminology throughout. No rm commands."
+    }
+  ],
+  "pass_rate": 1.0
+}

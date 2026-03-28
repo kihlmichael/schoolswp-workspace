@@ -1,0 +1,42 @@
+{
+  "eval_id": 2,
+  "eval_name": "tutorlms-vs-learndash",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Les 13 champs obligatoires sont présents",
+      "passed": true,
+      "evidence": "Tous les champs présents dans un tableau Markdown"
+    },
+    {
+      "text": "XPTitle entre 50 et 60 caractères",
+      "passed": false,
+      "evidence": "'TutorLMS vs LearnDash 2025' = 26 caractères (bien en dessous de 50)"
+    },
+    {
+      "text": "Alt text entre 100 et 125 caractères",
+      "passed": false,
+      "evidence": "'Comparatif TutorLMS vs LearnDash 2025 — quel plugin LMS choisir pour WordPress' = ~79 caractères (trop court)"
+    },
+    {
+      "text": "XPKeywords contient entre 8 et 12 entrées sans répétition",
+      "passed": false,
+      "evidence": "Seulement 6 entrées (tutor lms vs learndash, comparatif lms wordpress, meilleur plugin lms, créer cours en ligne wordpress, tutorlms, learndash 2025)"
+    },
+    {
+      "text": "Orthographe schoolsWP correcte partout",
+      "passed": true,
+      "evidence": "schoolsWP correctement orthographié"
+    },
+    {
+      "text": "Slug en minuscules, tirets, sans accents",
+      "passed": true,
+      "evidence": "'tutorlms-vs-learndash' — conforme mais très court (manque usage et année)"
+    },
+    {
+      "text": "L'angle comparatif est reflété dans XPTitle et Variante Google Images",
+      "passed": false,
+      "evidence": "XPTitle 'TutorLMS vs LearnDash 2025' trop court, Variante Google Images est un nom de fichier ('comparatif-tutorlms-learndash-2025.webp') pas une phrase descriptive"
+    }
+  ]
+}

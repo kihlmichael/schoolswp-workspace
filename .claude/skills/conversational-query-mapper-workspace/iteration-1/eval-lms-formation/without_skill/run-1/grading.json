@@ -1,0 +1,13 @@
+{
+  "eval_id": 3,
+  "configuration": "without_skill",
+  "expectations": [
+    {"text": "Entre 50 et 100 requêtes numérotées", "passed": false, "evidence": "~150+ requêtes en bullet points (non numérotées), bien au-dessus de 100"},
+    {"text": "Au moins 6 catégories thématiques distinctes", "passed": true, "evidence": "12 sections + sous-sections"},
+    {"text": "90%+ des requêtes en langage naturel conversationnel", "passed": false, "evidence": "~30% seulement conversationnel. Majorité = questions courtes type FAQ. Ex: 'Quel est le meilleur plugin LMS pour WordPress en 2024-2025 ?', 'TutorLMS est-il vraiment gratuit ?'. Pas de contexte personnel."},
+    {"text": "80%+ des requêtes sur LMS/formations en ligne", "passed": true, "evidence": "100% sur le sujet"},
+    {"text": "Au moins 5 types de formulations différentes", "passed": false, "evidence": "Quasi uniquement des questions directes et des 'Comment...' / 'Quel...'. Pas de doutes, blocages, ou passages à l'action."},
+    {"text": "Synthèse éditoriale présente", "passed": true, "evidence": "Synthèse par persona présente en fin de document"},
+    {"text": "Chaque requête porte intention + profil en ligne", "passed": false, "evidence": "Pas de tags inline, juste des sous-sections par thème"}
+  ]
+}

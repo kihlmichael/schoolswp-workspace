@@ -1,0 +1,23 @@
+{
+  "skill_name": "schoolswp-agent-constitution",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "J'ai un problème sur schoolsWP : mes articles LMS reçoivent du trafic mais presque personne ne clique sur les CTAs vers mes formations TutorLMS. Le taux de conversion est très faible. Analyse le problème et dis-moi quoi faire.",
+      "expected_output": "Analyse structurée par niveaux (SEO, contenu, conversion, business), pas seulement une liste de conseils. Diagnostic avec plusieurs dimensions, plan d'action priorisé, pas de conseils vagues.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Je veux construire un workflow n8n qui : 1) capte les nouveaux abonnés via Fluent Forms, 2) les ajoute dans FluentCRM avec les bons tags, 3) démarre une séquence email de bienvenue, 4) notifie par email si une erreur se produit. Comment je conçois ce workflow proprement ?",
+      "expected_output": "Architecture workflow structurée avec trigger/inputs/logique/outputs/erreurs/maintenance. Nommage des nodes, gestion des doublons, gestion des erreurs explicite, logique CRM pensée par segment/état.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Je veux créer un système de contenu récurrent pour schoolsWP. Chaque semaine : 1 article SEO, 1 newsletter FluentCRM, 1 post LinkedIn. Je veux que tout soit cohérent et le moins chronophage possible. Comment je structure ça ?",
+      "expected_output": "Plan système structuré (pas juste une liste de tâches), logique de réutilisation du contenu, workflow de production, calendrier, points de réutilisation automatique ou semi-auto. Approche système, pas liste de conseils.",
+      "files": []
+    }
+  ]
+}

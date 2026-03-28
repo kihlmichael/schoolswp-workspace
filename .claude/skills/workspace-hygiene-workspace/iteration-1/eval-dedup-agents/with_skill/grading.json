@@ -1,0 +1,28 @@
+{
+  "eval_id": 2,
+  "eval_name": "dedup-agents",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "compares_contents",
+      "passed": true,
+      "evidence": "States 'diff -rq = 0 difference' and lists 93 files in each directory"
+    },
+    {
+      "text": "identifies_canonical",
+      "passed": true,
+      "evidence": "Identifies .agents/ as canonical with 3 reasons: CLAUDE.md projet, CLAUDE.md workspace, .agent/ referenced nowhere"
+    },
+    {
+      "text": "no_symlink_recommendation",
+      "passed": true,
+      "evidence": "Recommends 'trash .agent/' — no mention of symlinks"
+    },
+    {
+      "text": "awaits_validation",
+      "passed": true,
+      "evidence": "Last line: 'Attente validation avant execution.'"
+    }
+  ],
+  "pass_rate": 1.0
+}

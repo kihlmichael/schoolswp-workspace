@@ -1,0 +1,30 @@
+{
+  "summary": { "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5 },
+  "expectations": [
+    {
+      "text": "Structure le workflow par étapes logiques (trigger, validation, logique, action, erreur)",
+      "passed": true,
+      "evidence": "8 blocs séquentiels : Trigger → Validate → Search Contact → Route (IF) → Create/Update → Apply Tags → Start Sequence → Log, avec branche erreur centrale"
+    },
+    {
+      "text": "Mentionne explicitement la gestion des doublons ou la vérification d'existence",
+      "passed": true,
+      "evidence": "BLOC 3 dédié 'Vérification doublon' via GET FluentCRM + Route IF 'New or Existing Contact' + BLOC 6 'Only Start Sequence for New Contacts'"
+    },
+    {
+      "text": "Décrit la branche erreur avec notification email",
+      "passed": true,
+      "evidence": "BLOC 8 complet : Format Error Message (Code JS) → Email — Notify Admin on Error → Log — Record Error ; email vers contact@michaelkihl.fr avec sujet et corps détaillés"
+    },
+    {
+      "text": "Recommande des noms de nodes descriptifs (pas Set1, HTTP Request2)",
+      "passed": true,
+      "evidence": "Tableau section 7 liste 14 nœuds avec noms explicites : 'Fluent Forms — Webhook Trigger', 'Validate — Check Required Fields', checklist finale mentionne 'aucun Set1, HTTP Request2'"
+    },
+    {
+      "text": "Aborde la logique CRM : tags, segment, séquence démarrée selon état du contact",
+      "passed": true,
+      "evidence": "Section 6 dédiée 'Logique CRM — Segment/État/Intention' : table source→tag→segment, état 'onboarding-en-cours', séquence uniquement pour nouveaux contacts"
+    }
+  ]
+}

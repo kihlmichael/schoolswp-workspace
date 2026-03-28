@@ -1,0 +1,23 @@
+{
+  "skill_name": "etude-marche-france",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Fais-moi une étude de marché complète sur la formation en ligne en France (LMS/e-learning B2B pour TPE/PME). Je veux comprendre les tarifs, les concurrents, les plaintes clients et comment schoolsWP pourrait se positionner.",
+      "expected_output": "Étude complète 7 sections A-G, segments adaptés (plateformes SaaS / agences formation / freelances formateurs), 40+ sources, 5+ concurrents (TutorLMS, LearnDash, iSpring, 360Learning, Digiforma), tableau tarifs croisés, 5 plaintes sourcées, packaging schoolsWP",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Je veux une analyse du marché de la cybersécurité pour PME en France — qui sont les acteurs, combien ça coûte, quelles sont les arnaques et les opportunités pour un positionnement schoolsWP.",
+      "expected_output": "Étude complète 7 sections A-G, segments adaptés (audit ponctuel / MSSP managé / SOC premium), concurrents (Advens, OGO Security, ITrust, NBS System), tarifs audit/SOC/formation, plaintes (faux audits, sur-vente, non-conformité), packaging schoolsWP adapté cybersécurité",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Étude de marché des agences SEO en France ciblant les TPE/PME. Tarifs, concurrents leaders, plaintes récurrentes, et opportunités schoolsWP.",
+      "expected_output": "Étude complète 7 sections A-G, segments (freelance SEO / micro-agence / agence premium), concurrents (SEMJuice, SeoMix, Eskimoz, 1ère Position, Junto), tarifs audit/accompagnement/contenu, plaintes (résultats non livrés, contrats longue durée, contenu IA brut), packaging schoolsWP",
+      "files": []
+    }
+  ]
+}

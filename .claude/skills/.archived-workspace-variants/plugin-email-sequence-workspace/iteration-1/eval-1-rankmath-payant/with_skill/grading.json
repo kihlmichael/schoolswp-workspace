@@ -1,0 +1,16 @@
+{
+  "eval_id": 1,
+  "run_type": "with_skill",
+  "expectations": [
+    {"text": "has-recap-table", "passed": true, "evidence": "Tableau récapitulatif complet en section 1 avec jour/objet principal/objet alternatif/angle/rôle"},
+    {"text": "correct-email-count", "passed": true, "evidence": "5 emails produits (J0, J2, J4, J7, J10)"},
+    {"text": "has-ab-subjects", "passed": true, "evidence": "Chaque email a 'Objet' + 'Objet alternatif' — 10 objets au total"},
+    {"text": "tutoiement-only", "passed": true, "evidence": "Tu/ton/tes systématique, aucun vouvoiement détecté"},
+    {"text": "no-hype-words", "passed": true, "evidence": "Aucun mot interdit (révolutionnaire, game changer, incroyable, etc.)"},
+    {"text": "has-fluentcrm-automation", "passed": true, "evidence": "Section complète : 3 tags, schéma conditionnel, anti-doublon, tracking options A/B, stratégie post-séquence"},
+    {"text": "has-checklist", "passed": true, "evidence": "Checklist pré-lancement 8 points avec cases à cocher"},
+    {"text": "has-kpi-table", "passed": true, "evidence": "Tableau 5 KPI avec seuils acceptable/bon et actions correctives"},
+    {"text": "model-adaptation", "passed": true, "evidence": "Adapté payant seul : emails 1-2 valeur pure, email 3 vers article détaillé, email 4 angle ROI/gain de temps avec prix, pas de 'gratuit vs Pro'"},
+    {"text": "mentions-limit", "passed": true, "evidence": "Email 3 PS : 'la courbe d'apprentissage est réelle'"}
+  ]
+}

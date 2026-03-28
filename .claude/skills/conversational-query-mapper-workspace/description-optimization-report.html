@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>conversational-query-mapper — Skill Description Optimization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', Georgia, serif;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #faf9f5;
+            color: #141413;
+        }
+        h1 { font-family: 'Poppins', sans-serif; color: #141413; }
+        .explainer {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+            color: #b0aea5;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .summary {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #e8e6dc;
+        }
+        .summary p { margin: 5px 0; }
+        .best { color: #788c5d; font-weight: bold; }
+        .table-container {
+            overflow-x: auto;
+            width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid #e8e6dc;
+            border-radius: 6px;
+            font-size: 12px;
+            min-width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #e8e6dc;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        th {
+            font-family: 'Poppins', sans-serif;
+            background: #141413;
+            color: #faf9f5;
+            font-weight: 500;
+        }
+        th.test-col {
+            background: #6a9bcc;
+        }
+        th.query-col { min-width: 200px; }
+        td.description {
+            font-family: monospace;
+            font-size: 11px;
+            word-wrap: break-word;
+            max-width: 400px;
+        }
+        td.result {
+            text-align: center;
+            font-size: 16px;
+            min-width: 40px;
+        }
+        td.test-result {
+            background: #f0f6fc;
+        }
+        .pass { color: #788c5d; }
+        .fail { color: #c44; }
+        .rate {
+            font-size: 9px;
+            color: #b0aea5;
+            display: block;
+        }
+        tr:hover { background: #faf9f5; }
+        .score {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .score-good { background: #eef2e8; color: #788c5d; }
+        .score-ok { background: #fef3c7; color: #d97706; }
+        .score-bad { background: #fceaea; color: #c44; }
+        .train-label { color: #b0aea5; font-size: 10px; }
+        .test-label { color: #6a9bcc; font-size: 10px; font-weight: bold; }
+        .best-row { background: #f5f8f2; }
+        th.positive-col { border-bottom: 3px solid #788c5d; }
+        th.negative-col { border-bottom: 3px solid #c44; }
+        th.test-col.positive-col { border-bottom: 3px solid #788c5d; }
+        th.test-col.negative-col { border-bottom: 3px solid #c44; }
+        .legend { font-family: 'Poppins', sans-serif; display: flex; gap: 20px; margin-bottom: 10px; font-size: 13px; align-items: center; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-swatch { width: 16px; height: 16px; border-radius: 3px; display: inline-block; }
+        .swatch-positive { background: #141413; border-bottom: 3px solid #788c5d; }
+        .swatch-negative { background: #141413; border-bottom: 3px solid #c44; }
+        .swatch-test { background: #6a9bcc; }
+        .swatch-train { background: #141413; }
+    </style>
+</head>
+<body>
+    <h1>conversational-query-mapper — Skill Description Optimization</h1>
+    <div class="explainer">
+        <strong>Optimizing your skill's description.</strong> This page updates automatically as Claude tests different versions of your skill's description. Each row is an iteration — a new description attempt. The columns show test queries: green checkmarks mean the skill triggered correctly (or correctly didn't trigger), red crosses mean it got it wrong. The "Train" score shows performance on queries used to improve the description; the "Test" score shows performance on held-out queries the optimizer hasn't seen. When it's done, Claude will apply the best-performing description to your skill.
+    </div>
+
+    <div class="summary">
+        <p><strong>Original:</strong> Genere 50 a 100 requetes conversationnelles realistes (type ChatGPT/Perplexity) pour un pilier de contenu WordPress, segmentees par profil utilisateur, intention et sous-theme. Produit une carte editoriale structuree par categories thematiques, exploitable directement pour la strategie de contenu schoolsWP. Declenche ce skill des que l&#x27;utilisateur veut mapper les questions que son audience pose aux IA sur un sujet donne, generer des requetes conversationnelles en volume, identifier les angles editoriaux d&#x27;un pilier de contenu, ou preparer un plan editorial base sur les intentions reelles des utilisateurs. Mots-cles declencheurs : requetes conversationnelles, questions ChatGPT, mapper les questions, requetes IA volume, strategie editoriale pilier, intentions conversationnelles, &quot;quelles questions les gens posent&quot;, pilier de contenu, carte editoriale. NE PAS utiliser pour : auditer un contenu existant (utiliser seo-audit ou publish_ready), optimiser la citabilite IA d&#x27;une page (utiliser geo-architect), generer 10 requetes avec angles de preuve (utiliser ai-citation-opportunity), ou rediger un article complet.</p>
+        <p class="best"><strong>Best:</strong> Genere 50 a 100 requetes conversationnelles realistes (type ChatGPT/Perplexity) pour un pilier de contenu WordPress, segmentees par profil utilisateur, intention et sous-theme. Produit une carte editoriale structuree par categories thematiques, exploitable directement pour la strategie de contenu schoolsWP. Declenche ce skill des que l&#x27;utilisateur veut mapper les questions que son audience pose aux IA sur un sujet donne, generer des requetes conversationnelles en volume, identifier les angles editoriaux d&#x27;un pilier de contenu, ou preparer un plan editorial base sur les intentions reelles des utilisateurs. Mots-cles declencheurs : requetes conversationnelles, questions ChatGPT, mapper les questions, requetes IA volume, strategie editoriale pilier, intentions conversationnelles, &quot;quelles questions les gens posent&quot;, pilier de contenu, carte editoriale. NE PAS utiliser pour : auditer un contenu existant (utiliser seo-audit ou publish_ready), optimiser la citabilite IA d&#x27;une page (utiliser geo-architect), generer 10 requetes avec angles de preuve (utiliser ai-citation-opportunity), ou rediger un article complet.</p>
+        <p><strong>Best Score:</strong> 4/8 (test)</p>
+        <p><strong>Iterations:</strong> 5 | <strong>Train:</strong> 12 | <strong>Test:</strong> 8</p>
+    </div>
+
+    <div class="legend">
+        <span style="font-weight:600">Query columns:</span>
+        <span class="legend-item"><span class="legend-swatch swatch-positive"></span> Should trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-negative"></span> Should NOT trigger</span>
+        <span class="legend-item"><span class="legend-swatch swatch-train"></span> Train</span>
+        <span class="legend-item"><span class="legend-swatch swatch-test"></span> Test</span>
+    </div>
+
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Iter</th>
+                <th>Train</th>
+                <th>Test</th>
+                <th class="query-col">Description</th>
+                <th class="positive-col">Aide-moi Ã  mapper les intentions conversationnelles de mon audience WordPress sur le thÃ¨me de l&#x27;email marketing. Je veux comprendre ce qu&#x27;ils demandent Ã  ChatGPT pour orienter ma stratÃ©gie de contenu.</th>
+                <th class="positive-col">Pour mon pilier SEO WordPress, j&#x27;aimerais gÃ©nÃ©rer entre 50 et 100 requÃªtes conversationnelles rÃ©alistes segmentÃ©es par profil utilisateur (dÃ©butant, freelance, agence). En franÃ§ais.</th>
+                <th class="positive-col">Je lance un nouveau cluster &#x27;automatisation WordPress avec n8n&#x27;. Fais-moi la carte des requÃªtes conversationnelles â€” tous les profils, toutes les intentions, regroupÃ© par thÃ¨me.</th>
+                <th class="positive-col">je dois prÃ©parer un gros batch de contenu sur WooCommerce + formations en ligne. Tu pourrais me sortir toutes les questions conversationnelles possibles que mon audience se pose, organisÃ©es par catÃ©gorie ?</th>
+                <th class="positive-col">Je veux lancer un pilier de contenu sur le CRM WordPress et j&#x27;ai besoin de savoir toutes les questions que mon audience pourrait poser Ã  ChatGPT sur ce sujet. Genre 50-80 requÃªtes rÃ©alistes, regroupÃ©es par thÃ¨me, avec les profils et intentions.</th>
+                <th class="positive-col">J&#x27;ai identifiÃ© le thÃ¨me &#x27;sÃ©curitÃ© WordPress&#x27; comme prochain cluster. Avant de produire du contenu, je veux mapper les questions conversationnelles que les gens posent aux IA dessus. Tu peux me faire la carte complÃ¨te ?</th>
+                <th class="negative-col">Ã‰cris-moi un article complet de 2000 mots sur &#x27;comment choisir son plugin multilingue WordPress&#x27; avec intro, H2, conclusion et FAQ.</th>
+                <th class="negative-col">GÃ©nÃ¨re une sÃ©quence de 5 emails FluentCRM pour promouvoir mon plugin d&#x27;affiliation WordPress.</th>
+                <th class="negative-col">J&#x27;ai 10 requÃªtes ChatGPT identifiÃ©es. Maintenant transforme-les en pages AIO-ready avec la structure GEO optimale pour chacune.</th>
+                <th class="negative-col">J&#x27;ai un article sur TutorLMS vs LearnDash dÃ©jÃ  publiÃ© mais il ne ranke pas bien. Peux-tu l&#x27;auditer et me dire ce qui manque au niveau SEO ?</th>
+                <th class="negative-col">Fais un audit technique SEO complet de mon site schoolswp.com â€” vitesse, Core Web Vitals, balises meta, sitemap, robots.txt.</th>
+                <th class="negative-col">Compare les prix de WPML, Polylang Pro et TranslatePress Business. Lequel est le plus rentable pour un site de 50 pages ?</th>
+                <th class="test-col positive-col">j&#x27;ai besoin de la liste des questions que les freelances WordPress posent aux IA sur les page builders. Pas des mots-clÃ©s, des vraies questions naturelles avec du contexte.</th>
+                <th class="test-col positive-col">Quelles questions les gens posent vraiment Ã  ChatGPT quand ils cherchent un LMS WordPress ? J&#x27;ai besoin d&#x27;une grosse liste pour orienter mes prochains articles.</th>
+                <th class="test-col positive-col">On prÃ©pare notre plan Ã©ditorial pour le Q3 et on veut identifier les requÃªtes conversationnelles IA sur le multilingue WordPress â€” formateurs, freelances, organismes. GÃ©nÃ¨re-moi la liste structurÃ©e svp.</th>
+                <th class="test-col positive-col">Mon concurrent a publiÃ© 30 articles sur la performance WordPress et je veux trouver les angles qu&#x27;il n&#x27;a pas couverts. GÃ©nÃ¨re les requÃªtes ChatGPT sur ce sujet pour voir les trous.</th>
+                <th class="test-col negative-col">J&#x27;ai exportÃ© 500 mots-clÃ©s depuis Google Search Console. Peux-tu les trier par cluster et me dire lesquels prioriser ?</th>
+                <th class="test-col negative-col">CrÃ©e-moi un workflow n8n qui envoie un email FluentCRM quand un article est publiÃ© sur WordPress.</th>
+                <th class="test-col negative-col">Optimise cette page pour qu&#x27;elle soit citÃ©e par ChatGPT et Perplexity. Voici le contenu actuel : [contenu]. Ajoute les balises schema et restructure pour la citabilitÃ©.</th>
+                <th class="test-col negative-col">Quel plugin WordPress tu me recommandes pour traduire mon site en 3 langues ? J&#x27;hÃ©site entre WPML et TranslatePress.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="best-row">
+                <td>1</td>
+                <td><span class="score score-ok">18/36</span></td>
+                <td><span class="score score-ok">12/24</span></td>
+                <td class="description">Genere 50 a 100 requetes conversationnelles realistes (type ChatGPT/Perplexity) pour un pilier de contenu WordPress, segmentees par profil utilisateur, intention et sous-theme. Produit une carte editoriale structuree par categories thematiques, exploitable directement pour la strategie de contenu schoolsWP. Declenche ce skill des que l&#x27;utilisateur veut mapper les questions que son audience pose aux IA sur un sujet donne, generer des requetes conversationnelles en volume, identifier les angles editoriaux d&#x27;un pilier de contenu, ou preparer un plan editorial base sur les intentions reelles des utilisateurs. Mots-cles declencheurs : requetes conversationnelles, questions ChatGPT, mapper les questions, requetes IA volume, strategie editoriale pilier, intentions conversationnelles, &quot;quelles questions les gens posent&quot;, pilier de contenu, carte editoriale. NE PAS utiliser pour : auditer un contenu existant (utiliser seo-audit ou publish_ready), optimiser la citabilite IA d&#x27;une page (utiliser geo-architect), generer 10 requetes avec angles de preuve (utiliser ai-citation-opportunity), ou rediger un article complet.</td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+            </tr>
+            <tr class="">
+                <td>2</td>
+                <td><span class="score score-ok">18/36</span></td>
+                <td><span class="score score-ok">12/24</span></td>
+                <td class="description">Use this skill when the user wants to generate a large batch (50-100) of realistic conversational queries their audience would ask ChatGPT or Perplexity about a WordPress content pillar. Covers: mapping all questions an audience asks AI on a topic, building a thematic query map segmented by user profile and intent, preparing editorial planning from real conversational intentions, or discovering content angles for a cluster or pillar. Output is a structured editorial map grouped by thematic categories. Do NOT use for: writing articles, SEO audits, optimizing AI citability (use geo-architect), generating 10 enriched queries with proof angles (use ai-citation-opportunity), email sequences, or price comparisons.</td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+            </tr>
+            <tr class="">
+                <td>3</td>
+                <td><span class="score score-ok">18/36</span></td>
+                <td><span class="score score-ok">12/24</span></td>
+                <td class="description">Mapper les questions conversationnelles d&#x27;une audience WordPress sur un pilier de contenu. Utilise ce skill quand l&#x27;utilisateur veut : cartographier ce que son audience demande a ChatGPT/Perplexity sur un sujet, generer un gros volume (50-100) de requetes conversationnelles realistes, creer une carte editoriale segmentee par profil utilisateur et intention, ou preparer un plan de contenu a partir des questions que les gens posent aux IA. Le livrable est une carte structuree par categories thematiques. NE PAS utiliser pour : rediger des articles, audits SEO, optimiser la citabilite IA (geo-architect), enrichir 10 requetes avec angles de preuve (ai-citation-opportunity), sequences email, ou comparatifs de prix.</td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+            </tr>
+            <tr class="">
+                <td>4</td>
+                <td><span class="score score-ok">18/36</span></td>
+                <td><span class="score score-ok">12/24</span></td>
+                <td class="description">Invoke this skill whenever someone asks to generate, map, or list conversational queries (questions people ask ChatGPT/Perplexity/AI assistants) about a WordPress topic, pillar, or cluster. Typical requests: &quot;carte des requÃªtes conversationnelles&quot;, &quot;mapper les questions/intentions&quot;, &quot;gÃ©nÃ©rer des requÃªtes en volume&quot;, &quot;quelles questions mon audience pose aux IA&quot;, or preparing batch content planning from audience questions. Produces 50-100 realistic natural-language queries segmented by user profile, intent, and theme. NOT for: writing articles, SEO audits, AI citability optimization (geo-architect), enriching 10 queries with proof angles (ai-citation-opportunity), email sequences, or price comparisons.</td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+            </tr>
+            <tr class="">
+                <td>5</td>
+                <td><span class="score score-ok">18/36</span></td>
+                <td><span class="score score-ok">12/24</span></td>
+                <td class="description">Use this skill when the user wants to map, list, or generate conversational queries (requÃªtes conversationnelles) â€” the questions real people ask ChatGPT, Perplexity, or AI assistants about a WordPress topic. Triggers: &quot;carte des requÃªtes conversationnelles&quot;, &quot;mapper les intentions/questions&quot;, &quot;quelles questions mon audience pose aux IA&quot;, generating 50-100 queries for a content pillar or cluster, preparing batch content planning from audience questions. Output: structured query map segmented by user profile, intent, and theme. NOT for: writing articles, SEO audits, AI citability pages (geo-architect), enriching 10 queries with proof angles (ai-citation-opportunity), email sequences, or price comparisons.</td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result fail">✗<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result fail">✗<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+                <td class="result test-result pass">✓<span class="rate">0/3</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</body>
+</html>

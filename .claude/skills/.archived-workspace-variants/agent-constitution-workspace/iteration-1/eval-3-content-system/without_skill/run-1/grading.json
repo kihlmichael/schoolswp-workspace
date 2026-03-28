@@ -1,0 +1,30 @@
+{
+  "summary": { "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5 },
+  "expectations": [
+    {
+      "text": "Propose une logique de réutilisation : article → newsletter → LinkedIn (ou autre ordre logique)",
+      "passed": true,
+      "evidence": "'Principe directeur : 1 idée, 3 formats' — article SEO source primaire, newsletter et LinkedIn en sont des dérivés ; tableau de cohérence comparant les 3 formats"
+    },
+    {
+      "text": "Identifie les étapes de production avec un ordre logique",
+      "passed": true,
+      "evidence": "Calendrier type : Lundi (choix sujet 15min) → Mardi-Mercredi (article brain.bat 45min) → Jeudi (newsletter 45min) → Vendredi (LinkedIn 30min) avec durées estimées"
+    },
+    {
+      "text": "Mentionne ou suggère une automatisation possible (n8n, FluentCRM, autre)",
+      "passed": true,
+      "evidence": "Section 'Outillage recommandé' : brain.bat, brain-lite.bat, publish_ready.cli, pillar_authority.cli ; section 'Système de planification' avec weekly-log.md et Notion/Google Sheets"
+    },
+    {
+      "text": "Distingue la phase de production de la phase de distribution",
+      "passed": true,
+      "evidence": "Production = Mardi-Mercredi (article) + Jeudi (newsletter) + Vendredi (LinkedIn) ; distribution = FluentCRM 'jeudi 9h ou 17h', LinkedIn 'vendredi 8h-10h ou mardi 9h'"
+    },
+    {
+      "text": "Résultat présenté comme un système réutilisable, pas juste un conseil hebdomadaire",
+      "passed": true,
+      "evidence": "Template weekly-brief.md avec 7 champs réutilisables chaque semaine, weekly-log.md pour traçabilité, règles de maintenance mensuelle et trimestrielle, règle 'si tu rates une semaine'"
+    }
+  ]
+}

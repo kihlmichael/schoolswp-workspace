@@ -1,0 +1,21 @@
+{
+  "name": "Analyseur CSV / Excel → Rapport décisionnel",
+  "slug": "csv-excel-report-skill",
+  "version": "1.1.0",
+  "status": "production-ready",
+  "primary_language": "fr",
+  "secondary_languages": ["en"],
+  "category": "data-analysis",
+  "input_formats": ["csv", "xlsx", "xls"],
+  "output_format": "markdown-report",
+  "audience": [
+    "business",
+    "marketing",
+    "sales",
+    "operations",
+    "freelancers",
+    "consultants"
+  ],
+  "tone": ["professional", "clear", "accessible"],
+  "last_updated": "2026-03-13"
+}

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Contains exactly 5 numbered queries",
+      "passed": true,
+      "evidence": "Found 5 queries (expected 5)"
+    },
+    {
+      "text": "At least 3 intention types represented",
+      "passed": true,
+      "evidence": "Found 5 intentions: ['checklist', 'comparaison', 'decision', 'diagnostic', 'how-to']"
+    },
+    {
+      "text": "At least 2 different content formats used",
+      "passed": true,
+      "evidence": "Found 5 formats: ['FAQ structuree', 'checklist', 'comparatif + tableau', 'guide pas-a-pas', 'stack recommandee']"
+    },
+    {
+      "text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)",
+      "passed": true,
+      "evidence": "5/5 queries have 12+ words"
+    },
+    {
+      "text": "Exactly 5 common denominators listed",
+      "passed": false,
+      "evidence": "Found 0 denominators with sous-categories"
+    },
+    {
+      "text": "No proof angles section present (user disabled it)",
+      "passed": true,
+      "evidence": "Proof section found: False"
+    },
+    {
+      "text": "2 main sections: Denominateurs and Requetes only",
+      "passed": true,
+      "evidence": "Denom: True, Queries: True"
+    },
+    {
+      "text": "All queries are natural language (>10 words each)",
+      "passed": true,
+      "evidence": "5/5 queries have 10+ words"
+    }
+  ],
+  "summary": "7/8 assertions passed"
+}

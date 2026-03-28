@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Entre 50 et 100 requêtes numérotées", "passed": true, "evidence": "87 requêtes numérotées, dans la fourchette 50-100"},
+    {"text": "Au moins 6 catégories thématiques distinctes", "passed": true, "evidence": "8 catégories : choix CRM, segmentation, séquences, automation, WooCommerce, LMS, SEO/délivrabilité, business"},
+    {"text": "90%+ des requêtes en langage naturel conversationnel", "passed": true, "evidence": "100% des requêtes sont des phrases naturelles avec contexte personnel. Ex: 'J'ai 3000 contacts mais ils sont tous dans un seul tas, je sais même pas par où commencer'"},
+    {"text": "80%+ des requêtes sur le CRM/email marketing", "passed": true, "evidence": "100% des requêtes portent sur CRM, email marketing, segmentation ou automation"},
+    {"text": "Synthèse éditoriale présente", "passed": true, "evidence": "Synthèse complète avec top 5, profil dominant (créateur de formations), intentions dominantes, 5 trous éditoriaux"},
+    {"text": "Chaque requête porte intention + profil en ligne", "passed": true, "evidence": "Format systématique : requête — `intention` — `profil`"}
+  ]
+}

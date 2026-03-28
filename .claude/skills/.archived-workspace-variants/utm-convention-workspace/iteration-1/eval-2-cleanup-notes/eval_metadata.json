@@ -1,0 +1,35 @@
+{
+  "eval_id": 2,
+  "eval_name": "cleanup-notes",
+  "prompt": "J'ai des notes UTM désorganisées pour schoolsWP. Nettoie-les et produis la convention officielle :\n\n---\nmes notes UTM brutes :\n- pour les emails : source=newsletter ou source=email (j'hésite)\n- LinkedIn : utm_source=LinkedIn (avec majuscule?) medium=social\n- YouTube vidéos : source=youtube, medium=video ou social ?\n- ClickWhale : je mets quoi ? parfois je mets source=clickwhale, parfois source=lien-court\n- affiliés ThemeForest : source=themeforest medium=affiliation ou affiliate ?\n- campaign : j'utilise des tirets parfois des underscores, ex: lms_wordpress ou lms-wordpress\n- content : je l'utilise jamais vraiment\n- term : pareil je sais pas quand l'utiliser\n- est-ce que je mets des UTMs sur mes liens internes dans les articles ?\n---\n\nNettoie tout ça, tranche sur chaque point qui flotte, et produis la convention complète.",
+  "assertions": [
+    {
+      "id": "a1",
+      "description": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)"
+    },
+    {
+      "id": "a2",
+      "description": "Inclut une section ou liste 'Points tranchés' explicite"
+    },
+    {
+      "id": "a3",
+      "description": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)"
+    },
+    {
+      "id": "a4",
+      "description": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM"
+    },
+    {
+      "id": "a5",
+      "description": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')"
+    },
+    {
+      "id": "a6",
+      "description": "Recommande 'tirets' (pas underscores) avec justification cohérence"
+    },
+    {
+      "id": "a7",
+      "description": "Explique utm_content et utm_term avec cas d'usage concrets"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "summary": { "pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5 },
+  "expectations": [
+    {
+      "text": "Analyse multi-dimensionnelle : touche au moins SEO/contenu ET conversion (pas seulement un angle)",
+      "passed": true,
+      "evidence": "4 rôles distincts : Analyste SEO (intention trafic), Stratège contenu (promesse), Expert conversion (défauts CTAs), Architecte WordPress (page destination)"
+    },
+    {
+      "text": "Plan d'action séquencé et priorisé, pas une simple liste de conseils vagues",
+      "passed": true,
+      "evidence": "Matrice de priorisation avec 10 actions classées par Impact/Effort/Délai/Priorité + 3 horizons temporels (quick wins 48h, structurant 2-4 sem, long terme 1-3 mois)"
+    },
+    {
+      "text": "Identifie des causes racines possibles (pas juste des symptômes)",
+      "passed": true,
+      "evidence": "Section 2 explicite 3 causes racines : Cause A (désalignement intention/offre), Cause B (CTA non contextualisé), Cause C (absence de preuve)"
+    },
+    {
+      "text": "Au moins 3 actions concrètes et actionnables spécifiques à schoolsWP/TutorLMS",
+      "passed": true,
+      "evidence": "QW2 : réécrire CTAs avec exemple TutorLMS concret ; S3 : lead magnet + FluentCRM ; LT2 : séquence FluentCRM automatisée tag 'intéressé LMS'"
+    },
+    {
+      "text": "Distingue les quick wins des actions long terme",
+      "passed": true,
+      "evidence": "Trois catégories nommées : 'Quick wins — à faire en moins de 48h' (QW1-3), 'Actions structurantes — 2-4 semaines' (S1-4), 'Actions long terme — 1 à 3 mois' (LT1-3)"
+    }
+  ]
+}

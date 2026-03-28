@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "seo-meta-brief-partiel",
+  "prompt": "Je veux un prompt pour générer les métadonnées + un plan de contenu pour l'article 'fluentcrm avis'. Intention informationnelle, marché FR.",
+  "assertions": [
+    {
+      "name": "contient-six-sections",
+      "description": "Le PROMPT PACK contient les 6 sections obligatoires"
+    },
+    {
+      "name": "hypotheses-listees",
+      "description": "La section Hypothèses liste les infos manquantes (audience, niveau, stack) plutôt que de poser des questions bloquantes"
+    },
+    {
+      "name": "output-contract-json",
+      "description": "L'OUTPUT_CONTRACT demande du JSON avec les clés : meta_title, meta_description, outline, faq, internal_links, snippet_candidates, assumptions"
+    },
+    {
+      "name": "meta-title-contrainte",
+      "description": "L'OUTPUT_CONTRACT précise la contrainte meta_title ≤ 60 caractères"
+    },
+    {
+      "name": "intention-serp-correcte",
+      "description": "Le prompt encode l'intention informationnelle et le marché FR"
+    }
+  ]
+}

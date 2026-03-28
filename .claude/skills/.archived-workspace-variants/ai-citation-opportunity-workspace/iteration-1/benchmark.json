@@ -1,0 +1,79 @@
+{
+  "skill_name": "ai-citation-opportunity",
+  "iteration": 1,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "eval-lms-default",
+          "pass_rate": 1.0,
+          "passed": 8,
+          "total": 8,
+          "tokens": 32977,
+          "duration_seconds": 105.5
+        },
+        {
+          "eval_name": "eval-coach-custom",
+          "pass_rate": 1.0,
+          "passed": 8,
+          "total": 8,
+          "tokens": 34176,
+          "duration_seconds": 147.9
+        },
+        {
+          "eval_name": "eval-woo-minimal-en",
+          "pass_rate": 0.875,
+          "passed": 7,
+          "total": 8,
+          "tokens": 26572,
+          "duration_seconds": 46.0
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.958,
+        "mean_tokens": 31242,
+        "mean_duration_seconds": 99.8
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "eval-lms-default",
+          "pass_rate": 0.0,
+          "passed": 0,
+          "total": 8,
+          "tokens": 48719,
+          "duration_seconds": 375.5
+        },
+        {
+          "eval_name": "eval-coach-custom",
+          "pass_rate": 0.0,
+          "passed": 0,
+          "total": 8,
+          "tokens": 32641,
+          "duration_seconds": 225.1
+        },
+        {
+          "eval_name": "eval-woo-minimal-en",
+          "pass_rate": 0.125,
+          "passed": 1,
+          "total": 8,
+          "tokens": 23889,
+          "duration_seconds": 57.5
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.042,
+        "mean_tokens": 35083,
+        "mean_duration_seconds": 219.4
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+91.6pp",
+    "tokens": "-11%",
+    "duration": "-55%"
+  }
+}

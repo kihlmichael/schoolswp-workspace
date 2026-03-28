@@ -1,0 +1,309 @@
+{
+  "name": "schoolsWP - CTR Judge (Workflow B)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 7,
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "CTR Tests",
+        "options": {}
+      },
+      "id": "2",
+      "name": "Read CTR Tests Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [460, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst maturityDays = 21;\n\nfunction parseDate(value) {\n  if (!value) return null;\n  const d = new Date(value);\n  return isNaN(d.getTime()) ? null : d;\n}\n\nreturn items\n  .map(item => item.json)\n  .filter(row => {\n    const status = String(row.status || '').trim();\n    const testStart = parseDate(row.test_start_date);\n    if (status !== 'En cours') return false;\n    if (!testStart) return false;\n\n    const diffDays = Math.floor((now.getTime() - testStart.getTime()) / (1000 * 60 * 60 * 24));\n    return diffDays >= maturityDays;\n  })\n  .map(row => ({ json: row }));"
+      },
+      "id": "3",
+      "name": "Filter Mature Tests",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "4",
+      "name": "Loop Over Tests",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [940, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/webmasters/v3/sites/sc-domain:schoolswp.com/searchAnalytics/query",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"startDate\": \"{{$json.test_start_date}}\",\n  \"endDate\": \"{{$now.minus({days: 3}).toFormat('yyyy-MM-dd')}}\",\n  \"dimensions\": [\"page\"],\n  \"type\": \"web\",\n  \"rowLimit\": 10,\n  \"dimensionFilterGroups\": [\n    {\n      \"filters\": [\n        {\n          \"dimension\": \"page\",\n          \"operator\": \"equals\",\n          \"expression\": \"{{$json.url}}\"\n        }\n      ]\n    }\n  ]\n}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "5",
+      "name": "GSC Recheck Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1180, 300],
+      "credentials": {
+        "googleOAuth2Api": {
+          "id": "YOUR_GOOGLE_OAUTH_CREDENTIAL_ID",
+          "name": "Google OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const sheetRow = $('Loop Over Tests').item.json;\nconst rows = $json.rows || [];\nconst pageRow = rows[0] || {};\n\nconst ctrAfterRaw = pageRow.ctr || 0;\nconst positionAfter = pageRow.position || 999;\nconst impressionsAfter = pageRow.impressions || 0;\n\nconst ctrBefore = Number(sheetRow.ctr_before || 0);\nconst positionBefore = Number(sheetRow.position_before || 0);\nconst impressionsBefore = Number(sheetRow.impressions_before || 0);\n\nconst ctrAfter = Number((ctrAfterRaw * 100).toFixed(2));\nconst deltaCtr = Number((ctrAfter - ctrBefore).toFixed(2));\nconst deltaPosition = Number((positionAfter - positionBefore).toFixed(2));\nconst deltaImpressions = Number((impressionsAfter - impressionsBefore).toFixed(0));\n\nreturn [{\n  json: {\n    ...sheetRow,\n    ctr_after: ctrAfter,\n    position_after: Number(positionAfter.toFixed ? positionAfter.toFixed(2) : positionAfter),\n    impressions_after: Number(impressionsAfter.toFixed ? impressionsAfter.toFixed(0) : impressionsAfter),\n    delta_ctr: deltaCtr,\n    delta_position: deltaPosition,\n    delta_impressions: deltaImpressions\n  }\n}];"
+      },
+      "id": "6",
+      "name": "Compare Before After",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1420, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const row = $json;\n\nconst deltaCtr = Number(row.delta_ctr || 0);\nconst deltaPosition = Number(row.delta_position || 0);\nconst impressionsAfter = Number(row.impressions_after || 0);\nconst impressionsBefore = Number(row.impressions_before || 0);\n\nlet verdict = 'Neutre';\nlet status = 'Neutre';\nlet finalRecommendation = 'Continuer à observer ou tester un nouvel angle.';\nlet reviewDate = new Date().toISOString().slice(0, 10);\n\nconst enoughVolume = impressionsAfter >= 200 || impressionsBefore >= 200;\nconst positionStableOrBetter = deltaPosition <= 0.3;\nconst positionMuchWorse = deltaPosition > 0.7;\n\nif (enoughVolume && deltaCtr >= 0.5 && positionStableOrBetter) {\n  verdict = 'Concluant';\n  status = 'Concluant';\n  finalRecommendation = 'Conserver ce title et passer à une nouvelle itération secondaire si besoin.';\n} else if (enoughVolume && deltaCtr <= -0.5 && positionStableOrBetter) {\n  verdict = 'Négatif';\n  status = 'Négatif';\n  finalRecommendation = 'Revenir à la version précédente ou tester un angle différent.';\n} else if (positionMuchWorse) {\n  verdict = 'Neutre';\n  status = 'Neutre';\n  finalRecommendation = 'Le signal CTR est brouillé par une variation de position. Recontrôler plus tard.';\n}\n\nreturn [{\n  json: {\n    ...row,\n    verdict,\n    status,\n    review_date: reviewDate,\n    final_recommendation: finalRecommendation\n  }\n}];"
+      },
+      "id": "7",
+      "name": "Verdict Engine",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1660, 300]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": "YOUR_GOOGLE_SHEET_ID",
+        "sheetName": "CTR Tests",
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": ["id"],
+          "value": {
+            "id": "={{ $json.id }}",
+            "review_date": "={{ $json.review_date }}",
+            "ctr_after": "={{ $json.ctr_after }}",
+            "position_after": "={{ $json.position_after }}",
+            "impressions_after": "={{ $json.impressions_after }}",
+            "delta_ctr": "={{ $json.delta_ctr }}",
+            "delta_position": "={{ $json.delta_position }}",
+            "delta_impressions": "={{ $json.delta_impressions }}",
+            "verdict": "={{ $json.verdict }}",
+            "status": "={{ $json.status }}",
+            "final_recommendation": "={{ $json.final_recommendation }}"
+          },
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "review_date",
+              "displayName": "review_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "ctr_after",
+              "displayName": "ctr_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "position_after",
+              "displayName": "position_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "impressions_after",
+              "displayName": "impressions_after",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_ctr",
+              "displayName": "delta_ctr",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_position",
+              "displayName": "delta_position",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "delta_impressions",
+              "displayName": "delta_impressions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "verdict",
+              "displayName": "verdict",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "final_recommendation",
+              "displayName": "final_recommendation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "id": "8",
+      "name": "Update CTR Test Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1900, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "you@example.com",
+        "subject": "=[CTR Judge] Verdict : {{$json.verdict}} — {{$json.url}}",
+        "emailType": "text",
+        "message": "=URL : {{$json.url}}\\nTitle testé : {{$json.title_tested}}\\nStatus : {{$json.status}}\\nVerdict : {{$json.verdict}}\\n\\nAvant :\\nCTR : {{$json.ctr_before}}%\\nPosition : {{$json.position_before}}\\nImpressions : {{$json.impressions_before}}\\n\\nAprès :\\nCTR : {{$json.ctr_after}}%\\nPosition : {{$json.position_after}}\\nImpressions : {{$json.impressions_after}}\\n\\nÉcarts :\\nDelta CTR : {{$json.delta_ctr}}\\nDelta Position : {{$json.delta_position}}\\nDelta Impressions : {{$json.delta_impressions}}\\n\\nReco :\\n{{$json.final_recommendation}}"
+      },
+      "id": "9",
+      "name": "Send Gmail Verdict",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [2140, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[{ "node": "Read CTR Tests Sheet", "type": "main", "index": 0 }]]
+    },
+    "Read CTR Tests Sheet": {
+      "main": [[{ "node": "Filter Mature Tests", "type": "main", "index": 0 }]]
+    },
+    "Filter Mature Tests": {
+      "main": [[{ "node": "Loop Over Tests", "type": "main", "index": 0 }]]
+    },
+    "Loop Over Tests": {
+      "main": [[{ "node": "GSC Recheck Page", "type": "main", "index": 0 }], []]
+    },
+    "GSC Recheck Page": {
+      "main": [[{ "node": "Compare Before After", "type": "main", "index": 0 }]]
+    },
+    "Compare Before After": {
+      "main": [[{ "node": "Verdict Engine", "type": "main", "index": 0 }]]
+    },
+    "Verdict Engine": {
+      "main": [[{ "node": "Update CTR Test Row", "type": "main", "index": 0 }]]
+    },
+    "Update CTR Test Row": {
+      "main": [[{ "node": "Send Gmail Verdict", "type": "main", "index": 0 }]]
+    },
+    "Send Gmail Verdict": {
+      "main": [[{ "node": "Loop Over Tests", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "id": "schoolswp-ctr-judge-workflow-b",
+  "tags": []
+}

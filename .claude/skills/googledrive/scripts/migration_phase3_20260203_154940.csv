@@ -1,0 +1,11 @@
+action,type,name,from,to,id
+SUGGEST,folder,wpvividbackuppro,(racine),00_boite_de_reception/a_trier,1DswAImaRI_wjzst_XbTk-l0WtyZGbHIl
+MOVE,folder,06_CONTENUS,(racine),03_contenus,1Xq13oByhwP233qOPdyUOmhAdPrfU8O5n
+MOVE,folder,04_ASSETS,(racine),02_ressources_transverses,1QM5qz1BVHly1aQ2SoRBTMA0at1PBYQYx
+MOVE,folder,01_ADMIN,(racine),04_admin_legal,1QWeYzjtiEuaGnuTfseVKeh-YCnjPkoaF
+SUGGEST,folder,05_CLIENTS,(racine),00_boite_de_reception/a_trier,1PgTi3-Mw2200rd764lCc3oAquKiMRIzZ
+MOVE,folder,00_START-HERE,(racine),02_ressources_transverses/templates,1K824UJeU3AKN1iI5TsTyEeulargKtZvj
+MOVE,folder,99_ARCHIVES,(racine),06_archive/2025,13uHLitsKoQbwIKALsgy6sbFqfxfUPq5D
+SUGGEST,folder,03_RESSOURCES,(racine),00_boite_de_reception/a_trier,1uFixijDb_AiHXcr9oaO6BT-JGpK8uTqD
+SUGGEST,folder,02_PROJETS,(racine),00_boite_de_reception/a_trier,1CDsfA0QoN21_-X2A1KPxpGl8FNEQ6LGk
+SUGGEST,folder,MÉDICALE,(racine),00_boite_de_reception/a_trier,1phxPRTZrNAv4lQEsMXsI_Yml3Kpd_k31

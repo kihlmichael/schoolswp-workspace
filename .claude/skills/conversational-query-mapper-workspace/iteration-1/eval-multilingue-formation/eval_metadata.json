@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "multilingue-formation",
+  "prompt": "Je développe un pilier de contenu sur la traduction et le multilingue WordPress. Je veux identifier les questions conversationnelles réelles que des lecteurs peuvent poser à ChatGPT à propos des formations en ligne avec WordPress.",
+  "assertions": [
+    {"id": "volume", "text": "Entre 50 et 100 requêtes numérotées"},
+    {"id": "categories", "text": "Au moins 6 catégories thématiques distinctes (H2)"},
+    {"id": "natural_language", "text": "90%+ des requêtes en langage naturel conversationnel"},
+    {"id": "profiles_varied", "text": "Au moins 4 profils différents"},
+    {"id": "intentions_varied", "text": "Au moins 7 types d'intention différents"},
+    {"id": "synthesis", "text": "Synthèse éditoriale présente"},
+    {"id": "no_keyword_style", "text": "Aucune requête mot-clé SEO brut"},
+    {"id": "inline_metadata", "text": "Chaque requête porte intention + profil en ligne"}
+  ]
+}

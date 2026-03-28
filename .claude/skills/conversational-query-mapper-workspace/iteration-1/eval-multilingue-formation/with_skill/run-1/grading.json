@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Entre 50 et 100 requêtes numérotées", "passed": true, "evidence": "78 requêtes numérotées, dans la fourchette 50-100"},
+    {"text": "Au moins 6 catégories thématiques distinctes (H2)", "passed": true, "evidence": "8 catégories : stack multilingue, traduction contenus, SEO hreflang, UX, espaces membres/tunnels, automatisation/maintenance, business model, cas par profil"},
+    {"text": "90%+ des requêtes en langage naturel conversationnel", "passed": true, "evidence": "100% des requêtes sont des phrases complètes avec contexte personnel, formulation naturelle type ChatGPT"},
+    {"text": "Au moins 4 profils différents", "passed": true, "evidence": "6 profils : formateur indépendant, freelance WordPress, infopreneur, créateur de cours, organisme de formation + implicitement débutant"},
+    {"text": "Au moins 7 types d'intention différents", "passed": true, "evidence": "10/10 intentions représentées : découverte, compréhension, choix-outil, comparaison, mise-en-place, seo, ux, automatisation, vente, maintenance"},
+    {"text": "Synthèse éditoriale présente", "passed": true, "evidence": "Synthèse complète avec top 5 requêtes, profil le plus actif (infopreneur), intention dominante (mise-en-place), 5 trous éditoriaux"},
+    {"text": "Aucune requête mot-clé SEO brut", "passed": true, "evidence": "Toutes les requêtes contiennent au moins une phrase complète avec contexte"},
+    {"text": "Chaque requête porte intention + profil en ligne", "passed": true, "evidence": "Format systématique : requête — `intention` — `profil` sur chaque ligne"}
+  ]
+}

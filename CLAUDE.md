@@ -101,6 +101,11 @@ Fixtures (`tests/conftest.py`) : `fake_env` (mock `ANTHROPIC_API_KEY` + `MODEL_W
 | --- | --- |
 | `test_base.py` | `safe_read_path` / `safe_write_path` — protection path traversal |
 | `test_agent_contract.py` | Contrat agent async (héritage BaseContentAgent, signature `run()`) |
+| `test_article_pipeline_contract.py` | Contrat pipeline article (structure, étapes) |
+| `test_audit_dataclasses.py` | Dataclasses d'audit (parsing, sérialisation) |
+| `test_content_factory_contract.py` | Contrat content factory (orchestration pipeline) |
+| `test_pipelines_e2e.py` | Tests e2e pipelines (intégration multi-agents) |
+| `test_publish_ready_contract.py` | Contrat publish_ready (4 audits parallèles) |
 | `test_seo_auditor_agent.py` | Agent SEO auditor — logique métier |
 | `test_seo_auditor_cli.py` | CLI parsing seo_auditor |
 
@@ -114,7 +119,7 @@ Fixtures (`tests/conftest.py`) : `fake_env` (mock `ANTHROPIC_API_KEY` + `MODEL_W
 
 → Détails complets dans `.claude/rules/python-agents.md` (chargé auto quand tu travailles dans `core/agents-py/`)
 
-Résumé : 28 agents Python héritant de `BaseContentAgent`, async, retourne markdown. Chaque agent = `agent.py` + `cli.py`. **La table complète des 28 modules CLI est dans `.claude/rules/python-agents.md`** — ne pas dupliquer ici.
+Résumé : 28 agents Python héritant de `BaseContentAgent`, async, retourne markdown. Chaque agent = `agent.py` + `cli.py`. **La table complète des modules CLI est dans `.claude/rules/python-agents.md`** — ne pas dupliquer ici.
 
 **BaseContentAgent contract** (`core/agents-py/base.py`) :
 
@@ -122,9 +127,12 @@ Résumé : 28 agents Python héritant de `BaseContentAgent`, async, retourne mar
 class BaseContentAgent:
     name: str = "base"                    # identifiant agent
     system_prompt: str = ""               # prompt système
+    max_tokens: int = 4096               # limite par défaut (surcharger si besoin)
     def __init__(self, model: str | None = None):
         self.model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
         self._client = AsyncAnthropic()
+    async def call_llm(self, user_message: str, *, max_tokens: int | None = None) -> str:
+        # Méthode standard — élimine le boilerplate (system prompt + model auto-injectés)
     async def run(self, **kwargs) -> str:  # DOIT retourner du markdown
 ```
 
@@ -171,7 +179,7 @@ Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-7
 
 ```text
 projects/schoolswp/
-├── agents/             # Namespace stub (__init__.py redirige vers core/agents-py/ via sys.modules)
+├── agents/             # Namespace package (.env only — CLIs use sys.path.insert, conftest registers sys.modules)
 ├── core/
 │   ├── agents-md/      # Agent system prompts as .md files (INDEX.md is the index)
 │   ├── agents-py/      # Python agent source files (base.py + one subdir per agent)
@@ -181,7 +189,7 @@ projects/schoolswp/
 ├── systems/
 │   ├── n8n/            # n8n rules doc and config
 │   └── workflows/      # n8n workflow JSON exports
-├── apps/               # 1 app active (vscode-agent-visual), 4 archivées (_archive/), 2 prototypes lourds
+├── apps/               # vscode-agent-visual (active), brand-reveal, telegram-bot, claude-telegram-poc, video-marketing, _archive/, _prototypes/
 ├── content/
 │   ├── articles/       # Generated articles (save-dir outputs from pipeline)
 │   ├── docs/           # Brand rules, SEO reports
@@ -191,6 +199,7 @@ projects/schoolswp/
 ├── infra/              # Docker, Prometheus config
 ├── data/               # Reports, artifacts, outputs
 ├── tests/              # pytest tests (asyncio_mode = auto)
+├── *.py (root)         # 9 scripts n8n one-shot (fix_workflow.py, patch_*.py) — maintenance workflows via API
 └── .claude/            # Claude Code rules, commands, local skills
 ```
 
@@ -256,7 +265,7 @@ Hooks exécutés dans l'ordre : 1. `secrets-scan` (détecte clés/tokens), 2. `r
 
 Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 
-3 checks : `ruff check` (lint) → `ruff format --check` → `pytest tests/ -v`. Pas de deploy, pas de secrets — juste la barriere anti-regression.
+3 checks : `ruff check` (lint) → `ruff format --check` → `pytest tests/ -v --cov --cov-report=term-missing`. Pas de deploy, pas de secrets — juste la barriere anti-regression. CI utilise `uv run` (pas `.venv/Scripts/python`). Coverage minimum : `fail_under = 40`, source `core/agents-py`, omit `*/cli.py`, `*/brain_lite_cli.py`, `*/__main__.py` (configuré dans `pyproject.toml`).
 
 ## Security
 

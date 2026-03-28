@@ -1,0 +1,23 @@
+{
+  "skill_name": "vscode-agent-visual",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je veux creer une extension VS Code qui affiche un petit robot anime dans la sidebar, avec un chat pour lui parler. Le robot doit etre connecte a Claude Code pour repondre a mes questions. Donne-moi le code complet pour commencer.",
+      "expected_output": "Le skill doit produire : un package.json avec viewsContainers/views/commands, un extension.ts fonctionnel, un WebviewViewProvider pour la sidebar, le HTML/CSS/JS de la webview avec animation Canvas ou Lottie, le bridge CLI pour Claude Code, et une CSP stricte. Le code doit etre copiable et complet.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "J'ai deja une extension VS Code avec une webview basique. Je veux ajouter un avatar anime Lottie qui reagit quand Claude Code edite un fichier ou lance un test. Explique-moi comment integrer les hooks Claude Code pour animer l'avatar en fonction des evenements.",
+      "expected_output": "Le skill doit expliquer le pattern hooks (PostToolUse, Notification), fournir le script emit-event.js, le watcher JSONL cote extension, le mapping evenement->animation, et le code pour charger/piloter une animation Lottie dans la webview. Il doit aussi mentionner la configuration .claude/settings.json pour les hooks.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Je veux que mon extension VS Code ait un panneau d'agent visuel a la fois dans la sidebar ET dans un onglet editeur, avec synchronisation de l'etat entre les deux. Comment architecturer ca proprement ? Et quels sont les pieges de securite a eviter ?",
+      "expected_output": "Le skill doit decrire l'architecture double surface (WebviewView + WebviewPanel), le pattern AgentStateManager avec EventEmitter, le message passing bidirectionnel, la synchronisation d'etat, la gestion memoire/dispose, et la checklist securite complete (CSP, validation messages, SecretStorage, Workspace Trust, localResourceRoots).",
+      "files": []
+    }
+  ]
+}

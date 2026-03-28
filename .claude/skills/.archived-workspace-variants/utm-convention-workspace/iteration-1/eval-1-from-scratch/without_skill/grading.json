@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "text": "Document contient les 9 sections attendues (titre, règles de base, paramètres UTM, convention officielle, cas concrets, quand mettre, quand ne pas mettre, erreurs, recommandation)",
+      "passed": false,
+      "evidence": "Le document a 11 sections numérotées mais la structure diffère des 9 attendues : pas de section 'Recommandation' finale dédiée, pas de section 'Erreurs à éviter'. La section 11 'Règles de gouvernance' remplace les erreurs. Le document est très complet mais ne suit pas exactement les 9 sections attendues — il manque une section erreurs et une recommandation finale explicite."
+    },
+    {
+      "text": "Au moins 6 cas concrets avec URL complète contenant au minimum utm_source, utm_medium, utm_campaign",
+      "passed": true,
+      "evidence": "Section 6 'Exemples par canal' contient de nombreuses URLs complètes : LinkedIn (3 URLs), YouTube (3 URLs), Instagram (2 URLs), Newsletter FluentCRM (3 URLs), Séquences email FluentCRM (3 URLs). Toutes contiennent utm_source, utm_medium, utm_campaign."
+    },
+    {
+      "text": "Toutes les valeurs UTM sont en minuscules sans accents et avec tirets uniquement",
+      "passed": false,
+      "evidence": "Le document utilise des valeurs avec accents et caractères non-ASCII : 'affilié' dans utm_medium (ex: ligne 97 'affilié', ligne 162 'affilié'), 'plugin-affilié' comme source. Ces valeurs violent la règle 'sans accents'. Exemple : 'utm_medium=affilié' et 'utm_source=plugin-affilié'."
+    },
+    {
+      "text": "Couvre les 5 contextes clés : GA4, ClickWhale, FluentCRM, social, affiliés",
+      "passed": true,
+      "evidence": "GA4 mentionné dans les principes. ClickWhale : section 8 dédiée. FluentCRM : section 9 dédiée. Social (LinkedIn, YouTube, Instagram) : section 6. Affiliés : section 7 dédiée avec ThemeForest et plugins WordPress."
+    },
+    {
+      "text": "Section 'quand ne pas mettre' présente avec l'explication sur les liens internes GA4",
+      "passed": true,
+      "evidence": "Section 1 'Quand ne pas taguer' mentionne : 'Liens internes entre pages de schoolswp.com (casse la session GA4)'. L'explication GA4 est présente bien que dans les principes fondamentaux plutôt qu'une section dédiée."
+    },
+    {
+      "text": "Recommandation finale mémorisable (max 3 phrases)",
+      "passed": false,
+      "evidence": "Pas de section 'Recommandation' ou de formule mémorisable en fin de document. Le document se termine par 'Règles de gouvernance' (section 11) avec des checklist et procédures — aucune phrase synthétique mémorisable de type 'Source = qui, Medium = comment, Campaign = pourquoi'."
+    }
+  ]
+}

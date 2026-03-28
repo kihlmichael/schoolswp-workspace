@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "run_type": "with_skill",
+  "expectations": [
+    {"text": "has-recap-table", "passed": true, "evidence": "Tableau récapitulatif complet en section 1"},
+    {"text": "correct-email-count", "passed": true, "evidence": "3 emails produits (J0, J3, J7) — format court respecté"},
+    {"text": "has-ab-subjects", "passed": true, "evidence": "Chaque email a 'Objet' + 'Objet alternatif'"},
+    {"text": "tutoiement-only", "passed": true, "evidence": "Tu/ton/tes systématique"},
+    {"text": "no-hype-words", "passed": true, "evidence": "Aucun mot interdit"},
+    {"text": "has-fluentcrm-automation", "passed": true, "evidence": "Automation adaptée à 3 emails avec schéma, anti-doublon, tracking A/B, stratégie post-séquence"},
+    {"text": "has-checklist", "passed": true, "evidence": "Checklist 8 points adaptée (mention 3 emails sur 7 jours)"},
+    {"text": "has-kpi-table", "passed": true, "evidence": "KPIs adaptés : Email 2 et Email 3 au lieu de 3 et 5"},
+    {"text": "model-adaptation", "passed": true, "evidence": "Freemium respecté : gratuit recommandé en premier, Pro comme upgrade logique"},
+    {"text": "mentions-limit", "passed": true, "evidence": "Email 2 : 'WP Rocket ne corrige pas un mauvais hébergeur'"}
+  ]
+}

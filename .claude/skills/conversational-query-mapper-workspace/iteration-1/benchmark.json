@@ -1,0 +1,93 @@
+{
+  "skill_name": "conversational-query-mapper",
+  "iteration": 1,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "multilingue-formation",
+          "pass_rate": 1.0,
+          "passed": 8,
+          "total": 8,
+          "tokens": 155146,
+          "duration_seconds": 2455.5
+        },
+        {
+          "eval_name": "crm-email-marketing",
+          "pass_rate": 1.0,
+          "passed": 6,
+          "total": 6,
+          "tokens": 82803,
+          "duration_seconds": 917.1
+        },
+        {
+          "eval_name": "lms-formation",
+          "pass_rate": 1.0,
+          "passed": 7,
+          "total": 7,
+          "tokens": 171190,
+          "duration_seconds": 2575.7
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "mean_tokens": 136380,
+        "mean_duration_seconds": 1982.8,
+        "total_passed": 21,
+        "total_assertions": 21
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "multilingue-formation",
+          "pass_rate": 0.25,
+          "passed": 2,
+          "total": 8,
+          "tokens": 89684,
+          "duration_seconds": 1290.3
+        },
+        {
+          "eval_name": "crm-email-marketing",
+          "pass_rate": 0.33,
+          "passed": 2,
+          "total": 6,
+          "tokens": 107941,
+          "duration_seconds": 1448.1
+        },
+        {
+          "eval_name": "lms-formation",
+          "pass_rate": 0.29,
+          "passed": 2,
+          "total": 7,
+          "tokens": 200547,
+          "duration_seconds": 3434.2
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.29,
+        "mean_tokens": 132724,
+        "mean_duration_seconds": 2057.5,
+        "total_passed": 6,
+        "total_assertions": 21
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+71pp (1.00 vs 0.29)",
+    "tokens": "+3% (136k vs 133k — quasi identique)",
+    "duration": "-4% (1983s vs 2058s — quasi identique)"
+  },
+  "analyst_notes": [
+    "Le skill passe 21/21 assertions vs 6/21 pour la baseline — gain massif en qualité structurelle",
+    "La baseline échoue systématiquement sur : langage naturel conversationnel, tags intention/profil inline, et contrôle du volume",
+    "Le contrôle de volume est le gain le plus visible : le skill produit 78-90 requêtes (fourchette demandée), la baseline déborde souvent (150-197)",
+    "La qualité conversationnelle est le 2e gain : avec le skill, chaque requête contient du contexte personnel et des contraintes. Sans skill, les requêtes sont souvent des FAQ courtes.",
+    "La catégorie 'categories thématiques' est non-discriminante — les deux configurations la passent",
+    "La synthèse éditoriale est partiellement non-discriminante — la baseline en produit parfois une (2/3 cas)",
+    "Tokens et durée quasi identiques — le skill n'a pas de coût significatif en ressources",
+    "Point d'amélioration potentiel : la diversité des formulations (doutes, blocages, arbitrages) pourrait être encore renforcée dans le skill"
+  ]
+}

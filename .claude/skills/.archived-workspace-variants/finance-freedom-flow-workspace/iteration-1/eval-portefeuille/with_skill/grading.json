@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Tickers ETF mentionnes",
+      "passed": true,
+      "evidence": "Found tickers: ['PAEEM', 'CW8']"
+    },
+    {
+      "text": "PEA mentionne comme enveloppe prioritaire",
+      "passed": true,
+      "evidence": "PEA found: True"
+    },
+    {
+      "text": "Au moins 2 courtiers FR recommandes",
+      "passed": true,
+      "evidence": "Found brokers: ['Linxea', 'Trade Republic', 'Fortuneo', 'Bourse Direct']"
+    },
+    {
+      "text": "Strategie DCA a 300 EUR/mois",
+      "passed": true,
+      "evidence": "DCA strategy found: True"
+    },
+    {
+      "text": "Tableau allocation avec pourcentages",
+      "passed": true,
+      "evidence": "Found 55 percentage values"
+    },
+    {
+      "text": "Plan d'action premiere semaine present",
+      "passed": true,
+      "evidence": "Week-1 plan found: True"
+    }
+  ],
+  "summary": "6/6 assertions passed"
+}

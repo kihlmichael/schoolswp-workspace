@@ -1,0 +1,31 @@
+{
+  "eval_id": 1,
+  "eval_name": "happy-path-flat-json-matching-columns",
+  "prompt": "JSON plat avec colonnes Google Sheet correspondant exactement — cas idéal sans erreur",
+  "assertions": [
+    {
+      "id": "has_7_sections",
+      "description": "Les 7 sections structurées sont présentes dans la réponse (Diagnostic, Réglages, Mapping, Erreurs/Incohérences, Pièges, Checklist, Bloc final)"
+    },
+    {
+      "id": "expressions_double_quotes",
+      "description": "Toutes les expressions n8n utilisent des doubles guillemets : {{ $json[\"Nom\"] }} et non $json.Nom ou $json['Nom']"
+    },
+    {
+      "id": "all_5_columns_mapped",
+      "description": "Les 5 colonnes (Nom, Email, Téléphone, Activité_souhaitée, Date_activité) sont toutes mappées avec leur expression exacte"
+    },
+    {
+      "id": "no_invented_fields",
+      "description": "La réponse ne contient aucun champ inventé absent du JSON fourni"
+    },
+    {
+      "id": "checklist_present",
+      "description": "Une checklist avant test est présente avec au moins 5 points vérifiables"
+    },
+    {
+      "id": "final_block_copy_pasteable",
+      "description": "Un bloc final récapitulatif est présent, séparé et prêt à copier-coller directement dans n8n"
+    }
+  ]
+}

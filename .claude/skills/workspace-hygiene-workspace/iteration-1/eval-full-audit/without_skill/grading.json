@@ -1,0 +1,43 @@
+{
+  "eval_id": 0,
+  "eval_name": "full-audit",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "covers_all_4_categories",
+      "passed": false,
+      "evidence": "Covers orphan files, data/ scripts, empty dirs, cache, credentials, node_modules, legacy nesting — but does NOT have a dedicated 'inactive components' category with scoring. Mixes many more categories (13 sections) without the 4-category structure."
+    },
+    {
+      "text": "structured_table_format",
+      "passed": true,
+      "evidence": "Uses markdown tables for root orphan files (section 1)"
+    },
+    {
+      "text": "action_plan_present",
+      "passed": true,
+      "evidence": "Has 'Priorites' section with Haute/Moyenne/Basse numbered items"
+    },
+    {
+      "text": "no_destructive_commands",
+      "passed": false,
+      "evidence": "Uses 'Supprimer' without specifying trash. Says 'Supprimer download.html' and 'Supprimer temp-n8n-skills/' without mentioning trash command."
+    },
+    {
+      "text": "awaits_validation",
+      "passed": false,
+      "evidence": "No explicit 'awaiting validation' statement. Just lists priorities as if ready to execute."
+    },
+    {
+      "text": "identifies_patch_files",
+      "passed": true,
+      "evidence": "Lists 9 patch/fix files at root + mentions 9 scripts in data/ (though includes non-fix scripts like build_volumes_csv.py, n8n_organize.py)"
+    },
+    {
+      "text": "identifies_agent_duplication",
+      "passed": false,
+      "evidence": "Does not mention .agent/ vs .agents/ duplication at all"
+    }
+  ],
+  "pass_rate": 0.43
+}

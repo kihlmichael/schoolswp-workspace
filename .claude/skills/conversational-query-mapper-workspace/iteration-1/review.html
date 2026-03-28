@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "conversational-query-mapper", "runs": [{"id": "eval-multilingue-formation-with_skill", "prompt": "Je d\u00c3\u00a9veloppe un pilier de contenu sur la traduction et le multilingue WordPress. Je veux identifier les questions conversationnelles r\u00c3\u00a9elles que des lecteurs peuvent poser \u00c3\u00a0 ChatGPT \u00c3\u00a0 propos des formations en ligne avec WordPress.", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "# Carte des requetes conversationnelles \u00e2\u20ac\u201d Traduction & multilingue WordPress pour les formations en ligne\n\n> 78 requetes | 8 categories | 6 profils | 10 intentions\n\n## Categorie 1 \u00e2\u20ac\u201d Choix de la stack multilingue (plugins, approches)\n\n1. Je veux traduire ma formation WordPress en anglais et en espagnol, mais je sais pas du tout quel plugin utiliser entre WPML, Polylang et TranslatePress \u00e2\u20ac\u201d lequel est le plus adapte pour un LMS ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `formateur independant`\n2. J\u00e2\u20ac\u2122ai lu que WPML coutait assez cher a l\u00e2\u20ac\u2122annee, est-ce que Polylang Pro fait le meme job pour un site de formation avec TutorLMS ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `freelance WordPress`\n3. TranslatePress traduit directement en front-end, mais est-ce que ca marche bien avec les cours, les quiz et les certificats d\u00e2\u20ac\u2122un LMS WordPress ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n4. C\u00e2\u20ac\u2122est quoi la difference entre un site multilingue avec un seul WordPress et un multisite avec un WordPress par langue ? Quel setup est le mieux pour vendre des formations ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `infopreneur`\n5. Mon hebergeur me propose un multisite WordPress pour gerer 4 langues, mais j\u00e2\u20ac\u2122ai peur que ca complique la maintenance \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est vraiment necessaire ou un plugin suffit ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n6. J\u00e2\u20ac\u2122utilise LearnDash et je veux ajouter l\u00e2\u20ac\u2122arabe et le japonais a mon site de formation \u00e2\u20ac\u201d est-ce que tous les plugins multilingues gerent les langues RTL et les alphabets non latins ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `createur de cours`\n7. Que me conseillerais-tu entre la traduction automatique (type DeepL integre) et la traduction manuelle pour les contenus de formation ? Le budget est serre. \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WordPress`\n8. J\u00e2\u20ac\u2122ai un petit site de formation avec 12 cours sur WordPress, est-ce que ca vaut le coup de payer WPML ou je peux m\u00e2\u20ac\u2122en sortir avec la version gratuite de Polylang ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `formateur independant`\n9. Est-ce qu\u00e2\u20ac\u2122il existe un plugin WordPress qui traduit automatiquement les cours ET qui garde la synchro quand je mets a jour la version francaise ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n10. Je debute completement en WordPress et je veux creer une formation bilingue francais-anglais \u00e2\u20ac\u201d par ou je commence sans me noyer dans la technique ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de cours`\n\n## Categorie 2 \u00e2\u20ac\u201d Traduction des contenus de formation (cours, lecons, modules)\n\n1. Comment je fais pour traduire un cours entier sur TutorLMS \u00e2\u20ac\u201d je dois traduire chaque lecon une par une ou il y a un moyen de tout faire d\u00e2\u20ac\u2122un coup ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n2. J\u00e2\u20ac\u2122ai 45 lecons en francais dans mon LMS, la traduction en anglais ca represente quoi en temps et en cout si je passe par un traducteur pro ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n3. Quand je traduis un module de formation, est-ce que les quiz, les devoirs et les certificats se traduisent automatiquement ou je dois tout refaire a la main ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `createur de cours`\n4. J\u00e2\u20ac\u2122ai un probleme : j\u00e2\u20ac\u2122ai traduit mes cours avec WPML mais les lecons s\u00e2\u20ac\u2122affichent dans le desordre dans la version anglaise \u00e2\u20ac\u201d comment corriger ca ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n5. Est-ce que je peux utiliser ChatGPT pour pre-traduire mes contenus de formation et ensuite juste relire, ou c\u00e2\u20ac\u2122est trop risque pour la qualite ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n6. Comment je gere les mises a jour de contenu quand j\u00e2\u20ac\u2122ai un cours en 3 langues ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `organisme de formation`\n7. J\u00e2\u20ac\u2122ai des videos integrees dans mes lecons \u00e2\u20ac\u201d est-ce que je dois creer des videos separees par langue ou je peux juste ajouter des sous-titres ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n8. Mon formateur partenaire est anglophone et ecrit directement en anglais \u00e2\u20ac\u201d comment on collabore sur le meme LMS WordPress sans se marcher dessus entre les langues ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n9. Les ressources telechargables (PDF, slides, fiches) liees a mes cours, est-ce que le plugin multilingue les gere ou je dois uploader des fichiers separes par langue ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `createur de cours`\n10. Ca fait 2 jours que j\u00e2\u20ac\u2122essaie de lier la version francaise et anglaise d\u00e2\u20ac\u2122une meme lecon dans Polylang, et ca veut pas s\u00e2\u20ac\u2122associer \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est quoi le truc ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WordPress`\n\n## Categorie 3 \u00e2\u20ac\u201d SEO multilingue et hreflang\n\n1. J\u00e2\u20ac\u2122ai traduit mon site de formation en 3 langues mais mon trafic Google a chute \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est quoi le probleme, le duplicate content ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n2. C\u00e2\u20ac\u2122est quoi les balises hreflang et pourquoi tout le monde dit que c\u00e2\u20ac\u2122est crucial pour un site WordPress multilingue ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n3. Comment je configure les hreflang correctement sur un site de formation WordPress avec WPML ? Le plugin le fait tout seul ou je dois intervenir ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `freelance WordPress`\n4. Est-ce que je dois creer un sitemap XML par langue ou un seul sitemap global pour mon site de formation multilingue ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `createur de cours`\n5. Mon article \"meilleur LMS WordPress\" est en francais et en anglais \u00e2\u20ac\u201d comment je dis a Google de montrer la bonne version aux bons utilisateurs ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n6. J\u00e2\u20ac\u2122ai des pages de formation qui rankent bien en francais, est-ce que les traduire en anglais va diluer mon autorite SEO ou au contraire la renforcer ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `formateur independant`\n7. Quel est l\u00e2\u20ac\u2122impact reel du multilingue sur le temps de chargement et le crawl budget de Google pour un site de 200 pages de formation ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `organisme de formation`\n8. J\u00e2\u20ac\u2122ai des URLs en /fr/cours/lms-wordpress/ et /en/course/lms-wordpress/ \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est mieux les slugs traduits ou je garde les memes slugs dans toutes les langues ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `freelance WordPress`\n9. Faut-il un domaine different par langue (monsite.fr / monsite.com), des sous-domaines ou des sous-repertoires (/fr/) pour un site de formation ? Quel impact SEO ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n10. Comment je fais pour que mes pages de vente de formation apparaissent dans les resultats Google du pays cible et pas juste en France ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `organisme de formation`\n\n## Categorie 4 \u00e2\u20ac\u201d UX et parcours utilisateur multilingue\n\n1. Comment je fais un selecteur de langue propre et visible sur mon site de formation sans que ca casse le design du theme ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `createur de cours`\n2. Un visiteur anglophone arrive sur ma page de cours en francais \u00e2\u20ac\u201d comment je le redirige automatiquement vers la version anglaise sans qu\u00e2\u20ac\u2122il se perde ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `freelance WordPress`\n3. Est-ce que c\u00e2\u20ac\u2122est mieux de detecter la langue du navigateur automatiquement ou de laisser l\u00e2\u20ac\u2122utilisateur choisir sa langue a l\u00e2\u20ac\u2122arrivee ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `formateur independant`\n4. J\u00e2\u20ac\u2122ai un tunnel de vente en 4 etapes pour ma formation, comment je m\u00e2\u20ac\u2122assure que le visiteur reste dans la meme langue tout au long du parcours d\u00e2\u20ac\u2122achat ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `infopreneur`\n5. Mes boutons, mes messages d\u00e2\u20ac\u2122erreur et mes emails automatiques du LMS sont encore en anglais alors que le site est en francais \u00e2\u20ac\u201d comment tout traduire ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de cours`\n6. L\u00e2\u20ac\u2122espace membre apres connexion affiche un mix de francais et d\u00e2\u20ac\u2122anglais, c\u00e2\u20ac\u2122est le bordel \u00e2\u20ac\u201d comment forcer une langue coherente pour l\u00e2\u20ac\u2122eleve connecte ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n7. Comment je gere le support client quand j\u00e2\u20ac\u2122ai des eleves en francais, en anglais et en espagnol sur la meme plateforme de formation ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `organisme de formation`\n8. Est-ce que le chatbot ou le systeme de tickets de mon site de formation peut fonctionner en plusieurs langues automatiquement ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `organisme de formation`\n9. Sur mobile, mon selecteur de langue prend trop de place et pousse le contenu vers le bas \u00e2\u20ac\u201d comment l\u00e2\u20ac\u2122integrer proprement dans le menu mobile ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `freelance WordPress`\n\n## Categorie 5 \u00e2\u20ac\u201d Espaces membres et tunnels de vente traduits\n\n1. J\u00e2\u20ac\u2122ai un espace membre avec des niveaux d\u00e2\u20ac\u2122acces (gratuit, premium, VIP) \u00e2\u20ac\u201d comment je fais pour que tout ca fonctionne dans 3 langues sans tripler le travail ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n2. Ma page de vente convertit bien en francais, mais quand je la traduis en anglais les arguments ne portent plus pareil \u00e2\u20ac\u201d comment adapter le copywriting sans tout reecrire ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n3. Est-ce que WooCommerce gere bien les prix en devises differentes (euros, dollars, livres) quand je vends ma formation en multilingue ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `formateur independant`\n4. Comment configurer les emails de bienvenue, de rappel et de relance dans la langue de l\u00e2\u20ac\u2122acheteur et pas dans la langue par defaut du site ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de cours`\n5. J\u00e2\u20ac\u2122utilise FluentCRM pour mes sequences email \u00e2\u20ac\u201d est-ce que je peux segmenter par langue et envoyer les bons emails au bon public ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n6. Mon tunnel de vente passe par une page de checkout WooCommerce \u00e2\u20ac\u201d quand le client change de langue en cours de route, le panier se vide. Comment eviter ca ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n7. Je veux proposer un webinaire gratuit en francais et en anglais comme lead magnet \u00e2\u20ac\u201d comment je gere l\u00e2\u20ac\u2122inscription et le suivi dans les deux langues ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n8. Les temoignages et avis de mes eleves sont en francais \u00e2\u20ac\u201d est-ce que je les traduis pour la version anglaise ou je les laisse tels quels comme preuve sociale ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n9. Comment je mets en place un programme d\u00e2\u20ac\u2122affiliation pour ma formation multilingue ? Les affilies anglais doivent renvoyer vers les pages anglaises, pas francaises. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `organisme de formation`\n10. OK, j\u00e2\u20ac\u2122ai choisi WPML + WooCommerce + TutorLMS, maintenant comment je configure le paiement en dollars pour les clients US et en euros pour les europeens ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WordPress`\n\n## Categorie 6 \u00e2\u20ac\u201d Automatisation et maintenance multilingue\n\n1. Comment je fais pour que quand je publie un nouveau cours en francais, la structure se cree automatiquement dans les autres langues en attente de traduction ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `organisme de formation`\n2. Existe-t-il un moyen d\u00e2\u20ac\u2122automatiser la traduction de mes nouveaux articles de blog avec DeepL et de les envoyer en relecture avant publication ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n3. Les mises a jour de WPML cassent regulierement des trucs sur mon site \u00e2\u20ac\u201d comment je securise les updates sur un site de formation en production avec des eleves connectes ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n4. J\u00e2\u20ac\u2122ai 3 langues sur mon site et la base de donnees est devenue enorme \u00e2\u20ac\u201d est-ce que le multilingue ralentit WordPress et comment optimiser ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `organisme de formation`\n5. Comment je sauvegarde un site WordPress multilingue correctement ? Les plugins de backup standard gerent-ils bien les tables de traduction ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n6. Je veux recevoir une notification Slack quand un contenu traduit n\u00e2\u20ac\u2122est plus a jour par rapport a la version source \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est possible avec n8n ou Zapier ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n7. Quel workflow tu me recommandes pour gerer la traduction en equipe ? J\u00e2\u20ac\u2122ai un traducteur anglais et un espagnol, on travaille tous dans le meme WordPress. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n8. Est-ce que je peux utiliser l\u00e2\u20ac\u2122API de DeepL avec un plugin WordPress pour pre-traduire mes fiches de cours et ensuite les ajuster manuellement ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de cours`\n\n## Categorie 7 \u00e2\u20ac\u201d Business model et monetisation internationale\n\n1. Est-ce que ca vaut vraiment le coup financierement de traduire ma formation WordPress en anglais ? Le marche anglophone est gros mais la concurrence aussi. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n2. Je veux vendre ma formation a l\u00e2\u20ac\u2122international mais je sais pas comment gerer la TVA, les factures et les obligations legales selon les pays \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est complique sur WordPress ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n3. Quel prix je mets pour ma formation en anglais ? Le meme qu\u00e2\u20ac\u2122en francais ou j\u00e2\u20ac\u2122adapte au marche local ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n4. J\u00e2\u20ac\u2122ai 500 eleves francophones et je veux tester le marche anglophone \u00e2\u20ac\u201d je traduis tout d\u00e2\u20ac\u2122un coup ou je commence par un module pilote ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n5. Comment les gros sites de formation WordPress (genre des sites avec 10 000+ eleves) gerent-ils le multilingue ? Il y a un modele a suivre ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n6. Je suis freelance et mes clients me demandent de plus en plus de creer des sites de formation multilingues \u00e2\u20ac\u201d comment je structure mon offre et mes tarifs ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `freelance WordPress`\n7. Faut-il un support client dedie par langue ou un systeme de FAQ multilingue suffit quand on a moins de 1 000 eleves internationaux ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n8. J\u00e2\u20ac\u2122hesite entre traduire ma formation existante ou creer un contenu specifique pour le marche anglophone \u00e2\u20ac\u201d qu\u00e2\u20ac\u2122est-ce qui marche le mieux ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n9. Mon concurrent direct a lance sa formation en 5 langues et capte du trafic dans des pays ou j\u00e2\u20ac\u2122etais invisible \u00e2\u20ac\u201d comment rattraper le retard sans exploser le budget ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n\n## Categorie 8 \u00e2\u20ac\u201d Cas specifiques par profil (freelance, organisme, infopreneur, createur)\n\n1. Je suis freelance WordPress en Suisse et mes clients sont francophones, germanophones et anglophones \u00e2\u20ac\u201d comment je structure un site de formation qui sert les 3 marches ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WordPress`\n2. On est un organisme de formation certifie Qualiopi et on doit proposer nos formations en anglais pour nos clients internationaux \u00e2\u20ac\u201d est-ce que le multilingue WordPress est compatible avec les exigences Qualiopi ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n3. Je suis createur de cours sur Udemy mais je veux migrer sur WordPress pour garder le controle \u00e2\u20ac\u201d comment je gere le multilingue que Udemy faisait automatiquement ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `createur de cours`\n4. Je vends des formations en affiliation et je veux toucher le marche hispanophone \u00e2\u20ac\u201d par ou commencer avec un budget de 500 euros max pour la traduction ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n5. Je suis formateur et je donne deja des cours en presentiel en francais et en anglais \u00e2\u20ac\u201d comment je replique ca sur WordPress sans doubler tout le travail de mise en ligne ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n6. Notre organisme a 50 formations et on veut passer au multilingue progressivement \u00e2\u20ac\u201d quel ordre de priorite pour choisir quelles formations traduire en premier ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n7. Je suis en Afrique francophone et je veux creer des formations WordPress accessibles localement mais aussi exportables a l\u00e2\u20ac\u2122international \u00e2\u20ac\u201d est-ce que le multilingue est la bonne strategie ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `createur de cours`\n8. J\u00e2\u20ac\u2122ai un partenaire anglophone qui veut co-creer une formation avec moi \u00e2\u20ac\u201d comment on gere la co-redaction bilingue dans le meme WordPress ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n9. Je suis infopreneur et j\u00e2\u20ac\u2122utilise deja un tunnel ClickFunnels en francais \u00e2\u20ac\u201d si je passe sur WordPress multilingue, est-ce que je peux recreer le meme tunnel en 2 langues ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `infopreneur`\n10. On est une petite equipe de 3 formateurs, chacun parle une langue differente \u00e2\u20ac\u201d comment on organise la production de contenu multilingue sans usine a gaz ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n11. Je fais du coaching WordPress en ligne et mes clients sont au Canada (FR+EN) \u00e2\u20ac\u201d quel setup multilingue minimaliste pour ne pas perdre de temps en config ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WordPress`\n12. Mon site de formation est deja en francais avec 2 000 eleves inscrits \u00e2\u20ac\u201d si j\u00e2\u20ac\u2122ajoute l\u00e2\u20ac\u2122anglais, est-ce que ca risque de casser quelque chose pour mes eleves actuels ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `formateur independant`\n\n---\n\n## Synthese editoriale\n\n- **Top 5 requetes a fort potentiel** :\n  1. \"Je veux traduire ma formation WordPress en anglais et en espagnol, mais je sais pas du tout quel plugin utiliser entre WPML, Polylang et TranslatePress \u00e2\u20ac\u201d lequel est le plus adapte pour un LMS ?\" (comparatif ancre dans un besoin concret, fort volume de recherche potentiel)\n  2. \"J\u00e2\u20ac\u2122ai traduit mon site de formation en 3 langues mais mon trafic Google a chute \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est quoi le probleme, le duplicate content ?\" (pain point reel, angle probleme/solution)\n  3. \"Comment je gere les mises a jour de contenu quand j\u00e2\u20ac\u2122ai un cours en 3 langues ? Si je modifie la version francaise, comment je sais ce qui doit etre mis a jour dans les autres langues ?\" (probleme operationnel sous-documente)\n  4. \"Est-ce que ca vaut vraiment le coup financierement de traduire ma formation WordPress en anglais ?\" (question de ROI, forte intention decisionnelle)\n  5. \"Mon tunnel de vente passe par une page de checkout WooCommerce \u00e2\u20ac\u201d quand le client change de langue en cours de route, le panier se vide. Comment eviter ca ?\" (bug technique precis, contenu tres actionnable)\n\n- **Profil le plus actif** : infopreneur (15 requetes) \u00e2\u20ac\u201d c\u00e2\u20ac\u2122est le profil qui se pose le plus de questions car il gere seul toute la chaine (technique + business + marketing)\n\n- **Intention dominante** : `mise-en-place` (14 requetes) et `choix-outil` (11 requetes) \u00e2\u20ac\u201d l\u00e2\u20ac\u2122audience est majoritairement en phase de decision et d\u00e2\u20ac\u2122implementation, pas en phase de decouverte\n\n- **Trous editoriaux** :\n  - **Accessibilite multilingue** (WCAG, lecteurs d\u00e2\u20ac\u2122ecran par langue) \u00e2\u20ac\u201d zero requete couverte, pourtant critique pour les organismes de formation\n  - **Impact sur les performances** (cache multilingue, CDN par region) \u00e2\u20ac\u201d a peine effleure, fort potentiel technique\n  - **Aspects juridiques detailles** (CGV multilingues, RGPD par pays, mentions legales) \u00e2\u20ac\u201d les formateurs qui vendent a l\u00e2\u20ac\u2122international en ont besoin\n  - **Integration avec les outils marketing** (Google Ads multilingue, Facebook Ads par langue, tracking analytics par marche) \u00e2\u20ac\u201d absent, pourtant essentiel pour l\u00e2\u20ac\u2122acquisition payante\n  - **Certification et compliance** (Qualiopi international, CPF et equivalents etrangers) \u00e2\u20ac\u201d une seule requete, potentiel fort pour les organismes\n"}], "grading": null}, {"id": "eval-multilingue-formation-without_skill", "prompt": "Je d\u00c3\u00a9veloppe un pilier de contenu sur la traduction et le multilingue WordPress. Je veux identifier les questions conversationnelles r\u00c3\u00a9elles que des lecteurs peuvent poser \u00c3\u00a0 ChatGPT \u00c3\u00a0 propos des formations en ligne avec WordPress.", "eval_id": 1, "outputs": [{"name": "result.md", "type": "text", "content": "# Requetes conversationnelles : Formation en ligne multilingue avec WordPress\n\n> Pilier : Traduction et multilingue WordPress \u00e2\u20ac\u201d Segment : formations en ligne\n> Total : 87 requetes regroupees en 10 categories thematiques\n\n---\n\n## 1. Choix de la stack technique (plugins multilingues)\n\n1. Quel plugin utiliser pour traduire mon site de formation WordPress en plusieurs langues ?\n2. Quelle difference entre WPML et Polylang pour un site de cours en ligne ?\n3. Est-ce que TranslatePress fonctionne bien avec TutorLMS ou LearnDash ?\n4. Je veux creer une plateforme de formation en francais et en anglais, quel plugin multilingue me recommandes-tu ?\n5. WPML vaut-il vraiment son prix pour un petit site de formation en ligne ?\n6. Polylang Pro est-il suffisant pour traduire un LMS WordPress complet ?\n7. Est-ce que Weglot est une bonne option pour traduire automatiquement mes cours WordPress ?\n8. Quel plugin multilingue est le plus compatible avec WooCommerce + LearnDash ?\n9. TranslatePress ou WPML : lequel est le plus simple a configurer pour un formateur non technique ?\n10. Existe-t-il un plugin gratuit fiable pour rendre mon site de formation bilingue ?\n\n## 2. Traduction des cours, lecons et modules\n\n11. Comment traduire mes cours LearnDash dans une autre langue sans tout refaire a la main ?\n12. Est-ce que je peux traduire uniquement certains modules de ma formation et pas les autres ?\n13. Comment gerer les traductions de quiz et evaluations dans TutorLMS ?\n14. Si je traduis un cours, la progression de mon eleve est-elle synchronisee entre les deux langues ?\n15. Comment traduire les descriptions de cours, les prerequisites et les certificats ?\n16. Est-ce que la traduction automatique (DeepL, Google Translate) est assez fiable pour des contenus de formation ?\n17. Comment organiser mes lecons traduites pour que mon apprenant ne soit pas perdu ?\n18. Je dois dupliquer chaque cours pour chaque langue ou il y a un systeme plus intelligent ?\n19. Comment traduire les emails automatiques envoyes aux apprenants apres inscription a un cours ?\n20. Peut-on traduire les contenus interactifs (H5P, videos sous-titrees) integres dans les lecons ?\n\n## 3. Espaces membres et pages de vente multilingues\n\n21. Comment creer un espace membre bilingue avec WordPress ?\n22. Mon tunnel de vente doit-il etre entierement traduit pour convertir a l'international ?\n23. Comment traduire mes pages de vente de formation sans casser le design ?\n24. Est-ce que je peux avoir des prix differents selon la langue ou le pays du visiteur ?\n25. Comment gerer les temoignages clients dans plusieurs langues sur mes pages de vente ?\n26. Mon espace membre utilise BuddyBoss, est-ce compatible avec WPML ?\n27. Comment traduire les formulaires d'inscription et de paiement pour mes formations ?\n28. Est-ce que Elementor ou Divi posent des problemes avec les plugins de traduction pour les landing pages ?\n29. Comment afficher la bonne devise et la bonne langue automatiquement selon le pays du visiteur ?\n\n## 4. Impact SEO du multilingue\n\n30. Comment eviter le contenu duplique quand je traduis mon site de formation en plusieurs langues ?\n31. Les balises hreflang, comment ca marche et comment les configurer pour un LMS WordPress ?\n32. Est-ce que traduire mon site va ameliorer mon referencement dans les autres pays ?\n33. Faut-il utiliser des sous-domaines, des sous-repertoires ou des domaines separes pour chaque langue ?\n34. Comment optimiser le SEO de mes pages de cours traduites ?\n35. Est-ce que Google penalise les traductions automatiques de mauvaise qualite ?\n36. Comment creer un sitemap multilingue pour mon site de formation ?\n37. Est-ce que RankMath ou Yoast gerent bien le SEO multilingue avec WPML ?\n38. Faut-il traduire aussi les slugs URL de mes cours et categories ?\n39. Comment verifier que mes balises hreflang sont correctement implementees ?\n\n## 5. Impact UX et experience apprenant\n\n40. Comment permettre a un utilisateur de changer de langue facilement sur mon site de formation ?\n41. Est-ce que le switcheur de langue ralentit mon site WordPress ?\n42. Comment gerer un menu de navigation different pour chaque langue ?\n43. Quelle est la meilleure position pour le selecteur de langue sur un site de cours en ligne ?\n44. Comment eviter que mon apprenant tombe sur du contenu non traduit en plein milieu du cours ?\n45. Un site multilingue charge-t-il plus lentement qu'un site monolingue ?\n46. Comment adapter les images et visuels de cours selon la langue (texte dans les images, screenshots) ?\n47. Faut-il traduire aussi les notifications push et les rappels de cours ?\n\n## 6. Aspects techniques et performance\n\n48. Rendre mon site multilingue va-t-il le ralentir significativement ?\n49. Comment configurer un CDN pour un site de formation multilingue ?\n50. Est-ce que le cache (WP Rocket, LiteSpeed) fonctionne correctement avec un site traduit ?\n51. Comment gerer la base de donnees quand on a un site en 3 ou 4 langues ?\n52. Vaut-il mieux un multisite WordPress ou un site unique avec un plugin de traduction ?\n53. Comment faire des sauvegardes propres d'un site multilingue sans perdre les liaisons de traduction ?\n54. Mon hebergement actuel suffit-il pour un site de formation en 5 langues ou il faut upgrader ?\n55. Comment debugger un conflit entre mon plugin LMS et mon plugin de traduction ?\n56. Est-ce que la traduction casse les shortcodes ou les blocs Gutenberg de mes cours ?\n\n## 7. Aspects business et monetisation\n\n57. Est-ce rentable de traduire ma formation en ligne pour viser le marche anglophone ?\n58. Comment fixer mes prix quand je vends la meme formation dans plusieurs pays ?\n59. Faut-il creer une entite juridique dans chaque pays ou je vends ma formation ?\n60. Comment gerer la TVA et les taxes pour des ventes internationales de formations ?\n61. Quel est le cout realiste pour traduire une formation complete de 30 modules ?\n62. Dois-je adapter le contenu de ma formation selon la culture du pays cible ?\n63. Comment mesurer le ROI de la traduction de mes formations ?\n64. Est-ce que Stripe et PayPal gerent bien les paiements multi-devises sur WordPress ?\n65. Quel pourcentage de chiffre d'affaires supplementaire peut-on esperer en passant au multilingue ?\n66. Faut-il proposer du support client dans chaque langue ou l'anglais suffit ?\n\n## 8. Cas d'usage par profil (freelance, formateur, organisme)\n\n67. Je suis freelance WordPress, comment proposer a mes clients de rendre leur LMS multilingue ?\n68. Je suis formateur independant, ca vaut le coup de traduire mes cours moi-meme ou je dois deleguer ?\n69. On est un organisme de formation certifie Qualiopi, quelles contraintes pour passer au multilingue ?\n70. Je suis infopreneur et je veux vendre ma formation en Afrique francophone et en Europe, quelle strategie ?\n71. Comment un createur de cours peut lancer une version anglaise de sa formation sans budget enorme ?\n72. Je gere une ecole en ligne avec 50 formations, par lesquelles commencer pour la traduction ?\n73. Un formateur qui parle 3 langues devrait-il creer 3 sites separes ou tout centraliser ?\n74. Comment un organisme de formation peut gerer les certifications et attestations dans plusieurs langues ?\n75. Je suis coach et je veux toucher le marche hispanophone, par ou commencer sur WordPress ?\n\n## 9. Workflows et automatisation de la traduction\n\n76. Comment automatiser la traduction de mes nouveaux cours avec l'IA (ChatGPT, DeepL) ?\n77. Existe-t-il un workflow n8n ou Zapier pour traduire automatiquement mes articles de blog de formation ?\n78. Comment synchroniser les mises a jour de cours entre la version originale et les traductions ?\n79. Peut-on utiliser l'API de DeepL avec WordPress pour traduire en masse ses contenus LMS ?\n80. Comment automatiser l'envoi d'emails marketing dans la langue de chaque abonne ?\n81. Est-ce que FluentCRM peut segmenter mes contacts par langue pour envoyer les bonnes sequences ?\n82. Comment mettre en place un workflow de relecture humaine apres traduction automatique ?\n\n## 10. Migration et lancement multilingue\n\n83. Mon site de formation existe deja en francais, comment ajouter l'anglais sans tout casser ?\n84. Combien de temps faut-il pour rendre un site de 20 cours entierement bilingue ?\n85. Quelles sont les etapes dans l'ordre pour passer un LMS WordPress au multilingue ?\n86. Comment tester mon site multilingue avant de le mettre en production ?\n87. Est-ce que je risque de perdre mon referencement actuel en ajoutant des langues a mon site ?\n\n---\n\n*87 requetes conversationnelles generees pour le pilier \"Traduction et multilingue WordPress\" \u00e2\u20ac\u201d segment formations en ligne.*"}], "grading": null}, {"id": "eval-crm-email-marketing-with_skill", "prompt": "Je veux mapper toutes les questions que mon audience WordPress pose \u00c3\u00a0 ChatGPT sur le CRM et l'email marketing.", "eval_id": 2, "outputs": [{"name": "result.md", "type": "text", "content": "# Carte des requetes conversationnelles \u00e2\u20ac\u201d CRM & Email Marketing WordPress\n\n> 87 requetes | 8 categories | 5 profils | 10 intentions\n\n## 1 \u00e2\u20ac\u201d Choix du CRM WordPress et decouverte\n\n1. C'est quoi exactement FluentCRM et en quoi c'est different d'un Mailchimp ou un Brevo ? J'ai un site WordPress avec WooCommerce et je veux tout centraliser. \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `e-commercant WP`\n2. Je debute en email marketing sur WordPress, est-ce que j'ai vraiment besoin d'un CRM ou un simple plugin newsletter suffit pour commencer ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `freelance WP debutant`\n3. On m'a parle de FluentCRM comme alternative self-hosted aux gros CRM cloud. Ca veut dire que mes donnees restent sur mon serveur ? C'est pas risque niveau perf ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP intermediaire`\n4. Quelles sont les vraies alternatives a FluentCRM sur WordPress ? J'ai vu Jetin CRM, Groundhogg, mais j'arrive pas a comprendre les differences concretes. \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WP intermediaire`\n5. FluentCRM vs Groundhogg vs Jetin CRM : lequel tu me conseillerais pour un site de formation en ligne avec 500 eleves ? Mon budget est serre. \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `createur de formations`\n6. Je suis en agence et on gere 12 sites WordPress clients. Est-ce que ca a du sens d'installer FluentCRM sur chaque site ou il vaut mieux un CRM centralise type HubSpot ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `agence WP`\n7. J'hesite entre garder Mailchimp (que je paie 45 EUR/mois) et passer a FluentCRM. A partir de combien de contacts ca devient rentable de switcher ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `e-commercant WP`\n8. Est-ce que FluentCRM gere le RGPD correctement ? J'ai une boutique qui vend en France et en Belgique, je veux pas me retrouver avec des problemes de conformite. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `e-commercant WP`\n9. Quel est le vrai cout total de FluentCRM ? Licence, hebergement costaud, addons... J'ai l'impression que le \"self-hosted pas cher\" cache des frais. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP debutant`\n10. J'ai un petit site vitrine avec un blog WordPress, je genere peut-etre 20 leads par mois. Est-ce que FluentCRM c'est pas overkill pour moi ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `freelance WP debutant`\n\n## 2 \u00e2\u20ac\u201d Segmentation de listes et gestion des contacts\n\n1. Comment je fais pour segmenter proprement ma liste dans FluentCRM ? J'ai 3000 contacts mais ils sont tous dans un seul tas, je sais meme pas par ou commencer. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de formations`\n2. Quelle strategie de segmentation tu recommanderais pour une boutique WooCommerce qui vend des plugins et des formations ? J'ai des acheteurs one-shot et des abonnes. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `e-commercant WP`\n3. J'ai importe ma liste depuis Mailchimp dans FluentCRM mais tous mes tags ont disparu. Comment je recree une segmentation propre sans tout refaire a la main ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WP intermediaire`\n4. Est-ce que FluentCRM permet de creer des segments dynamiques ? Genre \"tous les gens qui ont achete le produit X mais pas ouvert un email depuis 30 jours\" ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `e-commercant WP`\n5. Je gere les contacts de 5 clients differents sur le meme WordPress multisite. Comment je segmente pour que les listes ne se melangent jamais ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `agence WP`\n6. Quelle est la difference entre tags, listes et segments dynamiques dans FluentCRM ? J'utilise les trois un peu au hasard et je sens que c'est le bazar. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP debutant`\n7. Comment nettoyer une liste email dans FluentCRM ? J'ai 8000 contacts mais je souponne que la moitie sont des adresses mortes ou des gens qui n'ouvrent jamais rien. \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `createur de formations`\n8. Mon taux d'ouverture est tombe a 12%. Comment je segmente pour envoyer uniquement aux contacts engages et eviter de ruiner ma delivrabilite ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `e-commercant WP`\n9. J'ai des apprenants inscrits via TutorLMS et des clients WooCommerce. Comment je cree des segments qui croisent ces deux sources dans FluentCRM ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de formations`\n10. Existe-t-il un moyen d'attribuer automatiquement un tag quand quelqu'un visite une page specifique de mon site ? Je veux tracker l'interet sans formulaire. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `agence WP`\n\n## 3 \u00e2\u20ac\u201d Sequences email et nurturing\n\n1. Comment je cree ma premiere sequence email dans FluentCRM ? J'ai jamais fait d'automation, je veux juste envoyer 5 emails de bienvenue apres une inscription. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WP debutant`\n2. Quelle structure de sequence email tu me conseillerais pour convertir un lead froid en acheteur de formation ? Mon cycle de vente dure environ 3 semaines. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `createur de formations`\n3. J'ai une sequence de 7 emails mais mon taux de clic chute a partir du 3e email. Comment je diagnostique le probleme et j'ameliore la suite ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `e-commercant WP`\n4. Est-ce que je peux creer des embranchements dans une sequence FluentCRM ? Genre si la personne clique sur le lien A elle va dans un parcours, sinon un autre ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP intermediaire`\n5. Comment je fais une sequence de relance panier abandonne avec FluentCRM et WooCommerce ? J'ai essaye mais les emails partent trop tard. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `e-commercant WP`\n6. Quel est le bon timing entre chaque email d'une sequence de nurturing ? J'ai vu des gens dire 1 jour, d'autres 3 jours, j'ai aucune idee de ce qui marche pour du WordPress. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `createur de formations`\n7. J'ai 4 sequences actives dans FluentCRM mais elles se marchent dessus : un contact peut recevoir des emails de 2 sequences en meme temps. Comment j'evite ca ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `agence WP`\n8. Comment je cree une sequence de vente pour un lancement de plugin premium ? J'ai 2000 contacts, le lancement dure 7 jours avec un early bird. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `e-commercant WP`\n9. OK j'ai cree ma sequence de bienvenue dans FluentCRM, maintenant comment je mesure si elle marche ? Quels KPIs je dois suivre ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP debutant`\n10. J'ai un funnel evergreen pour ma formation et j'aimerais que chaque nouveau lead entre dans une sequence qui simule un lancement en direct. C'est possible avec FluentCRM ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de formations`\n11. Comment ecrire des emails de sequence qui ne finissent pas en spam ? J'ai remarque que mes emails FluentCRM arrivent souvent dans les promotions Gmail. \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WP intermediaire`\n\n## 4 \u00e2\u20ac\u201d Automation marketing et workflows\n\n1. Comment je cree un workflow d'automation complet dans FluentCRM ? Je veux que quand quelqu'un achete un cours TutorLMS, il soit automatiquement taggue et entre dans une sequence. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de formations`\n2. Est-ce que FluentCRM peut declencher des actions basees sur le comportement WooCommerce ? Genre envoyer un email quand quelqu'un achete pour la 3e fois. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `e-commercant WP`\n3. Je veux automatiser le scoring de mes leads dans FluentCRM. Comment je mets en place un systeme qui note les contacts selon leurs actions sur mon site ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `agence WP`\n4. Ca fait 2 jours que j'essaie de configurer un workflow FluentCRM qui marche pas. Le trigger se declenche mais l'action suivante ne s'execute pas. Ou je cherche ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WP intermediaire`\n5. Comment je connecte FluentCRM a n8n pour creer des automations plus complexes que ce que le plugin permet nativement ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `freelance WP intermediaire`\n6. J'ai un scenario ou quand un eleve finit le module 3 de ma formation TutorLMS, je veux lui envoyer un email + lui debloquer un bonus. Comment je fais ca sans code ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de formations`\n7. Quel workflow d'automation tu recommanderais pour re-engager des contacts inactifs depuis 90 jours ? J'ai 1200 contacts qui n'ouvrent plus rien. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `e-commercant WP`\n8. Comment automatiser l'attribution de tags en fonction des pages visitees, des produits achetes et des cours suivis, le tout dans FluentCRM ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `agence WP`\n9. Est-ce qu'on peut declencher un webhook depuis FluentCRM ? Je voudrais envoyer des donnees a mon Google Sheets quand un contact atteint un certain score. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `freelance WP intermediaire`\n10. Je veux creer un systeme ou si un prospect ne repond pas a mon email de vente, il recoit une relance differente 48h plus tard. Mais si entre-temps il achete, tout s'arrete. Comment ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `e-commercant WP`\n\n## 5 \u00e2\u20ac\u201d Integration WooCommerce et e-commerce\n\n1. Comment connecter proprement FluentCRM a WooCommerce ? J'ai installe les deux mais j'ai l'impression que les donnees ne se synchronisent pas correctement. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `e-commercant WP`\n2. Je veux envoyer des emails differents selon la categorie de produit achetee sur WooCommerce. C'est possible directement dans FluentCRM ou il faut un addon ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `e-commercant WP`\n3. Comment je mets en place un email de cross-sell automatique apres achat sur WooCommerce via FluentCRM ? J'ai 30 produits et je veux pas creer 30 sequences manuellement. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `e-commercant WP`\n4. Mon site WooCommerce fait 200 commandes par mois. Est-ce que FluentCRM va tenir la charge ou ca va ralentir mon site ? J'ai un hebergement mutualise. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP debutant`\n5. Comment segmenter mes clients WooCommerce dans FluentCRM par montant total depense ? Je veux traiter differemment mes meilleurs clients. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `e-commercant WP`\n6. J'utilise WooCommerce Subscriptions pour des abonnements mensuels. Comment je gere les relances d'expiration et les emails de retention avec FluentCRM ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `e-commercant WP`\n7. Quel CRM WordPress s'integre le mieux avec WooCommerce pour faire de l'email marketing serieux ? FluentCRM, AutomateWoo, ou autre chose ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `e-commercant WP`\n8. Comment je recupere dans FluentCRM les infos du dernier achat WooCommerce pour personnaliser mes emails ? Genre inclure le nom du produit dans le sujet. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WP intermediaire`\n9. J'ai des produits digitaux et des produits physiques sur WooCommerce. Comment je cree deux parcours email totalement separes dans FluentCRM ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `e-commercant WP`\n10. Est-ce que FluentCRM peut gerer les emails transactionnels WooCommerce (confirmation de commande, suivi...) ou il faut garder les emails WooCommerce natifs ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP debutant`\n\n## 6 \u00e2\u20ac\u201d Integration LMS et formation en ligne\n\n1. J'ai TutorLMS et FluentCRM sur le meme WordPress. Comment je fais pour que les inscriptions a un cours declenchent automatiquement une sequence email ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de formations`\n2. Quel CRM WordPress fonctionne le mieux avec TutorLMS ? J'hesite entre FluentCRM et Groundhogg, sachant que j'ai 800 eleves actifs. \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `createur de formations`\n3. Comment je cree un parcours email qui accompagne mes eleves tout au long de leur formation ? Genre un email de motivation quand ils sont bloques a 50% du cours. \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de formations`\n4. Mes eleves abandonnent souvent apres le module 2. Comment je detecte ca dans FluentCRM et je declenche une sequence de re-engagement ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de formations`\n5. Je veux vendre des upsells de formation par email. Comment je cible dans FluentCRM uniquement les eleves qui ont fini le cours gratuit mais pas achete le premium ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `createur de formations`\n6. Est-ce que FluentCRM peut tracker la progression d'un eleve dans TutorLMS et envoyer des emails en fonction du pourcentage de completion ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `createur de formations`\n7. J'ai un parcours freemium : 3 modules gratuits puis passage au payant. Comment j'automatise la sequence de conversion avec FluentCRM et TutorLMS ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `createur de formations`\n8. Comment je gere les emails pour un lancement de nouvelle formation ? J'ai ma liste de 2500 contacts dans FluentCRM, certains sont deja eleves d'un autre cours. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `createur de formations`\n9. Je veux envoyer un certificat par email automatiquement quand un eleve termine un cours TutorLMS. C'est faisable avec FluentCRM ou il me faut autre chose ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `createur de formations`\n10. J'ai LearnDash, pas TutorLMS. Est-ce que FluentCRM marche aussi bien avec ou c'est optimise pour un LMS en particulier ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WP intermediaire`\n\n## 7 \u00e2\u20ac\u201d SEO, delivrabilite et performance email\n\n1. Comment j'ameliore mon taux de delivrabilite avec FluentCRM ? Mes emails arrivent chez certains contacts mais pas d'autres, je comprends pas pourquoi. \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WP debutant`\n2. Quel SMTP tu recommanderais pour envoyer mes emails FluentCRM ? J'ai vu Amazon SES, Postmark, Brevo SMTP... j'y comprends rien aux prix et aux limites. \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WP intermediaire`\n3. Comment je configure DKIM, SPF et DMARC pour que mes emails FluentCRM ne tombent pas en spam ? J'ai un hebergement chez o2switch. \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `freelance WP debutant`\n4. Est-ce que je peux utiliser mes emails FluentCRM comme contenu indexable pour le SEO ? Genre publier les newsletters sur mon site en version web. \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `agence WP`\n5. Comment optimiser mes pages d'inscription email pour le SEO ? Je veux que mes landing pages de capture attirent du trafic organique aussi. \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `freelance WP intermediaire`\n6. Mon taux de bounce est a 8% sur FluentCRM. C'est grave ? Comment je nettoie ca et j'evite que ca se reproduise ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `e-commercant WP`\n7. J'envoie 5000 emails par mois avec FluentCRM via Amazon SES. Mon compte a ete flag pour spam. Comment je recupere ma reputation d'envoi ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `agence WP`\n8. Comment j'utilise les donnees email de FluentCRM pour alimenter ma strategie de contenu SEO ? Genre savoir quels sujets d'email marchent le mieux pour en faire des articles. \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `agence WP`\n9. Est-ce que les taux d'ouverture de FluentCRM sont fiables depuis les changements Apple Mail Privacy Protection ? J'ai l'impression que mes stats sont gonfles. \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `freelance WP intermediaire`\n\n## 8 \u00e2\u20ac\u201d Strategie business et monetisation par email\n\n1. Comment je calcule le ROI de mon email marketing avec FluentCRM ? J'ai un budget serre et j'ai besoin de justifier le temps que j'y passe. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `freelance WP debutant`\n2. Quel type de tunnel de vente par email fonctionne le mieux pour vendre des formations WordPress ? J'ai teste le webinaire mais ca convertit pas. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `createur de formations`\n3. Comment structurer un programme d'affiliation par email avec FluentCRM ? Je voudrais que mes meilleurs eleves recommandent mes formations et soient recompenses. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `createur de formations`\n4. En agence, comment je propose l'email marketing FluentCRM comme service additionnel a mes clients WordPress ? Quel pricing et quel scope ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `agence WP`\n5. J'ai 500 abonnes email sur mon blog WordPress. C'est pas enorme. Quelle strategie pour monetiser cette petite liste efficacement ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `freelance WP debutant`\n6. Comment je cree un lead magnet efficace qui alimente ma liste FluentCRM ? J'ai deja un ebook mais ca capte plus personne. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `freelance WP intermediaire`\n7. Quel est le meilleur moment pour envoyer mes campagnes email FluentCRM ? Mon audience est en France et en Afrique francophone, les fuseaux horaires compliquent tout. \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `createur de formations`\n8. Comment je personnalise l'experience email en fonction du parcours client ? Un prospect, un acheteur et un client fidele ne devraient pas recevoir les memes messages. \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `e-commercant WP`\n9. J'ai lu qu'il fallait envoyer au moins un email par semaine pour rester dans le radar. Mais j'ai peur de spammer. Quelle frequence est la bonne pour mon audience WordPress ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `freelance WP debutant`\n10. Comment je mesure la lifetime value d'un contact email dans FluentCRM couple avec WooCommerce ? Je veux savoir combien chaque abonne me rapporte en moyenne. \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `e-commercant WP`\n11. Ca vaut le coup de faire du A/B testing sur les objets d'emails dans FluentCRM ? J'ai 2000 contacts, est-ce assez pour que ce soit statistiquement pertinent ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `agence WP`\n\n---\n\n## Synthese editoriale\n\n- **Top 5 requetes a fort potentiel** :\n  1. \"FluentCRM vs Groundhogg vs Jetin CRM : lequel tu me conseillerais pour un site de formation en ligne avec 500 eleves ?\" \u00e2\u20ac\u201d comparatif directement exploitable en article pilier\n  2. \"Comment je cree un workflow d'automation complet dans FluentCRM ? Je veux que quand quelqu'un achete un cours TutorLMS, il soit automatiquement taggue et entre dans une sequence.\" \u00e2\u20ac\u201d tutoriel a forte valeur, croisement LMS + CRM\n  3. \"J'hesite entre garder Mailchimp (que je paie 45 EUR/mois) et passer a FluentCRM. A partir de combien de contacts ca devient rentable de switcher ?\" \u00e2\u20ac\u201d question de decision avec angle chiffre, tres recherchee\n  4. \"Mes eleves abandonnent souvent apres le module 2. Comment je detecte ca dans FluentCRM et je declenche une sequence de re-engagement ?\" \u00e2\u20ac\u201d probleme concret formateur, contenu unique\n  5. \"Comment je connecte FluentCRM a n8n pour creer des automations plus complexes que ce que le plugin permet nativement ?\" \u00e2\u20ac\u201d differenciateur schoolsWP, personne ne couvre cet angle\n\n- **Profil le plus actif** : createur de formations (22 requetes) \u00e2\u20ac\u201d logique vu le croisement LMS + CRM + sequences de vente\n\n- **Intention dominante** : `automatisation` (16 requetes) et `mise-en-place` (15 requetes) \u00e2\u20ac\u201d l'audience cherche d'abord a implementer et automatiser, pas juste a comprendre\n\n- **Trous editoriaux** :\n  - **CRM multisite / agence** : peu de contenu existe sur la gestion multi-clients d'un CRM WordPress, c'est un angle sous-exploite\n  - **Delivrabilite specifique FluentCRM** : beaucoup de questions pratiques (SPF, DKIM, SMTP) avec peu de guides adaptes au contexte self-hosted WordPress\n  - **Croisement n8n + FluentCRM** : personne ne documente les automations avancees combinant n8n et FluentCRM \u00e2\u20ac\u201d positionnement unique pour schoolsWP\n  - **Monetisation de petites listes** : les guides email marketing supposent toujours 10 000+ contacts, il manque du contenu pour les listes < 1000\n  - **Intention UX** : seulement 3 requetes \u00e2\u20ac\u201d l'experience utilisateur email (personnalisation, frequence, fuseaux) merite plus de couverture editoriale\n"}], "grading": null}, {"id": "eval-crm-email-marketing-without_skill", "prompt": "Je veux mapper toutes les questions que mon audience WordPress pose \u00c3\u00a0 ChatGPT sur le CRM et l'email marketing.", "eval_id": 2, "outputs": [{"name": "_gen.py", "type": "text", "content": "import os\n\noutdir = r\"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/conversational-query-mapper-workspace/iteration-1/eval-crm-email-marketing/without_skill/outputs\"\nos.makedirs(outdir, exist_ok=True)\noutpath = os.path.join(outdir, \"result.md\")\n\nprint(\"Writing to\", outpath)\nwith open(outpath, \"w\", encoding=\"utf-8\") as f:\n    f.write(\"test content\")\nprint(\"Done\")\n"}, {"name": "_gen_full.py", "type": "text", "content": "#!/usr/bin/env python3\nimport os\n\noutdir = r\"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/conversational-query-mapper-workspace/iteration-1/eval-crm-email-marketing/without_skill/outputs\"\noutpath = os.path.join(outdir, \"result.md\")\n\nq = chr(8217)  # right single quote for French apostrophes\n\ncontent = f\"\"\"# Carte des requetes conversationnelles IA -- CRM & Email Marketing WordPress\n\n**Pilier** : CRM & Email Marketing WordPress\n**Audience** : freelances WordPress, createurs de formations, e-commercants, agences\n**Plateforme cible** : ChatGPT (et LLMs conversationnels)\n**Date** : 2026-03-24\n\n---\n\n## Methodologie\n\nCette carte recense les questions que ton audience WordPress pose a ChatGPT autour du CRM et de l{q}email marketing. Les requetes sont classees par :\n\n1. **Sous-theme** (aligne sur les piliers de contenu)\n2. **Intent conversationnelle** (decouverte, comparaison, implementation, troubleshooting, optimisation)\n3. **Segment d{q}audience** (freelance, formateur, e-commercant, agence)\n\"\"\"\n\nwith open(outpath, \"w\", encoding=\"utf-8\") as f:\n    f.write(content)\nprint(f\"Written {{len(content)}} chars\")\n"}, {"name": "_write.py", "type": "text", "content": "print(\"ready\")"}, {"name": "result.md", "type": "text", "content": "# Carte des requetes conversationnelles IA -- CRM & Email Marketing WordPress\n\n**Pilier** : CRM & Email Marketing WordPress\n**Audience** : freelances WordPress, createurs de formations, e-commercants, agences\n**Plateforme cible** : ChatGPT (et LLMs conversationnels)\n**Date** : 2026-03-24\n\n---\n\n## Methodologie\n\nCette carte recense les questions que ton audience WordPress pose a ChatGPT autour du CRM et de l'email marketing. Les requetes sont classees par :\n\n1. **Sous-theme** (aligne sur les piliers de contenu)\n2. **Intent conversationnelle** (decouverte, comparaison, implementation, troubleshooting, optimisation)\n3. **Segment d'audience** (freelance, formateur, e-commercant, agence)\n\n---\n\n## 1. FluentCRM -- Questions directes\n\n### 1.1 Decouverte & evaluation\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| C'est quoi FluentCRM exactement ? | decouverte | tous |\n| FluentCRM est-il vraiment gratuit ou il y a des couts caches ? | evaluation | freelance, formateur |\n| Est-ce que FluentCRM peut remplacer Mailchimp pour un site WordPress ? | comparaison | freelance, e-commercant |\n| FluentCRM vaut le coup pour un petit site avec 500 abonnes ? | evaluation | freelance |\n| Quelles sont les limites de la version gratuite de FluentCRM ? | evaluation | tous |\n| FluentCRM ralentit-il mon site WordPress ? | performance | tous |\n| Est-ce que FluentCRM est conforme RGPD ? | conformite | agence, e-commercant |\n| FluentCRM fonctionne avec mon hebergement mutualise ? | compatibilite | freelance |\n| Quel hebergeur recommander pour FluentCRM avec 10 000 contacts ? | infrastructure | agence |\n| FluentCRM Pro vaut-il le prix par rapport a la version gratuite ? | evaluation | tous |\n\n### 1.2 Configuration & prise en main\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment installer et configurer FluentCRM etape par etape ? | implementation | freelance, formateur |\n| Comment importer mes contacts Mailchimp dans FluentCRM ? | migration | tous |\n| Comment configurer l'envoi d'emails avec FluentCRM et Amazon SES ? | implementation | agence, e-commercant |\n| Quel service SMTP utiliser avec FluentCRM ? | implementation | tous |\n| Comment parametrer FluentSMTP avec FluentCRM ? | implementation | tous |\n| Comment configurer le double opt-in dans FluentCRM ? | implementation | tous |\n| Comment creer mon premier formulaire d'inscription avec FluentCRM ? | implementation | freelance |\n| Comment organiser mes tags et listes dans FluentCRM quand je demarre ? | implementation | tous |\n| Comment connecter FluentCRM a mon domaine pour eviter les spams ? | implementation | freelance |\n| Quelle est la meilleure structure de listes pour un site avec blog + formation + boutique ? | implementation | formateur, e-commercant |\n\n### 1.3 Troubleshooting FluentCRM\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Mes emails FluentCRM arrivent en spam, comment corriger ca ? | troubleshooting | tous |\n| FluentCRM n'envoie plus d'emails depuis la mise a jour, que faire ? | troubleshooting | tous |\n| Le tracking d'ouverture FluentCRM ne fonctionne pas, pourquoi ? | troubleshooting | agence |\n| FluentCRM affiche une erreur cron, comment resoudre ? | troubleshooting | freelance |\n| Les automations FluentCRM se bloquent apres X contacts, c'est quoi le probleme ? | troubleshooting | agence, e-commercant |\n| Comment debugger un email FluentCRM qui ne part pas ? | troubleshooting | tous |\n| FluentCRM consomme trop de ressources serveur, comment optimiser ? | troubleshooting | agence |\n| Les liens de desinscription FluentCRM ne marchent pas | troubleshooting | tous |\n\n---\n\n## 2. Alternatives CRM WordPress\n\n### 2.1 Comparaisons directes\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| FluentCRM vs Mailchimp : lequel choisir pour WordPress ? | comparaison | tous |\n| FluentCRM vs MailPoet : quelle difference ? | comparaison | freelance |\n| FluentCRM ou Groundhogg pour un CRM WordPress ? | comparaison | freelance, agence |\n| ActiveCampaign vs FluentCRM : est-ce que ca vaut le cout de rester sur WordPress ? | comparaison | e-commercant, agence |\n| ConvertKit ou FluentCRM pour un createur de formations ? | comparaison | formateur |\n| Brevo (Sendinblue) vs FluentCRM : avantages et inconvenients ? | comparaison | e-commercant |\n| Est-ce que je devrais utiliser HubSpot CRM avec WordPress ou rester sur FluentCRM ? | comparaison | agence |\n| WP Fusion vs FluentCRM : c'est quoi la difference ? | comparaison | formateur |\n| Quel est le meilleur CRM gratuit pour WordPress en 2026 ? | comparaison | freelance |\n| Comparatif des CRM WordPress : lequel pour un site e-commerce ? | comparaison | e-commercant |\n| Quel CRM WordPress choisir quand on a 50 000 contacts ? | comparaison | agence |\n| Existe-t-il un CRM WordPress avec un vrai pipeline de ventes ? | comparaison | agence |\n| Quel CRM WordPress pour gerer des leads et des devis ? | comparaison | freelance, agence |\n\n### 2.2 Migration & choix\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment migrer de Mailchimp vers un CRM WordPress ? | migration | tous |\n| Je veux quitter ActiveCampaign, comment migrer vers FluentCRM sans perdre mes automations ? | migration | formateur, e-commercant |\n| Quel CRM WordPress choisir si je veux tout garder en self-hosted ? | evaluation | agence |\n| Est-ce que ca vaut le coup de passer d'un SaaS email a un CRM WordPress natif ? | evaluation | tous |\n| Comment choisir entre un CRM externe et un plugin WordPress ? | evaluation | freelance |\n\n---\n\n## 3. Segmentation de listes\n\n### 3.1 Strategie de segmentation\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment segmenter ma liste email efficacement sur WordPress ? | strategie | tous |\n| Quels criteres de segmentation utiliser pour un site de formation ? | strategie | formateur |\n| Comment segmenter mes clients WooCommerce par comportement d'achat ? | strategie | e-commercant |\n| Quelle est la difference entre tags, listes et segments dans FluentCRM ? | decouverte | tous |\n| Comment creer des segments dynamiques dans FluentCRM ? | implementation | tous |\n| Comment segmenter par niveau d'engagement (actifs vs inactifs) ? | strategie | tous |\n| Comment tagger automatiquement les contacts selon les pages visitees ? | implementation | formateur, e-commercant |\n| Quel systeme de tags utiliser pour un site avec blog + formation + boutique ? | strategie | formateur |\n| Comment segmenter par source d'acquisition (SEO, pub, referral) ? | strategie | agence |\n| Comment identifier et segmenter mes meilleurs clients pour du upsell ? | strategie | e-commercant |\n\n### 3.2 Segmentation avancee\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment utiliser le lead scoring dans FluentCRM ? | implementation | agence |\n| Comment creer un systeme de scoring pour qualifier mes leads WordPress ? | implementation | agence, e-commercant |\n| Comment segmenter par progression dans un cours (TutorLMS ou LearnDash) ? | implementation | formateur |\n| Comment segmenter les abandons de panier WooCommerce ? | implementation | e-commercant |\n| Comment nettoyer et re-segmenter une liste email negligee depuis 6 mois ? | optimisation | tous |\n| Comment segmenter les contacts qui ouvrent mais ne cliquent jamais ? | optimisation | tous |\n| Comment creer des personas automatiques a partir de mes donnees CRM ? | strategie | agence |\n\n---\n\n## 4. Sequences email\n\n### 4.1 Conception de sequences\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment creer une sequence de bienvenue efficace avec FluentCRM ? | implementation | tous |\n| Combien d'emails mettre dans une sequence de bienvenue ? | strategie | freelance, formateur |\n| Quel est le meilleur espacement entre les emails d'une sequence ? | strategie | tous |\n| Comment ecrire une sequence email qui convertit pour vendre une formation ? | strategie | formateur |\n| Comment creer une sequence de nurturing pour des prospects froids ? | strategie | agence |\n| Donne-moi un modele de sequence email pour lancer un cours en ligne | strategie | formateur |\n| Comment creer une sequence de relance panier abandonne sur WooCommerce ? | implementation | e-commercant |\n| Comment creer une sequence de reengagement pour les inactifs ? | strategie | tous |\n| Comment planifier une sequence de lancement produit en 7 emails ? | strategie | formateur, e-commercant |\n| Comment creer une sequence email post-achat pour fideliser ? | strategie | e-commercant |\n\n### 4.2 Optimisation de sequences\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Mes sequences email ont un faible taux d'ouverture, comment ameliorer ? | optimisation | tous |\n| Comment A/B tester les sujets d'email dans FluentCRM ? | optimisation | tous |\n| Quel taux d'ouverture et de clic viser pour mes sequences ? | benchmark | tous |\n| Comment optimiser les heures d'envoi de mes sequences email ? | optimisation | tous |\n| Comment mesurer le ROI d'une sequence email ? | optimisation | agence, e-commercant |\n| Mes emails de sequence finissent en spam apres le 3eme, pourquoi ? | troubleshooting | tous |\n| Comment personnaliser les emails de sequence avec des merge tags FluentCRM ? | implementation | tous |\n| Comment ajouter des conditions dans une sequence (si ouvert, si clique, si achete) ? | implementation | formateur, e-commercant |\n\n---\n\n## 5. Automation marketing\n\n### 5.1 Automations de base\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment creer ma premiere automation email sur WordPress ? | implementation | freelance |\n| Quelles automations email mettre en place en priorite sur un nouveau site ? | strategie | tous |\n| Comment automatiser l'envoi d'un email quand quelqu'un telecharge un lead magnet ? | implementation | tous |\n| Comment envoyer un email automatique apres un achat WooCommerce ? | implementation | e-commercant |\n| Comment automatiser un email de bienvenue personnalise selon la source d'inscription ? | implementation | tous |\n| Comment creer un funnel email automatise complet sur WordPress ? | strategie | formateur, e-commercant |\n| Comment automatiser les emails de rappel pour un webinaire ? | implementation | formateur |\n| Comment envoyer automatiquement un email d'anniversaire a mes contacts ? | implementation | e-commercant |\n\n### 5.2 Automations avancees\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment creer des automations conditionnelles dans FluentCRM (if/then) ? | implementation | tous |\n| Comment declencher une automation basee sur le comportement de navigation ? | implementation | e-commercant, agence |\n| Comment automatiser le passage d'un contact d'une sequence a une autre ? | implementation | formateur |\n| Comment creer un workflow d'automation avec des delais et des conditions ? | implementation | tous |\n| Comment utiliser les webhooks FluentCRM pour connecter des services externes ? | implementation | agence |\n| Comment automatiser l'upsell apres un premier achat WooCommerce ? | implementation | e-commercant |\n| Comment automatiser la relance des eleves qui n'ont pas termine leur cours ? | implementation | formateur |\n| Comment creer une automation de win-back pour les clients perdus ? | implementation | e-commercant |\n| Comment lier FluentCRM a n8n pour des automations cross-plateformes ? | implementation | agence |\n| Comment automatiser le scoring de leads et le passage en \"qualified\" ? | implementation | agence |\n\n### 5.3 Strategie d'automation\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Quelles sont les 10 automations email indispensables pour un site WordPress ? | strategie | tous |\n| Comment planifier une strategie d'automation email sans complexifier ? | strategie | freelance |\n| Quel est le bon moment pour passer de l'email manuel a l'automation ? | strategie | freelance |\n| Comment eviter que mes automations se chevauchent et spamment mes contacts ? | troubleshooting | tous |\n| Comment documenter et maintenir mes automations quand elles deviennent complexes ? | optimisation | agence |\n| Combien d'automations actives c'est trop ? | strategie | freelance |\n\n---\n\n## 6. Integration WooCommerce\n\n### 6.1 Connexion CRM + WooCommerce\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment connecter FluentCRM a WooCommerce ? | implementation | e-commercant |\n| Est-ce que FluentCRM synchronise automatiquement les clients WooCommerce ? | decouverte | e-commercant |\n| Comment tagger automatiquement les acheteurs WooCommerce dans FluentCRM ? | implementation | e-commercant |\n| Comment segmenter les clients WooCommerce par montant depense ? | implementation | e-commercant |\n| Comment envoyer des emails differents selon le produit achete sur WooCommerce ? | implementation | e-commercant |\n| Comment creer un email automatique de cross-sell apres achat WooCommerce ? | implementation | e-commercant |\n| Comment recuperer les abandons de panier WooCommerce avec FluentCRM ? | implementation | e-commercant |\n| Comment afficher les achats WooCommerce dans la fiche contact FluentCRM ? | implementation | e-commercant |\n\n### 6.2 Strategies email + e-commerce\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Quelle strategie email pour augmenter le panier moyen WooCommerce ? | strategie | e-commercant |\n| Comment creer un programme de fidelite par email avec WooCommerce ? | strategie | e-commercant |\n| Comment automatiser les avis clients apres livraison WooCommerce ? | implementation | e-commercant |\n| Comment envoyer des coupons personnalises par email via WooCommerce + FluentCRM ? | implementation | e-commercant |\n| Comment gerer les emails transactionnels vs marketing avec WooCommerce ? | strategie | e-commercant |\n| Comment synchroniser les commandes WooCommerce avec un CRM externe ? | implementation | e-commercant, agence |\n| Comment creer des emails de recommandation produit automatiques ? | implementation | e-commercant |\n\n---\n\n## 7. Integration LMS (TutorLMS, LearnDash)\n\n### 7.1 CRM + LMS basique\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment connecter FluentCRM a TutorLMS ? | implementation | formateur |\n| Comment connecter FluentCRM a LearnDash ? | implementation | formateur |\n| Est-ce que FluentCRM peut tracker la progression des eleves ? | decouverte | formateur |\n| Comment envoyer un email automatique quand un eleve termine un cours ? | implementation | formateur |\n| Comment tagger les eleves par cours achete dans FluentCRM ? | implementation | formateur |\n| Comment creer une sequence de onboarding pour un nouveau cours ? | implementation | formateur |\n| Comment envoyer des rappels aux eleves inactifs depuis 7 jours ? | implementation | formateur |\n\n### 7.2 CRM + LMS avance\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment creer un funnel email complet pour vendre une formation en ligne ? | strategie | formateur |\n| Comment automatiser l'upsell vers le niveau suivant de formation ? | strategie | formateur |\n| Comment segmenter les eleves par taux de completion pour cibler les relances ? | implementation | formateur |\n| Comment utiliser FluentCRM pour vendre un coaching apres une formation ? | strategie | formateur |\n| Comment gerer les emails de certification et diplome automatiquement ? | implementation | formateur |\n| Comment combiner WooCommerce + TutorLMS + FluentCRM pour un funnel complet ? | implementation | formateur |\n| Comment creer une communaute email autour de ma formation ? | strategie | formateur |\n| WP Fusion ou FluentCRM pour gerer les acces aux cours par email ? | comparaison | formateur |\n| Comment automatiser les temoignages et avis apres completion de formation ? | implementation | formateur |\n\n---\n\n## 8. Questions transversales par segment d'audience\n\n### 8.1 Freelances WordPress\n\n| Requete conversationnelle | Intent |\n|---|---|\n| Quel CRM WordPress installer pour mes clients freelance ? | evaluation |\n| Comment proposer l'email marketing comme service a mes clients WordPress ? | strategie |\n| Comment gerer les CRM de plusieurs clients depuis un seul dashboard ? | implementation |\n| Quel est le setup email marketing minimal pour un site vitrine WordPress ? | implementation |\n| Comment facturer la mise en place d'un CRM WordPress a mes clients ? | strategie |\n| Comment creer un template d'automation reutilisable pour mes clients ? | implementation |\n\n### 8.2 Createurs de formations\n\n| Requete conversationnelle | Intent |\n|---|---|\n| Comment construire une liste email a partir de zero pour vendre ma formation ? | strategie |\n| Quel est le meilleur funnel email pour lancer une formation en ligne ? | strategie |\n| Comment utiliser l'email marketing pour pre-vendre une formation pas encore creee ? | strategie |\n| Comment segmenter entre prospects, eleves gratuits et eleves premium ? | segmentation |\n| Comment automatiser tout le cycle de vie d'un eleve par email ? | strategie |\n| Comment utiliser les emails pour reduire le taux d'abandon de ma formation ? | optimisation |\n| Comment creer un mini-cours gratuit par email comme lead magnet ? | strategie |\n\n### 8.3 E-commercants\n\n| Requete conversationnelle | Intent |\n|---|---|\n| Quel est le ROI de l'email marketing pour un e-commerce WordPress ? | evaluation |\n| Comment passer de 0 a 1000 abonnes email sur ma boutique WooCommerce ? | strategie |\n| Comment automatiser 80% de mes emails e-commerce ? | strategie |\n| Comment creer un calendrier email marketing pour mon e-commerce ? | strategie |\n| Comment gerer le RGPD pour l'email marketing e-commerce en France ? | conformite |\n| Comment utiliser l'email pour destocker ou promouvoir des soldes ? | strategie |\n| Comment integrer les avis clients dans mes emails marketing ? | implementation |\n\n### 8.4 Agences\n\n| Requete conversationnelle | Intent |\n|---|---|\n| Comment standardiser le setup CRM WordPress pour tous nos clients ? | implementation |\n| Quel CRM WordPress permet de gerer plusieurs marques/sites ? | evaluation |\n| Comment reporter les metriques email marketing a nos clients ? | implementation |\n| Comment former nos equipes a FluentCRM rapidement ? | implementation |\n| Quel est le stack email marketing WordPress le plus fiable pour une agence ? | evaluation |\n| Comment creer des playbooks d'automation reutilisables entre clients ? | strategie |\n| Comment gerer la delivrabilite email a l'echelle pour 20+ clients ? | optimisation |\n| Comment auditer le CRM WordPress d'un nouveau client ? | implementation |\n\n---\n\n## 9. Questions \"meta\" sur l'email marketing WordPress\n\n### 9.1 Delivrabilite & technique\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment configurer SPF, DKIM et DMARC pour mes emails WordPress ? | implementation | tous |\n| Quel service SMTP choisir pour WordPress : Amazon SES, Postmark, ou SendGrid ? | comparaison | tous |\n| Combien ca coute d'envoyer 10 000 emails par mois depuis WordPress ? | evaluation | tous |\n| Comment surveiller ma reputation d'envoi email ? | optimisation | agence |\n| Mes emails WordPress arrivent en spam chez Gmail, comment resoudre ? | troubleshooting | tous |\n| Comment warmer une nouvelle adresse email pour l'envoi en masse ? | implementation | tous |\n| Faut-il un serveur dedie pour envoyer plus de 50 000 emails par mois ? | evaluation | agence |\n\n### 9.2 Strategie globale\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Par ou commencer avec l'email marketing sur WordPress quand on debute ? | decouverte | freelance |\n| Quelle est la strategie email marketing ideale pour un site WordPress en 2026 ? | strategie | tous |\n| Comment combiner email marketing et SEO pour maximiser le trafic ? | strategie | tous |\n| L'email marketing est-il encore rentable en 2026 ? | evaluation | tous |\n| Comment mesurer les performances de mon email marketing WordPress ? | optimisation | tous |\n| Quels KPIs suivre pour l'email marketing sur WordPress ? | optimisation | agence |\n| Comment creer un dashboard de suivi email marketing dans WordPress ? | implementation | agence |\n| Faut-il encore une newsletter en 2026 ou les automations suffisent ? | strategie | tous |\n\n---\n\n## 10. Requetes emergentes 2026\n\n| Requete conversationnelle | Intent | Segment principal |\n|---|---|---|\n| Comment utiliser l'IA pour ecrire mes emails marketing dans FluentCRM ? | implementation | tous |\n| Est-ce que ChatGPT peut rediger mes sequences email automatiquement ? | evaluation | tous |\n| Comment personnaliser les emails avec l'IA sur WordPress ? | implementation | agence |\n| Comment integrer FluentCRM avec des outils no-code (n8n, Make, Zapier) ? | implementation | agence |\n| Comment utiliser les donnees CRM pour alimenter un chatbot IA sur mon site ? | implementation | agence |\n| Comment combiner FluentCRM et WooCommerce pour de l'email predictif ? | strategie | e-commercant |\n| Existe-t-il un CRM WordPress avec de l'IA integree ? | evaluation | tous |\n| Comment automatiser la creation de contenu email a partir de mes articles WordPress ? | implementation | formateur, agence |\n| Comment utiliser l'email marketing pour preparer mes contenus a la citation par les LLMs ? | strategie | agence |\n\n---\n\n## Synthese : priorites de contenu\n\n### Top 10 des clusters a couvrir en priorite (volume + intent commerciale)\n\n1. **FluentCRM vs alternatives** -- requetes comparatives a fort intent d'achat\n2. **Sequences email pour formations** -- besoin formateurs mal servi\n3. **Automation WooCommerce + CRM** -- requetes implementation e-commerce\n4. **Configuration SMTP + delivrabilite** -- troubleshooting universel\n5. **Segmentation par comportement** -- strategie avancee demandee par agences\n6. **Integration TutorLMS/LearnDash + FluentCRM** -- niche formateurs WordPress\n7. **Relance panier abandonne** -- requete transactionnelle e-commerce\n8. **Lead scoring WordPress** -- differenciateur agences\n9. **Migration SaaS vers CRM natif** -- tendance 2026 self-hosted\n10. **IA + email marketing WordPress** -- requetes emergentes en croissance\n\n### Metriques de la carte\n\n- **Total requetes mappees** : 197\n- **Sous-themes couverts** : 10 categories, 24 sous-categories\n- **Segments adresses** : 4 (freelance, formateur, e-commercant, agence)\n- **Intents couvertes** : decouverte, comparaison, implementation, troubleshooting, optimisation, strategie, migration, evaluation, conformite\n\n---\n\n*Carte generee pour schoolsWP -- pilier CRM & Email Marketing WordPress*\n"}], "grading": null}, {"id": "eval-lms-formation-with_skill", "prompt": "Pilier LMS WordPress. Je veux toutes les questions que les gens posent \u00c3\u00a0 ChatGPT sur la cr\u00c3\u00a9ation et la vente de formations en ligne avec WordPress.", "eval_id": 3, "outputs": [{"name": "result.md", "type": "text", "content": "# Carte des requetes conversationnelles \u00e2\u20ac\u201d LMS WordPress : creation et vente de formations en ligne\n\n> 90 requetes | 10 categories | 5 profils | 10 intentions\n\n---\n\n## 1 \u00e2\u20ac\u201d Choix du LMS : TutorLMS vs LearnDash et alternatives\n\n1. Je debute sur WordPress et je veux vendre des formations en ligne, tout le monde me parle de LearnDash et TutorLMS \u00e2\u20ac\u201d lequel est le plus simple a prendre en main quand on n'est pas developpeur ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `formateur independant`\n2. J'hesite entre TutorLMS Pro et LearnDash, mon budget est de 200 euros max par an et j'ai besoin de quiz avances et de certificats \u00e2\u20ac\u201d que me conseillerais-tu ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `infopreneur`\n3. Est-ce que TutorLMS gere correctement les paiements recurrents pour un abonnement mensuel a ma formation, ou il faut absolument passer par WooCommerce ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n4. On est un organisme de formation certifie Qualiopi, on a besoin de tracking SCORM et de rapports de completion detailles \u00e2\u20ac\u201d LearnDash ou TutorLMS pour ca ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n5. J'ai deja 15 formations sur Teachable et je veux migrer sur WordPress pour avoir plus de controle \u00e2\u20ac\u201d c'est quoi le chemin le moins douloureux avec TutorLMS ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n6. LearnDash a sorti la version 4 avec le nouveau builder de cours, est-ce que ca change vraiment quelque chose par rapport a TutorLMS niveau experience de creation de cours ? \u00e2\u20ac\u201d `comparaison` \u00e2\u20ac\u201d `formateur independant`\n7. Je suis freelance WordPress et mes clients me demandent souvent de monter des plateformes de formation \u00e2\u20ac\u201d quel LMS je devrais maitriser en priorite pour etre polyvalent ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WordPress`\n8. C'est quoi la vraie difference entre TutorLMS gratuit et la version Pro ? Est-ce que la version gratuite suffit pour lancer une premiere formation payante ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n9. J'ai lu que LearnDash avait des problemes de performance au-dela de 500 eleves \u00e2\u20ac\u201d c'est toujours le cas ou ca a ete corrige ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `organisme de formation`\n10. On veut proposer des formations a nos salaries en interne, pas les vendre \u00e2\u20ac\u201d est-ce que TutorLMS ou LearnDash fonctionne bien pour un usage corporate sans ecommerce ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n\n## 2 \u00e2\u20ac\u201d Monetisation et modeles economiques\n\n1. Quel modele economique marche le mieux pour vendre des formations WordPress en 2024 : vente a l'unite, abonnement mensuel, ou pack annuel ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n2. Je veux creer un membership ou les gens paient 29 euros par mois et accedent a toutes mes formations progressivement \u00e2\u20ac\u201d comment je structure ca techniquement avec TutorLMS et WooCommerce Subscriptions ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n3. J'ai 3 formations a 297 euros chacune mais les ventes stagnent \u00e2\u20ac\u201d est-ce que je devrais passer a un modele freemium avec les premiers modules gratuits pour attirer plus de monde ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n4. Comment je gere la TVA sur les ventes de formations en ligne depuis la France si j'ai des clients dans toute l'Europe ? Y a un plugin WordPress qui fait ca automatiquement ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `infopreneur`\n5. Est-ce que c'est rentable de proposer une formation a 47 euros en entree de gamme pour ensuite vendre une formation premium a 997 euros derriere ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n6. On est un organisme et on veut facturer nos formations financeables CPF via notre site WordPress \u00e2\u20ac\u201d c'est possible techniquement ou il faut passer par une plateforme certifiee ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n7. Je genere 2000 euros par mois avec mes formations, comment je passe a 10 000 sans creer 5 nouvelles formations ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n8. Quel plugin d'affiliation fonctionne bien avec TutorLMS pour que mes anciens eleves recommandent mes formations contre une commission ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `formateur independant`\n9. J'ai peur de cannibaliser mes ventes si je mets trop de contenu gratuit sur mon blog \u00e2\u20ac\u201d comment trouver le bon equilibre entre contenu gratuit et contenu payant ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n\n## 3 \u00e2\u20ac\u201d Gamification et engagement des apprenants\n\n1. C'est quoi exactement la gamification dans une formation en ligne et est-ce que ca augmente vraiment le taux de completion des cours ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n2. Je veux ajouter des badges, des points et un classement dans mes formations TutorLMS \u00e2\u20ac\u201d quel plugin de gamification s'integre le mieux sans ralentir le site ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n3. Mes eleves abandonnent a 40% du parcours, j'ai essaye les emails de relance mais ca marche pas \u00e2\u20ac\u201d est-ce que la gamification pourrait changer ca ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n4. Comment je mets en place un systeme de points qui debloque des bonus (templates, coaching, ressources) au fur et a mesure que l'eleve avance dans la formation ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n5. Est-ce que GamiPress fonctionne correctement avec LearnDash ou c'est plein de bugs d'integration ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `freelance WordPress`\n6. On forme 200 salaries par an et on veut un tableau de bord de progression avec des niveaux pour motiver les equipes \u00e2\u20ac\u201d c'est faisable avec TutorLMS sans dev custom ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n7. J'ai peur que la gamification fasse \"pas serieux\" pour mon audience de professionnels B2B \u00e2\u20ac\u201d est-ce qu'il y a des approches subtiles qui marchent dans ce contexte ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `organisme de formation`\n8. Comment je cree des quiz interactifs engageants et pas juste des QCM ennuyeux dans TutorLMS ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `formateur independant`\n9. Ca fait 2 semaines que j'essaie de configurer un systeme de streak (connexion quotidienne) avec GamiPress et LearnDash \u00e2\u20ac\u201d ca plante a chaque fois, t'as une solution ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n\n## 4 \u00e2\u20ac\u201d Certificats et attestations\n\n1. Comment je genere des certificats PDF automatiques a la fin d'une formation avec TutorLMS, avec le nom de l'eleve et la date ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n2. On est Qualiopi et on doit delivrer des attestations de formation conformes avec numero de suivi \u00e2\u20ac\u201d quel plugin WordPress gere ca proprement ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n3. Est-ce que les certificats generes par LearnDash sont personnalisables au niveau du design ou c'est toujours le meme template moche ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `infopreneur`\n4. Je veux que mes certificats soient verifiables en ligne avec un QR code unique \u00e2\u20ac\u201d c'est possible avec TutorLMS ou il faut un dev custom ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n5. Comment je fais pour que le certificat ne se debloque que si l'eleve a obtenu au moins 80% aux quiz ET regarde toutes les videos ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n6. Mes certificats actuels font vraiment amateur, comment creer un template pro avec Elementor ou un builder de certificats ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `infopreneur`\n7. Est-ce qu'il existe un moyen d'envoyer automatiquement le certificat par email a l'eleve et une copie a l'entreprise qui a finance la formation ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `organisme de formation`\n8. Je veux creer des micro-certifications par module (pas juste un certificat global) pour que les eleves puissent afficher leurs competences sur LinkedIn \u00e2\u20ac\u201d comment faire ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n\n## 5 \u00e2\u20ac\u201d Espace membre et acces aux contenus\n\n1. C'est quoi la difference entre un espace membre avec un plugin comme WishList Member et l'espace apprenant integre dans TutorLMS ? J'ai besoin des deux ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n2. Je veux que chaque eleve ait un tableau de bord personnel avec ses formations en cours, ses certificats et son historique \u00e2\u20ac\u201d comment je configure ca ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n3. Comment je protege mes videos de formation pour eviter que les gens partagent les liens de visionnage sans payer ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `infopreneur`\n4. On a 3 niveaux d'acces (gratuit, standard, premium) et chaque niveau debloque des formations differentes \u00e2\u20ac\u201d comment je gere ca proprement sans que ca devienne un bordel ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n5. Mon espace membre rame quand j'ai plus de 100 personnes connectees en meme temps \u00e2\u20ac\u201d c'est un probleme de plugin ou d'hebergement ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `freelance WordPress`\n6. Je veux ajouter un forum ou un espace communautaire reserve a mes eleves dans leur espace membre \u00e2\u20ac\u201d BuddyPress, bbPress ou autre chose ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `formateur independant`\n7. Comment je gere l'expiration des acces ? Je veux que les eleves aient acces pendant 12 mois apres l'achat, puis qu'ils doivent renouveler \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n8. Est-ce que je peux creer un systeme de drip content ou les modules se debloquent semaine apres semaine meme si l'eleve a achete la formation complete ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n9. J'ai des contenus en PDF, video et audio dans mes formations \u00e2\u20ac\u201d comment je cree une bibliotheque de ressources telechargeable propre dans l'espace membre ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `infopreneur`\n\n## 6 \u00e2\u20ac\u201d Tunnels de vente et conversion\n\n1. Quel est le meilleur tunnel de vente pour une formation a 497 euros sur WordPress ? Landing page, webinaire, sequence email... par ou commencer ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n2. J'utilise FluentCRM et TutorLMS \u00e2\u20ac\u201d comment je cree une sequence email automatique qui relance les gens qui ont abandonne le panier avant de finaliser l'achat de ma formation ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n3. Ma page de vente convertit a 1.2% et je sais pas si c'est bien ou pas \u00e2\u20ac\u201d c'est quoi un bon taux de conversion pour une formation WordPress en 2024 ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n4. Je veux proposer un module gratuit comme lead magnet puis envoyer une sequence de 5 emails pour vendre la formation complete \u00e2\u20ac\u201d comment je branche tout ca techniquement ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n5. Est-ce que CartFlows fonctionne bien avec TutorLMS pour creer des order bumps et des upsells apres l'achat d'une formation ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `infopreneur`\n6. J'ai essaye de mettre un compte a rebours sur ma page de vente mais ca fait trop \"marketeux\" pour mon audience de profs \u00e2\u20ac\u201d comment creer de l'urgence sans etre agressif ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n7. Comment je mets en place un systeme de parrainage ou mes anciens eleves envoient un lien et touchent 20% de commission sur chaque vente ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n8. On est un organisme de formation et on veut que les entreprises puissent acheter des licences en lot (10, 20, 50 places) sur notre site \u00e2\u20ac\u201d comment implementer ca avec WooCommerce et TutorLMS ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n9. Mon tunnel de vente fait : article blog, lead magnet, 5 emails, page de vente. Ca marche pour 200 euros de CA par mois. Comment j'optimise sans tout refaire ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n\n## 7 \u00e2\u20ac\u201d SEO pour formations en ligne\n\n1. Comment je fais pour que mes pages de formation apparaissent dans Google quand quelqu'un cherche \"formation WordPress en ligne\" ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `formateur independant`\n2. Est-ce que les contenus de mes cours (lecons, modules) sont indexes par Google ou est-ce que le paywall les bloque completement ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n3. Quel schema markup je dois utiliser pour mes formations en ligne ? Course, Product, les deux ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `freelance WordPress`\n4. J'ai 12 formations sur des sujets WordPress differents \u00e2\u20ac\u201d comment je structure mon site pour que Google comprenne que je suis expert dans cette niche ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n5. Comment j'optimise ma page de vente de formation pour qu'elle rank sur des requetes transactionnelles sans que ca ressemble a du bourrage de mots-cles ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `formateur independant`\n6. Est-ce que creer un blog avec des articles complementaires a mes formations aide vraiment le SEO ou c'est une perte de temps ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n7. Je veux que mes formations soient citees par ChatGPT et Perplexity quand quelqu'un demande \"meilleure formation WordPress\" \u00e2\u20ac\u201d comment je fais ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `infopreneur`\n8. Mes pages de formation sont super lentes a cause de toutes les videos embedees \u00e2\u20ac\u201d ca impacte mon SEO et comment je corrige ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `freelance WordPress`\n9. Comment j'utilise RankMath pour optimiser les meta descriptions et les titres de mes pages de cours TutorLMS ? \u00e2\u20ac\u201d `seo` \u00e2\u20ac\u201d `formateur independant`\n\n## 8 \u00e2\u20ac\u201d Besoins des formateurs independants\n\n1. Je suis coach en developpement personnel et je veux creer ma premiere formation en ligne sur WordPress \u00e2\u20ac\u201d par ou je commence concretement si j'ai zero competence technique ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n2. Ca coute combien par mois de maintenir une plateforme de formation sur WordPress ? Hebergement, plugins, maintenance... je veux un budget realiste \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n3. J'ai enregistre mes videos de formation avec mon telephone, c'est suffisant ou il faut du matos pro pour que ca fasse serieux ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `formateur independant`\n4. Je suis seul, j'ai pas de budget pour un dev \u00e2\u20ac\u201d est-ce que je peux vraiment tout faire moi-meme avec TutorLMS et un page builder ? \u00e2\u20ac\u201d `decouverte` \u00e2\u20ac\u201d `formateur independant`\n5. Comment je gere le support technique de mes eleves sans y passer 4 heures par jour ? Y a des outils d'automatisation pour ca ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `formateur independant`\n6. J'ai 50 eleves actifs et je veux passer a 500 cette annee \u00e2\u20ac\u201d qu'est-ce qui va casser dans mon setup WordPress actuel et que je dois anticiper ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `formateur independant`\n7. Je donne des formations en presentiel et je veux creer une version en ligne \u00e2\u20ac\u201d comment je transforme mon contenu sans juste filmer mes slides PowerPoint ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `formateur independant`\n8. Comment je fixe le prix de ma formation ? J'ai 6 modules, 20 heures de video, des exercices et un groupe Telegram \u00e2\u20ac\u201d 297 euros c'est trop cher ou pas assez ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `formateur independant`\n\n## 9 \u00e2\u20ac\u201d Besoins des organismes de formation\n\n1. On est un organisme certifie et on doit generer des rapports de suivi pour chaque stagiaire avec les heures de connexion et les scores aux evaluations \u00e2\u20ac\u201d quel LMS WordPress fait ca nativement ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n2. Comment on connecte notre LMS WordPress avec notre logiciel de gestion administrative (Digiforma, Dendreo) pour eviter la double saisie ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `organisme de formation`\n3. On a 15 formateurs qui creent du contenu chacun de leur cote \u00e2\u20ac\u201d comment on gere les roles et les permissions pour que chaque formateur ne voie que ses propres cours ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n4. Est-ce que TutorLMS permet de creer des sessions de formation avec des dates de debut et de fin, comme un vrai catalogue de sessions ? \u00e2\u20ac\u201d `comprehension` \u00e2\u20ac\u201d `organisme de formation`\n5. On veut proposer du blended learning (mix presentiel + distanciel) \u00e2\u20ac\u201d comment on gere les deux modalites dans le meme LMS ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `organisme de formation`\n6. Notre site WordPress actuel est sur un hebergement mutualise et on a 500 apprenants \u00e2\u20ac\u201d on doit migrer vers quoi pour que ca tienne la charge ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `organisme de formation`\n7. Comment on genere des conventions de formation et des feuilles de presence automatiquement depuis WordPress ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `organisme de formation`\n8. On veut que les managers des entreprises clientes puissent suivre la progression de leurs salaries via un dashboard \u00e2\u20ac\u201d c'est faisable avec TutorLMS ? \u00e2\u20ac\u201d `ux` \u00e2\u20ac\u201d `organisme de formation`\n9. Nos formateurs veulent pouvoir corriger des devoirs et donner des notes manuellement \u00e2\u20ac\u201d quel LMS gere bien l'evaluation qualitative et pas juste les quiz auto-corriges ? \u00e2\u20ac\u201d `choix-outil` \u00e2\u20ac\u201d `organisme de formation`\n\n## 10 \u00e2\u20ac\u201d Besoins des infopreneurs : automatisation et scale\n\n1. Je veux automatiser tout le parcours : achat, acces formation, emails de bienvenue, suivi, relance si inactif, certificat, upsell. C'est quoi la stack WordPress pour ca ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n2. Comment je cree un systeme ou quand quelqu'un termine ma formation A, il recoit automatiquement une offre pour ma formation B avec une remise de 30% ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n3. J'utilise n8n et j'aimerais automatiser la creation de comptes eleves quand quelqu'un achete via Stripe \u00e2\u20ac\u201d c'est possible avec l'API TutorLMS ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `freelance WordPress`\n4. Mon business tourne a 5000 euros par mois en automatique avec 3 formations \u00e2\u20ac\u201d comment je passe au palier suivant sans embaucher et sans creer de nouvelles formations ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n5. Comment je mets en place des cohortes (groupes de 20 eleves qui demarrent en meme temps) avec un systeme d'ouverture/fermeture des inscriptions automatique ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n6. Je veux lancer des formations en marque blanche pour d'autres formateurs qui revendront sous leur propre nom \u00e2\u20ac\u201d c'est techniquement faisable avec WordPress ? \u00e2\u20ac\u201d `mise-en-place` \u00e2\u20ac\u201d `infopreneur`\n7. Comment j'integre un chatbot IA dans mon espace de formation pour repondre aux questions recurrentes de mes eleves 24h/24 ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n8. Je veux segmenter mes eleves dans FluentCRM selon leur progression dans la formation (module 1 termine, module 3 en cours, etc.) \u00e2\u20ac\u201d comment je fais le lien technique ? \u00e2\u20ac\u201d `automatisation` \u00e2\u20ac\u201d `infopreneur`\n9. Comment je cree un tableau de bord business avec mes KPIs (CA, taux de completion, NPS, taux de refund) agrege depuis WooCommerce et TutorLMS ? \u00e2\u20ac\u201d `maintenance` \u00e2\u20ac\u201d `infopreneur`\n10. J'ai 3 tunnels de vente actifs et je veux A/B tester mes pages de vente \u00e2\u20ac\u201d quel outil WordPress s'integre bien avec mon stack TutorLMS + FluentCRM ? \u00e2\u20ac\u201d `vente` \u00e2\u20ac\u201d `infopreneur`\n\n---\n\n## Synthese editoriale\n\n- **Top 5 requetes a fort potentiel** :\n  1. \"Je veux automatiser tout le parcours : achat, acces, emails, suivi, certificat, upsell. C'est quoi la stack WordPress pour ca ?\" \u00e2\u20ac\u201d couvre l'ensemble du parcours technique, angle pillar page\n  2. \"On est Qualiopi et on doit delivrer des attestations conformes avec numero de suivi \u00e2\u20ac\u201d quel plugin WordPress gere ca ?\" \u00e2\u20ac\u201d creneau sous-exploite, audience B2B a forte valeur\n  3. \"Je veux que mes formations soient citees par ChatGPT et Perplexity quand quelqu'un demande meilleure formation WordPress \u00e2\u20ac\u201d comment je fais ?\" \u00e2\u20ac\u201d angle GEO/AIO unique\n  4. \"J'hesite entre TutorLMS Pro et LearnDash, mon budget est de 200 euros max et j'ai besoin de quiz avances et certificats\" \u00e2\u20ac\u201d requete comparative a tres fort volume\n  5. \"Comment je cree un systeme de points qui debloque des bonus au fur et a mesure que l'eleve avance dans la formation ?\" \u00e2\u20ac\u201d angle gamification actionnable et differenciant\n\n- **Profil le plus actif** : infopreneur (30 requetes) \u00e2\u20ac\u201d logique, c'est le profil qui cumule questions business, technique et marketing\n\n- **Intention dominante** : mise-en-place (22 requetes) \u00e2\u20ac\u201d les utilisateurs veulent des guides concrets d'implementation, pas juste de la theorie\n\n- **Trous editoriaux** :\n  - **Accessibilite des formations** (conformite RGAA, sous-titrage, lecteur d'ecran) \u00e2\u20ac\u201d aucune requete spontanee mais obligation legale croissante\n  - **Multi-formateurs et marketplace** (creer sa propre marketplace de formations type Udemy en WordPress) \u00e2\u20ac\u201d angle scale peu couvert\n  - **Internationnalisation** (vendre ses formations en plusieurs langues, gerer les devises, traduire les parcours) \u00e2\u20ac\u201d pont naturel vers un autre pilier\n  - **Analytics et data apprenants** (au-dela des rapports basiques : learning analytics, prediction d'abandon, cohorte analysis) \u00e2\u20ac\u201d angle avance pour organismes\n  - **Compliance RGPD** pour les donnees apprenants (consentement, portabilite, suppression) \u00e2\u20ac\u201d sujet juridique peu traite sous l'angle WordPress/LMS\n"}], "grading": null}, {"id": "eval-lms-formation-without_skill", "prompt": "Pilier LMS WordPress. Je veux toutes les questions que les gens posent \u00c3\u00a0 ChatGPT sur la cr\u00c3\u00a9ation et la vente de formations en ligne avec WordPress.", "eval_id": 3, "outputs": [{"name": "result.md", "type": "text", "content": "# Carte des questions conversationnelles - Pilier LMS WordPress\n\n> Questions que les utilisateurs posent aux IA conversationnelles (ChatGPT, Claude, Perplexity) sur la creation et la vente de formations en ligne avec WordPress.\n\n---\n\n## 1. Choix du LMS WordPress\n\n### 1.1 TutorLMS vs LearnDash - Comparatif general\n\n- Quel est le meilleur plugin LMS pour WordPress en 2024-2025 ?\n- TutorLMS ou LearnDash, lequel choisir pour vendre des formations en ligne ?\n- Quelles sont les differences entre TutorLMS et LearnDash ?\n- TutorLMS est-il vraiment gratuit ? Quelles sont les limites de la version free ?\n- LearnDash vaut-il son prix par rapport a TutorLMS Pro ?\n- Quel LMS WordPress est le plus simple a configurer pour un debutant ?\n- TutorLMS vs LearnDash vs LifterLMS : comparatif complet ?\n- Quel LMS a la meilleure interface pour les apprenants ?\n- LearnDash fonctionne-t-il bien avec les derniers themes WordPress (Divi, Astra, Kadence) ?\n- TutorLMS est-il compatible avec le Full Site Editing de WordPress ?\n\n### 1.2 TutorLMS vs LearnDash - Performance et scalabilite\n\n- Quel LMS supporte le mieux 1 000+ eleves simultanes ?\n- TutorLMS ou LearnDash : lequel est le plus rapide en termes de performance ?\n- Mon hebergeur mutualise peut-il faire tourner LearnDash sans probleme ?\n- Quel hebergement WordPress recommandes-tu pour un site LMS avec beaucoup de videos ?\n- TutorLMS consomme-t-il moins de ressources serveur que LearnDash ?\n- Comment optimiser les performances d\u00e2\u20ac\u2122un site LearnDash qui rame ?\n\n### 1.3 TutorLMS vs LearnDash - Fonctionnalites specifiques\n\n- Quel LMS gere le mieux les quiz et evaluations avancees ?\n- TutorLMS a-t-il un systeme de prerequis entre les cours ?\n- LearnDash permet-il de creer des parcours d\u00e2\u20ac\u2122apprentissage conditionnel ?\n- Quel plugin LMS gere le mieux le drip content (deblocage progressif) ?\n- TutorLMS prend-il en charge le contenu SCORM ou xAPI ?\n- LearnDash supporte-t-il les devoirs et corrections par le formateur ?\n- Quel LMS permet aux eleves de prendre des notes directement dans le cours ?\n\n### 1.4 Alternatives et ecosysteme\n\n- Quelles sont les alternatives a LearnDash et TutorLMS sur WordPress ?\n- MasterStudy LMS vaut-il le coup face a TutorLMS ?\n- Sensei LMS (WooCommerce) est-il une bonne option pour vendre des cours ?\n- Vaut-il mieux utiliser un LMS WordPress ou une plateforme SaaS comme Teachable ou Thinkific ?\n- WordPress + LMS ou Systeme.io pour vendre des formations ?\n- Peut-on combiner plusieurs plugins LMS sur le meme site WordPress ?\n- WP Courseware vs LearnDash : lequel est le plus stable ?\n\n---\n\n## 2. Monetisation des formations en ligne\n\n### 2.1 Modeles economiques\n\n- Comment vendre une formation en ligne avec WordPress ?\n- Quel modele de prix choisir : achat unique, abonnement ou acces a vie ?\n- Comment creer un modele d\u00e2\u20ac\u2122abonnement mensuel pour mes formations ?\n- Est-ce rentable de proposer un modele freemium (cours gratuits + premium) ?\n- Comment fixer le prix d\u00e2\u20ac\u2122une formation en ligne ?\n- Quel chiffre d\u00e2\u20ac\u2122affaires peut-on esperer avec un site de formation WordPress ?\n- Comment creer une offre bundle (pack de plusieurs formations) avec LearnDash ?\n- TutorLMS permet-il de vendre des cours a l\u00e2\u20ac\u2122unite ET par abonnement ?\n\n### 2.2 Passerelles de paiement\n\n- Quels moyens de paiement integrer sur un site de formation WordPress ?\n- Comment connecter Stripe a TutorLMS pour encaisser les paiements ?\n- LearnDash fonctionne-t-il avec PayPal et Stripe en meme temps ?\n- Comment gerer les paiements en plusieurs fois pour une formation couteuse ?\n- Quel plugin utiliser pour le paiement recurrent sur WordPress ?\n- Comment integrer Mollie ou GoCardless pour les paiements SEPA ?\n- TutorLMS gere-t-il nativement les coupons et codes promo ?\n\n### 2.3 WooCommerce et vente\n\n- Faut-il obligatoirement WooCommerce pour vendre des formations avec TutorLMS ?\n- Comment configurer WooCommerce + LearnDash pour vendre des cours ?\n- WooCommerce Subscriptions est-il compatible avec les LMS WordPress ?\n- Comment creer une page de vente efficace pour une formation WordPress ?\n- Peut-on vendre des formations sans WooCommerce sur WordPress ?\n- Comment gerer la TVA et la facturation automatique pour les formations en ligne ?\n- EDD (Easy Digital Downloads) est-il une bonne alternative a WooCommerce pour vendre des cours ?\n\n### 2.4 Affiliation et partenariats\n\n- Comment mettre en place un programme d\u00e2\u20ac\u2122affiliation pour mes formations ?\n- Quel plugin d\u00e2\u20ac\u2122affiliation fonctionne le mieux avec LearnDash ?\n- AffiliateWP ou SliceWP : lequel choisir pour un LMS WordPress ?\n- Comment remunerer des affilies qui recommandent mes formations ?\n- Peut-on laisser d\u00e2\u20ac\u2122autres formateurs vendre sur ma plateforme (marketplace) ?\n- Comment creer une marketplace de cours comme Udemy avec WordPress ?\n- TutorLMS a-t-il un systeme multi-instructeurs avec partage de revenus ?\n\n---\n\n## 3. Gamification et engagement\n\n### 3.1 Mecaniques de gamification\n\n- Comment gamifier une formation en ligne sur WordPress ?\n- Quel plugin de gamification utiliser avec TutorLMS ou LearnDash ?\n- GamiPress est-il compatible avec LearnDash ?\n- Comment creer un systeme de points et badges pour mes apprenants ?\n- Peut-on ajouter un classement (leaderboard) entre les eleves ?\n- Comment debloquer du contenu bonus en fonction de la progression ?\n- La gamification ameliore-t-elle vraiment le taux de completion des formations ?\n- Comment creer des defis hebdomadaires dans une formation WordPress ?\n\n### 3.2 Progression et motivation\n\n- Comment suivre la progression des apprenants dans TutorLMS ?\n- LearnDash affiche-t-il une barre de progression pour chaque cours ?\n- Comment envoyer des rappels automatiques aux eleves qui n\u00e2\u20ac\u2122avancent pas ?\n- Quel taux de completion moyen attendre pour une formation en ligne ?\n- Comment relancer les eleves inactifs par email automatiquement ?\n- TutorLMS permet-il d\u00e2\u20ac\u2122envoyer des notifications push aux apprenants ?\n- Comment creer un parcours adaptatif qui s\u00e2\u20ac\u2122ajuste au niveau de l\u00e2\u20ac\u2122eleve ?\n\n### 3.3 Interaction et communaute\n\n- Comment ajouter un forum de discussion a chaque cours WordPress ?\n- BuddyBoss est-il indispensable pour creer une communaute autour de mes formations ?\n- Comment integrer un chat en direct dans un LMS WordPress ?\n- Peut-on ajouter des commentaires et QA dans chaque lecon ?\n- Comment creer un espace d\u00e2\u20ac\u2122echange entre apprenants sans BuddyBoss ?\n- bbPress ou BuddyPress : lequel choisir pour un forum LMS ?\n- Comment organiser des sessions de coaching de groupe en direct dans WordPress ?\n\n---\n\n## 4. Certificats et attestations\n\n### 4.1 Creation de certificats\n\n- Comment generer des certificats automatiques a la fin d\u00e2\u20ac\u2122une formation WordPress ?\n- Quel plugin de certificats utiliser avec TutorLMS ?\n- LearnDash propose-t-il des certificats personnalisables ?\n- Comment designer un certificat professionnel avec son logo et sa charte graphique ?\n- Peut-on creer des certificats en PDF telechargeables automatiquement ?\n- Comment ajouter un QR code de verification sur un certificat de formation ?\n- Les certificats LearnDash sont-ils personnalisables sans coder ?\n\n### 4.2 Conformite et valeur legale\n\n- Un certificat genere par WordPress a-t-il une valeur legale ?\n- Comment rendre ses certificats de formation conformes Qualiopi ?\n- Peut-on emettre des attestations de fin de formation avec un LMS WordPress ?\n- Comment integrer les open badges (standard Mozilla) dans TutorLMS ?\n- Les certificats WordPress sont-ils reconnus par les organismes de formation ?\n- Comment horodater et securiser un certificat de formation en ligne ?\n- Faut-il un numero de declaration d\u00e2\u20ac\u2122activite pour delivrer des certificats ?\n\n### 4.3 Suivi et reporting\n\n- Comment suivre les certifications delivrees dans un tableau de bord ?\n- LearnDash genere-t-il des rapports de completion exportables en CSV ?\n- Comment exporter la liste des apprenants certifies depuis TutorLMS ?\n- Peut-on connecter les donnees LMS a un CRM comme FluentCRM ?\n- Comment generer des rapports de formation pour un financeur (OPCO, CPF) ?\n- Quel plugin de reporting avance utiliser avec un LMS WordPress ?\n\n---\n\n## 5. Espace membre et acces restreint\n\n### 5.1 Protection du contenu\n\n- Comment proteger l\u00e2\u20ac\u2122acces a mes formations WordPress ?\n- Quel plugin d\u00e2\u20ac\u2122espace membre utiliser avec TutorLMS ou LearnDash ?\n- MemberPress ou Restrict Content Pro : lequel est le mieux pour un LMS ?\n- Comment creer differents niveaux d\u00e2\u20ac\u2122acces (gratuit, premium, VIP) ?\n- Paid Memberships Pro fonctionne-t-il bien avec LearnDash ?\n- Comment empecher le partage de comptes entre apprenants ?\n- Peut-on limiter le nombre de connexions simultanees par compte ?\n\n### 5.2 Gestion des utilisateurs\n\n- Comment gerer les inscriptions et comptes apprenants sur WordPress ?\n- TutorLMS a-t-il un tableau de bord etudiant integre ?\n- Comment assigner automatiquement un cours apres l\u00e2\u20ac\u2122achat ?\n- Peut-on importer des apprenants en masse par CSV dans LearnDash ?\n- Comment gerer les groupes et cohortes d\u00e2\u20ac\u2122apprenants ?\n- LearnDash permet-il de creer des comptes entreprise (group leaders) ?\n- Comment donner un acces limite dans le temps a une formation ?\n\n### 5.3 Experience utilisateur espace membre\n\n- Comment personnaliser le tableau de bord de l\u00e2\u20ac\u2122apprenant ?\n- Quel theme WordPress recommandes-tu pour un espace membre LMS ?\n- BuddyBoss Theme est-il le meilleur choix pour un LMS professionnel ?\n- Comment ajouter une page Mon compte avec l\u00e2\u20ac\u2122historique des formations ?\n- Peut-on creer un espace membre sans BuddyBoss ?\n- Comment afficher les formations achetees et la progression sur le profil ?\n- Astra ou Kadence : quel theme gratuit pour un site de formation ?\n\n---\n\n## 6. Tunnels de vente et conversion\n\n### 6.1 Pages de vente\n\n- Comment creer une page de vente pour une formation en ligne avec WordPress ?\n- Quel page builder utiliser pour des pages de vente LMS (Elementor, Divi, Bricks) ?\n- Comment structurer une page de vente qui convertit pour une formation ?\n- Faut-il une landing page separee ou la page du cours suffit-elle ?\n- Comment ajouter des temoignages et preuves sociales sur une page de formation ?\n- CartFlows ou WooFunnels : lequel pour creer un tunnel de vente formation ?\n- Comment creer une page de vente avec un compte a rebours (urgence) ?\n\n### 6.2 Tunnel de vente complet\n\n- Comment construire un tunnel de vente complet pour une formation WordPress ?\n- Quel est le parcours d\u00e2\u20ac\u2122achat ideal pour une formation en ligne ?\n- Comment creer un lead magnet qui attire vers ma formation payante ?\n- Faut-il un webinaire pour vendre une formation en ligne ?\n- Comment automatiser la sequence : inscription gratuite puis upsell formation premium ?\n- Comment creer un tripwire (offre d\u00e2\u20ac\u2122entree) pour ensuite vendre la formation complete ?\n- Comment structurer un tunnel evergreen pour une formation ?\n\n### 6.3 Email marketing et nurturing\n\n- Quel autoresponder utiliser avec un LMS WordPress (FluentCRM, Mailchimp, ActiveCampaign) ?\n- Comment creer une sequence email de vente pour une formation ?\n- FluentCRM est-il le meilleur CRM pour un site de formation WordPress ?\n- Comment segmenter mes contacts en fonction des formations achetees ?\n- Comment relancer les paniers abandonnes pour une formation ?\n- Combien d\u00e2\u20ac\u2122emails faut-il dans une sequence de lancement de formation ?\n- Comment automatiser les emails de bienvenue apres l\u00e2\u20ac\u2122achat d\u00e2\u20ac\u2122un cours ?\n- FluentCRM ou MailerLite : lequel pour un formateur independant debutant ?\n\n### 6.4 Upsell, cross-sell et order bump\n\n- Comment proposer un upsell apres l\u00e2\u20ac\u2122achat d\u00e2\u20ac\u2122une formation WordPress ?\n- LearnDash permet-il de faire du cross-sell entre formations ?\n- Comment ajouter un order bump sur la page de paiement WooCommerce ?\n- Quelle strategie de pricing pour maximiser la valeur client a vie (LTV) ?\n- Comment creer une offre pack complet avec une reduction progressive ?\n- CartFlows gere-t-il les upsells en un clic avec TutorLMS ?\n- Comment proposer du coaching individuel en complement d\u00e2\u20ac\u2122une formation ?\n\n---\n\n## 7. SEO pour formations en ligne\n\n### 7.1 Referencement des pages de cours\n\n- Comment optimiser le SEO d\u00e2\u20ac\u2122un site de formation WordPress ?\n- Les pages de cours LMS sont-elles bien indexees par Google ?\n- Comment ajouter du schema markup (Course, EducationalOrganization) sur un LMS ?\n- RankMath ou Yoast : lequel est le mieux pour un site de formation ?\n- Comment eviter le contenu duplique entre la page de vente et le cours ?\n- Faut-il indexer les lecons individuelles ou seulement les pages de cours ?\n- Comment optimiser les meta titles et descriptions pour des formations en ligne ?\n\n### 7.2 Strategie de contenu pour attirer des apprenants\n\n- Faut-il un blog sur un site de formation WordPress ?\n- Quelle strategie de contenu adopter pour attirer des apprenants via Google ?\n- Comment creer des articles de blog qui menent vers mes formations ?\n- Quels types de contenus gratuits publier pour generer du trafic organique ?\n- Comment utiliser la strategie pillar page / cluster pour un site LMS ?\n- Faut-il publier des extraits de formation gratuits pour le SEO ?\n- Comment ranker sur meilleure formation [sujet] dans Google ?\n\n### 7.3 SEO technique pour LMS\n\n- Les LMS WordPress generent-ils des problemes de performance SEO ?\n- Comment accelerer un site LearnDash qui est lent (cache, CDN, images) ?\n- WP Rocket est-il compatible avec TutorLMS ?\n- Comment gerer le lazy loading des videos de formation pour le SEO ?\n- Les iframes YouTube/Vimeo dans les lecons impactent-elles le SEO ?\n- Comment configurer un sitemap XML qui inclut les cours mais exclut les lecons protegees ?\n- Comment eviter que les pages protegees soient crawlees par Google ?\n\n### 7.4 Visibilite IA et LLM (GEO)\n\n- Comment faire en sorte que ChatGPT recommande ma formation ?\n- Comment optimiser mon site de formation pour les reponses des IA (Perplexity, Gemini) ?\n- Quels signaux d\u00e2\u20ac\u2122autorite aident a etre cite par les IA conversationnelles ?\n- Faut-il ajouter des FAQ structurees sur les pages de formation pour les IA ?\n- Comment apparaitre dans les AI Overviews de Google pour des requetes formation ?\n- Le schema markup aide-t-il a etre recommande par les IA ?\n\n---\n\n## 8. Besoins des formateurs independants\n\n### 8.1 Lancement et premiere formation\n\n- Comment creer et vendre sa premiere formation en ligne avec WordPress ?\n- Par ou commencer pour lancer un business de formation en ligne ?\n- Quel budget prevoir pour un site WordPress de formation ?\n- Combien de temps faut-il pour creer une formation en ligne complete ?\n- Faut-il creer toute la formation avant de la vendre (pre-vente) ?\n- Comment valider une idee de formation avant de la creer ?\n- Quelles erreurs eviter quand on lance sa premiere formation en ligne ?\n- Comment filmer ses formations chez soi avec un petit budget ?\n\n### 8.2 Aspects juridiques et administratifs\n\n- Quel statut juridique choisir pour vendre des formations en ligne en France ?\n- Faut-il un numero de declaration d\u00e2\u20ac\u2122activite de formation (NDA) ?\n- Comment obtenir la certification Qualiopi pour un formateur independant ?\n- Les formations en ligne sont-elles soumises a la TVA ?\n- Comment emettre des factures conformes pour les formations vendues ?\n- Peut-on vendre des formations en auto-entrepreneur ?\n- Comment gerer les CGV pour un site de formation en ligne ?\n- Quelles obligations RGPD pour un site de formation WordPress ?\n\n### 8.3 Outils et workflow du formateur solo\n\n- Quel stack technique minimal pour un formateur independant sur WordPress ?\n- Comment gerer seul un site de formation sans developpeur ?\n- Quels plugins essentiels installer sur un site de formation WordPress ?\n- Comment automatiser les taches repetitives d\u00e2\u20ac\u2122un site LMS ?\n- Quel outil utiliser pour enregistrer ses cours (screen recording, camera) ?\n- OBS Studio ou Loom : lequel pour enregistrer des formations ?\n- Comment heberger ses videos de formation (YouTube, Vimeo, Bunny.net) ?\n- Presto Player est-il le meilleur lecteur video pour un LMS WordPress ?\n\n### 8.4 Scaling et evolution\n\n- Comment passer de 0 a 100 apprenants sur un site de formation WordPress ?\n- A quel moment faut-il upgrader son hebergement WordPress pour un LMS ?\n- Comment deleguer la gestion de son site de formation ?\n- Quand faut-il passer de TutorLMS Free a TutorLMS Pro ?\n- Comment ajouter des formateurs invites sur sa plateforme ?\n- Comment passer d\u00e2\u20ac\u2122un formateur solo a un organisme de formation ?\n\n---\n\n## 9. Besoins des organismes de formation\n\n### 9.1 Plateforme multi-formateurs\n\n- Comment creer une plateforme de formation multi-formateurs avec WordPress ?\n- LearnDash gere-t-il les roles et permissions par formateur ?\n- Comment assigner des cours a des formateurs specifiques dans TutorLMS ?\n- Peut-on creer un portail client par entreprise (multi-tenant) ?\n- Comment gerer le partage de revenus entre formateurs sur WordPress ?\n- BuddyBoss + LearnDash est-il la meilleure stack pour un organisme ?\n\n### 9.2 Conformite et financement\n\n- Comment rendre son LMS WordPress compatible Qualiopi ?\n- Quels indicateurs Qualiopi peut-on automatiser avec un LMS WordPress ?\n- Comment generer des feuilles d\u00e2\u20ac\u2122emargement numeriques avec WordPress ?\n- Peut-on faire financer des formations WordPress par le CPF ?\n- Comment connecter son LMS a EDOF (Espace des Organismes de Formation) ?\n- Comment gerer les conventions de formation automatiquement ?\n- Quels documents Qualiopi generer depuis un LMS WordPress (attestations, evaluations, emargement) ?\n\n### 9.3 Blended learning et classes virtuelles\n\n- Comment combiner presentiel et e-learning sur un LMS WordPress ?\n- Comment integrer Zoom ou Google Meet dans LearnDash pour des classes virtuelles ?\n- TutorLMS a-t-il une integration Zoom native ?\n- Comment planifier des sessions en direct dans un cours WordPress ?\n- Peut-on enregistrer les classes virtuelles et les ajouter au replay du cours ?\n- Comment gerer les inscriptions aux sessions en presentiel via WordPress ?\n\n### 9.4 Reporting et pilotage\n\n- Comment generer des rapports de formation detailles avec WordPress ?\n- LearnDash ProPanel est-il necessaire pour le reporting avance ?\n- Comment exporter les donnees de formation pour un bilan pedagogique ?\n- Peut-on connecter un LMS WordPress a un outil de BI (Power BI, Google Data Studio) ?\n- Comment mesurer le ROI de sa plateforme de formation ?\n- Quels KPI suivre pour piloter un organisme de formation en ligne ?\n\n---\n\n## 10. Besoins des infopreneurs\n\n### 10.1 Strategie de monetisation\n\n- Comment maximiser les revenus de ses formations en ligne ?\n- Quel modele economique choisir : cours a l\u00e2\u20ac\u2122unite, membership ou abonnement ?\n- Comment creer une offre high-ticket (formation premium > 1 000 EUR) ?\n- Faut-il proposer un coaching en plus de la formation pour augmenter le panier moyen ?\n- Comment creer un ecosysteme de produits autour de ses formations ?\n- Peut-on vivre de la vente de formations en ligne avec WordPress ?\n- Quel chiffre d\u00e2\u20ac\u2122affaires moyen pour un infopreneur sur WordPress ?\n\n### 10.2 Lancement et marketing\n\n- Comment faire un lancement de formation en ligne reussi ?\n- Quelle sequence de lancement utiliser (PLF, Jeff Walker) avec WordPress ?\n- Comment utiliser les webinaires pour vendre des formations ?\n- Faut-il utiliser la rarete et l\u00e2\u20ac\u2122urgence pour vendre une formation ?\n- Comment creer une liste d\u00e2\u20ac\u2122attente avant le lancement d\u00e2\u20ac\u2122une formation ?\n- Comment utiliser les reseaux sociaux pour promouvoir sa formation WordPress ?\n- Comment faire de la publicite Facebook/Instagram pour une formation en ligne ?\n\n### 10.3 Automatisation complete\n\n- Comment automatiser entierement la vente et la livraison de formations WordPress ?\n- Quel workflow d\u00e2\u20ac\u2122automatisation mettre en place pour un site de formation ?\n- Comment connecter WordPress + LMS + CRM + paiement en un systeme automatise ?\n- n8n ou Zapier : lequel utiliser pour automatiser un LMS WordPress ?\n- Comment automatiser l\u00e2\u20ac\u2122envoi de certificats apres validation d\u00e2\u20ac\u2122un quiz ?\n- Comment creer des sequences email automatiques basees sur la progression de l\u00e2\u20ac\u2122apprenant ?\n- FluentCRM + TutorLMS : comment automatiser tout le parcours client ?\n\n### 10.4 Contenu et pedagogie\n\n- Comment structurer une formation en ligne pour maximiser la completion ?\n- Quelle duree ideale pour un module de formation en ligne ?\n- Video, texte ou interactif : quel format de contenu choisir ?\n- Comment creer des quiz engageants qui renforcent l\u00e2\u20ac\u2122apprentissage ?\n- Faut-il ajouter des ressources telechargables a chaque lecon ?\n- Comment creer un workbook ou cahier d\u00e2\u20ac\u2122exercices numerique ?\n- Comment integrer des exercices pratiques dans une formation WordPress ?\n\n---\n\n## 11. Aspects techniques transversaux\n\n### 11.1 Hebergement et infrastructure\n\n- Quel hebergement WordPress choisir pour un site LMS (Cloudways, Kinsta, o2switch) ?\n- Un hebergement mutualise suffit-il pour un site de formation ?\n- Comment configurer un CDN pour les videos de formation ?\n- Faut-il un serveur dedie pour un LMS avec plus de 500 apprenants ?\n- Bunny.net ou Vimeo Pro : lequel pour heberger les videos de cours ?\n- Comment securiser un site de formation WordPress (SSL, 2FA, backups) ?\n- Comment configurer des sauvegardes automatiques d\u00e2\u20ac\u2122un site LMS ?\n\n### 11.2 Integrations et API\n\n- Comment connecter TutorLMS a Google Analytics 4 ?\n- Comment tracker les conversions d\u00e2\u20ac\u2122achat de formation dans GA4 ?\n- Peut-on integrer un LMS WordPress avec un CRM externe (HubSpot, Salesforce) ?\n- Comment connecter LearnDash a une app mobile ?\n- Existe-t-il une app mobile pour TutorLMS ?\n- Comment utiliser l\u00e2\u20ac\u2122API REST WordPress pour connecter un LMS a d\u00e2\u20ac\u2122autres outils ?\n- Comment integrer un chat support (Crisp, Tawk.to) dans un LMS ?\n\n### 11.3 Migration et changement de plateforme\n\n- Comment migrer de Teachable vers WordPress + LearnDash ?\n- Comment migrer de Thinkific vers TutorLMS ?\n- Peut-on importer ses cours depuis un LMS vers un autre sur WordPress ?\n- Comment migrer de LearnDash vers TutorLMS sans perdre de donnees ?\n- Comment exporter ses apprenants et leur progression lors d\u00e2\u20ac\u2122une migration ?\n- Quels risques a migrer un site de formation vers un nouveau LMS ?\n\n### 11.4 Accessibilite et multilingue\n\n- Comment rendre un site de formation WordPress accessible (RGAA, WCAG) ?\n- Peut-on creer des formations multilingues avec TutorLMS ?\n- WPML ou TranslatePress : lequel pour un site de formation multilingue ?\n- Comment proposer des sous-titres sur les videos de formation ?\n- Comment adapter un LMS WordPress pour les apprenants en situation de handicap ?\n- Polylang fonctionne-t-il avec LearnDash ?\n\n---\n\n## 12. Tendances et innovations\n\n### 12.1 IA et formation\n\n- Comment utiliser l\u00e2\u20ac\u2122IA pour creer du contenu de formation plus rapidement ?\n- Peut-on generer des quiz automatiquement avec l\u00e2\u20ac\u2122IA dans un LMS WordPress ?\n- Comment integrer un chatbot IA dans un LMS pour assister les apprenants ?\n- L\u00e2\u20ac\u2122IA va-t-elle remplacer les formateurs en ligne ?\n- Comment utiliser ChatGPT pour ecrire les scripts de ses formations ?\n- Peut-on personnaliser le parcours d\u00e2\u20ac\u2122apprentissage avec l\u00e2\u20ac\u2122IA ?\n\n### 12.2 Video et multimedia\n\n- Comment integrer des videos interactives dans un cours WordPress ?\n- Presto Player ou FV Player : lequel pour les formations video ?\n- Comment ajouter des chapitres et marqueurs dans les videos de formation ?\n- Comment proteger ses videos de formation contre le telechargement ?\n- Faut-il proposer des podcasts en complement des formations video ?\n- Comment creer des screencasts professionnels pour ses formations ?\n\n### 12.3 Micro-learning et formats courts\n\n- Le micro-learning fonctionne-t-il bien sur un LMS WordPress ?\n- Comment creer des modules de formation de 5 minutes maximum ?\n- Peut-on envoyer des micro-lecons par email avec FluentCRM + LMS ?\n- Comment structurer un parcours de micro-learning sur WordPress ?\n- Le format formation par email est-il efficace pour vendre ensuite un cours complet ?\n\n---\n\n## Synthese par persona\n\n### Formateur independant (priorites)\n1. Choix du LMS (TutorLMS Free puis Pro)\n2. Premiere formation et page de vente\n3. Paiement Stripe/PayPal\n4. Email marketing (FluentCRM)\n5. SEO et trafic organique\n\n### Organisme de formation (priorites)\n1. Conformite Qualiopi et documents reglementaires\n2. Multi-formateurs et gestion des droits\n3. Blended learning (presentiel + en ligne)\n4. Reporting et bilans pedagogiques\n5. Financement CPF/OPCO\n\n### Infopreneur (priorites)\n1. Tunnel de vente et conversion\n2. Automatisation complete (LMS + CRM + paiement)\n3. Scaling et monetisation avancee\n4. Lancement et marketing\n5. Gamification et retention\n\n---\n\n*Carte generee le 2026-03-24 - Pilier LMS WordPress - schoolsWP OS*"}], "grading": null}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "conversational-query-mapper", "iteration": 1, "configurations": [{"name": "with_skill", "evals": [{"eval_name": "multilingue-formation", "pass_rate": 1.0, "passed": 8, "total": 8, "tokens": 155146, "duration_seconds": 2455.5}, {"eval_name": "crm-email-marketing", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 82803, "duration_seconds": 917.1}, {"eval_name": "lms-formation", "pass_rate": 1.0, "passed": 7, "total": 7, "tokens": 171190, "duration_seconds": 2575.7}], "aggregate": {"mean_pass_rate": 1.0, "mean_tokens": 136380, "mean_duration_seconds": 1982.8, "total_passed": 21, "total_assertions": 21}}, {"name": "without_skill", "evals": [{"eval_name": "multilingue-formation", "pass_rate": 0.25, "passed": 2, "total": 8, "tokens": 89684, "duration_seconds": 1290.3}, {"eval_name": "crm-email-marketing", "pass_rate": 0.33, "passed": 2, "total": 6, "tokens": 107941, "duration_seconds": 1448.1}, {"eval_name": "lms-formation", "pass_rate": 0.29, "passed": 2, "total": 7, "tokens": 200547, "duration_seconds": 3434.2}], "aggregate": {"mean_pass_rate": 0.29, "mean_tokens": 132724, "mean_duration_seconds": 2057.5, "total_passed": 6, "total_assertions": 21}}], "delta": {"pass_rate": "+71pp (1.00 vs 0.29)", "tokens": "+3% (136k vs 133k \u00e2\u20ac\u201d quasi identique)", "duration": "-4% (1983s vs 2058s \u00e2\u20ac\u201d quasi identique)"}, "analyst_notes": ["Le skill passe 21/21 assertions vs 6/21 pour la baseline \u00e2\u20ac\u201d gain massif en qualit\u00c3\u00a9 structurelle", "La baseline \u00c3\u00a9choue syst\u00c3\u00a9matiquement sur : langage naturel conversationnel, tags intention/profil inline, et contr\u00c3\u00b4le du volume", "Le contr\u00c3\u00b4le de volume est le gain le plus visible : le skill produit 78-90 requ\u00c3\u00aates (fourchette demand\u00c3\u00a9e), la baseline d\u00c3\u00a9borde souvent (150-197)", "La qualit\u00c3\u00a9 conversationnelle est le 2e gain : avec le skill, chaque requ\u00c3\u00aate contient du contexte personnel et des contraintes. Sans skill, les requ\u00c3\u00aates sont souvent des FAQ courtes.", "La cat\u00c3\u00a9gorie 'categories th\u00c3\u00a9matiques' est non-discriminante \u00e2\u20ac\u201d les deux configurations la passent", "La synth\u00c3\u00a8se \u00c3\u00a9ditoriale est partiellement non-discriminante \u00e2\u20ac\u201d la baseline en produit parfois une (2/3 cas)", "Tokens et dur\u00c3\u00a9e quasi identiques \u00e2\u20ac\u201d le skill n'a pas de co\u00c3\u00bbt significatif en ressources", "Point d'am\u00c3\u00a9lioration potentiel : la diversit\u00c3\u00a9 des formulations (doutes, blocages, arbitrages) pourrait \u00c3\u00aatre encore renforc\u00c3\u00a9e dans le skill"]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Contains exactly 15 numbered queries",
+      "passed": false,
+      "evidence": "Found 0 queries (expected 15)"
+    },
+    {
+      "text": "At least 5 intention types represented",
+      "passed": false,
+      "evidence": "Found 0 intentions: []"
+    },
+    {
+      "text": "At least 3 different content formats used",
+      "passed": false,
+      "evidence": "Found 1 formats: ['template']"
+    },
+    {
+      "text": "Each query contains at least 2 explicit constraints (heuristic: >12 words)",
+      "passed": false,
+      "evidence": "0/1 queries have 12+ words"
+    },
+    {
+      "text": "Exactly 5 common denominators listed",
+      "passed": false,
+      "evidence": "Found 0 denominators with sous-categories"
+    },
+    {
+      "text": "3 proof angles present in dedicated section",
+      "passed": false,
+      "evidence": "Section present: False, items found: 0"
+    },
+    {
+      "text": "3 main sections present (Denominateurs, Requetes, Angles)",
+      "passed": false,
+      "evidence": "Denom: False, Queries: True, Proof: False"
+    },
+    {
+      "text": "All queries are natural language (>10 words each)",
+      "passed": false,
+      "evidence": "0/1 queries have 10+ words"
+    }
+  ],
+  "summary": "0/8 assertions passed"
+}

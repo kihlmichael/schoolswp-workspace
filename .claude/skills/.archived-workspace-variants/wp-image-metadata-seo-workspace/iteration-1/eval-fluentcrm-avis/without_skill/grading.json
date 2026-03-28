@@ -1,0 +1,47 @@
+{
+  "eval_id": 1,
+  "eval_name": "fluentcrm-avis",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Les 13 champs obligatoires sont présents",
+      "passed": true,
+      "evidence": "Tous les champs présents mais dans un format tableau Markdown au lieu d'un bloc copier-coller structuré"
+    },
+    {
+      "text": "XPTitle entre 50 et 60 caractères",
+      "passed": true,
+      "evidence": "'FluentCRM Avis 2025 — CRM Email Marketing WordPress' = ~52 caractères"
+    },
+    {
+      "text": "Alt text entre 100 et 125 caractères",
+      "passed": false,
+      "evidence": "'Interface FluentCRM pour gérer des contacts et automatiser des emails marketing sur WordPress' = ~94 caractères (trop court)"
+    },
+    {
+      "text": "Titre image entre 50 et 60 caractères",
+      "passed": true,
+      "evidence": "'FluentCRM Avis 2025 — CRM WordPress Email Marketing' = ~51 caractères"
+    },
+    {
+      "text": "XPKeywords contient entre 8 et 12 entrées sans répétition",
+      "passed": true,
+      "evidence": "8 entrées sans répétition évidente"
+    },
+    {
+      "text": "Orthographe schoolsWP correcte partout",
+      "passed": true,
+      "evidence": "schoolsWP correctement orthographié"
+    },
+    {
+      "text": "Slug en minuscules, tirets, sans accents",
+      "passed": true,
+      "evidence": "'fluentcrm-avis-2025' — conforme"
+    },
+    {
+      "text": "Aucune donnée inventée absente de l'INPUT",
+      "passed": true,
+      "evidence": "Données cohérentes avec l'INPUT fourni"
+    }
+  ]
+}

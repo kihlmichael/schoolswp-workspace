@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Les 7 sections structurées sont présentes (Diagnostic, Réglages, Mapping, Erreurs, Pièges, Checklist, Bloc final)",
+      "passed": true,
+      "evidence": "Toutes les 7 sections sont présentes avec leurs titres exacts"
+    },
+    {
+      "text": "Toutes les expressions utilisent {{ $json[\"...\"] }} avec doubles guillemets",
+      "passed": true,
+      "evidence": "{{ $json[\"Nom\"] }}, {{ $json[\"Email\"] }}, {{ $json[\"Téléphone\"] }}, {{ $json[\"Activité_souhaitée\"] }}, {{ $json[\"Date_activité\"] }} — doubles guillemets partout"
+    },
+    {
+      "text": "Les 5 colonnes sont toutes mappées avec leur expression exacte",
+      "passed": true,
+      "evidence": "Nom, Email, Téléphone, Activité_souhaitée, Date_activité — toutes présentes dans le bloc final"
+    },
+    {
+      "text": "Aucun champ inventé absent du JSON fourni",
+      "passed": true,
+      "evidence": "Uniquement les 5 champs du JSON — aucun ajout"
+    },
+    {
+      "text": "Checklist avant test présente avec au moins 5 points vérifiables",
+      "passed": true,
+      "evidence": "8 items dans la checklist"
+    },
+    {
+      "text": "Bloc final récapitulatif présent et prêt à copier-coller",
+      "passed": true,
+      "evidence": "Section 7 avec RÉGLAGES + MAPPING dans un bloc de code propre"
+    }
+  ],
+  "score": 6,
+  "max_score": 6,
+  "pass_rate": 1.0
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "eval_name": "crm-email-marketing",
+  "prompt": "Je veux mapper toutes les questions que mon audience WordPress pose à ChatGPT sur le CRM et l'email marketing.",
+  "assertions": [
+    {"id": "volume", "text": "Entre 50 et 100 requêtes numérotées"},
+    {"id": "categories", "text": "Au moins 6 catégories thématiques distinctes"},
+    {"id": "natural_language", "text": "90%+ des requêtes en langage naturel conversationnel"},
+    {"id": "crm_focus", "text": "80%+ des requêtes sur le CRM/email marketing"},
+    {"id": "synthesis", "text": "Synthèse éditoriale présente"},
+    {"id": "inline_metadata", "text": "Chaque requête porte intention + profil en ligne"}
+  ]
+}

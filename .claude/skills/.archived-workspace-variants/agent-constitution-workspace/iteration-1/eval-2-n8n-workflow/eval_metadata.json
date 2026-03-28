@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "n8n-workflow",
+  "prompt": "Je veux construire un workflow n8n qui : 1) capte les nouveaux abonnés via Fluent Forms, 2) les ajoute dans FluentCRM avec les bons tags, 3) démarre une séquence email de bienvenue, 4) notifie par email si une erreur se produit. Comment je conçois ce workflow proprement ?",
+  "assertions": [
+    {
+      "id": "a1",
+      "description": "Structure le workflow par étapes logiques (trigger, validation, logique, action, erreur)"
+    },
+    {
+      "id": "a2",
+      "description": "Mentionne explicitement la gestion des doublons ou la vérification d'existence"
+    },
+    {
+      "id": "a3",
+      "description": "Décrit la branche erreur avec notification email"
+    },
+    {
+      "id": "a4",
+      "description": "Recommande des noms de nodes descriptifs (pas Set1, HTTP Request2)"
+    },
+    {
+      "id": "a5",
+      "description": "Aborde la logique CRM : tags, segment, séquence démarrée selon état du contact"
+    }
+  ]
+}
