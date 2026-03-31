@@ -187,15 +187,29 @@ projects/schoolswp/
 │   ├── skills/         # Local Claude Code skills
 │   └── tasks/          # Active mission (todo.md) and lessons (lessons.md)
 ├── systems/
-│   ├── n8n/            # n8n rules doc and config
-│   └── workflows/      # n8n workflow JSON exports
-├── apps/               # vscode-agent-visual (active), brand-reveal, telegram-bot, claude-telegram-poc, video-marketing, _archive/, _prototypes/
+│   ├── n8n/            # n8n rules doc and config (own CLAUDE.md)
+│   ├── workflows/      # n8n workflow JSON exports
+│   ├── linkedin-prospecting/  # LinkedIn automation pipeline (Apify + Unipile + Claude)
+│   ├── multi-agent-system/    # Agent orchestration framework
+│   ├── seo-workflow/   # SEO automation pipeline
+│   ├── security/       # Security audit reports
+│   └── n8n-backup/     # Backup scripts
+├── apps/
+│   ├── video-marketing/ # Remotion video generation (active, own CLAUDE.md — theme.ts + texts.ts are source of truth)
+│   ├── vscode-agent-visual/  # VSCode agent extension (active)
+│   ├── telegram-bot/   # Node.js Telegram bot
+│   └── _archive/, _prototypes/  # Legacy/experimental
 ├── content/
 │   ├── articles/       # Generated articles (save-dir outputs from pipeline)
 │   ├── docs/           # Brand rules, SEO reports
 │   └── pages/          # WordPress pages draft
 ├── tools/
-│   └── scripts/        # Python utility scripts, gdrive tools
+│   ├── scripts/        # Python utility scripts, gdrive tools
+│   ├── services/       # RapidAPI MCP wrapper, PDF service
+│   ├── image-meta-seo/ # Image SEO metadata server
+│   ├── thruuu-writer/  # Brief-to-article converter
+│   ├── ultimate-scraper/ # Web scraping utility (Apify)
+│   └── legacy/         # Deprecated scripts
 ├── infra/              # Docker, Prometheus config
 ├── data/               # Reports, artifacts, outputs
 ├── tests/              # pytest tests (asyncio_mode = auto)
@@ -281,6 +295,8 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 3. Vérification
 4. Lessons dans `core/tasks/lessons.md`
 
+**Lessons clés** (10 documentées) : path traversal (#1), secrets gitignore fortress (#2), venv Windows = chemin complet (#5), signatures agents = grep tous les appelants (#10). Lire `core/tasks/lessons.md` avant tout refactoring d'agents.
+
 ## Skills Registry
 
 Skills Claude Code pour ce projet répartis sur :
@@ -324,6 +340,7 @@ Skills Claude Code pour ce projet répartis sur :
 
 - `core/agents-py/CLAUDE.md` — conventions Python agents, patterns, création d'agent
 - `systems/n8n/CLAUDE.md` — typeVersions confirmées, nommage, contraintes Code node
+- `apps/video-marketing/CLAUDE.md` — Remotion video system, theme.ts/texts.ts governance, QA protocol
 
 ### Contribution
 

@@ -49,12 +49,13 @@ Erreurs commises, causes racines identifiées et règles établies pour ne pas l
 
 ---
 
-## Lesson #4 — Pas de CI/CD — les hooks sont la seule barrière
+## Lesson #4 — Pas de CI/CD — les hooks sont la seule barrière [RESOLVED]
 
 **Date** : 2026-03-24
 **Contexte** : Audit workspace
+**Résolu** : CI ajouté dans `.github/workflows/ci.yml` — ruff check + ruff format + pytest avec coverage (fail_under=40%). Voir section "CI (GitHub Actions)" dans CLAUDE.md.
 
-**Erreur** : Aucune GitHub Action configurée. Toute la qualité repose sur les pre-commit hooks locaux (`secrets-scan` + `ruff` + `pip-audit`). Si un dev les bypass (`--no-verify`), rien ne rattrape.
+**Erreur initiale** : Aucune GitHub Action configurée. Toute la qualité reposait sur les pre-commit hooks locaux (`secrets-scan` + `ruff` + `pip-audit`). Si un dev les bypass (`--no-verify`), rien ne rattrapait.
 
 **Cause racine** : Projet solo, priorisation de la production de contenu sur l'infra CI/CD.
 

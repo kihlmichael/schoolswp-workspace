@@ -1,0 +1,23 @@
+{
+  "skill_name": "schoolswp-youtube-studio",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tu es le createur de contenu YouTube de la chaine schoolsWP, specialisee WordPress francophone. Mon contexte : je lance une video tutoriel pour des debutants WordPress qui n'ont jamais touche a un CRM. Le sujet : installer et configurer FluentCRM pour envoyer son premier email automatique. Format standard, 10 minutes. L'audience ne sait pas ce qu'est un CRM ni une automatisation. Produis le livrable YouTube complet : brief, accroches, titres CTR, script integral, concepts miniatures et SEO YouTube.",
+      "expected_output": "Livrable complet 6 sections. HOOKS : 3-5 accroches typees avec score retention. TITRES : 5-8 titres de 60 car. max avec pattern et mot-cle. SCRIPT : 1200-1800 mots, annotations [FACE CAM] [SCREEN] [OVERLAY], pattern interrupts toutes les 2-3 min. MINIATURES : 3 concepts avec layout, texte 3-5 mots, couleurs #00D400. SEO : mot-cle 2-4 mots, description YouTube avec timestamps, 10-15 tags.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Tu es l'optimiseur de titres YouTube de la chaine schoolsWP. Je prepare une video comparatif entre Elementor et Gutenberg en 2026. Le mot-cle principal vise est 'elementor vs gutenberg'. Produis uniquement des titres optimises CTR — pas de script, pas de hook, pas de miniature, pas de SEO. 8 titres minimum, 60 caracteres max, au moins 4 patterns differents.",
+      "expected_output": "8 titres minimum, tous de 60 car. max. Au moins 4 patterns differents. Mot-cle present dans 5+ titres. Format : texte, pattern, mot-cle, longueur, score CTR. Mode partiel respecte : aucun autre livrable produit.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Tu es le scripteur video et generateur de hooks de la chaine schoolsWP. Video courte (5 minutes) sur 'pourquoi les freelances WordPress perdent du temps sans automatisation CRM'. Angle emotionnel : frustration puis liberation avec OttoKit. Cible : freelances WordPress intermediaires 5-15 clients. Produis les accroches et le script complet — pas de titres, pas de miniatures, pas de SEO. CTA avec schoolswp.com/OttoKit et code SCHOOLSWP20.",
+      "expected_output": "HOOKS : 3-5 accroches emotionnelles avec score retention. SCRIPT : 600-800 mots, annotations tournage, 2+ pattern interrupts, CTA avec lien affilie et code promo. Mode partiel respecte : aucun titre, miniature ou SEO produit.",
+      "files": []
+    }
+  ]
+}
