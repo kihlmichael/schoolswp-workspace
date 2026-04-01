@@ -137,12 +137,26 @@
       "Edit(/.claude/skills/workspace-hygiene/**)",
       "Edit(/.claude/skills/workspace-hygiene-workspace/**)",
       "Bash(mkdir -p apps/_archive/claude-telegram-poc apps/_archive/elearning apps/_archive/thruuu-claude-writer apps/_archive/telegram-bot)",
-      "Bash(mkdir -p apps/_prototypes/brand-reveal apps/_prototypes/video-marketing)"
+      "Bash(mkdir -p apps/_prototypes/brand-reveal apps/_prototypes/video-marketing)",
+      "Edit(/.claude/skills/geo-gsc-pipeline/**)",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/scripts\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/references\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-0-installation-complete/with_skill/outputs\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-0-installation-complete/without_skill/outputs\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-1-debugging-bridge/with_skill/outputs\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-1-debugging-bridge/without_skill/outputs\")",
+      "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-2-commandes-predefinies/with_skill/outputs\")",
+      "mcp__novamira-schoolswp-com__mcp-adapter-discover-abilities",
+      "mcp__novamira-schoolswp-com__mcp-adapter-execute-ability"
     ],
     "additionalDirectories": [
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills",
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\workspace-hygiene-workspace\\iteration-1\\eval-full-audit\\with_skill",
-      "f:\\VS Code\\CLAUDE CODE\\.claude\\skills"
+      "f:\\VS Code\\CLAUDE CODE\\.claude\\skills",
+      "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline",
+      "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline\\-workspace\\iteration-1\\eval-0-fluentcrm\\with_skill",
+      "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\telegram-claude-bridge"
     ]
   },
   "enableAllProjectMcpServers": true,

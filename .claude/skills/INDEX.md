@@ -196,6 +196,7 @@
 | `cocon-map-schoolswp` | Cartographie complète des cocons | Construire la cartographie complete des cocons SEO schoolsWP (cluster… |
 | `content-factory-autonome` | Content Factory autonome | Operer la Content Factory autonome schoolsWP (detection -> priorisati… |
 | `geo-architect` | Pipeline GEO/AIO | GEO/AIO pipeline schoolsWP — transformer des requêtes (GSC, SERP, mot… |
+| `geo-gsc-pipeline` | Pipeline data-driven GSC→GEO (JSON) | Donnees GSC/SERP reelles → V1 prompts + V2 clusters + V3 pages AIO-re… |
 | `lms-cocon-roi-prioritization` | Priorité cocon LMS selon ROI | Prioriser le cocon LMS WordPress selon un score ROI (SEO + Business +… |
 | `m1m3-urls-internal-linking` | 24 URLs + maillage interne | Produire la liste exacte des 24 URLs + titres SEO et le maillage inte… |
 | `niche-detector-reachable` | Détection niches SEO atteignables | Detecter des niches SEO atteignables pour schoolsWP (difficulte, conc… |
@@ -267,6 +268,7 @@
 | --- | --- | --- |
 | `clairtexte` | Correction stricte brand | Agent de correction stricte pour schoolsWP. Corrige uniquement les fa… |
 | `email-to-content` | Email promo → article | Transformer un email promotionnel WordPress (plugin ou theme) en 3 co… |
+| `schoolswp-article-workflow` | Workflow redaction 3 phases (mot-cle → article) | Workflow complet : Intelligence SEO + Redaction IA + Auto-audit scoring. Sans brief thruuu. |
 | `instagram-strategy` | Stratégie Instagram complète | Expert Instagram content strategy agent — builds complete, ready-to-p… |
 | `thumbnail-strategist` ⚠️ | Directeur artistique YouTube (dossier : `thumbnail-strategist`) | Directeur artistique YouTube pour schoolsWP. Si : dès que |
 | `youtube-shorts-schoolswp` | Pipeline YouTube Shorts | Pipeline complet de création YouTube Shorts pour la série schoolsWP "… |
@@ -281,6 +283,7 @@
 | `discord` | Contrôle Discord | Utiliser pour contrôler Discord via l'outil discord - envoyer des mes… |
 | `facebook` | Pages, groupes, publicité Facebook | Espace métier Facebook - pages, groupes, publicité et analytics. Util… |
 | `linkedin` | Automatisation et publication LinkedIn | Espace métier LinkedIn - automatisation, publication, analytics et st… |
+| `reddit` | Veille, participation et strategie Reddit | Espace metier Reddit — decouvrir subreddits, scraper, rediger, strategie karma et affiliation |
 | `slack` | Contrôle Slack | Utiliser pour contrôler Slack via l'outil slack - réagir aux messages… |
 | `whatsapp` | Envoi messages WhatsApp | Envoyer des messages WhatsApp à d'autres personnes ou rechercher/sync… |
 | `wordpress` | Sites, blogs, WooCommerce | Espace métier WordPress - sites, blogs, WooCommerce et maintenance. U… |

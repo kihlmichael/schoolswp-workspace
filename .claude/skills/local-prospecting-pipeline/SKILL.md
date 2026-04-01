@@ -210,6 +210,27 @@ Nom | Ville | Adresse complete | Code postal | Telephone | Email | Site web | So
 
 ---
 
+## Qualification par niche — regles specialisees
+
+Certaines niches ont des criteres de qualification specifiques (preuves acceptables, pieges a eviter, requetes recommandees).
+
+**Consulte `references/niche-qualification-rules.md`** quand la niche correspond a l'une de celles documentees (WordPress, SEO, e-commerce). Ce fichier contient :
+- les preuves acceptables par ordre de fiabilite
+- les mots-cles de detection
+- les pieges specifiques a la niche (ex: fausses pages SEO locales pour WordPress)
+- les variantes de requetes supplementaires
+
+Si la niche n'est pas documentee, applique les regles generales du pipeline.
+
+### Piege universel : fausses pages SEO locales
+
+Pour toute niche "services web" (agences web, SEO, WordPress, e-commerce), verifier systematiquement que l'entreprise a une **presence physique reelle** dans la zone :
+- Verifier les mentions legales / CGV pour le siege social
+- Comparer avec la fiche Google Maps
+- Exclure les agences nationales qui creent des pages localisees pour 10+ villes
+
+---
+
 ## Regles critiques
 
 - Ne rien inventer — jamais
