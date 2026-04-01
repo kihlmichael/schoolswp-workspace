@@ -13,7 +13,7 @@ def _setup_logging() -> None:
     - Console : WARNING et plus seulement
     - Format  : timestamp | niveau | logger | message
     """
-    log_dir = Path(__file__).parent.parent / "logs"
+    log_dir = Path(__file__).resolve().parent.parent.parent / "logs"
     log_dir.mkdir(exist_ok=True)
 
     root = logging.getLogger("agents")
@@ -54,7 +54,8 @@ def _load_env() -> None:
     try:
         from dotenv import load_dotenv  # type: ignore[import-untyped]
 
-        _root = Path(__file__).parent.parent
+        # core/agents-py/base.py → project root = parent.parent.parent
+        _root = Path(__file__).resolve().parent.parent.parent
         for candidate in [
             _root / "agents" / ".env",
             _root / ".env",

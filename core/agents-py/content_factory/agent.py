@@ -355,6 +355,35 @@ class ContentFactoryAgent(BaseContentAgent):
 
         return result
 
+    async def run(self, **kwargs) -> ContentFactoryResult:  # type: ignore[override]
+        """Route vers generate_and_audit ou audit_only selon les kwargs."""
+        source_file = kwargs.pop("source_file", None)
+        no_links = kwargs.pop("no_links", False)
+        no_cluster = kwargs.pop("no_cluster", False)
+        kwargs.pop("save_dir", None)
+
+        if source_file:
+            article = source_file.read_text(encoding="utf-8")
+            return await self.audit_only(
+                article=article,
+                keyword=kwargs.get("keyword", ""),
+                intent=kwargs.get("intent"),
+                pillar=kwargs.get("pillar"),
+                objective=kwargs.get("objective"),
+                expand_cluster=not no_cluster,
+            )
+        return await self.generate_and_audit(
+            keyword=kwargs.get("keyword", ""),
+            intent=kwargs.get("intent", "informationnelle"),
+            pillar=kwargs.get("pillar"),
+            objective=kwargs.get("objective"),
+            include_serp=kwargs.get("include_serp", False),
+            include_ner=kwargs.get("include_ner", False),
+            include_links=not no_links,
+            expand_cluster=not no_cluster,
+            force=kwargs.get("force", False),
+        )
+
     async def _run_audit_and_cluster(
         self,
         result: ContentFactoryResult,

@@ -121,17 +121,21 @@ async def main() -> None:
     )
 
     # Sauvegarde des fichiers
-    for fname, content in [
-        ("strategy.md", result.strategy),
-        ("v1.md", result.draft),
-        ("audit-seo.md", result.audit),
-        ("audit-llm.md", result.llm_seo),
-        ("audit-conversion.md", result.conversion),
-        ("audit-topical.md", result.topical),
-        ("v2.md", result.final),
-        ("cluster.md", result.cluster),
-        ("meta.md", result.meta),
-    ]:
+    pipe = result.pipeline
+    pub = result.publish
+    files = [
+        ("strategy.md", result.factory_report),
+        ("v1.md", pipe.v1 if pipe else ""),
+        ("v2.md", pipe.v2 if pipe else ""),
+        ("audit-seo.md", pub.seo_result.report if pub and pub.seo_result else ""),
+        ("audit-llm.md", pub.llm_result.report if pub and pub.llm_result else ""),
+        ("audit-conversion.md", pub.conversion_result.report if pub and pub.conversion_result else ""),
+        ("audit-topical.md", pub.authority_result.report if pub and pub.authority_result else ""),
+        ("final.md", result.best_article),
+        ("cluster.md", result.cluster_plan),
+        ("meta.md", pipe.meta if pipe else ""),
+    ]
+    for fname, content in files:
         if content:
             out = safe_write_path(str(save_dir / fname))
             out.write_text(content, encoding="utf-8")
