@@ -1,0 +1,15 @@
+$items = json_decode('[{"id": 2289613, "alt": "WordPress screenshot \u2014 editor", "caption": "WordPress interface in WordPress, from the schoolsWP article.", "description": "This image shows a screenshot of WordPress. It illustrates the schoolsWP article \"Microthemer : \u00c9diteur CSS visuel pour WordPress - Personnalisez facilement votre site\"."}, {"id": 2289614, "alt": "WooCommerce screenshot \u2014 overview", "caption": "WooCommerce interface in WordPress, from the schoolsWP article.", "description": "This image shows a screenshot of WooCommerce. It illustrates the schoolsWP article \"Solid Affiliate - Le Top Plugin d'affiliation pour WordPress\"."}, {"id": 2289615, "alt": "WordPress sur WordPress", "caption": "WordPress \u2014 illustration de l'article schoolsWP.", "description": "Cette image montre un visuel de WordPress. Elle illustre l'article schoolsWP \"Perfmatters, l'optimisation Wordpress\u00a0pour am\u00e9liorer la vitesse de son site\u00a0?\"."}, {"id": 2289616, "alt": "Tutor LMS on WordPress", "caption": "Tutor LMS \u2014 illustration from the schoolsWP article.", "description": "This image shows a visual of Tutor LMS. It illustrates the schoolsWP article \"Tutor LMS Avis 2026 : La Meilleure\u00a0Solution LMS pour WordPress ?\"."}, {"id": 2289617, "alt": "WordPress on WordPress", "caption": "WordPress \u2014 illustration from the schoolsWP article.", "description": "This image shows a visual of WordPress. It illustrates the schoolsWP article \"SpotlightWP Avis : Test du plugin Instagram pour WordPress\"."}, {"id": 2289618, "alt": "FluentCRM on WordPress", "caption": "FluentCRM \u2014 illustration from the schoolsWP article.", "description": "This image shows a visual of FluentCRM. It illustrates the schoolsWP article \"FluentCRM est-il le meilleur CRM WordPress ?\"."}, {"id": 2289619, "alt": "WordPress sur WordPress", "caption": "WordPress \u2014 illustration de l'article schoolsWP.", "description": "Cette image montre un visuel de WordPress. Elle illustre l'article schoolsWP \"CartFlows Avis : Notre retour complet sur le plugin funnel WordPress en 2026\"."}, {"id": 2289852, "alt": "EasyCommerce on WordPress", "caption": "EasyCommerce \u2014 illustration from the schoolsWP article.", "description": "This image shows a visual of EasyCommerce. It illustrates the schoolsWP article \"EasyCommerce Avis 2026 : le plugin e-commerce IA WordPress nouvelle g\u00e9n\u00e9ration\"."}]', true);
+$updated = 0; $errors = [];
+foreach ($items as $item) {
+    $id = (int)$item['id'];
+    if (isset($item['alt'])) { update_post_meta($id, '_wp_attachment_image_alt', $item['alt']); }
+    $upd = ['ID' => $id];
+    if (isset($item['caption'])) $upd['post_excerpt'] = $item['caption'];
+    if (isset($item['description'])) $upd['post_content'] = $item['description'];
+    if (count($upd) > 1) {
+        $r = wp_update_post($upd, true);
+        if (is_wp_error($r)) { $errors[] = $id . ': ' . $r->get_error_message(); }
+        else { $updated++; }
+    } elseif (isset($item['alt'])) { $updated++; }
+}
+return ['batch' => 14, 'updated' => $updated, 'errors' => $errors];
