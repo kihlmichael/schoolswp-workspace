@@ -180,12 +180,21 @@ Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-7
 ```text
 projects/schoolswp/
 ├── agents/             # Namespace package (.env only — CLIs use sys.path.insert, conftest registers sys.modules)
+│   └── *.md            # Claude Code agent configs (YAML frontmatter: name, model, description)
 ├── core/
-│   ├── agents-md/      # Agent system prompts as .md files (INDEX.md is the index)
+│   ├── agents-md/      # LLM system prompts .md par agent Python (INDEX.md is the index)
 │   ├── agents-py/      # Python agent source files (base.py + one subdir per agent)
 │   ├── playbooks/      # Strategic playbooks (.md)
 │   ├── skills/         # Local Claude Code skills
 │   └── tasks/          # Active mission (todo.md) and lessons (lessons.md)
+├── schoolswp-agents/   # Multi-agent Claude Code fleet (4 agents autonomes)
+│   ├── content-studio/  # Rédaction, tutoriels, guides (model: opus)
+│   ├── crm-automation/  # CRM/LMS, automatisation WordPress (model: opus)
+│   ├── seo-geo/         # Audit SEO, GEO/AIO, maillage interne (model: opus)
+│   ├── social-community/ # Contenu social, communauté (model: haiku)
+│   └── shared/          # Ressources partagées (contacts, skills branding/voice/stack)
+├── commands/            # Custom slash commands Claude Code (/cocon-batch)
+├── hooks/               # Execution hooks (schoolswp-session-start.sh)
 ├── systems/
 │   ├── n8n/            # n8n rules doc and config (own CLAUDE.md)
 │   ├── workflows/      # n8n workflow JSON exports
@@ -216,6 +225,19 @@ projects/schoolswp/
 ├── *.py (root)         # 9 scripts n8n one-shot (fix_workflow.py, patch_*.py) — maintenance workflows via API
 └── .claude/            # Claude Code rules, commands, local skills
 ```
+
+## Multi-Agent Fleet (`schoolswp-agents/`)
+
+4 agents Claude Code autonomes, chacun avec son propre `CLAUDE.md`, `soul.md` (personnalité), mémoire persistante et skills locaux. Distinct des agents Python dans `core/agents-py/` — ici ce sont des instances Claude Code complètes, pas des scripts.
+
+| Agent | Rôle | Model |
+| --- | --- | --- |
+| `content-studio` | Rédaction, tutoriels, optimisation contenu | opus |
+| `crm-automation` | Automatisation WordPress, CRM/LMS | opus |
+| `seo-geo` | Audit SEO, GEO/AIO, maillage interne | opus |
+| `social-community` | Contenu social, gestion communautaire | haiku |
+
+Ressources partagées dans `shared/` : contacts, skills (branding, voice, stack WordPress). Les configs agents (frontmatter YAML : name, model, description) sont dans `agents/*.md` — ne pas confondre avec `core/agents-md/` qui contient les system prompts LLM des agents Python.
 
 ## schoolsWP OS — Strategic Layers (apply in order)
 

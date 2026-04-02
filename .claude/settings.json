@@ -148,7 +148,8 @@
       "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-1-debugging-bridge/without_skill/outputs\")",
       "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-2-commandes-predefinies/with_skill/outputs\")",
       "mcp__novamira-schoolswp-com__mcp-adapter-discover-abilities",
-      "mcp__novamira-schoolswp-com__mcp-adapter-execute-ability"
+      "mcp__novamira-schoolswp-com__mcp-adapter-execute-ability",
+      "Bash(grep -i \"skool\\\\|telegram\\\\|youtube.*skool\" \"d:/VS Code/CLAUDE CODE/projects/schoolswp/systems/workflows/\"*.json)"
     ],
     "additionalDirectories": [
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills",
@@ -156,7 +157,8 @@
       "f:\\VS Code\\CLAUDE CODE\\.claude\\skills",
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline",
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline\\-workspace\\iteration-1\\eval-0-fluentcrm\\with_skill",
-      "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\telegram-claude-bridge"
+      "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\telegram-claude-bridge",
+      "F:\\TÉLÉCHARGEMENT"
     ]
   },
   "enableAllProjectMcpServers": true,
