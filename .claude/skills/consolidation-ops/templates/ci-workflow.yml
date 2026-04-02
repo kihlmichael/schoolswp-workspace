@@ -1,0 +1,62 @@
+# GitHub Actions CI — schoolsWP
+# Se déclenche sur chaque push et PR vers main
+
+name: CI schoolsWP
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov ruff
+
+      - name: Linting avec Ruff
+        run: ruff check .
+
+      - name: Tests avec couverture
+        run: pytest tests/ --cov=agents --cov-report=term --cov-report=html -v
+
+      - name: Vérifier le seuil de couverture
+        run: |
+          COVERAGE=$(pytest tests/ --cov=agents --cov-report=term 2>/dev/null | grep "TOTAL" | awk '{print $NF}' | tr -d '%')
+          echo "Couverture : ${COVERAGE}%"
+          if [ "${COVERAGE}" -lt 30 ]; then
+            echo "❌ Couverture insuffisante (${COVERAGE}% < 30%)"
+            exit 1
+          fi
+
+      - name: Upload rapport de couverture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: htmlcov/
