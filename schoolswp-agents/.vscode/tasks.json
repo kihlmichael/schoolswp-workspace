@@ -1,0 +1,64 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Launch Content Studio (Studio)",
+      "type": "shell",
+      "command": "cd \"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/content-studio\" && TELEGRAM_STATE_DIR=\"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/content-studio/.claude/channels/telegram\" claude --dangerously-skip-permissions --channels plugin:telegram@claude-plugins-official",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "agents"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch SEO/GEO (Radar)",
+      "type": "shell",
+      "command": "cd \"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/seo-geo\" && TELEGRAM_STATE_DIR=\"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/seo-geo/.claude/channels/telegram\" claude --dangerously-skip-permissions --channels plugin:telegram@claude-plugins-official",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "agents"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch CRM/Automation (Flow)",
+      "type": "shell",
+      "command": "cd \"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/crm-automation\" && TELEGRAM_STATE_DIR=\"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/crm-automation/.claude/channels/telegram\" claude --dangerously-skip-permissions --channels plugin:telegram@claude-plugins-official",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "agents"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch Social/Community (Pulse)",
+      "type": "shell",
+      "command": "cd \"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/social-community\" && TELEGRAM_STATE_DIR=\"D:/VS Code/CLAUDE CODE/projects/schoolswp/schoolswp-agents/social-community/.claude/channels/telegram\" claude --dangerously-skip-permissions --channels plugin:telegram@claude-plugins-official",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "agents"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch ALL schoolsWP agents",
+      "dependsOn": [
+        "Launch Content Studio (Studio)",
+        "Launch SEO/GEO (Radar)",
+        "Launch CRM/Automation (Flow)",
+        "Launch Social/Community (Pulse)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    }
+  ]
+}

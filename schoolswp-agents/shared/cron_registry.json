@@ -1,0 +1,34 @@
+{
+  "crons": [
+    {
+      "agent": "seo-geo",
+      "name": "check-gsc-hebdo",
+      "schedule": "Tous les lundis a 9h00",
+      "prompt": "Verifie les donnees GSC de la semaine passee pour schoolsWP.com. Resume les variations de position significatives (>3 places) et les nouvelles requetes. Logge dans daily-logs."
+    },
+    {
+      "agent": "content-studio",
+      "name": "audit-pipeline-contenu",
+      "schedule": "Tous les lundis a 10h00",
+      "prompt": "Lis memory.md et liste les articles en cours, en attente et publies cette semaine. Propose les 3 priorites editoriales de la semaine. Logge dans daily-logs."
+    },
+    {
+      "agent": "social-community",
+      "name": "prep-newsletter-hebdo",
+      "schedule": "Tous les mercredis a 14h00",
+      "prompt": "Prepare un brouillon de newsletter schoolsWP News base sur les daily logs des agents content-studio et seo-geo de cette semaine. Sauvegarde dans output/newsletter-draft.md."
+    },
+    {
+      "agent": "crm-automation",
+      "name": "check-sequences-actives",
+      "schedule": "Tous les vendredis a 9h00",
+      "prompt": "Liste les sequences FluentCRM actives et leur statut. Verifie s'il y a des sequences a optimiser ou des taux d'ouverture en baisse. Logge dans daily-logs."
+    },
+    {
+      "agent": "seo-geo",
+      "name": "veille-serp-quotidienne",
+      "schedule": "Tous les jours a 8h00",
+      "prompt": "Fais une veille rapide sur les 5 mots-cles prioritaires schoolsWP. Note les changements significatifs. Logge dans daily-logs."
+    }
+  ]
+}
