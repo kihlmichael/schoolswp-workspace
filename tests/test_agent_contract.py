@@ -5,6 +5,15 @@ import pytest
 from agents.base import BaseContentAgent
 
 
+def _openai_sdk_available() -> bool:
+    try:
+        import openai  # noqa: F401
+
+        return True
+    except ImportError:
+        return False
+
+
 def _load_agent_classes():
     """Lazily import agent classes — skip any that fail to import."""
     agents = []
@@ -62,3 +71,12 @@ class TestAgentContract:
     def test_instantiates_with_custom_model(self, fake_env, agent_class):
         agent = agent_class(model="claude-opus-4")
         assert agent.model == "claude-opus-4"
+
+    @pytest.mark.skipif(not _openai_sdk_available(), reason="openai SDK not installed")
+    def test_instantiates_with_provider_prefix(self, fake_env, monkeypatch, agent_class):
+        monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+        agent = agent_class(model="openai:gpt-4o")
+        assert agent.model == "gpt-4o"
+        from agents.providers.openai_compat import OpenAICompatProvider
+
+        assert isinstance(agent._provider, OpenAICompatProvider)

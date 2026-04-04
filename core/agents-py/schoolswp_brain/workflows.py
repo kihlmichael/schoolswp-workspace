@@ -478,13 +478,7 @@ class _W1AuditorAgent(BaseContentAgent):
             "--- ARTICLE V1 À AUDITER ---\n\n"
             f"{article_v1}"
         )
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=2048,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=2048)
 
 
 class _W1EditorAgent(BaseContentAgent):
@@ -506,13 +500,7 @@ class _W1EditorAgent(BaseContentAgent):
             "--- ARTICLE V1 ---\n\n"
             f"{article_v1}"
         )
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=4096,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=4096)
 
 
 class _W2SerpAnalystAgent(BaseContentAgent):
@@ -533,13 +521,7 @@ class _W2SerpAnalystAgent(BaseContentAgent):
         user_message = (
             f"Mot-clé à analyser : {keyword}\nSujet de l'article envisagé : {topic}{intent_block}{context_block}"
         )
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=2048,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=2048)
 
 
 class _W2AngleBuilderAgent(BaseContentAgent):
@@ -563,13 +545,7 @@ class _W2AngleBuilderAgent(BaseContentAgent):
             "--- ANALYSE SERP ---\n\n"
             f"{serp_analysis}"
         )
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=1500,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=1500)
 
 
 class _W3FormatAgent(BaseContentAgent):
@@ -593,13 +569,7 @@ class _W3FormatAgent(BaseContentAgent):
         topic: str,
     ) -> str:
         user_message = f"Mot-clé principal : {keyword}\nSujet : {topic}\n\n--- ARTICLE SOURCE ---\n\n{article}"
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=1024,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=1024)
 
 
 # ---------------------------------------------------------------------------

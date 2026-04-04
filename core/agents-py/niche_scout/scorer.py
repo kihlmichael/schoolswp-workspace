@@ -187,11 +187,4 @@ class NicheScorerAgent(BaseContentAgent):
             "et produis le classement complet avec calculs explicites."
         )
 
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=5000,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=5000)

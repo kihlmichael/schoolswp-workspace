@@ -30,6 +30,16 @@ if "agents" not in sys.modules:
 # ── Fixtures ────────────────────────────────────────────────────
 
 
+@pytest.fixture(autouse=True)
+def _clear_provider_cache():
+    """Clear the provider cache before each test to avoid cross-test pollution."""
+    from agents.providers import clear_provider_cache
+
+    clear_provider_cache()
+    yield
+    clear_provider_cache()
+
+
 @pytest.fixture
 def fake_env(monkeypatch):
     """Set minimal env vars so agents don't hit real APIs."""
@@ -43,6 +53,8 @@ def mock_anthropic_client():
 
     Usage:
         agent._client = mock_anthropic_client("some response text")
+
+    Note: Historique — préférer mock_provider pour les nouveaux tests.
     """
 
     def _factory(response_text: str = "Mock response"):
@@ -51,6 +63,23 @@ def mock_anthropic_client():
         message.content = [MagicMock(text=response_text)]
         client.messages.create = AsyncMock(return_value=message)
         return client
+
+    return _factory
+
+
+@pytest.fixture
+def mock_provider():
+    """Factory: returns a mock LLMProvider with a predictable response.
+
+    Usage:
+        agent._provider = mock_provider("some response text")
+    """
+    from agents.providers.base import LLMResponse
+
+    def _factory(response_text: str = "Mock response"):
+        provider = AsyncMock()
+        provider.complete = AsyncMock(return_value=LLMResponse(text=response_text))
+        return provider
 
     return _factory
 
