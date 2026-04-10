@@ -1,0 +1,49 @@
+/* Custom styles for CLAUDE.md Generator */
+
+/* Smooth transitions for Alpine.js */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Custom scrollbar for preview */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Selection buttons animation */
+button {
+  transition: all 0.15s ease;
+}
+
+/* Focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+/* Preview code block styling */
+pre {
+  tab-size: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lg\:sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+}
