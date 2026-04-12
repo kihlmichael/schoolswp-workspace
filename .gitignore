@@ -105,5 +105,7 @@ apps/vscode-agent-visual/dist/
 apps/telegram-bot/telegram-bot/node_modules/
 apps/_archive/claude-telegram-poc/venv/
 .coverage
+coverage.json
 .firecrawl/
 .agent/
+.trash/
