@@ -149,7 +149,47 @@
       "Bash(mkdir -p \"d:/VS Code/CLAUDE CODE/.claude/skills/telegram-claude-bridge/-workspace/iteration-1/eval-2-commandes-predefinies/with_skill/outputs\")",
       "mcp__novamira-schoolswp-com__mcp-adapter-discover-abilities",
       "mcp__novamira-schoolswp-com__mcp-adapter-execute-ability",
-      "Bash(grep -i \"skool\\\\|telegram\\\\|youtube.*skool\" \"d:/VS Code/CLAUDE CODE/projects/schoolswp/systems/workflows/\"*.json)"
+      "Bash(grep -i \"skool\\\\|telegram\\\\|youtube.*skool\" \"d:/VS Code/CLAUDE CODE/projects/schoolswp/systems/workflows/\"*.json)",
+      "Edit(/.claude/skills/planning-and-task-breakdown/**)",
+      "Edit(/.claude/skills/code-review-and-quality/**)",
+      "Edit(/.claude/skills/git-workflow-and-versioning/**)",
+      "Edit(/.claude/skills/incremental-implementation/**)",
+      "Edit(/.claude/skills/documentation-and-adrs/**)",
+      "Edit(/.claude/skills/performance-loop/**)",
+      "Edit(/.claude/skills/claude-project-setup/**)",
+      "Read(//c/Users/micha/AppData/Local/Temp/claude/D--VS-Code-CLAUDE-CODE-projects-schoolswp/ef0f2715-4e75-47c2-a0a8-5e80a260be7a/tasks/**)",
+      "Read(//c/Users/micha/.claude/skills/**)",
+      "Edit(/.claude/skills/social/**)",
+      "Bash(\"C:/Users/micha/AppData/Roaming/Python/Python313/Scripts/yt-dlp.exe\" --version)",
+      "Read(//d//**)",
+      "Read(//f//**)",
+      "Bash(ls /mnt/)",
+      "Bash(ls //*/)",
+      "Read(//etc/**)",
+      "Bash(reg query:*)",
+      "Bash(cmd //c \"net use\")",
+      "Bash(cmd //c \"wmic logicaldisk get caption,description,providername\")",
+      "Bash(cmd //c \"wmic logicaldisk get caption,description,providername,volumename\")",
+      "Read(//c//**)",
+      "Bash(cmd //c \"net view\")",
+      "Read(//c/Users/micha/AppData/Local/Temp/claude/d--VS-Code-CLAUDE-CODE-projects-schoolswp/bea1457b-c4d1-4ae5-9a2f-dec65178e96e/**)",
+      "Bash(ping -c 1 diskstation)",
+      "Bash(ping -c 1 synology)",
+      "Bash(ping -c 1 nas)",
+      "Bash(ping -n 1 diskstation)",
+      "Bash(ping -n 1 synology)",
+      "Bash(ping -n 1 nas)",
+      "Bash(ls //diskstation/)",
+      "Bash(ls //synology/)",
+      "Bash(ls //nas/)",
+      "Bash(ls //NAS-Synology/)",
+      "Bash(ipconfig)",
+      "Read(//proc/net/**)",
+      "Read(//c/Windows/System32/drivers/etc/**)",
+      "Read(//d/VS Code/**)",
+      "Bash(ls \"//SERVEUR_NAS/\")",
+      "Bash(bun --version)",
+      "Read(//c/Users/micha/.claude/channels/**)"
     ],
     "additionalDirectories": [
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills",
@@ -158,7 +198,11 @@
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline",
       "d:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\geo-gsc-pipeline\\-workspace\\iteration-1\\eval-0-fluentcrm\\with_skill",
       "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\telegram-claude-bridge",
-      "F:\\TÉLÉCHARGEMENT"
+      "F:\\TÉLÉCHARGEMENT",
+      "D:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\social\\social-media-manager",
+      "D:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\skills\\social\\social-media-manager-workspace\\iteration-1\\eval-transformation-multiplateforme\\with_skill",
+      "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\contenu\\offer-to-copy-workspace\\iteration-1\\eval-1-google-ads-skill\\with_skill",
+      "d:\\VS Code\\CLAUDE CODE\\.claude\\skills\\contenu\\offer-to-copy-workspace\\iteration-2\\eval-1-google-ads-skill\\with_skill"
     ]
   },
   "enableAllProjectMcpServers": true,
@@ -183,6 +227,27 @@
           {
             "type": "command",
             "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/ruff-check.sh\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/hooks/schoolswp-session-start.sh\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"$(date '+%Y-%m-%d %H:%M') | session completed\" >> ~/.claude/logs/schoolswp-sessions.log",
+            "async": true
           }
         ]
       }
