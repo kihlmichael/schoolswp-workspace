@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "config": "without_skill",
+  "expectations": [
+    {"text": "Post LinkedIn complet et structure", "passed": true, "evidence": "Post avec classement, criteres, CTA. Structure correcte"},
+    {"text": "Requete curl Blotato publish montree", "passed": false, "evidence": "Utilise l'API LinkedIn native (v2/assets, v2/ugcPosts) au lieu de l'API Blotato demandee"},
+    {"text": "Requete curl Blotato visuel montree", "passed": false, "evidence": "Pas de requete Blotato pour les visuels. Brief carrousel manuel propose a la place"},
+    {"text": "content.platform == target.targetType", "passed": false, "evidence": "N'utilise pas la structure Blotato. Utilise la structure LinkedIn API native"},
+    {"text": "Journal de publication inclus", "passed": false, "evidence": "Pas de journal de publication dans la sortie"},
+    {"text": "Recap final avec statut", "passed": false, "evidence": "Resume des limites presente mais pas de recap structure Publie/En attente/Erreurs"}
+  ]
+}

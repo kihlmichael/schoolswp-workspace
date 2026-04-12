@@ -1,0 +1,23 @@
+{
+  "skill_name": "social-media-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "J'ai publié un article sur schoolsWP qui compare Tutor LMS et LearnDash. L'URL est https://schoolswp.com/tutor-lms-vs-learndash/. Transforme-le en posts sociaux pour LinkedIn, X et Facebook.",
+      "expected_output": "3 posts adaptés par plateforme (LinkedIn avec hook + structure, X court ou thread, Facebook conversationnel), tous en tutoiement, voix schoolsWP, avec CTA unique par post et renvoi vers l'article source",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Publie ce post sur LinkedIn pour schoolsWP : 'J'ai testé 5 plugins de formulaire WordPress pendant 2 semaines. Voici mon classement.' — le lien vers l'article est https://schoolswp.com/meilleurs-plugins-formulaire-wordpress/. Crée aussi un visuel carrousel avec Blotato.",
+      "expected_output": "Post LinkedIn complet respectant la voix schoolsWP (hook, problème, explication, solution, CTA), tentative de création visuel via API Blotato, mise à jour du journal de publication, récapitulatif final",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Fais-moi un post Instagram pour schoolsWP sur le thème : pourquoi automatiser sa newsletter avec FluentCRM plutôt que Mailchimp. Pas besoin de publier, juste le contenu.",
+      "expected_output": "Caption Instagram courte, engageante, en tutoiement, avec hashtags pertinents (10-15), angle simple et visuel, CTA utile, vocabulaire schoolsWP respecté, pas de publication API",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FluentCRM : arrete de payer Mailchimp — Email marketing WordPress a 103 EUR/an</title>
+  <meta name="description" content="FluentCRM remplace Mailchimp et ActiveCampaign. Contacts illimites, emails illimites, 103 EUR/an. Plugin WordPress self-hosted.">
+  <meta property="og:title" content="FluentCRM : arrete de payer Mailchimp">
+  <meta property="og:description" content="Email marketing WordPress. Contacts illimites, 103 EUR/an au lieu de 49 EUR/mois chez Mailchimp.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://fluentcrm.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FluentCRM",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "WordPress",
+    "offers": {
+      "@type": "Offer",
+      "price": "103",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "180",
+      "bestRating": "5"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --violet: #7742e6;
+      --violet-light: #f4f0ff;
+      --violet-dark: #5a2dc5;
+      --navy: #1a1a2e;
+      --green: #00c853;
+      --green-dark: #00a844;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f5f5f5;
+      --gray-300: #d4d4d4;
+      --gray-600: #525252;
+      --gray-800: #262626;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--navy); line-height: 1.6; background: var(--white); }
+
+    /* Utility */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .btn-primary {
+      display: inline-block; padding: 16px 36px; background: var(--green); color: var(--white);
+      font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; text-decoration: none;
+      border-radius: 8px; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .btn-secondary {
+      display: inline-block; padding: 14px 32px; background: transparent; color: var(--violet);
+      font-family: var(--font-heading); font-weight: 600; font-size: 1rem; text-decoration: none;
+      border: 2px solid var(--violet); border-radius: 8px; transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: var(--violet-light); }
+    .section-padding { padding: 80px 0; }
+    @media (max-width: 768px) { .section-padding { padding: 48px 0; } }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(165deg, var(--violet-light) 0%, var(--white) 60%);
+      padding: 100px 0 80px;
+    }
+    @media (max-width: 768px) { .hero { padding: 64px 0 48px; } }
+    .hero h1 {
+      font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700;
+      line-height: 1.15; color: var(--navy); margin-bottom: 20px;
+    }
+    .hero .subtitle { font-size: 1.15rem; color: var(--gray-600); max-width: 600px; margin-bottom: 32px; }
+    .hero .proof-bar {
+      display: flex; gap: 24px; align-items: center; margin-top: 24px; flex-wrap: wrap;
+      font-size: 0.9rem; color: var(--gray-600);
+    }
+    .hero .proof-bar span { display: flex; align-items: center; gap: 6px; }
+    .hero .proof-bar .star { color: #f59e0b; }
+
+    /* Problem */
+    .problem { background: var(--gray-50); }
+    .problem h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 24px; }
+    .problem p { max-width: 700px; margin-bottom: 16px; color: var(--gray-800); }
+    .price-escalation {
+      display: flex; gap: 12px; margin: 32px 0; align-items: flex-end; flex-wrap: wrap;
+    }
+    .price-escalation .price-block {
+      background: var(--white); border: 2px solid var(--gray-300); border-radius: 8px;
+      padding: 16px 20px; text-align: center; font-family: var(--font-heading);
+    }
+    .price-escalation .price-block.bad { border-color: #ef4444; color: #ef4444; }
+    .price-escalation .price-block.good { border-color: var(--green); color: var(--green); font-size: 1.1rem; }
+
+    /* Solution */
+    .solution h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 24px; }
+    .solution p { max-width: 700px; margin-bottom: 16px; }
+    .comparison-table {
+      width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 0.95rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--gray-300);
+    }
+    .comparison-table th { font-family: var(--font-heading); font-weight: 600; background: var(--violet-light); }
+    .comparison-table .highlight { background: var(--violet-light); font-weight: 600; color: var(--violet); }
+
+    /* Proof */
+    .proof { background: var(--violet-light); }
+    .proof h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 32px; }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .testimonial-card {
+      background: var(--white); border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .testimonial-card blockquote { font-style: italic; color: var(--gray-800); margin-bottom: 16px; line-height: 1.6; }
+    .testimonial-card cite { font-style: normal; font-weight: 600; font-size: 0.9rem; color: var(--violet); }
+    .stats-bar {
+      display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat .number { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--violet); }
+    .stat .label { font-size: 0.85rem; color: var(--gray-600); }
+
+    /* Features */
+    .features h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 40px; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px;
+    }
+    .feature-card { padding: 24px; border-radius: 12px; background: var(--gray-50); }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-card h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; }
+    .feature-card p { font-size: 0.9rem; color: var(--gray-600); }
+
+    /* Integrations */
+    .integrations { background: var(--gray-50); text-align: center; }
+    .integrations h2 { font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 12px; }
+    .integrations p { color: var(--gray-600); margin-bottom: 32px; }
+    .logos-row {
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; align-items: center; opacity: 0.7;
+    }
+    .logos-row span { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--gray-600); }
+
+    /* CTA Final */
+    .cta-final {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--violet-dark) 100%);
+      text-align: center; color: var(--white);
+    }
+    .cta-final h2 { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 16px; }
+    .cta-final p { max-width: 600px; margin: 0 auto 32px; font-size: 1.1rem; opacity: 0.9; }
+    .cta-final .btn-primary { background: var(--green); color: var(--white); padding: 18px 44px; font-size: 1.15rem; }
+    .cta-final .objection { font-size: 0.9rem; margin-top: 20px; opacity: 0.8; }
+
+    /* FAQ */
+    .faq h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 32px; }
+    .faq-item { border-bottom: 1px solid var(--gray-300); padding: 20px 0; }
+    .faq-item summary {
+      font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--violet); transition: transform 0.2s; }
+    .faq-item[open] summary::after { content: '-'; }
+    .faq-item p { margin-top: 12px; color: var(--gray-600); max-width: 700px; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 32px 24px; font-size: 0.85rem; color: var(--gray-600);
+      border-top: 1px solid var(--gray-300);
+    }
+    footer a { color: var(--violet); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container fade-in">
+    <h1>Tu paies combien pour envoyer tes emails ?</h1>
+    <p class="subtitle">FluentCRM remplace Mailchimp, ActiveCampaign et Kit. Contacts illimites, emails illimites. 103 EUR/an. Pas par mois.</p>
+    <a href="https://fluentcrm.com" class="btn-primary">Telecharger FluentCRM gratuitement</a>
+    <div class="proof-bar">
+      <span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8/5 sur WordPress.org</span>
+      <span>70 000+ entreprises</span>
+      <span>180+ avis 5 etoiles</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem section-padding">
+  <div class="container fade-in">
+    <h2>La taxe de croissance te coute cher</h2>
+    <p>Tu as commence avec 500 contacts sur Mailchimp. Gratuit. Puis ta liste a grandi. 2 000 contacts, 5 000, 10 000. Et la facture avec.</p>
+    <p>Chaque nouvel abonne te coute plus cher. C'est le modele de tous les SaaS email : plus tu grandis, plus tu paies.</p>
+    <div class="price-escalation">
+      <div class="price-block bad">500 contacts<br><strong>0 EUR/mois</strong></div>
+      <div class="price-block bad">2 500 contacts<br><strong>39 EUR/mois</strong></div>
+      <div class="price-block bad">5 000 contacts<br><strong>69 EUR/mois</strong></div>
+      <div class="price-block bad">10 000 contacts<br><strong>99 EUR/mois</strong></div>
+      <div class="price-block good">Illimite<br><strong>8,58 EUR/mois</strong><br><small>FluentCRM</small></div>
+    </div>
+    <p>Le pire : tu n'as meme pas le controle de tes donnees. Si Mailchimp ferme ton compte demain, tu perds ta liste.</p>
+  </div>
+</section>
+
+<!-- Solution -->
+<section class="solution section-padding">
+  <div class="container fade-in">
+    <h2>103 EUR/an. Contacts illimites. C'est tout.</h2>
+    <p>FluentCRM fonctionne dans ton WordPress. Tu paies une licence annuelle. Pas de limite de contacts. Pas de limite d'emails.</p>
+    <p>L'envoi passe par Amazon SES : 0,10 EUR pour 1 000 emails. Pour 15 000 envois par mois, ca fait 1,75 EUR.</p>
+    <table class="comparison-table">
+      <thead>
+        <tr><th>Service</th><th>1 000 contacts</th><th>10 000 contacts</th><th>50 000 contacts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mailchimp</td><td>49 EUR/mois</td><td>99 EUR/mois</td><td>349 EUR/mois</td></tr>
+        <tr><td>ActiveCampaign</td><td>49 EUR/mois</td><td>139 EUR/mois</td><td>339 EUR/mois</td></tr>
+        <tr><td>Kit (ConvertKit)</td><td>29 EUR/mois</td><td>119 EUR/mois</td><td>259 EUR/mois</td></tr>
+        <tr class="highlight"><td>FluentCRM + SES</td><td>~10 EUR/mois</td><td>~10 EUR/mois</td><td>~14 EUR/mois</td></tr>
+      </tbody>
+    </table>
+    <p><small>FluentCRM : licence 103 EUR/an (8,58 EUR/mois) + Amazon SES 0,10 EUR/1000 emails. Prix concurrents : plans marketing standard, avril 2026.</small></p>
+  </div>
+</section>
+
+<!-- Proof -->
+<section class="proof section-padding">
+  <div class="container fade-in">
+    <h2>Ils ont fait le switch</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <blockquote>"FluentCRM has replaced my old CRM that cost me hundreds per year. The free version is great, but the Pro version is well worth it and a fraction of the cost."</blockquote>
+        <cite>@zephyrmike — WordPress.org</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I always try to find tools to replace SaaS tools with WordPress plugins, to control all my data on my own server. Now with FluentCRM I can do it."</blockquote>
+        <cite>@patricia70 — WordPress.org</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"It's a work of art. Perfectly coded, lightning fast, brilliantly thought out, beautifully designed."</blockquote>
+        <cite>@lesliex — WordPress.org</cite>
+      </div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="number">70 000+</div><div class="label">Entreprises</div></div>
+      <div class="stat"><div class="number">4.8/5</div><div class="label">WordPress.org</div></div>
+      <div class="stat"><div class="number">90%</div><div class="label">Economie (WP Fusion)</div></div>
+      <div class="stat"><div class="number">1,75 EUR</div><div class="label">15K emails (SES)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features section-padding">
+  <div class="container fade-in">
+    <h2>Ce que tu obtiens pour 103 EUR/an</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">&#9993;</div>
+        <h3>Campagnes illimitees</h3>
+        <p>Compose, segmente, envoie. Pas de plafond de contacts ni d'envois.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#9881;</div>
+        <h3>Automations visuelles</h3>
+        <p>Sequences de bienvenue, relances, upsells. Builder drag-and-drop.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#128268;</div>
+        <h3>45+ integrations</h3>
+        <p>WooCommerce, LearnDash, Fluent Forms, Elementor. Gratuites, sans add-ons.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#9878;</div>
+        <h3>A/B testing</h3>
+        <p>Teste tes objets d'email. Garde le meilleur automatiquement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integrations -->
+<section class="integrations section-padding">
+  <div class="container fade-in">
+    <h2>45+ integrations gratuites</h2>
+    <p>Pas d'add-ons payants. Tout est inclus dans la licence.</p>
+    <div class="logos-row">
+      <span>WooCommerce</span>
+      <span>LearnDash</span>
+      <span>Fluent Forms</span>
+      <span>Elementor</span>
+      <span>BuddyBoss</span>
+      <span>MemberPress</span>
+      <span>AffiliateWP</span>
+      <span>Zapier</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-final section-padding">
+  <div class="container fade-in">
+    <h2>103 EUR/an. Pas par mois.</h2>
+    <p>Contacts illimites. Emails illimites. Toutes les features. Version gratuite disponible pour tester.</p>
+    <a href="https://fluentcrm.com" class="btn-primary">Telecharger FluentCRM gratuitement</a>
+    <p class="objection">Teste la version gratuite sur WordPress.org. Le Pro ajoute automations, A/B testing et segmentation avancee.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-padding">
+  <div class="container">
+    <h2>Questions frequentes</h2>
+    <details class="faq-item">
+      <summary>FluentCRM gere combien de contacts ?</summary>
+      <p>Pas de limite. Tes contacts sont dans ta base WordPress. La seule limite est celle de ton hebergeur.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Comment les emails sont envoyes ?</summary>
+      <p>Via un service SMTP de ton choix : Amazon SES (le moins cher), SendGrid, Mailgun. FluentCRM utilise l'envoi natif WordPress.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Ca va ralentir mon site ?</summary>
+      <p>Non. FluentCRM stocke ses donnees dans des tables separees. L'interface admin est une application VueJS — elle ne charge que quand tu l'ouvres.</p>
+    </details>
+    <details class="faq-item">
+      <summary>C'est compatible avec mon page builder ?</summary>
+      <p>Oui. Elementor, Divi, Beaver Builder, Oxygen, Kadence — FluentCRM fonctionne avec tous.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Je peux migrer depuis Mailchimp ?</summary>
+      <p>Oui. Exporte tes contacts en CSV depuis Mailchimp, importe-les dans FluentCRM en 2 minutes.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Page creee par <a href="https://schoolswp.com">schoolsWP</a> — FluentCRM est une marque de <a href="https://wpmanageninja.com">WPManageNinja</a>.</p>
+</footer>
+
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

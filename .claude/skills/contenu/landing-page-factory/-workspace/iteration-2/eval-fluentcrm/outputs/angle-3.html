@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FluentCRM : tes contacts sont chez Mailchimp, pas chez toi | schoolsWP</title>
+  <meta name="description" content="FluentCRM est 100% self-hosted. Tes donnees restent sur ton serveur WordPress. RGPD natif, pas de transfert hors UE. Formation gratuite incluse via schoolsWP.">
+  <meta property="og:title" content="Tes contacts sont chez Mailchimp. Pas chez toi.">
+  <meta property="og:description" content="FluentCRM : email marketing self-hosted, RGPD natif, donnees sous ton controle.">
+  <meta property="og:image" content="images/angle-3/hero.png">
+  <meta property="og:type" content="product">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FluentCRM",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "WordPress",
+    "offers": {
+      "@type": "Offer",
+      "price": "103",
+      "priceCurrency": "EUR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "180",
+      "bestRating": "5"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #00D400;
+      --primary-dark: #00A100;
+      --accent: #E668D4;
+      --bg-dark: #12111F;
+      --bg-medium: #212121;
+      --bg-section: #1A1930;
+      --text-main: #FAFBFD;
+      --text-secondary: #8F8DA5;
+      --text-subtle: #57556D;
+      --font-heading: 'Nunito Sans', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+      --alert: #B82105;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-main);
+      background: var(--bg-dark);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    header img { height: 36px; width: auto; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    .cta-disclosure {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      font-style: italic;
+    }
+
+    section { padding: 80px 0; }
+    @media (max-width: 768px) { section { padding: 50px 0; } }
+
+    h1 { font-family: var(--font-heading); font-weight: 700; font-size: 2rem; line-height: 1.2; margin-bottom: 20px; }
+    h2 { font-family: var(--font-heading); font-weight: 700; font-size: 1.75rem; line-height: 1.25; margin-bottom: 20px; }
+    h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; margin-bottom: 16px; }
+    p { margin-bottom: 16px; max-width: 720px; }
+
+    /* Hero */
+    .hero { padding: 100px 0 80px; text-align: center; }
+    .hero h1 { font-size: 2.4rem; max-width: 700px; margin: 0 auto 20px; }
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+    .hero .proof { margin-top: 24px; font-size: 0.95rem; color: var(--text-subtle); }
+    .hero-image {
+      margin-top: 48px;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Problem */
+    .problem { background: var(--bg-section); }
+    .problem p { color: var(--text-secondary); }
+    .risk-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+    .risk-list li {
+      padding: 12px 0 12px 32px;
+      position: relative;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .risk-list li::before {
+      content: "\26A0";
+      position: absolute;
+      left: 0;
+      color: var(--alert);
+    }
+
+    /* Solution */
+    .solution .safe-box {
+      background: rgba(0,212,0,0.06);
+      border: 1px solid rgba(0,212,0,0.15);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 24px 0;
+    }
+    .solution .safe-box p { color: var(--text-main); margin: 0 0 8px; }
+    .solution .safe-box p:last-child { margin: 0; }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 1rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .comparison-table th {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-subtle);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .comparison-table .safe { color: var(--primary); font-weight: 500; }
+    .comparison-table .risk { color: var(--alert); }
+    .comparison-table .highlight-col {
+      background: rgba(0,212,0,0.04);
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .feature-card {
+      background: var(--bg-medium);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.2s ease;
+    }
+    .feature-card:hover { border-color: var(--primary); }
+    .feature-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .feature-card p { color: var(--text-secondary); font-size: 1rem; margin: 0; }
+    .feature-icon {
+      width: 40px; height: 40px;
+      background: rgba(0,212,0,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+
+    /* Bonus */
+    .bonus {
+      background: linear-gradient(135deg, rgba(230,104,212,0.08), rgba(0,212,0,0.08));
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .bonus h2 { color: var(--accent); }
+    .bonus ul { list-style: none; text-align: left; max-width: 500px; margin: 24px auto; }
+    .bonus li { padding: 8px 0; padding-left: 28px; position: relative; color: var(--text-secondary); }
+    .bonus li::before { content: "\2713"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+    /* CTA Final */
+    .cta-final { text-align: center; }
+    .cta-final p { margin: 0 auto 24px; text-align: center; }
+    .objection {
+      background: var(--bg-medium);
+      border-radius: 12px;
+      padding: 24px 32px;
+      margin: 32px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+    .objection strong { color: var(--accent); }
+
+    /* FAQ */
+    .faq { background: var(--bg-section); }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .faq-item p { color: var(--text-secondary); margin: 0; }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      color: var(--text-subtle);
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .bonus { padding: 32px 24px; }
+      .comparison-table { font-size: 0.85rem; }
+      .comparison-table th, .comparison-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="https://schoolswp.com">
+        <img src="https://schoolswp.com/wp-content/uploads/2022/06/cropped-cropped-logo-schoolsWP-nom-white-sans-contour.png" alt="schoolsWP" />
+      </a>
+      <a href="#cta-final" class="cta-btn" style="padding: 10px 24px; font-size: 0.95rem;">Voir l'offre</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Tes contacts sont chez Mailchimp. Pas chez toi.</h1>
+      <p class="subtitle">FluentCRM stocke tout sur ton serveur WordPress. RGPD natif. Pas de transfert vers un SaaS americain. Tes donnees restent les tiennes.</p>
+      <a href="#cta-final" class="cta-btn">Acheter FluentCRM et recevoir la formation gratuite</a>
+      <p class="proof">100% self-hosted. 70 000+ entreprises font confiance a FluentCRM.</p>
+      <img src="images/angle-3/hero.png" alt="Illustration bouclier protégeant une base de données avec drapeau UE" class="hero-image" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <h2>Le probleme avec les SaaS email</h2>
+      <p>Tes contacts, leurs emails, leur historique d'achat, leurs preferences — tout ca est stocke sur les serveurs de Mailchimp. Aux Etats-Unis.</p>
+      <ul class="risk-list">
+        <li>Mailchimp peut fermer ton compte sans preavis (ca arrive regulierement)</li>
+        <li>Tes donnees transitent hors UE — conformite RGPD fragile</li>
+        <li>Un client exerce son droit de suppression ? Tu depends d'un outil que tu ne controles pas</li>
+        <li>Les CGU changent ? Tu n'as pas le choix</li>
+      </ul>
+      <p>Tu construis ton business sur les donnees de tes clients. Ces donnees devraient etre chez toi.</p>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="solution">
+    <div class="container">
+      <h2>Self-hosted : tes donnees, ton serveur</h2>
+      <p>FluentCRM est self-hosted. En clair : le plugin s'installe sur ton WordPress, et toutes les donnees restent dans ta base de donnees. Sur ton serveur. Dans ton pays.</p>
+      <div class="safe-box">
+        <p>Pas de transfert hors UE.</p>
+        <p>Pas de sous-traitant americain entre toi et tes contacts.</p>
+        <p>Tu sais exactement ou sont les donnees, qui y accede, et tu peux les supprimer en un clic.</p>
+      </div>
+      <p>Pour le RGPD, c'est la configuration ideale : tu es responsable du traitement, et les donnees ne quittent jamais ton infrastructure.</p>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section style="background: var(--bg-section);">
+    <div class="container">
+      <h2>Comparaison souverainete des donnees</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="highlight-col">FluentCRM</th>
+            <th>Mailchimp</th>
+            <th>ActiveCampaign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stockage donnees</td>
+            <td class="safe highlight-col">Ton serveur</td>
+            <td class="risk">Serveurs US</td>
+            <td class="risk">Serveurs US</td>
+          </tr>
+          <tr>
+            <td>Transfert hors UE</td>
+            <td class="safe highlight-col">Non (si hebergeur UE)</td>
+            <td class="risk">Oui</td>
+            <td class="risk">Oui</td>
+          </tr>
+          <tr>
+            <td>Suppression contact</td>
+            <td class="safe highlight-col">1 clic, instantane</td>
+            <td class="risk">Demande + delai</td>
+            <td class="risk">Demande + delai</td>
+          </tr>
+          <tr>
+            <td>Fermeture compte</td>
+            <td class="safe highlight-col">Impossible (tu es proprietaire)</td>
+            <td class="risk">Possible</td>
+            <td class="risk">Possible</td>
+          </tr>
+          <tr>
+            <td>Backup contacts</td>
+            <td class="safe highlight-col">= backup de ton site</td>
+            <td class="risk">Export manuel</td>
+            <td class="risk">Export manuel</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2>Securite et controle, concretement</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">&#128274;</div>
+          <h3>Self-hosted complet</h3>
+          <p>Tes donnees dans ta base MySQL. Pas de serveur tiers.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">&#127466;&#127482;</div>
+          <h3>Envoi via Amazon SES EU</h3>
+          <p>Configure la region eu-west (Irlande) pour rester dans l'UE.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">&#128101;</div>
+          <h3>Gestion RGPD</h3>
+          <p>Double opt-in, preferences de communication, suppression instantanee.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">&#127919;</div>
+          <h3>Segmentation locale</h3>
+          <p>Tags, listes, comportement. Tout traite en local, pas dans un cloud.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">&#128268;</div>
+          <h3>API et Webhooks</h3>
+          <p>Tu decides quelles donnees transitent et vers ou.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonus schoolsWP -->
+  <section>
+    <div class="container">
+      <div class="bonus">
+        <h2>Ton bonus schoolsWP</h2>
+        <p>En achetant FluentCRM via schoolsWP, tu recois :</p>
+        <ul>
+          <li>La formation "FluentCRM de A a Z" (valeur 197 EUR) — GRATUITE</li>
+          <li>12+ modules incluant un module dedie RGPD et configuration SES region UE</li>
+          <li>Acces a la communaute schoolsWP</li>
+        </ul>
+        <p style="color: var(--text-secondary); font-size: 1rem;">Teste et approuve. La formation t'explique comment configurer FluentCRM pour une conformite RGPD complete, pas a pas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-final" id="cta-final">
+    <div class="container">
+      <h2>Reprends le controle de tes donnees clients.</h2>
+      <p>Tes contacts sont l'actif le plus precieux de ton business. Arrete de les confier a un SaaS qui peut fermer ton compte demain.</p>
+
+      <div class="objection">
+        <p><strong>"C'est technique a installer ?"</strong></p>
+        <p style="color: var(--text-secondary);">Si tu sais installer un plugin WordPress, tu sais installer FluentCRM. La formation schoolsWP couvre la configuration complete en moins de 2 heures.</p>
+      </div>
+
+      <a href="#" class="cta-btn" style="font-size: 1.2rem; padding: 18px 42px;">Acheter FluentCRM et recevoir la formation gratuite</a>
+      <span class="cta-disclosure">Lien affilie — je recommande uniquement les outils que j'utilise au quotidien sur schoolsWP.</span>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Questions frequentes</h2>
+
+      <div class="faq-item">
+        <h3>Amazon SES n'est-il pas un service americain aussi ?</h3>
+        <p>Si, mais tu peux configurer la region EU (Irlande). Les emails transitent par des serveurs en Europe. Et SES ne stocke pas tes contacts — il ne fait que transiter les emails.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Mes contacts sont-ils vraiment dans ma base WordPress ?</h3>
+        <p>Oui. FluentCRM cree ses propres tables dans ta base de donnees MySQL. Tu peux les exporter, les sauvegarder, les migrer comme n'importe quelle table WordPress.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Comment gerer les demandes de suppression RGPD ?</h3>
+        <p>Tu cherches le contact dans FluentCRM et tu le supprimes. Toutes les donnees associees (tags, historique, sequences) disparaissent immediatement. Pas besoin de ticket support.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Est-ce que je peux utiliser un autre service d'envoi que SES ?</h3>
+        <p>Oui. FluentSMTP (gratuit) supporte aussi SendGrid, Mailgun, Postmark, et n'importe quel SMTP. Tu choisis le fournisseur qui correspond a ta politique de donnees.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Que se passe-t-il si mon hebergeur tombe ?</h3>
+        <p>Comme pour tout site WordPress : tu restaures ton backup. Tes contacts, sequences et historiques reviennent avec le site.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>schoolsWP — WordPress peut vraiment travailler pour toi.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .feature-card, .faq-item, .risk-list li').forEach(el => {
+      if (!el.classList.contains('fade-in')) {
+        el.classList.add('fade-in');
+      }
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
