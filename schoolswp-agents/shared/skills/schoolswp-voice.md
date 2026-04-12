@@ -5,7 +5,7 @@
 - Tagline : "WordPress. Clair. Structure. Utile."
 - Orthographe : toujours `schoolsWP` (jamais SchoolsWP, schoolswp, etc.)
 - Couleurs : primary #00D400, secondary #00A100, accent #E668D4
-- Typo : Nunito Sans (headings), Roboto (body)
+- Typo : Nunito Sans (titres), Roboto (corps)
 
 ## Regles strictes
 

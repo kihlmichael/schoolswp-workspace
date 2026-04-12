@@ -3,8 +3,8 @@
 ## WordPress
 
 - Hebergement : o2switch (serveur dedie)
-- Theme : Flavor (flavor theme)
-- Page builder : aucun — Gutenberg natif
+- Theme : Kadence + Kadence Blocks
+- Page builder : Gutenberg natif + FSE (Full Site Editing)
 - SEO : Rank Math PRO + SEOKey
 
 ## CRM & Email
