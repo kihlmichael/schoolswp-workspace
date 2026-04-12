@@ -109,3 +109,6 @@ coverage.json
 .firecrawl/
 .agent/
 .trash/
+data/youtube-transcriptions/*
+!data/youtube-transcriptions/*.md
+!data/youtube-transcriptions/*.py

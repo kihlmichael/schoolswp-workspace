@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lance ta formation en ligne avec TutorLMS — schoolsWP</title>
+    <meta name="description" content="Ta formation est prete. TutorLMS transforme ton WordPress en plateforme de vente de cours. Installation en 5 minutes. Code promo schoolsWP10 -10%.">
+    <meta property="og:title" content="Lance ta formation en ligne avec TutorLMS — schoolsWP">
+    <meta property="og:description" content="TutorLMS transforme ton WordPress en plateforme e-learning. 5 minutes d'installation. -10% avec schoolsWP10.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://schoolswp.com/tutor-lms/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TutorLMS",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "WordPress",
+        "offers": {
+            "@type": "Offer",
+            "price": "199",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2026-12-31"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "ratingCount": "950",
+            "bestRating": "5"
+        }
+    }
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --green: #00D400;
+            --green-dark: #00A100;
+            --blue: #0049f8;
+            --bg-white: #FAFBFD;
+            --bg-light: #F4F6FB;
+            --bg-alt: #EDF0F8;
+            --text: #212121;
+            --text-secondary: #8F8DA5;
+            --text-subtle: #57556D;
+            --accent: #E668D4;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: 'Roboto', system-ui, sans-serif;
+            color: var(--text);
+            background: var(--bg-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Nunito Sans', sans-serif; font-weight: 700; line-height: 1.3; }
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 1.5rem; }
+        p { font-size: 1.2rem; margin-bottom: 1rem; }
+        a { color: var(--blue); text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 60px 0; }
+        .section-alt { background: var(--bg-light); }
+        .section-alt2 { background: var(--bg-alt); }
+
+        .header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 24px; max-width: 960px; margin: 0 auto;
+        }
+        .header img { height: 36px; width: auto; }
+        .header-logos { display: flex; align-items: center; gap: 16px; }
+        .header-separator { width: 1px; height: 28px; background: #ddd; }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--green); color: var(--text); font-weight: 700;
+            padding: 16px 32px; border-radius: 8px; font-size: 1.1rem;
+            text-decoration: none; transition: background 0.2s, transform 0.15s;
+            border: none; cursor: pointer; text-align: center;
+        }
+        .cta-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+        .promo-banner {
+            background: var(--bg-alt); border: 2px dashed var(--green);
+            border-radius: 8px; padding: 12px 20px; text-align: center;
+            font-weight: 700; font-size: 1.1rem; margin-bottom: 16px;
+        }
+        .promo-code { color: var(--green-dark); font-size: 1.2rem; }
+
+        .hero { padding: 80px 0 60px; text-align: center; }
+        .hero h1 { margin-bottom: 16px; font-size: 2.4rem; }
+        .hero p { font-size: 1.25rem; color: var(--text-subtle); max-width: 640px; margin: 0 auto 24px; }
+        .hero-proof { font-size: 0.95rem; color: var(--text-secondary); margin-top: 16px; }
+
+        .problem p { max-width: 640px; }
+
+        .steps-section { margin-top: 32px; }
+        .step-block { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px; }
+        .step-num {
+            flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+            background: var(--green); color: var(--text); font-weight: 700;
+            font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
+        }
+        .step-content h4 { margin-bottom: 4px; font-size: 1.15rem; }
+        .step-content p { font-size: 1rem; color: var(--text-subtle); margin-bottom: 0; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 32px; }
+        .feature-card {
+            background: var(--bg-white); border-radius: 12px; padding: 24px;
+            border: 1px solid #E8EAF0; transition: box-shadow 0.2s;
+        }
+        .feature-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .feature-card h4 { color: var(--blue); margin-bottom: 8px; font-size: 1.15rem; }
+        .feature-card p { font-size: 1rem; margin-bottom: 0; color: var(--text-subtle); }
+
+        .testimonials { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+        .testimonial {
+            background: var(--bg-white); border-left: 4px solid var(--green);
+            padding: 24px; border-radius: 0 12px 12px 0;
+        }
+        .testimonial blockquote { font-style: italic; font-size: 1.05rem; margin-bottom: 8px; }
+        .testimonial cite { font-size: 0.9rem; color: var(--text-secondary); font-style: normal; }
+
+        .stats-bar { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 24px 0; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 1.5rem; font-weight: 700; color: var(--blue); }
+        .stat-label { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .bonus-box {
+            background: linear-gradient(135deg, #f0fdf0, var(--bg-light));
+            border: 2px solid var(--green); border-radius: 12px; padding: 32px;
+        }
+        .bonus-box h3 { color: var(--green-dark); margin-bottom: 16px; }
+        .bonus-module { margin-bottom: 20px; }
+        .bonus-module h4 { color: var(--text); font-size: 1.05rem; margin-bottom: 8px; }
+        .bonus-module ul { list-style: none; margin: 0; padding: 0; }
+        .bonus-module ul li { padding: 3px 0; font-size: 0.95rem; color: var(--text-subtle); }
+        .bonus-module ul li::before { content: "— "; color: var(--green); font-weight: 700; }
+        .bonus-summary { background: rgba(0,212,0,0.08); border-radius: 8px; padding: 16px; margin-top: 16px; }
+        .bonus-summary p { margin-bottom: 0; font-size: 1rem; }
+        .bonus-extras { list-style: none; margin: 12px 0; padding: 0; }
+        .bonus-extras li { padding: 4px 0; font-size: 1rem; }
+        .bonus-extras li::before { content: "+ "; color: var(--green); font-weight: 700; }
+        .bonus-upsell { font-size: 0.95rem; color: var(--text-subtle); margin-top: 16px; font-style: italic; }
+
+        .pricing-highlight {
+            background: var(--bg-white); border: 2px solid var(--green); border-radius: 12px;
+            padding: 32px; text-align: center; max-width: 480px; margin: 24px auto 0;
+        }
+        .pricing-highlight .pricing-price { font-size: 2.5rem; font-weight: 700; }
+        .pricing-highlight .pricing-period { font-size: 1rem; color: var(--text-secondary); margin-bottom: 16px; }
+
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h4 { color: var(--text); margin-bottom: 6px; font-size: 1.1rem; }
+        .faq-item p { font-size: 1rem; color: var(--text-subtle); margin-bottom: 0; }
+
+        .cta-section { text-align: center; padding: 60px 0; }
+        .affiliate-note { font-size: 0.85rem; color: var(--text-secondary); margin-top: 12px; font-style: italic; }
+
+        .footer { text-align: center; padding: 24px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid #E8EAF0; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .section { padding: 40px 0; }
+            .header { flex-direction: column; gap: 12px; }
+            .stats-bar { gap: 20px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .step-block { flex-direction: column; gap: 12px; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header style="background: var(--bg-white); border-bottom: 1px solid #E8EAF0;">
+    <div class="header">
+        <div class="header-logos">
+            <a href="https://schoolswp.com"><img src="https://schoolswp.com/wp-content/uploads/2022/06/logo-schoolsWP-nom-black-sans-contour-1.png" alt="Logo schoolsWP" height="36"></a>
+            <div class="header-separator"></div>
+            <img src="https://tutorlms.com/wp-content/uploads/2024/04/brand-assets-tutor-logo-dark.webp" alt="Logo TutorLMS" height="28">
+        </div>
+        <a href="https://schoolswp.com/tutor-lms/" class="cta-btn" style="padding: 10px 20px; font-size: 0.95rem;">Acheter avec -10%</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>Ta formation est prete. Lance-la.</h1>
+        <p>TutorLMS transforme ton site WordPress en plateforme de vente de cours. Installation en 5 minutes. Premiere vente aujourd'hui.</p>
+        <div class="promo-banner">
+            Code promo : <span class="promo-code">schoolsWP10</span> — 10% de reduction
+        </div>
+        <a href="https://schoolswp.com/tutor-lms/" class="cta-btn">Acheter TutorLMS avec -10% + formation gratuite</a>
+        <p class="hero-proof">100 000+ formateurs — Garantie 30 jours — 0% de commission</p>
+    </div>
+</section>
+
+<!-- Problem -->
+<section class="section section-alt">
+    <div class="container problem fade-in">
+        <h2>Tu as le contenu. Il te manque la plateforme.</h2>
+        <p>Tu as l'expertise. Tu as le contenu. Peut-etre meme des slides ou des videos deja pretes.</p>
+        <p>Mais tu n'as pas de plateforme. Et tu ne veux pas passer 3 semaines a configurer un truc complique.</p>
+        <p>Tu as deja un site WordPress. Il te manque juste le bon outil pour transformer ce site en machine a vendre des formations.</p>
+    </div>
+</section>
+
+<!-- Solution -->
+<section class="section">
+    <div class="container fade-in">
+        <h2>TutorLMS s'installe en 5 minutes</h2>
+        <p>Ce que tu peux faire des aujourd'hui :</p>
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="feature-card">
+                <h4>Cree ton cours</h4>
+                <p>Constructeur visuel drag-and-drop. Pas de code.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Ajoute des quiz</h4>
+                <p>10+ types de questions pour engager tes eleves.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Connecte les paiements</h4>
+                <p>Stripe ou PayPal en quelques clics.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Lance la vente</h4>
+                <p>Tes premiers eleves s'inscrivent dans l'heure.</p>
+            </div>
+        </div>
+        <p style="margin-top: 24px; color: var(--text-subtle);">En clair : si tu as un site WordPress, tu as deja 90% de l'infrastructure.</p>
+    </div>
+</section>
+
+<!-- 3 Steps -->
+<section class="section section-alt">
+    <div class="container fade-in">
+        <h2>3 etapes, c'est tout</h2>
+        <div class="steps-section">
+            <div class="step-block">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Installe</h4>
+                    <p>Active TutorLMS comme n'importe quelle extension WordPress. L'assistant de configuration te guide.</p>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Cree</h4>
+                    <p>Glisse tes modules, lecons et quiz dans le constructeur visuel. Ajoute des videos, des PDF, des exercices.</p>
+                </div>
+            </div>
+            <div class="step-block">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Vends</h4>
+                    <p>Connecte ta passerelle de paiement. Publie ton cours. Tes premiers eleves peuvent s'inscrire dans l'heure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="section section-alt2">
+    <div class="container">
+        <div class="stats-bar fade-in">
+            <div class="stat"><div class="stat-number">100 000+</div><div class="stat-label">sites eLearning</div></div>
+            <div class="stat"><div class="stat-number">4,7/5</div><div class="stat-label">WordPress.org</div></div>
+            <div class="stat"><div class="stat-number">4,5/5</div><div class="stat-label">Trustpilot</div></div>
+            <div class="stat"><div class="stat-number">4,5/5</div><div class="stat-label">Capterra</div></div>
+            <div class="stat"><div class="stat-number">0%</div><div class="stat-label">de commission</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+    <div class="container fade-in">
+        <h2>Ce qu'en disent les utilisateurs</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <blockquote>"With Tutor LMS you will be able to build your own Udemy-like online course experience for FREE!"</blockquote>
+                <cite>— John Whitford, Income Mesh</cite>
+            </div>
+            <div class="testimonial">
+                <blockquote>"It just flows when you are building and drag and drop helps out a lot."</blockquote>
+                <cite>— Jorge Edel A., CEO Veeme Media (Capterra)</cite>
+            </div>
+            <div class="testimonial">
+                <blockquote>"The simplicity of the platform has made the setup very easy, which is incredible as it makes my life much easier."</blockquote>
+                <cite>— Darien C. (Capterra)</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section section-alt">
+    <div class="container fade-in">
+        <h2>Les outils pour lancer</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>AI Studio</h4>
+                <p>Genere la structure de ton cours en un clic. Tu affines ensuite.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Quiz Builder</h4>
+                <p>10+ types de questions. Tes eleves progressent, tu mesures.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Subscriptions</h4>
+                <p>Acces mensuel ou annuel. Revenus previsibles.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Analytics</h4>
+                <p>Suis les inscriptions, les completions, les revenus. En temps reel.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="section">
+    <div class="container fade-in">
+        <h2>Tarif simple</h2>
+        <p style="text-align: center;">Un seul site ? Le plan Individual suffit. Toutes les features Pro incluses.</p>
+        <div class="pricing-highlight">
+            <div class="pricing-price">199 $</div>
+            <div class="pricing-period">/an — 1 site, tout inclus</div>
+            <p style="font-size: 0.95rem; color: var(--text-subtle); margin: 12px 0;">Lifetime disponible a 499 $ (paie une fois, utilise a vie)</p>
+            <p style="font-size: 1rem; margin-bottom: 16px;">Avec le code <strong>schoolsWP10</strong> : <strong>-10%</strong> sur tous les plans</p>
+            <a href="https://schoolswp.com/tutor-lms/" class="cta-btn" style="width: 100%;">Acheter avec -10% + formation gratuite</a>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 12px; margin-bottom: 0;">Zero commission sur tes ventes. Garantie 30 jours.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Bonus -->
+<section class="section section-alt">
+    <div class="container fade-in">
+        <div class="bonus-box">
+            <h3>Ton bonus schoolsWP</h3>
+            <p>En achetant TutorLMS via schoolsWP, tu recois la formation "Maitriser TutorLMS" — GRATUITE. Les 3 premiers modules sont disponibles des ton achat :</p>
+
+            <div class="bonus-module">
+                <h4>Module 1 — Demarrage & Installation (7 lecons)</h4>
+                <ul>
+                    <li>Pre-requis systeme pour heberger TutorLMS</li>
+                    <li>Installation TutorLMS Free + Pro pas a pas</li>
+                    <li>Activation de ta licence Pro</li>
+                    <li>Reglages Permalinks (eviter les erreurs 404)</li>
+                    <li>Plugins et themes compatibles (Kadence, Astra, Divi...)</li>
+                    <li>Import des donnees demo pour tester</li>
+                </ul>
+            </div>
+
+            <div class="bonus-module">
+                <h4>Module 2 — Interface & Navigation (7 lecons)</h4>
+                <ul>
+                    <li>Dashboard frontend : vue etudiant, instructeur et admin</li>
+                    <li>Navigation complete des menus : Cours, Categories, Etudiants, Quiz, Outils</li>
+                </ul>
+            </div>
+
+            <div class="bonus-module">
+                <h4>Module 3 — Reglages complets (9 lecons)</h4>
+                <ul>
+                    <li>General, Course, Design, Monetisation</li>
+                    <li>Advanced, Email, Certificats</li>
+                    <li>Notifications, Gradebook, Authentification</li>
+                </ul>
+            </div>
+
+            <div class="bonus-summary">
+                <p><strong>A la fin des 3 modules :</strong> TutorLMS est installe, configure et pret pour ton premier cours. 23 lecons, zero prise de tete.</p>
+            </div>
+
+            <ul class="bonus-extras">
+                <li>Le code <strong>schoolsWP10</strong> pour -10% sur ton achat</li>
+                <li>Acces a la communaute schoolsWP</li>
+            </ul>
+
+            <p class="bonus-upsell">Et si tu veux aller plus loin — creation de cours avancee, quiz, monetisation, certificats, integrations tierces — la formation complete (16 modules, ~130 lecons) est disponible sur schoolsWP.</p>
+
+            <p style="margin-top: 16px; font-weight: 700; margin-bottom: 0;">Teste et approuve.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section class="cta-section">
+    <div class="container">
+        <div class="promo-banner" style="max-width: 480px; margin: 0 auto 20px;">
+            Code promo : <span class="promo-code">schoolsWP10</span> — 10% de reduction
+        </div>
+        <a href="https://schoolswp.com/tutor-lms/" class="cta-btn" style="font-size: 1.2rem; padding: 18px 40px;">Acheter TutorLMS avec -10% + formation gratuite</a>
+        <p class="affiliate-note">Lien affilie — je recommande uniquement les outils que j'utilise au quotidien sur schoolsWP.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+    <div class="container fade-in">
+        <h2>Questions frequentes</h2>
+        <div style="margin-top: 24px;">
+            <div class="faq-item">
+                <h4>J'ai deja un site WordPress basique. Ca marche ?</h4>
+                <p>Oui. TutorLMS s'installe sur n'importe quel WordPress. Il est compatible avec la majorite des themes (Kadence, Astra, Divi, OceanWP...).</p>
+            </div>
+            <div class="faq-item">
+                <h4>Je peux commencer gratuitement ?</h4>
+                <p>Oui. La version gratuite sur WordPress.org permet de creer des cours et gerer des eleves. La version Pro ajoute les paiements, certificats et analytics.</p>
+            </div>
+            <div class="faq-item">
+                <h4>C'est complique a configurer ?</h4>
+                <p>Non. L'assistant de configuration te guide en 4 etapes. Et la formation schoolsWP gratuite couvre les 23 premieres lecons de A a Z.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Je peux vendre des formations en francais ?</h4>
+                <p>Oui. TutorLMS supporte le multilingue via WPML et Weglot. L'interface admin est traduisible.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Et si ca ne marche pas pour moi ?</h4>
+                <p>Garantie remboursement 30 jours, sans condition.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>schoolsWP — Michael KIHL | <a href="https://schoolswp.com">schoolswp.com</a></p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

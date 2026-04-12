@@ -1,0 +1,5 @@
+{
+  "_comment": "File de production Pinterest schoolsWP. Source d'etat unique.",
+  "_schema": "schemas/pin.schema.json",
+  "pins": []
+}

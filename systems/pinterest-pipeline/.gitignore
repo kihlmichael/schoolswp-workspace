@@ -1,0 +1,13 @@
+# Exports (images generees — volumineux)
+exports/*.png
+exports/*.jpg
+
+# Analytics snapshots (donnees quotidiennes)
+analytics/*.json
+
+# Logs
+logs/*.log
+
+# Ne jamais versionner les secrets
+.env
+.env.local

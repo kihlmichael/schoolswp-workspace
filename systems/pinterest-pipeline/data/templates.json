@@ -1,0 +1,45 @@
+{
+  "_comment": "Mapping template_key → Canva template ID. Remplir apres creation des templates.",
+  "_canva_designs": {
+    "pins_master": "DAFU6F7oeGo",
+    "pins_master_title": "PINTEREST | Epingles - Couverture Article Blog (1000 x 1500 px)",
+    "pins_master_pages": 348,
+    "boards_covers": "DAFcKw0FSZ0",
+    "boards_covers_title": "PINTEREST | Tableaux (1000 x 1000 px)",
+    "boards_covers_pages": 18
+  },
+  "_canva_mcp": {
+    "generate_design_type": "pinterest_pin",
+    "export_formats": ["png", "jpg", "pdf", "pptx", "mp4"],
+    "tested_at": "2026-04-03"
+  },
+  "templates": [
+    {
+      "template_key": "pin-tutoriel",
+      "name": "Tutoriel pas a pas",
+      "description": "Template pour guides et tutoriels (fond sombre, titre en haut, etapes numerotees)",
+      "canva_template_id": null,
+      "format": "1000x1500",
+      "use_cases": ["guides", "tutoriels", "how-to"],
+      "overlay_position": "top-third"
+    },
+    {
+      "template_key": "pin-comparatif",
+      "name": "Comparatif / VS",
+      "description": "Template pour comparatifs et avis (split layout, 2 colonnes, verdict)",
+      "canva_template_id": null,
+      "format": "1000x1500",
+      "use_cases": ["comparatifs", "avis", "vs"],
+      "overlay_position": "top-third"
+    },
+    {
+      "template_key": "pin-listicle",
+      "name": "Liste / Top N",
+      "description": "Template pour listes et classements (chiffre dominant, items empiles)",
+      "canva_template_id": null,
+      "format": "1000x1500",
+      "use_cases": ["listes", "top", "erreurs", "astuces"],
+      "overlay_position": "top-third"
+    }
+  ]
+}
