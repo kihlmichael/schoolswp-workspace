@@ -24,7 +24,10 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 sys.stdout.reconfigure(encoding='utf-8')
+load_dotenv()
 
 try:
     from google.auth.transport.requests import Request
@@ -40,7 +43,9 @@ except ImportError:
 
 SOURCE_FOLDER_ID = '1beNcu0IOEFgPksNZKKKI8hGgsANLyIaY'   # 01_A faire
 DEST_FOLDER_ID   = '1Z_faJJyjNvwpK6eSTytbu0cKQ8Ijkflb'   # 02_Terminé
-GEMINI_API_KEY   = 'AIzaSyAb8-0N3EOn_T27-L6bB9sEeRu88JcRUX0'
+GEMINI_API_KEY   = os.getenv('GEMINI_API_KEY')
+if not GEMINI_API_KEY:
+    raise RuntimeError('GEMINI_API_KEY manquante — remplir .env (voir .env.example)')
 GEMINI_URL       = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
 QUALITY_THRESHOLD = 6   # score overall >= 6 → photo conservée
 TOP_N            = 20   # nombre de meilleures photos

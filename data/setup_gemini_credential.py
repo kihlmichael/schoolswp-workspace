@@ -1,8 +1,14 @@
 """
 Create Gemini credential in n8n + update Analyser avec Gemini node to use it.
 """
-import sys, json, urllib.request, urllib.error
+import os, sys, json, urllib.request, urllib.error
+from dotenv import load_dotenv
 sys.stdout.reconfigure(encoding='utf-8')
+load_dotenv()
+
+GEMINI_KEY = os.getenv('GEMINI_API_KEY')
+if not GEMINI_KEY:
+    raise RuntimeError('GEMINI_API_KEY manquante — remplir .env (voir .env.example)')
 
 with open('.mcp.json') as f:
     cfg = json.load(f)
@@ -27,7 +33,6 @@ def api(method, path, body=None):
         return None
 
 # ── 1. Create credential — try different data shapes ─────────────────────────
-GEMINI_KEY = 'AIzaSyAb8-0N3EOn_T27-L6bB9sEeRu88JcRUX0'
 CRED_ID = None
 
 # Try googlePalmApi with host
