@@ -168,6 +168,15 @@ class BaseContentAgent:
 
 **Multi-provider LLM** (`core/agents-py/providers/`) : abstraction via préfixe model (`gemini:`, `openai:`, `deepseek:`, `ollama:`, ou sans préfixe = Anthropic). Voir `providers/base.py` pour l'interface `LLMProvider`.
 
+Exemples :
+
+- `"claude-sonnet-4-6"` → Anthropic (défaut)
+- `"openai:gpt-4o"` → OpenAI
+- `"gemini:gemini-2.0-flash"` → Gemini
+- `"ollama:llama3.3:70b"` → Ollama local
+
+Configurer via `MODEL_WRITER` env var ou `--model` CLI.
+
 **Path traversal protection** — tout CLI utilisant des chemins fichiers doit passer par :
 - `safe_read_path(file_arg)` → valide + résout un chemin en lecture (lève `ValueError` si hors CWD)
 - `safe_write_path(path_arg)` → idem pour l'écriture
@@ -183,6 +192,16 @@ Publish Score = SEO×0.30 + LLM×0.25 + Conversion×0.25 + Autorité×0.20
 ```
 
 Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-79 → révision ciblée | <70 → réécriture
+
+**Pipeline stratégique recommandé (exécuter dans l'ordre) :**
+
+```bash
+.venv/Scripts/python -m agents.knowledge_graph.cli            # → content/docs/knowledge-graph.md
+.venv/Scripts/python -m agents.pillar_authority.cli --all     # → audit/piliers/summary.md
+.venv/Scripts/python -m agents.cocon_builder.cli --pillar lms # → cocons/lms.md
+.venv/Scripts/python -m agents.roi_editorial_plan.cli         # → plans/plan-roi.md
+.venv/Scripts/python -m agents.strategic_brain.cli            # → decisions/brain-report.md
+```
 
 **Logs** : `logs/agents.log` (rotation 10 MB × 5 fichiers). Format : `YYYY-MM-DDTHH:MM:SS | LEVEL | logger | message`. DEBUG → fichier uniquement, WARNING+ → console + fichier.
 
