@@ -26,13 +26,7 @@ class MonAgent(BaseContentAgent):
     system_prompt = "..."
 
     async def run(self, *, param: str, **kwargs) -> str:
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=8000,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": param}],
-        )
-        return response.content[0].text
+        return await self.call_llm(param, max_tokens=8000)
 ```
 
 ## Conventions CLI (cli.py)

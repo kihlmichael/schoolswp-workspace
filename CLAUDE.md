@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **Trois systèmes d'agents distincts — ne pas confondre :**
+>
+> - `core/agents-py/` — scripts Python (28 modules CLI, lancés via `.venv/Scripts/python -m agents.<module>.cli`)
+> - `agents/*.md` — fichiers de config Claude Code subagents (frontmatter YAML : name, model, description)
+> - `schoolswp-agents/` — fleet de 4 instances Claude Code autonomes, chacune avec son propre `CLAUDE.md`
+
 ## Data Safety — Suppressions
 
 Interdiction totale d'utiliser `rm` (dont `rm -rf`), `sudo`, ou toute commande destructrice.
@@ -28,6 +34,14 @@ Si `uv` n'est pas dans le PATH : `& "$env:APPDATA\Python\Python313\Scripts\uv.ex
 
 Variables clés `.env` : `ANTHROPIC_API_KEY` (obligatoire), `MODEL_WRITER` (défaut: `claude-sonnet-4-6`), `FIRECRAWL_API_KEY`, `N8N_*`, `GOOGLE_WORKSPACE_CLI_CLIENT_ID/SECRET`. Recherche : `agents/.env` → `.env` → `multi-agent-system/.env`.
 
+## Session Start
+
+Avant toute tâche, lire dans cet ordre :
+
+1. `core/tasks/todo.md` — état de la mission en cours
+2. `core/tasks/lessons.md` — leçons documentées (obligatoire avant tout refactoring d'agents)
+3. `CLAUDE.local.md` — contraintes temporaires de session (s'il contient quelque chose)
+
 ## Python Environment
 
 Projet `schoolswp-agents` v0.1.0 — Python `>=3.11`. Gestionnaire : `uv` (lock file `uv.lock`). Synchroniser : `uv sync` depuis la racine projet.
@@ -36,19 +50,21 @@ Dépendances principales : `anthropic>=0.49.0`, `python-dotenv>=1.0.0`. Dev : `p
 
 **Venv** : `.venv/Scripts/python` — seul venv actif. Sur Windows + Bash, `activate` ne persiste pas — utiliser le chemin complet.
 
-> **Note** : `brain.bat` et `brain-lite.bat` référencent un legacy venv (`tools/scripts/legacy/scripts/.venv/`) qui n'existe plus. Utiliser le root venv directement : `.venv/Scripts/python -m agents.content_factory.cli ...`
-
 ## Key Commands
 
 **Content factory (pipeline complet — génération + audit + cluster) :**
 
-```bat
+```bash
+# Via .bat (raccourci Windows — appelle .venv\Scripts\python)
 brain.bat --keyword "lms wordpress rentable" --intent décisionnelle --pillar LMS
-brain.bat --keyword "tutor lms vs learndash" --intent comparative --pillar LMS --include-ner
-brain.bat --file content/articles/lms/v3.md --kw "lms wordpress" --intent décisionnelle
+
+# Ou directement via Python
+.venv/Scripts/python -m agents.content_factory.cli --keyword "lms wordpress rentable" --intent décisionnelle --pillar LMS
+.venv/Scripts/python -m agents.content_factory.cli --keyword "tutor lms vs learndash" --intent comparative --pillar LMS --include-ner
+.venv/Scripts/python -m agents.content_factory.cli --file content/articles/lms/v3.md --kw "lms wordpress" --intent décisionnelle
 ```
 
-Flags `brain.bat` : `--keyword` | `--file` + `--kw`, `--intent`, `--pillar`, `--objective`, `--include-serp`, `--include-ner`, `--no-links`, `--no-cluster`, `--force`, `--save-dir`, `--model`
+Flags : `--keyword` | `--file` + `--kw`, `--intent`, `--pillar`, `--objective`, `--include-serp`, `--include-ner`, `--no-links`, `--no-cluster`, `--force`, `--save-dir`, `--model`
 
 - `--intent` : `informationnelle` | `commerciale` | `décisionnelle` | `comparative` | `navigationnelle`
 - `--pillar` : `LMS` | `CRM` | `SEO` | `automatisation` | `ecommerce` | `freelance` | `formation`
@@ -56,11 +72,10 @@ Flags `brain.bat` : `--keyword` | `--file` + `--kw`, `--intent`, `--pillar`, `--
 
 **Brain Lite (pipeline 5 étapes, sans NER/SERP) :**
 
-```bat
+```bash
 brain-lite.bat --keyword "fluentcrm avis" --intent informationnelle --pilier crm
+# Ou: .venv/Scripts/python -m agents.article_pipeline.brain_lite_cli --keyword "fluentcrm avis" --intent informationnelle --pilier crm
 ```
-
-Entry point réel : `agents.article_pipeline.brain_lite_cli` (le `.bat` est un wrapper).
 
 **Agents individuels** (pattern : `.venv/Scripts/python -m agents.<module>.cli`) :
 
@@ -108,6 +123,21 @@ Fixtures (`tests/conftest.py`) : `fake_env` (mock `ANTHROPIC_API_KEY` + `MODEL_W
 | `test_publish_ready_contract.py` | Contrat publish_ready (4 audits parallèles) |
 | `test_seo_auditor_agent.py` | Agent SEO auditor — logique métier |
 | `test_seo_auditor_cli.py` | CLI parsing seo_auditor |
+| `test_providers.py` | Multi-provider LLM (resolve_provider, préfixes model) |
+
+**Ajouter un test** : créer `tests/test_<module>.py`, importer la fixture `fake_env` pour mocker les env vars. Pattern type :
+
+```python
+import pytest
+from agents.<module>.agent import MonAgent
+
+async def test_mon_agent_run(fake_env):
+    agent = MonAgent()
+    assert agent.name == "mon-agent"
+    # Ne pas appeler l'API réelle — mocker call_llm ou utiliser mock_anthropic_client
+```
+
+Coverage minimum : 50% (`fail_under` dans `pyproject.toml`). Les `cli.py` sont exclus de la couverture.
 
 **Skills slash commands** (`.claude/skills/`) : `/audit`, `/brain-lite`, `/publish-repo`, `/skill-creator`, `/todo`
 
@@ -125,16 +155,18 @@ Résumé : 28 agents Python héritant de `BaseContentAgent`, async, retourne mar
 
 ```python
 class BaseContentAgent:
-    name: str = "base"                    # identifiant agent
+    name: str = "base"                    # identifiant kebab-case
     system_prompt: str = ""               # prompt système
     max_tokens: int = 4096               # limite par défaut (surcharger si besoin)
     def __init__(self, model: str | None = None):
-        self.model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
-        self._client = AsyncAnthropic()
+        raw_model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
+        self._provider, self.model = resolve_provider(raw_model)  # multi-provider (Anthropic, OpenAI, Gemini, DeepSeek, Ollama)
     async def call_llm(self, user_message: str, *, max_tokens: int | None = None) -> str:
         # Méthode standard — élimine le boilerplate (system prompt + model auto-injectés)
     async def run(self, **kwargs) -> str:  # DOIT retourner du markdown
 ```
+
+**Multi-provider LLM** (`core/agents-py/providers/`) : abstraction via préfixe model (`gemini:`, `openai:`, `deepseek:`, `ollama:`, ou sans préfixe = Anthropic). Voir `providers/base.py` pour l'interface `LLMProvider`.
 
 **Path traversal protection** — tout CLI utilisant des chemins fichiers doit passer par :
 - `safe_read_path(file_arg)` → valide + résout un chemin en lecture (lève `ValueError` si hors CWD)
@@ -142,16 +174,7 @@ class BaseContentAgent:
 
 Logger racine : `logging.getLogger("agents")` — les sous-agents utilisent `logging.getLogger("agents.mon_agent")`.
 
-**Principaux entry points :**
-
-| Module | Rôle |
-| --- | --- |
-| `agents.content_factory.cli` | Pipeline complet : strategy → article → audit → cluster (`brain.bat`) |
-| `agents.article_pipeline.cli` | Pipeline séquentiel 5-7 agents (Writer→Auditor→Editor→LLM→Meta) |
-| `agents.schoolswp_brain.cli` | Agent stratégique (4 modes : seo-writer, plugin-comparator, wp-architect, automation-consultant) |
-| `agents.publish_ready.cli` | 4 audits parallèles (SEO + LLM + Conversion + Topical) |
-| `agents.strategic_brain.cli` | Orchestrateur décisionnel → commandes CLI prêtes |
-| `agents.seo_auditor.cli` | Audit SEO /100 + `--fix` auto-correct |
+**Principaux entry points, pipeline stratégique et table complète des 28 modules CLI** → `.claude/rules/python-agents.md` (chargé auto dans `core/agents-py/`).
 
 **Publish Score (publish_ready.cli) :**
 
@@ -160,16 +183,6 @@ Publish Score = SEO×0.30 + LLM×0.25 + Conversion×0.25 + Autorité×0.20
 ```
 
 Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-79 → révision ciblée | <70 → réécriture
-
-**Pipeline stratégique recommandé (exécuter dans l'ordre) :**
-
-```bash
-.venv/Scripts/python -m agents.knowledge_graph.cli            # → content/docs/knowledge-graph.md
-.venv/Scripts/python -m agents.pillar_authority.cli --all     # → audit/piliers/summary.md
-.venv/Scripts/python -m agents.cocon_builder.cli --pillar lms # → cocons/lms.md
-.venv/Scripts/python -m agents.roi_editorial_plan.cli         # → plans/plan-roi.md
-.venv/Scripts/python -m agents.strategic_brain.cli            # → decisions/brain-report.md
-```
 
 **Logs** : `logs/agents.log` (rotation 10 MB × 5 fichiers). Format : `YYYY-MM-DDTHH:MM:SS | LEVEL | logger | message`. DEBUG → fichier uniquement, WARNING+ → console + fichier.
 
@@ -180,7 +193,8 @@ Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-7
 ```text
 projects/schoolswp/
 ├── agents/             # Namespace package (.env only — CLIs use sys.path.insert, conftest registers sys.modules)
-│   └── *.md            # Claude Code agent configs (YAML frontmatter: name, model, description)
+│   ├── *.md            # Claude Code agent configs (YAML frontmatter: name, model, description)
+│   └── telegram-claude/  # Pont Telegram → Claude (Node.js, own .git, server.js + webhooks)
 ├── core/
 │   ├── agents-md/      # LLM system prompts .md par agent Python (INDEX.md is the index)
 │   ├── agents-py/      # Python agent source files (base.py + one subdir per agent)
@@ -202,11 +216,14 @@ projects/schoolswp/
 │   ├── multi-agent-system/    # Agent orchestration framework
 │   ├── seo-workflow/   # SEO automation pipeline
 │   ├── security/       # Security audit reports
+│   ├── pinterest-pipeline/  # Pinterest automation pipeline
 │   └── n8n-backup/     # Backup scripts
 ├── apps/
 │   ├── video-marketing/ # Remotion video generation (active, own CLAUDE.md — theme.ts + texts.ts are source of truth)
 │   ├── vscode-agent-visual/  # VSCode agent extension (active)
 │   ├── telegram-bot/   # Node.js Telegram bot
+│   ├── brand-reveal/   # Brand reveal app
+│   ├── claude-telegram-poc/  # Telegram + Claude POC
 │   └── _archive/, _prototypes/  # Legacy/experimental
 ├── content/
 │   ├── articles/       # Generated articles (save-dir outputs from pipeline)
@@ -223,6 +240,7 @@ projects/schoolswp/
 ├── data/               # Reports, artifacts, outputs
 ├── tests/              # pytest tests (asyncio_mode = auto)
 ├── *.py (root)         # 9 scripts n8n one-shot (fix_workflow.py, patch_*.py) — maintenance workflows via API
+├── gmail-filters.xml   # Export filtres Gmail (config persistante — réimportable dans Gmail Settings)
 └── .claude/            # Claude Code rules, commands, local skills
 ```
 
@@ -252,9 +270,7 @@ When reasoning about schoolsWP strategy, always work through these layers in seq
 
 ## Branding
 
-→ Détails dans `.claude/rules/branding.md` (chargé auto quand tu travailles dans `content/`)
-
-Résumé : toujours `schoolsWP`, tutoiement, mots interdits. Source de vérité : `content/docs/BRAND_RULES.md`
+Toujours `schoolsWP` (jamais schoolswp, SchoolsWP, etc.), tutoiement, mots interdits dans `.claude/rules/branding.md`. Source de vérité : `content/docs/BRAND_RULES.md`.
 
 ## Code Conventions
 
@@ -270,11 +286,22 @@ Résumé : toujours `schoolsWP`, tutoiement, mots interdits. Source de vérité 
 
 **Branches** — `feature/*`, `fix/*`, `chore/*` depuis `main`
 
+## Session Naming
+
+Convention pour nommer les sessions Claude Code (via `/rename`) :
+
+- Feature : `feature/nom-court` (ex: `feature/lms-search`)
+- Fix : `fix/description-bug` (ex: `fix/pipeline-timeout`)
+- Audit : `audit/cible` (ex: `audit/seo-homepage`)
+- Content : `content/sujet` (ex: `content/tutor-lms-guide`)
+
+Nommer chaque session dès qu'elle dépasse 5 échanges.
+
 ## Scoped Rules (`.claude/rules/`)
 
-Regles chargees automatiquement selon le dossier de travail :
+Règles chargées automatiquement quand Claude **lit un fichier** correspondant au glob `paths:` du frontmatter (pas au changement de dossier courant) :
 
-| Fichier | Scope | Contenu |
+| Fichier | Glob `paths:` | Contenu |
 | --- | --- | --- |
 | `python-agents.md` | `core/agents-py/**` | Architecture agents, modules CLI, pipeline |
 | `n8n-integration.md` | `systems/**` | typeVersions, contraintes Code node, nommage |
@@ -283,13 +310,7 @@ Regles chargees automatiquement selon le dossier de travail :
 
 ## n8n Integration
 
-→ Détails complets dans `.claude/rules/n8n-integration.md` (chargé auto quand tu travailles dans `systems/`)
-
-Résumé : instance `https://schoolswp-n8n.wp1.host`, MCP dans `.mcp.json`, ne jamais modifier les JSON a la main. typeVersions, contraintes Code node et nommage dans la rule.
-
-## Tools & Services
-
-→ Détails dans `.claude/rules/tools-services.md` (chargé auto quand tu travailles dans `tools/`)
+Instance : `https://schoolswp-n8n.wp1.host`. Ne jamais modifier les JSON de workflow à la main — passer par le MCP `n8n-mcp`. Détails (typeVersions, contraintes Code node, nommage) : `.claude/rules/n8n-integration.md`.
 
 ## Pre-commit Hooks
 
@@ -301,7 +322,7 @@ Hooks exécutés dans l'ordre : 1. `secrets-scan` (détecte clés/tokens), 2. `r
 
 Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 
-3 checks : `ruff check` (lint) → `ruff format --check` → `pytest tests/ -v --cov --cov-report=term-missing`. Pas de deploy, pas de secrets — juste la barriere anti-regression. CI utilise `uv run` (pas `.venv/Scripts/python`). Coverage minimum : `fail_under = 40`, source `core/agents-py`, omit `*/cli.py`, `*/brain_lite_cli.py`, `*/__main__.py` (configuré dans `pyproject.toml`).
+3 checks : `ruff check` (lint) → `ruff format --check` → `pytest tests/ -v --cov --cov-report=term-missing`. Pas de deploy, pas de secrets — juste la barriere anti-regression. CI utilise `uv run` (pas `.venv/Scripts/python`). Coverage minimum : `fail_under = 50`, source `core/agents-py`, omit `*/cli.py`, `*/brain_lite_cli.py`, `*/__main__.py` (configuré dans `pyproject.toml`).
 
 ## Security
 
@@ -317,17 +338,19 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 3. Vérification
 4. Lessons dans `core/tasks/lessons.md`
 
-**Lessons clés** (10 documentées) : path traversal (#1), secrets gitignore fortress (#2), venv Windows = chemin complet (#5), signatures agents = grep tous les appelants (#10). Lire `core/tasks/lessons.md` avant tout refactoring d'agents.
+**Lessons clés** : path traversal, secrets gitignore fortress, venv Windows = chemin complet, signatures agents = grep tous les appelants. Liste complète et à jour dans `core/tasks/lessons.md` — à lire avant tout refactoring d'agents.
 
 ## Skills Registry
 
-Skills Claude Code pour ce projet répartis sur :
+Skills Claude Code organises en 14 categories dans `.claude/skills/` (voir `INDEX.md` pour la liste complete) :
 
-| Emplacement | Rôle |
-| --- | --- |
-| `.claude/skills/` (projet) | Skills locaux schoolsWP |
-| `d:\VS Code\CLAUDE CODE\.claude\skills\` (workspace) | Skills workspace — 83 skills FR (n8n, WP, SEO…) |
-| `.agents/skills/` (workspace) | Source library — 42 skills, descriptions FR synchronisées |
+| Emplacement | Skills | Rôle |
+| --- | --- | --- |
+| `.claude/skills/` (projet) | variable | Skills locaux schoolsWP, organisés par catégorie |
+| `d:\VS Code\CLAUDE CODE\.claude\skills\` (workspace) | variable | Skills workspace FR (n8n, WP, SEO…) |
+| `.agents/skills/` (workspace) | variable | Source library, descriptions FR synchronisées |
+
+> Compte exact : voir `INDEX.md` de chaque dossier ou lancer `skills_registry.py --sync`. Les nombres dérivent vite — ne pas les figer ici.
 
 **Sync registre vers Google Sheets :**
 
@@ -363,6 +386,7 @@ Skills Claude Code pour ce projet répartis sur :
 - `core/agents-py/CLAUDE.md` — conventions Python agents, patterns, création d'agent
 - `systems/n8n/CLAUDE.md` — typeVersions confirmées, nommage, contraintes Code node
 - `apps/video-marketing/CLAUDE.md` — Remotion video system, theme.ts/texts.ts governance, QA protocol
+- `apps/vscode-agent-visual/CLAUDE.md` — VS Code extension architecture, postMessage IPC, Canvas animation
 
 ### Contribution
 

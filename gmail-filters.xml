@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+  <title>Mail Filters</title>
+
+  <!-- 📰 Newsletters — archiver automatiquement -->
+  <entry>
+    <category term='filter'/>
+    <title>Newsletters SEO/Marketing</title>
+    <apps:property name='from' value='np@neilpatel.com OR james@mail.hunter.io OR andrei.tit@ahrefs.com OR lucio@link-finder.fr OR looker-studio-noreply@google.com'/>
+    <apps:property name='label' value='📰 Newsletters'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🔔 Notifications — archiver automatiquement -->
+  <entry>
+    <category term='filter'/>
+    <title>Notifications Google</title>
+    <apps:property name='from' value='sc-noreply@google.com OR adsense-noreply@google.com OR payments-noreply@google.com OR googlebase-noreply@google.com OR noreply@youtube.com'/>
+    <apps:property name='label' value='🔔 Notifications'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <entry>
+    <category term='filter'/>
+    <title>Notifications Domaines</title>
+    <apps:property name='from' value='noreply@share-dns.net'/>
+    <apps:property name='label' value='🔔 Notifications'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🛒 Achats — garder en inbox -->
+  <entry>
+    <category term='filter'/>
+    <title>Achats et livraisons</title>
+    <apps:property name='from' value='store_eu@asus.com OR noreply@asus.com OR pkginfo@ups.com OR googleplay-noreply@google.com'/>
+    <apps:property name='label' value='🛒 Achats'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🤖 Automatisations — archiver automatiquement -->
+  <entry>
+    <category term='filter'/>
+    <title>Automatisations schoolsWP</title>
+    <apps:property name='subject' value='[schoolsWP]'/>
+    <apps:property name='label' value='🤖 Automatisations'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🧰 SaaS & Outils — garder en inbox -->
+  <entry>
+    <category term='filter'/>
+    <title>SaaS et Outils</title>
+    <apps:property name='from' value='no-reply@email.claude.com OR team@mail.perplexity.ai OR noreply@gumroad.com OR support@rapidapi.com OR hello@news.ottokit.com OR noreply@catchdoms.com'/>
+    <apps:property name='label' value='🧰 SaaS &amp; Outils'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+</feed>

@@ -1,0 +1,195 @@
+{
+  "name": "[InDev] Sheets > Google Docs: Veille bihebdo draft generator (W102)",
+  "nodes": [
+    {
+      "id": "m1111111-1111-4111-8111-111111111111",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "parameters": {}
+    },
+    {
+      "id": "m2222222-2222-4222-8222-222222222222",
+      "name": "Read issue_items (selected)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [460, 300],
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "issue_items", "mode": "name" },
+        "filtersUI": {
+          "values": [
+            { "lookupColumn": "issue_id", "lookupValue": "={{ $env.CURRENT_ISSUE_ID }}" }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+      }
+    },
+    {
+      "id": "m3333333-3333-4333-8333-333333333333",
+      "name": "Read canonical_items",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [680, 300],
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "canonical_items", "mode": "name" },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+      }
+    },
+    {
+      "id": "m4444444-4444-4444-8444-444444444444",
+      "name": "Join + group by section",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300],
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "const issueItems = $('Read issue_items (selected)').all().map(x => x.json);\nconst canonical = $input.all().map(x => x.json);\nconst byId = Object.fromEntries(canonical.map(c => [c.item_id, c]));\nconst joined = issueItems.map(ii => ({ ...ii, canonical: byId[ii.item_id] || {} }));\nconst sectionsOrder = ['sujet_principal','mises_a_jour_plugins','breves','offre','reco','pedagogie','business'];\nconst grouped = {};\nfor (const s of sectionsOrder) grouped[s] = [];\nfor (const j of joined) {\n  const s = j.section_type || 'breves';\n  if (!grouped[s]) grouped[s] = [];\n  grouped[s].push(j);\n}\nfor (const s of Object.keys(grouped)) grouped[s].sort((a,b) => (a.display_order||0) - (b.display_order||0));\nreturn [{ json: { grouped, order: sectionsOrder, issue_id: $env.CURRENT_ISSUE_ID } }];"
+      }
+    },
+    {
+      "id": "m5555555-5555-4555-8555-555555555555",
+      "name": "LLM rewrite markdown",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1120, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-6\",\n  \"max_tokens\": 3000,\n  \"system\": \"Tu rediges la newsletter bihebdo schoolsWP. Regles: marque 'schoolsWP' (jamais autre casse), tutoiement, pas de 'game-changer'/'revolutionnaire'. Structure: # Titre edition, puis sections dans l'ordre recu. Pour chaque item, 4 lignes courtes: **Fait** / **Pourquoi c'est important** / **Pour qui** (citer freelance/createur/formateur/independant sur sujet principal) / **A retenir**. Sortie: markdown pur, aucune meta-explication.\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Edition: {{ $json.issue_id }}\\n\\nItems groupes par section (JSON):\\n{{ JSON.stringify($json.grouped) }}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": { "id": "PLACEHOLDER", "name": "Anthropic_Prod_Header" }
+      }
+    },
+    {
+      "id": "m6666666-6666-4666-8666-666666666666",
+      "name": "Extract markdown",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1340, 300],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "md1",
+              "name": "markdown",
+              "value": "={{ $json.content[0].text }}",
+              "type": "string"
+            },
+            {
+              "id": "md2",
+              "name": "doc_title",
+              "value": "=schoolsWP Veille - {{ $env.CURRENT_ISSUE_ID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "m7777777-7777-4777-8777-777777777777",
+      "name": "Create Google Doc",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [1560, 300],
+      "parameters": {
+        "operation": "create",
+        "title": "={{ $json.doc_title }}",
+        "folderId": { "__rl": true, "value": "={{ $env.VEILLE_DRAFTS_FOLDER_ID }}", "mode": "id" },
+        "simple": false
+      },
+      "credentials": {
+        "googleDocsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleDocs_Prod_OAuth2" }
+      }
+    },
+    {
+      "id": "m8888888-8888-4888-8888-888888888888",
+      "name": "Insert content",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [1780, 300],
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $json.documentId }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('Extract markdown').item.json.markdown }}",
+              "index": 1
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "googleDocsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleDocs_Prod_OAuth2" }
+      }
+    },
+    {
+      "id": "m9999999-9999-4999-8999-999999999999",
+      "name": "Update newsletter_issues",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [2000, 300],
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
+        "sheetName": { "__rl": true, "value": "newsletter_issues", "mode": "name" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": ["issue_id"],
+          "value": {
+            "issue_id": "={{ $env.CURRENT_ISSUE_ID }}",
+            "status": "draft",
+            "draft_doc_url": "=https://docs.google.com/document/d/{{ $('Create Google Doc').item.json.documentId }}/edit"
+          }
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+      }
+    }
+  ],
+  "connections": {
+    "Manual Trigger": { "main": [[{ "node": "Read issue_items (selected)", "type": "main", "index": 0 }]] },
+    "Read issue_items (selected)": { "main": [[{ "node": "Read canonical_items", "type": "main", "index": 0 }]] },
+    "Read canonical_items": { "main": [[{ "node": "Join + group by section", "type": "main", "index": 0 }]] },
+    "Join + group by section": { "main": [[{ "node": "LLM rewrite markdown", "type": "main", "index": 0 }]] },
+    "LLM rewrite markdown": { "main": [[{ "node": "Extract markdown", "type": "main", "index": 0 }]] },
+    "Extract markdown": { "main": [[{ "node": "Create Google Doc", "type": "main", "index": 0 }]] },
+    "Create Google Doc": { "main": [[{ "node": "Insert content", "type": "main", "index": 0 }]] },
+    "Insert content": { "main": [[{ "node": "Update newsletter_issues", "type": "main", "index": 0 }]] }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "timezone": "Europe/Paris"
+  },
+  "tags": [{ "name": "veille" }, { "name": "schoolswp" }]
+}

@@ -1,0 +1,252 @@
+---
+name: article-audit-score
+description: >
+  Applique la grille d'auto-audit V2 schoolsWP sur un article existant et retourne un score /100
+  detaille (12 criteres), un verdict de publication et des corrections actionnables par priorite.
+  Utilise ce skill des que l'utilisateur veut auditer un article, verifier s'il est pret a publier,
+  obtenir un score de qualite, ou dit "audit score", "grille d'audit", "score article", "est-ce
+  que cet article est pret ?", "verifie la qualite de...", "audit V2", "note l'article",
+  "article-audit-score fichier.md".
+---
+
+# /article-audit-score — Grille d'auto-audit V2 schoolsWP
+
+Evalue un article schoolsWP selon 12 criteres et retourne un score /100 avec des corrections priorisees.
+
+## Entrees
+
+`$ARGUMENTS` — chemin vers un fichier markdown article.
+
+- Si un chemin `.md` est fourni, lire le fichier et l'auditer.
+- Si aucun argument, chercher le fichier `.md` le plus recent dans `content/articles/` et demander confirmation.
+
+**Etape 1** : lire le fichier article complet avant d'evaluer.
+
+---
+
+## Grille de notation (12 criteres, /100)
+
+Evaluer chaque critere independamment. Attribuer le score en justifiant chaque note.
+
+### Critere 1 — Reponse rapide (/10)
+
+Verifier la presence d'un bloc "Reponse rapide" en haut de l'article (apres l'intro).
+
+| Score | Condition |
+|-------|-----------|
+| 10 | Present, 2-3 phrases denses, factuelles, autonomes, repond directement a l'intention |
+| 7 | Present mais trop long (>3 phrases) ou pas completement autonome |
+| 4 | Present mais vague, incomplet ou non factuel |
+| 0 | Absent |
+
+**Ce que "autonome" signifie** : comprehensible sans lire le reste de l'article. Pas de "cet outil", pas de "comme vu plus haut". Noms d'outils explicites.
+
+### Critere 2 — Points cles (/10)
+
+Verifier la presence d'un bloc "Points cles" (liste a puces).
+
+| Score | Condition |
+|-------|-----------|
+| 10 | 4-6 points, chaque point = phrase complete et autonome |
+| 7 | Present mais points incomplets, fragments ou trop nombreux (>6) |
+| 4 | Present mais <3 points ou phrases non autonomes |
+| 0 | Absent |
+
+### Critere 3 — FAQ H3 (/10)
+
+Verifier la presence d'une section FAQ avec des questions en H3.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | 3-5 questions en langage naturel, reponse directe 1-3 phrases sous chaque H3 |
+| 7 | Present mais reponses trop longues (>3 phrases) ou questions pas naturelles |
+| 4 | Present mais <3 questions ou reponses vagues |
+| 0 | Absent |
+
+**Questions naturelles** = formulees comme un utilisateur les poserait a un moteur IA ("Comment securiser WordPress ?", pas "Securite WordPress methodes").
+
+### Critere 4 — En resume (/5)
+
+Verifier la presence d'un bloc "En resume" en fin d'article.
+
+| Score | Condition |
+|-------|-----------|
+| 5 | Present, synthese actionnable 2-3 phrases, message central clair |
+| 3 | Present mais trop long ou pas actionnable |
+| 0 | Absent |
+
+### Critere 5 — Maillage interne (/10)
+
+Compter et evaluer les liens internes.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | Lien vers pilier + 2-3 satellites + pont inter-cluster si applicable. Ancres descriptives et naturelles |
+| 7 | Liens presents mais incomplets (manque pilier ou satellites) |
+| 4 | 1-2 liens internes seulement, ancres generiques |
+| 0 | Aucun lien interne |
+
+### Critere 6 — CTA utile et transparent (/10)
+
+Evaluer le call-to-action.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | 1 CTA principal, place apres demonstration de valeur, transparent (mention affilie si applicable), utile pour le lecteur |
+| 7 | CTA present mais mal place (trop tot) ou pas transparent |
+| 4 | CTA agressif, multiple CTAs en concurrence, ou CTA sans valeur |
+| 0 | Aucun CTA ou CTA purement commercial sans utilite |
+
+### Critere 7 — Phrases courtes (/10)
+
+Mesurer la longueur des phrases.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | 90%+ des phrases ≤ 20 mots |
+| 7 | 75-89% des phrases ≤ 20 mots |
+| 4 | 50-74% des phrases ≤ 20 mots |
+| 0 | <50% des phrases ≤ 20 mots |
+
+**Comment mesurer** : scanner le contenu, compter les phrases (delimitees par . ! ?), compter les mots de chaque phrase. Ignorer les listes a puces, tableaux et blocs de code.
+
+### Critere 8 — Paragraphes aeres (/5)
+
+Evaluer la structure des paragraphes.
+
+| Score | Condition |
+|-------|-----------|
+| 5 | Tous les paragraphes = 2-4 phrases. Une idee par paragraphe. Espace entre chaque |
+| 3 | Quelques paragraphes trop longs (5+ phrases) mais majorite OK |
+| 0 | Blocs compacts frequents, paragraphes de 6+ phrases |
+
+### Critere 9 — Ton schoolsWP (/10)
+
+Evaluer le respect du ton de marque.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | Direct, utile, concret, humain, pedagogique. Pas de jargon sans explication, pas de superlatifs creux, pas de marketing agressif |
+| 7 | Globalement bon mais quelques ecarts (jargon non explique, ton trop formel, ou phrase marketing creuse) |
+| 4 | Ton inconsistant — mix de bon et mauvais |
+| 0 | Ton completement hors marque (trop commercial, trop academique, ou generique) |
+
+**Signaux positifs** : tutoiement, phrases courtes, exemples concrets, "en clair :", "teste et approuve".
+**Signaux negatifs** : vouvoiement, tournures passives, "il convient de", "il est important de noter que", superlatifs non etayes ("le meilleur", "incontournable").
+
+### Critere 10 — Optimisation AIO/GEO (/10)
+
+Evaluer l'optimisation pour les citations IA.
+
+| Score | Condition |
+|-------|-----------|
+| 10 | Phrases autonomes et factuelles, outils nommes explicitement, pas de references temporelles fragiles, donnees chiffrees quand pertinent |
+| 7 | Globalement bon mais quelques references temporelles ou phrases non autonomes |
+| 4 | Phrases souvent dependantes du contexte, outils non nommes, formulations vagues |
+| 0 | Aucune optimisation AIO visible |
+
+**Check-list AIO** :
+- [ ] Pas de "cette annee", "recemment", "en 2026"
+- [ ] Pas de "cet outil", "ce plugin" — noms explicites
+- [ ] Phrases comprehensibles hors contexte
+- [ ] Donnees factuelles verifiables
+- [ ] Listes numerotees pour les etapes
+
+### Critere 11 — Donnees structurees (/5)
+
+Verifier la configuration des schemas.
+
+| Score | Condition |
+|-------|-----------|
+| 5 | FAQ Schema configure (si FAQ presente) + Article Schema. HowTo Schema si tutoriel en etapes |
+| 3 | Schema partiel (Article seul, ou FAQ sans schema) |
+| 0 | Aucune mention de donnees structurees |
+
+**Note** : si l'article est un fichier markdown non publie, evaluer si les annotations de schema sont presentes ou si la structure permet leur configuration facile.
+
+### Critere 12 — Meta SEO (/5)
+
+Evaluer les metadonnees SEO.
+
+| Score | Condition |
+|-------|-----------|
+| 5 | Title 50-60 car. avec mot-cle au debut, meta-description 140-155 car. avec promesse, slug court et descriptif, H1 unique |
+| 3 | Meta presentes mais imparfaites (title trop long, meta-desc sans promesse) |
+| 0 | Meta absentes ou mal formulees |
+
+---
+
+## Seuils de publication
+
+| Score | Verdict | Action |
+|-------|---------|--------|
+| 90-100 | Publication immediate | Publier tel quel |
+| 75-89 | Ajustements mineurs | Corriger les criteres <max, puis publier |
+| 60-74 | Refonte partielle | Retravailler les sections defaillantes |
+| <60 | Reecriture | L'article necessite une refonte profonde |
+
+---
+
+## Format de sortie
+
+Produire ce rapport exact :
+
+```markdown
+# AUDIT SCORE — {nom du fichier}
+
+## Score global : {total}/100 — {verdict}
+
+## Detail par critere
+
+| # | Critere | Score | Max | Justification |
+|---|---------|-------|-----|---------------|
+| 1 | Reponse rapide | {x} | 10 | {justification courte} |
+| 2 | Points cles | {x} | 10 | {justification courte} |
+| 3 | FAQ H3 | {x} | 10 | {justification courte} |
+| 4 | En resume | {x} | 5 | {justification courte} |
+| 5 | Maillage interne | {x} | 10 | {justification courte} |
+| 6 | CTA | {x} | 10 | {justification courte} |
+| 7 | Phrases courtes | {x} | 10 | {justification courte} |
+| 8 | Paragraphes aeres | {x} | 5 | {justification courte} |
+| 9 | Ton schoolsWP | {x} | 10 | {justification courte} |
+| 10 | Optimisation AIO/GEO | {x} | 10 | {justification courte} |
+| 11 | Donnees structurees | {x} | 5 | {justification courte} |
+| 12 | Meta SEO | {x} | 5 | {justification courte} |
+| | **TOTAL** | **{total}** | **100** | |
+
+## Corrections prioritaires
+
+{Liste ordonnee par impact — criteres qui ont perdu le plus de points en premier.
+Pour chaque correction :}
+
+### {Critere} — {points perdus} points a recuperer
+
+**Probleme** : {description precise du probleme}
+**Correction** : {action concrete a effectuer}
+**Exemple** : {avant → apres si applicable}
+
+## Resume
+
+{2-3 phrases : forces principales de l'article + axe d'amelioration principal}
+```
+
+---
+
+## Exemple
+
+**Entree** : `/article-audit-score content/articles/securite/a1-securiser-wordpress.md`
+
+**Sortie** : rapport avec score 72/100, verdict "Refonte partielle", corrections priorisees :
+1. FAQ H3 absente → ajouter 3-5 questions naturelles
+2. Reponse rapide manquante → ajouter bloc 2-3 phrases en haut
+3. Phrases trop longues (65% ≤ 20 mots) → raccourcir les phrases de >20 mots
+
+---
+
+## Actions suivantes
+
+Apres l'audit :
+- Si score ≥ 75 : corriger les points faibles puis publier
+- Si score < 75 : retravailler l'article (manuellement ou via pipeline)
+- Apres publication : deriver avec `/article-multiformat`
+- Pour generer un nouvel article : utiliser `/seo-brief-generator`

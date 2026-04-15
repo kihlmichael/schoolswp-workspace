@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pinterest Pin — schoolsWP",
+  "description": "Schema de validation pour un pin dans le pipeline Pinterest schoolsWP.",
+  "type": "object",
+  "required": [
+    "id",
+    "source_url",
+    "title",
+    "description",
+    "destination_url",
+    "board_key",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^pin-\\d{3,}$",
+      "description": "Identifiant unique du pin (ex: pin-001)"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["article", "page", "formation", "manual"],
+      "default": "article"
+    },
+    "source_id": {
+      "type": ["string", "null"],
+      "description": "ID WordPress du contenu source"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL de l'article source"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 100,
+      "description": "Titre SEO Pinterest (40-100 caracteres)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Description SEO Pinterest (150-300 caracteres)"
+    },
+    "alt_text": {
+      "type": ["string", "null"],
+      "maxLength": 500,
+      "description": "Texte alternatif pour accessibilite"
+    },
+    "overlay_text": {
+      "type": ["string", "null"],
+      "maxLength": 50,
+      "description": "Texte sur le visuel (3-7 mots)"
+    },
+    "destination_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL de destination du pin"
+    },
+    "board_key": {
+      "type": "string",
+      "enum": [
+        "wordpress-guides",
+        "seo-wordpress",
+        "lms-wordpress",
+        "crm-email",
+        "automatisation",
+        "plugins",
+        "ecommerce",
+        "freelance",
+        "strategie-contenu",
+        "coulisses"
+      ],
+      "description": "Cle du board cible"
+    },
+    "board_id": {
+      "type": ["string", "null"],
+      "description": "ID Pinterest du board (resolu via boards.json)"
+    },
+    "template_key": {
+      "type": ["string", "null"],
+      "enum": ["pin-tutoriel", "pin-comparatif", "pin-listicle", null],
+      "description": "Template Canva a utiliser"
+    },
+    "canva_mode": {
+      "type": "string",
+      "enum": ["enterprise_autofill", "assisted", "manual"],
+      "default": "assisted"
+    },
+    "canva_template_id": {
+      "type": ["string", "null"]
+    },
+    "canva_design_id": {
+      "type": ["string", "null"]
+    },
+    "export_format": {
+      "type": "string",
+      "enum": ["png", "jpg"],
+      "default": "png"
+    },
+    "image_path": {
+      "type": ["string", "null"],
+      "description": "Chemin local de l'image exportee"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idea",
+        "brief_generated",
+        "brief_approved",
+        "design_generated",
+        "design_approved",
+        "exported",
+        "publish_approved",
+        "published",
+        "analytics_synced",
+        "archived"
+      ]
+    },
+    "brief_approved": {
+      "type": "boolean",
+      "default": false
+    },
+    "design_approved": {
+      "type": "boolean",
+      "default": false
+    },
+    "publish_approved": {
+      "type": "boolean",
+      "default": false
+    },
+    "published_pin_id": {
+      "type": ["string", "null"],
+      "description": "ID Pinterest du pin publie (anti-doublon)"
+    },
+    "analytics_last_sync_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "content_hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 du brief (detecte les modifications)"
+    },
+    "pillar": {
+      "type": ["string", "null"],
+      "enum": ["WordPress", "SEO", "LMS", "CRM", "Automatisation", "Plugins", "Ecommerce", "Freelance", "Formation", "Coulisses", null]
+    },
+    "keyword_primary": {
+      "type": ["string", "null"]
+    },
+    "keywords_secondary": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "pin_id_editorial": {
+      "type": ["string", "null"],
+      "pattern": "^PIN-[A-Z]+-\\d{3}$",
+      "description": "ID editorial (ex: PIN-SEO-001)"
+    },
+    "angle": {
+      "type": ["string", "null"]
+    },
+    "cta": {
+      "type": ["string", "null"]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

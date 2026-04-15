@@ -1,0 +1,85 @@
+{
+  "_comment": "Mapping board_key → board_id Pinterest. Remplir les board_id apres creation des boards.",
+  "boards": [
+    {
+      "board_key": "wordpress-guides",
+      "name": "WordPress : guides et bonnes pratiques",
+      "pillar": "WordPress",
+      "board_id": null,
+      "priority": "P1",
+      "status": "active"
+    },
+    {
+      "board_key": "seo-wordpress",
+      "name": "SEO WordPress : guides et optimisation",
+      "pillar": "SEO",
+      "board_id": null,
+      "priority": "P1",
+      "status": "active"
+    },
+    {
+      "board_key": "lms-wordpress",
+      "name": "LMS WordPress : cr\u00e9er et vendre des formations en ligne",
+      "pillar": "LMS",
+      "board_id": null,
+      "priority": "P1",
+      "status": "active"
+    },
+    {
+      "board_key": "crm-email",
+      "name": "CRM et email marketing WordPress",
+      "pillar": "CRM",
+      "board_id": null,
+      "priority": "P1",
+      "status": "active"
+    },
+    {
+      "board_key": "automatisation",
+      "name": "Automatisation WordPress : workflows et gain de temps",
+      "pillar": "Automatisation",
+      "board_id": null,
+      "priority": "P2",
+      "status": "active"
+    },
+    {
+      "board_key": "plugins",
+      "name": "Plugins WordPress : tests, avis et comparatifs",
+      "pillar": "Plugins",
+      "board_id": null,
+      "priority": "P1",
+      "status": "active"
+    },
+    {
+      "board_key": "ecommerce",
+      "name": "E-commerce WordPress : WooCommerce et vente en ligne",
+      "pillar": "Ecommerce",
+      "board_id": null,
+      "priority": "P2",
+      "status": "active"
+    },
+    {
+      "board_key": "freelance",
+      "name": "Freelance et business WordPress",
+      "pillar": "Freelance",
+      "board_id": null,
+      "priority": "P2",
+      "status": "active"
+    },
+    {
+      "board_key": "strategie-contenu",
+      "name": "Strat\u00e9gie de contenu WordPress : calendrier \u00e9ditorial et clusters SEO",
+      "pillar": "Formation",
+      "board_id": null,
+      "priority": "P2",
+      "status": "active"
+    },
+    {
+      "board_key": "coulisses",
+      "name": "schoolsWP Coulisses : behind the scenes",
+      "pillar": "Coulisses",
+      "board_id": null,
+      "priority": "P3",
+      "status": "active"
+    }
+  ]
+}

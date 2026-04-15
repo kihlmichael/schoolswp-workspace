@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanza | Project Workspace for Technical Teams</title>
+    
+    <!-- 
+        aesthetic_dna: Editorial Precision, Mature Software Minimalism
+        ui_paradigm: Architectonic / Grid-driven Canvas
+        palette_choice: Monochrome Zinc + Restrained Technical Blue (#2563EB)
+    -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Newsreader', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb', // Primary Accent
+                            700: '#1d4ed8',
+                        },
+                        ui: {
+                            bg: '#fcfcfc',
+                            ink: '#0a0a0b',
+                            line: '#e5e5e5',
+                            panel: '#ffffff',
+                            hover: '#f4f4f5'
+                        }
+                    },
+                    boxShadow: {
+                        'subtle': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+                        'float': '0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
+                        'dropdown': '0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Editorial & Structural Refinements */
+        body {
+            background-color: theme('colors.ui.bg');
+            color: theme('colors.ui.ink');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Subtle reveals */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(12px);
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar for the App Mockup to look native */
+        .mockup-scroll::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .mockup-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .mockup-scroll::-webkit-scrollbar-thumb {
+            background: #d4d4d8;
+            border-radius: 4px;
+        }
+
+        /* Hairline grid system */
+        .editorial-grid {
+            mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+        }
+
+        ::selection {
+            background-color: theme('colors.brand.100');
+            color: theme('colors.brand.700');
+        }
+    </style>
+</head>
+<body class="font-sans leading-relaxed selection:bg-brand-100 selection:text-brand-700 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-ui-bg/95 backdrop-blur-sm border-b border-ui-line">
+        <div class="max-w-[88rem] mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a href="#" class="font-semibold tracking-tight text-lg text-ui-ink flex items-center gap-2">
+                    <div class="w-4 h-4 bg-ui-ink rounded-sm"></div>
+                    Stanza
+                </a>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-500">
+                    <a href="#" class="hover:text-ui-ink transition-colors">Product</a>
+                    <a href="#" class="hover:text-ui-ink transition-colors">Methodology</a>
+                    <a href="#" class="hover:text-ui-ink transition-colors">Customers</a>
+                    <a href="#" class="hover:text-ui-ink transition-colors">Pricing</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-sm font-medium">
+                <a href="#" class="text-zinc-500 hover:text-ui-ink transition-colors hidden sm:block">Sign in</a>
+                <a href="#" class="bg-ui-ink text-white px-4 py-1.5 rounded-md hover:bg-zinc-800 transition-colors shadow-subtle">
+                    Enter workspace
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 border-b border-ui-line relative overflow-hidden">
+        <div class="max-w-[88rem] mx-auto text-center reveal-up">
+            <span class="font-serif italic text-zinc-500 text-lg mb-6 block">01. Introduction</span>
+            <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter text-ui-ink max-w-4xl mx-auto leading-[1.05]">
+                Engineered for velocity.<br>
+                <span class="text-zinc-400">Built for technical teams.</span>
+            </h1>
+            <p class="mt-6 text-lg text-zinc-500 max-w-2xl mx-auto md:text-xl leading-relaxed">
+                A unified project workspace that bridges the gap between engineering reality and product strategy. Plan, ship, and align without the friction.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" class="bg-brand-600 text-white px-6 py-2.5 rounded-md font-medium hover:bg-brand-700 transition-colors shadow-subtle w-full sm:w-auto">
+                    Start free trial
+                </a>
+                <a href="#" class="text-ui-ink bg-white border border-ui-line px-6 py-2.5 rounded-md font-medium hover:bg-ui-hover transition-colors shadow-subtle w-full sm:w-auto">
+                    Read the manifesto
+                </a>
+            </div>
+        </div>
+
+        <!-- The Mockup (Architectural Element) -->
+        <div class="max-w-[80rem] mx-auto mt-20 reveal-up delay-200 perspective-1000">
+            <div class="bg-ui-panel border border-ui-line rounded-xl shadow-float overflow-hidden flex h-[600px] text-sm">
+                
+                <!-- Sidebar -->
+                <div class="w-64 bg-zinc-50 border-r border-ui-line flex flex-col hidden md:flex shrink-0">
+                    <div class="p-4 border-b border-ui-line flex items-center gap-2 font-medium">
+                        <div class="w-6 h-6 bg-brand-100 text-brand-700 rounded flex items-center justify-center text-xs">AC</div>
+                        Acme Corp
+                        <i class="ph ph-caret-up-down ml-auto text-zinc-400"></i>
+                    </div>
+                    <div class="p-3 flex-1 overflow-y-auto mockup-scroll space-y-6">
+                        <div>
+                            <div class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-wider px-2">Navigation</div>
+                            <div class="space-y-0.5">
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded bg-zinc-200/50 text-ui-ink font-medium"><i class="ph ph-target text-zinc-500"></i> Issues</a>
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 hover:text-ui-ink transition-colors"><i class="ph ph-kanban text-zinc-400"></i> Active Sprint</a>
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 hover:text-ui-ink transition-colors"><i class="ph ph-map-trifold text-zinc-400"></i> Roadmap</a>
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 hover:text-ui-ink transition-colors"><i class="ph ph-users text-zinc-400"></i> Triage</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono text-zinc-400 mb-2 uppercase tracking-wider px-2">Views</div>
+                            <div class="space-y-0.5">
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 transition-colors"><div class="w-2 h-2 rounded-full border border-zinc-400"></div> My Tasks</a>
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 transition-colors"><div class="w-2 h-2 rounded-full border border-brand-500"></div> Frontend Team</a>
+                                <a href="#" class="flex items-center gap-2 px-2 py-1.5 rounded text-zinc-500 hover:bg-zinc-200/50 transition-colors"><div class="w-2 h-2 rounded-full border border-orange-400"></div> High Priority</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Work Area -->
+                <div class="flex-1 flex flex-col min-w-0 bg-white">
+                    <!-- Topbar -->
+                    <div class="h-14 border-b border-ui-line flex items-center justify-between px-4 sm:px-6 shrink-0">
+                        <div class="flex items-center gap-3">
+                            <span class="font-medium text-ui-ink">All Issues</span>
+                            <span class="px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-500 text-xs font-mono">142</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1.5 border border-ui-line rounded text-zinc-600 hover:bg-ui-hover transition-colors flex items-center gap-2">
+                                <i class="ph ph-faders"></i> Filter
+                            </button>
+                            <button class="px-3 py-1.5 border border-ui-line rounded text-zinc-600 hover:bg-ui-hover transition-colors flex items-center gap-2">
+                                <i class="ph ph-sort-ascending"></i> Sort
+                            </button>
+                            <button class="px-3 py-1.5 bg-ui-ink text-white rounded hover:bg-zinc-800 transition-colors flex items-center gap-2 ml-2 shadow-subtle">
+                                <i class="ph ph-plus"></i> New Issue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Filter Bar / Meta -->
+                    <div class="border-b border-ui-line px-6 py-2 flex items-center gap-2 bg-zinc-50/50 text-xs font-mono text-zinc-500 overflow-x-auto shrink-0">
+                        <span class="bg-white border border-ui-line px-2 py-1 rounded flex items-center gap-1 shadow-sm"><span class="text-zinc-400">Status:</span> is not Done <i class="ph ph-x cursor-pointer hover:text-ui-ink"></i></span>
+                        <span class="bg-white border border-ui-line px-2 py-1 rounded flex items-center gap-1 shadow-sm"><span class="text-zinc-400">Assignee:</span> Me <i class="ph ph-x cursor-pointer hover:text-ui-ink"></i></span>
+                        <span class="px-2 text-brand-600 cursor-pointer">+ Add filter</span>
+                    </div>
+
+                    <!-- List View Data -->
+                    <div class="flex-1 overflow-auto mockup-scroll">
+                        <table class="w-full text-left border-collapse select-none">
+                            <thead>
+                                <tr class="border-b border-ui-line text-xs text-zinc-400 sticky top-0 bg-white z-10 font-medium">
+                                    <th class="py-2.5 pl-6 pr-3 w-10 font-normal"><i class="ph ph-squares-four"></i></th>
+                                    <th class="py-2.5 px-3 w-24 font-normal">ID</th>
+                                    <th class="py-2.5 px-3 min-w-[300px] font-normal">Title</th>
+                                    <th class="py-2.5 px-3 w-32 font-normal">Status</th>
+                                    <th class="py-2.5 px-3 w-28 font-normal">Priority</th>
+                                    <th class="py-2.5 pr-6 pl-3 w-24 font-normal">Assignee</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <!-- Row 1 -->
+                                <tr class="border-b border-ui-line hover:bg-zinc-50 group cursor-pointer">
+                                    <td class="py-3 pl-6 pr-3 text-zinc-300 group-hover:text-zinc-500"><i class="ph ph-dots-six-vertical"></i></td>
+                                    <td class="py-3 px-3 font-mono text-xs text-zinc-500">ENG-842</td>
+                                    <td class="py-3 px-3 font-medium text-ui-ink">Refactor authentication middleware for edge runtime</td>
+                                    <td class="py-3 px-3">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-brand-200 bg-brand-50 text-brand-700 text-xs font-medium">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-brand-500"></div> In Progress
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-3"><span class="flex items-center gap-1 text-orange-600 text-xs"><i class="ph-fill ph-arrow-up"></i> High</span></td>
+                                    <td class="py-3 pr-6 pl-3"><div class="w-6 h-6 rounded-full bg-zinc-200 flex items-center justify-center text-[10px] font-medium text-zinc-600 border border-white shadow-sm ring-1 ring-zinc-100">JD</div></td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="border-b border-ui-line hover:bg-zinc-50 group cursor-pointer">
+                                    <td class="py-3 pl-6 pr-3 text-zinc-300 group-hover:text-zinc-500"><i class="ph ph-dots-six-vertical"></i></td>
+                                    <td class="py-3 px-3 font-mono text-xs text-zinc-500">ENG-841</td>
+                                    <td class="py-3 px-3 font-medium text-ui-ink">Update dependency tree for core-ui package</td>
+                                    <td class="py-3 px-3">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-zinc-200 bg-zinc-50 text-zinc-600 text-xs font-medium">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-400"></div> Todo
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-3"><span class="flex items-center gap-1 text-zinc-500 text-xs"><i class="ph-bold ph-minus"></i> Normal</span></td>
+                                    <td class="py-3 pr-6 pl-3"><div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-medium text-blue-700 border border-white shadow-sm ring-1 ring-zinc-100">AM</div></td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="border-b border-ui-line hover:bg-zinc-50 group cursor-pointer">
+                                    <td class="py-3 pl-6 pr-3 text-zinc-300 group-hover:text-zinc-500"><i class="ph ph-dots-six-vertical"></i></td>
+                                    <td class="py-3 px-3 font-mono text-xs text-zinc-500">PRD-204</td>
+                                    <td class="py-3 px-3 font-medium text-ui-ink">Draft Q4 feature specifications and wireframes</td>
+                                    <td class="py-3 px-3">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-zinc-200 bg-zinc-50 text-zinc-600 text-xs font-medium">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-zinc-400"></div> Todo
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-3"><span class="flex items-center gap-1 text-orange-600 text-xs"><i class="ph-fill ph-arrow-up"></i> High</span></td>
+                                    <td class="py-3 pr-6 pl-3"><div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-[10px] font-medium text-purple-700 border border-white shadow-sm ring-1 ring-zinc-100">KL</div></td>
+                                </tr>
+                                 <!-- Row 4 -->
+                                 <tr class="border-b border-ui-line hover:bg-zinc-50 group cursor-pointer bg-zinc-50/50">
+                                    <td class="py-3 pl-6 pr-3 text-zinc-300 group-hover:text-zinc-500"><i class="ph ph-dots-six-vertical"></i></td>
+                                    <td class="py-3 px-3 font-mono text-xs text-zinc-400 line-through">ENG-830</td>
+                                    <td class="py-3 px-3 font-medium text-zinc-500 line-through">Fix memory leak in WebSocket connection pool</td>
+                                    <td class="py-3 px-3">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-green-200 bg-green-50 text-green-700 text-xs font-medium">
+                                            <i class="ph-bold ph-check text-[10px]"></i> Done
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-3"><span class="flex items-center gap-1 text-red-600 text-xs"><i class="ph-fill ph-warning"></i> Urgent</span></td>
+                                    <td class="py-3 pr-6 pl-3"><div class="w-6 h-6 rounded-full bg-zinc-200 flex items-center justify-center text-[10px] font-medium text-zinc-600 border border-white shadow-sm ring-1 ring-zinc-100">JD</div></td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr class="hover:bg-zinc-50 group cursor-pointer">
+                                    <td class="py-3 pl-6 pr-3 text-zinc-300 group-hover:text-zinc-500"><i class="ph ph-dots-six-vertical"></i></td>
+                                    <td class="py-3 px-3 font-mono text-xs text-zinc-500">DSG-112</td>
+                                    <td class="py-3 px-3 font-medium text-ui-ink">Audit design system color tokens against WCAG 2.1</td>
+                                    <td class="py-3 px-3">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border border-brand-200 bg-brand-50 text-brand-700 text-xs font-medium">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-brand-500"></div> In Progress
+                                        </span>
+                                    </td>
+                                    <td class="py-3 px-3"><span class="flex items-center gap-1 text-zinc-500 text-xs"><i class="ph-bold ph-minus"></i> Normal</span></td>
+                                    <td class="py-3 pr-6 pl-3">
+                                        <div class="flex -space-x-2">
+                                            <div class="w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-[10px] font-medium text-rose-700 border border-white shadow-sm ring-1 ring-zinc-100 z-10">SR</div>
+                                            <div class="w-6 h-6 rounded-full bg-zinc-100 flex items-center justify-center text-[10px] font-medium text-zinc-500 border border-white shadow-sm ring-1 ring-zinc-100 z-0">+1</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- Inline UI Element: Command Palette Hint -->
+                        <div class="mt-8 flex justify-center">
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-zinc-50 border border-ui-line rounded-md text-xs text-zinc-500 shadow-sm">
+                                Press <kbd class="font-mono bg-white border border-zinc-200 rounded px-1.5 py-0.5 text-[10px] shadow-sm">C</kbd> to create issue
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Strip -->
+    <section class="py-12 border-b border-ui-line bg-zinc-50/50">
+        <div class="max-w-[88rem] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+            <p class="text-sm font-medium text-zinc-400 shrink-0">Trusted by engineering organizations</p>
+            <div class="flex flex-wrap justify-center md:justify-end items-center gap-8 md:gap-14 grayscale opacity-60">
+                <!-- Using generic text styling for logos to maintain strict editorial control without external SVGs -->
+                <span class="font-bold text-xl tracking-tighter">Vercel</span>
+                <span class="font-semibold text-xl tracking-tight">Ramp</span>
+                <span class="font-serif italic text-xl">Supabase</span>
+                <span class="font-bold text-xl tracking-widest uppercase text-sm mt-1">Linear</span>
+                <span class="font-medium text-xl">Raycast</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem / Promise (The Methodology) -->
+    <section class="py-24 px-6 border-b border-ui-line relative">
+        <div class="max-w-[88rem] mx-auto">
+            <div class="mb-16">
+                <span class="font-serif italic text-zinc-500 text-lg mb-4 block">02. The Methodology</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-ui-ink">Complexity is the enemy of shipping.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative">
+                <!-- Column Separators (Desktop) -->
+                <div class="hidden md:block absolute top-0 bottom-0 left-1/3 w-[1px] bg-ui-line"></div>
+                <div class="hidden md:block absolute top-0 bottom-0 left-2/3 w-[1px] bg-ui-line"></div>
+
+                <!-- Item 1 -->
+                <div class="md:pr-12 group">
+                    <div class="font-serif text-4xl text-zinc-300 mb-6 group-hover:text-brand-600 transition-colors">01</div>
+                    <h3 class="text-lg font-semibold text-ui-ink mb-3">Single Source of Truth</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        Data syncs instantly across bug reports, sprint boards, and executive roadmaps. Product and engineering no longer operate in siloed realities.
+                    </p>
+                </div>
+                <!-- Item 2 -->
+                <div class="md:px-12 group md:pt-0 pt-8 border-t border-ui-line md:border-0">
+                    <div class="font-serif text-4xl text-zinc-300 mb-6 group-hover:text-brand-600 transition-colors">02</div>
+                    <h3 class="text-lg font-semibold text-ui-ink mb-3">Keyboard-First Primitives</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        Navigate, create, assign, and update without touching the mouse. Built for developers who view context switching as an expensive transaction.
+                    </p>
+                </div>
+                <!-- Item 3 -->
+                <div class="md:pl-12 group md:pt-0 pt-8 border-t border-ui-line md:border-0">
+                    <div class="font-serif text-4xl text-zinc-300 mb-6 group-hover:text-brand-600 transition-colors">03</div>
+                    <h3 class="text-lg font-semibold text-ui-ink mb-3">Signal over Noise</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        Automated triage rules and strict schema enforcement prevent backlog rot. Only actionable work makes it to the developer's queue.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive 1: High Signal Tracking (Left Text, Right Abstract UI) -->
+    <section class="py-24 px-6 border-b border-ui-line">
+        <div class="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="max-w-lg">
+                <span class="font-mono text-xs font-medium text-brand-600 uppercase tracking-widest mb-4 block">Core Primitive</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-ui-ink mb-6">High-signal issue tracking.</h2>
+                <p class="text-zinc-500 mb-8 leading-relaxed">
+                    Capture technical debt, feature requests, and bugs with structured precision. Custom schemas ensure every ticket has the necessary context before it reaches a sprint, eliminating the back-and-forth cycle.
+                </p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-brand-600 mt-1"></i>
+                        <span class="text-sm text-zinc-700"><strong class="font-medium text-ui-ink">Markdown everywhere.</strong> Full support for code blocks, tables, and latex.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-brand-600 mt-1"></i>
+                        <span class="text-sm text-zinc-700"><strong class="font-medium text-ui-ink">Git integration.</strong> Auto-close issues when PRs are merged.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-brand-600 mt-1"></i>
+                        <span class="text-sm text-zinc-700"><strong class="font-medium text-ui-ink">Custom workflows.</strong> Define states that match your actual shipping cycle.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Architectural Graphic: The Issue Modal -->
+            <div class="bg-zinc-50 rounded-lg border border-ui-line p-8 flex items-center justify-center relative overflow-hidden h-[400px]">
+                <!-- Background decoration lines -->
+                <div class="absolute inset-0 grid grid-cols-6 gap-0 opacity-[0.03] pointer-events-none">
+                    <div class="border-r border-black"></div><div class="border-r border-black"></div><div class="border-r border-black"></div><div class="border-r border-black"></div><div class="border-r border-black"></div><div></div>
+                </div>
+
+                <!-- Floating Command Palette / Creation Box -->
+                <div class="w-full max-w-md bg-white border border-ui-line rounded-lg shadow-dropdown z-10 overflow-hidden transform transition-transform hover:-translate-y-1 duration-300">
+                    <div class="px-3 py-2 border-b border-ui-line flex items-center gap-2 bg-zinc-50/50">
+                        <div class="w-4 h-4 rounded-sm bg-brand-600 flex items-center justify-center"><i class="ph-bold ph-lightning text-[10px] text-white"></i></div>
+                        <span class="text-xs font-medium text-ui-ink">Create Issue</span>
+                        <div class="ml-auto flex gap-1">
+                            <span class="px-1.5 py-0.5 rounded bg-white border border-zinc-200 text-[10px] font-mono text-zinc-400">Esc</span>
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="text-xl font-semibold text-ui-ink outline-none" contenteditable="true">Implement Redis caching</div>
+                        <div class="text-sm text-zinc-500 font-mono">
+                            The current API aggregation endpoint is experiencing severe latency spikes during peak load. We need to implement a Redis caching layer...
+                        </div>
+                        <div class="flex items-center gap-2 pt-2">
+                            <button class="px-2 py-1 rounded bg-zinc-100 text-xs font-medium text-zinc-600 border border-transparent hover:border-zinc-300 transition-colors flex items-center gap-1">
+                                <div class="w-2 h-2 rounded-full border border-zinc-400"></div> Todo
+                            </button>
+                            <button class="px-2 py-1 rounded bg-zinc-100 text-xs font-medium text-zinc-600 border border-transparent hover:border-zinc-300 transition-colors flex items-center gap-1">
+                                <i class="ph-fill ph-user text-[10px]"></i> Unassigned
+                            </button>
+                            <button class="px-2 py-1 rounded bg-zinc-100 text-xs font-medium text-zinc-600 border border-transparent hover:border-zinc-300 transition-colors flex items-center gap-1">
+                                <i class="ph ph-tag text-[10px]"></i> Label
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border-t border-ui-line px-4 py-2 bg-zinc-50/80 flex justify-between items-center text-[11px] text-zinc-400">
+                        <span>Markdown supported</span>
+                        <span class="flex items-center gap-1">Press <kbd class="px-1 py-0.5 bg-white border border-zinc-200 rounded font-mono shadow-sm">⌘</kbd> <kbd class="px-1 py-0.5 bg-white border border-zinc-200 rounded font-mono shadow-sm">Enter</kbd> to save</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive 2: Roadmaps (Right Text, Left Abstract UI) -->
+    <section class="py-24 px-6 border-b border-ui-line bg-zinc-50/30">
+        <div class="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Architectural Graphic: Timeline View -->
+            <div class="order-2 lg:order-1 bg-white rounded-lg border border-ui-line p-6 relative overflow-hidden h-[400px] shadow-sm flex flex-col">
+                <div class="flex justify-between items-center mb-6 border-b border-ui-line pb-4">
+                    <div class="text-sm font-medium">Q4 Engineering Roadmap</div>
+                    <div class="flex gap-1 text-[10px] font-mono text-zinc-400">
+                        <span class="px-2 py-1 bg-zinc-100 rounded">Oct</span>
+                        <span class="px-2 py-1 bg-zinc-100 rounded">Nov</span>
+                        <span class="px-2 py-1 bg-zinc-100 rounded">Dec</span>
+                    </div>
+                </div>
+
+                <!-- Simulated Gantt -->
+                <div class="flex-1 relative border-l border-ui-line ml-[100px]">
+                    <!-- Grid lines -->
+                    <div class="absolute inset-0 grid grid-cols-3">
+                        <div class="border-r border-ui-line/50"></div>
+                        <div class="border-r border-ui-line/50"></div>
+                        <div class="border-r border-ui-line/50"></div>
+                    </div>
+
+                    <!-- Tracks -->
+                    <div class="absolute top-4 left-0 right-0 h-10 hover:bg-zinc-50 transition-colors group">
+                        <div class="absolute -left-[100px] top-2 text-xs font-medium text-zinc-600 w-20 truncate">Core API v2</div>
+                        <!-- Bar -->
+                        <div class="absolute top-2 left-[5%] w-[40%] h-6 bg-brand-100 border border-brand-300 rounded flex items-center px-2 shadow-sm">
+                            <div class="w-1.5 h-1.5 rounded-full bg-brand-500 mr-2"></div>
+                            <span class="text-[10px] font-medium text-brand-700 truncate">Migration</span>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-16 left-0 right-0 h-10 hover:bg-zinc-50 transition-colors group">
+                        <div class="absolute -left-[100px] top-2 text-xs font-medium text-zinc-600 w-20 truncate">Auth Subsystem</div>
+                        <!-- Bar -->
+                        <div class="absolute top-2 left-[30%] w-[35%] h-6 bg-zinc-100 border border-zinc-300 rounded flex items-center px-2 shadow-sm opacity-80">
+                            <span class="text-[10px] font-medium text-zinc-600 truncate">OAuth Providers</span>
+                        </div>
+                    </div>
+
+                    <div class="absolute top-28 left-0 right-0 h-10 hover:bg-zinc-50 transition-colors group">
+                        <div class="absolute -left-[100px] top-2 text-xs font-medium text-zinc-600 w-[90px] truncate">Billing Engine</div>
+                        <!-- Bar -->
+                        <div class="absolute top-2 left-[60%] w-[25%] h-6 bg-orange-50 border border-orange-200 rounded flex items-center px-2 shadow-sm">
+                            <span class="text-[10px] font-medium text-orange-700 truncate">Stripe Webhooks</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Today Line -->
+                    <div class="absolute top-0 bottom-0 left-[28%] w-px bg-red-400 z-10">
+                        <div class="absolute -top-3 -translate-x-1/2 bg-red-500 text-white text-[9px] font-mono px-1 rounded shadow-sm">Today</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 max-w-lg lg:ml-auto">
+                <span class="font-mono text-xs font-medium text-brand-600 uppercase tracking-widest mb-4 block">Macrospective</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-ui-ink mb-6">Roadmaps tied to reality.</h2>
+                <p class="text-zinc-500 mb-8 leading-relaxed">
+                    Stop maintaining arbitrary Gantt charts in separate tools. Stanza's timelines are generated directly from the underlying issues and pull requests, meaning your roadmap is always a mathematical reflection of the truth.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-ui-ink border-b border-ui-ink pb-0.5 hover:text-brand-600 hover:border-brand-600 transition-colors">
+                    Explore timeline features <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Integrations Grid -->
+    <section class="py-24 px-6 border-b border-ui-line">
+        <div class="max-w-[88rem] mx-auto text-center mb-16 relative">
+            <span class="font-serif italic text-zinc-500 text-lg mb-4 block">03. Ecosystem</span>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-ui-ink max-w-2xl mx-auto">
+                Wired into your existing CI/CD and communication stack.
+            </h2>
+        </div>
+
+        <!-- Severe CSS Grid for Integrations -->
+        <div class="max-w-4xl mx-auto border-t border-l border-ui-line flex flex-wrap shadow-sm bg-white">
+            <!-- Grid Cell -->
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-github-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">GitHub</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-slack-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">Slack</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-figma-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">Figma</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-sentry-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">Sentry</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-gitlab-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">GitLab</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-google-chrome text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">Chrome Ext</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer">
+                <i class="ph ph-codesandbox-logo text-4xl text-zinc-400 group-hover:text-ui-ink transition-colors mb-3"></i>
+                <span class="text-xs font-mono text-zinc-500">API</span>
+            </div>
+            <div class="w-1/2 md:w-1/4 aspect-square border-r border-b border-ui-line flex flex-col items-center justify-center group hover:bg-zinc-50 transition-colors cursor-pointer bg-zinc-50/50">
+                <span class="text-xs font-medium text-ui-ink flex items-center gap-1 group-hover:text-brand-600 transition-colors">View all <i class="ph-bold ph-arrow-right"></i></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Quote -->
+    <section class="py-32 px-6 border-b border-ui-line bg-ui-ink text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+        <div class="max-w-[88rem] mx-auto text-center relative z-10">
+            <div class="text-5xl text-brand-500 opacity-50 mb-6 font-serif">"</div>
+            <h3 class="text-2xl md:text-4xl font-serif text-white max-w-4xl mx-auto leading-normal mb-8">
+                Stanza replaced three disconnected tools. It is the only platform where our product managers and senior engineers look at the same screen and actually agree on ship dates.
+            </h3>
+            <div class="flex items-center justify-center gap-4">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Sarah Jenkins" class="w-12 h-12 rounded-full grayscale border border-white/20">
+                <div class="text-left">
+                    <div class="font-medium text-sm">Marcus Chen</div>
+                    <div class="text-xs text-zinc-400 font-mono">VP of Engineering at Nexus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 border-b border-ui-line">
+        <div class="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+            <div class="md:col-span-4">
+                <h2 class="text-2xl font-semibold tracking-tight text-ui-ink mb-4">Common Questions</h2>
+                <p class="text-zinc-500 text-sm">Everything you need to know about billing, migration, and enterprise deployments.</p>
+            </div>
+            
+            <div class="md:col-span-8 flex flex-col">
+                <!-- FAQ Item 1 -->
+                <details class="group border-t border-ui-line [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between py-5 cursor-pointer text-ui-ink font-medium hover:text-brand-600 transition-colors">
+                        How hard is it to migrate from Jira?
+                        <span class="transition group-open:rotate-45 block w-5 h-5 flex items-center justify-center relative">
+                            <span class="absolute w-3 h-[1.5px] bg-current"></span>
+                            <span class="absolute w-[1.5px] h-3 bg-current"></span>
+                        </span>
+                    </summary>
+                    <div class="pb-5 text-zinc-500 text-sm leading-relaxed pr-8">
+                        We offer a one-click importer that migrates your epics, issues, comments, and sprint history in minutes while maintaining relationships. We map your complex Jira workflows to Stanza's streamlined primitives.
+                    </div>
+                </details>
+                <!-- FAQ Item 2 -->
+                <details class="group border-t border-ui-line [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between py-5 cursor-pointer text-ui-ink font-medium hover:text-brand-600 transition-colors">
+                        Do you offer self-hosted or single-tenant options?
+                        <span class="transition group-open:rotate-45 block w-5 h-5 flex items-center justify-center relative">
+                            <span class="absolute w-3 h-[1.5px] bg-current"></span>
+                            <span class="absolute w-[1.5px] h-3 bg-current"></span>
+                        </span>
+                    </summary>
+                    <div class="pb-5 text-zinc-500 text-sm leading-relaxed pr-8">
+                        Yes. Our Enterprise tier includes options for VPC deployment via AWS Marketplace, ensuring strict compliance with SOC2 Type II and HIPAA requirements.
+                    </div>
+                </details>
+                <!-- FAQ Item 3 -->
+                <details class="group border-t border-ui-line border-b [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between py-5 cursor-pointer text-ui-ink font-medium hover:text-brand-600 transition-colors">
+                        Is pricing based on seats or usage?
+                        <span class="transition group-open:rotate-45 block w-5 h-5 flex items-center justify-center relative">
+                            <span class="absolute w-3 h-[1.5px] bg-current"></span>
+                            <span class="absolute w-[1.5px] h-3 bg-current"></span>
+                        </span>
+                    </summary>
+                    <div class="pb-5 text-zinc-500 text-sm leading-relaxed pr-8">
+                        We use a flat predictable per-seat model for core contributors. Viewers and external stakeholders are always free, because collaboration shouldn't be taxed.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 px-6 flex flex-col items-center justify-center relative">
+        <h2 class="text-4xl md:text-6xl font-semibold tracking-tighter text-ui-ink mb-8 text-center leading-none">
+            Start shipping faster.
+        </h2>
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <a href="#" class="bg-ui-ink text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-zinc-800 transition-colors shadow-subtle w-full sm:w-auto text-center flex items-center justify-center gap-2 group">
+                Create workspace <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <div class="text-sm text-zinc-500 font-mono mt-2 sm:mt-0 sm:ml-4 text-center sm:text-left">
+                Free for teams up to 5.<br> No credit card required.
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Footer -->
+    <footer class="border-t border-ui-line py-12 px-6 bg-zinc-50">
+        <div class="max-w-[88rem] mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+            <div class="col-span-2">
+                <a href="#" class="font-semibold tracking-tight text-lg text-ui-ink flex items-center gap-2 mb-4">
+                    <div class="w-4 h-4 bg-ui-ink rounded-sm"></div>
+                    Stanza
+                </a>
+                <p class="text-xs text-zinc-400 max-w-xs leading-relaxed">
+                    The project management platform engineered specifically for software development teams that demand velocity over bureaucracy.
+                </p>
+                <div class="mt-6 flex gap-4 text-zinc-400">
+                    <a href="#" class="hover:text-ui-ink transition-colors"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                    <a href="#" class="hover:text-ui-ink transition-colors"><i class="ph-fill ph-github-logo text-xl"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ui-ink mb-4">Product</h4>
+                <ul class="space-y-2 text-sm text-zinc-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Issues</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Sprints</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Roadmaps</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Integrations</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Changelog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ui-ink mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm text-zinc-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Documentation</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">API Reference</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Blog</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Manifesto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-ui-ink mb-4">Company</h4>
+                <ul class="space-y-2 text-sm text-zinc-500">
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Careers &nbsp;<span class="px-1.5 py-0.5 rounded bg-zinc-200 text-zinc-600 text-[10px] font-mono">Hiring</span></a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Legal</a></li>
+                    <li><a href="#" class="hover:text-brand-600 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[88rem] mx-auto mt-16 pt-8 border-t border-ui-line text-xs text-zinc-400 flex flex-col md:flex-row justify-between items-center gap-4">
+            <span>&copy; 2024 Stanza Inc. All rights reserved.</span>
+            <div class="flex gap-4">
+                <span class="flex items-center gap-1 hover:text-ui-ink cursor-pointer"><div class="w-2 h-2 rounded-full bg-green-500"></div> Systems Operational</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll reveals up
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-up');
+            revealElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

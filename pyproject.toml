@@ -8,6 +8,9 @@ dependencies = [
     "python-dotenv>=1.0.0",
 ]
 
+[project.optional-dependencies]
+multi-provider = ["openai>=1.0.0"]
+
 [tool.ruff]
 line-length = 120
 target-version = "py311"
@@ -38,12 +41,15 @@ omit = ["*/cli.py", "*/brain_lite_cli.py", "*/__main__.py"]
 [tool.coverage.report]
 show_missing = true
 skip_empty = true
-fail_under = 40
+fail_under = 50
 exclude_lines = [
     "pragma: no cover",
     "if __name__",
     "raise NotImplementedError",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["core/agents-py"]
 
 [build-system]
 requires = ["hatchling"]

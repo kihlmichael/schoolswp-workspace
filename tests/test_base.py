@@ -85,6 +85,6 @@ class TestBaseContentAgent:
         with pytest.raises(NotImplementedError, match="base"):
             asyncio.run(agent.run())
 
-    def test_has_client(self, fake_env):
+    def test_has_provider(self, fake_env):
         agent = BaseContentAgent()
-        assert agent._client is not None
+        assert agent._provider is not None

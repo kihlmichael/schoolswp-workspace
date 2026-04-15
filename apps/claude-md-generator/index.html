@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generateur CLAUDE.md pour WordPress</title>
+  <meta name="description" content="Creez un fichier CLAUDE.md optimise pour votre projet WordPress en 2 minutes. Detection automatique de votre stack.">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen" x-data="claudeGenerator()">
+
+  <!-- Header -->
+  <header class="border-b border-gray-800 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center font-bold text-sm">C</div>
+        <h1 class="text-lg font-semibold">CLAUDE.md Generator</h1>
+        <span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">WordPress</span>
+      </div>
+      <a href="https://schoolswp.com" class="text-sm text-gray-500 hover:text-orange-400 transition">by schoolsWP</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-10">
+
+    <!-- Hero -->
+    <div class="text-center mb-12" x-show="step === 1">
+      <h2 class="text-3xl font-bold mb-3">Ton fichier <code class="text-orange-400">CLAUDE.md</code> en 2 minutes</h2>
+      <p class="text-gray-400 max-w-xl mx-auto">Reponds a quelques questions sur ton projet WordPress. On genere un fichier CLAUDE.md precis, sans hallucination, pret a guider Claude Code.</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="max-w-2xl mx-auto mb-10">
+      <div class="flex items-center justify-between mb-2">
+        <template x-for="(label, i) in stepLabels" :key="i">
+          <div class="flex items-center gap-2" :class="i > 0 ? 'flex-1' : ''">
+            <div x-show="i > 0" class="flex-1 h-0.5" :class="step > i ? 'bg-orange-500' : 'bg-gray-700'"></div>
+            <button
+              @click="if (i + 1 < step) goToStep(i + 1)"
+              class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition"
+              :class="step === i + 1 ? 'bg-orange-500 text-white' : step > i + 1 ? 'bg-orange-500/20 text-orange-400 cursor-pointer' : 'bg-gray-800 text-gray-500'"
+              x-text="i + 1">
+            </button>
+          </div>
+        </template>
+      </div>
+      <div class="flex justify-between text-xs text-gray-500">
+        <template x-for="(label, i) in stepLabels" :key="'l'+i">
+          <span :class="step === i + 1 ? 'text-orange-400' : ''" x-text="label"></span>
+        </template>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+
+      <!-- Left: Form -->
+      <div class="space-y-6">
+
+        <!-- Step 1: Stack -->
+        <div x-show="step === 1" x-transition>
+          <h3 class="text-xl font-semibold mb-6">Ta stack WordPress</h3>
+
+          <!-- Theme -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Theme actif</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <template x-for="theme in themes" :key="theme.id">
+                <button
+                  @click="toggleSelection('selectedTheme', theme.id)"
+                  class="px-3 py-2 rounded-lg border text-sm transition"
+                  :class="selectedTheme === theme.id ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'"
+                  x-text="theme.name">
+                </button>
+              </template>
+            </div>
+            <div class="mt-3" x-show="selectedTheme === 'custom'">
+              <input type="text" x-model="customThemeName" placeholder="Nom de ton theme custom"
+                class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- Child theme -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Theme enfant ?</label>
+            <div class="flex gap-3">
+              <button @click="hasChildTheme = true"
+                class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasChildTheme === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">
+                Oui
+              </button>
+              <button @click="hasChildTheme = false"
+                class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasChildTheme === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">
+                Non
+              </button>
+              <button @click="hasChildTheme = null"
+                class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasChildTheme === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">
+                Je ne sais pas
+              </button>
+            </div>
+          </div>
+
+          <!-- Plugins -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Plugins actifs <span class="text-gray-500">(selectionne ceux que tu utilises)</span></label>
+            <div class="grid grid-cols-2 gap-2">
+              <template x-for="plugin in plugins" :key="plugin.id">
+                <button
+                  @click="toggleArraySelection('selectedPlugins', plugin.id)"
+                  class="px-3 py-2 rounded-lg border text-sm text-left transition"
+                  :class="selectedPlugins.includes(plugin.id) ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'">
+                  <span x-text="plugin.name"></span>
+                  <span class="text-xs text-gray-600 block" x-text="plugin.category"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Hosting -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Hebergeur</label>
+            <select x-model="hosting" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+              <option value="">-- Selectionner --</option>
+              <option value="o2switch">o2switch</option>
+              <option value="ovh">OVH</option>
+              <option value="kinsta">Kinsta</option>
+              <option value="wpengine">WP Engine</option>
+              <option value="cloudways">Cloudways</option>
+              <option value="local">Local (DDEV, Local WP, Lando)</option>
+              <option value="other">Autre</option>
+              <option value="unknown">Je ne sais pas</option>
+            </select>
+          </div>
+
+          <!-- PHP / WP versions -->
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Version PHP</label>
+              <select x-model="phpVersion" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+                <option value="">-- Selectionner --</option>
+                <option value="8.3">8.3</option>
+                <option value="8.2">8.2</option>
+                <option value="8.1">8.1</option>
+                <option value="8.0">8.0</option>
+                <option value="7.4">7.4</option>
+                <option value="unknown">Je ne sais pas</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Version WordPress</label>
+              <select x-model="wpVersion" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+                <option value="">-- Selectionner --</option>
+                <option value="6.7">6.7+</option>
+                <option value="6.6">6.6</option>
+                <option value="6.5">6.5</option>
+                <option value="6.4">6.4 ou moins</option>
+                <option value="unknown">Je ne sais pas</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Structure -->
+        <div x-show="step === 2" x-transition>
+          <h3 class="text-xl font-semibold mb-6">Structure du projet</h3>
+
+          <!-- Custom Post Types -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Custom Post Types (CPT)</label>
+            <div class="flex gap-3 mb-3">
+              <button @click="hasCPT = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCPT === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="hasCPT = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCPT === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="hasCPT = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCPT === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+            <div x-show="hasCPT === true">
+              <input type="text" x-model="cptList" placeholder="Ex: portfolio, evenement, temoignage (separes par des virgules)"
+                class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- Custom taxonomies -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Taxonomies custom</label>
+            <div class="flex gap-3 mb-3">
+              <button @click="hasTaxonomies = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasTaxonomies === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="hasTaxonomies = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasTaxonomies === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="hasTaxonomies = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasTaxonomies === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+            <div x-show="hasTaxonomies === true">
+              <input type="text" x-model="taxonomyList" placeholder="Ex: secteur, niveau, localisation"
+                class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- Custom blocks -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Blocks Gutenberg custom</label>
+            <div class="flex gap-3">
+              <button @click="hasCustomBlocks = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCustomBlocks === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="hasCustomBlocks = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCustomBlocks === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="hasCustomBlocks = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCustomBlocks === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+          </div>
+
+          <!-- Page builder -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Page builder utilise</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <template x-for="pb in pageBuilders" :key="pb">
+                <button @click="toggleSelection('selectedPageBuilder', pb)"
+                  class="px-3 py-2 rounded-lg border text-sm transition"
+                  :class="selectedPageBuilder === pb ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'"
+                  x-text="pb">
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Build tools -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Outils de build</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <template x-for="tool in buildTools" :key="tool">
+                <button @click="toggleArraySelection('selectedBuildTools', tool)"
+                  class="px-3 py-2 rounded-lg border text-sm transition"
+                  :class="selectedBuildTools.includes(tool) ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'"
+                  x-text="tool">
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Composer -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Composer (gestion deps PHP)</label>
+            <div class="flex gap-3">
+              <button @click="hasComposer = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasComposer === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="hasComposer = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasComposer === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="hasComposer = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasComposer === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Conventions -->
+        <div x-show="step === 3" x-transition>
+          <h3 class="text-xl font-semibold mb-6">Conventions et workflow</h3>
+
+          <!-- Git -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Utilises-tu Git ?</label>
+            <div class="flex gap-3">
+              <button @click="usesGit = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="usesGit === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="usesGit = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="usesGit === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+            </div>
+          </div>
+
+          <!-- Deployment -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Methode de deploiement</label>
+            <div class="grid grid-cols-2 gap-2">
+              <template x-for="method in deployMethods" :key="method">
+                <button @click="toggleSelection('deployMethod', method)"
+                  class="px-3 py-2 rounded-lg border text-sm transition"
+                  :class="deployMethod === method ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'"
+                  x-text="method">
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Environments -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Environnements</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <template x-for="env in environments" :key="env">
+                <button @click="toggleArraySelection('selectedEnvironments', env)"
+                  class="px-3 py-2 rounded-lg border text-sm transition"
+                  :class="selectedEnvironments.includes(env) ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600'"
+                  x-text="env">
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- CI/CD -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">CI/CD</label>
+            <div class="flex gap-3">
+              <button @click="hasCICD = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCICD === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="hasCICD = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCICD === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="hasCICD = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="hasCICD === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+            <div x-show="hasCICD === true" class="mt-3">
+              <input type="text" x-model="cicdTool" placeholder="Ex: GitHub Actions, GitLab CI, Buddy..."
+                class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- WP-CLI -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Utilises-tu WP-CLI ?</label>
+            <div class="flex gap-3">
+              <button @click="usesWPCLI = true" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="usesWPCLI === true ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Oui</button>
+              <button @click="usesWPCLI = false" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="usesWPCLI === false ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Non</button>
+              <button @click="usesWPCLI = null" class="px-4 py-2 rounded-lg border text-sm transition"
+                :class="usesWPCLI === null ? 'border-orange-500 bg-orange-500/10 text-orange-400' : 'border-gray-700 bg-gray-900 text-gray-400'">Je ne sais pas</button>
+            </div>
+          </div>
+
+          <!-- Project description -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Description du projet <span class="text-gray-500">(optionnel)</span></label>
+            <textarea x-model="projectDescription" rows="3" placeholder="Ex: Site vitrine pour un cabinet comptable, blog avec espace membres, boutique WooCommerce..."
+              class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-sm focus:border-orange-500 focus:outline-none resize-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 4: Result -->
+        <div x-show="step === 4" x-transition>
+          <h3 class="text-xl font-semibold mb-4">Ton CLAUDE.md est pret</h3>
+          <p class="text-gray-400 text-sm mb-6">Copie-le dans la racine de ton projet WordPress. Claude Code l'utilisera automatiquement.</p>
+
+          <div class="flex gap-3 mb-6">
+            <button @click="copyToClipboard()" class="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-sm font-medium transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+              <span x-text="copied ? 'Copie !' : 'Copier'"></span>
+            </button>
+            <button @click="downloadFile()" class="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg text-sm font-medium transition border border-gray-700">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              Telecharger
+            </button>
+            <button @click="step = 1" class="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg text-sm font-medium transition border border-gray-700">
+              Recommencer
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="flex justify-between" x-show="step < 4">
+          <button @click="prevStep()" x-show="step > 1"
+            class="px-5 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg text-sm font-medium transition border border-gray-700">
+            Precedent
+          </button>
+          <div x-show="step === 1"></div>
+          <button @click="nextStep()"
+            class="px-5 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-sm font-medium transition">
+            <span x-text="step === 3 ? 'Generer' : 'Suivant'"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right: Preview -->
+      <div class="lg:sticky lg:top-24 lg:self-start">
+        <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-3 border-b border-gray-800 bg-gray-900/50">
+            <span class="text-sm font-medium text-gray-400">CLAUDE.md</span>
+            <span class="text-xs text-gray-600">Preview en direct</span>
+          </div>
+          <div class="p-4 max-h-[70vh] overflow-y-auto">
+            <pre class="text-xs text-gray-300 whitespace-pre-wrap font-mono leading-relaxed" x-text="generatePreview()"></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-800 mt-20">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between text-sm text-gray-600">
+      <span>CLAUDE.md Generator par <a href="https://schoolswp.com" class="text-orange-400 hover:underline">schoolsWP</a></span>
+      <span>Gratuit et open source</span>
+    </div>
+  </footer>
+
+  <script src="js/templates.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

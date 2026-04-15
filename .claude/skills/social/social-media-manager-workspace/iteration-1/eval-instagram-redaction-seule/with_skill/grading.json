@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "config": "with_skill",
+  "expectations": [
+    {"text": "Caption Instagram presente", "passed": true, "evidence": "Caption complete avec hook, structure, CTA"},
+    {"text": "Hashtags presents (10-15)", "passed": true, "evidence": "15 hashtags pertinents listes"},
+    {"text": "Tutoiement", "passed": true, "evidence": "Tu paies, Tu segmentes, tes donnees — tutoiement systematique"},
+    {"text": "Pas de tentative de publication API", "passed": true, "evidence": "Aucun appel curl ou API mentionne. Redaction seule comme demande"},
+    {"text": "CTA utile, pas agressif", "passed": true, "evidence": "Sauvegarde ce post si tu veux arreter de payer au contact — utile, pas agressif"}
+  ]
+}

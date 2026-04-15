@@ -1,14 +1,123 @@
 {
   "mcpServers": {
     "n8n-mcp": {
-      "command": "npx",
-      "args": ["n8n-mcp"],
+      "command": "n8n-mcp",
+      "args": [],
       "env": {
         "MCP_MODE": "stdio",
         "LOG_LEVEL": "error",
         "DISABLE_CONSOLE_OUTPUT": "true",
         "N8N_API_URL": "https://schoolswp-n8n.wp1.host",
         "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
+      }
+    },
+    "rapidapi-linkedin": {
+      "command": "mcp-remote",
+      "args": [
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host:${RAPIDAPI_HOST}",
+        "--header",
+        "x-api-key:${RAPIDAPI_KEY}"
+      ],
+      "env": {
+        "RAPIDAPI_HOST": "linkedin-api8.p.rapidapi.com",
+        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
+      }
+    },
+    "rapidapi-twitter": {
+      "command": "mcp-remote",
+      "args": [
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host:${RAPIDAPI_HOST}",
+        "--header",
+        "x-api-key:${RAPIDAPI_KEY}"
+      ],
+      "env": {
+        "RAPIDAPI_HOST": "twitter154.p.rapidapi.com",
+        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
+      }
+    },
+    "rapidapi-instagram": {
+      "command": "mcp-remote",
+      "args": [
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host:${RAPIDAPI_HOST}",
+        "--header",
+        "x-api-key:${RAPIDAPI_KEY}"
+      ],
+      "env": {
+        "RAPIDAPI_HOST": "instagram120.p.rapidapi.com",
+        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
+      }
+    },
+    "rapidapi-youtube": {
+      "command": "mcp-remote",
+      "args": [
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host:${RAPIDAPI_HOST}",
+        "--header",
+        "x-api-key:${RAPIDAPI_KEY}"
+      ],
+      "env": {
+        "RAPIDAPI_HOST": "youtube138.p.rapidapi.com",
+        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
+      }
+    },
+    "apify": {
+      "command": "actors-mcp-server",
+      "args": [],
+      "env": {
+        "APIFY_API_TOKEN": "YOUR_APIFY_API_TOKEN_HERE"
+      }
+    },
+    "zipwp": {
+      "command": "mcp-remote",
+      "args": [
+        "https://api.zipwp.com/mcp/zipwp",
+        "--header",
+        "Authorization:Bearer ${ZIPWP_TOKEN}"
+      ],
+      "env": {
+        "ZIPWP_TOKEN": "YOUR_ZIPWP_TOKEN_HERE"
+      }
+    },
+    "firecrawl": {
+      "command": "firecrawl-mcp",
+      "args": [],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY_HERE"
+      }
+    },
+    "wisewand": {
+      "command": "wisewand-mcp",
+      "args": [],
+      "env": {
+        "WISEWAND_API_KEY": "YOUR_WISEWAND_API_KEY_HERE"
+      }
+    },
+    "dataforseo": {
+      "command": "dataforseo-mcp-server",
+      "args": [],
+      "env": {
+        "DATAFORSEO_USERNAME": "YOUR_DATAFORSEO_USERNAME_HERE",
+        "DATAFORSEO_PASSWORD": "YOUR_DATAFORSEO_PASSWORD_HERE"
+      }
+    },
+    "github": {
+      "command": "bash",
+      "args": ["C:/Users/micha/.claude/mcp-github.sh"]
+    },
+    "novamira-schoolswp-com": {
+      "command": "npx",
+      "args": ["-y", "@automattic/mcp-wordpress-remote@latest"],
+      "env": {
+        "WP_API_URL": "https://schoolswp.com/wp-json/mcp/mcp-adapter-default-server",
+        "WP_API_USERNAME": "YOUR_WP_USERNAME_HERE",
+        "WP_API_PASSWORD": "YOUR_WP_APP_PASSWORD_HERE"
       }
     }
   }

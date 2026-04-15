@@ -108,19 +108,19 @@ class TestAuditResultDiagnostic:
 class TestSeoAuditorSmoke:
     """Smoke test: agent runs with mocked API."""
 
-    async def test_run_returns_audit_result(self, fake_env, mock_anthropic_client):
+    async def test_run_returns_audit_result(self, fake_env, mock_provider):
         agent = SeoAuditorAgent()
-        agent._client = mock_anthropic_client(SAMPLE_AUDIT_REPORT)
+        agent._provider = mock_provider(SAMPLE_AUDIT_REPORT)
 
         result = await agent.run(article="# Test\n\nContent.", keyword="lms wordpress")
 
         assert isinstance(result, AuditResult)
         assert result.score_global == 82
-        agent._client.messages.create.assert_called_once()
+        agent._provider.complete.assert_called_once()
 
-    async def test_run_with_intent(self, fake_env, mock_anthropic_client):
+    async def test_run_with_intent(self, fake_env, mock_provider):
         agent = SeoAuditorAgent()
-        agent._client = mock_anthropic_client(SAMPLE_AUDIT_REPORT)
+        agent._provider = mock_provider(SAMPLE_AUDIT_REPORT)
 
         result = await agent.run(
             article="# Test\n\nContent.",
@@ -129,16 +129,15 @@ class TestSeoAuditorSmoke:
         )
 
         assert result.score_global == 82
-        # Verify intent was passed in the user message
-        call_kwargs = agent._client.messages.create.call_args.kwargs
-        user_msg = call_kwargs["messages"][0]["content"]
-        assert "comparative" in user_msg
+        # Verify intent was passed in the user message via LLMRequest
+        call_args = agent._provider.complete.call_args[0][0]
+        assert "comparative" in call_args.user_message
 
-    async def test_audit_and_fix_above_threshold_no_fix(self, fake_env, mock_anthropic_client):
+    async def test_audit_and_fix_above_threshold_no_fix(self, fake_env, mock_provider):
         """When score >= threshold, no fix is triggered."""
         high_report = SAMPLE_AUDIT_REPORT.replace("82/100", "95/100")
         agent = SeoAuditorAgent()
-        agent._client = mock_anthropic_client(high_report)
+        agent._provider = mock_provider(high_report)
 
         result = await agent.audit_and_fix(
             article="# Test\n\nContent.",

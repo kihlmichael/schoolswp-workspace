@@ -9,17 +9,16 @@ Each dataclass must:
 
 import pytest
 
-from agents.seo_auditor.agent import AuditResult
-from agents.llm_seo.agent import CitationSignalResult
-from agents.conversion_auditor.agent import ConversionAuditResult
-from agents.topical_authority.agent import TopicalAuditResult
 from agents.article_pipeline.pipeline import PipelineResult
+from agents.conversion_auditor.agent import ConversionAuditResult
+from agents.llm_seo.agent import CitationSignalResult
 from agents.publish_ready.agent import (
     PublishReadyResult,
     _compute_publish_score,
     _find_weakest,
 )
-
+from agents.seo_auditor.agent import AuditResult
+from agents.topical_authority.agent import TopicalAuditResult
 
 # ── AuditResult ──────────────────────────────────────────────────
 

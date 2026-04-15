@@ -15,8 +15,8 @@
 
 ## Typographie
 
-- Headings : Nunito Sans
-- Body : Roboto
+- Titres : Nunito Sans
+- Corps : Roboto
 
 ## Signature
 

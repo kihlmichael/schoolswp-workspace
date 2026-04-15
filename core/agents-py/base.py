@@ -3,7 +3,7 @@ import logging.handlers
 import os
 from pathlib import Path
 
-from anthropic import AsyncAnthropic
+from agents.providers import LLMRequest, resolve_provider
 
 
 def _setup_logging() -> None:
@@ -127,8 +127,8 @@ class BaseContentAgent:
     max_tokens: int = 4096
 
     def __init__(self, model: str | None = None) -> None:
-        self.model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
-        self._client = AsyncAnthropic()
+        raw_model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
+        self._provider, self.model = resolve_provider(raw_model)
         self._log = logging.getLogger(f"agents.{self.name}")
 
     async def call_llm(self, user_message: str, *, max_tokens: int | None = None) -> str:
@@ -141,16 +141,16 @@ class BaseContentAgent:
         Returns:
             Texte brut de la réponse LLM.
         """
-        self._log.debug("call_llm → %s (%d tokens max)", self.name, max_tokens or self.max_tokens)
-        response = await self._client.messages.create(
+        request = LLMRequest(
             model=self.model,
-            max_tokens=max_tokens or self.max_tokens,
             system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
+            user_message=user_message,
+            max_tokens=max_tokens or self.max_tokens,
         )
-        text = response.content[0].text
-        self._log.debug("call_llm ← %s (%d chars)", self.name, len(text))
-        return text
+        self._log.debug("call_llm → %s (%d tokens max)", self.name, request.max_tokens)
+        response = await self._provider.complete(request)
+        self._log.debug("call_llm ← %s (%d chars)", self.name, len(response.text))
+        return response.text
 
     async def run(self, **kwargs) -> str:
         raise NotImplementedError(f"L'agent '{self.name}' doit implémenter run()")

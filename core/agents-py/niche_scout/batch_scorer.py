@@ -210,11 +210,4 @@ class BatchNicheScorerAgent(BaseContentAgent):
             "et produis l'analyse complète selon la structure définie."
         )
 
-        response = await self._client.messages.create(
-            model=self.model,
-            max_tokens=8000,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": user_message}],
-        )
-
-        return response.content[0].text
+        return await self.call_llm(user_message, max_tokens=8000)

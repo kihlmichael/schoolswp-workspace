@@ -21,9 +21,14 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-sys.stdout.reconfigure(encoding='utf-8')
+from dotenv import load_dotenv
 
-GEMINI_API_KEY = 'AIzaSyAb8-0N3EOn_T27-L6bB9sEeRu88JcRUX0'
+sys.stdout.reconfigure(encoding='utf-8')
+load_dotenv()
+
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+if not GEMINI_API_KEY:
+    raise RuntimeError('GEMINI_API_KEY manquante — remplir .env (voir .env.example)')
 GEMINI_URL     = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
 
 IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.heic', '.heif', '.webp', '.bmp', '.tiff', '.tif'}

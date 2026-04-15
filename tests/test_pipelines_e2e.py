@@ -9,6 +9,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 from agents.article_pipeline.pipeline import ArticlePipeline, PipelineResult
 from agents.content_factory.agent import ContentFactoryAgent, ContentFactoryResult
+from agents.providers import clear_provider_cache
 from agents.publish_ready.agent import PublishReadyAgent, PublishReadyResult
 
 # ── Fixtures ───────────────────────────────────────────────────────
@@ -124,8 +125,6 @@ class TestPublishReadyE2E:
     """Full orchestration: 4 parallel audits → score → synthesis → dashboard."""
 
     async def test_full_run_produces_valid_result(self, fake_env):
-        agent = PublishReadyAgent()
-
         # Mock all 5 sub-agent LLM calls (4 audits + 1 synthesis)
         call_count = 0
         responses = [
@@ -144,10 +143,11 @@ class TestPublishReadyE2E:
             return msg
 
         # Patch at the BaseContentAgent level — all sub-agents share the same mock
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             # Re-instantiate so it picks up the patched client
             agent = PublishReadyAgent()
@@ -215,10 +215,11 @@ class TestArticlePipelineE2E:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             pipeline = ArticlePipeline()
             result = await pipeline.run(
@@ -252,10 +253,11 @@ class TestArticlePipelineE2E:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             pipeline = ArticlePipeline()
             result = await pipeline.run_lite(
@@ -301,10 +303,11 @@ class TestContentFactoryE2E:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             factory = ContentFactoryAgent()
             result = await factory.audit_only(
@@ -330,10 +333,11 @@ class TestContentFactoryE2E:
             msg.content = [MagicMock(text=strategy_response)]
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             ContentFactoryAgent()  # verify instantiation works
             # The ROI check is in generate_and_audit after brain returns
@@ -379,10 +383,11 @@ class TestContentFactoryE2E:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             factory = ContentFactoryAgent()
             result = await factory.generate_and_audit(
@@ -412,10 +417,11 @@ class TestContentFactoryE2E:
             msg.content = [MagicMock(text=strategy_json)]
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             factory = ContentFactoryAgent()
             result = await factory.generate_and_audit(
@@ -455,10 +461,11 @@ class TestContentFactoryE2E:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             factory = ContentFactoryAgent()
             result = await factory.generate_and_audit(
@@ -495,10 +502,11 @@ class TestPublishReadyDashboard:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             agent = PublishReadyAgent()
             result = await agent.run(
@@ -526,10 +534,11 @@ class TestPublishReadyDashboard:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             agent = PublishReadyAgent()
             result = await agent.run(
@@ -561,10 +570,11 @@ class TestArticlePipelineEdgeCases:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             pipeline = ArticlePipeline()
             result = await pipeline.run(
@@ -588,10 +598,11 @@ class TestArticlePipelineEdgeCases:
             call_count += 1
             return msg
 
-        with patch("agents.base.AsyncAnthropic") as MockClient:
+        with patch("agents.providers.anthropic.AsyncAnthropic") as MockClient:
             instance = AsyncMock()
             instance.messages.create = mock_create
             MockClient.return_value = instance
+            clear_provider_cache()
 
             pipeline = ArticlePipeline()
             result = await pipeline.run(

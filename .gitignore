@@ -105,5 +105,12 @@ apps/vscode-agent-visual/dist/
 apps/telegram-bot/telegram-bot/node_modules/
 apps/_archive/claude-telegram-poc/venv/
 .coverage
+coverage.json
 .firecrawl/
 .agent/
+.trash/
+data/youtube-transcriptions/*
+!data/youtube-transcriptions/*.md
+!data/youtube-transcriptions/*.py
+.aidesigner/*
+!.aidesigner/.gitkeep
