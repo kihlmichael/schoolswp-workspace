@@ -1,0 +1,146 @@
+=== booster-sa-prospection-commerciale-avec-lintelligence-artificielle ===
+# Booster sa prospection commerciale avec l'intelligence artificielle
+### Objectifs de la formation
+À l’issue de cette formation, vous serez capable de :
+- Construire votre plan d’utilisation de l’IA pour la prospection
+- Identifier les outils et cas d’usage adaptés à votre activité
+- Mesurer et optimiser vos performances commerciales grâce à l’IA
+### L’IA au service de votre prospection commerciale
+- Recherche automatisée de prospects qualifiés (LinkedIn Sales Navigator, Crunchbase…)
+- Qualification intelligente via CRM IA (HubSpot, Salesforce Einstein…)
+- Rédaction d’emails personnalisés à grande échelle (ChatGPT, outils de copywriting IA)
+- Automatisation des séquences de prospection (Lemlist, Mailshake…)
+**Exemples d’usages pratiques :**
+- Génération de séquences d’emails personnalisés
+- L’IA ne remplace pas la logique métier ni la compréhension humaine
+### Programme de la formation
+**1\. Introduction à l’IA pour la prospection**
+- Types d’IA et bénéfices pour la prospection
+- Rédaction d’emails personnalisés avec IA
+**6\. Mesurer et optimiser l’efficacité**
+### Pourquoi s’inscrire ?
+
+=== optimiser-sa-gouvernance-avec-lintelligence-artificielle ===
+# Optimiser sa gouvernance avec l'intelligence artificielle
+### Objectifs de la formation
+À l’issue de cette formation, les participants seront capables de :
+- Comprendre les fondamentaux de l’intelligence artificielle et son fonctionnement.
+- Identifier les leviers concrets de l’IA pour la stratégie, la gouvernance et la transformation.
+- Utiliser des outils d’IA pour soutenir la prise de décision, l’analyse de données et la veille concurrentielle.
+- Évaluer les impacts de l’IA sur leur organisation : risques, opportunités, enjeux humains.
+- Développer une posture de dirigeant éclairé face à l’IA, intégrant vision, éthique et pragmatisme.
+### Programme de la formation
+### 1\. Introduction à l’intelligence artificielle
+### 2\. Fonctionnement d’une IA
+- Apprentissage, réseaux de neurones, rétropropagation.
+### 3\. Utilisation des IA conversationnelles
+- Qu’est-ce qu’un prompt ? Comment le concevoir ?
+- Outils intégrés : ChatGPT, Copilot, Gamma, Napkin, Fathom…
+### 4\. Applications stratégiques pour dirigeants
+#### ⇒ Aide à la décision et pilotage
+#### ⇒ Appui à la vision et à la stratégie
+- Rédaction de notes d’intention, plans d’action, argumentaires.
+#### ⇒ Management et accompagnement
+
+=== optimiser-son-management-avec-lintelligence-artificielle ===
+# Optimiser son management avec l’intelligence artificielle
+### Objectifs de la formation
+À l’issue de cette formation, les participants seront capables de :
+- Comprendre les bases de l’intelligence artificielle et son fonctionnement.
+- Utiliser des outils d’IA pour analyser, organiser et synthétiser des données opérationnelles.
+- Apporter de la valeur ajoutée dans la prise de décision (analyse, projection, benchmark).
+- Adopter une posture proactive et éthique face aux usages émergents de l’IA.
+### Programme de la formation
+### 1\. Introduction à l’intelligence artificielle
+- Brève histoire de l’IA.
+### 2\. Comprendre le fonctionnement d’une IA
+- Réseaux de neurones, rétropropagation.
+### 3\. Utiliser les IA conversationnelles
+- Types d’IA et outils intégrés.
+- Qu’est-ce qu’un prompt ? Comment le concevoir ?
+- Exemples d’outils : ChatGPT, Copilot, Excel IA, Power BI + IA, outils de transcription.
+### 4\. Applications managériales concrètes
+#### ⇒ Communication managériale
+- Rédiger des emails d’annonce ou de mobilisation.
+- Créer des briefings d’équipe à partir de plusieurs sources.
+
+=== pilotez-votre-entreprise-avec-des-tableaux-de-bord-de-gestion-intelligents-grace-lia ===
+# Pilotez votre entreprise avec des tableaux de bord de gestion intelligents grâce à l'IA
+## Pilotez votre entreprise avec des tableaux de bord efficaces !Mieux suivre vos performances, prendre des décisions éclairées et gagner en réactivité, cette formation vous donne les clés pour 
+### Objectifs de la formation
+À l’issue de cette formation, vous serez capable de :
+- Identifier les indicateurs clés de performance (KPI) de votre entreprise
+- Utiliser l’IA pour structurer, visualiser et interpréter vos données
+### L’IA au service de vos tableaux de bord
+**Gagnez du temps et de la pertinence grâce à l’intelligence artificielle :**
+- Détection automatique de tendances ou d’alertes (via Excel + IA ou Power BI avec Copilot)
+- Mise en place d’alertes basées sur des seuils personnalisés
+- La logique métier reste essentielle : l’IA ne comprend pas toujours les enjeux humains
+### Programme de la formation
+- Ratios et indicateurs
+- Diagnostic de l’entreprise et du marché
+- Définition d’objectifs
+**5\. Intégrer l’IA dans vos tableaux de bord**
+### Pourquoi s’inscrire ?
+Cette formation est idéale pour les dirigeant·es, responsables ou chargé·es de mission souhaitant structurer leur pilotage stratégique. Elle vous permettra de gagner en visibilité, en efficacit�
+En autorisant ces services tiers, vous acceptez le dépôt et la lecture de cookies et l'utilisation de technologies de suivi nécessaires à leur bon fonctionnement.
+Les APIs permettent de charger des scripts : géolocalisation, moteurs de recherche, traductions, ...
+
+=== developper-la-qualite-au-service-du-client-cce ===
+# Développer la qualité au service du client (CCE)
+### Objectifs de la formation
+À l’issue de cette formation, vous serez capable de :
+- Identifier les besoins explicites et implicites grâce à l’écoute active
+- Utiliser l’IA pour structurer les réponses, analyser les retours et améliorer le service
+- Évaluer la satisfaction client avec des indicateurs fiables
+- Mettre en œuvre des actions correctives dans une logique d’amélioration continue
+### Programme de la formation
+**2\. Mise en œuvre d’une action qualité**
+- Élaboration d’un plan d’action (QQOQCP)
+- Outils et indicateurs fiables
+### Pourquoi s’inscrire ?
+Cette formation s’adresse aux responsables qualité, chargé·es de relation client, managers ou toute personne en contact avec des clients internes ou externes, souhaitant professionnaliser leur d�
+En autorisant ces services tiers, vous acceptez le dépôt et la lecture de cookies et l'utilisation de technologies de suivi nécessaires à leur bon fonctionnement.
+Les APIs permettent de charger des scripts : géolocalisation, moteurs de recherche, traductions, ...
+Nous utilisons les cookies pour améliorer votre expérience, la navigation sur notre site et pour analyser son trafic. Nous partageons également des informations sur l’utilisation de notre site av
+Vous pouvez « Tout accepter » ou « Tout refuser » le stockage de cookies tiers sur votre appareil et / ou l’accès à l’information en cliquant sur le bouton correspondant.
+
+=== bien-vivre-le-changement ===
+# Bien vivre le changement
+### Objectifs de la formation
+### 1\. Appréhender une nouvelle situation
+### 2\. Comprendre ses réactions face au changement
+### 3\. Changement – Acceptation – Mobilisation active
+- La résilience : comprendre le concept, ses étapes, et l’intégrer comme levier d’avenir.
+### Pourquoi participer à cette formation ?
+- **Mieux vivre les transitions professionnelles**, en développant des réflexes d’adaptation.
+- **Renforcer la cohésion d’équipe**, en favorisant une dynamique collective positive.
+- **S’engager activement dans les projets de transformation**, avec confiance et motivation.
+C’est une opportunité pour les entreprises de transformer les périodes de changement en leviers de croissance humaine et organisationnelle.
+En autorisant ces services tiers, vous acceptez le dépôt et la lecture de cookies et l'utilisation de technologies de suivi nécessaires à leur bon fonctionnement.
+Les APIs permettent de charger des scripts : géolocalisation, moteurs de recherche, traductions, ...
+Nous utilisons les cookies pour améliorer votre expérience, la navigation sur notre site et pour analyser son trafic. Nous partageons également des informations sur l’utilisation de notre site av
+Vous pouvez « Tout accepter » ou « Tout refuser » le stockage de cookies tiers sur votre appareil et / ou l’accès à l’information en cliquant sur le bouton correspondant.
+
+=== le-facteur-mental-element-cle-de-la-performance ===
+# Le facteur mental : élément clé de la performance
+### Objectifs de la formation
+À l’issue de cette formation, les participants seront capables de :
+- Comprendre les mécanismes du mental et leur impact sur la performance.
+- Utiliser l’intelligence émotionnelle pour améliorer les relations professionnelles.
+- Booster leur motivation et se fixer des objectifs clairs et atteignables.
+- Renforcer leur concentration et leur assertivité.
+- Adopter des comportements cohérents avec leurs objectifs de performance.
+### Programme détaillé
+### 1\. Introduction à la préparation mentale
+- Quiz d’ouverture pour évaluer les représentations initiales.
+- Concentration, multitâche, gestion des distractions et création d’habitudes.
+### 2\. Profilage et protocole d’intervention personnalisé
+- Utilisation d’outils d’évaluation pour établir un profil de compétences mentales.
+- Définition des attentes et du niveau d’engagement.
+- Élaboration d’un parcours d’entraînement mental : routines, imagerie mentale, gestion du stress, concentration, affirmation de soi.
+### 3\. Construction et pilotage du programme d’entraînement mental
+- Mise en œuvre du programme en situation réflexive pour favoriser l’engagement.
+**Mise en pratique : exercice d’imagerie mentale**
+### Pourquoi participer à cette formation ?
+

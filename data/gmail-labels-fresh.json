@@ -1,0 +1,231 @@
+{
+  "labels": [
+    {
+      "id": "CHAT",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CHAT",
+      "type": "system"
+    },
+    {
+      "id": "SENT",
+      "name": "SENT",
+      "type": "system"
+    },
+    {
+      "id": "INBOX",
+      "name": "INBOX",
+      "type": "system"
+    },
+    {
+      "id": "IMPORTANT",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "IMPORTANT",
+      "type": "system"
+    },
+    {
+      "id": "TRASH",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "TRASH",
+      "type": "system"
+    },
+    {
+      "id": "DRAFT",
+      "name": "DRAFT",
+      "type": "system"
+    },
+    {
+      "id": "SPAM",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "SPAM",
+      "type": "system"
+    },
+    {
+      "id": "CATEGORY_FORUMS",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CATEGORY_FORUMS",
+      "type": "system"
+    },
+    {
+      "id": "CATEGORY_UPDATES",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CATEGORY_UPDATES",
+      "type": "system"
+    },
+    {
+      "id": "CATEGORY_PERSONAL",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CATEGORY_PERSONAL",
+      "type": "system"
+    },
+    {
+      "id": "CATEGORY_PROMOTIONS",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CATEGORY_PROMOTIONS",
+      "type": "system"
+    },
+    {
+      "id": "CATEGORY_SOCIAL",
+      "labelListVisibility": "labelHide",
+      "messageListVisibility": "hide",
+      "name": "CATEGORY_SOCIAL",
+      "type": "system"
+    },
+    {
+      "id": "STARRED",
+      "name": "STARRED",
+      "type": "system"
+    },
+    {
+      "id": "UNREAD",
+      "name": "UNREAD",
+      "type": "system"
+    },
+    {
+      "color": {
+        "backgroundColor": "#fb4c2f",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_1222741639365924185",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🤖 Automatisations",
+      "type": "user"
+    },
+    {
+      "id": "Label_2",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "📊 Factures",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#fbe983",
+        "textColor": "#594c05"
+      },
+      "id": "Label_3334600683830493450",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🛍️ Petit Papier Magique",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#f2b2a8",
+        "textColor": "#8a1c0a"
+      },
+      "id": "Label_4381655704776690504",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🛒 Achats",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#44b984",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_4700735980710271697",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🎓 schoolsWP/🤝 Partenariats",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#4986e7",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_5397917593924977521",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🔔 Notifications",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#ffc8af",
+        "textColor": "#7a2e0b"
+      },
+      "id": "Label_5722837123959833844",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "📰 Newsletters",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#44b984",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_5844503013333813058",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🎓 schoolsWP/📚 Communauté",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#44b984",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_5998793315604754677",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🎓 schoolsWP/🎬 Contenus",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#44b984",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_6371091193979376371",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🎓 schoolsWP/💰 Affiliation",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#44b984",
+        "textColor": "#ffffff"
+      },
+      "id": "Label_7576301036882190953",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🎓 schoolsWP",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#e3d7ff",
+        "textColor": "#3d188e"
+      },
+      "id": "Label_76771423355031378",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🧰 SaaS",
+      "type": "user"
+    },
+    {
+      "color": {
+        "backgroundColor": "#b6cff5",
+        "textColor": "#0d3472"
+      },
+      "id": "Label_7850210415597034189",
+      "labelListVisibility": "labelShow",
+      "messageListVisibility": "show",
+      "name": "🏠 Maison",
+      "type": "user"
+    }
+  ]
+}

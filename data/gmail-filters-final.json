@@ -1,0 +1,172 @@
+{
+  "filter": [
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_4700735980710271697",
+          "CATEGORY_PERSONAL"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "noreply@lws.fr"
+      },
+      "id": "ANe1BmjpWRURMFSQj5tuIqDEEOE_lU6f9L5gLzw-594F739iXzwUZRGcRXMnR4omr9Gvbt6tmg"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "CATEGORY_PERSONAL"
+        ],
+        "removeLabelIds": [
+          "IMPORTANT",
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "noreply@catchdoms.com"
+      },
+      "id": "ANe1Bmj79vwu3MU9NBc3CJxjNUEx4-WHJ-GgYgJYlIFgrGNYwLUXMyBoc5qxLTrO4_G-2YPD8Q"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "CATEGORY_PERSONAL"
+        ],
+        "removeLabelIds": [
+          "IMPORTANT",
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "michaelkihlpro@gmail.com",
+        "subject": "📊 schoolsWP - Nouvelle analyse YouTube"
+      },
+      "id": "ANe1Bmiy6KJ9uPgQmHBWDReHB2hxdEmYgljjFRPpv1jX7LRGzYxtHUzRha9Xi0m7lsSA8S0Ejw"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_5722837123959833844"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "np@neilpatel.com OR james@mail.hunter.io OR andrei.tit@ahrefs.com OR lucio@link-finder.fr OR looker-studio-noreply@google.com"
+      },
+      "id": "ANe1BmjLz5ps2R8p743g470rRvvcMcPPtPQWBLVU5-7Lk0vU2W4QdoR0N_L_uNTYZs1eSl68tA"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_5397917593924977521"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "sc-noreply@google.com OR adsense-noreply@google.com OR payments-noreply@google.com OR googlebase-noreply@google.com OR noreply@youtube.com"
+      },
+      "id": "ANe1BmizIYXYVW9LxjF0rs7MXp9Gabpnw1FC7UslfMAHB9OOPlNH7nDFwpuoY6pH2DXv4RcjjQ"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_5397917593924977521"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "noreply@share-dns.net"
+      },
+      "id": "ANe1BmgC2X4WAHxWnL80IL06IqR7xLsTUyAnESKJb6keefLuUk8kkpibYnPpUq6ZkqV4sCL7SQ"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_4381655704776690504"
+        ],
+        "removeLabelIds": [
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "store_eu@asus.com OR noreply@asus.com OR pkginfo@ups.com OR googleplay-noreply@google.com"
+      },
+      "id": "ANe1Bmg87gIFT_7MZt_XppuYNXY-opjgUEEcnhDYvXI0qbr1QAkr-oREWxeWzXtfrkcnWNsWVQ"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_1222741639365924185"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "subject": "[schoolsWP]"
+      },
+      "id": "ANe1BmgmuGkg7nKvMlldZVxFpUCuK4lzWopneMf8W9GAPQd8g7UQicZWnRETeN9WFVocuGm7LA"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_76771423355031378"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "no-reply@email.claude.com OR team@mail.perplexity.ai OR noreply@gumroad.com OR support@rapidapi.com OR hello@news.ottokit.com OR noreply@catchdoms.com"
+      },
+      "id": "ANe1BmjsdbowuPGrvKVCYXZqhez7LXgWywOO9Q"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_2"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "@mail.anthropic.com"
+      },
+      "id": "ANe1BmhTT7d9I_029GDemwGSh0PVuC7k2qKC2A"
+    },
+    {
+      "action": {
+        "addLabelIds": [
+          "Label_76771423355031378"
+        ],
+        "removeLabelIds": [
+          "INBOX",
+          "SPAM"
+        ]
+      },
+      "criteria": {
+        "from": "ottokit OR FluentCart OR ZipWP"
+      },
+      "id": "ANe1BmiV6hJrAh0ZETC_WmAJ-hocHSSpiGcGtQ"
+    }
+  ]
+}
