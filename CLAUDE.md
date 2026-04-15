@@ -39,7 +39,7 @@ Variables clés `.env` : `ANTHROPIC_API_KEY` (obligatoire), `MODEL_WRITER` (déf
 Avant toute tâche, lire dans cet ordre :
 
 1. `core/tasks/todo.md` — état de la mission en cours
-2. `core/tasks/lessons.md` — 10 leçons documentées (obligatoire avant tout refactoring d'agents)
+2. `core/tasks/lessons.md` — leçons documentées (obligatoire avant tout refactoring d'agents)
 3. `CLAUDE.local.md` — contraintes temporaires de session (s'il contient quelque chose)
 
 ## Python Environment
@@ -193,7 +193,8 @@ Seuils : ≥90 → publication immédiate | 80-89 → ajustements mineurs | 70-7
 ```text
 projects/schoolswp/
 ├── agents/             # Namespace package (.env only — CLIs use sys.path.insert, conftest registers sys.modules)
-│   └── *.md            # Claude Code agent configs (YAML frontmatter: name, model, description)
+│   ├── *.md            # Claude Code agent configs (YAML frontmatter: name, model, description)
+│   └── telegram-claude/  # Pont Telegram → Claude (Node.js, own .git, server.js + webhooks)
 ├── core/
 │   ├── agents-md/      # LLM system prompts .md par agent Python (INDEX.md is the index)
 │   ├── agents-py/      # Python agent source files (base.py + one subdir per agent)
@@ -239,6 +240,7 @@ projects/schoolswp/
 ├── data/               # Reports, artifacts, outputs
 ├── tests/              # pytest tests (asyncio_mode = auto)
 ├── *.py (root)         # 9 scripts n8n one-shot (fix_workflow.py, patch_*.py) — maintenance workflows via API
+├── gmail-filters.xml   # Export filtres Gmail (config persistante — réimportable dans Gmail Settings)
 └── .claude/            # Claude Code rules, commands, local skills
 ```
 
@@ -336,7 +338,7 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 3. Vérification
 4. Lessons dans `core/tasks/lessons.md`
 
-**Lessons clés** (10 documentées) : path traversal (#1), secrets gitignore fortress (#2), venv Windows = chemin complet (#5), signatures agents = grep tous les appelants (#10). Lire `core/tasks/lessons.md` avant tout refactoring d'agents.
+**Lessons clés** : path traversal, secrets gitignore fortress, venv Windows = chemin complet, signatures agents = grep tous les appelants. Liste complète et à jour dans `core/tasks/lessons.md` — à lire avant tout refactoring d'agents.
 
 ## Skills Registry
 
@@ -344,9 +346,11 @@ Skills Claude Code organises en 14 categories dans `.claude/skills/` (voir `INDE
 
 | Emplacement | Skills | Rôle |
 | --- | --- | --- |
-| `.claude/skills/` (projet) | ~117 | Skills locaux schoolsWP, organises par categorie |
-| `d:\VS Code\CLAUDE CODE\.claude\skills\` (workspace) | ~63 | Skills workspace FR (n8n, WP, SEO…) |
-| `.agents/skills/` (workspace) | 43 | Source library, descriptions FR synchronisées |
+| `.claude/skills/` (projet) | variable | Skills locaux schoolsWP, organisés par catégorie |
+| `d:\VS Code\CLAUDE CODE\.claude\skills\` (workspace) | variable | Skills workspace FR (n8n, WP, SEO…) |
+| `.agents/skills/` (workspace) | variable | Source library, descriptions FR synchronisées |
+
+> Compte exact : voir `INDEX.md` de chaque dossier ou lancer `skills_registry.py --sync`. Les nombres dérivent vite — ne pas les figer ici.
 
 **Sync registre vers Google Sheets :**
 
