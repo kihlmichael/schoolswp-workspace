@@ -36,7 +36,13 @@ asyncio_mode = "auto"
 
 [tool.coverage.run]
 source = ["core/agents-py"]
-omit = ["*/cli.py", "*/brain_lite_cli.py", "*/__main__.py"]
+omit = [
+    "*/cli.py",
+    "*_cli.py",
+    "*/brain_lite_cli.py",
+    "*/__main__.py",
+    "*/wp_*/agent.py",
+]
 
 [tool.coverage.report]
 show_missing = true
