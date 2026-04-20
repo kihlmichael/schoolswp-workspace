@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séquence Welcome FluentCRM</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#12111F',
+                        brandGreen: '#00D400',
+                        textLight: '#FAFBFD',
+                        borderDark: '#2D2A43',
+                        inputBg: '#1A1829'
+                    },
+                    fontFamily: {
+                        nunito: ['"Nunito Sans"', 'sans-serif'],
+                        roboto: ['"Roboto"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #00D400;
+            color: #12111F;
+        }
+
+        .mockup-grid {
+            background-size: 16px 16px;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        }
+
+        /* Subtle floating animation for spatial tension */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(8deg); }
+            50% { transform: translateY(-10px) rotate(9deg); }
+            100% { transform: translateY(0px) rotate(8deg); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-bgDark text-textLight font-roboto min-h-screen flex flex-col justify-center selection:bg-brandGreen overflow-x-hidden pt-12 pb-24 px-6 lg:px-12 lg:py-0">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-[1440px] mx-auto grid grid-cols-10 gap-x-0 gap-y-20 lg:gap-x-20 items-center">
+
+        <!-- LEFT COLUMN: 60% (Content & CTA) -->
+        <section class="col-span-10 lg:col-span-6 flex flex-col z-10">
+
+            <h1 class="font-nunito text-[2.5rem] leading-[1.1] lg:text-[3.5rem] lg:leading-[1.1] font-bold mb-6 tracking-tight">
+                Une séquence welcome FluentCRM prête à copier pour tes clients WordPress
+            </h1>
+
+            <p class="text-gray-400 text-lg lg:text-xl leading-relaxed max-w-2xl mb-12">
+                4 emails, 7 jours, tags et conditions inclus — installe-la en 45 minutes sur n'importe quel compte client, sans repartir d'une page blanche.
+            </p>
+
+            <!-- Formulaire Inline -->
+            <form action="#" method="POST" class="max-w-xl w-full" onsubmit="event.preventDefault();">
+                <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                    <!-- Prenom (Optional) -->
+                    <div class="flex-1">
+                        <label for="prenom" class="sr-only">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Prénom (optionnel)"
+                            class="w-full bg-inputBg border border-borderDark text-textLight font-roboto px-5 py-4 placeholder-gray-500 focus:outline-none focus:border-brandGreen focus:ring-1 focus:ring-brandGreen transition-all duration-200">
+                    </div>
+
+                    <!-- Email (Required) -->
+                    <div class="flex-[1.5]">
+                        <label for="email" class="sr-only">Adresse email</label>
+                        <input type="email" id="email" name="email" placeholder="Adresse email" required
+                            class="w-full bg-inputBg border border-borderDark text-textLight font-roboto px-5 py-4 placeholder-gray-500 focus:outline-none focus:border-brandGreen focus:ring-1 focus:ring-brandGreen transition-all duration-200">
+                    </div>
+                </div>
+
+                <!-- Bouton CTA -->
+                <button type="submit"
+                    class="w-full bg-brandGreen text-bgDark font-nunito font-bold text-lg px-8 py-5 hover:bg-[#00E500] hover:scale-[1.01] transition-all duration-200 flex justify-center items-center gap-2">
+                    Recevoir le template maintenant
+                </button>
+            </form>
+
+            <!-- Reassurance -->
+            <div class="flex items-center gap-2 mt-5 text-gray-500 text-sm font-roboto px-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"></path>
+                </svg>
+                <span>Désinscription en 1 clic. Zéro spam. Promis.</span>
+            </div>
+
+        </section>
+
+        <!-- RIGHT COLUMN: 40% (Pure CSS PDF Mockup) -->
+        <section class="col-span-10 lg:col-span-4 flex justify-center lg:justify-end items-center relative">
+
+            <!-- Structural Container for Rotation Mapping -->
+            <div class="relative w-full max-w-[340px] lg:max-w-[400px] aspect-[1/1.414] animate-float">
+
+                <!-- The A4 Sheet -->
+                <div class="absolute inset-0 bg-[#EFEFEF] mockup-grid border border-[#D1D1D1] p-6 lg:p-8 flex flex-col gap-4 shadow-[-20px_20px_0px_#0A0912]">
+
+                    <!-- Inner Wireframe (Simulating Sequence Doc) -->
+                    <!-- Title block -->
+                    <div class="w-full mb-2">
+                        <div class="h-6 w-3/4 bg-[#12111F] mb-3"></div>
+                        <div class="h-2 w-1/3 bg-gray-400"></div>
+                    </div>
+
+                    <!-- Flow Diagram Segment 1 -->
+                    <div class="border-2 border-dashed border-gray-400 p-4 relative mt-2">
+                        <!-- Tag indicator -->
+                        <div class="absolute -top-3 left-4 bg-[#12111F] text-brandGreen text-[10px] uppercase font-bold tracking-wider px-2 py-1">Tag Appliqué</div>
+                        <div class="h-3 w-1/4 bg-brandGreen opacity-80 mb-3 mt-2"></div>
+                        <div class="flex flex-col gap-2">
+                            <div class="h-1.5 w-full bg-gray-300"></div>
+                            <div class="h-1.5 w-5/6 bg-gray-300"></div>
+                        </div>
+                    </div>
+
+                    <!-- Flow Connector Down -->
+                    <div class="w-0.5 h-6 bg-gray-400 mx-auto relative flex justify-center items-end">
+                        <div class="w-2 h-2 border-r-2 border-b-2 border-gray-400 rotate-45 transform translate-y-1"></div>
+                    </div>
+
+                    <!-- Email block 1 -->
+                    <div class="bg-white border border-gray-300 shadow-sm p-4 relative">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-6 h-6 rounded-full bg-gray-200 flex-shrink-0"></div>
+                            <div class="h-2 w-1/2 bg-[#12111F]"></div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="h-1.5 w-full bg-gray-200"></div>
+                            <div class="h-1.5 w-full bg-gray-200"></div>
+                            <div class="h-1.5 w-full bg-gray-200"></div>
+                            <div class="h-1.5 w-2/3 bg-gray-200"></div>
+                        </div>
+                        <!-- Mini Button Mockup inside Email -->
+                        <div class="h-4 w-20 bg-brandGreen mt-4 opacity-80"></div>
+                    </div>
+
+                    <!-- Delay Mockup -->
+                    <div class="flex items-center gap-2 mx-auto mt-2">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" class="opacity-70">
+                            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <div class="h-1.5 w-12 bg-gray-300"></div>
+                    </div>
+
+                </div>
+
+                <!-- Green "Gratuit" Badge overlapping the A4 sheet -->
+                <div class="absolute -top-5 -right-5 lg:-right-8 bg-brandGreen text-bgDark font-nunito font-extrabold text-lg px-6 py-2 rotate-[-5deg] shadow-[4px_4px_0px_#0A0912] z-20">
+                    Gratuit
+                </div>
+            </div>
+
+        </section>
+
+        <!-- BOTTOM AREA: 3 Benefits Horizontal List -->
+        <section class="col-span-10 mt-16 lg:mt-24 pt-12 border-t border-white border-opacity-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+
+                <!-- Benefit 1 -->
+                <div class="flex items-start gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-brandGreen flex-shrink-0 mt-1 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Les <strong class="text-white font-normal">4 objets d'emails testés</strong> qui tiennent au-dessus de 45 % d'ouverture
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex items-start gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-brandGreen flex-shrink-0 mt-1 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Le <strong class="text-white font-normal">planning exact</strong> (délais en jours + tags + conditions FluentCRM)
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex items-start gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-brandGreen flex-shrink-0 mt-1 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        La <strong class="text-white font-normal">bascule vers la newsletter</strong> sans perdre l'engagement acquis
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

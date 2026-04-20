@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séquence Welcome FluentCRM | schoolsWP</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2300D400%22/></svg>" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-paper: #F4F4F0;
+            --bg-surface: #FFFFFF;
+            --ink: #0D0D0C;
+            --ink-muted: #5A5A55;
+            --border-line: #D5D5CE;
+            --brand-green: #00D400;
+            --brand-green-dark: #00B300;
+            --font-serif: 'Newsreader', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+            --header-h: 64px;
+            --gap-sm: 16px;
+            --gap-md: 32px;
+            --gap-lg: 64px;
+            --gap-xl: 96px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { background-color: var(--bg-paper); color: var(--ink); font-family: var(--font-sans); line-height: 1.6; margin: 0; min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ::selection { background-color: var(--brand-green); color: var(--ink); }
+
+        .layout-shell { max-width: 1440px; margin: 0 auto; border-left: 1px solid var(--border-line); border-right: 1px solid var(--border-line); min-height: 100vh; display: flex; flex-direction: column; }
+
+        .masthead { height: var(--header-h); border-bottom: 1px solid var(--border-line); display: flex; justify-content: space-between; align-items: center; padding: 0 5vw; }
+        .masthead-brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-serif); font-weight: 500; font-size: 1.25rem; letter-spacing: -0.02em; }
+        .masthead-dot { width: 10px; height: 10px; background-color: var(--brand-green); border-radius: 50%; }
+        .masthead-brand span { color: var(--ink-muted); font-family: var(--font-sans); font-size: 0.875rem; margin-left: 8px; }
+        .masthead-meta { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-muted); }
+
+        .editorial-wrapper { display: grid; grid-template-columns: 1fr; flex-grow: 1; }
+
+        .title-section { padding: var(--gap-lg) 5vw var(--gap-md) 5vw; border-bottom: 1px solid var(--border-line); }
+        .editorial-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.03em; font-weight: 500; max-width: 18ch; color: var(--ink); }
+        .editorial-title em { font-style: italic; font-weight: 400; color: var(--ink-muted); }
+
+        .content-split { display: grid; grid-template-columns: 1fr; }
+
+        .reading-flow { padding: var(--gap-md) 5vw var(--gap-xl); display: flex; flex-direction: column; gap: var(--gap-md); max-width: 65ch; }
+        .prose-intro { font-size: 1.125rem; line-height: 1.7; color: var(--ink); }
+        .prose-intro::first-letter { float: left; font-family: var(--font-serif); font-size: 4rem; line-height: 0.8; padding-right: 0.5rem; padding-top: 0.4rem; color: var(--ink); }
+
+        .manifesto-list { margin: var(--gap-md) 0; display: flex; flex-direction: column; gap: 24px; position: relative; }
+        .manifesto-list::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background-color: var(--ink-muted); opacity: 0.2; }
+        .manifesto-item { position: relative; padding-left: 24px; font-size: 1.05rem; color: var(--ink-muted); }
+        .manifesto-item strong { color: var(--ink); font-weight: 500; }
+        .manifesto-item::before { content: '—'; position: absolute; left: -8px; top: 0; color: var(--ink); font-family: var(--font-mono); background: var(--bg-paper); padding: 2px; }
+
+        .capture-block { margin-top: var(--gap-md); padding: var(--gap-md); border: 1px solid var(--ink); background-color: var(--bg-surface); box-shadow: 4px 4px 0 var(--ink); }
+        .capture-header { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 24px; display: block; border-bottom: 1px solid var(--border-line); padding-bottom: 8px; letter-spacing: 0.05em; }
+        .form-fields { display: flex; flex-direction: column; gap: 16px; }
+        .input-floating { position: relative; width: 100%; }
+        .editorial-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--ink-muted); padding: 12px 0; font-family: var(--font-sans); font-size: 1rem; color: var(--ink); border-radius: 0; transition: border-color 0.3s; }
+        .editorial-input:focus { outline: none; border-color: var(--brand-green); }
+        .editorial-input::placeholder { color: #A0A09B; font-style: italic; font-family: var(--font-serif); }
+
+        .btn-submit { margin-top: 8px; width: 100%; background-color: var(--ink); color: var(--bg-surface); font-family: var(--font-mono); font-size: 0.875rem; text-transform: uppercase; font-weight: 700; padding: 16px 24px; border: none; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; z-index: 1; }
+        .btn-submit::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: var(--brand-green); transform: scaleX(0); transform-origin: right; transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1); z-index: -1; }
+        .btn-submit:hover { color: var(--ink); }
+        .btn-submit:hover::before { transform: scaleX(1); transform-origin: left; }
+
+        .form-meta { margin-top: 16px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-muted); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+        .figure-column { padding: var(--gap-md) 5vw var(--gap-lg); background-color: var(--border-line); background-image: radial-gradient(var(--bg-paper) 1px, transparent 1px); background-size: 12px 12px; display: flex; align-items: center; justify-content: center; position: relative; border-top: 1px solid var(--border-line); }
+
+        .mockup-document { background-color: var(--bg-surface); border: 1px solid var(--ink); width: 100%; max-width: 400px; padding: 32px; position: relative; box-shadow: 12px 12px 0 var(--ink); transform: rotate(2deg); transition: transform 0.4s ease; }
+        .mockup-document:hover { transform: rotate(0deg); }
+
+        .editorial-sticker { position: absolute; top: -20px; right: -24px; width: 80px; height: 80px; background-color: var(--brand-green); color: var(--ink); font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; border: 1px solid var(--ink); border-radius: 50%; transform: rotate(15deg); box-shadow: 4px 4px 0 var(--ink); z-index: 10; }
+
+        .doc-header { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 16px; margin-bottom: 24px; display: flex; justify-content: space-between; }
+        .doc-title { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.1; margin-bottom: 32px; }
+        .doc-timeline { position: relative; padding-left: 28px; display: flex; flex-direction: column; gap: 24px; }
+        .doc-timeline::before { content: ''; position: absolute; left: 5px; top: 8px; bottom: 16px; width: 1px; background-color: var(--ink); }
+        .doc-node { position: relative; }
+        .doc-node::before { content: ''; position: absolute; left: -26px; top: 4px; width: 6px; height: 6px; background: var(--bg-surface); border: 1px solid var(--ink); }
+        .node-tag { font-family: var(--font-mono); font-size: 0.65rem; background: var(--ink); color: var(--bg-surface); padding: 2px 6px; display: inline-block; margin-bottom: 4px; }
+        .node-text { font-family: var(--font-sans); font-size: 0.85rem; line-height: 1.3; color: var(--ink); }
+        .node-code { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--ink-muted); }
+
+        @media (min-width: 768px) {
+            .form-fields { flex-direction: row; }
+            .input-floating { flex: 1; }
+        }
+        @media (min-width: 1024px) {
+            .content-split { grid-template-columns: 5fr 4fr; }
+            .reading-flow { padding: var(--gap-lg) 5vw; border-right: 1px solid var(--border-line); }
+            .figure-column { border-top: none; padding: var(--gap-xl); }
+            .title-section { padding-bottom: var(--gap-lg); }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="layout-shell">
+
+        <header class="masthead">
+            <div class="masthead-brand">
+                <div class="masthead-dot"></div>
+                schoolsWP<span>resources</span>
+            </div>
+            <div class="masthead-meta">Lead Magnet — Vol I.</div>
+        </header>
+
+        <article class="editorial-wrapper">
+
+            <section class="title-section">
+                <h1 class="editorial-title">Une séquence <em>welcome</em> FluentCRM prête à copier pour tes clients WordPress.</h1>
+            </section>
+
+            <div class="content-split">
+
+                <div class="reading-flow">
+                    <p class="prose-intro">4 emails, 7 jours, tags et conditions inclus — installe-la en 45 minutes sur n'importe quel compte client, sans repartir d'une page blanche.</p>
+
+                    <div class="manifesto-list">
+                        <div class="manifesto-item">Les <strong>4 objets d'emails testés</strong> qui tiennent au-dessus de 45 % d'ouverture.</div>
+                        <div class="manifesto-item">Le <strong>planning exact</strong> : délais en jours, ciblage par tags et automatisation conditionnelle FluentCRM.</div>
+                        <div class="manifesto-item">La <strong>bascule vers la newsletter</strong> sans rompre la narration ni diluer l'engagement acquis.</div>
+                    </div>
+
+                    <div class="capture-block">
+                        <span class="capture-header">Recevoir ce fragment d'architecture</span>
+                        <form action="#" method="POST" onsubmit="event.preventDefault();">
+                            <div class="form-fields">
+                                <div class="input-floating">
+                                    <input type="text" id="prenom" name="prenom" class="editorial-input" placeholder="Prénom (optionnel)">
+                                </div>
+                                <div class="input-floating">
+                                    <input type="email" id="email" name="email" class="editorial-input" placeholder="Adresse e-mail" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-submit">Obtenir le document original</button>
+                        </form>
+                        <div class="form-meta">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Zm-68-56a12,12,0,1,1-12-12A12,12,0,0,1,140,152Z"></path>
+                            </svg>
+                            Désinscription en 1 clic. Zéro spam. Code propre.
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="figure-column">
+                    <div class="mockup-document">
+                        <div class="editorial-sticker">Gratuit</div>
+                        <div class="doc-header">
+                            <span>Index: Fluent-01</span>
+                            <span>Pg. 1/4</span>
+                        </div>
+                        <h3 class="doc-title">Architecture de Séquence</h3>
+                        <div class="doc-timeline">
+                            <div class="doc-node">
+                                <span class="node-tag">J+0</span>
+                                <div class="node-text">Bienvenue + lien de l'artefact principal</div>
+                                <span class="node-code">[TAG_ADDED: lm_fluentcrm]</span>
+                            </div>
+                            <div class="doc-node">
+                                <span class="node-tag">J+1</span>
+                                <div class="node-text">Autopsie de la séquence (Coulisses)</div>
+                                <span class="node-code">[CONDITION: open_lm]</span>
+                            </div>
+                            <div class="doc-node">
+                                <span class="node-tag">J+3</span>
+                                <div class="node-text">Déploiement chez un client (Méthode)</div>
+                                <span class="node-code">[IF_NOT: if_not_open]</span>
+                            </div>
+                            <div class="doc-node">
+                                <span class="node-tag">J+7</span>
+                                <div class="node-text">Transition Broadcast (Newsletter)</div>
+                                <span class="node-code">[TAG_ADDED: welcome_done]</span>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+
+            </div>
+        </article>
+
+    </main>
+</body>
+</html>

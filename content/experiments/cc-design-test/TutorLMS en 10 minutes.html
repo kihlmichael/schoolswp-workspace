@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>TutorLMS en 10 minutes — schoolsWP Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2312111F'/%3E%3Ccircle cx='8' cy='8' r='3' fill='%2300D400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #12111F;
+    --bg-2: #1A1928;
+    --surface: #22213A;
+    --text: #FAFBFD;
+    --muted: #8F8DA5;
+    --border: rgba(250,251,253,0.08);
+    --green: #00D400;
+    --green-dark: #00A100;
+    --magenta: #E668D4;
+    --info: #1159AF;
+    --warning: #F7630C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { background: #000; color: var(--text); font-family: 'Roboto', system-ui, sans-serif; }
+
+  /* Every slide = 1920x1080 stage */
+  deck-stage section {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    padding: 96px 128px;
+    background: var(--bg);
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Nunito Sans', sans-serif; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+  .brand-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 24px var(--green); }
+  .brand-chip b { color: var(--text); font-weight: 700; }
+
+  .eyebrow {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .slide-footer {
+    position: absolute;
+    bottom: 48px;
+    left: 128px;
+    right: 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .slide-footer .brand-chip { font-size: 16px; }
+
+  /* ========================= SLIDE 01 — TITLE ========================= */
+  .cover {
+    justify-content: space-between;
+    background:
+      radial-gradient(1200px 800px at 15% 20%, rgba(0,212,0,0.08), transparent 60%),
+      radial-gradient(900px 600px at 90% 90%, rgba(230,104,212,0.05), transparent 60%),
+      var(--bg);
+  }
+  .cover .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover h1 {
+    font-size: 180px;
+    line-height: 0.95;
+    max-width: 1500px;
+  }
+  .cover h1 span.accent { color: var(--green); }
+  .cover .cover-sub {
+    font-size: 32px;
+    color: var(--muted);
+    max-width: 900px;
+    margin-top: 48px;
+  }
+  .cover .cover-meta {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+  }
+  .cover .cover-meta .meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .cover .cover-meta .meta-label { font-size: 14px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .cover .cover-meta .meta-value { font-size: 22px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; color: var(--text); }
+
+  /* ========================= SLIDE 02 — AGENDA ========================= */
+  .agenda h2 { font-size: 96px; max-width: 1400px; margin-bottom: 24px; }
+  .agenda .agenda-sub { font-size: 28px; color: var(--muted); margin-bottom: 72px; max-width: 1200px; }
+  .agenda .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; }
+  .agenda .step {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+  }
+  .agenda .step-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+  }
+  .agenda .step-body h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .agenda .step-body p {
+    font-size: 20px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ========================= CONTENT SLIDES (steps) ========================= */
+  .step-slide {
+    display: grid;
+    grid-template-columns: 720px 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 96px;
+    row-gap: 48px;
+  }
+  .step-slide .eyebrow-row {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .step-slide .time-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--muted);
+  }
+  .step-slide .time-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+
+  .step-slide .step-big-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 420px;
+    line-height: 0.85;
+    color: var(--green);
+    letter-spacing: -0.04em;
+    margin-top: -24px;
+  }
+  .step-slide .step-big-num small {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 24px;
+    text-transform: uppercase;
+  }
+
+  .step-slide .step-content h2 {
+    font-size: 80px;
+    margin-bottom: 32px;
+    max-width: 900px;
+  }
+  .step-slide .step-content .lede {
+    font-size: 26px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    line-height: 1.45;
+    max-width: 900px;
+  }
+  .step-slide .step-content ul {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+  }
+  .step-slide .step-content li {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 20px;
+    align-items: start;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  .step-slide .step-content li::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 10px;
+    background: var(--green);
+    border-radius: 2px;
+  }
+  .step-slide .step-content li b { color: var(--text); font-weight: 700; }
+  .step-slide .step-content li span { color: var(--muted); }
+
+  .step-slide .aside {
+    grid-column: 2;
+    padding: 28px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+    border-radius: 12px;
+    margin-top: 24px;
+    max-width: 900px;
+  }
+  .step-slide .aside .aside-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .step-slide .aside p { font-size: 20px; color: var(--text); line-height: 1.5; }
+
+  /* ========================= BREAKER SLIDE (magenta pivot) ========================= */
+  .breaker {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+      radial-gradient(1400px 900px at 50% 50%, rgba(230,104,212,0.18), transparent 70%),
+      var(--bg);
+  }
+  .breaker .pretitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--magenta);
+    letter-spacing: 0.2em;
+    margin-bottom: 48px;
+  }
+  .breaker h2 {
+    font-size: 140px;
+    max-width: 1600px;
+    margin-bottom: 48px;
+  }
+  .breaker h2 span { color: var(--magenta); }
+  .breaker .sub {
+    font-size: 32px;
+    color: var(--muted);
+    max-width: 1200px;
+    line-height: 1.4;
+  }
+
+  /* ========================= RECAP ========================= */
+  .recap h2 { font-size: 96px; margin-bottom: 24px; max-width: 1400px; }
+  .recap .recap-sub { font-size: 28px; color: var(--muted); margin-bottom: 64px; max-width: 1200px; }
+  .recap .recap-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .recap .card {
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .recap .card .card-num {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    color: var(--green);
+    line-height: 1;
+  }
+  .recap .card h3 { font-size: 28px; font-weight: 700; line-height: 1.2; }
+  .recap .card p { font-size: 20px; color: var(--muted); line-height: 1.5; }
+
+  /* ========================= CTA ========================= */
+  .cta {
+    justify-content: space-between;
+    background:
+      radial-gradient(1200px 800px at 85% 20%, rgba(0,212,0,0.14), transparent 60%),
+      var(--bg);
+  }
+  .cta .cta-eyebrow { font-size: 22px; color: var(--green); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.15em; text-transform: uppercase; }
+  .cta h2 { font-size: 160px; max-width: 1600px; margin-top: 32px; }
+  .cta h2 span { color: var(--green); }
+  .cta .cta-sub { font-size: 28px; color: var(--muted); max-width: 1100px; margin-top: 40px; line-height: 1.45; }
+  .cta .cta-buttons { display: flex; gap: 24px; align-items: center; }
+  .cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 40px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease;
+  }
+  .cta .btn-primary { background: var(--green); color: #0A0E09; }
+  .cta .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .cta .btn-arrow { font-family: system-ui, sans-serif; font-size: 28px; }
+
+  /* ========================= TWEAKS PANEL ========================= */
+  #tweaks-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 200;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #tweaks-panel {
+    position: fixed;
+    top: 68px;
+    right: 12px;
+    z-index: 200;
+    width: 280px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: none;
+  }
+  #tweaks-panel.open { display: block; }
+  #tweaks-panel h4 { font-family: 'Nunito Sans', sans-serif; font-size: 16px; margin-bottom: 16px; }
+  #tweaks-panel .tweak-group { margin-bottom: 16px; }
+  #tweaks-panel .tweak-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 8px; }
+  #tweaks-panel .tweak-options { display: flex; gap: 6px; flex-wrap: wrap; }
+  #tweaks-panel button.tweak {
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 12px;
+  }
+  #tweaks-panel button.tweak.active { background: var(--green); color: #0A0E09; border-color: var(--green); }
+
+  /* Accent variant overrides */
+  body.accent-magenta { --green: #E668D4; --green-dark: #B84CA6; }
+  body.accent-blue { --green: #4DA6FF; --green-dark: #1159AF; }
+  body.density-loose deck-stage section { padding: 128px 160px; }
+  body.density-tight deck-stage section { padding: 72px 96px; }
+</style>
+</head>
+<body>
+
+<button id="tweaks-toggle" aria-label="Tweaks">◐</button>
+<div id="tweaks-panel">
+  <h4>Tweaks</h4>
+  <div class="tweak-group">
+    <div class="tweak-label">Accent</div>
+    <div class="tweak-options" data-tweak="accent">
+      <button class="tweak active" data-value="green">Green</button>
+      <button class="tweak" data-value="magenta">Magenta</button>
+      <button class="tweak" data-value="blue">Blue</button>
+    </div>
+  </div>
+  <div class="tweak-group">
+    <div class="tweak-label">Density</div>
+    <div class="tweak-options" data-tweak="density">
+      <button class="tweak" data-value="tight">Tight</button>
+      <button class="tweak active" data-value="default">Default</button>
+      <button class="tweak" data-value="loose">Loose</button>
+    </div>
+  </div>
+</div>
+
+<deck-stage>
+
+  <!-- ========== SLIDE 01 — TITLE ========== -->
+  <section class="cover" data-screen-label="01 Title">
+    <div class="cover-top">
+      <div class="brand-chip">
+        <span class="brand-dot"></span>
+        <span>schoolsWP <b>Academy</b></span>
+      </div>
+      <div class="brand-chip" style="color: var(--muted);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; letter-spacing: 0.1em;">FORMATION · 01</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom: 32px;">Formation éclair</div>
+      <h1>TutorLMS<br>en <span class="accent">10 minutes</span>.</h1>
+      <p class="cover-sub">L'essentiel pour lancer ton premier cours WordPress. Pas de blabla, que du concret.</p>
+    </div>
+
+    <div class="cover-meta">
+      <div class="meta-item">
+        <span class="meta-label">Durée</span>
+        <span class="meta-value">10 min</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Niveau</span>
+        <span class="meta-value">Débutant</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Prérequis</span>
+        <span class="meta-value">WordPress installé</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Résultat</span>
+        <span class="meta-value">Premier cours en ligne</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 02 — AGENDA ========== -->
+  <section class="agenda" data-screen-label="02 Agenda">
+    <div class="eyebrow" style="margin-bottom: 32px;">Au programme</div>
+    <h2>Six étapes, dix minutes,<br>ton premier cours en ligne.</h2>
+    <p class="agenda-sub">Tu vas installer TutorLMS, créer un cours, le structurer, l'activer en vente et le connecter à ta CRM. Étape par étape.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Installer TutorLMS</h3>
+          <p>Version Free ou Pro : ce qui change vraiment.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Créer ton premier cours</h3>
+          <p>Titre, description, image : le minimum utile.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Structurer leçons &amp; quiz</h3>
+          <p>Topics, leçons, devoirs : la trame pédagogique.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Activer le paiement</h3>
+          <p>WooCommerce, SureCart ou FluentCart — tu choisis.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <h3>Certificats &amp; progression</h3>
+          <p>Marquer la fin d'un cours, donner un résultat tangible.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
+        <div class="step-body">
+          <h3>Automatiser avec FluentCRM</h3>
+          <p>Tags à l'inscription, séquence de relance, suivi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>02 · Agenda</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 03 — ÉTAPE 01 ========== -->
+  <section class="step-slide" data-screen-label="03 Step 01">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 01 · Installer</div>
+      <div class="time-chip"><span class="dot"></span>00:00 → 01:30</div>
+    </div>
+
+    <div class="step-big-num">
+      01
+      <small>Installer TutorLMS</small>
+    </div>
+
+    <div class="step-content">
+      <h2>La version Free suffit pour démarrer.</h2>
+      <p class="lede">Tu ouvres ton admin WordPress, tu vas dans <i>Extensions → Ajouter</i>, tu cherches <i>TutorLMS</i>. Activation, assistant de configuration. Terminé.</p>
+      <ul>
+        <li><div><b>Free vs Pro</b> <span>— Free couvre cours, leçons, quiz. Pro ajoute certificats, Zoom, drip content.</span></div></li>
+        <li><div><b>Pages auto-créées</b> <span>— Dashboard étudiant, page de profil, liste des cours. Ne pas les supprimer.</span></div></li>
+        <li><div><b>Rôles WordPress</b> <span>— TutorLMS ajoute les rôles Instructeur et Étudiant, gérés dans Utilisateurs.</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>Commence Free. Tu passeras Pro quand tu auras 10 élèves payants, pas avant. Aucun intérêt à payer pour des fonctions que tu ne connais pas encore.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>03 · Étape 01</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 04 — ÉTAPE 02 ========== -->
+  <section class="step-slide" data-screen-label="04 Step 02">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 02 · Créer</div>
+      <div class="time-chip"><span class="dot"></span>01:30 → 03:00</div>
+    </div>
+
+    <div class="step-big-num">
+      02
+      <small>Ton premier cours</small>
+    </div>
+
+    <div class="step-content">
+      <h2>Un titre clair vaut mieux qu'un beau titre.</h2>
+      <p class="lede">Dans <i>TutorLMS → Cours → Ajouter</i>. Tu remplis trois choses : titre, description, image mise en avant. Tu publies en brouillon.</p>
+      <ul>
+        <li><div><b>Titre actionnable</b> <span>— « Créer une newsletter qui convertit » bat « Introduction à la newsletter ».</span></div></li>
+        <li><div><b>Description courte</b> <span>— À qui s'adresse le cours, ce qu'on y apprend, le résultat concret en 3 lignes.</span></div></li>
+        <li><div><b>Image mise en avant</b> <span>— 1200×675px minimum. C'est elle qui s'affiche partout sur ton site.</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>Le titre de ton cours, c'est ton H1. Il doit répondre à une intention de recherche. Sinon ton cours ne sera jamais trouvé via Google.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>04 · Étape 02</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 05 — BREAKER ========== -->
+  <section class="breaker" data-screen-label="05 Breaker">
+    <div class="pretitle">PAUSE · 03:00</div>
+    <h2>Un cours, c'est <span>une promesse</span><br>qui tient ses délais.</h2>
+    <p class="sub">Tu n'apprends pas à créer des cours. Tu apprends à tenir ce que tu annonces à ton élève en ouverture. La structure en 6 étapes qui suit, c'est juste ça.</p>
+  </section>
+
+  <!-- ========== SLIDE 06 — ÉTAPE 03 ========== -->
+  <section class="step-slide" data-screen-label="06 Step 03">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 03 · Structurer</div>
+      <div class="time-chip"><span class="dot"></span>03:00 → 05:00</div>
+    </div>
+
+    <div class="step-big-num">
+      03
+      <small>Leçons, topics, quiz</small>
+    </div>
+
+    <div class="step-content">
+      <h2>Un topic = un chapitre. Une leçon = 5 min max.</h2>
+      <p class="lede">TutorLMS organise ton cours en <i>topics</i> (chapitres) qui contiennent des <i>lessons</i> (leçons). Ajoute aussi des quiz et des devoirs pour valider la compréhension.</p>
+      <ul>
+        <li><div><b>Topics</b> <span>— Découpe ton cours en 4 à 8 chapitres. Plus, c'est indigeste.</span></div></li>
+        <li><div><b>Leçons courtes</b> <span>— 3 à 5 minutes par leçon vidéo. Au-delà, l'attention décroche.</span></div></li>
+        <li><div><b>Quiz &amp; devoirs</b> <span>— Un quiz par chapitre suffit. Le devoir final verrouille la transformation.</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>La structure se décide avant d'enregistrer. Tu fais un plan, tu écris les 5 premières lignes de chaque leçon, et seulement après tu ouvres la caméra.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>06 · Étape 03</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 07 — ÉTAPE 04 ========== -->
+  <section class="step-slide" data-screen-label="07 Step 04">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 04 · Monétiser</div>
+      <div class="time-chip"><span class="dot"></span>05:00 → 06:30</div>
+    </div>
+
+    <div class="step-big-num">
+      04
+      <small>Activer le paiement</small>
+    </div>
+
+    <div class="step-content">
+      <h2>TutorLMS ne gère pas le paiement. Un plugin le fait.</h2>
+      <p class="lede">TutorLMS se branche sur <i>WooCommerce</i>, <i>SureCart</i> ou <i>FluentCart</i>. Tu choisis un seul passeur de paiement et tu t'y tiens.</p>
+      <ul>
+        <li><div><b>WooCommerce</b> <span>— Standard WordPress. Gratuit, universel, plus lourd à maintenir.</span></div></li>
+        <li><div><b>SureCart / FluentCart</b> <span>— Plus légers, pensés pour les infopreneurs. Checkout moderne, upsells intégrés.</span></div></li>
+        <li><div><b>Stripe direct</b> <span>— Pro uniquement. Le plus simple si tu n'as qu'un seul cours à vendre.</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>Sur schoolsWP, j'utilise <i>SureCart</i>. Pas parce que c'est le meilleur — parce que c'est celui qui s'intègre le mieux avec FluentCRM et TutorLMS en même temps.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>07 · Étape 04</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 08 — ÉTAPE 05 ========== -->
+  <section class="step-slide" data-screen-label="08 Step 05">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 05 · Récompenser</div>
+      <div class="time-chip"><span class="dot"></span>06:30 → 08:00</div>
+    </div>
+
+    <div class="step-big-num">
+      05
+      <small>Certificats &amp; progression</small>
+    </div>
+
+    <div class="step-content">
+      <h2>L'élève termine un cours. Il veut une preuve.</h2>
+      <p class="lede">Active le module <i>Certificates</i> (Pro). Choisis un template, active-le sur ton cours. À la complétion, l'élève télécharge un PDF à son nom.</p>
+      <ul>
+        <li><div><b>Barres de progression</b> <span>— Déjà incluses en Free. Chaque leçon cochée alimente un pourcentage visible.</span></div></li>
+        <li><div><b>Certificats PDF</b> <span>— Feature Pro. Template personnalisable avec nom, date, titre du cours.</span></div></li>
+        <li><div><b>Email automatique</b> <span>— Déclenché à 100 %. Relie-le à FluentCRM pour taguer « cours terminé ».</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>Un certificat, ce n'est pas pour flatter l'ego. C'est pour te donner une donnée : combien d'élèves vont jusqu'au bout ? En dessous de 20 %, ton cours est trop long.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>08 · Étape 05</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 09 — ÉTAPE 06 ========== -->
+  <section class="step-slide" data-screen-label="09 Step 06">
+    <div class="eyebrow-row">
+      <div class="eyebrow">Étape 06 · Automatiser</div>
+      <div class="time-chip"><span class="dot"></span>08:00 → 10:00</div>
+    </div>
+
+    <div class="step-big-num">
+      06
+      <small>Connecter FluentCRM</small>
+    </div>
+
+    <div class="step-content">
+      <h2>Ton cours vit quand il parle tout seul à l'élève.</h2>
+      <p class="lede">L'intégration native <i>TutorLMS × FluentCRM</i> te permet de taguer l'élève à l'inscription, de déclencher des séquences, de suivre sa progression.</p>
+      <ul>
+        <li><div><b>Tag à l'inscription</b> <span>— Chaque inscrit reçoit automatiquement le tag <code style="font-family:'JetBrains Mono',monospace;color:var(--green);">tutor-cours-nom</code>.</span></div></li>
+        <li><div><b>Séquence de bienvenue</b> <span>— 3 emails sur 7 jours : bienvenue, accès, progression. Automatisés.</span></div></li>
+        <li><div><b>Relance décrocheurs</b> <span>— Si 0 connexion en 14 jours, email de relance. Simple et efficace.</span></div></li>
+      </ul>
+      <div class="aside">
+        <div class="aside-label">Note schoolsWP</div>
+        <p>L'automatisation ne remplace pas la relation. Elle la protège. Tu gardes ton attention pour les échanges qui comptent — pas pour les emails de confirmation.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>09 · Étape 06</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 10 — RECAP ========== -->
+  <section class="recap" data-screen-label="10 Recap">
+    <div class="eyebrow" style="margin-bottom: 32px;">Ce que tu sais faire maintenant</div>
+    <h2>Ton cours est en ligne.<br>Il peut vivre sans toi.</h2>
+    <p class="recap-sub">Six étapes, dix minutes. Maintenant, tu sais faire trois choses : créer un cours, le vendre, l'automatiser. Le reste, c'est de la répétition.</p>
+
+    <div class="recap-grid">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>Créer</h3>
+        <p>Installer TutorLMS, structurer un cours en topics et leçons, ajouter quiz et devoirs.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>Vendre</h3>
+        <p>Brancher un passeur de paiement (WooCommerce, SureCart, FluentCart). Ton cours devient achetable.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>Automatiser</h3>
+        <p>Tagger tes élèves dans FluentCRM. Déclencher séquences et relances sans intervention manuelle.</p>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy</div>
+      <span>10 · Récap</span>
+    </div>
+  </section>
+
+  <!-- ========== SLIDE 11 — CTA ========== -->
+  <section class="cta" data-screen-label="11 CTA">
+    <div>
+      <div class="cta-eyebrow">Prochaine étape</div>
+      <h2>Teste par <span>toi-même</span>.</h2>
+      <p class="cta-sub">Tu as la méthode. Ouvre ton WordPress, suis les six étapes, publie ton premier cours ce week-end. On se retrouve dans la formation complète pour aller plus loin.</p>
+    </div>
+
+    <div class="cta-buttons">
+      <a class="btn btn-primary" href="#">
+        <span>Découvre le guide complet</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a class="btn btn-secondary" href="#">
+        <span>Rejoindre schoolsWP Academy</span>
+      </a>
+    </div>
+
+    <div class="slide-footer" style="color: var(--muted);">
+      <div class="brand-chip"><span class="brand-dot"></span>schoolsWP Academy · <span style="color: var(--muted);">WordPress. Clair. Structuré. Utile.</span></div>
+      <span>11 · Fin</span>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script src="deck_stage.js"></script>
+<script>
+  // Tweaks panel logic
+  const toggle = document.getElementById('tweaks-toggle');
+  const panel = document.getElementById('tweaks-panel');
+  toggle.addEventListener('click', () => panel.classList.toggle('open'));
+
+  const applyTweak = (key, value) => {
+    // Remove existing tweak class for this key
+    document.body.className = document.body.className
+      .split(' ')
+      .filter(c => !c.startsWith(key + '-'))
+      .join(' ')
+      .trim();
+    if ((key === 'accent' && value !== 'green') || (key === 'density' && value !== 'default')) {
+      document.body.classList.add(`${key}-${value}`);
+    }
+    localStorage.setItem(`cc-tweak-${key}`, value);
+  };
+
+  // Restore tweaks
+  ['accent', 'density'].forEach(key => {
+    const saved = localStorage.getItem(`cc-tweak-${key}`);
+    if (saved) {
+      applyTweak(key, saved);
+      const group = document.querySelector(`[data-tweak="${key}"]`);
+      if (group) {
+        group.querySelectorAll('.tweak').forEach(b => b.classList.toggle('active', b.dataset.value === saved));
+      }
+    }
+  });
+
+  // Bind tweak buttons
+  document.querySelectorAll('[data-tweak]').forEach(group => {
+    const key = group.dataset.tweak;
+    group.querySelectorAll('.tweak').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.tweak').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyTweak(key, btn.dataset.value);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séquence welcome FluentCRM — schoolsWP</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2312111F'/%3E%3Ccircle cx='8' cy='8' r='3' fill='%2300D400'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #12111F;
+    --bg-2: #1A1928;
+    --surface: #22213A;
+    --text: #FAFBFD;
+    --muted: #8F8DA5;
+    --border: rgba(250,251,253,0.10);
+    --green: #00D400;
+    --green-dark: #00A100;
+    --success: #13612E;
+    --paper: #FAFBFD;
+    --paper-edge: #D9DBE3;
+    --ink: #12111F;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Roboto', system-ui, sans-serif; font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(900px 700px at 80% 20%, rgba(0,212,0,0.06), transparent 60%),
+      radial-gradient(700px 500px at 10% 80%, rgba(0,212,0,0.03), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2, h3 { font-family: 'Nunito Sans', sans-serif; font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 56px 48px 88px; position: relative; z-index: 1; }
+
+  /* ===== Brand bar ===== */
+  .brand-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 64px; }
+  .brand-chip { display: inline-flex; align-items: center; gap: 12px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); }
+  .brand-chip .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 16px rgba(0,212,0,0.6); }
+  .brand-chip .light { color: var(--muted); font-weight: 400; }
+  .brand-meta { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* ===== Hero grid ===== */
+  .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 80px; align-items: center; }
+
+  /* ===== Left column: content ===== */
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px; }
+  .eyebrow .tick { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+
+  .hero h1 { font-size: 56px; margin-bottom: 24px; max-width: 720px; }
+  .hero h1 .accent { color: var(--green); }
+  .hero .lede { font-size: 20px; color: var(--muted); max-width: 640px; margin-bottom: 40px; line-height: 1.55; }
+
+  /* Form */
+  form.capture { display: flex; flex-direction: column; gap: 12px; max-width: 560px; margin-bottom: 14px; }
+  form.capture .row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 12px; }
+  form.capture input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+    outline: none;
+  }
+  form.capture input::placeholder { color: var(--muted); }
+  form.capture input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(0,212,0,0.15); }
+  form.capture button {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    background: var(--green);
+    color: #0A0E09;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 24px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+  }
+  form.capture button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,212,0,0.25); }
+  form.capture button:active { transform: translateY(0); }
+  form.capture button .arrow { font-family: system-ui, sans-serif; font-size: 20px; line-height: 1; }
+
+  .reassurance { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .reassurance svg { width: 14px; height: 14px; color: var(--muted); }
+
+  /* ===== Right column: PDF mockup ===== */
+  .mockup-stage { position: relative; display: flex; justify-content: center; align-items: center; min-height: 560px; }
+
+  .badge-gratuit {
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    z-index: 3;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    color: #0A0E09;
+    background: var(--green);
+    padding: 10px 18px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0,212,0,0.30), 0 0 0 4px rgba(0,212,0,0.10);
+    transform: rotate(-4deg);
+  }
+
+  .pdf-stack { position: relative; width: 380px; }
+  .pdf-stack .sheet-shadow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,212,0,0.05), rgba(0,212,0,0.02));
+    transform: rotate(4deg) translate(-14px, 18px);
+    border-radius: 6px;
+    border: 1px solid rgba(0,212,0,0.15);
+  }
+  .pdf { position: relative; width: 380px; aspect-ratio: 1/1.414; background: var(--paper); color: var(--ink); border-radius: 6px; box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.35); transform: rotate(-7deg); padding: 32px 30px; display: flex; flex-direction: column; gap: 14px; font-family: 'Roboto', sans-serif; border: 1px solid var(--paper-edge); overflow: hidden; }
+  .pdf::after { content: ''; position: absolute; top: 0; right: 0; width: 28px; height: 28px; background: linear-gradient(135deg, transparent 50%, var(--paper-edge) 50%); border-bottom-left-radius: 4px; }
+
+  .pdf .pdf-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--paper-edge); padding-bottom: 12px; }
+  .pdf .pdf-head .logo { display: inline-flex; align-items: center; gap: 6px; font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 10px; color: var(--ink); letter-spacing: 0.02em; }
+  .pdf .pdf-head .logo .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .pdf .pdf-head .page-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #57556D; letter-spacing: 0.08em; }
+
+  .pdf h2 { font-family: 'Nunito Sans', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: -0.01em; color: var(--ink); line-height: 1.15; margin-top: 4px; }
+  .pdf .pdf-sub { font-size: 9px; color: #57556D; margin-top: 2px; }
+
+  .pdf .pdf-timeline { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .pdf .pdf-email { display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: center; padding: 8px 10px; border: 1px solid var(--paper-edge); border-radius: 4px; background: #FAFBFD; }
+  .pdf .pdf-email .day { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--green-dark); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pdf .pdf-email .content .subject { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 10px; color: var(--ink); line-height: 1.2; margin-bottom: 2px; }
+  .pdf .pdf-email .content .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 7px; color: var(--green-dark); background: rgba(0,212,0,0.1); padding: 1px 5px; border-radius: 3px; }
+
+  .pdf .pdf-footer { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--paper-edge); display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #8F8DA5; letter-spacing: 0.05em; }
+
+  /* ===== Benefits strip ===== */
+  .benefits { margin-top: 96px; padding-top: 48px; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .benefit { display: flex; gap: 16px; align-items: flex-start; }
+  .benefit .arrow { flex: 0 0 auto; color: var(--green); font-family: system-ui, sans-serif; font-size: 22px; line-height: 1.2; font-weight: 700; }
+  .benefit p { font-size: 16px; color: var(--muted); line-height: 1.55; max-width: 340px; }
+  .benefit p b { color: var(--text); font-weight: 500; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 980px) {
+    .hero { grid-template-columns: 1fr; gap: 56px; }
+    .hero h1 { font-size: 40px; }
+    .mockup-stage { min-height: 460px; }
+    .benefits { grid-template-columns: 1fr; gap: 24px; }
+    form.capture .row { grid-template-columns: 1fr; }
+    .wrap { padding: 40px 24px 64px; }
+    .brand-bar { margin-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="brand-bar">
+    <div class="brand-chip">
+      <span class="dot"></span>
+      <span>schoolsWP <span class="light">· ressources gratuites</span></span>
+    </div>
+    <div class="brand-meta">Lead magnet · 01 / 01</div>
+  </div>
+
+  <section class="hero">
+
+    <!-- ===== Left: content ===== -->
+    <div class="content">
+      <div class="eyebrow">
+        <span class="tick"></span>
+        <span>Template FluentCRM · PDF</span>
+      </div>
+
+      <h1>Une séquence welcome FluentCRM <span class="accent">prête à copier</span> pour tes clients WordPress</h1>
+
+      <p class="lede">4 emails, 7 jours, tags et conditions inclus — installe-la en 45 minutes sur n'importe quel compte client, sans repartir d'une page blanche.</p>
+
+      <form class="capture" onsubmit="event.preventDefault();">
+        <div class="row">
+          <input type="text" name="prenom" placeholder="Ton prénom (optionnel)" autocomplete="given-name">
+          <input type="email" name="email" placeholder="Ton email" required autocomplete="email">
+        </div>
+        <button type="submit">
+          <span>Recevoir le template maintenant</span>
+          <span class="arrow">→</span>
+        </button>
+      </form>
+
+      <div class="reassurance">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Désinscription en 1 clic. Zéro spam. Promis.</span>
+      </div>
+    </div>
+
+    <!-- ===== Right: PDF mockup ===== -->
+    <div class="mockup-stage">
+      <div class="pdf-stack">
+        <div class="sheet-shadow" aria-hidden="true"></div>
+        <div class="badge-gratuit">Gratuit</div>
+        <div class="pdf" role="img" aria-label="Aperçu du PDF : séquence welcome FluentCRM, 4 emails sur 7 jours">
+
+          <div class="pdf-head">
+            <div class="logo">
+              <span class="dot"></span>
+              <span>schoolsWP</span>
+            </div>
+            <div class="page-num">01 / 04</div>
+          </div>
+
+          <div>
+            <h2>Séquence welcome FluentCRM</h2>
+            <div class="pdf-sub">4 emails · 7 jours · tags et conditions inclus</div>
+          </div>
+
+          <div class="pdf-timeline">
+            <div class="pdf-email">
+              <div class="day">J+0</div>
+              <div class="content">
+                <div class="subject">Bienvenue + lien du template</div>
+                <span class="tag">lm_fluentcrm</span>
+              </div>
+            </div>
+            <div class="pdf-email">
+              <div class="day">J+1</div>
+              <div class="content">
+                <div class="subject">La séquence, côté coulisses</div>
+                <span class="tag">open_lm</span>
+              </div>
+            </div>
+            <div class="pdf-email">
+              <div class="day">J+3</div>
+              <div class="content">
+                <div class="subject">Comment je l'installe chez un client</div>
+                <span class="tag">if_not_open</span>
+              </div>
+            </div>
+            <div class="pdf-email">
+              <div class="day">J+7</div>
+              <div class="content">
+                <div class="subject">Bascule vers la newsletter</div>
+                <span class="tag">welcome_done</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pdf-footer">
+            <span>schoolsWP.com</span>
+            <span>v1.0</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== Benefits ===== -->
+  <div class="benefits">
+    <div class="benefit">
+      <span class="arrow">→</span>
+      <p>Les <b>4 objets d'emails testés</b> qui tiennent au-dessus de 45 % d'ouverture</p>
+    </div>
+    <div class="benefit">
+      <span class="arrow">→</span>
+      <p>Le <b>planning exact</b> (délais en jours + tags + conditions FluentCRM)</p>
+    </div>
+    <div class="benefit">
+      <span class="arrow">→</span>
+      <p>La <b>bascule vers la newsletter</b> sans perdre l'engagement acquis</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
