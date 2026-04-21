@@ -14,6 +14,9 @@
 # Claude Code local settings (may contain OAuth secrets)
 .claude/settings.local.json
 
+# Playwright MCP session artefacts (may contain cookies, tokens, auth headers)
+.playwright-mcp/
+
 # OAuth tokens & credentials
 *token*.json
 *credentials*.json
