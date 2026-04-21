@@ -1,0 +1,1456 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.160 --> 00:00:02.149 align:start position:0%
+ 
+You've<00:00:00.480><c> created</c><00:00:00.800><c> your</c><00:00:01.040><c> project</c><00:00:01.360><c> boards,</c>
+
+00:00:02.149 --> 00:00:02.159 align:start position:0%
+You've created your project boards,
+ 
+
+00:00:02.159 --> 00:00:04.470 align:start position:0%
+You've created your project boards,
+added<00:00:02.480><c> your</c><00:00:02.720><c> team,</c><00:00:03.280><c> and</c><00:00:03.600><c> customized</c><00:00:04.240><c> your</c>
+
+00:00:04.470 --> 00:00:04.480 align:start position:0%
+added your team, and customized your
+ 
+
+00:00:04.480 --> 00:00:07.590 align:start position:0%
+added your team, and customized your
+workflow.<00:00:05.440><c> Now</c><00:00:05.680><c> what?</c><00:00:06.319><c> You</c><00:00:06.560><c> want</c><00:00:06.799><c> users,</c>
+
+00:00:07.590 --> 00:00:07.600 align:start position:0%
+workflow. Now what? You want users,
+ 
+
+00:00:07.600 --> 00:00:10.470 align:start position:0%
+workflow. Now what? You want users,
+especially<00:00:08.320><c> clients</c><00:00:08.880><c> and</c><00:00:09.200><c> contributors</c><00:00:10.160><c> to</c>
+
+00:00:10.470 --> 00:00:10.480 align:start position:0%
+especially clients and contributors to
+ 
+
+00:00:10.480 --> 00:00:12.870 align:start position:0%
+especially clients and contributors to
+interact<00:00:10.960><c> with</c><00:00:11.200><c> your</c><00:00:11.519><c> tasks</c><00:00:12.080><c> without</c><00:00:12.480><c> giving</c>
+
+00:00:12.870 --> 00:00:12.880 align:start position:0%
+interact with your tasks without giving
+ 
+
+00:00:12.880 --> 00:00:15.669 align:start position:0%
+interact with your tasks without giving
+backend<00:00:13.360><c> access.</c><00:00:14.400><c> No</c><00:00:14.639><c> worries</c><00:00:15.280><c> because</c>
+
+00:00:15.669 --> 00:00:15.679 align:start position:0%
+backend access. No worries because
+ 
+
+00:00:15.679 --> 00:00:18.710 align:start position:0%
+backend access. No worries because
+Fluent<00:00:16.160><c> Board's</c><00:00:16.480><c> front-end</c><00:00:16.880><c> portal</c><00:00:17.440><c> is</c><00:00:17.840><c> here.</c>
+
+00:00:18.710 --> 00:00:18.720 align:start position:0%
+Fluent Board's front-end portal is here.
+ 
+
+00:00:18.720 --> 00:00:21.429 align:start position:0%
+Fluent Board's front-end portal is here.
+Welcome<00:00:19.119><c> to</c><00:00:19.520><c> WP</c><00:00:20.080><c> Manage</c><00:00:20.480><c> Ninja.</c><00:00:21.119><c> This</c><00:00:21.359><c> is</c>
+
+00:00:21.429 --> 00:00:21.439 align:start position:0%
+Welcome to WP Manage Ninja. This is
+ 
+
+00:00:21.439 --> 00:00:23.910 align:start position:0%
+Welcome to WP Manage Ninja. This is
+Ishika<00:00:22.160><c> and</c><00:00:22.320><c> in</c><00:00:22.560><c> today's</c><00:00:22.880><c> video</c><00:00:23.359><c> I</c><00:00:23.600><c> will</c><00:00:23.760><c> show</c>
+
+00:00:23.910 --> 00:00:23.920 align:start position:0%
+Ishika and in today's video I will show
+ 
+
+00:00:23.920 --> 00:00:26.790 align:start position:0%
+Ishika and in today's video I will show
+you<00:00:24.080><c> how</c><00:00:24.320><c> Fluent</c><00:00:24.800><c> Boards</c><00:00:25.199><c> looks</c><00:00:25.840><c> and</c><00:00:26.240><c> works</c><00:00:26.560><c> at</c>
+
+00:00:26.790 --> 00:00:26.800 align:start position:0%
+you how Fluent Boards looks and works at
+ 
+
+00:00:26.800 --> 00:00:29.269 align:start position:0%
+you how Fluent Boards looks and works at
+the<00:00:26.960><c> front</c><00:00:27.119><c> end,</c><00:00:27.760><c> the</c><00:00:28.000><c> portal</c><00:00:28.480><c> your</c><00:00:28.880><c> users</c>
+
+00:00:29.269 --> 00:00:29.279 align:start position:0%
+the front end, the portal your users
+ 
+
+00:00:29.279 --> 00:00:31.669 align:start position:0%
+the front end, the portal your users
+will<00:00:29.599><c> see.</c><00:00:30.320><c> Let's</c><00:00:30.640><c> talk</c><00:00:30.880><c> about</c><00:00:31.039><c> the</c><00:00:31.279><c> backend</c>
+
+00:00:31.669 --> 00:00:31.679 align:start position:0%
+will see. Let's talk about the backend
+ 
+
+00:00:31.679 --> 00:00:34.549 align:start position:0%
+will see. Let's talk about the backend
+access<00:00:32.079><c> situation</c><00:00:32.480><c> in</c><00:00:32.800><c> detail</c><00:00:33.120><c> for</c><00:00:33.280><c> a</c><00:00:33.520><c> second.</c>
+
+00:00:34.549 --> 00:00:34.559 align:start position:0%
+access situation in detail for a second.
+ 
+
+00:00:34.559 --> 00:00:37.510 align:start position:0%
+access situation in detail for a second.
+So,<00:00:34.960><c> you</c><00:00:35.200><c> know</c><00:00:35.280><c> what's</c><00:00:35.760><c> honestly</c><00:00:36.239><c> a</c><00:00:36.559><c> hassle?</c>
+
+00:00:37.510 --> 00:00:37.520 align:start position:0%
+So, you know what's honestly a hassle?
+ 
+
+00:00:37.520 --> 00:00:39.510 align:start position:0%
+So, you know what's honestly a hassle?
+Managing<00:00:38.079><c> stuff</c><00:00:38.559><c> through</c><00:00:38.800><c> the</c><00:00:38.960><c> WordPress</c>
+
+00:00:39.510 --> 00:00:39.520 align:start position:0%
+Managing stuff through the WordPress
+ 
+
+00:00:39.520 --> 00:00:41.830 align:start position:0%
+Managing stuff through the WordPress
+back<00:00:39.760><c> end,</c><00:00:40.559><c> especially</c><00:00:41.040><c> when</c><00:00:41.280><c> you've</c><00:00:41.600><c> got</c>
+
+00:00:41.830 --> 00:00:41.840 align:start position:0%
+back end, especially when you've got
+ 
+
+00:00:41.840 --> 00:00:45.110 align:start position:0%
+back end, especially when you've got
+clients<00:00:42.320><c> or</c><00:00:42.559><c> a</c><00:00:42.879><c> big</c><00:00:43.120><c> team</c><00:00:43.440><c> involved.</c><00:00:44.879><c> That's</c>
+
+00:00:45.110 --> 00:00:45.120 align:start position:0%
+clients or a big team involved. That's
+ 
+
+00:00:45.120 --> 00:00:48.869 align:start position:0%
+clients or a big team involved. That's
+just<00:00:45.600><c> too</c><00:00:45.920><c> much</c><00:00:46.160><c> going</c><00:00:46.399><c> on.</c><00:00:47.120><c> too</c><00:00:47.440><c> many</c><00:00:47.680><c> menus,</c>
+
+00:00:48.869 --> 00:00:48.879 align:start position:0%
+just too much going on. too many menus,
+ 
+
+00:00:48.879 --> 00:00:51.270 align:start position:0%
+just too much going on. too many menus,
+settings,<00:00:49.680><c> things</c><00:00:50.160><c> that</c><00:00:50.559><c> they</c><00:00:50.800><c> don't</c><00:00:50.879><c> need</c><00:00:51.039><c> to</c>
+
+00:00:51.270 --> 00:00:51.280 align:start position:0%
+settings, things that they don't need to
+ 
+
+00:00:51.280 --> 00:00:54.549 align:start position:0%
+settings, things that they don't need to
+see.<00:00:52.000><c> And</c><00:00:52.399><c> let's</c><00:00:52.719><c> be</c><00:00:52.879><c> real,</c><00:00:53.680><c> things</c><00:00:54.000><c> can</c><00:00:54.239><c> get</c>
+
+00:00:54.549 --> 00:00:54.559 align:start position:0%
+see. And let's be real, things can get
+ 
+
+00:00:54.559 --> 00:00:56.470 align:start position:0%
+see. And let's be real, things can get
+messy<00:00:55.039><c> if</c><00:00:55.360><c> someone</c><00:00:55.760><c> clicks</c><00:00:56.079><c> the</c><00:00:56.239><c> wrong</c>
+
+00:00:56.470 --> 00:00:56.480 align:start position:0%
+messy if someone clicks the wrong
+ 
+
+00:00:56.480 --> 00:00:58.310 align:start position:0%
+messy if someone clicks the wrong
+button.
+
+00:00:58.310 --> 00:00:58.320 align:start position:0%
+button.
+ 
+
+00:00:58.320 --> 00:01:00.069 align:start position:0%
+button.
+That's<00:00:58.640><c> where</c><00:00:58.879><c> Fluent</c><00:00:59.359><c> Board's</c><00:00:59.680><c> front-end</c>
+
+00:01:00.069 --> 00:01:00.079 align:start position:0%
+That's where Fluent Board's front-end
+ 
+
+00:01:00.079 --> 00:01:02.549 align:start position:0%
+That's where Fluent Board's front-end
+portal<00:01:00.399><c> comes</c><00:01:00.719><c> in</c><00:01:00.960><c> clutch.</c><00:01:01.680><c> With</c><00:01:01.920><c> it,</c><00:01:02.160><c> you</c><00:01:02.399><c> can</c>
+
+00:01:02.549 --> 00:01:02.559 align:start position:0%
+portal comes in clutch. With it, you can
+ 
+
+00:01:02.559 --> 00:01:05.189 align:start position:0%
+portal comes in clutch. With it, you can
+give<00:01:02.800><c> people</c><00:01:03.199><c> access</c><00:01:03.680><c> to</c><00:01:04.080><c> project</c><00:01:04.479><c> boards</c>
+
+00:01:05.189 --> 00:01:05.199 align:start position:0%
+give people access to project boards
+ 
+
+00:01:05.199 --> 00:01:07.429 align:start position:0%
+give people access to project boards
+right<00:01:05.519><c> from</c><00:01:05.760><c> the</c><00:01:05.920><c> front</c><00:01:06.159><c> end.</c><00:01:06.880><c> Uh</c><00:01:07.119><c> so</c><00:01:07.280><c> what</c>
+
+00:01:07.429 --> 00:01:07.439 align:start position:0%
+right from the front end. Uh so what
+ 
+
+00:01:07.439 --> 00:01:08.950 align:start position:0%
+right from the front end. Uh so what
+you're<00:01:07.600><c> doing</c><00:01:07.760><c> is</c><00:01:07.920><c> you're</c><00:01:08.159><c> basically</c><00:01:08.640><c> keeping</c>
+
+00:01:08.950 --> 00:01:08.960 align:start position:0%
+you're doing is you're basically keeping
+ 
+
+00:01:08.960 --> 00:01:11.910 align:start position:0%
+you're doing is you're basically keeping
+your<00:01:09.280><c> entire</c><00:01:09.840><c> back</c><00:01:10.080><c> end</c><00:01:10.400><c> locked</c><00:01:10.799><c> down</c><00:01:11.520><c> while</c>
+
+00:01:11.910 --> 00:01:11.920 align:start position:0%
+your entire back end locked down while
+ 
+
+00:01:11.920 --> 00:01:14.550 align:start position:0%
+your entire back end locked down while
+still<00:01:12.240><c> giving</c><00:01:12.560><c> users</c><00:01:13.119><c> a</c><00:01:13.439><c> fully</c><00:01:14.000><c> functional</c>
+
+00:01:14.550 --> 00:01:14.560 align:start position:0%
+still giving users a fully functional
+ 
+
+00:01:14.560 --> 00:01:17.510 align:start position:0%
+still giving users a fully functional
+project<00:01:15.040><c> experience</c><00:01:15.760><c> on</c><00:01:16.000><c> the</c><00:01:16.159><c> front</c><00:01:16.400><c> end.</c><00:01:17.280><c> So</c>
+
+00:01:17.510 --> 00:01:17.520 align:start position:0%
+project experience on the front end. So
+ 
+
+00:01:17.520 --> 00:01:19.510 align:start position:0%
+project experience on the front end. So
+you<00:01:17.759><c> don't</c><00:01:18.000><c> have</c><00:01:18.159><c> any</c><00:01:18.400><c> security</c><00:01:18.880><c> issues</c>
+
+00:01:19.510 --> 00:01:19.520 align:start position:0%
+you don't have any security issues
+ 
+
+00:01:19.520 --> 00:01:22.310 align:start position:0%
+you don't have any security issues
+regarding<00:01:20.000><c> your</c><00:01:20.320><c> backend</c><00:01:20.799><c> operations.</c><00:01:22.000><c> And</c>
+
+00:01:22.310 --> 00:01:22.320 align:start position:0%
+regarding your backend operations. And
+ 
+
+00:01:22.320 --> 00:01:24.870 align:start position:0%
+regarding your backend operations. And
+on<00:01:22.560><c> top</c><00:01:22.799><c> of</c><00:01:22.960><c> that,</c><00:01:23.600><c> it</c><00:01:23.840><c> just</c><00:01:24.159><c> makes</c><00:01:24.400><c> things</c>
+
+00:01:24.870 --> 00:01:24.880 align:start position:0%
+on top of that, it just makes things
+ 
+
+00:01:24.880 --> 00:01:27.670 align:start position:0%
+on top of that, it just makes things
+much<00:01:25.280><c> cleaner</c><00:01:26.240><c> because</c><00:01:26.560><c> your</c><00:01:26.799><c> clients</c><00:01:27.280><c> get</c><00:01:27.520><c> to</c>
+
+00:01:27.670 --> 00:01:27.680 align:start position:0%
+much cleaner because your clients get to
+ 
+
+00:01:27.680 --> 00:01:30.070 align:start position:0%
+much cleaner because your clients get to
+see<00:01:27.840><c> what</c><00:01:28.000><c> they</c><00:01:28.240><c> need</c><00:01:28.880><c> and</c><00:01:29.200><c> your</c><00:01:29.520><c> team</c><00:01:29.759><c> gets</c>
+
+00:01:30.070 --> 00:01:30.080 align:start position:0%
+see what they need and your team gets
+ 
+
+00:01:30.080 --> 00:01:32.069 align:start position:0%
+see what they need and your team gets
+straight<00:01:30.320><c> to</c><00:01:30.560><c> work</c><00:01:31.200><c> and</c><00:01:31.439><c> you</c><00:01:31.680><c> don't</c><00:01:31.840><c> have</c><00:01:31.920><c> to</c>
+
+00:01:32.069 --> 00:01:32.079 align:start position:0%
+straight to work and you don't have to
+ 
+
+00:01:32.079 --> 00:01:34.469 align:start position:0%
+straight to work and you don't have to
+babysit<00:01:32.720><c> anyone</c><00:01:33.119><c> through</c><00:01:33.360><c> the</c><00:01:33.520><c> dashboard.</c>
+
+00:01:34.469 --> 00:01:34.479 align:start position:0%
+babysit anyone through the dashboard.
+ 
+
+00:01:34.479 --> 00:01:37.350 align:start position:0%
+babysit anyone through the dashboard.
+Seriously,<00:01:35.119><c> it's</c><00:01:35.439><c> such</c><00:01:35.600><c> a</c><00:01:35.840><c> timesaver.</c><00:01:37.040><c> So,</c>
+
+00:01:37.350 --> 00:01:37.360 align:start position:0%
+Seriously, it's such a timesaver. So,
+ 
+
+00:01:37.360 --> 00:01:39.350 align:start position:0%
+Seriously, it's such a timesaver. So,
+let's<00:01:37.680><c> just</c><00:01:38.159><c> jump</c><00:01:38.479><c> straight</c><00:01:38.799><c> right</c><00:01:38.960><c> into</c>
+
+00:01:39.350 --> 00:01:39.360 align:start position:0%
+let's just jump straight right into
+ 
+
+00:01:39.360 --> 00:01:41.670 align:start position:0%
+let's just jump straight right into
+setting<00:01:39.600><c> it</c><00:01:39.759><c> up.</c><00:01:40.320><c> As</c><00:01:40.560><c> you</c><00:01:40.720><c> can</c><00:01:40.799><c> see,</c><00:01:41.119><c> I</c><00:01:41.360><c> already</c>
+
+00:01:41.670 --> 00:01:41.680 align:start position:0%
+setting it up. As you can see, I already
+ 
+
+00:01:41.680 --> 00:01:43.270 align:start position:0%
+setting it up. As you can see, I already
+have<00:01:41.840><c> Fluent</c><00:01:42.240><c> Boards</c><00:01:42.560><c> installed</c><00:01:42.960><c> in</c><00:01:43.119><c> my</c>
+
+00:01:43.270 --> 00:01:43.280 align:start position:0%
+have Fluent Boards installed in my
+ 
+
+00:01:43.280 --> 00:01:45.429 align:start position:0%
+have Fluent Boards installed in my
+WordPress<00:01:43.759><c> site.</c><00:01:44.240><c> So,</c><00:01:44.640><c> let's</c><00:01:44.880><c> just</c><00:01:45.119><c> jump</c>
+
+00:01:45.429 --> 00:01:45.439 align:start position:0%
+WordPress site. So, let's just jump
+ 
+
+00:01:45.439 --> 00:01:47.749 align:start position:0%
+WordPress site. So, let's just jump
+directly<00:01:45.759><c> into</c><00:01:46.000><c> the</c><00:01:46.159><c> dashboard.</c>
+
+00:01:47.749 --> 00:01:47.759 align:start position:0%
+directly into the dashboard.
+ 
+
+00:01:47.759 --> 00:01:50.550 align:start position:0%
+directly into the dashboard.
+Okay,<00:01:48.399><c> so</c><00:01:48.720><c> as</c><00:01:48.880><c> I</c><00:01:49.439><c> already</c><00:01:49.759><c> made</c><00:01:50.000><c> a</c><00:01:50.240><c> board</c>
+
+00:01:50.550 --> 00:01:50.560 align:start position:0%
+Okay, so as I already made a board
+ 
+
+00:01:50.560 --> 00:01:52.550 align:start position:0%
+Okay, so as I already made a board
+earlier,<00:01:51.200><c> let's</c><00:01:51.520><c> not</c><00:01:51.680><c> waste</c><00:01:51.920><c> time</c><00:01:52.159><c> building</c>
+
+00:01:52.550 --> 00:01:52.560 align:start position:0%
+earlier, let's not waste time building
+ 
+
+00:01:52.560 --> 00:01:56.310 align:start position:0%
+earlier, let's not waste time building
+another<00:01:52.880><c> one.</c><00:01:54.320><c> So,</c><00:01:55.119><c> you</c><00:01:55.360><c> can</c><00:01:55.520><c> see</c><00:01:55.680><c> that</c><00:01:56.000><c> my</c>
+
+00:01:56.310 --> 00:01:56.320 align:start position:0%
+another one. So, you can see that my
+ 
+
+00:01:56.320 --> 00:01:59.590 align:start position:0%
+another one. So, you can see that my
+board<00:01:56.560><c> is</c><00:01:56.799><c> ready</c><00:01:57.119><c> and</c><00:01:57.360><c> I</c><00:01:57.680><c> added</c><00:01:58.000><c> the</c><00:01:58.320><c> tasks</c><00:01:59.280><c> and</c>
+
+00:01:59.590 --> 00:01:59.600 align:start position:0%
+board is ready and I added the tasks and
+ 
+
+00:01:59.600 --> 00:02:02.230 align:start position:0%
+board is ready and I added the tasks and
+stages<00:02:00.320><c> and</c><00:02:00.560><c> I</c><00:02:00.799><c> think</c><00:02:00.880><c> my</c><00:02:01.119><c> board</c><00:02:01.360><c> looks</c><00:02:01.840><c> pretty</c>
+
+00:02:02.230 --> 00:02:02.240 align:start position:0%
+stages and I think my board looks pretty
+ 
+
+00:02:02.240 --> 00:02:05.749 align:start position:0%
+stages and I think my board looks pretty
+decent.<00:02:03.520><c> Okay,</c><00:02:04.240><c> so</c><00:02:04.560><c> now</c><00:02:04.960><c> let's</c><00:02:05.280><c> start</c><00:02:05.520><c> with</c>
+
+00:02:05.749 --> 00:02:05.759 align:start position:0%
+decent. Okay, so now let's start with
+ 
+
+00:02:05.759 --> 00:02:08.710 align:start position:0%
+decent. Okay, so now let's start with
+adding<00:02:06.159><c> members</c><00:02:06.640><c> in</c><00:02:06.960><c> my</c><00:02:07.200><c> board.</c><00:02:08.239><c> If</c><00:02:08.399><c> they're</c>
+
+00:02:08.710 --> 00:02:08.720 align:start position:0%
+adding members in my board. If they're
+ 
+
+00:02:08.720 --> 00:02:10.790 align:start position:0%
+adding members in my board. If they're
+already<00:02:09.119><c> users</c><00:02:09.440><c> on</c><00:02:09.679><c> your</c><00:02:09.840><c> WordPress</c><00:02:10.319><c> site,</c>
+
+00:02:10.790 --> 00:02:10.800 align:start position:0%
+already users on your WordPress site,
+ 
+
+00:02:10.800 --> 00:02:13.190 align:start position:0%
+already users on your WordPress site,
+that's<00:02:11.039><c> great.</c><00:02:11.840><c> But</c><00:02:12.080><c> you</c><00:02:12.319><c> can</c><00:02:12.400><c> just</c><00:02:12.720><c> add</c><00:02:12.959><c> them</c>
+
+00:02:13.190 --> 00:02:13.200 align:start position:0%
+that's great. But you can just add them
+ 
+
+00:02:13.200 --> 00:02:18.309 align:start position:0%
+that's great. But you can just add them
+like<00:02:13.599><c> this</c><00:02:14.319><c> by</c><00:02:14.720><c> searching</c><00:02:15.599><c> their</c><00:02:16.080><c> name.</c>
+
+00:02:18.309 --> 00:02:18.319 align:start position:0%
+like this by searching their name.
+ 
+
+00:02:18.319 --> 00:02:21.750 align:start position:0%
+like this by searching their name.
+So<00:02:19.040><c> if</c><00:02:19.280><c> not,</c><00:02:19.840><c> you</c><00:02:20.080><c> can</c><00:02:20.160><c> invite</c><00:02:20.560><c> them</c><00:02:20.720><c> by</c><00:02:20.959><c> email.</c>
+
+00:02:21.750 --> 00:02:21.760 align:start position:0%
+So if not, you can invite them by email.
+ 
+
+00:02:21.760 --> 00:02:24.710 align:start position:0%
+So if not, you can invite them by email.
+Isn't<00:02:22.080><c> it</c><00:02:22.319><c> so</c><00:02:22.560><c> easy?</c><00:02:23.680><c> It</c><00:02:23.920><c> doesn't</c><00:02:24.160><c> matter</c><00:02:24.480><c> if</c>
+
+00:02:24.710 --> 00:02:24.720 align:start position:0%
+Isn't it so easy? It doesn't matter if
+ 
+
+00:02:24.720 --> 00:02:26.949 align:start position:0%
+Isn't it so easy? It doesn't matter if
+they're<00:02:24.959><c> across</c><00:02:25.360><c> the</c><00:02:25.599><c> office</c><00:02:26.000><c> or</c><00:02:26.319><c> across</c><00:02:26.720><c> the</c>
+
+00:02:26.949 --> 00:02:26.959 align:start position:0%
+they're across the office or across the
+ 
+
+00:02:26.959 --> 00:02:29.830 align:start position:0%
+they're across the office or across the
+world.<00:02:27.840><c> They'll</c><00:02:28.080><c> get</c><00:02:28.239><c> an</c><00:02:28.400><c> onboarding</c><00:02:28.879><c> link</c><00:02:29.280><c> in</c>
+
+00:02:29.830 --> 00:02:29.840 align:start position:0%
+world. They'll get an onboarding link in
+ 
+
+00:02:29.840 --> 00:02:33.990 align:start position:0%
+world. They'll get an onboarding link in
+seconds<00:02:31.040><c> and</c><00:02:31.360><c> they're</c><00:02:31.680><c> in.</c><00:02:33.120><c> Okay,</c><00:02:33.440><c> so</c><00:02:33.760><c> now</c>
+
+00:02:33.990 --> 00:02:34.000 align:start position:0%
+seconds and they're in. Okay, so now
+ 
+
+00:02:34.000 --> 00:02:36.550 align:start position:0%
+seconds and they're in. Okay, so now
+that<00:02:34.239><c> they're</c><00:02:34.640><c> added,</c><00:02:35.519><c> you</c><00:02:35.760><c> can</c><00:02:35.920><c> head</c><00:02:36.160><c> over</c><00:02:36.319><c> to</c>
+
+00:02:36.550 --> 00:02:36.560 align:start position:0%
+that they're added, you can head over to
+ 
+
+00:02:36.560 --> 00:02:39.190 align:start position:0%
+that they're added, you can head over to
+member<00:02:36.879><c> roles</c><00:02:37.280><c> and</c><00:02:37.519><c> control</c><00:02:37.840><c> who</c><00:02:38.160><c> can</c><00:02:38.319><c> view,</c>
+
+00:02:39.190 --> 00:02:39.200 align:start position:0%
+member roles and control who can view,
+ 
+
+00:02:39.200 --> 00:02:42.309 align:start position:0%
+member roles and control who can view,
+edit,<00:02:39.519><c> or</c><00:02:39.840><c> manage</c><00:02:40.080><c> the</c><00:02:40.319><c> boards.</c><00:02:41.200><c> This</c><00:02:41.440><c> is</c><00:02:41.840><c> very</c>
+
+00:02:42.309 --> 00:02:42.319 align:start position:0%
+edit, or manage the boards. This is very
+ 
+
+00:02:42.319 --> 00:02:44.309 align:start position:0%
+edit, or manage the boards. This is very
+convenient<00:02:43.040><c> when</c><00:02:43.360><c> you</c><00:02:43.519><c> need</c><00:02:43.680><c> to</c><00:02:43.920><c> upgrade</c>
+
+00:02:44.309 --> 00:02:44.319 align:start position:0%
+convenient when you need to upgrade
+ 
+
+00:02:44.319 --> 00:02:47.190 align:start position:0%
+convenient when you need to upgrade
+someone's<00:02:44.879><c> access</c><00:02:45.200><c> or</c><00:02:45.519><c> just</c><00:02:45.760><c> change</c><00:02:46.000><c> it.</c><00:02:46.959><c> Not</c>
+
+00:02:47.190 --> 00:02:47.200 align:start position:0%
+someone's access or just change it. Not
+ 
+
+00:02:47.200 --> 00:02:49.270 align:start position:0%
+someone's access or just change it. Not
+only<00:02:47.440><c> from</c><00:02:47.599><c> here</c><00:02:47.920><c> though,</c><00:02:48.400><c> you</c><00:02:48.640><c> can</c><00:02:48.800><c> easily</c><00:02:49.200><c> do</c>
+
+00:02:49.270 --> 00:02:49.280 align:start position:0%
+only from here though, you can easily do
+ 
+
+00:02:49.280 --> 00:02:51.830 align:start position:0%
+only from here though, you can easily do
+it<00:02:49.440><c> from</c><00:02:49.599><c> the</c><00:02:49.760><c> settings</c><00:02:50.160><c> too.</c><00:02:51.200><c> Let</c><00:02:51.440><c> me</c><00:02:51.680><c> show</c>
+
+00:02:51.830 --> 00:02:51.840 align:start position:0%
+it from the settings too. Let me show
+ 
+
+00:02:51.840 --> 00:02:55.350 align:start position:0%
+it from the settings too. Let me show
+you.<00:02:52.879><c> So,</c><00:02:53.120><c> go</c><00:02:53.280><c> to</c><00:02:53.519><c> settings</c><00:02:54.800><c> and</c><00:02:55.040><c> as</c><00:02:55.200><c> you</c><00:02:55.280><c> can</c>
+
+00:02:55.350 --> 00:02:55.360 align:start position:0%
+you. So, go to settings and as you can
+ 
+
+00:02:55.360 --> 00:02:58.309 align:start position:0%
+you. So, go to settings and as you can
+see,<00:02:55.519><c> the</c><00:02:55.760><c> members</c><00:02:56.160><c> are</c><00:02:56.400><c> already</c><00:02:56.720><c> here.</c>
+
+00:02:58.309 --> 00:02:58.319 align:start position:0%
+see, the members are already here.
+ 
+
+00:02:58.319 --> 00:03:00.229 align:start position:0%
+see, the members are already here.
+You<00:02:58.560><c> can</c><00:02:58.720><c> easily</c><00:02:59.120><c> change</c><00:02:59.360><c> the</c><00:02:59.680><c> access</c><00:03:00.000><c> from</c>
+
+00:03:00.229 --> 00:03:00.239 align:start position:0%
+You can easily change the access from
+ 
+
+00:03:00.239 --> 00:03:03.910 align:start position:0%
+You can easily change the access from
+here.<00:03:00.959><c> See,</c><00:03:02.080><c> and</c><00:03:02.560><c> honestly,</c><00:03:03.280><c> this</c><00:03:03.440><c> is</c><00:03:03.599><c> one</c><00:03:03.840><c> of</c>
+
+00:03:03.910 --> 00:03:03.920 align:start position:0%
+here. See, and honestly, this is one of
+ 
+
+00:03:03.920 --> 00:03:06.070 align:start position:0%
+here. See, and honestly, this is one of
+my<00:03:04.159><c> favorite</c><00:03:04.560><c> parts.</c>
+
+00:03:06.070 --> 00:03:06.080 align:start position:0%
+my favorite parts.
+ 
+
+00:03:06.080 --> 00:03:08.630 align:start position:0%
+my favorite parts.
+You<00:03:06.319><c> get</c><00:03:06.560><c> full</c><00:03:06.879><c> RO</c><00:03:07.280><c> based</c><00:03:07.599><c> access</c><00:03:08.080><c> control</c>
+
+00:03:08.630 --> 00:03:08.640 align:start position:0%
+You get full RO based access control
+ 
+
+00:03:08.640 --> 00:03:11.350 align:start position:0%
+You get full RO based access control
+without<00:03:09.200><c> needing</c><00:03:09.519><c> any</c><00:03:09.760><c> extra</c><00:03:10.080><c> plugins.</c><00:03:10.959><c> It's</c>
+
+00:03:11.350 --> 00:03:11.360 align:start position:0%
+without needing any extra plugins. It's
+ 
+
+00:03:11.360 --> 00:03:14.390 align:start position:0%
+without needing any extra plugins. It's
+all<00:03:11.680><c> builtin</c><00:03:12.159><c> and</c><00:03:12.400><c> just</c><00:03:12.640><c> works</c><00:03:12.879><c> like</c><00:03:13.040><c> a</c><00:03:13.280><c> charm.</c>
+
+00:03:14.390 --> 00:03:14.400 align:start position:0%
+all builtin and just works like a charm.
+ 
+
+00:03:14.400 --> 00:03:16.390 align:start position:0%
+all builtin and just works like a charm.
+All<00:03:14.480><c> right,</c><00:03:15.200><c> now</c><00:03:15.440><c> let's</c><00:03:15.680><c> get</c><00:03:15.840><c> the</c><00:03:16.000><c> front-end</c>
+
+00:03:16.390 --> 00:03:16.400 align:start position:0%
+All right, now let's get the front-end
+ 
+
+00:03:16.400 --> 00:03:19.190 align:start position:0%
+All right, now let's get the front-end
+portal<00:03:16.720><c> up</c><00:03:16.959><c> and</c><00:03:17.200><c> running.</c>
+
+00:03:19.190 --> 00:03:19.200 align:start position:0%
+portal up and running.
+ 
+
+00:03:19.200 --> 00:03:21.910 align:start position:0%
+portal up and running.
+Okay,<00:03:19.920><c> as</c><00:03:20.159><c> we</c><00:03:20.400><c> are</c><00:03:20.560><c> already</c><00:03:20.879><c> in</c><00:03:21.200><c> settings,</c><00:03:21.760><c> go</c>
+
+00:03:21.910 --> 00:03:21.920 align:start position:0%
+Okay, as we are already in settings, go
+ 
+
+00:03:21.920 --> 00:03:24.070 align:start position:0%
+Okay, as we are already in settings, go
+to<00:03:22.159><c> features</c><00:03:22.640><c> and</c><00:03:22.879><c> modules</c><00:03:23.440><c> from</c><00:03:23.680><c> the</c><00:03:23.840><c> left</c>
+
+00:03:24.070 --> 00:03:24.080 align:start position:0%
+to features and modules from the left
+ 
+
+00:03:24.080 --> 00:03:26.149 align:start position:0%
+to features and modules from the left
+sidebar
+
+00:03:26.149 --> 00:03:26.159 align:start position:0%
+sidebar
+ 
+
+00:03:26.159 --> 00:03:28.309 align:start position:0%
+sidebar
+and<00:03:26.560><c> you'll</c><00:03:26.959><c> see</c><00:03:27.120><c> the</c><00:03:27.280><c> option</c><00:03:27.599><c> to</c><00:03:27.840><c> enable</c><00:03:28.159><c> the</c>
+
+00:03:28.309 --> 00:03:28.319 align:start position:0%
+and you'll see the option to enable the
+ 
+
+00:03:28.319 --> 00:03:30.869 align:start position:0%
+and you'll see the option to enable the
+front-end<00:03:28.720><c> portal.</c><00:03:29.840><c> Before</c><00:03:30.159><c> we</c><00:03:30.400><c> go</c><00:03:30.560><c> to</c><00:03:30.720><c> the</c>
+
+00:03:30.869 --> 00:03:30.879 align:start position:0%
+front-end portal. Before we go to the
+ 
+
+00:03:30.879 --> 00:03:32.869 align:start position:0%
+front-end portal. Before we go to the
+internal<00:03:31.519><c> settings,</c><00:03:32.080><c> I'd</c><00:03:32.319><c> like</c><00:03:32.400><c> to</c><00:03:32.560><c> mention</c>
+
+00:03:32.869 --> 00:03:32.879 align:start position:0%
+internal settings, I'd like to mention
+ 
+
+00:03:32.879 --> 00:03:34.869 align:start position:0%
+internal settings, I'd like to mention
+one<00:03:33.120><c> thing.</c><00:03:33.760><c> If</c><00:03:33.920><c> the</c><00:03:34.159><c> front-end</c><00:03:34.560><c> portal</c>
+
+00:03:34.869 --> 00:03:34.879 align:start position:0%
+one thing. If the front-end portal
+ 
+
+00:03:34.879 --> 00:03:37.750 align:start position:0%
+one thing. If the front-end portal
+option<00:03:35.360><c> is</c><00:03:35.760><c> not</c><00:03:36.080><c> enabled</c><00:03:36.480><c> from</c><00:03:36.720><c> before,</c><00:03:37.519><c> you</c>
+
+00:03:37.750 --> 00:03:37.760 align:start position:0%
+option is not enabled from before, you
+ 
+
+00:03:37.760 --> 00:03:40.630 align:start position:0%
+option is not enabled from before, you
+will<00:03:38.000><c> not</c><00:03:38.239><c> see</c><00:03:38.400><c> it</c><00:03:38.560><c> on</c><00:03:38.720><c> the</c><00:03:38.879><c> navigation</c><00:03:39.360><c> bar.</c>
+
+00:03:40.630 --> 00:03:40.640 align:start position:0%
+will not see it on the navigation bar.
+ 
+
+00:03:40.640 --> 00:03:43.670 align:start position:0%
+will not see it on the navigation bar.
+So,<00:03:41.120><c> let's</c><00:03:41.519><c> get</c><00:03:41.680><c> back</c><00:03:41.840><c> to</c><00:03:42.000><c> the</c><00:03:42.239><c> settings.</c>
+
+00:03:43.670 --> 00:03:43.680 align:start position:0%
+So, let's get back to the settings.
+ 
+
+00:03:43.680 --> 00:03:47.270 align:start position:0%
+So, let's get back to the settings.
+Once<00:03:44.080><c> this</c><00:03:44.319><c> is</c><00:03:44.560><c> enabled,</c><00:03:45.920><c> go</c><00:03:46.239><c> to</c><00:03:46.480><c> the</c><00:03:46.720><c> internal</c>
+
+00:03:47.270 --> 00:03:47.280 align:start position:0%
+Once this is enabled, go to the internal
+ 
+
+00:03:47.280 --> 00:03:50.149 align:start position:0%
+Once this is enabled, go to the internal
+settings<00:03:48.319><c> and</c><00:03:48.640><c> you've</c><00:03:48.959><c> got</c><00:03:49.200><c> two</c><00:03:49.519><c> ways</c><00:03:49.760><c> to</c><00:03:50.000><c> show</c>
+
+00:03:50.149 --> 00:03:50.159 align:start position:0%
+settings and you've got two ways to show
+ 
+
+00:03:50.159 --> 00:03:51.750 align:start position:0%
+settings and you've got two ways to show
+it.
+
+00:03:51.750 --> 00:03:51.760 align:start position:0%
+it.
+ 
+
+00:03:51.760 --> 00:03:53.910 align:start position:0%
+it.
+First<00:03:51.920><c> of</c><00:03:52.080><c> all,</c><00:03:52.239><c> you</c><00:03:52.480><c> can</c><00:03:52.799><c> either</c><00:03:53.200><c> show</c><00:03:53.680><c> use</c>
+
+00:03:53.910 --> 00:03:53.920 align:start position:0%
+First of all, you can either show use
+ 
+
+00:03:53.920 --> 00:03:57.030 align:start position:0%
+First of all, you can either show use
+the<00:03:54.159><c> show</c><00:03:54.400><c> in</c><00:03:54.640><c> standalone</c><00:03:55.200><c> frontend</c><00:03:55.680><c> URL</c><00:03:56.640><c> or</c>
+
+00:03:57.030 --> 00:03:57.040 align:start position:0%
+the show in standalone frontend URL or
+ 
+
+00:03:57.040 --> 00:03:59.270 align:start position:0%
+the show in standalone frontend URL or
+you<00:03:57.280><c> can</c><00:03:57.439><c> also</c><00:03:57.920><c> paste</c><00:03:58.239><c> the</c><00:03:58.400><c> short</c><00:03:58.640><c> code</c><00:03:58.879><c> on</c><00:03:59.120><c> a</c>
+
+00:03:59.270 --> 00:03:59.280 align:start position:0%
+you can also paste the short code on a
+ 
+
+00:03:59.280 --> 00:04:02.390 align:start position:0%
+you can also paste the short code on a
+dedicated<00:03:59.920><c> page.</c><00:04:01.200><c> Let's</c><00:04:01.519><c> check</c><00:04:01.680><c> out</c><00:04:01.920><c> both</c><00:04:02.239><c> the</c>
+
+00:04:02.390 --> 00:04:02.400 align:start position:0%
+dedicated page. Let's check out both the
+ 
+
+00:04:02.400 --> 00:04:05.990 align:start position:0%
+dedicated page. Let's check out both the
+options.<00:04:03.599><c> Okay,</c><00:04:03.840><c> so</c><00:04:04.159><c> first</c><00:04:05.120><c> the</c><00:04:05.439><c> dedicated</c>
+
+00:04:05.990 --> 00:04:06.000 align:start position:0%
+options. Okay, so first the dedicated
+ 
+
+00:04:06.000 --> 00:04:10.229 align:start position:0%
+options. Okay, so first the dedicated
+URL.<00:04:07.280><c> It</c><00:04:07.519><c> looks</c><00:04:07.920><c> clean</c><00:04:08.319><c> and</c><00:04:08.720><c> simple.</c><00:04:09.760><c> Just</c>
+
+00:04:10.229 --> 00:04:10.239 align:start position:0%
+URL. It looks clean and simple. Just
+ 
+
+00:04:10.239 --> 00:04:12.869 align:start position:0%
+URL. It looks clean and simple. Just
+type<00:04:10.560><c> in</c><00:04:10.720><c> a</c><00:04:10.959><c> slug,</c>
+
+00:04:12.869 --> 00:04:12.879 align:start position:0%
+type in a slug,
+ 
+
+00:04:12.879 --> 00:04:16.949 align:start position:0%
+type in a slug,
+save<00:04:13.200><c> it,</c><00:04:14.319><c> and</c><00:04:14.560><c> you're</c><00:04:14.720><c> good</c><00:04:14.879><c> to</c><00:04:15.120><c> go.</c><00:04:16.400><c> What</c><00:04:16.720><c> it</c>
+
+00:04:16.949 --> 00:04:16.959 align:start position:0%
+save it, and you're good to go. What it
+ 
+
+00:04:16.959 --> 00:04:20.069 align:start position:0%
+save it, and you're good to go. What it
+does<00:04:17.199><c> is</c><00:04:17.759><c> if</c><00:04:18.000><c> you</c><00:04:18.239><c> send</c><00:04:18.479><c> the</c><00:04:18.720><c> URL</c><00:04:19.199><c> to</c><00:04:19.359><c> the</c><00:04:19.600><c> users</c>
+
+00:04:20.069 --> 00:04:20.079 align:start position:0%
+does is if you send the URL to the users
+ 
+
+00:04:20.079 --> 00:04:22.950 align:start position:0%
+does is if you send the URL to the users
+or<00:04:20.479><c> members</c><00:04:20.880><c> of</c><00:04:21.040><c> the</c><00:04:21.280><c> board,</c><00:04:22.240><c> they'll</c><00:04:22.639><c> be</c><00:04:22.800><c> able</c>
+
+00:04:22.950 --> 00:04:22.960 align:start position:0%
+or members of the board, they'll be able
+ 
+
+00:04:22.960 --> 00:04:25.590 align:start position:0%
+or members of the board, they'll be able
+to<00:04:23.120><c> access</c><00:04:23.440><c> the</c><00:04:23.759><c> board</c><00:04:24.400><c> just</c><00:04:24.800><c> by</c><00:04:25.040><c> clicking</c><00:04:25.440><c> the</c>
+
+00:04:25.590 --> 00:04:25.600 align:start position:0%
+to access the board just by clicking the
+ 
+
+00:04:25.600 --> 00:04:28.070 align:start position:0%
+to access the board just by clicking the
+URL.<00:04:26.880><c> So,</c><00:04:27.120><c> what</c><00:04:27.280><c> they'll</c><00:04:27.520><c> need</c><00:04:27.680><c> to</c><00:04:27.759><c> do</c><00:04:27.840><c> is</c>
+
+00:04:28.070 --> 00:04:28.080 align:start position:0%
+URL. So, what they'll need to do is
+ 
+
+00:04:28.080 --> 00:04:30.469 align:start position:0%
+URL. So, what they'll need to do is
+they'll<00:04:28.400><c> basically</c><00:04:28.800><c> need</c><00:04:28.960><c> to</c><00:04:29.280><c> log</c><00:04:29.600><c> in</c><00:04:30.240><c> and</c>
+
+00:04:30.469 --> 00:04:30.479 align:start position:0%
+they'll basically need to log in and
+ 
+
+00:04:30.479 --> 00:04:33.110 align:start position:0%
+they'll basically need to log in and
+then<00:04:30.720><c> land</c><00:04:31.040><c> on</c><00:04:31.199><c> the</c><00:04:31.360><c> project</c><00:04:31.680><c> board.</c><00:04:32.800><c> So,</c>
+
+00:04:33.110 --> 00:04:33.120 align:start position:0%
+then land on the project board. So,
+ 
+
+00:04:33.120 --> 00:04:37.830 align:start position:0%
+then land on the project board. So,
+let's<00:04:33.440><c> give</c><00:04:33.600><c> it</c><00:04:33.759><c> a</c><00:04:33.919><c> try.</c><00:04:35.199><c> I'll</c><00:04:35.600><c> copy</c><00:04:35.919><c> this</c><00:04:36.240><c> link</c>
+
+00:04:37.830 --> 00:04:37.840 align:start position:0%
+let's give it a try. I'll copy this link
+ 
+
+00:04:37.840 --> 00:04:42.550 align:start position:0%
+let's give it a try. I'll copy this link
+and<00:04:39.280><c> go</c><00:04:39.440><c> to</c><00:04:39.600><c> another</c><00:04:39.919><c> tab</c><00:04:40.240><c> and</c><00:04:41.040><c> log</c><00:04:41.360><c> in</c><00:04:42.080><c> via</c>
+
+00:04:42.550 --> 00:04:42.560 align:start position:0%
+and go to another tab and log in via
+ 
+
+00:04:42.560 --> 00:04:46.790 align:start position:0%
+and go to another tab and log in via
+user<00:04:42.960><c> email.</c><00:04:44.320><c> And</c><00:04:44.560><c> voila,</c><00:04:45.919><c> users</c><00:04:46.320><c> can</c><00:04:46.479><c> now</c>
+
+00:04:46.790 --> 00:04:46.800 align:start position:0%
+user email. And voila, users can now
+ 
+
+00:04:46.800 --> 00:04:48.550 align:start position:0%
+user email. And voila, users can now
+access<00:04:47.040><c> the</c><00:04:47.280><c> board</c><00:04:47.680><c> without</c><00:04:48.160><c> seeing</c><00:04:48.400><c> any</c>
+
+00:04:48.550 --> 00:04:48.560 align:start position:0%
+access the board without seeing any
+ 
+
+00:04:48.560 --> 00:04:52.390 align:start position:0%
+access the board without seeing any
+backend<00:04:49.040><c> operations.</c><00:04:50.080><c> See,</c><00:04:51.040><c> this</c><00:04:51.280><c> was</c><00:04:51.919><c> so</c>
+
+00:04:52.390 --> 00:04:52.400 align:start position:0%
+backend operations. See, this was so
+ 
+
+00:04:52.400 --> 00:04:55.670 align:start position:0%
+backend operations. See, this was so
+easy.<00:04:53.440><c> So,</c><00:04:54.000><c> let's</c><00:04:54.320><c> check</c><00:04:54.479><c> out</c><00:04:54.639><c> the</c><00:04:54.960><c> access.</c><00:04:55.440><c> As</c>
+
+00:04:55.670 --> 00:04:55.680 align:start position:0%
+easy. So, let's check out the access. As
+ 
+
+00:04:55.680 --> 00:04:58.230 align:start position:0%
+easy. So, let's check out the access. As
+I<00:04:55.919><c> set</c><00:04:56.080><c> the</c><00:04:56.320><c> access</c><00:04:56.639><c> for</c><00:04:56.960><c> this</c><00:04:57.199><c> user</c><00:04:57.600><c> as</c><00:04:57.919><c> view</c>
+
+00:04:58.230 --> 00:04:58.240 align:start position:0%
+I set the access for this user as view
+ 
+
+00:04:58.240 --> 00:05:00.629 align:start position:0%
+I set the access for this user as view
+only,<00:04:59.120><c> what</c><00:04:59.360><c> they</c><00:04:59.520><c> can</c><00:04:59.759><c> do</c><00:04:59.919><c> is</c><00:05:00.080><c> they</c><00:05:00.320><c> can</c><00:05:00.479><c> just</c>
+
+00:05:00.629 --> 00:05:00.639 align:start position:0%
+only, what they can do is they can just
+ 
+
+00:05:00.639 --> 00:05:05.030 align:start position:0%
+only, what they can do is they can just
+view.<00:05:01.759><c> So</c><00:05:02.400><c> if</c><00:05:02.720><c> I</c><00:05:02.960><c> go</c><00:05:03.280><c> back</c><00:05:04.080><c> and</c><00:05:04.479><c> change</c><00:05:04.800><c> the</c>
+
+00:05:05.030 --> 00:05:05.040 align:start position:0%
+view. So if I go back and change the
+ 
+
+00:05:05.040 --> 00:05:07.510 align:start position:0%
+view. So if I go back and change the
+role<00:05:05.440><c> to</c><00:05:05.840><c> editor</c>
+
+00:05:07.510 --> 00:05:07.520 align:start position:0%
+role to editor
+ 
+
+00:05:07.520 --> 00:05:10.230 align:start position:0%
+role to editor
+now<00:05:08.639><c> let's</c><00:05:08.960><c> go</c><00:05:09.039><c> ahead</c><00:05:09.280><c> and</c><00:05:09.520><c> refresh</c><00:05:10.000><c> this</c>
+
+00:05:10.230 --> 00:05:10.240 align:start position:0%
+now let's go ahead and refresh this
+ 
+
+00:05:10.240 --> 00:05:13.990 align:start position:0%
+now let's go ahead and refresh this
+page.<00:05:11.600><c> So</c><00:05:11.840><c> now</c><00:05:12.240><c> they</c><00:05:12.560><c> can</c><00:05:12.880><c> edit</c><00:05:13.199><c> the</c><00:05:13.360><c> task</c><00:05:13.759><c> and</c>
+
+00:05:13.990 --> 00:05:14.000 align:start position:0%
+page. So now they can edit the task and
+ 
+
+00:05:14.000 --> 00:05:17.590 align:start position:0%
+page. So now they can edit the task and
+stages<00:05:14.400><c> as</c><00:05:14.560><c> per</c><00:05:14.880><c> need.</c><00:05:15.600><c> See</c><00:05:16.720><c> this</c><00:05:16.960><c> is</c><00:05:17.120><c> such</c><00:05:17.360><c> a</c>
+
+00:05:17.590 --> 00:05:17.600 align:start position:0%
+stages as per need. See this is such a
+ 
+
+00:05:17.600 --> 00:05:20.710 align:start position:0%
+stages as per need. See this is such a
+handy<00:05:17.919><c> feature.</c><00:05:18.960><c> Okay.</c><00:05:19.520><c> So</c><00:05:19.759><c> this</c><00:05:20.000><c> was</c><00:05:20.400><c> all</c>
+
+00:05:20.710 --> 00:05:20.720 align:start position:0%
+handy feature. Okay. So this was all
+ 
+
+00:05:20.720 --> 00:05:24.230 align:start position:0%
+handy feature. Okay. So this was all
+about<00:05:20.880><c> the</c><00:05:21.120><c> standalone</c><00:05:21.680><c> fronted</c><00:05:22.080><c> URL.</c><00:05:23.440><c> Now</c>
+
+00:05:24.230 --> 00:05:24.240 align:start position:0%
+about the standalone fronted URL. Now
+ 
+
+00:05:24.240 --> 00:05:26.870 align:start position:0%
+about the standalone fronted URL. Now
+let's<00:05:24.639><c> check</c><00:05:24.880><c> out</c><00:05:25.039><c> the</c><00:05:25.360><c> second</c><00:05:25.759><c> option</c><00:05:26.560><c> of</c>
+
+00:05:26.870 --> 00:05:26.880 align:start position:0%
+let's check out the second option of
+ 
+
+00:05:26.880 --> 00:05:29.350 align:start position:0%
+let's check out the second option of
+pasting<00:05:27.280><c> the</c><00:05:27.520><c> short</c><00:05:27.840><c> code</c><00:05:28.080><c> in</c><00:05:28.320><c> a</c><00:05:28.639><c> predefined</c>
+
+00:05:29.350 --> 00:05:29.360 align:start position:0%
+pasting the short code in a predefined
+ 
+
+00:05:29.360 --> 00:05:30.870 align:start position:0%
+pasting the short code in a predefined
+page.
+
+00:05:30.870 --> 00:05:30.880 align:start position:0%
+page.
+ 
+
+00:05:30.880 --> 00:05:33.749 align:start position:0%
+page.
+So,<00:05:31.520><c> if</c><00:05:31.759><c> you</c><00:05:31.919><c> want</c><00:05:32.000><c> to</c><00:05:32.240><c> keep</c><00:05:32.479><c> things</c><00:05:32.800><c> inside</c><00:05:33.360><c> a</c>
+
+00:05:33.749 --> 00:05:33.759 align:start position:0%
+So, if you want to keep things inside a
+ 
+
+00:05:33.759 --> 00:05:37.350 align:start position:0%
+So, if you want to keep things inside a
+custom<00:05:34.320><c> layout</c><00:05:34.960><c> or</c><00:05:35.360><c> maybe</c><00:05:35.759><c> another</c><00:05:36.240><c> page,</c>
+
+00:05:37.350 --> 00:05:37.360 align:start position:0%
+custom layout or maybe another page,
+ 
+
+00:05:37.360 --> 00:05:40.150 align:start position:0%
+custom layout or maybe another page,
+just<00:05:38.560><c> as</c><00:05:38.800><c> you</c><00:05:38.960><c> can</c><00:05:39.039><c> see,</c><00:05:39.280><c> you</c><00:05:39.440><c> can</c><00:05:39.600><c> just</c><00:05:39.840><c> grab</c>
+
+00:05:40.150 --> 00:05:40.160 align:start position:0%
+just as you can see, you can just grab
+ 
+
+00:05:40.160 --> 00:05:41.909 align:start position:0%
+just as you can see, you can just grab
+the<00:05:40.320><c> short</c><00:05:40.639><c> code</c><00:05:40.880><c> and</c><00:05:41.120><c> drop</c><00:05:41.360><c> it</c><00:05:41.520><c> in</c><00:05:41.759><c> the</c>
+
+00:05:41.909 --> 00:05:41.919 align:start position:0%
+the short code and drop it in the
+ 
+
+00:05:41.919 --> 00:05:45.110 align:start position:0%
+the short code and drop it in the
+specific<00:05:42.320><c> page</c><00:05:42.560><c> you</c><00:05:42.880><c> want.</c><00:05:43.759><c> I</c><00:05:44.240><c> already</c><00:05:44.639><c> have</c><00:05:44.880><c> a</c>
+
+00:05:45.110 --> 00:05:45.120 align:start position:0%
+specific page you want. I already have a
+ 
+
+00:05:45.120 --> 00:05:49.270 align:start position:0%
+specific page you want. I already have a
+page<00:05:45.440><c> set</c><00:05:45.680><c> up.</c><00:05:46.320><c> Let</c><00:05:46.479><c> me</c><00:05:46.720><c> just</c><00:05:46.960><c> go</c><00:05:47.199><c> ahead</c>
+
+00:05:49.270 --> 00:05:49.280 align:start position:0%
+page set up. Let me just go ahead
+ 
+
+00:05:49.280 --> 00:05:52.710 align:start position:0%
+page set up. Let me just go ahead
+and<00:05:49.840><c> paste</c><00:05:50.320><c> the</c><00:05:50.560><c> short</c><00:05:50.880><c> code.</c><00:05:52.160><c> Okay,</c><00:05:52.479><c> now</c>
+
+00:05:52.710 --> 00:05:52.720 align:start position:0%
+and paste the short code. Okay, now
+ 
+
+00:05:52.720 --> 00:05:55.830 align:start position:0%
+and paste the short code. Okay, now
+let's<00:05:52.960><c> preview</c><00:05:53.280><c> the</c><00:05:53.520><c> page.</c><00:05:54.800><c> So,</c><00:05:55.280><c> you</c><00:05:55.520><c> can</c><00:05:55.680><c> see</c>
+
+00:05:55.830 --> 00:05:55.840 align:start position:0%
+let's preview the page. So, you can see
+ 
+
+00:05:55.840 --> 00:05:57.749 align:start position:0%
+let's preview the page. So, you can see
+that<00:05:56.160><c> it</c><00:05:56.400><c> comes</c><00:05:56.720><c> through</c><00:05:56.880><c> the</c><00:05:57.120><c> page</c><00:05:57.360><c> we</c><00:05:57.600><c> set</c>
+
+00:05:57.749 --> 00:05:57.759 align:start position:0%
+that it comes through the page we set
+ 
+
+00:05:57.759 --> 00:05:59.670 align:start position:0%
+that it comes through the page we set
+the<00:05:57.919><c> short</c><00:05:58.160><c> code</c><00:05:58.400><c> in.</c><00:05:58.960><c> That's</c><00:05:59.280><c> pretty</c><00:05:59.440><c> much</c>
+
+00:05:59.670 --> 00:05:59.680 align:start position:0%
+the short code in. That's pretty much
+ 
+
+00:05:59.680 --> 00:06:03.590 align:start position:0%
+the short code in. That's pretty much
+it.<00:06:00.479><c> No</c><00:06:00.880><c> complicated</c><00:06:01.520><c> setup.</c><00:06:02.880><c> This</c><00:06:03.120><c> comes</c><00:06:03.360><c> in</c>
+
+00:06:03.590 --> 00:06:03.600 align:start position:0%
+it. No complicated setup. This comes in
+ 
+
+00:06:03.600 --> 00:06:06.230 align:start position:0%
+it. No complicated setup. This comes in
+clutch<00:06:03.919><c> when</c><00:06:04.160><c> you</c><00:06:04.319><c> have</c><00:06:04.479><c> a</c><00:06:04.800><c> huge</c><00:06:05.120><c> user</c><00:06:05.440><c> base</c><00:06:06.000><c> or</c>
+
+00:06:06.230 --> 00:06:06.240 align:start position:0%
+clutch when you have a huge user base or
+ 
+
+00:06:06.240 --> 00:06:09.510 align:start position:0%
+clutch when you have a huge user base or
+a<00:06:06.479><c> huge</c><00:06:06.800><c> group</c><00:06:06.960><c> of</c><00:06:07.199><c> members.</c>
+
+00:06:09.510 --> 00:06:09.520 align:start position:0%
+a huge group of members.
+ 
+
+00:06:09.520 --> 00:06:11.590 align:start position:0%
+a huge group of members.
+They<00:06:09.840><c> can</c><00:06:10.080><c> easily</c><00:06:10.639><c> log</c><00:06:10.880><c> in</c><00:06:11.039><c> throughout</c><00:06:11.440><c> the</c>
+
+00:06:11.590 --> 00:06:11.600 align:start position:0%
+They can easily log in throughout the
+ 
+
+00:06:11.600 --> 00:06:13.189 align:start position:0%
+They can easily log in throughout the
+page<00:06:11.919><c> and</c><00:06:12.160><c> you</c><00:06:12.400><c> won't</c><00:06:12.560><c> need</c><00:06:12.720><c> to</c><00:06:12.880><c> send</c><00:06:13.039><c> the</c>
+
+00:06:13.189 --> 00:06:13.199 align:start position:0%
+page and you won't need to send the
+ 
+
+00:06:13.199 --> 00:06:16.550 align:start position:0%
+page and you won't need to send the
+members<00:06:13.600><c> any</c><00:06:13.919><c> URL</c><00:06:14.400><c> links</c><00:06:14.800><c> personally.</c><00:06:16.240><c> So</c>
+
+00:06:16.550 --> 00:06:16.560 align:start position:0%
+members any URL links personally. So
+ 
+
+00:06:16.560 --> 00:06:19.110 align:start position:0%
+members any URL links personally. So
+these<00:06:16.960><c> were</c><00:06:17.120><c> the</c><00:06:17.360><c> two</c><00:06:17.600><c> options</c><00:06:18.240><c> of</c><00:06:18.560><c> setting</c><00:06:18.880><c> up</c>
+
+00:06:19.110 --> 00:06:19.120 align:start position:0%
+these were the two options of setting up
+ 
+
+00:06:19.120 --> 00:06:22.710 align:start position:0%
+these were the two options of setting up
+the<00:06:19.440><c> front-end</c><00:06:19.840><c> portal.</c><00:06:21.120><c> All</c><00:06:21.199><c> right.</c><00:06:22.080><c> Now</c>
+
+00:06:22.710 --> 00:06:22.720 align:start position:0%
+the front-end portal. All right. Now
+ 
+
+00:06:22.720 --> 00:06:24.790 align:start position:0%
+the front-end portal. All right. Now
+let's<00:06:23.120><c> take</c><00:06:23.280><c> a</c><00:06:23.520><c> deeper</c><00:06:23.840><c> look</c><00:06:24.080><c> at</c><00:06:24.319><c> how</c><00:06:24.560><c> the</c>
+
+00:06:24.790 --> 00:06:24.800 align:start position:0%
+let's take a deeper look at how the
+ 
+
+00:06:24.800 --> 00:06:26.870 align:start position:0%
+let's take a deeper look at how the
+front-end<00:06:25.199><c> portal</c><00:06:25.759><c> actually</c><00:06:26.240><c> works</c><00:06:26.560><c> in</c><00:06:26.720><c> the</c>
+
+00:06:26.870 --> 00:06:26.880 align:start position:0%
+front-end portal actually works in the
+ 
+
+00:06:26.880 --> 00:06:30.469 align:start position:0%
+front-end portal actually works in the
+front<00:06:27.120><c> end.</c><00:06:28.080><c> So,</c><00:06:28.319><c> from</c><00:06:28.560><c> the</c><00:06:28.800><c> dashboard,</c><00:06:30.240><c> as</c>
+
+00:06:30.469 --> 00:06:30.479 align:start position:0%
+front end. So, from the dashboard, as
+ 
+
+00:06:30.479 --> 00:06:33.110 align:start position:0%
+front end. So, from the dashboard, as
+you<00:06:30.639><c> can</c><00:06:30.720><c> see</c><00:06:30.880><c> on</c><00:06:31.120><c> the</c><00:06:31.280><c> navigation</c><00:06:31.919><c> bar,</c><00:06:32.800><c> just</c>
+
+00:06:33.110 --> 00:06:33.120 align:start position:0%
+you can see on the navigation bar, just
+ 
+
+00:06:33.120 --> 00:06:35.350 align:start position:0%
+you can see on the navigation bar, just
+click<00:06:33.280><c> on</c><00:06:33.440><c> the</c><00:06:33.600><c> front</c><00:06:33.840><c> end</c><00:06:34.080><c> portal</c><00:06:34.479><c> button</c><00:06:35.039><c> on</c>
+
+00:06:35.350 --> 00:06:35.360 align:start position:0%
+click on the front end portal button on
+ 
+
+00:06:35.360 --> 00:06:37.350 align:start position:0%
+click on the front end portal button on
+that<00:06:35.600><c> little</c><00:06:35.919><c> arrow</c><00:06:36.319><c> or</c><00:06:36.639><c> just</c><00:06:36.880><c> right</c><00:06:37.039><c> next</c><00:06:37.280><c> to</c>
+
+00:06:37.350 --> 00:06:37.360 align:start position:0%
+that little arrow or just right next to
+ 
+
+00:06:37.360 --> 00:06:40.629 align:start position:0%
+that little arrow or just right next to
+it.<00:06:38.720><c> And</c><00:06:39.120><c> you're</c><00:06:39.520><c> instantly</c><00:06:40.080><c> taken</c><00:06:40.400><c> to</c><00:06:40.479><c> the</c>
+
+00:06:40.629 --> 00:06:40.639 align:start position:0%
+it. And you're instantly taken to the
+ 
+
+00:06:40.639 --> 00:06:43.029 align:start position:0%
+it. And you're instantly taken to the
+front<00:06:40.880><c> end</c><00:06:41.120><c> version.</c><00:06:42.160><c> Notice</c><00:06:42.560><c> what</c><00:06:42.800><c> just</c>
+
+00:06:43.029 --> 00:06:43.039 align:start position:0%
+front end version. Notice what just
+ 
+
+00:06:43.039 --> 00:06:46.309 align:start position:0%
+front end version. Notice what just
+happened.<00:06:44.000><c> The</c><00:06:44.400><c> entire</c><00:06:45.120><c> WordPress</c><00:06:45.680><c> sidebar</c>
+
+00:06:46.309 --> 00:06:46.319 align:start position:0%
+happened. The entire WordPress sidebar
+ 
+
+00:06:46.319 --> 00:06:50.390 align:start position:0%
+happened. The entire WordPress sidebar
+is<00:06:46.560><c> gone.</c><00:06:47.600><c> No</c><00:06:47.919><c> dashboard,</c><00:06:48.880><c> no</c><00:06:49.199><c> admin</c><00:06:49.680><c> bar,</c>
+
+00:06:50.390 --> 00:06:50.400 align:start position:0%
+is gone. No dashboard, no admin bar,
+ 
+
+00:06:50.400 --> 00:06:52.070 align:start position:0%
+is gone. No dashboard, no admin bar,
+none<00:06:50.639><c> of</c><00:06:50.720><c> that</c><00:06:50.880><c> backend</c><00:06:51.360><c> stuff</c><00:06:51.680><c> cluttering</c>
+
+00:06:52.070 --> 00:06:52.080 align:start position:0%
+none of that backend stuff cluttering
+ 
+
+00:06:52.080 --> 00:06:54.629 align:start position:0%
+none of that backend stuff cluttering
+the<00:06:52.319><c> view.</c><00:06:53.120><c> It's</c><00:06:53.520><c> just</c><00:06:53.680><c> the</c><00:06:53.840><c> Fluent</c><00:06:54.240><c> Board's</c>
+
+00:06:54.629 --> 00:06:54.639 align:start position:0%
+the view. It's just the Fluent Board's
+ 
+
+00:06:54.639 --> 00:06:57.430 align:start position:0%
+the view. It's just the Fluent Board's
+interface.<00:06:55.919><c> Clean,</c><00:06:56.639><c> focused,</c><00:06:57.199><c> and</c>
+
+00:06:57.430 --> 00:06:57.440 align:start position:0%
+interface. Clean, focused, and
+ 
+
+00:06:57.440 --> 00:07:00.790 align:start position:0%
+interface. Clean, focused, and
+distraction-free.<00:06:58.800><c> Simple</c><00:06:59.120><c> as</c><00:06:59.360><c> that.</c><00:07:00.479><c> Let's</c>
+
+00:07:00.790 --> 00:07:00.800 align:start position:0%
+distraction-free. Simple as that. Let's
+ 
+
+00:07:00.800 --> 00:07:03.029 align:start position:0%
+distraction-free. Simple as that. Let's
+have<00:07:00.960><c> a</c><00:07:01.120><c> quick</c><00:07:01.360><c> glance</c><00:07:01.680><c> on</c><00:07:02.000><c> what</c><00:07:02.240><c> we</c><00:07:02.479><c> see</c><00:07:02.800><c> when</c>
+
+00:07:03.029 --> 00:07:03.039 align:start position:0%
+have a quick glance on what we see when
+ 
+
+00:07:03.039 --> 00:07:05.830 align:start position:0%
+have a quick glance on what we see when
+we<00:07:03.199><c> get</c><00:07:03.360><c> in</c><00:07:03.520><c> the</c><00:07:03.599><c> front-end</c><00:07:04.080><c> portal.</c><00:07:05.360><c> So,</c><00:07:05.599><c> as</c>
+
+00:07:05.830 --> 00:07:05.840 align:start position:0%
+we get in the front-end portal. So, as
+ 
+
+00:07:05.840 --> 00:07:08.150 align:start position:0%
+we get in the front-end portal. So, as
+you<00:07:06.000><c> can</c><00:07:06.160><c> see,</c><00:07:06.479><c> I</c><00:07:06.720><c> can</c><00:07:06.880><c> view</c><00:07:07.280><c> all</c><00:07:07.520><c> the</c><00:07:07.840><c> boards</c>
+
+00:07:08.150 --> 00:07:08.160 align:start position:0%
+you can see, I can view all the boards
+ 
+
+00:07:08.160 --> 00:07:11.029 align:start position:0%
+you can see, I can view all the boards
+and<00:07:08.479><c> my</c><00:07:08.720><c> tasks</c><00:07:09.199><c> as</c><00:07:09.440><c> per</c><00:07:09.680><c> my</c><00:07:09.919><c> board.</c><00:07:10.560><c> I</c><00:07:10.800><c> can</c>
+
+00:07:11.029 --> 00:07:11.039 align:start position:0%
+and my tasks as per my board. I can
+ 
+
+00:07:11.039 --> 00:07:13.270 align:start position:0%
+and my tasks as per my board. I can
+access<00:07:11.440><c> and</c><00:07:11.680><c> tweak</c><00:07:12.000><c> things</c><00:07:12.400><c> according</c><00:07:12.800><c> to</c><00:07:13.039><c> my</c>
+
+00:07:13.270 --> 00:07:13.280 align:start position:0%
+access and tweak things according to my
+ 
+
+00:07:13.280 --> 00:07:16.710 align:start position:0%
+access and tweak things according to my
+need.<00:07:14.479><c> But</c><00:07:14.800><c> now,</c><00:07:15.599><c> let's</c><00:07:15.919><c> log</c><00:07:16.160><c> in</c><00:07:16.319><c> through</c><00:07:16.479><c> a</c>
+
+00:07:16.710 --> 00:07:16.720 align:start position:0%
+need. But now, let's log in through a
+ 
+
+00:07:16.720 --> 00:07:19.830 align:start position:0%
+need. But now, let's log in through a
+dummy<00:07:17.120><c> user</c><00:07:17.520><c> email</c><00:07:17.759><c> for</c><00:07:18.000><c> test</c><00:07:18.319><c> purpose.</c><00:07:19.680><c> So,</c>
+
+00:07:19.830 --> 00:07:19.840 align:start position:0%
+dummy user email for test purpose. So,
+ 
+
+00:07:19.840 --> 00:07:22.070 align:start position:0%
+dummy user email for test purpose. So,
+let's<00:07:20.080><c> go</c><00:07:20.160><c> ahead</c><00:07:20.400><c> and</c><00:07:20.560><c> do</c><00:07:20.720><c> that.</c>
+
+00:07:22.070 --> 00:07:22.080 align:start position:0%
+let's go ahead and do that.
+ 
+
+00:07:22.080 --> 00:07:24.469 align:start position:0%
+let's go ahead and do that.
+As<00:07:22.319><c> you</c><00:07:22.479><c> can</c><00:07:22.639><c> see,</c><00:07:22.880><c> the</c><00:07:23.120><c> user</c><00:07:23.759><c> don't</c><00:07:24.080><c> get</c><00:07:24.240><c> to</c>
+
+00:07:24.469 --> 00:07:24.479 align:start position:0%
+As you can see, the user don't get to
+ 
+
+00:07:24.479 --> 00:07:26.710 align:start position:0%
+As you can see, the user don't get to
+see<00:07:24.720><c> everything</c><00:07:25.120><c> that</c><00:07:25.520><c> I</c><00:07:25.840><c> could</c><00:07:26.080><c> see</c><00:07:26.240><c> earlier</c>
+
+00:07:26.710 --> 00:07:26.720 align:start position:0%
+see everything that I could see earlier
+ 
+
+00:07:26.720 --> 00:07:29.189 align:start position:0%
+see everything that I could see earlier
+through<00:07:27.039><c> my</c><00:07:27.360><c> view.</c><00:07:28.240><c> And</c><00:07:28.479><c> this</c><00:07:28.800><c> happens</c>
+
+00:07:29.189 --> 00:07:29.199 align:start position:0%
+through my view. And this happens
+ 
+
+00:07:29.199 --> 00:07:31.670 align:start position:0%
+through my view. And this happens
+because<00:07:29.520><c> of</c><00:07:29.680><c> the</c><00:07:30.000><c> access</c><00:07:30.319><c> that</c><00:07:30.560><c> they</c><00:07:30.800><c> have.</c>
+
+00:07:31.670 --> 00:07:31.680 align:start position:0%
+because of the access that they have.
+ 
+
+00:07:31.680 --> 00:07:34.790 align:start position:0%
+because of the access that they have.
+And<00:07:32.240><c> that's</c><00:07:32.560><c> the</c><00:07:32.800><c> real</c><00:07:33.039><c> power</c><00:07:33.280><c> of</c><00:07:33.440><c> Fluent</c><00:07:33.919><c> WS.</c>
+
+00:07:34.790 --> 00:07:34.800 align:start position:0%
+And that's the real power of Fluent WS.
+ 
+
+00:07:34.800 --> 00:07:37.350 align:start position:0%
+And that's the real power of Fluent WS.
+It's<00:07:35.120><c> not</c><00:07:35.280><c> just</c><00:07:35.520><c> about</c><00:07:35.840><c> managing</c><00:07:36.560><c> tasks</c><00:07:37.120><c> or</c>
+
+00:07:37.350 --> 00:07:37.360 align:start position:0%
+It's not just about managing tasks or
+ 
+
+00:07:37.360 --> 00:07:39.909 align:start position:0%
+It's not just about managing tasks or
+ticking<00:07:37.840><c> boxes.</c><00:07:38.800><c> It's</c><00:07:39.120><c> about</c><00:07:39.360><c> creating</c><00:07:39.680><c> a</c>
+
+00:07:39.909 --> 00:07:39.919 align:start position:0%
+ticking boxes. It's about creating a
+ 
+
+00:07:39.919 --> 00:07:42.230 align:start position:0%
+ticking boxes. It's about creating a
+space<00:07:40.319><c> where</c><00:07:40.720><c> collaboration</c><00:07:41.759><c> actually</c>
+
+00:07:42.230 --> 00:07:42.240 align:start position:0%
+space where collaboration actually
+ 
+
+00:07:42.240 --> 00:07:45.110 align:start position:0%
+space where collaboration actually
+works,<00:07:43.120><c> where</c><00:07:43.360><c> your</c><00:07:43.680><c> team</c><00:07:43.919><c> stays</c><00:07:44.319><c> focused,</c>
+
+00:07:45.110 --> 00:07:45.120 align:start position:0%
+works, where your team stays focused,
+ 
+
+00:07:45.120 --> 00:07:47.110 align:start position:0%
+works, where your team stays focused,
+your<00:07:45.440><c> clients</c><00:07:45.759><c> stay</c><00:07:46.000><c> in</c><00:07:46.160><c> the</c><00:07:46.319><c> loop,</c><00:07:46.880><c> and</c>
+
+00:07:47.110 --> 00:07:47.120 align:start position:0%
+your clients stay in the loop, and
+ 
+
+00:07:47.120 --> 00:07:48.790 align:start position:0%
+your clients stay in the loop, and
+nobody<00:07:47.599><c> has</c><00:07:47.759><c> to</c><00:07:47.919><c> deal</c><00:07:48.080><c> with</c><00:07:48.240><c> the</c><00:07:48.400><c> mess</c><00:07:48.639><c> of</c>
+
+00:07:48.790 --> 00:07:48.800 align:start position:0%
+nobody has to deal with the mess of
+ 
+
+00:07:48.800 --> 00:07:50.950 align:start position:0%
+nobody has to deal with the mess of
+backend<00:07:49.280><c> confusion.</c>
+
+00:07:50.950 --> 00:07:50.960 align:start position:0%
+backend confusion.
+ 
+
+00:07:50.960 --> 00:07:53.830 align:start position:0%
+backend confusion.
+From<00:07:51.280><c> inviting</c><00:07:51.919><c> members,</c><00:07:52.800><c> setting</c><00:07:53.120><c> rules</c><00:07:53.599><c> to</c>
+
+00:07:53.830 --> 00:07:53.840 align:start position:0%
+From inviting members, setting rules to
+ 
+
+00:07:53.840 --> 00:07:56.390 align:start position:0%
+From inviting members, setting rules to
+sharing<00:07:54.240><c> a</c><00:07:54.639><c> clean</c><00:07:55.039><c> front-end</c><00:07:55.520><c> portal,</c>
+
+00:07:56.390 --> 00:07:56.400 align:start position:0%
+sharing a clean front-end portal,
+ 
+
+00:07:56.400 --> 00:07:58.150 align:start position:0%
+sharing a clean front-end portal,
+everything<00:07:56.800><c> is</c><00:07:57.039><c> built</c><00:07:57.360><c> to</c><00:07:57.520><c> make</c><00:07:57.759><c> project</c>
+
+00:07:58.150 --> 00:07:58.160 align:start position:0%
+everything is built to make project
+ 
+
+00:07:58.160 --> 00:08:01.909 align:start position:0%
+everything is built to make project
+management<00:07:58.800><c> smoother</c><00:07:59.680><c> and</c><00:08:00.160><c> more</c><00:08:00.560><c> human.</c><00:08:01.520><c> So,</c>
+
+00:08:01.909 --> 00:08:01.919 align:start position:0%
+management smoother and more human. So,
+ 
+
+00:08:01.919 --> 00:08:04.629 align:start position:0%
+management smoother and more human. So,
+honestly,<00:08:02.800><c> why</c><00:08:03.120><c> wait?</c><00:08:04.000><c> Whether</c><00:08:04.400><c> you're</c>
+
+00:08:04.629 --> 00:08:04.639 align:start position:0%
+honestly, why wait? Whether you're
+ 
+
+00:08:04.639 --> 00:08:08.150 align:start position:0%
+honestly, why wait? Whether you're
+running<00:08:04.879><c> an</c><00:08:05.280><c> agency,</c><00:08:06.400><c> managing</c><00:08:06.960><c> client</c><00:08:07.440><c> work,</c>
+
+00:08:08.150 --> 00:08:08.160 align:start position:0%
+running an agency, managing client work,
+ 
+
+00:08:08.160 --> 00:08:10.390 align:start position:0%
+running an agency, managing client work,
+or<00:08:08.400><c> just</c><00:08:08.639><c> need</c><00:08:08.879><c> a</c><00:08:09.280><c> better</c><00:08:09.520><c> way</c><00:08:09.759><c> to</c><00:08:09.919><c> keep</c><00:08:10.160><c> your</c>
+
+00:08:10.390 --> 00:08:10.400 align:start position:0%
+or just need a better way to keep your
+ 
+
+00:08:10.400 --> 00:08:13.510 align:start position:0%
+or just need a better way to keep your
+team<00:08:10.639><c> aligned,</c><00:08:11.520><c> Fluent</c><00:08:12.000><c> Boards</c><00:08:12.400><c> makes</c><00:08:12.639><c> it</c><00:08:13.120><c> way</c>
+
+00:08:13.510 --> 00:08:13.520 align:start position:0%
+team aligned, Fluent Boards makes it way
+ 
+
+00:08:13.520 --> 00:08:16.230 align:start position:0%
+team aligned, Fluent Boards makes it way
+easier.<00:08:14.560><c> Jump</c><00:08:14.800><c> in</c><00:08:15.039><c> today</c><00:08:15.440><c> and</c><00:08:15.759><c> take</c><00:08:16.000><c> your</c>
+
+00:08:16.230 --> 00:08:16.240 align:start position:0%
+easier. Jump in today and take your
+ 
+
+00:08:16.240 --> 00:08:21.000 align:start position:0%
+easier. Jump in today and take your
+project<00:08:16.560><c> collaboration</c><00:08:17.360><c> to</c><00:08:17.599><c> the</c><00:08:17.759><c> next</c><00:08:18.000><c> level.</c>
+
