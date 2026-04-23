@@ -34,11 +34,25 @@ Date de vérif : **2026-04-23**
 
 ## Bridge FluentCart ↔ TutorLMS choisi (Task 0.3)
 
-*À remplir à l'issue de Task 0.3*
+Date décision : **2026-04-23**
 
-- Plan retenu : **_TODO_** (Plan A natif / Plan B fallback FluentCRM)
-- Procédure exacte : _TODO_
-- Captures de la config : `assets/captures/bridge/`
+- **Plan retenu : Plan B — FluentCRM comme pont**
+- **Plan A écarté** : FluentCart n'expose que 3 intégrations globales (WP User Create/Update, Webhook, FluentCRM). Aucune intégration native TutorLMS côté FluentCart, ni option "Grant access to course" dans la conception d'un produit FluentCart.
+- **Plan B validé** : FluentCRM expose nativement les triggers TutorLMS (`Course Enrolled`, `Course Completed`, `Lesson Completed`) + les triggers FluentCart. On chaîne donc :
+  - Trigger : `FluentCart → Product Purchased` (filtré sur l'ID produit formation)
+  - Action 1 : Apply tag `formation-fluentboards`
+  - Action 2 : Add to list `Formation FluentBoards acheteurs`
+  - Action 3 : **Enroll in TutorLMS Course** (à confirmer : action native FluentCRM dispo ? sinon fallback HTTP Call vers API REST TutorLMS)
+  - Action 4 : Send welcome email
+  - Wait 7 days → follow-up email (construit en Task 7.2)
+- **n8n credential FluentBoards** : à créer en parallèle (non bloquant, utile pour les workflows téléchargeables de Task 5.6-5.7)
+- Captures de la config : `assets/captures/bridge/` (à remplir pendant Task 0.6)
+
+**Prochaines tâches liées** (S1 seconde moitié) :
+- Task 0.4 : créer le cours TutorLMS → donne le `course_id` nécessaire pour l'action enroll
+- Task 0.5 : créer le produit FluentCart → donne le `product_id` nécessaire pour le filtre trigger
+- Task 0.6 : construire l'automation FluentCRM qui lie les deux
+- Task 0.7 : test end-to-end du tunnel complet
 
 ---
 
