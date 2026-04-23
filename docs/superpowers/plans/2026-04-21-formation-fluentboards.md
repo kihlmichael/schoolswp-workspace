@@ -1,4 +1,4 @@
-# Formation "FluentBoards de zéro à pro" — Implementation Plan
+# Formation "FluentBoards de zéro à pro" - Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -18,7 +18,7 @@
 
 Trois patterns utilisés dans les tâches ci-dessous. Chaque référence à un pattern cite son nom explicitement.
 
-### Pattern L — Production d'une leçon TutorLMS
+### Pattern L - Production d'une leçon TutorLMS
 
 Appliqué à chacune des 40 leçons. Le brief complet de chaque leçon (objectif, pièges, checklist) est donné dans la tâche qui l'invoque.
 
@@ -29,7 +29,7 @@ Appliqué à chacune des 40 leçons. Le brief complet de chaque leçon (objectif
 5. **Upload TutorLMS** : wp-admin → TutorLMS → Course "FluentBoards de zéro à pro" → Section N → Nouvelle leçon. Coller texte (markdown transformé en blocs Gutenberg), uploader le MP4 dans la médiathèque WP (dossier /formations/fluentboards/), intégrer dans la leçon, uploader les captures.
 6. **Commit** : `git add content/formations/fluentboards/modules/NN/lesson.md content/formations/fluentboards/assets/captures/NN-lesson/` puis `git commit -m "feat(formation-fb): module N leçon N.M - titre"`. Les MP4 ne sont pas commités (trop lourds), ils restent sur WP + une copie locale non versionnée. `content/formations/fluentboards/assets/demos/` est ajouté au `.gitignore` dès Task 0.1.
 
-### Pattern Q — Production d'un quiz TutorLMS
+### Pattern Q - Production d'un quiz TutorLMS
 
 Appliqué 7 fois (un par module).
 
@@ -38,7 +38,7 @@ Appliqué 7 fois (un par module).
 3. **Upload TutorLMS** : wp-admin → Course → Section N → Nouveau quiz. Seuil passage 70 %. Pas bloquant (l'apprenant peut continuer même s'il rate).
 4. **Commit** : `git add content/formations/fluentboards/modules/NN/quiz.md` puis `git commit -m "feat(formation-fb): quiz module N"`.
 
-### Pattern W — Production d'un workflow n8n téléchargeable
+### Pattern W - Production d'un workflow n8n téléchargeable
 
 Appliqué 10 fois (3 workflows inclus formation + 7 order bump).
 
@@ -51,7 +51,7 @@ Appliqué 10 fois (3 workflows inclus formation + 7 order bump).
 
 ---
 
-## Phase 0 — Setup technique (S1 première moitié)
+## Phase 0 - Setup technique (S1 première moitié)
 
 ### Task 0.1: Créer l'arborisation repo
 
@@ -123,7 +123,7 @@ wp-admin → Plugins → FluentBoards actif + licence Pro active. Ouvrir FluentB
 
 - [ ] **Step 5 : vérifier FluentRoadmap (point critique)**
 
-wp-admin → Plugins → chercher FluentRoadmap. Si présent et actif : bon, Module 6 peut inclure Roadmap. Si absent ou licence séparée non active : écrire note dans `content/formations/fluentboards/plan.md` — Module 6 retirera le volet Roadmap, focus Reports + Time Tracking. Mettre à jour la spec en conséquence (modifier la table des modules).
+wp-admin → Plugins → chercher FluentRoadmap. Si présent et actif : bon, Module 6 peut inclure Roadmap. Si absent ou licence séparée non active : écrire note dans `content/formations/fluentboards/plan.md` - Module 6 retirera le volet Roadmap, focus Reports + Time Tracking. Mettre à jour la spec en conséquence (modifier la table des modules).
 
 - [ ] **Step 6 : checker n8n**
 
@@ -207,7 +207,7 @@ Screenshots de la structure créée, sauvés dans `content/formations/fluentboar
 
 FluentCart → Products → Add New
 - Name : "Formation FluentBoards de zéro à pro"
-- Price : 67 € (early bird — sera modifié en S9)
+- Price : 67 € (early bird - sera modifié en S9)
 - Type : One-time payment (pas subscription)
 - Description : placeholder
 - Associated course : sélectionner le cours créé en Task 0.4 (si Plan A natif) sinon skip
@@ -218,7 +218,7 @@ FluentCart → Products → Add New (produit séparé "Pack Workflows n8n Avanc�
 
 - [ ] **Step 3 : configurer la sales page FluentCart (temporaire)**
 
-URL : `schoolswp.com/checkout/formation-fluentboards/` — sales page courte par défaut de FluentCart. Sera remplacée en Phase 6 par la vraie sales page cc-design à `schoolswp.com/formations/fluentboards/`.
+URL : `schoolswp.com/checkout/formation-fluentboards/` - sales page courte par défaut de FluentCart. Sera remplacée en Phase 6 par la vraie sales page cc-design à `schoolswp.com/formations/fluentboards/`.
 
 - [ ] **Step 4 : tester l'achat en mode sandbox**
 
@@ -253,7 +253,7 @@ FluentCRM → Automations → New :
 - [ ] **Step 3 : créer l'email welcome template**
 
 FluentCRM → Email Templates → New
-- Subject : "Bienvenue dans FluentBoards de zéro à pro — ton accès est prêt"
+- Subject : "Bienvenue dans FluentBoards de zéro à pro - ton accès est prêt"
 - Contenu : lien direct vers le cours TutorLMS + lien téléchargement pack ressources + promesse support "réponse sous 48 h". Tutoiement, signature Michael.
 
 - [ ] **Step 4 : tester l'automation avec un achat de test**
@@ -283,12 +283,12 @@ Depuis un compte WP différent (pas admin), ouvrir la page checkout FluentCart. 
 3. Email post-achat FluentCRM reçu < 60 s
 4. Lien email → user connecté TutorLMS → inscrit au cours
 5. Accès au cours → les 7 sections visibles (vides pour l'instant)
-6. Quiz non publié (normal — pas encore créés)
+6. Quiz non publié (normal - pas encore créés)
 7. Zone ressources : placeholder (vide pour l'instant, OK)
 8. Démarrer leçon 1.1 (placeholder) → progression trackée
 9. Tenter rembourser la commande → FluentCart remboursement OK
-10. Vérifier que l'user est désinscrit (ou pas — décider : on laissera l'accès même en cas de refund, principe "pas de rétrocession d'accès" ? ou on révoque ?) — à décider et documenter.
-11. Désinscrire la newsletter depuis pied d'email — bouton présent, fonctionne
+10. Vérifier que l'user est désinscrit (ou pas - décider : on laissera l'accès même en cas de refund, principe "pas de rétrocession d'accès" ? ou on révoque ?) - à décider et documenter.
+11. Désinscrire la newsletter depuis pied d'email - bouton présent, fonctionne
 12. Reinscrire (nouveau checkout) → aucune trace résiduelle de l'ancien refund bloque
 
 - [ ] **Step 2 : documenter résultats + tickets à fixer**
@@ -373,7 +373,7 @@ Ouvrir le JSON, vérifier : pas d'ID utilisateur interne, pas de tokens, pas de 
 
 ---
 
-## Phase 1 — Module 1 Setup (S1 seconde moitié)
+## Phase 1 - Module 1 Setup (S1 seconde moitié)
 
 ### Task 1.1: Définir le découpage détaillé des 40 leçons
 
@@ -384,14 +384,14 @@ Ouvrir le JSON, vérifier : pas d'ID utilisateur interne, pas de tokens, pas de 
 
 Dans `content/formations/fluentboards/plan.md`, section "Leçons détaillées", reproduire cette table (servira de référence pour toutes les Tasks 1.x à 5.x) :
 
-**Module 1 — Setup (5 leçons)**
-- 1.1 Pourquoi FluentBoards — contextualiser l'outil, ses forces vs Trello/Asana/ClickUp, le "tout-dans-WP"
-- 1.2 Installation du plugin — installer FluentBoards (Free puis Pro), activation licence
-- 1.3 Ajuster la position dans le menu WP — feature méconnue, améliore l'UX pour tout user WP
-- 1.4 Free vs Pro : ce que tu as vraiment — matrice comparative exhaustive
-- 1.5 Créer ton premier board — board vierge, naming, description, preview
+**Module 1 - Setup (5 leçons)**
+- 1.1 Pourquoi FluentBoards - contextualiser l'outil, ses forces vs Trello/Asana/ClickUp, le "tout-dans-WP"
+- 1.2 Installation du plugin - installer FluentBoards (Free puis Pro), activation licence
+- 1.3 Ajuster la position dans le menu WP - feature méconnue, améliore l'UX pour tout user WP
+- 1.4 Free vs Pro : ce que tu as vraiment - matrice comparative exhaustive
+- 1.5 Créer ton premier board - board vierge, naming, description, preview
 
-**Module 2 — Structurer (6 leçons)**
+**Module 2 - Structurer (6 leçons)**
 - 2.1 Stages : créer, renommer, réorganiser
 - 2.2 Stage default assignee : qui prend la task quand elle arrive
 - 2.3 Task templates : structurer une task type
@@ -399,7 +399,7 @@ Dans `content/formations/fluentboards/plan.md`, section "Leçons détaillées", 
 - 2.5 Labels + couleurs : catégoriser visuellement
 - 2.6 Card view preferences : ce que l'œil voit sans ouvrir la task
 
-**Module 3 — Piloter (6 leçons)**
+**Module 3 - Piloter (6 leçons)**
 - 3.1 Créer une task complète : dates, priorité, description, label, assignee
 - 3.2 Sous-tâches + groupes de sous-tâches
 - 3.3 Task actions : move, clone, archive, bulk
@@ -407,15 +407,15 @@ Dans `content/formations/fluentboards/plan.md`, section "Leçons détaillées", 
 - 3.5 Task status filter
 - 3.6 Advanced filtering : par label, date, assignee, custom field
 
-**Module 4 — Collaborer (6 leçons)**
+**Module 4 - Collaborer (6 leçons)**
 - 4.1 Member roles : admin, editor, view-only
 - 4.2 Notifications settings
 - 4.3 Daily reminder
-- 4.4 Frontend Portal — paramétrage + partage client
+- 4.4 Frontend Portal - paramétrage + partage client
 - 4.5 Profile + task overview
 - 4.6 Pinned boards
 
-**Module 5 — Automatiser (6 leçons)**
+**Module 5 - Automatiser (6 leçons)**
 - 5.1 Incoming webhook : créer une task depuis n'importe quelle app
 - 5.2 Outgoing webhook : envoyer un événement FB vers n8n/Slack/Discord
 - 5.3 Intégration Fluent Forms : submit → task auto
@@ -423,16 +423,16 @@ Dans `content/formations/fluentboards/plan.md`, section "Leçons détaillées", 
 - 5.5 Intégration FluentSupport : ticket → task
 - 5.6 Stockage externe : S3 / R2 / Backblaze / DigitalOcean
 
-**Module 6 — Mesurer (5 leçons, ou 4 si FluentRoadmap non licencié)**
+**Module 6 - Mesurer (5 leçons, ou 4 si FluentRoadmap non licencié)**
 - 6.1 Time tracking sur les tasks
 - 6.2 FluentBoards Reports : dashboard agrégé
-- 6.3 FluentRoadmap : créer une roadmap publique — *skippé si licence FluentRoadmap absente*
-- 6.4 Roadmap settings — *skippé si licence FluentRoadmap absente*
+- 6.3 FluentRoadmap : créer une roadmap publique - *skippé si licence FluentRoadmap absente*
+- 6.4 Roadmap settings - *skippé si licence FluentRoadmap absente*
 - 6.5 Lire les reports : interpréter les métriques pour piloter l'équipe
 
-**Module 7 — Industrialiser (6 leçons)**
+**Module 7 - Industrialiser (6 leçons)**
 - 7.1 Board folders : organiser 10+ boards clients
-- 7.2 Bulk actions — table view
+- 7.2 Bulk actions - table view
 - 7.3 Import/Export d'un board entier
 - 7.4 Migrer depuis Trello
 - 7.5 Migrer depuis Asana
@@ -459,36 +459,36 @@ Appliquer le **Pattern L** à chacune des 5 leçons ci-dessous.
 
 **Briefs des leçons :**
 
-- [ ] **Leçon 1.1 Pourquoi FluentBoards** — Pattern L
+- [ ] **Leçon 1.1 Pourquoi FluentBoards** - Pattern L
   - Objectif : "À la fin, tu sauras pourquoi FluentBoards bat Trello/Asana/ClickUp pour un pro WP + tu identifieras le scénario type qui justifie la migration."
   - Sources : `content/docs/fluentboards/pages/fluentboards-com.md`, `blog/introducing-fluentboards.md`, `pages/trello-vs-fluentboards.md`, `youtube/01-jDNdINFMZ5w.md`
   - Pièges : ne pas promettre "remplace tout" (nuance : adapté à qui a déjà WP comme hub)
-  - Démo : 60 s — captures annotées comparant Trello ouvert dans un onglet vs board FluentBoards intégré dans wp-admin.
+  - Démo : 60 s - captures annotées comparant Trello ouvert dans un onglet vs board FluentBoards intégré dans wp-admin.
 
-- [ ] **Leçon 1.2 Installation du plugin** — Pattern L
+- [ ] **Leçon 1.2 Installation du plugin** - Pattern L
   - Objectif : "À la fin, FluentBoards Free puis Pro sont installés, activés, licence validée."
   - Sources : `docs/fluentboards-installation-guide.md`, `docs/fluentboards-licence-activation.md`
   - Pièges : licence saisie depuis le mauvais compte WPManageNinja, Pro installé avant Free (conflit).
   - Démo : 60 s install Free depuis WP repo puis Pro depuis zip + activation licence.
 
-- [ ] **Leçon 1.3 Ajuster la position dans le menu WP** — Pattern L
+- [ ] **Leçon 1.3 Ajuster la position dans le menu WP** - Pattern L
   - Objectif : "À la fin, tu sais déplacer FluentBoards dans le menu wp-admin pour éviter qu'il soit en bas à oublié."
   - Sources : `docs/fluentboards-menu-position-in-wordpress.md`
   - Pièges : position conflictuelle avec d'autres plugins qui utilisent le même index.
   - Démo : 30 s avant/après placement.
 
-- [ ] **Leçon 1.4 Free vs Pro — ce que tu as vraiment** — Pattern L
+- [ ] **Leçon 1.4 Free vs Pro - ce que tu as vraiment** - Pattern L
   - Objectif : "À la fin, tu sais exactement quelles features nécessitent Pro et peux justifier l'upgrade auprès de ton boss/client."
   - Sources : `pages/free-vs-pro.md`, `blog/fluentboards-free-vs-pro.md`, `youtube/13-Azqd7iixFMk.md`
   - Format : tableau comparatif 2 colonnes.
   - Pas de démo vidéo obligatoire (tableau suffit), ou 45 s sur un feature Pro précis.
 
-- [ ] **Leçon 1.5 Créer ton premier board** — Pattern L
+- [ ] **Leçon 1.5 Créer ton premier board** - Pattern L
   - Objectif : "À la fin, tu as un board 'Agence Template' créé (le fil rouge de la formation)."
   - Sources : `docs/how-to-create-a-new-board.md`, `docs/onboarding-board.md`, `docs/boards-view.md`, `youtube/26-sJbRqlo5HA8.md`
   - Pièges : oublier de nommer correctement (naming convention : "Client - Projet"), créer un board "test" et l'utiliser en prod.
   - Démo : 60 s création board + premier look UI.
-  - **Spécial** : à la fin, Michael crée vraiment le board "Agence Template" (déjà fait en Task 0.9 — juste montrer la création en démo).
+  - **Spécial** : à la fin, Michael crée vraiment le board "Agence Template" (déjà fait en Task 0.9 - juste montrer la création en démo).
 
 ---
 
@@ -512,7 +512,7 @@ Fichier : `content/formations/fluentboards/modules/01-setup/quiz.md`
 
 - [ ] **Step 1 : exporter le board FluentBoards après module 1**
 
-À ce stade, le board "Agence Template" est encore vierge (aucun stage créé — ça vient au module 2). Exporter quand même pour snapshot versionné. Export JSON depuis FluentBoards UI → sauver dans `livrables/board-snapshots/v-M1-after-module-1.json`.
+À ce stade, le board "Agence Template" est encore vierge (aucun stage créé - ça vient au module 2). Exporter quand même pour snapshot versionné. Export JSON depuis FluentBoards UI → sauver dans `livrables/board-snapshots/v-M1-after-module-1.json`.
 
 - [ ] **Step 2 : sanitize (neutraliser IDs persistants)**
 
@@ -524,7 +524,7 @@ Inspecter le JSON, remplacer les IDs internes sensibles par des placeholders si 
 
 ---
 
-## Phase 2 — Modules 2 + 3 (S2)
+## Phase 2 - Modules 2 + 3 (S2)
 
 ### Task 2.1: Produire les 6 leçons du Module 2 Structurer
 
@@ -540,38 +540,38 @@ Appliquer **Pattern L** pour chaque leçon. Pendant la production, Michael crée
 
 **Briefs :**
 
-- [ ] **Leçon 2.1 Stages — créer, renommer, réorganiser** — Pattern L
+- [ ] **Leçon 2.1 Stages - créer, renommer, réorganiser** - Pattern L
   - Objectif : "À la fin, le board Agence a 4 stages nommés et ordonnés."
   - Sources : `docs/how-to-create-a-new-stage.md`, `youtube/05-jTD7SjyXcHk.md`
   - Pièges : trop de stages (viser 4-6 max), renommer après coup casse le routage webhooks.
 
-- [ ] **Leçon 2.2 Stage default assignee** — Pattern L
+- [ ] **Leçon 2.2 Stage default assignee** - Pattern L
   - Objectif : "À la fin, le stage 'Backlog' assigne automatiquement à toi-même les nouvelles tasks."
   - Sources : `docs/stage-default-assignee.md`
   - Pièges : assigner à un user supprimé = tasks orphelines.
 
-- [ ] **Leçon 2.3 Task templates** — Pattern L
+- [ ] **Leçon 2.3 Task templates** - Pattern L
   - Objectif : "À la fin, tu as un template 'Nouveau projet client' qui préremplit 8 sous-tâches types."
   - Sources : `docs/task-template.md`
   - Pièges : template trop chargé, apprenant le vide à chaque fois.
 
-- [ ] **Leçon 2.4 Custom fields** — Pattern L
+- [ ] **Leçon 2.4 Custom fields** - Pattern L
   - Objectif : "À la fin, le board Agence a 3 custom fields : Priorité (select), Client (texte), Deadline (date)."
   - Sources : `docs/custom-fields-for-task.md`
   - Pièges : multi-select mal géré par certains filtres → préférer select simple quand c'est binaire.
 
-- [ ] **Leçon 2.5 Labels + couleurs** — Pattern L
+- [ ] **Leçon 2.5 Labels + couleurs** - Pattern L
   - Objectif : "À la fin, 5 labels colorés existent : Bug, Feature, Doc, Ops, Sales."
   - Sources : à extraire de `docs/task-action.md` + notes de release
   - Pièges : 20 labels = illisibilité, viser 5-8 max.
 
-- [ ] **Leçon 2.6 Card view preferences** — Pattern L
+- [ ] **Leçon 2.6 Card view preferences** - Pattern L
   - Objectif : "À la fin, tu vois sur la card : titre + assignee avatar + label color + deadline + custom field Priorité."
   - Sources : `docs/card-view-preference-settings.md`
 
 ---
 
-### Task 2.2: Produire le quiz du Module 2 — Pattern Q
+### Task 2.2: Produire le quiz du Module 2 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 2, 6 questions QCM.
 
@@ -597,38 +597,38 @@ Appliquer **Pattern L**. Michael peuple le board avec des tasks réelles : ~10 t
 
 **Briefs :**
 
-- [ ] **Leçon 3.1 Créer une task complète** — Pattern L
+- [ ] **Leçon 3.1 Créer une task complète** - Pattern L
   - Objectif : "À la fin, le board a 5 tasks peuplées avec dates + assignee + description + label + priorité."
   - Sources : `docs/task-action.md`, `youtube/26-sJbRqlo5HA8.md`
   - Pièges : ne pas mettre de deadline → task oubliée.
 
-- [ ] **Leçon 3.2 Sous-tâches + groupes de sous-tâches** — Pattern L
+- [ ] **Leçon 3.2 Sous-tâches + groupes de sous-tâches** - Pattern L
   - Objectif : "À la fin, une task client type a 8 sous-tâches groupées en 2 phases (Setup / Livraison)."
   - Sources : `docs/task-action.md` + changelog récent
   - Pièges : sous-tâches mal groupées = perte visibilité.
 
-- [ ] **Leçon 3.3 Task actions — move, clone, archive, bulk** — Pattern L
+- [ ] **Leçon 3.3 Task actions - move, clone, archive, bulk** - Pattern L
   - Objectif : "À la fin, tu sais cloner une task, la déplacer entre stages, l'archiver, et faire des actions bulk en table view."
   - Sources : `docs/task-action.md`
   - Pièges : archive ≠ suppression.
 
-- [ ] **Leçon 3.4 Recurring tasks** — Pattern L
+- [ ] **Leçon 3.4 Recurring tasks** - Pattern L
   - Objectif : "À la fin, tu as une task récurrente hebdo 'Réunion équipe' qui se duplique automatiquement chaque lundi."
   - Sources : `docs/recurring-task.md`, `youtube/12-oUNoetTf8sg.md`
   - Pièges : récurrence trop fréquente → spam de tasks identiques.
 
-- [ ] **Leçon 3.5 Task status filter** — Pattern L
+- [ ] **Leçon 3.5 Task status filter** - Pattern L
   - Objectif : "À la fin, tu sais filtrer les tasks par status (pending / in progress / completed / cancelled)."
   - Sources : `docs/task-action.md`
 
-- [ ] **Leçon 3.6 Advanced filtering** — Pattern L
+- [ ] **Leçon 3.6 Advanced filtering** - Pattern L
   - Objectif : "À la fin, tu sais combiner 3 filtres : label + assignee + deadline pour une vue ciblée."
   - Sources : changelog + blog posts récents
   - Démo : 90 s sur un board peuplé.
 
 ---
 
-### Task 2.5: Produire le quiz du Module 3 — Pattern Q
+### Task 2.5: Produire le quiz du Module 3 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 3, 7 questions QCM.
 
@@ -640,7 +640,7 @@ Appliquer **Pattern L**. Michael peuple le board avec des tasks réelles : ~10 t
 
 ---
 
-## Phase 3 — Module 4 + début Module 5 (S3)
+## Phase 3 - Module 4 + début Module 5 (S3)
 
 ### Task 3.1: Produire les 6 leçons du Module 4 Collaborer
 
@@ -656,37 +656,37 @@ Appliquer **Pattern L**. Michael invite 1-2 users tests (emails poubelle) + conf
 
 **Briefs :**
 
-- [ ] **Leçon 4.1 Member roles** — Pattern L
+- [ ] **Leçon 4.1 Member roles** - Pattern L
   - Objectif : "À la fin, tu as invité 2 users : un éditeur + un view-only."
   - Sources : `docs/member-roles.md`
   - Pièges : donner admin par défaut, puis galère à rétrograder.
 
-- [ ] **Leçon 4.2 Notifications settings** — Pattern L
+- [ ] **Leçon 4.2 Notifications settings** - Pattern L
   - Objectif : "À la fin, tu reçois un email quand une task te mentionne, mais pas pour chaque changement mineur."
   - Sources : `docs/notification-settings.md`
   - Pièges : tout cocher → spam → apprenant désactive tout.
 
-- [ ] **Leçon 4.3 Daily reminder** — Pattern L
+- [ ] **Leçon 4.3 Daily reminder** - Pattern L
   - Objectif : "À la fin, tu reçois un mail quotidien à 9 h avec tes tasks du jour."
   - Sources : `docs/daily-reminder-settings.md`
 
-- [ ] **Leçon 4.4 Frontend Portal — paramétrage + partage client** — Pattern L — **CRUCIAL**
+- [ ] **Leçon 4.4 Frontend Portal - paramétrage + partage client** - Pattern L - **CRUCIAL**
   - Objectif : "À la fin, tu as un portail client fonctionnel à `schoolswp.com/portail-client/` où le client voit uniquement son board + ses tasks."
   - Sources : `docs/frontend-portal-settings.md`, `youtube/06-KszublJN0xY.md`, `youtube/19-tn-xUbVtOtY.md`
   - Pièges : portail public sans auth → fuite données. Toujours exiger login.
   - Démo : 90 s setup portal + ouverture avec compte client test.
 
-- [ ] **Leçon 4.5 Profile + task overview** — Pattern L
+- [ ] **Leçon 4.5 Profile + task overview** - Pattern L
   - Objectif : "À la fin, tu trouves ton profil utilisateur + la vue 'My Tasks' transversale aux boards."
   - Sources : `docs/fluentboards-profile-and-task-overview.md`
 
-- [ ] **Leçon 4.6 Pinned boards** — Pattern L
+- [ ] **Leçon 4.6 Pinned boards** - Pattern L
   - Objectif : "À la fin, tu as pinné le board Agence en premier de ta sidebar."
   - Sources : `docs/pinned-boards.md`
 
 ---
 
-### Task 3.2: Produire le quiz du Module 4 — Pattern Q
+### Task 3.2: Produire le quiz du Module 4 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 4, 7 questions QCM.
 
@@ -700,7 +700,7 @@ Appliquer **Pattern L**. Michael invite 1-2 users tests (emails poubelle) + conf
 
 ### Task 3.4: Produire les 3 premières leçons du Module 5 Automatiser (50 %)
 
-Appliquer **Pattern L**. Module 5 est le plus dense — les 3 premières leçons posent les bases webhook.
+Appliquer **Pattern L**. Module 5 est le plus dense - les 3 premières leçons posent les bases webhook.
 
 **Files :**
 - Create : `content/formations/fluentboards/modules/05-automatiser/01-incoming-webhook.md`
@@ -709,26 +709,26 @@ Appliquer **Pattern L**. Module 5 est le plus dense — les 3 premières leçons
 
 **Briefs :**
 
-- [ ] **Leçon 5.1 Incoming webhook — créer une task depuis n'importe quelle app** — Pattern L — **CRUCIAL**
+- [ ] **Leçon 5.1 Incoming webhook - créer une task depuis n'importe quelle app** - Pattern L - **CRUCIAL**
   - Objectif : "À la fin, tu génères une URL webhook FluentBoards et tu crées une task via POST JSON depuis un client HTTP (prouvant que n'importe quelle app peut le faire)."
   - Sources : `docs/incoming-webhook.md`, `youtube/08-csZCb6rO1bQ.md`, `youtube/27-zl0Ot_Y3Y8k.md`
   - Pièges : oublier que le hash webhook = auth (fuite URL = fuite accès).
   - Démo : 90 s création URL + POST via Postman ou httpie → task apparaît.
-  - **Bonus** : ce webhook est celui qu'on utilisera dans le pipeline schoolsWP (déjà en place — voir `tools/scripts/notify-audit-card.py` — Michael peut citer ce cas d'usage réel).
+  - **Bonus** : ce webhook est celui qu'on utilisera dans le pipeline schoolsWP (déjà en place - voir `tools/scripts/notify-audit-card.py` - Michael peut citer ce cas d'usage réel).
 
-- [ ] **Leçon 5.2 Outgoing webhook — envoyer un événement FB** — Pattern L
+- [ ] **Leçon 5.2 Outgoing webhook - envoyer un événement FB** - Pattern L
   - Objectif : "À la fin, quand une task change de stage sur FluentBoards, un webhook sort vers n8n pour router vers Slack/Discord."
   - Sources : `docs/outgoing-webhooks.md`, `blog/fluentboards-outgoing-webhooks.md`
   - Pièges : surcharger avec trop d'événements outgoing (rate limit + spam).
 
-- [ ] **Leçon 5.3 Intégration Fluent Forms — submit → task auto** — Pattern L
+- [ ] **Leçon 5.3 Intégration Fluent Forms - submit → task auto** - Pattern L
   - Objectif : "À la fin, tu as un formulaire Fluent Forms dont chaque submission crée une task dans le board Agence (stage 'Nouveaux leads')."
   - Sources : `docs/fluentboards-integration-with-fluent-forms.md`, `youtube/10-39rF5Pmwf9o.md`, `blog/how-fluent-forms-complements-fluentboards.md`
   - Démo : 90 s création formulaire + connecteur + test submission.
 
 ---
 
-## Phase 4 — Fin Module 5 + Module 6 (S4)
+## Phase 4 - Fin Module 5 + Module 6 (S4)
 
 ### Task 4.1: Produire les 3 dernières leçons du Module 5
 
@@ -741,16 +741,16 @@ Appliquer **Pattern L**.
 
 **Briefs :**
 
-- [ ] **Leçon 5.4 Intégration FluentCRM — contact ↔ board** — Pattern L
+- [ ] **Leçon 5.4 Intégration FluentCRM - contact ↔ board** - Pattern L
   - Objectif : "À la fin, quand tu crées une task liée à un contact CRM, tu as accès direct à sa fiche sans quitter FluentBoards."
   - Sources : `docs/fluentboards-integration-with-fluentcrm.md`, `blog/how-fluentcrm-complement-fluentboards.md`
-  - Pièges : sync bidirectionnelle pas garantie — c'est du lien, pas de la copie.
+  - Pièges : sync bidirectionnelle pas garantie - c'est du lien, pas de la copie.
 
-- [ ] **Leçon 5.5 Intégration FluentSupport — ticket → task** — Pattern L
+- [ ] **Leçon 5.5 Intégration FluentSupport - ticket → task** - Pattern L
   - Objectif : "À la fin, un ticket FluentSupport escaladé crée une task dans le board Dev."
   - Sources : `docs/fluentboards-integration-with-fluentsupport.md`
 
-- [ ] **Leçon 5.6 Stockage externe — S3/R2/Backblaze/DigitalOcean** — Pattern L
+- [ ] **Leçon 5.6 Stockage externe - S3/R2/Backblaze/DigitalOcean** - Pattern L
   - Objectif : "À la fin, les pièces jointes des tasks vont sur Cloudflare R2 (ou S3) au lieu du serveur WP."
   - Sources : les 4 docs S3/R2/Backblaze/DigitalOcean dans `content/docs/fluentboards/docs/`
   - Pièges : CORS mal configuré → pièces jointes qui ne chargent pas depuis le navigateur.
@@ -758,7 +758,7 @@ Appliquer **Pattern L**.
 
 ---
 
-### Task 4.2: Produire le quiz du Module 5 — Pattern Q
+### Task 4.2: Produire le quiz du Module 5 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 5, **8 questions QCM** (module dense).
 
@@ -777,30 +777,30 @@ Appliquer **Pattern L**. **5 leçons si FluentRoadmap licencié, 4 sinon** (déc
 
 **Briefs :**
 
-- [ ] **Leçon 6.1 Time tracking sur les tasks** — Pattern L
+- [ ] **Leçon 6.1 Time tracking sur les tasks** - Pattern L
   - Objectif : "À la fin, tu démarres un chronomètre sur une task + tu logs manuellement du temps rétroactivement."
   - Sources : `docs/task-time-tracking.md`
 
-- [ ] **Leçon 6.2 FluentBoards Reports** — Pattern L
+- [ ] **Leçon 6.2 FluentBoards Reports** - Pattern L
   - Objectif : "À la fin, tu as ouvert le dashboard reports et tu comprends les 5 KPI principaux (tasks par stage, tasks terminées / semaine, tasks en retard, top assignees, temps cumulé)."
   - Sources : `docs/fluentboard-reports.md`, `youtube/25-QoCrKupLTbM.md`
 
-- [ ] **Leçon 6.3 FluentRoadmap — créer une roadmap publique** *(conditionnel — skip si licence absente)* — Pattern L
+- [ ] **Leçon 6.3 FluentRoadmap - créer une roadmap publique** *(conditionnel - skip si licence absente)* - Pattern L
   - Objectif : "À la fin, tu publies une roadmap produit en lecture seule à `schoolswp.com/roadmap/`."
   - Sources : `docs/fluentboards-roadmap-overview.md`, `youtube/04-24D5NdmPGCU.md`, `youtube/23-t5F8OgQeDIY.md`
 
-- [ ] **Leçon 6.4 Roadmap settings** *(conditionnel)* — Pattern L
+- [ ] **Leçon 6.4 Roadmap settings** *(conditionnel)* - Pattern L
   - Objectif : "À la fin, la roadmap publique a les bonnes permissions + branding."
   - Sources : `docs/roadmap-settings.md`
 
-- [ ] **Leçon 6.5 Lire les reports — interpréter pour piloter** — Pattern L
+- [ ] **Leçon 6.5 Lire les reports - interpréter pour piloter** - Pattern L
   - Objectif : "À la fin, tu identifies les 3 signaux d'alerte dans un board (stage 'Review' qui s'engorge, tasks en retard > 5 %, assignee saturé)."
   - Sources : synthèse leçon 6.2 + `blog/project-management-kpis.md`, `blog/project-monitoring-phase.md`
-  - Pas de démo obligatoire — texte analytique + captures de 3 scénarios de dashboards.
+  - Pas de démo obligatoire - texte analytique + captures de 3 scénarios de dashboards.
 
 ---
 
-### Task 4.4: Produire le quiz du Module 6 — Pattern Q
+### Task 4.4: Produire le quiz du Module 6 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 6, 6 questions QCM.
 
@@ -813,11 +813,11 @@ Appliquer **Pattern L**. **5 leçons si FluentRoadmap licencié, 4 sinon** (déc
 
 ---
 
-## Phase 5 — Module 7 + livrables annexes (S5)
+## Phase 5 - Module 7 + livrables annexes (S5)
 
 ### Task 5.1: Produire les 6 leçons du Module 7 Industrialiser
 
-Appliquer **Pattern L**. Module culminant — la leçon 7.6 est celle où Michael fait l'export final du Board Agence Template.
+Appliquer **Pattern L**. Module culminant - la leçon 7.6 est celle où Michael fait l'export final du Board Agence Template.
 
 **Files :**
 - Create : `content/formations/fluentboards/modules/07-industrialiser/01-board-folders.md`
@@ -829,35 +829,35 @@ Appliquer **Pattern L**. Module culminant — la leçon 7.6 est celle où Michae
 
 **Briefs :**
 
-- [ ] **Leçon 7.1 Board folders** — Pattern L
+- [ ] **Leçon 7.1 Board folders** - Pattern L
   - Objectif : "À la fin, tu as 3 folders 'Clients actifs / Clients dormants / Interne' avec chacun 2-3 boards."
   - Sources : `docs/boards-with-folders.md`
 
-- [ ] **Leçon 7.2 Bulk actions (table view)** — Pattern L
+- [ ] **Leçon 7.2 Bulk actions (table view)** - Pattern L
   - Objectif : "À la fin, tu déplaces 10 tasks d'un seul coup en table view + assignes une label à 20 tasks."
   - Sources : `blog/table-view-for-project-management.md` + docs récents
 
-- [ ] **Leçon 7.3 Import/Export d'un board entier** — Pattern L
+- [ ] **Leçon 7.3 Import/Export d'un board entier** - Pattern L
   - Objectif : "À la fin, tu exportes un board en JSON et tu l'importes dans un autre site WP."
   - Sources : `docs/import-boards-into-fluentboards.md`
 
-- [ ] **Leçon 7.4 Migrer depuis Trello** — Pattern L
+- [ ] **Leçon 7.4 Migrer depuis Trello** - Pattern L
   - Objectif : "À la fin, tu as importé un board Trello complet (cards + labels + members) dans FluentBoards."
   - Sources : `docs/import-from-trello.md`, `youtube/07-ILQlmRk1qz4.md`, `youtube/24-99VfIHTnYj0.md`
   - Pièges : checklists Trello converties en sous-tâches (pas toujours fidèle).
 
-- [ ] **Leçon 7.5 Migrer depuis Asana** — Pattern L
+- [ ] **Leçon 7.5 Migrer depuis Asana** - Pattern L
   - Objectif : "À la fin, tu as importé un projet Asana complet dans FluentBoards."
   - Sources : `docs/import-boards-from-asana.md`, `youtube/09-iXgVw3wctOE.md`
 
-- [ ] **Leçon 7.6 FINAL — exporter le board agence template + packaging** — Pattern L — **CULMINATION**
+- [ ] **Leçon 7.6 FINAL - exporter le board agence template + packaging** - Pattern L - **CULMINATION**
   - Objectif : "À la fin, tu as téléchargé le fichier `board-template-agence.json` et tu sais le réimporter pour chaque nouveau client."
-  - Démo : 5 min step-by-step — export + sanitize + import dans un nouveau board blank.
+  - Démo : 5 min step-by-step - export + sanitize + import dans un nouveau board blank.
   - **Spécial** : cette leçon inclut le download link vers le livrable final dans TutorLMS zone ressources.
 
 ---
 
-### Task 5.2: Produire le quiz du Module 7 — Pattern Q
+### Task 5.2: Produire le quiz du Module 7 - Pattern Q
 
 - [ ] Appliquer Pattern Q complet pour Module 7, 6 questions QCM.
 
@@ -981,16 +981,16 @@ Appliquer **Pattern W** pour chacun.
 
 **Briefs :**
 
-- [ ] **Workflow 01 — Bug GitHub → task FluentBoards** — Pattern W
+- [ ] **Workflow 01 - Bug GitHub → task FluentBoards** - Pattern W
   - Trigger : webhook GitHub (issue created avec label "bug")
   - Action : POST vers incoming webhook FluentBoards (stage "Bugs", label "GitHub")
 
-- [ ] **Workflow 02 — Lead Fluent Forms → task + contact FluentCRM** — Pattern W
+- [ ] **Workflow 02 - Lead Fluent Forms → task + contact FluentCRM** - Pattern W
   - Trigger : webhook Fluent Forms submission
   - Action 1 : upsert contact FluentCRM (par email)
   - Action 2 : POST task FluentBoards (stage "Leads", label "inbound")
 
-- [ ] **Workflow 03 — Ticket FluentSupport → task** — Pattern W
+- [ ] **Workflow 03 - Ticket FluentSupport → task** - Pattern W
   - Trigger : webhook FluentSupport (ticket new)
   - Action : POST task FluentBoards (stage "Support", priorité = priorité ticket)
 
@@ -1013,13 +1013,13 @@ Appliquer **Pattern W** pour chacun.
 
 **Briefs :**
 
-- [ ] **04 — Lead FluentForms + score > 70 → task high-priority + contact CRM**
-- [ ] **05 — Recap hebdo Slack/Telegram avec tasks en retard** (cron hebdo → fetch tasks en retard → message → Slack + Telegram)
-- [ ] **06 — Création automatique de sous-tâches depuis un template** (task créée avec tag "template:new-client" → 8 sous-tâches prédéfinies)
-- [ ] **07 — Archivage automatique des tasks > 60 jours** (cron quotidien → fetch tasks stage Done > 60 j → archiver)
-- [ ] **08 — Import en masse de tasks depuis un Google Sheet** (trigger manuel avec URL sheet → lire rows → POST tasks)
-- [ ] **09 — Synchro bidirectionnelle FluentBoards ↔ Notion** (si faisable — sinon remplacer par Airtable)
-- [ ] **10 — Notification Discord enrichie avec 3 outils (gif, markdown, threads)** (outgoing webhook FluentBoards sur task completed → POST Discord riche)
+- [ ] **04 - Lead FluentForms + score > 70 → task high-priority + contact CRM**
+- [ ] **05 - Recap hebdo Slack/Telegram avec tasks en retard** (cron hebdo → fetch tasks en retard → message → Slack + Telegram)
+- [ ] **06 - Création automatique de sous-tâches depuis un template** (task créée avec tag "template:new-client" → 8 sous-tâches prédéfinies)
+- [ ] **07 - Archivage automatique des tasks > 60 jours** (cron quotidien → fetch tasks stage Done > 60 j → archiver)
+- [ ] **08 - Import en masse de tasks depuis un Google Sheet** (trigger manuel avec URL sheet → lire rows → POST tasks)
+- [ ] **09 - Synchro bidirectionnelle FluentBoards ↔ Notion** (si faisable - sinon remplacer par Airtable)
+- [ ] **10 - Notification Discord enrichie avec 3 outils (gif, markdown, threads)** (outgoing webhook FluentBoards sur task completed → POST Discord riche)
 
 - [ ] **Mise à jour README + commit groupé**
 
@@ -1027,7 +1027,7 @@ Appliquer **Pattern W** pour chacun.
 
 ---
 
-## Phase 6 — Sales page + videos + tunnel (S6)
+## Phase 6 - Sales page + videos + tunnel (S6)
 
 ### Task 6.1: Draft la copy de la sales page
 
@@ -1112,7 +1112,7 @@ URL fonctionne, tous les liens internes (CTA) vers FluentCart checkout, meta tag
 
 - [ ] **Step 4 : Rank Math SEO meta**
 
-Via wp-admin UI (API REST silent-ignore — cf. mémoire `reference_rank_math_rest_limits.md`). Title + description + focus keyword "formation fluentboards".
+Via wp-admin UI (API REST silent-ignore - cf. mémoire `reference_rank_math_rest_limits.md`). Title + description + focus keyword "formation fluentboards".
 
 - [ ] **Step 5 : commit des notes**
 
@@ -1224,7 +1224,7 @@ Tout est peuplé cette fois (sales page, 7 modules, 4 livrables, videos, emails 
 
 ---
 
-## Phase 7 — Pré-lancement SEO + contenu (S7)
+## Phase 7 - Pré-lancement SEO + contenu (S7)
 
 ### Task 7.1: Publier l'article "FluentBoards avis complet"
 
@@ -1256,7 +1256,7 @@ Encart dédié "Si tu veux maîtriser FluentBoards de A à Z, on a une formation
 
 - [ ] **Step 5 : publier sur WP**
 
-Via MCP novamira-schoolswp-com ou UI wp-admin. Metadata SEO via UI Rank Math (pas REST — cf. mémoire).
+Via MCP novamira-schoolswp-com ou UI wp-admin. Metadata SEO via UI Rank Math (pas REST - cf. mémoire).
 
 - [ ] **Step 6 : commit**
 
@@ -1273,16 +1273,16 @@ Via MCP novamira-schoolswp-com ou UI wp-admin. Metadata SEO via UI Rank Math (pa
 
 Brief 4 emails :
 
-1. **Email #1 — J-3 : teaser**
+1. **Email #1 - J-3 : teaser**
    - Subject : "Je prépare quelque chose depuis 9 semaines"
    - Corps : raconte pourquoi tu as créé cette formation, problème résolu, promesse rendez-vous J0
-2. **Email #2 — J0 : annonce lancement + early bird**
-   - Subject : "C'est ouvert — 30 places à 67 € (au lieu de 97 €)"
+2. **Email #2 - J0 : annonce lancement + early bird**
+   - Subject : "C'est ouvert - 30 places à 67 € (au lieu de 97 €)"
    - Corps : promesse + ce qui est inclus + CTA sales page + compte à rebours
-3. **Email #3 — J+3 : social proof + FAQ**
+3. **Email #3 - J+3 : social proof + FAQ**
    - Subject : "Ce que disent les 8 premiers acheteurs"
    - Corps : 2-3 témoignages (réels ou preuves concrètes premiers achats) + 3 FAQ
-4. **Email #4 — J+7 : last call early bird**
+4. **Email #4 - J+7 : last call early bird**
    - Subject : "Dernières heures à 67 € (puis 97 €)"
    - Corps : urgence + rappel garantie 14 j + CTA final
 
@@ -1308,7 +1308,7 @@ Envoyer chaque email à une adresse test avant activation. Vérifier : rendu HTM
 - [ ] **Step 1 : déléguer à pulse**
 
 Brief :
-- Post #1 (J-3) : teaser — question "comment tu gères tes projets clients dans WP ?" + preview formation
+- Post #1 (J-3) : teaser - question "comment tu gères tes projets clients dans WP ?" + preview formation
 - Post #2 (J0) : annonce lancement avec carousel image 5 slides (module + livrable à chaque slide)
 - Post #3 (J+7) : bilan early bird (nombre places vendues, premiers retours apprenants)
 
@@ -1363,28 +1363,28 @@ Sur `content/formations/fluentboards/plan.md`, section "Checklist pré-lancement
 
 ---
 
-## Phase 8 — Lancement early bird (S8)
+## Phase 8 - Lancement early bird (S8)
 
-### Task 8.1: J-3 — teaser email + LinkedIn post #1
+### Task 8.1: J-3 - teaser email + LinkedIn post #1
 
 - [ ] **Step 1** : déclencher email #1 dans FluentCRM (scheduled → check envoi OK)
 - [ ] **Step 2** : publier LinkedIn post #1 via Blotato (check rendu post live)
-- [ ] **Step 3** : monitor — ouvertures email, impressions LinkedIn, clics vers sales page.
+- [ ] **Step 3** : monitor - ouvertures email, impressions LinkedIn, clics vers sales page.
 
 ---
 
-### Task 8.2: J0 — Lancement officiel
+### Task 8.2: J0 - Lancement officiel
 
 - [ ] **Step 1** : activer l'offre early bird dans FluentCart (vérifier prix 67 € + compteur 30 places affiché)
 - [ ] **Step 2** : déclencher email #2 dans FluentCRM
 - [ ] **Step 3** : publier LinkedIn post #2 avec carousel
-- [ ] **Step 4** : annoncer dans tes canaux schoolsWP existants — newsletter, Discord, etc.
-- [ ] **Step 5** : monitor heures H+2 / H+6 / H+24 — ventes early bird, CTR email, erreurs tunnel (si support email reçoit plus de 2 questions = bug, diagnostiquer)
+- [ ] **Step 4** : annoncer dans tes canaux schoolsWP existants - newsletter, Discord, etc.
+- [ ] **Step 5** : monitor heures H+2 / H+6 / H+24 - ventes early bird, CTR email, erreurs tunnel (si support email reçoit plus de 2 questions = bug, diagnostiquer)
 - [ ] **Step 6** : noter les bugs/frictions dans `plan.md` section "Launch day log"
 
 ---
 
-### Task 8.3: J+3 — Rappel mi-campagne
+### Task 8.3: J+3 - Rappel mi-campagne
 
 - [ ] **Step 1** : déclencher email #3 social proof
 - [ ] **Step 2** : mettre à jour sales page avec "X / 30 places vendues"
@@ -1392,17 +1392,17 @@ Sur `content/formations/fluentboards/plan.md`, section "Checklist pré-lancement
 
 ---
 
-### Task 8.4: J+7 — Last call
+### Task 8.4: J+7 - Last call
 
 - [ ] **Step 1** : déclencher email #4 last call
 - [ ] **Step 2** : publier LinkedIn post #3 bilan
-- [ ] **Step 3** : fin de journée — clore l'early bird, passer le prix à 97 €
+- [ ] **Step 3** : fin de journée - clore l'early bird, passer le prix à 97 €
 
 wp-admin → FluentCart → Product Formation → Price : 97 €. Sauver. Sales page : modifier le HTML (enlever le badge "early bird 67 € jusqu'à 30 places" → remplacer par prix public 97 €). Commit le diff : `git add content/formations/fluentboards/sales/sales-page.html` puis `git commit -m "chore(formation-fb): end of early bird switch to public price 97€"`.
 
 ---
 
-## Phase 9 — Transition prix public + bilan (S9)
+## Phase 9 - Transition prix public + bilan (S9)
 
 ### Task 9.1: Recueillir feedback apprenants
 
@@ -1532,5 +1532,5 @@ Aucun "TBD/TODO/implement later/similar to Task N". Les 40 leçons + 7 quiz + 10
 - **Task 0.2 Step 5** : FluentRoadmap licence = gate décisif. Si absent, Module 6 passe de 5 à 4 leçons (Task 4.3 indique explicitement les leçons conditionnelles).
 - **Task 0.3** : Bridge FluentCart ↔ TutorLMS = Plan A (natif) ou Plan B (fallback FluentCRM). Décision dès S1, documentée.
 - **Task 5.3 Step 5** : test d'import du Board Template sur un autre site WP = critique pour la valeur livrable. Ne pas skipper.
-- **Tasks 6.4 + 6.5** : videos = tournages par Michael. Si pas dispo à temps (licences ElevenLabs + HeyGen absentes — mémoire `project_youtube_production_stack.md`), options de repli : voice-over humaine simple, screen-only + callouts + sous-titres texte, ou report v2.
+- **Tasks 6.4 + 6.5** : videos = tournages par Michael. Si pas dispo à temps (licences ElevenLabs + HeyGen absentes - mémoire `project_youtube_production_stack.md`), options de repli : voice-over humaine simple, screen-only + callouts + sous-titres texte, ou report v2.
 - **Phase 8** : lancement en temps réel. Nécessite la présence active de Michael (pas déléguable à un agent). Bloquer agenda.

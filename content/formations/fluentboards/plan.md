@@ -1,4 +1,4 @@
-# Formation FluentBoards de zéro à pro — Plan de production
+# Formation FluentBoards de zéro à pro - Plan de production
 
 Tableau de bord de la production de la 1re formation payante schoolsWP.
 
@@ -7,9 +7,9 @@ Tableau de bord de la production de la 1re formation payante schoolsWP.
 
 **Cadrage validé (2026-04-21) :**
 
-- Audience : **D — Bâtisseur d'écosystème Fluent** (déjà équipé FluentCRM/Forms/Support/Bundle)
-- Angle : **A — Maîtrise standalone** ("FluentBoards de zéro à pro")
-- Format de livraison : **B — Hybride texte + démos screen** (sans voix off AI, sans face cam obligatoire)
+- Audience : **D - Bâtisseur d'écosystème Fluent** (déjà équipé FluentCRM/Forms/Support/Bundle)
+- Angle : **A - Maîtrise standalone** ("FluentBoards de zéro à pro")
+- Format de livraison : **B - Hybride texte + démos screen** (sans voix off AI, sans face cam obligatoire)
 - Hébergement cours : **TutorLMS** sur schoolswp.com
 - Checkout : **FluentCart** (early bird 67 € × 30 places, puis 97 €, order bump 27 €)
 - Email / bridge : **FluentCRM** (welcome automation + enrollment TutorLMS)
@@ -25,8 +25,8 @@ Date de vérif : **2026-04-23**
 - [x] **FluentCart Pro** actif, licence active, flow "créer produit" OK
 - [x] **FluentCRM Pro** actif, licence active, ≥ 1 liste + ≥ 1 tag existants
 - [x] **FluentBoards Pro** actif, licence active, features Pro accessibles (recurring tasks, custom fields, webhooks)
-- [x] **FluentRoadmap** présent et actif — **GATE DÉCISIF PASSÉ** : Module 6 reste à 5 leçons complètes (Roadmap inclus)
-- [x] **n8n** instance accessible — ⚠️ aucun credential FluentBoards configuré → à créer en **Task 0.3** (non bloquant)
+- [x] **FluentRoadmap** présent et actif - **GATE DÉCISIF PASSÉ** : Module 6 reste à 5 leçons complètes (Roadmap inclus)
+- [x] **n8n** instance accessible - ⚠️ aucun credential FluentBoards configuré → à créer en **Task 0.3** (non bloquant)
 
 **Conclusion :** stack complète, aucun prérequis bloquant. On peut enchaîner Task 0.3 (bridge FluentCart ↔ TutorLMS) sans retard.
 
@@ -36,7 +36,7 @@ Date de vérif : **2026-04-23**
 
 Date décision : **2026-04-23**
 
-- **Plan retenu : Plan B — FluentCRM comme pont**
+- **Plan retenu : Plan B - FluentCRM comme pont**
 - **Plan A écarté** : FluentCart n'expose que 3 intégrations globales (WP User Create/Update, Webhook, FluentCRM). Aucune intégration native TutorLMS côté FluentCart, ni option "Grant access to course" dans la conception d'un produit FluentCart.
 - **Plan B validé** : FluentCRM expose nativement les triggers TutorLMS (`Course Enrolled`, `Course Completed`, `Lesson Completed`) + les triggers FluentCart. On chaîne donc :
   - Trigger : `FluentCart → Product Purchased` (filtré sur l'ID produit formation)
@@ -63,7 +63,7 @@ Date création shell : **2026-04-23**
 Confirmé en base + builder (validé sur screenshots 2026-04-23) :
 
 - course_id : **2670141**
-- slug : **fluentboards-de-zero-a-pro** (Tutor drop le préfixe "formations-" car la permalink structure ajoute /formation/ devant — URL finale plus propre, pas de redondance)
+- slug : **fluentboards-de-zero-a-pro** (Tutor drop le préfixe "formations-" car la permalink structure ajoute /formation/ devant - URL finale plus propre, pas de redondance)
 - URL page cours (privée, accès post-achat) : **schoolswp.com/formation/fluentboards-de-zero-a-pro**
 - URL admin : schoolswp.com/wp-admin/admin.php?page=create-course&course_id=2670141
 - Statut : private ✅
@@ -74,13 +74,13 @@ Confirmé en base + builder (validé sur screenshots 2026-04-23) :
 - Author : Michaël KIHL ✅
 - Description : Placeholder (remplacée en S6) ✅
 - **7 sections créées dans l'ordre** ✅ :
-  1. Setup — Installer FluentBoards proprement et créer ton premier board.
-  2. Structurer — Organiser tes projets et tâches dans FluentBoards.
-  3. Piloter — Suivre l'avancement et piloter l'opérationnel.
-  4. Collaborer — Travailler en équipe avec FluentBoards.
-  5. Automatiser — Connecter FluentBoards à ta Fluent Suite pour automatiser.
-  6. Mesurer — Analyser tes performances et tableaux de bord.
-  7. Industrialiser — Créer des templates et process reproductibles à l'échelle.
+  1. Setup - Installer FluentBoards proprement et créer ton premier board.
+  2. Structurer - Organiser tes projets et tâches dans FluentBoards.
+  3. Piloter - Suivre l'avancement et piloter l'opérationnel.
+  4. Collaborer - Travailler en équipe avec FluentBoards.
+  5. Automatiser - Connecter FluentBoards à ta Fluent Suite pour automatiser.
+  6. Mesurer - Analyser tes performances et tableaux de bord.
+  7. Industrialiser - Créer des templates et process reproductibles à l'échelle.
 
 Reste mineur à finir (non bloquant pour Task 0.5-0.6) :
 
@@ -93,7 +93,7 @@ Reste mineur à finir (non bloquant pour Task 0.5-0.6) :
 
 ## Leçons détaillées (Task 1.1)
 
-*Sera rempli pendant Task 1.1 — liste des 40 leçons avec objectif pédagogique par leçon. Cf. plan d'implémentation section correspondante.*
+*Sera rempli pendant Task 1.1 - liste des 40 leçons avec objectif pédagogique par leçon. Cf. plan d'implémentation section correspondante.*
 
 ---
 
@@ -101,7 +101,7 @@ Reste mineur à finir (non bloquant pour Task 0.5-0.6) :
 
 Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 
-### Phase 0 — Setup technique (S1)
+### Phase 0 - Setup technique (S1)
 
 - [ ] Task 0.1 Scaffold repo
 - [ ] Task 0.2 Vérifs stack
@@ -113,14 +113,14 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 0.8 Template OBS démos screen
 - [ ] Task 0.9 Board fil rouge v0
 
-### Phase 1 — Module 1 Setup (S1)
+### Phase 1 - Module 1 Setup (S1)
 
 - [ ] Task 1.1 Plan 40 leçons
 - [ ] Task 1.2 Les 5 leçons Module 1
 - [ ] Task 1.3 Quiz Module 1
 - [ ] Task 1.4 Snapshot v-M1 + tag
 
-### Phase 2 — Modules 2 + 3 (S2)
+### Phase 2 - Modules 2 + 3 (S2)
 
 - [ ] Task 2.1 Les 6 leçons Module 2
 - [ ] Task 2.2 Quiz Module 2
@@ -129,14 +129,14 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 2.5 Quiz Module 3
 - [ ] Task 2.6 Snapshot v-M3 + tag
 
-### Phase 3 — Module 4 + début Module 5 (S3)
+### Phase 3 - Module 4 + début Module 5 (S3)
 
 - [ ] Task 3.1 Les 6 leçons Module 4
 - [ ] Task 3.2 Quiz Module 4
 - [ ] Task 3.3 Snapshot v-M4 + tag
 - [ ] Task 3.4 Les 3 premières leçons Module 5
 
-### Phase 4 — Fin Module 5 + Module 6 (S4)
+### Phase 4 - Fin Module 5 + Module 6 (S4)
 
 - [ ] Task 4.1 Les 3 dernières leçons Module 5
 - [ ] Task 4.2 Quiz Module 5
@@ -144,7 +144,7 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 4.4 Quiz Module 6
 - [ ] Task 4.5 Snapshots v-M5 + v-M6 + tags
 
-### Phase 5 — Module 7 + livrables annexes (S5)
+### Phase 5 - Module 7 + livrables annexes (S5)
 
 - [ ] Task 5.1 Les 6 leçons Module 7
 - [ ] Task 5.2 Quiz Module 7
@@ -154,7 +154,7 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 5.6 3 workflows n8n formation base
 - [ ] Task 5.7 7 workflows n8n order bump
 
-### Phase 6 — Sales + videos + tunnel (S6)
+### Phase 6 - Sales + videos + tunnel (S6)
 
 - [ ] Task 6.1 Copy sales page
 - [ ] Task 6.2 Sales page HTML cc-design
@@ -164,7 +164,7 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 6.6 Thank-you page FluentCart
 - [ ] Task 6.7 QA E2E 16 checkpoints + tag `formation-fb-ready-for-launch`
 
-### Phase 7 — Pré-lancement (S7)
+### Phase 7 - Pré-lancement (S7)
 
 - [ ] Task 7.1 Article "FluentBoards avis"
 - [ ] Task 7.2 Séquence email lancement (4 emails)
@@ -172,14 +172,14 @@ Cocher au fur et à mesure. Voir le plan d'implémentation pour le détail.
 - [ ] Task 7.4 Automation tag "early-bird"
 - [ ] Task 7.5 Gate pré-lancement + tag `formation-fb-rc1`
 
-### Phase 8 — Lancement (S8)
+### Phase 8 - Lancement (S8)
 
 - [ ] Task 8.1 J-3 teaser email + LinkedIn
 - [ ] Task 8.2 J0 lancement officiel
 - [ ] Task 8.3 J+3 rappel social proof
 - [ ] Task 8.4 J+7 last call + bascule prix 97 €
 
-### Phase 9 — Bilan (S9)
+### Phase 9 - Bilan (S9)
 
 - [ ] Task 9.1 Feedback apprenants
 - [ ] Task 9.2 Bilan métriques

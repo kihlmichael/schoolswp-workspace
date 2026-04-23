@@ -1,4 +1,4 @@
-# Design — Formation "FluentBoards de zéro à pro"
+# Design - Formation "FluentBoards de zéro à pro"
 
 **Date :** 2026-04-21
 **Statut :** Design validé, prêt pour plan d'implémentation
@@ -9,7 +9,7 @@
 
 ## 1. Objectif
 
-Produire et lancer la **première formation payante schoolsWP** — "FluentBoards de zéro à pro" — en 9 semaines, à destination des pros déjà équipés Fluent Suite (audience D = bâtisseur écosystème Fluent).
+Produire et lancer la **première formation payante schoolsWP** - "FluentBoards de zéro à pro" - en 9 semaines, à destination des pros déjà équipés Fluent Suite (audience D = bâtisseur écosystème Fluent).
 
 C'est la **première brique d'un catalogue de mini-formations standalones** sur l'écosystème Fluent Suite (FluentBoards → FluentCRM → FluentCart → …). Chaque formation tient debout seule, avec un angle de maîtrise standalone plutôt que cross-plugin.
 
@@ -23,7 +23,7 @@ C'est la **première brique d'un catalogue de mini-formations standalones** sur 
 ### Hors scope (explicitement)
 
 - Formation cross-plugin "intégration Fluent Suite complète" (reportée après le catalogue standalone)
-- Cible audience A/B/C (solopreneur, agence, manager classique) — approchée dans un 2e temps
+- Cible audience A/B/C (solopreneur, agence, manager classique) - approchée dans un 2e temps
 - Drip content / cohort-based learning (evergreen auto-rythmé uniquement)
 - Communauté Discord / forum intégré (MVP = email direct)
 - Upsell OTO "Agency Review Loom" (reporté v2)
@@ -35,10 +35,10 @@ C'est la **première brique d'un catalogue de mini-formations standalones** sur 
 | Dimension | Choix validé |
 |---|---|
 | **Format livrable** | Mini-formation payante (puis cluster SEO + lead magnet + LMS module en follow-up) |
-| **Audience cible (MVP)** | **D — Bâtisseur d'écosystème Fluent** (équipe qui a déjà FluentCRM/Forms/Support ou Bundle) |
+| **Audience cible (MVP)** | **D - Bâtisseur d'écosystème Fluent** (équipe qui a déjà FluentCRM/Forms/Support ou Bundle) |
 | **Audiences futures** | A (solopreneur WP), B (agence WP), C (manager cherchant alternative Trello) |
-| **Angle / promesse** | **A — Maîtrise standalone** : "FluentBoards de zéro à pro" (pas intégration cross-plugin) |
-| **Format de livraison** | **B — Hybride texte + démos screen** (sans voix off AI, sans face cam obligatoire) |
+| **Angle / promesse** | **A - Maîtrise standalone** : "FluentBoards de zéro à pro" (pas intégration cross-plugin) |
+| **Format de livraison** | **B - Hybride texte + démos screen** (sans voix off AI, sans face cam obligatoire) |
 | **Hébergement cours** | **TutorLMS** (installé sur schoolswp.com) |
 | **Checkout / paiement** | **FluentCart** (pas SureCart pour produits propres) |
 | **Email / CRM** | **FluentCRM** (welcome automation + bridge inscription TutorLMS) |
@@ -82,13 +82,13 @@ Chaque module ajoute une pièce concrète au board de démonstration. À la fin 
 Chaque leçon suit le même pattern (prédictibilité = UX formation) :
 
 1. **Objectif en 1 phrase** ("À la fin de cette leçon tu sauras…")
-2. **Contexte** (pourquoi cette fonctionnalité compte dans le fil rouge — 2-3 phrases)
-3. **Démo screen** (clip MP4 30-90 s — OBS ou Loom. Sans voix off AI ; voix humaine optionnelle selon leçon ; face cam optionnelle ; fallback acceptable = clip muet avec callouts texte annotés)
+2. **Contexte** (pourquoi cette fonctionnalité compte dans le fil rouge - 2-3 phrases)
+3. **Démo screen** (clip MP4 30-90 s - OBS ou Loom. Sans voix off AI ; voix humaine optionnelle selon leçon ; face cam optionnelle ; fallback acceptable = clip muet avec callouts texte annotés)
 4. **Texte structuré** (étapes numérotées + captures annotées fixes pour les points précis)
 5. **Pièges à éviter** (1-3 encadrés : erreurs fréquentes remontées de la doc/FAQ)
-6. **Checklist de fin** (3-5 cases à cocher — validation avant la leçon suivante)
+6. **Checklist de fin** (3-5 cases à cocher - validation avant la leçon suivante)
 
-Les démos screen s'enregistrent dans le **même board fil rouge** d'une leçon à l'autre — l'apprenant voit le board grandir visuellement.
+Les démos screen s'enregistrent dans le **même board fil rouge** d'une leçon à l'autre - l'apprenant voit le board grandir visuellement.
 
 ### Mapping source ↔ module
 
@@ -108,10 +108,10 @@ Les mappings précis source → leçon seront détaillés dans le plan d'implém
 
 ### Livrables téléchargeables inclus dans la formation
 
-1. **Board Agence Template schoolsWP** — export JSON importable directement dans FluentBoards (stages + custom fields + task templates + webhooks d'exemple)
-2. **Checklist setup FluentBoards** — PDF 2 pages, étape par étape
-3. **Tableau de routage webhooks** — matrice "événement source → task FluentBoards" (Fluent Forms, FluentCRM, FluentSupport, Google Form, Typeform, n8n)
-4. **3 workflows n8n d'exemple** — JSON importables utilisant l'incoming webhook FluentBoards
+1. **Board Agence Template schoolsWP** - export JSON importable directement dans FluentBoards (stages + custom fields + task templates + webhooks d'exemple)
+2. **Checklist setup FluentBoards** - PDF 2 pages, étape par étape
+3. **Tableau de routage webhooks** - matrice "événement source → task FluentBoards" (Fluent Forms, FluentCRM, FluentSupport, Google Form, Typeform, n8n)
+4. **3 workflows n8n d'exemple** - JSON importables utilisant l'incoming webhook FluentBoards
 
 ---
 
@@ -172,12 +172,12 @@ Les mappings précis source → leçon seront détaillés dans le plan d'implém
 ### Sales page
 
 - **URL :** `schoolswp.com/formations/fluentboards/`
-- **Build :** skill `cc-design` (pas aidesigner — on est en prod finale brand-strict, pas exploration)
+- **Build :** skill `cc-design` (pas aidesigner - on est en prod finale brand-strict, pas exploration)
 - **Structure :** Headline + sub → Video pitch 90 s → Ce qui est inclus → Résultats concrets → Pour qui → Pas pour toi si → Preuve sociale → Démo board template → Bio → Pricing → Garantie → FAQ → CTA final FOMO
 
 ### Upsell v2 (pas MVP)
 
-**"FluentBoards Agency Review" — +47 €** : review asynchrone Loom 15-20 min du board de l'apprenant. À tester une fois la formation validée en vente.
+**"FluentBoards Agency Review" - +47 €** : review asynchrone Loom 15-20 min du board de l'apprenant. À tester une fois la formation validée en vente.
 
 ---
 
@@ -185,9 +185,9 @@ Les mappings précis source → leçon seront détaillés dans le plan d'implém
 
 ### MVP (semaine de lancement S8)
 
-- **Email FluentCRM à la liste existante** — séquence 4 emails sur 7 jours (teaser → annonce → témoignage/démo → last call)
-- **Post LinkedIn × 3** — J-3 teaser, J0 lancement, J+7 bilan
-- **Article schoolswp.com "FluentBoards avis complet"** — publication avant lancement (SEO long terme + CTA formation)
+- **Email FluentCRM à la liste existante** - séquence 4 emails sur 7 jours (teaser → annonce → témoignage/démo → last call)
+- **Post LinkedIn × 3** - J-3 teaser, J0 lancement, J+7 bilan
+- **Article schoolswp.com "FluentBoards avis complet"** - publication avant lancement (SEO long terme + CTA formation)
 
 ### Après lancement (M+1 et après)
 
@@ -365,8 +365,8 @@ content/
 - **FluentCart installé + licence active** (confirmé par Michael 2026-04-21)
 - **FluentCRM installé + licence active** (pilier déjà actif dans l'écosystème schoolsWP)
 - **FluentBoards Pro licence active** (besoin pour enregistrer démos avec toutes les features)
-- **FluentRoadmap** — à vérifier en S1 : intégré à FluentBoards Pro ou licence séparée. Si séparée, soit l'inclure dans les prérequis de la formation ("FluentBoards Pro + FluentRoadmap"), soit retirer le volet Roadmap du Module 6 (remplaçable par focus Reports + Time Tracking seul).
-- **n8n instance accessible** (schoolswp-n8n.wp1.host — déjà en place)
+- **FluentRoadmap** - à vérifier en S1 : intégré à FluentBoards Pro ou licence séparée. Si séparée, soit l'inclure dans les prérequis de la formation ("FluentBoards Pro + FluentRoadmap"), soit retirer le volet Roadmap du Module 6 (remplaçable par focus Reports + Time Tracking seul).
+- **n8n instance accessible** (schoolswp-n8n.wp1.host - déjà en place)
 - **OBS ou Loom pour démos screen** (OBS gratuit, Loom free plan suffisant si clips < 5 min)
 
 ---
@@ -407,7 +407,7 @@ La formation est **done** quand :
 - 38 docs officielles (`content/docs/fluentboards/docs/`)
 - 19 pages marketing (`content/docs/fluentboards/pages/`)
 - 91 articles blog (`content/docs/fluentboards/blog/`)
-- 27 vidéos YouTube WPManageNinja (`content/docs/fluentboards/youtube/` — 2h44m total, transcripts EN auto-générés)
+- 27 vidéos YouTube WPManageNinja (`content/docs/fluentboards/youtube/` - 2h44m total, transcripts EN auto-générés)
 
 ### B. Vidéos YouTube clés pour référence benchmark
 
