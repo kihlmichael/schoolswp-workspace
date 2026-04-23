@@ -60,26 +60,34 @@ Date décision : **2026-04-23**
 
 Date création shell : **2026-04-23**
 
-Confirmé en base :
+Confirmé en base + builder (validé sur screenshots 2026-04-23) :
 
 - course_id : **2670141**
-- slug : formations-fluentboards-de-zero-a-pro
-- URL publique : schoolswp.com/formation/formations-fluentboards-de-zero-a-pro
+- slug : **fluentboards-de-zero-a-pro** (Tutor drop le préfixe "formations-" car la permalink structure ajoute /formation/ devant — URL finale plus propre, pas de redondance)
+- URL page cours (privée, accès post-achat) : **schoolswp.com/formation/fluentboards-de-zero-a-pro**
 - URL admin : schoolswp.com/wp-admin/admin.php?page=create-course&course_id=2670141
-- Statut : private
-- Titre : FluentBoards de zéro à pro
-- Author : Michaël KIHL (user ID 2)
-- Catégorie : Formations schoolsWP (term ID 2410)
-- Description : Placeholder (remplacée en S6 avec la copy sales page)
+- Statut : private ✅
+- Titre : FluentBoards de zéro à pro ✅
+- Niveau de difficulté : Intermédiaire ✅
+- Pricing Model : Payé, prix normal 97 € ✅ (le prix early bird 67 € est dans FluentCart, pas dans TutorLMS)
+- Catégorie : Formations schoolsWP ✅
+- Author : Michaël KIHL ✅
+- Description : Placeholder (remplacée en S6) ✅
+- **7 sections créées dans l'ordre** ✅ :
+  1. Setup — Installer FluentBoards proprement et créer ton premier board.
+  2. Structurer — Organiser tes projets et tâches dans FluentBoards.
+  3. Piloter — Suivre l'avancement et piloter l'opérationnel.
+  4. Collaborer — Travailler en équipe avec FluentBoards.
+  5. Automatiser — Connecter FluentBoards à ta Fluent Suite pour automatiser.
+  6. Mesurer — Analyser tes performances et tableaux de bord.
+  7. Industrialiser — Créer des templates et process reproductibles à l'échelle.
 
-Reste à compléter manuellement dans le builder Tutor LMS (les champs sont des composants React non-exposés REST, donc pas automatisables via API) :
+Reste mineur à finir (non bloquant pour Task 0.5-0.6) :
 
-- [ ] Tab Basics : Difficulty Level Intermediate + Pricing Model Payé 97 €
-- [ ] Tab Additional : Public ciblé + Durée 8h / 0min + Prérequis
-- [ ] Tab Programme : créer les 7 sections dans l'ordre (Setup, Structurer, Piloter, Collaborer, Automatiser, Mesurer, Industrialiser) avec description courte
-- [ ] Certificate : activer le module + activer le certificat sur le cours + conditions 100% completion + quiz ≥ 70 %
+- [ ] Tab Additional : Public ciblé + Durée 8h + Prérequis (renseignement optionnel pour l'affichage page cours)
+- [ ] Certificate : activer le module Tutor LMS Pro + activer sur le cours + conditions 100% + quiz ≥ 70 %
 
-Estimé 5-8 min de clics dans le builder. Non bloquant pour Task 0.5 (produit FluentCart) qui peut être attaquée en parallèle.
+**Note** : distinguer URL page cours (TutorLMS auto) = schoolswp.com/formation/fluentboards-de-zero-a-pro (privée, post-achat) vs URL sales page (à créer en S6) = schoolswp.com/formations/fluentboards/ (publique, acquisition). Deux pages distinctes.
 
 ---
 
