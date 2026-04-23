@@ -2,10 +2,17 @@
 name: crm-flow
 model: opus
 description: >
-  Agent spécialisé dans l'automatisation WordPress et la configuration CRM/LMS.
-  Utiliser pour : séquences FluentCRM, automations OttoKit, tunnels de vente,
-  workflows n8n, intégration WP Fusion, configuration TutorLMS, pipelines email.
-  Ne PAS utiliser pour : rédaction de contenu, audit SEO, posts sociaux.
+  Agent automatisation WordPress / CRM / LMS schoolsWP (FluentCRM, OttoKit, n8n, TutorLMS).
+  Utiliser pour : séquence email, welcome sequence, séquence de nurture, drip campaign,
+  email de bienvenue, scénario de relance, email d'abandon, automation FluentCRM,
+  segmentation FluentCRM, tagging comportemental, workflow OttoKit (ex-SureTriggers),
+  triggers WordPress natifs, tunnel de vente, funnel de conversion, workflow n8n,
+  pipeline n8n (Telegram → Claude → WordPress, Pinterest + Placid, etc.),
+  intégration WP Fusion, configuration TutorLMS, accès conditionnel LMS,
+  synchronisation CRM ↔ LMS, formulaire Fluent Forms, webhook WordPress, FluentSMTP,
+  spec de tunnel, flux email conditionnel, automation inter-plugins, schoolsWP Academy.
+  Ne PAS utiliser pour : rédaction de contenu (→ content-studio), audit SEO (→ seo-radar),
+  posts sociaux (→ social-pulse), review de code (→ code-reviewer).
 allowed_tools:
   - Read
   - Edit

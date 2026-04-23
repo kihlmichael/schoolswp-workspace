@@ -5,6 +5,10 @@ tous les contenus : articles de blog, tutoriels, guides, pages piliers.
 
 Charge `soul.md` pour ta personnalite complete.
 
+> **Regles transverses** : `../shared/RULES.md` fait autorite sur safety, branding,
+> memoire, MCP novamira, securite, escalade. Ce CLAUDE.md couvre uniquement
+> ce qui est specifique au content-studio.
+
 ## Ta mission
 
 Produire du contenu clair, actionnable et optimise SEO + AIO
@@ -28,6 +32,8 @@ content-studio/
 
 ## Ressources partagees (../shared/)
 
+- `RULES.md` — regles transverses schoolsWP (safety, branding, MCP, securite, memoire)
+- `SITE.md` — snapshot WordPress schoolswp.com (plugins, versions)
 - `skills/schoolswp-voice.md` — regles d'ecriture strictes
 - `skills/schoolswp-branding.md` — identite visuelle et QA branding
 - `skills/wordpress-stack.md` — stack technique schoolsWP
@@ -37,11 +43,13 @@ content-studio/
 ## Avant chaque session
 
 1. Lis `soul.md` pour incarner ta personnalite
-2. Lis `../shared/skills/schoolswp-voice.md` pour les regles d'ecriture
-3. Lis `../shared/skills/schoolswp-branding.md` pour l'identite visuelle
-4. Lis `memory/memory.md` pour le contexte long terme
-5. Lis le daily log du jour s'il existe (`memory/daily-logs/YYYY-MM-DD.md`)
-6. Lis `../shared/cron_registry.json` et recree les crons qui te concernent
+2. Lis `../shared/RULES.md` pour les regles transverses schoolsWP (safety, branding, MCP)
+3. Lis `../shared/SITE.md` pour le snapshot WordPress schoolswp.com (plugins, versions)
+4. Lis `../shared/skills/schoolswp-voice.md` pour les regles d'ecriture
+5. Lis `../shared/skills/schoolswp-branding.md` pour l'identite visuelle
+6. Lis `memory/memory.md` pour le contexte long terme
+7. Lis le daily log du jour s'il existe (`memory/daily-logs/YYYY-MM-DD.md`)
+8. Lis `../shared/cron_registry.json` et recree les crons qui te concernent
 
 ## Crons du content-studio
 
@@ -88,33 +96,9 @@ Pour chaque article ou guide :
 - Fluent Forms : code promo `schoolsWP20`
 - OttoKit : lien `schoolswp.com/OttoKit`, code `SCHOOLSWP20`
 
-## Communication Telegram
-
-Tu recois des messages via le channel Telegram. Quand tu reponds :
-
-- Reponds en francais, tutoiement systematique
-- Sois concis — Telegram n'est pas un blog
-- Pour les contenus longs, sauvegarde dans `output/` et envoie le chemin
-- Utilise les reactions emoji pour accuser reception des messages courts
-- Si on te demande un article, confirme le brief avant de produire
-
-## Memoire
-
-- Logge chaque session dans `memory/daily-logs/YYYY-MM-DD.md`
-- Mets a jour `memory/memory.md` si nouvelle info strategique
-- Format daily log : `## YYYY-MM-DD\n- Ce qui a ete fait\n- Decisions prises\n- A suivre`
-
-## Securite
-
-- Ne supprime JAMAIS de fichiers sans confirmation explicite
-- Ne modifie JAMAIS les fichiers dans `../shared/` sans demander
-- Demande toujours avant d'ecraser un fichier existant dans `output/`
-- Utilise `trash` au lieu de `rm` pour toute suppression
-
 ## Agents Python du projet parent
 
-Le projet parent est a `D:\VS Code\CLAUDE CODE\projects\schoolswp\`.
-Les agents Python utilisables (depuis le venv du projet parent) :
+Commandes disponibles (lancer depuis `D:\VS Code\CLAUDE CODE\projects\schoolswp\`) :
 
 ```bash
 # Pipeline complet article
@@ -129,5 +113,3 @@ Les agents Python utilisables (depuis le venv du projet parent) :
 # 4 audits paralleles (publish score)
 .venv/Scripts/python -m agents.publish_ready.cli --file article.md --keyword "..."
 ```
-
-Note : ces commandes doivent etre lancees depuis le repertoire du projet parent.

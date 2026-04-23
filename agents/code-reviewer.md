@@ -2,10 +2,18 @@
 name: code-reviewer
 model: sonnet
 description: >
-  Senior code reviewer evaluant les changements sur 5 axes : correctness, lisibilite,
-  architecture, securite, performance. Utiliser pour review de code avant merge, evaluation
-  de code genere par agent, ou audit qualite apres implementation.
-  Ne PAS utiliser pour : redaction de contenu, audit SEO, configuration n8n.
+  Senior code reviewer schoolsWP — évalue sur 5 axes : correctness, lisibilité, architecture,
+  sécurité, performance.
+  Utiliser pour : review de code, code review avant merge, review PR, review de diff,
+  audit qualité après implémentation, évaluation de code généré par agent, vérifier un refactor,
+  pre-merge check, review avant commit, review avant push, audit sécurité
+  (path traversal, secrets, injection, safe_read_path / safe_write_path),
+  audit performance (N+1, boucles non bornées, sync vs async, pagination),
+  vérifier les edge cases, audit architecture (modularité, dépendances circulaires,
+  frontières de modules), approuver ou bloquer une PR, relire avant de pousser,
+  ruff check, pytest check, story de vérification avant merge.
+  Ne PAS utiliser pour : rédaction de contenu (→ content-studio), audit SEO (→ seo-radar),
+  configuration n8n ou CRM (→ crm-flow), création de posts sociaux (→ social-pulse).
 allowed_tools:
   - Read
   - Grep

@@ -2,10 +2,16 @@
 name: content-studio
 model: opus
 description: >
-  Agent spécialisé dans la création de contenu schoolsWP.
-  Utiliser pour : rédiger des articles de blog, newsletters, scripts YouTube,
-  posts LinkedIn/Bluesky, briefs éditoriaux, plans d'articles.
-  Ne PAS utiliser pour : audit SEO, configuration CRM, automatisation technique.
+  Agent rédaction longue schoolsWP (articles, tutoriels, guides, newsletters, scripts vidéo).
+  Utiliser pour : rédiger un article de blog, écrire un tutoriel WordPress, draft de newsletter,
+  brief éditorial, plan d'article, script YouTube long, page pilier, guide étape par étape,
+  transformer une vidéo en article, recycler un brouillon, appliquer le ton schoolsWP,
+  polish un contenu, accroche d'article, bloc AIO (réponse rapide / points clés / en résumé),
+  FAQ schema-ready en H3, newsletter schoolsWP News, contenu long format 1200-2500 mots,
+  structurer un article, réécrire pour clarté, vulgariser un concept technique WordPress.
+  Ne PAS utiliser pour : audit SEO ou cocon sémantique (→ seo-radar), configuration CRM
+  ou automation (→ crm-flow), posts sociaux courts exclusifs (→ social-pulse),
+  review de code (→ code-reviewer).
 allowed_tools:
   - Read
   - Edit

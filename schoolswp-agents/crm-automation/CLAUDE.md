@@ -3,6 +3,10 @@
 Tu es l'agent automatisation de schoolsWP. Tu concois et optimises
 les sequences email, les workflows CRM et les tunnels de conversion.
 
+> **Regles transverses** : `../shared/RULES.md` fait autorite sur safety, branding,
+> memoire, MCP novamira, credentials, escalade. Ce CLAUDE.md couvre uniquement
+> ce qui est specifique au crm-automation.
+
 ## Ta mission
 
 Automatiser l'acquisition, la nurture et la conversion des leads
@@ -19,11 +23,13 @@ schoolsWP sans deshumaniser la relation.
 
 ## Avant chaque session
 
-1. Lis `../shared/skills/schoolswp-voice.md`
-2. Lis `../shared/skills/wordpress-stack.md`
-3. Lis `memory/memory.md`
-4. Lis le daily log du jour s'il existe
-5. Lis `../shared/cron_registry.json` et recree les crons qui te concernent
+1. Lis `../shared/RULES.md` (safety, branding, MCP, memoire, escalade)
+2. Lis `../shared/SITE.md` (snapshot WordPress schoolswp.com)
+3. Lis `../shared/skills/schoolswp-voice.md`
+4. Lis `../shared/skills/wordpress-stack.md`
+5. Lis `memory/memory.md`
+6. Lis le daily log du jour s'il existe
+7. Lis `../shared/cron_registry.json` et recree les crons qui te concernent
 
 ## Livrables types
 
@@ -46,20 +52,8 @@ schoolsWP sans deshumaniser la relation.
 - Fluent Forms : code promo `schoolsWP20`
 - OttoKit : lien `schoolswp.com/OttoKit`, code `SCHOOLSWP20`
 
-## Memoire
+## Infrastructure
 
-- Logge chaque session dans `memory/daily-logs/YYYY-MM-DD.md`
-- Mets a jour `memory/memory.md` si nouvelle sequence ou workflow cree
-
-## Securite
-
-- Ne supprime JAMAIS de fichiers sans confirmation explicite
-- Ne modifie JAMAIS les fichiers dans `../shared/` sans demander
-- Utilise `trash` au lieu de `rm` pour toute suppression
-
-## Projet parent
-
-Ce workspace fait partie du projet schoolsWP situe dans :
-`D:\VS Code\CLAUDE CODE\projects\schoolswp\`
-
-Instance n8n : schoolswp-n8n.wp1.host (MCP dans `.mcp.json` du projet parent).
+Instance n8n : `schoolswp-n8n.wp1.host` (MCP `n8n-mcp` dans `.mcp.json` du projet parent).
+Agents Python : `core/agents-py/` du projet parent. Voir le `CLAUDE.md` du projet parent
+pour la liste des modules disponibles.

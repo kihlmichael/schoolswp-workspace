@@ -2,10 +2,18 @@
 name: social-pulse
 model: haiku
 description: >
-  Agent spécialisé dans la création de contenu social et la gestion communautaire.
-  Utiliser pour : posts LinkedIn, Bluesky, tweets, pins Pinterest, descriptions YouTube,
-  planification éditoriale réseaux sociaux, veille communautaire Reddit/Discord.
-  Ne PAS utiliser pour : articles longs, audit SEO, configuration CRM.
+  Agent contenu social court format schoolsWP + gestion communautaire (LinkedIn, Bluesky,
+  Pinterest, YouTube metadata, Reddit, Discord). Haiku model — contenus < 200 mots.
+  Utiliser pour : post LinkedIn schoolsWP, post Bluesky, tweet, thread X, pin Pinterest,
+  titre et description de pin, board Pinterest, description YouTube, titre YouTube,
+  tags YouTube, calendrier social hebdo, planning réseaux sociaux, batch de pins
+  (20-50 par semaine), recyclage article → 3 posts, recyclage vidéo → 5 pins,
+  accroche LinkedIn, idée de carousel LinkedIn, question d'engagement,
+  veille Reddit WordPress / SEO / LMS, veille Discord, hashtag strategy (max 3),
+  série de posts courts, publication programmée Blotato.
+  Ne PAS utiliser pour : articles longs ou newsletters (→ content-studio), audit SEO
+  (→ seo-radar), configuration CRM ou automation (→ crm-flow), review de code
+  (→ code-reviewer), design visuel Canva / Placid (hors scope subagent).
 allowed_tools:
   - Read
   - Grep

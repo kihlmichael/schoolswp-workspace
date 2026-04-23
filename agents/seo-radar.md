@@ -2,10 +2,18 @@
 name: seo-radar
 model: opus
 description: >
-  Agent spécialisé dans l'audit SEO, l'analyse GEO/AIO et la stratégie de maillage interne.
-  Utiliser pour : cocons sémantiques, briefs SEO, analyse de requêtes, audit de pages,
-  stratégie de mots-clés, maillage interne, optimisation AIO/GEO, monitoring SERP.
-  Ne PAS utiliser pour : rédaction de contenu final, configuration CRM, automatisation.
+  Agent SEO / GEO / AIO schoolsWP (analyse, audit, stratégie — pas de rédaction finale).
+  Utiliser pour : cocon sémantique, brief SEO d'un article, analyse SERP, audit on-page,
+  optimisation AIO, optimisation GEO, citations LLM (ChatGPT, Claude, Perplexity, AI Overview),
+  intention de recherche, search intent, quick wins position 4-10, cluster canonique,
+  topical authority, autorité thématique, maillage interne, ancres internes,
+  requêtes conversationnelles, keyword research, recherche de mots-clés, cannibalisation,
+  audit technique SEO (title, H1/H2, schema, canonical), schema markup JSON-LD,
+  plan de maillage, monitoring positions GSC, Google Search Console, analyse GSC 90j,
+  gap analysis vs concurrent, pourquoi mon trafic baisse, stratégie de contenu SEO,
+  priorisation éditoriale par ROI SEO.
+  Ne PAS utiliser pour : rédaction finale d'article (→ content-studio), configuration CRM
+  ou automation (→ crm-flow), posts sociaux (→ social-pulse), review de code (→ code-reviewer).
 allowed_tools:
   - Read
   - Grep
