@@ -17,6 +17,9 @@
 # Playwright MCP session artefacts (may contain cookies, tokens, auth headers)
 .playwright-mcp/
 
+# Formation FluentBoards — MP4 demos screen non versionnés (trop lourds, restent sur WP + copie locale)
+content/formations/fluentboards/assets/demos/
+
 # OAuth tokens & credentials
 *token*.json
 *credentials*.json
@@ -64,6 +67,7 @@ wheels/
 
 # Virtual environments
 .venv/
+.venv-semantica/
 venv/
 ENV/
 env/
