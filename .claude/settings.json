@@ -220,6 +220,26 @@
     "dataforseo"
   ],
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ALLOWED_PATHS=\"d:/VS Code/CLAUDE CODE:D:/VS Code/CLAUDE CODE\" bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/dangerous-actions-blocker.sh\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Edit|Write|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/prompt-injection-detector.sh\""
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Edit|Write",
@@ -227,6 +247,15 @@
           {
             "type": "command",
             "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/ruff-check.sh\""
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/output-secrets-scanner.sh\""
           }
         ]
       }
@@ -250,7 +279,20 @@
             "async": true
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/d/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/ops/claude-config-backup/scripts/backup.sh\" --git >/dev/null 2>&1 || true",
+            "async": true,
+            "timeout": 120
+          }
+        ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "telegram@claude-plugins-official": true
   }
 }
