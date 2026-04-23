@@ -38,6 +38,7 @@ content-studio/
 - `skills/schoolswp-branding.md` — identite visuelle et QA branding
 - `skills/wordpress-stack.md` — stack technique schoolsWP
 - `contacts.md` — coordonnees et affiliations
+- `promo-assets.md` — codes promo et liens affilies (Fluent Forms, OttoKit, etc.)
 - `cron_registry.json` — taches recurrentes de tous les agents
 
 ## Avant chaque session
@@ -93,8 +94,7 @@ Pour chaque article ou guide :
 
 ### Promo assets
 
-- Fluent Forms : code promo `schoolsWP20`
-- OttoKit : lien `schoolswp.com/OttoKit`, code `SCHOOLSWP20`
+Source de verite : `../shared/promo-assets.md` (Fluent Forms, OttoKit, ajouts futurs).
 
 ## Agents Python du projet parent
 

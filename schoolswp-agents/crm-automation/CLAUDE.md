@@ -49,8 +49,7 @@ schoolsWP sans deshumaniser la relation.
 
 ## Promo assets
 
-- Fluent Forms : code promo `schoolsWP20`
-- OttoKit : lien `schoolswp.com/OttoKit`, code `SCHOOLSWP20`
+Source de verite : `../shared/promo-assets.md` (Fluent Forms, OttoKit, ajouts futurs).
 
 ## Infrastructure
 
