@@ -49,10 +49,37 @@ Date décision : **2026-04-23**
 - Captures de la config : `assets/captures/bridge/` (à remplir pendant Task 0.6)
 
 **Prochaines tâches liées** (S1 seconde moitié) :
-- Task 0.4 : créer le cours TutorLMS → donne le `course_id` nécessaire pour l'action enroll
-- Task 0.5 : créer le produit FluentCart → donne le `product_id` nécessaire pour le filtre trigger
+- Task 0.4 : créer le cours TutorLMS → donne le course_id nécessaire pour l'action enroll
+- Task 0.5 : créer le produit FluentCart → donne le product_id nécessaire pour le filtre trigger
 - Task 0.6 : construire l'automation FluentCRM qui lie les deux
 - Task 0.7 : test end-to-end du tunnel complet
+
+---
+
+## Cours TutorLMS créé (Task 0.4 shell via API)
+
+Date création shell : **2026-04-23**
+
+Confirmé en base :
+
+- course_id : **2670141**
+- slug : formations-fluentboards-de-zero-a-pro
+- URL publique : schoolswp.com/formation/formations-fluentboards-de-zero-a-pro
+- URL admin : schoolswp.com/wp-admin/admin.php?page=create-course&course_id=2670141
+- Statut : private
+- Titre : FluentBoards de zéro à pro
+- Author : Michaël KIHL (user ID 2)
+- Catégorie : Formations schoolsWP (term ID 2410)
+- Description : Placeholder (remplacée en S6 avec la copy sales page)
+
+Reste à compléter manuellement dans le builder Tutor LMS (les champs sont des composants React non-exposés REST, donc pas automatisables via API) :
+
+- [ ] Tab Basics : Difficulty Level Intermediate + Pricing Model Payé 97 €
+- [ ] Tab Additional : Public ciblé + Durée 8h / 0min + Prérequis
+- [ ] Tab Programme : créer les 7 sections dans l'ordre (Setup, Structurer, Piloter, Collaborer, Automatiser, Mesurer, Industrialiser) avec description courte
+- [ ] Certificate : activer le module + activer le certificat sur le cours + conditions 100% completion + quiz ≥ 70 %
+
+Estimé 5-8 min de clics dans le builder. Non bloquant pour Task 0.5 (produit FluentCart) qui peut être attaquée en parallèle.
 
 ---
 
