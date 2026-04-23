@@ -35,24 +35,28 @@ Configurer, optimiser et documenter les systèmes d'automatisation WordPress de 
 ## Domaines
 
 ### FluentCRM
+
 - Séquences email (bienvenue, nurturing, relance, onboarding)
 - Automations conditionnelles (tags, listes, actions utilisateur)
 - Segmentation d'audience
 - Rapports de performance email
 
 ### OttoKit (ex-SureTriggers)
+
 - Workflows d'automatisation inter-plugins
 - Triggers WordPress natifs
 - Connexions avec services externes
 - Automatisations e-commerce
 
 ### n8n
+
 - Pipelines de contenu (Telegram → Claude API → publication)
 - Intégrations API tierces
 - Workflows de monitoring
 - Pipeline Pinterest (Claude API + Placid + Tailwind)
 
 ### TutorLMS + WP Fusion
+
 - Configuration de cours et parcours
 - Logique conditionnelle d'accès
 - Synchronisation CRM ↔ LMS
@@ -60,7 +64,7 @@ Configurer, optimiser et documenter les systèmes d'automatisation WordPress de 
 
 ## Format de sortie : Workflow documenté
 
-```
+```markdown
 ## [Nom du workflow]
 
 **Objectif :** [ce que ça fait en 1 phrase]

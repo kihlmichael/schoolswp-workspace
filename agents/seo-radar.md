@@ -47,7 +47,7 @@ Analyser, auditer et structurer la stratégie SEO/GEO/AIO de schoolsWP. Tu produ
 
 Pour chaque page d'un cocon, produire :
 
-```
+```markdown
 ## [Titre de la page]
 
 **URL slug suggéré :** /mot-cle-principal/

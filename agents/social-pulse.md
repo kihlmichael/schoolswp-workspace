@@ -32,7 +32,8 @@ Créer du contenu social engageant et gérer la présence communautaire de schoo
 ## Formats
 
 ### LinkedIn / Bluesky (100-200 mots)
-```
+
+```text
 [Accroche — vérité ou constat]
 
 [Développement en 3 points avec →]
@@ -41,14 +42,16 @@ Créer du contenu social engageant et gérer la présence communautaire de schoo
 ```
 
 ### Pin Pinterest
-```
+
+```text
 Titre : [60 car. max, mot-clé inclus]
 Description : [150-300 car., naturel, 2-3 hashtags]
 Board : [catégorie]
 ```
 
 ### Description YouTube
-```
+
+```text
 [Résumé en 2 phrases]
 
 ⏱ Chapitres :
@@ -63,7 +66,8 @@ XX:XX - [Section]
 ```
 
 ### Tweet / Post court (< 280 car.)
-```
+
+```text
 [Fait ou conseil concret]
 [Emoji contextuel si pertinent]
 [Hashtag unique si pertinent]
