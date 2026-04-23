@@ -19,14 +19,16 @@ Tableau de bord de la production de la 1re formation payante schoolsWP.
 
 ## Prérequis vérifiés (Task 0.2)
 
-*À remplir à l'issue de Task 0.2. Date de vérif : _TODO_*
+Date de vérif : **2026-04-23**
 
-- [ ] TutorLMS actif + licence Pro active
-- [ ] FluentCart actif + licence active + flow "créer produit" opérationnel
-- [ ] FluentCRM actif + licence active (au moins 1 liste + 1 tag)
-- [ ] FluentBoards Pro actif + licence active (recurring tasks + custom fields + webhooks accessibles)
-- [ ] FluentRoadmap — **GATE DÉCISIF** : si absent, Module 6 passe de 5 à 4 leçons
-- [ ] n8n instance accessible + credentials FluentBoards configurés
+- [x] **TutorLMS Pro** actif (Tutor LMS 3.9.9 + Tutor LMS Pro 3.9.9, licence active)
+- [x] **FluentCart Pro** actif, licence active, flow "créer produit" OK
+- [x] **FluentCRM Pro** actif, licence active, ≥ 1 liste + ≥ 1 tag existants
+- [x] **FluentBoards Pro** actif, licence active, features Pro accessibles (recurring tasks, custom fields, webhooks)
+- [x] **FluentRoadmap** présent et actif — **GATE DÉCISIF PASSÉ** : Module 6 reste à 5 leçons complètes (Roadmap inclus)
+- [x] **n8n** instance accessible — ⚠️ aucun credential FluentBoards configuré → à créer en **Task 0.3** (non bloquant)
+
+**Conclusion :** stack complète, aucun prérequis bloquant. On peut enchaîner Task 0.3 (bridge FluentCart ↔ TutorLMS) sans retard.
 
 ---
 
