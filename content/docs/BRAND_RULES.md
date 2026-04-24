@@ -1,4 +1,4 @@
-# schoolsWP — Brand Rules
+# schoolsWP - Brand Rules
 
 > Source de vérité branding. Appliquée automatiquement à toute production Claude Code.
 > Dernière mise à jour : 2026-02-17
@@ -7,7 +7,7 @@
 
 ## Identité
 
-1. **Toujours écrire "schoolsWP"** — jamais SchoolsWP, schoolswp, Schoolswp, Schools WP.
+1. **Toujours écrire "schoolsWP"** - jamais SchoolsWP, schoolswp, Schoolswp, Schools WP.
 2. **Tagline officielle** : "WordPress. Clair. Structuré. Utile."
 3. **Positionnement** : schoolsWP enseigne WordPress comme outil stratégique au service des créateurs, pas comme une fin en soi.
 4. **La méthode schoolsWP** : méthode de rédaction en 5 étapes (IA + SEO + pédagogie). Toujours la nommer ainsi.
@@ -16,9 +16,9 @@
 
 ## Ton & voix
 
-5. **Tutoiement systématique** — partout, sans exception, en français.
+5. **Tutoiement systématique** - partout, sans exception, en français.
 6. **5 attributs de voix** : direct, pédagogique, chaleureux, structuré, authentique.
-7. **Jamais condescendant** — on accompagne, on n'infantilise pas. Pas de "si tu ne sais même pas…" ni de "il suffit de…".
+7. **Jamais condescendant** - on accompagne, on n'infantilise pas. Pas de "si tu ne sais même pas…" ni de "il suffit de…".
 8. **Ton par contexte** :
    - Support → patient, rassurant
    - Sales → transparent, éducatif, zéro pression
@@ -29,11 +29,24 @@
 
 ## Style rédactionnel
 
-9. **Phrases courtes** : 8–15 mots en moyenne, 20 mots max.
-10. **Structure** : sujet + verbe + complément. Paragraphes de 2–4 phrases, une idée par paragraphe.
+9. **Phrases courtes** : 8-15 mots en moyenne, 20 mots max.
+10. **Structure** : sujet + verbe + complément. Paragraphes de 2-4 phrases, une idée par paragraphe.
 11. **Aérer** : espace entre chaque paragraphe. Gras avec parcimonie (concepts clés uniquement). Italique réservé aux noms d'outils/logiciels.
 12. **Emojis** : 1 par section max, et seulement si pertinent. Jamais en cascade.
 13. **Alterner** : phrases courtes (impact) et moyennes (rythme).
+
+---
+
+## Typographie
+
+13 bis. **Caractères interdits** : pas d'em-dash "—" (U+2014) ni d'en-dash "–" (U+2013), nulle part dans le contenu schoolsWP (articles, emails, landings, social, metas, titres, descriptions, captures). Alternatives :
+   - " : " (deux-points espacés) pour les incises lourdes et les explications
+   - " - " (tiret court espacé, U+002D) pour les séparations légères et les listes
+   - "." pour couper la phrase en deux
+   - "(...)" pour les incises optionnelles
+   - Reformuler sans ponctuation d'incise quand la phrase le permet
+
+Cette règle s'applique à toute production texte (rédaction humaine, IA, agents `studio`, `pulse`, `radar`, `brain`). Les agents doivent être briefés avec cette contrainte dès l'invocation.
 
 ---
 
@@ -47,7 +60,7 @@
 ## Claims & preuves
 
 16. **Zéro promesse non prouvée**. Pas de chiffres sans source ou expérience personnelle. Toujours ancrer dans un cas concret ou un test réel.
-17. **Formulation préférée** : "dans mon cas", "sur schoolsWP", "d'après mes tests" — jamais d'affirmation universelle.
+17. **Formulation préférée** : "dans mon cas", "sur schoolsWP", "d'après mes tests" - jamais d'affirmation universelle.
 18. **Proof points utilisables** : schoolsWP existe depuis 2021, centaines d'articles, méthode documentée, outils testés personnellement, résultats partagés (analytics, trafic, conversions), écosystème complet (blog, newsletter, YouTube, Academy).
 
 ---
@@ -55,7 +68,7 @@
 ## CTAs & liens affiliés
 
 19. **CTA utile, jamais agressif** : privilégier "Teste par toi-même", "Découvre comment faire", "Lis le guide complet". Un seul CTA principal par contenu, éventuellement un secondaire soft.
-20. **Disclosure affiliés** : toujours signaler les liens affiliés. Formule standard : _"Lien affilié — je recommande uniquement les outils que j'utilise au quotidien."_
+20. **Disclosure affiliés** : toujours signaler les liens affiliés. Formule standard : _"Lien affilié - je recommande uniquement les outils que j'utilise au quotidien."_
 
 ---
 
@@ -102,7 +115,7 @@
 29. **Bons exemples** (patterns à reproduire) :
    - Accroche blog : "Tu envoies encore tes emails un par un ? Jusqu'à 50 abonnés, ça passe. Au-delà, c'est ingérable."
    - Intro newsletter : "Cette semaine, j'ai refait l'intro d'un article. Résultat : +40 % de temps passé sur la page."
-   - CTA : "Tu veux aller plus loin ? Découvre le guide complet. Lien affilié — je recommande uniquement les outils que j'utilise."
+   - CTA : "Tu veux aller plus loin ? Découvre le guide complet. Lien affilié - je recommande uniquement les outils que j'utilise."
 
 30. **Mauvais exemples** (anti-patterns à bannir) :
    - Marketing creux : "Découvrez LA solution révolutionnaire qui va transformer votre business en un clic !"
