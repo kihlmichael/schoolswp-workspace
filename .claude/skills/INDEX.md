@@ -164,7 +164,10 @@
 | `n8n-workflow-architect` | workspace | Architecte de workflows n8n pour schoolsWP — conçoit, génère, débogue et documente des automatisations complètes. Utilis |
 | `n8n-workflow-patterns` | workspace | Patterns d'architecture de workflows n8n éprouvés — structures réutilisables pour les cas courants. Déclenche ce skill p |
 | `n8n-reverse-engineer` | projet | Reverse-engineer complet de workflows n8n vers un Skill Claude Code reproductible. Analyse des exports JSON n8n, cartogr |
+| `n8n-template-finder` | projet | Recherche le template n8n le plus pertinent dans le catalogue externe curated enescingoz (298 workflows) pour un cas d'us |
+| `n8n-workflow-adapter` | projet | Adapte un workflow n8n externe (enescingoz, n8n.io) pour l'instance schoolsWP : sanitize credentials, conventions nommage |
 | `n8n-workflow-architect` | projet | Architecte de workflows n8n pour schoolsWP — conçoit, analyse et documente des automatisations selon un cadre opérationn |
+| `wordpress-n8n-blueprints` | projet | Blueprints n8n canoniques pour WordPress schoolsWP : auto-tag articles, brand-voice generator, chatbot site, RAG ingesti |
 
 ---
 
