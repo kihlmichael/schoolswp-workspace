@@ -108,9 +108,7 @@ def _print_result(result: PublishReadyResult, elapsed: float) -> None:
     print(_DASH)
 
 
-def _trigger_fluentboards_alert(
-    result: PublishReadyResult, args: argparse.Namespace, scores: dict
-) -> None:
+def _trigger_fluentboards_alert(result: PublishReadyResult, args: argparse.Namespace, scores: dict) -> None:
     """Appelle le script notify-audit-card en subprocess — non bloquant."""
     project_root = Path(__file__).resolve().parents[3]
     script = project_root / "tools" / "scripts" / "notify-audit-card.py"
@@ -119,14 +117,22 @@ def _trigger_fluentboards_alert(
     cmd = [
         sys.executable,
         str(script),
-        "--keyword", args.keyword,
-        "--score", str(result.publish_score),
-        "--threshold", str(args.threshold),
-        "--seo", str(scores.get("SEO Structure", 0)),
-        "--llm", str(scores.get("Citabilité IA", 0)),
-        "--conv", str(scores.get("Conversion", 0)),
-        "--auth", str(scores.get("Autorité thème", 0)),
-        "--weakest", result.weakest_module or "",
+        "--keyword",
+        args.keyword,
+        "--score",
+        str(result.publish_score),
+        "--threshold",
+        str(args.threshold),
+        "--seo",
+        str(scores.get("SEO Structure", 0)),
+        "--llm",
+        str(scores.get("Citabilité IA", 0)),
+        "--conv",
+        str(scores.get("Conversion", 0)),
+        "--auth",
+        str(scores.get("Autorité thème", 0)),
+        "--weakest",
+        result.weakest_module or "",
     ]
     if args.pillar:
         cmd += ["--pillar", args.pillar]
