@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Apercu - Boutons resumer avec IA schoolsWP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:820px;margin:2em auto;padding:0 1.2em;color:#0f172a;background:#FAFBFD;line-height:1.6}
+  h1{font-size:1.4em;margin:0 0 .3em}
+  h2{font-size:1.05em;margin:2.4em 0 .8em;color:#475569;border-top:1px solid #e2e8f0;padding-top:1.4em}
+  .meta{color:#64748b;font-size:.9em;margin-bottom:2em}
+  .frame{padding:1.6em 1.4em;background:#fff;border:1px dashed #cbd5e1;border-radius:10px;margin-bottom:1em}
+  .body{font-size:1em;color:#212121;margin:0 0 .8em}
+  .body:last-of-type{margin-bottom:0}
+  code{background:#eef2f7;padding:.1em .35em;border-radius:3px;font-size:.88em}
+
+  /* ============ CSS du mu-plugin (copie EXACTE) ============ */
+  .swp-ai-summary{margin:1.6em 0;padding:1.2em 1.3em;border-radius:14px;background:linear-gradient(135deg,#1e293b,#12111F);color:#f8fafc;box-shadow:0 8px 24px -12px rgba(15,23,42,.35);position:relative;overflow:hidden}
+  .swp-ai-summary::before{content:"";position:absolute;inset:auto -50px -70px auto;width:220px;height:220px;background:radial-gradient(circle,rgba(0,212,0,.18) 0%,rgba(0,212,0,0) 65%);pointer-events:none;z-index:0}
+  .swp-ai-summary__title{margin:0 0 .9em;font-size:.78em;letter-spacing:.08em;text-transform:uppercase;font-weight:700;line-height:1.4;position:relative;z-index:1}
+  .swp-ai-summary__title-q{color:#8F8DA5}
+  .swp-ai-summary__title-c{color:#00D400;margin-left:.4em}
+  .swp-ai-summary__pills{display:flex;flex-wrap:wrap;gap:.55em;list-style:none;margin:0;padding:0;position:relative;z-index:1}
+  .swp-ai-summary__item{margin:0;padding:0}
+  .swp-ai-summary__pill{display:inline-flex;align-items:center;gap:.55em;padding:.5em 1em .5em .5em;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#f8fafc;text-decoration:none;font-size:.92em;font-weight:600;line-height:1;transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease}
+  .swp-ai-summary__pill:hover{background:rgba(0,212,0,.12);border-color:rgba(0,212,0,.55);color:#fff;transform:translateY(-1px);box-shadow:0 4px 14px -4px rgba(0,212,0,.45)}
+  .swp-ai-summary__pill:focus-visible{outline:2px solid #00D400;outline-offset:2px}
+  .swp-ai-summary__pill-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:1.7em;height:1.7em;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;transition:background .15s ease,color .15s ease}
+  .swp-ai-summary__pill-icon svg{width:1em;height:1em;display:block}
+  .swp-ai-summary__pill:hover .swp-ai-summary__pill-icon{background:linear-gradient(135deg,#00D400,#00A100);color:#12111F}
+  @media (max-width:560px){
+    .swp-ai-summary{padding:1em 1.1em}
+    .swp-ai-summary__title{font-size:.72em}
+    .swp-ai-summary__pill{font-size:.88em;padding:.45em .85em .45em .45em}
+    .swp-ai-summary__pill-icon{width:1.55em;height:1.55em}
+  }
+</style>
+</head>
+<body>
+
+<h1>Apercu - Boutons r&eacute;sumer avec IA</h1>
+<p class="meta">Au clic, chaque bouton ouvre l'IA dans un nouvel onglet avec un prompt pr&eacute;-rempli demandant un r&eacute;sum&eacute; de l'article courant. Survole les boutons pour voir le hover (l'ic&ocirc;ne devient verte schoolsWP).</p>
+
+<h2>1. Rendu desktop (largeur normale)</h2>
+<div class="frame">
+  <p class="body">Pour booster les Core Web Vitals d'un site WordPress en 2026, tu as principalement deux options s&eacute;rieuses : FlyingPress et WP Rocket. Voyons en d&eacute;tail laquelle convient le mieux &agrave; ton projet...</p>
+
+  <aside class="swp-ai-summary" aria-label="Resumer cet article avec une IA">
+    <p class="swp-ai-summary__title">
+      <span class="swp-ai-summary__title-q">Pas le temps&#8201;?</span>
+      <span class="swp-ai-summary__title-c">Faites-le r&eacute;sumer par l'IA</span>
+    </p>
+    <ul class="swp-ai-summary__pills">
+      <li class="swp-ai-summary__item">
+        <a class="swp-ai-summary__pill" href="#" onclick="return false">
+          <span class="swp-ai-summary__pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.55 10.04a5.42 5.42 0 0 0-.47-4.45 5.48 5.48 0 0 0-5.9-2.63 5.5 5.5 0 0 0-9.41 1.97 5.42 5.42 0 0 0-3.62 2.63 5.48 5.48 0 0 0 .67 6.43 5.42 5.42 0 0 0 .46 4.45 5.48 5.48 0 0 0 5.91 2.63 5.5 5.5 0 0 0 9.41-1.97 5.42 5.42 0 0 0 3.62-2.63 5.48 5.48 0 0 0-.67-6.43Zm-8.18 11.42a4.06 4.06 0 0 1-2.6-.95l.13-.07 4.33-2.5a.7.7 0 0 0 .36-.62v-6.1l1.83 1.06a.06.06 0 0 1 .03.05v5.06a4.08 4.08 0 0 1-4.08 4.07Zm-8.76-3.74a4.05 4.05 0 0 1-.48-2.73l.12.08 4.33 2.5a.7.7 0 0 0 .71 0l5.3-3.05v2.11a.07.07 0 0 1-.03.06l-4.38 2.52a4.07 4.07 0 0 1-5.57-1.49Zm-1.14-9.43a4.07 4.07 0 0 1 2.14-1.79V11.5a.7.7 0 0 0 .35.61l5.27 3.04-1.84 1.06a.07.07 0 0 1-.06 0l-4.38-2.53a4.08 4.08 0 0 1-1.48-5.39Zm15.04 3.5-5.3-3.07 1.84-1.06a.07.07 0 0 1 .06 0l4.38 2.53a4.07 4.07 0 0 1-.61 7.34v-5.14a.72.72 0 0 0-.37-.61Zm1.83-2.74-.13-.07-4.33-2.52a.7.7 0 0 0-.71 0l-5.3 3.05V7.4a.06.06 0 0 1 .03-.06l4.38-2.52a4.08 4.08 0 0 1 6.06 4.22Zm-11.45 3.74-1.83-1.05a.07.07 0 0 1-.04-.05V6.62a4.08 4.08 0 0 1 6.69-3.13l-.13.07-4.33 2.5a.7.7 0 0 0-.36.62Z"/></svg>
+          </span>
+          <span class="swp-ai-summary__pill-name">ChatGPT</span>
+        </a>
+      </li>
+      <li class="swp-ai-summary__item">
+        <a class="swp-ai-summary__pill" href="#" onclick="return false">
+          <span class="swp-ai-summary__pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5 13.6 9 19.5 4.7 16.2 10.5 22.5 12 16.2 13.5 19.5 19.3 13.6 15 12 22.5 10.4 15 4.5 19.3 7.8 13.5 1.5 12 7.8 10.5 4.5 4.7 10.4 9Z"/></svg>
+          </span>
+          <span class="swp-ai-summary__pill-name">Perplexity</span>
+        </a>
+      </li>
+      <li class="swp-ai-summary__item">
+        <a class="swp-ai-summary__pill" href="#" onclick="return false">
+          <span class="swp-ai-summary__pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 0-1 1.7-1.5 4.7-1-2.3-2-3.6-2.8-3.2-.7.4 0 2.5 1.4 4.8C6.6 7.5 4.5 7.2 4 7.9c-.4.6 1.4 1.7 4 2.4-2.6.7-4.4 1.8-4 2.4.5.7 2.6.4 5.1-.3-1.4 2.3-2.1 4.4-1.4 4.8.8.4 1.8-.9 2.8-3.2.5 3 1 4.7 1.5 4.7s1-1.7 1.5-4.7c1 2.3 2 3.6 2.8 3.2.7-.4 0-2.5-1.4-4.8 2.5.7 4.6 1 5.1.3.4-.6-1.4-1.7-4-2.4 2.6-.7 4.4-1.8 4-2.4-.5-.7-2.6-.4-5.1.3 1.4-2.3 2.1-4.4 1.4-4.8-.8-.4-1.8.9-2.8 3.2C13 3.7 12.5 2 12 2Z"/></svg>
+          </span>
+          <span class="swp-ai-summary__pill-name">Claude</span>
+        </a>
+      </li>
+      <li class="swp-ai-summary__item">
+        <a class="swp-ai-summary__pill" href="#" onclick="return false">
+          <span class="swp-ai-summary__pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+          </span>
+          <span class="swp-ai-summary__pill-name">Mistral</span>
+        </a>
+      </li>
+      <li class="swp-ai-summary__item">
+        <a class="swp-ai-summary__pill" href="#" onclick="return false">
+          <span class="swp-ai-summary__pill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+          </span>
+          <span class="swp-ai-summary__pill-name">Grok</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <p class="body">FlyingPress se distingue par une configuration ultra-simple et des r&eacute;sultats sup&eacute;rieurs sur le LCP dans la majorit&eacute; des benchmarks ind&eacute;pendants...</p>
+</div>
+
+<h2>2. Rendu mobile (375 px)</h2>
+<div class="frame" style="max-width:375px;margin:0 auto">
+  <p class="body" style="font-size:.95em">Pour booster les Core Web Vitals...</p>
+
+  <aside class="swp-ai-summary">
+    <p class="swp-ai-summary__title">
+      <span class="swp-ai-summary__title-q">Pas le temps&#8201;?</span>
+      <span class="swp-ai-summary__title-c">Faites-le r&eacute;sumer par l'IA</span>
+    </p>
+    <ul class="swp-ai-summary__pills">
+      <li><a class="swp-ai-summary__pill" href="#" onclick="return false"><span class="swp-ai-summary__pill-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.55 10.04a5.42 5.42 0 0 0-.47-4.45 5.48 5.48 0 0 0-5.9-2.63 5.5 5.5 0 0 0-9.41 1.97 5.42 5.42 0 0 0-3.62 2.63 5.48 5.48 0 0 0 .67 6.43 5.42 5.42 0 0 0 .46 4.45 5.48 5.48 0 0 0 5.91 2.63 5.5 5.5 0 0 0 9.41-1.97 5.42 5.42 0 0 0 3.62-2.63 5.48 5.48 0 0 0-.67-6.43Zm-8.18 11.42a4.06 4.06 0 0 1-2.6-.95l.13-.07 4.33-2.5a.7.7 0 0 0 .36-.62v-6.1l1.83 1.06a.06.06 0 0 1 .03.05v5.06a4.08 4.08 0 0 1-4.08 4.07Z"/></svg></span><span class="swp-ai-summary__pill-name">ChatGPT</span></a></li>
+      <li><a class="swp-ai-summary__pill" href="#" onclick="return false"><span class="swp-ai-summary__pill-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5 13.6 9 19.5 4.7 16.2 10.5 22.5 12 16.2 13.5 19.5 19.3 13.6 15 12 22.5 10.4 15 4.5 19.3 7.8 13.5 1.5 12 7.8 10.5 4.5 4.7 10.4 9Z"/></svg></span><span class="swp-ai-summary__pill-name">Perplexity</span></a></li>
+      <li><a class="swp-ai-summary__pill" href="#" onclick="return false"><span class="swp-ai-summary__pill-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-.5 0-1 1.7-1.5 4.7-1-2.3-2-3.6-2.8-3.2-.7.4 0 2.5 1.4 4.8C6.6 7.5 4.5 7.2 4 7.9c-.4.6 1.4 1.7 4 2.4-2.6.7-4.4 1.8-4 2.4.5.7 2.6.4 5.1-.3-1.4 2.3-2.1 4.4-1.4 4.8.8.4 1.8-.9 2.8-3.2.5 3 1 4.7 1.5 4.7s1-1.7 1.5-4.7c1 2.3 2 3.6 2.8 3.2.7-.4 0-2.5-1.4-4.8 2.5.7 4.6 1 5.1.3.4-.6-1.4-1.7-4-2.4 2.6-.7 4.4-1.8 4-2.4-.5-.7-2.6-.4-5.1.3 1.4-2.3 2.1-4.4 1.4-4.8-.8-.4-1.8.9-2.8 3.2C13 3.7 12.5 2 12 2Z"/></svg></span><span class="swp-ai-summary__pill-name">Claude</span></a></li>
+      <li><a class="swp-ai-summary__pill" href="#" onclick="return false"><span class="swp-ai-summary__pill-icon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><span class="swp-ai-summary__pill-name">Mistral</span></a></li>
+      <li><a class="swp-ai-summary__pill" href="#" onclick="return false"><span class="swp-ai-summary__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></span><span class="swp-ai-summary__pill-name">Grok</span></a></li>
+    </ul>
+  </aside>
+</div>
+
+<h2>Comportement au clic</h2>
+<p>Chaque bouton ouvre dans un nouvel onglet une URL du type :</p>
+<ul>
+  <li><strong>ChatGPT</strong> : <code>https://chatgpt.com/?q=Lis+cet+article+...</code></li>
+  <li><strong>Perplexity</strong> : <code>https://www.perplexity.ai/search?q=...</code></li>
+  <li><strong>Claude</strong> : <code>https://claude.ai/new?q=...</code></li>
+  <li><strong>Mistral</strong> : <code>https://chat.mistral.ai/chat?q=...</code></li>
+  <li><strong>Grok</strong> : <code>https://grok.com/?q=...</code></li>
+</ul>
+<p>Le prompt envoy&eacute; (modifiable via le filtre WP <code>swp_ai_summary_prompt</code>) :</p>
+<blockquote style="border-left:3px solid #00D400;padding-left:1em;color:#475569">Lis cet article schoolsWP intitul&eacute; "[Titre]" puis donne-moi un r&eacute;sum&eacute; clair en 5 points cl&eacute;s, en fran&ccedil;ais&nbsp;: [URL]</blockquote>
+
+<h2>D&eacute;tails techniques</h2>
+<ul>
+  <li>Fond carte : d&eacute;grad&eacute; <code>#1e293b &rarr; #12111F</code> + halo radial vert subtil en bas-droite.</li>
+  <li>Pills : fond blanc 5% + bordure blanche 10%, texte blanc.</li>
+  <li>Hover : fond vert <code>rgba(0,212,0,.12)</code>, bordure verte, l&eacute;ger <code>translateY(-1px)</code>, ombre verte douce.</li>
+  <li>Ic&ocirc;ne : monochrome blanc dans un cercle blanc 10%. Au hover : gradient vert schoolsWP avec ic&ocirc;ne sombre.</li>
+  <li>Liens : <code>target="_blank" rel="noopener noreferrer nofollow"</code>.</li>
+  <li>Z&eacute;ro JS, z&eacute;ro fichier externe, z&eacute;ro stockage post meta, z&eacute;ro appel API.</li>
+</ul>
+
+</body>
+</html>

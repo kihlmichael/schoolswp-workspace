@@ -26,6 +26,8 @@ content/formations/fluentboards/assets/demos/
 *oauth*.json
 gtoken.json
 .gws-cli/
+.credentials/
+!.credentials/README.md
 
 # API keys / certs
 *.key
@@ -121,3 +123,11 @@ data/youtube-transcriptions/*
 !data/youtube-transcriptions/*.py
 .aidesigner/*
 !.aidesigner/.gitkeep
+
+# --- External skills cloned as standalone upstream Git repos (phase d'evaluation) ---
+# Quand le skill est valide en prod, retirer le sous-.git/ + cette ligne pour l'embed comme antigravity/ecc.
+.claude/skills/external-video-use/
+
+# --- mu-plugins deploy artifacts (base64 payloads + curl probes, reproducible) ---
+tools/wp-mu-plugins/*.b64.tmp
+tools/wp-mu-plugins/.live-check.tmp
