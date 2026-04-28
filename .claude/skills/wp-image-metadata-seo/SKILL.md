@@ -15,6 +15,8 @@ description: |
 
   TOUJOURS déclencher ce skill pour toute demande de métadonnées image sur schoolsWP,
   même si l'utilisateur ne mentionne pas explicitement "métadonnées" ou "SEO image".
+last_reviewed: 2026-04-23
+review_interval_days: 90
 ---
 
 ## Rôle
@@ -62,6 +64,8 @@ Si tous les champs sont présents dans le message de l'utilisateur, génère dir
 - **Alt text : strictement entre 120 et 125 caractères** — allonge ou raccourcis jusqu'à entrer dans la plage
 - **Titre image : strictement entre 55 et 60 caractères** — idem
 - Slug toujours en minuscules, tirets, sans accents, sans espaces
+- **Règle evergreen schoolsWP : JAMAIS de date (année, mois, "2025", "2026", etc.) dans le Slug web ni dans le Nom de fichier conseillé.** La date reste autorisée partout ailleurs (XPTitle, Alt text, Titre image, Légende, Description, Variante Google Images, Copyright, ImageDescription). Un slug `/flyingpress-avis/` survit au refresh annuel du contenu, `/flyingpress-avis-2026/` non.
+- **Règle hygiène URL schoolsWP : JAMAIS "schoolswp" / "schoolsWP" dans le Slug web ni dans le Nom de fichier conseillé.** Le nom de domaine `schoolswp.com` le contient déjà → doublon dans l'URL finale (`schoolswp.com/flyingpress-avis-schoolswp/` = illisible). La mention **schoolsWP doit rester** dans XPSubject, XPComment, ImageDescription, Copyright (métadonnées) et dans les champs médiathèque visibles (Légende, Description). Elle ne va JAMAIS dans un identifiant d'URL.
 - XPKeywords : 8 à 12 entrées, virgule, **sans doublon même en casse différente** (ex: "FluentCRM avis" et "fluentcrm avis" = doublon interdit)
 - Tout le contenu doit être en **UTF-8** — les caractères accentués (é, è, à, ç, ê…) sont obligatoires, jamais d'entités HTML ni de caractères corrompus
 
@@ -78,6 +82,31 @@ La **Variante Google Images** et le **Titre image** varient selon l'angle. Appli
 | **guide** | `[SUJET] [ANNÉE] – Guide schoolsWP pour utiliser le plugin WordPress [CATÉGORIE]` | `[SUJET] [ANNÉE] : guide [CATÉGORIE] WordPress – schoolsWP` |
 | **tutoriel** | `[SUJET] [ANNÉE] – Tutoriel schoolsWP : configurer le plugin WordPress [CATÉGORIE]` | `[SUJET] [ANNÉE] : tutoriel [CATÉGORIE] sur schoolsWP` |
 | **test** | `[SUJET] [ANNÉE] – schoolsWP met à l'épreuve le plugin WordPress [CATÉGORIE]` | `[SUJET] [ANNÉE] : test plugin [CATÉGORIE] – schoolsWP` |
+
+---
+
+## Bibliothèque de formules (fallback si gabarit inadapté)
+
+Utilise ces formules quand l'angle du gabarit ne colle pas parfaitement au contexte.
+
+**XPTitle — 5 variantes types :**
+- `[SUJET] WordPress [ANNÉE] – avis complet`
+- `[SUJET] [ANNÉE] – plugin WordPress à tester`
+- `[SUJET] WordPress [ANNÉE] – guide pratique`
+- `[SUJET] [ANNÉE] – optimisation et performance`
+- `[SUJET] WordPress [ANNÉE] – test schoolsWP`
+
+**XPSubject — 2 variantes types :**
+- `Visuel d'article schoolsWP présentant [SUJET], [CATÉGORIE / USAGE].`
+- `Branding schoolsWP avec titre en avant, fond travaillé et angle éditorial clair.`
+
+**XPComment — 2 variantes types :**
+- `Image de couverture optimisée SEO pour l'article "[SUJET]" sur schoolsWP.`
+- `Elle soutient le référencement dans Google Images et Bing Images tout en renforçant l'identité visuelle schoolsWP.`
+
+**ImageDescription — 2 variantes types :**
+- `Visuel "[SUJET] [ANNÉE]" pour un article schoolsWP testant [USAGE principal].`
+- `Illustration schoolsWP dédiée à [SUJET], plugin WordPress conçu pour [BÉNÉFICE].`
 
 ---
 
@@ -111,6 +140,9 @@ Aucun commentaire autour du bloc.
 ---
 ### Métadonnées image — [SUJET] [ANNÉE]
 
+**Nom de fichier conseillé** (sans date, sans "schoolswp")
+[slug-principal].jpg
+
 **XPTitle** (50-60 car. — vérifier le compte)
 [SUJET] [ANGLE] [ANNÉE] – plugin [CATÉGORIE] WordPress [complément pour atteindre 50-60 car.]
 
@@ -136,8 +168,8 @@ Michaël KIHL – schoolsWP
 **ImageDescription**
 Visuel "[SUJET] [ANNÉE]" pour un article schoolsWP sur [ANGLE] du plugin [CATÉGORIE] [USAGE].
 
-**Slug web**
-[sujet-en-minuscules]-plugin-wordpress-[usage-sans-accents]-[année]
+**Slug web** (sans date — règle evergreen)
+[sujet-en-minuscules]-plugin-wordpress-[usage-sans-accents]
 
 **Variante Google Images**
 [gabarit selon angle — voir tableau ci-dessus]
@@ -165,6 +197,68 @@ Visuel "[SUJET] [ANNÉE]" pour un article schoolsWP sur [ANGLE] du plugin [CATÉ
 
 ---
 
+## Exemple complet travaillé — FluentPlayer 2026
+
+INPUT : Sujet = FluentPlayer, Mot-clé principal = FluentPlayer WordPress, Année = 2026,
+Catégorie = plugin vidéo WordPress interactif, Usage = optimisation vidéo, Angle = test
+
+````
+---
+### Métadonnées image — FluentPlayer 2026
+
+**Nom de fichier conseillé**
+fluentplayer-wordpress-video-interactive.jpg
+
+**XPTitle** (54 car.)
+FluentPlayer WordPress 2026 – test plugin vidéo schoolsWP
+
+**XPSubject**
+Visuel d'article schoolsWP présentant FluentPlayer, plugin vidéo WordPress interactif.
+Branding schoolsWP avec titre mis en avant et identité visuelle cohérente.
+
+**XPKeywords**
+FluentPlayer avis, FluentPlayer WordPress, plugin vidéo WordPress, lecteur vidéo interactif,
+conversion vidéo, marketing vidéo WordPress, FluentCRM, schoolsWP, vidéo e-learning, FluentPlayer 2026
+
+**XPComment**
+Image de couverture optimisée SEO pour l'article "FluentPlayer" sur schoolsWP.
+Améliore le référencement Google Images et renforce le branding.
+
+**XPAuthor**
+Michaël KIHL – schoolsWP
+
+**Copyright**
+© 2026 Michaël KIHL – Tous droits réservés
+
+**ImageDescription**
+Visuel "FluentPlayer 2026" pour un article schoolsWP sur le test du plugin vidéo WordPress interactif.
+
+**Slug web** (sans date — règle evergreen)
+fluentplayer-plugin-wordpress-video-interactive
+
+**Variante Google Images**
+FluentPlayer 2026 – schoolsWP met à l'épreuve le plugin WordPress vidéo pour l'optimisation vidéo
+
+---
+### Médiathèque WordPress
+
+**Alt text** (124 car.)
+FluentPlayer WordPress – plugin vidéo interactif testé par schoolsWP pour l'optimisation vidéo, l'engagement et la conversion en 2026
+
+**Titre image** (58 car.)
+FluentPlayer 2026 : test plugin plugin vidéo – schoolsWP
+
+**Légende**
+FluentPlayer transforme une vidéo WordPress classique en contenu interactif orienté conversion.
+Ce visuel schoolsWP met en avant performance, engagement et capture de leads.
+
+**Description**
+Cette image illustre un article schoolsWP consacré à FluentPlayer WordPress. Elle met en avant l'optimisation vidéo, l'interactivité et les usages marketing du plugin. Le visuel renforce le branding schoolsWP avec une présentation directe. Son rôle SEO est d'améliorer la pertinence de la page dans Google Images, Bing Images et la médiathèque WordPress.
+---
+````
+
+---
+
 ## Auto-vérification silencieuse (avant d'afficher)
 
 Compte les caractères et corrige sans le mentionner :
@@ -173,7 +267,22 @@ Compte les caractères et corrige sans le mentionner :
 - [ ] Titre image : compte exact entre 55 et 60 car. — gabarit angle appliqué
 - [ ] XPKeywords : 8 à 12 entrées, aucun doublon même en casse différente
 - [ ] Variante Google Images : gabarit de l'angle appliqué (pas "testant" pour un comparatif)
-- [ ] Slug en minuscules, tirets, sans accents
+- [ ] Slug en minuscules, tirets, sans accents, **aucune date et aucun "schoolswp" (règles evergreen + hygiène URL)**
+- [ ] Nom de fichier : `[slug-descriptif].jpg` (minuscules, tirets, **pas d'année, pas de "schoolswp"** — le domaine schoolswp.com le contient déjà)
 - [ ] Orthographe : **schoolsWP** partout (jamais SchoolsWP ni schoolswp)
 - [ ] Aucune donnée inventée (si champ INPUT vide → `[À COMPLÉTER]`)
 - [ ] Caractères accentués présents et corrects (é, è, à, ç — jamais Ã© ou clÃ©)
+
+---
+
+## Checklist finale avant validation (visible côté utilisateur)
+
+Après le bloc, ajoute une mini-checklist pour que l'utilisateur valide d'un coup d'œil :
+
+- [ ] Mot-clé principal présent dans XPTitle, Alt text, Titre image
+- [ ] Texte naturel, pas de bourrage
+- [ ] **schoolsWP** apparaît dans XPSubject, XPComment, ImageDescription (métadonnées visibles). **Jamais dans le Nom de fichier ni le Slug web** — le domaine schoolswp.com l'inclut déjà
+- [ ] Slug et Nom de fichier **sans aucune date** (règle evergreen schoolsWP — strict)
+- [ ] Alt text décrit réellement l'image, pas seulement les mots-clés
+- [ ] Titre image donne envie de cliquer
+- [ ] Description ajoute du contexte utile au-delà du nom du plugin

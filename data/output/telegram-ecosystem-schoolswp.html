@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Écosystème Telegram schoolsWP</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 15mm 20mm 15mm;
+  }
+  :root {
+    --green: #6aab3f;
+    --green-dark: #4f8a26;
+    --black: #0e0e0e;
+    --grey-bg: #f6f8f4;
+    --grey-line: #d9e1d3;
+    --text: #1a1a1a;
+    --muted: #667;
+    --orange: #d97b3a;
+    --pink: #d93a7b;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  h1 {
+    font-size: 26pt;
+    margin: 0 0 4px 0;
+    color: var(--green-dark);
+    letter-spacing: -0.5px;
+  }
+  h2 {
+    font-size: 16pt;
+    margin: 28px 0 10px 0;
+    color: var(--green-dark);
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 4px;
+  }
+  h3 {
+    font-size: 12pt;
+    margin: 18px 0 6px 0;
+    color: var(--black);
+  }
+  h4 {
+    font-size: 10.5pt;
+    margin: 12px 0 4px 0;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cover {
+    text-align: left;
+    padding: 10mm 0 20px 0;
+    border-bottom: 3px solid var(--green);
+    margin-bottom: 28px;
+  }
+  .cover .meta {
+    color: var(--muted);
+    font-size: 10pt;
+    margin-top: 12px;
+  }
+  .cover .meta strong { color: var(--text); }
+  .subtitle {
+    font-size: 13pt;
+    color: var(--muted);
+    font-weight: normal;
+    margin: 4px 0 0 0;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9.5pt;
+    margin: 8px 0;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid var(--grey-line);
+    padding: 6px 9px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th {
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+    font-size: 9.5pt;
+  }
+  tr:nth-child(even) td { background: var(--grey-bg); }
+  code, .handle, .mono {
+    font-family: "Courier New", Consolas, monospace;
+    font-size: 9.5pt;
+    background: var(--grey-bg);
+    padding: 1px 4px;
+    border-radius: 2px;
+    color: var(--black);
+  }
+  pre {
+    background: #1a1a1a;
+    color: #e6e6e6;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    overflow-x: auto;
+    page-break-inside: avoid;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .badge-private { background: #ffecec; color: #a62020; }
+  .badge-public { background: #e6f6da; color: #2a6b00; }
+  .badge-push { background: #fff2d6; color: #8a5300; }
+  .bot-card {
+    border: 1px solid var(--grey-line);
+    border-left: 4px solid var(--green);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    page-break-inside: avoid;
+    background: white;
+  }
+  .bot-card.public { border-left-color: var(--green-dark); background: #f4fae8; }
+  .bot-card.dev { border-left-color: var(--black); background: #fafafa; }
+  .bot-card.push { border-left-color: var(--pink); background: #fef5fa; }
+  .bot-card h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 0 4px 0;
+    font-size: 11.5pt;
+  }
+  .bot-card .meta {
+    font-size: 9pt;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .bot-card p { margin: 4px 0; font-size: 9.5pt; }
+  .ascii {
+    font-family: "Courier New", Consolas, monospace;
+    font-size: 8pt;
+    line-height: 1.2;
+    background: var(--grey-bg);
+    padding: 12px;
+    border-radius: 4px;
+    white-space: pre;
+    page-break-inside: avoid;
+  }
+  .note {
+    background: #fff9e6;
+    border-left: 3px solid #e0a800;
+    padding: 8px 10px;
+    margin: 10px 0;
+    font-size: 9.5pt;
+  }
+  .page-break { page-break-after: always; }
+  footer {
+    position: fixed;
+    bottom: 5mm;
+    left: 15mm;
+    right: 15mm;
+    font-size: 8pt;
+    color: var(--muted);
+    border-top: 1px solid var(--grey-line);
+    padding-top: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  ul { margin: 4px 0; padding-left: 20px; }
+  li { margin: 2px 0; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .kpi {
+    background: var(--grey-bg);
+    border-left: 3px solid var(--green);
+    padding: 8px 10px;
+    border-radius: 3px;
+  }
+  .kpi .label { font-size: 8pt; color: var(--muted); text-transform: uppercase; }
+  .kpi .value { font-size: 18pt; font-weight: 700; color: var(--green-dark); }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <h1>Écosystème Telegram schoolsWP</h1>
+  <p class="subtitle">9 bots, 1 canal d'annonce, 1 point d'entrée public</p>
+  <div class="meta">
+    <strong>Owner</strong> : Michaël KIHL · michaelkihlpro@gmail.com<br>
+    <strong>Date</strong> : 2026-04-20<br>
+    <strong>VPS</strong> : xCloud (telegram-agents.wp1.host, IP 45.32.147.48)<br>
+    <strong>Repo</strong> : github.com/kihlmichael/schoolswp-telegram-agents (branche main)<br>
+    <strong>Commit actuel</strong> : 7ee9b46 (welcome bot exempt from allowlist)
+  </div>
+</section>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="label">Bots actifs</div><div class="value">9</div></div>
+  <div class="kpi"><div class="label">Apps PM2</div><div class="value">2</div></div>
+  <div class="kpi"><div class="label">Webhooks</div><div class="value">5</div></div>
+  <div class="kpi"><div class="label">Public</div><div class="value">1</div></div>
+</div>
+
+<h2>1. Vue d'ensemble</h2>
+
+<p>L'écosystème Telegram schoolsWP sert 3 usages distincts :</p>
+
+<ul>
+  <li><strong>Production interne</strong> (allowlist stricte) : 5 agents spécialisés pilotant la rédaction, le SEO, l'automation, le social et l'orchestration Claude Code.</li>
+  <li><strong>Interface mobile Claude</strong> (allowlist stricte) : 2 ponts mobiles (Claude Code à distance + Claude brainstorm).</li>
+  <li><strong>Diffusion &amp; acquisition</strong> (public) : 1 canal d'annonce des articles + 1 point d'entrée public accueillant les nouveaux visiteurs.</li>
+</ul>
+
+<h2>2. Inventaire des 9 bots</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 5%">#</th>
+      <th style="width: 28%">Handle</th>
+      <th style="width: 22%">Nom public</th>
+      <th style="width: 30%">Rôle</th>
+      <th style="width: 15%">Accès</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><span class="handle">@schoolswp_orchestrator_bot</span></td>
+      <td>schoolsWP Orchestrator</td>
+      <td>Passerelle Telegram ↔ Claude Code, pilote agents + pipelines + repo</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><span class="handle">@schoolsWP_Studio_bot</span></td>
+      <td>schoolsWP Studio</td>
+      <td>Rédaction : articles, tutoriels, newsletters, pages de vente</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><span class="handle">@schoolsWP_Radar_bot</span></td>
+      <td>schoolsWP Radar</td>
+      <td>Audit SEO / GEO, cannibalisation, maillage, plan d'action</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><span class="handle">@schoolsWP_Flow_bot</span></td>
+      <td>schoolsWP Flow</td>
+      <td>Automation FluentCRM, TutorLMS, OttoKit, n8n</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><span class="handle">@schoolsWP_Pulse_bot</span></td>
+      <td>schoolsWP Pulse</td>
+      <td>Recyclage social LinkedIn, X, Instagram, Pinterest</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><span class="handle">@ClaudeCodeSWP_bot</span></td>
+      <td>Claude Code schoolsWP</td>
+      <td>Exécution repo à distance depuis Telegram</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><span class="handle">@ClaudeSWP_bot</span></td>
+      <td>Claude schoolsWP</td>
+      <td>Brainstorm mobile avec system prompt schoolsWP</td>
+      <td><span class="badge badge-private">🔒 Allowlist</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><span class="handle">@BitSocialWP_bot</span></td>
+      <td>BitSocial schoolsWP</td>
+      <td>Canal d'annonce : nouveaux articles schoolswp.com</td>
+      <td><span class="badge badge-push">📢 Push-only</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><span class="handle">@schoolsWP_bot</span></td>
+      <td>schoolsWP</td>
+      <td>Point d'entrée public : accueil, orientation, lead magnet</td>
+      <td><span class="badge badge-public">🌐 Public</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Bots legacy</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%">Handle</th>
+      <th style="width: 20%">Statut</th>
+      <th style="width: 55%">Historique</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="handle">@n8n_michaelkihl_bot</span></td>
+      <td>❌ Supprimé</td>
+      <td>Ancienne passerelle Telegram → n8n. Remplacé par Flow. Supprimé 2026-04-20.</td>
+    </tr>
+    <tr>
+      <td><span class="handle">@michaelkihl_bot</span></td>
+      <td>💾 Conservé (dormant)</td>
+      <td>Bot SureTriggers historique. Handle perso stratégique — gardé pour éviter le squat, pas branché.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>3. Détail par bot (fiches)</h2>
+
+<div class="bot-card public">
+  <h3>9. schoolsWP <span class="handle">@schoolsWP_bot</span></h3>
+  <div class="meta">🌐 Public · avatar 09-welcome.png · webhook /webhook/welcome</div>
+  <p><strong>About</strong> : Le bot officiel schoolsWP. Écosystème WordPress : SEO d'autorité, LMS rentable, CRM qui convertit.</p>
+  <p><strong>Rôle</strong> : point d'entrée grand public. Accueille les visiteurs, présente l'écosystème en 3 lignes, oriente vers le blog / newsletter / lead magnet, et route les allowlistés vers les 8 agents internes.</p>
+  <p><strong>Token VPS</strong> : <code>TELEGRAM_TOKEN_WELCOME</code></p>
+</div>
+
+<div class="bot-card">
+  <h3>1. schoolsWP Orchestrator <span class="handle">@schoolswp_orchestrator_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 01-orchestrator.png · <strong>hors telegram-claude</strong> (API setup indépendant)</div>
+  <p><strong>About</strong> : Passerelle Telegram vers Claude Code (schoolsWP) — pilote les agents Studio, Radar, Flow, Pulse.</p>
+  <p><strong>Rôle</strong> : lance un pipeline SEO, déclenche un audit, relance un workflow n8n depuis Telegram. Sessions persistantes, mémoire partagée.</p>
+</div>
+
+<div class="bot-card">
+  <h3>2. schoolsWP Studio <span class="handle">@schoolsWP_Studio_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 02-studio.png · webhook /webhook/studio</div>
+  <p><strong>About</strong> : Je rédige tes articles, tutoriels et briefs schoolsWP. Brief in → draft out.</p>
+  <p><strong>Contexte injecté</strong> : brand, editorial-guidelines, offers, stack</p>
+  <p><strong>Token VPS</strong> : <code>TELEGRAM_TOKEN_STUDIO</code></p>
+</div>
+
+<div class="bot-card">
+  <h3>3. schoolsWP Radar <span class="handle">@schoolsWP_Radar_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 04-radar.png · webhook /webhook/radar</div>
+  <p><strong>About</strong> : J'audite ton SEO, GEO et maillage schoolsWP. URL → diagnostic → plan d'action.</p>
+  <p><strong>Contexte injecté</strong> : brand, pillars, stack</p>
+  <p><strong>Token VPS</strong> : <code>TELEGRAM_TOKEN_RADAR</code></p>
+</div>
+
+<div class="bot-card">
+  <h3>4. schoolsWP Flow <span class="handle">@schoolsWP_Flow_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 03-flow.png · webhook /webhook/flow</div>
+  <p><strong>About</strong> : J'automatise tes workflows CRM, LMS et n8n schoolsWP. Du trigger au tag.</p>
+  <p><strong>Contexte injecté</strong> : stack, offers, brand</p>
+  <p><strong>Token VPS</strong> : <code>TELEGRAM_TOKEN_FLOW</code></p>
+</div>
+
+<div class="bot-card">
+  <h3>5. schoolsWP Pulse <span class="handle">@schoolsWP_Pulse_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 05-pulse.png · webhook /webhook/pulse</div>
+  <p><strong>About</strong> : Je recycle et diffuse tes contenus schoolsWP sur les réseaux. Un post = une plateforme.</p>
+  <p><strong>Contexte injecté</strong> : pillars, offers, brand</p>
+  <p><strong>Token VPS</strong> : <code>TELEGRAM_TOKEN_PULSE</code></p>
+</div>
+
+<div class="bot-card dev">
+  <h3>6. Claude Code schoolsWP <span class="handle">@ClaudeCodeSWP_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 06-claudecodeswp.png · <strong>hors telegram-claude</strong></div>
+  <p><strong>About</strong> : Pont Telegram → Claude Code schoolsWP. Pilote le repo, les agents, les pipelines.</p>
+  <p><strong>Rôle</strong> : exécution repo à distance. "lance brain.bat sur X", "diff les derniers commits", "run l'audit SEO".</p>
+</div>
+
+<div class="bot-card dev">
+  <h3>7. Claude schoolsWP <span class="handle">@ClaudeSWP_bot</span></h3>
+  <div class="meta">🔒 Allowlist · avatar 07-claudeswp.png · <strong>hors telegram-claude</strong></div>
+  <p><strong>About</strong> : Claude sur Telegram, avec le contexte schoolsWP. Brainstorm, reformulation, Q&amp;A.</p>
+  <p><strong>Rôle</strong> : brainstorm mobile sans toucher au repo. System prompt schoolsWP pré-chargé.</p>
+</div>
+
+<div class="bot-card push">
+  <h3>8. BitSocial schoolsWP <span class="handle">@BitSocialWP_bot</span></h3>
+  <div class="meta">📢 Push-only · avatar 08-bitsocialwp.png · <strong>canal d'annonce, ne répond pas</strong></div>
+  <p><strong>About</strong> : Les nouveaux articles schoolsWP.com, poussés sur Telegram dès publication.</p>
+  <p><strong>Rôle</strong> : push automatique à chaque nouvel article. Titre + extrait + lien direct.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>4. Architecture technique</h2>
+
+<div class="ascii">
+                    ┌─────────────────────────────────┐
+                    │   Telegram (MTProto + HTTPS)    │
+                    └──────────────┬──────────────────┘
+                                   │
+                    webhooks secret-token auth
+                                   │
+          ┌────────────────────────┼────────────────────────┐
+          │                        │                        │
+          ▼                        ▼                        ▼
+   ┌──────────────┐       ┌────────────────┐       ┌──────────────┐
+   │  @Orches..   │       │ telegram_agents│       │  @Claude..   │
+   │  @ClaudeCode │       │   (PM2 app)    │       │   @Claude    │
+   │  (hors repo) │       │  port 3000     │       │ (hors repo)  │
+   └──────────────┘       │  5 webhooks    │       └──────────────┘
+                          ├────────────────┤
+                          │ /webhook/studio│
+                          │ /webhook/radar │
+                          │ /webhook/flow  │
+                          │ /webhook/pulse │
+                          │ /webhook/welcome  ← public
+                          └────────┬───────┘
+                                   │
+                   CLAUDE_MODE=api (appel Anthropic REST)
+                                   │
+                          ┌────────▼───────────┐
+                          │  api.anthropic.com │
+                          │  claude-sonnet-4-6 │
+                          └────────────────────┘
+
+         ┌─────────────────────────────────────────────┐
+         │         VPS xCloud — telegram-agents        │
+         │   /var/www/telegram-agents.wp1.host/        │
+         │                                             │
+         │   PM2 app 1 : telegram_agents (server.js)   │
+         │   PM2 app 2 : discord-orchestrator          │
+         │                                             │
+         │   .env  (gitignored — contient tokens)      │
+         │   OPERATIONS.md (runbook)                   │
+         └─────────────────────────────────────────────┘
+</div>
+
+<h3>Arborescence du code</h3>
+
+<pre><code>schoolswp-telegram-agents/           (submodule git)
+├── server.js                        Express + 5 webhooks Telegram
+├── register-webhooks.js             Enregistrement webhooks côté Telegram API
+├── ecosystem.config.cjs             PM2 config (2 apps)
+├── package.json
+├── .env                             ← tokens (gitignored)
+├── .env.example                     Template public
+├── OPERATIONS.md                    Runbook ops xCloud
+├── README.md
+├── context/                         Fichiers markdown injectés dans system prompt
+│   ├── brand.md
+│   ├── editorial-guidelines.md
+│   ├── offers.md
+│   ├── pillars.md
+│   └── stack.md
+└── discord/                         Bot Discord (2e app PM2)
+    └── src/
+        ├── index.js
+        ├── deploy-commands.js
+        └── commands/
+            ├── brain.js
+            ├── ping.js
+            └── status.js</code></pre>
+
+<h3>Règles de routage code (server.js)</h3>
+
+<pre><code>const BOT_TOKENS = {
+  studio:  process.env.TELEGRAM_TOKEN_STUDIO,
+  radar:   process.env.TELEGRAM_TOKEN_RADAR,
+  flow:    process.env.TELEGRAM_TOKEN_FLOW,
+  pulse:   process.env.TELEGRAM_TOKEN_PULSE,
+  welcome: process.env.TELEGRAM_TOKEN_WELCOME,
+};
+
+const PUBLIC_AGENTS = new Set(["welcome"]);  // hors allowlist
+
+const AGENT_CONTEXT_MAP = {
+  studio:  ["brand", "editorial-guidelines", "offers", "stack"],
+  radar:   ["brand", "pillars", "stack"],
+  flow:    ["stack", "offers", "brand"],
+  pulse:   ["pillars", "offers", "brand"],
+  welcome: ["brand", "offers", "pillars"],
+};</code></pre>
+
+<h2>5. Sécurité &amp; accès</h2>
+
+<ul>
+  <li><strong>Allowlist</strong> : <code>TELEGRAM_ALLOWED_USERS=1020689775</code> (userID Michaël)</li>
+  <li><strong>Webhook secret</strong> : <code>TELEGRAM_WEBHOOK_SECRET</code> (64 chars hex, vérifié header <code>X-Telegram-Bot-Api-Secret-Token</code>)</li>
+  <li><strong>Admin token</strong> : <code>ADMIN_TOKEN</code> (reload contexte via <code>/admin/reload</code>)</li>
+  <li><strong>Exemption allowlist</strong> : seul le bot <code>welcome</code> accepte les messages de n'importe qui (via <code>PUBLIC_AGENTS</code>)</li>
+  <li><strong>Secrets</strong> : <code>.env</code> et <code>.env.production</code> gitignored, jamais commités</li>
+</ul>
+
+<div class="note">
+<strong>Point clé</strong> : les 4 agents internes (studio, radar, flow, pulse) rejettent silencieusement les messages non-allowlistés. Aucun retour utilisateur. Pour tester avec un 2e compte, il faut l'ajouter à <code>TELEGRAM_ALLOWED_USERS</code> séparé par virgules.
+</div>
+
+<div class="page-break"></div>
+
+<h2>6. Opérations — déploiement &amp; maintenance</h2>
+
+<h3>Déploiement standard (après git push)</h3>
+
+<p>Via <strong>xCloud panel → Sites → telegram-agents → Node.js → Run Custom Command</strong> :</p>
+
+<pre><code>cd /var/www/telegram-agents.wp1.host && \
+git pull origin main && \
+npm install && \
+pm2 restart telegram_agents --update-env && \
+pm2 save</code></pre>
+
+<h3>Ajouter un nouveau token (one-liner printf)</h3>
+
+<pre><code>cd /var/www/telegram-agents.wp1.host && \
+printf '\nTELEGRAM_TOKEN_NEWBOT=xxx:yyy\n' >> .env && \
+pm2 restart telegram_agents --update-env</code></pre>
+
+<div class="note">
+<strong>Bug xCloud connu</strong> : ne pas utiliser heredoc (<code>&lt;&lt;'EOF'</code>) dans les Custom Commands — la UI tronque le délimiteur. Toujours <code>printf</code> one-liner.
+</div>
+
+<h3>Enregistrer les webhooks Telegram</h3>
+
+<pre><code>cd /var/www/telegram-agents.wp1.host && \
+node register-webhooks.js https://telegram-agents.wp1.host</code></pre>
+
+<h3>Statut &amp; logs</h3>
+
+<pre><code>pm2 list
+pm2 logs telegram_agents --lines 30 --nostream
+curl http://localhost:3000/health | jq</code></pre>
+
+<h3>Rollback</h3>
+
+<pre><code>cd /var/www/telegram-agents.wp1.host && \
+git reset --hard HEAD~1 && \
+npm install && \
+pm2 restart telegram_agents --update-env</code></pre>
+
+<h2>7. Variables d'environnement requises</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Rôle</th>
+      <th>Statut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>CLAUDE_MODE</code></td><td><code>api</code> en prod (REST Anthropic direct)</td><td>Requis</td></tr>
+    <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Clé API Anthropic</td><td>Requis</td></tr>
+    <tr><td><code>CLAUDE_MODEL</code></td><td><code>claude-sonnet-4-6</code></td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_TOKEN_STUDIO</code></td><td>Token BotFather bot Studio</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_TOKEN_RADAR</code></td><td>Token BotFather bot Radar</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_TOKEN_FLOW</code></td><td>Token BotFather bot Flow</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_TOKEN_PULSE</code></td><td>Token BotFather bot Pulse</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_TOKEN_WELCOME</code></td><td>Token BotFather bot Welcome public</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_ALLOWED_USERS</code></td><td>UserIDs autorisés, séparés par virgule</td><td>Requis</td></tr>
+    <tr><td><code>TELEGRAM_WEBHOOK_SECRET</code></td><td>Secret aléatoire vérifié sur chaque webhook</td><td>Requis</td></tr>
+    <tr><td><code>ADMIN_TOKEN</code></td><td>Token pour <code>/admin/reload</code> du contexte</td><td>Requis</td></tr>
+    <tr><td><code>PORT</code></td><td><code>3000</code> par défaut</td><td>Optionnel</td></tr>
+    <tr><td><code>DISCORD_*</code></td><td>Token + IDs channels pour 2e app PM2</td><td>Requis si Discord</td></tr>
+  </tbody>
+</table>
+
+<h2>8. Troubleshooting</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 35%">Symptôme</th>
+      <th style="width: 65%">Diagnostic / fix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bot muet complètement</td>
+      <td>
+        1. <code>pm2 list</code> — vérifier <code>telegram_agents</code> online<br>
+        2. <code>/health</code> — doit lister l'agent<br>
+        3. <code>api.telegram.org/bot$TOKEN/getWebhookInfo</code> — vérifier URL<br>
+        4. Si webhook cassé : re-register via <code>register-webhooks.js</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Bot rejette un utilisateur</td>
+      <td>Logs : <code>rejected fromId=... (not in allowlist)</code>. Ajouter le userID à <code>TELEGRAM_ALLOWED_USERS</code> + restart PM2.</td>
+    </tr>
+    <tr>
+      <td>Webhook retourne 401</td>
+      <td><code>TELEGRAM_WEBHOOK_SECRET</code> ne matche pas. Re-register les webhooks.</td>
+    </tr>
+    <tr>
+      <td>Bot répond lentement</td>
+      <td>Vérifier <code>CLAUDE_MODE=api</code> (pas subprocess). Subprocess = lancement CLI claude à chaque message, très lent.</td>
+    </tr>
+    <tr>
+      <td>Context markdown trop gros</td>
+      <td>Warning au boot : <code>[CONTEXT] X.md dépasse 10kB</code>. Raccourcir le fichier dans <code>context/</code> puis <code>/admin/reload</code>.</td>
+    </tr>
+    <tr>
+      <td>PM2 newline bug (ecosystem)</td>
+      <td><code>File ecosystem.config.cjs not found</code> via Deploy Now xCloud. Ne pas utiliser Deploy Now, passer par Run Custom Command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>9. Références &amp; docs internes</h2>
+
+<ul>
+  <li><strong>Runbook ops</strong> : <code>agents/telegram-claude/OPERATIONS.md</code></li>
+  <li><strong>Code</strong> : <code>github.com/kihlmichael/schoolswp-telegram-agents</code></li>
+  <li><strong>Avatars</strong> : <code>projects/schoolswp/assets/telegram-avatars/</code> (9 PNG 1024×1024)</li>
+  <li><strong>Script génération avatars</strong> : <code>tools/generate_telegram_avatars.py</code> (Gemini 2.5 Flash Image direct API)</li>
+  <li><strong>Session de rebrand initiale</strong> : 2026-04-20 (ce doc)</li>
+  <li><strong>Historique</strong> :
+    <ul>
+      <li>2026-04-19 : déploiement initial 4 bots + Discord orchestrator sur xCloud</li>
+      <li>2026-04-20 : legacy <code>@n8n_michaelkihl_bot</code> supprimé</li>
+      <li>2026-04-20 : 8 bots rebrandés via BotFather (names + descriptions + avatars)</li>
+      <li>2026-04-20 : 9e bot <code>@schoolsWP_bot</code> ajouté comme point d'entrée public</li>
+      <li>2026-04-20 : exemption allowlist pour welcome uniquement (commit 7ee9b46)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>10. Roadmap (idées pour suite)</h2>
+
+<ul>
+  <li><strong>Routing depuis welcome</strong> : ajouter commandes <code>/studio</code>, <code>/radar</code>, <code>/flow</code>, <code>/pulse</code> dans welcome qui renvoient les liens vers les bots privés (pour les allowlistés).</li>
+  <li><strong>Lead capture</strong> : formulaire inline sur welcome pour s'inscrire newsletter via FluentCRM.</li>
+  <li><strong>Canal BitSocial</strong> : vérifier que le push automatique des articles fonctionne (OttoKit ou n8n déclencheur).</li>
+  <li><strong>Monitoring</strong> : alertes Discord si <code>telegram_agents</code> crash (via PM2 + webhook Discord).</li>
+  <li><strong>Analytics</strong> : compter messages/bot/jour dans logs, exporter vers Google Sheets.</li>
+  <li><strong>Archive <code>@michaelkihl_bot</code></strong> : vérifier OttoKit pour déconnecter, puis rebrand en usage perso.</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Spawne 3 agents en parallèle (JSON Analyst, Columns Analyst, Mapper) avec leurs rapports distincts",
+      "passed": true,
+      "evidence": "\"3 agents lancés en parallèle : JSON Analyst · Columns Analyst · Mapper\" — 3 sections de rapports agents distinctes dans la réponse"
+    },
+    {
+      "text": "Les 7 sections obligatoires sont présentes (Diagnostic, Réglages, Mapping, Erreurs, Pièges, Checklist, Bloc final)",
+      "passed": true,
+      "evidence": "Sections 1 à 7 présentes avec leurs titres exacts + sections intermédiaires des rapports agents"
+    },
+    {
+      "text": "Toutes les expressions utilisent {{ $json[\"...\"] }} avec doubles guillemets",
+      "passed": true,
+      "evidence": "{{ $json[\"prenom\"] }}, {{ $json[\"nom\"] }}, {{ $json[\"telephone\"] }}, etc. — doubles guillemets partout"
+    },
+    {
+      "text": "Détecte les incohérences JSON/colonnes (accents, casse, underscores vs espaces)",
+      "passed": true,
+      "evidence": "Agent 2 produit un tableau complet : 6/6 correspondances approximatives — accent é→e, casse majuscule, underscore vs espace"
+    },
+    {
+      "text": "Aucun champ inventé absent du JSON fourni",
+      "passed": true,
+      "evidence": "Uniquement les 6 champs du JSON — aucun ajout"
+    },
+    {
+      "text": "Bloc final récapitulatif copy-paste présent (RÉGLAGES + MAPPING dans un bloc propre)",
+      "passed": true,
+      "evidence": "Section 7 avec RÉGLAGES + MAPPING dans un bloc de code propre"
+    }
+  ],
+  "score": 6,
+  "max_score": 6,
+  "pass_rate": 1.0
+}

@@ -1,6 +1,9 @@
 ---
 name: instagram-strategy
-description: Expert Instagram content strategy agent — builds complete, ready-to-publish editorial strategies for any brand, professional, or topic. Use this skill whenever the user wants to create an Instagram strategy, plan Instagram content, write Instagram posts or carousels, build an editorial calendar, generate captions, hooks, hashtags, or CTAs for Instagram. Also trigger for requests like "stratégie Instagram", "contenu Instagram", "plan éditorial Instagram", "posts Instagram", "carrousels Instagram", "légendes Instagram", or any variation implying Instagram content creation or planning. Trigger even if the user only mentions one deliverable (e.g., "give me 10 Instagram posts for my coaching business") — this skill covers the full pipeline.
+description: |
+  Agent expert stratégie Instagram schoolsWP — construit des stratégies éditoriales Instagram complètes et directement exploitables : piliers de contenu, posts, carrousels, calendrier éditorial, légendes, accroches, hashtags, CTAs. Couvre aussi les livrables uniques (ex : "10 posts Instagram pour mon activité").
+  Utiliser ce skill quand l'utilisateur demande : "stratégie Instagram", "plan éditorial Instagram", "posts Instagram", "carrousels Instagram", "calendrier Instagram", "légendes Instagram", "hashtags Instagram", "contenu Instagram", "accroches Instagram", "piliers Instagram".
+  NE PAS utiliser pour : publication / adaptation multi-plateformes via Blotato (voir `social-media-manager`), post LinkedIn (voir `linkedin`), stratégie Pinterest (voir `pinterest-strategy`), pipeline Pinterest (voir `pinterest-pipeline`), Reddit (voir `reddit` si actif).
 ---
 
 # Instagram Strategy Agent

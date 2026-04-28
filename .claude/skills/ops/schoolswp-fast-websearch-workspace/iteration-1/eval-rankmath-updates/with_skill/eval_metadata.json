@@ -1,0 +1,22 @@
+{
+  "eval_id": 2,
+  "eval_name": "rankmath-recent-updates",
+  "prompt": "RankMath a sorti des nouveautés récemment ? y'a eu des updates importantes ?",
+  "assertions": [
+    {
+      "text": "mentionne_version_ou_date: contient un numéro de version ou une date récente",
+      "passed": true,
+      "evidence": "v3.0.107, v3.0.106, dates de février et janvier 2026"
+    },
+    {
+      "text": "pas_intro_bavarde: pas de H1 titre, pas de section 'Ce qui est pertinent pour schoolsWP'",
+      "passed": true,
+      "evidence": "Commence directement par 'Dernières versions RankMath PRO (changelog officiel) :'"
+    },
+    {
+      "text": "longueur_raisonnable: moins de 200 mots",
+      "passed": true,
+      "evidence": "~100 mots"
+    }
+  ]
+}

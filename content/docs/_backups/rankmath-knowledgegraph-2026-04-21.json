@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-04-21T14:23:13",
+  "entities": [
+    {
+      "type": [
+        "EducationalOrganization",
+        "Organization"
+      ],
+      "name": "Michaël KIHL - schoolsWP",
+      "id": "https://schoolswp.com/#organization",
+      "url": "https://schoolswp.com"
+    },
+    {
+      "type": "Person",
+      "name": "Michaël KIHL",
+      "id": "https://schoolswp.com",
+      "url": "https://schoolswp.com"
+    }
+  ]
+}

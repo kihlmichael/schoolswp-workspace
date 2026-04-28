@@ -1,0 +1,23 @@
+{
+  "skill_name": "linkbuilding-outreach",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "J'ai repere un article sur WPMarmite qui parle des meilleurs plugins LMS WordPress. Je veux proposer mon guide complet Tutor LMS sur schoolsWP comme ressource complementaire. Analyse le prospect et redige l'outreach si ca vaut le coup.\n\nURL prospect : https://wpmarmite.com/plugins-lms-wordpress/\nURL a promouvoir : https://schoolswp.com/guides/tutor-lms-guide-complet/\nContexte : on a teste Tutor LMS pendant 3 mois avec des vrais apprenants, l'article documente tout le process.",
+      "expected_output": "Analyse detaillee du prospect WPMarmite, qualification Tres pertinente ou Pertinente, email d'outreach personnalise en francais avec reference a un element precis de l'article WPMarmite, 5 objets, 2 relances, 5 anchors naturels, note strategique. Fichier sauvegarde dans content/outreach/.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Je voudrais obtenir un backlink depuis cette page. Analyse si ca vaut le coup.\n\nURL prospect : https://www.shopify.com/fr/blog/creer-boutique-en-ligne\nURL a promouvoir : https://schoolswp.com/guides/woocommerce-vs-shopify/\nContexte : aucun",
+      "expected_output": "Analyse montrant que Shopify est un concurrent direct, page ultra-commerciale orientee conversion Shopify, qualification A eviter ou Faible, recommandation explicite de ne pas envoyer, alternatives strategiques proposees. Pas d'email redige.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "J'ai un Google Sheet avec 3 prospects a analyser pour du link building. Le Sheet est dans mon Drive, ID : 1abc123def456. Traite chaque ligne individuellement.\n\nURL a promouvoir pour tous : https://schoolswp.com/comparatifs/meilleurs-crm-wordpress/",
+      "expected_output": "Lecture du Google Sheet via gws CLI, traitement individualise de chaque ligne avec analyse complete, qualification et email si pertinent, fichiers .md separes par prospect + recapitulatif batch. Chaque sortie doit etre personnalisee, pas de copier-coller.",
+      "files": []
+    }
+  ]
+}

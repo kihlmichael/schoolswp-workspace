@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "offer-to-copy", "runs": [{"id": "eval-1-google-ads-skill-with_skill", "prompt": "J'ai cr\u00e9\u00e9 une comp\u00e9tence Claude qui connecte Google Ads via MCP, r\u00e9cup\u00e8re les m\u00e9triques (CPA, ROAS, CTR, d\u00e9penses, conversions) et g\u00e9n\u00e8re un dashboard HTML interactif avec graphiques et tableau de campagnes. Public : agences et consultants marketing. Transforme \u00e7a en messages marketing.", "eval_id": 1, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Dashboard Google Ads MCP \u2014 Positionnement marketing\n\n## 1. Promesse centrale\n\nTon rapport Google Ads de la semaine, pr\u00eat en 30 secondes \u2014 sans exporter un seul fichier.\n\n---\n\n## 2. Probl\u00e8me prospect\n\nChaque semaine, le m\u00eame rituel. Tu ouvres Google Ads, tu exportes les donn\u00e9es campagne par campagne, tu colles tout dans un Google Sheet, tu construis tes graphiques \u00e0 la main, tu ajustes les colonnes, tu renommes les onglets. Une heure plus tard, tu envoies un rapport que ton client met 90 secondes \u00e0 parcourir. Et la semaine prochaine, tu recommences exactement pareil.\n\n---\n\n## 3. Pourquoi le workflow actuel ne fonctionne plus\n\n- **Temps perdu** \u2014 45 minutes \u00e0 2 heures de travail manuel pour produire un rapport qui vieillira en une semaine\n- **R\u00e9p\u00e9tition** \u2014 le m\u00eame tableau, les m\u00eames graphiques, les m\u00eames colonnes reconstruits chaque lundi matin\n- **Fragilit\u00e9** \u2014 une formule cass\u00e9e, un export mal coll\u00e9, une colonne d\u00e9cal\u00e9e : le rapport repart dans le mauvais sens\n- **Lenteur de d\u00e9cision** \u2014 tu analyses des donn\u00e9es d'hier soir avec un outil mont\u00e9 il y a 3 heures\n- **Fatigue mentale** \u2014 la mise en forme absorbe l'\u00e9nergie que tu devrais mettre dans l'analyse\n\n---\n\n## 4. La solution\n\nTu demandes le dashboard, il appara\u00eet. La connexion r\u00e9cup\u00e8re les m\u00e9triques directement depuis tes campagnes actives \u2014 CPA, ROAS, CTR, d\u00e9penses, conversions \u2014 et les affiche dans un dashboard HTML interactif avec graphiques et tableau complet. Pas d'export, pas de collage, pas de mise en forme. Tu passes de la demande au rapport exploitable en moins d'une minute.\n\n---\n\n## 5. Fonctionnalit\u00e9s \u2192 B\u00e9n\u00e9fices\n\n| Fonctionnalit\u00e9 | B\u00e9n\u00e9fice concret |\n| --- | --- |\n| Connexion directe Google Ads via MCP | Tu travailles avec les donn\u00e9es de ce matin, pas un export d'avant-hier |\n| R\u00e9cup\u00e9ration automatique CPA, ROAS, CTR, d\u00e9penses, conversions | Toutes les m\u00e9triques d\u00e9cisionnelles au m\u00eame endroit, sans aller les chercher une par une |\n| Dashboard HTML interactif | Tu envoies un lien ou un fichier \u2014 pas un tableau Sheets \u00e0 d\u00e9ziper |\n| Graphiques g\u00e9n\u00e9r\u00e9s automatiquement | Tu vois les tendances en 5 secondes, tu n'as pas \u00e0 les construire |\n| Tableau de campagnes complet | Tu compares les campagnes en un coup d'\u0153il, sans faire de tri manuel |\n| Livrable pr\u00eat \u00e0 partager | Tu transmets le rapport au client directement \u2014 sans reformatage |\n\n---\n\n## 6. Diff\u00e9renciants cl\u00e9s\n\n- **Z\u00e9ro fichier \u00e0 manipuler** \u2014 pas d'export CSV, pas de Google Sheet interm\u00e9diaire, pas de copier-coller entre onglets\n- **Donn\u00e9es fra\u00eeches \u00e0 chaque utilisation** \u2014 la connexion r\u00e9cup\u00e8re les m\u00e9triques en temps r\u00e9el, pas depuis un export vieux de 12 heures\n- **Un dashboard pr\u00e9sentable sans effort de mise en forme** \u2014 graphiques et tableau g\u00e9n\u00e9r\u00e9s directement, pas assembl\u00e9s \u00e0 la main\n- **Adaptable \u00e0 tous les comptes** \u2014 tu changes de client, tu relances, tu obtiens le m\u00eame niveau de rapport sans reconfigurer quoi que ce soit\n- **Aucune comp\u00e9tence technique requise** \u2014 une commande en langage naturel suffit pour d\u00e9clencher l'analyse\n- **Reproductible en 30 secondes** \u2014 le lundi matin, tu ne passes plus une heure \u00e0 pr\u00e9parer les chiffres avant de les lire\n\n---\n\n## 7. Messages finaux\n\n### A. Post LinkedIn\n\nTu passes combien de temps par semaine \u00e0 construire tes rapports Google Ads ?\n\nPour la plupart des consultants et agences que je croise : entre 45 minutes et 2 heures. Chaque semaine. Pour produire un tableau que le client regardera 90 secondes.\n\nExport CSV. Collage dans Sheets. Graphiques \u00e0 la main. Mise en forme. Et recommencer la semaine d'apr\u00e8s.\n\nJ'ai construit un outil qui supprime cette \u00e9tape. Il se connecte directement \u00e0 Google Ads, r\u00e9cup\u00e8re toutes les m\u00e9triques \u2014 CPA, ROAS, CTR, d\u00e9penses, conversions \u2014 et g\u00e9n\u00e8re un dashboard HTML complet avec graphiques et tableau de campagnes. En moins de 30 secondes. Sans toucher un seul fichier.\n\nLe r\u00e9sultat est directement partageable avec ton client. Pas besoin de reformater, pas besoin de mettre en forme.\n\nSi tu veux voir comment \u00e7a fonctionne, dis-le en commentaire ou envoie-moi un DM.\n\n#GoogleAds #ConsultantMarketing #Agence\n\n---\n\n### B. Landing page courte\n\n**Ton rapport Google Ads en 30 secondes. Sans exporter un seul fichier.**\n\nPour les consultants et agences qui en ont assez de passer une heure chaque semaine \u00e0 construire un tableau que personne ne lira en entier.\n\n**Le probl\u00e8me**\n\nChaque lundi, tu exportes, tu colles, tu formats, tu graphiques. Deux heures plus tard, tu envoies un rapport avec des donn\u00e9es vieilles d'hier soir. La semaine prochaine, tu recommences.\n\nCe n'est pas de l'analyse. C'est de la mise en forme.\n\n**La solution**\n\nConnecte Google Ads directement \u00e0 ton espace de travail. Demande le dashboard. Il appara\u00eet.\n\nLes m\u00e9triques \u2014 CPA, ROAS, CTR, d\u00e9penses, conversions \u2014 sont r\u00e9cup\u00e9r\u00e9es en temps r\u00e9el et affich\u00e9es dans un dashboard HTML interactif avec graphiques et tableau complet, pr\u00eat \u00e0 partager.\n\n**Ce que tu gagnes**\n\n- Z\u00e9ro export, z\u00e9ro fichier interm\u00e9diaire, z\u00e9ro mise en forme\n- Des donn\u00e9es fra\u00eeches \u00e0 chaque rapport, pas un export d'avant-hier\n- Un dashboard pr\u00e9sentable \u00e0 envoyer au client en 30 secondes\n\n**Comment \u00e7a marche**\n\n1. Tu demandes le rapport en langage naturel\n2. La connexion r\u00e9cup\u00e8re les m\u00e9triques depuis tes campagnes actives\n3. Le dashboard HTML est g\u00e9n\u00e9r\u00e9 et pr\u00eat \u00e0 partager\n\n**Acc\u00e9der \u00e0 l'outil \u2192**\n\n*Aucune configuration technique requise. Compatible avec tous les comptes Google Ads.*\n\n---\n\n### C. Pitch produit court\n\nC'est un outil qui connecte directement Google Ads \u00e0 ton espace de travail et g\u00e9n\u00e8re un dashboard HTML interactif en moins de 30 secondes. Il r\u00e9cup\u00e8re automatiquement le CPA, le ROAS, le CTR, les d\u00e9penses et les conversions de toutes tes campagnes, les affiche avec des graphiques et un tableau complet, et produit un livrable pr\u00eat \u00e0 partager avec ton client. Con\u00e7u pour les consultants et agences qui veulent arr\u00eater de passer une heure chaque semaine \u00e0 construire \u00e0 la main un rapport qu'ils pourraient avoir en 30 secondes.\n"}], "grading": {"eval_name": "eval-1-google-ads-skill", "config": "with_skill", "pass_rate": 1.0, "expectations": [{"text": "[A1] structure-7-sections", "passed": true, "evidence": "7/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": true, "evidence": "1 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "8 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: 'Tu demandes le dashboard, il appara\u00eet. La connexion r\u00e9cup\u00e8re les m\u00e9triques direc...' tech=1 benefit=1"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=886"}]}}, {"id": "eval-1-google-ads-skill-without_skill", "prompt": "J'ai cr\u00e9\u00e9 une comp\u00e9tence Claude qui connecte Google Ads via MCP, r\u00e9cup\u00e8re les m\u00e9triques (CPA, ROAS, CTR, d\u00e9penses, conversions) et g\u00e9n\u00e8re un dashboard HTML interactif avec graphiques et tableau de campagnes. Public : agences et consultants marketing. Transforme \u00e7a en messages marketing.", "eval_id": 1, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Positionnement marketing \u2014 Google Ads MCP Dashboard\n\n## 1. Promesse centrale\n\n**Transforme tes donn\u00e9es Google Ads en dashboard interactif en quelques secondes \u2014 sans exporter, sans bricoler Excel, sans attendre le rapport du lundi matin.**\n\n---\n\n## 2. Probl\u00e8me prospect\n\nTu g\u00e8res des campagnes Google Ads pour tes clients. Chaque semaine, c'est le m\u00eame rituel :\n\n- Connexion \u00e0 l'interface Google Ads\n- Export CSV manuel (ou pire, copier-coller)\n- Mise en forme dans Excel ou Google Sheets\n- Construction du tableau de bord pour le client\n- Explication des m\u00e9triques \u00e0 des interlocuteurs qui n'y connaissent rien\n\nR\u00e9sultat : 2 \u00e0 4 heures perdues par client et par semaine. Des rapports en retard. Des dashboards qui ne se mettent pas \u00e0 jour. Des clients qui relancent sur des chiffres que tu as d\u00e9j\u00e0 dans la t\u00eate \u2014 mais pas encore \u00e0 l'\u00e9cran.\n\nLe vrai probl\u00e8me : tu passes plus de temps \u00e0 formater des donn\u00e9es qu'\u00e0 les analyser et optimiser.\n\n---\n\n## 3. Solution\n\nUne comp\u00e9tence Claude connect\u00e9e directement \u00e0 Google Ads via MCP (Model Context Protocol).\n\nTu donnes acc\u00e8s \u00e0 tes campagnes. Claude r\u00e9cup\u00e8re les m\u00e9triques en temps r\u00e9el \u2014 CPA, ROAS, CTR, d\u00e9penses, conversions \u2014 et g\u00e9n\u00e8re automatiquement un dashboard HTML interactif : graphiques d'\u00e9volution, tableau de campagnes, vue synth\u00e9tique pr\u00eate \u00e0 partager.\n\nZ\u00e9ro export. Z\u00e9ro mise en forme. Z\u00e9ro bricolage.\n\n---\n\n## 4. B\u00e9n\u00e9fices concrets\n\n| Avant | Apr\u00e8s |\n|---|---|\n| 2-4h de reporting par client | Dashboard g\u00e9n\u00e9r\u00e9 en moins de 60 secondes |\n| Exports CSV manuels | Connexion directe via MCP |\n| Fichiers Excel \u00e0 maintenir | HTML interactif, toujours \u00e0 jour |\n| M\u00e9triques dispers\u00e9es | CPA, ROAS, CTR, d\u00e9penses, conversions centralis\u00e9s |\n| Rapport statique PDF | Graphiques dynamiques partageables |\n\n**Gains directs :**\n- Temps r\u00e9cup\u00e9r\u00e9 sur le reporting = temps r\u00e9investi sur l'optimisation\n- Livrable client plus professionnel et visuel\n- R\u00e9activit\u00e9 augment\u00e9e : un dashboard en 1 minute si le client rappelle\n- Scalabilit\u00e9 : le m\u00eame processus pour 5 clients ou 50\n\n---\n\n## 5. Diff\u00e9renciants\n\n- **Connexion native MCP** \u2014 pas un connecteur tiers \u00e0 maintenir, pas d'API key bricol\u00e9e : Claude interroge Google Ads directement\n- **Dashboard HTML autonome** \u2014 livrable qui fonctionne sans outil suppl\u00e9mentaire, partageable par simple lien ou pi\u00e8ce jointe\n- **M\u00e9triques business, pas techniques** \u2014 CPA, ROAS, conversions : ce que le client veut voir, pas ce que l'interface affiche par d\u00e9faut\n- **Aucun interm\u00e9diaire** \u2014 pas de Zapier, pas de Make, pas de Google Looker Studio \u00e0 configurer\n- **S'int\u00e8gre dans Claude Code** \u2014 si tu utilises d\u00e9j\u00e0 Claude Code, tu actives la comp\u00e9tence et tu l'as imm\u00e9diatement dans ton workflow\n\n---\n\n## 6. Post LinkedIn\n\nJe viens de connecter Claude directement \u00e0 Google Ads.\n\nR\u00e9sultat : un dashboard HTML interactif g\u00e9n\u00e9r\u00e9 en moins d'une minute, avec CPA, ROAS, CTR, d\u00e9penses et conversions \u2014 sans toucher \u00e0 Excel, sans exporter un seul fichier.\n\nConcr\u00e8tement, voil\u00e0 ce que \u00e7a change pour une agence ou un consultant :\n\n\u2192 Fin des exports CSV manuels\n\u2192 Fin du bricolage Google Sheets du lundi matin\n\u2192 Fin des dashboards statiques que personne ne comprend\n\n\u00c0 la place : Claude r\u00e9cup\u00e8re les m\u00e9triques en temps r\u00e9el via MCP, les analyse et g\u00e9n\u00e8re un tableau de bord visuel pr\u00eat \u00e0 partager avec le client.\n\nJ'ai construit \u00e7a comme une comp\u00e9tence Claude Code. Tu l'actives, tu donnes acc\u00e8s \u00e0 tes campagnes, et c'est termin\u00e9. Le reporting devient une t\u00e2che de 60 secondes.\n\nLe temps gagn\u00e9 ? R\u00e9investi sur l'optimisation des campagnes \u2014 l\u00e0 o\u00f9 tu cr\u00e9es vraiment de la valeur.\n\nSi tu g\u00e8res de la pub pour des clients et que tu passes encore des heures sur le reporting, ce n'est plus une fatalit\u00e9.\n\n---\n\n## 7. Landing page courte\n\n**Tu passes des heures \u00e0 formater tes rapports Google Ads ?**\n\nC'est termin\u00e9.\n\n### Google Ads MCP Dashboard \u2014 le reporting automatique pour agences et consultants\n\nConnecte Claude \u00e0 Google Ads. G\u00e9n\u00e8re ton dashboard en 60 secondes.\n\n**Ce que tu obtiens :**\n- Dashboard HTML interactif avec graphiques d'\u00e9volution\n- Tableau de campagnes : CPA, ROAS, CTR, d\u00e9penses, conversions\n- Vue synth\u00e9tique pr\u00eate \u00e0 partager avec ton client\n- Mise \u00e0 jour \u00e0 la demande, sans export, sans manipulation\n\n**Comment \u00e7a marche :**\n1. Tu actives la comp\u00e9tence dans Claude Code\n2. Tu connectes ton compte Google Ads via MCP\n3. Claude r\u00e9cup\u00e8re les m\u00e9triques et g\u00e9n\u00e8re le dashboard\n\n**Pour qui :**\nAgences Google Ads, consultants marketing, freelances en acquisition payante.\n\n**Ce que tu arr\u00eates de faire :**\nExports CSV. Mise en forme Excel. Rapports en retard. Dashboards illisibles.\n\n**Ce que tu commences \u00e0 faire :**\nAnalyser. Optimiser. Livrer vite. Scaler.\n\n*Fonctionne avec Claude Code + acc\u00e8s Google Ads MCP*\n\n---\n\n## 8. Pitch produit court\n\n**Google Ads MCP Dashboard \u2014 pour Claude Code**\n\nLe reporting Google Ads automatis\u00e9 pour agences et consultants.\n\nTu connectes Claude \u00e0 Google Ads via MCP. En une commande, tu obtiens un dashboard HTML interactif avec toutes les m\u00e9triques qui comptent : CPA, ROAS, CTR, d\u00e9penses, conversions \u2014 avec graphiques et tableau de campagnes.\n\nPlus d'export manuel. Plus de fichiers Excel \u00e0 maintenir. Plus de rapports en retard.\n\nUn dashboard professionnel en moins de 60 secondes, pr\u00eat \u00e0 envoyer au client.\n\nId\u00e9al si tu g\u00e8res plusieurs comptes et que le reporting te co\u00fbte 2 \u00e0 4 heures par semaine et par client. \u00c0 cette cadence, c'est la premi\u00e8re chose \u00e0 automatiser.\n\n**Format :** comp\u00e9tence Claude Code (skill MCP)\n**Pr\u00e9requis :** Claude Code + acc\u00e8s Google Ads\n**Public :** agences, consultants, freelances en acquisition payante\n"}], "grading": {"eval_name": "eval-1-google-ads-skill", "config": "without_skill", "pass_rate": 1.0, "expectations": [{"text": "[A1] structure-7-sections", "passed": true, "evidence": "7/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": true, "evidence": "1 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "7 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: '**Gains directs :**...' tech=0 benefit=0"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=967"}]}}, {"id": "eval-2-plugin-landing-page-with_skill", "prompt": "J'ai d\u00e9velopp\u00e9 un plugin WordPress qui automatise la cr\u00e9ation de landing pages affili\u00e9es \u00e0 partir d'une URL produit. Il scrape la page, extrait les features, g\u00e9n\u00e8re le copy avec Claude, et cr\u00e9e la page dans Kadence Blocks. Public : blogueurs WordPress qui mon\u00e9tisent par l'affiliation. Fais-moi le marketing.", "eval_id": 2, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Plugin Landing Page Affili\u00e9e \u2014 Positionnement marketing\n\n## 1. Promesse centrale\n\nColle une URL produit, obtiens une landing page affili\u00e9e compl\u00e8te dans WordPress \u2014 r\u00e9dig\u00e9e, mise en page, pr\u00eate \u00e0 publier.\n\n---\n\n## 2. Probl\u00e8me prospect\n\nTu trouves un plugin WordPress \u00e0 promouvoir. Tu t'installes, tu ouvres Kadence, et tu passes les deux heures suivantes \u00e0 r\u00e9diger une accroche, structurer les arguments, formater les blocs, trouver les bons CTA. Puis tu recommences pour le prochain produit. Chaque landing page te co\u00fbte une demi-journ\u00e9e \u2014 avant m\u00eame de savoir si elle convertit.\n\n---\n\n## 3. Pourquoi le workflow actuel ne fonctionne plus\n\n- **Temps perdu** \u2014 une landing page affili\u00e9e s\u00e9rieuse prend 2 \u00e0 4 heures de r\u00e9daction + mise en page\n- **R\u00e9p\u00e9tition** \u2014 tu refais les m\u00eames \u00e9tapes pour chaque produit : lire la page officielle, extraire les arguments, r\u00e9diger, int\u00e9grer\n- **Fragilit\u00e9** \u2014 le copy que tu \u00e9cris \u00e0 la main manque souvent les arguments cl\u00e9s cach\u00e9s dans la page produit\n- **Fatigue mentale** \u2014 passer de la lecture d'une page produit \u00e0 la r\u00e9daction d'un argumentaire, puis \u00e0 Kadence Blocks, \u00e9puise avant m\u00eame de penser \u00e0 la distribution\n- **Lenteur** \u2014 pendant que tu construis ta page, l'opportunit\u00e9 affiliation refroidit\n\n---\n\n## 4. La solution\n\nTu colles l'URL du produit que tu veux promouvoir. Le plugin analyse la page, identifie les fonctionnalit\u00e9s et arguments forts, r\u00e9dige un argumentaire orient\u00e9 conversion, et cr\u00e9e la landing page directement dans Kadence Blocks. En moins de cinq minutes, tu as une page structur\u00e9e, r\u00e9dig\u00e9e et publiable \u2014 sans ouvrir un \u00e9diteur de texte.\n\n---\n\n## 5. Fonctionnalit\u00e9s \u2192 B\u00e9n\u00e9fices\n\n| Fonctionnalit\u00e9 | B\u00e9n\u00e9fice concret |\n| --- | --- |\n| Scraping automatique de la page produit | Tu ne passes plus 30 minutes \u00e0 lire et prendre des notes sur le produit |\n| Extraction des features cl\u00e9s | Les arguments que tu aurais oubli\u00e9 de mentionner sont d\u00e9j\u00e0 dans ta page |\n| G\u00e9n\u00e9ration du copy avec Claude | Tu obtiens un texte structur\u00e9, orient\u00e9 conversion, sans \u00e9crire une ligne |\n| Cr\u00e9ation de page dans Kadence Blocks | Tu n'ouvres pas l'\u00e9diteur \u2014 la mise en page est d\u00e9j\u00e0 faite |\n| Structure landing page compl\u00e8te | Accroche, b\u00e9n\u00e9fices, CTA \u2014 dans l'ordre qui convertit |\n| Workflow en une seule action | Tu peux cr\u00e9er une landing page par produit en moins de 5 minutes |\n\n---\n\n## 6. Diff\u00e9renciants cl\u00e9s\n\n- Tu ne pars pas d'une page blanche \u2014 la page produit existante devient ton brief automatiquement\n- Le copy est g\u00e9n\u00e9r\u00e9 \u00e0 partir des vrais arguments du produit, pas d'un template g\u00e9n\u00e9rique\n- La page s'int\u00e8gre directement dans Kadence Blocks \u2014 pas de copier-coller, pas de reformatage\n- Tu gardes le contr\u00f4le : tu relances ou retouches depuis WordPress, sans quitter ton environnement de travail\n- Aucune comp\u00e9tence en copywriting requise \u2014 le plugin fait la traduction du technique vers le commercial\n- Le temps entre \"j'ai trouv\u00e9 un produit \u00e0 promouvoir\" et \"ma page est en ligne\" passe de plusieurs heures \u00e0 quelques minutes\n\n---\n\n## 7. Messages finaux\n\n### A. Post LinkedIn\n\nTu veux mon\u00e9tiser ton blog WordPress par l'affiliation, mais cr\u00e9er une landing page s\u00e9rieuse te prend une demi-journ\u00e9e ?\n\nLire la page produit. Prendre des notes. R\u00e9diger une accroche. Trouver les bons arguments. Tout formater dans Kadence Blocks. C'est long, r\u00e9p\u00e9titif \u2014 et tu le refais \u00e0 chaque nouveau produit.\n\nJ'ai construit un plugin WordPress qui automatise tout \u00e7a. Tu colles une URL produit. Il scrape la page, extrait les arguments cl\u00e9s, g\u00e9n\u00e8re le copy, et cr\u00e9e la landing page directement dans Kadence Blocks.\n\nR\u00e9sultat : une page affili\u00e9e structur\u00e9e et r\u00e9dig\u00e9e en moins de 5 minutes. Sans \u00e9crire une ligne, sans ouvrir l'\u00e9diteur.\n\nSi tu g\u00e8res un ou plusieurs blogs WordPress affili\u00e9s et que tu passes trop de temps \u00e0 cr\u00e9er tes pages de promotion \u2014 dis-moi en commentaire combien de temps \u00e7a te prend aujourd'hui.\n\n#AffiliationWordPress #BlogWordPress #Mon\u00e9tisationBlog\n\n---\n\n### B. Landing page courte\n\n**Cr\u00e9e une landing page affili\u00e9e compl\u00e8te en moins de 5 minutes.**\n\nPour chaque produit que tu veux promouvoir, tu devrais passer du temps \u00e0 convaincre \u2014 pas \u00e0 mettre en page.\n\nTu arrives sur un produit int\u00e9ressant \u00e0 promouvoir. Avant d'avoir une page en ligne, il te faut lire la documentation, extraire les arguments, r\u00e9diger un texte qui donne envie, puis tout int\u00e9grer dans Kadence Blocks bloc par bloc. Deux \u00e0 quatre heures minimum. Et tu recommences au prochain produit.\n\nColle l'URL du produit dans le plugin. Il analyse la page, r\u00e9cup\u00e8re les fonctionnalit\u00e9s importantes, g\u00e9n\u00e8re un argumentaire orient\u00e9 conversion, et construit la page dans Kadence Blocks. Tu n'\u00e9cris rien, tu ne mets rien en page.\n\n**Ce que tu obtiens :**\n- Un texte de vente bas\u00e9 sur les vrais arguments du produit\n- Une structure landing page compl\u00e8te \u2014 accroche, b\u00e9n\u00e9fices, CTA\n- Une page Kadence Blocks pr\u00eate \u00e0 publier ou \u00e0 retoucher\n\n**Comment \u00e7a marche :**\n1. Tu installes le plugin sur ton WordPress\n2. Tu colles l'URL du produit \u00e0 promouvoir\n3. Ta landing page est cr\u00e9\u00e9e \u2014 tu la publies ou tu l'ajustes\n\n**[T\u00e9l\u00e9charger le plugin]**\n*Compatible WordPress 6.x et Kadence Blocks. Installation en 2 minutes.*\n\n---\n\n### C. Pitch produit court\n\nC'est un plugin WordPress pour les blogueurs qui mon\u00e9tisent par l'affiliation. Tu colles l'URL d'un produit \u00e0 promouvoir, il analyse la page, g\u00e9n\u00e8re le copy et cr\u00e9e la landing page directement dans Kadence Blocks. Ce qui prenait 3 heures \u2014 lecture, r\u00e9daction, mise en page \u2014 prend maintenant moins de 5 minutes. Si tu g\u00e8res un blog affili\u00e9 WordPress et que la cr\u00e9ation de tes pages de promotion te freine, c'est fait pour toi.\n"}], "grading": {"eval_name": "eval-2-plugin-landing-page", "config": "with_skill", "pass_rate": 1.0, "expectations": [{"text": "[A1] structure-7-sections", "passed": true, "evidence": "7/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": true, "evidence": "1 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "8 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: 'Tu colles l'URL du produit que tu veux promouvoir. Le plugin analyse la page, id...' tech=0 benefit=2"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=880"}]}}, {"id": "eval-2-plugin-landing-page-without_skill", "prompt": "J'ai d\u00e9velopp\u00e9 un plugin WordPress qui automatise la cr\u00e9ation de landing pages affili\u00e9es \u00e0 partir d'une URL produit. Il scrape la page, extrait les features, g\u00e9n\u00e8re le copy avec Claude, et cr\u00e9e la page dans Kadence Blocks. Public : blogueurs WordPress qui mon\u00e9tisent par l'affiliation. Fais-moi le marketing.", "eval_id": 2, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Positionnement marketing \u2014 Plugin Landing Page Affili\u00e9e (WordPress + Claude + Kadence)\n\n---\n\n## 1. Document de positionnement\n\n### Promesse centrale\n\n**Tu colles une URL produit. Le plugin cr\u00e9e ta landing page affili\u00e9e en moins de 2 minutes.**\n\nScraping, copywriting IA, mise en page Kadence Blocks \u2014 tout est automatis\u00e9. Tu n'as plus qu'\u00e0 publier.\n\n---\n\n### Le probl\u00e8me du prospect\n\nTu mon\u00e9tises ton blog WordPress par l'affiliation. Tu sais que les landing pages d\u00e9di\u00e9es convertissent mieux que de simples liens dans les articles. Mais cr\u00e9er une vraie page de vente prend du temps : scraper les features du produit, r\u00e9diger l'accroche, structurer les blocs Kadence, optimiser le CTA.\n\nR\u00e9sultat : tu continues d'envoyer du trafic vers des articles g\u00e9n\u00e9riques, et tu laisses des commissions sur la table.\n\nLa vraie douleur n'est pas le manque de comp\u00e9tences. C'est le ratio temps/revenu. Passer 3 heures sur une landing page pour un produit \u00e0 5 % de commission, \u00e7a n'a aucun sens \u2014 surtout quand tu g\u00e8res 20, 50 ou 100 produits affili\u00e9s.\n\n---\n\n### La solution\n\nUn plugin WordPress natif qui automatise toute la cha\u00eene :\n\n1. Tu entres l'URL du produit affili\u00e9\n2. Le plugin scrape la page (features, b\u00e9n\u00e9fices, prix, visuels)\n3. Claude g\u00e9n\u00e8re le copy de vente adapt\u00e9 \u00e0 ton audience\n4. Le plugin cr\u00e9e la page directement dans Kadence Blocks, pr\u00eate \u00e0 publier\n\nPas de nouveau outil externe. Pas d'apprentissage. Tout se passe dans ton WordPress, dans l'interface que tu connais d\u00e9j\u00e0.\n\n---\n\n### B\u00e9n\u00e9fices\n\n**Gain de temps direct** \u2014 Ce qui prenait 2 \u00e0 3 heures se fait en moins de 2 minutes. Tu peux cr\u00e9er une landing page affili\u00e9e par programme, pas par courage.\n\n**Copy de qualit\u00e9 \u00e0 chaque fois** \u2014 Claude extrait les vrais arguments de vente du produit \u2014 pas un texte g\u00e9n\u00e9rique. L'accroche, les b\u00e9n\u00e9fices, les objections, le CTA : tout est structur\u00e9 pour convertir.\n\n**Volume impossible \u00e0 la main** \u2014 50 produits affili\u00e9s = 50 landing pages en une matin\u00e9e. Tu passes de blogueur qui place des liens \u00e0 \u00e9diteur qui structure ses revenus.\n\n**Int\u00e9gration native Kadence Blocks** \u2014 La page g\u00e9n\u00e9r\u00e9e utilise tes blocs Kadence existants. Elle s'int\u00e8gre dans ton design, respecte ta charte graphique, sans manipulation de code.\n\n**Contr\u00f4le total** \u2014 Le plugin g\u00e9n\u00e8re, tu valides. Tu gardes la main sur le copy final avant publication.\n\n---\n\n### Diff\u00e9renciants\n\n| Crit\u00e8re | Ce plugin | Solution manuelle | G\u00e9n\u00e9rateurs IA g\u00e9n\u00e9riques |\n|---|---|---|---|\n| Temps par page | < 2 min | 2-3 heures | 30-45 min |\n| Int\u00e9gration WordPress native | Oui | N/A | Non |\n| G\u00e9n\u00e9ration Kadence Blocks | Oui | Manuelle | Non |\n| Copy bas\u00e9 sur le vrai produit | Oui (scraping) | Selon l'effort | Non (prompt manuel) |\n| Adapt\u00e9 \u00e0 l'affiliation | Oui | Selon comp\u00e9tences | Partiel |\n\n**Positionnement en une phrase :** Le seul plugin WordPress qui transforme n'importe quelle URL produit en landing page affili\u00e9e compl\u00e8te, g\u00e9n\u00e9r\u00e9e par IA et d\u00e9ploy\u00e9e dans Kadence Blocks \u2014 en moins de 2 minutes.\n\n---\n\n## 2. Post LinkedIn\n\nJ'ai arr\u00eat\u00e9 de perdre des heures \u00e0 cr\u00e9er des landing pages affili\u00e9es.\n\nPendant longtemps, j'avais le m\u00eame probl\u00e8me que beaucoup de blogueurs WordPress :\n\nJe savais que les landing pages d\u00e9di\u00e9es convertissent mieux que des liens dans les articles. Mais les cr\u00e9er une par une ? 2 heures minimum. Scraper les infos, r\u00e9diger le copy, construire les blocs dans Kadence...\n\nAlors je ne le faisais pas. Et je laissais des commissions sur la table.\n\nJ'ai d\u00e9velopp\u00e9 un plugin qui r\u00e8gle \u00e7a.\n\nTu colles l'URL du produit affili\u00e9. Le plugin scrape la page, extrait les features, g\u00e9n\u00e8re le copy avec Claude, et cr\u00e9e directement la page dans Kadence Blocks.\n\nR\u00e9sultat : une landing page affili\u00e9e compl\u00e8te, dans ton WordPress, en moins de 2 minutes.\n\nPas un outil externe. Pas de prompt \u00e0 r\u00e9diger. Tout se passe dans l'interface que tu connais d\u00e9j\u00e0.\n\nJ'ai test\u00e9 sur 30 programmes affili\u00e9s diff\u00e9rents. Le gain de temps est r\u00e9el : ce que je faisais en une journ\u00e9e se fait maintenant en une heure.\n\nSi tu mon\u00e9tises un blog WordPress par l'affiliation et que tu veux produire du volume sans sacrifier la qualit\u00e9 du copy \u2014 dis-le en commentaire, je partage les d\u00e9tails.\n\n---\n\n## 3. Landing page courte\n\n**Tu mon\u00e9tises ton blog WordPress par l'affiliation.**\n**Tu sais que les landing pages d\u00e9di\u00e9es convertissent mieux.**\n**Tu n'as pas le temps d'en cr\u00e9er une pour chaque produit.**\n\n### Colle une URL. R\u00e9cup\u00e8re une landing page compl\u00e8te.\n\nEn moins de 2 minutes, le plugin :\n- Scrape la page produit (features, b\u00e9n\u00e9fices, arguments de vente)\n- G\u00e9n\u00e8re le copy avec Claude \u2014 adapt\u00e9 \u00e0 ton audience\n- Cr\u00e9e la page dans tes blocs Kadence, pr\u00eate \u00e0 publier\n\nAucun outil externe. Aucun apprentissage. Tout dans ton WordPress.\n\n**Ce que tu obtiens :** Une landing page affili\u00e9e structur\u00e9e pour convertir : accroche percutante, b\u00e9n\u00e9fices cl\u00e9s, traitement des objections, CTA optimis\u00e9. Le tout dans ton design existant, avec tes blocs Kadence habituels.\n\n**Ce que \u00e7a change concr\u00e8tement :**\n- Avant : 2 \u00e0 3 heures par landing page. Donc tu n'en cr\u00e9es pas.\n- Apr\u00e8s : moins de 2 minutes. Donc tu en cr\u00e9es pour chaque produit que tu recommandes.\n\n50 produits affili\u00e9s = 50 landing pages = une matin\u00e9e de travail.\n\n---\n\n## 4. Pitch produit court (60 secondes)\n\nSi tu mon\u00e9tises un blog WordPress par l'affiliation, tu le sais : les landing pages d\u00e9di\u00e9es convertissent mieux que des liens dans les articles. Le probl\u00e8me, c'est qu'en cr\u00e9er une prend des heures.\n\nCe plugin r\u00e8gle \u00e7a.\n\nTu colles l'URL du produit affili\u00e9 dans ton WordPress. Le plugin scrape la page, extrait les features et les arguments de vente, g\u00e9n\u00e8re le copy avec Claude IA, et cr\u00e9e automatiquement la page dans Kadence Blocks.\n\nR\u00e9sultat : une landing page affili\u00e9e compl\u00e8te \u2014 accroche, b\u00e9n\u00e9fices, CTA \u2014 en moins de 2 minutes. Dans ton design, dans ton WordPress, sans manipulation de code.\n\nTu valides, tu publies. C'est tout.\n\nPour les blogueurs qui g\u00e8rent plusieurs dizaines de programmes affili\u00e9s, c'est la diff\u00e9rence entre une strat\u00e9gie qui rapporte et des liens qui dorment dans des articles.\n"}], "grading": {"eval_name": "eval-2-plugin-landing-page", "config": "without_skill", "pass_rate": 0.75, "expectations": [{"text": "[A1] structure-7-sections", "passed": false, "evidence": "4/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": false, "evidence": "4 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "7 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: 'Si tu mon\u00e9tises un blog WordPress par l'affiliation, tu le sais : les landing pa...' tech=0 benefit=1"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=1148"}]}}, {"id": "eval-3-formation-fluentcrm-with_skill", "prompt": "Je lance une formation FluentCRM de 14 modules avec vid\u00e9os HeyGen. Elle couvre de la configuration initiale aux s\u00e9quences email avanc\u00e9es. C'est la seule formation FR structur\u00e9e sur FluentCRM. Public : freelances WordPress et petites agences. J'ai besoin du positionnement marketing.", "eval_id": 3, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Formation FluentCRM \u2014 Positionnement marketing\n\n## 1. Promesse centrale\n\nMa\u00eetrise FluentCRM de A \u00e0 Z en 14 modules \u2014 et envoie ta premi\u00e8re s\u00e9quence email automatis\u00e9e cette semaine.\n\n## 2. Probl\u00e8me prospect\n\nTu as install\u00e9 FluentCRM. Tu as regard\u00e9 l'interface. Tu as cliqu\u00e9 sur quelques menus. Et tu t'es arr\u00eat\u00e9 l\u00e0. Parce qu'il n'existe aucune ressource s\u00e9rieuse en fran\u00e7ais pour aller plus loin. Alors tu g\u00e8res tes contacts \u00e0 la main, tu envoies tes emails un par un, et tu laisses l'outil dormir alors qu'il pourrait travailler \u00e0 ta place 24h/24.\n\n## 3. Pourquoi le workflow actuel ne fonctionne plus\n\n- **Temps perdu** \u2014 configurer FluentCRM sans m\u00e9thode prend 3 \u00e0 4 fois plus de temps qu'avec un parcours guid\u00e9\n- **Sous-utilisation** \u2014 sans formation, la plupart des utilisateurs n'exploitent que les listes de contacts et ratent l'automatisation, les tags, les funnels\n- **R\u00e9p\u00e9tition** \u2014 chaque email de bienvenue, chaque relance, chaque s\u00e9quence post-achat est envoy\u00e9e \u00e0 la main alors qu'elle pourrait \u00eatre automatis\u00e9e une fois pour toutes\n- **Fragilit\u00e9** \u2014 les configurations bricol\u00e9es cassent au premier changement de plugin ou de th\u00e8me\n- **Blocage documentaire** \u2014 la documentation officielle est en anglais, fragment\u00e9e, sans fil conducteur p\u00e9dagogique\n\n## 4. La solution\n\nTu suis les 14 modules dans l'ordre. Chaque vid\u00e9o couvre une \u00e9tape concr\u00e8te : configuration, import de contacts, segmentation, s\u00e9quences, automatisations. Tu regardes, tu appliques, tu passes au suivant. \u00c0 la fin du parcours, FluentCRM est configur\u00e9, tes premi\u00e8res automatisations tournent, et tu sais comment les faire \u00e9voluer.\n\n## 5. Fonctionnalit\u00e9s \u2192 B\u00e9n\u00e9fices\n\n| Fonctionnalit\u00e9 | B\u00e9n\u00e9fice concret |\n| --- | --- |\n| 14 modules structur\u00e9s de la configuration aux s\u00e9quences avanc\u00e9es | Tu progresses sans jamais chercher quelle \u00e9tape vient apr\u00e8s l'autre |\n| Vid\u00e9os HeyGen \u2014 pr\u00e9sentations claires et professionnelles | Tu absorbes l'information vite, sans perdre le fil sur une longue explication textuelle |\n| Couverture compl\u00e8te : tags, listes, funnels, automatisations | Tu ne tombes pas sur une fonctionnalit\u00e9 cl\u00e9 que la formation a oubli\u00e9e de traiter |\n| Seule formation FR structur\u00e9e sur FluentCRM | Tu comprends du premier coup \u2014 pas besoin de traduire mentalement ni chercher un synonyme |\n| Parcours du d\u00e9butant \u00e0 l'avanc\u00e9 dans le m\u00eame cursus | Tu n'as pas \u00e0 changer de ressource en cours de route quand tu ma\u00eetrises les bases |\n| Applicable directement \u00e0 des projets clients WordPress | Tu factures la mise en place FluentCRM \u00e0 tes clients d\u00e8s la fin de la formation |\n\n## 6. Diff\u00e9renciants cl\u00e9s\n\n- Seule formation en fran\u00e7ais qui couvre FluentCRM de z\u00e9ro \u00e0 l'automatisation avanc\u00e9e en un parcours coh\u00e9rent\n- Structure en 14 modules ordonn\u00e9s \u2014 pas une collection de tutoriels \u00e9pars \u00e0 assembler soi-m\u00eame\n- Vid\u00e9os produites avec HeyGen pour une qualit\u00e9 visuelle et narrative professionnelle, sans les d\u00e9fauts du screenshare amateur\n- Con\u00e7ue pour les freelances et agences WordPress qui ont des clients \u00e0 \u00e9quiper, pas seulement un usage personnel\n- Aucun pr\u00e9requis marketing \u2014 le parcours part de z\u00e9ro et monte jusqu'aux s\u00e9quences comportementales\n- Contenu applicable imm\u00e9diatement : chaque module se termine sur une action concr\u00e8te \u00e0 r\u00e9aliser dans ton installation\n\n## 7. Messages finaux\n\n### A. Post LinkedIn\n\nTu as FluentCRM sur ton WordPress. Combien de temps tu l'as vraiment utilis\u00e9 ?\n\nLa r\u00e9alit\u00e9 pour la plupart des freelances WordPress : FluentCRM est install\u00e9, activ\u00e9, et c'est tout. L'interface est dense, la doc officielle est en anglais, et il n'existe aucune formation structur\u00e9e en fran\u00e7ais pour aller plus loin.\n\nR\u00e9sultat : tes relances sont manuelles. Tes s\u00e9quences de bienvenue n'existent pas. Et tu passes \u00e0 c\u00f4t\u00e9 de l'outil le plus puissant de ton stack WordPress.\n\nJ'ai construit une formation compl\u00e8te en 14 modules pour changer \u00e7a.\n\nDe la configuration initiale aux s\u00e9quences email avanc\u00e9es \u2014 en fran\u00e7ais, avec des vid\u00e9os claires, dans l'ordre logique. Tu appliques directement sur ton installation apr\u00e8s chaque module.\n\nC'est la seule formation FR structur\u00e9e sur FluentCRM. Et tu peux la proposer \u00e0 tes clients d\u00e8s que tu l'as termin\u00e9e.\n\nLien en commentaire si tu veux d\u00e9couvrir le programme.\n\n#FluentCRM #WordPressFreelance #FormationWordPress\n\n---\n\n### B. Landing page courte\n\n**Headline**\nMa\u00eetrise FluentCRM en 14 modules \u2014 en fran\u00e7ais, du premier contact \u00e0 la premi\u00e8re s\u00e9quence automatis\u00e9e.\n\n**Sous-titre**\nLa seule formation structur\u00e9e en fran\u00e7ais sur FluentCRM, con\u00e7ue pour les freelances WordPress et les petites agences.\n\n**Probl\u00e8me**\nFluentCRM est install\u00e9 sur ton WordPress. Mais tu n'as jamais d\u00e9pass\u00e9 la page des contacts. La documentation officielle est en anglais et sans fil conducteur. Les tutoriels YouTube traitent chaque fonction en silo. Et monter une vraie s\u00e9quence email automatis\u00e9e reste une zone floue.\n\n**Solution**\nLa formation FluentCRM schoolsWP couvre le parcours complet en 14 modules vid\u00e9o. Tu pars de la configuration initiale, tu passes par la segmentation et les tags, tu arrives aux s\u00e9quences avanc\u00e9es et aux automatisations comportementales. Chaque module est autonome et actionnable dans la journ\u00e9e.\n\n**B\u00e9n\u00e9fices**\n- Tu configures FluentCRM correctement du premier coup \u2014 plus de bricolage\n- Tu mets en place tes premi\u00e8res automatisations sans toucher \u00e0 une ligne de code\n- Tu proposes la mise en place FluentCRM comme service \u00e0 tes clients WordPress\n\n**Comment \u00e7a marche**\n1. Tu acc\u00e8des au programme et tu suis les modules dans l'ordre\n2. Apr\u00e8s chaque vid\u00e9o, tu appliques directement sur ton installation\n3. \u00c0 la fin du parcours, tes premi\u00e8res s\u00e9quences tournent en autonomie\n\n**CTA**\nAcc\u00e9der \u00e0 la formation \u2192\n*Contenu en fran\u00e7ais. Applicable imm\u00e9diatement. Aucun pr\u00e9requis marketing.*\n\n---\n\n### C. Pitch produit court\n\nLa formation FluentCRM schoolsWP est un parcours complet en 14 modules vid\u00e9o pour ma\u00eetriser FluentCRM sur WordPress \u2014 de la configuration initiale aux s\u00e9quences email automatis\u00e9es. Elle s'adresse aux freelances WordPress et petites agences qui veulent exploiter l'outil en entier, pas seulement stocker des contacts. C'est la seule formation structur\u00e9e en fran\u00e7ais sur FluentCRM : tu n'as pas \u00e0 assembler des tutoriels \u00e9pars ni \u00e0 lutter contre une documentation en anglais. Tu suis, tu appliques, et tu peux proposer la mise en place FluentCRM comme service \u00e0 tes clients d\u00e8s la fin du parcours.\n"}], "grading": {"eval_name": "eval-3-formation-fluentcrm", "config": "with_skill", "pass_rate": 1.0, "expectations": [{"text": "[A1] structure-7-sections", "passed": true, "evidence": "7/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": true, "evidence": "1 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "8 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: 'Tu suis les 14 modules dans l'ordre. Chaque vid\u00e9o couvre une \u00e9tape concr\u00e8te : co...' tech=0 benefit=1"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=954"}]}}, {"id": "eval-3-formation-fluentcrm-without_skill", "prompt": "Je lance une formation FluentCRM de 14 modules avec vid\u00e9os HeyGen. Elle couvre de la configuration initiale aux s\u00e9quences email avanc\u00e9es. C'est la seule formation FR structur\u00e9e sur FluentCRM. Public : freelances WordPress et petites agences. J'ai besoin du positionnement marketing.", "eval_id": 3, "outputs": [{"name": "positionnement.md", "type": "text", "content": "# Positionnement marketing \u2014 Formation FluentCRM\n\n---\n\n## 1. Analyse de la situation\n\n### Probl\u00e8me prospect\n\nTu utilises FluentCRM mais tu rames. Tu passes des heures \u00e0 chercher sur YouTube en anglais, \u00e0 t\u00e2tonner dans l'interface, \u00e0 copier-coller des tutos incomplets. R\u00e9sultat : ton CRM est \u00e0 moiti\u00e9 configur\u00e9, tes s\u00e9quences email ne partent pas comme pr\u00e9vu, et tu n'oses pas promettre des automatisations \u00e0 tes clients parce que tu n'es pas s\u00fbr de toi.\n\nCe n'est pas un probl\u00e8me de comp\u00e9tence \u2014 c'est un probl\u00e8me de m\u00e9thode et de ressources en fran\u00e7ais.\n\n**Douleurs concr\u00e8tes :**\n- Pas de formation structur\u00e9e en fran\u00e7ais sur FluentCRM\n- Documentation officielle en anglais, incompl\u00e8te, sans cas pratiques\n- Temps perdu \u00e0 assembler des infos \u00e9parpill\u00e9es\n- Impossible de facturer des missions CRM avec confiance\n- Clients qui attendent pendant que tu exp\u00e9rimentes\n\n### Profil prospect\n\n- Freelance WordPress ou petite agence (1-5 personnes)\n- Propose ou veut proposer des missions d'automatisation email / CRM\n- A install\u00e9 FluentCRM mais ne l'utilise pas \u00e0 100%\n- Pr\u00e9f\u00e8re apprendre en fran\u00e7ais, de fa\u00e7on structur\u00e9e et actionnable\n- Valorise son temps : pas envie de chercher pendant des heures\n\n---\n\n## 2. Positionnement\n\n### Promesse principale\n\n**Ma\u00eetrise FluentCRM de A \u00e0 Z en fran\u00e7ais \u2014 et facture tes premi\u00e8res missions CRM d\u00e8s la fin de la formation.**\n\n### Sous-promesse\n\n14 modules vid\u00e9o structur\u00e9s. De la configuration initiale aux s\u00e9quences email avanc\u00e9es. La seule formation francophone compl\u00e8te sur FluentCRM.\n\n### Positionnement en une phrase\n\nLa formation FluentCRM est la premi\u00e8re ressource en fran\u00e7ais qui te donne une ma\u00eetrise op\u00e9rationnelle compl\u00e8te de FluentCRM \u2014 pour que tu puisses configurer, automatiser et livrer des projets CRM \u00e0 tes clients sans jamais chercher ailleurs.\n\n---\n\n## 3. B\u00e9n\u00e9fices\n\n**Fonctionnels :**\n- Configurer FluentCRM correctement d\u00e8s le d\u00e9part (listes, tags, segmentation)\n- Cr\u00e9er des s\u00e9quences email automatis\u00e9es qui fonctionnent r\u00e9ellement\n- Connecter FluentCRM \u00e0 WooCommerce, LMS, formulaires et autres plugins\n- Livrer des projets CRM cl\u00e9-en-main \u00e0 tes clients\n\n**Professionnels :**\n- Ajouter une nouvelle prestation factur\u00e9e \u00e0 ton catalogue\n- R\u00e9duire le temps de setup sur chaque projet client\n- Facturer plus cher gr\u00e2ce \u00e0 une expertise d\u00e9montr\u00e9e\n\n**\u00c9motionnels :**\n- Arr\u00eater de subir FluentCRM et commencer \u00e0 le ma\u00eetriser\n- Avoir une source de v\u00e9rit\u00e9 unique, en fran\u00e7ais, toujours disponible\n- Ne plus avoir peur de proposer des missions email automation\n\n---\n\n## 4. Diff\u00e9renciants\n\n| Crit\u00e8re | Formation FluentCRM | Alternatives |\n|---|---|---|\n| Langue | Fran\u00e7ais int\u00e9gral | Anglais (YouTube officiel, docs) |\n| Structure | 14 modules progressifs | Tutos \u00e9parpill\u00e9s, sans fil conducteur |\n| Profondeur | Config initiale \u2192 s\u00e9quences avanc\u00e9es | Surface ou tr\u00e8s basique |\n| Cible | Freelances WP et agences | Grand public ou d\u00e9veloppeurs |\n| Disponibilit\u00e9 | Formation \u00e0 vie, acc\u00e8s imm\u00e9diat | Contenu qui dispara\u00eet |\n| Vid\u00e9os | HeyGen \u2014 claires, rythm\u00e9es, pro | Variable, souvent amateur |\n\n**Argument massue :** Il n'existe aucune autre formation structur\u00e9e en fran\u00e7ais sur FluentCRM. C'est soit tu prends celle-ci, soit tu continues \u00e0 improviser.\n\n---\n\n## 5. Formats de contenu marketing\n\n### A. Post LinkedIn\n\n**FluentCRM, c'est le CRM WordPress le plus puissant du march\u00e9.**\n\nEt il n'existe aucune formation structur\u00e9e en fran\u00e7ais pour l'apprendre.\n\nJusqu'\u00e0 maintenant.\n\nJ'ai pass\u00e9 des mois \u00e0 d\u00e9cortiquer FluentCRM de fond en comble. Configuration initiale, gestion des listes et segments, automatisations, s\u00e9quences email avanc\u00e9es, int\u00e9grations WooCommerce et LMS.\n\nLe r\u00e9sultat : une formation de 14 modules vid\u00e9o, 100% en fran\u00e7ais, pens\u00e9e pour les freelances WordPress et les petites agences qui veulent proposer des missions CRM \u00e0 leurs clients \u2014 sans passer des heures \u00e0 chercher sur YouTube en anglais.\n\nCe que tu vas pouvoir faire apr\u00e8s :\n- Configurer FluentCRM correctement d\u00e8s le d\u00e9part\n- Livrer des projets email automation cl\u00e9-en-main\n- Facturer une nouvelle prestation \u00e0 tes clients\n\nSi tu veux ma\u00eetriser FluentCRM en fran\u00e7ais, c'est la seule formation qui existe.\n\nLe lien en commentaire.\n\n---\n\n### B. Landing page courte\n\n**Ma\u00eetrise FluentCRM en fran\u00e7ais \u2014 enfin.**\n\n*La premi\u00e8re formation structur\u00e9e sur FluentCRM pour les freelances WordPress et les agences.*\n\nTu utilises FluentCRM, mais tu ne l'exploites pas vraiment. Tu cherches sur YouTube en anglais. Tu copies des tutos incomplets. Tu n'oses pas promettre des automatisations \u00e0 tes clients parce que tu n'es pas s\u00fbr du r\u00e9sultat.\n\nCe n'est pas un probl\u00e8me de comp\u00e9tence. C'est un probl\u00e8me de ressources.\n\n**Il n'existe aucune formation compl\u00e8te en fran\u00e7ais sur FluentCRM. Jusqu'\u00e0 aujourd'hui.**\n\n**14 modules. De z\u00e9ro \u00e0 expert.**\n- Module 1-3 \u2014 Configuration initiale, listes, tags, segmentation\n- Module 4-7 \u2014 Automatisations, triggers, conditions avanc\u00e9es\n- Module 8-11 \u2014 S\u00e9quences email, copywriting CRM, tests A/B\n- Module 12-14 \u2014 Int\u00e9grations WooCommerce, LMS, cas clients complets\n\nVid\u00e9os claires, rythm\u00e9es, directement actionnables. Pas de blabla.\n\nConfigurer FluentCRM en 2 heures au lieu de 2 jours. Livrer des projets CRM \u00e0 tes clients avec confiance. Ajouter une prestation \u00e0 fort potentiel \u00e0 ton catalogue.\n\n**[Acc\u00e9der \u00e0 la formation]** \u2014 *Acc\u00e8s imm\u00e9diat. \u00c0 vie. En fran\u00e7ais.*\n\n---\n\n### C. Pitch produit court (80 mots)\n\nLa formation FluentCRM est la premi\u00e8re formation structur\u00e9e en fran\u00e7ais sur le CRM WordPress le plus utilis\u00e9 du march\u00e9.\n\n14 modules vid\u00e9o pour passer de la configuration initiale aux s\u00e9quences email avanc\u00e9es \u2014 sans chercher sur YouTube en anglais, sans t\u00e2tonner pendant des heures.\n\nPens\u00e9e pour les freelances WordPress et les petites agences qui veulent proposer des missions CRM \u00e0 leurs clients et les livrer avec confiance.\n\nSi tu veux ma\u00eetriser FluentCRM, c'est la seule option en fran\u00e7ais qui existe.\n\n---\n\n## 6. \u00c9l\u00e9ments de r\u00e9assurance\n\n- \"14 modules progressifs \u2014 tu suis dans l'ordre ou tu vas directement au module dont tu as besoin\"\n- \"Vid\u00e9os produites avec HeyGen \u2014 claires, professionnelles, sans longueurs\"\n- \"Acc\u00e8s \u00e0 vie \u2014 tu reviens quand tu en as besoin, sur un projet client\"\n- \"Pens\u00e9 par un praticien WordPress, pas un formateur g\u00e9n\u00e9raliste\"\n\n---\n\n## 7. Objections anticip\u00e9es\n\n**\"Je peux trouver \u00e7a gratuitement sur YouTube.\"**\nEn anglais, oui. \u00c9parpill\u00e9, sans structure, sans progression logique. Cette formation te donne tout en fran\u00e7ais, en ordre, en 14 modules. Ton temps vaut plus que des heures de recherche.\n\n**\"Je ne suis pas s\u00fbr d'en avoir besoin maintenant.\"**\nSi tu proposes des missions WordPress \u00e0 des clients qui ont une liste email, FluentCRM sera sur la table. Mieux vaut \u00eatre pr\u00eat avant que le client te le demande.\n\n**\"C'est trop avanc\u00e9 pour moi.\"**\nLa formation commence \u00e0 z\u00e9ro \u2014 installation, configuration, premiers contacts. Tu n'as pas besoin de bases en CRM pour d\u00e9marrer.\n"}], "grading": {"eval_name": "eval-3-formation-fluentcrm", "config": "without_skill", "pass_rate": 0.875, "expectations": [{"text": "[A1] structure-7-sections", "passed": true, "evidence": "7/7 sections found"}, {"text": "[A2] promesse-une-phrase", "passed": false, "evidence": "5 sentence(s) detected"}, {"text": "[A3] tableau-fonctionnalites-benefices", "passed": true, "evidence": "8 table rows found"}, {"text": "[A4] 3-messages-distincts", "passed": true, "evidence": "LinkedIn=True, Landing=True, Pitch=True"}, {"text": "[A5] tutoiement-consistant", "passed": true, "evidence": "tu=True, vous=False, l'utilisateur=False"}, {"text": "[A6] zero-hype-ia", "passed": true, "evidence": "no hype words"}, {"text": "[A7] benefices-avant-technique", "passed": true, "evidence": "first line: '**Argument massue :** Il n'existe aucune autre formation structur\u00e9e en fran\u00e7ais ...' tech=0 benefit=1"}, {"text": "[A8] linkedin-structure", "passed": true, "evidence": "accroche=True, cta=True, body_length=891"}]}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "offer-to-copy", "iteration": 1, "configurations": [{"name": "with_skill", "evals": [{"eval_name": "eval-1-google-ads-skill", "pass_rate": 1.0, "tokens": 31650, "duration_seconds": 97.6, "assertions": {"A1-structure-7-sections": true, "A2-promesse-une-phrase": true, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}, {"eval_name": "eval-2-plugin-landing-page", "pass_rate": 1.0, "tokens": 31572, "duration_seconds": 92.4, "assertions": {"A1-structure-7-sections": true, "A2-promesse-une-phrase": true, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}, {"eval_name": "eval-3-formation-fluentcrm", "pass_rate": 1.0, "tokens": 34342, "duration_seconds": 142.0, "assertions": {"A1-structure-7-sections": true, "A2-promesse-une-phrase": true, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}], "aggregate": {"mean_pass_rate": 1.0, "stddev_pass_rate": 0.0, "mean_tokens": 32521, "mean_duration_seconds": 110.7}}, {"name": "without_skill", "evals": [{"eval_name": "eval-1-google-ads-skill", "pass_rate": 1.0, "tokens": 29921, "duration_seconds": 116.9, "assertions": {"A1-structure-7-sections": true, "A2-promesse-une-phrase": true, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}, {"eval_name": "eval-2-plugin-landing-page", "pass_rate": 0.75, "tokens": 27654, "duration_seconds": 82.5, "assertions": {"A1-structure-7-sections": false, "A2-promesse-une-phrase": false, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}, {"eval_name": "eval-3-formation-fluentcrm", "pass_rate": 0.875, "tokens": 30632, "duration_seconds": 139.5, "assertions": {"A1-structure-7-sections": true, "A2-promesse-une-phrase": false, "A3-tableau-fonctionnalites-benefices": true, "A4-3-messages-distincts": true, "A5-tutoiement-consistant": true, "A6-zero-hype-ia": true, "A7-benefices-avant-technique": true, "A8-linkedin-structure": true}}], "aggregate": {"mean_pass_rate": 0.875, "stddev_pass_rate": 0.102, "mean_tokens": 29402, "mean_duration_seconds": 113.0}}], "delta": {"pass_rate": "+12.5%", "tokens": "+10.6%", "duration": "-2.0%"}, "analyst_observations": ["with_skill atteint 100% sur les 3 evals \u2014 structure parfaitement respect\u00e9e \u00e0 chaque fois", "without_skill \u00e9choue principalement sur A1 (structure 7 sections) et A2 (promesse en une phrase) \u2014 les deux contraintes les plus structurantes du skill", "A5 (tutoiement) et A6 (zero hype) passent partout \u2014 ces assertions ne discriminent pas entre with/without, car le prompt de base demandait d\u00e9j\u00e0 le tutoiement et le fran\u00e7ais", "Le skill co\u00fbte ~10% de tokens en plus (32K vs 29K) \u2014 overhead acceptable pour un gain de conformit\u00e9 structurelle de 100%", "Les dur\u00e9es sont comparables (~110s vs ~113s) \u2014 pas de p\u00e9nalit\u00e9 de temps avec le skill", "La vraie valeur du skill n'est pas dans les assertions binaires mais dans la qualit\u00e9 du copywriting \u2014 \u00e0 \u00e9valuer qualitativement dans le viewer"]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

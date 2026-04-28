@@ -1,10 +1,9 @@
 ---
 name: pinterest-pipeline
 description: |
-  Pipeline automatise de creation et publication de pins Pinterest pour schoolsWP.
-  Orchestre brief → Canva → export → Pinterest API → analytics.
-  Utiliser pour generer des pins, publier sur Pinterest, sync analytics, ou gerer la file de production.
-  Declencheur : "pin pinterest", "publier pin", "pipeline pinterest", "brief pin", "analytics pinterest".
+  Pipeline automatisé d'EXÉCUTION Pinterest schoolsWP (pas stratégie) : orchestration brief → Canva → export → Pinterest API → analytics. Gestion de la file de production pins (20-50 pins/semaine) et sync des analytics.
+  Utiliser ce skill quand l'utilisateur demande : "génère des pins", "publie des pins", "pipeline Pinterest", "brief pins", "analytics Pinterest", "file de production Pinterest", "batch pins Pinterest", "sync Pinterest", "exécuter production Pinterest".
+  NE PAS utiliser pour : stratégie / pilotage / organisation Pinterest (voir `pinterest-strategy`), publication multi-plateformes (voir `social-media-manager`), autres plateformes sociales.
 allowed-tools:
   - Read
   - Write
@@ -24,6 +23,8 @@ allowed-tools:
   - mcp__claude_ai_Canva__start-editing-transaction
   - mcp__claude_ai_Canva__perform-editing-operations
   - mcp__claude_ai_Canva__commit-editing-transaction
+last_reviewed: 2026-04-23
+review_interval_days: 90
 ---
 
 # Pinterest Pipeline — schoolsWP

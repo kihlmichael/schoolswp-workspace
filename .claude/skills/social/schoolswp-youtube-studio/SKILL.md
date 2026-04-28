@@ -1,18 +1,9 @@
 ---
 name: schoolswp-youtube-studio
-description: >
-  Skill de production YouTube complet pour schoolsWP. Architecture orchestrateur
-  + 5 sous-agents specialises pour produire tous les elements d'une video YouTube :
-  script, accroches, titres CTR, concepts de miniatures et SEO YouTube.
-  Declencher ce skill des que l'utilisateur mentionne "video YouTube",
-  "script video", "creer une video", "optimiser ma video", "titre YouTube",
-  "miniature YouTube", "thumbnail", "hook video", "accroche video",
-  "SEO YouTube", "description YouTube", ou toute demande liee a la production
-  de contenu video pour une chaine YouTube. Fonctionne aussi pour un element
-  isole (ex: "trouve-moi un bon titre YouTube" declenche le sous-agent
-  Title/CTR Optimizer seul). Meme si la demande ne mentionne pas explicitement
-  "YouTube", utiliser ce skill pour toute creation de contenu video pedagogique
-  WordPress.
+description: |
+  Production complète de VIDÉO YouTube LONGUE (format standard, pas Shorts) pour la chaîne schoolsWP. Architecture orchestrateur + 5 sous-agents spécialisés : script, accroches, titres CTR, brief thumbnail, SEO YouTube (titres + descriptions + tags).
+  Utiliser ce skill quand l'utilisateur veut créer/optimiser une vidéo YouTube longue, demande : "vidéo YouTube", "script vidéo", "créer une vidéo", "optimiser ma vidéo", "titre YouTube", "hook vidéo", "accroche vidéo", "SEO YouTube", "description YouTube", "tags YouTube". Fonctionne aussi pour un élément isolé (ex : "trouve-moi un bon titre YouTube" déclenche le sous-agent Title/CTR seul).
+  NE PAS utiliser pour : Shorts YouTube / format vertical 9:16 (voir `youtube-shorts-schoolswp`), conception finale de miniatures (voir `thumbnail-strategist` — ce skill produit un BRIEF thumbnail, le design final relève de thumbnail-strategist), extraction de données d'une vidéo existante (voir `youtube-extractor`), pilotage ROI / distribution multi-canal (voir `youtube-omnichannel-engine`).
 ---
 
 # schoolsWP YouTube Studio

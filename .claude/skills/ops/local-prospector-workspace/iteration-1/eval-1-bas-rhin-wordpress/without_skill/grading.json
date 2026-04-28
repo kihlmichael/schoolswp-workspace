@@ -1,0 +1,36 @@
+{
+  "eval_id": 1,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Contient les 4 livrables (rapport detaille, tableau synthese, cartographie, bilan)",
+      "passed": false,
+      "evidence": "Pas de rapport detaille par fiche. Pas de cartographie (deserts numeriques). Pas de bilan de traitement. Format: tableaux simples par categorie."
+    },
+    {
+      "text": "Tableau de synthese avec colonnes: Nom, Ville, CP, Telephone, Email, URL, Confiance, Statut",
+      "passed": false,
+      "evidence": "Tableaux presents mais colonnes differentes (Nom, Site web, Localisation, Specialites, Anciennete, Notes). Pas de colonnes Confiance/Statut."
+    },
+    {
+      "text": "Chaque entree a un niveau de confiance et un statut",
+      "passed": false,
+      "evidence": "Aucun niveau de confiance ni statut attribue. 53 entrees listees sans qualification."
+    },
+    {
+      "text": "Preuves WordPress citees explicitement",
+      "passed": false,
+      "evidence": "Pas de citations de preuves. Specialites mentionnees mais sans source ni citation."
+    },
+    {
+      "text": "Pages SEO locales detectees et signalees",
+      "passed": false,
+      "evidence": "NEWP (Paris+Strasbourg), WP24h (Woippy/Moselle) et Farouk Nasri (Tourcoing) listes comme Bas-Rhin sans verification. Section 'Agences hors 67' presente mais traitee comme inclusion, pas exclusion."
+    },
+    {
+      "text": "Bilan chiffre avec metriques quantitatives",
+      "passed": false,
+      "evidence": "Pas de bilan de traitement. Section Methodologie presente mais sans metriques."
+    }
+  ]
+}

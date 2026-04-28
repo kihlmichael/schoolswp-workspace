@@ -6,11 +6,17 @@
       "name": "Schedule Every 2h",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [240, 200],
+      "position": [
+        240,
+        200
+      ],
       "parameters": {
         "rule": {
           "interval": [
-            { "field": "hours", "hoursInterval": 2 }
+            {
+              "field": "hours",
+              "hoursInterval": 2
+            }
           ]
         }
       }
@@ -20,57 +26,93 @@
       "name": "Read sources (active)",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [460, 200],
+      "position": [
+        460,
+        200
+      ],
       "parameters": {
         "operation": "read",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "sources", "mode": "name" },
+        "documentId": {
+          "__rl": true,
+          "value": "17qVIZh56gLj_Agsf2UFp_0_u6-X9UIJIxjlr4F5CIc0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "sources",
+          "mode": "name"
+        },
         "filtersUI": {
           "values": [
-            { "lookupColumn": "is_active", "lookupValue": "TRUE" },
-            { "lookupColumn": "collection_method", "lookupValue": "rss" }
+            {
+              "lookupColumn": "collection_method",
+              "lookupValue": "rss"
+            }
           ]
         },
-        "options": {}
+        "options": {
+          "dataRenderingMode": "format"
+        }
       },
       "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
       }
-    },
-    {
-      "id": "a3333333-3333-4333-8333-333333333333",
-      "name": "Split sources",
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [680, 200],
-      "parameters": { "batchSize": 1, "options": {} }
     },
     {
       "id": "a4444444-4444-4444-8444-444444444444",
       "name": "RSS Fetch",
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
-      "position": [900, 200],
+      "position": [
+        900,
+        200
+      ],
       "parameters": {
         "url": "={{ $json.source_url }}",
-        "options": { "ignoreSSL": false }
-      }
+        "options": {
+          "ignoreSSL": false
+        }
+      },
+      "continueOnFail": true,
+      "onError": "continueRegularOutput"
     },
     {
       "id": "a5555555-5555-4555-8555-555555555555",
       "name": "Attach source_id",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [1120, 200],
+      "position": [
+        1120,
+        200
+      ],
       "parameters": {
         "assignments": {
           "assignments": [
-            { "id": "s1", "name": "source_id", "value": "={{ $('Split sources').item.json.source_id }}", "type": "string" },
-            { "id": "s2", "name": "source_type", "value": "={{ $('Split sources').item.json.source_type }}", "type": "string" },
-            { "id": "s3", "name": "brand_name", "value": "={{ $('Split sources').item.json.brand_name }}", "type": "string" }
+            {
+              "id": "s1",
+              "name": "source_id",
+              "value": "={{ $('Read sources (active)').item.json.source_id }}",
+              "type": "string"
+            },
+            {
+              "id": "s2",
+              "name": "source_type",
+              "value": "={{ $('Read sources (active)').item.json.source_type }}",
+              "type": "string"
+            },
+            {
+              "id": "s3",
+              "name": "brand_name",
+              "value": "={{ $('Read sources (active)').item.json.brand_name }}",
+              "type": "string"
+            }
           ]
         },
-        "options": {}
+        "options": {},
+        "includeOtherFields": true
       }
     },
     {
@@ -78,15 +120,33 @@
       "name": "Gmail Trigger (label)",
       "type": "n8n-nodes-base.gmailTrigger",
       "typeVersion": 1.2,
-      "position": [240, 500],
+      "position": [
+        240,
+        500
+      ],
       "parameters": {
-        "pollTimes": { "item": [{ "mode": "everyHour" }] },
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
         "simple": false,
-        "filters": { "labelIds": ["PLACEHOLDER_LABEL_ID_newsletter_plugins"] },
-        "options": { "downloadAttachments": false }
+        "filters": {
+          "labelIds": [
+            "Label_5722837123959833844"
+          ]
+        },
+        "options": {
+          "downloadAttachments": false
+        }
       },
       "credentials": {
-        "gmailOAuth2": { "id": "PLACEHOLDER", "name": "Gmail_Prod_OAuth2" }
+        "gmailOAuth2": {
+          "id": "Sx5hODk8k0hTpRwT",
+          "name": "Gmail - schoolsWP"
+        }
       }
     },
     {
@@ -94,10 +154,13 @@
       "name": "Normalize email",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [480, 500],
+      "position": [
+        480,
+        500
+      ],
       "parameters": {
         "language": "javaScript",
-        "jsCode": "const crypto = require('crypto');\nconst stripHtml = (h) => (h || '').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\nconst stripUTM = (u) => { try { const url = new URL(u); ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => url.searchParams.delete(k)); return url.toString(); } catch { return u || ''; } };\nconst out = [];\nfor (const item of $input.all()) {\n  const m = item.json;\n  const headers = (m.payload && m.payload.headers) || [];\n  const h = (name) => (headers.find(x => x.name && x.name.toLowerCase() === name.toLowerCase()) || {}).value || '';\n  const subject = h('Subject');\n  const from = h('From');\n  const body = stripHtml(m.snippet || m.text || '');\n  const link = '';\n  const title = subject;\n  out.push({ json: {\n    source_channel: 'email',\n    source_id: 'SRC-004',\n    source_url: '',\n    canonical_url: '',\n    email_message_id: m.id,\n    title_raw: title,\n    excerpt_raw: body.slice(0, 500),\n    body_raw: body,\n    source_published_at: new Date(Number(m.internalDate || Date.now())).toISOString(),\n    ingested_at: new Date().toISOString(),\n    language: 'fr',\n    fetch_status: 'ok',\n    hash_raw: crypto.createHash('sha1').update(m.id + subject).digest('hex'),\n    brand_name: from\n  }});\n}\nreturn out;"
+        "jsCode": "const simpleHash = (str) => { let h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (let i = 0; i < str.length; i++) { const c = str.charCodeAt(i); h1 = Math.imul(h1 ^ c, 2654435761); h2 = Math.imul(h2 ^ c, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16).padStart(13, '0'); };\nconst stripHtml = (h) => (h || '').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\nconst out = [];\nfor (const item of items) {\n  const m = item.json;\n  const subject = m.subject || '';\n  const fromObj = m.from || {};\n  const fromEmail = (fromObj.value && fromObj.value[0] && fromObj.value[0].address) || fromObj.text || '';\n  const fromName = (fromObj.value && fromObj.value[0] && fromObj.value[0].name) || fromEmail;\n  const body = stripHtml(m.text || m.textAsHtml || m.html || m.snippet || '');\n  out.push({ json: {\n    source_channel: 'email',\n    source_id: 'SRC-004',\n    source_url: '',\n    canonical_url: '',\n    email_message_id: m.messageId || m.id || '',\n    title_raw: subject,\n    excerpt_raw: body.slice(0, 500),\n    body_raw: body,\n    source_published_at: m.date || (m.internalDate ? new Date(Number(m.internalDate)).toISOString() : new Date().toISOString()),\n    ingested_at: new Date().toISOString(),\n    language: 'fr',\n    fetch_status: 'ok',\n    hash_raw: simpleHash((m.messageId || m.id || '') + subject),\n    brand_name: fromName\n  }});\n}\nreturn out;"
       }
     },
     {
@@ -105,10 +168,13 @@
       "name": "Normalize RSS",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1340, 200],
+      "position": [
+        1340,
+        200
+      ],
       "parameters": {
         "language": "javaScript",
-        "jsCode": "const crypto = require('crypto');\nconst stripUTM = (u) => { try { const url = new URL(u); ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => url.searchParams.delete(k)); return url.toString(); } catch { return u || ''; } };\nconst out = [];\nfor (const item of $input.all()) {\n  const j = item.json;\n  const link = j.link || j.url || '';\n  const title = j.title || '';\n  const excerpt = (j.contentSnippet || j.description || '').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, 500);\n  out.push({ json: {\n    source_channel: 'rss',\n    source_id: j.source_id,\n    brand_name: j.brand_name,\n    source_url: link,\n    canonical_url: stripUTM(link),\n    email_message_id: '',\n    title_raw: title,\n    excerpt_raw: excerpt,\n    body_raw: j.content || excerpt,\n    source_published_at: j.pubDate || j.isoDate || new Date().toISOString(),\n    ingested_at: new Date().toISOString(),\n    language: 'fr',\n    fetch_status: 'ok',\n    hash_raw: crypto.createHash('sha1').update(link + title).digest('hex')\n  }});\n}\nreturn out;"
+        "jsCode": "const simpleHash = (str) => { let h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (let i = 0; i < str.length; i++) { const c = str.charCodeAt(i); h1 = Math.imul(h1 ^ c, 2654435761); h2 = Math.imul(h2 ^ c, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16).padStart(13, '0'); };\nconst stripUTM = (u) => { try { const url = new URL(u); ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k => url.searchParams.delete(k)); return url.toString(); } catch { return u || ''; } };\nconst stripHtml = (h) => (h || '').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\nconst out = [];\nfor (const item of items) {\n  const j = item.json;\n  if (j.error || !j.title) continue;\n  const link = j.link || j.url || j.guid || '';\n  const title = j.title || '';\n  const excerpt = stripHtml(j.contentSnippet || j.description || j.content || '').slice(0, 500);\n  const body = stripHtml(j.content || j.description || j.contentSnippet || '');\n  out.push({ json: {\n    source_channel: 'rss',\n    source_id: j.source_id || '',\n    brand_name: j.brand_name || '',\n    source_url: link,\n    canonical_url: stripUTM(link),\n    email_message_id: '',\n    title_raw: title,\n    excerpt_raw: excerpt,\n    body_raw: body,\n    source_published_at: j.pubDate || j.isoDate || j.date || new Date().toISOString(),\n    ingested_at: new Date().toISOString(),\n    language: 'fr',\n    fetch_status: 'ok',\n    hash_raw: simpleHash(link + title)\n  }});\n}\nreturn out;"
       }
     },
     {
@@ -116,47 +182,12 @@
       "name": "Merge branches",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [1560, 350],
-      "parameters": { "mode": "append" }
-    },
-    {
-      "id": "d2222222-2222-4222-8222-222222222222",
-      "name": "Lookup hash in raw_items",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [1780, 350],
+      "position": [
+        1560,
+        350
+      ],
       "parameters": {
-        "operation": "lookup",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "raw_items", "mode": "name" },
-        "lookupColumn": "hash_raw",
-        "lookupValue": "={{ $json.hash_raw }}",
-        "options": { "returnAllMatches": false }
-      },
-      "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
-      },
-      "continueOnFail": true
-    },
-    {
-      "id": "d3333333-3333-4333-8333-333333333333",
-      "name": "IF new item",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [2000, 350],
-      "parameters": {
-        "conditions": {
-          "options": { "caseSensitive": true, "typeValidation": "loose", "version": 2 },
-          "conditions": [
-            {
-              "id": "c1",
-              "leftValue": "={{ $json.raw_id || '' }}",
-              "rightValue": "",
-              "operator": { "type": "string", "operation": "empty", "singleValue": true }
-            }
-          ],
-          "combinator": "and"
-        }
+        "mode": "append"
       }
     },
     {
@@ -164,7 +195,10 @@
       "name": "Build raw_id",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [2220, 250],
+      "position": [
+        2220,
+        250
+      ],
       "parameters": {
         "assignments": {
           "assignments": [
@@ -185,11 +219,22 @@
       "name": "Append raw_items",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [2440, 250],
+      "position": [
+        2440,
+        250
+      ],
       "parameters": {
         "operation": "append",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "raw_items", "mode": "name" },
+        "documentId": {
+          "__rl": true,
+          "value": "17qVIZh56gLj_Agsf2UFp_0_u6-X9UIJIxjlr4F5CIc0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "raw_items",
+          "mode": "name"
+        },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
@@ -206,12 +251,134 @@
             "hash_raw": "={{ $json.hash_raw }}",
             "language": "={{ $json.language }}",
             "fetch_status": "={{ $json.fetch_status }}"
-          }
+          },
+          "schema": [
+            {
+              "id": "raw_id",
+              "displayName": "raw_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_id",
+              "displayName": "source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ingested_at",
+              "displayName": "ingested_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_published_at",
+              "displayName": "source_published_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_url",
+              "displayName": "source_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "canonical_url",
+              "displayName": "canonical_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email_message_id",
+              "displayName": "email_message_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "title_raw",
+              "displayName": "title_raw",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "excerpt_raw",
+              "displayName": "excerpt_raw",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "body_raw",
+              "displayName": "body_raw",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hash_raw",
+              "displayName": "hash_raw",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "language",
+              "displayName": "language",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "fetch_status",
+              "displayName": "fetch_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
         },
         "options": {}
       },
       "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
       }
     },
     {
@@ -219,7 +386,10 @@
       "name": "LLM Extract structured",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2660, 250],
+      "position": [
+        2660,
+        250
+      ],
       "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
@@ -228,8 +398,14 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "anthropic-version", "value": "2023-06-01" },
-            { "name": "content-type", "value": "application/json" }
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
           ]
         },
         "sendBody": true,
@@ -238,7 +414,10 @@
         "options": {}
       },
       "credentials": {
-        "httpHeaderAuth": { "id": "PLACEHOLDER", "name": "Anthropic_Prod_Header" }
+        "httpHeaderAuth": {
+          "id": "LbtmeEcWjyAVK5OY",
+          "name": "Anthropic_Production_ApiKey"
+        }
       }
     },
     {
@@ -246,94 +425,340 @@
       "name": "Parse LLM + score",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2880, 250],
+      "position": [
+        3100,
+        250
+      ],
       "parameters": {
         "language": "javaScript",
-        "jsCode": "const crypto = require('crypto');\nconst out = [];\nfor (const item of $input.all()) {\n  const llmRaw = item.json.content && item.json.content[0] && item.json.content[0].text || '{}';\n  let ext = {};\n  try { ext = JSON.parse(llmRaw.replace(/^```json|```$/g, '').trim()); } catch { ext = {}; }\n  const raw = $('Build raw_id').item.json;\n  const title = (ext.headline_normalized || raw.title_raw || '').toLowerCase();\n  const summary = (ext.summary_normalized || raw.excerpt_raw || '').toLowerCase();\n  const text = title + ' ' + summary;\n\n  const impactMap = { low: 5, medium: 11, high: 16, critical: 20 };\n  const impact_score = impactMap[ext.impact_level] || 8;\n\n  const ageDays = (Date.now() - new Date(raw.source_published_at).getTime()) / 86400000;\n  const freshness_score = ageDays < 3 ? 15 : ageDays < 7 ? 12 : ageDays < 14 ? 8 : 3;\n\n  const schoolsKeywords = ['wordpress','plugin','freelance','createur','formateur','lms','crm','seo','automatisation','kadence','fluent','tutor','elementor','woocommerce'];\n  const audience_fit_score = Math.min(20, schoolsKeywords.filter(k => text.includes(k)).length * 4);\n\n  const actionVerbs = ['tester','mettre a jour','mettre à jour','activer','configurer','installer','reduire','economiser','ameliorer','améliorer'];\n  const actionability_score = Math.min(15, actionVerbs.filter(v => text.includes(v)).length * 5);\n\n  const novelty_score = (ext.event_type === 'major_release' || ext.event_type === 'launch') ? 8 : 5;\n\n  const business_value_score = ext.offer_type && ext.offer_type !== 'null' ? 8 : (ext.event_type === 'partnership' ? 6 : 3);\n\n  const pedagogical_value_score = ext.event_type === 'tutorial_resource' ? 9 : (Array.isArray(ext.key_points) && ext.key_points.length >= 3 ? 6 : 3);\n\n  const noiseMarkers = ['excited to announce','game-changer','revolutionary','unprecedented'];\n  const noise_penalty = -Math.min(20, noiseMarkers.filter(n => text.includes(n)).length * 8);\n\n  const cluster_key = crypto.createHash('sha1').update(`${(ext.primary_product||'').toLowerCase()}|${ext.version_detected||''}|${ext.event_type||''}`).digest('hex');\n\n  const editorial_score = impact_score + freshness_score + audience_fit_score + actionability_score + novelty_score + business_value_score + pedagogical_value_score + noise_penalty;\n\n  let status_editorial = 'rejected', reason_rejected = 'score_too_low';\n  if (editorial_score >= 65) { status_editorial = 'candidate'; reason_rejected = ''; }\n  else if (editorial_score >= 50) { status_editorial = 'backlog'; reason_rejected = ''; }\n\n  const item_id = `ITEM-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${cluster_key.slice(0,6)}`;\n\n  out.push({ json: {\n    item_id, cluster_key,\n    raw_id: raw.raw_id,\n    primary_brand: ext.primary_brand || raw.brand_name || '',\n    primary_product: ext.primary_product || '',\n    version_detected: ext.version_detected || '',\n    event_type: ext.event_type || 'ecosystem_news',\n    impact_level: ext.impact_level || 'low',\n    release_date: raw.source_published_at,\n    first_seen_at: raw.ingested_at,\n    last_seen_at: raw.ingested_at,\n    headline_normalized: ext.headline_normalized || raw.title_raw,\n    summary_normalized: ext.summary_normalized || raw.excerpt_raw,\n    key_points: Array.isArray(ext.key_points) ? ext.key_points.join(';') : '',\n    offer_type: ext.offer_type && ext.offer_type !== 'null' ? ext.offer_type : '',\n    offer_deadline: ext.offer_deadline && ext.offer_deadline !== 'null' ? ext.offer_deadline : '',\n    links_primary: raw.canonical_url,\n    source_count: 1,\n    impact_score, freshness_score, audience_fit_score, actionability_score,\n    novelty_score, business_value_score, pedagogical_value_score, noise_penalty,\n    editorial_score, confidence_score: 0.8,\n    status_editorial, reason_rejected\n  }});\n}\nreturn out;"
-      }
-    },
-    {
-      "id": "g1111111-1111-4111-8111-111111111111",
-      "name": "Lookup cluster_key",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [3100, 250],
-      "parameters": {
-        "operation": "lookup",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "canonical_items", "mode": "name" },
-        "lookupColumn": "cluster_key",
-        "lookupValue": "={{ $json.cluster_key }}",
-        "options": { "returnAllMatches": false }
-      },
-      "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
-      },
-      "continueOnFail": true
-    },
-    {
-      "id": "g2222222-2222-4222-8222-222222222222",
-      "name": "IF cluster exists",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [3320, 250],
-      "parameters": {
-        "conditions": {
-          "options": { "caseSensitive": true, "typeValidation": "loose", "version": 2 },
-          "conditions": [
-            {
-              "id": "c2",
-              "leftValue": "={{ $json.item_id }}",
-              "rightValue": "",
-              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
-            }
-          ],
-          "combinator": "and"
-        }
-      }
-    },
-    {
-      "id": "h1111111-1111-4111-8111-111111111111",
-      "name": "Update canonical (confirmation)",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [3540, 150],
-      "parameters": {
-        "operation": "appendOrUpdate",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "canonical_items", "mode": "name" },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "matchingColumns": ["cluster_key"],
-          "value": {
-            "cluster_key": "={{ $json.cluster_key }}",
-            "source_count": "={{ ($json.source_count || 1) + 1 }}",
-            "last_seen_at": "={{ $now.toISO() }}"
-          }
-        },
-        "options": {}
-      },
-      "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+        "jsCode": "const simpleHash = (str) => { let h1 = 0xdeadbeef, h2 = 0x41c6ce57; for (let i = 0; i < str.length; i++) { const c = str.charCodeAt(i); h1 = Math.imul(h1 ^ c, 2654435761); h2 = Math.imul(h2 ^ c, 1597334677); } h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909); h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909); return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16).padStart(13, '0'); };\nconst out = [];\nfor (const item of items) {\n  const d = item.json;\n  const llmRaw = d.llm_response || '{}';\n  let ext = {};\n  try { ext = JSON.parse(llmRaw.replace(/^```json|```$/g, '').trim()); } catch { ext = {}; }\n\n  const title = (ext.headline_normalized || d.title_raw || '').toLowerCase();\n  const summary = (ext.summary_normalized || d.excerpt_raw || '').toLowerCase();\n  const text = title + ' ' + summary;\n\n  const impactMap = { low: 5, medium: 11, high: 16, critical: 20 };\n  const impact_score = impactMap[ext.impact_level] || 8;\n\n  const ageDays = (Date.now() - new Date(d.source_published_at).getTime()) / 86400000;\n  const freshness_score = ageDays < 3 ? 15 : ageDays < 7 ? 12 : ageDays < 14 ? 8 : 3;\n\n  const schoolsKeywords = ['wordpress','plugin','freelance','createur','formateur','lms','crm','seo','automatisation','kadence','fluent','tutor','elementor','woocommerce'];\n  const audience_fit_score = Math.min(20, schoolsKeywords.filter(k => text.includes(k)).length * 4);\n\n  const actionVerbs = ['tester','mettre a jour','mettre à jour','activer','configurer','installer','reduire','economiser','ameliorer','améliorer'];\n  const actionability_score = Math.min(15, actionVerbs.filter(v => text.includes(v)).length * 5);\n\n  const novelty_score = (ext.event_type === 'major_release' || ext.event_type === 'launch') ? 8 : 5;\n  const business_value_score = ext.offer_type && ext.offer_type !== 'null' ? 8 : (ext.event_type === 'partnership' ? 6 : 3);\n  const pedagogical_value_score = ext.event_type === 'tutorial_resource' ? 9 : (Array.isArray(ext.key_points) && ext.key_points.length >= 3 ? 6 : 3);\n\n  const noiseMarkers = ['excited to announce','game-changer','revolutionary','unprecedented'];\n  const noise_penalty = -Math.min(20, noiseMarkers.filter(n => text.includes(n)).length * 8);\n\n  const cluster_key = simpleHash(`${(ext.primary_product||'').toLowerCase()}|${ext.version_detected||''}|${ext.event_type||''}`);\n  const editorial_score = impact_score + freshness_score + audience_fit_score + actionability_score + novelty_score + business_value_score + pedagogical_value_score + noise_penalty;\n\n  let status_editorial = 'rejected', reason_rejected = 'score_too_low';\n  if (editorial_score >= 65) { status_editorial = 'candidate'; reason_rejected = ''; }\n  else if (editorial_score >= 50) { status_editorial = 'backlog'; reason_rejected = ''; }\n\n  const item_id = `ITEM-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${cluster_key.slice(0,6)}`;\n\n  out.push({ json: {\n    item_id, cluster_key,\n    raw_id: d.raw_id,\n    primary_brand: ((ext.primary_brand || d.brand_name || '').trim().toLowerCase() === 'unknown' ? '' : (ext.primary_brand || d.brand_name || '').trim()),\n    primary_product: ext.primary_product || '',\n    version_detected: ext.version_detected || '',\n    event_type: ext.event_type || 'ecosystem_news',\n    impact_level: ext.impact_level || 'low',\n    release_date: d.source_published_at,\n    first_seen_at: d.ingested_at,\n    last_seen_at: d.ingested_at,\n    headline_normalized: ext.headline_normalized || d.title_raw,\n    summary_normalized: ext.summary_normalized || d.excerpt_raw,\n    key_points: Array.isArray(ext.key_points) ? ext.key_points.join(';') : '',\n    offer_type: ext.offer_type && ext.offer_type !== 'null' ? ext.offer_type : '',\n    offer_deadline: ext.offer_deadline && ext.offer_deadline !== 'null' ? ext.offer_deadline : '',\n    links_primary: d.canonical_url,\n    source_count: 1,\n    impact_score, freshness_score, audience_fit_score, actionability_score,\n    novelty_score, business_value_score, pedagogical_value_score, noise_penalty,\n    editorial_score, confidence_score: 0.8,\n    status_editorial, reason_rejected\n  }});\n}\nreturn out;"
       }
     },
     {
       "id": "h2222222-2222-4222-8222-222222222222",
-      "name": "Append canonical (new)",
+      "name": "Append canonical_items",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [3540, 350],
+      "position": [
+        3760,
+        350
+      ],
       "parameters": {
         "operation": "append",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "canonical_items", "mode": "name" },
+        "documentId": {
+          "__rl": true,
+          "value": "17qVIZh56gLj_Agsf2UFp_0_u6-X9UIJIxjlr4F5CIc0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "canonical_items",
+          "mode": "name"
+        },
         "columns": {
-          "mappingMode": "autoMapInputData"
+          "mappingMode": "defineBelow",
+          "value": {
+            "item_id": "={{ $json.item_id }}",
+            "cluster_key": "={{ $json.cluster_key }}",
+            "primary_brand": "={{ $json.primary_brand }}",
+            "primary_product": "={{ $json.primary_product }}",
+            "version_detected": "={{ $json.version_detected }}",
+            "event_type": "={{ $json.event_type }}",
+            "impact_level": "={{ $json.impact_level }}",
+            "release_date": "={{ $json.release_date }}",
+            "first_seen_at": "={{ $json.first_seen_at }}",
+            "last_seen_at": "={{ $json.last_seen_at }}",
+            "headline_normalized": "={{ $json.headline_normalized }}",
+            "summary_normalized": "={{ $json.summary_normalized }}",
+            "key_points": "={{ $json.key_points }}",
+            "offer_type": "={{ $json.offer_type }}",
+            "offer_deadline": "={{ $json.offer_deadline }}",
+            "links_primary": "={{ $json.links_primary }}",
+            "source_count": "={{ $json.source_count }}",
+            "impact_score": "={{ $json.impact_score }}",
+            "freshness_score": "={{ $json.freshness_score }}",
+            "audience_fit_score": "={{ $json.audience_fit_score }}",
+            "actionability_score": "={{ $json.actionability_score }}",
+            "novelty_score": "={{ $json.novelty_score }}",
+            "business_value_score": "={{ $json.business_value_score }}",
+            "pedagogical_value_score": "={{ $json.pedagogical_value_score }}",
+            "noise_penalty": "={{ $json.noise_penalty }}",
+            "editorial_score": "={{ $json.editorial_score }}",
+            "confidence_score": "={{ $json.confidence_score }}",
+            "status_editorial": "={{ $json.status_editorial }}",
+            "reason_rejected": "={{ $json.reason_rejected }}"
+          },
+          "schema": [
+            {
+              "id": "item_id",
+              "displayName": "item_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "cluster_key",
+              "displayName": "cluster_key",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "primary_brand",
+              "displayName": "primary_brand",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "primary_product",
+              "displayName": "primary_product",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "version_detected",
+              "displayName": "version_detected",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "event_type",
+              "displayName": "event_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "impact_level",
+              "displayName": "impact_level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "release_date",
+              "displayName": "release_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "first_seen_at",
+              "displayName": "first_seen_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "last_seen_at",
+              "displayName": "last_seen_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "headline_normalized",
+              "displayName": "headline_normalized",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary_normalized",
+              "displayName": "summary_normalized",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "key_points",
+              "displayName": "key_points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "offer_type",
+              "displayName": "offer_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "offer_deadline",
+              "displayName": "offer_deadline",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "links_primary",
+              "displayName": "links_primary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_count",
+              "displayName": "source_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "impact_score",
+              "displayName": "impact_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "freshness_score",
+              "displayName": "freshness_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "audience_fit_score",
+              "displayName": "audience_fit_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "actionability_score",
+              "displayName": "actionability_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "novelty_score",
+              "displayName": "novelty_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "business_value_score",
+              "displayName": "business_value_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pedagogical_value_score",
+              "displayName": "pedagogical_value_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "noise_penalty",
+              "displayName": "noise_penalty",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "editorial_score",
+              "displayName": "editorial_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "confidence_score",
+              "displayName": "confidence_score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status_editorial",
+              "displayName": "status_editorial",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "reason_rejected",
+              "displayName": "reason_rejected",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
         },
         "options": {}
       },
       "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
       }
     },
     {
@@ -341,52 +766,401 @@
       "name": "Append item_sources",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [3760, 250],
+      "position": [
+        3980,
+        250
+      ],
       "parameters": {
         "operation": "append",
-        "documentId": { "__rl": true, "value": "={{ $env.VEILLE_SHEET_ID }}", "mode": "id" },
-        "sheetName": { "__rl": true, "value": "item_sources", "mode": "name" },
+        "documentId": {
+          "__rl": true,
+          "value": "17qVIZh56gLj_Agsf2UFp_0_u6-X9UIJIxjlr4F5CIc0",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "item_sources",
+          "mode": "name"
+        },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
             "item_source_id": "=IS-{{ $now.toMillis() }}-{{ $itemIndex }}",
-            "item_id": "={{ $json.item_id }}",
-            "raw_id": "={{ $json.raw_id }}",
-            "source_role": "={{ $('IF cluster exists').item.json.item_id ? 'confirmation' : 'primary' }}"
-          }
+            "item_id": "={{ $('Parse LLM + score').item.json.item_id }}",
+            "raw_id": "={{ $('Merge LLM + Raw').item.json.raw_id }}",
+            "source_role": "primary"
+          },
+          "schema": [
+            {
+              "id": "item_source_id",
+              "displayName": "item_source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "item_id",
+              "displayName": "item_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "raw_id",
+              "displayName": "raw_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_role",
+              "displayName": "source_role",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
         },
         "options": {}
       },
       "credentials": {
-        "googleSheetsOAuth2Api": { "id": "PLACEHOLDER", "name": "GoogleSheets_Prod_OAuth2" }
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "id": "f3333333-3333-4333-8333-333333333333",
+      "name": "Merge LLM + Raw",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2880,
+        250
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "m1",
+              "name": "llm_response",
+              "value": "={{ $json.content[0].text }}",
+              "type": "string"
+            },
+            {
+              "id": "m2",
+              "name": "raw_id",
+              "value": "={{ $('Build raw_id').item.json.raw_id }}",
+              "type": "string"
+            },
+            {
+              "id": "m3",
+              "name": "source_id",
+              "value": "={{ $('Build raw_id').item.json.source_id }}",
+              "type": "string"
+            },
+            {
+              "id": "m4",
+              "name": "brand_name",
+              "value": "={{ $('Build raw_id').item.json.brand_name }}",
+              "type": "string"
+            },
+            {
+              "id": "m5",
+              "name": "title_raw",
+              "value": "={{ $('Build raw_id').item.json.title_raw }}",
+              "type": "string"
+            },
+            {
+              "id": "m6",
+              "name": "excerpt_raw",
+              "value": "={{ $('Build raw_id').item.json.excerpt_raw }}",
+              "type": "string"
+            },
+            {
+              "id": "m7",
+              "name": "source_published_at",
+              "value": "={{ $('Build raw_id').item.json.source_published_at }}",
+              "type": "string"
+            },
+            {
+              "id": "m8",
+              "name": "ingested_at",
+              "value": "={{ $('Build raw_id').item.json.ingested_at }}",
+              "type": "string"
+            },
+            {
+              "id": "m9",
+              "name": "canonical_url",
+              "value": "={{ $('Build raw_id').item.json.canonical_url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "note-trigger-rss",
+      "name": "note trigger-rss",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        50
+      ],
+      "parameters": {
+        "content": "## Declencheur RSS (toutes les 2h)\n\nLit l'onglet `sources` du Google Sheet et filtre sur `is_active=TRUE` et `collection_method=rss`.\nPour chaque source active, n8n itere automatiquement vers RSS Fetch.",
+        "height": 130,
+        "width": 420,
+        "color": 3
+      }
+    },
+    {
+      "id": "note-rss-chain",
+      "name": "note rss-chain",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        860,
+        50
+      ],
+      "parameters": {
+        "content": "## Chaine RSS\n\n`RSS Fetch` lit le flux, `Attach source_id` rajoute les metadonnees de la source,\n`Normalize RSS` produit un objet standard : title_raw, excerpt_raw, canonical_url (UTM strippes),\nsource_published_at, hash_raw = empreinte unique du titre+URL.",
+        "height": 130,
+        "width": 700,
+        "color": 5
+      }
+    },
+    {
+      "id": "note-trigger-gmail",
+      "name": "note trigger-gmail",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        420
+      ],
+      "parameters": {
+        "content": "## Declencheur Gmail (toutes les heures)\n\nPolling du label `📰 Newsletters`. Chaque email recu = un raw_item.\n`Normalize email` extrait From/Subject/body, met source_id=SRC-004, hash_raw=sha du message_id.\nLa date de reception utilise `internalDate` (plus fiable que le header Date).",
+        "height": 130,
+        "width": 840,
+        "color": 3
+      }
+    },
+    {
+      "id": "note-dedup",
+      "name": "note dedup",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        250
+      ],
+      "parameters": {
+        "content": "## Construction ID stable\n\n`Merge` fusionne les 2 branches (RSS + Email).\n`Build raw_id` genere un ID unique : RAW-AAAAMMJJ-index-hash6.\n\nPas de dedup a ce niveau (volontaire) : la dedup editoriale se fait via `cluster_key` dans canonical_items.",
+        "height": 180,
+        "width": 560,
+        "color": 6
+      }
+    },
+    {
+      "id": "note-llm-score",
+      "name": "note llm-score",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        50
+      ],
+      "parameters": {
+        "content": "## Extraction LLM + scoring editorial\n\n`Append raw_items` ecrit l'item brut dans le Sheet.\n`LLM Extract` appelle Claude sur (titre + extrait) -> JSON strict : brand, product, version, event_type, impact_level, key_points, offer.\n`Merge LLM + Raw` rassemble la reponse LLM + les champs Build raw_id (contournement task runner).\n`Parse LLM + score` calcule 8 sous-scores et un editorial_score total. Statut : candidate (>=65) / backlog (>=50) / rejected.",
+        "height": 180,
+        "width": 900,
+        "color": 4
+      }
+    },
+    {
+      "id": "note-cluster-write",
+      "name": "note cluster-write",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        50
+      ],
+      "parameters": {
+        "content": "## Ecriture canonique\n\n`Append canonical_items` ecrit chaque signal editorial avec tous les scores.\n`Append item_sources` trace la liaison raw<->canonical (role: primary).\n\nNote: dedup par cluster_key se fait en post-traitement via une vue Sheets ou un script de nettoyage hebdo.",
+        "height": 180,
+        "width": 700,
+        "color": 7
       }
     }
   ],
   "connections": {
-    "Schedule Every 2h": { "main": [[{ "node": "Read sources (active)", "type": "main", "index": 0 }]] },
-    "Read sources (active)": { "main": [[{ "node": "Split sources", "type": "main", "index": 0 }]] },
-    "Split sources": { "main": [[{ "node": "RSS Fetch", "type": "main", "index": 0 }]] },
-    "RSS Fetch": { "main": [[{ "node": "Attach source_id", "type": "main", "index": 0 }]] },
-    "Attach source_id": { "main": [[{ "node": "Normalize RSS", "type": "main", "index": 0 }]] },
-    "Normalize RSS": { "main": [[{ "node": "Merge branches", "type": "main", "index": 0 }]] },
-    "Gmail Trigger (label)": { "main": [[{ "node": "Normalize email", "type": "main", "index": 0 }]] },
-    "Normalize email": { "main": [[{ "node": "Merge branches", "type": "main", "index": 1 }]] },
-    "Merge branches": { "main": [[{ "node": "Lookup hash in raw_items", "type": "main", "index": 0 }]] },
-    "Lookup hash in raw_items": { "main": [[{ "node": "IF new item", "type": "main", "index": 0 }]] },
-    "IF new item": { "main": [[{ "node": "Build raw_id", "type": "main", "index": 0 }], []] },
-    "Build raw_id": { "main": [[{ "node": "Append raw_items", "type": "main", "index": 0 }]] },
-    "Append raw_items": { "main": [[{ "node": "LLM Extract structured", "type": "main", "index": 0 }]] },
-    "LLM Extract structured": { "main": [[{ "node": "Parse LLM + score", "type": "main", "index": 0 }]] },
-    "Parse LLM + score": { "main": [[{ "node": "Lookup cluster_key", "type": "main", "index": 0 }]] },
-    "Lookup cluster_key": { "main": [[{ "node": "IF cluster exists", "type": "main", "index": 0 }]] },
-    "IF cluster exists": {
+    "Schedule Every 2h": {
       "main": [
-        [{ "node": "Update canonical (confirmation)", "type": "main", "index": 0 }],
-        [{ "node": "Append canonical (new)", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Read sources (active)",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
-    "Update canonical (confirmation)": { "main": [[{ "node": "Append item_sources", "type": "main", "index": 0 }]] },
-    "Append canonical (new)": { "main": [[{ "node": "Append item_sources", "type": "main", "index": 0 }]] }
+    "Read sources (active)": {
+      "main": [
+        [
+          {
+            "node": "RSS Fetch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Fetch": {
+      "main": [
+        [
+          {
+            "node": "Attach source_id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attach source_id": {
+      "main": [
+        [
+          {
+            "node": "Normalize RSS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize RSS": {
+      "main": [
+        [
+          {
+            "node": "Merge branches",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger (label)": {
+      "main": [
+        [
+          {
+            "node": "Normalize email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize email": {
+      "main": [
+        [
+          {
+            "node": "Merge branches",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge branches": {
+      "main": [
+        [
+          {
+            "node": "Build raw_id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build raw_id": {
+      "main": [
+        [
+          {
+            "node": "Append raw_items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append raw_items": {
+      "main": [
+        [
+          {
+            "node": "LLM Extract structured",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Extract structured": {
+      "main": [
+        [
+          {
+            "node": "Merge LLM + Raw",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse LLM + score": {
+      "main": [
+        [
+          {
+            "node": "Append canonical_items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge LLM + Raw": {
+      "main": [
+        [
+          {
+            "node": "Parse LLM + score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append canonical_items": {
+      "main": [
+        [
+          {
+            "node": "Append item_sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
   },
   "settings": {
     "executionOrder": "v1",
@@ -394,5 +1168,12 @@
     "callerPolicy": "workflowsFromSameOwner",
     "timezone": "Europe/Paris"
   },
-  "tags": [{ "name": "veille" }, { "name": "schoolswp" }]
+  "tags": [
+    {
+      "name": "veille"
+    },
+    {
+      "name": "schoolswp"
+    }
+  ]
 }

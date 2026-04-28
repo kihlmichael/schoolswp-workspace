@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Pose les questions de découverte manquantes (au moins cible, résultats, différenciants)",
+      "passed": true,
+      "evidence": "Pose 3 questions de cadrage en haut du document (profil clientes, problème récurrent, format maîtrisé)"
+    },
+    {
+      "text": "Ne propose PAS de promesses tant que la découverte est incomplète",
+      "passed": false,
+      "evidence": "Malgré les questions posées, propose immédiatement 3 mini offres complètes avec promesse + mécanisme + nom + prix — sans attendre les réponses"
+    },
+    {
+      "text": "Utilise le tutoiement systématiquement",
+      "passed": true,
+      "evidence": "Tutoiement cohérent : 'Tu es dans une niche', 'ton expertise', 'Choisis celle qui résonne'"
+    },
+    {
+      "text": "Ton coach bienveillant, pas vendeur — pas de surenchère ni de hype",
+      "passed": false,
+      "evidence": "Le ton est correct mais la démarche est pushy : propose 3 offres complètes avec prix avant de connaître la cible. 'Première Vente Garantie' utilise 'garanti' (mot interdit schoolsWP)."
+    },
+    {
+      "text": "Accuse réception de ce qui est déjà fourni (niche coaching business mamans)",
+      "passed": true,
+      "evidence": "'Tu es dans une niche à fort potentiel émotionnel et identitaire'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  }
+}

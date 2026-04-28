@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "comparatif-lms",
+  "prompt": "J'ai besoin de thumbnails YouTube pour une vidéo comparant Tutor LMS vs LearnDash. C'est une vidéo comparative pour aider les créateurs de formation en ligne à choisir. Mon visage est disponible, et j'aimerais intégrer le logo schoolsWP.",
+  "assertions": [
+    {"name": "Format comparatif visible", "check": "Au moins 2 concepts utilisent un format visuel de comparaison (split, VS, côte à côte)"},
+    {"name": "Branding schoolsWP intégré", "check": "Au moins 3 concepts mentionnent l'intégration du logo schoolsWP avec position précise"},
+    {"name": "Personnage Michaël", "check": "Au moins 3 concepts incluent le visage de Michaël avec une expression faciale décrite"},
+    {"name": "Noms des outils visibles", "check": "Les noms Tutor LMS et LearnDash apparaissent dans les descriptions visuelles"}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "expectations": [
+    {
+      "text": "L'output contient les 3 blocs dans l'ordre : ANALYSE GLOBALE, puis BRIEF STRUCTURÉ, puis TEXTES PRÊTS À COLLER",
+      "passed": true,
+      "evidence": "Ordre correct : ANALYSE@458 < BRIEF@12006 < TEXTES@32674"
+    },
+    {
+      "text": "En-tête minimal présent avec les 4 champs (Mot-clé, Mode, Sources, Confiance)",
+      "passed": true,
+      "evidence": "Les 4 champs d'en-tête présents"
+    },
+    {
+      "text": "Mode 'comparatif' explicitement détecté",
+      "passed": true,
+      "evidence": "Mode 'comparatif' explicitement détecté"
+    },
+    {
+      "text": "BLOC 1 contient Faits, Déductions, Recommandations distincts",
+      "passed": true,
+      "evidence": "Les 3 sections de BLOC 1 présentes"
+    },
+    {
+      "text": "Confiance global = 'moyen' ou 'faible' (GSC manquante)",
+      "passed": true,
+      "evidence": "Confiance = 'moyen'"
+    },
+    {
+      "text": "BLOC 2 contient les 10 onglets numérotés",
+      "passed": true,
+      "evidence": "Les 10 onglets présents"
+    },
+    {
+      "text": "BLOC 3 'TEXTES PRÊTS À COLLER' contient au moins 6 sous-sections",
+      "passed": true,
+      "evidence": "BLOC 3 contient 8 sous-sections"
+    },
+    {
+      "text": "H1 recommandé sans date (evergreen)",
+      "passed": true,
+      "evidence": "Au moins un H1 evergreen retenu : 'evergreen (pas de date), mot-clé exact en ouverture, promesse forte et différenc...'"
+    },
+    {
+      "text": "Les 2 URLs schoolsWP existantes dans le maillage",
+      "passed": true,
+      "evidence": "2 URLs schoolsWP présentes"
+    },
+    {
+      "text": "Mismatch SERP (pivot Google vers AffiliateWP) identifié",
+      "passed": true,
+      "evidence": "Mismatch SERP identifié"
+    },
+    {
+      "text": "Tutoiement dominant (pas de vouvoiement)",
+      "passed": true,
+      "evidence": "Tutoiement : 38 tu/ton/ta vs 0 vous"
+    },
+    {
+      "text": "V2 — Tags [FAIT], [DÉDUCTION], [À VÉRIFIER] utilisés au moins une fois chacun",
+      "passed": true,
+      "evidence": "Tags présents : FAIT=82, DÉDUCTION=17, À VÉRIFIER=55"
+    },
+    {
+      "text": "V2 — Section 'Données à valider avant publication' présente avec au moins 3 items",
+      "passed": true,
+      "evidence": "Section 'Données à valider' contient 25 items [À VÉRIFIER]"
+    },
+    {
+      "text": "V2 — Features SERP (AI Overview, vidéos, Reddit) traduites en consignes éditoriales concrètes dans BLOC 2",
+      "passed": true,
+      "evidence": "Features SERP traduites en consignes (3/4 minimum, absent : [])"
+    },
+    {
+      "text": "V2 — BLOC 3 ne contient aucun tableau markdown (pas de lignes de type '| col | col |')",
+      "passed": true,
+      "evidence": "BLOC 3 quasi sans tableau markdown (0 lignes détectées — acceptable si < 4)"
+    },
+    {
+      "text": "V2 — Cohérence des noms d'entités (pas d'alternance AffiliatePress / affiliatepress / Affiliate Press)",
+      "passed": true,
+      "evidence": "Cohérence OK : AP dom=0.95, SA dom=13.33"
+    },
+    {
+      "text": "V2 — Safety checklist respectée : affirmations pricing/compatibilité sans source portent [À VÉRIFIER]",
+      "passed": true,
+      "evidence": "Affirmations pricing majoritairement taggées [À VÉRIFIER] (0 mentions libres tolérées)"
+    }
+  ],
+  "summary": {
+    "passed": 17,
+    "failed": 0,
+    "total": 17,
+    "pass_rate": 1.0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "Références visuelles performance", "passed": true, "evidence": "5/5 concepts utilisent des métaphores de performance: score PageSpeed, chronomètre, compteur, screenshot PageSpeed Insights, fond jaune alerte"},
+    {"text": "Chiffres impactants", "passed": true, "evidence": "Concepts 1 (30→100), 2 (score 30), 3 (100 EN 15 MIN), 4 (score 100) utilisent des chiffres dans le texte overlay"},
+    {"text": "Audience freelance", "passed": true, "evidence": "Analyse mentionne explicitement freelances/agences. Concept 4 parle de 'montrer le score à ses clients'. Ton professionnel adapté."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "timing": {"total_duration_seconds": 78.0}
+}

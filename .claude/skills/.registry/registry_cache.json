@@ -1,0 +1,1457 @@
+{
+  "last_run": "2026-04-23T21:43:12.307873",
+  "skills": {
+    "landing-page-factory": {
+      "hash": "4c9c437c",
+      "last_modified": "2026-04-16"
+    },
+    "article-audit-score": {
+      "hash": "c54fdfcc",
+      "last_modified": "2026-04-15"
+    },
+    "article-multiformat": {
+      "hash": "14a5ee82",
+      "last_modified": "2026-04-15"
+    },
+    "brain-autonome": {
+      "hash": "643e9781",
+      "last_modified": "2026-04-16"
+    },
+    "brain-lite": {
+      "hash": "3d439001",
+      "last_modified": "2026-04-15"
+    },
+    "brain": {
+      "hash": "6dad4c76",
+      "last_modified": "2026-04-16"
+    },
+    "branding": {
+      "hash": "5a20c2f1",
+      "last_modified": "2026-04-16"
+    },
+    "clairtexte": {
+      "hash": "c83b91e3",
+      "last_modified": "2026-04-16"
+    },
+    "content-factory-autonome": {
+      "hash": "492745af",
+      "last_modified": "2026-04-16"
+    },
+    "email-to-content": {
+      "hash": "95f0e4c9",
+      "last_modified": "2026-04-16"
+    },
+    "formation-pipeline": {
+      "hash": "edfb1f52",
+      "last_modified": "2026-04-15"
+    },
+    "mini-offre-page-de-vente": {
+      "hash": "dec1b2ab",
+      "last_modified": "2026-04-16"
+    },
+    "plugin-email-sequence": {
+      "hash": "1ac0232b",
+      "last_modified": "2026-04-16"
+    },
+    "rewrite-conversion": {
+      "hash": "956cfe8e",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-article-workflow": {
+      "hash": "b73cf84a",
+      "last_modified": "2026-04-15"
+    },
+    "thruuu-writer": {
+      "hash": "05118288",
+      "last_modified": "2026-04-23"
+    },
+    "lead-magnet-schoolswp": {
+      "hash": "6ffae100",
+      "last_modified": "2026-04-16"
+    },
+    "thruuu-strategist": {
+      "hash": "c00cd9a5",
+      "last_modified": "2026-04-17"
+    },
+    "offer-to-copy": {
+      "hash": "47d9d344",
+      "last_modified": "2026-04-07"
+    },
+    "schoolswp-branding-studio": {
+      "hash": "9c6c2e79",
+      "last_modified": "2026-04-16"
+    },
+    "schoolswp-content-studio": {
+      "hash": "e6558b19",
+      "last_modified": "2026-03-18"
+    },
+    "thruuu-content-strategist": {
+      "hash": "5d6a83dd",
+      "last_modified": "2026-04-01"
+    },
+    "youtube-thumbnails": {
+      "hash": "3cc4f97e",
+      "last_modified": "2026-04-16"
+    },
+    "thruuu-brief-builder": {
+      "hash": "6eeacf31",
+      "last_modified": "2026-04-18"
+    },
+    "ai-playbook-schoolswp": {
+      "hash": "fd7be6d7",
+      "last_modified": "2026-04-15"
+    },
+    "ai-brain-audit": {
+      "hash": "56421804",
+      "last_modified": "2026-04-15"
+    },
+    "ai-brain-optimization": {
+      "hash": "9f5e76b9",
+      "last_modified": "2026-04-15"
+    },
+    "ai-brain-production": {
+      "hash": "636cf3ea",
+      "last_modified": "2026-04-15"
+    },
+    "ai-brain-transformation": {
+      "hash": "69dc4288",
+      "last_modified": "2026-04-15"
+    },
+    "ai-citation-opportunity": {
+      "hash": "7b5e142e",
+      "last_modified": "2026-04-15"
+    },
+    "ai-platform-architect-system": {
+      "hash": "7f7eede7",
+      "last_modified": "2026-04-15"
+    },
+    "ai-strategic-brain": {
+      "hash": "d25dc195",
+      "last_modified": "2026-04-15"
+    },
+    "conversational-query-mapper": {
+      "hash": "eeeb82bd",
+      "last_modified": "2026-04-15"
+    },
+    "intelligence-system-training": {
+      "hash": "6e40ce40",
+      "last_modified": "2026-04-15"
+    },
+    "mcp-builder": {
+      "hash": "b7b75bb4",
+      "last_modified": "2026-04-15"
+    },
+    "meta-prompt-creator": {
+      "hash": "cce6f602",
+      "last_modified": "2026-04-15"
+    },
+    "agents": {
+      "hash": "bfc3364c",
+      "last_modified": "2026-03-14"
+    },
+    "finetuning": {
+      "hash": "674a95f0",
+      "last_modified": "2026-03-28"
+    },
+    "prompt-master": {
+      "hash": "c72c663c",
+      "last_modified": "2026-03-13"
+    },
+    "agent-evaluation": {
+      "hash": "82d954cc",
+      "last_modified": "2026-04-15"
+    },
+    "ai-agents-architect": {
+      "hash": "1c185a0e",
+      "last_modified": "2026-04-15"
+    },
+    "ai-prompt-engineering-safety-review": {
+      "hash": "0f0fce85",
+      "last_modified": "2026-04-15"
+    },
+    "gemini": {
+      "hash": "4b0ef9b7",
+      "last_modified": "2026-04-15"
+    },
+    "gemini-api-dev": {
+      "hash": "d44842c7",
+      "last_modified": "2026-04-23"
+    },
+    "gemini-interactions-api": {
+      "hash": "ae1fc047",
+      "last_modified": "2026-04-15"
+    },
+    "gemini-live-api-dev": {
+      "hash": "08fd37ca",
+      "last_modified": "2026-04-23"
+    },
+    "langgraph-docs": {
+      "hash": "51e16089",
+      "last_modified": "2026-04-15"
+    },
+    "openai-imagegen": {
+      "hash": "d15ed623",
+      "last_modified": "2026-04-23"
+    },
+    "openai-whisper": {
+      "hash": "9caa6090",
+      "last_modified": "2026-04-15"
+    },
+    "openai-whisper-api": {
+      "hash": "b120afa2",
+      "last_modified": "2026-04-23"
+    },
+    "promptor": {
+      "hash": "9d817214",
+      "last_modified": "2026-04-15"
+    },
+    "vertex-ai-api-dev": {
+      "hash": "dcd01ad5",
+      "last_modified": "2026-04-23"
+    },
+    "tri-agent-architecture": {
+      "hash": "f8dd225b",
+      "last_modified": "2026-04-15"
+    },
+    "affiliation-article-detector": {
+      "hash": "7b443835",
+      "last_modified": "2026-04-15"
+    },
+    "affiliation-block-system": {
+      "hash": "dfd64e91",
+      "last_modified": "2026-04-15"
+    },
+    "affiliation-opportunity-scanner": {
+      "hash": "dc186bfc",
+      "last_modified": "2026-04-15"
+    },
+    "affiliation-optimizer": {
+      "hash": "1c28b6d0",
+      "last_modified": "2026-04-15"
+    },
+    "affiliation-potential-scoring": {
+      "hash": "98d7ed2b",
+      "last_modified": "2026-04-15"
+    },
+    "comparatif-affiliate-engine": {
+      "hash": "7c9c3602",
+      "last_modified": "2026-04-15"
+    },
+    "comparatif-affilie-template": {
+      "hash": "5c04432f",
+      "last_modified": "2026-04-15"
+    },
+    "money-articles-30-plan": {
+      "hash": "73fa7f80",
+      "last_modified": "2026-04-15"
+    },
+    "money-page-generator": {
+      "hash": "768fb61c",
+      "last_modified": "2026-04-15"
+    },
+    "money-pages-framework": {
+      "hash": "7bf97fad",
+      "last_modified": "2026-04-15"
+    },
+    "strategic-score-combined": {
+      "hash": "dca78453",
+      "last_modified": "2026-04-15"
+    },
+    "\"aidesigner-frontend\"": {
+      "hash": "33101913",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-authority-accelerator": {
+      "hash": "fcbd53e2",
+      "last_modified": "2026-04-15"
+    },
+    "authority-domination-50p": {
+      "hash": "cf286034",
+      "last_modified": "2026-04-15"
+    },
+    "authority-domination-roadmap": {
+      "hash": "e549f59b",
+      "last_modified": "2026-04-15"
+    },
+    "authority-email-launch": {
+      "hash": "54807670",
+      "last_modified": "2026-04-15"
+    },
+    "authority-launch": {
+      "hash": "09998885",
+      "last_modified": "2026-04-15"
+    },
+    "authority-loop": {
+      "hash": "923c293e",
+      "last_modified": "2026-04-15"
+    },
+    "authority-m1m3-execution": {
+      "hash": "f92520af",
+      "last_modified": "2026-04-15"
+    },
+    "authority-method": {
+      "hash": "d31d9cac",
+      "last_modified": "2026-04-15"
+    },
+    "authority-promise": {
+      "hash": "1a0732f1",
+      "last_modified": "2026-04-15"
+    },
+    "authority-proof": {
+      "hash": "48be724b",
+      "last_modified": "2026-04-15"
+    },
+    "authority-salespage": {
+      "hash": "67e77714",
+      "last_modified": "2026-04-15"
+    },
+    "authority-system-90": {
+      "hash": "9aed0c11",
+      "last_modified": "2026-04-15"
+    },
+    "authority-templates": {
+      "hash": "aa3da0b7",
+      "last_modified": "2026-04-15"
+    },
+    "authority-sales-page-copy": {
+      "hash": "64041f50",
+      "last_modified": "2026-04-15"
+    },
+    "code-review-and-quality": {
+      "hash": "533b12e5",
+      "last_modified": "2026-04-15"
+    },
+    "documentation-and-adrs": {
+      "hash": "4431c8ce",
+      "last_modified": "2026-04-15"
+    },
+    "agent-constitution": {
+      "hash": "554a2c62",
+      "last_modified": "2026-04-15"
+    },
+    "claude-project-setup": {
+      "hash": "dc984249",
+      "last_modified": "2026-04-15"
+    },
+    "credo-engine": {
+      "hash": "782da694",
+      "last_modified": "2026-04-15"
+    },
+    "decision-engine": {
+      "hash": "1df39d4d",
+      "last_modified": "2026-04-15"
+    },
+    "dito-engine": {
+      "hash": "291778d9",
+      "last_modified": "2026-04-15"
+    },
+    "engine": {
+      "hash": "800c57ac",
+      "last_modified": "2026-04-15"
+    },
+    "os-claude-system": {
+      "hash": "adf0f43c",
+      "last_modified": "2026-04-15"
+    },
+    "os-router": {
+      "hash": "3a8e28c2",
+      "last_modified": "2026-04-15"
+    },
+    "pact-engine": {
+      "hash": "29bc2d19",
+      "last_modified": "2026-04-15"
+    },
+    "performance-loop": {
+      "hash": "93fbc3b2",
+      "last_modified": "2026-04-15"
+    },
+    "race-engine": {
+      "hash": "a24563de",
+      "last_modified": "2026-04-15"
+    },
+    "specs-engine": {
+      "hash": "70a7d4bf",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-brain": {
+      "hash": "e78308ee",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-clairtexte": {
+      "hash": "c606c120",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-email-to-content": {
+      "hash": "4a076f72",
+      "last_modified": "2026-04-15"
+    },
+    "git-workflow-and-versioning": {
+      "hash": "2fdc4d0f",
+      "last_modified": "2026-04-15"
+    },
+    "incremental-implementation": {
+      "hash": "b874ce21",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-reverse-engineer": {
+      "hash": "fb9dd088",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-workflow-architect": {
+      "hash": "49058a96",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-orchestrator": {
+      "hash": "d6413314",
+      "last_modified": "2026-04-17"
+    },
+    "n8n-code-javascript": {
+      "hash": "289f4b0b",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-code-python": {
+      "hash": "62ca7b87",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-expression-syntax": {
+      "hash": "fcdc5b01",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-mcp-tools-expert": {
+      "hash": "04f9dd56",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-node-configuration": {
+      "hash": "8e57d70f",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-validation-expert": {
+      "hash": "4bfaa5ab",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-workflow-patterns": {
+      "hash": "42931f5e",
+      "last_modified": "2026-04-15"
+    },
+    "n8n-google-sheets-mapper": {
+      "hash": "914a4a02",
+      "last_modified": "2026-03-13"
+    },
+    "n8n-sheets-multi-agent": {
+      "hash": "09aae137",
+      "last_modified": "2026-03-13"
+    },
+    "audit": {
+      "hash": "98bd36d2",
+      "last_modified": "2026-04-15"
+    },
+    "consolidation-ops": {
+      "hash": "1a2ee076",
+      "last_modified": "2026-04-15"
+    },
+    "etude-marche-france": {
+      "hash": "a72295a4",
+      "last_modified": "2026-04-15"
+    },
+    "fast-websearch": {
+      "hash": "402a36b9",
+      "last_modified": "2026-04-15"
+    },
+    "finance-freedom-flow": {
+      "hash": "14099ef6",
+      "last_modified": "2026-04-15"
+    },
+    "firecrawl": {
+      "hash": "6f338bcd",
+      "last_modified": "2026-04-23"
+    },
+    "index-manager": {
+      "hash": "1cd350c4",
+      "last_modified": "2026-04-15"
+    },
+    "local-prospecting-pipeline": {
+      "hash": "b59c1630",
+      "last_modified": "2026-04-15"
+    },
+    "marketing": {
+      "hash": "6e2a6fda",
+      "last_modified": "2026-04-17"
+    },
+    "note-to-sop": {
+      "hash": "e14a8d5b",
+      "last_modified": "2026-04-15"
+    },
+    "publish-repo": {
+      "hash": "74b8884a",
+      "last_modified": "2026-04-15"
+    },
+    "skill-creator": {
+      "hash": "01600d21",
+      "last_modified": "2026-04-18"
+    },
+    "skills-registry": {
+      "hash": "13e0564c",
+      "last_modified": "2026-04-15"
+    },
+    "task-system": {
+      "hash": "887aa03a",
+      "last_modified": "2026-04-15"
+    },
+    "todo": {
+      "hash": "59969e9d",
+      "last_modified": "2026-04-15"
+    },
+    "utm-convention": {
+      "hash": "4c2dc423",
+      "last_modified": "2026-04-15"
+    },
+    "vscode-agent-visual": {
+      "hash": "7bcf0907",
+      "last_modified": "2026-04-15"
+    },
+    "workflow-debug": {
+      "hash": "de1daf8f",
+      "last_modified": "2026-04-15"
+    },
+    "workflow-doc": {
+      "hash": "8f17a70b",
+      "last_modified": "2026-04-15"
+    },
+    "workflow-master": {
+      "hash": "ba8d1027",
+      "last_modified": "2026-04-15"
+    },
+    "workspace-audit": {
+      "hash": "22e8d620",
+      "last_modified": "2026-04-15"
+    },
+    "workspace-guardian": {
+      "hash": "8c458350",
+      "last_modified": "2026-04-15"
+    },
+    "workspace-hygiene": {
+      "hash": "1cee4087",
+      "last_modified": "2026-04-15"
+    },
+    "brand-guidelines": {
+      "hash": "d8458ac0",
+      "last_modified": "2026-03-14"
+    },
+    "claude-config-backup": {
+      "hash": "87e85d77",
+      "last_modified": "2026-04-14"
+    },
+    "local-prospector": {
+      "hash": "9c0246c9",
+      "last_modified": "2026-04-01"
+    },
+    "mini-offer-builder": {
+      "hash": "855ae717",
+      "last_modified": "2026-04-06"
+    },
+    "setup-api-key": {
+      "hash": "c13f8d60",
+      "last_modified": "2026-03-14"
+    },
+    "burp-suite-testing": {
+      "hash": "ceff5a48",
+      "last_modified": "2026-04-15"
+    },
+    "cloud-penetration-testing": {
+      "hash": "a01417dc",
+      "last_modified": "2026-04-15"
+    },
+    "code-audit": {
+      "hash": "5ac56ebd",
+      "last_modified": "2026-04-15"
+    },
+    "concise-planning": {
+      "hash": "68a233ed",
+      "last_modified": "2026-04-15"
+    },
+    "ethical-hacking-methodology": {
+      "hash": "b9f2d141",
+      "last_modified": "2026-04-15"
+    },
+    "find-docs": {
+      "hash": "1959837a",
+      "last_modified": "2026-04-15"
+    },
+    "git-pushing": {
+      "hash": "20f9b519",
+      "last_modified": "2026-04-15"
+    },
+    "googledrive": {
+      "hash": "7286fec2",
+      "last_modified": "2026-04-15"
+    },
+    "kaizen": {
+      "hash": "175248b0",
+      "last_modified": "2026-04-15"
+    },
+    "linux-privilege-escalation": {
+      "hash": "6bdbcd43",
+      "last_modified": "2026-04-15"
+    },
+    "notion": {
+      "hash": "cf98be2c",
+      "last_modified": "2026-04-23"
+    },
+    "security-auditor": {
+      "hash": "b36cee24",
+      "last_modified": "2026-04-15"
+    },
+    "systematic-debugging": {
+      "hash": "f4eab48a",
+      "last_modified": "2026-04-15"
+    },
+    "top-web-vulnerabilities": {
+      "hash": "d281a851",
+      "last_modified": "2026-04-15"
+    },
+    "vulnerability-scanner": {
+      "hash": "92305b85",
+      "last_modified": "2026-04-15"
+    },
+    "template-skill": {
+      "hash": "4d4ab42e",
+      "last_modified": "2026-03-07"
+    },
+    "planning-and-task-breakdown": {
+      "hash": "cf9006e5",
+      "last_modified": "2026-04-15"
+    },
+    "cluster-cocon-automatique": {
+      "hash": "274ec3dc",
+      "last_modified": "2026-04-23"
+    },
+    "cocon-map-schoolswp": {
+      "hash": "156f6a87",
+      "last_modified": "2026-04-16"
+    },
+    "geo-architect": {
+      "hash": "2cd5915d",
+      "last_modified": "2026-04-15"
+    },
+    "geo-gsc-pipeline": {
+      "hash": "35c0c76d",
+      "last_modified": "2026-04-15"
+    },
+    "lms-cocon-roi-prioritization": {
+      "hash": "36ca083e",
+      "last_modified": "2026-04-16"
+    },
+    "m1m3-urls-internal-linking": {
+      "hash": "f2f812a3",
+      "last_modified": "2026-04-16"
+    },
+    "niche-detector-reachable": {
+      "hash": "090fb80c",
+      "last_modified": "2026-04-15"
+    },
+    "seo-audit": {
+      "hash": "ad43a0e6",
+      "last_modified": "2026-04-15"
+    },
+    "seo-brief-generator": {
+      "hash": "5ae40abd",
+      "last_modified": "2026-04-15"
+    },
+    "seo-competitor-gap-radar": {
+      "hash": "74d21e81",
+      "last_modified": "2026-04-15"
+    },
+    "seo-pipeline": {
+      "hash": "38da30d5",
+      "last_modified": "2026-04-16"
+    },
+    "topical-authority-map": {
+      "hash": "fdaf1c53",
+      "last_modified": "2026-04-16"
+    },
+    "wpmarmite-business-strategy": {
+      "hash": "d1fa74ff",
+      "last_modified": "2026-04-15"
+    },
+    "youtube-omnichannel-engine": {
+      "hash": "a575ec2c",
+      "last_modified": "2026-04-16"
+    },
+    "cocon-roi-prioritization": {
+      "hash": "ec356814",
+      "last_modified": "2026-04-16"
+    },
+    "linkbuilding-outreach": {
+      "hash": "a6af602d",
+      "last_modified": "2026-04-06"
+    },
+    "schema-markup": {
+      "hash": "276ed5da",
+      "last_modified": "2026-03-14"
+    },
+    "seo-page-audit": {
+      "hash": "b0fa6a84",
+      "last_modified": "2026-04-02"
+    },
+    "form-cro": {
+      "hash": "02167da0",
+      "last_modified": "2026-04-15"
+    },
+    "instagram-strategy": {
+      "hash": "e448a5d6",
+      "last_modified": "2026-04-16"
+    },
+    "linkedin": {
+      "hash": "a597641a",
+      "last_modified": "2026-04-15"
+    },
+    "pinterest-pipeline": {
+      "hash": "bd0d8615",
+      "last_modified": "2026-04-23"
+    },
+    "reddit": {
+      "hash": "724c20cc",
+      "last_modified": "2026-04-16"
+    },
+    "schoolswp-youtube-studio": {
+      "hash": "d4d5ef70",
+      "last_modified": "2026-04-16"
+    },
+    "social-media-manager": {
+      "hash": "616d3f61",
+      "last_modified": "2026-04-16"
+    },
+    "thumbnail-strategist": {
+      "hash": "27b2e0a3",
+      "last_modified": "2026-04-16"
+    },
+    "youtube-extractor": {
+      "hash": "229a9960",
+      "last_modified": "2026-04-15"
+    },
+    "youtube": {
+      "hash": "8313e24c",
+      "last_modified": "2026-04-16"
+    },
+    "contenu-reseaux-sociaux-schoolswp": {
+      "hash": "73bbc043",
+      "last_modified": "2026-04-17"
+    },
+    "pinterest-strategy": {
+      "hash": "c03360fe",
+      "last_modified": "2026-04-16"
+    },
+    "social-content": {
+      "hash": "4a3d459f",
+      "last_modified": "2026-04-16"
+    },
+    "telegram-claude-bridge": {
+      "hash": "57e0370f",
+      "last_modified": "2026-03-31"
+    },
+    "youtube-shorts-schoolswp": {
+      "hash": "78fe9f42",
+      "last_modified": "2026-04-16"
+    },
+    "discord": {
+      "hash": "8a269c79",
+      "last_modified": "2026-04-15"
+    },
+    "facebook": {
+      "hash": "09cf0e3b",
+      "last_modified": "2026-04-15"
+    },
+    "slack": {
+      "hash": "35779b20",
+      "last_modified": "2026-04-15"
+    },
+    "whatsapp": {
+      "hash": "c408e204",
+      "last_modified": "2026-04-15"
+    },
+    "telegram-claude": {
+      "hash": "4f595957",
+      "last_modified": "2026-04-15"
+    },
+    "wp-image-metadata-seo": {
+      "hash": "a378d3d4",
+      "last_modified": "2026-04-23"
+    },
+    "recipe-backup-sheet-as-csv": {
+      "hash": "9cf2ea70",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-batch-invite-to-event": {
+      "hash": "42a7dbe8",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-block-focus-time": {
+      "hash": "cc8d9f7f",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-bulk-download-folder": {
+      "hash": "923f466c",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-collect-form-responses": {
+      "hash": "bf538fbc",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-compare-sheet-tabs": {
+      "hash": "f10958c2",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-copy-sheet-for-new-month": {
+      "hash": "5cae886b",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-classroom-course": {
+      "hash": "3f1d180a",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-doc-from-template": {
+      "hash": "6a8f12ad",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-events-from-sheet": {
+      "hash": "c998be88",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-expense-tracker": {
+      "hash": "d24c0376",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-feedback-form": {
+      "hash": "1bab5bc8",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-gmail-filter": {
+      "hash": "02f134c3",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-meet-space": {
+      "hash": "38631237",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-presentation": {
+      "hash": "c756facd",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-shared-drive": {
+      "hash": "075f92ca",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-task-list": {
+      "hash": "0c202a0e",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-create-vacation-responder": {
+      "hash": "f4d6d867",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-draft-email-from-doc": {
+      "hash": "06c262ff",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-email-drive-link": {
+      "hash": "cf408b64",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-find-free-time": {
+      "hash": "a1521c93",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-find-large-files": {
+      "hash": "caad4bd2",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-forward-labeled-emails": {
+      "hash": "490326db",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-generate-report-from-sheet": {
+      "hash": "1b641b3f",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-label-and-archive-emails": {
+      "hash": "01b3f48d",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-log-deal-update": {
+      "hash": "8742e269",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-organize-drive-folder": {
+      "hash": "a2808273",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-plan-weekly-schedule": {
+      "hash": "e516a38a",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-post-mortem-setup": {
+      "hash": "d34b7f9c",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-reschedule-meeting": {
+      "hash": "7c8d7aa6",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-review-meet-participants": {
+      "hash": "fef4a1e6",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-review-overdue-tasks": {
+      "hash": "322e2a7c",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-save-email-attachments": {
+      "hash": "803d367d",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-save-email-to-doc": {
+      "hash": "45c76f07",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-schedule-recurring-event": {
+      "hash": "2caf47a3",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-send-team-announcement": {
+      "hash": "11d0b0b8",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-share-doc-and-notify": {
+      "hash": "c5bd5b4b",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-share-event-materials": {
+      "hash": "e6ace74b",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-share-folder-with-team": {
+      "hash": "6aeafa83",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-sync-contacts-to-sheet": {
+      "hash": "d08a581b",
+      "last_modified": "2026-04-15"
+    },
+    "recipe-watch-drive-changes": {
+      "hash": "6f75cfdc",
+      "last_modified": "2026-04-15"
+    },
+    "persona-content-creator": {
+      "hash": "3ca3efa5",
+      "last_modified": "2026-04-15"
+    },
+    "persona-customer-support": {
+      "hash": "cb70a09a",
+      "last_modified": "2026-04-15"
+    },
+    "persona-event-coordinator": {
+      "hash": "3e701cc1",
+      "last_modified": "2026-04-15"
+    },
+    "persona-exec-assistant": {
+      "hash": "8f836ab8",
+      "last_modified": "2026-04-15"
+    },
+    "persona-hr-coordinator": {
+      "hash": "b72c1c0d",
+      "last_modified": "2026-04-15"
+    },
+    "persona-it-admin": {
+      "hash": "a30f323e",
+      "last_modified": "2026-04-15"
+    },
+    "persona-project-manager": {
+      "hash": "bfcb80aa",
+      "last_modified": "2026-04-15"
+    },
+    "persona-researcher": {
+      "hash": "454a74f3",
+      "last_modified": "2026-04-15"
+    },
+    "persona-sales-ops": {
+      "hash": "78aca36c",
+      "last_modified": "2026-04-15"
+    },
+    "persona-team-lead": {
+      "hash": "6299be01",
+      "last_modified": "2026-04-15"
+    },
+    "gws-admin-reports": {
+      "hash": "e60b75b0",
+      "last_modified": "2026-04-15"
+    },
+    "gws-calendar-agenda": {
+      "hash": "70763b09",
+      "last_modified": "2026-04-15"
+    },
+    "gws-calendar-insert": {
+      "hash": "6eada7eb",
+      "last_modified": "2026-04-15"
+    },
+    "gws-calendar": {
+      "hash": "1d723ca9",
+      "last_modified": "2026-04-15"
+    },
+    "gws-chat-send": {
+      "hash": "29daeb6d",
+      "last_modified": "2026-04-15"
+    },
+    "gws-chat": {
+      "hash": "71d5ef7e",
+      "last_modified": "2026-04-15"
+    },
+    "gws-classroom": {
+      "hash": "768863c8",
+      "last_modified": "2026-04-15"
+    },
+    "gws-docs-write": {
+      "hash": "b390343c",
+      "last_modified": "2026-04-15"
+    },
+    "gws-docs": {
+      "hash": "77b05f21",
+      "last_modified": "2026-04-15"
+    },
+    "gws-drive-upload": {
+      "hash": "ab78e4b8",
+      "last_modified": "2026-04-15"
+    },
+    "gws-drive": {
+      "hash": "4187209b",
+      "last_modified": "2026-04-15"
+    },
+    "gws-events-renew": {
+      "hash": "1e1e95df",
+      "last_modified": "2026-04-15"
+    },
+    "gws-events-subscribe": {
+      "hash": "a1a5928a",
+      "last_modified": "2026-04-15"
+    },
+    "gws-events": {
+      "hash": "82cc900d",
+      "last_modified": "2026-04-15"
+    },
+    "gws-forms": {
+      "hash": "af970766",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-forward": {
+      "hash": "36ad4906",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-read": {
+      "hash": "426d84e7",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-reply-all": {
+      "hash": "14396c57",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-reply": {
+      "hash": "141331d2",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-send": {
+      "hash": "cd62cc0e",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-triage": {
+      "hash": "66635663",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail-watch": {
+      "hash": "0fb052b5",
+      "last_modified": "2026-04-15"
+    },
+    "gws-gmail": {
+      "hash": "a33af595",
+      "last_modified": "2026-04-15"
+    },
+    "gws-keep": {
+      "hash": "d257203b",
+      "last_modified": "2026-04-15"
+    },
+    "gws-meet": {
+      "hash": "d555e5ca",
+      "last_modified": "2026-04-15"
+    },
+    "gws-modelarmor-create-template": {
+      "hash": "773bdf42",
+      "last_modified": "2026-04-15"
+    },
+    "gws-modelarmor-sanitize-prompt": {
+      "hash": "b459266c",
+      "last_modified": "2026-04-15"
+    },
+    "gws-modelarmor-sanitize-response": {
+      "hash": "58d6c19c",
+      "last_modified": "2026-04-15"
+    },
+    "gws-modelarmor": {
+      "hash": "390078c8",
+      "last_modified": "2026-04-15"
+    },
+    "gws-people": {
+      "hash": "427bfc57",
+      "last_modified": "2026-04-15"
+    },
+    "gws-shared": {
+      "hash": "cd729317",
+      "last_modified": "2026-04-15"
+    },
+    "gws-sheets-append": {
+      "hash": "3c7c04b9",
+      "last_modified": "2026-04-15"
+    },
+    "gws-sheets-read": {
+      "hash": "67ebb952",
+      "last_modified": "2026-04-15"
+    },
+    "gws-sheets": {
+      "hash": "b7b64e95",
+      "last_modified": "2026-04-15"
+    },
+    "gws-slides": {
+      "hash": "7d3efa07",
+      "last_modified": "2026-04-15"
+    },
+    "gws-tasks": {
+      "hash": "dc88071c",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow-email-to-task": {
+      "hash": "d089eb89",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow-file-announce": {
+      "hash": "bbbf287f",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow-meeting-prep": {
+      "hash": "36583996",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow-standup-report": {
+      "hash": "15745855",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow-weekly-digest": {
+      "hash": "b0bc6a37",
+      "last_modified": "2026-04-15"
+    },
+    "gws-workflow": {
+      "hash": "b76cb017",
+      "last_modified": "2026-04-15"
+    },
+    "frontend-design": {
+      "hash": "7b56cf77",
+      "last_modified": "2026-04-15"
+    },
+    "docker-expert": {
+      "hash": "009b62e2",
+      "last_modified": "2026-03-14"
+    },
+    "web-artifacts-builder": {
+      "hash": "8535cb05",
+      "last_modified": "2026-03-14"
+    },
+    "api-patterns": {
+      "hash": "3297284b",
+      "last_modified": "2026-04-15"
+    },
+    "backend-dev-guidelines": {
+      "hash": "2b0fa8fa",
+      "last_modified": "2026-04-15"
+    },
+    "database-design": {
+      "hash": "ec8cb3b4",
+      "last_modified": "2026-04-15"
+    },
+    "frontend-developer": {
+      "hash": "d444a3d0",
+      "last_modified": "2026-04-15"
+    },
+    "nextjs-best-practices": {
+      "hash": "e8a44bc1",
+      "last_modified": "2026-04-15"
+    },
+    "nextjs-supabase-auth": {
+      "hash": "48b32363",
+      "last_modified": "2026-04-15"
+    },
+    "react-patterns": {
+      "hash": "ce5d0e9f",
+      "last_modified": "2026-04-15"
+    },
+    "remotion": {
+      "hash": "0c0f4b0c",
+      "last_modified": "2026-04-15"
+    },
+    "senior-fullstack": {
+      "hash": "2561e315",
+      "last_modified": "2026-04-15"
+    },
+    "stripe-integration": {
+      "hash": "81208163",
+      "last_modified": "2026-04-15"
+    },
+    "vercel-react-best-practices": {
+      "hash": "0cbf8154",
+      "last_modified": "2026-04-15"
+    },
+    "design-patterns": {
+      "hash": "20035820",
+      "last_modified": "2026-04-19"
+    },
+    "token-audit": {
+      "hash": "4f6788b3",
+      "last_modified": "2026-04-19"
+    },
+    "Analyseur CSV / Excel → Rapport décisionnel": {
+      "hash": "f6a3ad8c",
+      "last_modified": "2026-03-13"
+    },
+    "docx": {
+      "hash": "ebd3b766",
+      "last_modified": "2026-03-14"
+    },
+    "pdf": {
+      "hash": "6c066dab",
+      "last_modified": "2026-03-14"
+    },
+    "xlsx": {
+      "hash": "0021b85d",
+      "last_modified": "2026-03-14"
+    },
+    "canvas-design": {
+      "hash": "a0063447",
+      "last_modified": "2026-03-14"
+    },
+    "heygen": {
+      "hash": "32d10ace",
+      "last_modified": "2026-04-23"
+    },
+    "music": {
+      "hash": "375d6b74",
+      "last_modified": "2026-03-14"
+    },
+    "remotion-best-practices": {
+      "hash": "aa33a626",
+      "last_modified": "2026-03-14"
+    },
+    "sound-effects": {
+      "hash": "a9319258",
+      "last_modified": "2026-03-14"
+    },
+    "speech-to-text": {
+      "hash": "18fbd2c6",
+      "last_modified": "2026-03-14"
+    },
+    "svg-burger-illustration": {
+      "hash": "daf57418",
+      "last_modified": "2026-03-14"
+    },
+    "text-to-speech": {
+      "hash": "6121ca60",
+      "last_modified": "2026-03-14"
+    },
+    "video-translate": {
+      "hash": "15fde965",
+      "last_modified": "2026-03-14"
+    },
+    "notebooklm-skills": {
+      "hash": "07a292b8",
+      "last_modified": "2026-04-15"
+    },
+    "schoolswp-motion": {
+      "hash": "4d22a3d9",
+      "last_modified": "2026-03-30"
+    },
+    "wordpress-pro": {
+      "hash": "0518e18c",
+      "last_modified": "2026-03-14"
+    },
+    "wordpress-router": {
+      "hash": "3941059d",
+      "last_modified": "2026-03-14"
+    },
+    "wp-abilities-api": {
+      "hash": "1c45e92d",
+      "last_modified": "2026-04-23"
+    },
+    "wp-block-development": {
+      "hash": "24bb78c0",
+      "last_modified": "2026-03-14"
+    },
+    "wp-block-themes": {
+      "hash": "3d5def72",
+      "last_modified": "2026-03-14"
+    },
+    "wp-interactivity-api": {
+      "hash": "f192d98d",
+      "last_modified": "2026-03-14"
+    },
+    "wp-performance": {
+      "hash": "173a2613",
+      "last_modified": "2026-03-14"
+    },
+    "wp-phpstan": {
+      "hash": "58735a5a",
+      "last_modified": "2026-03-14"
+    },
+    "wp-playground": {
+      "hash": "9f0093b6",
+      "last_modified": "2026-03-14"
+    },
+    "wp-plugin-development": {
+      "hash": "de3f1007",
+      "last_modified": "2026-03-14"
+    },
+    "wp-project-triage": {
+      "hash": "8d0b85c9",
+      "last_modified": "2026-03-14"
+    },
+    "wp-rest-api": {
+      "hash": "2031aee6",
+      "last_modified": "2026-03-14"
+    },
+    "wp-wpcli-and-ops": {
+      "hash": "3ea94920",
+      "last_modified": "2026-03-14"
+    },
+    "wpds": {
+      "hash": "9dd51d58",
+      "last_modified": "2026-03-14"
+    },
+    "dev-wordpress": {
+      "hash": "2b621acd",
+      "last_modified": "2026-04-15"
+    },
+    "wordpress": {
+      "hash": "38cfa4d9",
+      "last_modified": "2026-04-15"
+    },
+    "wp-freelance-training": {
+      "hash": "414e492a",
+      "last_modified": "2026-03-29"
+    },
+    "avoid-ai-writing": {
+      "hash": "78c8c1d7",
+      "last_modified": "2026-04-18"
+    },
+    "clarvia-aeo-check": {
+      "hash": "aacf32c1",
+      "last_modified": "2026-04-18"
+    },
+    "copywriting-psychologist": {
+      "hash": "cd7943d3",
+      "last_modified": "2026-04-18"
+    },
+    "email-sequence": {
+      "hash": "1e380aa9",
+      "last_modified": "2026-04-18"
+    },
+    "geo-fundamentals": {
+      "hash": "f106fa9a",
+      "last_modified": "2026-04-18"
+    },
+    "page-cro": {
+      "hash": "e212c99b",
+      "last_modified": "2026-04-18"
+    },
+    "popup-cro": {
+      "hash": "aee3e8ca",
+      "last_modified": "2026-04-18"
+    },
+    "seo-aeo-internal-linking": {
+      "hash": "3ba2aacc",
+      "last_modified": "2026-04-18"
+    },
+    "seo-aeo-schema-generator": {
+      "hash": "e28dfa1b",
+      "last_modified": "2026-04-18"
+    },
+    "seo-cannibalization-detector": {
+      "hash": "f36c5d2a",
+      "last_modified": "2026-04-18"
+    },
+    "seo-content-refresher": {
+      "hash": "ff41389c",
+      "last_modified": "2026-04-18"
+    },
+    "seo-hreflang": {
+      "hash": "95a6d48c",
+      "last_modified": "2026-04-18"
+    },
+    "seo-snippet-hunter": {
+      "hash": "b25be1c5",
+      "last_modified": "2026-04-18"
+    },
+    "web-performance-optimization": {
+      "hash": "4aef1a60",
+      "last_modified": "2026-04-18"
+    },
+    "wordpress-centric-high-seo-optimized-blogwriting-skill": {
+      "hash": "a8c40bd0",
+      "last_modified": "2026-04-18"
+    },
+    "wordpress-plugin-development": {
+      "hash": "cc575156",
+      "last_modified": "2026-04-18"
+    },
+    "gateguard": {
+      "hash": "dd4b7d28",
+      "last_modified": "2026-04-19"
+    },
+    "cc-design": {
+      "hash": "26a5b8d5",
+      "last_modified": "2026-04-20"
+    },
+    "playwright-cli": {
+      "hash": "d7f743f2",
+      "last_modified": "2026-04-20"
+    },
+    "playwright-trace": {
+      "hash": "00992487",
+      "last_modified": "2026-04-20"
+    },
+    "gsap": {
+      "hash": "de57ffce",
+      "last_modified": "2026-04-23"
+    },
+    "hyperframes": {
+      "hash": "95ad8ec5",
+      "last_modified": "2026-04-23"
+    },
+    "hyperframes-cli": {
+      "hash": "5fc10776",
+      "last_modified": "2026-04-23"
+    },
+    "hyperframes-registry": {
+      "hash": "a840b8fe",
+      "last_modified": "2026-04-23"
+    },
+    "website-to-hyperframes": {
+      "hash": "82729ad7",
+      "last_modified": "2026-04-23"
+    },
+    "liveavatar-debug": {
+      "hash": "90d9ab88",
+      "last_modified": "2026-04-23"
+    },
+    "liveavatar-feedback": {
+      "hash": "6da531c9",
+      "last_modified": "2026-04-23"
+    },
+    "liveavatar-integrate": {
+      "hash": "e5ba25d8",
+      "last_modified": "2026-04-23"
+    }
+  }
+}

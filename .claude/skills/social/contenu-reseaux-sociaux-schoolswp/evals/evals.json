@@ -1,0 +1,102 @@
+{
+  "skill": "contenu-reseaux-sociaux-schoolswp",
+  "version": "2.0.0",
+  "description": "Evals pour le skill Contenu-reseaux-sociaux-schoolsWP (Instagram hub, 2 modes : Pack + Campagne)",
+  "assertions_common": [
+    "Naming 'schoolsWP' correct partout (jamais schoolswp, SchoolsWP, Schools WP)",
+    "Tutoiement systématique en français",
+    "Aucun mot interdit (disruptif, game changer, scalable, hack, révolutionnaire, incroyable, en un clic, sans effort, il suffit de)",
+    "Au moins une preuve concrète par contenu (test, cas, chiffre, stack schoolsWP)",
+    "Un seul CTA principal par contenu",
+    "Phrases < 20 mots",
+    "Instagram uniquement — aucun contenu TikTok / LinkedIn / Facebook",
+    "Emojis ≤ 1 par slide/post"
+  ],
+  "tests": [
+    {
+      "id": "eval-1-pack-ottokit-default",
+      "mode": "pack",
+      "prompt": "Produis le pack Instagram par défaut sur OttoKit pour schoolsWP.",
+      "expected_behavior": [
+        "Active le mode Pack (pas le mode Campagne)",
+        "Applique le pack par défaut : 3 carrousels + 3 posts courts (erreur/conseil/opinion) + 2 Reels + 2 séries Stories",
+        "Carrousels détaillés slide par slide (8–10 slides)",
+        "Veille conversationnelle sur OttoKit",
+        "Au moins 10 hooks classés par typologie",
+        "Mention de la stack réelle schoolsWP",
+        "Checklist qualité cochée en fin de livrable"
+      ]
+    },
+    {
+      "id": "eval-2-pack-comparatif-fluentcrm",
+      "mode": "pack",
+      "prompt": "Je veux 3 carrousels Instagram qui comparent FluentCRM et Mailchimp pour schoolsWP.",
+      "expected_behavior": [
+        "Mode Pack, format exclusivement carrousel",
+        "3 carrousels avec 3 angles distincts",
+        "Structure 'Comparatif A vs B' utilisée",
+        "Verdict tranché à la fin de chaque carrousel",
+        "Preuve ancrée dans l'usage réel sur schoolswp.com",
+        "Caption IG + hashtags pour chaque carrousel"
+      ]
+    },
+    {
+      "id": "eval-3-campagne-phase1-fluentcrm",
+      "mode": "campagne",
+      "prompt": "Campagne Instagram pour remplacer Mailchimp par FluentCRM sur schoolsWP.",
+      "expected_behavior": [
+        "Active le mode Campagne — Phase 1 uniquement",
+        "Produit : nom de campagne + angle directeur + tableau maître (10 lignes × 12 colonnes) + question GO",
+        "12 colonnes exactes : #, Rôle post, Post Type, Format, Sujet, Angle, Hook, Promesse, Message clé, CTA, Niveau d'intention, Objectif business",
+        "Progression logique identifiable (accroche → éducation → preuve → transition conversion)",
+        "Mix formats (≥ 3 différents)",
+        "Mix niveaux d'intention (≥ 3 des 4 niveaux)",
+        "Mix objectifs business (≥ 4 des 6 objectifs)",
+        "Au moins 1 post erreur OU comparatif",
+        "Au moins 1 post retour d'expérience",
+        "Au moins 1 post de transition vers conversion douce",
+        "Hooks écrits en toutes lettres (pas de placeholders)",
+        "NE produit PAS la Phase 2",
+        "Termine par 'GO pour la phase 2 ?'"
+      ],
+      "kill_switch_check": "Si le skill produit aussi la Phase 2 sans GO utilisateur → test échoué"
+    },
+    {
+      "id": "eval-4-campagne-phase2-post-production",
+      "mode": "campagne",
+      "prompt": "GO phase 2 (après Phase 1 du test eval-3)",
+      "expected_behavior": [
+        "Produit les 10 blocs détaillés post par post",
+        "Chaque bloc contient : A. Fiche éditoriale / B. Contenu / C. Brief visuel / D. Prompt visuel / E. Notes production",
+        "Brief visuel respecte les 9 règles d'identité visuelle schoolsWP (fond clair #FAFBFD, typo Nunito Sans / Roboto, accents uniquement sur actions, etc.)",
+        "Prompt visuel contient les 7 blocs (sujet / composition / style / typographie / palette / ambiance / négatifs)",
+        "Prompt visuel contient la liste --no (emojis cascade, dégradés, 3D, etc.)",
+        "Arborescence /Reseaux/Campagne-remplacer-mailchimp-par-fluentcrm/ créée avec 11 fichiers",
+        "Chaque fichier NN-post-NN.md respecte la checklist qualité schoolsWP"
+      ]
+    },
+    {
+      "id": "eval-5-campagne-input-vague",
+      "mode": "campagne",
+      "prompt": "Fais-moi une campagne Instagram.",
+      "expected_behavior": [
+        "Détecte que l'input est trop vague",
+        "Pose entre 1 et 3 questions ciblées et courtes (objectif final / ressource à pousser / contexte)",
+        "NE lance PAS la Phase 1 tant que des réponses utiles ne sont pas données",
+        "Après réponses suffisantes, enchaîne sur Phase 1"
+      ]
+    }
+  ],
+  "kill_switches": [
+    "Le skill produit du contenu TikTok / LinkedIn / Facebook alors qu'il est Instagram-only",
+    "Le skill livre un contenu générique type 'top 10 plugins WordPress' sans preuve",
+    "Le skill utilise un mot interdit (game changer, révolutionnaire, etc.)",
+    "Le skill publie sans passer la checklist qualité",
+    "Le skill tente de construire une stratégie éditoriale 30 jours (domaine de instagram-strategy)",
+    "En mode Campagne : le skill mélange Phase 1 et Phase 2 dans la même sortie",
+    "En mode Campagne : le skill produit la Phase 2 sans GO explicite utilisateur",
+    "En mode Campagne : le tableau maître a moins de 10 posts ou moins de 12 colonnes",
+    "Brief visuel utilise un fond sombre par défaut (hors identité schoolsWP)",
+    "Prompt visuel ne contient pas la liste --no négatifs"
+  ]
+}

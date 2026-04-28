@@ -1,0 +1,42 @@
+{
+  "eval_id": 1,
+  "eval_name": "creer-scene-credibilite",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "La reponse suit le format obligatoire : Diagnostic / Plan d'action / Fichiers impactes / Commandes executees / Resultat / QA / Suite recommandee",
+      "passed": false,
+      "evidence": "La reponse utilise des sections libres (Fichiers crees/modifies, Fichiers NON modifies, Position dans la timeline globale) sans aucune des 7 sections obligatoires (Diagnostic, Plan d'action, Fichiers impactes, Commandes executees, Resultat, QA, Suite recommandee)."
+    },
+    {
+      "text": "Les textes affiches (fondateur, badges, ecosysteme) sont centralises dans texts.ts, pas hardcodes dans la composition",
+      "passed": false,
+      "evidence": "Les textes fondateur et badges utilisent bien TEXTS.credibility (founder, founderTitle, badges, ecosystemItems), mais le titre de section \"L'ecosysteme schoolsWP\" (ligne 283) est hardcode directement dans la composition au lieu de venir de texts.ts. Les initiales \"MK\" (ligne 162) sont aussi hardcodees."
+    },
+    {
+      "text": "Utilise THEME.xxx pour couleurs, tailles de texte, springs et fps — aucune valeur en dur",
+      "passed": false,
+      "evidence": "Les couleurs (THEME.bgDark, THEME.primary, etc.), fonts (THEME.headingFont, THEME.bodyFont), font sizes (THEME.fontSizeH2, fontSizeH3, etc.), springs (THEME.springSmooth, THEME.springPunch) et fps utilisent bien THEME. Cependant, de nombreuses valeurs sont en dur : tailles d'avatar (120px), taille d'initiales (fontSize: 42), frame timings (540, 600, 60, 180, 210, 220, 30), espacements (gap: 40, 50), taille d'icone (64, 28), border-radius (16). L'assertion demande aucune valeur en dur."
+    },
+    {
+      "text": "La composition est importee et enregistree dans Root.tsx avec THEME.fps, 1920x1080, et duree calculee",
+      "passed": true,
+      "evidence": "Scene6Credibility est importee ligne 7 et enregistree comme Composition (lignes 53-60) avec fps={THEME.fps}, width={1920}, height={1080}, et durationInFrames={THEME.scene6.duration}."
+    },
+    {
+      "text": "Le fichier suit la convention PascalCase avec prefixe Scene (ex: Scene6Credibility.tsx)",
+      "passed": true,
+      "evidence": "Le fichier est nomme Scene6Credibility.tsx — PascalCase avec prefixe Scene et numero de scene."
+    },
+    {
+      "text": "schoolsWP ecrit correctement partout (WP majuscules) dans le code et la reponse",
+      "passed": true,
+      "evidence": "Toutes les occurrences dans le code (ligne 283: \"L'ecosysteme schoolsWP\") et dans response.md utilisent systematiquement \"schoolsWP\" avec WP en majuscules."
+    },
+    {
+      "text": "Duree de 20 secondes = 600 frames a 30fps, calculee via THEME.fps * 20",
+      "passed": false,
+      "evidence": "La duree est bien de 600 frames (20s a 30fps), mais dans Root.tsx elle est definie via THEME.scene6.duration (valeur precalculee de 600) et non via l'expression THEME.fps * 20 comme attendu."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "skill_name": "youtube-thumbnails",
+  "iteration": 1,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {"eval_name": "maintenance-wordpress", "pass_rate": 1.0, "passed": 6, "total": 6, "duration_seconds": 142.4, "total_tokens": 27015},
+        {"eval_name": "comparatif-lms", "pass_rate": 1.0, "passed": 4, "total": 4, "duration_seconds": 298.9, "total_tokens": 34621},
+        {"eval_name": "fluentcrm", "pass_rate": 1.0, "passed": 3, "total": 3, "duration_seconds": 204.1, "total_tokens": 30468},
+        {"eval_name": "performance-wp", "pass_rate": 1.0, "passed": 3, "total": 3, "duration_seconds": 78.0, "total_tokens": 23414},
+        {"eval_name": "branding-michael", "pass_rate": 1.0, "passed": 3, "total": 3, "duration_seconds": 184.8, "total_tokens": 27589},
+        {"eval_name": "prompt-image-canva", "pass_rate": 1.0, "passed": 4, "total": 4, "duration_seconds": 92.2, "total_tokens": 23412}
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "stddev_pass_rate": 0.0,
+        "mean_duration_seconds": 166.7,
+        "mean_tokens": 27753,
+        "total_passed": 23,
+        "total_assertions": 23
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {"eval_name": "maintenance-wordpress", "pass_rate": 0.5, "passed": 3, "total": 6, "duration_seconds": 131.9, "total_tokens": 25060},
+        {"eval_name": "comparatif-lms", "pass_rate": 1.0, "passed": 4, "total": 4, "duration_seconds": 100.9, "total_tokens": 26115},
+        {"eval_name": "fluentcrm", "pass_rate": 0.67, "passed": 2, "total": 3, "duration_seconds": 104.0, "total_tokens": 23644},
+        {"eval_name": "performance-wp", "pass_rate": 1.0, "passed": 3, "total": 3, "duration_seconds": 31.4, "total_tokens": 17079},
+        {"eval_name": "branding-michael", "pass_rate": 0.67, "passed": 2, "total": 3, "duration_seconds": 39.5, "total_tokens": 17090},
+        {"eval_name": "prompt-image-canva", "pass_rate": 0.75, "passed": 3, "total": 4, "duration_seconds": 205.4, "total_tokens": 27984}
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.765,
+        "stddev_pass_rate": 0.19,
+        "mean_duration_seconds": 102.2,
+        "mean_tokens": 22829,
+        "total_passed": 17,
+        "total_assertions": 23
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+23.5%",
+    "pass_rate_absolute": "+0.235",
+    "with_skill_pass_rate": 1.0,
+    "without_skill_pass_rate": 0.765,
+    "duration_change": "+63%",
+    "tokens_change": "+22%"
+  },
+  "analyst_observations": [
+    "Le skill atteint 100% de pass rate sur les 6 evals contre 76.5% sans skill — gain significatif",
+    "Les baselines sans skill produisent souvent moins de 5 concepts (3 pour perf-wp et prompt-canva) — le skill garantit les 5 systématiquement",
+    "La structure formelle (sections Mise en page / Couleurs / Texte / Expression / Déclencheur / Mécanisme / Branding) est absente des baselines",
+    "Les baselines ne fournissent pas de codes hex systématiques, pas de mécanisme de clic ni de déclencheur émotionnel formalisé",
+    "Le skill consomme ~22% plus de tokens et ~63% plus de temps, ce qui est acceptable pour la qualité structurelle ajoutée",
+    "L'analyse du sujet (étape 1 du skill) n'existe pas dans les baselines — c'est un différenciateur qualitatif majeur"
+  ]
+}

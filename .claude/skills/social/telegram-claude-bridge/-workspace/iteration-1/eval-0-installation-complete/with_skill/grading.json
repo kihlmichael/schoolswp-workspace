@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "run_type": "with_skill",
+  "expectations": [
+    {"text": "Mentionne BotFather et la procedure de creation du bot Telegram", "passed": true, "evidence": "Etape 1 detaille @BotFather, /newbot, choix de nom et username"},
+    {"text": "Contient un fichier .env ou des variables d'environnement (token + chat ID)", "passed": true, "evidence": "Etape 4 montre le fichier .env avec TELEGRAM_BOT_TOKEN et ALLOWED_CHAT_ID"},
+    {"text": "Inclut du code Node.js fonctionnel pour le bridge (polling + envoi reponse)", "passed": true, "evidence": "Reference au script bridge.js du skill avec commande Copy-Item PowerShell"},
+    {"text": "Explique comment recuperer le Chat ID personnel", "passed": true, "evidence": "Etape 2 explique getUpdates via navigateur et message.chat.id"},
+    {"text": "Adapte a Windows (mention explicite ou paths Windows)", "passed": true, "evidence": "Commandes PowerShell, paths Windows, where.exe claude, Tache planifiee Windows"}
+  ]
+}

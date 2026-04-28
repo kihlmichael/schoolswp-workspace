@@ -1,0 +1,119 @@
+---
+name: cocon-roi-prioritization
+description: |
+  Priorisation ROI d'un cocon/pilier schoolsWP. Applique un score (SEO + Business + Autorité - Effort) aux pages d'un cocon existant et produit un plan d'exécution 4 semaines. Applicable à tout pilier : LMS, CRM, OttoKit, Sécurité, Automatisation, Performance, etc.
+  Utiliser ce skill quand l'utilisateur fournit une liste de pages d'un cocon avec notes SEO/Business/Autorité/Effort et veut : "prioriser les pages de ce cocon", "classer par ROI", "plan 4 semaines pour le cocon X", "quoi publier en premier dans le cluster X", "score ROI cocon OttoKit".
+  NE PAS utiliser pour : arbitrage éditorial global tous cocons confondus (voir brain-autonome qui décide quoi publier à l'échelle du site), cartographie macro (voir cocon-map-schoolswp), génération initiale d'un cluster depuis un mot-clé (voir cluster-cocon-automatique).
+---
+
+# Priorisation ROI — Cocons schoolsWP
+
+Skill tactique de priorisation à l'intérieur d'un cocon/pilier donné. Applique une formule ROI chiffrée et produit un plan d'exécution séquencé 4 semaines.
+
+**Positionnement (à retenir)** :
+
+- `brain-autonome` → décide quoi publier à l'échelle globale du site (tous cocons confondus).
+- `cocon-roi-prioritization` → priorise les pages à l'intérieur d'UN cocon/pilier donné.
+
+Pas de chevauchement : les deux s'enchaînent (brain-autonome identifie le cocon prioritaire → cocon-roi-prioritization priorise les pages dedans).
+
+## Entrées
+
+- Liste de pages du cocon (pilier + satellites)
+- Notes chiffrées pour chaque page : SEO (1-10) / Business (1-10) / Autorité (1-10) / Effort (1-10)
+- Pilier cible précisé (ex : LMS, CRM, OttoKit, Sécurité, Automatisation…)
+
+Si les notes ne sont pas fournies, demander à l'utilisateur de les estimer OU produire une estimation avec marqueur "Hypothèse : …".
+
+## Formule ROI
+
+```
+Score ROI = (SEO × 0.35) + (Business × 0.35) + (Autorité × 0.2) − (Effort × 0.1)
+```
+
+Le score est borné entre 0 et 10 en pratique. Plus c'est haut, plus c'est prioritaire.
+
+## Sorties obligatoires
+
+1) **Priorité A** — publier en premier (score ≥ 7.0)
+2) **Priorité B** — phase 2 (score 5.0–6.9)
+3) **Priorité C** — backlog (score < 5.0)
+4) **Plan d'exécution 4 semaines** (S1 à S4)
+5) **Notes d'impact** (autorité thématique + maillage cluster)
+6) **Handoff** — pointeur vers le skill de rédaction à lancer sur la première page Priorité A
+
+## Règles
+
+- Phrases courtes.
+- Chiffres explicites (toujours afficher le score ROI calculé pour chaque page).
+- Toujours donner un plan 4 semaines structuré, même si le cocon est petit.
+- Si info manque : "Hypothèse : …"
+- Ne pas mélanger les cocons : une session = un pilier.
+
+## Checklist (5 points)
+
+1) Notes SEO/Business/Autorité/Effort remplies ou estimées pour chaque page
+2) Score ROI calculé pour chaque page (formule appliquée)
+3) Priorités A/B/C tranchées selon seuils
+4) Plan 4 semaines cohérent (S1 article signature, S2 poids business, S3 quick wins, S4 finalisation)
+5) Règles de maillage interne prévues entre les pages priorisées
+
+## Prompt principal
+
+Tu es le moteur de priorisation ROI de schoolsWP.
+
+Applique le score ROI : `(SEO × 0.35) + (Business × 0.35) + (Autorité × 0.2) − (Effort × 0.1)`
+
+Classe les pages en :
+- Priorité A (score ≥ 7.0) — publier en premier
+- Priorité B (score 5.0–6.9) — phase 2
+- Priorité C (score < 5.0) — backlog
+
+Puis propose un plan d'exécution sur 4 semaines, avec une logique : S1 article signature, S2 poids business, S3 quick wins, S4 finalisation.
+
+## Exemple d'application (cocon LMS)
+
+**Entrée** :
+
+- Architecture complète d'un LMS WordPress rentable | SEO 8 | Business 9 | Autorité 10 | Effort 7
+- Connecter Tutor LMS à FluentCRM | SEO 7 | Business 9 | Autorité 8 | Effort 5
+- Tutor LMS vs LearnDash | SEO 9 | Business 7 | Autorité 8 | Effort 6
+
+**Sortie** :
+
+```
+Priorité A
+1) Architecture complète d'un LMS WordPress rentable — ROI ~ 7.75
+2) Connecter Tutor LMS à FluentCRM — ROI ~ 7.6
+3) Tutor LMS vs LearnDash — ROI ~ 7.55
+
+Priorité B
+4) LMS gratuit vs premium
+5) Tunnel de vente formation WordPress
+6) Optimiser la vitesse d'un LMS WordPress
+
+Priorité C
+- Gamification LMS
+- LMS multisite
+- RGPD LMS
+- Gestion 1000+ élèves
+
+Plan 4 semaines
+S1 : Article signature (architecture LMS rentable)
+S2 : Tutor LMS vs LearnDash + Tutor LMS → FluentCRM
+S3 : LMS gratuit vs premium
+S4 : Tunnel de vente LMS
+```
+
+## Cas d'usage immédiat — cocon OttoKit (27 pages, priorité actuelle)
+
+Usage typique pour la priorité roadmap actuelle : fournir la liste des 27 pages planifiées du cocon OttoKit avec notes estimées (ou données DataForSEO) → obtenir priorité A/B/C + plan 4 semaines pour démarrer la production.
+
+## Handoff vers la production
+
+Après priorisation :
+
+- Pour la rédaction d'une page Priorité A → `schoolswp-article-workflow` (si mot-clé + SERP) ou `thruuu-writer` (si brief `.docx`)
+- Pour le brief SEO d'une page → `seo-brief-generator`
+- Pour voir où s'insère le cocon dans l'architecture globale schoolsWP → `cocon-map-schoolswp`
+- Pour générer un cluster supplémentaire à intégrer au cocon → `cluster-cocon-automatique`

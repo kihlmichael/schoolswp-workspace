@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "Produit exactement 5 promesses avec justification",
+      "passed": true,
+      "evidence": "5 promesses numérotées, chacune avec → Pourquoi et explication contextuelle"
+    },
+    {
+      "text": "Respecte l'ordre séquentiel strict (promesse d'abord, pas de mécanisme ni nom)",
+      "passed": true,
+      "evidence": "S'arrête après les 5 promesses. Demande validation. Aucun mécanisme ni nom."
+    },
+    {
+      "text": "Les promesses sont spécifiques à la cible (solopreneurs, productivité, réduction d'heures)",
+      "passed": true,
+      "evidence": "Références directes : '60h à 35h', 'chiffre d'affaires', 'le soir et le week-end', 'même sans équipe', 'solopreneur'. Très ciblé."
+    },
+    {
+      "text": "Tutoiement systématique",
+      "passed": true,
+      "evidence": "Cohérent : 'tu m'as donné', 'ta promesse', 'ton chiffre d'affaires', 'Laquelle te parle'"
+    },
+    {
+      "text": "Aucun mot interdit schoolsWP",
+      "passed": true,
+      "evidence": "Aucun mot interdit détecté. Vocabulaire concret et mesuré."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  }
+}

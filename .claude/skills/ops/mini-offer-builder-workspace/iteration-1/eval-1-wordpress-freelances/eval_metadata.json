@@ -1,0 +1,31 @@
+{
+  "eval_id": 1,
+  "eval_name": "wordpress-freelances-complete-input",
+  "prompt": "Je veux créer une mini offre. Ma niche c'est WordPress pour les freelances. Ma cible : des développeurs web freelances qui galèrent à livrer des sites performants et optimisés SEO. Je les aide à automatiser leur workflow WordPress (maintenance, SEO, backups) pour gagner 10h par semaine. Mon différenciant : j'ai un système d'automatisation testé sur 50+ sites clients avec n8n + WordPress.",
+  "assertions": [
+    {
+      "text": "Produit exactement 5 promesses numérotées",
+      "type": "structural"
+    },
+    {
+      "text": "Chaque promesse est accompagnée d'une explication (→ Pourquoi)",
+      "type": "structural"
+    },
+    {
+      "text": "Utilise le tutoiement systématiquement (tu/ton/ta, jamais vous/votre)",
+      "type": "tone"
+    },
+    {
+      "text": "Ne propose PAS de mécanisme ni de nom dans cette première réponse",
+      "type": "process"
+    },
+    {
+      "text": "Ne contient aucun mot interdit schoolsWP (révolutionnaire, garanti, secret, hack, game changer, scalable, disruptif, en un clic, sans effort)",
+      "type": "compliance"
+    },
+    {
+      "text": "Demande explicitement à l'utilisateur de choisir ou ajuster une promesse",
+      "type": "process"
+    }
+  ]
+}

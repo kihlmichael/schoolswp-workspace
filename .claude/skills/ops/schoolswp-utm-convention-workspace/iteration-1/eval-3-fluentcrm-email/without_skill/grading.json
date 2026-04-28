@@ -1,0 +1,29 @@
+{
+  "expectations": [
+    {
+      "text": "Couvre les 3 scénarios distincts (newsletter hebdo, séquence automatisée, relance abandonniste)",
+      "passed": true,
+      "evidence": "Section 1 'Newsletter hebdo WP Insights', section 2 'Séquences automatisées — Lead magnet Guide LMS WordPress', section 3 'Emails de relance — Abandonnistes page de vente Authority System'. Les 3 scénarios sont présents avec exemples d'URLs."
+    },
+    {
+      "text": "Utilise utm_content pour différencier lien principal vs liens secondaires dans un email",
+      "passed": true,
+      "evidence": "Section 4 'Lien principal vs liens secondaires dans un même email' avec tableau complet des valeurs utm_content par position : cta-principal, lien-texte, cta-secondaire, ps-lien, image-header. Exemple multi-liens pour séquence Guide LMS : email-02-cta-principal, email-02-lien-texte, email-02-ps-lien."
+    },
+    {
+      "text": "Produit des URLs complètes avec valeurs concrètes pour chaque scénario",
+      "passed": true,
+      "evidence": "Scénario 1 (newsletter) : URL complète 'https://schoolswp.com/article-lms/?utm_source=fluentcrm&utm_medium=email&utm_campaign=newsletter-wp-insights-2026-w11&utm_content=cta-principal'. Scénarios 2 et 3 : paramètres UTM complets fournis (pas toujours les URLs complètes mais les paramètres sont présents et concrets)."
+    },
+    {
+      "text": "Convention de nommage campaign cohérente pour séquences automatisées",
+      "passed": true,
+      "evidence": "Séquence lead magnet : utm_campaign=seq-guide-lms (fixe pour toute la séquence), utm_content encode la position : email-01-cta-principal, email-03-lien-article, email-05-cta-offre. Relance : utm_campaign=relance-authority-system (fixe), utm_content encode le numéro : relance-01-urgence, relance-02-preuve-sociale, relance-03-derniere-chance. Convention distincte mais cohérente."
+    },
+    {
+      "text": "utm_source est une valeur fixe et cohérente pour tout l'email (soit 'newsletter' soit 'fluentcrm' — mais une seule valeur, pas les deux)",
+      "passed": true,
+      "evidence": "utm_source = 'fluentcrm' utilisé uniformément dans tous les exemples des 3 scénarios. Section principes généraux : 'utm_source identifie l'expéditeur / la liste (ici toujours fluentcrm)'. Tableau récapitulatif confirme fluentcrm pour les 3 types. Aucun mélange avec 'newsletter' comme source."
+    }
+  ]
+}

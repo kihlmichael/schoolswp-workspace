@@ -1,14 +1,17 @@
 ---
 name: firecrawl
 description: |
-  Scraping web, recherche et crawl via Firecrawl CLI — retourne du Markdown propre optimisé pour LLM.
+  Scraping web, recherche, crawl et interactions post-scrape via Firecrawl CLI — retourne du Markdown propre optimisé pour LLM.
   Utilise ce skill pour scraper une page ou un article, faire une recherche web, cartographier un site,
-  extraire du contenu en masse, ou automatiser un navigateur sur des pages interactives.
+  extraire du contenu en masse, automatiser un navigateur sur des pages interactives, ou interagir
+  avec une page après scrape via prompts NL ou code Playwright (Interact API).
   Déclenche pour "scrape cette URL", "crawle ce site", "recherche web", "extraire le contenu de",
-  "cartographie du site", "récupère cette page", "automatise ce formulaire web".
+  "cartographie du site", "récupère cette page", "automatise ce formulaire web", "interact avec la page".
 allowed-tools:
   - Bash(firecrawl *)
   - Bash(npx firecrawl *)
+last_reviewed: 2026-04-23
+review_interval_days: 90
 ---
 
 # Firecrawl CLI
@@ -48,14 +51,15 @@ Follow this escalation pattern:
 4. **Crawl** - Need bulk content from an entire site section (e.g., all /docs/).
 5. **Browser** - Scrape failed because content is behind interaction (pagination, modals, form submissions, multi-step navigation).
 
-| Need                        | Command   | When                                                      |
-| --------------------------- | --------- | --------------------------------------------------------- |
-| Find pages on a topic       | `search`  | No specific URL yet                                       |
-| Get a page's content        | `scrape`  | Have a URL, page is static or JS-rendered                 |
-| Find URLs within a site     | `map`     | Need to locate a specific subpage                         |
-| Bulk extract a site section | `crawl`   | Need many pages (e.g., all /docs/)                        |
-| AI-powered data extraction  | `agent`   | Need structured data from complex sites                   |
-| Interact with a page        | `browser` | Content requires clicks, form fills, pagination, or login |
+| Need                        | Command    | When                                                       |
+| --------------------------- | ---------- | ---------------------------------------------------------- |
+| Find pages on a topic       | `search`   | No specific URL yet                                        |
+| Get a page's content        | `scrape`   | Have a URL, page is static or JS-rendered                  |
+| Find URLs within a site     | `map`      | Need to locate a specific subpage                          |
+| Bulk extract a site section | `crawl`    | Need many pages (e.g., all /docs/)                         |
+| AI-powered data extraction  | `agent`    | Need structured data from complex sites                    |
+| Interact with a page        | `browser`  | Content requires clicks, form fills, pagination, or login  |
+| Post-scrape interaction     | `interact` | Programmatic SDK/API interaction after scrape (NL or code) |
 
 See also: [`download`](#download) -- a convenience command that combines `map` + `scrape` to save an entire site to local files.
 
@@ -300,6 +304,92 @@ firecrawl browser --profile my-app "open https://example.com"
 ```
 
 If you get forbidden errors in the browser, you may need to create a new session as the old one may have expired.
+
+### interact
+
+Post-scrape browser interactions via API/SDK. Manipulate pages with natural language prompts, code execution (Playwright), or direct browser commands — while optionally monitoring via live view.
+
+**Workflow:** scrape → interact (repeat) → stop interaction
+
+```python
+# Python SDK
+result = app.scrape("https://example.com", formats=["markdown"])
+scrape_id = result.metadata.scrape_id
+
+# Natural language prompt
+response = app.interact(scrape_id, prompt="Click the login button and fill in the email field with test@example.com")
+
+# Code execution (Node.js Playwright)
+response = app.interact(scrape_id, code='await page.click("button#login")', language="node")
+
+# Code execution (Python async Playwright)
+response = app.interact(scrape_id, code='await page.click("button#login")', language="python")
+
+# Code execution (Bash agent-browser CLI)
+response = app.interact(scrape_id, code='click @e5', language="bash")
+
+# Cleanup (recommended — avoids billing for idle sessions)
+app.stop_interaction(scrape_id)
+```
+
+```javascript
+// Node.js SDK
+const result = await app.scrape(url, { formats: ["markdown"] });
+const scrapeId = result.metadata?.scrapeId;
+
+await app.interact(scrapeId, { prompt: "Click the login button" });
+await app.interact(scrapeId, {
+  code: 'await page.click("button#login")',
+  language: "node",
+});
+await app.stopInteraction(scrapeId);
+```
+
+```bash
+# CLI shorthand
+firecrawl scrape https://example.com
+firecrawl interact "Click the login button"
+firecrawl interact stop
+```
+
+**Parameters:**
+
+| Parameter  | Type   | Details                                      |
+| ---------- | ------ | -------------------------------------------- |
+| `prompt`   | string | Natural language task (max 10,000 chars)     |
+| `code`     | string | Executable code (max 100,000 chars)          |
+| `language` | string | `"node"`, `"python"`, or `"bash"` (for code) |
+| `timeout`  | number | 1–300 seconds (default: 30)                  |
+| `origin`   | string | Caller identifier for tracking               |
+
+**Response fields:** `success`, `output` (NL answer), `stdout`/`stderr` (code output), `result` (raw return), `liveViewUrl`, `interactiveLiveViewUrl`, `exitCode`, `killed` (timeout indicator).
+
+**Persistent profiles** — login once, reuse credentials across sessions:
+
+```python
+# Scrape with a named profile (saves cookies/state)
+result = app.scrape("https://app.example.com/login",
+                     formats=["markdown"],
+                     profile={"name": "my-app", "saveChanges": True})
+app.interact(result.metadata.scrape_id, prompt="Fill email and click Login")
+app.stop_interaction(result.metadata.scrape_id)
+
+# Later — reconnect with same profile (already authenticated)
+result2 = app.scrape("https://app.example.com/dashboard",
+                      formats=["markdown"],
+                      profile={"name": "my-app"})
+```
+
+**Session lifecycle:** auto-cleanup after 10 min TTL or 5 min inactivity. Explicit `stop_interaction()` recommended.
+
+**Pricing:** 2 credits/min (code only) | 7 credits/min (AI prompt) — prorated by second.
+
+**When to use Interact vs Browser CLI:**
+
+- **Interact API/SDK** — programmatic access from Python/Node apps, CI pipelines, or when you need `liveViewUrl` / structured responses
+- **Browser CLI** (`firecrawl browser`) — interactive terminal sessions, quick ad-hoc exploration
+
+Both use the same underlying cloud Chromium infrastructure.
 
 ### credit-usage
 

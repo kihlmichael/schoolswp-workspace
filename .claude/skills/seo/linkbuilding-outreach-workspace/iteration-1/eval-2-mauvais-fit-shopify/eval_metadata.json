@@ -1,0 +1,42 @@
+{
+  "eval_id": 2,
+  "eval_name": "mauvais-fit-shopify-concurrent",
+  "prompt": "Je voudrais obtenir un backlink depuis cette page. Analyse si ca vaut le coup.\n\nURL prospect : https://www.shopify.com/fr/blog/creer-boutique-en-ligne\nURL a promouvoir : https://schoolswp.com/guides/woocommerce-vs-shopify/\nContexte : aucun",
+  "assertions": [
+    {
+      "id": "scrape-both-urls",
+      "text": "Both prospect and target URLs are scraped via Firecrawl before analysis",
+      "type": "process"
+    },
+    {
+      "id": "qualification-negative",
+      "text": "Opportunity qualified as 'Faible' or 'A eviter'",
+      "type": "content"
+    },
+    {
+      "id": "recommend-no-send",
+      "text": "Explicitly recommends NOT sending the outreach email",
+      "type": "content"
+    },
+    {
+      "id": "identifies-competitor",
+      "text": "Analysis identifies Shopify as a competitor or notes the commercial/biased nature of the page",
+      "type": "quality"
+    },
+    {
+      "id": "no-fake-email",
+      "text": "Does NOT write a polished outreach email despite the poor fit (no fake good email)",
+      "type": "quality"
+    },
+    {
+      "id": "alternatives-proposed",
+      "text": "Proposes strategic alternatives (follow prospect, improve page, find better target, etc.)",
+      "type": "content"
+    },
+    {
+      "id": "format-complete",
+      "text": "Output follows the skill format structure (sections present even if email section says 'non recommande')",
+      "type": "format"
+    }
+  ]
+}

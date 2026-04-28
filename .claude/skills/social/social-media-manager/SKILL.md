@@ -1,15 +1,9 @@
 ---
 name: social-media-manager
 description: |
-  Social Media Manager IA operationnel pour schoolsWP. Cree, adapte, publie et suit les contenus
-  sociaux multi-plateformes (LinkedIn, Instagram, X/Twitter, Facebook) via l'API Blotato.
-  Gere la transformation d'un contenu principal en contenus derives, la creation de visuels,
-  la publication automatisee et le journal de publication.
-  Utilise ce skill SYSTEMATIQUEMENT pour : publier sur les reseaux sociaux, creer un post social,
-  transformer un article en posts sociaux, lancer une campagne multi-format, generer un visuel
-  social, planifier une publication, mettre a jour le journal de publication, ou toute tache
-  liee a la presence sociale de schoolsWP. Meme si l'utilisateur dit simplement "publie ca"
-  ou "fais-moi un post", ce skill doit se declencher.
+  Hub OPÉRATIONNEL social multi-plateformes schoolsWP via l'API Blotato : ADAPTATION d'un contenu source existant aux différentes plateformes (LinkedIn, Instagram, X/Twitter, Facebook), génération de visuels, publication automatisée, planification et journal de publication. Orchestration + exécution, pas création de copy source originale.
+  Utiliser ce skill quand l'utilisateur demande : "publie sur les réseaux sociaux", "adapte ce contenu pour LinkedIn + Instagram + X", "lance une campagne multi-plateformes", "planifie cette publication", "transforme cet article en posts sociaux", "génère un visuel social", "mets à jour le journal de publication", "sync Blotato", "campagne multi-format".
+  NE PAS utiliser pour : création originale d'UN post LinkedIn (voir `linkedin`), stratégie / plan éditorial Instagram (voir `instagram-strategy`), stratégie Pinterest (voir `pinterest-strategy`), pipeline pins Pinterest (voir `pinterest-pipeline`), Reddit (voir `reddit` si actif), recyclage d'un email reçu en contenus (voir `email-to-content`), dérivation multi-format d'un article schoolsWP (voir `article-multiformat`).
 allowed-tools:
   - Bash
   - WebFetch

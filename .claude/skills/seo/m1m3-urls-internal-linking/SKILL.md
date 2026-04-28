@@ -1,7 +1,12 @@
 ---
 name: m1m3-urls-internal-linking
-description: Produire la liste exacte des 24 URLs + titres SEO et le maillage interne precis pour les 3 premiers mois de schoolsWP. Utiliser quand l’utilisateur demande slugs, titres SEO, cocon, maillage interne, ou plan de liens M1-M3 autour de /apprendre-wordpress/.
+description: (archivé - plan daté M1-M3 révolu - ne pas auto-déclencher)
 ---
+
+> **Statut : archivé le 2026-04-16.**
+> Ce skill (24 URLs + titres SEO + maillage pour les 3 premiers mois autour de `/apprendre-wordpress/`) est trop figé : plan daté (M1-M3, mission des 3 premiers mois), scope verrouillé sur un pilier unique, faible valeur routable aujourd'hui.
+> Si besoin d'un plan d'URLs + maillage sur un pilier : utiliser `cluster-cocon-automatique` (génération depuis un mot-clé) ou `cocon-map-schoolswp` (cartographie macro/cocons).
+> Conservation pour référence historique uniquement. Suppression manuelle à faire via l'explorateur Windows.
 
 # M1-M3 URLs + Maillage interne (schoolsWP)
 

@@ -15,7 +15,7 @@ Le skill-creator gère le cycle complet : draft SKILL.md → test cases → runs
 
 ## Comportement
 
-1. Lire le skill à : `d:/VS Code/CLAUDE CODE/.claude/skills/skill-creator/SKILL.md`
+1. Lire le skill à : `d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/ops/skill-creator/SKILL.md`
 2. Suivre les instructions du skill-creator avec les arguments fournis
 3. Si un skill existant est mentionné → mode amélioration (snapshot + baseline = ancienne version)
 4. Si nouveau skill → mode création (baseline = without_skill)
@@ -35,9 +35,9 @@ Le skill-creator gère le cycle complet : draft SKILL.md → test cases → runs
 
 ## Règles
 
-- Workspace des skills : `d:/VS Code/CLAUDE CODE/.claude/skills/`
-- Script d'agrégation : `d:/VS Code/CLAUDE CODE/.claude/skills/skill-creator/scripts/aggregate_benchmark.py`
-- Viewer : `d:/VS Code/CLAUDE CODE/.claude/skills/skill-creator/eval-viewer/generate_review.py`
+- Workspace des skills : `d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/`
+- Script d'agrégation : `d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/ops/skill-creator/scripts/aggregate_benchmark.py`
+- Viewer : `d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/skills/ops/skill-creator/eval-viewer/generate_review.py`
 - Toujours utiliser `--static` pour le viewer (environnement Windows sans serveur)
 - Toujours patcher PYTHONUTF8=1 pour les scripts Python sur Windows
 - Ne jamais utiliser `rm` — utiliser `trash`

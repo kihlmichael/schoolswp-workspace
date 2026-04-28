@@ -30,4 +30,42 @@ REM    --model        Modèle Claude (défaut: claude-sonnet-4-6)
 REM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 cd /d "%~dp0"
+setlocal enabledelayedexpansion
+
+REM ─── Capture start time (secondes depuis minuit) ─────────────────
+for /f "tokens=1-4 delims=:.," %%a in ("!TIME!") do set /a _START=((%%a*3600)+(%%b*60)+%%c)
+
+REM ─── Extraction des args pour la notif (keyword, pillar, intent) ─
+set "_KW="
+set "_PILLAR="
+set "_INTENT="
+set "_NEXT="
+for %%A in (%*) do (
+  if defined _NEXT (
+    if "!_NEXT!"=="kw" set "_KW=%%~A"
+    if "!_NEXT!"=="pillar" set "_PILLAR=%%~A"
+    if "!_NEXT!"=="intent" set "_INTENT=%%~A"
+    set "_NEXT="
+  ) else (
+    if "%%~A"=="--keyword" set "_NEXT=kw"
+    if "%%~A"=="--kw" set "_NEXT=kw"
+    if "%%~A"=="--pillar" set "_NEXT=pillar"
+    if "%%~A"=="--intent" set "_NEXT=intent"
+  )
+)
+
 .venv\Scripts\python -m agents.content_factory.cli %*
+set _EXIT=!ERRORLEVEL!
+
+REM ─── Compute duration + status ───────────────────────────────────
+for /f "tokens=1-4 delims=:.," %%a in ("!TIME!") do set /a _END=((%%a*3600)+(%%b*60)+%%c)
+set /a _DUR=!_END!-!_START!
+if !_DUR! lss 0 set /a _DUR=!_DUR!+86400
+if !_EXIT! equ 0 (set _STATUS=ok) else (set _STATUS=fail)
+
+REM ─── Notif Discord + Telegram (skip silencieux si creds absents) ─
+.venv\Scripts\python tools\scripts\notify-brain-done.py ^
+  --keyword "!_KW!" --pillar "!_PILLAR!" --intent "!_INTENT!" ^
+  --status !_STATUS! --duration !_DUR! --exit-code !_EXIT! 2>nul
+
+endlocal & exit /b %_EXIT%

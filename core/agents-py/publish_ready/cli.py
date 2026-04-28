@@ -38,6 +38,7 @@ Interprétation Publish Score :
 import argparse
 import asyncio
 import io
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -107,6 +108,39 @@ def _print_result(result: PublishReadyResult, elapsed: float) -> None:
     print(_DASH)
 
 
+def _trigger_fluentboards_alert(
+    result: PublishReadyResult, args: argparse.Namespace, scores: dict
+) -> None:
+    """Appelle le script notify-audit-card en subprocess — non bloquant."""
+    project_root = Path(__file__).resolve().parents[3]
+    script = project_root / "tools" / "scripts" / "notify-audit-card.py"
+    if not script.exists():
+        return
+    cmd = [
+        sys.executable,
+        str(script),
+        "--keyword", args.keyword,
+        "--score", str(result.publish_score),
+        "--threshold", str(args.threshold),
+        "--seo", str(scores.get("SEO Structure", 0)),
+        "--llm", str(scores.get("Citabilité IA", 0)),
+        "--conv", str(scores.get("Conversion", 0)),
+        "--auth", str(scores.get("Autorité thème", 0)),
+        "--weakest", result.weakest_module or "",
+    ]
+    if args.pillar:
+        cmd += ["--pillar", args.pillar]
+    if args.intent:
+        cmd += ["--intent", args.intent]
+    if args.file:
+        cmd += ["--file", args.file]
+
+    try:
+        subprocess.run(cmd, check=False, timeout=15)
+    except Exception as exc:
+        print(f"[publish-ready] Notif FluentBoards KO : {exc}", file=sys.stderr)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="publish-ready",
@@ -156,6 +190,15 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument("--threshold", type=int, default=85, metavar="N", help="Seuil de publication (défaut : 85)")
+
+    parser.add_argument(
+        "--notify-fluentboards",
+        action="store_true",
+        help=(
+            "Crée une card FluentBoards si publish_score < --threshold. "
+            "Nécessite FLUENTBOARDS_AUDIT_WEBHOOK_URL dans .env. Non bloquant."
+        ),
+    )
 
     parser.add_argument(
         "--save-dir",
@@ -228,6 +271,9 @@ async def main() -> None:
     )
 
     _print_result(result, elapsed)
+
+    if args.notify_fluentboards and result.publish_score < args.threshold:
+        _trigger_fluentboards_alert(result, args, scores)
 
     if args.save_dir:
         try:

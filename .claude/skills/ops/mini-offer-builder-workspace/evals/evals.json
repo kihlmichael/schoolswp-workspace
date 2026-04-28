@@ -1,0 +1,99 @@
+{
+  "skill_name": "mini-offer-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je veux créer une mini offre pour schoolsWP. Mon objectif c'est d'aider les freelances WordPress à automatiser leur business avec les bons outils, sans empiler des plugins inutiles.",
+      "expected_output": "Le skill doit : (1) proposer le pré-remplissage schoolsWP pour les 4 questions de découverte, (2) proposer 5 promesses avec top 3 recommandés, (3) attendre la validation avant de passer aux mécanismes, (4) garder le ton schoolsWP (tutoiement, pas de mots interdits)",
+      "files": [],
+      "assertions": [
+        {
+          "name": "pre-remplissage-schoolswp",
+          "description": "Propose le contexte schoolsWP pré-rempli au lieu de poser les 4 questions à froid",
+          "check": "contains_concept"
+        },
+        {
+          "name": "cinq-promesses",
+          "description": "Propose exactement 5 promesses numérotées",
+          "check": "count_items"
+        },
+        {
+          "name": "top-3-recommandes",
+          "description": "Met en avant 3 promesses préférées avec justification",
+          "check": "contains_concept"
+        },
+        {
+          "name": "tutoiement",
+          "description": "Utilise le tutoiement systématiquement (tu/ton/tes), jamais le vouvoiement",
+          "check": "style"
+        },
+        {
+          "name": "gate-locking",
+          "description": "Demande validation explicite avant de passer à l'étape suivante, ne propose PAS de mécanismes",
+          "check": "does_not_contain"
+        },
+        {
+          "name": "branding-schoolswp",
+          "description": "Écrit schoolsWP correctement (pas SchoolsWP, schoolswp, Schoolswp)",
+          "check": "exact_match"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "J'ai un site e-commerce de mini électroménager (blenders, grille-pain, bouilloires design). Ma cible c'est les jeunes couples 25-35 ans qui s'installent dans leur premier appart et qui veulent des appareils beaux, compacts et pas chers. Je veux créer une mini offre coup de coeur pour vendre un guide ou un kit de démarrage.",
+      "expected_output": "Le skill doit : (1) NE PAS pré-remplir schoolsWP puisque c'est une autre niche, (2) accuser réception des infos déjà fournies et poser uniquement les questions manquantes (résultats et différenciants), (3) proposer 5 promesses adaptées à cette niche spécifique avec top 3",
+      "files": [],
+      "assertions": [
+        {
+          "name": "pas-de-pre-remplissage",
+          "description": "Ne propose PAS le contexte schoolsWP pré-rempli car c'est une autre niche",
+          "check": "does_not_contain"
+        },
+        {
+          "name": "questions-manquantes-seulement",
+          "description": "Accuse réception des infos fournies (niche, cible) et pose uniquement les questions manquantes",
+          "check": "contains_concept"
+        },
+        {
+          "name": "adapte-a-la-niche",
+          "description": "Les promesses (si proposées) sont spécifiques à l'électroménager/cuisine, pas génériques",
+          "check": "relevance"
+        },
+        {
+          "name": "tutoiement",
+          "description": "Utilise le tutoiement systématiquement",
+          "check": "style"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Je vends des puzzles haut de gamme pour adultes (1000-3000 pièces, illustrations d'artistes). Ma cible : femmes 35-55 ans qui cherchent une activité zen, déconnectée des écrans. Mes puzzles sont imprimés sur carton premium, les images sont des créations originales d'illustrateurs français. Je veux une mini offre pour convertir mes visiteurs en premiers acheteurs.",
+      "expected_output": "Le skill doit couvrir le processus complet : découverte → promesses → mécanisme → nom → 3 versions de présentation → fiche récap. L'offre doit être spécifique au puzzle premium (pas générique e-commerce). La fiche récap doit contenir tous les champs requis.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "decouverte-complete",
+          "description": "Accuse réception des 4 réponses fournies (niche, cible, résultats implicites, différenciants) sans reposer les questions",
+          "check": "contains_concept"
+        },
+        {
+          "name": "cinq-promesses-puzzle",
+          "description": "Propose 5 promesses spécifiques au puzzle premium/zen/artisanal",
+          "check": "relevance"
+        },
+        {
+          "name": "top-3",
+          "description": "Met en avant ses 3 préférées",
+          "check": "contains_concept"
+        },
+        {
+          "name": "pas-de-mots-interdits",
+          "description": "N'utilise aucun mot interdit (révolutionnaire, hack, game changer, scalable, etc.)",
+          "check": "does_not_contain"
+        }
+      ]
+    }
+  ]
+}

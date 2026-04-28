@@ -1,0 +1,39 @@
+{
+  "eval_id": 2,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Les 7 sections structurées sont présentes",
+      "passed": true,
+      "evidence": "Toutes les 7 sections présentes"
+    },
+    {
+      "text": "Détecte et signale explicitement les incohérences d'accents/espaces (prenom vs Prénom, activite vs Activité souhaitée, date vs Date activité)",
+      "passed": true,
+      "evidence": "Section 4 liste explicitement chaque incohérence avec explication et correction"
+    },
+    {
+      "text": "Signale que la colonne Statut est absente du JSON et ne l'invente pas",
+      "passed": true,
+      "evidence": "\"Statut : cette colonne n'existe pas dans le JSON\" — propose valeur statique sans inventer"
+    },
+    {
+      "text": "Corrige $json.prenom → {{ $json[\"prenom\"] }} avec explication",
+      "passed": true,
+      "evidence": "Section 5 explique que la notation crochets est obligatoire pour accents/espaces"
+    },
+    {
+      "text": "Toutes les expressions corrigées utilisent {{ $json[\"...\"] }} avec doubles guillemets",
+      "passed": true,
+      "evidence": "{{ $json[\"prenom\"] }}, {{ $json[\"email\"] }}, {{ $json[\"telephone\"] }}, etc."
+    },
+    {
+      "text": "Le champ source (JSON) sans colonne correspondante est géré sans erreur",
+      "passed": true,
+      "evidence": "Source non mappé — absent du mapping final sans erreur ni invention"
+    }
+  ],
+  "score": 6,
+  "max_score": 6,
+  "pass_rate": 1.0
+}

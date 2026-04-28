@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "couleurs-hors-brand",
+  "prompt": "Le fond de BrandIntro est trop sombre, change-le en #1a1a2e pour un look plus premium. Et mets le texte du tagline en bleu clair #6CB4EE.",
+  "assertions": [
+    {
+      "id": "rejects-custom-colors",
+      "text": "Refuse d'appliquer #1a1a2e et #6CB4EE — ne produit pas de code avec ces couleurs",
+      "type": "file_check"
+    },
+    {
+      "id": "proposes-theme-alternative",
+      "text": "Propose des couleurs THEME existantes comme alternative (bgDark, bgDarkAlt, ou autre)",
+      "type": "manual"
+    },
+    {
+      "id": "explains-why",
+      "text": "Explique pourquoi les couleurs custom sont refusees (coherence brand, centralisation dans theme.ts)",
+      "type": "manual"
+    },
+    {
+      "id": "workflow-structure",
+      "text": "La reponse suit le format obligatoire : Diagnostic / Plan / Fichiers / Commandes / Resultat / QA / Suite",
+      "type": "manual"
+    }
+  ]
+}

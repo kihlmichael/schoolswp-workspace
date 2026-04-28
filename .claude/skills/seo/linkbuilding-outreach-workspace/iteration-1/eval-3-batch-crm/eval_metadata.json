@@ -1,0 +1,42 @@
+{
+  "eval_id": 3,
+  "eval_name": "batch-crm-3-prospects",
+  "prompt": "3 prospects a analyser pour du link building sur la page https://schoolswp.com/comparatifs/meilleurs-crm-wordpress/ — developer.wordpress.org, blogdumoderateur, kinsta",
+  "assertions": [
+    {
+      "id": "scrape-all-urls",
+      "text": "All prospect URLs are scraped individually via Firecrawl",
+      "type": "process"
+    },
+    {
+      "id": "individual-analysis",
+      "text": "Each prospect receives its own distinct analysis (not copy-pasted)",
+      "type": "quality"
+    },
+    {
+      "id": "varied-qualifications",
+      "text": "Qualifications vary across prospects based on actual fit (not all rated the same)",
+      "type": "quality"
+    },
+    {
+      "id": "per-prospect-files",
+      "text": "Individual .md files saved per prospect",
+      "type": "process"
+    },
+    {
+      "id": "batch-summary",
+      "text": "A batch summary file is generated with qualification overview",
+      "type": "process"
+    },
+    {
+      "id": "format-per-prospect",
+      "text": "Each prospect follows the complete output format from the skill",
+      "type": "format"
+    },
+    {
+      "id": "language-adaptation",
+      "text": "Language adapts per prospect (English for wordpress.org, French for FR prospects)",
+      "type": "quality"
+    }
+  ]
+}

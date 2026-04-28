@@ -1,0 +1,22 @@
+[
+  {"query": "Je veux pouvoir lancer des commandes Claude Code depuis mon telephone quand je suis pas devant mon PC, genre envoyer un message Telegram et recevoir la reponse", "should_trigger": true},
+  {"query": "Comment je configure un bot Telegram pour piloter Claude Code a distance sur ma machine Windows ?", "should_trigger": true},
+  {"query": "Mon bridge Telegram-Claude ne recoit plus de messages depuis ce matin, le terminal affiche juste 'Demarre' et rien d'autre", "should_trigger": true},
+  {"query": "Je voudrais ajouter des commandes /seo et /article a mon bot Telegram qui est connecte a Claude Code", "should_trigger": true},
+  {"query": "C'est quoi le meilleur setup pour controler Claude Code a distance depuis un mobile ? J'ai vu qu'on pouvait faire un truc avec Telegram", "should_trigger": true},
+  {"query": "J'ai besoin d'un script Node.js qui fait du polling sur l'API Telegram et qui passe les messages a claude -p", "should_trigger": true},
+  {"query": "Comment je recupere mon Chat ID Telegram pour filtrer les messages de mon bot Claude ?", "should_trigger": true},
+  {"query": "Le bridge.js plante avec une erreur 401 Unauthorized quand il essaie de se connecter a l'API Telegram", "should_trigger": true},
+  {"query": "Je veux automatiser Claude Code pour qu'il reponde a mes messages Telegram meme quand je suis en deplacement", "should_trigger": true},
+  {"query": "Comment je fais pour que mon bot Telegram lance des commandes sur mon serveur local via Claude Code ? Genre /check pour verifier le site", "should_trigger": true},
+  {"query": "Cree-moi un bot Telegram pour gerer les commandes de mon groupe de 500 membres avec des roles et des permissions", "should_trigger": false},
+  {"query": "Je veux envoyer des notifications Telegram depuis mon workflow n8n quand un article est publie sur WordPress", "should_trigger": false},
+  {"query": "Comment j'installe le plugin Telegram pour WooCommerce qui envoie les confirmations de commande ?", "should_trigger": false},
+  {"query": "J'ai besoin d'un chatbot customer support sur Telegram avec des reponses automatiques et un systeme de tickets", "should_trigger": false},
+  {"query": "Comment je fais tourner Claude Code en mode agent avec le SDK pour builder une app SaaS ?", "should_trigger": false},
+  {"query": "Configure-moi un webhook Telegram qui envoie les messages dans un channel Slack", "should_trigger": false},
+  {"query": "Je veux creer une API REST en Node.js avec Express pour mon site schoolsWP", "should_trigger": false},
+  {"query": "Comment j'utilise l'API Anthropic directement depuis Python sans passer par Claude Code CLI ?", "should_trigger": false},
+  {"query": "Mon instance n8n ne se connecte plus au MCP Telegram, j'ai une erreur de token dans le workflow", "should_trigger": false},
+  {"query": "Je veux mettre en place un systeme de monitoring avec des alertes Telegram pour mes serveurs", "should_trigger": false}
+]

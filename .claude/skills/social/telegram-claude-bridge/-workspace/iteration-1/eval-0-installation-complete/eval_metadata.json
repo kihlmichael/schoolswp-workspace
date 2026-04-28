@@ -1,0 +1,12 @@
+{
+  "eval_id": 0,
+  "eval_name": "installation-complete",
+  "prompt": "Je veux pouvoir envoyer des messages depuis Telegram sur mon telephone et que Claude Code les execute sur ma machine. Comment je mets ca en place ? Je suis sur Windows, j'ai deja Claude Code installe.",
+  "assertions": [
+    {"id": "botfather", "text": "Mentionne BotFather et la procedure de creation du bot Telegram", "type": "content_check"},
+    {"id": "env_config", "text": "Contient un fichier .env ou des variables d'environnement (token + chat ID)", "type": "content_check"},
+    {"id": "node_code", "text": "Inclut du code Node.js fonctionnel pour le bridge (polling + envoi reponse)", "type": "content_check"},
+    {"id": "chat_id", "text": "Explique comment recuperer le Chat ID personnel", "type": "content_check"},
+    {"id": "windows_adapted", "text": "Adapte a Windows (mention explicite ou paths Windows)", "type": "content_check"}
+  ]
+}

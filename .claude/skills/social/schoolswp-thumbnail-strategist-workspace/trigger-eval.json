@@ -1,0 +1,82 @@
+[
+  {
+    "query": "j'ai 5 concepts pour ma prochaine vidéo WooCommerce, tu peux me dire lequel va le mieux cliquer ?",
+    "should_trigger": true
+  },
+  {
+    "query": "analyse ces 3 thumbnails que j'ai imaginés pour mon tuto FluentCRM, je veux savoir lequel choisir",
+    "should_trigger": true
+  },
+  {
+    "query": "mon CTR YouTube est catastrophique depuis 2 mois, j'aimerais retravailler mes miniatures schoolsWP",
+    "should_trigger": true
+  },
+  {
+    "query": "crée-moi une vignette pour ma vidéo 'Divi vs Elementor — mon verdict après 1 an'",
+    "should_trigger": true
+  },
+  {
+    "query": "j'hésite entre mettre mon visage ou juste le logo du plugin en thumbnail, qu'est-ce qui clique mieux ?",
+    "should_trigger": true
+  },
+  {
+    "query": "concept 1 : michaël surpris + texte ERREUR rouge / concept 2 : split screen avec les deux logos. lequel est le plus fort ?",
+    "should_trigger": true
+  },
+  {
+    "query": "optimise ce concept de miniature : michaël centré, logo RankMath à droite, fond vert schoolswp, texte LE GAGNANT",
+    "should_trigger": true
+  },
+  {
+    "query": "j'ai besoin d'un combo titre + miniature percutant pour ma vidéo sur la performance WooCommerce",
+    "should_trigger": true
+  },
+  {
+    "query": "direction artistique pour ma série de vidéos comparatives plugins WordPress — je veux une cohérence visuelle",
+    "should_trigger": true
+  },
+  {
+    "query": "voici 4 concepts de visuels YouTube pour ma prochaine vidéo TutorLMS, fais-moi un diagnostic rapide",
+    "should_trigger": true
+  },
+  {
+    "query": "c'est quoi le meilleur layout pour un thumbnail de vidéo comparative ? michaël à gauche ou à droite ?",
+    "should_trigger": true
+  },
+  {
+    "query": "j'ai shooté 3 expressions différentes de michaël pour la même vidéo, laquelle utiliser en thumbnail ?",
+    "should_trigger": true
+  },
+  {
+    "query": "génère le plan SEO complet pour un article sur meilleur plugin CRM WordPress 2025 avec H2 et H3",
+    "should_trigger": false
+  },
+  {
+    "query": "crée-moi un post LinkedIn pour annoncer ma nouvelle vidéo sur FluentCRM",
+    "should_trigger": false
+  },
+  {
+    "query": "j'ai besoin d'un logo pour schoolsWP version dark mode, tu peux me faire quelque chose ?",
+    "should_trigger": false
+  },
+  {
+    "query": "écris le script intro de ma vidéo FluentCRM vs MailPoet, max 45 secondes, ton dynamique",
+    "should_trigger": false
+  },
+  {
+    "query": "c'est quoi les mots interdits dans le guide de style schoolsWP ?",
+    "should_trigger": false
+  },
+  {
+    "query": "crée une infographie comparant FluentCRM et MailPoet à partager sur Instagram",
+    "should_trigger": false
+  },
+  {
+    "query": "refactorise ce workflow n8n qui envoie une notification Slack quand une vidéo YouTube est publiée",
+    "should_trigger": false
+  },
+  {
+    "query": "rédige la description YouTube pour ma vidéo sur la performance WooCommerce, max 500 mots, avec mots-clés",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "schoolswp-utm-convention", "runs": [{"id": "eval-1-from-scratch-with_skill", "prompt": "Je veux cr\u00e9er la convention UTM de schoolsWP depuis z\u00e9ro. Le site est schoolswp.com. J'utilise GA4 pour le tracking, ClickWhale pour g\u00e9rer mes liens courts (notamment sur Instagram et YouTube), FluentCRM pour mes newsletters et s\u00e9quences email, et je publie sur LinkedIn et YouTube. J'ai aussi des liens affili\u00e9s (ThemeForest, plugins WordPress). Produis la convention UTM officielle compl\u00e8te avec tous les exemples concrets.", "eval_id": 1, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM officielle schoolsWP \u2014 v1.0 \u2014 mars 2026\n\n**Site** : schoolswp.com\n**Outils de tracking** : GA4, ClickWhale, FluentCRM\n**Canaux actifs** : LinkedIn, YouTube, Instagram, newsletters, liens affili\u00e9s\n**Auteur** : Michael KIHL \u2014 contact@michaelkihl.fr\n\n---\n\n## 1. Regles de base\n\n1. **Tout en minuscules, sans exception.** GA4 est sensible a la casse \u2014 \"LinkedIn\" et \"linkedin\" sont deux sources distinctes dans les rapports. Toujours minuscules.\n2. **Tirets uniquement.** Jamais d'underscores, jamais d'espaces, jamais d'accents dans les valeurs UTM. Un espace devient `%20` dans l'URL et casse la lisibilite des rapports.\n3. **Sans accents.** Les valeurs UTM ne contiennent pas de caracteres accentues : \"newsletter\" pas \"newsletter avec accent\", \"etude-de-cas\" pas \"\u00e9tude-de-cas\".\n4. **Source + Medium sont obligatoires ensemble.** Un lien tague avec uniquement `utm_source` sans `utm_medium` produit une attribution incomplete dans GA4. Les deux vont toujours de pair.\n5. **Coherence absolue : une valeur = un sens, toujours.** Si \"linkedin\" est la source pour LinkedIn, cette valeur est utilisee partout, pour toujours. Jamais \"linked-in\", jamais \"LinkedIn\", jamais \"li\".\n6. **Jamais d'UTMs sur les liens internes de navigation.** Un UTM sur un lien interne ecrase la source d'origine dans GA4 \u2014 un visiteur venu de LinkedIn et qui clique sur un lien interne tague se retrouve comptabilise comme une nouvelle session, faussant toute l'attribution.\n7. **Valeurs courtes et lisibles.** Maximum 30 caracteres par valeur. Les UTMs apparaissent dans les rapports GA4 \u2014 une valeur claire facilite l'analyse sans tableau de correspondance.\n\n---\n\n## 2. Parametres UTM\n\n### utm_source \u2014 D'ou vient le visiteur ?\n\n**Role** : identifie l'origine du trafic, c'est-a-dire la plateforme ou le systeme qui envoie le visiteur vers schoolswp.com.\n\n**Valeurs recommandees pour schoolsWP :**\n\n| Valeur             | Contexte d'utilisation                                                 |\n| ------------------ | ---------------------------------------------------------------------- |\n| `newsletter`       | Emails envoyes via FluentCRM (newsletters hebdo, sequences)            |\n| `linkedin`         | Publications organiques LinkedIn (posts, articles, commentaires)       |\n| `youtube`          | Descriptions de videos YouTube, liens en commentaire epingle           |\n| `instagram`        | Bio Instagram, liens en stories ou reels via ClickWhale                |\n| `google`           | Campagnes Google Ads (si actives)                                      |\n| `themforest`       | Liens affilies ThemeForest                                             |\n| `affiliation`      | Liens affilies plugins WordPress non nommes individuellement           |\n| `[nom-partenaire]` | Partenariat specifique (ex: `tutorpro`, `learndash`, `rankmath`)       |\n| `clickwhale`       | Short links ClickWhale distribues sans source identifiable precisement |\n\n**Exemples concrets :**\n\n- Post LinkedIn pointant vers un article : `utm_source=linkedin`\n- Email FluentCRM sequence \"LMS en 5 jours\" : `utm_source=newsletter`\n- Description video YouTube \"Tutoriel TutorLMS\" : `utm_source=youtube`\n- Lien affilie ThemeForest dans un article : `utm_source=themforest`\n\n---\n\n### utm_medium \u2014 Comment le visiteur arrive ?\n\n**Role** : identifie le canal ou le type de support qui vehicule le lien \u2014 pas la plateforme, mais le mecanisme de diffusion.\n\n**Valeurs recommandees pour schoolsWP :**\n\n| Valeur       | Contexte d'utilisation                                                                   |\n| ------------ | ---------------------------------------------------------------------------------------- |\n| `email`      | Tout lien dans un email (newsletter, sequence, email transactionnel)                     |\n| `social`     | Publications organiques sur les reseaux sociaux                                          |\n| `affiliate`  | Liens dans le cadre d'un programme d'affiliation                                         |\n| `short-link` | Short links ClickWhale distribues en externe                                             |\n| `cpc`        | Liens dans des campagnes publicitaires payantes                                          |\n| `referral`   | Liens depuis un site partenaire ou article invite                                        |\n| `cta`        | Boutons ou CTAs instrumentes dans les articles ou pages du propre site (CTAs trackables) |\n\n**Attention** : `social` est le medium pour tous les reseaux sociaux organiques. `email` couvre toutes les communications FluentCRM. On ne melange pas la source et le medium.\n\n**Exemples concrets :**\n\n- LinkedIn (organique) : `utm_medium=social`\n- Newsletter FluentCRM : `utm_medium=email`\n- Bio Instagram via ClickWhale : `utm_medium=short-link`\n- Lien affilie plugin WordPress : `utm_medium=affiliate`\n\n---\n\n### utm_campaign \u2014 Quelle campagne ou serie ?\n\n**Role** : identifie la campagne marketing, la serie de contenu ou l'initiative specifique qui motive ce lien. Permet de regrouper plusieurs liens d'une meme action dans GA4.\n\n**Format recommande :** `[sujet]-[mois-annee]` pour les campagnes ponctuelles, `[nom-serie]` pour les contenus permanents.\n\n**Valeurs recommandees pour schoolsWP :**\n\n| Valeur                         | Contexte d'utilisation                                       |\n| ------------------------------ | ------------------------------------------------------------ |\n| `newsletter-hebdo`             | Newsletter reguliere hebdomadaire                            |\n| `lms-wordpress-[mois]-[annee]` | Campagne autour du sujet LMS (ex: `lms-wordpress-mars-2026`) |\n| `guide-fluentcrm`              | Guide ou ressource permanente FluentCRM                      |\n| `black-friday-[annee]`         | Campagne Black Friday                                        |\n| `launch-[nom-produit]`         | Lancement d'un produit ou service                            |\n| `serie-lms-5-jours`            | Sequence email automatisee de 5 jours                        |\n| `bio-instagram`                | Lien permanent en bio Instagram                              |\n| `partenariat-[nom]`            | Campagne affiliation ou partenariat specifique               |\n\n**Exemples concrets :**\n\n- Newsletter du 10 mars 2026 : `utm_campaign=newsletter-hebdo`\n- Article sur TutorLMS publie en mars 2026 : `utm_campaign=lms-wordpress-mars-2026`\n- Lien bio Instagram permanent : `utm_campaign=bio-instagram`\n- Sequence email \"LMS en 5 jours\" : `utm_campaign=serie-lms-5-jours`\n\n---\n\n### utm_content \u2014 Quel lien specifique dans la campagne ?\n\n**Role** : differencie plusieurs liens ou CTAs au sein d'une meme campagne. Indispensable quand une newsletter ou un article contient plusieurs liens pointant vers la meme destination.\n\n**Valeurs recommandees pour schoolsWP :**\n\n| Valeur              | Contexte d'utilisation                        |\n| ------------------- | --------------------------------------------- |\n| `cta-header`        | CTA en debut d'article ou d'email             |\n| `cta-footer`        | CTA en fin d'article ou d'email               |\n| `bouton-principal`  | Bouton CTA principal (visuellement prominent) |\n| `lien-texte`        | Lien hypertexte dans le corps du contenu      |\n| `image-banner`      | Lien sur une image ou banniere                |\n| `vignette-youtube`  | Lien sur une vignette ou miniature YouTube    |\n| `lien-bio`          | Lien unique en bio de reseau social           |\n| `description-video` | Lien dans la description d'une video YouTube  |\n| `email-p1`          | Premier lien d'un email (quand on numerate)   |\n| `email-p2`          | Deuxieme lien d'un email                      |\n\n**Exemples concrets :**\n\n- Deux liens dans une newsletter vers le meme article : `utm_content=cta-header` et `utm_content=cta-footer`\n- Lien image vs lien texte dans un post LinkedIn : `utm_content=image-banner` vs `utm_content=lien-texte`\n- CTA bouton en bas d'un article de blog : `utm_content=bouton-principal`\n\n---\n\n### utm_term \u2014 Quel mot-cle cible ?\n\n**Role** : identifie le mot-cle cible, principalement utilise dans les campagnes Google Ads pour distinguer les annonces par mot-cle. Optionnel pour les autres canaux.\n\n**Regle schoolsWP** : utm_term est reserve aux campagnes publicitaires payantes. Il n'est pas utilise systematiquement sur les liens organiques, newsletters ou reseaux sociaux \u2014 cela surchargerait les URLs sans valeur analytique.\n\n**Valeurs de reference pour schoolsWP (si campagnes Google Ads) :**\n\n```\nlms-wordpress | tutor-lms-avis | learndash-vs-tutorlms | fluentcrm-avis |\ncrm-wordpress | formation-wordpress | rankmath-pro\n```\n\n---\n\n## 3. Convention officielle recommandee schoolsWP\n\n### Format standard\n\n```\nhttps://schoolswp.com/[slug-page]?utm_source=[source]&utm_medium=[medium]&utm_campaign=[campaign]&utm_content=[content]\n```\n\n`utm_term` est **optionnel** \u2014 a ajouter uniquement pour les campagnes payantes.\n\n### Tableau de correspondance source / medium\n\n| Canal                          | utm_source         | utm_medium   | Notes                                                                |\n| ------------------------------ | ------------------ | ------------ | -------------------------------------------------------------------- |\n| Newsletter FluentCRM           | `newsletter`       | `email`      | Toujours les deux                                                    |\n| Sequence email FluentCRM       | `newsletter`       | `email`      | Meme valeur que newsletter                                           |\n| Publication LinkedIn           | `linkedin`         | `social`     | Organique uniquement                                                 |\n| Description YouTube            | `youtube`          | `social`     | Organique                                                            |\n| Bio Instagram (ClickWhale)     | `instagram`        | `short-link` | Via ClickWhale                                                       |\n| Lien affilie ThemeForest       | `themforest`       | `affiliate`  | Dans articles                                                        |\n| Lien affilie plugin WordPress  | `affiliation`      | `affiliate`  | Ou `[nom-plugin]` si trackable individuellement                      |\n| Partenaire nomme               | `[nom-partenaire]` | `referral`   | Ex: `rankmath`, `learndash`                                          |\n| CTA article (interne tracking) | `schoolswp`        | `cta`        | Uniquement pour CTAs d'articles instrumentes, jamais pour navigation |\n\n### Ordre des parametres\n\nToujours respecter cet ordre dans l'URL :\n\n1. `utm_source`\n2. `utm_medium`\n3. `utm_campaign`\n4. `utm_content`\n5. `utm_term` (si applicable)\n\n---\n\n## 4. Cas concrets\n\n### Cas 1 \u2014 CTA interne : bouton \"Telecharger le guide\" en footer d'article\n\n**Contexte :** Un article sur TutorLMS contient un bouton CTA en bas de page invitant a telecharger un guide gratuit. Ce CTA est instrumente pour mesurer les clics depuis le contenu.\n\n```\nURL complete :\nhttps://schoolswp.com/guide-tutor-lms?utm_source=schoolswp&utm_medium=cta&utm_campaign=guide-tutor-lms&utm_content=cta-footer\n\nExplication :\n- source=schoolswp : le trafic vient du propre site (CTA interne instrumente)\n- medium=cta : il s'agit d'un bouton d'action dans le contenu\n- campaign=guide-tutor-lms : identifie la ressource promue\n- content=cta-footer : precise que c'est le CTA en pied d'article (utile si un cta-header existe aussi)\n```\n\n---\n\n### Cas 2 \u2014 Newsletter FluentCRM : lien principal dans la newsletter hebdomadaire\n\n**Contexte :** La newsletter du lundi 10 mars 2026 met en avant un article sur FluentCRM. Le lien principal dans l'email pointe vers l'article.\n\n```\nURL complete :\nhttps://schoolswp.com/fluentcrm-avis?utm_source=newsletter&utm_medium=email&utm_campaign=newsletter-hebdo&utm_content=lien-texte\n\nExplication :\n- source=newsletter : l'email est envoye depuis FluentCRM, la source est la newsletter\n- medium=email : canal email\n- campaign=newsletter-hebdo : campagne recurrente (pas de date car hebdo regulier)\n- content=lien-texte : c'est un lien dans le corps du texte, pas un bouton\n```\n\n---\n\n### Cas 3 \u2014 LinkedIn : lien dans une publication organique\n\n**Contexte :** Un post LinkedIn presente un comparatif TutorLMS vs LearnDash et renvoie vers l'article sur schoolswp.com.\n\n```\nURL complete :\nhttps://schoolswp.com/tutor-lms-vs-learndash?utm_source=linkedin&utm_medium=social&utm_campaign=lms-wordpress-mars-2026&utm_content=lien-post\n\nExplication :\n- source=linkedin : la plateforme d'origine est LinkedIn\n- medium=social : canal reseau social organique\n- campaign=lms-wordpress-mars-2026 : rattache a la campagne editoriale LMS du mois\n- content=lien-post : le lien est dans le corps du post LinkedIn\n```\n\n---\n\n### Cas 4 \u2014 ClickWhale short link : lien court permanent pour bio Instagram\n\n**Contexte :** Le lien en bio Instagram pointe en permanence vers la page de ressources gratuites de schoolswp.com. Il est gere via ClickWhale pour permettre la modification de la destination sans changer l'URL courte.\n\n```\nURL de destination (configuree dans ClickWhale) :\nhttps://schoolswp.com/ressources-gratuites?utm_source=instagram&utm_medium=short-link&utm_campaign=bio-instagram&utm_content=lien-bio\n\nURL courte ClickWhale affichee en bio :\nhttps://swp.link/ressources (exemple)\n\nExplication :\n- source=instagram : trafic provenant d'Instagram\n- medium=short-link : le lien passe par ClickWhale (lien court redistribue)\n- campaign=bio-instagram : campagne permanente (pas de date car lien evergreen)\n- content=lien-bio : le point d'entree est la bio du profil\n```\n\n---\n\n### Cas 5 \u2014 Lien affilie ThemeForest dans un article\n\n**Contexte :** Un article \"Meilleurs themes WordPress LMS\" contient un lien affilie vers ThemeForest pour un theme recommande.\n\n```\nURL complete (lien affilie avec parametres UTM en plus des params affilies) :\nhttps://themeforest.net/item/lms-theme/12345678?ref=schoolswp&utm_source=themforest&utm_medium=affiliate&utm_campaign=partenariat-themeforest&utm_content=lien-texte-article\n\nExplication :\n- source=themforest : identifie ThemeForest comme plateforme partenaire (tracking du clic sortant)\n- medium=affiliate : canal affiliation\n- campaign=partenariat-themeforest : regroupe tous les liens affilies ThemeForest\n- content=lien-texte-article : dans le corps de l'article\nNote : ces UTMs sont ajoutes a l'URL de destination pour tracker les clics depuis schoolswp.com\ndans GA4. Le parametre &ref=schoolswp est le parametre d'affiliation ThemeForest, distinct des UTMs.\n```\n\n---\n\n### Cas 6 \u2014 Description video YouTube\n\n**Contexte :** Une video YouTube \"Installer TutorLMS en 10 minutes\" contient dans sa description un lien vers le tutoriel complet sur schoolswp.com.\n\n```\nURL complete :\nhttps://schoolswp.com/installer-tutor-lms?utm_source=youtube&utm_medium=social&utm_campaign=lms-wordpress-mars-2026&utm_content=description-video\n\nExplication :\n- source=youtube : la plateforme d'origine est YouTube\n- medium=social : YouTube est considere comme canal social organique (pas payant ici)\n- campaign=lms-wordpress-mars-2026 : meme campagne que le post LinkedIn sur le sujet LMS \u2014 GA4 regroupera les deux dans la meme campagne\n- content=description-video : le lien est dans la description de la video (et non dans un commentaire epingle \u2014 dans ce cas utiliser content=commentaire-epingle)\n```\n\n---\n\n### Cas 7 \u2014 Sequence email FluentCRM : 3e email de la serie \"LMS en 5 jours\"\n\n**Contexte :** Une sequence automatisee de 5 emails sur le LMS WordPress. Le 3e email envoie vers un article comparatif.\n\n```\nURL complete :\nhttps://schoolswp.com/tutor-lms-vs-learndash?utm_source=newsletter&utm_medium=email&utm_campaign=serie-lms-5-jours&utm_content=email-3-cta-principal\n\nExplication :\n- source=newsletter : meme source que toutes les communications FluentCRM\n- medium=email : canal email\n- campaign=serie-lms-5-jours : identifie specifiquement la sequence automatisee\n- content=email-3-cta-principal : permet d'isoler le comportement des abonnes sur le 3e email\n  en particulier (comparaison possible avec email-1, email-2, etc.)\n```\n\n---\n\n## 5. Quand mettre des UTMs\n\nLes UTMs sont **obligatoires** dans ces situations :\n\n- **Emails FluentCRM** \u2014 newsletter hebdomadaire, sequences automatisees, emails ponctuels : chaque lien cliquable vers schoolswp.com doit etre tague\n- **Publications reseaux sociaux** \u2014 tous les liens dans les posts LinkedIn, descriptions YouTube, stories et bio Instagram\n- **Liens affilies** \u2014 chaque lien ThemeForest, plugin partenaire ou programme d'affiliation dans un article ou une page\n- **Campagnes publicitaires** \u2014 si des Google Ads ou Meta Ads sont lances, les URLs de destination doivent etre taguees (souvent gere via le tracking automatique mais UTMs manuels recommandes en complement)\n- **Articles invites et collaborations** \u2014 si schoolswp.com est mentionne dans un article sur un autre site, le lien doit porter des UTMs pour tracker ce trafic referral\n- **Short links ClickWhale distribues en externe** \u2014 toute URL courte qui sort de schoolswp.com vers une audience externe (bio Instagram, lien YouTube, Linktree-like) doit pointer vers une URL destination avec UTMs\n\n---\n\n## 6. Quand NE PAS mettre des UTMs\n\nLes UTMs sont **contre-productifs** dans ces situations :\n\n- **Liens internes de navigation** \u2014 menu principal, sidebar, footer de navigation, breadcrumbs : ne jamais taguer. Un UTM sur un lien interne cree une nouvelle session dans GA4 et ecrase la source d'origine. Un visiteur venu de LinkedIn qui clique sur le menu sera comptabilise comme une session \"interne\" distincte, ce qui fausse completement l'attribution.\n- **Maillage interne dans les articles** \u2014 les liens hypertextes entre articles (liens de contexte dans le corps du texte) ne doivent pas porter d'UTMs pour les memes raisons d'attribution.\n- **Redirections techniques** \u2014 les redirections 301/302 configurees au niveau serveur ou via ClickWhale pour des raisons techniques (pas de diffusion externe) ne doivent pas porter d'UTMs.\n- **Liens depuis les pages de paiement vers la confirmation** \u2014 l'ajout d'UTMs entre la page de paiement et la page de confirmation casse le tracking e-commerce GA4 (la conversion n'est plus rattachee a la bonne session).\n- **Liens de desabonnement ou de preference email** \u2014 les liens FluentCRM de desabonnement/gestion des preferences ne doivent pas porter d'UTMs (donnees sans interet analytique et URLs inutilement chargees).\n- **Liens canaux propres deja identifies** \u2014 si GA4 reconnait automatiquement une source (trafic direct, Google organique via GSC), ajouter des UTMs manuels peut creer des doublons ou des conflits.\n\n---\n\n## 7. Erreurs a eviter\n\n1. **Majuscules dans les valeurs UTM.** \"LinkedIn\" et \"linkedin\" sont deux sources separees dans GA4. Apres six mois de donnees mixtes, les rapports deviennent inutilisables. Regle : toujours minuscules, sans exception.\n\n2. **Underscores au lieu de tirets.** `utm_campaign=lms_wordpress` vs `utm_campaign=lms-wordpress` : ces deux valeurs coexistent comme des campagnes distinctes dans GA4. Choisir les tirets et ne jamais en devier.\n\n3. **Valeurs inconcistantes pour la meme source.** Utiliser \"linkedin\", \"linked-in\", \"linkedin-organic\" et \"li\" a differents moments pour LinkedIn produit 4 sources dans GA4 au lieu d'une. La coherence est plus importante que la \"precision\" \u2014 mieux vaut une valeur simple et toujours identique.\n\n4. **Oublier utm_medium.** Un lien avec `utm_source=newsletter` sans `utm_medium=email` produit une source \"newsletter\" rattachee au medium \"(not set)\" dans GA4 \u2014 ce qui la rend difficile a filtrer et a exploiter. Source et medium vont toujours ensemble.\n\n5. **Taguer les liens internes.** C'est l'erreur la plus frequente et la plus devastatrice pour l'attribution. GA4 interprete chaque nouvelle URL avec UTMs comme le debut d'une nouvelle session. Un visiteur LinkedIn qui clique sur 3 liens internes tagues genere 3 sessions, toutes comptees comme internes, aucune rattachee a LinkedIn.\n\n6. **Valeurs trop longues ou avec des caracteres speciaux.** Une campagne nommee `utm_campaign=article-sur-l'installation-de-tutor-lms-en-2026` contient une apostrophe qui sera encodee en %27 dans l'URL et posera des problemes de parsing. Rester sous 30 caracteres, sans apostrophes ni caracteres speciaux.\n\n7. **Dupliquer les UTMs dans les redirections ClickWhale.** Si l'URL de destination dans ClickWhale porte deja des UTMs, ne pas ajouter des UTMs supplementaires sur le short link lui-meme \u2014 GA4 ne peut pas interpreter deux series de parametres UTMs simultanement et prendra la premiere ou la derniere selon la configuration.\n\n8. **Oublier de tester l'URL finale.** Avant de publier une newsletter ou un post LinkedIn, tester l'URL complete dans un navigateur pour verifier que les UTMs apparaissent correctement dans GA4 (via le mode debug de GA4 ou l'extension \"GA Debugger\").\n\n---\n\n## 8. Ma recommandation simple a retenir\n\n> **Source = qui t'envoie. Medium = comment. Campaign = pourquoi.**\n> Si le lien quitte l'exterieur pour entrer sur schoolswp.com, il porte des UTMs. Si le lien reste sur schoolswp.com ou va d'une page a une autre du site, il n'en porte pas.\n\nLa question a se poser avant de coller un UTM : **\"Ce lien vient-il d'une source externe ?\"** Oui \u2192 UTMs obligatoires. Non \u2192 pas d'UTMs.\n\n---\n\n_Convention UTM schoolsWP \u2014 v1.0 \u2014 mars 2026 \u2014 Michael KIHL_\n"}], "grading": {"expectations": [{"text": "Document contient les 9 sections attendues (titre, r\u00e8gles de base, param\u00e8tres UTM, convention officielle, cas concrets, quand mettre, quand ne pas mettre, erreurs, recommandation)", "passed": true, "evidence": "Le document contient : titre (ligne 1), section '1. Regles de base', '2. Parametres UTM', '3. Convention officielle recommandee schoolsWP', '4. Cas concrets', '5. Quand mettre des UTMs', '6. Quand NE PAS mettre des UTMs', '7. Erreurs a eviter', '8. Ma recommandation simple a retenir'. Les 9 sections sont pr\u00e9sentes."}, {"text": "Au moins 6 cas concrets avec URL compl\u00e8te contenant au minimum utm_source, utm_medium, utm_campaign", "passed": true, "evidence": "7 cas concrets avec URLs compl\u00e8tes : Cas 1 (cta interne), Cas 2 (newsletter FluentCRM), Cas 3 (LinkedIn), Cas 4 (ClickWhale Instagram), Cas 5 (ThemeForest affili\u00e9), Cas 6 (YouTube), Cas 7 (s\u00e9quence email). Chaque URL contient utm_source, utm_medium, utm_campaign."}, {"text": "Toutes les valeurs UTM sont en minuscules sans accents et avec tirets uniquement", "passed": true, "evidence": "Toutes les valeurs dans les URLs exemples sont en minuscules : newsletter, email, linkedin, social, youtube, instagram, short-link, themforest, affiliate. Tirets utilis\u00e9s dans les valeurs de campaign : newsletter-hebdo, lms-wordpress-mars-2026, serie-lms-5-jours, bio-instagram. Aucun accent dans les valeurs."}, {"text": "Couvre les 5 contextes cl\u00e9s : GA4, ClickWhale, FluentCRM, social, affili\u00e9s", "passed": true, "evidence": "GA4 mentionn\u00e9 dans les r\u00e8gles de base et erreurs. ClickWhale : Cas 4 d\u00e9di\u00e9 + tableau de r\u00e9f\u00e9rence ligne 'Bio Instagram (ClickWhale)'. FluentCRM : Cas 2 et 7. Social (LinkedIn, YouTube, Instagram) : Cas 3, 6. Affili\u00e9s : Cas 5 ThemeForest."}, {"text": "Section 'quand ne pas mettre' pr\u00e9sente avec l'explication sur les liens internes GA4", "passed": true, "evidence": "Section 6 'Quand NE PAS mettre des UTMs' explique : 'Un UTM sur un lien interne cree une nouvelle session dans GA4 et ecrase la source d'origine. Un visiteur venu de LinkedIn qui clique sur 3 liens internes tagues genere 3 sessions, toutes comptees comme internes, aucune rattachee a LinkedIn.'"}, {"text": "Recommandation finale m\u00e9morisable (max 3 phrases)", "passed": true, "evidence": "Section 8 : 'Source = qui t'envoie. Medium = comment. Campaign = pourquoi. Si le lien quitte l'exterieur pour entrer sur schoolswp.com, il porte des UTMs. Si le lien reste sur schoolswp.com ou va d'une page a une autre du site, il n'en porte pas.' 3 phrases concises et m\u00e9morisables."}]}}, {"id": "eval-1-from-scratch-without_skill", "prompt": "Je veux cr\u00e9er la convention UTM de schoolsWP depuis z\u00e9ro. Le site est schoolswp.com. J'utilise GA4 pour le tracking, ClickWhale pour g\u00e9rer mes liens courts (notamment sur Instagram et YouTube), FluentCRM pour mes newsletters et s\u00e9quences email, et je publie sur LinkedIn et YouTube. J'ai aussi des liens affili\u00e9s (ThemeForest, plugins WordPress). Produis la convention UTM officielle compl\u00e8te avec tous les exemples concrets.", "eval_id": 1, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM officielle \u2014 schoolsWP\n\n**Domaine** : schoolswp.com\n**Tracking** : Google Analytics 4 (GA4)\n**Gestion liens courts** : ClickWhale\n**Email** : FluentCRM\n**R\u00e9seaux actifs** : LinkedIn, YouTube, Instagram\n**Liens affili\u00e9s** : ThemeForest, plugins WordPress\n**Date de cr\u00e9ation** : 2026-03-13\n**Version** : 1.0\n\n---\n\n## Sommaire\n\n1. [Principes fondamentaux](#1-principes-fondamentaux)\n2. [Les 5 param\u00e8tres UTM](#2-les-5-param\u00e8tres-utm)\n3. [Valeurs autoris\u00e9es par param\u00e8tre](#3-valeurs-autoris\u00e9es-par-param\u00e8tre)\n4. [Matrice source \u00d7 medium](#4-matrice-source--medium)\n5. [Conventions de nommage](#5-conventions-de-nommage)\n6. [Exemples par canal](#6-exemples-par-canal)\n7. [Liens affili\u00e9s](#7-liens-affili\u00e9s)\n8. [ClickWhale \u2014 gestion des liens courts](#8-clickwhale--gestion-des-liens-courts)\n9. [FluentCRM \u2014 emails et s\u00e9quences](#9-fluentcrm--emails-et-s\u00e9quences)\n10. [Tableau de r\u00e9f\u00e9rence rapide](#10-tableau-de-r\u00e9f\u00e9rence-rapide)\n11. [R\u00e8gles de gouvernance](#11-r\u00e8gles-de-gouvernance)\n\n---\n\n## 1. Principes fondamentaux\n\n### R\u00e8gle absolue : coh\u00e9rence avant tout\n\nUn UTM mal nomm\u00e9 est pire qu'un UTM absent. GA4 traite chaque variation de casse ou d'orthographe comme une source distincte. `LinkedIn` et `linkedin` apparaissent dans deux lignes s\u00e9par\u00e9es dans les rapports.\n\n**R\u00e8gles de base :**\n\n- Tout en **minuscules** sans exception\n- S\u00e9parateurs : **tirets** (`-`) uniquement \u2014 jamais d'espaces, jamais d'underscores dans les valeurs\n- Caract\u00e8res autoris\u00e9s : `a-z`, `0-9`, `-`\n- Pas d'accents, pas de caract\u00e8res sp\u00e9ciaux\n- Longueur maximale recommand\u00e9e : 50 caract\u00e8res par param\u00e8tre\n\n### Quand taguer\n\n- Tous les liens publi\u00e9s en dehors du site schoolswp.com\n- Tous les liens dans les emails FluentCRM\n- Tous les liens affili\u00e9s vers des sites tiers\n- Toujours via ClickWhale pour les liens courts (Instagram, YouTube description)\n\n### Quand ne pas taguer\n\n- Liens internes entre pages de schoolswp.com (casse la session GA4)\n- Liens vers des ressources PDF h\u00e9berg\u00e9es sur le site\n- Liens de confirmation / transactionnels automatiques (hors campagne)\n\n---\n\n## 2. Les 5 param\u00e8tres UTM\n\n| Param\u00e8tre | Balise GA4     | Obligatoire | D\u00e9finition                                    |\n| --------- | -------------- | ----------- | --------------------------------------------- |\n| Source    | `utm_source`   | Oui         | D'o\u00f9 vient le trafic (la plateforme)          |\n| Medium    | `utm_medium`   | Oui         | Le type de canal marketing                    |\n| Campaign  | `utm_campaign` | Oui         | Le nom de la campagne ou du contexte          |\n| Content   | `utm_content`  | Recommand\u00e9  | L'\u00e9l\u00e9ment pr\u00e9cis cliqu\u00e9 (format, emplacement) |\n| Term      | `utm_term`     | Optionnel   | Mot-cl\u00e9 (SEA) ou segment d'audience (email)   |\n\n---\n\n## 3. Valeurs autoris\u00e9es par param\u00e8tre\n\n### `utm_source` \u2014 La plateforme d'origine\n\n| Valeur           | Contexte d'utilisation                            |\n| ---------------- | ------------------------------------------------- |\n| `linkedin`       | Publications organiques LinkedIn                  |\n| `linkedin-ads`   | Publicit\u00e9s LinkedIn Ads                           |\n| `youtube`        | Descriptions de vid\u00e9os YouTube, fiches            |\n| `instagram`      | Bio Instagram, stories (via lien ClickWhale)      |\n| `newsletter`     | Envois newsletter FluentCRM                       |\n| `email-sequence` | S\u00e9quences automatis\u00e9es FluentCRM                  |\n| `themefores`     | Liens affili\u00e9s ThemeForest                        |\n| `plugin-affili\u00e9` | Liens affili\u00e9s vers plugins WordPress             |\n| `direct`         | R\u00e9serv\u00e9 GA4 \u2014 ne pas utiliser manuellement        |\n| `google`         | R\u00e9serv\u00e9 trafic organique Google \u2014 ne pas utiliser |\n\n### `utm_medium` \u2014 Le type de canal\n\n| Valeur     | Contexte d'utilisation                       |\n| ---------- | -------------------------------------------- |\n| `social`   | Post organique sur un r\u00e9seau social          |\n| `video`    | Lien dans ou sous une vid\u00e9o                  |\n| `email`    | Tout email FluentCRM (newsletter + s\u00e9quence) |\n| `cpc`      | Publicit\u00e9 payante au clic                    |\n| `affili\u00e9`  | Lien de recommandation avec commission       |\n| `bio`      | Lien dans la bio d'un profil social          |\n| `referral` | Partenariat, mention externe sans commission |\n\n### `utm_campaign` \u2014 Le nom de campagne\n\nFormat : `[sujet]-[type]-[p\u00e9riode-optionnelle]`\n\n| Valeur exemple             | Contexte                             |\n| -------------------------- | ------------------------------------ |\n| `lms-wordpress-comparatif` | Article comparatif sur les LMS       |\n| `learndash-avis`           | Article avis LearnDash               |\n| `newsletter-mars-2026`     | Newsletter mensuelle de mars 2026    |\n| `sequence-bienvenue`       | S\u00e9quence email d'onboarding          |\n| `promo-black-friday-2026`  | Campagne promotionnelle Black Friday |\n| `guide-fluentcrm`          | Contenu autour de FluentCRM          |\n| `pilier-lms`               | Contenu du pilier th\u00e9matique LMS     |\n| `pilier-crm`               | Contenu du pilier th\u00e9matique CRM     |\n\n### `utm_content` \u2014 L'\u00e9l\u00e9ment cliqu\u00e9\n\nFormat : `[format]-[emplacement]` ou `[format]-[num\u00e9ro]`\n\n| Valeur exemple     | Contexte                                  |\n| ------------------ | ----------------------------------------- |\n| `bouton-cta-fin`   | Bouton CTA en fin d'article               |\n| `lien-description` | Lien dans la description YouTube          |\n| `lien-texte-intro` | Lien texte dans l'introduction d'un email |\n| `image-banniere`   | Image cliquable / banni\u00e8re                |\n| `carte-produit`    | Carte produit dans un email               |\n| `lien-bio`         | Lien unique dans la bio Instagram         |\n| `post-carrousel`   | Post LinkedIn format carrousel            |\n| `post-texte`       | Post LinkedIn format texte                |\n| `commentaire`      | Lien post\u00e9 en commentaire                 |\n\n### `utm_term` \u2014 Segment ou mot-cl\u00e9\n\nUtilis\u00e9 uniquement pour :\n\n- SEA : le mot-cl\u00e9 achet\u00e9\n- Email : le segment d'audience FluentCRM cibl\u00e9\n\n| Valeur exemple           | Contexte                         |\n| ------------------------ | -------------------------------- |\n| `lms-wordpress`          | Mot-cl\u00e9 SEA                      |\n| `segment-prospects-lms`  | Segment FluentCRM prospects LMS  |\n| `segment-clients-actifs` | Segment FluentCRM clients actifs |\n| `segment-inactifs-90j`   | Segment inactifs depuis 90 jours |\n\n---\n\n## 4. Matrice source \u00d7 medium\n\nCette matrice d\u00e9finit les combinaisons valides. Ne pas inventer de nouvelles combinaisons sans la mettre \u00e0 jour.\n\n| Source           | Medium     | Cas d'usage                       |\n| ---------------- | ---------- | --------------------------------- |\n| `linkedin`       | `social`   | Post organique LinkedIn           |\n| `linkedin-ads`   | `cpc`      | Publicit\u00e9 LinkedIn Ads            |\n| `youtube`        | `video`    | Description vid\u00e9o YouTube         |\n| `youtube`        | `social`   | Post communaut\u00e9 YouTube           |\n| `instagram`      | `social`   | Story / post Instagram            |\n| `instagram`      | `bio`      | Lien unique bio Instagram         |\n| `newsletter`     | `email`    | Envoi newsletter FluentCRM        |\n| `email-sequence` | `email`    | S\u00e9quence automatis\u00e9e FluentCRM    |\n| `themefores`     | `affili\u00e9`  | Lien affili\u00e9 ThemeForest          |\n| `plugin-affili\u00e9` | `affili\u00e9`  | Lien affili\u00e9 plugin WordPress     |\n| `partenaire`     | `referral` | Mention / partenariat non-affili\u00e9 |\n\n---\n\n## 5. Conventions de nommage\n\n### Format g\u00e9n\u00e9ral\n\n```\nutm_source=[source]&utm_medium=[medium]&utm_campaign=[campaign]&utm_content=[content]\n```\n\n### R\u00e8gles de nommage des campagnes\n\n**Pour le contenu \u00e9ditorial :**\n\n```\n[sujet-principal]-[type-contenu]\n```\n\nExemples : `lms-wordpress-guide`, `fluentcrm-avis`, `learndash-vs-tutorlms`\n\n**Pour les newsletters :**\n\n```\nnewsletter-[mois]-[ann\u00e9e]\n```\n\nExemples : `newsletter-mars-2026`, `newsletter-avril-2026`\n\n**Pour les s\u00e9quences email :**\n\n```\nsequence-[nom-sequence]\n```\n\nExemples : `sequence-bienvenue`, `sequence-reactivation`, `sequence-lms-nurture`\n\n**Pour les campagnes promotionnelles :**\n\n```\npromo-[evenement]-[ann\u00e9e]\n```\n\nExemples : `promo-black-friday-2026`, `promo-lancement-formation`\n\n---\n\n## 6. Exemples par canal\n\n### LinkedIn \u2014 Post organique\n\n**Contexte** : partage d'un article de blog sur les LMS WordPress\n\n```\nhttps://schoolswp.com/lms-wordpress-comparatif/?utm_source=linkedin&utm_medium=social&utm_campaign=lms-wordpress-comparatif&utm_content=post-texte\n```\n\n**Contexte** : partage d'un guide FluentCRM en format carrousel\n\n```\nhttps://schoolswp.com/guide-fluentcrm/?utm_source=linkedin&utm_medium=social&utm_campaign=guide-fluentcrm&utm_content=post-carrousel\n```\n\n**Contexte** : lien post\u00e9 en premier commentaire (technique LinkedIn)\n\n```\nhttps://schoolswp.com/lms-wordpress-comparatif/?utm_source=linkedin&utm_medium=social&utm_campaign=lms-wordpress-comparatif&utm_content=commentaire\n```\n\n---\n\n### YouTube \u2014 Description de vid\u00e9o\n\n**Contexte** : lien vers l'article associ\u00e9 \u00e0 la vid\u00e9o\n\n```\nhttps://schoolswp.com/learndash-avis/?utm_source=youtube&utm_medium=video&utm_campaign=learndash-avis&utm_content=lien-description\n```\n\n**Contexte** : lien vers une ressource mentionn\u00e9e dans la vid\u00e9o (timestamps)\n\n```\nhttps://schoolswp.com/guide-fluentcrm/?utm_source=youtube&utm_medium=video&utm_campaign=guide-fluentcrm&utm_content=lien-description-ressource\n```\n\n**Contexte** : lien vers la page d'accueil dans la banni\u00e8re de cha\u00eene\n\n```\nhttps://schoolswp.com/?utm_source=youtube&utm_medium=social&utm_campaign=brand&utm_content=banniere-chaine\n```\n\n---\n\n### Instagram \u2014 Via ClickWhale\n\n**Contexte** : lien bio Instagram (lien court ClickWhale pointant vers une page hub ou un article)\n\nL'URL longue tagu\u00e9e (configur\u00e9e dans ClickWhale) :\n\n```\nhttps://schoolswp.com/ressources/?utm_source=instagram&utm_medium=bio&utm_campaign=bio-instagram&utm_content=lien-bio\n```\n\nLe lien court ClickWhale affich\u00e9 en bio :\n\n```\nhttps://go.schoolswp.com/instagram\n```\n\n**Contexte** : story Instagram avec lien swipe-up (si applicable)\n\n```\nhttps://schoolswp.com/lms-wordpress-comparatif/?utm_source=instagram&utm_medium=social&utm_campaign=lms-wordpress-comparatif&utm_content=story-swipe\n```\n\n---\n\n### Newsletter FluentCRM\n\n**Contexte** : lien principal (CTA) dans la newsletter mensuelle de mars 2026\n\n```\nhttps://schoolswp.com/lms-wordpress-comparatif/?utm_source=newsletter&utm_medium=email&utm_campaign=newsletter-mars-2026&utm_content=bouton-cta-principal\n```\n\n**Contexte** : deuxi\u00e8me lien (lien texte) dans le corps de la newsletter\n\n```\nhttps://schoolswp.com/guide-fluentcrm/?utm_source=newsletter&utm_medium=email&utm_campaign=newsletter-mars-2026&utm_content=lien-texte-corps\n```\n\n**Contexte** : lien de signature dans tous les emails\n\n```\nhttps://schoolswp.com/?utm_source=newsletter&utm_medium=email&utm_campaign=signature&utm_content=lien-signature\n```\n\n---\n\n### S\u00e9quences email FluentCRM\n\n**Contexte** : email de bienvenue (email 1), lien vers le guide de d\u00e9marrage\n\n```\nhttps://schoolswp.com/guide-demarrage/?utm_source=email-sequence&utm_medium=email&utm_campaign=sequence-bienvenue&utm_content=lien-texte-intro&utm_term=segment-nouveaux-inscrits\n```\n\n**Contexte** : email de nurturing LMS (email 3), bouton CTA vers l'article comparatif\n\n```\nhttps://schoolswp.com/lms-wordpress-comparatif/?utm_source=email-sequence&utm_medium=email&utm_campaign=sequence-lms-nurture&utm_content=bouton-cta-fin&utm_term=segment-prospects-lms\n```\n\n**Contexte** : email de r\u00e9activation (inactifs 90 jours)\n\n```\nhttps://schoolswp.com/nouveautes/?utm_source=email-sequence&utm_medium=email&utm_campaign=sequence-reactivation&utm_content=bouton-cta-principal&utm_term=segment-inactifs-90j\n```\n\n---\n\n## 7. Liens affili\u00e9s\n\n### Principe sp\u00e9cifique aux liens affili\u00e9s\n\nLes liens affili\u00e9s pointent vers des **sites tiers** (ThemeForest, sites \u00e9diteurs de plugins). L'UTM est donc appliqu\u00e9 c\u00f4t\u00e9 schoolsWP pour tracker l'origine du clic depuis schoolswp.com, mais le lien de destination est le lien affili\u00e9 du partenaire.\n\n**La cha\u00eene est :** Article schoolsWP \u2192 Lien ClickWhale (track\u00e9 UTM) \u2192 Lien affili\u00e9 partenaire\n\nPasser tous les liens affili\u00e9s par ClickWhale pour :\n\n- Centraliser le suivi des clics\n- Masquer le lien affili\u00e9 brut\n- Pouvoir changer la destination sans modifier les articles\n\n### ThemeForest\n\n**Contexte** : lien affili\u00e9 ThemeForest depuis un article de blog\n\nURL configur\u00e9e dans ClickWhale (destination : lien affili\u00e9 ThemeForest) :\n\n```\nutm_source=themefores&utm_medium=affili\u00e9&utm_campaign=themeforest-recommandation&utm_content=bouton-cta-fin\n```\n\nLien court ClickWhale ins\u00e9r\u00e9 dans l'article :\n\n```\nhttps://go.schoolswp.com/themeforest\n```\n\n### Plugins WordPress (affili\u00e9s)\n\n**Contexte** : lien affili\u00e9 vers LearnDash depuis l'article comparatif LMS\n\n```\nutm_source=plugin-affili\u00e9&utm_medium=affili\u00e9&utm_campaign=learndash-avis&utm_content=bouton-essai-gratuit\n```\n\n**Contexte** : lien affili\u00e9 vers FluentCRM depuis le guide FluentCRM\n\n```\nutm_source=plugin-affili\u00e9&utm_medium=affili\u00e9&utm_campaign=guide-fluentcrm&utm_content=bouton-cta-tarifs\n```\n\n**Contexte** : lien affili\u00e9 vers TutorLMS\n\n```\nutm_source=plugin-affili\u00e9&utm_medium=affili\u00e9&utm_campaign=tutorlms-avis&utm_content=lien-texte-corps\n```\n\n---\n\n## 8. ClickWhale \u2014 gestion des liens courts\n\n### Pourquoi utiliser ClickWhale pour tous les liens externes\n\n- Les URLs avec UTM sont longues et illisibles sur Instagram/YouTube\n- ClickWhale permet de modifier la destination sans mettre \u00e0 jour les liens publi\u00e9s\n- ClickWhale fournit ses propres analytics clics (compl\u00e9ment \u00e0 GA4)\n- Le domaine `go.schoolswp.com` renforce la marque schoolsWP\n\n### Convention de nommage des slugs ClickWhale\n\nFormat : `[canal]-[sujet]` ou `[usage]`\n\n| Slug ClickWhale                      | Destination (URL tagu\u00e9e)                    | Usage                       |\n| ------------------------------------ | ------------------------------------------- | --------------------------- |\n| `go.schoolswp.com/instagram`         | Page hub / derni\u00e8re ressource mise en avant | Bio Instagram               |\n| `go.schoolswp.com/youtube-lms`       | Article LMS comparatif                      | Description vid\u00e9o LMS       |\n| `go.schoolswp.com/youtube-fluentcrm` | Guide FluentCRM                             | Description vid\u00e9o FluentCRM |\n| `go.schoolswp.com/themeforest`       | Lien affili\u00e9 ThemeForest                    | Articles + emails           |\n| `go.schoolswp.com/learndash`         | Lien affili\u00e9 LearnDash                      | Articles + emails           |\n| `go.schoolswp.com/fluentcrm-affili\u00e9` | Lien affili\u00e9 FluentCRM                      | Articles + emails           |\n| `go.schoolswp.com/tutorlms`          | Lien affili\u00e9 TutorLMS                       | Articles + emails           |\n\n### Workflow de cr\u00e9ation d'un lien ClickWhale\n\n1. Construire l'URL tagu\u00e9e compl\u00e8te avec les 4 param\u00e8tres UTM\n2. Coller l'URL tagu\u00e9e comme destination dans ClickWhale\n3. D\u00e9finir un slug selon la convention ci-dessus\n4. Activer le tracking de clics ClickWhale\n5. Utiliser le lien court `go.schoolswp.com/[slug]` dans le contenu publi\u00e9\n\n---\n\n## 9. FluentCRM \u2014 emails et s\u00e9quences\n\n### Configuration recommand\u00e9e dans FluentCRM\n\nFluentCRM peut ajouter automatiquement des param\u00e8tres UTM \u00e0 tous les liens d'un email. Configurer :\n\n- `utm_source` : `newsletter` (pour les campagnes) ou `email-sequence` (pour les automatisations)\n- `utm_medium` : `email`\n- `utm_campaign` : nom de la campagne ou s\u00e9quence (renseign\u00e9 manuellement par envoi)\n\n**Important** : si FluentCRM ajoute des UTM automatiquement ET que tu ajoutes des UTM manuels sur certains liens, les UTM manuels priment. V\u00e9rifier que FluentCRM n'\u00e9crase pas les UTM `utm_content` et `utm_term` configur\u00e9s manuellement.\n\n### Distinction newsletter vs s\u00e9quence\n\n| Type                                 | `utm_source`     | `utm_medium` | `utm_campaign`              |\n| ------------------------------------ | ---------------- | ------------ | --------------------------- |\n| Newsletter ponctuelle                | `newsletter`     | `email`      | `newsletter-[mois]-[ann\u00e9e]` |\n| S\u00e9quence automatis\u00e9e                 | `email-sequence` | `email`      | `sequence-[nom]`            |\n| Email transactionnel (hors campagne) | Ne pas taguer    | \u2014            | \u2014                           |\n\n### Gestion des segments avec `utm_term`\n\nUtiliser `utm_term` pour identifier le segment cibl\u00e9 dans les s\u00e9quences segment\u00e9es :\n\n```\n&utm_term=segment-prospects-lms\n&utm_term=segment-clients-formation\n&utm_term=segment-inactifs-90j\n```\n\nCela permet dans GA4 de comparer les performances par segment FluentCRM.\n\n---\n\n## 10. Tableau de r\u00e9f\u00e9rence rapide\n\n### G\u00e9n\u00e9rateur de liens \u2014 mod\u00e8le \u00e0 copier\n\n```\nhttps://schoolswp.com/[slug-article]/?utm_source=[SOURCE]&utm_medium=[MEDIUM]&utm_campaign=[CAMPAIGN]&utm_content=[CONTENT]\n```\n\n### R\u00e9f\u00e9rence des combinaisons les plus fr\u00e9quentes\n\n| Canal                     | Source           | Medium    | Campaign                     | Content exemple        |\n| ------------------------- | ---------------- | --------- | ---------------------------- | ---------------------- |\n| Post LinkedIn (texte)     | `linkedin`       | `social`  | `[sujet]-[type]`             | `post-texte`           |\n| Post LinkedIn (carrousel) | `linkedin`       | `social`  | `[sujet]-[type]`             | `post-carrousel`       |\n| Description YouTube       | `youtube`        | `video`   | `[sujet]-[type]`             | `lien-description`     |\n| Bio Instagram             | `instagram`      | `bio`     | `bio-instagram`              | `lien-bio`             |\n| Story Instagram           | `instagram`      | `social`  | `[sujet]`                    | `story-swipe`          |\n| Newsletter                | `newsletter`     | `email`   | `newsletter-[mois]-[ann\u00e9e]`  | `bouton-cta-principal` |\n| S\u00e9quence bienvenue        | `email-sequence` | `email`   | `sequence-bienvenue`         | `lien-texte-intro`     |\n| Affili\u00e9 ThemeForest       | `themefores`     | `affili\u00e9` | `themeforest-recommandation` | `bouton-cta-fin`       |\n| Affili\u00e9 plugin            | `plugin-affili\u00e9` | `affili\u00e9` | `[plugin]-avis`              | `bouton-cta-fin`       |\n\n---\n\n## 11. R\u00e8gles de gouvernance\n\n### Qui peut cr\u00e9er des UTM\n\nMichael KIHL \u2014 tout nouveau param\u00e8tre non list\u00e9 dans ce document doit \u00eatre ajout\u00e9 ici avant utilisation.\n\n### Mise \u00e0 jour du document\n\nCe document est la source de v\u00e9rit\u00e9 unique. Toute nouvelle campagne, nouveau canal ou nouveau partenaire affili\u00e9 doit entra\u00eener une mise \u00e0 jour du tableau de r\u00e9f\u00e9rence correspondant.\n\n### Validation avant publication\n\nChecklist avant de publier un lien externe :\n\n- [ ] L'URL est en minuscules int\u00e9gral (source, medium, campaign, content)\n- [ ] Aucun espace dans les param\u00e8tres (remplac\u00e9 par `-`)\n- [ ] La combinaison source \u00d7 medium est dans la matrice valid\u00e9e\n- [ ] Le nom de campagne suit le format d\u00e9fini\n- [ ] Le lien a \u00e9t\u00e9 test\u00e9 (copier-coller dans le navigateur, v\u00e9rifier que GA4 re\u00e7oit l'\u00e9v\u00e9nement)\n- [ ] Si lien long : pass\u00e9 par ClickWhale avant publication sur Instagram/YouTube\n\n### Tester un lien UTM\n\n1. Ouvrir GA4 \u2192 Rapports \u2192 En temps r\u00e9el\n2. Cliquer sur le lien depuis un autre navigateur (ou mode navigation priv\u00e9e)\n3. V\u00e9rifier que la session appara\u00eet avec les bons param\u00e8tres source/medium/campaign\n\n### Revue p\u00e9riodique\n\n- Revue mensuelle : v\u00e9rifier que les rapports GA4 ne contiennent pas de valeurs parasites (fautes de frappe, nouvelles variantes non planifi\u00e9es)\n- Revue trimestrielle : nettoyer les slugs ClickWhale obsol\u00e8tes, archiver les campagnes termin\u00e9es\n\n---\n\n_Convention UTM schoolsWP \u2014 v1.0 \u2014 2026-03-13_\n_Source de v\u00e9rit\u00e9 : ce document. Ne pas cr\u00e9er de variantes UTM en dehors de cette convention._\n"}], "grading": {"expectations": [{"text": "Document contient les 9 sections attendues (titre, r\u00e8gles de base, param\u00e8tres UTM, convention officielle, cas concrets, quand mettre, quand ne pas mettre, erreurs, recommandation)", "passed": false, "evidence": "Le document a 11 sections num\u00e9rot\u00e9es mais la structure diff\u00e8re des 9 attendues : pas de section 'Recommandation' finale d\u00e9di\u00e9e, pas de section 'Erreurs \u00e0 \u00e9viter'. La section 11 'R\u00e8gles de gouvernance' remplace les erreurs. Le document est tr\u00e8s complet mais ne suit pas exactement les 9 sections attendues \u2014 il manque une section erreurs et une recommandation finale explicite."}, {"text": "Au moins 6 cas concrets avec URL compl\u00e8te contenant au minimum utm_source, utm_medium, utm_campaign", "passed": true, "evidence": "Section 6 'Exemples par canal' contient de nombreuses URLs compl\u00e8tes : LinkedIn (3 URLs), YouTube (3 URLs), Instagram (2 URLs), Newsletter FluentCRM (3 URLs), S\u00e9quences email FluentCRM (3 URLs). Toutes contiennent utm_source, utm_medium, utm_campaign."}, {"text": "Toutes les valeurs UTM sont en minuscules sans accents et avec tirets uniquement", "passed": false, "evidence": "Le document utilise des valeurs avec accents et caract\u00e8res non-ASCII : 'affili\u00e9' dans utm_medium (ex: ligne 97 'affili\u00e9', ligne 162 'affili\u00e9'), 'plugin-affili\u00e9' comme source. Ces valeurs violent la r\u00e8gle 'sans accents'. Exemple : 'utm_medium=affili\u00e9' et 'utm_source=plugin-affili\u00e9'."}, {"text": "Couvre les 5 contextes cl\u00e9s : GA4, ClickWhale, FluentCRM, social, affili\u00e9s", "passed": true, "evidence": "GA4 mentionn\u00e9 dans les principes. ClickWhale : section 8 d\u00e9di\u00e9e. FluentCRM : section 9 d\u00e9di\u00e9e. Social (LinkedIn, YouTube, Instagram) : section 6. Affili\u00e9s : section 7 d\u00e9di\u00e9e avec ThemeForest et plugins WordPress."}, {"text": "Section 'quand ne pas mettre' pr\u00e9sente avec l'explication sur les liens internes GA4", "passed": true, "evidence": "Section 1 'Quand ne pas taguer' mentionne : 'Liens internes entre pages de schoolswp.com (casse la session GA4)'. L'explication GA4 est pr\u00e9sente bien que dans les principes fondamentaux plut\u00f4t qu'une section d\u00e9di\u00e9e."}, {"text": "Recommandation finale m\u00e9morisable (max 3 phrases)", "passed": false, "evidence": "Pas de section 'Recommandation' ou de formule m\u00e9morisable en fin de document. Le document se termine par 'R\u00e8gles de gouvernance' (section 11) avec des checklist et proc\u00e9dures \u2014 aucune phrase synth\u00e9tique m\u00e9morisable de type 'Source = qui, Medium = comment, Campaign = pourquoi'."}]}}, {"id": "eval-2-cleanup-notes-with_skill", "prompt": "J'ai des notes UTM d\u00e9sorganis\u00e9es pour schoolsWP. Nettoie-les et produis la convention officielle :\n\n---\nmes notes UTM brutes :\n- pour les emails : source=newsletter ou source=email (j'h\u00e9site)\n- LinkedIn : utm_source=LinkedIn (avec majuscule?) medium=social\n- YouTube vid\u00e9os : source=youtube, medium=video ou social ?\n- ClickWhale : je mets quoi ? parfois je mets source=clickwhale, parfois source=lien-court\n- affili\u00e9s ThemeForest : source=themeforest medium=affiliation ou affiliate ?\n- campaign : j'utilise des tirets parfois des underscores, ex: lms_wordpress ou lms-wordpress\n- content : je l'utilise jamais vraiment\n- term : pareil je sais pas quand l'utiliser\n- est-ce que je mets des UTMs sur mes liens internes dans les articles ?\n---\n\nNettoie tout \u00e7a, tranche sur chaque point qui flotte, et produis la convention compl\u00e8te.", "eval_id": 2, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM officielle schoolsWP \u2014 v1.0 (mars 2026)\n\n---\n\n## 1. R\u00e8gles de base\n\n1. **Tout en minuscules** \u2014 GA4 est sensible \u00e0 la casse. `Newsletter` et `newsletter` sont deux sources distinctes dans tes rapports.\n2. **Tirets uniquement** \u2014 jamais d'underscores, jamais d'espaces. `lms-wordpress` et non `lms_wordpress`.\n3. **Sans accents** \u2014 `etude-de-cas`, pas `\u00e9tude-de-cas`.\n4. **Valeurs courtes** \u2014 max 30 caract\u00e8res par param\u00e8tre, lisibles \u00e0 l'\u0153il.\n5. **Une valeur = un sens** \u2014 coh\u00e9rence absolue. Si tu utilises `newsletter` pour les emails, tu n'utilises jamais `email` pour la m\u00eame chose.\n6. **Jamais sur les liens internes** \u2014 les UTMs sur le maillage interne d'un article \u00e9crasent la source d'origine dans GA4 et faussent toute l'attribution.\n7. **Toujours taguer les liens entrants externes** \u2014 email, r\u00e9seaux sociaux, affili\u00e9s, campagnes pub : utm_source + utm_medium + utm_campaign sont obligatoires.\n\n---\n\n## 2. Param\u00e8tres UTM\n\n### utm_source \u2014 d'o\u00f9 vient le visiteur ?\n\nIdentifie **qui** envoie le trafic. C'est l'origine.\n\n**Valeurs officielles schoolsWP :**\n\n| Valeur                | Contexte                                                  |\n| --------------------- | --------------------------------------------------------- |\n| `newsletter`          | Emails envoy\u00e9s via FluentCRM (newsletters, s\u00e9quences)     |\n| `linkedin`            | Publications et profil LinkedIn                           |\n| `youtube`             | Descriptions de vid\u00e9os YouTube, fiches YouTube            |\n| `instagram`           | Bio, stories, liens Instagram                             |\n| `facebook`            | Posts et groupes Facebook                                 |\n| `google`              | Trafic Google Ads (CPC)                                   |\n| `bing`                | Trafic Bing Ads                                           |\n| `clickwhale`          | Short links permanents distribu\u00e9s via ClickWhale          |\n| `themeforest`         | Liens affili\u00e9s ThemeForest                                |\n| `[nom-du-partenaire]` | Autres affili\u00e9s/partenaires (ex: `elegantthemes`, `wpml`) |\n\n**Exemples :**\n\n- Lien dans ta newsletter hebdo \u2192 `utm_source=newsletter`\n- Lien dans un post LinkedIn \u2192 `utm_source=linkedin`\n- Lien affili\u00e9 ThemeForest dans un article \u2192 `utm_source=themeforest`\n\n---\n\n### utm_medium \u2014 comment le trafic arrive ?\n\nIdentifie **le canal** de diffusion. C'est le type de lien.\n\n**Valeurs officielles schoolsWP :**\n\n| Valeur       | Contexte                                                    |\n| ------------ | ----------------------------------------------------------- |\n| `email`      | Tous les envois email (newsletters, s\u00e9quences automatiques) |\n| `social`     | Tous les r\u00e9seaux sociaux organiques                         |\n| `video`      | Liens dans les descriptions de vid\u00e9os YouTube               |\n| `short-link` | Liens courts ClickWhale distribu\u00e9s en dehors du site        |\n| `affiliate`  | Liens d'affiliation partenaires                             |\n| `cpc`        | Campagnes publicitaires payantes                            |\n| `referral`   | Mentions et articles invit\u00e9s sur d'autres sites             |\n| `cta`        | CTAs internes sur schoolswp.com (boutons, banners)          |\n\n**Exemples :**\n\n- Email FluentCRM \u2192 `utm_medium=email`\n- Post LinkedIn \u2192 `utm_medium=social`\n- Vid\u00e9o YouTube \u2192 `utm_medium=video`\n- Short link ClickWhale \u2192 `utm_medium=short-link`\n- Lien ThemeForest \u2192 `utm_medium=affiliate`\n\n---\n\n### utm_campaign \u2014 pourquoi ce lien existe ?\n\nIdentifie **la campagne ou la raison** de l'envoi. Permet de regrouper plusieurs liens d'une m\u00eame action.\n\n**Format recommand\u00e9 :** `[sujet]-[mois-annee]` ou `[nom-serie]`\n\n**Valeurs exemples schoolsWP :**\n\n```\nnewsletter-hebdo\nlms-wordpress-mars-2026\nlaunch-authority-system\nblack-friday-2024\nguide-tutor-lms\ncomparatif-lms\n```\n\n**R\u00e8gle :** toujours en tirets, jamais en underscores. `lms-wordpress` et non `lms_wordpress`.\n\n---\n\n### utm_content \u2014 quel lien exactement dans la campagne ?\n\nPermet de **diff\u00e9rencier plusieurs liens** qui pointent vers la m\u00eame URL dans une m\u00eame campagne. Utile quand tu as plusieurs CTAs dans un m\u00eame email ou article.\n\n**Valeurs exemples schoolsWP :**\n\n```\ncta-header\ncta-footer\nbouton-principal\nlien-texte\nimage-banner\nvignette-youtube\nlien-bio\n```\n\n**Quand l'utiliser :** d\u00e8s que tu as 2 liens ou plus vers la m\u00eame page dans un m\u00eame email ou une m\u00eame publication. Sinon, tu peux l'omettre.\n\n---\n\n### utm_term \u2014 quel mot-cl\u00e9 cible ?\n\nR\u00e9serv\u00e9 aux **campagnes payantes** pour identifier le mot-cl\u00e9 qui a d\u00e9clench\u00e9 l'affichage.\n\n**Quand l'utiliser :** uniquement sur Google Ads ou Bing Ads. Ne pas utiliser sur les emails ou les r\u00e9seaux sociaux.\n\n**Valeurs exemples schoolsWP :**\n\n```\nlms-wordpress\ntutor-lms\ncrm-wordpress\nlearndash-prix\n```\n\n---\n\n## 3. Convention officielle schoolsWP\n\n### Format standard\n\n```\n?utm_source=[source]&utm_medium=[medium]&utm_campaign=[campaign]&utm_content=[content]\n```\n\n`utm_term` est optionnel, uniquement pour les campagnes payantes.\n\n### Tableau de r\u00e9f\u00e9rence rapide\n\n| Source         | Medium       | Quand l'utiliser                             |\n| -------------- | ------------ | -------------------------------------------- |\n| `newsletter`   | `email`      | Emails FluentCRM (newsletters, s\u00e9quences)    |\n| `linkedin`     | `social`     | Posts et profil LinkedIn                     |\n| `youtube`      | `video`      | Descriptions de vid\u00e9os YouTube               |\n| `instagram`    | `social`     | Bio et stories Instagram                     |\n| `clickwhale`   | `short-link` | Short links permanents distribu\u00e9s en externe |\n| `themeforest`  | `affiliate`  | Liens affili\u00e9s ThemeForest dans les articles |\n| `[partenaire]` | `affiliate`  | Autres liens affili\u00e9s partenaires            |\n| `google`       | `cpc`        | Google Ads                                   |\n\n---\n\n## 4. Cas concrets\n\n### Cas 1 \u2014 Newsletter FluentCRM (lien principal)\n\n```\nContexte : lien vers l'article \"TutorLMS vs LearnDash\" dans la newsletter hebdo de mars 2026\nURL : https://schoolswp.com/tutor-lms-vs-learndash/?utm_source=newsletter&utm_medium=email&utm_campaign=newsletter-hebdo&utm_content=lien-principal\nExplication : source=newsletter (FluentCRM), medium=email (canal email), campaign=newsletter-hebdo (s\u00e9rie r\u00e9currente), content=lien-principal (distingue ce lien d'un \u00e9ventuel second lien dans le m\u00eame email)\n```\n\n### Cas 2 \u2014 LinkedIn organique\n\n```\nContexte : publication LinkedIn avec lien vers le guide LMS gratuit\nURL : https://schoolswp.com/guide-lms-wordpress/?utm_source=linkedin&utm_medium=social&utm_campaign=guide-lms-mars-2026&utm_content=lien-post\nExplication : source=linkedin, medium=social (r\u00e9seau social organique, pas payant), campaign identifie la campagne de diffusion du guide\n```\n\n### Cas 3 \u2014 Vid\u00e9o YouTube (description)\n\n```\nContexte : lien en description d'une vid\u00e9o \"Comment choisir son LMS WordPress\"\nURL : https://schoolswp.com/choisir-lms-wordpress/?utm_source=youtube&utm_medium=video&utm_campaign=video-lms-mars-2026&utm_content=description\nExplication : source=youtube, medium=video (le canal est une vid\u00e9o, pas un post social classique), content=description pour distinguer d'un \u00e9ventuel lien en commentaire \u00e9pingl\u00e9\n```\n\n### Cas 4 \u2014 Short link ClickWhale (bio Instagram)\n\n```\nContexte : short link permanent \"swp.fr/guide-lms\" dans la bio Instagram, redirige vers le guide LMS\nURL configur\u00e9e dans ClickWhale : https://schoolswp.com/guide-lms-wordpress/?utm_source=clickwhale&utm_medium=short-link&utm_campaign=bio-instagram&utm_content=bio-link\nExplication : source=clickwhale (c'est l'outil qui g\u00e8re le lien), medium=short-link, campaign=bio-instagram identifie l'emplacement permanent\n```\n\n### Cas 5 \u2014 Lien affili\u00e9 ThemeForest dans un article\n\n```\nContexte : lien affili\u00e9 vers un th\u00e8me WordPress dans l'article \"Meilleurs th\u00e8mes LMS\"\nURL : https://themeforest.net/item/education-wp/...?utm_source=themeforest&utm_medium=affiliate&utm_campaign=article-themes-lms&utm_content=lien-texte\nExplication : source=themeforest (le partenaire), medium=affiliate, campaign identifie l'article source, content=lien-texte (vs un \u00e9ventuel bouton ou image)\n```\n\n### Cas 6 \u2014 CTA interne sur schoolswp.com (bouton dans un article)\n\n```\nContexte : bouton \"T\u00e9l\u00e9charger le guide gratuit\" dans le footer d'un article sur schoolswp.com\nURL : https://schoolswp.com/guide-lms-wordpress/?utm_source=schoolswp&utm_medium=cta&utm_campaign=guide-lms&utm_content=cta-footer-article\nExplication : les CTAs internes sur le propre site peuvent \u00eatre track\u00e9s avec source=schoolswp pour mesurer les conversions internes \u2014 c'est le seul cas l\u00e9gitime d'UTM sur un lien interne (bouton CTA, pas lien de maillage)\n```\n\n### Cas 7 \u2014 S\u00e9quence email automatique FluentCRM\n\n```\nContexte : email J+3 d'une s\u00e9quence de bienvenue, lien vers l'article \"D\u00e9marrer avec TutorLMS\"\nURL : https://schoolswp.com/demarrer-tutor-lms/?utm_source=newsletter&utm_medium=email&utm_campaign=sequence-bienvenue&utm_content=email-j3\nExplication : m\u00eame source/medium que la newsletter, campaign=sequence-bienvenue identifie la s\u00e9quence, content=email-j3 permet de savoir quel email de la s\u00e9quence convertit le mieux\n```\n\n---\n\n## 5. Quand mettre des UTMs\n\nLes UTMs sont **obligatoires** dans ces contextes :\n\n- Liens dans les emails (newsletters FluentCRM, s\u00e9quences automatiques)\n- Publications sur les r\u00e9seaux sociaux (bio, posts, stories)\n- Liens affili\u00e9s et partenariats dans les articles\n- Campagnes publicitaires (Google Ads, Meta Ads)\n- Short links ClickWhale distribu\u00e9s en externe (bio, stories, QR codes)\n- Collaborations et articles invit\u00e9s sur d'autres sites\n- Liens dans les descriptions de vid\u00e9os YouTube\n\n---\n\n## 6. Quand NE PAS mettre des UTMs\n\nLes UTMs sont **contre-productifs** dans ces contextes :\n\n- **Liens de maillage interne dans les articles** \u2014 un lien d'un article vers un autre article sur schoolswp.com n'a pas besoin d'UTM. GA4 consid\u00e9rerait la session comme une nouvelle session avec `source=schoolswp`, \u00e9crasant la vraie source d'origine (ex: LinkedIn).\n- **Menu de navigation, sidebar, footer de navigation** \u2014 m\u00eame raison : casse l'attribution.\n- **Pages de paiement vers confirmation de commande** \u2014 les UTMs sur ces liens cassent le tracking e-commerce.\n- **Redirections techniques** \u2014 les UTMs sur les URLs de redirection cr\u00e9ent des doublons et des conflits d'attribution.\n\n**R\u00e8gle \u00e0 retenir :** si le lien reste sur schoolswp.com et que ce n'est pas un bouton CTA mesurable, pas d'UTM.\n\n---\n\n## 7. Erreurs \u00e0 \u00e9viter\n\n1. **Majuscules dans les valeurs** \u2014 `LinkedIn` et `linkedin` sont deux sources diff\u00e9rentes dans GA4. Toujours minuscules.\n2. **Underscores dans les noms de campagne** \u2014 `lms_wordpress` sera affich\u00e9 comme `lms wordpress` dans certains outils. Utiliser `lms-wordpress`.\n3. **Valeurs incoh\u00e9rentes pour la m\u00eame source** \u2014 choisir `newsletter` et s'y tenir. Ne jamais alterner avec `email` pour d\u00e9signer la m\u00eame source.\n4. **Oublier utm_medium** \u2014 `utm_source` seul ne suffit pas pour l'attribution dans GA4. Source + Medium sont toujours ensemble.\n5. **Taguer les liens de maillage interne** \u2014 l'erreur la plus fr\u00e9quente. Elle fausse toute l'attribution du trafic.\n6. **Valeurs trop longues ou avec des caract\u00e8res sp\u00e9ciaux** \u2014 \u00e9viter les `?`, `&`, `=` dans les valeurs. Encoder si n\u00e9cessaire.\n7. **Oublier utm_content sur les emails avec plusieurs liens** \u2014 sans `utm_content`, tu ne sais pas quel lien dans l'email a converti.\n8. **Utiliser utm_term hors campagnes payantes** \u2014 ce param\u00e8tre est r\u00e9serv\u00e9 aux mots-cl\u00e9s publicitaires. Sur du social ou de l'email, il n'a aucun sens.\n\n---\n\n## 8. Recommandation simple \u00e0 retenir\n\n> **Source = qui t'envoie. Medium = comment. Campaign = pourquoi.**\n>\n> Si tu doutes : est-ce que ce lien vient de l'ext\u00e9rieur de schoolswp.com ? Oui \u2192 UTM obligatoire. Non (maillage interne, navigation) \u2192 pas d'UTM. La seule exception : les boutons CTA internes que tu veux mesurer explicitement.\n\n---\n\n## Points tranch\u00e9s\n\nLes d\u00e9cisions suivantes ont \u00e9t\u00e9 prises en tranchant les zones floues de tes notes :\n\n1. **newsletter vs email pour les sources email** \u2192 tranch\u00e9 : `utm_source=newsletter` (identifie l'outil FluentCRM et la nature du contenu), `utm_medium=email` (identifie le canal). Les deux coexistent mais \u00e0 des endroits diff\u00e9rents.\n\n2. **LinkedIn avec ou sans majuscule** \u2192 tranch\u00e9 : `utm_source=linkedin` \u2014 tout en minuscules, sans exception. GA4 est case-sensitive.\n\n3. **YouTube : medium=video ou social ?** \u2192 tranch\u00e9 : `utm_medium=video`. YouTube est une plateforme vid\u00e9o, pas un r\u00e9seau social classique. Cela permet de distinguer le trafic YouTube du trafic LinkedIn/Instagram dans tes rapports.\n\n4. **ClickWhale : source=clickwhale ou source=lien-court ?** \u2192 tranch\u00e9 : `utm_source=clickwhale`. C'est le nom de l'outil qui g\u00e8re le lien. `lien-court` d\u00e9crit le format, pas la source. Pour le medium, utiliser `utm_medium=short-link`.\n\n5. **Affili\u00e9s ThemeForest : medium=affiliation ou affiliate ?** \u2192 tranch\u00e9 : `utm_medium=affiliate` (terme standard GA4/marketing). `affiliation` avec accent ou graphie variable est \u00e0 \u00e9viter.\n\n6. **Tirets ou underscores dans les campagnes** \u2192 tranch\u00e9 : tirets uniquement. `lms-wordpress` partout, jamais `lms_wordpress`.\n\n7. **utm_content : quand l'utiliser ?** \u2192 tranch\u00e9 : \u00e0 utiliser d\u00e8s qu'il y a 2 liens ou plus vers la m\u00eame URL dans un m\u00eame email ou publication. Sinon optionnel mais recommand\u00e9 pour les emails.\n\n8. **utm_term : quand l'utiliser ?** \u2192 tranch\u00e9 : r\u00e9serv\u00e9 aux campagnes payantes (Google Ads, Bing Ads) uniquement. Ne pas utiliser sur les emails, r\u00e9seaux sociaux ou liens affili\u00e9s.\n\n9. **UTMs sur les liens internes dans les articles** \u2192 tranch\u00e9 : non, jamais sur le maillage interne. Seule exception : les boutons CTA internes explicitement mesur\u00e9s (`utm_source=schoolswp&utm_medium=cta`).\n"}], "grading": {"expectations": [{"text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)", "passed": true, "evidence": "Section 'Points tranch\u00e9s' liste 9 d\u00e9cisions : (1) newsletter vs email \u2192 newsletter pour source, email pour medium ; (2) LinkedIn minuscules \u2192 linkedin ; (3) YouTube medium=video ; (4) ClickWhale source=clickwhale ; (5) affili\u00e9s medium=affiliate ; (6) tirets uniquement ; (7) utm_content usage ; (8) utm_term campagnes payantes ; (9) UTMs liens internes. Tous les points flottants sont couverts."}, {"text": "Inclut une section ou liste 'Points tranch\u00e9s' explicite", "passed": true, "evidence": "Section '## Points tranch\u00e9s' explicite en fin de document (lignes 264-284), avec 9 points num\u00e9rot\u00e9s listant les d\u00e9cisions prises."}, {"text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)", "passed": true, "evidence": "Point 9 de 'Points tranch\u00e9s' : 'UTMs sur les liens internes dans les articles \u2192 tranch\u00e9 : non, jamais sur le maillage interne.' + Section 6 'Quand NE PAS mettre des UTMs' : 'GA4 consid\u00e9rerait la session comme une nouvelle session avec source=schoolswp, \u00e9crasant la vraie source d'origine (ex: LinkedIn).'"}, {"text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM", "passed": true, "evidence": "Point 1 de 'Points tranch\u00e9s' : 'newsletter vs email pour les sources email \u2192 tranch\u00e9 : utm_source=newsletter'. Tableau section 3 : 'newsletter | email | Emails FluentCRM (newsletters, s\u00e9quences)'."}, {"text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')", "passed": true, "evidence": "Point 2 de 'Points tranch\u00e9s' : 'LinkedIn avec ou sans majuscule \u2192 tranch\u00e9 : utm_source=linkedin \u2014 tout en minuscules, sans exception. GA4 est case-sensitive.' Section 2 utm_source : valeur 'linkedin' en minuscules."}, {"text": "Recommande tirets (pas underscores) avec justification coh\u00e9rence", "passed": true, "evidence": "Point 6 de 'Points tranch\u00e9s' : 'Tirets ou underscores dans les campagnes \u2192 tranch\u00e9 : tirets uniquement. lms-wordpress partout, jamais lms_wordpress.' Section 2 utm_campaign : 'R\u00e8gle : toujours en tirets, jamais en underscores.' Section 7 erreur 2 : 'lms_wordpress sera affich\u00e9 comme lms wordpress dans certains outils'."}, {"text": "Explique utm_content et utm_term avec cas d'usage concrets", "passed": true, "evidence": "utm_content section 2 : 'Permet de diff\u00e9rencier plusieurs liens qui pointent vers la m\u00eame URL dans une m\u00eame campagne. Utile quand tu as plusieurs CTAs dans un m\u00eame email.' Exemples concrets : cta-header, cta-footer, bouton-principal. utm_term section 2 : 'R\u00e9serv\u00e9 aux campagnes payantes' avec exemples lms-wordpress, tutor-lms, crm-wordpress. Point 7 de 'Points tranch\u00e9s' pr\u00e9cise usage conditionnel."}]}}, {"id": "eval-2-cleanup-notes-without_skill", "prompt": "J'ai des notes UTM d\u00e9sorganis\u00e9es pour schoolsWP. Nettoie-les et produis la convention officielle :\n\n---\nmes notes UTM brutes :\n- pour les emails : source=newsletter ou source=email (j'h\u00e9site)\n- LinkedIn : utm_source=LinkedIn (avec majuscule?) medium=social\n- YouTube vid\u00e9os : source=youtube, medium=video ou social ?\n- ClickWhale : je mets quoi ? parfois je mets source=clickwhale, parfois source=lien-court\n- affili\u00e9s ThemeForest : source=themeforest medium=affiliation ou affiliate ?\n- campaign : j'utilise des tirets parfois des underscores, ex: lms_wordpress ou lms-wordpress\n- content : je l'utilise jamais vraiment\n- term : pareil je sais pas quand l'utiliser\n- est-ce que je mets des UTMs sur mes liens internes dans les articles ?\n---\n\nNettoie tout \u00e7a, tranche sur chaque point qui flotte, et produis la convention compl\u00e8te.", "eval_id": 2, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM officielle \u2014 schoolsWP\n\n> Document de r\u00e9f\u00e9rence. Toujours copier-coller les valeurs depuis ce fichier \u2014 ne jamais les saisir de m\u00e9moire.\n\n---\n\n## R\u00e8gles g\u00e9n\u00e9rales\n\n- **Casse** : tout en minuscules, sans exception (Google Analytics est sensible \u00e0 la casse \u2014 `LinkedIn` et `linkedin` cr\u00e9ent deux sources distinctes)\n- **S\u00e9parateurs** : tirets `-` uniquement (jamais d'underscores, jamais d'espaces)\n- **Encodage** : pas de caract\u00e8res sp\u00e9ciaux, pas d'accents\n- **Obligatoires** : `utm_source` + `utm_medium` + `utm_campaign` sur tous les liens externes track\u00e9s\n- **Optionnels** : `utm_content` et `utm_term` \u2014 voir r\u00e8gles d'usage ci-dessous\n\n---\n\n## Param\u00e8tres : valeurs officielles\n\n### `utm_source` \u2014 origine du trafic\n\n| Canal                     | Valeur officielle | Notes                                 |\n| ------------------------- | ----------------- | ------------------------------------- |\n| Newsletter / emails       | `newsletter`      | Toujours `newsletter`, jamais `email` |\n| LinkedIn                  | `linkedin`        | Minuscule, jamais `LinkedIn`          |\n| YouTube                   | `youtube`         |                                       |\n| ClickWhale (liens courts) | `clickwhale`      | Source = l'outil qui g\u00e9n\u00e8re le lien   |\n| ThemeForest (affili\u00e9s)    | `themeforest`     |                                       |\n\n**R\u00e8gle pour ClickWhale :** la source est `clickwhale` car c'est le point de d\u00e9part du clic. Le lien court est l'outil de distribution, pas une destination. `lien-court` est trop vague et non actionnable dans les rapports.\n\n---\n\n### `utm_medium` \u2014 type de canal\n\n| Canal               | Valeur officielle | Notes                                                                                         |\n| ------------------- | ----------------- | --------------------------------------------------------------------------------------------- |\n| Emails / newsletter | `email`           |                                                                                               |\n| LinkedIn            | `social`          |                                                                                               |\n| YouTube             | `video`           | Plus pr\u00e9cis que `social` \u2014 permet de distinguer YouTube des r\u00e9seaux sociaux dans les rapports |\n| ClickWhale          | `lien-court`      |                                                                                               |\n| Affili\u00e9s            | `affiliate`       | Jamais `affiliation` \u2014 `affiliate` est la valeur standard GA4                                 |\n\n---\n\n### `utm_campaign` \u2014 nom de la campagne\n\n- **Format** : tirets uniquement \u2014 jamais d'underscores\n- **Structure** : `[sujet]-[type]` ou `[sujet]-[date]` selon le contexte\n- **Exemples corrects** : `lms-wordpress`, `formation-gutenberg`, `black-friday-2025`\n- **Exemples incorrects** : `lms_wordpress`, `LMS WordPress`, `lmswordpress`\n\n---\n\n### `utm_content` \u2014 diff\u00e9rencier les variantes\n\nUtiliser quand **plusieurs liens pointent vers la m\u00eame destination dans le m\u00eame canal**.\n\n**Cas d'usage typiques :**\n\n- Deux boutons CTA dans un m\u00eame email (ex: `cta-haut` vs `cta-bas`)\n- Deux visuels diff\u00e9rents dans une campagne LinkedIn (ex: `visuel-rouge` vs `visuel-bleu`)\n- Deux emplacements dans une m\u00eame page (ex: `sidebar` vs `footer`)\n\n**Format** : tirets, minuscules \u2014 ex: `bouton-hero`, `lien-bio`, `encart-article`\n\nSi tu n'as qu'un seul lien vers une destination dans un canal donn\u00e9 : ne pas renseigner `utm_content`.\n\n---\n\n### `utm_term` \u2014 mots-cl\u00e9s payants\n\nR\u00e9serv\u00e9 aux campagnes **SEA / publicit\u00e9s payantes au CPC** (Google Ads, Meta Ads).\n\nSur schoolsWP : pas de SEA actuellement \u2192 **ne pas utiliser `utm_term`**.\n\n---\n\n## Liens internes dans les articles\n\n**Non.** Ne jamais mettre d'UTM sur les liens internes (d'une page schoolsWP vers une autre page schoolsWP).\n\nRaisons :\n\n1. Les UTM r\u00e9initialisent la session dans GA4 \u2014 un visiteur organique devient \"newsletter\" si tu cliques sur un lien interne tagu\u00e9\n2. \u00c7a fausse l'attribution source/medium sur toutes les pages en aval\n3. Le maillage interne se mesure avec les rapports de pages et les flux de navigation, pas avec les UTM\n\nPour les liens internes, utiliser les rapports GA4 \"Flux d'utilisateurs\" ou un outil comme GSC.\n\n---\n\n## Tableau r\u00e9capitulatif par canal\n\n| Canal                     | source        | medium       | campaign       | content              | term |\n| ------------------------- | ------------- | ------------ | -------------- | -------------------- | ---- |\n| Newsletter                | `newsletter`  | `email`      | `nom-campagne` | si plusieurs CTA     | \u2014    |\n| LinkedIn                  | `linkedin`    | `social`     | `nom-campagne` | si plusieurs visuels | \u2014    |\n| YouTube                   | `youtube`     | `video`      | `nom-campagne` | si plusieurs liens   | \u2014    |\n| ClickWhale                | `clickwhale`  | `lien-court` | `nom-campagne` | optionnel            | \u2014    |\n| ThemeForest (affiliation) | `themeforest` | `affiliate`  | `nom-produit`  | optionnel            | \u2014    |\n\n---\n\n## Exemples complets\n\n```\n# Email newsletter \u2014 article LMS\n?utm_source=newsletter&utm_medium=email&utm_campaign=lms-wordpress\n\n# LinkedIn \u2014 post avec deux variantes de lien\n?utm_source=linkedin&utm_medium=social&utm_campaign=formation-gutenberg&utm_content=lien-bio\n?utm_source=linkedin&utm_medium=social&utm_campaign=formation-gutenberg&utm_content=lien-post\n\n# YouTube \u2014 description de vid\u00e9o\n?utm_source=youtube&utm_medium=video&utm_campaign=tutoliels-woocommerce\n\n# ClickWhale \u2014 lien court vers page formation\n?utm_source=clickwhale&utm_medium=lien-court&utm_campaign=formation-lms\n\n# ThemeForest \u2014 lien affili\u00e9\n?utm_source=themeforest&utm_medium=affiliate&utm_campaign=avada-theme\n```\n\n---\n\n## Points tranch\u00e9s \u2014 r\u00e9sum\u00e9 des d\u00e9cisions\n\n| Question                                                | D\u00e9cision                                      |\n| ------------------------------------------------------- | --------------------------------------------- |\n| `newsletter` ou `email` pour source ?                   | `newsletter`                                  |\n| `LinkedIn` ou `linkedin` ?                              | `linkedin` (minuscule)                        |\n| YouTube : `video` ou `social` pour medium ?             | `video`                                       |\n| ClickWhale : `clickwhale` ou `lien-court` pour source ? | `clickwhale` (source) / `lien-court` (medium) |\n| Affili\u00e9s : `affiliation` ou `affiliate` ?               | `affiliate`                                   |\n| Tirets ou underscores dans campaign ?                   | tirets `-` uniquement                         |\n| UTM sur liens internes ?                                | Non, jamais                                   |\n| Utiliser `utm_term` ?                                   | Non (pas de SEA)                              |\n"}], "grading": {"expectations": [{"text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)", "passed": true, "evidence": "Tableau 'Points tranch\u00e9s \u2014 r\u00e9sum\u00e9 des d\u00e9cisions' couvre : newsletter vs email \u2192 newsletter ; LinkedIn \u2192 linkedin minuscule ; YouTube medium \u2192 video ; ClickWhale source \u2192 clickwhale, medium \u2192 lien-court ; affili\u00e9s \u2192 affiliate ; tirets vs underscores \u2192 tirets ; UTM liens internes \u2192 Non ; utm_term \u2192 Non."}, {"text": "Inclut une section ou liste 'Points tranch\u00e9s' explicite", "passed": true, "evidence": "Section '## Points tranch\u00e9s \u2014 r\u00e9sum\u00e9 des d\u00e9cisions' pr\u00e9sente en fin de document avec un tableau \u00e0 deux colonnes 'Question / D\u00e9cision'."}, {"text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)", "passed": true, "evidence": "Section 'Liens internes dans les articles' : 'Non. Ne jamais mettre d'UTM sur les liens internes.' Avec 3 raisons dont : 'Les UTM r\u00e9initialisent la session dans GA4 \u2014 un visiteur organique devient newsletter si tu cliques sur un lien interne tagu\u00e9' et '\u00c7a fausse l'attribution source/medium sur toutes les pages en aval'."}, {"text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM", "passed": true, "evidence": "Tableau utm_source : 'Newsletter / emails | newsletter | Toujours newsletter, jamais email'. Tableau r\u00e9capitulatif : 'Newsletter | newsletter | email | nom-campagne'. Points tranch\u00e9s : 'newsletter ou email pour source ? \u2192 newsletter'."}, {"text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')", "passed": true, "evidence": "Tableau utm_source : 'LinkedIn | linkedin | Minuscule, jamais LinkedIn'. Points tranch\u00e9s : 'LinkedIn ou linkedin ? \u2192 linkedin (minuscule)'."}, {"text": "Recommande tirets (pas underscores) avec justification coh\u00e9rence", "passed": true, "evidence": "Section utm_campaign : 'Format : tirets uniquement \u2014 jamais d'underscores'. Points tranch\u00e9s : 'Tirets ou underscores dans campaign ? \u2192 tirets - uniquement'. Exemples corrects vs incorrects fournis : 'lms-wordpress' vs 'lms_wordpress'."}, {"text": "Explique utm_content et utm_term avec cas d'usage concrets", "passed": true, "evidence": "utm_content : 'Utiliser quand plusieurs liens pointent vers la m\u00eame destination dans le m\u00eame canal.' Cas d'usage : 'Deux boutons CTA dans un m\u00eame email (ex: cta-haut vs cta-bas)', 'Deux visuels diff\u00e9rents dans une campagne LinkedIn'. Format et exemples : bouton-hero, lien-bio, encart-article. utm_term : 'R\u00e9serv\u00e9 aux campagnes SEA / publicit\u00e9s payantes au CPC' avec note 'Sur schoolsWP : pas de SEA actuellement \u2192 ne pas utiliser utm_term'."}]}}, {"id": "eval-3-fluentcrm-email-with_skill", "prompt": "Pour schoolsWP, j'ai besoin d'une convention UTM sp\u00e9cifique pour ma strat\u00e9gie email FluentCRM. J'envoie : 1) une newsletter hebdo 'WP Insights' chaque lundi, 2) des s\u00e9quences automatis\u00e9es pour les leads du lead magnet 'Guide LMS WordPress', 3) des emails de relance pour les abandonnistes de la page de vente Authority System. Comment je structure mes UTMs pour ces 3 types d'emails ? Et est-ce que je dois taguer diff\u00e9remment les liens principaux vs les liens secondaires dans un m\u00eame email ?", "eval_id": 3, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM schoolsWP \u2014 Email FluentCRM \u2014 v1.0 (mars 2026)\n\nP\u00e9rim\u00e8tre : 3 types d'emails FluentCRM \u2014 newsletter hebdomadaire, s\u00e9quences automatis\u00e9es lead magnet, relances abandon page de vente.\n\n---\n\n## 1. R\u00e8gles de base\n\n1. **Tout en minuscules, tirets uniquement, sans accents** \u2014 jamais d'underscores, jamais d'espaces, jamais de majuscules.\n2. **utm_source = fluentcrm** pour tous les emails schoolsWP sans exception \u2014 la source c'est l'outil d'envoi.\n3. **utm_medium = email** pour tous les emails \u2014 le canal est toujours email, quel que soit le type.\n4. **utm_campaign = identifiant unique de la campagne** \u2014 distingue la newsletter, la s\u00e9quence et la relance.\n5. **utm_content = identifiant du lien dans l'email** \u2014 obligatoire d\u00e8s qu'un email contient plus d'un lien cliquable.\n6. **Coh\u00e9rence absolue** \u2014 une valeur = un sens. Ne jamais utiliser deux graphies pour la m\u00eame chose (ex: `wp-insights` et `wpinsights` sont deux campagnes diff\u00e9rentes aux yeux de GA4).\n7. **Ne jamais taguer les liens internes de navigation** (menu, footer du site) \u2014 seuls les liens distribu\u00e9s depuis l'ext\u00e9rieur re\u00e7oivent des UTMs.\n\n---\n\n## 2. Param\u00e8tres UTM \u2014 r\u00f4le et valeurs pour les emails FluentCRM\n\n### utm_source\n\n**R\u00f4le** : identifie qui envoie le trafic \u2014 ici, toujours l'outil d'envoi email.\n\n| Valeur      | Contexte                                                                 |\n| ----------- | ------------------------------------------------------------------------ |\n| `fluentcrm` | Tous les emails envoy\u00e9s via FluentCRM (newsletters, s\u00e9quences, relances) |\n\nR\u00e8gle tranch\u00e9e : ne pas utiliser `newsletter` comme source \u2014 newsletter est une campagne, pas une source. La source c'est FluentCRM.\n\n---\n\n### utm_medium\n\n**R\u00f4le** : identifie le canal de diffusion.\n\n| Valeur  | Contexte                       |\n| ------- | ------------------------------ |\n| `email` | Tous les emails sans exception |\n\n---\n\n### utm_campaign\n\n**R\u00f4le** : identifie la campagne sp\u00e9cifique \u2014 distingue les 3 types d'emails entre eux et les distingue dans le temps.\n\nFormat recommand\u00e9 :\n\n- Newsletter : `wp-insights-[semaine ou date]` \u2014 ex: `wp-insights-sem11-2026`\n- S\u00e9quence lead magnet : `seq-[nom-lead-magnet]-[etape]` \u2014 ex: `seq-guide-lms-j1`\n- Relance abandon : `relance-[nom-page]-[etape]` \u2014 ex: `relance-authority-system-j3`\n\n| Valeur                        | Type d'email                         | Explication                                      |\n| ----------------------------- | ------------------------------------ | ------------------------------------------------ |\n| `wp-insights-sem11-2026`      | Newsletter hebdo                     | Identifie l'\u00e9dition pr\u00e9cise (semaine + ann\u00e9e)    |\n| `wp-insights-lundi`           | Newsletter hebdo (si cadence stable) | Variante si la date n'est pas utile dans GA4     |\n| `seq-guide-lms-j1`            | S\u00e9quence lead magnet, email J+1      | `j1` = premier email de la s\u00e9quence              |\n| `seq-guide-lms-j3`            | S\u00e9quence lead magnet, email J+3      | Permet de comparer les taux de clic par \u00e9tape    |\n| `seq-guide-lms-j7`            | S\u00e9quence lead magnet, email J+7      |                                                  |\n| `relance-authority-system-j1` | Relance abandon, 1er email           | 1er email de relance apr\u00e8s abandon page de vente |\n| `relance-authority-system-j3` | Relance abandon, 2\u00e8me email          | Relance 3 jours apr\u00e8s                            |\n| `relance-authority-system-j7` | Relance abandon, 3\u00e8me email          | Derni\u00e8re relance de la s\u00e9quence                  |\n\n---\n\n### utm_content\n\n**R\u00f4le** : diff\u00e9rencie plusieurs liens dans le m\u00eame email \u2014 c'est le seul param\u00e8tre qui permet de savoir quel lien pr\u00e9cis a \u00e9t\u00e9 cliqu\u00e9 dans une m\u00eame campagne.\n\nR\u00e8gle : **utm_content est obligatoire d\u00e8s qu'un email contient plus d'un lien cliquable vers une m\u00eame destination.**\n\nConvention de nommage :\n\n| Valeur               | Signification                                                                                |\n| -------------------- | -------------------------------------------------------------------------------------------- |\n| `cta-principal`      | Bouton ou lien CTA principal de l'email (1er appel \u00e0 l'action)                               |\n| `cta-secondaire`     | Deuxi\u00e8me CTA (si pr\u00e9sent)                                                                    |\n| `lien-texte`         | Lien ins\u00e9r\u00e9 dans le corps du texte, pas un bouton                                            |\n| `lien-texte-2`       | Deuxi\u00e8me lien texte dans le corps                                                            |\n| `cta-footer`         | CTA ou lien dans le bas de l'email (avant signature)                                         |\n| `ps-lien`            | Lien dans un PS en fin d'email                                                               |\n| `image`              | Image cliquable                                                                              |\n| `bouton-decouvrir`   | Bouton dont le libell\u00e9 est \"D\u00e9couvrir\" \u2014 utile si plusieurs boutons avec libell\u00e9s diff\u00e9rents |\n| `bouton-telecharger` | Bouton \"T\u00e9l\u00e9charger\"                                                                         |\n| `bouton-rejoindre`   | Bouton \"Rejoindre\"                                                                           |\n\nR\u00e8gle de diff\u00e9renciation liens principaux vs liens secondaires :\n\n- **Lien principal** = CTA prioritaire, celui que tu veux que le lecteur clique en premier. Toujours `cta-principal`.\n- **Lien secondaire** = tout autre lien dans l'email (lien texte contextuel, CTA de rappel en footer, PS). Utiliser `lien-texte`, `cta-footer`, `ps-lien` selon la position.\n- Si deux liens pointent vers des destinations diff\u00e9rentes dans le m\u00eame email, chacun a ses propres UTMs (campaign diff\u00e9rente si la destination est diff\u00e9rente).\n- Si deux liens pointent vers la m\u00eame destination, seul utm_content les distingue dans GA4.\n\n---\n\n### utm_term\n\n**R\u00f4le** : r\u00e9serv\u00e9 aux campagnes payantes (Google Ads, Meta Ads). Ne pas utiliser pour les emails FluentCRM.\n\n---\n\n## 3. Convention officielle recommand\u00e9e\n\nFormat standard schoolsWP pour tous les emails FluentCRM :\n\n```\n?utm_source=fluentcrm&utm_medium=email&utm_campaign=[campaign]&utm_content=[content]\n```\n\nTableau de r\u00e9f\u00e9rence rapide :\n\n| Type d'email             | utm_source  | utm_medium | utm_campaign                  | utm_content                                   |\n| ------------------------ | ----------- | ---------- | ----------------------------- | --------------------------------------------- |\n| Newsletter hebdo         | `fluentcrm` | `email`    | `wp-insights-sem11-2026`      | `cta-principal` / `lien-texte` / `cta-footer` |\n| S\u00e9quence lead magnet J+1 | `fluentcrm` | `email`    | `seq-guide-lms-j1`            | `cta-principal` / `lien-texte` / `ps-lien`    |\n| Relance abandon J+1      | `fluentcrm` | `email`    | `relance-authority-system-j1` | `cta-principal` / `cta-footer` / `ps-lien`    |\n\n---\n\n## 4. Cas concrets \u2014 les 3 sc\u00e9narios complets\n\n---\n\n### Sc\u00e9nario 1 \u2014 Newsletter hebdomadaire \"WP Insights\" (lundi)\n\nContexte : newsletter \u00e9dition semaine 11 2026, envoy\u00e9e chaque lundi. L'email contient un article phare sur TutorLMS, un lien texte contextuel vers une ressource gratuite, et un CTA footer vers la formation Authority System.\n\n**Lien principal \u2014 article TutorLMS (CTA du bloc principal) :**\n\n```\nContexte : Bouton CTA principal \"Lire l'article complet\" dans le bloc \u00e9ditorial principal\nURL compl\u00e8te : https://schoolswp.com/tutor-lms-avis/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=cta-principal\nExplication : cta-principal identifie le lien prioritaire de l'email \u2014 c'est celui que GA4 te montrera en premier dans les rapports de campagne\n```\n\n**Lien secondaire \u2014 ressource gratuite dans le texte :**\n\n```\nContexte : Lien texte dans le corps de l'email vers un guide gratuit\nURL compl\u00e8te : https://schoolswp.com/guide-lms-wordpress/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=lien-texte\nExplication : lien-texte diff\u00e9rencie ce clic du CTA principal dans GA4 \u2014 tu verras lequel convertit le mieux\n```\n\n**Lien secondaire \u2014 CTA footer vers Authority System :**\n\n```\nContexte : Bouton \"D\u00e9couvrir Authority System\" en bas de l'email avant signature\nURL compl\u00e8te : https://schoolswp.com/authority-system/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=cta-footer\nExplication : cta-footer identifie les clics du bas de l'email \u2014 compare avec cta-principal pour voir si le placement impacte le taux de clic\n```\n\n---\n\n### Sc\u00e9nario 2 \u2014 S\u00e9quence automatis\u00e9e lead magnet \"Guide LMS WordPress\"\n\nContexte : s\u00e9quence d\u00e9clench\u00e9e apr\u00e8s t\u00e9l\u00e9chargement du lead magnet. Email J+1 (premier email de nurturing), J+3 (approfondissement), J+7 (invitation \u00e0 d\u00e9couvrir Authority System).\n\n**Email J+1 \u2014 CTA principal vers un article de blog :**\n\n```\nContexte : Premier email de la s\u00e9quence, CTA principal \"Commence par l\u00e0\" vers un article\nURL compl\u00e8te : https://schoolswp.com/lms-wordpress-comparatif/?utm_source=fluentcrm&utm_medium=email&utm_campaign=seq-guide-lms-j1&utm_content=cta-principal\nExplication : seq-guide-lms-j1 identifie cet email dans la s\u00e9quence \u2014 tu peux comparer les taux de clic entre j1, j3, j7\n```\n\n**Email J+1 \u2014 lien texte secondaire dans le corps :**\n\n```\nContexte : Lien dans le texte du J+1 vers une page de ressources\nURL compl\u00e8te : https://schoolswp.com/ressources-lms/?utm_source=fluentcrm&utm_medium=email&utm_campaign=seq-guide-lms-j1&utm_content=lien-texte\nExplication : m\u00eame campaign que le CTA principal (m\u00eame email), utm_content diff\u00e9rent pour suivre quel lien est cliqu\u00e9\n```\n\n**Email J+3 \u2014 CTA principal :**\n\n```\nContexte : Email J+3, approfondissement, CTA vers un article comparatif\nURL compl\u00e8te : https://schoolswp.com/tutor-lms-vs-learndash/?utm_source=fluentcrm&utm_medium=email&utm_campaign=seq-guide-lms-j3&utm_content=cta-principal\nExplication : campaign change (j3 vs j1) \u2014 permet de voir \u00e0 quelle \u00e9tape de la s\u00e9quence les leads s'engagent le plus\n```\n\n**Email J+7 \u2014 CTA principal vers page de vente :**\n\n```\nContexte : Email J+7, invitation \u00e0 d\u00e9couvrir Authority System\nURL compl\u00e8te : https://schoolswp.com/authority-system/?utm_source=fluentcrm&utm_medium=email&utm_campaign=seq-guide-lms-j7&utm_content=cta-principal\nExplication : j7 marque la transition nurturing \u2192 conversion dans ta s\u00e9quence \u2014 isole ces clics dans GA4\n```\n\n**Email J+7 \u2014 lien PS en fin d'email :**\n\n```\nContexte : PS en bas de l'email J+7, lien alternatif \"ou commence par ce guide gratuit\"\nURL compl\u00e8te : https://schoolswp.com/guide-lms-gratuit/?utm_source=fluentcrm&utm_medium=email&utm_campaign=seq-guide-lms-j7&utm_content=ps-lien\nExplication : ps-lien identifie les clics sur le PS \u2014 utile pour mesurer l'impact de cette technique copywriting\n```\n\n---\n\n### Sc\u00e9nario 3 \u2014 Emails de relance abandonnistes page de vente Authority System\n\nContexte : s\u00e9quence relance pour les visiteurs qui ont visit\u00e9 la page de vente sans acheter. 3 emails : J+1 (rappel b\u00e9n\u00e9fices), J+3 (objection fr\u00e9quente), J+7 (derni\u00e8re chance ou pivot).\n\n**Email J+1 \u2014 CTA principal (retour page de vente) :**\n\n```\nContexte : Premier email de relance, CTA principal \"Reprendre o\u00f9 tu t'es arr\u00eat\u00e9\"\nURL compl\u00e8te : https://schoolswp.com/authority-system/?utm_source=fluentcrm&utm_medium=email&utm_campaign=relance-authority-system-j1&utm_content=cta-principal\nExplication : relance-authority-system-j1 identifie ce premier email de relance \u2014 tu pourras voir quel email de relance g\u00e9n\u00e8re le plus de retours sur la page\n```\n\n**Email J+1 \u2014 lien texte secondaire (t\u00e9moignage ou preuve) :**\n\n```\nContexte : Lien dans le texte vers une page de t\u00e9moignages ou \u00e9tude de cas\nURL compl\u00e8te : https://schoolswp.com/temoignages-authority-system/?utm_source=fluentcrm&utm_medium=email&utm_campaign=relance-authority-system-j1&utm_content=lien-texte\nExplication : mesure si les preuves sociales dans le texte convertissent mieux que le CTA direct\n```\n\n**Email J+3 \u2014 CTA principal (objection) :**\n\n```\nContexte : Email J+3, traitement objection \"trop cher\", lien vers FAQ tarifs\nURL compl\u00e8te : https://schoolswp.com/authority-system/#faq?utm_source=fluentcrm&utm_medium=email&utm_campaign=relance-authority-system-j3&utm_content=cta-principal\nExplication : campaign j3 distingue cet email du j1 dans GA4 \u2014 tu vois si les abandonnistes r\u00e9engagent \u00e0 j3\n```\n\n**Email J+7 \u2014 CTA principal (derni\u00e8re chance) :**\n\n```\nContexte : Dernier email de relance, offre limit\u00e9e ou pivot vers une alternative\nURL compl\u00e8te : https://schoolswp.com/authority-system/?utm_source=fluentcrm&utm_medium=email&utm_campaign=relance-authority-system-j7&utm_content=cta-principal\nExplication : j7 est le dernier email \u2014 si les conversions viennent de l\u00e0, ta relance longue a de la valeur\n```\n\n**Email J+7 \u2014 CTA footer (offre alternative) :**\n\n```\nContexte : Si l'achat ne se fait pas, lien vers une ressource gratuite en bas de l'email\nURL compl\u00e8te : https://schoolswp.com/guide-lms-wordpress/?utm_source=fluentcrm&utm_medium=email&utm_campaign=relance-authority-system-j7&utm_content=cta-footer\nExplication : mesure combien d'abandonnistes non-acheteurs restent engag\u00e9s via le contenu gratuit\n```\n\n---\n\n## 5. Liens principaux vs liens secondaires \u2014 r\u00e8gle d\u00e9finitive\n\n**La question n'est pas \"principal ou secondaire\" au sens hi\u00e9rarchique \u2014 la question est : que veux-tu mesurer s\u00e9par\u00e9ment dans GA4 ?**\n\nR\u00e8gle op\u00e9rationnelle :\n\n| Position du lien dans l'email                         | utm_content recommand\u00e9                    |\n| ----------------------------------------------------- | ----------------------------------------- |\n| CTA principal (bloc hero ou section principale)       | `cta-principal`                           |\n| CTA en bas de l'email (avant signature)               | `cta-footer`                              |\n| Lien ins\u00e9r\u00e9 dans le corps du texte (inline)           | `lien-texte`                              |\n| Deuxi\u00e8me lien inline dans le texte                    | `lien-texte-2`                            |\n| PS en toute fin d'email                               | `ps-lien`                                 |\n| Image cliquable                                       | `image`                                   |\n| Bouton avec libell\u00e9 sp\u00e9cifique (si plusieurs boutons) | `bouton-[libelle]` ex: `bouton-rejoindre` |\n\nConclusion tranch\u00e9e : **toujours mettre utm_content d\u00e8s qu'un email a plus d'un lien.** Si tu ne mets utm_content que sur le lien principal, GA4 agr\u00e8ge tous les autres clics sans \u00e9tiquette et tu perds l'information.\n\n---\n\n## 6. Quand mettre des UTMs dans les emails\n\n- Tous les liens qui pointent vers ton site depuis un email FluentCRM\n- Liens vers des articles, pages de vente, pages de ressources, pages de t\u00e9l\u00e9chargement\n- Liens vers des pages tierces (partenaires, outils recommand\u00e9s) si tu veux les tracker\n- Liens dans les emails transactionnels si tu veux mesurer l'engagement post-achat\n\n---\n\n## 7. Quand NE PAS mettre des UTMs dans les emails\n\n- **Lien de d\u00e9sabonnement** \u2014 lien syst\u00e8me FluentCRM, ne pas toucher\n- **Lien de gestion des pr\u00e9f\u00e9rences** \u2014 idem\n- **Lien de confirmation de commande vers une page tierce de paiement** \u2014 casse le tracking e-commerce, GA4 perd la source originelle\n- **Liens vers des ancres internes de la m\u00eame page** (ex: `#faq`) \u2014 ajouter les UTMs sur l'URL de base mais pas sur l'ancre seule\n- **Redirections techniques ou liens de tracking FluentCRM natifs** \u2014 FluentCRM a son propre tracking de clics ; les UTMs s'ajoutent en plus pour GA4, pas \u00e0 la place\n\n---\n\n## 8. Erreurs \u00e0 \u00e9viter\n\n1. **Utiliser `newsletter` comme utm_source** \u2014 newsletter est une campagne, pas une source. Source = fluentcrm (l'outil). Erreur classique qui fragmente les donn\u00e9es dans GA4.\n2. **Oublier utm_content quand l'email a plusieurs liens** \u2014 GA4 ne peut pas distinguer d'o\u00f9 vient le clic ; tu perds toute donn\u00e9e de placement.\n3. **Changer la graphie d'une valeur entre deux envois** \u2014 `wp-insights-sem11` et `wp-insights-s11` cr\u00e9ent deux campagnes distinctes dans GA4. Choisir une convention et ne plus en bouger.\n4. **Utiliser des majuscules** \u2014 GA4 est sensible \u00e0 la casse. `WP-Insights` \u2260 `wp-insights`. Toujours minuscules.\n5. **Mettre des accents ou caract\u00e8res sp\u00e9ciaux** \u2014 `relance-s\u00e9quence` devient `relance-s%C3%A9quence` dans l'URL. Toujours \u00e9crire `relance-sequence`.\n6. **Copier-coller un UTM d'un email vers un autre sans changer utm_campaign** \u2014 deux emails diff\u00e9rents avec la m\u00eame campaign, GA4 les fusionne. Toujours mettre \u00e0 jour utm_campaign pour chaque email de s\u00e9quence.\n7. **Taguer les liens de d\u00e9sabonnement** \u2014 risque de casser le syst\u00e8me de compliance email, ne jamais toucher ces liens.\n8. **Oublier de tester les liens avant envoi** \u2014 coller l'URL compl\u00e8te dans un navigateur pour v\u00e9rifier que les UTMs passent bien et que la page se charge correctement.\n\n---\n\n## 9. Recommandation simple \u00e0 retenir\n\n> Source = FluentCRM (l'outil qui envoie). Medium = email (le canal). Campaign = quel email pr\u00e9cis (newsletter semaine X, s\u00e9quence J+1, relance J+3). Content = quel lien dans cet email (principal, texte, footer, PS).\n>\n> Si un email a plusieurs liens et que tu ne mets utm_content que sur le premier, tu travailles dans l'obscurit\u00e9 sur tous les autres. Tague tout ou ne tague rien \u2014 l'entre-deux ne sert \u00e0 personne.\n"}], "grading": {"expectations": [{"text": "Couvre les 3 sc\u00e9narios distincts (newsletter hebdo, s\u00e9quence automatis\u00e9e, relance abandonniste)", "passed": true, "evidence": "Sc\u00e9nario 1 'Newsletter hebdomadaire WP Insights' (section 4.1), Sc\u00e9nario 2 'S\u00e9quence automatis\u00e9e lead magnet Guide LMS WordPress' (section 4.2), Sc\u00e9nario 3 'Emails de relance abandonnistes page de vente Authority System' (section 4.3). Les 3 sc\u00e9narios sont couverts avec URLs compl\u00e8tes."}, {"text": "Utilise utm_content pour diff\u00e9rencier lien principal vs liens secondaires dans un email", "passed": true, "evidence": "Section 5 'Liens principaux vs liens secondaires \u2014 r\u00e8gle d\u00e9finitive' avec tableau complet. Sc\u00e9nario 1 montre 3 utm_content distincts : cta-principal (lien article TutorLMS), lien-texte (ressource gratuite), cta-footer (Authority System). R\u00e8gle : 'toujours mettre utm_content d\u00e8s qu'un email a plus d'un lien'."}, {"text": "Produit des URLs compl\u00e8tes avec valeurs concr\u00e8tes pour chaque sc\u00e9nario", "passed": true, "evidence": "Sc\u00e9nario 1 : 3 URLs compl\u00e8tes (ex: https://schoolswp.com/tutor-lms-avis/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=cta-principal). Sc\u00e9nario 2 : 5 URLs compl\u00e8tes (J+1, J+1 secondaire, J+3, J+7, J+7 PS). Sc\u00e9nario 3 : 5 URLs compl\u00e8tes (J+1 CTA, J+1 lien texte, J+3, J+7 CTA, J+7 footer)."}, {"text": "Convention de nommage campaign coh\u00e9rente pour s\u00e9quences automatis\u00e9es", "passed": true, "evidence": "Format s\u00e9quence : 'seq-[nom-lead-magnet]-[etape]' \u2014 ex: seq-guide-lms-j1, seq-guide-lms-j3, seq-guide-lms-j7. Format relance : 'relance-[nom-page]-[etape]' \u2014 ex: relance-authority-system-j1, relance-authority-system-j3, relance-authority-system-j7. Convention claire et coh\u00e9rente sur les 3 emails de chaque s\u00e9quence."}, {"text": "utm_source est une valeur fixe et coh\u00e9rente pour tout l'email (soit 'newsletter' soit 'fluentcrm' \u2014 mais une seule valeur, pas les deux)", "passed": true, "evidence": "utm_source = 'fluentcrm' sur toutes les URLs sans exception. R\u00e8gle explicite section 1 : 'utm_source = fluentcrm pour tous les emails schoolsWP sans exception'. Section 8 erreur 1 : 'Utiliser newsletter comme utm_source \u2014 newsletter est une campagne, pas une source. Source = fluentcrm'. Aucune URL n'utilise 'newsletter' comme source."}]}}, {"id": "eval-3-fluentcrm-email-without_skill", "prompt": "Pour schoolsWP, j'ai besoin d'une convention UTM sp\u00e9cifique pour ma strat\u00e9gie email FluentCRM. J'envoie : 1) une newsletter hebdo 'WP Insights' chaque lundi, 2) des s\u00e9quences automatis\u00e9es pour les leads du lead magnet 'Guide LMS WordPress', 3) des emails de relance pour les abandonnistes de la page de vente Authority System. Comment je structure mes UTMs pour ces 3 types d'emails ? Et est-ce que je dois taguer diff\u00e9remment les liens principaux vs les liens secondaires dans un m\u00eame email ?", "eval_id": 3, "outputs": [{"name": "utm-convention.md", "type": "text", "content": "# Convention UTM \u2014 Emails FluentCRM \u2014 schoolsWP\n\n## Principes g\u00e9n\u00e9raux\n\n- Tout en minuscules, sans accents, sans espaces (utiliser des tirets `-`)\n- Valeurs courtes et lisibles dans GA4\n- `utm_medium` toujours `email` pour tous les emails sortants\n- `utm_source` identifie l'exp\u00e9diteur / la liste (ici toujours `fluentcrm`)\n- `utm_campaign` identifie la campagne ou la s\u00e9quence\n- `utm_content` diff\u00e9rencie les liens dans un m\u00eame email\n\n---\n\n## Structure de base\n\n```\nutm_source=fluentcrm\nutm_medium=email\nutm_campaign=[type]-[slug]\nutm_content=[position]-[descriptif]\n```\n\n---\n\n## 1. Newsletter hebdo \"WP Insights\" (envoi manuel, chaque lundi)\n\n**Logique** : campagne r\u00e9currente \u2014 inclure la date ou le num\u00e9ro de semaine pour pouvoir comparer semaine par semaine dans GA4.\n\n```\nutm_source=fluentcrm\nutm_medium=email\nutm_campaign=newsletter-wp-insights-2026-w11\nutm_content=cta-principal\n```\n\n| Param\u00e8tre      | Valeur                              | Explication                                           |\n| -------------- | ----------------------------------- | ----------------------------------------------------- |\n| `utm_source`   | `fluentcrm`                         | Origine : liste FluentCRM                             |\n| `utm_medium`   | `email`                             | Canal : email                                         |\n| `utm_campaign` | `newsletter-wp-insights-2026-w11`   | Identifie le num\u00e9ro de semaine                        |\n| `utm_content`  | `cta-principal` / `lien-secondaire` | Distingue les liens dans l'email (voir \u00a74 ci-dessous) |\n\n**Exemple de lien complet :**\n\n```\nhttps://schoolswp.com/article-lms/?utm_source=fluentcrm&utm_medium=email&utm_campaign=newsletter-wp-insights-2026-w11&utm_content=cta-principal\n```\n\n---\n\n## 2. S\u00e9quences automatis\u00e9es \u2014 Lead magnet \"Guide LMS WordPress\"\n\n**Logique** : s\u00e9quence fixe avec position du mail dans la s\u00e9quence. Ne pas inclure de date (envoi d\u00e9cal\u00e9 selon inscription de chaque lead).\n\n```\nutm_source=fluentcrm\nutm_medium=email\nutm_campaign=seq-guide-lms\nutm_content=email-[n]-[descriptif]\n```\n\n| Param\u00e8tre      | Valeur                   | Explication                                 |\n| -------------- | ------------------------ | ------------------------------------------- |\n| `utm_source`   | `fluentcrm`              | Origine : FluentCRM                         |\n| `utm_medium`   | `email`                  | Canal                                       |\n| `utm_campaign` | `seq-guide-lms`          | Identifie la s\u00e9quence (slug du lead magnet) |\n| `utm_content`  | `email-01-cta-principal` | Position dans la s\u00e9quence + type de lien    |\n\n**Exemples :**\n\n```\n# Email 1 \u2014 lien principal (vers la ressource)\nutm_campaign=seq-guide-lms&utm_content=email-01-cta-principal\n\n# Email 3 \u2014 lien de nurturing (vers un article)\nutm_campaign=seq-guide-lms&utm_content=email-03-lien-article\n\n# Email 5 \u2014 lien de conversion (vers une offre)\nutm_campaign=seq-guide-lms&utm_content=email-05-cta-offre\n```\n\n---\n\n## 3. Emails de relance \u2014 Abandonnistes page de vente \"Authority System\"\n\n**Logique** : s\u00e9quence de relance comportementale. Identifier clairement le produit et le num\u00e9ro de relance.\n\n```\nutm_source=fluentcrm\nutm_medium=email\nutm_campaign=relance-authority-system\nutm_content=relance-[n]-[angle]\n```\n\n| Param\u00e8tre      | Valeur                                             | Explication                                    |\n| -------------- | -------------------------------------------------- | ---------------------------------------------- |\n| `utm_source`   | `fluentcrm`                                        | Origine                                        |\n| `utm_medium`   | `email`                                            | Canal                                          |\n| `utm_campaign` | `relance-authority-system`                         | Identifie le produit + type d'action (relance) |\n| `utm_content`  | `relance-01-urgence` / `relance-02-preuve-sociale` | Num\u00e9ro + angle de la relance                   |\n\n**Exemples :**\n\n```\n# Relance J+1 \u2014 lien principal vers la page de vente\nutm_campaign=relance-authority-system&utm_content=relance-01-cta-principal\n\n# Relance J+3 \u2014 lien avec angle preuve sociale (t\u00e9moignage)\nutm_campaign=relance-authority-system&utm_content=relance-02-temoignage\n\n# Relance J+7 \u2014 derni\u00e8re chance, lien principal\nutm_campaign=relance-authority-system&utm_content=relance-03-derniere-chance\n```\n\n---\n\n## 4. Lien principal vs liens secondaires dans un m\u00eame email\n\n**Oui, il faut taguer diff\u00e9remment.** Les raisons :\n\n1. GA4 agr\u00e8ge tous les clics d'un m\u00eame email \u2014 sans diff\u00e9renciation, tu ne sais pas quel lien convertit\n2. Un email contient souvent 2 \u00e0 4 liens : CTA principal, lien de contenu, lien PS, lien de d\u00e9sabonnement (ne pas taguer celui-ci)\n3. La valeur des `utm_content` distincts te permet d'optimiser le placement des CTA\n\n**Convention `utm_content` pour les positions :**\n\n| Valeur `utm_content` | Usage                                              |\n| -------------------- | -------------------------------------------------- |\n| `cta-principal`      | Bouton ou lien principal, premier CTA visible      |\n| `lien-texte`         | Lien ins\u00e9r\u00e9 dans le corps du texte (pas un bouton) |\n| `cta-secondaire`     | Second CTA ou lien r\u00e9p\u00e9t\u00e9 plus bas                 |\n| `ps-lien`            | Lien dans le PS (souvent haute performance)        |\n| `image-header`       | Lien sur l'image d'en-t\u00eate si pr\u00e9sente             |\n\n**Exemple pour un email de la s\u00e9quence Guide LMS avec plusieurs liens :**\n\n```\n# Lien 1 \u2014 CTA principal (bouton)\nutm_campaign=seq-guide-lms&utm_content=email-02-cta-principal\n\n# Lien 2 \u2014 lien dans le corps du texte\nutm_campaign=seq-guide-lms&utm_content=email-02-lien-texte\n\n# Lien 3 \u2014 PS\nutm_campaign=seq-guide-lms&utm_content=email-02-ps-lien\n```\n\n---\n\n## Tableau r\u00e9capitulatif des 3 types\n\n| Type d'email             | `utm_source` | `utm_medium` | `utm_campaign`                      | `utm_content` (principal)    |\n| ------------------------ | ------------ | ------------ | ----------------------------------- | ---------------------------- |\n| Newsletter WP Insights   | `fluentcrm`  | `email`      | `newsletter-wp-insights-2026-w[nn]` | `cta-principal`              |\n| S\u00e9quence Guide LMS       | `fluentcrm`  | `email`      | `seq-guide-lms`                     | `email-[nn]-cta-principal`   |\n| Relance Authority System | `fluentcrm`  | `email`      | `relance-authority-system`          | `relance-[nn]-cta-principal` |\n\n---\n\n## Notes d'impl\u00e9mentation FluentCRM\n\n- Ajouter les UTMs directement dans l'\u00e9diteur de lien de FluentCRM (ne pas utiliser les raccourcis de tracking natifs si tu veux garder le contr\u00f4le total sur les valeurs)\n- Si FluentCRM g\u00e9n\u00e8re ses propres param\u00e8tres de tracking (`_fc_...`), les UTMs GA4 coexistent sans conflit\n- Cr\u00e9er un segment GA4 filtr\u00e9 sur `utm_medium = email` pour analyser tous les emails ensemble, puis affiner par `utm_campaign`\n- Pour les s\u00e9quences, cr\u00e9er un rapport comparatif par `utm_content` pour identifier \u00e0 quel email de la s\u00e9quence les leads convertissent\n"}], "grading": {"expectations": [{"text": "Couvre les 3 sc\u00e9narios distincts (newsletter hebdo, s\u00e9quence automatis\u00e9e, relance abandonniste)", "passed": true, "evidence": "Section 1 'Newsletter hebdo WP Insights', section 2 'S\u00e9quences automatis\u00e9es \u2014 Lead magnet Guide LMS WordPress', section 3 'Emails de relance \u2014 Abandonnistes page de vente Authority System'. Les 3 sc\u00e9narios sont pr\u00e9sents avec exemples d'URLs."}, {"text": "Utilise utm_content pour diff\u00e9rencier lien principal vs liens secondaires dans un email", "passed": true, "evidence": "Section 4 'Lien principal vs liens secondaires dans un m\u00eame email' avec tableau complet des valeurs utm_content par position : cta-principal, lien-texte, cta-secondaire, ps-lien, image-header. Exemple multi-liens pour s\u00e9quence Guide LMS : email-02-cta-principal, email-02-lien-texte, email-02-ps-lien."}, {"text": "Produit des URLs compl\u00e8tes avec valeurs concr\u00e8tes pour chaque sc\u00e9nario", "passed": true, "evidence": "Sc\u00e9nario 1 (newsletter) : URL compl\u00e8te 'https://schoolswp.com/article-lms/?utm_source=fluentcrm&utm_medium=email&utm_campaign=newsletter-wp-insights-2026-w11&utm_content=cta-principal'. Sc\u00e9narios 2 et 3 : param\u00e8tres UTM complets fournis (pas toujours les URLs compl\u00e8tes mais les param\u00e8tres sont pr\u00e9sents et concrets)."}, {"text": "Convention de nommage campaign coh\u00e9rente pour s\u00e9quences automatis\u00e9es", "passed": true, "evidence": "S\u00e9quence lead magnet : utm_campaign=seq-guide-lms (fixe pour toute la s\u00e9quence), utm_content encode la position : email-01-cta-principal, email-03-lien-article, email-05-cta-offre. Relance : utm_campaign=relance-authority-system (fixe), utm_content encode le num\u00e9ro : relance-01-urgence, relance-02-preuve-sociale, relance-03-derniere-chance. Convention distincte mais coh\u00e9rente."}, {"text": "utm_source est une valeur fixe et coh\u00e9rente pour tout l'email (soit 'newsletter' soit 'fluentcrm' \u2014 mais une seule valeur, pas les deux)", "passed": true, "evidence": "utm_source = 'fluentcrm' utilis\u00e9 uniform\u00e9ment dans tous les exemples des 3 sc\u00e9narios. Section principes g\u00e9n\u00e9raux : 'utm_source identifie l'exp\u00e9diteur / la liste (ici toujours fluentcrm)'. Tableau r\u00e9capitulatif confirme fluentcrm pour les 3 types. Aucun m\u00e9lange avec 'newsletter' comme source."}]}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"metadata": {"skill_name": "schoolswp-utm-convention", "skill_path": "<path/to/skill>", "executor_model": "<model-name>", "analyzer_model": "<model-name>", "timestamp": "2026-03-13T21:45:24Z", "evals_run": [1, 2, 3], "runs_per_configuration": 3}, "runs": [{"eval_id": 1, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 6, "failed": 0, "total": 6, "time_seconds": 152.3, "tokens": 29691, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Document contient les 9 sections attendues (titre, r\u00c3\u00a8gles de base, param\u00c3\u00a8tres UTM, convention officielle, cas concrets, quand mettre, quand ne pas mettre, erreurs, recommandation)", "passed": true, "evidence": "Le document contient : titre (ligne 1), section '1. Regles de base', '2. Parametres UTM', '3. Convention officielle recommandee schoolsWP', '4. Cas concrets', '5. Quand mettre des UTMs', '6. Quand NE PAS mettre des UTMs', '7. Erreurs a eviter', '8. Ma recommandation simple a retenir'. Les 9 sections sont pr\u00c3\u00a9sentes."}, {"text": "Au moins 6 cas concrets avec URL compl\u00c3\u00a8te contenant au minimum utm_source, utm_medium, utm_campaign", "passed": true, "evidence": "7 cas concrets avec URLs compl\u00c3\u00a8tes : Cas 1 (cta interne), Cas 2 (newsletter FluentCRM), Cas 3 (LinkedIn), Cas 4 (ClickWhale Instagram), Cas 5 (ThemeForest affili\u00c3\u00a9), Cas 6 (YouTube), Cas 7 (s\u00c3\u00a9quence email). Chaque URL contient utm_source, utm_medium, utm_campaign."}, {"text": "Toutes les valeurs UTM sont en minuscules sans accents et avec tirets uniquement", "passed": true, "evidence": "Toutes les valeurs dans les URLs exemples sont en minuscules : newsletter, email, linkedin, social, youtube, instagram, short-link, themforest, affiliate. Tirets utilis\u00c3\u00a9s dans les valeurs de campaign : newsletter-hebdo, lms-wordpress-mars-2026, serie-lms-5-jours, bio-instagram. Aucun accent dans les valeurs."}, {"text": "Couvre les 5 contextes cl\u00c3\u00a9s : GA4, ClickWhale, FluentCRM, social, affili\u00c3\u00a9s", "passed": true, "evidence": "GA4 mentionn\u00c3\u00a9 dans les r\u00c3\u00a8gles de base et erreurs. ClickWhale : Cas 4 d\u00c3\u00a9di\u00c3\u00a9 + tableau de r\u00c3\u00a9f\u00c3\u00a9rence ligne 'Bio Instagram (ClickWhale)'. FluentCRM : Cas 2 et 7. Social (LinkedIn, YouTube, Instagram) : Cas 3, 6. Affili\u00c3\u00a9s : Cas 5 ThemeForest."}, {"text": "Section 'quand ne pas mettre' pr\u00c3\u00a9sente avec l'explication sur les liens internes GA4", "passed": true, "evidence": "Section 6 'Quand NE PAS mettre des UTMs' explique : 'Un UTM sur un lien interne cree une nouvelle session dans GA4 et ecrase la source d'origine. Un visiteur venu de LinkedIn qui clique sur 3 liens internes tagues genere 3 sessions, toutes comptees comme internes, aucune rattachee a LinkedIn.'"}, {"text": "Recommandation finale m\u00c3\u00a9morisable (max 3 phrases)", "passed": true, "evidence": "Section 8 : 'Source = qui t'envoie. Medium = comment. Campaign = pourquoi. Si le lien quitte l'exterieur pour entrer sur schoolswp.com, il porte des UTMs. Si le lien reste sur schoolswp.com ou va d'une page a une autre du site, il n'en porte pas.' 3 phrases concises et m\u00c3\u00a9morisables."}], "notes": []}, {"eval_id": 2, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 7, "failed": 0, "total": 7, "time_seconds": 115.1, "tokens": 26382, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)", "passed": true, "evidence": "Section 'Points tranch\u00c3\u00a9s' liste 9 d\u00c3\u00a9cisions : (1) newsletter vs email \u00e2\u2020\u2019 newsletter pour source, email pour medium ; (2) LinkedIn minuscules \u00e2\u2020\u2019 linkedin ; (3) YouTube medium=video ; (4) ClickWhale source=clickwhale ; (5) affili\u00c3\u00a9s medium=affiliate ; (6) tirets uniquement ; (7) utm_content usage ; (8) utm_term campagnes payantes ; (9) UTMs liens internes. Tous les points flottants sont couverts."}, {"text": "Inclut une section ou liste 'Points tranch\u00c3\u00a9s' explicite", "passed": true, "evidence": "Section '## Points tranch\u00c3\u00a9s' explicite en fin de document (lignes 264-284), avec 9 points num\u00c3\u00a9rot\u00c3\u00a9s listant les d\u00c3\u00a9cisions prises."}, {"text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)", "passed": true, "evidence": "Point 9 de 'Points tranch\u00c3\u00a9s' : 'UTMs sur les liens internes dans les articles \u00e2\u2020\u2019 tranch\u00c3\u00a9 : non, jamais sur le maillage interne.' + Section 6 'Quand NE PAS mettre des UTMs' : 'GA4 consid\u00c3\u00a9rerait la session comme une nouvelle session avec source=schoolswp, \u00c3\u00a9crasant la vraie source d'origine (ex: LinkedIn).'"}, {"text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM", "passed": true, "evidence": "Point 1 de 'Points tranch\u00c3\u00a9s' : 'newsletter vs email pour les sources email \u00e2\u2020\u2019 tranch\u00c3\u00a9 : utm_source=newsletter'. Tableau section 3 : 'newsletter | email | Emails FluentCRM (newsletters, s\u00c3\u00a9quences)'."}, {"text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')", "passed": true, "evidence": "Point 2 de 'Points tranch\u00c3\u00a9s' : 'LinkedIn avec ou sans majuscule \u00e2\u2020\u2019 tranch\u00c3\u00a9 : utm_source=linkedin \u00e2\u20ac\u201d tout en minuscules, sans exception. GA4 est case-sensitive.' Section 2 utm_source : valeur 'linkedin' en minuscules."}, {"text": "Recommande tirets (pas underscores) avec justification coh\u00c3\u00a9rence", "passed": true, "evidence": "Point 6 de 'Points tranch\u00c3\u00a9s' : 'Tirets ou underscores dans les campagnes \u00e2\u2020\u2019 tranch\u00c3\u00a9 : tirets uniquement. lms-wordpress partout, jamais lms_wordpress.' Section 2 utm_campaign : 'R\u00c3\u00a8gle : toujours en tirets, jamais en underscores.' Section 7 erreur 2 : 'lms_wordpress sera affich\u00c3\u00a9 comme lms wordpress dans certains outils'."}, {"text": "Explique utm_content et utm_term avec cas d'usage concrets", "passed": true, "evidence": "utm_content section 2 : 'Permet de diff\u00c3\u00a9rencier plusieurs liens qui pointent vers la m\u00c3\u00aame URL dans une m\u00c3\u00aame campagne. Utile quand tu as plusieurs CTAs dans un m\u00c3\u00aame email.' Exemples concrets : cta-header, cta-footer, bouton-principal. utm_term section 2 : 'R\u00c3\u00a9serv\u00c3\u00a9 aux campagnes payantes' avec exemples lms-wordpress, tutor-lms, crm-wordpress. Point 7 de 'Points tranch\u00c3\u00a9s' pr\u00c3\u00a9cise usage conditionnel."}], "notes": []}, {"eval_id": 3, "configuration": "with_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 135.2, "tokens": 30935, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Couvre les 3 sc\u00c3\u00a9narios distincts (newsletter hebdo, s\u00c3\u00a9quence automatis\u00c3\u00a9e, relance abandonniste)", "passed": true, "evidence": "Sc\u00c3\u00a9nario 1 'Newsletter hebdomadaire WP Insights' (section 4.1), Sc\u00c3\u00a9nario 2 'S\u00c3\u00a9quence automatis\u00c3\u00a9e lead magnet Guide LMS WordPress' (section 4.2), Sc\u00c3\u00a9nario 3 'Emails de relance abandonnistes page de vente Authority System' (section 4.3). Les 3 sc\u00c3\u00a9narios sont couverts avec URLs compl\u00c3\u00a8tes."}, {"text": "Utilise utm_content pour diff\u00c3\u00a9rencier lien principal vs liens secondaires dans un email", "passed": true, "evidence": "Section 5 'Liens principaux vs liens secondaires \u00e2\u20ac\u201d r\u00c3\u00a8gle d\u00c3\u00a9finitive' avec tableau complet. Sc\u00c3\u00a9nario 1 montre 3 utm_content distincts : cta-principal (lien article TutorLMS), lien-texte (ressource gratuite), cta-footer (Authority System). R\u00c3\u00a8gle : 'toujours mettre utm_content d\u00c3\u00a8s qu'un email a plus d'un lien'."}, {"text": "Produit des URLs compl\u00c3\u00a8tes avec valeurs concr\u00c3\u00a8tes pour chaque sc\u00c3\u00a9nario", "passed": true, "evidence": "Sc\u00c3\u00a9nario 1 : 3 URLs compl\u00c3\u00a8tes (ex: https://schoolswp.com/tutor-lms-avis/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=cta-principal). Sc\u00c3\u00a9nario 2 : 5 URLs compl\u00c3\u00a8tes (J+1, J+1 secondaire, J+3, J+7, J+7 PS). Sc\u00c3\u00a9nario 3 : 5 URLs compl\u00c3\u00a8tes (J+1 CTA, J+1 lien texte, J+3, J+7 CTA, J+7 footer)."}, {"text": "Convention de nommage campaign coh\u00c3\u00a9rente pour s\u00c3\u00a9quences automatis\u00c3\u00a9es", "passed": true, "evidence": "Format s\u00c3\u00a9quence : 'seq-[nom-lead-magnet]-[etape]' \u00e2\u20ac\u201d ex: seq-guide-lms-j1, seq-guide-lms-j3, seq-guide-lms-j7. Format relance : 'relance-[nom-page]-[etape]' \u00e2\u20ac\u201d ex: relance-authority-system-j1, relance-authority-system-j3, relance-authority-system-j7. Convention claire et coh\u00c3\u00a9rente sur les 3 emails de chaque s\u00c3\u00a9quence."}, {"text": "utm_source est une valeur fixe et coh\u00c3\u00a9rente pour tout l'email (soit 'newsletter' soit 'fluentcrm' \u00e2\u20ac\u201d mais une seule valeur, pas les deux)", "passed": true, "evidence": "utm_source = 'fluentcrm' sur toutes les URLs sans exception. R\u00c3\u00a8gle explicite section 1 : 'utm_source = fluentcrm pour tous les emails schoolsWP sans exception'. Section 8 erreur 1 : 'Utiliser newsletter comme utm_source \u00e2\u20ac\u201d newsletter est une campagne, pas une source. Source = fluentcrm'. Aucune URL n'utilise 'newsletter' comme source."}], "notes": []}, {"eval_id": 1, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 0.5, "passed": 3, "failed": 3, "total": 6, "time_seconds": 124.1, "tokens": 27755, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Document contient les 9 sections attendues (titre, r\u00c3\u00a8gles de base, param\u00c3\u00a8tres UTM, convention officielle, cas concrets, quand mettre, quand ne pas mettre, erreurs, recommandation)", "passed": false, "evidence": "Le document a 11 sections num\u00c3\u00a9rot\u00c3\u00a9es mais la structure diff\u00c3\u00a8re des 9 attendues : pas de section 'Recommandation' finale d\u00c3\u00a9di\u00c3\u00a9e, pas de section 'Erreurs \u00c3\u00a0 \u00c3\u00a9viter'. La section 11 'R\u00c3\u00a8gles de gouvernance' remplace les erreurs. Le document est tr\u00c3\u00a8s complet mais ne suit pas exactement les 9 sections attendues \u00e2\u20ac\u201d il manque une section erreurs et une recommandation finale explicite."}, {"text": "Au moins 6 cas concrets avec URL compl\u00c3\u00a8te contenant au minimum utm_source, utm_medium, utm_campaign", "passed": true, "evidence": "Section 6 'Exemples par canal' contient de nombreuses URLs compl\u00c3\u00a8tes : LinkedIn (3 URLs), YouTube (3 URLs), Instagram (2 URLs), Newsletter FluentCRM (3 URLs), S\u00c3\u00a9quences email FluentCRM (3 URLs). Toutes contiennent utm_source, utm_medium, utm_campaign."}, {"text": "Toutes les valeurs UTM sont en minuscules sans accents et avec tirets uniquement", "passed": false, "evidence": "Le document utilise des valeurs avec accents et caract\u00c3\u00a8res non-ASCII : 'affili\u00c3\u00a9' dans utm_medium (ex: ligne 97 'affili\u00c3\u00a9', ligne 162 'affili\u00c3\u00a9'), 'plugin-affili\u00c3\u00a9' comme source. Ces valeurs violent la r\u00c3\u00a8gle 'sans accents'. Exemple : 'utm_medium=affili\u00c3\u00a9' et 'utm_source=plugin-affili\u00c3\u00a9'."}, {"text": "Couvre les 5 contextes cl\u00c3\u00a9s : GA4, ClickWhale, FluentCRM, social, affili\u00c3\u00a9s", "passed": true, "evidence": "GA4 mentionn\u00c3\u00a9 dans les principes. ClickWhale : section 8 d\u00c3\u00a9di\u00c3\u00a9e. FluentCRM : section 9 d\u00c3\u00a9di\u00c3\u00a9e. Social (LinkedIn, YouTube, Instagram) : section 6. Affili\u00c3\u00a9s : section 7 d\u00c3\u00a9di\u00c3\u00a9e avec ThemeForest et plugins WordPress."}, {"text": "Section 'quand ne pas mettre' pr\u00c3\u00a9sente avec l'explication sur les liens internes GA4", "passed": true, "evidence": "Section 1 'Quand ne pas taguer' mentionne : 'Liens internes entre pages de schoolswp.com (casse la session GA4)'. L'explication GA4 est pr\u00c3\u00a9sente bien que dans les principes fondamentaux plut\u00c3\u00b4t qu'une section d\u00c3\u00a9di\u00c3\u00a9e."}, {"text": "Recommandation finale m\u00c3\u00a9morisable (max 3 phrases)", "passed": false, "evidence": "Pas de section 'Recommandation' ou de formule m\u00c3\u00a9morisable en fin de document. Le document se termine par 'R\u00c3\u00a8gles de gouvernance' (section 11) avec des checklist et proc\u00c3\u00a9dures \u00e2\u20ac\u201d aucune phrase synth\u00c3\u00a9tique m\u00c3\u00a9morisable de type 'Source = qui, Medium = comment, Campaign = pourquoi'."}], "notes": []}, {"eval_id": 2, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 7, "failed": 0, "total": 7, "time_seconds": 55.5, "tokens": 20454, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)", "passed": true, "evidence": "Tableau 'Points tranch\u00c3\u00a9s \u00e2\u20ac\u201d r\u00c3\u00a9sum\u00c3\u00a9 des d\u00c3\u00a9cisions' couvre : newsletter vs email \u00e2\u2020\u2019 newsletter ; LinkedIn \u00e2\u2020\u2019 linkedin minuscule ; YouTube medium \u00e2\u2020\u2019 video ; ClickWhale source \u00e2\u2020\u2019 clickwhale, medium \u00e2\u2020\u2019 lien-court ; affili\u00c3\u00a9s \u00e2\u2020\u2019 affiliate ; tirets vs underscores \u00e2\u2020\u2019 tirets ; UTM liens internes \u00e2\u2020\u2019 Non ; utm_term \u00e2\u2020\u2019 Non."}, {"text": "Inclut une section ou liste 'Points tranch\u00c3\u00a9s' explicite", "passed": true, "evidence": "Section '## Points tranch\u00c3\u00a9s \u00e2\u20ac\u201d r\u00c3\u00a9sum\u00c3\u00a9 des d\u00c3\u00a9cisions' pr\u00c3\u00a9sente en fin de document avec un tableau \u00c3\u00a0 deux colonnes 'Question / D\u00c3\u00a9cision'."}, {"text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)", "passed": true, "evidence": "Section 'Liens internes dans les articles' : 'Non. Ne jamais mettre d'UTM sur les liens internes.' Avec 3 raisons dont : 'Les UTM r\u00c3\u00a9initialisent la session dans GA4 \u00e2\u20ac\u201d un visiteur organique devient newsletter si tu cliques sur un lien interne tagu\u00c3\u00a9' et '\u00c3\u2021a fausse l'attribution source/medium sur toutes les pages en aval'."}, {"text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM", "passed": true, "evidence": "Tableau utm_source : 'Newsletter / emails | newsletter | Toujours newsletter, jamais email'. Tableau r\u00c3\u00a9capitulatif : 'Newsletter | newsletter | email | nom-campagne'. Points tranch\u00c3\u00a9s : 'newsletter ou email pour source ? \u00e2\u2020\u2019 newsletter'."}, {"text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')", "passed": true, "evidence": "Tableau utm_source : 'LinkedIn | linkedin | Minuscule, jamais LinkedIn'. Points tranch\u00c3\u00a9s : 'LinkedIn ou linkedin ? \u00e2\u2020\u2019 linkedin (minuscule)'."}, {"text": "Recommande tirets (pas underscores) avec justification coh\u00c3\u00a9rence", "passed": true, "evidence": "Section utm_campaign : 'Format : tirets uniquement \u00e2\u20ac\u201d jamais d'underscores'. Points tranch\u00c3\u00a9s : 'Tirets ou underscores dans campaign ? \u00e2\u2020\u2019 tirets - uniquement'. Exemples corrects vs incorrects fournis : 'lms-wordpress' vs 'lms_wordpress'."}, {"text": "Explique utm_content et utm_term avec cas d'usage concrets", "passed": true, "evidence": "utm_content : 'Utiliser quand plusieurs liens pointent vers la m\u00c3\u00aame destination dans le m\u00c3\u00aame canal.' Cas d'usage : 'Deux boutons CTA dans un m\u00c3\u00aame email (ex: cta-haut vs cta-bas)', 'Deux visuels diff\u00c3\u00a9rents dans une campagne LinkedIn'. Format et exemples : bouton-hero, lien-bio, encart-article. utm_term : 'R\u00c3\u00a9serv\u00c3\u00a9 aux campagnes SEA / publicit\u00c3\u00a9s payantes au CPC' avec note 'Sur schoolsWP : pas de SEA actuellement \u00e2\u2020\u2019 ne pas utiliser utm_term'."}], "notes": []}, {"eval_id": 3, "configuration": "without_skill", "run_number": 1, "result": {"pass_rate": 1.0, "passed": 5, "failed": 0, "total": 5, "time_seconds": 64.4, "tokens": 21130, "tool_calls": 0, "errors": 0}, "expectations": [{"text": "Couvre les 3 sc\u00c3\u00a9narios distincts (newsletter hebdo, s\u00c3\u00a9quence automatis\u00c3\u00a9e, relance abandonniste)", "passed": true, "evidence": "Section 1 'Newsletter hebdo WP Insights', section 2 'S\u00c3\u00a9quences automatis\u00c3\u00a9es \u00e2\u20ac\u201d Lead magnet Guide LMS WordPress', section 3 'Emails de relance \u00e2\u20ac\u201d Abandonnistes page de vente Authority System'. Les 3 sc\u00c3\u00a9narios sont pr\u00c3\u00a9sents avec exemples d'URLs."}, {"text": "Utilise utm_content pour diff\u00c3\u00a9rencier lien principal vs liens secondaires dans un email", "passed": true, "evidence": "Section 4 'Lien principal vs liens secondaires dans un m\u00c3\u00aame email' avec tableau complet des valeurs utm_content par position : cta-principal, lien-texte, cta-secondaire, ps-lien, image-header. Exemple multi-liens pour s\u00c3\u00a9quence Guide LMS : email-02-cta-principal, email-02-lien-texte, email-02-ps-lien."}, {"text": "Produit des URLs compl\u00c3\u00a8tes avec valeurs concr\u00c3\u00a8tes pour chaque sc\u00c3\u00a9nario", "passed": true, "evidence": "Sc\u00c3\u00a9nario 1 (newsletter) : URL compl\u00c3\u00a8te 'https://schoolswp.com/article-lms/?utm_source=fluentcrm&utm_medium=email&utm_campaign=newsletter-wp-insights-2026-w11&utm_content=cta-principal'. Sc\u00c3\u00a9narios 2 et 3 : param\u00c3\u00a8tres UTM complets fournis (pas toujours les URLs compl\u00c3\u00a8tes mais les param\u00c3\u00a8tres sont pr\u00c3\u00a9sents et concrets)."}, {"text": "Convention de nommage campaign coh\u00c3\u00a9rente pour s\u00c3\u00a9quences automatis\u00c3\u00a9es", "passed": true, "evidence": "S\u00c3\u00a9quence lead magnet : utm_campaign=seq-guide-lms (fixe pour toute la s\u00c3\u00a9quence), utm_content encode la position : email-01-cta-principal, email-03-lien-article, email-05-cta-offre. Relance : utm_campaign=relance-authority-system (fixe), utm_content encode le num\u00c3\u00a9ro : relance-01-urgence, relance-02-preuve-sociale, relance-03-derniere-chance. Convention distincte mais coh\u00c3\u00a9rente."}, {"text": "utm_source est une valeur fixe et coh\u00c3\u00a9rente pour tout l'email (soit 'newsletter' soit 'fluentcrm' \u00e2\u20ac\u201d mais une seule valeur, pas les deux)", "passed": true, "evidence": "utm_source = 'fluentcrm' utilis\u00c3\u00a9 uniform\u00c3\u00a9ment dans tous les exemples des 3 sc\u00c3\u00a9narios. Section principes g\u00c3\u00a9n\u00c3\u00a9raux : 'utm_source identifie l'exp\u00c3\u00a9diteur / la liste (ici toujours fluentcrm)'. Tableau r\u00c3\u00a9capitulatif confirme fluentcrm pour les 3 types. Aucun m\u00c3\u00a9lange avec 'newsletter' comme source."}], "notes": []}], "run_summary": {"with_skill": {"pass_rate": {"mean": 1.0, "stddev": 0.0, "min": 1.0, "max": 1.0}, "time_seconds": {"mean": 134.2, "stddev": 18.6202, "min": 115.1, "max": 152.3}, "tokens": {"mean": 29002.6667, "stddev": 2353.254, "min": 26382, "max": 30935}}, "without_skill": {"pass_rate": {"mean": 0.8333, "stddev": 0.2887, "min": 0.5, "max": 1.0}, "time_seconds": {"mean": 81.3333, "stddev": 37.3034, "min": 55.5, "max": 124.1}, "tokens": {"mean": 23113.0, "stddev": 4034.274, "min": 20454, "max": 27755}}, "delta": {"pass_rate": "+0.17", "time_seconds": "+52.9", "tokens": "+5890"}}, "notes": []}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

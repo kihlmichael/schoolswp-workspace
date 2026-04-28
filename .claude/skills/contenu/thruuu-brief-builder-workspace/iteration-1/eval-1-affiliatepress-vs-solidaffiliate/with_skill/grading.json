@@ -1,0 +1,65 @@
+{
+  "expectations": [
+    {
+      "text": "L'output contient les 3 blocs dans l'ordre : ANALYSE GLOBALE, puis BRIEF STRUCTURÉ, puis TEXTES PRÊTS À COLLER",
+      "passed": true,
+      "evidence": "Ordre correct : ANALYSE@295 < BRIEF@6665 < TEXTES@28783"
+    },
+    {
+      "text": "En-tête minimal présent avec les 4 champs (Mot-clé, Mode, Sources utilisées, Confiance) avant le premier bloc",
+      "passed": true,
+      "evidence": "Les 4 champs d'en-tête (Mot-clé, Mode, Sources, Confiance) sont présents en tête"
+    },
+    {
+      "text": "Le mode de brief détecté est 'comparatif' (explicitement) avec 'avis' comme secondaire possible",
+      "passed": true,
+      "evidence": "Mode 'comparatif' explicitement détecté"
+    },
+    {
+      "text": "Le BLOC 1 contient 3 sections distinctes : Faits, Déductions, Recommandations",
+      "passed": true,
+      "evidence": "Les 3 sections (Faits, Déductions, Recommandations) sont présentes dans BLOC 1"
+    },
+    {
+      "text": "Le niveau de confiance global est 'moyen' ou 'faible' (pas 'élevé' puisque GSC manquante)",
+      "passed": true,
+      "evidence": "Confiance = 'moyen' (cohérent avec GSC manquante)"
+    },
+    {
+      "text": "Le BLOC 2 contient les 10 onglets numérotés dans l'ordre (Info & directive, SERP métriques, Analyse concurrents, Meilleurs titres, Entête, Plan, FAQ, Termes fréquents, Maillage interne, Résumé décisionnel)",
+      "passed": true,
+      "evidence": "Les 10 onglets du BLOC 2 sont présents"
+    },
+    {
+      "text": "Le BLOC 3 'TEXTES PRÊTS À COLLER' existe et contient au moins 6 sous-sections rédigées de façon compacte",
+      "passed": true,
+      "evidence": "BLOC 3 contient 8 sous-sections"
+    },
+    {
+      "text": "Le H1 recommandé ne contient pas 'en 2026' ni de date (règle schoolsWP evergreen)",
+      "passed": false,
+      "evidence": "H1 contient une date : 'H1\n  - \"en 2026\" partout'"
+    },
+    {
+      "text": "Les 2 URLs schoolsWP existantes sont présentes dans le maillage interne (/affiliatepress-avis/ et /solid-affiliate-top-plugin-affiliation-wordpress/)",
+      "passed": true,
+      "evidence": "Les 2 URLs schoolsWP existantes sont présentes"
+    },
+    {
+      "text": "Le brief identifie explicitement le mismatch SERP (Google pivote vers 'Solid Affiliate vs AffiliateWP' au lieu de 'vs AffiliatePress')",
+      "passed": true,
+      "evidence": "Le mismatch SERP est identifié (pivot/substitution vers AffiliateWP mentionnée)"
+    },
+    {
+      "text": "Le brief utilise le tutoiement (tu/ton/ta/toi) et pas le vouvoiement dans les formulations éditoriales",
+      "passed": true,
+      "evidence": "Tutoiement dominant : 54 occurrences tu/ton/ta vs 0 vous/votre"
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 1,
+    "total": 11,
+    "pass_rate": 0.909
+  }
+}

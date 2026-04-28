@@ -1,7 +1,12 @@
 ---
 name: topical-authority-map
-description: Generer la Topical Authority Map schoolsWP (hub central + 8-10 clusters + ~100 pages) pour WordPress Business. Utiliser quand l’utilisateur demande une carte semantique, une architecture de clusters, ou une roadmap de pages a grande echelle.
+description: (fusionné dans cocon-map-schoolswp - archivé - ne pas auto-déclencher)
 ---
+
+> **Statut : fusionné dans `cocon-map-schoolswp` le 2026-04-16.**
+> Ce skill ne se déclenche plus automatiquement. Sa logique (hub + 8-10 clusters + ~100 pages WordPress, architecture détaillée par cluster) a été absorbée dans `cocon-map-schoolswp` sous le Mode A — Carte macro.
+> Pour produire une Topical Authority Map : utiliser `cocon-map-schoolswp` (mode A).
+> Conservation temporaire pour référence historique. Suppression manuelle à faire via l'explorateur Windows.
 
 # Topical Authority Map (schoolsWP)
 

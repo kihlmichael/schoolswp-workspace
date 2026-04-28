@@ -1,6 +1,11 @@
 ---
 name: cluster-cocon-automatique
-description: Generer un cluster SEO complet et un cocon semantique pour schoolsWP a partir d’un mot-cle (pilier + satellites + maillage + quick wins + plan de production). Utiliser quand l’utilisateur demande un cluster, un cocon, ou une architecture de pages autour d’un sujet.
+description: |
+  Génère UN cluster SEO complet à partir d'UN mot-clé : pilier + 8-12 satellites + maillage + quick wins + plan de production 3 semaines. Scope : cluster unique autour d'un sujet précis (ex : FluentCRM, OttoKit, LMS WordPress).
+  Utiliser ce skill quand l'utilisateur demande : "cluster sur X", "cocon sémantique pour X", "architecture de pages autour de X", "cluster FluentCRM", "cocon OttoKit", "plan de cluster pour un mot-clé".
+  NE PAS utiliser pour : cartographie SEO globale du site ou de tous les cocons (voir cocon-map-schoolswp), priorisation ROI d'un cocon existant (voir cocon-roi-prioritization), brief SEO d'UN article seul (voir seo-brief-generator).
+last_reviewed: 2026-04-23
+review_interval_days: 90
 ---
 
 # Cluster & Cocon Automatique — schoolsWP

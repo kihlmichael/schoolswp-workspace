@@ -1,0 +1,151 @@
+{
+  "skill_name": "youtube-thumbnails",
+  "evals": [
+    {
+      "id": 1,
+      "name": "maintenance-wordpress",
+      "prompt": "Conçois des miniatures YouTube pour ma vidéo intitulée '[Maintenance WordPress]'. Je veux 5 concepts aimants à clics avec la mise en page exacte, les couleurs, le texte, l'expression faciale et le déclencheur émotionnel.",
+      "expected_output": "5 concepts de miniatures structurés avec mise en page, couleurs hex, texte court, expression faciale, déclencheur émotionnel et mécanisme de clic",
+      "files": [],
+      "assertions": [
+        {
+          "name": "5 concepts distincts",
+          "check": "L'output contient exactement 5 concepts numérotés avec des titres différents"
+        },
+        {
+          "name": "Codes couleur hex",
+          "check": "Chaque concept inclut au moins 2 codes couleur hexadécimaux (#XXXXXX)"
+        },
+        {
+          "name": "Texte de miniature court",
+          "check": "Chaque concept propose un texte overlay de 5 mots max"
+        },
+        {
+          "name": "Expression faciale décrite",
+          "check": "Au moins 3 concepts sur 5 décrivent une expression faciale précise"
+        },
+        {
+          "name": "Déclencheur émotionnel identifié",
+          "check": "Chaque concept nomme explicitement le déclencheur émotionnel (peur, curiosité, FOMO, etc.)"
+        },
+        {
+          "name": "Mécanisme de clic expliqué",
+          "check": "Chaque concept explique le mécanisme psychologique du clic"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "comparatif-lms",
+      "prompt": "J'ai besoin de thumbnails YouTube pour une vidéo comparant Tutor LMS vs LearnDash. C'est une vidéo comparative pour aider les créateurs de formation en ligne à choisir. Mon visage est disponible, et j'aimerais intégrer le logo schoolsWP.",
+      "expected_output": "5 concepts adaptés au format comparatif, intégrant le visage de Michaël et le branding schoolsWP",
+      "files": [],
+      "assertions": [
+        {
+          "name": "Format comparatif visible",
+          "check": "Au moins 2 concepts utilisent un format visuel de comparaison (split, VS, côte à côte)"
+        },
+        {
+          "name": "Branding schoolsWP intégré",
+          "check": "Au moins 3 concepts mentionnent l'intégration du logo schoolsWP avec position précise"
+        },
+        {
+          "name": "Personnage Michaël",
+          "check": "Au moins 3 concepts incluent le visage de Michaël avec une expression faciale décrite"
+        },
+        {
+          "name": "Noms des outils visibles",
+          "check": "Les noms Tutor LMS et LearnDash apparaissent dans les descriptions visuelles"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "fluentcrm",
+      "prompt": "Donne-moi des idées de miniatures accrocheuses pour une vidéo sur FluentCRM. Le thème : pourquoi c'est le meilleur CRM WordPress pour les solopreneurs. Ton sérieux mais accessible.",
+      "expected_output": "5 concepts orientés CRM/automatisation avec un ton pro et accessible",
+      "files": [],
+      "assertions": [
+        {
+          "name": "5 concepts présents",
+          "check": "5 concepts distincts avec structure complète"
+        },
+        {
+          "name": "Pertinence CRM",
+          "check": "Les concepts font référence à l'univers CRM/email/automatisation, pas à un sujet générique"
+        },
+        {
+          "name": "Émotions diversifiées",
+          "check": "Au moins 3 déclencheurs émotionnels différents parmi les 5 concepts"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "performance-wp",
+      "prompt": "Je prépare une vidéo sur la performance WordPress : comment passer de 30 à 100 sur PageSpeed. Je veux des miniatures qui donnent envie de cliquer immédiatement. Mon audience ce sont des freelances et petites agences web.",
+      "expected_output": "5 concepts axés performance/vitesse avec des visuels évoquant le score PageSpeed et la rapidité",
+      "files": [],
+      "assertions": [
+        {
+          "name": "Références visuelles performance",
+          "check": "Au moins 3 concepts utilisent des métaphores visuelles de vitesse/performance (score, fusée, chronomètre, jauge)"
+        },
+        {
+          "name": "Chiffres impactants",
+          "check": "Au moins 2 concepts intègrent des chiffres (30, 100, scores) dans le texte overlay"
+        },
+        {
+          "name": "Audience freelance",
+          "check": "Le ton et les concepts sont adaptés à une audience professionnelle technique"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "branding-michael",
+      "prompt": "Je veux des miniatures pour ma nouvelle série de vidéos 'Les Coulisses de schoolsWP'. C'est du personal branding : je montre comment je construis mon business WordPress. Mon visage doit être au centre, le logo schoolsWP bien visible. Ambiance authentique et inspirante.",
+      "expected_output": "5 concepts centrés sur le personal branding de Michaël avec forte présence visuelle du visage et du logo",
+      "files": [],
+      "assertions": [
+        {
+          "name": "Visage central",
+          "check": "Les 5 concepts placent le visage de Michaël comme élément principal de la composition"
+        },
+        {
+          "name": "Logo schoolsWP proéminent",
+          "check": "Les 5 concepts intègrent le logo schoolsWP de manière visible (pas juste un petit coin)"
+        },
+        {
+          "name": "Ton personal branding",
+          "check": "Les concepts évoquent l'authenticité, les coulisses, le parcours entrepreneurial"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "prompt-image-canva",
+      "prompt": "Conçois des miniatures pour ma vidéo '[WordPress SEO : 7 erreurs fatales]'. Ensuite, transforme le concept 1 en prompt de génération d'image et le concept 2 en brief Canva exploitable.",
+      "expected_output": "5 concepts + 1 prompt image IA en anglais + 1 brief Canva structuré avec calques et polices",
+      "files": [],
+      "assertions": [
+        {
+          "name": "5 concepts de base",
+          "check": "Les 5 concepts de miniatures sont présents avec la structure complète"
+        },
+        {
+          "name": "Prompt image en anglais",
+          "check": "Un prompt de génération d'image est fourni en anglais pour le concept 1, avec style, cadrage et ratio 16:9"
+        },
+        {
+          "name": "Brief Canva structuré",
+          "check": "Un brief Canva est fourni pour le concept 2 avec format 1280x720, calques ordonnés, polices nommées"
+        },
+        {
+          "name": "Calques Canva ordonnés",
+          "check": "Le brief Canva liste les calques du fond vers le premier plan avec positions"
+        }
+      ]
+    }
+  ]
+}

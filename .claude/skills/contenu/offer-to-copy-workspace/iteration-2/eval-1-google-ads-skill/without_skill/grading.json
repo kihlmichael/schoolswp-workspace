@@ -1,0 +1,57 @@
+{
+  "eval_name": "eval-1-google-ads-skill",
+  "config": "without_skill",
+  "pass_rate": 0.5,
+  "expectations": [
+    {
+      "text": "[A1] structure-9-sections",
+      "passed": false,
+      "evidence": "4/9 sections found"
+    },
+    {
+      "text": "[A2] promesse-transformation-business",
+      "passed": false,
+      "evidence": "business_indicators=0, time_indicators=2"
+    },
+    {
+      "text": "[A3] tableau-3-colonnes",
+      "passed": false,
+      "evidence": "0 rows with 3+ columns"
+    },
+    {
+      "text": "[A4] 3-messages-distincts",
+      "passed": true,
+      "evidence": "LinkedIn=True, Landing=True, Pitch=True"
+    },
+    {
+      "text": "[A5] tutoiement-consistant",
+      "passed": true,
+      "evidence": "tu=True, vous=False, l'utilisateur=False"
+    },
+    {
+      "text": "[A6] zero-formulations-interdites",
+      "passed": false,
+      "evidence": "forbidden found: ['en 30 secondes', 'en moins de 2 minutes']"
+    },
+    {
+      "text": "[A7] section-credibilite-limites",
+      "passed": true,
+      "evidence": "section=True, limits_mentioned=True"
+    },
+    {
+      "text": "[A8] cible-precise",
+      "passed": true,
+      "evidence": "section=True, specificity_markers=4"
+    },
+    {
+      "text": "[A9] linkedin-structure",
+      "passed": true,
+      "evidence": "accroche=True, cta=True, body_length=1074"
+    },
+    {
+      "text": "[A10] zero-jargon-technique-messages",
+      "passed": false,
+      "evidence": "jargon in messages: ['\\\\bMCP\\\\b']"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "eval_id": 3,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Accuse réception des 4 réponses fournies sans reposer les questions",
+      "passed": true,
+      "evidence": "'Ton brief est clair, je recapitule ce que j'ai compris' — récapitule les 4 axes (niche, cible, résultats, différenciants) sans reposer les questions."
+    },
+    {
+      "text": "Propose 5 promesses spécifiques au puzzle premium/zen/artisanal",
+      "passed": true,
+      "evidence": "Les 5 promesses parlent de calme, pièces, déconnexion, illustrateur français, mains sans notification — 100% spécifiques à la niche puzzle zen premium."
+    },
+    {
+      "text": "Met en avant ses 3 préférées avec justification",
+      "passed": true,
+      "evidence": "'Mes 3 preferees pour cette cible sont : 1, 3 et 5.' avec justification détaillée pour chacune."
+    },
+    {
+      "text": "N'utilise aucun mot interdit",
+      "passed": true,
+      "evidence": "Aucun mot interdit détecté (pas de révolutionnaire, hack, game changer, scalable, disruptif, incroyable, en un clic, sans effort, il suffit de)."
+    }
+  ]
+}

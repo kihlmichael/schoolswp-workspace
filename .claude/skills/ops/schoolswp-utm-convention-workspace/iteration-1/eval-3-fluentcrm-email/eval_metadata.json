@@ -1,0 +1,27 @@
+{
+  "eval_id": 3,
+  "eval_name": "fluentcrm-email",
+  "prompt": "Pour schoolsWP, j'ai besoin d'une convention UTM spécifique pour ma stratégie email FluentCRM. J'envoie : 1) une newsletter hebdo 'WP Insights' chaque lundi, 2) des séquences automatisées pour les leads du lead magnet 'Guide LMS WordPress', 3) des emails de relance pour les abandonnistes de la page de vente Authority System. Comment je structure mes UTMs pour ces 3 types d'emails ? Et est-ce que je dois taguer différemment les liens principaux vs les liens secondaires dans un même email ?",
+  "assertions": [
+    {
+      "id": "a1",
+      "description": "Couvre les 3 scénarios distincts (newsletter hebdo, séquence automatisée, relance abandonniste)"
+    },
+    {
+      "id": "a2",
+      "description": "Utilise utm_content pour différencier lien principal vs liens secondaires dans un email"
+    },
+    {
+      "id": "a3",
+      "description": "Produit des URLs complètes avec valeurs concrètes pour chaque scénario"
+    },
+    {
+      "id": "a4",
+      "description": "Convention de nommage campaign cohérente pour séquences automatisées"
+    },
+    {
+      "id": "a5",
+      "description": "utm_source = 'newsletter' systématiquement pour tout l'email"
+    }
+  ]
+}

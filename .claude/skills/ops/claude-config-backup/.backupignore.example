@@ -1,0 +1,9 @@
+# Template .backupignore — copie dans la racine de .claude/ si besoin d'exclusions custom.
+# Syntaxe : un pattern glob par ligne, # pour commentaires.
+# Les secrets (.env, .mcp.json, settings.local.json, *.key) sont déjà exclus par défaut.
+
+# Exemple : exclure un skill en cours de refonte
+# skills/wip-experimental/
+
+# Exemple : exclure un dossier de logs
+# logs/

@@ -10,8 +10,11 @@ description: |
   l'utilisateur a deja une offre cadree et veut generer la page de vente. Declencheur : "page de
   vente pour ma mini offre", "copy de vente", "genere la page FluentCart", "page de vente Kadence",
   "checkout pour mon offre", "je veux vendre cette offre". Utilise ce skill meme si l'utilisateur
-  dit simplement "fais-moi la page de vente" apres avoir cadre une offre. Ne declenchePAS pour
-  les landing pages HTML d'affiliation (utiliser `landing-page-factory`) ni pour le contenu editorial.
+  dit simplement "fais-moi la page de vente" apres avoir cadre une offre. Ne declenche PAS pour :
+  les landing pages HTML d'affiliation produit tiers (utiliser `landing-page-factory`),
+  les landing pages de capture newsletter / lead magnet (utiliser `lead-magnet-schoolswp`),
+  les séquences email de découverte plugin (utiliser `plugin-email-sequence`),
+  ni pour le contenu editorial.
 ---
 
 # Mini Offre — Page de Vente

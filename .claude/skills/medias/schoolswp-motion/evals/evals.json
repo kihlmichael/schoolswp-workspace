@@ -1,0 +1,96 @@
+{
+  "skill_name": "schoolswp-motion",
+  "evals": [
+    {
+      "id": 1,
+      "name": "creer-scene-credibilite",
+      "prompt": "Je veux ajouter une scene de credibilite qui montre le fondateur Michael KIHL, les badges (depuis 2021, 100+ contenus, 5 etapes) et l'ecosysteme schoolsWP (Blog, Newsletter, YouTube, Academy). Elle doit durer 20 secondes et s'inserer apres la scene Solutions.",
+      "expected_output": "Composition Scene6Credibility.tsx creee avec textes dans texts.ts, constantes dans theme.ts, composition enregistree dans Root.tsx. Workflow complet respecte.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "workflow-structure",
+          "text": "La reponse suit le format obligatoire : Diagnostic / Plan / Fichiers / Commandes / Resultat / QA / Suite"
+        },
+        {
+          "id": "texts-centralized",
+          "text": "Les textes sont centralises dans texts.ts, pas hardcodes dans la composition"
+        },
+        {
+          "id": "theme-constants",
+          "text": "Utilise THEME.xxx pour couleurs, tailles, springs, fps — aucune valeur en dur"
+        },
+        {
+          "id": "root-registered",
+          "text": "Composition enregistree dans Root.tsx avec THEME.fps, 1920x1080, duree calculee"
+        },
+        {
+          "id": "naming-convention",
+          "text": "Fichier PascalCase avec prefixe Scene (ex: Scene6Credibility.tsx)"
+        },
+        {
+          "id": "schoolswp-casing",
+          "text": "schoolsWP ecrit correctement partout (WP majuscules)"
+        },
+        {
+          "id": "duration-correct",
+          "text": "20 secondes = 600 frames, calcule via THEME.fps * 20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "couleurs-hors-brand",
+      "prompt": "Le fond de BrandIntro est trop sombre, change-le en #1a1a2e pour un look plus premium. Et mets le texte du tagline en bleu clair #6CB4EE.",
+      "expected_output": "Refuse les couleurs hors brand. Redirige vers THEME existant. Explique pourquoi. Propose alternative conforme.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "rejects-custom-colors",
+          "text": "Refuse d'appliquer #1a1a2e et #6CB4EE"
+        },
+        {
+          "id": "proposes-theme-alternative",
+          "text": "Propose des couleurs THEME existantes comme alternative"
+        },
+        {
+          "id": "explains-why",
+          "text": "Explique pourquoi les couleurs custom sont refusees"
+        },
+        {
+          "id": "workflow-structure",
+          "text": "Reponse suit le format obligatoire"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "outro-glitch-nommage",
+      "prompt": "Cree un nouvel outro avec un effet glitch sur le logo schoolswp.com et des particules neon qui explosent dans tous les sens. Appelle le fichier outro-final-v3-new.tsx",
+      "expected_output": "Refuse glitch. Corrige casse schoolsWP.com. Refuse nom fichier. Propose nom conforme. Propose alternative creative coherente.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "rejects-glitch",
+          "text": "Refuse l'effet glitch comme anti-pattern gadget"
+        },
+        {
+          "id": "fixes-schoolswp-casing",
+          "text": "Corrige schoolswp.com en schoolsWP.com"
+        },
+        {
+          "id": "rejects-filename",
+          "text": "Refuse outro-final-v3-new.tsx comme nom non conforme"
+        },
+        {
+          "id": "proposes-proper-name",
+          "text": "Propose un nom PascalCase avec prefixe Brand"
+        },
+        {
+          "id": "proposes-alternative",
+          "text": "Propose une alternative creative coherente avec l'univers schoolsWP"
+        }
+      ]
+    }
+  ]
+}

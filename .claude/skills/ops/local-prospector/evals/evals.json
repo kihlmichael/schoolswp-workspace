@@ -1,0 +1,29 @@
+{
+  "skill_name": "local-prospector",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Trouve-moi toutes les agences de creation de site internet dans le Bas-Rhin (67). Je veux une base de prospection complete.",
+      "expected_output": "Base de donnees qualifiee avec tableau 17 colonnes (dont departement, priorisation, explication priorisation) + controle couverture territoriale + synthese chiffree. Focus sur Strasbourg, Haguenau, Selestat, Molsheim, Saverne. Priorisation commerciale ✓/~/✗ pour chaque ligne.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Constitue une base de prospection de toutes les agences web du Grand Est. Je veux couvrir les 10 departements avec recherche par region, departement et ville principale.",
+      "expected_output": "Base couvrant les 10 departements du Grand Est (Ardennes, Aube, Marne, Haute-Marne, Meurthe-et-Moselle, Meuse, Moselle, Bas-Rhin, Haut-Rhin, Vosges). Recherche 3 niveaux (region, departement, ville). Tableau 17 colonnes. Controle couverture par departement avec identification des zones faibles. Priorisation commerciale. Synthese chiffree avec repartition par departement.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Je cherche les agences de creation de site internet a Reims et dans la Marne. Base de donnees pour prospection avec priorisation.",
+      "expected_output": "Base filtree sur la Marne (51). Couverture Reims + Chalons-en-Champagne + Epernay. Tableau 17 colonnes avec priorisation ✓/~/✗ et explication. Qualification par preuve explicite de creation de site internet. Synthese chiffree.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Cartographie les prestataires creation de site e-commerce en Alsace (Bas-Rhin + Haut-Rhin).",
+      "expected_output": "Base focalisee sur e-commerce (PrestaShop, WooCommerce, Shopify, Magento, sur mesure) en Bas-Rhin et Haut-Rhin. Pas de restriction techno. Couverture Strasbourg, Colmar, Mulhouse, Haguenau, Selestat. Priorisation commerciale. Controle couverture 2 departements.",
+      "files": []
+    }
+  ]
+}

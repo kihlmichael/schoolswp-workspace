@@ -1,0 +1,87 @@
+{
+  "name": "Skills Registry Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "skills-registry-sync",
+        "responseMode": "onReceived",
+        "responseData": "allEntries"
+      },
+      "id": "a1b2c3d4-0001-0001-0001-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "skills-registry-sync"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extraire le tableau skills du payload\nconst payload = $input.first().json.body || $input.first().json;\nconst skills = payload.skills || [];\n\n// Retourner chaque skill comme item n8n séparé\nreturn skills.map(skill => ({\n  json: {\n    name: skill.name || '',\n    description: skill.description || '',\n    path: skill.path || '',\n    last_modified: skill.last_modified || '',\n    status: skill.status || 'new',\n    detected_at: skill.detected_at || new Date().toISOString().split('T')[0],\n    hash: skill.hash || ''\n  }\n}));"
+      },
+      "id": "a1b2c3d4-0002-0002-0002-000000000002",
+      "name": "Split Skills",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1fA0BNReT0sBWEYJ7Jiq-9V-VxC7XBTUZBnZhgBdGIsk",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "skills_registry",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["name"],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0003-0003-0003-000000000003",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [680, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Split Skills",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Skills": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "instanceId": "schoolswp"
+  }
+}

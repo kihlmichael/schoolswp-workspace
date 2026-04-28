@@ -1,0 +1,12 @@
+{
+  "expectations": [
+    {"text": "5 concepts distincts", "passed": true, "evidence": "5 concepts: Le Site qui Explose, La Checklist Secrete, Avant/Apres Desastre, Le Hacker a ta Porte, Le Gardien WordPress"},
+    {"text": "Codes couleur hex", "passed": true, "evidence": "Codes hex présents: #1a1a1a, #8B0000, #0D1B2A, #21759B, #FFD700, #00E676, etc."},
+    {"text": "Texte de miniature court", "passed": true, "evidence": "Textes courts: TON SITE VA CRASHER, 7 ERREURS FATALES, AVANT/APRES, HACKE EN 3 MIN, PROTEGE TON SITE"},
+    {"text": "Expression faciale décrite", "passed": false, "evidence": "Expressions décrites mais très brèves (1 ligne chacune) pour 3 concepts. Concepts 3 et 4 n'ont pas de description faciale précise."},
+    {"text": "Déclencheur émotionnel identifié", "passed": false, "evidence": "Les émotions sont nommées (Peur, Curiosité, Contraste) mais pas de section 'déclencheur émotionnel' formelle. Pas d'explication du mécanisme."},
+    {"text": "Mécanisme de clic expliqué", "passed": false, "evidence": "Aucune section 'mécanisme de clic'. Juste un 'Pourquoi ça accroche' implicite sans analyse psychologique détaillée."}
+  ],
+  "summary": {"passed": 3, "failed": 3, "total": 6, "pass_rate": 0.5},
+  "timing": {"total_duration_seconds": 131.9}
+}

@@ -16,6 +16,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 from agents.base import safe_read_path, safe_write_path
 
 _INTENTS = ["informationnelle", "commerciale", "décisionnelle", "comparative", "navigationnelle"]

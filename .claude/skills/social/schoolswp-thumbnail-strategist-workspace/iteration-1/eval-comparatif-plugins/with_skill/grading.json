@@ -1,0 +1,40 @@
+{
+  "eval_id": 0,
+  "run_id": "eval-comparatif-plugins-with_skill",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "has_diagnostic_table",
+      "passed": true,
+      "evidence": "Section I contains a 5-row markdown table with CTR scores: C1 7/10, C2 8/10, C3 5/10, C4 9/10, C5 6/10"
+    },
+    {
+      "text": "has_3_concept_optimizations",
+      "passed": true,
+      "evidence": "Section II details Concept 4 (Le Gagnant), Concept 2 (ERREUR), Concept 1 (VS Symétrique) — exactly 3 best"
+    },
+    {
+      "text": "has_all_7_subfields",
+      "passed": true,
+      "evidence": "All 3 optimized concepts have: Composition Précise, Texte Miniature, Direction Michaël, Hiérarchie & Focus, Palette & Contraste, Éléments à Supprimer, Variante A/B Test"
+    },
+    {
+      "text": "has_final_recommendation",
+      "passed": true,
+      "evidence": "Section III: 'LE MEILLEUR CONCEPT : Concept 4 — Le Gagnant. Il révèle le verdict...' — justified in 2 sentences"
+    },
+    {
+      "text": "has_title_combo",
+      "passed": true,
+      "evidence": "Texte Miniature Final: 'LE GAGNANT' / Titre YouTube Associé: 'FluentCRM vs MailPoet : j'ai testé les deux pendant 6 mois...'"
+    },
+    {
+      "text": "has_strategic_angle",
+      "passed": true,
+      "evidence": "ANGLE STRATÉGIQUE present: 'Dans un feed saturé de comparatifs génériques...'"
+    }
+  ],
+  "pass_count": 6,
+  "total_count": 6,
+  "pass_rate": 1.0
+}

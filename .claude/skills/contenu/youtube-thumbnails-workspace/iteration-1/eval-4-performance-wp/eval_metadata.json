@@ -1,0 +1,10 @@
+{
+  "eval_id": 4,
+  "eval_name": "performance-wp",
+  "prompt": "Je prépare une vidéo sur la performance WordPress : comment passer de 30 à 100 sur PageSpeed. Je veux des miniatures qui donnent envie de cliquer immédiatement. Mon audience ce sont des freelances et petites agences web.",
+  "assertions": [
+    {"name": "Références visuelles performance", "check": "Au moins 3 concepts utilisent des métaphores visuelles de vitesse/performance"},
+    {"name": "Chiffres impactants", "check": "Au moins 2 concepts intègrent des chiffres dans le texte overlay"},
+    {"name": "Audience freelance", "check": "Le ton et les concepts sont adaptés à une audience professionnelle technique"}
+  ]
+}

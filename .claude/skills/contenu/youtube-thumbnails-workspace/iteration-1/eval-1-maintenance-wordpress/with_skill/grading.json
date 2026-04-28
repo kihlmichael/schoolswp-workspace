@@ -1,0 +1,12 @@
+{
+  "expectations": [
+    {"text": "5 concepts distincts", "passed": true, "evidence": "5 concepts numérotés avec titres différents: Le Site en Flammes, La Checklist Secrete, Avant/Apres, L'Horloge qui Tourne, Le Robot Maintenance"},
+    {"text": "Codes couleur hex", "passed": true, "evidence": "Chaque concept inclut 3+ codes hex: #1A1A1A, #FF0000, #FF6B00, #1B2A4A, #FFD700, etc."},
+    {"text": "Texte de miniature court", "passed": true, "evidence": "Textes: TON SITE VA CRASHER (4), 7 ETAPES CACHEES (3), AVANT -> APRES (3), IL EST TROP TARD ? (4), JE FAIS PLUS RIEN (4)"},
+    {"text": "Expression faciale décrite", "passed": true, "evidence": "4/5 concepts décrivent des expressions faciales précises (concepts 1,2,4,5). Concept 3 est sans personnage."},
+    {"text": "Déclencheur émotionnel identifié", "passed": true, "evidence": "Chaque concept nomme son déclencheur: Peur, Curiosité, Désir de transformation, FOMO, Surprise"},
+    {"text": "Mécanisme de clic expliqué", "passed": true, "evidence": "Chaque concept inclut une section 'Mécanisme de clic' avec explication psychologique: loss aversion, curiosity gap, preuve visuelle, FOMO+urgence, psychologie inversée"}
+  ],
+  "summary": {"passed": 6, "failed": 0, "total": 6, "pass_rate": 1.0},
+  "timing": {"total_duration_seconds": 142.4}
+}

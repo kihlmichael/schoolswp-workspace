@@ -1,6 +1,9 @@
 ---
 name: youtube-omnichannel-engine
-description: Construire la machine YouTube omnicanale schoolsWP avec ROI/scoring (PARAMS+CONTENT) et la version “machine de guerre” (LIBRARY+ACTUALS, auto-remplissage, deltas). Utiliser quand l’utilisateur demande le tableau complet, les formules, ou un systeme YouTube→Article→LinkedIn→Newsletter.
+description: |
+  Système de PILOTAGE ROI/scoring YouTube multi-canal schoolsWP (pas de production brute). Construit le tableau complet avec 4 onglets : PARAMS (poids et taux), CONTENT (ROI + scoring + priorité + completion), LIBRARY (angles/hooks/CTA/offres), ACTUALS (réel + deltas avec auto-remplissage). Organise le funnel YouTube → Article → LinkedIn → Newsletter avec métriques consolidées et dashboard.
+  Utiliser ce skill quand l'utilisateur demande : "machine YouTube omnicanale", "ROI YouTube", "scoring YouTube", "tableau YouTube complet", "pilotage vidéo multi-canal", "système YouTube → Article → LinkedIn → Newsletter", "distribution omnicanale", "deltas YouTube", "machine de guerre YouTube", "dashboard YouTube".
+  NE PAS utiliser pour : production d'une vidéo longue (voir `schoolswp-youtube-studio`), création d'un Short (voir `youtube-shorts-schoolswp`), miniatures (voir `thumbnail-strategist`), extraction de données d'une vidéo existante (voir `youtube-extractor`).
 ---
 
 # YouTube Omnichannel Engine (schoolsWP)

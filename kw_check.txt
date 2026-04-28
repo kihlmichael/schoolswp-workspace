@@ -1,0 +1,30 @@
+COVERED:
+  + chapitres: 3
+  + woocommerce: 13
+  + ligne avec wordpress: 4
+  + e-mail: 1
+  + site internet: 1
+  + créez: 3
+  + paramètres: 2
+  + certification: 8
+  + maîtriser wordpress: 2
+  + choisir: 7
+  + plugin tutor lms: 1
+  + étudiants: 3
+  + vendre une formation: 2
+  + extension: 6
+  + interface: 6
+  + référencement: 3
+  + modèle: 4
+  + design: 7
+  + structurer: 3
+  + e-commerce: 1
+  + tutoriel: 4
+  + utilisateurs: 10
+  + certificats: 5
+  + apparence: 4
+  + sécurité: 5
+  + compétences: 3
+  + hébergement: 3
+
+STILL MISSING:

@@ -1,0 +1,91 @@
+{
+  "skill_name": "offer-to-copy",
+  "iteration": 2,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "eval-1-google-ads-skill",
+          "pass_rate": 0.8,
+          "tokens": 37557,
+          "duration_seconds": 219.1,
+          "failed": ["A2-promesse-transformation (0 business indicators)", "A6-forbidden ('en 90 secondes')"]
+        },
+        {
+          "eval_name": "eval-2-plugin-landing-page",
+          "pass_rate": 1.0,
+          "tokens": 38765,
+          "duration_seconds": 277.6,
+          "failed": []
+        },
+        {
+          "eval_name": "eval-3-formation-fluentcrm",
+          "pass_rate": 0.8,
+          "tokens": 38354,
+          "duration_seconds": 212.1,
+          "failed": ["A6-forbidden ('Aucun prérequis')", "A9-linkedin (accroche not question)"]
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.867,
+        "stddev_pass_rate": 0.094,
+        "mean_tokens": 38225,
+        "mean_duration_seconds": 236.3
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "eval-1-google-ads-skill",
+          "pass_rate": 0.5,
+          "tokens": 30687,
+          "duration_seconds": 139.5,
+          "failed": ["A1-structure (4/9)", "A2-promesse", "A3-tableau-3col (0)", "A6-forbidden", "A10-jargon (MCP)"]
+        },
+        {
+          "eval_name": "eval-2-plugin-landing-page",
+          "pass_rate": 0.8,
+          "tokens": 29030,
+          "duration_seconds": 128.4,
+          "failed": ["A6-forbidden ('en 60 secondes' x4)", "A10-jargon (API)"]
+        },
+        {
+          "eval_name": "eval-3-formation-fluentcrm",
+          "pass_rate": 1.0,
+          "tokens": 31466,
+          "duration_seconds": 187.3,
+          "failed": []
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.767,
+        "stddev_pass_rate": 0.205,
+        "mean_tokens": 30394,
+        "mean_duration_seconds": 151.7
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+10.0%",
+    "tokens": "+25.8%",
+    "duration": "+55.7%"
+  },
+  "comparison_with_iteration_1": {
+    "iter1_with_skill": "100% (8/8 assertions, simpler set)",
+    "iter2_with_skill": "86.7% (10 assertions, much harder set — includes forbidden patterns, jargon check, business transformation, credibility section)",
+    "iter1_without_skill": "87.5%",
+    "iter2_without_skill": "76.7%",
+    "note": "Assertions are stricter in iter2 — direct comparison with iter1 pass rates is misleading"
+  },
+  "analyst_observations": [
+    "with_skill has much lower variance (stddev 0.094 vs 0.205) — more consistent output quality",
+    "with_skill passes ALL structural assertions (A1, A3, A7, A8) on every eval — the skill enforces structure perfectly",
+    "The skill's main weakness: it still leaks forbidden patterns in 2/3 evals (A6) — 'en 90 secondes' and 'Aucun prérequis' slipped through despite explicit forbidden list",
+    "without_skill leaks tech jargon (MCP, API) in messages in 2/3 evals — the skill eliminates this completely (A10: 100% vs 67%)",
+    "Eval 3 FluentCRM without_skill scored 100% — the formation use case is naturally credible and structured, so the skill adds less value here",
+    "The biggest skill advantage is on the hardest case (eval 1 Google Ads): 80% vs 50% — a +30% gap on the most technical offering",
+    "Token usage is ~26% higher with skill (~38K vs ~30K) — the 9-step structure produces more thorough output but costs more"
+  ]
+}

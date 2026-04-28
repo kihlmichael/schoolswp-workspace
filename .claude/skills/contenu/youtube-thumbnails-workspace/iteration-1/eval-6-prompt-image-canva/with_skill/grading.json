@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "5 concepts de base", "passed": true, "evidence": "5 concepts complets: L'écran rouge, Le bulletin de notes, Le compteur à zéro, Le secret du pro, Avant/Après"},
+    {"text": "Prompt image en anglais", "passed": true, "evidence": "Prompt image fourni en anglais pour concept 1, mentionne 16:9 aspect ratio, cinematic lighting, dramatic side lighting, 1280x720"},
+    {"text": "Brief Canva structuré", "passed": true, "evidence": "Brief Canva détaillé pour concept 2: format 1280x720, 7 calques ordonnés du fond vers l'avant, polices nommées (Permanent Marker, Roboto)"},
+    {"text": "Calques Canva ordonnés", "passed": true, "evidence": "7 calques listés dans l'ordre: fond split, checklist papier, croix rouges, tampon FATAL, photo Michaël, geste index, logo schoolsWP. Positions x/y précises."}
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0},
+  "timing": {"total_duration_seconds": 92.2}
+}

@@ -1,0 +1,137 @@
+{
+  "skill_name": "offer-to-copy",
+  "iteration": 1,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "eval-1-google-ads-skill",
+          "pass_rate": 1.0,
+          "tokens": 31650,
+          "duration_seconds": 97.6,
+          "assertions": {
+            "A1-structure-7-sections": true,
+            "A2-promesse-une-phrase": true,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        },
+        {
+          "eval_name": "eval-2-plugin-landing-page",
+          "pass_rate": 1.0,
+          "tokens": 31572,
+          "duration_seconds": 92.4,
+          "assertions": {
+            "A1-structure-7-sections": true,
+            "A2-promesse-une-phrase": true,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        },
+        {
+          "eval_name": "eval-3-formation-fluentcrm",
+          "pass_rate": 1.0,
+          "tokens": 34342,
+          "duration_seconds": 142.0,
+          "assertions": {
+            "A1-structure-7-sections": true,
+            "A2-promesse-une-phrase": true,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "stddev_pass_rate": 0.0,
+        "mean_tokens": 32521,
+        "mean_duration_seconds": 110.7
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "eval-1-google-ads-skill",
+          "pass_rate": 1.0,
+          "tokens": 29921,
+          "duration_seconds": 116.9,
+          "assertions": {
+            "A1-structure-7-sections": true,
+            "A2-promesse-une-phrase": true,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        },
+        {
+          "eval_name": "eval-2-plugin-landing-page",
+          "pass_rate": 0.75,
+          "tokens": 27654,
+          "duration_seconds": 82.5,
+          "assertions": {
+            "A1-structure-7-sections": false,
+            "A2-promesse-une-phrase": false,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        },
+        {
+          "eval_name": "eval-3-formation-fluentcrm",
+          "pass_rate": 0.875,
+          "tokens": 30632,
+          "duration_seconds": 139.5,
+          "assertions": {
+            "A1-structure-7-sections": true,
+            "A2-promesse-une-phrase": false,
+            "A3-tableau-fonctionnalites-benefices": true,
+            "A4-3-messages-distincts": true,
+            "A5-tutoiement-consistant": true,
+            "A6-zero-hype-ia": true,
+            "A7-benefices-avant-technique": true,
+            "A8-linkedin-structure": true
+          }
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.875,
+        "stddev_pass_rate": 0.102,
+        "mean_tokens": 29402,
+        "mean_duration_seconds": 113.0
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+12.5%",
+    "tokens": "+10.6%",
+    "duration": "-2.0%"
+  },
+  "analyst_observations": [
+    "with_skill atteint 100% sur les 3 evals — structure parfaitement respectée à chaque fois",
+    "without_skill échoue principalement sur A1 (structure 7 sections) et A2 (promesse en une phrase) — les deux contraintes les plus structurantes du skill",
+    "A5 (tutoiement) et A6 (zero hype) passent partout — ces assertions ne discriminent pas entre with/without, car le prompt de base demandait déjà le tutoiement et le français",
+    "Le skill coûte ~10% de tokens en plus (32K vs 29K) — overhead acceptable pour un gain de conformité structurelle de 100%",
+    "Les durées sont comparables (~110s vs ~113s) — pas de pénalité de temps avec le skill",
+    "La vraie valeur du skill n'est pas dans les assertions binaires mais dans la qualité du copywriting — à évaluer qualitativement dans le viewer"
+  ]
+}

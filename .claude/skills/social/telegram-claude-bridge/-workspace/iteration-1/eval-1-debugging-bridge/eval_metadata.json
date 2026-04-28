@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "debugging-bridge",
+  "prompt": "Mon bridge Telegram-Claude est lance mais quand j'envoie un message depuis mon telephone, je ne recois aucune reponse. Le terminal affiche juste '[BRIDGE] Demarre' et rien d'autre. Comment debugger ?",
+  "assertions": [
+    {"id": "test_getupdates", "text": "Propose de tester getUpdates manuellement (URL navigateur ou curl)", "type": "content_check"},
+    {"id": "check_chat_id", "text": "Verifie que le Chat ID dans .env correspond au bon compte", "type": "content_check"},
+    {"id": "test_claude_cli", "text": "Verifie que claude CLI fonctionne seul (commande de test)", "type": "content_check"},
+    {"id": "ordered_steps", "text": "Structure le diagnostic en etapes ordonnees (pas un bloc monolithique)", "type": "structure_check"}
+  ]
+}

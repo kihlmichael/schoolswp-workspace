@@ -1,13 +1,13 @@
 ---
 name: seo-pipeline
-description: >
-  Pipeline SEO complet schoolsWP en 10 tâches séquentielles — orchestration d'agents IA spécialisés.
-  Déclenche ce skill dès que l'utilisateur mentionne un audit SEO schoolsWP, le workflow SEO en 10 étapes,
-  ou veut exécuter une ou plusieurs tâches (T1 Inventaire, T2 Crawl, T3 GSC, T4 DataForSEO,
-  T5 Clusters, T6 Maillage, T7 Multilingue, T8 E-E-A-T, T9 Conversion, T10 Roadmap).
-  Déclenche aussi quand l'utilisateur dit "lance le workflow SEO", "exécute T3", "démarre l'audit",
-  "lance Agent 03", ou fournit un export GSC/crawl/DataForSEO pour schoolsWP.com.
+description: (archivé - pipeline 10 tâches trop lourd - ne pas auto-déclencher - invocation manuelle uniquement)
 ---
+
+> **Statut : archivé le 2026-04-16.**
+> Ce skill (orchestration 10 tâches SEO : T1 Inventaire, T2 Crawl, T3 GSC, T4 DataForSEO, T5 Clusters, T6 Maillage, T7 Multilingue, T8 E-E-A-T, T9 Conversion, T10 Roadmap) ne se déclenche plus automatiquement.
+> Raison : méga-skill trop lourd, hors périmètre naturel du cluster cocon, risque de sur-déclenchement sur "audit SEO" générique, ambiguïté avec les autres skills SEO plus ciblés.
+> Réouverture possible plus tard en cluster séparé "Audit / Pipeline / Ops SEO" si certaines briques (T3 GSC, T4 DataForSEO, T8 E-E-A-T) s'avèrent utiles en skills granulaires.
+> Conservation pour référence uniquement. Accès via tool `Skill` en invocation explicite.
 
 # Pipeline SEO schoolsWP — Système d'exécution multi-agents
 

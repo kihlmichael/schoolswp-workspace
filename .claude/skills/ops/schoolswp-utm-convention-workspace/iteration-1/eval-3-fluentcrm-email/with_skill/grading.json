@@ -1,0 +1,29 @@
+{
+  "expectations": [
+    {
+      "text": "Couvre les 3 scénarios distincts (newsletter hebdo, séquence automatisée, relance abandonniste)",
+      "passed": true,
+      "evidence": "Scénario 1 'Newsletter hebdomadaire WP Insights' (section 4.1), Scénario 2 'Séquence automatisée lead magnet Guide LMS WordPress' (section 4.2), Scénario 3 'Emails de relance abandonnistes page de vente Authority System' (section 4.3). Les 3 scénarios sont couverts avec URLs complètes."
+    },
+    {
+      "text": "Utilise utm_content pour différencier lien principal vs liens secondaires dans un email",
+      "passed": true,
+      "evidence": "Section 5 'Liens principaux vs liens secondaires — règle définitive' avec tableau complet. Scénario 1 montre 3 utm_content distincts : cta-principal (lien article TutorLMS), lien-texte (ressource gratuite), cta-footer (Authority System). Règle : 'toujours mettre utm_content dès qu'un email a plus d'un lien'."
+    },
+    {
+      "text": "Produit des URLs complètes avec valeurs concrètes pour chaque scénario",
+      "passed": true,
+      "evidence": "Scénario 1 : 3 URLs complètes (ex: https://schoolswp.com/tutor-lms-avis/?utm_source=fluentcrm&utm_medium=email&utm_campaign=wp-insights-sem11-2026&utm_content=cta-principal). Scénario 2 : 5 URLs complètes (J+1, J+1 secondaire, J+3, J+7, J+7 PS). Scénario 3 : 5 URLs complètes (J+1 CTA, J+1 lien texte, J+3, J+7 CTA, J+7 footer)."
+    },
+    {
+      "text": "Convention de nommage campaign cohérente pour séquences automatisées",
+      "passed": true,
+      "evidence": "Format séquence : 'seq-[nom-lead-magnet]-[etape]' — ex: seq-guide-lms-j1, seq-guide-lms-j3, seq-guide-lms-j7. Format relance : 'relance-[nom-page]-[etape]' — ex: relance-authority-system-j1, relance-authority-system-j3, relance-authority-system-j7. Convention claire et cohérente sur les 3 emails de chaque séquence."
+    },
+    {
+      "text": "utm_source est une valeur fixe et cohérente pour tout l'email (soit 'newsletter' soit 'fluentcrm' — mais une seule valeur, pas les deux)",
+      "passed": true,
+      "evidence": "utm_source = 'fluentcrm' sur toutes les URLs sans exception. Règle explicite section 1 : 'utm_source = fluentcrm pour tous les emails schoolsWP sans exception'. Section 8 erreur 1 : 'Utiliser newsletter comme utm_source — newsletter est une campagne, pas une source. Source = fluentcrm'. Aucune URL n'utilise 'newsletter' comme source."
+    }
+  ]
+}

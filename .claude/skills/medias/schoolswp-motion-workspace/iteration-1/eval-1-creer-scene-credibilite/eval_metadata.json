@@ -1,0 +1,42 @@
+{
+  "eval_id": 1,
+  "eval_name": "creer-scene-credibilite",
+  "prompt": "Je veux ajouter une scene de credibilite qui montre le fondateur Michael KIHL, les badges (depuis 2021, 100+ contenus, 5 etapes) et l'ecosysteme schoolsWP (Blog, Newsletter, YouTube, Academy). Elle doit durer 20 secondes et s'inserer apres la scene Solutions.",
+  "assertions": [
+    {
+      "id": "workflow-structure",
+      "text": "La reponse suit le format obligatoire : Diagnostic / Plan d'action / Fichiers impactes / Commandes executees / Resultat / QA / Suite recommandee",
+      "type": "manual"
+    },
+    {
+      "id": "texts-centralized",
+      "text": "Les textes affiches (fondateur, badges, ecosysteme) sont centralises dans texts.ts, pas hardcodes dans la composition",
+      "type": "file_check"
+    },
+    {
+      "id": "theme-constants",
+      "text": "Utilise THEME.xxx pour couleurs, tailles de texte, springs et fps — aucune valeur en dur",
+      "type": "file_check"
+    },
+    {
+      "id": "root-registered",
+      "text": "La composition est importee et enregistree dans Root.tsx avec THEME.fps, 1920x1080, et duree calculee",
+      "type": "file_check"
+    },
+    {
+      "id": "naming-convention",
+      "text": "Le fichier suit la convention PascalCase avec prefixe Scene (ex: Scene6Credibility.tsx)",
+      "type": "file_check"
+    },
+    {
+      "id": "schoolswp-casing",
+      "text": "schoolsWP ecrit correctement partout (WP majuscules) dans le code et la reponse",
+      "type": "manual"
+    },
+    {
+      "id": "duration-correct",
+      "text": "Duree de 20 secondes = 600 frames a 30fps, calculee via THEME.fps * 20",
+      "type": "file_check"
+    }
+  ]
+}

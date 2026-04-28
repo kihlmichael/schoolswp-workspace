@@ -1,15 +1,17 @@
 ---
 name: branding
 description: |
-  Crée, réécrit, audite et planifie du contenu dans la voix schoolsWP (WordPress, SEO,
-  automatisation). Utilise ce skill pour rédiger ou réécrire un post LinkedIn/YouTube/Facebook,
-  un article de blog, une newsletter, un script, une bio, un one-liner ou un plan éditorial.
-  Supporte les modes : draft | rewrite | repurpose | check | calendar | bio | one-liner.
-  Déclenche pour "rédiger du contenu schoolsWP", "réécrire en voix schoolsWP", "vérifier
-  le ton schoolsWP", "post LinkedIn", "article blog schoolsWP", "plan éditorial".
+  AUDIT DE TON schoolsWP sur un contenu existant (mode check uniquement). Vérifie cohérence de voix, clarté, densité, pédagogie, alignement avec le style schoolsWP, positionnement éditorial. Retourne un diagnostic + corrections de ton ciblées (pas de réécriture complète ni de création).
+  Utiliser ce skill quand l'utilisateur demande : "vérifie le ton schoolsWP de ce texte", "audit voix schoolsWP", "check branding", "est-ce que ça sonne schoolsWP ?", "ce texte respecte-t-il mon style ?", "audite la cohérence éditoriale", "diagnostic ton schoolsWP", "vérifie que mon post respecte la voix".
+  NE PAS utiliser pour : créer du contenu (voir les skills plateforme/format — `linkedin`, `schoolswp-article-workflow`, `schoolswp-content-studio`, `schoolswp-youtube-studio`, `youtube-shorts-schoolswp`, `instagram-strategy`, etc.), réécrire un texte pour la conversion (voir `rewrite-conversion`), corriger l'orthographe / grammaire / typographie (voir `clairtexte`), repurposer un article (voir `article-multiformat`), calendrier éditorial (voir `brain-autonome` + `social-media-manager`).
 ---
 
-# schoolsWP Branding Studio
+# schoolsWP Branding — Audit de ton (mode check uniquement)
+
+> **Scope resserré le 2026-04-16 : ce skill ne fait plus que de l'AUDIT DE TON sur un contenu existant.**
+> Les modes de création (`draft`, `rewrite`, `repurpose`, `calendar`, `bio`, `one-liner`) ont été retirés du périmètre d'auto-déclenchement car ils chevauchaient les skills spécialisés déjà consolidés (linkedin, schoolswp-article-workflow, schoolswp-content-studio, schoolswp-youtube-studio, rewrite-conversion, article-multiformat, brain-autonome). Seul le mode `check` reste actif.
+> Frontière nette avec `clairtexte` : `clairtexte` corrige la LANGUE (grammaire, orthographe, ponctuation, typographie), `branding` corrige la VOIX (ton, clarté, densité, pédagogie, positionnement schoolsWP).
+> La logique interne du skill (core rules, interdictions, contraintes de phrases, etc. listées ci-dessous) reste utilisée EN TANT QUE CRITÈRES D'AUDIT par le mode `check`.
 
 ## Mission
 

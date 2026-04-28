@@ -1,14 +1,14 @@
 ---
 name: brain
-description: |
-  Agent stratégique schoolsWP — transforme toute demande en livrable structuré, utile et
-  réutilisable via 10 modes spécialisés par type de tâche (/seo, /wordpress, /workflow,
-  /content, /prompt, /business, /youtube, /audit, /deep, /simple). Déclenche ce skill pour
-  toute demande schoolsWP qui nécessite cadrage + exécution + vérification : audits SEO,
-  architectures WordPress, workflows n8n, contenus, prompts, stratégie business, YouTube.
-  À utiliser aussi quand l'utilisateur dit "schoolswp-brain", "traite ça comme un agent",
-  "active le bon mode", ou donne une demande dense sans préciser la forme de réponse.
+description: (archivé - invocation manuelle uniquement - ne pas auto-déclencher)
 ---
+
+> **Statut : archivé en mode manuel (2026-04-16).**
+> Ce skill n'est plus déclenché automatiquement. Raisons : description trop large, 10 modes qui se marchent dessus, collisions systématiques avec les skills spécialisés (schoolswp-article-workflow, brain-autonome, thruuu-writer, etc.).
+> La logique ci-dessous est conservée pour invocation explicite via le tool `Skill` si besoin. Suppression définitive à évaluer après période d'observation.
+>
+> Pour l'arbitrage éditorial → voir `brain-autonome`.
+> Pour la production d'article → voir `schoolswp-article-workflow` ou `thruuu-writer`.
 
 # schoolsWP Brain
 

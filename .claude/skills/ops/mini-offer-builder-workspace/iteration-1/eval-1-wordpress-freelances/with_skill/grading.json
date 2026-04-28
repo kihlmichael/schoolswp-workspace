@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "text": "Produit exactement 5 promesses numérotées",
+      "passed": true,
+      "evidence": "5 promesses numérotées de 1 à 5, chacune en gras avec justification"
+    },
+    {
+      "text": "Chaque promesse est accompagnée d'une explication (→ Pourquoi)",
+      "passed": true,
+      "evidence": "Chaque promesse a un '→ Pourquoi :' suivi d'une explication contextuelle"
+    },
+    {
+      "text": "Utilise le tutoiement systématiquement (tu/ton/ta, jamais vous/votre)",
+      "passed": true,
+      "evidence": "Tutoiement cohérent : 'j'ai tout ce qu'il me faut', 'ta promesse', 'ta cible', 'Laquelle te parle'"
+    },
+    {
+      "text": "Ne propose PAS de mécanisme ni de nom dans cette première réponse",
+      "passed": true,
+      "evidence": "S'arrête après les 5 promesses, demande validation. Aucun mécanisme ni nom proposé."
+    },
+    {
+      "text": "Ne contient aucun mot interdit schoolsWP",
+      "passed": false,
+      "evidence": "Ligne 21 : 'pas un hack ponctuel' — le mot 'hack' est interdit dans les guidelines schoolsWP"
+    },
+    {
+      "text": "Demande explicitement à l'utilisateur de choisir ou ajuster une promesse",
+      "passed": true,
+      "evidence": "'Laquelle te parle le plus ? Tu veux qu'on en ajuste une, qu'on en combine deux, ou qu'on reparte sur d'autres pistes ?'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 1,
+    "total": 6,
+    "pass_rate": 0.83
+  }
+}

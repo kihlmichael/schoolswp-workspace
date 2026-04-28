@@ -1,0 +1,11 @@
+{
+  "eval_id": 6,
+  "eval_name": "prompt-image-canva",
+  "prompt": "Conçois des miniatures pour ma vidéo '[WordPress SEO : 7 erreurs fatales]'. Ensuite, transforme le concept 1 en prompt de génération d'image et le concept 2 en brief Canva exploitable.",
+  "assertions": [
+    {"name": "5 concepts de base", "check": "Les 5 concepts de miniatures sont présents avec la structure complète"},
+    {"name": "Prompt image en anglais", "check": "Un prompt de génération d'image est fourni en anglais pour le concept 1, avec style, cadrage et ratio 16:9"},
+    {"name": "Brief Canva structuré", "check": "Un brief Canva est fourni pour le concept 2 avec format 1280x720, calques ordonnés, polices nommées"},
+    {"name": "Calques Canva ordonnés", "check": "Le brief Canva liste les calques du fond vers le premier plan avec positions"}
+  ]
+}

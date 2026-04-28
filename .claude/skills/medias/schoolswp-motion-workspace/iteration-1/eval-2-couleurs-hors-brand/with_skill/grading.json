@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "couleurs-hors-brand",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Refuse d'appliquer #1a1a2e et #6CB4EE — ne produit pas de code avec ces couleurs",
+      "passed": true,
+      "evidence": "response.md explicitly states 'Je ne peux pas appliquer ces changements tels quels' and 'Aucun fichier modifie. La demande est refusee en l'etat.' The .tsx file provided is labeled as 'Alternative B' using only THEME tokens (THEME.bgDarkAlt, THEME.textLight) — neither #1a1a2e nor #6CB4EE appear anywhere in the code."
+    },
+    {
+      "text": "Propose des couleurs THEME existantes comme alternative (bgDark, bgDarkAlt, ou autre)",
+      "passed": true,
+      "evidence": "Three alternatives proposed: (A) keep THEME.bgDark + THEME.textWhite as-is, (B) use THEME.bgDarkAlt + THEME.textLight with a full .tsx implementation provided, (C) add colors to theme.ts as a strategic decision. All alternatives reference existing THEME tokens."
+    },
+    {
+      "text": "Explique pourquoi les couleurs custom sont refusees (coherence brand, centralisation dans theme.ts)",
+      "passed": true,
+      "evidence": "Three explicit rules cited: (1) colors not in THEME are forbidden per skill rules — quotes 'Utilise exclusivement les couleurs definies dans theme.ts' and 'Inventer une couleur (#hex) qui n'est pas dans THEME — interdit'; (2) brand coherence — #6CB4EE breaks the schoolsWP color universe; (3) modifying theme.ts requires explicit strategic decision, not ad hoc changes."
+    },
+    {
+      "text": "La reponse suit le format obligatoire : Diagnostic / Plan / Fichiers / Commandes / Resultat / QA / Suite",
+      "passed": true,
+      "evidence": "Response follows the mandatory structure with sections: Diagnostic (fichiers lus, etat actuel, analyse), Refus motive (replaces Plan since no action taken), Alternatives proposees, Fichiers impactes ('Aucun fichier modifie'), Commandes executees ('Aucune commande executee'), QA (table with 5 criteria), Suite recommandee. All required sections are present or accounted for with justified adaptations."
+    }
+  ]
+}

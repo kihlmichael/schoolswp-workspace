@@ -1,0 +1,36 @@
+{
+  "eval_id": 3,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Contient les 4 livrables (rapport detaille, tableau synthese, cartographie, bilan)",
+      "passed": true,
+      "evidence": "Sections A (rapport detaille avec fiches), B (tableau synthese), C (non explicitement separee mais cartographie implicite dans la synthese strategique), D (bilan de traitement). Section 'Synthese strategique pour schoolsWP' en bonus."
+    },
+    {
+      "text": "Tableau de synthese avec colonnes: Nom, Ville, CP, Telephone, Email, URL, Confiance, Statut",
+      "passed": true,
+      "evidence": "Tableau present avec colonnes requises."
+    },
+    {
+      "text": "Chaque entree a un niveau de confiance et un statut",
+      "passed": true,
+      "evidence": "10 fiches qualifiees avec Niveau de confiance (Eleve/Moyen) et Statut (Confirme/A verifier)."
+    },
+    {
+      "text": "Preuves n8n/Make citees explicitement",
+      "passed": true,
+      "evidence": "Citations pour chaque fiche (ex: 'Agence n8n : Automatisez vos processus en 7 jours', 'Scroll est une agence experte Make')."
+    },
+    {
+      "text": "Pages SEO locales detectees et signalees",
+      "passed": true,
+      "evidence": "Section dediee documentant Hyperstack (Thouars 79), NoCodeFactory (pas de bureau IDF), Inforeole, Nexa Automatia, Volteyr comme faux positifs SEO."
+    },
+    {
+      "text": "Bilan chiffre avec metriques quantitatives",
+      "passed": true,
+      "evidence": "Bilan: ~22 bruts, 10 retenus, exclusions hors zone (6), sans preuve (3), annuaires (3). Desert grande couronne documente."
+    }
+  ]
+}

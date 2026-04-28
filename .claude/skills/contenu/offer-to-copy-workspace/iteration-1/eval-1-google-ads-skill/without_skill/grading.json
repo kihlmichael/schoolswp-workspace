@@ -1,0 +1,47 @@
+{
+  "eval_name": "eval-1-google-ads-skill",
+  "config": "without_skill",
+  "pass_rate": 1.0,
+  "expectations": [
+    {
+      "text": "[A1] structure-7-sections",
+      "passed": true,
+      "evidence": "7/7 sections found"
+    },
+    {
+      "text": "[A2] promesse-une-phrase",
+      "passed": true,
+      "evidence": "1 sentence(s) detected"
+    },
+    {
+      "text": "[A3] tableau-fonctionnalites-benefices",
+      "passed": true,
+      "evidence": "7 table rows found"
+    },
+    {
+      "text": "[A4] 3-messages-distincts",
+      "passed": true,
+      "evidence": "LinkedIn=True, Landing=True, Pitch=True"
+    },
+    {
+      "text": "[A5] tutoiement-consistant",
+      "passed": true,
+      "evidence": "tu=True, vous=False, l'utilisateur=False"
+    },
+    {
+      "text": "[A6] zero-hype-ia",
+      "passed": true,
+      "evidence": "no hype words"
+    },
+    {
+      "text": "[A7] benefices-avant-technique",
+      "passed": true,
+      "evidence": "first line: '**Gains directs :**...' tech=0 benefit=0"
+    },
+    {
+      "text": "[A8] linkedin-structure",
+      "passed": true,
+      "evidence": "accroche=True, cta=True, body_length=967"
+    }
+  ]
+}

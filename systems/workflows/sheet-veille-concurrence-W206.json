@@ -52,8 +52,8 @@
       },
       "credentials": {
         "anthropicApi": {
-          "id": "anthropic-main",
-          "name": "anthropic-main"
+          "id": "gCyMjn0UNkoITkmk",
+          "name": "Anthropic account"
         }
       },
       "typeVersion": 1.3
@@ -92,8 +92,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -132,8 +132,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -172,8 +172,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -225,8 +225,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -298,27 +298,33 @@
         20
       ],
       "parameters": {
-        "url": "https://serpapi.com/search",
-        "fields": "position,title,link,snippet,source",
-        "dataField": "organic_results",
-        "sendQuery": true,
-        "authentication": "predefinedCredentialType",
-        "fieldsToInclude": "selected",
-        "parametersQuery": {
+        "url": "https://api.firecrawl.dev/v1/search",
+        "method": "POST",
+        "sendBody": true,
+        "dataField": "data",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "parametersBody": {
           "values": [
             {
-              "name": "q"
+              "name": "query"
+            },
+            {
+              "name": "limit",
+              "value": "5",
+              "valueProvider": "fieldValue"
             }
           ]
         },
+        "fields": "url,title,description",
+        "fieldsToInclude": "selected",
         "toolDescription": "Call this tool to check if a company profile exists in either crunchbase, wellfound or linkedin.\n* To check if a company has a crunchbase profile, use the query \"site: https://crunchbase.com/organizations (company)\"\n* To check if a company has a wellfound profile, use the query \"site: https://wellfound.com/company (company)\"\n* To check if a company has a linked company profile, use the query \"site: https://linkedin.com/company (company)\"",
-        "optimizeResponse": true,
-        "nodeCredentialType": "serpApi"
+        "optimizeResponse": true
       },
       "credentials": {
-        "serpApi": {
-          "id": "aJCKjxx6U3K7ydDe",
-          "name": "SerpAPI account"
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -357,8 +363,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -372,27 +378,33 @@
         -40
       ],
       "parameters": {
-        "url": "https://serpapi.com/search",
-        "fields": "position,title,link,snippet,source",
-        "dataField": "organic_results",
-        "sendQuery": true,
-        "authentication": "predefinedCredentialType",
-        "fieldsToInclude": "selected",
-        "parametersQuery": {
+        "url": "https://api.firecrawl.dev/v1/search",
+        "method": "POST",
+        "sendBody": true,
+        "dataField": "data",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "parametersBody": {
           "values": [
             {
-              "name": "q"
+              "name": "query"
+            },
+            {
+              "name": "limit",
+              "value": "5",
+              "valueProvider": "fieldValue"
             }
           ]
         },
+        "fields": "url,title,description",
+        "fieldsToInclude": "selected",
         "toolDescription": "Call this tool to query the company's profile website.\nExamples could include \"(company) pricing\", \"(company) plans\", \"(company) features\" etc",
-        "optimizeResponse": true,
-        "nodeCredentialType": "serpApi"
+        "optimizeResponse": true
       },
       "credentials": {
-        "serpApi": {
-          "id": "aJCKjxx6U3K7ydDe",
-          "name": "SerpAPI account"
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -427,8 +439,8 @@
       },
       "credentials": {
         "anthropicApi": {
-          "id": "anthropic-main",
-          "name": "anthropic-main"
+          "id": "gCyMjn0UNkoITkmk",
+          "name": "Anthropic account"
         }
       },
       "typeVersion": 1.3
@@ -442,29 +454,30 @@
         20
       ],
       "parameters": {
-        "url": "https://serpapi.com/search",
-        "fields": "position,title,link,snippet,source",
-        "dataField": "organic_results",
-        "sendQuery": true,
-        "authentication": "predefinedCredentialType",
-        "fieldsToInclude": "selected",
-        "parametersQuery": {
+        "url": "https://api.firecrawl.dev/v1/search",
+        "method": "POST",
+        "sendBody": true,
+        "dataField": "data",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "parametersBody": {
           "values": [
             {
-              "name": "q",
+              "name": "query",
               "value": "{company_or_product} reviews (site:trustpilot.com OR site:producthunt.com)",
               "valueProvider": "fieldValue"
             },
             {
-              "name": "num",
-              "value": "3",
+              "name": "limit",
+              "value": "5",
               "valueProvider": "fieldValue"
             }
           ]
         },
+        "fields": "url,title,description",
+        "fieldsToInclude": "selected",
         "toolDescription": "Call this tool to search for customer reviews for the desired company or their product/service.",
         "optimizeResponse": true,
-        "nodeCredentialType": "serpApi",
         "placeholderDefinitions": {
           "values": [
             {
@@ -475,9 +488,9 @@
         }
       },
       "credentials": {
-        "serpApi": {
-          "id": "aJCKjxx6U3K7ydDe",
-          "name": "SerpAPI account"
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -526,8 +539,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "OUOnyTkL9vHZNorB",
-          "name": "Firecrawl API"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -562,117 +575,11 @@
       },
       "credentials": {
         "anthropicApi": {
-          "id": "anthropic-main",
-          "name": "anthropic-main"
+          "id": "gCyMjn0UNkoITkmk",
+          "name": "Anthropic account"
         }
       },
       "typeVersion": 1.3
-    },
-    {
-      "id": "fbc2e1c1-7851-4fbb-b46c-9fa35eacd810",
-      "name": "Insert Into Notion",
-      "type": "n8n-nodes-base.notion",
-      "position": [
-        3520,
-        -240
-      ],
-      "parameters": {
-        "title": "={{ $json.output.company_name }}",
-        "blockUi": {
-          "blockValues": [
-            {
-              "type": "heading_1",
-              "textContent": "={{ $json.output.company_name }}"
-            },
-            {
-              "textContent": "=Report generated on {{ $now.format('dd MMM yyyy') }}"
-            },
-            {
-              "type": "heading_2",
-              "textContent": "Company Overview"
-            },
-            {
-              "textContent": "=Offices:\n{{ $json.output.offices.map(item => `${item.address}, ${item.city}`).join('\\n') }}\n\nYear Founded:\n{{ $json.output.year_founded }}\n\nFounders:\n{{ $json.output.founders.map(item => `${item.name} (${item.linkedIn})`).join('\\n') }}\n\nCEO:\n{{ $json.output.ceo.map(item => `${item.name} (${item.linkedIn})`).join('\\n') }}\n\nEmployees:\n{{ $json.output.employees.map(item => `${item.name} - ${item.role}, (${item.linkedIn})`).join('\\n') }}\n\nOpen Roles:\n{{ $json.output.open_jobs.map(item => `${item.role} (${item.published}), ${item.description}`).join('\\n') }}"
-            },
-            {
-              "type": "heading_2",
-              "textContent": "Company Funding"
-            },
-            {
-              "textContent": "=Money Raised:\n{{ $json.output.money_raised || 'unknown' }}\n\nFunding Status:\n{{ $json.output.funding_status }}\n\nYoY Customer Growth:\n{{ $json.output.yoy_customer_growth || 'unknown' }}\n\nAnnual Revenue:\n{{ $json.output.annual_revenue || 'unknown' }}\n\nYoY Revenue Growth:\n{{ $json.output.yoy_revenue_growth || 'unknown' }}\n\nInvestors:\n{{ $json.output.investors.map(item => `${item.name}, ${item.description} (${item.linkedIn})`).join('\\n') }}\n\nCustomers:\n{{ $json.output.customers.map(item => `${item.name} (${item.url})`).join('\\n') }}"
-            },
-            {
-              "type": "heading_2",
-              "textContent": "Company News"
-            },
-            {
-              "textContent": "={{ $json.output.latest_articles.length ? $json.output.latest_articles.map(item =>\n`**${item.title}**\n${item.url}\n${item.published_date} | ${item.snippet}\n`).join('\\n') : 'None Found' }}"
-            },
-            {
-              "type": "heading_2",
-              "textContent": "Product Offering"
-            },
-            {
-              "textContent": "=Features:\n{{ $json.output.features.map(item => `${item.name} - ${item.description.split('.')[0]}.`).join('\\n') }}\n"
-            },
-            {
-              "textContent": "=Pricing Plans:\n{{ $json.output.pricing_plans.map(item =>\n`${item.name} - ${item.price} (${item.tier})\n* ${item.description}`\n).join('\\n\\n') }}\n\nFactors that Impact Price:\n{{ $json.output.factors_that_impact_price.map(item => `${item.factor} - ${item.description}`).join('\\n') }}\n\nCurrent Discounts and/or Promotions:\n{{ $json.output.discounts_promotions.length ? $json.output.discounts_promotions.map(item =>\n `${item.offer} (${item.start} - ${item.end})\n* ${item.description}`\n).join('\\n\\n') : '* None Found' }}\n\nCustom Plans:\n{{ $json.output.custom_plans.is_available ? (\n `${$json.output.custom_plans.applicable_for} - ${$json.output.custom_plans.price}\n* ${$json.output.custom_plans.description}`\n) : 'Not applicable' }}\n\nFree Trials:\n{{ $json.output.free_trial.is_available ? (\n `${$json.output.free_trial.applicable_for} - ${$json.output.free_trial.price}\n* ${$json.output.free_trial.description}`\n) : 'Not applicable' }}\n\nFreemium Version:\n{{ $json.output.freemium_version.is_available ? (\n `${$json.output.freemium_version.applicable_for} - ${$json.output.freemium_version.price}\n* ${$json.output.freemium_version.description}`\n) : 'Not applicable' }}\n\nComplimentary Tools:\n{{ $json.output.complementary_tools.map(item =>\n `${item.name} - ${item.price}\n* ${item.description}`\n).join('\\n\\n') }}"
-            },
-            {
-              "type": "heading_2",
-              "textContent": "=Product Reviews"
-            },
-            {
-              "textContent": "=Number of Reviews: {{ $json.output.number_of_reviews }}\nPositive Mentions (%): {{ $json.output['positive_mentions_%'] }} \nNegative Mentions (%): {{ $json.output['negative_mentions_%'] }} \n\nTop Pros:\n{{ $json.output.top_pros.length ? $json.output.top_pros.map(item => `* ${item}`).join('\\n'): '* None Found' }}\n\nTop Cons:\n{{ $json.output.top_cons.length ? $json.output.top_cons.map(item => `* ${item}`).join('\\n') : '* None Found' }} \n\nTop Countries:\n{{ $json.output.top_countries.length ? $json.output.top_countries.map(item => `* ${item}`).join('\\n') : '* None Found' }}\n\nTop Social Media Platforms:\n{{ $json.output.top_social_media_platforms.length ? $json.output.top_social_media_platforms.map(item => `* ${item}`).join('\\n') : '* None Found' }}"
-            }
-          ]
-        },
-        "options": {},
-        "resource": "databasePage",
-        "databaseId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "2d1c3c72-6e8e-42f3-aece-c6338fd24333",
-          "cachedResultUrl": "https://www.notion.so/2d1c3c726e8e42f3aecec6338fd24333",
-          "cachedResultName": "n8n Competitor Analysis"
-        },
-        "propertiesUi": {
-          "propertyValues": [
-            {
-              "key": "Founded|rich_text",
-              "textContent": "={{ $json.output.year_founded }}"
-            },
-            {
-              "key": "Funding Status|rich_text",
-              "textContent": "={{ $json.output.funding_status }}"
-            },
-            {
-              "key": "Money Raised|rich_text",
-              "textContent": "={{ $json.output.money_raised || ''}}"
-            },
-            {
-              "key": "Positive Reviews (%)|rich_text",
-              "textContent": "={{ $json.output['positive_mentions_%'] }}%"
-            },
-            {
-              "key": "Pros|rich_text",
-              "textContent": "={{ $json.output.top_pros.join(', ') }}"
-            },
-            {
-              "key": "Cons|rich_text",
-              "textContent": "={{ $json.output.top_cons.join(', ') }}"
-            }
-          ]
-        }
-      },
-      "credentials": {
-        "notionApi": {
-          "id": "iHBHe7ypzz4mZExM",
-          "name": "Notion account"
-        }
-      },
-      "typeVersion": 2.2,
-      "disabled": true
     },
     {
       "id": "ec6b578d-4808-4613-881b-67dbcf30f641",
@@ -742,8 +649,8 @@
       },
       "credentials": {
         "httpHeaderAuth": {
-          "id": "BWhPl6CgBKn3UJca",
-          "name": "Exa.ai"
+          "id": "iWxjsiUQuDCE8Q2z",
+          "name": "Exa.AI"
         }
       },
       "typeVersion": 4.2
@@ -757,36 +664,33 @@
         20
       ],
       "parameters": {
-        "url": "https://serpapi.com/search",
-        "fields": "position,title,link,snippet,source",
+        "url": "https://api.firecrawl.dev/v1/search",
+        "method": "POST",
         "sendBody": true,
-        "dataField": "organic_results",
-        "authentication": "predefinedCredentialType",
+        "dataField": "data",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "parametersBody": {
           "values": [
             {
-              "name": "q"
+              "name": "query"
             },
             {
-              "name": "engine",
-              "value": "google_news",
+              "name": "limit",
+              "value": "5",
               "valueProvider": "fieldValue"
             }
           ]
         },
+        "fields": "url,title,description",
         "fieldsToInclude": "selected",
         "toolDescription": "Call this tool to search for the latest news articles of a company.",
-        "optimizeResponse": true,
-        "nodeCredentialType": "serpApi"
+        "optimizeResponse": true
       },
       "credentials": {
-        "serpApi": {
-          "id": "aJCKjxx6U3K7ydDe",
-          "name": "SerpAPI account"
-        },
         "httpHeaderAuth": {
-          "id": "BWhPl6CgBKn3UJca",
-          "name": "Exa.ai"
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
         }
       },
       "typeVersion": 1
@@ -1017,35 +921,54 @@
       "typeVersion": 1.6
     },
     {
-      "id": "787bb405-1744-43b7-8c47-1a2c23331e05",
-      "name": "Sticky Note8",
-      "type": "n8n-nodes-base.stickyNote",
+      "id": "sheets-append-schoolswp",
+      "name": "Append to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        3480,
-        -260
+        3520,
+        -240
       ],
       "parameters": {
-        "width": 181.85939799093455,
-        "height": 308.12010511833364,
-        "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n### 🚨Required!\nRemember to set your Notion Database here."
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1kOJZBpcKP3rz_TTrjxZcdHP4YhEa-QZLaba3HCCJTR0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1kOJZBpcKP3rz_TTrjxZcdHP4YhEa-QZLaba3HCCJTR0/edit",
+          "cachedResultName": "schoolsWP - Veille Concurrence"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "veille-concurrence"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "schema": [],
+          "value": {
+            "date": "={{ $now.format(\"yyyy-MM-dd\") }}",
+            "concurrent": "={{ $json.output.company_name || \"\" }}",
+            "url": "={{ $json.output.company_website || \"\" }}",
+            "annee_fondation": "={{ $json.output.year_founded || \"\" }}",
+            "funding_status": "={{ $json.output.funding_status || \"\" }}",
+            "money_raised": "={{ $json.output.money_raised || \"\" }}",
+            "features_top3": "={{ ($json.output.features || []).slice(0,3).map(f => f.name).join(\", \") }}",
+            "pricing_range": "={{ ($json.output.pricing_plans || [{}])[0].price || \"\" }}",
+            "positive_pct": "={{ $json.output[\"positive_mentions_%\"] || \"\" }}",
+            "top_pros": "={{ ($json.output.top_pros || []).slice(0,3).join(\" | \") }}",
+            "top_cons": "={{ ($json.output.top_cons || []).slice(0,3).join(\" | \") }}",
+            "last_news": "={{ ($json.output.latest_articles || [{}])[0].title || \"\" }}"
+          }
+        },
+        "options": {}
       },
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Adaptations schoolsWP restantes (manuelles)\n\n**1. Remplacer le node Notion par Google Sheets**\nLe node 'Insert Into Notion' est DESACTIVE. A remplacer par un node Google Sheets :\n- Opération : Append Row\n- Spreadsheet : [ID Sheet à créer]\n- Sheet name : 'veille-concurrence'\n- Colonnes attendues : date | concurrent | url | resume | categorie | signal | priorite\n- Credential : google-sheets-schoolswp\n\n**2. Ajouter un node Discord (notification nouveautes)**\nAprès le Sheets Append, ajouter :\n- Node : Discord\n- Opération : Send Message via webhook\n- Webhook : [URL webhook Discord à creer sur serveur schoolsWP]\n- Template message : \"[VEILLE] {{ $json.concurrent }} : {{ $json.signal }} - {{ $json.url }}\"\n\n**3. Prerequis Exa.ai**\nLes 10 nodes 'Exa.ai' utilisent un credential HTTP a configurer :\n- Creer compte sur exa.ai (free tier = 1000 req/mois)\n- Creer credential HTTP Header Auth avec x-api-key = [EXA_API_KEY]\n- Nommer le credential 'exa-ai-schoolswp'\n- Referencer ce credential dans les 10 nodes toolHttpRequest\n\n**4. Themes de recherche**\nAdapter le prompt du premier AI Agent pour cibler :\n'WordPress plugins + LMS + CRM + automation francophone'\nThematique large pour decouverte d acteurs.\n\n**5. Frequence**\nSchedule trigger configure pour Lundi 8h (cron : 0 8 * * 1).\nAjustable dans SCHED1_WeeklyMonday8am.\n",
-        "height": 600,
-        "width": 700,
-        "color": 4
-      },
-      "id": "sticky-schoolswp-adaptations",
-      "name": "schoolsWP Adaptations TODO",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -800,
-        -400
-      ]
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1087,7 +1010,7 @@
       "main": [
         [
           {
-            "node": "Insert Into Notion",
+            "node": "Append to Sheet",
             "type": "main",
             "index": 0
           }
@@ -1211,17 +1134,6 @@
           {
             "node": "Company Overview Agent",
             "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Insert Into Notion": {
-      "main": [
-        [
-          {
-            "node": "2sec",
-            "type": "main",
             "index": 0
           }
         ]
@@ -1375,6 +1287,17 @@
         [
           {
             "node": "Set Source Company",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append to Sheet": {
+      "main": [
+        [
+          {
+            "node": "2sec",
             "type": "main",
             "index": 0
           }

@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "skill_name": "mini-offer-builder",
+    "skill_path": "d:/VS Code/CLAUDE CODE/.claude/skills/ops/mini-offer-builder",
+    "executor_model": "claude-opus-4-6",
+    "timestamp": "2026-04-06T21:00:00Z",
+    "iteration": 1,
+    "iteration_label": "v2-ameliore (pre-remplissage + top3 + 3 versions)",
+    "evals_run": [1, 2, 3],
+    "runs_per_configuration": 1,
+    "previous_iteration": "2026-03-28 (baseline originale)"
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "wordpress-freelances-complete-input",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.83,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 78.9,
+        "tokens": 27704,
+        "tool_calls": 4,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Produit exactement 5 promesses numérotées", "passed": true, "evidence": "5 promesses numérotées de 1 à 5"},
+        {"text": "Chaque promesse accompagnée d'une explication", "passed": true, "evidence": "Chaque a → Pourquoi"},
+        {"text": "Tutoiement systématique", "passed": true, "evidence": "tu/ton/ta cohérent"},
+        {"text": "Pas de mécanisme ni nom prématuré", "passed": true, "evidence": "S'arrête après promesses"},
+        {"text": "Aucun mot interdit schoolsWP", "passed": false, "evidence": "'hack' utilisé ligne 21"},
+        {"text": "Demande de choisir/ajuster", "passed": true, "evidence": "Question de validation en fin"}
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "wordpress-freelances-complete-input",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.33,
+        "passed": 2,
+        "failed": 4,
+        "total": 6,
+        "time_seconds": 106.5,
+        "tokens": 25477,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Produit exactement 5 promesses numérotées", "passed": false, "evidence": "Une seule promesse"},
+        {"text": "Chaque promesse accompagnée d'une explication", "passed": false, "evidence": "Pas le format attendu"},
+        {"text": "Tutoiement systématique", "passed": true, "evidence": "Cohérent"},
+        {"text": "Pas de mécanisme ni nom prématuré", "passed": false, "evidence": "Tout livré d'un bloc"},
+        {"text": "Aucun mot interdit schoolsWP", "passed": true, "evidence": "RAS"},
+        {"text": "Demande de choisir/ajuster", "passed": false, "evidence": "Résultat final, pas de choix"}
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "coaching-mamans-incomplete-input",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 80.0,
+        "tokens": 27546,
+        "tool_calls": 4,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Pose les questions manquantes", "passed": true, "evidence": "3 questions structurées avec exemples"},
+        {"text": "Ne propose pas de promesses", "passed": true, "evidence": "Aucune promesse"},
+        {"text": "Tutoiement", "passed": true, "evidence": "Cohérent"},
+        {"text": "Ton coach bienveillant", "passed": true, "evidence": "Direct et encourageant"},
+        {"text": "Accuse réception de la niche", "passed": true, "evidence": "Reformule et valide"}
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "coaching-mamans-incomplete-input",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 89.0,
+        "tokens": 25374,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "Pose les questions manquantes", "passed": true, "evidence": "Questions posées en haut"},
+        {"text": "Ne propose pas de promesses", "passed": false, "evidence": "3 offres complètes sans attendre"},
+        {"text": "Tutoiement", "passed": true, "evidence": "Cohérent"},
+        {"text": "Ton coach bienveillant", "passed": false, "evidence": "Pushy, 'Garantie' = mot interdit"},
+        {"text": "Accuse réception de la niche", "passed": true, "evidence": "Validé"}
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "productivite-solopreneurs-complete-input",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 98.7,
+        "tokens": 28595,
+        "tool_calls": 7,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "5 promesses avec justification", "passed": true, "evidence": "5 promesses numérotées + Pourquoi"},
+        {"text": "Ordre séquentiel strict", "passed": true, "evidence": "Que des promesses, pas de suite"},
+        {"text": "Promesses spécifiques à la cible", "passed": true, "evidence": "60h→35h, CA, solopreneurs"},
+        {"text": "Tutoiement", "passed": true, "evidence": "Cohérent"},
+        {"text": "Aucun mot interdit", "passed": true, "evidence": "Vocabulaire concret"}
+      ]
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "productivite-solopreneurs-complete-input",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 98.3,
+        "tokens": 25314,
+        "tool_calls": 2,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "5 promesses avec justification", "passed": false, "evidence": "1 seule promesse puis tout d'un bloc"},
+        {"text": "Ordre séquentiel strict", "passed": false, "evidence": "Promesse+mécanisme+nom en un seul doc"},
+        {"text": "Promesses spécifiques à la cible", "passed": true, "evidence": "Bien ciblé solopreneurs"},
+        {"text": "Tutoiement", "passed": true, "evidence": "Cohérent"},
+        {"text": "Aucun mot interdit", "passed": true, "evidence": "RAS"}
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 0.94, "stddev": 0.10, "min": 0.83, "max": 1.0},
+      "time_seconds": {"mean": 85.9, "stddev": 11.2, "min": 78.9, "max": 98.7},
+      "tokens": {"mean": 27948, "stddev": 541, "min": 27546, "max": 28595}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.51, "stddev": 0.15, "min": 0.33, "max": 0.6},
+      "time_seconds": {"mean": 97.9, "stddev": 8.8, "min": 89.0, "max": 106.5},
+      "tokens": {"mean": 25388, "stddev": 82, "min": 25314, "max": 25477}
+    },
+    "delta": {
+      "pass_rate": "+0.43",
+      "time_seconds": "-12.0",
+      "tokens": "+2560"
+    }
+  },
+  "notes": [
+    "Le skill améliore significativement le respect du processus séquentiel (+43% pass rate)",
+    "Le tutoiement passe systématiquement dans les deux configurations — non discriminant",
+    "Un mot interdit ('hack') a échappé au contrôle dans eval 1 with_skill — à renforcer dans le skill",
+    "Le baseline livre systématiquement tout d'un bloc (promesse+mécanisme+nom) sans validation intermédiaire",
+    "Le skill est plus rapide en moyenne (-12s) malgré plus de tokens, probablement car la structure est plus claire",
+    "Eval 2 (input incomplet) montre la plus grande différence : with_skill 100% vs baseline 60%"
+  ]
+}

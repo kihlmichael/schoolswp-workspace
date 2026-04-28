@@ -9,6 +9,10 @@ description: |
   "variations de landing", "page de vente HTML", "lander pour [plugin]", "page conversion".
   Utilise ce skill meme si l'utilisateur dit simplement "fais-moi une page pour X" ou
   "je veux promouvoir ce plugin" — des qu'il y a un produit WordPress/SaaS a mettre en avant.
+  NE PAS utiliser pour : page de vente d'une offre propre schoolsWP (voir `mini-offre-page-de-vente`),
+  landing page de capture newsletter / lead magnet (voir `lead-magnet-schoolswp`),
+  séquence email de découverte plugin (voir `plugin-email-sequence`),
+  réécriture d'un texte existant pour la conversion (voir `rewrite-conversion`).
 allowed-tools:
   - Bash(firecrawl *)
   - Bash(npx firecrawl *)

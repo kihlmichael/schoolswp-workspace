@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <style>
+    .burger-wrapper {
+      cursor: pointer;
+    }
+
+    #top-bun,
+    #lettuce,
+    #tomato,
+    #patty,
+    #cheese,
+    #bottom-bun {
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .burger-wrapper:hover #top-bun    { transform: translateY(-38px); }
+    .burger-wrapper:hover #lettuce    { transform: translateY(-22px); }
+    .burger-wrapper:hover #tomato     { transform: translateY(-11px); }
+    .burger-wrapper:hover #cheese     { transform: translateY(11px); }
+    .burger-wrapper:hover #patty      { transform: translateY(22px); }
+    .burger-wrapper:hover #bottom-bun { transform: translateY(38px); }
+  </style>
+
+  <g class="burger-wrapper">
+
+    <g id="top-bun">
+      <path d="M62,96 Q62,70 100,70 Q138,70 138,96 Z" fill="#D4882A"/>
+      <rect x="62" y="94" width="76" height="8" rx="2" fill="#C07820"/>
+    </g>
+
+    <g id="lettuce">
+      <path
+        d="M55,104
+           Q60,98 67,102 Q72,96 79,101 Q85,95 93,100
+           Q99,94 107,100 Q113,95 121,101
+           Q127,96 134,102 Q141,98 145,104
+           Q141,110 134,108 Q127,112 121,107
+           Q113,112 107,107 Q99,112 93,107
+           Q85,112 79,108 Q72,112 67,108 Q60,110 55,104 Z"
+        fill="#5A9E3A"
+      />
+    </g>
+
+    <g id="tomato">
+      <rect x="63" y="108" width="74" height="9" rx="4" fill="#D93B2B"/>
+      <line x1="100" y1="108" x2="100" y2="117" stroke="#C0321F" stroke-width="1" opacity="0.5"/>
+      <line x1="82"  y1="108" x2="82"  y2="117" stroke="#C0321F" stroke-width="1" opacity="0.35"/>
+      <line x1="118" y1="108" x2="118" y2="117" stroke="#C0321F" stroke-width="1" opacity="0.35"/>
+    </g>
+
+    <g id="cheese">
+      <polygon points="58,117 142,117 146,126 54,126" fill="#F5C518"/>
+    </g>
+
+    <g id="patty">
+      <rect x="61" y="126" width="78" height="14" rx="5" fill="#3B1F0E"/>
+      <rect x="64" y="128" width="72" height="4" rx="2" fill="#4E2A12" opacity="0.5"/>
+    </g>
+
+    <g id="bottom-bun">
+      <rect x="60" y="140" width="80" height="10" rx="5" fill="#C07820"/>
+    </g>
+
+  </g>
+</svg>

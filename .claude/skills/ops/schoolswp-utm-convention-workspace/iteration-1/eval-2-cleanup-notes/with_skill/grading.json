@@ -1,0 +1,39 @@
+{
+  "expectations": [
+    {
+      "text": "Tranche sur chaque point flottant des notes (newsletter vs email, majuscules, medium YouTube, ClickWhale, affiliate vs affiliation, tirets vs underscores)",
+      "passed": true,
+      "evidence": "Section 'Points tranchés' liste 9 décisions : (1) newsletter vs email → newsletter pour source, email pour medium ; (2) LinkedIn minuscules → linkedin ; (3) YouTube medium=video ; (4) ClickWhale source=clickwhale ; (5) affiliés medium=affiliate ; (6) tirets uniquement ; (7) utm_content usage ; (8) utm_term campagnes payantes ; (9) UTMs liens internes. Tous les points flottants sont couverts."
+    },
+    {
+      "text": "Inclut une section ou liste 'Points tranchés' explicite",
+      "passed": true,
+      "evidence": "Section '## Points tranchés' explicite en fin de document (lignes 264-284), avec 9 points numérotés listant les décisions prises."
+    },
+    {
+      "text": "Tranche clairement : NE PAS mettre d'UTMs sur les liens internes (avec explication GA4)",
+      "passed": true,
+      "evidence": "Point 9 de 'Points tranchés' : 'UTMs sur les liens internes dans les articles → tranché : non, jamais sur le maillage interne.' + Section 6 'Quand NE PAS mettre des UTMs' : 'GA4 considérerait la session comme une nouvelle session avec source=schoolswp, écrasant la vraie source d'origine (ex: LinkedIn).'"
+    },
+    {
+      "text": "Recommande 'newsletter' (pas 'email') comme source pour FluentCRM",
+      "passed": true,
+      "evidence": "Point 1 de 'Points tranchés' : 'newsletter vs email pour les sources email → tranché : utm_source=newsletter'. Tableau section 3 : 'newsletter | email | Emails FluentCRM (newsletters, séquences)'."
+    },
+    {
+      "text": "Recommande 'linkedin' en minuscules (pas 'LinkedIn')",
+      "passed": true,
+      "evidence": "Point 2 de 'Points tranchés' : 'LinkedIn avec ou sans majuscule → tranché : utm_source=linkedin — tout en minuscules, sans exception. GA4 est case-sensitive.' Section 2 utm_source : valeur 'linkedin' en minuscules."
+    },
+    {
+      "text": "Recommande tirets (pas underscores) avec justification cohérence",
+      "passed": true,
+      "evidence": "Point 6 de 'Points tranchés' : 'Tirets ou underscores dans les campagnes → tranché : tirets uniquement. lms-wordpress partout, jamais lms_wordpress.' Section 2 utm_campaign : 'Règle : toujours en tirets, jamais en underscores.' Section 7 erreur 2 : 'lms_wordpress sera affiché comme lms wordpress dans certains outils'."
+    },
+    {
+      "text": "Explique utm_content et utm_term avec cas d'usage concrets",
+      "passed": true,
+      "evidence": "utm_content section 2 : 'Permet de différencier plusieurs liens qui pointent vers la même URL dans une même campagne. Utile quand tu as plusieurs CTAs dans un même email.' Exemples concrets : cta-header, cta-footer, bouton-principal. utm_term section 2 : 'Réservé aux campagnes payantes' avec exemples lms-wordpress, tutor-lms, crm-wordpress. Point 7 de 'Points tranchés' précise usage conditionnel."
+    }
+  ]
+}

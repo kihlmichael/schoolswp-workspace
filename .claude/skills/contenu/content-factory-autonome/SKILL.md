@@ -1,7 +1,12 @@
 ---
 name: content-factory-autonome
-description: Operer la Content Factory autonome schoolsWP (detection -> priorisation -> production -> audit -> optimisation -> decision). Utiliser quand l’utilisateur veut un systeme editorial pilote par score, des prompts d’analyse, et des regles de publication.
+description: (fusionné dans brain-autonome - archivé - ne pas auto-déclencher)
 ---
+
+> **Statut : fusionné dans `brain-autonome` le 2026-04-16.**
+> Ce skill ne se déclenche plus automatiquement. Toute sa logique (détection d'opportunités, seuils de décision chiffrés, boucle d'amélioration, auto-audit) a été absorbée dans `brain-autonome`.
+> Pour tout arbitrage éditorial / priorisation / décision publier-optimiser-abandonner : utiliser `brain-autonome`.
+> Conservation temporaire de ce fichier uniquement pour référence. Suppression manuelle à faire via l'explorateur Windows après période d'observation.
 
 # Content Factory Autonome — schoolsWP
 

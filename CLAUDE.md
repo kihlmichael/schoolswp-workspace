@@ -2,11 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Trois systèmes d'agents distincts — ne pas confondre :**
+> **Quatre systèmes d'agents distincts, ne pas confondre :**
 >
 > - `core/agents-py/` — scripts Python (28 modules CLI, lancés via `.venv/Scripts/python -m agents.<module>.cli`)
-> - `agents/*.md` — fichiers de config Claude Code subagents (frontmatter YAML : name, model, description)
-> - `schoolswp-agents/` — fleet de 4 instances Claude Code autonomes, chacune avec son propre `CLAUDE.md`
+> - `.claude/agents/*.md` — sub-agents Claude Code projet (13 spécialistes dispatchés via Agent tool, table « Project Sub-Agents » plus bas)
+> - `agents/*.md` (racine) — legacy Claude Code subagents (à migrer vers `.claude/agents/`)
+> - `schoolswp-agents/` — fleet de 4 instances Claude Code autonomes (process séparé), chacune avec son propre `CLAUDE.md`
 
 ## Data Safety — Suppressions
 
@@ -34,6 +35,8 @@ Avant toute tâche, lire dans cet ordre :
 1. `core/tasks/todo.md` — état de la mission en cours
 2. `core/tasks/lessons.md` — leçons documentées (obligatoire avant tout refactoring d'agents)
 3. `CLAUDE.local.md` — contraintes temporaires de session (s'il contient quelque chose)
+
+**Garde-fous comportementaux** : `.claude/rules/karpathy-principles.md` — 4 principes (think before coding, simplicity first, surgical changes, goal-driven execution). Pas auto-chargés via `paths:` ; à consulter avant tout refactoring ou tâche d'édition non-triviale.
 
 ## Python Environment
 
@@ -89,9 +92,13 @@ Table complète des 28 modules dans `.claude/rules/python-agents.md`.
 .venv/Scripts/python -m ruff format core/agents-py/   # format
 ```
 
-Hook `ruff-check.sh` auto-exécuté après chaque Edit/Write sur `.py`.
+**Claude Code hooks actifs** (.claude/hooks/, registered in .claude/settings.json) :
 
-Hook `prettier-format.sh` auto-exécuté après chaque Edit/Write sur `.js/.ts/.tsx/.json/.md/.css/.scss/.yml/.html` (utilise `npx prettier --write`).
+- ruff-check (PostToolUse Edit/Write .py) : lint + format auto
+- prettier-format (PostToolUse Edit/Write JS/TS/JSON/MD/CSS/YML/HTML) : `npx prettier --write`
+- dangerous-actions-blocker (PreToolUse Bash) : bloque commandes destructives (rm sur root, dd if, mkfs, fork bombs)
+- output-secrets-scanner (PostToolUse) : scanne les outputs pour API keys / tokens / private keys
+- prompt-injection-detector (PreToolUse Bash/Write/Edit/WebFetch) : détecte role override, delimiter injection, nested cmd. **Attention** : faux positifs fréquents quand le contenu Edit/Write contient certains mots-clés sécurité ou des extensions de fichier shell entre backticks. Voir mémoire `feedback_hook_backtick_bug.md`.
 
 **Tests :**
 
@@ -117,9 +124,9 @@ async def test_mon_agent_run(fake_env):
     # Ne pas appeler l'API réelle — mocker call_llm ou utiliser mock_anthropic_client
 ```
 
-Coverage minimum : 50% (`fail_under` dans `pyproject.toml`). Les `cli.py` sont exclus de la couverture.
+Coverage : voir section CI plus bas.
 
-**Slash commands projet** (`.claude/commands/`) : `/audit`, `/brain-lite`, `/cocon-batch`, `/publish-repo`, `/skill-creator`, `/todo`, `/aidesigner`
+**Slash commands projet** (`.claude/commands/`) : `/audit`, `/audit-codebase`, `/brain-lite`, `/cocon-batch`, `/publish-repo`, `/skill-creator`, `/todo`, `/aidesigner`
 
 ## JS Dependencies
 
@@ -145,9 +152,33 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 
 - `agents/` (racine) — **namespace package vide**, pas du code. Les CLI font `sys.path.insert(0, project_root)` pour résoudre `agents.*` vers `core/agents-py/`. `agents/*.md` = configs Claude Code subagents (YAML frontmatter). `agents/telegram-claude/` = sous-repo Node.js (pont Telegram, own `.git`).
 - `core/agents-py/` — source des 28 agents Python. Distinct de `core/agents-md/` (system prompts LLM en markdown) et de `schoolswp-agents/` (fleet Claude Code autonome avec leurs propres `CLAUDE.md` + `soul.md` + mémoire).
-- `apps/video-marketing/` et `apps/vscode-agent-visual/` ont leur propre `CLAUDE.md`. `apps/_archive/` et `apps/_prototypes/` à ignorer.
+- `apps/video-marketing/` et `apps/vscode-agent-visual/` ont leur propre `CLAUDE.md`. `apps/hyperframes/` = scaffold Remotion+FFmpeg (skills `external-hyperframes/` + `external-liveavatar/`, install npm pas encore lancé). `apps/_archive/` et `apps/_prototypes/` à ignorer.
+- `tools/wp-media-upload/` — pipeline upload images articles vers schoolswp.com avec métadonnées SEO complètes (XPTitle, alt, etc.) + auto-backup + strip préfixe numérique. Commandes `cli.py init/list/upload`. Michael invoque "upload les images de l'article X", je pilote.
+  - **Prérequis bloquant** : ExifTool installé via winget user scope (`AppData/Local/Programs/ExifTool/`) hors PATH système. Exporter le dossier au PATH avant chaque appel `cli.py upload` sinon "ExifTool not found".
 - **Racine** : 9 scripts Python one-shot (`fix_workflow.py`, `patch_*.py`) = maintenance n8n via API. `gmail-filters.xml` = config persistante réimportable dans Gmail Settings.
 - Sub-CLAUDE.md auto-chargés : `core/agents-py/`, `systems/n8n/`, `apps/video-marketing/`, `apps/vscode-agent-visual/`.
+
+## Project Sub-Agents (`.claude/agents/`)
+
+13 sub-agents Claude Code dispatchés via le tool Agent (parallélisable, contexte isolé). Différents de la fleet `schoolswp-agents/` (instances autonomes en process séparé) et des agents Python (`core/agents-py/`, scripts CLI).
+
+| Agent | Rôle |
+| --- | --- |
+| `studio` | Rédaction articles, newsletters, scripts vidéo, briefs éditoriaux |
+| `radar` | SEO/GEO : cocons sémantiques, briefs, keyword analysis, maillage |
+| `pulse` | Social media copy (LinkedIn, Bluesky, Pinterest text, YouTube) |
+| `flow` | CRM/automation : FluentCRM, OttoKit, n8n, Fluent Forms |
+| `pinterest-expert` | Audit / Ads / scaling Pinterest (méthode Bermond) |
+| `seo-specialist` | Audits techniques SEO, schema, Core Web Vitals |
+| `aidesigner-frontend` | UI / landing / dashboard via MCP aidesigner |
+| `framework-adapter-fr` | Adaptation EN→FR de frameworks et docs stratégiques |
+| `adr-writer` | Architecture Decision Records (read-only, pattern Nygard) |
+| `plan-challenger` | Review adversariale de plans d'implémentation (read-only) |
+| `output-evaluator` | LLM-as-Judge, qualité avant commit/action (read-only) |
+| `harness-optimizer` | Tuning du harness Claude Code (reliability, cost, throughput) |
+| `silent-failure-hunter` | Détecte erreurs avalées, fallbacks dangereux (read-only) |
+
+Le quartet `studio` / `radar` / `pulse` / `flow` mirror la fleet `schoolswp-agents/` mais en sub-agents projet (dispatchables en parallèle dans la session courante).
 
 ## Multi-Agent Fleet (`schoolswp-agents/`)
 
@@ -217,6 +248,30 @@ Règles chargées automatiquement quand Claude **lit un fichier** correspondant 
 
 Instance : `https://schoolswp-n8n.wp1.host`. Ne jamais modifier les JSON de workflow à la main — passer par le MCP `n8n-mcp`. Détails (typeVersions, contraintes Code node, nommage) : `.claude/rules/n8n-integration.md`.
 
+## MCP Servers
+
+Configurés dans `.mcp.json` (gitignored, template `.mcp.json.example`) :
+
+| Serveur | Usage |
+| --- | --- |
+| `n8n-mcp` | Workflows n8n (CRUD, exécutions, audit) |
+| `novamira-schoolswp-com` | REST API WordPress schoolswp.com (abilities discovery + execution) |
+| `gsc-mcp` | Google Search Console (analytics, URL inspect, sitemaps) — auth OAuth Desktop, creds dans `.credentials/gsc-client-secrets.json` (gitignored) |
+| `dataforseo` | SEO/keyword data, rank tracking, SERP |
+| `firecrawl` | Web scraping/search |
+| `apify` | Web scraping actors marketplace |
+| `wisewand` | Génération de contenu service |
+| `aidesigner` | Design HTML (génération + refine, OAuth, Pro 25 $/mois = 100 crédits) |
+| `nano-banana` | Image generation Gemini (modèle GA en direct, pas le `-preview` cassé) |
+| `chrome-devtools` | Inspection navigateur (Lighthouse, console, network) |
+| `claude-code-guide` | Doc Claude Code locale (search_guide, search_official_docs) |
+| `fluentcrm` | FluentCRM (contacts, listes, tags, campagnes, smart links) |
+| `discord` | Discord (messages, channels, webhooks, forum posts) |
+| `github` | GitHub API |
+| `rapidapi-{linkedin,twitter,instagram,youtube}` | Endpoints sociaux RapidAPI |
+
+**Stockage des secrets** : les clés API MCP vivent dans `.claude/settings.local.json` (bloc `env`, gitignored), **jamais dans `.env`** ni hardcodées dans `.mcp.json`. `.env` est pour les variables des scripts Python (`ANTHROPIC_API_KEY`, etc.). `claude mcp list` peut fuiter ces valeurs dans les transcripts JSONL — incident RapidAPI 2026-04-21 rotaté.
+
 ## Pre-commit Hooks
 
 Installation (une seule fois) : `pip install pre-commit && pre-commit install`
@@ -257,69 +312,21 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 .venv/Scripts/python .claude/skills/.registry/skills_registry.py --sync
 ```
 
-**INDEX des skills projet** : `.claude/skills/INDEX.md`
+**INDEX des skills projet** : `.claude/skills/INDEX.md` (catalogue + tables de routing complètes)
 
-### Routing Priority — Skills contenu / SEO / production
+**Skills externes** (invocation manuelle uniquement, ne pas auto-déclencher) :
 
-Arbitrage anti-collision entre les skills. Priorité de déclenchement selon l'input utilisateur.
+- `external-antigravity/` (16 skills, 2026-04-18) — sélection filtrée WP/SEO/GEO-AEO/perf/conversion. 4 doublons isolés dans `_to-delete/`.
+- `external-cc-design/` — design HTML haute fidélité (slide decks, prototypes, landing). Brand strict, 0 $. Préférer aidesigner pour exploration (T0), cc-design pour prod finale (T1).
+- `external-video-use/` (2026-04-27) — édition vidéo conversationnelle (transcribe, cut, color grade, subtitles). Sous-clone gitignored, deps dans venv racine.
+- `external-ecc/` — gateguard fact-forcing pre-edit (1 skill cherry-picked, 4 candidats rejetés).
+- `external-hyperframes/` + `external-liveavatar/` — Remotion + avatars AI (FFmpeg requis).
 
-#### Production éditoriale
+Lock cohérence : `tools/lock_external_skills.py` génère `skills-lock.json` pour les 27 skills `external-*`. Routine reval Q3 2026.
 
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Brief `.docx` Thruuu fourni | `thruuu-writer` |
-| Mot-clé + données SERP (article long SEO) | `schoolswp-article-workflow` |
-| Article `.md` déjà publié à recycler | `article-multiformat` |
-| Texte brut, notes, transcript, brouillon → post/newsletter/vidéo | `schoolswp-content-studio` |
-| Priorisation éditoriale globale, arbitrage roadmap, "quoi publier ensuite" (tous cocons confondus) | `brain-autonome` |
-| Lancement commande locale `brain-lite.bat` | `brain-lite` |
+### Routing — quel skill pour quelle demande
 
-#### SEO / cocons
-
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Carte SEO macro (hub + ~100 pages), carte des 7 cocons, ou maillage page unique | `cocon-map-schoolswp` |
-| UN cluster à partir d'UN mot-clé (ex : FluentCRM, OttoKit) | `cluster-cocon-automatique` |
-| Priorisation ROI d'un cocon existant + plan 4 semaines | `cocon-roi-prioritization` |
-| Brief SEO d'UN article (depuis ID ou mot-clé) | `seo-brief-generator` |
-
-#### Landing / email / conversion
-
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Lead magnet complet (PDF 1 page + landing capture + welcome sequence) | `lead-magnet-schoolswp` |
-| Landing HTML d'affiliation pour produit tiers (plugin/theme/SaaS) | `landing-page-factory` |
-| Copy page de vente pour offre propre schoolsWP (FluentCart, Kadence, SureCart) | `mini-offre-page-de-vente` |
-| Séquence email 3-7 emails pour découvrir un plugin par affiliation | `plugin-email-sequence` |
-| Recycler un email REÇU en 3 contenus dérivés (MD + LinkedIn + thread X) | `email-to-content` |
-| Polish / réécriture orientée conversion d'un texte existant | `rewrite-conversion` |
-
-#### YouTube
-
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Vidéo YouTube LONGUE (format 16:9) : script, accroches, titres, SEO, brief thumbnail | `schoolswp-youtube-studio` |
-| Short YouTube (format 9:16, <60s), incluant série "Jusqu'où est-ce trop ?" | `youtube-shorts-schoolswp` |
-| Conception / analyse / optimisation de miniatures YouTube (CTR) | `thumbnail-strategist` |
-| Extraction de données d'une vidéo YouTube existante (transcript, metadata, commentaires) | `youtube-extractor` |
-| Pilotage ROI / scoring / distribution multi-canal YouTube → Article → LinkedIn → Newsletter | `youtube-omnichannel-engine` |
-
-#### Social (hors YouTube)
-
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Post LinkedIn schoolsWP (création de copy originale) | `linkedin` |
-| Stratégie / plan éditorial / posts / carrousels Instagram | `instagram-strategy` |
-| Stratégie / pilotage / organisation Pinterest (boards, KPI, SEO Pinterest) | `pinterest-strategy` |
-| Pipeline d'exécution Pinterest (batch pins, Canva → API, analytics) | `pinterest-pipeline` |
-| Publication / adaptation / planification multi-plateformes via Blotato | `social-media-manager` |
-
-#### Branding / voix / hygiène texte
-
-| Input utilisateur | Skill à déclencher |
-|---|---|
-| Audit du TON / voix schoolsWP sur un contenu existant (cohérence, clarté, densité, pédagogie) | `branding` (mode check uniquement) |
-| Correction LINGUISTIQUE stricte (grammaire, orthographe, conjugaison, ponctuation, typographie) | `clairtexte` |
+Tables de routing complètes (production éditoriale, SEO/cocons, landing/email/conversion, YouTube, social, branding) : voir [.claude/skills/INDEX.md#routing-priority](.claude/skills/INDEX.md). Les **règles de conflit** ci-dessous restent ici car elles guident le déclenchement automatique.
 
 **Règles de conflit** :
 

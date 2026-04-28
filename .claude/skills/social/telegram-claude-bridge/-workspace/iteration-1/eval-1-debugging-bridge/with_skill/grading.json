@@ -1,0 +1,10 @@
+{
+  "eval_id": 1,
+  "run_type": "with_skill",
+  "expectations": [
+    {"text": "Propose de tester getUpdates manuellement (URL navigateur ou curl)", "passed": true, "evidence": "Etape 2 montre curl getUpdates avec interpretation des resultats (401, tableau vide, messages presents)"},
+    {"text": "Verifie que le Chat ID dans .env correspond au bon compte", "passed": true, "evidence": "Etape 3 detaille le filtre Chat ID, mentionne le log [BLOCK] et la correction dans .env"},
+    {"text": "Verifie que claude CLI fonctionne seul (commande de test)", "passed": true, "evidence": "Etape 5 montre claude -p 'Dis bonjour' --max-turns 1 avec solution chemin absolu"},
+    {"text": "Structure le diagnostic en etapes ordonnees (pas un bloc monolithique)", "passed": true, "evidence": "6 etapes numerotees + checklist rapide finale avec tableau symptome/cause/correction"}
+  ]
+}

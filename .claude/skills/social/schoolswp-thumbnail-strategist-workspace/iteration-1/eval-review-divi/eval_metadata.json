@@ -1,0 +1,31 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-review-divi",
+  "prompt": "Vidéo : 'Mon avis honnête sur Divi après 6 mois'. Traits de marque : Authentique / Expert. 3 concepts : 1) Michaël expression mitigée (sourcils levés) + logo Divi grand format / 2) Note '6/10' en grand caractères + petit Michaël à côté / 3) Logo Divi avec un point d'interrogation superposé, Michaël en arrière-plan flou",
+  "assertions": [
+    {
+      "name": "has_diagnostic_table",
+      "description": "Section I contains a markdown table rating each concept CTR /10"
+    },
+    {
+      "name": "has_3_concept_optimizations",
+      "description": "Section II contains detailed optimization for all 3 concepts"
+    },
+    {
+      "name": "has_all_7_subfields",
+      "description": "Each optimized concept contains all 7 sub-fields: Composition Précise, Texte Miniature, Direction Michaël, Hiérarchie & Focus, Palette & Contraste, Éléments à Supprimer, Variante A/B Test"
+    },
+    {
+      "name": "has_final_recommendation",
+      "description": "Section III contains 'LE MEILLEUR CONCEPT' justified in max 2 sentences"
+    },
+    {
+      "name": "has_title_combo",
+      "description": "Section III contains both 'Texte Miniature Final' and 'Titre YouTube Associé'"
+    },
+    {
+      "name": "has_strategic_angle",
+      "description": "Section III contains 'ANGLE STRATÉGIQUE' with one sentence explanation"
+    }
+  ]
+}

@@ -1,8 +1,74 @@
 # Cocon sémantique — Apprendre OttoKit en français
 
-> **Projet :** schoolsWP × OttoKit  
-> **Objectif :** Devenir LA ressource francophone de référence sur OttoKit  
-> **Date :** Mars 2026  
+> **Projet :** schoolsWP × OttoKit
+> **Objectif :** Devenir LA ressource francophone de référence sur OttoKit
+> **Date :** Mars 2026 — **révisé DataForSEO le 2026-04-16**
+
+---
+
+## 0. MISE À JOUR DATAFORSEO (2026-04-16) — PIVOT CRITIQUE
+
+**Validation DataForSEO France/fr sur 41 mots-clés du plan initial.** Résultat :
+
+- **Seuls 7 mots-clés ont un volume mesurable** (≥ 10/mois). Les 34 autres sont à zéro volume FR confirmé.
+- **`ottokit` (110/mois, difficulté 7/100, LOW)** est la seule requête à vrai volume. C'est le pivot du cocon.
+- **`ottokit wordpress` s'effondre** (-100 % trim.) et **`suretriggers` aussi** (-89 %/an) — ne plus viser ces angles.
+- **Les comparatifs concurrents** rapportent plus que les pages OttoKit-spécifiques : `uncanny automator` 70/mois (CPC 3,11 €), `n8n wordpress` 70/mois, `zapier wordpress` 20/mois.
+
+### Tableau des volumes confirmés
+
+| Mot-clé | Volume FR/mois | Difficulté | Tendance | CPC | Page cible |
+|---|---:|---:|---|---:|---|
+| **ottokit** | **110** | **7/100** | stable | — | P0 (pilier) |
+| suretriggers | 40 | 15/100 | **-89 % an** ⚠️ | — | P0 (section rebrand) |
+| ottokit wordpress | 10 | n/a | **-100 % trim.** ⚠️ | — | P0 |
+| ottokit pro | 10 | n/a | stable | — | A4 |
+| ottokit ai | 10 | n/a | ponctuel | — | B4 |
+| ottokit vs zapier | 10 | n/a | ponctuel | — | E1 |
+| ottokit vs n8n | 10 | n/a | ponctuel | — | E4 |
+| **uncanny automator** | **70** | n/a | stable | **3,11 €** | E3 |
+| **n8n wordpress** | **70** | n/a | stable | — | E4 (étendu) |
+| zapier wordpress | 20 | n/a | stable | 1,09 € | E1 (étendu) |
+| make wordpress | 20 | n/a | stable | — | E2 |
+| workflow wordpress | 10 | n/a | stable | — | Nouvelle page |
+| automator wordpress | 10 | n/a | stable | — | E3 (étendu) |
+
+### Requêtes à volume nul confirmé (à retirer ou absorber dans P0)
+
+Cluster A : `apprendre ottokit`, `ottokit c'est quoi`, `ottokit français`, `installer ottokit`, `ottokit installation`, `ottokit tutoriel`, `ottokit prix`, `ottokit gratuit`, `ottokit tarif`, `ottokit avis`
+Cluster B : `ottokit triggers`, `ottokit actions`, `ottokit workflow`, `ottokit canvas`, `ottokit ia`, `ottokit templates`
+Cluster C : `ottokit woocommerce`, `ottokit freelance`, `ottokit lms`, `ottokit learndash`, `ottokit tutorlms`, `ottokit fluentcrm`
+Cluster D : `ottokit google sheets`, `ottokit elementor`, `ottokit fluent forms`, `ottokit slack`, `ottokit intégrations`
+Cluster E : `ottokit vs make`, `ottokit vs uncanny automator`, `alternative zapier wordpress`
+Cluster F : `formation ottokit`, `cours ottokit`
+Longue traîne : `automatisation wordpress`, `automatiser wordpress`, `plugin automatisation wordpress`, `connecter wordpress google sheets`, `automatiser woocommerce`, `fluentcrm automatisation`, `automatiser formulaire wordpress`
+
+### Plan MVP révisé — 12 pages (vs 27 initial)
+
+| # | Page | Slug | Cible(s) | Vol/mois |
+|---|---|---|---|---:|
+| 1 | **P0 — Pilier OttoKit** (pivot sur `ottokit`, plus `ottokit wordpress`) | `/ottokit/` | ottokit | **110** |
+| 2 | A4 — Gratuit vs Pro | `/ottokit-gratuit-vs-pro/` | ottokit pro | 10 |
+| 3 | B4 — OttoKit AI | `/ottokit-ai-automatisation/` | ottokit ai | 10 |
+| 4 | **E1 — vs Zapier (étendu)** | `/ottokit-vs-zapier/` | ottokit vs zapier + zapier wordpress | **30** |
+| 5 | **E3 — vs Uncanny Automator (priorité 1)** | `/ottokit-vs-uncanny-automator/` | uncanny automator + automator wordpress | **80** |
+| 6 | **E4 — vs n8n (priorité 1)** | `/ottokit-vs-n8n/` | ottokit vs n8n + n8n wordpress | **80** |
+| 7 | E2 — vs Make | `/ottokit-vs-make/` | make wordpress | 20 |
+| 8 | **Workflow WordPress (nouvelle page)** | `/workflow-wordpress/` | workflow wordpress | 10 |
+| 9 | F1 — Formation (page de vente) | `/formation-ottokit-francais/` | transactionnel | n/a |
+| 10 | F2 — Ressources (lead magnet) | `/ottokit-ressources-checklist/` | capture email | n/a |
+| 11 | F3 — FAQ OttoKit | `/ottokit-faq/` | longue traîne | — |
+| 12 | **SureTriggers → OttoKit** (page rebrand) | `/suretriggers-devient-ottokit/` | suretriggers | 40 |
+
+**Trafic SEO capturable estimé : ~400 recherches/mois** concentrées sur P0, E3, E4, E1, E2.
+
+### Décision
+
+- Publier le MVP 12 pages d'abord (phases 1–3 ci-dessous).
+- **Absorber** les 15 pages à volume nul dans le pilier P0 sous forme de sections H2 (tutos intégrés, pas pages dédiées).
+- **Relancer un audit DataForSEO en EN** pour justifier (ou non) une double version via WPML — le marché FR seul est trop étroit.
+
+> Le reste du document (sections 1 à 9 ci-dessous) est le plan initial complet, conservé pour référence. Seul le plan MVP ci-dessus est actif.
 
 ---
 

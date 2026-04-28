@@ -1,0 +1,26 @@
+{
+  "skill_name": "offer-to-copy",
+  "evals": [
+    {
+      "id": 1,
+      "name": "google-ads-skill",
+      "prompt": "J'ai créé une compétence Claude qui connecte Google Ads via MCP, récupère les métriques (CPA, ROAS, CTR, dépenses, conversions) et génère un dashboard HTML interactif avec graphiques et tableau de campagnes. Public : agences et consultants marketing. Transforme ça en messages marketing.",
+      "expected_output": "Document de positionnement marketing complet avec promesse, problème, workflow, solution, tableau fonctionnalités/bénéfices, différenciants, post LinkedIn, landing page courte et pitch produit.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "plugin-landing-page",
+      "prompt": "J'ai développé un plugin WordPress qui automatise la création de landing pages affiliées à partir d'une URL produit. Il scrape la page, extrait les features, génère le copy avec Claude, et crée la page dans Kadence Blocks. Public : blogueurs WordPress qui monétisent par l'affiliation. Fais-moi le marketing.",
+      "expected_output": "Document de positionnement marketing complet avec promesse, problème, workflow, solution, tableau fonctionnalités/bénéfices, différenciants, post LinkedIn, landing page courte et pitch produit.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "formation-fluentcrm",
+      "prompt": "Je lance une formation FluentCRM de 14 modules avec vidéos HeyGen. Elle couvre de la configuration initiale aux séquences email avancées. C'est la seule formation FR structurée sur FluentCRM. Public : freelances WordPress et petites agences. J'ai besoin du positionnement marketing.",
+      "expected_output": "Document de positionnement marketing complet avec promesse, problème, workflow, solution, tableau fonctionnalités/bénéfices, différenciants, post LinkedIn, landing page courte et pitch produit.",
+      "files": []
+    }
+  ]
+}

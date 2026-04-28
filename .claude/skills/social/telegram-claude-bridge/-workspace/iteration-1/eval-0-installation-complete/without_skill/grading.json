@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "run_type": "without_skill",
+  "expectations": [
+    {"text": "Mentionne BotFather et la procedure de creation du bot Telegram", "passed": true, "evidence": "Etape 1 mentionne @BotFather et /newbot"},
+    {"text": "Contient un fichier .env ou des variables d'environnement (token + chat ID)", "passed": false, "evidence": "Variables en dur dans le script Python (TELEGRAM_TOKEN, ALLOWED_CHAT_ID), pas de .env separe"},
+    {"text": "Inclut du code Node.js fonctionnel pour le bridge (polling + envoi reponse)", "passed": false, "evidence": "Utilise Python (python-telegram-bot) au lieu de Node.js — approche differente mais fonctionnelle"},
+    {"text": "Explique comment recuperer le Chat ID personnel", "passed": true, "evidence": "Etape 2 explique getUpdates via navigateur"},
+    {"text": "Adapte a Windows (mention explicite ou paths Windows)", "passed": true, "evidence": "Paths Windows, pythonw.exe, Planificateur de taches, dossier Startup"}
+  ]
+}

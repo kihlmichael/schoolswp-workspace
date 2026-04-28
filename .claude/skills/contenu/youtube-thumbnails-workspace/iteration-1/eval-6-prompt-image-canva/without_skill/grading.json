@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "5 concepts de base", "passed": false, "evidence": "Seulement 3 concepts fournis: Le site qui s'effondre, Le cimetière des plugins SEO, Le feu rouge du SEO"},
+    {"text": "Prompt image en anglais", "passed": true, "evidence": "Prompt image fourni en anglais pour concept 1, mentionne 16:9 aspect ratio, 1280x720, cinematic lighting"},
+    {"text": "Brief Canva structuré", "passed": true, "evidence": "Brief Canva fourni pour concept 2 avec format 1280x720, calques listés, polices nommées (Poppins, Montserrat, Bebas Neue, Anton)"},
+    {"text": "Calques Canva ordonnés", "passed": true, "evidence": "6 étapes Canva ordonnées: arrière-plan, élément central 0, barre de recherche, 7 icônes, texte, finitions. Positions et tailles indiquées."}
+  ],
+  "summary": {"passed": 3, "failed": 1, "total": 4, "pass_rate": 0.75},
+  "timing": {"total_duration_seconds": 205.4}
+}

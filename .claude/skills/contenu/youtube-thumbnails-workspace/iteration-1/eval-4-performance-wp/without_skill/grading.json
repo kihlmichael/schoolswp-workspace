@@ -1,0 +1,10 @@
+{
+  "expectations": [
+    {"text": "Références visuelles performance", "passed": true, "evidence": "3 concepts avec métaphores performance: compteur PageSpeed, chronomètre, split avant/après"},
+    {"text": "Chiffres impactants", "passed": true, "evidence": "Scores 30/100, temps 3.2s/0.8s intégrés dans les visuels"},
+    {"text": "Audience freelance", "passed": true, "evidence": "Concept C mentionne explicitement le client. Principes appliqués ciblent freelances web."}
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "eval_feedback": {"overall": "Baseline passe les assertions mais ne produit que 3 concepts (pas 5). Structure moins formelle (pas de sections déclencheur/mécanisme)."},
+  "timing": {"total_duration_seconds": 31.4}
+}

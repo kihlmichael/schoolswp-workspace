@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Les 7 sections structurées sont présentes (Diagnostic, Réglages, Mapping, Erreurs, Pièges, Checklist, Bloc final)",
+      "passed": false,
+      "evidence": "3 sections seulement : Paramètres principaux, Mapping, Résumé — pas de diagnostic, pas de checklist, pas de pièges"
+    },
+    {
+      "text": "Toutes les expressions utilisent {{ $json[\"...\"] }} avec doubles guillemets",
+      "passed": false,
+      "evidence": "Utilise la notation point : $json.Nom, $json.Email — pas de doubles guillemets"
+    },
+    {
+      "text": "Les 5 colonnes sont toutes mappées avec leur expression exacte",
+      "passed": true,
+      "evidence": "Les 5 colonnes présentes dans le tableau et le bloc récapitulatif"
+    },
+    {
+      "text": "Aucun champ inventé absent du JSON fourni",
+      "passed": true,
+      "evidence": "Uniquement les 5 champs du JSON"
+    },
+    {
+      "text": "Checklist avant test présente avec au moins 5 points vérifiables",
+      "passed": false,
+      "evidence": "Aucune checklist — seulement une note sur Matching Columns"
+    },
+    {
+      "text": "Bloc final récapitulatif présent et prêt à copier-coller",
+      "passed": true,
+      "evidence": "Section 'Résumé configuration recommandée' avec bloc de code"
+    }
+  ],
+  "score": 3,
+  "max_score": 6,
+  "pass_rate": 0.5
+}

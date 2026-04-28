@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "couleurs-hors-brand",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Refuse d'appliquer #1a1a2e et #6CB4EE — ne produit pas de code avec ces couleurs",
+      "passed": false,
+      "evidence": "L'agent a applique les deux couleurs custom en dur dans BrandIntro.tsx (ligne 50: backgroundColor '#1a1a2e', ligne 87: color '#6CB4EE'). Aucun refus."
+    },
+    {
+      "text": "Propose des couleurs THEME existantes comme alternative (bgDark, bgDarkAlt, ou autre)",
+      "passed": false,
+      "evidence": "L'agent n'a pas propose de couleurs THEME existantes comme alternative. Il mentionne seulement en remarque finale qu'on pourrait ajouter les nouvelles couleurs custom dans theme.ts (bgPremium, textAccentLight), ce qui est l'inverse de ce qui est attendu."
+    },
+    {
+      "text": "Explique pourquoi les couleurs custom sont refusees (coherence brand, centralisation dans theme.ts)",
+      "passed": false,
+      "evidence": "Aucune explication sur la coherence brand ou le refus. La remarque finale mentionne brievement la reutilisabilite via theme.ts mais ne traite pas de coherence de marque et ne refuse rien."
+    },
+    {
+      "text": "La reponse suit le format obligatoire : Diagnostic / Plan / Fichiers / Commandes / Resultat / QA / Suite",
+      "passed": false,
+      "evidence": "La reponse utilise un format libre (Fichier modifie / Changements effectues / Remarque) sans aucune des sections obligatoires attendues."
+    }
+  ]
+}

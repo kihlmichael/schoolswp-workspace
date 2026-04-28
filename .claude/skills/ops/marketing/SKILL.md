@@ -1,6 +1,6 @@
 ---
 name: marketing
-description: Marketing skills for schoolsWP - CRO, copywriting, SEO, email sequences, pricing strategy, and analytics. Use when user asks about conversion optimization, landing pages, email marketing, SEO audit, pricing, or growth strategies. Applies proven frameworks while respecting schoolsWP brand voice.
+description: Marketing schoolsWP — CRO, copywriting, SEO, séquences email, stratégie de prix et analytics. Utilise ce skill pour l'optimisation de la conversion, les landing pages, le marketing par email, l'audit SEO, la tarification ou les stratégies de croissance.
 user-invocable: true
 triggers:
   - CRO

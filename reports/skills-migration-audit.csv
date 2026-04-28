@@ -1,0 +1,21 @@
+skill,type_doublon,emplacement_ws,lignes_ws,date_ws,emplacement_global,lignes_global,date_global,emplacement_projet,lignes_projet,date_projet,decision_recommandee,justification
+consolidation-ops,WS+PROJ,ops/consolidation-ops,176,2026-04-01,,,,ops/consolidation-ops,323,2026-04-15,supprimer WS,Projet plus recent et 2x plus long
+firecrawl,WS+GLOBAL+PROJ,ops/firecrawl,118,2026-04-01,firecrawl (root),458,2026-04-15,ops/firecrawl,370,2026-04-15,fusionner GLOBAL vers PROJ puis supprimer WS+GLOBAL,Global plus complet (458l) projet a une adaptation schoolsWP
+instagram-strategy,WS+PROJ,social/instagram-strategy,209,2026-04-16,,,,social/instagram-strategy,207,2026-04-16,diff puis fusion,Versions quasi identiques verifier le delta de 2 lignes
+mcp-builder,WS+GLOBAL+PROJ,ia-llm/mcp-builder,240,2026-03-14,mcp-builder (root),240,2026-04-15,ia-llm/mcp-builder,240,2026-04-15,supprimer WS+GLOBAL,Projet = meme contenu le plus recent
+n8n-workflow-architect,WS+PROJ,n8n/n8n-workflow-architect,326,2026-03-30,,,,n8n/n8n-workflow-architect,variable,2026-04-15,supprimer WS + nettoyer dossier vide projet root,Projet a un dossier vide n8n-workflow-architect/ a la racine a supprimer + version active dans n8n/
+skill-creator,WS+PROJ,ops/skill-creator,490,2026-03-14,,,,ops/skill-creator,498,2026-04-15,supprimer WS apres update scripts,Projet plus recent ATTENTION 3 chemins hardcodes dans .claude/commands/skill-creator.md
+workspace-guardian,WS+PROJ,ops/workspace-guardian,157,2026-04-01,,,,ops/workspace-guardian,238,2026-04-15,supprimer WS,Projet plus recent et 1.5x plus long
+branding,GLOBAL+PROJ,,,,branding (root),194,2026-04-15,contenu/branding,196,2026-04-16,supprimer GLOBAL,Projet plus recent
+geo-architect,GLOBAL+PROJ,,,,geo-architect (root),180,2026-04-15,seo/geo-architect,180,2026-04-15,diff puis decision,Meme taille meme date verifier contenu
+linkedin,GLOBAL+PROJ,,,,linkedin (root),66,2026-04-15,social/linkedin,149,2026-04-15,supprimer GLOBAL,Projet 2x plus long
+marketing,GLOBAL+PROJ,,,,marketing (root),154,2026-04-15,ops/marketing,154,2026-04-15,diff puis decision,Taille identique verifier contenu
+seo-audit,GLOBAL+PROJ,,,,seo-audit (root),416,2026-04-15,seo/seo-audit,469,2026-04-15,supprimer GLOBAL,Projet plus complet
+youtube,GLOBAL+PROJ,,,,youtube (root),66,2026-04-15,social/youtube,77,2026-04-16,supprimer GLOBAL,Projet plus recent et plus long
+frontend-design,WS+GLOBAL,dev/frontend-design,46,2026-03-14,frontend-design (root),46,2026-04-15,,,,migrer GLOBAL vers projet dev/frontend-design puis supprimer WS,Identiques garder une seule source
+n8n-code-javascript,WS+GLOBAL,n8n/n8n-code-javascript,138,2026-03-14,n8n-code-javascript (root),462,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global 3x plus complet
+n8n-expression-syntax,WS+GLOBAL,n8n/n8n-expression-syntax,131,2026-03-14,n8n-expression-syntax (root),338,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global plus complet
+n8n-mcp-tools-expert,WS+GLOBAL,n8n/n8n-mcp-tools-expert,128,2026-03-14,n8n-mcp-tools-expert (root),371,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global 3x plus complet
+n8n-node-configuration,WS+GLOBAL,n8n/n8n-node-configuration,169,2026-03-14,n8n-node-configuration (root),465,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global plus complet
+n8n-validation-expert,WS+GLOBAL,n8n/n8n-validation-expert,121,2026-03-14,n8n-validation-expert (root),390,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global 3x plus complet
+n8n-workflow-patterns,WS+GLOBAL,n8n/n8n-workflow-patterns,144,2026-03-14,n8n-workflow-patterns (root),417,2026-04-15,,,,migrer GLOBAL vers projet n8n/ puis supprimer WS,Global 3x plus complet

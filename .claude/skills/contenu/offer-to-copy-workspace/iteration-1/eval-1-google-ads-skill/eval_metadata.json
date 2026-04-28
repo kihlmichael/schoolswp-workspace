@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "google-ads-skill",
+  "prompt": "J'ai créé une compétence Claude qui connecte Google Ads via MCP, récupère les métriques (CPA, ROAS, CTR, dépenses, conversions) et génère un dashboard HTML interactif avec graphiques et tableau de campagnes. Public : agences et consultants marketing. Transforme ça en messages marketing.",
+  "assertions": [
+    {"id": "A1", "text": "Le livrable contient les 7 sections numérotées (promesse, problème, workflow, solution, tableau fonctionnalités/bénéfices, différenciants, messages finaux)", "type": "structural"},
+    {"id": "A2", "text": "La promesse centrale tient en une seule phrase (pas de point intermédiaire, pas de paragraphe)", "type": "structural"},
+    {"id": "A3", "text": "Présence d'un tableau markdown à 2 colonnes (fonctionnalité | bénéfice)", "type": "structural"},
+    {"id": "A4", "text": "Les 3 versions de messages (LinkedIn, landing page, pitch) sont présentes et distinctes", "type": "structural"},
+    {"id": "A5", "text": "Tutoiement consistant — utilisation de tu/ton/ta/tes, pas de vous ni de 'l'utilisateur'", "type": "style"},
+    {"id": "A6", "text": "Zéro hype IA — absence de 'révolutionnaire', 'game-changer', 'magie de l'IA', 'powered by AI'", "type": "style"},
+    {"id": "A7", "text": "Dans la présentation de la solution (section 4), le premier argument est un bénéfice concret, pas une feature technique", "type": "quality"},
+    {"id": "A8", "text": "Le post LinkedIn contient une accroche + problème + solution + CTA identifiables", "type": "structural"}
+  ]
+}

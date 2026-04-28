@@ -1,8 +1,19 @@
 ---
 name: youtube
-description: Espace métier YouTube - production vidéo, publication, SEO et analytics. Utiliser pour toute tâche liée à YouTube (upload, optimisation, thumbnails, playlists).
+description: (archivé - espace métier fourre-tout remplacé par les skills YouTube spécialisés - ne pas auto-déclencher)
 user-invocable: false
 ---
+
+> **Statut : archivé le 2026-04-16.**
+> Ce skill "Espace métier YouTube" était un hub générique couvrant production, publication, SEO et analytics — trop large pour router sans ambiguïté. Il était déjà marqué `user-invocable: false`, signal d'abandon préalable.
+> Remplacé par les skills spécialisés :
+> - Production vidéo longue → `schoolswp-youtube-studio`
+> - Shorts → `youtube-shorts-schoolswp`
+> - Miniatures → `thumbnail-strategist`
+> - Extraction données → `youtube-extractor`
+> - Pilotage ROI multi-canal → `youtube-omnichannel-engine`
+>
+> Conservation pour référence. Suppression manuelle à faire via l'explorateur Windows.
 
 # YouTube Workspace
 

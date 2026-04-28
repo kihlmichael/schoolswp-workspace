@@ -1,0 +1,10 @@
+{
+  "eval_id": 3,
+  "eval_name": "fluentcrm",
+  "prompt": "Donne-moi des idées de miniatures accrocheuses pour une vidéo sur FluentCRM. Le thème : pourquoi c'est le meilleur CRM WordPress pour les solopreneurs. Ton sérieux mais accessible.",
+  "assertions": [
+    {"name": "5 concepts présents", "check": "5 concepts distincts avec structure complète"},
+    {"name": "Pertinence CRM", "check": "Les concepts font référence à l'univers CRM/email/automatisation, pas à un sujet générique"},
+    {"name": "Émotions diversifiées", "check": "Au moins 3 déclencheurs émotionnels différents parmi les 5 concepts"}
+  ]
+}

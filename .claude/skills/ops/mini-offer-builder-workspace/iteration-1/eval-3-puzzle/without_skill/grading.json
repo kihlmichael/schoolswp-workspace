@@ -1,0 +1,26 @@
+{
+  "eval_id": 3,
+  "run_type": "without_skill",
+  "expectations": [
+    {
+      "text": "Accuse réception des 4 réponses fournies sans reposer les questions",
+      "passed": true,
+      "evidence": "Commence par récapituler le contexte ('Tu vends des puzzles premium...') sans reposer les questions."
+    },
+    {
+      "text": "Propose 5 promesses spécifiques au puzzle premium/zen/artisanal",
+      "passed": false,
+      "evidence": "Pas de processus en 5 promesses. Propose directement un concept complet ('Mon Premier Puzzle d'Artiste') sans étape de choix."
+    },
+    {
+      "text": "Met en avant ses 3 préférées avec justification",
+      "passed": false,
+      "evidence": "Pas de top 3 — une seule proposition directe."
+    },
+    {
+      "text": "N'utilise aucun mot interdit",
+      "passed": false,
+      "evidence": "Utilise 'game changer' dans la section Structure du guide (Partie 2, Bonus). Mot interdit selon la ban list schoolsWP."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "skill_name": "thruuu-brief-builder",
+    "skill_path": ".claude/skills/contenu/thruuu-brief-builder",
+    "executor_model": "claude-opus-4-7",
+    "analyzer_model": "claude-opus-4-7",
+    "timestamp": "2026-04-17T00:00:00Z",
+    "evals_run": ["affiliatepress-vs-solidaffiliate"],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "eval_name": "affiliatepress-vs-solidaffiliate",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.909,
+        "passed": 10,
+        "failed": 1,
+        "total": 11,
+        "time_seconds": 272.3,
+        "tokens": 82171,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "L'output contient les 3 blocs dans l'ordre : ANALYSE GLOBALE, puis BRIEF STRUCTURÉ, puis TEXTES PRÊTS À COLLER", "passed": true, "evidence": "Ordre correct : ANALYSE@295 < BRIEF@6665 < TEXTES@28783"},
+        {"text": "En-tête minimal présent avec les 4 champs (Mot-clé, Mode, Sources utilisées, Confiance) avant le premier bloc", "passed": true, "evidence": "Les 4 champs d'en-tête sont présents en tête"},
+        {"text": "Le mode de brief détecté est 'comparatif' (explicitement) avec 'avis' comme secondaire possible", "passed": true, "evidence": "Mode 'comparatif' explicitement détecté"},
+        {"text": "Le BLOC 1 contient 3 sections distinctes : Faits, Déductions, Recommandations", "passed": true, "evidence": "Les 3 sections (Faits, Déductions, Recommandations) sont présentes dans BLOC 1"},
+        {"text": "Le niveau de confiance global est 'moyen' ou 'faible' (pas 'élevé' puisque GSC manquante)", "passed": true, "evidence": "Confiance = 'moyen' (cohérent avec GSC manquante)"},
+        {"text": "Le BLOC 2 contient les 10 onglets numérotés dans l'ordre", "passed": true, "evidence": "Les 10 onglets du BLOC 2 sont présents"},
+        {"text": "Le BLOC 3 'TEXTES PRÊTS À COLLER' existe et contient au moins 6 sous-sections", "passed": true, "evidence": "BLOC 3 contient 8 sous-sections"},
+        {"text": "Le H1 recommandé ne contient pas 'en 2026' ni de date (règle schoolsWP evergreen)", "passed": false, "evidence": "FAUX POSITIF du grader : la regex a détecté 'en 2026' dans la section 'Éléments à éviter' (qui liste justement 'en 2026 partout' comme chose à NE PAS faire). Le vrai H1 recommandé est evergreen."},
+        {"text": "Les 2 URLs schoolsWP existantes sont présentes dans le maillage interne", "passed": true, "evidence": "Les 2 URLs schoolsWP existantes sont présentes"},
+        {"text": "Le brief identifie explicitement le mismatch SERP (Google pivote vers 'Solid Affiliate vs AffiliateWP')", "passed": true, "evidence": "Le mismatch SERP est identifié (pivot/substitution vers AffiliateWP mentionnée)"},
+        {"text": "Le brief utilise le tutoiement et pas le vouvoiement", "passed": true, "evidence": "Tutoiement dominant : 54 occurrences tu/ton/ta vs 0 vous/votre"}
+      ],
+      "notes": [
+        "Le H1 recommandé final est evergreen, mais le grader génère un faux positif en détectant 'en 2026' dans la section 'Éléments à éviter'.",
+        "Les 3 blocs sont dans l'ordre exact imposé par le SKILL.md."
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "affiliatepress-vs-solidaffiliate",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.364,
+        "passed": 4,
+        "failed": 7,
+        "total": 11,
+        "time_seconds": 156.3,
+        "tokens": 67475,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {"text": "L'output contient les 3 blocs dans l'ordre : ANALYSE GLOBALE, puis BRIEF STRUCTURÉ, puis TEXTES PRÊTS À COLLER", "passed": false, "evidence": "Blocs manquants : ANALYSE GLOBALE, BRIEF STRUCTURÉ, TEXTES PRÊTS À COLLER (sans le skill, la structure en 3 blocs n'est pas produite)"},
+        {"text": "En-tête minimal présent avec les 4 champs (Mot-clé, Mode, Sources utilisées, Confiance) avant le premier bloc", "passed": false, "evidence": "Champs manquants en tête : mode, confiance"},
+        {"text": "Le mode de brief détecté est 'comparatif' (explicitement) avec 'avis' comme secondaire possible", "passed": true, "evidence": "Mode 'comparatif' mentionné"},
+        {"text": "Le BLOC 1 contient 3 sections distinctes : Faits, Déductions, Recommandations", "passed": false, "evidence": "Aucune section Faits/Déductions/Recommandations"},
+        {"text": "Le niveau de confiance global est 'moyen' ou 'faible' (pas 'élevé' puisque GSC manquante)", "passed": false, "evidence": "Niveau de confiance non spécifié dans l'en-tête"},
+        {"text": "Le BLOC 2 contient les 10 onglets numérotés dans l'ordre", "passed": false, "evidence": "BLOC 2 introuvable (le brief est organisé en 10 sections mais pas sous le label BRIEF STRUCTURÉ)"},
+        {"text": "Le BLOC 3 'TEXTES PRÊTS À COLLER' existe et contient au moins 6 sous-sections", "passed": false, "evidence": "BLOC 3 'TEXTES PRÊTS À COLLER' introuvable — le baseline produit un brief mais pas la version compacte prête à coller dans thruuu.com"},
+        {"text": "Le H1 recommandé ne contient pas 'en 2026' ni de date", "passed": false, "evidence": "H1 retenu : 'AffiliatePress vs Solid Affiliate : lequel choisir pour lancer ton programme d'affiliation WordPress en 2026 ?' — contient une date (violation règle schoolsWP evergreen)"},
+        {"text": "Les 2 URLs schoolsWP existantes sont présentes dans le maillage interne", "passed": true, "evidence": "Les 2 URLs schoolsWP existantes sont présentes"},
+        {"text": "Le brief identifie explicitement le mismatch SERP", "passed": true, "evidence": "Le mismatch SERP est identifié"},
+        {"text": "Le brief utilise le tutoiement et pas le vouvoiement", "passed": true, "evidence": "Tutoiement dominant : 16 occurrences tu/ton/ta vs 0 vous/votre"}
+      ],
+      "notes": [
+        "Le baseline sans skill produit un brief riche (KPI 90 jours, handoff vers autres skills) mais PAS la structure en 3 blocs et PAS le BLOC 3 compact prêt à coller dans thruuu.com.",
+        "Le baseline a ajouté 'en 2026' dans le H1 — violation evergreen que le skill prévient explicitement."
+      ]
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {"mean": 0.909, "stddev": 0.0, "min": 0.909, "max": 0.909},
+      "time_seconds": {"mean": 272.3, "stddev": 0.0, "min": 272.3, "max": 272.3},
+      "tokens": {"mean": 82171, "stddev": 0.0, "min": 82171, "max": 82171}
+    },
+    "without_skill": {
+      "pass_rate": {"mean": 0.364, "stddev": 0.0, "min": 0.364, "max": 0.364},
+      "time_seconds": {"mean": 156.3, "stddev": 0.0, "min": 156.3, "max": 156.3},
+      "tokens": {"mean": 67475, "stddev": 0.0, "min": 67475, "max": 67475}
+    },
+    "delta": {
+      "pass_rate": "+0.545",
+      "time_seconds": "+116.0",
+      "tokens": "+14696"
+    }
+  },
+  "notes": [
+    "Delta massif sur le pass rate : +54,5 points (91 % vs 36 %). Le skill apporte une valeur structurelle forte sur ce type de tâche.",
+    "Le skill coûte +116 secondes et +14 696 tokens par run — trade-off acceptable vu le gain structurel (3 blocs, traçabilité faits/déductions/recos, BLOC 3 prêt à coller).",
+    "Le baseline sans skill produit un brief riche mais asymétrique : il ajoute des détails pertinents (KPI 90 jours, handoff vers autres skills) que le skill pourrait intégrer en v2.",
+    "Le baseline viole la règle schoolsWP evergreen (ajoute 'en 2026' dans le H1). Le skill prévient explicitement cette erreur.",
+    "Un faux positif dans le grader pénalise injustement with_skill sur l'assertion H1 evergreen. Le vrai H1 recommandé est evergreen. Le grader devrait restreindre la recherche au seul H1 recommandé (pas aux règles négatives du brief).",
+    "Runs_per_configuration = 1 : les stddev sont à 0 car 1 seul run par config. Pour une validation plus robuste, il faudrait 3 runs par config — gros coût en tokens, mais le signal actuel est déjà clair."
+  ]
+}

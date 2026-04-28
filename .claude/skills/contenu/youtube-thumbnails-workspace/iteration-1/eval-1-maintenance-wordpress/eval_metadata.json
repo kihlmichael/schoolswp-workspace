@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "eval_name": "maintenance-wordpress",
+  "prompt": "Conçois des miniatures YouTube pour ma vidéo intitulée '[Maintenance WordPress]'. Je veux 5 concepts aimants à clics avec la mise en page exacte, les couleurs, le texte, l'expression faciale et le déclencheur émotionnel.",
+  "assertions": [
+    {"name": "5 concepts distincts", "check": "L'output contient exactement 5 concepts numérotés avec des titres différents"},
+    {"name": "Codes couleur hex", "check": "Chaque concept inclut au moins 2 codes couleur hexadécimaux (#XXXXXX)"},
+    {"name": "Texte de miniature court", "check": "Chaque concept propose un texte overlay de 5 mots max"},
+    {"name": "Expression faciale décrite", "check": "Au moins 3 concepts sur 5 décrivent une expression faciale précise"},
+    {"name": "Déclencheur émotionnel identifié", "check": "Chaque concept nomme explicitement le déclencheur émotionnel"},
+    {"name": "Mécanisme de clic expliqué", "check": "Chaque concept explique le mécanisme psychologique du clic"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "skill_name": "telegram-claude-bridge",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Je veux pouvoir envoyer des messages depuis Telegram sur mon telephone et que Claude Code les execute sur ma machine. Comment je mets ca en place ? Je suis sur Windows, j'ai deja Claude Code installe.",
+      "expected_output": "Guide pas a pas : creation bot BotFather, recuperation Chat ID, installation Node.js + bridge.js, fichier .env, lancement et test /ping. Adapte Windows.",
+      "files": [],
+      "assertions": [
+        {"id": "botfather", "text": "Mentionne BotFather et la procedure de creation du bot Telegram"},
+        {"id": "env_config", "text": "Contient un fichier .env ou des variables d'environnement (token + chat ID)"},
+        {"id": "node_code", "text": "Inclut du code Node.js fonctionnel pour le bridge (polling + envoi reponse)"},
+        {"id": "chat_id", "text": "Explique comment recuperer le Chat ID personnel"},
+        {"id": "windows_adapted", "text": "Adapte a Windows (mention explicite ou paths Windows)"}
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Mon bridge Telegram-Claude est lance mais quand j'envoie un message depuis mon telephone, je ne recois aucune reponse. Le terminal affiche juste '[BRIDGE] Demarre' et rien d'autre. Comment debugger ?",
+      "expected_output": "Checklist de diagnostic : verifier qu'un message a ete envoye au bot avant le lancement, tester getUpdates manuellement via URL navigateur, verifier le Chat ID dans .env, verifier que claude CLI fonctionne seul.",
+      "files": [],
+      "assertions": [
+        {"id": "test_getupdates", "text": "Propose de tester getUpdates manuellement (URL navigateur ou curl)"},
+        {"id": "check_chat_id", "text": "Verifie que le Chat ID dans .env correspond au bon compte"},
+        {"id": "test_claude_cli", "text": "Verifie que claude CLI fonctionne seul (commande de test)"},
+        {"id": "ordered_steps", "text": "Structure le diagnostic en etapes ordonnees (pas un bloc monolithique)"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "J'ai un bridge Telegram qui marche en basique. Maintenant je voudrais ajouter des commandes predefinies pour mon projet schoolsWP : /seo pour lancer un audit, /article pour generer un brouillon, /check pour verifier le status du site. Comment je structure ca ?",
+      "expected_output": "Extension du bridge.js avec un objet de commandes predefinies mappant chaque slash command a un prompt Claude specifique, avec le cwd pointe sur le dossier schoolsWP. Exemple de code pour /seo, /article, /check.",
+      "files": [],
+      "assertions": [
+        {"id": "js_code", "text": "Inclut du code JavaScript concret et executable"},
+        {"id": "command_mapping", "text": "Definit un mapping explicite commande vers prompt (objet, map ou equivalent)"},
+        {"id": "three_commands", "text": "Couvre les 3 commandes demandees : /seo, /article, /check"},
+        {"id": "extensible", "text": "Propose une architecture extensible (ajout facile de nouvelles commandes)"}
+      ]
+    }
+  ]
+}

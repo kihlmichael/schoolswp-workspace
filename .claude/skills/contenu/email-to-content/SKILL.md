@@ -1,6 +1,9 @@
 ---
 name: email-to-content
-description: Transformer un email promotionnel WordPress (plugin ou theme) en 3 contenus marketing schoolsWP (resume Markdown, post LinkedIn, thread X) via methode 5 etapes V1/auto-evaluation/corrections/V2/comparaison+V3. Utiliser quand l'utilisateur fournit un email promo et exige un format de sortie strict et anti-invention.
+description: |
+  Recycler un email REÇU (promo WordPress, newsletter produit, annonce lancement) en 3 contenus publiables schoolsWP : résumé Markdown + post LinkedIn + thread X. Méthode 5 étapes V1/auto-évaluation/corrections/V2/comparaison+V3, anti-invention strict, CTA affilié avec disclosure.
+  Utiliser UNIQUEMENT quand l'input est un email existant (copié-collé ou forwardé) à transformer en contenu dérivé. L'email doit déjà exister — ce skill ne crée pas d'email, il les recycle.
+  NE PAS utiliser pour : écrire une séquence email originale pour faire découvrir un plugin (voir plugin-email-sequence), rédiger une welcome sequence de bienvenue (voir lead-magnet-schoolswp), produire une page de vente (voir mini-offre-page-de-vente ou landing-page-factory), réécrire un texte existant pour la conversion (voir rewrite-conversion).
 ---
 
 Pense en profondeur. Suis la checklist. Respecte toutes les contraintes. Ne devine rien.

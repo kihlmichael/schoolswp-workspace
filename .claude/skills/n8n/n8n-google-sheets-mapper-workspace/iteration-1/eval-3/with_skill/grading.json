@@ -1,0 +1,39 @@
+{
+  "eval_id": 3,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Les 7 sections structurées sont présentes",
+      "passed": true,
+      "evidence": "Toutes les 7 sections présentes"
+    },
+    {
+      "text": "Les expressions utilisent le chemin imbriqué correct avec doubles guillemets : {{ $json[\"data\"][\"contact\"][\"full_name\"] }}",
+      "passed": true,
+      "evidence": "{{ $json[\"data\"][\"contact\"][\"full_name\"] }}, {{ $json[\"data\"][\"booking\"][\"activity\"] }}, etc. — parfaitement correct"
+    },
+    {
+      "text": "Les 6 colonnes sont toutes mappées avec leur expression exacte",
+      "passed": true,
+      "evidence": "Nom complet, Email, Téléphone, Activité, Date, Nombre de places — toutes présentes"
+    },
+    {
+      "text": "Le champ status du JSON est ignoré ou mentionné comme inutilisé",
+      "passed": true,
+      "evidence": "Non mappé vers une colonne — ne figure pas dans les expressions. Pas d'erreur."
+    },
+    {
+      "text": "Pas d'expressions plates incorrectes comme {{ $json[\"full_name\"] }} pour un champ imbriqué",
+      "passed": true,
+      "evidence": "Toutes les expressions utilisent le chemin complet data.contact.* et data.booking.*"
+    },
+    {
+      "text": "slots (numérique) mappé vers Nombre de places sans conversion forcée en texte",
+      "passed": true,
+      "evidence": "{{ $json[\"data\"][\"booking\"][\"slots\"] }} — pas de forçage en texte, note sur le type numérique en section 4"
+    }
+  ],
+  "score": 6,
+  "max_score": 6,
+  "pass_rate": 1.0
+}

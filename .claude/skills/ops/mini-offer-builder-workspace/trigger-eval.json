@@ -1,0 +1,82 @@
+[
+  {
+    "query": "j'aimerais créer une mini offre autour de mon expertise WordPress, j'ai une méthode en 5 étapes pour optimiser les sites mais je sais pas comment la packager ni comment formuler ce que ça apporte concrètement à mes clients freelances",
+    "should_trigger": true
+  },
+  {
+    "query": "je dois trouver une promesse pour mon nouveau produit, c'est un accompagnement sur 4 semaines pour les coachs qui veulent structurer leur offre signature, mais j'arrive pas à formuler un truc qui donne envie sans tomber dans le bullshit",
+    "should_trigger": true
+  },
+  {
+    "query": "j'ai besoin d'un nom accrocheur pour ma formation en ligne sur l'automatisation n8n, un truc court et mémorable qui donne envie de cliquer, orienté résultat pas technique",
+    "should_trigger": true
+  },
+  {
+    "query": "je veux structurer mon offre, là c'est le bazar — j'ai plein d'idées mais rien de clair. Ma cible c'est les solopreneurs dans le bien-être, faut que je trouve un angle différenciant et une promesse qui tient la route",
+    "should_trigger": true
+  },
+  {
+    "query": "comment je peux formuler ce que mon produit apporte ? c'est un outil SaaS pour la gestion de projet WordPress, je galère à trouver le bon angle, un mécanisme unique qui explique pourquoi c'est mieux que les autres",
+    "should_trigger": true
+  },
+  {
+    "query": "je cherche à construire une proposition de valeur solide pour mon service de consulting SEO, quelque chose de clair et spécifique qui me différencie des 200 consultants SEO sur LinkedIn",
+    "should_trigger": true
+  },
+  {
+    "query": "j'ai une idée de mini offre mais c'est flou, je sais que ma niche c'est le e-commerce Shopify pour les artisans, mais après je bloque — promesse, méthode, nom, tout est à faire",
+    "should_trigger": true
+  },
+  {
+    "query": "faut que je trouve un mécanisme unique pour ma formation, genre un concept ou un framework qui explique pourquoi ma méthode de productivité marche mieux que les autres, t'as une approche structurée pour ça ?",
+    "should_trigger": true
+  },
+  {
+    "query": "je lance un side project, c'est une newsletter payante sur le WordPress business et je dois définir clairement ce que les gens vont obtenir en s'abonnant — la promesse et le positionnement quoi",
+    "should_trigger": true
+  },
+  {
+    "query": "aide-moi à packager mon expertise en offre vendable, je fais du coaching Instagram pour les restaurateurs mais j'ai jamais formalisé mon approche ni trouvé de nom pour ce que je propose",
+    "should_trigger": true
+  },
+  {
+    "query": "rédige-moi un article SEO sur les 10 meilleurs plugins de cache WordPress en 2026, avec un tableau comparatif et des liens affiliés vers chaque plugin",
+    "should_trigger": false
+  },
+  {
+    "query": "j'ai un bug sur mon site WordPress, la page d'accueil met 8 secondes à charger et je sais pas si c'est le thème Kadence ou un plugin qui pose problème, tu peux diagnostiquer ?",
+    "should_trigger": false
+  },
+  {
+    "query": "crée-moi une séquence email de 5 messages pour le lancement de ma formation Authority System, avec les objets, le copy et les CTA",
+    "should_trigger": false
+  },
+  {
+    "query": "j'ai besoin d'un workflow n8n qui scrape les nouveaux articles de WPMarmite et m'envoie un résumé sur Slack chaque lundi matin",
+    "should_trigger": false
+  },
+  {
+    "query": "optimise le SEO de ma page /apprendre-wordpress — j'ai le contenu mais les meta descriptions sont nulles et le maillage interne est pas fait",
+    "should_trigger": false
+  },
+  {
+    "query": "je veux faire un audit de mon site schoolswp.com, Core Web Vitals, structure technique, erreurs de crawl, tout le package",
+    "should_trigger": false
+  },
+  {
+    "query": "fais-moi un post LinkedIn sur le thème 'pourquoi 90% des sites WordPress sont lents' dans le ton schoolsWP, prêt à publier",
+    "should_trigger": false
+  },
+  {
+    "query": "configure le plugin Rank Math sur mon site pour que les articles aient automatiquement le bon schema markup FAQ et les breadcrumbs",
+    "should_trigger": false
+  },
+  {
+    "query": "je veux comparer FluentCRM vs Mailchimp vs ConvertKit pour ma newsletter, avec un verdict clair et des blocs affiliés, format page décisionnelle",
+    "should_trigger": false
+  },
+  {
+    "query": "crée-moi un cluster SEO complet autour du mot-clé 'LMS WordPress' avec pilier, satellites, maillage interne et plan de production sur 4 semaines",
+    "should_trigger": false
+  }
+]

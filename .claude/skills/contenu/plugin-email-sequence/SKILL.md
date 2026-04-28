@@ -10,6 +10,7 @@ description: |
   explicitement "séquence" (ex: "je veux présenter RankMath à ma liste", "envoyer des emails
   pour ClickWhale", "faire découvrir TutorLMS par email").
   Couvre aussi les outils payants seuls (sans version gratuite) et les outils 100% gratuits.
+  NE PAS utiliser pour : séquence de bienvenue newsletter / welcome sequence post-inscription à un lead magnet (voir lead-magnet-schoolswp), recyclage d'un email reçu en contenus dérivés (voir email-to-content), copy de page de vente d'offre propre (voir mini-offre-page-de-vente), landing page d'affiliation tiers (voir landing-page-factory).
 ---
 
 # Plugin Email Sequence — schoolsWP

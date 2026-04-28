@@ -1,0 +1,11 @@
+{
+  "expectations": [
+    {"text": "Format comparatif visible", "passed": true, "evidence": "Option A est un split screen, Option B est un tableau comparatif"},
+    {"text": "Branding schoolsWP intégré", "passed": true, "evidence": "Logo schoolsWP mentionné en coin bas-droit dans les 3 options"},
+    {"text": "Personnage Michaël", "passed": true, "evidence": "Les 3 options incluent Michael avec expressions décrites"},
+    {"text": "Noms des outils visibles", "passed": true, "evidence": "Tutor LMS et LearnDash mentionnés dans chaque option"}
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0},
+  "eval_feedback": {"overall": "Baseline passe les assertions mais ne produit que 3 concepts (pas 5). Les assertions ne vérifient pas le nombre de concepts."},
+  "timing": {"total_duration_seconds": 100.9}
+}

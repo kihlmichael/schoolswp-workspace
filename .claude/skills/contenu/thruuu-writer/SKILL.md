@@ -10,6 +10,8 @@ description: |
   article depuis un brief, "redige cet article", "transforme ce brief en article",
   ou veut creer un GUIDELINE.md pour definir sa voix de marque.
   Aussi declenchable via /thruuu-writer.
+last_reviewed: 2026-04-23
+review_interval_days: 90
 ---
 
 # thruuu Writer v3 Runtime — Claude Code Edition

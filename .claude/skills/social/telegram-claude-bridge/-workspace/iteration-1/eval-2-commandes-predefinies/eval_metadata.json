@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "commandes-predefinies",
+  "prompt": "J'ai un bridge Telegram qui marche en basique. Maintenant je voudrais ajouter des commandes predefinies pour mon projet schoolsWP : /seo pour lancer un audit, /article pour generer un brouillon, /check pour verifier le status du site. Comment je structure ca ?",
+  "assertions": [
+    {"id": "js_code", "text": "Inclut du code JavaScript concret et executable", "type": "content_check"},
+    {"id": "command_mapping", "text": "Definit un mapping explicite commande vers prompt (objet, map ou equivalent)", "type": "content_check"},
+    {"id": "three_commands", "text": "Couvre les 3 commandes demandees : /seo, /article, /check", "type": "content_check"},
+    {"id": "extensible", "text": "Propose une architecture extensible (ajout facile de nouvelles commandes)", "type": "structure_check"}
+  ]
+}

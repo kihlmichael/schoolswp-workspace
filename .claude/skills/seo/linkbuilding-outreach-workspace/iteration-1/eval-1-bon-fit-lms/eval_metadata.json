@@ -1,0 +1,47 @@
+{
+  "eval_id": 1,
+  "eval_name": "bon-fit-lms-wpmarmite",
+  "prompt": "J'ai repere un article sur WPMarmite qui parle des meilleurs plugins LMS WordPress. Je veux proposer mon guide complet Tutor LMS sur schoolsWP comme ressource complementaire. Analyse le prospect et redige l'outreach si ca vaut le coup.\n\nURL prospect : https://wpmarmite.com/plugins-lms-wordpress/\nURL a promouvoir : https://schoolswp.com/guides/tutor-lms-guide-complet/\nContexte : on a teste Tutor LMS pendant 3 mois avec des vrais apprenants, l'article documente tout le process.",
+  "assertions": [
+    {
+      "id": "scrape-both-urls",
+      "text": "Both prospect and target URLs are scraped via Firecrawl before analysis",
+      "type": "process"
+    },
+    {
+      "id": "qualification-positive",
+      "text": "Opportunity qualified as 'Tres pertinente' or 'Pertinente'",
+      "type": "content"
+    },
+    {
+      "id": "recommend-send",
+      "text": "Recommendation is to send the outreach email",
+      "type": "content"
+    },
+    {
+      "id": "email-french",
+      "text": "Email is written in French (prospect is francophone)",
+      "type": "content"
+    },
+    {
+      "id": "email-specific-reference",
+      "text": "Email mentions a specific element actually observed on the WPMarmite page (not a generic compliment)",
+      "type": "quality"
+    },
+    {
+      "id": "no-spam-phrases",
+      "text": "Email contains none of the forbidden phrases (Je me permets, J'ai adore votre excellent, benefique pour votre SEO)",
+      "type": "quality"
+    },
+    {
+      "id": "format-complete",
+      "text": "Output follows the exact format: Prospect, Analyse du prospect, Analyse de la page, Qualification, Email, Variantes d'objet (5), Relances (2), Anchors (5), Note strategique",
+      "type": "format"
+    },
+    {
+      "id": "file-saved-md",
+      "text": "Report saved as .md file in the outputs directory",
+      "type": "process"
+    }
+  ]
+}

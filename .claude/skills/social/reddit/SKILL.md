@@ -1,14 +1,12 @@
 ---
 name: reddit
-description: |
-  Espace metier Reddit pour schoolsWP — veille, participation, strategie et automatisation.
-  Decouvrir des subreddits, scraper les questions recurrentes, rediger des reponses Reddit-native,
-  construire du karma, planifier une strategie de visibilite et d'affiliation WordPress.
-  Utilise ce skill des que l'utilisateur mentionne Reddit, subreddit, karma, r/WordPress,
-  "trouver des communautes", "poster sur Reddit", "strategie Reddit", "scraper Reddit",
-  ou veut analyser ce qui se dit sur Reddit autour d'un sujet WordPress.
-  Aussi declenchable via /reddit.
+description: (en veille - pas de priorité canal Reddit 2026 - invocation manuelle uniquement)
 ---
+
+> **Statut : mis en veille le 2026-04-16.**
+> Ce skill (espace métier Reddit : subreddits + karma + posts + scraping + affiliation WordPress) n'est pas une priorité canal 2026. Pas de doublon ni de collision — simplement mis en veille pour éviter le bruit de déclenchement sur un canal non actif.
+> **Pas mort** : la logique du skill est conservée dans le corps du fichier. Pour le ré-activer quand Reddit devient une priorité : restaurer la description d'origine dans le frontmatter (espace métier Reddit pour schoolsWP — veille, participation, stratégie et automatisation, subreddits, karma, posts, etc.).
+> Accès via tool `Skill` en invocation explicite si besoin ponctuel.
 
 # Reddit — Espace metier schoolsWP
 

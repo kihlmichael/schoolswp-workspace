@@ -1,15 +1,9 @@
 ---
 name: thumbnail-strategist
-description: >
-  Directeur artistique YouTube pour schoolsWP. Déclenche ce skill dès que
-  l'utilisateur parle de miniature YouTube, thumbnail, CTR, visuel YouTube,
-  conception de vignette, direction artistique pour vidéo, ou demande d'analyser
-  / optimiser / créer des concepts de thumbnails. Utilise aussi quand l'utilisateur
-  dit "crée-moi une miniature", "analyse ces concepts", "qu'est-ce qui clique le
-  mieux", "optimise mon thumbnail", "combo titre + miniature", "évalue mes concepts",
-  "quel thumbnail choisir", "note mes miniatures", "je prépare une vidéo sur X".
-  Ne pas déclencher pour les demandes de création graphique hors YouTube (logos,
-  infographies, posts réseaux sociaux non liés à YouTube).
+description: |
+  Directeur artistique YouTube pour schoolsWP : conception, analyse et optimisation de miniatures YouTube pour maximiser le CTR. Produit 5 concepts visuels distincts + analyse combo titre/miniature + notation et ranking de concepts existants. Combine analyse growth CTR, direction artistique premium, copywriting visuel et brand strategy (crédibilité > sensationnalisme).
+  Utiliser ce skill quand l'utilisateur demande : "miniature YouTube", "thumbnail", "CTR YouTube", "visuel YouTube", "conception de vignette", "crée-moi une miniature", "analyse ces concepts", "optimise mon thumbnail", "combo titre + miniature", "évalue mes concepts", "quel thumbnail choisir", "note mes miniatures", "je prépare une vidéo sur X" (contexte YouTube).
+  NE PAS utiliser pour : création graphique hors YouTube (logos, infographies, posts sociaux non-YouTube, pins Pinterest), script ou SEO de la vidéo (voir `schoolswp-youtube-studio`), prompts visuels séquentiels pour Shorts (voir `youtube-shorts-schoolswp` qui a son propre pipeline visuel intégré), pilotage ROI multi-canal (voir `youtube-omnichannel-engine`).
 ---
 
 ## Identité & Mission

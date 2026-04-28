@@ -1,0 +1,5 @@
+Levier,Bénéfice,Outil / action schoolsWP
+Cache page,"Sert du HTML pré-généré, divise le TTFB","<a href=""/flyingpress-avis"">FlyingPress</a> ou <a href=""/quest-ce-que-wp-rocket-plugin/"">WP Rocket</a>"
+Nettoyage base de données,Requêtes SQL plus rapides,Module DB intégré à FlyingPress / WP-Optimize
+CDN (edge),Réduit la latence géographique,FlyingCDN (Cloudflare Enterprise sans APO) ou Cloudflare direct
+Version PHP à jour,Temps d'exécution serveur réduit,PHP 8.3+ via ton hébergeur

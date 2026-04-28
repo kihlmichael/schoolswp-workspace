@@ -1,0 +1,45 @@
+{
+  "skill_name": "mini-offer-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je veux créer une mini offre. Ma niche c'est WordPress pour les freelances. Ma cible : des développeurs web freelances qui galèrent à livrer des sites performants et optimisés SEO. Je les aide à automatiser leur workflow WordPress (maintenance, SEO, backups) pour gagner 10h par semaine. Mon différenciant : j'ai un système d'automatisation testé sur 50+ sites clients avec n8n + WordPress.",
+      "expected_output": "Le skill doit : 1) Accuser réception des 4 réponses sans reposer les questions, 2) Proposer 5 promesses numérotées avec justification, 3) Attendre validation avant de passer au mécanisme",
+      "files": [],
+      "expectations": [
+        "Produit exactement 5 promesses numérotées",
+        "Chaque promesse est accompagnée d'une explication (→ Pourquoi)",
+        "Utilise le tutoiement systématiquement",
+        "Ne propose PAS de mécanisme ni de nom dans cette première réponse",
+        "Ne contient aucun mot interdit schoolsWP (révolutionnaire, garanti, secret, hack, game changer, scalable, disruptif, en un clic, sans effort)",
+        "Demande explicitement à l'utilisateur de choisir ou ajuster une promesse"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "J'ai une idée de mini offre mais c'est encore flou. Je suis dans la niche du coaching business pour mamans entrepreneures.",
+      "expected_output": "Le skill doit poser les questions manquantes (cible précise, résultats, différenciants) avant de proposer quoi que ce soit. Ne doit PAS sauter directement aux promesses.",
+      "files": [],
+      "expectations": [
+        "Pose les questions de découverte manquantes (au moins cible, résultats, différenciants)",
+        "Ne propose PAS de promesses tant que la découverte est incomplète",
+        "Utilise le tutoiement",
+        "Ton coach bienveillant, pas vendeur",
+        "Accuse réception de ce qui est déjà fourni (niche coaching business mamans)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Je voudrais construire une mini offre pour mon activité. Niche : formation en ligne sur la productivité. Cible : solopreneurs débordés qui veulent structurer leur semaine sans sacrifier leur vie perso. Résultat : ils passent de 60h/semaine à 35h en gardant le même CA. Différenciant : ma méthode combine time-blocking, automatisation des tâches répétitives et délégation intelligente avec l'IA — testée sur moi-même et 30 clients.",
+      "expected_output": "Le skill produit 5 promesses. Si l'utilisateur en valide une, il enchaîne avec 5 mécanismes. Si le mécanisme est validé, il propose 5 noms. À la fin, il livre la fiche récap complète.",
+      "files": [],
+      "expectations": [
+        "Produit exactement 5 promesses avec justification",
+        "Respecte l'ordre séquentiel strict (promesse → mécanisme → nom)",
+        "Les promesses sont spécifiques à la cible (solopreneurs, productivité, 60h→35h)",
+        "Tutoiement systématique",
+        "Aucun mot interdit schoolsWP"
+      ]
+    }
+  ]
+}

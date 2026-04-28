@@ -1,0 +1,36 @@
+{
+  "eval_id": 2,
+  "run_type": "with_skill",
+  "expectations": [
+    {
+      "text": "Contient les 4 livrables (rapport detaille, tableau synthese, cartographie, bilan)",
+      "passed": true,
+      "evidence": "Sections A (rapport detaille), B (tableau de synthese), C (cartographie geographique) et D (bilan de traitement) presentes."
+    },
+    {
+      "text": "Tableau de synthese avec colonnes: Nom, Ville, CP, Telephone, Email, URL, Confiance, Statut",
+      "passed": true,
+      "evidence": "Tableau consolide present avec toutes les colonnes requises."
+    },
+    {
+      "text": "Chaque entree a un niveau de confiance et un statut",
+      "passed": true,
+      "evidence": "28 fiches qualifiees: 17 Eleve (61%), 10 Moyen (36%), 1 Faible (3%). Statuts Confirme/A verifier attribues."
+    },
+    {
+      "text": "Preuves WordPress/SEO citees explicitement",
+      "passed": true,
+      "evidence": "Citations textuelles pour chaque fiche (ex: '90% de son portefeuille client developpe sous WordPress', 'N1 sur Google pour consultant SEO Lyon')."
+    },
+    {
+      "text": "Pages SEO locales detectees et signalees",
+      "passed": true,
+      "evidence": "6 exclusions hors zone documentees (Maud Rauner/Drome, AmphiBee/Pas-de-Calais, Jalis/Marseille, etc.) + commentaire sur le phenomene."
+    },
+    {
+      "text": "Bilan chiffre avec metriques quantitatives",
+      "passed": true,
+      "evidence": "Tableau: ~45 bruts, 28 retenus, 17 Eleve, 10 Moyen, 1 Faible, 2 doublons, 6 hors zone, 4 sans preuve, 5 autres exclusions."
+    }
+  ]
+}

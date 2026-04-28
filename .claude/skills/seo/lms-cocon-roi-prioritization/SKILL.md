@@ -1,7 +1,12 @@
 ---
 name: lms-cocon-roi-prioritization
-description: Prioriser le cocon LMS WordPress selon un score ROI (SEO + Business + Autorite - Effort) et produire un plan d'exécution 4 semaines. Utiliser quand l'utilisateur veut classer les articles LMS par ROI, décider quoi produire en premier dans le cluster LMS, ou planifier une exécution concrète semaine par semaine.
+description: (généralisé en cocon-roi-prioritization - archivé - ne pas auto-déclencher)
 ---
+
+> **Statut : généralisé en `cocon-roi-prioritization` le 2026-04-16.**
+> Ce skill ne se déclenche plus automatiquement. Le scope LMS était arbitraire — la logique ROI (formule chiffrée + plan 4 semaines) est désormais applicable à tout pilier (LMS, CRM, OttoKit, Sécurité, Automatisation, Performance, etc.) via `cocon-roi-prioritization`.
+> Pour prioriser les pages LMS (ou tout autre cocon) par score ROI : utiliser `cocon-roi-prioritization`.
+> Conservation temporaire pour référence. Suppression manuelle à faire via l'explorateur Windows.
 
 # Priorisation ROI - Cocon LMS WordPress (schoolsWP)
 

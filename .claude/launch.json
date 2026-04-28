@@ -1,0 +1,47 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Telegram Claude Agent",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--watch", "server.js"],
+      "port": 3000,
+      "cwd": "agents/telegram-claude"
+    },
+    {
+      "name": "PDF Service",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--watch", "server.js"],
+      "port": 3001,
+      "cwd": "tools/services/pdf-service"
+    },
+    {
+      "name": "Remotion Studio — video-marketing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["remotion", "studio"],
+      "port": 3000,
+      "cwd": "apps/video-marketing"
+    },
+    {
+      "name": "Remotion Studio — brand-reveal",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["remotion", "studio"],
+      "port": 3000,
+      "cwd": "apps/brand-reveal/brand-reveal"
+    },
+    {
+      "name": "VSCode Extension — watch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["esbuild.js", "--watch"],
+      "port": null,
+      "cwd": "apps/vscode-agent-visual"
+    },
+    {
+      "name": "n8n Audit Stack (Docker Compose)",
+      "runtimeExecutable": "docker",
+      "runtimeArgs": ["compose", "--env-file", ".env", "up"],
+      "port": 5678,
+      "cwd": "systems/n8n"
+    }
+  ]
+}
