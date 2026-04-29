@@ -1,6 +1,8 @@
 # OttoKit : l'outil d'automatisation WordPress qui mérite qu'on s'y attarde
 
-Tu gères ton activité seul, tu jonches ton quotidien de tâches répétitives, et tu t'es déjà dit que "tout ça devrait se déclencher automatiquement". Envoyer un email quand un formulaire est soumis, créer une entrée dans ton CRM quand un client paye, notifier ton équipe Slack quand un article est publié — tout ça, tu le fais encore à la main ou tu passes par des solutions externes qui coûtent cher. C'est là qu'OttoKit entre dans l'équipe.
+> **OttoKit en bref.** OttoKit est un plugin WordPress d'automatisation natif, développé par Brainstorm Force (les créateurs d'Astra). Il permet de créer des workflows déclencheur → action directement depuis le tableau de bord WordPress, sans dépendre d'un service SaaS externe. Disponible en version gratuite sur WordPress.org et en version Pro. Anciennement connu sous le nom de SureTriggers, renommé en 2024.
+
+Tu gères ton activité seul, tu remplis ton quotidien de tâches répétitives, et tu t'es déjà dit que "tout ça devrait se déclencher automatiquement". Envoyer un email quand un formulaire est soumis, créer une entrée dans ton CRM quand un client paye, notifier ton équipe Slack quand un article est publié, tout ça, tu le fais encore à la main ou tu passes par des solutions externes qui coûtent cher. C'est là qu'OttoKit entre dans l'équipe.
 
 Mais avant de foncer installer le plugin, posons les bases. Qu'est-ce qu'OttoKit exactement ? Pour qui est-ce fait ? Et surtout, est-ce que ça vaut vraiment la peine de l'intégrer dans ta pile WordPress ?
 
@@ -8,7 +10,7 @@ Mais avant de foncer installer le plugin, posons les bases. Qu'est-ce qu'OttoKit
 
 ## Ce qu'est vraiment OttoKit (et ce qu'il n'est pas)
 
-OttoKit est un **plugin WordPress d'automatisation natif**. Il te permet de créer des flux de travail automatisés — appelés *workflows* — directement depuis ton tableau de bord WordPress, sans quitter ton site.
+OttoKit est un **plugin WordPress d'automatisation natif**. Il te permet de créer des flux de travail automatisés (appelés *workflows*) directement depuis ton tableau de bord WordPress, sans quitter ton site.
 
 Concrètement, OttoKit fonctionne sur un principe simple : **déclencheur → action**. Un événement se produit sur ton site (un formulaire est rempli, une commande WooCommerce est passée, un utilisateur s'inscrit), et OttoKit déclenche automatiquement une ou plusieurs actions en réponse (envoyer un email, ajouter un contact dans un outil tiers, créer un post, etc.).
 
@@ -94,7 +96,7 @@ Voici une grille de lecture pour comparer OttoKit aux options que tu croises le 
 
 OttoKit n'est pas l'outil le plus puissant en termes de volume d'intégrations. Zapier reste le champion toutes catégories si tu dois connecter des dizaines d'outils SaaS entre eux.
 
-Mais si **ton cœur d'activité vit dans WordPress** — et c'est souvent le cas quand tu travailles avec des clients WooCommerce, LMS, ou membership — alors OttoKit offre quelque chose que Zapier ne peut pas donner : la proximité avec tes données, sans frais additionnels au volume, et sans que tes workflows passent par des serveurs tiers.
+Mais si **ton cœur d'activité vit dans WordPress** (et c'est souvent le cas quand tu travailles avec des clients WooCommerce, LMS, ou membership), alors OttoKit offre quelque chose que Zapier ne peut pas donner : la proximité avec tes données, sans frais additionnels au volume, et sans que tes workflows passent par des serveurs tiers.
 
 ---
 
@@ -105,6 +107,22 @@ Mais si **ton cœur d'activité vit dans WordPress** — et c'est souvent le cas
 OttoKit est disponible directement sur le répertoire officiel WordPress.org. Tu l'installes comme n'importe quel plugin : **Extensions → Ajouter → rechercher "OttoKit"**.
 
 Une version Pro existe pour débloquer des fonctionnalités avancées (logique conditionnelle étendue, plus d'intégrations premium, historique d'exécution détaillé).
+
+### Grille tarifaire OttoKit (paiement annuel)
+
+| Plan | Prix | Tâches/mois | Sites |
+|---|---|---|---|
+| Free | 0 $/mois | 1 000 | Multi-sites |
+| Pro | 9 $/mois | 5 000 | Multi-sites |
+| Business | 19 $/mois | 10 000 | Multi-sites |
+
+Le plan gratuit (1 000 tâches/mois, multi-sites inclus) est largement suffisant pour valider l'outil avant tout engagement. Le passage au Pro à 9 $/mois reste l'un des prix les plus agressifs du marché de l'automatisation WordPress.
+
+OttoKit propose aussi deux atouts différenciants peu mentionnés ailleurs : le **rerun automatique des workflows échoués** et un **support en chat live** (vs email 24 h chez la plupart des concurrents).
+
+> Tu veux tester OttoKit avec mon retour terrain et un plan d'usage adapté à un solopreneur WordPress ? Je détaille mon setup ici : [schoolswp.com/ottokit](https://schoolswp.com/ottokit/).
+>
+> *Note transparence : les liens vers OttoKit sur schoolsWP sont des liens d'affiliation. Si tu passes en Pro via ces liens, schoolsWP perçoit une commission, sans coût supplémentaire pour toi.*
 
 ### Créer ton premier workflow
 
@@ -125,8 +143,6 @@ L'interface est construite autour d'une logique visuelle : tu vois le flux de bo
 - **Documente tes workflows** même sommairement. Dans six mois, tu seras content de savoir pourquoi tu as créé tel flux.
 - **Surveille l'historique d'exécution** pour t'assurer que tout se déclenche correctement.
 
-[[LIEN INTERNE : plugins WordPress essentiels pour freelances]]
-
 ---
 
 ## Pour quel profil OttoKit est-il vraiment adapté ?
@@ -145,19 +161,17 @@ L'interface est construite autour d'une logique visuelle : tu vois le flux de bo
 - Tu as besoin de **logique conditionnelle complexe** avec des branches multiples (Make reste supérieur sur ce point)
 - Tu traites des **volumes très élevés** de transactions et tu as besoin d'une infrastructure dédiée
 
-[[LIEN INTERNE : choisir son stack WordPress en 2024]]
-
 ---
 
-## FAQ — Les questions que tu te poses vraiment sur OttoKit
+## FAQ : les questions que tu te poses vraiment sur OttoKit
 
 ### OttoKit est-il gratuit ?
 
-OttoKit propose une version gratuite disponible sur WordPress.org, avec un nombre d'intégrations et de workflows suffisant pour démarrer. Une version Pro existe pour les besoins plus avancés. Sur schoolsWP, on travaille avec les deux selon les projets — la version gratuite couvre bien les cas d'usage courants d'un site WordPress classique.
+OttoKit propose un plan gratuit avec **1 000 tâches/mois** et la connexion illimitée à plusieurs sites WordPress. Le plan **Pro à 9 $/mois** (paiement annuel) débloque 5 000 tâches/mois. Le plan **Business à 19 $/mois** monte à 10 000 tâches/mois. Sur schoolsWP, on travaille avec les deux selon les projets : le plan gratuit couvre bien la plupart des solopreneurs WordPress, le passage au Pro reste prévisible.
 
 ### Quelle est la différence entre OttoKit et SureTriggers ?
 
-OttoKit **est** SureTriggers. En 2024, Brainstorm Force a renommé le plugin pour le repositionner sous une identité propre, avec une roadmap plus ambitieuse. Si tu utilises déjà SureTriggers, ta licence et tes workflows restent valides — c'est une migration transparente.
+OttoKit **est** SureTriggers. En 2024, Brainstorm Force a renommé le plugin pour le repositionner sous une identité propre, avec une roadmap plus ambitieuse. Si tu utilises déjà SureTriggers, ta licence et tes workflows restent valides : c'est une migration transparente.
 
 ### OttoKit fonctionne-t-il avec WooCommerce ?
 
@@ -165,19 +179,31 @@ Oui, et c'est l'une de ses forces. OttoKit propose des déclencheurs natifs pour
 
 ### Est-ce que mes données passent par des serveurs tiers ?
 
-Les workflows OttoKit s'exécutent depuis **ton serveur WordPress**. Les données ne transitent pas par une infrastructure cloud tierce comme c'est le cas avec Zapier ou Make — sauf bien sûr quand tu envoies volontairement des données vers une app externe (Mailchimp, Slack…). C'est un avantage réel si tu gères des données sensibles ou des clients soumis au RGPD.
+Les workflows OttoKit s'exécutent depuis **ton serveur WordPress**. Les données ne transitent pas par une infrastructure cloud tierce comme c'est le cas avec Zapier ou Make, sauf bien sûr quand tu envoies volontairement des données vers une app externe (Mailchimp, Slack...). C'est un avantage réel si tu gères des données sensibles ou des clients soumis au RGPD.
 
 ### OttoKit peut-il remplacer complètement Zapier ?
 
 Pas dans tous les cas. Si ton activité tourne principalement autour de WordPress, OttoKit peut effectivement remplacer une grande partie de ce que tu fais sur Zapier. Si tu interconnectes des dizaines d'outils SaaS sans lien avec WordPress, Zapier reste plus adapté. Les deux peuvent coexister : OttoKit pour tout ce qui est natif WordPress, Zapier pour le reste.
 
-[[LIEN INTERNE : RGPD et WordPress — ce que tu dois savoir]]
-
 ---
 
 ## Résumé décisionnel
 
-OttoKit est un plugin WordPress d'automatisation natif, sérieux et en progression rapide, conçu pour les sites qui ont besoin de workflows sans dépendre d'outils SaaS externes. Si ton activité est centrée sur WordPress — WooCommerce, LMS, membership — c'est une option à tester sérieusement, en commençant par la version gratuite sur un seul workflow douloureux. Ce n'est pas encore Zapier en termes d'intégrations, mais c'est souvent suffisant, plus économique, et plus cohérent avec une logique de contrôle de tes données. Installe, teste, active.
+OttoKit est un plugin WordPress d'automatisation natif, sérieux et en progression rapide, conçu pour les sites qui ont besoin de workflows sans dépendre d'outils SaaS externes. Si ton activité est centrée sur WordPress (WooCommerce, LMS, membership), c'est une option à tester sérieusement, en commençant par la version gratuite sur un seul workflow douloureux. Ce n'est pas encore Zapier en termes d'intégrations, mais c'est souvent suffisant, plus économique, et plus cohérent avec une logique de contrôle de tes données.
+
+> Si tu utilises déjà WordPress pour ton activité,
+> le vrai enjeu n'est pas d'ajouter plus de plugins,
+> mais de structurer un système cohérent.
+>
+> Commence par :
+>
+> - clarifier ton objectif principal
+> - choisir un outil adapté à ton usage réel
+> - automatiser intelligemment
+>
+> C'est exactement l'approche schoolsWP.
+
+> Prêt à tester OttoKit ? Le plan gratuit (1 000 tâches/mois, multi-sites inclus) est largement suffisant pour valider le fit avec ton activité avant tout engagement : [schoolswp.com/ottokit](https://schoolswp.com/ottokit/).
 
 ---meta---
 meta_title: OttoKit : automatiser WordPress sans outil externe
