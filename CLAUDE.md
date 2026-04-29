@@ -341,6 +341,7 @@ Tables de routing complètes (production éditoriale, SEO/cocons, landing/email/
 - `pinterest-strategy` (stratégie / pilotage / SEO / boards) vs `pinterest-pipeline` (exécution automatisée brief → Canva → API → analytics) : rôles complémentaires, ne pas confondre.
 - `clairtexte` (correction LANGUE : grammaire/orthographe/ponctuation) vs `branding` (audit VOIX : ton/clarté/densité/pédagogie) : 2 hygiénies distinctes, ne pas confondre. `clairtexte` ne touche pas au style ; `branding` ne corrige pas les fautes de langue.
 - `branding` est strictement en mode `check` (audit). Toute création de contenu passe par les skills plateforme/format spécialisés — `branding` ne draft, ne rewrite, ne repurpose pas.
+- `apps/video-marketing/` (Remotion / React, structurelle) vs `apps/hyperframes/` (HyperFrames / HTML+GSAP, courte durée) : Remotion pour vidéos multi-scènes, cours formation TutorLMS, governance theme.ts/texts.ts. HyperFrames pour intros ≤30s, overlays sociaux, recyclage article→vidéo, shader transitions. **Défaut = Remotion** si les deux peuvent faire le job. HyperFrames seulement si l'usage le justifie (intro courte, overlay, transition shader). Skills `/hyperframes`, `/hyperframes-cli`, `/gsap` réservés aux compositions dans `apps/hyperframes/`.
 
 **Import externe `external-antigravity/` (2026-04-18)** :
 

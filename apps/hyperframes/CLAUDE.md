@@ -36,8 +36,14 @@ Invoquer via slash commands (apres reload session) : /hyperframes, /hyperframes-
 - compositions/ : sous-compositions (referencees via data-composition-src)
 - compositions/components/ : snippets reutilisables
 - assets/ : medias (videos, images, audio)
-- renders/ : sorties MP4 (gitignored)
+- recyclage/<slug-article>/ : sources des compositions par article (16x9 master + variants 1x1/9x16/2x3 + build_variants.py + narrate.py)
+- renders/<slug-article>/ : sorties MP4 par article (gitignored). Miroir de recyclage/<slug>/
+- renders/intros/ : sorties MP4 des intros generiques schoolsWP (non rattachees a un article)
 - hyperframes.json : config projet (registry + paths)
+
+## Convention outputs
+
+Toute commande npx hyperframes render doit ecrire dans renders/<slug-article>/<filename>.mp4 (jamais a la racine de renders/). Pour une intro generique : renders/intros/<filename>.mp4. Le slug doit matcher le dossier source dans recyclage/.
 
 ## Regles cles
 

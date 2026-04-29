@@ -4,9 +4,9 @@ Texte calibré pour ~40s sur la voix configurée dans .env (multilingual_v2).
 Output : narration.mp3 dans le dossier de l'article.
 
 Mux ensuite avec ffmpeg :
-  ffmpeg -y -i renders/recyclage-fp-vs-wpr-16x9-1920x1080.mp4 \\
+  ffmpeg -y -i renders/flyingpress-vs-wp-rocket/recyclage-fp-vs-wpr-16x9-1920x1080.mp4 \\
          -i .../narration.mp3 -c:v copy -c:a aac -b:a 192k -shortest \\
-         renders/recyclage-fp-vs-wpr-16x9-narrated.mp4
+         renders/flyingpress-vs-wp-rocket/recyclage-fp-vs-wpr-16x9-narrated.mp4
 """
 
 from __future__ import annotations

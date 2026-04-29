@@ -7,6 +7,70 @@
 
 ---
 
+## Routing Priority — quel skill pour quelle demande
+
+Arbitrage anti-collision. Les **règles de conflit** restent dans `CLAUDE.md` (chargées en contexte), les tables de routing sont ici (consultables à la demande).
+
+### Production éditoriale
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Brief `.docx` Thruuu fourni | `thruuu-writer` |
+| Mot-clé + données SERP (article long SEO) | `schoolswp-article-workflow` |
+| Article `.md` déjà publié à recycler | `article-multiformat` |
+| Texte brut, notes, transcript, brouillon → post/newsletter/vidéo | `schoolswp-content-studio` |
+| Priorisation éditoriale globale, arbitrage roadmap, "quoi publier ensuite" (tous cocons confondus) | `brain-autonome` |
+| Lancement commande locale `brain-lite.bat` | `brain-lite` |
+
+### SEO / cocons
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Carte SEO macro (hub + ~100 pages), carte des 7 cocons, ou maillage page unique | `cocon-map-schoolswp` |
+| UN cluster à partir d'UN mot-clé (ex : FluentCRM, OttoKit) | `cluster-cocon-automatique` |
+| Priorisation ROI d'un cocon existant + plan 4 semaines | `cocon-roi-prioritization` |
+| Brief SEO d'UN article (depuis ID ou mot-clé) | `seo-brief-generator` |
+
+### Landing / email / conversion
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Lead magnet complet (PDF 1 page + landing capture + welcome sequence) | `lead-magnet-schoolswp` |
+| Landing HTML d'affiliation pour produit tiers (plugin/theme/SaaS) | `landing-page-factory` |
+| Copy page de vente pour offre propre schoolsWP (FluentCart, Kadence, SureCart) | `mini-offre-page-de-vente` |
+| Séquence email 3-7 emails pour découvrir un plugin par affiliation | `plugin-email-sequence` |
+| Recycler un email REÇU en 3 contenus dérivés (MD + LinkedIn + thread X) | `email-to-content` |
+| Polish / réécriture orientée conversion d'un texte existant | `rewrite-conversion` |
+
+### YouTube
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Vidéo YouTube LONGUE (format 16:9) : script, accroches, titres, SEO, brief thumbnail | `schoolswp-youtube-studio` |
+| Short YouTube (format 9:16, <60s), incluant série "Jusqu'où est-ce trop ?" | `youtube-shorts-schoolswp` |
+| Conception / analyse / optimisation de miniatures YouTube (CTR) | `thumbnail-strategist` |
+| Extraction de données d'une vidéo YouTube existante (transcript, metadata, commentaires) | `youtube-extractor` |
+| Pilotage ROI / scoring / distribution multi-canal YouTube → Article → LinkedIn → Newsletter | `youtube-omnichannel-engine` |
+
+### Social (hors YouTube)
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Post LinkedIn schoolsWP (création de copy originale) | `linkedin` |
+| Stratégie / plan éditorial / posts / carrousels Instagram | `instagram-strategy` |
+| Stratégie / pilotage / organisation Pinterest (boards, KPI, SEO Pinterest) | `pinterest-strategy` |
+| Pipeline d'exécution Pinterest (batch pins, Canva → API, analytics) | `pinterest-pipeline` |
+| Publication / adaptation / planification multi-plateformes via Blotato | `social-media-manager` |
+
+### Branding / voix / hygiène texte
+
+| Input utilisateur | Skill à déclencher |
+|---|---|
+| Audit du TON / voix schoolsWP sur un contenu existant (cohérence, clarté, densité, pédagogie) | `branding` (mode check uniquement) |
+| Correction LINGUISTIQUE stricte (grammaire, orthographe, conjugaison, ponctuation, typographie) | `clairtexte` |
+
+---
+
 ## Affiliation & Monetisation
 
 | Skill | Emplacement | Description |
@@ -77,6 +141,7 @@
 | --- | --- | --- |
 | `docker-expert` | workspace | Expert Docker en conteneurisation : multi-stage builds, optimisation d'images, sécurité des conteneurs, Docker Compose e |
 | `frontend-design` | workspace | Conçoit des interfaces frontend distinctives et de qualité production. Utilise ce skill pour construire des composants w |
+| `score-review-pipeline` | projet | Pattern d'architecture CLI + SQLite + scoring déterministe + review humaine pour pipelines batch (cocons, leads, audit articles). Origine : spoti-bye. Use w |
 | `web-artifacts-builder` | workspace | Suite d'outils pour créer des artefacts HTML claude.ai multi-composants et élaborés avec des technologies web modernes ( |
 
 ---
@@ -278,6 +343,30 @@
 | `references` | projet |  |
 | `wordpress` | projet | Espace métier WordPress - sites, blogs, WooCommerce et maintenance. Utiliser pour toute tâche liée à WordPress (articles |
 | `wp-image-metadata-seo` | projet | Génère un bloc complet de métadonnées SEO pour les images schoolsWP : XPTitle, XPSubject, XPKeywords, XPComment, XPAutho |
+
+---
+
+## HyperFrames (externe, vidéo HTML→MP4)
+
+Skills clonés depuis `github.com/heygen-com/hyperframes` le 2026-04-23, réservés aux compositions dans `apps/hyperframes/`. Voir routing rule `/hyperframes` vs `apps/video-marketing/` (Remotion) plus haut.
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `gsap` | `external-hyperframes/` | Référence GSAP (gsap.to/from/fromTo, easing, stagger, timelines, ScrollTrigger, performance) pour HyperFrames |
+| `hyperframes` | `external-hyperframes/` | Auteur compositions HTML : timing data-attributes, GSAP timelines, captions, TTS, audio-reactive, transitions, marker highlights |
+| `hyperframes-cli` | `external-hyperframes/` | CLI : init, lint, preview, render, transcribe, tts, doctor, browser, info, upgrade |
+| `hyperframes-registry` | `external-hyperframes/` | Installer blocks et components via `hyperframes add`, hyperframes.json, wiring |
+| `website-to-hyperframes` | `external-hyperframes/` | Capturer une URL et la transformer en vidéo (pipeline website-to-video complet) |
+
+## LiveAvatar (externe, avatar HeyGen)
+
+Skills clonés depuis `github.com/heygen-com/liveavatar-agent-skills` le 2026-04-23. Activables quand la licence HeyGen sera prise (cf mémoire `project_youtube_production_stack`).
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `liveavatar-debug` | `external-liveavatar/` | Troubleshooting symptom-based : avatar silencieux, audio garbled, sessions failing, API errors |
+| `liveavatar-feedback` | `external-liveavatar/` | Collecte feedback intégration LiveAvatar et envoi à l'équipe HeyGen (post-implementation, frustration, demande explicite) |
+| `liveavatar-integrate` | `external-liveavatar/` | End-to-end integration builder : assess stack, recommande Embed / FULL / LITE, guide implémentation |
 
 ---
 
