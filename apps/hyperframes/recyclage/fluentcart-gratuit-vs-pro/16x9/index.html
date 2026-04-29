@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #12111f;
+        font-family:
+          "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #fafbfd;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+      }
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+      }
+      .eyebrow {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 36px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #8f8da5;
+        margin-bottom: 32px;
+      }
+      .accent-free {
+        color: #00d400;
+      }
+      .accent-pro {
+        color: #e668d4;
+      }
+      .vs {
+        display: block;
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        color: #57556d;
+        margin: 16px 0;
+        letter-spacing: 2px;
+      }
+
+      /* Scene 1 - Hook */
+      .hook .label {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 132px;
+        letter-spacing: -3px;
+      }
+      .hook .question {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 52px;
+        color: #8f8da5;
+        margin-top: 60px;
+      }
+
+      /* Scene 2 - Common ground (0% frais) */
+      .common-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 16px;
+      }
+      .common-value {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 360px;
+        line-height: 1;
+        letter-spacing: -10px;
+      }
+      .common-label {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        margin-top: 32px;
+        letter-spacing: -1px;
+      }
+      .common-note {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: #8f8da5;
+        margin-top: 24px;
+      }
+
+      /* Scene 3 - Pro débloque */
+      .unlock-list {
+        list-style: none;
+        margin-top: 24px;
+      }
+      .unlock-item {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 84px;
+        line-height: 1.4;
+        color: #fafbfd;
+        letter-spacing: -2px;
+      }
+      .unlock-check {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 80px;
+        color: #00d400;
+        line-height: 1;
+      }
+
+      /* Scene 4 - Pro améliore */
+      .boost-list {
+        margin-top: 16px;
+      }
+      .boost-item {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 1.5;
+        color: #fafbfd;
+        letter-spacing: -1px;
+      }
+      .boost-item .arrow {
+        color: #e668d4;
+        font-weight: 900;
+        margin: 0 16px;
+      }
+      .boost-item .pro-tag {
+        color: #e668d4;
+        font-weight: 800;
+      }
+
+      /* Scene 5 - Verdict */
+      .verdict-stack {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        color: #8f8da5;
+        margin-bottom: 24px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+      .verdict-line {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 96px;
+        line-height: 1.3;
+        letter-spacing: -2px;
+      }
+      .verdict-cta {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: #57556d;
+        margin-top: 40px;
+      }
+
+      /* Scene 6 - CTA */
+      .cta-mark {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 156px;
+        letter-spacing: -4px;
+      }
+      .cta-mark .accent {
+        color: #00d400;
+      }
+      .cta-underline {
+        margin: 28px auto 36px;
+        width: 280px;
+        height: 7px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #00d400 0%, #e668d4 100%);
+        transform-origin: left center;
+      }
+      .cta-url {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        color: #fafbfd;
+        letter-spacing: 0.5px;
+      }
+      .cta-url .path {
+        color: #00d400;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="40"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Scene 1: Hook -->
+      <div
+        id="scene-1"
+        class="clip scene hook"
+        data-start="0"
+        data-duration="4"
+        data-track-index="0"
+      >
+        <div class="label accent-free">FluentCart Gratuit</div>
+        <div class="vs">vs</div>
+        <div class="label accent-pro">FluentCart Pro</div>
+        <div class="question">Lequel rapporte vraiment le plus ?</div>
+      </div>
+
+      <!-- Scene 2: Common ground - 0% frais -->
+      <div
+        id="scene-2"
+        class="clip scene"
+        data-start="4"
+        data-duration="8"
+        data-track-index="1"
+      >
+        <div class="eyebrow">Le commun aux 2 versions</div>
+        <div class="common-row">
+          <div id="common-value" class="common-value accent-free">0&nbsp;%</div>
+          <div class="common-label">de frais de transaction</div>
+          <div class="common-note">+ Architecture rapide · Checkout 1 page</div>
+        </div>
+      </div>
+
+      <!-- Scene 3: Pro débloque -->
+      <div
+        id="scene-3"
+        class="clip scene"
+        data-start="12"
+        data-duration="8"
+        data-track-index="2"
+      >
+        <div class="eyebrow">FluentCart Pro débloque</div>
+        <ul class="unlock-list">
+          <li id="unlock-1" class="unlock-item">
+            <span class="unlock-check">✓</span>
+            <span>Upsells &amp; Downsells</span>
+          </li>
+          <li id="unlock-2" class="unlock-item">
+            <span class="unlock-check">✓</span>
+            <span>Licences logicielles</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Scene 4: Pro améliore -->
+      <div
+        id="scene-4"
+        class="clip scene"
+        data-start="20"
+        data-duration="8"
+        data-track-index="3"
+      >
+        <div class="eyebrow">Et passe à la vitesse supérieure</div>
+        <div class="boost-list">
+          <div id="boost-1" class="boost-item">
+            Order Bumps <span class="arrow">›</span>
+            <span class="pro-tag">conditionnels</span>
+          </div>
+          <div id="boost-2" class="boost-item">
+            Rapports <span class="arrow">›</span>
+            <span class="pro-tag">par produit, par client</span>
+          </div>
+          <div id="boost-3" class="boost-item">
+            FluentCRM <span class="arrow">›</span>
+            <span class="pro-tag">automatisation complète</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 5: Verdict -->
+      <div
+        id="scene-5"
+        class="clip scene"
+        data-start="28"
+        data-duration="8"
+        data-track-index="4"
+      >
+        <div class="verdict-stack">Notre verdict</div>
+        <div class="verdict-line">
+          Démarre <span class="accent-free">Gratuit</span>.
+        </div>
+        <div class="verdict-line">
+          Bascule <span class="accent-pro">Pro</span> pour scaler.
+        </div>
+        <div class="verdict-cta">
+          Pas de risque : la version gratuite tient debout toute seule
+        </div>
+      </div>
+
+      <!-- Scene 6: CTA -->
+      <div
+        id="scene-6"
+        class="clip scene"
+        data-start="36"
+        data-duration="4"
+        data-track-index="5"
+      >
+        <div class="cta-mark">
+          schools<span class="accent">WP</span>
+        </div>
+        <div class="cta-underline"></div>
+        <div class="cta-url">
+          <span class="domain">schoolswp.com</span><span class="path">/fluentcart-gratuit-vs-pro</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0-4s): Hook
+      tl.to("#scene-1", { opacity: 1, duration: 0.01 }, 0);
+      tl.from(
+        "#scene-1 .label:first-child",
+        { opacity: 0, y: -30, duration: 0.6, ease: "power3.out" },
+        0,
+      );
+      tl.from(
+        "#scene-1 .vs",
+        { opacity: 0, scale: 0.6, duration: 0.4, ease: "back.out(2)" },
+        0.4,
+      );
+      tl.from(
+        "#scene-1 .label:nth-child(3)",
+        { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" },
+        0.6,
+      );
+      tl.from(
+        "#scene-1 .question",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        1.2,
+      );
+      tl.to(
+        "#scene-1",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        3.6,
+      );
+      tl.set("#scene-1", { opacity: 0 }, 4.0);
+
+      // Scene 2 (4-12s): Common ground 0%
+      tl.to("#scene-2", { opacity: 1, duration: 0.01 }, 4);
+      tl.from(
+        "#scene-2 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        4,
+      );
+      tl.from(
+        "#common-value",
+        { opacity: 0, scale: 0.6, duration: 0.8, ease: "back.out(1.6)" },
+        4.4,
+      );
+      tl.from(
+        "#scene-2 .common-label",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        5.2,
+      );
+      tl.from(
+        "#scene-2 .common-note",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        5.8,
+      );
+      tl.to(
+        "#scene-2",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        11.6,
+      );
+      tl.set("#scene-2", { opacity: 0 }, 12.0);
+
+      // Scene 3 (12-20s): Pro débloque
+      tl.to("#scene-3", { opacity: 1, duration: 0.01 }, 12);
+      tl.from(
+        "#scene-3 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        12,
+      );
+      tl.from(
+        "#unlock-1",
+        { opacity: 0, x: -50, duration: 0.6, ease: "power2.out" },
+        12.5,
+      );
+      tl.from(
+        "#unlock-1 .unlock-check",
+        { scale: 0, duration: 0.4, ease: "back.out(2)" },
+        12.7,
+      );
+      tl.from(
+        "#unlock-2",
+        { opacity: 0, x: -50, duration: 0.6, ease: "power2.out" },
+        13.6,
+      );
+      tl.from(
+        "#unlock-2 .unlock-check",
+        { scale: 0, duration: 0.4, ease: "back.out(2)" },
+        13.8,
+      );
+      tl.to(
+        "#scene-3",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        19.6,
+      );
+      tl.set("#scene-3", { opacity: 0 }, 20.0);
+
+      // Scene 4 (20-28s): Pro améliore
+      tl.to("#scene-4", { opacity: 1, duration: 0.01 }, 20);
+      tl.from(
+        "#scene-4 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        20,
+      );
+      tl.from(
+        "#boost-1",
+        { opacity: 0, x: -40, duration: 0.5, ease: "power2.out" },
+        20.5,
+      );
+      tl.from(
+        "#boost-2",
+        { opacity: 0, x: -40, duration: 0.5, ease: "power2.out" },
+        21.3,
+      );
+      tl.from(
+        "#boost-3",
+        { opacity: 0, x: -40, duration: 0.5, ease: "power2.out" },
+        22.1,
+      );
+      tl.to(
+        "#scene-4",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        27.6,
+      );
+      tl.set("#scene-4", { opacity: 0 }, 28.0);
+
+      // Scene 5 (28-36s): Verdict
+      tl.to("#scene-5", { opacity: 1, duration: 0.01 }, 28);
+      tl.from(
+        "#scene-5 .verdict-stack",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        28,
+      );
+      tl.from(
+        "#scene-5 .verdict-line:nth-child(2)",
+        { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" },
+        28.5,
+      );
+      tl.from(
+        "#scene-5 .verdict-line:nth-child(3)",
+        { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" },
+        29.3,
+      );
+      tl.from(
+        "#scene-5 .verdict-cta",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        30.5,
+      );
+      tl.to(
+        "#scene-5",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        35.6,
+      );
+      tl.set("#scene-5", { opacity: 0 }, 36.0);
+
+      // Scene 6 (36-40s): CTA
+      tl.to("#scene-6", { opacity: 1, duration: 0.01 }, 36);
+      tl.from(
+        "#scene-6 .cta-mark",
+        { opacity: 0, scale: 0.88, duration: 0.6, ease: "power3.out" },
+        36,
+      );
+      tl.from(
+        "#scene-6 .cta-underline",
+        { scaleX: 0, duration: 0.5, ease: "power2.out", transformOrigin: "left center" },
+        36.5,
+      );
+      tl.from(
+        "#scene-6 .cta-url",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        36.9,
+      );
+      tl.to(
+        "#scene-6",
+        { opacity: 0, duration: 0.5, ease: "power2.in" },
+        39.5,
+      );
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
