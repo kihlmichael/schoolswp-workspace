@@ -1,60 +1,55 @@
 {
-  "_comment": "Fluent ecosystem MCP servers — source: https://github.com/carlosrodera/fluent-mcp-servers (MIT, Carlos Rodera). Install: git clone + (cd <server> && npm install && npm run build). Auth: WordPress Application Passwords. Dynamic mode: append '--mode', 'dynamic' to args for ~96% token reduction. Replace /path/to/ with absolute clone path.",
+  "_comment": "TEMPLATE de référence pour les 5 Fluent MCP servers (Carlos Rodera, MIT). À adapter en .mcp.json (gitignored) avec les paths absolus de la machine. Source upstream: https://github.com/carlosrodera/fluent-mcp-servers. Install: git clone dans tools/mcp-servers/fluent-mcp-servers/ + (cd <server> && npm install && npm run build) pour chacun des 5. Auth: launcher tools/mcp-servers/_launch-fluent.mjs lit .claude/settings.local.json (FLUENTCRM_API_USERNAME + FLUENTCRM_API_PASSWORD) et set process.env avant d'importer le serveur. Pourquoi un launcher: Claude Code ne résout pas la syntaxe ${VAR} dans le bloc env de .mcp.json (test 2026-04-29). Pour activer dynamic mode (~96% de réduction tokens au boot, recommandé), ajouter '--mode', 'dynamic' aux args de chaque serveur.",
   "mcpServers": {
-    "fluentsupport": {
-      "command": "node",
-      "args": ["/path/to/fluent-mcp-servers/fluent-support-mcp/dist/index.js"],
-      "env": {
-        "FLUENTSUPPORT_URL": "https://schoolswp.com",
-        "FLUENTSUPPORT_USERNAME": "${WP_USERNAME}",
-        "FLUENTSUPPORT_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
-    },
     "fluentcrm": {
       "command": "node",
-      "args": ["/path/to/fluent-mcp-servers/fluent-crm-mcp/dist/index.js"],
-      "env": {
-        "FLUENTCRM_URL": "https://schoolswp.com",
-        "FLUENTCRM_USERNAME": "${WP_USERNAME}",
-        "FLUENTCRM_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
+      "args": [
+        "<ABSOLUTE_PATH_TO_PROJECT>/tools/mcp-servers/_launch-fluent.mjs",
+        "FLUENTCRM",
+        "fluent-crm-mcp",
+        "--mode",
+        "dynamic"
+      ]
+    },
+    "fluentsupport": {
+      "command": "node",
+      "args": [
+        "<ABSOLUTE_PATH_TO_PROJECT>/tools/mcp-servers/_launch-fluent.mjs",
+        "FLUENTSUPPORT",
+        "fluent-support-mcp",
+        "--mode",
+        "dynamic"
+      ]
     },
     "fluentboards": {
       "command": "node",
-      "args": ["/path/to/fluent-mcp-servers/fluent-boards-mcp/dist/index.js"],
-      "env": {
-        "FLUENTBOARDS_URL": "https://schoolswp.com",
-        "FLUENTBOARDS_USERNAME": "${WP_USERNAME}",
-        "FLUENTBOARDS_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
+      "args": [
+        "<ABSOLUTE_PATH_TO_PROJECT>/tools/mcp-servers/_launch-fluent.mjs",
+        "FLUENTBOARDS",
+        "fluent-boards-mcp",
+        "--mode",
+        "dynamic"
+      ]
     },
     "fluentcommunity": {
       "command": "node",
-      "args": ["/path/to/fluent-mcp-servers/fluent-community-mcp/dist/index.js"],
-      "env": {
-        "FLUENTCOMMUNITY_URL": "https://schoolswp.com",
-        "FLUENTCOMMUNITY_USERNAME": "${WP_USERNAME}",
-        "FLUENTCOMMUNITY_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
+      "args": [
+        "<ABSOLUTE_PATH_TO_PROJECT>/tools/mcp-servers/_launch-fluent.mjs",
+        "FLUENTCOMMUNITY",
+        "fluent-community-mcp",
+        "--mode",
+        "dynamic"
+      ]
     },
     "fluentaffiliate": {
       "command": "node",
-      "args": ["/path/to/fluent-mcp-servers/fluent-affiliate-mcp/dist/index.js"],
-      "env": {
-        "FLUENTAFFILIATE_URL": "https://schoolswp.com",
-        "FLUENTAFFILIATE_USERNAME": "${WP_USERNAME}",
-        "FLUENTAFFILIATE_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
-    },
-    "fluentcart": {
-      "_comment": "Maintenu séparément par @vcode-sh — 279 tools, dynamic mode. Repo: https://github.com/vcode-sh/fchub-plugins — doc: https://fchub.co/fluentcart-mcp.",
-      "command": "node",
-      "args": ["/path/to/fchub-plugins/fluentcart-mcp/dist/index.js"],
-      "env": {
-        "FLUENTCART_URL": "https://schoolswp.com",
-        "FLUENTCART_USERNAME": "${WP_USERNAME}",
-        "FLUENTCART_APP_PASSWORD": "${WP_APP_PASSWORD}"
-      }
+      "args": [
+        "<ABSOLUTE_PATH_TO_PROJECT>/tools/mcp-servers/_launch-fluent.mjs",
+        "FLUENTAFFILIATE",
+        "fluent-affiliate-mcp",
+        "--mode",
+        "dynamic"
+      ]
     }
   }
 }

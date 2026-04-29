@@ -128,6 +128,12 @@ data/youtube-transcriptions/*
 # Quand le skill est valide en prod, retirer le sous-.git/ + cette ligne pour l'embed comme antigravity/ecc.
 .claude/skills/external-video-use/
 
+# --- External MCP servers cloned upstream (build localement, pas versionnes) ---
+# Carlos Rodera - Fluent ecosystem MCP servers (5 plugins, dynamic mode)
+tools/mcp-servers/fluent-mcp-servers/
+# Anciennes versions archivees (Netfly FluentCRM MCP, etc.)
+tools/mcp-servers/_legacy/
+
 # --- mu-plugins deploy artifacts (base64 payloads + curl probes, reproducible) ---
 tools/wp-mu-plugins/*.b64.tmp
 tools/wp-mu-plugins/.live-check.tmp
