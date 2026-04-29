@@ -11,61 +11,40 @@
         "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
       }
     },
+    "_comment_launcher_pattern": "Les 5 MCP suivants (rapidapi-* + discord) injectent un secret via args. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit RAPIDAPI_KEY / DISCORD_BOT_TOKEN depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-rapidapi.mjs et _launch-discord.mjs.",
     "rapidapi-linkedin": {
-      "command": "mcp-remote",
+      "command": "node",
       "args": [
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host:${RAPIDAPI_HOST}",
-        "--header",
-        "x-api-key:${RAPIDAPI_KEY}"
-      ],
-      "env": {
-        "RAPIDAPI_HOST": "linkedin-api8.p.rapidapi.com",
-        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
-      }
+        "tools/mcp-servers/_launch-rapidapi.mjs",
+        "linkedin"
+      ]
     },
     "rapidapi-twitter": {
-      "command": "mcp-remote",
+      "command": "node",
       "args": [
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host:${RAPIDAPI_HOST}",
-        "--header",
-        "x-api-key:${RAPIDAPI_KEY}"
-      ],
-      "env": {
-        "RAPIDAPI_HOST": "twitter154.p.rapidapi.com",
-        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
-      }
+        "tools/mcp-servers/_launch-rapidapi.mjs",
+        "twitter"
+      ]
     },
     "rapidapi-instagram": {
-      "command": "mcp-remote",
+      "command": "node",
       "args": [
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host:${RAPIDAPI_HOST}",
-        "--header",
-        "x-api-key:${RAPIDAPI_KEY}"
-      ],
-      "env": {
-        "RAPIDAPI_HOST": "instagram120.p.rapidapi.com",
-        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
-      }
+        "tools/mcp-servers/_launch-rapidapi.mjs",
+        "instagram"
+      ]
     },
     "rapidapi-youtube": {
-      "command": "mcp-remote",
+      "command": "node",
       "args": [
-        "https://mcp.rapidapi.com",
-        "--header",
-        "x-api-host:${RAPIDAPI_HOST}",
-        "--header",
-        "x-api-key:${RAPIDAPI_KEY}"
-      ],
-      "env": {
-        "RAPIDAPI_HOST": "youtube138.p.rapidapi.com",
-        "RAPIDAPI_KEY": "YOUR_RAPIDAPI_KEY_HERE"
-      }
+        "tools/mcp-servers/_launch-rapidapi.mjs",
+        "youtube"
+      ]
+    },
+    "discord": {
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-discord.mjs"
+      ]
     },
     "apify": {
       "command": "actors-mcp-server",
