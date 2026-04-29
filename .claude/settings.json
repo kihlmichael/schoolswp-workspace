@@ -238,6 +238,15 @@
             "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/prompt-injection-detector.sh\""
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/mcp-config-secret-leak-blocker.sh\""
+          }
+        ]
       }
     ],
     "PostToolUse": [
