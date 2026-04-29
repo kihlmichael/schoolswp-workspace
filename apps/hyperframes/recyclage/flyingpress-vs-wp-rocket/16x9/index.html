@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #12111f;
+        font-family:
+          "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #fafbfd;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+      }
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+      }
+      .eyebrow {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 36px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #8f8da5;
+        margin-bottom: 32px;
+      }
+      .headline {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 140px;
+        letter-spacing: -3px;
+        line-height: 1.0;
+      }
+      .subline {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 44px;
+        color: #8f8da5;
+        margin-top: 36px;
+      }
+      .accent-fp {
+        color: #00d400;
+      }
+      .accent-wpr {
+        color: #e668d4;
+      }
+      .vs {
+        display: block;
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        color: #57556d;
+        margin: 16px 0;
+        letter-spacing: 2px;
+      }
+
+      /* Scene 1 - Hook */
+      .hook .label {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 132px;
+        letter-spacing: -3px;
+      }
+      .hook .question {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 52px;
+        color: #8f8da5;
+        margin-top: 60px;
+      }
+
+      /* Scene 2 - Score comparison */
+      .scores {
+        display: flex;
+        gap: 200px;
+        align-items: flex-end;
+        margin-top: 24px;
+      }
+      .score-block {
+        text-align: center;
+      }
+      .score-name {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        margin-bottom: 24px;
+      }
+      .score-value {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 280px;
+        line-height: 1;
+        letter-spacing: -8px;
+      }
+      .score-bar {
+        width: 320px;
+        height: 12px;
+        background: #2a2935;
+        border-radius: 6px;
+        margin-top: 24px;
+        overflow: hidden;
+      }
+      .score-bar-fill {
+        height: 100%;
+        border-radius: 6px;
+        transform-origin: left center;
+      }
+
+      /* Scene 3 - LCP transition */
+      .lcp-row {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        margin-top: 16px;
+      }
+      .lcp-value {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 220px;
+        line-height: 1;
+        letter-spacing: -6px;
+      }
+      .lcp-arrow {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 100px;
+        color: #57556d;
+      }
+      .lcp-gain {
+        margin-top: 32px;
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 60px;
+        color: #00d400;
+        letter-spacing: -1px;
+      }
+
+      /* Scene 4 - Prices */
+      .prices {
+        display: flex;
+        gap: 160px;
+        align-items: flex-start;
+        margin-top: 16px;
+      }
+      .price-block {
+        text-align: center;
+      }
+      .price-name {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 50px;
+        margin-bottom: 28px;
+      }
+      .price-value {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 200px;
+        line-height: 1;
+        letter-spacing: -6px;
+      }
+      .price-suffix {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: #8f8da5;
+        margin-top: 16px;
+      }
+      .price-gap {
+        margin-top: 36px;
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        color: #00d400;
+      }
+
+      /* Scene 5 - Verdict */
+      .verdict-stack {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        color: #8f8da5;
+        margin-bottom: 24px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+      .verdict-brand {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 96px;
+        letter-spacing: -2px;
+      }
+      .verdict-pick {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 900;
+        font-size: 200px;
+        color: #00d400;
+        line-height: 1;
+        letter-spacing: -6px;
+        margin-top: 32px;
+      }
+      .verdict-note {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        color: #57556d;
+        margin-top: 40px;
+      }
+
+      /* Scene 6 - CTA */
+      .cta-mark {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+        font-size: 156px;
+        letter-spacing: -4px;
+      }
+      .cta-mark .accent {
+        color: #00d400;
+      }
+      .cta-underline {
+        margin: 28px auto 36px;
+        width: 280px;
+        height: 7px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #00d400 0%, #e668d4 100%);
+        transform-origin: left center;
+      }
+      .cta-url {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 44px;
+        color: #fafbfd;
+        letter-spacing: 0.5px;
+      }
+      .cta-url .path {
+        color: #00d400;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="40"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Scene 1: Hook -->
+      <div
+        id="scene-1"
+        class="clip scene hook"
+        data-start="0"
+        data-duration="4"
+        data-track-index="0"
+      >
+        <div class="label accent-fp">FlyingPress</div>
+        <div class="vs">vs</div>
+        <div class="label accent-wpr">WP Rocket</div>
+        <div class="question">Lequel booste mieux WordPress ?</div>
+      </div>
+
+      <!-- Scene 2: PageSpeed Score -->
+      <div
+        id="scene-2"
+        class="clip scene"
+        data-start="4"
+        data-duration="8"
+        data-track-index="1"
+      >
+        <div class="eyebrow">PageSpeed Mobile</div>
+        <div class="scores">
+          <div class="score-block">
+            <div class="score-name accent-fp">FlyingPress</div>
+            <div id="score-fp" class="score-value accent-fp">0</div>
+            <div class="score-bar">
+              <div
+                id="score-fp-bar"
+                class="score-bar-fill"
+                style="background: #00d400; transform: scaleX(0)"
+              ></div>
+            </div>
+          </div>
+          <div class="score-block">
+            <div class="score-name accent-wpr">WP Rocket</div>
+            <div id="score-wpr" class="score-value accent-wpr">0</div>
+            <div class="score-bar">
+              <div
+                id="score-wpr-bar"
+                class="score-bar-fill"
+                style="background: #e668d4; transform: scaleX(0)"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 3: LCP transition -->
+      <div
+        id="scene-3"
+        class="clip scene"
+        data-start="12"
+        data-duration="8"
+        data-track-index="2"
+      >
+        <div class="eyebrow">Largest Contentful Paint</div>
+        <div class="lcp-row">
+          <div id="lcp-before" class="lcp-value" style="color: #e668d4">
+            3.1s
+          </div>
+          <div class="lcp-arrow">›››</div>
+          <div id="lcp-after" class="lcp-value accent-fp">1.5s</div>
+        </div>
+        <div id="lcp-gain" class="lcp-gain">52 % de temps de rendu en moins</div>
+      </div>
+
+      <!-- Scene 4: Prices -->
+      <div
+        id="scene-4"
+        class="clip scene"
+        data-start="20"
+        data-duration="8"
+        data-track-index="3"
+      >
+        <div class="eyebrow">Prix annuel · 1 site</div>
+        <div class="prices">
+          <div class="price-block">
+            <div class="price-name accent-fp">FlyingPress</div>
+            <div id="price-fp" class="price-value accent-fp">42 $</div>
+            <div class="price-suffix">/ an</div>
+          </div>
+          <div class="price-block">
+            <div class="price-name accent-wpr">WP Rocket</div>
+            <div id="price-wpr" class="price-value accent-wpr">59 $</div>
+            <div class="price-suffix">/ an</div>
+          </div>
+        </div>
+        <div id="price-gap" class="price-gap">17 $ moins cher</div>
+      </div>
+
+      <!-- Scene 5: Verdict -->
+      <div
+        id="scene-5"
+        class="clip scene"
+        data-start="28"
+        data-duration="8"
+        data-track-index="4"
+      >
+        <div class="verdict-stack">Stack officielle</div>
+        <div class="verdict-brand">
+          schools<span class="accent-fp">WP</span>
+        </div>
+        <div class="verdict-pick">FlyingPress</div>
+        <div class="verdict-note">
+          WP Rocket reste solide pour qui veut la doc 100 % FR
+        </div>
+      </div>
+
+      <!-- Scene 6: CTA -->
+      <div
+        id="scene-6"
+        class="clip scene"
+        data-start="36"
+        data-duration="4"
+        data-track-index="5"
+      >
+        <div class="cta-mark">
+          schools<span class="accent">WP</span>
+        </div>
+        <div class="cta-underline"></div>
+        <div class="cta-url">
+          <span class="domain">schoolswp.com</span><span class="path">/comparaison-flyingpress-wp-rocket</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0-4s): Hook
+      tl.to("#scene-1", { opacity: 1, duration: 0.01 }, 0);
+      tl.from(
+        "#scene-1 .label:first-child",
+        { opacity: 0, y: -30, duration: 0.6, ease: "power3.out" },
+        0,
+      );
+      tl.from(
+        "#scene-1 .vs",
+        { opacity: 0, scale: 0.6, duration: 0.4, ease: "back.out(2)" },
+        0.4,
+      );
+      tl.from(
+        "#scene-1 .label:nth-child(3)",
+        { opacity: 0, y: 30, duration: 0.6, ease: "power3.out" },
+        0.6,
+      );
+      tl.from(
+        "#scene-1 .question",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        1.2,
+      );
+      tl.to(
+        "#scene-1",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        3.6,
+      );
+      tl.set("#scene-1", { opacity: 0 }, 4.0);
+
+      // Scene 2 (4-12s): PageSpeed Score with count-up
+      tl.to("#scene-2", { opacity: 1, duration: 0.01 }, 4);
+      tl.from(
+        "#scene-2 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        4,
+      );
+      tl.from(
+        "#scene-2 .score-block:first-child",
+        { opacity: 0, x: -40, duration: 0.6, ease: "power2.out" },
+        4.3,
+      );
+      tl.from(
+        "#scene-2 .score-block:last-child",
+        { opacity: 0, x: 40, duration: 0.6, ease: "power2.out" },
+        4.5,
+      );
+      const fpScore = { v: 0 };
+      const wprScore = { v: 0 };
+      tl.to(
+        fpScore,
+        {
+          v: 96,
+          duration: 1.6,
+          ease: "power2.out",
+          onUpdate: () => {
+            document.getElementById("score-fp").textContent = Math.round(
+              fpScore.v,
+            );
+          },
+        },
+        4.8,
+      );
+      tl.to(
+        wprScore,
+        {
+          v: 92,
+          duration: 1.6,
+          ease: "power2.out",
+          onUpdate: () => {
+            document.getElementById("score-wpr").textContent = Math.round(
+              wprScore.v,
+            );
+          },
+        },
+        4.8,
+      );
+      tl.to(
+        "#score-fp-bar",
+        { scaleX: 0.96, duration: 1.6, ease: "power2.out" },
+        4.8,
+      );
+      tl.to(
+        "#score-wpr-bar",
+        { scaleX: 0.92, duration: 1.6, ease: "power2.out" },
+        4.8,
+      );
+      tl.to(
+        "#scene-2",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        11.6,
+      );
+      tl.set("#scene-2", { opacity: 0 }, 12.0);
+
+      // Scene 3 (12-20s): LCP
+      tl.to("#scene-3", { opacity: 1, duration: 0.01 }, 12);
+      tl.from(
+        "#scene-3 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        12,
+      );
+      tl.from(
+        "#lcp-before",
+        { opacity: 0, x: -40, duration: 0.6, ease: "power2.out" },
+        12.3,
+      );
+      tl.from(
+        "#scene-3 .lcp-arrow",
+        { opacity: 0, scale: 0.5, duration: 0.5, ease: "back.out(2)" },
+        12.7,
+      );
+      tl.from(
+        "#lcp-after",
+        { opacity: 0, x: 40, duration: 0.6, ease: "power2.out" },
+        13.0,
+      );
+      tl.from(
+        "#lcp-gain",
+        { opacity: 0, y: 30, duration: 0.6, ease: "power2.out" },
+        14.0,
+      );
+      tl.to(
+        "#scene-3",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        19.6,
+      );
+      tl.set("#scene-3", { opacity: 0 }, 20.0);
+
+      // Scene 4 (20-28s): Prices
+      tl.to("#scene-4", { opacity: 1, duration: 0.01 }, 20);
+      tl.from(
+        "#scene-4 .eyebrow",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        20,
+      );
+      tl.from(
+        "#scene-4 .price-block:first-child",
+        { opacity: 0, y: 40, duration: 0.6, ease: "power2.out" },
+        20.3,
+      );
+      tl.from(
+        "#scene-4 .price-block:last-child",
+        { opacity: 0, y: 40, duration: 0.6, ease: "power2.out" },
+        20.6,
+      );
+      tl.from(
+        "#price-gap",
+        { opacity: 0, scale: 0.85, duration: 0.5, ease: "back.out(1.8)" },
+        21.5,
+      );
+      tl.to(
+        "#scene-4",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        27.6,
+      );
+      tl.set("#scene-4", { opacity: 0 }, 28.0);
+
+      // Scene 5 (28-36s): Verdict
+      tl.to("#scene-5", { opacity: 1, duration: 0.01 }, 28);
+      tl.from(
+        "#scene-5 .verdict-stack",
+        { opacity: 0, y: -20, duration: 0.5, ease: "power2.out" },
+        28,
+      );
+      tl.from(
+        "#scene-5 .verdict-brand",
+        { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" },
+        28.3,
+      );
+      tl.from(
+        "#scene-5 .verdict-pick",
+        { opacity: 0, scale: 0.85, duration: 0.7, ease: "back.out(1.5)" },
+        29.0,
+      );
+      tl.from(
+        "#scene-5 .verdict-note",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        30.2,
+      );
+      tl.to(
+        "#scene-5",
+        { opacity: 0, duration: 0.4, ease: "power2.in" },
+        35.6,
+      );
+      tl.set("#scene-5", { opacity: 0 }, 36.0);
+
+      // Scene 6 (36-40s): CTA
+      tl.to("#scene-6", { opacity: 1, duration: 0.01 }, 36);
+      tl.from(
+        "#scene-6 .cta-mark",
+        { opacity: 0, scale: 0.88, duration: 0.6, ease: "power3.out" },
+        36,
+      );
+      tl.from(
+        "#scene-6 .cta-underline",
+        { scaleX: 0, duration: 0.5, ease: "power2.out", transformOrigin: "left center" },
+        36.5,
+      );
+      tl.from(
+        "#scene-6 .cta-url",
+        { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+        36.9,
+      );
+      tl.to(
+        "#scene-6",
+        { opacity: 0, duration: 0.5, ease: "power2.in" },
+        39.5,
+      );
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

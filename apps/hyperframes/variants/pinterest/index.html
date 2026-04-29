@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta name="viewport" content="width=1000, height=1500" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,18 +19,17 @@
       html,
       body {
         margin: 0;
-        width: 1920px;
-        height: 1080px;
+        width: 1000px;
+        height: 1500px;
         overflow: hidden;
         background: #12111f;
         font-family:
-          "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          system-ui, sans-serif;
+          "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       }
       #root {
         position: relative;
-        width: 1920px;
-        height: 1080px;
+        width: 1000px;
+        height: 1500px;
       }
       .stage {
         position: absolute;
@@ -38,14 +37,14 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        width: 1600px;
+        width: 880px;
       }
       .wordmark {
         font-family:
           "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
         font-weight: 800;
-        font-size: 200px;
-        letter-spacing: -6px;
+        font-size: 152px;
+        letter-spacing: -4px;
         line-height: 1;
         color: #fafbfd;
       }
@@ -53,9 +52,9 @@
         color: #00d400;
       }
       .underline {
-        margin: 36px auto 48px;
-        width: 360px;
-        height: 8px;
+        margin: 30px auto 40px;
+        width: 260px;
+        height: 7px;
         border-radius: 4px;
         background: linear-gradient(90deg, #00d400 0%, #e668d4 100%);
         transform-origin: left center;
@@ -63,19 +62,17 @@
       .tagline {
         font-family: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
         font-weight: 400;
-        font-size: 56px;
+        font-size: 48px;
         letter-spacing: 0.5px;
         color: #8f8da5;
+        line-height: 1.5;
+      }
+      .tagline-line {
+        display: block;
       }
       .tagline .word {
         display: inline-block;
-        margin: 0 14px;
-      }
-      .tagline .word:first-child {
-        margin-left: 0;
-      }
-      .tagline .word:last-child {
-        margin-right: 0;
+        margin: 0 9px;
       }
     </style>
   </head>
@@ -85,8 +82,8 @@
       data-composition-id="main"
       data-start="0"
       data-duration="5"
-      data-width="1920"
-      data-height="1080"
+      data-width="1000"
+      data-height="1500"
     >
       <div class="stage">
         <div
@@ -106,38 +103,42 @@
           data-track-index="1"
         ></div>
         <div class="tagline">
-          <span
-            id="word-1"
-            class="clip word"
-            data-start="1.0"
-            data-duration="4.0"
-            data-track-index="2"
-            >WordPress.</span
-          >
-          <span
-            id="word-2"
-            class="clip word"
-            data-start="1.4"
-            data-duration="3.6"
-            data-track-index="3"
-            >Clair.</span
-          >
-          <span
-            id="word-3"
-            class="clip word"
-            data-start="1.8"
-            data-duration="3.2"
-            data-track-index="4"
-            >Structuré.</span
-          >
-          <span
-            id="word-4"
-            class="clip word"
-            data-start="2.2"
-            data-duration="2.8"
-            data-track-index="5"
-            >Utile.</span
-          >
+          <span class="tagline-line">
+            <span
+              id="word-1"
+              class="clip word"
+              data-start="1.0"
+              data-duration="4.0"
+              data-track-index="2"
+              >WordPress.</span
+            >
+            <span
+              id="word-2"
+              class="clip word"
+              data-start="1.4"
+              data-duration="3.6"
+              data-track-index="3"
+              >Clair.</span
+            >
+          </span>
+          <span class="tagline-line">
+            <span
+              id="word-3"
+              class="clip word"
+              data-start="1.8"
+              data-duration="3.2"
+              data-track-index="4"
+              >Structuré.</span
+            >
+            <span
+              id="word-4"
+              class="clip word"
+              data-start="2.2"
+              data-duration="2.8"
+              data-track-index="5"
+              >Utile.</span
+            >
+          </span>
         </div>
       </div>
     </div>
@@ -145,7 +146,6 @@
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-
       tl.from(
         "#wordmark",
         { opacity: 0, scale: 0.88, duration: 0.6, ease: "power3.out" },
@@ -177,7 +177,6 @@
         2.2,
       );
       tl.to("#root", { opacity: 0, duration: 0.6, ease: "power2.in" }, 4.4);
-
       window.__timelines["main"] = tl;
     </script>
   </body>
