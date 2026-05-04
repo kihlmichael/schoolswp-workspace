@@ -370,6 +370,44 @@ Skills clonés depuis `github.com/heygen-com/liveavatar-agent-skills` le 2026-04
 
 ---
 
+## Design Systems (externe, librairie de référence)
+
+73 fichiers `DESIGN.md` brand-grade importés depuis `nexu-io/open-design` (Apache 2.0) le 2026-04-30. Skill **manuel uniquement**, librairie de référence — pas de génération HTML (passer par `aidesigner` T0 ou `external-cc-design` T1).
+
+Voir [.claude/skills/external-design-systems/INDEX.md](external-design-systems/INDEX.md) pour le routing complet par cas d'usage et les 4 tiers d'affinité avec schoolsWP.
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `external-design-systems` | `external-design-systems/` | 73 DESIGN.md (palette + typo + layout + components) — Stripe, Notion, Linear, Cursor, Supabase, Anthropic, Vercel, Figma, Resend, Cal.com, Mistral... Référence éducative + brief brand pour aidesigner/cc-design + modèle pour formaliser un futur DESIGN.md schoolsWP |
+
+---
+
+## Open Design (externe, skills HTML générateurs)
+
+3 skills cherry-picked depuis `nexu-io/open-design` (Apache 2.0) le 2026-04-30. Frontmatter modifié pour anti-conflit avec les skills schoolsWP existants. Pattern d'invocation : charger un `DESIGN.md` depuis `external-design-systems/` (ou `BRAND_RULES.md`) puis lire le sous-skill par référence chemin.
+
+Voir [.claude/skills/external-open-design/INDEX.md](external-open-design/INDEX.md) pour les 3 tables de routing complètes (email / pricing / docs) et les rejets documentés (28 skills OD non importés).
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `open-design-email-marketing` | `external-open-design/email-marketing/` | HTML email visuel premium centré 600-680px (masthead + hero + lockup + CTA + specs grid + footer). Newsletter featured ~1-2/mois max — distinct de FluentCRM quotidien et de plugin-email-sequence |
+| `open-design-pricing-page` | `external-open-design/pricing-page/` | HTML pricing single-screen 2/3/4 tiers + comparison table + FAQ. Pour offres propres formation TutorLMS premium / bundle FluentCart — distinct de mini-offre-page-de-vente (page longue) et landing-page-factory (affiliation) |
+| `open-design-docs-page` | `external-open-design/docs-page/` | HTML doc 3 colonnes (left nav + body + right TOC, sticky rails, code blocks). Mockup doc API plugin custom, page d'aide standalone hors WP, démo doc technique brief client |
+
+---
+
+## Obsidian (externe, extraction web)
+
+1 skill cherry-picked depuis `kepano/obsidian-skills` (MIT) le 2026-05-04. Auteur : Steph Ango (kepano), CEO Obsidian. Spec ouverte [agentskills.io](https://agentskills.io). Les 4 autres skills upstream (markdown, bases, canvas, cli) sont skipped tant qu'aucun vault Obsidian n'est opéré par Claude — voir `external-obsidian/NOTICE.md`.
+
+**Pré-requis** : CLI npm installé globalement (`npm install -g defuddle`, version 0.18.1+ confirmée).
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `defuddle` | `external-obsidian/defuddle/` | Extraction markdown propre depuis n'importe quelle URL via le CLI npm `defuddle`. Préférer à `WebFetch` pour articles / docs / blog posts (vire navigation + ads, économise des tokens). Préférer à `firecrawl_scrape` pour la veille concurrentielle locale rapide ; garder firecrawl pour pages JS-rendered ou crawl multi-pages |
+
+---
+
 ## Ajouter un skill
 
 

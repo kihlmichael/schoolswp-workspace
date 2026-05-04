@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-04T09:35:12+00:00",
+  "skills": {
+    "external-antigravity/avoid-ai-writing": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:497061f87bacfb6578163fcda77996caba8fa134242a9a2447faf893319f4af4",
+      "files_count": 1
+    },
+    "external-antigravity/clarvia-aeo-check": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:62edbcf91fe4d7e5decd91dea980bca8950df8ba62146b83a53cf774a2332fe1",
+      "files_count": 1
+    },
+    "external-antigravity/copywriting-psychologist": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:be2c64df634954438df593ec8f62c30270aa85f89703d8297ae68d6ae9677469",
+      "files_count": 1
+    },
+    "external-antigravity/email-sequence": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:d460f9ed09809aa85766f24e995bbb2e45363f8e0eea4660c9558f79a0f6a34c",
+      "files_count": 1
+    },
+    "external-antigravity/geo-fundamentals": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:7478b061e6b36ecaae52fa1f780edb8b0d072f9929a26eb5abf343afff246d2f",
+      "files_count": 2
+    },
+    "external-antigravity/page-cro": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:0c57c8efcc92f95238a1132aa36bc9c47e7a6dcada665f4cf0b9a5a28b4b0d23",
+      "files_count": 1
+    },
+    "external-antigravity/popup-cro": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:d3ba37ea75788ec6690f651654505e4eb2842dcbd06c5582e708d39460c38a2b",
+      "files_count": 1
+    },
+    "external-antigravity/seo-aeo-internal-linking": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:ad554617cf3798168b03ed0a36e8443802770f04f2c5320812bb6d40255ab501",
+      "files_count": 1
+    },
+    "external-antigravity/seo-aeo-schema-generator": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:8e8dd159f7aafb63f21b9821d6ccbdb687dfed4396f4af51a195b6324dd116c8",
+      "files_count": 1
+    },
+    "external-antigravity/seo-cannibalization-detector": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:94ae9b7dca0963cc5639d01592762237f42cd00e07f6dc57ff59a09f4b8e8e43",
+      "files_count": 1
+    },
+    "external-antigravity/seo-content-refresher": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:29814735c736cad5c8c508060ae211786112f3621b48058ebbb66b2616acc1e8",
+      "files_count": 1
+    },
+    "external-antigravity/seo-hreflang": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:babe274ec483e2b6ae7d326cfe288ae83d835012ec804c2bcc280ea614ea3202",
+      "files_count": 1
+    },
+    "external-antigravity/seo-snippet-hunter": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:873e0e63c9eef5a22020e49d2ab4eb5ffd2c8ece98081e1ab68f59d3d3bdd806",
+      "files_count": 1
+    },
+    "external-antigravity/web-performance-optimization": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:316a9f3ff06f5f32242448eedb0a85b17a80fd54429ab19b1fcdf804dec77af2",
+      "files_count": 1
+    },
+    "external-antigravity/wordpress-centric-high-seo-optimized-blogwriting-skill": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:d585f31ba444b8ff9766ffe18f2efbbee60c4a7037c50574a1ba2b7599f3a8a0",
+      "files_count": 1
+    },
+    "external-antigravity/wordpress-plugin-development": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:e13a08e3aa65af7bc45c0de66809502be8c799412ebc1c2fc8379654575f9133",
+      "files_count": 1
+    },
+    "external-cc-design": {
+      "source": "ZeroZ-lab/cc-design",
+      "source_type": "github",
+      "computed_hash": "sha256:5ae0e4aa23307088c1a93835676fb2f21bc5960a32c232b7d84c658258cc2e41",
+      "files_count": 36
+    },
+    "external-design-systems": {
+      "source": "nexu-io/open-design",
+      "source_type": "github",
+      "computed_hash": "sha256:512ad3c1863af02f78dc9013ff4a37ec3e92ee365ef14670ed952f4a3befe073",
+      "files_count": 77
+    },
+    "external-ecc/gateguard": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:11ba96b8bf7018fabe2f6cec918f15bdbc6b5be5c2eb00b98446878a8c0829a0",
+      "files_count": 1
+    },
+    "external-open-design/docs-page": {
+      "source": "nexu-io/open-design",
+      "source_type": "github",
+      "computed_hash": "sha256:bdb66ab1ee19546a370c2b6ed2b7fe34e2a9db7e4aaed8a2e0963183e629197f",
+      "files_count": 2
+    },
+    "external-open-design/email-marketing": {
+      "source": "nexu-io/open-design",
+      "source_type": "github",
+      "computed_hash": "sha256:abf437f487693ca351ffac0da13ed3e72fd6b16602b9389f23b7109305ddaeb5",
+      "files_count": 2
+    },
+    "external-open-design/pricing-page": {
+      "source": "nexu-io/open-design",
+      "source_type": "github",
+      "computed_hash": "sha256:0c7e2ff1438d9d7c5cecdd8a3d1dfedeea5e167b0ce0893562d8cf6177b3af2b",
+      "files_count": 2
+    },
+    "external-hyperframes/gsap": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:ce919791d4e694e8f1295134000629cf85f7e36f63db1aef4e0ac09b9d3ba1e6",
+      "files_count": 3
+    },
+    "external-hyperframes/hyperframes": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:20ea7a6d19b87c8f43055e21e6348a24869d605a2a4bc1e279a56971aed1eb6c",
+      "files_count": 39
+    },
+    "external-hyperframes/hyperframes-cli": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:70c20cecb93d540a6cee22cc644ec80797cabb3d5e40186dbb71fbace967eae0",
+      "files_count": 1
+    },
+    "external-hyperframes/hyperframes-registry": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:b4e286a6e9104c552dab30d27a0efed80da491c6c75a1ff40e436c1e1430ee7b",
+      "files_count": 8
+    },
+    "external-hyperframes/website-to-hyperframes": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:9bc958122379ffc894c882b0ed0591f607c99ef460a11a3d23df9d03b73adfb2",
+      "files_count": 9
+    },
+    "external-liveavatar/liveavatar-debug": {
+      "source": "heygen-com/liveavatar-web-sdk",
+      "source_type": "github",
+      "computed_hash": "sha256:a4c3283d186c0e40a13d07ad49ff2bc2244ded682a5be2134d01a99d702e6310",
+      "files_count": 1
+    },
+    "external-liveavatar/liveavatar-feedback": {
+      "source": "heygen-com/liveavatar-web-sdk",
+      "source_type": "github",
+      "computed_hash": "sha256:ad973c84946dfe08519ceeb29b9cebffbb8cd94cb8cad8ce9462df135b7b7d18",
+      "files_count": 1
+    },
+    "external-liveavatar/liveavatar-integrate": {
+      "source": "heygen-com/liveavatar-web-sdk",
+      "source_type": "github",
+      "computed_hash": "sha256:d114d8157b2b2d8b6f506501ac4a4b4fa7170b546b8093ed47ce76cf1e6ffe1a",
+      "files_count": 4
+    },
+    "external-obsidian/defuddle": {
+      "source": "kepano/obsidian-skills",
+      "source_type": "github",
+      "computed_hash": "sha256:8d059089cc4efc6448d23d075bfaf26111447fcd84044b7dd97029bfc49b9a4c",
+      "files_count": 1
+    },
+    "external-video-use": {
+      "source": "browser-use/video-use",
+      "source_type": "github",
+      "computed_hash": "sha256:0a1f55c997d418f6cfafec38b97dc8a9b7f85d588bdaa90fd36296893552b5a2",
+      "files_count": 32
+    }
+  }
+}
