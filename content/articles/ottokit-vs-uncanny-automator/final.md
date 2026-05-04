@@ -1,0 +1,183 @@
+# OttoKit vs Uncanny Automator : quel outil d'automatisation choisir pour ton site WordPress ?
+
+> **OttoKit vs Uncanny Automator en bref.** OttoKit (anciennement SureTriggers, par Brainstorm Force) est une plateforme d'automatisation cloud + plugin WordPress, idéale pour connecter WordPress à des apps externes et gérer plusieurs sites depuis un seul compte. Uncanny Automator est un plugin 100 % serveur WordPress, plus mature et plus puissant pour les sites avec LMS, membership ou logique conditionnelle complexe. OttoKit penche freelance multi-sites, Uncanny penche site WordPress riche en plugins métier.
+
+Tu veux automatiser des actions sur ton site WordPress (envoyer un email quand un utilisateur s'inscrit, ajouter quelqu'un à une liste Mailchimp après un achat, déclencher une notification Slack à la création d'un post) mais tu te retrouves face à deux noms qui reviennent souvent : **OttoKit** (anciennement SureTriggers) et **Uncanny Automator**. Les deux promettent de connecter tes plugins WordPress entre eux et avec des services externes. Mais leur philosophie, leur périmètre et leur rapport qualité/prix sont très différents.
+
+Avant de choisir, il faut comprendre ce que tu cherches vraiment à automatiser, et pour qui.
+
+---
+
+## Pourquoi l'automatisation WordPress mérite une vraie réflexion stratégique
+
+### Le piège du "je branche et ça marche"
+
+L'automatisation sur WordPress n'est pas une simple fonctionnalité bonus. C'est une décision d'architecture. Quand tu connectes deux plugins via un outil tiers, tu crées une dépendance : si cet outil ralentit, plante ou disparaît de ta stack, tes workflows tombent avec lui.
+
+Beaucoup de freelances et solopreneurs installent un outil d'automatisation sans avoir cartographié leurs flux au préalable. Résultat : des automatisations qui se contredisent, des doublons dans les listes email, des actions déclenchées deux fois. Ce n'est pas un problème d'outil : c'est un problème de méthode.
+
+Chez schoolsWP, on part toujours du même principe : **automatiser un processus bancal, c'est faire des erreurs plus vite**. Avant de comparer OttoKit et Uncanny Automator, pose-toi la question : est-ce que je sais précisément ce que je veux automatiser, et pourquoi ?
+
+### Ce que font ces deux outils (et ce qu'ils ne font pas)
+
+OttoKit et Uncanny Automator sont des **outils d'automatisation natifs WordPress**. Contrairement à Zapier ou Make, ils s'installent directement comme des plugins WordPress et peuvent interagir avec tes autres plugins sans passer par une API externe à chaque déclenchement.
+
+C'est leur force commune. Mais leurs approches divergent sensiblement.
+
+---
+
+## OttoKit : l'automatisation WordPress pensée pour aller vite
+
+### Ce qu'est OttoKit
+
+OttoKit est le nouveau nom de **SureTriggers**, racheté et repensé par Brainstorm Force (l'équipe derrière Astra, CartFlows et une bonne partie de l'écosystème WordPress premium). La plateforme combine une interface en ligne (cloud) et un plugin WordPress pour créer des automatisations entre tes plugins WordPress et des apps externes.
+
+Son positionnement : **être le Zapier du WordPress**, mais avec une connexion native aux plugins.
+
+### Ce qu'OttoKit fait bien
+
+- **Interface visuelle intuitive** : les workflows se construisent dans un éditeur cloud, avec une logique déclencheur → action bien visible.
+- **Connexions WordPress natives** : WooCommerce, LearnDash, Fluent CRM, MemberPress, Elementor Forms, Gravity Forms... La liste des intégrations est longue et grandit vite.
+- **Connexions externes** : Slack, Google Sheets, ActiveCampaign, Mailchimp, Webhooks génériques.
+- **Offre gratuite généreuse** : jusqu'à 1 000 tâches par mois gratuitement, ce qui est suffisant pour tester sérieusement.
+- **Multi-sites** : un compte OttoKit peut gérer plusieurs sites WordPress, pratique pour les freelances qui gèrent des projets clients.
+
+### Les limites d'OttoKit à connaître
+
+- La logique conditionnelle avancée (if/else imbriqués, filtres complexes) reste moins puissante que chez la concurrence.
+- L'historique des exécutions est limité dans les plans bas de gamme : difficile de déboguer finement.
+- La partie cloud dépend des serveurs OttoKit : si leur infra est en maintenance, tes automatisations attendent.
+- Outil encore jeune sous ce nom : la documentation est en train de rattraper l'ancienne documentation SureTriggers.
+
+---
+
+## Uncanny Automator : la référence mature pour les sites WordPress complexes
+
+### Ce qu'est Uncanny Automator
+
+Uncanny Automator existe depuis 2020 et s'est construit une réputation solide dans l'écosystème WordPress, notamment dans le monde du **eLearning et des membership sites**. Il tourne entièrement **côté serveur** (sur ton hébergement WordPress), sans dépendance à une plateforme cloud tierce pour ses intégrations WordPress-à-WordPress.
+
+Son positionnement : **la puissance et la fiabilité pour des automatisations WordPress complexes**.
+
+### Ce qu'Uncanny Automator fait bien
+
+- **Profondeur des intégrations** : plus de 170 plugins et apps intégrés, dont LearnDash, LifterLMS, BuddyBoss, MemberPress, WooCommerce, Tutor LMS, GamiPress...
+- **Logique conditionnelle robuste** : les "recettes" (c'est leur terme pour les workflows) supportent des conditions avancées, des tokens dynamiques, des filtres sur le profil utilisateur.
+- **Tout se passe sur ton serveur** : tes données ne transitent pas par un cloud tiers pour les automatisations inter-plugins WordPress.
+- **Logs détaillés** : l'historique des exécutions est complet, ce qui facilite le débogage.
+- **Version gratuite disponible** : avec des recettes "any user" (anonymes), tu peux commencer à automatiser sans payer.
+- **Stabilité reconnue** : la base de code est mature, les mises à jour sont régulières et bien documentées.
+
+### Les limites d'Uncanny Automator à connaître
+
+- **Courbe de prise en main plus steep** : l'interface est claire, mais la logique "déclencheurs + actions + conditions" demande un peu de temps pour être vraiment maîtrisée.
+- **Le plan Pro est nécessaire** pour débloquer les automatisations entre utilisateurs connectés et les intégrations avec des apps externes.
+- **Prix plus élevé** : à partir de 149 $/an pour un seul site avec le plan Pro. C'est un investissement à considérer sérieusement.
+- **Moins adapté aux connexions cloud-heavy** : si ton objectif principal est de connecter WordPress à des dizaines d'apps SaaS, OttoKit ou Make seront plus fluides.
+
+---
+
+## Comparaison structurée : OttoKit vs Uncanny Automator
+
+| Critère | OttoKit | Uncanny Automator |
+|---|---|---|
+| **Architecture** | Cloud + plugin WordPress | 100 % WordPress (serveur local) |
+| **Nombre d'intégrations** | ~100+ (en croissance) | ~170+ (bien établies) |
+| **Logique conditionnelle** | Basique à intermédiaire | Avancée (tokens, filtres, multi-conditions) |
+| **Plan gratuit** | Oui, 1 000 tâches/mois | Oui, recettes anonymes uniquement |
+| **Prix Pro** | ~10-15 $/mois | ~149 $/an par site |
+| **Multi-sites** | Oui (1 compte, plusieurs sites) | Selon le plan |
+| **Données hébergées** | Partiellement sur le cloud OttoKit | Sur ton hébergeur uniquement |
+| **eLearning / Memberships** | Correct | Excellent (sa spécialité) |
+| **Apps externes (Slack, Sheets...)** | Fort | Correct |
+| **Maturité de l'outil** | Récent (ex-SureTriggers) | Mature (depuis 2020) |
+| **Débogage / logs** | Limité en version gratuite | Complet même en version Pro basique |
+
+---
+
+## Grille tarifaire chiffrée : OttoKit vs Uncanny Automator
+
+### OttoKit (paiement annuel)
+
+| Plan | Prix | Tâches/mois | Sites |
+|---|---|---|---|
+| Free | 0 $/mois | 1 000 | Multi-sites |
+| Pro | 9 $/mois | 5 000 | Multi-sites |
+| Business | 19 $/mois | 10 000 | Multi-sites |
+
+### Uncanny Automator
+
+| Plan | Prix | Sites |
+|---|---|---|
+| Free | 0 $ | Recettes anonymes uniquement |
+| Pro | ~149 $/an (~12,40 $/mois) | 1 site (paliers supérieurs pour multi-sites) |
+
+**Lecture rapide.** OttoKit Pro à 9 $/mois multi-sites est environ **4 $/mois moins cher** qu'Uncanny Pro mono-site, et il s'applique sur tous les sites de ton portefeuille. Uncanny justifie son prix par la profondeur d'intégration LMS/membership et la robustesse des logs. Le bon réflexe : tu paies plus chez Uncanny pour de la fiabilité métier sur des sites WordPress complexes, tu paies moins chez OttoKit pour de la simplicité multi-sites.
+
+OttoKit propose en plus un **rerun automatique des workflows échoués** et un **support en chat live**, deux atouts différenciants peu visibles dans les comparatifs classiques.
+
+---
+
+## Comment choisir selon ton profil WordPress
+
+### Tu es freelance WordPress avec plusieurs sites clients
+
+Dans ce cas, **OttoKit penche en ta faveur**. La gestion multi-sites depuis un seul compte, le plan gratuit généreux et la rapidité de mise en place font de lui un bon compagnon pour automatiser des tâches récurrentes sur des projets clients variés (notifications, synchronisation de formulaires, intégrations CRM basiques).
+
+Attention toutefois : si un client gère un site avec des données sensibles ou des processus critiques, la dépendance cloud mérite d'être mentionnée dans ta proposition.
+
+### Tu gères un site WordPress avec du LMS, des membres ou un parcours utilisateur complexe
+
+**Uncanny Automator est fait pour toi**. Sa profondeur d'intégration avec LearnDash, BuddyBoss, MemberPress ou LifterLMS n'a pas d'équivalent. Si tu as besoin de déclencher des actions selon la progression d'un apprenant, le statut d'un membre ou l'historique d'achat, c'est lui qui tiendra la route dans la durée.
+
+Sur schoolsWP, quand on accompagne des créateurs de formations ou des community managers qui construisent autour de WordPress, Uncanny Automator est souvent la première recommandation pour la couche d'automatisation.
+
+### Tu veux connecter WordPress à des outils externes (Slack, Google Sheets, CRM SaaS)
+
+Les deux outils le font, mais si ta liste d'apps externes est longue et variée, **OttoKit est plus agile**. Et si tu as déjà Make ou Zapier dans ta stack, il vaut mieux se poser la question : est-ce qu'un outil d'automatisation WordPress natif t'apporte vraiment quelque chose de plus, ou est-ce que tu doubles l'existant ?
+
+### Tu débutes avec l'automatisation WordPress et tu veux limiter le risque financier
+
+Commence par la **version gratuite d'OttoKit**. Elle est suffisamment généreuse pour comprendre si l'automatisation change vraiment quelque chose dans ton quotidien. Si au bout de quelques mois tu te rends compte que tu as besoin de plus de puissance conditionnelle ou d'intégrations LMS/membership, bascule vers Uncanny Automator en connaissance de cause.
+
+---
+
+## FAQ : les questions que tu te poses vraiment
+
+### OttoKit remplace-t-il vraiment Zapier pour WordPress ?
+
+Partiellement. OttoKit couvre bien les cas d'usage courants (formulaires → CRM, achat → liste email, inscription → notification). Mais Zapier reste plus large en nombre d'apps supportées et plus robuste pour des workflows multi-étapes complexes avec du filtrage avancé. Si tu utilises déjà Zapier et que tu en es content, OttoKit ne te donnera pas forcément une raison de migrer, sauf pour réduire les coûts ou rapatrier les automatisations côté WordPress.
+
+### Uncanny Automator fonctionne-t-il sans plugin premium ?
+
+La version gratuite d'Uncanny Automator fonctionne avec des dizaines de plugins gratuits et permet de créer des recettes pour des utilisateurs anonymes (non connectés). Pour les automatisations déclenchées par des actions d'utilisateurs connectés (achat WooCommerce, complétion d'une leçon LearnDash, etc.), le plan Pro est nécessaire. C'est un point important à vérifier avant de te lancer.
+
+### Est-ce qu'on peut utiliser OttoKit et Uncanny Automator ensemble ?
+
+Oui, techniquement. Certains utilisateurs utilisent Uncanny Automator pour leurs automatisations internes WordPress (entre plugins) et OttoKit pour les connexions vers des apps externes. C'est une architecture possible, mais elle ajoute de la complexité. Dans la majorité des cas, un seul outil bien maîtrisé vaut mieux que deux outils mal coordonnés.
+
+### Qu'est-ce qui a changé entre SureTriggers et OttoKit ?
+
+SureTriggers a été renommé OttoKit début 2024 par Brainstorm Force. Au-delà du nom, l'équipe a revu l'interface, enrichi les intégrations et repositionné le produit avec une ambition plus large. Les comptes SureTriggers existants ont été migrés. Si tu lis des tutoriels qui mentionnent SureTriggers, c'est bien la même plateforme.
+
+### Uncanny Automator ralentit-il WordPress ?
+
+Comme tout plugin qui s'exécute sur ton serveur, Uncanny Automator sollicite ta base de données lors de chaque déclenchement. Sur un hébergement correct (Kinsta, WP Engine, Rocket.net, o2switch avec de la marge), cela ne se ressent pas. Sur un hébergement mutualisé bas de gamme avec un trafic important, les performances peuvent être impactées. C'est un point à surveiller, pas une contre-indication absolue.
+
+---
+
+## Résumé décisionnel
+
+**Choisis OttoKit** si tu gères plusieurs sites clients, que tu veux automatiser des connexions avec des apps externes et que tu préfères une interface cloud légère avec un plan gratuit pour tester sans engagement.
+
+**Choisis Uncanny Automator** si tu pilotes un site WordPress avec du LMS, des membres ou des parcours utilisateurs complexes, et que tu as besoin d'une logique conditionnelle solide et de logs fiables pour auditer tes automatisations.
+
+Dans tous les cas : cartographie tes flux avant d'installer quoi que ce soit. Un workflow clair sur papier vaut mieux qu'une dizaine d'automatisations qui se marchent dessus.
+
+> Tu veux tester OttoKit avec mon retour terrain et un plan d'usage adapté à un solopreneur WordPress ? Je détaille mon setup ici : [schoolswp.com/ottokit](https://schoolswp.com/ottokit/).
+>
+> *Note transparence : les liens vers OttoKit sur schoolsWP sont des liens d'affiliation. Si tu passes en Pro via ces liens, schoolsWP perçoit une commission, sans coût supplémentaire pour toi.*
+
+---meta---
+meta_title: OttoKit vs Uncanny Automator : lequel choisir pour WordPress ?
+meta_description: OttoKit ou Uncanny Automator pour automatiser WordPress ? Comparatif honnête pour freelances et solopreneurs : intégrations, prix, cas d'usage concrets.

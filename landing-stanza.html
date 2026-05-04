@@ -710,8 +710,14 @@
 
             const revealElements = document.querySelectorAll('.reveal-up');
             revealElements.forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
+                const rect = el.getBoundingClientRect();
+                const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+                if (inViewport) {
+                    el.style.animationPlayState = 'running';
+                } else {
+                    el.style.animationPlayState = 'paused';
+                    observer.observe(el);
+                }
             });
         });
     </script>
