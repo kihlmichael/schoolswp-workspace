@@ -1,0 +1,22 @@
+# Manifest pour l'article FlyingPress vs Perfmatters
+# Article : https://schoolswp.com/?p=2688839 (draft)
+
+article:
+  id: 2688839
+  slug: flyingpress-vs-perfmatters
+
+images:
+  - file: flyingpress-vs-perfmatters-plugin-wordpress-performance.jpg
+    title: "FlyingPress vs Perfmatters 2026 : comparatif sur schoolsWP"
+    alt_text: "flyingpress vs perfmatters 2026 – comparatif schoolsWP des plugins WordPress performance pour optimiser tes Core Web Vitals"
+    caption: "FlyingPress et Perfmatters visent le même objectif : un site WordPress rapide qui passe les Core Web Vitals. Ce visuel schoolsWP ouvre le comparatif pour t'aider à choisir le bon plugin selon ton contexte."
+    description: "Cette image illustre un article schoolsWP consacré au comparatif FlyingPress vs Perfmatters en 2026. Elle met en avant deux approches distinctes de l'optimisation WordPress : cache + assets pour FlyingPress, optimisations granulaires pour Perfmatters. Le visuel s'adresse aux éditeurs WordPress qui hésitent entre les deux plugins pour booster Core Web Vitals (LCP, INP, CLS) sans complexifier leur stack. Il invite à lire le comparatif détaillé schoolsWP avant de trancher."
+    featured: true
+    exif:
+      XPTitle: "FlyingPress vs Perfmatters 2026 – comparatif performance"
+      XPSubject: "Visuel d'article schoolsWP comparant FlyingPress et Perfmatters, deux plugins WordPress de performance. Branding schoolsWP avec titre mis en avant et identité visuelle cohérente."
+      XPKeywords: "FlyingPress vs Perfmatters, comparatif plugins WordPress performance, plugin cache WordPress, Perfmatters avis, FlyingPress avis, Core Web Vitals WordPress, optimisation performance WordPress, plugin performance WordPress, accélérer WordPress, comparatif performance 2026"
+      XPComment: "Image de couverture optimisée SEO pour l'article FlyingPress vs Perfmatters sur schoolsWP. Améliore le référencement Google Images et renforce le branding."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel FlyingPress vs Perfmatters 2026 pour un article schoolsWP sur le comparatif des deux plugins WordPress de performance et leur impact sur les Core Web Vitals."

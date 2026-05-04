@@ -1,0 +1,80 @@
+# Manifest pour l'article FlyingPress avis
+# Depose tes 4 JPEG dans ce dossier avec les noms ci-dessous, puis lance :
+#   python cli.py upload --article flyingpress-avis --dry-run
+#   python cli.py upload --article flyingpress-avis
+
+article:
+  id: 2600169
+  slug: flyingpress-avis
+
+images:
+  - file: panel-images-avif.jpg
+    title: "FlyingPress 2026 : avis plugin performance Pro – schoolsWP"
+    alt_text: "Panel Images de FlyingPress : 26345 images à convertir en AVIF avec perte, test du plugin cache WordPress schoolsWP 2026"
+    caption: "L'onglet Images de FlyingPress centralise la conversion vers AVIF ou WebP avec compression avec perte. Ce visuel schoolsWP montre 26345 images à optimiser avant le premier lancement."
+    description: "Cette image illustre l'avis schoolsWP sur FlyingPress et son module d'optimisation d'images. Elle montre les réglages AVIF, la compression avec perte et l'état initial d'une médiathèque de 795 MB. Le visuel s'adresse aux éditeurs WordPress qui cherchent à booster leurs Core Web Vitals sans multiplier les plugins. Lis l'article pour voir si ces réglages tiennent la route en production."
+    featured: true
+    exif:
+      XPTitle: "FlyingPress 2026 – panel Images AVIF avis schoolsWP"
+      XPSubject: "Visuel d'article schoolsWP présentant l'onglet Images de FlyingPress, plugin performance WordPress pour conversion AVIF. Branding schoolsWP avec titre en avant, fond travaillé et angle éditorial clair."
+      XPKeywords: "FlyingPress avis, plugin performance WordPress, optimisation images AVIF, avis FlyingPress 2026, plugin cache WordPress, compression AVIF lossy, schoolsWP performance, WordPress images optimisation, FlyingPress Pro, Core Web Vitals WordPress"
+      XPComment: "Image de couverture optimisée SEO pour l'article Avis FlyingPress sur schoolsWP. Capture du panel Images avec réglages AVIF, améliore le référencement Google Images et renforce le branding."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel Avis FlyingPress 2026 pour un article schoolsWP présentant le panel Images du plugin et la conversion AVIF avec perte."
+
+  - file: optimisation-css-js.jpg
+    title: "FlyingPress 2026 : avis plugin performance WP – schoolsWP"
+    alt_text: "Panneau Optimisation FlyingPress : CSS, JavaScript différé, lazy load et polices, test plugin cache WordPress schoolsWP 2026"
+    caption: "Les réglages d'Optimisation de FlyingPress pilotent CSS, JavaScript, polices et lazy load côté front. Ce visuel schoolsWP montre une configuration typique d'un site WordPress rapide en 2026."
+    description: "Cette image illustre l'avis schoolsWP sur FlyingPress côté optimisation frontale. Elle présente les toggles CSS minifié, suppression du CSS inutilisé, différé JavaScript, lazy load des images et préchargement des polices. Elle cible les utilisateurs WordPress qui veulent booster leurs Core Web Vitals sans coder. Lis l'article complet pour arbitrer entre FlyingPress, WP Rocket et LiteSpeed Cache."
+    exif:
+      XPTitle: "FlyingPress 2026 – avis optimisation CSS JS schoolsWP"
+      XPSubject: "Visuel d'article schoolsWP montrant l'onglet Optimisation de FlyingPress avec réglages CSS, JavaScript, lazy load et polices. Branding schoolsWP avec titre en avant et angle éditorial clair."
+      XPKeywords: "FlyingPress avis, plugin performance WordPress, optimisation CSS JavaScript, lazy load WordPress, polices locales WordPress, FlyingPress 2026, plugin cache WordPress, schoolsWP performance, suppression CSS inutilisé, différer JavaScript"
+      XPComment: "Image de couverture optimisée SEO pour l'article Avis FlyingPress sur schoolsWP. Capture du panneau Optimisation, améliore le référencement Google Images et renforce le branding."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel Avis FlyingPress 2026 pour un article schoolsWP présentant les réglages d'optimisation CSS, JavaScript, images et polices du plugin."
+
+  - file: tableau-de-bord-cache.jpg
+    title: "FlyingPress 2026 : avis plugin cache WordPress – schoolsWP"
+    alt_text: "Tableau de bord FlyingPress avec 709 pages en cache et préchargement, test plugin performance WordPress par schoolsWP 2026"
+    caption: "Le tableau de bord FlyingPress affiche le nombre de pages en cache, l'état de la file d'attente et un accès direct au préchargement. Ce visuel schoolsWP illustre une configuration cache active sur un site WordPress de production."
+    description: "Cette image illustre l'avis schoolsWP sur FlyingPress côté tableau de bord. Elle montre 709 pages en cache, la file d'attente vide et la promo FlyingCDN, le CDN maison du plugin. Elle s'adresse aux éditeurs WordPress qui évaluent FlyingPress face à WP Rocket ou LiteSpeed Cache. Lis l'article complet pour voir si le plugin tient ses promesses sur un site réel."
+    exif:
+      XPTitle: "FlyingPress 2026 – tableau de bord cache schoolsWP"
+      XPSubject: "Visuel d'article schoolsWP montrant le tableau de bord de FlyingPress avec 709 pages en cache sur un site WordPress. Branding schoolsWP avec titre en avant et angle éditorial clair."
+      XPKeywords: "FlyingPress avis, tableau de bord FlyingPress, cache WordPress, 709 pages cache, avis FlyingPress 2026, plugin cache WordPress, FlyingCDN, schoolsWP performance, préchargement cache, Core Web Vitals WordPress"
+      XPComment: "Image de couverture optimisée SEO pour l'article Avis FlyingPress sur schoolsWP. Capture du tableau de bord principal, améliore le référencement Google Images et renforce le branding."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel Avis FlyingPress 2026 pour un article schoolsWP présentant le tableau de bord principal du plugin cache WordPress."
+
+  - file: pagespeed-mobile.jpg
+    title: "FlyingPress 2026 : avis plugin Core Web Vitals – schoolsWP"
+    alt_text: "Score PageSpeed Insights mobile 98 sur schoolswp.com avec FlyingPress, test plugin performance WordPress par schoolsWP 2026"
+    caption: "Un score PageSpeed Insights mobile à 98 sur un site WordPress de production, obtenu avec FlyingPress actif. Ce visuel schoolsWP atteste que le plugin délivre concrètement sur les Core Web Vitals."
+    description: "Cette image illustre l'avis schoolsWP sur FlyingPress côté résultat terrain. Elle affiche le rapport PageSpeed Insights de schoolswp.com en version mobile : 98 en performance, 91 en accessibilité et 100 en bonnes pratiques et SEO. Elle s'adresse aux éditeurs WordPress qui cherchent des preuves avant d'acheter une licence performance. Lis l'article pour comprendre les réglages derrière ce score."
+    exif:
+      XPTitle: "FlyingPress 2026 – PageSpeed mobile 98 avis schoolsWP"
+      XPSubject: "Visuel d'article schoolsWP montrant le score PageSpeed Insights mobile de schoolswp.com avec FlyingPress actif : 98 performance, 91 accessibilité, 100 bonnes pratiques, 100 SEO. Branding schoolsWP avec titre en avant."
+      XPKeywords: "FlyingPress avis, PageSpeed Insights mobile, Core Web Vitals WordPress, score PageSpeed 98, avis FlyingPress 2026, plugin performance WordPress, schoolsWP performance, LCP WordPress, INP WordPress, vitesse WordPress"
+      XPComment: "Image de couverture optimisée SEO pour l'article Avis FlyingPress sur schoolsWP. Capture d'un score PageSpeed Insights mobile 98/91/100/100 obtenu avec le plugin actif."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel Avis FlyingPress 2026 pour un article schoolsWP montrant un score PageSpeed Insights mobile 98 obtenu sur un site WordPress en production avec FlyingPress actif."
+
+  - file: flyingpress-avis-meta.jpg
+    title: "Avis FlyingPress 2026 : miniature partage social – schoolsWP"
+    alt_text: "Miniature Avis FlyingPress 2026 : booste tes Core Web Vitals, visuel partage social de l'article schoolsWP sur le plugin WordPress"
+    caption: "Miniature partage social de l'article Avis FlyingPress sur schoolsWP."
+    description: "Visuel de partage social (OG image) pour l'article Avis FlyingPress sur schoolsWP. Branding schoolsWP avec le titre booste tes Core Web Vitals mis en avant en highlight vert sur fond noir. S'affiche quand l'article est partagé sur LinkedIn, Facebook, X ou dans un email."
+    exif:
+      XPTitle: "Avis FlyingPress 2026 miniature partage schoolsWP"
+      XPSubject: "Visuel de partage social schoolsWP pour l'article Avis FlyingPress : booste tes Core Web Vitals en 2026. Branding schoolsWP avec titre en highlight vert sur fond noir, logo schoolsWP en bas à droite."
+      XPKeywords: "Avis FlyingPress, miniature partage social, Open Graph schoolsWP, plugin performance WordPress, Core Web Vitals WordPress, FlyingPress 2026, schoolsWP social, visuel LinkedIn, visuel Facebook, partage article WordPress"
+      XPComment: "Image Open Graph optimisée SEO et social pour l'article Avis FlyingPress sur schoolsWP. Sert de miniature quand l'article est partagé sur les réseaux sociaux."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel de partage social schoolsWP pour l'article Avis FlyingPress : booste tes Core Web Vitals en 2026."

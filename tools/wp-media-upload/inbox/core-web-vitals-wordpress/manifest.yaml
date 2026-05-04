@@ -1,0 +1,22 @@
+# Manifest pour l'article Core Web Vitals WordPress
+# Article : https://schoolswp.com/?p=2600170 (draft)
+
+article:
+  id: 2600170
+  slug: core-web-vitals-wordpress
+
+images:
+  - file: core-web-vitals-wordpress-guide-comprendre-mesurer-ameliorer.jpg
+    title: "Core Web Vitals WordPress 2026 : guide complet schoolsWP"
+    alt_text: "core web vitals wordpress 2026 – guide schoolsWP pour comprendre, mesurer et améliorer LCP, INP et CLS sur ton site WordPress"
+    caption: "Les Core Web Vitals (LCP, INP, CLS) mesurent l'expérience réelle d'un site WordPress côté utilisateur. Ce visuel schoolsWP ouvre le guide pour comprendre ces métriques, les mesurer et les améliorer durablement."
+    description: "Cette image illustre un article schoolsWP consacré au guide complet des Core Web Vitals sur WordPress en 2026. Elle met en avant les 3 métriques clés (LCP, INP, CLS), les outils de mesure (PageSpeed Insights, Search Console, CrUX) et les leviers d'optimisation côté plugin de cache, hébergement et thème. Le visuel s'adresse aux éditeurs WordPress qui veulent passer le seuil vert sans empiler les outils. Il invite à explorer le guide schoolsWP avant de toucher au moindre réglage."
+    featured: true
+    exif:
+      XPTitle: "Core Web Vitals WordPress 2026 – guide complet schoolsWP"
+      XPSubject: "Visuel d'article schoolsWP présentant le guide Core Web Vitals sur WordPress, métriques LCP, INP et CLS. Branding schoolsWP avec titre mis en avant et identité visuelle cohérente."
+      XPKeywords: "Core Web Vitals WordPress, LCP WordPress, INP WordPress, CLS WordPress, mesurer Core Web Vitals, améliorer Core Web Vitals, PageSpeed Insights, performance WordPress, guide Core Web Vitals 2026, optimisation site WordPress"
+      XPComment: "Image de couverture optimisée SEO pour l'article guide Core Web Vitals WordPress sur schoolsWP. Améliore le référencement Google Images et renforce le branding."
+      XPAuthor: "Michaël KIHL – schoolsWP"
+      Copyright: "© 2026 Michaël KIHL – Tous droits réservés"
+      ImageDescription: "Visuel guide Core Web Vitals WordPress 2026 pour un article schoolsWP expliquant comment comprendre, mesurer et améliorer LCP, INP et CLS sur un site WordPress."

@@ -1,0 +1,19 @@
+# Global defaults for wp-media-upload
+# Overridable per-article in the manifest.yaml
+
+author_name: "Michaël KIHL"
+default_copyright_holder: "Michaël KIHL – schoolsWP"
+
+# HTTP behavior
+request_timeout_seconds: 60
+sleep_between_uploads_seconds: 0.5
+
+# ExifTool fields that will be baked if present in manifest[].exif
+exif_fields_whitelist:
+  - XPTitle
+  - XPSubject
+  - XPKeywords
+  - XPComment
+  - XPAuthor
+  - Copyright
+  - ImageDescription
