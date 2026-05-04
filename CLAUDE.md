@@ -318,11 +318,13 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 
 - `external-antigravity/` (16 skills, 2026-04-18) — sélection filtrée WP/SEO/GEO-AEO/perf/conversion. 4 doublons isolés dans `_to-delete/`.
 - `external-cc-design/` — design HTML haute fidélité (slide decks, prototypes, landing). Brand strict, 0 $. Préférer aidesigner pour exploration (T0), cc-design pour prod finale (T1).
+- `external-design-systems/` (73 DESIGN.md, 2026-04-30) — bibliothèque brand-grade (Stripe, Notion, Linear, Cursor, Supabase, Anthropic, Vercel, Figma, Resend, Cal.com, Mistral, etc.). Source : nexu-io/open-design (Apache 2.0, fork pré-stubbing de awesome-design-md). Référence éducative + brief brand pour aidesigner/cc-design + modèle pour formaliser un futur DESIGN.md schoolsWP. Pas de skill de création — voir `external-design-systems/INDEX.md` pour le routing par cas d'usage.
+- `external-open-design/` (3 skills HTML, 2026-04-30) — `email-marketing` (newsletter featured), `pricing-page` (offres tiers comparatif + FAQ), `docs-page` (mockup doc 3 colonnes). Source : nexu-io/open-design (Apache 2.0). Frontmatter modifié pour anti-conflit avec skills schoolsWP existants (lead-magnet-schoolswp, mini-offre-page-de-vente, etc.). Pattern d'invocation : charger un DESIGN.md (external-design-systems ou BRAND_RULES.md) puis lire le sous-skill. Voir `external-open-design/INDEX.md` pour le routing.
 - `external-video-use/` (2026-04-27) — édition vidéo conversationnelle (transcribe, cut, color grade, subtitles). Sous-clone gitignored, deps dans venv racine.
 - `external-ecc/` — gateguard fact-forcing pre-edit (1 skill cherry-picked, 4 candidats rejetés).
 - `external-hyperframes/` + `external-liveavatar/` — Remotion + avatars AI (FFmpeg requis).
 
-Lock cohérence : `tools/lock_external_skills.py` génère `skills-lock.json` pour les 27 skills `external-*`. Routine reval Q3 2026.
+Lock cohérence : `tools/lock_external_skills.py` génère `skills-lock.json` pour les 31 skills `external-*`. Routine reval Q3 2026.
 
 ### Routing — quel skill pour quelle demande
 

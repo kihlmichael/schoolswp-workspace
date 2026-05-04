@@ -13,6 +13,7 @@ paths: ["tools/**"]
 | `tools/services/pdf-service/` | Service PDF Node.js (Dockerfile inclus) |
 | `tools/services/schoolsWP-drive-organizer/` | Scripts Google Apps Script pour audit et migration Drive |
 | `tools/image-meta-seo/` | Générateur de métadonnées SEO pour images (server.py + index.html) |
+| `tools/wp-media-upload/` | Upload batch d'images WP avec métadonnées SEO + EXIF (`cli.py upload --article <slug>`) — manifest YAML par article, ExifTool requis pour baker XP* |
 
 **Google Drive scripts** (depuis `projects/schoolswp/`) :
 ```bash

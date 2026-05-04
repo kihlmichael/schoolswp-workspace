@@ -298,6 +298,16 @@
             "timeout": 120
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -Command \"(New-Object Media.SoundPlayer 'D:\\VS Code\\CLAUDE CODE\\projects\\schoolswp\\.claude\\sounds\\yoshi.wav').PlaySync()\" 2>/dev/null || true",
+            "async": true,
+            "timeout": 10
+          }
+        ]
       }
     ]
   },

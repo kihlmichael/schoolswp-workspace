@@ -36,7 +36,8 @@
     "mikestead.dotenv",
 
     // JSON with comments
-    "ZainChen.json"
+    "ZainChen.json",
+    "anthropic.claude-code"
   ],
   "unwantedRecommendations": []
 }
