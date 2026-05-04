@@ -4,6 +4,60 @@ description: |
   Produit un système de lead magnet schoolsWP complet et cohérent : PDF 1 page à forte valeur + landing page de capture newsletter (Fluent Forms) + séquence de bienvenue FluentCRM (4 emails sur 7 jours). Les 3 livrables forment un funnel unique, pas 3 livrables indépendants.
   Utiliser ce skill quand l'utilisateur demande : "lead magnet", "freebie", "ressource gratuite", "PDF à télécharger", "landing newsletter", "page d'inscription", "capture d'emails", "séquence de bienvenue", "welcome sequence", "lead magnet prompt SEO", ou veut transformer une ressource (prompt, checklist, template, mini-guide) en aimant à emails.
   NE PAS utiliser pour : landing d'affiliation produit tiers (voir landing-page-factory), page de vente d'offre propre schoolsWP (voir mini-offre-page-de-vente), séquence email de découverte plugin par affiliation (voir plugin-email-sequence), recyclage d'un email reçu (voir email-to-content), newsletter hebdo régulière (voir schoolswp-content-studio), article de blog long (voir schoolswp-article-workflow).
+od:
+  mode: marketing
+  scenario: lead-capture
+  preview:
+    type: markdown
+    entry: lead-magnet.md
+  inputs:
+    - name: source_resource
+      type: enum
+      enum: [prompt, checklist, template, mini-guide, framework]
+      required: true
+      description: Type de ressource source qui devient le lead magnet
+    - name: main_promise
+      type: string
+      required: true
+      description: Transformation concrete promise en une phrase
+    - name: persona
+      type: enum
+      enum: [freelance, createur, formateur, entrepreneur]
+      required: true
+      description: Persona cible (oriente le ton et les exemples)
+    - name: funnel_stage
+      type: enum
+      enum: [TOFU, MOFU]
+      required: true
+      description: Stade de funnel — TOFU decouverte (large) ou MOFU exploration (qualifie)
+    - name: destination
+      type: enum
+      enum: [newsletter-hebdo, sequence-produit, academy]
+      required: true
+      description: Destination post-inscription (oriente la sequence email finale)
+  parameters:
+    - name: pdf_format
+      type: enum
+      enum: [A4-1page, A4-2pages]
+      default: A4-1page
+      description: Format du PDF (1 page strict par defaut)
+    - name: welcome_email_count
+      type: integer
+      default: 4
+      range: [3, 6]
+      description: Nombre d'emails dans la sequence de bienvenue FluentCRM
+    - name: welcome_duration_days
+      type: integer
+      default: 7
+      range: [5, 10]
+      description: Duree de la sequence de bienvenue en jours
+  outputs:
+    primary: lead-magnet-pdf.md
+    secondary:
+      - landing-capture.md
+      - sequence-bienvenue.md
+  capabilities_required:
+    - file_write
 ---
 
 # Lead Magnet schoolsWP — Système de capture complet
@@ -250,6 +304,50 @@ Livrer les 3 livrables dans l'ordre strict, en Markdown, séparés par des secti
 ```
 
 Pas de préambule. Pas de "voici ton lead magnet". Directement les livrables.
+
+## Self-check final
+
+Avant de cloturer la livraison du systeme complet (les 3 livrables), verifier :
+
+**Coherence funnel**
+
+- [ ] Les 3 livrables sont bien produits : `lead-magnet-pdf.md` (primary) + `landing-capture.md` + `sequence-bienvenue.md` (secondary)
+- [ ] La promesse principale (`main_promise`) est identique mot-pour-mot dans le PDF, la landing hero, et l'objet du premier email
+- [ ] Le persona (`persona`) oriente le ton de TOUS les livrables — pas de mismatch (ex landing freelance + emails entrepreneur)
+- [ ] Le stade funnel (`funnel_stage`) est respecte : TOFU = ton large/decouverte, MOFU = ton plus qualifie/expert
+- [ ] La destination post-inscription (`destination`) est explicite dans le dernier email de la sequence
+
+**Livrable 1 : PDF**
+
+- [ ] Format respecte : `pdf_format` (A4-1page par defaut, strict — pas 1,5 ni 2)
+- [ ] Type ressource correspond a `source_resource` (prompt, checklist, template, mini-guide, framework)
+- [ ] Footer schoolsWP present : "schoolsWP — WordPress. Clair. Structure. Utile." + lien schoolswp.fr
+- [ ] Identite visuelle : vert `#00D400`, typo Inter, logo schoolsWP
+- [ ] Une action claire en sortie
+
+**Livrable 2 : landing**
+
+- [ ] Hero reprend la promesse principale (verbatim possible)
+- [ ] Specs Fluent Forms structurees (champ email + tag FluentCRM + redirect post-submit)
+- [ ] Aucune mention d'une plateforme externe (Mailchimp, ConvertKit, Systeme.io)
+
+**Livrable 3 : sequence FluentCRM**
+
+- [ ] Nombre d'emails = `welcome_email_count` (par defaut 4, range 3-6)
+- [ ] Duree totale = `welcome_duration_days` (par defaut 7 jours, range 5-10)
+- [ ] Email 1 = livraison du PDF (lien telechargement) + accueil
+- [ ] Dernier email = transition explicite vers `destination` (newsletter-hebdo, sequence-produit, ou academy)
+- [ ] Tags FluentCRM specifies pour chaque email + conditions de declenchement
+
+**Branding schoolsWP**
+
+- [ ] `schoolsWP` ecrit correctement partout (jamais SchoolsWP, schoolswp, Schoolswp)
+- [ ] Phrases courtes (8-15 mots), paragraphes 2-4 phrases
+- [ ] Zero jargon non explique, zero hype marketing
+
+**KPIs annonces**
+
+- [ ] La section "KPIs a suivre" est presente avec metriques concretes (taux opt-in, taux d'ouverture par email, taux de clic vers `destination`)
 
 ## Handoff
 

@@ -15,6 +15,67 @@ description: |
   les landing pages de capture newsletter / lead magnet (utiliser `lead-magnet-schoolswp`),
   les séquences email de découverte plugin (utiliser `plugin-email-sequence`),
   ni pour le contenu editorial.
+od:
+  mode: sales
+  scenario: sales
+  preview:
+    type: markdown
+    entry: page-vente-courte.md
+  inputs:
+    - name: offer_name
+      type: string
+      required: true
+      description: Nom du produit / mini offre (ex "Le Pack Ressource SEO schoolsWP")
+    - name: promise
+      type: string
+      required: true
+      description: La promesse de l'offre en une phrase concise
+    - name: mechanism
+      type: string
+      required: true
+      description: Nom + description du mecanisme unique (ex "Methode SOLID en 3 piliers")
+    - name: target
+      type: string
+      required: true
+      description: Profil de la cible (ex "freelance createur de contenu WordPress")
+    - name: stack_checkout
+      type: enum
+      enum: [fluentcart, cartflows, funnelkit, surecart]
+      default: fluentcart
+      description: Solution de checkout WordPress utilisee
+  parameters:
+    - name: price_eur
+      type: integer
+      default: 47
+      range: [27, 97]
+      description: Prix de la mini offre en EUR (fourchette impulsive)
+    - name: guarantee_days
+      type: integer
+      default: 7
+      range: [7, 14]
+      description: Nombre de jours pour la garantie satisfait/rembourse
+    - name: bonus_count
+      type: integer
+      default: 3
+      range: [2, 5]
+      description: Nombre de bonus a inclure dans le stack d'offre
+    - name: order_bump_enabled
+      type: boolean
+      default: true
+      description: Inclure un order bump (case a cocher checkout, prix 17-27 EUR)
+    - name: upsell_count
+      type: integer
+      default: 1
+      range: [0, 2]
+      description: Nombre de pages upsell post-achat
+  outputs:
+    primary: page-vente-courte.md
+    secondary:
+      - page-vente-premium.md
+      - kadence-blocks-config.md
+      - checkout-elements.md
+  capabilities_required:
+    - file_write
 ---
 
 # Mini Offre — Page de Vente
@@ -173,3 +234,41 @@ Garantie [X] jours
   proposer de prix premium au-dessus de 97 EUR sauf demande explicite
 - **Order bump et upsells** — doivent etre complementaires a l'offre principale, pas des
   doublons. Le prix doit rester proportionnel (bump < offre principale, upsell ~= offre)
+
+## Self-check final
+
+Avant de cloturer la livraison de la page de vente complete (apres l'etape 4), verifier :
+
+**Coherence offre**
+
+- [ ] Le copy reprend exactement le `offer_name`, `promise`, `mechanism`, `target` de la fiche d'origine — pas d'invention de nouveau benefice ou mecanisme
+- [ ] Le prix final est dans la fourchette declaree (`price_eur`, par defaut 27-97 EUR) — sinon justifier explicitement
+- [ ] La garantie utilise bien `guarantee_days` (7 ou 14) avec une formulation rassurante non magique
+- [ ] Le nombre de bonus respecte `bonus_count` (par defaut 3) — pas plus, pas moins
+
+**Branding schoolsWP**
+
+- [ ] `schoolsWP` ecrit correctement partout (jamais SchoolsWP, schoolswp, Schoolswp)
+- [ ] Tutoiement systematique, sans exception
+- [ ] Phrases courtes (8-15 mots moyenne, max 20)
+- [ ] Aucun mot interdit : disruptif, game changer, scalable, hack, revolutionnaire, incroyable, en un clic, sans effort, il suffit de, garanti, secret
+- [ ] Au moins une expression signature placee (En clair :, Teste et approuve., Pas de blabla juste du concret.)
+- [ ] Fond blanc — pas de dark mode
+
+**Stack & checkout**
+
+- [ ] Le copy mentionne uniquement le stack supporte (FluentCart, CartFlows, FunnelKit, SureCart pour checkout — Kadence Blocks pour page builder)
+- [ ] Aucune reference a Systeme.io, Podia, ThriveCart, Elementor ou plateforme externe
+- [ ] Si `order_bump_enabled: true`, le bump propose est complementaire (pas un doublon) et son prix est < `price_eur`
+- [ ] Si `upsell_count >= 1`, l'upsell propose est complementaire et son prix est ~= `price_eur` (pas premium)
+
+**Realisme bonus**
+
+- [ ] Les bonus sont des livrables credibles et realisables (checklist, templates, pack CTA, plan d'action…)
+- [ ] Aucun bonus type "communaute privee" ou "coaching 1:1" pour une mini offre 27-97 EUR
+
+**Sequencement**
+
+- [ ] Les 4 etapes (page courte, premium, Kadence, checkout) ont ete generees dans l'ordre
+- [ ] La validation a ete demandee entre chaque etape — aucune generation tout d'un coup
+- [ ] Les fichiers attendus sont presents : `page-vente-courte.md` (primary) + `page-vente-premium.md`, `kadence-blocks-config.md`, `checkout-elements.md` (secondary)
