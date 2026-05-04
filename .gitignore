@@ -137,3 +137,15 @@ tools/mcp-servers/_legacy/
 # --- mu-plugins deploy artifacts (base64 payloads + curl probes, reproducible) ---
 tools/wp-mu-plugins/*.b64.tmp
 tools/wp-mu-plugins/.live-check.tmp
+
+# --- Local scratch / sandbox / one-shot probes (jamais committés) ---
+# Throwaway python probes au niveau racine
+/tmp-*.py
+# Texte scratch à la racine (extracts d'articles, raw HTML pris à la pelle, etc.)
+/*.txt
+# Fichiers ad hoc (notes YouTube, etc.)
+/test-yt.md
+# Sandbox de session (exploration libre, jamais versionné)
+sandbox-workspace/
+# Backup local de .mcp.json (déjà gitignored, le backup l'est aussi)
+.mcp.backup.json
