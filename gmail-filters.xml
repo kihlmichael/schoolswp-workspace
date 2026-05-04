@@ -59,4 +59,92 @@
     <apps:property name='shouldNeverSpam' value='true'/>
   </entry>
 
+  <!-- ============================================================== -->
+  <!-- Ajouts 2026-04-28 — couverture inbox récente (Michaël + Claude) -->
+  <!-- ============================================================== -->
+
+  <!-- 🛒 Achats — Amazon + transporteurs (garder en inbox pour suivi colis) -->
+  <entry>
+    <category term='filter'/>
+    <title>Amazon et livraisons</title>
+    <apps:property name='from' value='shipment-tracking@amazon.fr OR confirmation-commande@amazon.fr OR auto-confirm@amazon.fr OR noreply@fedex.com OR pkginfo@ups.com'/>
+    <apps:property name='label' value='🛒 Achats'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🛒 Achats — Shopify stores (e-twow, etc.) -->
+  <entry>
+    <category term='filter'/>
+    <title>Shopify stores</title>
+    <apps:property name='from' value='@t.shopifyemail.com'/>
+    <apps:property name='label' value='🛒 Achats'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 📊 Factures — PayPal reçus -->
+  <entry>
+    <category term='filter'/>
+    <title>PayPal reçus et paiements</title>
+    <apps:property name='from' value='service@paypal.fr'/>
+    <apps:property name='label' value='📊 Factures'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🏦 Banque — Fortuneo + Floa -->
+  <entry>
+    <category term='filter'/>
+    <title>Banque Fortuneo et Floa</title>
+    <apps:property name='from' value='@fortuneo.com OR @infoclients.fortuneo.fr OR @contact.fortuneo.com OR @infos.floa.com'/>
+    <apps:property name='label' value='🏦 Banque'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 📰 Newsletters WP/marketing — archiver auto -->
+  <entry>
+    <category term='filter'/>
+    <title>Newsletters WP et marketing</title>
+    <apps:property name='from' value='hello@news.cartflows.com OR noreply@hivepress.io OR no-reply@themedev.org OR hello@news.bsf.io OR mayane@dotmarket.co OR masterclass@livementor.com OR notifications@tx.teachable.com OR Learn@mails.microsoft.com OR bonjour@wcbzh.fr OR hello@influencewp.com OR noreply@skool.com OR community@wpmanageninja.com'/>
+    <apps:property name='label' value='📰 Newsletters'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🔔 Notifications — NVIDIA (cloud + gaming) — archiver auto -->
+  <entry>
+    <category term='filter'/>
+    <title>Notifications NVIDIA</title>
+    <apps:property name='from' value='@nvidia.com OR @nvgaming.nvidia.com OR @dmomail.nvidia.com'/>
+    <apps:property name='label' value='🔔 Notifications'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🔔 Notifications — Synology NAS (auto-forward kidkihl@gmail.com) — archiver auto -->
+  <entry>
+    <category term='filter'/>
+    <title>Synology NAS auto-forward</title>
+    <apps:property name='from' value='kidkihl@gmail.com'/>
+    <apps:property name='label' value='🔔 Notifications'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 🎓 schoolsWP/🤝 Partenariats — cold outreach affiliation (garder en inbox) -->
+  <entry>
+    <category term='filter'/>
+    <title>schoolsWP — Partenariats / cold affiliation</title>
+    <apps:property name='from' value='josetamu@trustwards.io OR contact@horusium.com OR notification@sedestral.com OR alex@wisewand.ai'/>
+    <apps:property name='label' value='🎓 schoolsWP/🤝 Partenariats'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
+  <!-- 💼 Pro/RH — CCI, LHH, Silae, Logifare (garder en inbox, important) -->
+  <entry>
+    <category term='filter'/>
+    <title>Pro et RH (reclassement, formations)</title>
+    <apps:property name='from' value='@silae.fr OR @lhh.com OR @moselle.cci.fr'/>
+    <apps:property name='label' value='💼 Pro/RH'/>
+    <apps:property name='shouldNeverSpam' value='true'/>
+  </entry>
+
 </feed>

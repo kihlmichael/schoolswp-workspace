@@ -1,0 +1,175 @@
+Plugin,Category,Tool,Title,ReadOnly,Required
+FluentCRM,contact,fluentcrm_contact_list,List Contacts,Yes,
+FluentCRM,contact,fluentcrm_contact_get,Get Contact,Yes,id
+FluentCRM,contact,fluentcrm_contact_get_by_email,Get Contact by Email,Yes,email
+FluentCRM,contact,fluentcrm_contact_create,Create Contact,No,email
+FluentCRM,contact,fluentcrm_contact_update,Update Contact,No,id
+FluentCRM,contact,fluentcrm_contact_delete,Delete Contact,No,id
+FluentCRM,contact,fluentcrm_contact_add_tags,Add Tags to Contact,No,"id, tag_ids"
+FluentCRM,contact,fluentcrm_contact_remove_tags,Remove Tags from Contact,No,"id, tag_ids"
+FluentCRM,tag,fluentcrm_tag_list,List Tags,Yes,
+FluentCRM,tag,fluentcrm_tag_create,Create Tag,No,title
+FluentCRM,tag,fluentcrm_tag_update,Update Tag,No,id
+FluentCRM,tag,fluentcrm_tag_delete,Delete Tag,No,id
+FluentCRM,tag,fluentcrm_tag_attach_to_contact,Attach Tag to Contact,No,"tag_id, subscriber_ids"
+FluentCRM,list,fluentcrm_list_list,List Lists,Yes,
+FluentCRM,list,fluentcrm_list_create,Create List,No,title
+FluentCRM,list,fluentcrm_list_update,Update List,No,id
+FluentCRM,list,fluentcrm_list_delete,Delete List,No,id
+FluentCRM,list,fluentcrm_list_attach_contact,Add Contact to List,No,"list_id, subscriber_ids"
+FluentCRM,campaign,fluentcrm_campaign_list,List Campaigns,Yes,
+FluentCRM,campaign,fluentcrm_campaign_get,Get Campaign,Yes,id
+FluentCRM,campaign,fluentcrm_campaign_create,Create Campaign,No,title
+FluentCRM,campaign,fluentcrm_campaign_schedule,Schedule Campaign,No,id
+FluentCRM,campaign,fluentcrm_campaign_pause,Pause Campaign,No,id
+FluentCRM,campaign,fluentcrm_campaign_resume,Resume Campaign,No,id
+FluentCRM,template,fluentcrm_template_list,List Templates,Yes,
+FluentCRM,template,fluentcrm_template_get,Get Template,Yes,id
+FluentCRM,template,fluentcrm_template_create,Create Template,No,"post_title, post_content"
+FluentCRM,sequence,fluentcrm_sequence_list,List Sequences,Yes,
+FluentCRM,sequence,fluentcrm_sequence_get,Get Sequence,Yes,id
+FluentCRM,sequence,fluentcrm_sequence_add_subscriber,Add Subscriber to Sequence,No,"sequence_id, subscriber_ids"
+FluentCRM,sequence,fluentcrm_sequence_remove_subscriber,Remove Subscriber from Sequence,No,"sequence_id, subscriber_ids"
+FluentCRM,funnel,fluentcrm_funnel_list,List Automations/Funnels,Yes,
+FluentCRM,funnel,fluentcrm_funnel_get,Get Automation/Funnel,Yes,id
+FluentCRM,funnel,fluentcrm_funnel_create,Create Automation/Funnel,No,title
+FluentCRM,funnel,fluentcrm_funnel_trigger,Trigger Funnel for Contact,No,"funnel_id, email"
+FluentCRM,report,fluentcrm_report_dashboard,Get Dashboard Stats,Yes,
+FluentCRM,report,fluentcrm_report_subscribers_growth,Get Subscribers Growth,Yes,
+FluentCRM,report,fluentcrm_report_campaign_stats,Get Campaign Stats,Yes,
+FluentCRM,webhook,fluentcrm_webhook_list,List Webhooks,Yes,
+FluentCRM,webhook,fluentcrm_webhook_create,Create Webhook,No,name
+Fluent Support,ticket,fluentsupport_ticket_list,List Tickets,Yes,
+Fluent Support,ticket,fluentsupport_ticket_get,Get Ticket,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_create,Create Ticket,No,"title, content, email"
+Fluent Support,ticket,fluentsupport_ticket_update,Update Ticket,No,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_reply,Reply to Ticket,No,"ticket_id, content"
+Fluent Support,ticket,fluentsupport_ticket_close,Close Ticket,No,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_reopen,Reopen Ticket,No,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_delete,Delete Ticket,No,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_bulk_actions,Bulk Ticket Actions,No,"action, ticket_ids"
+Fluent Support,ticket,fluentsupport_ticket_responses,List Ticket Responses,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_add_tag,Add Tag to Ticket,No,"ticket_id, tag_ids"
+Fluent Support,ticket,fluentsupport_ticket_remove_tag,Remove Tag from Ticket,No,"ticket_id, tag_id"
+Fluent Support,customer,fluentsupport_customer_list,List Customers,Yes,
+Fluent Support,customer,fluentsupport_customer_get,Get Customer,Yes,customer_id
+Fluent Support,customer,fluentsupport_customer_create,Create Customer,No,email
+Fluent Support,customer,fluentsupport_customer_update,Update Customer,No,customer_id
+Fluent Support,customer,fluentsupport_customer_delete,Delete Customer,No,customer_id
+Fluent Support,customer,fluentsupport_customer_tickets,Get Customer Tickets,Yes,customer_id
+Fluent Support,agent,fluentsupport_agent_list,List Agents,Yes,
+Fluent Support,agent,fluentsupport_agent_get,Get Agent,Yes,agent_id
+Fluent Support,agent,fluentsupport_agent_create,Create Agent,No,user_id
+Fluent Support,agent,fluentsupport_agent_update,Update Agent,No,agent_id
+Fluent Support,agent,fluentsupport_agent_delete,Delete Agent,No,agent_id
+Fluent Support,report,fluentsupport_report_overall_stats,Get Overall Stats,Yes,
+Fluent Support,report,fluentsupport_report_ticket_growth,Get Ticket Growth,Yes,
+Fluent Support,report,fluentsupport_report_resolve_stats,Get Resolution Stats,Yes,
+Fluent Support,report,fluentsupport_report_response_stats,Get Response Stats,Yes,
+Fluent Support,report,fluentsupport_report_agent_stats,Get Agent Performance Stats,Yes,
+Fluent Support,report,fluentsupport_report_personal_stats,Get Personal Stats,Yes,
+Fluent Support,workflow,fluentsupport_workflow_list,List Workflows,Yes,
+Fluent Support,workflow,fluentsupport_workflow_get,Get Workflow,Yes,workflow_id
+Fluent Support,workflow,fluentsupport_workflow_create,Create Workflow,No,title
+Fluent Support,workflow,fluentsupport_workflow_update,Update Workflow,No,workflow_id
+Fluent Support,workflow,fluentsupport_workflow_delete,Delete Workflow,No,workflow_id
+Fluent Support,saved,fluentsupport_saved_reply_list,List Saved Replies,Yes,
+Fluent Support,saved,fluentsupport_saved_reply_get,Get Saved Reply,Yes,reply_id
+Fluent Support,saved,fluentsupport_saved_reply_create,Create Saved Reply,No,"title, content"
+Fluent Support,saved,fluentsupport_saved_reply_update,Update Saved Reply,No,reply_id
+Fluent Support,saved,fluentsupport_saved_reply_delete,Delete Saved Reply,No,reply_id
+Fluent Support,tag,fluentsupport_tag_list,List Tags,Yes,
+Fluent Support,tag,fluentsupport_tag_create,Create Tag,No,title
+Fluent Support,tag,fluentsupport_tag_update,Update Tag,No,tag_id
+Fluent Support,tag,fluentsupport_tag_delete,Delete Tag,No,tag_id
+Fluent Support,product,fluentsupport_product_list,List Products,Yes,
+Fluent Support,product,fluentsupport_product_create,Create Product,No,title
+Fluent Support,product,fluentsupport_product_update,Update Product,No,product_id
+Fluent Support,product,fluentsupport_product_delete,Delete Product,No,product_id
+Fluent Support,settings,fluentsupport_settings_get,Get Settings,Yes,
+Fluent Support,settings,fluentsupport_settings_mailboxes,Get Mailboxes,Yes,
+Fluent Support,activity,fluentsupport_activity_list,List Activities,Yes,
+Fluent Boards,board,fluentboards_board_list,List Boards,Yes,
+Fluent Boards,board,fluentboards_board_get,Get Board,Yes,board_id
+Fluent Boards,board,fluentboards_board_create,Create Board,No,"title, type"
+Fluent Boards,board,fluentboards_board_update,Update Board,No,board_id
+Fluent Boards,board,fluentboards_board_delete,Delete Board,No,board_id
+Fluent Boards,board,fluentboards_board_archive,Archive Board,No,board_id
+Fluent Boards,task,fluentboards_task_list,List Tasks,Yes,board_id
+Fluent Boards,task,fluentboards_task_get,Get Task,Yes,"board_id, task_id"
+Fluent Boards,task,fluentboards_task_create,Create Task,No,"board_id, title, stage_id"
+Fluent Boards,task,fluentboards_task_update,Update Task,No,"board_id, task_id, property"
+Fluent Boards,task,fluentboards_task_delete,Delete Task,No,"board_id, task_id"
+Fluent Boards,task,fluentboards_task_move_stage,Move Task to Stage,No,"board_id, task_id, new_stage_id"
+Fluent Boards,task,fluentboards_task_clone,Clone Task,No,"board_id, task_id, title, stage_id"
+Fluent Boards,task,fluentboards_task_close,Close Task,No,"board_id, task_id"
+Fluent Boards,stage,fluentboards_stage_list,List Archived Stages,Yes,board_id
+Fluent Boards,stage,fluentboards_stage_create,Create Stage,No,"board_id, title"
+Fluent Boards,stage,fluentboards_stage_update,Update Stage,No,"board_id, stage_id"
+Fluent Boards,stage,fluentboards_stage_delete,Archive Stage,No,"board_id, stage_id"
+Fluent Boards,stage,fluentboards_stage_reorder,Reorder Stages,No,"board_id, list"
+Fluent Boards,label,fluentboards_label_list,List Labels,Yes,board_id
+Fluent Boards,label,fluentboards_label_create,Create Label,No,"board_id, color, bg_color"
+Fluent Boards,label,fluentboards_label_update,Update Label,No,"board_id, label_id"
+Fluent Boards,label,fluentboards_label_delete,Delete Label,No,"board_id, label_id"
+Fluent Boards,label,fluentboards_label_assign_to_task,Assign Label to Task,No,"board_id, task_id, label_id"
+Fluent Boards,comment,fluentboards_comment_list,List Task Comments,Yes,"board_id, task_id"
+Fluent Boards,comment,fluentboards_comment_create,Create Comment,No,"board_id, task_id, comment"
+Fluent Boards,comment,fluentboards_comment_delete,Delete Comment,No,"board_id, comment_id"
+Fluent Boards,member,fluentboards_member_list,List Board Members,Yes,board_id
+Fluent Boards,member,fluentboards_member_add,Add Member to Board,No,"board_id, member_id"
+Fluent Boards,member,fluentboards_member_remove,Remove Member from Board,No,"board_id, user_id"
+Fluent Community,space,fluentcommunity_space_list,List Spaces,Yes,
+Fluent Community,space,fluentcommunity_space_get,Get Space,Yes,space_id
+Fluent Community,space,fluentcommunity_space_create,Create Space,No,title
+Fluent Community,space,fluentcommunity_space_update,Update Space,No,space_id
+Fluent Community,space,fluentcommunity_space_delete,Delete Space,No,space_id
+Fluent Community,feed,fluentcommunity_feed_list,List Feeds/Posts,Yes,
+Fluent Community,feed,fluentcommunity_feed_get,Get Feed/Post,Yes,feed_id
+Fluent Community,feed,fluentcommunity_feed_create,Create Feed/Post,No,"space_id, message"
+Fluent Community,feed,fluentcommunity_feed_update,Update Feed/Post,No,feed_id
+Fluent Community,feed,fluentcommunity_feed_delete,Delete Feed/Post,No,feed_id
+Fluent Community,feed,fluentcommunity_feed_search,Search Feeds/Posts,Yes,search
+Fluent Community,comment,fluentcommunity_comment_list,List Comments,Yes,feed_id
+Fluent Community,comment,fluentcommunity_comment_create,Create Comment,No,"feed_id, message"
+Fluent Community,comment,fluentcommunity_comment_update,Update Comment,No,"comment_id, message"
+Fluent Community,comment,fluentcommunity_comment_delete,Delete Comment,No,comment_id
+Fluent Community,member,fluentcommunity_member_list,List Members,Yes,
+Fluent Community,member,fluentcommunity_member_get,Get Member,Yes,user_id
+Fluent Community,member,fluentcommunity_member_add_to_space,Add Member to Space,No,"space_id, user_id"
+Fluent Community,member,fluentcommunity_member_remove_from_space,Remove Member from Space,No,"space_id, user_id"
+Fluent Community,member,fluentcommunity_member_update_role,Update Member Role,No,"space_id, user_id, role"
+Fluent Community,course,fluentcommunity_course_list,List Courses,Yes,
+Fluent Community,course,fluentcommunity_course_get,Get Course,Yes,course_id
+Fluent Community,course,fluentcommunity_course_enroll_user,Enroll User in Course,No,"course_id, user_id"
+Fluent Community,course,fluentcommunity_course_unenroll_user,Unenroll User from Course,No,"course_id, user_id"
+Fluent Community,notification,fluentcommunity_notification_list,List Notifications,Yes,
+Fluent Community,notification,fluentcommunity_notification_mark_read,Mark Notifications as Read,No,
+Fluent Community,analytics,fluentcommunity_analytics_stats,Get Community Stats,Yes,
+Fluent Community,analytics,fluentcommunity_analytics_activity,Get Activity Analytics,Yes,
+Fluent Community,settings,fluentcommunity_settings_get,Get Community Settings,Yes,
+Fluent Community,settings,fluentcommunity_settings_update,Update Community Settings,No,settings
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_list,List Affiliates,Yes,
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_get,Get Affiliate,Yes,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_create,Create Affiliate,No,
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_update,Update Affiliate,No,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_delete,Delete Affiliate,No,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_update_status,Update Affiliate Status,No,"affiliate_id, status"
+Fluent Affiliate,referral,fluentaffiliate_referral_list,List Referrals,Yes,
+Fluent Affiliate,referral,fluentaffiliate_referral_get,Get Referral,Yes,referral_id
+Fluent Affiliate,referral,fluentaffiliate_referral_create,Create Referral,No,"affiliate_id, amount"
+Fluent Affiliate,referral,fluentaffiliate_referral_delete,Delete Referral,No,referral_id
+Fluent Affiliate,payout,fluentaffiliate_payout_list,List Payouts,Yes,
+Fluent Affiliate,payout,fluentaffiliate_payout_get,Get Payout,Yes,payout_id
+Fluent Affiliate,payout,fluentaffiliate_payout_process,Process Payout,No,affiliate_ids
+Fluent Affiliate,payout,fluentaffiliate_payout_validate_config,Validate Payout Configuration,Yes,
+Fluent Affiliate,visit,fluentaffiliate_visit_list,List Visits,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_dashboard_stats,Get Dashboard Stats,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_dashboard_chart,Get Dashboard Chart Data,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_commerce,Get Commerce Reports,Yes,
+Fluent Affiliate,settings,fluentaffiliate_settings_referral_config,Get Referral Configuration,Yes,
+Fluent Affiliate,settings,fluentaffiliate_settings_update_referral_config,Update Referral Configuration,No,
+Fluent Affiliate,settings,fluentaffiliate_settings_email_config,Get Email Configuration,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_stats,Get Portal Stats,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_referrals,Get Portal Referrals,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_transactions,Get Portal Transactions,Yes,

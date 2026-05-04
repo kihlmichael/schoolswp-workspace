@@ -1,0 +1,175 @@
+Plugin,Category,Tool,Title,Description,ReadOnly,Idempotent,Required
+FluentCRM,contact,fluentcrm_contact_list,List Contacts,"List CRM contacts (subscribers) with optional filtering by status, tags, lists, and search. Supports pagination.",Yes,Yes,
+FluentCRM,contact,fluentcrm_contact_get,Get Contact,"Get detailed information about a single contact including their tags, lists, custom fields, and activity history.",Yes,Yes,id
+FluentCRM,contact,fluentcrm_contact_get_by_email,Get Contact by Email,Look up a contact by their email address. Returns the full contact record if found.,Yes,Yes,email
+FluentCRM,contact,fluentcrm_contact_create,Create Contact,Create a new CRM contact. Email is required. You can assign tags and lists at creation time.,No,No,email
+FluentCRM,contact,fluentcrm_contact_update,Update Contact,Update an existing contact. Pass only the fields you want to change. Does not modify tags or lists (use dedicated tag/list tools).,No,Yes,id
+FluentCRM,contact,fluentcrm_contact_delete,Delete Contact,"Permanently delete a contact from the CRM. This removes all associated data including tags, lists, and activity history.",No,No,id
+FluentCRM,contact,fluentcrm_contact_add_tags,Add Tags to Contact,Add one or more tags to a contact. Existing tags are preserved.,No,No,"id, tag_ids"
+FluentCRM,contact,fluentcrm_contact_remove_tags,Remove Tags from Contact,Remove one or more tags from a contact.,No,No,"id, tag_ids"
+FluentCRM,tag,fluentcrm_tag_list,List Tags,List all CRM tags. Tags are used to categorize and segment contacts for targeted campaigns and automations.,Yes,Yes,
+FluentCRM,tag,fluentcrm_tag_create,Create Tag,Create a new CRM tag for categorizing contacts.,No,No,title
+FluentCRM,tag,fluentcrm_tag_update,Update Tag,"Update an existing tag name, slug, or description.",No,Yes,id
+FluentCRM,tag,fluentcrm_tag_delete,Delete Tag,"Permanently delete a tag. Contacts that had this tag will have it removed, but the contacts themselves are not deleted.",No,No,id
+FluentCRM,tag,fluentcrm_tag_attach_to_contact,Attach Tag to Contact,Attach a tag to one or more contacts by their subscriber IDs. This is an alternative to fluentcrm_contact_add_tags when you want to work from the tag perspective.,No,No,"tag_id, subscriber_ids"
+FluentCRM,list,fluentcrm_list_list,List Lists,List all CRM lists (mailing lists). Lists are used to organize contacts into groups for campaigns and segmentation.,Yes,Yes,
+FluentCRM,list,fluentcrm_list_create,Create List,Create a new mailing list for organizing contacts.,No,No,title
+FluentCRM,list,fluentcrm_list_update,Update List,"Update an existing list name, slug, or description.",No,Yes,id
+FluentCRM,list,fluentcrm_list_delete,Delete List,"Permanently delete a list. Contacts in this list are not deleted, but their association with this list is removed.",No,No,id
+FluentCRM,list,fluentcrm_list_attach_contact,Add Contact to List,Add one or more contacts to a mailing list by their subscriber IDs.,No,No,"list_id, subscriber_ids"
+FluentCRM,campaign,fluentcrm_campaign_list,List Campaigns,List email campaigns with optional filtering by status. Returns campaign summaries including send stats.,Yes,Yes,
+FluentCRM,campaign,fluentcrm_campaign_get,Get Campaign,"Get detailed information about a single campaign including its settings, recipients, email body, and performance stats.",Yes,Yes,id
+FluentCRM,campaign,fluentcrm_campaign_create,Create Campaign,"Create a new email campaign in draft status. You can specify the subject, body, recipients (by tags/lists), and template.",No,No,title
+FluentCRM,campaign,fluentcrm_campaign_schedule,Schedule Campaign,"Schedule a draft campaign for sending. You must specify the recipients (by tags/lists) and optionally a send date. If no date is given, the campaign will be sent immediately.",No,No,id
+FluentCRM,campaign,fluentcrm_campaign_pause,Pause Campaign,Pause a currently sending (working) campaign. Can be resumed later.,No,Yes,id
+FluentCRM,campaign,fluentcrm_campaign_resume,Resume Campaign,Resume a paused campaign to continue sending.,No,Yes,id
+FluentCRM,template,fluentcrm_template_list,List Templates,List all email templates. Templates provide reusable email layouts and designs for campaigns.,Yes,Yes,
+FluentCRM,template,fluentcrm_template_get,Get Template,Get detailed information about a specific email template including its HTML body and design settings.,Yes,Yes,id
+FluentCRM,template,fluentcrm_template_create,Create Template,Create a new email template with HTML content. Templates can be used across multiple campaigns.,No,No,"post_title, post_content"
+FluentCRM,sequence,fluentcrm_sequence_list,List Sequences,List all email sequences (Pro). Sequences are automated multi-step email drip campaigns sent on a schedule.,Yes,Yes,
+FluentCRM,sequence,fluentcrm_sequence_get,Get Sequence,"Get detailed information about a specific sequence including its emails, delays, and subscriber count.",Yes,Yes,id
+FluentCRM,sequence,fluentcrm_sequence_add_subscriber,Add Subscriber to Sequence,Add one or more contacts to a sequence. They will start receiving the sequence emails from the beginning.,No,No,"sequence_id, subscriber_ids"
+FluentCRM,sequence,fluentcrm_sequence_remove_subscriber,Remove Subscriber from Sequence,Remove one or more contacts from a sequence. They will stop receiving further emails.,No,No,"sequence_id, subscriber_ids"
+FluentCRM,funnel,fluentcrm_funnel_list,List Automations/Funnels,"List all automation funnels. Funnels are multi-step workflows triggered by events (signup, tag added, purchase, etc.).",Yes,Yes,
+FluentCRM,funnel,fluentcrm_funnel_get,Get Automation/Funnel,"Get detailed information about a specific funnel including all its steps, triggers, and subscriber metrics.",Yes,Yes,id
+FluentCRM,funnel,fluentcrm_funnel_create,Create Automation/Funnel,"Create a new automation funnel. Funnels start in draft status. Add triggers and actions, then publish to activate.",No,No,title
+FluentCRM,funnel,fluentcrm_funnel_trigger,Trigger Funnel for Contact,Manually trigger a funnel for a specific contact via the webhook endpoint. The contact will enter the funnel as if the trigger event had occurred.,No,No,"funnel_id, email"
+FluentCRM,report,fluentcrm_report_dashboard,Get Dashboard Stats,"Get CRM dashboard statistics: total contacts, active subscribers, unsubscribed, emails sent, open rate, click rate, and more.",Yes,Yes,
+FluentCRM,report,fluentcrm_report_subscribers_growth,Get Subscribers Growth,Get subscriber growth trends over time. Shows new subscribers per day/week/month in the given date range.,Yes,Yes,
+FluentCRM,report,fluentcrm_report_campaign_stats,Get Campaign Stats,"Get aggregated campaign performance statistics: emails sent, opens, clicks, unsubscribes, bounces, and revenue attribution.",Yes,Yes,
+FluentCRM,webhook,fluentcrm_webhook_list,List Webhooks,List all configured incoming webhooks. Webhooks allow external systems to create or update contacts and trigger automations in FluentCRM.,Yes,Yes,
+FluentCRM,webhook,fluentcrm_webhook_create,Create Webhook,"Create a new incoming webhook endpoint. The webhook URL can be used by external systems to push data into FluentCRM (contacts, tags, lists, funnels).",No,No,name
+Fluent Support,ticket,fluentsupport_ticket_list,List Tickets,"List support tickets with optional filtering by status, priority, agent, customer, and product. Supports pagination and search.",Yes,Yes,
+Fluent Support,ticket,fluentsupport_ticket_get,Get Ticket,"Get detailed information about a single support ticket including its current status, priority, assigned agent, customer, tags, and conversation history.",Yes,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_create,Create Ticket,"Create a new support ticket. Requires a title, email (customer email), and content. Optionally assign an agent, priority, and product.",No,No,"title, content, email"
+Fluent Support,ticket,fluentsupport_ticket_update,Update Ticket,"Update ticket properties such as priority, agent assignment, product, or status. Pass only the fields you want to change.",No,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_reply,Reply to Ticket,Add a response/reply to a ticket. The content supports HTML. You can add internal notes by setting is_internal to true.,No,No,"ticket_id, content"
+Fluent Support,ticket,fluentsupport_ticket_close,Close Ticket,"Close an open ticket. Changes the ticket status to ""closed"".",No,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_reopen,Reopen Ticket,"Reopen a closed ticket. Changes the ticket status back to ""active"".",No,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_delete,Delete Ticket,Permanently delete a ticket. This action cannot be undone. All responses and attachments will also be deleted.,No,No,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_bulk_actions,Bulk Ticket Actions,"Perform bulk operations on multiple tickets. Supported actions: close, reopen, delete, assign_agent, change_priority.",No,No,"action, ticket_ids"
+Fluent Support,ticket,fluentsupport_ticket_responses,List Ticket Responses,Get all responses/replies for a specific ticket. Returns the full conversation thread including internal notes.,Yes,Yes,ticket_id
+Fluent Support,ticket,fluentsupport_ticket_add_tag,Add Tag to Ticket,Add one or more tags to a ticket.,No,No,"ticket_id, tag_ids"
+Fluent Support,ticket,fluentsupport_ticket_remove_tag,Remove Tag from Ticket,Remove a tag from a ticket.,No,No,"ticket_id, tag_id"
+Fluent Support,customer,fluentsupport_customer_list,List Customers,List support customers with optional search and pagination. Customers are the people who submit tickets.,Yes,Yes,
+Fluent Support,customer,fluentsupport_customer_get,Get Customer,"Get detailed customer information including their support history, ticket count, and profile data.",Yes,Yes,customer_id
+Fluent Support,customer,fluentsupport_customer_create,Create Customer,Create a new support customer. Email is required and must be unique. The customer can then submit tickets.,No,No,email
+Fluent Support,customer,fluentsupport_customer_update,Update Customer,Update customer profile fields. Fetches current state first to ensure required fields are preserved.,No,Yes,customer_id
+Fluent Support,customer,fluentsupport_customer_delete,Delete Customer,"Permanently delete a customer. This will NOT delete their tickets, but will disassociate them.",No,No,customer_id
+Fluent Support,customer,fluentsupport_customer_tickets,Get Customer Tickets,List all tickets submitted by a specific customer. Useful for viewing support history.,Yes,Yes,customer_id
+Fluent Support,agent,fluentsupport_agent_list,List Agents,List all support agents/staff members. Agents handle ticket responses and manage the helpdesk.,Yes,Yes,
+Fluent Support,agent,fluentsupport_agent_get,Get Agent,Get detailed information about a specific agent including their stats and settings.,Yes,Yes,agent_id
+Fluent Support,agent,fluentsupport_agent_create,Create Agent,Create a new support agent. The user_id must correspond to an existing WordPress user.,No,No,user_id
+Fluent Support,agent,fluentsupport_agent_update,Update Agent,"Update agent profile information such as name, email, or title.",No,Yes,agent_id
+Fluent Support,agent,fluentsupport_agent_delete,Delete Agent,Remove an agent from the support team. This does not delete the underlying WordPress user. Open tickets may need to be reassigned.,No,No,agent_id
+Fluent Support,report,fluentsupport_report_overall_stats,Get Overall Stats,"Get overall support statistics: total tickets, open tickets, closed tickets, average response time, and resolution time.",Yes,Yes,
+Fluent Support,report,fluentsupport_report_ticket_growth,Get Ticket Growth,"Get ticket creation trends over time. Shows how many tickets were created per day, week, or month in the given date range.",Yes,Yes,
+Fluent Support,report,fluentsupport_report_resolve_stats,Get Resolution Stats,"Get ticket resolution statistics: average time to resolve, resolution rate, and breakdown by priority.",Yes,Yes,
+Fluent Support,report,fluentsupport_report_response_stats,Get Response Stats,"Get response time statistics: average first response time, average response time, and response count breakdown.",Yes,Yes,
+Fluent Support,report,fluentsupport_report_agent_stats,Get Agent Performance Stats,"Get per-agent performance metrics: tickets handled, average response time, resolution count, and satisfaction scores.",Yes,Yes,
+Fluent Support,report,fluentsupport_report_personal_stats,Get Personal Stats,"Get personal support stats for the authenticated agent: your tickets, response times, and resolution metrics.",Yes,Yes,
+Fluent Support,workflow,fluentsupport_workflow_list,List Workflows,"List all automation workflows. Workflows automate ticket routing, auto-replies, SLA enforcement, and other support actions.",Yes,Yes,
+Fluent Support,workflow,fluentsupport_workflow_get,Get Workflow,"Get detailed information about a specific workflow including its triggers, conditions, and actions.",Yes,Yes,workflow_id
+Fluent Support,workflow,fluentsupport_workflow_create,Create Workflow,"Create a new automation workflow. Define triggers, conditions, and actions to automate support processes.",No,No,title
+Fluent Support,workflow,fluentsupport_workflow_update,Update Workflow,"Update an existing workflow. Can modify triggers, conditions, actions, status, or metadata.",No,Yes,workflow_id
+Fluent Support,workflow,fluentsupport_workflow_delete,Delete Workflow,Permanently delete a workflow. Active workflows should be deactivated first.,No,No,workflow_id
+Fluent Support,saved,fluentsupport_saved_reply_list,List Saved Replies,List all saved reply templates. Saved replies are pre-written response templates that agents can quickly insert when replying to tickets.,Yes,Yes,
+Fluent Support,saved,fluentsupport_saved_reply_get,Get Saved Reply,Get full details of a specific saved reply template including its content.,Yes,Yes,reply_id
+Fluent Support,saved,fluentsupport_saved_reply_create,Create Saved Reply,"Create a new saved reply template. Use dynamic placeholders like {{customer.name}}, {{ticket.title}} for personalized responses.",No,No,"title, content"
+Fluent Support,saved,fluentsupport_saved_reply_update,Update Saved Reply,Update an existing saved reply template. Pass only the fields to change.,No,Yes,reply_id
+Fluent Support,saved,fluentsupport_saved_reply_delete,Delete Saved Reply,Permanently delete a saved reply template.,No,No,reply_id
+Fluent Support,tag,fluentsupport_tag_list,List Tags,List all ticket tags. Tags help categorize and organize tickets for filtering and reporting.,Yes,Yes,
+Fluent Support,tag,fluentsupport_tag_create,Create Tag,Create a new ticket tag for categorizing tickets.,No,No,title
+Fluent Support,tag,fluentsupport_tag_update,Update Tag,Update an existing tag name or description.,No,Yes,tag_id
+Fluent Support,tag,fluentsupport_tag_delete,Delete Tag,Permanently delete a tag. Existing ticket associations will be removed.,No,No,tag_id
+Fluent Support,product,fluentsupport_product_list,List Products,List all products. Products can be associated with tickets to track which product a support request is about.,Yes,Yes,
+Fluent Support,product,fluentsupport_product_create,Create Product,Create a new product for ticket categorization.,No,No,title
+Fluent Support,product,fluentsupport_product_update,Update Product,Update an existing product name or description.,No,Yes,product_id
+Fluent Support,product,fluentsupport_product_delete,Delete Product,Permanently delete a product. Existing ticket associations will be removed.,No,No,product_id
+Fluent Support,settings,fluentsupport_settings_get,Get Settings,"Get Fluent Support general settings: business hours, email notifications, ticket defaults, and more.",Yes,Yes,
+Fluent Support,settings,fluentsupport_settings_mailboxes,Get Mailboxes,List all configured mailboxes/inboxes. Mailboxes determine where incoming ticket emails are received.,Yes,Yes,
+Fluent Support,activity,fluentsupport_activity_list,List Activities,"List recent activity log entries. Activities track all actions performed on tickets, customers, and agents (replies, status changes, assignments, etc.).",Yes,Yes,
+Fluent Boards,board,fluentboards_board_list,List Boards,"List all project boards with optional filtering by type, search, and pagination. Boards are the top-level containers for stages and tasks.",Yes,Yes,
+Fluent Boards,board,fluentboards_board_get,Get Board,"Get detailed information about a single board including its stages, settings, and metadata.",Yes,Yes,board_id
+Fluent Boards,board,fluentboards_board_create,Create Board,"Create a new project board. Requires a title and type (to-do or roadmap). Optionally include a description, currency, folder, and initial stages.",No,No,"title, type"
+Fluent Boards,board,fluentboards_board_update,Update Board,Update board properties such as title or description. Pass only the fields you want to change.,No,Yes,board_id
+Fluent Boards,board,fluentboards_board_delete,Delete Board,"Permanently delete a board. This action cannot be undone. All stages, tasks, and associated data will also be deleted.",No,No,board_id
+Fluent Boards,board,fluentboards_board_archive,Archive Board,Archive a board. Archived boards can be restored later.,No,Yes,board_id
+Fluent Boards,task,fluentboards_task_list,List Tasks,"List all tasks for a specific board. Returns tasks across all stages with their status, priority, assignees, and metadata.",Yes,Yes,board_id
+Fluent Boards,task,fluentboards_task_get,Get Task,"Get detailed information about a single task including its description, assignees, labels, subtasks, and activity history.",Yes,Yes,"board_id, task_id"
+Fluent Boards,task,fluentboards_task_create,Create Task,"Create a new task on a board. Requires a title, board_id, and stage_id. Optionally set priority, CRM contact, or mark as template.",No,No,"board_id, title, stage_id"
+Fluent Boards,task,fluentboards_task_update,Update Task,"Update a specific property of a task. Supported properties: title, description, status, priority, due_at, started_at, assignees, archived_at, last_completed_at, board_id, type, reminder_type, remind_at.",No,Yes,"board_id, task_id, property"
+Fluent Boards,task,fluentboards_task_delete,Delete Task,"Permanently delete a task. This action cannot be undone. All subtasks, comments, and attachments will also be deleted.",No,No,"board_id, task_id"
+Fluent Boards,task,fluentboards_task_move_stage,Move Task to Stage,"Move a task to a different stage within the same board, or to a stage in a different board. Optionally set the position within the target stage.",No,No,"board_id, task_id, new_stage_id"
+Fluent Boards,task,fluentboards_task_clone,Clone Task,"Create a copy of an existing task. Choose which elements to include: assignees, subtasks, labels, attachments, and comments.",No,No,"board_id, task_id, title, stage_id"
+Fluent Boards,task,fluentboards_task_close,Close Task,"Close (complete) a task by setting its status to ""closed"" and recording the completion timestamp.",No,Yes,"board_id, task_id"
+Fluent Boards,stage,fluentboards_stage_list,List Archived Stages,List archived stages for a board. Active stages are returned as part of the board details (use board_get). This endpoint returns only archived/soft-deleted stages.,Yes,Yes,board_id
+Fluent Boards,stage,fluentboards_stage_create,Create Stage,"Create a new stage (column) on a board. The stage is added at the end by default, or at the specified position.",No,No,"board_id, title"
+Fluent Boards,stage,fluentboards_stage_update,Update Stage,Update stage properties such as title or settings.,No,Yes,"board_id, stage_id"
+Fluent Boards,stage,fluentboards_stage_delete,Archive Stage,Archive (soft-delete) a stage. The stage and its tasks are hidden but can be restored later.,No,No,"board_id, stage_id"
+Fluent Boards,stage,fluentboards_stage_reorder,Reorder Stages,Update the positions of multiple stages at once. Pass an array of stage IDs in the desired order.,No,Yes,"board_id, list"
+Fluent Boards,label,fluentboards_label_list,List Labels,List all labels for a specific board. Labels help categorize and visually tag tasks.,Yes,Yes,board_id
+Fluent Boards,label,fluentboards_label_create,Create Label,Create a new label for a board. Requires a color and background color in hex format. Optionally provide a label title.,No,No,"board_id, color, bg_color"
+Fluent Boards,label,fluentboards_label_update,Update Label,"Update an existing label. You can change its title, text color, or background color.",No,Yes,"board_id, label_id"
+Fluent Boards,label,fluentboards_label_delete,Delete Label,Permanently delete a label from a board. Existing task associations will be removed.,No,No,"board_id, label_id"
+Fluent Boards,label,fluentboards_label_assign_to_task,Assign Label to Task,Assign a label to a task on a board.,No,No,"board_id, task_id, label_id"
+Fluent Boards,comment,fluentboards_comment_list,List Task Comments,List all comments for a specific task. Returns the conversation thread including replies.,Yes,Yes,"board_id, task_id"
+Fluent Boards,comment,fluentboards_comment_create,Create Comment,Add a new comment to a task. Supports threaded replies via parent_id.,No,No,"board_id, task_id, comment"
+Fluent Boards,comment,fluentboards_comment_delete,Delete Comment,Delete a comment from a task. This also removes any threaded replies and attachments.,No,No,"board_id, comment_id"
+Fluent Boards,member,fluentboards_member_list,List Board Members,"List all members of a specific board including their roles (admin, member, viewer).",Yes,Yes,board_id
+Fluent Boards,member,fluentboards_member_add,Add Member to Board,Add a user to a board as a member or viewer. The user must already exist in WordPress.,No,No,"board_id, member_id"
+Fluent Boards,member,fluentboards_member_remove,Remove Member from Board,Remove a user from a board. Their task assignments on this board may need reassignment.,No,No,"board_id, user_id"
+Fluent Community,space,fluentcommunity_space_list,List Spaces,List all community spaces (groups/forums). Spaces are the main containers for posts and discussions. Supports pagination and search.,Yes,Yes,
+Fluent Community,space,fluentcommunity_space_get,Get Space,"Get detailed information about a specific space including its settings, member count, privacy level, and description.",Yes,Yes,space_id
+Fluent Community,space,fluentcommunity_space_create,Create Space,"Create a new community space. Spaces can be public (anyone can join), private (invite-only), or secret (hidden from non-members).",No,No,title
+Fluent Community,space,fluentcommunity_space_update,Update Space,"Update space properties such as title, description, privacy level, or status. Pass only the fields you want to change.",No,Yes,space_id
+Fluent Community,space,fluentcommunity_space_delete,Delete Space,"Permanently delete a space. This will remove all posts, comments, and member associations within the space. This action cannot be undone.",No,No,space_id
+Fluent Community,feed,fluentcommunity_feed_list,List Feeds/Posts,"List community posts/feeds with optional filtering by space, author, and status. Supports pagination and search. Returns post content, author info, reactions, and comment counts.",Yes,Yes,
+Fluent Community,feed,fluentcommunity_feed_get,Get Feed/Post,"Get detailed information about a single post including its full content, author, reactions, comments, and metadata.",Yes,Yes,feed_id
+Fluent Community,feed,fluentcommunity_feed_create,Create Feed/Post,Create a new post/feed in a community space. Requires a space_id and message content. Posts can be published immediately or saved as drafts.,No,No,"space_id, message"
+Fluent Community,feed,fluentcommunity_feed_update,Update Feed/Post,"Update an existing post. Can modify content, title, status, pinned state, or comment settings. Pass only the fields you want to change.",No,Yes,feed_id
+Fluent Community,feed,fluentcommunity_feed_delete,Delete Feed/Post,Permanently delete a post and all its associated comments. This action cannot be undone.,No,No,feed_id
+Fluent Community,feed,fluentcommunity_feed_search,Search Feeds/Posts,Search across all community posts by keyword. Returns matching posts with relevance ranking. More targeted than feed_list with search parameter.,Yes,Yes,search
+Fluent Community,comment,fluentcommunity_comment_list,List Comments,"List comments for a specific post/feed. Returns comment content, author info, and nested replies. Supports pagination.",Yes,Yes,feed_id
+Fluent Community,comment,fluentcommunity_comment_create,Create Comment,Add a comment to a post/feed. Supports threaded replies by specifying a parent_id for the comment being replied to.,No,No,"feed_id, message"
+Fluent Community,comment,fluentcommunity_comment_update,Update Comment,Update the content of an existing comment. Only the comment author or administrators can update a comment.,No,Yes,"comment_id, message"
+Fluent Community,comment,fluentcommunity_comment_delete,Delete Comment,"Permanently delete a comment. If the comment has replies, they will also be removed. This action cannot be undone.",No,No,comment_id
+Fluent Community,member,fluentcommunity_member_list,List Members,"List community members with optional search and pagination. Shows member profiles, roles, and activity status.",Yes,Yes,
+Fluent Community,member,fluentcommunity_member_get,Get Member,"Get detailed profile information about a specific community member including their activity, spaces, and role.",Yes,Yes,user_id
+Fluent Community,member,fluentcommunity_member_add_to_space,Add Member to Space,Add a user to a community space. The user must be a WordPress user. You can optionally set their role within the space.,No,No,"space_id, user_id"
+Fluent Community,member,fluentcommunity_member_remove_from_space,Remove Member from Space,Remove a user from a community space. The user will lose access to the space content if it is private or secret.,No,No,"space_id, user_id"
+Fluent Community,member,fluentcommunity_member_update_role,Update Member Role,"Change a member's role within a specific space. Roles control permissions: member (read/post), moderator (manage posts/comments), admin (full control).",No,Yes,"space_id, user_id, role"
+Fluent Community,course,fluentcommunity_course_list,List Courses,List all courses in the community. Courses are structured learning paths with lessons and optional quizzes. Supports pagination.,Yes,Yes,
+Fluent Community,course,fluentcommunity_course_get,Get Course,"Get detailed information about a specific course including its lessons, enrollment count, progress tracking, and metadata.",Yes,Yes,course_id
+Fluent Community,course,fluentcommunity_course_enroll_user,Enroll User in Course,Enroll a user in a course. The user will gain access to all published lessons within the course.,No,No,"course_id, user_id"
+Fluent Community,course,fluentcommunity_course_unenroll_user,Unenroll User from Course,Remove a user's enrollment from a course. Their progress data may be retained but they will lose access to lessons.,No,No,"course_id, user_id"
+Fluent Community,notification,fluentcommunity_notification_list,List Notifications,"List notifications for the authenticated user. Shows mentions, replies, reactions, and other community activity notifications. Supports pagination.",Yes,Yes,
+Fluent Community,notification,fluentcommunity_notification_mark_read,Mark Notifications as Read,Mark one or more notifications as read. Pass specific notification IDs or omit to mark all unread notifications as read.,No,Yes,
+Fluent Community,analytics,fluentcommunity_analytics_stats,Get Community Stats,"Get overall community statistics: total members, total spaces, total posts, total comments, active members, new sign-ups, and engagement metrics.",Yes,Yes,
+Fluent Community,analytics,fluentcommunity_analytics_activity,Get Activity Analytics,"Get community activity trends over time: posts created, comments made, new members, and reactions. Useful for tracking engagement and growth.",Yes,Yes,
+Fluent Community,settings,fluentcommunity_settings_get,Get Community Settings,"Get Fluent Community configuration settings: general settings, registration options, email notifications, storage configuration, and authentication settings.",Yes,Yes,
+Fluent Community,settings,fluentcommunity_settings_update,Update Community Settings,Update Fluent Community configuration settings. Pass a settings group and the key-value pairs to update. Only provided fields will be changed.,No,Yes,settings
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_list,List Affiliates,"List all affiliates with optional filtering by status, search, and pagination. Returns affiliate profiles including earnings, referral counts, and status.",Yes,Yes,
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_get,Get Affiliate,"Get detailed information about a single affiliate including their profile, earnings summary, referral stats, payout history, and visit data.",Yes,Yes,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_create,Create Affiliate,Create a new affiliate. Requires a WordPress user ID or email. The affiliate will be associated with the given user account.,No,No,
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_update,Update Affiliate,"Update affiliate profile fields such as payment email, status, or referral URL. Pass only the fields you want to change.",No,Yes,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_delete,Delete Affiliate,Permanently delete an affiliate. This removes the affiliate record but does not delete the WordPress user account. Existing referrals may be affected.,No,No,affiliate_id
+Fluent Affiliate,affiliate,fluentaffiliate_affiliate_update_status,Update Affiliate Status,"Change the status of an affiliate (approve, reject, block, or reactivate). Use this for affiliate application management.",No,Yes,"affiliate_id, status"
+Fluent Affiliate,referral,fluentaffiliate_referral_list,List Referrals,"List all referrals with optional filtering by affiliate, status, type, and date range. Returns referral details including commission amounts and associated orders.",Yes,Yes,
+Fluent Affiliate,referral,fluentaffiliate_referral_get,Get Referral,"Get detailed information about a single referral including the associated affiliate, order reference, commission amount, and status.",Yes,Yes,referral_id
+Fluent Affiliate,referral,fluentaffiliate_referral_create,Create Referral,Manually create a new referral record. Useful for crediting affiliates for offline sales or custom referral scenarios.,No,No,"affiliate_id, amount"
+Fluent Affiliate,referral,fluentaffiliate_referral_delete,Delete Referral,Permanently delete a referral record. This cannot be undone. The affiliate earnings will be adjusted accordingly.,No,No,referral_id
+Fluent Affiliate,payout,fluentaffiliate_payout_list,List Payouts,"List all payout records with optional filtering by status, affiliate, and date range. Shows payout amounts, methods, and processing status.",Yes,Yes,
+Fluent Affiliate,payout,fluentaffiliate_payout_get,Get Payout,"Get detailed information about a specific payout including the affiliate, amount, payment method, status, and associated transactions.",Yes,Yes,payout_id
+Fluent Affiliate,payout,fluentaffiliate_payout_process,Process Payout,Process a payout for one or more affiliates. This marks approved referrals as paid and creates a payout record. Provide affiliate IDs to include in the payout batch.,No,No,affiliate_ids
+Fluent Affiliate,payout,fluentaffiliate_payout_validate_config,Validate Payout Configuration,"Validate that the payout configuration is correctly set up before processing payouts. Checks payment method settings, minimum thresholds, and affiliate payment details.",Yes,Yes,
+Fluent Affiliate,visit,fluentaffiliate_visit_list,List Visits,"List affiliate link visits/clicks with optional filtering by affiliate, date range, and pagination. Shows referral URL, landing page, IP (if stored), and conversion status.",Yes,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_dashboard_stats,Get Dashboard Stats,"Get affiliate program dashboard statistics: total affiliates, total referrals, total earnings, unpaid commissions, total visits, and conversion rate.",Yes,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_dashboard_chart,Get Dashboard Chart Data,Get chart data for the affiliate dashboard showing referral and visit trends over time. Useful for visualizing affiliate program performance.,Yes,Yes,
+Fluent Affiliate,report,fluentaffiliate_report_commerce,Get Commerce Reports,"Get commerce-specific reports for the affiliate program including revenue attributed to affiliates, top-performing affiliates, and product-level affiliate performance.",Yes,Yes,
+Fluent Affiliate,settings,fluentaffiliate_settings_referral_config,Get Referral Configuration,"Get the current referral configuration including commission rates, referral types, cookie duration, and tracking settings.",Yes,Yes,
+Fluent Affiliate,settings,fluentaffiliate_settings_update_referral_config,Update Referral Configuration,"Update referral configuration settings such as default commission rate, commission type (percentage or flat), cookie duration, and tracking preferences.",No,Yes,
+Fluent Affiliate,settings,fluentaffiliate_settings_email_config,Get Email Configuration,"Get the current email notification settings for the affiliate program: notification templates, triggers, and recipient configuration.",Yes,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_stats,Get Portal Stats,"Get affiliate portal statistics for the authenticated user: their total earnings, unpaid balance, referral count, visit count, and conversion rate.",Yes,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_referrals,Get Portal Referrals,"Get the referral list from the affiliate portal perspective. Shows the affiliate their own referrals with status, amounts, and dates.",Yes,Yes,
+Fluent Affiliate,portal,fluentaffiliate_portal_transactions,Get Portal Transactions,"Get payout transactions from the affiliate portal perspective. Shows the affiliate their payment history including amounts, dates, and payment methods.",Yes,Yes,
