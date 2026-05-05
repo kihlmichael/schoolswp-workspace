@@ -187,7 +187,7 @@
         20
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n  \"company_name\": \"\",\n  \"company_website\": \"\",\n  \"year_founded\": \"\",\n  \"money_raised\": \"\",\n  \"funding_status\": \"\",\n  \"employees_count\": \"\",\n  \"latest_articles\": [\n    {\n      \"title\": \"\",\n      \"url\": \"\",\n      \"published_date\": \"\"\n    }\n  ]\n}",
+        "jsonSchemaExample": "{\n  \"site_name\": \"\",\n  \"tagline\": \"\",\n  \"founded_year\": \"\",\n  \"pillars\": [\n    \"\"\n  ],\n  \"audience_geography\": \"\"\n}",
         "autoFix": true
       },
       "typeVersion": 1.2
@@ -361,7 +361,7 @@
         -40
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n  \"features_top3\": [\n    {\n      \"name\": \"\",\n      \"description\": \"\"\n    }\n  ],\n  \"pricing_min\": \"\",\n  \"pricing_max\": \"\",\n  \"free_trial_available\": false,\n  \"freemium_available\": false\n}",
+        "jsonSchemaExample": "{\n  \"publication_freq\": \"\",\n  \"top_keywords_targeted\": [\n    \"\"\n  ],\n  \"latest_articles\": [\n    {\n      \"title\": \"\",\n      \"url\": \"\"\n    }\n  ],\n  \"avg_article_length\": \"\"\n}",
         "autoFix": true
       },
       "typeVersion": 1.2
@@ -498,7 +498,7 @@
         20
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n  \"number_of_reviews\": 0,\n  \"positive_pct\": \"\",\n  \"top_pros\": [\n    \"\"\n  ],\n  \"top_cons\": [\n    \"\"\n  ]\n}",
+        "jsonSchemaExample": "{\n  \"monetization_signals\": [\n    \"\"\n  ],\n  \"newsletter_signal\": false,\n  \"social_followers_estimate\": \"\",\n  \"has_lead_magnet\": false\n}",
         "autoFix": true
       },
       "typeVersion": 1.2
@@ -751,7 +751,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "You are a company researcher agent. Goal: extract these fields about a company:\n- year_founded\n- money_raised\n- funding_status\n- employees_count\n- latest_articles (max 3)\n\nCONSTRAINTS:\n- Maximum 3 tool calls total. Stop after 3 calls.\n- Prefer Search Crunchbase first. Use WellFound or LinkedIn only if Crunchbase failed.\n- Do NOT use Webscraper tools.\n- Missing data = empty string or empty array. Never null.\n- Skip retries on 4xx/5xx errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON.\n\nCONTEXT: You analyze WordPress plugins/tools (not generic companies). The \"company\" = the team/vendor publishing the plugin. Focus on plugin-specific signals: latest version, recent release notes, pricing tiers (free vs Pro), feature roadmap, community sentiment."
+          "systemMessage": "You analyze a French WordPress editorial/content website (blog, formation, agency).\nGoal: extract these fields about the editorial site:\n- site_name (clear brand name)\n- tagline (one-line positioning)\n- founded_year (when the site/business started)\n- pillars (max 3 main editorial topics, ex: WordPress, SEO, Elementor)\n- audience_geography (FR / EU / global)\n\nCONSTRAINTS:\n- Maximum 2 tool calls. Use Search Company Website only.\n- Snippets from search are enough.\n- Missing data = empty string, false, or empty array. Never null.\n- Skip retries on errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return JSON with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- Empty data = numbers=0, strings=\"\", arrays=[], booleans=false."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -769,7 +769,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "You research a company product/service. Extract:\n- features_top3 (max 3 main features with name + 1-line description)\n- pricing_min and pricing_max (lowest and highest tier prices)\n- free_trial_available (boolean)\n- freemium_available (boolean)\n\nCONSTRAINTS:\n- Maximum 2 tool calls total. Use Search Company Website only.\n- Do NOT use Webscraper tools. Snippets from search are enough.\n- Missing data = empty string, false, or empty array. Never null.\n- Skip retries on errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON.\n\nCONTEXT: You analyze WordPress plugins/tools (not generic companies). The \"company\" = the team/vendor publishing the plugin. Focus on plugin-specific signals: latest version, recent release notes, pricing tiers (free vs Pro), feature roadmap, community sentiment."
+          "systemMessage": "You analyze a French WordPress editorial site's content strategy.\nGoal: extract content/keywords signals.\nFields:\n- publication_freq (ex: \"2-3 articles/week\", \"1/month\")\n- top_keywords_targeted (max 5 main SEO keywords visible from latest articles)\n- latest_articles (max 5, each: title + url)\n- avg_article_length (rough estimate: short/medium/long)\n\nCONSTRAINTS:\n- Maximum 2 tool calls. Use Search Company Website only.\n- Do NOT use Webscraper tools.\n- Missing data = empty string or empty array.\n- NEVER respond with prose.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data, return JSON with empty/default values.\n- NEVER apologize or explain."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -787,7 +787,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "You collect customer reviews summary for a company. Extract:\n- number_of_reviews (integer estimate)\n- positive_pct (percentage as string, ex: 85%)\n- top_pros (max 3 pros)\n- top_cons (max 3 cons)\n\nCONSTRAINTS:\n- Maximum 2 tool calls. Use Search Product Review Sites only.\n- Do NOT use Webscraper tools. Description snippets are enough.\n- Missing data = empty string, 0, or empty array. Never null.\n- Skip retries on errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON.\n\nCONTEXT: You analyze WordPress plugins/tools (not generic companies). The \"company\" = the team/vendor publishing the plugin. Focus on plugin-specific signals: latest version, recent release notes, pricing tiers (free vs Pro), feature roadmap, community sentiment."
+          "systemMessage": "You analyze authority signals of a French WordPress editorial site.\nGoal: extract authority/audience indicators.\nFields:\n- monetization_signals (array, possible values: \"affiliate\", \"course\", \"services\", \"newsletter_paid\", \"ads\", \"ebook\")\n- newsletter_signal (boolean: visible newsletter signup form)\n- social_followers_estimate (string, ex: \"10k LinkedIn\", \"5k YouTube\", or \"\")\n- has_lead_magnet (boolean)\n\nCONSTRAINTS:\n- Maximum 2 tool calls. Use Search Product Review Sites only.\n- Do NOT use Webscraper tools.\n- Missing data = empty string, false, or empty array.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data, return JSON with empty/default values.\n- NEVER apologize or explain."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -815,25 +815,119 @@
         "sheetName": {
           "__rl": true,
           "mode": "name",
-          "value": "plugins-utilises"
+          "value": "concurrents-editoriaux"
         },
         "columns": {
           "mappingMode": "defineBelow",
-          "schema": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "site_name",
+              "displayName": "site_name",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "founded_year",
+              "displayName": "founded_year",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "pillars",
+              "displayName": "pillars",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "audience_geography",
+              "displayName": "audience_geography",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "publication_freq",
+              "displayName": "publication_freq",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "top_keywords",
+              "displayName": "top_keywords",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "latest_articles",
+              "displayName": "latest_articles",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "monetization",
+              "displayName": "monetization",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "newsletter",
+              "displayName": "newsletter",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "social_followers",
+              "displayName": "social_followers",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "has_lead_magnet",
+              "displayName": "has_lead_magnet",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            }
+          ],
           "value": {
             "date": "={{ $now.format(\"yyyy-MM-dd\") }}",
-            "concurrent": "={{ $json.output.company_name || \"\" }}",
-            "url": "={{ $json.output.company_website || \"\" }}",
-            "annee_fondation": "={{ $json.output.year_founded || \"\" }}",
-            "funding_status": "={{ $json.output.funding_status || \"\" }}",
-            "money_raised": "={{ $json.output.money_raised || \"\" }}",
-            "features_top3": "={{ ($json.output.features_top3 || []).slice(0,3).map(f => f.name).join(\", \") }}",
-            "pricing_range": "={{ ($json.output.pricing_min || \"\") + \" -> \" + ($json.output.pricing_max || \"\") }}",
-            "positive_pct": "={{ $json.output.positive_pct || \"\" }}",
-            "top_pros": "={{ ($json.output.top_pros || []).slice(0,3).join(\" | \") }}",
-            "top_cons": "={{ ($json.output.top_cons || []).slice(0,3).join(\" | \") }}",
-            "last_news": "={{ ($json.output.latest_articles || [{}])[0].title || \"\" }}"
-          }
+            "site_name": "={{ $json.output.site_name || \"\" }}",
+            "url": "={{ $(\"Loop Over Items\").item.json.url || \"\" }}",
+            "founded_year": "={{ $json.output.founded_year || \"\" }}",
+            "pillars": "={{ ($json.output.pillars || []).join(\", \") }}",
+            "audience_geography": "={{ $json.output.audience_geography || \"\" }}",
+            "publication_freq": "={{ $json.output.publication_freq || \"\" }}",
+            "top_keywords": "={{ ($json.output.top_keywords_targeted || []).slice(0,5).join(\", \") }}",
+            "latest_articles": "={{ ($json.output.latest_articles || []).slice(0,5).map(a => a.title + \" | \" + a.url).join(\" || \") }}",
+            "monetization": "={{ ($json.output.monetization_signals || []).join(\", \") }}",
+            "newsletter": "={{ $json.output.newsletter_signal ? \"yes\" : \"no\" }}",
+            "social_followers": "={{ $json.output.social_followers_estimate || \"\" }}",
+            "has_lead_magnet": "={{ $json.output.has_lead_magnet ? \"yes\" : \"no\" }}"
+          },
+          "matchingColumns": []
         },
         "options": {}
       },
@@ -856,12 +950,12 @@
         "sheetName": {
           "__rl": true,
           "mode": "name",
-          "value": "_input-plugins"
+          "value": "_input-concurrents"
         },
         "options": {}
       },
       "id": "a1b2c3d4-input-plugins-read-001",
-      "name": "Read Plugin Sources",
+      "name": "Read Editorial Sources",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
@@ -1107,7 +1201,7 @@
       "main": [
         [
           {
-            "node": "Read Plugin Sources",
+            "node": "Read Editorial Sources",
             "type": "main",
             "index": 0
           }
@@ -1125,7 +1219,7 @@
         ]
       ]
     },
-    "Read Plugin Sources": {
+    "Read Editorial Sources": {
       "main": [
         [
           {
@@ -1137,7 +1231,7 @@
       ]
     }
   },
-  "name": "sheet-veille-concurrence-W206",
+  "name": "sheet-veille-concurrents-editoriaux-W207",
   "active": false,
   "settings": {}
 }

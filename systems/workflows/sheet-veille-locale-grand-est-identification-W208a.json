@@ -1,0 +1,145 @@
+{
+  "name": "sheet-veille-locale-grand-est-identification-W208a",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trig-manual-w208a-001",
+      "name": "When clicking Test workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Génère la liste des requêtes Firecrawl pour identifier la concurrence WordPress en Grand Est\nconst queries = [\n  'agence wordpress strasbourg',\n  'agence wordpress nancy',\n  'agence wordpress metz',\n  'agence wordpress reims',\n  'agence wordpress mulhouse',\n  'freelance wordpress grand est',\n  'création site wordpress alsace',\n  'création site wordpress lorraine',\n  'création site wordpress champagne ardenne',\n  'développeur wordpress strasbourg'\n];\nreturn queries.map(q => ({ json: { query: q } }));"
+      },
+      "id": "code-queries-w208a-001",
+      "name": "Generate Local Queries",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "loop-w208a-001",
+      "name": "Loop Over Queries",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/search",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"query\": \"{{ $json.query }}\",\n  \"limit\": 10,\n  \"country\": \"fr\",\n  \"lang\": \"fr\"\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "http-firecrawl-w208a-001",
+      "name": "Firecrawl Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrait les top résultats et formatte pour append au sheet\nconst items = [];\nconst query = $('Loop Over Queries').item.json.query;\nconst results = $input.first().json.data || $input.first().json.results || [];\nfor (const r of results.slice(0, 10)) {\n  const url = r.url || r.link || '';\n  const title = r.title || r.metadata?.title || '';\n  const description = r.description || r.metadata?.description || r.snippet || '';\n  if (!url) continue;\n  // skip directories and aggregators\n  const skip = ['pagesjaunes', 'societe.com', 'malt.fr', 'codeur.com', 'fiverr', 'upwork', 'youtube.com'];\n  if (skip.some(s => url.includes(s))) continue;\n  // extract clean domain\n  let domain = '';\n  try { domain = new URL(url).hostname.replace('www.', ''); } catch (e) {}\n  items.push({ json: { query, url, domain, title: title.slice(0, 200), description: description.slice(0, 300) } });\n}\nreturn items;"
+      },
+      "id": "code-extract-w208a-001",
+      "name": "Extract Candidates",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1kOJZBpcKP3rz_TTrjxZcdHP4YhEa-QZLaba3HCCJTR0",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1kOJZBpcKP3rz_TTrjxZcdHP4YhEa-QZLaba3HCCJTR0/edit",
+          "cachedResultName": "schoolsWP - Veille Concurrence"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "_input-locale"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date_identified": "={{ $now.format(\"yyyy-MM-dd\") }}",
+            "query": "={{ $json.query }}",
+            "domain": "={{ $json.domain }}",
+            "url": "={{ $json.url }}",
+            "title": "={{ $json.title }}",
+            "description": "={{ $json.description }}",
+            "validated": "no"
+          },
+          "matchingColumns": [],
+          "schema": [
+            { "id": "date_identified", "displayName": "date_identified", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "query", "displayName": "query", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "domain", "displayName": "domain", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "url", "displayName": "url", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "title", "displayName": "title", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "description", "displayName": "description", "type": "string", "canBeUsedToMatch": false, "required": false },
+            { "id": "validated", "displayName": "validated", "type": "string", "canBeUsedToMatch": false, "required": false }
+          ]
+        },
+        "options": {}
+      },
+      "id": "sheets-append-w208a-001",
+      "name": "Append Candidates",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1100, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking Test workflow": {
+      "main": [[{ "node": "Generate Local Queries", "type": "main", "index": 0 }]]
+    },
+    "Generate Local Queries": {
+      "main": [[{ "node": "Loop Over Queries", "type": "main", "index": 0 }]]
+    },
+    "Loop Over Queries": {
+      "main": [
+        [],
+        [{ "node": "Firecrawl Search", "type": "main", "index": 0 }]
+      ]
+    },
+    "Firecrawl Search": {
+      "main": [[{ "node": "Extract Candidates", "type": "main", "index": 0 }]]
+    },
+    "Extract Candidates": {
+      "main": [[{ "node": "Append Candidates", "type": "main", "index": 0 }]]
+    },
+    "Append Candidates": {
+      "main": [[{ "node": "Loop Over Queries", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
