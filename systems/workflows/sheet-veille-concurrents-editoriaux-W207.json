@@ -193,46 +193,6 @@
       "typeVersion": 1.2
     },
     {
-      "id": "e4955f40-6e8c-42d9-bb1e-d134485717f2",
-      "name": "Webscraper Tool1",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "position": [
-        1460,
-        180
-      ],
-      "parameters": {
-        "url": "https://api.firecrawl.dev/v0/scrape",
-        "fields": "markdown",
-        "method": "POST",
-        "sendBody": true,
-        "dataField": "data",
-        "authentication": "genericCredentialType",
-        "parametersBody": {
-          "values": [
-            {
-              "name": "url"
-            },
-            {
-              "name": "pageOptions",
-              "value": "={{ {\n onlyMainContent: true,\n replaceAllPathsWithAbsolutePaths: true,\n removeTags: 'img,svg,video,audio'\n} }}",
-              "valueProvider": "fieldValue"
-            }
-          ]
-        },
-        "fieldsToInclude": "selected",
-        "genericAuthType": "httpHeaderAuth",
-        "toolDescription": "Call this tool to fetch any additional webpage and its contents which may be helpful in gathering information for the data points.",
-        "optimizeResponse": true
-      },
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "tDpWWa0q2KgN4SwC",
-          "name": "Firecrawl"
-        }
-      },
-      "typeVersion": 1
-    },
-    {
       "id": "f09112bc-65b5-4b6d-b568-eef95d064d45",
       "name": "Check Company Profiles Exist",
       "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
@@ -262,46 +222,6 @@
         "fields": "url,title,description",
         "fieldsToInclude": "selected",
         "toolDescription": "Call this tool to check if a company profile exists in either crunchbase, wellfound or linkedin.\n* To check if a company has a crunchbase profile, use the query \"site: https://crunchbase.com/organizations (company)\"\n* To check if a company has a wellfound profile, use the query \"site: https://wellfound.com/company (company)\"\n* To check if a company has a linked company profile, use the query \"site: https://linkedin.com/company (company)\"",
-        "optimizeResponse": true
-      },
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "tDpWWa0q2KgN4SwC",
-          "name": "Firecrawl"
-        }
-      },
-      "typeVersion": 1
-    },
-    {
-      "id": "5ac6eb04-7c94-443f-bdd3-52e5fc1f72ff",
-      "name": "Webscraper Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "position": [
-        2180,
-        -40
-      ],
-      "parameters": {
-        "url": "https://api.firecrawl.dev/v0/scrape",
-        "fields": "markdown",
-        "method": "POST",
-        "sendBody": true,
-        "dataField": "data",
-        "authentication": "genericCredentialType",
-        "parametersBody": {
-          "values": [
-            {
-              "name": "url"
-            },
-            {
-              "name": "pageOptions",
-              "value": "={{ {\n onlyMainContent: true,\n replaceAllPathsWithAbsolutePaths: true,\n removeTags: 'img,svg,video,audio'\n} }}",
-              "valueProvider": "fieldValue"
-            }
-          ]
-        },
-        "fieldsToInclude": "selected",
-        "genericAuthType": "httpHeaderAuth",
-        "toolDescription": "Call this tool to fetch webpage contents. Pass in the url to fetch.",
         "optimizeResponse": true
       },
       "credentials": {
@@ -440,56 +360,6 @@
       "typeVersion": 1
     },
     {
-      "id": "216bc875-365c-4536-b3b4-90de29265cb5",
-      "name": "Webscraper Tool2",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "position": [
-        2897,
-        20
-      ],
-      "parameters": {
-        "url": "https://api.firecrawl.dev/v0/scrape",
-        "fields": "markdown",
-        "method": "POST",
-        "sendBody": true,
-        "dataField": "data",
-        "authentication": "genericCredentialType",
-        "parametersBody": {
-          "values": [
-            {
-              "name": "url",
-              "value": "{url_or_link}",
-              "valueProvider": "fieldValue"
-            },
-            {
-              "name": "pageOptions",
-              "value": "={{ {\n onlyMainContent: true,\n replaceAllPathsWithAbsolutePaths: true,\n removeTags: 'img,svg,video,audio'\n} }}",
-              "valueProvider": "fieldValue"
-            }
-          ]
-        },
-        "fieldsToInclude": "selected",
-        "genericAuthType": "httpHeaderAuth",
-        "toolDescription": "Call this tool to fetch webpage contents. Pass in the url to fetch.",
-        "optimizeResponse": true,
-        "placeholderDefinitions": {
-          "values": [
-            {
-              "name": "url_or_link",
-              "description": "the url or lik to the review site webpage."
-            }
-          ]
-        }
-      },
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "tDpWWa0q2KgN4SwC",
-          "name": "Firecrawl"
-        }
-      },
-      "typeVersion": 1
-    },
-    {
       "id": "c13f23fd-77b9-4f4c-bdc6-50120ed84cbd",
       "name": "Structured Output Parser2",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
@@ -551,46 +421,6 @@
         "options": {}
       },
       "typeVersion": 3
-    },
-    {
-      "id": "dae53670-bafb-4dff-95e7-cc94adf5f344",
-      "name": "Get Company News",
-      "type": "@n8n/n8n-nodes-langchain.toolHttpRequest",
-      "position": [
-        1460,
-        20
-      ],
-      "parameters": {
-        "url": "https://api.firecrawl.dev/v1/search",
-        "method": "POST",
-        "sendBody": true,
-        "dataField": "data",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "parametersBody": {
-          "values": [
-            {
-              "name": "query"
-            },
-            {
-              "name": "limit",
-              "value": "5",
-              "valueProvider": "fieldValue"
-            }
-          ]
-        },
-        "fields": "url,title,description",
-        "fieldsToInclude": "selected",
-        "toolDescription": "Call this tool to search for the latest news articles of a company.",
-        "optimizeResponse": true
-      },
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "tDpWWa0q2KgN4SwC",
-          "name": "Firecrawl"
-        }
-      },
-      "typeVersion": 1
     },
     {
       "id": "84809359-06c8-41d9-8269-571cac716d17",
@@ -1007,7 +837,7 @@
     },
     "Loop Over Items": {
       "main": [
-        null,
+        [],
         [
           {
             "node": "Company Overview Agent",
@@ -1026,7 +856,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Search WellFound": {
       "ai_tool": [
@@ -1037,7 +868,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "OpenAI Chat Model": {
       "ai_languageModel": [
@@ -1053,7 +885,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Search Crunchbase": {
       "ai_tool": [
@@ -1064,7 +897,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "OpenAI Chat Model1": {
       "ai_languageModel": [
@@ -1080,7 +914,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "OpenAI Chat Model2": {
       "ai_languageModel": [
@@ -1096,7 +931,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Company Overview Agent": {
       "main": [
@@ -1118,7 +954,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Structured Output Parser": {
       "ai_outputParser": [
@@ -1129,7 +966,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Structured Output Parser1": {
       "ai_outputParser": [
@@ -1140,7 +978,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Structured Output Parser2": {
       "ai_outputParser": [
@@ -1151,7 +990,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Search Product Review Sites": {
       "ai_tool": [
@@ -1162,7 +1002,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Check Company Profiles Exist": {
       "ai_tool": [
@@ -1173,7 +1014,8 @@
             "index": 0
           }
         ]
-      ]
+      ],
+      "main": []
     },
     "Company Product Reviews Agent": {
       "main": [
@@ -1231,7 +1073,7 @@
       ]
     }
   },
-  "name": "sheet-veille-concurrents-editoriaux-W207",
+  "name": "[InTesting] Sheets > AI Agents: Veille Concurrents Editoriaux (W207)",
   "active": false,
   "settings": {}
 }

@@ -1,5 +1,5 @@
 {
-  "name": "sheet-veille-locale-grand-est-identification-W208a",
+  "name": "[Setup] Manual > Sheets: Identification Concurrence Locale (W208a)",
   "nodes": [
     {
       "parameters": {},
@@ -7,7 +7,10 @@
       "name": "When clicking Test workflow",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [0, 0]
+      "position": [
+        0,
+        0
+      ]
     },
     {
       "parameters": {
@@ -17,7 +20,10 @@
       "name": "Generate Local Queries",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [220, 0]
+      "position": [
+        220,
+        0
+      ]
     },
     {
       "parameters": {
@@ -27,7 +33,10 @@
       "name": "Loop Over Queries",
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
-      "position": [440, 0]
+      "position": [
+        440,
+        0
+      ]
     },
     {
       "parameters": {
@@ -46,7 +55,10 @@
       "name": "Firecrawl Search",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [660, 0],
+      "position": [
+        660,
+        0
+      ],
       "credentials": {
         "httpHeaderAuth": {
           "id": "tDpWWa0q2KgN4SwC",
@@ -62,7 +74,10 @@
       "name": "Extract Candidates",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [880, 0]
+      "position": [
+        880,
+        0
+      ]
     },
     {
       "parameters": {
@@ -92,13 +107,55 @@
           },
           "matchingColumns": [],
           "schema": [
-            { "id": "date_identified", "displayName": "date_identified", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "query", "displayName": "query", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "domain", "displayName": "domain", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "url", "displayName": "url", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "title", "displayName": "title", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "description", "displayName": "description", "type": "string", "canBeUsedToMatch": false, "required": false },
-            { "id": "validated", "displayName": "validated", "type": "string", "canBeUsedToMatch": false, "required": false }
+            {
+              "id": "date_identified",
+              "displayName": "date_identified",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            },
+            {
+              "id": "validated",
+              "displayName": "validated",
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "required": false
+            }
           ]
         },
         "options": {}
@@ -107,7 +164,10 @@
       "name": "Append Candidates",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
-      "position": [1100, 0],
+      "position": [
+        1100,
+        0
+      ],
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "4v6PLN0tU8vBlab5",
@@ -118,25 +178,71 @@
   ],
   "connections": {
     "When clicking Test workflow": {
-      "main": [[{ "node": "Generate Local Queries", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Generate Local Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Generate Local Queries": {
-      "main": [[{ "node": "Loop Over Queries", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Loop Over Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Loop Over Queries": {
       "main": [
         [],
-        [{ "node": "Firecrawl Search", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Firecrawl Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Firecrawl Search": {
-      "main": [[{ "node": "Extract Candidates", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Extract Candidates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Extract Candidates": {
-      "main": [[{ "node": "Append Candidates", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Append Candidates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Append Candidates": {
-      "main": [[{ "node": "Loop Over Queries", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Loop Over Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
