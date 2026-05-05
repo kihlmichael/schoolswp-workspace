@@ -46,7 +46,7 @@
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "claude-sonnet-4-5-20250929",
+          "value": "claude-haiku-4-5-20251001",
           "mode": "list"
         }
       },
@@ -187,7 +187,8 @@
         20
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n \"company_name\": \"\",\n \"company_website\": \"\",\n \"year_founded\": \"\",\n \"founders\": [{ \"name\": \"\", \"linkedIn\": \"\" }],\n \"ceo\": [{ \"name\": \"\", \"linkedIn\": \"\", \"twitter\": \"\" }],\n \"key_people\": [{ \"name\": \"\", \"role\": \"\", \"linkedIn\": \"\", \"twitter\": \"\" }],\n \"employees\": [{ \"name\": \"\", \"role\": \"\", \"linkedIn\": \"\", \"twitter\": \"\" }],\n \"open_jobs\": [{ \"role\": \"\", \"description\": \"\", \"published\": \"\" }],\n \"offices\": [{ \"address\": \"\", \"city\": \"\" }],\n \"money_raised\": \"\",\n \"funding_status\": \"\",\n \"investors\": [{ \"name\": \"\", \"description\": \"\", \"linkedIn\": \"\" }],\n \"customers\": [{ \"name\": \"\", \"url\": \"\" }],\n \"yoy_customer_growth\": \"\",\n \"annual_revenue\": \"\",\n \"yoy_revenue_growth\": \"\",\n \"latest_articles\": [{ \"title\": \"\", \"snippet\": \"\", \"url\": \"\", \"published_date\": \"\" }]\n}"
+        "jsonSchemaExample": "{\n  \"company_name\": \"\",\n  \"company_website\": \"\",\n  \"year_founded\": \"\",\n  \"money_raised\": \"\",\n  \"funding_status\": \"\",\n  \"employees_count\": \"\",\n  \"latest_articles\": [\n    {\n      \"title\": \"\",\n      \"url\": \"\",\n      \"published_date\": \"\"\n    }\n  ]\n}",
+        "autoFix": true
       },
       "typeVersion": 1.2
     },
@@ -418,7 +419,8 @@
         -40
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n \"features\": [{ \"name\": \"\", \"description\": \"\" }],\n \"pricing_plans\": [{ \"name\": \"\", \"description\": \"\", \"tier\": \"\", \"price\": \"\", \"monthly_or_annually\": \"\" }],\n \"factors_that_impact_price\": [{ \"factor\": \"\", \"description\": \"\" }],\n \"discounts_promotions\": [{ \"offer\": \"\", \"start\": \"\", \"end\": \"\", \"description\": \"\" }],\n \"custom_plans\": { \"is_available\": false, \"applicable_for\": \"\", \"price\": \"\", \"duration\": \"\", \"description\": \"\" },\n \"free_trial\": { \"is_available\": false, \"applicable_for\": \"\", \"price\": \"\", \"duration\": \"\", \"description\": \"\" },\n \"freemium_version\": { \"is_available\": false, \"applicable_for\": \"\", \"price\": \"\", \"duration\": \"\", \"description\": \"\" },\n \"complementary_tools\": [{ \"name\": \"\", \"description\": \"\", \"price\": \"\" }],\n \"techonology used\": [{ \"name\": \"\", \"description\": \"\", \"purpose\": \"\" }]\n}"
+        "jsonSchemaExample": "{\n  \"features_top3\": [\n    {\n      \"name\": \"\",\n      \"description\": \"\"\n    }\n  ],\n  \"pricing_min\": \"\",\n  \"pricing_max\": \"\",\n  \"free_trial_available\": false,\n  \"freemium_available\": false\n}",
+        "autoFix": true
       },
       "typeVersion": 1.2
     },
@@ -433,7 +435,7 @@
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "claude-sonnet-4-5-20250929",
+          "value": "claude-haiku-4-5-20251001",
           "mode": "list"
         }
       },
@@ -554,7 +556,8 @@
         20
       ],
       "parameters": {
-        "jsonSchemaExample": "{\n \"number_of_reviews\": 0,\n \"positive_mentions_%\": \"\",\n \"negative_mentions_%\": \"\",\n \"top_pros\": [\"\"],\n \"top_cons\": [\"\"],\n \"top_countries\": [\"\"],\n \"top_social_media_platforms\": [\"\"]\n}"
+        "jsonSchemaExample": "{\n  \"number_of_reviews\": 0,\n  \"positive_pct\": \"\",\n  \"top_pros\": [\n    \"\"\n  ],\n  \"top_cons\": [\n    \"\"\n  ]\n}",
+        "autoFix": true
       },
       "typeVersion": 1.2
     },
@@ -569,7 +572,7 @@
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "claude-sonnet-4-5-20250929",
+          "value": "claude-haiku-4-5-20251001",
           "mode": "list"
         }
       },
@@ -877,7 +880,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "Your role is a company researcher agent. Your goal is to research and discover the following information about a company:\n* Year founded\n* Founder(s)\n* CEO\n* Key people\n* Employees\n* Open jobs\n* Offices\n* Money raised\n* Funding status\n* Investors\n* Customers\n* YoY customer growth\n* Annual revenue\n* YoY revenue growth\n* Latest articles\n\n## Steps\n1. check if the company's crunchbase profile exists and if it does read the profile page to gather the required information. If you are able to satisfies all data points from the profile, then do not return your response.\n2. repeat step 1 for wellfound if there are missing data points on the crunchbase profile.\n3. repeat step 1 for linkedin if there are missing data points on the wellfound profile.\n4. If there are still missing datapoints after checking cruchbase, wellfound and linkedin then just give up and return your response.\n\nIf a data point is not found after completing all the above steps, do not use null values in your final response. Use either an empty array, object or string depending on the required schema for the data point.\nDo not retry any link that returns a 400,401,403 or 500 error code."
+          "systemMessage": "You are a company researcher agent. Goal: extract these fields about a company:\n- year_founded\n- money_raised\n- funding_status\n- employees_count\n- latest_articles (max 3)\n\nCONSTRAINTS:\n- Maximum 3 tool calls total. Stop after 3 calls.\n- Prefer Search Crunchbase first. Use WellFound or LinkedIn only if Crunchbase failed.\n- Do NOT use Webscraper tools.\n- Missing data = empty string or empty array. Never null.\n- Skip retries on 4xx/5xx errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -895,7 +898,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "Your role is company product/service researcher. Your goal is to search and collect the following information:\n* features sets\n* number of pricing plans\n* Factors that impact price\n* Lowest-tier, Mid-tier and Highest-tier price\n* Custom plans if available\n* Discounts & promotions offered currently\n* whether a Free trial is offered\n* description of freemium version if available\n* Complementary tools offered\n* technology used\n\n# steps\n1. Search for the relevant webpage on the company's website. This search should return a url address.\n2. Use this url address with the webscraper tool to fetch the contents of the webpage.\n3. Use the contents of th webpage to populate the data points.\n\nIf a data point is not found after completing all the above steps, do not use null values in your final response. Use either an empty array, object or string depending on the required schema for the data point.\nDo not retry any link that returns a 400,401,403 or 500 error code."
+          "systemMessage": "You research a company product/service. Extract:\n- features_top3 (max 3 main features with name + 1-line description)\n- pricing_min and pricing_max (lowest and highest tier prices)\n- free_trial_available (boolean)\n- freemium_available (boolean)\n\nCONSTRAINTS:\n- Maximum 2 tool calls total. Use Search Company Website only.\n- Do NOT use Webscraper tools. Snippets from search are enough.\n- Missing data = empty string, false, or empty array. Never null.\n- Skip retries on errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -913,7 +916,7 @@
       "parameters": {
         "text": "={{ $('Loop Over Items').item.json.url }}",
         "options": {
-          "systemMessage": "Your role is customer reviews agent. Your goal is to gather and collect online customer reviews for a company or their product or service.\n* number of reviews\n* Positive mentions, %\n* Negative mentions, %\n* Top pros\n* Top cons\n* Top countries\n* Top social media platforms\n\n## steps\n1. search for review sites that may have reviews for the company or product in question. retrieve the links or urls of the serch results where the reviews are found.\n2. Identify relevant items in the search result and and extract the urls from the search results.\n2. using the extracted urls from the search results, fetch the webpage of the review sites containing reviews for the company or product.\n3. extract the reviews from the fetched review sites to populate the required data points.\n\nIf a data point is not found after completing all the above steps, do not use null values in your final response. Use either an empty array, object or string depending on the required schema for the data point.\nDo not retry any link that returns a 400,401,403 or 500 error code."
+          "systemMessage": "You collect customer reviews summary for a company. Extract:\n- number_of_reviews (integer estimate)\n- positive_pct (percentage as string, ex: 85%)\n- top_pros (max 3 pros)\n- top_cons (max 3 cons)\n\nCONSTRAINTS:\n- Maximum 2 tool calls. Use Search Product Review Sites only.\n- Do NOT use Webscraper tools. Description snippets are enough.\n- Missing data = empty string, 0, or empty array. Never null.\n- Skip retries on errors.\n\nCRITICAL OUTPUT RULE:\n- If you cannot find data after 2 tool calls, return the JSON structure with empty/default values.\n- NEVER respond with prose, apologies, or explanations.\n- NEVER say 'I cannot' or 'I apologize'.\n- Empty data = JSON with: numbers=0, strings=\"\", arrays=[], booleans=false.\n- Always use the format_final_json_response tool with valid JSON."
         },
         "promptType": "define",
         "hasOutputParser": true
@@ -953,9 +956,9 @@
             "annee_fondation": "={{ $json.output.year_founded || \"\" }}",
             "funding_status": "={{ $json.output.funding_status || \"\" }}",
             "money_raised": "={{ $json.output.money_raised || \"\" }}",
-            "features_top3": "={{ ($json.output.features || []).slice(0,3).map(f => f.name).join(\", \") }}",
-            "pricing_range": "={{ ($json.output.pricing_plans || [{}])[0].price || \"\" }}",
-            "positive_pct": "={{ $json.output[\"positive_mentions_%\"] || \"\" }}",
+            "features_top3": "={{ ($json.output.features_top3 || []).slice(0,3).map(f => f.name).join(\", \") }}",
+            "pricing_range": "={{ ($json.output.pricing_min || \"\") + \" -> \" + ($json.output.pricing_max || \"\") }}",
+            "positive_pct": "={{ $json.output.positive_pct || \"\" }}",
             "top_pros": "={{ ($json.output.top_pros || []).slice(0,3).join(\" | \") }}",
             "top_cons": "={{ ($json.output.top_cons || []).slice(0,3).join(\" | \") }}",
             "last_news": "={{ ($json.output.latest_articles || [{}])[0].title || \"\" }}"
@@ -1051,28 +1054,6 @@
         ]
       ]
     },
-    "Webscraper Tool": {
-      "ai_tool": [
-        [
-          {
-            "node": "Company Product Offering Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get Company News": {
-      "ai_tool": [
-        [
-          {
-            "node": "Company Overview Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Search WellFound": {
       "ai_tool": [
         [
@@ -1084,33 +1065,16 @@
         ]
       ]
     },
-    "Webscraper Tool1": {
-      "ai_tool": [
-        [
-          {
-            "node": "Company Overview Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webscraper Tool2": {
-      "ai_tool": [
-        [
-          {
-            "node": "Company Product Reviews Agent",
-            "type": "ai_tool",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "OpenAI Chat Model": {
       "ai_languageModel": [
         [
           {
             "node": "Company Product Offering Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Structured Output Parser",
             "type": "ai_languageModel",
             "index": 0
           }
@@ -1146,6 +1110,11 @@
             "node": "Company Overview Agent",
             "type": "ai_languageModel",
             "index": 0
+          },
+          {
+            "node": "Structured Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
           }
         ]
       ]
@@ -1155,6 +1124,11 @@
         [
           {
             "node": "Company Product Reviews Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Structured Output Parser2",
             "type": "ai_languageModel",
             "index": 0
           }

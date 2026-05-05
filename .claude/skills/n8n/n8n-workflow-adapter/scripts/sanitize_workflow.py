@@ -73,11 +73,23 @@ URL_REPLACEMENTS = {
 }
 
 MODEL_HINTS = {
-    "gpt-4-turbo": "claude-sonnet-4-6",
-    "gpt-4o": "claude-sonnet-4-6",
-    "gpt-4": "claude-sonnet-4-6",
+    "gpt-4-turbo": "claude-haiku-4-5-20251001",
+    "gpt-4o": "claude-haiku-4-5-20251001",
+    "gpt-4": "claude-haiku-4-5-20251001",
     "gpt-3.5-turbo": "claude-haiku-4-5-20251001",
+    "claude-sonnet-4-5-20250929": "claude-haiku-4-5-20251001",
 }
+
+SHEET_NODE_TYPES = {
+    "n8n-nodes-base.googleSheets",
+    "n8n-nodes-base.googleSheetsTool",
+}
+
+SHEET_OUTPUT_PATTERNS = [
+    (r"\(\.output\.", "($json.output."),
+    (r"\{ \.output\.", "{ $json.output."),
+    (r" \.output\.", " $json.output."),
+]
 
 STICKY_NOTE_PLACEHOLDER = re.compile(r"^Placeholder for\s+", re.IGNORECASE)
 
@@ -187,6 +199,40 @@ def flag_llm_models(wf: dict, report: dict) -> None:
         model = params.get("model")
         if isinstance(model, str) and model in MODEL_HINTS:
             report["llm_model_hints"].append(f"{node.get('name', '?')}: {model} -> suggested {MODEL_HINTS[model]}")
+        if isinstance(model, dict) and model.get("value") in MODEL_HINTS:
+            v = model["value"]
+            report["llm_model_hints"].append(f"{node.get('name', '?')}: {v} -> suggested {MODEL_HINTS[v]}")
+
+
+def fix_sheet_expressions(wf: dict, report: dict) -> None:
+    """Patch '.output.xxx' -> '$json.output.xxx' in Google Sheets node columns.
+
+    Templates often use a shorthand that n8n rejects with [ERROR: invalid syntax].
+    Only valid form when the node is downstream of an agent producing `output.{schema}`
+    is `{{ $json.output.xxx }}`.
+    """
+    fixed = 0
+    for node in wf.get("nodes", []):
+        if node.get("type") not in SHEET_NODE_TYPES:
+            continue
+        params = node.get("parameters") or {}
+        cols = (params.get("columns") or {}).get("value")
+        if not isinstance(cols, dict):
+            continue
+        for k, v in list(cols.items()):
+            if not isinstance(v, str):
+                continue
+            if "$json" in v or ".output." not in v:
+                continue
+            new_v = v
+            for pat, repl in SHEET_OUTPUT_PATTERNS:
+                new_v = re.sub(pat, repl, new_v)
+            if new_v != v:
+                cols[k] = new_v
+                fixed += 1
+                report["sheet_expressions_fixed"].append(f"{node.get('name', '?')}.{k}")
+    if fixed:
+        report["sheet_expressions_count"] = fixed
 
 
 def rename_workflow(wf: dict, new_name: str | None, report: dict) -> None:
@@ -228,6 +274,8 @@ def main() -> int:
         "webhook_paths_regenerated": [],
         "webhook_paths_count": 0,
         "llm_model_hints": [],
+        "sheet_expressions_fixed": [],
+        "sheet_expressions_count": 0,
         "workflow_renamed": None,
     }
 
@@ -236,6 +284,7 @@ def main() -> int:
     replace_urls(wf, report)
     regenerate_webhook_paths(wf, report)
     flag_llm_models(wf, report)
+    fix_sheet_expressions(wf, report)
     rename_workflow(wf, args.workflow_name, report)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)

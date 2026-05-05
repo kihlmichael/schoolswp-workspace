@@ -111,6 +111,72 @@ Actions requises avant import :
 Fichier prêt : systems/workflows/wp-auto-tag-posts-W201.json
 ```
 
+## Lessons learned (2026-05-05, import veille concurrentielle)
+
+Pièges rencontrés lors du premier vrai import enescingoz → instance schoolsWP. À vérifier sur tout futur adaptat :
+
+### 1. Expressions Google Sheets : toujours préfixer `$json.`
+
+Symptôme : node "Append to Sheet" → `[ERROR: invalid syntax]` sur chaque colonne.
+
+Cause : les expressions copiées de templates utilisent souvent `.output.xxx` (raccourci) qui est rejeté par n8n. Seul `{{ $json.output.xxx }}` est valide quand le node est aval d'un agent qui produit `output.{schema}`.
+
+Fix automatique à intégrer dans le sanitize : remplacer `(.output.` → `($json.output.`, `{ .output.` → `{ $json.output.`, ` .output.` → ` $json.output.` dans toutes les expressions du node Sheets.
+
+### 2. LLM model par défaut : Haiku 4.5 > Sonnet 4.5 sur Tier 1
+
+Symptôme : "service is receiving too many requests" même avec `estimatedTokens: 194` sur le prompt courant.
+
+Cause : Anthropic Tier 1 a un TPM cumulatif de 30k pour Sonnet, 50k pour Haiku. Quand un workflow enchaîne 3 agents × N items, le cumul sur 60s explose la fenêtre Sonnet.
+
+Règle : pour les agents structurés (extraction de champs), default = `claude-haiku-4-5-20251001`. Réserver Sonnet aux agents qui font du raisonnement complexe (pas de l'extraction).
+
+Mettre à jour `MODEL_HINTS` dans `sanitize_workflow.py` : `gpt-4*` → `claude-haiku-4-5-20251001` (et non plus Sonnet) sauf si l'agent a explicitement besoin de raisonnement.
+
+### 3. Règle anti-prose dans le system prompt agent
+
+Symptôme : parser strict refuse l'output → "Model output doesn't fit required format". Dans les logs : prose type "I apologize, I cannot retrieve...".
+
+Cause : quand un outil de recherche échoue, Haiku/Sonnet abandonnent et renvoient de la prose au lieu du JSON structuré.
+
+Règle à injecter systématiquement dans tout agent connecté à un Structured Output Parser :
+
+```
+CRITICAL OUTPUT RULE:
+- If you cannot find data after N tool calls, return the JSON structure with empty/default values.
+- NEVER respond with prose, apologies, or explanations.
+- Empty data = JSON with: numbers=0, strings="", arrays=[], booleans=false.
+```
+
+### 4. autoFix sur Structured Output Parser exige un LLM connecté au parser
+
+Symptôme : "A Model sub-node must be connected and enabled" sur le parser quand autoFix est activé.
+
+Cause : Auto-Fix Format ré-appelle un LLM pour coercer la réponse en JSON valide. Il faut un model connecté **au parser** (pas seulement à l'agent).
+
+Fix : pour chaque pair (agent, parser), brancher le même `lmChatAnthropic` sur les deux via `ai_languageModel`. Dans `connections`, ajouter une entrée :
+
+```json
+"OpenAI Chat Model1": {
+  "ai_languageModel": [[
+    { "node": "Company Overview Agent",   "type": "ai_languageModel", "index": 0 },
+    { "node": "Structured Output Parser1","type": "ai_languageModel", "index": 0 }
+  ]]
+}
+```
+
+### 5. Budget tool calls + slim schemas
+
+Symptôme : agents qui consomment 90k+ tokens cumulés sur 3 itérations.
+
+Règle : pour un agent d'extraction simple, contraindre dans le system prompt :
+
+- `Maximum 2 tool calls total.`
+- `Snippets from search are enough — do NOT use Webscraper tools.`
+- Schema de sortie ≤ 5 champs simples (pas d'objets imbriqués sur 3 niveaux)
+
+Dans `sanitize_workflow.py`, flagger les schemas > 8 champs ou les agents avec plus de 3 outils connectés comme "à slim".
+
 ## Références
 
 - references/credentials-mapping.md : mapping complet placeholders → credentials schoolsWP
