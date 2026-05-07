@@ -127,6 +127,7 @@ data/youtube-transcriptions/*
 # --- External skills cloned as standalone upstream Git repos (phase d'evaluation) ---
 # Quand le skill est valide en prod, retirer le sous-.git/ + cette ligne pour l'embed comme antigravity/ecc.
 .claude/skills/external-video-use/
+.claude/skills/external-heygen/
 
 # --- External MCP servers cloned upstream (build localement, pas versionnes) ---
 # Carlos Rodera - Fluent ecosystem MCP servers (5 plugins, dynamic mode)
@@ -149,3 +150,6 @@ tools/wp-mu-plugins/.live-check.tmp
 sandbox-workspace/
 # Backup local de .mcp.json (déjà gitignored, le backup l'est aussi)
 .mcp.backup.json
+
+# --- HeyGen avatar identity files (IDs HeyGen perso, écrits par le skill heygen-avatar) ---
+AVATAR-*.md

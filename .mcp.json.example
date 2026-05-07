@@ -98,6 +98,14 @@
         "WP_API_USERNAME": "YOUR_WP_USERNAME_HERE",
         "WP_API_PASSWORD": "YOUR_WP_APP_PASSWORD_HERE"
       }
+    },
+    "higgsfield": {
+      "type": "http",
+      "url": "https://mcp.higgsfield.ai/mcp"
+    },
+    "heygen": {
+      "type": "http",
+      "url": "https://mcp.heygen.com/mcp/v1/"
     }
   }
 }
