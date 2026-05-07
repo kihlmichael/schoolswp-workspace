@@ -1,0 +1,742 @@
+{
+  "name": "[InTesting] Telegram > Sheets: YT Source -> Brief schoolsWP (W209)",
+  "nodes": [
+    {
+      "id": "sticky-setup-w209",
+      "name": "Setup & Configuration",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        0
+      ],
+      "parameters": {
+        "width": 580,
+        "height": 760,
+        "color": 4,
+        "content": "# W209 - YT Source to Brief schoolsWP\n\n**Pipeline** : un lien YouTube concurrent envoye sur Telegram bot devient un BRIEF schoolsWP 100% original (pas de plagiat structurel) + meta SEO FR pretes a publier.\n\n## Trigger\n\nEnvoyer au @schoolswp_brain_bot un message au format :\n\n```\nhttps://www.youtube.com/watch?v=XXXX\nbrief schoolsWP : angle / cible / promesse\n```\n\nLigne 1 = URL YouTube source. Ligne 2+ = ton brief.\n\n## Credentials a verifier post-import\n\n- [ ] Telegram : selectionner @schoolswp_brain_bot dans TG1 et Telegram_Notify\n- [x] Apify : Apify_Production cable\n- [x] Google Sheets : Google Sheets - schoolsWP v2 cable\n- [x] Anthropic : Anthropic account cable\n- [x] DISCORD_WEBHOOK_SEO : variable n8n existante\n\n## Sheet structure\n\nID : 1WQgRPLFctLUcMauI1AdRniGB5rFpWrc8mZjumtecVMU\nOnglet a renommer : `yt-briefs` (default Sheet1)\n\nColonnes : date | url | brief_user | video_id | language | status | brief_schoolswp | title_fr | description_fr | tags_fr | url_video | published_at\n\n## Posture editoriale (CRITIQUE)\n\nLe LLM produit un brief d'angle ORIGINAL inspire par la video source, JAMAIS une paraphrase structurelle. Conforme regle 31 BRAND_RULES.md.\n\n## Cout estime\n\n- Apify transcript : ~0,001 a 0,01 $\n- Sonnet 4.6 brief : ~0,015 $\n- Haiku 4.5 SEO : ~0,002 $\n- Total : ~0,02 $ / video"
+      }
+    },
+    {
+      "id": "tg1-telegram-trigger",
+      "name": "TG1_Telegram_Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        496,
+        128
+      ],
+      "webhookId": "schoolswp-yt-w209",
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "notes": "Cabler le credential Telegram apres import (bot dedie au workflow).",
+      "credentials": {
+        "telegramApi": {
+          "id": "kBJ7tOqtWLTWmH60",
+          "name": "Telegram - schoolswp_yt_bot"
+        }
+      }
+    },
+    {
+      "id": "parse-telegram-message",
+      "name": "Parse_Telegram_Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        128
+      ],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Parse Telegram message: ligne 1 = URL YouTube, ligne 2+ = brief utilisateur schoolsWP.\nconst messageText = ($input.item.json.message && $input.item.json.message.text) || '';\nif (!messageText.trim()) {\n  throw new Error('Message Telegram vide. Format attendu: ligne 1 = URL YouTube, ligne 2+ = brief.');\n}\n\nconst lines = messageText.split('\\n').map(l => l.trim()).filter(Boolean);\nconst yt_url = lines[0] || '';\nconst user_brief = lines.slice(1).join(' ') || '(aucun brief fourni)';\n\nif (!/youtu\\.?be/i.test(yt_url)) {\n  throw new Error('Premiere ligne ne ressemble pas a une URL YouTube. Recue: ' + yt_url);\n}\n\nconst chat_id = $input.item.json.message.chat.id;\nconst from = ($input.item.json.message.from && $input.item.json.message.from.username) || 'unknown';\n\nreturn { json: { yt_url, user_brief, chat_id, from } };"
+      }
+    },
+    {
+      "id": "wf-configuration",
+      "name": "WF_Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        944,
+        128
+      ],
+      "parameters": {
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cfg-1",
+              "name": "output_lang",
+              "type": "string",
+              "value": "francais"
+            },
+            {
+              "id": "cfg-2",
+              "name": "sheet_id",
+              "type": "string",
+              "value": "1WQgRPLFctLUcMauI1AdRniGB5rFpWrc8mZjumtecVMU"
+            },
+            {
+              "id": "cfg-3",
+              "name": "sheet_tab",
+              "type": "string",
+              "value": "Untitled"
+            },
+            {
+              "id": "cfg-4",
+              "name": "apify_actor",
+              "type": "string",
+              "value": "topaz_sharingan~Youtube-Transcript-Scraper"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "get-video-id",
+      "name": "Get_Video_ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        128
+      ],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Extract YouTube video ID from URL.\nconst url = $input.item.json.yt_url || '';\nlet videoId = null;\n\nconst youtuBe = url.match(/youtu\\.be\\/([A-Za-z0-9_-]{6,})/);\nif (youtuBe) videoId = youtuBe[1];\n\nif (!videoId) {\n  const watch = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);\n  if (watch) videoId = watch[1];\n}\n\nif (!videoId) {\n  const shorts = url.match(/youtube\\.com\\/shorts\\/([A-Za-z0-9_-]{6,})/);\n  if (shorts) videoId = shorts[1];\n}\n\nif (!videoId) throw new Error('Impossible d extraire le videoId depuis: ' + url);\n\nreturn { json: { ...$input.item.json, video_id: videoId } };"
+      }
+    },
+    {
+      "id": "sheets-append-row",
+      "name": "Sheets_Append_Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1392,
+        128
+      ],
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('WF_Configuration').item.json.sheet_id }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('WF_Configuration').item.json.sheet_tab }}"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ $now.toISO() }}",
+            "url": "={{ $json.yt_url }}",
+            "brief_user": "={{ $json.user_brief }}",
+            "video_id": "={{ $json.video_id }}",
+            "language": "={{ $('WF_Configuration').item.json.output_lang }}",
+            "status": "received"
+          },
+          "schema": [
+            {
+              "id": "date",
+              "type": "string",
+              "displayName": "date"
+            },
+            {
+              "id": "url",
+              "type": "string",
+              "displayName": "url"
+            },
+            {
+              "id": "brief_user",
+              "type": "string",
+              "displayName": "brief_user"
+            },
+            {
+              "id": "video_id",
+              "type": "string",
+              "displayName": "video_id"
+            },
+            {
+              "id": "language",
+              "type": "string",
+              "displayName": "language"
+            },
+            {
+              "id": "status",
+              "type": "string",
+              "displayName": "status"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "id": "apify-transcript",
+      "name": "DataForSEO_Subtitles",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1616,
+        128
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dataforseo.com/v3/serp/youtube/video_subtitles/live/advanced",
+        "authentication": "none",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0"
+            },
+            {
+              "name": "Authorization",
+              "value": "Basic Y29udGFjdEBtaWNoYWVsa2lobC5mcjo5NjE5ZjNmNWM2MWY4ZmJi"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[{\"video_id\": \"{{ $json.video_id }}\", \"location_name\": \"France\", \"language_code\": \"fr\"}]",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "credentials": {}
+    },
+    {
+      "id": "clean-transcript",
+      "name": "Clean_Transcript",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1840,
+        128
+      ],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Parse DataForSEO YouTube subtitles response.\n// Structure: { tasks: [{ result: [{ items: [{ subtitles: [{ text, start_time, duration }] }] }] }] }\nconst raw = $input.item.json;\n\nif (!raw || !Array.isArray(raw.tasks) || !raw.tasks.length) {\n  throw new Error('DataForSEO: tasks manquantes dans la reponse. Status: ' + (raw && raw.status_message || 'inconnu'));\n}\n\nconst task = raw.tasks[0];\nif (task.status_code && task.status_code !== 20000) {\n  throw new Error('DataForSEO task error ' + task.status_code + ': ' + (task.status_message || 'unknown'));\n}\n\nif (!Array.isArray(task.result) || !task.result.length) {\n  throw new Error('DataForSEO: aucun result. video_id probablement sans sous-titres disponibles.');\n}\n\nconst items = task.result[0] && task.result[0].items;\nif (!Array.isArray(items) || !items.length) {\n  throw new Error('DataForSEO: aucun items dans result[0]. La video n a probablement pas de captions.');\n}\n\n// items[0].subtitles ou items est directement la liste de subtitles\nlet segs = [];\nif (Array.isArray(items[0].subtitles)) {\n  segs = items[0].subtitles;\n} else {\n  // fallback : items eux-memes sont les segments\n  segs = items.filter(i => i && (i.text || i.snippet));\n}\n\nif (!segs.length) {\n  throw new Error('DataForSEO: liste subtitles vide. La video n a probablement pas de captions.');\n}\n\nlet text = segs\n  .map(s => (s && (s.text || s.snippet) || '').toString().trim())\n  .filter(Boolean)\n  .join(' ');\n\ntext = text\n  .replace(/&amp;#39;|&#39;/g, \"'\")\n  .replace(/&quot;|&#34;/g, '\"')\n  .replace(/&amp;/g, '&')\n  .replace(/\\s+/g, ' ')\n  .trim();\n\nconst word_count = text.split(/\\s+/).filter(Boolean).length;\n\nreturn { json: { clean_transcript: text, word_count, segments: segs.length, source: 'dataforseo' } };"
+      }
+    },
+    {
+      "id": "lm-sonnet-brief",
+      "name": "LM_Sonnet_Brief",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        1840,
+        360
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-sonnet-4-6",
+          "mode": "list"
+        },
+        "options": {
+          "maxTokensToSample": 2500,
+          "temperature": 0.6
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "gCyMjn0UNkoITkmk",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "chain-brief-angle",
+      "name": "Chain_Brief_Angle",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        2064,
+        128
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu es l editeur en chef de schoolsWP, le media qui aide les createurs francophones a maitriser WordPress, le SEO et les LMS. Tu paries sur l autorite personnelle (E-E-A-T) et la voix singuliere : Michael ecrit au JE, jamais au NOUS.\n\nVoici la transcription brute d une video YouTube concurrente (pour analyse uniquement, ne jamais paraphraser sa structure ni reproduire son hook) :\n\n<<<TRANSCRIPT_SOURCE>>>\n{{ $('Clean_Transcript').item.json.clean_transcript }}\n<<<FIN_TRANSCRIPT>>>\n\nBrief utilisateur (angle schoolsWP a respecter) :\n\n<<<BRIEF_USER>>>\n{{ $('Parse_Telegram_Message').item.json.user_brief }}\n<<<FIN_BRIEF>>>\n\nTa mission : produire un script video schoolsWP 100% ORIGINAL en {{ $('WF_Configuration').item.json.output_lang }}, pas un rewrite de la source.\n\n### REGLE ABSOLUE - RESPECT DU CONCURRENT (regle 31 BRAND_RULES schoolsWP)\n\n1. Ne JAMAIS reproduire la structure / le hook / le pacing de la video source.\n2. Ne JAMAIS paraphraser des passages mot a mot.\n3. Identifier le SUJET et la PROMESSE de la source, puis construire MA propre angle schoolsWP.\n4. Si la source descend un produit, je donne mes limites factuelles sans charger : pas d affirmation universelle, je dis 'dans mon cas' / 'sur schoolsWP'.\n5. Si comparatif : ajouter une section 'Pour qui X reste pertinent' pour ne pas pretendre qu un produit est meilleur dans 90 % des cas.\n\n### STRUCTURE schoolsWP\n\n1. Hook 0-15s : un constat factuel sur l ecosysteme WP/SEO/LMS, ancre dans mon experience. Pas d emotion forcee.\n2. Contexte : pourquoi ce sujet importe pour les createurs WP francophones.\n3. Demonstration : 2-3 points concrets avec exemples reels. Style direct, tutoiement.\n4. Limites / nuances : ce qui NE marche pas, edge cases.\n5. CTA : abonne-toi a schoolswp.com, ou commente avec ta config.\n\n### CONTRAINTES STYLE\n\n- Tutoiement. Au JE, jamais au NOUS / NOTRE / ON VOUS.\n- Pas d em-dash ni en-dash.\n- Pas de mention 'schoolswp' dans les URLs ni dans les annees.\n- Toujours ecrire 'schoolsWP'.\n- Duree cible : 4-5 minutes parle (~700-900 mots).\n\n### OUTPUT\n\nRetourne UNIQUEMENT le script video pret a etre lu. Pas de meta-commentaire.",
+        "messages": {
+          "messageValues": []
+        },
+        "batching": {}
+      }
+    },
+    {
+      "id": "lm-haiku-seo",
+      "name": "LM_Haiku_SEO",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2064,
+        360
+      ],
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "claude-haiku-4-5-20251001",
+          "mode": "list"
+        },
+        "options": {
+          "maxTokensToSample": 800,
+          "temperature": 0.3
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "gCyMjn0UNkoITkmk",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "parser-seo",
+      "name": "Parser_SEO",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2288,
+        360
+      ],
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"title\": \"Titre YouTube SEO 60 caracteres max\",\n  \"description\": \"Description complete riche en mots-cles, 2-3 paragraphes\",\n  \"tags\": [\"tag1\", \"tag2\", \"tag3\", \"tag4\", \"tag5\", \"tag6\", \"tag7\", \"tag8\", \"tag9\", \"tag10\", \"tag11\", \"tag12\", \"tag13\", \"tag14\", \"tag15\"]\n}"
+      }
+    },
+    {
+      "id": "chain-seo-meta",
+      "name": "Chain_SEO_Meta",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        2288,
+        128
+      ],
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu es expert SEO YouTube francophone (niche WordPress / SEO / LMS).\n\nVoici le script video schoolsWP que je publie :\n\n<<<SCRIPT>>>\n{{ $json.text }}\n<<<FIN_SCRIPT>>>\n\nGenere les meta YouTube en FRANCAIS, optimisees pour ranking + CTR.\n\nCRITICAL OUTPUT RULE:\n- Si tu ne peux pas extraire un champ, retourne valeur par defaut (chaine vide ou tableau vide).\n- NEVER respond with prose, apologies, or explanations.\n- Output MUST be valid JSON matching the schema, NOTHING ELSE.\n\nSchema attendu :\n{\n  \"title\": \"string max 60 caracteres, accroche claire en francais, sans emoji ni annee\",\n  \"description\": \"string 2-3 paragraphes en francais, riches en mots-cles WP/SEO, sans em-dash, sans nous/notre, sans schoolswp.com en URL\",\n  \"tags\": [\"15 strings exactement, mots-cles francais en minuscules sans espaces si possible\"]\n}\n\nGenere le JSON maintenant.",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": []
+        },
+        "batching": {}
+      }
+    },
+    {
+      "id": "format-sheet-update",
+      "name": "Format_Sheet_Update",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2512,
+        128
+      ],
+      "parameters": {
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f-1",
+              "name": "video_id",
+              "type": "string",
+              "value": "={{ $('Get_Video_ID').item.json.video_id }}"
+            },
+            {
+              "id": "f-2",
+              "name": "brief_schoolswp",
+              "type": "string",
+              "value": "={{ $('Chain_Brief_Angle').item.json.text }}"
+            },
+            {
+              "id": "f-3",
+              "name": "title_fr",
+              "type": "string",
+              "value": "={{ $json.output.title }}"
+            },
+            {
+              "id": "f-4",
+              "name": "description_fr",
+              "type": "string",
+              "value": "={{ $json.output.description }}"
+            },
+            {
+              "id": "f-5",
+              "name": "tags_fr",
+              "type": "string",
+              "value": "={{ ($json.output.tags || []).join(', ') }}"
+            },
+            {
+              "id": "f-6",
+              "name": "status",
+              "type": "string",
+              "value": "ready"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "sheets-update-row",
+      "name": "Sheets_Update_Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2736,
+        128
+      ],
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('WF_Configuration').item.json.sheet_id }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('WF_Configuration').item.json.sheet_tab }}"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "video_id"
+          ],
+          "value": {
+            "video_id": "={{ $json.video_id }}",
+            "brief_schoolswp": "={{ $json.brief_schoolswp }}",
+            "title_fr": "={{ $json.title_fr }}",
+            "description_fr": "={{ $json.description_fr }}",
+            "tags_fr": "={{ $json.tags_fr }}",
+            "status": "={{ $json.status }}"
+          },
+          "schema": [
+            {
+              "id": "date",
+              "type": "string",
+              "displayName": "date"
+            },
+            {
+              "id": "url",
+              "type": "string",
+              "displayName": "url"
+            },
+            {
+              "id": "brief_user",
+              "type": "string",
+              "displayName": "brief_user"
+            },
+            {
+              "id": "video_id",
+              "type": "string",
+              "displayName": "video_id",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "language",
+              "type": "string",
+              "displayName": "language"
+            },
+            {
+              "id": "status",
+              "type": "string",
+              "displayName": "status"
+            },
+            {
+              "id": "brief_schoolswp",
+              "type": "string",
+              "displayName": "brief_schoolswp"
+            },
+            {
+              "id": "title_fr",
+              "type": "string",
+              "displayName": "title_fr"
+            },
+            {
+              "id": "description_fr",
+              "type": "string",
+              "displayName": "description_fr"
+            },
+            {
+              "id": "tags_fr",
+              "type": "string",
+              "displayName": "tags_fr"
+            },
+            {
+              "id": "url_video",
+              "type": "string",
+              "displayName": "url_video"
+            },
+            {
+              "id": "published_at",
+              "type": "string",
+              "displayName": "published_at"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "id": "telegram-notify",
+      "name": "Telegram_Notify",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2960,
+        64
+      ],
+      "webhookId": "schoolswp-yt-w209-notify",
+      "parameters": {
+        "operation": "sendMessage",
+        "chatId": "={{ $('Parse_Telegram_Message').item.json.chat_id }}",
+        "text": "=Brief schoolsWP pret. Titre propose: {{ $('Format_Sheet_Update').item.json.title_fr }}\n\nVideo source: {{ $('Parse_Telegram_Message').item.json.yt_url }}\nStatut Sheet: ready\n\nProchaine etape: produis ta video HeyGen+ElevenLabs et colle l URL Drive dans la colonne url_video du Sheet. W209a publiera automatiquement.",
+        "additionalFields": {}
+      },
+      "notes": "Cabler le credential Telegram apres import.",
+      "credentials": {
+        "telegramApi": {
+          "id": "kBJ7tOqtWLTWmH60",
+          "name": "Telegram - schoolswp_yt_bot"
+        }
+      }
+    },
+    {
+      "id": "discord-notify",
+      "name": "Discord_Notify",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2960,
+        192
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.DISCORD_WEBHOOK_SEO }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"**[W209] Brief YouTube schoolsWP genere**\\n\\n- Titre : {{ $('Format_Sheet_Update').item.json.title_fr }}\\n- Source : {{ $('Parse_Telegram_Message').item.json.yt_url }}\\n- Statut : ready (en attente video HeyGen)\"\n}",
+        "options": {}
+      },
+      "disabled": true
+    }
+  ],
+  "connections": {
+    "TG1_Telegram_Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parse_Telegram_Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse_Telegram_Message": {
+      "main": [
+        [
+          {
+            "node": "WF_Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WF_Configuration": {
+      "main": [
+        [
+          {
+            "node": "Get_Video_ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get_Video_ID": {
+      "main": [
+        [
+          {
+            "node": "Sheets_Append_Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets_Append_Row": {
+      "main": [
+        [
+          {
+            "node": "DataForSEO_Subtitles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DataForSEO_Subtitles": {
+      "main": [
+        [
+          {
+            "node": "Clean_Transcript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean_Transcript": {
+      "main": [
+        [
+          {
+            "node": "Chain_Brief_Angle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LM_Sonnet_Brief": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Chain_Brief_Angle",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chain_Brief_Angle": {
+      "main": [
+        [
+          {
+            "node": "Chain_SEO_Meta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LM_Haiku_SEO": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Chain_SEO_Meta",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Parser_SEO",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parser_SEO": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Chain_SEO_Meta",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chain_SEO_Meta": {
+      "main": [
+        [
+          {
+            "node": "Format_Sheet_Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format_Sheet_Update": {
+      "main": [
+        [
+          {
+            "node": "Sheets_Update_Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheets_Update_Row": {
+      "main": [
+        [
+          {
+            "node": "Telegram_Notify",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Discord_Notify",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": null,
+  "meta": {
+    "schoolswp_workflow_id": "W209",
+    "imported_from": "enescingoz template (Dr Firas) — YouTube > Blotato Video Publishing",
+    "adapted_at": "2026-05-07",
+    "n8n_workflow_id": "tR7J1fteY44eDdke",
+    "skill_used": "n8n-workflow-adapter",
+    "lessons_learned": [
+      "Apify x402 generalise sur transcript actors -> swap pour DataForSEO",
+      "n8n credential httpBasicAuth + httpRequest POST = ECONNRESET socket hang up. Workaround : authentication=none + header Authorization: Basic <base64manual>",
+      "n8n googleSheets appendOrUpdate exige le schema complet des colonnes du Sheet, pas juste celles qu'on update",
+      "DataForSEO subtitles endpoint requiert video_id + location_name + language_code obligatoires"
+    ]
+  }
+}

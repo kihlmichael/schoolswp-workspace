@@ -1,0 +1,293 @@
+{
+  "name": "[InTesting] Sheets > Blotato > YouTube: Auto-Publish (W209a)",
+  "nodes": [
+    {
+      "id": "sticky-setup-w209a",
+      "name": "Setup & Configuration",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-200, 0],
+      "parameters": {
+        "width": 580,
+        "height": 720,
+        "color": 4,
+        "content": "# W209a — Auto-Publish YouTube schoolsWP\n\n**Pipeline** : toutes les 30 min, scanne le Sheet `yt-briefs`. Pour chaque ligne avec `status=ready` ET `url_video` rempli, telecharge la video Drive, l envoie sur Blotato, publie en UNLISTED sur YouTube, marque `status=published`.\n\n## Prerequis\n\n1. W209 a tourne et a marque la ligne `status=ready` avec brief + meta.\n2. Toi tu produis la video HeyGen + ElevenLabs (manuel) et tu colles l URL Drive dans la colonne `url_video` du Sheet.\n3. La video Drive est partagee 'Anyone with link' (Blotato doit pouvoir la telecharger).\n\n## Credentials a remapper\n\n- [ ] **Google Sheets** : `Google Sheets - schoolsWP v2` (id `4v6PLN0tU8vBlab5`) deja precable\n- [ ] **Google Drive** : `GoogleDrive_Production_OAuth` (id `OqaMtoHkGM18NYxs`) deja precable\n- [ ] **Blotato** : community node `@blotato/n8n-nodes-blotato.blotato` v2.x — installer via Settings > Community nodes si pas deja fait. Puis creer credential `Blotato_Production_API`.\n- [ ] **Blotato accountId YouTube schoolsWP** : remplacer `__REMAP_BLOTATO_YT_ACCOUNT_ID__` dans le node `Blotato_YouTube_Post`. Trouve l ID dans Blotato > Connected Accounts > YouTube.\n\n## Privacy YouTube par defaut\n\n`unlisted` (validation visuelle requise avant passage public). Modifie dans `Blotato_YouTube_Post` si besoin.\n\n## Cout estime\n\n- Blotato : selon ton plan (forfait fixe)\n- Google Drive download : gratuit\n- **Total infra schoolsWP : 0 $ / publication**"
+      }
+    },
+    {
+      "id": "sched-30min",
+      "name": "SCHED_Every_30min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [496, 128],
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "*/30 * * * *" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wf-config-w209a",
+      "name": "WF_Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [720, 128],
+      "parameters": {
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cfg-1",
+              "name": "sheet_id",
+              "type": "string",
+              "value": "__REMAP_GSHEET_YT_BRIEFS_ID__"
+            },
+            {
+              "id": "cfg-2",
+              "name": "sheet_tab",
+              "type": "string",
+              "value": "yt-briefs"
+            },
+            {
+              "id": "cfg-3",
+              "name": "youtube_privacy",
+              "type": "string",
+              "value": "unlisted"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "sheets-read-ready",
+      "name": "Sheets_Read_Ready",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [944, 128],
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.sheet_id }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $json.sheet_tab }}"
+        },
+        "filtersUI": {
+          "values": [
+            { "lookupColumn": "status", "lookupValue": "ready" }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "id": "if-has-video-url",
+      "name": "IF_Has_Video_URL",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1168, 128],
+      "parameters": {
+        "options": {},
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 2 },
+          "conditions": [
+            {
+              "id": "cond-1",
+              "leftValue": "={{ $json.url_video }}",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "extract-drive-id",
+      "name": "Extract_Drive_ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1392, 128],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Extract Google Drive file ID from share URL.\n// Supports: drive.google.com/file/d/<ID>/view, drive.google.com/open?id=<ID>, drive.google.com/uc?id=<ID>\nconst url = ($input.item.json.url_video || '').toString();\nlet driveFileId = null;\n\nconst m1 = url.match(/\\/file\\/d\\/([A-Za-z0-9_-]{10,})/);\nif (m1) driveFileId = m1[1];\n\nif (!driveFileId) {\n  const m2 = url.match(/[?&]id=([A-Za-z0-9_-]{10,})/);\n  if (m2) driveFileId = m2[1];\n}\n\nif (!driveFileId) throw new Error('Drive file ID introuvable dans url_video: ' + url);\n\nreturn { json: { ...$input.item.json, drive_file_id: driveFileId } };"
+      }
+    },
+    {
+      "id": "drive-download",
+      "name": "Drive_Download",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1616, 128],
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $json.drive_file_id }}"
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "OqaMtoHkGM18NYxs",
+          "name": "GoogleDrive_Production_OAuth"
+        }
+      }
+    },
+    {
+      "id": "blotato-upload",
+      "name": "Blotato_Upload_Media",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2,
+      "position": [1840, 128],
+      "parameters": {
+        "resource": "media",
+        "mediaUrl": "=https://drive.google.com/uc?export=download&id={{ $('Extract_Drive_ID').item.json.drive_file_id }}"
+      },
+      "credentials": {
+        "blotatoApi": {
+          "id": "__REMAP_BLOTATO_API__",
+          "name": "Blotato_Production_API"
+        }
+      }
+    },
+    {
+      "id": "blotato-yt-post",
+      "name": "Blotato_YouTube_Post",
+      "type": "@blotato/n8n-nodes-blotato.blotato",
+      "typeVersion": 2,
+      "position": [2064, 128],
+      "parameters": {
+        "platform": "youtube",
+        "accountId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "__REMAP_BLOTATO_YT_ACCOUNT_ID__"
+        },
+        "postContentText": "={{ $('Extract_Drive_ID').item.json.description_fr }}",
+        "postContentMediaUrls": "={{ $json.url }}",
+        "postCreateYoutubeOptionTitle": "={{ $('Extract_Drive_ID').item.json.title_fr }}",
+        "postCreateYoutubeOptionPrivacyStatus": "={{ $('WF_Configuration').item.json.youtube_privacy }}",
+        "postCreateYoutubeOptionShouldNotifySubscribers": false,
+        "options": {}
+      },
+      "credentials": {
+        "blotatoApi": {
+          "id": "__REMAP_BLOTATO_API__",
+          "name": "Blotato_Production_API"
+        }
+      }
+    },
+    {
+      "id": "sheets-mark-published",
+      "name": "Sheets_Mark_Published",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [2288, 128],
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('WF_Configuration').item.json.sheet_id }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('WF_Configuration').item.json.sheet_tab }}"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": ["video_id"],
+          "value": {
+            "video_id": "={{ $('Extract_Drive_ID').item.json.video_id }}",
+            "status": "published",
+            "published_at": "={{ $now.toISO() }}"
+          },
+          "schema": [
+            { "id": "video_id", "type": "string", "displayName": "video_id", "canBeUsedToMatch": true },
+            { "id": "status", "type": "string", "displayName": "status" },
+            { "id": "published_at", "type": "string", "displayName": "published_at" }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "id": "discord-notify-w209a",
+      "name": "Discord_Notify_Published",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2512, 128],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.DISCORD_WEBHOOK_SEO }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"content\": \"**[W209a] Video publiee sur YouTube schoolsWP**\\n\\n- Titre : {{ $('Extract_Drive_ID').item.json.title_fr }}\\n- Privacy : {{ $('WF_Configuration').item.json.youtube_privacy }}\\n- Source inspirante : {{ $('Extract_Drive_ID').item.json.url }}\\n\\nValide visuellement avant de passer en public.\"\n}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "SCHED_Every_30min": {
+      "main": [[{ "node": "WF_Configuration", "type": "main", "index": 0 }]]
+    },
+    "WF_Configuration": {
+      "main": [[{ "node": "Sheets_Read_Ready", "type": "main", "index": 0 }]]
+    },
+    "Sheets_Read_Ready": {
+      "main": [[{ "node": "IF_Has_Video_URL", "type": "main", "index": 0 }]]
+    },
+    "IF_Has_Video_URL": {
+      "main": [
+        [{ "node": "Extract_Drive_ID", "type": "main", "index": 0 }],
+        []
+      ]
+    },
+    "Extract_Drive_ID": {
+      "main": [[{ "node": "Drive_Download", "type": "main", "index": 0 }]]
+    },
+    "Drive_Download": {
+      "main": [[{ "node": "Blotato_Upload_Media", "type": "main", "index": 0 }]]
+    },
+    "Blotato_Upload_Media": {
+      "main": [[{ "node": "Blotato_YouTube_Post", "type": "main", "index": 0 }]]
+    },
+    "Blotato_YouTube_Post": {
+      "main": [[{ "node": "Sheets_Mark_Published", "type": "main", "index": 0 }]]
+    },
+    "Sheets_Mark_Published": {
+      "main": [[{ "node": "Discord_Notify_Published", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "schoolswp_workflow_id": "W209a",
+    "imported_from": "enescingoz template (Dr Firas) — Flow B Blotato/YouTube",
+    "adapted_at": "2026-05-07",
+    "skill_used": "n8n-workflow-adapter"
+  }
+}
