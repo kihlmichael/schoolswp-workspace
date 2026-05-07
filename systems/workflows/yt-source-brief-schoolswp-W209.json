@@ -539,21 +539,25 @@
     {
       "id": "discord-notify",
       "name": "Discord_Notify",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
       "position": [
         2960,
         192
       ],
       "parameters": {
-        "method": "POST",
-        "url": "={{ $vars.DISCORD_WEBHOOK_SEO }}",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"content\": \"**[W209] Brief YouTube schoolsWP genere**\\n\\n- Titre : {{ $('Format_Sheet_Update').item.json.title_fr }}\\n- Source : {{ $('Parse_Telegram_Message').item.json.yt_url }}\\n- Statut : ready (en attente video HeyGen)\"\n}",
+        "authentication": "webhook",
+        "operation": "sendLegacy",
+        "content": "=**[W209] Brief YouTube schoolsWP genere**\n\n- Titre : {{ $('Format_Sheet_Update').item.json.title_fr }}\n- Source : {{ $('Parse_Telegram_Message').item.json.yt_url }}\n- Statut : ready (en attente video HeyGen)",
         "options": {}
       },
-      "disabled": true
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "7jPmTW9DQTLNPUxz",
+          "name": "Discord - schoolsWP - ⏐🤖⏐ʙᴏᴛꜱ"
+        }
+      },
+      "webhookId": "05295f7d-ccb3-4b8e-8f56-4aba92136044"
     }
   ],
   "connections": {
@@ -732,11 +736,13 @@
     "adapted_at": "2026-05-07",
     "n8n_workflow_id": "tR7J1fteY44eDdke",
     "skill_used": "n8n-workflow-adapter",
+    "validated_end_to_end": true,
     "lessons_learned": [
       "Apify x402 generalise sur transcript actors -> swap pour DataForSEO",
-      "n8n credential httpBasicAuth + httpRequest POST = ECONNRESET socket hang up. Workaround : authentication=none + header Authorization: Basic <base64manual>",
+      "n8n credential httpBasicAuth + httpRequest POST = ECONNRESET socket hang up. Workaround : authentication=none + header Authorization Basic <base64manual>",
       "n8n googleSheets appendOrUpdate exige le schema complet des colonnes du Sheet, pas juste celles qu'on update",
-      "DataForSEO subtitles endpoint requiert video_id + location_name + language_code obligatoires"
+      "DataForSEO subtitles endpoint requiert video_id + location_name + language_code obligatoires",
+      "n8n Discord node v2 webhook auth : utiliser operation=sendLegacy, pas send (send est reserve a botToken/oAuth2)"
     ]
   }
 }
