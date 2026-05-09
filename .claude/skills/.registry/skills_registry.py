@@ -5,7 +5,11 @@ Usage:
   python skills_registry.py --sync   # scan + rapport + cache + POST webhook
 """
 
-import os, re, hashlib, json, sys, argparse
+import argparse
+import hashlib
+import json
+import os
+import re
 from datetime import datetime
 
 try:
@@ -35,6 +39,13 @@ if os.path.exists(CACHE_PATH):
     with open(CACHE_PATH, encoding="utf-8") as f:
         cache = json.load(f).get("skills", {})
 
+# ── Load archived descriptions (preserved across runs) ──────────────────────
+ARCHIVED_DESC_PATH = os.path.join(CACHE_DIR, "archived_descriptions.json")
+archived_desc = {}
+if os.path.exists(ARCHIVED_DESC_PATH):
+    with open(ARCHIVED_DESC_PATH, encoding="utf-8") as f:
+        archived_desc = json.load(f)
+
 # ── Scan ─────────────────────────────────────────────────────────────────────
 results = []
 seen_names = set()
@@ -56,16 +67,23 @@ for skills_dir in SKILLS_DIRS:
         except Exception:
             continue
 
+        # Strip UTF-8 BOM if present so frontmatter regex anchors correctly
+        if content.startswith("﻿"):
+            content = content.lstrip("﻿")
+
         fm_match = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
         name, desc = folder, ""
         if fm_match:
             fm = fm_match.group(1)
             nm = re.search(r"^name:\s*(.+)", fm, re.MULTILINE)
-            dm = re.search(r"^description:\s*([\s\S]+?)(?=\n\w|\Z)", fm, re.MULTILINE)
+            dm = re.search(r"^description:\s*[|>]?[+-]?\s*([\s\S]+?)(?=\n\w|\Z)", fm, re.MULTILINE)
             if nm:
-                name = nm.group(1).strip()
+                name = nm.group(1).strip().strip('"').strip("'")
             if dm:
                 desc = re.sub(r"\s+", " ", dm.group(1).strip())
+                # Strip outer YAML quotes (single-line description: "..." or '...')
+                if (desc.startswith('"') and desc.endswith('"')) or (desc.startswith("'") and desc.endswith("'")):
+                    desc = desc[1:-1].strip()
 
         desc_short = (desc[:130] + "...") if len(desc) > 130 else desc
         h = hashlib.md5(content.encode()).hexdigest()[:8]
@@ -91,14 +109,15 @@ for skills_dir in SKILLS_DIRS:
             }
         )
 
-# Archived
+# Archived — re-inject last known description from cache or archived_desc store
 current_names = {r["name"] for r in results}
 for cname in cache:
     if cname not in current_names:
+        last_desc = cache.get(cname, {}).get("description", "") or archived_desc.get(cname, "")
         results.append(
             {
                 "name": cname,
-                "description": "",
+                "description": last_desc,
                 "path": "",
                 "last_modified": "",
                 "status": "archived",
@@ -107,11 +126,22 @@ for cname in cache:
             }
         )
 
+# Persist archived descriptions for skills first detected as archived this run
+for r in results:
+    if r["status"] != "archived" and r["description"]:
+        archived_desc[r["name"]] = r["description"]
+with open(ARCHIVED_DESC_PATH, "w", encoding="utf-8") as f:
+    json.dump(archived_desc, f, ensure_ascii=False, indent=2)
+
 # ── Save cache ────────────────────────────────────────────────────────────────
 new_cache = {
     "last_run": datetime.now().isoformat(),
     "skills": {
-        r["name"]: {"hash": r["hash"], "last_modified": r["last_modified"]}
+        r["name"]: {
+            "hash": r["hash"],
+            "last_modified": r["last_modified"],
+            "description": r["description"],
+        }
         for r in results
         if r["status"] != "archived"
     },
@@ -172,5 +202,5 @@ if args.sync:
     except Exception as e:
         print(f"\nWebhook ERREUR : {e}")
 else:
-    print(f"\nSync desactivee. Relancer avec --sync pour pousser vers Google Sheets.")
+    print("\nSync desactivee. Relancer avec --sync pour pousser vers Google Sheets.")
     print(f"URL webhook : {WEBHOOK_URL}")
