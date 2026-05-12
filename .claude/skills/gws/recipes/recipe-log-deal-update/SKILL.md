@@ -1,7 +1,10 @@
 ---
 name: recipe-log-deal-update
 version: 1.0.0
-description: "Append a deal status update to a Google Sheets sales tracking spreadsheet."
+description: |
+  Trouve la feuille de suivi pipeline, lit l'état courant et ajoute une nouvelle ligne pour tracer une mise à jour de deal commercial. Pattern append vers un CRM léger en Sheets.
+  Utilise ce skill quand l'utilisateur dit : "log ce deal", "trace cette mise à jour pipeline", "ajoute la ligne deal dans le suivi", ou pour journaliser un changement de statut commercial dans un Sheets.
+  NE PAS utiliser pour : créer la feuille pipeline initiale (utiliser gws-sheets), reporter sur les deals existants (utiliser recipe-generate-report-from-sheet), ou suivre des contacts hors deals (utiliser recipe-sync-contacts-to-sheet).
 metadata:
   openclaw:
     category: "recipe"

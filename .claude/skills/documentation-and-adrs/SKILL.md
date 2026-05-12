@@ -1,11 +1,9 @@
 ---
 name: documentation-and-adrs
-description: >
-  Documenter les decisions, pas juste le code. ADR (Architecture Decision Records), documentation
-  inline, API docs. Utilise ce skill pour toute decision architecturale significative, changement
-  d'API publique, ou quand le contexte doit survivre aux sessions. Declenche pour "ADR",
-  "documenter cette decision", "pourquoi ce choix", "architecture decision record",
-  "documenter le why", "decisions d'architecture".
+description: |
+  Documenter les decisions, pas juste le code. Pattern Nygard ADR (Architecture Decision Records) numerotes dans docs/decisions/, documentation inline ciblee sur le pourquoi (contexte, contraintes, trade-offs), API docs. Capture ce qui doit survivre aux sessions et expliquer un choix.
+  Utilise ce skill quand l'utilisateur dit : "ADR", "documenter cette decision", "pourquoi ce choix", "architecture decision record", "documenter le why", "decisions d'architecture", ou apres tout choix de framework, schema, auth, API design qui couterait cher a reverser.
+  NE PAS utiliser pour : documenter du code evident (commentaire qui repete le code), prototypes jetables, runbooks operationnels (voir docs runbooks-operationnels.md), specs produit ou marketing (utiliser skills contenu schoolsWP), ou changelog applicatif (voir conventions de commit et CHANGELOG.md du repo).
 ---
 
 # Documentation and ADRs

@@ -1,7 +1,10 @@
 ---
 name: persona-it-admin
 version: 1.0.0
-description: "Administer IT — monitor security and configure Workspace."
+description: |
+  Profil orchestré pour l'admin IT Workspace : revue des requêtes IT en standup, monitoring login suspects, audit logs, configuration des politiques de partage Drive. Combine gws-gmail, gws-drive, gws-calendar avec usage systematique de --dry-run.
+  Utilise ce skill quand l'utilisateur dit : "active la persona IT admin", "mode admin Workspace", "je gère la sécurité et la conformité Google", ou pour adopter une posture security-first orientée admin Workspace.
+  NE PAS utiliser pour : profil exec assistant non-IT (utiliser persona-exec-assistant), profil project manager (utiliser persona-project-manager), skill Drive seul (utiliser gws-drive), ou administration WordPress schoolsWP (utiliser MCP novamira ou wordpress-studio).
 metadata:
   openclaw:
     category: "persona"

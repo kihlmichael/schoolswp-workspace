@@ -1,7 +1,10 @@
 ---
 name: recipe-backup-sheet-as-csv
 version: 1.0.0
-description: "Export a Google Sheets spreadsheet as a CSV file for local backup or processing."
+description: |
+  Exporte un Google Sheets en fichier CSV pour backup local ou traitement hors ligne. Recipe atomique qui combine gws-sheets et gws-drive.
+  Utilise ce skill quand l'utilisateur dit : "backup ce Google Sheets", "exporte la sheet en CSV", "telecharge la sheet en local", ou demande une copie CSV figee d'un onglet.
+  NE PAS utiliser pour : lire des cellules dans la session sans fichier (utiliser gws-sheets), telecharger un dossier complet de fichiers Drive (utiliser recipe-bulk-download-folder), ou exporter un Google Doc en PDF (utiliser gws-drive export direct).
 metadata:
   openclaw:
     category: "recipe"

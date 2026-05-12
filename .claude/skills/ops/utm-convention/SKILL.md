@@ -1,17 +1,9 @@
 ---
 name: utm-convention
-description: >
-  Produit la convention UTM officielle schoolsWP à partir de notes brutes ou de zéro.
-  Analyse les notes, élimine contradictions et zones floues, génère un document structuré
-  en 9 sections : règles de base, paramètres UTM (source/medium/campaign/content/term),
-  convention officielle recommandée, cas concrets (6-10 exemples), quand utiliser/pas
-  utiliser les UTMs, erreurs à éviter, recommandation simple à retenir.
-  Contextes couverts : GA4, ClickWhale (short links), FluentCRM (newsletters), CTAs internes,
-  réseaux sociaux, liens affiliés. Sortie en français, minuscules, tirets, sans accents.
-  Déclenche ce skill quand l'utilisateur parle d'UTM, de tracking de liens, de convention
-  de paramètres URL, de campagnes GA4, de suivi de clics ClickWhale ou FluentCRM,
-  ou veut structurer ses liens de tracking. Utiliser même si la demande est vague comme
-  "je veux organiser mes UTMs" ou "comment je track mes liens".
+description: |
+  Produit la convention UTM officielle schoolsWP en 9 sections (règles, paramètres source/medium/campaign/content/term, format standard, 6-10 cas concrets, quand utiliser/pas utiliser, erreurs à éviter). Couvre GA4, ClickWhale, FluentCRM, CTAs internes, réseaux sociaux, liens affiliés. Sortie minuscules + tirets + sans accents.
+  Utilise ce skill quand l'utilisateur dit : "UTM", "tracking de liens", "convention paramètres URL", "campagnes GA4", "suivi clics ClickWhale", "j'organise mes UTMs", ou "comment je track mes liens".
+  NE PAS utiliser pour : auditer la performance d'une campagne (utiliser GSC + GA4 directement), configurer FluentCRM smart links (utiliser `flow`), ou créer une page d'atterrissage (utiliser `landing-page-factory` ou `mini-offre-page-de-vente`).
 ---
 
 # schoolswp-utm-convention

@@ -1,15 +1,9 @@
 ---
 name: agent-constitution
-description: >
-  Constitution d'exécution IA pour schoolsWP — applique le cadre opérationnel complet
-  (plan-first, découpage, multi-rôles, vérification, correction racine, capitalisation)
-  aux tâches complexes schoolsWP : SEO, WordPress, automatisation n8n, CRM FluentCRM,
-  contenu, workflows. Déclenche ce skill pour toute demande ambitieuse, multi-étapes,
-  stratégique ou systémique sur schoolsWP : audit SEO, architecture WordPress, conception
-  de workflow n8n, stratégie contenu, automatisation CRM, plan multi-canal.
-  À utiliser quand le travail dépasse une simple réponse directe et nécessite structure,
-  rigueur et livrables exploitables. Déclenche aussi quand l'utilisateur dit "traite ça
-  proprement", "fais un vrai plan", "je veux un système", "analyse en profondeur".
+description: |
+  Constitution d'exécution IA schoolsWP : cadre opérationnel transverse (plan-first, découpage en unités, raisonnement multi-rôles, vérification, correction racine, capitalisation en SOP/template). Applicable à toute tâche schoolsWP ambitieuse : audit SEO, architecture WordPress, workflow n8n, stratégie contenu, automatisation CRM, plan multi-canal.
+  Utilise ce skill quand l'utilisateur dit : "traite ça proprement", "fais un vrai plan", "je veux un système, pas une réponse", "analyse en profondeur", ou pose une demande dense multi-étapes qui dépasse la réponse directe.
+  NE PAS utiliser pour : un cadrage produit / architecture spécifique (utiliser `specs-engine`), un arbitrage entre options (utiliser `decision-engine`), un audit rapide sur URL (utiliser `race-engine`), ou une demande triviale (réponse directe sans skill).
 ---
 
 # schoolsWP Agent Constitution

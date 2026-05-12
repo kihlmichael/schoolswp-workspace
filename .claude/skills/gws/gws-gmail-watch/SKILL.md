@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-watch
 version: 1.0.0
-description: "Gmail: Watch for new emails and stream them as NDJSON."
+description: |
+  Helper gws gmail +watch : configure le push Pub/Sub Gmail (project + topic) et streame les nouveaux messages au format NDJSON sur stdout. Pour listeners temps réel sur Gmail.
+  Utilise ce skill quand l'utilisateur dit : "watch Gmail", "stream emails entrants", "push Gmail Pub/Sub", "écoute Gmail temps réel", ou pour brancher un consommateur stdin qui réagit aux nouveaux mails.
+  NE PAS utiliser pour : poll classique sur l'inbox sans Pub/Sub (utiliser gws-gmail-triage en boucle), événements Workspace non-Gmail (utiliser gws-events-subscribe), ou forwarding automatique côté Gmail UI (passer par les filters via gws-gmail).
 metadata:
   openclaw:
     category: "productivity"

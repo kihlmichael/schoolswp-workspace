@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-reply-all
 version: 1.0.0
-description: "Gmail: Reply-all to a message (handles threading automatically)."
+description: |
+  Helper gws gmail +reply-all : répond à TOUS les destinataires d'un message Gmail (To + CC), avec threading auto. Pour discussions de groupe, threads projet, échanges multi-parties.
+  Utilise ce skill quand l'utilisateur dit : "réponds à tous", "reply-all message ID...", "réponse à toute la liste CC", ou pour scripter une réponse de groupe automatique.
+  NE PAS utiliser pour : répondre uniquement à l'expéditeur original (utiliser gws-gmail-reply), envoyer un nouveau mail sans threading (utiliser gws-gmail-send), ou forwarder à de nouveaux destinataires (utiliser gws-gmail-forward).
 metadata:
   openclaw:
     category: "productivity"

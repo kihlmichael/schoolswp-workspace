@@ -1,6 +1,9 @@
 ---
 name: affiliation-optimizer
-description: Optimiser la monétisation affiliée des articles schoolsWP sans casser la confiance (emplacements naturels, angles, blocs décisionnels, score). Utiliser quand l’utilisateur veut améliorer l’affiliation d’un article ou ajouter des sections affiliées propres.
+description: |
+  Optimise la monetisation affiliee d'UN article schoolsWP existant sans casser la confiance : potentiel d'affiliation, moments naturels d'integration, angles, blocs decisionnels a ajouter, maturite lecteur, opportunites de liens (principal + secondaire), score /10 et recommandations immediates + moyen terme + risque sur-optimisation.
+  Utilise ce skill quand l'utilisateur dit : "optimise l'affiliation de cet article", "ajoute des sections affiliees a mon article", "comment mieux monetiser cet article", "ou placer les CTA affilies", ou quand il fournit un article schoolsWP existant a retravailler.
+  NE PAS utiliser pour : auditer une LISTE d'articles (utiliser `affiliation-article-detector`), generer un article from scratch (utiliser `money-page-generator`), ou choisir un sujet a produire (utiliser `affiliation-opportunity-scanner` ou `affiliation-potential-scoring`).
 ---
 
 # Optimisation Affiliation — schoolsWP

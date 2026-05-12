@@ -1,7 +1,10 @@
 ---
 name: gws-events-subscribe
 version: 1.0.0
-description: "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
+description: |
+  Helper gws events +subscribe : crée (ou réutilise) une souscription Workspace Events sur un target (chat space, meet space, drive item...) et streame les events au format NDJSON sur stdout. Utile pour brancher un listener temps réel (n8n, Discord, FluentCRM).
+  Utilise ce skill quand l'utilisateur dit : "écoute les events Chat", "stream Workspace events", "souscrire aux events Meet", "tail Drive activity", ou pour brancher un consommateur stdin sur un flux d'events Google.
+  NE PAS utiliser pour : renouveler une souscription qui expire (utiliser gws-events-renew), gérer les souscriptions existantes en CRUD (utiliser gws-events), ou watcher Gmail spécifiquement (utiliser gws-gmail-watch qui passe par Pub/Sub).
 metadata:
   openclaw:
     category: "productivity"

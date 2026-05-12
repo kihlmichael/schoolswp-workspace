@@ -1,6 +1,9 @@
 ---
 name: seo-competitor-gap-radar
-description: Detecter les failles SEO des concurrents (intent, decision, profondeur, structure, actualisation, business) et proposer des opportunites de surclassement. Utiliser avant ou apres redaction.
+description: |
+  Analyse une page concurrente sur 6 axes (intent, structure, profondeur, decision, business, actualisation) pour détecter les failles exploitables et générer un Top 3 d'opportunités de surclassement. Sortie : analyse par axe + liste failles + Top 3 opportunités + 3 actions.
+  Utilise ce skill quand l'utilisateur dit : "analyse cette page concurrente", "trouve les failles de cette URL", "comment surclasser ce concurrent", "qu'est-ce qui manque dans cet article", ou fournit une URL concurrente à benchmarker avant ou après rédaction.
+  NE PAS utiliser pour : auditer ma propre page schoolsWP (utiliser `seo-page-audit`), choisir si une niche entière est attaquable (utiliser `niche-detector-reachable`), ou analyse business du gros concurrent (utiliser `wpmarmite-business-strategy` pour le cas WPMarmite).
 ---
 
 # Radar Failles SEO Concurrents — schoolsWP

@@ -1,6 +1,9 @@
 ---
 name: nextjs-best-practices
-description: "Principes Next.js App Router. Server Components, récupération de données, patterns de routage."
+description: |
+  Principes Next.js App Router : arbitrage Server vs Client Component, stratégie de fetch (static / ISR / dynamic), patterns de routage, cache et revalidation. Référence courte pour décider vite.
+  Utilise ce skill quand l'utilisateur dit : "Next.js best practice", "Server Component ou Client", "stratégie de cache Next", "App Router pattern", "fetch revalidate vs no-store", ou avant de poser l'architecture d'une page Next.
+  NE PAS utiliser pour : implémenter le code (utiliser `frontend-developer`), brancher Supabase Auth (utiliser `nextjs-supabase-auth`), ou pour les patterns React purs hors Next (utiliser `react-patterns`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

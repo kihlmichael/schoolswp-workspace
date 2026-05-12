@@ -1,7 +1,10 @@
 ---
 name: recipe-share-event-materials
 version: 1.0.0
-description: "Share Google Drive files with all attendees of a Google Calendar event."
+description: |
+  Récupère la liste des participants d'un événement Google Calendar et partage automatiquement un ou plusieurs fichiers Drive en lecture avec chacun. Pre-meeting prep côté Drive.
+  Utilise ce skill quand l'utilisateur dit : "partage ces docs avec tous les invités du meeting", "envoie les supports aux attendees de la visio", "distribue les fichiers de la réunion", ou pour briefer les participants avant un événement.
+  NE PAS utiliser pour : partager avec une liste fixe hors événement (utiliser recipe-share-doc-and-notify ou recipe-share-folder-with-team), planifier la réunion elle-même (utiliser gws-calendar), ou retracer la présence post-meeting (utiliser recipe-review-meet-participants).
 metadata:
   openclaw:
     category: "recipe"

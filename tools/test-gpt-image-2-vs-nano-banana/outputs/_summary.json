@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-05-08T21:07:33",
+  "results": [
+    {
+      "case": "01-thumbnail-text",
+      "label": "Miniature article schoolsWP avec texte integre",
+      "engines": {
+        "gpt-image-2": {
+          "ok": true,
+          "engine": "gpt-image-2",
+          "model": "gpt-image-1",
+          "size": "1536x1024",
+          "quality": "medium",
+          "elapsed_s": 19.94,
+          "usage": {
+            "input_tokens": 144,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 144
+            },
+            "output_tokens": 1568,
+            "output_tokens_details": {
+              "image_tokens": 1568,
+              "text_tokens": 0
+            },
+            "total_tokens": 1712
+          }
+        },
+        "nano-banana": {
+          "ok": true,
+          "engine": "nano-banana",
+          "model": "gemini-2.5-flash-image",
+          "elapsed_s": 5.34
+        }
+      }
+    },
+    {
+      "case": "02a-carousel-slide1",
+      "label": "Carrousel LinkedIn slide 1 (cross-image consistency test)",
+      "engines": {
+        "gpt-image-2": {
+          "ok": true,
+          "engine": "gpt-image-2",
+          "model": "gpt-image-1",
+          "size": "1024x1024",
+          "quality": "medium",
+          "elapsed_s": 21.05,
+          "usage": {
+            "input_tokens": 144,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 144
+            },
+            "output_tokens": 1056,
+            "output_tokens_details": {
+              "image_tokens": 1056,
+              "text_tokens": 0
+            },
+            "total_tokens": 1200
+          }
+        },
+        "nano-banana": {
+          "ok": true,
+          "engine": "nano-banana",
+          "model": "gemini-2.5-flash-image",
+          "elapsed_s": 5.52
+        }
+      }
+    },
+    {
+      "case": "02b-carousel-slide2",
+      "label": "Carrousel LinkedIn slide 2 (cross-image consistency test)",
+      "engines": {
+        "gpt-image-2": {
+          "ok": true,
+          "engine": "gpt-image-2",
+          "model": "gpt-image-1",
+          "size": "1024x1024",
+          "quality": "medium",
+          "elapsed_s": 15.0,
+          "usage": {
+            "input_tokens": 137,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 137
+            },
+            "output_tokens": 1056,
+            "output_tokens_details": {
+              "image_tokens": 1056,
+              "text_tokens": 0
+            },
+            "total_tokens": 1193
+          }
+        },
+        "nano-banana": {
+          "ok": true,
+          "engine": "nano-banana",
+          "model": "gemini-2.5-flash-image",
+          "elapsed_s": 6.28
+        }
+      }
+    },
+    {
+      "case": "03-commercial-illustration",
+      "label": "Illustration commerciale brand (workflow plugins WP)",
+      "engines": {
+        "gpt-image-2": {
+          "ok": true,
+          "engine": "gpt-image-2",
+          "model": "gpt-image-1",
+          "size": "1536x1024",
+          "quality": "medium",
+          "elapsed_s": 21.55,
+          "usage": {
+            "input_tokens": 154,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 154
+            },
+            "output_tokens": 1568,
+            "output_tokens_details": {
+              "image_tokens": 1568,
+              "text_tokens": 0
+            },
+            "total_tokens": 1722
+          }
+        },
+        "nano-banana": {
+          "ok": true,
+          "engine": "nano-banana",
+          "model": "gemini-2.5-flash-image",
+          "elapsed_s": 5.66
+        }
+      }
+    }
+  ]
+}

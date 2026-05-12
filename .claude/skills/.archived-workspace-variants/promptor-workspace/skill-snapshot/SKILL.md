@@ -1,6 +1,6 @@
 ---
 name: promptor
-description: "Generateur de prompts parfaits adaptes a chaque IA. Utiliser quand l'utilisateur veut creer un prompt pour une autre IA (ChatGPT, Gemini, Midjourney, Bolt, Mistral, etc.), optimiser un prompt existant, ou demande 'genere-moi un prompt pour...', 'prompt parfait pour...', 'promptor', 'meta-prompt'. Aussi quand l'utilisateur mentionne vouloir utiliser une autre IA et a besoin d'instructions optimisees."
+description: "Generateur de prompts parfaits adaptes a chaque IA. Utiliser quand l'utilisateur veut créer un prompt pour une autre IA (ChatGPT, Gemini, Midjourney, Bolt, Mistral, etc.), optimiser un prompt existant, ou demande 'génère-moi un prompt pour...', 'prompt parfait pour...', 'promptor', 'meta-prompt'. Aussi quand l'utilisateur mentionne vouloir utiliser une autre IA et a besoin d'instructions optimisees."
 metadata:
   author: "Michael KIHL"
   version: "2.0.0"

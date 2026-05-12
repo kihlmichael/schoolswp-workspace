@@ -1,6 +1,9 @@
 ---
 name: token-audit
-description: Audit Claude Code configuration to measure fixed-context token overhead and produce a prioritized action plan
+description: |
+  Mesure le token overhead fixe d'une configuration Claude Code (CLAUDE.md, rules, MEMORY.md, system prompt) avant toute tâche utilisateur, identifie les plus gros contributeurs et produit un plan d'action priorisé avec estimation des économies.
+  Utilise ce skill quand l'utilisateur dit : "audit tokens Claude Code", "pourquoi le contexte se compresse vite", "rate limit avant la fin de journée", "combien me coûtent mes rules", "MEMORY.md tronqué", ou après un gros refacto de config.
+  NE PAS utiliser pour : audit de qualité code (utiliser `code-review-and-quality`), audit sécurité (utiliser `cso`), ou pour mesurer la conso d'un agent Python (différent, c'est l'API Anthropic facturée par appel).
 effort: medium
 tags: [tokens, optimization, context, audit, configuration]
 allowed-tools: Read, Grep, Glob, Bash

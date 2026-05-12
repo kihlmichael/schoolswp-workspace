@@ -1,6 +1,9 @@
 ---
 name: authority-templates
-description: Templates d'exécution concrets de la schoolsWP Authority System™ — 10 templates prêts à remplir et à utiliser (Ecosystem Blueprint Canvas, Cluster SEO, ROI Decision Matrix, Roadmap 90j, Structure Page Pilier, FAQ IA, Machine Omnicanale, Séquence Evergreen, Growth Test Sheet, Performance Audit). Utilise ce skill dès que l'utilisateur veut remplir un template, générer un livrable concret pour un client ou pour schoolsWP, créer un blueprint, une roadmap, une structure de page pilier, une FAQ optimisée IA, un kit omnicanal, une séquence email evergreen, un plan de test ou un audit de performance. Trigger aussi pour "remplis le template", "génère le blueprint pour", "crée la roadmap pour", "structure la page pilier", "séquence email", "plan de test", "audit performance GSC", même sans mention du nom du skill.
+description: |
+  10 templates d'exécution concrets schoolsWP Authority System™ prêts à remplir : Ecosystem Blueprint Canvas, Cartographie Cluster SEO, ROI Decision Matrix, Roadmap 90j, Structure Page Pilier, FAQ IA, Machine Omnicanale, Séquence Email Evergreen, Growth Test Sheet, Performance Audit. Mode d'usage : donne contexte (niche, client, sujet, URL) et le template se remplit.
+  Utilise ce skill quand l'utilisateur dit : "remplis le template blueprint", "génère la matrice ROI pour", "structure la page pilier", "template growth test", ou veut un livrable cadré dans un format prêt à l'emploi.
+  NE PAS utiliser pour : la rédaction d'un article SEO complet (utiliser `schoolswp-article-workflow`), un cluster sémantique automatique (utiliser `cluster-cocon-automatique`), ou la roadmap stratégique 24 mois (utiliser `authority-domination-roadmap`).
 ---
 
 # schoolsWP Authority System™ — Templates d'exécution

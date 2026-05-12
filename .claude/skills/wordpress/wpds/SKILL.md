@@ -1,9 +1,9 @@
 ---
 name: wpds
 description: |
-  Construit des interfaces avec le WordPress Design System (WPDS) : composants, tokens, patterns et
-  guidelines WPDS.
-  Déclenche pour "WordPress Design System", "WPDS", "composants WPDS", "tokens WordPress".
+  Build des interfaces avec le WordPress Design System (WPDS) : composants @wordpress/components et @wordpress/ui, design tokens (couleurs, spacing, typo), patterns, guidelines WPDS. Lit la doc canonique via le MCP WPDS (wpds://pages, wpds://components, wpds://design-tokens). Cible Gutenberg, WooCommerce admin, WordPress.com, Jetpack.
+  Utilise ce skill quand l'utilisateur dit : "WordPress Design System", "WPDS", "composants WPDS", "tokens WordPress", "@wordpress/components", "design system Gutenberg", ou pour toute UI dans un contexte WordPress.com ou Jetpack.
+  NE PAS utiliser pour : design schoolsWP front-public (utiliser aidesigner-frontend ou external-cc-design avec BRAND_RULES.md), block themes basés sur theme.json (utiliser wp-block-themes), Interactivity API (utiliser wp-interactivity-api), ou systèmes de design tiers comme Stripe ou Notion (utiliser external-design-systems).
 compatibility: "Requires WPDS MCP server configured and running. Targets WordPress 6.9+ (PHP 7.2.24+)."
 ---
 

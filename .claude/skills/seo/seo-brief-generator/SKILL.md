@@ -1,13 +1,9 @@
 ---
 name: seo-brief-generator
-description: >
-  Genere un brief SEO V2 complet pour un article schoolsWP a partir d'un ID article (A1, B6, C3,
-  PILIER-A, COMP-B1, ADV-C1, FAQ-A1...) ou d'un mot-cle. Produit un document markdown pret a
-  utiliser avec le template 10 sections (metadonnees, blocs AIO, plan H2/H3, maillage, monetisation,
-  requetes GEO, donnees structurees). Utilise ce skill des que l'utilisateur veut un brief SEO,
-  un brief article, un brief de contenu, un plan d'article, ou dit "brief", "brief SEO", "genere
-  le brief pour A1", "brief B6", "brief --keyword fluentcrm", "prepare l'article sur...", "lance
-  le brief pour le pilier securite".
+description: |
+  Génère un brief SEO V2 complet pour un article schoolsWP à partir d'un ID article (A1, B6, PILIER-A, COMP-B1, FAQ-A1...) ou d'un mot-clé. Sortie : document markdown 10 sections (métadonnées, blocs AIO, plan H2/H3, maillage interne pré-rempli, monétisation, requêtes GEO Thruuu, données structurées) prêt à brancher sur la production.
+  Utilise ce skill quand l'utilisateur dit : "génère le brief pour A1", "brief SEO sur fluentcrm tutoriel", "prépare l'article sur la sécurité WordPress", "brief B6", "lance le brief pour le pilier sécurité", ou fournit un ID cluster + intention.
+  NE PAS utiliser pour : production complète article SEO long (utiliser `schoolswp-article-workflow` ou `thruuu-writer`), brief depuis snapshot Thruuu déjà construit (utiliser `thruuu-brief-builder-snapshot-v1` ou `v2`), ou brief vidéo YouTube (utiliser `schoolswp-youtube-studio`).
 ---
 
 # /seo-brief-generator — Brief SEO V2 schoolsWP

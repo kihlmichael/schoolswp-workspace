@@ -1,6 +1,9 @@
 ---
 name: money-articles-30-plan
-description: Planifier 30 articles ultra rentables schoolsWP (clusters + avis + comparatifs + guides) avec logique SEO + affiliation. Utiliser pour lancer un plan editorial orienté revenu.
+description: |
+  Plan editorial schoolsWP de 30 articles ultra rentables organises par clusters thematiques (CRM, LMS, etc.) avec mix de formats (avis + comparatifs + guides), logique SEO + affiliation et estimation de potentiel trafic + revenu. Vue strategique site-wide pour cadrer la production sur plusieurs mois.
+  Utilise ce skill quand l'utilisateur dit : "fais-moi un plan editorial 30 articles", "plan rentable schoolsWP", "quels clusters prioriser cette annee", "orienter ma roadmap content vers le revenu", ou quand il sort de planification trimestrielle/annuelle.
+  NE PAS utiliser pour : prioriser DANS un cluster donne (utiliser `cocon-roi-prioritization`), produire UN article (utiliser `money-page-generator` ou `comparatif-affiliate-engine`), ou scorer un sujet specifique (utiliser `affiliation-potential-scoring`).
 ---
 
 # Plan 30 articles ultra rentables — schoolsWP

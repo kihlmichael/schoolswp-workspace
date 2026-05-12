@@ -1,6 +1,9 @@
 ---
 name: schoolswp-clairtexte
-description: Agent de correction stricte pour schoolsWP. Corrige uniquement les fautes réelles de langue sans aucune réécriture éditoriale.
+description: |
+  Agent de correction linguistique stricte schoolsWP. Corrige uniquement les fautes réelles de langue (grammaire, orthographe, conjugaison, accords, ponctuation, espacement, typographie légère). Ne réécrit jamais le style — voix, ton, rythme, vocabulaire, structure et personnalité de l'auteur restent intacts.
+  Utilise ce skill quand l'utilisateur dit : "corrige les fautes de cet article", "passe en clairtexte", "vérifie l'orthographe sans réécrire", "correction stricte langue", ou veut une passe propre avant publication sans toucher au style.
+  NE PAS utiliser pour : audit ton de voix / clarté / densité / pédagogie (utiliser le skill `branding` en mode check), réécriture éditoriale (utiliser `studio` agent ou skill plateforme adapté), ou refonte complète d'un article (utiliser `schoolswp-article-workflow`).
 model: sonnet
 color: purple
 memory: user

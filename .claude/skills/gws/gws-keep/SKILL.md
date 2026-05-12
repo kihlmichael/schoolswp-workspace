@@ -1,7 +1,10 @@
 ---
 name: gws-keep
 version: 1.0.0
-description: "Manage Google Keep notes."
+description: |
+  Google Keep v1 via la CLI gws : gère les notes Keep (create, get, list, delete) et leurs attachments (download). API limitée à l'usage entreprise (Workspace) et au scope readonly/write selon la note.
+  Utilise ce skill quand l'utilisateur dit : "Google Keep CLI", "list mes notes Keep", "récupère une note Keep", "download attachment Keep", ou pour scripter un export de notes Keep vers Markdown ou Sheets.
+  NE PAS utiliser pour : prise de note conversationnelle sans API (Keep UI), notes longues collaboratives (utiliser Google Docs via gws-docs-write), ou tâches actionables (utiliser gws-tasks).
 metadata:
   openclaw:
     category: "productivity"

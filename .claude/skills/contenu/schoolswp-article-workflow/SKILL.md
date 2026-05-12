@@ -1,13 +1,9 @@
 ---
 name: schoolswp-article-workflow
 description: |
-  Workflow complet de redaction schoolsWP en 3 phases : Intelligence SEO, Redaction IA, Couche humaine.
-  Prend un mot-cle + donnees SERP et livre un article final avec brief, draft, auto-audit et scoring.
-  Utilise ce skill quand l'utilisateur veut ecrire un article depuis zero (mot-cle + SERP),
-  lancer le workflow redaction complet, produire un article SEO schoolsWP sans brief thruuu,
-  ou mentionne "workflow article", "SOP redaction", "article depuis un mot-cle".
-  Aussi declenchable via /article-workflow.
-  Difference avec thruuu-writer : ce skill part d'un mot-cle + SERP (pas d'un brief .docx).
+  Workflow complet de rédaction schoolsWP en 3 phases : Intelligence SEO, Rédaction IA, Couche humaine. Prend un mot-clé + données SERP et livre un article final avec brief, draft, auto-audit et scoring. Aussi déclenchable via /article-workflow.
+  Utilise ce skill quand l'utilisateur dit : "workflow article", "SOP rédaction", "article depuis un mot-clé", "lance le workflow article schoolsWP", "écris-moi un article SEO long sur [keyword]", ou fournit un mot-clé + données SERP et veut un article complet.
+  NE PAS utiliser pour : article à partir d'un brief thruuu .docx (utiliser `thruuu-writer`), draft express sans audit (utiliser `brain-lite`), audit/score d'un article existant (utiliser `article-audit-score`), ou décliner un article publié en formats sociaux (utiliser `article-multiformat`).
 ---
 
 # schoolsWP Article Workflow — Pipeline 3 phases
@@ -56,7 +52,7 @@ Principe fondamental : **SERP d'abord — IA ensuite — Humain a la fin.**
 - "Teste et approuve."
 - "Pas de blabla, juste du concret."
 - "L'idee, c'est de comprendre avant d'appliquer."
-- "A vous de jouer."
+- "A toi de jouer."
 
 ---
 

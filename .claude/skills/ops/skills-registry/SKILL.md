@@ -1,7 +1,9 @@
 ---
 name: skills-registry
 description: |
-  Registre centralisé de tous les skills Claude Code du workspace schoolsWP. Utilise ce skill dès que l'utilisateur veut savoir quels skills existent, détecter les nouveaux ou modifiés, synchroniser le Google Sheet des skills, générer un rapport d'état, ou maintenir le référentiel skills à jour. Déclenche aussi quand l'utilisateur dit "registre", "inventaire skills", "sync skills", "liste des skills", "état du registre", ou "nouveaux skills". C'est l'outil de pilotage unique pour garder une vue complète et fiable de tous les skills disponibles.
+  Registre centralisé des skills Claude Code du workspace schoolsWP : scan de tous les SKILL.md, détection des nouveaux/modifiés/archivés, génération du rapport d'état + JSON webhook n8n, sync Google Sheets via `skills_registry.py --sync`.
+  Utilise ce skill quand l'utilisateur dit : "registre skills", "inventaire skills", "sync skills", "liste des skills", "état du registre", "nouveaux skills", ou "rapport skills".
+  NE PAS utiliser pour : créer ou modifier un skill (utiliser `skill-creator`), auditer la santé globale du workspace (utiliser `workspace-audit`), ou nettoyer les skills archivés (suivre le pattern feedback_skill_archival.md).
 ---
 
 # schoolsWP Skills Registry

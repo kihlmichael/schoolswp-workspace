@@ -1,0 +1,15 @@
+# Defaults SEO partagés - série FluentCart Gratuit vs Pro
+# Référence pour les seo-meta.yaml de chaque format
+# Pas lu directement par inject-meta.mjs (chaque format a son propre seo-meta.yaml)
+
+author: Michaël KIHL
+copyright: © schoolsWP - Michaël KIHL
+url: https://schoolswp.com/fluentcart-gratuit-vs-pro/
+software: schoolsWP html-to-png
+
+common_keywords:
+  - FluentCart
+  - FluentCart Pro
+  - WordPress
+  - e-commerce
+  - WooCommerce alternative

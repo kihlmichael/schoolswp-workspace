@@ -1,0 +1,55 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/fluentcart-gratuit-vs-pro/
+  software: schoolsWP html-to-png
+
+images:
+  - file: story-01-hook.png
+    title: FluentCart Gratuit vs Pro - Story Hook
+    subject: Story Instagram Hook FluentCart comparatif
+    description: Hook story Instagram - FluentCart Gratuit ou Pro pour push le carrousel feed
+    alt: schoolsWP - Story FluentCart Gratuit ou Pro
+    keywords: [FluentCart, WordPress, e-commerce, story Instagram]
+
+  - file: story-02-tunnels-vente.png
+    title: FluentCart Pro tunnels de vente - Story 02
+    subject: Story Instagram tunnels de vente FluentCart Pro
+    description: Story Instagram sur les tunnels de vente FluentCart Pro - upsells et downsells
+    alt: schoolsWP - Story FluentCart Pro tunnels de vente
+    keywords: [FluentCart Pro, upsell, story Instagram, e-commerce WordPress]
+
+  - file: story-03-licences.png
+    title: FluentCart Pro gestion des licences - Story 03
+    subject: Story Instagram gestion des licences FluentCart Pro
+    description: Story Instagram sur la gestion des licences FluentCart Pro pour vendre du SaaS
+    alt: schoolsWP - Story FluentCart Pro license manager
+    keywords: [FluentCart Pro, license manager, SaaS WordPress, story Instagram]
+
+  - file: story-04-automatisation.png
+    title: FluentCart Pro automatisation marketing - Story 04
+    subject: Story Instagram automatisation FluentCRM avec FluentCart Pro
+    description: Story Instagram sur l'automatisation marketing avancée FluentCart Pro avec FluentCRM
+    alt: schoolsWP - Story FluentCart Pro automatisation FluentCRM
+    keywords: [FluentCart Pro, FluentCRM, automatisation, story Instagram]
+
+  - file: story-05-rapports.png
+    title: FluentCart Pro rapports d'analyse - Story 05
+    subject: Story Instagram rapports avancés FluentCart Pro
+    description: Story Instagram sur le reporting avancé FluentCart Pro par produit et par client
+    alt: schoolsWP - Story FluentCart Pro rapports détaillés
+    keywords: [FluentCart Pro, reporting, analytics WordPress, story Instagram]
+
+  - file: story-06-order-bumps.png
+    title: FluentCart Pro Order Bumps conditionnels - Story 06
+    subject: Story Instagram Order Bumps FluentCart Pro
+    description: Story Instagram sur les Order Bumps conditionnels FluentCart Pro avec logique sophistiquée
+    alt: schoolsWP - Story FluentCart Pro Order Bumps
+    keywords: [FluentCart Pro, order bumps, cross-sell, story Instagram]
+
+  - file: story-07-cta.png
+    title: FluentCart Gratuit vs Pro - Verdict CTA Story
+    subject: Story Instagram CTA carrousel FluentCart
+    description: Story Instagram CTA - voir le verdict complet FluentCart Gratuit vs Pro sur schoolsWP
+    alt: schoolsWP - Story CTA verdict FluentCart Gratuit vs Pro
+    keywords: [FluentCart, comparatif, schoolsWP, story Instagram CTA]

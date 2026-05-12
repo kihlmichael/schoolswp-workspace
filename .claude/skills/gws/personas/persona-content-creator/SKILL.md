@@ -1,7 +1,10 @@
 ---
 name: persona-content-creator
 version: 1.0.0
-description: "Create, organize, and distribute content across Workspace."
+description: |
+  Profil orchestré pour créer, organiser et distribuer du contenu dans Google Workspace : draft en Docs, organisation en Drive, annonce en Chat, review et envoi par Gmail, médias sur Slides. Combine gws-docs, gws-drive, gws-gmail, gws-chat, gws-slides.
+  Utilise ce skill quand l'utilisateur dit : "active la persona content creator", "je veux opérer comme un créateur de contenu Workspace", "mode rédacteur Docs Drive Gmail", ou pour adopter une posture orientée production et diffusion de contenu Google.
+  NE PAS utiliser pour : profil pilotage de projets (utiliser persona-project-manager), profil exec assistant orienté agenda (utiliser persona-exec-assistant), skill rédaction Docs unique (utiliser gws-docs directement), ou orchestration d'un agent schoolsWP rédactionnel (voir agents Telegram studio ou pulse).
 metadata:
   openclaw:
     category: "persona"

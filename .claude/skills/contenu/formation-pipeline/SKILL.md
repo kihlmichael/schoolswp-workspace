@@ -1,13 +1,9 @@
 ---
 name: formation-pipeline
 description: |
-  Pipeline complet de création de formation gratuite schoolsWP pour un plugin WordPress.
-  6 étapes séquentielles : recherche → gap analysis → plan de formation → scripts vidéo → upload Drive → mémoire projet.
-  Utilise ce skill dès que l'utilisateur veut créer une formation, un cours, un tutoriel complet,
-  ou un pipeline de production pédagogique sur un plugin ou outil WordPress.
-  Déclenche aussi pour :
-  "formation comme FluentCRM", "même pipeline que ECL", "nouveau cours plugin",
-  "formation gratuite [plugin]", "pipeline formation".
+  Pipeline complet de création de formation gratuite schoolsWP pour un plugin WordPress. 6 étapes séquentielles : recherche → gap analysis → plan de formation → scripts vidéo → upload Drive → mémoire projet.
+  Utilise ce skill quand l'utilisateur dit : "formation comme FluentCRM", "même pipeline que ECL", "nouveau cours plugin", "formation gratuite [plugin]", "pipeline formation", ou veut créer une formation/cours/tutoriel complet sur un plugin WordPress.
+  NE PAS utiliser pour : un seul tutoriel article (utiliser `schoolswp-article-workflow`), script vidéo isolé sans pipeline (utiliser `schoolswp-youtube-studio`), ou la livraison technique de la formation sur TutorLMS/FluentCart (voir mémoire `project_formation_delivery_stack.md`).
 ---
 
 # Formation Pipeline schoolsWP

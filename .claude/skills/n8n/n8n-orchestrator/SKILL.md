@@ -1,16 +1,9 @@
 ---
 name: n8n-orchestrator
 description: |
-  Orchestrateur senior n8n — impose une planification structurée AVANT toute génération de workflow et route
-  vers les skills n8n spécialisés (n8n-mcp-tools-expert, n8n-workflow-patterns, n8n-node-configuration,
-  n8n-validation-expert, n8n-expression-syntax, n8n-code-javascript, n8n-code-python, n8n-workflow-architect).
-  Utilise ce skill dès qu'il est question de n8n, d'un workflow, d'un nœud ou d'une automatisation n8n — même
-  pour une demande floue comme "je veux automatiser X", "peux-tu me faire un workflow", "comment enchaîner
-  ces deux étapes dans n8n". Rôle : cadrer le besoin, décomposer la solution en étapes logiques, choisir la
-  stratégie la plus simple et maintenable, puis déléguer aux skills spécialisés. Garde-fous stricts : pas de
-  Code Node inutile, AI Agent correctement configuré, pas d'abus de Split In Batches, HTTP Request uniquement
-  en dernier recours. Prioriser sur les autres skills n8n pour toute demande qui n'est pas strictement
-  exécutoire (écrire une expression, fixer une erreur précise, etc.).
+  Orchestrateur senior n8n schoolsWP : impose une planification structurée AVANT toute génération de workflow, cadre le besoin en 4 phases (qualifier, cadrer, choisir stratégie, router), puis délègue aux skills n8n spécialisés. Garde-fous stricts : pas de Code Node inutile, AI Agent bien configuré, HTTP Request en dernier recours.
+  Utilise ce skill quand l'utilisateur dit : "je veux automatiser X dans n8n", "fais-moi un workflow", "comment enchaîner ces étapes dans n8n", "j'ai besoin d'un n8n pour...", ou pour toute demande n8n floue qui demande à être cadrée AVANT exécution.
+  NE PAS utiliser pour : générer le JSON workflow complet une fois cadré (utiliser n8n-workflow-architect), valider une erreur précise (utiliser n8n-validation-expert), écrire une expression {{ }} (utiliser n8n-expression-syntax), ou pour la création / modification effective via API (utiliser le MCP n8n-mcp ou l'agent flow).
 ---
 
 # n8n Orchestrator

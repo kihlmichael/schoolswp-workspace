@@ -1,6 +1,9 @@
 ---
 name: intelligence-system-training
-description: Formation premium schoolsWP Intelligence System. Architecture pedagogique, modules, livrables, positionnement et pricing. Utiliser quand l'utilisateur veut structurer une offre de formation premium, définir l'architecture pédagogique des 6 modules, positionner le produit ou définir le pricing en 3 niveaux.
+description: |
+  Architecture pédagogique de la formation premium schoolsWP Intelligence System. Couvre les 6 modules (SPECS, COT, CREDO, DITO, PACT, TDD), les livrables par module, le positionnement "système vs outil", et le pricing en 3 niveaux (essentiel / accélérateur / mastermind).
+  Utilise ce skill quand l'utilisateur dit : "structure la formation Intelligence System", "architecture des 6 modules", "pricing formation premium 3 niveaux", "positionne le produit formation", "livrables par module", ou prépare une refonte du parcours pédagogique.
+  NE PAS utiliser pour : produire le contenu pédagogique d'un module (utiliser `schoolswp-content-studio` ou `schoolswp-article-workflow`), configurer le LMS technique (utiliser `flow` ou skills TutorLMS), ou rédiger une page de vente de la formation (utiliser `mini-offre-page-de-vente`).
 ---
 
 # schoolsWP Intelligence System (formation premium)

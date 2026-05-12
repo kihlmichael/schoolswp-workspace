@@ -1,7 +1,10 @@
 ---
 name: gws-workflow-file-announce
 version: 1.0.0
-description: "Google Workflow: Announce a Drive file in a Chat space."
+description: |
+  Helper gws workflow +file-announce : annonce un fichier Drive (par ID) dans un space Google Chat avec carte enrichie (titre, type, owner, lien). Une commande shell pour notifier l'équipe d'un livrable.
+  Utilise ce skill quand l'utilisateur dit : "annonce ce fichier dans Chat", "post Drive file in space", "notifie le team du nouveau Doc", "Drive → Chat space", ou pour brancher un workflow "upload Drive puis annonce".
+  NE PAS utiliser pour : envoyer un message texte simple (utiliser gws-chat-send), uploader le fichier sur Drive en amont (utiliser gws-drive-upload puis chaîner), ou annonce sur Discord / Telegram (utiliser le MCP discord ou telegram).
 metadata:
   openclaw:
     category: "productivity"

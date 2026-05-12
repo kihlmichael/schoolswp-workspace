@@ -1,10 +1,9 @@
 ---
 name: ai-prompt-engineering-safety-review
 description: |
-  Revue complète de sécurité et amélioration de prompts IA. Analyse les prompts pour détecter les
-  problèmes de sécurité, biais, vulnérabilités et efficacité. Fournit des recommandations détaillées avec
-  frameworks de test et contenu éducatif.
-  Déclenche pour "audit de prompt", "sécurité prompt", "améliorer un prompt", "review de prompt IA".
+  Revue complète sécurité + biais + efficacité d'un prompt IA. Détecte risques (contenu nocif, prompt injection, fuite d'info), biais (genre, race, culturel, socio, ability), faiblesses de clarté/contexte/format, puis recommande des corrections actionnables.
+  Utilise ce skill quand l'utilisateur dit : "audit de prompt", "sécurité prompt", "review de prompt IA", "détecte les biais de ce prompt", "vulnérabilité prompt injection", ou colle un prompt et demande "qu'est-ce qui cloche ?".
+  NE PAS utiliser pour : créer un prompt depuis zéro (utiliser `prompt-master` ou `meta-prompt-creator`), optimiser un prompt déjà fonctionnel sans dimension sécurité (utiliser `prompt-master /Optimiser`), ou évaluer un output IA produit (utiliser le sub-agent `output-evaluator`).
 
 ---
 

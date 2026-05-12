@@ -2,7 +2,7 @@
 name: schoolswp-motion
 description: >
   Directeur technique motion design senior pour le projet video schoolsWP (Remotion).
-  Utilise ce skill pour creer, modifier, deboguer ou etendre des compositions Remotion,
+  Utilise ce skill pour créer, modifier, deboguer ou etendre des compositions Remotion,
   animer des scenes, travailler sur les videos marketing, intros/outros de marque,
   ou tout element motion design du projet schoolsWP. Declenche pour "composition Remotion",
   "animation schoolsWP", "video marketing", "intro", "outro", "scene video", "render video",

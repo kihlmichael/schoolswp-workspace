@@ -1,10 +1,9 @@
 ---
 name: remotion
 description: |
-  Construire des vidéos programmatiques avec Remotion (React). Utiliser pour créer des compositions
-  vidéo, animer des éléments frame-by-frame, gérer audio/vidéo/images, transitions et séquences.
-  Déclenche pour "Remotion", "vidéo React", "composition vidéo", "rendu vidéo", "animation frame".
-  Pour les cas avancés (FFmpeg, captions, 3D, voiceover), voir le skill `remotion-best-practices`.
+  Construit des vidéos programmatiques avec Remotion (React) : compositions, animations frame-by-frame, gestion audio/vidéo/images, transitions, séquences. Sortie pour `apps/video-marketing/` (cours TutorLMS, vidéos multi-scènes structurelles).
+  Utilise ce skill quand l'utilisateur dit : "Remotion", "vidéo React", "composition vidéo programmatique", "animation frame-by-frame", "rendu vidéo schoolsWP", ou pour toute vidéo structurelle multi-scènes dans `apps/video-marketing/`.
+  NE PAS utiliser pour : intros courtes ≤30s ou overlays sociaux (utiliser `external-hyperframes/`), vidéos AI avec avatar (utiliser `external-heygen/`), ou cas avancés FFmpeg/captions/3D/voiceover (voir `remotion-best-practices`).
 ---
 
 # Remotion - Video programmatique React

@@ -5,7 +5,7 @@ description: |
 
   NE PAS utiliser pour :
   - documentation TutorLMS publiée sur schoolswp.com → WordPress + thème Kadence directement
-  - runbooks markdown internes → docs/runbooks-operationnels.md (plain markdown)
+  - runbooks markdown internes → docs/runbooks-opérationnels.md (plain markdown)
   - article tutoriel SEO long → schoolswp-article-workflow
   - landing produit avec sections marketing → open-design-pricing-page ou cc-design
 

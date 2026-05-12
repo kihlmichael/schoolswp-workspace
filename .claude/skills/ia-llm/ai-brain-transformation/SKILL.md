@@ -1,6 +1,9 @@
 ---
 name: ai-brain-transformation
-description: Agent C - Transformation. Execute DITO pour transformer un contenu principal en 2-4 formats omnicanaux prêts à coller (LinkedIn, newsletter, email, script). Utiliser quand un article est produit et qu'il faut le multiplier sans réécrire, ou quand ai-strategic-brain active le mode TRANSFORMER.
+description: |
+  Agent C du Brain schoolsWP. Exécute DITO pour transformer un livrable principal en 2-4 formats omnicanaux prêts à coller (LinkedIn, newsletter, email, script YouTube) avec CTA adaptés et angle conservé.
+  Utilise ce skill quand l'utilisateur dit : "décline cet article", "transforme en LinkedIn + newsletter", "multiplie l'impact", "repurpose", "DITO", ou quand `ai-strategic-brain` active le mode TRANSFORMER sur un livrable existant.
+  NE PAS utiliser pour : produire le contenu source (utiliser `ai-brain-production`), cadrer un nouveau sujet (utiliser `ai-brain-audit`), ou orchestrer une stratégie de distribution multi-plateformes complète (utiliser `social-media-manager`).
 ---
 
 # Agent C - Transformation (schoolsWP)

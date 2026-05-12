@@ -1,10 +1,9 @@
 ---
 name: wp-rest-api
 description: |
-  Construit, étend et débogue des endpoints/routes WordPress REST API : register_rest_route, classes
-  WP_REST_Controller, validation de schéma/arguments, permission_callback/authentification, formatage des
-  réponses, register_rest_field/register_meta et exposition des CPT/taxonomies.
-  Déclenche pour "REST API WordPress", "register_rest_route", "endpoint WordPress", "API WordPress".
+  Build, extend et debug des routes WordPress REST API : register_rest_route, classes WP_REST_Controller, validation schéma et arguments, permission_callback et authentification (cookie + nonce, application passwords), formatage des réponses, register_rest_field et register_meta, exposition des CPT et taxonomies, debug 401/403/404, links et embed et pagination.
+  Utilise ce skill quand l'utilisateur dit : "REST API WordPress", "register_rest_route", "endpoint WordPress", "API WordPress", "WP_REST_Controller", "permission_callback", ou "exposer un CPT en REST".
+  NE PAS utiliser pour : consommation de l'API WP côté frontend Interactivity API (utiliser wp-interactivity-api), Novamira REST proxy schoolswp.com (utiliser MCP novamira-schoolswp-com), authentification WordPress côté plugin (utiliser wp-plugin-development), ou GraphQL/WPGraphQL (hors scope).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

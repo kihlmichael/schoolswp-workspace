@@ -1,15 +1,9 @@
 ---
 name: os-router
-description: >
-  schoolsWP OS — Point d'entrée universel. Auto-Router intelligent qui détecte le bon module parmi 7
-  (SPECS, COT, CREDO, DITO, PACT, TDD, RACE) et exécute immédiatement sans questions inutiles.
-  Utiliser pour toute demande schoolsWP : le routeur identifie si c'est du cadrage, décision,
-  production, repurposing, test ou optimisation, choisit le module le plus bloquant et produit
-  le livrable dans le format standard du module activé.
-  Trigger : "j'ai besoin de", "aide-moi à", "je veux créer", "je dois décider", "optimise mon",
-  "transforme ce contenu", "j'hésite entre", "analyse cette page", "par où je commence",
-  "quel module utiliser", "active schoolsWP OS", "lance l'OS", "route ma demande",
-  "1 demande → 1 mode activé".
+description: |
+  Point d'entrée universel schoolsWP OS — auto-router qui détecte parmi 7 modules (SPECS, COT, CREDO, DITO, PACT, TDD, RACE) le plus bloquant pour la demande, l'active et exécute sans questions inutiles. Sortie commence par "Module activé : ___" puis livrable dans le format standard du moteur.
+  Utilise ce skill quand l'utilisateur dit : "active schoolsWP OS", "route ma demande", "par où je commence", "quel module utiliser", "1 demande → 1 mode activé", ou pose une demande dense sans préciser quel framework employer.
+  NE PAS utiliser pour : invoquer un moteur précis déjà connu (utiliser directement `specs-engine`, `credo-engine`, `dito-engine`, etc.), industrialiser le routeur dans un Claude Project externe (utiliser `os-claude-system`), ou exécuter la méthode unifiée 6 modules en séquence (utiliser `engine`).
 ---
 
 # schoolsWP OS — Auto-Router

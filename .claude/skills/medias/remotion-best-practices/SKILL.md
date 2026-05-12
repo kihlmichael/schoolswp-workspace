@@ -1,11 +1,9 @@
 ---
 name: remotion-best-practices
 description: |
-  Bonnes pratiques Remotion pour la création de vidéos programmatiques en React. Utilise ce
-  skill pour tout code Remotion : compositions, animations, captions, sous-titres, FFmpeg,
-  visualisation audio, rendu et export vidéo.
-  Déclenche pour "Remotion", "vidéo React", "composition Remotion", "animation vidéo",
-  "sous-titres programmatiques", "rendu vidéo React".
+  Bonnes pratiques Remotion (vidéos programmatiques en React) pour cas avancés : FFmpeg, captions/sous-titres, 3D, voiceover, charts, Mediabunny, audio visualization. Pointe vers les fichiers `rules/*.md` ciblés (assets, animations, compositions, fonts, gifs, etc.). Pour les bases (hooks, sequences), passer par le skill `remotion` standard d'abord.
+  Utilise ce skill quand l'utilisateur écrit du code Remotion avancé et dit : "Remotion FFmpeg", "captions Remotion", "audio visualization Remotion", "render avancé Remotion", "Mediabunny", "3D Remotion", ou doit débloquer un cas non couvert par les bases.
+  NE PAS utiliser pour : composition Remotion schoolsWP existante governance theme.ts/texts.ts (utiliser `apps/video-marketing/CLAUDE.md`), intros courtes ≤30s / overlays sociaux (utiliser HyperFrames `apps/hyperframes/`), ou édition d'une vidéo brute non-Remotion (utiliser `external-video-use`).
 ---
 
 ## When to use

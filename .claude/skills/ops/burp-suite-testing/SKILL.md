@@ -1,6 +1,9 @@
 ---
 name: burp-suite-testing
-description: "Tests de sécurité web avec Burp Suite. Utilise ce skill pour intercepter et modifier le trafic HTTP, scanner les vulnérabilités, rejouer des requêtes ou effectuer des tests manuels et automatisés de sécurité applicative."
+description: |
+  Référence Burp Suite (Community / Professional) pour tests de sécurité web : interception et modification du trafic HTTP via proxy 127.0.0.1:8080, scan automatisé de vulnérabilités, rejeu de requêtes (Repeater/Intruder), tests manuels d'authentification et d'autorisation.
+  Utilise ce skill quand l'utilisateur dit : "Burp Suite", "intercepte le trafic HTTP", "rejoue cette requête", "teste cette authentification", ou "scan applicatif" — uniquement dans un contexte d'audit autorisé.
+  NE PAS utiliser pour : audit sécurité global d'une infra cloud (utiliser `cloud-penetration-testing`), revue DevSecOps avec frameworks de conformité (utiliser `security-auditor`), ou audit sécurité du projet schoolsWP lui-même (utiliser `cso`).
 risk: unknown
 source: community
 author: zebbern

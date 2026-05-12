@@ -1,6 +1,9 @@
 ---
-name: skill-creator
-description: "Scaffold a new Claude Code skill with SKILL.md, frontmatter, and bundled resources. Use when creating a custom skill, standardizing skill structure across a team, or packaging a skill for distribution."
+name: skill-creator-ccguide
+description: |
+  Génère un nouveau skill Claude Code avec structure répertoire correcte, frontmatter YAML valide, et ressources bundled (scripts/, references/, assets/). Skill méta pour standardiser la création de skills.
+  Utilise ce skill quand l'utilisateur dit : "crée un skill custom", "génère un nouveau skill", "scaffolde un SKILL.md", "frontmatter pour ce skill", "package ce skill pour distribution", ou pour bootstrapper un skill schoolsWP propre.
+  NE PAS utiliser pour : modifier un skill existant (Edit direct), enrichir une description (édition manuelle), ou créer un sub-agent Claude Code (différent format, voir `.claude/agents/`).
 tags: [meta, skill, generator, claude-code]
 effort: low
 ---

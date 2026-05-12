@@ -1,9 +1,9 @@
 ---
 name: audit
 description: |
-  Audit de publication (4 audits parallèles). Lance publish_ready.cli sur un article
-  pour obtenir le Publish Score (SEO + LLM + Conversion + Autorité).
-  Déclenche pour "audit", "publish score", "prêt à publier", "auditer l'article".
+  Lance `publish_ready.cli` sur un article pour calculer le Publish Score (SEO 0.30 + LLM 0.25 + Conversion 0.25 + Autorité 0.20). Quatre audits parallèles, sortie chiffrée avec recommandations de réécriture si <70.
+  Utilise ce skill quand l'utilisateur dit : "audit", "publish score", "prêt à publier", "auditer l'article", "score de publication", ou veut savoir si un .md de `content/articles/` est publiable.
+  NE PAS utiliser pour : audit SEO seul d'un fichier sans cross-check LLM/Conversion (utiliser `seo-auditor.cli` direct), audit code/dette technique (utiliser `code-audit`), ou audit GSC/positions (utiliser le système `content/audits/`).
 ---
 
 # /audit — Audit de publication (4 audits parallèles)

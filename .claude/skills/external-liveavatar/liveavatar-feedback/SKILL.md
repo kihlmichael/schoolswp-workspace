@@ -1,7 +1,6 @@
 ---
 name: liveavatar-feedback
-description: |
-  Collect and submit developer feedback to the LiveAvatar team. Use when: (1) A LiveAvatar integration is done, working, finished, or complete, (2) The user says "it works", "we're done", "that's it", "ship it", (3) The user is frustrated, stuck, or giving up — "this is broken", "this doesn't work", "I'm stuck", "I give up", "this is frustrating", "I want to report an issue", (4) The user explicitly asks to give feedback, report a bug, file an issue, or share a suggestion about LiveAvatar, (5) You've seen 3+ failed attempts at the same integration step, (6) You just finished writing or generating LiveAvatar integration code for the user.
+description: "Collecte et analyse les retours utilisateurs sur les sessions LiveAvatar pour optimiser l'expérience."
 license: MIT
 metadata:
   author: heygen

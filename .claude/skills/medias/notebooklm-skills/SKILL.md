@@ -1,6 +1,9 @@
 ---
 name: notebooklm-skills
-description: "Transforme fichiers et dossiers en matériaux pédagogiques avec NotebookLM. Crée podcasts audio, vidéos explicatives, slides, guides d'étude, quiz, flashcards, infographies, mind maps et rapports depuis des PDF, textes, URLs ou dossiers."
+description: |
+  Transforme fichiers et dossiers en matériaux pédagogiques avec NotebookLM via le MCP `notebooklm-mcp`. Crée podcasts audio, vidéos explicatives, slide decks (avec retrait auto du watermark), guides d'étude, quiz, flashcards, infographies, mind maps et rapports depuis des PDF, textes, URLs ou dossiers. Workflow 3 phases (configure / confirm / process).
+  Utilise ce skill quand l'utilisateur dit : "crée un notebook NotebookLM", "génère un podcast NotebookLM", "transforme ces PDF en quiz/flashcards/mindmap", "matériaux pédagogiques NotebookLM", "audio overview de ces sources", ou veut produire un livrable pédagogique batch depuis sources hétérogènes.
+  NE PAS utiliser pour : production scénarisée vidéo schoolsWP (utiliser `schoolswp-youtube-studio` ou Remotion), TTS standalone (utiliser `text-to-speech`), ou formation gratuite plugin avec scripts vidéo (utiliser `formation-pipeline`).
 ---
 
 # Notebook Decks

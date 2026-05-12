@@ -1,6 +1,9 @@
 ---
 name: googledrive
-description: Espace métier Google Drive - gestion cloud, organisation fichiers, partage et stockage. Utiliser pour toute tâche liée à Google Drive (upload, dossiers, partage, recherche, organisation).
+description: |
+  Espace métier Google Drive pour schoolsWP : upload, organisation arborescente, recherche par nom/type/contenu, partage avec permissions granulaires, gestion versioning et corbeille. S'appuie sur le MCP Google Drive natif (read_file_content, search_files, create_file, copy_file, etc.).
+  Utilise ce skill quand l'utilisateur dit : "upload sur Drive", "cherche dans Drive", "partage ce fichier Drive", "organise dossier Drive", "récupère le fichier Drive", ou veut interagir avec le stockage cloud Google.
+  NE PAS utiliser pour : édition Google Sheets/Docs (utiliser MCP Sheets ou Drive read direct), backup config Claude Code (utiliser claude-config-backup), upload images articles WordPress (utiliser tools/wp-media-upload/), ou stockage assets repo git (utiliser le repo).
 user-invocable: false
 ---
 

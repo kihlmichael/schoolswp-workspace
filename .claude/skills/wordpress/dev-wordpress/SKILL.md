@@ -1,6 +1,9 @@
 ---
 name: dev-wordpress
-description: Développement WordPress expert conforme aux standards modernes (blocs, thèmes, plugins, REST API, Interactivity API). Utilise ce skill pour tout développement WordPress, création de blocs/plugins/thèmes ou guidance de code suivant les bonnes pratiques WordPress 6.9+.
+description: |
+  Développement WordPress expert aligné sur les standards modernes WP 6.9+ (PHP 8.0+) : blocs Gutenberg, block themes, plugins, REST API, Interactivity API, sécurité (nonces, capacités, sanitization, escaping), performance. Privilégie blocks > shortcodes, block.json > register PHP, theme.json > functions.php, REST > admin-ajax.
+  Utilise ce skill quand l'utilisateur dit : "développe en WordPress", "code WP moderne", "guidance WordPress", "best practices WP 6.9", ou pour toute tâche de dev WP qui ne tombe pas dans une niche déjà couverte par un skill plus spécialisé.
+  NE PAS utiliser pour : développement de blocs Gutenberg ciblés (utiliser `wp-block-development`), block themes / theme.json (utiliser `wp-block-themes`), plugins isolés (utiliser `wp-plugin-development`), REST API custom (utiliser `wp-rest-api`), Interactivity API (utiliser `wp-interactivity-api`), WP-CLI / ops (utiliser `wp-wpcli-and-ops`), ou triage initial d'un repo WP (utiliser `wp-project-triage` puis `wordpress-router`).
 compatibility: WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI.
 user-invocable: true
 metadata:

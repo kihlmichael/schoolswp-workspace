@@ -1,0 +1,160 @@
+/* ============================================================
+   TikTok cover schoolsWP - 9:16 vertical
+   Format : 1080x1920 (TikTok cover statique = première frame visible)
+   Différent des Instagram Stories : c'est une cover qui doit FAIRE CLIQUER
+   sur la vidéo. Plus accroché, plus interrogatif/teaser.
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1A1A1A;
+  padding: 40px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  padding: 200px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.slide--light { background: #F4F5F7; color: #0F1419; }
+.slide--dark  { background: #0F1419; color: #F4F5F7; }
+
+.slide__top {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__eyebrow {
+  color: #00D400;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.slide__teaser {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #4A5568;
+}
+
+.slide--dark .slide__teaser { color: #CBD5E0; }
+
+.slide__hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__hero-num {
+  color: #00D400;
+  font-weight: 800;
+  font-size: 460px;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.slide__title {
+  font-weight: 800;
+  font-size: 130px;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin-top: 24px;
+}
+
+.slide__title .accent { color: #00D400; }
+
+.slide__question {
+  font-weight: 800;
+  font-size: 110px;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-top: 28px;
+  color: #0F1419;
+}
+
+.slide--dark .slide__question { color: #F4F5F7; }
+
+.slide__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__cta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #00D400;
+  color: #0F1419;
+  font-weight: 800;
+  font-size: 38px;
+  padding: 22px 40px;
+  border-radius: 14px;
+  letter-spacing: -0.01em;
+  align-self: flex-start;
+  box-shadow: 0 14px 36px rgba(0, 212, 0, 0.3);
+}
+
+.slide__cta-tag::after {
+  content: '▶';
+  font-size: 30px;
+}
+
+.slide__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.slide__logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.slide__brand-tag {
+  font-weight: 500;
+  font-size: 24px;
+  color: #4A5568;
+  letter-spacing: 0.02em;
+}
+
+.slide--dark .slide__brand-tag { color: #94A3B8; }
+
+.halftone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.13;
+}
+
+.halftone--br { bottom: -200px; right: -200px; width: 800px; height: 800px; }
+.halftone--tl { top: -180px;    left: -180px;  width: 700px; height: 700px; }
+
+.slide--dark .halftone { opacity: 0.20; }

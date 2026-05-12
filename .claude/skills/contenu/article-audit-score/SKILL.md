@@ -1,12 +1,9 @@
 ---
 name: article-audit-score
-description: >
-  Applique la grille d'auto-audit V2 schoolsWP sur un article existant et retourne un score /100
-  detaille (12 criteres), un verdict de publication et des corrections actionnables par priorite.
-  Utilise ce skill des que l'utilisateur veut auditer un article, verifier s'il est pret a publier,
-  obtenir un score de qualite, ou dit "audit score", "grille d'audit", "score article", "est-ce
-  que cet article est pret ?", "verifie la qualite de...", "audit V2", "note l'article",
-  "article-audit-score fichier.md".
+description: |
+  Applique la grille d'auto-audit V2 schoolsWP sur un article existant et retourne un score /100 détaillé (12 critères), un verdict de publication et des corrections actionnables par priorité.
+  Utilise ce skill quand l'utilisateur dit : "audit score", "grille d'audit", "score article", "est-ce que cet article est prêt ?", "vérifie la qualité de...", "audit V2", "note l'article", "article-audit-score fichier.md", ou veut auditer/scorer un article publié ou en draft.
+  NE PAS utiliser pour : produire un article (utiliser `schoolswp-article-workflow` ou `thruuu-writer`), refaire le brief SEO (utiliser `thruuu-brief-builder`), ou auditer la voix/ton schoolsWP (utiliser `branding`).
 ---
 
 # /article-audit-score — Grille d'auto-audit V2 schoolsWP

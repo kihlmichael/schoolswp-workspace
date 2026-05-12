@@ -1,16 +1,9 @@
 ---
 name: performance-loop
-description: >
-  schoolsWP Performance Loop — boucle d'amélioration continue TDD (Test · Develop · Debug)
-  pour optimisation rigoureuse et itération disciplinée. Framework opérationnel : définir le
-  test avant d'agir, implémenter de manière ciblée, analyser l'écart, itérer. Déclencher pour
-  toute demande d'optimisation concrète avec mesure : "optimise ce CTR", "améliore cette page",
-  "mon taux de conversion stagne", "comment je mesure si ça marche", "je veux itérer sur",
-  "améliorer ma séquence email", "optimiser ce cluster", "tester ce title SEO", "améliorer
-  une landing qui ne convertit pas encore", "scaler ce qui marche". Différence avec PACT :
-  PACT formule une hypothèse stratégique. Performance Loop est la boucle d'exécution rigoureuse
-  qui suit — discipline + mesure + itération. Préférer Performance Loop quand on est déjà dans
-  l'exécution et qu'on veut améliorer en continu, pas juste tester une hypothèse.
+description: |
+  schoolsWP Performance Loop — TDD (Test · Develop · Debug) appliqué au SEO, contenu, systèmes WordPress. Discipline d'amélioration continue : définir le test avant d'agir, implémenter ciblé, analyser l'écart, itérer. Règle d'or : on ne produit rien sans savoir comment on mesure. Pour exécution déjà engagée, pas pour tester une première hypothèse.
+  Utilise ce skill quand l'utilisateur dit : "scale ce qui marche", "itère sur ce title SEO", "améliore en continu cette séquence", "comment je mesure proprement avant de scaler", ou veut une discipline de mesure stricte sur du déjà-en-prod.
+  NE PAS utiliser pour : formuler la première hypothèse stratégique (utiliser `pact-engine`), un audit ponctuel sans logique d'itération (utiliser `race-engine`), produire un livrable from scratch (utiliser `credo-engine`), ou cadrer un nouveau projet (utiliser `specs-engine`).
 ---
 
 # schoolsWP Performance Loop

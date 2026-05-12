@@ -1,15 +1,15 @@
 ---
 name: ai-citation-opportunity
 description: |
-  Identifie les requetes conversationnelles AI Search les plus citables et les contenus a produire
+  Identifie les requêtes conversationnelles AI Search les plus citables et les contenus a produire
   pour maximiser les citations par ChatGPT, Perplexity, Google AI Overview et Bing Copilot.
-  Genere des requetes realistes en langage naturel + intentions + formats de contenu + angles de preuve.
+  Génère des requêtes realistes en langage naturel + intentions + formats de contenu + angles de preuve.
   Audience schoolsWP par defaut (freelances, formateurs, entrepreneurs WordPress), modifiable pour
   toute niche. Declenche ce skill des que l'utilisateur veut identifier des opportunites de citation IA,
-  generer des requetes conversationnelles, trouver les questions que son audience pose aux IA, prioriser
+  générer des requêtes conversationnelles, trouver les questions que son audience pose aux IA, prioriser
   la production editoriale par potentiel de citation, ou preparer un pipeline GEO/AIO.
-  Mots-cles declencheurs FR : requetes IA, citations IA, contenu citable, questions ChatGPT,
-  requetes Perplexity, AI Overviews, opportunites de citation, "quelles questions les gens posent aux IA".
+  Mots-cles declencheurs FR : requêtes IA, citations IA, contenu citable, questions ChatGPT,
+  requêtes Perplexity, AI Overviews, opportunites de citation, "quelles questions les gens posent aux IA".
   Mots-cles declencheurs EN : AI citation, citable content, conversational queries, AI search queries,
   generative engine optimization queries, LLM SEO queries.
   NE PAS utiliser ce skill pour : auditer un article existant (utiliser llm_seo), optimiser une page

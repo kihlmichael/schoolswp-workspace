@@ -1,10 +1,9 @@
 ---
 name: wp-interactivity-api
 description: |
-  Construit et débogue des fonctionnalités WordPress Interactivity API (directives data-wp-*,
-  store/state/actions @wordpress/interactivity, intégration block viewScriptModule, wp_interactivity_*())
-  incluant performance, hydratation et comportement des directives.
-  Déclenche pour "Interactivity API WordPress", "data-wp-*", "@wordpress/interactivity", "store WordPress".
+  Build et debug WordPress Interactivity API : directives data-wp-* (interactive, on, bind, context), store et state et actions via @wordpress/interactivity, intégration bloc viewScriptModule, helpers PHP wp_interactivity_*, perf, hydratation et "directives don't fire". Couvre block-level, theme-level et plugin "enhance existing markup".
+  Utilise ce skill quand l'utilisateur dit : "Interactivity API WordPress", "data-wp-interactive", "store WordPress", "viewScriptModule", "directives ne se déclenchent pas", ou "hydratation bloc WordPress".
+  NE PAS utiliser pour : développement bloc Gutenberg sans interactivité (utiliser wp-block-development), block theme et theme.json (utiliser wp-block-themes), composants React WPDS (utiliser wpds), REST endpoints (utiliser wp-rest-api), ou jQuery legacy patterns (à migrer vers Interactivity API mais hors scope).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

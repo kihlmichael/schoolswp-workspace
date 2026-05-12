@@ -1,8 +1,8 @@
 ---
 name: schoolswp-content-studio
 description: |
-  Met en forme du texte brut schoolsWP (notes, transcript, voice note, brouillon, idées en vrac) en contenu court ou intermédiaire prêt à publier. Formats couverts UNIQUEMENT : post LinkedIn/Bluesky, newsletter schoolsWP News, script vidéo YouTube.
-  Utilise ce skill quand l'utilisateur dit : "écris un post", "rédige la newsletter", "script vidéo", "transforme mes notes", "restructure ce brouillon", "mets en forme ce transcript", "nettoie ce texte", ou fournit du texte brut à structurer.
+  Met en forme du texte brut schoolsWP (notes, transcript, voice note, brouillon, idées en vrac) en contenu court ou intermédiaire prêt à publier. Formats couverts UNIQUEMENT : post LinkedIn/Bluesky, newsletter schoolsWP News (avec PS et bloc offres), script vidéo YouTube.
+  Utilise ce skill quand l'utilisateur dit : "écris un post", "rédige la newsletter", "draft newsletter", "newsletter schoolsWP", "newsletter du dimanche", "newsletter de la semaine", "script vidéo", "transforme mes notes", "restructure ce brouillon", "mets en forme ce transcript", "nettoie ce texte", ou fournit du texte brut à structurer.
   NE PAS utiliser pour : article de blog SEO long (voir schoolswp-article-workflow ou thruuu-writer selon input), recyclage d'un article déjà publié (article-multiformat), arbitrage éditorial / priorisation de roadmap (brain-autonome), ou contenu sans lien avec schoolsWP.
 ---
 

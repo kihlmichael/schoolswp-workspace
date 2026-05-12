@@ -1,4 +1,4 @@
-# Séquence affiliation FluentCRM Pro — prise de relais post-welcome
+# Séquence affiliation FluentCRM Pro : prise de relais post-welcome
 
 Séquence produite via skill `plugin-email-sequence` le 2026-04-16. Prend le relais de la séquence welcome via la bascule `welcome_completed` → `fluentcrm-sequence`.
 
@@ -14,7 +14,7 @@ Séquence produite via skill `plugin-email-sequence` le 2026-04-16. Prend le rel
 ## Récapitulatif
 
 | Email | Jour | Objet principal | Objet alternatif | Angle |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | J0 | Combien tu paies Mailchimp ce mois-ci ? | Le coût caché de ton email marketing | Le problème |
 | 2 | J2 | Ce que tes contacts font vraiment dans WordPress | FluentCRM voit ce que Brevo ne verra jamais | Découverte |
 | 3 | J4 | 3 ans avec FluentCRM chez mes clients | Ce que j'ai arrêté de faire grâce à FluentCRM | La preuve |
@@ -23,7 +23,7 @@ Séquence produite via skill `plugin-email-sequence` le 2026-04-16. Prend le rel
 
 ---
 
-## Email 1 — J0 · Le problème
+## Email 1 : J0 · Le problème
 
 **Objet** : Combien tu paies Mailchimp ce mois-ci ?
 **Objet alternatif** : Le coût caché de ton email marketing
@@ -55,7 +55,7 @@ Je te pose juste la question que personne ne te pose.
 
 ---
 
-## Email 2 — J2 · La découverte
+## Email 2 : J2 · La découverte
 
 **Objet** : Ce que tes contacts font vraiment dans WordPress
 **Objet alternatif** : FluentCRM voit ce que Brevo ne verra jamais
@@ -82,7 +82,7 @@ Pas à côté.
 Ça change tout : tu segmentes sur des comportements réels,
 pas juste sur des clics email.
 
-J'ai détaillé ça ici : [FluentCRM — les 4 automations indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/)
+J'ai détaillé ça ici : [FluentCRM : les 4 automations indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/)
 
 Michaël
 
@@ -91,7 +91,7 @@ P.S. : La version gratuite suffit pour tester tout ça.
 
 ---
 
-## Email 3 — J4 · La preuve
+## Email 3 : J4 · La preuve
 
 **Objet** : 3 ans avec FluentCRM chez mes clients
 **Objet alternatif** : Ce que j'ai arrêté de faire grâce à FluentCRM
@@ -109,7 +109,7 @@ Ce que j'ai arrêté de faire :
 Ce que j'ai commencé à faire :
 - Livrer une automation welcome dès l'installation (avec le template que tu as)
 - Segmenter sur l'achat WooCommerce sans exporter quoi que ce soit
-- Facturer la config FluentCRM comme un package — c'est plus clair pour le client
+- Facturer la config FluentCRM comme un package, c'est plus clair pour le client
 
 Un exemple concret : sur un client formateur, la séquence
 "acheteur formation débutant" vs "acheteur formation avancée" a doublé
@@ -120,13 +120,13 @@ Tu peux installer FluentCRM gratuitement ici :
 
 Michaël
 
-P.S. : Une limite honnête — l'UI des funnels demande 20 min d'adaptation
+P.S. : Une limite honnête, l'UI des funnels demande 20 min d'adaptation
 si tu viens d'ActiveCampaign. Après, tu ne veux plus revenir en arrière.
 ```
 
 ---
 
-## Email 4 — J7 · Gratuit vs Pro
+## Email 4 : J7 · Gratuit vs Pro
 
 **Objet** : Gratuit vs Pro : quand ça vaut vraiment le coup
 **Objet alternatif** : La seule raison de passer Pro
@@ -158,13 +158,13 @@ Demain je t'envoie le lien direct et je te laisse décider.
 
 Michaël
 
-P.S. : Tu n'es pas obligé d'acheter maintenant — tu peux tester la version
+P.S. : Tu n'es pas obligé d'acheter maintenant. Tu peux tester la version
 gratuite pendant un mois avant de voir si le Pro t'apporterait quelque chose.
 ```
 
 ---
 
-## Email 5 — J10 · La décision
+## Email 5 : J10 · La décision
 
 **Objet** : Dernière chose sur FluentCRM
 **Objet alternatif** : Je te laisse décider
@@ -198,13 +198,13 @@ réponds à cet email. Je te file un coup de main.
 
 ## Automation FluentCRM
 
-**Nom** : `SEQ — FluentCRM Pro Discovery`
+**Nom** : `SEQ - FluentCRM Pro Discovery`
 **Trigger upstream** : tag `welcome_completed` appliqué par la séquence welcome → applique `fluentcrm-sequence`
 
 ### Tags à créer
 
 | Tag | Rôle | Appliqué quand |
-|---|---|---|
+| --- | --- | --- |
 | `fluentcrm-sequence` | Entrée | Bascule post-welcome |
 | `fluentcrm-converti` | Conversion | Clic sur `fluentcrm.com` (email 4 ou 5) |
 | `fluentcrm-termine` | Fin naturelle | Email 5 envoyé sans conversion |
@@ -247,7 +247,7 @@ réponds à cet email. Je te file un coup de main.
 
 ### Stratégie post-séquence
 
-- **Relance J+30** : uniquement si nouvelle version majeure FluentCRM Pro — tag temporaire `fluentcrm-relance-30`
+- **Relance J+30** : uniquement si nouvelle version majeure FluentCRM Pro, tag temporaire `fluentcrm-relance-30`
 - **Cluster "stack WordPress schoolsWP"** : inclusion dans séquence transversale FluentCRM + Fluent Forms + FluentCart
 - **Ne rien faire** : option par défaut (pas de harcèlement)
 
@@ -256,7 +256,7 @@ réponds à cet email. Je te file un coup de main.
 ## Checklist pré-lancement
 
 - [ ] Les 3 tags sont créés dans FluentCRM
-- [ ] L'automation `SEQ — FluentCRM Pro Discovery` est en mode brouillon
+- [ ] L'automation `SEQ - FluentCRM Pro Discovery` est en mode brouillon
 - [ ] La bascule depuis `welcome_completed` est testée (pas de gap)
 - [ ] Les 5 emails sont relus (aucune fonctionnalité inventée, pas de prix non vérifié)
 - [ ] Les liens externes ouvrent en nouvel onglet (`target="_blank" rel="noopener"`)
@@ -270,7 +270,7 @@ réponds à cet email. Je te file un coup de main.
 ## KPI de suivi
 
 | KPI | Seuil acceptable | Seuil bon | Action si en dessous |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Taux d'ouverture moyen | > 25 % | > 40 % | A/B objets E1 et E3 |
 | Taux de clic Email 3 | > 3 % | > 6 % | Revoir angle preuve ou CTA install |
 | Taux de clic Email 5 | > 2 % | > 5 % | Revoir PS ou ajouter deadline doux |

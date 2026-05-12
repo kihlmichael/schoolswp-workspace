@@ -1,9 +1,9 @@
 ---
 name: wp-phpstan
 description: |
-  Configure, exécute et corrige PHPStan dans les projets WordPress (plugins/thèmes/sites) : setup
-  phpstan.neon, baselines, typage spécifique WordPress et gestion des classes de plugins tiers.
-  Déclenche pour "PHPStan WordPress", "analyse statique PHP", "phpstan.neon", "erreurs PHPStan".
+  Configure, exécute et corrige PHPStan dans les projets WordPress (plugins, thèmes, sites) : setup phpstan.neon, baseline, typage WordPress-friendly via PHPDoc (REST requests, hooks, query results), stubs WordPress core (szepeviktor/phpstan-wordpress ou php-stubs/wordpress-stubs), gestion des classes de plugins tiers (stubs et autoload et ignores ciblés).
+  Utilise ce skill quand l'utilisateur dit : "PHPStan WordPress", "analyse statique PHP", "phpstan.neon", "erreurs PHPStan", "phpstan-baseline", ou "stubs WordPress".
+  NE PAS utiliser pour : standards de code PHP non-statiques (utiliser PHPCS via wordpress-pro), tests PHPUnit ou Playwright (hors scope, voir wp-project-triage pour détecter les configs), guidance générale dev WP (utiliser dev-wordpress), ou debug runtime PHP non-typage (utiliser wp-performance ou logs).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Requires Composer-based PHPStan."
 ---
 

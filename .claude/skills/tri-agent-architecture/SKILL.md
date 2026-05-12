@@ -1,6 +1,9 @@
 ---
 name: tri-agent-architecture
-description: Architecture a 3 agents (Planner, Executor, Verifier) pour des workflows deterministes et audites. Utiliser quand l'utilisateur veut concevoir un système multi-agents fiable avec séparation planification/exécution/vérification, éviter les boucles infinies et garantir un gate humain final avant toute modification critique.
+description: |
+  Pattern d'architecture multi-agents 3 roles : Planner (read-only, scope, plan.md, criteres d'acceptation), Executor (write cible, edit_block ou write_file), Verifier (read+execute, lance tests, rapport, escalade humain). Stateless, retries limites a 3 puis escalade, max 3 fichiers Planner sans approval, gate humain final obligatoire.
+  Utilise ce skill quand l'utilisateur dit : "architecture multi-agents", "tri-agent", "planner executor verifier", "system d'agents fiable", "eviter boucle infinie agent", "gate humain", ou pour concevoir un workflow deterministe et audite avec separation des roles.
+  NE PAS utiliser pour : implementer un agent Python schoolsWP unique (utiliser core/agents-py/ et son CLAUDE.md), orchestrer la fleet schoolswp-agents existante (4 instances autonomes, voir CLAUDE.md projet), planifier une tache (utiliser planning-and-task-breakdown), ou choisir un sub-agent Claude Code (voir table .claude/agents/).
 ---
 
 # Tri-Agent Architecture (Planner, Executor, Verifier)

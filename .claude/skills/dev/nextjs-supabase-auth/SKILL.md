@@ -1,9 +1,9 @@
 ---
 name: nextjs-supabase-auth
 description: |
-  Intégration experte de Supabase Auth avec Next.js App Router. Couvre l'authentification, le middleware,
-  les routes protégées et la gestion de session avec Supabase et Next.js.
-  Déclenche pour "Supabase Auth Next.js", "authentification Next.js", "login Supabase", "middleware auth".
+  Intègre Supabase Auth avec Next.js App Router : @supabase/ssr, middleware pour rafraîchir la session, routes protégées, callback OAuth, Server Actions auth, gestion cookie-based.
+  Utilise ce skill quand l'utilisateur dit : "Supabase Auth Next.js", "login Supabase", "middleware auth Next", "protéger une route Next", "callback OAuth Supabase", "session côté serveur Next", ou pour toute auth Next.js + Supabase.
+  NE PAS utiliser pour : auth WordPress (utiliser le MCP `novamira-schoolswp-com`), auth Stripe customer (utiliser `stripe-integration`), ou pour des patterns Next.js sans Supabase (utiliser `nextjs-best-practices`).
 risk: unknown
 source: "vibeship-spawner-skills (Apache 2.0)"
 date_added: "2026-02-27"

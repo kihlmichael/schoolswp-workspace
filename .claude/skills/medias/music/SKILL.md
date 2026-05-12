@@ -1,10 +1,9 @@
 ---
 name: music
 description: |
-  Génère de la musique via l'API ElevenLabs Music. Utilise ce skill pour créer des pistes instrumentales,
-  des chansons avec paroles, de la musique de fond, des jingles ou toute composition musicale IA.
-  Supporte la génération par prompt et les plans de composition détaillés.
-  Déclenche pour "génère de la musique", "musique IA", "ElevenLabs Music", "jingle", "bande-son".
+  Génère de la musique via l'API ElevenLabs Music. Pour pistes instrumentales, chansons avec paroles, musique de fond, jingles, bande-son YouTube/intro/outro. Supporte génération par prompt et plans de composition détaillés. Requiert `ELEVENLABS_API_KEY`.
+  Utilise ce skill quand l'utilisateur dit : "génère de la musique", "musique IA", "ElevenLabs Music", "jingle", "bande-son", "intro/outro vidéo", "musique de fond formation", ou veut une piste musicale originale via IA.
+  NE PAS utiliser pour : effets sonores ponctuels (utiliser `sound-effects`), voix-off narration (utiliser `text-to-speech` ou ElevenLabs voice direct), transcription audio (utiliser `speech-to-text`), ou musique libre de droits préexistante (chercher catalogue YouTube Audio Library / Epidemic Sound).
 license: MIT
 compatibility: Requires internet access and an ElevenLabs API key (ELEVENLABS_API_KEY).
 metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv": "ELEVENLABS_API_KEY"}}

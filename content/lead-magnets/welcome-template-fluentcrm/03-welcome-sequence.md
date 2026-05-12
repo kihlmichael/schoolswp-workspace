@@ -1,10 +1,10 @@
-# Séquence FluentCRM — Accueil du lead qui a téléchargé le PDF
+# Séquence FluentCRM : Accueil du lead qui a téléchargé le PDF
 
 > Attention : séquence que vit **le lead après inscription**. À ne pas confondre avec la séquence *contenue dans* le PDF.
 
 ---
 
-## Email 1 — T+0 (immédiat) · Livraison
+## Email 1 : T+0 (immédiat) · Livraison
 
 **Objet** : Ton template est juste ici
 **Pré-header** : Clique pour télécharger la séquence welcome FluentCRM
@@ -34,7 +34,7 @@ schoolsWP
 
 ---
 
-## Email 2 — T+1 jour · Contexte
+## Email 2 : T+1 jour · Contexte
 
 **Objet** : Pourquoi j'ai créé ce template
 **Pré-header** : L'histoire de 40 comptes clients vides
@@ -64,7 +64,7 @@ Michaël
 
 ---
 
-## Email 3 — T+3 jours · Valeur additionnelle
+## Email 3 : T+3 jours · Valeur additionnelle
 
 **Objet** : L'astuce que j'ajoute à chaque compte client
 **Pré-header** : Goal tracking sur l'email 3 = +30 % de conversions
@@ -82,7 +82,7 @@ Résultat chez mes clients : ~30 % des inscrits déclenchent ce goal.
 Ça donne une liste ultra-segmentée, prête pour une offre ciblée.
 
 J'ai écrit un article complet sur les automations FluentCRM
-que j'installe en priorité : [FluentCRM — les 4 automations indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/)
+que j'installe en priorité : [FluentCRM : les 4 automations indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/)
 
 Tu peux tester FluentCRM Pro ici si tu ne l'as pas encore :
 [FluentCRM Pro](https://fluentcrm.com/) (affilié, ça soutient le travail)
@@ -92,7 +92,7 @@ Michaël
 
 ---
 
-## Email 4 — T+7 jours · Transition
+## Email 4 : T+7 jours · Transition
 
 **Objet** : Ce que tu vas recevoir ensuite
 **Pré-header** : La suite côté FluentCRM
@@ -107,9 +107,9 @@ Récap de la semaine :
 - J+1 : pourquoi il existe
 - J+3 : l'astuce goal tracking email 3
 
-La suite : je t'envoie sur 3 semaines une série pratique sur FluentCRM —
-les automations que j'installe en priorité, les pièges à éviter,
-la façon dont je justifie la licence chez mes clients.
+La suite : je t'envoie sur 3 semaines une série pratique sur FluentCRM
+(les automations que j'installe en priorité, les pièges à éviter,
+la façon dont je justifie la licence chez mes clients).
 
 Une seule question avant de démarrer :
 qu'est-ce que tu essaies de résoudre en priorité côté FluentCRM ?
@@ -125,7 +125,7 @@ schoolsWP
 
 ## Planning FluentCRM (paramétrage funnel)
 
-- **Funnel name** : `Welcome — LM Welcome Template FluentCRM`
+- **Funnel name** : `Welcome - LM Welcome Template FluentCRM`
 - **Trigger** : Form submission → `lead-magnet-welcome-template-fluentcrm`
 - **Starting action** : Apply tag `source_lm_fluentcrm` + Add to list `lead_magnet_welcome_template`
 - **Action 1** : Send Email 1 (T+0, immédiat) + Apply tag `template_welcome_delivered`
@@ -151,7 +151,7 @@ schoolsWP
 
 ## KPIs à suivre
 
-1. **Taux de conversion landing** (visiteurs → inscrits) · cible **25–40 %**
+1. **Taux de conversion landing** (visiteurs → inscrits) · cible **25-40 %**
 2. **Taux d'ouverture email 1** · cible **> 60 %**
 3. **Taux de clic email 1** (téléchargement PDF) · cible **> 40 %**
 4. **Taux de réponse email 2** · cible **> 2 %**

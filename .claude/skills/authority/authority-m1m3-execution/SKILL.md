@@ -1,6 +1,9 @@
 ---
 name: authority-m1m3-execution
-description: Generer et executer un plan M1 a M3 semaine par semaine pour lancer schoolsWP (pilier + cocon + money pages + capture email + tracking). Utiliser quand l’utilisateur demande un plan d’execution hebdo, un calendrier M1-M3, ou une feuille de route de lancement.
+description: |
+  Plan d'exécution schoolsWP semaine par semaine sur 3 mois (S1-S12) au rythme 2 contenus + 1 amélioration système / semaine. Couvre setup tracking, fondation SEO, pilier + cocon, money pages, capture email, KPI fin M3, séquences email 7 jours, maillage interne minimal.
+  Utilise ce skill quand l'utilisateur dit : "plan M1-M3 semaine par semaine", "calendrier d'exécution 3 mois", "feuille de route hebdomadaire", "rythme 2 contenus + 1 système", ou veut savoir quoi faire chaque semaine.
+  NE PAS utiliser pour : la roadmap stratégique 24 mois (utiliser `authority-domination-roadmap`), la cartographie des 50 pages cible (utiliser `authority-domination-50p`), ou un plan de lancement formation cohorte 21 jours (utiliser `authority-launch`).
 ---
 
 # Authority M1-M3 Execution (schoolsWP)

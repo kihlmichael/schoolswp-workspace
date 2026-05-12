@@ -1,6 +1,9 @@
 ---
 name: engine
-description: Methode unifiee schoolsWP en 6 modules (Architecture, Strategy, Production, Transformation, Experimentation, Performance). Utiliser quand l'utilisateur veut appliquer un framework complet de la stratégie à l'optimisation, piloter un projet de A à Z, ou structurer une approche systématique SEO/contenu/business schoolsWP.
+description: |
+  Méthode unifiée schoolsWP ENGINE (ASPT EP) en 6 modules ordonnés : Architecture → Strategy → Production → Transformation → Experimentation → Performance Loop. Remplace l'usage isolé des frameworks (SPECS, RACE, CREDO, DITO, PACT, TDD) par une seule méthode end-to-end.
+  Utilise ce skill quand l'utilisateur dit : "applique la méthode complète", "pilote ce projet de A à Z", "approche systématique schoolsWP", "passe par les 6 modules", ou veut une exécution from scratch jusqu'à l'optimisation.
+  NE PAS utiliser pour : un seul module isolé (utiliser le moteur dédié `specs-engine`, `credo-engine`, `dito-engine`, etc.), un audit ponctuel sur URL (utiliser `race-engine`), ou le routing automatique entre frameworks (utiliser `os-router`).
 ---
 
 # schoolsWP ENGINE (ASPT EP)

@@ -1,0 +1,18 @@
+{
+  "name": "html-to-png",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Converts slide-*.html files to 1080x1350 PNG (Instagram 4:5) or any custom dimensions. Built for schoolsWP Instagram carrousels but reusable for any HTML slide deck.",
+  "bin": {
+    "capture-slides": "./capture.mjs"
+  },
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.50.0",
+    "yaml": "^2.8.4"
+  }
+}

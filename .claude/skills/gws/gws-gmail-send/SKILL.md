@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-send
 version: 1.0.0
-description: "Gmail: Send an email."
+description: |
+  Helper gws gmail +send : envoie un email Gmail (to, subject, body, support cc/bcc, html, pièces jointes). Une commande shell pour notifications, relances, ou alertes pilotées par script.
+  Utilise ce skill quand l'utilisateur dit : "envoie un email", "send mail Gmail CLI", "notification mail depuis script", "envoie un récap par email", ou pour brancher Gmail comme transport notification dans un workflow n8n / cron.
+  NE PAS utiliser pour : répondre à un thread existant avec threading correct (utiliser gws-gmail-reply ou gws-gmail-reply-all), forwarder un message (utiliser gws-gmail-forward), gérer une campagne marketing (utiliser FluentCRM via MCP fluentcrm), ou envoi multi-destinataires segmenté (CRM, pas Gmail).
 metadata:
   openclaw:
     category: "productivity"

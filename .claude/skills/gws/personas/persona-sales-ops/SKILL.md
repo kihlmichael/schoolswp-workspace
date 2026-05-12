@@ -1,7 +1,10 @@
 ---
 name: persona-sales-ops
 version: 1.0.0
-description: "Manage sales workflows — track deals, schedule calls, client comms."
+description: |
+  Profil orchestré pour les ops commerciales : prep de calls clients, log des deals en Sheets, conversion email-to-task, partage de propositions Drive, digest hebdo pipeline. Combine gws-gmail, gws-calendar, gws-sheets, gws-drive.
+  Utilise ce skill quand l'utilisateur dit : "active la persona sales ops", "mode commercial Workspace", "je suis mon pipeline et mes calls clients", ou pour adopter une posture sales orientée pipeline et follow-up.
+  NE PAS utiliser pour : profil customer support orienté ticketing (utiliser persona-customer-support), profil project manager (utiliser persona-project-manager), skill Sheets seul (utiliser gws-sheets), ou agent CRM schoolsWP côté FluentCRM (utiliser flow).
 metadata:
   openclaw:
     category: "persona"

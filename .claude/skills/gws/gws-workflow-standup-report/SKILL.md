@@ -1,7 +1,10 @@
 ---
 name: gws-workflow-standup-report
 version: 1.0.0
-description: "Google Workflow: Today's meetings + open tasks as a standup summary."
+description: |
+  Helper gws workflow +standup-report : agrège les meetings du jour (Calendar) + les tâches ouvertes (Tasks) en un résumé standup, sortie json / table / yaml / csv. Idéal pour cron matinal Slack / Discord / Chat.
+  Utilise ce skill quand l'utilisateur dit : "standup report", "résumé du matin", "meetings + tasks aujourd'hui", "daily digest Workspace", ou pour brancher un récap quotidien automatique vers Discord / Chat.
+  NE PAS utiliser pour : agenda seul (utiliser gws-calendar-agenda), to-do Tasks seule (utiliser gws-tasks), récap hebdo avec inbox count (utiliser gws-workflow-weekly-digest), ou prep d'une réunion précise (utiliser gws-workflow-meeting-prep).
 metadata:
   openclaw:
     category: "productivity"

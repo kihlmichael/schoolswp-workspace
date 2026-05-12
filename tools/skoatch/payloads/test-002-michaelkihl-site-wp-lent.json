@@ -1,0 +1,28 @@
+{
+  "input": "site wordpress lent que faire",
+  "language_id": 1,
+  "site_id": 503,
+  "content_prompt_id": 1425,
+  "is_auto_generated": true,
+  "is_auto_published": false,
+  "is_publish_to_draft": true,
+  "additional_instructions": "Article pratique sur les causes d'un site WordPress lent et les actions concretes pour le diagnostiquer et l'accelerer. Couvre : hebergement (mutualise vs VPS), cache (WP Rocket / FlyingPress), images (WebP / lazy load), plugins lourds (audit performance), base de donnees (optimisation tables), CDN, Core Web Vitals (LCP / INP). Donne des chiffres concrets : un site bien optimise vise <2s de LCP. Mentionne les outils gratuits PageSpeed Insights et GTmetrix.",
+  "is_featured_image": true,
+  "is_images_in": false,
+  "image_style_id": 1,
+  "content_options": {
+    "google_pages_count": 5,
+    "min_words_count": 900,
+    "max_words_count": 1400,
+    "min_h2_count": 5,
+    "max_h2_count": 7,
+    "min_images_count": 0,
+    "max_images_count": 0,
+    "min_lists_count": 3,
+    "max_lists_count": 6,
+    "use_bold": true,
+    "use_italic": false,
+    "use_lists": true,
+    "use_tables": false
+  }
+}

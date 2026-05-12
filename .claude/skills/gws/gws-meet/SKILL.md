@@ -1,7 +1,10 @@
 ---
 name: gws-meet
 version: 1.0.0
-description: "Manage Google Meet conferences."
+description: |
+  Google Meet v2 via la CLI gws : gère conferenceRecords (visios passées), participants, recordings, transcripts, smartNotes, et les spaces Meet. Pour récupérer transcripts ou enregistrements de réunions et les exporter ailleurs.
+  Utilise ce skill quand l'utilisateur dit : "récupère le transcript Meet", "list mes réunions Meet", "download recording Meet", "Meet smart notes", ou pour automatiser l'archivage de transcripts vers Drive ou un agent.
+  NE PAS utiliser pour : créer une visio (passer par gws-calendar-insert avec conferenceData hangoutsMeet), événements Workspace temps réel (utiliser gws-events-subscribe target meet), ou prep de réunion à venir (utiliser gws-workflow-meeting-prep).
 metadata:
   openclaw:
     category: "productivity"

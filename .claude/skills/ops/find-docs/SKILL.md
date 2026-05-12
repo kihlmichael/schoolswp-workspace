@@ -1,25 +1,9 @@
 ---
 name: find-docs
-description: >-
-  Retrieves authoritative, up-to-date technical documentation, API references,
-  configuration details, and code examples for any developer technology.
-
-  Use this skill whenever answering technical questions or writing code that
-  interacts with external technologies. This includes libraries, frameworks,
-  programming languages, SDKs, APIs, CLI tools, cloud services, infrastructure
-  tools, and developer platforms.
-
-  Common scenarios:
-  - looking up API endpoints, classes, functions, or method parameters
-  - checking configuration options or CLI commands
-  - answering "how do I" technical questions
-  - generating code that uses a specific library or service
-  - debugging issues related to frameworks, SDKs, or APIs
-  - retrieving setup instructions, examples, or migration guides
-  - verifying version-specific behavior or breaking changes
-
-  Prefer this skill whenever documentation accuracy matters or when model
-  knowledge may be outdated.
+description: |
+  Récupère la documentation technique officielle à jour pour n'importe quelle techno (libs, frameworks, langages, SDK, API, CLI, services cloud) via la CLI Context7 (`ctx7`). Workflow en 2 étapes : `ctx7 library` pour résoudre l'ID, puis `ctx7 docs` pour requêter. À privilégier dès que la précision documentaire compte ou quand la connaissance modèle peut être périmée.
+  Utilise ce skill quand l'utilisateur dit : "doc de X", "comment utiliser tel SDK", "endpoint API de Y", "options CLI de Z", "exemples d'usage", "breaking changes version N", "guide de migration", ou pose une question technique sur un outil externe.
+  NE PAS utiliser pour : recherche prix/version/comparaison rapide (utiliser `fast-websearch`), doc Claude Code interne (utiliser MCP `claude-code-guide`), doc Microsoft Azure spécifiquement (utiliser MCP Microsoft Learn), ou règles internes schoolsWP (lire les fichiers `.claude/rules/`).
 ---
 
 # Documentation Lookup

@@ -1,17 +1,9 @@
 ---
 name: thruuu-brief-builder
-description: >
-  Remplit un brief thruuu (format 10 onglets) à partir de données brutes : mot-clé, export thruuu
-  (rapport SERP), DataForSEO, Google Search Console, notes concurrents, contenus schoolsWP.
-  Sortie en 3 blocs — ANALYSE, BRIEF STRUCTURÉ, TEXTES PRÊTS À COLLER — avec tags inline
-  [FAIT]/[DÉDUCTION]/[À VÉRIFIER] sur chaque affirmation. 2 modes de sortie : **compact** par
-  défaut (brief builder pur, BLOC 3 ultra-collable dans thruuu.com) ou **étendu** sur demande
-  explicite (ajoute consulting SEO : KPI, netlinking, production vidéo). Déclenche ce skill dès
-  que l'utilisateur dit "brief thruuu", "remplis un brief thruuu", "prépare le brief thruuu pour
-  [mot-clé]", "génère mon brief thruuu à partir de ces données", "brief thruuu comparatif / avis
-  / tutoriel / BOFU". NE PAS confondre avec thruuu-writer (brief → article) ni avec
-  seo-brief-generator (brief schoolsWP interne). Ce skill produit un brief thruuu en amont de
-  thruuu-writer.
+description: |
+  Remplit un brief thruuu (format 10 onglets) à partir de données brutes : mot-clé, export thruuu (rapport SERP), DataForSEO, GSC, notes concurrents, contenus schoolsWP. Sortie en 3 blocs (ANALYSE, BRIEF STRUCTURÉ, TEXTES PRÊTS À COLLER) avec tags inline [FAIT]/[DÉDUCTION]/[À VÉRIFIER]. 2 modes : compact (défaut, BLOC 3 collable < 1500 mots) ou étendu (opt-in : KPI, netlinking, vidéo).
+  Utilise ce skill quand l'utilisateur dit : "brief thruuu", "remplis un brief thruuu", "prépare le brief thruuu pour [mot-clé]", "génère mon brief thruuu à partir de ces données", "brief thruuu comparatif / avis / tutoriel / BOFU", ou fournit un rapport thruuu + DataForSEO et veut un brief à coller dans thruuu.com.
+  NE PAS utiliser pour : rédaction d'article depuis un brief existant (utiliser `thruuu-writer`), brief schoolsWP interne 10 sections maison (utiliser `seo-brief-generator`), ou stratégie de contenu multi-clusters depuis export thruuu (utiliser `thruuu-strategist`).
 ---
 
 # thruuu-brief-builder

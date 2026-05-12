@@ -1,15 +1,15 @@
 ---
 name: vscode-agent-visual
 description: |
-  Guide expert pour creer des extensions VS Code avec avatars animes (agents visuels)
-  pilotes par Claude Code. Couvre WebviewView, WebviewPanel, message passing, integration
+  Guide expert pour créer des extensions VS Code avec avatars animes (agents visuels)
+  pilotes par Claude Code. Couvre WebviewView, WebviewPanel, message passing, intégration
   CLI/hooks/MCP, CSP, SecretStorage, animation Canvas/Lottie, commandes VS Code et terminal.
   Declenche pour "extension VS Code avatar", "agent visuel VS Code", "avatar anime IDE",
   "webview animee VS Code", "Claude Code extension visuelle", "pets VS Code", "companion VS Code",
   "panneau anime VS Code", "assistant visuel VS Code", "webview Canvas Lottie VS Code",
-  "creer une extension VS Code avec un personnage", "agent anime dans l'editeur".
-  Utiliser aussi quand l'utilisateur veut integrer Claude Code dans une extension VS Code custom,
-  ou quand il parle de webviews animees, de sidebar avec avatar, ou de chat integre dans VS Code.
+  "créer une extension VS Code avec un personnage", "agent anime dans l'editeur".
+  Utiliser aussi quand l'utilisateur veut intégrer Claude Code dans une extension VS Code custom,
+  ou quand il parle de webviews animees, de sidebar avec avatar, ou de chat intègre dans VS Code.
 license: MIT
 metadata:
   author: contact@michaelkihl.fr

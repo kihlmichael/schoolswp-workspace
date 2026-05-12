@@ -1,6 +1,9 @@
 ---
 name: authority-proof
-description: Section preuve et études de cas pour schoolsWP Authority System™. Utilise ce skill pour rédiger ou intégrer la section preuve de la page de vente : 3 cas réels mesurables, résultats chiffrés, argumentation sur la reproductibilité, transition vers l'action. Trigger pour "section preuve", "études de cas Authority Loop", "cas réels schoolsWP", "preuves chiffrées", "avant-après SEO", "résultats observés", "cas n°1 restructuration", "démonstration mécanisme", "crédibilité page de vente", "preuve que ça marche".
+description: |
+  Section preuve de la page de vente Authority System™ : 3 études de cas réels mesurables (page pilier restructurée, cluster freelance, machine omnicanale), résultats chiffrés avant/après, argumentation reproductibilité, transition vers le CTA. Format prêt à intégrer en section #9 de la sales page.
+  Utilise ce skill quand l'utilisateur dit : "section preuve page de vente", "études de cas Authority Loop", "preuves chiffrées schoolsWP", "résultats observés en 4 mois", ou veut nourrir la crédibilité de la formation avec des cas réels.
+  NE PAS utiliser pour : la promesse marketing globale (utiliser `authority-promise`), la page de vente complète (utiliser `authority-sales-page-copy`), ou les témoignages clients en social proof brut (collecte manuelle hors skill).
 ---
 
 # schoolsWP Authority System™ — Preuve & Études de cas

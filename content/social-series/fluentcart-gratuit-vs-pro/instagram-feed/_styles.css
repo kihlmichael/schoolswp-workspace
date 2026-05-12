@@ -1,0 +1,238 @@
+/* ============================================================
+   Carrousel Instagram schoolsWP - système de slides
+   Format : 1080x1350 (4:5 Instagram feed)
+   Brand : #00D400 vert signature (confirmé Michael 2026-05-07)
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1A1A1A;
+  padding: 40px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  padding: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.slide--light { background: #F4F5F7; color: #0F1419; }
+.slide--dark  { background: #0F1419; color: #F4F5F7; }
+
+/* === Top : counter + eyebrow === */
+
+.slide__top {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__counter {
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  color: #4A5568;
+}
+
+.slide--dark .slide__counter { color: #94A3B8; }
+
+.slide__eyebrow {
+  color: #00D400;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* === Big number 01-05 === */
+
+.slide__big-number {
+  color: #00D400;
+  font-weight: 800;
+  font-size: 220px;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin-bottom: 24px;
+}
+
+/* === Hero / titre === */
+
+.slide__hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__title {
+  font-weight: 800;
+  font-size: 168px;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.slide__title--md {
+  font-size: 130px;
+  line-height: 1.02;
+}
+
+.slide__title--sm {
+  font-size: 110px;
+  line-height: 1.04;
+}
+
+.slide__title .accent { color: #00D400; }
+
+/* === Body === */
+
+.slide__body {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.35;
+  margin-top: 40px;
+  max-width: 870px;
+  color: #4A5568;
+}
+
+.slide--dark .slide__body { color: #CBD5E0; }
+
+.slide__body strong {
+  font-weight: 700;
+  color: #0F1419;
+}
+
+.slide--dark .slide__body strong { color: #FFFFFF; }
+
+/* === Footer : logo + tagline + swipe === */
+
+.slide__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+.slide__logo--lg { height: 130px; }
+.slide__logo--xl { height: 200px; }
+
+.slide__brand-tag {
+  font-weight: 500;
+  font-size: 22px;
+  color: #4A5568;
+  margin-top: 14px;
+  letter-spacing: 0.02em;
+}
+
+.slide--dark .slide__brand-tag { color: #94A3B8; }
+
+.slide__swipe {
+  font-weight: 700;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #0F1419;
+}
+
+.slide--dark .slide__swipe { color: #F4F5F7; }
+
+.slide__swipe::after {
+  content: '→';
+  color: #00D400;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+/* === CTA bouton === */
+
+.slide__cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: #00D400;
+  color: #0F1419;
+  font-weight: 800;
+  font-size: 44px;
+  padding: 32px 56px;
+  border-radius: 16px;
+  letter-spacing: -0.015em;
+  margin-top: 56px;
+  box-shadow: 0 16px 40px rgba(0, 212, 0, 0.25);
+}
+
+.slide__cta-button::after {
+  content: '→';
+  font-size: 50px;
+  font-weight: 800;
+}
+
+/* === Halftone (signature schoolsWP) === */
+
+.halftone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.14;
+}
+
+.halftone--br {
+  bottom: -180px;
+  right: -180px;
+  width: 720px;
+  height: 720px;
+}
+
+.halftone--tl {
+  top: -150px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+}
+
+.halftone--tr {
+  top: -120px;
+  right: -120px;
+  width: 540px;
+  height: 540px;
+}
+
+.halftone--bl {
+  bottom: -160px;
+  left: -160px;
+  width: 640px;
+  height: 640px;
+}
+
+.slide--dark .halftone { opacity: 0.20; }
+
+/* === Logo center variant (CTA slide) === */
+
+.slide__logo-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}

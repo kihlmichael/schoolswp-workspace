@@ -1,16 +1,9 @@
 ---
 name: ai-strategic-brain
-description: >
-  AI Strategic Brain schoolsWP — orchestrateur 3 couches (Méthode + 6 Agents + Système) pour piloter
-  l'écosystème WordPress stratégique. Unifie SPECS/COT/CREDO/DITO/PACT/TDD en un seul prompt structuré
-  avec inputs/outputs explicites et livrables prêts à coller.
-  Utilise ce skill pour : orchestrer une action stratégique WordPress complète, activer un agent
-  spécialisé, lancer un workflow (nouveau chantier, repurpose, amélioration), obtenir un output
-  structuré P1/P2/P3, ou produire plan + livrables + boucle d'optimisation en une seule passe.
-  Trigger : "lance l'agent", "strategic brain", "orchestrateur schoolsWP", "active l'Architect/Decider/
-  Producer/Transformer/Experimenter/Optimizer", "nouveau chantier WordPress", "repurpose en machine",
-  "analyse stratégique WordPress", "décide quoi faire en premier", "workflow A/B/C",
-  "livrables prêts à coller", "plan + livrables + optimisation".
+description: |
+  Orchestrateur 3 couches du Brain schoolsWP (Méthode + 6 Agents + Système). Unifie SPECS/COT/CREDO/DITO/PACT/TDD pour produire en une passe : plan, livrables prêts à coller, boucle d'optimisation. Active dynamiquement Architect, Decider, Producer, Transformer, Experimenter ou Optimizer selon le contexte.
+  Utilise ce skill quand l'utilisateur dit : "lance l'agent", "strategic brain", "orchestrateur schoolsWP", "active l'Architect/Decider/Producer/Transformer/Experimenter/Optimizer", "nouveau chantier WordPress", "analyse stratégique WordPress", "décide quoi faire en premier", "plan + livrables + optimisation en une passe".
+  NE PAS utiliser pour : exécuter directement un seul agent isolé (utiliser `ai-brain-audit/production/transformation/optimization`), produire un article SEO long sans cadrage stratégique (utiliser `schoolswp-article-workflow`), ou architecturer un système IA technique (utiliser `ai-platform-architect-system`).
 ---
 
 # AI Strategic Brain schoolsWP™

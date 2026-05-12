@@ -1,10 +1,9 @@
 ---
 name: gemini-live-api-dev
 description: |
-  Construit des applications de streaming bidirectionnel en temps réel avec la Gemini Live API. Couvre
-  WebSocket, streaming audio/vidéo/texte, détection d'activité vocale, function calling, gestion de session
-  et tokens éphémères pour l'authentification côté client.
-  Déclenche pour "Gemini Live API", "streaming temps réel Gemini", "WebSocket Gemini", "Live API".
+  Construit des applications de streaming bidirectionnel temps réel avec la Gemini Live API via WebSocket. Couvre audio mic-to-speaker, vidéo (caméra/écran), VAD (Voice Activity Detection), function calling sync/async, native audio (affective dialog, proactive, thinking), session management (compression, resume, GoAway), tokens éphémères côté client.
+  Utilise ce skill quand l'utilisateur dit : "Gemini Live API", "streaming temps réel Gemini", "WebSocket Gemini", "voix temps réel Gemini", "audio bidirectionnel", "interruption vocale VAD", ou veut intégrer Gemini en conversation vocale low-latency.
+  NE PAS utiliser pour : appels generateContent classiques (utiliser `gemini-api-dev`), API Interactions stateful sans audio temps réel (utiliser `gemini-interactions-api`), agents vocaux ElevenLabs (utiliser `agents`), ou CLI one-shot (utiliser `gemini`).
 
 last_reviewed: 2026-04-23
 review_interval_days: 60

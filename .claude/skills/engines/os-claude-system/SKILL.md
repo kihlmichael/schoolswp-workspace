@@ -1,6 +1,9 @@
 ---
 name: os-claude-system
-description: System prompt Claude pour schoolsWP OS avec auto-router et modes (Architect, Strategist, Producer, Transformer, Experiment, Optimizer). Utiliser quand tu configures un Claude Project schoolsWP et que tu veux coller un system prompt complet avec tous les modes, règles et exemples intégrés — prêt à l'emploi.
+description: |
+  Bloc system prompt Claude prêt à coller pour configurer un Claude Project schoolsWP OS : auto-router intégré, 6 modes opérationnels (Architect, Strategist, Producer, Transformer, Experiment, Optimizer), style schoolsWP, contexte permanent (audience, stack WordPress, objectifs), règles et exemples. Sortie : un bloc texte unique copiable dans Claude.ai Project Settings.
+  Utilise ce skill quand l'utilisateur dit : "donne-moi le system prompt schoolsWP OS", "configure un Claude Project pour schoolsWP", "prompt système copiable schoolsWP", ou veut industrialiser schoolsWP OS hors Claude Code.
+  NE PAS utiliser pour : invoquer le routeur depuis Claude Code (utiliser `os-router`), un seul moteur isolé (utiliser `specs-engine`, `credo-engine`, etc.), ou produire un livrable directement (utiliser le moteur adapté au besoin).
 ---
 
 # schoolsWP OS - Claude System Prompt

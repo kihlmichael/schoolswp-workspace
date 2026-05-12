@@ -1,18 +1,9 @@
 ---
 name: credo-engine
-description: >
-  schoolsWP Strategic Engine — prompt CREDO (Context · Role · Example · Deliverable · Outcome)
-  pour production stratégique premium : SEO, autorité, citabilité IA, conversion.
-  Plus orienté qualité de livrable et alignement business que RACE.
-  Format de sortie en 8 blocs : résumé stratégique 5 lignes, analyse structurée,
-  checklist P1/P2/P3, quick wins (30 min), optimisation complète, plan H2/H3 + FAQ si SEO contenu,
-  réglages précis si technique, validation GSC.
-  Déclencher pour toute demande de production stratégique premium : contenu SEO, autorité,
-  branding, citabilité IA, conversion, stratégie multi-canal.
-  Préférer CREDO à RACE quand la demande porte sur la qualité finale du livrable plutôt que
-  sur l'exécution rapide. Déclencher aussi quand l'utilisateur dit "stratégie", "autorité",
-  "contenu premium", "optimisé IA", "comment je me positionne", "plan de contenu",
-  "rédige un article", "optimise ce contenu", "citabilité".
+description: |
+  schoolsWP Strategic Engine — framework CREDO (Context · Role · Example · Deliverable · Outcome) pour production stratégique premium orientée qualité finale du livrable. Sortie 8 blocs : résumé 5 lignes, analyse structurée, checklist P1/P2/P3, quick wins, optimisation complète, plan H2/H3 + FAQ si SEO, réglages techniques, validation GSC.
+  Utilise ce skill quand l'utilisateur dit : "produis un livrable stratégique premium", "rédige un contenu optimisé IA", "plan de contenu autorité", "comment je me positionne", ou veut une production where qualité du livrable > vitesse d'exécution.
+  NE PAS utiliser pour : exécution rapide / audit / quick wins (utiliser `race-engine`), transformation de matière existante (utiliser `dito-engine`), cadrage en amont (utiliser `specs-engine`), ou arbitrage entre options (utiliser `decision-engine`).
 ---
 
 # schoolsWP Strategic Engine

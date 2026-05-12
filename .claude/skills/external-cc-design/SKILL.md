@@ -1,12 +1,6 @@
 ---
 name: cc-design
-description: >
-  High-fidelity HTML design and prototype creation. Use this skill whenever the user asks to
-  design, prototype, mock up, or build visual artifacts in HTML — including slide decks,
-  interactive prototypes, landing pages, UI mockups, animations, or any visual design work.
-  Also use when the user mentions Figma, design systems, UI kits, wireframes, presentations,
-  or wants to explore visual design directions. Even if they just say "make it look good" or
-  "design a screen for X", this skill applies.
+description: "Design HTML haute fidélité pour slide decks, prototypes, landing pages. Brand-grade strict, sortie production-ready (HTML/CSS/JS). Privilégier ce skill pour la production finale (T1) après exploration aidesigner (T0)."
 allowed-tools:
   - Read
   - Write

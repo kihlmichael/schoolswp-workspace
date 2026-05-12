@@ -1,7 +1,10 @@
 ---
 name: recipe-block-focus-time
 version: 1.0.0
-description: "Create recurring focus time blocks on Google Calendar to protect deep work hours."
+description: |
+  Cree des blocs recurrents de temps de concentration sur Google Calendar pour proteger les heures de deep work, avec RRULE hebdomadaire et statut busy.
+  Utilise ce skill quand l'utilisateur dit : "bloque mes matinees focus", "cree des creneaux deep work", "protege mes heures de concentration", ou veut poser une recurrence focus time defensive.
+  NE PAS utiliser pour : creer un evenement ponctuel sans recurrence (utiliser gws-calendar insert direct), inviter d'autres personnes a un slot (utiliser recipe-batch-invite-to-event), ou trouver un creneau libre commun (utiliser recipe-find-free-time).
 metadata:
   openclaw:
     category: "recipe"

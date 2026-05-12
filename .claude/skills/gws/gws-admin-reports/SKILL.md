@@ -1,7 +1,10 @@
 ---
 name: gws-admin-reports
 version: 1.0.0
-description: "Google Workspace Admin SDK: Audit logs and usage reports."
+description: |
+  Google Workspace Admin SDK Reports v1 via la CLI gws : audit logs et rapports d'usage du tenant Workspace (activities admin, drive, login, gmail, meet... ; usage reports utilisateurs et tenant). Source brute pour audit sécu, conformité, monitoring de domaine.
+  Utilise ce skill quand l'utilisateur dit : "logs admin Workspace", "audit login", "rapport usage Drive", "qui a fait quoi sur le tenant", "activity report admin", ou pour exporter des activités Workspace vers Sheets ou un SIEM.
+  NE PAS utiliser pour : opérations data utilisateur final (utiliser gws-gmail / gws-drive / gws-calendar selon le service), monitoring temps réel des events Workspace (utiliser gws-events-subscribe), ou audits SecuPress côté WordPress (hors périmètre Google).
 metadata:
   openclaw:
     category: "productivity"

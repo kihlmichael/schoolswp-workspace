@@ -1,10 +1,9 @@
 ---
 name: stripe-integration
 description: |
-  Implémente le traitement des paiements Stripe avec des flux sécurisés PCI-compliant : checkout,
-  abonnements et webhooks. Utilise ce skill pour intégrer Stripe, construire des systèmes d'abonnement ou
-  implémenter des tunnels de paiement sécurisés.
-  Déclenche pour "Stripe", "paiement en ligne", "abonnement Stripe", "webhook Stripe", "checkout Stripe".
+  Implémente le traitement de paiements Stripe PCI-compliant : Checkout Sessions, Payment Intents, Setup Intents, Subscriptions, webhooks signés, refunds, SCA pour l'Europe, marketplace Stripe Connect.
+  Utilise ce skill quand l'utilisateur dit : "intégration Stripe", "checkout Stripe", "abonnement Stripe", "webhook Stripe", "SCA Europe", "Stripe Connect marketplace", ou pour tout flux paiement custom hors WordPress.
+  NE PAS utiliser pour : paiements via FluentCart (stack schoolsWP officielle, voir `project_formation_delivery_stack`), paiements via SureCart, ou auth Stripe Customer Portal sans paiement (cas dégénéré, demande directe).
 
 ---
 

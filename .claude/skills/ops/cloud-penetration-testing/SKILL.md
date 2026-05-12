@@ -1,6 +1,9 @@
 ---
 name: cloud-penetration-testing
-description: "Tests de pénétration d'infrastructure cloud (Azure, AWS, GCP). Utilise ce skill pour évaluer la sécurité cloud, énumérer les ressources, tester les authentifications et identifier les mauvaises configurations dans des contextes d'audit autorisés."
+description: |
+  Tests de pénétration d'infrastructure cloud (Azure, AWS, GCP) : reconnaissance, énumération de ressources, tests d'authentification IAM, escalade de privilèges, exfiltration de données, persistance. ScoutSuite + Pacu + CLI natifs (Az/AWS/gcloud). Uniquement contexte autorisé avec rules of engagement écrites.
+  Utilise ce skill quand l'utilisateur dit : "pentest cloud", "audit AWS / Azure / GCP", "énumère les ressources cloud", "teste l'IAM", ou "ScoutSuite" — uniquement dans un contexte d'audit autorisé.
+  NE PAS utiliser pour : test de sécurité applicative web (utiliser `burp-suite-testing` ou `top-web-vulnerabilities`), audit sécurité du projet schoolsWP (utiliser `cso`), ou escalade de privilèges sur Linux serveur (utiliser `linux-privilege-escalation`).
 risk: unknown
 source: community
 author: zebbern

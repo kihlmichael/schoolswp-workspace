@@ -1,6 +1,9 @@
 ---
 name: "aidesigner-frontend"
-description: "Use this skill when the user wants to create or redesign a frontend, landing page, dashboard, marketing page, or other UI with AIDesigner. Prefer the connected aidesigner MCP server for generate/refine, then use the local AIDesigner CLI for artifact capture, preview rendering, and repo-native adoption guidance."
+description: |
+  Crée ou redesigne un frontend (landing page, dashboard, page marketing, hero, section UI) via AIDesigner. Pipeline : MCP aidesigner pour generate_design et refine_design, puis CLI local @aidesigner/agent-skills pour capture d'artefacts, render preview et adoption repo-native dans la stack réelle (composants, tokens, routes).
+  Utilise ce skill quand l'utilisateur dit : "génère un design avec AIDesigner", "explore plusieurs directions visuelles", "hero AIDesigner", "redesign landing page", "T0 design exploration", ou pour les phases d'exploration visuelle où la latitude créative justifie de brûler des crédits AIDesigner.
+  NE PAS utiliser pour : production HTML brand-strict finale schoolsWP ou slide deck (utiliser external-cc-design en T1), design system schoolsWP référence (utiliser external-design-systems en lecture), front WordPress brut (utiliser dev-wordpress, wp-block-themes ou wpds), ou refine sur feedback flou type "plus pro" qui drift (interdit selon retour mémoire).
 ---
 
 <!-- AUTO-GENERATED from packages/aidesigner-agent-skills/templates/skill-body.md — do not edit directly.

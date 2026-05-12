@@ -1,11 +1,9 @@
 ---
 name: incremental-implementation
-description: >
-  Livrer les changements en tranches verticales fines. Utilise ce skill pour toute implementation
-  touchant plus d'un fichier, quand une tache semble trop grosse pour atterrir en une fois,
-  ou quand tu es tente d'ecrire plus de 100 lignes avant de tester. Declenche pour
-  "implementer incrementalement", "vertical slice", "livrer par tranches", "feature flag",
-  "scope trop gros", "une chose a la fois".
+description: |
+  Livrer les changements en tranches verticales fines : implement, test, verify, commit, next slice. Chaque increment laisse le systeme dans un etat fonctionnel et testable. Couvre changements multi-fichiers, refactoring, et toute tache ou tu serais tente d'ecrire plus de 100 lignes avant de tester. Feature flags plutot que long-lived branches pour le travail incomplet.
+  Utilise ce skill quand l'utilisateur dit : "implementer incrementalement", "vertical slice", "livrer par tranches", "feature flag", "scope trop gros", "une chose a la fois", "decoupe ton implementation", ou "evite le big-bang change".
+  NE PAS utiliser pour : changement single-file ou single-function ou le scope est deja minimal, hotfix urgent ou la procedure est lineaire (utiliser ship gstack), planification sans implementation (utiliser planning-and-task-breakdown), ou debogage systematique d'un bug existant (utiliser superpowers:systematic-debugging).
 ---
 
 # Incremental Implementation

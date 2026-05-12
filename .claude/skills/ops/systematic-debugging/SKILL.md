@@ -1,9 +1,9 @@
 ---
 name: systematic-debugging
 description: |
-  Méthodologie systématique pour déboguer tout bug, échec de test ou comportement inattendu. Utilise ce
-  skill avant de proposer des corrections — pour analyser la cause racine d'abord.
-  Déclenche pour "déboguer", "bug", "comportement inattendu", "test qui échoue", "erreur à corriger".
+  Méthodologie systématique 4 phases (investigate → analyze → hypothesize → implement) pour déboguer un bug, un test qui échoue ou un comportement inattendu. Iron Law : pas de fix sans investigation de la cause racine.
+  Utilise ce skill quand l'utilisateur dit : "débogue ce bug", "pourquoi ça plante", "ce test échoue", "comportement inattendu", "investigue cette erreur", ou "analyse la cause racine".
+  NE PAS utiliser pour : déboguer spécifiquement un workflow n8n / FluentCRM / WordPress (utiliser `workflow-debug`), auditer la sécurité d'un système (utiliser `security-auditor`), ou faire de la review de code (utiliser `code-review-and-quality`).
 
 ---
 

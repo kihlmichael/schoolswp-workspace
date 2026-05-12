@@ -1,6 +1,9 @@
 ---
 name: openai-imagegen
-description: Génération d'images en batch via l'API OpenAI Images. Échantillonneur de prompts aléatoires + galerie `index.html`.
+description: |
+  Génération d'images en batch via l'API OpenAI Images (gpt-image-1, gpt-image-1.5, dall-e-3, dall-e-2). Inclut un échantillonneur de prompts aléatoires structurés et une galerie HTML auto-générée. Gère size, quality, background transparent, output-format webp.
+  Utilise ce skill quand l'utilisateur dit : "OpenAI image gen", "DALL-E 3", "gpt-image-1", "batch d'images via OpenAI", "galerie de prompts aléatoires", ou veut comparer plusieurs variations d'un visuel via l'API OpenAI.
+  NE PAS utiliser pour : génération via Nano Banana (Gemini, défaut schoolsWP, utiliser le tool `tools/generate_telegram_avatars.py`), Higgsfield image cinématique (utiliser MCP `higgsfield`), ou édition d'image existante (utiliser `nano-banana` MCP).
 homepage: https://platform.openai.com/docs/api-reference/images
 metadata: {"openclaw":{"emoji":"🖼️","requires":{"bins":["python3"],"env":["OPENAI_API_KEY"]},"primaryEnv":"OPENAI_API_KEY","install":[{"id":"python-brew","kind":"brew","formula":"python","bins":["python3"],"label":"Installer Python (brew)"}]}}
 last_reviewed: 2026-04-23

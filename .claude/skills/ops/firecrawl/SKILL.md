@@ -1,12 +1,9 @@
 ---
 name: firecrawl
 description: |
-  Scraping web, recherche, crawl et interactions post-scrape via Firecrawl CLI — retourne du Markdown propre optimisé pour LLM.
-  Utilise ce skill pour scraper une page ou un article, faire une recherche web, cartographier un site,
-  extraire du contenu en masse, automatiser un navigateur sur des pages interactives, ou interagir
-  avec une page après scrape via prompts NL ou code Playwright (Interact API).
-  Déclenche pour "scrape cette URL", "crawle ce site", "recherche web", "extraire le contenu de",
-  "cartographie du site", "récupère cette page", "automatise ce formulaire web", "interact avec la page".
+  Scraping web, recherche, crawl, map et automatisation navigateur via Firecrawl CLI v1.8+. Retourne du Markdown propre optimisé pour les LLM. Pattern d'escalade : search → scrape → map+scrape → crawl → interact (Playwright NL ou code).
+  Utilise ce skill quand l'utilisateur dit : "scrape cette URL", "crawle ce site", "recherche web", "extrais le contenu de", "cartographie du site", "récupère cette page", "automatise ce formulaire web", ou "interact avec la page".
+  NE PAS utiliser pour : recherche rapide prix/version (utiliser `fast-websearch`), doc technique précise (utiliser `find-docs`), veille article rapide à transformer (utiliser `defuddle` skill `external-obsidian`), scraping prospection B2B local (utiliser `local-prospector`), ou inspection navigateur live debug (utiliser MCP `chrome-devtools`).
 allowed-tools:
   - Bash(firecrawl *)
   - Bash(npx firecrawl *)

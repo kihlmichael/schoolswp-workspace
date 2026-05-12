@@ -1,6 +1,9 @@
 ---
 name: authority-domination-50p
-description: Generer le plan “domination” schoolsWP : 50 pages exactes, plan 6 mois, ancres internes repetables, top pages rentables (affiliation/consulting/formation) et simulation CA (trafic x conversion x commission). Utiliser quand l’utilisateur demande la cartographie 50 pages, le planning de production, la monetisation ou la simulation de revenu potentiel.
+description: |
+  Génère le plan domination schoolsWP : cartographie de 50 pages exactes (piliers + satellites par thématique), plan de production 6 mois, ancres internes répétables, classement des pages les plus rentables (tier 1/2/3) et simulation CA (trafic × conversion × commission affiliation/consulting/formation).
+  Utilise ce skill quand l'utilisateur dit : "cartographie 50 pages", "plan domination 6 mois", "quelles pages publier en priorité", "simulation CA schoolsWP", ou demande le plan d'attaque pour saturer une thématique.
+  NE PAS utiliser pour : un cluster pour UN seul mot-clé (utiliser `cluster-cocon-automatique`), la roadmap stratégique long terme 24 mois (utiliser `authority-domination-roadmap`), ou l'exécution semaine par semaine d'un lancement (utiliser `authority-m1m3-execution`).
 ---
 
 # Authority Domination — 50 pages (schoolsWP)

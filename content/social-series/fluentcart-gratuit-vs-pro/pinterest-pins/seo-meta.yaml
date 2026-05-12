@@ -1,0 +1,61 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/fluentcart-gratuit-vs-pro/
+  software: schoolsWP html-to-png
+
+images:
+  - file: pin-01-tunnels-vente.png
+    title: FluentCart Pro tunnels de vente upsells downsells
+    subject: Pinterest pin tunnels de vente FluentCart Pro
+    description: Pin Pinterest sur les tunnels de vente FluentCart Pro - upsells et downsells absents en gratuit
+    alt: schoolsWP - Pinterest pin FluentCart Pro tunnels de vente
+    keywords:
+      - FluentCart Pro
+      - upsell
+      - downsell
+      - tunnel de vente WordPress
+      - e-commerce WordPress
+
+  - file: pin-02-licences.png
+    title: FluentCart Pro license manager logiciels SaaS
+    subject: Pinterest pin gestion des licences FluentCart Pro
+    description: Pin Pinterest sur la gestion des licences FluentCart Pro pour vendre du SaaS et plugins WordPress
+    alt: schoolsWP - Pinterest pin FluentCart Pro license manager
+    keywords:
+      - FluentCart Pro
+      - license manager
+      - vendre plugin WordPress
+      - SaaS WordPress
+
+  - file: pin-03-automatisation.png
+    title: FluentCart Pro automatisation marketing FluentCRM
+    subject: Pinterest pin automatisation FluentCRM avec FluentCart Pro
+    description: Pin Pinterest sur l'intégration FluentCRM avancée de FluentCart Pro pour automatisation marketing
+    alt: schoolsWP - Pinterest pin FluentCart Pro automatisation FluentCRM
+    keywords:
+      - FluentCart Pro
+      - FluentCRM
+      - automatisation marketing
+      - segmentation client
+
+  - file: pin-04-rapports.png
+    title: FluentCart Pro rapports d'analyse détaillés reporting
+    subject: Pinterest pin rapports avancés FluentCart Pro
+    description: Pin Pinterest sur le reporting avancé de FluentCart Pro par produit et par client
+    alt: schoolsWP - Pinterest pin FluentCart Pro rapports détaillés
+    keywords:
+      - FluentCart Pro
+      - reporting e-commerce
+      - analytics WordPress
+
+  - file: pin-05-order-bumps.png
+    title: FluentCart Pro Order Bumps conditionnels cross-sell
+    subject: Pinterest pin Order Bumps conditionnels FluentCart Pro
+    description: Pin Pinterest sur les Order Bumps conditionnels FluentCart Pro avec logique sophistiquée
+    alt: schoolsWP - Pinterest pin FluentCart Pro Order Bumps
+    keywords:
+      - FluentCart Pro
+      - order bumps
+      - cross-sell
+      - panier WordPress

@@ -1,14 +1,9 @@
 ---
 name: meta-prompt-creator
-description: >
-  Méta-prompt creator spécialisé schoolsWP. Transforme un brief (même incomplet) en un PROMPT PACK
-  complet et prêt à coller dans Claude Code — incluant prompt système, prompt utilisateur, contrat de
-  sortie, exemples few-shot, réglages modèle et checklist qualité.
-
-  Utiliser CHAQUE FOIS que tu dois créer un prompt pour schoolsWP : copywriting, SEO, plan de leçon,
-  config plugin, snippet PHP, audit WordPress, ou tout autre livrable. Même si l'utilisateur dit juste
-  "je veux un prompt pour…" ou "crée-moi un prompt qui…" ou "aide-moi à formuler une demande pour…" —
-  ce skill est le bon déclencheur. Ne pas attendre une demande explicite de "méta-prompt".
+description: |
+  Meta-prompt creator specialise schoolsWP. Transforme un brief (meme incomplet) en PROMPT PACK complet pret a coller dans Claude Code : prompt systeme, prompt utilisateur, contrat de sortie, exemples few-shot, reglages modele, checklist qualite. Plus structure que prompt-master, oriente livrable reutilisable schoolsWP (copywriting, SEO, plan de lecon, config plugin, snippet PHP, audit WP).
+  Utilise ce skill quand l'utilisateur dit : "je veux un prompt pour [tache schoolsWP]", "cree-moi un prompt qui...", "aide-moi a formuler une demande pour...", "PROMPT PACK", "meta-prompt", ou demande un kit de prompt structure pour un livrable schoolsWP recurrent.
+  NE PAS utiliser pour : optimisation rapide d'un prompt existant en mode iteratif (utiliser prompt-master /Optimiser), creation d'un seul prompt one-shot sans contrat de sortie (utiliser prompt-master /Agir), system prompt pour un agent Python (voir core/agents-md/), ou audit safety d'un prompt en production (utiliser ai-prompt-engineering-safety-review).
 ---
 
 # schoolsWP — Méta-Prompt Creator

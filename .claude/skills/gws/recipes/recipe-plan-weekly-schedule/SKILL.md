@@ -1,7 +1,10 @@
 ---
 name: recipe-plan-weekly-schedule
 version: 1.0.0
-description: "Review your Google Calendar week, identify gaps, and add events to fill them."
+description: |
+  Récupère ton agenda de la semaine, repère les créneaux libres via free/busy, puis ajoute des blocs de travail ou réunions pour combler. Boucle planification hebdo en 4 étapes.
+  Utilise ce skill quand l'utilisateur dit : "planifie ma semaine", "trouve mes créneaux libres et bloque deep work", "organise mon agenda hebdo", ou pour structurer la semaine côté calendar.
+  NE PAS utiliser pour : déplacer un événement existant (utiliser recipe-reschedule-meeting), créer une réunion récurrente (utiliser recipe-schedule-recurring-event), ou prepare un meeting précis (utiliser le workflow gws meeting-prep).
 metadata:
   openclaw:
     category: "recipe"

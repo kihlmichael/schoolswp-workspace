@@ -1,7 +1,10 @@
 ---
 name: recipe-watch-drive-changes
 version: 1.0.0
-description: "Subscribe to change notifications on a Google Drive file or folder."
+description: |
+  Crée une subscription Google Workspace Events sur un fichier ou dossier Drive pour recevoir des notifications via Pub/Sub à chaque modification, et gère le renouvellement avant expiration.
+  Utilise ce skill quand l'utilisateur dit : "alerte-moi quand ce dossier change", "watch ce fichier Drive", "abonne-toi aux modifs Drive sur X", ou pour mettre en place une surveillance event-driven sur un asset Drive.
+  NE PAS utiliser pour : juste lister les changements récents (utiliser gws-drive changes list), notifier après un partage (utiliser recipe-share-doc-and-notify), ou monitorer Gmail ou Calendar (utiliser gws-events sur les autres ressources).
 metadata:
   openclaw:
     category: "recipe"

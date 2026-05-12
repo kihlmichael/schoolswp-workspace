@@ -1,10 +1,9 @@
 ---
 name: svg-burger-illustration
 description: |
-  Génère un fichier SVG autonome d'un burger minimaliste assemblé avec une animation de survol fluide qui
-  sépare verticalement les 6 couches (bun haut, laitue, tomate, steak, fromage, bun bas) pour révéler la
-  pile, puis les réassemble au mouseout.
-  Déclenche pour "illustration burger SVG", "SVG burger", "animation burger".
+  Génère un fichier SVG autonome d'un burger minimaliste avec animation hover fluide qui sépare verticalement les 6 couches (bun haut, laitue, tomate, steak, fromage, bun bas) puis les réassemble au mouseout. Sortie : un seul bloc SVG, pas d'explication. Style éditorial UI premium, transitions CSS (pas SMIL), cubic-bezier/ease-in-out.
+  Utilise ce skill quand l'utilisateur dit : "illustration burger SVG", "SVG burger", "animation burger", "burger interactif hover", ou veut une démo animée micro-interaction sur thème burger.
+  NE PAS utiliser pour : illustration générique non-burger (utiliser `canvas-design` ou nano-banana / aidesigner), icône de menu hamburger UI (chercher Lucide / Heroicons), production HTML brand-strict (utiliser `external-cc-design`), ou animation Remotion en React (utiliser `remotion-best-practices`).
 
 ---
 

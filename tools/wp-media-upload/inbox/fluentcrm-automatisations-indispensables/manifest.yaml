@@ -1,0 +1,191 @@
+# Manifest pour l'article /fluentcrm-automatisations-indispensables/
+# Lance : python cli.py upload --article fluentcrm-automatisations-indispensables --dry-run
+#         puis : python cli.py upload --article fluentcrm-automatisations-indispensables
+
+article:
+  id: 2871653
+  slug: fluentcrm-automatisations-indispensables
+
+images:
+  - file: 01-hero-automatisations-fluentcrm.png
+    title: "10 automatisations FluentCRM indispensables : le guide complet"
+    alt_text: "10 automatisations FluentCRM indispensables : welcome, panier abandonné, onboarding, segmentation, cross-sell sur WordPress"
+    caption: "Le guide complet des 10 workflows FluentCRM que je fais tourner sur schoolsWP pour transformer WordPress en moteur marketing autonome."
+    description: "Image hero de l'article pilier sur les 10 automatisations FluentCRM indispensables, illustrant un pipeline de workflow trigger → email → wait → email avec icônes abstraites en palette schoolsWP. Vise les éditeurs WordPress et utilisateurs FluentCRM qui veulent rentabiliser leur stack email marketing."
+    featured: true
+    exif:
+      XPTitle: "10 automatisations FluentCRM indispensables – guide schoolsWP"
+      XPSubject: "Image hero illustrant les 10 workflows FluentCRM essentiels pour rentabiliser WordPress : welcome series, panier abandonné, onboarding, cross-sell, segmentation, sync TutorLMS."
+      XPKeywords: "FluentCRM automatisation, automation WordPress, workflow FluentCRM, welcome series, panier abandonné WooCommerce, segmentation FluentCRM, FluentCampaign Pro, email marketing WordPress, schoolsWP, Michaël KIHL"
+      XPComment: "Image hero du guide complet FluentCRM automatisation sur schoolsWP, optimisée Google Images."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Hero illustration FluentCRM automatisation pour article pilier schoolsWP : workflow trigger email wait email."
+
+  - file: 02-dashboard-fluentcrm.png
+    title: "Tableau de bord FluentCRM : 34 contacts, 17 automatisations actives"
+    alt_text: "Tableau de bord FluentCRM Pro : 34 contacts actifs, 33 campagnes, 326 tags, 17 automatisations actives, courbe de croissance contacts"
+    caption: "Le tableau de bord FluentCRM centralise les indicateurs clés du CRM WordPress : contacts actifs, campagnes envoyées, tags et automatisations en cours."
+    description: "Capture réelle du dashboard FluentCRM Pro sur l'installation schoolsWP. Visualise les KPIs principaux du CRM : 34 contacts actifs, 33 campagnes historiques, 326 tags de segmentation, 17 automatisations actives en parallèle. Illustration concrète pour les utilisateurs FluentCRM qui veulent comprendre l'interface principale du plugin."
+    exif:
+      XPTitle: "Tableau de bord FluentCRM Pro – 34 contacts, 17 automations"
+      XPSubject: "Capture du dashboard FluentCRM dans WordPress : KPIs contacts, campagnes, tags et automatisations actives sur schoolsWP."
+      XPKeywords: "FluentCRM dashboard, tableau de bord FluentCRM, CRM WordPress, KPIs CRM, contacts actifs FluentCRM, automatisations FluentCRM, FluentCRM Pro"
+      XPComment: "Capture dashboard FluentCRM pour le guide automatisation schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Tableau de bord FluentCRM Pro montrant KPIs du CRM WordPress sur schoolsWP."
+
+  - file: 03-19-funnels-actifs.png
+    title: "19 automatisations FluentCRM actives : welcome multilingue, lead magnet"
+    alt_text: "Liste des 19 funnels actifs dans FluentCRM : SEQ Welcome Newsletter FR EN DE, Lead Magnet, FluentCRM Pro Discovery, AffiliateWP, AliDropship"
+    caption: "Sur schoolsWP, je fais tourner 19 funnels en parallèle dont les 3 welcome series multilingues (FR / EN / DE) et plusieurs séquences de présentation produit."
+    description: "Vue d'ensemble des 19 automatisations FluentCRM publiées sur schoolsWP : welcome newsletter multilingue, lead magnet, FluentCRM Pro Discovery, séquences AffiliateWP et AliDropship. Illustre l'étendue d'usage du plugin sur un blog d'autorité WordPress."
+    exif:
+      XPTitle: "19 funnels FluentCRM actifs – schoolsWP automatisation"
+      XPSubject: "Capture FluentCRM montrant 19 automatisations publiées dont welcome series multilingues FR EN DE."
+      XPKeywords: "FluentCRM funnels, automatisations FluentCRM, welcome series multilingue, funnel WordPress, FluentCRM Polylang"
+      XPComment: "Liste des 19 funnels actifs FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "19 automatisations FluentCRM publiées sur schoolsWP."
+
+  - file: 04-funnel-welcome-builder-visuel.png
+    title: "Builder visuel FluentCRM : welcome series 4 emails avec wait times"
+    alt_text: "Builder visuel d'un funnel welcome FluentCRM : trigger Tag Applied abonne_newsletter, 4 emails alternés avec Wait Times 1 à 4 jours et tags de progression welcome_news_e1_e2_e3_e4_sent"
+    caption: "Le builder FluentCRM permet de construire visuellement une welcome series : trigger Tag Applied, 4 emails espacés par des wait times, tags de progression pour la traçabilité."
+    description: "Capture du builder visuel FluentCRM avec le funnel welcome newsletter FR de schoolsWP : trigger Tag Applied (abonne_newsletter), 4 emails de bienvenue alternés avec Wait Times de 1 à 4 jours, et tags welcome_news_e1_sent à welcome_news_e4_sent appliqués automatiquement pour suivre la progression de chaque contact."
+    exif:
+      XPTitle: "Builder welcome series FluentCRM – 4 emails wait times"
+      XPSubject: "Capture du builder visuel FluentCRM montrant un funnel welcome 4 emails avec trigger Tag Applied et wait times progressifs."
+      XPKeywords: "FluentCRM builder, welcome series FluentCRM, funnel email FluentCRM, wait time FluentCRM, Tag Applied trigger, séquence bienvenue FluentCRM"
+      XPComment: "Builder visuel welcome series FluentCRM sur schoolsWP, tutoriel pas à pas."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Builder visuel d'un welcome series FluentCRM 4 emails."
+
+  - file: 05-contacts-tags-multilingues.png
+    title: "Segmentation contacts FluentCRM : tags lang_fr / en / de + welcome series"
+    alt_text: "Liste des contacts FluentCRM avec tags multilingues : abonne_newsletter_de lang_de welcome_news_de_e1_sent, équivalents FR et EN pour traçabilité segmentation"
+    caption: "FluentCRM tagge automatiquement chaque contact avec sa langue (lang_fr / en / de) et le palier atteint dans la welcome series (welcome_news_e1_sent, e2, e3, e4)."
+    description: "Capture de la vue Contacts FluentCRM avec emails masqués pour confidentialité, montrant la stratégie de tagging multilingue de schoolsWP : 2 familles de tags par contact (trigger abonne_newsletter_lang + lang_fr/en/de + welcome_news_lang_eN_sent). Permet une segmentation chirurgicale par langue + progression dans le funnel."
+    exif:
+      XPTitle: "Contacts FluentCRM tags multilingues FR EN DE schoolsWP"
+      XPSubject: "Capture montrant la segmentation contacts FluentCRM avec tags lang_* et welcome_news_*_e1_sent."
+      XPKeywords: "FluentCRM contacts, segmentation tags, FluentCRM multilingue, Polylang FluentCRM, tags langue, welcome series tags"
+      XPComment: "Segmentation contacts multilingue FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Contacts FluentCRM avec tags multilingues et progression welcome series."
+
+  - file: 06-326-tags-segmentation.png
+    title: "326 tags FluentCRM : segmentation linguistique et progression welcome"
+    alt_text: "Liste des 326 tags FluentCRM sur schoolsWP : lang_de lang_en lang_fr, welcome_news_de_e1_sent à e4_sent, abonne_newsletter_de, hiérarchie complète des étiquettes de segmentation"
+    caption: "326 tags FluentCRM forment l'ossature de la segmentation schoolsWP : langues (lang_fr / en / de), paliers de welcome series, déclencheurs d'abonnement, lead magnets téléchargés."
+    description: "Capture de la page Étiquettes FluentCRM montrant la hiérarchie complète des 326 tags utilisés sur schoolsWP. Structure visible : tags de langue (lang_fr/en/de), tags de progression welcome (welcome_news_*_e1/e2/e3/e4_sent), tags trigger d'abonnement. Cette segmentation chirurgicale est ce qui permet de basculer les messages au bon moment selon le comportement du contact."
+    exif:
+      XPTitle: "326 tags FluentCRM segmentation linguistique schoolsWP"
+      XPSubject: "Capture page Étiquettes FluentCRM montrant la hiérarchie des 326 tags utilisés pour la segmentation."
+      XPKeywords: "FluentCRM tags, étiquettes FluentCRM, segmentation tags, FluentCRM hierarchy, tag based segmentation"
+      XPComment: "Hiérarchie 326 tags FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "326 tags FluentCRM segmentation linguistique et progression."
+
+  - file: 07-campagnes-email-historiques.png
+    title: "33 campagnes email FluentCRM : taux d'ouverture et revenu attribué"
+    alt_text: "Liste des campagnes email FluentCRM avec colonnes Titre, État, Diffusion, Destinataires, Taux d'ouverture, Taux de clic et Revenu attribué"
+    caption: "FluentCRM archive chaque campagne avec ses statistiques : ouverture, clic et revenu attribué. Visibilité totale sans outil externe."
+    description: "Capture de l'onglet Campagnes email FluentCRM montrant l'historique des 33 broadcasts envoyés depuis l'installation schoolsWP. Les colonnes Diffusion, Destinataires, Taux d'ouverture, Taux de clic et Revenu attribué permettent de mesurer la performance sans recourir à un outil externe."
+    exif:
+      XPTitle: "33 campagnes email FluentCRM schoolsWP – stats"
+      XPSubject: "Vue historique des campagnes email FluentCRM avec stats d'ouverture, clic et revenu."
+      XPKeywords: "FluentCRM campagnes, email campaigns WordPress, taux ouverture FluentCRM, revenu campagne email"
+      XPComment: "33 campagnes email historiques FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Historique 33 campagnes email FluentCRM avec stats."
+
+  - file: 08-formulaires-fluent-forms-connectes.png
+    title: "9 formulaires Fluent Forms connectés à FluentCRM"
+    alt_text: "Liste des 9 formulaires Fluent Forms connectés à FluentCRM : Lead Magnet Welcome Template, Sondages page builder et thème WordPress, Newsletter Footer, Prestation Conception Site Web"
+    caption: "Chaque formulaire Fluent Forms peut être connecté à FluentCRM pour tagger automatiquement les contacts à l'inscription ou au téléchargement d'un lead magnet."
+    description: "Capture de la page Formulaires FluentCRM montrant les 9 formulaires Fluent Forms connectés sur schoolsWP avec leur shortcode, les listes cibles et les tags appliqués automatiquement. Démontre l'intégration native FluentForms × FluentCRM sans Zapier ni outil tiers."
+    exif:
+      XPTitle: "9 formulaires Fluent Forms connectés FluentCRM schoolsWP"
+      XPSubject: "Capture des formulaires Fluent Forms connectés à FluentCRM avec tags et listes."
+      XPKeywords: "Fluent Forms FluentCRM, intégration FluentForms, formulaire newsletter FluentCRM, lead magnet FluentCRM"
+      XPComment: "Formulaires Fluent Forms reliés à FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "9 formulaires Fluent Forms connectés à FluentCRM."
+
+  - file: 09-sequences-email.png
+    title: "13 séquences email FluentCRM réutilisables"
+    alt_text: "Liste des 13 séquences email FluentCRM : Onboarding WP débutants 5 emails, Lead Magnet bienvenue, Kadence WP promotion, AffiliateWP présentation, séquences partenaires"
+    caption: "Les Email Sequences FluentCRM sont des séquences pré-construites attachables à n'importe quel funnel ou liste. Idéal pour le nurturing répétable."
+    description: "Capture de l'onglet Séquences d'e-mail FluentCRM montrant les 13 séquences pré-construites sur schoolsWP : onboarding WordPress débutants, lead magnet bienvenue, présentations produits affiliés (Kadence WP, AffiliateWP, AliDropship, Damien Menu, Flavien Costello, SKEALL). Démontre la réutilisabilité des séquences sur plusieurs funnels."
+    exif:
+      XPTitle: "13 séquences email FluentCRM réutilisables schoolsWP"
+      XPSubject: "Capture des Email Sequences FluentCRM : séquences pré-construites attachables à plusieurs funnels."
+      XPKeywords: "FluentCRM sequences, email sequence WordPress, drip campaign FluentCRM, nurturing FluentCRM"
+      XPComment: "13 séquences email FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "13 séquences email FluentCRM réutilisables."
+
+  - file: 10-reglages-16-onglets-config.png
+    title: "16 onglets de configuration FluentCRM : double opt-in, webhooks, panier"
+    alt_text: "Page Réglages FluentCRM avec 16 onglets : entreprise, email, général, champs personnalisés, Smart Links, double opt-in, intégrations, panier abandonné, webhooks, REST API, SMTP, licences"
+    caption: "FluentCRM expose 16 onglets de configuration : entreprise, double opt-in, panier abandonné, Smart Links, webhooks, REST API, SMTP, conformité RGPD."
+    description: "Capture de la page Réglages FluentCRM listant les 16 sous-sections de configuration disponibles : Réglages entreprise, Réglages email, Réglages généraux, Champs de contact personnalisés, Liens intelligents (Smart Links), Réglages de double accord (double opt-in), Réglages d'intégration, Réglages de panier abandonné, Crochets web entrants, Gestionnaires, API REST, Outils, Compliance RGPD, SMTP, Configuration avancée, Gestion des licences."
+    exif:
+      XPTitle: "16 onglets config FluentCRM Pro schoolsWP"
+      XPSubject: "Capture des 16 onglets de réglages FluentCRM : entreprise, double opt-in, panier, webhooks, REST API."
+      XPKeywords: "FluentCRM réglages, FluentCRM settings, double opt-in FluentCRM, SMTP FluentCRM, RGPD CRM WordPress"
+      XPComment: "Réglages 16 onglets FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "16 onglets de configuration FluentCRM Pro."
+
+  - file: 11-rapports-advanced-reports.png
+    title: "FluentCRM Advanced Reports : croissance contacts et envois email"
+    alt_text: "Rapports avancés FluentCRM avec graphique de croissance contacts mensuelle, comparaison période précédente, statistiques envois email, clics, désinscriptions"
+    caption: "Les rapports avancés FluentCRM comparent les périodes pour piloter la croissance liste : nouveaux contacts, envois email, clics, désinscriptions."
+    description: "Capture de l'onglet Rapports FluentCRM montrant les Advanced Reports : croissance contacts sur 30 jours avec comparaison à la période précédente, statistiques d'envois email, taux de clic et désinscriptions. Outil de pilotage interne sans outil tiers."
+    exif:
+      XPTitle: "FluentCRM Advanced Reports schoolsWP – croissance contacts"
+      XPSubject: "Capture des rapports avancés FluentCRM avec croissance contacts et stats email."
+      XPKeywords: "FluentCRM reports, advanced reports FluentCRM, croissance newsletter, stats email FluentCRM"
+      XPComment: "Rapports avancés FluentCRM sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "FluentCRM Advanced Reports croissance contacts et envois."
+
+  - file: 12-7-listes-segmentation.png
+    title: "7 listes FluentCRM schoolsWP : étudiants, newsletter, clients, prospects"
+    alt_text: "Listes FluentCRM segmentées par cycle de vie : ÉTUDIANTS schoolsWP TutorLMS, NEWSLETTER, CLIENTS, PROSPECTS, FREEBIES, PARTENAIRES, SUPPORT"
+    caption: "Les 7 listes FluentCRM de schoolsWP suivent le cycle de vie : prospect, freebie, newsletter, client, étudiant TutorLMS, partenaire, support."
+    description: "Capture de la page Listes FluentCRM montrant les 7 listes principales de schoolsWP organisées par lifecycle stage : ÉTUDIANTS (apprenants TutorLMS), NEWSLETTER (abonnés organiques), CLIENTS (achats confirmés), PROSPECTS (leads en évaluation), FREEBIES (téléchargements gratuits), PARTENAIRES (collaborations), SUPPORT (tickets). Démontre la structure CRM mature à mettre en place dès le départ."
+    exif:
+      XPTitle: "7 listes FluentCRM cycle de vie schoolsWP"
+      XPSubject: "Capture des 7 listes FluentCRM segmentées par lifecycle stage sur schoolsWP."
+      XPKeywords: "FluentCRM listes, lifecycle CRM, segmentation listes FluentCRM, lifecycle stage FluentCRM"
+      XPComment: "7 listes FluentCRM par cycle de vie sur schoolsWP."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "7 listes FluentCRM segmentées par cycle de vie."
+
+  - file: 13-schema-triggers-actions-benchmarks.png
+    title: "Schéma FluentCRM : triggers, actions et benchmarks"
+    alt_text: "Schéma pédagogique des 3 catégories de blocs FluentCRM : Triggers (tag, liste, formulaire, panier, user), Actions (email, tag, wait, webhook), Benchmarks (clic, achat, complétion)"
+    caption: "FluentCRM repose sur 3 catégories de blocs : Triggers pour démarrer, Actions pour exécuter, Benchmarks pour valider et bifurquer."
+    description: "Schéma pédagogique illustrant la grammaire FluentCRM en 3 colonnes : Triggers (déclencheurs : tag, liste, formulaire, panier, utilisateur), Actions (email, application de tag, wait time, webhook), Benchmarks (objectifs de validation : clic, achat, complétion). Cette structure permet de construire n'importe quelle automatisation."
+    exif:
+      XPTitle: "Schéma FluentCRM triggers actions benchmarks – schoolsWP"
+      XPSubject: "Schéma des 3 catégories de blocs FluentCRM : Triggers Actions Benchmarks."
+      XPKeywords: "FluentCRM triggers, FluentCRM actions, FluentCRM benchmarks, automation grammar, workflow FluentCRM"
+      XPComment: "Schéma pédagogique grammaire FluentCRM."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Schéma FluentCRM 3 catégories Triggers Actions Benchmarks."

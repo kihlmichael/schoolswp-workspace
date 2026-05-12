@@ -1,6 +1,9 @@
 ---
 name: authority-method
-description: schoolsWP Authority System™ — Méthode signature en 6 phases (Foundation → Clarity → Authority → Scale → Optimize → Dominate) et formation premium 6 modules. Utilise ce skill dès que l'utilisateur parle de la méthode officielle schoolsWP, des 6 phases ou modules de l'Authority System, de créer des scripts de vidéos pédagogiques, des plans de modules, des templates de formation, des ateliers pratiques, une page de vente pour la formation, une promesse marketing pour la méthode, ou de structurer un produit formation WordPress premium. Trigger aussi pour "méthode signature", "formation WordPress premium", "modules formation", "scripts vidéo", "plan pédagogique", "Architecture Blueprint", "Decision Engine", "Strategic Engine", "Growth Loop", "Performance Loop".
+description: |
+  Méthode signature schoolsWP Authority System™ en 6 phases (Foundation → Clarity → Authority → Scale → Optimize → Dominate) avec leurs 6 moteurs (Architecture Blueprint, Decision Engine, Strategic Engine, Omnichannel Engine, Growth Loop, Performance Loop). Source pour structurer la formation premium 6 modules, scripts vidéo pédagogiques, plans de modules, ateliers pratiques.
+  Utilise ce skill quand l'utilisateur dit : "méthode signature schoolsWP", "les 6 phases de l'Authority System", "structure les 6 modules formation", "plan pédagogique du programme", ou veut décliner la méthode officielle en livrable de formation.
+  NE PAS utiliser pour : le mécanisme propriétaire SPATO™ visuel (utiliser `authority-loop`), la promesse marketing (utiliser `authority-promise`), ou les 4 phases de l'offre service (utiliser `authority-accelerator`).
 ---
 
 # schoolsWP Authority System™ — Méthode Signature

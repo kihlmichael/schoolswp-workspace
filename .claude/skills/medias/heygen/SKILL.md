@@ -1,11 +1,9 @@
 ---
 name: heygen
 description: |
-  Création de vidéos IA avec avatars via l'API HeyGen. Utilise ce skill pour générer une vidéo
-  avatar en un prompt, créer une vidéo avec un avatar parlant, travailler avec des voix, fonds
-  ou sous-titres HeyGen, produire des vidéos WebM transparentes pour incrustation, intégrer
-  HeyGen avec Remotion, ou créer un photo-avatar depuis une image. Déclenche pour "génère une
-  vidéo HeyGen", "avatar IA qui parle", "vidéo explicative avatar", "crée une vidéo avec ma photo".
+  Création de vidéos IA avec avatars via l'API HeyGen (MCP `mcp__heygen__*` ou HTTP direct). Couvre : génération vidéo depuis prompt (Video Agent), vidéo avec avatar parlant + script, photo-avatar depuis image, vidéos WebM transparentes pour incrustation, intégration HeyGen + Remotion. Pattern prod schoolsWP : lipsync via audioUrl externe (digital_twin + audio mp3/wav HTTPS public, voix ElevenLabs en amont).
+  Utilise ce skill quand l'utilisateur dit : "génère une vidéo HeyGen", "avatar IA qui parle", "vidéo explicative avatar", "crée une vidéo avec ma photo", "lipsync HeyGen sur cet audio", ou veut produire une talking-head vidéo avec un avatar.
+  NE PAS utiliser pour : voix-off TTS standalone HeyGen Starfish (utiliser `text-to-speech`), traduction/doublage d'une vidéo existante (utiliser `video-translate`), édition/montage d'une vidéo brute (utiliser `external-video-use`), ou clone voix premium prod (utiliser ElevenLabs car voix clone HeyGen API cassée).
 homepage: https://docs.heygen.com/reference/generate-video-agent
 allowed-tools: mcp__heygen__*
 metadata:

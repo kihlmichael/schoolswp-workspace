@@ -1,12 +1,9 @@
 ---
 name: local-prospecting-pipeline
 description: |
-  Pipeline complet de prospection locale B2B : collecte, filtrage, nettoyage, deduplication et qualification d'entreprises par zone geographique et niche.
-  Utilise ce skill des que l'utilisateur veut constituer une base de donnees d'entreprises locales, prospecter une niche sur un territoire,
-  trouver des agences/prestataires/commerces dans une zone, ou construire un fichier de prospection B2B.
-  Declencheurs : "trouver des agences", "base de prospection", "liste d'entreprises", "prospection locale",
-  "scraping entreprises", "agences [niche] [ville/departement]", "fichier de prospection", "base contacts B2B",
-  "trouver des prestataires dans [zone]", "veille concurrentielle locale".
+  Pipeline générique de prospection locale B2B en 8 étapes : sources Google Maps + Pages Jaunes + annuaires + Apify, collecte, filtrage, nettoyage, déduplication et qualification d'entreprises par zone géographique et niche. Sortie CSV / Google Sheets / Markdown. Qualité prime sur quantité.
+  Utilise ce skill quand l'utilisateur dit : "trouve des agences", "base de prospection", "liste d'entreprises", "prospection locale", "scraping entreprises", "agences niche ville/département", "fichier de prospection", "base contacts B2B", "trouve des prestataires dans zone", ou "veille concurrentielle locale".
+  NE PAS utiliser pour : prospection ciblée création de site internet (utiliser `local-prospector` plus spécialisé), étude de marché B2B (utiliser `etude-marche-france`), enrichissement contacts FluentCRM (utiliser MCP `fluentcrm`), ou scraping de contenu éditorial (utiliser `firecrawl`).
 ---
 
 # Local Prospecting Pipeline

@@ -1,0 +1,104 @@
+# Métadonnées SEO injectées dans les PNG via tools/html-to-png/inject-meta.mjs
+# Champs : XP* (Windows), XMP-dc (Adobe), IPTC (médias), EXIF (standard)
+
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/fluentcart-gratuit-vs-pro/
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-01-hook.png
+    title: FluentCart Gratuit vs Pro - Hook carrousel
+    subject: Comparatif FluentCart Gratuit ou Pro - quelle version choisir
+    description: Hook du carrousel comparatif FluentCart Gratuit vs Pro pour e-commerce WordPress en 2026
+    alt: schoolsWP - Hook carrousel FluentCart Gratuit ou Pro
+    keywords:
+      - FluentCart
+      - WordPress
+      - e-commerce
+      - comparatif plugin
+      - FluentCart Pro
+
+  - file: slide-02-setup.png
+    title: FluentCart Pro - Constat 5 différences
+    subject: 5 différences clés entre FluentCart Gratuit et Pro
+    description: Setup du comparatif - introduction aux 5 différences fonctionnelles entre FluentCart Free et Pro
+    alt: schoolsWP - Tu hésites ? Voici ce que change FluentCart Pro
+    keywords:
+      - FluentCart
+      - FluentCart Pro
+      - comparatif WordPress
+      - e-commerce
+
+  - file: slide-03-tunnels-vente.png
+    title: FluentCart Pro - Tunnels de vente avancés
+    subject: Upsells et downsells avec FluentCart Pro
+    description: Première différence FluentCart Free vs Pro - tunnels de vente avec upsells et downsells post-paiement pour augmenter le panier moyen
+    alt: schoolsWP - FluentCart Pro tunnels de vente upsells downsells
+    keywords:
+      - FluentCart Pro
+      - upsell
+      - downsell
+      - tunnel de vente
+      - panier moyen
+      - e-commerce WordPress
+
+  - file: slide-04-licences.png
+    title: FluentCart Pro - Gestion des licences
+    subject: License manager FluentCart Pro pour produits digitaux
+    description: Deuxième différence FluentCart Free vs Pro - gestion des clés de licence pour vendre du SaaS et plugins WordPress
+    alt: schoolsWP - FluentCart Pro license manager logiciels
+    keywords:
+      - FluentCart Pro
+      - license manager
+      - clé de licence
+      - vendre plugin WordPress
+      - SaaS WordPress
+
+  - file: slide-05-automatisation.png
+    title: FluentCart Pro - Automatisation marketing FluentCRM
+    subject: Signaux FluentCRM avancés avec FluentCart Pro
+    description: Troisième différence FluentCart Free vs Pro - intégration FluentCRM avec signaux précis pour segmenter et automatiser
+    alt: schoolsWP - FluentCart Pro automatisation marketing FluentCRM
+    keywords:
+      - FluentCart Pro
+      - FluentCRM
+      - automatisation marketing
+      - segmentation client
+      - email marketing WordPress
+
+  - file: slide-06-rapports.png
+    title: FluentCart Pro - Rapports d'analyse détaillés
+    subject: Reporting avancé FluentCart Pro par produit et client
+    description: Quatrième différence FluentCart Free vs Pro - rapports avancés par produit et par client sans limite de période
+    alt: schoolsWP - FluentCart Pro rapports analyse détaillés
+    keywords:
+      - FluentCart Pro
+      - reporting e-commerce
+      - analytics WordPress
+      - tableau de bord vente
+
+  - file: slide-07-order-bumps.png
+    title: FluentCart Pro - Order Bumps conditionnels
+    subject: Logique conditionnelle Order Bumps FluentCart Pro
+    description: Cinquième différence FluentCart Free vs Pro - order bumps conditionnels avec règles sophistiquées selon le panier
+    alt: schoolsWP - FluentCart Pro order bumps conditionnels
+    keywords:
+      - FluentCart Pro
+      - order bumps
+      - logique conditionnelle
+      - cross-sell
+      - panier WordPress
+
+  - file: slide-08-cta.png
+    title: FluentCart Gratuit vs Pro - Verdict schoolsWP
+    subject: Verdict FluentCart Gratuit ou Pro selon ton profil
+    description: Verdict du comparatif FluentCart Free vs Pro - Free pour ventes simples, Pro pour scaler en e-commerce WordPress
+    alt: schoolsWP - Verdict FluentCart Gratuit vs Pro lien en bio
+    keywords:
+      - FluentCart
+      - FluentCart Pro
+      - verdict comparatif
+      - choisir plugin e-commerce
+      - schoolsWP

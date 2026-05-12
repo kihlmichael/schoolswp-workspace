@@ -1,10 +1,9 @@
 ---
 name: seo-audit
 description: |
-  Audite, révise et diagnostique les problèmes SEO d'un site. Utilise ce skill pour un audit technique
-  SEO, une analyse de balises meta, des erreurs de crawl, des problèmes d'indexation, Core Web Vitals ou
-  une chute de trafic.
-  Déclenche pour "audit SEO", "SEO technique", "problèmes SEO", "mon trafic a chuté", "pas bien classé".
+  Audit SEO technique d'un site WordPress complet : balises meta, erreurs de crawl, indexation, Core Web Vitals, sitemap, robots.txt, canonicals, hreflang, schema markup, redirections. Diagnostique les chutes de trafic et produit un rapport actionnable avec priorités et impact estimé.
+  Utilise ce skill quand l'utilisateur dit : "audit SEO complet du site", "mon trafic a chuté", "audit technique SEO", "diagnostic d'indexation", "pourquoi je ne suis pas classé", ou demande une analyse globale multi-pages.
+  NE PAS utiliser pour : auditer UNE seule page / article / URL (utiliser `seo-page-audit`), analyser une page concurrente (utiliser `seo-competitor-gap-radar`), ou pipeline data-driven depuis export GSC (utiliser `geo-gsc-pipeline`).
 metadata:
   version: 1.1.0
 ---

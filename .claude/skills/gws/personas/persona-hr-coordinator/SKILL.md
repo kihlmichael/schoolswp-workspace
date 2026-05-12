@@ -1,7 +1,10 @@
 ---
 name: persona-hr-coordinator
 version: 1.0.0
-description: "Handle HR workflows — onboarding, announcements, and employee comms."
+description: |
+  Profil orchestré pour les workflows RH : onboarding via événements Calendar, supports en Drive, annonces nouveaux arrivants en Chat, communications mass mail Gmail, conversion email-to-task. Combine gws-gmail, gws-calendar, gws-drive, gws-chat.
+  Utilise ce skill quand l'utilisateur dit : "active la persona HR coordinator", "mode RH Workspace", "je pilote un onboarding", ou pour adopter une posture coordination RH multi-canal.
+  NE PAS utiliser pour : profil exec assistant orienté direction (utiliser persona-exec-assistant), profil team lead orienté équipe (utiliser persona-team-lead), skill Gmail seul (utiliser gws-gmail), ou agent FluentCRM côté schoolsWP (utiliser flow).
 metadata:
   openclaw:
     category: "persona"

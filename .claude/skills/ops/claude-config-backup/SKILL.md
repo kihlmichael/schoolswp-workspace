@@ -1,12 +1,9 @@
 ---
 name: claude-config-backup
 description: |
-  Sauvegarde et restaure la configuration Claude Code (skills, agents, commands, hooks, settings) entre
-  machines Windows via git privé ou archive .tar.gz. Gère workspace (`D:/VS Code/CLAUDE CODE/.claude/`)
-  et global user (`C:/Users/<user>/.claude/`), exclut automatiquement les secrets (.env, .mcp.json,
-  settings.local.json, *.key). Déclenche pour "backup mes skills", "sauvegarder config Claude",
-  "restore sur nouvelle machine", "sync claude config", "setup nouveau PC", "migrer skills", "transférer
-  config Claude Code", "exporter skills", "importer skills".
+  Sauvegarde et restaure la config Claude Code (skills, agents, commands, hooks, settings) entre PC Windows via git privé ou archive `.tar.gz`. Couvre workspace `D:/VS Code/CLAUDE CODE/.claude/` et global user `C:/Users/<user>/.claude/`. Exclut automatiquement les secrets (`.env`, `.mcp.json`, `settings.local.json`, `*.key`).
+  Utilise ce skill quand l'utilisateur dit : "backup mes skills", "sauvegarder config Claude", "restore sur nouvelle machine", "sync claude config", "setup nouveau PC", "migrer skills", "transférer config Claude Code", "exporter skills", ou "importer skills".
+  NE PAS utiliser pour : versionner les skills du projet schoolsWP eux-mêmes (déjà dans le repo git), backup secrets/credentials (interdit, voir `feedback_never_read_env`), ou sync `.agents/skills/` source library (à archiver à part).
 ---
 
 # Claude Config Backup

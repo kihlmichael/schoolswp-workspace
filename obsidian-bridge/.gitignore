@@ -1,0 +1,20 @@
+# Passerelle Obsidian - Claude Code
+# Versionner la mécanique, pas les contenus volatiles
+
+# Contenus de transit (gitignorés sauf placeholder)
+inbox-from-obsidian/*
+!inbox-from-obsidian/.gitkeep
+
+outbox-to-obsidian/*
+!outbox-to-obsidian/.gitkeep
+
+# Logs locaux (gitignorés sauf placeholder)
+logs/*
+!logs/.gitkeep
+
+# Exports intermédiaires
+*.tmp
+*.bak
+
+# Cache éventuel
+.cache/

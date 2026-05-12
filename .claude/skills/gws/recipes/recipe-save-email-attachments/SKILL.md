@@ -1,7 +1,10 @@
 ---
 name: recipe-save-email-attachments
 version: 1.0.0
-description: "Find Gmail messages with attachments and save them to a Google Drive folder."
+description: |
+  Cherche les emails Gmail avec pièces jointes selon une requête, télécharge les attachments, puis les uploade dans un dossier Google Drive cible. Pipeline archivage Gmail vers Drive.
+  Utilise ce skill quand l'utilisateur dit : "sauvegarde les pièces jointes du client X dans Drive", "archive les attachments de ce thread", "transfère les fichiers email vers Drive", ou pour exfiltrer des PJ vers Drive.
+  NE PAS utiliser pour : sauvegarder le corps d'un email en Doc (utiliser recipe-save-email-to-doc), juste lister les emails avec PJ (utiliser gws-gmail), ou uploader un fichier local sans passer par Gmail (utiliser gws-drive upload).
 metadata:
   openclaw:
     category: "recipe"

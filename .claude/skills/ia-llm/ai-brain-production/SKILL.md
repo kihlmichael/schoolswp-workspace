@@ -1,6 +1,9 @@
 ---
 name: ai-brain-production
-description: Agent B - Production. Execute CREDO à partir d'un brief SPECS pour livrer le contenu principal prêt à publier (structure SEO + CTA + maillage). Utiliser quand le brief SPECS est validé et qu'il faut passer en mode rédaction, ou quand ai-strategic-brain active le mode PRODUCER.
+description: |
+  Agent B du Brain schoolsWP. Exécute CREDO à partir d'un brief SPECS validé pour livrer le contenu principal prêt à publier : structure H2 SEO, contenu complet, CTA cohérents, suggestions de maillage interne.
+  Utilise ce skill quand l'utilisateur dit : "produit le contenu", "rédige selon le brief", "passe en mode CREDO", "livrable principal", ou quand `ai-strategic-brain` active le mode PRODUCER après un brief SPECS validé.
+  NE PAS utiliser pour : cadrer un sujet sans brief (utiliser `ai-brain-audit`), décliner un article publié en formats secondaires (utiliser `ai-brain-transformation`), ou tester une optimisation post-publication (utiliser `ai-brain-optimization`).
 ---
 
 # Agent B - Production (schoolsWP)

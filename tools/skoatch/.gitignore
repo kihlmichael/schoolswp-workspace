@@ -1,0 +1,6 @@
+.env
+*.local
+.cache/
+payloads/*.local.json
+runs/*
+!runs/.gitkeep

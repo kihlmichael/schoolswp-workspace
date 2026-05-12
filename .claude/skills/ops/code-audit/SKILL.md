@@ -1,10 +1,9 @@
 ---
 name: code-audit
 description: |
-  Détecte la dette technique, le code dupliqué, les patterns inconsistants et les dépendances
-  inutiles dans un dépôt, puis génère un rapport actionnable. Déclenche pour "auditer le code",
-  "dette technique", "code dupliqué", "dead code", "dépendances inutilisées", "scanner les TODO",
-  "qualité du code", "candidats au refactoring".
+  Scanne un dépôt pour détecter la dette technique : code dupliqué (textuel + structurel), marqueurs TODO/FIXME/HACK/XXX, patterns inconsistants (nommage, archi, style) et dépendances déclarées non utilisées. Produit un rapport priorisé avec preuves et recommandations — propose, ne modifie pas.
+  Utilise ce skill quand l'utilisateur dit : "audit le code", "dette technique", "code dupliqué", "dead code", "dépendances inutilisées", "scanner les TODO", "qualité du code", "candidats au refactoring", ou veut un état des lieux avant gros refacto.
+  NE PAS utiliser pour : audit Publish Score d'un article (utiliser `audit`), audit performance runtime / sécurité (utiliser `cso` ou outils dédiés), correction automatique du code (utiliser `simplify` ou implémenter manuellement), ou lint quotidien (utiliser `ruff` direct).
 ---
 
 # Code Audit & Technical Debt Scanner

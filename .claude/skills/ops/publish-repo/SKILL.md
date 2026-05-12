@@ -1,8 +1,9 @@
 ---
 name: publish-repo
 description: |
-  Crée un repo GitHub, commit les changements et push. Usage : /publish-repo <repo-name> [commit message].
-  Déclenche pour "publish repo", "créer repo GitHub", "push sur GitHub".
+  Crée un nouveau repo GitHub privé via gh CLI, initie git si besoin, commit les changements puis push avec flag upstream. Usage : /publish-repo <repo-name> [commit message]. Toujours privé, demande confirmation avant création et push.
+  Utilise ce skill quand l'utilisateur dit : "publish repo", "crée repo GitHub", "push sur GitHub", "/publish-repo nom-repo", ou veut publier un nouveau projet sur le compte GitHub.
+  NE PAS utiliser pour : push sur un repo déjà créé (utiliser `git-pushing`), créer un repo public (skill force `--private`), créer une pull request (utiliser le skill `superpowers:requesting-code-review`), ou fork d'un repo existant (utiliser MCP `github` ou gh CLI direct).
 ---
 
 # /publish-repo

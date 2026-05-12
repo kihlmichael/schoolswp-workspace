@@ -1,13 +1,9 @@
 ---
 name: seo-page-audit
-description: >
-  Audit SEO orienté résultats pour une page web individuelle : contenu, éditorial, conversion,
-  intentions de recherche, structure, CTA et maillage. Utilise ce skill dès que l'utilisateur
-  veut analyser une page, un article ou une URL pour améliorer son référencement, sa clarté
-  ou ses conversions. Déclenche aussi quand l'utilisateur dit "audite cette page", "analyse cet
-  article", "qu'est-ce qui ne va pas sur cette page", "comment améliorer cette page", "diagnostic
-  SEO page", "audit contenu", "revue éditoriale", ou fournit une URL à analyser pour le SEO.
-  S'applique à tout type de contenu : test produit, guide, comparatif, tutoriel, opinion, landing page.
+description: |
+  Audit SEO orienté résultats pour UNE page web individuelle : contenu, éditorial, conversion, intentions de recherche, structure, CTA, maillage. 7 dimensions notées Fort/Correct/Faible. S'applique à tout type de contenu : test produit, guide, comparatif, tutoriel, opinion, landing page.
+  Utilise ce skill quand l'utilisateur dit : "audite cette page", "analyse cet article", "qu'est-ce qui ne va pas sur cette page", "comment améliorer cette URL", "revue éditoriale de ce contenu", ou fournit une URL / contenu collé / fichier .md à analyser pour le SEO.
+  NE PAS utiliser pour : audit technique de site complet (utiliser `seo-audit`), analyse d'une page concurrente (utiliser `seo-competitor-gap-radar`), ou production d'un nouvel article (utiliser `schoolswp-article-workflow`).
 allowed-tools:
   - WebFetch
   - WebSearch

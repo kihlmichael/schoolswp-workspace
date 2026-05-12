@@ -1,15 +1,9 @@
 ---
 name: thruuu-writer
 description: |
-  Transforme un brief thruuu (.docx) en article complet pret a publier. Pipeline 10 etapes :
-  parsing du brief, detection de langue, recherche URLs, redaction section par section,
-  placement de liens, checklist finale et sauvegarde en markdown.
-  4 modes : run (pipeline complet), dry-run (diagnostic sans redaction), audit (analyse de
-  faisabilite), guideline-only (creation GUIDELINE.md).
-  Utilise ce skill des que l'utilisateur mentionne thruuu, brief thruuu, content brief,
-  article depuis un brief, "redige cet article", "transforme ce brief en article",
-  ou veut creer un GUIDELINE.md pour definir sa voix de marque.
-  Aussi declenchable via /thruuu-writer.
+  Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 10 étapes : parsing du brief, détection de langue, recherche URLs, rédaction section par section, placement de liens, checklist finale et sauvegarde markdown. 4 modes : run (pipeline complet), dry-run (diagnostic), audit (faisabilité), guideline-only (GUIDELINE.md). Aussi déclenchable via /thruuu-writer.
+  Utilise ce skill quand l'utilisateur dit : "rédige cet article", "transforme ce brief en article", "thruuu writer", "article depuis un brief", "lance thruuu-writer sur [brief.docx]", ou fournit un brief thruuu .docx et veut l'article final.
+  NE PAS utiliser pour : article depuis un mot-clé + SERP sans brief .docx (utiliser `schoolswp-article-workflow`), construire le brief lui-même (utiliser `thruuu-brief-builder`), draft express (utiliser `brain-lite`), ou audit/score d'article publié (utiliser `article-audit-score`).
 last_reviewed: 2026-04-23
 review_interval_days: 90
 ---

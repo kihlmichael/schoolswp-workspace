@@ -1,12 +1,9 @@
 ---
 name: note-to-sop
-description: >
-  Transforme une note brute, une idee vague ou un process informel en SOP claire et exploitable
-  pour schoolsWP. Utilise ce skill des que l'utilisateur veut structurer un process, creer une SOP,
-  documenter une procedure, transformer des notes en etapes, ou dit "SOP", "procedure", "process",
-  "etapes a suivre", "documente ce workflow", "comment faire", "transforme en SOP",
-  "standardise ce process", "checklist". Aussi utilisable depuis Dispatch mobile pour produire
-  une SOP rapide a partir d'une note vocale ou d'un memo court.
+description: |
+  Transforme une note brute, une idée vague, un process informel ou un échange en SOP (Standard Operating Procedure) schoolsWP claire, séquentielle et reproductible par humain ou agent IA. Structure stricte : objectif, prérequis, étapes numérotées, validation, edge cases. Utilisable depuis Dispatch mobile sur note vocale courte.
+  Utilise ce skill quand l'utilisateur dit : "SOP", "procédure", "process", "étapes à suivre", "documente ce workflow", "comment faire", "transforme en SOP", "standardise ce process", "checklist", ou veut capturer un savoir-faire encore dans la tête.
+  NE PAS utiliser pour : ADR (Architecture Decision Record — utiliser le sub-agent `adr-writer`), documentation API/inline (utiliser `documentation-and-adrs`), plan d'implémentation code (utiliser `concise-planning` ou `planning-and-task-breakdown`), ou SOP vault Obsidian sous `05_sop/` (passer par bridge inbox-vers-claude puis validation Michael).
 allowed-tools:
   - Read
   - Write

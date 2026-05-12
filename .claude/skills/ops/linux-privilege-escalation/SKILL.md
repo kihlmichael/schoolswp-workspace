@@ -1,6 +1,9 @@
 ---
 name: linux-privilege-escalation
-description: "Escalade de privilèges sur systèmes Linux. Utilise ce skill pour identifier et exploiter les mauvaises configurations sudo, binaires SUID, tâches cron, capabilities et autres vecteurs d'élévation de privilèges dans des contextes de sécurité autorisés."
+description: |
+  Escalade de privilèges sur systèmes Linux : énumération automatisée (LinPEAS, LinEnum, LES) puis exploitation systématique de sudo misconfig, SUID, cron jobs, capabilities, PATH hijacking, NFS, kernel exploits. Référence GTFOBins. Livre path d'escalade documenté + recommandations remédiation.
+  Utilise ce skill quand l'utilisateur dit : "privesc Linux", "escalade root", "SUID exploitation", "sudo misconfig", "LinPEAS", ou "GTFOBins" — uniquement dans un contexte d'audit autorisé.
+  NE PAS utiliser pour : pentest cloud (utiliser `cloud-penetration-testing`), tests web app (utiliser `burp-suite-testing` ou `top-web-vulnerabilities`), ou audit sécurité du projet schoolsWP (utiliser `cso`).
 risk: unknown
 source: community
 author: zebbern

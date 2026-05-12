@@ -1,9 +1,9 @@
 ---
 name: gemini-interactions-api
 description: |
-  Utilise l'API Interactions Gemini pour la génération de texte, le chat multi-tours, la compréhension
-  multimodale, la génération d'images, le streaming, le function calling et les outputs structurés.
-  Déclenche pour "Interactions API Gemini", "generateContent Gemini", "chat Gemini", "streaming Gemini".
+  Utilise l'API Interactions Gemini (alternative agentique à generateContent) : state serveur via previous_interaction_id, exécution background long-running, streaming SSE, tool orchestration (function calling, Google Search, code execution, URL context, file search, remote MCP), agents intégrés (Deep Research), thinking configurable.
+  Utilise ce skill quand l'utilisateur dit : "Interactions API Gemini", "chat Gemini multi-tours stateful", "Deep Research Gemini", "streaming SSE Gemini", "agent Gemini avec tools", ou veut offload l'historique conversation côté serveur Google.
+  NE PAS utiliser pour : appels generateContent classiques sans state (utiliser `gemini-api-dev`), streaming bidirectionnel WebSocket audio/vidéo (utiliser `gemini-live-api-dev`), CLI one-shot (utiliser `gemini`).
 
 ---
 

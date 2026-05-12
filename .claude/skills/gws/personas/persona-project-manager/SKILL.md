@@ -1,7 +1,10 @@
 ---
 name: persona-project-manager
 version: 1.0.0
-description: "Coordinate projects — track tasks, schedule meetings, and share docs."
+description: |
+  Profil orchestré pour coordonner des projets : digest hebdo, suivi statut en Sheets, partage artifacts Drive avec annonce Chat, standups récurrents Calendar, mails de status. Combine gws-drive, gws-sheets, gws-calendar, gws-gmail, gws-chat.
+  Utilise ce skill quand l'utilisateur dit : "active la persona project manager", "mode chef de projet Workspace", "je pilote un projet multi-canal", ou pour adopter une posture coordination orientée delivery projet.
+  NE PAS utiliser pour : profil team lead orienté humain (utiliser persona-team-lead), profil event coordinator orienté logistique (utiliser persona-event-coordinator), skill Sheets seul (utiliser gws-sheets), ou pilotage d'agents schoolsWP (utiliser CLAUDE.md projet et la fleet schoolswp-agents).
 metadata:
   openclaw:
     category: "persona"

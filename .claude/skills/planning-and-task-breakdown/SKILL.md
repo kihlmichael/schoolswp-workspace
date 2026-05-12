@@ -1,10 +1,9 @@
 ---
 name: planning-and-task-breakdown
-description: >
-  Decompose le travail en taches atomiques, ordonnees et verifiables. Utilise ce skill quand une
-  tache semble trop large pour demarrer, quand tu dois estimer le scope, paralleliser du travail,
-  ou communiquer un plan clair. Declenche pour "plan d'action", "decompose cette tache",
-  "par ou commencer", "estime le scope", "planifie cette feature", "task breakdown".
+description: |
+  Decomposer le travail en taches atomiques, ordonnees, verifiables, avec criteres d'acceptation explicites. Mode read-only obligatoire pendant la planification (pas de code), mapping des dependances, identification des risques. Sortie : plan, pas du code. Adapte au contexte schoolsWP (agents Python, CLI, system prompts md).
+  Utilise ce skill quand l'utilisateur dit : "plan d'action", "decompose cette tache", "par ou commencer", "estime le scope", "planifie cette feature", "task breakdown", "ordre d'implementation", ou pour paralleliser du travail entre agents, sessions, worktrees.
+  NE PAS utiliser pour : changement single-file au scope evident, spec deja decoupee en taches definies, implementation directe (utiliser incremental-implementation), brainstorm produit en amont (utiliser superpowers:brainstorming ou office-hours), ou plan d'architecture qui necessite review (utiliser plan-eng-review apres ce skill).
 ---
 
 # Planning and Task Breakdown

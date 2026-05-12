@@ -1,17 +1,9 @@
 ---
 name: race-engine
-description: >
-  AI Strategic Engine schoolsWP — prompt RACE (Role · Action · Context · Expectation) pour
-  produire des recommandations WordPress / SEO / automation opérationnelles et priorisées.
-  Format de sortie en 8 blocs : résumé 5 lignes, priorités P1/P2/P3, quick wins (30 min),
-  version propre (2-3 h), structure H2/H3 + FAQ si SEO contenu, métadonnées images si SEO images,
-  validation GSC, next step.
-  Déclencher pour toute demande d'audit, d'optimisation ou de recommandation concrète sur :
-  SEO WordPress, performance, sécurité, conversion, Rank Math, FluentCRM, Fluent Forms,
-  TutorLMS, FluentBooking, GA4, GSC, DataForSEO.
-  Déclencher aussi quand l'utilisateur dit "analyse cette page", "optimise mon SEO",
-  "qu'est-ce qui bloque", "donne-moi un diagnostic", "checklist", "quick wins",
-  "qu'est-ce que je dois faire sur [URL/sujet]".
+description: |
+  schoolsWP RACE Engine — framework RACE (Role · Action · Context · Expectation) pour audit / diagnostic / quick wins rapides sur WordPress, SEO, performance, sécurité, conversion (Rank Math, FluentCRM, Fluent Forms, TutorLMS, FluentBooking, GA4, GSC, DataForSEO). Sortie 8 blocs : résumé 5 lignes, priorités P1/P2/P3, quick wins 30 min, version propre 2-3h, structure H2/H3 + FAQ, validation GSC, next step.
+  Utilise ce skill quand l'utilisateur dit : "analyse cette page", "donne-moi un diagnostic", "quick wins sur [URL]", "qu'est-ce qui bloque sur cet article", "checklist d'optimisation", ou veut une recommandation rapide priorisée.
+  NE PAS utiliser pour : production d'un livrable premium from scratch (utiliser `credo-engine`), arbitrage entre options (utiliser `decision-engine`), cadrage projet en amont (utiliser `specs-engine`), ou test d'une hypothèse mesurable (utiliser `pact-engine`).
 ---
 
 # schoolsWP RACE Engine

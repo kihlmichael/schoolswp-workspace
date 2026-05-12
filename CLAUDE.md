@@ -38,6 +38,10 @@ Avant toute tâche, lire dans cet ordre :
 
 **Garde-fous comportementaux** : `.claude/rules/karpathy-principles.md` — 4 principes (think before coding, simplicity first, surgical changes, goal-driven execution). Pas auto-chargés via `paths:` ; à consulter avant tout refactoring ou tâche d'édition non-triviale.
 
+## Data Knowledge
+
+Before answering or searching the web, always check the Obsidian wiki located at `D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP`, especially the schoolsWP knowledge base and Claude Code bridge documentation.
+
 ## Python Environment
 
 Projet `schoolswp-agents` v0.1.0 — Python `>=3.11`. Gestionnaire : `uv` (lock file `uv.lock`). Synchroniser : `uv sync` depuis la racine projet.
@@ -155,8 +159,27 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 - `apps/video-marketing/` et `apps/vscode-agent-visual/` ont leur propre `CLAUDE.md`. `apps/hyperframes/` = scaffold Remotion+FFmpeg (skills `external-hyperframes/` + `external-liveavatar/`, install npm pas encore lancé). `apps/_archive/` et `apps/_prototypes/` à ignorer.
 - `tools/wp-media-upload/` — pipeline upload images articles vers schoolswp.com avec métadonnées SEO complètes (XPTitle, alt, etc.) + auto-backup + strip préfixe numérique. Commandes `cli.py init/list/upload`. Michael invoque "upload les images de l'article X", je pilote.
   - **Prérequis bloquant** : ExifTool installé via winget user scope (`AppData/Local/Programs/ExifTool/`) hors PATH système. Exporter le dossier au PATH avant chaque appel `cli.py upload` sinon "ExifTool not found".
+- **Autres outils tools/** : html-to-png/ (HTML vers PNG retina + métadonnées SEO bakées), image-meta-seo/, check-tutor-docs-changes/ (watcher docs Tutor LMS), thruuu-writer/, ultimate-scraper/, mcp-servers/, wp-mu-plugins/, services/, scripts/, legacy/.
+- **Apps annexes** (sans sub-CLAUDE.md) : apps/telegram-bot/, apps/claude-md-generator/, apps/brand-reveal/, apps/claude-telegram-poc/. Voir leur README respectif.
 - **Racine** : 9 scripts Python one-shot (`fix_workflow.py`, `patch_*.py`) = maintenance n8n via API. `gmail-filters.xml` = config persistante réimportable dans Gmail Settings.
+- `content/audits/` — système d'audits articles avec snapshots datés (créé 2026-05-07). Structure `<slug>/<YYYY-MM-DD>/` archive GSC + DataForSEO + thruuu + snapshot article actuel. Permet le diff entre dates (mesure d'impact refonte, suivi positions, traçabilité décisions). Conventions complètes : `content/audits/CONVENTIONS.md`. Index : `content/audits/_registry.md`. Distinct de `content/decisions/` (briefs/arbitrages, pilotage) et `content/articles/` (contenu publié).
+- `content/decisions/` — briefs et arbitrages éditoriaux (couche pilotage en amont des articles).
+- `content/inspirations/` — captures visuelles, twitter cards, drafts UI (préparation, pas du contenu publié).
+- `content/calendrier-edito/` — planning éditorial.
+- `content/social-series/` — séries de posts cross-plateforme.
 - Sub-CLAUDE.md auto-chargés : `core/agents-py/`, `systems/n8n/`, `apps/video-marketing/`, `apps/vscode-agent-visual/`.
+
+## Workspace Hygiene — anomalies connues à ne pas toucher sans investigation
+
+- Dossier nommé littéralement avec accolades, du genre {agents,hooks,commands}/ à la racine — résidu d'une brace expansion bash qui a foiré sur Windows. À auditer puis supprimer manuellement via Explorer.
+- `systems/multi-agent-system/multi-agent-system/` — sous-dossier dupliqué imbriqué, avec son propre venv et data/memory.db. Origine non documentée, vérifier avant tout cleanup.
+- Doublons de chemin `content/articles/articles/lms-*/` — à fusionner avec `content/articles/lms-*/` après diff.
+- 3 backups MCP à la racine : .mcp.json.bak, .mcp.json.fluent, .mcp.backup.json. Vérifier les secrets pré-rotation avant suppression. Incidents documentés 2026-04-21 et 2026-04-29.
+- .coverage à la racine = artefact pytest, vérifier qu'il est bien gitignored.
+
+**Racine polluée à nettoyer** : ~12 scripts de debug VM préfixés .tmp-vm- (extension shell), ~4 scripts Python préfixés tmp-, ~7 fichiers texte de debug (callout.txt, col_*.txt, first40.txt, orig_sample.txt, sc_block.txt, toc_ctx.txt, wp_raw_now.txt), 11 captures slide-*.png + 4 captures iter*-screenshot.png, et 8 transcripts 2026-03-28_youtube_*.md qui appartiennent à content/.
+
+**Mémoire interne Claude Code** : le fichier MEMORY.md du workspace `C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\` approche le plafond de chargement de 24 KB et est tronqué. Garder les entrées d'index sous 200 chars, déporter le détail dans les fichiers topic.
 
 ## Project Sub-Agents (`.claude/agents/`)
 
@@ -177,6 +200,7 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 | `output-evaluator` | LLM-as-Judge, qualité avant commit/action (read-only) |
 | `harness-optimizer` | Tuning du harness Claude Code (reliability, cost, throughput) |
 | `silent-failure-hunter` | Détecte erreurs avalées, fallbacks dangereux (read-only) |
+| `skoatch-publisher` | Pipeline Skoatch + WP draft pour michaelkihl.fr (autres sites WP sur demande). **Jamais schoolswp.com**. Voir `tools/skoatch/` et skill `dev/skoatch-api` |
 
 Le quartet `studio` / `radar` / `pulse` / `flow` mirror la fleet `schoolswp-agents/` mais en sub-agents projet (dispatchables en parallèle dans la session courante).
 
@@ -256,6 +280,7 @@ Configurés dans `.mcp.json` (gitignored, template `.mcp.json.example`) :
 | --- | --- |
 | `n8n-mcp` | Workflows n8n (CRUD, exécutions, audit) |
 | `novamira-schoolswp-com` | REST API WordPress schoolswp.com (abilities discovery + execution) |
+| `wordpress-studio` | WordPress Studio CLI MCP (sites locaux, preview, push/pull WP.com, WP-CLI managé) |
 | `gsc-mcp` | Google Search Console (analytics, URL inspect, sitemaps) — auth OAuth Desktop, creds dans `.credentials/gsc-client-secrets.json` (gitignored) |
 | `dataforseo` | SEO/keyword data, rank tracking, SERP |
 | `firecrawl` | Web scraping/search |
@@ -263,6 +288,8 @@ Configurés dans `.mcp.json` (gitignored, template `.mcp.json.example`) :
 | `wisewand` | Génération de contenu service |
 | `aidesigner` | Design HTML (génération + refine, OAuth, Pro 25 $/mois = 100 crédits) |
 | `nano-banana` | Image generation Gemini (modèle GA en direct, pas le `-preview` cassé) |
+| `higgsfield` | Higgsfield AI (génération vidéo/image cinématique via HTTP MCP distant) |
+| `heygen` | HeyGen avatars + vidéos AI (HTTP MCP officiel `mcp.heygen.com/mcp/v1/`, OAuth, crédits du plan) |
 | `chrome-devtools` | Inspection navigateur (Lighthouse, console, network) |
 | `claude-code-guide` | Doc Claude Code locale (search_guide, search_official_docs) |
 | `fluentcrm` | FluentCRM (contacts, listes, tags, campagnes, smart links) |
@@ -323,6 +350,8 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 - `external-video-use/` (2026-04-27) — édition vidéo conversationnelle (transcribe, cut, color grade, subtitles). Sous-clone gitignored, deps dans venv racine.
 - `external-ecc/` — gateguard fact-forcing pre-edit (1 skill cherry-picked, 4 candidats rejetés).
 - `external-hyperframes/` + `external-liveavatar/` — Remotion + avatars AI (FFmpeg requis).
+- `external-heygen/` — skills HeyGen (avatars + vidéos AI). Pattern de prod confirmé 2026-05-06 : lipsync via audioUrl externe (digital_twin + audio mp3/wav HTTPS public, sans voiceId/script). Voix clone HeyGen cassée API → ElevenLabs en amont.
+- `external-obsidian/` — skill `defuddle` cherry-picked depuis kepano/obsidian-skills (MIT, 2026-05-04). Préférer à WebFetch/firecrawl pour veille article rapide. CLI npm 0.18.1 installé global. 4 autres skills upstream skipped (pas de vault Obsidian côté projet).
 
 Lock cohérence : `tools/lock_external_skills.py` génère `skills-lock.json` pour les 31 skills `external-*`. Routine reval Q3 2026.
 
@@ -357,6 +386,47 @@ Règles de conflit spécifiques aux skills importés :
 - `copywriting-psychologist` (antigravity, persuasion scientifique EN) vs skills copy internes : pas de collision, s'active pour copy conversion psychologique référencée (JTBD, ELM). Peut cohabiter avec `branding` (check) et `clairtexte` (langue).
 
 **Skills archivés** (invocation manuelle uniquement, YAML gutté) : liste + raisons + dates dans [.claude/skills/_archive/INDEX.md](.claude/skills/_archive/INDEX.md). Toute nouvelle archive = ligne ajoutée là-bas, pas ici.
+
+## Passerelle Obsidian
+
+Canal contrôlé entre le projet schoolsWP et le vault Obsidian schoolsWP (`D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\`). Pas une synchronisation.
+
+**Asymétrie d'autorité :**
+
+- Vault Obsidian = autorité finale de la **mémoire longue validée**.
+- Projet Claude Code = autorité finale de l'**opérationnel**.
+- Mémoire interne Claude Code (`C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\`) = **technique**, ne remplace pas le wiki, n'a pas autorité sur lui.
+
+**Localisation passerelle** :
+
+- Côté projet : [`obsidian-bridge/`](obsidian-bridge/README.md) (README, SOP, templates, `.gitignore`)
+- Côté vault : `00_systeme/claude-code-bridge/` (5 sous-dossiers + README + SOP)
+
+**Ce que Claude Code peut lire dans le vault** :
+
+- `claude.md`, `index.md`, `log.md` à la racine du vault (charte, index, journal)
+- `00_systeme/claude-code-bridge/inbox-vers-claude/**`
+- `07_projects/schoolswp/**` (uniquement si demandé explicitement, lecture seule)
+- `01_inbox/**` (uniquement si demandé)
+
+**Ce que Claude Code peut écrire dans le vault** :
+
+- **Principalement** `00_systeme/claude-code-bridge/outbox-depuis-claude/**` (ou `decisions-proposees/`, `syntheses-proposees/`) - Markdown propre avec frontmatter standard.
+- **Exception consolidation post-transport (SOP v1.1+)** : Claude peut modifier `08_sources/<sub-zone>/` (rename index/synthèse, archivage version périmée dans `_normalisation/`, mise à jour d'index existant) **uniquement après transport humain effectif** et sans toucher au contenu source-brute déjà transporté.
+- **Append au log.md du vault** : autorisé uniquement pour tracer les actions de l'exception ci-dessus (append-only strict, jamais modifier les entrées passées).
+- **Jamais** dans les autres zones stables : `02_drafts/`, `03_synthesis/`, `04_memory/`, `05_sop/`, `06_decisions/`, `07_projects/`, `09_archive/`.
+
+**Ce que Claude Code ne doit jamais toucher** :
+
+- `.obsidian/` (config Obsidian)
+- `claude.md`, `index.md` du vault (gouvernance, modifs Michaël uniquement)
+- Les entrées passées de `log.md` (append-only strict, modification interdite même par Claude)
+- Le contenu source-brute déjà transporté dans `08_sources/<sub-zone>/<videos|docs|...>/` (intouchable, modifs par Michaël uniquement)
+- Les fiches d'identité schoolsWP stabilisées en phase 2 et 3 (mission, audience, positionnement, voix-editoriale, piliers)
+
+**Règle absolue du vault** : aucune modification durable du wiki sans entrée correspondante dans `log.md` du vault. Toute promotion d'un draft `outbox-depuis-claude/` vers une zone stable passe par Michaël (validation L0). Les actions de consolidation post-transport (exception SOP 8.2) suivent la même règle : Claude doit appender l'entrée log lui-même.
+
+**Procédure complète** : [obsidian-bridge/SOP-claude-obsidian-bridge.md](obsidian-bridge/SOP-claude-obsidian-bridge.md) (v1.1, MAJ 2026-05-05 avec exception 8.2 et 8.3).
 
 ## Reference Docs
 

@@ -1,6 +1,6 @@
 ---
 name: gsap
-description: GSAP animation reference for HyperFrames. Covers gsap.to(), from(), fromTo(), easing, stagger, defaults, timelines (gsap.timeline(), position parameter, labels, nesting, playback), and performance (transforms, will-change, quickTo). Use when writing GSAP animations in HyperFrames compositions.
+description: "Référence des animations GSAP pour HyperFrames. Couvre gsap.to(), from(), fromTo(), easing, stagger, defaults, timelines (gsap.timeline(), paramètre position, labels, nesting, playback) et performance (transforms, will-change, quickTo). Utilise ce skill pour écrire des animations GSAP dans les compositions HyperFrames."
 ---
 
 # GSAP

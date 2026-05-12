@@ -1,13 +1,9 @@
 ---
-name: Analyseur CSV / Excel → Rapport décisionnel
-description: >
-  Analyse automatiquement un fichier CSV ou Excel et génère un rapport professionnel structuré
-  avec résumé exécutif (5 lignes max), tendances principales chiffrées, anomalies détectées,
-  top 5, flop 5 et recommandations concrètes — dans un langage clair accessible à un
-  non-spécialiste. Utilise ce skill dès qu'un fichier .csv, .xlsx ou .xls est fourni et que
-  l'utilisateur veut comprendre ses données, analyser ses ventes, son CRM, ses metrics
-  marketing, ses finances ou ses opérations — même s'il ne demande pas explicitement un
-  "rapport" ou une "analyse structurée".
+name: csv-excel-report
+description: |
+  Analyse un fichier CSV ou Excel et génère un rapport décisionnel structure : resume executif (5 lignes max), tendances principales chiffrees, anomalies detectees, top 5 / flop 5, et recommandations concretes en langage accessible a un non-specialiste. Pas de code expose, juste les insights actionnables.
+  Utilise ce skill quand l'utilisateur fournit un fichier .csv / .xlsx / .xls et dit : "analyse ce fichier", "analyse mes ventes", "analyse mon CRM", "analyse ces metriques", "comprends ces données", "rapport sur ce fichier", "que disent ces chiffres", "donne-moi un resume de", ou colle un export GSC/DataForSEO/FluentCRM/Stripe pour avoir une lecture metier.
+  NE PAS utiliser pour : manipuler/editer le fichier (utiliser `xlsx` skill), faire un audit SEO d'un export GSC (utiliser `seo-audit` ou `radar` agent), produire un dashboard interactif, ou debugguer une formule Excel.
 ---
 
 ## Purpose

@@ -1,9 +1,9 @@
 ---
 name: senior-fullstack
 description: |
-  Développement fullstack complet pour construire des applications web avec React, Next.js, Node.js,
-  GraphQL et PostgreSQL. Inclut le scaffolding de projet, l'analyse de qualité de code et l'architecture.
-  Déclenche pour "application fullstack", "React + Node.js", "GraphQL", "architecture fullstack".
+  Toolkit fullstack senior pour scaffolder un projet (React + Next.js + Node.js + GraphQL + PostgreSQL), poser l'architecture complète et analyser la qualité de code. Trois scripts Python : fullstack_scaffolder, project_scaffolder, code_quality_analyzer.
+  Utilise ce skill quand l'utilisateur dit : "scaffold une app fullstack", "démarre un projet React + Node", "architecture fullstack from scratch", "analyse la qualité de cette codebase", ou pour bootstrapper un nouveau projet web complet.
+  NE PAS utiliser pour : juste le frontend (utiliser `frontend-developer`), juste l'API (utiliser `backend-dev-guidelines`), ou pour la review d'un PR existant (utiliser `code-review-and-quality`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

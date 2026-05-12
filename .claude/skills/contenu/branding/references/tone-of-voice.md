@@ -54,9 +54,8 @@ Utilise ces expressions **naturellement** dans les contenus :
 « Testé et approuvé. »
 « Pas de blabla, juste du concret. »
 « L'idée, c'est de comprendre avant d'appliquer. »
-« À vous de jouer. »
 « À toi de jouer. »
-« schoolsWP est là pour vous aider à franchir ce cap. »
+« schoolsWP est là pour t'aider à franchir ce cap. »
 « WordPress peut vraiment travailler pour toi. »
 « La clarté bat toujours la complexité. »
 ```
@@ -102,16 +101,16 @@ Utilise ces expressions **naturellement** dans les contenus :
 ## Formules d'Ouverture (par contexte)
 
 **Article blog :**
-> Vous envoyez vos emails manuellement à chaque nouveau contact ?
+> Tu envoies tes emails manuellement à chaque nouveau contact ?
 
 **Newsletter :**
 > Cette semaine, j'ai refait l'intro d'un article publié il y a 6 mois.
 
 **LinkedIn :**
-> WordPress ne fait pas le SEO à votre place.
+> WordPress ne fait pas le SEO à ta place.
 
 **YouTube :**
-> Vous voulez envoyer un email automatique à chaque nouvel abonné ?
+> Tu veux envoyer un email automatique à chaque nouvel abonné ?
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: wordpress-centric-high-seo-optimized-blogwriting-skill
-description: "Use this skill when the user asks to write a blog post, article, or SEO content. This applies a professional structure, truth boxes, click-bait-free accurate information, and outputs direct WordPress-ready content."
+description: "Rédige des articles de blog WordPress hautement optimisés SEO avec structure pédagogique, truth boxes, output WordPress-ready (Gutenberg blocks). Utilise ce skill pour produire un article SEO long format prêt à publier."
 ---
 
 # wordpress-centric-high-seo-optimized-blogwriting-skill

@@ -1,6 +1,9 @@
 ---
 name: marketing
-description: Marketing schoolsWP — CRO, copywriting, SEO, séquences email, stratégie de prix et analytics. Utilise ce skill pour l'optimisation de la conversion, les landing pages, le marketing par email, l'audit SEO, la tarification ou les stratégies de croissance.
+description: |
+  Collection de frameworks marketing schoolsWP basés sur Conversion Factory adaptés WordPress : CRO (page-cro, form-cro, signup-flow-cro, ab-testing), copywriting, SEO, séquences email, stratégie prix, analytics. Hub de routage vers des références markdown spécialisées dans `references/`.
+  Utilise ce skill quand l'utilisateur dit : "CRO", "conversion optimization", "landing page", "copywriting", "email sequence", "drip campaign", "SEO audit", "pricing strategy", "A/B test", "analytics", ou "marketing ideas".
+  NE PAS utiliser pour : page de vente offre propre schoolsWP (utiliser `mini-offre-page-de-vente`), page affiliation tiers (utiliser `landing-page-factory`), capture newsletter (utiliser `lead-magnet-schoolswp`), audit SEO d'un article publié (utiliser `audit` ou `seo-auditor.cli`), ou orchestration social multi-plateforme (utiliser `social-media-manager`).
 user-invocable: true
 triggers:
   - CRO

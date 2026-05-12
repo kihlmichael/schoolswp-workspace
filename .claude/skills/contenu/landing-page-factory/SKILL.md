@@ -3,9 +3,9 @@ name: landing-page-factory
 description: |
   Pipeline complet qui transforme une URL (plugin WP, theme WP, SaaS WordPress) en pages de destination
   HTML responsive multi-angles avec contenu de conversion et visuels de marque.
-  7 etapes : scrape site → strategie → profil marque → copywriting → visuels → build HTML → QA gate.
+  7 etapes : scrape site → stratégie → profil marque → copywriting → visuels → build HTML → QA gate.
   Utilise Firecrawl pour le scrape et OpenAI DALL-E pour les visuels.
-  Declencheur : "landing page", "page de destination", "creer une page pour [produit]",
+  Declencheur : "landing page", "page de destination", "créer une page pour [produit]",
   "variations de landing", "page de vente HTML", "lander pour [plugin]", "page conversion".
   Utilise ce skill meme si l'utilisateur dit simplement "fais-moi une page pour X" ou
   "je veux promouvoir ce plugin" — des qu'il y a un produit WordPress/SaaS a mettre en avant.

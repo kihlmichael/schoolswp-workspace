@@ -1,7 +1,10 @@
 ---
 name: gws-forms
 version: 1.0.0
-description: "Read and write Google Forms."
+description: |
+  Lit et cree des Google Forms via le CLI `gws`. Operations : créer un formulaire, ajouter des questions (texte, choix multiple, échelle), récupérer les reponses, modifier la structure d'un Form existant.
+  Utilise ce skill quand l'utilisateur dit : "cree un Google Form", "ajoute une question au Form", "récupère les reponses du Form", "modifie le Form", ou colle un lien `docs.google.com/forms/`.
+  NE PAS utiliser pour : créer un Form de feedback partage par Gmail (utiliser `recipe-create-feedback-form`), récupérer specifiquement les reponses dans un workflow (utiliser `recipe-collect-form-responses`), ou créer un formulaire WordPress (utiliser Fluent Forms - voir `flow` agent).
 metadata:
   openclaw:
     category: "productivity"

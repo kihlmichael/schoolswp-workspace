@@ -1,15 +1,15 @@
-# Lead Magnet — Template Séquence Welcome FluentCRM
+# Lead Magnet : Template Séquence Welcome FluentCRM
 
 Système de capture complet produit via skill `lead-magnet-schoolswp` le 2026-04-16.
 
 ## Fichiers
 
-- [01-pdf-content.md](01-pdf-content.md) — Contenu du PDF 1 page A4 (prêt à mettre en page)
-- [02-landing-page.md](02-landing-page.md) — Copywriting + specs Fluent Forms de la landing
-- [03-welcome-sequence.md](03-welcome-sequence.md) — 4 emails accueil + planning FluentCRM + KPIs
-- [04-affiliate-sequence.md](04-affiliate-sequence.md) — Séquence affiliation FluentCRM Pro (5 emails) prise de relais post-welcome
-- [05-manual-setup-fluentcrm.md](05-manual-setup-fluentcrm.md) — Guide UI pas à pas (templates + formulaire + page merci + 2 funnels)
-- [06-templates-clipboard.md](06-templates-clipboard.md) — 9 templates prêts à coller (HTML ready) pour l'étape 1 du guide
+- [01-pdf-content.md](01-pdf-content.md) - Contenu du PDF 1 page A4 (prêt à mettre en page)
+- [02-landing-page.md](02-landing-page.md) - Copywriting + specs Fluent Forms de la landing
+- [03-welcome-sequence.md](03-welcome-sequence.md) - 4 emails accueil + planning FluentCRM + KPIs
+- [04-affiliate-sequence.md](04-affiliate-sequence.md) - Séquence affiliation FluentCRM Pro (5 emails) prise de relais post-welcome
+- [05-manual-setup-fluentcrm.md](05-manual-setup-fluentcrm.md) - Guide UI pas à pas (templates + formulaire + page merci + 2 funnels)
+- [06-templates-clipboard.md](06-templates-clipboard.md) - 9 templates prêts à coller (HTML ready) pour l'étape 1 du guide
 
 ## Cadrage
 

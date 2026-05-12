@@ -1,11 +1,9 @@
 ---
 name: n8n-workflow-patterns
 description: |
-  Patterns d'architecture de workflows n8n éprouvés sur de vrais workflows. Utilise ce skill pour
-  construire de nouveaux workflows, choisir des patterns d'architecture, planifier la structure d'un
-  workflow ou travailler sur des intégrations webhook, HTTP API, base de données, agents IA ou tâches
-  planifiées.
-  Déclenche pour "architecture workflow n8n", "pattern n8n", "structure workflow", "webhook n8n".
+  5 patterns d'architecture n8n éprouvés : Webhook Processing, HTTP API Integration, Database Operations, AI Agent Workflow, Scheduled Tasks. Pour chaque pattern, structure type, cas d'usage, anti-patterns. Aide à choisir l'architecture avant de générer le JSON.
+  Utilise ce skill quand l'utilisateur dit : "pattern n8n", "architecture workflow n8n", "structure d'un webhook n8n", "AI Agent n8n avec tools et memory", "scheduled task n8n", ou pour décider le pattern avant la conception.
+  NE PAS utiliser pour : générer le JSON workflow final (utiliser n8n-workflow-architect après ce skill), patterns WordPress + n8n spécifiquement (utiliser wordpress-n8n-blueprints), cadrage d'un besoin flou (utiliser n8n-orchestrator), ou validation d'un workflow existant (utiliser n8n-validation-expert).
 
 ---
 

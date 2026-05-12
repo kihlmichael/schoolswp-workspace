@@ -1,7 +1,10 @@
 ---
 name: recipe-organize-drive-folder
 version: 1.0.0
-description: "Create a Google Drive folder structure and move files into the right locations."
+description: |
+  Crée une arborescence de dossiers Google Drive (parent + sous-dossiers) puis déplace les fichiers existants dans les bons emplacements. Pipeline organisation Drive de A à Z.
+  Utilise ce skill quand l'utilisateur dit : "range mon Drive", "crée la structure de dossiers projet X", "organise ces fichiers Drive en dossiers", ou pour mettre en place une arborescence Drive cohérente.
+  NE PAS utiliser pour : trouver les fichiers volumineux à archiver (utiliser recipe-find-large-files), partager un dossier déjà existant (utiliser recipe-share-folder-with-team), ou surveiller des changements (utiliser recipe-watch-drive-changes).
 metadata:
   openclaw:
     category: "recipe"

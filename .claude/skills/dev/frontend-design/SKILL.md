@@ -1,10 +1,9 @@
 ---
 name: frontend-design
 description: |
-  Conçoit des interfaces frontend distinctives et de qualité production. Utilise ce skill pour construire
-  des composants web, pages, dashboards, landing pages, layouts HTML/CSS ou applications React avec un
-  soin particulier pour le design et l'esthétique.
-  Déclenche pour "interface web", "composant React", "landing page", "design UI", "mise en page HTML/CSS".
+  Conçoit des interfaces frontend distinctives, production-grade, anti "AI slop" : typo non générique, palette tranchée, motion intentionnelle, layouts asymétriques. Travaille en HTML/CSS/JS, React ou Vue avec un parti pris esthétique fort assumé.
+  Utilise ce skill quand l'utilisateur dit : "design une interface", "composant visuel distinctif", "landing page avec gueule", "mise en page HTML/CSS soignée", "frontend qui se démarque", ou pour toute UI où l'esthétique compte autant que le code.
+  NE PAS utiliser pour : implémenter une UI standard sans direction artistique (utiliser `frontend-developer`), explorer 9 variantes de design (utiliser `aidesigner-frontend`), ou pour une production HTML brand-strict slide deck/landing (utiliser `external-cc-design`).
 license: Complete terms in LICENSE.txt
 ---
 

@@ -125,6 +125,60 @@ Cette règle s'applique à toute production texte (rédaction humaine, IA, agent
 
 ---
 
+## Comparatifs & avis sur outils tiers
+
+31. **Respect du concurrent** : un avis ou comparatif schoolsWP ne dénature jamais l'outil tiers évalué. Cinq garde-fous appliqués systématiquement :
+
+   - **Limites factuelles, pas charge** : décrire les manques observés sur des cas d'usage précis. Pas de listage à charge ("frustrations bloquantes", "défauts critiques", "X est dépassé"). Préférer "limites observées sur mes cas d'usage".
+   - **Pas d'affirmation universelle** : interdire "X est meilleur que Y", "X gagne dans 90 % des cas", "Y reste meilleur". Toujours ancrer : "dans mon cas", "sur mes besoins schoolsWP", "pour les usages que j'ai testés", "je préfère X pour…".
+   - **Section "Pour qui [concurrent] reste pertinent" obligatoire** : tout avis qui pivote vers un autre outil doit inclure une section explicite décrivant les profils pour lesquels l'outil évalué reste un bon choix. Pas de bascule unilatérale.
+   - **Pas de notes chiffrées globales arbitraires** : interdire "7/10 vs 9/10" sans grille. Si note il y a, elle s'appuie sur une grille de critères explicite, chaque score est argumenté, et le critère est rattaché à un cas d'usage testé.
+   - **Verdict personnel, pas universel** : title, intro et conclusion doivent signaler que c'est un choix de Michael pour schoolsWP, pas un classement objectif sur le marché.
+
+   **Anti-patterns à bannir** : "Pourquoi Y reste meilleur", "Mes frustrations bloquantes", "X est dépassé", "X gagne dans 90 % des cas", "verdict pro-Y".
+
+   **Patterns à reproduire** : "Pourquoi je suis passé à Y", "Les limites observées sur mes cas d'usage", "Pour qui X reste pertinent", "Je préfère Y pour mes besoins schoolsWP", "Sur mes 12 critères, voici le verdict".
+
+   Cette règle s'applique à tous les avis, comparatifs, articles "vs" et arbitrages éditoriaux schoolsWP. Elle prime sur l'objectif affiliate : le respect du concurrent ne se négocie pas contre le revenu.
+
+---
+
+## Process éditorial pré-rédaction
+
+32. **Recherche concurrentielle (étape 0)** : tout article visant un mot-clé SEO passe par une analyse des 3 à 5 articles top-ranked avant rédaction (10-15 min). Optionnel pour newsletter, post social, script vidéo.
+
+   **Process** :
+   - Identifier les 3 à 5 URLs top-ranked sur le mot-clé cible.
+   - Lister les angles dominants (méthode, comparatif, tutoriel, débat).
+   - Repérer les questions traitées dans les H2/H3.
+   - Identifier les manques : ce que personne ne dit, ce qui est mal expliqué, ce qui est obsolète.
+   - Choisir l'angle schoolsWP : combler un manque bat répéter l'existant.
+
+   **Livrables intermédiaires (à archiver dans `content/decisions/<slug>.md` ou en tête du brief)** :
+   - Mot-clé cible + intention (info / nav / transac)
+   - 3 à 5 URLs analysées
+   - Angle retenu en 1 phrase
+   - Liste des 3 manques exploités
+
+   **Règle dure** : si l'article n'apporte rien de plus que le top 3 actuel, on ne le publie pas. On le retravaille ou on l'abandonne.
+
+33. **Webographie obligatoire si sources externes** : tout article qui cite des données, études, benchmarks ou outils externes inclut une section finale `## Sources & ressources` (H2) après la conclusion.
+
+   **Format de chaque entrée** : *titre source - éditeur - année*.
+
+   **Liens sortants** : `rel="noopener"` (Kadence Block ou bloc lien classique en mode HTML).
+
+   **Exemple** :
+   > ## Sources & ressources
+   >
+   > - *Core Web Vitals Report* - Google Search Central - 2025
+   > - *Email Marketing Benchmarks* - HubSpot - 2024
+   > - *FluentCRM Documentation* - WPManageNinja - 2026
+
+   Cette règle ne s'applique pas aux articles 100 % retour d'expérience sans données externes.
+
+---
+
 ## Source de données complète
 
 Le Brand Kit JSON complet (audiences, messaging, exemples, visuels) est dans :

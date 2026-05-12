@@ -1,4 +1,4 @@
-# Clipboard — 9 templates FluentCRM prêts à coller
+# Clipboard : 9 templates FluentCRM prêts à coller
 
 Fichier optimisé pour la création UI des 9 modèles d'e-mail. Pour chaque bloc :
 
@@ -133,8 +133,6 @@ Goal tracking sur l'email 3 = +30 % de conversions
 
 <p>Résultat chez mes clients : ~30 % des inscrits déclenchent ce goal. Ça donne une liste ultra-segmentée, prête pour une offre ciblée.</p>
 
-<p>J'ai écrit un article complet sur les automations FluentCRM que j'installe en priorité : <a href="https://schoolswp.com/fluentcrm-automations-indispensables/" target="_blank" rel="noopener">FluentCRM — les 4 automations indispensables</a></p>
-
 <p>Tu peux tester FluentCRM Pro ici si tu ne l'as pas encore : <a href="https://fluentcrm.com/" target="_blank" rel="noopener">FluentCRM Pro</a> <em>(affilié, ça soutient le travail)</em></p>
 
 <p>Michaël</p>
@@ -175,7 +173,7 @@ La suite côté FluentCRM
   <li>J+3 : l'astuce goal tracking email 3</li>
 </ul>
 
-<p>La suite : je t'envoie sur 3 semaines une série pratique sur FluentCRM — les automations que j'installe en priorité, les pièges à éviter, la façon dont je justifie la licence chez mes clients.</p>
+<p>La suite : je t'envoie sur 3 semaines une série pratique sur FluentCRM (les automations que j'installe en priorité, les pièges à éviter, la façon dont je justifie la licence chez mes clients).</p>
 
 <p>Une seule question avant de démarrer :<br>
 qu'est-ce que tu essaies de résoudre en priorité côté FluentCRM ?<br>
@@ -283,8 +281,6 @@ Pas à côté.</p>
 
 <p>Ça change tout : tu segmentes sur des comportements réels, pas juste sur des clics email.</p>
 
-<p>J'ai détaillé ça ici : <a href="https://schoolswp.com/fluentcrm-automations-indispensables/" target="_blank" rel="noopener">FluentCRM — les 4 automations indispensables</a></p>
-
 <p>Michaël</p>
 
 <p><strong>P.S.</strong> : La version gratuite suffit pour tester tout ça.</p>
@@ -330,7 +326,7 @@ Ce que j'ai arrêté de faire grâce à FluentCRM
 <ul>
   <li>Livrer une automation welcome dès l'installation (avec le template que tu as)</li>
   <li>Segmenter sur l'achat WooCommerce sans exporter quoi que ce soit</li>
-  <li>Facturer la config FluentCRM comme un package — c'est plus clair pour le client</li>
+  <li>Facturer la config FluentCRM comme un package, c'est plus clair pour le client</li>
 </ul>
 
 <p>Un exemple concret : sur un client formateur, la séquence "acheteur formation débutant" vs "acheteur formation avancée" a doublé le taux d'upsell sur 90 jours. Zéro export, zéro Zapier.</p>
@@ -339,7 +335,7 @@ Ce que j'ai arrêté de faire grâce à FluentCRM
 
 <p>Michaël</p>
 
-<p><strong>P.S.</strong> : Une limite honnête — l'UI des funnels demande 20 min d'adaptation si tu viens d'ActiveCampaign. Après, tu ne veux plus revenir en arrière.</p>
+<p><strong>P.S.</strong> : Une limite honnête, l'UI des funnels demande 20 min d'adaptation si tu viens d'ActiveCampaign. Après, tu ne veux plus revenir en arrière.</p>
 ```
 
 ---
@@ -393,7 +389,7 @@ Si tu veux vraiment passer en mode automation : le Pro se paie tout seul.</p>
 
 <p>Michaël</p>
 
-<p><strong>P.S.</strong> : Tu n'es pas obligé d'acheter maintenant — tu peux tester la version gratuite pendant un mois avant de voir si le Pro t'apporterait quelque chose.</p>
+<p><strong>P.S.</strong> : Tu n'es pas obligé d'acheter maintenant. Tu peux tester la version gratuite pendant un mois avant de voir si le Pro t'apporterait quelque chose.</p>
 ```
 
 ---
@@ -443,14 +439,14 @@ Version Pro → <a href="https://fluentcrm.com/" target="_blank" rel="noopener">
 
 ## Checklist de création
 
-- [ ] Template 1 — LM Welcome Template FluentCRM · E1 · Livraison
-- [ ] Template 2 — LM Welcome Template FluentCRM · E2 · Contexte
-- [ ] Template 3 — LM Welcome Template FluentCRM · E3 · Astuce
-- [ ] Template 4 — LM Welcome Template FluentCRM · E4 · Transition
-- [ ] Template 5 — SEQ FluentCRM Pro · E1 · Le coût
-- [ ] Template 6 — SEQ FluentCRM Pro · E2 · La découverte
-- [ ] Template 7 — SEQ FluentCRM Pro · E3 · La preuve
-- [ ] Template 8 — SEQ FluentCRM Pro · E4 · Gratuit vs Pro
-- [ ] Template 9 — SEQ FluentCRM Pro · E5 · La décision
+- [ ] Template 1 : LM Welcome Template FluentCRM · E1 · Livraison
+- [ ] Template 2 : LM Welcome Template FluentCRM · E2 · Contexte
+- [ ] Template 3 : LM Welcome Template FluentCRM · E3 · Astuce
+- [ ] Template 4 : LM Welcome Template FluentCRM · E4 · Transition
+- [ ] Template 5 : SEQ FluentCRM Pro · E1 · Le coût
+- [ ] Template 6 : SEQ FluentCRM Pro · E2 · La découverte
+- [ ] Template 7 : SEQ FluentCRM Pro · E3 · La preuve
+- [ ] Template 8 : SEQ FluentCRM Pro · E4 · Gratuit vs Pro
+- [ ] Template 9 : SEQ FluentCRM Pro · E5 · La décision
 
 Une fois les 9 templates créés, reviens à [05-manual-setup-fluentcrm.md](05-manual-setup-fluentcrm.md) étape 2 (formulaire Fluent Forms).

@@ -18,7 +18,7 @@
 
 ## Application pratique
 
-[Comment vous pouvez l'utiliser cette semaine. Concret et actionnable. 2-4 phrases.]
+[Comment tu peux l'utiliser cette semaine. Concret et actionnable. 2-4 phrases.]
 
 ## Ressource utile
 

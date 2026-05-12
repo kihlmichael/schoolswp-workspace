@@ -1,7 +1,10 @@
 ---
 name: recipe-create-events-from-sheet
 version: 1.0.0
-description: "Read event data from a Google Sheets spreadsheet and create Google Calendar entries for each row."
+description: |
+  Lit les donnees d'evenements depuis un Google Sheets et cree les entrees Google Calendar correspondantes ligne par ligne, avec attendees inclus.
+  Utilise ce skill quand l'utilisateur dit : "cree les events depuis cette sheet", "import les rendez-vous du tableau dans Calendar", "transforme cette sheet en calendrier", ou a un planning tabule a deverser dans Calendar.
+  NE PAS utiliser pour : ajouter des participants a un event existant (utiliser recipe-batch-invite-to-event), creer un seul event ponctuel (utiliser gws-calendar insert direct), ou bloquer du focus time recurrent (utiliser recipe-block-focus-time).
 metadata:
   openclaw:
     category: "recipe"

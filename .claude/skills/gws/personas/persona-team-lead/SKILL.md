@@ -1,7 +1,10 @@
 ---
 name: persona-team-lead
 version: 1.0.0
-description: "Lead a team — run standups, coordinate tasks, and communicate."
+description: |
+  Profil orchestré pour piloter une équipe : daily standups, prep 1:1s, weekly digest, délégation email-to-task, suivi OKR en Sheets, comms Chat. Combine gws-calendar, gws-gmail, gws-chat, gws-drive, gws-sheets.
+  Utilise ce skill quand l'utilisateur dit : "active la persona team lead", "mode manager d'équipe Workspace", "je dirige une équipe et j'ai besoin du rythme standup-1:1-weekly", ou pour adopter une posture leadership orientée management direct.
+  NE PAS utiliser pour : profil exec assistant orienté direction (utiliser persona-exec-assistant), profil project manager orienté delivery (utiliser persona-project-manager), skill Calendar seul (utiliser gws-calendar), ou pilotage d'agents schoolsWP autonomes (utiliser CLAUDE.md projet et schoolswp-agents).
 metadata:
   openclaw:
     category: "persona"

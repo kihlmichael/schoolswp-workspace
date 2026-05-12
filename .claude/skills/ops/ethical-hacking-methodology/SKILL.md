@@ -1,6 +1,9 @@
 ---
 name: ethical-hacking-methodology
-description: "Méthodologie complète de hacking éthique et tests de pénétration. Utilise ce skill pour apprendre les 5 phases (reconnaissance, scan, exploitation, post-exploitation, rapport) ou conduire des audits de sécurité autorisés."
+description: |
+  Méthodologie complète de hacking éthique et tests de pénétration en 5 phases (reconnaissance, scan, exploitation, post-exploitation, rapport). Couvre Kali Linux, autorisation écrite, classification des hackers, livrables (recon report, vulnerability assessment, PoC, rapport final).
+  Utilise ce skill quand l'utilisateur dit : "méthodologie pentest", "phases de hacking éthique", "comment conduire un audit sécurité", "rapport de pentest", ou "Kali Linux" — uniquement dans un contexte d'audit autorisé.
+  NE PAS utiliser pour : exécuter un test précis sur une web app (utiliser `burp-suite-testing` ou `top-web-vulnerabilities`), pentest cloud (utiliser `cloud-penetration-testing`), ou audit sécurité du projet schoolsWP (utiliser `cso`).
 risk: unknown
 source: community
 author: zebbern

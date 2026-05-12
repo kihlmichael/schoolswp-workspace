@@ -1,6 +1,9 @@
 ---
 name: money-page-generator
-description: Generer automatiquement une Money Page schoolsWP (SEO + decision + affiliation) pour un outil, comparatif ou guide. Utiliser quand l’utilisateur veut une page prete a publier avec structure decisionnelle + blocs affilies.
+description: |
+  Genere une Money Page schoolsWP complete et prete a publier (avis / comparatif / guide) avec entrees variables ({outil}, {type}, public, objectif) : structure decisionnelle obligatoire (intro, resume, presentation, pour qui, points forts, limites, cas d'usage, FAQ), blocs affilies, ton pedagogique sans hype.
+  Utilise ce skill quand l'utilisateur dit : "genere une money page pour FluentCRM", "fais-moi un avis plugin", "page complete prete a publier", "guide affilie sur X", ou quand il veut un draft long pret pour Gutenberg.
+  NE PAS utiliser pour : reflechir au framework Money Pages (utiliser `money-pages-framework`), produire un comparatif strict X vs Y (utiliser `comparatif-affiliate-engine`), ou optimiser un article deja publie (utiliser `affiliation-optimizer`).
 ---
 
 # Money Page Generator — schoolsWP

@@ -1,7 +1,10 @@
 ---
 name: gws-calendar
 version: 1.0.0
-description: "Google Calendar: Manage calendars and events."
+description: |
+  Google Calendar v3 via la CLI gws : gère calendriers, événements, ACL, paramètres, freebusy et settings. Couvre tout le périmètre API brut, donc à utiliser quand tu as besoin d'une opération qui sort des helpers (acl, settings, calendarList, freebusy, colors).
+  Utilise ce skill quand l'utilisateur dit : "gère mon calendrier Google", "freebusy", "permissions calendrier", "calendarList", ou pour appeler une méthode v3 que les helpers ne couvrent pas.
+  NE PAS utiliser pour : créer un événement simple (utiliser gws-calendar-insert), lister les prochains événements (utiliser gws-calendar-agenda), ou planifier une réunion conversationnelle (utiliser le MCP Google_Calendar côté claude.ai).
 metadata:
   openclaw:
     category: "productivity"

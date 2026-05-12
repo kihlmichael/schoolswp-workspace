@@ -1,0 +1,62 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/erreurs-wordpress-seo-2026/
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-01-hook.png
+    title: 5 erreurs WordPress SEO 2026 - Hook
+    subject: 5 erreurs WordPress qui plombent ton SEO
+    description: Hook du carrousel Instagram - 5 erreurs WordPress qui plombent ton SEO en 2026
+    alt: schoolsWP - Hook 5 erreurs WordPress SEO 2026
+    keywords: [WordPress, SEO, erreurs WordPress, Core Web Vitals]
+
+  - file: slide-02-setup.png
+    title: 5 erreurs WordPress SEO - Constat
+    subject: Constat 5 erreurs SEO WordPress sans le savoir
+    description: Constat du carrousel Instagram - tu fais peut-être les 5 erreurs sans le savoir
+    alt: schoolsWP - Constat 5 erreurs SEO sans le savoir
+    keywords: [WordPress, SEO, audit, erreurs courantes]
+
+  - file: slide-03-erreur-01-plugins.png
+    title: WordPress SEO erreur 01 - Trop de plugins
+    subject: Trop de plugins WordPress ralentit ton SEO
+    description: Erreur SEO 1 - Trop de plugins WordPress fait s'effondrer le TTFB et plombe les Core Web Vitals
+    alt: schoolsWP - Erreur 01 trop de plugins WordPress
+    keywords: [WordPress, SEO, plugins, TTFB, performance]
+
+  - file: slide-04-erreur-02-cache.png
+    title: WordPress SEO erreur 02 - Cache mal configuré
+    subject: Cache WordPress mal configuré coûte du SEO
+    description: Erreur SEO 2 - cache page sans cache objet ni CDN laisse 60 percent de la perf sur la table
+    alt: schoolsWP - Erreur 02 cache WordPress mal configuré
+    keywords: [WordPress, SEO, cache, CDN, performance]
+
+  - file: slide-05-erreur-03-images.png
+    title: WordPress SEO erreur 03 - Images non optimisées
+    subject: Images WordPress non optimisées plombent le LCP
+    description: Erreur SEO 3 - AVIF lazy loading et LCP sous 2.5s sont non négociables en 2026
+    alt: schoolsWP - Erreur 03 images WordPress non optimisées
+    keywords: [WordPress, SEO, AVIF, LCP, Core Web Vitals]
+
+  - file: slide-06-erreur-04-maillage.png
+    title: WordPress SEO erreur 04 - Maillage interne aléatoire
+    subject: Maillage interne aléatoire dilue ton autorité SEO
+    description: Erreur SEO 4 - 10 articles qui pointent vers la home dilue ton autorité au lieu de la concentrer
+    alt: schoolsWP - Erreur 04 maillage interne aléatoire
+    keywords: [WordPress, SEO, maillage interne, autorité, internal linking]
+
+  - file: slide-07-erreur-05-schema.png
+    title: WordPress SEO erreur 05 - Aucun schema structuré
+    subject: Pas de schema structuré et Google te lit à moitié
+    description: Erreur SEO 5 - Sans schema.org Article FAQ HowTo Google te lit à moitié et tes rich snippets disparaissent
+    alt: schoolsWP - Erreur 05 aucun schema structuré
+    keywords: [WordPress, SEO, schema.org, données structurées, rich snippets]
+
+  - file: slide-08-cta.png
+    title: 5 erreurs WordPress SEO - CTA schoolsWP
+    subject: Verdict 5 erreurs WordPress SEO sur schoolsWP
+    description: CTA du carrousel - l'analyse complète sur schoolsWP avec lien en bio
+    alt: schoolsWP - CTA verdict 5 erreurs WordPress SEO
+    keywords: [WordPress, SEO, audit complet, schoolsWP]

@@ -1,10 +1,9 @@
 ---
 name: sound-effects
 description: |
-  Génère des effets sonores à partir de descriptions textuelles via ElevenLabs. Utilise ce skill pour
-  créer des effets sonores, textures audio, sons ambiants, impacts cinématiques, sons UI ou tout audio non
-  vocal. Supporte le bouclage, le contrôle de durée et le tuning d'influence du prompt.
-  Déclenche pour "effet sonore", "sound effect", "audio ambiant", "ElevenLabs son".
+  Génère des effets sonores à partir de descriptions textuelles via ElevenLabs (text_to_sound_effects). Pour FX cinématiques, sons UI/notification, textures audio, sons ambiants, impacts. Supporte bouclage, contrôle de durée et tuning d'influence du prompt. Requiert `ELEVENLABS_API_KEY`.
+  Utilise ce skill quand l'utilisateur dit : "effet sonore", "sound effect", "audio ambiant", "FX schoolsWP", "son UI/notification", "ElevenLabs son", "impact cinématique", ou veut un audio court non vocal pour intro vidéo, transition, accent sonore.
+  NE PAS utiliser pour : musique avec mélodie/instruments/paroles (utiliser `music`), voix-off narration (utiliser `text-to-speech`), transcription audio (utiliser `speech-to-text`), ou banque libre de droits préexistante (chercher catalogue YouTube Audio Library).
 license: MIT
 compatibility: Requires internet access and an ElevenLabs API key (ELEVENLABS_API_KEY).
 metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv": "ELEVENLABS_API_KEY"}}

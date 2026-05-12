@@ -1,6 +1,9 @@
 ---
 name: affiliation-article-detector
-description: Detecter automatiquement les articles affiliables (deja affilie / affiliable / non prioritaire), score /10, outils potentiels, optimisations, et clusters a creer. Utiliser sur listes d’articles ou pages uniques.
+description: |
+  Detecte automatiquement les articles affiliables sur schoolsWP : classifie chaque article (deja affilie / affiliable / non prioritaire), donne un score /10, propose les outils a recommander, les optimisations possibles et les clusters a creer. Travaille sur une liste d'articles ou une page unique.
+  Utilise ce skill quand l'utilisateur dit : "audite mes articles affilies", "lesquels de mes articles peuvent etre monetises", "scanne ma liste d'articles pour l'affiliation", ou quand il fournit une liste d'URLs schoolsWP a classer par potentiel de monetisation.
+  NE PAS utiliser pour : scorer un sujet ou mot-cle AVANT production (utiliser `affiliation-potential-scoring`), scanner un sujet/cluster sans articles existants (utiliser `affiliation-opportunity-scanner`), ou optimiser UN seul article precis (utiliser `affiliation-optimizer`).
 ---
 
 # Detecteur automatique d’articles affilies — schoolsWP

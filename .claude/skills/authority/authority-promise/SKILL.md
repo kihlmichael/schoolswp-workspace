@@ -1,6 +1,9 @@
 ---
 name: authority-promise
-description: Promesse marketing et positionnement différenciant de la schoolsWP Authority System™. Utilise ce skill pour rédiger ou affiner la promesse centrale, la proposition de valeur, l'angle différenciant, les accroches de vente, les bullets de bénéfices, les phrases signatures, les titres de pages de vente, les hooks LinkedIn ou email, ou tout texte marketing qui doit incarner le positionnement schoolsWP. Trigger pour "rédige la promesse", "affine le positionnement", "crée une accroche", "écris la page de vente", "bullets de bénéfices", "angle différenciant", "phrase signature", "hooks marketing schoolsWP", "copywriting Authority System". Trigger aussi si l'utilisateur demande à "pitcher" ou "vendre" la méthode ou la formation.
+description: |
+  Promesse marketing et positionnement différenciant de la schoolsWP Authority System™ : promesses chiffrées avec preuves mesurables (CTR, livrables, ROI, citabilité IA, conversion), headlines + sous-titres optimisés, accroches hero ultra courtes, bullets de bénéfices, phrases signatures, hooks LinkedIn/email. Source de référence du positionnement.
+  Utilise ce skill quand l'utilisateur dit : "rédige la promesse Authority System", "affine le positionnement", "crée un hook de lancement", "phrase signature schoolsWP", ou demande à pitcher la méthode/formation en quelques lignes percutantes.
+  NE PAS utiliser pour : la page de vente complète 14 sections (utiliser `authority-sales-page-copy`), les 7 emails de lancement (utiliser `authority-email-launch`), ou l'explication pédagogique du mécanisme (utiliser `authority-loop`).
 ---
 
 # schoolsWP Authority System™ — Promesse & Positionnement

@@ -1,6 +1,9 @@
 ---
 name: affiliation-block-system
-description: Blocs d’affiliation reutilisables schoolsWP (3 a 5 blocs par article) pour monetiser proprement sans casser la confiance. Utiliser dans articles, comparatifs, templates, Gutenberg.
+description: |
+  Bibliotheque de 10 blocs d'affiliation reutilisables schoolsWP (markdown + Gutenberg) a integrer dans les articles, comparatifs et templates. Regle d'or : 3 a 5 blocs maximum par article, contextuels et utiles, jamais publicitaires. Donne aussi la structure ideale d'un article affilie.
+  Utilise ce skill quand l'utilisateur dit : "donne-moi un bloc affiliation", "comment integrer un CTA affilie", "structure d'un article affilie", "je veux des blocs reutilisables", ou quand il redige un article et a besoin d'un encart affilie pret a copier.
+  NE PAS utiliser pour : optimiser globalement un article existant (utiliser `affiliation-optimizer`), generer une page complete (utiliser `money-page-generator`), ou produire un comparatif entier (utiliser `comparatif-affiliate-engine`).
 ---
 
 # Affiliation Block System — schoolsWP

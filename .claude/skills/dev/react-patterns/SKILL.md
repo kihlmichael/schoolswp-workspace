@@ -1,6 +1,9 @@
 ---
 name: react-patterns
-description: "Patterns et principes React modernes. Hooks, composition de composants, performance et bonnes pratiques TypeScript."
+description: |
+  Patterns React modernes : composition de composants (Server / Client / Presentational / Container), hooks customs (useDebounce, useLocalStorage, useFetch, useForm), performance (memo, callback), bonnes pratiques TypeScript.
+  Utilise ce skill quand l'utilisateur dit : "pattern React", "extraire un hook custom", "memo / callback / useMemo", "composition vs inheritance React", "props down events up", ou avant de structurer une feature React non triviale.
+  NE PAS utiliser pour : du Next.js spécifique (utiliser `nextjs-best-practices`), implémenter du code React concret (utiliser `frontend-developer`), ou pour le design visuel (utiliser `frontend-design`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

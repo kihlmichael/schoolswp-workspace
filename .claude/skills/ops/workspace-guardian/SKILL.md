@@ -1,3 +1,11 @@
+---
+name: workspace-guardian
+description: |
+  Encode les règles de gouvernance du workspace schoolsWP : anti-duplication stricte (un seul chemin `.claude/skills/`), gouvernance Git (conventional commits, branches feature/fix/chore, tags semantiques), seuils de qualite (30 % couverture mini, tests par agent), anti-accumulation (pas de patch_*.py / temp_* / backup_* a la racine), capitalisation des lecons apres incident, checklist pre-deploiement. Sert de référence pour chaque decision structurelle. Principe directeur : "Construire moins, consolider plus, livrer mieux."
+  Utilise ce skill quand l'utilisateur dit : "règles workspace", "gouvernance schoolsWP", "ou je dois mettre ce fichier", "convention de nommage", "guardian", "puis-je créer ce dossier", "checklist pre-deploiement", "format commit", "règle de structure", ou avant toute decision structurelle (creation de fichier/dossier, commit, merge, deploiement).
+  NE PAS utiliser pour : exécuter concretement les actions de cleanup (utiliser `consolidation-ops`), trancher une question editoriale (utiliser `branding` ou `BRAND_RULES.md`), ecrire les règles d'un sub-projet (chaque sub-CLAUDE.md gere son scope), ou debugguer un incident en cours (utiliser le skill technique du domaine).
+---
+
 # Workspace Guardian — Skill de gouvernance schoolsWP
 
 ## Objectif

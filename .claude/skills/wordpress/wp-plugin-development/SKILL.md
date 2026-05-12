@@ -1,10 +1,9 @@
 ---
 name: wp-plugin-development
 description: |
-  Développement de plugins WordPress : architecture et hooks, activation/désactivation/désinstallation, UI
-  d'administration et Settings API, stockage de données, cron/tâches, sécurité (nonces/capacités/
-  sanitization/escaping) et packaging de release.
-  Déclenche pour "développer un plugin WordPress", "hooks WordPress", "plugin WP", "Settings API WordPress".
+  Développement de plugins WordPress : architecture et bootstrap, hooks (actions, filters, custom hooks), activation et désactivation et uninstall, migrations, admin UI et Settings API, stockage (options, post meta, custom tables), cron, sécurité (nonces, capabilities, sanitization, escaping, SQL safety via wpdb prepare), packaging release. Couvre single-site et multisite.
+  Utilise ce skill quand l'utilisateur dit : "développer un plugin WordPress", "hooks WordPress", "plugin WP", "Settings API WordPress", "uninstall plugin", "WP cron", "mu-plugin", ou "release plugin".
+  NE PAS utiliser pour : blocs Gutenberg seuls (utiliser wp-block-development), block themes (utiliser wp-block-themes), REST endpoints custom (utiliser wp-rest-api), Interactivity API (utiliser wp-interactivity-api), ops WP-CLI (utiliser wp-wpcli-and-ops), perfs (utiliser wp-performance), ou static analysis PHPStan (utiliser wp-phpstan).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

@@ -1,6 +1,9 @@
 ---
 name: affiliation-potential-scoring
-description: Scorer le potentiel d’affiliation d’un sujet avant production (5 criteres, score /10, recommandation). Utiliser pour prioriser les Money Pages et clusters.
+description: |
+  Score le potentiel d'affiliation d'un sujet ou mot-cle avant production via 5 criteres notes 1-5 (intent commerciale, programme dispo, prix outil, maturite lecteur, faisabilite editoriale), agreges en score /10 + recommandation editoriale (Prioritaire / Opportunite / Faible).
+  Utilise ce skill quand l'utilisateur dit : "score ce sujet", "quel potentiel affilie pour ce mot-cle", "vaut-il la peine de produire un article sur X", "prioritaire ou pas ?", ou quand il filtre une liste de sujets candidats avant de lancer la Content Factory.
+  NE PAS utiliser pour : scanner un sujet avec analyse qualitative complete (utiliser `affiliation-opportunity-scanner`), classer des articles existants (utiliser `affiliation-article-detector`), ou combiner SEO + affiliation + concurrence (utiliser `strategic-score-combined`).
 ---
 
 # Scoring de potentiel affilie — schoolsWP

@@ -1,10 +1,9 @@
 ---
 name: canvas-design
 description: |
-  Crée des visuels originaux en .png et .pdf selon une philosophie de design soignée. Utilise ce skill
-  pour concevoir des posters, illustrations, visuels artistiques ou pièces graphiques statiques.
-  Ne copie jamais le style d'artistes existants pour éviter les violations de droits d'auteur.
-  Déclenche pour "crée un visuel", "poster", "illustration", "design graphique", "art visuel".
+  Crée des visuels originaux en .png et .pdf selon une philosophie de design soignée (design philosophy d'abord, puis expression visuelle 90% / texte 10%). Pour posters, illustrations, pièces graphiques statiques. Ne copie jamais le style d'artistes existants pour éviter les violations de droits d'auteur.
+  Utilise ce skill quand l'utilisateur dit : "crée un visuel", "poster", "illustration artistique", "design graphique conceptuel", "art visuel", "manifeste visuel", ou veut une pièce graphique statique avec philosophie esthétique.
+  NE PAS utiliser pour : landing/UI/dashboard (utiliser `aidesigner-frontend`), production HTML brand-strict slide deck/PDF (utiliser `external-cc-design`), génération image IA pour article ou social (utiliser nano-banana ou `higgsfield`), ou métadonnées SEO image WordPress (utiliser `wp-image-metadata-seo`).
 license: Complete terms in LICENSE.txt
 ---
 

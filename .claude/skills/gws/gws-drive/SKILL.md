@@ -1,7 +1,10 @@
 ---
 name: gws-drive
 version: 1.0.0
-description: "Google Drive: Manage files, folders, and shared drives."
+description: |
+  Google Drive v3 via la CLI gws : gère fichiers, dossiers, permissions, drives partagés, comments, replies, revisions, changes. Couvre tout le périmètre API brut.
+  Utilise ce skill quand l'utilisateur dit : "list drive", "share file Drive", "permissions Google Drive", "shared drive", "delete file Drive", ou pour scripter une opération Drive avancée que le helper +upload ne couvre pas.
+  NE PAS utiliser pour : uploader un fichier local avec metadata simples (utiliser gws-drive-upload), annoncer un fichier dans un Chat space (utiliser gws-workflow-file-announce), ou conversation libre côté claude.ai (utiliser le MCP Google_Drive).
 metadata:
   openclaw:
     category: "productivity"

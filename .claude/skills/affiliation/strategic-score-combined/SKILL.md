@@ -1,6 +1,9 @@
 ---
 name: strategic-score-combined
-description: Calculer un score strategique combine SEO + affiliation + concurrence pour prioriser les sujets schoolsWP. Utiliser pour filtrer la Content Factory et choisir les bons combats.
+description: |
+  Calcule un score strategique combine sur 3 piliers (SEO + Affiliation + Concurrence), chaque pilier note via 5 sous-criteres 1-5, agreges en score final /10 avec recommandation (Prioritaire / Opportunite / Faible / A ignorer). Filtre haut niveau pour choisir les bons combats avant Content Factory.
+  Utilise ce skill quand l'utilisateur dit : "score strategique de ce sujet", "ca vaut le combat ?", "filtrer ma liste de sujets", "SEO + affiliation + concurrence", ou quand il arbitre entre plusieurs sujets candidats avec un budget production limite.
+  NE PAS utiliser pour : scorer uniquement le potentiel affilie (utiliser `affiliation-potential-scoring`), scanner qualitativement un sujet (utiliser `affiliation-opportunity-scanner`), ou prioriser DANS un cluster existant (utiliser `cocon-roi-prioritization`).
 ---
 
 # Score Strategique Combine — schoolsWP

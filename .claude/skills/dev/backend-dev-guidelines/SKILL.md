@@ -1,6 +1,9 @@
 ---
 name: backend-dev-guidelines
-description: "Standards de développement backend pour microservices Node.js + Express + TypeScript. Architecture en couches, pattern BaseController, injection de dépendances, repositories Prisma, validation Zod."
+description: |
+  Standards de développement pour microservices Node.js + Express + TypeScript : architecture en couches (routes → controllers → services → repositories), pattern BaseController, injection de dépendances, validation Zod, scoring BFRI avant chaque feature.
+  Utilise ce skill quand l'utilisateur dit : "écrire un backend Node", "structurer un service Express", "ajouter un endpoint TypeScript", "controller / service / repository", ou avant d'implémenter une feature backend en TS.
+  NE PAS utiliser pour : choisir l'API style en amont (utiliser `api-patterns`), modéliser la DB (utiliser `database-design`), ou pour du Python/FastAPI (hors scope, ce skill est Node-only).
 risk: unknown
 source: community
 date_added: "2026-02-27"

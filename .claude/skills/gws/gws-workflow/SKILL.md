@@ -1,7 +1,10 @@
 ---
 name: gws-workflow
 version: 1.0.0
-description: "Google Workflow: Cross-service productivity workflows."
+description: |
+  Workflows cross-services Google Workspace via la CLI gws : agrège plusieurs APIs (Gmail + Calendar + Tasks + Drive + Chat) en une seule commande pour résoudre un cas d'usage productivité (standup, meeting prep, weekly digest, file announce, email-to-task).
+  Utilise ce skill quand l'utilisateur dit : "workflow Google", "automate productivity", "list les helpers cross-services", ou pour découvrir quel workflow gws couvre déjà ton cas avant de coder un script custom.
+  NE PAS utiliser pour : opération sur un seul service (utiliser gws-gmail / gws-calendar / etc.), workflow n8n côté schoolwp-n8n.wp1.host (utiliser le MCP n8n-mcp), ou pipeline de contenu schoolsWP (utiliser brain.bat, agents-py).
 metadata:
   openclaw:
     category: "productivity"

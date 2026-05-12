@@ -1,7 +1,10 @@
 ---
 name: recipe-send-team-announcement
 version: 1.0.0
-description: "Send a team announcement via both Gmail and a Google Chat space."
+description: |
+  Envoie une annonce identique sur deux canaux en parallèle : Gmail (mail à la liste de l'équipe) et Google Chat (post dans l'espace Chat dédié). Pour maximiser la visibilité d'un message clé.
+  Utilise ce skill quand l'utilisateur dit : "annonce ça à toute l'équipe sur Gmail et Chat", "broadcast le changement de politique partout", "communique la mise à jour cross-canal", ou pour pousser une annonce dual-channel.
+  NE PAS utiliser pour : envoyer un email solo (utiliser gws-gmail), poster uniquement dans Chat (utiliser gws-chat), ou notifier après un partage Drive (utiliser recipe-share-doc-and-notify).
 metadata:
   openclaw:
     category: "recipe"

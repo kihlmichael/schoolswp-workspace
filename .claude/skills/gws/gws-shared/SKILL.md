@@ -1,7 +1,10 @@
 ---
 name: gws-shared
 version: 1.0.0
-description: "gws CLI: Shared patterns for authentication, global flags, and output formatting."
+description: |
+  Référence partagée de la CLI gws : auth (OAuth interactif et Service Account), global flags, formats d'output (json, table, yaml, csv), règles de sécurité, gestion erreurs, scopes. Tous les autres skills gws/* pointent vers ce fichier en pré-requis.
+  Utilise ce skill quand l'utilisateur dit : "comment je m'authentifie sur gws", "scopes Google", "global flags gws", "format output CLI gws", "service account gws", ou avant ta première commande gws sur la machine.
+  NE PAS utiliser pour : opérations métier sur un service Google précis (utiliser gws-gmail / gws-calendar / gws-drive etc.), debug d'un MCP claude.ai (différent path d'auth, voir le serveur MCP concerné), ou auth gcloud / kubectl (hors périmètre gws).
 metadata:
   openclaw:
     category: "productivity"

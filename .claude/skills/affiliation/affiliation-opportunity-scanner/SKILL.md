@@ -1,6 +1,9 @@
 ---
 name: affiliation-opportunity-scanner
-description: Scanner le potentiel d’affiliation d’un sujet/page/cluster (intent, maturite, outils recommandables, opportunites d’integration, score /10, recommandation Money/Support/SEO pur). Utiliser pour prioriser les Money Pages.
+description: |
+  Scanne le potentiel d'affiliation d'un sujet, d'une page ou d'un cluster avant production : intent de recherche, maturite du lecteur, outils recommandables, opportunites d'integration, score de monetisation /10 et recommandation strategique (Money / Support / SEO pur / A eviter).
+  Utilise ce skill quand l'utilisateur dit : "ce sujet vaut le coup en affiliation ?", "scanne l'opportunite affiliee de ce mot-cle", "Money ou Support ?", "quelle reco pour ce cluster", ou quand il prepare la priorisation d'un futur article ou d'un nouveau cluster.
+  NE PAS utiliser pour : analyser des articles deja publies (utiliser `affiliation-article-detector`), scorer 5 criteres pour prioriser un sujet (utiliser `affiliation-potential-scoring`), ou produire un score combine SEO + affiliation + concurrence (utiliser `strategic-score-combined`).
 ---
 
 # Affiliation Opportunity Scanner — schoolsWP

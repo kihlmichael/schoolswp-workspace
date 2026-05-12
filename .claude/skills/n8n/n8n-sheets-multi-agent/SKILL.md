@@ -1,16 +1,9 @@
 ---
 name: n8n-sheets-multi-agent
-description: >
-  Orchestre 3 agents IA en parallèle pour configurer le nœud Google Sheets dans
-  n8n — analyse JSON, vérification colonnes et génération de mapping se lancent
-  simultanément pour produire plus vite un résultat structuré en 7 sections prêt
-  à copier-coller. Déclenche ce skill dès que l'utilisateur veut mapper des
-  données vers Google Sheets dans n8n, colle un JSON avec des noms de colonnes,
-  demande "comment configurer mon nœud Google Sheets", "mapping n8n sheets",
-  "expressions n8n pour Google Sheets", "append row n8n", ou veut utiliser une
-  approche multi-agent parallèle pour configurer un nœud n8n. Priorité sur
-  n8n-google-sheets-mapper quand l'utilisateur mentionne "multi-agent",
-  "parallèle", "agents en parallèle", ou plusieurs tâches simultanées.
+description: |
+  Orchestre 3 sub-agents en parallèle (JSON Analyst, Column Verifier, Mapping Generator) pour configurer un node Google Sheets dans n8n schoolsWP : analyse du JSON d'entrée, vérification des colonnes du Sheet, génération du mapping prêt à coller. Sortie structurée en 7 sections.
+  Utilise ce skill quand l'utilisateur dit : "configure mon node Google Sheets n8n", "mapping n8n sheets", "append row n8n", "expressions pour Google Sheets dans n8n", "multi-agent parallèle pour Sheets", ou colle un JSON avec des noms de colonnes Sheet à mapper.
+  NE PAS utiliser pour : un Sheets non lié à n8n (utiliser le MCP google_sheets direct), créer un workflow complet (utiliser n8n-workflow-architect), ou debug un schema appendOrUpdate partiel (voir mémoire feedback_n8n_sheets_appendorupdate_full_schema).
 ---
 
 ## Rôle

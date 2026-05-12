@@ -1,7 +1,10 @@
 ---
 name: gws-gmail
 version: 1.0.0
-description: "Gmail: Send, read, and manage email."
+description: |
+  Gmail v1 via la CLI gws : gère messages, threads, drafts, labels, filters, settings, attachments, history. Couvre toute l'API brute, à utiliser pour les opérations qui sortent des helpers (filters, labels custom, vacation responder, forwarding addresses).
+  Utilise ce skill quand l'utilisateur dit : "Gmail labels", "filtres Gmail API", "settings Gmail", "Gmail history", "Gmail batchModify", ou pour scripter une opération Gmail avancée.
+  NE PAS utiliser pour : envoyer (gws-gmail-send), répondre (gws-gmail-reply / gws-gmail-reply-all), forwarder (gws-gmail-forward), lire (gws-gmail-read), trier l'inbox (gws-gmail-triage), watcher en push (gws-gmail-watch), ou conversation libre côté claude.ai (utiliser le MCP Gmail).
 metadata:
   openclaw:
     category: "productivity"

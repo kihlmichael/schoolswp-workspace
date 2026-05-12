@@ -1,0 +1,776 @@
+{
+  "target": "https://michaelkihl.fr",
+  "auth_user": "kgd0l7wyuejc",
+  "auth_pwd_4last": "...UyPw",
+  "checks": {
+    "discovery": {
+      "status": 200,
+      "ok": true,
+      "name": "Michaël KIHL",
+      "description": "Création de Sites Internet &amp; Conception Web sur WordPress",
+      "url": "https://michaelkihl.fr",
+      "home": "https://michaelkihl.fr",
+      "namespaces_count": 33,
+      "namespaces": [
+        "clickwhale/v1",
+        "fluent-booking/v2",
+        "kadence-starter-library/v1",
+        "kb-activecampaign/v1",
+        "kb-convertkit/v1",
+        "kb-custom-svg/v1",
+        "kb-design-library/v1",
+        "kb-fluentcrm/v1",
+        "kb-getresponse/v1",
+        "kb-image-picker/v1",
+        "kb-lottieanimation/v1",
+        "kb-mailchimp/v1",
+        "kb-mailerlite/v1",
+        "kb-sendinblue/v1",
+        "kb-vector/v1",
+        "kbp-dynamic/v1",
+        "kbp/v1",
+        "kbpp/v1",
+        "ktp/v1",
+        "mcp",
+        "nps-survey/v1",
+        "oembed/1.0",
+        "sureforms",
+        "sureforms-pro",
+        "sureforms-pro/v1",
+        "sureforms/v1",
+        "suremails/v1",
+        "surerank/v1",
+        "wp-abilities/v1",
+        "wp-block-editor/v1",
+        "wp-site-health/v1",
+        "wp/v2",
+        "xcloud-magic-login/v1"
+      ],
+      "routes_count": 561,
+      "site_logo": 363,
+      "site_icon": 384,
+      "authentication": {
+        "application-passwords": {
+          "endpoints": {
+            "authorization": "https://michaelkihl.fr/wp-admin/authorize-application.php"
+          }
+        }
+      }
+    },
+    "users_privileged": {
+      "status": 200,
+      "ok": true,
+      "count": 1,
+      "users": [
+        {
+          "id": 1,
+          "username": "kgd0l7wyuejc",
+          "name": "Michaël KIHL",
+          "email": "contact@michaelkihl.fr",
+          "roles": [
+            "administrator"
+          ],
+          "registered_date": "2024-10-11T17:35:49+00:00",
+          "capabilities_count": 79,
+          "extra_capabilities_count": 1,
+          "url": "https://michaelkihl.fr"
+        }
+      ]
+    },
+    "users_total": {
+      "total_count": "1"
+    },
+    "plugins": {
+      "status": 200,
+      "ok": true,
+      "count": 16,
+      "active": [
+        {
+          "plugin": "clickwhale-pro/clickwhale",
+          "status": "active",
+          "name": "ClickWhale (Pro)",
+          "plugin_uri": "https://clickwhale.pro",
+          "author": "ClickWhale",
+          "author_uri": "https://clickwhale.pro",
+          "description": {
+            "raw": "Gestionnaire de liens, raccourcisseur de liens et traqueur de clics pour les liens d'affiliation et les pages de liens.",
+            "rendered": "Gestionnaire de liens, raccourcisseur de liens et traqueur de clics pour les liens d&rsquo;affiliation et les pages de liens. <cite>By <a href=\"https://clickwhale.pro\">ClickWhale</a>.</cite>"
+          },
+          "version": "2.5.3.5",
+          "network_only": false,
+          "requires_wp": "5.0",
+          "requires_php": "7.4",
+          "textdomain": "clickwhale",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/clickwhale-pro/clickwhale",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-booking/fluent-booking",
+          "status": "active",
+          "name": "FluentBooking - Solution de prise de rendez-vous et de réservation",
+          "plugin_uri": "https://fluentbooking.com/pricing/",
+          "author": "Équipe de solutions pour les rendez-vous et les réservations - WPManageNinja",
+          "author_uri": "https://fluentbooking.com",
+          "description": {
+            "raw": "FluentBooking est la solution ultime pour réserver des rendez-vous, des réunions, des webinaires, des événements, des appels de vente, et plus encore.",
+            "rendered": "FluentBooking est la solution ultime pour réserver des rendez-vous, des réunions, des webinaires, des événements, des appels de vente, et plus encore. <cite>By <a href=\"https://fluentbooking.com\">Équipe de solutions pour les rendez-vous et les réservations - WPManageNinja</a>.</cite>"
+          },
+          "version": "2.0.05",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-booking",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/fluent-booking/fluent-booking",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-booking-pro/fluent-booking-pro",
+          "status": "active",
+          "name": "Fluent Booking Pro",
+          "plugin_uri": "https://fluentbooking.com",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://fluentbooking.com",
+          "description": {
+            "raw": "The Pro version of FluentBooking Plugin",
+            "rendered": "The Pro version of FluentBooking Plugin <cite>By <a href=\"https://fluentbooking.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "2.0.05",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-booking-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/fluent-booking-pro/fluent-booking-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-blocks-pro/kadence-blocks-pro",
+          "status": "active",
+          "name": "Kadence Blocks - PRO Extension",
+          "plugin_uri": "https://www.kadencewp.com/product/kadence-gutenberg-blocks/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com/",
+          "description": {
+            "raw": "Extends Kadence Blocks with powerful extras that make it possible to create beautiful content in the WordPress Block Editor",
+            "rendered": "Extends Kadence Blocks with powerful extras that make it possible to create beautiful content in the WordPress Block Editor <cite>By <a href=\"https://www.kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "2.8.14",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-blocks-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/kadence-blocks-pro/kadence-blocks-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-blocks/kadence-blocks",
+          "status": "active",
+          "name": "Kadence Blocks — Page Builder Toolkit for Gutenberg Editor",
+          "plugin_uri": "https://www.kadencewp.com/product/kadence-gutenberg-blocks/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com",
+          "description": {
+            "raw": "Blocs de construction de page avancés pour Gutenberg. Créez des dispositions de colonnes personnalisées, des arrière-plans, des boutons doubles, des icônes, etc.",
+            "rendered": "Blocs de construction de page avancés pour Gutenberg. Créez des dispositions de colonnes personnalisées, des arrière-plans, des boutons doubles, des icônes, etc. <cite>By <a href=\"https://www.kadencewp.com\">Kadence WP</a>.</cite>"
+          },
+          "version": "3.6.7",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-blocks",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/kadence-blocks/kadence-blocks",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-pro/kadence-pro",
+          "status": "active",
+          "name": "Kadence Theme Kit Pro - Premium addon for the Kadence Theme",
+          "plugin_uri": "https://www.kadencewp.com/kadence-theme/premium/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com/",
+          "description": {
+            "raw": "Extends the Kadence theme with premium features and addons.",
+            "rendered": "Extends the Kadence theme with premium features and addons. <cite>By <a href=\"https://www.kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "1.1.19",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "kadence-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/kadence-pro/kadence-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "novamira/novamira",
+          "status": "active",
+          "name": "Novamira",
+          "plugin_uri": "https://www.novamira.ai",
+          "author": "Dynamic.ooo",
+          "author_uri": "https://www.novamira.ai",
+          "description": {
+            "raw": "MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations. For development and staging environments only.",
+            "rendered": "MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations. For development and staging environments only. <cite>By <a href=\"https://www.novamira.ai\">Dynamic.ooo</a>.</cite>"
+          },
+          "version": "1.1.2",
+          "network_only": false,
+          "requires_wp": "6.9",
+          "requires_php": "8.0",
+          "textdomain": "novamira",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/novamira/novamira",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "novamira-pro/novamira-pro",
+          "status": "active",
+          "name": "Novamira Pro",
+          "plugin_uri": "https://novamira.ai",
+          "author": "Dynamic.ooo",
+          "author_uri": "https://novamira.ai",
+          "description": {
+            "raw": "The specialized layer on top of Novamira. Ready-made abilities for Elementor and Bricks, and memory between sessions. For development and staging environments only.",
+            "rendered": "The specialized layer on top of Novamira. Ready-made abilities for Elementor and Bricks, and memory between sessions. For development and staging environments only. <cite>By <a href=\"https://novamira.ai\">Dynamic.ooo</a>.</cite>"
+          },
+          "version": "1.0.0",
+          "network_only": false,
+          "requires_wp": "6.9",
+          "requires_php": "8.0",
+          "textdomain": "novamira-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/novamira-pro/novamira-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "safe-svg/safe-svg",
+          "status": "active",
+          "name": "Safe SVG",
+          "plugin_uri": "https://fr.wordpress.org/plugins/safe-svg/",
+          "author": "10up",
+          "author_uri": "https://10up.com",
+          "description": {
+            "raw": "Activer les téléversements SVG et leur nettoyage pour éviter les vulnérabilités XML/SVG sur votre site WordPress",
+            "rendered": "Activer les téléversements SVG et leur nettoyage pour éviter les vulnérabilités XML/SVG sur votre site WordPress <cite>By <a href=\"https://10up.com\">10up</a>.</cite>"
+          },
+          "version": "2.4.0",
+          "network_only": false,
+          "requires_wp": "6.6",
+          "requires_php": "7.4",
+          "textdomain": "safe-svg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/safe-svg/safe-svg",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "secupress-pro/secupress-pro",
+          "status": "active",
+          "name": "SecuPress Pro with Simple SSL – Simple and Performant Security",
+          "plugin_uri": "https://secupress.me",
+          "author": "SecuPress",
+          "author_uri": "https://secupress.me",
+          "description": {
+            "raw": "More than a plugin, the guarantee of a protected website by experts.",
+            "rendered": "More than a plugin, the guarantee of a protected website by experts. <cite>By <a href=\"https://secupress.me\">SecuPress</a>.</cite>"
+          },
+          "version": "2.6.1",
+          "network_only": true,
+          "requires_wp": "5.4",
+          "requires_php": "7.0",
+          "textdomain": "secupress-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/secupress-pro/secupress-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-starter-templates/kadence-starter-templates",
+          "status": "active",
+          "name": "Modèles de démarrage par Kadence WP",
+          "plugin_uri": "",
+          "author": "Kadence WP",
+          "author_uri": "https://kadencewp.com/",
+          "description": {
+            "raw": "Launch a beautiful website with the power of AI or using our Pre-Designed Templates.",
+            "rendered": "Launch a beautiful website with the power of AI or using our Pre-Designed Templates. <cite>By <a href=\"https://kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "2.2.14",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-starter-templates",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/kadence-starter-templates/kadence-starter-templates",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "sureforms/sureforms",
+          "status": "active",
+          "name": "SureForms",
+          "plugin_uri": "https://sureforms.com",
+          "author": "SureForms",
+          "author_uri": "https://sureforms.com/",
+          "description": {
+            "raw": "Un moyen simple et puissant de créer des formulaires modernes pour votre site web.",
+            "rendered": "Un moyen simple et puissant de créer des formulaires modernes pour votre site web. <cite>By <a href=\"https://sureforms.com/\">SureForms</a>.</cite>"
+          },
+          "version": "2.8.2",
+          "network_only": false,
+          "requires_wp": "6.4",
+          "requires_php": "7.4",
+          "textdomain": "sureforms",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/sureforms/sureforms",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "sureforms-pro/sureforms-pro",
+          "status": "active",
+          "name": "SureForms Business",
+          "plugin_uri": "https://sureforms.com/",
+          "author": "SureForms",
+          "author_uri": "https://sureforms.com/",
+          "description": {
+            "raw": "Améliorez SureForms avec de nouvelles fonctionnalités et blocs, ainsi qu'une fonctionnalité étendue pour les blocs existants.",
+            "rendered": "Améliorez SureForms avec de nouvelles fonctionnalités et blocs, ainsi qu&rsquo;une fonctionnalité étendue pour les blocs existants. <cite>By <a href=\"https://sureforms.com/\">SureForms</a>.</cite>"
+          },
+          "version": "2.8.3",
+          "network_only": false,
+          "requires_wp": "6.4",
+          "requires_php": "7.4",
+          "textdomain": "sureforms-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/sureforms-pro/sureforms-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "suremails/suremails",
+          "status": "active",
+          "name": "SureMail",
+          "plugin_uri": "https://suremails.com",
+          "author": "SureMail",
+          "author_uri": "https://suremails.com/",
+          "description": {
+            "raw": "Les e-mails WordPress disparaissent souvent ou atterrissent dans les spams parce que les hébergeurs web ne sont pas conçus pour une livraison fiable. SureMail résout ce problème en se connectant à des services SMTP de confiance, afin que vos e-mails atteignent les boîtes de réception - plus de messages perdus ni de clients frustrés.",
+            "rendered": "Les e-mails WordPress disparaissent souvent ou atterrissent dans les spams parce que les hébergeurs web ne sont pas conçus pour une livraison fiable. SureMail résout ce problème en se connectant à des services SMTP de confiance, afin que vos e-mails atteignent les boîtes de réception &#8211; plus de messages perdus ni de clients frustrés. <cite>By <a href=\"https://suremails.com/\">SureMail</a>.</cite>"
+          },
+          "version": "1.9.5",
+          "network_only": false,
+          "requires_wp": "5.4",
+          "requires_php": "7.4",
+          "textdomain": "suremails",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/suremails/suremails",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "surerank/surerank",
+          "status": "active",
+          "name": "SureRank SEO",
+          "plugin_uri": "https://surerank.com",
+          "author": "SureRank",
+          "author_uri": "https://surerank.com/",
+          "description": {
+            "raw": "Augmentez le trafic de votre site web avec SureRank - un plugin léger d'outil SEO pour les utilisateurs de WordPress qui souhaitent de meilleurs classements sans la complexité.",
+            "rendered": "Augmentez le trafic de votre site web avec SureRank &#8211; un plugin léger d&rsquo;outil SEO pour les utilisateurs de WordPress qui souhaitent de meilleurs classements sans la complexité. <cite>By <a href=\"https://surerank.com/\">SureRank</a>.</cite>"
+          },
+          "version": "1.7.3",
+          "network_only": false,
+          "requires_wp": "6.7",
+          "requires_php": "7.4",
+          "textdomain": "surerank",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/surerank/surerank",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wpvivid-backuprestore/wpvivid-backuprestore",
+          "status": "active",
+          "name": "WPvivid Backup Plugin",
+          "plugin_uri": "",
+          "author": "WPvivid Backup &amp; Migration",
+          "author_uri": "https://wpvivid.com",
+          "description": {
+            "raw": "Cloner ou copier des sites WP puis les déplacer ou les faire migrer vers un nouvel hôte (nouveau domaine), planifier des sauvegardes, transférer des sauvegardes vers le stockage distant principal. Le tout en un.",
+            "rendered": "Cloner ou copier des sites WP puis les déplacer ou les faire migrer vers un nouvel hôte (nouveau domaine), planifier des sauvegardes, transférer des sauvegardes vers le stockage distant principal. Le tout en un. <cite>By <a href=\"https://wpvivid.com\">WPvivid Backup &amp; Migration</a>.</cite>"
+          },
+          "version": "0.9.126",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wpvivid-backuprestore",
+          "_links": {
+            "self": [
+              {
+                "href": "https://michaelkihl.fr/wp-json/wp/v2/plugins/wpvivid-backuprestore/wpvivid-backuprestore",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "inactive": []
+    },
+    "themes": {
+      "status": 200,
+      "ok": true,
+      "count": 3,
+      "themes": [
+        {
+          "stylesheet": "discover-kadence",
+          "name": "Discover",
+          "version": "1.1.1",
+          "status": "active",
+          "parent_theme": "kadence"
+        },
+        {
+          "stylesheet": "kadence",
+          "name": "Kadence",
+          "version": "1.4.5",
+          "status": "inactive",
+          "parent_theme": "kadence"
+        },
+        {
+          "stylesheet": "twentytwentyfive",
+          "name": "Twenty Twenty-Five",
+          "version": "1.4",
+          "status": "inactive",
+          "parent_theme": "twentytwentyfive"
+        }
+      ]
+    },
+    "settings": {
+      "status": 200,
+      "ok": true,
+      "url": "https://michaelkihl.fr",
+      "title": "Michaël KIHL",
+      "description": "Création de Sites Internet &amp; Conception Web sur WordPress",
+      "language": "fr_FR",
+      "timezone": "Europe/Paris",
+      "admin_email": "contact@michaelkihl.fr",
+      "default_role": null,
+      "default_post_format": "0",
+      "use_smilies": true,
+      "show_on_front": "page",
+      "page_on_front": 6,
+      "posts_per_page": 9,
+      "default_ping_status": "open",
+      "default_comment_status": "open"
+    },
+    "post_types": {
+      "status": 200,
+      "ok": true,
+      "count": 22,
+      "types": [
+        "post",
+        "page",
+        "attachment",
+        "nav_menu_item",
+        "wp_block",
+        "wp_template",
+        "wp_template_part",
+        "wp_global_styles",
+        "wp_navigation",
+        "wp_font_family",
+        "wp_font_face",
+        "kadence_element",
+        "kadence_form",
+        "kadence_navigation",
+        "kadence_header",
+        "kadence_custom_svg",
+        "kadence_query",
+        "kadence_query_card",
+        "kadence_lottie",
+        "kadence_vector",
+        "kb_icon",
+        "sureforms_form"
+      ]
+    },
+    "application_passwords": {
+      "users": [
+        {
+          "user_id": 1,
+          "username": "kgd0l7wyuejc",
+          "app_passwords_count": 2,
+          "names": [
+            {
+              "name": "Novamira",
+              "created": "2026-04-27T01:52:24",
+              "last_used": "2026-05-12T15:46:57",
+              "last_ip": "85.95.197.29"
+            },
+            {
+              "name": "Skoatch",
+              "created": "2026-05-11T13:56:05",
+              "last_used": "2026-05-11T13:57:50",
+              "last_ip": "67.207.92.92"
+            }
+          ]
+        }
+      ]
+    },
+    "exposure": {
+      "/xmlrpc.php": {
+        "status": 403,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "",
+          "X-Content-Type-Options": "",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      },
+      "/wp-login.php": {
+        "status": 200,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "SAMEORIGIN, SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "frame-ancestors 'self';",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Permissions-Policy": ""
+        }
+      },
+      "/wp-admin/": {
+        "status": 302,
+        "location": "https://michaelkihl.fr/wp-login.php?redirect_to=https%3A%2F%2Fmichaelkihl.fr%2Fwp-admin%2F&reauth=1",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      },
+      "/?rest_route=/": {
+        "status": 200,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff, nosniff",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      }
+    }
+  }
+}

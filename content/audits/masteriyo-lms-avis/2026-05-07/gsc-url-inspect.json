@@ -1,0 +1,29 @@
+{
+  "source": "GSC MCP — inspect_url_enhanced",
+  "fetched_at": "2026-05-07",
+  "page_url": "https://schoolswp.com/masteriyo-lms-avis/",
+  "site_url": "https://schoolswp.com/",
+  "inspection_result_link": "https://search.google.com/search-console/inspect?resource_id=https://schoolswp.com/&id=yiMKAObxY5fZHVqzbAQf9w&utm_medium=link&utm_source=api",
+  "verdict": "PASS",
+  "coverage_state": "Submitted and indexed",
+  "last_crawled": "2026-04-26 03:13",
+  "page_fetch_state": "SUCCESSFUL",
+  "robots_txt_state": "ALLOWED",
+  "indexing_state": "INDEXING_ALLOWED",
+  "google_canonical": "https://schoolswp.com/masteriyo-lms-avis/",
+  "user_canonical": "https://schoolswp.com/masteriyo-lms-avis/",
+  "crawled_as": "MOBILE",
+  "referring_urls": [
+    "https://schoolswp.com/creer-sa-plateforme-de-formation-en-ligne-avec-tutor-lms/"
+  ],
+  "rich_results": {
+    "verdict": "PASS",
+    "detected_types": ["Breadcrumbs"],
+    "issues": []
+  },
+  "notes": [
+    "Pas de Review schema détecté par Google (rich_results uniquement Breadcrumbs) malgré la note 4,8/5 dans l'article. À investiguer côté Rank Math.",
+    "Référent interne unique : article principal Tutor LMS FR — Google associe déjà sémantiquement les deux pages.",
+    "Crawled as MOBILE = OK indexation mobile-first."
+  ]
+}

@@ -5,7 +5,7 @@ description: >
   veut un post LinkedIn, une accroche LinkedIn, du contenu LinkedIn, un carrousel LinkedIn,
   ou dit "post LinkedIn", "LinkedIn", "publie sur LinkedIn", "ecris pour LinkedIn".
   Aussi utilisable depuis Dispatch mobile pour produire un post rapide et exploitable.
-  Ne pas confondre avec le skill social-content (multi-plateformes) — ce skill est specialise LinkedIn.
+  Ne pas confondre avec le skill social-content (multi-plateformes) — ce skill est spécialisé LinkedIn.
 user-invocable: true
 allowed-tools:
   - WebFetch

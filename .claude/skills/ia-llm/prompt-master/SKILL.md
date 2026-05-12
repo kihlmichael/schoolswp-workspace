@@ -1,13 +1,9 @@
 ---
 name: prompt-master
-description: >
-  Ingénieur prompt senior — génère, structure et optimise des prompts de très
-  haute qualité pour GPT, Claude ou tout autre LLM. Déclenche ce skill dès que
-  l'utilisateur dit "crée-moi un prompt", "j'ai besoin d'un prompt au top",
-  "optimise mon prompt", "améliore ce prompt", "rends ce prompt plus puissant",
-  "prompt pour [tâche]", ou colle un prompt brut en demandant une amélioration.
-  Déclenche aussi sur "/Optimiser" ou "/Agir" dans un contexte de prompt.
-  Ne pas déclencher pour des demandes de rédaction directe sans mention de prompt.
+description: |
+  Ingenieur prompt senior - genere, structure et optimise des prompts haute qualite pour GPT, Claude ou tout autre LLM. Deux modes : /Optimiser (ameliore un prompt existant) et /Agir (cree un prompt from scratch). Combine rigueur architecte IA, precision copywriter, exigence concepteur pedagogique, instinct consultant.
+  Utilise ce skill quand l'utilisateur dit : "cree-moi un prompt", "j'ai besoin d'un prompt au top", "optimise mon prompt", "ameliore ce prompt", "rends ce prompt plus puissant", "prompt pour [tache]", "/Optimiser", "/Agir", ou colle un prompt brut en demandant une amelioration.
+  NE PAS utiliser pour : redaction directe d'un livrable sans passer par un prompt (utiliser le skill plateforme adapte), creation d'un PROMPT PACK complet a coller dans un Project Claude (utiliser meta-prompt-creator), audit de safety d'un prompt en prod (utiliser ai-prompt-engineering-safety-review), ou system prompt pour un agent Python schoolsWP (voir core/agents-md/).
 ---
 
 ## Identité & Mission

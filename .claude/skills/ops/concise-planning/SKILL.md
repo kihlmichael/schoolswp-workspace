@@ -1,9 +1,9 @@
 ---
 name: concise-planning
 description: |
-  Génère un plan d'action clair, actionnable et atomique pour une tâche de code. Utilise ce skill quand
-  l'utilisateur demande un plan avant d'implémenter une fonctionnalité ou une correction.
-  Déclenche pour "plan d'action", "planifier cette tâche", "étapes à suivre", "comment implémenter".
+  Transforme une demande en plan unique et actionnable : Approach, Scope (In/Out), 6-10 Action Items atomiques verbe-en-tête, Validation. Une à deux questions max si vraiment bloquant, sinon hypothèses raisonnables. Plan court, pas de prose.
+  Utilise ce skill quand l'utilisateur dit : "plan d'action", "planifie cette tâche", "étapes à suivre", "comment implémenter", "donne-moi un plan rapide", ou veut cadrer un changement code avant d'attaquer.
+  NE PAS utiliser pour : plan stratégique éditorial schoolsWP (utiliser `radar` agent ou skills SEO), plan multi-étapes long en `core/tasks/plans/` (rédiger directement le markdown), brainstorming créatif (utiliser `superpowers:brainstorming`), ou décomposition en tickets parallélisables (utiliser `planning-and-task-breakdown`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

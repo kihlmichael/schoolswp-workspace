@@ -1,7 +1,10 @@
 ---
 name: gws-chat
 version: 1.0.0
-description: "Google Chat: Manage Chat spaces and messages."
+description: |
+  Google Chat v1 via la CLI gws : gère espaces, membres, messages, threads, customEmojis, attachments. Couvre tout le périmètre API brut, à utiliser pour les opérations sortant du simple "envoyer un message".
+  Utilise ce skill quand l'utilisateur dit : "gère un space Google Chat", "ajoute un membre dans Chat", "list spaces", "delete message Chat", ou pour scripter une opération Chat avancée (memberships, threads, emojis custom).
+  NE PAS utiliser pour : envoyer un message simple dans un space (utiliser gws-chat-send), annoncer un fichier Drive (utiliser gws-workflow-file-announce), ou s'abonner aux events Chat en streaming (utiliser gws-events-subscribe avec target chat).
 metadata:
   openclaw:
     category: "productivity"

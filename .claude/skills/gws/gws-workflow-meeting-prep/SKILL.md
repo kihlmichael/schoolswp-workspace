@@ -1,7 +1,10 @@
 ---
 name: gws-workflow-meeting-prep
 version: 1.0.0
-description: "Google Workflow: Prepare for your next meeting: agenda, attendees, and linked docs."
+description: |
+  Helper gws workflow +meeting-prep : prépare ta prochaine réunion (agenda, attendees, docs linkés depuis l'event Calendar). Sortie json / table / yaml / csv pour briefing rapide.
+  Utilise ce skill quand l'utilisateur dit : "prépare ma prochaine réunion", "meeting prep Google", "qui assiste à mon prochain rdv", "docs linkés à ma réunion", ou pour brancher un briefing automatique 15 min avant le meeting.
+  NE PAS utiliser pour : récap journalier (utiliser gws-workflow-standup-report), résumé hebdo (utiliser gws-workflow-weekly-digest), récupération de transcript après le meeting (utiliser gws-meet), ou création d'un nouveau meeting (utiliser gws-calendar-insert).
 metadata:
   openclaw:
     category: "productivity"

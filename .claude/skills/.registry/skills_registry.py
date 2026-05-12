@@ -46,6 +46,56 @@ if os.path.exists(ARCHIVED_DESC_PATH):
     with open(ARCHIVED_DESC_PATH, encoding="utf-8") as f:
         archived_desc = json.load(f)
 
+# ── Load classification (family / subcategory / usage / impact) ─────────────
+CLASSIF_PATH = os.path.join(CACHE_DIR, "skills_classification.json")
+classification = {"directory_defaults": {}, "subcategory_rules": [], "skill_overrides": {}}
+if os.path.exists(CLASSIF_PATH):
+    with open(CLASSIF_PATH, encoding="utf-8") as f:
+        classification = json.load(f)
+
+TIER_MAP = {
+    ("S", "Critique"): "T1",
+    ("S", "Important"): "T1",
+    ("A", "Critique"): "T1",
+    ("S", "Support"): "T2",
+    ("A", "Important"): "T2",
+    ("B", "Critique"): "T2",
+    ("A", "Support"): "T3",
+    ("B", "Important"): "T3",
+    ("B", "Support"): "T3",
+    ("C", "Critique"): "T4",
+    ("C", "Important"): "T4",
+    ("C", "Support"): "T4",
+}
+
+
+def classify(name, rel_path):
+    """Apply directory_defaults -> subcategory_rules -> skill_overrides. Compute tier."""
+    top_dir = rel_path.split("/", 1)[0] if "/" in rel_path else ""
+    defaults = classification.get("directory_defaults", {}).get(top_dir, {})
+    family = defaults.get("family", "")
+    subcategory = defaults.get("subcategory", "")
+    usage = defaults.get("usage", "B")
+    impact = defaults.get("impact", "Support")
+
+    # Path-based subcategory rules (e.g. gws/recipes/, gws/personas/)
+    for rule in classification.get("subcategory_rules", []):
+        if rule.get("path_prefix") and not rel_path.startswith(rule["path_prefix"]):
+            continue
+        if rule.get("name_prefix") and not name.startswith(rule["name_prefix"]):
+            continue
+        subcategory = rule["subcategory"]
+
+    # Per-skill overrides win
+    override = classification.get("skill_overrides", {}).get(name, {})
+    family = override.get("family", family)
+    subcategory = override.get("subcategory", subcategory)
+    usage = override.get("usage", usage)
+    impact = override.get("impact", impact)
+
+    tier = override.get("tier_override") or TIER_MAP.get((usage, impact), "T3")
+    return family, subcategory, usage, impact, tier
+
 # ── Scan ─────────────────────────────────────────────────────────────────────
 results = []
 seen_names = set()
@@ -53,7 +103,7 @@ for skills_dir in SKILLS_DIRS:
     if not os.path.isdir(skills_dir):
         continue
     for root, dirs, files in os.walk(skills_dir):
-        dirs[:] = [d for d in dirs if d not in (".registry", ".archived-workspace-variants", "_to-delete")]
+        dirs[:] = [d for d in dirs if d not in (".registry", ".archived-workspace-variants", "_to-delete", "node_modules")]
         if "SKILL.md" not in files:
             continue
         path = os.path.join(root, "SKILL.md")
@@ -97,9 +147,15 @@ for skills_dir in SKILLS_DIRS:
         else:
             status = "unchanged"
 
+        family, subcategory, usage, impact, tier = classify(name, rel_path)
         results.append(
             {
                 "name": name,
+                "family": family,
+                "subcategory": subcategory,
+                "usage": usage,
+                "impact": impact,
+                "tier": tier,
                 "description": desc_short,
                 "path": rel_path,
                 "last_modified": mtime,
@@ -114,9 +170,15 @@ current_names = {r["name"] for r in results}
 for cname in cache:
     if cname not in current_names:
         last_desc = cache.get(cname, {}).get("description", "") or archived_desc.get(cname, "")
+        family, subcategory, usage, impact, _ = classify(cname, "")
         results.append(
             {
                 "name": cname,
+                "family": family,
+                "subcategory": subcategory,
+                "usage": usage,
+                "impact": impact,
+                "tier": "Archive",
                 "description": last_desc,
                 "path": "",
                 "last_modified": "",
@@ -152,11 +214,11 @@ with open(CACHE_PATH, "w", encoding="utf-8") as f:
 # ── CSV ───────────────────────────────────────────────────────────────────────
 csv_path = os.path.join(CACHE_DIR, "skills_registry.csv")
 with open(csv_path, "w", encoding="utf-8-sig") as f:
-    f.write("name\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\n")
-    for r in sorted(results, key=lambda x: (x["status"], x["name"])):
+    f.write("name\tfamily\tsubcategory\tusage\timpact\ttier\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\n")
+    for r in sorted(results, key=lambda x: (x["tier"], x["family"], x["subcategory"], x["name"])):
         dc = r["description"].replace("\t", " ").replace("\n", " ")
         f.write(
-            f"{r['name']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\n"
+            f"{r['name']}\t{r['family']}\t{r['subcategory']}\t{r['usage']}\t{r['impact']}\t{r['tier']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\n"
         )
 
 # ── Rapport ───────────────────────────────────────────────────────────────────
@@ -172,6 +234,23 @@ print(f"Nouveaux  : {counts['new']}")
 print(f"Modifies  : {counts['modified']}")
 print(f"Inchanges : {counts['unchanged']}")
 print(f"Archives  : {counts['archived']}")
+
+# Tier breakdown
+tier_counts = {"T1": 0, "T2": 0, "T3": 0, "T4": 0, "Archive": 0}
+for r in results:
+    tier_counts[r["tier"]] = tier_counts.get(r["tier"], 0) + 1
+print("\nRepartition par tier :")
+for t in ["T1", "T2", "T3", "T4", "Archive"]:
+    print(f"  {t:8s} : {tier_counts.get(t, 0)}")
+
+# Family breakdown
+family_counts = {}
+for r in results:
+    family_counts[r["family"]] = family_counts.get(r["family"], 0) + 1
+print("\nRepartition par famille :")
+for fam in sorted(family_counts.keys()):
+    label = fam if fam else "(non classe)"
+    print(f"  {label:35s} : {family_counts[fam]}")
 
 for status_label, status_key in [("NOUVEAUX", "new"), ("MODIFIES", "modified"), ("ARCHIVES", "archived")]:
     group = sorted([r for r in results if r["status"] == status_key], key=lambda x: x["name"])

@@ -1,6 +1,9 @@
 ---
 name: slack
-description: Utiliser pour contrôler Slack via l'outil slack - réagir aux messages, épingler/désépingler des éléments, envoyer/modifier/supprimer des messages dans les channels ou DMs Slack.
+description: |
+  Pilote Slack via l'outil `slack` (bot token OpenClaw) : envoyer/modifier/supprimer messages, réagir avec emojis (Unicode ou `:name:`), épingler/désépingler, lister réactions et pins, récupérer infos membres et emojis personnalisés, dans channels ou DMs.
+  Utilise ce skill quand l'utilisateur dit : "envoie un message Slack sur ce channel", "réagis à ce message", "épingle ce message", "modifie le message Slack ID 1712023032.1234", "récupère les infos de ce membre Slack", ou demande une action concrète sur un workspace Slack.
+  NE PAS utiliser pour : automatiser un workflow business multi-app (utiliser n8n + connecteur Slack), poster un post communautaire schoolsWP (pas de canal Slack public actif côté schoolsWP — usage Slack = ops interne / communautés tierces), ou centraliser une notification routine (préférer Discord, voir `reference_discord_webhook_routines.md`).
 metadata: {"openclaw":{"emoji":"💬","requires":{"config":["channels.slack"]}}}
 ---
 

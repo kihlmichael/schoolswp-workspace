@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-forward
 version: 1.0.0
-description: "Gmail: Forward a message to new recipients."
+description: |
+  Helper gws gmail +forward : forward un message Gmail vers de nouveaux destinataires, en gardant le contenu original (Fwd: prefix, body inline). Idéal pour routage manuel ou relais automatisé.
+  Utilise ce skill quand l'utilisateur dit : "forward ce mail à X", "transfère le message ID... à Y", "relais Gmail vers Z", ou pour automatiser un routage de messages entrants.
+  NE PAS utiliser pour : répondre au message (utiliser gws-gmail-reply ou gws-gmail-reply-all), créer une règle de forwarding automatique côté Gmail (passer par les filters via gws-gmail), ou envoyer un nouveau mail sans contexte (utiliser gws-gmail-send).
 metadata:
   openclaw:
     category: "productivity"

@@ -1,10 +1,9 @@
 ---
 name: git-pushing
 description: |
-  Stage, commit et push des changements git avec des messages de commit conventionnels. Utilise ce skill
-  quand l'utilisateur veut committer et pousser des modifications, ou sauvegarder son travail sur le dépôt
-  distant.
-  Déclenche pour "commit et push", "git push", "sauvegarder les changements", "pousser sur le remote".
+  Pousse les changements vers le remote via le script smart commit (message conventional commit, footer Claude, flag upstream). Pattern fixe — ne jamais relancer les commandes git manuellement quand ce skill est invoqué.
+  Utilise ce skill quand l'utilisateur dit : "save to github", "pousser sur le remote", "sauvegarde les changements", "let's push this up", "smart commit", ou termine une feature et veut la partager.
+  NE PAS utiliser pour : créer un nouveau repo GitHub (utiliser publish-repo), ouvrir une pull request (utiliser le skill superpowers requesting-code-review), versioning atomique multi-fichiers structuré (utiliser git-workflow-and-versioning), ou résolution de conflits ou rebase interactif (workflow manuel).
 risk: unknown
 source: community
 date_added: "2026-02-27"

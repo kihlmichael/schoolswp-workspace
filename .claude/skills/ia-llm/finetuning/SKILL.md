@@ -1,12 +1,9 @@
 ---
 name: finetuning
 description: |
-  Cadrage operationnel d'un fine-tuning OpenAI. Determine si le fine-tuning est la bonne option
-  pour un besoin donne, puis produit un plan d'execution complet si oui. Utilise ce skill des que
-  l'utilisateur mentionne fine-tuning, fine-tune, finetuning, entrainement de modele, ou hesite
-  entre fine-tuning et RAG/prompting/system prompt. Aussi quand il demande "comment ameliorer
-  les reponses de mon modele", "mon prompt ne suffit plus", ou "je veux que le modele apprenne
-  mon style/format/ton".
+  SOP fine-tuning OpenAI en mode interview guidée. Challenge d'abord la pertinence (vs prompting amélioré, RAG, system prompt), puis si justifié produit un plan d'exécution complet : dataset format, modèle de base, coûts, evals, déploiement.
+  Utilise ce skill quand l'utilisateur dit : "fine-tuning", "fine-tune", "finetuning", "entraîner un modèle", "le modèle doit apprendre mon style/ton/format", "mon prompt ne suffit plus", ou hésite entre fine-tuning et RAG/prompting.
+  NE PAS utiliser pour : améliorer un prompt sans entraînement (utiliser `prompt-master`), construire un système RAG (utiliser `ai-platform-architect-system`), ou pour les modèles Anthropic/Gemini (skill ciblé OpenAI uniquement).
 ---
 
 # SOP Fine-Tuning OpenAI

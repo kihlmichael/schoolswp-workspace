@@ -1,10 +1,9 @@
 ---
 name: schema-markup
 description: |
-  Ajoute, corrige ou optimise le balisage schema et les données structurées sur un site. Utilise ce skill
-  pour JSON-LD, rich snippets, schema.org, FAQ schema, product schema, review schema, breadcrumb schema ou
-  les résultats enrichis Google.
-  Déclenche pour "schema markup", "données structurées", "JSON-LD", "rich snippets", "schema.org".
+  Ajoute, corrige ou optimise le balisage schema.org et les données structurées sur un site WordPress : JSON-LD, FAQ schema, Product, Review, BreadcrumbList, HowTo, Article, Organization, Person. Vise les rich snippets Google et la cohérence entre schema déclaré et contenu réel.
+  Utilise ce skill quand l'utilisateur dit : "ajoute du schema markup", "génère le JSON-LD pour cette page", "corrige les données structurées", "valide ma FAQ schema", "audit schema.org", ou rapporte une erreur Search Console sur les rich results.
+  NE PAS utiliser pour : éditer les meta Rank Math directement (règle Michael : passer par le plugin manuellement, voir `feedback_rank_math_via_plugin_only.md`), audit SEO global d'une page (utiliser `seo-page-audit`), ou patch du schema Person/Organization core schoolsWP (utiliser le mu-plugin `schoolswp-person-schema` documenté dans `project_person_schema_enrichment.md`).
 metadata:
   version: 1.1.0
 ---

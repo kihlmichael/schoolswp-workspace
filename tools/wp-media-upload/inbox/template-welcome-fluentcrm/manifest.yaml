@@ -1,0 +1,25 @@
+# Manifest pour la landing page lead magnet /template-welcome-fluentcrm/
+# page_id WP : 2867562 (status draft)
+# Lance :
+#   python cli.py upload --article template-welcome-fluentcrm --dry-run
+#   python cli.py upload --article template-welcome-fluentcrm
+
+article:
+  id: 2867562
+  slug: template-welcome-fluentcrm
+
+images:
+  - file: 01-hero-template-welcome-fluentcrm.png
+    title: "Template séquence Welcome FluentCRM gratuit à copier (4 emails)"
+    alt_text: "Hero lead magnet schoolsWP : séquence Welcome FluentCRM 4 emails prête à copier pour engager les abonnés WordPress dès l'inscription"
+    caption: "Le template Welcome FluentCRM que je fais tourner sur schoolsWP : 4 emails espacés par des wait times, prêt à importer dans ton automation."
+    description: "Image hero de la landing page lead magnet schoolsWP qui distribue par email le template de welcome series FluentCRM. Illustre la mécanique du funnel à 4 emails avec wait times entre chaque étape, prêt à coller dans n'importe quelle installation FluentCRM Pro. Cible les éditeurs WordPress, freelances et propriétaires de blogs FluentCRM qui veulent industrialiser leur séquence de bienvenue sans repartir d'une feuille blanche."
+    featured: false   # set manuellement via /wp/v2/pages/ (la page 2867562 est un Page, pas un Post — voir _set_featured_page.py)
+    exif:
+      XPTitle: "Template Welcome FluentCRM à copier – schoolsWP"
+      XPSubject: "Hero lead magnet schoolsWP : séquence Welcome FluentCRM 4 emails prête à copier pour engager les abonnés WordPress dès l'inscription."
+      XPKeywords: "template welcome FluentCRM, séquence welcome FluentCRM, lead magnet FluentCRM, welcome series WordPress, automation FluentCRM, 4 emails welcome, schoolsWP, FluentCRM Pro, email marketing WordPress, Michaël KIHL"
+      XPComment: "Image hero de la landing page lead magnet template-welcome-fluentcrm sur schoolsWP, distribuée par email via FluentCRM."
+      XPAuthor: "Michaël KIHL"
+      Copyright: "© 2026 Michaël KIHL"
+      ImageDescription: "Hero illustration séquence Welcome FluentCRM 4 emails pour lead magnet schoolsWP."

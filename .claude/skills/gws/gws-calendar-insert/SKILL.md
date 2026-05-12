@@ -1,7 +1,10 @@
 ---
 name: gws-calendar-insert
 version: 1.0.0
-description: "Google Calendar: Create a new event."
+description: |
+  Helper gws calendar +insert : crée un événement Google Calendar avec summary, start, end, invités, lieu, rappels, en une seule commande shell. Idéal pour automatisation ponctuelle ou batch (n8n, scripts, recipes).
+  Utilise ce skill quand l'utilisateur dit : "ajoute un événement", "crée un rdv dans Google Calendar", "bloque un créneau", "invite X et Y le tel jour", ou pour scripter des inserts répétés (relances, rappels équipe).
+  NE PAS utiliser pour : explorer l'API Calendar complète (utiliser gws-calendar), lister mon agenda à venir (utiliser gws-calendar-agenda), batch d'invitations à un événement existant (utiliser le recipe recipe-batch-invite-to-event si présent), ou conversation libre côté claude.ai (utiliser le MCP Google_Calendar).
 metadata:
   openclaw:
     category: "productivity"

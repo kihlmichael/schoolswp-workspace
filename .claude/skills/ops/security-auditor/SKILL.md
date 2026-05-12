@@ -1,6 +1,9 @@
 ---
 name: security-auditor
-description: Auditeur de sécurité expert spécialisé en DevSecOps, cybersécurité complète et frameworks de conformité. Utilise ce skill pour les audits de sécurité, revues de code, évaluations de risques et recommandations de remédiation.
+description: |
+  Auditeur de sécurité DevSecOps : threat modeling, intégration SAST/DAST/IAST en CI/CD, secrets management, container security, supply chain (SLSA, SBOM), conformité (OWASP, ISO 27001), authentification moderne (OAuth 2.1, OIDC, FIDO2). Évaluation par sévérité et impact business.
+  Utilise ce skill quand l'utilisateur dit : "audit sécurité DevSecOps", "revue SDLC", "threat model", "intègre SAST en CI/CD", "évalue conformité", ou "remédiation vulnérabilités".
+  NE PAS utiliser pour : audit sécurité du projet schoolsWP (utiliser `cso` qui est plus adapté solo-founder WP), test de sécurité applicative web direct (utiliser `burp-suite-testing` ou `top-web-vulnerabilities`), ou pentest cloud (utiliser `cloud-penetration-testing`).
 risk: unknown
 source: community
 date_added: '2026-02-27'

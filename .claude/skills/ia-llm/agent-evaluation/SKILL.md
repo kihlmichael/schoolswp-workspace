@@ -1,10 +1,9 @@
 ---
 name: agent-evaluation
 description: |
-  Conçoit et implémente des systèmes d'évaluation complets pour des agents IA. Utilise ce skill pour
-  construire des evals pour des agents de code, de conversation, de recherche ou d'usage ordinateur.
-  Couvre les types de graders, benchmarks, feuille de route en 8 étapes et intégration en production.
-  Déclenche pour "eval agent IA", "benchmark agent", "grader", "évaluer un agent".
+  Conçoit et implémente des systèmes d'évaluation complets pour des agents IA (graders, benchmarks, feuille de route 8 étapes, monitoring production). Couvre les agents de code, conversation, recherche, usage ordinateur.
+  Utilise ce skill quand l'utilisateur dit : "eval agent IA", "benchmark agent", "grader", "évaluer un agent", "monitoring agent en production", "CI/CD evals", ou pour mesurer la performance d'un agent dans le temps.
+  NE PAS utiliser pour : auditer un prompt isolé (utiliser `ai-prompt-engineering-safety-review`), évaluer un output unique côté qualité éditoriale (utiliser le sub-agent `output-evaluator`), ou tester un workflow non-agentique.
 allowed-tools: Read Write Shell Grep Glob
 metadata:
   tags: agent-evaluation, evals, AI-agents, benchmarks, graders, testing, quality-assurance

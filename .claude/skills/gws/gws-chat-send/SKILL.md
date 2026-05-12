@@ -1,7 +1,10 @@
 ---
 name: gws-chat-send
 version: 1.0.0
-description: "Google Chat: Send a message to a space."
+description: |
+  Helper gws chat +send : envoie un message texte dans un space Google Chat (spaces/AAAA...). Une commande shell pour notifier équipe ou robot, parfait pour pipelines CI ou notifications n8n.
+  Utilise ce skill quand l'utilisateur dit : "envoie un message Google Chat", "ping le space X", "notifie la team sur Chat", "post dans le space LMS", ou pour brancher une alerte Chat dans un workflow.
+  NE PAS utiliser pour : opérations de gestion de space ou membership (utiliser gws-chat), annoncer un fichier Drive avec carte enrichie (utiliser gws-workflow-file-announce), ou notifier Discord (utiliser le MCP discord).
 metadata:
   openclaw:
     category: "productivity"

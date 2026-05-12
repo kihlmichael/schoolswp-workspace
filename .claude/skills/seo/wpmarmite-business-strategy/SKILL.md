@@ -1,6 +1,9 @@
 ---
 name: wpmarmite-business-strategy
-description: Strategie pour depasser WPMarmite sur le WordPress business + carte des niches SEO ouvertes. Utiliser quand l'utilisateur veut identifier les niches attaquables vs WPMarmite, définir le positionnement différenciant schoolsWP, ou planifier un plan d'attaque concurrentiel avec clusters prioritaires et pages cibles.
+description: |
+  Stratégie pour dépasser WPMarmite sur le WordPress business (CRM, automation, LMS, stack, funnels) sans copier ni attaquer le débutant. Sortie : positionnement gagnant + zones d'attaque Top 3 + clusters Top 3 + mix éditorial en % + 10 pages stratégiques + carte de 6 zones de niches ouvertes + plan 30/90 jours.
+  Utilise ce skill quand l'utilisateur dit : "comment dépasser WPMarmite", "où attaquer WPMarmite", "niches WordPress business ouvertes", "positionnement vs WPMarmite", "plan d'attaque concurrentiel WordPress", ou veut arbitrer le mix éditorial schoolsWP face au géant FR du WordPress débutant.
+  NE PAS utiliser pour : analyser une page WPMarmite précise (utiliser `seo-competitor-gap-radar`), choisir une niche au cas par cas (utiliser `niche-detector-reachable`), ou cartographier l'autorité topique du site schoolsWP (utiliser `cocon-map-schoolswp`).
 ---
 
 # schoolsWP vs WPMarmite - business SEO attack plan + open niches map

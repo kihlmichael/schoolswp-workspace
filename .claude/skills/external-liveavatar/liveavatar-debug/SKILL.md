@@ -1,6 +1,6 @@
 ---
 name: liveavatar-debug
-description: "Troubleshoot and debug LiveAvatar integration issues. Use when the user's LiveAvatar integration isn't working, the avatar is silent, audio is garbled, sessions fail to start, events aren't received, or they're getting API errors."
+description: "Débogue les problèmes d'intégration LiveAvatar : connexion WebSocket, sync audio, latence, état de session."
 license: MIT
 metadata:
   author: heygen

@@ -1,0 +1,55 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/erreurs-wordpress-seo-2026/
+  software: schoolsWP html-to-png
+
+images:
+  - file: story-01-hook.png
+    title: 5 erreurs WordPress SEO - Story Hook
+    subject: Story Instagram Hook 5 erreurs WordPress SEO
+    description: Hook story Instagram - 5 erreurs WordPress qui plombent ton SEO en 2026
+    alt: schoolsWP - Story Hook 5 erreurs WordPress SEO
+    keywords: [WordPress, SEO, story Instagram, erreurs WordPress]
+
+  - file: story-02-erreur-01-plugins.png
+    title: Erreur 01 trop de plugins - Story Instagram
+    subject: Story Instagram trop de plugins WordPress
+    description: Story Instagram sur l'impact de trop de plugins WordPress sur le SEO
+    alt: schoolsWP - Story trop de plugins WordPress
+    keywords: [WordPress, SEO, plugins, story Instagram]
+
+  - file: story-03-erreur-02-cache.png
+    title: Erreur 02 cache mal configuré - Story Instagram
+    subject: Story Instagram cache WordPress mal configuré
+    description: Story Instagram sur le cache WordPress mal configuré qui plombe la performance
+    alt: schoolsWP - Story cache WordPress mal configuré
+    keywords: [WordPress, SEO, cache, story Instagram]
+
+  - file: story-04-erreur-03-images.png
+    title: Erreur 03 images non optimisées - Story Instagram
+    subject: Story Instagram images WordPress et LCP
+    description: Story Instagram sur l'optimisation images WordPress AVIF LCP Core Web Vitals
+    alt: schoolsWP - Story images WordPress non optimisées
+    keywords: [WordPress, SEO, AVIF, LCP, story Instagram]
+
+  - file: story-05-erreur-04-maillage.png
+    title: Erreur 04 maillage aléatoire - Story Instagram
+    subject: Story Instagram maillage interne WordPress
+    description: Story Instagram sur le maillage interne WordPress qui dilue l'autorité
+    alt: schoolsWP - Story maillage interne aléatoire
+    keywords: [WordPress, SEO, maillage interne, story Instagram]
+
+  - file: story-06-erreur-05-schema.png
+    title: Erreur 05 aucun schema - Story Instagram
+    subject: Story Instagram schema.org WordPress
+    description: Story Instagram sur l'absence de schema structuré qui empêche les rich snippets
+    alt: schoolsWP - Story aucun schema structuré
+    keywords: [WordPress, SEO, schema.org, story Instagram, rich snippets]
+
+  - file: story-07-cta.png
+    title: 5 erreurs WordPress SEO - Story CTA
+    subject: Story Instagram CTA carrousel 5 erreurs WordPress
+    description: Story CTA Instagram - voir le carrousel complet 5 erreurs WordPress SEO sur schoolsWP
+    alt: schoolsWP - Story CTA voir carrousel 5 erreurs WordPress
+    keywords: [WordPress, SEO, story Instagram, CTA, schoolsWP]

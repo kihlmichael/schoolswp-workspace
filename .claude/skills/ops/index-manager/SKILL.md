@@ -1,6 +1,9 @@
 ---
 name: index-manager
-description: Gerer automatiquement les index README/INDEX pour pages, slides, blocks et skills locaux.
+description: |
+  Met à jour les index README/INDEX après création d'un nouveau fichier ou skill : `content/pages/`, `content/slides/`, `content/blocks/`, `.claude/skills/INDEX.md`, `core/skills/INDEX.md`. Vérifie l'existence du fichier, ajoute une seule ligne sans duplicat, garde l'ordre alphabétique.
+  Utilise ce skill quand l'utilisateur dit : "mets à jour l'index", "ajoute au README", "réfère ce skill dans INDEX.md", "indexe ce nouveau fichier", ou vient de créer un asset dans un dossier qui a un index.
+  NE PAS utiliser pour : éditer un README hors index (rédaction libre), créer un nouvel index (rédiger le markdown directement), maintenir le registre skills global (utiliser `skills_registry.py --sync` du projet), ou indexer du contenu publié (cycle SEO maillage = `radar` agent).
 user-invocable: true
 ---
 

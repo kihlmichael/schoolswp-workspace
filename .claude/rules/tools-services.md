@@ -14,6 +14,8 @@ paths: ["tools/**"]
 | `tools/services/schoolsWP-drive-organizer/` | Scripts Google Apps Script pour audit et migration Drive |
 | `tools/image-meta-seo/` | Générateur de métadonnées SEO pour images (server.py + index.html) |
 | `tools/wp-media-upload/` | Upload batch d'images WP avec métadonnées SEO + EXIF (`cli.py upload --article <slug>`) — manifest YAML par article, ExifTool requis pour baker XP* |
+| `tools/html-to-png/` | Convertit `slide-*.html` en PNG via Playwright (Chromium headless). Format par défaut 1080x1350 (Instagram 4:5), options `--width` / `--height` / `--scale` / `--selector`. Lancement : `node tools/html-to-png/capture.mjs <dossier>`. Utilisé pour les carrousels Instagram schoolsWP. |
+| `tools/skoatch/` | Client Python + CLI pour l'API Skoatch (Laravel Sanctum bearer). Genere des articles SEO via Skoatch.com avec polling asynchrone integre. **Isole du pipeline schoolsWP** — destine a un autre site WordPress (BRAND_RULES schoolsWP incompatibles avec output Skoatch). Skill associe : `dev/skoatch-api`. Token dans `tools/skoatch/.env` (gitignored) ou `SKOATCH_TOKEN` au .env racine. |
 
 **Google Drive scripts** (depuis `projects/schoolswp/`) :
 ```bash

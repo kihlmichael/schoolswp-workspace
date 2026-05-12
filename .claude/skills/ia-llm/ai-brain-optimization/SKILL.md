@@ -1,6 +1,9 @@
 ---
 name: ai-brain-optimization
-description: Agent D - Optimisation. Execute PACT + TDD pour définir hypothèses testables, KPI, seuils et plan d'itérations. Utiliser quand une page est publiée et qu'il faut améliorer ses performances (CTR, conversion, classement GSC), ou quand ai-strategic-brain active le mode OPTIMIZER.
+description: |
+  Agent D du Brain schoolsWP. Exécute PACT + TDD pour formuler des hypothèses testables sur une page publiée, fixer KPI, seuils et durée du test, planifier les itérations d'amélioration.
+  Utilise ce skill quand l'utilisateur dit : "optimiser cette page", "améliorer le CTR", "tester une variation", "plan d'itération SEO", "boucle d'amélioration", ou quand `ai-strategic-brain` active le mode OPTIMIZER sur un contenu déjà en ligne.
+  NE PAS utiliser pour : produire le contenu initial (utiliser `ai-brain-production`), cadrer un nouveau sujet (utiliser `ai-brain-audit`), ou simplement décliner un format (utiliser `ai-brain-transformation`).
 ---
 
 # Agent D - Optimisation (schoolsWP)

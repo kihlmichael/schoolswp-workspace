@@ -3,9 +3,9 @@ name: telegram-claude-bridge
 description: |
   Tutoriel pas-a-pas pour construire un bridge Node.js entre Telegram et Claude Code CLI. Utilise
   ce skill des qu'un utilisateur veut piloter Claude Code a distance depuis Telegram ou un telephone
-  — que ce soit creer un bot BotFather, recuperer un Chat ID, ecrire un script de polling qui appelle
+  — que ce soit créer un bot BotFather, récupérer un Chat ID, ecrire un script de polling qui appelle
   `claude -p`, ou configurer un relais bot-vers-CLI local. Couvre aussi le lancement automatique (pm2),
-  la securite (filtrage Chat ID), et les commandes predefinies. Ce skill concerne la CONSTRUCTION d'une
+  la sécurité (filtrage Chat ID), et les commandes predefinies. Ce skill concerne la CONSTRUCTION d'une
   infrastructure de pont, PAS l'utilisation du plugin MCP Telegram existant. Ne pas utiliser pour les
   noeuds Telegram n8n, les erreurs MCP Telegram, les bots de groupe generiques, le monitoring par
   alertes Telegram, ou les appels API Anthropic directs.

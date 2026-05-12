@@ -1,12 +1,9 @@
 ---
 name: video-translate
 description: |
-  Traduction et doublage de vidéos existantes en plusieurs langues via HeyGen. Utilise ce skill pour
-  traduire une vidéo dans une autre langue, doubler avec synchronisation labiale, créer des versions
-  multilingues, ou faire une traduction audio sans lip-sync. Fonctionne avec une URL vidéo ou un ID
-  HeyGen existant via l'endpoint /v2/video_translate.
-  Déclenche pour "traduis cette vidéo", "doublage multilingue", "vidéo en espagnol/anglais/...",
-  "synchronisation labiale", "version traduite de ma vidéo".
+  Traduction et doublage d'une vidéo existante en plusieurs langues via HeyGen (`POST /v2/video_translate`). Lip-sync préservé, voix naturelle, versions multilingues. Travaille à partir d'une URL vidéo ou d'un ID HeyGen existant. Polling sur status `completed` puis téléchargement de la vidéo traduite. Requiert `HEYGEN_API_KEY`.
+  Utilise ce skill quand l'utilisateur dit : "traduis cette vidéo", "doublage multilingue", "vidéo en espagnol/anglais/allemand", "synchronisation labiale", "version traduite de ma vidéo", "doublage automatique HeyGen", ou veut décliner une vidéo schoolsWP FR vers EN/DE pour Polylang.
+  NE PAS utiliser pour : créer la vidéo originale (utiliser `heygen` Video Agent), TTS standalone d'un texte traduit (utiliser `text-to-speech`), édition/recoupe d'une vidéo brute (utiliser `external-video-use`), ou transcription pour sous-titres uniquement sans doublage (utiliser `speech-to-text`).
 allowed-tools: mcp__heygen__*
 metadata:
   openclaw:

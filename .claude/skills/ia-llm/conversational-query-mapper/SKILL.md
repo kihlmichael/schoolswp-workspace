@@ -1,15 +1,9 @@
 ---
 name: conversational-query-mapper
 description: |
-  Use this skill when the user wants to map, list, or generate conversational queries (requetes
-  conversationnelles) — the questions real people ask ChatGPT, Perplexity, or AI assistants about
-  a WordPress topic. Triggers: "carte des requetes conversationnelles", "mapper les intentions/questions",
-  "quelles questions mon audience pose aux IA", generating 50-100 queries for a content pillar or
-  cluster, preparing batch content planning from audience questions, "grosse liste de questions",
-  "questions ChatGPT sur [sujet]", "requetes IA en volume". Output: structured query map segmented
-  by user profile, intent, and theme, with editorial synthesis. NOT for: writing articles, SEO audits,
-  AI citability pages (geo-architect), enriching 10 queries with proof angles (ai-citation-opportunity),
-  email sequences, or price comparisons.
+  Génère une carte de 50-100 requêtes conversationnelles réalistes (questions que de vrais utilisateurs posent à ChatGPT, Perplexity, Claude) sur un pilier WordPress, organisées par sous-thèmes et profils. Sortie GEO/AIO-ready, exploitable pour planifier production de contenu.
+  Utilise ce skill quand l'utilisateur dit : "carte des requêtes conversationnelles", "mapper les intentions", "GEO query map", "AIO query map", "lance un nouveau pilier", "questions réelles utilisateurs sur ce sujet", ou prépare un cluster pour identifier les gaps de couverture.
+  NE PAS utiliser pour : recherche keywords classiques (utiliser DataForSEO ou `cocon-map-schoolswp`), construire l'architecture interne d'un cocon (utiliser `cluster-cocon-automatique`), ou rédiger les articles eux-mêmes (utiliser `schoolswp-article-workflow`).
 ---
 
 # Conversational Query Mapper

@@ -1,8 +1,9 @@
 ---
 name: authority-system-90
 description: |
-  Authority System 90™ by schoolsWP — programme d'accompagnement 90 jours pour amener un porteur de projet de "je publie au feeling" à "j'ai un système d'autorité qui génère trafic + leads". Le socle stratégique est schoolsWP, mais le skill s'adapte à n'importe quelle niche : consultant WordPress, coiffeur, garagiste, boulanger, artisan, freelance, commerce local, créateur de contenu.
-  Utilise ce skill dès que l'utilisateur parle de programme d'accompagnement 90 jours, construire une offre coaching structurée, générer un plan de session client, rédiger un livrable de bloc, créer un pitch ou une page de vente pour ce programme, ou accompagner un client en live. Trigger aussi pour "programme 90 jours", "accompagnement structuré", "système d'autorité", "coaching WordPress", "offre freelance premium", "plan de session semaine N", "onboarding client", "pitch offre accompagnement".
+  Programme Authority System 90™ : offre d'accompagnement 90 jours adaptable à n'importe quelle niche client (consultant WordPress, garagiste, coiffeur, freelance, commerce local). 4 modes (conception / vente / execution / direct), socle stratégique schoolsWP avec adaptation vocabulaire métier, plans de session semaine par semaine.
+  Utilise ce skill quand l'utilisateur dit : "programme accompagnement 90 jours pour un client", "offre coaching structurée niche X", "plan de session semaine N", "pitch offre accompagnement freelance", ou veut packager un coaching client (pas une offre schoolsWP propre).
+  NE PAS utiliser pour : la formation propre Authority System™ schoolsWP (utiliser `authority-method` ou `authority-launch`), l'offre service Authority Accelerator™ schoolsWP (utiliser `authority-accelerator`), ou un plan d'exécution interne schoolsWP (utiliser `authority-m1m3-execution`).
 ---
 
 # Authority System 90™ — by schoolsWP

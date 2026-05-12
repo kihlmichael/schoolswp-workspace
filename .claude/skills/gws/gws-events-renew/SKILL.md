@@ -1,7 +1,10 @@
 ---
 name: gws-events-renew
 version: 1.0.0
-description: "Google Workspace Events: Renew/reactivate Workspace Events subscriptions."
+description: |
+  Helper gws events +renew : renouvelle ou réactive une souscription Workspace Events qui arrive à expiration, soit ciblée (--name) soit en bulk (--all + fenêtre). Idéal pour cron quotidien ou hebdo qui maintient les listeners up.
+  Utilise ce skill quand l'utilisateur dit : "renew Workspace Events subscription", "réactive ma souscription Chat", "renouvelle toutes les subs qui expirent", ou pour scripter un cron de maintenance sur les listeners Workspace Events.
+  NE PAS utiliser pour : créer une nouvelle souscription et streamer (utiliser gws-events-subscribe), CRUD général sur les souscriptions (utiliser gws-events), ou watcher Gmail Pub/Sub (utiliser gws-gmail-watch).
 metadata:
   openclaw:
     category: "productivity"

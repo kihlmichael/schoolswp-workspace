@@ -1,0 +1,28 @@
+{
+  "input": "site wordpress lent que faire",
+  "language_id": 1,
+  "site_id": 503,
+  "content_prompt_id": 1425,
+  "is_auto_generated": true,
+  "is_auto_published": false,
+  "is_publish_to_draft": true,
+  "additional_instructions": "RAPPEL CRITIQUE : tutoiement UNIQUEMENT (tu, te, ton, ta, tes, toi), JAMAIS de vouvoiement (vous, votre, vos). Cette regle s'applique aux titres H2, aux H3, aux listes, partout. Sujet : causes de la lenteur d'un site WordPress et actions concretes pour le diagnostiquer et l'accelerer. Couvre : hebergement (mutualise vs VPS vs xCloud), cache (WP Rocket, FlyingPress), images (WebP, lazy load), plugins lourds (audit performance), base de donnees (optimisation tables), CDN, Core Web Vitals (LCP, INP). Cible LCP <2s. Outils a citer : PageSpeed Insights, GTmetrix. Tu cites parfois ton experience freelance.",
+  "is_featured_image": true,
+  "is_images_in": false,
+  "image_style_id": 1,
+  "content_options": {
+    "google_pages_count": 5,
+    "min_words_count": 900,
+    "max_words_count": 1400,
+    "min_h2_count": 5,
+    "max_h2_count": 7,
+    "min_images_count": 0,
+    "max_images_count": 0,
+    "min_lists_count": 3,
+    "max_lists_count": 6,
+    "use_bold": true,
+    "use_italic": false,
+    "use_lists": true,
+    "use_tables": false
+  }
+}

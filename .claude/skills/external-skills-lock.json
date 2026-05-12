@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated_at": "2026-05-04T09:35:12+00:00",
+  "generated_at": "2026-05-11T19:27:52+00:00",
   "skills": {
     "external-antigravity/avoid-ai-writing": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:497061f87bacfb6578163fcda77996caba8fa134242a9a2447faf893319f4af4",
+      "computed_hash": "sha256:c261edbd8c0f468ade9e4356829e645152a7d565672af2b3d25a49d5cc676f5f",
       "files_count": 1
     },
     "external-antigravity/clarvia-aeo-check": {
@@ -23,7 +23,7 @@
     "external-antigravity/email-sequence": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:d460f9ed09809aa85766f24e995bbb2e45363f8e0eea4660c9558f79a0f6a34c",
+      "computed_hash": "sha256:3e1ab4964273170eca4e6b89980affcd3b2adf0f212c01b40ab7474b307e1833",
       "files_count": 1
     },
     "external-antigravity/geo-fundamentals": {
@@ -41,7 +41,7 @@
     "external-antigravity/popup-cro": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:d3ba37ea75788ec6690f651654505e4eb2842dcbd06c5582e708d39460c38a2b",
+      "computed_hash": "sha256:cc3defe9482053e2c4177f8ae5fbb4a293e72c4f5ea02d9b4bda62d0f5bcc464",
       "files_count": 1
     },
     "external-antigravity/seo-aeo-internal-linking": {
@@ -53,13 +53,13 @@
     "external-antigravity/seo-aeo-schema-generator": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:8e8dd159f7aafb63f21b9821d6ccbdb687dfed4396f4af51a195b6324dd116c8",
+      "computed_hash": "sha256:e88495c578398983a65a130eb9aee4baee787b0f768ed2e9932fdf3d1fe9e90b",
       "files_count": 1
     },
     "external-antigravity/seo-cannibalization-detector": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:94ae9b7dca0963cc5639d01592762237f42cd00e07f6dc57ff59a09f4b8e8e43",
+      "computed_hash": "sha256:079cb77eb7e47e398490d8fada24b565f9e29b00b3f2fc163f5773eb572b08d0",
       "files_count": 1
     },
     "external-antigravity/seo-content-refresher": {
@@ -71,37 +71,37 @@
     "external-antigravity/seo-hreflang": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:babe274ec483e2b6ae7d326cfe288ae83d835012ec804c2bcc280ea614ea3202",
+      "computed_hash": "sha256:0c8db43cc1251af4ecad230c97e8bee37c8afaff891e58d07869fcc7f829c3e5",
       "files_count": 1
     },
     "external-antigravity/seo-snippet-hunter": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:873e0e63c9eef5a22020e49d2ab4eb5ffd2c8ece98081e1ab68f59d3d3bdd806",
+      "computed_hash": "sha256:59d1727194eb814992c8cb95424699dcbdaf9bbea881433e53946a7a2027dcb3",
       "files_count": 1
     },
     "external-antigravity/web-performance-optimization": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:316a9f3ff06f5f32242448eedb0a85b17a80fd54429ab19b1fcdf804dec77af2",
+      "computed_hash": "sha256:2dfee8820d7c7e89744bc04fec99e3b5501fe0aaaf27c9e31ff1978d919e6190",
       "files_count": 1
     },
     "external-antigravity/wordpress-centric-high-seo-optimized-blogwriting-skill": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:d585f31ba444b8ff9766ffe18f2efbbee60c4a7037c50574a1ba2b7599f3a8a0",
+      "computed_hash": "sha256:be0a990bc76823b9a98c13679652d363e3d02f9eb4c76e5be3f10925f5062ce0",
       "files_count": 1
     },
     "external-antigravity/wordpress-plugin-development": {
       "source": "sickn33/antigravity-awesome-skills",
       "source_type": "github",
-      "computed_hash": "sha256:e13a08e3aa65af7bc45c0de66809502be8c799412ebc1c2fc8379654575f9133",
+      "computed_hash": "sha256:19e6e50c038a11a771df95bb86640bedfb863d630d9f0a8d38c2f9afce4a5579",
       "files_count": 1
     },
     "external-cc-design": {
       "source": "ZeroZ-lab/cc-design",
       "source_type": "github",
-      "computed_hash": "sha256:5ae0e4aa23307088c1a93835676fb2f21bc5960a32c232b7d84c658258cc2e41",
+      "computed_hash": "sha256:bda89660a8deaf5f76fd15932733085faddafd435f69c6be5d98c3f29de4888a",
       "files_count": 36
     },
     "external-design-systems": {
@@ -119,7 +119,7 @@
     "external-open-design/docs-page": {
       "source": "nexu-io/open-design",
       "source_type": "github",
-      "computed_hash": "sha256:bdb66ab1ee19546a370c2b6ed2b7fe34e2a9db7e4aaed8a2e0963183e629197f",
+      "computed_hash": "sha256:19f5701d5a51e4f7c163198ced1ec6ac5b09148032a95cdc3d09ed8856b6a8f7",
       "files_count": 2
     },
     "external-open-design/email-marketing": {
@@ -137,49 +137,61 @@
     "external-hyperframes/gsap": {
       "source": "heygen-com/hyperframes",
       "source_type": "github",
-      "computed_hash": "sha256:ce919791d4e694e8f1295134000629cf85f7e36f63db1aef4e0ac09b9d3ba1e6",
+      "computed_hash": "sha256:a7942e9a1ccdecf88c446a783bbad57d9b45139d9fcc48eb6828e976cb63d195",
       "files_count": 3
     },
     "external-hyperframes/hyperframes": {
       "source": "heygen-com/hyperframes",
       "source_type": "github",
-      "computed_hash": "sha256:20ea7a6d19b87c8f43055e21e6348a24869d605a2a4bc1e279a56971aed1eb6c",
+      "computed_hash": "sha256:8dfdac2da928f49b9c59ad440a4a8914304add28f17c9e40b2999aa08cf822c1",
       "files_count": 39
     },
     "external-hyperframes/hyperframes-cli": {
       "source": "heygen-com/hyperframes",
       "source_type": "github",
-      "computed_hash": "sha256:70c20cecb93d540a6cee22cc644ec80797cabb3d5e40186dbb71fbace967eae0",
+      "computed_hash": "sha256:970b0c5c09bdfb2bf509bbfaea80c71e355d84b6ace58e097883e679c801f070",
+      "files_count": 1
+    },
+    "external-hyperframes/hyperframes-media": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:244d77b285f82c7e3b21e705a000a14036ff578f3b7d0328e9658843bfe55572",
       "files_count": 1
     },
     "external-hyperframes/hyperframes-registry": {
       "source": "heygen-com/hyperframes",
       "source_type": "github",
-      "computed_hash": "sha256:b4e286a6e9104c552dab30d27a0efed80da491c6c75a1ff40e436c1e1430ee7b",
+      "computed_hash": "sha256:7822184b743b9bb3109da2bb2b6d2964f633bf25c4c9ff3f9636a4f7870a4c62",
       "files_count": 8
+    },
+    "external-hyperframes/remotion-to-hyperframes": {
+      "source": "heygen-com/hyperframes",
+      "source_type": "github",
+      "computed_hash": "sha256:535036a24edabebfe875bc3b0beb4ef1f4816715105dd4d885c5ead53ad16ac6",
+      "files_count": 70
     },
     "external-hyperframes/website-to-hyperframes": {
       "source": "heygen-com/hyperframes",
       "source_type": "github",
-      "computed_hash": "sha256:9bc958122379ffc894c882b0ed0591f607c99ef460a11a3d23df9d03b73adfb2",
+      "computed_hash": "sha256:0e66a98294c42761e83123879f0c08453d24e77b3ad74c52ab8fcfa8861c2a75",
       "files_count": 9
     },
     "external-liveavatar/liveavatar-debug": {
       "source": "heygen-com/liveavatar-web-sdk",
       "source_type": "github",
-      "computed_hash": "sha256:a4c3283d186c0e40a13d07ad49ff2bc2244ded682a5be2134d01a99d702e6310",
+      "computed_hash": "sha256:992cb0fc625aedaf0ce3b9dc8ff9292546562362c240eca1e7783db909191c20",
       "files_count": 1
     },
     "external-liveavatar/liveavatar-feedback": {
       "source": "heygen-com/liveavatar-web-sdk",
       "source_type": "github",
-      "computed_hash": "sha256:ad973c84946dfe08519ceeb29b9cebffbb8cd94cb8cad8ce9462df135b7b7d18",
+      "computed_hash": "sha256:6901285be9aa875b3274ef5435ae3fbc6e1c84e659d0026c648025fe5dfdf182",
       "files_count": 1
     },
     "external-liveavatar/liveavatar-integrate": {
       "source": "heygen-com/liveavatar-web-sdk",
       "source_type": "github",
-      "computed_hash": "sha256:d114d8157b2b2d8b6f506501ac4a4b4fa7170b546b8093ed47ce76cf1e6ffe1a",
+      "computed_hash": "sha256:ae0249efeb59f64914bd972c329ae61589f942c2bdecb74d3d1a23203386cccc",
       "files_count": 4
     },
     "external-obsidian/defuddle": {
@@ -191,7 +203,7 @@
     "external-video-use": {
       "source": "browser-use/video-use",
       "source_type": "github",
-      "computed_hash": "sha256:0a1f55c997d418f6cfafec38b97dc8a9b7f85d588bdaa90fd36296893552b5a2",
+      "computed_hash": "sha256:95706afdf098f115dad4498105965e747477063feec12cdfe369d48370cba35f",
       "files_count": 32
     }
   }

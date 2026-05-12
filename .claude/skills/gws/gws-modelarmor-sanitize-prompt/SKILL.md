@@ -1,7 +1,10 @@
 ---
 name: gws-modelarmor-sanitize-prompt
 version: 1.0.0
-description: "Google Model Armor: Sanitize a user prompt through a Model Armor template."
+description: |
+  Helper gws modelarmor +sanitize-prompt : passe un prompt utilisateur dans un template Model Armor existant et retourne le verdict safety (allow/block) + détails de matchs (PII, contournement, toxique). Idéal en pre-check avant d'envoyer le prompt à un LLM.
+  Utilise ce skill quand l'utilisateur dit : "sanitize ce prompt", "check ce prompt Model Armor", "filtre prompt avant LLM", "verdict safety prompt", ou pour brancher Model Armor en garde-corps amont sur un agent LLM en prod.
+  NE PAS utiliser pour : sanitize la réponse retournée par le modèle (utiliser gws-modelarmor-sanitize-response), créer le template Model Armor (utiliser gws-modelarmor-create-template), ou modération texte hors GCP.
 metadata:
   openclaw:
     category: "security"

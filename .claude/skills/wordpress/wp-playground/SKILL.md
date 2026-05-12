@@ -1,10 +1,9 @@
 ---
 name: wp-playground
 description: |
-  Workflows WordPress Playground — instances WP rapides et jetables dans le navigateur
-  ou localement via @wp-playground/cli (server, run-blueprint, build-snapshot).
-  Utilise ce skill pour tester un plugin/thème sans stack complet, itérer sur des Blueprints JSON,
-  créer des snapshots reproductibles, changer de version WP/PHP ou déboguer avec Xdebug.
+  Workflows WordPress Playground : instances WP jetables WebAssembly + SQLite, locales via @wp-playground/cli (server, run-blueprint, build-snapshot) ou navigateur. Tester un plugin ou thème sans stack complet, itérer sur Blueprints JSON, créer des snapshots reproductibles, switch versions WP et PHP, debug Xdebug isolé.
+  Utilise ce skill quand l'utilisateur dit : "WordPress Playground", "wp-playground CLI", "Blueprint Playground", "tester un plugin sans stack", "WordPress jetable", "snapshot WP reproductible", ou "debug Xdebug Playground".
+  NE PAS utiliser pour : sites WordPress de production ou staging réels (utiliser wp-wpcli-and-ops), profilage perfs prod (utiliser wp-performance), WP locaux Studio.app (utiliser wordpress-studio MCP), ou contenu et données réels (Playground = SQLite éphémère, jamais pointer sur prod).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Playground CLI requires Node.js 20.18+; runs WP in WebAssembly with SQLite."
 ---
 

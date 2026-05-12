@@ -11,15 +11,22 @@ En cas de doute, défaut = Remotion (deja en prod, governance theme.ts et texts.
 
 ## Skills installees
 
-Emplacement : .claude/skills/external-hyperframes/ (5 skills)
+Emplacement : .claude/skills/external-hyperframes/ (7 skills)
 
 - hyperframes : creer et editer compositions HTML
 - hyperframes-cli : commandes CLI (init, lint, preview, render, tts)
 - hyperframes-registry : installer blocks et components via registry
 - website-to-hyperframes : capturer URL vers video
 - gsap : animations GSAP
+- hyperframes-media : preprocess assets (Kokoro TTS, Whisper, u2net background removal). Cherry-picked 2026-05-11.
+- remotion-to-hyperframes : porter une composition Remotion existante vers HyperFrames. Trigger UNIQUEMENT sur demande explicite de migration. Cherry-picked 2026-05-11.
 
-Invoquer via slash commands (apres reload session) : /hyperframes, /hyperframes-cli, /hyperframes-registry, /website-to-hyperframes, /gsap.
+Invoquer via slash commands (apres reload session) : /hyperframes, /hyperframes-cli, /hyperframes-registry, /website-to-hyperframes, /gsap, /hyperframes-media, /remotion-to-hyperframes.
+
+Conflits a connaitre :
+
+- hyperframes-media propose Kokoro TTS, mais la stack prod schoolsWP est ElevenLabs Charlie (memoire project_video_recycle_pipeline.md). Kokoro = option locale gratuite si besoin batch sans crédits ElevenLabs.
+- remotion-to-hyperframes ne doit PAS auto-trigger sur "Remotion" mentionne en passant. Default = skill hyperframes (nouvelle composition).
 
 ## Commandes (a lancer depuis apps/hyperframes/)
 

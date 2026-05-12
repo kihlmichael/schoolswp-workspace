@@ -1,7 +1,10 @@
 ---
 name: recipe-compare-sheet-tabs
 version: 1.0.0
-description: "Read data from two tabs in a Google Sheet to compare and identify differences."
+description: |
+  Compare deux onglets d'un meme Google Sheet et identifie les differences (lignes ajoutees, supprimees, modifiees, valeurs divergentes par cellule). Recipe gws qui lit les deux tabs et produit un rapport diff structure.
+  Utilise ce skill quand l'utilisateur dit : "compare ces deux onglets", "quelles differences entre tab1 et tab2", "diff sheet tabs", "qu'est-ce qui a change entre la version A et B du Sheet", ou colle un Sheet avec deux onglets versionnes.
+  NE PAS utiliser pour : comparer deux Sheets distincts (necessite extension custom), comparer deux versions historiques (utiliser revisions Drive), ou auditer un export GSC dans le temps (utiliser `content/audits/` snapshot system schoolsWP).
 metadata:
   openclaw:
     category: "recipe"

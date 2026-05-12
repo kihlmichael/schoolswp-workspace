@@ -1,20 +1,20 @@
 {
-  "last_run": "2026-05-08T21:32:13.735778",
+  "last_run": "2026-05-11T21:28:00.065993",
   "skills": {
     "landing-page-factory": {
-      "hash": "4c9c437c",
-      "last_modified": "2026-04-16",
+      "hash": "3c7c0e46",
+      "last_modified": "2026-05-09",
       "description": "Pipeline complet qui transforme une URL (plugin WP, theme WP, SaaS WordPress) en pages de destination HTML responsive multi-angles..."
     },
     "article-audit-score": {
-      "hash": "c54fdfcc",
-      "last_modified": "2026-04-15",
-      "description": "Applique la grille d'auto-audit V2 schoolsWP sur un article existant et retourne un score /100 detaille (12 criteres), un verdict ..."
+      "hash": "e05fb53b",
+      "last_modified": "2026-05-09",
+      "description": "Applique la grille d'auto-audit V2 schoolsWP sur un article existant et retourne un score /100 détaillé (12 critères), un verdict ..."
     },
     "article-multiformat": {
-      "hash": "14a5ee82",
-      "last_modified": "2026-04-15",
-      "description": "Derive un article schoolsWP publie en 4-6 formats prets a coller : newsletter email, post LinkedIn/Bluesky, pin Pinterest (titre +..."
+      "hash": "aa3dbede",
+      "last_modified": "2026-05-09",
+      "description": "Dérive un article schoolsWP publié en 4-6 formats prêts à coller : newsletter email, post LinkedIn/Bluesky, pin Pinterest (titre +..."
     },
     "brain-autonome": {
       "hash": "643e9781",
@@ -22,9 +22,9 @@
       "description": "Arbitrage éditorial schoolsWP : décider QUOI produire ensuite, dans QUEL ORDRE, et quoi publier/optimiser/abandonner. Prend des mo..."
     },
     "brain-lite": {
-      "hash": "3d439001",
-      "last_modified": "2026-04-15",
-      "description": "Lance le pipeline brain-lite (5 étapes, sans NER/SERP). Produit stratégie → article → audit SEO → cluster. Déclenche pour \"brain-l..."
+      "hash": "4fc711f5",
+      "last_modified": "2026-05-09",
+      "description": "Lance le pipeline brain-lite (5 étapes, sans NER/SERP) via `brain-lite.bat`. Produit stratégie → article → audit SEO → cluster, ou..."
     },
     "brain": {
       "hash": "6dad4c76",
@@ -32,8 +32,8 @@
       "description": "(archivé - invocation manuelle uniquement - ne pas auto-déclencher)"
     },
     "branding": {
-      "hash": "5a20c2f1",
-      "last_modified": "2026-04-16",
+      "hash": "30cfdf52",
+      "last_modified": "2026-05-08",
       "description": "AUDIT DE TON schoolsWP sur un contenu existant (mode check uniquement). Vérifie cohérence de voix, clarté, densité, pédagogie, ali..."
     },
     "clairtexte": {
@@ -52,14 +52,14 @@
       "description": "Recycler un email REÇU (promo WordPress, newsletter produit, annonce lancement) en 3 contenus publiables schoolsWP : résumé Markdo..."
     },
     "formation-pipeline": {
-      "hash": "edfb1f52",
-      "last_modified": "2026-04-15",
+      "hash": "22790e07",
+      "last_modified": "2026-05-09",
       "description": "Pipeline complet de création de formation gratuite schoolsWP pour un plugin WordPress. 6 étapes séquentielles : recherche → gap an..."
     },
     "mini-offre-page-de-vente": {
-      "hash": "256b0367",
-      "last_modified": "2026-04-30",
-      "description": "Genere le copy complet d'une page de vente WordPress pour une mini offre coup de coeur. Prend en entree une fiche mini offre (nom ..."
+      "hash": "f83e9eda",
+      "last_modified": "2026-05-09",
+      "description": "Génère le copy complet d'une page de vente WordPress pour une mini offre coup de coeur. Prend en entree une fiche mini offre (nom ..."
     },
     "plugin-email-sequence": {
       "hash": "1ac0232b",
@@ -67,19 +67,19 @@
       "description": "Génère une séquence email complète (3 à 7 emails) pour faire découvrir un plugin ou outil WordPress via affiliation, plus la logiq..."
     },
     "rewrite-conversion": {
-      "hash": "956cfe8e",
-      "last_modified": "2026-04-15",
-      "description": "Reecrit un texte schoolsWP pour ameliorer sa clarte, son impact et sa conversion. Utilise ce skill des que l'utilisateur veut amel..."
+      "hash": "04507341",
+      "last_modified": "2026-05-09",
+      "description": "Reecrit un texte schoolsWP pour améliorer sa clarte, son impact et sa conversion. Utilise ce skill des que l'utilisateur veut amél..."
     },
     "schoolswp-article-workflow": {
-      "hash": "b73cf84a",
-      "last_modified": "2026-04-15",
-      "description": "Workflow complet de redaction schoolsWP en 3 phases : Intelligence SEO, Redaction IA, Couche humaine. Prend un mot-cle + donnees S..."
+      "hash": "ff2879c4",
+      "last_modified": "2026-05-09",
+      "description": "Workflow complet de rédaction schoolsWP en 3 phases : Intelligence SEO, Rédaction IA, Couche humaine. Prend un mot-clé + données S..."
     },
     "thruuu-writer": {
-      "hash": "05118288",
-      "last_modified": "2026-04-23",
-      "description": "Transforme un brief thruuu (.docx) en article complet pret a publier. Pipeline 10 etapes : parsing du brief, detection de langue, ..."
+      "hash": "3b543533",
+      "last_modified": "2026-05-09",
+      "description": "Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 10 étapes : parsing du brief, détection de langue, ..."
     },
     "lead-magnet-schoolswp": {
       "hash": "3761b6fc",
@@ -87,8 +87,8 @@
       "description": "Produit un système de lead magnet schoolsWP complet et cohérent : PDF 1 page à forte valeur + landing page de capture newsletter (..."
     },
     "thruuu-strategist": {
-      "hash": "c00cd9a5",
-      "last_modified": "2026-04-17",
+      "hash": "7e5717cd",
+      "last_modified": "2026-05-09",
       "description": "Transforme un export de clusters thruuu (.xlsx) en stratégie de contenu priorisée. Pipeline 3 phases : business context persistant..."
     },
     "offer-to-copy": {
@@ -102,14 +102,14 @@
       "description": "(archivé - doublonné par branding project + modes de création redondants avec les skills spécialisés - ne pas auto-déclencher)"
     },
     "schoolswp-content-studio": {
-      "hash": "e6558b19",
-      "last_modified": "2026-03-18",
-      "description": "Skill éditorial complet pour schoolsWP — le média WordPress de Michaël KIHL. Utilise ce skill SYSTÉMATIQUEMENT pour : rédiger des ..."
+      "hash": "e5f83d8c",
+      "last_modified": "2026-05-07",
+      "description": "Met en forme du texte brut schoolsWP (notes, transcript, voice note, brouillon, idées en vrac) en contenu court ou intermédiaire p..."
     },
     "thruuu-content-strategist": {
-      "hash": "5d6a83dd",
-      "last_modified": "2026-04-01",
-      "description": "Strategie de contenu SEO automatisee a partir des exports de clustering thruuu (XLSX). Analyse les clusters de mots-cles, determin..."
+      "hash": "9dcb9c6f",
+      "last_modified": "2026-05-09",
+      "description": "Stratégie de contenu SEO automatisée à partir des exports de clustering thruuu (.xlsx). Analyse les clusters de mots-clés, détermi..."
     },
     "youtube-thumbnails": {
       "hash": "3cc4f97e",
@@ -117,74 +117,84 @@
       "description": "(archivé - fusionné dans thumbnail-strategist - ne pas auto-déclencher)"
     },
     "thruuu-brief-builder": {
-      "hash": "6eeacf31",
-      "last_modified": "2026-04-18",
-      "description": "Remplit un brief thruuu complet (format 10 onglets) à partir de données brutes : mot-clé, export thruuu (rapport SERP), données Da..."
+      "hash": "e516fc24",
+      "last_modified": "2026-05-09",
+      "description": "Remplit un brief thruuu (format 10 onglets) à partir de données brutes : mot-clé, export thruuu (rapport SERP), DataForSEO, GSC, n..."
+    },
+    "thruuu-brief-builder-snapshot-v1": {
+      "hash": "4e11284a",
+      "last_modified": "2026-05-09",
+      "description": "Snapshot v1 (archivé pour traçabilité) du builder de brief thruuu — remplit un brief complet (10 onglets) à partir de mot-clé + ex..."
+    },
+    "thruuu-brief-builder-snapshot-v2": {
+      "hash": "64357faa",
+      "last_modified": "2026-05-09",
+      "description": "Snapshot v2 (archivé pour traçabilité) du builder de brief thruuu — ajoute la discipline de preuve [FAIT]/[DÉDUCTION]/[À VÉRIFIER]..."
     },
     "reddit-strategist": {
-      "hash": "53e17867",
-      "last_modified": "2026-04-30",
-      "description": "Genere des contenus Reddit calibres brand-strict pour schoolsWP : posts originaux, commentaires sur threads existants, shortlist d..."
+      "hash": "e9e6d773",
+      "last_modified": "2026-05-09",
+      "description": "Génère des contenus Reddit calibres brand-strict pour schoolsWP : posts originaux, commentaires sur threads existants, shortlist d..."
     },
     "email-reply-schoolswp": {
-      "hash": "b78ce1af",
-      "last_modified": "2026-05-08",
+      "hash": "947158a0",
+      "last_modified": "2026-05-09",
       "description": "Drafte une reponse email dans le ton schoolsWP (tutoiement, \"je\", concis, pas de \"nous\"/\"on\"). Prend en input un email recu (collé..."
     },
     "capture-inspiration": {
-      "hash": "6eeefc97",
-      "last_modified": "2026-05-08",
-      "description": "Analyse un contenu externe (newsletter, post LinkedIn, video YouTube, article) pour en extraire les patterns reutilisables (hook, ..."
+      "hash": "2dfea107",
+      "last_modified": "2026-05-09",
+      "description": "Analyse un contenu externe (newsletter, post LinkedIn, video YouTube, article) pour en extraire les patterns réutilisables (hook, ..."
     },
     "ai-playbook-schoolswp": {
-      "hash": "fd7be6d7",
-      "last_modified": "2026-04-15",
-      "description": "Skill complet pour les workflows schoolsWP de Michaël Kihl. Combine les principes du AI Playbook (plan mode, subagents, self-impro..."
+      "hash": "a70b0307",
+      "last_modified": "2026-05-09",
+      "description": "Méta-skill chapeau qui combine les principes AI Playbook (plan mode, subagents, self-improvement, verification) avec l'identité sc..."
     },
     "ai-brain-audit": {
-      "hash": "56421804",
-      "last_modified": "2026-04-15",
-      "description": "Agent A - Audit SEO. Analyse intent, concurrence et données disponibles pour produire un brief SPECS exploitable. Utiliser quand t..."
+      "hash": "d229aba9",
+      "last_modified": "2026-05-09",
+      "description": "Agent A du Brain schoolsWP. Analyse intent SEO, concurrence et données disponibles (GSC, GA4, Ahrefs) pour produire un brief SPECS..."
     },
     "ai-brain-optimization": {
-      "hash": "9f5e76b9",
-      "last_modified": "2026-04-15",
-      "description": "Agent D - Optimisation. Execute PACT + TDD pour définir hypothèses testables, KPI, seuils et plan d'itérations. Utiliser quand une..."
+      "hash": "6e4480d4",
+      "last_modified": "2026-05-09",
+      "description": "Agent D du Brain schoolsWP. Exécute PACT + TDD pour formuler des hypothèses testables sur une page publiée, fixer KPI, seuils et d..."
     },
     "ai-brain-production": {
-      "hash": "636cf3ea",
-      "last_modified": "2026-04-15",
-      "description": "Agent B - Production. Execute CREDO à partir d'un brief SPECS pour livrer le contenu principal prêt à publier (structure SEO + CTA..."
+      "hash": "57eadb39",
+      "last_modified": "2026-05-09",
+      "description": "Agent B du Brain schoolsWP. Exécute CREDO à partir d'un brief SPECS validé pour livrer le contenu principal prêt à publier : struc..."
     },
     "ai-brain-transformation": {
-      "hash": "69dc4288",
-      "last_modified": "2026-04-15",
-      "description": "Agent C - Transformation. Execute DITO pour transformer un contenu principal en 2-4 formats omnicanaux prêts à coller (LinkedIn, n..."
+      "hash": "f9b092c4",
+      "last_modified": "2026-05-09",
+      "description": "Agent C du Brain schoolsWP. Exécute DITO pour transformer un livrable principal en 2-4 formats omnicanaux prêts à coller (LinkedIn..."
     },
     "ai-citation-opportunity": {
-      "hash": "7b5e142e",
-      "last_modified": "2026-04-15",
-      "description": "Identifie les requetes conversationnelles AI Search les plus citables et les contenus a produire pour maximiser les citations par ..."
+      "hash": "9fe33c55",
+      "last_modified": "2026-05-09",
+      "description": "Identifie les requêtes conversationnelles AI Search les plus citables et les contenus a produire pour maximiser les citations par ..."
     },
     "ai-platform-architect-system": {
-      "hash": "7f7eede7",
-      "last_modified": "2026-04-15",
+      "hash": "76ff4bc9",
+      "last_modified": "2026-05-09",
       "description": "Cadre d'architecture pour opérer Claude Code, MCP et Desktop Commander avec un workflow déterministe et safe (inspect → plan → exe..."
     },
     "ai-strategic-brain": {
-      "hash": "d25dc195",
-      "last_modified": "2026-04-15",
-      "description": "AI Strategic Brain schoolsWP — orchestrateur 3 couches (Méthode + 6 Agents + Système) pour piloter l'écosystème WordPress stratégi..."
+      "hash": "9af4e28b",
+      "last_modified": "2026-05-09",
+      "description": "Orchestrateur 3 couches du Brain schoolsWP (Méthode + 6 Agents + Système). Unifie SPECS/COT/CREDO/DITO/PACT/TDD pour produire en u..."
     },
     "conversational-query-mapper": {
-      "hash": "eeeb82bd",
-      "last_modified": "2026-04-15",
-      "description": "Use this skill when the user wants to map, list, or generate conversational queries (requetes conversationnelles) — the questions ..."
+      "hash": "b3827815",
+      "last_modified": "2026-05-09",
+      "description": "Génère une carte de 50-100 requêtes conversationnelles réalistes (questions que de vrais utilisateurs posent à ChatGPT, Perplexity..."
     },
     "intelligence-system-training": {
-      "hash": "6e40ce40",
-      "last_modified": "2026-04-15",
-      "description": "Formation premium schoolsWP Intelligence System. Architecture pedagogique, modules, livrables, positionnement et pricing. Utiliser..."
+      "hash": "2efe0205",
+      "last_modified": "2026-05-09",
+      "description": "Architecture pédagogique de la formation premium schoolsWP Intelligence System. Couvre les 6 modules (SPECS, COT, CREDO, DITO, PAC..."
     },
     "mcp-builder": {
       "hash": "b7b75bb4",
@@ -192,29 +202,29 @@
       "description": "Guide de création de serveurs MCP (Model Context Protocol) de qualité production pour connecter des LLM à des services externes. U..."
     },
     "meta-prompt-creator": {
-      "hash": "cce6f602",
-      "last_modified": "2026-04-15",
-      "description": "Méta-prompt creator spécialisé schoolsWP. Transforme un brief (même incomplet) en un PROMPT PACK complet et prêt à coller dans Cla..."
+      "hash": "a3112deb",
+      "last_modified": "2026-05-09",
+      "description": "Meta-prompt creator specialise schoolsWP. Transforme un brief (meme incomplet) en PROMPT PACK complet pret a coller dans Claude Co..."
     },
     "agents": {
-      "hash": "bfc3364c",
-      "last_modified": "2026-03-14",
-      "description": "Crée des agents vocaux IA avec ElevenLabs. Utilise ce skill pour construire des assistants vocaux, des bots de service client, des..."
+      "hash": "372606dc",
+      "last_modified": "2026-05-09",
+      "description": "Crée des agents vocaux IA avec ElevenLabs (Conversational AI Platform) : assistants vocaux, bots service client, personnages vocau..."
     },
     "finetuning": {
-      "hash": "674a95f0",
-      "last_modified": "2026-03-28",
-      "description": "Cadrage operationnel d'un fine-tuning OpenAI. Determine si le fine-tuning est la bonne option pour un besoin donne, puis produit u..."
+      "hash": "072d72ff",
+      "last_modified": "2026-05-09",
+      "description": "SOP fine-tuning OpenAI en mode interview guidée. Challenge d'abord la pertinence (vs prompting amélioré, RAG, system prompt), puis..."
     },
     "prompt-master": {
-      "hash": "c72c663c",
-      "last_modified": "2026-03-13",
-      "description": "Ingénieur prompt senior — génère, structure et optimise des prompts de très haute qualité pour GPT, Claude ou tout autre LLM. Décl..."
+      "hash": "ba008859",
+      "last_modified": "2026-05-09",
+      "description": "Ingenieur prompt senior - genere, structure et optimise des prompts haute qualite pour GPT, Claude ou tout autre LLM. Deux modes :..."
     },
     "agent-evaluation": {
-      "hash": "82d954cc",
-      "last_modified": "2026-04-15",
-      "description": "Conçoit et implémente des systèmes d'évaluation complets pour des agents IA. Utilise ce skill pour construire des evals pour des a..."
+      "hash": "c9650776",
+      "last_modified": "2026-05-09",
+      "description": "Conçoit et implémente des systèmes d'évaluation complets pour des agents IA (graders, benchmarks, feuille de route 8 étapes, monit..."
     },
     "ai-agents-architect": {
       "hash": "1c185a0e",
@@ -222,54 +232,54 @@
       "description": "Expert en conception et construction d'agents IA autonomes. Maîtrise l'utilisation d'outils, les systèmes de mémoire, les stratégi..."
     },
     "ai-prompt-engineering-safety-review": {
-      "hash": "0f0fce85",
-      "last_modified": "2026-04-15",
-      "description": "Revue complète de sécurité et amélioration de prompts IA. Analyse les prompts pour détecter les problèmes de sécurité, biais, vuln..."
+      "hash": "644e64ac",
+      "last_modified": "2026-05-09",
+      "description": "Revue complète sécurité + biais + efficacité d'un prompt IA. Détecte risques (contenu nocif, prompt injection, fuite d'info), biai..."
     },
     "gemini": {
-      "hash": "4b0ef9b7",
-      "last_modified": "2026-04-15",
-      "description": "CLI Gemini pour Q&A en one-shot, résumés et génération."
+      "hash": "2b7b7352",
+      "last_modified": "2026-05-09",
+      "description": "CLI Gemini pour Q&A one-shot, résumés rapides, génération texte/JSON. Mode positionnel (`gemini \"prompt\"`) avec --model et --outpu..."
     },
     "gemini-api-dev": {
-      "hash": "d44842c7",
-      "last_modified": "2026-04-23",
-      "description": "Construit des applications avec les modèles Gemini et l'API Gemini. Couvre le contenu multimodal (texte, images, audio, vidéo), le..."
+      "hash": "f1acef42",
+      "last_modified": "2026-05-09",
+      "description": "Construit des applications avec les modèles Gemini (gemini-3-pro-preview, gemini-3-flash-preview, gemini-3-pro-image-preview) via ..."
     },
     "gemini-interactions-api": {
-      "hash": "ae1fc047",
-      "last_modified": "2026-04-15",
-      "description": "Utilise l'API Interactions Gemini pour la génération de texte, le chat multi-tours, la compréhension multimodale, la génération d'..."
+      "hash": "efbee1c0",
+      "last_modified": "2026-05-09",
+      "description": "Utilise l'API Interactions Gemini (alternative agentique à generateContent) : state serveur via previous_interaction_id, exécution..."
     },
     "gemini-live-api-dev": {
-      "hash": "08fd37ca",
-      "last_modified": "2026-04-23",
-      "description": "Construit des applications de streaming bidirectionnel en temps réel avec la Gemini Live API. Couvre WebSocket, streaming audio/vi..."
+      "hash": "1cbd6548",
+      "last_modified": "2026-05-09",
+      "description": "Construit des applications de streaming bidirectionnel temps réel avec la Gemini Live API via WebSocket. Couvre audio mic-to-speak..."
     },
     "langgraph-docs": {
-      "hash": "51e16089",
-      "last_modified": "2026-04-15",
-      "description": "Récupère la documentation LangGraph pertinente pour fournir des conseils précis et à jour. Utilise ce skill pour toute demande lié..."
+      "hash": "52c50e62",
+      "last_modified": "2026-05-09",
+      "description": "Récupère la doc LangGraph officielle (llms.txt + how-to + concepts + tutorials + reference) pour répondre précisément aux question..."
     },
     "openai-imagegen": {
-      "hash": "d15ed623",
-      "last_modified": "2026-04-23",
-      "description": "Génération d'images en batch via l'API OpenAI Images. Échantillonneur de prompts aléatoires + galerie `index.html`."
+      "hash": "d93e50a5",
+      "last_modified": "2026-05-09",
+      "description": "Génération d'images en batch via l'API OpenAI Images (gpt-image-1, gpt-image-1.5, dall-e-3, dall-e-2). Inclut un échantillonneur d..."
     },
     "openai-whisper": {
-      "hash": "9caa6090",
-      "last_modified": "2026-04-15",
-      "description": "Transcription audio locale avec le CLI Whisper (pas de clé API nécessaire)."
+      "hash": "ca6eb666",
+      "last_modified": "2026-05-09",
+      "description": "Transcription audio locale avec le CLI Whisper open source (pas de clé API). Gère --model (turbo par défaut, medium/large pour pré..."
     },
     "openai-whisper-api": {
-      "hash": "b120afa2",
-      "last_modified": "2026-04-23",
-      "description": "Transcrire de l'audio via l'API OpenAI Audio Transcriptions (Whisper)."
+      "hash": "fc9cc59b",
+      "last_modified": "2026-05-09",
+      "description": "Transcription audio via l'API OpenAI /v1/audio/transcriptions (whisper-1) en curl. Gère --language, --prompt (noms d'intervenants)..."
     },
     "promptor": {
-      "hash": "9d817214",
-      "last_modified": "2026-04-15",
-      "description": "Generateur de prompts parfaits adaptes a chaque IA. Utiliser quand l'utilisateur veut creer un prompt pour une autre IA (ChatGPT, ..."
+      "hash": "5b8ca523",
+      "last_modified": "2026-05-09",
+      "description": "Générateur de prompts adaptés au format spécifique de chaque IA cible (ChatGPT en markdown, Claude en XML tags, Midjourney en desc..."
     },
     "vertex-ai-api-dev": {
       "hash": "dcd01ad5",
@@ -277,139 +287,139 @@
       "description": "Guide d'utilisation de l'API Gemini sur Google Cloud Vertex AI. Utilise ce skill pour construire des applications avec Vertex AI, ..."
     },
     "tri-agent-architecture": {
-      "hash": "f8dd225b",
-      "last_modified": "2026-04-15",
-      "description": "Architecture a 3 agents (Planner, Executor, Verifier) pour des workflows deterministes et audites. Utiliser quand l'utilisateur ve..."
+      "hash": "639db99c",
+      "last_modified": "2026-05-09",
+      "description": "Pattern d'architecture multi-agents 3 roles : Planner (read-only, scope, plan.md, criteres d'acceptation), Executor (write cible, ..."
     },
     "affiliation-article-detector": {
-      "hash": "7b443835",
-      "last_modified": "2026-04-15",
-      "description": "Detecter automatiquement les articles affiliables (deja affilie / affiliable / non prioritaire), score /10, outils potentiels, opt..."
+      "hash": "5de9d564",
+      "last_modified": "2026-05-09",
+      "description": "Detecte automatiquement les articles affiliables sur schoolsWP : classifie chaque article (deja affilie / affiliable / non priorit..."
     },
     "affiliation-block-system": {
-      "hash": "dfd64e91",
-      "last_modified": "2026-04-15",
-      "description": "Blocs d’affiliation reutilisables schoolsWP (3 a 5 blocs par article) pour monetiser proprement sans casser la confiance. Utiliser..."
+      "hash": "0dfbb217",
+      "last_modified": "2026-05-09",
+      "description": "Bibliotheque de 10 blocs d'affiliation reutilisables schoolsWP (markdown + Gutenberg) a integrer dans les articles, comparatifs et..."
     },
     "affiliation-opportunity-scanner": {
-      "hash": "dc186bfc",
-      "last_modified": "2026-04-15",
-      "description": "Scanner le potentiel d’affiliation d’un sujet/page/cluster (intent, maturite, outils recommandables, opportunites d’integration, s..."
+      "hash": "1f55bc0a",
+      "last_modified": "2026-05-09",
+      "description": "Scanne le potentiel d'affiliation d'un sujet, d'une page ou d'un cluster avant production : intent de recherche, maturite du lecte..."
     },
     "affiliation-optimizer": {
-      "hash": "1c28b6d0",
-      "last_modified": "2026-04-15",
-      "description": "Optimiser la monétisation affiliée des articles schoolsWP sans casser la confiance (emplacements naturels, angles, blocs décisionn..."
+      "hash": "a6f121ad",
+      "last_modified": "2026-05-09",
+      "description": "Optimise la monetisation affiliee d'UN article schoolsWP existant sans casser la confiance : potentiel d'affiliation, moments natu..."
     },
     "affiliation-potential-scoring": {
-      "hash": "98d7ed2b",
-      "last_modified": "2026-04-15",
-      "description": "Scorer le potentiel d’affiliation d’un sujet avant production (5 criteres, score /10, recommandation). Utiliser pour prioriser les..."
+      "hash": "171ef022",
+      "last_modified": "2026-05-09",
+      "description": "Score le potentiel d'affiliation d'un sujet ou mot-cle avant production via 5 criteres notes 1-5 (intent commerciale, programme di..."
     },
     "comparatif-affiliate-engine": {
-      "hash": "7c9c3602",
-      "last_modified": "2026-04-15",
-      "description": "Generer des comparatifs schoolsWP qui convertissent (structure decisionnelle, tableaux, verdicts, blocs affilies). Utiliser pour p..."
+      "hash": "3f04a9e6",
+      "last_modified": "2026-05-09",
+      "description": "Genere des comparatifs schoolsWP qui convertissent : structure decisionnelle complete (intro, presentation, tableau, analyse par c..."
     },
     "comparatif-affilie-template": {
-      "hash": "5c04432f",
-      "last_modified": "2026-04-15",
-      "description": "Template complet de comparatif affilié schoolsWP (H1->FAQ, tableau, verdict, blocs affiliés). Utiliser pour pages X vs Y décisionn..."
+      "hash": "5bec2c9f",
+      "last_modified": "2026-05-09",
+      "description": "Template prepret de comparatif affilie schoolsWP avec variables ({outil_A}, {outil_B}, {profil_cible}, {cas_usage}, {objectif}) et..."
     },
     "money-articles-30-plan": {
-      "hash": "73fa7f80",
-      "last_modified": "2026-04-15",
-      "description": "Planifier 30 articles ultra rentables schoolsWP (clusters + avis + comparatifs + guides) avec logique SEO + affiliation. Utiliser ..."
+      "hash": "113d0eda",
+      "last_modified": "2026-05-09",
+      "description": "Plan editorial schoolsWP de 30 articles ultra rentables organises par clusters thematiques (CRM, LMS, etc.) avec mix de formats (a..."
     },
     "money-page-generator": {
-      "hash": "768fb61c",
-      "last_modified": "2026-04-15",
-      "description": "Generer automatiquement une Money Page schoolsWP (SEO + decision + affiliation) pour un outil, comparatif ou guide. Utiliser quand..."
+      "hash": "a9b7dc5a",
+      "last_modified": "2026-05-09",
+      "description": "Genere une Money Page schoolsWP complete et prete a publier (avis / comparatif / guide) avec entrees variables ({outil}, {type}, p..."
     },
     "money-pages-framework": {
-      "hash": "7bf97fad",
-      "last_modified": "2026-04-15",
-      "description": "Framework Money Pages schoolsWP (types, structures, blocs decisionnels, prompt de generation, scoring). Utiliser pour creer des pa..."
+      "hash": "6cb411a7",
+      "last_modified": "2026-05-09",
+      "description": "Framework conceptuel des Money Pages schoolsWP : definition, 5 types de Money Pages (avis, comparatif, alternatives, meilleurs out..."
     },
     "strategic-score-combined": {
-      "hash": "dca78453",
-      "last_modified": "2026-04-15",
-      "description": "Calculer un score strategique combine SEO + affiliation + concurrence pour prioriser les sujets schoolsWP. Utiliser pour filtrer l..."
+      "hash": "b6b3b1ba",
+      "last_modified": "2026-05-09",
+      "description": "Calcule un score strategique combine sur 3 piliers (SEO + Affiliation + Concurrence), chaque pilier note via 5 sous-criteres 1-5, ..."
     },
     "aidesigner-frontend": {
-      "hash": "33101913",
-      "last_modified": "2026-04-15",
-      "description": "Use this skill when the user wants to create or redesign a frontend, landing page, dashboard, marketing page, or other UI with AID..."
+      "hash": "39f6db59",
+      "last_modified": "2026-05-09",
+      "description": "Crée ou redesigne un frontend (landing page, dashboard, page marketing, hero, section UI) via AIDesigner. Pipeline : MCP aidesigne..."
     },
     "schoolswp-authority-accelerator": {
-      "hash": "fcbd53e2",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Authority Accelerator™ — Construit un système d'autorité WordPress orienté trafic, IA et conversion pour freelances, age..."
+      "hash": "2acc2403",
+      "last_modified": "2026-05-09",
+      "description": "Construit l'offre service premium schoolsWP Authority Accelerator™ : 4 phases (Audit/Architecture SPECS, Production stratégique, M..."
     },
     "authority-domination-50p": {
-      "hash": "cf286034",
-      "last_modified": "2026-04-15",
-      "description": "Generer le plan “domination” schoolsWP : 50 pages exactes, plan 6 mois, ancres internes repetables, top pages rentables (affiliati..."
+      "hash": "d56d2bb8",
+      "last_modified": "2026-05-09",
+      "description": "Génère le plan domination schoolsWP : cartographie de 50 pages exactes (piliers + satellites par thématique), plan de production 6..."
     },
     "authority-domination-roadmap": {
-      "hash": "e549f59b",
-      "last_modified": "2026-04-15",
-      "description": "Planifier et produire un plan d’autorite schoolsWP sur 24 mois (phases, livrables, KPI, cadence). Utilise ce skill quand l’utilisa..."
+      "hash": "ebfedcb5",
+      "last_modified": "2026-05-09",
+      "description": "Construit la roadmap schoolsWP sur 24 mois en 6 phases (M1-M24) : objectif global, 3 métriques pilotes, livrables par phase, KPI c..."
     },
     "authority-email-launch": {
-      "hash": "54807670",
-      "last_modified": "2026-04-15",
-      "description": "Séquence email de lancement pour schoolsWP Authority System™. 7 emails sur 10 jours, structure problème → mécanisme → preuve pédag..."
+      "hash": "39af0d42",
+      "last_modified": "2026-05-09",
+      "description": "Rédige la séquence email de lancement Authority System™ : 7 emails sur 10 jours, montée en clarté progressive (problème → mécanism..."
     },
     "authority-launch": {
-      "hash": "09998885",
-      "last_modified": "2026-04-15",
-      "description": "Stratégie de lancement complète pour schoolsWP Authority System™ — modèle cohorte 21 jours, séquences emails FluentCRM, posts Link..."
+      "hash": "029269b1",
+      "last_modified": "2026-05-09",
+      "description": "Pilote la stratégie de lancement complète Authority System™ : modèle cohorte 21 jours (pré-chauffe → masterclass → ouverture → fer..."
     },
     "authority-loop": {
-      "hash": "923c293e",
-      "last_modified": "2026-04-15",
-      "description": "Structure visuelle, pédagogique et chiffrée de l'Authority Loop™ (mécanisme SPATO™) pour schoolsWP. Utilise ce skill pour présente..."
+      "hash": "b6eb93a3",
+      "last_modified": "2026-05-09",
+      "description": "Structure visuelle et pédagogique du mécanisme propriétaire Authority Loop™ (SPATO™ : Structurer → Produire → Amplifier → Tester →..."
     },
     "authority-m1m3-execution": {
-      "hash": "f92520af",
-      "last_modified": "2026-04-15",
-      "description": "Generer et executer un plan M1 a M3 semaine par semaine pour lancer schoolsWP (pilier + cocon + money pages + capture email + trac..."
+      "hash": "e754eddf",
+      "last_modified": "2026-05-09",
+      "description": "Plan d'exécution schoolsWP semaine par semaine sur 3 mois (S1-S12) au rythme 2 contenus + 1 amélioration système / semaine. Couvre..."
     },
     "authority-method": {
-      "hash": "d31d9cac",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Authority System™ — Méthode signature en 6 phases (Foundation → Clarity → Authority → Scale → Optimize → Dominate) et fo..."
+      "hash": "9dcb6988",
+      "last_modified": "2026-05-09",
+      "description": "Méthode signature schoolsWP Authority System™ en 6 phases (Foundation → Clarity → Authority → Scale → Optimize → Dominate) avec le..."
     },
     "authority-promise": {
-      "hash": "1a0732f1",
-      "last_modified": "2026-04-15",
-      "description": "Promesse marketing et positionnement différenciant de la schoolsWP Authority System™. Utilise ce skill pour rédiger ou affiner la ..."
+      "hash": "dd9f3237",
+      "last_modified": "2026-05-09",
+      "description": "Promesse marketing et positionnement différenciant de la schoolsWP Authority System™ : promesses chiffrées avec preuves mesurables..."
     },
     "authority-proof": {
-      "hash": "48be724b",
-      "last_modified": "2026-04-15",
-      "description": "Section preuve et études de cas pour schoolsWP Authority System™. Utilise ce skill pour rédiger ou intégrer la section preuve de l..."
+      "hash": "e3bc1979",
+      "last_modified": "2026-05-09",
+      "description": "Section preuve de la page de vente Authority System™ : 3 études de cas réels mesurables (page pilier restructurée, cluster freelan..."
     },
     "authority-salespage": {
-      "hash": "67e77714",
-      "last_modified": "2026-04-15",
-      "description": "Page de vente complète de la schoolsWP Authority System™ — version courte et longue (2000+ mots), ultra persuasive, zéro bullshit...."
+      "hash": "d10f8541",
+      "last_modified": "2026-05-09",
+      "description": "Variante condensée de la page de vente Authority System™ : version courte (hero + problème + solution + livrables + pour qui + tar..."
     },
     "authority-system-90": {
-      "hash": "9aed0c11",
-      "last_modified": "2026-04-15",
-      "description": "Authority System 90™ by schoolsWP — programme d'accompagnement 90 jours pour amener un porteur de projet de \"je publie au feeling\"..."
+      "hash": "8bd04548",
+      "last_modified": "2026-05-09",
+      "description": "Programme Authority System 90™ : offre d'accompagnement 90 jours adaptable à n'importe quelle niche client (consultant WordPress, ..."
     },
     "authority-templates": {
-      "hash": "aa3da0b7",
-      "last_modified": "2026-04-15",
-      "description": "Templates d'exécution concrets de la schoolsWP Authority System™ — 10 templates prêts à remplir et à utiliser (Ecosystem Blueprint..."
+      "hash": "c4f545d2",
+      "last_modified": "2026-05-09",
+      "description": "10 templates d'exécution concrets schoolsWP Authority System™ prêts à remplir : Ecosystem Blueprint Canvas, Cartographie Cluster S..."
     },
     "authority-sales-page-copy": {
-      "hash": "64041f50",
-      "last_modified": "2026-04-15",
-      "description": "Page de vente complète schoolsWP Authority System™ — structure 14 sections CRO (copy prête à coller) + version courte (héro + bull..."
+      "hash": "3570f20d",
+      "last_modified": "2026-05-09",
+      "description": "Page de vente complète schoolsWP Authority System™ : structure 14 sections CRO (Hero, Avant/Après, Problème, Mécanisme, Pourquoi ç..."
     },
     "code-review-and-quality": {
       "hash": "533b12e5",
@@ -417,14 +427,14 @@
       "description": "Review de code multi-axes avant merge. Utilise ce skill avant de fusionner tout changement, apres une implementation de feature, q..."
     },
     "documentation-and-adrs": {
-      "hash": "4431c8ce",
-      "last_modified": "2026-04-15",
-      "description": "Documenter les decisions, pas juste le code. ADR (Architecture Decision Records), documentation inline, API docs. Utilise ce skill..."
+      "hash": "25cc7177",
+      "last_modified": "2026-05-09",
+      "description": "Documenter les decisions, pas juste le code. Pattern Nygard ADR (Architecture Decision Records) numerotes dans docs/decisions/, do..."
     },
     "agent-constitution": {
-      "hash": "554a2c62",
-      "last_modified": "2026-04-15",
-      "description": "Constitution d'exécution IA pour schoolsWP — applique le cadre opérationnel complet (plan-first, découpage, multi-rôles, vérificat..."
+      "hash": "17eff535",
+      "last_modified": "2026-05-09",
+      "description": "Constitution d'exécution IA schoolsWP : cadre opérationnel transverse (plan-first, découpage en unités, raisonnement multi-rôles, ..."
     },
     "claude-project-setup": {
       "hash": "dc984249",
@@ -432,69 +442,69 @@
       "description": "Guide pour configurer un Claude Project avec schoolsWP OS, documents, stack et données SEO. Utiliser quand l'utilisateur veut crée..."
     },
     "credo-engine": {
-      "hash": "782da694",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Strategic Engine — prompt CREDO (Context · Role · Example · Deliverable · Outcome) pour production stratégique premium :..."
+      "hash": "8144ae4a",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Strategic Engine — framework CREDO (Context · Role · Example · Deliverable · Outcome) pour production stratégique premiu..."
     },
     "decision-engine": {
-      "hash": "1df39d4d",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Decision Engine — mode de raisonnement COT (Chain of Thought) pour décisions stratégiques complexes. Structurer la pensé..."
+      "hash": "1214abaf",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Decision Engine — raisonnement COT (Chain of Thought) pour arbitrage stratégique complexe. Structure la pensée avant de ..."
     },
     "dito-engine": {
-      "hash": "291778d9",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Omnichannel Engine — prompt DITO (Define · Input · Transformation · Output) pour transformation de contenu, repurposing ..."
+      "hash": "e4ba3679",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Omnichannel Engine — framework DITO (Define · Input · Transformation · Output) pour transformer une matière brute exista..."
     },
     "engine": {
-      "hash": "800c57ac",
-      "last_modified": "2026-04-15",
-      "description": "Methode unifiee schoolsWP en 6 modules (Architecture, Strategy, Production, Transformation, Experimentation, Performance). Utilise..."
+      "hash": "97d57185",
+      "last_modified": "2026-05-09",
+      "description": "Méthode unifiée schoolsWP ENGINE (ASPT EP) en 6 modules ordonnés : Architecture → Strategy → Production → Transformation → Experim..."
     },
     "os-claude-system": {
-      "hash": "adf0f43c",
-      "last_modified": "2026-04-15",
-      "description": "System prompt Claude pour schoolsWP OS avec auto-router et modes (Architect, Strategist, Producer, Transformer, Experiment, Optimi..."
+      "hash": "475d7c42",
+      "last_modified": "2026-05-09",
+      "description": "Bloc system prompt Claude prêt à coller pour configurer un Claude Project schoolsWP OS : auto-router intégré, 6 modes opérationnel..."
     },
     "os-router": {
-      "hash": "3a8e28c2",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP OS — Point d'entrée universel. Auto-Router intelligent qui détecte le bon module parmi 7 (SPECS, COT, CREDO, DITO, PACT,..."
+      "hash": "c1378ae2",
+      "last_modified": "2026-05-09",
+      "description": "Point d'entrée universel schoolsWP OS — auto-router qui détecte parmi 7 modules (SPECS, COT, CREDO, DITO, PACT, TDD, RACE) le plus..."
     },
     "pact-engine": {
-      "hash": "29bc2d19",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Growth Loop — prompt PACT (Problem · Approach · Constraint · Test) pour résolution de problème, optimisation et expérime..."
+      "hash": "637904d2",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Growth Loop — framework PACT (Problem · Approach · Constraint · Test) pour résolution de problème mesurable et expérimen..."
     },
     "performance-loop": {
-      "hash": "93fbc3b2",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Performance Loop — boucle d'amélioration continue TDD (Test · Develop · Debug) pour optimisation rigoureuse et itération..."
+      "hash": "004b6b9d",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Performance Loop — TDD (Test · Develop · Debug) appliqué au SEO, contenu, systèmes WordPress. Discipline d'amélioration ..."
     },
     "race-engine": {
-      "hash": "a24563de",
-      "last_modified": "2026-04-15",
-      "description": "AI Strategic Engine schoolsWP — prompt RACE (Role · Action · Context · Expectation) pour produire des recommandations WordPress / ..."
+      "hash": "67fb0a41",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP RACE Engine — framework RACE (Role · Action · Context · Expectation) pour audit / diagnostic / quick wins rapides sur Wo..."
     },
     "specs-engine": {
-      "hash": "70a7d4bf",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Architecture Blueprint — prompt SPECS (Scope · Purpose · Environment · Constraint · Success criteria) pour cadrage techn..."
+      "hash": "55cb6947",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Architecture Blueprint — framework SPECS (Scope · Purpose · Environment · Constraint · Success criteria) pour cadrage te..."
     },
     "schoolswp-brain": {
-      "hash": "e78308ee",
-      "last_modified": "2026-04-15",
-      "description": "Agent stratégique schoolsWP — transforme toute demande en livrable structuré, utile et réutilisable via 10 modes spécialisés par t..."
+      "hash": "c0ae4e4c",
+      "last_modified": "2026-05-09",
+      "description": "Agent stratégique schoolsWP avec 10 modes spécialisés (/seo, /wordpress, /workflow, /content, /prompt, /business, /youtube, /audit..."
     },
     "schoolswp-clairtexte": {
-      "hash": "c606c120",
-      "last_modified": "2026-04-15",
-      "description": "Agent de correction stricte pour schoolsWP. Corrige uniquement les fautes réelles de langue sans aucune réécriture éditoriale."
+      "hash": "c3352cc7",
+      "last_modified": "2026-05-09",
+      "description": "Agent de correction linguistique stricte schoolsWP. Corrige uniquement les fautes réelles de langue (grammaire, orthographe, conju..."
     },
     "schoolswp-email-to-content": {
-      "hash": "4a076f72",
-      "last_modified": "2026-04-15",
-      "description": "Transformer un email promotionnel WordPress (plugin ou theme) en 3 contenus marketing schoolsWP (resume Markdown, post LinkedIn, t..."
+      "hash": "cc7c73b8",
+      "last_modified": "2026-05-09",
+      "description": "Transforme un email promotionnel WordPress (plugin ou thème reçu) en 3 contenus marketing schoolsWP (résumé Markdown, post LinkedI..."
     },
     "calendrier-edito-schoolswp": {
       "hash": "f9d0dbef",
@@ -502,44 +512,44 @@
       "description": "Lit / audite / met a jour le calendrier editorial schoolsWP (planning multi-canal en Markdown, source `content/calendrier-edito/`)..."
     },
     "git-workflow-and-versioning": {
-      "hash": "2fdc4d0f",
-      "last_modified": "2026-04-15",
-      "description": "Discipline git pour commits atomiques, historique propre et changements reversibles. Utilise ce skill pour tout changement de code..."
+      "hash": "5f7a493d",
+      "last_modified": "2026-05-09",
+      "description": "Discipline git pour commits atomiques (une chose logique par commit), historique propre, changements reversibles. Trunk-based deve..."
     },
     "incremental-implementation": {
-      "hash": "b874ce21",
-      "last_modified": "2026-04-15",
-      "description": "Livrer les changements en tranches verticales fines. Utilise ce skill pour toute implementation touchant plus d'un fichier, quand ..."
+      "hash": "9be3e6fa",
+      "last_modified": "2026-05-09",
+      "description": "Livrer les changements en tranches verticales fines : implement, test, verify, commit, next slice. Chaque increment laisse le syst..."
     },
     "n8n-reverse-engineer": {
-      "hash": "fb9dd088",
-      "last_modified": "2026-04-15",
-      "description": "Reverse-engineer complet de workflows n8n vers un Skill Claude Code reproductible. Analyse des exports JSON n8n, cartographie chaq..."
+      "hash": "d53b5c83",
+      "last_modified": "2026-05-09",
+      "description": "Reverse-engineer un export JSON n8n vers une analyse exhaustive (16 sections) puis vers un Skill Claude Code reproductible : carto..."
     },
     "n8n-workflow-architect": {
-      "hash": "49058a96",
-      "last_modified": "2026-04-15",
-      "description": "Architecte de workflows n8n pour schoolsWP — conçoit, analyse et documente des automatisations selon un cadre opérationnel strict ..."
+      "hash": "f2c26d92",
+      "last_modified": "2026-05-09",
+      "description": "Architecte de workflows n8n schoolsWP : conçoit, analyse et documente des automatisations selon un cadre opérationnel strict couvr..."
     },
     "n8n-orchestrator": {
-      "hash": "d6413314",
-      "last_modified": "2026-04-17",
-      "description": "Orchestrateur senior n8n — impose une planification structurée AVANT toute génération de workflow et route vers les skills n8n spé..."
+      "hash": "ce56662d",
+      "last_modified": "2026-05-09",
+      "description": "Orchestrateur senior n8n schoolsWP : impose une planification structurée AVANT toute génération de workflow, cadre le besoin en 4 ..."
     },
     "n8n-code-javascript": {
-      "hash": "289f4b0b",
-      "last_modified": "2026-04-15",
-      "description": "Écrit du code JavaScript dans les nœuds Code n8n. Utilise ce skill pour écrire du JavaScript en n8n, utiliser la syntaxe $input/$j..."
+      "hash": "fbd7ea9b",
+      "last_modified": "2026-05-09",
+      "description": "Écrit du JavaScript dans les nœuds Code n8n (instance schoolswp-n8n.wp1.host) : syntaxe $input.all() / $json / $node, requêtes HTT..."
     },
     "n8n-code-python": {
-      "hash": "62ca7b87",
-      "last_modified": "2026-04-15",
-      "description": "Écrit du code Python dans les nœuds Code n8n. Utilise ce skill pour écrire du Python en n8n, utiliser la syntaxe _input/_json/_nod..."
+      "hash": "24c35c91",
+      "last_modified": "2026-05-09",
+      "description": "Écrit du Python dans les nœuds Code n8n beta (instance schoolswp-n8n.wp1.host) : syntaxe _input.all() / _json / _node, bibliothèqu..."
     },
     "n8n-expression-syntax": {
-      "hash": "fcdc5b01",
-      "last_modified": "2026-04-15",
-      "description": "Valide la syntaxe des expressions n8n et corrige les erreurs courantes. Utilise ce skill pour écrire des expressions n8n en syntax..."
+      "hash": "1106e7e1",
+      "last_modified": "2026-05-09",
+      "description": "Valide la syntaxe des expressions n8n entre {{ }} et corrige les erreurs courantes : accès aux variables $json / $node / $items, d..."
     },
     "n8n-mcp-tools-expert": {
       "hash": "04f9dd56",
@@ -552,14 +562,14 @@
       "description": "Guide de configuration des nœuds n8n par opération. Utilise ce skill pour configurer des nœuds, comprendre les dépendances de prop..."
     },
     "n8n-validation-expert": {
-      "hash": "4bfaa5ab",
-      "last_modified": "2026-04-15",
-      "description": "Interprète les erreurs de validation n8n et guide leur résolution. Utilise ce skill en cas d'erreurs de validation, faux positifs,..."
+      "hash": "7ddd7a68",
+      "last_modified": "2026-05-09",
+      "description": "Interprète les erreurs de validation n8n et guide leur résolution : missing_required, invalid_value, type_mismatch, invalid_refere..."
     },
     "n8n-workflow-patterns": {
-      "hash": "42931f5e",
-      "last_modified": "2026-04-15",
-      "description": "Patterns d'architecture de workflows n8n éprouvés sur de vrais workflows. Utilise ce skill pour construire de nouveaux workflows, ..."
+      "hash": "7792d92b",
+      "last_modified": "2026-05-09",
+      "description": "5 patterns d'architecture n8n éprouvés : Webhook Processing, HTTP API Integration, Database Operations, AI Agent Workflow, Schedul..."
     },
     "n8n-google-sheets-mapper": {
       "hash": "914a4a02",
@@ -567,89 +577,89 @@
       "description": "Expert en configuration du nœud Google Sheets dans n8n — analyse les données d'entrée (JSON du nœud précédent) et les colonnes du ..."
     },
     "n8n-sheets-multi-agent": {
-      "hash": "09aae137",
-      "last_modified": "2026-03-13",
-      "description": "Orchestre 3 agents IA en parallèle pour configurer le nœud Google Sheets dans n8n — analyse JSON, vérification colonnes et générat..."
+      "hash": "b7143ed9",
+      "last_modified": "2026-05-09",
+      "description": "Orchestre 3 sub-agents en parallèle (JSON Analyst, Column Verifier, Mapping Generator) pour configurer un node Google Sheets dans ..."
     },
     "n8n-template-finder": {
-      "hash": "b23e25f5",
-      "last_modified": "2026-04-24",
-      "description": "Recherche le template n8n le plus pertinent dans le catalogue externe curated (enescingoz/awesome-n8n-templates, 280+ workflows) p..."
+      "hash": "c3369df1",
+      "last_modified": "2026-05-09",
+      "description": "Recherche le template n8n le plus pertinent dans le catalogue externe curated (enescingoz/awesome-n8n-templates, 280+ workflows, 1..."
     },
     "n8n-workflow-adapter": {
-      "hash": "4f224600",
-      "last_modified": "2026-05-05",
-      "description": "Adapte un workflow n8n externe (importé depuis enescingoz, n8n.io/workflows ou tout autre source) pour l'instance schoolsWP : sani..."
+      "hash": "c0d50aa0",
+      "last_modified": "2026-05-09",
+      "description": "Adapte un workflow n8n externe (depuis enescingoz, n8n.io/workflows ou autre source) pour l'instance schoolsWP : pipeline 6 étapes..."
     },
     "wordpress-n8n-blueprints": {
-      "hash": "bc082379",
-      "last_modified": "2026-04-24",
-      "description": "Blueprints n8n canoniques pour automatiser WordPress + schoolsWP : auto-tagging articles, génération de contenu dans la voix de ma..."
+      "hash": "27c00567",
+      "last_modified": "2026-05-09",
+      "description": "6 blueprints n8n canoniques pour automatiser WordPress + schoolsWP : auto-tagging articles brand-consistent, génération de contenu..."
     },
     "audit": {
-      "hash": "98bd36d2",
-      "last_modified": "2026-04-15",
-      "description": "Audit de publication (4 audits parallèles). Lance publish_ready.cli sur un article pour obtenir le Publish Score (SEO + LLM + Conv..."
+      "hash": "353620e1",
+      "last_modified": "2026-05-09",
+      "description": "Lance `publish_ready.cli` sur un article pour calculer le Publish Score (SEO 0.30 + LLM 0.25 + Conversion 0.25 + Autorité 0.20). Q..."
     },
     "consolidation-ops": {
-      "hash": "39c03970",
-      "last_modified": "2026-05-08",
-      "description": "Playbooks d'execution concrets pour consolider le workspace schoolsWP. 4 playbooks (Quick Wins, Qualite, Documentation, Architectu..."
+      "hash": "89aa3d25",
+      "last_modified": "2026-05-09",
+      "description": "Playbooks d'exécution concrets pour consolider le workspace schoolsWP. 4 playbooks (Quick Wins, Qualite, Documentation, Architectu..."
     },
     "etude-marche-france": {
-      "hash": "a72295a4",
-      "last_modified": "2026-04-15",
-      "description": "Realise une etude de marche en temps reel en France sur un sujet donne (niche, secteur, segment B2B). Produit un livrable structur..."
+      "hash": "7318f48b",
+      "last_modified": "2026-05-09",
+      "description": "Produit une étude de marché B2B France sourcée en temps réel via firecrawl/exa/WebSearch/WebFetch. Livrable Markdown 8-15k mots en..."
     },
     "fast-websearch": {
-      "hash": "402a36b9",
-      "last_modified": "2026-04-15",
-      "description": "Recherche web ultra-rapide via MCP Exa. Déclenche ce skill sans hésiter dès que la question porte sur un outil, plugin, service ou..."
+      "hash": "d65d204a",
+      "last_modified": "2026-05-09",
+      "description": "Recherche web ultra-rapide via MCP Exa, 2 requêtes max, réponse courte sans raisonnement visible. Pour vérifier prix/version/compa..."
     },
     "finance-freedom-flow": {
-      "hash": "14099ef6",
-      "last_modified": "2026-04-15",
-      "description": "Coaching financier personnel complet en 7 etapes sequentielles : audit radiographie, archetype financier, budget anti-budget, dest..."
+      "hash": "1fc0ed4f",
+      "last_modified": "2026-05-09",
+      "description": "Coaching financier personnel pour Michael en 7 étapes séquentielles : audit radiographie, archétype financier, budget anti-budget,..."
     },
     "firecrawl": {
-      "hash": "6f338bcd",
-      "last_modified": "2026-04-23",
-      "description": "Scraping web, recherche, crawl et interactions post-scrape via Firecrawl CLI — retourne du Markdown propre optimisé pour LLM. Util..."
+      "hash": "030c3b29",
+      "last_modified": "2026-05-09",
+      "description": "Scraping web, recherche, crawl, map et automatisation navigateur via Firecrawl CLI v1.8+. Retourne du Markdown propre optimisé pou..."
     },
     "index-manager": {
-      "hash": "1cd350c4",
-      "last_modified": "2026-04-15",
-      "description": "Gerer automatiquement les index README/INDEX pour pages, slides, blocks et skills locaux."
+      "hash": "df15173e",
+      "last_modified": "2026-05-09",
+      "description": "Met à jour les index README/INDEX après création d'un nouveau fichier ou skill : `content/pages/`, `content/slides/`, `content/blo..."
     },
     "local-prospecting-pipeline": {
-      "hash": "b59c1630",
-      "last_modified": "2026-04-15",
-      "description": "Pipeline complet de prospection locale B2B : collecte, filtrage, nettoyage, deduplication et qualification d'entreprises par zone ..."
+      "hash": "b500405f",
+      "last_modified": "2026-05-09",
+      "description": "Pipeline générique de prospection locale B2B en 8 étapes : sources Google Maps + Pages Jaunes + annuaires + Apify, collecte, filtr..."
     },
     "marketing": {
-      "hash": "6e2a6fda",
-      "last_modified": "2026-04-17",
-      "description": "Marketing schoolsWP — CRO, copywriting, SEO, séquences email, stratégie de prix et analytics. Utilise ce skill pour l'optimisation..."
+      "hash": "bfea22fa",
+      "last_modified": "2026-05-09",
+      "description": "Collection de frameworks marketing schoolsWP basés sur Conversion Factory adaptés WordPress : CRO (page-cro, form-cro, signup-flow..."
     },
     "note-to-sop": {
-      "hash": "e14a8d5b",
-      "last_modified": "2026-04-15",
-      "description": "Transforme une note brute, une idee vague ou un process informel en SOP claire et exploitable pour schoolsWP. Utilise ce skill des..."
+      "hash": "800df408",
+      "last_modified": "2026-05-09",
+      "description": "Transforme une note brute, une idée vague, un process informel ou un échange en SOP (Standard Operating Procedure) schoolsWP clair..."
     },
     "publish-repo": {
-      "hash": "74b8884a",
-      "last_modified": "2026-04-15",
-      "description": "Crée un repo GitHub, commit les changements et push. Usage : /publish-repo <repo-name> [commit message]. Déclenche pour \"publish r..."
+      "hash": "4c1e8e0d",
+      "last_modified": "2026-05-09",
+      "description": "Crée un nouveau repo GitHub privé via gh CLI, initie git si besoin, commit les changements puis push avec flag upstream. Usage : /..."
     },
     "skill-creator": {
-      "hash": "01600d21",
-      "last_modified": "2026-04-18",
-      "description": "Scaffold a new Claude Code skill with SKILL.md, frontmatter, and bundled resources. Use when creating a custom skill, standardizin..."
+      "hash": "98390cb8",
+      "last_modified": "2026-05-09",
+      "description": "Crée, modifie et évalue les skills Claude Code du workspace schoolsWP : draft initial, itération sur eval, benchmark de performanc..."
     },
     "skills-registry": {
-      "hash": "13e0564c",
-      "last_modified": "2026-04-15",
-      "description": "Registre centralisé de tous les skills Claude Code du workspace schoolsWP. Utilise ce skill dès que l'utilisateur veut savoir quel..."
+      "hash": "a189dc22",
+      "last_modified": "2026-05-09",
+      "description": "Registre centralisé des skills Claude Code du workspace schoolsWP : scan de tous les SKILL.md, détection des nouveaux/modifiés/arc..."
     },
     "task-system": {
       "hash": "887aa03a",
@@ -657,69 +667,74 @@
       "description": "Système de gestion de tâches complexes pour Claude Code — transforme toute mission multi-étapes en workflow guidé à lecture séquen..."
     },
     "todo": {
-      "hash": "59969e9d",
-      "last_modified": "2026-04-15",
-      "description": "Affiche le tableau de bord de mission : tâches en cours et lessons learned. Déclenche pour \"todo\", \"mission en cours\", \"tableau de..."
+      "hash": "cd49f386",
+      "last_modified": "2026-05-09",
+      "description": "Affiche le tableau de bord de mission schoolsWP : lit `core/tasks/todo.md` (mission en cours, plan, étapes) + `core/tasks/lessons...."
     },
     "utm-convention": {
-      "hash": "4c2dc423",
-      "last_modified": "2026-04-15",
-      "description": "Produit la convention UTM officielle schoolsWP à partir de notes brutes ou de zéro. Analyse les notes, élimine contradictions et z..."
+      "hash": "fc4f6dbb",
+      "last_modified": "2026-05-09",
+      "description": "Produit la convention UTM officielle schoolsWP en 9 sections (règles, paramètres source/medium/campaign/content/term, format stand..."
     },
     "vscode-agent-visual": {
-      "hash": "7bcf0907",
-      "last_modified": "2026-04-15",
-      "description": "Guide expert pour creer des extensions VS Code avec avatars animes (agents visuels) pilotes par Claude Code. Couvre WebviewView, W..."
+      "hash": "8aff2301",
+      "last_modified": "2026-05-09",
+      "description": "Guide expert pour créer des extensions VS Code avec avatars animes (agents visuels) pilotes par Claude Code. Couvre WebviewView, W..."
     },
     "workflow-debug": {
-      "hash": "de1daf8f",
-      "last_modified": "2026-04-15",
-      "description": "Diagnostic et débogage de workflows automatisés schoolsWP — identifie la cause racine, localise le point de rupture, propose une c..."
+      "hash": "c26f9609",
+      "last_modified": "2026-05-09",
+      "description": "Diagnostic et débogage de workflows automatisés schoolsWP : identifie la cause racine, localise le point de rupture, propose une c..."
     },
     "workflow-doc": {
-      "hash": "8f17a70b",
-      "last_modified": "2026-04-15",
-      "description": "Documentation de workflows automatisés schoolsWP — transforme un workflow existant en documentation claire, transmissible, auditab..."
+      "hash": "f2c9f86a",
+      "last_modified": "2026-05-09",
+      "description": "Documente un workflow schoolsWP existant en 14 sections claires, auditables et maintenables : objectif, étapes, dépendances, point..."
     },
     "workflow-master": {
-      "hash": "ba8d1027",
-      "last_modified": "2026-04-15",
-      "description": "schoolsWP Agent OS V5 — système d'exploitation d'exécution pour agents IA orientés WordPress, SEO, CRM, n8n, automatisation et wor..."
+      "hash": "d963f77f",
+      "last_modified": "2026-05-09",
+      "description": "schoolsWP Agent OS V5 — routeur principal des workflows schoolsWP. Détecte le mode (création / debug / documentation), applique le..."
     },
     "workspace-audit": {
-      "hash": "22e8d620",
-      "last_modified": "2026-04-15",
-      "description": "Audit complet et reproductible du workspace D:\\VS Code et du projet schoolsWP. Produit un rapport structure avec metriques, scores..."
+      "hash": "3f84f7e7",
+      "last_modified": "2026-05-09",
+      "description": "Audit complet et reproductible du workspace `D:\\VS Code` + projet schoolsWP en 7 phases. Produit un rapport Markdown avec métrique..."
     },
     "workspace-guardian": {
-      "hash": "521c3c79",
-      "last_modified": "2026-05-08",
-      "description": "Encode les regles de gouvernance du workspace schoolsWP : anti-duplication stricte (un seul chemin `.claude/skills/`), gouvernance..."
+      "hash": "03617ed9",
+      "last_modified": "2026-05-09",
+      "description": "Encode les règles de gouvernance du workspace schoolsWP : anti-duplication stricte (un seul chemin `.claude/skills/`), gouvernance..."
     },
     "workspace-hygiene": {
-      "hash": "1cee4087",
-      "last_modified": "2026-04-15",
-      "description": "Audit, nettoyage et maintenance structurelle de workspaces de développement. Utilise ce skill dès que l'utilisateur mentionne : ne..."
+      "hash": "2b73ceea",
+      "last_modified": "2026-05-09",
+      "description": "Maintenance structurelle réversible de workspaces solo-founder en deux modes : AUDIT (analyse sans modifier) et APPLY (exécution d..."
     },
     "brand-guidelines": {
-      "hash": "d8458ac0",
-      "last_modified": "2026-03-14",
-      "description": "Applique les couleurs officielles et la typographie Anthropic à tout contenu visuel. Utilise ce skill quand les couleurs de marque..."
+      "hash": "f870e04e",
+      "last_modified": "2026-05-09",
+      "description": "Applique l'identité visuelle Anthropic (couleurs `#141413`/`#faf9f5`/`#d97757`, typo Poppins+Lora) sur du contenu généré pour Anth..."
     },
     "claude-config-backup": {
-      "hash": "87e85d77",
-      "last_modified": "2026-04-14",
-      "description": "Sauvegarde et restaure la configuration Claude Code (skills, agents, commands, hooks, settings) entre machines Windows via git pri..."
+      "hash": "77d785f6",
+      "last_modified": "2026-05-09",
+      "description": "Sauvegarde et restaure la config Claude Code (skills, agents, commands, hooks, settings) entre PC Windows via git privé ou archive..."
     },
     "local-prospector": {
-      "hash": "9c0246c9",
-      "last_modified": "2026-04-01",
-      "description": "Constitue une base de donnees qualifiee de prestataires locaux specialises en creation de site internet (agences web, studios, dev..."
+      "hash": "fe159978",
+      "last_modified": "2026-05-09",
+      "description": "Pipeline spécialisé prospection locale d'agences/studios/freelances en création de site internet (vitrine, e-commerce, refonte, de..."
     },
     "mini-offer-builder": {
       "hash": "855ae717",
       "last_modified": "2026-04-06",
       "description": "Construit une Mini Offre coup de coeur complète en 3 étapes séquentielles : promesse → mécanisme unique → nom. Pose 4 questions de..."
+    },
+    "schoolswp": {
+      "hash": "0b916cf1",
+      "last_modified": "2026-05-09",
+      "description": "Skill identité de marque schoolsWP : message central, promesse, positionnement, tagline, principes fondamentaux, voix, orthographe..."
     },
     "setup-api-key": {
       "hash": "c13f8d60",
@@ -727,44 +742,44 @@
       "description": "Guide la configuration d'une clé API ElevenLabs pour les outils MCP ElevenLabs. Utilise ce skill quand la clé ELEVENLABS_API_KEY d..."
     },
     "burp-suite-testing": {
-      "hash": "ceff5a48",
-      "last_modified": "2026-04-15",
-      "description": "Tests de sécurité web avec Burp Suite. Utilise ce skill pour intercepter et modifier le trafic HTTP, scanner les vulnérabilités, r..."
+      "hash": "23fb7166",
+      "last_modified": "2026-05-09",
+      "description": "Référence Burp Suite (Community / Professional) pour tests de sécurité web : interception et modification du trafic HTTP via proxy..."
     },
     "cloud-penetration-testing": {
-      "hash": "a01417dc",
-      "last_modified": "2026-04-15",
-      "description": "Tests de pénétration d'infrastructure cloud (Azure, AWS, GCP). Utilise ce skill pour évaluer la sécurité cloud, énumérer les resso..."
+      "hash": "e224b6d1",
+      "last_modified": "2026-05-09",
+      "description": "Tests de pénétration d'infrastructure cloud (Azure, AWS, GCP) : reconnaissance, énumération de ressources, tests d'authentificatio..."
     },
     "code-audit": {
-      "hash": "5ac56ebd",
-      "last_modified": "2026-04-15",
-      "description": "Détecte la dette technique, le code dupliqué, les patterns inconsistants et les dépendances inutiles dans un dépôt, puis génère un..."
+      "hash": "62f38bf9",
+      "last_modified": "2026-05-09",
+      "description": "Scanne un dépôt pour détecter la dette technique : code dupliqué (textuel + structurel), marqueurs TODO/FIXME/HACK/XXX, patterns i..."
     },
     "concise-planning": {
-      "hash": "68a233ed",
-      "last_modified": "2026-04-15",
-      "description": "Génère un plan d'action clair, actionnable et atomique pour une tâche de code. Utilise ce skill quand l'utilisateur demande un pla..."
+      "hash": "47f550df",
+      "last_modified": "2026-05-09",
+      "description": "Transforme une demande en plan unique et actionnable : Approach, Scope (In/Out), 6-10 Action Items atomiques verbe-en-tête, Valida..."
     },
     "ethical-hacking-methodology": {
-      "hash": "b9f2d141",
-      "last_modified": "2026-04-15",
-      "description": "Méthodologie complète de hacking éthique et tests de pénétration. Utilise ce skill pour apprendre les 5 phases (reconnaissance, sc..."
+      "hash": "8fd356ce",
+      "last_modified": "2026-05-09",
+      "description": "Méthodologie complète de hacking éthique et tests de pénétration en 5 phases (reconnaissance, scan, exploitation, post-exploitatio..."
     },
     "find-docs": {
-      "hash": "1959837a",
-      "last_modified": "2026-04-15",
-      "description": "Retrieves authoritative, up-to-date technical documentation, API references, configuration details, and code examples for any deve..."
+      "hash": "d0523fe0",
+      "last_modified": "2026-05-09",
+      "description": "Récupère la documentation technique officielle à jour pour n'importe quelle techno (libs, frameworks, langages, SDK, API, CLI, ser..."
     },
     "git-pushing": {
-      "hash": "20f9b519",
-      "last_modified": "2026-04-15",
-      "description": "Stage, commit et push des changements git avec des messages de commit conventionnels. Utilise ce skill quand l'utilisateur veut co..."
+      "hash": "94ac5620",
+      "last_modified": "2026-05-09",
+      "description": "Pousse les changements vers le remote via le script smart commit (message conventional commit, footer Claude, flag upstream). Patt..."
     },
     "googledrive": {
-      "hash": "7286fec2",
-      "last_modified": "2026-04-15",
-      "description": "Espace métier Google Drive - gestion cloud, organisation fichiers, partage et stockage. Utiliser pour toute tâche liée à Google Dr..."
+      "hash": "7dcf0314",
+      "last_modified": "2026-05-09",
+      "description": "Espace métier Google Drive pour schoolsWP : upload, organisation arborescente, recherche par nom/type/contenu, partage avec permis..."
     },
     "kaizen": {
       "hash": "175248b0",
@@ -772,44 +787,44 @@
       "description": "Guide d'amélioration continue, d'anti-erreur et de standardisation. Utilise ce skill pour améliorer la qualité du code, refactoris..."
     },
     "linux-privilege-escalation": {
-      "hash": "6bdbcd43",
-      "last_modified": "2026-04-15",
-      "description": "Escalade de privilèges sur systèmes Linux. Utilise ce skill pour identifier et exploiter les mauvaises configurations sudo, binair..."
+      "hash": "696cb417",
+      "last_modified": "2026-05-09",
+      "description": "Escalade de privilèges sur systèmes Linux : énumération automatisée (LinPEAS, LinEnum, LES) puis exploitation systématique de sudo..."
     },
     "notion": {
-      "hash": "cf98be2c",
-      "last_modified": "2026-04-23",
-      "description": "API Notion pour créer et gérer des pages, bases de données et blocs."
+      "hash": "2e9ea684",
+      "last_modified": "2026-05-09",
+      "description": "API Notion via curl direct (header `Notion-Version: 2025-09-03`, clé stockée dans `~/.config/notion/api_key`) pour créer/lire/mett..."
     },
     "security-auditor": {
-      "hash": "b36cee24",
-      "last_modified": "2026-04-15",
-      "description": "Auditeur de sécurité expert spécialisé en DevSecOps, cybersécurité complète et frameworks de conformité. Utilise ce skill pour les..."
+      "hash": "9594d4e5",
+      "last_modified": "2026-05-09",
+      "description": "Auditeur de sécurité DevSecOps : threat modeling, intégration SAST/DAST/IAST en CI/CD, secrets management, container security, sup..."
     },
     "systematic-debugging": {
-      "hash": "f4eab48a",
-      "last_modified": "2026-04-15",
-      "description": "Méthodologie systématique pour déboguer tout bug, échec de test ou comportement inattendu. Utilise ce skill avant de proposer des ..."
+      "hash": "b85172a1",
+      "last_modified": "2026-05-09",
+      "description": "Méthodologie systématique 4 phases (investigate → analyze → hypothesize → implement) pour déboguer un bug, un test qui échoue ou u..."
     },
     "top-web-vulnerabilities": {
-      "hash": "d281a851",
-      "last_modified": "2026-04-15",
-      "description": "Référence des 100 vulnérabilités web les plus critiques (alignées OWASP). Utilise ce skill pour identifier les failles applicative..."
+      "hash": "59363852",
+      "last_modified": "2026-05-09",
+      "description": "Référence catalogue des 100 vulnérabilités web critiques alignées OWASP, organisées en 15 catégories (injection, auth, accès, cryp..."
     },
     "vulnerability-scanner": {
-      "hash": "92305b85",
-      "last_modified": "2026-04-15",
-      "description": "Analyse avancée de vulnérabilités. OWASP 2025, sécurité de la chaîne d'approvisionnement, cartographie de la surface d'attaque et ..."
+      "hash": "54e3bae8",
+      "last_modified": "2026-05-09",
+      "description": "Analyse avancée de vulnérabilités alignée OWASP 2025 : sécurité de la chaîne d'approvisionnement, cartographie de la surface d'att..."
     },
     "template-skill": {
-      "hash": "4d4ab42e",
-      "last_modified": "2026-03-07",
-      "description": "Replace with description of the skill and when Claude should use it."
+      "hash": "c684d2fd",
+      "last_modified": "2026-05-09",
+      "description": "Squelette de SKILL.md pret a remplir pour créer un nouveau skill schoolsWP. Sert de point de depart pour les conventions du frontm..."
     },
     "planning-and-task-breakdown": {
-      "hash": "cf9006e5",
-      "last_modified": "2026-04-15",
-      "description": "Decompose le travail en taches atomiques, ordonnees et verifiables. Utilise ce skill quand une tache semble trop large pour demarr..."
+      "hash": "9f7a478d",
+      "last_modified": "2026-05-09",
+      "description": "Decomposer le travail en taches atomiques, ordonnees, verifiables, avec criteres d'acceptation explicites. Mode read-only obligato..."
     },
     "cluster-cocon-automatique": {
       "hash": "274ec3dc",
@@ -822,14 +837,14 @@
       "description": "Cartographie SEO globale schoolsWP. Produit la carte d'architecture complète du site : hub principal + 8-10 clusters + pages pilie..."
     },
     "geo-architect": {
-      "hash": "2cd5915d",
-      "last_modified": "2026-04-15",
-      "description": "GEO/AIO pipeline schoolsWP — transformer des requêtes (GSC, SERP, mots-clés) en clusters canoniques, prompts monitorables et pages..."
+      "hash": "37fda9a9",
+      "last_modified": "2026-05-09",
+      "description": "Pipeline GEO/AIO schoolsWP — transforme des requêtes brutes (mots-clés, seeds, requêtes GSC) en clusters canoniques, listes de pro..."
     },
     "geo-gsc-pipeline": {
-      "hash": "35c0c76d",
-      "last_modified": "2026-04-15",
-      "description": "Pipeline data-driven GSC-to-GEO : transforme des donnees reelles (export GSC CSV/XLSX, fichiers SERP Thruuu, ou acces API GSC) en ..."
+      "hash": "e01440ee",
+      "last_modified": "2026-05-09",
+      "description": "Pipeline data-driven GSC-to-GEO : transforme des données réelles (export GSC CSV/XLSX, fichiers SERP Thruuu/SEOKey, ou accès API G..."
     },
     "lms-cocon-roi-prioritization": {
       "hash": "36ca083e",
@@ -842,24 +857,24 @@
       "description": "(archivé - plan daté M1-M3 révolu - ne pas auto-déclencher)"
     },
     "niche-detector-reachable": {
-      "hash": "090fb80c",
-      "last_modified": "2026-04-15",
-      "description": "Detecter des niches SEO atteignables pour schoolsWP (difficulte, concurrence, opportunite business, potentiel affilie, angle diffe..."
+      "hash": "fbc602f5",
+      "last_modified": "2026-05-09",
+      "description": "Évalue si une niche SEO est atteignable pour schoolsWP : difficulté estimée, concurrence réelle, type de concurrents, opportunité ..."
     },
     "seo-audit": {
-      "hash": "ad43a0e6",
-      "last_modified": "2026-04-15",
-      "description": "Audite, révise et diagnostique les problèmes SEO d'un site. Utilise ce skill pour un audit technique SEO, une analyse de balises m..."
+      "hash": "0e8f439e",
+      "last_modified": "2026-05-09",
+      "description": "Audit SEO technique d'un site WordPress complet : balises meta, erreurs de crawl, indexation, Core Web Vitals, sitemap, robots.txt..."
     },
     "seo-brief-generator": {
-      "hash": "5ae40abd",
-      "last_modified": "2026-04-15",
-      "description": "Genere un brief SEO V2 complet pour un article schoolsWP a partir d'un ID article (A1, B6, C3, PILIER-A, COMP-B1, ADV-C1, FAQ-A1....."
+      "hash": "d5b22974",
+      "last_modified": "2026-05-09",
+      "description": "Génère un brief SEO V2 complet pour un article schoolsWP à partir d'un ID article (A1, B6, PILIER-A, COMP-B1, FAQ-A1...) ou d'un m..."
     },
     "seo-competitor-gap-radar": {
-      "hash": "74d21e81",
-      "last_modified": "2026-04-15",
-      "description": "Detecter les failles SEO des concurrents (intent, decision, profondeur, structure, actualisation, business) et proposer des opport..."
+      "hash": "3b19cb9a",
+      "last_modified": "2026-05-09",
+      "description": "Analyse une page concurrente sur 6 axes (intent, structure, profondeur, decision, business, actualisation) pour détecter les faill..."
     },
     "seo-pipeline": {
       "hash": "38da30d5",
@@ -872,9 +887,9 @@
       "description": "(fusionné dans cocon-map-schoolswp - archivé - ne pas auto-déclencher)"
     },
     "wpmarmite-business-strategy": {
-      "hash": "d1fa74ff",
-      "last_modified": "2026-04-15",
-      "description": "Strategie pour depasser WPMarmite sur le WordPress business + carte des niches SEO ouvertes. Utiliser quand l'utilisateur veut ide..."
+      "hash": "c1bd9a2f",
+      "last_modified": "2026-05-09",
+      "description": "Stratégie pour dépasser WPMarmite sur le WordPress business (CRM, automation, LMS, stack, funnels) sans copier ni attaquer le débu..."
     },
     "youtube-omnichannel-engine": {
       "hash": "a575ec2c",
@@ -892,29 +907,29 @@
       "description": "Analyse des prospects backlinks, qualification d'opportunites et redaction d'emails d'outreach hyper-personnalises pour schoolsWP...."
     },
     "schema-markup": {
-      "hash": "276ed5da",
-      "last_modified": "2026-03-14",
-      "description": "Ajoute, corrige ou optimise le balisage schema et les données structurées sur un site. Utilise ce skill pour JSON-LD, rich snippet..."
+      "hash": "8eefafcb",
+      "last_modified": "2026-05-09",
+      "description": "Ajoute, corrige ou optimise le balisage schema.org et les données structurées sur un site WordPress : JSON-LD, FAQ schema, Product..."
     },
     "seo-page-audit": {
-      "hash": "b0fa6a84",
-      "last_modified": "2026-04-02",
-      "description": "Audit SEO orienté résultats pour une page web individuelle : contenu, éditorial, conversion, intentions de recherche, structure, C..."
+      "hash": "6bf77e04",
+      "last_modified": "2026-05-09",
+      "description": "Audit SEO orienté résultats pour UNE page web individuelle : contenu, éditorial, conversion, intentions de recherche, structure, C..."
     },
     "form-cro": {
-      "hash": "02167da0",
-      "last_modified": "2026-04-15",
-      "description": "Optimise les formulaires non-inscription : lead capture, contact, demande de démo, candidature, enquête ou checkout. Utilise ce sk..."
+      "hash": "355df731",
+      "last_modified": "2026-05-09",
+      "description": "Optimise les formulaires non-inscription : lead capture, contact, demande de démo, candidature, enquête, quote ou checkout. Réduit..."
     },
     "chatseo-relations-extractor": {
-      "hash": "054fdc8f",
-      "last_modified": "2026-05-08",
-      "description": "Extraction d'entités nommées (NER) et de relations sémantiques depuis le contenu textuel d'une page web (titre + corps), avec sort..."
+      "hash": "985c3410",
+      "last_modified": "2026-05-09",
+      "description": "Extrait les entités nommées (NER) et leurs relations sémantiques depuis un titre + corps de page web, avec sortie JSON pure pour g..."
     },
     "seo-semantique-fr": {
-      "hash": "5f8fccde",
-      "last_modified": "2026-05-08",
-      "description": "Génère un tableau SEO sémantique en 5 catégories (Entités, Mots-clés secondaires, Variations, Synonymes, Termes contextuels) à par..."
+      "hash": "70becdb2",
+      "last_modified": "2026-05-09",
+      "description": "Génère un tableau SEO sémantique FR en 5 catégories (Entités saillantes + nommées, Mots-clés secondaires, Variations, Synonymes, T..."
     },
     "instagram-strategy": {
       "hash": "e448a5d6",
@@ -922,8 +937,8 @@
       "description": "Agent expert stratégie Instagram schoolsWP — construit des stratégies éditoriales Instagram complètes et directement exploitables ..."
     },
     "linkedin": {
-      "hash": "a597641a",
-      "last_modified": "2026-04-15",
+      "hash": "c21cb651",
+      "last_modified": "2026-05-09",
       "description": "Cree des posts LinkedIn pour schoolsWP (Michael KIHL). Utilise ce skill des que l'utilisateur veut un post LinkedIn, une accroche ..."
     },
     "pinterest-pipeline": {
@@ -952,9 +967,9 @@
       "description": "Directeur artistique YouTube pour schoolsWP : conception, analyse et optimisation de miniatures YouTube pour maximiser le CTR. Pro..."
     },
     "youtube-extractor": {
-      "hash": "229a9960",
-      "last_modified": "2026-04-15",
-      "description": "Extraction de donnees YouTube via Apify + MCP RapidAPI — metadonnees, transcript et commentaires d'une video, structures dans un f..."
+      "hash": "df82cf58",
+      "last_modified": "2026-05-09",
+      "description": "Extrait les données d'une vidéo YouTube via pipeline 2 sources : Apify (`starvibe/youtube-video-transcript` pour transcript + méta..."
     },
     "youtube": {
       "hash": "8313e24c",
@@ -962,8 +977,8 @@
       "description": "(archivé - espace métier fourre-tout remplacé par les skills YouTube spécialisés - ne pas auto-déclencher)"
     },
     "contenu-reseaux-sociaux-schoolswp": {
-      "hash": "73bbc043",
-      "last_modified": "2026-04-17",
+      "hash": "daa71ef0",
+      "last_modified": "2026-05-09",
       "description": "Produit du contenu Instagram schoolsWP prêt à publier à partir d'un sujet, d'une offre ou d'un objectif. Deux modes : Pack Instagr..."
     },
     "pinterest-strategy": {
@@ -977,8 +992,8 @@
       "description": "(archivé - doublonnait social-media-manager + collisions avec skills plateforme - ne pas auto-déclencher)"
     },
     "telegram-claude-bridge": {
-      "hash": "57e0370f",
-      "last_modified": "2026-03-31",
+      "hash": "8faa700e",
+      "last_modified": "2026-05-09",
       "description": "Tutoriel pas-a-pas pour construire un bridge Node.js entre Telegram et Claude Code CLI. Utilise ce skill des qu'un utilisateur veu..."
     },
     "youtube-shorts-schoolswp": {
@@ -987,29 +1002,29 @@
       "description": "Pipeline complet de création de YouTube Shorts schoolsWP — script court (150-250 mots), prompts visuels séquentiels, hook en 2 sec..."
     },
     "discord": {
-      "hash": "8a269c79",
-      "last_modified": "2026-04-15",
-      "description": "Utiliser pour contrôler Discord via l'outil discord - envoyer des messages, réagir, poster des stickers/emojis, créer des sondages..."
+      "hash": "86a902f6",
+      "last_modified": "2026-05-09",
+      "description": "Pilote Discord via l'outil `discord` (bot token OpenClaw) : messages, réactions, stickers/emojis, sondages, threads, pins, recherc..."
     },
     "facebook": {
-      "hash": "09cf0e3b",
-      "last_modified": "2026-04-15",
-      "description": "Espace métier Facebook - pages, groupes, publicité et analytics. Utiliser pour toute tâche liée à Facebook (posts, ads, groupes, m..."
+      "hash": "3c6e2ac5",
+      "last_modified": "2026-05-09",
+      "description": "Espace métier Facebook schoolsWP : pages, groupes, publicité, Messenger, analytics. Hub de référence pour publication, modération,..."
     },
     "slack": {
-      "hash": "35779b20",
-      "last_modified": "2026-04-15",
-      "description": "Utiliser pour contrôler Slack via l'outil slack - réagir aux messages, épingler/désépingler des éléments, envoyer/modifier/supprim..."
+      "hash": "929defc5",
+      "last_modified": "2026-05-09",
+      "description": "Pilote Slack via l'outil `slack` (bot token OpenClaw) : envoyer/modifier/supprimer messages, réagir avec emojis (Unicode ou `:name..."
     },
     "whatsapp": {
-      "hash": "c408e204",
-      "last_modified": "2026-04-15",
-      "description": "Envoyer des messages WhatsApp à d'autres personnes ou rechercher/synchroniser l'historique WhatsApp via le CLI wacli (pas pour les..."
+      "hash": "5961ee11",
+      "last_modified": "2026-05-09",
+      "description": "Pilote WhatsApp via le CLI `wacli` : envoie de messages texte/fichier à un destinataire tiers, recherche dans l'historique, synchr..."
     },
     "telegram-claude": {
-      "hash": "dbecba9a",
-      "last_modified": "2026-05-08",
-      "description": "Reference operationnelle de l'orchestrateur Telegram <-> Claude pour schoolsWP : serveur Express (`agents/telegram-claude/server.j..."
+      "hash": "98e53437",
+      "last_modified": "2026-05-09",
+      "description": "Référence opérationnelle de l'orchestrateur Telegram <-> Claude pour schoolsWP : serveur Express (`agents/telegram-claude/server.j..."
     },
     "wp-image-metadata-seo": {
       "hash": "a378d3d4",
@@ -1017,474 +1032,474 @@
       "description": "Génère un bloc complet de métadonnées SEO pour les images schoolsWP : XPTitle, XPSubject, XPKeywords, XPComment, XPAuthor, Copyrig..."
     },
     "recipe-backup-sheet-as-csv": {
-      "hash": "9cf2ea70",
-      "last_modified": "2026-04-15",
-      "description": "Export a Google Sheets spreadsheet as a CSV file for local backup or processing."
+      "hash": "8ccf60cb",
+      "last_modified": "2026-05-09",
+      "description": "Exporte un Google Sheets en fichier CSV pour backup local ou traitement hors ligne. Recipe atomique qui combine gws-sheets et gws-..."
     },
     "recipe-batch-invite-to-event": {
-      "hash": "42a7dbe8",
-      "last_modified": "2026-04-15",
-      "description": "Add a list of attendees to an existing Google Calendar event and send notifications."
+      "hash": "a2972462",
+      "last_modified": "2026-05-09",
+      "description": "Ajoute une liste de participants a un evenement Google Calendar deja existant et declenche les notifications via sendUpdates=all. ..."
     },
     "recipe-block-focus-time": {
-      "hash": "cc8d9f7f",
-      "last_modified": "2026-04-15",
-      "description": "Create recurring focus time blocks on Google Calendar to protect deep work hours."
+      "hash": "3d3dafc0",
+      "last_modified": "2026-05-09",
+      "description": "Cree des blocs recurrents de temps de concentration sur Google Calendar pour proteger les heures de deep work, avec RRULE hebdomad..."
     },
     "recipe-bulk-download-folder": {
-      "hash": "923f466c",
-      "last_modified": "2026-04-15",
-      "description": "List and download all files from a Google Drive folder."
+      "hash": "63144a2b",
+      "last_modified": "2026-05-09",
+      "description": "Liste et telecharge en masse tous les fichiers d'un dossier Google Drive, avec export PDF pour les Google Docs et binaire direct p..."
     },
     "recipe-collect-form-responses": {
-      "hash": "bf538fbc",
-      "last_modified": "2026-04-15",
-      "description": "Retrieve and review responses from a Google Form."
+      "hash": "1d508777",
+      "last_modified": "2026-05-09",
+      "description": "Recupere et passe en revue les reponses soumises sur un Google Form, avec rendu en table pour lecture rapide. Utilise ce skill qua..."
     },
     "recipe-compare-sheet-tabs": {
-      "hash": "f10958c2",
-      "last_modified": "2026-04-15",
-      "description": "Read data from two tabs in a Google Sheet to compare and identify differences."
+      "hash": "894934c0",
+      "last_modified": "2026-05-09",
+      "description": "Compare deux onglets d'un meme Google Sheet et identifie les differences (lignes ajoutees, supprimees, modifiees, valeurs divergen..."
     },
     "recipe-copy-sheet-for-new-month": {
-      "hash": "5cae886b",
-      "last_modified": "2026-04-15",
-      "description": "Duplicate a Google Sheets template tab for a new month of tracking."
+      "hash": "36019267",
+      "last_modified": "2026-05-09",
+      "description": "Duplique un onglet template Google Sheets pour un nouveau mois de tracking, puis renomme l'onglet copie avec le nom du mois. Utili..."
     },
     "recipe-create-classroom-course": {
-      "hash": "3f1d180a",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Classroom course and invite students."
+      "hash": "8bc4c98d",
+      "last_modified": "2026-05-09",
+      "description": "Cree un cours Google Classroom et envoie les invitations aux etudiants avec le role STUDENT. Utilise ce skill quand l'utilisateur ..."
     },
     "recipe-create-doc-from-template": {
-      "hash": "6a8f12ad",
-      "last_modified": "2026-04-15",
-      "description": "Copy a Google Docs template, fill in content, and share with collaborators."
+      "hash": "c86ad599",
+      "last_modified": "2026-05-09",
+      "description": "Copie un template Google Docs, injecte le contenu via gws-docs write, puis partage le doc resultant avec les collaborateurs. Utili..."
     },
     "recipe-create-events-from-sheet": {
-      "hash": "c998be88",
-      "last_modified": "2026-04-15",
-      "description": "Read event data from a Google Sheets spreadsheet and create Google Calendar entries for each row."
+      "hash": "33030989",
+      "last_modified": "2026-05-09",
+      "description": "Lit les donnees d'evenements depuis un Google Sheets et cree les entrees Google Calendar correspondantes ligne par ligne, avec att..."
     },
     "recipe-create-expense-tracker": {
-      "hash": "d24c0376",
-      "last_modified": "2026-04-15",
-      "description": "Set up a Google Sheets spreadsheet for tracking expenses with headers and initial entries."
+      "hash": "a9c1a5a8",
+      "last_modified": "2026-05-09",
+      "description": "Configure depuis zero un Google Sheets de suivi de depenses avec en-tetes Date/Categorie/Description/Montant, premiere ligne d'exe..."
     },
     "recipe-create-feedback-form": {
-      "hash": "1bab5bc8",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Form for feedback and share it via Gmail."
+      "hash": "16fad161",
+      "last_modified": "2026-05-09",
+      "description": "Cree un Google Form de feedback simple et partage le lien responder via Gmail aux destinataires cibles. Utilise ce skill quand l'u..."
     },
     "recipe-create-gmail-filter": {
-      "hash": "02f134c3",
-      "last_modified": "2026-04-15",
-      "description": "Create a Gmail filter to automatically label, star, or categorize incoming messages."
+      "hash": "05e45156",
+      "last_modified": "2026-05-09",
+      "description": "Cree un filtre Gmail qui libelle, marque ou categorise automatiquement les messages entrants selon des criteres expediteur/sujet/c..."
     },
     "recipe-create-meet-space": {
-      "hash": "38631237",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Meet meeting space and share the join link."
+      "hash": "c18da225",
+      "last_modified": "2026-05-09",
+      "description": "Cree un espace de reunion Google Meet en accessType OPEN et partage le lien de connexion par Gmail aux participants. Utilise ce sk..."
     },
     "recipe-create-presentation": {
-      "hash": "c756facd",
-      "last_modified": "2026-04-15",
-      "description": "Create a new Google Slides presentation and add initial slides."
+      "hash": "649f0703",
+      "last_modified": "2026-05-09",
+      "description": "Cree une nouvelle presentation Google Slides vierge avec un titre, recupere son ID, et la partage en ecriture avec l'equipe. Utili..."
     },
     "recipe-create-shared-drive": {
-      "hash": "075f92ca",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Shared Drive and add members with appropriate roles."
+      "hash": "8a9751f7",
+      "last_modified": "2026-05-09",
+      "description": "Cree un Drive Partage Google (Shared Drive, ex Team Drive) et ajoute les membres avec les roles appropries (writer, reader, etc). ..."
     },
     "recipe-create-task-list": {
-      "hash": "0c202a0e",
-      "last_modified": "2026-04-15",
-      "description": "Set up a new Google Tasks list with initial tasks."
+      "hash": "2acf56d4",
+      "last_modified": "2026-05-09",
+      "description": "Configure une nouvelle liste Google Tasks et y injecte des taches initiales avec titre, notes et dates d'echeance. Utilise ce skil..."
     },
     "recipe-create-vacation-responder": {
-      "hash": "f4d6d867",
-      "last_modified": "2026-04-15",
-      "description": "Enable a Gmail out-of-office auto-reply with a custom message and date range."
+      "hash": "4eda9d99",
+      "last_modified": "2026-05-09",
+      "description": "Active la reponse automatique d'absence Gmail avec un message personnalise, sujet, et options de restriction (contacts, domaine). ..."
     },
     "recipe-draft-email-from-doc": {
-      "hash": "06c262ff",
-      "last_modified": "2026-04-15",
-      "description": "Read content from a Google Doc and use it as the body of a Gmail message."
+      "hash": "be0d9f24",
+      "last_modified": "2026-05-09",
+      "description": "Lit le contenu d'un Google Doc existant et l'utilise comme corps de message Gmail envoye au destinataire. Utilise ce skill quand l..."
     },
     "recipe-email-drive-link": {
-      "hash": "cf408b64",
-      "last_modified": "2026-04-15",
-      "description": "Share a Google Drive file and email the link with a message to recipients."
+      "hash": "40d3ae2a",
+      "last_modified": "2026-05-09",
+      "description": "Partage un fichier Google Drive avec un destinataire (permission reader/writer) puis envoie le lien Drive par Gmail avec un messag..."
     },
     "recipe-find-free-time": {
-      "hash": "a1521c93",
-      "last_modified": "2026-04-15",
-      "description": "Query Google Calendar free/busy status for multiple users to find a meeting slot."
+      "hash": "8a29b303",
+      "last_modified": "2026-05-09",
+      "description": "Interroge la disponibilite Google Calendar de plusieurs utilisateurs via freebusy query, identifie les creneaux communs libres, et..."
     },
     "recipe-find-large-files": {
-      "hash": "caad4bd2",
-      "last_modified": "2026-04-15",
-      "description": "Identify large Google Drive files consuming storage quota."
+      "hash": "f9f37a93",
+      "last_modified": "2026-05-09",
+      "description": "Identifie les fichiers Google Drive qui consomment le plus de quota de stockage en listant par taille décroissante. Sortie tableau..."
     },
     "recipe-forward-labeled-emails": {
-      "hash": "490326db",
-      "last_modified": "2026-04-15",
-      "description": "Find Gmail messages with a specific label and forward them to another address."
+      "hash": "265f286f",
+      "last_modified": "2026-05-09",
+      "description": "Cherche les messages Gmail portant un libellé donné, lit leur contenu, et les transfère vers une autre adresse mail. Utile pour es..."
     },
     "recipe-generate-report-from-sheet": {
-      "hash": "1b641b3f",
-      "last_modified": "2026-04-15",
-      "description": "Read data from a Google Sheet and create a formatted Google Docs report."
+      "hash": "7db116db",
+      "last_modified": "2026-05-09",
+      "description": "Lit les données d'un Google Sheets et génère un Google Docs formaté avec les insights. Pipeline read-then-write : Sheets en source..."
     },
     "recipe-label-and-archive-emails": {
-      "hash": "01b3f48d",
-      "last_modified": "2026-04-15",
-      "description": "Apply Gmail labels to matching messages and archive them to keep your inbox clean."
+      "hash": "57f52e9e",
+      "last_modified": "2026-05-09",
+      "description": "Applique des libelles Gmail aux messages qui matchent une requête puis les archive. Recipe gws batch pour nettoyer une boite (ex :..."
     },
     "recipe-log-deal-update": {
-      "hash": "8742e269",
-      "last_modified": "2026-04-15",
-      "description": "Append a deal status update to a Google Sheets sales tracking spreadsheet."
+      "hash": "23456f41",
+      "last_modified": "2026-05-09",
+      "description": "Trouve la feuille de suivi pipeline, lit l'état courant et ajoute une nouvelle ligne pour tracer une mise à jour de deal commercia..."
     },
     "recipe-organize-drive-folder": {
-      "hash": "a2808273",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Drive folder structure and move files into the right locations."
+      "hash": "511d5e8e",
+      "last_modified": "2026-05-09",
+      "description": "Crée une arborescence de dossiers Google Drive (parent + sous-dossiers) puis déplace les fichiers existants dans les bons emplacem..."
     },
     "recipe-plan-weekly-schedule": {
-      "hash": "e516a38a",
-      "last_modified": "2026-04-15",
-      "description": "Review your Google Calendar week, identify gaps, and add events to fill them."
+      "hash": "f0ebaf4a",
+      "last_modified": "2026-05-09",
+      "description": "Récupère ton agenda de la semaine, repère les créneaux libres via free/busy, puis ajoute des blocs de travail ou réunions pour com..."
     },
     "recipe-post-mortem-setup": {
-      "hash": "d34b7f9c",
-      "last_modified": "2026-04-15",
-      "description": "Create a Google Docs post-mortem, schedule a Google Calendar review, and notify via Chat."
+      "hash": "1314733c",
+      "last_modified": "2026-05-09",
+      "description": "Crée un Google Docs post-mortem avec sections types (Summary, Timeline, Root Cause, Action Items), planifie la réunion de revue, p..."
     },
     "recipe-reschedule-meeting": {
-      "hash": "7c8d7aa6",
-      "last_modified": "2026-04-15",
-      "description": "Move a Google Calendar event to a new time and automatically notify all attendees."
+      "hash": "ff6fd872",
+      "last_modified": "2026-05-09",
+      "description": "Déplace un événement Google Calendar existant vers un nouveau créneau et notifie automatiquement les participants via sendUpdates=..."
     },
     "recipe-review-meet-participants": {
-      "hash": "fef4a1e6",
-      "last_modified": "2026-04-15",
-      "description": "Review who attended a Google Meet conference and for how long."
+      "hash": "3883d494",
+      "last_modified": "2026-05-09",
+      "description": "Liste les conférences Google Meet récentes, leurs participants et la durée de chaque session. Pour vérifier la présence effective ..."
     },
     "recipe-review-overdue-tasks": {
-      "hash": "322e2a7c",
-      "last_modified": "2026-04-15",
-      "description": "Find Google Tasks that are past due and need attention."
+      "hash": "beeabb9e",
+      "last_modified": "2026-05-09",
+      "description": "Liste les Google Tasks non terminées, identifie celles dont la due date est passée, et propose un tri pour rattrapage. Lecture seu..."
     },
     "recipe-save-email-attachments": {
-      "hash": "803d367d",
-      "last_modified": "2026-04-15",
-      "description": "Find Gmail messages with attachments and save them to a Google Drive folder."
+      "hash": "8792702a",
+      "last_modified": "2026-05-09",
+      "description": "Cherche les emails Gmail avec pièces jointes selon une requête, télécharge les attachments, puis les uploade dans un dossier Googl..."
     },
     "recipe-save-email-to-doc": {
-      "hash": "45c76f07",
-      "last_modified": "2026-04-15",
-      "description": "Save a Gmail message body into a Google Doc for archival or reference."
+      "hash": "32b61783",
+      "last_modified": "2026-05-09",
+      "description": "Récupère le contenu d'un message Gmail (sujet, expéditeur, corps) et le sauvegarde dans un nouveau Google Docs pour archivage dura..."
     },
     "recipe-schedule-recurring-event": {
-      "hash": "2caf47a3",
-      "last_modified": "2026-04-15",
-      "description": "Create a recurring Google Calendar event with attendees."
+      "hash": "84f7efb6",
+      "last_modified": "2026-05-09",
+      "description": "Crée un événement Google Calendar récurrent avec règle RRULE, attendees et timezone, puis vérifie sa création dans l'agenda. Stand..."
     },
     "recipe-send-team-announcement": {
-      "hash": "11d0b0b8",
-      "last_modified": "2026-04-15",
-      "description": "Send a team announcement via both Gmail and a Google Chat space."
+      "hash": "301cc54f",
+      "last_modified": "2026-05-09",
+      "description": "Envoie une annonce identique sur deux canaux en parallèle : Gmail (mail à la liste de l'équipe) et Google Chat (post dans l'espace..."
     },
     "recipe-share-doc-and-notify": {
-      "hash": "c5bd5b4b",
-      "last_modified": "2026-04-15",
-      "description": "Share a Google Docs document with edit access and email collaborators the link."
+      "hash": "c6723b7f",
+      "last_modified": "2026-05-09",
+      "description": "Partage un Google Docs avec accès éditeur à un collaborateur et envoie ensuite un email avec le lien direct vers le document. Comb..."
     },
     "recipe-share-event-materials": {
-      "hash": "e6ace74b",
-      "last_modified": "2026-04-15",
-      "description": "Share Google Drive files with all attendees of a Google Calendar event."
+      "hash": "ee5280a2",
+      "last_modified": "2026-05-09",
+      "description": "Récupère la liste des participants d'un événement Google Calendar et partage automatiquement un ou plusieurs fichiers Drive en lec..."
     },
     "recipe-share-folder-with-team": {
-      "hash": "6aeafa83",
-      "last_modified": "2026-04-15",
-      "description": "Share a Google Drive folder and all its contents with a list of collaborators."
+      "hash": "87721282",
+      "last_modified": "2026-05-09",
+      "description": "Partage un dossier Google Drive avec une équipe en attribuant des rôles distincts (writer pour les contributeurs, reader pour les ..."
     },
     "recipe-sync-contacts-to-sheet": {
-      "hash": "d08a581b",
-      "last_modified": "2026-04-15",
-      "description": "Export Google Contacts directory to a Google Sheets spreadsheet."
+      "hash": "7b30394d",
+      "last_modified": "2026-05-09",
+      "description": "Liste l'annuaire Google Contacts (noms, emails, téléphones) et exporte chaque contact en ligne dans un Google Sheets. Pour bâtir u..."
     },
     "recipe-watch-drive-changes": {
-      "hash": "6f75cfdc",
-      "last_modified": "2026-04-15",
-      "description": "Subscribe to change notifications on a Google Drive file or folder."
+      "hash": "1666e34a",
+      "last_modified": "2026-05-09",
+      "description": "Crée une subscription Google Workspace Events sur un fichier ou dossier Drive pour recevoir des notifications via Pub/Sub à chaque..."
     },
     "persona-content-creator": {
-      "hash": "3ca3efa5",
-      "last_modified": "2026-04-15",
-      "description": "Create, organize, and distribute content across Workspace."
+      "hash": "4d762da9",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour créer, organiser et distribuer du contenu dans Google Workspace : draft en Docs, organisation en Drive, anno..."
     },
     "persona-customer-support": {
-      "hash": "cb70a09a",
-      "last_modified": "2026-04-15",
-      "description": "Manage customer support — track tickets, respond, escalate issues."
+      "hash": "07f35170",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour le support client : triage Gmail, suivi tickets en Sheets, escalade dans Chat, planification de calls de fol..."
     },
     "persona-event-coordinator": {
-      "hash": "3e701cc1",
-      "last_modified": "2026-04-15",
-      "description": "Plan and manage events — scheduling, invitations, and logistics."
+      "hash": "60c6e5ca",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour planifier et gérer des événements : création d'événements Calendar, invitations Gmail, supports en Drive, an..."
     },
     "persona-exec-assistant": {
-      "hash": "8f836ab8",
-      "last_modified": "2026-04-15",
-      "description": "Manage an executive's schedule, inbox, and communications."
+      "hash": "99b8da0e",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour assister un dirigeant : standup quotidien, prep meeting, triage Gmail prioritaire, planification Calendar, c..."
     },
     "persona-hr-coordinator": {
-      "hash": "b72c1c0d",
-      "last_modified": "2026-04-15",
-      "description": "Handle HR workflows — onboarding, announcements, and employee comms."
+      "hash": "5e73298a",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour les workflows RH : onboarding via événements Calendar, supports en Drive, annonces nouveaux arrivants en Cha..."
     },
     "persona-it-admin": {
-      "hash": "a30f323e",
-      "last_modified": "2026-04-15",
-      "description": "Administer IT — monitor security and configure Workspace."
+      "hash": "4a63e9e0",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour l'admin IT Workspace : revue des requêtes IT en standup, monitoring login suspects, audit logs, configuratio..."
     },
     "persona-project-manager": {
-      "hash": "bfcb80aa",
-      "last_modified": "2026-04-15",
-      "description": "Coordinate projects — track tasks, schedule meetings, and share docs."
+      "hash": "16e0b76e",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour coordonner des projets : digest hebdo, suivi statut en Sheets, partage artifacts Drive avec annonce Chat, st..."
     },
     "persona-researcher": {
-      "hash": "454a74f3",
-      "last_modified": "2026-04-15",
-      "description": "Organize research — manage references, notes, and collaboration."
+      "hash": "7fb6e7e9",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour la recherche : organisation des sources et notes en Drive et Docs, log de données en Sheets, partage des fin..."
     },
     "persona-sales-ops": {
-      "hash": "78aca36c",
-      "last_modified": "2026-04-15",
-      "description": "Manage sales workflows — track deals, schedule calls, client comms."
+      "hash": "a37f8464",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour les ops commerciales : prep de calls clients, log des deals en Sheets, conversion email-to-task, partage de ..."
     },
     "persona-team-lead": {
-      "hash": "6299be01",
-      "last_modified": "2026-04-15",
-      "description": "Lead a team — run standups, coordinate tasks, and communicate."
+      "hash": "357e849b",
+      "last_modified": "2026-05-09",
+      "description": "Profil orchestré pour piloter une équipe : daily standups, prep 1:1s, weekly digest, délégation email-to-task, suivi OKR en Sheets..."
     },
     "gws-admin-reports": {
-      "hash": "e60b75b0",
-      "last_modified": "2026-04-15",
-      "description": "Google Workspace Admin SDK: Audit logs and usage reports."
+      "hash": "01403deb",
+      "last_modified": "2026-05-09",
+      "description": "Google Workspace Admin SDK Reports v1 via la CLI gws : audit logs et rapports d'usage du tenant Workspace (activities admin, drive..."
     },
     "gws-calendar-agenda": {
-      "hash": "70763b09",
-      "last_modified": "2026-04-15",
-      "description": "Google Calendar: Show upcoming events across all calendars."
+      "hash": "94186f79",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws calendar +agenda : liste les événements à venir sur tous les calendriers, avec filtres rapides today / tomorrow / this-..."
     },
     "gws-calendar-insert": {
-      "hash": "6eada7eb",
-      "last_modified": "2026-04-15",
-      "description": "Google Calendar: Create a new event."
+      "hash": "cc734115",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws calendar +insert : crée un événement Google Calendar avec summary, start, end, invités, lieu, rappels, en une seule com..."
     },
     "gws-calendar": {
-      "hash": "1d723ca9",
-      "last_modified": "2026-04-15",
-      "description": "Google Calendar: Manage calendars and events."
+      "hash": "3d4a4a7d",
+      "last_modified": "2026-05-09",
+      "description": "Google Calendar v3 via la CLI gws : gère calendriers, événements, ACL, paramètres, freebusy et settings. Couvre tout le périmètre ..."
     },
     "gws-chat-send": {
-      "hash": "29daeb6d",
-      "last_modified": "2026-04-15",
-      "description": "Google Chat: Send a message to a space."
+      "hash": "4fb3e56c",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws chat +send : envoie un message texte dans un space Google Chat (spaces/AAAA...). Une commande shell pour notifier équip..."
     },
     "gws-chat": {
-      "hash": "71d5ef7e",
-      "last_modified": "2026-04-15",
-      "description": "Google Chat: Manage Chat spaces and messages."
+      "hash": "71c2e368",
+      "last_modified": "2026-05-09",
+      "description": "Google Chat v1 via la CLI gws : gère espaces, membres, messages, threads, customEmojis, attachments. Couvre tout le périmètre API ..."
     },
     "gws-classroom": {
-      "hash": "768863c8",
-      "last_modified": "2026-04-15",
-      "description": "Google Classroom: Manage classes, rosters, and coursework."
+      "hash": "28b68b9b",
+      "last_modified": "2026-05-09",
+      "description": "Google Classroom v1 via la CLI gws : gère cours, élèves, enseignants, devoirs (courseWork), submissions, annonces, topics, registr..."
     },
     "gws-docs-write": {
-      "hash": "b390343c",
-      "last_modified": "2026-04-15",
-      "description": "Google Docs: Append text to a document."
+      "hash": "f893ec09",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws docs +write : ajoute du texte (append) à un Google Doc existant, en plain text. Une commande shell pour journaliser, lo..."
     },
     "gws-docs": {
-      "hash": "77b05f21",
-      "last_modified": "2026-04-15",
-      "description": "Read and write Google Docs."
+      "hash": "0b7dad56",
+      "last_modified": "2026-05-09",
+      "description": "Lit, cree et met a jour des Google Docs via le CLI `gws`. Operations natives : ouvrir un Doc, extraire son contenu, ajouter du tex..."
     },
     "gws-drive-upload": {
-      "hash": "ab78e4b8",
-      "last_modified": "2026-04-15",
-      "description": "Google Drive: Upload a file with automatic metadata."
+      "hash": "3624ff45",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws drive +upload : upload un fichier local vers Google Drive avec détection auto du MIME type, support parent folder et dr..."
     },
     "gws-drive": {
-      "hash": "4187209b",
-      "last_modified": "2026-04-15",
-      "description": "Google Drive: Manage files, folders, and shared drives."
+      "hash": "f708a46a",
+      "last_modified": "2026-05-09",
+      "description": "Google Drive v3 via la CLI gws : gère fichiers, dossiers, permissions, drives partagés, comments, replies, revisions, changes. Cou..."
     },
     "gws-events-renew": {
-      "hash": "1e1e95df",
-      "last_modified": "2026-04-15",
-      "description": "Google Workspace Events: Renew/reactivate Workspace Events subscriptions."
+      "hash": "f53e4481",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws events +renew : renouvelle ou réactive une souscription Workspace Events qui arrive à expiration, soit ciblée (--name) ..."
     },
     "gws-events-subscribe": {
-      "hash": "a1a5928a",
-      "last_modified": "2026-04-15",
-      "description": "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
+      "hash": "0dee1bf7",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws events +subscribe : crée (ou réutilise) une souscription Workspace Events sur un target (chat space, meet space, drive ..."
     },
     "gws-events": {
-      "hash": "82cc900d",
-      "last_modified": "2026-04-15",
-      "description": "Subscribe to Google Workspace events."
+      "hash": "af90f2a8",
+      "last_modified": "2026-05-09",
+      "description": "Google Workspace Events v1 via la CLI gws : gère les souscriptions aux events Workspace (Chat, Meet, Drive...). Couvre le CRUD raw..."
     },
     "gws-forms": {
-      "hash": "af970766",
-      "last_modified": "2026-04-15",
-      "description": "Read and write Google Forms."
+      "hash": "8802e28d",
+      "last_modified": "2026-05-09",
+      "description": "Lit et cree des Google Forms via le CLI `gws`. Operations : créer un formulaire, ajouter des questions (texte, choix multiple, éch..."
     },
     "gws-gmail-forward": {
-      "hash": "36ad4906",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Forward a message to new recipients."
+      "hash": "7dc89619",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +forward : forward un message Gmail vers de nouveaux destinataires, en gardant le contenu original (Fwd: prefix, ..."
     },
     "gws-gmail-read": {
-      "hash": "426d84e7",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Read a message and extract its body or headers."
+      "hash": "cd097eba",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +read : lit un message Gmail par ID et extrait son body (plain ou html) et optionnellement les headers (From, To,..."
     },
     "gws-gmail-reply-all": {
-      "hash": "14396c57",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Reply-all to a message (handles threading automatically)."
+      "hash": "98bda468",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +reply-all : répond à TOUS les destinataires d'un message Gmail (To + CC), avec threading auto. Pour discussions ..."
     },
     "gws-gmail-reply": {
-      "hash": "141331d2",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Reply to a message (handles threading automatically)."
+      "hash": "b2dc8eba",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +reply : répond à UN expéditeur d'un message Gmail (pas tous les destinataires), avec threading auto (In-Reply-To..."
     },
     "gws-gmail-send": {
-      "hash": "cd62cc0e",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Send an email."
+      "hash": "9843d12a",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +send : envoie un email Gmail (to, subject, body, support cc/bcc, html, pièces jointes). Une commande shell pour ..."
     },
     "gws-gmail-triage": {
-      "hash": "66635663",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Show unread inbox summary (sender, subject, date)."
+      "hash": "f362e112",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +triage : résumé compact de l'inbox non lue (sender, subject, date), default 20 messages, --query pour custom sea..."
     },
     "gws-gmail-watch": {
-      "hash": "0fb052b5",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Watch for new emails and stream them as NDJSON."
+      "hash": "7c046ccd",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws gmail +watch : configure le push Pub/Sub Gmail (project + topic) et streame les nouveaux messages au format NDJSON sur ..."
     },
     "gws-gmail": {
-      "hash": "a33af595",
-      "last_modified": "2026-04-15",
-      "description": "Gmail: Send, read, and manage email."
+      "hash": "9c8f2615",
+      "last_modified": "2026-05-09",
+      "description": "Gmail v1 via la CLI gws : gère messages, threads, drafts, labels, filters, settings, attachments, history. Couvre toute l'API brut..."
     },
     "gws-keep": {
-      "hash": "d257203b",
-      "last_modified": "2026-04-15",
-      "description": "Manage Google Keep notes."
+      "hash": "46c13bfb",
+      "last_modified": "2026-05-09",
+      "description": "Google Keep v1 via la CLI gws : gère les notes Keep (create, get, list, delete) et leurs attachments (download). API limitée à l'u..."
     },
     "gws-meet": {
-      "hash": "d555e5ca",
-      "last_modified": "2026-04-15",
-      "description": "Manage Google Meet conferences."
+      "hash": "fc28fd02",
+      "last_modified": "2026-05-09",
+      "description": "Google Meet v2 via la CLI gws : gère conferenceRecords (visios passées), participants, recordings, transcripts, smartNotes, et les..."
     },
     "gws-modelarmor-create-template": {
-      "hash": "773bdf42",
-      "last_modified": "2026-04-15",
-      "description": "Google Model Armor: Create a new Model Armor template."
+      "hash": "23c16f7b",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws modelarmor +create-template : crée un nouveau template Model Armor sur GCP (project + location + template-id) avec les ..."
     },
     "gws-modelarmor-sanitize-prompt": {
-      "hash": "b459266c",
-      "last_modified": "2026-04-15",
-      "description": "Google Model Armor: Sanitize a user prompt through a Model Armor template."
+      "hash": "f13e584e",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws modelarmor +sanitize-prompt : passe un prompt utilisateur dans un template Model Armor existant et retourne le verdict ..."
     },
     "gws-modelarmor-sanitize-response": {
-      "hash": "58d6c19c",
-      "last_modified": "2026-04-15",
-      "description": "Google Model Armor: Sanitize a model response through a Model Armor template."
+      "hash": "ef8a3210",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws modelarmor +sanitize-response : passe une réponse de modèle LLM dans un template Model Armor et retourne le verdict saf..."
     },
     "gws-modelarmor": {
-      "hash": "390078c8",
-      "last_modified": "2026-04-15",
-      "description": "Google Model Armor: Filter user-generated content for safety."
+      "hash": "b594e654",
+      "last_modified": "2026-05-09",
+      "description": "Google Model Armor v1 via la CLI gws : safety layer GCP qui filtre prompts et réponses LLM (contournement, PII, toxique, malveilla..."
     },
     "gws-people": {
-      "hash": "427bfc57",
-      "last_modified": "2026-04-15",
-      "description": "Google People: Manage contacts and profiles."
+      "hash": "db128c1b",
+      "last_modified": "2026-05-09",
+      "description": "Google People v1 via la CLI gws : gère contacts personnels et contactGroups (CRUD), recherche, lookup directory tenant, profils. P..."
     },
     "gws-shared": {
-      "hash": "cd729317",
-      "last_modified": "2026-04-15",
-      "description": "gws CLI: Shared patterns for authentication, global flags, and output formatting."
+      "hash": "57f58ab8",
+      "last_modified": "2026-05-09",
+      "description": "Référence partagée de la CLI gws : auth (OAuth interactif et Service Account), global flags, formats d'output (json, table, yaml, ..."
     },
     "gws-sheets-append": {
-      "hash": "3c7c04b9",
-      "last_modified": "2026-04-15",
-      "description": "Google Sheets: Append a row to a spreadsheet."
+      "hash": "519a2fd2",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws sheets +append : ajoute une ligne à un Google Sheet (spreadsheet ID + valeurs CSV). Idéal pour log, journal, dump récur..."
     },
     "gws-sheets-read": {
-      "hash": "67ebb952",
-      "last_modified": "2026-04-15",
-      "description": "Google Sheets: Read values from a spreadsheet."
+      "hash": "1e376d48",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws sheets +read : lit les valeurs d'une plage Google Sheets (spreadsheet ID + range A1, ex Sheet1!A1:B2). Sortie shell-fri..."
     },
     "gws-sheets": {
-      "hash": "b7b64e95",
-      "last_modified": "2026-04-15",
-      "description": "Google Sheets: Read and write spreadsheets."
+      "hash": "0503dc6a",
+      "last_modified": "2026-05-09",
+      "description": "Google Sheets v4 via la CLI gws : gère spreadsheets en lecture / écriture avancées (batchUpdate, formules, valuesRanges, format, n..."
     },
     "gws-slides": {
-      "hash": "7d3efa07",
-      "last_modified": "2026-04-15",
-      "description": "Google Slides: Read and write presentations."
+      "hash": "cc9a4ed3",
+      "last_modified": "2026-05-09",
+      "description": "Google Slides v1 via la CLI gws : gère les présentations Slides (create, get, batchUpdate, pages). Pour automatiser génération de ..."
     },
     "gws-tasks": {
-      "hash": "dc88071c",
-      "last_modified": "2026-04-15",
-      "description": "Google Tasks: Manage task lists and tasks."
+      "hash": "07daa766",
+      "last_modified": "2026-05-09",
+      "description": "Google Tasks v1 via la CLI gws : gère les tasklists et les tasks (insert, update, delete, list, patch, move, clear, search). Pour ..."
     },
     "gws-workflow-email-to-task": {
-      "hash": "d089eb89",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Convert a Gmail message into a Google Tasks entry."
+      "hash": "933b50df",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws workflow +email-to-task : convertit un message Gmail (par ID) en entrée Google Tasks dans la tasklist voulue (default @..."
     },
     "gws-workflow-file-announce": {
-      "hash": "bbbf287f",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Announce a Drive file in a Chat space."
+      "hash": "f47a9aed",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws workflow +file-announce : annonce un fichier Drive (par ID) dans un space Google Chat avec carte enrichie (titre, type,..."
     },
     "gws-workflow-meeting-prep": {
-      "hash": "36583996",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Prepare for your next meeting: agenda, attendees, and linked docs."
+      "hash": "9ac826cd",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws workflow +meeting-prep : prépare ta prochaine réunion (agenda, attendees, docs linkés depuis l'event Calendar). Sortie ..."
     },
     "gws-workflow-standup-report": {
-      "hash": "15745855",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Today's meetings + open tasks as a standup summary."
+      "hash": "effa5110",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws workflow +standup-report : agrège les meetings du jour (Calendar) + les tâches ouvertes (Tasks) en un résumé standup, s..."
     },
     "gws-workflow-weekly-digest": {
-      "hash": "b0bc6a37",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Weekly summary: this week's meetings + unread email count."
+      "hash": "7facdee7",
+      "last_modified": "2026-05-09",
+      "description": "Helper gws workflow +weekly-digest : résumé hebdo combinant les meetings de la semaine (Calendar) et le compteur d'inbox non lue (..."
     },
     "gws-workflow": {
-      "hash": "b76cb017",
-      "last_modified": "2026-04-15",
-      "description": "Google Workflow: Cross-service productivity workflows."
+      "hash": "9b5bfd4c",
+      "last_modified": "2026-05-09",
+      "description": "Workflows cross-services Google Workspace via la CLI gws : agrège plusieurs APIs (Gmail + Calendar + Tasks + Drive + Chat) en une ..."
     },
     "frontend-design": {
-      "hash": "7b56cf77",
-      "last_modified": "2026-04-15",
-      "description": "Conçoit des interfaces frontend distinctives et de qualité production. Utilise ce skill pour construire des composants web, pages,..."
+      "hash": "0b1e9f21",
+      "last_modified": "2026-05-09",
+      "description": "Conçoit des interfaces frontend distinctives, production-grade, anti \"AI slop\" : typo non générique, palette tranchée, motion inte..."
     },
     "docker-expert": {
       "hash": "009b62e2",
@@ -1497,159 +1512,169 @@
       "description": "Suite d'outils pour créer des artefacts HTML claude.ai multi-composants et élaborés avec des technologies web modernes (React, Tai..."
     },
     "api-patterns": {
-      "hash": "3297284b",
-      "last_modified": "2026-04-15",
-      "description": "Principes de conception d'API et aide à la décision. Sélection REST vs GraphQL vs tRPC, formats de réponse, versioning, pagination..."
+      "hash": "bf51a8c1",
+      "last_modified": "2026-05-09",
+      "description": "Aide à concevoir une API : choisir REST vs GraphQL vs tRPC, structurer les réponses, versionner, paginer, sécuriser auth et rate-l..."
     },
     "backend-dev-guidelines": {
-      "hash": "2b0fa8fa",
-      "last_modified": "2026-04-15",
-      "description": "Standards de développement backend pour microservices Node.js + Express + TypeScript. Architecture en couches, pattern BaseControl..."
+      "hash": "a1a85516",
+      "last_modified": "2026-05-09",
+      "description": "Standards de développement pour microservices Node.js + Express + TypeScript : architecture en couches (routes → controllers → ser..."
     },
     "database-design": {
-      "hash": "ec8cb3b4",
-      "last_modified": "2026-04-15",
-      "description": "Principes de conception de bases de données et aide à la décision. Conception de schémas, stratégies d'indexation, sélection d'ORM..."
+      "hash": "9ddd878e",
+      "last_modified": "2026-05-09",
+      "description": "Aide à concevoir un schéma de base de données : choisir entre PostgreSQL / Neon / Turso / SQLite, sélectionner l'ORM (Drizzle / Pr..."
     },
     "frontend-developer": {
-      "hash": "d444a3d0",
-      "last_modified": "2026-04-15",
-      "description": "Construit des composants React, implémente des layouts responsive et gère l'état côté client. Maîtrise React 19, Next.js 15 et l'a..."
+      "hash": "ba396090",
+      "last_modified": "2026-05-09",
+      "description": "Construit des composants React 19 et Next.js 15, gère l'état côté client, optimise la performance (RSC, Suspense, Actions, useOpti..."
     },
     "nextjs-best-practices": {
-      "hash": "e8a44bc1",
-      "last_modified": "2026-04-15",
-      "description": "Principes Next.js App Router. Server Components, récupération de données, patterns de routage."
+      "hash": "e2d681e6",
+      "last_modified": "2026-05-09",
+      "description": "Principes Next.js App Router : arbitrage Server vs Client Component, stratégie de fetch (static / ISR / dynamic), patterns de rout..."
     },
     "nextjs-supabase-auth": {
-      "hash": "48b32363",
-      "last_modified": "2026-04-15",
-      "description": "Intégration experte de Supabase Auth avec Next.js App Router. Couvre l'authentification, le middleware, les routes protégées et la..."
+      "hash": "e3454e84",
+      "last_modified": "2026-05-09",
+      "description": "Intègre Supabase Auth avec Next.js App Router : @supabase/ssr, middleware pour rafraîchir la session, routes protégées, callback O..."
     },
     "react-patterns": {
-      "hash": "ce5d0e9f",
-      "last_modified": "2026-04-15",
-      "description": "Patterns et principes React modernes. Hooks, composition de composants, performance et bonnes pratiques TypeScript."
+      "hash": "d10e760e",
+      "last_modified": "2026-05-09",
+      "description": "Patterns React modernes : composition de composants (Server / Client / Presentational / Container), hooks customs (useDebounce, us..."
     },
     "remotion": {
-      "hash": "0c0f4b0c",
-      "last_modified": "2026-04-15",
-      "description": "Construire des vidéos programmatiques avec Remotion (React). Utiliser pour créer des compositions vidéo, animer des éléments frame..."
+      "hash": "f724db64",
+      "last_modified": "2026-05-09",
+      "description": "Construit des vidéos programmatiques avec Remotion (React) : compositions, animations frame-by-frame, gestion audio/vidéo/images, ..."
     },
     "senior-fullstack": {
-      "hash": "2561e315",
-      "last_modified": "2026-04-15",
-      "description": "Développement fullstack complet pour construire des applications web avec React, Next.js, Node.js, GraphQL et PostgreSQL. Inclut l..."
+      "hash": "34bba9ab",
+      "last_modified": "2026-05-09",
+      "description": "Toolkit fullstack senior pour scaffolder un projet (React + Next.js + Node.js + GraphQL + PostgreSQL), poser l'architecture complè..."
     },
     "stripe-integration": {
-      "hash": "81208163",
-      "last_modified": "2026-04-15",
-      "description": "Implémente le traitement des paiements Stripe avec des flux sécurisés PCI-compliant : checkout, abonnements et webhooks. Utilise c..."
+      "hash": "dfea9d55",
+      "last_modified": "2026-05-09",
+      "description": "Implémente le traitement de paiements Stripe PCI-compliant : Checkout Sessions, Payment Intents, Setup Intents, Subscriptions, web..."
     },
     "vercel-react-best-practices": {
       "hash": "0cbf8154",
       "last_modified": "2026-04-15",
       "description": "Guide d'optimisation des performances React et Next.js par Vercel Engineering. Utilise ce skill pour écrire, réviser ou refactoris..."
     },
+    "skill-creator-ccguide": {
+      "hash": "ccfc0344",
+      "last_modified": "2026-05-09",
+      "description": "Génère un nouveau skill Claude Code avec structure répertoire correcte, frontmatter YAML valide, et ressources bundled (scripts/, ..."
+    },
     "design-patterns": {
-      "hash": "20035820",
-      "last_modified": "2026-04-19",
-      "description": "Detect, suggest, and evaluate GoF design patterns in TypeScript/JavaScript codebases. Use when refactoring code, applying singleto..."
+      "hash": "195da0d5",
+      "last_modified": "2026-05-09",
+      "description": "Détecte, suggère et évalue les 23 design patterns Gang of Four dans une codebase TypeScript / JavaScript, avec adaptation stack-aw..."
     },
     "token-audit": {
-      "hash": "4f6788b3",
-      "last_modified": "2026-04-19",
-      "description": "Audit Claude Code configuration to measure fixed-context token overhead and produce a prioritized action plan"
+      "hash": "564606c2",
+      "last_modified": "2026-05-09",
+      "description": "Mesure le token overhead fixe d'une configuration Claude Code (CLAUDE.md, rules, MEMORY.md, system prompt) avant toute tâche utili..."
     },
     "score-review-pipeline": {
-      "hash": "6adaaaa6",
-      "last_modified": "2026-04-28",
-      "description": "Use when designing a CLI-driven data pipeline qui ingère un corpus, score chaque item selon plusieurs critères déterministes, sort..."
+      "hash": "6fcb4d29",
+      "last_modified": "2026-05-09",
+      "description": "Conçoit un pipeline CLI déterministe en 4 étapes (sync → resolve → review → action) pour ingérer un corpus, scorer chaque item, so..."
     },
-    "Analyseur CSV / Excel → Rapport décisionnel": {
-      "hash": "f6a3ad8c",
-      "last_modified": "2026-03-13",
-      "description": "Analyse automatiquement un fichier CSV ou Excel et génère un rapport professionnel structuré avec résumé exécutif (5 lignes max), ..."
+    "skoatch-api": {
+      "hash": "0d226d14",
+      "last_modified": "2026-05-11",
+      "description": "Pilote l'API Skoatch (https://skoatch.com/api) via le tool Python `tools/skoatch/` pour generer des articles, lister projets, recu..."
+    },
+    "csv-excel-report": {
+      "hash": "3b1df28e",
+      "last_modified": "2026-05-09",
+      "description": "Analyse un fichier CSV ou Excel et génère un rapport décisionnel structure : resume executif (5 lignes max), tendances principales..."
     },
     "docx": {
-      "hash": "ebd3b766",
-      "last_modified": "2026-03-14",
-      "description": "Crée, lit, modifie ou manipule des fichiers Word (.docx). Utilise ce skill pour produire des documents professionnels avec formata..."
+      "hash": "c0e9043a",
+      "last_modified": "2026-05-09",
+      "description": "Crée, lit, modifie et manipule des fichiers Word (.docx) : production de documents pro avec formatage (TOC, titres, numéros de pag..."
     },
     "pdf": {
-      "hash": "6c066dab",
-      "last_modified": "2026-03-14",
-      "description": "Manipule des fichiers PDF : lecture, extraction de texte/tableaux, fusion, découpage, rotation, ajout de filigranes, création, rem..."
+      "hash": "f7a3e5e8",
+      "last_modified": "2026-05-09",
+      "description": "Manipule des fichiers PDF via pypdf et libs Python ou JS : lecture, extraction texte et tableaux, fusion, decoupage, rotation, ajo..."
     },
     "xlsx": {
-      "hash": "0021b85d",
-      "last_modified": "2026-03-14",
-      "description": "Ouvre, lit, modifie, crée ou corrige des fichiers tableur (.xlsx, .xlsm, .csv, .tsv) : ajout de colonnes, calculs de formules, for..."
+      "hash": "2cf42827",
+      "last_modified": "2026-05-09",
+      "description": "Ouvre, lit, modifie, cree ou corrige des fichiers tableur (.xlsx, .xlsm, .csv, .tsv) : ajout de colonnes, formules, formatage, gra..."
     },
     "canvas-design": {
-      "hash": "a0063447",
-      "last_modified": "2026-03-14",
-      "description": "Crée des visuels originaux en .png et .pdf selon une philosophie de design soignée. Utilise ce skill pour concevoir des posters, i..."
+      "hash": "79da6f4b",
+      "last_modified": "2026-05-09",
+      "description": "Crée des visuels originaux en .png et .pdf selon une philosophie de design soignée (design philosophy d'abord, puis expression vis..."
     },
     "heygen": {
-      "hash": "32d10ace",
-      "last_modified": "2026-04-23",
-      "description": "Création de vidéos IA avec avatars via l'API HeyGen. Utilise ce skill pour générer une vidéo avatar en un prompt, créer une vidéo ..."
+      "hash": "48f55863",
+      "last_modified": "2026-05-09",
+      "description": "Création de vidéos IA avec avatars via l'API HeyGen (MCP `mcp__heygen__*` ou HTTP direct). Couvre : génération vidéo depuis prompt..."
     },
     "music": {
-      "hash": "375d6b74",
-      "last_modified": "2026-03-14",
-      "description": "Génère de la musique via l'API ElevenLabs Music. Utilise ce skill pour créer des pistes instrumentales, des chansons avec paroles,..."
+      "hash": "11ceacf5",
+      "last_modified": "2026-05-09",
+      "description": "Génère de la musique via l'API ElevenLabs Music. Pour pistes instrumentales, chansons avec paroles, musique de fond, jingles, band..."
     },
     "remotion-best-practices": {
-      "hash": "aa33a626",
-      "last_modified": "2026-03-14",
-      "description": "Bonnes pratiques Remotion pour la création de vidéos programmatiques en React. Utilise ce skill pour tout code Remotion : composit..."
+      "hash": "927a8bef",
+      "last_modified": "2026-05-09",
+      "description": "Bonnes pratiques Remotion (vidéos programmatiques en React) pour cas avancés : FFmpeg, captions/sous-titres, 3D, voiceover, charts..."
     },
     "sound-effects": {
-      "hash": "a9319258",
-      "last_modified": "2026-03-14",
-      "description": "Génère des effets sonores à partir de descriptions textuelles via ElevenLabs. Utilise ce skill pour créer des effets sonores, text..."
+      "hash": "df82daea",
+      "last_modified": "2026-05-09",
+      "description": "Génère des effets sonores à partir de descriptions textuelles via ElevenLabs (text_to_sound_effects). Pour FX cinématiques, sons U..."
     },
     "speech-to-text": {
-      "hash": "18fbd2c6",
-      "last_modified": "2026-03-14",
-      "description": "Transcrit de l'audio en texte via ElevenLabs Scribe v2. Utilise ce skill pour convertir des fichiers audio ou vidéo en texte, géné..."
+      "hash": "6b13addb",
+      "last_modified": "2026-05-09",
+      "description": "Transcrit de l'audio en texte via ElevenLabs Scribe v2 (90+ langues, diarisation locuteurs, timestamps mot par mot). Pour transcri..."
     },
     "svg-burger-illustration": {
-      "hash": "daf57418",
-      "last_modified": "2026-03-14",
-      "description": "Génère un fichier SVG autonome d'un burger minimaliste assemblé avec une animation de survol fluide qui sépare verticalement les 6..."
+      "hash": "35205b7c",
+      "last_modified": "2026-05-09",
+      "description": "Génère un fichier SVG autonome d'un burger minimaliste avec animation hover fluide qui sépare verticalement les 6 couches (bun hau..."
     },
     "text-to-speech": {
-      "hash": "6121ca60",
-      "last_modified": "2026-03-14",
-      "description": "Génération audio voix-off à partir de texte via le modèle TTS Starfish de HeyGen. Utilise ce skill pour convertir du texte en fich..."
+      "hash": "11c60b82",
+      "last_modified": "2026-05-09",
+      "description": "Génération audio voix-off à partir de texte via le modèle TTS Starfish de HeyGen (`mcp__heygen__text_to_speech` ou `POST /v1/audio..."
     },
     "video-translate": {
-      "hash": "15fde965",
-      "last_modified": "2026-03-14",
-      "description": "Traduction et doublage de vidéos existantes en plusieurs langues via HeyGen. Utilise ce skill pour traduire une vidéo dans une aut..."
+      "hash": "5cec22e7",
+      "last_modified": "2026-05-09",
+      "description": "Traduction et doublage d'une vidéo existante en plusieurs langues via HeyGen (`POST /v2/video_translate`). Lip-sync préservé, voix..."
     },
     "notebooklm-skills": {
-      "hash": "07a292b8",
-      "last_modified": "2026-04-15",
-      "description": "Transforme fichiers et dossiers en matériaux pédagogiques avec NotebookLM. Crée podcasts audio, vidéos explicatives, slides, guide..."
+      "hash": "50db7120",
+      "last_modified": "2026-05-09",
+      "description": "Transforme fichiers et dossiers en matériaux pédagogiques avec NotebookLM via le MCP `notebooklm-mcp`. Crée podcasts audio, vidéos..."
     },
     "schoolswp-motion": {
-      "hash": "4d22a3d9",
-      "last_modified": "2026-03-30",
-      "description": "Directeur technique motion design senior pour le projet video schoolsWP (Remotion). Utilise ce skill pour creer, modifier, debogue..."
+      "hash": "fa872c1b",
+      "last_modified": "2026-05-09",
+      "description": "Directeur technique motion design senior pour le projet video schoolsWP (Remotion). Utilise ce skill pour créer, modifier, debogue..."
     },
     "wordpress-pro": {
-      "hash": "0518e18c",
-      "last_modified": "2026-03-14",
-      "description": "Développe des thèmes et plugins WordPress personnalisés, crée et enregistre des blocs Gutenberg et patterns, configure des boutiqu..."
+      "hash": "3c0716a9",
+      "last_modified": "2026-05-09",
+      "description": "Expert end-to-end WordPress : thèmes et plugins custom, blocs Gutenberg et patterns, boutiques WooCommerce, endpoints REST API, du..."
     },
     "wordpress-router": {
-      "hash": "3941059d",
-      "last_modified": "2026-03-14",
-      "description": "Classifie et route vers le bon workflow ou skill WordPress selon le type de dépôt (plugin, thème, block theme, blocs Gutenberg, WP..."
+      "hash": "519343ce",
+      "last_modified": "2026-05-09",
+      "description": "Classifie un dépôt WordPress (plugin / thème / block theme / blocs Gutenberg / WP core / full site) et route vers le bon skill dom..."
     },
     "wp-abilities-api": {
       "hash": "1c45e92d",
@@ -1657,69 +1682,69 @@
       "description": "Expert de l'API WordPress Abilities (wp_register_ability, wp_register_ability_category, /wp-json/wp-abilities/v1/*, @wordpress/abi..."
     },
     "wp-block-development": {
-      "hash": "24bb78c0",
-      "last_modified": "2026-03-14",
-      "description": "Développement de blocs WordPress (Gutenberg) : block.json, register_block_type, attributs/sérialisation, supports, rendu dynamique..."
+      "hash": "4ad4fe7a",
+      "last_modified": "2026-05-09",
+      "description": "Développement de blocs Gutenberg WordPress : block.json, register_block_type, attributs et sérialisation, supports, rendu dynamiqu..."
     },
     "wp-block-themes": {
-      "hash": "3d5def72",
-      "last_modified": "2026-03-14",
-      "description": "Développement de block themes WordPress : theme.json (paramètres/styles globaux), templates et template parts, patterns, variation..."
+      "hash": "ef832e5d",
+      "last_modified": "2026-05-09",
+      "description": "Développement de block themes WordPress (FSE) : theme.json (settings, presets, styles globaux et per-block), templates HTML et tem..."
     },
     "wp-interactivity-api": {
-      "hash": "f192d98d",
-      "last_modified": "2026-03-14",
-      "description": "Construit et débogue des fonctionnalités WordPress Interactivity API (directives data-wp-*, store/state/actions @wordpress/interac..."
+      "hash": "85cb036b",
+      "last_modified": "2026-05-09",
+      "description": "Build et debug WordPress Interactivity API : directives data-wp-* (interactive, on, bind, context), store et state et actions via ..."
     },
     "wp-performance": {
-      "hash": "173a2613",
-      "last_modified": "2026-03-14",
-      "description": "Analyse et améliore les performances WordPress (agent backend) : profilage et mesure (WP-CLI profile/doctor, Server-Timing, Query ..."
+      "hash": "9ef6f35c",
+      "last_modified": "2026-05-09",
+      "description": "Analyse et améliore les performances WordPress côté backend : profilage et mesure (WP-CLI profile et doctor, Server-Timing, Query ..."
     },
     "wp-phpstan": {
-      "hash": "58735a5a",
-      "last_modified": "2026-03-14",
-      "description": "Configure, exécute et corrige PHPStan dans les projets WordPress (plugins/thèmes/sites) : setup phpstan.neon, baselines, typage sp..."
+      "hash": "851fe0b8",
+      "last_modified": "2026-05-09",
+      "description": "Configure, exécute et corrige PHPStan dans les projets WordPress (plugins, thèmes, sites) : setup phpstan.neon, baseline, typage W..."
     },
     "wp-playground": {
-      "hash": "9f0093b6",
-      "last_modified": "2026-03-14",
-      "description": "Workflows WordPress Playground — instances WP rapides et jetables dans le navigateur ou localement via @wp-playground/cli (server,..."
+      "hash": "58c24066",
+      "last_modified": "2026-05-09",
+      "description": "Workflows WordPress Playground : instances WP jetables WebAssembly + SQLite, locales via @wp-playground/cli (server, run-blueprint..."
     },
     "wp-plugin-development": {
-      "hash": "de3f1007",
-      "last_modified": "2026-03-14",
-      "description": "Développement de plugins WordPress : architecture et hooks, activation/désactivation/désinstallation, UI d'administration et Setti..."
+      "hash": "2c7c5be6",
+      "last_modified": "2026-05-09",
+      "description": "Développement de plugins WordPress : architecture et bootstrap, hooks (actions, filters, custom hooks), activation et désactivatio..."
     },
     "wp-project-triage": {
-      "hash": "8d0b85c9",
-      "last_modified": "2026-03-14",
-      "description": "Inspection déterministe d'un dépôt WordPress (plugin/thème/block theme/WP core/Gutenberg) : outils, tests, indices de version et r..."
+      "hash": "189387e9",
+      "last_modified": "2026-05-09",
+      "description": "Inspection déterministe d'un dépôt WordPress (plugin, thème, block theme, WP core, Gutenberg) : détection des outils (PHP, Compose..."
     },
     "wp-rest-api": {
-      "hash": "2031aee6",
-      "last_modified": "2026-03-14",
-      "description": "Construit, étend et débogue des endpoints/routes WordPress REST API : register_rest_route, classes WP_REST_Controller, validation ..."
+      "hash": "946a04cf",
+      "last_modified": "2026-05-09",
+      "description": "Build, extend et debug des routes WordPress REST API : register_rest_route, classes WP_REST_Controller, validation schéma et argum..."
     },
     "wp-wpcli-and-ops": {
-      "hash": "3ea94920",
-      "last_modified": "2026-03-14",
-      "description": "Opérations WordPress via WP-CLI : search-replace sécurisé, import/export de base de données, gestion des plugins/thèmes/utilisateu..."
+      "hash": "7bbfb2dd",
+      "last_modified": "2026-05-09",
+      "description": "Opérations WordPress via WP-CLI : wp search-replace sécurisé (URL changes, migrations domaine, switch protocole), wp db export et ..."
     },
     "wpds": {
-      "hash": "9dd51d58",
-      "last_modified": "2026-03-14",
-      "description": "Construit des interfaces avec le WordPress Design System (WPDS) : composants, tokens, patterns et guidelines WPDS. Déclenche pour ..."
+      "hash": "f7973487",
+      "last_modified": "2026-05-09",
+      "description": "Build des interfaces avec le WordPress Design System (WPDS) : composants @wordpress/components et @wordpress/ui, design tokens (co..."
     },
     "dev-wordpress": {
-      "hash": "2b621acd",
-      "last_modified": "2026-04-15",
-      "description": "Développement WordPress expert conforme aux standards modernes (blocs, thèmes, plugins, REST API, Interactivity API). Utilise ce s..."
+      "hash": "ababcc7d",
+      "last_modified": "2026-05-09",
+      "description": "Développement WordPress expert aligné sur les standards modernes WP 6.9+ (PHP 8.0+) : blocs Gutenberg, block themes, plugins, REST..."
     },
     "wordpress": {
-      "hash": "38cfa4d9",
-      "last_modified": "2026-04-15",
-      "description": "Espace métier WordPress - sites, blogs, WooCommerce et maintenance. Utiliser pour toute tâche liée à WordPress (articles, pages, p..."
+      "hash": "3ffec719",
+      "last_modified": "2026-05-09",
+      "description": "Espace métier WordPress schoolsWP : index de l'espace de travail (contenu, SEO, e-commerce, maintenance, performance). Pas un skil..."
     },
     "wp-freelance-training": {
       "hash": "414e492a",
@@ -1727,9 +1752,9 @@
       "description": "Construit des plans de formation WordPress complets pour freelances, structurés en 10 modules (fondations, éditeur, thèmes/plugins..."
     },
     "avoid-ai-writing": {
-      "hash": "78c8c1d7",
-      "last_modified": "2026-04-18",
-      "description": "Audit and rewrite content to remove 21 categories of AI writing patterns with a 43-entry replacement table"
+      "hash": "c79a6438",
+      "last_modified": "2026-05-09",
+      "description": "Audit and rewrite content to remove 21 catégories of AI writing patterns with a 43-entry replacement table"
     },
     "clarvia-aeo-check": {
       "hash": "aacf32c1",
@@ -1742,9 +1767,9 @@
       "description": "Applique la psychologie du consommateur et la persuasion scientifique (JTBD, ELM, narrative transportation, loss/gain framing) pou..."
     },
     "email-sequence": {
-      "hash": "1e380aa9",
-      "last_modified": "2026-04-18",
-      "description": "You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive acti..."
+      "hash": "cc9cae44",
+      "last_modified": "2026-05-09",
+      "description": "Tu es un expert en email marketing et automation. Ton objectif est de créer des séquences email qui nurturent les leads, augmenten..."
     },
     "geo-fundamentals": {
       "hash": "f106fa9a",
@@ -1757,9 +1782,9 @@
       "description": "Analyze and optimize individual pages for conversion performance."
     },
     "popup-cro": {
-      "hash": "aee3e8ca",
-      "last_modified": "2026-04-18",
-      "description": "Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or br..."
+      "hash": "8491cdf8",
+      "last_modified": "2026-05-09",
+      "description": "Crée et optimise les popups, modales, overlays, slide-ins et bannières pour augmenter les conversions sans nuire à l'UX ni à la co..."
     },
     "seo-aeo-internal-linking": {
       "hash": "3ba2aacc",
@@ -1767,14 +1792,14 @@
       "description": "Maps internal link opportunities between pages with anchor text, placement instructions, orphan page detection, and cannibalizatio..."
     },
     "seo-aeo-schema-generator": {
-      "hash": "e28dfa1b",
-      "last_modified": "2026-04-18",
-      "description": "Generates valid JSON-LD structured data for 10 schema types with rich result eligibility validation and implementation-ready scrip..."
+      "hash": "e75efe20",
+      "last_modified": "2026-05-09",
+      "description": "Génère du JSON-LD complet et conforme schema.org pour pages SEO/AEO/GEO (FAQPage, HowTo, Article, Product, Organization, etc.). Ut..."
     },
     "seo-cannibalization-detector": {
-      "hash": "f36c5d2a",
-      "last_modified": "2026-04-18",
-      "description": "Analyzes multiple provided pages to identify keyword overlap and potential cannibalization issues. Suggests differentiation strate..."
+      "hash": "57150e36",
+      "last_modified": "2026-05-09",
+      "description": "Analyzes multiple provided pages to identify keyword overlap and potential cannibalization issues. Suggests differentiation straté..."
     },
     "seo-content-refresher": {
       "hash": "ff41389c",
@@ -1782,29 +1807,29 @@
       "description": "Identifies outdated elements in provided content and suggests updates to maintain freshness. Finds statistics, dates, and examples..."
     },
     "seo-hreflang": {
-      "hash": "95a6d48c",
-      "last_modified": "2026-04-18",
-      "description": "Hreflang and international SEO audit, validation, and generation. Detects common mistakes, validates language/region codes, and ge..."
+      "hash": "9a03c05a",
+      "last_modified": "2026-05-09",
+      "description": "Hreflang and international SEO audit, validation, and génération. Detects common mistakes, validates language/region codes, and ge..."
     },
     "seo-snippet-hunter": {
-      "hash": "b25be1c5",
-      "last_modified": "2026-04-18",
-      "description": "Formats content to be eligible for featured snippets and SERP features. Creates snippet-optimized content blocks based on best pra..."
+      "hash": "0b9e4a12",
+      "last_modified": "2026-05-09",
+      "description": "Formate le contenu pour qu'il soit éligible aux featured snippets et SERP features. Crée des contenus optimisés snippet (paragraph..."
     },
     "web-performance-optimization": {
-      "hash": "4aef1a60",
-      "last_modified": "2026-04-18",
-      "description": "Optimize website and web application performance including loading speed, Core Web Vitals, bundle size, caching strategies, and ru..."
+      "hash": "6ab7b665",
+      "last_modified": "2026-05-09",
+      "description": "Optimize website and web application performance including loading speed, Core Web Vitals, bundle size, caching stratégies, and ru..."
     },
     "wordpress-centric-high-seo-optimized-blogwriting-skill": {
-      "hash": "a8c40bd0",
-      "last_modified": "2026-04-18",
-      "description": "Use this skill when the user asks to write a blog post, article, or SEO content. This applies a professional structure, truth boxe..."
+      "hash": "f519e064",
+      "last_modified": "2026-05-09",
+      "description": "Rédige des articles de blog WordPress hautement optimisés SEO avec structure pédagogique, truth boxes, output WordPress-ready (Gut..."
     },
     "wordpress-plugin-development": {
-      "hash": "cc575156",
-      "last_modified": "2026-04-18",
-      "description": "WordPress plugin development workflow covering plugin architecture, hooks, admin interfaces, REST API, security best practices, an..."
+      "hash": "0822393b",
+      "last_modified": "2026-05-09",
+      "description": "Workflow de développement de plugins WordPress couvrant l'architecture du plugin, les hooks, les interfaces admin, REST API, bonne..."
     },
     "gateguard": {
       "hash": "dd4b7d28",
@@ -1812,69 +1837,69 @@
       "description": "Fact-forcing gate that blocks Edit/Write/Bash (including MultiEdit) and demands concrete investigation (importers, data schemas, u..."
     },
     "cc-design": {
-      "hash": "26a5b8d5",
-      "last_modified": "2026-04-20",
-      "description": "High-fidelity HTML design and prototype creation. Use this skill whenever the user asks to design, prototype, mock up, or build vi..."
-    },
-    "playwright-cli": {
-      "hash": "d7f743f2",
-      "last_modified": "2026-04-20",
-      "description": "Automate browser interactions, test web pages and work with Playwright tests."
-    },
-    "playwright-trace": {
-      "hash": "00992487",
-      "last_modified": "2026-04-20",
-      "description": "Inspect Playwright trace files from the command line — list actions, view requests, console, errors, snapshots and screenshots."
+      "hash": "b186013f",
+      "last_modified": "2026-05-09",
+      "description": "Design HTML haute fidélité pour slide decks, prototypes, landing pages. Brand-grade strict, sortie production-ready (HTML/CSS/JS)...."
     },
     "gsap": {
-      "hash": "de57ffce",
-      "last_modified": "2026-04-23",
-      "description": "GSAP animation reference for HyperFrames. Covers gsap.to(), from(), fromTo(), easing, stagger, defaults, timelines (gsap.timeline(..."
+      "hash": "823f43b8",
+      "last_modified": "2026-05-09",
+      "description": "Référence des animations GSAP pour HyperFrames. Couvre gsap.to(), from(), fromTo(), easing, stagger, defaults, timelines (gsap.tim..."
     },
     "hyperframes": {
-      "hash": "95ad8ec5",
-      "last_modified": "2026-04-23",
-      "description": "Create video compositions, animations, title cards, overlays, captions, voiceovers, audio-reactive visuals, and scene transitions ..."
+      "hash": "bf55bfde",
+      "last_modified": "2026-05-09",
+      "description": "Crée des compositions vidéo, animations, title cards, overlays, captions, voix off, visuels audio-réactifs et transitions de scène..."
     },
     "hyperframes-cli": {
-      "hash": "5fc10776",
-      "last_modified": "2026-04-23",
-      "description": "HyperFrames CLI tool — hyperframes init, lint, preview, render, transcribe, tts, doctor, browser, info, upgrade, compositions, doc..."
+      "hash": "756d329c",
+      "last_modified": "2026-05-09",
+      "description": "Outil CLI HyperFrames - hyperframes init, lint, preview, render, transcribe, tts, doctor, browser, info, upgrade, compositions. Ut..."
     },
     "hyperframes-registry": {
-      "hash": "a840b8fe",
-      "last_modified": "2026-04-23",
-      "description": "Install and wire registry blocks and components into HyperFrames compositions. Use when running hyperframes add, installing a bloc..."
+      "hash": "bad92621",
+      "last_modified": "2026-05-09",
+      "description": "Registre des compositions HyperFrames disponibles dans le projet (templates, snippets, presets)."
     },
     "website-to-hyperframes": {
-      "hash": "82729ad7",
-      "last_modified": "2026-04-23",
-      "description": "Capture a website and create a HyperFrames video from it. Use when: (1) a user provides a URL and wants a video, (2) someone says ..."
+      "hash": "40552a30",
+      "last_modified": "2026-05-09",
+      "description": "Convertit le contenu d'un site web en compositions vidéo HyperFrames (extraction texte, images, animations)."
+    },
+    "remotion-to-hyperframes": {
+      "hash": "3798ba1e",
+      "last_modified": "2026-05-11",
+      "description": "Translate an existing Remotion (React-based) video composition into a HyperFrames HTML composition. Use ONLY when the user explici..."
+    },
+    "hyperframes-media": {
+      "hash": "691e77d9",
+      "last_modified": "2026-05-11",
+      "description": "Asset preprocessing for HyperFrames compositions — text-to-speech narration (Kokoro), audio/video transcription (Whisper), and bac..."
     },
     "liveavatar-debug": {
-      "hash": "90d9ab88",
-      "last_modified": "2026-04-23",
-      "description": "Troubleshoot and debug LiveAvatar integration issues. Use when the user's LiveAvatar integration isn't working, the avatar is sile..."
+      "hash": "7746b79c",
+      "last_modified": "2026-05-09",
+      "description": "Débogue les problèmes d'intégration LiveAvatar : connexion WebSocket, sync audio, latence, état de session."
     },
     "liveavatar-feedback": {
-      "hash": "6da531c9",
-      "last_modified": "2026-04-23",
-      "description": "Collect and submit developer feedback to the LiveAvatar team. Use when: (1) A LiveAvatar integration is done, working, finished, o..."
+      "hash": "9dae99dc",
+      "last_modified": "2026-05-09",
+      "description": "Collecte et analyse les retours utilisateurs sur les sessions LiveAvatar pour optimiser l'expérience."
     },
     "liveavatar-integrate": {
-      "hash": "e5ba25d8",
-      "last_modified": "2026-04-23",
-      "description": "Build a LiveAvatar integration end-to-end — assesses the user's existing stack, recommends the optimal path, and guides implementa..."
+      "hash": "21c2ef0b",
+      "last_modified": "2026-05-09",
+      "description": "Construit une intégration LiveAvatar end-to-end - évalue la stack existante, recommande le chemin optimal et guide l'implémentatio..."
     },
     "video-use": {
-      "hash": "8039f548",
-      "last_modified": "2026-04-27",
-      "description": "Edit any video by conversation. Transcribe, cut, color grade, generate overlay animations, burn subtitles — for talking heads, mon..."
+      "hash": "347f6cde",
+      "last_modified": "2026-05-09",
+      "description": "Édite n'importe quelle vidéo par conversation. Transcription, coupes, color grading, génération d'animations overlay, sous-titres ..."
     },
     "manim-video": {
-      "hash": "89c2ee01",
-      "last_modified": "2026-04-27",
-      "description": "Production pipeline for mathematical and technical animations using Manim Community Edition. Creates 3Blue1Brown-style explainer v..."
+      "hash": "35fccefc",
+      "last_modified": "2026-05-09",
+      "description": "Pipeline de production pour animations mathématiques et techniques avec Manim Community Edition. Crée des vidéos pédagogiques styl..."
     },
     "external-design-systems": {
       "hash": "1024d9ca",
@@ -1897,8 +1922,8 @@
       "description": "[SCHOOLSWP-MODIFIED — see NOTICE.md] Skill MANUEL uniquement. Produit une page pricing single-screen (hero + plan cards 2/3/4 tier..."
     },
     "open-design-docs-page": {
-      "hash": "d162a475",
-      "last_modified": "2026-04-30",
+      "hash": "7981605b",
+      "last_modified": "2026-05-09",
       "description": "[SCHOOLSWP-MODIFIED — see NOTICE.md] Skill MANUEL uniquement. Produit une page documentation 3 colonnes (left nav + body + right T..."
     },
     "defuddle": {
@@ -1907,14 +1932,29 @@
       "description": "Extract clean markdown content from web pages using Defuddle CLI, removing clutter and navigation to save tokens. Use instead of W..."
     },
     "heygen-avatar": {
-      "hash": "5c985537",
-      "last_modified": "2026-05-05",
-      "description": "Create a persistent HeyGen avatar — a reusable face + voice identity for the agent, the user, or any named character — powered by ..."
+      "hash": "2e650ae8",
+      "last_modified": "2026-05-09",
+      "description": "Crée un avatar HeyGen persistant - une identité visage + voix réutilisable pour l'agent, l'utilisateur ou tout personnage nommé - ..."
     },
     "heygen-video": {
-      "hash": "e2a7cfd8",
-      "last_modified": "2026-05-05",
-      "description": "Generate HeyGen presenter videos via the v3 Video Agent pipeline — handles Frame Check (aspect ratio correction), prompt engineeri..."
+      "hash": "fb9d439d",
+      "last_modified": "2026-05-09",
+      "description": "Génère des vidéos présentateur HeyGen via le pipeline v3 Video Agent - gère Frame Check (correction d'aspect ratio), prompt engine..."
+    },
+    "ads-operator": {
+      "hash": "c58f51c5",
+      "last_modified": "2026-05-11",
+      "description": "Opérateur SEA schoolsWP / michaelkihl.fr. Audits Google Ads Search, plans, landing ads, budgets, mots-clés, tracking, Quality Scor..."
+    },
+    "alexya-amateur-photos": {
+      "hash": "bacc520a",
+      "last_modified": "2026-05-11",
+      "description": "Génère des packs de prompts photo amateurs iPhone pour influenceuses IA, à partir de leur identité (archétype + contradiction + dé..."
+    },
+    "influencer-identity-generator": {
+      "hash": "50661fba",
+      "last_modified": "2026-05-11",
+      "description": "Générateur d'identités d'influenceuses IA OnlyFans virales basées sur 3 variables — archétype, contradiction, détail unique. Utili..."
     }
   }
 }

@@ -1,14 +1,9 @@
 ---
 name: wordpress-n8n-blueprints
 description: |
-  Blueprints n8n canoniques pour automatiser WordPress + schoolsWP : auto-tagging articles, génération
-  de contenu dans la voix de marque, chatbot de site, taxonomisation, résumé auto-publié, ingestion
-  d'articles existants. Base : analyse des 6 workflows WordPress du catalogue enescingoz +
-  patterns internes schoolsWP. Déclenche ce skill quand l'utilisateur veut : "automatiser quelque chose
-  sur WordPress avec n8n", "workflow WordPress AI", "auto-tag articles", "génération brand-voice",
-  "chatbot WordPress n8n", "indexer le site dans n8n", "synchroniser WP avec n8n". Complémentaire à
-  n8n-workflow-patterns (patterns généralistes) et n8n-template-finder (recherche dans catalogue).
-  Ce skill se concentre sur les patterns WordPress spécifiquement et leurs adaptations schoolsWP.
+  6 blueprints n8n canoniques pour automatiser WordPress + schoolsWP : auto-tagging articles brand-consistent, génération de contenu dans la voix de marque, chatbot de site, taxonomisation, résumé TL;DR auto-publié, ingestion d'articles existants vers vector store. Adaptés depuis enescingoz + patterns internes schoolsWP.
+  Utilise ce skill quand l'utilisateur dit : "automatise WordPress avec n8n", "workflow WordPress AI", "auto-tag articles WP", "génération brand-voice n8n", "chatbot WordPress n8n", "indexer le site dans n8n", ou pour toute combinaison WordPress + n8n + finalité éditoriale.
+  NE PAS utiliser pour : optimiser un article SEO sans n8n (utiliser skills contenu schoolsWP comme schoolswp-article-workflow), automatisation n8n hors WordPress (utiliser n8n-orchestrator), ou patterns n8n généralistes (utiliser n8n-workflow-patterns).
 ---
 
 # WordPress n8n Blueprints

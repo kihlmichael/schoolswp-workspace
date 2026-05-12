@@ -1,10 +1,9 @@
 ---
 name: speech-to-text
 description: |
-  Transcrit de l'audio en texte via ElevenLabs Scribe v2. Utilise ce skill pour convertir des fichiers
-  audio ou vidéo en texte, générer des sous-titres, transcrire des réunions ou traiter du contenu parlé.
-  Déclenche pour "transcription audio", "speech to text", "sous-titres", "transcrire une réunion",
-  "ElevenLabs Scribe".
+  Transcrit de l'audio en texte via ElevenLabs Scribe v2 (90+ langues, diarisation locuteurs, timestamps mot par mot). Pour transcription d'enregistrements audio/vidéo, génération de sous-titres bruts, transcription de réunions/interviews, traitement de contenu parlé en texte exploitable. Requiert `ELEVENLABS_API_KEY`.
+  Utilise ce skill quand l'utilisateur dit : "transcription audio", "speech to text", "transcris cet audio/vidéo", "sous-titres bruts", "transcrire une réunion", "ElevenLabs Scribe", "diarisation locuteurs", ou fournit un fichier audio/vidéo et veut le texte.
+  NE PAS utiliser pour : génération voix-off depuis texte (utiliser `text-to-speech`), traduction/doublage vidéo (utiliser `video-translate`), édition de vidéo avec sous-titres incrustés (utiliser `external-video-use` qui pilote Scribe en pipeline), ou transcription YouTube via subtitles existants (utiliser DataForSEO `serp_youtube_video_subtitles_live_advanced`).
 license: MIT
 compatibility: Requires internet access and an ElevenLabs API key (ELEVENLABS_API_KEY).
 metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv": "ELEVENLABS_API_KEY"}}

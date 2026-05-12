@@ -1,7 +1,10 @@
 ---
 name: persona-customer-support
 version: 1.0.0
-description: "Manage customer support — track tickets, respond, escalate issues."
+description: |
+  Profil orchestré pour le support client : triage Gmail, suivi tickets en Sheets, escalade dans Chat, planification de calls de follow-up via Calendar. Combine gws-gmail, gws-sheets, gws-chat, gws-calendar.
+  Utilise ce skill quand l'utilisateur dit : "active la persona support client", "mode customer support Workspace", "je veux opérer comme un agent support", ou pour adopter une posture triage-réponse-escalade côté Workspace.
+  NE PAS utiliser pour : profil project manager orienté coordination (utiliser persona-project-manager), profil sales-ops orienté pipeline (utiliser persona-sales-ops), skill Gmail seul (utiliser gws-gmail), ou agent CRM schoolsWP (utiliser flow ou FluentSupport directement).
 metadata:
   openclaw:
     category: "persona"

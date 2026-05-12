@@ -1,10 +1,9 @@
 ---
 name: wp-performance
 description: |
-  Analyse et améliore les performances WordPress (agent backend) : profilage et mesure (WP-CLI
-  profile/doctor, Server-Timing, Query Monitor via headers REST), optimisation base de données/requêtes,
-  options autoloadées, cache objets, cron, appels HTTP API et vérification sécurisée.
-  Déclenche pour "performances WordPress", "WP-CLI profile", "optimiser WordPress", "site WordPress lent".
+  Analyse et améliore les performances WordPress côté backend : profilage et mesure (WP-CLI profile et doctor, Server-Timing, Query Monitor via headers REST), optimisation base de données et requêtes, options autoloadées, object cache, cron, appels HTTP API externes, vérification sans browser. Mesure d'abord, baseline, puis recommandations safe-by-default.
+  Utilise ce skill quand l'utilisateur dit : "performances WordPress", "WP-CLI profile", "optimiser WordPress", "site WordPress lent", "TTFB WordPress lent", "autoload options", ou "object cache WP".
+  NE PAS utiliser pour : optimisation frontend pure CSS/JS/images (utiliser external-antigravity perf-related skills), audit Core Web Vitals navigateur (utiliser seo-specialist ou Lighthouse via chrome-devtools MCP), debug bloc Gutenberg (utiliser wp-block-development), ou config plugin de cache spécifique (FlyingPress, etc., voir docs plugin et avis schoolsWP).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Backend-only agent; prefers WP-CLI (doctor/profile) when available."
 ---
 

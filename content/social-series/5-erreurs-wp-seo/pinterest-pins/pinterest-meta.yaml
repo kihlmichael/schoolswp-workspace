@@ -1,0 +1,67 @@
+# Pinterest meta - série "5 erreurs WordPress SEO 2026"
+# Source : carrousel Instagram parent
+# Board cible : à définir (probablement "WordPress · SEO" ou "Tutos WordPress")
+# URL destination : article pilier schoolsWP (à publier puis lier)
+
+series:
+  slug: 5-erreurs-wp-seo
+  parent_carrousel: content/inspirations/instagram-carrousels/5-erreurs-wp-seo/
+  pillar: SEO
+  publish_window: 2026-Q2
+
+defaults:
+  board: WordPress SEO
+  destination_url: https://schoolswp.com/erreurs-wordpress-seo-2026/  # à publier
+  alt_text_prefix: "schoolsWP · "
+  hashtags:
+    - "#WordPress"
+    - "#SEO"
+    - "#WordPressTips"
+    - "#SiteWeb"
+    - "#Référencement"
+
+pins:
+  - file: pin-01-trop-de-plugins.png
+    title: Trop de plugins WordPress ralentit ton SEO en 2026
+    description: |
+      Chaque plugin actif sur WordPress ralentit ton site. À 40 plugins installés,
+      ton TTFB s'effondre et Google le voit dans tes Core Web Vitals. Découvre
+      comment auditer ton stack plugin sur schoolsWP.
+    alt_text: schoolsWP · Trop de plugins WordPress ralentit ton SEO
+    keywords: ["plugins wordpress", "ttfb", "core web vitals", "audit plugin", "performance wordpress"]
+
+  - file: pin-02-cache-mal-configure.png
+    title: Cache WordPress mal configuré · tu perds en SEO
+    description: |
+      Cache page sans cache objet ni cache CDN, c'est laisser une grosse part de
+      ta perf WordPress sur la table. Apprends à empiler les 3 niveaux de cache
+      sur schoolsWP.
+    alt_text: schoolsWP · Cache WordPress mal configuré te coûte du SEO
+    keywords: ["cache wordpress", "cache objet", "cdn", "perf wordpress", "ttfb"]
+
+  - file: pin-03-images-non-optimisees.png
+    title: Images non optimisées plombent ton LCP en 2026
+    description: |
+      AVIF + lazy loading + LCP sous 2,5 secondes. En 2026, c'est non négociable
+      côté Core Web Vitals. Le guide complet d'optimisation images WordPress
+      sur schoolsWP.
+    alt_text: schoolsWP · Images non optimisées plombent ton LCP en 2026
+    keywords: ["avif", "lcp", "lazy loading", "core web vitals", "optimisation images wordpress"]
+
+  - file: pin-04-maillage-interne.png
+    title: Maillage interne aléatoire dilue ton autorité SEO
+    description: |
+      Si tu pointes 10 articles vers ta page d'accueil, tu noies ton autorité
+      au lieu de la concentrer là où tu veux ranker. Méthode de maillage
+      interne pillar/cluster sur schoolsWP.
+    alt_text: schoolsWP · Maillage interne aléatoire dilue ton autorité SEO
+    keywords: ["maillage interne", "pillar cluster", "cocon sémantique", "autorité seo", "internal linking"]
+
+  - file: pin-05-schema-structure.png
+    title: Pas de schema structuré · Google te lit à moitié
+    description: |
+      Article, FAQ, HowTo, Review. Sans données structurées, Google te lit à
+      moitié et tes rich snippets disparaissent des SERP. Setup schema complet
+      sur schoolsWP.
+    alt_text: schoolsWP · Pas de schema structuré te coûte des rich snippets
+    keywords: ["schema.org", "données structurées", "rich snippets", "faq schema", "howto schema"]

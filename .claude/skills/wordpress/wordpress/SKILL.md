@@ -1,6 +1,9 @@
 ---
 name: wordpress
-description: Espace métier WordPress - sites, blogs, WooCommerce et maintenance. Utiliser pour toute tâche liée à WordPress (articles, pages, plugins, thèmes, e-commerce).
+description: |
+  Espace métier WordPress schoolsWP : index de l'espace de travail (contenu, SEO, e-commerce, maintenance, performance). Pas un skill exécutable, c'est un dossier-parapluie qui organise les workflows et SOPs liés aux sites WP de l'écosystème schoolsWP.
+  Utilise ce skill quand l'utilisateur dit : "espace WordPress", "structure dossier WP", "où sont les workflows WP", ou pour naviguer dans l'organisation interne de cet espace métier.
+  NE PAS utiliser pour : développement WP réel (utiliser `dev-wordpress` ou skills dédiés `wp-block-development`/`wp-plugin-development`/etc.), router de repo (utiliser `wordpress-router`), production de contenu schoolsWP (utiliser `schoolswp-article-workflow`), ou opérations WP-CLI (utiliser `wp-wpcli-and-ops`).
 user-invocable: false
 ---
 

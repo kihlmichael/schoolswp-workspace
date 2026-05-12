@@ -1,6 +1,9 @@
 ---
 name: authority-domination-roadmap
-description: Planifier et produire un plan d’autorite schoolsWP sur 24 mois (phases, livrables, KPI, cadence). Utilise ce skill quand l’utilisateur demande une roadmap long terme, un plan 12-24 mois, une strategie d’autorite/SEO, ou un plan par phases avec KPI et livrables.
+description: |
+  Construit la roadmap schoolsWP sur 24 mois en 6 phases (M1-M24) : objectif global, 3 métriques pilotes, livrables par phase, KPI cibles, cadence mensuelle, leviers d'accélération asset → multiplication. Vue stratégique long terme, pas exécution semaine par semaine.
+  Utilise ce skill quand l'utilisateur dit : "roadmap 24 mois", "plan d'autorité long terme", "stratégie schoolsWP par phases", "où je veux être dans 2 ans", ou demande la vision globale 12-24 mois.
+  NE PAS utiliser pour : l'exécution hebdomadaire M1-M3 (utiliser `authority-m1m3-execution`), la cartographie des 50 pages (utiliser `authority-domination-50p`), ou un cadrage produit ponctuel (utiliser `specs-engine`).
 ---
 
 # Authority Domination 24 mois (schoolsWP)

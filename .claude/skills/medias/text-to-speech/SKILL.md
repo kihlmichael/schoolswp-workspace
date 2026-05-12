@@ -1,11 +1,9 @@
 ---
 name: text-to-speech
 description: |
-  Génération audio voix-off à partir de texte via le modèle TTS Starfish de HeyGen. Utilise ce skill
-  pour convertir du texte en fichier audio, choisir une voix par langue ou genre, ajuster la vitesse
-  et le pitch, créer des narrations ou podcasts, ou travailler avec les endpoints /v1/audio de HeyGen.
-  Déclenche pour "génère un audio", "voix-off à partir de texte", "TTS HeyGen", "créer une narration",
-  "liste des voix disponibles", "convertis ce texte en audio".
+  Génération audio voix-off à partir de texte via le modèle TTS Starfish de HeyGen (`mcp__heygen__text_to_speech` ou `POST /v1/audio/text_to_speech`). Choix de voix par langue/genre, vitesse et pitch ajustables. Pour narrations standalone, podcasts, voix-off vidéo non-Remotion. Requiert `HEYGEN_API_KEY`.
+  Utilise ce skill quand l'utilisateur dit : "génère un audio", "voix-off à partir de texte", "TTS HeyGen", "Starfish", "créer une narration", "liste des voix disponibles", "convertis ce texte en audio", ou veut un MP3 de voix synthétique sans avatar vidéo.
+  NE PAS utiliser pour : voix-off vidéo schoolsWP en prod (utiliser ElevenLabs car la stack confirmée tier free voix Charlie + clone voix HeyGen API cassée), création vidéo avec avatar parlant (utiliser `heygen` Video Agent), transcription audio en texte (utiliser `speech-to-text`), ou musique/jingle (utiliser `music`).
 allowed-tools: mcp__heygen__*
 metadata:
   openclaw:

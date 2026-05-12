@@ -1,6 +1,9 @@
 ---
 name: top-web-vulnerabilities
-description: "Référence des 100 vulnérabilités web les plus critiques (alignées OWASP). Utilise ce skill pour identifier les failles applicatives, comprendre les catégories de vulnérabilités, évaluer les impacts et obtenir des recommandations de remédiation."
+description: |
+  Référence catalogue des 100 vulnérabilités web critiques alignées OWASP, organisées en 15 catégories (injection, auth, accès, crypto, XSS, deserialization, SSRF, etc.). Pour chaque faille : définition, root cause, impact, mitigation. Base pour checklists de pentest et politiques de sécurité.
+  Utilise ce skill quand l'utilisateur dit : "OWASP Top 10", "catégories de vulnérabilités web", "comment se protéger contre XSS / SQLi / SSRF", "checklist sécurité applicative", ou "référence vulnérabilités web".
+  NE PAS utiliser pour : exécuter concrètement un test (utiliser `burp-suite-testing`), audit sécurité du projet schoolsWP (utiliser `cso`), ou scanner les dépendances + supply chain (utiliser `vulnerability-scanner`).
 risk: unknown
 source: community
 author: zebbern

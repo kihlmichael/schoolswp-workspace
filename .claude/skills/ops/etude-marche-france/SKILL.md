@@ -1,15 +1,9 @@
 ---
 name: etude-marche-france
 description: |
-  Realise une etude de marche en temps reel en France sur un sujet donne (niche, secteur, segment B2B).
-  Produit un livrable structure complet : executive summary, segmentation marche, tableau tarifs,
-  concurrents leaders, plaintes clients sourcees, synthese strategique avec packaging schoolsWP.
-  Utilise les outils web (firecrawl_search, web_search_exa, WebSearch, WebFetch) pour sourcer en direct.
-  Declenche ce skill des que l'utilisateur mentionne "etude de marche", "analyse marche", "benchmark concurrentiel",
-  "etude concurrentielle", "analyse sectorielle", "marche France", "segmentation marche", "tarifs concurrents",
-  "plaintes clients secteur", "opportunites marche", "positionnement niche", ou toute demande d'analyse de marche
-  B2B en France (TPE/PME/independants). Meme si la demande est vague ("je veux comprendre le marche de X en France"),
-  ce skill est le bon point d'entree.
+  Produit une étude de marché B2B France sourcée en temps réel via firecrawl/exa/WebSearch/WebFetch. Livrable Markdown 8-15k mots en 7 sections (A-G) : executive summary, segmentation, tableau tarifs croisés, concurrents leaders, plaintes clients sourcées, synthèse stratégique avec packaging schoolsWP. Pipeline strict : 10 requêtes ciblées max puis rédaction en une passe.
+  Utilise ce skill quand l'utilisateur dit : "étude de marché", "analyse marché", "benchmark concurrentiel", "étude concurrentielle", "analyse sectorielle", "marché France", "segmentation marché", "tarifs concurrents", "plaintes clients secteur", "opportunités marché", "positionnement niche", ou même vague comme "je veux comprendre le marché de X en France".
+  NE PAS utiliser pour : étude concurrentielle SEO/SERP pour un cocon (utiliser `radar` agent + DataForSEO), benchmark prix d'un seul plugin pour avis (utiliser `schoolswp-article-workflow`), prospection commerciale d'entreprises (utiliser `local-prospector` ou `local-prospecting-pipeline`), ou étude internationale hors France (skill spécifique France TPE/PME).
 ---
 
 # Etude de Marche France — Skill d'Analyse Temps Reel

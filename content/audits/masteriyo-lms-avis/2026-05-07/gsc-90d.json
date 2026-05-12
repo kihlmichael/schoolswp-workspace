@@ -1,0 +1,75 @@
+{
+  "source": "GSC MCP — get_search_by_page_query",
+  "fetched_at": "2026-05-07",
+  "site_url": "https://schoolswp.com/",
+  "page_url": "https://schoolswp.com/masteriyo-lms-avis/",
+  "date_range": {
+    "start": "2026-02-06",
+    "end": "2026-05-07",
+    "days": 90
+  },
+  "totals": {
+    "clicks": 0,
+    "impressions": 124,
+    "avg_ctr": 0.0
+  },
+  "row_count": 8,
+  "queries": [
+    {
+      "query": "lms avis",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "lms rechargement automatique",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "lms2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "masteriyo",
+      "clicks": 0,
+      "impressions": 22,
+      "ctr": 0,
+      "position": 7.4
+    },
+    {
+      "query": "masteriyo lms",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 4.5
+    },
+    {
+      "query": "masteryio",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 3.8
+    },
+    {
+      "query": "monétisation des compétences avec lms",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 81.2
+    },
+    {
+      "query": "monétisation des offres éducatives avec lms",
+      "clicks": 0,
+      "impressions": 57,
+      "ctr": 0,
+      "position": 37.4
+    }
+  ]
+}

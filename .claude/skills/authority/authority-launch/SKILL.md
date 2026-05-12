@@ -1,6 +1,9 @@
 ---
 name: authority-launch
-description: Stratégie de lancement complète pour schoolsWP Authority System™ — modèle cohorte 21 jours, séquences emails FluentCRM, posts LinkedIn, assets à produire, KPIs et automations. Utilise ce skill dès que l'utilisateur parle de lancer la formation, préparer un lancement, créer une séquence de prévente, écrire les emails de lancement, structurer la masterclass, préparer les posts LinkedIn de lancement, configurer FluentCRM pour le lancement, définir les KPIs de conversion ou construire le tunnel de lancement. Trigger pour "prépare le lancement", "séquence emails lancement", "posts LinkedIn lancement", "lead magnet Authority System", "masterclass schoolsWP", "tunnel de vente formation", "automations FluentCRM lancement", "KPIs conversion formation", "cohorte Authority System", "ouverture des ventes".
+description: |
+  Pilote la stratégie de lancement complète Authority System™ : modèle cohorte 21 jours (pré-chauffe → masterclass → ouverture → fermeture), assets à produire (lead magnet, masterclass, posts LinkedIn, emails, landing), automations FluentCRM, KPIs de conversion, tunnel de vente. Vue d'ensemble du lancement, pas un livrable isolé.
+  Utilise ce skill quand l'utilisateur dit : "prépare le lancement formation", "stratégie cohorte 21 jours", "tunnel de vente Authority System", "KPIs conversion lancement", ou veut orchestrer toute la mécanique de lancement.
+  NE PAS utiliser pour : rédiger uniquement les 7 emails de la séquence (utiliser `authority-email-launch`), écrire la page de vente seule (utiliser `authority-sales-page-copy`), ou rédiger les posts LinkedIn (utiliser `pulse` agent ou skill plateforme LinkedIn).
 ---
 
 # schoolsWP Authority System™ — Stratégie de Lancement

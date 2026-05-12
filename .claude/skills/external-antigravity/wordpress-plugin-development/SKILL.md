@@ -1,6 +1,6 @@
 ---
 name: wordpress-plugin-development
-description: "WordPress plugin development workflow covering plugin architecture, hooks, admin interfaces, REST API, security best practices, and WordPress 7.0 features: Real-Time Collaboration, AI Connectors, Abilities API, DataViews, and PHP-only blocks."
+description: "Workflow de développement de plugins WordPress couvrant l'architecture du plugin, les hooks, les interfaces admin, REST API, bonnes pratiques de sécurité, internationalisation, tests et publication. Utilise ce skill pour développer un plugin WordPress complet, configurer la structure, hooks et tests automatisés."
 ---
 
 # WordPress Plugin Development Workflow

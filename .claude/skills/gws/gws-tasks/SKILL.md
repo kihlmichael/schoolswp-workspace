@@ -1,7 +1,10 @@
 ---
 name: gws-tasks
 version: 1.0.0
-description: "Google Tasks: Manage task lists and tasks."
+description: |
+  Google Tasks v1 via la CLI gws : gère les tasklists et les tasks (insert, update, delete, list, patch, move, clear, search). Pour automatiser ta to-do Google côté Workspace.
+  Utilise ce skill quand l'utilisateur dit : "Google Tasks API", "ajoute une tâche Google", "list mes tâches", "complete task Google", ou pour scripter un sync to-do entre sources externes et Google Tasks.
+  NE PAS utiliser pour : convertir un mail Gmail en tâche (utiliser gws-workflow-email-to-task), gérer des tâches FluentBoards côté schoolswp.com (utiliser le MCP fluentboards), ou notes (utiliser gws-keep ou gws-docs-write selon la longueur).
 metadata:
   openclaw:
     category: "productivity"

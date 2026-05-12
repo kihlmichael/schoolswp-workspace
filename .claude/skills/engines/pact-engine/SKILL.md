@@ -1,15 +1,9 @@
 ---
 name: pact-engine
-description: >
-  schoolsWP Growth Loop — prompt PACT (Problem · Approach · Constraint · Test) pour résolution
-  de problème, optimisation et expérimentation. Framework lean orienté itération rapide, data
-  et amélioration continue. Idéal pour tester un angle SEO, valider une landing, optimiser
-  un tunnel, améliorer la conversion, expérimenter un cluster sémantique, affiner une séquence email.
-  Préférer PACT à RACE/CREDO/SPECS quand on veut tester une hypothèse et mesurer le résultat.
-  Déclencher quand l'utilisateur dit "tester", "améliorer", "optimiser", "augmenter le CTR",
-  "mon taux de conversion est trop bas", "ça ne convertit pas", "j'ai essayé mais ça ne marche pas",
-  "comment je sais si c'est mieux", "quelle hypothèse je teste d'abord", "itération", "A/B",
-  "GSC montre que", "GA4 montre que", "mon CTR est de X%".
+description: |
+  schoolsWP Growth Loop — framework PACT (Problem · Approach · Constraint · Test) pour résolution de problème mesurable et expérimentation. Boucle Problem → Hypothèse → Action → Mesure → Itération. Idéal pour tester un angle SEO, optimiser une landing, affiner une séquence email, améliorer un CTR ou un tunnel.
+  Utilise ce skill quand l'utilisateur dit : "comment tester si A est mieux que B", "quelle hypothèse je teste d'abord", "mon CTR stagne", "ça ne convertit pas, par où je creuse", "GSC montre que", ou veut une boucle test → mesure stratégique avant de scaler.
+  NE PAS utiliser pour : la boucle d'exécution rigoureuse en continu (utiliser `performance-loop`), un audit ponctuel sans hypothèse à valider (utiliser `race-engine`), un cadrage avant lancement (utiliser `specs-engine`), ou un arbitrage entre options (utiliser `decision-engine`).
 ---
 
 # schoolsWP Growth Loop

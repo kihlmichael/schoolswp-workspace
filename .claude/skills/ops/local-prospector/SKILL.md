@@ -1,19 +1,9 @@
 ---
 name: local-prospector
 description: |
-  Constitue une base de donnees qualifiee de prestataires locaux specialises en creation de
-  site internet (agences web, studios, developpeurs, freelances) sur un territoire geographique
-  donne. Pipeline complet : recherche multi-sources (Google Maps, Pages Jaunes, annuaires, Apify),
-  extraction structuree, filtrage strict, deduplication, qualification par niveau de confiance,
-  priorisation commerciale a 3 niveaux, controle de couverture territoriale, et production d'un
-  livrable double (tableau final exploitable + synthese chiffree).
-  Utilise ce skill des que l'utilisateur veut constituer une base de prospection locale,
-  cartographier les agences de creation de site internet d'une zone, identifier des prestataires
-  web dans un departement, une ville ou une region, faire de la veille concurrentielle locale,
-  ou construire un fichier de prospection B2B de prestataires creation de site internet.
-  Aussi quand l'utilisateur dit "trouve-moi les agences web a [ville]",
-  "qui fait de la creation de site internet en [departement]", "base de prospection [zone]",
-  "cartographie des agences web [zone]", "liste des agences creation site [zone]".
+  Pipeline spécialisé prospection locale d'agences/studios/freelances en création de site internet (vitrine, e-commerce, refonte, dev sur mesure, intégration CMS) sur un territoire France. Multi-sources Google Maps + Pages Jaunes + annuaires + Apify, qualification par niveau de confiance, priorisation commerciale 3 niveaux, contrôle couverture territoriale, livrable double tableau exploitable + synthèse chiffrée.
+  Utilise ce skill quand l'utilisateur dit : "trouve-moi les agences web à ville", "qui fait de la création de site internet en département", "base de prospection zone", "cartographie des agences web zone", "liste des agences création site zone", ou veut une base prospection B2B prestataires web ciblée.
+  NE PAS utiliser pour : prospection autres niches (utiliser `local-prospecting-pipeline` générique), étude de marché B2B avec analyse concurrentielle stratégique (utiliser `etude-marche-france`), enrichissement contacts existants FluentCRM (utiliser MCP `fluentcrm`), ou prospection internationale hors France.
 allowed-tools:
   - WebSearch
   - WebFetch

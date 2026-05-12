@@ -1,9 +1,9 @@
 ---
 name: wp-block-themes
 description: |
-  Développement de block themes WordPress : theme.json (paramètres/styles globaux), templates et template
-  parts, patterns, variations de style et débogage du Site Editor (hiérarchie de styles, overrides, cache).
-  Déclenche pour "block theme WordPress", "theme.json", "Site Editor", "thème WordPress FSE".
+  Développement de block themes WordPress (FSE) : theme.json (settings, presets, styles globaux et per-block), templates HTML et template parts, patterns PHP, variations de style (styles JSON), debug du Site Editor (hiérarchie de styles, overrides, cache, "styles not applying"). Inclut conversion de classic theme vers block theme.
+  Utilise ce skill quand l'utilisateur dit : "block theme WordPress", "theme.json", "Site Editor", "thème WordPress FSE", "Full Site Editing", "patterns Gutenberg", ou "variations de style WordPress".
+  NE PAS utiliser pour : développement de blocs Gutenberg individuels (utiliser wp-block-development), Interactivity API côté frontend (utiliser wp-interactivity-api), plugins WordPress (utiliser wp-plugin-development), classic themes pre-FSE (utiliser dev-wordpress), ou WPDS et composants UI WordPress.com (utiliser wpds).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

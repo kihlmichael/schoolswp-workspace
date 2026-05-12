@@ -1,10 +1,9 @@
 ---
 name: n8n-validation-expert
 description: |
-  Interprète les erreurs de validation n8n et guide leur résolution. Utilise ce skill en cas d'erreurs de
-  validation, faux positifs, problèmes de structure d'opérateur ou pour comprendre les profils de
-  validation et le processus de boucle de validation.
-  Déclenche pour "erreur de validation n8n", "validation warning", "faux positif n8n".
+  Interprète les erreurs de validation n8n et guide leur résolution : missing_required, invalid_value, type_mismatch, invalid_reference, invalid_expression. Couvre les faux positifs, les profils de validation, la boucle itérative validate / fix.
+  Utilise ce skill quand l'utilisateur dit : "erreur de validation n8n", "validation warning", "faux positif n8n", "le node refuse mon input", "missing required champ X", ou pour debug une erreur affichée par n8n-mcp validate ou par l'UI n8n.
+  NE PAS utiliser pour : créer un workflow propre dès le départ (utiliser n8n-workflow-architect), debug une expression {{ }} qui retourne mal (utiliser n8n-expression-syntax), ou erreur d'API REST n8n côté CRUD (voir mémoire reference_n8n_rest_api_quirks).
 
 ---
 

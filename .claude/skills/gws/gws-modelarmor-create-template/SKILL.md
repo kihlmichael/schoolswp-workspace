@@ -1,7 +1,10 @@
 ---
 name: gws-modelarmor-create-template
 version: 1.0.0
-description: "Google Model Armor: Create a new Model Armor template."
+description: |
+  Helper gws modelarmor +create-template : crée un nouveau template Model Armor sur GCP (project + location + template-id) avec les filters de sécurité voulus (contournement, PII, malicious URLs, etc.). Pré-requis avant tout sanitize prompt ou response.
+  Utilise ce skill quand l'utilisateur dit : "crée un template Model Armor", "setup Model Armor", "configure Model Armor pour mon projet GCP", "init template Model Armor", ou pour bootstraper une stack safety LLM côté Google Cloud.
+  NE PAS utiliser pour : utiliser un template existant pour sanitize un prompt (utiliser gws-modelarmor-sanitize-prompt), sanitize une réponse modèle (utiliser gws-modelarmor-sanitize-response), ou opérations CRUD générales sur les templates (utiliser gws-modelarmor).
 metadata:
   openclaw:
     category: "security"

@@ -1,7 +1,10 @@
 ---
 name: recipe-post-mortem-setup
 version: 1.0.0
-description: "Create a Google Docs post-mortem, schedule a Google Calendar review, and notify via Chat."
+description: |
+  Crée un Google Docs post-mortem avec sections types (Summary, Timeline, Root Cause, Action Items), planifie la réunion de revue, puis notifie l'équipe dans Chat. Setup incident en 3 mouvements.
+  Utilise ce skill quand l'utilisateur dit : "lance le post-mortem", "prépare le RCA de l'incident X", "setup la review post-incident", ou pour démarrer un cycle post-mortem cross-canal après un incident.
+  NE PAS utiliser pour : juste créer un Docs vide (utiliser gws-docs), planifier une réunion sans doc (utiliser recipe-schedule-recurring-event ou gws-calendar), ou notifier sans setup post-mortem (utiliser recipe-send-team-announcement).
 metadata:
   openclaw:
     category: "recipe"

@@ -1,7 +1,10 @@
 ---
 name: recipe-create-shared-drive
 version: 1.0.0
-description: "Create a Google Shared Drive and add members with appropriate roles."
+description: |
+  Cree un Drive Partage Google (Shared Drive, ex Team Drive) et ajoute les membres avec les roles appropries (writer, reader, etc).
+  Utilise ce skill quand l'utilisateur dit : "cree un Drive Partage pour ce projet", "monte un Shared Drive avec ces personnes", "setup un Team Drive equipe", ou veut un espace Drive partage et non un dossier perso partage.
+  NE PAS utiliser pour : partager un fichier individuel par email (utiliser recipe-email-drive-link), telecharger en masse depuis un dossier existant (utiliser recipe-bulk-download-folder), ou creer un simple dossier dans My Drive (utiliser gws-drive files create direct).
 metadata:
   openclaw:
     category: "recipe"

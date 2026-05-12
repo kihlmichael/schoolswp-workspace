@@ -1,9 +1,9 @@
 ---
 name: langgraph-docs
 description: |
-  Récupère la documentation LangGraph pertinente pour fournir des conseils précis et à jour. Utilise ce
-  skill pour toute demande liée à LangGraph.
-  Déclenche pour "LangGraph", "graph d'agents", "StateGraph", "LangChain graph".
+  Récupère la doc LangGraph officielle (llms.txt + how-to + concepts + tutorials + reference) pour répondre précisément aux questions d'implémentation : StateGraph, nœuds, edges conditionnels, persistence, human-in-the-loop, multi-agent.
+  Utilise ce skill quand l'utilisateur dit : "LangGraph", "graph d'agents Python", "StateGraph", "LangChain graph", "checkpointer LangGraph", "human-in-the-loop LangGraph", ou implémente un workflow d'agents en Python avec LangChain.
+  NE PAS utiliser pour : agents simples sans graph (utiliser `claude-api` ou `gemini-api-dev`), architecture multi-agents conceptuelle (utiliser `tri-agent-architecture` ou `agents-architect`), ou agents Claude Code internes (utiliser le système `.claude/agents/`).
 
 ---
 

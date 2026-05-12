@@ -1,7 +1,10 @@
 ---
 name: recipe-generate-report-from-sheet
 version: 1.0.0
-description: "Read data from a Google Sheet and create a formatted Google Docs report."
+description: |
+  Lit les données d'un Google Sheets et génère un Google Docs formaté avec les insights. Pipeline read-then-write : Sheets en source, Docs en livrable.
+  Utilise ce skill quand l'utilisateur dit : "génère un rapport depuis cette feuille", "transforme ces données en doc", "rapport mensuel à partir du Sheets", ou pour produire un livrable Docs lisible depuis un dataset tabulaire.
+  NE PAS utiliser pour : juste lire un Sheets (utiliser gws-sheets directement), générer un dashboard live qui s'auto-met-à-jour (utiliser des formules ou Looker), ou créer un Docs vierge (utiliser gws-docs).
 metadata:
   openclaw:
     category: "recipe"

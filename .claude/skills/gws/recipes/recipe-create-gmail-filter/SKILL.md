@@ -1,7 +1,10 @@
 ---
 name: recipe-create-gmail-filter
 version: 1.0.0
-description: "Create a Gmail filter to automatically label, star, or categorize incoming messages."
+description: |
+  Cree un filtre Gmail qui libelle, marque ou categorise automatiquement les messages entrants selon des criteres expediteur/sujet/contenu, avec creation de label si besoin.
+  Utilise ce skill quand l'utilisateur dit : "cree un filtre Gmail", "libelle automatiquement les mails de X", "skip inbox pour cet expediteur", ou veut router automatiquement une categorie de mails.
+  NE PAS utiliser pour : importer des filtres en masse via XML (utiliser le fichier gmail-filters.xml du projet schoolsWP, voir CLAUDE.md), poser une reponse vacances (utiliser recipe-create-vacation-responder), ou envoyer des emails (utiliser gws-gmail).
 metadata:
   openclaw:
     category: "recipe"

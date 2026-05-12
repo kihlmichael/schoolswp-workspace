@@ -1,16 +1,9 @@
 ---
 name: specs-engine
-description: >
-  schoolsWP Architecture Blueprint — prompt SPECS (Scope · Purpose · Environment · Constraint · Success criteria)
-  pour cadrage technique, produit et architecture. Moins marketing que RACE/CREDO, plus
-  Product Owner / consultant senior / architecte système. Idéal pour concevoir une formation,
-  une offre, une page pilier, un tunnel, une architecture SEO, une automatisation, un produit digital.
-  Déclencher quand la demande nécessite un cadrage précis avant exécution : "je veux créer une offre",
-  "je veux bâtir un tunnel", "je veux concevoir une formation", "je veux structurer mon architecture SEO",
-  "j'ai besoin d'un cahier des charges", "définis le périmètre", "qu'est-ce qui devrait être inclus",
-  "comment je mesure si c'est réussi", "aide-moi à cadrer ce projet".
-  Préférer SPECS à RACE et CREDO quand le besoin est le cadrage structuré d'un système ou d'un produit
-  plutôt que l'exécution immédiate.
+description: |
+  schoolsWP Architecture Blueprint — framework SPECS (Scope · Purpose · Environment · Constraint · Success criteria) pour cadrage technique, produit et architecture en amont de toute exécution. Posture Product Owner / architecte système, moins marketing que RACE/CREDO. Évite dérive hors sujet, livrables inadaptés, absence de critères de mesure.
+  Utilise ce skill quand l'utilisateur dit : "cadre ce projet avant de coder", "je veux concevoir une formation / offre / tunnel", "définis le périmètre", "cahier des charges", "comment je mesure si c'est réussi", ou demande à structurer un système/produit avant de produire.
+  NE PAS utiliser pour : exécution rapide sur URL existante (utiliser `race-engine`), production d'un livrable from scratch (utiliser `credo-engine`), arbitrage entre options déjà cadrées (utiliser `decision-engine`), ou test d'une hypothèse mesurable (utiliser `pact-engine`).
 ---
 
 # schoolsWP Architecture Blueprint

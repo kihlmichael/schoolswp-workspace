@@ -1,6 +1,9 @@
 ---
 name: money-pages-framework
-description: Framework Money Pages schoolsWP (types, structures, blocs decisionnels, prompt de generation, scoring). Utiliser pour creer des pages decisionnelles monétisables sans perdre la confiance.
+description: |
+  Framework conceptuel des Money Pages schoolsWP : definition, 5 types de Money Pages (avis, comparatif, alternatives, meilleurs outils, prix), structures ideales par type, 6 blocs qui convertissent le plus, prompt generateur, scoring par type et integration cluster. Couche meta-strategique avant production.
+  Utilise ce skill quand l'utilisateur dit : "explique-moi les Money Pages schoolsWP", "quels types de pages monetisables", "framework Money Pages", "comment structurer mes pages decisionnelles", ou quand il forme/onboarde quelqu'un sur le systeme schoolsWP.
+  NE PAS utiliser pour : generer une page concrete prete a publier (utiliser `money-page-generator`), produire un comparatif specifique (utiliser `comparatif-affiliate-engine`), ou planifier 30 articles (utiliser `money-articles-30-plan`).
 ---
 
 # Money Pages Framework — schoolsWP

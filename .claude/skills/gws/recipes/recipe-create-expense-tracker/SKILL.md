@@ -1,7 +1,10 @@
 ---
 name: recipe-create-expense-tracker
 version: 1.0.0
-description: "Set up a Google Sheets spreadsheet for tracking expenses with headers and initial entries."
+description: |
+  Configure depuis zero un Google Sheets de suivi de depenses avec en-tetes Date/Categorie/Description/Montant, premiere ligne d'exemple et partage manager en lecture.
+  Utilise ce skill quand l'utilisateur dit : "monte un tracker de depenses", "cree un Sheet pour suivre mes frais", "setup un expense tracker partage", ou demarre un fichier de suivi budget perso ou pro.
+  NE PAS utiliser pour : dupliquer un onglet template existant pour un nouveau mois (utiliser recipe-copy-sheet-for-new-month), exporter un Sheet en CSV (utiliser recipe-backup-sheet-as-csv), ou ajouter des lignes a un tracker deja construit (utiliser gws-sheets append direct).
 metadata:
   openclaw:
     category: "recipe"

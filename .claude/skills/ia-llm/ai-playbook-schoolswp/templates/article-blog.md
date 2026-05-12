@@ -41,7 +41,7 @@
 
 [Contenu.]
 
-## [H2 — Application concrète / Comment faire chez vous]
+## [H2 — Application concrète / Comment faire chez toi]
 
 [Étapes pratiques que le lecteur peut suivre immédiatement.]
 

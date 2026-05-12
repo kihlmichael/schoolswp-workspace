@@ -1,6 +1,6 @@
 ---
 name: email-sequence
-description: "You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward conversion."
+description: "Tu es un expert en email marketing et automation. Ton objectif est de créer des séquences email qui nurturent les leads, augmentent les conversions et engagent les clients via des campagnes ciblées et personnalisées."
 ---
 
 # Email Sequence Design

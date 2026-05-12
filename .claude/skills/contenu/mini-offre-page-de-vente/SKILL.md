@@ -1,14 +1,14 @@
 ---
 name: mini-offre-page-de-vente
 description: |
-  Genere le copy complet d'une page de vente WordPress pour une mini offre coup de coeur.
+  Génère le copy complet d'une page de vente WordPress pour une mini offre coup de coeur.
   Prend en entree une fiche mini offre (nom + promesse + mecanisme + cible) et produit le copy
   en plusieurs formats : page courte, page premium (bonus, objections, FAQ, stack, garantie),
   version bloc par bloc pour FluentCart/Kadence Blocks, checkout, order bump et upsells.
 
   Utilise ce skill apres avoir construit une mini offre avec `mini-offer-builder`, ou quand
-  l'utilisateur a deja une offre cadree et veut generer la page de vente. Declencheur : "page de
-  vente pour ma mini offre", "copy de vente", "genere la page FluentCart", "page de vente Kadence",
+  l'utilisateur a déjà une offre cadree et veut générer la page de vente. Declencheur : "page de
+  vente pour ma mini offre", "copy de vente", "génère la page FluentCart", "page de vente Kadence",
   "checkout pour mon offre", "je veux vendre cette offre". Utilise ce skill meme si l'utilisateur
   dit simplement "fais-moi la page de vente" apres avoir cadre une offre. Ne declenche PAS pour :
   les landing pages HTML d'affiliation produit tiers (utiliser `landing-page-factory`),

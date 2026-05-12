@@ -1,10 +1,9 @@
 ---
 name: brand-guidelines
 description: |
-  Applique les couleurs officielles et la typographie Anthropic à tout contenu visuel. Utilise ce skill
-  quand les couleurs de marque, les guidelines de style, la mise en forme visuelle ou les standards de
-  design Anthropic s'appliquent.
-  Déclenche pour "couleurs Anthropic", "charte graphique Anthropic", "design Anthropic".
+  Applique l'identité visuelle Anthropic (couleurs `#141413`/`#faf9f5`/`#d97757`, typo Poppins+Lora) sur du contenu généré pour Anthropic. Skill upstream non adapté à schoolsWP — sert uniquement quand on produit pour la marque Anthropic.
+  Utilise ce skill quand l'utilisateur dit : "couleurs Anthropic", "charte graphique Anthropic", "design Anthropic", ou prépare un livrable visuel destiné à Anthropic (talk, slide, doc partenariat).
+  NE PAS utiliser pour : design schoolsWP (utiliser `BRAND_RULES.md` du projet et le vert signature `#00D400`), design HTML brand-strict autre marque (utiliser `external-cc-design`), ou design system de référence (utiliser `external-design-systems`).
 license: Complete terms in LICENSE.txt
 ---
 

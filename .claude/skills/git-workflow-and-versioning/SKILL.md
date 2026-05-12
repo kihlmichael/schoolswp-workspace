@@ -1,10 +1,9 @@
 ---
 name: git-workflow-and-versioning
-description: >
-  Discipline git pour commits atomiques, historique propre et changements reversibles. Utilise
-  ce skill pour tout changement de code : commits, branches, resolution de conflits, travail
-  parallele. Declenche pour "git workflow", "strategie de branches", "commit discipline",
-  "worktrees", "historique git", "avant de committer".
+description: |
+  Discipline git pour commits atomiques (une chose logique par commit), historique propre, changements reversibles. Trunk-based development, branches courtes 1-3 jours, feature flags plutot que long-lived branches, resolution de conflits, worktrees pour travail parallele. Pattern : implement slice, test, verify, commit, next slice.
+  Utilise ce skill quand l'utilisateur dit : "git workflow", "stratégie de branches", "commit discipline", "worktrees", "historique git", "avant de committer", "résolution de conflits git", ou "comment décomposer mes commits".
+  NE PAS utiliser pour : conventions de message de commit specifiques projet (voir CLAUDE.md schoolsWP : feat: / fix: / chore: / docs: en anglais), workflow de PR et release schoolsWP (utiliser ship gstack ou pattern existant), ou setup initial git (voir docs runbooks-operationnels.md).
 ---
 
 # Git Workflow and Versioning

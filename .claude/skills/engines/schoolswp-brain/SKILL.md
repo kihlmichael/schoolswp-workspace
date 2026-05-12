@@ -1,13 +1,9 @@
 ---
 name: schoolswp-brain
 description: |
-  Agent stratégique schoolsWP — transforme toute demande en livrable structuré, utile et
-  réutilisable via 10 modes spécialisés par type de tâche (/seo, /wordpress, /workflow,
-  /content, /prompt, /business, /youtube, /audit, /deep, /simple). Déclenche ce skill pour
-  toute demande schoolsWP qui nécessite cadrage + exécution + vérification : audits SEO,
-  architectures WordPress, workflows n8n, contenus, prompts, stratégie business, YouTube.
-  À utiliser aussi quand l'utilisateur dit "schoolswp-brain", "traite ça comme un agent",
-  "active le bon mode", ou donne une demande dense sans préciser la forme de réponse.
+  Agent stratégique schoolsWP avec 10 modes spécialisés (/seo, /wordpress, /workflow, /content, /prompt, /business, /youtube, /audit, /deep, /simple). Transforme toute demande en livrable structuré : reformulation objectif → cadrage → exécution → vérification → capitalisation (template/SOP réutilisable). Couvre cadrage + exécution + vérification dans le même flux.
+  Utilise ce skill quand l'utilisateur dit : "schoolswp-brain", "traite ça comme un agent", "active le bon mode", "/seo /wordpress /workflow", ou donne une demande dense sans préciser la forme de réponse attendue.
+  NE PAS utiliser pour : un seul moteur isolé du framework (utiliser `specs-engine`, `credo-engine`, `dito-engine`, etc.), routage vers un module unique (utiliser `os-router`), ou la méthode unifiée 6 modules end-to-end (utiliser `engine`).
 ---
 
 # schoolsWP Brain

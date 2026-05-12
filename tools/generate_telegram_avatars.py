@@ -1,15 +1,30 @@
-"""Generate 8 Telegram bot avatars via Gemini 2.5 Flash Image API.
+"""Generate Telegram bot avatars via switchable image engine.
 
-Direct REST call. The nano-banana-mcp@1.0.3 package targets the deprecated
-`gemini-2.5-flash-image-preview` model; this script uses the GA model name
-`gemini-2.5-flash-image` instead.
+Two engines supported:
+- nano_banana (default): Gemini 2.5 Flash Image, free tier, weak on FR text rendering
+- openai: gpt-image-1 (model name read from env OPENAI_IMAGE_MODEL), paid, strong on text
 
-Reads GEMINI_API_KEY from projects/schoolswp/.env.
+Engine selection priority:
+1. CLI flag --engine (forces choice for the whole run)
+2. Optional 3rd field of an AVATARS tuple (per-image engine)
+3. Default "nano_banana"
+
+Note: gpt-image-2 requires OpenAI organization verification (KYC). Without it, the
+fallback gpt-image-1 still beats Nano Banana on French text rendering (cf. test
+report at tools/test-gpt-image-2-vs-nano-banana/REPORT.md).
+
+Reads GEMINI_API_KEY and OPENAI_API_KEY from projects/schoolswp/.env.
 Writes PNG files to projects/schoolswp/assets/telegram-avatars/.
+
+Usage:
+  .venv/Scripts/python tools/generate_telegram_avatars.py
+  .venv/Scripts/python tools/generate_telegram_avatars.py --engine openai
+  .venv/Scripts/python tools/generate_telegram_avatars.py --engine nano_banana
 """
 
 from __future__ import annotations
 
+import argparse
 import base64
 import json
 import os
@@ -23,10 +38,15 @@ ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env"
 OUTPUT_DIR = ROOT / "assets" / "telegram-avatars"
 
-MODEL = "gemini-2.5-flash-image"
-ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
+GEMINI_MODEL = "gemini-2.5-flash-image"
+GEMINI_ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
-AVATARS: list[tuple[str, str]] = [
+OPENAI_MODEL = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-1")
+OPENAI_ENDPOINT = "https://api.openai.com/v1/images/generations"
+
+# Tuple shape: (filename, prompt) or (filename, prompt, engine)
+# engine in {"nano_banana", "openai"} pins that avatar to a specific engine
+AVATARS: list[tuple] = [
     # 01-orchestrator.png est généré séparément (copie du logo SWP officiel, pas via API)
     (
         "02-studio.png",
@@ -59,17 +79,17 @@ AVATARS: list[tuple[str, str]] = [
 ]
 
 
-def load_api_key() -> str:
+def load_env_key(name: str) -> str:
     if ENV_FILE.exists():
         for line in ENV_FILE.read_text(encoding="utf-8").splitlines():
-            if line.startswith("GEMINI_API_KEY="):
+            if line.startswith(f"{name}="):
                 return line.split("=", 1)[1].strip()
-    if key := os.environ.get("GEMINI_API_KEY"):
+    if key := os.environ.get(name):
         return key
-    raise RuntimeError("GEMINI_API_KEY not found in .env or env")
+    raise RuntimeError(f"{name} not found in .env or env")
 
 
-def generate_one(filename: str, prompt: str, api_key: str, max_retries: int = 2) -> str:
+def generate_via_gemini(filename: str, prompt: str, api_key: str, max_retries: int = 2) -> str:
     body = json.dumps(
         {
             "contents": [{"parts": [{"text": prompt}]}],
@@ -77,9 +97,10 @@ def generate_one(filename: str, prompt: str, api_key: str, max_retries: int = 2)
         }
     ).encode("utf-8")
 
+    payload = None
     for attempt in range(1, max_retries + 1):
         req = urllib.request.Request(
-            ENDPOINT,
+            GEMINI_ENDPOINT,
             data=body,
             headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
             method="POST",
@@ -97,6 +118,9 @@ def generate_one(filename: str, prompt: str, api_key: str, max_retries: int = 2)
                 continue
             return f"HTTP {exc.code}: {err[:200]}"
 
+    if payload is None:
+        return "no payload after retries"
+
     try:
         parts = payload["candidates"][0]["content"]["parts"]
         img_b64 = next(p["inlineData"]["data"] for p in parts if "inlineData" in p)
@@ -108,20 +132,90 @@ def generate_one(filename: str, prompt: str, api_key: str, max_retries: int = 2)
     return f"OK ({out.stat().st_size // 1024} KB)"
 
 
+def generate_via_openai(filename: str, prompt: str, api_key: str) -> str:
+    body = json.dumps(
+        {
+            "model": OPENAI_MODEL,
+            "prompt": prompt,
+            "size": "1024x1024",
+            "quality": "medium",
+            "n": 1,
+        }
+    ).encode("utf-8")
+
+    req = urllib.request.Request(
+        OPENAI_ENDPOINT,
+        data=body,
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        return f"HTTP {exc.code}: {exc.read().decode('utf-8', errors='replace')[:200]}"
+
+    try:
+        img_b64 = payload["data"][0]["b64_json"]
+    except (KeyError, IndexError):
+        return f"no image in response: {json.dumps(payload)[:300]}"
+
+    out = OUTPUT_DIR / filename
+    out.write_bytes(base64.b64decode(img_b64))
+    return f"OK ({out.stat().st_size // 1024} KB)"
+
+
+ENGINES: dict[str, tuple[str, callable]] = {
+    "nano_banana": ("GEMINI_API_KEY", generate_via_gemini),
+    "openai": ("OPENAI_API_KEY", generate_via_openai),
+}
+
+THROTTLE_S = {"nano_banana": 15, "openai": 3}
+
+
+def resolve_engine(item: tuple, cli_choice: str | None) -> str:
+    if cli_choice:
+        return cli_choice
+    if len(item) >= 3 and item[2]:
+        return item[2]
+    return "nano_banana"
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Generate Telegram bot avatars (nano_banana | openai).")
+    parser.add_argument(
+        "--engine",
+        choices=list(ENGINES.keys()),
+        default=None,
+        help="Force engine for the whole run. If absent, uses per-avatar engine field or 'nano_banana'.",
+    )
+    args = parser.parse_args()
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    api_key = load_api_key()
+    keys: dict[str, str] = {}
+
     print(f"Generating {len(AVATARS)} avatars -> {OUTPUT_DIR}")
+    if args.engine:
+        print(f"Engine forced via CLI: {args.engine}")
+
     errors = 0
-    for i, (fn, pr) in enumerate(AVATARS, 1):
-        print(f"[{i}/{len(AVATARS)}] {fn} ...", flush=True)
-        status = generate_one(fn, pr, api_key)
+    for i, item in enumerate(AVATARS, 1):
+        fn = item[0]
+        pr = item[1]
+        engine = resolve_engine(item, args.engine)
+        env_var, generate_fn = ENGINES[engine]
+
+        if env_var not in keys:
+            keys[env_var] = load_env_key(env_var)
+
+        print(f"[{i}/{len(AVATARS)}] {fn} via {engine} ...", flush=True)
+        status = generate_fn(fn, pr, keys[env_var])
         marker = "OK" if status.startswith("OK") else "FAIL"
         print(f"    [{marker}] {status}")
         if not status.startswith("OK"):
             errors += 1
         if i < len(AVATARS):
-            time.sleep(15)
+            time.sleep(THROTTLE_S[engine])
     return errors
 
 

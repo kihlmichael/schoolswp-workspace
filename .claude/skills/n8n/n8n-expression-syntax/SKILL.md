@@ -1,10 +1,9 @@
 ---
 name: n8n-expression-syntax
 description: |
-  Valide la syntaxe des expressions n8n et corrige les erreurs courantes. Utilise ce skill pour écrire
-  des expressions n8n en syntaxe {{}}, accéder aux variables $json/$node, déboguer des erreurs
-  d'expression ou travailler avec des données webhook.
-  Déclenche pour "expression n8n", "syntaxe {{}}", "$json.field", "erreur d'expression n8n".
+  Valide la syntaxe des expressions n8n entre {{ }} et corrige les erreurs courantes : accès aux variables $json / $node / $items, données webhook sous $json.body, fonctions DateTime, opérateurs ternaires, traversal d'objets imbriqués.
+  Utilise ce skill quand l'utilisateur dit : "expression n8n", "syntaxe {{}} n8n", "$json.field", "erreur d'expression n8n", "comment référencer un node précédent", ou pour debug une expression qui retourne undefined.
+  NE PAS utiliser pour : du code dans un Code node (utiliser n8n-code-javascript ou n8n-code-python), erreur de validation structurelle (utiliser n8n-validation-expert), ou architecture du workflow (utiliser n8n-workflow-architect).
 
 ---
 

@@ -1,0 +1,185 @@
+/* ============================================================
+   Carrousel LinkedIn schoolsWP - système de slides 1:1
+   Format : 1080x1080 (LinkedIn carrousel PDF)
+   Brand : #00D400 vert signature
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1A1A1A;
+  padding: 40px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 1080px;
+  height: 1080px;
+  position: relative;
+  padding: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.slide--light { background: #F4F5F7; color: #0F1419; }
+.slide--dark  { background: #0F1419; color: #F4F5F7; }
+
+.slide__top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__counter {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  color: #4A5568;
+}
+
+.slide--dark .slide__counter { color: #94A3B8; }
+
+.slide__eyebrow {
+  color: #00D400;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.slide__big-number {
+  color: #00D400;
+  font-weight: 800;
+  font-size: 170px;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin-bottom: 18px;
+}
+
+.slide__hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__title {
+  font-weight: 800;
+  font-size: 130px;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+}
+
+.slide__title--sm {
+  font-size: 100px;
+  line-height: 1.04;
+}
+
+.slide__title .accent { color: #00D400; }
+
+.slide__body {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.32;
+  margin-top: 28px;
+  max-width: 850px;
+  color: #4A5568;
+}
+
+.slide--dark .slide__body { color: #CBD5E0; }
+
+.slide__body strong {
+  font-weight: 700;
+  color: #0F1419;
+}
+
+.slide--dark .slide__body strong { color: #FFFFFF; }
+
+.slide__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.slide__logo--lg { height: 110px; }
+
+.slide__brand-tag {
+  font-weight: 500;
+  font-size: 20px;
+  color: #4A5568;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+.slide--dark .slide__brand-tag { color: #94A3B8; }
+
+.slide__swipe {
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0F1419;
+}
+
+.slide--dark .slide__swipe { color: #F4F5F7; }
+
+.slide__swipe::after {
+  content: '→';
+  color: #00D400;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.slide__cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #00D400;
+  color: #0F1419;
+  font-weight: 800;
+  font-size: 38px;
+  padding: 26px 48px;
+  border-radius: 14px;
+  letter-spacing: -0.015em;
+  margin-top: 40px;
+  box-shadow: 0 16px 40px rgba(0, 212, 0, 0.25);
+}
+
+.slide__cta-button::after {
+  content: '→';
+  font-size: 44px;
+  font-weight: 800;
+}
+
+.halftone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.14;
+}
+
+.halftone--br { bottom: -150px; right: -150px; width: 600px; height: 600px; }
+.halftone--tl { top: -130px;    left: -130px;  width: 520px; height: 520px; }
+.halftone--tr { top: -110px;    right: -110px; width: 480px; height: 480px; }
+.halftone--bl { bottom: -140px; left: -140px;  width: 540px; height: 540px; }
+
+.slide--dark .halftone { opacity: 0.20; }

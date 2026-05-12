@@ -41,11 +41,11 @@ Ce fichier contient toutes les regles qui s'appliquent a chaque contenu schoolsW
 
 **Bien :**
 
-> FluentCRM gere vos emails automatiquement. Vous creez la sequence une fois. Elle tourne toute seule.
+> FluentCRM gere tes emails automatiquement. Tu crees la sequence une fois. Elle tourne toute seule.
 
 **Mal :**
 
-> FluentCRM est un outil qui vous permet de gerer l'ensemble de vos campagnes d'emailing de maniere automatisee grace a des sequences que vous configurez une premiere fois et qui s'executent ensuite sans intervention de votre part.
+> FluentCRM est un outil qui te permet de gerer l'ensemble de tes campagnes d'emailing de maniere automatisee grace a des sequences que tu configures une premiere fois et qui s'executent ensuite sans intervention de ta part.
 
 ---
 
@@ -117,8 +117,8 @@ Utiliser ces expressions naturellement dans les contenus (sans forcer) :
 - "Teste et approuve."
 - "Pas de blabla, juste du concret."
 - "L'idee, c'est de comprendre avant d'appliquer."
-- "A vous de jouer."
-- "schoolsWP est la pour vous aider a franchir ce cap."
+- "A toi de jouer."
+- "schoolsWP est la pour t'aider a franchir ce cap."
 
 ---
 

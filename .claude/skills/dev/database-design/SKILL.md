@@ -1,6 +1,9 @@
 ---
 name: database-design
-description: "Principes de conception de bases de données et aide à la décision. Conception de schémas, stratégies d'indexation, sélection d'ORM, bases de données serverless."
+description: |
+  Aide à concevoir un schéma de base de données : choisir entre PostgreSQL / Neon / Turso / SQLite, sélectionner l'ORM (Drizzle / Prisma / Kysely), poser les index, prévenir le N+1, planifier les migrations safe.
+  Utilise ce skill quand l'utilisateur dit : "design de schéma DB", "quel ORM choisir", "PostgreSQL ou SQLite", "index composite", "migration safe", ou avant de poser un nouveau modèle de données.
+  NE PAS utiliser pour : du SQL ad-hoc déjà écrit, configurer Supabase Auth (utiliser `nextjs-supabase-auth`), ou pour la couche API au-dessus (utiliser `api-patterns`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

@@ -1,7 +1,10 @@
 ---
 name: gws-sheets-append
 version: 1.0.0
-description: "Google Sheets: Append a row to a spreadsheet."
+description: |
+  Helper gws sheets +append : ajoute une ligne à un Google Sheet (spreadsheet ID + valeurs CSV). Idéal pour log, journal, dump récurrent depuis script ou n8n.
+  Utilise ce skill quand l'utilisateur dit : "append row Google Sheets", "log dans un Sheet", "ajoute une ligne au tableau de bord", "push données dans Sheets", ou pour brancher une routine de log léger sans batchUpdate.
+  NE PAS utiliser pour : lire des valeurs (utiliser gws-sheets-read), opérations avancées type formules / formatage / batchUpdate (utiliser gws-sheets), ou import CSV multi-colonnes Ninja Tables côté WordPress (différent stack, voir reference_ninja_tables_rest.md).
 metadata:
   openclaw:
     category: "productivity"

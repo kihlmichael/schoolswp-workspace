@@ -1,14 +1,9 @@
 ---
 name: n8n-template-finder
 description: |
-  Recherche le template n8n le plus pertinent dans le catalogue externe curated (enescingoz/awesome-n8n-templates,
-  280+ workflows) pour un cas d'usage schoolsWP donné. Retourne top 3 candidats avec URL raw GitHub,
-  catégorie, intégrations détectées et adaptation requise pour l'instance schoolswp-n8n.wp1.host.
-  Déclenche ce skill pour : "trouve un workflow n8n pour X", "template n8n existant pour automatiser Y",
-  "y a-t-il déjà un workflow qui fait Z", "quel template partir pour connecter A et B",
-  "cherche un template n8n", "workflow n8n tout fait pour", "pattern n8n existant". Complémentaire à
-  n8n-orchestrator (qui cadre le besoin) et n8n-workflow-architect (qui conçoit from scratch). Ce skill
-  vient AVANT la conception custom : ne pas réinventer ce qui existe déjà.
+  Recherche le template n8n le plus pertinent dans le catalogue externe curated (enescingoz/awesome-n8n-templates, 280+ workflows, 15 catégories) pour un cas d'usage schoolsWP. Retourne top 3 candidats avec URL raw GitHub, catégorie, intégrations détectées et adaptation requise pour schoolswp-n8n.wp1.host.
+  Utilise ce skill quand l'utilisateur dit : "trouve un workflow n8n pour X", "template n8n existant pour Y", "y a-t-il déjà un workflow qui fait Z", "cherche un template n8n", "workflow n8n tout fait", ou AVANT toute conception custom pour ne pas réinventer.
+  NE PAS utiliser pour : adapter le template trouvé pour schoolsWP (utiliser n8n-workflow-adapter en aval), créer un workflow from scratch quand aucun template ne matche (utiliser n8n-orchestrator puis n8n-workflow-architect), ou pour les patterns WordPress + n8n spécifiquement (utiliser wordpress-n8n-blueprints).
 ---
 
 # n8n Template Finder

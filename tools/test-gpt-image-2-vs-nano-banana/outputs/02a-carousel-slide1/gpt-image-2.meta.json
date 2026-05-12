@@ -1,0 +1,20 @@
+{
+  "engine": "gpt-image-2",
+  "model": "gpt-image-1",
+  "size": "1024x1024",
+  "quality": "medium",
+  "elapsed_s": 21.05,
+  "usage": {
+    "input_tokens": 144,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 144
+    },
+    "output_tokens": 1056,
+    "output_tokens_details": {
+      "image_tokens": 1056,
+      "text_tokens": 0
+    },
+    "total_tokens": 1200
+  }
+}

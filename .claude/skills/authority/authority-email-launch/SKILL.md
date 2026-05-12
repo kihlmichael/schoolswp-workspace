@@ -1,6 +1,9 @@
 ---
 name: authority-email-launch
-description: Séquence email de lancement pour schoolsWP Authority System™. 7 emails sur 10 jours, structure problème → mécanisme → preuve pédagogique → ouverture. Utilise ce skill pour rédiger, adapter ou optimiser la séquence de lancement du programme Authority System™. Trigger pour "séquence email lancement", "emails Authority System", "séquence de vente email", "7 emails lancement", "email de lancement WordPress", "séquence FluentCRM Authority Loop", "écrire les emails du lancement", "email d'introduction mécanisme", "email ouverture inscriptions".
+description: |
+  Rédige la séquence email de lancement Authority System™ : 7 emails sur 10 jours, montée en clarté progressive (problème → mécanisme Authority Loop™ → preuves pédagogiques par étape SPATO → ouverture inscriptions). Ton direct, pédagogique, sans hype artificielle.
+  Utilise ce skill quand l'utilisateur dit : "séquence email lancement Authority System", "7 emails de prévente", "écris les emails du lancement formation", ou veut adapter / optimiser la séquence FluentCRM de lancement de la formation propre.
+  NE PAS utiliser pour : une séquence welcome lead magnet (utiliser `lead-magnet-schoolswp`), une séquence de découverte plugin par affiliation (utiliser `plugin-email-sequence`), ou recycler un email reçu en contenu (utiliser `schoolswp-email-to-content`).
 ---
 
 # schoolsWP Authority System™ — Séquence email de lancement

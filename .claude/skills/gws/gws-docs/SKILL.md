@@ -1,7 +1,10 @@
 ---
 name: gws-docs
 version: 1.0.0
-description: "Read and write Google Docs."
+description: |
+  Lit, cree et met a jour des Google Docs via le CLI `gws`. Operations natives : ouvrir un Doc, extraire son contenu, ajouter du texte, partager. Sous-skills helpers `gws-docs-write` (append) et intégration avec Sheets/Drive/Gmail via les recipes correspondantes.
+  Utilise ce skill quand l'utilisateur dit : "lis ce Google Doc", "cree un Doc", "mets a jour le Doc", "partage ce Doc", "extrait le contenu de ce Doc", "ajoute du texte au Doc", ou colle un lien `docs.google.com/document/`.
+  NE PAS utiliser pour : draft email depuis Doc (utiliser `recipe-draft-email-from-doc`), rapport Sheets vers Doc (utiliser `recipe-generate-report-from-sheet`), redaction de contenu schoolsWP (utiliser le skill plateforme : `schoolswp-content-studio`, `schoolswp-article-workflow`).
 metadata:
   openclaw:
     category: "productivity"

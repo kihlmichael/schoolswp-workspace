@@ -1,10 +1,9 @@
 ---
 name: wp-wpcli-and-ops
 description: |
-  Opérations WordPress via WP-CLI : search-replace sécurisé, import/export de base de données, gestion
-  des plugins/thèmes/utilisateurs/contenus, cron, vidage du cache, multisite et automatisation avec
-  wp-cli.yml.
-  Déclenche pour "WP-CLI", "wp search-replace", "wp db export", "commandes WP-CLI", "automatisation WordPress".
+  Opérations WordPress via WP-CLI : wp search-replace sécurisé (URL changes, migrations domaine, switch protocole), wp db export et import et resets, gestion plugins et thèmes et utilisateurs et contenu, wp cron, flush cache et rewrites, multisite (wp site, --url, --network), automatisation via wp-cli.yml, scripts CI. Couvre dev, staging, prod avec guardrails.
+  Utilise ce skill quand l'utilisateur dit : "WP-CLI", "wp search-replace", "wp db export", "commandes WP-CLI", "automatisation WordPress", "migration WP", "wp cron event", ou "ops WordPress en ligne de commande".
+  NE PAS utiliser pour : développement de plugins ou blocs (utiliser wp-plugin-development ou wp-block-development), profilage perfs (utiliser wp-performance), Playground jetable (utiliser wp-playground), gestion via REST API custom (utiliser wp-rest-api), ou MCP novamira pour schoolswp.com (préférer le MCP au WP-CLI distant).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Requires WP-CLI in the execution environment."
 ---
 

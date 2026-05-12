@@ -31,7 +31,7 @@ Partager une idee actionnable, inspirer, engager la communaute WordPress.
 ## Exemple complet
 
 ```
-WordPress ne fait pas le SEO a votre place.
+WordPress ne fait pas le SEO a ta place.
 
 Installer Yoast ou RankMath ne suffit pas.
 
@@ -41,9 +41,9 @@ Voici ce qui compte vraiment :
 -> Reponse directe a une intention de recherche
 -> Liens internes intelligents
 
-Le plugin, c'est juste l'outil. La strategie, c'est vous.
+Le plugin, c'est juste l'outil. La strategie, c'est toi.
 
-Vous optimisez vos articles avant ou apres publication ?
+Tu optimises tes articles avant ou apres publication ?
 ```
 
 ## Adaptation par plateforme

@@ -129,6 +129,10 @@ data/youtube-transcriptions/*
 .claude/skills/external-video-use/
 .claude/skills/external-heygen/
 
+# --- External reference libraries (sparse-checkout, upstream MAJ frequente) ---
+# YouMind awesome-gpt-image-2 : 2000+ prompts curés FR+EN, CC BY 4.0, MAJ daily
+content/inspirations/awesome-gpt-image-2/
+
 # --- External MCP servers cloned upstream (build localement, pas versionnes) ---
 # Carlos Rodera - Fluent ecosystem MCP servers (5 plugins, dynamic mode)
 tools/mcp-servers/fluent-mcp-servers/

@@ -1,6 +1,9 @@
 ---
 name: facebook
-description: Espace métier Facebook - pages, groupes, publicité et analytics. Utiliser pour toute tâche liée à Facebook (posts, ads, groupes, messenger).
+description: |
+  Espace métier Facebook schoolsWP : pages, groupes, publicité, Messenger, analytics. Hub de référence pour publication, modération, ads et insights cross-platform — workflows et SOP en cours de constitution.
+  Utilise ce skill quand l'utilisateur dit : "publie sur la page Facebook schoolsWP", "modère le groupe", "configure une campagne ads Facebook", "rapport publicitaire FB", "automatise Messenger", ou demande une action métier sur l'écosystème Facebook.
+  NE PAS utiliser pour : adaptation et publication multi-plateformes orchestrée (utiliser `social-media-manager` via Blotato), création copy LinkedIn/Instagram/Pinterest (utiliser le skill plateforme dédié), ou stratégie social globale sans canal Facebook (utiliser `pulse` agent).
 user-invocable: false
 ---
 

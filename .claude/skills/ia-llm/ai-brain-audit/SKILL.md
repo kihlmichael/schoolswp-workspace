@@ -1,6 +1,9 @@
 ---
 name: ai-brain-audit
-description: Agent A - Audit SEO. Analyse intent, concurrence et données disponibles pour produire un brief SPECS exploitable. Utiliser quand tu démarres un projet SEO schoolsWP, avant toute production de contenu, ou quand ai-strategic-brain active le mode ARCHITECT/STRATEGIST.
+description: |
+  Agent A du Brain schoolsWP. Analyse intent SEO, concurrence et données disponibles (GSC, GA4, Ahrefs) pour produire un brief SPECS exploitable par l'Agent B (production).
+  Utilise ce skill quand l'utilisateur dit : "audit SEO", "brief SPECS", "cadrage avant rédaction", "analyse intent", ou quand `ai-strategic-brain` active le mode ARCHITECT/STRATEGIST sur un nouveau sujet.
+  NE PAS utiliser pour : produire le contenu lui-même (utiliser `ai-brain-production`), décliner un livrable existant (utiliser `ai-brain-transformation`), ou optimiser une page déjà publiée (utiliser `ai-brain-optimization`).
 ---
 
 # Agent A - Audit (schoolsWP)

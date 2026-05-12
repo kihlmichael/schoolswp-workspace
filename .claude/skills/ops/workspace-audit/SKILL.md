@@ -1,13 +1,9 @@
 ---
 name: workspace-audit
 description: |
-  Audit complet et reproductible du workspace D:\VS Code et du projet schoolsWP.
-  Produit un rapport structure avec metriques, scores de maturite et comparaison
-  avec l'audit precedent. Utilise ce skill des que l'utilisateur demande un audit,
-  un bilan, un etat des lieux, un diagnostic, un health check du workspace ou du
-  projet schoolsWP, ou veut comparer l'evolution entre deux periodes. Declenche
-  aussi quand l'utilisateur dit "ou en est le projet", "montre-moi les metriques",
-  "qu'est-ce qui a change", "audit", "bilan", "diagnostic workspace".
+  Audit complet et reproductible du workspace `D:\VS Code` + projet schoolsWP en 7 phases. Produit un rapport Markdown avec métriques, scores de maturité, bloc metadata JSON, et comparaison automatisée avec l'audit précédent.
+  Utilise ce skill quand l'utilisateur dit : "audit workspace", "bilan schoolsWP", "état des lieux", "diagnostic", "health check", "où en est le projet", "montre-moi les métriques", ou "qu'est-ce qui a changé".
+  NE PAS utiliser pour : nettoyer concrètement les doublons et fichiers résiduels (utiliser `workspace-hygiene`), auditer le code Python (utiliser `audit-codebase` ou `code-review-and-quality`), ou auditer la sécurité (utiliser `cso` ou `security-auditor`).
 ---
 
 # Workspace Audit — schoolsWP

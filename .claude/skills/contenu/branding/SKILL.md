@@ -15,7 +15,7 @@ description: |
 
 ## Mission
 
-**« Faire de WordPress un outil qui travaille vraiment pour vous. »**
+**« Faire de WordPress un outil qui travaille vraiment pour toi. »**
 
 Créer du contenu tellement **authentique, clair et utile** que le lecteur ait l'impression de discuter directement avec Michaël KIHL — pas avec une IA.
 

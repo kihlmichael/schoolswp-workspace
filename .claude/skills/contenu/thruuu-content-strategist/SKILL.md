@@ -1,12 +1,9 @@
 ---
 name: thruuu-content-strategist
 description: |
-  Strategie de contenu SEO automatisee a partir des exports de clustering thruuu (XLSX).
-  Analyse les clusters de mots-cles, determine les actions (creer/optimiser/ignorer), les formats
-  (article, video, forum, outil), la priorite (P1-P3) et genere un rapport strategie + fichier Excel.
-  Declenche ce skill pour : analyser un export thruuu, creer une strategie de contenu SEO,
-  prioriser des clusters de mots-cles, generer un calendrier editorial SEO, ou produire
-  un plan de contenu base sur des donnees SERP.
+  Stratégie de contenu SEO automatisée à partir des exports de clustering thruuu (.xlsx). Analyse les clusters de mots-clés, détermine les actions (créer/optimiser/ignorer), les formats (article, vidéo, forum, outil), la priorité (P1-P3) et génère un rapport stratégie + fichier Excel. Workflow 4 phases avec profil business persistant par domaine.
+  Utilise ce skill quand l'utilisateur dit : "stratégie thruuu", "analyse cet export thruuu", "calendrier éditorial SEO depuis clusters", "plan de contenu thruuu", "priorise mes clusters", ou dépose un .xlsx thruuu dans `thruuu-claude-content-strategist/input/`.
+  NE PAS utiliser pour : remplir UN brief thruuu pour UN mot-clé (utiliser `thruuu-brief-builder`), rédaction d'article depuis un brief (utiliser `thruuu-writer`), ou nouvelle version courante de la stratégie cluster (utiliser `thruuu-strategist` qui est le runtime Claude Code).
 allowed-tools:
   - Read
   - Write

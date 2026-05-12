@@ -1,6 +1,6 @@
 ---
 name: popup-cro
-description: "Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or brand trust."
+description: "Crée et optimise les popups, modales, overlays, slide-ins et bannières pour augmenter les conversions sans nuire à l'UX ni à la confiance dans la marque."
 ---
 
 # Popup CRO

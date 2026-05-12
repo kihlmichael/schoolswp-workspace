@@ -1,10 +1,9 @@
 ---
 name: n8n-code-python
 description: |
-  Écrit du code Python dans les nœuds Code n8n. Utilise ce skill pour écrire du Python en n8n, utiliser
-  la syntaxe _input/_json/_node, travailler avec la bibliothèque standard ou comprendre les limitations
-  Python dans les nœuds Code n8n.
-  Déclenche pour "Code node Python n8n", "Python n8n", "_input.all() Python", "nœud Code Python".
+  Écrit du Python dans les nœuds Code n8n beta (instance schoolswp-n8n.wp1.host) : syntaxe _input.all() / _json / _node, bibliothèque standard, limitations connues (pas de helpers httpRequest, pas de Luxon). Pour 95% des cas, JavaScript reste préférable.
+  Utilise ce skill quand l'utilisateur dit : "Code node Python n8n", "Python dans n8n", "_input.all()", "transformer en Python n8n", "stdlib Python n8n", ou quand l'utilisateur préfère explicitement Python à JS.
+  NE PAS utiliser pour : du JavaScript dans Code (utiliser n8n-code-javascript, recommandé par défaut), des scripts Python hors n8n (utiliser core/agents-py/), ou pour des transformations qui passeraient mieux par un node natif n8n (utiliser n8n-orchestrator pour cadrer).
 
 ---
 

@@ -87,13 +87,13 @@ Chapitres :
 ## Exemple de hook
 
 ```
-Vous voulez envoyer un email automatique a chaque nouvel abonne ?
+Tu veux envoyer un email automatique a chaque nouvel abonne ?
 ```
 
 ## Exemple d'intro
 
 ```
-Dans cette video, je vous montre comment faire ca en 10 minutes avec FluentCRM.
+Dans cette video, je te montre comment faire ca en 10 minutes avec FluentCRM.
 
 On va creer l'automatisation ensemble, pas a pas.
 
@@ -105,5 +105,5 @@ C'est parti.
 - Conversationnel et naturel. Comme si on parlait a un ami.
 - Energique sans etre force. Pas de faux enthousiasme.
 - Phrases encore plus courtes que dans les articles (5-12 mots).
-- Tutoyer ou vouvoyer selon le choix de l'utilisateur (par defaut : vouvoyer).
+- Tutoiement systematique (BRAND_RULES regle 5). Jamais de vouvoiement, meme en video.
 - Eviter les "euh", "alors", "du coup" dans le script ecrit.

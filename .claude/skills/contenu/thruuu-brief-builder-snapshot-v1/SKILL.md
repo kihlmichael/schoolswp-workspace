@@ -1,16 +1,9 @@
 ---
-name: thruuu-brief-builder
-description: >
-  Remplit un brief thruuu complet (format 10 onglets) à partir de données brutes : mot-clé, export
-  thruuu (rapport SERP), données DataForSEO, Google Search Console, notes concurrents, contenus
-  schoolsWP existants. Sortie en 3 blocs — ANALYSE, BRIEF STRUCTURÉ, TEXTES PRÊTS À COLLER DANS
-  THRUUU — immédiatement exploitables. Déclenche ce skill dès que l'utilisateur dit "brief thruuu",
-  "remplis un brief thruuu", "prépare le brief thruuu pour [mot-clé]", "génère mon brief thruuu
-  à partir de ces données", "transforme cet export thruuu en brief", "brief thruuu comparatif /
-  avis / tutoriel / BOFU", ou fournit un rapport thruuu + DataForSEO et demande un brief à coller
-  dans l'outil thruuu.com. NE PAS confondre avec thruuu-writer (brief → article) ni avec
-  seo-brief-generator (brief schoolsWP interne 10 sections maison). Ce skill produit un brief
-  au format thruuu en amont de thruuu-writer.
+name: thruuu-brief-builder-snapshot-v1
+description: |
+  Snapshot v1 (archivé pour traçabilité) du builder de brief thruuu — remplit un brief complet (10 onglets) à partir de mot-clé + export thruuu + DataForSEO + GSC + concurrents. Sortie en 3 blocs : ANALYSE, BRIEF STRUCTURÉ, TEXTES PRÊTS À COLLER DANS THRUUU.
+  Utilise ce skill uniquement en invocation manuelle pour comparer une exécution d'époque, restaurer une consigne perdue, ou auditer la dérive de la version courante.
+  NE PAS utiliser pour : production live d'un brief thruuu (utiliser `thruuu-brief-builder` v3 courant), rédaction d'article depuis un brief (utiliser `thruuu-writer`), ou brief schoolsWP interne 10 sections maison (utiliser `seo-brief-generator`).
 ---
 
 # thruuu-brief-builder

@@ -1,10 +1,9 @@
 ---
 name: gemini-api-dev
 description: |
-  Construit des applications avec les modèles Gemini et l'API Gemini. Couvre le contenu multimodal
-  (texte, images, audio, vidéo), le function calling, les outputs structurés et les SDK (google-genai,
-  @google/genai).
-  Déclenche pour "API Gemini", "Gemini SDK", "google-genai", "modèle Gemini", "multimodal Gemini".
+  Construit des applications avec les modèles Gemini (gemini-3-pro-preview, gemini-3-flash-preview, gemini-3-pro-image-preview) via l'API Gemini. Couvre génération texte, multimodal (images/audio/vidéo/docs), function calling, outputs structurés JSON, code execution sandboxé, context caching, embeddings. SDK google-genai (Python) et @google/genai (JS).
+  Utilise ce skill quand l'utilisateur dit : "API Gemini", "Gemini SDK", "google-genai", "modèle Gemini", "multimodal Gemini", "function calling Gemini", "embeddings Gemini", ou veut intégrer un modèle Gemini dans une app.
+  NE PAS utiliser pour : streaming temps réel WebSocket (utiliser `gemini-live-api-dev`), API Interactions agentique multi-tours stateful (utiliser `gemini-interactions-api`), CLI Gemini one-shot (utiliser `gemini`), ou modèles Anthropic/OpenAI.
 
 last_reviewed: 2026-04-23
 review_interval_days: 60

@@ -1,6 +1,9 @@
 ---
 name: schoolswp-authority-accelerator
-description: schoolsWP Authority Accelerator™ — Construit un système d'autorité WordPress orienté trafic, IA et conversion pour freelances, agences, formateurs et experts. Utilise ce skill dès que l'utilisateur parle de proposer un service premium WordPress, construire une offre clé en main pour un client, exécuter les 4 phases de l'Authority Accelerator (Audit/Architecture, Production stratégique, Machine omnicanale, CRO), générer un blueprint stratégique, un kit omnicanal, un plan d'optimisation GSC ou pitcher l'offre schoolsWP Authority Accelerator™. Trigger aussi pour "système d'autorité", "offre premium WordPress", "cluster stratégique", "page pilier", "tunnel logique", "blueprint personnalisé", "kit omnicanal", même sans mention explicite du nom.
+description: |
+  Construit l'offre service premium schoolsWP Authority Accelerator™ : 4 phases (Audit/Architecture SPECS, Production stratégique, Machine omnicanale, CRO) pour transformer un site WordPress en système d'autorité orienté trafic, IA et conversion. Cible freelances, agences, formateurs déjà actifs (3 000-7 500 € ou 2 000 € + 750 €/mois). Sort blueprint stratégique, cluster, kit omnicanal, plan d'optimisation GSC.
+  Utilise ce skill quand l'utilisateur dit : "Authority Accelerator", "offre premium WordPress client", "blueprint stratégique", "système d'autorité pour un client", ou veut pitcher / cadrer la prestation service à un freelance/formateur/agence.
+  NE PAS utiliser pour : la formation propre Authority System™ (utiliser `authority-method` ou `authority-launch`), un audit SEO ponctuel sans logique d'offre packagée (utiliser `radar` agent ou `race-engine`), ou rédiger la page de vente du programme formation (utiliser `authority-sales-page-copy`).
 ---
 
 # schoolsWP Authority Accelerator™

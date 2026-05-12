@@ -1,6 +1,9 @@
 ---
 name: comparatif-affiliate-engine
-description: Generer des comparatifs schoolsWP qui convertissent (structure decisionnelle, tableaux, verdicts, blocs affilies). Utiliser pour pages “X vs Y”, “meilleur outil”, ou alternatives.
+description: |
+  Genere des comparatifs schoolsWP qui convertissent : structure decisionnelle complete (intro, presentation, tableau, analyse par criteres, pour qui choisir, alternative, verdict), templates des sections cles, types de comparatifs qui marchent, angle differenciant et blocs affilies integres.
+  Utilise ce skill quand l'utilisateur dit : "fais un comparatif X vs Y", "page meilleur outil pour Z", "alternatives a tel plugin", "creer un comparatif affilie", ou quand il prepare une money page comparative orientee decision.
+  NE PAS utiliser pour : utiliser un template prepret avec variables (utiliser `comparatif-affilie-template`), avis solo d'UN outil (utiliser `money-page-generator` type avis), ou ajouter juste des blocs dans un article existant (utiliser `affiliation-block-system`).
 ---
 
 # Comparatif Affiliate Engine — schoolsWP

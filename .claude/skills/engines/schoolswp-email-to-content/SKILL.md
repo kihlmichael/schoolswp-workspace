@@ -1,6 +1,9 @@
 ---
 name: schoolswp-email-to-content
-description: Transformer un email promotionnel WordPress (plugin ou theme) en 3 contenus marketing schoolsWP (resume Markdown, post LinkedIn, thread X) via methode 5 etapes V1/auto-evaluation/corrections/V2/comparaison+V3. Utiliser quand l'utilisateur fournit un email promo et exige un format de sortie strict et anti-invention.
+description: |
+  Transforme un email promotionnel WordPress (plugin ou thème reçu) en 3 contenus marketing schoolsWP (résumé Markdown, post LinkedIn, thread X) via méthode 5 étapes V1 → auto-évaluation → corrections → V2 → comparaison + V3 final. Anti-invention strict (jamais ajouter d'info hors email), CTA affilié obligatoire avec disclosure "(lien affilié)".
+  Utilise ce skill quand l'utilisateur dit : "transforme cet email promo en contenus", "recycle cet email reçu en LinkedIn + thread", "découverte plugin via email partenaire", ou fournit un email avec sortie 11 sections strict.
+  NE PAS utiliser pour : transformer un article ou transcript existant (utiliser `dito-engine`), une séquence email de découverte plugin par affiliation (utiliser `plugin-email-sequence`), ou la séquence email de lancement formation propre (utiliser `authority-email-launch`).
 ---
 
 Pense en profondeur. Suis la checklist. Respecte toutes les contraintes. Ne devine rien.

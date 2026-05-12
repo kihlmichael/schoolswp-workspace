@@ -1,7 +1,10 @@
 ---
 name: gws-events
 version: 1.0.0
-description: "Subscribe to Google Workspace events."
+description: |
+  Google Workspace Events v1 via la CLI gws : gère les souscriptions aux events Workspace (Chat, Meet, Drive...). Couvre le CRUD raw (subscriptions list/get/create/delete/patch) et les operations long-running.
+  Utilise ce skill quand l'utilisateur dit : "list workspace events subscriptions", "delete subscription", "patch subscription", "operations events", ou pour piloter une souscription Events au-delà de la création + renouvellement.
+  NE PAS utiliser pour : démarrer une souscription et streamer les events en NDJSON (utiliser gws-events-subscribe), renouveler une souscription qui expire (utiliser gws-events-renew), ou écouter des events Gmail (utiliser gws-gmail-watch via Pub/Sub).
 metadata:
   openclaw:
     category: "productivity"

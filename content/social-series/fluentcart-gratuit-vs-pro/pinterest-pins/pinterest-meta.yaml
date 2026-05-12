@@ -1,0 +1,64 @@
+# Pinterest publishing meta - série "FluentCart Gratuit vs Pro"
+# À pousser via la lib pinterest-pipeline (n8n + Placid + API Pinterest)
+
+series:
+  slug: fluentcart-gratuit-vs-pro
+  parent_carrousel: ../instagram-feed
+  pillar: e-commerce
+  publish_window: 2026-Q2
+
+defaults:
+  board: WordPress E-commerce
+  destination_url: https://schoolswp.com/fluentcart-gratuit-vs-pro/
+  alt_text_prefix: "schoolsWP · "
+  hashtags:
+    - "#FluentCart"
+    - "#WordPress"
+    - "#WooCommerce"
+    - "#Ecommerce"
+
+pins:
+  - file: pin-01-tunnels-vente.png
+    title: Tunnels de vente FluentCart Pro · upsells downsells
+    description: |
+      FluentCart Pro débloque les upsells et downsells après paiement pour
+      booster ton panier moyen. Inexistant en version gratuite. Comparatif
+      complet sur schoolsWP.
+    alt_text: schoolsWP · FluentCart Pro tunnels de vente upsells downsells
+    keywords: ["FluentCart Pro", "upsell", "downsell", "tunnel de vente", "panier moyen"]
+
+  - file: pin-02-licences.png
+    title: Gestion des licences FluentCart Pro · vendre du SaaS
+    description: |
+      FluentCart Pro génère et gère les clés de licence pour tes logiciels.
+      Indispensable si tu vends du SaaS ou des plugins WordPress. Comparatif
+      Free vs Pro sur schoolsWP.
+    alt_text: schoolsWP · FluentCart Pro license manager logiciels
+    keywords: ["FluentCart Pro", "license manager", "clé de licence", "SaaS WordPress"]
+
+  - file: pin-03-automatisation.png
+    title: FluentCart Pro · Automatisation marketing avec FluentCRM
+    description: |
+      FluentCart Pro envoie des signaux précis à FluentCRM pour segmenter et
+      déclencher des séquences ciblées. La gratuit reste basique. Tutoriel
+      complet sur schoolsWP.
+    alt_text: schoolsWP · FluentCart Pro automatisation FluentCRM
+    keywords: ["FluentCart Pro", "FluentCRM", "automatisation marketing", "email marketing"]
+
+  - file: pin-04-rapports.png
+    title: Rapports d'analyse FluentCart Pro · reporting détaillé
+    description: |
+      FluentCart Pro offre des rapports avancés par produit et par client.
+      La gratuit limite à 30 jours et au strict basique. Comparatif sur
+      schoolsWP.
+    alt_text: schoolsWP · FluentCart Pro rapports analyse détaillés
+    keywords: ["FluentCart Pro", "reporting e-commerce", "analytics WordPress"]
+
+  - file: pin-05-order-bumps.png
+    title: Order Bumps conditionnels FluentCart Pro · cross-sell
+    description: |
+      Logique sophistiquée pour offrir le bon bump au bon moment selon le
+      panier. FluentCart Pro uniquement, inexistant en gratuit. Comparatif
+      sur schoolsWP.
+    alt_text: schoolsWP · FluentCart Pro Order Bumps conditionnels
+    keywords: ["FluentCart Pro", "order bumps", "cross-sell", "panier WordPress"]

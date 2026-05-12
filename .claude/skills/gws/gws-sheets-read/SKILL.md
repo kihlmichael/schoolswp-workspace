@@ -1,7 +1,10 @@
 ---
 name: gws-sheets-read
 version: 1.0.0
-description: "Google Sheets: Read values from a spreadsheet."
+description: |
+  Helper gws sheets +read : lit les valeurs d'une plage Google Sheets (spreadsheet ID + range A1, ex Sheet1!A1:B2). Sortie shell-friendly (json par défaut) pour piping.
+  Utilise ce skill quand l'utilisateur dit : "read Google Sheets", "lis ce range Sheets", "récupère les valeurs du Sheet", "pull données Sheets en CLI", ou pour pipeline qui consomme des Sheets en input.
+  NE PAS utiliser pour : ajouter des lignes (utiliser gws-sheets-append), opérations API avancées (utiliser gws-sheets), ou conversion d'un Sheet en visualisation (faire le rendu côté agent, ce helper fournit juste les valeurs brutes).
 metadata:
   openclaw:
     category: "productivity"

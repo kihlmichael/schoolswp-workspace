@@ -1,6 +1,9 @@
 ---
 name: design-patterns
-description: "Detect, suggest, and evaluate GoF design patterns in TypeScript/JavaScript codebases. Use when refactoring code, applying singleton/factory/observer/strategy patterns, reviewing pattern quality, or finding stack-native alternatives for React, Angular, NestJS, and Vue."
+description: |
+  Détecte, suggère et évalue les 23 design patterns Gang of Four dans une codebase TypeScript / JavaScript, avec adaptation stack-aware (React, NestJS, Vue, Express, RxJS, Redux). 3 modes : detection, suggestion, evaluation.
+  Utilise ce skill quand l'utilisateur dit : "quel pattern utiliser ici", "Singleton / Factory / Observer / Strategy", "refactor ce code legacy", "détecte les patterns", "code smell switch / global state", ou avant un refacto structurel TS.
+  NE PAS utiliser pour : la review qualité globale d'un PR (utiliser `code-review-and-quality`), pour du code Python/PHP (ce skill cible TS/JS uniquement), ou pour les patterns d'architecture n8n (utiliser `n8n-workflow-patterns`).
 allowed-tools: Read, Grep, Glob, mcp__grepai__grepai_search
 context: fork
 agent: specialist

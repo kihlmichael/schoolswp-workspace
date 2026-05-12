@@ -1,7 +1,10 @@
 ---
 name: recipe-share-doc-and-notify
 version: 1.0.0
-description: "Share a Google Docs document with edit access and email collaborators the link."
+description: |
+  Partage un Google Docs avec accès éditeur à un collaborateur et envoie ensuite un email avec le lien direct vers le document. Combo permission + notification mail.
+  Utilise ce skill quand l'utilisateur dit : "partage ce doc avec X et envoie-lui le lien", "donne accès édition à Y et préviens-le", "share doc + email", ou pour pousser un document à quelqu'un avec relance par mail.
+  NE PAS utiliser pour : partager un dossier entier (utiliser recipe-share-folder-with-team), partager avec les attendees d'un événement (utiliser recipe-share-event-materials), ou diffuser une annonce générale (utiliser recipe-send-team-announcement).
 metadata:
   openclaw:
     category: "recipe"

@@ -1,14 +1,9 @@
 ---
 name: n8n-workflow-adapter
 description: |
-  Adapte un workflow n8n externe (importé depuis enescingoz, n8n.io/workflows ou tout autre source)
-  pour l'instance schoolsWP : sanitize les credentials placeholders, applique les conventions de
-  nommage schoolsWP (workflow, nodes, variables), remplace les URLs placeholder vers schoolswp.com,
-  et produit un JSON prêt pour import via n8n-mcp. Déclenche ce skill après n8n-template-finder ou
-  quand l'utilisateur dit : "adapte ce workflow", "importe ce n8n", "sanitize ce template",
-  "rebrand ce workflow pour schoolsWP", "prépare ce JSON pour mon instance", "nettoie ce template
-  avant import". Complémentaire à n8n-template-finder (recherche) et n8n-validation-expert
-  (validation post-import).
+  Adapte un workflow n8n externe (depuis enescingoz, n8n.io/workflows ou autre source) pour l'instance schoolsWP : pipeline 6 étapes (parse, sanitize credentials, swap modèles LLM, rebrand URLs, conventions de nommage, validation finale) qui produit un JSON prêt pour import via n8n-mcp.
+  Utilise ce skill quand l'utilisateur dit : "adapte ce workflow n8n", "importe ce n8n", "sanitize ce template", "rebrand ce workflow pour schoolsWP", "prépare ce JSON pour mon instance", ou après une recherche n8n-template-finder qui a trouvé un candidat à importer.
+  NE PAS utiliser pour : rechercher un template avant adaptation (utiliser n8n-template-finder en amont), créer un workflow from scratch (utiliser n8n-workflow-architect), ou pour valider une erreur post-import (utiliser n8n-validation-expert).
 ---
 
 # n8n Workflow Adapter

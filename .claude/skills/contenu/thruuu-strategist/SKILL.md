@@ -1,17 +1,9 @@
 ---
 name: thruuu-strategist
 description: |
-  Transforme un export de clusters thruuu (.xlsx) en stratégie de contenu priorisée.
-  Pipeline 3 phases : business context persistant (/domains/{domain}.md), parsing
-  du .xlsx (Topic Clusters + Competitors), raisonnement Action × Format × Priorité
-  par cluster, génération d'un plan markdown + xlsx 4 onglets (Content Plan,
-  Calendar, AIO Monitoring, All Clusters).
-  2 modes : run (pipeline complet), dry-run (diagnostic sans génération).
-  Utilise ce skill dès que l'utilisateur mentionne thruuu strategist, export
-  clusters thruuu, content strategy thruuu, plan de contenu priorisé, cluster
-  prioritization, "transforme cet export thruuu en stratégie", "priorise mes
-  clusters", "quoi créer / optimiser / ignorer".
-  Aussi déclenchable via /thruuu-strategist.
+  Transforme un export de clusters thruuu (.xlsx) en stratégie de contenu priorisée. Pipeline 3 phases : business context persistant (/domains/{domain}.md), parsing du .xlsx (Topic Clusters + Competitors), raisonnement Action × Format × Priorité par cluster, génération d'un plan markdown + xlsx 4 onglets (Content Plan, Calendar, AIO Monitoring, All Clusters). 2 modes : run (pipeline complet), dry-run (diagnostic). Aussi déclenchable via /thruuu-strategist.
+  Utilise ce skill quand l'utilisateur dit : "thruuu strategist", "transforme cet export thruuu en stratégie", "priorise mes clusters", "quoi créer / optimiser / ignorer", "plan de contenu priorisé", "cluster prioritization", ou fournit un .xlsx clusters thruuu.
+  NE PAS utiliser pour : remplir UN brief thruuu pour UN mot-clé (utiliser `thruuu-brief-builder`), rédaction d'article depuis un brief (utiliser `thruuu-writer`), arbitrage éditorial multi-cocon site-level schoolsWP (utiliser `brain-autonome`), ou priorisation à l'intérieur d'un cocon donné (utiliser `cocon-roi-prioritization`).
 ---
 
 # thruuu Content Strategist Runtime — Claude Code Edition

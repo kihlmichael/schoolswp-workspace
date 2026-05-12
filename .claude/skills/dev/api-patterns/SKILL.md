@@ -1,6 +1,9 @@
 ---
 name: api-patterns
-description: "Principes de conception d'API et aide à la décision. Sélection REST vs GraphQL vs tRPC, formats de réponse, versioning, pagination."
+description: |
+  Aide à concevoir une API : choisir REST vs GraphQL vs tRPC, structurer les réponses, versionner, paginer, sécuriser auth et rate-limiting. Lecture sélective par fichier de référence selon le besoin.
+  Utilise ce skill quand l'utilisateur dit : "design d'API", "REST ou GraphQL", "structure de réponse API", "versioning API", "comment paginer", ou avant de poser les fondations d'un endpoint.
+  NE PAS utiliser pour : implémenter le code backend (utiliser `backend-dev-guidelines`), modéliser la base de données (utiliser `database-design`), ou auditer la sécurité d'une API existante (utiliser `cso`).
 risk: unknown
 source: community
 date_added: "2026-02-27"

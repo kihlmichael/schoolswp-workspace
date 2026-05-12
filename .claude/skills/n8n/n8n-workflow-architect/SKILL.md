@@ -1,17 +1,9 @@
 ---
 name: n8n-workflow-architect
-description: >
-  Architecte de workflows n8n pour schoolsWP — conçoit, analyse et documente des
-  automatisations selon un cadre opérationnel strict : objectif, déclencheur, entrées,
-  logique métier, sorties, gestion d'erreurs, logs, maintenance.
-  Déclenche ce skill pour toute demande de CONCEPTION de workflow n8n complexe,
-  d'ANALYSE d'un workflow existant, de DOCUMENTATION d'une automatisation,
-  ou de GESTION D'ERREURS dans un flux. Déclenche aussi pour : "comment je structure
-  ce workflow", "prévoir les erreurs dans mon n8n", "rendre ce workflow maintenable",
-  "nommer mes nodes proprement", "gérer les doublons dans FluentCRM via n8n".
-  Complémentaire aux skills n8n-node-configuration (config de nodes) et
-  n8n-workflow-patterns (patterns architecturaux) — ce skill se concentre sur
-  la rigueur opérationnelle et la fiabilité du système complet.
+description: |
+  Architecte de workflows n8n schoolsWP : conçoit, analyse et documente des automatisations selon un cadre opérationnel strict couvrant objectif, déclencheur, entrées, transformation, logique métier, sorties, gestion d'erreurs, logs, maintenance. Production de JSON workflow propre, prêt pour import via n8n-mcp.
+  Utilise ce skill quand l'utilisateur dit : "conçois ce workflow n8n", "structure mon flux n8n", "prévoir les erreurs dans mon n8n", "rendre ce workflow maintenable", "nommer mes nodes proprement", "gérer les doublons FluentCRM via n8n", ou pour générer le JSON workflow complet une fois le besoin cadré.
+  NE PAS utiliser pour : cadrer un besoin flou (utiliser n8n-orchestrator en amont), trouver un template existant (utiliser n8n-template-finder), choisir un pattern d'architecture pur (utiliser n8n-workflow-patterns), ou pour patterns WordPress + n8n spécifiques (utiliser wordpress-n8n-blueprints).
 ---
 
 # schoolswp-n8n-workflow-architect

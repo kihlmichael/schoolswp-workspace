@@ -1,7 +1,10 @@
 ---
 name: recipe-schedule-recurring-event
 version: 1.0.0
-description: "Create a recurring Google Calendar event with attendees."
+description: |
+  Crée un événement Google Calendar récurrent avec règle RRULE, attendees et timezone, puis vérifie sa création dans l'agenda. Standup hebdo, sync mensuelle, weekly review.
+  Utilise ce skill quand l'utilisateur dit : "crée un standup récurrent tous les lundis", "planifie une weekly à répétition", "événement Calendar avec récurrence X", ou pour poser une cadence régulière dans l'agenda.
+  NE PAS utiliser pour : déplacer une réunion existante (utiliser recipe-reschedule-meeting), planifier un one-shot non répété (utiliser gws-calendar events insert), ou planifier la semaine globale (utiliser recipe-plan-weekly-schedule).
 metadata:
   openclaw:
     category: "recipe"

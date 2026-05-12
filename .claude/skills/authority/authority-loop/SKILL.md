@@ -1,6 +1,9 @@
 ---
 name: authority-loop
-description: Structure visuelle, pédagogique et chiffrée de l'Authority Loop™ (mécanisme SPATO™) pour schoolsWP. Utilise ce skill pour présenter, expliquer, illustrer ou vendre le mécanisme Authority Loop™ sous forme visuelle ou pédagogique : schéma circulaire, 5 étapes mesurables, résultats chiffrés par étape, acronyme SPATO™, version page de vente, version longue explicative. Trigger pour "schéma Authority Loop", "mécanisme SPATO", "5 étapes visuelles", "présenter la méthode", "résultats par étape", "visuel pédagogique", "cercle SPATO", "section mécanisme page de vente", "chiffres Authority Loop".
+description: |
+  Structure visuelle et pédagogique du mécanisme propriétaire Authority Loop™ (SPATO™ : Structurer → Produire → Amplifier → Tester → Optimiser). Schéma circulaire en 5 étapes cumulatives, résultats chiffrés par étape, version page de vente avec impact visuel fort, version longue explicative.
+  Utilise ce skill quand l'utilisateur dit : "schéma Authority Loop", "explique le mécanisme SPATO", "section mécanisme page de vente", "présente la méthode en 5 étapes", ou veut illustrer / vulgariser la signature méthodologique schoolsWP.
+  NE PAS utiliser pour : la méthode complète en 6 phases du programme (utiliser `authority-method`), la promesse marketing globale (utiliser `authority-promise`), ou la page de vente complète 14 sections (utiliser `authority-sales-page-copy`).
 ---
 
 # Authority Loop™ — Structure visuelle & résultats mesurables

@@ -1,11 +1,11 @@
 ---
 name: reddit-strategist
 description: |
-  Genere des contenus Reddit calibres brand-strict pour schoolsWP : posts originaux,
+  Génère des contenus Reddit calibres brand-strict pour schoolsWP : posts originaux,
   commentaires sur threads existants, shortlist de subs pour un sujet, recyclage
   d'articles schoolsWP en posts Reddit. Ratio promo 1/10 enforce. Voix singulier "je",
   tutoiement FR ou tone direct EN selon le sub. Premier commentaire signe systematique.
-  Declenche ce skill des que l'utilisateur veut creer du contenu Reddit, recycler un
+  Declenche ce skill des que l'utilisateur veut créer du contenu Reddit, recycler un
   article en post Reddit, identifier les bons subs pour un sujet, ou rediger un
   commentaire sur un thread - meme s'il ne dit pas explicitement "Reddit"
   (ex: "que poster sur r/SEO ?", "fais-moi un draft pour r/Wordpress", "shortlist subs

@@ -1,11 +1,9 @@
 ---
 name: wordpress-pro
 description: |
-  Développe des thèmes et plugins WordPress personnalisés, crée et enregistre des blocs Gutenberg et
-  patterns, configure des boutiques WooCommerce, implémente des endpoints REST API WordPress, applique le
-  durcissement de sécurité (nonces, sanitization, escaping, vérifications de capacités) et optimise les
-  performances via la mise en cache.
-  Déclenche pour "développement WordPress custom", "plugin WordPress", "thème WordPress sur mesure".
+  Expert end-to-end WordPress : thèmes et plugins custom, blocs Gutenberg et patterns, boutiques WooCommerce, endpoints REST API, durcissement sécurité (nonces, sanitization, escaping, capability checks), optimisation perfs (transients, object cache, queries, asset enqueue). Inclut validation `phpcs --standard=WordPress` et checklist sécu manuelle.
+  Utilise ce skill quand l'utilisateur dit : "développement WordPress custom", "plugin WordPress complet", "thème WordPress sur mesure", "boutique WooCommerce", "expertise WordPress full-stack", ou pour les missions qui mélangent thème + plugin + WooCommerce sur un même périmètre.
+  NE PAS utiliser pour : guidance générique standards WP modernes (utiliser `dev-wordpress`), blocs Gutenberg seuls (utiliser `wp-block-development`), block themes seuls (utiliser `wp-block-themes`), plugin seul (utiliser `wp-plugin-development`), REST API isolée (utiliser `wp-rest-api`), perfs backend seules (utiliser `wp-performance`), ou ops WP-CLI (utiliser `wp-wpcli-and-ops`).
 license: MIT
 metadata:
   author: https://github.com/Jeffallan

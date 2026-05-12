@@ -1,7 +1,10 @@
 ---
 name: recipe-sync-contacts-to-sheet
 version: 1.0.0
-description: "Export Google Contacts directory to a Google Sheets spreadsheet."
+description: |
+  Liste l'annuaire Google Contacts (noms, emails, téléphones) et exporte chaque contact en ligne dans un Google Sheets. Pour bâtir un export annuaire exploitable hors Workspace.
+  Utilise ce skill quand l'utilisateur dit : "exporte mes contacts dans un Sheets", "sync l'annuaire Google vers une feuille", "transforme mes Contacts en CRM léger", ou pour rapatrier l'annuaire vers Sheets.
+  NE PAS utiliser pour : journaliser des deals commerciaux (utiliser recipe-log-deal-update), générer un rapport depuis un Sheets existant (utiliser recipe-generate-report-from-sheet), ou modifier les contacts eux-mêmes (utiliser gws-people).
 metadata:
   openclaw:
     category: "recipe"

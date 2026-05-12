@@ -1,13 +1,9 @@
 ---
 name: article-multiformat
-description: >
-  Derive un article schoolsWP publie en 4-6 formats prets a coller : newsletter email, post
-  LinkedIn/Bluesky, pin Pinterest (titre + description + board + brief visuel), script YouTube,
-  checklist/lead magnet et citation/punchline. Chaque derivation reste fidele au contenu source
-  sans rien inventer. Utilise ce skill des que l'utilisateur veut decliner un article, creer des
-  formats sociaux, deriver du contenu, repurposer un article, ou dit "multiformat", "declinaisons",
-  "derive l'article", "newsletter + LinkedIn", "fais les formats pour...", "repurpose",
-  "contenu social pour cet article".
+description: |
+  Dérive un article schoolsWP publié en 4-6 formats prêts à coller : newsletter email, post LinkedIn/Bluesky, pin Pinterest (titre + description + board + brief visuel), script YouTube, checklist/lead magnet et citation/punchline. Chaque dérivation reste fidèle au contenu source sans rien inventer.
+  Utilise ce skill quand l'utilisateur dit : "multiformat", "déclinaisons", "dérive l'article", "newsletter + LinkedIn", "fais les formats pour...", "repurpose", "contenu social pour cet article", ou veut décliner un article publié sur plusieurs canaux.
+  NE PAS utiliser pour : créer du contenu social original sans article source (utiliser `linkedin`, `pinterest-strategy`, `instagram-strategy`), rédiger l'article lui-même (utiliser `schoolswp-article-workflow`), ou recycler un email reçu (utiliser `email-to-content`).
 ---
 
 # /article-multiformat — Derivation multi-format schoolsWP

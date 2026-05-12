@@ -1,13 +1,9 @@
 ---
 name: score-review-pipeline
 description: |
-  Use when designing a CLI-driven data pipeline qui ingère un corpus, score chaque item
-  selon plusieurs critères déterministes, sort une liste haute confiance et une file de
-  review humaine pour les cas ambigus. Pattern dérivé du repo spoti-bye (Alex Hillman)
-  applicable au scoring de cocons SEO, qualification de leads FluentCRM, audit batch
-  d'articles publiés, ou tout pipeline ingest -> score -> review -> action. Déclenche
-  pour : "scoring multi-critères", "pipeline ingest + review", "CLI + SQLite + scoring",
-  "comment industrialiser le tri de X items", "filtrer un batch avec review humaine".
+  Conçoit un pipeline CLI déterministe en 4 étapes (sync → resolve → review → action) pour ingérer un corpus, scorer chaque item, sortir une liste haute confiance et une file de review humaine pour les cas ambigus. Pattern dérivé du repo spoti-bye (Bun + SQLite local + scoring pondéré).
+  Utilise ce skill quand l'utilisateur dit : "scoring multi-critères", "pipeline ingest + review", "CLI + SQLite + scoring", "industrialiser le tri de X items", "filtrer un batch avec review humaine", ou pour scorer cocons SEO / qualifier leads FluentCRM / auditer batch d'articles.
+  NE PAS utiliser pour : scoring d'un seul item (c'est un script, pas un pipeline), du temps réel / streaming (ce pattern est batch), ou si le scoring nécessite un LLM par item (use case agent, voir `core/agents-py/`).
 ---
 
 # Score-Review Pipeline

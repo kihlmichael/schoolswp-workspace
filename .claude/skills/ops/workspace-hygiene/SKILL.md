@@ -1,6 +1,9 @@
 ---
 name: workspace-hygiene
-description: "Audit, nettoyage et maintenance structurelle de workspaces de développement. Utilise ce skill dès que l'utilisateur mentionne : nettoyage de projet, doublons, fichiers résiduels, fichiers temporaires, audit de workspace, dette structurelle, organisation de repo, fichiers .patch, fichiers orphelins, réduction de bruit, ou demande de ranger/trier/nettoyer un dossier de travail. Déclenche aussi quand l'utilisateur dit 'c'est le bordel', 'faut ranger', 'trop de fichiers', 'je sais plus ce qui sert', 'audit', 'hygiène', ou toute variante exprimant un besoin de clarté structurelle dans un projet. Fonctionne en deux modes : AUDIT (analyse sans modification) et APPLY (exécution d'un plan validé). Ne supprime jamais définitivement — utilise toujours _trash/ et _archive/."
+description: |
+  Maintenance structurelle réversible de workspaces solo-founder en deux modes : AUDIT (analyse sans modifier) et APPLY (exécution d'un plan validé). Détecte doublons, fichiers résiduels, dette structurelle, orphelins. Ne supprime jamais définitivement, utilise `_trash/` et `_archive/`.
+  Utilise ce skill quand l'utilisateur dit : "nettoie ce dossier", "trop de fichiers", "c'est le bordel", "faut ranger", "doublons", "fichiers résiduels", "hygiène repo", ou "je sais plus ce qui sert".
+  NE PAS utiliser pour : produire un rapport de métriques globales et scores de maturité (utiliser `workspace-audit`), supprimer définitivement des fichiers (passer par confirmation manuelle Explorer Windows, voir CLAUDE.md), ou auditer la qualité du code (utiliser `code-review-and-quality`).
 ---
 
 # Workspace Hygiene Manager

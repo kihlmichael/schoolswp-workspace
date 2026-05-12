@@ -1,7 +1,10 @@
 ---
 name: gws-classroom
 version: 1.0.0
-description: "Google Classroom: Manage classes, rosters, and coursework."
+description: |
+  Google Classroom v1 via la CLI gws : gère cours, élèves, enseignants, devoirs (courseWork), submissions, annonces, topics, registrations, invitations. Pour automatiser l'admin pédagogique côté Google for Education.
+  Utilise ce skill quand l'utilisateur dit : "crée un cours Classroom", "ajoute un eleve", "liste les devoirs", "note les submissions", "Classroom courseWork", ou pour scripter l'admin Google Classroom en batch.
+  NE PAS utiliser pour : un cours TutorLMS sur schoolswp.com (hors périmètre Google, utiliser le MCP novamira-schoolswp-com et les agents formation), gestion d'évaluations LMS WordPress, ou exporter une note vers Sheets (utiliser gws-classroom puis gws-sheets-append en pipeline).
 metadata:
   openclaw:
     category: "productivity"

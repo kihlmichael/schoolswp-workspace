@@ -1,10 +1,9 @@
 ---
 name: wordpress-router
 description: |
-  Classifie et route vers le bon workflow ou skill WordPress selon le type de dépôt (plugin, thème, block
-  theme, blocs Gutenberg, WP core). Utilise ce skill pour choisir rapidement entre blocs, theme.json, REST
-  API, WP-CLI, performance, sécurité, tests ou packaging de release.
-  Déclenche pour "dépôt WordPress", "classifier un repo WP", "quel skill WordPress utiliser".
+  Classifie un dépôt WordPress (plugin / thème / block theme / blocs Gutenberg / WP core / full site) et route vers le bon skill domaine. Lance le triage déterministe `detect_wp_project.mjs`, lit l'arbre de décision et délègue. À utiliser EN PREMIER au début de la majorité des tâches WordPress.
+  Utilise ce skill quand l'utilisateur dit : "j'ai un repo WordPress", "classifie ce projet WP", "quel skill WordPress utiliser", "par où commencer sur ce repo WP", ou avant toute intervention sur un codebase WordPress dont la structure n'est pas évidente.
+  NE PAS utiliser pour : tâche WP dont le périmètre est déjà clair (sauter direct au skill domaine), inspection sans intention de router (utiliser `wp-project-triage`), guidance générale standards WP (utiliser `dev-wordpress`), ou orchestration multi-skills cross-cutting non-WordPress.
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

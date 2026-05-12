@@ -1,15 +1,9 @@
 ---
 name: decision-engine
-description: >
-  schoolsWP Decision Engine — mode de raisonnement COT (Chain of Thought) pour décisions
-  stratégiques complexes. Structurer la pensée avant de répondre : clarifier, analyser les
-  variables, comparer les options, évaluer les impacts, prioriser par ROI/faisabilité, produire
-  une recommandation tranchée. Déclencher quand la demande implique un arbitrage stratégique :
-  "quel outil choisir", "quelle approche prioriser", "j'hésite entre", "que me conseilles-tu",
-  "quelle est la meilleure option", "comment décider", "aide-moi à choisir", "architecture SEO",
-  "décision produit", "choix d'automatisation", "quelle stratégie pour". Préférer Decision Engine
-  à SPECS quand une décision doit être prise maintenant, pas juste cadrée. Préférer Decision Engine
-  à RACE quand le problème est complexe et nécessite de peser plusieurs options avant d'agir.
+description: |
+  schoolsWP Decision Engine — raisonnement COT (Chain of Thought) pour arbitrage stratégique complexe. Structure la pensée avant de répondre : clarifier, analyser les variables, comparer les options, évaluer impact × effort × ROI, prioriser, produire une recommandation tranchée (pas un "ça dépend" sans conclusion).
+  Utilise ce skill quand l'utilisateur dit : "j'hésite entre A et B", "quel outil choisir", "que me conseilles-tu", "aide-moi à trancher", "FluentCRM ou Brevo", ou doit décider maintenant entre plusieurs options sur la table.
+  NE PAS utiliser pour : un cadrage produit avant lancement (utiliser `specs-engine`), un audit rapide ou des quick wins sur URL (utiliser `race-engine`), tester une hypothèse mesurable (utiliser `pact-engine`), ou produire un livrable from scratch (utiliser `credo-engine`).
 ---
 
 # schoolsWP Decision Engine

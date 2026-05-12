@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-read
 version: 1.0.0
-description: "Gmail: Read a message and extract its body or headers."
+description: |
+  Helper gws gmail +read : lit un message Gmail par ID et extrait son body (plain ou html) et optionnellement les headers (From, To, Subject, Date). Sortie shell-friendly pour parsing par jq ou pipe.
+  Utilise ce skill quand l'utilisateur dit : "lis le mail ID...", "récupère le contenu de ce message Gmail", "extract body Gmail", "récupère les headers", ou pour pipeline qui parse un mail entrant et le transforme.
+  NE PAS utiliser pour : lister l'inbox non lue (utiliser gws-gmail-triage), répondre au message (utiliser gws-gmail-reply), convertir le mail en tâche (utiliser gws-workflow-email-to-task), ou recherche multi-messages (utiliser gws-gmail).
 metadata:
   openclaw:
     category: "productivity"

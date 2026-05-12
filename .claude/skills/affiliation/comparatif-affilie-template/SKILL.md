@@ -1,6 +1,9 @@
 ---
 name: comparatif-affilie-template
-description: Template complet de comparatif affilié schoolsWP (H1->FAQ, tableau, verdict, blocs affiliés). Utiliser pour pages X vs Y décisionnelles et monétisables, quand l’utilisateur veut créer une page comparatif avec structure de conversion et blocs d’affiliation intégrés.
+description: |
+  Template prepret de comparatif affilie schoolsWP avec variables ({outil_A}, {outil_B}, {profil_cible}, {cas_usage}, {objectif}) et structure complete H1 -> FAQ : tableau decisionnel, verdict honnete, blocs affilies integres, ton pedagogique. Plug-and-play, pas de reflexion strategique.
+  Utilise ce skill quand l'utilisateur dit : "template comparatif", "remplis ce template X vs Y", "j'ai mes 2 outils, applique le template", ou quand il a deja choisi le sujet et veut juste du remplissage rapide avec variables prefedinies.
+  NE PAS utiliser pour : reflechir a la structure ideale d'un comparatif (utiliser `comparatif-affiliate-engine`), generer une page avis solo (utiliser `money-page-generator`), ou si l'utilisateur veut un raisonnement strategique avant production (utiliser `affiliation-opportunity-scanner`).
 ---
 
 

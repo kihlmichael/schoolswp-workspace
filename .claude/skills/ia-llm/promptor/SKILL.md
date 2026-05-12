@@ -1,6 +1,9 @@
 ---
 name: promptor
-description: "Generateur de prompts parfaits adaptes a chaque IA. Utiliser quand l'utilisateur veut creer un prompt pour une autre IA (ChatGPT, Gemini, Midjourney, Bolt, Mistral, etc.), optimiser un prompt existant, ou demande 'genere-moi un prompt pour...', 'prompt parfait pour...', 'promptor', 'meta-prompt'. Aussi quand l'utilisateur mentionne vouloir utiliser une autre IA et a besoin d'instructions optimisees."
+description: |
+  Générateur de prompts adaptés au format spécifique de chaque IA cible (ChatGPT en markdown, Claude en XML tags, Midjourney en descripteurs visuels, Bolt/Lovable en specs app, Nano Banana/Mistral en formes natives). Processus 4 phases : collecte, calibrage référence, génération, autocritique structurée.
+  Utilise ce skill quand l'utilisateur dit : "génère-moi un prompt pour ChatGPT/Gemini/Midjourney/Bolt", "promptor", "prompt parfait pour cette IA", "adapte ce prompt à Claude/Mistral", ou veut un prompt optimisé pour une IA externe à Claude Code.
+  NE PAS utiliser pour : créer un prompt générique sans IA cible précise (utiliser `prompt-master`), construire un prompt schoolsWP structuré pour Claude Code (utiliser `meta-prompt-creator`), ou auditer la sécurité d'un prompt (utiliser `ai-prompt-engineering-safety-review`).
 metadata:
   author: "Michael KIHL"
   version: "2.0.0"

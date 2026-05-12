@@ -1,15 +1,9 @@
 ---
 name: fast-websearch
-description: >
-  Recherche web ultra-rapide via MCP Exa. Déclenche ce skill sans hésiter dès
-  que la question porte sur un outil, plugin, service ou produit externe — prix,
-  version, mise à jour, compatibilité, comparaison, disponibilité, nouveautés
-  récentes. Cela inclut : "c'est quoi le prix de X", "la dernière version de Y",
-  "X est-il compatible avec Z", "lequel est mieux entre A et B", "est-ce que X
-  a évolué récemment", même sans mot-clé "cherche" explicite. Ne pas utiliser
-  pour : rédaction pure, refactoring de code, lecture de fichiers locaux,
-  questions sur les règles internes du projet (style guide, couches stratégiques,
-  config n8n).
+description: |
+  Recherche web ultra-rapide via MCP Exa, 2 requêtes max, réponse courte sans raisonnement visible. Pour vérifier prix/version/compatibilité/comparaison d'un outil, plugin, service ou produit externe.
+  Utilise ce skill quand l'utilisateur dit : "c'est quoi le prix de X", "la dernière version de Y", "X est-il compatible avec Z", "lequel est mieux entre A et B", "est-ce que X a évolué récemment", même sans mot-clé "cherche" explicite.
+  NE PAS utiliser pour : rédaction pure, refactoring de code, lecture de fichiers locaux, questions sur les règles internes du projet (style guide, couches stratégiques, config n8n), recherche doc technique précise (utiliser `find-docs` ou MCP Context7), recherche profonde multi-sources (utiliser `firecrawl` ou `etude-marche-france`).
 ---
 
 ## Rôle

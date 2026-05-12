@@ -1,9 +1,9 @@
 ---
 name: rewrite-conversion
 description: >
-  Reecrit un texte schoolsWP pour ameliorer sa clarte, son impact et sa conversion.
-  Utilise ce skill des que l'utilisateur veut ameliorer un texte existant, rendre un contenu
-  plus convaincant, optimiser une page pour la conversion, ou dit "reecris", "ameliore ce texte",
+  Reecrit un texte schoolsWP pour améliorer sa clarte, son impact et sa conversion.
+  Utilise ce skill des que l'utilisateur veut améliorer un texte existant, rendre un contenu
+  plus convaincant, optimiser une page pour la conversion, ou dit "reecris", "améliore ce texte",
   "rends ca plus clair", "plus percutant", "optimise la conversion", "reformule", "CTA plus fort".
   Ne pas confondre avec clairtexte (correction linguistique pure) — ce skill reecrit pour l'impact.
   Aussi utilisable depuis Dispatch mobile pour une reecriture rapide.

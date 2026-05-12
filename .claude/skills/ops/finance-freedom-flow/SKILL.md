@@ -1,16 +1,9 @@
 ---
 name: finance-freedom-flow
 description: |
-  Coaching financier personnel complet en 7 etapes sequentielles : audit radiographie,
-  archetype financier, budget anti-budget, destruction de dettes, fonds d'urgence + chiffre liberte,
-  portefeuille investissement paresseux, rituel revue mensuelle.
-  Skill personnel pour Michael KIHL — guide pas a pas de la situation actuelle jusqu'a la liberte
-  financiere avec des livrables concrets a chaque etape.
-  Declenche ce skill des que l'utilisateur parle de : finances personnelles, budget, dettes,
-  epargne, investissement, liberte financiere, patrimoine, audit financier, portefeuille ETF,
-  revue mensuelle finances, archetype financier, fonds d'urgence, FIRE, independance financiere,
-  ou veut un diagnostic, un plan d'action ou un suivi financier — meme partiellement.
-  Peut etre lance en entier (les 7 etapes) ou etape par etape selon le besoin.
+  Coaching financier personnel pour Michael en 7 étapes séquentielles : audit radiographie, archétype financier, budget anti-budget, destruction de dettes, fonds d'urgence + chiffre liberté, portefeuille investissement paresseux, rituel revue mensuelle. Direct, chiffré, pas de morale. Lançable en entier ou par étape isolée.
+  Utilise ce skill quand l'utilisateur dit : "audit financier", "lance mon flow finances", "budget", "dettes", "épargne", "investissement", "liberté financière", "FIRE", "fonds d'urgence", "portefeuille ETF", "revue mensuelle finances", ou "fais l'étape X" du flow.
+  NE PAS utiliser pour : finance d'entreprise schoolsWP (revenus, P&L, prévisionnel pro), comptabilité TVA/déclarations URSSAF (skill non-fiscal), conseil patrimonial réglementé (orienter vers CGP humain), ou analyse marché actions/crypto en temps réel (skill ne fait pas de recos d'achat datées).
 ---
 
 # Finance Freedom Flow

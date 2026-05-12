@@ -1,11 +1,9 @@
 ---
 name: xlsx
 description: |
-  Ouvre, lit, modifie, crée ou corrige des fichiers tableur (.xlsx, .xlsm, .csv, .tsv) : ajout de
-  colonnes, calculs de formules, formatage, graphiques, nettoyage de données, génération de rapports ou de
-  dashboards.
-  Déclenche pour "fichier Excel", ".xlsx", "tableur", "CSV", "feuille de calcul".
-the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved."
+  Ouvre, lit, modifie, cree ou corrige des fichiers tableur (.xlsx, .xlsm, .csv, .tsv) : ajout de colonnes, formules, formatage, graphiques, nettoyage de donnees malformees, restructuration de tableaux desordonnes, generation de rapports et dashboards. Inclut conventions financieres (color coding, number formats) et garantie zero erreur de formule.
+  Utilise ce skill quand l'utilisateur dit : "fichier Excel", ".xlsx", "tableur", "CSV", "feuille de calcul", "model financier Excel", "nettoyer un CSV", "restructurer un tableau", ou pour tout livrable ou la sortie est un fichier tableur.
+  NE PAS utiliser pour : Google Sheets via API (utiliser MCP Google Drive ou scripts dedies), document Word ou rapport HTML meme avec tableaux (utiliser docx ou cc-design), pipeline base de donnees (utiliser scripts Python directs), Sheets schoolsWP plugins-snapshot-weekly (utiliser routine cron deja configuree), ou simple table dans un article (utiliser Ninja Tables et CSV colocalise).
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

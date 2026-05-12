@@ -1,7 +1,10 @@
 ---
 name: gws-modelarmor
 version: 1.0.0
-description: "Google Model Armor: Filter user-generated content for safety."
+description: |
+  Google Model Armor v1 via la CLI gws : safety layer GCP qui filtre prompts et réponses LLM (contournement, PII, toxique, malveillant, sensible). Couvre l'API brute (templates CRUD, sanitize, locations).
+  Utilise ce skill quand l'utilisateur dit : "Model Armor template", "filtre prompt LLM Google", "safety LLM GCP", "list templates Model Armor", ou pour piloter une opération Model Armor avancée.
+  NE PAS utiliser pour : créer un template (utiliser gws-modelarmor-create-template), sanitize un prompt utilisateur (utiliser gws-modelarmor-sanitize-prompt), sanitize une réponse modèle (utiliser gws-modelarmor-sanitize-response), ou modération côté Anthropic / OpenAI (utiliser leur safety natif).
 metadata:
   openclaw:
     category: "productivity"

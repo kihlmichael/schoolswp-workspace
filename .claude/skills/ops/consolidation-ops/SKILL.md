@@ -1,3 +1,11 @@
+---
+name: consolidation-ops
+description: |
+  Playbooks d'exécution concrets pour consolider le workspace schoolsWP. 4 playbooks (Quick Wins, Qualite, Documentation, Architecture) decoupes en 18 actions priorisees, chacune avec etapes detaillees et critere de verification. Vise la stabilisation structurelle : merge de branches, suppression des doublons skills, archivage des fichiers orphelins, mise en place CI / coverage / CHANGELOG, refactoring agents.
+  Utilise ce skill quand l'utilisateur dit : "consolide le workspace", "playbook consolidation", "quick wins workspace", "actions a faire ce mois", "audit structurel", "que faire pour assainir le repo", "plan de cleanup", "exécuter playbook X", ou demande la roadmap structurelle (semaine / mois / trimestre).
+  NE PAS utiliser pour : encoder les règles de gouvernance (utiliser `workspace-guardian`), exécuter une seule action de cleanup ad-hoc (juste agir directement), planifier le travail editorial (utiliser `calendrier-edito-schoolswp`), ou suivre une mission projet active (utiliser `core/tasks/todo.md` + TodoWrite).
+---
+
 # Consolidation Ops — Playbooks d'exécution schoolsWP
 
 ## Objectif

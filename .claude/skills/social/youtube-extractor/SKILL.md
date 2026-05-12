@@ -1,12 +1,9 @@
 ---
 name: youtube-extractor
 description: |
-  Extraction de donnees YouTube via Apify + MCP RapidAPI — metadonnees, transcript et commentaires
-  d'une video, structures dans un fichier Markdown propre et reutilisable. Utilise ce skill pour
-  extraire le contenu d'une video YouTube, recuperer un transcript, scraper les commentaires,
-  obtenir les stats d'une video, ou transformer une video YouTube en fichier Markdown exploitable.
-  Declenche pour "extrais cette video YouTube", "transcript de cette video", "recupere les commentaires",
-  "scrape cette video YT", "donne-moi les infos de cette video", "YouTube to Markdown".
+  Extrait les données d'une vidéo YouTube via pipeline 2 sources : Apify (`starvibe/youtube-video-transcript` pour transcript + métadonnées) + MCP RapidAPI YouTube (Video_Details pour stats enrichies + Video_Comments). Sortie : fichier Markdown structuré à la racine du projet, prêt à recycler en article ou brief.
+  Utilise ce skill quand l'utilisateur dit : "extrais cette vidéo YouTube", "transcript de cette vidéo", "récupère les commentaires de cette vidéo", "scrape cette URL YT", "donne-moi les infos de cette vidéo", "YouTube to Markdown", ou fournit une URL YouTube à transformer en fichier exploitable.
+  NE PAS utiliser pour : transcript YouTube uniquement via DataForSEO endpoint (utiliser `dataforseo_youtube_subtitles`, voir `reference_dataforseo_youtube_subtitles.md`), tentative via Apify pintostudio/topaz_sharingan (HTTP 402, voir `reference_apify_x402_transcripts.md`), ou production d'une nouvelle vidéo YouTube schoolsWP (utiliser `schoolswp-youtube-studio`).
 ---
 
 # YouTube Extractor — Pipeline multi-sources

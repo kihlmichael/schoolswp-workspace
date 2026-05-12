@@ -1,10 +1,9 @@
 ---
 name: pdf
 description: |
-  Manipule des fichiers PDF : lecture, extraction de texte/tableaux, fusion, découpage, rotation, ajout de
-  filigranes, création, remplissage de formulaires, chiffrement. Utilise ce skill pour toute opération sur
-  des fichiers PDF.
-  Déclenche pour "fichier PDF", ".pdf", "extraire du texte PDF", "fusionner des PDF", "créer un PDF".
+  Manipule des fichiers PDF via pypdf et libs Python ou JS : lecture, extraction texte et tableaux, fusion, decoupage, rotation, ajout de filigranes, creation, remplissage de formulaires, chiffrement. Pour les formulaires, lit FORMS.md. Pour features avancees, voir REFERENCE.md du skill.
+  Utilise ce skill quand l'utilisateur dit : "fichier PDF", ".pdf", "extraire du texte PDF", "fusionner des PDF", "créer un PDF", "remplir un formulaire PDF", "chiffrer un PDF", ou pour toute manipulation programmatique d'un PDF existant ou a creer.
+  NE PAS utiliser pour : convertir un markdown en PDF publication-quality (utiliser make-pdf qui gere TOC, headers, page numbers), exporter un Word ou Excel en PDF (utiliser docx ou xlsx avec soffice), generer un slide deck (utiliser external-cc-design), ou screenshot d'une page web en PDF (utiliser tools/html-to-png ou chrome-devtools MCP).
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

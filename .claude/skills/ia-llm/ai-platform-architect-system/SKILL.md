@@ -1,6 +1,9 @@
 ---
 name: ai-platform-architect-system
-description: Cadre d'architecture pour opérer Claude Code, MCP et Desktop Commander avec un workflow déterministe et safe (inspect → plan → execute → verify). Utiliser quand l'utilisateur veut designer un système IA auditable, clarifier les couches et gates humains, ou concevoir un workflow production-safe avec contrôle minimal du contexte.
+description: |
+  Cadre d'architecture pour opérer Claude Code, MCP et Desktop Commander avec un workflow déterministe et safe (inspect → plan → execute → verify). Clarifie les 5 couches (Human, Claude Code, MCP, Execution Bridge, Repository) et les gates humains.
+  Utilise ce skill quand l'utilisateur dit : "architecture IA auditable", "système production-safe", "designer un workflow Claude Code", "couches MCP", "minimiser le contexte et les appels tools", ou veut un pattern d'implémentation reviewable avant de coder.
+  NE PAS utiliser pour : concevoir un système multi-agents Planner/Executor/Verifier (utiliser `tri-agent-architecture`), construire un MCP server custom (utiliser `mcp-builder`), ou architecturer un pipeline éditorial (utiliser `ai-strategic-brain`).
 ---
 
 # AI Platform Architect System - Claude Code

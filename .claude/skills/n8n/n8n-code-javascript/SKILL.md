@@ -1,10 +1,9 @@
 ---
 name: n8n-code-javascript
 description: |
-  Écrit du code JavaScript dans les nœuds Code n8n. Utilise ce skill pour écrire du JavaScript en n8n,
-  utiliser la syntaxe $input/$json/$node, faire des requêtes HTTP avec $helpers, travailler avec les dates
-  via DateTime ou déboguer des erreurs de nœud Code.
-  Déclenche pour "Code node n8n", "JavaScript n8n", "$input.all()", "nœud Code JS".
+  Écrit du JavaScript dans les nœuds Code n8n (instance schoolswp-n8n.wp1.host) : syntaxe $input.all() / $json / $node, requêtes HTTP via $helpers.httpRequest, dates via DateTime Luxon, retour au format items JSON. Couvre les modes "Run Once for All Items" vs "Run Once for Each Item".
+  Utilise ce skill quand l'utilisateur dit : "Code node n8n", "JavaScript dans n8n", "$input.all()", "$helpers.httpRequest", "transformer mes items en JS", ou pour debug un node Code JS qui plante.
+  NE PAS utiliser pour : choisir un pattern d'architecture (utiliser n8n-workflow-patterns), écrire du Python n8n (utiliser n8n-code-python), valider une expression {{ }} (utiliser n8n-expression-syntax), ou créer un workflow complet (utiliser flow agent ou n8n-workflow-architect).
 
 ---
 

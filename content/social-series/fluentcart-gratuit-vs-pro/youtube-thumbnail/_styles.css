@@ -1,0 +1,129 @@
+/* ============================================================
+   YouTube thumbnail schoolsWP - 16:9 paysage
+   Format : 1280x720 (YouTube thumbnail standard)
+   Capture en --scale=2 pour HD 2560x1440 (YouTube recommend HD)
+   Doit accrocher en miniature : très contrasté, texte hyper gros
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1A1A1A;
+  padding: 40px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.slide--light { background: #F4F5F7; color: #0F1419; }
+.slide--dark  { background: #0F1419; color: #F4F5F7; }
+
+.slide__top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__eyebrow {
+  color: #00D400;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.slide__hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__title {
+  font-weight: 800;
+  font-size: 168px;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.slide__title .accent { color: #00D400; }
+
+.slide__subtitle {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.2;
+  margin-top: 18px;
+  color: #4A5568;
+}
+
+.slide--dark .slide__subtitle { color: #CBD5E0; }
+
+.slide__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slide__logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.slide__brand-tag {
+  font-weight: 500;
+  font-size: 18px;
+  color: #4A5568;
+  letter-spacing: 0.02em;
+}
+
+.slide--dark .slide__brand-tag { color: #94A3B8; }
+
+.slide__badge {
+  display: inline-flex;
+  align-items: center;
+  background: #00D400;
+  color: #0F1419;
+  font-weight: 800;
+  font-size: 32px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 12px 32px rgba(0, 212, 0, 0.3);
+}
+
+.halftone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.13;
+}
+
+.halftone--br { bottom: -120px; right: -120px; width: 480px; height: 480px; }
+
+.slide--dark .halftone { opacity: 0.20; }

@@ -1,6 +1,9 @@
 ---
 name: geo-architect
-description: GEO/AIO pipeline schoolsWP — transformer des requêtes (GSC, SERP, mots-clés) en clusters canoniques, prompts monitorables et pages AIO-ready. Use when user provides keywords, GSC queries, seed list, or asks to build GEO prompts, create AIO-ready page structure, prepare Thruuu monitoring, or cluster WordPress content topics. Supports phases: V1 (qualify) | V2 (cluster + prioritize) | V3 (AIO-ready page) | full (V1+V2+V3 en une passe).
+description: |
+  Pipeline GEO/AIO schoolsWP — transforme des requêtes brutes (mots-clés, seeds, requêtes GSC) en clusters canoniques, listes de prompts monitorables (Thruuu) et pages WordPress conçues pour être citées par les IA. 4 phases : V1 (qualifier les prompts), V2 (clusteriser + prioriser), V3 (page AIO-ready), full (V1+V2+V3 en une passe).
+  Utilise ce skill quand l'utilisateur dit : "construis un pipeline GEO", "génère des prompts AIO-ready", "prépare la monitoring Thruuu", "fais une page AIO sur ce cluster", "geo-architect full", ou fournit un mot-clé / liste seeds en demandant clusters + prompts + page.
+  NE PAS utiliser pour : pipeline data-driven depuis un export GSC réel (utiliser `geo-gsc-pipeline`, sortie JSON strict), cartographie macro de tout le site (utiliser `cocon-map-schoolswp`), ou cluster d'un seul mot-clé sans phase prompts/AIO (utiliser `cluster-cocon-automatique`).
 metadata:
   author: Michaël KIHL
   brand: schoolsWP

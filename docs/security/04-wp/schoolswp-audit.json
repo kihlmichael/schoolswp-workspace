@@ -1,0 +1,2121 @@
+{
+  "target": "https://schoolswp.com",
+  "auth_user": "Michael KIHL",
+  "auth_pwd_4last": "...DXCE",
+  "checks": {
+    "discovery": {
+      "status": 200,
+      "ok": true,
+      "name": "schoolsWP",
+      "description": "Formations WordPress pour tous niveaux",
+      "url": "https://schoolswp.com",
+      "home": "https://schoolswp.com",
+      "namespaces_count": 60,
+      "namespaces": [
+        "bit-social",
+        "cky/v1",
+        "clickwhale/v1",
+        "cookieyes/v1",
+        "fluent-affiliate/v2",
+        "fluent-boards/v2",
+        "fluent-booking/v2",
+        "fluent-cart/v1",
+        "fluent-cart/v2",
+        "fluent-crm/v2",
+        "fluent-smtp",
+        "fluent-support/v2",
+        "fluentform/v1",
+        "kb-activecampaign/v1",
+        "kb-convertkit/v1",
+        "kb-custom-svg/v1",
+        "kb-design-library/v1",
+        "kb-fluentcrm/v1",
+        "kb-getresponse/v1",
+        "kb-image-picker/v1",
+        "kb-lottieanimation/v1",
+        "kb-mailchimp/v1",
+        "kb-mailerlite/v1",
+        "kb-sendinblue/v1",
+        "kb-vector/v1",
+        "kbp-dynamic/v1",
+        "kbp/v1",
+        "kbpp/v1",
+        "ktp/v1",
+        "lg/v1",
+        "link-whisper",
+        "liquidweb/harbor/v1",
+        "mcp",
+        "ninjatables/v2",
+        "nps-survey/v1",
+        "oembed/1.0",
+        "pll/v1",
+        "presto-player/v1",
+        "presto-player/v1/activecampaign",
+        "presto-player/v1/analytics",
+        "presto-player/v1/email",
+        "presto-player/v1/fluentcrm",
+        "presto-player/v1/mailchimp",
+        "presto-player/v1/mailerlite",
+        "rankmath/v1",
+        "rankmath/v1/an",
+        "rankmath/v1/ca",
+        "rankmath/v1/in",
+        "rankmath/v1/link-genius",
+        "rankmath/v1/setupWizard",
+        "rankmath/v1/status",
+        "seo-sans-migraine",
+        "sure-triggers/v1",
+        "tutor/v1",
+        "wp-abilities/v1",
+        "wp-block-editor/v1",
+        "wp-site-health/v1",
+        "wp-umbrella/v1",
+        "wp/v2",
+        "wpsocialreviews/v2"
+      ],
+      "routes_count": 1886,
+      "site_logo": 830098,
+      "site_icon": 47407,
+      "authentication": {
+        "application-passwords": {
+          "endpoints": {
+            "authorization": "https://schoolswp.com/wp-admin/authorize-application.php"
+          }
+        }
+      }
+    },
+    "users_privileged": {
+      "status": 200,
+      "ok": true,
+      "count": 1,
+      "users": [
+        {
+          "id": 2,
+          "username": "Michael KIHL",
+          "name": "Michaël KIHL",
+          "email": "contact@michaelkihl.fr",
+          "roles": [
+            "administrator",
+            "tutor_instructor"
+          ],
+          "registered_date": "2020-05-18T12:18:18+00:00",
+          "capabilities_count": 598,
+          "extra_capabilities_count": 3,
+          "url": "https://schoolswp.com/"
+        }
+      ]
+    },
+    "users_total": {
+      "total_count": "7"
+    },
+    "plugins": {
+      "status": 200,
+      "ok": true,
+      "count": 55,
+      "active": [
+        {
+          "plugin": "admin-site-enhancements-pro/admin-site-enhancements",
+          "status": "active",
+          "name": "Admin and Site Enhancements (ASE) Pro",
+          "plugin_uri": "https://www.wpase.com/",
+          "author": "wpase.com",
+          "author_uri": "https://www.wpase.com/author-uri",
+          "description": {
+            "raw": "Easily enable enhancements and features that usually require multiple plugins.",
+            "rendered": "Easily enable enhancements and features that usually require multiple plugins. <cite>par <a href=\"https://www.wpase.com/author-uri\">wpase.com</a>.</cite>"
+          },
+          "version": "8.7.3",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "admin-site-enhancements-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/admin-site-enhancements-pro/admin-site-enhancements",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "bit-social/bit-social",
+          "status": "active",
+          "name": "Bit Social",
+          "plugin_uri": "https://bitapps.pro/bit-social",
+          "author": "Bit Social Auto Poster &amp; Scheduler - by Bit Apps",
+          "author_uri": "https://bitapps.pro",
+          "description": {
+            "raw": "Planificateur et éditeur automatique de publications pour les blogs et les réseaux sociaux",
+            "rendered": "Planificateur et éditeur automatique de publications pour les blogs et les réseaux sociaux <cite>par <a href=\"https://bitapps.pro\">Bit Social Auto Poster &amp; Scheduler - by Bit Apps</a>.</cite>"
+          },
+          "version": "1.13.10",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "bit-social",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/bit-social/bit-social",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "bit-social-pro/bit-social-pro",
+          "status": "active",
+          "name": "Bit Social Pro",
+          "plugin_uri": "https://bitapps.pro/bit-social",
+          "author": "Bit Apps",
+          "author_uri": "https://bitapps.pro",
+          "description": {
+            "raw": "Planificateur et éditeur automatique de publications pour les blogs et les réseaux sociaux",
+            "rendered": "Planificateur et éditeur automatique de publications pour les blogs et les réseaux sociaux <cite>par <a href=\"https://bitapps.pro\">Bit Apps</a>.</cite>"
+          },
+          "version": "1.13.10",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.0",
+          "textdomain": "bit-social",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/bit-social-pro/bit-social-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "clickwhale-pro/clickwhale",
+          "status": "active",
+          "name": "ClickWhale (Pro)",
+          "plugin_uri": "https://clickwhale.pro",
+          "author": "ClickWhale",
+          "author_uri": "https://clickwhale.pro",
+          "description": {
+            "raw": "Gestionnaire de liens, raccourcisseur de liens et traqueur de clics pour les liens d'affiliation et les pages de liens.",
+            "rendered": "Gestionnaire de liens, raccourcisseur de liens et traqueur de clics pour les liens d&rsquo;affiliation et les pages de liens. <cite>par <a href=\"https://clickwhale.pro\">ClickWhale</a>.</cite>"
+          },
+          "version": "2.5.3.5",
+          "network_only": false,
+          "requires_wp": "5.0",
+          "requires_php": "7.4",
+          "textdomain": "clickwhale",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/clickwhale-pro/clickwhale",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "cookie-law-info/cookie-law-info",
+          "status": "active",
+          "name": "CookieYes | GDPR Cookie Consent",
+          "plugin_uri": "https://www.cookieyes.com/",
+          "author": "CookieYes",
+          "author_uri": "https://www.cookieyes.com/",
+          "description": {
+            "raw": "Une manière simple de montrer que votre site se rend conforme à la loi européenne sur les cookie et au RGPD.",
+            "rendered": "Une manière simple de montrer que votre site se rend conforme à la loi européenne sur les cookie et au RGPD. <cite>par <a href=\"https://www.cookieyes.com/\">CookieYes</a>.</cite>"
+          },
+          "version": "3.4.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "cookie-law-info",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/cookie-law-info/cookie-law-info",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "custom-feed-for-tiktok/custom-feed-for-tiktok",
+          "status": "active",
+          "name": "Custom Feed for TikTok",
+          "plugin_uri": "https://github.com/WPManageNinja/custom-feed-for-tiktok",
+          "author": "Social Feed - WP Social Ninja Team",
+          "author_uri": "https://wpsocialninja.com/platforms/tiktok-feed/",
+          "description": {
+            "raw": "Create eye-catchy and responsive TikTok feed on your WordPress website.",
+            "rendered": "Create eye-catchy and responsive TikTok feed on your WordPress website. <cite>par <a href=\"https://wpsocialninja.com/platforms/tiktok-feed/\">Social Feed - WP Social Ninja Team</a>.</cite>"
+          },
+          "version": "1.2.3",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "custom-feed-for-tiktok",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/custom-feed-for-tiktok/custom-feed-for-tiktok",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "easy-content-linker-premium/easy-content-linker",
+          "status": "active",
+          "name": "Easy Content Linker (Premium)",
+          "plugin_uri": "",
+          "author": "Baptiste Guiraud",
+          "author_uri": "",
+          "description": {
+            "raw": "AI-powered internal linking. Semantic analysis with OpenAI embeddings and intelligent link creation.",
+            "rendered": "AI-powered internal linking. Semantic analysis with OpenAI embeddings and intelligent link creation. <cite>par Baptiste Guiraud.</cite>"
+          },
+          "version": "2.14.2",
+          "network_only": false,
+          "requires_wp": "6.2",
+          "requires_php": "7.4",
+          "textdomain": "easy-content-linker",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/easy-content-linker-premium/easy-content-linker",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-affiliate/fluent-affiliate",
+          "status": "active",
+          "name": "FluentAffiliate",
+          "plugin_uri": "https://fluentaffiliate.com",
+          "author": "WPManageNinja",
+          "author_uri": "https://wpmanageninja.com",
+          "description": {
+            "raw": "FluentAffiliate WordPress Plugin",
+            "rendered": "FluentAffiliate WordPress Plugin <cite>par <a href=\"https://wpmanageninja.com\">WPManageNinja</a>.</cite>"
+          },
+          "version": "1.4.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-affiliate",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-affiliate/fluent-affiliate",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-affiliate-pro/fluent-affiliate-pro",
+          "status": "active",
+          "name": "FluentAffiliate Pro",
+          "plugin_uri": "https://fluentaffiliates.com",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://fluentaffiliates.com",
+          "description": {
+            "raw": "FluentAffiliate Pro Package",
+            "rendered": "FluentAffiliate Pro Package <cite>par <a href=\"https://fluentaffiliates.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "1.4.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-affiliate-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-affiliate-pro/fluent-affiliate-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-boards/fluent-boards",
+          "status": "active",
+          "name": "Fluent Boards - Outil de gestion de projet",
+          "plugin_uri": "https://fluentboards.com",
+          "author": "WPManageNinja",
+          "author_uri": "https://fluentboards.com",
+          "description": {
+            "raw": "Fluent Boards est un outil puissant conçu pour une gestion efficace des listes de tâches, des projets et des tâches avec un tableau Kanban et plus encore.",
+            "rendered": "Fluent Boards est un outil puissant conçu pour une gestion efficace des listes de tâches, des projets et des tâches avec un tableau Kanban et plus encore. <cite>par <a href=\"https://fluentboards.com\">WPManageNinja</a>.</cite>"
+          },
+          "version": "1.91.3",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-boards",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-boards/fluent-boards",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-boards-pro/fluent-boards-pro",
+          "status": "active",
+          "name": "Fluent Boards Pro",
+          "plugin_uri": "https://fluentboards.com",
+          "author": "WPManageNinja",
+          "author_uri": "https://fluentboards.com",
+          "description": {
+            "raw": "Pro addon for FluentBoards Plugin",
+            "rendered": "Pro addon for FluentBoards Plugin <cite>par <a href=\"https://fluentboards.com\">WPManageNinja</a>.</cite>"
+          },
+          "version": "1.91.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-boards-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-boards-pro/fluent-boards-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-booking/fluent-booking",
+          "status": "active",
+          "name": "FluentBooking - Solution de prise de rendez-vous et de réservation",
+          "plugin_uri": "https://fluentbooking.com/pricing/",
+          "author": "Équipe de solutions pour les rendez-vous et les réservations - WPManageNinja",
+          "author_uri": "https://fluentbooking.com",
+          "description": {
+            "raw": "FluentBooking est la solution ultime pour réserver des rendez-vous, des réunions, des webinaires, des événements, des appels de vente, et plus encore.",
+            "rendered": "FluentBooking est la solution ultime pour réserver des rendez-vous, des réunions, des webinaires, des événements, des appels de vente, et plus encore. <cite>par <a href=\"https://fluentbooking.com\">Équipe de solutions pour les rendez-vous et les réservations - WPManageNinja</a>.</cite>"
+          },
+          "version": "2.0.05",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-booking",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-booking/fluent-booking",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-booking-pro/fluent-booking-pro",
+          "status": "active",
+          "name": "Fluent Booking Pro",
+          "plugin_uri": "https://fluentbooking.com",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://fluentbooking.com",
+          "description": {
+            "raw": "The Pro version of FluentBooking Plugin",
+            "rendered": "The Pro version of FluentBooking Plugin <cite>par <a href=\"https://fluentbooking.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "2.0.05",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-booking-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-booking-pro/fluent-booking-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-cart/fluent-cart",
+          "status": "active",
+          "name": "FluentCart",
+          "plugin_uri": "https://fluentcart.com",
+          "author": "FluentCart Team",
+          "author_uri": "https://fluentcart.com/about-us",
+          "description": {
+            "raw": "FluentCart WordPress Plugin",
+            "rendered": "FluentCart WordPress Plugin <cite>par <a href=\"https://fluentcart.com/about-us\">FluentCart Team</a>.</cite>"
+          },
+          "version": "1.3.27",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-cart",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-cart/fluent-cart",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-cart-pro/fluent-cart-pro",
+          "status": "active",
+          "name": "FluentCart Pro",
+          "plugin_uri": "https://fluentcart.com",
+          "author": "FluentCart Team",
+          "author_uri": "https://fluentcart.com",
+          "description": {
+            "raw": "The Pro version of FluentCart - A New Era of Commerce with WordPress",
+            "rendered": "The Pro version of FluentCart &#8211; A New Era of Commerce with WordPress <cite>par <a href=\"https://fluentcart.com\">FluentCart Team</a>.</cite>"
+          },
+          "version": "1.3.27",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-cart-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-cart-pro/fluent-cart-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-crm/fluent-crm",
+          "status": "active",
+          "name": "FluentCRM - Marketing Automation For WordPress",
+          "plugin_uri": "https://fluentcrm.com",
+          "author": "WP Email Newsletter Team - FluentCRM",
+          "author_uri": "https://fluentcrm.com",
+          "description": {
+            "raw": "Extension CRM et E-mail Newsletter pour WordPress",
+            "rendered": "Extension CRM et E-mail Newsletter pour WordPress <cite>par <a href=\"https://fluentcrm.com\">WP Email Newsletter Team - FluentCRM</a>.</cite>"
+          },
+          "version": "2.9.87",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-crm",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-crm/fluent-crm",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluentcampaign-pro/fluentcampaign-pro",
+          "status": "active",
+          "name": "FluentCRM Pro",
+          "plugin_uri": "https://fluentcrm.com",
+          "author": "Fluent CRM",
+          "author_uri": "https://fluentcrm.com",
+          "description": {
+            "raw": "Pro Email Automation and Integration Addon pour FluentCRM",
+            "rendered": "Pro Email Automation and Integration Addon pour FluentCRM <cite>par <a href=\"https://fluentcrm.com\">Fluent CRM</a>.</cite>"
+          },
+          "version": "2.9.86",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluentcampaign-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluentcampaign-pro/fluentcampaign-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluentform/fluentform",
+          "status": "active",
+          "name": "Fluent Forms",
+          "plugin_uri": "https://wpmanageninja.com/wp-fluent-form/",
+          "author": "Contact Form - WPManageNinja LLC",
+          "author_uri": "https://wpfluentforms.com",
+          "description": {
+            "raw": "Contact Form By Fluent Forms est une extension de formulaire de contact avancée avec glisser-déposer et prise en charge des colonnes multiples",
+            "rendered": "Contact Form By Fluent Forms est une extension de formulaire de contact avancée avec glisser-déposer et prise en charge des colonnes multiples <cite>par <a href=\"https://wpfluentforms.com\">Contact Form - WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "6.2.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluentform",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluentform/fluentform",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluentformpro/fluentformpro",
+          "status": "active",
+          "name": "Pack complémentaire Fluent Forms Pro",
+          "plugin_uri": "https://wpfluentforms.com/",
+          "author": "Fluent Forms",
+          "author_uri": "https://wpfluentforms.com",
+          "description": {
+            "raw": "La version Pro de FluentForm, le plugin de création de formulaires le plus avancé pour WordPress.",
+            "rendered": "La version Pro de FluentForm, le plugin de création de formulaires le plus avancé pour WordPress. <cite>par <a href=\"https://wpfluentforms.com\">Fluent Forms</a>.</cite>"
+          },
+          "version": "6.2.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluentformpro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluentformpro/fluentformpro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluentforms-pdf/fluentforms-pdf",
+          "status": "active",
+          "name": "Fluent PDF Generator",
+          "plugin_uri": "https://wpmanageninja.com/downloads/fluentform-pro-add-on/",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://wpmanageninja.com",
+          "description": {
+            "raw": "Download and Email entries as pdf with multiple template for all Fluent Products.",
+            "rendered": "Download and Email entries as pdf with multiple template for all Fluent Products. <cite>par <a href=\"https://wpmanageninja.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "2.1.1",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluentforms-pdf",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluentforms-pdf/fluentforms-pdf",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-roadmap/fluent-roadmap",
+          "status": "active",
+          "name": "Fluent Roadmap",
+          "plugin_uri": "https://fluenboards.com",
+          "author": "Fluent Boards",
+          "author_uri": "https://fluenboards.com",
+          "description": {
+            "raw": "FluentRoadmap is an add-on for FluentBoards that provides a clear view of user requests, project progress, and priorities.",
+            "rendered": "FluentRoadmap is an add-on for FluentBoards that provides a clear view of user requests, project progress, and priorities. <cite>par <a href=\"https://fluenboards.com\">Fluent Boards</a>.</cite>"
+          },
+          "version": "1.80",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-roadmap",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-roadmap/fluent-roadmap",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-smtp/fluent-smtp",
+          "status": "active",
+          "name": "FluentSMTP",
+          "plugin_uri": "https://fluentsmtp.com",
+          "author": "Équipes FluentSMTP &amp; WPManageNinja",
+          "author_uri": "https://fluentsmtp.com",
+          "description": {
+            "raw": "L’extension de connexion SMTP ultime pour WordPress.",
+            "rendered": "L’extension de connexion SMTP ultime pour WordPress. <cite>par <a href=\"https://fluentsmtp.com\">Équipes FluentSMTP &amp; WPManageNinja</a>.</cite>"
+          },
+          "version": "2.2.95",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-smtp",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-smtp/fluent-smtp",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-support/fluent-support",
+          "status": "active",
+          "name": "Fluent Support",
+          "plugin_uri": "https://fluentsupport.com",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://wpmanageninja.com",
+          "description": {
+            "raw": "L’extension d’assistance ultime pour votre WordPress.",
+            "rendered": "L’extension d’assistance ultime pour votre WordPress. <cite>par <a href=\"https://wpmanageninja.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "2.1.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-support",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-support/fluent-support",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fluent-support-pro/fluent-support-pro",
+          "status": "active",
+          "name": "Fluent Support Pro",
+          "plugin_uri": "https://fluentsupport.com",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://fluentsupport.com",
+          "description": {
+            "raw": "Customer Support and Ticketing System for WordPress",
+            "rendered": "Customer Support and Ticketing System for WordPress <cite>par <a href=\"https://fluentsupport.com\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "2.1.1",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fluent-support-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fluent-support-pro/fluent-support-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "flying-press/flying-press",
+          "status": "active",
+          "name": "FlyingPress",
+          "plugin_uri": "https://flyingpress.com",
+          "author": "FlyingWeb",
+          "author_uri": "",
+          "description": {
+            "raw": "WordPress ultra-rapide en automatique",
+            "rendered": "WordPress ultra-rapide en automatique <cite>par FlyingWeb.</cite>"
+          },
+          "version": "5.4.5",
+          "network_only": false,
+          "requires_wp": "4.7",
+          "requires_php": "7.4",
+          "textdomain": "flying-press",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/flying-press/flying-press",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "freshrank-ai-pro/freshrank-ai",
+          "status": "active",
+          "name": "FreshRank AI Pro",
+          "plugin_uri": "https://wordpress.org/plugins/freshrank-ai/",
+          "author": "Themeisle",
+          "author_uri": "https://themeisle.com",
+          "description": {
+            "raw": "AI-powered SEO &amp; GEO (Generative Engine Optimization) - Optimize content for traditional search engines AND AI platforms (ChatGPT, Claude, Perplexity). Automatic content analysis, updates, and prioritization using GPT-5 and Google Search Console data.",
+            "rendered": "AI-powered SEO &amp; GEO (Generative Engine Optimization) &#8211; Optimize content for traditional search engines AND AI platforms (ChatGPT, Claude, Perplexity). Automatic content analysis, updates, and prioritization using GPT-5 and Google Search Console data. <cite>par <a href=\"https://themeisle.com\">Themeisle</a>.</cite>"
+          },
+          "version": "1.0.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "freshrank-ai",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/freshrank-ai-pro/freshrank-ai",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "fast-indexing-api/instant-indexing",
+          "status": "active",
+          "name": "Indexation instantanée",
+          "plugin_uri": "https://rankmath.com/wordpress/plugin/instant-indexing/",
+          "author": "Rank Math",
+          "author_uri": "https://s.rankmath.com/home",
+          "description": {
+            "raw": "Get your website crawled immediately by Google using their NEW Indexing APIs.",
+            "rendered": "Get your website crawled immediately by Google using their NEW Indexing APIs. <cite>par <a href=\"https://s.rankmath.com/home\">Rank Math</a>.</cite>"
+          },
+          "version": "1.1.22",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "fast-indexing-api",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/fast-indexing-api/instant-indexing",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-blocks-pro/kadence-blocks-pro",
+          "status": "active",
+          "name": "Kadence Blocks - PRO Extension",
+          "plugin_uri": "https://www.kadencewp.com/product/kadence-gutenberg-blocks/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com/",
+          "description": {
+            "raw": "Extends Kadence Blocks with powerful extras that make it possible to create beautiful content in the WordPress Block Editor",
+            "rendered": "Extends Kadence Blocks with powerful extras that make it possible to create beautiful content in the WordPress Block Editor <cite>par <a href=\"https://www.kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "2.8.14",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-blocks-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/kadence-blocks-pro/kadence-blocks-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-blocks/kadence-blocks",
+          "status": "active",
+          "name": "Kadence Blocks — Page Builder Toolkit for Gutenberg Editor",
+          "plugin_uri": "https://www.kadencewp.com/product/kadence-gutenberg-blocks/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com",
+          "description": {
+            "raw": "Blocs de construction de page avancés pour Gutenberg. Créez des dispositions de colonnes personnalisées, des arrière-plans, des boutons doubles, des icônes, etc.",
+            "rendered": "Blocs de construction de page avancés pour Gutenberg. Créez des dispositions de colonnes personnalisées, des arrière-plans, des boutons doubles, des icônes, etc. <cite>par <a href=\"https://www.kadencewp.com\">Kadence WP</a>.</cite>"
+          },
+          "version": "3.7.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-blocks",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/kadence-blocks/kadence-blocks",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "kadence-pro/kadence-pro",
+          "status": "active",
+          "name": "Kadence Theme Kit Pro - Premium addon for the Kadence Theme",
+          "plugin_uri": "https://www.kadencewp.com/kadence-theme/premium/",
+          "author": "Kadence WP",
+          "author_uri": "https://www.kadencewp.com/",
+          "description": {
+            "raw": "Extends the Kadence theme with premium features and addons.",
+            "rendered": "Extends the Kadence theme with premium features and addons. <cite>par <a href=\"https://www.kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "1.2.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "kadence-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/kadence-pro/kadence-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "lg/lg",
+          "status": "active",
+          "name": "Linksgarden",
+          "plugin_uri": "https://www.linksgarden.com/",
+          "author": "Linksgarden",
+          "author_uri": "https://www.linksgarden.com/",
+          "description": {
+            "raw": "Plugin pour éditeurs Linksgarden",
+            "rendered": "Plugin pour éditeurs Linksgarden <cite>par <a href=\"https://www.linksgarden.com/\">Linksgarden</a>.</cite>"
+          },
+          "version": "1.2.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "lg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/lg/lg",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "link-whisper-premium/link-whisper",
+          "status": "active",
+          "name": "Link Whisper Premium",
+          "plugin_uri": "https://linkwhisper.com",
+          "author": "Link Whisper",
+          "author_uri": "https://linkwhisper.com",
+          "description": {
+            "raw": "Quickly build smart internal links both to and from your content. Additionally, gain valuable insights with in-depth internal link reporting.",
+            "rendered": "Quickly build smart internal links both to and from your content. Additionally, gain valuable insights with in-depth internal link reporting. <cite>par <a href=\"https://linkwhisper.com\">Link Whisper</a>.</cite>"
+          },
+          "version": "2.8.9",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wpil",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/link-whisper-premium/link-whisper",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "loco-translate/loco",
+          "status": "active",
+          "name": "Loco Translate",
+          "plugin_uri": "https://fr.wordpress.org/plugins/loco-translate/",
+          "author": "Tim Whitlock",
+          "author_uri": "https://localise.biz/wordpress/plugin",
+          "description": {
+            "raw": "Traduisez des thèmes et extensions directement dans WordPress",
+            "rendered": "Traduisez des thèmes et extensions directement dans WordPress <cite>par <a href=\"https://localise.biz/wordpress/plugin\">Tim Whitlock</a>.</cite>"
+          },
+          "version": "2.8.4",
+          "network_only": false,
+          "requires_wp": "6.6",
+          "requires_php": "7.4",
+          "textdomain": "loco-translate",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/loco-translate/loco",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "integromat-connector/index",
+          "status": "active",
+          "name": "Make Connector",
+          "plugin_uri": "",
+          "author": "Celonis s.r.o.",
+          "author_uri": "https://www.make.com/en?utm_source=wordpress&#038;utm_medium=partner&#038;utm_campaign=wordpress-partner-make",
+          "description": {
+            "raw": "Safely connect your site to make.com, work with custom meta fields through the REST API.",
+            "rendered": "Safely connect your site to make.com, work with custom meta fields through the REST API. <cite>par <a href=\"https://www.make.com/en?utm_source=wordpress&#038;utm_medium=partner&#038;utm_campaign=wordpress-partner-make\">Celonis s.r.o.</a>.</cite>"
+          },
+          "version": "1.6.6",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "integromat-connector",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/integromat-connector/index",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "ninja-tables-pro/ninja-tables-pro",
+          "status": "active",
+          "name": "Ninja Tables Pro",
+          "plugin_uri": "https://wpmanageninja.com/downloads/ninja-tables-pro-add-on/",
+          "author": "WPManageNinja",
+          "author_uri": "https://ninjatables.com/",
+          "description": {
+            "raw": "The Pro Add-On of Ninja Tables, the best Responsive Table Plugin for WordPress.",
+            "rendered": "The Pro Add-On of Ninja Tables, the best Responsive Table Plugin for WordPress. <cite>par <a href=\"https://ninjatables.com/\">WPManageNinja</a>.</cite>"
+          },
+          "version": "5.2.8",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "ninja-tables-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/ninja-tables-pro/ninja-tables-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "ninja-tables/ninja-tables",
+          "status": "active",
+          "name": "Ninja Tables – Easy Data Table Builder",
+          "plugin_uri": "https://wpmanageninja.com/downloads/ninja-tables-pro-add-on/",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://ninjatables.com/",
+          "description": {
+            "raw": "L’extension de tableau responsive la plus simple et la plus rapide sur WordPress. Modèles multiples, constructeur en direct de tableaux avec glisser-déposer, jeux de couleurs multiples et styles.",
+            "rendered": "L’extension de tableau responsive la plus simple et la plus rapide sur WordPress. Modèles multiples, constructeur en direct de tableaux avec glisser-déposer, jeux de couleurs multiples et styles. <cite>par <a href=\"https://ninjatables.com/\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "5.2.8",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "ninja-tables",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/ninja-tables/ninja-tables",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "novamira/novamira",
+          "status": "active",
+          "name": "Novamira",
+          "plugin_uri": "https://www.novamira.ai",
+          "author": "Dynamic.ooo",
+          "author_uri": "https://www.novamira.ai",
+          "description": {
+            "raw": "MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations. For development and staging environments only.",
+            "rendered": "MCP server that gives AI agents full access to WordPress through PHP execution and filesystem operations. For development and staging environments only. <cite>par <a href=\"https://www.novamira.ai\">Dynamic.ooo</a>.</cite>"
+          },
+          "version": "1.1.2",
+          "network_only": false,
+          "requires_wp": "6.9",
+          "requires_php": "8.0",
+          "textdomain": "novamira",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/novamira/novamira",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "novamira-pro/novamira-pro",
+          "status": "active",
+          "name": "Novamira Pro",
+          "plugin_uri": "https://novamira.ai",
+          "author": "Dynamic.ooo",
+          "author_uri": "https://novamira.ai",
+          "description": {
+            "raw": "The specialized layer on top of Novamira. Ready-made abilities for Elementor and Bricks, and memory between sessions. For development and staging environments only.",
+            "rendered": "The specialized layer on top of Novamira. Ready-made abilities for Elementor and Bricks, and memory between sessions. For development and staging environments only. <cite>par <a href=\"https://novamira.ai\">Dynamic.ooo</a>.</cite>"
+          },
+          "version": "1.0.0",
+          "network_only": false,
+          "requires_wp": "6.9",
+          "requires_php": "8.0",
+          "textdomain": "novamira-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/novamira-pro/novamira-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "suretriggers/suretriggers",
+          "status": "active",
+          "name": "OttoKit",
+          "plugin_uri": "https://ottokit.com/",
+          "author": "OttoKit",
+          "author_uri": "https://ottokit.com/",
+          "description": {
+            "raw": "OttoKit aide les gens à automatiser leur travail en intégrant plusieurs applications et plugins, leur permettant de partager des données et d'effectuer des tâches automatiquement.",
+            "rendered": "OttoKit aide les gens à automatiser leur travail en intégrant plusieurs applications et plugins, leur permettant de partager des données et d&rsquo;effectuer des tâches automatiquement. <cite>par <a href=\"https://ottokit.com/\">OttoKit</a>.</cite>"
+          },
+          "version": "1.1.27",
+          "network_only": false,
+          "requires_wp": "5.4",
+          "requires_php": "5.6",
+          "textdomain": "suretriggers",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/suretriggers/suretriggers",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "polylang/polylang",
+          "status": "active",
+          "name": "Polylang",
+          "plugin_uri": "https://polylang.pro",
+          "author": "WP SYNTEX",
+          "author_uri": "https://polylang.pro",
+          "description": {
+            "raw": "Ajoute la gestion multilingue à WordPress",
+            "rendered": "Ajoute la gestion multilingue à WordPress <cite>par <a href=\"https://polylang.pro\">WP SYNTEX</a>.</cite>"
+          },
+          "version": "3.8.3",
+          "network_only": false,
+          "requires_wp": "6.5",
+          "requires_php": "7.4",
+          "textdomain": "polylang",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/polylang/polylang",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "presto-player/presto-player",
+          "status": "active",
+          "name": "Presto Player",
+          "plugin_uri": "http://prestoplayer.com",
+          "author": "Presto Made, Inc",
+          "author_uri": "https://prestoplayer.com/",
+          "description": {
+            "raw": "A beautiful, fast media player for WordPress.",
+            "rendered": "A beautiful, fast media player for WordPress. <cite>par <a href=\"https://prestoplayer.com/\">Presto Made, Inc</a>.</cite>"
+          },
+          "version": "4.1.3",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "presto-player",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/presto-player/presto-player",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "presto-player-pro/presto-player-pro",
+          "status": "active",
+          "name": "Presto Player Pro",
+          "plugin_uri": "http://prestoplayer.com",
+          "author": "Presto Player",
+          "author_uri": "",
+          "description": {
+            "raw": "Pro extension for Presto Player to enable chapters, private video and more.",
+            "rendered": "Pro extension for Presto Player to enable chapters, private video and more. <cite>par Presto Player.</cite>"
+          },
+          "version": "3.1.4",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "presto-player-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/presto-player-pro/presto-player-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "seo-by-rank-math/rank-math",
+          "status": "active",
+          "name": "Rank Math SEO",
+          "plugin_uri": "https://rankmath.com/",
+          "author": "Rank Math SEO",
+          "author_uri": "https://rankmath.com/?utm_source=Plugin&#038;utm_medium=Readme%20Author%20URI&#038;utm_campaign=WP",
+          "description": {
+            "raw": "Rank Math SEO is the Best WordPress SEO plugin with the features of many SEO and AI SEO tools in a single package to help multiply your SEO traffic.",
+            "rendered": "Rank Math SEO is the Best WordPress SEO plugin with the features of many SEO and AI SEO tools in a single package to help multiply your SEO traffic. <cite>par <a href=\"https://rankmath.com/?utm_source=Plugin&#038;utm_medium=Readme%20Author%20URI&#038;utm_campaign=WP\">Rank Math SEO</a>.</cite>"
+          },
+          "version": "1.0.269",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "rank-math",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/seo-by-rank-math/rank-math",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "seo-by-rank-math-pro/rank-math-pro",
+          "status": "active",
+          "name": "Rank Math SEO PRO",
+          "plugin_uri": "https://rankmath.com/wordpress/plugin/seo-suite/",
+          "author": "Rank Math SEO",
+          "author_uri": "https://rankmath.com/?utm_source=Plugin&#038;utm_medium=Readme%20Author%20URI&#038;utm_campaign=WP",
+          "description": {
+            "raw": "Optimisez le SEO de votre site web avec les options de Rank Math PRO telles que Site Analytics, SEO Performance, Custom Schema Templates, News/Video Sitemaps, etc.",
+            "rendered": "Optimisez le SEO de votre site web avec les options de Rank Math PRO telles que Site Analytics, SEO Performance, Custom Schema Templates, News/Video Sitemaps, etc. <cite>par <a href=\"https://rankmath.com/?utm_source=Plugin&#038;utm_medium=Readme%20Author%20URI&#038;utm_campaign=WP\">Rank Math SEO</a>.</cite>"
+          },
+          "version": "3.0.112",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "rank-math-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/seo-by-rank-math-pro/rank-math-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "safe-svg/safe-svg",
+          "status": "active",
+          "name": "Safe SVG",
+          "plugin_uri": "https://fr.wordpress.org/plugins/safe-svg/",
+          "author": "10up",
+          "author_uri": "https://10up.com",
+          "description": {
+            "raw": "Activer les téléversements SVG et leur nettoyage pour éviter les vulnérabilités XML/SVG sur votre site WordPress",
+            "rendered": "Activer les téléversements SVG et leur nettoyage pour éviter les vulnérabilités XML/SVG sur votre site WordPress <cite>par <a href=\"https://10up.com\">10up</a>.</cite>"
+          },
+          "version": "2.4.0",
+          "network_only": false,
+          "requires_wp": "6.6",
+          "requires_php": "7.4",
+          "textdomain": "safe-svg",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/safe-svg/safe-svg",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "secupress-pro/secupress-pro",
+          "status": "active",
+          "name": "SecuPress Pro with Simple SSL – Simple and Performant Security",
+          "plugin_uri": "https://secupress.me",
+          "author": "SecuPress",
+          "author_uri": "https://secupress.me",
+          "description": {
+            "raw": "More than a plugin, the guarantee of a protected website by experts.",
+            "rendered": "More than a plugin, the guarantee of a protected website by experts. <cite>par <a href=\"https://secupress.me\">SecuPress</a>.</cite>"
+          },
+          "version": "2.6.1",
+          "network_only": true,
+          "requires_wp": "5.4",
+          "requires_php": "7.0",
+          "textdomain": "secupress-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/secupress-pro/secupress-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "traduire-sans-migraine/traduire-sans-migraine",
+          "status": "active",
+          "name": "Traduire Sans Migraine",
+          "plugin_uri": "https://www.seo-sans-migraine.com/traduire-sans-migraine",
+          "author": "Otter Corp",
+          "author_uri": "https://www.seo-sans-migraine.com",
+          "description": {
+            "raw": "Traduire Sans Migraine t’aide à traduire ton contenu tout en gardant tes optimisations SEO.",
+            "rendered": "Traduire Sans Migraine t’aide à traduire ton contenu tout en gardant tes optimisations SEO. <cite>par <a href=\"https://www.seo-sans-migraine.com\">Otter Corp</a>.</cite>"
+          },
+          "version": "2.4.33",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "traduire-sans-migraine",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/traduire-sans-migraine/traduire-sans-migraine",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "tutor/tutor",
+          "status": "active",
+          "name": "Tutor LMS",
+          "plugin_uri": "https://tutorlms.com",
+          "author": "Themeum",
+          "author_uri": "https://themeum.com",
+          "description": {
+            "raw": "Tutor est une solution complète pour créer un Learning Management System par l’intermédiaire de WordPress. Il peut vous aider à créer très facilement un site d’éducation en ligne à petite et à grande échelle. Des fonctionnalités puissantes telles que les rapports, la certification, la prévisualisation du cours, le partage de fichiers privés font de Tutor une extension robuste pour tous les établissements d’enseignement.",
+            "rendered": "Tutor est une solution complète pour créer un Learning Management System par l’intermédiaire de WordPress. Il peut vous aider à créer très facilement un site d’éducation en ligne à petite et à grande échelle. Des fonctionnalités puissantes telles que les rapports, la certification, la prévisualisation du cours, le partage de fichiers privés font de Tutor une extension robuste pour tous les établissements d’enseignement. <cite>par <a href=\"https://themeum.com\">Themeum</a>.</cite>"
+          },
+          "version": "3.9.10",
+          "network_only": false,
+          "requires_wp": "5.3",
+          "requires_php": "7.4",
+          "textdomain": "tutor",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/tutor/tutor",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "tutor-pro/tutor-pro",
+          "status": "active",
+          "name": "Tutor LMS Pro",
+          "plugin_uri": "https://tutorlms.com",
+          "author": "Themeum",
+          "author_uri": "http://themeum.com",
+          "description": {
+            "raw": "Power up Tutor LMS plugins by Tutor Pro",
+            "rendered": "Power up Tutor LMS plugins by Tutor Pro <cite>par <a href=\"http://themeum.com\">Themeum</a>.</cite>"
+          },
+          "version": "3.9.9",
+          "network_only": false,
+          "requires_wp": "5.3",
+          "requires_php": "7.4",
+          "textdomain": "tutor-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/tutor-pro/tutor-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wp-social-reviews/wp-social-reviews",
+          "status": "active",
+          "name": "WP Social Ninja",
+          "plugin_uri": "https://wpsocialninja.com/",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://wpsocialninja.com/",
+          "description": {
+            "raw": "Display your social feeds, reviews and chat widgets automatically and easily on your website with the all-in-one social media plugin.",
+            "rendered": "Display your social feeds, reviews and chat widgets automatically and easily on your website with the all-in-one social media plugin. <cite>par <a href=\"https://wpsocialninja.com/\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "4.2.1",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wp-social-reviews",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/wp-social-reviews/wp-social-reviews",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wp-social-ninja-pro/wp-social-ninja-pro",
+          "status": "active",
+          "name": "WP Social Ninja Pro",
+          "plugin_uri": "https://wpsocialninja.com/",
+          "author": "WPManageNinja LLC",
+          "author_uri": "https://wpsocialninja.com/",
+          "description": {
+            "raw": "Display your social feeds, reviews and chat widgets automatically and easily on your website with the all-in-one social media plugin.",
+            "rendered": "Display your social feeds, reviews and chat widgets automatically and easily on your website with the all-in-one social media plugin. <cite>par <a href=\"https://wpsocialninja.com/\">WPManageNinja LLC</a>.</cite>"
+          },
+          "version": "4.2.1",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wp-social-ninja-pro",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/wp-social-ninja-pro/wp-social-ninja-pro",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wp-health/wp-health",
+          "status": "active",
+          "name": "WP Umbrella",
+          "plugin_uri": "",
+          "author": "WP Umbrella - Backup &amp; Manage WordPress",
+          "author_uri": "https://wp-umbrella.com/fr/",
+          "description": {
+            "raw": "WP Umbrella est la solution tout-en-un ultime pour infogérer et surveiller plusieurs sites WordPress.",
+            "rendered": "WP Umbrella est la solution tout-en-un ultime pour infogérer et surveiller plusieurs sites WordPress. <cite>par <a href=\"https://wp-umbrella.com/fr/\">WP Umbrella - Backup &amp; Manage WordPress</a>.</cite>"
+          },
+          "version": "2.23.0",
+          "network_only": false,
+          "requires_wp": "5.8",
+          "requires_php": "7.4",
+          "textdomain": "wp-health",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/wp-health/wp-health",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wpvivid-backuprestore/wpvivid-backuprestore",
+          "status": "active",
+          "name": "WPvivid Backup Plugin",
+          "plugin_uri": "",
+          "author": "WPvivid Backup &amp; Migration",
+          "author_uri": "https://wpvivid.com",
+          "description": {
+            "raw": "Cloner ou copier des sites WP puis les déplacer ou les faire migrer vers un nouvel hôte (nouveau domaine), planifier des sauvegardes, transférer des sauvegardes vers le stockage distant principal. Le tout en un.",
+            "rendered": "Cloner ou copier des sites WP puis les déplacer ou les faire migrer vers un nouvel hôte (nouveau domaine), planifier des sauvegardes, transférer des sauvegardes vers le stockage distant principal. Le tout en un. <cite>par <a href=\"https://wpvivid.com\">WPvivid Backup &amp; Migration</a>.</cite>"
+          },
+          "version": "0.9.126",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wpvivid-backuprestore",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/wpvivid-backuprestore/wpvivid-backuprestore",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "plugin": "wp-webhooks/wp-webhooks",
+          "status": "active",
+          "name": "WP Webhooks",
+          "plugin_uri": "https://wp-webhooks.com/",
+          "author": "Cozmoslabs",
+          "author_uri": "https://wp-webhooks.com/about/",
+          "description": {
+            "raw": "Put your website on autopilot by using webhooks to get rid of manual tasks and focus on what's really important for your business.",
+            "rendered": "Put your website on autopilot by using webhooks to get rid of manual tasks and focus on what&rsquo;s really important for your business. <cite>par <a href=\"https://wp-webhooks.com/about/\">Cozmoslabs</a>.</cite>"
+          },
+          "version": "3.4.2",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "",
+          "textdomain": "wp-webhooks",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/wp-webhooks/wp-webhooks",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "inactive": [
+        {
+          "plugin": "kadence-starter-templates/kadence-starter-templates",
+          "status": "inactive",
+          "name": "Modèles de démarrage par Kadence WP",
+          "plugin_uri": "",
+          "author": "Kadence WP",
+          "author_uri": "https://kadencewp.com/",
+          "description": {
+            "raw": "Launch a beautiful website with the power of AI or using our Pre-Designed Templates.",
+            "rendered": "Launch a beautiful website with the power of AI or using our Pre-Designed Templates. <cite>par <a href=\"https://kadencewp.com/\">Kadence WP</a>.</cite>"
+          },
+          "version": "2.3.0",
+          "network_only": false,
+          "requires_wp": "",
+          "requires_php": "7.4",
+          "textdomain": "kadence-starter-templates",
+          "_links": {
+            "self": [
+              {
+                "href": "https://schoolswp.com/wp-json/wp/v2/plugins/kadence-starter-templates/kadence-starter-templates",
+                "targetHints": {
+                  "allow": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "PATCH",
+                    "DELETE"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "themes": {
+      "status": 200,
+      "ok": true,
+      "count": 2,
+      "themes": [
+        {
+          "stylesheet": "discover-kadence",
+          "name": "Discover",
+          "version": "1.2.0",
+          "status": "active",
+          "parent_theme": "kadence"
+        },
+        {
+          "stylesheet": "kadence",
+          "name": "Kadence",
+          "version": "1.5.0",
+          "status": "inactive",
+          "parent_theme": "kadence"
+        }
+      ]
+    },
+    "settings": {
+      "status": 200,
+      "ok": true,
+      "url": "https://schoolswp.com",
+      "title": "schoolsWP",
+      "description": "Formations WordPress pour tous niveaux",
+      "language": "fr_FR",
+      "timezone": "",
+      "admin_email": "contact@michaelkihl.fr",
+      "default_role": null,
+      "default_post_format": "0",
+      "use_smilies": true,
+      "show_on_front": "page",
+      "page_on_front": 6,
+      "posts_per_page": 9,
+      "default_ping_status": null,
+      "default_comment_status": "open"
+    },
+    "post_types": {
+      "status": 200,
+      "ok": true,
+      "count": 28,
+      "types": [
+        "post",
+        "page",
+        "attachment",
+        "nav_menu_item",
+        "wp_block",
+        "wp_template",
+        "wp_template_part",
+        "wp_global_styles",
+        "wp_navigation",
+        "wp_font_family",
+        "wp_font_face",
+        "kadence_element",
+        "kadence_form",
+        "kadence_navigation",
+        "kadence_header",
+        "kadence_custom_svg",
+        "kadence_query",
+        "kadence_query_card",
+        "fct-dummy",
+        "fluent-products",
+        "pp_video_block",
+        "courses",
+        "kadence_lottie",
+        "kadence_vector",
+        "kb_icon",
+        "rm_content_editor",
+        "rank_math_schema",
+        "pp_email_submission"
+      ]
+    },
+    "application_passwords": {
+      "users": [
+        {
+          "user_id": 2,
+          "username": "Michael KIHL",
+          "app_passwords_count": 7,
+          "names": [
+            {
+              "name": "Skoatch",
+              "created": "2024-06-05T12:15:38",
+              "last_used": "2026-05-11T23:03:07",
+              "last_ip": "67.207.92.92"
+            },
+            {
+              "name": "SEOpital",
+              "created": "2024-06-26T06:44:54",
+              "last_used": "2025-01-10T13:26:49",
+              "last_ip": "13.37.128.122"
+            },
+            {
+              "name": "Wisewand",
+              "created": "2026-02-26T10:05:54",
+              "last_used": "2026-05-11T11:52:20",
+              "last_ip": "34.76.27.167"
+            },
+            {
+              "name": "ClaudeAPI",
+              "created": "2026-04-23T12:26:17",
+              "last_used": null,
+              "last_ip": null
+            },
+            {
+              "name": "Novamira",
+              "created": "2026-04-27T01:56:13",
+              "last_used": "2026-05-12T15:44:16",
+              "last_ip": "85.95.197.29"
+            },
+            {
+              "name": "routine-plugins-snapshot-weekly",
+              "created": "2026-05-05T12:46:06",
+              "last_used": "2026-05-12T07:05:42",
+              "last_ip": "35.192.191.42"
+            },
+            {
+              "name": "Novamira — Novamira - Gemini",
+              "created": "2026-05-05T14:07:09",
+              "last_used": "2026-05-12T15:40:09",
+              "last_ip": "85.95.197.29"
+            }
+          ]
+        }
+      ]
+    },
+    "exposure": {
+      "/xmlrpc.php": {
+        "status": 404,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "",
+          "X-Content-Type-Options": "",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      },
+      "/wp-login.php": {
+        "status": 500,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "",
+          "X-Content-Type-Options": "",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      },
+      "/wp-admin/": {
+        "status": 500,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "",
+          "X-Content-Type-Options": "",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      },
+      "/?rest_route=/": {
+        "status": 200,
+        "location": "",
+        "server": "nginx",
+        "x_powered_by": "",
+        "security_headers": {
+          "Strict-Transport-Security": "",
+          "X-Frame-Options": "",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "",
+          "Referrer-Policy": "",
+          "Permissions-Policy": ""
+        }
+      }
+    }
+  }
+}

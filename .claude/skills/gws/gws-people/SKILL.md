@@ -1,7 +1,10 @@
 ---
 name: gws-people
 version: 1.0.0
-description: "Google People: Manage contacts and profiles."
+description: |
+  Google People v1 via la CLI gws : gère contacts personnels et contactGroups (CRUD), recherche, lookup directory tenant, profils. Pour automatiser l'admin de tes contacts ou exporter le carnet d'adresses.
+  Utilise ce skill quand l'utilisateur dit : "list mes contacts Google", "ajoute un contact", "groupe de contacts Google", "search directory Workspace", "Google People API", ou pour scripter un sync entre Google Contacts et FluentCRM.
+  NE PAS utiliser pour : gérer les contacts FluentCRM côté schoolswp.com (utiliser le MCP fluentcrm), envoi de mail à un contact (utiliser gws-gmail-send avec l'email résolu), ou directory admin Workspace côté tenant complet (utiliser gws-admin-reports + Admin SDK Directory hors gws).
 metadata:
   openclaw:
     category: "productivity"

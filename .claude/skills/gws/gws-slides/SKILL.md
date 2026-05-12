@@ -1,7 +1,10 @@
 ---
 name: gws-slides
 version: 1.0.0
-description: "Google Slides: Read and write presentations."
+description: |
+  Google Slides v1 via la CLI gws : gère les présentations Slides (create, get, batchUpdate, pages). Pour automatiser génération de decks, mise à jour de placeholders, batch de slides à partir de templates.
+  Utilise ce skill quand l'utilisateur dit : "génère un Google Slides", "batchUpdate Slides", "modifie une page Slides en API", "duplique un deck Google", ou pour scripter la production d'un deck à partir de données.
+  NE PAS utiliser pour : design HTML haute fidélité de slide deck (utiliser external-cc-design pour brand strict, ou aidesigner pour exploration), exporter en PNG retina (utiliser tools/html-to-png), ou conversion vidéo (utiliser apps/hyperframes ou apps/video-marketing).
 metadata:
   openclaw:
     category: "productivity"

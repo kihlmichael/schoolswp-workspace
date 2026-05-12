@@ -1,6 +1,9 @@
 ---
 name: skill-creator
-description: Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.
+description: |
+  Crée, modifie et évalue les skills Claude Code du workspace schoolsWP : draft initial, itération sur eval, benchmark de performance, optimisation de la description pour améliorer le déclenchement automatique.
+  Utilise ce skill quand l'utilisateur dit : "crée un nouveau skill", "améliore le skill X", "lance des évals sur ce skill", "optimise la description du skill", ou "benchmark de skill".
+  NE PAS utiliser pour : synchroniser le registre Google Sheets (utiliser `skills-registry`), archiver un skill (suivre le pattern feedback_skill_archival.md), ou auditer la qualité globale du dossier `.claude/skills/` (utiliser `workspace-audit`).
 ---
 
 # Skill Creator

@@ -1,7 +1,10 @@
 ---
 name: gws-sheets
 version: 1.0.0
-description: "Google Sheets: Read and write spreadsheets."
+description: |
+  Google Sheets v4 via la CLI gws : gère spreadsheets en lecture / écriture avancées (batchUpdate, formules, valuesRanges, format, named ranges, protected ranges, developer metadata). Couvre l'API brute pour tout ce qui sort des helpers append / read.
+  Utilise ce skill quand l'utilisateur dit : "Sheets batchUpdate", "format Sheets API", "named range", "protected range Sheets", "create spreadsheet API", ou pour scripter une opération Sheets avancée.
+  NE PAS utiliser pour : ajouter une ligne simple (utiliser gws-sheets-append), lire une plage simple (utiliser gws-sheets-read), envoyer un Sheet daté hebdo (passer par une routine schedule + gws-sheets-append), ou conversation libre côté claude.ai (utiliser un MCP Sheets si disponible).
 metadata:
   openclaw:
     category: "productivity"

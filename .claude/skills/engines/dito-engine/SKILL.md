@@ -1,16 +1,9 @@
 ---
 name: dito-engine
-description: >
-  schoolsWP Omnichannel Engine — prompt DITO (Define · Input · Transformation · Output) pour
-  transformation de contenu, repurposing omnicanal et automatisation pipeline. Framework orienté
-  process : article → LinkedIn, vidéo → page pilier, transcript → cluster, article → newsletter,
-  génération FAQ IA, extraction métadonnées SEO, optimisation featured snippet, repurposing massif.
-  Déclencher pour toute demande de transformation ou de repurposing : "transforme cet article en",
-  "génère une FAQ à partir de", "convertis ce transcript en", "crée les métadonnées SEO de",
-  "adapte ce contenu pour LinkedIn / YouTube / email", "repurpose", "omnicanal",
-  "extrais les questions de", "crée un carrousel LinkedIn à partir de".
-  Préférer DITO à CREDO quand l'input existe déjà et qu'on cherche à le transformer,
-  pas à produire du nouveau contenu from scratch.
+description: |
+  schoolsWP Omnichannel Engine — framework DITO (Define · Input · Transformation · Output) pour transformer une matière brute existante (article, transcript, notes, vidéo) en autre format : article → LinkedIn / newsletter / script YouTube, transcript → cluster ou pilier, notes → page de vente, article → FAQ IA optimisée SGE/Perplexity.
+  Utilise ce skill quand l'utilisateur dit : "transforme cet article en LinkedIn", "convertis ce transcript en", "génère la FAQ IA à partir de", "repurpose ce contenu", ou veut décliner une matière existante en plusieurs formats.
+  NE PAS utiliser pour : produire du contenu from scratch sans matière source (utiliser `credo-engine`), recycler un email reçu en contenu (utiliser `schoolswp-email-to-content`), ou un audit / quick wins sur une URL (utiliser `race-engine`).
 ---
 
 # schoolsWP Omnichannel Engine

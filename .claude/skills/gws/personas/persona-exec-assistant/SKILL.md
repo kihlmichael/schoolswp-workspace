@@ -1,7 +1,10 @@
 ---
 name: persona-exec-assistant
 version: 1.0.0
-description: "Manage an executive's schedule, inbox, and communications."
+description: |
+  Profil orchestré pour assister un dirigeant : standup quotidien, prep meeting, triage Gmail prioritaire, planification Calendar, communications Chat. Combine gws-gmail, gws-calendar, gws-drive, gws-chat avec les workflows standup-report et meeting-prep.
+  Utilise ce skill quand l'utilisateur dit : "active la persona exec assistant", "mode assistant de direction Workspace", "je gère l'agenda et la mail d'un dirigeant", ou pour adopter une posture chief of staff orientée hygiène quotidienne.
+  NE PAS utiliser pour : profil team lead côté équipe (utiliser persona-team-lead), profil project manager (utiliser persona-project-manager), skill Gmail seul (utiliser gws-gmail), ou orchestration multi-agents schoolsWP (voir flow ou pulse).
 metadata:
   openclaw:
     category: "persona"

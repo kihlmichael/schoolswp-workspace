@@ -1,10 +1,9 @@
 ---
 name: wp-block-development
 description: |
-  Développement de blocs WordPress (Gutenberg) : block.json, register_block_type, attributs/sérialisation,
-  supports, rendu dynamique (render.php/render_callback), dépréciations/migrations, viewScript vs
-  viewScriptModule, et outils @wordpress/scripts/@wordpress/create-block.
-  Déclenche pour "bloc Gutenberg", "block.json", "register_block_type", "développement bloc WordPress".
+  Développement de blocs Gutenberg WordPress : block.json, register_block_type, attributs et sérialisation, supports, rendu dynamique (render.php ou render_callback), dépréciations et migrations, viewScript vs viewScriptModule, scaffolding via @wordpress/scripts et @wordpress/create-block. Inclut le debug "block invalid / not saving / attributes not persisting".
+  Utilise ce skill quand l'utilisateur dit : "bloc Gutenberg", "block.json", "register_block_type", "développement bloc WordPress", "block invalid", "rendu dynamique bloc", ou "migrer un bloc WordPress".
+  NE PAS utiliser pour : block themes et theme.json (utiliser wp-block-themes), Interactivity API et directives data-wp-* (utiliser wp-interactivity-api), plugin global qui contient le bloc (utiliser wp-plugin-development), REST endpoints custom du bloc (utiliser wp-rest-api), ou WPDS-specific UI (utiliser wpds).
 compatibility: "Targets WordPress 6.9+ (PHP 7.2.24+). Filesystem-based agent with bash + node. Some workflows require WP-CLI."
 ---
 

@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-reply
 version: 1.0.0
-description: "Gmail: Reply to a message (handles threading automatically)."
+description: |
+  Helper gws gmail +reply : répond à UN expéditeur d'un message Gmail (pas tous les destinataires), avec threading auto (In-Reply-To, References, Subject Re:). Garde la conversation propre côté Gmail UI.
+  Utilise ce skill quand l'utilisateur dit : "réponds à ce mail", "reply to message ID...", "réponse threadée Gmail", ou pour scripter une réponse automatique 1-to-1.
+  NE PAS utiliser pour : répondre à TOUS les destinataires en CC (utiliser gws-gmail-reply-all), envoyer un nouveau mail sans thread (utiliser gws-gmail-send), ou forwarder le message ailleurs (utiliser gws-gmail-forward).
 metadata:
   openclaw:
     category: "productivity"

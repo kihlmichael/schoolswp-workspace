@@ -1,10 +1,9 @@
 ---
 name: agents
 description: |
-  Crée des agents vocaux IA avec ElevenLabs. Utilise ce skill pour construire des assistants vocaux,
-  des bots de service client, des personnages vocaux interactifs ou toute expérience de conversation
-  vocale en temps réel.
-  Déclenche pour "agent vocal", "voix IA", "ElevenLabs agent", "conversation vocale en temps réel".
+  Crée des agents vocaux IA avec ElevenLabs (Conversational AI Platform) : assistants vocaux, bots service client, personnages vocaux interactifs, conversations temps réel multi-LLM avec custom tools et embed web.
+  Utilise ce skill quand l'utilisateur dit : "agent vocal", "voix IA ElevenLabs", "conversation vocale temps réel", "voice agent", "embed voice widget", ou veut piloter le CLI `elevenlabs agents` pour créer/push un agent.
+  NE PAS utiliser pour : générer une simple voix off pour vidéo (utiliser le pipeline ElevenLabs TTS classique), créer un avatar vidéo (utiliser `external-heygen`), ou un chatbot texte uniquement (utiliser `claude-api` ou `gemini-api-dev`).
 license: MIT
 compatibility: Requires internet access and an ElevenLabs API key (ELEVENLABS_API_KEY).
 metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv": "ELEVENLABS_API_KEY"}}

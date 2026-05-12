@@ -1,15 +1,9 @@
 ---
 name: authority-sales-page-copy
-description: >
-  Page de vente complète schoolsWP Authority System™ — structure 14 sections CRO (copy prête à coller)
-  + version courte (héro + bullets + CTA) + version longue persuasive 2000+ mots.
-  Utilise ce skill pour rédiger, structurer ou décliner la page de vente sur n'importe quel format :
-  landing page, page courte, email de vente, post LinkedIn de lancement, script vidéo de vente,
-  page de checkout, séquence de prévente.
-  Trigger : "page de vente Authority System", "rédige la page de vente", "version courte",
-  "version longue persuasive", "script de vente", "email de lancement", "séquence prévente schoolsWP",
-  "landing page formation WordPress", "section hero", "pricing formation", "objections page de vente",
-  "pour qui c'est fait", "CTA final", "structure 14 sections", "copy WordPress formation".
+description: |
+  Page de vente complète schoolsWP Authority System™ : structure 14 sections CRO (Hero, Avant/Après, Problème, Mécanisme, Pourquoi ça marche, Livrables, Modules, Pour qui, Preuves, Offre + prix, Garantie, Objections, FAQ, CTA). Copy prête à coller + version courte hero/bullets/CTA + version longue persuasive 2000+ mots.
+  Utilise ce skill quand l'utilisateur dit : "rédige la page de vente Authority System", "version longue persuasive", "structure 14 sections CRO", "landing page formation WordPress", ou veut le copy complet et structuré.
+  NE PAS utiliser pour : seulement la promesse / hero (utiliser `authority-promise`), la séquence email de lancement (utiliser `authority-email-launch`), une landing affiliation tierce (utiliser `landing-page-factory`), ou une mini-offre propre légère (utiliser `mini-offre-page-de-vente`).
 ---
 
 # schoolsWP Authority System™ — Page de vente

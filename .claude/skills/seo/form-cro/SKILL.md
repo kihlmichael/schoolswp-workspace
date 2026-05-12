@@ -1,10 +1,9 @@
 ---
 name: form-cro
 description: |
-  Optimise les formulaires non-inscription : lead capture, contact, demande de démo, candidature, enquête
-  ou checkout. Utilise ce skill pour réduire la friction, améliorer le taux de complétion et augmenter les
-  conversions.
-  Déclenche pour "optimiser un formulaire", "taux de complétion", "formulaire de contact", "lead form".
+  Optimise les formulaires non-inscription : lead capture, contact, demande de démo, candidature, enquête, quote ou checkout. Réduit la friction par champ, améliore le taux de complétion et augmente les conversions, en pesant chaque champ contre son impact business.
+  Utilise ce skill quand l'utilisateur dit : "optimise ce formulaire", "améliore le taux de complétion", "audite ce lead form", "formulaire de contact qui convertit", ou présente un formulaire avec un problème de complétion / abandon mobile / champs trop nombreux.
+  NE PAS utiliser pour : popups d'opt-in newsletter (utiliser `popup-cro` ou `lead-magnet-schoolswp`), landing page complète d'affiliation (utiliser `landing-page-factory`), ou page de vente d'offre propre (utiliser `mini-offre-page-de-vente`).
 metadata:
   version: 1.1.0
 ---

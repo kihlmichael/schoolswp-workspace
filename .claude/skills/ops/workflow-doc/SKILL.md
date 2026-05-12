@@ -1,16 +1,9 @@
 ---
 name: workflow-doc
-description: >
-  Documentation de workflows automatisés schoolsWP — transforme un workflow existant
-  en documentation claire, transmissible, auditable et maintenable en 14 sections.
-  Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks, logs.
-  Déclenche ce skill quand l'utilisateur veut documenter un workflow existant,
-  rendre un flux compréhensible ou transmissible, préparer une reprise, lister
-  les dépendances et risques d'une automatisation, ou transformer un export / capture
-  n8n en documentation exploitable. Aussi pour : "je veux documenter mon n8n",
-  "comment expliquer ce workflow", "j'ai besoin d'une doc pour ce flux",
-  "rends ce workflow compréhensible pour quelqu'un d'autre", "fais une fiche technique
-  de mon automatisation", "documente mes dépendances et erreurs".
+description: |
+  Documente un workflow schoolsWP existant en 14 sections claires, auditables et maintenables : objectif, étapes, dépendances, points fragiles, gestion d'erreur, logs. Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks.
+  Utilise ce skill quand l'utilisateur dit : "documente mon n8n", "explique ce workflow", "j'ai besoin d'une doc pour ce flux", "rends ce workflow compréhensible", "fais une fiche technique de mon automatisation", ou "documente dépendances et erreurs".
+  NE PAS utiliser pour : déboguer un workflow cassé (utiliser `workflow-debug`), créer une nouvelle automatisation (utiliser `workflow-master`), ou écrire un ADR sur une décision d'architecture (utiliser `documentation-and-adrs` ou l'agent `adr-writer`).
 ---
 
 # schoolswp-workflow-doc

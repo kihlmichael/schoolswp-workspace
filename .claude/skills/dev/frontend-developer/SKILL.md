@@ -1,9 +1,9 @@
 ---
 name: frontend-developer
 description: |
-  Construit des composants React, implémente des layouts responsive et gère l'état côté client. Maîtrise
-  React 19, Next.js 15 et l'architecture frontend moderne.
-  Déclenche pour "composant React", "layout responsive", "state management", "Next.js", "frontend".
+  Construit des composants React 19 et Next.js 15, gère l'état côté client, optimise la performance (RSC, Suspense, Actions, useOptimistic, useTransition), garantit l'accessibilité et le responsive.
+  Utilise ce skill quand l'utilisateur dit : "écris un composant React", "layout responsive Next.js", "state management côté client", "Server Component vs Client Component", "fix une perf frontend", ou pour toute implémentation UI React/Next concrète.
+  NE PAS utiliser pour : explorer une direction artistique distinctive (utiliser `frontend-design`), explorer des variantes via MCP (utiliser `aidesigner-frontend`), ou pour de la doc Next.js officielle (utiliser `nextjs-best-practices`).
 risk: unknown
 source: community
 date_added: '2026-02-27'

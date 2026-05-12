@@ -1,21 +1,14 @@
 ---
 name: ai-playbook-schoolswp
-description: >
-  Skill complet pour les workflows schoolsWP de Michaël Kihl. Combine les principes du AI Playbook
-  (plan mode, subagents, self-improvement, verification) avec l'identité schoolsWP (WordPress clair,
-  structuré, actionnable). Couvre la création de contenu (articles blog, newsletters, posts sociaux,
-  scripts YouTube), le SEO, l'automatisation WordPress, la gestion de sites avec FluentCRM, OttoKit,
-  Elementor. TOUJOURS utiliser ce skill quand la tâche concerne : rédaction de contenu schoolsWP,
-  optimisation SEO WordPress, automatisation WordPress, gestion de site WordPress, création de tunnels
-  de vente, configuration FluentCRM/OttoKit/Elementor, planification de contenu, audit technique WordPress,
-  ou toute tâche liée à la mission schoolsWP. Déclencher aussi quand Michaël mentionne "article",
-  "newsletter", "post LinkedIn", "script vidéo", "SEO", "automatisation", "FluentCRM", "OttoKit",
-  "Elementor", "tunnel de vente", "LMS", "e-commerce WordPress", ou "schoolsWP".
+description: |
+  Méta-skill chapeau qui combine les principes AI Playbook (plan mode, subagents, self-improvement, verification) avec l'identité schoolsWP (WordPress clair, structuré, actionnable). Cadre le ton, la méthode et les valeurs pour toute tâche transversale schoolsWP.
+  Utilise ce skill quand l'utilisateur dit : "principe schoolsWP", "comment je dois aborder ça", "applique la méthode", "garde-fous schoolsWP", "boucle d'amélioration continue", ou en méta-couche quand une demande couvre plusieurs domaines (rédaction + SEO + auto) sans skill plus précis.
+  NE PAS utiliser comme skill par défaut pour exécuter une tâche concrète : préférer le skill spécialisé (`schoolswp-article-workflow` pour un article, `linkedin` pour un post, `cocon-map-schoolswp` pour un cocon, `flow` pour FluentCRM/OttoKit). C'est un cadre de pensée, pas un exécutant.
 ---
 
 # AI Playbook schoolsWP
 
-> « Faire de WordPress un outil qui travaille vraiment pour vous. »
+> « Faire de WordPress un outil qui travaille vraiment pour toi. »
 
 Ce skill applique les principes du AI Playbook au contexte schoolsWP. Chaque workflow suit une logique claire : planifier, exécuter, vérifier, améliorer. Pas de blabla, juste du concret.
 
@@ -63,7 +56,7 @@ Ce skill repose sur deux piliers : les principes AI Playbook (méthode de travai
 - « Testé et approuvé. »
 - « Pas de blabla, juste du concret. »
 - « L'idée, c'est de comprendre avant d'appliquer. »
-- « À vous de jouer. »
+- « À toi de jouer. »
 
 **Interdits absolus** :
 - Jargon technique sans explication
@@ -103,7 +96,7 @@ Avant de rédiger quoi que ce soit, identifier :
 1. Accroche — Problème ou question directe
 2. Contexte — Pourquoi c'est important (2-3 phrases)
 3. Solution détaillée — Étapes, exemples, captures
-4. Application concrète — Comment faire chez vous
+4. Application concrète — Comment faire chez toi
 5. FAQ ou erreurs courantes — Anticiper les blocages
 6. Conclusion + CTA — Récap + lien interne ou affilié transparent
 ```
@@ -121,14 +114,14 @@ Avant de rédiger quoi que ce soit, identifier :
 
 **Exemple d'intro** :
 ```
-Vous envoyez vos emails manuellement à chaque nouveau contact ?
+Tu envoies tes emails manuellement à chaque nouveau contact ?
 
-C'est normal au début. Mais dès que vous dépassez 50 abonnés, ça devient ingérable.
+C'est normal au début. Mais dès que tu dépasses 50 abonnés, ça devient ingérable.
 
 La solution : automatiser avec FluentCRM.
 
-Dans cet article, je vous montre comment créer votre première automatisation
-email en moins de 15 minutes, même si vous débutez.
+Dans cet article, je te montre comment créer ta première automatisation
+email en moins de 15 minutes, même si tu débutes.
 ```
 
 #### Newsletter schoolsWP News
@@ -136,7 +129,7 @@ email en moins de 15 minutes, même si vous débutez.
 **Structure** :
 1. Accroche personnelle — Anecdote, observation de la semaine
 2. Leçon ou insight — Ce que j'en retire
-3. Application pratique — Comment vous pouvez l'utiliser
+3. Application pratique — Comment tu peux l'utiliser
 4. Ressource ou lien utile
 5. Phrase de clôture conversationnelle + signature
 

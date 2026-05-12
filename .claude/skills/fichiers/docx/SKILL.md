@@ -1,10 +1,9 @@
 ---
 name: docx
 description: |
-  Crée, lit, modifie ou manipule des fichiers Word (.docx). Utilise ce skill pour produire des documents
-  professionnels avec formatage (tables des matières, titres, numéros de page, en-têtes) ou pour extraire
-  et éditer du contenu Word existant.
-  Déclenche pour "document Word", ".docx", "Word doc", "fichier Word".
+  Crée, lit, modifie et manipule des fichiers Word (.docx) : production de documents pro avec formatage (TOC, titres, numéros de page, en-têtes), extraction texte avec tracked changes via pandoc, édition XML brute via unpack, conversion .doc legacy via soffice, conversion en images via pdftoppm. Utilise docx-js pour création neuve.
+  Utilise ce skill quand l'utilisateur dit : "document Word", ".docx", "Word doc", "fichier Word", "génère un Word", "extraire du Word", "fusionner des Word", ou pour tout livrable où le format Word est explicitement demandé.
+  NE PAS utiliser pour : PDF (utiliser pdf), tableurs Excel ou CSV (utiliser xlsx), markdown qui sera convertit en PDF (utiliser make-pdf), articles schoolsWP (utiliser schoolswp-article-workflow et publier en WordPress, pas en .docx), ou slide decks (utiliser external-cc-design ou aidesigner-frontend).
 license: Proprietary. LICENSE.txt has complete terms
 ---
 

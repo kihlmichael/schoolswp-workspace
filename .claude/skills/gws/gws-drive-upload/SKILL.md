@@ -1,7 +1,10 @@
 ---
 name: gws-drive-upload
 version: 1.0.0
-description: "Google Drive: Upload a file with automatic metadata."
+description: |
+  Helper gws drive +upload : upload un fichier local vers Google Drive avec détection auto du MIME type, support parent folder et drive partagé. Une commande shell adaptée pour pipelines (export Sheets, snapshots, archives).
+  Utilise ce skill quand l'utilisateur dit : "upload sur Drive", "push ce fichier sur Google Drive", "envoie ce CSV sur Drive", "save to shared drive", ou pour automatiser l'archivage de sorties d'agents Python.
+  NE PAS utiliser pour : opérations de partage / permissions / move / rename (utiliser gws-drive), annoncer le fichier après upload dans un Chat space (utiliser gws-workflow-file-announce en aval), ou upload média WordPress (utiliser tools/wp-media-upload).
 metadata:
   openclaw:
     category: "productivity"

@@ -1,0 +1,27 @@
+{
+  "input": "raccourcis clavier VS Code indispensables pour developpeur",
+  "language_id": 1,
+  "site_id": 503,
+  "is_auto_generated": true,
+  "is_auto_published": false,
+  "is_publish_to_draft": true,
+  "additional_instructions": "Ton clair, direct, pratique. Tutoiement du lecteur. Pas de phrases creuses ni de superlatifs marketing. Pas de tirets longs (em-dash). Donne des exemples concrets de raccourcis VS Code (Ctrl+P, Ctrl+Shift+P, etc.) avec leur usage en une phrase. Structure : intro courte (2 phrases max), puis sections H2 thematiques (navigation, edition multi-curseur, terminal, refactoring), conclusion en 2 lignes. Audience : developpeurs juniors et intermediaires.",
+  "is_featured_image": true,
+  "is_images_in": false,
+  "image_style_id": 1,
+  "content_options": {
+    "google_pages_count": 5,
+    "min_words_count": 700,
+    "max_words_count": 1100,
+    "min_h2_count": 4,
+    "max_h2_count": 6,
+    "min_images_count": 0,
+    "max_images_count": 0,
+    "min_lists_count": 2,
+    "max_lists_count": 5,
+    "use_bold": true,
+    "use_italic": false,
+    "use_lists": true,
+    "use_tables": false
+  }
+}

@@ -1,16 +1,9 @@
 ---
 name: workflow-debug
-description: >
-  Diagnostic et débogage de workflows automatisés schoolsWP — identifie la cause racine,
-  localise le point de rupture, propose une correction propre et prévient la récidive.
-  Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks, synchronisations.
-  Déclenche ce skill quand un workflow ne fonctionne pas, produit un résultat inattendu,
-  échoue silencieusement, ou quand l'utilisateur dit : "mon workflow bug", "ça marche pas",
-  "le webhook ne déclenche pas", "l'agent IA renvoie n'importe quoi", "le node échoue",
-  "FluentCRM ne crée pas le contact", "les données n'arrivent pas dans Sheets",
-  "je veux déboguer mon automatisation", "erreur dans mon n8n". Aussi pour les
-  comportements partiels, les doublons inattendus, les champs manquants et les
-  réponses IA hors format.
+description: |
+  Diagnostic et débogage de workflows automatisés schoolsWP : identifie la cause racine, localise le point de rupture, propose une correction et prévient la récidive. Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks, synchronisations. Gère aussi comportements partiels, doublons, champs manquants, réponses IA hors format.
+  Utilise ce skill quand l'utilisateur dit : "mon workflow bug", "ça marche pas", "le webhook ne déclenche pas", "l'agent IA renvoie n'importe quoi", "FluentCRM ne crée pas le contact", "les données n'arrivent pas dans Sheets", ou "erreur dans mon n8n".
+  NE PAS utiliser pour : documenter un workflow qui marche (utiliser `workflow-doc`), créer une nouvelle automatisation (utiliser `workflow-master`), ou déboguer un bug applicatif Python / WordPress hors workflow (utiliser `systematic-debugging`).
 ---
 
 # schoolswp-workflow-debug

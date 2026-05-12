@@ -41,4 +41,4 @@
 
 [Invitation à s'abonner. Lien en description. Question en commentaire.]
 
-« Si cette vidéo vous a aidé, un pouce bleu et on se retrouve dans la prochaine. »
+« Si cette vidéo t'a aidé, un pouce bleu et on se retrouve dans la prochaine. »

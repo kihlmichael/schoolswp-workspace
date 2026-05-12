@@ -1,7 +1,10 @@
 ---
 name: gws-gmail-triage
 version: 1.0.0
-description: "Gmail: Show unread inbox summary (sender, subject, date)."
+description: |
+  Helper gws gmail +triage : résumé compact de l'inbox non lue (sender, subject, date), default 20 messages, --query pour custom search Gmail. Idéal pour standup matinal ou triage rapide en CLI.
+  Utilise ce skill quand l'utilisateur dit : "qu'est-ce que j'ai en inbox", "triage Gmail", "mes mails non lus", "show unread", ou pour piloter un récap quotidien d'inbox.
+  NE PAS utiliser pour : lire le contenu d'un message (utiliser gws-gmail-read), watcher en temps réel (utiliser gws-gmail-watch), résumé multi-services standup (utiliser gws-workflow-standup-report qui agrège meetings + tasks).
 metadata:
   openclaw:
     category: "productivity"

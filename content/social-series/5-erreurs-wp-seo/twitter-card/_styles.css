@@ -1,0 +1,147 @@
+/* ============================================================
+   Twitter / X / Bluesky card schoolsWP - 16:9 paysage
+   Format : 1600x900 (Twitter card large summary, Bluesky timeline)
+   Compatible aussi : Facebook link preview, Discord embed
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1A1A1A;
+  padding: 40px 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 1600px;
+  height: 900px;
+  position: relative;
+  padding: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.slide--light { background: #F4F5F7; color: #0F1419; }
+.slide--dark  { background: #0F1419; color: #F4F5F7; }
+
+.slide__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slide__eyebrow {
+  color: #00D400;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.slide__title {
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  margin-top: 30px;
+}
+
+.slide__title .accent { color: #00D400; }
+
+.slide__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide__logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.slide__brand-tag {
+  font-weight: 500;
+  font-size: 18px;
+  color: #4A5568;
+  letter-spacing: 0.02em;
+}
+
+.slide__url {
+  font-weight: 700;
+  font-size: 22px;
+  color: #00D400;
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.slide__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  z-index: 2;
+  position: relative;
+}
+
+.slide__list-title {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4A5568;
+  margin-bottom: 12px;
+}
+
+.slide__list-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: baseline;
+  gap: 18px;
+}
+
+.slide__list-num {
+  color: #00D400;
+  font-weight: 800;
+  font-size: 56px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.slide__list-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0F1419;
+}
+
+.slide--dark .slide__list-text { color: #F4F5F7; }
+.slide--dark .slide__list-title { color: #94A3B8; }
+.slide--dark .slide__brand-tag { color: #94A3B8; }
+
+.halftone {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.13;
+}
+
+.halftone--br { bottom: -150px; right: -150px; width: 600px; height: 600px; }
+
+.slide--dark .halftone { opacity: 0.20; }

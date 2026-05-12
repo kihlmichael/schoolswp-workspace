@@ -1,6 +1,9 @@
 ---
 name: niche-detector-reachable
-description: Detecter des niches SEO atteignables pour schoolsWP (difficulte, concurrence, opportunite business, potentiel affilie, angle differenciant). Utiliser pour choisir les bons combats et prioriser les clusters.
+description: |
+  Évalue si une niche SEO est atteignable pour schoolsWP : difficulté estimée, concurrence réelle, type de concurrents, opportunité business, potentiel affilié, capacité de surclassement, angle différenciant. Sortie : score /10 + recommandation (prioritaire / intéressante / difficile / à éviter) + 3 actions suivantes.
+  Utilise ce skill quand l'utilisateur dit : "est-ce que cette niche est gagnable ?", "détecte si je peux surclasser sur ce sujet", "score d'atteignabilité de cette thématique", "vaut-il le coup d'attaquer cette niche", ou propose un sujet/cluster à arbitrer avant production.
+  NE PAS utiliser pour : analyser une page concurrente précise (utiliser `seo-competitor-gap-radar`), prioriser DANS un cocon déjà décidé (utiliser `cocon-roi-prioritization`), ou choisir le prochain article DANS un cocon existant (utiliser `radar` agent).
 ---
 
 # Detecteur de niches SEO atteignables — schoolsWP

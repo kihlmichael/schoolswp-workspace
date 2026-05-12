@@ -1,6 +1,9 @@
 ---
 name: whatsapp
-description: Envoyer des messages WhatsApp à d'autres personnes ou rechercher/synchroniser l'historique WhatsApp via le CLI wacli (pas pour les conversations utilisateur normales).
+description: |
+  Pilote WhatsApp via le CLI `wacli` : envoie de messages texte/fichier à un destinataire tiers, recherche dans l'historique, synchronisation initiale (auth QR) et continue, backfill d'historique. Sortie machine-readable possible avec `--json`. Authentification stockée dans `~/.wacli`.
+  Utilise ce skill quand l'utilisateur dit : "envoie un message WhatsApp à ce numéro", "cherche dans mon historique WhatsApp le mot facture", "synchronise WhatsApp", "récupère les conversations avec untel", ou demande explicitement à contacter une personne tierce sur WhatsApp.
+  NE PAS utiliser pour : répondre à une conversation WhatsApp utilisateur en cours (OpenClaw route automatiquement, ne pas appeler `wacli`), poster un broadcast marketing (WhatsApp Business API hors scope ce skill), ou pipeline notification routine (utiliser Discord).
 homepage: https://wacli.sh
 metadata: {"openclaw":{"emoji":"📱","requires":{"bins":["wacli"]},"install":[{"id":"brew","kind":"brew","formula":"steipete/tap/wacli","bins":["wacli"],"label":"Installer wacli (brew)"},{"id":"go","kind":"go","module":"github.com/steipete/wacli/cmd/wacli@latest","bins":["wacli"],"label":"Installer wacli (go)"}]}}
 ---

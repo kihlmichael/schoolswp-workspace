@@ -1,7 +1,10 @@
 ---
 name: persona-researcher
 version: 1.0.0
-description: "Organize research — manage references, notes, and collaboration."
+description: |
+  Profil orchestré pour la recherche : organisation des sources et notes en Drive et Docs, log de données en Sheets, partage des findings via file-announce, demandes de peer review par Gmail. Combine gws-drive, gws-docs, gws-sheets, gws-gmail.
+  Utilise ce skill quand l'utilisateur dit : "active la persona researcher", "mode chercheur Workspace", "j'organise mes références et notes pour collaboration", ou pour adopter une posture knowledge work avec collaboration.
+  NE PAS utiliser pour : profil content creator orienté production-distribution (utiliser persona-content-creator), profil project manager orienté delivery (utiliser persona-project-manager), skill Docs seul (utiliser gws-docs), ou veille concurrentielle schoolsWP (utiliser radar agent ou external-obsidian defuddle).
 metadata:
   openclaw:
     category: "persona"

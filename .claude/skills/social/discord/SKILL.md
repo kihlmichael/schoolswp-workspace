@@ -1,6 +1,9 @@
 ---
 name: discord
-description: Utiliser pour contrôler Discord via l'outil discord - envoyer des messages, réagir, poster des stickers/emojis, créer des sondages, gérer les threads/pins/recherche, créer/modifier/supprimer des channels et catégories, récupérer les permissions ou infos membres/rôles/channels, ou gérer la modération dans les DMs ou channels Discord.
+description: |
+  Pilote Discord via l'outil `discord` (bot token OpenClaw) : messages, réactions, stickers/emojis, sondages, threads, pins, recherche, création/modification/suppression de channels et catégories, permissions, infos membres/rôles, modération en DM ou channels.
+  Utilise ce skill quand l'utilisateur dit : "envoie un message Discord sur le channel X", "réagis avec un emoji à ce message", "crée un sondage Discord", "modère ce channel", "récupère les permissions du serveur", ou demande une action concrète via le bot Discord.
+  NE PAS utiliser pour : poster une notification automatique depuis n8n (utiliser un workflow n8n avec node Discord v2 webhook sendLegacy), publier un post de contenu communautaire planifié (utiliser `social-media-manager` ou l'agent `pulse`), ou tracer une routine claude.ai sur le webhook schoolsWP-Routines (voir `reference_discord_webhook_routines.md`).
 metadata: {"openclaw":{"emoji":"🎮","requires":{"config":["channels.discord"]}}}
 ---
 

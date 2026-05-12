@@ -1,0 +1,41 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/erreurs-wordpress-seo-2026/
+  software: schoolsWP html-to-png
+
+images:
+  - file: pin-01-trop-de-plugins.png
+    title: Trop de plugins WordPress ralentit ton SEO
+    subject: Pinterest pin trop de plugins WordPress et SEO
+    description: Pin Pinterest sur l'impact de trop de plugins WordPress sur le TTFB et les Core Web Vitals
+    alt: schoolsWP - Pin Pinterest trop de plugins WordPress
+    keywords: [WordPress, SEO, plugins, TTFB, performance]
+
+  - file: pin-02-cache-mal-configure.png
+    title: Cache WordPress mal configuré et SEO
+    subject: Pinterest pin cache WordPress mal configuré
+    description: Pin Pinterest sur la mauvaise configuration du cache WordPress qui plombe la performance
+    alt: schoolsWP - Pin Pinterest cache WordPress mal configuré
+    keywords: [WordPress, SEO, cache, CDN, performance]
+
+  - file: pin-03-images-non-optimisees.png
+    title: Images WordPress non optimisées plombent le LCP
+    subject: Pinterest pin images WordPress LCP Core Web Vitals
+    description: Pin Pinterest sur l'optimisation images WordPress AVIF lazy loading LCP en 2026
+    alt: schoolsWP - Pin Pinterest images WordPress non optimisées
+    keywords: [WordPress, SEO, AVIF, LCP, Core Web Vitals]
+
+  - file: pin-04-maillage-interne.png
+    title: Maillage interne WordPress dilue ton autorité SEO
+    subject: Pinterest pin maillage interne WordPress autorité SEO
+    description: Pin Pinterest sur le maillage interne WordPress aléatoire qui dilue l'autorité au lieu de la concentrer
+    alt: schoolsWP - Pin Pinterest maillage interne aléatoire
+    keywords: [WordPress, SEO, maillage interne, autorité, internal linking]
+
+  - file: pin-05-schema-structure.png
+    title: Pas de schema WordPress et Google te lit à moitié
+    subject: Pinterest pin schema.org WordPress et rich snippets
+    description: Pin Pinterest sur l'importance du schema.org Article FAQ HowTo pour les rich snippets WordPress
+    alt: schoolsWP - Pin Pinterest schema structuré WordPress
+    keywords: [WordPress, SEO, schema.org, données structurées, rich snippets]

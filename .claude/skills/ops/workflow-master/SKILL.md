@@ -1,15 +1,9 @@
 ---
 name: workflow-master
-description: >
-  schoolsWP Agent OS V5 — système d'exploitation d'exécution pour agents IA orientés WordPress,
-  SEO, CRM, n8n, automatisation et workflows. Routeur principal : détecte le mode (création /
-  debug / documentation), applique les 7 rituels, produit une sortie structurée et exploitable.
-  Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks.
-  Déclencher pour toute demande liée aux workflows schoolsWP — créer, corriger, documenter,
-  analyser ou architecturer une automatisation. Déclencher aussi quand le mode n'est pas précisé,
-  quand la demande est dense ou multi-étapes, ou quand l'utilisateur dit "workflow", "n8n",
-  "automatisation", "mon flux", "j'ai un bug n8n", "documente mon workflow",
-  "je veux créer une automatisation schoolsWP". Entrée principale de l'écosystème workflow schoolsWP.
+description: |
+  schoolsWP Agent OS V5 — routeur principal des workflows schoolsWP. Détecte le mode (création / debug / documentation), applique les 7 rituels, produit une sortie structurée. Couvre n8n, agents IA, WordPress, FluentCRM, Google Sheets, APIs, webhooks. Entrée principale de l'écosystème workflow.
+  Utilise ce skill quand l'utilisateur dit : "workflow", "n8n", "automatisation schoolsWP", "mon flux", "crée une automatisation", "architecture un workflow", ou quand le mode n'est pas précisé / la demande est multi-étapes.
+  NE PAS utiliser pour : déboguer un workflow déjà identifié comme cassé (router direct vers `workflow-debug`), documenter un workflow déjà identifié (router direct vers `workflow-doc`), ou créer un agent Python `core/agents-py/` (suivre les conventions de `core/agents-py/CLAUDE.md`).
 ---
 
 # schoolsWP Agent OS — V5 Final

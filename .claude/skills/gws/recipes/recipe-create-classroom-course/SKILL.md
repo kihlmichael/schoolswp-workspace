@@ -1,7 +1,10 @@
 ---
 name: recipe-create-classroom-course
 version: 1.0.0
-description: "Create a Google Classroom course and invite students."
+description: |
+  Cree un cours Google Classroom et envoie les invitations aux etudiants avec le role STUDENT.
+  Utilise ce skill quand l'utilisateur dit : "cree un cours Google Classroom", "ouvre une classe sur Classroom", "invite mes etudiants au cours", ou demande a setup un cours scolaire avec roster.
+  NE PAS utiliser pour : creer une formation TutorLMS schoolsWP (voir core/agents-py et stack TutorLMS du projet), gerer une liste de taches projet (utiliser recipe-create-task-list), ou poser un Drive Partage pour ressources de cours (utiliser recipe-create-shared-drive).
 metadata:
   openclaw:
     category: "recipe"

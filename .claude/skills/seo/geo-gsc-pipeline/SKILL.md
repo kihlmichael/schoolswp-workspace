@@ -1,16 +1,9 @@
 ---
 name: geo-gsc-pipeline
-description: >
-  Pipeline data-driven GSC-to-GEO : transforme des donnees reelles (export GSC CSV/XLSX, fichiers SERP Thruuu,
-  ou acces API GSC) en systeme editorial GEO complet V1+V2+V3 avec sortie JSON strict.
-  Declenche ce skill des que l'utilisateur fournit un export GSC, un fichier SERP, des donnees de recherche,
-  ou demande : "analyse mes requetes GSC", "construis un pipeline GEO a partir de mes donnees",
-  "transforme cet export en clusters GEO", "genere des pages AIO depuis mes requetes",
-  "pipeline GEO complet", "V1 V2 V3 depuis GSC", "clustering GEO data-driven",
-  "monitorer mes prompts Thruuu", "backlog editorial depuis GSC".
-  Aussi pour : "j'ai un CSV GSC, fais-en un plan GEO", "priorise mes requetes pour l'AIO",
-  "quels clusters creer depuis mes donnees GSC", "spec de page AIO-ready depuis mes requetes".
-  Ne PAS confondre avec geo-architect (generaliste, markdown) : ce skill est data-driven et produit du JSON strict.
+description: |
+  Pipeline data-driven GSC-to-GEO : transforme des données réelles (export GSC CSV/XLSX, fichiers SERP Thruuu/SEOKey, ou accès API GSC) en système éditorial GEO complet V1+V2+V3 avec sortie JSON strict. Chaque décision est fondée sur des métriques observables (impressions, position, CTR), pas sur l'intuition.
+  Utilise ce skill quand l'utilisateur dit : "analyse mes requêtes GSC", "j'ai un CSV GSC, fais-en un plan GEO", "priorise mes requêtes pour l'AIO", "transforme cet export en clusters GEO", "backlog éditorial depuis GSC", ou fournit un export GSC / fichier SERP avec demande de clustering data-driven.
+  NE PAS utiliser pour : pipeline GEO sans données réelles depuis un seul mot-clé (utiliser `geo-architect`, sortie markdown), cartographie macro tous cocons (utiliser `cocon-map-schoolswp`), ou audit GSC de pilotage opérationnel sans construction GEO (utiliser le runbook `schoolswp-gsc-radar`).
 ---
 
 # GEO GSC Pipeline — Donnees GSC vers Systeme Editorial GEO

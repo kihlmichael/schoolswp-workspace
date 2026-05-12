@@ -1,0 +1,28 @@
+{
+  "input": "optimiser les images WordPress",
+  "language_id": 1,
+  "site_id": 503,
+  "content_prompt_id": 1425,
+  "is_auto_generated": true,
+  "is_auto_published": false,
+  "is_publish_to_draft": true,
+  "additional_instructions": "RAPPEL CRITIQUE : tutoiement UNIQUEMENT (tu, te, ton, ta, tes, toi), JAMAIS de vouvoiement (vous, votre, vos), ni dans les titres H2 ni dans le contenu. Sujet : comment optimiser les images d'un site WordPress pour gagner en vitesse de chargement et en SEO. Couvre obligatoirement : formats modernes (WebP, AVIF) avec compatibilite navigateurs et gain de poids (~30 a 50%) ; compression d'images (plugins TinyPNG, ShortPixel, Imagify, avec trade-off honnete sur la qualite vs prix) ; lazy loading natif HTML (loading=lazy) et alternatives plugins (a3 Lazy Load, WP Rocket) ; dimensions responsives via srcset et picture (eviter de servir une image 1920px sur mobile) ; CDN images (Cloudflare, Bunny.net, jsDelivr) ; impact Core Web Vitals notamment LCP (target <2.5s). Donne des chiffres concrets : un site moyen voit son LCP ameliorer de 1 a 2 secondes apres optimisation images. Ton direct, exemples concrets, partage ton experience de freelance WordPress. Tu peux signaler quand l'auto-optimisation par plugin suffit vs quand un setup manuel est preferable.",
+  "is_featured_image": true,
+  "is_images_in": false,
+  "image_style_id": 1,
+  "content_options": {
+    "google_pages_count": 5,
+    "min_words_count": 900,
+    "max_words_count": 1400,
+    "min_h2_count": 5,
+    "max_h2_count": 7,
+    "min_images_count": 0,
+    "max_images_count": 0,
+    "min_lists_count": 3,
+    "max_lists_count": 6,
+    "use_bold": true,
+    "use_italic": false,
+    "use_lists": true,
+    "use_tables": false
+  }
+}

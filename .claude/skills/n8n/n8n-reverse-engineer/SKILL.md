@@ -1,16 +1,9 @@
 ---
 name: n8n-reverse-engineer
-description: >
-  Reverse-engineer complet de workflows n8n vers un Skill Claude Code reproductible.
-  Analyse des exports JSON n8n, cartographie chaque noeud, extrait prompts/credentials/expressions,
-  et produit une analyse structuree + plan de reproduction fidele sous forme de Skill.
-  Declenche ce skill quand l'utilisateur veut : transformer un workflow n8n en Skill,
-  comprendre un workflow n8n existant a partir de son JSON, reproduire une automatisation
-  n8n en Python/Skill, analyser un export n8n, reverse-engineer une automatisation,
-  migrer un pipeline n8n, documenter un workflow n8n de facon exhaustive,
-  convertir n8n en code. Aussi pour : "j'ai un JSON n8n, fais-en un skill",
-  "analyse ce workflow", "reproduis cette automatisation", "comprends ce pipeline",
-  "transforme ce n8n en quelque chose de maintenable".
+description: |
+  Reverse-engineer un export JSON n8n vers une analyse exhaustive (16 sections) puis vers un Skill Claude Code reproductible : cartographie des nodes, extraction prompts / credentials / expressions, plan de reproduction fidèle, génération du dossier skill complet (SKILL.md + scripts/ + prompts/ + .env + references/).
+  Utilise ce skill quand l'utilisateur dit : "j'ai un JSON n8n, fais-en un skill", "analyse ce workflow n8n", "reproduis cette automatisation en code", "migre ce pipeline n8n en Python", "transforme ce n8n en quelque chose de maintenable", ou pour documenter exhaustivement un workflow externe.
+  NE PAS utiliser pour : adapter un template externe pour l'instance schoolsWP (utiliser n8n-workflow-adapter), créer un workflow from scratch (utiliser n8n-workflow-architect après cadrage par n8n-orchestrator), ou pour rechercher un template existant (utiliser n8n-template-finder).
 ---
 
 # n8n Reverse Engineer

@@ -1,6 +1,9 @@
 ---
 name: authority-salespage
-description: Page de vente complète de la schoolsWP Authority System™ — version courte et longue (2000+ mots), ultra persuasive, zéro bullshit. Utilise ce skill pour générer, adapter ou décliner la page de vente de l'Authority System™ sur n'importe quel format ou canal : landing page longue, page courte, email de vente, post LinkedIn de lancement, script vidéo de vente, page de checkout, séquence de prévente. Trigger pour "page de vente Authority System", "rédige la page de vente", "version longue persuasive", "script de vente", "email de lancement", "séquence prévente schoolsWP", "landing page formation WordPress".
+description: |
+  Variante condensée de la page de vente Authority System™ : version courte (hero + problème + solution + livrables + pour qui + tarification + CTA) + version longue 2000+ mots. Format plus compact que la structure 14 sections CRO, utile pour landing rapide ou page de checkout.
+  Utilise ce skill quand l'utilisateur dit : "version courte page de vente Authority System", "landing rapide formation", "checkout copy schoolsWP", ou veut une déclinaison condensée de la sales page.
+  NE PAS utiliser pour : la structure complète 14 sections CRO (utiliser `authority-sales-page-copy` qui est la version canonique), les 7 emails de lancement (utiliser `authority-email-launch`), ou les preuves / études de cas isolées (utiliser `authority-proof`).
 ---
 
 # schoolsWP Authority System™ — Page de vente

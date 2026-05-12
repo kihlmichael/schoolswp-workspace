@@ -1,7 +1,6 @@
 ---
 name: liveavatar-integrate
-description: |
-  Build a LiveAvatar integration end-to-end — assesses the user's existing stack, recommends the optimal path, and guides implementation. Use when: (1) Building a new LiveAvatar integration, (2) Adding a real-time avatar to an app or site, (3) Connecting LiveAvatar to an existing AI pipeline, (4) User mentions LiveAvatar, real-time avatar, interactive avatar, conversational avatar, or lip-sync avatar, (5) Deciding between Embed, FULL Mode, and LITE Mode, (6) Migrating from HeyGen Interactive Avatar to LiveAvatar.
+description: "Construit une intégration LiveAvatar end-to-end - évalue la stack existante, recommande le chemin optimal et guide l'implémentation. Utilise ce skill pour ajouter un avatar temps réel à une app ou un site, ou connecter LiveAvatar à un pipeline IA existant."
 license: MIT
 metadata:
   author: heygen

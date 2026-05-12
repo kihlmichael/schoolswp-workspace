@@ -1,15 +1,9 @@
 ---
-name: schoolswp-content-studio
-description: >
-  Skill éditorial complet pour schoolsWP — le média WordPress de Michaël KIHL.
-  Utilise ce skill SYSTÉMATIQUEMENT pour : rédiger des articles de blog, newsletters,
-  posts LinkedIn/Bluesky, scripts vidéo YouTube, contenus SEO, pages de vente,
-  séquences email, comparatifs d'outils WordPress, plans de formation, fiches produit,
-  ou tout contenu lié à WordPress, SEO, automatisation, CRM, LMS.
-  Déclenche aussi ce skill quand l'utilisateur mentionne : schoolsWP, FluentCRM,
-  OttoKit, TutorLMS, Elementor, SEOKey, Fluent Forms, ou toute rédaction web
-  pédagogique liée à WordPress. Si le contenu touche de près ou de loin à l'univers
-  schoolsWP, ce skill s'applique.
+name: schoolswp
+description: |
+  Skill identité de marque schoolsWP : message central, promesse, positionnement, tagline, principes fondamentaux, voix, orthographe obligatoire (`schoolsWP`), couleur primaire (#00D400). Sert de fondation pour toute production éditoriale.
+  Utilise ce skill quand l'utilisateur dit : "rappelle-moi la voix schoolsWP", "principes de marque", "positionnement schoolsWP", ou quand tu as besoin de cadrer le ton avant une production éditoriale.
+  NE PAS utiliser pour : rédiger un article SEO long (utiliser `schoolswp-article-workflow`), produire un post social (utiliser le skill plateforme `linkedin`/`pulse`), ou auditer la voix d'un texte existant (utiliser `branding`).
 ---
 
 # schoolsWP Content Studio

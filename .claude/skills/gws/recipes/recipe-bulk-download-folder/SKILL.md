@@ -1,7 +1,10 @@
 ---
 name: recipe-bulk-download-folder
 version: 1.0.0
-description: "List and download all files from a Google Drive folder."
+description: |
+  Liste et telecharge en masse tous les fichiers d'un dossier Google Drive, avec export PDF pour les Google Docs et binaire direct pour les autres.
+  Utilise ce skill quand l'utilisateur dit : "telecharge tout le dossier Drive", "backup ce folder Google Drive", "recupere tous les fichiers de ce repertoire", ou veut une copie locale d'une arborescence Drive.
+  NE PAS utiliser pour : exporter une seule Sheet en CSV (utiliser recipe-backup-sheet-as-csv), partager un fichier par email (utiliser recipe-email-drive-link), ou creer un Drive Partage (utiliser recipe-create-shared-drive).
 metadata:
   openclaw:
     category: "recipe"

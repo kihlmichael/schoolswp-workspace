@@ -1,7 +1,10 @@
 ---
 name: recipe-create-task-list
 version: 1.0.0
-description: "Set up a new Google Tasks list with initial tasks."
+description: |
+  Configure une nouvelle liste Google Tasks et y injecte des taches initiales avec titre, notes et dates d'echeance.
+  Utilise ce skill quand l'utilisateur dit : "cree une liste Google Tasks", "monte une todo list Tasks pour Q2", "ajoute ces taches dans Google Tasks", ou veut piloter un backlog leger via Tasks Google.
+  NE PAS utiliser pour : creer un cours Google Classroom (utiliser recipe-create-classroom-course), gerer le backlog interne projet (utiliser core/tasks/todo.md du projet schoolsWP), ou setup un tracker tabule type Sheets (utiliser recipe-create-expense-tracker comme modele).
 metadata:
   openclaw:
     category: "recipe"

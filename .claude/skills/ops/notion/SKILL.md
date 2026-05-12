@@ -1,6 +1,9 @@
 ---
 name: notion
-description: API Notion pour créer et gérer des pages, bases de données et blocs.
+description: |
+  API Notion via curl direct (header `Notion-Version: 2025-09-03`, clé stockée dans `~/.config/notion/api_key`) pour créer/lire/mettre à jour pages, data sources (databases) et blocs. Workflow CLI brut, pas de SDK.
+  Utilise ce skill quand l'utilisateur dit : "crée page Notion via curl", "appelle l'API Notion brute", "POST sur api.notion.com", "gère data source Notion en CLI", ou veut scripter Notion sans passer par le MCP officiel.
+  NE PAS utiliser pour : opérations Notion standard (utiliser le MCP natif `claude_ai_Notion__notion-*` plus simple et plus sûr), édition pages depuis l'UI, sync Obsidian → Notion (skill ne couvre pas), ou stockage assets binaires (utiliser Google Drive ou repo).
 homepage: https://developers.notion.com
 metadata: {"openclaw":{"emoji":"📝","requires":{"env":["NOTION_API_KEY"]},"primaryEnv":"NOTION_API_KEY"}}
 last_reviewed: 2026-04-23
