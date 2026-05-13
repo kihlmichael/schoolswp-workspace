@@ -1,17 +1,12 @@
 {
   "mcpServers": {
     "n8n-mcp": {
-      "command": "n8n-mcp",
-      "args": [],
-      "env": {
-        "MCP_MODE": "stdio",
-        "LOG_LEVEL": "error",
-        "DISABLE_CONSOLE_OUTPUT": "true",
-        "N8N_API_URL": "https://schoolswp-n8n.wp1.host",
-        "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
-      }
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-n8n.mjs"
+      ]
     },
-    "_comment_launcher_pattern": "Les MCP suivants (rapidapi-* + discord + zipwp) injectent un secret via args. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit le secret depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-rapidapi.mjs, _launch-discord.mjs, _launch-zipwp.mjs.",
+    "_comment_launcher_pattern": "Les MCP suivants (n8n-mcp + rapidapi-* + discord + zipwp) injectent un secret. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit le secret depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-n8n.mjs, _launch-rapidapi.mjs, _launch-discord.mjs, _launch-zipwp.mjs.",
     "rapidapi-linkedin": {
       "command": "node",
       "args": [
