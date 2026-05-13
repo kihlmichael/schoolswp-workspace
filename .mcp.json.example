@@ -11,7 +11,7 @@
         "N8N_API_KEY": "YOUR_N8N_API_KEY_HERE"
       }
     },
-    "_comment_launcher_pattern": "Les 5 MCP suivants (rapidapi-* + discord) injectent un secret via args. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit RAPIDAPI_KEY / DISCORD_BOT_TOKEN depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-rapidapi.mjs et _launch-discord.mjs.",
+    "_comment_launcher_pattern": "Les MCP suivants (rapidapi-* + discord + zipwp) injectent un secret via args. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit le secret depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-rapidapi.mjs, _launch-discord.mjs, _launch-zipwp.mjs.",
     "rapidapi-linkedin": {
       "command": "node",
       "args": [
@@ -54,15 +54,10 @@
       }
     },
     "zipwp": {
-      "command": "mcp-remote",
+      "command": "node",
       "args": [
-        "https://api.zipwp.com/mcp/zipwp",
-        "--header",
-        "Authorization:Bearer ${ZIPWP_TOKEN}"
-      ],
-      "env": {
-        "ZIPWP_TOKEN": "YOUR_ZIPWP_TOKEN_HERE"
-      }
+        "tools/mcp-servers/_launch-zipwp.mjs"
+      ]
     },
     "firecrawl": {
       "command": "firecrawl-mcp",
