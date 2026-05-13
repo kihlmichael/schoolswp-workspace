@@ -6,7 +6,7 @@
         "tools/mcp-servers/_launch-n8n.mjs"
       ]
     },
-    "_comment_launcher_pattern": "Les MCP suivants (n8n-mcp + rapidapi-* + discord + zipwp) injectent un secret. Pour eviter le leak via 'claude mcp list', ils passent par un launcher .mjs qui lit le secret depuis .claude/settings.local.json et spawn le binaire reel. Voir tools/mcp-servers/_launch-n8n.mjs, _launch-rapidapi.mjs, _launch-discord.mjs, _launch-zipwp.mjs.",
+    "_comment_launcher_pattern": "Tous les MCP stdio avec secret passent par un launcher .mjs qui lit le secret depuis .claude/settings.local.json (gitignored) et spawn le binaire reel. Cela evite le leak via 'claude mcp list'. Voir tools/mcp-servers/: _launch-n8n.mjs, _launch-rapidapi.mjs, _launch-discord.mjs, _launch-zipwp.mjs, _launch-mcp-stdio.mjs (generique : apify, firecrawl, nano-banana, novamira), _launch-fluent.mjs (5 Fluent MCPs), _launch-dataforseo.mjs.",
     "rapidapi-linkedin": {
       "command": "node",
       "args": [
@@ -42,11 +42,12 @@
       ]
     },
     "apify": {
-      "command": "actors-mcp-server",
-      "args": [],
-      "env": {
-        "APIFY_API_TOKEN": "YOUR_APIFY_API_TOKEN_HERE"
-      }
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-mcp-stdio.mjs",
+        "@apify/actors-mcp-server",
+        "APIFY_TOKEN"
+      ]
     },
     "zipwp": {
       "command": "node",
@@ -55,11 +56,12 @@
       ]
     },
     "firecrawl": {
-      "command": "firecrawl-mcp",
-      "args": [],
-      "env": {
-        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY_HERE"
-      }
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-mcp-stdio.mjs",
+        "firecrawl-mcp",
+        "FIRECRAWL_API_KEY"
+      ]
     },
     "wisewand": {
       "command": "wisewand-mcp",
@@ -81,13 +83,14 @@
       "args": ["C:/Users/micha/.claude/mcp-github.sh"]
     },
     "novamira-schoolswp-com": {
-      "command": "npx",
-      "args": ["-y", "@automattic/mcp-wordpress-remote@latest"],
-      "env": {
-        "WP_API_URL": "https://schoolswp.com/wp-json/mcp/mcp-adapter-default-server",
-        "WP_API_USERNAME": "YOUR_WP_USERNAME_HERE",
-        "WP_API_PASSWORD": "YOUR_WP_APP_PASSWORD_HERE"
-      }
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-mcp-stdio.mjs",
+        "@automattic/mcp-wordpress-remote@latest",
+        "WP_API_URL",
+        "WP_API_USERNAME",
+        "WP_API_PASSWORD"
+      ]
     },
     "higgsfield": {
       "type": "http",
