@@ -2,7 +2,7 @@
 
 Transforme une liste de sources deja collectees (URLs, fichiers locaux, extraits colles) en un draft de synthese structure, depose dans la passerelle Obsidian pour ton arbitrage.
 
-Cette commande automate uniquement les etapes 1-2 du Cas d'usage 2 de la SOP (obsidian-bridge/SOP-claude-obsidian-bridge.md, section 3). Elle n'ecrit jamais dans le vault, ne promeus rien, et s'arrete au gate humain L0.
+Cette commande automate uniquement les etapes 1-2 du Cas d'usage 2 de la SOP (obsidian-bridge/SOP-claude-obsidian-bridge.md, section 3). Elle n'ecrit jamais dans le vault, ne promeut rien, et s'arrete au gate humain L0.
 
 Tous les chemins ci-dessous sont relatifs a la racine du projet schoolsWP (le cwd de la session).
 
