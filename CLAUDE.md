@@ -130,7 +130,7 @@ async def test_mon_agent_run(fake_env):
 
 Coverage : voir section CI plus bas.
 
-**Slash commands projet** (`.claude/commands/`) : `/audit`, `/audit-codebase`, `/brain-lite`, `/cocon-batch`, `/publish-repo`, `/skill-creator`, `/todo`, `/aidesigner`
+**Slash commands projet** (`.claude/commands/`) : `/audit`, `/audit-codebase`, `/brain-lite`, `/cocon-batch`, `/publish-repo`, `/skill-creator`, `/todo`, `/aidesigner`, `/veille`
 
 ## JS Dependencies
 
