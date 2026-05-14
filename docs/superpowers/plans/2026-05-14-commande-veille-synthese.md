@@ -43,9 +43,9 @@ Tous les chemins ci-dessous sont relatifs a la racine du projet schoolsWP (le cw
 
 ## Entree
 
-Arguments attendus : ARGUMENTS
+Arguments attendus : $ARGUMENTS
 
-- Le bloc d'arguments contient le sujet de la veille.
+- $ARGUMENTS contient le sujet de la veille.
 - Les sources sont fournies dans le meme message : URLs en liste, chemins de fichiers locaux, ou extraits de texte colles. Les trois types peuvent etre melanges.
 
 Avant tout traitement :
@@ -144,7 +144,7 @@ Expected: le fichier existe, et le grep retourne 7 (sections : Entree, Etape 1, 
 
 Run:
 ```
-.venv/Scripts/python -c "import sys,io; t=io.open('.claude/commands/veille.md',encoding='utf-8').read(); bad=[c for c in t if c in '–—']; print('BAD' if bad else 'OK')"
+.venv/Scripts/python -c "import io; t=io.open('.claude/commands/veille.md',encoding='utf-8').read(); print('BAD' if any(chr(n) in t for n in (0x2013,0x2014)) else 'OK')"
 ```
 Expected: `OK`. Si `BAD`, ouvrir le fichier, remplacer chaque tiret long fautif par un tiret simple ou un deux-points, puis relancer.
 
@@ -233,7 +233,7 @@ Puis ouvrir le fichier et verifier :
 
 Run (controle des tirets longs sur le draft, adapter le glob au nom reel du fichier) :
 ```
-.venv/Scripts/python -c "import io,glob; f=glob.glob('obsidian-bridge/outbox-to-obsidian/*_synthese_passerelle-obsidian.md')[0]; t=io.open(f,encoding='utf-8').read(); print('BAD' if any(c in t for c in '–—') else 'OK')"
+.venv/Scripts/python -c "import io,glob; f=glob.glob('obsidian-bridge/outbox-to-obsidian/*_synthese_passerelle-obsidian.md')[0]; t=io.open(f,encoding='utf-8').read(); print('BAD' if any(chr(n) in t for n in (0x2013,0x2014)) else 'OK')"
 ```
 Expected: `OK`.
 
