@@ -40,17 +40,22 @@ if (!key) {
   process.exit(2);
 }
 
+// Windows : depuis Node 20.12+ (CVE-2024-27980), spawn direct d'un .cmd
+// (npx.cmd) leve EINVAL. On passe par `cmd.exe /c npx` -- Node applique
+// l'echappement cmd-aware des args (la cle peut contenir |, &, etc.).
+const isWin = process.platform === 'win32';
+const npxArgs = [
+  '-y',
+  'mcp-remote',
+  'https://mcp.rapidapi.com',
+  '--header',
+  `x-api-host:${host}`,
+  '--header',
+  `x-api-key:${key}`,
+];
 const child = spawn(
-  process.platform === 'win32' ? 'npx.cmd' : 'npx',
-  [
-    '-y',
-    'mcp-remote',
-    'https://mcp.rapidapi.com',
-    '--header',
-    `x-api-host:${host}`,
-    '--header',
-    `x-api-key:${key}`,
-  ],
+  isWin ? 'cmd.exe' : 'npx',
+  isWin ? ['/c', 'npx', ...npxArgs] : npxArgs,
   { stdio: 'inherit' }
 );
 

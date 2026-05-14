@@ -25,15 +25,20 @@ if (!token) {
   process.exit(2);
 }
 
+// Windows : depuis Node 20.12+ (CVE-2024-27980), spawn direct d'un .cmd
+// (npx.cmd) leve EINVAL. On passe par `cmd.exe /c npx` -- Node applique
+// l'echappement cmd-aware des args (le token peut contenir |, &, etc.).
+const isWin = process.platform === 'win32';
+const npxArgs = [
+  '-y',
+  'mcp-remote',
+  'https://api.zipwp.com/mcp/zipwp',
+  '--header',
+  `Authorization:Bearer ${token}`,
+];
 const child = spawn(
-  process.platform === 'win32' ? 'npx.cmd' : 'npx',
-  [
-    '-y',
-    'mcp-remote',
-    'https://api.zipwp.com/mcp/zipwp',
-    '--header',
-    `Authorization:Bearer ${token}`,
-  ],
+  isWin ? 'cmd.exe' : 'npx',
+  isWin ? ['/c', 'npx', ...npxArgs] : npxArgs,
   { stdio: 'inherit' }
 );
 

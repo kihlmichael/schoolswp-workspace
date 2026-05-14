@@ -27,9 +27,12 @@ if (!apiKey) {
   process.exit(2);
 }
 
+// Windows : depuis Node 20.12+ (CVE-2024-27980), spawn direct d'un .cmd
+// (npx.cmd) leve EINVAL. On passe par `cmd.exe /c npx`.
+const isWin = process.platform === 'win32';
 const child = spawn(
-  process.platform === 'win32' ? 'npx.cmd' : 'npx',
-  ['-y', 'n8n-mcp'],
+  isWin ? 'cmd.exe' : 'npx',
+  isWin ? ['/c', 'npx', '-y', 'n8n-mcp'] : ['-y', 'n8n-mcp'],
   {
     stdio: 'inherit',
     env: {

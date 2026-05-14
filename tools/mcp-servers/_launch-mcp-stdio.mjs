@@ -40,9 +40,14 @@ for (const name of envVars) {
   childEnv[name] = value;
 }
 
+// Windows : depuis Node 20.12+ (CVE-2024-27980), spawn direct d'un .cmd
+// (npx.cmd) leve EINVAL. On passe par `cmd.exe /c npx` -- Node applique
+// l'echappement cmd-aware des args (metacaracteres |, &, > preserves),
+// sans le risque d'injection de `shell: true`.
+const isWin = process.platform === 'win32';
 const child = spawn(
-  process.platform === 'win32' ? 'npx.cmd' : 'npx',
-  ['-y', pkg],
+  isWin ? 'cmd.exe' : 'npx',
+  isWin ? ['/c', 'npx', '-y', pkg] : ['-y', pkg],
   { stdio: 'inherit', env: childEnv }
 );
 
