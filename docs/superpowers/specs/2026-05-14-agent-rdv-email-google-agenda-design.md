@@ -100,11 +100,11 @@ Nom du workflow (convention projet) : `[InDev] Email contact@ > Google Agenda: A
 
 | Bloc | Rôle | Dépend de |
 | --- | --- | --- |
-| **[T] Email Trigger** | Surveille `contact@michaelkihl.fr`. Node `Email Trigger (IMAP)` (boîte hébergeur ; node `Gmail Trigger` uniquement si les MX pointent vers Google Workspace, à confirmer). Émet `threadId`, expéditeur, objet, corps. | Crédentiale IMAP |
+| **[T] Email Trigger** | Surveille `contact@michaelkihl.fr`. Node `Email Trigger (IMAP)` : les MX du domaine pointent vers `mx01/mx02.xcloud.email` (xCloud), pas Google Workspace, donc IMAP confirmé. Émet `threadId`, expéditeur, objet, corps. | Crédentiale IMAP xCloud |
 | **[1] Thread lookup** | Node Code/lookup. Lit le state store sur `threadId`. Fil connu : conversation en cours, on saute le classifieur. Inconnu : on classe. | State store |
 | **[2] Classifieur IA** | Node LLM léger (modèle Haiku). Entrée : objet + corps. Sortie : `{ is_booking_request: bool, product: "schoolswp"\|"fluentcart"\|"unknown" }`. Si `is_booking_request=false` : classe le mail dans un dossier/label "non-rdv" (déplacement IMAP) et STOP, aucune réponse. | LLM |
 | **[3] Context loader** | Récupère le fil de mail complet (historique conversationnel) et la ligne du state store. Fusionne en un objet contexte `{ mail_courant, historique_fil[], etat }`. | State store, accès fil |
-| **[4] Agent IA** | Node AI Agent, modèle Sonnet. Un seul outil : `get_calendar_availability` (Google Calendar lecture seule, free/busy sur une plage, sur l'agenda correspondant au `product`). Historique injecté explicitement par [3], agent stateless. Sortie : JSON structuré (section 6). | LLM, crédentiale Google Calendar |
+| **[4] Agent IA** | Node AI Agent, modèle Sonnet. Un seul outil : `get_calendar_availability` (Google Calendar lecture seule, free/busy sur une plage, sur l'agenda correspondant au `product`). Historique injecté explicitement par [3], agent stateless. Ton des mails : tutoiement (cohérent marque schoolsWP, voir `content/docs/BRAND_RULES.md`). Sortie : JSON structuré (section 6). | LLM, crédentiale Google Calendar |
 | **[5] Switch** | Route sur le champ `action` du JSON. | - |
 | **[6] Booking Gate** | Déterministe, sans LLM. Applique les 5 checks (section 7). Tout OK : crée l'événement Agenda (agenda selon `product`, prospect en invité, lien visio, Michael en organisateur) + mail de confirmation + état=`confirmed`. Échec « créneau pris » : relance [4] avec flag `slot_taken`. Autre échec : escalade. | Crédentiale Google Calendar, state store |
 | **[7] Escalade Discord** | HTTP Request vers le webhook `schoolsWP-Routines` (#alerts) : résumé du fil, email prospect, raison, reco de l'agent. État=`escalated`, + mail d'attente au prospect. | `$vars.DISCORD_WEBHOOK` |
@@ -167,7 +167,8 @@ L'agent ne peut donc jamais inventer un créneau non proposé.
 
 | Clé | Défaut proposé | Note |
 | --- | --- | --- |
-| `CALENDAR_ID` | map `{ schoolswp: "<id Coaching schoolsWP>", fluentcart: "<id Coaching FluentCart>" }` | IDs réels à lire via `gws` une fois l'auth restaurée, ou via le menu déroulant du node Google Calendar |
+| `CALENDAR_ID` | map `{ schoolswp: "<id Coaching schoolsWP>", fluentcart: "<id Coaching FluentCart>" }` | Un seul compte Google, deux sous-agendas. IDs réels à lire via `gws` une fois l'auth restaurée, ou via le menu déroulant du node Google Calendar |
+| `MEET_LINK` | Google Meet auto-généré | lien visio créé automatiquement à la création de l'événement |
 | `TIMEZONE` | `Europe/Paris` | |
 | `WORKING_DAYS` | lundi à vendredi | |
 | `WORKING_HOURS` | 9h - 18h | |
@@ -275,20 +276,25 @@ fixtures ne sont pas vertes.
 - Rejeu d'un mail confirmé = no-op.
 - Le workflow passe de `[InTesting]` à `[Prod]`.
 
-## 10. Points ouverts à confirmer avant implémentation
+## 10. Points tranchés et restant à provisionner
 
-1. **Auth `gws`** : token OAuth expiré/révoqué (`token_valid: false`). Michael doit
-   relancer `gws auth login` pour que les `calendarId` réels des deux agendas soient lus.
-   Non bloquant pour le plan : le node Google Calendar de n8n permet de choisir l'agenda
-   dans un menu déroulant une fois la crédentiale connectée.
-2. **MX de `michaelkihl.fr`** : confirmer si la boîte est purement IMAP hébergeur ou
-   routée via Google Workspace (détermine `Email Trigger (IMAP)` vs `Gmail Trigger`).
-3. **Compte Google de la crédentiale Calendar** : les deux agendas « Coaching schoolsWP »
-   et « Coaching FluentCart » appartiennent à un compte Google à confirmer (probablement
-   le Workspace projet).
-4. **Ton des mails** : tutoiement (cohérent marque schoolsWP) ou vouvoiement (prospect
-   inconnu) ? À trancher pour le system prompt de l'agent.
-5. **Lien visio** : Google Meet auto-généré à la création de l'événement, ou autre ?
+Points clarifiés au cadrage (2026-05-14) :
+
+- **MX de `michaelkihl.fr`** : pointent vers `mx01/mx02.xcloud.email` (xCloud), pas
+  Google Workspace. Trigger = `Email Trigger (IMAP)`, confirmé.
+- **Compte Google** : un seul compte Google, les deux agendas « Coaching schoolsWP » et
+  « Coaching FluentCart » en sont des sous-agendas. Une seule crédentiale Google Calendar.
+- **Ton des mails** : tutoiement (marque schoolsWP).
+- **Lien visio** : Google Meet auto-généré à la création de l'événement.
+
+Restant à provisionner avant / pendant l'implémentation :
+
+1. **Auth `gws`** : token OAuth expiré/révoqué (`token_valid: false`). Michael relance
+   `gws auth login` (prévu). Une fois fait : lecture des `calendarId` réels des deux
+   sous-agendas. Non bloquant pour le plan : le node Google Calendar de n8n permet de
+   choisir l'agenda dans un menu déroulant une fois la crédentiale connectée.
+2. **Crédentiale IMAP xCloud** : provisionner les paramètres de connexion de
+   `contact@michaelkihl.fr` (serveur IMAP xCloud, port, login, mot de passe) dans n8n.
 
 ## 11. Conséquences
 
