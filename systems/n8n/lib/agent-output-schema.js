@@ -12,7 +12,11 @@
  */
 
 const ACTIONS = ['ask_more_info', 'propose_slots', 'confirm_booking', 'escalate'];
-const ISO_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2}|Z)$/;
+// Exige un offset numerique explicite (+HH:MM / -HH:MM). Refuse 'Z' et l'absence d'offset.
+// Aligne sur la regex stricte de parseWallClock dans booking-gate.js : la gate suppose
+// l'heure murale Paris, donc un ISO en Z ('2026-05-20T14:00:00Z' = 16h Paris en CEST)
+// derivait silencieusement le check 3. Mieux vaut echouer ici avec un message clair.
+const ISO_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
 
 function isIsoSlot(s) {
   return s && typeof s === 'object' && ISO_RE.test(s.start || '') && ISO_RE.test(s.end || '');
@@ -30,12 +34,12 @@ function validateAgentOutput(obj) {
     errors.push('Champ "email_draft" manquant ou vide.');
   }
   if (obj.action === 'confirm_booking' && !isIsoSlot(obj.proposed_slot)) {
-    errors.push('action=confirm_booking exige proposed_slot.{start,end} au format ISO 8601 avec offset.');
+    errors.push('action=confirm_booking exige proposed_slot.{start,end} au format ISO 8601 avec offset signe (+HH:MM / -HH:MM, pas Z).');
   }
   if (obj.action === 'propose_slots') {
     const slots = obj.slots_offered;
     if (!Array.isArray(slots) || slots.length === 0 || !slots.every(isIsoSlot)) {
-      errors.push('action=propose_slots exige slots_offered : tableau non vide de {start,end} ISO.');
+      errors.push('action=propose_slots exige slots_offered : tableau non vide de {start,end} au format ISO 8601 avec offset signe (+HH:MM / -HH:MM, pas Z).');
     }
   }
   if (obj.action === 'escalate'

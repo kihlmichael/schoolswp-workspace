@@ -83,3 +83,22 @@ test('entree non-objet -> invalide', () => {
   assert.equal(validateAgentOutput(null).valid, false);
   assert.equal(validateAgentOutput('foo').valid, false);
 });
+
+test('I1 : confirm_booking avec ISO en Z (UTC) -> invalide', () => {
+  const r = validateAgentOutput({
+    action: 'confirm_booking',
+    email_draft: 'OK pour mardi.',
+    proposed_slot: {
+      start: '2026-05-20T14:00:00Z',
+      end:   '2026-05-20T15:00:00Z',
+    },
+  });
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.some((e) => /proposed_slot|offset/.test(e)));
+});
+
+test('plusieurs erreurs s accumulent (action inconnue + email_draft vide)', () => {
+  const r = validateAgentOutput({ action: 'bidon', email_draft: '   ' });
+  assert.equal(r.valid, false);
+  assert.ok(r.errors.length >= 2, 'attendu au moins 2 erreurs, recu : ' + r.errors.length);
+});
