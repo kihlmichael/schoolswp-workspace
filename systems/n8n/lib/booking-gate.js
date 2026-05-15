@@ -4,14 +4,24 @@
  * Validation deterministe pour la gate de reservation (workflow node [6]).
  * Fonction pure : pas d'API n8n, pas de LLM, pas d'I/O. Testable en isolation.
  *
+ * Ordre des checks volontaire : 5 (idempotence) -> 1 -> 3 -> 4 -> 2.
+ * Le check 2 est en dernier car c'est la seule branche 'reoffer' ;
+ * mettre les escalades avant evite d'evaluer le free/busy quand le creneau
+ * est de toute facon disqualifie.
+ *
  * Actions :
  *   - 'create'   : tous les checks passent.
  *   - 'reoffer'  : creneau valide mais plus libre -> relancer l'agent.
  *   - 'escalate' : anomalie -> notifier Discord.
+ *
+ * failedCheck :
+ *   - 1..5 : check metier correspondant (1 inclut le guard de shape sur proposedSlot).
+ *   - null : cas vert (action 'create').
  */
 
 function parseWallClock(iso) {
-  const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(iso);
+  // Exige un offset explicite (+HH:MM / -HH:MM). Refuse 'Z' et l'absence d'offset.
+  const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):\d{2}([+-]\d{2}:\d{2})$/.exec(iso);
   if (!m) return null;
   return {
     year: Number(m[1]),
@@ -35,7 +45,17 @@ function overlaps(aStart, aEnd, bStart, bEnd) {
 function validateBooking(input) {
   const { proposedSlot, proposedSlots, busy, prospectStatus, config, now } = input;
 
-  // Check 5 : anti-doublon.
+  // Guard : entree malformee -> escalate (la gate doit toujours retourner un resultat, jamais crasher).
+  if (!proposedSlot || typeof proposedSlot.start !== 'string' || typeof proposedSlot.end !== 'string') {
+    return {
+      ok: false, failedCheck: 1, action: 'escalate',
+      reason: 'proposedSlot manquant ou malforme.',
+    };
+  }
+
+  // Ordre volontaire : 5 d'abord (idempotence anti-doublon, evite tout travail si deja confirme)
+  // -> 1/3/4 (escalades pour anomalies) -> 2 en dernier (seule branche 'reoffer' :
+  // inutile d'appeler ce check si le creneau est deja disqualifie en amont).
   if (prospectStatus === 'confirmed') {
     return {
       ok: false, failedCheck: 5, action: 'escalate',
@@ -78,6 +98,12 @@ function validateBooking(input) {
   // Check 4 : buffer et horizon.
   const startMs = Date.parse(proposedSlot.start);
   const nowMs = Date.parse(now);
+  if (Number.isNaN(startMs) || Number.isNaN(nowMs)) {
+    return {
+      ok: false, failedCheck: 4, action: 'escalate',
+      reason: 'Date du creneau ou now non parsable.',
+    };
+  }
   const hoursAhead = (startMs - nowMs) / 3600000;
   if (hoursAhead < config.bufferHours) {
     return {

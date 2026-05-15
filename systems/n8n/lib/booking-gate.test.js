@@ -45,6 +45,7 @@ test('check 1 : creneau hors proposedSlots -> escalate', () => {
     config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 1);
 });
 
@@ -60,6 +61,7 @@ test('check 2 : creneau pris depuis la proposition -> reoffer', () => {
     config, now,
   });
   assert.equal(r.action, 'reoffer');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 2);
 });
 
@@ -73,6 +75,7 @@ test('check 3 : samedi -> escalate', () => {
     prospectStatus: 'slots_proposed', config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 3);
 });
 
@@ -86,6 +89,7 @@ test('check 3 : 22h hors heures ouvrees -> escalate', () => {
     prospectStatus: 'slots_proposed', config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 3);
 });
 
@@ -99,6 +103,7 @@ test('check 4 : creneau dans moins de 24h -> escalate', () => {
     prospectStatus: 'slots_proposed', config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 4);
 });
 
@@ -112,6 +117,7 @@ test('check 4 : creneau au-dela de 28 jours -> escalate', () => {
     prospectStatus: 'slots_proposed', config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 4);
 });
 
@@ -121,5 +127,50 @@ test('check 5 : fil deja confirme (doublon) -> escalate', () => {
     prospectStatus: 'confirmed', config, now,
   });
   assert.equal(r.action, 'escalate');
+  assert.equal(r.ok, false);
   assert.equal(r.failedCheck, 5);
+});
+
+test('guard C1 : proposedSlot undefined -> escalate sans crash', () => {
+  const r = validateBooking({
+    proposedSlot: undefined,
+    proposedSlots: [validSlot],
+    busy: [],
+    prospectStatus: 'slots_proposed',
+    config, now,
+  });
+  assert.equal(r.ok, false);
+  assert.equal(r.action, 'escalate');
+  assert.equal(r.failedCheck, 1);
+});
+
+test('guard I1 : now non parsable -> escalate (check 4)', () => {
+  const r = validateBooking({
+    proposedSlot: validSlot,
+    proposedSlots: [validSlot],
+    busy: [],
+    prospectStatus: 'slots_proposed',
+    config,
+    now: 'pas une date',
+  });
+  assert.equal(r.ok, false);
+  assert.equal(r.action, 'escalate');
+  assert.equal(r.failedCheck, 4);
+});
+
+test('guard I2 : ISO en Z (UTC) sans offset -> escalate (check 3)', () => {
+  const iso = {
+    start: '2026-05-20T14:00:00Z',
+    end:   '2026-05-20T15:00:00Z',
+  };
+  const r = validateBooking({
+    proposedSlot: iso,
+    proposedSlots: [iso],
+    busy: [],
+    prospectStatus: 'slots_proposed',
+    config, now,
+  });
+  assert.equal(r.ok, false);
+  assert.equal(r.action, 'escalate');
+  assert.equal(r.failedCheck, 3);
 });
