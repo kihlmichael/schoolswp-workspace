@@ -22,6 +22,7 @@ LOCKFILE = os.path.join(SKILLS_ROOT, "external-skills-lock.json")
 # Source GitHub par dossier external-* (à maintenir manuellement quand un nouveau import est fait)
 SOURCES = {
     "external-antigravity": {"source": "sickn33/antigravity-awesome-skills", "source_type": "github"},
+    "external-astra-spectra": {"source": "wpformation/claude-skill-astra-spectra", "source_type": "github"},
     "external-cc-design": {"source": "ZeroZ-lab/cc-design", "source_type": "github"},
     "external-design-systems": {"source": "nexu-io/open-design", "source_type": "github"},
     "external-ecc": {"source": "affaan-m/everything-claude-code", "source_type": "github"},

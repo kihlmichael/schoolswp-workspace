@@ -396,6 +396,16 @@ Voir [.claude/skills/external-open-design/INDEX.md](external-open-design/INDEX.m
 
 ---
 
+## Astra-Spectra (externe, génération de pages WordPress Spectra)
+
+Skill cloné depuis `github.com/wpformation/claude-skill-astra-spectra` (WPFormation, MIT, Fabrice Ducarme) le 2026-05-20. **Invocation manuelle uniquement** : frontmatter modifié pour ne jamais auto-déclencher. schoolsWP tourne sur Kadence, pas sur Spectra/Astra : ce skill ne s'applique pas aux pages schoolswp.com (passer par les skills Kadence `landing-page-factory`, `mini-offre-page-de-vente`, `lead-magnet-schoolswp`). Conservé comme ressource de référence et matériau pour une future formation ou un tutoriel WordPress.
+
+| Skill | Emplacement | Description |
+| --- | --- | --- |
+| `external-astra-spectra` | `external-astra-spectra/` | Base de connaissance Spectra (48 blocs Gutenberg) : 24 pièges documentés, baselines design, 35+ patterns, 8 templates de pages, 15 scripts PHP de validation, workflows. Génération et refonte de pages WordPress sur stack Spectra. Hors stack schoolsWP, usage formation/tutoriel |
+
+---
+
 ## Obsidian (externe, extraction web)
 
 1 skill cherry-picked depuis `kepano/obsidian-skills` (MIT) le 2026-05-04. Auteur : Steph Ango (kepano), CEO Obsidian. Spec ouverte [agentskills.io](https://agentskills.io). Les 4 autres skills upstream (markdown, bases, canvas, cli) sont skipped tant qu'aucun vault Obsidian n'est opéré par Claude — voir `external-obsidian/NOTICE.md`.

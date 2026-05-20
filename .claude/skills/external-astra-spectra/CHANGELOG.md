@@ -1,0 +1,1342 @@
+# Changelog
+
+Toutes les modifications notables de ce skill sont documentées dans ce fichier. Format basé sur [Keep a Changelog](https://keepachangelog.com/), versions selon [Semantic Versioning](https://semver.org/).
+
+## [1.0-rc6] — 2026-05-02 — Quirk #25 OPcache PHP-FPM (rétro-portage POC skill #2)
+
+> **Origine** : POC du skill complémentaire `claude-skill-gutenberg-core` réalisé le 02/05/2026 sur loginarmor-dev.local. Pendant le test de validation des 4 stratégies de styling persistant, découverte d'un quirk universel qui concerne aussi astra-spectra : OPcache PHP-FPM `revalidate_freq=2-3s` sert l'ancienne version d'un mu-plugin nouvellement écrit pendant 2-3s, ce qui désactive silencieusement les workarounds Quirks #23 (CSS Spectra dans `<head>`) et #24 (hide double H1 FSE) si la session Claude enchaîne immédiatement sur POST + screenshot.
+
+> **Action** : 4 fichiers modifiés pour intégrer le fix dans le pipeline standard du skill. Mineur en lignes de code, MAJEUR en évitement de faux négatifs lors des sessions futures.
+
+### 1. `references/spectra-attributes-quirks.md` — Quirk #25 ajouté
+
+Nouveau piège #25 documenté entre quirk #24 (block theme FSE double H1) et la section « Comment cette doc évolue ». Format identique aux 24 autres : Symptôme / Cause / Fix / Détection / Workaround alternatif. 3 stratégies de fix cumulables :
+
+1. **Auto-invalidation à la pose** : `if (function_exists('opcache_invalidate')) @opcache_invalidate(__FILE__, true);` à la fin du mu-plugin → s'auto-invalide à la première inclusion
+2. **Invalidation explicite après pose** : appeler `opcache_invalidate($mu_path, true)` + `clearstatcache(true, $mu_path)` côté script qui écrit le fichier
+3. **Sleep de sécurité** : `sleep 5` avant le 1er HTTP fetch après pose mu-plugin
+
+### 2. `scripts/mu-plugin-skill-test.php` — auto-invalidation OPcache
+
+Ajout d'un bloc final qui appelle `@opcache_invalidate(__FILE__, true)` si la fonction est disponible. Le mu-plugin s'auto-invalide quand il est inclus la première fois → la prochaine requête HTTP recharge le fichier depuis le disque. Défense en profondeur même si le script qui pose le fichier oublie d'invalider explicitement.
+
+### 3. `workflows/new-page-from-brief.md` — pré-requis Quirk #25 dans étape 6
+
+Note d'avertissement insérée juste avant le bloc curl POST de l'étape 6, avec lien vers Quirk #25 et rappel des 3 stratégies cumulables. Mention explicite que le mu-plugin v1.0-rc6+ s'auto-invalide à la pose mais qu'un sleep de sécurité reste recommandé.
+
+### 4. `workflows/refonte-page-existante.md` — même note dans étape 6
+
+Note d'avertissement plus courte (le workflow refonte est moins détaillé que new-page) avec renvoi à Quirk #25.
+
+### 5. `references/gutenberg-core-blocks.md` — mention #3 kses (POC découverte connexe)
+
+Encadré ajouté sous le bloc `core/html` documentant le piège kses : si l'utilisateur insère un `<style>` ou `<script>` dans un `core/html` via REST API et que l'auteur n'a pas `unfiltered_html`, WP strip silencieusement. Solutions : (a) admin via App Password, (b) `kses_remove_filters()` temporaire, (c) utiliser `_uag_custom_page_level_css` (flux standard du skill — donc piège ne concerne que les sorties du flux standard).
+
+### Impact pour les sessions Claude existantes
+
+- Aucune régression : tous les changements sont additifs
+- Sessions qui posent le mu-plugin compagnon en début de session puis POST immédiatement après auront moins de faux négatifs (si Quirk #23 ou #24 ne s'active pas en apparence, la session sait maintenant qu'OPcache peut être en cause)
+- Le mu-plugin compagnon s'auto-invalide → robustesse améliorée même sans changer le workflow
+
+### Pas de changement dans
+
+- Les 35+ patterns
+- Les 8 templates
+- Les 14 autres scripts PHP
+- Les autres références (`design-baselines`, `visual-pitfalls`, `impeccable-bridge`, etc.)
+
+---
+
+## [1.0-rc5] — 2026-05-02 (fin de nuit) — Guardrails anti-désastre cross-instance Claude
+
+> **Origine** : retour reviewer 02/05/2026 après 3 pages contact pour cours-ndrc.fr toutes qualifiées « moches, niveau débutant qui n'a jamais touché WordPress » par le user, supprimées. Comparaison directe : la page `loginarmor-dev.local/claude-skill-astra-spectra/` produite par le mainteneur est jugée « très belle, tient la route ». Le reviewer a noté : « le skill v1.0-rc4 est excellent comme knowledge base, mais il assume implicitement que l'instance Claude qui l'utilise a déjà du goût design + discipline visuelle + maîtrise Spectra par expérience. Ces 3 conditions sont VRAIES pour le mainteneur, PAS pour 80% des instances Claude qui vont l'utiliser en prod. »
+
+> **Action** : 9 critiques traitées avec des **guardrails forts** (pas du cosmétique). Le skill est maintenant robuste cross-instance Claude — les instances moins disciplinées ne peuvent plus claim WOW sans preuve, ne peuvent plus inventer typo/spacing hors baselines, ne peuvent plus empiler 8 sections d'un coup.
+
+### 1. SKILL.md — Avertissement gros + règles non-négociables
+
+`SKILL.md` ouvre maintenant avec une section **« ⚠️ AVERTISSEMENT À L'INSTANCE CLAUDE QUI LIT CE SKILL »** qui précède toute autre instruction. Elle contient :
+
+- **Diagnostic honnête** : le skill assume du goût design + discipline. Si tu ne les as pas, RESTE STRICT.
+- **6 règles non-négociables (anti-désastre)** :
+  - 🔴 #1 Gate visuel BLOQUANT — pas de claim WOW sans screenshot
+  - 🔴 #2 Max 3 sections par itération, pas 8
+  - 🔴 #3 Référencer une baseline, ne pas inventer
+  - 🔴 #4 Pas de 2e attempt avant validation user du 1er
+  - 🔴 #5 Pas d'images partagées entre 2 pages du même site
+  - 🔴 #6 Pas plus de 2 occurrences du même accent couleur dans une section
+- **12 anti-patterns instance Claude** sous forme ❌/✅ liste explicite (e.g. « ❌ NE JAMAIS qualifier une page de WOW sans screenshot », « ✅ TOUJOURS référencer une baseline »)
+- **Mode `--strict` recommandé** pour instances sans tooling visuel : reste dans les templates committed, ne propose aucun move design custom
+
+### 2. `references/design-baselines.md` ⭐ nouveau
+
+Rulers concrets pour anti-improvisation. Pour chaque section type (Hero, Stats Bar, Features 3-Cols, Testimonials Cards, FAQ Accordion, Forms, CTA Banner Final), ce fichier donne :
+
+- **Default** — la valeur recommandée
+- **Range** — fourchette acceptable si raison de s'écarter
+- **Hard limit** — au-delà, NE JAMAIS aller sans validation user explicite
+
+Exemples concrets :
+
+| Section / Élément | Default | Range | Hard limit |
+|---|---|---|---|
+| H1 hero desktop | 76px | 60-88px | 100px |
+| Letter-spacing H1 | -2px | -1 à -3 | -4 |
+| Eyebrow font-size | 14px | 13-16px | 18px |
+| Stats numbers desktop | 56px | 48-72px | 88px |
+| Padding hero desktop | 140/140 | 120-200/120-200 | 240/240 |
+| Padding cards | 56/44 | 40-64/32-56 | 80/72 |
+| Avatar testimonial | 64×64 | — | 80×80 |
+
+Plus 4 palettes types pré-validées par registre (Tech / SaaS, Éditorial / formation, E-commerce, Santé / nature).
+
+### 3. `references/visual-pitfalls.md` ⭐ nouveau
+
+13 moves design qui paraissent créatifs mais foirent en pratique. Format **Symptôme du désastre / Pourquoi ça foire / Quand c'est OK / Alternative recommandée** pour chacun :
+
+1. Watermark numérique géant en deco isolée (le « 247 » 480px du reviewer)
+2. Stats asymetric 40/30/20/10 sans calibration typo extrême
+3. Drop cap orange `::first-letter` (Spectra wrap dans des `<span>` qui cassent le sélecteur)
+4. Mono fonts isolés (timestamps en JetBrains Mono dans un design Manrope = perçu comme bug)
+5. 3+ accents couleur identiques dans la même section (saturation orange du reviewer)
+6. Padding éditorial extrême 220/220 sur toutes les sections
+7. `border-radius` extrêmes (0 ou 32px+)
+8. Box-shadows over-the-top (triple shadow + colored shadow + inset)
+9. Animations CSS « subtiles » (float infinite, cubic-bezier overshoot)
+10. Hero overlay opacity 0.92 (image invisible)
+11. Réutiliser la même image entre 2 pages du même site
+12. Trop de sections (8+) en 1 livraison
+13. Auto-claim « WOW / impeccable » sans screenshot
+
+### 4. `references/impeccable-bridge.md` ⭐ nouveau
+
+Mapping entre les principes design `/impeccable` et leur supportabilité dans Spectra. Pour 10 principes courants (ratios typo, palette committed, hiérarchie, drop cap, mono fonts, watermarks, asymetric, motion, glassmorphism, neon glow), ce fichier indique :
+
+- ✅ **Supporté** — implémentation Spectra directe
+- ⚠️ **Supporté avec workaround** — caveats à connaître
+- ⛔ **Non supporté** — alternative recommandée
+
+Plus **6 tags par registre design** (`editorial` / `minimal` / `bold` / `SaaS-corporate` / `luxe` / `playful`) pour filtrer les patterns selon la direction `/impeccable` retenue.
+
+Workflow recommandé `/impeccable` + skill astra-spectra documenté en 6 étapes.
+
+### 5. `workflows/screenshot-options.md` ⭐ nouveau
+
+5 options concrètes pour capturer un screenshot, avec décision tree :
+
+- **Option A** — agent-browser (recommandée) : `agent-browser navigate ... && agent-browser screenshot --full ...`
+- **Option B** — Chrome headless CLI direct : `chrome --headless=new --screenshot=...`
+- **Option C** — Playwright : script Node `chromium.launch()` + `page.screenshot({fullPage: true})`
+- **Option D** — WP Playground (jetable, public)
+- **Option E** — DEMANDER AU USER (fallback obligatoire si A-D indisponibles)
+
+Plus :
+- **Checklist visuelle minimum** post-screenshot (10 points : Lorem Ipsum, double H1, stats empilées, saturation accents, contraste WCAG, etc.)
+- **Format de demande** explicite si tooling absent (template à copier au user)
+- **Logs / debug** si screenshot rate (curl checks pour diagnostiquer)
+
+### 6. `workflows/visual-validation-loop.md` — Gate BLOQUANT explicite
+
+Le workflow était déjà présent mais **non obligatoire**. v1.0-rc5 le rend **non-négociable** :
+
+```
+Avant TOUTE réponse au user qui annonce un succès design,
+l'instance Claude DOIT avoir :
+  1. ✅ Screenshot capturé
+  2. ✅ Checklist visuelle minimum passée
+  3. ✅ Si défaut détecté : retry markup OU avertir le user explicitement
+
+Si l'un des 3 est ❌, l'instance Claude ne qualifie PAS la composition de
+WOW / impeccable / propre / éditorial / beau / réussi.
+Cette règle n'a PAS d'exception. Aucune.
+```
+
+### 7. Mu-plugin compagnon — endpoint `/cleanup` enrichi
+
+`scripts/mu-plugin-skill-test.php` endpoint REST `POST /wp-json/skill-test/v1/cleanup` enrichi :
+
+- **2 modes** : par meta `_skill_test_page=1` (default) OU par regex titre (`pattern` param)
+- **Safety** : `confirm=false` par défaut → dry-run qui liste sans supprimer. `confirm=true` requis pour delete réel
+- Retour JSON avec `mode: dry_run | deleted`, `count`, `found[]` ou `deleted_ids[]`
+
+Le bug `count($argv) sur null` mentionné par le reviewer a déjà été fixé en rc1+ (guards `isset($GLOBALS['argv']) && is_array(...)` partout). Le reviewer travaillait probablement sur un fork plus ancien — confirmation : `scripts/cleanup-test-pages.php` lignes 36 et 116-118 sont safe.
+
+### 8. README — guardrails mis en avant en intro
+
+Section « Ce qui rend ce skill différent » mise à jour pour mettre les guardrails v1.0-rc5 en tête (avant les 24 quirks Spectra). Les instances Claude qui scannent le README en premier voient immédiatement les anti-désastres au lieu de plonger dans la knowledge base et de se croire prêtes.
+
+### 9. Note sur les 8 examples committed (pas de changement code)
+
+Le reviewer demande 8 examples committed avec markup + CSS + 4-5 screenshots PNG par template. **Action différée v1.0 stable** car demande ~1 jour de travail (générer 7 nouveaux templates + screenshots × 4-5 viewports × 7 = 28-35 PNG à produire et committer). En attendant, le skill marketing « 35+ patterns » reste honnête : chaque pattern est documenté avec Symptôme/Variables/Markup/CSS/Pièges, mais pas screenshooté individuellement. Item explicite dans la roadmap v1.0 stable.
+
+### Score de couverture v1.0-rc5
+
+| Critique reviewer | État |
+|---|---|
+| #1 Pas de gate visuel BLOQUANT | ✅ Done — règle 1 SKILL.md + visual-validation-loop.md gate explicite |
+| #2 Pre-flight valide la syntaxe, pas le rendu | ✅ Done — `references/visual-pitfalls.md` + checklist post-screenshot |
+| #3 Aucune baseline typo/spacing | ✅ Done — `references/design-baselines.md` (rulers Hero/Stats/Features/Testi/FAQ/Form/CTA) |
+| #4 /impeccable ne compose pas avec astra-spectra | ✅ Done — `references/impeccable-bridge.md` + 6 tags par registre |
+| #5 Examples/ pauvre (1 seul exemple) | 📅 Différé v1.0 stable — note dans CHANGELOG |
+| #6 Skill assume un niveau qu'il n'a pas | ✅ Done — WARNING + mode --strict + 12 anti-patterns |
+| #7 Anti-patterns instance Claude | ✅ Done — 6 ❌ + 6 ✅ dans SKILL.md |
+| #8 Bug `cleanup-test-pages.php` | ✅ Vérifié — déjà fixé en rc1+. Endpoint REST enrichi en bonus |
+| #9 Workflow visual-validation non documenté | ✅ Done — `workflows/screenshot-options.md` (5 options + decision tree) |
+
+### Reste pour v1.0 stable
+
+- 8 examples committed avec markup + CSS + screenshots (~1 jour de travail)
+- Tagger explicitement chaque pattern dans frontmatter `tags: [editorial, bold, ...]`
+- Validation indépendante par reviewer externe sur 3+ stacks (Twenty Twenty-Four, Frost, Ollie)
+- Workflow GitHub Actions de régression visuelle automatisée
+
+---
+
+## [1.0-rc4] — 2026-05-02 (fin de nuit) — Quirks #23 + #24 découverts en test live + workarounds mu-plugin + post-render-check
+
+> **Origine** : test du skill sur loginarmor-dev.local pour générer une page de présentation du skill lui-même (méta), en mode **full Spectra sans Astra** (thème Twenty Twenty-Five FSE block theme). Test réussi visuellement, mais 2 nouveaux pièges Spectra/WordPress non documentés détectés en cours de pipeline.
+
+> **Action** : 24 quirks documentés (vs 22 en rc3), nouveau script `post-render-check.php`, nouvelle référence `block-theme-fse-rules.md`, mu-plugin compagnon enrichi avec 2 hooks workaround.
+
+### 1. Quirk #23 — Spectra v2.19 ne hook PAS `wp_head` dans certains contextes
+
+**Symptôme** : tout est OK côté serveur (`_uag_page_assets.css` contient 250K+ chars, `uagb_flag: true`, regen ok), mais le HTML rendu n'a **AUCUN** `<style id="uagb-style-frontend-{post_id}">`. CSS overrides perdus silencieusement.
+
+**Cause** : le hook Spectra n'est pas appelé selon le contexte de render (timing d'enregistrement vs `wp_head` fire). Bug confirmé sur :
+- Twenty Twenty-Five FSE + Spectra 2.19 (loginarmor-dev, 02/05/2026)
+- Astra 4.13.1 + Spectra 2.19 (cours-ndrc.fr, 01/05/2026 — c'était l'ancien quirk #6, maintenant mieux documenté en quirk #23)
+
+**Fix** : workaround universel dans `scripts/mu-plugin-skill-test.php` :
+
+```php
+add_action('wp_head', function () {
+    if (!is_singular()) return;
+    $pid = get_queried_object_id();
+    if (!$pid) return;
+    $pa = get_post_meta($pid, '_uag_page_assets', true);
+    if (!is_array($pa)) return;
+    $css = $pa['css'] ?? '';
+    if (empty($css)) return;
+    echo "\n<style id=\"uagb-style-frontend-{$pid}\" data-skill-injection=\"workaround-quirk-23\">\n";
+    echo $css;
+    echo "\n</style>\n";
+}, 100);
+```
+
+**Coexistence** safe avec hook Spectra natif (idempotent si Spectra réussit aussi à hook).
+
+### 2. Quirk #24 — Block theme FSE → double H1 automatique
+
+**Symptôme** : sur Twenty Twenty-Five (et tous les block themes FSE WP 6.0+), le template HTML contient un bloc hardcoded `<!-- wp:post-title /-->`. Au render, le frontend a **2 H1** :
+
+```html
+<h1 class="wp-block-post-title">{{ post_title }}</h1>
+<h1 class="uagb-ifb-title">{{ headline_hero }}</h1>
+```
+
+SEO cassé. UX cassée.
+
+**Cause** : différent du quirk #13 (Astra `ast-title-bar-display` post_meta). Sur les block themes FSE, ce post_meta est ignoré. Le mécanisme est un bloc `wp:post-title` dans le template `single.html` / `page.html` du thème.
+
+**Fix** : 2 hooks dans le mu-plugin compagnon :
+- `body_class` qui ajoute `skill-hide-post-title` sur les pages avec meta `_skill_hide_post_title=1`
+- `wp_head` qui injecte `.skill-hide-post-title .wp-block-post-title { display: none !important; }`
+
+Workflow skill : ajouter `_skill_hide_post_title=1` dans le payload `meta` au POST.
+
+### 3. Nouvelle référence `references/block-theme-fse-rules.md`
+
+Documente les 7 règles spécifiques aux block themes FSE :
+
+1. `wp:post-title` automatique = double H1 (quirk #24)
+2. `entry-content` padding parasite sur alignfull
+3. Pas de `single.php` PHP, tout passe par templates HTML
+4. Templates configurables via `wp_template`
+5. Global styles via `theme.json` → variables `--wp--preset--color-X`
+6. `wp:template-part` header/footer non désactivable à la pièce
+7. Block patterns natifs vs Spectra
+
+Stratégie skill globale pour block themes FSE :
+- ✅ `_skill_hide_post_title=1` dans payload POST
+- ✅ Forcer `entry-content padding: 0`
+- ✅ Hex directs (pas de `var(--ast-global-color-X)` Astra)
+- ✅ Skip les `update_post_meta` Astra-spécifiques
+
+### 4. Nouveau script `scripts/post-render-check.php`
+
+Validateur **post-POST** complémentaire au pre-flight check. Fetch l'URL frontend de la page POSTée et flag :
+
+- **QUIRK-23** (P0) : `<style id="uagb-style-frontend-{post_id}">` absent du HTML rendu
+- **CSS-OVERRIDES-MISSING** (P1) : skill-generated CSS pas dans le HTML
+- **QUIRK-24** (P1) : double H1 détecté avec un `wp-block-post-title` (block theme FSE)
+- **MULTIPLE-H1** (P2) : plusieurs H1 sans wp-block-post-title (probable double hero)
+- **POST-RENDER-BLOCKID** (P0) : block_id attendu absent du rendu
+- **NO-UAGB-BLOCKS** (P0) : aucun bloc `uagb-block-*` rendu (parser cassé ou Spectra inactif)
+
+Usage :
+
+```bash
+php scripts/post-render-check.php \
+  --url=https://site.com/slug/ \
+  --post-id=42 \
+  --expected-block-ids=skill-hero,skill-stats,skill-faq-list
+# Exit 0 si OK ou WARNING, exit 1 si BLOCKED
+```
+
+Test live sur la page 59 (claude-skill-astra-spectra de loginarmor-dev) : **STATUS WARNING**, 56 blocs uagb rendus, `uagb-style-frontend-59` présent (workaround Quirk #23 fonctionne), 1 P1 sur Quirk #24 légitime (le `wp-block-post-title` reste dans le DOM mais est masqué par `display:none` du hook compagnon).
+
+### 5. Mise à jour mu-plugin compagnon
+
+`scripts/mu-plugin-skill-test.php` enrichi avec :
+
+- Hook `wp_head` pour Quirk #23 (priorité 100, après les autres hooks Spectra)
+- Filtre `body_class` pour Quirk #24 (ajoute classe `skill-hide-post-title`)
+- Hook `wp_head` pour Quirk #24 (priorité 99, injecte CSS hide)
+
+Ces 2 workarounds sont **inclus par défaut** depuis v1.0-rc4. Aucune action utilisateur supplémentaire requise tant que le mu-plugin est déployé.
+
+### 6. Validation cross-stack
+
+3 stacks distincts maintenant validés en production :
+
+| Stack | Theme | Spectra | Test |
+|---|---|---|---|
+| Astra default | thème classique non-FSE | 2.19.25 | baseline screenshots OK |
+| Astra palette saturée chaude | thème classique non-FSE | 2.19.25 | baseline screenshots OK |
+| **Twenty Twenty-Five** ⭐ | **block theme FSE** | 2.19 | **page 59 loginarmor-dev 02/05/2026** |
+
+Le test cross-stack confirme que le skill fonctionne **sans Astra** (mode full Spectra) et **sur block themes FSE** (mode hex direct + workarounds Quirks #23/#24).
+
+### Score de couverture v1.0-rc4
+
+| Item | État |
+|---|---|
+| Quirk #23 documenté + workaround mu-plugin + check post-render | ✅ Done |
+| Quirk #24 documenté + workaround mu-plugin + check post-render | ✅ Done |
+| Référence `block-theme-fse-rules.md` (7 règles) | ✅ Done |
+| Script `post-render-check.php` (6 codes) | ✅ Done |
+| Update README (24 quirks, 15 scripts, 17 references, 3 stacks) | ✅ Done |
+| Test live page 59 sur Twenty Twenty-Five FSE | ✅ Done |
+
+### Reste pour v1.0 stable
+
+- Validation indépendante par reviewer externe (re-test sur stack production réel + autres block themes Frost / Ollie)
+- Baselines screenshots pour Twenty Twenty-Four et Frost
+- Workflow GitHub Actions de régression visuelle automatisée
+- v1.1+ : router automatiquement vers `--wp--preset--color-X` si block theme détecté (au lieu d'hex directs)
+- v1.1+ : marquer les workarounds Quirks #23/#24 comme deprecated si Spectra v2.20+ fixe le bug `wp_head`
+
+---
+
+## [1.0-rc3] — 2026-05-02 (nuit) — Réponse aux 4 critiques user (refs perso retirées + 14 patterns critiques ajoutés)
+
+> **Verdict user sur v1.0-rc2** : « Pourquoi tu fais référence à cours-ndrc.fr dans le README ? Tu dois supprimer toute référence à mon environnement de travail. Pourquoi parles-tu d'une page-formation.md dans templates ? Quel rapport ? C'est à la rigueur une page d'accueil. Et où sont les patterns pour les principaux blocs Spectra : tabs, Google Maps, post grid, post timeline, post carousel, marketing buttons, modals, table of contents, forms… ? S'ils ne sont pas prévus, c'est une erreur grave. »
+
+> **Action** : 4 critiques traitées. README expurgé de toute référence perso. Template renommé. **14 nouveaux patterns** créés pour couvrir les blocs Spectra fonctionnels manquants.
+
+### 1. Suppression de toute référence à l'environnement perso du mainteneur
+
+`README.md` :
+- Démo « landing pour ma formation BTS NDRC » → « landing pour ma boutique de café » (générique)
+- CSS exemple `.uagb-block-formation-bts-ndrc-stat-1` → `.uagb-block-accueil-stat-1` + `var(--ast-global-color-0)` au lieu de `#FD9800` (palette-agnostic)
+- Ligne « Test régression production sur cours-ndrc.fr » → « Validation finale par reviewer indépendant (re-test régression sur stack production réel : Apache mutualisé + LiteSpeed) »
+- Status passé `v1.0` → `v1.0-rc2` (cohérent avec le tag actuel)
+
+### 2. Template renommé `page-formation.md` → `page-accueil.md`
+
+Le template précédent était positionné « page formation en ligne » (vente d'une formation), mais c'était en fait la structure générique d'une **page d'accueil** universelle. Refonte complète avec :
+
+- Variables génériques (`{{BRAND_NAME}}`, `{{TAGLINE}}`, etc. au lieu de `{{FORMATION_NAME}}`, `{{TRAINER_NAME}}`)
+- **Section « Variantes par secteur »** avec 7 cas d'usage : E-commerce, Restaurant, Agence/SaaS, Association, Formation, Immobilier, Artisan
+- Patterns référencés génériquement (hero-cta-split + stats + features + about-story + testimonials + cta + faq + cta final)
+- Exemple de démo « Atelier Lumen, café de spécialité » au lieu de « Formation WP Mastery »
+
+`templates/README.md` : table mise à jour avec les 8 templates, exemple `deploy template=page-accueil`.
+
+### 3. **14 nouveaux patterns** pour les blocs Spectra fonctionnels
+
+Le user a raison : il manquait les patterns pour les blocs **Spectra qui font l'identité du plugin**. Couverture maintenant exhaustive sur les 49 blocs Spectra principaux.
+
+**Patterns ajoutés (par ordre de fréquence d'usage)** :
+
+| Pattern | Bloc Spectra | Cas d'usage |
+|---|---|---|
+| [`google-maps.md`](../patterns/google-maps.md) | `uagb/google-map` | Page contact, restaurant, commerce physique. + variante RGPD avec gate consentement |
+| [`forms.md`](../patterns/forms.md) | `uagb/forms` + `uagb/cf7-designer` + `uagb/gf-designer` | 3 implémentations : Spectra natif, CF7, Gravity Forms. + variantes contact split, newsletter inline, modal, multi-étapes |
+| [`modal.md`](../patterns/modal.md) | `uagb/modal` | Vidéo démo, formulaire devis, CGV, lightbox image. User click trigger |
+| [`popup-builder.md`](../patterns/popup-builder.md) | `uagb/popup-builder` | Newsletter capture, promo flash. Auto-trigger (scroll/timer/exit-intent). + fallback core si pas Spectra Pro |
+| [`marketing-buttons.md`](../patterns/marketing-buttons.md) | `uagb/marketing-button` | CTA enrichi prefix + label + suffix + icon. Pricing, hero, lead magnet |
+| [`table-of-contents.md`](../patterns/table-of-contents.md) | `uagb/table-of-contents` | Sommaire automatique articles long. + variantes inline pills, sidebar sticky, collapsible mobile, scroll progress |
+| [`post-display.md`](../patterns/post-display.md) | `uagb/post` | 4 layouts : grid, masonry, carousel, timeline. Blog homepage, portfolio, newsroom, releases produit |
+| [`image-gallery.md`](../patterns/image-gallery.md) | `uagb/image-gallery` | Portfolio, page projets, restaurant photos. + lightbox, masonry varied, tiled Bento Box |
+| [`icon-list.md`](../patterns/icon-list.md) | `uagb/icon-list` + `uagb/icon-list-child` | Features pricing, horaires, coordonnées, social links, étoiles. Standalone (vs sub-component) |
+| [`inline-notice.md`](../patterns/inline-notice.md) | `uagb/inline-notice` | Callout dans articles. 5 variantes : info, success, warning, error, neutral |
+| [`social-share.md`](../patterns/social-share.md) | `uagb/social-share` + `uagb/social-share-child` | Boutons partage Twitter/FB/LinkedIn/WhatsApp/Email. + variantes sticky, follow, share with AI |
+| [`price-list.md`](../patterns/price-list.md) | `uagb/price-list` + `uagb/price-list-child` | Menu restaurant, carte vins, prestations agence, tarifs spa |
+| [`star-rating.md`](../patterns/star-rating.md) | `uagb/star-rating` | Note moyenne 5 étoiles + schema aggregateRating. Lite vs review-product complet |
+| [`lottie.md`](../patterns/lottie.md) | `uagb/lottie` | Animation vectorielle JSON. Hero illustré, success animation, hover-to-play, scroll-trigger |
+
+**Format** : tous les patterns suivent la structure standard du skill — Variables d'entrée / Block markup / CSS overrides / Pièges / Variantes (3-5 par pattern) / Test post-génération / Pour aller plus loin.
+
+### 4. Total patterns : 21 → 35
+
+| Avant rc3 | Après rc3 |
+|---|---|
+| 21 patterns (compositions visuelles) | **35+ patterns** (compositions + blocs fonctionnels) |
+| Manque : tabs, Google Maps, modal, popup, forms, post, gallery, icon-list, inline-notice, social-share, price-list, marketing-button, lottie, star-rating | Tous les blocs Spectra principaux des 49 sont couverts |
+
+### Mise à jour secondaire
+
+- `README.md` architecture section : nouvelle organisation patterns en 2 groupes (compositions visuelles / blocs Spectra fonctionnels)
+- `templates/README.md` : table 8 templates avec patterns d'assemblage
+- `references/intent-to-block-routing.md` : note de pattern correspondant ajoutée
+
+### Score de couverture v1.0-rc3
+
+| Critique user | État |
+|---|---|
+| Refs cours-ndrc / BTS NDRC retirées du README | ✅ 3 occurrences supprimées |
+| Liens formation WordPress + IA / Article Claude Code / Login Armor / OGEEAT | ✅ Déjà présents (sections « Pour aller au-delà du skill » + « Mes deux derniers plugins » + « Liens ») |
+| Template `page-formation` → `page-accueil` | ✅ Renommé + contenu refondu en générique avec variantes par secteur |
+| Patterns Spectra manquants (14) | ✅ Tous créés (forms, modal, popup, google-maps, post-display, etc.) |
+
+### Reste pour v1.0 stable
+
+- Validation indépendante par reviewer externe (re-test sur stack production réel)
+- Baselines screenshots pour les nouveaux patterns clés (forms, modal, post-display)
+- Workflow GitHub Actions de régression visuelle automatisée
+- PDF lead magnet 32 pages compilé (Pandoc/Typst)
+- Variantes i18n par pattern (fr-FR.json, en-US.json, de-DE.json, es-ES.json)
+
+---
+
+## [1.0-rc2] — 2026-05-02 (soir) — Réponse aux 8 items du test régression prod cours-ndrc.fr
+
+> **Verdict reviewer externe sur v1.0-rc1** : « Pipeline a fonctionné en prod sur cours-ndrc.fr (Astra 4.13.1 + Spectra 2.19.21 + palette_3 + LiteSpeed + o2switch). Mais 3 nouveaux quirks bloquants + 1 incohérence dans tes propres examples détectés. Bouger rc1 → rc2 avec 8 items. »
+
+> **Action** : 8 items traités (3 P0, 4 P1, 2 P2). 19 → 22 quirks documentés. 1 faux positif pre-flight corrigé en cadeau.
+
+### 1. Quirk #20 ajouté + détection automatique
+
+**`uag_enable_on_page_css_button` doit être `yes`** sinon le meta `_uag_custom_page_level_css` est ignoré silencieusement par Spectra. Bug confirmé sur cours-ndrc.fr : tous les overrides CSS perdus, AUCUNE erreur, débogage cauchemardesque.
+
+- `references/spectra-attributes-quirks.md` quirk #20 documenté (Symptôme/Cause/Fix/Détection)
+- `references/persistent-css-overrides.md` nouvelle section **« Pré-requis Spectra »** + Limitations connues mises à jour
+- `scripts/detect-environment.php` : check ajouté en `blockers[]` si l'option n'est pas à `yes`
+- `scripts/mu-plugin-skill-test.php` : nouveau endpoint `POST /wp-json/skill-test/v1/enable-on-page-css` pour auto-fix
+
+### 2. Quirk #21 ajouté + audit de tous les CSS escapes
+
+**CSS Unicode escapes `\HHHH` strippés par `UAGB_Admin_Helper::sanitize_inline_css()`** → rendu littéral `201C` à la place de `“`. Découvert en prod : watermark guillemet variant 1.b cassait visuellement.
+
+- `references/spectra-attributes-quirks.md` quirk #21 documenté avec table des escapes courants → équivalent UTF-8 littéral
+- `patterns/testimonials-cards.md` ligne 226 : `content: "\201C"` → `content: "“"` (UTF-8 direct + commentaire pédagogique)
+- `references/persistent-css-overrides.md` : « Limitations connues » étendues (encoding obligatoire UTF-8 sans BOM, table des escapes courants)
+- Pre-flight check `pre-flight-check.php` : nouvelle regex sur le file CSS qui flag `content\s*:\s*['"]\\[0-9a-fA-F]{1,6}` en **P0 BLOCKER** + détection BOM UTF-8 en P1
+
+### 3. Quirk #22 ajouté + check pre-flight conflit width
+
+**`uagb/image` avec `width:N` (px) ET `widthDesktop:N` (%) simultanés** → le parser `parse_blocks → serialize_blocks` perd les valeurs au roundtrip. Conflit silencieux.
+
+- `references/spectra-attributes-quirks.md` quirk #22 documenté avec 2 conventions exclusives (Option A px fixed, Option B % container)
+- `scripts/pre-flight-check.php` : nouveau check qui flag `width:N` + `widthDesktop:N + widthTypeDesktop:%` simultanés en P1, et la double-définition de `widthTablet`/`widthMobile` dans le même JSON en P0
+
+> **Note** : le baseline `examples/landing-formation-complete-markup.html` ne contient PAS ce conflit (vérifié à 3 instances `uagb/image`). Le reviewer s'est trompé sur les « lignes 74-76 » qui sont des `uagb/container`. Le quirk reste documenté en prévention pour les nouveaux patterns.
+
+### 4. Migration des inline styles dans le baseline
+
+Le quirk #4 documente strict « inline `style="..."` strippé par Gutenberg save ». Le baseline contenait pourtant 15 occurrences de `style="letter-spacing:Xpx;text-transform:uppercase"` sur les eyebrows et labels. **Régression silencieuse** garantie au premier save Gutenberg.
+
+- `examples/landing-formation-complete-markup.html` : 15 inline styles strippés (script Python regex)
+- `examples/landing-formation-complete-page-css.css` : 3 nouvelles règles CSS pour récupérer les styles équivalents :
+  - `.uagb-ifb-title-prefix` global (eyebrows uniformes 4px tracking)
+  - `.uagb-block-v93-stat-X-text .uagb-ifb-desc` (labels stats uppercase 2px)
+  - `.uagb-block-v93-faq-w` (FAQ wrapper centré horizontalement)
+- Légère régression cosmétique acceptée : eyebrows passés de 3px (certains) à 4px uniforme
+
+### 5. Pre-flight regex inline title-prefix (QUIRK-4-PREFIX)
+
+Variante du QUIRK-4 ciblée spécifiquement sur les eyebrows. Détection en P1 + message qui guide explicitement vers la migration CSS.
+
+```
+P1 QUIRK-4-PREFIX : Inline style sur <p class="uagb-ifb-title-prefix"> détecté.
+Sera STRIPPÉ par Gutenberg dès le premier save (régression silencieuse de l'eyebrow).
+Migrer vers une règle CSS globale .uagb-ifb-title-prefix { ... } dans _uag_custom_page_level_css.
+```
+
+### 6. Pre-flight regex CSS escapes (QUIRK-21)
+
+Décrit en item 2.
+
+### 7. Note i18n sur conflit `&rsquo;` vs `'` ASCII
+
+`references/i18n-rules.md` : nouvelle section **« Cas particulier — convention site cible vs convention typographique »** avec table de décision (selon les conventions documentées du site cible). Explicite que cours-ndrc.fr a la convention « ASCII strict » dans son MEMORY.md → le skill DOIT respecter la convention du site, pas imposer la sienne.
+
+### 8. Vérification liens internes après refactor template→examples
+
+4 liens cassés corrigés (`templates/...` → `examples/...`) :
+
+- `workflows/visual-validation-loop.md:193`
+- `screenshots/loginarmor-dev-palette3/README.md:14`
+- `patterns/landing-formation-complete.md:45`
+- `references/persistent-css-overrides.md:138`
+
+CHANGELOG.md historique non touché (entrées v0.9.x = légitime).
+
+### Bonus — Faux positif QUIRK-9 corrigé
+
+Le check QUIRK-9 du pre-flight flagge `overlayOpacity > 0.85`. Or quand l'overlay est de type `gradient` avec colors stops `rgba(...,0.X)`, l'opacity 1 est OK car la transparence est dans les stops. Le check raffine maintenant : il skip si `overlayBackgroundType: gradient` ET au moins une stop rgba semi-transparente.
+
+Validation : pre-flight sur baseline migré passe de **WARNING (2 P1)** à **OK (0 P0, 0 P1, 1 P2 cosmétique)**.
+
+### Score de couverture v1.0-rc2
+
+| Item du verdict reviewer | État |
+|---|---|
+| Quirk #20 documenté + check pré-flight | ✅ Done (3 fichiers touchés) |
+| Quirk #21 documenté + audit complet + correction testimonials | ✅ Done (4 fichiers touchés) |
+| Quirk #22 documenté + check pre-flight | ✅ Done (vérification du baseline en bonus) |
+| Migration inline styles eyebrows | ✅ Done (15 occurrences strippées) |
+| Pre-flight regex inline title-prefix | ✅ Done (code QUIRK-4-PREFIX) |
+| Pre-flight regex CSS escapes | ✅ Done (code QUIRK-21) |
+| Note i18n conflit apostrophes | ✅ Done (section dédiée + table décision) |
+| Liens internes après refactor | ✅ Done (4 liens corrigés) |
+
+### Tests réalisés
+
+- `php pre-flight-check.php` sur baseline migré : **STATUS OK, 0 P0, 0 P1, 1 P2 cosmétique** (CONV-DEMO-PREFIX `v93-` accepté pour un example)
+- `php pre-flight-check.php` sur markup+CSS de test négatif (CSS avec `\201C`+`\2014` + inline title-prefix) : **STATUS BLOCKED, 2 P0 QUIRK-21, 1 P1 QUIRK-4-PREFIX**
+- 23 quirks vérifiés (vs 19 en rc1)
+
+### Issues résiduelles pour v1.0 stable
+
+- Validation indépendante par le reviewer externe (re-test régression sur cours-ndrc.fr post-rc2)
+- Baselines screenshots Astra default + preset_8 manquantes (différée v1.0.1)
+- Workflow GitHub Actions de régression visuelle automatisée (différé v1.0.1)
+
+---
+
+## [1.0-rc1] — 2026-05-02 (17h) — Réponse aux 5 manques du verdict externe
+
+> **Verdict reviewer externe sur v1.0** : « v1.0 est conceptuellement la bonne version. Mais le tag stable est posé une étape trop tôt — il manque le test de régression final, 3 critiques non couvertes (testimonials plats, CTA marge bottom, eyebrows discrets), pas de pre-flight check, screenshots seulement sur 1 palette. Je recommande de bouger v1.0 → v1.0-rc1. »
+
+> **Action** : tag v1.0 retiré, v1.0-rc1 créé. 5 manques traités.
+
+### 1. Quirks #18 et #19 ajoutés
+
+- **Quirk #18** : Astra `.entry-content { padding-bottom: 4em }` → marge orpheline sous le dernier alignfull. Fix : injecter `padding-bottom: 0 !important` dans `_uag_custom_page_level_css`.
+- **Quirk #19** : Eyebrow 13px trop discret → ressemble à un debug tag. Fix : `prefixFontSizeDesktop:15`, `prefixFontWeight:"800"`, `prefixSpace:24`, letter-spacing 4px. Optionnel : barre `::before` 32×3px orange.
+
+`references/spectra-attributes-quirks.md` passe de 17 à **19 pièges documentés**.
+
+### 2. testimonials-cards.md enrichi
+
+- Avatar **56px → 64px** (référence reviewer P1#4)
+- box-shadow **plus marquée** (rgba 0.10 → 0.12, vOffset 8 → 12, blur 40 → 48)
+- **Variante 1 : Note 5 étoiles** documentée avec `uagb/icon-list` horizontal + 5× `fa-star` jaune `#FBBF24`. Renforce la crédibilité visuelle.
+- **Variante 1.b : Watermark guillemet** en background (180-240px très clair `#f1f5f9` en `::before` absolute). Plus subtil, plus éditorial.
+
+### 3. scripts/pre-flight-check.php (NOUVEAU validateur bloqueur)
+
+Script PHP qui parcourt le markup généré et flag les occurrences des 19 pièges. **À exécuter AVANT POST**. Si retourne `status: BLOCKED`, ne PAS POST.
+
+Codes vérifiés :
+- `QUIRK-2` : info-box avec `widthDesktop` (P0)
+- `QUIRK-3` : faq-child avec `description` au lieu de `answer` (P0)
+- `QUIRK-4` : inline `style="font-size:..."` dans innerContent (P1)
+- `QUIRK-5` : block_id manquant ou dupliqué (P0)
+- `QUIRK-7` : slots Astra VARIABLES (color-4/6/7/8) (P1)
+- `QUIRK-8` : icônes hors whitelist Spectra (P1)
+- `QUIRK-9` : overlayOpacity > 0.85 (P1)
+- `QUIRK-10` : blockRightPadding > 25% (P1)
+- `QUIRK-12` : FAQ sans wrapper container max-width (P2)
+- `QUIRK-15` : sections root sans alternance bg (P2)
+- `QUIRK-17` : paddingBtnLeft < 30 (P2)
+- `QUIRK-18` : page alignfull last sans `.entry-content padding-bottom: 0` (P2)
+- `QUIRK-19` : eyebrow font-size < 14 (P2)
+- `I18N-FR-ACCENTS` : mots français sans accents (P0)
+- `I18N-MOJIBAKE` : `â€` mojibake détecté (P0)
+- `I18N-MDASH` : em-dash `—` direct sans entity (P2)
+- `CONV-DEMO-PREFIX` : block_id avec préfixe `v{N}-` (pattern démo) (P2)
+
+Usage CLI :
+
+```bash
+php scripts/pre-flight-check.php --content-file=markup.html --css-file=overrides.css
+# Exit 0 si OK ou WARNING, exit 1 si BLOCKED
+```
+
+Validé sur l'exemple `examples/landing-formation-complete-markup.html` : détecte correctement le préfixe démo `v93-` et l'overlayOpacity 1 (gradient overlay, faux positif léger acceptable).
+
+### 4. Test régression cross-env sur loginarmor-dev
+
+Test direct sur le site local du mainteneur. Switch dynamique de palette via mu-plugin compagnon `/skill-test/v1/setup?preset=astra_default`.
+
+**Résultat** :
+- ✅ **Cross-env technique** : pipeline marche sur palette Astra default (bleu primary `#0274BE`). Tous les patterns rendent structurellement (hero, stats, features, story, testimonials, FAQ, CTA). Header Astra adopte le bleu de la nouvelle palette.
+- ⚠️ **Cross-env stylistique HONNÊTE** : le CSS du meta `_uag_custom_page_level_css` reste **scopé au post**. L'orange WPF `#FD9800` reste hardcodé dans les overrides du skill (chiffres énormes, eyebrows, guillemets). Pour adapter automatiquement à la nouvelle palette, le user doit éditer le custom CSS via Spectra UI (Page Settings → Page Level CSS) ou re-générer la page.
+
+Baseline : `screenshots/loginarmor-dev-astra-default/v1-rc1-fullpage.png`
+
+**Conclusion test** : le skill marche cross-env mais le CSS skill-generated est intentionnellement figé sur les couleurs choisies au moment de la génération (cf documentation `references/persistent-css-overrides.md`). C'est un trade-off assumé : durabilité (CSS persiste) vs adaptabilité (CSS ne s'adapte pas auto au changement de palette).
+
+### 5. Re-tag git
+
+- Tag `v1.0` **retiré** (delete origin + local)
+- Tag `v1.0-rc1` **créé** sur ce commit
+- v1.0 stable sera tagué APRÈS validation reviewer + test régression production cours-ndrc.fr (pipeline LiteSpeed + o2switch)
+
+### Score reviewer mis à jour
+
+| Manque | Statut |
+|---|---|
+| P1#4 Témoignages plats sans hiérarchie | ✅ Avatar 64px + 5-stars + box-shadow renforcée + variante watermark |
+| P2#8 CTA marge bottom orpheline (Astra `.entry-content`) | ✅ Quirk #18 + fix CSS dans persistent-css-overrides |
+| P2#9 Eyebrows trop discrets (13px) | ✅ Quirk #19 + recommandation 14-15px font-weight 800 |
+| `cleanup-test-pages.php` cassé | ✅ Déjà fixé (guard CLI robuste lignes 114-119) |
+| Pre-flight check bloqueur manquant | ✅ scripts/pre-flight-check.php (validateur 19 pièges + i18n) |
+| Test cross-env (1 seule palette) | ⚠️ Test fait Astra default, prouve pipeline mais pas adaptation auto. Test régression cours-ndrc.fr requis pour v1.0 stable |
+
+### Issues restantes pour v1.0 stable (post-rc1)
+
+- ⏳ Test régression production cours-ndrc.fr avec LiteSpeed + o2switch (vérifier que `wpf_skill_temp_publish_trick` génère bien `uag-css-{id}.css` sur disque)
+- ⏳ Baseline screenshots sur `preset_3` (rouge passion) et `preset_8` (orange gourmand) pour 75%+ patterns en `status: stable`
+- ⏳ Workflow GitHub Actions de régression visuelle automatisée
+- ⏳ Pre-flight check intégré dans `workflows/new-page-from-brief.md` comme bloqueur obligatoire avant POST
+
+## [1.0.0] — 2026-05-02 (16h) — KNOWLEDGE BASE COMPLÈTE *(retiré, repris en v1.0-rc1)*
+
+### 🎯 Refonte fondamentale : du template au vrai skill
+
+> **Verdict utilisateur sur v0.9.4** : « Tu viens de mettre ce CSS en dur. Le but d'un skill, c'est de donner les armes à la session Claude Code qui va prendre le relais. Je veux un vrai skill qui explique concrètement comment fonctionne Spectra, pas une démo qui serait uniquement une copie ou un template. »
+
+#### Ce qui change radicalement
+
+**v0.9.x = démo statique pour cours-ndrc.fr / loginarmor-dev** (markup hardcodé avec `block_id` préfixés `v93-`, CSS spécifique à une page).
+
+**v1.0 = base de connaissance opérationnelle** réutilisable par toute session Claude Code, sur tout site Astra+Spectra, pour générer des pages **du premier coup** sans reproduire les 17 pièges détectés en production.
+
+#### Nouveau : 7 documents de référence (knowledge base critique)
+
+- **`references/spectra-attributes-quirks.md`** : les **17 pièges** Spectra documentés avec Symptôme / Cause / Fix / Détection. Lecture obligatoire avant toute génération.
+- **`references/i18n-rules.md`** : règles strictes français (HTML entities `&eacute;`, espaces insécables `&nbsp;` typo, em-dash `&mdash;`, apostrophe `&rsquo;`)
+- **`references/spectra-icons-list.md`** : whitelist icônes Font Awesome 5 Free validées + fallback strategy (numéros éditoriaux 01/02/03)
+- **`references/gutenberg-core-blocks.md`** : 30+ blocs `core/*` curés avec table de routing core vs uagb
+- **`references/astra-page-template-rules.md`** : forcer no-title pour éliminer le double H1, configurations Astra meta par type de page
+- **`references/apache-mutu-pitfalls.md`** : pièges hébergeurs mutualisés (o2switch, OVH, Hostinger) — auth strip, LiteSpeed cache, rate limiting, App Passwords disabled, wp-cron disabled
+- **`references/images-ratios.md`** : ratios attendus par pattern (16:9 hero, 16:5 story, 1:1 avatar, etc.)
+
+#### Nouveau : 9 patterns documentés
+
+Pattern = guide « comment construire » avec structure, variables, markup squelette, CSS overrides obligatoires, pièges spécifiques, variantes, ratio image, tests post-génération. **Pas un template à copier-coller.**
+
+- **`patterns/stats-bar-editorial.md`** : 4 stats horizontales avec drama (eyebrow + heading + chiffres 80px + accent line orange)
+- **`patterns/features-numbered.md`** : 3 features avec numéros 01/02/03 (anti-piège icônes)
+- **`patterns/testimonials-cards.md`** : 3 cards avec grands guillemets 120px et avatars circulaires
+- **`patterns/tabs-section.md`** : section avec onglets cliquables `uagb/tabs`
+- **`patterns/slider-carousel.md`** : carrousel autoplay + dots `uagb/slider`
+- **`patterns/timeline-vertical.md`** : timeline chronologique `uagb/timeline`
+- **`patterns/how-to-steps.md`** : tutoriel pas-à-pas avec schema HowTo SEO automatique
+- **`patterns/review-product.md`** : review produit avec schema Review + étoiles SERP
+- **`patterns/countdown-launch.md`** : compte à rebours événement `uagb/countdown`
+
+Patterns existants conservés et mis à jour : `hero-image-overlay`, `hero-cta-split`, `features-3-cols`, `about-story-split`, `pricing-3-tiers`, `faq-accordion`, `cta-banner-fullwidth`, `testimonials-grid`, `team-grid`, `stats-counters`, `article-content-rich`.
+
+**Total : 20 patterns documentés**.
+
+#### Nouveau : 5 templates blueprints
+
+Template = composition de patterns avec variables d'entrée, schema SEO, CSS overrides, configuration Astra, variantes par secteur, workflow d'application. **Pas un fichier markup hardcodé**.
+
+- **`templates/page-tarifs.md`** : page tarifs SaaS / formation (3 tiers + comparison table + testimonials + garanties + FAQ)
+- **`templates/page-contact.md`** : page contact pro (hero + infos 4-cols + form + map + FAQ)
+- **`templates/page-a-propos.md`** : page À propos E-E-A-T (story + valeurs + équipe + timeline + stats + testimonials)
+- **`templates/blog-editorial.md`** : page blog éditorial (hero + filtres catégories + grid + newsletter + featured)
+- **`templates/e-commerce-produit.md`** : page produit e-commerce (hero + galerie + features + review + testimonials + pricing + FAQ + CTA, schema Product)
+
+Templates existants conservés : `page-formation`, `landing-saas`, `page-agence`.
+
+**Total : 8 templates documentés**.
+
+#### Nouveau : 2 scripts utilitaires critiques
+
+- **`scripts/update-page-meta-css.php`** : update `_uag_custom_page_level_css` **TAG-AWARE**. Encapsule le CSS skill-generated entre balises `/* === skill-generated v1.0 START/END === */`. Préserve le CSS user existant en dehors des balises. Permet versioning et migrations.
+- **`scripts/regen-spectra.php`** : force régénération assets Spectra avec **4 stratégies cascadées** (mu-plugin compagnon → Spectra native endpoint → temp-publish trick → manual fallback wp-cli).
+
+#### Cleanup
+
+- **Retiré du skill** : `templates/landing-formation-complete-markup.html` et `templates/landing-formation-complete-page-css.css` (déplacés vers `examples/`)
+- **examples/README.md** : explicite que ces fichiers sont des références concrètes, **PAS le skill**, ne PAS copier-coller (block_id `v93-` spécifiques à loginarmor-dev)
+
+#### SKILL.md refondu
+
+Entry point clair qui dit :
+1. **Lecture obligatoire en premier** : 3 docs critiques (quirks + i18n + persistent-css)
+2. **Architecture du skill** : 16 references + 20 patterns + 8 templates + 4 workflows + 13 scripts
+3. **Workflow type** en 10 étapes : detect → read knowledge → choose patterns → variables → generate → validate → CSS → POST → screenshot → deliver
+4. **Conventions strictes** naming, style, contenu
+5. **Table troubleshooting** : symptôme → référence → fix
+6. **Mantra** : « Une page non screenshootée = une page non testée »
+
+#### Pour la session Claude Code qui hérite du skill
+
+Tu n'as plus besoin de :
+- Deviner les noms d'attributs Spectra → c'est dans `spectra-blocks-catalog.md`
+- Tester quelles icônes marchent → whitelist dans `spectra-icons-list.md`
+- Reconstruire le markup à partir de zéro → patterns documentent la structure
+- Réinventer la couche CSS → `persistent-css-overrides.md` explique la technique
+- Galérer avec les accents français → `i18n-rules.md` table complète
+- Découvrir les 17 pièges → `spectra-attributes-quirks.md` les liste tous
+
+Tu lis le bon doc, tu appliques, tu screenshootes, tu valides.
+
+#### Stats v1.0
+
+- **16 references** documents (knowledge base critique)
+- **20 patterns** documentés (comment construire)
+- **8 templates** blueprints (composition de patterns)
+- **4 workflows** validés (new-from-brief, refonte, visual-validation-loop, deploy-template)
+- **13 scripts** PHP (post, update-css tag-aware, regen, validate, audit, resolve, etc.)
+- **17 pièges Spectra** documentés avec fix
+- **0 fichier hardcoded** dans `templates/` (tous déplacés vers `examples/`)
+
+## [Unreleased]
+
+### À venir (v1.0 finale)
+
+- Compilation effective du PDF (Pandoc/Typst + 25 captures)
+- Déploiement de la page front + route API Vercel sur wpformation.com
+- 6+ patterns supplémentaires (tabs-section, slider-carousel, timeline-vertical, how-to-steps, review-product, countdown-launch, contact-form-split, 404-page)
+- 5 templates supplémentaires (blog-editorial, e-commerce-produit, page-tarifs, page-contact, page-a-propos)
+- references/spectra-icons-list.md (liste exhaustive noms courts d'icônes)
+- references/gutenberg-core-blocks.md (30+ blocs core/* curés)
+- Article WPFormation dédié
+- Distribution communauté (LinkedIn, Discord WP, soumission #ai-tools Slack)
+
+## [0.9.4-beta] — 2026-05-02 (15h)
+
+### 🔒 CSS overrides PERSISTANTS via meta natif Spectra
+
+> **Verdict utilisateur** : « Dès que je retouche la page en la modifiant via l'éditeur classique, je perds tous les CSS que tu as intégrés. »
+
+#### Cause racine
+
+Les **styles inline injectés dans le innerHTML** d'un bloc Spectra (`<p style="font-size:80px">227</p>`) sont **strippés par Gutenberg dès le premier save** via l'éditeur. Le parser regenère le innerContent à partir du JSON `attrs` et ignore tout HTML inline qui n'est pas dans le schéma de bloc. Conséquence : le workaround v0.9.3 ne survit pas à une édition utilisateur.
+
+#### Solution propre : `_uag_custom_page_level_css`
+
+Spectra a un meta natif `_uag_custom_page_level_css` que `UAGB_Post_Assets::common_function_for_assets_preparation` concatène à son stylesheet à chaque rendu (vérifié dans le code source `class-uagb-post-assets.php:1434`) :
+
+```php
+$custom_css = get_post_meta( $this->post_id, '_uag_custom_page_level_css', true );
+if ( ! empty( $custom_css ) ) {
+    $this->stylesheet .= UAGB_Admin_Helper::sanitize_inline_css( $custom_css );
+}
+```
+
+Le CSS y est stocké **séparément du `post_content`** → Gutenberg ne le touche jamais lors d'une édition.
+
+#### Persistance prouvée à travers 3 éditions
+
+Test du 02/05/2026 sur loginarmor-dev (Astra 4.13.1 + Spectra 2.19.25 + palette_3) :
+- Page 45 modifiée 3× via REST API (équivalent à éditer + sauvegarder dans Gutenberg)
+- Chaque save : `post_content` re-parsé → strip de tout `style="..."` inline
+- `_uag_custom_page_level_css` reste **intouché** (5200 chars stables)
+- Les classes CSS ciblées (`.uagb-block-v93-stat-1`, etc.) restent stables dans le content
+- **Résultat** : tous les chiffres énormes / guillemets / accent lines persistent visuellement après chaque édition
+
+Baseline : `screenshots/loginarmor-dev-palette3/v094-after-gutenberg-edit-fullpage.png`
+
+#### Nouveau fichier dans le skill
+
+- **`templates/landing-formation-complete-page-css.css`** (5,2 KB) : CSS overrides versionnés et réutilisables. Cible les classes `.uagb-block-v93-{section}-{element}` stables. Inclut media queries responsive (1024 / 600 px).
+
+#### Nouveau référence
+
+- **`references/persistent-css-overrides.md`** : doc complète de la technique. Explique le bug Spectra, la solution `_uag_custom_page_level_css`, les conventions naming, le workflow d'injection, les limitations connues (LiteSpeed cache, sanitize_inline_css filters).
+
+#### Workflow skill mis à jour
+
+```
+1. Génération markup → POST /wp-json/wp/v2/pages
+2. Génération CSS overrides → meta._uag_custom_page_level_css (NOUVEAU)
+3. Régénération Spectra assets → /skill-test/v1/regen-spectra
+4. Hit URL frontend (force pipeline) → temp-publish trick si draft
+5. Validation visuelle agent-browser
+```
+
+#### Stats v0.9.4
+
+- **0 inline style** dans le markup template (tous retirés)
+- **5,2 KB de CSS overrides** versionnés dans `templates/`
+- **3 éditions Gutenberg simulées** : CSS persiste à travers chaque save
+- **Bonus** : Astra `.entry-content { padding-bottom: 0 }` injecté pour résoudre la marge bottom orpheline du dernier bloc alignfull (issue v0.9.3)
+
+## [0.9.3-beta] — 2026-05-02 (14h)
+
+### 🎨 Refonte WOW — Stats drama + Testimonials grands guillemets + 3 mini-cards éditoriales
+
+> **Verdict utilisateur sur v0.9.2** : « Il manque certaines icônes. Les témoignages sont catastrophiques. C'est moche, c'est raté. Dans la section Notre approche, je ne comprends pas ta liste à puces, c'est incompréhensible. Je donne un peu de crédit aux leaders et aux metrics, mais les metrics ne sont pas assez mis en avant. » + rapport forensique 11 défauts P0/P1/P2 (stats verticales sur cours-ndrc.fr, FAQ pleine largeur 1100px, hex hardcodés, page title double H1, témoignages plats, icônes doublonnées Font Awesome).
+
+#### 4 défauts critiques corrigés
+
+**1. Stats peu mises en avant → drama bar éditoriale**
+- Section dédiée avec eyebrow `LE SITE EN CHIFFRES` + H2 `Tout ce qu'il te faut pour préparer le BTS NDRC` + desc
+- 4 stats horizontales (227 / 33 / 22 / 87 %) avec chiffres **80px** orange WPF
+- **Accent line orange 4px** sous chaque stat (border-bottom)
+- Padding 96px desktop, 72px tablet, 56px mobile
+
+**2. Témoignages catastrophiques → grands guillemets display + auteur plat**
+- Guillemet `&ldquo;` **120px** en orange massif en haut de chaque card
+- Card padding 56px desktop (vs 48), border-radius 24px (vs 20), shadow plus marquée `0 8px 40px rgba(15,23,42,0.10)`
+- Auteur PLAT : avatar 56px + nom-bold + meta-light, sans sub-card boxée
+
+**3. Liste à puces "Notre approche" incompréhensible → 3 mini-cards 3/2/5**
+- Remplacement de l'`uagb/icon-list` (rendue en row avec underline orange comme des liens) par 3 containers en grille 3-cols
+- Chiffre **88px** orange (3 / 2 / 5) en haut de chaque mini-card
+- Label sous-titre `Idées clés / Exemples concrets / Erreurs à éviter` en bold
+- Desc explicative en dessous
+- Background `#fafafa` cards arrondies 18px
+
+**4. Icônes Font Awesome doublonnées → numéros 01 / 02 / 03 éditoriaux**
+- Suppression des `uagb/icon` problématiques (book-open, clipboard-check, timer pas tous reconnus par Spectra → fallback)
+- Remplacement par numéros `01 / 02 / 03` **48px** orange + label uppercase `THÉORIE / PRATIQUE / AUTO-ÉVALUATION`
+- Style print magazine éditorial, plus distinctif que des icônes Font Awesome génériques
+
+#### Bug critique découvert : CSS Spectra dynamique par post NON injecté
+
+Cause racine confirmée sur loginarmor-dev (pas seulement cours-ndrc.fr) : `<style id="uagb-style-frontend-{post_id}">` est ABSENT du HTML rendu pour les pages publiées. Le `_uag_page_assets['css']` post_meta existe avec 240K+ chars mais le hook `wp_head` n'attache pas le style inline.
+
+**Conséquence** : tous les `headingFontSizeDesktop:80`, `headingFontSizeDesktop:120`, `letter-spacing` du markup Spectra sont **ignorés** au rendu — les chiffres restent en font-size par défaut (16px).
+
+**Workaround v0.9.3** : injection de **styles inline directs** sur les éléments critiques :
+```html
+<p class="uagb-ifb-title" style="font-size:88px;color:#FD9800;font-weight:800;line-height:0.9;letter-spacing:-3px;margin:0">3</p>
+```
+
+13 occurrences de styles inline ajoutées :
+- 3× chiffres recipe story (3 / 2 / 5) à 88px
+- 3× numéros features (01 / 02 / 03) à 48px
+- 4× chiffres stats (227 / 33 / 22 / 87 %) à 80px
+- 3× guillemets testimonials (&ldquo;) à 120px
+
+**À investiguer pour v0.9.4** : pourquoi le hook `UAGB_Post_Assets::print_stylesheet` ne s'enregistre pas sur `wp_head`. Possibles causes : page template Astra spécifique, conflit avec mu-plugin, version Spectra. Le styles inline du markup contournent le bug en attendant.
+
+#### Améliorations visuelles secondaires
+
+- **Hero overlay** moins opaque : rgba(15,23,42,**0.78**→**0.30**) 110deg (vs 0.92→0.45 135deg) — l'image background est maintenant visible
+- **Hero desc padding-right** réduit à 25% (vs 35%) pour ne plus écraser le texte
+- **Eyebrow** monté à 15px (vs 13px) + letter-spacing 4px (vs 3px) + prefixSpace 24-28 (vs 18) — plus présents
+- **FAQ** wrappée dans container max-width 62% (vs pleine largeur 1100px) avec margin auto pour readability standard 720-820px
+
+#### Stats v0.9.3
+
+- **13 styles inline injectés** comme workaround CSS Spectra dynamique manquant
+- **0 icône Font Awesome** (remplacées par numéros éditoriaux 01/02/03)
+- **3 mini-cards 3/2/5** au lieu de la liste à puces incompréhensible
+- **Guillemets 120px** orange display sur testimonials
+- **Accents 100 % corrects** via HTML entities maintenus
+- **8 screenshots v093-FINAL** dans `screenshots/loginarmor-dev-palette3/`
+
+#### Issues restantes documentées (à fixer v0.9.4+)
+
+- Hex hardcodés (#FD9800, #0F172A) au lieu de `var(--ast-global-color-X)` → revert à token-based + helper resolve_color pour palettes piégeuses
+- CSS Spectra dynamique non injecté → investigation pourquoi le hook ne s'attache pas
+- Page template avec post_title affiché au-dessus du hero → forcer template no-title via `_wp_page_template` post_meta
+- `references/spectra-icons-list.md` à créer (liste exhaustive icônes valides)
+- CTA banner final → padding-bottom orpheline (Astra `.entry-content` padding) → CSS rule à injecter via `apply-design-tokens.php`
+- Test régression cours-ndrc.fr → confirmer que temp-publish-trick génère bien `uag-css-{id}.css` sur disque (pas juste post_meta)
+
+## [0.9.2-beta] — 2026-05-02 (13h)
+
+### 🇫🇷 Accents français corrects + stats horizontales + avatars testimonials
+
+> **Verdict utilisateur sur v0.9.1** : « Si l'utilisateur est français, il manque tous les accents. Je vois de nombreux ratés (mojibake `â€"` partout, stats empilées verticalement). Pas du tout époustouflant, niveau débutant. »
+
+#### 3 défauts critiques corrigés
+
+**1. Accents français manquants** — Le markup v0.9.1 utilisait du français sans accents (« Reussir », « rediges », « exercices types epreuve »). Faute lourde vs CLAUDE.md règle prioritaire « français avec accents ».
+
+Fix : passage à **HTML entities** (`&eacute;` `&egrave;` `&agrave;` `&ccedil;` `&ecirc;` `&ocirc;` `&rsquo;` `&laquo;` `&raquo;` `&middot;` `&mdash;` `&hellip;` `&nbsp;`) pour tous les contenus textuels. Les entities passent UTF-8 safe à travers MySQL/JSON/REST sans risque de mojibake.
+
+Validé sur le rendu : « Réussir », « rédigés », « expérimentés », « épreuve », « DERNIÈRES PLACES », « DÉCROCHÉ », « INTELLIGEMMENT » s'affichent correctement.
+
+**2. Tirets cadratins en mojibake** — Les `—` (em-dash UTF-8 byte E2 80 94) directs étaient affichés comme `â€"` (mojibake Latin-1).
+
+Fix : tous les `—` remplacés par `&mdash;` HTML entity. Idem pour `«`/`»` (`&laquo;`/`&raquo;`), `…` (`&hellip;`), `'` apostrophe typo (`&rsquo;`).
+
+**3. Stats empilées verticalement au lieu d'horizontales** — Les 4 info-box stats étaient en colonne malgré le container parent `directionDesktop:"row"`. Cause : Spectra info-box ne supporte pas l'attribut `widthDesktop` directement (c'est un attribut container).
+
+Fix : **wrapper chaque stat dans un container width 22 %** (`v92-stat-1-w` à `v92-stat-4-w`). Container parent en `direction:row` + `wrapDesktop:wrap` + `justifyContent:space-between`. Rendu : 4 stats sur une ligne en desktop, 2×2 en tablet, 1×4 en mobile.
+
+#### Améliorations visuelles
+
+- **Hero** : H1 augmenté à 72 px desktop (vs 62 px), letter-spacing -1.5 px (typo plus tight), gradient overlay angle 120deg (vs 135deg) pour mieux exposer l'image en bas-droite
+- **Image hero changée** : étudiants en révision (cohérent BTS NDRC) au lieu de la forêt+lac aérienne (déconnecté du sujet)
+- **Image about-story changée** : étudiantes sur ordinateur (au lieu de l'étalement de fruits/légumes qui n'avait aucun sens)
+- **3 bullets icon-list** ajoutés sous le heading about-story : « 3 idées clés au début de chaque cours », « 2 exemples concrets de cas réels d'examen », « 5 erreurs à éviter le jour J »
+- **Avatars circulaires** dans testimonials : 3 photos uploadées, 52×52 px, border-radius 50% — chaque card a maintenant Léa/Karim/Inès avec photo
+- **Apostrophe typo** : `&rsquo;` (’) partout au lieu de `'` straight, pour un rendu typographique professionnel
+- **Espace insécable français** `&nbsp;` avant `?` `!` `:` `%` (e.g. « gratuit&nbsp;? », « 87&thinsp;% »)
+- **Tracking +letter-spacing -1.5px** sur les headings massifs (typo display tightened)
+- **CTA banner final** : gradient overlay rgba(15,23,42,0.95) → rgba(253,152,0,0.55) (orange WPF en bas-droite pour signature couleur), padding 160px desktop (vs 140), heading H2 60px (vs 50)
+
+#### Stats v0.9.2
+
+- **7 nouvelles images uploadées** : hero étudiants, story étudiantes, 3 avatars portraits, CTA banner, image secondaire (~1 MB total)
+- **51 KB markup** template (vs 41 KB v0.9.1) — +10 KB pour bullets, avatars, entities, padding
+- **Stats horizontales 4-cols** validé visuellement (`v092-zoom-v92-stats.png`)
+- **0 occurrence de `â€` mojibake** dans le HTML rendu (vs 12+ en v0.9.1)
+- **Tous les accents** validés via screenshot zoom : RÉUSSIR, COURS RÉDIGÉS, RÉUSSITE, NOTRE APPROCHE, ILS ONT DÉCROCHÉ LEUR BTS, QUESTIONS FRÉQUENTES, PRÊT À RÉVISER
+
+#### Baseline v0.9.2 dans `screenshots/loginarmor-dev-palette3/`
+
+```
+v092-iter1-fullpage.png       ← page complète corrigée
+v092-zoom-v92-hero.png        ← hero avec image étudiants
+v092-zoom-v92-stats.png       ← 4 stats HORIZONTALES avec accents
+v092-zoom-v92-features.png    ← 3 features cards (héritées v091)
+v092-zoom-v92-story.png       ← about-story avec image étudiantes + bullets
+v092-zoom-v92-testimonials.png← 3 cards avec avatars + accents
+v092-zoom-v92-faq-section.png ← FAQ accordéon avec accents
+v092-zoom-v92-cta-final.png   ← CTA banner gradient orange
+```
+
+## [0.9.1-beta] — 2026-05-02 (12h)
+
+### 🎯 Boucle de validation visuelle FERMÉE — première baseline screenshot prouvée
+
+> **Verdict utilisateur sur v0.9.0-beta** : « C'est juste laid, catastrophique et totalement raté. Une énorme perte de temps. » Rapport forensique détaillé : 5 BLOCKERS structurels (gradient bleu/violet au lieu d'orange palette_3, boutons sans styling, features empilées verticalement, FAQ rendue comme bullet list, pas de cards testimonials). Cause racine : sur draft preview anonyme (Apache mutu o2switch + LiteSpeed), ni Astra CSS ni Spectra CSS n'étaient injectés. Cette version v0.9.1 ferme la boucle : génération end-to-end testée sur WP local, screenshots agent-browser réels, page démo WOW livrée comme baseline.
+
+#### Pipeline de validation visuelle PROUVÉ
+
+- **WP local loginarmor-dev (Astra 4.13.1 + Spectra 2.19.25 + palette_3)** utilisé comme test bench end-to-end (identique à cours-ndrc.fr)
+- **Page démo Natures-style complète** générée et publiée (ID 41) : hero overlay gradient + stats bar dark + 3 features cards + about-story split + 3 testimonials + FAQ accordéon + CTA banner final
+- **Screenshots agent-browser** réels en viewport 1440×900 capturés à 3 itérations (iter 1 baseline, iter 2 fix FAQ, iter 3 finition WOW)
+- **Tous les patterns rendent correctement** : grille 3-cols respectée, bg colors palette-agnostic, typo cohérente, accordéon fonctionnel, image story chargée, CTAs lisibles
+
+Baselines prouvées :
+
+```
+screenshots/loginarmor-dev-palette3/
+├── v091-iter3-WOW-fullpage.png        ← page complète 1440×4500+ (référence)
+├── v091-FINAL-zoom-v3-hero.png        ← hero overlay gradient
+├── v091-FINAL-zoom-v3-stats.png       ← stats bar 4 chiffres orange
+├── v091-FINAL-zoom-v3-features.png    ← 3 cards features 3-cols
+├── v091-FINAL-zoom-v3-story.png       ← about-story split image+texte
+├── v091-FINAL-zoom-v3-testimonials.png← 3 testimonials avec guillemets typo
+├── v091-FINAL-zoom-v3-faq-section.png ← FAQ accordéon avec 1ère ouverte
+└── v091-FINAL-zoom-v3-cta-final.png   ← CTA banner image+overlay
+```
+
+#### BLOCKER user — CSS Spectra absent en draft preview
+
+Cause : sur Apache mutu (o2switch, OVH, Hostinger, 1&1) + LiteSpeed Cache, le hook `wp_head` n'injecte pas le CSS Spectra inline pour les drafts en preview anonyme. Le `_uag_page_assets` post_meta existe avec un `css` de 17K+ chars mais le HTML <head> n'a aucun `<style id="uagb-style-frontend-X">`.
+
+**Fix : `wpf_skill_temp_publish_trick()` dans `scripts/post-page-via-rest.php`**
+
+```php
+function wpf_skill_temp_publish_trick($site_url, $auth, $post_id) {
+  // 1. Lire le statut courant
+  // 2. Update status='publish' temporairement
+  // 3. GET frontend URL (force pipeline complète Astra+Spectra)
+  // 4. Revert au statut original
+}
+```
+
+Stratégies cascadées dans `wpf_skill_trigger_spectra_assets_regen()` :
+1. Endpoint mu-plugin compagnon `/astra-spectra/v1/regen-assets/{id}`
+2. Endpoint mu-plugin compagnon alt `/skill-test/v1/regen-spectra`
+3. Temp-publish trick (publish→GET→revert) — **le fix critique**
+4. Best-effort GET avec `?_uagb_regen=1`
+
+Active par défaut, désactivable via `--no-temp-publish` sur sites live.
+
+#### BUG persistant — Check 9 WCAG walker sans propagation
+
+Cause v0.9.0 : le check ne regardait que `(headingColor, backgroundColor)` du MÊME bloc. Un info-box enfant sans bg sur un container parent dark n'était pas détecté.
+
+**Fix : walker récursif avec propagation de `current_bg` et `is_dark_context`**
+
+```php
+$walker = function ($blocks, $depth = 0, $current_bg = null, $is_dark_context = false) use (&$walker, &$report) {
+  // Détection bg propre du bloc + héritage parent
+  $effective_bg = $own_bg_resolved ?: $current_bg;
+  $effective_dark = $own_is_dark || $has_image_bg || $has_overlay || $is_dark_context;
+  // Check WCAG sur effective_bg (pas seulement own bg)
+  // Récursion avec effective_bg + effective_dark transmis
+};
+```
+
+Le check détecte maintenant `headingColor: #0F172A` sur un container parent `backgroundColor: #0F172A` (auparavant invisible).
+
+#### BUG persistant — Faux positifs #ffffff text_inverse
+
+Cause v0.9.0 : `headingColor: #ffffff` sur un hero avec image+overlay était flaggé P1 « hardcoded color » alors que c'est légitime (text inverse sur bg sombre).
+
+**Fix : whitelist contextuelle dans le check 3**
+
+- `#ffffff` sur attribut text dans un dark context → P3 (legit text_inverse)
+- Neutral grays (`#fafafa`, `#f5f5f5`, `#e5e7eb`...) sur `backgroundColor` → P3 (legit per section-rhythm.md)
+
+Plus de spam P1 sur les patterns hero overlay.
+
+#### Nouveau pattern complet validé visuellement
+
+- **`patterns/landing-formation-complete.md`** : pattern complet 7 sections inspiré du démo Natures, avec markup template versionné dans `templates/landing-formation-complete-markup.html` (~41 KB, 28+ blocs uagb). Validé sur palette_3.
+
+#### Workflow visual-validation-loop enrichi
+
+- Section « Pipeline pratique testé v0.9.1 » avec les commandes exactes agent-browser pour reproduire la baseline
+- 4 pièges critiques documentés avec leurs symptômes et fixes :
+  1. FAQ avec Lorem Ipsum → attribut `answer` (PAS `description`)
+  2. Image about-story qui n'apparaît pas → force `loading="eager"` avant screenshot
+  3. CSS Spectra absent en draft preview → temp-publish trick
+  4. Slot color-7 = noir massif sur palette_3 → `#e5e7eb` direct
+
+#### Mu-plugin compagnon documenté
+
+- **`scripts/mu-plugin-skill-test.php`** : 5 endpoints REST (setup, upload-image, regen-spectra, inspect-faq, cleanup) testés sur loginarmor-dev
+- **`references/mu-plugin-companion.md`** : doc d'install + sécurité + alternatives sans mu-plugin
+- L'endpoint `/inspect-faq` permet de découvrir le bon nom d'attribut (`answer`) sans plonger dans le JS minifié — c'est ce qui a permis de fixer le bug FAQ
+
+#### Stats v0.9.1
+
+- **3 itérations** sur la page démo (iter 1 baseline, iter 2 FAQ fix, iter 3 finition WOW)
+- **8 screenshots de validation** dans le repo (1 fullpage + 7 zoom par section)
+- **41 KB** de markup template validé (`templates/landing-formation-complete-markup.html`)
+- **5 endpoints REST** mu-plugin compagnon testés
+- **2 bugs persistants depuis v0.8.x** corrigés (WCAG walker, false positive #ffffff)
+- **1 trick critique** ajouté (temp-publish pour forcer regen Spectra sur draft)
+- **0 nouvelle dépendance** (tout en PHP natif + agent-browser CLI déjà installé chez les users)
+
+## [0.9.0-beta] — 2026-05-02 (tard)
+
+### 🔥 Refonte structurelle après rapport visuel cours-ndrc.fr
+
+> **Verdict utilisateur sur v0.8.2** : « C'est juste laid, catastrophique et totalement raté. » 17 fixes techniques validés mais rendu inutilisable en production sur palette Astra non-default. Cette version refonde la couche couleur + valide le rendu visuel.
+
+#### BLOCKER 1 — Slots Astra arbitraires selon palette
+
+Cause : `var(--ast-global-color-7)` valait `#fafafa` sur palette default mais `#141006` (presque noir) sur palette_3. Tous les patterns qui utilisaient `color-7` comme bg light → sections noires.
+
+**Solution** :
+
+- **`scripts/resolve-palette.php` (nouveau)** : utilitaire de résolution sémantique. Lit la palette active, calcule luminance + saturation, mappe vers 16 rôles sémantiques (`bg_page`, `bg_section_alt`, `bg_card`, `text_heading`, `accent_primary`, `border_subtle`, etc.). Stratégie hybride : slots Astra GARANTIS pour les rôles bien couverts (color-0/1/2/3/5), hex neutres robustes pour les rôles variables (color-4/6/7/8). API : `wpf_skill_resolve_color($role, $palette)`. CLI : `php resolve-palette.php list|get|transpile|contrast`.
+- **`references/semantic-color-roles.md` (nouveau)** : convention complète. Slots GARANTIS vs VARIABLES. Table de mesure sur 11 presets Astra + palette_3. Tradeoffs assumés.
+- **9 patterns réécrits** (hero-cta-split, features-3-cols, pricing-3-tiers, faq-accordion, cta-banner-fullwidth, testimonials-grid, team-grid, stats-counters, article-content-rich) : remplacement des slots variables par hex neutres garantis (`#fafafa`, `#ffffff`, `#e5e7eb`) ou par les slots GARANTIS Astra. 0 occurrence de `color-{4,6,7,8}` dans le markup actif.
+
+#### BLOCKER 2 — Pas de respiration entre sections
+
+Cause : sections enchaînées sans variation de bg, `alignwide` accolés sans transition.
+
+**Solution** :
+
+- **`references/section-rhythm.md` (nouveau)** : convention alternance bg (white ↔ off-white). Pas de margin externe sur `alignfull` (casse l'alignment). La respiration vient de l'alternance + du padding interne généreux.
+- **Check 10 ajouté à `visual-audit.php`** : flag P2 si 2 sections root consécutives ont le même `backgroundColor` résolu.
+
+#### BLOCKER 3 — Patterns écrits sans validation visuelle
+
+Cause : la suite v0.8.x a fixé des bugs détectés par grep mais aucun screenshot n'avait été produit. Nouveaux bugs (testimonials placeholder, team-grid placeholder, page-formation 6× SVG vides) découverts uniquement par re-test live.
+
+**Solution** :
+
+- **`screenshots/README.md` (nouveau)** : process obligatoire avant tag v1.0. 3 palettes de test minimum (astra-default, preset_3, preset_8). Convention `tested-on-palettes` dans le frontmatter de chaque pattern. Workflow GitHub Actions de régression visuelle proposé.
+- **TODO v1.0** : 27 screenshots patterns × 3 palettes + 9 screenshots templates × 3 palettes + fixtures `_palettes/*.json` + workflow CI.
+
+#### BLOCKER 4 — visual-audit ne détectait rien de visuel
+
+Cause : checks structurels (block_id unique, hex hardcoded grep) ne détectent pas « texte noir sur fond noir » qui dépend de la résolution palette.
+
+**Solution** :
+
+- **Check 9 WCAG AA ajouté à `visual-audit.php`** : pour chaque paire (text, bg) sur le même bloc, résout les `var(--ast-global-color-X)` vers les hex réels de la palette active, calcule le ratio WCAG (formule officielle W3C avec linéarisation gamma sRGB). Flag P0 si ratio < 1.5 (texte invisible), P1 si < 4.5 (sous AA). Output `wcag_violations[]` détaillé avec ratios.
+- **Check 10 alternance bg** : voir BLOCKER 2.
+
+#### BLOCKER 5 — Spectra UAGB_Post_Assets non régénéré post-POST
+
+Cause : Spectra peut stocker son CSS en mode `file` (`/uploads/uag-plugin/assets/uag-css-{post_id}.css`). Sans hook save_post déclenché, la preview frontend apparaît sans flex-grid, sans box-shadow, sans border-radius.
+
+**Solution** :
+
+- **`scripts/post-page-via-rest.php`** : nouvelle fonction `wpf_skill_trigger_spectra_assets_regen()` appelée après chaque POST. 3 stratégies en cascade : (1) endpoint mu-plugin compagnon `/wp-json/astra-spectra/v1/regen-assets/{id}`, (2) GET sur preview URL avec query `_uagb_regen=1` qui déclenche le hook sur certaines configs, (3) fallback : suggérer commande WP-CLI manuelle dans le retour. Output ajouté `spectra_assets_regen` détaillé.
+
+### Bonus utilisateur — Inspiration démo officiel Spectra Natures
+
+Sur demande explicite « Pourquoi ne t'inspires-tu pas de ce que propose Spectra par défaut ? », analyse de 4 pages réelles importées du démo officiel **Spectra Natures** (Homepage, Services, Contact, About) :
+
+- **`references/spectra-demo-reference.md` (nouveau)** : analyse des 10 techniques visuelles clés du démo (image bg + overlay, eyebrow prefix kicker, equalHeight cards, gradient split 50/50, contact info numérotée, stats card unifiée, etc.). Avec attention aux pièges de palette (color-4 = crème sur Natures vs primary sur defaults).
+- **`patterns/hero-image-overlay.md` (nouveau)** : hero pleine page avec image background + overlay color 70 % + heading H1 + 2 CTAs. Utilise hex neutres (`#ffffff` pour texte) pour marcher sur toutes palettes. 5 variantes documentées (gradient overlay, hero court, eyebrow, single CTA, sans image).
+- **`patterns/about-story-split.md` (nouveau)** : section « Notre histoire » avec image éditoriale 1200×350 + layout 2-cols heading/desc. 4 variantes documentées.
+
+#### Templates blueprints à venir en v0.9.1
+
+Pour ne pas livrer un v0.9 douteux, les templates complets inspirés du démo Natures sont reportés à v0.9.1 :
+
+- `templates/spectra-homepage-natures.md`
+- `templates/spectra-contact-page.md`
+- `templates/spectra-about-page.md`
+- `templates/spectra-services-page.md`
+
+Et 5 patterns supplémentaires inspirés (services-cards-with-images, contact-info-grid, why-choose-3-numbered, stats-card-unified, gradient-split-50-50).
+
+## [0.8.3-beta] — 2026-05-02 (nuit)
+
+### 3e re-test cours-ndrc.fr : 17/17 fixes confirmés + 1 BLOCKER + 3 mineurs corrigés
+
+#### Corrigé — BLOCKER B7
+
+- **`scripts/cleanup-test-pages.php`** : crash `count(null)` quand `$argv` est null (cas `wp eval-file` qui n'expose pas `$argv` dans le scope du script). Garde robuste ajoutée : `php_sapi_name() === 'cli' && isset($GLOBALS['argv']) && is_array($GLOBALS['argv']) && !empty($GLOBALS['argv'][0]) && basename($GLOBALS['argv'][0]) === basename(__FILE__)`. Le bloc CLI ne s'exécute donc QUE si :
+  1. PHP est en mode CLI
+  2. `$argv` existe et est un array
+  3. Le script appelé est bien ce fichier (pas un `require_once` depuis ailleurs)
+- **`scripts/cleanup-test-pages.php`** : nouvel argument `--wp-path=/path/to/wp` pour pointer manuellement vers `wp-load.php` quand le script est exécuté hors du dossier WP. Documentation des 4 modes d'usage dans le header (CLI direct depuis WP root, CLI avec `--wp-path`, `wp eval-file`, `require_once` pour réutiliser les fonctions).
+
+#### Corrigé — m8 : garde CLI uniforme sur 8 scripts
+
+Le même garde robuste appliqué à tous les scripts pour éviter les sorties parasites lors d'un `require_once` :
+
+- `scripts/auto-fix-markup.php`
+- `scripts/visual-audit.php`
+- `scripts/astra-customizer.php`
+- `scripts/validate-block-markup.php`
+- `scripts/snapshot-page.php`
+- `scripts/post-page-via-rest.php`
+- `scripts/apply-design-tokens.php`
+- `evals/run-evals.php`
+
+Avant : `require_once 'auto-fix-markup.php'` → écrivait `FIXES APPLIED: 0` sur stderr. Après : silence total tant que le script n'est pas appelé directement.
+
+#### Corrigé — m9 : padding mobile + horizontal sur tous les root containers
+
+Patterns avec root container ayant `topPaddingDesktop` se voient ajouter :
+- `topPaddingMobile`, `bottomPaddingMobile` (cohérence avec tablet)
+- `leftPaddingTablet`, `rightPaddingTablet` (24px)
+- `leftPaddingMobile`, `rightPaddingMobile` (16px)
+
+Patterns concernés :
+- `patterns/testimonials-grid.md`
+- `patterns/team-grid.md`
+- `patterns/pricing-3-tiers.md`
+- `patterns/faq-accordion.md`
+- `patterns/stats-counters.md`
+- `patterns/article-content-rich.md`
+
+Élimine les warnings P1 « Root container has desktop padding but missing tablet/mobile breakpoints » du `visual-audit.php`.
+
+Bonus : changement `faq-accordion.md` background de `--ast-global-color-4` (accent) → `--ast-global-color-5` (body bg) pour cohérence avec les autres patterns standards.
+
+#### Corrigé — M-latent : promesse 1942 keys → plage réaliste
+
+- `modules/astra/customizer-map.md` : « 1942 autres keys » → « 200+ top-level, 800-2000+ leaves selon la config Astra Pro »
+- `scripts/astra-customizer.php` (header) : description alignée
+- `scripts/astra-customizer.php` (commentaire count_leaves) : « 1942 réels » → « 851 leaves réelles sur Astra Pro 4.13 mesuré sur prod (cours-ndrc.fr) »
+- `evals/evals.json` : commentaire de l'eval astra-01 reformulé
+
+Mesures réelles documentées : Astra defaults ~150-220 top-level keys / ~30 KB · Astra Pro avec config moyenne ~216 top-level / 851 leaves / 31.6 KB · Astra Pro avec configs avancées (header builder, footer builder, mega menu, WC) → peut atteindre plusieurs milliers de leaves et 200+ KB.
+
+#### Corrigé — m10 : wording « No CTA »
+
+- `scripts/visual-audit.php` : message « No CTA button block found. Pages should have at least one clear CTA. » → « No CTA button block found in the entire page. A landing page should have at least one clear CTA (uagb/buttons or core/buttons). »
+
+Précise que le check est appliqué au niveau page, pas par section. Évite la confusion sur les sections de contenu pur (FAQ, testimonials) qui n'ont pas de CTA propre.
+
+## [0.8.2-beta] — 2026-05-02 (soir)
+
+### Re-test cours-ndrc.fr : 4 BLOCKERS + 6 MAJEURS + 7 MINEURS + 3 comportements corrigés
+
+#### Corrigé — 4 BLOCKERS
+
+- **`patterns/testimonials-grid.md`** : `[Spectra render testimonial cards]` était un placeholder textuel littéral dans le HTML rendu, qui divergeait du HTML réel produit par `uagb/testimonial` à l'ouverture → warning « invalid content » garanti. Pattern réécrit avec composition `uagb/container` + 3× `uagb/info-box` (qui rend de façon prévisible et a déjà été corrigé en v0.8.1). Décision pragmatique documentée dans le pattern.
+- **`patterns/team-grid.md`** : MÊME bug que testimonials-grid (`[Spectra render team cards]`). Détecté par self-audit grep. Réécrit avec composition `uagb/info-box` + sub-heading pour le rôle.
+- **`patterns/pricing-3-tiers.md`** : `<span class="uagb-icon-list-source"><svg></svg></span>` divergeait du SVG check réel généré par Spectra → warning. Retiré, le HTML rendu reste minimal (juste `<span class="uagb-icon-list-label">`), Spectra injecte le SVG au mount.
+- **`patterns/pricing-3-tiers.md`** : block_id `t1-feat`, `t2-feat`, `t3-feat` non-uniques pour features multiples. Renommés en `t1-feat-1`, `t1-feat-2`, ... Ajout note explicite « pour ajouter plus de features, suffixer en `-N` ».
+- **`patterns/pricing-3-tiers.md`** : `boxShadowColor: "rgba(255,140,0,0.18)"` (orange WPF hardcodé) sur tier 2 → remplacé par `rgba(0,0,0,0.16)` neutre qui marche sur n'importe quelle palette.
+- **`templates/page-formation.md`** : 6 occurrences de `<svg></svg>` vides + box-shadow orange hardcodé + `headingTag:"div"` sur le prix + couleur texte CTA `--ast-global-color-4` (illisible) — détectés par self-audit, tous corrigés.
+
+#### Corrigé — Comportement critique O2
+
+- **`scripts/post-page-via-rest.php`** : message d'erreur 401 enrichi avec diagnostic 4-points (header `Authorization` strippé par Apache mutu, app password invalide, username incorrect, plugin sécurité). Test guide `curl /wp-json/wp/v2/users/me`. Couvre o2switch, OVH mutu, 1&1, Hostinger.
+- **`INSTALL.md`** : note critique sur `.htaccess` `RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]` pour les hébergements mutualisés Apache.
+
+#### Corrigé — 6 MAJEURS
+
+- **`scripts/auto-fix-markup.php`** : algorithme nearest-color amélioré avec biais sémantique. Avant : `#0a0a0a` mappé sur `--ast-global-color-7` (faux). Après : noirs très foncés (luminance < 0.15) prioritisent `--ast-global-color-2` ou `--ast-global-color-3` (slots conventionnels heading/text). Blancs très clairs prioritisent `--ast-global-color-5`. Distance euclidienne pondérée `redmean` (approximation perceptuelle Lab) en fallback.
+- **`scripts/astra-customizer.php`** : `currentPalette` lu depuis `astra-color-palettes` (option qui pilote l'UI Customizer), pas depuis `astra-settings.global-color-palette` qui ne contient pas ce champ. Bug rendait l'export inutile sur palettes nommées (palette_3 etc.).
+- **`scripts/astra-customizer.php`** : ajout `wpf_skill_count_leaves()` récursif qui compte toutes les leaves (valeurs scalaires) d'un array imbriqué. Le `count()` top-level sous-évaluait massivement (216 sur prod vs 1942 promis dans la doc). Output `_meta.top_level_keys` + `_meta.total_leaves`. Doc alignée : « 200+ top-level keys, des centaines à milliers de leaves selon la config ». Plus de promesse fausse de 1942.
+- **`templates/landing-saas.md` + `page-agence.md` + `page-formation.md`** : reclassés comme « blueprints d'assemblage » avec note explicite. Le markup statique de 1500+ lignes par template aurait dérivé en 2 mois. Le workflow `deploy-template.md` assemble les patterns dynamiquement. Création de `templates/README.md` qui explique l'architecture.
+- **`scripts/visual-audit.php`** : honnêteté alignée — 8 checks réellement implémentés au lieu des 12 promis. Doc workflow mise à jour. Les checks visuels avancés (contraste WCAG, font-size, spacing rhythm, accessibility) délégués à `/impeccable` (qui pilote un vrai navigateur). Regex couleur étendu à hex/rgb/rgba/hsl/hsla. Faux positif containers internes corrigé : check responsive padding seulement sur containers racine (depth 0).
+- **`workflows/deploy-template.md`** : variable `{{ASTRA_TEMPLATE}}` était utilisée sans être définie. Ajout d'une table de mapping explicite par template. Note FSE : champ `template` ignoré sur block themes, omis automatiquement.
+
+#### Corrigé — 7 MINEURS + 3 comportements
+
+- **m1** (visual-audit faux positif containers internes) : intégré au fix M5 ci-dessus.
+- **m2** (`headingTag:"div"` problématique) : remplacé par `h3`/`h4`/`h6` sémantiquement corrects dans `pricing-3-tiers.md` et `templates/page-formation.md`. `headingTag:"div"` conservé sur `uagb/table-of-contents` (intentionnel : ne pas créer un heading SEO concurrent du H2 de section).
+- **m3** (block_ids générés en hex anonyme) : `auto-fix-markup.php` génère désormais des block_ids parlants `<short-block-name>-<hash6>` (ex `info-box-c293b1` au lieu de `c293b1ce`). Plus facile à debug dans Gutenberg.
+- **m4** (evals/run-evals.php non testé end-to-end) : `evals/README.md` documente la commande CLI WP-CLI + propose un workflow GitHub Actions (filtrage `--category=validation` pour CI sans LLM).
+- **m5** (cleanup pages TEST manuel) : nouveau script `scripts/cleanup-test-pages.php` avec sous-commandes `list` et `delete` (dry-run par défaut, `--confirm` pour exécuter). Pattern regex personnalisable.
+- **m6** (visual-audit ne détecte pas rgba) : intégré au fix M5 ci-dessus. La regex couvre maintenant hex 3 chars, hex 6 chars, rgb, rgba, hsl, hsla. Distinction P1 (couleur intentionnelle) vs P3 (rgba(0,0,0,X) shadow neutre acceptable).
+- **m7** (INSTALL commande slash ambiguë) : section refactorée avec « Option A » (invocation explicite `/astra-spectra` + paramètres) et « Option B » (langage naturel). Plus reproductible.
+- **O1** (icônes côté JS uniquement) : note explicative dans INSTALL.md troubleshooting. Workaround Playwright `waitForSelector('.uagb-ifb-icon-wrap svg')` pour CI.
+- **O2** : voir BLOCKER ci-dessus.
+- **O3** (`astra_clear_all_assets_cache()` conditionnelle) : note explicite dans `customizer-map.md` que la fonction n'existe que dans Astra ≥ 3.5 avec CSS Generator actif. `function_exists()` guard documenté.
+
+#### Self-audit final
+
+Grep `<svg></svg>|[Spectra render|rgba(255,140,0|color":"var(--ast-global-color-4)"` : 0 résultat dans le code productif (seulement dans la doc d'anti-patterns).
+Grep `headingTag":"div"` : 1 occurrence intentionnelle (TOC), 0 problématique.
+Tous les patterns avec fond primary (color-0) ont leur texte de bouton/CTA en color-5 (white body bg) garantissant la lisibilité sur toute palette standard.
+
+## [0.8.1-beta] — 2026-05-02 (PM)
+
+### Correctifs post-test cours-ndrc.fr (rapport 19 issues)
+
+#### Corrigé — 3 BLOCKERS
+
+- **`scripts/validate-block-markup.php`** : faux positif sur l'échappement `--`. `serialize_blocks()` encode systématiquement `--` en `--` dans les attrs JSON (var(--ast-global-color-X) déclenche ce reformatage). Ajout d'une normalisation Unicode des deux côtés AVANT comparaison. Le validator rejetait à tort 100 % des markups produits par les patterns du skill.
+- **`patterns/features-3-cols.md`** : HTML `<i class="{{F1_ICON}}">` (style FontAwesome) incompatible avec rendu Spectra qui utilise des SVG inline. Ajout `source_type:"icon"`, `iconimgPosition:"above-title"`, structure `uagb-ifb-content` qui correspond au rendu réel. Documentation des noms courts d'icônes Spectra (rocket, lightbulb, chart-pie...).
+- **`scripts/post-page-via-rest.php` (nouveau)** : POST automatique vers `/wp-json/wp/v2/pages` avec auth Basic Auth (Application Password), gestion erreurs 401/403/404, support Yoast meta, retour edit_url. Comble le gap workflow étape 6 qui ne fournissait qu'un exemple curl à recomposer manuellement.
+
+#### Corrigé — 6 MAJEURS
+
+- **`SKILL.md`** : section « Structure du skill » alignée avec l'état réel du repo. Suppression de 13 références à des fichiers inexistants (modules/spectra/blocks-catalog.md, modules/astra/settings-mapper.md, references/gutenberg-core-blocks.md, workflows/new-site-from-scratch.md, etc.). Ajout des fichiers présents non documentés (auto-fix-markup.php, astra-customizer.php, visual-audit.php, post-page-via-rest.php, lead-magnet/, evals/).
+- **`SKILL.md`** : promesses ajustées de « 8 templates / 15+ patterns » à « 3 templates v0.8 / 9 patterns v0.8 », avec liste explicite des items à venir en v1.0.
+- **`scripts/detect-environment.php`** : guard `php_sapi_name() !== 'cli' && !headers_sent()` autour du `header()` pour éviter le warning « Cannot modify header information » en mode WP-CLI.
+- **`scripts/detect-environment.php`** : initialisation `pro_active: false` et `palette_colors: []` dans le profil par défaut (avant ne se définissait que si Astra actif). Ajout détection des 9 couleurs RÉELLES depuis `astra-settings.global-color-palette.palette` (pilote frontend).
+- **`references/spectra-blocks-catalog.md`** : recompté à 48 blocs Gutenberg utilisables (`extensions` est un meta-bloc, pas dans le block inserter). Note d'explication ajoutée. SKILL.md description aligné « 48 blocs ».
+- **Documentation** : tous les scripts présents documentés dans la nouvelle section Structure de SKILL.md.
+
+#### Corrigé — 8 MINEURS
+
+- **`references/block-markup-syntax.md` règle 4** : reformulée pour distinguer ce qui est CRITIQUE (texte heading ≠ `headingTitle`, balise ≠ `headingTag`, `<i class="fa-...">` au lieu de SVG, `block_id` manquant) vs ce qui est COSMÉTIQUE (whitespace, ordre des classes, encodage `--` ↔ `--`). Pattern info-box corrigé en exemple.
+- **`references/block-markup-syntax.md` règle 5** : note explicite sur l'encodage des accents — UTF-8 OK dans HTML rendu, escapes Unicode recommandées dans attrs JSON pour éviter corruption charset PHP/MySQL.
+- **`references/intent-to-block-routing.md`** : remplacement du « score Spectra +10 / core +5 » (jamais implémenté) par une heuristique explicite à 4 règles que Claude Code applique en lisant la table.
+- **`workflows/new-page-from-brief.md`** : ajout étape 10 cleanup TEST/POC/DEMO/[skill] pages (proposer suppression à l'utilisateur après validation pour éviter accumulation de brouillons).
+- **`INSTALL.md` étape 3** : reformulation pour préciser qu'il faut **invoquer le skill explicitement** (pas un prompt langage naturel ambigu) et expliquer comment le script `detect-environment.php` est exécuté (WP-CLI / mu-plugin / hébergeur).
+- **`scripts/auto-fix-markup.php`** : `wpf_skill_nearest_token()` lit dynamiquement la palette ACTIVE depuis `get_option('astra-settings')` au lieu d'une palette hex codée en dur. Calcul nearest-color via distance euclidienne sur les 9 couleurs réelles → mapping correct sur n'importe quel `currentPalette`.
+- **`evals/evals.json`** : assertions techniques renforcées (`must_validate_roundtrip`, `gutenberg_zero_warnings`, `frontend_min_bytes`, `rest_api_status`) sur build-01-page-formation. Modèle à dupliquer sur les autres évals build.
+
+#### Issues notées pour v1.0
+
+- Mineur 17 : pattern Astra-Pro-only (header transparent overlay) non implémenté → reporté v1.0
+- Mineur 16 (partie 2) : adaptation des patterns à `palette_colors` détectée non implémentée côté patterns → reporté v1.0 (les patterns continuent d'utiliser les slots `--ast-global-color-X` ce qui marche déjà sur toutes les palettes par construction Astra)
+
+## [0.8.0-beta] — 2026-05-02
+
+### Itérations 4 à 8 — Préparation v1.0
+
+#### Ajouté
+
+##### Itération 4 — Validation visuelle automatique
+
+- `workflows/visual-validation-loop.md` : workflow avec retries intelligents max 3 tentatives, couplage `/impeccable` + `/screenshot-loop` ou checks intégrés (12 critères P0/P1/P2/P3)
+- `scripts/visual-audit.php` : 12 checks intégrés (hiérarchie titres, contraste, hex hardcodé, block_id, padding, alt images, container width, responsive, etc.)
+- `scripts/auto-fix-markup.php` : corrections automatiques (block_id régénérés UUID v4, hex → tokens Astra, H1 dupliqués dégradés en H2)
+
+##### Itération 5 — Module Astra Customizer complet
+
+- `modules/astra/customizer-map.md` : cartographie exhaustive `astra-settings` (palette, typo, layout, header builder, footer builder, sidebar, blog, perf, custom CSS) avec workflows palette + header
+- `scripts/astra-customizer.php` : pilote complet avec commandes `export` (snapshot config) et `apply` (patch JSON sécurisé qui préserve les 1942 keys)
+
+##### Itération 6 — Evals + benchmarks
+
+- `evals/evals.json` : 10 évals canoniques (build × 5, refonte × 1, template × 1, validation × 2, astra × 1) avec assertions précises (block_count, css_var_count, hex_hardcoded_count, etc.)
+- `evals/run-evals.php` : runner CLI avec filtrage `--category` et `--id`
+- `evals/fixtures/malformed-markup.html` : fixture markup volontairement cassé (H1 multiple, block_id dupliqué, hex hardcodé)
+- `evals/fixtures/astra-palette-orange.json` : fixture patch palette orange WPF
+- `evals/README.md` : doc évals + types d'assertions supportés
+
+##### Itération 7 — PDF premium (lead magnet)
+
+- `lead-magnet/pdf-source.md` : source markdown 32-44 pages (27 chapitres, 30 recettes, 12 effets WOW, 8 templates, 15 prompts, 10 anti-patterns, 10 troubleshooting, FAQ)
+- `lead-magnet/README.md` : workflow de production Pandoc/Typst + spécifications PDF + métriques cibles distribution
+
+##### Itération 8 — Distribution lead magnet
+
+Itération réservée à la distribution côté WPFormation (page de capture + email transactionnel + suivi GA4). Tout le code de l'intégration côté front est maintenu hors de ce repo public pour ne pas exposer de détails d'infrastructure.
+
+#### Modifié
+
+- `scripts/validate-block-markup.php` : distingue désormais diff cosmétique whitespace (warning) vs vraie erreur (error)
+
+#### Métriques skill v0.8.0-beta
+
+- 30 → 45 fichiers
+- 4 332 → ~7 200 lignes
+- 4 → 7 scripts PHP
+- 4 → 5 références
+- 2 → 3 modules (ajout `astra/customizer-map.md`)
+- 0 → 10 évals
+- 0 → 32 pages markdown PDF source
+- 0 → 3 fichiers Vercel-ready
+
+## [0.5.0-alpha] — 2026-05-02
+
+### Squelette + bases du skill
+
+#### Ajouté
+
+- **SKILL.md** : routing principal, 3 killer features, détection environnement, règles strictes
+- **README.md** : pitch communauté, install rapide, badges
+- **INSTALL.md** : installation pas-à-pas en 5 étapes (5 minutes)
+- **LICENSE** : MIT
+
+#### Scripts (4)
+
+- `detect-environment.php` : détection auto Spectra + Astra + thème + WP version + permalinks → verdict GO/DEGRADED/BLOCKED
+- `apply-design-tokens.php` : application palette via Astra ou fallback CSS, support 11 presets Astra natifs + palette custom 9 hex
+- `validate-block-markup.php` : roundtrip parse_blocks → serialize_blocks, détection block_id dupliqués + hex hardcoded
+- `snapshot-page.php` : dump JSON d'une page existante (pour workflow refonte)
+
+#### References (4)
+
+- `intent-to-block-routing.md` : table de décision intent → bloc (45 entrées, règles de priorisation, anti-patterns)
+- `spectra-blocks-catalog.md` : 49 blocs uagb/* documentés avec attrs critiques
+- `block-markup-syntax.md` : syntaxe Gutenberg comments + 8 règles strictes + pièges courants
+- `design-system-tokens.md` : mapping Astra global colors ↔ blocs Spectra, palettes pré-construites
+
+#### Modules (1)
+
+- `modules/spectra/container-wow-recipes.md` : **12 recettes WOW** avec uagb/container (hero parallax, glassmorphism, gradient mesh, dividers diagonaux, background video, sticky sidebar, etc.) + 4 combos puissants
+
+#### Patterns (8)
+
+- `hero-cta-split.md` : Hero pleine page split 50/50 avec 2 CTAs
+- `features-3-cols.md` : Section 3 features en cards hoverables
+- `pricing-3-tiers.md` : Pricing 3 tiers avec tier central mis en avant + badge populaire
+- `faq-accordion.md` : FAQ accordéon avec schema FAQPage auto
+- `cta-banner-fullwidth.md` : CTA banner full-width avec gradient + 2 CTAs
+- `testimonials-grid.md` : Grille 3 témoignages avec photos + ratings
+- `team-grid.md` : Grille équipe avec photos + bios + liens sociaux
+- `stats-counters.md` : Bandeau 4 stats animées au scroll
+- `article-content-rich.md` : Article éditorial mix core+Spectra avec TOC + FAQ + inline-notice
+
+#### Templates (3)
+
+- `page-formation.md` : Page de vente formation en ligne (9 sections)
+- `landing-saas.md` : Landing page SaaS B2B (9 sections)
+- `page-agence.md` : Site vitrine agence digitale (10 sections)
+
+#### Workflows (3 killer features)
+
+- `new-page-from-brief.md` : génération depuis brief en langage naturel — 8 étapes (détection → parsing → patterns → markup → validation → POST → récap → optionnel screenshot/audit)
+- `refonte-page-existante.md` : refonte intelligente d'une page existante — 8 étapes (détection → snapshot → analyse → mapping → reconstruction → POST clone → diff → migration optionnelle)
+- `deploy-template.md` : déploiement de template clic-bouton — 7 étapes (détection → sélection template → adaptation contenu → palette → validation → POST → récap)
+
+#### POC (préalable, 02/05/2026)
+
+POC validé sur WordPress Playground en ~1h, 3/3 tests passés :
+
+- Test A : Pilotage Astra via `astra-settings.global-color-palette.palette` → 9 variables CSS régénérées
+- Test B : POST page hybride core+Spectra (15 blocs) → 0 erreur Gutenberg, roundtrip parfait
+- Test C : Cohérence design system → 199 occurrences `var(--ast-global-color-X)`, 0 hex hardcoded
+
+Verdict : **GO sans réserve**.
+
+### Découvertes structurelles importantes
+
+- **Astra MCP officiel non requis** : pilotage via REST API + update_option suffit
+- **astra-settings est massive** : 1942 keys, 242 KB. Pattern read → modify → write obligatoire
+- **block_id unique obligatoire** sur tous les blocs Spectra
+- **Cache Astra à invalider** après update : `astra_clear_all_assets_cache` + `delete_transient('astra_dynamic_css')` + `wp_cache_flush()`
+- **uagb/container = bloc fondation** pour tous les effets WOW (préférer à core/group, core/columns, core/cover)
