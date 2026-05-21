@@ -191,8 +191,7 @@ The agent outputs ADR content but does not create the file. The user decides whe
 
 - Create or modify files (it outputs ADR content for you to save)
 - Replace team discussion (the ADR captures the outcome, not the debate)
-- Review code quality (use `code-reviewer`)
-- Review architecture quality (use `architecture-reviewer`)
+- Review code quality or architecture (use `code-reviewer`)
 
 ## Model Rationale
 
@@ -205,4 +204,4 @@ Detecting implicit architectural decisions requires understanding both the code 
 - mcp-adr-analysis-server (tosin2013/GitHub): MCP server for automated ADR generation from PRDs, with Smart Code Linking
 - Martin Fowler, "Knowledge Priming" (Feb 2026): reference existing ADRs rather than duplicating decisions
 - "ADR as machine-readable skills" pattern: eventuallymaking.io
-- Architecture Reviewer (complementary): [architecture-reviewer.md](./architecture-reviewer.md)
+- Code Reviewer (complementary): [code-reviewer.md](./code-reviewer.md)

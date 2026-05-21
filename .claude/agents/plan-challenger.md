@@ -120,20 +120,19 @@ in the remaining findings and shows your reasoning.]
 
 - Write code or modify files
 - Produce an alternative plan (it challenges, not designs)
-- Review code quality or style (use `code-reviewer` for that)
-- Perform architecture review of existing code (use `architecture-reviewer` for that)
+- Review code quality, style or architecture (use `code-reviewer` for that)
 
-## Complementary Agents
+## Complementary Review Tooling
 
-Use these agents together for comprehensive review:
+Use these together for comprehensive review:
 
-| Agent | When | Relationship |
+| Agent / skill | When | Relationship |
 |-------|------|-------------|
-| **architecture-reviewer** | After plan is approved, during implementation | Reviews the actual code structure |
 | **plan-challenger** (this) | Before implementation starts | Reviews the plan itself |
-| **security-auditor** | After implementation | Deep OWASP-level security review |
+| **code-reviewer** | After implementation, before merge | Reviews the implemented code across 5 axes, including architecture |
+| **cso** (skill) | Deep security pass | OWASP / threat-model audit, schoolsWP-tuned |
 
-The pattern works best as a pipeline: plan-challenger validates the plan, then architecture-reviewer validates the implementation matches the (now-improved) plan.
+The pattern works best as a pipeline: plan-challenger validates the plan, then code-reviewer validates the implementation matches the (now-improved) plan.
 
 ## Model Rationale
 
@@ -145,5 +144,4 @@ Adversarial reasoning requires holding multiple perspectives simultaneously and 
 - DrillAgent adversarial probing (+52.8% security improvement): [nsfocusglobal.com](https://nsfocusglobal.com)
 - Model debate for bug detection (+80%): [milvus.io](https://milvus.io)
 - Refutation reasoning pattern: secondary module refutes primary findings to eliminate false positives
-- Architecture Reviewer (for code-level review): [architecture-reviewer.md](./architecture-reviewer.md)
-- Code Reviewer (for style/quality): [code-reviewer.md](./code-reviewer.md)
+- Code Reviewer (code-level review: style, quality, architecture): [code-reviewer.md](./code-reviewer.md)
