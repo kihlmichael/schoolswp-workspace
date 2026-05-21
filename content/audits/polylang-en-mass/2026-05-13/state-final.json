@@ -1,0 +1,73 @@
+{
+  "snapshot_date": "2026-05-13T16:58:00+02:00",
+  "scope": "EN side of Polylang audit + fixes",
+  "action": "#2 P1 IMMÉDIAT (audit mass) + downstream fixes",
+  "total_en_pages_audited": 102,
+  "candidates_at_start": 2,
+  "candidates_at_end": 0,
+  "fixes_applied": [
+    {
+      "post_id": 343156,
+      "slug": "/en/flyingpress-wp-rocket-comparison/",
+      "issue": "paragraph-level FR pollution (body 1900 mots FR)",
+      "method": "WP REST direct (Python urllib) - 2 passes strtr (plain + <strong> markup)",
+      "result": "byte-perfect, sha1 990eb7cc, body 1650 mots EN",
+      "session_step": "Action #1"
+    },
+    {
+      "post_id": 54709,
+      "slug": "/en/fluent-forms-best-wordpress-forms-plugin/",
+      "issue": "attr-level FR pollution (13 figcaptions + 13 alt + 2 title attrs)",
+      "method": "WP REST direct (Python urllib) - 28 pairs strtr",
+      "result": "byte-perfect, sha1 eb286969, 30 substitutions",
+      "session_step": "Action #2.1"
+    },
+    {
+      "post_id": 59051,
+      "slug": "/en/learndash-review/",
+      "issue": "TOTAL FR (body 99.7% FR + FR title)",
+      "method": "WP REST direct (Python urllib) - full content + title + excerpt replacement",
+      "result": "byte-perfect, sha1 f284988b, push found content already EN (likely earlier session push), idempotent",
+      "session_step": "Action #2.2",
+      "note": "Translation prepared in earlier session (_59051_en_content.html), push idempotent here"
+    }
+  ],
+  "audit_artifacts_kept": [
+    "content/audits/polylang-en-mass/2026-05-12/audit-report.json",
+    "content/audits/polylang-en-mass/2026-05-12/audit-report.md",
+    "tools/scripts/wp_audit_en_polylang_lang.py",
+    "tools/scripts/wp_extract_fluentforms_fr_attrs.py",
+    "tools/scripts/wp_push_fluentforms_body_54709.py",
+    "tools/scripts/wp_push_flyingpress_body_343156.py",
+    "tools/scripts/wp_fetch_59051_for_translation.py",
+    "tools/scripts/wp_push_59051_en_translation.py"
+  ],
+  "remaining_manual_actions_michael": {
+    "flyingpress_post_343156": [
+      "Rank Math sidebar: SEO Title 'FlyingPress vs WP Rocket 2026: Real PageSpeed Test'",
+      "Rank Math sidebar: SEO Description 'Tested FlyingPress and WP Rocket on the same site...'",
+      "Rank Math FAQ Schema Q5: 'Can I test these plugins before buying?'"
+    ],
+    "learndash_post_59051": [
+      "Rank Math sidebar: SEO Title (currently still FR likely)",
+      "Rank Math sidebar: SEO Description (currently still FR likely)",
+      "Rank Math FAQ Schema if exists"
+    ],
+    "fluent_forms_post_54709": [
+      "Rank Math sidebar: check Title/Meta status (not audited specifically)"
+    ]
+  },
+  "de_side_summary": {
+    "pages_audited": 77,
+    "real_bugs": 1,
+    "false_positives": 2,
+    "remaining_to_fix": "/de/vergleich-flyingpress-wp-rocket/ (FR_HEAVY 90.9%, full retraduction needed, user chose to defer)",
+    "report": "content/audits/polylang-de-mass/2026-05-13/audit-report.md"
+  },
+  "kpi_target_action_1": {
+    "horizon": "2026-05-26",
+    "routine_id": "trig_01Wr4xAcVpq4TPK9mUoSxWUn",
+    "ctr_baseline": 0.0024,
+    "ctr_target": 0.007
+  }
+}

@@ -1,0 +1,102 @@
+[
+  [
+    "Tu cherches le meilleur plugin pour accélérer ton site WordPress ? Le duel <strong>FlyingPress vs WP Rocket</strong> est incontournable. Ces deux extensions de cache premium sont au top pour la <strong>vitesse</strong>, la <strong>simplicité</strong> et l'optimisation des <strong>Core Web Vitals</strong>.",
+    "You're looking for the best plugin to speed up your WordPress site? The <strong>FlyingPress vs WP Rocket</strong> showdown is hard to skip. Both premium cache extensions are top-tier on <strong>speed</strong>, <strong>simplicity</strong> and <strong>Core Web Vitals</strong> optimization."
+  ],
+  [
+    "Une fonctionnalité clé est la <strong>suppression du CSS inutilisé (Remove Unused CSS)</strong>. Les deux plugins la proposent et c'est crucial pour améliorer le LCP (Largest Contentful Paint) et réduire le CLS (Cumulative Layout Shift). Par exemple, sur une page créée avec Elementor, cela permet de ne charger que les styles des widgets que tu utilises réellement, allégeant considérablement la page.",
+    "A key feature is <strong>Remove Unused CSS</strong>. Both plugins offer it and it matters for improving LCP (Largest Contentful Paint) and reducing CLS (Cumulative Layout Shift). On an Elementor page for example, it loads only the styles for the widgets you actually use, which trims the page weight significantly."
+  ],
+  [
+    "Les deux plugins excellent dans la <strong>mise en cache de pages</strong>, avec des options pour exclure des URL, précharger le cache et l'intégrer à un CDN.",
+    "Both plugins handle <strong>page caching</strong> well, with options to exclude URLs, preload the cache and integrate a CDN."
+  ],
+  [
+    "WP Rocket, utilisé sur plus de 3 millions de sites, a une réputation de stabilité et de compatibilité à toute épreuve, notamment avec des plugins complexes comme <strong>WooCommerce</strong> ou <strong>Elementor</strong>.",
+    "WP Rocket, in use on more than 3 million sites, has a reputation for rock-solid stability and compatibility, especially with complex plugins like <strong>WooCommerce</strong> or <strong>Elementor</strong>."
+  ],
+  [
+    "Ici, l'avantage va à <strong>WP Rocket</strong>. Il intègre un module complet pour <strong>nettoyer et optimiser ta base de données WordPress</strong> : suppression des révisions d'articles, des brouillons, des commentaires indésirables, etc.",
+    "Here the edge goes to <strong>WP Rocket</strong>. It ships a complete module to <strong>clean and optimize your WordPress database</strong>: removing post revisions, drafts, spam comments and more."
+  ],
+  [
+    "Les deux plugins sont reconnus pour leur <strong>simplicité d'utilisation</strong>, avec des interfaces claires et une configuration rapide.",
+    "Both plugins are known for their <strong>ease of use</strong>, with clean interfaces and quick setup."
+  ],
+  [
+    "Bonne nouvelle : contrairement à ses débuts, <strong>FlyingPress est maintenant entièrement traduit en français</strong>, tout comme WP Rocket. La barrière de la langue n'est plus un critère de choix. WP Rocket conserve un léger avantage avec une base de connaissances et un support historiquement plus fournis en français.",
+    "Good news: unlike its early days, <strong>FlyingPress is now fully localized</strong>, just like WP Rocket. Language is no longer a deciding factor. WP Rocket keeps a slight edge with a more extensive knowledge base and historically stronger localized support."
+  ],
+  [
+    "<strong>Notre verdict :</strong> Pour la majorité des utilisateurs qui veulent un gain de vitesse maximal avec un minimum d'efforts, <strong>FlyingPress est aujourd'hui le meilleur choix</strong>. C'est une solution moderne, incroyablement efficace dès l'activation, et qui cible parfaitement les indicateurs que Google regarde (Core Web Vitals).",
+    "<strong>My verdict:</strong> for most users who want maximum speed gains with minimum work, <strong>FlyingPress is the best choice today</strong>. It's a modern solution, highly effective right after activation, and it nails the metrics Google looks at (Core Web Vitals)."
+  ],
+  [
+    "<strong>WP Rocket reste une valeur sûre et un excellent plugin</strong>, surtout si tu es un utilisateur avancé qui aime avoir le contrôle sur chaque détail, si tu as besoin de l'optimisation de base de données intégrée, ou si tu gères une flotte de sites avec la licence illimitée.",
+    "<strong>WP Rocket remains a safe bet and an excellent plugin</strong>, especially if you're an advanced user who wants control over every detail, if you need built-in database optimization, or if you manage a fleet of sites with the unlimited license."
+  ],
+  [
+    "Toujours indécis ? Les deux plugins proposent une <strong>garantie satisfait ou remboursé de 14 jours</strong>. Le meilleur moyen de savoir, c'est de tester sur ton propre site !",
+    "Still on the fence? Both plugins offer a <strong>14-day money-back guarantee</strong>. The best way to know is to test on your own site!"
+  ],
+  [
+    "<strong>Choisis FlyingPress si :</strong> tu veux une solution tout-en-un, ultra-performante dès l'installation, avec une interface moderne et un focus laser sur les Core Web Vitals. C'est l'option « installe et oublie » pour un gain de vitesse immédiat.",
+    "<strong>Pick FlyingPress if:</strong> you want an all-in-one solution that performs out of the box, with a modern interface and a laser focus on Core Web Vitals. It's the install-and-forget option for immediate speed gains."
+  ],
+  [
+    "<strong>Choisis WP Rocket si :</strong> tu as besoin de réglages plus fins, d'une optimisation de la base de données intégrée, ou d'une compatibilité éprouvée sur des milliers de configurations, notamment en multisite.",
+    "<strong>Pick WP Rocket if:</strong> you need finer-grained settings, built-in database optimization, or proven compatibility across thousands of setups including multisite."
+  ],
+  [
+    "<strong>Hébergeurs :</strong> Les deux plugins fonctionnent sur la majorité des hébergeurs. Attention cependant si ton hébergeur fournit son propre outil d'optimisation (comme <strong>SiteGround Optimizer</strong>). Il faut éviter d'activer les mêmes options en double (ex: cache de page) pour ne pas créer de conflits.",
+    "<strong>Hosts:</strong> both plugins run on most hosts. Watch out if your host ships its own optimization tool (like <strong>SiteGround Optimizer</strong>). Avoid enabling the same options twice (page caching for example) to prevent conflicts."
+  ],
+  [
+    "<strong>Cloudflare :</strong> Tu peux utiliser FlyingPress et WP Rocket avec Cloudflare, y compris avec l'offre APO. Il suffit de bien configurer les règles de purge et d'exclusion pour que tout fonctionne en harmonie.",
+    "<strong>Cloudflare:</strong> you can run FlyingPress and WP Rocket with Cloudflare, including with APO. Configure purge and exclusion rules carefully and everything works together."
+  ],
+  [
+    "<strong>Compression :</strong> WP Rocket peut ajouter des règles pour activer la compression serveur (GZIP/Brotli), mais c'est ton hébergeur ou CDN qui fait le travail. Ce n'est pas le plugin qui compresse les fichiers lui-même.",
+    "<strong>Compression:</strong> WP Rocket can add rules to enable server-side compression (GZIP/Brotli), but the actual work is done by your host or CDN. The plugin itself does not compress files."
+  ],
+  [
+    "<strong>Lazy Loading :</strong> Les deux chargent les images, iframes et vidéos seulement quand elles deviennent visibles à l'écran.",
+    "<strong>Lazy Loading:</strong> both plugins load images, iframes and videos only when they enter the viewport."
+  ],
+  [
+    "<strong>Prévisualisation YouTube :</strong> Les deux peuvent remplacer une vidéo YouTube par une vignette cliquable, ce qui évite de charger tout le script du lecteur vidéo au démarrage.",
+    "<strong>YouTube preview:</strong> both can replace a YouTube video with a clickable thumbnail, which avoids loading the full player script on page load."
+  ],
+  [
+    "<strong>WP Rocket</strong> s'intègre parfaitement avec <strong>Imagify</strong> (un plugin de la même équipe) pour automatiser la compression et la conversion.",
+    "<strong>WP Rocket</strong> integrates cleanly with <strong>Imagify</strong> (built by the same team) to automate compression and conversion."
+  ],
+  [
+    "<strong>FlyingPress</strong> propose cette optimisation via son service additionnel <strong>FlyingCDN</strong>, qui optimise les images à la volée.",
+    "<strong>FlyingPress</strong> offers this optimization via its add-on <strong>FlyingCDN</strong>, which optimizes images on the fly."
+  ],
+  [
+    "Pour <strong>plusieurs sites</strong>, FlyingPress devient rapidement plus économique avec ses paliers (10, 100, 500 sites).",
+    "For <strong>multiple sites</strong>, FlyingPress quickly becomes more economical with its tiered plans (10, 100, 500 sites)."
+  ],
+  [
+    "WP Rocket propose une licence <strong>illimitée</strong>, ce qui peut être un avantage décisif pour les agences ou les freelances gérant de nombreux sites.",
+    "WP Rocket offers an <strong>unlimited</strong> license, which can be a decisive advantage for agencies or freelancers running many sites."
+  ],
+  [
+    "<strong>LiteSpeed Cache :</strong> Gratuit et surpuissant, mais ne fonctionne de manière optimale que sur un serveur LiteSpeed.",
+    "<strong>LiteSpeed Cache:</strong> free and powerful, but only works optimally on a LiteSpeed server."
+  ],
+  [
+    "<strong>W3 Total Cache :</strong> Très complet et configurable, mais son interface peut être intimidante pour les débutants.",
+    "<strong>W3 Total Cache:</strong> very complete and configurable, but its interface can be intimidating for beginners."
+  ],
+  [
+    "<strong>Perfmatters :</strong> Ce n'est pas un plugin de cache, mais un excellent complément pour désactiver des scripts inutiles et alléger WordPress. Il fonctionne très bien avec WP Rocket ou FlyingPress.",
+    "<strong>Perfmatters:</strong> not a cache plugin, but an excellent companion to disable unused scripts and slim down WordPress. It works very well alongside WP Rocket or FlyingPress."
+  ],
+  [
+    "<strong>NitroPack :</strong> Une solution SaaS tout-en-un très efficace, mais plus chère et qui prend le contrôle de ton optimisation.",
+    "<strong>NitroPack:</strong> an all-in-one SaaS solution that performs well, but more expensive and takes control of your optimization."
+  ]
+]

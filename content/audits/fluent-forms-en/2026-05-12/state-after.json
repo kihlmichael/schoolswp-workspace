@@ -1,0 +1,52 @@
+{
+  "snapshot_date": "2026-05-13T10:01:33+02:00",
+  "snapshot_type": "after_attrs_caption_translation_push",
+  "source": "WP REST API direct (urllib Python) + audit re-run verification",
+  "url": "https://schoolswp.com/en/fluent-forms-best-wordpress-forms-plugin/",
+  "post_id": 54709,
+  "lang": "en",
+  "issue_before": "26.3% FR pollution in body via figcaptions + alt= + title= attributes (NOT paragraph-level like FlyingPress)",
+  "bug_class": "Polylang attr-level partial bug - distinct from paragraph-level pattern of FlyingPress",
+  "push_summary": {
+    "method": "WP REST POST /wp/v2/posts/54709 (Python urllib Basic Auth)",
+    "strategy": "strtr replacements on 28 unique keys (13 figcaptions including 1 duplicate, 13 alt attrs, 2 title attrs)",
+    "matched_keys": 28,
+    "total_substitutions": 30,
+    "content_length_before": 26684,
+    "content_length_after": 26043,
+    "content_sha1_before": "e2b16b6a38b4ed548342be28d97450e1afff5a1f",
+    "content_sha1_after": "eb286969b6fd03681d186366ac6af4ca6258e00c",
+    "wp_post_modified_time": "2026-05-13T10:01:33+02:00",
+    "byte_perfect": true
+  },
+  "verification": {
+    "method": "wp_audit_en_polylang_lang.py re-run",
+    "candidates_after": 1,
+    "candidates_before": 2,
+    "fluent_forms_still_flagged": false,
+    "remaining_candidate": "/en/learndash-review/ (post 59051, FR_HEAVY 99.7%, not addressed this session)"
+  },
+  "translations_categories": {
+    "figcaptions_em_inside_figcaption": 13,
+    "alt_attributes_on_img": 13,
+    "title_attributes_on_a": 2
+  },
+  "branding_compliance": {
+    "em_dash_count": 0,
+    "en_dash_removed_from_title_attr": "'FluentCRM – le meilleur choix' -> 'FluentCRM: the best choice' (en-dash U+2013 violation removed)",
+    "schoolswp_brand_form": "preserved correctly in alt attrs"
+  },
+  "scripts_artifacts": [
+    "tools/scripts/wp_extract_fluentforms_fr_attrs.py (extracts figcaptions + alt + title)",
+    "tools/scripts/wp_push_fluentforms_body_54709.py (push pattern reusable)",
+    "tools/scripts/wp_audit_en_polylang_lang.py (mass audit, reusable for /de/)",
+    "content/audits/fluent-forms-en/2026-05-12/payload-pairs.json (28 pairs)",
+    "content/audits/fluent-forms-en/2026-05-12/fr-attrs-and-captions.json (extracted units)"
+  ],
+  "lessons_learned": [
+    "Polylang attr-level bugs exist alongside paragraph-level bugs. The first audit script (block-level FR heuristic) missed these because they're concentrated in attributes/figcaptions, not in <p>/<li> body text.",
+    "Need to scan <figcaption>, alt=, title= separately for FR pollution.",
+    "An en-dash U+2013 was hiding in a title attribute - BRAND_RULES violation removed in passing.",
+    "Pattern reusable for /de/ audit if Polylang has German equivalent bugs."
+  ]
+}

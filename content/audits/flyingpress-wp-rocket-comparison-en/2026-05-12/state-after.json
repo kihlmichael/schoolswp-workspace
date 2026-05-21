@@ -1,0 +1,85 @@
+{
+  "snapshot_date": "2026-05-12T23:03:04+02:00",
+  "snapshot_type": "after_body_push",
+  "source": "novamira MCP execute-php + DataForSEO on_page_instant_pages verification",
+  "url": "https://schoolswp.com/en/flyingpress-wp-rocket-comparison/",
+  "post_id": 343156,
+  "lang": "en",
+  "alignment_score_estimated": 65,
+  "alignment_score_before": 25,
+  "alignment_improvement": "+40 points (sur scope post_content uniquement)",
+  "push_summary": {
+    "method": "novamira/execute-php → wp_update_post",
+    "strategy": "strtr replacements on post_content + str_replace on post_title",
+    "total_changes_in_content": 30,
+    "rationale": "15 chaînes × 2 occurrences chacune (TOC Rank Math + body) = 30 substitutions",
+    "h1_fix": true,
+    "content_length_before": 16762,
+    "content_length_after": 16520,
+    "content_sha1_before": "48735f24404a1d69c9ccc623cd489fa117bf545a",
+    "content_sha1_after": "af9be38bb86eeac3180b672dc36cd85da0b415e8",
+    "wp_post_modified_time": "2026-05-12T23:02:38+02:00"
+  },
+  "verification_dataforseo_live": {
+    "fetch_time": "2026-05-12 21:03:04 +00:00",
+    "h1": "FlyingPress vs WP Rocket: Best WordPress Speed Plugin",
+    "h1_en_dash_fixed": true,
+    "h2_all_en": [
+      "Feature comparison: FlyingPress vs WP Rocket",
+      "Pricing: Which one offers better value?",
+      "Pros and Cons: Head to Head",
+      "What are the alternatives?",
+      "FAQ: FlyingPress vs WP Rocket",
+      "Verdict: FlyingPress or WP Rocket?"
+    ],
+    "h3_in_content_all_en": [
+      "Loading optimization and Core Web Vitals",
+      "Advanced caching and compatibility",
+      "Image optimization",
+      "Database and scripts",
+      "Interface and setup",
+      "✅ FlyingPress strengths",
+      "❌ FlyingPress weaknesses",
+      "✅ WP Rocket strengths",
+      "❌ WP Rocket weaknesses"
+    ]
+  },
+  "remaining_manual_actions_for_michael": {
+    "rank_math_seo_title": {
+      "current_fr": "FlyingPress vs WP Rocket (2026) : Lequel Choisir pour WordPress ?",
+      "recommended_v1_en": "FlyingPress vs WP Rocket 2026: Real PageSpeed Test",
+      "where": "WordPress edit /en/flyingpress-wp-rocket-comparison/ → Sidebar Rank Math → SEO Title",
+      "rule": "feedback_rank_math_via_plugin_only.md - règle dure, jamais push REST/SQL"
+    },
+    "rank_math_seo_description": {
+      "current_fr": "🚀 FlyingPress ou WP Rocket ? Comparatif 2026 : vitesse, Core Web Vitals, RUCSS, prix. Trouve le meilleur plugin de cache pour ton site WordPress.",
+      "recommended_m1_en": "Tested FlyingPress and WP Rocket on the same site. Real Lighthouse scores, LCP times, and the one feature that decided it. No affiliate fluff.",
+      "where": "WordPress edit /en/flyingpress-wp-rocket-comparison/ → Sidebar Rank Math → SEO Description",
+      "rule": "feedback_rank_math_via_plugin_only.md - règle dure"
+    },
+    "rank_math_faq_question": {
+      "current_fr": "Puis-je tester ces plugins avant achat ?",
+      "recommended_en": "Can I test these plugins before buying?",
+      "where": "WordPress edit → Sidebar Rank Math → Schema → FAQ block → question 5",
+      "stored_in": "postmeta rank_math_schema_FAQPage (sérialisé PHP)",
+      "rule": "Rank Math Schema FAQ - même règle dure que Title/Meta"
+    }
+  },
+  "dynamic_elements_out_of_scope": {
+    "related_posts_h3_fr": "Perfmatters : the WordPress optimization tool for improving site speed?",
+    "rationale": "C'est le post_title de l'article /perfmatters-review/ injecté par le widget Similar Posts du thème. À corriger sur l'article source si voulu, hors scope de cette intervention."
+  },
+  "kpi_target_j14": {
+    "horizon": "2026-05-26",
+    "ctr_baseline": 0.0024,
+    "ctr_target": 0.007,
+    "primary_query_to_watch": "wp rocket vs flyingpress",
+    "primary_query_baseline_ctr": 0.0114,
+    "primary_query_target_ctr": 0.030
+  },
+  "verification_commands_for_jplus0": {
+    "wp_rest_post_check": "curl -s 'https://schoolswp.com/wp-json/wp/v2/posts/343156?_fields=id,title.rendered,modified' | jq",
+    "dataforseo_recheck": "via MCP dataforseo on_page_instant_pages",
+    "gsc_inspect_url": "via MCP gsc-mcp inspect_url_enhanced (after 24h propagation)"
+  }
+}

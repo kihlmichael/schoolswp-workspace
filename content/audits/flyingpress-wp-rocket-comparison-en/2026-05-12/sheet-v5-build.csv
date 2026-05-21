@@ -1,0 +1,56 @@
+Priorité,Délai,N°,Action,Page / Cible,Mot-clé principal,Effort,Impact,KPI / Seuil de succès,Cause / Pourquoi,Statut,Date dernier update,Notes
+P1 IMMÉDIAT,48-72h,1,FIX Polylang langue : retraduire Title + Meta + H1 + H2 + H3 + paragraphes body en anglais,/en/flyingpress-wp-rocket-comparison/ (post 343156),flyingpress vs wp rocket,M+,H,CTR 0.24% → 0.7% en 14 j,Bug Polylang étendu : Title FR + Meta FR + body 1900 mots FR sur page EN,VÉRIFIÉ J+0 (body complet - Rank Math sidebar reste à saisir),2026-05-12 23:36,"BODY COMPLETEMENT TRADUIT EN EN via WP REST direct (Python urllib Basic Auth) en 2 passes : step 2 = 33/59 paires matchées (sans <strong>), step 3 = 25/25 paires matchées (avec <strong> littéral préservé). Verification WP REST + DataForSEO : 0 bloc FR detecté dans body, 1650 mots EN (-222 vs FR baseline cohérent). sha1 final = 990eb7ccb524964347f1e7c48aa8c8609b846b9e. RESTE COTE MICHAEL (saisie manuelle Rank Math sidebar - règle dure) : (1) SEO Title FR → 'FlyingPress vs WP Rocket 2026: Real PageSpeed Test' (50c) (2) SEO Description FR → 'Tested FlyingPress and WP Rocket on the same site. Real Lighthouse scores, LCP times, and the one feature that decided it. No affiliate fluff.' (142c) (3) FAQ Schema Q5 'Puis-je tester...' → 'Can I test these plugins before buying?'. KPI J+14 routine schedulée trig_01Wr4xAcVpq4TPK9mUoSxWUn fire 2026-05-26 07:00 UTC."
+P1 IMMÉDIAT,48-72h,2,Audit Polylang en masse : fetch on_page sur 10 pages /en/ pour détecter autres bugs langue,10 pages /en/ à scanner,n/a,M,H,Identifier 2-3 autres pages bugées,Cas FlyingPress confirmé = pattern probable + scope étendu (body trad incomplet),À FAIRE - étendre scope,,"Scope étendu : ne pas juste auditer Title/Meta/H tags. AUSSI vérifier les paragraphes du body (comme on aurait dû faire pour #1). DataForSEO on_page ne lit que la structure - faire un curl WP REST publique + grep marqueurs FR (vous, votre, tu, est un, de la, etc.)."
+P1 IMMÉDIAT,48-72h,3,Rewrite Title + Meta Metricool + ajout FAQ Schema sentence-level,/en/metricool-review/,metricool review,M,H,CTR 0.05% → 0.30% en 30 j,37k impressions à 6x sous moyenne + AIO citation sans clic,À FAIRE,,Avant rewrite Title/Meta : vérifier d'abord si body est en EN ou en FR (leçon de l'action #1). Title V1: Metricool Review 2026: Honest Test After 6 Months Use (53c)
+P1 IMMÉDIAT,48-72h,4,Rewrite Title + Meta Amelia + réaligner intent + Schema Review,/en/amelia-wp-review/,amelia wordpress,M,H,CTR 0.10% → 0.40% en 30 j,Désalignement Title (Pricing) vs H1 (Review) vs Meta (Pricing),À FAIRE,,Même leçon : vérifier body avant. Title V1: Amelia WordPress Review 2026: Booking Plugin Worth $79? (55c)
+P1 IMMÉDIAT,48-72h,5,Capture SERP manuelle 5euros + 5euros.com + wp rocket vs flying press,Diagnostic SERP,5euros,L,M,Diagnostic causal écrit,Alerte rouge n°1 : perte 86 clics à position stable,À FAIRE,,Vérifier sitelinks expanded 5euros.com / PAA / Discussions
+P1 IMMÉDIAT,48-72h,6,Inspect URL GSC sur les 4 pages -100% clics,/pageradar-avis/ /wordpress-6-9-nouveautes/ /o2switch-avis/ /mise-a-jour-mailerpress-1-1/,n/a,L,M,Identifier au moins 1 pb indexabilité,Pages éphémères ou bug indexation à clarifier,À FAIRE,,Décision archivage vs rewrite evergreen
+P1 IMMÉDIAT,48-72h,7,Maillage interne vers /comparaison-flyingpress-wp-rocket/,/comparaison-flyingpress-wp-rocket/,flyingpress vs wp rocket,L,M,+10 clics/semaine,Bond de position 13.3 → 6.2,À FAIRE,,Verrouiller le top 5
+P1 SEMAINE,7 jours,8,Restructuration TasteWP,/en/tastewp-review/,tastewp,H,H,CTR 0.17% → 0.8% en 45 j,Slug review + contenu how-to = mismatch éliminatoire,À FAIRE,,Vérifier d'abord langue body
+P1 SEMAINE,7 jours,9,Ajout sections comparatives Metricool,/en/metricool-review/,metricool review,M,H,+50 clics/mois,Queries Buffer/Hootsuite/Capterra sans section dédiée,À FAIRE,,Compléter narrowing intent (action 3)
+P1 SEMAINE,7 jours,10,Audit Local WP + SureForms,/en/local-wp-review/ et /en/sureforms-wordpress-plugin/,localwp / sureforms wordpress,M,M,Décider Optimiser vs Retargeting,Suspicion mismatch slug vs contenu + body trad incomplet,À FAIRE,,Confirmer pattern body trad
+P1 SEMAINE,7 jours,11,Cocon Kadence,/mon-avis-sur-kadence-wp/ + 3 satellites,kadence wp / kadence wordpress,M,H,+30 clics/mois cluster 60j,3 variantes kadence dans nouvelles requêtes,À FAIRE,,Satellites : kadence theme wordpress + variantes intent
+P1 SEMAINE,7 jours,12,Refonte titre/meta + Schema Review 4 pages EN,/en/tastewp-review/ /en/local-wp-review/ /en/flyingpress-wp-rocket-comparison/ /en/sureforms-wordpress-plugin/,multiple,M,M,+150 clics/mois cumulés,Pages position 5-10 mais CTR sous moyenne,EN COURS partiel (1/4 fait body),2026-05-12 23:36,FlyingPress comparaison : body COMPLET en EN (J+0 verified). TasteWP / Local WP / SureForms : body restant à auditer. Aussi pour FlyingPress : Rank Math sidebar (Title + Meta + FAQ Q5) restent à saisir manuellement par Michael.
+P1 SEMAINE,7 jours,13,Schema Review systématique pages -review- et -avis-,50+ pages,n/a,M,H,+Snippets étoiles SERP,0% des pages auditées avaient Schema Review,À FAIRE,,Product+Review+aggregateRating
+P1 SEMAINE,7 jours,14,AEO playbook template page review prête AIO,Document interne,n/a,M,H,Réutilisable sur 30+ pages,Pages /en/ citées massivement par AI Overview sans clic,À FAIRE,,Sentence-level answers + FAQ Schema + tables factuelles
+P1 SEMAINE,7 jours,15,Audit cluster 5euros consolidation,Cluster 5euros (6 pages),5euros / 5 euros / 5€,M,M,-1 page redondante,Cannibalisation possible variantes typographiques,À FAIRE,,Gated by action #5
+P1 SEMAINE,7 jours,16,Snapshot audit /ce-quil-faut-savoir-sur-la-plateforme-5euros-com/,content/audits/5euros/,5euros.com,L,M,Baseline mesure impact refonte,Traçabilité avant changement,À FAIRE,,DataForSEO + thruuu + GSC export
+P1 SEMAINE,7 jours,17,Push contenu /avis-chatseo-test-complet/,/avis-chatseo-test-complet/,chatseo,M,M,Doubler clics 30 j,Article démarre fort (+25 clics) à capitaliser,À FAIRE,,Momentum à amplifier
+CHANTIER,1 mois,C1,Strategy US,Toutes pages /en/ à fort CTR catastrophique,n/a,H,H,90k impressions USA récupérées,Pages EN positionnées 9.3 mais CTR 0.05% USA,À ARBITRER,,Décision binaire stratégique
+CHANTIER,1-2 mois,C2,Suppression pages actualité,Pages dated,n/a,M,M,Réduire decay,Pages news naturelles à expirer,À FAIRE,,Décision binaire archive vs evergreen-rewrite
+CHANTIER,3 mois,C3,Build identité brand schoolsWP,Pages auteur + signatures,schoolswp,H,H,Apparition requête brand,Site 100% non-brand,À FAIRE,,Cohérent avec netlinking Q2 + LemmiLink Pack B
+CHANTIER,1-2 mois,C4,Audit cohérence hreflang FR/EN/DE,Tout le site,n/a,M,M,Pas de cannibalisation cross-langue,Polylang non audité globalement,À FAIRE,,Screaming Frog ou DataForSEO crawl complet
+CHANTIER NOUVEAU,1 mois,C5,Audit body trad sur tous les /en/ et /de/ : extraire content via WP REST + comptage marqueurs FR,Toutes pages /en/ et /de/,n/a,M,H,Identifier toutes les pages au body bilingue,Leçon Action #1 : Polylang translate les headings via plugin auto mais laisse parfois body source intact. À auditer en masse.,À FAIRE NOUVEAU,2026-05-12 23:23,Ajouté suite découverte body Action #1
+DONNÉE MANQUANTE,n/a,D1,Croiser conversions/revenu par landing,Tout le site,n/a,L,M,Données business pour priorisation,Pas de données GA4 dans cet audit,À RÉCOLTER,,Export GA4 ou via MCP
+DONNÉE MANQUANTE,n/a,D2,Récupérer SERP features par requête,Requêtes top 50,n/a,L,M,Confirmer alertes rouge 1 et 2,Pas de données SERP layout dans cet audit,À RÉCOLTER,,DataForSEO SERP organic live advanced
+DONNÉE MANQUANTE,n/a,D3,Données CWV / indexation,Pages top,n/a,L,M,Expliquer dégradation mai 8.0 → 10.2,Cause de dégradation position non confirmée,À RÉCOLTER,,GSC + Lighthouse MCP chrome-devtools
+,,,,,,,,,,,,
+HISTORIQUE,,,,,,,,,,,,
+Date,Action,Statut avant,Statut après,Détails,,,,,,,,
+2026-05-12 22:30,#1 FIX Polylang FlyingPress,À FAIRE,EN COURS - patch prêt (Title+Meta+H2+H3),Patch produit dans content/audits/schoolswp-90j-perf/2026-05-12/patch-flyingpress-en.md,,,,,,,,
+2026-05-12 23:03,#1 FIX Polylang FlyingPress,EN COURS - patch prêt,VÉRIFIÉ J+0 (headings),Headings H1+H2+H3 poussés via novamira execute-php (30 substitutions byte-perfect),,,,,,,,
+2026-05-12 23:23,#1 FIX Polylang FlyingPress,VÉRIFIÉ J+0 (headings),EN COURS - body patch prêt,"DÉCOUVERTE TARDIVE : body 1900 mots FR encore. Patch body trad livré : 59 paires FR→EN dans patch-body-en.md. Scope étendu effort L → M+. Routine J+14 schedulée pour bilan KPI.",,,,,,,,
+2026-05-12 23:35,#1 FIX Polylang FlyingPress,EN COURS - body patch prêt,VÉRIFIÉ J+0 (body complet),"Body 100% EN poussé via WP REST direct en 2 passes (Python urllib, novamira MCP indispo côté harness malgré reload). Step 2 = 33/59 paires sans markup. Step 3 = 25/25 paires AVEC <strong> littéral. 0 bloc FR détecté post-push (verif via wp_extract_flyingpress_fr_blocks.py). sha1 final 990eb7cc. DataForSEO confirme : H1+H2+H3 EN + body EN 1650 mots + onpage_score 97.07. Restent 3 actions Rank Math sidebar manuelles (Title+Meta+FAQ Q5) côté Michael - règle dure feedback_rank_math_via_plugin_only.md.",,,,,,,,
+,,,,,,,,,,,,
+LÉGENDE STATUT,,,,,,,,,,,,
+À FAIRE,Action non démarrée,,,,,,,,,,,
+À FAIRE NOUVEAU,Action ajoutée tardivement suite découverte,,,,,,,,,,,
+EN COURS - patch prêt,Patch préparé en local prêt à appliquer,,,,,,,,,,,
+EN COURS - body patch prêt,Headings poussés mais body trad encore à appliquer,,,,,,,,,,,
+EN COURS partiel,Action partiellement adressée,,,,,,,,,,,
+VÉRIFIÉ J+0 (headings),Headings appliqués et confirmés,,,,,,,,,,,
+VÉRIFIÉ J+0 (body complet),Body 100% EN appliqué et confirmé (Rank Math sidebar à part),,,,,,,,,,,
+VÉRIFIÉ J+0 (complet),Headings + body + Rank Math tout en EN,,,,,,,,,,,
+MESURÉ J+14,KPI mesuré 14 jours après modification,,,,,,,,,,,
+À ARBITRER,Décision stratégique attendue de Michael,,,,,,,,,,,
+À RÉCOLTER,Donnée manquante à compiler,,,,,,,,,,,
+TERMINÉ,Action complètement bouclée + KPI atteint,,,,,,,,,,,
+,,,,,,,,,,,,
+META,,,,,,,,,,,,
+Source de vérité actuelle,v5,,,,,,,,,,,
+Sheets précédentes obsolètes,v1 v2 v3 v4 (à archiver dans Drive),,,,,,,,,,,
+Pourquoi v5 et pas update v4 in-place,Drive MCP create_file ne supporte pas update existant + gws OAuth refresh_token revoked,,,,,,,,,,,
+Comment supprimer ce chaînage v1→v5,Lancer 'gws auth login' dans terminal Windows une fois - tokens reset frais - cellules updatables in-place via Sheets API,,,,,,,,,,,
+Documents associés,content/audits/schoolswp-90j-perf/2026-05-12/ (rapport+patch headings) + content/audits/flyingpress-wp-rocket-comparison-en/2026-05-12/ (snapshots + payloads + scripts + state-after-v2.json),,,,,,,,,,,
+Routine J+14 schedulée,trig_01Wr4xAcVpq4TPK9mUoSxWUn fire 2026-05-26 07:00 UTC (09h00 Paris) - email récap + Drive update,,,,,,,,,,,
+Scripts artefacts Action #1,tools/scripts/wp_push_flyingpress_body_343156.py + wp_diagnose_flyingpress_unmatched.py + wp_extract_flyingpress_fr_blocks.py,,,,,,,,,,,

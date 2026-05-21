@@ -1,0 +1,84 @@
+{
+  "snapshot_date": "2026-05-12",
+  "snapshot_type": "before",
+  "source": "DataForSEO on_page_instant_pages + GSC get_search_by_page_query (90 days)",
+  "url": "https://schoolswp.com/en/flyingpress-wp-rocket-comparison/",
+  "post_id": 343156,
+  "lang": "en",
+  "issue": "BUG MULTILINGUE : Title + Meta + H2 (tous) + H3 (partiels) en FR sur page EN",
+  "alignment_score": 25,
+  "metrics_gsc_90d": {
+    "period": "2026-02-11 → 2026-05-12",
+    "clicks": 13,
+    "impressions": 5406,
+    "ctr": 0.0024,
+    "position": 7.5,
+    "top_queries": [
+      {"query": "flyingpress plugin", "clicks": 2, "impressions": 39, "position": 8.6},
+      {"query": "wp rocket vs flyingpress", "clicks": 2, "impressions": 175, "position": 4.5},
+      {"query": "flyingpress free version", "clicks": 1, "impressions": 14, "position": 4.9},
+      {"query": "wp rocket vs flying press", "clicks": 1, "impressions": 47, "position": 4.6},
+      {"query": "best wp rocket alternatives", "clicks": 0, "impressions": 45, "position": 8.9},
+      {"query": "cloudflare apo vs wp rocket", "clicks": 0, "impressions": 65, "position": 25.0}
+    ]
+  },
+  "current_metadata": {
+    "title": "FlyingPress vs WP Rocket (2026) : Lequel Choisir pour WordPress ?",
+    "title_length": 65,
+    "title_language": "FR (BUG, page is EN)",
+    "h1": "FlyingPress vs WP Rocket – Best WordPress Speed Plugin",
+    "h1_brand_violation": "en-dash U+2013 between WP Rocket and Best",
+    "meta_description": "🚀 FlyingPress ou WP Rocket ? Comparatif 2026 : vitesse, Core Web Vitals, RUCSS, prix. Trouve le meilleur plugin de cache pour ton site WordPress.",
+    "meta_description_length": 146,
+    "meta_language": "FR (BUG, page is EN)",
+    "og_locale": "en_US",
+    "canonical": "https://schoolswp.com/en/flyingpress-wp-rocket-comparison/",
+    "word_count": 1872,
+    "modified_time": "2026-03-08T00:43:14+02:00"
+  },
+  "h2_structure": [
+    {"index": 1, "current_fr": "Comparatif des fonctionnalités : FlyingPress vs WP Rocket", "target_en": "Feature comparison: FlyingPress vs WP Rocket"},
+    {"index": 2, "current_fr": "Tarifs : Lequel est le plus rentable ?", "target_en": "Pricing: Which one offers better value?"},
+    {"index": 3, "current_fr": "Avantages et Inconvénients : Le face à face", "target_en": "Pros and Cons: Head to Head"},
+    {"index": 4, "current_fr": "Quelles sont les alternatives ?", "target_en": "What are the alternatives?"},
+    {"index": 5, "current_fr": "FAQ : FlyingPress vs WP Rocket", "target_en": "FAQ: FlyingPress vs WP Rocket"},
+    {"index": 6, "current_fr": "Conclusion : Alors, FlyingPress ou WP Rocket ?", "target_en": "Verdict: FlyingPress or WP Rocket?"}
+  ],
+  "h3_structure": [
+    {"index": 1, "current_fr": "Optimisation du chargement et Core Web Vitals", "target_en": "Loading optimization and Core Web Vitals", "status": "TO_TRANSLATE"},
+    {"index": 2, "current_fr": "Mise en cache avancée et compatibilité", "target_en": "Advanced caching and compatibility", "status": "TO_TRANSLATE"},
+    {"index": 3, "current_fr": "Optimisation des images", "target_en": "Image optimization", "status": "TO_TRANSLATE"},
+    {"index": 4, "current_fr": "Base de données et scripts", "target_en": "Database and scripts", "status": "TO_TRANSLATE"},
+    {"index": 5, "current_fr": "Interface et configuration", "target_en": "Interface and setup", "status": "TO_TRANSLATE"},
+    {"index": 6, "current_fr": "✅ Les points forts de FlyingPress", "target_en": "✅ FlyingPress strengths", "status": "TO_TRANSLATE"},
+    {"index": 7, "current_fr": "❌ Les points faibles de FlyingPress", "target_en": "❌ FlyingPress weaknesses", "status": "TO_TRANSLATE"},
+    {"index": 8, "current_fr": "✅ Les points forts de WP Rocket", "target_en": "✅ WP Rocket strengths", "status": "TO_TRANSLATE"},
+    {"index": 9, "current_fr": "❌ Les points faibles de WP Rocket", "target_en": "❌ WP Rocket weaknesses", "status": "TO_TRANSLATE"},
+    {"index": 10, "current_en": "Which plugin is faster, FlyingPress or WP Rocket?", "status": "OK_KEEP"},
+    {"index": 11, "current_en": "Is FlyingPress better than WP Rocket?", "status": "OK_KEEP"},
+    {"index": 12, "current_en": "Does FlyingPress offer a free version?", "status": "OK_KEEP"},
+    {"index": 13, "current_en": "Is WP Rocket more comprehensive?", "status": "OK_KEEP"},
+    {"index": 14, "current_fr": "Puis-je tester ces plugins avant achat ?", "target_en": "Can I test these plugins before buying?", "status": "TO_TRANSLATE"},
+    {"index": 15, "current_en": "Who are the free competitors?", "status": "OK_KEEP"},
+    {"index": 16, "current_en": "Can FlyingPress and WP Rocket be used together?", "status": "OK_KEEP"}
+  ],
+  "kpi_target": {
+    "horizon": "J+14 (2026-05-26)",
+    "ctr_baseline": 0.0024,
+    "ctr_target": 0.007,
+    "ctr_target_pct_change": "+191%",
+    "primary_query_to_watch": "wp rocket vs flyingpress",
+    "primary_query_baseline": {"impressions": 175, "ctr": 0.0114, "position": 4.5}
+  },
+  "actions_required": {
+    "rank_math_sidebar_manual": ["title", "meta_description"],
+    "gutenberg_body_edit": ["h1_fix_en_dash", "h2_x6", "h3_x10_translate", "h3_x1_typography"],
+    "schema_to_add": ["Comparison", "FAQPage if not present"]
+  },
+  "reference_brand_rules": [
+    "BRAND_RULES : em-dash (U+2014) et en-dash (U+2013) interdits",
+    "feedback_rank_math_via_plugin_only.md : Rank Math edits via plugin uniquement, jamais REST/SQL",
+    "feedback_links_same_language.md : EN article = EN links only",
+    "reference_wp_rest_block_preservation.md : timeout 180s mini pour push blocks Gutenberg"
+  ]
+}

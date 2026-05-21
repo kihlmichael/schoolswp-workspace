@@ -1,0 +1,127 @@
+{
+  "snapshot_date": "2026-05-12T23:36:16+02:00",
+  "snapshot_type": "after_body_push_final",
+  "source": "WP REST API direct (urllib Python) + DataForSEO on_page_instant_pages verification",
+  "url": "https://schoolswp.com/en/flyingpress-wp-rocket-comparison/",
+  "post_id": 343156,
+  "lang": "en",
+  "alignment_score_before": 25,
+  "alignment_score_after_headings_only": 65,
+  "alignment_score_after_body_push": 88,
+  "alignment_improvement": "+63 points sur scope total (headings + body)",
+  "remaining_gap_to_100": [
+    "Rank Math SEO Title (FR, saisie manuelle sidebar requise)",
+    "Rank Math Meta Description (FR, saisie manuelle sidebar requise)",
+    "Rank Math FAQ Q5 H3 (FR, dans rank_math_schema_FAQPage serialisé)",
+    "Related Posts H3 (theme-injected, hors scope ce post)"
+  ],
+  "push_history": [
+    {
+      "step": 1,
+      "label": "headings_push (H1 fix + H2 x6 + H3 x10 + TOC)",
+      "method": "novamira execute-php strtr",
+      "modified_time": "2026-05-12T23:02:38+02:00",
+      "content_sha1_before": "48735f24404a1d69c9ccc623cd489fa117bf545a",
+      "content_sha1_after": "af9be38bb86eeac3180b672dc36cd85da0b415e8",
+      "content_length_before": 16762,
+      "content_length_after": 16520,
+      "substitutions": 30
+    },
+    {
+      "step": 2,
+      "label": "body_push_v1 (paragraphs without strong markup)",
+      "method": "WP REST POST /wp/v2/posts/343156 (Python urllib Basic Auth)",
+      "modified_time": "2026-05-12T23:32:29+02:00",
+      "content_sha1_before": "af9be38bb86eeac3180b672dc36cd85da0b415e8",
+      "content_sha1_after": "a740460a5e272114db9439b35145421c63dbe70b",
+      "content_length_before": 16337,
+      "content_length_after": 15934,
+      "matched_keys": 33,
+      "expanded_replacements": 59,
+      "note": "26 pairs unmatched because they had <strong> markup inside FR paragraph"
+    },
+    {
+      "step": 3,
+      "label": "body_push_v2 (paragraphs with literal <strong> preserved)",
+      "method": "WP REST POST /wp/v2/posts/343156 (Python urllib Basic Auth)",
+      "modified_time": "2026-05-12T23:35:49+02:00",
+      "content_sha1_before": "a740460a5e272114db9439b35145421c63dbe70b",
+      "content_sha1_after": "990eb7ccb524964347f1e7c48aa8c8609b846b9e",
+      "content_length_before": 15934,
+      "content_length_after": 15091,
+      "matched_keys": 25,
+      "expanded_replacements": 25,
+      "note": "byte-perfect 25/25 substitutions, all FR blocks captured"
+    }
+  ],
+  "verification_dataforseo_live": {
+    "fetch_time": "2026-05-12 21:36:16 +00:00",
+    "h1": "FlyingPress vs WP Rocket: Best WordPress Speed Plugin",
+    "h2_all_en": true,
+    "h3_in_content_all_en": true,
+    "plain_text_word_count": 1650,
+    "plain_text_word_count_before": 1872,
+    "delta_words": -222,
+    "delta_rationale": "EN translation systematically shorter than FR source",
+    "onpage_score": 97.07,
+    "title_to_content_consistency": 0.778,
+    "description_to_content_consistency": 0.682
+  },
+  "fr_residuals_check": {
+    "method": "wp_extract_flyingpress_fr_blocks.py (heuristic FR markers)",
+    "blocks_found": 0,
+    "conclusion": "body 100% EN"
+  },
+  "branding_compliance": {
+    "em_dash_count": 0,
+    "en_dash_count": 0,
+    "prohibited_words_removed": ["incroyablement efficace -> highly effective"],
+    "voice_singular_solo": "verdict pivots from \"Notre verdict\" (FR plural) to \"My verdict\" (EN singular)",
+    "schoolswp_brand_form": "no occurrence in body, brand naming not impacted"
+  },
+  "remaining_manual_actions_for_michael": {
+    "rank_math_seo_title": {
+      "current_fr": "FlyingPress vs WP Rocket (2026) : Lequel Choisir pour WordPress ?",
+      "recommended_v1_en": "FlyingPress vs WP Rocket 2026: Real PageSpeed Test",
+      "char_count": 50,
+      "where": "WP edit /en/flyingpress-wp-rocket-comparison/ -> sidebar Rank Math -> SEO Title",
+      "rule": "feedback_rank_math_via_plugin_only.md (hard rule)"
+    },
+    "rank_math_seo_description": {
+      "current_fr": "FlyingPress ou WP Rocket ? Comparatif 2026 : vitesse, Core Web Vitals, RUCSS, prix. Trouve le meilleur plugin de cache pour ton site WordPress.",
+      "recommended_m1_en": "Tested FlyingPress and WP Rocket on the same site. Real Lighthouse scores, LCP times, and the one feature that decided it. No affiliate fluff.",
+      "char_count": 142,
+      "where": "WP edit -> sidebar Rank Math -> SEO Description",
+      "rule": "feedback_rank_math_via_plugin_only.md (hard rule)"
+    },
+    "rank_math_faq_question_5": {
+      "current_fr": "Puis-je tester ces plugins avant achat ?",
+      "recommended_en": "Can I test these plugins before buying?",
+      "where": "WP edit -> sidebar Rank Math -> Schema -> FAQ block -> question 5",
+      "stored_in": "postmeta rank_math_schema_FAQPage (PHP serialized)",
+      "rule": "Rank Math Schema FAQ - same hard rule"
+    }
+  },
+  "out_of_scope": {
+    "related_posts_h3_fr": "Perfmatters : the WordPress optimization tool for improving site speed?",
+    "rationale": "post_title of /perfmatters-review/ injected by theme Similar Posts widget; correct on source article if desired"
+  },
+  "kpi_target_j14": {
+    "horizon": "2026-05-26",
+    "ctr_baseline": 0.0024,
+    "ctr_target": 0.007,
+    "primary_query_to_watch": "wp rocket vs flyingpress",
+    "primary_query_baseline_ctr": 0.0114,
+    "primary_query_target_ctr": 0.030,
+    "j14_routine_id": "trig_01Wr4xAcVpq4TPK9mUoSxWUn",
+    "j14_fires_at_utc": "2026-05-26T07:00:00Z"
+  },
+  "scripts_artifacts": [
+    "tools/scripts/wp_push_flyingpress_body_343156.py (push script, reusable pattern)",
+    "tools/scripts/wp_diagnose_flyingpress_unmatched.py (diagnostic which pairs not matched)",
+    "tools/scripts/wp_extract_flyingpress_fr_blocks.py (extract literal FR blocks from raw)",
+    "content/audits/.../payload-pairs.json (v1 - 59 pairs without strong markup)",
+    "content/audits/.../payload-pairs-v2.json (v2 - 25 pairs WITH literal strong markup)",
+    "content/audits/.../live-fr-blocks.json (FR blocks extraction output, now 0)"
+  ]
+}
