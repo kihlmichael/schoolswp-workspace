@@ -26,6 +26,7 @@ content/audits/
     │   ├── dataforseo-serp-fr.json          # SERP organique top 20 FR + PAA
     │   ├── dataforseo-keyword-suggestions.json  # suggestions seed
     │   ├── dataforseo-search-intent.json    # classification intent
+    │   ├── dataforseo-google-sheet.csv      # source du Google Sheet des volumes (cf. section dédiée)
     │   └── thruuu-raw/                      # exports thruuu bruts (XLSX, PDF, HTML)
     │       ├── audit-article.<ext>
     │       └── serp-analysis.<ext>
@@ -80,12 +81,13 @@ Sections types (adapter selon contexte) :
 3. **Collecte données** :
    - GSC 90j queries + URL inspect
    - DataForSEO volume + SERP FR + suggestions + intent
-   - thruuu SERP + audit article (export raw → `thruuu-raw/`)
-   - defuddle parse de l'URL → `article-current-snapshot.md`
+   - thruuu SERP + audit article (export raw → `thruuu-raw/`). ⚠️ thruuu ne sait PAS scraper un article en **brouillon** : il récupère la page 404 du site (titre « 404 », ~30 mots). Pour un audit pré-publication, seul l'export **SERP** est exploitable ; l'audit page thruuu est à ignorer.
+   - defuddle parse de l'URL → `article-current-snapshot.md` (ou `post_content` via Novamira si brouillon)
 4. **Rédaction `synthese.md`** : analyse + décision + plan
 5. **Mise à jour** :
    - `<slug>/README.md` (historique snapshots + statut)
    - `_registry.md` (index global)
+   - **Google Sheet des volumes** : créer le Sheet DataForSEO sur le Drive Michael (cf. section dédiée)
 6. **Si snapshot N+1** : créer `_diff.md` qui compare avec le snapshot précédent
 
 ## Comparaison entre snapshots
@@ -100,6 +102,14 @@ Trois niveaux de comparaison possibles :
    - L'article a-t-il été modifié entre temps ? (via `article-current-snapshot.md`)
    - Les actions décidées au snapshot précédent ont-elles été exécutées ?
 3. **Tableau de bord transverse** : regroupe les `_diff.md` de plusieurs articles dans `_registry.md` (vue macro).
+
+## Tableau Google Sheets des volumes (livrable systématique)
+
+À **chaque audit d'article**, créer un Google Sheet sur le Drive de Michael avec les données DataForSEO du champ sémantique : volumes FR, concurrence, CPC, difficulté SEO (KD), intention, tendance annuelle + historique mensuel 12 mois. Le CSV source est colocalisé dans le snapshot (`dataforseo-google-sheet.csv`).
+
+- **Création** : via le connecteur Google Drive de claude.ai (`text/csv` → conversion auto en Sheet). La CLI `gws` est une alternative quand son auth fonctionne.
+- **Nommage** : `schoolsWP - Volumes SEO - <sujet> - <YYYY-MM-DD>`.
+- **Objectif final** : centraliser les données de tous les articles audités dans un **tableau commun de surveillance SEO** (une ligne ou un onglet par article). Pour l'instant : un Sheet par audit ; la consolidation viendra ensuite.
 
 ## Règle git
 
