@@ -1,0 +1,13 @@
+{
+  "source": "DataForSEO Labs - keyword suggestions",
+  "seed": "ottokit",
+  "location": "France",
+  "language": "fr",
+  "scrape_date": "2026-05-20",
+  "suggestions": [
+    { "keyword": "ottokit", "search_volume": 110, "intent": "transactional" },
+    { "keyword": "ottokit pricing", "search_volume": 10, "intent": "commercial" },
+    { "keyword": "ottokit wordpress", "search_volume": 10, "intent": "navigational", "trend": { "monthly": -100, "quarterly": -100 } }
+  ],
+  "diagnostic": "Seulement 3 suggestions retournees pour le seed 'ottokit' en FR (vs 11 en US). Le longtail FR est quasi inexistant cote volume mesure. Strategie : ne pas courir apres le longtail mesure (inexistant), mais dominer le seed 'ottokit' (110) et capter le longtail comparatif/decisionnel non mesure via la profondeur de contenu + le schema FAQPage."
+}

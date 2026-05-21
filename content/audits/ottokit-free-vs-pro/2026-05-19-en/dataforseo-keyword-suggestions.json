@@ -1,0 +1,20 @@
+{
+  "task_date": "2026-05-19",
+  "seed": "OttoKit",
+  "location": "United States",
+  "language": "en",
+  "top_suggestions": [
+    {"keyword": "ottokit", "volume": 390, "kd": 16, "intent": "transactional", "trend_monthly_pct": 23, "trend_yearly_pct": 3100},
+    {"keyword": "ottokit pricing", "volume": 20, "intent": "commercial", "trend_quarterly_pct": 100},
+    {"keyword": "ottokit pro", "volume": 10, "intent": "commercial"},
+    {"keyword": "ottokit wordpress automation", "volume": 10, "intent": "navigational"},
+    {"keyword": "ottokit integrations", "volume": 10, "intent": "commercial"},
+    {"keyword": "ottokit review", "volume": 10, "intent": "commercial"},
+    {"keyword": "ottokit wordpress", "volume": 10, "intent": "navigational"},
+    {"keyword": "ottokit reviews", "volume": 10, "intent": "informational"},
+    {"keyword": "ottokit ai", "volume": 10, "competition": 0.86, "intent": "informational", "note": "Seul keyword HIGH competition (enchères AI)"},
+    {"keyword": "ottokit wordpress plugin", "volume": 10, "intent": "navigational"},
+    {"keyword": "ottokit login", "volume": 10, "intent": "navigational", "trend_quarterly_pct": -67}
+  ],
+  "note": "DataForSEO retourne 11 suggestions US (vs 5 DE). Marché US plus mature avec une diversité de longtails. Volumes individuels restent faibles (max 20 hors seed) mais cluster cumule ~80-100/mois utile."
+}

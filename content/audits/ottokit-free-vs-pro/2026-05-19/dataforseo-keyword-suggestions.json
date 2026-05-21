@@ -1,0 +1,14 @@
+{
+  "task_date": "2026-05-19",
+  "seed": "OttoKit",
+  "location": "Germany",
+  "language": "de",
+  "top_suggestions": [
+    {"keyword": "ottokit", "volume": 110, "kd": 11, "intent": "transactional", "trend_monthly_pct": 57},
+    {"keyword": "ottokit login", "volume": 10, "intent": "navigational"},
+    {"keyword": "ottokit pro", "volume": 10, "intent": "commercial"},
+    {"keyword": "ottokit pricing", "volume": 10, "intent": "commercial"},
+    {"keyword": "ottokit integrations", "volume": 10, "intent": "commercial", "trend_monthly_pct": -100}
+  ],
+  "note": "DataForSEO ne retourne que 5 suggestions DE (vs 50+ generalement en FR/EN). Marche DE encore embryonnaire sur OttoKit. La marque emerge a peine en allemand."
+}

@@ -1,0 +1,11 @@
+﻿keyword;location;volume_actuel;low_top_bid;high_top_bid;cpc;competition;competition_level;keyword_difficulty;intent;intent_probability;trend_monthly_pct;trend_quarterly_pct;trend_yearly_pct;volumes_12_mois
+ottokit;Germany;110;3.08;12.74;2.92;0.1;LOW;11;transactional;;57;22;;90,170,140,170,110,140,90,140,90,110,70,110
+ottokit pro;Germany;10;;;;0.14;LOW;;commercial;0.95;;;;10,10,10,10,10,10,10,10,10,10,10,10
+suretriggers;Germany;50;2.23;8.0;6.63;0.29;LOW;;commercial;;-50;-50;-89;320,50,40,40,40,50,30,30,20,20,20,10
+ottokit free vs pro;Germany;;;;;;;;commercial;0.913;;;;
+ottokit erfahrungen;Germany;;;;;;;;informational;0.723;;;;
+ottokit kostenlos;Germany;;;;;;;;commercial;0.846;;;;
+ottokit review;Germany;;;;;;;;commercial;0.8;;;;
+ottokit login;Germany;10;;;;0.0;LOW;;navigational;;;;;
+ottokit pricing;Germany;10;;;;0.0;LOW;;commercial;;;;;
+ottokit integrations;Germany;10;;;;;;;commercial;;-100;-100;;

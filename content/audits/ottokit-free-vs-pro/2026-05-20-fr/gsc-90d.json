@@ -1,0 +1,13 @@
+{
+  "source": "GSC MCP - get_advanced_search_analytics",
+  "site_url": "https://schoolswp.com/",
+  "page_filter": "contains ottokit-gratuit-vs-pro",
+  "period": "2026-02-19 a 2026-05-20 (90j)",
+  "note": "Article publie le 2026-05-08 : seulement ~12 jours de donnees effectives dans la fenetre.",
+  "queries": [
+    { "query": "ottokit", "clicks": 0, "impressions": 20, "ctr": 0, "position": 6.2 },
+    { "query": "ottokit pro", "clicks": 0, "impressions": 2, "ctr": 0, "position": 4.0 }
+  ],
+  "totaux": { "clicks": 0, "impressions": 22, "queries": 2 },
+  "lecture": "Article tres recent, deja indexe et present en SERP. Position 6,2 sur 'ottokit' (110/mois) = base de depart correcte pour 12 jours d'existence. 0 clic est normal a position 6 avec 20 impressions cumulees. thruuu confirme par ailleurs une position 3 sur la requete exacte 'OttoKit Free vs Pro' (volume non mesurable). Objectif consolidation : passer de 6,2 a top 3 sur 'ottokit', tenir le top 3 sur le comparatif."
+}

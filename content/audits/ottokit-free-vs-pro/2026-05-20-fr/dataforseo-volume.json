@@ -1,0 +1,36 @@
+{
+  "source": "DataForSEO Labs - keyword overview",
+  "location": "France",
+  "language": "fr",
+  "scrape_date": "2026-05-20",
+  "keywords_with_data": [
+    {
+      "keyword": "ottokit",
+      "search_volume": 110,
+      "keyword_difficulty": 16,
+      "competition_level": "LOW",
+      "main_intent": "transactional",
+      "search_volume_trend": { "quarterly": 29 },
+      "monthly_searches_recent": { "2026-03": 90, "2026-02": 90, "2026-01": 70, "2025-12": 90, "2025-11": 140, "2025-10": 140 },
+      "note": "Seed principal FR. Volume stable autour de 90-110/mois, pic a 170 en 2025-04. Trend trimestriel +29 % (reprise). Detected_language 'it' = bruit DataForSEO sur un nom de marque court."
+    },
+    {
+      "keyword": "suretriggers",
+      "search_volume": 40,
+      "keyword_difficulty": 15,
+      "competition_level": "LOW",
+      "main_intent": "informational",
+      "search_volume_trend": { "monthly": -50, "quarterly": -50, "yearly": -89 },
+      "note": "Ancienne marque. En chute libre (-89 % sur l'annee). Confirme le pivot total vers OttoKit, comme DE et EN."
+    }
+  ],
+  "keywords_without_data": [
+    "ottokit gratuit vs pro",
+    "ottokit free vs pro",
+    "ottokit avis",
+    "ottokit pro",
+    "ottokit prix",
+    "automatisation wordpress"
+  ],
+  "diagnostic": "Marche FR petit : seul 'ottokit' (110) et 'suretriggers' (40, mourant) ont du volume mesurable. Le focus keyword 'ottokit gratuit vs pro' n'a pas de volume mesurable cote DataForSEO (longtail commercial pur). Volume FR comparable au DE (110), 3,5x plus petit que les US (390). La captation passe par 'ottokit' seed + le longtail comparatif non mesure mais a forte intention commerciale."
+}

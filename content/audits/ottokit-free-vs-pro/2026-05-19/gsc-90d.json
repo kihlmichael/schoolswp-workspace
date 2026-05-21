@@ -1,0 +1,60 @@
+{
+  "task_date": "2026-05-19",
+  "site_url": "https://schoolswp.com/",
+  "date_range": {"start": "2026-02-18", "end": "2026-05-19"},
+  "note_methodologique": "L'article DE 2898734 est BROUILLON donc absent de GSC. Les donnees ci-dessous concernent les pages OttoKit existantes (FR + EN) a titre de reference cluster.",
+  "queries_top_ottokit_all_pages": [
+    {"query": "ottokit", "impressions": 182, "clicks": 0, "position": 9.0, "ctr": 0},
+    {"query": "ottokit pro", "impressions": 4, "clicks": 0, "position": 3.8},
+    {"query": "ottokit vs zapier", "impressions": 4, "clicks": 0, "position": 4.2},
+    {"query": "ottokit automation", "impressions": 1, "position": 4},
+    {"query": "ottokit alternative", "impressions": 1, "position": 11},
+    {"query": "ottokit wordpress", "impressions": 2, "position": 21.5}
+  ],
+  "pages_top_ottokit_clustering": [
+    {
+      "page": "https://schoolswp.com/ottokit-avis-automatisation-wordpress/",
+      "query": "ottokit",
+      "impressions": 110,
+      "position": 9.0,
+      "clicks": 0,
+      "role": "pilier avis FR"
+    },
+    {
+      "page": "https://schoolswp.com/automatisations-wordpress/ottokit/",
+      "query": "ottokit",
+      "impressions": 62,
+      "position": 8.7,
+      "clicks": 0,
+      "role": "page produit/stack FR"
+    },
+    {
+      "page": "https://schoolswp.com/ottokit-gratuit-vs-pro/",
+      "query": "ottokit",
+      "impressions": 20,
+      "position": 6.2,
+      "clicks": 0,
+      "role": "comparatif Free vs Pro FR (homologue brouillon DE)"
+    },
+    {
+      "page": "https://schoolswp.com/en/suretriggers-ottokit-vs-zapier/",
+      "query": "suretriggers vs zapier",
+      "impressions": 76,
+      "position": 1.1,
+      "clicks": 0,
+      "role": "comparatif EN positionne #1 mais sur marque morte"
+    }
+  ],
+  "queries_suretriggers_all_pages": [
+    {"query": "suretriggers vs zapier", "page": "/en/suretriggers-ottokit-vs-zapier/", "impressions": 76, "position": 1.1, "clicks": 0},
+    {"query": "suretriggers wordpress automation plugin", "page": "/en/suretriggers-ottokit-vs-zapier/", "impressions": 67, "position": 12.0, "clicks": 0},
+    {"query": "suretriggers", "page": "/en/suretriggers-ottokit-vs-zapier/", "impressions": 28, "position": 46.4, "clicks": 0},
+    {"query": "suretriggers review", "page": "/en/suretriggers-ottokit-vs-zapier/", "impressions": 9, "position": 32.6}
+  ],
+  "observations": [
+    "0 clic sur tout le cluster OttoKit sur 90 jours : probleme de CTR (peut-etre AIO + ottokit.com qui monopolisent les clics) ou volume effectif marginal.",
+    "/ottokit-gratuit-vs-pro/ FR deja classe pos 6.2 sur le seed 'ottokit' avec 20 impressions - preuve que le format vs Pro a sa place dans le cluster.",
+    "/en/suretriggers-ottokit-vs-zapier/ EN classe pos 1.1 mais 0 clic - confirme l'effondrement de la marque SureTriggers (-89% volume YoY DE).",
+    "Aucune impression DE sur les pages /de/ existantes du cluster OttoKit : marche encore vierge."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "source_file": "thruuu-raw/serp-analysis-fr.xlsx + thruuu-raw/thruuu-audit-report-fr.docx",
+  "scrape_date": "2026-05-19",
+  "export_date": "2026-05-20",
+  "scrape_meta": {
+    "query": "OttoKit Free vs Pro",
+    "device": "desktop",
+    "language": "fr",
+    "country": "FR",
+    "search_engine": "google.fr"
+  },
+  "serp_overview": [
+    { "pos": 1, "type": "video pack", "url": null },
+    { "pos": 2, "type": "organic", "url": "https://ottokit.com/", "page_rank": 41, "word_count": 1666, "images": 140 },
+    { "pos": 3, "type": "organic", "url": "https://schoolswp.com/ottokit-gratuit-vs-pro/", "page_rank": 28, "word_count": 2101, "images": 12, "note": "C'est l'article audite. Deja en position 3 sur google.fr." },
+    { "pos": 4, "type": "organic", "url": "https://wpastra.com/review/ottokit-review/", "page_rank": 49, "word_count": 1969, "images": 31 },
+    { "pos": 5, "type": "organic", "url": "https://wordpress.org/plugins/suretriggers/", "page_rank": 76, "word_count": 4043, "images": 19 },
+    { "pos": 6, "type": "organic", "url": "https://crocoblock.com/blog/ottokit-wordpress-plugin-review/", "page_rank": 49, "word_count": 1542, "images": 15 },
+    { "pos": 7, "type": "organic", "url": "https://newpulselabs.com/ottokit-review/", "page_rank": 29, "word_count": 2006, "images": 18 },
+    { "pos": 8, "type": "organic", "url": "https://ottokit.com/features/", "page_rank": 41, "word_count": 1349, "images": 30 },
+    { "pos": 9, "type": "organic", "url": "https://wpwebzon.com/ottokit-review/", "page_rank": 6, "word_count": 1881, "images": 6 },
+    { "pos": 10, "type": "organic", "url": "https://blogkraft.com/ottokit-review/", "page_rank": 13, "word_count": 1426, "images": 6 },
+    { "pos": 12, "type": "organic", "url": "https://ciroapp.com/software/ottokit", "page_rank": 29, "word_count": 3127, "images": 10, "has_faqpage": true },
+    { "pos": 13, "type": "organic", "url": "https://www.getapp.com/it-management-software/a/suretriggers", "page_rank": 34, "word_count": 262, "has_faqpage": true },
+    { "pos": 14, "type": "organic", "url": "https://defenderbot.tech/ottokit/", "page_rank": 31, "word_count": 1251, "images": 6, "has_faqpage": true }
+  ],
+  "word_count_stats": {
+    "schoolswp_fr": 2101,
+    "serp_avg_thruuu": 1911,
+    "diagnostic": "schoolsWP FR a 2 101 mots est au-dessus de la moyenne SERP (1 911) et de la mediane des concurrents articles (1 426-2 006). La longueur n'est PAS un probleme."
+  },
+  "page_rank_stats": {
+    "schoolswp_fr": 28,
+    "serp_avg_thruuu": 37,
+    "diagnostic": "schoolsWP a un Page Rank 28 vs 37 de moyenne SERP. thruuu juge que les concurrents sont 'dans la fourchette'. Surtout : wpwebzon (PR 6) et blogkraft (PR 13) rankent en pos 9-10 - l'autorite de domaine n'est pas bloquante, la pertinence et le schema priment."
+  },
+  "image_count": {
+    "schoolswp_fr": 12,
+    "serp_avg_thruuu": 35,
+    "diagnostic": "ECART PRINCIPAL flagge par le docx thruuu (erreur). 12 images detectees (dont logo + icones Kadence). La moyenne 35 est gonflee par les pages ottokit.com (60-140 images, pages vitrine). Les vrais articles concurrents : wpastra 31, ottokit/features 30, crocoblock 15, newpulselabs 18, ciroapp 10, wpwebzon 6, blogkraft 6, defenderbot 6. Cible realiste schoolsWP : 18-25 images editoriales (captures dashboard, agents IA, pricing)."
+  },
+  "on_page_audit_docx": {
+    "word_count": "success - dans la fourchette concurrents",
+    "image_count": "error - ajouter ~13 images",
+    "page_rank": "success - dans la fourchette concurrents",
+    "title": "success - longueur OK, pixel width OK, contient 'ottokit gratuit vs pro'",
+    "description": "success - longueur OK (126 char)",
+    "headings_questions": "success - 3 questions dans les titres (moyenne SERP = 1)",
+    "headings_unique_angle": "success - angle comparatif unique",
+    "headings_common": "error - aucun titre commun avec la SERP (artefact partiel : SERP dominee par des reviews EN)",
+    "frequent_terms": "error - ajouter des termes frequents (artefact : analyse de termes basee sur la SERP EN)"
+  },
+  "schema_actuel_schoolswp": {
+    "types": ["Place", "EducationalOrganization", "Organization", "WebSite", "ImageObject"],
+    "manquants_vs_concurrents": ["FAQPage", "Article"],
+    "diagnostic": "L'article a une FAQ visuelle (H2 'Des questions ? J'ai les reponses', 5 panes Kadence) mais AUCUN schema FAQPage JSON-LD. thruuu confirme 'Has On Page FAQ: False'. Les concurrents pos 12, 13, 14 ont le schema FAQPage. Injection FAQPage = priorite (rich result manque)."
+  },
+  "frequent_questions_serp": [
+    { "question": "Who Is OttoKit For?", "count": 8 },
+    { "question": "What is OttoKit?", "count": 6 },
+    { "question": "How Does OttoKit Compare to Platforms Like Zapier?", "count": 4 },
+    { "question": "Is OttoKit Free?", "count": 4 },
+    { "question": "What Can You Automate on WordPress with OttoKit?", "count": 3 }
+  ],
+  "related_searches_fr": [
+    "Ottokit pricing",
+    "SureTriggers",
+    "Uncanny Automator Pro",
+    "Spectra Pro",
+    "FluentCRM Pro",
+    "CartFlows",
+    "Pabbly Connect",
+    "SureRank pro"
+  ],
+  "videos_pos_1": [
+    "Ottokit Review 2025: Best Zapier Alternative? (youtube.com/watch?v=eMkGKUGwqN8)",
+    "Self-Hosted vs Cloud Automation Platforms: OttoKit vs n8n (youtube.com/watch?v=bernpAUJ5CI)",
+    "Powerful WordPress Automations with OttoKit (youtube.com/watch?v=nOi5jJl8NgE)"
+  ],
+  "ai_recommendations_docx": {
+    "title_alternatives": [
+      "OttoKit Gratuit vs Pro : Comparez les Meilleures Options",
+      "OttoKit : Quelle Version, Gratuit ou Pro, Vous Convient ?",
+      "OttoKit Gratuit vs Pro : Guide pour Faire le Bon Choix"
+    ],
+    "structure_suggestions": [
+      "Avantages et inconvenients d'OttoKit Gratuit et Pro",
+      "Cas d'utilisation pour les utilisateurs d'OttoKit Pro",
+      "Comment OttoKit se compare a Zapier et d'autres alternatives",
+      "Temoignages d'utilisateurs sur OttoKit",
+      "FAQ sur l'utilisation d'OttoKit Gratuit et Pro"
+    ],
+    "note": "Les suggestions title/structure du docx sont a prendre avec prudence : le titre actuel est juge 'bon depart' et coche deja les criteres. La SERP de comparaison est dominee par des reviews EN, donc les 'titres communs manquants' sont en partie un artefact de langue."
+  },
+  "deltas_vs_dataforseo": [
+    "thruuu et DataForSEO confirment le meme top SERP google.fr.",
+    "thruuu apporte les Page Rank et word/image counts par URL.",
+    "thruuu confirme schoolsWP en position 3 organique sur google.fr.",
+    "Aucun concurrent natif 'Free vs Pro' specifique dans le top 17 - angle d'attaque schoolsWP exclusif (idem DE et EN)."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "task_date": "2026-05-19",
+  "location_name": "Germany",
+  "language_code": "de",
+  "main_keyword": "OttoKit Free vs Pro",
+  "items": [
+    {
+      "keyword": "OttoKit Free vs Pro",
+      "main_intent": "commercial",
+      "probability": 0.913,
+      "search_volume": null,
+      "note": "Keyword absent de la DB DataForSEO en DE (volume non significatif, < 10/mois)"
+    },
+    {
+      "keyword": "ottokit",
+      "search_volume": 110,
+      "competition": 0.10,
+      "competition_level": "LOW",
+      "keyword_difficulty": 11,
+      "cpc": 2.92,
+      "main_intent": "transactional",
+      "trend_monthly_pct": 57,
+      "trend_quarterly_pct": 22,
+      "monthly_searches_last_12": {
+        "2025-04": 90, "2025-05": 140, "2025-06": 90, "2025-07": 140,
+        "2025-08": 110, "2025-09": 170, "2025-10": 140, "2025-11": 170,
+        "2025-12": 110, "2026-01": 90, "2026-02": 70, "2026-03": 110
+      }
+    },
+    {
+      "keyword": "ottokit pro",
+      "search_volume": 10,
+      "competition": 0.14,
+      "competition_level": "LOW",
+      "main_intent": "commercial",
+      "probability": 0.95,
+      "monthly_searches_last_12_constant": 10,
+      "note": "Volume non significatif mais stable depuis 2024"
+    },
+    {
+      "keyword": "ottokit erfahrungen",
+      "search_volume": null,
+      "main_intent": "informational",
+      "probability": 0.723,
+      "note": "Absent de la DB DataForSEO DE"
+    },
+    {
+      "keyword": "ottokit kostenlos",
+      "search_volume": null,
+      "main_intent": "commercial",
+      "probability": 0.846,
+      "note": "Absent de la DB DataForSEO DE"
+    },
+    {
+      "keyword": "ottokit review",
+      "search_volume": null,
+      "main_intent": "commercial",
+      "probability": 0.8
+    },
+    {
+      "keyword": "ottokit login",
+      "search_volume": 10,
+      "main_intent": "navigational",
+      "competition_level": "LOW"
+    },
+    {
+      "keyword": "ottokit pricing",
+      "search_volume": 10,
+      "main_intent": "commercial",
+      "competition_level": "LOW"
+    },
+    {
+      "keyword": "ottokit integrations",
+      "search_volume": 10,
+      "main_intent": "commercial",
+      "trend_monthly_pct": -100,
+      "trend_quarterly_pct": -100
+    },
+    {
+      "keyword": "suretriggers",
+      "search_volume": 50,
+      "main_intent": "commercial",
+      "competition_level": "LOW",
+      "cpc": 6.63,
+      "trend_monthly_pct": -50,
+      "trend_quarterly_pct": -50,
+      "trend_yearly_pct": -89,
+      "note": "Marque legacy en dèclin profond. Sur le rebranding OttoKit le pic AVR-2025 etait a 320/mois, plus que 10/mois en mars 2026."
+    }
+  ]
+}

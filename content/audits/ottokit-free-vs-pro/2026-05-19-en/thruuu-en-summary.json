@@ -1,0 +1,89 @@
+{
+  "source_file": "thruuu-raw/serp-analysis-en-v2.xlsx",
+  "scrape_date": "2026-05-19",
+  "scrape_meta": {
+    "query": "OttoKit Free vs Pro",
+    "device": "desktop",
+    "language": "en",
+    "country": "US",
+    "search_engine": "google.com"
+  },
+  "serp_overview_top_20": [
+    {"pos": 1, "type": "ai overview", "url": null},
+    {"pos": 2, "type": "video pack", "url": null},
+    {"pos": 3, "type": "organic", "url": "https://ottokit.com/", "hostname": "ottokit.com", "page_rank": 41, "word_count": 1666},
+    {"pos": 4, "type": "organic", "url": "https://wpastra.com/review/ottokit-review/", "hostname": "wpastra.com", "page_rank": 49, "word_count": 1969},
+    {"pos": 5, "type": "organic", "url": "https://www.reddit.com/r/Wordpress/comments/1np4cop/...", "hostname": "reddit.com", "page_rank": 60, "word_count": 266},
+    {"pos": 6, "type": "organic", "url": "https://wordpress.org/plugins/suretriggers/", "hostname": "wordpress.org", "page_rank": 76, "word_count": 4043},
+    {"pos": 7, "type": "questions (PAA)", "url": null},
+    {"pos": 8, "type": "organic", "url": "https://crocoblock.com/blog/ottokit-wordpress-plugin-review/", "hostname": "crocoblock.com", "page_rank": 49, "word_count": 1542},
+    {"pos": 9, "type": "organic", "url": "https://newpulselabs.com/ottokit-review/", "hostname": "newpulselabs.com", "page_rank": 29, "word_count": 2006},
+    {"pos": 10, "type": "organic", "url": "https://www.g2.com/products/ottokit/reviews", "hostname": "g2.com", "page_rank": 40, "word_count": null},
+    {"pos": 11, "type": "organic", "url": "https://ottokit.com/suretriggers-is-now-ottokit/", "hostname": "ottokit.com", "page_rank": 41, "word_count": 1129},
+    {"pos": 12, "type": "organic", "url": "https://cnxwebdesign.com/ottokit-ai-automation-for-wordpress-and-woocommerce/", "hostname": "cnxwebdesign.com", "page_rank": 0, "word_count": 683},
+    {"pos": 13, "type": "organic", "url": "https://ideas.ottokit.com/updates", "hostname": "ideas.ottokit.com", "page_rank": 40, "word_count": 4007},
+    {"pos": 14, "type": "organic", "url": "https://wordpress.org/support/topic/5-free-workflows-in-free-version/", "hostname": "wordpress.org", "page_rank": 76, "word_count": 158},
+    {"pos": 15, "type": "organic", "url": "https://ottokit.com/wordpress/", "hostname": "ottokit.com", "page_rank": 41, "word_count": 535},
+    {"pos": 16, "type": "organic", "url": "https://wpwebzon.com/ottokit-review/", "hostname": "wpwebzon.com", "page_rank": null, "word_count": null},
+    {"pos": 17, "type": "organic", "url": "https://www.capterra.com/p/10012201/SureTriggers/", "hostname": "capterra.com", "page_rank": null, "word_count": null},
+    {"pos": 18, "type": "organic", "url": "https://ottokit.com/integrations", "hostname": "ottokit.com", "page_rank": null, "word_count": null},
+    {"pos": 19, "type": "organic", "url": "https://www.wpfloor.com/ottokit-review/", "hostname": "wpfloor.com", "page_rank": null, "word_count": null}
+  ],
+  "word_count_stats": {
+    "min": 158,
+    "max": 4043,
+    "median_top_8": 1666,
+    "schoolswp_en_actuel": 1604,
+    "diagnostic": "schoolsWP EN à 1 604 mots est dans la fourchette pertinente (similaire à ottokit.com 1666, crocoblock 1542). wpastra (1969) et newpulselabs (2006) un peu au-dessus. Ce n'est pas la longueur qui manque, c'est la profondeur et le schema."
+  },
+  "page_rank_competitors": {
+    "max": 76,
+    "ottokit_com": 41,
+    "moyenne_top_10": "~46",
+    "diagnostic": "Top concurrents avec Page Rank 40-49 (équivalent autorité). wordpress.org écrase (76) mais sa page suretriggers est sur-stuffée et pas Free vs Pro spécifique. schoolsWP doit jouer la pertinence + schema."
+  },
+  "wpastra_structure_dominant": {
+    "h2": ["The Pros and Cons of OttoKit", "User Reviews", "OttoKit Pricing: Affordable Automation", "OttoKit vs Zapier vs Pabbly Connect", "Key Automation Features", "Working With OttoKit", "Final Thoughts", "Frequently Asked Questions for OttoKit"],
+    "h3_pricing": ["The Free Plan", "The Pro Plan", "The Business Plan", "The Lifetime Access Plan"],
+    "h3_review_criteria": ["1. Pricing", "2. Ease of Use", "3. Data Retention", "4. Team Collaboration", "5. App Integrations", "Overall Verdict"],
+    "diagnostic": "wpastra (#4, 1969 mots) est la structure dominante US à dépasser : 4 plans détaillés + 5 critères évalués. schoolsWP a un meilleur angle Free vs Pro spécifique mais doit creuser au moins 2 des 5 critères wpastra (Data Retention + Team Collaboration manquent côté schoolsWP)."
+  },
+  "frequent_questions_topus_dans_thruuu_serp": [
+    {"question": "Who Is OttoKit For?", "found_in_count": 5},
+    {"question": "How Does OttoKit Compare to Platforms Like Zapier?", "found_in_count": 4},
+    {"question": "What is OttoKit?", "found_in_count": 3, "note": "3 variantes (avec emoji thread, classique, 8: Who Is...)"},
+    {"question": "How AI Agents Can Improve Leads on Your Website", "found_in_count": 2},
+    {"question": "What Do You Need to Start Using OttoKit?", "found_in_count": 2},
+    {"question": "Some of My Apps Are Not Yet Integrated. Can I Submit a Request?", "found_in_count": 2},
+    {"question": "Is OttoKit a Cloud-Based Platform, or a WordPress Plugin?", "found_in_count": 2},
+    {"question": "Do I Need Coding Skills to Create Automations?", "found_in_count": 2},
+    {"question": "How Much Does OttoKit Cost?", "found_in_count": 1, "note": "PAA hint US explicite -- à ajouter dans la FAQ EN obligatoirement"},
+    {"question": "Is OttoKit secure and reliable?", "found_in_count": 1},
+    {"question": "Does it support multi-step workflows?", "found_in_count": 1},
+    {"question": "Can OttoKit integrate with WordPress and WooCommerce?", "found_in_count": 1},
+    {"question": "How does OttoKit compare to ActiveCampaign and HubSpot?", "found_in_count": 1}
+  ],
+  "paa_pos_6_extracted": [
+    {"q": "Is OttoKit free?", "answer_excerpt": "Yes. OttoKit offers a free plan that allows you to automate up to 1,000 tasks per month, connect one website, and create up to 5 workflows.", "source": "wpastra.com"},
+    {"q": "Is ifttt pro+ worth it?", "answer_excerpt": "Pro plan for multiple smart devices or building with multiple actions. Pro+ for advanced features.", "source": "ifttt.com"},
+    {"q": "Is a power automate really worth it?", "answer_excerpt": "Complex automation but may fall short in user-friendliness. Best suited for Microsoft-centric environments.", "source": "thedigitalprojectmanager.com"},
+    {"q": "Is there anything better than IFTTT?", "answer_excerpt": "Make (formerly Integromat), Microsoft Power Automate, Workato.", "source": "lindy.ai/blog"}
+  ],
+  "related_searches_us": [
+    "Ottokit free vs pro reddit",
+    "Ottokit free vs pro cost",
+    "OttoKit pricing",
+    "Suretriggers free plan",
+    "Ottokit wordpress plugin",
+    "OttoKit integrations",
+    "SureTriggers pricing",
+    "SureTriggers plugin"
+  ],
+  "deltas_vs_dataforseo_serp_us": [
+    "Confirmation totale : DataForSEO et thruuu donnent le même top 10 organic. Pas de divergence.",
+    "thruuu apporte les Page Rank par URL (ce que DataForSEO ne fournit pas directement).",
+    "thruuu apporte les word counts détaillés par URL.",
+    "thruuu confirme la position 2 du video pack et le PAA en position 7 (= entre rank 6 wordpress.org et rank 8 crocoblock).",
+    "Aucun concurrent natif Free vs Pro spécifique dans le top 19 -- angle d'attaque schoolsWP toujours exclusif."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "task_date": "2026-05-19",
+  "language": "en",
+  "items": [
+    {"keyword": "OttoKit Free vs Pro", "label": "commercial", "probability": 0.913},
+    {"keyword": "OttoKit Pro", "label": "commercial", "probability": 0.95},
+    {"keyword": "OttoKit review", "label": "commercial", "probability": 0.8},
+    {"keyword": "OttoKit pricing", "label": "commercial", "probability": 0.995},
+    {"keyword": "OttoKit alternative", "label": "commercial", "probability": 0.876}
+  ],
+  "observation": "Intent commercial dominant et fortement marqué (toutes les variantes > 0.8). 'ottokit pricing' a la probabilité la plus haute (0.995) -- requête transactionnelle quasi-pure."
+}

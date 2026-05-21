@@ -1,0 +1,41 @@
+{
+  "task_date": "2026-05-19",
+  "site_url": "https://schoolswp.com/",
+  "date_range": {"start": "2026-02-18", "end": "2026-05-19"},
+  "note_methodologique": "L'article EN 2865102 est BROUILLON donc absent de GSC. URL inspect /en/ottokit-free-vs-pro/ retourne 'URL is unknown to Google'. Les données ci-dessous concernent la page EN existante du cluster.",
+  "page_inspection": {
+    "url": "https://schoolswp.com/en/ottokit-free-vs-pro/",
+    "verdict": "NEUTRAL",
+    "coverage_state": "URL is unknown to Google",
+    "last_crawled": null,
+    "note": "Brouillon non publié -- aucun signal Google pour le moment"
+  },
+  "cluster_en_pages": [
+    {
+      "page": "https://schoolswp.com/en/suretriggers-ottokit-vs-zapier/",
+      "queries_top": [
+        {"query": "suretriggers vs zapier", "impressions": 76, "position": 1.1, "clicks": 0},
+        {"query": "suretriggers wordpress automation plugin", "impressions": 67, "position": 12.0, "clicks": 0},
+        {"query": "suretriggers", "impressions": 28, "position": 46.4, "clicks": 0},
+        {"query": "automator vs suretriggers", "impressions": 17, "position": 21.4, "clicks": 0},
+        {"query": "suretriggers review", "impressions": 9, "position": 32.6, "clicks": 0},
+        {"query": "suretriggers.com", "impressions": 8, "position": 81, "clicks": 0},
+        {"query": "suretriggers pricing", "impressions": 8, "position": 7.1, "clicks": 0},
+        {"query": "suretriggers wordpress automation", "impressions": 5, "position": 11.2, "clicks": 0},
+        {"query": "ottokit vs zapier", "impressions": 4, "position": 4.2, "clicks": 0},
+        {"query": "zapier automation examples", "impressions": 2, "position": 3, "clicks": 0},
+        {"query": "ottokit alternative", "impressions": 1, "position": 11, "clicks": 0},
+        {"query": "sure triggers", "impressions": 1, "position": 3, "clicks": 0},
+        {"query": "suretriggers for wordpress workflows", "impressions": 1, "position": 28, "clicks": 0},
+        {"query": "suretriggers wordpress", "impressions": 1, "position": 74, "clicks": 0},
+        {"query": "zapier free or paid", "impressions": 1, "position": 1, "clicks": 0}
+      ]
+    }
+  ],
+  "observations": [
+    "0 clic sur tout le cluster /en/ OttoKit sur 90j (même problème qu'avec /de/ et /fr/).",
+    "/en/suretriggers-ottokit-vs-zapier/ classé pos 1.1 sur 'suretriggers vs zapier' avec 76 impressions mais 0 clic -- confirme la marque SureTriggers est morte côté demande effective.",
+    "Aucune impression encore sur le slug brouillon /en/ottokit-free-vs-pro/ (logique, pas publié).",
+    "GSC EN cluster moins riche que FR cluster qui a 4 pages indexées. Publier /en/ottokit-free-vs-pro/ ajoute une 2e page EN indexable."
+  ]
+}

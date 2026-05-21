@@ -1,0 +1,114 @@
+{
+  "task_date": "2026-05-19",
+  "location_name": "United States",
+  "language_code": "en",
+  "main_keyword": "OttoKit Free vs Pro",
+  "items": [
+    {
+      "keyword": "OttoKit Free vs Pro",
+      "main_intent": "commercial",
+      "probability": 0.913,
+      "search_volume": null,
+      "note": "Keyword absent de la DB DataForSEO en EN US (volume non significatif sur ce longtail exact)"
+    },
+    {
+      "keyword": "ottokit",
+      "search_volume": 390,
+      "competition": 0.05,
+      "competition_level": "LOW",
+      "keyword_difficulty": 16,
+      "cpc": 16.75,
+      "low_top_of_page_bid": 9.02,
+      "high_top_of_page_bid": 30.88,
+      "main_intent": "transactional",
+      "trend_monthly_pct": 23,
+      "trend_yearly_pct": 3100,
+      "monthly_searches_last_12": {
+        "2025-04": 320, "2025-05": 480, "2025-06": 320, "2025-07": 320,
+        "2025-08": 390, "2025-09": 390, "2025-10": 480, "2025-11": 590,
+        "2025-12": 390, "2026-01": 320, "2026-02": 260, "2026-03": 320
+      },
+      "note": "+3100% YoY = explosion post-rebranding SureTriggers en avril 2025. Seed key au volume US 3,5x supérieur au DE (110). KD 16 reste accessible (vs 11 DE)."
+    },
+    {
+      "keyword": "ottokit pro",
+      "search_volume": 10,
+      "competition": 0.00,
+      "competition_level": "LOW",
+      "main_intent": "commercial",
+      "probability": 0.95,
+      "monthly_searches_last_12_avg": 13
+    },
+    {
+      "keyword": "ottokit pricing",
+      "search_volume": 20,
+      "competition": 0.01,
+      "competition_level": "LOW",
+      "main_intent": "commercial",
+      "probability": 0.995,
+      "trend_quarterly_pct": 100,
+      "note": "Trend quarterly +100 % : intent commercial pur, fort"
+    },
+    {
+      "keyword": "ottokit review",
+      "search_volume": 10,
+      "competition": 0.00,
+      "main_intent": "commercial",
+      "foreign_intent": "informational",
+      "probability": 0.8
+    },
+    {
+      "keyword": "ottokit reviews",
+      "search_volume": 10,
+      "main_intent": "informational",
+      "foreign_intent": "commercial",
+      "note": "Variante pluriel : intent bascule en info vs review singulier qui reste commercial"
+    },
+    {
+      "keyword": "ottokit alternative",
+      "main_intent": "commercial",
+      "probability": 0.876,
+      "search_volume": null
+    },
+    {
+      "keyword": "ottokit ai",
+      "search_volume": 10,
+      "competition": 0.86,
+      "competition_level": "HIGH",
+      "main_intent": "informational",
+      "note": "Seul keyword avec compétition HIGH (concurrence enchères AI tools US)"
+    },
+    {
+      "keyword": "ottokit wordpress",
+      "search_volume": 10,
+      "competition": 0.00,
+      "main_intent": "navigational"
+    },
+    {
+      "keyword": "ottokit wordpress automation",
+      "search_volume": 10,
+      "competition": 0.14,
+      "main_intent": "navigational"
+    },
+    {
+      "keyword": "ottokit wordpress plugin",
+      "search_volume": 10,
+      "competition": 0.07,
+      "main_intent": "navigational",
+      "foreign_intent": "commercial"
+    },
+    {
+      "keyword": "ottokit login",
+      "search_volume": 10,
+      "competition": 0.09,
+      "main_intent": "navigational",
+      "trend_quarterly_pct": -67
+    },
+    {
+      "keyword": "ottokit integrations",
+      "search_volume": 10,
+      "competition": 0.00,
+      "main_intent": "commercial"
+    }
+  ]
+}

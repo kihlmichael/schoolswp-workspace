@@ -1,0 +1,24 @@
+{
+  "page_url": "https://schoolswp.com/ottokit-gratuit-vs-pro/",
+  "site_url": "https://schoolswp.com/",
+  "note": "Inspection effectuee sur la version FR publiee (la DE est en brouillon, non inspectable).",
+  "verdict": "PASS",
+  "coverage_state": "Submitted and indexed",
+  "last_crawled": "2026-05-08 13:09",
+  "page_fetch_state": "SUCCESSFUL",
+  "robots_txt_state": "ALLOWED",
+  "indexing_state": "INDEXING_ALLOWED",
+  "google_canonical": "https://schoolswp.com/ottokit-gratuit-vs-pro/",
+  "user_canonical": "https://schoolswp.com/ottokit-gratuit-vs-pro/",
+  "crawled_as": "MOBILE",
+  "referring_urls": ["https://schoolswp.com/"],
+  "rich_results": {
+    "verdict": "PASS",
+    "detected_types": ["Breadcrumbs"],
+    "issues": []
+  },
+  "implications_pour_de": [
+    "La FR est crawlee mobile-first et indexee : la DE le sera aussi des publication.",
+    "Schema detecte = uniquement Breadcrumbs (pas de FAQPage malgre l'accordeon Kadence). A enrichir cote DE avant publication."
+  ]
+}

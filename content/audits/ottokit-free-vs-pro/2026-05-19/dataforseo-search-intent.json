@@ -1,0 +1,12 @@
+{
+  "task_date": "2026-05-19",
+  "language": "de",
+  "items": [
+    {"keyword": "OttoKit Free vs Pro", "label": "commercial", "probability": 0.913},
+    {"keyword": "OttoKit Pro", "label": "commercial", "probability": 0.95},
+    {"keyword": "OttoKit erfahrungen", "label": "informational", "probability": 0.723},
+    {"keyword": "OttoKit review", "label": "commercial", "probability": 0.8},
+    {"keyword": "OttoKit kostenlos", "label": "commercial", "probability": 0.846}
+  ],
+  "observation": "Intent commercial dominant. La requete 'erfahrungen' bascule en info (Q&A, retours d'experience)."
+}

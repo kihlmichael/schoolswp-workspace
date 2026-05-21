@@ -1,0 +1,14 @@
+{
+  "source": "DataForSEO Labs - search intent",
+  "language": "fr",
+  "scrape_date": "2026-05-20",
+  "items": [
+    { "keyword": "ottokit", "intent": "transactional", "probability": 0.598 },
+    { "keyword": "ottokit gratuit vs pro", "intent": "commercial", "probability": 0.786 },
+    { "keyword": "ottokit free vs pro", "intent": "commercial", "probability": 0.853 },
+    { "keyword": "ottokit avis", "intent": "informational", "probability": 0.709 },
+    { "keyword": "ottokit pro", "intent": "commercial", "probability": 0.659 },
+    { "keyword": "ottokit prix", "intent": "commercial", "probability": 0.804 }
+  ],
+  "diagnostic": "Le focus keyword 'ottokit gratuit vs pro' est commercial (0,79) : l'angle comparatif decisionnel de l'article est aligne. 'ottokit' seul est transactional (l'utilisateur veut acceder a l'outil) - l'article doit donc soigner ses CTA cloak. 'ottokit avis' est informational : opportunite de cluster avec l'article avis existant."
+}

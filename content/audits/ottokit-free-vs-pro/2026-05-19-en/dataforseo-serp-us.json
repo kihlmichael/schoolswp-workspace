@@ -1,0 +1,51 @@
+{
+  "task_date": "2026-05-19",
+  "location": "United States",
+  "language": "en",
+  "keyword": "OttoKit Free vs Pro",
+  "ai_overview_present": true,
+  "ai_overview_async": true,
+  "video_pack_position": 2,
+  "video_pack_items": [
+    {"source": "YouTube CodingMenace", "title": "I Tried Ottokit - Here's What No One Tells You!", "url": "https://www.youtube.com/watch?v=L_1vpNyCzSY", "date": "2025-09-22"},
+    {"source": "YouTube DroidCrunch", "title": "Ottokit Review 2025: Best Zapier Alternative?", "url": "https://www.youtube.com/watch?v=eMkGKUGwqN8", "date": "2025-05-27"},
+    {"source": "YouTube Lytbox (Jeffrey)", "title": "Powerful WordPress Automations with OttoKit", "url": "https://www.youtube.com/watch?v=nOi5jJl8NgE", "date": "2025-09-30"}
+  ],
+  "organic_top_10": [
+    {"rank": 1, "domain": "ottokit.com", "url": "https://ottokit.com/", "title": "OttoKit - No-Code AI Workflow Automation Platform", "type": "home", "sitelinks": ["Pricing", "Products", "Recipes", "Resources"]},
+    {"rank": 2, "domain": "wpastra.com", "url": "https://wpastra.com/review/ottokit-review/", "title": "OttoKit Review: Say Goodbye to the Grind With Automation!", "snippet_key_fact": "Offers a free plan with 1,000 tasks/month and 3 triggers. Paid plans start at $9/month"},
+    {"rank": 3, "domain": "reddit.com", "url": "https://www.reddit.com/r/Wordpress/comments/1np4cop/", "title": "Seeking Opinions on OttoKit: Buy LTD Before Price Increase"},
+    {"rank": 4, "domain": "wordpress.org", "url": "https://wordpress.org/plugins/suretriggers/", "title": "OttoKit: All-in-One Automation Platform - WordPress plugin", "rating": "4.9 (117)"},
+    {"rank": 5, "domain": "crocoblock.com", "url": "https://crocoblock.com/blog/ottokit-wordpress-plugin-review/", "title": "OttoKit WordPress Plugin Review: Features & Pricing (2026)"},
+    {"rank": 6, "domain": "newpulselabs.com", "url": "https://newpulselabs.com/ottokit-review/", "title": "OttoKit Review - a powerful Zapier alternative for WordPress", "rating": "4.8"},
+    {"rank": 7, "domain": "g2.com", "url": "https://www.g2.com/products/ottokit/reviews", "title": "OttoKit Reviews 2026: Details, Pricing, & Features", "rating": "4.5", "snippet_key_fact": "Free. Free. Per Year. Pro. $108.00. Per Year"},
+    {"rank": 8, "domain": "ottokit.com", "url": "https://ottokit.com/suretriggers-is-now-ottokit/", "title": "SureTriggers is now OttoKit", "date": "2026-05-10"}
+  ],
+  "people_also_ask": [
+    {"question": "Is OttoKit free?", "source": "wpastra.com/review/ottokit-review/"},
+    {"question": "Is ifttt pro+ worth it?", "source": "ifttt.com/plans"},
+    {"question": "Is a power automate really worth it?", "source": "thedigitalprojectmanager.com"},
+    {"question": "Is there anything better than IFTTT?", "source": "lindy.ai/blog/ifttt-alternatives"},
+    {"question": "How much is OttoKit?", "source": "AI Overview expanded"},
+    {"question": "What's the best free newsletter platform?", "source": "AI Overview expanded"}
+  ],
+  "related_searches": [
+    "Ottokit free vs pro reddit",
+    "Ottokit free vs pro cost",
+    "OttoKit pricing",
+    "Suretriggers free plan",
+    "OttoKit integrations",
+    "Ottokit wordpress plugin",
+    "SureTriggers pricing",
+    "SureTriggers plugin"
+  ],
+  "observations": [
+    "AI Overview en position 1 (asynchrone). Plus chaud que la SERP DE.",
+    "Video pack en position 2 (3 YouTube). schoolsWP devrait viser un short YouTube avec le même titre.",
+    "PAA actif (6 questions) -- contrairement à DE. Le JSON-LD FAQPage devient prioritaire absolu pour gagner du rich-result.",
+    "ottokit.com en double (pos 1 + 8) avec annonce du rebrand SureTriggers.",
+    "Top 8 = 0 résultat natif Free vs Pro spécifique. Angle d'attaque maintenu pour schoolsWP.",
+    "Concurrent à dépasser : wpastra.com (#2, 1969 mots, snippet sur free plan 1,000 tasks).",
+    "Volume seed 'ottokit' = 390/mois US, +3100 % YoY. Marché en explosion post-rebranding (avril 2025)."
+  ]
+}

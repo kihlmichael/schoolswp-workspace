@@ -1,0 +1,96 @@
+{
+  "task_date": "2026-05-19",
+  "source": "thruuu_export_OttoKit Free vs Pro_2026-5-19 (1).xlsx",
+  "search_params": {
+    "query": "OttoKit Free vs Pro",
+    "device": "desktop",
+    "language": "de",
+    "country": "DE",
+    "search_engine": "google.de"
+  },
+  "ai_overview_present": false,
+  "note_aio": "Pas d'AIO scrappé par thruuu sur cette SERP DE, contrairement à DataForSEO qui annonçait un AIO asynchrone en pos 1. Probable variation A/B Google ou différence de scraping.",
+  "organic_top_17": [
+    {"rank": 1, "domain": "ottokit.com", "url": "https://ottokit.com/", "title": "OttoKit - No-Code AI Workflow Automation Platform", "lang": "EN"},
+    {"rank": 2, "domain": "wordpress.org", "url": "https://wordpress.org/plugins/suretriggers/", "title": "OttoKit: All-in-One Automation Platform - WordPress plugin", "lang": "EN"},
+    {"rank": 3, "domain": "reddit.com", "url": "https://www.reddit.com/r/Wordpress/comments/1np4cop/", "title": "Seeking Opinions on OttoKit: Buy LTD Before Price Increase", "lang": "EN", "type": "forum"},
+    {"rank": 4, "domain": "wpastra.com", "url": "https://wpastra.com/review/ottokit-review/", "title": "OttoKit Review: Say Goodbye to the Grind With Automation!", "lang": "EN"},
+    {"rank": 5, "domain": "ottokit.com", "url": "https://ottokit.com/wordpress/", "title": "Automate your WordPress Website Without Code", "lang": "EN"},
+    {"rank": 6, "type": "video", "note": "vidéo SERP (probablement Robert Leitinger YouTube ou autre)"},
+    {"rank": 7, "domain": "crocoblock.com", "url": "https://crocoblock.com/blog/ottokit-wordpress-plugin-review/", "title": "OttoKit WordPress Plugin Review: Features & Pricing (2026)", "lang": "EN"},
+    {"rank": 8, "domain": "newpulselabs.com", "url": "https://newpulselabs.com/ottokit-review/", "title": "OttoKit Review - a powerful Zapier alternative for WordPress", "lang": "EN"},
+    {"rank": 9, "domain": "bit-integrations.com", "url": "https://bit-integrations.com/de/best-ottokit-alternative-in-wordpress/", "title": "Beste Ottokit (ehemals SureTriggers) Alternative in WordPress", "lang": "DE", "natif_de": true},
+    {"rank": 10, "domain": "g2.com", "url": "https://www.g2.com/products/ottokit/reviews", "title": "OttoKit Reviews 2026", "lang": "EN"},
+    {"rank": 11, "domain": "cnxwebdesign.com", "url": "https://cnxwebdesign.com/ottokit-ai-automation-for-wordpress-and-woocommerce/", "title": "AI Automation for WordPress and WooCommerce", "lang": "EN"},
+    {"rank": 12, "domain": "ideas.ottokit.com", "url": "https://ideas.ottokit.com/updates", "title": "Updates | OttoKit"},
+    {"rank": 13, "domain": "robert-leitinger.com", "url": "https://robert-leitinger.com/ottokit/", "title": "OttoKit im Test - Wie gut ist die n8n / Make Alternative wirklich?", "lang": "DE", "natif_de": true, "role": "CONCURRENT DE EMERGENT a surveiller (auteur Robert Leitinger, deja present en video pos 5/6)"},
+    {"rank": 14, "domain": "ottokit.com", "url": "https://ottokit.com/suretriggers-is-now-ottokit/", "title": "SureTriggers is now OttoKit"},
+    {"rank": 15, "domain": "wpwebzon.com", "url": "https://wpwebzon.com/ottokit-review/", "title": "OttoKit Review (January 2026 Updated)", "lang": "EN"},
+    {"rank": 16, "domain": "ottokit.com", "url": "https://ottokit.com/suretriggers-vs-wp-fusion-comparison/", "title": "OttoKit vs. WP Fusion: Comparing two automation tools"},
+    {"rank": 17, "domain": "softwareadvice.co.nz", "url": "https://www.softwareadvice.co.nz/alternatives/421423/suretriggers", "title": "OttoKit alternatives and related software"}
+  ],
+  "concurrents_de_natifs": [
+    {
+      "rank": 9,
+      "domain": "bit-integrations.com",
+      "lang": "DE",
+      "title": "Beste Ottokit (ehemals SureTriggers) Alternative in WordPress",
+      "angle": "Article anti-OttoKit positionnant Bit Integrations comme alternative",
+      "note": "Capte le legacy 'ehemals SureTriggers' dans le titre - exploite le rebranding"
+    },
+    {
+      "rank": 13,
+      "domain": "robert-leitinger.com",
+      "lang": "DE",
+      "title": "OttoKit im Test - Wie gut ist die n8n / Make Alternative wirklich?",
+      "h1": "OttoKit im Test – Wie gut ist die n8n / Make Alternative wirklich?",
+      "angle": "Review honnete OttoKit vs n8n vs Make",
+      "presence_video_serp": true,
+      "note": "Auteur DE actif (probable YouTuber + blogueur). Vise un angle comparatif n8n/Make qui n'est pas explore par bit-integrations. A monitorer comme principal concurrent DE de schoolsWP."
+    }
+  ],
+  "frequent_questions_de_natives": [
+    {"tag": "H1", "question": "OttoKit im Test - Wie gut ist die n8n / Make Alternative wirklich?", "source": "robert-leitinger.com"},
+    {"tag": "H1", "question": "Auf der Suche nach dem besten OttoKit (ehemals Suretriggers) Alternative In WordPress?", "source": "bit-integrations.com"},
+    {"tag": "H2", "question": "Was ist OttoKit?", "count": 4, "note": "Question recurrente forte"},
+    {"tag": "H2", "question": "Wo kann ich Unterstützung erhalten?", "count": 2},
+    {"tag": "H2", "question": "OttoKit vs Make vs n8n - Was ist der Unterschied?", "count": 1, "source": "robert-leitinger.com"},
+    {"tag": "H2", "question": "Benötige ich Programmierkenntnisse für die Nutzung?", "count": 1},
+    {"tag": "H2", "question": "Haben Sie ein Partner-/Wiederverkäuferprogramm?", "count": 1},
+    {"tag": "H2", "question": "Ist Bit Integrations WordPress Plugin kostenlos?", "count": 1, "source": "bit-integrations.com"},
+    {"tag": "H2", "question": "Was Kunden über Bit Integrations sagen", "count": 1, "source": "bit-integrations.com"}
+  ],
+  "related_searches_google_de": [
+    "ZipWP free plan", "Ottokit affiliate", "Uncanny Automator Pro",
+    "OttoKit integrations", "Otto kit", "Spectra Pro", "SureRank Pro", "Integrately"
+  ],
+  "concurrents_indirects_observes": [
+    "Uncanny Automator (Pro)",
+    "Integrately",
+    "n8n / Make (cite par robert-leitinger comme alternatives)",
+    "Pabbly Connect",
+    "Zapier",
+    "WP Fusion (cite par ottokit.com pos 16)",
+    "ZipWP, Spectra Pro, SureRank Pro (related searches - ecosysteme Sure*)"
+  ],
+  "topic_dominant_serp_de": [
+    {"keyword": "ottokit", "pages": 9, "freq": 273},
+    {"keyword": "automation", "pages": 7, "freq": 161},
+    {"keyword": "wordpress", "pages": 8, "freq": 113},
+    {"keyword": "action", "pages": 4, "freq": 81},
+    {"keyword": "task", "pages": 4, "freq": 67},
+    {"keyword": "trigger", "pages": 4, "freq": 55},
+    {"keyword": "automate", "pages": 5, "freq": 53},
+    {"keyword": "plugin", "pages": 7, "freq": 60},
+    {"keyword": "connect", "pages": 6, "freq": 49},
+    {"keyword": "zapier", "pages": 6, "freq": 46}
+  ],
+  "observations": [
+    "SERP DE moins vide que ce qu'on pensait : 2 resultats DE natifs (pos 9 + pos 13), pas seulement 1.",
+    "Robert Leitinger (DE) est un concurrent direct emergeant : video YouTube + article blog DE. A integrer dans la veille concurrentielle DE.",
+    "L'angle comparatif 'OttoKit vs Make vs n8n' est porte par robert-leitinger, pas couvert par schoolsWP DE actuellement - opportunite si on veut elargir le cluster.",
+    "AI Overview discordant : DataForSEO dit oui (asynchrone pos 1), thruuu dit non. Verifier en live avant publication.",
+    "Pas de FAQ schema natif DE detecte dans le top 10 - opportunite FAQPage maintenue.",
+    "Le terme 'ehemals SureTriggers' (ex-SureTriggers) est exploite par bit-integrations DE. schoolsWP peut le citer une fois en H3 pour capter le legacy minime."
+  ]
+}
