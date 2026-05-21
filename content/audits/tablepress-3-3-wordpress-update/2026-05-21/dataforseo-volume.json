@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "source": "DataForSEO Labs - keyword_overview",
+    "location": "United States (2840)",
+    "language_code": "en",
+    "date": "2026-05-21",
+    "audit": "tablepress-3-3-wordpress-update (EN)",
+    "note": "Le mot-cle exact 'tablepress 3.3' est omis par DataForSEO (aucune donnee = volume nul / non mesurable, comme en DE)."
+  },
+  "items": [
+    {
+      "keyword": "tablepress",
+      "search_volume": 590,
+      "competition": 0.13,
+      "competition_level": "LOW",
+      "cpc": 0.98,
+      "keyword_difficulty": 16,
+      "main_intent": "informational (0.615)",
+      "search_volume_trend": { "quarterly": 23, "yearly": -33 },
+      "monthly_searches": { "2025-04": 880, "2025-05": 720, "2025-06": 590, "2025-07": 720, "2025-08": 590, "2025-09": 720, "2025-10": 590, "2025-11": 590, "2025-12": 480, "2026-01": 480, "2026-02": 590, "2026-03": 590 }
+    },
+    {
+      "keyword": "wordpress table plugin",
+      "search_volume": 170,
+      "competition": 0.11,
+      "competition_level": "LOW",
+      "cpc": 5.09,
+      "keyword_difficulty": 32,
+      "main_intent": "navigational (0.42) / commercial (0.27)",
+      "search_volume_trend": { "monthly": 91, "quarterly": 50, "yearly": -46 },
+      "monthly_searches": { "2025-04": 320, "2025-05": 260, "2025-06": 210, "2025-07": 170, "2025-08": 170, "2025-09": 170, "2025-10": 140, "2025-11": 140, "2025-12": 170, "2026-01": 140, "2026-02": 110, "2026-03": 210 }
+    },
+    {
+      "keyword": "wordpress tables",
+      "search_volume": 140,
+      "competition": 0.14,
+      "competition_level": "LOW",
+      "cpc": 4.48,
+      "keyword_difficulty": 31,
+      "main_intent": "commercial",
+      "search_volume_trend": { "monthly": -59, "quarterly": -36, "yearly": -73 },
+      "monthly_searches": { "2025-05": 210, "2025-06": 170, "2025-07": 140, "2025-08": 170, "2025-09": 170, "2025-10": 140, "2025-11": 90, "2025-12": 90, "2026-01": 110, "2026-02": 110, "2026-03": 170, "2026-04": 70 }
+    },
+    {
+      "keyword": "tablepress plugin",
+      "search_volume": 70,
+      "competition": 0.02,
+      "competition_level": "LOW",
+      "keyword_difficulty": 16,
+      "main_intent": "transactional",
+      "search_volume_trend": { "monthly": -29, "quarterly": -29, "yearly": -44 },
+      "monthly_searches": { "2025-04": 110, "2025-05": 90, "2025-06": 50, "2025-07": 90, "2025-08": 90, "2025-09": 90, "2025-10": 70, "2025-11": 70, "2025-12": 50, "2026-01": 70, "2026-02": 70, "2026-03": 50 }
+    },
+    {
+      "keyword": "tablepress wordpress",
+      "search_volume": 50,
+      "competition": 0.03,
+      "competition_level": "LOW",
+      "cpc": 8.98,
+      "keyword_difficulty": 18,
+      "main_intent": "navigational (0.785)",
+      "search_volume_trend": { "monthly": 40, "quarterly": 75 },
+      "monthly_searches": { "2025-04": 50, "2025-05": 50, "2025-06": 40, "2025-07": 50, "2025-08": 50, "2025-09": 50, "2025-10": 40, "2025-11": 50, "2025-12": 40, "2026-01": 40, "2026-02": 50, "2026-03": 70 }
+    },
+    {
+      "keyword": "how to add a table in wordpress",
+      "search_volume": 40,
+      "competition": 0.02,
+      "competition_level": "LOW",
+      "main_intent": "informational",
+      "search_volume_trend": { "quarterly": -25, "yearly": -57 },
+      "monthly_searches": { "2025-04": 50, "2025-05": 50, "2025-06": 40, "2025-07": 50, "2025-08": 50, "2025-09": 40, "2025-10": 40, "2025-11": 30, "2025-12": 20, "2026-01": 40, "2026-02": 30, "2026-03": 30 }
+    },
+    {
+      "keyword": "tablepress tutorial",
+      "search_volume": 10,
+      "competition": 0,
+      "competition_level": "LOW",
+      "main_intent": "informational (0.963)",
+      "monthly_searches": { "2025-04": 10, "2025-05": 10, "2025-06": 10, "2025-07": 10, "2025-08": 10, "2025-09": 10, "2025-11": 10, "2025-12": 10, "2026-01": 10, "2026-02": 10, "2026-03": 10 }
+    },
+    {
+      "keyword": "tablepress review",
+      "search_volume": null,
+      "note": "Omis par keyword_overview (volume non mesurable). search_intent: commercial (0.821)."
+    },
+    {
+      "keyword": "tablepress 3.3",
+      "search_volume": null,
+      "note": "Omis par DataForSEO - aucune donnee. Requete de version, volume nul / non mesurable."
+    }
+  ]
+}

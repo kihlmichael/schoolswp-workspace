@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "source": "GSC get_search_by_page_query",
+    "site": "https://schoolswp.com/",
+    "page": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/",
+    "date_range": "2026-04-23 -> 2026-05-21 (28j ; article publie le 2026-05-13)"
+  },
+  "totals": {
+    "clicks": 0,
+    "impressions": 13,
+    "avg_ctr": 0.0
+  },
+  "rows": [
+    {
+      "query": "site:schoolswp.com",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 249
+    },
+    {
+      "query": "tablepress",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 6.6
+    },
+    {
+      "query": "tablepress seo",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 5.7
+    },
+    {
+      "query": "tablepress wordpress",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    }
+  ]
+}

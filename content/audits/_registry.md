@@ -8,6 +8,7 @@
 | Slug | URL | Premier audit | Dernier audit | Snapshots | Statut | Trigger initial |
 | --- | --- | --- | --- | --- | --- | --- |
 | [masteriyo-lms-avis](masteriyo-lms-avis/README.md) | `/masteriyo-lms-avis/` | 2026-05-07 | 2026-05-07 | 1 | refonte-decidee | Rank Math weekly 2026-05-03 (-51 pos) |
+| [tablepress-3-3-wordpress-update](tablepress-3-3-wordpress-update/README.md) | `/tablepress-3-3-mise-a-jour-wordpress/` (publié, FR) + `/de/?p=2898584` (programmé, DE) + `/en/?p=2898585` (programmé, EN) | 2026-05-20 | 2026-05-21 | 3 (DE + EN + FR) | refonte-effectuee (DE + EN) + publie (FR) | Demande Michael (audit multilingue) |
 
 ## Statuts possibles
 
@@ -16,6 +17,7 @@
 | `audit-en-cours` | Collecte de données pas terminée |
 | `refonte-decidee` | Décision prise, plan d'action en attente d'exécution |
 | `refonte-en-cours` | Rédaction / réécriture en cours |
+| `refonte-effectuee` | Corrections appliquées côté serveur, attente publication humaine |
 | `publie` | Refonte poussée en prod, monitoring activé |
 | `en-monitoring` | Pas de refonte décidée, on surveille les positions |
 | `pause` | Audit fait mais aucune action planifiée |

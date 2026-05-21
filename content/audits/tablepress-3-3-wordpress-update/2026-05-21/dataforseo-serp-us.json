@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "source": "DataForSEO - serp/organic/live/advanced",
+    "keyword": "tablepress 3.3",
+    "search_engine": "google",
+    "location": "United States",
+    "language_code": "en",
+    "device": "desktop",
+    "depth": 20,
+    "date": "2026-05-21",
+    "note": "Live SERP. schoolswp.com (article FR) ressort #8 organique (rank_absolute 9) - thruuu n'avait pas capte schoolswp dans son snapshot du meme jour (volatilite forte sur une requete de version)."
+  },
+  "items": [
+    { "type": "ai_overview", "rank_absolute": 1, "page": 1, "asynchronous_ai_overview": true },
+    { "type": "organic", "rank_group": 1, "rank_absolute": 2, "domain": "tablepress.org", "title": "TablePress · The WordPress table plugin that makes tables ...", "url": "https://tablepress.org/" },
+    { "type": "organic", "rank_group": 2, "rank_absolute": 3, "domain": "tablepress.org", "title": "Plugin Information", "url": "https://tablepress.org/info/", "description": "TablePress 3.3 is a feature, stability, maintenance, and compatibility update. ... TablePress 3.3 requires WordPress 6.7 or newer." },
+    { "type": "organic", "rank_group": 3, "rank_absolute": 4, "domain": "github.com", "title": "TablePress is the most popular and highest-rated table ...", "url": "https://github.com/TablePress/TablePress" },
+    { "type": "organic", "rank_group": 4, "rank_absolute": 5, "domain": "tablepress.org", "title": "News · TablePress", "url": "https://tablepress.org/news/", "description": "Now available: TablePress 3.3 · Releases. April 7, 2026." },
+    { "type": "organic", "rank_group": 5, "rank_absolute": 6, "domain": "wordpress.org", "title": "TablePress – Tables in WordPress made easy", "url": "https://wordpress.org/plugins/tablepress/", "extended_snippet": "5.0(4,624) · Free", "rating": { "value": 5, "votes_count": 4624, "rating_max": 5 }, "description": "Version 3.3 (April 7, 2026). ... TablePress 3.3 requires WordPress 6.7 or newer." },
+    { "type": "organic", "rank_group": 6, "rank_absolute": 7, "domain": "plugintests.com", "title": "Report - TablePress 3.3", "url": "https://plugintests.com/plugins/wporg/tablepress/latest" },
+    { "type": "organic", "rank_group": 7, "rank_absolute": 8, "domain": "tablepress.org", "title": "Plans and Pricing", "url": "https://tablepress.org/pricing/" },
+    { "type": "organic", "rank_group": 8, "rank_absolute": 9, "domain": "schoolswp.com", "title": "TablePress 3.3 : gérez vos tableaux sans galérer - schoolsWP", "url": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/", "description": "May 13, 2026 — TablePress 3.3 simplifie les grands tableaux WordPress : barre fixe, raccourcis clavier et mise à jour plus sûre.", "note": "Article FR publie - seul resultat editorial tiers de la page 1." },
+    { "type": "organic", "rank_group": 9, "rank_absolute": 10, "domain": "www.youtube.com", "title": "How to create tables in WordPress with TablePress (Easiest ...", "url": "https://www.youtube.com/watch?v=jGxwwXQ2KC8", "is_video": true },
+    { "type": "organic", "rank_group": 10, "rank_absolute": 11, "domain": "newreleases.io", "title": "TablePress/TablePress 3.3 on GitHub", "url": "https://newreleases.io/project/github/TablePress/TablePress/release/3.3" }
+  ]
+}

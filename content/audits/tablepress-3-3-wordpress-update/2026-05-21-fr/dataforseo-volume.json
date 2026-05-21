@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "source": "DataForSEO Labs - keyword_overview",
+    "location": "France (2250)",
+    "language_code": "fr",
+    "date": "2026-05-21",
+    "audit": "tablepress-3-3-wordpress-update (FR)",
+    "note": "Le mot-cle 'tablepress 3.3' est omis par DataForSEO (volume nul / non mesurable, comme en DE et EN). 'tablepress avis', 'tablepress tutoriel', 'creer tableau wordpress', 'tablepress francais' egalement omis (aucune donnee)."
+  },
+  "items": [
+    {
+      "keyword": "tablepress",
+      "search_volume": 110,
+      "competition": 0.17,
+      "competition_level": "LOW",
+      "cpc": 3.67,
+      "keyword_difficulty": 29,
+      "main_intent": "informational (0.616)",
+      "search_volume_trend": { "monthly": -22, "quarterly": -36, "yearly": -36 },
+      "monthly_searches": { "2025-05": 170, "2025-06": 110, "2025-07": 140, "2025-08": 90, "2025-09": 110, "2025-10": 90, "2025-11": 90, "2025-12": 90, "2026-01": 140, "2026-02": 110, "2026-03": 90, "2026-04": 70 }
+    },
+    {
+      "keyword": "tableau wordpress",
+      "search_volume": 30,
+      "competition": 0.01,
+      "competition_level": "LOW",
+      "main_intent": "navigational (0.931)",
+      "search_volume_trend": { "yearly": -40 },
+      "monthly_searches": { "2025-04": 70, "2025-05": 40, "2025-06": 30, "2025-07": 30, "2025-08": 20, "2025-09": 30, "2025-10": 30, "2025-11": 20, "2025-12": 20, "2026-01": 30, "2026-02": 30, "2026-03": 30 }
+    },
+    {
+      "keyword": "tablepress wordpress",
+      "search_volume": 20,
+      "competition": 0.02,
+      "competition_level": "LOW",
+      "keyword_difficulty": 48,
+      "main_intent": "navigational (0.783)",
+      "search_volume_trend": { "monthly": -33, "yearly": -50 },
+      "monthly_searches": { "2025-04": 30, "2025-05": 30, "2025-06": 30, "2025-07": 30, "2025-08": 30, "2025-09": 20, "2025-10": 20, "2025-11": 10, "2025-12": 20, "2026-01": 20, "2026-02": 30, "2026-03": 20 }
+    },
+    {
+      "keyword": "plugin tableau wordpress",
+      "search_volume": 10,
+      "competition": 0.14,
+      "competition_level": "LOW",
+      "cpc": 0.76,
+      "keyword_difficulty": 48,
+      "main_intent": "commercial (0.511)",
+      "search_volume_trend": { "yearly": -50 },
+      "monthly_searches": { "2025-04": 20, "2025-05": 10, "2025-06": 10, "2025-07": 10, "2025-08": 10, "2025-09": 10, "2025-10": 10, "2025-11": 10, "2025-12": 10, "2026-01": 10, "2026-02": 10, "2026-03": 10 }
+    },
+    {
+      "keyword": "tablepress 3.3",
+      "search_volume": null,
+      "note": "Omis par DataForSEO - aucune donnee. Requete de version, volume nul / non mesurable. search_intent : commercial (0.486) / informational (0.402)."
+    }
+  ]
+}

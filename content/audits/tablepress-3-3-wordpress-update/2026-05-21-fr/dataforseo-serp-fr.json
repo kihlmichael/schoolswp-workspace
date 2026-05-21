@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "source": "DataForSEO - serp/organic/live/advanced",
+    "keyword": "tablepress 3.3",
+    "search_engine": "google",
+    "location": "France",
+    "language_code": "fr",
+    "device": "desktop",
+    "depth": 20,
+    "date": "2026-05-21",
+    "note": "SERP live google.fr. L'article FR schoolsWP ressort #3 organique - seule voix editoriale tierce de la page 1, derriere uniquement tablepress.org et fr.wordpress.org."
+  },
+  "items": [
+    { "rank_absolute": 1, "domain": "tablepress.org", "title": "TablePress - The WordPress table plugin", "url": "https://tablepress.org/" },
+    { "rank_absolute": 2, "domain": "fr.wordpress.org", "title": "TablePress - Tables in WordPress made easy", "url": "https://fr.wordpress.org/plugins/tablepress/", "rating": { "value": 5, "votes_count": 4624 }, "note": "Depot officiel WordPress.org FR." },
+    { "rank_absolute": 3, "domain": "schoolswp.com", "title": "TablePress 3.3 : gérez vos tableaux sans galérer - schoolsWP", "url": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/", "note": "Article FR audite ici. Seul resultat editorial tiers de la page 1." },
+    { "rank_absolute": 4, "domain": "tablepress.org", "title": "Plugin Information", "url": "https://tablepress.org/info/", "description": "TablePress 3.3 requires WordPress 6.7 or newer." },
+    { "rank_absolute": 5, "domain": "github.com", "title": "TablePress/TablePress", "url": "https://github.com/TablePress/TablePress" },
+    { "rank_absolute": 6, "domain": "plugintests.com", "title": "Report - TablePress 3.3", "url": "https://plugintests.com/plugins/wporg/tablepress/latest" },
+    { "rank_absolute": 7, "domain": "etab.ac-reunion.fr", "title": "TablePress", "url": "https://etab.ac-reunion.fr/extensions/tablepress/", "note": "Doc educative FR (Academie de La Reunion), tutoriel generique." },
+    { "rank_absolute": 8, "domain": "newreleases.io", "title": "TablePress/TablePress 3.3.1 on GitHub", "url": "https://newreleases.io/project/github/TablePress/TablePress/release/3.3.1" },
+    { "rank_absolute": 9, "domain": "github.com", "title": "Releases - TablePress/TablePress", "url": "https://github.com/TobiasBg/TablePress/releases" },
+    { "rank_absolute": 10, "domain": "tablepress.org", "title": "Plans and Pricing", "url": "https://tablepress.org/pricing/" }
+  ]
+}

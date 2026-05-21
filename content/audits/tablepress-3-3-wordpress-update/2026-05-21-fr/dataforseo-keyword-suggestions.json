@@ -1,0 +1,2253 @@
+{
+  "id": "05211438-7577-0399-0000-273bf4cfae38",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "se_type": "google",
+      "keyword": "tablepress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 02:01:22 +00:00",
+        "competition": 0.17,
+        "competition_level": "LOW",
+        "cpc": 3.67,
+        "search_volume": 110,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-04": 70,
+          "2026-03": 90,
+          "2026-02": 110,
+          "2026-01": 140,
+          "2025-12": 90,
+          "2025-11": 90,
+          "2025-10": 90,
+          "2025-09": 110,
+          "2025-08": 90,
+          "2025-07": 140,
+          "2025-06": 110,
+          "2025-05": 170
+        },
+        "search_volume_trend": {
+          "monthly": -22,
+          "quarterly": -36,
+          "yearly": -36
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 29,
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 1
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1404.1,
+        "dofollow": 767.5,
+        "referring_pages": 1045.5,
+        "referring_domains": 311,
+        "referring_main_domains": 262.7,
+        "rank": 175.4,
+        "main_domain_rank": 496.4,
+        "last_updated_time": "2026-04-01 20:12:36 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 21:24:56 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress wordpress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 06:05:05 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-03": 20,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20,
+          "2025-08": 30,
+          "2025-07": 30,
+          "2025-06": 30,
+          "2025-05": 30,
+          "2025-04": 30
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-30 03:54:28 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "wordpress tablepress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-12 22:24:48 +00:00",
+        "competition": 0.02,
+        "competition_level": "LOW",
+        "search_volume": 20,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-03": 20,
+          "2026-02": 30,
+          "2026-01": 20,
+          "2025-12": 20,
+          "2025-11": 10,
+          "2025-10": 20,
+          "2025-09": 20,
+          "2025-08": 30,
+          "2025-07": 30,
+          "2025-06": 30,
+          "2025-05": 30,
+          "2025-04": 30
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -50
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "tablepress wordpress",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 48,
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 02:32:18 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress align center",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-12 23:53:05 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574
+        ],
+        "monthly_searches": {
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 03:24:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress examples",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 06:51:48 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:15:44 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress styler",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 10:33:24 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-30 01:13:54 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress filter",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 20:28:45 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-30 00:13:00 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress header color",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 04:38:58 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10005,
+          10055,
+          10337
+        ],
+        "monthly_searches": {
+          "2025-10": 10,
+          "2025-07": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:34:59 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress images",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 07:31:32 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-06": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:21:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress tutorial",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 00:56:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10307,
+          12708
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2025-07": 10,
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:45:02 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress wordpress tutorial",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 16:29:34 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:04:09 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "elementor tablepress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 15:52:56 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574
+        ],
+        "monthly_searches": {
+          "2025-06": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "tablepress elementor",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "la",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 13:45:22 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress demo",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-17 23:24:43 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-07": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 00:57:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress woocommerce",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 13:22:53 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2025-10": 10,
+          "2025-08": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 23:04:09 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress responsive css",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 07:28:04 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2025-06": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:57:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress css examples",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 04:38:51 +00:00",
+        "competition": 0.07,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-10": 10,
+          "2025-06": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:56:32 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress mysql",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 12:07:06 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10019,
+          10168,
+          10168,
+          10885,
+          10885,
+          12205,
+          12205,
+          13100
+        ],
+        "monthly_searches": {
+          "2026-01": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "it",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:50:53 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress alternatives",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-19 00:44:37 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10307,
+          12708
+        ],
+        "monthly_searches": {
+          "2025-12": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-05": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 03:24:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress auto import",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 22:36:38 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2025-05": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 23:30:11 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress shortcode",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 01:20:23 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-01": 10,
+          "2025-11": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 21:16:26 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress responsive tables",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-18 08:30:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 23:50:35 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress wpml",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 22:43:50 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-07": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 03:24:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress plugin",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-12 08:55:20 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 22:49:15 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress documentation",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 16:27:05 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574,
+          12819
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-09": 10,
+          "2025-07": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "last_updated_time": "2026-05-04 19:24:39 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress pro nulled",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 15:32:19 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-07": 10,
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 21:16:43 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress merge cells",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-19 09:10:40 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10296,
+          10885,
+          11271,
+          12209
+        ],
+        "monthly_searches": {
+          "2025-10": 10,
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 01:19:01 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress mobile responsive",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 20:13:04 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2025-11": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 22:39:46 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress mobile",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 10:15:48 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 22:23:20 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress extension responsive tables",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 23:52:37 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-02": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-07": 10,
+          "2025-05": 10
+        },
+        "search_volume_trend": {
+          "monthly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 4
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 03:24:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress responsive tables wordpress plugin",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-12 21:52:43 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2025-12": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 5
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 04:08:00 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "wordpress tablepress responsive",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-18 17:25:49 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2025-12": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "tablepress wordpress responsive",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "last_updated_time": "2026-05-03 10:12:49 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress elementor",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-19 02:32:57 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 0.5,
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "la",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 21:05:41 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress wordpress plugin",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 08:09:44 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "wordpress tablepress plugin",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 03:36:46 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "wordpress tablepress plugin",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 14:02:01 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2026-03": 10,
+          "2025-11": 10,
+          "2025-07": 10,
+          "2025-06": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 01:09:58 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress styling",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-17 04:19:47 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-29 21:17:07 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress responsive not working",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-17 10:12:17 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2025-09": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 4
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 00:36:29 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "wordpress plugin tablepress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 21:47:26 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "wordpress tablepress plugin",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 05:26:44 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress pro",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 12:56:56 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10004,
+          10307,
+          12708
+        ],
+        "monthly_searches": {
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        },
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "hr",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 23:04:09 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress responsive",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 20:22:05 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2026-04": 10,
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 51,
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "transactional",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 00:38:35 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "plugin tablepress wordpress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 21:10:55 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12204,
+          13404
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-09": 10,
+          "2025-06": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "wordpress tablepress plugin",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 23:43:08 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress nulled",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 21:42:03 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574,
+          12819
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 21:45:02 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress extension",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 20:51:55 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-06": 10,
+          "2025-05": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 22:28:58 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress wordpress responsive",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 09:20:36 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-01": 10,
+          "2025-11": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 01:12:33 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress google sheets",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-13 12:17:02 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2025-07": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 23:11:02 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress table width",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 11:25:49 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "monthly_searches": {
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 01:12:33 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress premium",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 11:48:28 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10009,
+          10413,
+          11574,
+          12819
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2025-10": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:29:17 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "plugin tablepress",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-19 06:17:48 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-03": 10,
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-12": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "tablepress plugin",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 19:35:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress column width",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 22:50:01 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ],
+        "monthly_searches": {
+          "2026-02": 10,
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 23:55:53 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress css",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 06:57:37 +00:00",
+        "search_volume": 10,
+        "categories": [
+          10007,
+          11493,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-01": 10,
+          "2025-11": 10,
+          "2025-10": 10,
+          "2025-09": 10,
+          "2025-08": 10,
+          "2025-07": 10,
+          "2025-06": 10,
+          "2025-05": 10,
+          "2025-04": 10
+        },
+        "search_volume_trend": {
+          "quarterly": -100,
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 22:31:57 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress border",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 03:14:05 +00:00",
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-29 23:18:59 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress search box",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 08:51:36 +00:00",
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "last_updated_time": "2026-04-30 03:54:28 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress advanced editor",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-15 07:08:26 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "last_updated_time": "2026-04-30 02:09:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress templates",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 15:30:43 +00:00",
+        "categories": [
+          10004,
+          10307
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "si",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:20:32 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress font size",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 22:07:03 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10885,
+          13602
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "tablepress font-size",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-30 02:33:51 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress shortcode not working",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 11:05:11 +00:00",
+        "categories": [
+          10007,
+          11493,
+          13418
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 4
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:34:59 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress faq",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-18 01:09:06 +00:00",
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "faq tablepress",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-30 02:33:58 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress row height",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-16 06:02:51 +00:00",
+        "categories": [
+          10009,
+          10413,
+          11568,
+          12809
+        ],
+        "search_volume_trend": {
+          "yearly": -100
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:34:00 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress support",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 09:33:25 +00:00",
+        "categories": [
+          10004,
+          10307,
+          12708
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-30 04:00:38 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress database",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 15:47:53 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10885,
+          12209
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 22:03:24 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "tablepress font-size",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-04-14 16:23:34 +00:00",
+        "categories": [
+          10019,
+          10168,
+          10885,
+          13602
+        ]
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "la",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 22:04:15 +00:00"
+      }
+    }
+  ]
+}

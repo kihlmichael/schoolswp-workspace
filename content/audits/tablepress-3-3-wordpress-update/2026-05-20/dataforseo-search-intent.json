@@ -1,0 +1,59 @@
+{
+  "source": "DataForSEO Labs - search_intent",
+  "language": "de",
+  "date": "2026-05-20",
+  "intents": {
+    "tablepress": {
+      "main": "informational",
+      "probability": 0.616
+    },
+    "tablepress 3.3": {
+      "main": "commercial",
+      "probability": 0.489,
+      "secondary": [
+        {
+          "label": "informational",
+          "probability": 0.4
+        }
+      ]
+    },
+    "tablepress wordpress": {
+      "main": "navigational",
+      "probability": 0.786
+    },
+    "wordpress tabellen plugin": {
+      "main": "navigational",
+      "probability": 0.354,
+      "secondary": [
+        {
+          "label": "informational",
+          "probability": 0.311
+        },
+        {
+          "label": "commercial",
+          "probability": 0.309
+        }
+      ]
+    },
+    "tablepress update": {
+      "main": "navigational",
+      "probability": 0.486,
+      "secondary": [
+        {
+          "label": "informational",
+          "probability": 0.438
+        }
+      ]
+    },
+    "tablepress anleitung": {
+      "main": "navigational",
+      "probability": 0.569,
+      "secondary": [
+        {
+          "label": "informational",
+          "probability": 0.36
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "source": "GSC inspect_url_enhanced",
+    "date": "2026-05-21"
+  },
+  "page_url": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/",
+  "verdict": "PASS",
+  "coverage_state": "Submitted and indexed",
+  "last_crawled": "2026-05-13 11:45",
+  "page_fetch_state": "SUCCESSFUL",
+  "robots_txt_state": "ALLOWED",
+  "indexing_state": "INDEXING_ALLOWED",
+  "google_canonical": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/",
+  "user_canonical": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/",
+  "crawled_as": "MOBILE",
+  "rich_results": {
+    "verdict": "PASS",
+    "detected_types": [
+      "Breadcrumbs"
+    ],
+    "issues": []
+  }
+}

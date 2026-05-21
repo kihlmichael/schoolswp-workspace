@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "source": "DataForSEO Labs - search_intent",
+    "language_code": "en",
+    "date": "2026-05-21",
+    "audit": "tablepress-3-3-wordpress-update (EN)"
+  },
+  "items": [
+    {
+      "keyword": "tablepress 3.3",
+      "keyword_intent": { "label": "commercial", "probability": 0.488 },
+      "secondary_keyword_intents": [
+        { "label": "informational", "probability": 0.401 }
+      ]
+    },
+    {
+      "keyword": "tablepress",
+      "keyword_intent": { "label": "informational", "probability": 0.615 }
+    },
+    {
+      "keyword": "tablepress wordpress",
+      "keyword_intent": { "label": "navigational", "probability": 0.785 }
+    },
+    {
+      "keyword": "wordpress table plugin",
+      "keyword_intent": { "label": "navigational", "probability": 0.42 },
+      "secondary_keyword_intents": [
+        { "label": "commercial", "probability": 0.265 },
+        { "label": "informational", "probability": 0.26 }
+      ]
+    },
+    {
+      "keyword": "tablepress review",
+      "keyword_intent": { "label": "commercial", "probability": 0.821 }
+    },
+    {
+      "keyword": "tablepress tutorial",
+      "keyword_intent": { "label": "informational", "probability": 0.963 }
+    }
+  ]
+}

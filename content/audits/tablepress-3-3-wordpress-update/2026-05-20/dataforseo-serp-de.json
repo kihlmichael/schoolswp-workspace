@@ -1,0 +1,81 @@
+{
+  "source": "DataForSEO SERP - google.de",
+  "keyword": "tablepress 3.3",
+  "location": "Germany",
+  "language": "de",
+  "device": "desktop",
+  "date": "2026-05-20",
+  "note": "SERP dominee par les sources officielles. schoolsWP positionne #7 avec l'article FR.",
+  "results": [
+    {
+      "rank": 1,
+      "domain": "tablepress.org",
+      "title": "TablePress . The WordPress table plugin that makes tables fast and easy!",
+      "url": "https://tablepress.org/",
+      "comment": "officiel - home"
+    },
+    {
+      "rank": 2,
+      "domain": "de.wordpress.org",
+      "title": "TablePress - Tabellen in WordPress leicht gemacht",
+      "url": "https://de.wordpress.org/plugins/tablepress/",
+      "comment": "officiel - depot WP.org DE (note 5,0 / 4624 avis)"
+    },
+    {
+      "rank": 3,
+      "domain": "github.com",
+      "title": "TablePress is the most popular and highest-rated table plugin",
+      "url": "https://github.com/TablePress/TablePress",
+      "comment": "officiel - code source"
+    },
+    {
+      "rank": 4,
+      "domain": "tablepress.org",
+      "title": "Plugin Information",
+      "url": "https://tablepress.org/info/",
+      "comment": "officiel - page produit"
+    },
+    {
+      "rank": 5,
+      "domain": "tablepress.org",
+      "title": "News . TablePress",
+      "url": "https://tablepress.org/news/",
+      "comment": "officiel - annonces de version"
+    },
+    {
+      "rank": 6,
+      "domain": "plugintests.com",
+      "title": "Report - TablePress 3.3",
+      "url": "https://plugintests.com/plugins/wporg/tablepress/latest",
+      "comment": "outil - rapport de test auto"
+    },
+    {
+      "rank": 7,
+      "domain": "schoolswp.com",
+      "title": "TablePress 3.3 : gerez vos tableaux sans galerer - schoolsWP",
+      "url": "https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/",
+      "comment": "ARTICLE FR de schoolsWP (sibling de l'article DE audite)"
+    },
+    {
+      "rank": 8,
+      "domain": "x.com",
+      "title": "TablePress",
+      "url": "https://x.com/TablePress",
+      "comment": "reseau social - compte officiel"
+    },
+    {
+      "rank": 9,
+      "domain": "youtube.com",
+      "title": "How to create tables in WordPress with TablePress",
+      "url": "https://www.youtube.com/watch?v=jGxwwXQ2KC8",
+      "comment": "video tutoriel (EN)"
+    },
+    {
+      "rank": 10,
+      "domain": "cms.zdv.uni-mainz.de",
+      "title": "TablePress - WordPress 2023 - Anleitungen",
+      "url": "https://cms.zdv.uni-mainz.de/modul-demo/tablepress/",
+      "comment": "doc universitaire DE (generique)"
+    }
+  ]
+}

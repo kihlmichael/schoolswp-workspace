@@ -1,0 +1,243 @@
+{
+  "source": "DataForSEO Labs - keyword_suggestions (seed: tablepress)",
+  "location": "Germany",
+  "language": "de",
+  "date": "2026-05-20",
+  "filter": "search_volume > 0",
+  "keywords": [
+    {
+      "keyword": "tablepress",
+      "search_volume": 170,
+      "competition": 0.12,
+      "cpc_eur": null,
+      "keyword_difficulty": 20,
+      "main_intent": "informational (0.62)",
+      "trend_yearly_pct": -19
+    },
+    {
+      "keyword": "tablepress wordpress",
+      "search_volume": 40,
+      "competition": 0.11,
+      "cpc_eur": 2.38,
+      "keyword_difficulty": 58,
+      "main_intent": "navigational (0.79)",
+      "trend_yearly_pct": -60
+    },
+    {
+      "keyword": "wp tablepress",
+      "search_volume": 40,
+      "competition": 0.11,
+      "cpc_eur": 2.38,
+      "keyword_difficulty": null,
+      "main_intent": "navigational",
+      "trend_yearly_pct": -60
+    },
+    {
+      "keyword": "wordpress tablepress",
+      "search_volume": 40,
+      "competition": 0.04,
+      "cpc_eur": null,
+      "keyword_difficulty": 58,
+      "main_intent": "commercial",
+      "trend_yearly_pct": -40
+    },
+    {
+      "keyword": "wordpress tabellen plugin",
+      "search_volume": 40,
+      "competition": 0.33,
+      "cpc_eur": 3.34,
+      "keyword_difficulty": null,
+      "main_intent": "navigational (0.35)",
+      "trend_yearly_pct": -86
+    },
+    {
+      "keyword": "tablepress wordpress plugin",
+      "search_volume": 10,
+      "competition": 0.03,
+      "cpc_eur": null,
+      "keyword_difficulty": 55,
+      "main_intent": "commercial",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress css",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": 51,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress alternative",
+      "search_volume": 10,
+      "competition": 0.29,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress shortcode",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "transactional",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress demo",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress responsive tables",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "commercial",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress filter",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "transactional",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress column width",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress mobile responsive",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "navigational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress css styling",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress extensions",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "transactional",
+      "trend_yearly_pct": -100
+    },
+    {
+      "keyword": "tablepress horizontal scrolling",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": -100
+    },
+    {
+      "keyword": "tablepress table width",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": -100
+    },
+    {
+      "keyword": "wordpress tablepress responsive",
+      "search_volume": 10,
+      "competition": 0.0,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "commercial",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress colspan",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "transactional",
+      "trend_yearly_pct": -100
+    },
+    {
+      "keyword": "tablepress mysql",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress font-size",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress extra css classes",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress faq",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": null
+    },
+    {
+      "keyword": "tablepress responsive css",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend_yearly_pct": -100
+    },
+    {
+      "keyword": "acf tablepress",
+      "search_volume": 10,
+      "competition": null,
+      "cpc_eur": null,
+      "keyword_difficulty": null,
+      "main_intent": "transactional",
+      "trend_yearly_pct": null
+    }
+  ]
+}
