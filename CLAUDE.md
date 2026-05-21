@@ -2,11 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Quatre systèmes d'agents distincts, ne pas confondre :**
+> **Trois systèmes d'agents distincts, ne pas confondre :**
 >
 > - `core/agents-py/` — scripts Python (28 modules CLI, lancés via `.venv/Scripts/python -m agents.<module>.cli`)
-> - `.claude/agents/*.md` — sub-agents Claude Code projet (13 spécialistes dispatchés via Agent tool, table « Project Sub-Agents » plus bas)
-> - `agents/*.md` (racine) — legacy Claude Code subagents (à migrer vers `.claude/agents/`)
+> - `.claude/agents/*.md` — sub-agents Claude Code projet (27 spécialistes dispatchés via Agent tool, table « Project Sub-Agents » plus bas)
 > - `schoolswp-agents/` — fleet de 4 instances Claude Code autonomes (process séparé), chacune avec son propre `CLAUDE.md`
 
 ## Data Safety — Suppressions
@@ -154,7 +153,7 @@ Résumé : ~28 agents Python héritant de `BaseContentAgent` (async, retourne ma
 
 Organisation générale découvrable via `ls`. Pièges à connaître :
 
-- `agents/` (racine) — **namespace package vide**, pas du code. Les CLI font `sys.path.insert(0, project_root)` pour résoudre `agents.*` vers `core/agents-py/`. `agents/*.md` = configs Claude Code subagents (YAML frontmatter). `agents/telegram-claude/` = sous-repo Node.js (pont Telegram, own `.git`).
+- `agents/` (racine) — **namespace package vide**, pas du code. Les CLI font `sys.path.insert(0, project_root)` pour résoudre `agents.*` vers `core/agents-py/`. `agents/telegram-claude/` = sous-repo Node.js (pont Telegram, own `.git`). Les sub-agents Claude Code vivent désormais tous dans `.claude/agents/` (migration terminée).
 - `core/agents-py/` — source des 28 agents Python. Distinct de `core/agents-md/` (system prompts LLM en markdown) et de `schoolswp-agents/` (fleet Claude Code autonome avec leurs propres `CLAUDE.md` + `soul.md` + mémoire).
 - `apps/video-marketing/` et `apps/vscode-agent-visual/` ont leur propre `CLAUDE.md`. `apps/hyperframes/` = scaffold Remotion+FFmpeg (skills `external-hyperframes/` + `external-liveavatar/`, install npm pas encore lancé). `apps/_archive/` et `apps/_prototypes/` à ignorer.
 - `tools/wp-media-upload/` — pipeline upload images articles vers schoolswp.com avec métadonnées SEO complètes (XPTitle, alt, etc.) + auto-backup + strip préfixe numérique. Commandes `cli.py init/list/upload`. Michael invoque "upload les images de l'article X", je pilote.
@@ -167,6 +166,7 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 - `content/inspirations/` — captures visuelles, twitter cards, drafts UI (préparation, pas du contenu publié).
 - `content/calendrier-edito/` — planning éditorial.
 - `content/social-series/` — séries de posts cross-plateforme.
+- `content/youtube/` — pipeline YouTube OS (créé 2026-05-16). Sous-dossiers : `ideas/`, `scripts/`, `seo-packages/`, `thumbnails/`, `clips/` (avec `source/`, `exports/`, `subtitles/`, `shorts/`, `social-posts/`, `checklists/`), `publishing/`, `analytics/`. Traces de pipeline dans `runs/youtube-os/`. Géré par les 9 sub-agents `youtube-*` (voir section « Project Sub-Agents »).
 - Sub-CLAUDE.md auto-chargés : `core/agents-py/`, `systems/n8n/`, `apps/video-marketing/`, `apps/vscode-agent-visual/`.
 
 ## Workspace Hygiene — anomalies connues à ne pas toucher sans investigation
@@ -183,26 +183,30 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 
 ## Project Sub-Agents (`.claude/agents/`)
 
-13 sub-agents Claude Code dispatchés via le tool Agent (parallélisable, contexte isolé). Différents de la fleet `schoolswp-agents/` (instances autonomes en process séparé) et des agents Python (`core/agents-py/`, scripts CLI).
+27 sub-agents Claude Code dispatchés via le tool Agent (parallélisable, contexte isolé). Différents de la fleet `schoolswp-agents/` (instances autonomes en process séparé) et des agents Python (`core/agents-py/`, scripts CLI).
 
-| Agent | Rôle |
-| --- | --- |
-| `studio` | Rédaction articles, newsletters, scripts vidéo, briefs éditoriaux |
-| `radar` | SEO/GEO : cocons sémantiques, briefs, keyword analysis, maillage |
-| `pulse` | Social media copy (LinkedIn, Bluesky, Pinterest text, YouTube) |
-| `flow` | CRM/automation : FluentCRM, OttoKit, n8n, Fluent Forms |
-| `pinterest-expert` | Audit / Ads / scaling Pinterest (méthode Bermond) |
-| `seo-specialist` | Audits techniques SEO, schema, Core Web Vitals |
-| `aidesigner-frontend` | UI / landing / dashboard via MCP aidesigner |
-| `framework-adapter-fr` | Adaptation EN→FR de frameworks et docs stratégiques |
-| `adr-writer` | Architecture Decision Records (read-only, pattern Nygard) |
-| `plan-challenger` | Review adversariale de plans d'implémentation (read-only) |
-| `output-evaluator` | LLM-as-Judge, qualité avant commit/action (read-only) |
-| `harness-optimizer` | Tuning du harness Claude Code (reliability, cost, throughput) |
-| `silent-failure-hunter` | Détecte erreurs avalées, fallbacks dangereux (read-only) |
-| `skoatch-publisher` | Pipeline Skoatch + WP draft pour michaelkihl.fr (autres sites WP sur demande). **Jamais schoolswp.com**. Voir `tools/skoatch/` et skill `dev/skoatch-api` |
+**Catalogue complet + routing par input** : [.claude/agents/INDEX.md](.claude/agents/INDEX.md). Tables auto-régénérées par [tools/scripts/agents-registry.py](tools/scripts/agents-registry.py) (modes `--sync`, `--check`).
 
-Le quartet `studio` / `radar` / `pulse` / `flow` mirror la fleet `schoolswp-agents/` mais en sub-agents projet (dispatchables en parallèle dans la session courante).
+### Récap par groupe
+
+| Groupe | Agents | Usage |
+| --- | --- | --- |
+| **Éditorial schoolsWP** | `studio`, `radar`, `pulse`, `flow`, `framework-adapter-fr`, `reddit` | Production articles, SEO, social, CRM/automation, adaptation EN→FR |
+| **YouTube OS** | `youtube-os-orchestrator` + 8 sous-agents (`strategy-scout`, `script-writer`, `seo-packager`, `thumbnail-director`, `clipper`, `publisher-scheduler`, `analytics-learner`, `quality-auditor`) | Pipeline vidéo complet. Livrables dans `content/youtube/`, traces dans `runs/youtube-os/`. **Statut par défaut `REVIEW_REQUIRED`, aucune publication sans validation humaine.** |
+| **Spécialistes domaine** | `seo-specialist`, `pinterest-expert`, `aidesigner-frontend`, `ads-operator`, `skoatch-publisher` | SEO technique, Pinterest, UI/landing via aidesigner, Google Ads, Skoatch + WP draft (**hors schoolswp.com**) |
+| **Code review / qualité (read-only)** | `code-reviewer`, `adr-writer`, `plan-challenger`, `output-evaluator`, `silent-failure-hunter` | Review de code 5 axes, ADR Nygard, review adversariale, LLM-as-Judge, détection silent failures |
+| **Infra / harness** | `harness-optimizer` | Tuning Claude Code (reliability, cost, throughput) |
+| **Hors schoolsWP (perso)** | `ofm-bot` | AI influencer / OFM. Isolation stricte. |
+
+### Règles de conflit (anti-collision)
+
+- **`studio` vs YouTube OS** : `studio` = contenu éditorial schoolsWP générique (article, newsletter, brief, script isolé). Vidéo complète avec pipeline (script → SEO → thumbnail → publication) = `youtube-os-orchestrator`.
+- **`pulse` vs `youtube-seo-packager`** : `pulse` = description/titre YouTube ponctuel. Package SEO complet (5 titres, chapitres, tags, hashtags, commentaire épinglé) en cours de pipeline = `youtube-seo-packager`.
+- **`radar` vs `seo-specialist`** : `radar` = SEO éditorial schoolsWP (cocons, briefs, maillage). `seo-specialist` = SEO technique générique (schema, CWV, sitemap, audit serveur).
+- **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. Pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
+- **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.
+- **`ofm-bot` isolation** : aucun chevauchement avec schoolsWP. Pas de génération d'image standalone (utiliser nano-banana directement).
+- **Quartet `studio` / `radar` / `pulse` / `flow`** : mirror la fleet `schoolswp-agents/` mais en sub-agents projet (dispatchables en parallèle dans la session courante).
 
 ## Multi-Agent Fleet (`schoolswp-agents/`)
 
@@ -352,8 +356,9 @@ Workflow : `.github/workflows/ci.yml` — lance sur push/PR vers `main`.
 - `external-hyperframes/` + `external-liveavatar/` — Remotion + avatars AI (FFmpeg requis).
 - `external-heygen/` — skills HeyGen (avatars + vidéos AI). Pattern de prod confirmé 2026-05-06 : lipsync via audioUrl externe (digital_twin + audio mp3/wav HTTPS public, sans voiceId/script). Voix clone HeyGen cassée API → ElevenLabs en amont.
 - `external-obsidian/` — skill `defuddle` cherry-picked depuis kepano/obsidian-skills (MIT, 2026-05-04). Préférer à WebFetch/firecrawl pour veille article rapide. CLI npm 0.18.1 installé global. 4 autres skills upstream skipped (pas de vault Obsidian côté projet).
+- `external-astra-spectra/` (2026-05-20) : skill cloné depuis github.com/wpformation/claude-skill-astra-spectra (MIT, Fabrice Ducarme). Base de connaissance Spectra (48 blocs Gutenberg) pour générer ou refondre des pages WordPress. Hors stack schoolsWP (Kadence) : invocation manuelle uniquement, frontmatter modifié anti auto-trigger. Conservé comme ressource pour une future formation ou un tutoriel WordPress.
 
-Lock cohérence : `tools/lock_external_skills.py` génère `skills-lock.json` pour les 31 skills `external-*`. Routine reval Q3 2026.
+Lock cohérence : `.claude/skills/.registry/lock_external_skills.py` génère `external-skills-lock.json` pour les 35 skills `external-*`. Routine reval Q3 2026.
 
 ### Routing — quel skill pour quelle demande
 

@@ -1,27 +1,29 @@
-# Subagents Claude Code — Inventaire
+# Subagents Claude Code : inventaire
 
-Deux systèmes distincts dans ce workspace. Ne pas confondre avec les agents Python (`core/agents-py/`) qui sont des scripts CLI.
+Trois systèmes d'agents distincts dans ce projet. Ne pas les confondre.
 
-## 1. Subagents Claude Code (`agents/*.md`)
+| Système | Emplacement | Nature |
+| --- | --- | --- |
+| Sub-agents Claude Code projet | `.claude/agents/*.md` | 27 configs YAML dispatchables via l'outil `Agent` (contexte isolé, parallélisables) |
+| Fleet multi-agents autonome | `schoolswp-agents/` | 4 instances Claude Code complètes, process séparé, mémoire persistante |
+| Agents Python | `core/agents-py/` | 28 scripts CLI héritant de `BaseContentAgent` (pas des sub-agents) |
 
-Configurations YAML invocables via l'outil `Agent`. Utilisent `subagent_type` = nom du fichier.
+## 1. Sub-agents Claude Code (`.claude/agents/`)
 
-| Subagent | Rôle | Modèle |
-|---|---|---|
-| `content-studio` | Rédaction articles, newsletters, tutoriels, scripts vidéo | opus |
-| `seo-radar` | SEO/GEO, cocons sémantiques, briefs, maillage | opus |
-| `crm-flow` | CRM, email automation, n8n, FluentCRM, OttoKit | opus |
-| `social-pulse` | Social (LinkedIn, Bluesky, Pinterest, YouTube) | haiku |
-| `code-reviewer` | Review de code indépendante | opus |
+Catalogue complet, tables de routing et règles de conflit : [.claude/agents/INDEX.md](../../.claude/agents/INDEX.md). Le compteur et les tables détaillées y sont régénérés par le script de registre des agents (voir la section « Maintenance » de l'INDEX).
 
-**Subagents built-in Claude Code** : `general-purpose`, `Explore` (recherche rapide), `Plan` (architecte), `statusline-setup`, `claude-code-guide`, `framework-adapter-fr`.
+Dispatch via l'outil `Agent` avec `subagent_type` = valeur du champ `name:` du frontmatter (pas le nom de fichier : `pinterest.md` expose `pinterest-expert`).
+
+Groupes : éditorial schoolsWP, YouTube OS, spécialistes domaine, code review / qualité, harness, hors schoolsWP.
+
+**Subagents built-in Claude Code** : `general-purpose`, `Explore` (recherche rapide), `Plan` (architecte), `statusline-setup`, `claude-code-guide`.
 
 ## 2. Multi-Agent Fleet (`schoolswp-agents/`)
 
 Instances Claude Code autonomes, chacune avec son propre `CLAUDE.md`, `soul.md` (personnalité), mémoire persistante et skills locaux.
 
 | Agent | Rôle | Modèle |
-|---|---|---|
+| --- | --- | --- |
 | `content-studio` | Rédaction, tutoriels, optimisation contenu | opus |
 | `crm-automation` | Automatisation WordPress, CRM/LMS | opus |
 | `seo-geo` | Audit SEO, GEO/AIO, maillage interne | opus |
@@ -32,13 +34,13 @@ Ressources partagées dans `schoolswp-agents/shared/` : contacts, skills (brandi
 ## Quand utiliser quoi
 
 | Situation | Outil |
-|---|---|
+| --- | --- |
 | Exploration rapide du codebase | `Explore` |
 | Design d'implémentation | `Plan` |
 | Question ouverte multi-étapes | `general-purpose` |
-| Production de contenu schoolsWP | `content-studio` (subagent) |
-| Brief SEO schoolsWP | `seo-radar` |
-| Séquence CRM / automation | `crm-flow` |
-| Post social | `social-pulse` |
-| Review indépendante | `code-reviewer` |
+| Production de contenu schoolsWP | `studio` |
+| Brief SEO, cocon sémantique | `radar` |
+| Séquence CRM / automation / n8n | `flow` |
+| Post social (LinkedIn, Bluesky, Pinterest, YouTube) | `pulse` |
+| Review de code avant merge | `code-reviewer` |
 | Session autonome longue | Fleet `schoolswp-agents/` |
