@@ -1,0 +1,64 @@
+{
+  "source": "DataForSEO Labs - google_keyword_overview",
+  "location": "France",
+  "language": "fr",
+  "collected": "2026-05-20",
+  "keywords": [
+    {
+      "keyword": "avis rank math",
+      "core_keyword": "rank math avis",
+      "search_volume": null,
+      "note": "omis par DataForSEO = volume sous le seuil de mesure (< ~10/mois mesurable)",
+      "main_intent": "informational"
+    },
+    {
+      "keyword": "rank math avis",
+      "search_volume": null,
+      "note": "omis par DataForSEO = volume residuel",
+      "main_intent": "informational"
+    },
+    {
+      "keyword": "rank math",
+      "search_volume": 880,
+      "keyword_difficulty": 20,
+      "competition_level": "LOW",
+      "cpc": 1.15,
+      "main_intent": "informational",
+      "trend_yearly": -38
+    },
+    {
+      "keyword": "rank math seo",
+      "search_volume": 720,
+      "keyword_difficulty": 16,
+      "competition_level": "LOW",
+      "cpc": 1.28,
+      "main_intent": "commercial",
+      "foreign_intent": ["informational"],
+      "trend_yearly": -54
+    },
+    {
+      "keyword": "rank math pro",
+      "search_volume": 140,
+      "competition_level": "LOW",
+      "cpc": 0.74,
+      "main_intent": "informational"
+    },
+    {
+      "keyword": "rank math vs yoast",
+      "search_volume": 20,
+      "keyword_difficulty": 9,
+      "competition_level": "LOW",
+      "main_intent": "informational"
+    },
+    {
+      "keyword": "plugin seo wordpress",
+      "search_volume": 1600,
+      "competition_level": "LOW",
+      "cpc": 1.3,
+      "main_intent": "commercial",
+      "trend_yearly": -70
+    }
+  ],
+  "omitted_no_data": ["rank math gratuit", "rank math prix", "rank math tuto"],
+  "synthese": "La requete exacte 'avis rank math' a un volume residuel non mesurable. Le potentiel reel = cluster marque : 'rank math' (880) + 'rank math seo' (720) + 'rank math pro' (140) ~= 1740/mois cumule. KD tres bas (9-20) = creneau gagnable. Tendance annuelle en baisse (-38 a -54%) mais volume absolu encore correct. Intent dominant : informational/commercial = l'angle 'avis/test' est pertinent."
+}
