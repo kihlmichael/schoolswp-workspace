@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "source": "DataForSEO Labs - keyword_overview + keyword_suggestions",
+    "location": "United States",
+    "language": "en",
+    "snapshot_date": "2026-05-16",
+    "note": "Article cible le marché EN (slug /en/, langue post=en). Volumes US utilisés comme proxy marché anglophone."
+  },
+  "keywords": [
+    { "keyword": "learn wordpress in a day", "volume": 10, "kd": null, "competition": 0.43, "competition_level": "MEDIUM", "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "learn wordpress in one day", "volume": null, "kd": null, "competition": null, "competition_level": null, "intent": "transactional", "trend_yearly_pct": null, "note": "Pas de données monthly" },
+    { "keyword": "can i learn wordpress in a day", "volume": 10, "kd": null, "competition": 0.24, "competition_level": "LOW", "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "wordpress in a day", "volume": null, "kd": 78, "competition": null, "competition_level": null, "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "learn wordpress fast", "volume": 20, "kd": 55, "competition": 0.06, "competition_level": "LOW", "intent": "informational", "trend_yearly_pct": 100, "trend_monthly_pct": 300, "note": "Forte hausse récente (+300% mois)" },
+    { "keyword": "learn wordpress basics", "volume": 10, "kd": null, "competition": 0.62, "competition_level": "MEDIUM", "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "how to learn wordpress quickly", "volume": 10, "kd": null, "competition": 0.29, "competition_level": "LOW", "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "how long to learn wordpress", "volume": 20, "kd": null, "competition": 0.07, "competition_level": "LOW", "intent": "informational", "trend_yearly_pct": -67, "cpc_high": null },
+    { "keyword": "wordpress 8 hours", "volume": 10, "kd": null, "competition": null, "competition_level": null, "intent": "informational", "trend_yearly_pct": null },
+    { "keyword": "wordpress crash course", "volume": 40, "kd": 23, "competition": 0.31, "competition_level": "LOW", "intent": "informational", "trend_yearly_pct": null, "trend_quarterly_pct": 40, "cpc_high": 3.08, "cpc": 2.25, "note": "Meilleur KD/volume du champ" },
+    { "keyword": "wordpress for beginners", "volume": 320, "kd": 52, "competition": 0.35, "competition_level": "MEDIUM", "intent": "informational", "trend_yearly_pct": -46, "cpc_high": 11.18, "cpc": 10.14, "note": "Volume principal du champ, mais en déclin (-46% YoY) et KD moyen" }
+  ],
+  "summary": {
+    "total_volume_field_monthly_us": 460,
+    "main_keyword_volume": 10,
+    "top_volume_keyword": "wordpress for beginners (320/mo, KD 52, -46% YoY)",
+    "best_kd_volume_ratio": "wordpress crash course (40/mo, KD 23, +40% Q)",
+    "dominant_intent": "informational (10 / 11 keywords)"
+  }
+}
