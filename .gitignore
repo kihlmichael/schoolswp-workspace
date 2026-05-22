@@ -72,7 +72,6 @@ wheels/
 
 # Virtual environments
 .venv/
-.venv-semantica/
 venv/
 ENV/
 env/
@@ -116,6 +115,9 @@ apps/vscode-agent-visual/node_modules/
 apps/vscode-agent-visual/dist/
 apps/telegram-bot/telegram-bot/node_modules/
 apps/_archive/claude-telegram-poc/venv/
+
+# --- Prototypes: nested external repos (own .git, lab use only) ---
+apps/_prototypes/videoeditor/
 .coverage
 coverage.json
 .firecrawl/
@@ -160,3 +162,6 @@ sandbox-workspace/
 
 # --- HeyGen avatar identity files (IDs HeyGen perso, écrits par le skill heygen-avatar) ---
 AVATAR-*.md
+
+# --- Memory lint staging (transient, recree a chaque run du launcher) ---
+tools/scripts/.lint-staging/

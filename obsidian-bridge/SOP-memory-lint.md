@@ -2,8 +2,9 @@
 name: SOP - Lint de la mémoire interne schoolsWP
 owner: Michaël KIHL
 project: schoolsWP
-version: 1.0
+version: 1.1
 date_creation: 2026-05-22
+date_maj: 2026-05-22
 status: actif
 ---
 
@@ -50,15 +51,19 @@ Contrôle de santé périodique de la mémoire interne Claude Code et des dossie
 
 ## 5. Procédure
 
+Le dossier mémoire ne peut pas être écrit directement par le run headless (le harness le traite comme sensible). Tous les résultats sont écrits dans le dossier de staging dont le chemin absolu est fourni dans le prompt de lancement. Le launcher applique ensuite ces écritures dans le dossier mémoire.
+
 1. Lire MEMORY.md et lister les fichiers topic du dossier mémoire.
-2. Dérouler la checklist 4.1, appliquer les auto-fix.
+2. Dérouler la checklist 4.1. Pour chaque auto-fix, écrire le fichier corrigé en entier dans le sous-dossier apply/ du staging, sous son nom d'origine (par exemple staging/apply/MEMORY.md). Le launcher écrasera le fichier mémoire homonyme.
 3. Dérouler la checklist 4.2, collecter les flags.
-4. Appender une entrée dans LOG.md (cf. section 6).
-5. Écrire le fichier résultat .lint-result.txt dans le dossier mémoire (cf. section 7).
+4. Écrire l'entrée de journal dans le fichier log-entry.md à la racine du staging (cf. section 6).
+5. Écrire le fichier result.txt à la racine du staging (cf. section 7).
 
-## 6. Entrée LOG.md
+Les fichiers log-entry.md et result.txt sont obligatoires : le launcher considère leur absence comme un échec et ne persiste rien.
 
-Toujours appender, même quand le lint est propre.
+## 6. Fichier log-entry.md
+
+Une entrée de journal, toujours produite, même quand le lint est propre. Le launcher l'appende à LOG.md du dossier mémoire.
 
 En-tête : ## [YYYY-MM-DD] lint | propre, ou ## [YYYY-MM-DD] lint | N fixes, M flags.
 
@@ -70,9 +75,9 @@ Quand il y a des fixes ou des flags, détailler dans le corps, une puce par él�
     - fix : ajout de l'entrée d'index pour reference_xyz.md (topic orphelin)
     - flag : project_abc.md et project_def.md se contredisent sur un sujet
 
-## 7. Fichier résultat .lint-result.txt
+## 7. Fichier result.txt
 
-Écrire dans le dossier mémoire. Lu par le launcher pour décider de la notification Discord.
+Le launcher le copie en .lint-result.txt dans le dossier mémoire et s'en sert pour décider de la notification Discord.
 
 - Si aucun flag : écrire exactement le mot clean (les auto-fix seuls, sans flag, ne déclenchent pas de notification).
 - Si au moins un flag : écrire un résumé court (moins de 1900 caractères) destiné à Discord, commençant par « Lint mémoire schoolsWP : » et listant les flags.
