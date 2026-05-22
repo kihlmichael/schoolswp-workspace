@@ -22,7 +22,7 @@ Tu as des vidéos qui capturent et qui vendent. Mais fonctionnent-elles vraiment
 
 **[ÉCRAN — screencast : ouvrir les analytics]**
 
-[Ouvre la section analytics de FluentPlayer]
+[Ouvre le menu FluentPlayer, Analytics]
 [Montre la vue d'ensemble]
 
 Le dashboard analytics regroupe les chiffres de toutes tes vidéos au même endroit.
@@ -211,7 +211,7 @@ Séparés, ils sont utiles. Croisés, ils racontent toute l'histoire.
 
 **[ÉCRAN — screencast : connecter Google Analytics]**
 
-[Ouvre les réglages d'intégration de FluentPlayer]
+[Ouvre Settings, onglet Integrations]
 [Configure l'intégration Google Analytics]
 
 L'intégration Google Analytics est une fonction Pro. Une fois connectée, FluentPlayer envoie les évènements vidéo à Google Analytics.
@@ -312,11 +312,11 @@ Tu sais mesurer et améliorer. Tes vidéos sont devenues un système qu'on pilot
 ## Notes de production — Module 5
 
 ### Captures à préparer
-- Dashboard analytics FluentPlayer : vue d'ensemble
+- Écran Analytics du menu FluentPlayer : vue d'ensemble
 - Courbe de rétention d'une vidéo, avec annotations des zones de décrochage
 - Croisement entre l'horodatage d'une couche et la rétention à ce moment
 - Métriques : complétion, viewers uniques, tendances, top vidéos
-- Connexion de l'intégration Google Analytics
+- Settings, onglet Integrations : connexion Google Analytics
 - Grille d'audit vidéo remplie sur un exemple
 
 ### Livrables du module

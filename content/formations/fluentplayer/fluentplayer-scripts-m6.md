@@ -286,7 +286,18 @@ Migre dans cet ordre :
 - ensuite tes pages de vente et tes pages d'inscription
 - enfin le reste, au fil de l'eau
 
-**[ÉCRAN — screencast : migrer une vidéo]**
+**[ÉCRAN — screencast : l'outil de migration intégré]**
+
+Si tes vidéos viennent d'un autre lecteur, comme Presto Player, FluentPlayer a un outil de migration intégré. Va dans Settings, onglet Migration.
+
+[Ouvre Settings, onglet Migration]
+[Lance la migration depuis Presto Player]
+
+L'outil importe automatiquement les presets, les réglages, les médias et les analytics de l'ancien lecteur. C'est la voie rapide quand tu changes de plugin vidéo.
+
+**[ÉCRAN — screencast : migrer un embed à la main]**
+
+Pour des embeds YouTube ou le lecteur WordPress par défaut, pas d'outil automatique : tu remplaces à la main.
 
 [Ouvre une page avec un ancien embed vidéo]
 [Crée le média correspondant dans FluentPlayer]
@@ -316,10 +327,10 @@ Tu sais migrer proprement. Dernière leçon de la Masterclass : le verdict honn�
 ---
 
 **Points clés**
-- Ne migre jamais toutes tes vidéos le même jour, procède par lots
+- Settings, onglet Migration : un outil intégré importe depuis un autre lecteur
+- Pour les embeds YouTube, la migration se fait à la main, par lots
 - Commence par tes vidéos les plus vues et tes pages de vente
 - Profite de la migration pour ajouter branding, chapitres et couches
-- Chaque vidéo migrée passe de passive à convertissante
 
 **Mots-clés SEO**
 - migrer vers FluentPlayer
@@ -424,7 +435,8 @@ Le projet final assemble toute la Masterclass en un système. Tu construis un mi
 - FluentCommunity : insertion d'une vidéo dans un espace réservé
 - Vidéo FluentPlayer insérée dans une leçon d'un outil de cours
 - Webhook FluentPlayer relié à un automatiseur
-- Migration : remplacement d'un ancien embed par un bloc FluentPlayer
+- Settings, onglet Migration : outil de migration depuis Presto Player
+- Migration manuelle : remplacement d'un embed par un bloc FluentPlayer
 - Tableau comparatif FluentPlayer, Presto Player, Vimeo, Wistia
 
 ### Livrables du module

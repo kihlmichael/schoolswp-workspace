@@ -214,11 +214,11 @@ Tu sais où héberger et comment garder ton site rapide. On peut maintenant entr
 
 ---
 
-## Leçon 1.4 — L'interface FluentPlayer : médias, presets, réglages
+## Leçon 1.4 — L'interface FluentPlayer : menu, Media List et bloc
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
-**Écran** : Face caméra pour intro/conclusion, screencast du dashboard FluentPlayer
+**Écran** : Face caméra pour intro/conclusion, screencast du menu, de la Media List et de l'éditeur de bloc
 
 ---
 
@@ -228,50 +228,71 @@ Avant de construire, tu dois savoir où sont les choses. On fait le tour complet
 
 **[ÉCRAN — screencast : le menu FluentPlayer]**
 
-Après l'installation, FluentPlayer ajoute un menu dans ta barre latérale WordPress.
+Après l'installation, FluentPlayer ajoute son menu dans la barre latérale WordPress. Il a quatre entrées.
 
 [Montre le menu FluentPlayer]
-[Pointe les sections principales]
+[Pointe : Media, Playlists, Analytics, Settings]
 
-Trois sections vont te servir tout le temps : Médias, Presets, Réglages.
+- Media : toutes tes vidéos
+- Playlists : tes listes de vidéos
+- Analytics : tes statistiques de visionnage
+- Settings : les réglages globaux du plugin
 
-**[ÉCRAN — screencast : la section Médias]**
+**[ÉCRAN — screencast : la Media List]**
 
-La section Médias, c'est le cœur de l'outil.
+Clique sur Media. Tu arrives sur la Media List, la liste de tous tes médias.
 
-[Ouvre la section Médias]
-[Montre la liste des médias]
+[Ouvre Media]
+[Montre la liste, les filtres et les colonnes]
 
-Chaque vidéo que tu ajoutes devient un média : un objet réutilisable, avec sa source, son habillage, ses chapitres et ses couches interactives. Tu le crées une fois, tu l'insères où tu veux.
+Chaque ligne est un média, avec son titre, sa source, ses tags, son statut et son code court. En haut, des filtres : All, Public, Private, Draft. Et un bouton Add Media pour en créer un nouveau.
 
-**[ÉCRAN — screencast : l'éditeur d'un média]**
+**[ÉCRAN — screencast : ouvrir un média dans l'éditeur de blocs]**
 
-[Ouvre un média existant]
-[Montre les onglets de configuration]
+C'est le point important à comprendre. Quand tu ouvres un média, il s'ouvre dans l'éditeur de blocs WordPress, l'éditeur Gutenberg habituel.
 
-Quand tu ouvres un média, tu retrouves tous ses réglages au même endroit : la source, l'apparence, les chapitres, et les couches interactives. On reviendra en détail sur chacun dans les modules suivants.
+[Ouvre un média]
+[Montre le bloc FluentPlayer dans l'éditeur]
 
-**[ÉCRAN — screencast : Presets et Réglages]**
+Le média contient un bloc FluentPlayer. Tu le sélectionnes, et toute sa configuration apparaît dans la barre latérale, sous l'onglet Bloc.
 
-[Ouvre la section Presets]
+**[ÉCRAN — screencast : les panneaux du bloc FluentPlayer]**
 
-La section Presets stocke tes styles de lecteur réutilisables. On la verra dans la prochaine leçon.
+Le bloc FluentPlayer a huit panneaux de réglage.
 
-[Ouvre la section Réglages]
+[Déplie brièvement chaque panneau]
 
-La section Réglages contient les options globales : les intégrations, les sources avancées, les comportements par défaut.
+- Branding : logo et couleurs du lecteur
+- General Settings : les réglages de lecture
+- Preset : appliquer un style de lecteur enregistré
+- Chapters : découper la vidéo en chapitres
+- Text/Button Overlays : textes et boutons affichés sur la vidéo
+- Interactive Layers : formulaires, capture d'email, hotspots
+- Timed Content Area : du contenu synchronisé avec la lecture
+- Tags : étiqueter le média
+
+On reviendra en détail sur chacun dans les modules suivants.
+
+**[ÉCRAN — screencast : la zone Settings]**
+
+Dernière zone : Settings, les réglages globaux. Elle a huit onglets.
+
+[Ouvre Settings]
+[Montre les onglets]
+
+General, Branding, Integrations, Storage, YouTube, Analytics, Export, Migration. C'est ici que tu poses les réglages valables pour tout le plugin, pas pour un média précis.
 
 **[TRANSITION — face caméra]**
 
-Tu connais le terrain. Passons à un réflexe qui va te faire gagner un temps fou : les presets.
+Tu connais le terrain : un menu à quatre entrées, des médias éditables dans Gutenberg, un bloc à huit panneaux. Passons à un réflexe qui fait gagner un temps fou : les presets.
 
 ---
 
 **Points clés**
-- FluentPlayer s'organise en trois sections : Médias, Presets, Réglages
-- Un média regroupe source, apparence, chapitres et couches au même endroit
-- Un média se crée une fois et se réutilise partout
-- Les Réglages contiennent les intégrations et options globales
+- Le menu FluentPlayer a quatre entrées : Media, Playlists, Analytics, Settings
+- Un média s'édite dans l'éditeur de blocs WordPress, via le bloc FluentPlayer
+- Le bloc FluentPlayer a huit panneaux : Branding, General Settings, Preset, Chapters, Text/Button Overlays, Interactive Layers, Timed Content Area, Tags
+- Settings regroupe les huit onglets de réglages globaux
 
 **Mots-clés SEO**
 - interface FluentPlayer
@@ -299,27 +320,28 @@ Un preset, c'est un style de lecteur enregistré : couleurs, comportements, appa
 
 FluentPlayer fournit des presets de départ. En version Pro, tu crées et enregistres les tiens.
 
-**[ÉCRAN — screencast : les presets fournis]**
+**[ÉCRAN — screencast : le panneau Preset]**
 
-[Ouvre la section Presets]
-[Applique les différents presets fournis pour montrer les styles]
+Ouvre un média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer, et déplie le panneau Preset.
 
-Les presets fournis couvrent les styles courants : un look sobre, un look moderne, un look minimal. Pour démarrer, l'un d'eux suffit souvent.
+[Sélectionne le bloc FluentPlayer]
+[Déplie le panneau Preset]
+[Applique les presets fournis pour montrer les styles]
+
+FluentPlayer fournit des presets de départ. Pour démarrer, l'un d'eux suffit souvent.
 
 **[ÉCRAN — screencast : créer ton preset de marque]**
 
-[Crée un nouveau preset]
-[Règle les couleurs aux couleurs de la marque]
-[Enregistre le preset]
+Avec la version Pro, tu peux enregistrer ta propre configuration comme preset. Tu règles le lecteur à tes couleurs et à ton style, puis tu sauvegardes ce réglage en preset, sous un nom clair, par exemple le nom de ta marque.
 
-Si tu as Pro, crée ton propre preset. Tu y mets les couleurs de ta charte, ton style de contrôles, tes comportements par défaut. Donne-lui un nom clair, par exemple le nom de ta marque.
+[Configure le lecteur aux couleurs de la marque]
+[Enregistre la configuration comme preset]
 
 **[ÉCRAN — screencast : appliquer le preset]**
 
-[Ouvre un média]
-[Sélectionne le preset de marque]
+Sur chaque nouvelle vidéo, tu sélectionnes ce preset dans le panneau Preset. Ton lecteur est à ta marque immédiatement. Tous tes médias deviennent cohérents, sans répéter les réglages.
 
-Sur chaque nouvelle vidéo, tu sélectionnes ce preset. En un clic, ton lecteur est à ta marque. Tous tes médias deviennent cohérents, sans effort répété.
+[Ouvre un autre média, applique le preset de marque]
 
 **[TRANSITION — face caméra]**
 
@@ -328,10 +350,12 @@ Le preset porte ton style. Dans la dernière leçon de ce module, on entre dans 
 ---
 
 **Points clés**
-- Un preset enregistre un style de lecteur complet
+- Le panneau Preset du bloc applique un style de lecteur enregistré
 - FluentPlayer fournit des presets de départ
-- La version Pro permet de créer et enregistrer tes propres presets
-- Un preset de marque rend tous tes médias cohérents en un clic
+- La version Pro permet d'enregistrer ta propre configuration en preset
+- Un preset de marque rend tous tes médias cohérents, sans répéter les réglages
+
+**Note de production** : confirmer au tournage où se crée et se gère un preset (depuis le panneau Preset du bloc, ou un écran dédié).
 
 **Mots-clés SEO**
 - preset FluentPlayer
@@ -353,22 +377,31 @@ Le preset porte ton style. Dans la dernière leçon de ce module, on entre dans 
 
 On termine ce module par l'habillage fin. Un lecteur à ta marque inspire confiance, et la confiance fait cliquer sur play. On passe en revue chaque réglage.
 
+**[ÉCRAN — screencast : branding global ou par-média]**
+
+Le branding existe à deux niveaux. Dans Settings, l'onglet Branding pose ton branding par défaut, valable pour tous tes médias. Et dans le bloc FluentPlayer, le panneau Branding ajuste le branding d'un média précis.
+
+[Montre Settings, onglet Branding]
+[Montre le panneau Branding du bloc]
+
+Règle ton branding par défaut une fois dans Settings, ajuste au cas par cas dans le bloc.
+
 **[ÉCRAN — screencast : le logo]**
 
-[Ouvre les réglages de branding d'un média ou d'un preset]
-[Active l'option logo, téléverse un logo PNG transparent]
+[Dans le panneau Branding, active l'option logo]
+[Téléverse un logo PNG transparent]
 
 Le logo s'affiche sur le lecteur. Où que ta vidéo soit vue, ta marque voyage avec elle. Utilise un PNG transparent, lisible même en petit.
 
 **[ÉCRAN — screencast : les couleurs]**
 
-[Règle la couleur d'accent et la barre de contrôle]
+[Dans le panneau Branding, règle la couleur d'accent et la barre de contrôle]
 
 Reprends la couleur principale de ta charte pour la couleur d'accent et la barre de contrôle. Le lecteur cesse d'être générique : il devient le tien.
 
 **[ÉCRAN — screencast : l'image d'attente]**
 
-[Définit le poster]
+[Définis l'image d'attente du média]
 
 Le poster, c'est la vignette avant le clic. On l'a vu, il protège la vitesse de ta page. Mais il fait aussi vendre la vidéo : choisis une image nette, avec un visage ou un titre clair. C'est elle qui donne envie de lancer la lecture.
 
@@ -409,10 +442,11 @@ Tu sais maintenant poser des vidéos rapides, à ta marque, sur une base saine. 
 - Tableau comparatif FluentPlayer Free vs Pro
 - Slides des sources vidéo (self-hosted, YouTube, Vimeo, BunnyCDN, Mux, HLS)
 - Démonstration de chargement de page avec et sans poster
-- Dashboard FluentPlayer : sections Médias, Presets, Réglages
-- Éditeur d'un média : onglets de configuration
-- Section Presets : presets fournis et création d'un preset de marque
-- Réglages de branding : logo, couleurs, poster, ratio, titre
+- Menu FluentPlayer (Media, Playlists, Analytics, Settings) et la Media List
+- Un média ouvert dans l'éditeur de blocs : le bloc FluentPlayer et ses huit panneaux
+- Settings et ses huit onglets
+- Panneau Preset : presets fournis et enregistrement d'un preset de marque
+- Panneau Branding du bloc, et onglet Branding global de Settings
 
 ### Livrables du module
 - Fiche PDF : arbre de décision « Quelle source vidéo pour quel besoin »

@@ -88,8 +88,8 @@ Résultat direct : on regarde plus longtemps.
 
 **[ÉCRAN — screencast : créer des chapitres]**
 
-[Ouvre un média dans FluentPlayer]
-[Va dans la section Chapitres]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Chapters]
 
 Un chapitre, c'est un horodatage de départ et un titre.
 
@@ -154,9 +154,8 @@ Les sous-titres servent plusieurs publics :
 
 **[ÉCRAN — screencast : ajouter un fichier de sous-titres]**
 
-[Ouvre un média dans FluentPlayer]
-[Va dans la section Sous-titres]
-[Téléverse un fichier de sous-titres]
+[Ouvre un média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer]
+[Ajoute un fichier de sous-titres dans les réglages du média]
 
 FluentPlayer accepte un fichier de sous-titres standard. Tu peux en ajouter plusieurs, un par langue.
 
@@ -214,7 +213,7 @@ Sans reprise de lecture, celui qui revient sur une vidéo doit la relancer du d�
 
 **[ÉCRAN — screencast : activer la reprise de lecture]**
 
-[Ouvre les réglages du média ou les réglages globaux]
+[Sélectionne le bloc FluentPlayer, déplie le panneau General Settings]
 [Active l'option de reprise de lecture]
 
 La reprise de lecture, une fonction Pro, mémorise où chaque spectateur s'est arrêté.
@@ -275,7 +274,7 @@ Le spectateur enchaîne les vidéos sans quitter la page.
 
 **[ÉCRAN — screencast : créer une playlist]**
 
-[Va dans la section dédiée aux playlists]
+[Va dans le menu FluentPlayer, Playlists]
 [Crée une nouvelle playlist]
 [Donne un titre à la playlist]
 
@@ -378,12 +377,17 @@ Tes vidéos sont à ta marque, structurées et organisées en parcours. On a pos
 
 ### Captures à préparer
 - Slides vue contre complétion, causes de décrochage
-- Section Chapitres : création d'horodatages et rendu de la barre de progression
-- Section Sous-titres : téléversement d'un fichier, sélecteur de langue
-- Réglage de reprise de lecture et démonstration avant/après
-- Création d'une playlist : ajout et réordonnancement des vidéos
+- Panneau Chapters du bloc : horodatages et rendu de la barre de progression
+- Ajout d'un fichier de sous-titres et sélecteur de langue côté lecteur
+- Activation de la reprise de lecture et démonstration avant/après
+- Menu Playlists : création d'une playlist, ajout et réordonnancement des vidéos
 - Insertion d'une playlist dans une page
 - Réglages d'apparence et layouts de playlist, rendu mobile
+
+### À confirmer au tournage
+- Le panneau exact où s'ajoutent les sous-titres (General Settings ou panneau dédié)
+- L'emplacement de l'option de reprise de lecture
+- L'interface précise de l'éditeur de playlist (création, ordre, layouts)
 
 ### Livrables du module
 - Fiche PDF : anatomie d'une vidéo qu'on regarde jusqu'au bout

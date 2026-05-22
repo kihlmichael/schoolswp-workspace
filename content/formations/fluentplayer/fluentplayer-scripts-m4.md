@@ -26,11 +26,11 @@ Une bannière CTA, c'est un appel à l'action qui apparaît sur la vidéo : un m
 
 La différence avec la capture d'email du Module 3 : la capture collecte une donnée, le CTA envoie vers une destination.
 
-**[ÉCRAN — screencast : ajouter une couche CTA]**
+**[ÉCRAN — screencast : ajouter une bannière CTA]**
 
-[Ouvre un média dans FluentPlayer]
-[Ajoute une couche, choisit CTA]
-[Règle le texte, le bouton et l'URL de destination]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Text/Button Overlays]
+[Ajoute une bannière : texte, bouton et URL de destination]
 [Règle le moment d'apparition]
 
 **[ÉCRAN — slide "Guider sans interrompre"]**
@@ -92,10 +92,10 @@ Le hotspot est plus doux, plus respectueux de l'attention. Il convertit ceux qui
 
 **[ÉCRAN — screencast : ajouter un hotspot]**
 
-[Ouvre un média dans FluentPlayer]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
 [Ajoute une couche, choisit Hotspot]
-[Place la zone cliquable sur la vidéo]
-[Règle la période d'affichage et la destination]
+[Place la zone cliquable sur la vidéo, règle la période et la destination]
 
 Tu choisis où le hotspot se place sur l'image, à partir de quand il apparaît, et vers quoi il pointe.
 
@@ -161,8 +161,8 @@ C'est puissant pour :
 
 **[ÉCRAN — screencast : configurer du contenu minuté]**
 
-[Ouvre un média dans FluentPlayer]
-[Configure une zone de contenu minuté]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Timed Content Area]
 [Associe des blocs Gutenberg à des horodatages]
 
 Tu construis ton contenu en blocs Gutenberg, comme une page normale, et tu associes chaque bloc à un moment de la vidéo.
@@ -213,7 +213,8 @@ La couche Ad sert à :
 
 **[ÉCRAN — screencast : configurer une couche Ad]**
 
-[Ouvre un média dans FluentPlayer]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
 [Ajoute une couche, choisit Ad]
 [Règle le contenu de l'emplacement et le moment d'apparition]
 
@@ -279,7 +280,7 @@ Fluent Forms gère le champ de paiement et la connexion à ta passerelle. Tu dé
 
 **[ÉCRAN — screencast : poser la couche de vente]**
 
-[Retourne dans le média FluentPlayer]
+[Retourne dans le média, panneau Interactive Layers du bloc FluentPlayer]
 [Ajoute une couche Formulaire]
 [Sélectionne le formulaire de paiement]
 [Règle le moment : après l'argumentaire]
@@ -343,10 +344,10 @@ La couche Shortcode affiche le résultat d'un shortcode sur la vidéo, à un mom
 
 **[ÉCRAN — screencast : ajouter une couche Shortcode]**
 
-[Ouvre un média dans FluentPlayer]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
 [Ajoute une couche, choisit Shortcode]
-[Colle le shortcode]
-[Règle le moment d'apparition]
+[Colle le shortcode, règle le moment d'apparition]
 
 **[ÉCRAN — slide "La couche de secours"]**
 
@@ -375,13 +376,15 @@ Tu maîtrises maintenant toutes les couches : CTA, hotspot, contenu minuté, Ad,
 ## Notes de production — Module 4
 
 ### Captures à préparer
-- Configuration d'une couche CTA : texte, bouton, URL, moment
-- Configuration d'un hotspot : zone cliquable, période, destination
-- Contenu minuté : association de blocs Gutenberg à des horodatages
-- Configuration d'une couche Ad
+- Panneau Text/Button Overlays : configuration d'une bannière CTA
+- Panneau Interactive Layers : hotspot, couche Ad, couche Shortcode
+- Panneau Timed Content Area : association de blocs Gutenberg à des horodatages
 - Fluent Forms : formulaire avec champ de paiement
 - Couche Formulaire de vente posée sur la vidéo, test d'achat
-- Couche Shortcode : insertion d'un shortcode
+
+### À confirmer au tournage
+- La répartition exacte des couches entre les panneaux Text/Button Overlays et Interactive Layers
+- Le contenu et les options de chaque type de couche
 
 ### Livrables du module
 - Fiche PDF : 3 CTA in-video qui convertissent, avec exemples

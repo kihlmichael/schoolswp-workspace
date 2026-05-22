@@ -1,6 +1,6 @@
 # FluentPlayer — Plan de formation schoolsWP
 
-> Statut : plan validé (2026-05-22). Étape suivante : production des scripts.
+> Statut : plan validé, 40 scripts produits et vérifiés contre le plugin installé (2026-05-22). Étape suivante : production vidéo.
 > Angle : outcome « la vidéo qui convertit ». Cible : formateurs et créateurs de cours.
 
 ## Architecture globale
@@ -33,7 +33,7 @@ Lecteur vidéo WordPress nouvelle génération par WPManageNinja (éditeur de Fl
 
 Free vs Pro, à retenir : la version Free gère le branding, les chapitres, les couches Formulaire et Capture email, les sources self-hosted / YouTube / Vimeo / audio. La version Pro débloque les playlists, les analytics, les couches CTA / Hotspot / Ad / Shortcode, le contenu minuté, les sous-titres, la reprise de lecture, les presets personnalisables, BunnyCDN / Mux / HLS, Mailchimp / Webhook / Google Analytics.
 
-Pas de documentation officielle dédiée à ce jour : la formation s'appuie sur les pages produit, les démos live, les articles de blog FluentPlayer et l'exploration directe du plugin.
+Pas de documentation officielle publique à ce jour : la formation s'appuie sur les pages produit, les articles de blog FluentPlayer et la vérification directe du plugin installé sur schoolsWP (FluentPlayer Pro 1.0.5).
 
 ---
 
@@ -57,7 +57,7 @@ Pas de documentation officielle dédiée à ce jour : la formation s'appuie sur 
 **Détails de contenu**
 
 - **Leçon 1** : le problème de l'embed YouTube (publicité, vidéos suggérées, marque YouTube, zéro donnée, zéro capture). Ce que résout FluentPlayer : ton player, tes données, ta conversion.
-- **Leçon 2** : installation du plugin, tour du dashboard, ajout d'une vidéo (self-hosted ou YouTube), insertion via le bloc Gutenberg.
+- **Leçon 2** : installation depuis le répertoire WordPress.org, tour du menu (Media, Playlists, Analytics, Settings), création d'un média dans l'éditeur de blocs, insertion via le bloc FluentPlayer.
 - **Leçon 3** : logo, couleurs de la barre de contrôle, choix d'un preset, image d'attente (poster), ratio.
 - **Leçon 4** : créer des chapitres, montrer la navigation, expliquer pourquoi les chapitres augmentent la complétion.
 - **Leçon 5** : ajouter une couche Capture email ou Formulaire, brancher FluentCRM, choisir le bon moment de déclenchement.
@@ -78,7 +78,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 | 1.1 | FluentPlayer Free vs Pro : quoi débloquer, et quand | 8 min |
 | 1.2 | Choisir sa source vidéo : self-hosted, YouTube, Vimeo, BunnyCDN, Mux, HLS | 10 min |
 | 1.3 | Hébergement vidéo et vitesse de page : ne pas plomber ton site | 10 min |
-| 1.4 | L'interface FluentPlayer : médias, presets, réglages | 8 min |
+| 1.4 | L'interface FluentPlayer : menu, Media List et bloc | 8 min |
 | 1.5 | Presets : configurer une fois, réutiliser partout | 8 min |
 | 1.6 | Branding : logo, couleurs, poster, ratio, titre en surimpression | 8 min |
 
@@ -237,9 +237,9 @@ Sur les vignettes de la formation, la marque **schoolsWP** reste dominante (vert
 
 ## Pipeline de production
 
-1. **Recherche** : terminée (scraping site officiel, features, free vs pro, intégrations, brand resources).
+1. **Recherche** : terminée (site officiel, features, free vs pro, intégrations, brand resources) puis vérification contre le plugin installé.
 2. **Plan** : ce document.
-3. **Scripts** : à produire — Quick Start (6 leçons) puis Masterclass (34 leçons).
+3. **Scripts** : produits et vérifiés — Quick Start (6 leçons) et Masterclass (34 leçons), 8 fichiers dans ce dossier.
 4. **Production vidéo** : HeyGen + ElevenLabs (français, tutoiement).
 5. **Fiches PDF et livrables** : pipeline PDF brand schoolsWP, templates Sheets et Notion publics et dupliquables.
 6. **Publication** : TutorLMS sur schoolsWP, quiz et drip configurés, certificat.

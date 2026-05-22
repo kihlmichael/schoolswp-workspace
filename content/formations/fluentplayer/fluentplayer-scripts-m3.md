@@ -79,8 +79,8 @@ On construit une capture d'email à l'intérieur de la vidéo. La technique est 
 
 **[ÉCRAN — screencast : ajouter une couche de capture]**
 
-[Ouvre un média dans FluentPlayer]
-[Va dans la section des couches interactives]
+[Ouvre un média dans l'éditeur de blocs]
+[Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
 [Ajoute une couche, choisit Capture d'email]
 
 FluentPlayer te demande trois choses : quand la couche apparaît, quel message elle affiche, et où vont les emails collectés.
@@ -163,7 +163,7 @@ Fluent Forms est le plugin de formulaires de l'écosystème Fluent. Crée un for
 
 **[ÉCRAN — screencast : ajouter la couche Formulaire]**
 
-[Retourne dans le média FluentPlayer]
+[Retourne dans le média, panneau Interactive Layers du bloc FluentPlayer]
 [Ajoute une couche, choisit Formulaire]
 [Sélectionne le formulaire Fluent Forms créé]
 [Règle le moment d'apparition]
@@ -224,7 +224,7 @@ FluentCRM est le CRM de l'écosystème Fluent. FluentPlayer s'y connecte directe
 
 **[ÉCRAN — screencast : connecter la couche à FluentCRM]**
 
-[Ouvre la couche de capture d'un média]
+[Ouvre ta couche de capture dans le panneau Interactive Layers]
 [Sélectionne l'intégration FluentCRM comme destination]
 [Choisit la liste de destination]
 
@@ -299,7 +299,7 @@ Quand tu configures une couche de capture, tu peux envoyer les leads vers :
 
 **[ÉCRAN — screencast : connecter Mailchimp]**
 
-[Ouvre les réglages d'intégration de FluentPlayer]
+[Ouvre Settings, onglet Integrations]
 [Configure l'intégration Mailchimp]
 [Dans une couche de capture, sélectionne Mailchimp et l'audience de destination]
 
@@ -348,12 +348,12 @@ Tes vidéos capturent des leads et les envoient au bon endroit, bien étiquetés
 
 ### Captures à préparer
 - Slides : concept de couche interactive, les 5 moments de capture
-- Section des couches interactives : ajout d'une couche Capture d'email
+- Panneau Interactive Layers du bloc : ajout d'une couche Capture d'email
 - Réglage de l'horodatage et du message d'une couche
 - Fluent Forms : création d'un formulaire court
 - Couche Formulaire : sélection d'un formulaire Fluent Forms
 - FluentCRM : sélection de liste, ajout de tag, contact reçu
-- Intégrations Pro : configuration Mailchimp et webhook
+- Settings, onglet Integrations : configuration Mailchimp et webhook
 
 ### Livrables du module
 - Fiche PDF : les 5 moments où capturer un email dans une vidéo

@@ -81,57 +81,53 @@ Dans cette formation offerte, tu vas mettre en ligne ta première vidéo FluentP
 
 On passe à la pratique. Tu vas installer FluentPlayer et créer ton premier média. C'est rapide, et il n'y a rien à coder.
 
-**[ÉCRAN — screencast : récupérer FluentPlayer]**
+**[ÉCRAN — screencast : installer FluentPlayer]**
 
-Première étape : récupérer le plugin. Rends-toi sur fluentplayer.com et télécharge la version gratuite.
+Première étape : installer le plugin. Dans ton administration WordPress, va dans Extensions, puis Ajouter une extension, et cherche FluentPlayer.
 
-[Montre le site fluentplayer.com]
-[Montre le bouton de téléchargement de la version gratuite]
+[Montre Extensions, Ajouter une extension]
+[Recherche "FluentPlayer", clique Installer, puis Activer]
 
-Tu obtiens un fichier zip. Garde-le sous la main.
+FluentPlayer est installé. Un nouveau menu, FluentPlayer, apparaît dans ta barre latérale.
 
-**[ÉCRAN — screencast : installation dans WordPress]**
+**[ÉCRAN — screencast : le menu FluentPlayer]**
 
-Dans ton administration WordPress, va dans Extensions, puis Ajouter une extension, puis Téléverser une extension.
-
-[Montre Extensions, Ajouter, Téléverser]
-[Sélectionne le zip, clique Installer maintenant]
-[Clique Activer]
-
-FluentPlayer est installé. Un nouveau menu apparaît dans ta barre latérale.
-
-**[ÉCRAN — screencast : le dashboard FluentPlayer]**
-
-Voici le tableau de bord FluentPlayer.
+Le menu FluentPlayer a quatre entrées.
 
 [Montre le menu FluentPlayer]
-[Pointe les sections : Médias, Presets, Réglages]
+[Pointe : Media, Playlists, Analytics, Settings]
 
-C'est ici que vivent tes vidéos. Chaque vidéo que tu ajoutes devient un média : un objet réutilisable que tu pourras insérer où tu veux sur ton site.
+- Media : tes vidéos
+- Playlists : tes listes de vidéos
+- Analytics : tes statistiques
+- Settings : les réglages globaux
+
+Pour le Quick Start, on travaille dans Media. Chaque vidéo que tu ajoutes y devient un média : un objet réutilisable, avec son propre code court, que tu pourras insérer où tu veux.
 
 **[ÉCRAN — screencast : créer ton premier média]**
 
-On crée le premier. Clique sur Ajouter un média.
+Va dans Media, puis clique sur Add Media.
 
-[Clique Ajouter un média]
+[Ouvre FluentPlayer, Media]
+[Clique sur Add Media]
 
-FluentPlayer te demande la source de ta vidéo. En version gratuite, tu as le choix entre :
+Ton média s'ouvre dans l'éditeur de blocs WordPress, l'éditeur Gutenberg que tu connais déjà. Donne-lui un titre, puis renseigne la source de ta vidéo. En version gratuite, tu peux utiliser :
 
 - une vidéo hébergée sur ton site
 - une vidéo YouTube
 - une vidéo Vimeo
 - un fichier audio
 
-[Choisis YouTube, colle une URL de vidéo]
-[Montre l'aperçu du lecteur]
+[Saisit un titre, renseigne une URL YouTube]
+[Montre l'aperçu du lecteur dans l'éditeur]
 
-Donne un titre à ton média, puis enregistre. Ta première vidéo FluentPlayer existe.
+Enregistre. Ta première vidéo FluentPlayer existe, et elle reçoit son propre code court.
 
 **[ÉCRAN — screencast : insérer la vidéo dans une page]**
 
-Pour l'afficher, ouvre une page avec l'éditeur WordPress et ajoute le bloc FluentPlayer.
+Pour l'afficher sur ton site, ouvre une page ou un article, et ajoute le bloc FluentPlayer. Tu peux aussi coller directement le code court du média.
 
-[Ajoute le bloc FluentPlayer dans l'éditeur]
+[Ajoute le bloc FluentPlayer dans une page]
 [Sélectionne le média créé]
 
 Publie la page. Ta vidéo est en ligne, dans ton lecteur.
@@ -143,12 +139,13 @@ Ta vidéo s'affiche, mais elle ressemble encore à un lecteur standard. Dans la 
 ---
 
 **Points clés**
-- FluentPlayer s'installe comme tout plugin, par téléversement du zip
-- Chaque vidéo devient un média réutilisable
+- FluentPlayer s'installe depuis le répertoire WordPress.org
+- Le menu FluentPlayer a quatre entrées : Media, Playlists, Analytics, Settings
+- Un média se crée et se configure dans l'éditeur de blocs WordPress
 - La version gratuite accepte self-hosted, YouTube, Vimeo et audio
-- On insère un média via le bloc FluentPlayer dans l'éditeur
+- On insère un média via le bloc FluentPlayer ou son code court
 
-**Note de production** : vérifier au tournage si FluentPlayer est disponible sur le répertoire WordPress.org. Si oui, montrer aussi l'installation directe depuis Extensions, Ajouter une extension.
+**Note de production** : confirmer au tournage l'emplacement exact du champ de source vidéo dans l'éditeur de média.
 
 **Mots-clés SEO**
 - installer FluentPlayer
@@ -170,38 +167,37 @@ Ta vidéo s'affiche, mais elle ressemble encore à un lecteur standard. Dans la 
 
 Ta vidéo est en ligne. Maintenant, on s'occupe de son allure. Un lecteur à ta marque inspire confiance, et la confiance, ça veut dire plus de gens qui cliquent sur play.
 
+**[ÉCRAN — screencast : ouvrir le bloc FluentPlayer]**
+
+Ouvre ton média dans l'éditeur de blocs et sélectionne le bloc FluentPlayer. Dans la barre latérale, tu retrouves tous ses panneaux de réglage : Branding, General Settings, Preset, Chapters, et les autres.
+
+[Sélectionne le bloc FluentPlayer]
+[Montre les panneaux de la barre latérale]
+
 **[ÉCRAN — screencast : choisir un preset]**
 
-FluentPlayer fournit des presets : des styles de lecteur prêts à l'emploi.
+Déplie le panneau Preset. Un preset, c'est un style de lecteur prêt à l'emploi.
 
-[Montre les presets disponibles : Default, Modern, Simple, Minimal]
-[Applique chacun pour montrer la différence]
+[Déplie le panneau Preset]
+[Applique les presets fournis pour montrer la différence]
 
 Choisis celui qui colle le mieux à ton site. Un style sobre passe partout, un style plus marqué attire l'œil.
 
-**[ÉCRAN — screencast : les couleurs]**
+**[ÉCRAN — screencast : couleurs et logo]**
 
-Règle ensuite les couleurs du lecteur, en particulier la barre de contrôle et la couleur d'accent.
+Déplie le panneau Branding. C'est là que tu rends le lecteur reconnaissable.
 
-[Ouvre les réglages de couleur]
-[Saisit la couleur d'accent de la charte]
+[Déplie le panneau Branding]
+[Règle la couleur d'accent et la barre de contrôle]
+[Active le logo, téléverse un logo PNG transparent]
 
-Reprends la couleur principale de ta charte. Le lecteur cesse d'être générique, il devient le tien.
-
-**[ÉCRAN — screencast : ajouter ton logo]**
-
-FluentPlayer permet d'afficher ton logo sur le lecteur, dans les réglages de branding.
-
-[Active l'option logo]
-[Téléverse un logo au format PNG transparent]
-
-Ton logo apparaît sur la vidéo. Où qu'elle soit partagée, ta marque voyage avec elle.
+Reprends la couleur principale de ta charte, et pose ton logo. Le lecteur cesse d'être générique : il devient le tien, et ta marque voyage avec la vidéo partout où elle est partagée.
 
 **[ÉCRAN — screencast : l'image d'attente]**
 
 L'image d'attente, le poster, c'est la vignette affichée avant le clic sur play.
 
-[Définit une image de poster]
+[Définis l'image d'attente du média]
 
 Choisis une image nette et lisible. C'est elle qui donne envie de lancer la vidéo, soigne-la autant que la vidéo elle-même.
 
@@ -219,9 +215,9 @@ Ton lecteur est à ta marque. Mais si ta vidéo est longue, le spectateur a beso
 ---
 
 **Points clés**
-- Les presets donnent un style de lecteur en un clic
-- Couleurs, logo et poster rendent le lecteur reconnaissable
-- L'image d'attente décide du clic sur play, soigne-la
+- Un média se configure via les panneaux du bloc FluentPlayer (Preset, Branding...)
+- Le panneau Preset applique un style de lecteur complet
+- Le panneau Branding règle couleurs et logo, l'image d'attente fait cliquer
 - Ratio et titre en surimpression complètent l'habillage
 
 **Mots-clés SEO**
@@ -256,9 +252,9 @@ Résultat : on regarde plus longtemps, et on revient.
 
 **[ÉCRAN — screencast : créer des chapitres]**
 
-Ouvre ton média dans FluentPlayer et va dans la section Chapitres.
+Ouvre ton média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer et déplie le panneau Chapters.
 
-[Ouvre la section Chapitres]
+[Déplie le panneau Chapters du bloc FluentPlayer]
 
 Un chapitre, c'est deux choses : un horodatage de départ et un titre.
 
@@ -323,10 +319,10 @@ Aujourd'hui, on utilise la capture d'email.
 
 **[ÉCRAN — screencast : ajouter une couche de capture]**
 
-Ouvre ton média et va dans la section des couches interactives.
+Ouvre ton média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer et déplie le panneau Interactive Layers.
 
-[Ouvre la section Couches interactives]
-[Clique sur Ajouter, choisit Capture d'email]
+[Déplie le panneau Interactive Layers du bloc FluentPlayer]
+[Ajoute une couche, choisit Capture d'email]
 
 FluentPlayer te demande trois choses : un moment d'apparition, un message, et où envoyer l'email collecté.
 
@@ -448,14 +444,13 @@ Bravo pour ces trente minutes. Tu as maintenant une vidéo qui travaille pour to
 ## Notes de production — FPL-011
 
 ### Captures à préparer
-- Site fluentplayer.com, bouton de téléchargement de la version gratuite
-- Installation par téléversement : Extensions, Ajouter, Téléverser
-- Dashboard FluentPlayer : Médias, Presets, Réglages
-- Création d'un média (source YouTube) et aperçu du lecteur
-- Bloc FluentPlayer dans l'éditeur WordPress
-- Réglages de branding : presets, couleurs, logo, poster, ratio
-- Section Chapitres avec horodatages et rendu de la barre de progression
-- Section Couches interactives, configuration d'une capture d'email
+- Installation depuis le répertoire WordPress.org (Extensions, Ajouter une extension)
+- Menu FluentPlayer : Media, Playlists, Analytics, Settings
+- Media, Add Media : création d'un média dans l'éditeur de blocs
+- Le bloc FluentPlayer et ses panneaux dans la barre latérale
+- Panneau Preset et panneau Branding (couleurs, logo)
+- Panneau Chapters : horodatages et rendu de la barre de progression
+- Panneau Interactive Layers : configuration d'une couche Capture d'email
 - FluentCRM : arrivée du contact capturé avec son tag
 
 ### Environnement de démo
