@@ -1,130 +1,130 @@
-# Scripts video — Module 8 : Integrations WordPress : WooCommerce, LMS, CRM
+# Scripts vidéo — Module 8 : Intégrations WordPress : WooCommerce, LMS, CRM
 
-**Formation** : Maitriser OttoKit
-**Module** : M8 — Integrations WordPress : WooCommerce, LMS, CRM
-**Lecons** : 8 videos + 1 quiz
-**Duree totale** : ~50 min de video
+**Formation** : Maîtriser OttoKit
+**Module** : M8 — Intégrations WordPress : WooCommerce, LMS, CRM
+**Leçons** : 8 vidéos + 1 quiz
+**Durée totale** : ~50 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Lecon 8.1 — Connecter tes plugins WordPress a OttoKit
+## Leçon 8.1 — Connecter tes plugins WordPress à OttoKit
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit + WordPress admin
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit + WordPress admin
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu as un site WordPress avec WooCommerce, TutorLMS, FluentCRM, des formulaires. Chacun de ces plugins produit des evenements : une commande, une inscription, un tag ajoute. OttoKit peut reagir a tous ces evenements — mais il faut d'abord qu'il les detecte.
+Tu as un site WordPress avec WooCommerce, TutorLMS, FluentCRM, des formulaires. Chacun de ces plugins produit des événements : une commande, une inscription, un tag ajouté. OttoKit peut réagir à tous ces événements — mais il faut d'abord qu'il les détecte.
 
-**[ECRAN — screencast WordPress admin]**
+**[ÉCRAN — screencast WordPress admin]**
 
 [Ouvre le tableau de bord WordPress]
-[Va dans Extensions > Extensions installees]
+[Va dans Extensions > Extensions installées]
 [Montre la liste des plugins actifs : WooCommerce, TutorLMS, FluentCRM, Fluent Forms, SureForms]
 
-Voici les plugins actifs sur le site schoolsWP. Chacun est une source d'evenements potentielle pour OttoKit.
+Voici les plugins actifs sur le site schoolsWP. Chacun est une source d'événements potentielle pour OttoKit.
 
-**[ECRAN — screencast OttoKit dashboard]**
+**[ÉCRAN — screencast OttoKit dashboard]**
 
 [Ouvre app.ottokit.com]
 [Va dans Connections]
 [Clique sur la connexion WordPress du site schoolsWP]
-[Montre la liste des plugins detectes automatiquement]
+[Montre la liste des plugins détectés automatiquement]
 
-Quand tu connectes ton site WordPress a OttoKit, le plugin scanne automatiquement les extensions actives. Ici, tu vois la liste de tout ce qu'OttoKit a detecte : WooCommerce, TutorLMS, FluentCRM, Fluent Forms, SureForms.
+Quand tu connectes ton site WordPress à OttoKit, le plugin scanne automatiquement les extensions actives. Ici, tu vois la liste de tout ce qu'OttoKit a détecté : WooCommerce, TutorLMS, FluentCRM, Fluent Forms, SureForms.
 
-**[ECRAN — screencast verification]**
+**[ÉCRAN — screencast vérification]**
 
-[Montre un plugin detecte — ex: WooCommerce — avec un badge "Connected" ou une icone verte]
-[Montre un plugin non detecte ou non supporte — ex: un plugin obscur sans icone]
+[Montre un plugin détecté — ex: WooCommerce — avec un badge "Connected" ou une icône verte]
+[Montre un plugin non détecté ou non supporté — ex: un plugin obscur sans icône]
 
-Si un plugin apparait dans la liste avec un badge vert, c'est bon. OttoKit peut utiliser ses triggers et ses actions. Si un plugin n'apparait pas, deux raisons possibles : soit OttoKit ne le supporte pas encore, soit le plugin est desactive.
+Si un plugin apparaît dans la liste avec un badge vert, c'est bon. OttoKit peut utiliser ses triggers et ses actions. Si un plugin n'apparaît pas, deux raisons possibles : soit OttoKit ne le supporte pas encore, soit le plugin est désactivé.
 
-**[ECRAN — slide "Les plugins WordPress les plus utilises avec OttoKit"]**
+**[ÉCRAN — slide "Les plugins WordPress les plus utilisés avec OttoKit"]**
 
 | Plugin | Triggers | Actions | Usage |
 |--------|----------|---------|-------|
-| WooCommerce | Commande, produit, client | Creer coupon, modifier commande | E-commerce |
-| TutorLMS | Inscription, progression, completion | Inscrire, desinscrire | Formation |
-| FluentCRM | Tag ajoute, liste, contact | Ajouter tag, envoyer email | CRM |
+| WooCommerce | Commande, produit, client | Créer coupon, modifier commande | E-commerce |
+| TutorLMS | Inscription, progression, complétion | Inscrire, désinscrire | Formation |
+| FluentCRM | Tag ajouté, liste, contact | Ajouter tag, envoyer email | CRM |
 | Fluent Forms | Soumission formulaire | — | Formulaires |
 | SureForms | Soumission formulaire | — | Formulaires |
 | Elementor | Soumission formulaire | — | Page builder |
-| BuddyBoss | Inscription, activite | Creer groupe | Communaute |
+| BuddyBoss | Inscription, activité | Créer groupe | Communauté |
 
-**[ECRAN — screencast ajout d'un plugin manquant]**
+**[ÉCRAN — screencast ajout d'un plugin manquant]**
 
 [Retourne dans WordPress admin]
-[Active un plugin desactive — ex: BuddyBoss]
+[Active un plugin désactivé — ex: BuddyBoss]
 [Reviens dans OttoKit > Connections]
-[Rafraichit la page]
-[Montre le plugin qui apparait maintenant dans la liste]
+[Rafraîchit la page]
+[Montre le plugin qui apparaît maintenant dans la liste]
 
-Si tu actives un nouveau plugin sur ton site, OttoKit le detecte lors de la prochaine synchronisation. Parfois, un simple rafraichissement de la page suffit.
+Si tu actives un nouveau plugin sur ton site, OttoKit le détecte lors de la prochaine synchronisation. Parfois, un simple rafraîchissement de la page suffit.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tes plugins sont detectes. A partir de maintenant, on entre dans le concret. Prochaine lecon : on construit un workflow WooCommerce complet avec notification, Google Sheets et email.
+Tes plugins sont détectés. À partir de maintenant, on entre dans le concret. Prochaine leçon : on construit un workflow WooCommerce complet avec notification, Google Sheets et email.
 
 ---
 
-**Points cles**
-- OttoKit detecte automatiquement les plugins WordPress actifs sur ton site
-- La detection se fait via le plugin OttoKit installe dans WordPress
-- Si un plugin n'apparait pas, verifier qu'il est active et supporte par OttoKit
+**Points clés**
+- OttoKit détecte automatiquement les plugins WordPress actifs sur ton site
+- La détection se fait via le plugin OttoKit installé dans WordPress
+- Si un plugin n'apparaît pas, vérifier qu'il est activé et supporté par OttoKit
 - Les plugins les plus courants : WooCommerce, TutorLMS, FluentCRM, Fluent Forms
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit plugins WordPress
 - connecter WooCommerce OttoKit
-- OttoKit detection automatique plugins
-- integrations WordPress OttoKit
+- OttoKit détection automatique plugins
+- intégrations WordPress OttoKit
 
 ---
 
-## Lecon 8.2 — WooCommerce : commande → notification + Sheets + email
+## Leçon 8.2 — WooCommerce : commande → notification + Sheets + email
 
-**Duree** : 8 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 8 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un client passe commande sur ton site. Tu veux trois choses : recevoir une notification, enregistrer la vente dans un Google Sheet, et envoyer un email de remerciement personnalise au client. Avec OttoKit, un seul workflow gere les trois.
+Un client passe commande sur ton site. Tu veux trois choses : recevoir une notification, enregistrer la vente dans un Google Sheet, et envoyer un email de remerciement personnalisé au client. Avec OttoKit, un seul workflow gère les trois.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre OttoKit]
 [Clique sur "Create Workflow"]
 [Nomme le workflow : "Commande WooCommerce → notification + Sheets + email"]
 
-On commence par nommer le workflow. Un nom clair, ca fait gagner du temps quand tu en auras vingt.
+On commence par nommer le workflow. Un nom clair, ça fait gagner du temps quand tu en auras vingt.
 
-**[ECRAN — screencast configuration du trigger]**
+**[ÉCRAN — screencast configuration du trigger]**
 
 [Clique sur le bloc trigger]
-[Selectionne "WooCommerce"]
-[Selectionne l'evenement "Order Created"]
+[Sélectionne "WooCommerce"]
+[Sélectionne l'événement "Order Created"]
 [Pointe le badge "Instant"]
-[Selectionne la connexion WordPress]
+[Sélectionne la connexion WordPress]
 [Clique sur "Fetch Data"]
-[Montre les champs retournes : order_id, billing_first_name, billing_email, total, line_items, status]
+[Montre les champs retournés : order_id, billing_first_name, billing_email, total, line_items, status]
 [Clique sur "Save"]
 
-Le trigger est "Order Created" — instantane. Des qu'une commande arrive, le workflow demarre. Le Fetch Data montre tous les champs disponibles : numero de commande, nom du client, email, montant total, produits commandes.
+Le trigger est "Order Created" — instantané. Dès qu'une commande arrive, le workflow démarre. Le Fetch Data montre tous les champs disponibles : numéro de commande, nom du client, email, montant total, produits commandés.
 
-**[ECRAN — screencast ajout de l'action 1 — Notification Slack/email admin]**
+**[ÉCRAN — screencast ajout de l'action 1 — Notification Slack/email admin]**
 
 [Clique sur "+" pour ajouter une action]
-[Selectionne "Slack" (ou "Send Email" si pas de Slack)]
-[Selectionne l'evenement "Send Channel Message"]
-[Selectionne la connexion Slack et le channel #ventes]
+[Sélectionne "Slack" (ou "Send Email" si pas de Slack)]
+[Sélectionne l'événement "Send Channel Message"]
+[Sélectionne la connexion Slack et le channel #ventes]
 [Configure le message :]
 
 ```
@@ -134,19 +134,19 @@ Montant : {{total}} EUR
 ```
 
 [Clique sur "Test Action"]
-[Montre le message envoye dans Slack]
+[Montre le message envoyé dans Slack]
 [Clique sur "Save"]
 
-Premiere action : notifier l'equipe. Ici on envoie un message Slack dans le channel #ventes. Le message utilise les donnees du trigger : numero de commande, nom du client, montant. Tu testes, ca fonctionne, tu enregistres.
+Première action : notifier l'équipe. Ici on envoie un message Slack dans le channel #ventes. Le message utilise les données du trigger : numéro de commande, nom du client, montant. Tu testes, ça fonctionne, tu enregistres.
 
-**[ECRAN — screencast ajout de l'action 2 — Google Sheets]**
+**[ÉCRAN — screencast ajout de l'action 2 — Google Sheets]**
 
-[Clique sur "+" pour ajouter une deuxieme action]
-[Selectionne "Google Sheets"]
-[Selectionne l'evenement "Add Row"]
-[Selectionne la connexion Google]
-[Selectionne le spreadsheet "Ventes schoolsWP"]
-[Selectionne la feuille "2026"]
+[Clique sur "+" pour ajouter une deuxième action]
+[Sélectionne "Google Sheets"]
+[Sélectionne l'événement "Add Row"]
+[Sélectionne la connexion Google]
+[Sélectionne le spreadsheet "Ventes schoolsWP"]
+[Sélectionne la feuille "2026"]
 [Mappe les colonnes :]
 
 | Colonne Sheet | Champ OttoKit |
@@ -161,12 +161,12 @@ Premiere action : notifier l'equipe. Ici on envoie un message Slack dans le chan
 [Montre la nouvelle ligne dans Google Sheets]
 [Clique sur "Save"]
 
-Deuxieme action : enregistrer la vente dans ton tableur. Tu mappes chaque colonne avec les donnees de la commande. Le test confirme que la ligne s'ajoute.
+Deuxième action : enregistrer la vente dans ton tableur. Tu mappes chaque colonne avec les données de la commande. Le test confirme que la ligne s'ajoute.
 
-**[ECRAN — screencast ajout de l'action 3 — Email client]**
+**[ÉCRAN — screencast ajout de l'action 3 — Email client]**
 
-[Clique sur "+" pour ajouter une troisieme action]
-[Selectionne "Gmail" ou "Send Email"]
+[Clique sur "+" pour ajouter une troisième action]
+[Sélectionne "Gmail" ou "Send Email"]
 [Configure :]
 - To : {{billing_email}}
 - Subject : Merci pour ta commande #{{order_id}}
@@ -177,42 +177,42 @@ Bonjour {{billing_first_name}},
 
 Merci pour ta commande sur schoolsWP !
 
-Recapitulatif :
+Récapitulatif :
 - Commande : #{{order_id}}
 - Montant : {{total}} EUR
 
-Tu recevras un email de suivi des que ta commande sera expediee.
+Tu recevras un email de suivi dès que ta commande sera expédiée.
 
-A tres vite,
-L'equipe schoolsWP
+À très vite,
+L'équipe schoolsWP
 ```
 
 [Clique sur "Test Action"]
-[Montre l'email recu dans Gmail]
+[Montre l'email reçu dans Gmail]
 [Clique sur "Save"]
 
-Troisieme action : envoyer un email de remerciement personnalise. Le prenom, le numero de commande, le montant — tout vient du trigger.
+Troisième action : envoyer un email de remerciement personnalisé. Le prénom, le numéro de commande, le montant — tout vient du trigger.
 
-**[ECRAN — screencast vue globale du workflow]**
+**[ÉCRAN — screencast vue globale du workflow]**
 
 [Zoom out pour voir le workflow complet : Trigger → Slack → Sheets → Email]
 [Active le workflow (bouton "Publish" ou "Activate")]
 
-Voila le workflow complet. Un trigger, trois actions enchainees. Chaque commande declenche une notification, un enregistrement et un email — automatiquement.
+Voilà le workflow complet. Un trigger, trois actions enchaînées. Chaque commande déclenche une notification, un enregistrement et un email — automatiquement.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Ce workflow est la base de tout site e-commerce sur WordPress. Dans la prochaine lecon, on va plus loin avec WooCommerce : creer automatiquement un coupon de fidelisation apres le premier achat.
+Ce workflow est la base de tout site e-commerce sur WordPress. Dans la prochaine leçon, on va plus loin avec WooCommerce : créer automatiquement un coupon de fidélisation après le premier achat.
 
 ---
 
-**Points cles**
+**Points clés**
 - Un seul trigger WooCommerce peut alimenter plusieurs actions en cascade
 - Toujours tester chaque action individuellement avant de publier
-- Les donnees du trigger (order_id, billing_email, total) sont reutilisables dans toutes les actions
-- Ce workflow remplace 3 taches manuelles : notification, saisie tableur, email
+- Les données du trigger (order_id, billing_email, total) sont réutilisables dans toutes les actions
+- Ce workflow remplace 3 tâches manuelles : notification, saisie tableur, email
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit WooCommerce workflow
 - automatiser commande WooCommerce
 - notification vente WordPress
@@ -220,40 +220,40 @@ Ce workflow est la base de tout site e-commerce sur WordPress. Dans la prochaine
 
 ---
 
-## Lecon 8.3 — WooCommerce : coupon automatique apres premier achat
+## Leçon 8.3 — WooCommerce : coupon automatique après premier achat
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un client achete pour la premiere fois. Tu veux le remercier avec un coupon de reduction pour l'inciter a revenir. Probleme : comment savoir que c'est son premier achat ? Et comment generer le coupon automatiquement ? OttoKit gere les deux.
+Un client achète pour la première fois. Tu veux le remercier avec un coupon de réduction pour l'inciter à revenir. Problème : comment savoir que c'est son premier achat ? Et comment générer le coupon automatiquement ? OttoKit gère les deux.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Cree un nouveau workflow : "Premier achat → coupon fidelite"]
+[Crée un nouveau workflow : "Premier achat → coupon fidélité"]
 [Clique sur le bloc trigger]
-[Selectionne "WooCommerce" > "Order Completed"]
-[Selectionne la connexion WordPress]
+[Sélectionne "WooCommerce" > "Order Completed"]
+[Sélectionne la connexion WordPress]
 [Clique sur "Fetch Data" > "Save"]
 
-Le trigger est "Order Completed" — pas "Order Created". On veut etre sur que le paiement est valide avant d'envoyer un coupon.
+Le trigger est "Order Completed" — pas "Order Created". On veut être sûr que le paiement est valide avant d'envoyer un coupon.
 
-**[ECRAN — screencast ajout du Filter]**
+**[ÉCRAN — screencast ajout du Filter]**
 
-[Clique sur "+" > selectionne "Filter"]
+[Clique sur "+" > sélectionne "Filter"]
 [Configure la condition : "Order Count" equals "1"]
 [Si le champ n'existe pas directement, montre comment utiliser une Condition sur le nombre de commandes du client]
 
-On ajoute un filtre. La condition : le client n'a qu'une seule commande. Si c'est son deuxieme ou troisieme achat, le workflow s'arrete ici. On ne veut pas envoyer un coupon a chaque commande.
+On ajoute un filtre. La condition : le client n'a qu'une seule commande. Si c'est son deuxième ou troisième achat, le workflow s'arrête ici. On ne veut pas envoyer un coupon à chaque commande.
 
-**[ECRAN — screencast creation du coupon]**
+**[ÉCRAN — screencast création du coupon]**
 
-[Clique sur "+" > selectionne "WooCommerce"]
-[Selectionne l'action "Create Coupon"]
+[Clique sur "+" > sélectionne "WooCommerce"]
+[Sélectionne l'action "Create Coupon"]
 [Configure :]
 - Code : BIENVENUE-{{order_id}}
 - Type : Percentage discount
@@ -263,11 +263,11 @@ On ajoute un filtre. La condition : le client n'a qu'une seule commande. Si c'es
 
 [Clique sur "Save"]
 
-On cree un coupon via l'action WooCommerce "Create Coupon". Le code est unique grace au numero de commande. 10% de reduction, utilisable une seule fois, valable 30 jours. Pas de triche possible.
+On crée un coupon via l'action WooCommerce "Create Coupon". Le code est unique grâce au numéro de commande. 10% de réduction, utilisable une seule fois, valable 30 jours. Pas de triche possible.
 
-**[ECRAN — screencast envoi de l'email avec le coupon]**
+**[ÉCRAN — screencast envoi de l'email avec le coupon]**
 
-[Clique sur "+" > selectionne "Gmail" ou "Send Email"]
+[Clique sur "+" > sélectionne "Gmail" ou "Send Email"]
 [Configure :]
 - To : {{billing_email}}
 - Subject : -10% sur ta prochaine commande
@@ -283,86 +283,86 @@ Code : BIENVENUE-{{order_id}}
 
 Valable 30 jours, sur ta prochaine commande.
 
-A bientot,
-L'equipe schoolsWP
+À bientôt,
+L'équipe schoolsWP
 ```
 
 [Clique sur "Test Action"]
 [Clique sur "Save"]
 
-L'email transmet le coupon au client. Le code est injecte dynamiquement — chaque client recoit un coupon unique.
+L'email transmet le coupon au client. Le code est injecté dynamiquement — chaque client reçoit un coupon unique.
 
-**[ECRAN — screencast vue globale]**
+**[ÉCRAN — screencast vue globale]**
 
 [Montre le workflow complet : Trigger (Order Completed) → Filter (premier achat) → Create Coupon → Send Email]
 [Active le workflow]
 
-Le workflow complet : commande terminee → verification premier achat → creation coupon → email. Quatre etapes, zero intervention manuelle.
+Le workflow complet : commande terminée → vérification premier achat → création coupon → email. Quatre étapes, zéro intervention manuelle.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-La fidelisation automatisee, c'est ce qui fait la difference entre un site qui vend une fois et un site qui fait revenir ses clients. Prochaine lecon : on connecte TutorLMS a OttoKit pour automatiser le parcours de formation.
+La fidélisation automatisée, c'est ce qui fait la différence entre un site qui vend une fois et un site qui fait revenir ses clients. Prochaine leçon : on connecte TutorLMS à OttoKit pour automatiser le parcours de formation.
 
 ---
 
-**Points cles**
+**Points clés**
 - Utiliser "Order Completed" (pas "Order Created") pour s'assurer que le paiement est valide
-- Le Filter verifie que c'est le premier achat avant de continuer
-- Le coupon est genere avec un code unique (numero de commande)
-- Usage limit = 1 et expiration = 30 jours pour eviter les abus
+- Le Filter vérifie que c'est le premier achat avant de continuer
+- Le coupon est généré avec un code unique (numéro de commande)
+- Usage limit = 1 et expiration = 30 jours pour éviter les abus
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit coupon automatique WooCommerce
-- fidelisation automatique WordPress
+- fidélisation automatique WordPress
 - coupon premier achat WooCommerce
 - automatiser coupon WordPress
 
 ---
 
-## Lecon 8.4 — TutorLMS : inscription cours → email + tag CRM
+## Leçon 8.4 — TutorLMS : inscription cours → email + tag CRM
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un eleve s'inscrit a un cours gratuit sur ton site TutorLMS. Tu veux deux choses : lui envoyer un email de bienvenue et l'identifier dans ton CRM avec un tag. C'est le debut du parcours automatise formateur → eleve → client.
+Un élève s'inscrit à un cours gratuit sur ton site TutorLMS. Tu veux deux choses : lui envoyer un email de bienvenue et l'identifier dans ton CRM avec un tag. C'est le début du parcours automatisé formateur → élève → client.
 
-**[ECRAN — slide "Le parcours formateur schoolsWP"]**
+**[ÉCRAN — slide "Le parcours formateur schoolsWP"]**
 
 ```
-Inscription gratuite → tag "lead" → email bienvenue → nurturing → achat premium → tag "client" → acces cours
+Inscription gratuite → tag "lead" → email bienvenue → nurturing → achat premium → tag "client" → accès cours
 ```
 
-Ce schema, c'est toute la strategie. OttoKit est le moteur qui fait avancer l'eleve d'une etape a l'autre. Aujourd'hui, on construit la premiere partie : inscription → tag → email.
+Ce schéma, c'est toute la stratégie. OttoKit est le moteur qui fait avancer l'élève d'une étape à l'autre. Aujourd'hui, on construit la première partie : inscription → tag → email.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Cree un nouveau workflow : "Inscription TutorLMS → CRM + email"]
+[Crée un nouveau workflow : "Inscription TutorLMS → CRM + email"]
 [Clique sur le bloc trigger]
-[Selectionne "TutorLMS"]
-[Selectionne l'evenement "Student Enrolled in a Course"]
+[Sélectionne "TutorLMS"]
+[Sélectionne l'événement "Student Enrolled in a Course"]
 [Pointe le badge "Instant"]
-[Selectionne la connexion WordPress]
+[Sélectionne la connexion WordPress]
 
-Le trigger TutorLMS "Student Enrolled in a Course" se declenche en temps reel. Des qu'un eleve s'inscrit, le workflow demarre.
+Le trigger TutorLMS "Student Enrolled in a Course" se déclenche en temps réel. Dès qu'un élève s'inscrit, le workflow démarre.
 
-**[ECRAN — screencast Fetch Data]**
+**[ÉCRAN — screencast Fetch Data]**
 
 [Clique sur "Fetch Data"]
-[Montre les champs retournes : student_id, student_email, student_name, course_id, course_title, enrollment_date]
+[Montre les champs retournés : student_id, student_email, student_name, course_id, course_title, enrollment_date]
 [Clique sur "Save"]
 
-Le Fetch Data remonte les informations de l'eleve et du cours : son email, son nom, le titre du cours, la date d'inscription. Ces champs vont alimenter les actions suivantes.
+Le Fetch Data remonte les informations de l'élève et du cours : son email, son nom, le titre du cours, la date d'inscription. Ces champs vont alimenter les actions suivantes.
 
-**[ECRAN — screencast ajout de l'action 1 — FluentCRM tag]**
+**[ÉCRAN — screencast ajout de l'action 1 — FluentCRM tag]**
 
-[Clique sur "+" > selectionne "FluentCRM"]
-[Selectionne l'action "Add Tag to Contact"]
-[Selectionne la connexion WordPress]
+[Clique sur "+" > sélectionne "FluentCRM"]
+[Sélectionne l'action "Add Tag to Contact"]
+[Sélectionne la connexion WordPress]
 [Configure :]
 - Contact Email : {{student_email}}
 - Tag : "lead"
@@ -371,11 +371,11 @@ Le Fetch Data remonte les informations de l'eleve et du cours : son email, son n
 [Clique sur "Test Action"]
 [Clique sur "Save"]
 
-Premiere action : ajouter le tag "lead" dans FluentCRM. Si le contact existe deja, le tag s'ajoute. Sinon, OttoKit cree le contact. C'est cette option "Create if not exists" qui fait le lien automatique entre TutorLMS et FluentCRM.
+Première action : ajouter le tag "lead" dans FluentCRM. Si le contact existe déjà, le tag s'ajoute. Sinon, OttoKit crée le contact. C'est cette option "Create if not exists" qui fait le lien automatique entre TutorLMS et FluentCRM.
 
-**[ECRAN — screencast ajout de l'action 2 — Email bienvenue]**
+**[ÉCRAN — screencast ajout de l'action 2 — Email bienvenue]**
 
-[Clique sur "+" > selectionne "Gmail" ou "Send Email"]
+[Clique sur "+" > sélectionne "Gmail" ou "Send Email"]
 [Configure :]
 - To : {{student_email}}
 - Subject : Bienvenue dans "{{course_title}}" !
@@ -384,95 +384,95 @@ Premiere action : ajouter le tag "lead" dans FluentCRM. Si le contact existe dej
 ```
 Bonjour {{student_name}},
 
-Tu viens de t'inscrire a "{{course_title}}". Bravo, c'est le premier pas.
+Tu viens de t'inscrire à "{{course_title}}". Bravo, c'est le premier pas.
 
-Voici comment bien demarrer :
-1. Connecte-toi a ton espace : [lien]
-2. Commence par la lecon 1 — elle prend 5 minutes
-3. Si tu as une question, reponds a cet email
+Voici comment bien démarrer :
+1. Connecte-toi à ton espace : [lien]
+2. Commence par la leçon 1 — elle prend 5 minutes
+3. Si tu as une question, réponds à cet email
 
-A tres vite dans le cours,
-L'equipe schoolsWP
+À très vite dans le cours,
+L'équipe schoolsWP
 ```
 
 [Clique sur "Test Action"]
 [Clique sur "Save"]
 
-Deuxieme action : l'email de bienvenue. Le titre du cours est injecte dynamiquement. Chaque eleve recoit un message adapte au cours dans lequel il s'est inscrit.
+Deuxième action : l'email de bienvenue. Le titre du cours est injecté dynamiquement. Chaque élève reçoit un message adapté au cours dans lequel il s'est inscrit.
 
-**[ECRAN — screencast vue globale]**
+**[ÉCRAN — screencast vue globale]**
 
 [Montre le workflow complet : Trigger (Inscription TutorLMS) → FluentCRM (tag "lead") → Email bienvenue]
 [Active le workflow]
 
-Trois etapes. Chaque inscription declenche un tag CRM et un email. Ton eleve est identifie et accueilli sans que tu leves le petit doigt.
+Trois étapes. Chaque inscription déclenche un tag CRM et un email. Ton élève est identifié et accueilli sans que tu lèves le petit doigt.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-L'inscription, c'est fait. Mais que se passe-t-il si un eleve s'inscrit et disparait ? Dans la prochaine lecon, on construit la relance automatique des eleves inactifs.
+L'inscription, c'est fait. Mais que se passe-t-il si un élève s'inscrit et disparaît ? Dans la prochaine leçon, on construit la relance automatique des élèves inactifs.
 
 ---
 
-**Points cles**
-- TutorLMS "Student Enrolled" est un trigger instantane
-- FluentCRM "Add Tag" avec "Create if not exists" cree le lien LMS → CRM
+**Points clés**
+- TutorLMS "Student Enrolled" est un trigger instantané
+- FluentCRM "Add Tag" avec "Create if not exists" crée le lien LMS → CRM
 - Le tag "lead" identifie les inscrits gratuits dans le CRM
 - L'email de bienvenue utilise le titre du cours dynamiquement
 
-**Mots-cles SEO**
-- OttoKit TutorLMS integration
+**Mots-clés SEO**
+- OttoKit TutorLMS intégration
 - automatiser inscription cours WordPress
 - TutorLMS FluentCRM OttoKit
 - email bienvenue automatique formation
 
 ---
 
-## Lecon 8.5 — TutorLMS : relance des eleves inactifs
+## Leçon 8.5 — TutorLMS : relance des élèves inactifs
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un eleve s'inscrit, suit une ou deux lecons, puis disparait. Ca arrive tout le temps. Le probleme, c'est que tu ne le sais pas — sauf si tu verifies manuellement. Avec OttoKit, tu peux detecter l'inactivite et relancer automatiquement.
+Un élève s'inscrit, suit une ou deux leçons, puis disparaît. Ça arrive tout le temps. Le problème, c'est que tu ne le sais pas — sauf si tu vérifies manuellement. Avec OttoKit, tu peux détecter l'inactivité et relancer automatiquement.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Cree un nouveau workflow : "Relance eleves inactifs TutorLMS"]
+[Crée un nouveau workflow : "Relance élèves inactifs TutorLMS"]
 [Clique sur le bloc trigger]
-[Selectionne "Schedule App"]
+[Sélectionne "Schedule App"]
 [Configure : Weekly, Monday, 09:00, Europe/Paris]
 [Clique sur "Save"]
 
-Ce workflow ne reagit pas a un evenement ponctuel. Il se lance chaque lundi matin et verifie qui est inactif. C'est un trigger planifie — le Schedule App.
+Ce workflow ne réagit pas à un événement ponctuel. Il se lance chaque lundi matin et vérifie qui est inactif. C'est un trigger planifié — le Schedule App.
 
-**[ECRAN — screencast ajout de l'action 1 — Recuperer les eleves]**
+**[ÉCRAN — screencast ajout de l'action 1 — Récupérer les élèves]**
 
-[Clique sur "+" > selectionne "TutorLMS"]
-[Selectionne l'action "Get Students" ou "List Enrolled Students"]
-[Selectionne le cours cible]
+[Clique sur "+" > sélectionne "TutorLMS"]
+[Sélectionne l'action "Get Students" ou "List Enrolled Students"]
+[Sélectionne le cours cible]
 [Clique sur "Fetch Data"]
-[Montre la liste des eleves avec leurs progressions]
+[Montre la liste des élèves avec leurs progressions]
 [Clique sur "Save"]
 
-Premiere action : recuperer la liste des eleves inscrits au cours. OttoKit retourne chaque eleve avec sa progression.
+Première action : récupérer la liste des élèves inscrits au cours. OttoKit retourne chaque élève avec sa progression.
 
-**[ECRAN — screencast ajout du Filter]**
+**[ÉCRAN — screencast ajout du Filter]**
 
-[Clique sur "+" > selectionne "Filter"]
+[Clique sur "+" > sélectionne "Filter"]
 [Configure la condition : "Progress" is less than "50%"]
-[Ajoute une deuxieme condition : "Last Activity" is more than "7 days ago"]
+[Ajoute une deuxième condition : "Last Activity" is more than "7 days ago"]
 [Combine en AND]
 [Clique sur "Save"]
 
-Le filtre est la cle de ce workflow. On ne veut relancer que les eleves qui ont une progression inferieure a 50% ET qui n'ont rien fait depuis plus de 7 jours. Les eleves actifs ne sont pas deranges.
+Le filtre est la clé de ce workflow. On ne veut relancer que les élèves qui ont une progression inférieure à 50% ET qui n'ont rien fait depuis plus de 7 jours. Les élèves actifs ne sont pas dérangés.
 
-**[ECRAN — screencast ajout de l'action 2 — Email de relance]**
+**[ÉCRAN — screencast ajout de l'action 2 — Email de relance]**
 
-[Clique sur "+" > selectionne "Send Email"]
+[Clique sur "+" > sélectionne "Send Email"]
 [Configure :]
 - To : {{student_email}}
 - Subject : On t'attend dans "{{course_title}}" !
@@ -481,194 +481,194 @@ Le filtre est la cle de ce workflow. On ne veut relancer que les eleves qui ont 
 ```
 Bonjour {{student_name}},
 
-Tu as commence "{{course_title}}" il y a quelques jours et tu en es a {{progress}}%.
+Tu as commencé "{{course_title}}" il y a quelques jours et tu en es à {{progress}}%.
 
-Il te reste encore des lecons qui valent le detour. Reprends la ou tu t'es arrete — ca prend 5 minutes.
+Il te reste encore des leçons qui valent le détour. Reprends là où tu t'es arrêté — ça prend 5 minutes.
 
 [Bouton : Reprendre le cours]
 
-Si tu as un blocage, reponds a cet email. On est la pour t'aider.
+Si tu as un blocage, réponds à cet email. On est là pour t'aider.
 
-L'equipe schoolsWP
+L'équipe schoolsWP
 ```
 
 [Clique sur "Save"]
 
-L'email de relance est personnalise. Le prenom, le titre du cours, le pourcentage de progression — tout est dynamique. L'eleve voit exactement ou il en est.
+L'email de relance est personnalisé. Le prénom, le titre du cours, le pourcentage de progression — tout est dynamique. L'élève voit exactement où il en est.
 
-**[ECRAN — screencast vue globale]**
+**[ÉCRAN — screencast vue globale]**
 
 [Montre le workflow : Schedule (lundi 9h) → Get Students → Filter (inactifs) → Send Email]
 [Active le workflow]
 
-Chaque lundi, OttoKit recupere les eleves, filtre ceux qui sont en decrochage et envoie un email de relance cible. Tu ne fais rien — et ton taux de completion augmente.
+Chaque lundi, OttoKit récupère les élèves, filtre ceux qui sont en décrochage et envoie un email de relance ciblé. Tu ne fais rien — et ton taux de complétion augmente.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-TutorLMS est connecte. Passons maintenant a FluentCRM : comment un simple tag peut declencher toute une sequence email automatique.
+TutorLMS est connecté. Passons maintenant à FluentCRM : comment un simple tag peut déclencher toute une séquence email automatique.
 
 ---
 
-**Points cles**
-- Le Schedule App lance le workflow a heure fixe (chaque lundi)
-- Le filtre combine deux conditions : progression faible ET inactivite recente
-- L'email de relance est personnalise avec les donnees de progression
-- Ce workflow augmente le taux de completion sans travail manuel
+**Points clés**
+- Le Schedule App lance le workflow à heure fixe (chaque lundi)
+- Le filtre combine deux conditions : progression faible ET inactivité récente
+- L'email de relance est personnalisé avec les données de progression
+- Ce workflow augmente le taux de complétion sans travail manuel
 
-**Mots-cles SEO**
-- relance eleves inactifs TutorLMS
+**Mots-clés SEO**
+- relance élèves inactifs TutorLMS
 - OttoKit TutorLMS relance automatique
 - automatiser suivi formation WordPress
 - email relance cours en ligne
 
 ---
 
-## Lecon 8.6 — FluentCRM : tag → sequence email → suivi
+## Leçon 8.6 — FluentCRM : tag → séquence email → suivi
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Dans FluentCRM, un tag represente une action ou un statut. "lead", "client", "abandonniste", "VIP". Le vrai pouvoir, c'est quand l'ajout d'un tag declenche automatiquement une sequence d'actions. Et c'est exactement ce qu'on va construire.
+Dans FluentCRM, un tag représente une action ou un statut. "lead", "client", "abandonniste", "VIP". Le vrai pouvoir, c'est quand l'ajout d'un tag déclenche automatiquement une séquence d'actions. Et c'est exactement ce qu'on va construire.
 
-**[ECRAN — slide "Le systeme de tags schoolsWP"]**
+**[ÉCRAN — slide "Le système de tags schoolsWP"]**
 
-| Tag | Signification | Declencheur |
+| Tag | Signification | Déclencheur |
 |-----|--------------|-------------|
-| lead | Inscrit gratuit | Inscription TutorLMS (lecon 8.4) |
-| prospect | A montre de l'interet | Visite page premium ou telechargement |
-| client | A achete | Commande WooCommerce completee |
-| VIP | Client fidele | 3+ achats ou panier > 200 EUR |
-| inactif | Aucune activite 30j | Schedule hebdomadaire |
+| lead | Inscrit gratuit | Inscription TutorLMS (leçon 8.4) |
+| prospect | A montré de l'intérêt | Visite page premium ou téléchargement |
+| client | A acheté | Commande WooCommerce complétée |
+| VIP | Client fidèle | 3+ achats ou panier > 200 EUR |
+| inactif | Aucune activité 30j | Schedule hebdomadaire |
 
-Chaque tag correspond a un moment du parcours client. OttoKit reagit a chaque changement de tag.
+Chaque tag correspond à un moment du parcours client. OttoKit réagit à chaque changement de tag.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Cree un nouveau workflow : "Tag prospect → sequence nurturing"]
+[Crée un nouveau workflow : "Tag prospect → séquence nurturing"]
 [Clique sur le bloc trigger]
-[Selectionne "FluentCRM"]
-[Selectionne l'evenement "Tag Added to Contact"]
-[Selectionne la connexion WordPress]
+[Sélectionne "FluentCRM"]
+[Sélectionne l'événement "Tag Added to Contact"]
+[Sélectionne la connexion WordPress]
 [Configure le tag : "prospect"]
 [Clique sur "Fetch Data"]
 [Montre les champs : contact_email, first_name, tags, lists]
 [Clique sur "Save"]
 
-Le trigger se declenche quand le tag "prospect" est ajoute a un contact FluentCRM. Peu importe comment le tag arrive — manuellement, via un autre workflow, via un formulaire. Des qu'il est pose, le workflow demarre.
+Le trigger se déclenche quand le tag "prospect" est ajouté à un contact FluentCRM. Peu importe comment le tag arrive — manuellement, via un autre workflow, via un formulaire. Dès qu'il est posé, le workflow démarre.
 
-**[ECRAN — screencast action 1 — Email J+0]**
+**[ÉCRAN — screencast action 1 — Email J+0]**
 
-[Clique sur "+" > selectionne "Send Email"]
+[Clique sur "+" > sélectionne "Send Email"]
 [Configure :]
 - To : {{contact_email}}
-- Subject : 3 questions a te poser avant de choisir ta formation
+- Subject : 3 questions à te poser avant de choisir ta formation
 - Body : [contenu email nurturing — conseils concrets, pas de vente directe]
 
 [Clique sur "Save"]
 
-Premier email : de la valeur, pas de la vente. Tu reponds a une question que le prospect se pose. C'est le debut de la sequence de nurturing.
+Premier email : de la valeur, pas de la vente. Tu réponds à une question que le prospect se pose. C'est le début de la séquence de nurturing.
 
-**[ECRAN — screencast ajout du Delay]**
+**[ÉCRAN — screencast ajout du Delay]**
 
-[Clique sur "+" > selectionne "Delay"]
+[Clique sur "+" > sélectionne "Delay"]
 [Configure : 3 jours]
 [Clique sur "Save"]
 
-On attend 3 jours. Pas d'email tous les jours — ca fatigue.
+On attend 3 jours. Pas d'email tous les jours — ça fatigue.
 
-**[ECRAN — screencast action 2 — Email J+3]**
+**[ÉCRAN — screencast action 2 — Email J+3]**
 
-[Clique sur "+" > selectionne "Send Email"]
+[Clique sur "+" > sélectionne "Send Email"]
 [Configure :]
-- Subject : Le piege que 80% des formateurs WordPress font
+- Subject : Le piège que 80% des formateurs WordPress font
 - Body : [contenu email — erreur courante + solution]
 
 [Clique sur "Save"]
 
-Deuxieme email : un contenu qui montre ton expertise. Tu identifies un probleme courant et tu donnes la solution. Le prospect commence a te faire confiance.
+Deuxième email : un contenu qui montre ton expertise. Tu identifies un problème courant et tu donnes la solution. Le prospect commence à te faire confiance.
 
-**[ECRAN — screencast ajout d'un deuxieme Delay + action 3]**
+**[ÉCRAN — screencast ajout d'un deuxième Delay + action 3]**
 
 [Clique sur "+" > Delay 4 jours]
 [Clique sur "+" > Send Email]
-- Subject : Pret a passer au niveau suivant ?
-- Body : [contenu email — presentation de l'offre premium, lien vers la page de vente]
+- Subject : Prêt à passer au niveau suivant ?
+- Body : [contenu email — présentation de l'offre premium, lien vers la page de vente]
 
 [Clique sur "Save"]
 
-Troisieme email, jour 7 : cette fois tu presentes l'offre. Le prospect a recu deux emails de valeur — il est pret a entendre ta proposition.
+Troisième email, jour 7 : cette fois tu présentes l'offre. Le prospect a reçu deux emails de valeur — il est prêt à entendre ta proposition.
 
-**[ECRAN — screencast vue globale]**
+**[ÉCRAN — screencast vue globale]**
 
 [Montre le workflow complet : Tag "prospect" → Email J+0 → Delay 3j → Email J+3 → Delay 4j → Email J+7]
 [Active le workflow]
 
-Voila ta sequence de nurturing : 3 emails en 7 jours, declenchee par un simple tag. Tu peux ajouter des branches conditionelles — si le prospect ouvre l'email 2, envoyer un email different au jour 7. Mais cette version lineaire est deja tres efficace pour demarrer.
+Voilà ta séquence de nurturing : 3 emails en 7 jours, déclenchée par un simple tag. Tu peux ajouter des branches conditionnelles — si le prospect ouvre l'email 2, envoyer un email différent au jour 7. Mais cette version linéaire est déjà très efficace pour démarrer.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Le CRM est branche. Prochaine lecon : on connecte les formulaires. Fluent Forms et SureForms vers FluentCRM et Google Sheets — en un seul workflow.
+Le CRM est branché. Prochaine leçon : on connecte les formulaires. Fluent Forms et SureForms vers FluentCRM et Google Sheets — en un seul workflow.
 
 ---
 
-**Points cles**
-- Le trigger FluentCRM "Tag Added" reagit a l'ajout d'un tag specifique
-- Une sequence de nurturing alterne valeur et delai avant de proposer l'offre
+**Points clés**
+- Le trigger FluentCRM "Tag Added" réagit à l'ajout d'un tag spécifique
+- Une séquence de nurturing alterne valeur et délai avant de proposer l'offre
 - Le Delay App espace les emails (3-4 jours entre chaque)
-- Cette sequence fonctionne en continu — chaque nouveau prospect la recoit
+- Cette séquence fonctionne en continu — chaque nouveau prospect la reçoit
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit FluentCRM tag automatisation
-- sequence email automatique WordPress
-- nurturing automatise FluentCRM
+- séquence email automatique WordPress
+- nurturing automatisé FluentCRM
 - email marketing automation OttoKit
 
 ---
 
-## Lecon 8.7 — Fluent Forms / SureForms : formulaire → CRM + Sheets
+## Leçon 8.7 — Fluent Forms / SureForms : formulaire → CRM + Sheets
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un visiteur remplit un formulaire de contact ou telecharge un guide gratuit. Tu veux que ses informations arrivent dans ton CRM, dans un Google Sheet, et qu'il recoive un email de confirmation. Trois destinations, un seul workflow.
+Un visiteur remplit un formulaire de contact ou télécharge un guide gratuit. Tu veux que ses informations arrivent dans ton CRM, dans un Google Sheet, et qu'il reçoive un email de confirmation. Trois destinations, un seul workflow.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Cree un nouveau workflow : "Formulaire → CRM + Sheets + email"]
+[Crée un nouveau workflow : "Formulaire → CRM + Sheets + email"]
 [Clique sur le bloc trigger]
-[Selectionne "Fluent Forms"]
-[Selectionne l'evenement "Form Submitted"]
-[Selectionne la connexion WordPress]
+[Sélectionne "Fluent Forms"]
+[Sélectionne l'événement "Form Submitted"]
+[Sélectionne la connexion WordPress]
 
-Le trigger Fluent Forms "Form Submitted" est instantane. Des que le visiteur clique sur "Envoyer", le workflow demarre.
+Le trigger Fluent Forms "Form Submitted" est instantané. Dès que le visiteur clique sur "Envoyer", le workflow démarre.
 
-**[ECRAN — screencast selection du formulaire]**
+**[ÉCRAN — screencast sélection du formulaire]**
 
-[Dans les parametres du trigger, selectionne le formulaire specifique — ex: "Telecharger le guide LMS"]
+[Dans les paramètres du trigger, sélectionne le formulaire spécifique — ex: "Télécharger le guide LMS"]
 [Clique sur "Fetch Data"]
-[Montre les champs retournes : name, email, phone, message, form_id, form_title]
+[Montre les champs retournés : name, email, phone, message, form_id, form_title]
 [Clique sur "Save"]
 
-Tu choisis le formulaire exact. Les champs du formulaire deviennent les champs disponibles dans le workflow : nom, email, telephone, message.
+Tu choisis le formulaire exact. Les champs du formulaire deviennent les champs disponibles dans le workflow : nom, email, téléphone, message.
 
-**[ECRAN — slide "SureForms : meme logique"]**
+**[ÉCRAN — slide "SureForms : même logique"]**
 
-Si tu utilises SureForms plutot que Fluent Forms, la demarche est identique. Tu selectionnes "SureForms" au lieu de "Fluent Forms", tu choisis le formulaire et l'evenement "Form Submitted". Les champs sont les memes.
+Si tu utilises SureForms plutôt que Fluent Forms, la démarche est identique. Tu sélectionnes "SureForms" au lieu de "Fluent Forms", tu choisis le formulaire et l'événement "Form Submitted". Les champs sont les mêmes.
 
-**[ECRAN — screencast action 1 — FluentCRM]**
+**[ÉCRAN — screencast action 1 — FluentCRM]**
 
-[Clique sur "+" > selectionne "FluentCRM"]
-[Selectionne "Add/Update Contact"]
+[Clique sur "+" > sélectionne "FluentCRM"]
+[Sélectionne "Add/Update Contact"]
 [Configure :]
 - Email : {{email}}
 - First Name : {{name}}
@@ -677,12 +677,12 @@ Si tu utilises SureForms plutot que Fluent Forms, la demarche est identique. Tu 
 
 [Clique sur "Test Action" > "Save"]
 
-Premiere destination : FluentCRM. Le contact est cree avec deux tags ("lead" et "guide-lms") et ajoute a la liste "Prospects". Si le contact existe deja, ses informations sont mises a jour.
+Première destination : FluentCRM. Le contact est créé avec deux tags ("lead" et "guide-lms") et ajouté à la liste "Prospects". Si le contact existe déjà, ses informations sont mises à jour.
 
-**[ECRAN — screencast action 2 — Google Sheets]**
+**[ÉCRAN — screencast action 2 — Google Sheets]**
 
-[Clique sur "+" > selectionne "Google Sheets"]
-[Selectionne "Add Row"]
+[Clique sur "+" > sélectionne "Google Sheets"]
+[Sélectionne "Add Row"]
 [Configure le mapping :]
 - Date : {{submission_date}}
 - Nom : {{name}}
@@ -691,88 +691,88 @@ Premiere destination : FluentCRM. Le contact est cree avec deux tags ("lead" et 
 
 [Clique sur "Test Action" > "Save"]
 
-Deuxieme destination : Google Sheets. Chaque soumission ajoute une ligne. Le champ "Source" indique quel formulaire a ete rempli — utile quand tu as plusieurs formulaires.
+Deuxième destination : Google Sheets. Chaque soumission ajoute une ligne. Le champ "Source" indique quel formulaire a été rempli — utile quand tu as plusieurs formulaires.
 
-**[ECRAN — screencast action 3 — Email confirmation]**
+**[ÉCRAN — screencast action 3 — Email confirmation]**
 
-[Clique sur "+" > selectionne "Send Email"]
+[Clique sur "+" > sélectionne "Send Email"]
 [Configure :]
 - To : {{email}}
-- Subject : Ton guide LMS est pret
+- Subject : Ton guide LMS est prêt
 - Body :
 
 ```
 Bonjour {{name}},
 
 Merci pour ta demande. Voici ton guide :
-[Lien de telechargement]
+[Lien de téléchargement]
 
-Si tu as des questions, reponds a cet email.
+Si tu as des questions, réponds à cet email.
 
-L'equipe schoolsWP
+L'équipe schoolsWP
 ```
 
 [Clique sur "Test Action" > "Save"]
 
-Troisieme destination : l'email de confirmation avec le lien de telechargement. Le visiteur recoit son guide immediatement.
+Troisième destination : l'email de confirmation avec le lien de téléchargement. Le visiteur reçoit son guide immédiatement.
 
-**[ECRAN — screencast vue globale]**
+**[ÉCRAN — screencast vue globale]**
 
 [Montre le workflow : Trigger (Fluent Forms) → FluentCRM → Google Sheets → Email]
 [Active le workflow]
 
-Un formulaire, trois actions. Le lead est dans ton CRM, dans ton tableur et a recu son guide. Zero travail manuel, zero oubli.
+Un formulaire, trois actions. Le lead est dans ton CRM, dans ton tableur et a reçu son guide. Zéro travail manuel, zéro oubli.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-On a couvert les integrations mono-site. Mais que faire si tu geres plusieurs sites WordPress ? Prochaine lecon : l'automatisation inter-sites — une specialite d'OttoKit que tu ne trouveras pas chez Zapier.
+On a couvert les intégrations mono-site. Mais que faire si tu gères plusieurs sites WordPress ? Prochaine leçon : l'automatisation inter-sites — une spécialité d'OttoKit que tu ne trouveras pas chez Zapier.
 
 ---
 
-**Points cles**
-- Fluent Forms et SureForms fonctionnent de la meme maniere avec OttoKit
+**Points clés**
+- Fluent Forms et SureForms fonctionnent de la même manière avec OttoKit
 - Un seul trigger peut alimenter trois destinations (CRM, Sheets, email)
 - Le tag dans FluentCRM sert de marqueur pour les workflows suivants
-- Le champ "Source" (form_title) permet de differencier les formulaires
+- Le champ "Source" (form_title) permet de différencier les formulaires
 
-**Mots-cles SEO**
-- OttoKit Fluent Forms integration
+**Mots-clés SEO**
+- OttoKit Fluent Forms intégration
 - formulaire WordPress automatisation CRM
 - Fluent Forms FluentCRM OttoKit
 - SureForms OttoKit workflow
 
 ---
 
-## Lecon 8.8 — Automatisation inter-sites : site A → site B
+## Leçon 8.8 — Automatisation inter-sites : site A → site B
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas + deux sites WordPress
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas + deux sites WordPress
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu geres deux sites WordPress. Un site vitrine qui genere des leads, et un site de formation qui vend des cours. Quand quelqu'un remplit un formulaire sur le site vitrine, tu veux creer un compte sur le site de formation. Avec OttoKit, c'est possible — et c'est une fonctionnalite que tu ne trouveras pas chez Zapier ou Make.
+Tu gères deux sites WordPress. Un site vitrine qui génère des leads, et un site de formation qui vend des cours. Quand quelqu'un remplit un formulaire sur le site vitrine, tu veux créer un compte sur le site de formation. Avec OttoKit, c'est possible — et c'est une fonctionnalité que tu ne trouveras pas chez Zapier ou Make.
 
-**[ECRAN — slide "Architecture inter-sites"]**
+**[ÉCRAN — slide "Architecture inter-sites"]**
 
 ```
 Site A (vitrine)               Site B (formation)
-  Formulaire contact     →       Creer compte utilisateur
+  Formulaire contact     →       Créer compte utilisateur
   OttoKit plugin         →       OttoKit plugin
        ↓                              ↑
   Webhook OttoKit ──────────────→ Webhook OttoKit
 ```
 
-Le principe : le site A envoie un webhook a OttoKit. Un second workflow OttoKit recoit ce webhook et execute une action sur le site B. Les deux sites sont connectes au meme compte OttoKit.
+Le principe : le site A envoie un webhook à OttoKit. Un second workflow OttoKit reçoit ce webhook et exécute une action sur le site B. Les deux sites sont connectés au même compte OttoKit.
 
-**[ECRAN — screencast OttoKit — Workflow 1 (Site A)]**
+**[ÉCRAN — screencast OttoKit — Workflow 1 (Site A)]**
 
-[Cree un nouveau workflow : "Site A → envoie lead vers site B"]
+[Crée un nouveau workflow : "Site A → envoie lead vers site B"]
 [Trigger : Fluent Forms > Form Submitted (site A)]
 [Action : Webhook / API > Send Data to URL]
-[Configure l'URL : celle du webhook du workflow 2 (on la copiera apres)]
+[Configure l'URL : celle du webhook du workflow 2 (on la copiera après)]
 [Configure le payload :]
 
 ```json
@@ -785,20 +785,20 @@ Le principe : le site A envoie un webhook a OttoKit. Un second workflow OttoKit 
 
 [Clique sur "Save"]
 
-Workflow 1, sur le site A. Le trigger detecte la soumission du formulaire. L'action envoie les donnees vers une URL webhook — celle du workflow du site B.
+Workflow 1, sur le site A. Le trigger détecte la soumission du formulaire. L'action envoie les données vers une URL webhook — celle du workflow du site B.
 
-**[ECRAN — screencast OttoKit — Workflow 2 (Site B)]**
+**[ÉCRAN — screencast OttoKit — Workflow 2 (Site B)]**
 
-[Cree un nouveau workflow : "Site B → recoit lead et cree compte"]
+[Crée un nouveau workflow : "Site B → reçoit lead et crée compte"]
 [Trigger : Webhook / API > Receive Data from Webhook]
-[Copie l'URL webhook generee]
+[Copie l'URL webhook générée]
 [Retourne dans le workflow 1 et colle cette URL dans l'action "Send Data"]
 
-La cle, c'est l'URL webhook. Le workflow 2 genere une URL. Tu la copies et tu la colles dans le workflow 1. C'est le pont entre les deux sites.
+La clé, c'est l'URL webhook. Le workflow 2 génère une URL. Tu la copies et tu la colles dans le workflow 1. C'est le pont entre les deux sites.
 
-**[ECRAN — screencast configuration des actions du workflow 2]**
+**[ÉCRAN — screencast configuration des actions du workflow 2]**
 
-[Clique sur "Fetch Data" pour verifier que les donnees arrivent]
+[Clique sur "Fetch Data" pour vérifier que les données arrivent]
 [Ajoute une action : WordPress > Create User]
 [Configure :]
 - Email : {{email}}
@@ -808,35 +808,35 @@ La cle, c'est l'URL webhook. Le workflow 2 genere une URL. Tu la copies et tu la
 
 [Clique sur "Test Action" > "Save"]
 
-Sur le site B, l'action cree un compte utilisateur avec les donnees recues du webhook. L'email, le nom et le role sont mappes directement.
+Sur le site B, l'action crée un compte utilisateur avec les données reçues du webhook. L'email, le nom et le rôle sont mappés directement.
 
-**[ECRAN — screencast vue globale des deux workflows]**
+**[ÉCRAN — screencast vue globale des deux workflows]**
 
-[Montre les deux workflows cote a cote dans le dashboard OttoKit]
+[Montre les deux workflows côte à côte dans le dashboard OttoKit]
 [Active les deux]
 
-Deux workflows, deux sites, un seul compte OttoKit. Le formulaire sur le site A cree automatiquement un compte sur le site B. Pas de copier-coller, pas d'export CSV, pas de synchronisation manuelle.
+Deux workflows, deux sites, un seul compte OttoKit. Le formulaire sur le site A crée automatiquement un compte sur le site B. Pas de copier-coller, pas d'export CSV, pas de synchronisation manuelle.
 
-**[ECRAN — slide "Autres cas d'usage inter-sites"]**
+**[ÉCRAN — slide "Autres cas d'usage inter-sites"]**
 
 - **E-commerce + blog** : un achat sur la boutique ajoute un tag sur le blog
-- **Site principal + sous-site evenementiel** : une inscription sur le sous-site envoie une notification au site principal
-- **Multi-langue** : un nouveau contenu sur le site FR declenche une tache de traduction sur le site EN
-- **Reseau de sites** : centraliser tous les leads dans un seul Google Sheet
+- **Site principal + sous-site événementiel** : une inscription sur le sous-site envoie une notification au site principal
+- **Multi-langue** : un nouveau contenu sur le site FR déclenche une tâche de traduction sur le site EN
+- **Réseau de sites** : centraliser tous les leads dans un seul Google Sheet
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-L'automatisation inter-sites, c'est un avantage majeur d'OttoKit pour les professionnels WordPress qui gerent plusieurs projets. Ce module est termine. Passe au quiz pour valider tes acquis avant d'attaquer les integrations SaaS dans le Module 9.
+L'automatisation inter-sites, c'est un avantage majeur d'OttoKit pour les professionnels WordPress qui gèrent plusieurs projets. Ce module est terminé. Passe au quiz pour valider tes acquis avant d'attaquer les intégrations SaaS dans le Module 9.
 
 ---
 
-**Points cles**
-- L'automatisation inter-sites utilise deux workflows relies par un webhook
-- Les deux sites doivent etre connectes au meme compte OttoKit
-- Le webhook transporte les donnees du site A vers le site B
-- C'est une fonctionnalite unique a OttoKit — absente de Zapier et Make
+**Points clés**
+- L'automatisation inter-sites utilise deux workflows reliés par un webhook
+- Les deux sites doivent être connectés au même compte OttoKit
+- Le webhook transporte les données du site A vers le site B
+- C'est une fonctionnalité unique à OttoKit — absente de Zapier et Make
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit automatisation inter-sites WordPress
 - connecter deux sites WordPress OttoKit
 - webhook entre sites WordPress
@@ -846,35 +846,35 @@ L'automatisation inter-sites, c'est un avantage majeur d'OttoKit pour les profes
 
 ## Notes de production — Module 8
 
-### Captures a preparer
+### Captures à préparer
 - WordPress admin : liste des plugins actifs (WooCommerce, TutorLMS, FluentCRM, Fluent Forms)
-- OttoKit Connections : liste des plugins detectes avec badges verts
+- OttoKit Connections : liste des plugins détectés avec badges verts
 - Canvas workflow WooCommerce : trigger + 3 actions (Slack, Sheets, Email)
 - Canvas workflow coupon : trigger + filter + create coupon + email
 - Canvas workflow TutorLMS : trigger inscription + FluentCRM tag + email
 - Canvas workflow relance : schedule + get students + filter + email
 - Canvas workflow FluentCRM : tag trigger + 3 emails avec delays
 - Canvas workflow formulaire : trigger Fluent Forms + FluentCRM + Sheets + email
-- Canvas deux workflows inter-sites : workflow A (envoie webhook) + workflow B (recoit webhook)
-- Google Sheets avec lignes ajoutees automatiquement
-- Email recu dans Gmail (bienvenue, coupon, relance, guide)
-- FluentCRM : contact avec tags ajoutes
+- Canvas deux workflows inter-sites : workflow A (envoie webhook) + workflow B (reçoit webhook)
+- Google Sheets avec lignes ajoutées automatiquement
+- Email reçu dans Gmail (bienvenue, coupon, relance, guide)
+- FluentCRM : contact avec tags ajoutés
 
-### Environnement de demo
+### Environnement de démo
 - Compte OttoKit avec plan actif
 - Site WordPress schoolsWP avec tous les plugins actifs :
   - WooCommerce (au moins 2 produits, quelques commandes de test)
-  - TutorLMS Pro (au moins 1 cours avec des eleves inscrits, differentes progressions)
+  - TutorLMS Pro (au moins 1 cours avec des élèves inscrits, différentes progressions)
   - FluentCRM Pro (contacts avec tags, au moins 1 liste "Prospects")
   - Fluent Forms (au moins 1 formulaire de capture avec champs nom/email)
-  - SureForms (optionnel — pour montrer la compatibilite)
-- Deuxieme site WordPress pour la demo inter-sites (meme compte OttoKit)
-- Google Sheet "Ventes schoolsWP" avec colonnes preparees
+  - SureForms (optionnel — pour montrer la compatibilité)
+- Deuxième site WordPress pour la démo inter-sites (même compte OttoKit)
+- Google Sheet "Ventes schoolsWP" avec colonnes préparées
 - Compte Gmail pour les envois d'email
 - Channel Slack #ventes pour les notifications
 
-### Duree estimee par lecon (hors quiz)
-| Lecon | Duree video |
+### Durée estimée par leçon (hors quiz)
+| Leçon | Durée vidéo |
 |-------|-------------|
 | 8.1 | 5 min |
 | 8.2 | 8 min |

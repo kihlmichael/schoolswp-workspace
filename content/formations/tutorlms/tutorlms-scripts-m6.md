@@ -1,727 +1,727 @@
-# Scripts video — Module 6 : Quiz & Evaluations
+# Scripts vidéo — Module 6 : Quiz & Évaluations
 
-**Formation** : Maitriser TutorLMS
-**Module** : M6 — Quiz & Evaluations (Premium)
-**Lecons** : 6 videos + 1 exercice + 1 quiz
-**Duree totale** : ~40 min
+**Formation** : Maîtriser TutorLMS
+**Module** : M6 — Quiz & Évaluations (Premium)
+**Leçons** : 6 vidéos + 1 exercice + 1 quiz
+**Durée totale** : ~40 min
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 6.1 — Creation de quiz
+### Leçon 6.1 — Création de quiz
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast du Quiz Builder
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast du Quiz Builder
 **Source** : doc quiz-builder/quiz-creation
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Les quiz, c'est ce qui transforme ton cours d'une serie de videos passives en une vraie formation. L'eleve valide ses acquis, tu identifies les points faibles, et tu peux conditionner l'acces au contenu suivant. Dans cette lecon, on cree un quiz de A a Z dans TutorLMS — avec les 8 types de questions disponibles.
+Les quiz, c'est ce qui transforme ton cours d'une série de vidéos passives en une vraie formation. L'élève valide ses acquis, tu identifies les points faibles, et tu peux conditionner l'accès au contenu suivant. Dans cette leçon, on crée un quiz de A à Z dans TutorLMS — avec les 8 types de questions disponibles.
 
-**[ECRAN — screencast Course Builder > Curriculum]**
+**[ÉCRAN — screencast Course Builder > Curriculum]**
 
 [Navigation vers un cours existant > section Curriculum]
 
-Pour creer un quiz, tu pars du Course Builder de ton cours. Va dans la section Curriculum, ouvre un topic existant, et clique sur le bouton "+Quiz" a cote de "+Lesson" et "+Assignment".
+Pour créer un quiz, tu pars du Course Builder de ton cours. Va dans la section Curriculum, ouvre un topic existant, et clique sur le bouton "+Quiz" à côté de "+Lesson" et "+Assignment".
 
 [Clique sur +Quiz]
 
-Un panneau s'ouvre : le Quiz Builder. Premiere etape : donne un titre a ton quiz. Sois explicite — "Quiz Module 3 — Les reglages WordPress" est mieux que "Quiz 3". Ajoute une description si tu veux donner des consignes a l'eleve avant qu'il commence.
+Un panneau s'ouvre : le Quiz Builder. Première étape : donne un titre à ton quiz. Sois explicite — "Quiz Module 3 — Les réglages WordPress" est mieux que "Quiz 3". Ajoute une description si tu veux donner des consignes à l'élève avant qu'il commence.
 
-**[ECRAN — screencast Quiz Builder > ajout de question]**
+**[ÉCRAN — screencast Quiz Builder > ajout de question]**
 
-[Clique sur le bouton + bleu a cote de "Questions"]
+[Clique sur le bouton + bleu à côté de "Questions"]
 
 Maintenant, on ajoute des questions. Clique sur le gros bouton bleu "+" dans la section Questions. Un menu s'affiche avec les 8 types de questions disponibles. On va les passer en revue un par un.
 
-**[ECRAN — screencast type Vrai/Faux]**
+**[ÉCRAN — screencast type Vrai/Faux]**
 
-[Selectionne "True/False"]
+[Sélectionne "True/False"]
 
-Premier type : Vrai/Faux. Le plus simple. Tu ecris une affirmation, l'eleve repond vrai ou faux. Ideal pour verifier la comprehension d'un concept precis. Ecris ta question dans le champ titre, selectionne la bonne reponse, et c'est fait.
+Premier type : Vrai/Faux. Le plus simple. Tu écris une affirmation, l'élève répond vrai ou faux. Idéal pour vérifier la compréhension d'un concept précis. Écris ta question dans le champ titre, sélectionne la bonne réponse, et c'est fait.
 
-Tu peux ajouter une explication dans le champ "Answer Explanation" — elle s'affiche apres que l'eleve a repondu. C'est pedagogiquement tres utile.
+Tu peux ajouter une explication dans le champ "Answer Explanation" — elle s'affiche après que l'élève a répondu. C'est pédagogiquement très utile.
 
-**[ECRAN — screencast type QCM]**
+**[ÉCRAN — screencast type QCM]**
 
-[Selectionne "Multiple Choice"]
+[Sélectionne "Multiple Choice"]
 
-Deuxieme type : QCM — Multiple Choice. Tu ecris la question, tu ajoutes des options de reponse, et tu coches la ou les bonnes reponses. Oui, tu peux avoir plusieurs bonnes reponses. L'eleve doit alors toutes les trouver pour avoir les points.
+Deuxième type : QCM — Multiple Choice. Tu écris la question, tu ajoutes des options de réponse, et tu coches la ou les bonnes réponses. Oui, tu peux avoir plusieurs bonnes réponses. L'élève doit alors toutes les trouver pour avoir les points.
 
-[Montre l'ajout de 4 options avec 1 cochee comme correcte]
+[Montre l'ajout de 4 options avec 1 cochée comme correcte]
 
-Chaque option a un toggle "Correct Answer". Active-le sur les bonnes reponses.
+Chaque option a un toggle "Correct Answer". Active-le sur les bonnes réponses.
 
-**[ECRAN — screencast type Reponse courte]**
+**[ÉCRAN — screencast type Réponse courte]**
 
-[Selectionne "Short Answer"]
+[Sélectionne "Short Answer"]
 
-Troisieme type : Reponse courte. L'eleve tape une reponse en texte libre, mais limitee en caracteres. Par defaut, la limite est de 200 caracteres — tu peux la modifier dans les reglages du quiz. C'est utile pour des reponses factuelles : un nom, un chiffre, un terme technique.
+Troisième type : Réponse courte. L'élève tape une réponse en texte libre, mais limitée en caractères. Par défaut, la limite est de 200 caractères — tu peux la modifier dans les réglages du quiz. C'est utile pour des réponses factuelles : un nom, un chiffre, un terme technique.
 
-**[ECRAN — screencast type Reponse ouverte]**
+**[ÉCRAN — screencast type Réponse ouverte]**
 
-[Selectionne "Open Ended/Essay"]
+[Sélectionne "Open Ended/Essay"]
 
-Quatrieme type : Reponse ouverte — Open Ended ou Essay. L'eleve redige une reponse longue, en texte libre. La limite par defaut est de 500 caracteres, configurable aussi. Point important : ce type de question necessite une correction manuelle de ta part. TutorLMS ne peut pas noter automatiquement un texte libre.
+Quatrième type : Réponse ouverte — Open Ended ou Essay. L'élève rédige une réponse longue, en texte libre. La limite par défaut est de 500 caractères, configurable aussi. Point important : ce type de question nécessite une correction manuelle de ta part. TutorLMS ne peut pas noter automatiquement un texte libre.
 
-**[ECRAN — screencast type Remplir les blancs]**
+**[ÉCRAN — screencast type Remplir les blancs]**
 
-[Selectionne "Fill in the Blanks"]
+[Sélectionne "Fill in the Blanks"]
 
-Cinquieme type : Remplir les blancs. Tu ecris une phrase avec des trous. Pour marquer un trou, utilise la variable {dash} dans le texte. L'eleve doit taper le mot manquant.
+Cinquième type : Remplir les blancs. Tu écris une phrase avec des trous. Pour marquer un trou, utilise la variable {dash} dans le texte. L'élève doit taper le mot manquant.
 
-[Montre la syntaxe : "WordPress utilise {dash} comme base de donnees"]
+[Montre la syntaxe : "WordPress utilise {dash} comme base de données"]
 
-Si tu acceptes plusieurs reponses valides pour un meme trou, separe-les avec le caractere pipe — la barre verticale. Par exemple : "MySQL|MariaDB" si les deux reponses sont acceptables.
+Si tu acceptes plusieurs réponses valides pour un même trou, sépare-les avec le caractère pipe — la barre verticale. Par exemple : "MySQL|MariaDB" si les deux réponses sont acceptables.
 
-**[ECRAN — screencast type Correspondance]**
+**[ÉCRAN — screencast type Correspondance]**
 
-[Selectionne "Matching"]
+[Sélectionne "Matching"]
 
-Sixieme type : Correspondance — Matching. Tu crees des paires. Colonne de gauche : les elements. Colonne de droite : les correspondances. L'eleve glisse-depose pour associer les bonnes paires. Ce type peut aussi fonctionner avec des images — on verra ca dans la lecon 6.4.
+Sixième type : Correspondance — Matching. Tu crées des paires. Colonne de gauche : les éléments. Colonne de droite : les correspondances. L'élève glisse-dépose pour associer les bonnes paires. Ce type peut aussi fonctionner avec des images — on verra ça dans la leçon 6.4.
 
-**[ECRAN — screencast type Image Answering]**
+**[ÉCRAN — screencast type Image Answering]**
 
-[Selectionne "Image Answering"]
+[Sélectionne "Image Answering"]
 
-Septieme type : Image Answering. Tu uploades une image, et l'eleve doit repondre a une question en lien avec cette image. Resolution recommandee : 700 par 430 pixels. C'est parfait pour des captures d'ecran — "Ou cliques-tu pour acceder aux reglages ?" avec une capture de l'interface WordPress.
+Septième type : Image Answering. Tu uploades une image, et l'élève doit répondre à une question en lien avec cette image. Résolution recommandée : 700 par 430 pixels. C'est parfait pour des captures d'écran — "Où cliques-tu pour accéder aux réglages ?" avec une capture de l'interface WordPress.
 
-**[ECRAN — screencast type Ordering]**
+**[ÉCRAN — screencast type Ordering]**
 
-[Selectionne "Ordering"]
+[Sélectionne "Ordering"]
 
-Huitieme type : Ordering — tri ou classement. L'eleve doit remettre des elements dans le bon ordre par glisser-deposer. Ca peut etre du texte, des images, ou un mix des deux. Ideal pour des etapes de processus — "Remets dans l'ordre les etapes de publication d'un cours".
+Huitième type : Ordering — tri ou classement. L'élève doit remettre des éléments dans le bon ordre par glisser-déposer. Ça peut être du texte, des images, ou un mix des deux. Idéal pour des étapes de processus — "Remets dans l'ordre les étapes de publication d'un cours".
 
-**[ECRAN — screencast options communes]**
+**[ÉCRAN — screencast options communes]**
 
 [Montre les options sous une question]
 
-Quelques options communes a tous les types de questions. "Answer Required" : si tu l'actives, l'eleve ne peut pas passer la question sans repondre. "Display Points" : affiche le nombre de points de la question a l'eleve. Et le champ "Answer Explanation" qu'on a vu — toujours utile pour le feedback pedagogique.
+Quelques options communes à tous les types de questions. "Answer Required" : si tu l'actives, l'élève ne peut pas passer la question sans répondre. "Display Points" : affiche le nombre de points de la question à l'élève. Et le champ "Answer Explanation" qu'on a vu — toujours utile pour le feedback pédagogique.
 
-Chaque question a aussi une valeur en points. Par defaut c'est 1, mais tu peux ajuster. Un QCM complexe peut valoir 3 points, un Vrai/Faux seulement 1.
+Chaque question a aussi une valeur en points. Par défaut c'est 1, mais tu peux ajuster. Un QCM complexe peut valoir 3 points, un Vrai/Faux seulement 1.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais creer un quiz et utiliser les 8 types de questions. Dans la prochaine lecon, on configure les reglages du quiz — temps limite, tentatives, note de passage, et les differents modes de feedback.
+Tu sais créer un quiz et utiliser les 8 types de questions. Dans la prochaine leçon, on configure les réglages du quiz — temps limite, tentatives, note de passage, et les différents modes de feedback.
 
 ---
 
-**Points cles** :
-- Quiz cree depuis le Course Builder > Curriculum > +Quiz dans un topic
-- 8 types de questions : Vrai/Faux, QCM, Reponse courte, Reponse ouverte, Remplir les blancs, Correspondance, Image Answering, Ordering
-- Reponse ouverte = correction manuelle obligatoire
+**Points clés** :
+- Quiz créé depuis le Course Builder > Curriculum > +Quiz dans un topic
+- 8 types de questions : Vrai/Faux, QCM, Réponse courte, Réponse ouverte, Remplir les blancs, Correspondance, Image Answering, Ordering
+- Réponse ouverte = correction manuelle obligatoire
 - Remplir les blancs : syntaxe {dash} pour les trous, pipe | pour les alternatives
 - Options par question : Answer Required, Display Points, Answer Explanation, valeur en points
 
-**Mots cles SEO** : TutorLMS creer quiz, types questions TutorLMS, quiz builder TutorLMS, evaluer eleves LMS WordPress
+**Mots clés SEO** : TutorLMS créer quiz, types questions TutorLMS, quiz builder TutorLMS, évaluer élèves LMS WordPress
 
 ---
 
-### Lecon 6.2 — Reglages quiz
+### Leçon 6.2 — Réglages quiz
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast des reglages quiz
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast des réglages quiz
 **Source** : doc quiz-builder/quiz-settings
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un quiz sans reglages, c'est un quiz qui laisse les eleves faire ce qu'ils veulent — temps illimite, tentatives illimitees, pas de note de passage. Les reglages du quiz, c'est la que tu definis les regles du jeu. Temps, tentatives, feedback, note minimum — on configure tout maintenant.
+Un quiz sans réglages, c'est un quiz qui laisse les élèves faire ce qu'ils veulent — temps illimité, tentatives illimitées, pas de note de passage. Les réglages du quiz, c'est là que tu définis les règles du jeu. Temps, tentatives, feedback, note minimum — on configure tout maintenant.
 
-**[ECRAN — screencast Quiz Builder > Settings]**
+**[ÉCRAN — screencast Quiz Builder > Settings]**
 
 [Ouvre un quiz existant > onglet Settings]
 
-Quand tu edites un quiz dans le Quiz Builder, tu as un onglet "Settings" a cote de "Questions". C'est la que tout se joue. On prend chaque reglage dans l'ordre.
+Quand tu édites un quiz dans le Quiz Builder, tu as un onglet "Settings" à côté de "Questions". C'est là que tout se joue. On prend chaque réglage dans l'ordre.
 
-**[ECRAN — screencast reglage Time Limit]**
+**[ÉCRAN — screencast réglage Time Limit]**
 
 [Montre le champ Time Limit]
 
-Premier reglage : Time Limit. Tu definis une duree maximale pour completer le quiz. Tu peux choisir l'unite : secondes, minutes, heures, jours, ou meme semaines. Pour un quiz classique de 10 questions, 15 a 20 minutes est une bonne base. Mets 0 pour ne pas imposer de limite.
+Premier réglage : Time Limit. Tu définis une durée maximale pour compléter le quiz. Tu peux choisir l'unité : secondes, minutes, heures, jours, ou même semaines. Pour un quiz classique de 10 questions, 15 à 20 minutes est une bonne base. Mets 0 pour ne pas imposer de limite.
 
-En dessous, tu as l'option "Hide Quiz Time". Si tu l'actives, le compteur n'est pas visible par l'eleve pendant le quiz. Personnellement, je recommande de laisser le compteur visible — ca aide l'eleve a gerer son temps.
+En dessous, tu as l'option "Hide Quiz Time". Si tu l'actives, le compteur n'est pas visible par l'élève pendant le quiz. Personnellement, je recommande de laisser le compteur visible — ça aide l'élève à gérer son temps.
 
-**[ECRAN — screencast reglage Feedback Mode]**
+**[ÉCRAN — screencast réglage Feedback Mode]**
 
-[Montre le selecteur Feedback Mode avec les 3 options]
+[Montre le sélecteur Feedback Mode avec les 3 options]
 
-Deuxieme reglage : Feedback Mode. Trois options.
+Deuxième réglage : Feedback Mode. Trois options.
 
-"Default" : les reponses et corrections sont affichees seulement apres que l'eleve a termine tout le quiz. C'est le mode le plus courant pour les evaluations sommatives.
+"Default" : les réponses et corrections sont affichées seulement après que l'élève a terminé tout le quiz. C'est le mode le plus courant pour les évaluations sommatives.
 
-"Reveal Mode" : les reponses sont montrees apres chaque question. L'eleve voit immediatement s'il a juste ou faux avant de passer a la suivante. Ideal pour l'apprentissage et les quiz formatifs.
+"Reveal Mode" : les réponses sont montrées après chaque question. L'élève voit immédiatement s'il a juste ou faux avant de passer à la suivante. Idéal pour l'apprentissage et les quiz formatifs.
 
-"Retry Mode" : l'eleve peut retenter le quiz autant de fois qu'il veut. C'est le mode a utiliser quand tu veux rendre le quiz obligatoire pour avancer dans le cours — on verra ca en detail dans la lecon 6.3.
+"Retry Mode" : l'élève peut retenter le quiz autant de fois qu'il veut. C'est le mode à utiliser quand tu veux rendre le quiz obligatoire pour avancer dans le cours — on verra ça en détail dans la leçon 6.3.
 
-**[ECRAN — screencast reglage Attempts Allowed]**
+**[ÉCRAN — screencast réglage Attempts Allowed]**
 
 [Montre le champ Attempts Allowed]
 
-Troisieme reglage : Attempts Allowed. Le nombre maximum de tentatives. Par defaut c'est 10. Mets 0 pour des tentatives illimitees. Pour un examen final, tu mettras peut-etre 1 ou 2. Pour un quiz de revision, 0 — illimite.
+Troisième réglage : Attempts Allowed. Le nombre maximum de tentatives. Par défaut c'est 10. Mets 0 pour des tentatives illimitées. Pour un examen final, tu mettras peut-être 1 ou 2. Pour un quiz de révision, 0 — illimité.
 
-**[ECRAN — screencast reglage Passing Grade]**
+**[ÉCRAN — screencast réglage Passing Grade]**
 
 [Montre le champ Passing Grade]
 
-Quatrieme reglage : Passing Grade. La note minimum pour reussir le quiz, en pourcentage. Si tu mets 80, l'eleve doit obtenir au moins 80% de bonnes reponses pour que le quiz soit considere comme reussi. Ce reglage prend tout son sens quand tu rends le quiz obligatoire pour avancer — lecon 6.3.
+Quatrième réglage : Passing Grade. La note minimum pour réussir le quiz, en pourcentage. Si tu mets 80, l'élève doit obtenir au moins 80% de bonnes réponses pour que le quiz soit considéré comme réussi. Ce réglage prend tout son sens quand tu rends le quiz obligatoire pour avancer — leçon 6.3.
 
-**[ECRAN — screencast reglage Max Questions Allowed]**
+**[ÉCRAN — screencast réglage Max Questions Allowed]**
 
 [Montre le champ Max Questions Allowed]
 
-Cinquieme reglage : Max Questions Allowed. C'est un reglage malin. Si tu as 20 questions dans ton quiz mais que tu mets "Max Questions" a 10, TutorLMS selectionne aleatoirement 10 questions parmi les 20 a chaque tentative. Resultat : chaque eleve a un quiz different, et un eleve qui retente ne tombe pas sur les memes questions. Tres utile pour les evaluations repetables.
+Cinquième réglage : Max Questions Allowed. C'est un réglage malin. Si tu as 20 questions dans ton quiz mais que tu mets "Max Questions" à 10, TutorLMS sélectionne aléatoirement 10 questions parmi les 20 à chaque tentative. Résultat : chaque élève a un quiz différent, et un élève qui retente ne tombe pas sur les mêmes questions. Très utile pour les évaluations répétables.
 
-**[ECRAN — screencast reglage Prerequisites]**
+**[ÉCRAN — screencast réglage Prerequisites]**
 
 [Montre le champ Prerequisites]
 
-Sixieme reglage : Prerequisites. Tu peux exiger que l'eleve ait complete certaines lecons ou d'autres quiz avant d'acceder a celui-ci. Selectionne les elements requis dans la liste.
+Sixième réglage : Prerequisites. Tu peux exiger que l'élève ait complété certaines leçons ou d'autres quiz avant d'accéder à celui-ci. Sélectionne les éléments requis dans la liste.
 
-**[ECRAN — screencast reglages avances]**
+**[ÉCRAN — screencast réglages avancés]**
 
-[Scroll vers les reglages avances]
+[Scroll vers les réglages avancés]
 
-Et quelques reglages avances. "Quiz Auto Start" : le quiz demarre automatiquement quand l'eleve ouvre la page — pas de bouton "Commencer". Utile pour les quiz chronometres ou tu veux eviter que l'eleve lise les questions avant de lancer le timer.
+Et quelques réglages avancés. "Quiz Auto Start" : le quiz démarre automatiquement quand l'élève ouvre la page — pas de bouton "Commencer". Utile pour les quiz chronométrés où tu veux éviter que l'élève lise les questions avant de lancer le timer.
 
-"Question Layout" : comment les questions s'affichent. Trois options — une question par page, pagination, ou toutes les questions en sequence sur une seule page. Pour les quiz courts, une seule page suffit. Pour les quiz longs, la pagination est plus confortable.
+"Question Layout" : comment les questions s'affichent. Trois options — une question par page, pagination, ou toutes les questions en séquence sur une seule page. Pour les quiz courts, une seule page suffit. Pour les quiz longs, la pagination est plus confortable.
 
-"Hide Question Number" : masque les numeros de questions. Utile si tu randomises l'ordre et que les numeros n'ont plus de sens.
+"Hide Question Number" : masque les numéros de questions. Utile si tu randomises l'ordre et que les numéros n'ont plus de sens.
 
-Et les limites de caracteres pour les reponses courtes et les essays — 200 et 500 par defaut, ajustables selon tes besoins.
+Et les limites de caractères pour les réponses courtes et les essays — 200 et 500 par défaut, ajustables selon tes besoins.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tes quiz ont maintenant des regles claires. Dans la prochaine lecon, on va plus loin : rendre la reussite d'un quiz obligatoire pour acceder au contenu suivant. C'est la cle pour garantir que tes eleves progressent vraiment.
-
----
-
-**Points cles** :
-- Time Limit : duree max (0 = illimite), option pour masquer le compteur
-- Feedback Mode : Default (fin du quiz), Reveal (apres chaque question), Retry (tentatives multiples)
-- Attempts Allowed : nombre de tentatives (0 = illimite, defaut = 10)
-- Passing Grade : note minimum en % pour reussir
-- Max Questions Allowed : randomisation automatique si inferieur au total de questions
-- Prerequisites : exiger des lecons/quiz prealables
-- Avance : Auto Start, Question Layout, Hide Question Number, limites de caracteres
-
-**Mots cles SEO** : reglages quiz TutorLMS, configurer quiz LMS WordPress, feedback mode TutorLMS, note de passage quiz TutorLMS
+Tes quiz ont maintenant des règles claires. Dans la prochaine leçon, on va plus loin : rendre la réussite d'un quiz obligatoire pour accéder au contenu suivant. C'est la clé pour garantir que tes élèves progressent vraiment.
 
 ---
 
-### Lecon 6.3 — Rendre un quiz obligatoire
+**Points clés** :
+- Time Limit : durée max (0 = illimité), option pour masquer le compteur
+- Feedback Mode : Default (fin du quiz), Reveal (après chaque question), Retry (tentatives multiples)
+- Attempts Allowed : nombre de tentatives (0 = illimité, défaut = 10)
+- Passing Grade : note minimum en % pour réussir
+- Max Questions Allowed : randomisation automatique si inférieur au total de questions
+- Prerequisites : exiger des leçons/quiz préalables
+- Avancé : Auto Start, Question Layout, Hide Question Number, limites de caractères
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast des reglages
+**Mots clés SEO** : réglages quiz TutorLMS, configurer quiz LMS WordPress, feedback mode TutorLMS, note de passage quiz TutorLMS
+
+---
+
+### Leçon 6.3 — Rendre un quiz obligatoire
+
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast des réglages
 **Source** : doc tutorials/make-passing-a-quiz-mandatory
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Par defaut, un eleve peut echouer a un quiz et quand meme acceder au contenu suivant. Si tu veux que la reussite soit une condition pour avancer, il faut activer trois reglages precis. C'est ce qu'on fait maintenant.
+Par défaut, un élève peut échouer à un quiz et quand même accéder au contenu suivant. Si tu veux que la réussite soit une condition pour avancer, il faut activer trois réglages précis. C'est ce qu'on fait maintenant.
 
-**[ECRAN — slide "3 reglages a activer"]**
+**[ÉCRAN — slide "3 réglages à activer"]**
 
-Pour rendre un quiz obligatoire, trois elements doivent etre en place :
+Pour rendre un quiz obligatoire, trois éléments doivent être en place :
 
-1. Le mode de completion du cours en "Strict Mode"
-2. Le Content Drip configure en mode sequentiel
-3. L'option "Passing is Required" activee sur le quiz
+1. Le mode de complétion du cours en "Strict Mode"
+2. Le Content Drip configuré en mode séquentiel
+3. L'option "Passing is Required" activée sur le quiz
 
 On va les configurer dans cet ordre.
 
-**[ECRAN — screencast Tutor LMS > Settings]**
+**[ÉCRAN — screencast Tutor LMS > Settings]**
 
-[Navigation vers les reglages du cours]
+[Navigation vers les réglages du cours]
 
-Prerequis : tu dois avoir TutorLMS Pro avec l'add-on Content Drip active. Verifie dans Tutor LMS Pro > Addons que "Content Drip" est bien active.
+Prérequis : tu dois avoir TutorLMS Pro avec l'add-on Content Drip activé. Vérifie dans Tutor LMS Pro > Addons que "Content Drip" est bien activé.
 
-**[ECRAN — screencast Course Builder > onglet Basics]**
+**[ÉCRAN — screencast Course Builder > onglet Basics]**
 
-[Ouvre un cours > section reglages de base]
+[Ouvre un cours > section réglages de base]
 
-Etape 1 : dans les reglages du cours, cherche "Course Completion Process" et selectionne "Strict Mode". En mode strict, l'eleve doit completer chaque element dans l'ordre pour que le cours soit considere comme termine. Sans ca, un eleve peut sauter des etapes.
+Étape 1 : dans les réglages du cours, cherche "Course Completion Process" et sélectionne "Strict Mode". En mode strict, l'élève doit compléter chaque élément dans l'ordre pour que le cours soit considéré comme terminé. Sans ça, un élève peut sauter des étapes.
 
-**[ECRAN — screencast Content Drip]**
+**[ÉCRAN — screencast Content Drip]**
 
-[Montre le reglage Content Drip dans le Course Builder]
+[Montre le réglage Content Drip dans le Course Builder]
 
-Etape 2 : toujours dans le Course Builder, onglet Basics, cherche le reglage Content Drip. Selectionne "Course content available sequentially". Ca veut dire que l'eleve doit terminer chaque element avant de debloquer le suivant — lecons, quiz, assignments, tout est dans l'ordre.
+Étape 2 : toujours dans le Course Builder, onglet Basics, cherche le réglage Content Drip. Sélectionne "Course content available sequentially". Ça veut dire que l'élève doit terminer chaque élément avant de débloquer le suivant — leçons, quiz, assignments, tout est dans l'ordre.
 
-Mets a jour le cours.
+Mets à jour le cours.
 
-**[ECRAN — screencast Quiz Builder > Settings]**
+**[ÉCRAN — screencast Quiz Builder > Settings]**
 
 [Ouvre le quiz > onglet Settings]
 
-Etape 3 : ouvre le quiz que tu veux rendre obligatoire. Va dans l'onglet Settings. Tu dois configurer deux choses.
+Étape 3 : ouvre le quiz que tu veux rendre obligatoire. Va dans l'onglet Settings. Tu dois configurer deux choses.
 
-D'abord, mets le Feedback Mode sur "Retry Mode". C'est indispensable — si l'eleve echoue, il doit pouvoir retenter le quiz pour avancer.
+D'abord, mets le Feedback Mode sur "Retry Mode". C'est indispensable — si l'élève échoue, il doit pouvoir retenter le quiz pour avancer.
 
 [Montre le toggle "Passing is Required"]
 
-Ensuite, active l'option "Passing is Required". Ce toggle apparait en dessous du reglage "Attempts Allowed". Sauvegarde.
+Ensuite, active l'option "Passing is Required". Ce toggle apparaît en dessous du réglage "Attempts Allowed". Sauvegarde.
 
-**[ECRAN — screencast test cote eleve]**
+**[ÉCRAN — screencast test côté élève]**
 
-[Montre le parcours eleve avec un quiz echoue]
+[Montre le parcours élève avec un quiz échoué]
 
-Voila ce que ca donne cote eleve. L'eleve arrive au quiz, il repond, il obtient un score en dessous de la note de passage. Il voit un message lui indiquant qu'il doit reussir ce quiz pour acceder au contenu suivant. Les lecons d'apres sont verrouillees — pas d'acces tant que le quiz n'est pas valide.
+Voilà ce que ça donne côté élève. L'élève arrive au quiz, il répond, il obtient un score en dessous de la note de passage. Il voit un message lui indiquant qu'il doit réussir ce quiz pour accéder au contenu suivant. Les leçons d'après sont verrouillées — pas d'accès tant que le quiz n'est pas validé.
 
-**[ECRAN — slide "Cas particulier : questions ouvertes"]**
+**[ÉCRAN — slide "Cas particulier : questions ouvertes"]**
 
-Un point important. Si ton quiz contient des questions ouvertes — Open Ended ou Essay — la progression de l'eleve est bloquee jusqu'a ce que toi, l'instructeur, tu aies corrige et note ces questions. L'eleve ne peut pas avancer tant que sa note finale n'est pas calculee. Ca veut dire que tu dois etre reactif sur les corrections si tu utilises ce type de questions dans un quiz obligatoire.
+Un point important. Si ton quiz contient des questions ouvertes — Open Ended ou Essay — la progression de l'élève est bloquée jusqu'à ce que toi, l'instructeur, tu aies corrigé et noté ces questions. L'élève ne peut pas avancer tant que sa note finale n'est pas calculée. Ça veut dire que tu dois être réactif sur les corrections si tu utilises ce type de questions dans un quiz obligatoire.
 
-Mon conseil : dans un quiz obligatoire, privilegie les questions a correction automatique — QCM, Vrai/Faux, Correspondance, Remplir les blancs. Garde les questions ouvertes pour les assignments ou les quiz non bloquants.
+Mon conseil : dans un quiz obligatoire, privilégie les questions à correction automatique — QCM, Vrai/Faux, Correspondance, Remplir les blancs. Garde les questions ouvertes pour les assignments ou les quiz non bloquants.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Ton quiz est maintenant un vrai checkpoint. L'eleve doit prouver qu'il a compris avant d'avancer. Dans la prochaine lecon, on va enrichir tes questions avec des images.
+Ton quiz est maintenant un vrai checkpoint. L'élève doit prouver qu'il a compris avant d'avancer. Dans la prochaine leçon, on va enrichir tes questions avec des images.
 
 ---
 
-**Points cles** :
-- 3 reglages obligatoires : Strict Mode + Content Drip sequentiel + "Passing is Required"
+**Points clés** :
+- 3 réglages obligatoires : Strict Mode + Content Drip séquentiel + "Passing is Required"
 - Add-on Content Drip requis (TutorLMS Pro)
 - Feedback Mode en "Retry Mode" pour permettre les nouvelles tentatives
 - Questions ouvertes = correction manuelle bloque la progression
-- Privilegier les questions a correction automatique dans les quiz obligatoires
+- Privilégier les questions à correction automatique dans les quiz obligatoires
 
-**Mots cles SEO** : TutorLMS quiz obligatoire, content drip TutorLMS, strict mode TutorLMS, bloquer progression sans quiz
+**Mots clés SEO** : TutorLMS quiz obligatoire, content drip TutorLMS, strict mode TutorLMS, bloquer progression sans quiz
 
 ---
 
-### Lecon 6.4 — Images dans les questions
+### Leçon 6.4 — Images dans les questions
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast du Quiz Builder
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast du Quiz Builder
 **Source** : doc tutorials/images-in-questions
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un quiz avec uniquement du texte, ca fonctionne. Mais ajouter des images ouvre des possibilites pedagogiques bien plus riches — identifier un element dans une capture d'ecran, associer des logos, remettre des visuels dans l'ordre. TutorLMS propose plusieurs manieres d'integrer des images dans les questions. On voit ca.
+Un quiz avec uniquement du texte, ça fonctionne. Mais ajouter des images ouvre des possibilités pédagogiques bien plus riches — identifier un élément dans une capture d'écran, associer des logos, remettre des visuels dans l'ordre. TutorLMS propose plusieurs manières d'intégrer des images dans les questions. On voit ça.
 
-**[ECRAN — screencast Quiz Builder > question avec description]**
+**[ÉCRAN — screencast Quiz Builder > question avec description]**
 
-[Ouvre un quiz > cree une nouvelle question QCM]
+[Ouvre un quiz > crée une nouvelle question QCM]
 
-Premiere methode : ajouter une image dans la description de la question. Chaque question a un champ de description sous le titre. Avec TutorLMS Pro, tu as l'editeur TinyMCE complet — le meme editeur que dans les articles WordPress. Tu peux donc inserer une image directement via le bouton "Ajouter un media".
+Première méthode : ajouter une image dans la description de la question. Chaque question a un champ de description sous le titre. Avec TutorLMS Pro, tu as l'éditeur TinyMCE complet — le même éditeur que dans les articles WordPress. Tu peux donc insérer une image directement via le bouton "Ajouter un média".
 
-[Clique sur l'icone image dans TinyMCE > upload d'une image]
+[Clique sur l'icône image dans TinyMCE > upload d'une image]
 
-Uploade ton image, insere-la. Elle apparaitra au-dessus des options de reponse. C'est la methode la plus simple et elle fonctionne avec tous les types de questions.
+Uploade ton image, insère-la. Elle apparaîtra au-dessus des options de réponse. C'est la méthode la plus simple et elle fonctionne avec tous les types de questions.
 
-Avec la version gratuite, tu dois utiliser du code HTML pour inserer l'image — une balise img avec l'URL de l'image. Moins pratique, mais ca fonctionne.
+Avec la version gratuite, tu dois utiliser du code HTML pour insérer l'image — une balise img avec l'URL de l'image. Moins pratique, mais ça fonctionne.
 
-**[ECRAN — screencast type Image Answering]**
+**[ÉCRAN — screencast type Image Answering]**
 
-[Cree une question de type Image Answering]
+[Crée une question de type Image Answering]
 
-Deuxieme methode : utiliser le type de question "Image Answering". La, l'image est l'element central de la question. Tu uploades une image — resolution recommandee 700 par 430 pixels — et l'eleve doit repondre a une question basee sur cette image.
+Deuxième méthode : utiliser le type de question "Image Answering". Là, l'image est l'élément central de la question. Tu uploades une image — résolution recommandée 700 par 430 pixels — et l'élève doit répondre à une question basée sur cette image.
 
-[Uploade une capture d'ecran d'interface WordPress]
+[Uploade une capture d'écran d'interface WordPress]
 
-Cas d'usage concret : tu uploades une capture d'ecran du tableau de bord WordPress et tu demandes "Quel menu permet d'acceder aux extensions ?". L'eleve selectionne la bonne reponse parmi les options texte.
+Cas d'usage concret : tu uploades une capture d'écran du tableau de bord WordPress et tu demandes "Quel menu permet d'accéder aux extensions ?". L'élève sélectionne la bonne réponse parmi les options texte.
 
-**[ECRAN — screencast type Matching avec images]**
+**[ÉCRAN — screencast type Matching avec images]**
 
-[Cree une question de type Matching > ajoute des images]
+[Crée une question de type Matching > ajoute des images]
 
-Troisieme methode : le type Correspondance avec images. Au lieu de texte dans les colonnes, tu peux utiliser des images. Par exemple : colonne de gauche, les logos de plugins WordPress. Colonne de droite, les noms des plugins. L'eleve doit associer chaque logo au bon nom par glisser-deposer.
+Troisième méthode : le type Correspondance avec images. Au lieu de texte dans les colonnes, tu peux utiliser des images. Par exemple : colonne de gauche, les logos de plugins WordPress. Colonne de droite, les noms des plugins. L'élève doit associer chaque logo au bon nom par glisser-déposer.
 
 [Montre l'upload d'images dans les paires de correspondance]
 
-C'est visuellement plus engageant et ca teste une reconnaissance visuelle, pas juste de la memorisation de texte.
+C'est visuellement plus engageant et ça teste une reconnaissance visuelle, pas juste de la mémorisation de texte.
 
-**[ECRAN — screencast type Ordering avec images]**
+**[ÉCRAN — screencast type Ordering avec images]**
 
-[Cree une question de type Ordering > ajoute des images]
+[Crée une question de type Ordering > ajoute des images]
 
-Quatrieme methode : le type Ordering avec images. L'eleve doit remettre des images dans le bon ordre. Tu peux mixer texte et images. Exemple : 4 captures d'ecran montrant les etapes d'installation d'un plugin — l'eleve les remet dans l'ordre chronologique.
+Quatrième méthode : le type Ordering avec images. L'élève doit remettre des images dans le bon ordre. Tu peux mixer texte et images. Exemple : 4 captures d'écran montrant les étapes d'installation d'un plugin — l'élève les remet dans l'ordre chronologique.
 
-**[ECRAN — slide "Bonnes pratiques images"]**
+**[ÉCRAN — slide "Bonnes pratiques images"]**
 
 Quelques bonnes pratiques pour les images dans les quiz.
 
-Resolution : 700 par 430 pixels pour les images principales, et garde un format consistent entre les questions.
+Résolution : 700 par 430 pixels pour les images principales, et garde un format consistent entre les questions.
 
-Poids : optimise tes images avant de les uploader. Un quiz avec 10 images lourdes ralentit le chargement de la page. Utilise un format WebP ou JPEG compresse.
+Poids : optimise tes images avant de les uploader. Un quiz avec 10 images lourdes ralentit le chargement de la page. Utilise un format WebP ou JPEG compressé.
 
-Accessibilite : ajoute toujours un texte alternatif a tes images. Si un eleve utilise un lecteur d'ecran ou si l'image ne charge pas, le texte alternatif prend le relais.
+Accessibilité : ajoute toujours un texte alternatif à tes images. Si un élève utilise un lecteur d'écran ou si l'image ne charge pas, le texte alternatif prend le relais.
 
-Pertinence : l'image doit apporter quelque chose que le texte seul ne peut pas transmettre. Ne mets pas une image decorative dans un quiz — chaque visuel doit avoir un role pedagogique.
+Pertinence : l'image doit apporter quelque chose que le texte seul ne peut pas transmettre. Ne mets pas une image décorative dans un quiz — chaque visuel doit avoir un rôle pédagogique.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tes quiz sont maintenant visuels et interactifs. Dans la prochaine lecon, on voit comment exporter tes quiz pour les reutiliser dans d'autres cours — et importer des quiz existants.
+Tes quiz sont maintenant visuels et interactifs. Dans la prochaine leçon, on voit comment exporter tes quiz pour les réutiliser dans d'autres cours — et importer des quiz existants.
 
 ---
 
-**Points cles** :
-- Methode 1 : image dans la description (TinyMCE en Pro, HTML en version gratuite)
-- Methode 2 : type Image Answering — image centrale + reponses texte (700x430 px)
-- Methode 3 : Matching avec images — association visuelle par glisser-deposer
-- Methode 4 : Ordering avec images — classement visuel
+**Points clés** :
+- Méthode 1 : image dans la description (TinyMCE en Pro, HTML en version gratuite)
+- Méthode 2 : type Image Answering — image centrale + réponses texte (700x430 px)
+- Méthode 3 : Matching avec images — association visuelle par glisser-déposer
+- Méthode 4 : Ordering avec images — classement visuel
 - Optimiser : format WebP/JPEG, texte alternatif, images pertinentes uniquement
 
-**Mots cles SEO** : TutorLMS images quiz, questions visuelles LMS WordPress, image answering TutorLMS, quiz interactif TutorLMS
+**Mots clés SEO** : TutorLMS images quiz, questions visuelles LMS WordPress, image answering TutorLMS, quiz interactif TutorLMS
 
 ---
 
-### Lecon 6.5 — Export/Import de quiz
+### Leçon 6.5 — Export/Import de quiz
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast de l'export/import
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast de l'export/import
 **Source** : doc quiz-export-import
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu as cree un quiz complet avec 15 questions bien calibrees. Maintenant tu veux utiliser les memes questions dans un autre cours. Tout retaper a la main ? Non. TutorLMS propose un systeme d'export/import de quiz au format CSV. Ca te fait gagner un temps considerable quand tu geres plusieurs cours.
+Tu as créé un quiz complet avec 15 questions bien calibrées. Maintenant tu veux utiliser les mêmes questions dans un autre cours. Tout retaper à la main ? Non. TutorLMS propose un système d'export/import de quiz au format CSV. Ça te fait gagner un temps considérable quand tu gères plusieurs cours.
 
-**[ECRAN — slide "Prerequis"]**
+**[ÉCRAN — slide "Prérequis"]**
 
-Avant de commencer, verifie que l'add-on "Quiz Export/Import" est actif. Va dans WP Admin > Tutor LMS Pro > Addons, et active-le si ce n'est pas deja fait. Sans cet add-on, les boutons d'export et d'import n'apparaissent pas.
+Avant de commencer, vérifie que l'add-on "Quiz Export/Import" est actif. Va dans WP Admin > Tutor LMS Pro > Addons, et active-le si ce n'est pas déjà fait. Sans cet add-on, les boutons d'export et d'import n'apparaissent pas.
 
-**[ECRAN — screencast export d'un quiz]**
+**[ÉCRAN — screencast export d'un quiz]**
 
-[Ouvre un cours en mode edition > section Curriculum]
+[Ouvre un cours en mode édition > section Curriculum]
 
-Pour exporter un quiz, ouvre ton cours en mode edition dans le Course Builder. Va dans la section Curriculum, et repere le quiz que tu veux exporter.
+Pour exporter un quiz, ouvre ton cours en mode édition dans le Course Builder. Va dans la section Curriculum, et repère le quiz que tu veux exporter.
 
-[Montre l'icone d'export a droite du quiz]
+[Montre l'icône d'export à droite du quiz]
 
-Tu vois une icone d'export a droite du quiz — une fleche vers le bas ou un icone de telechargement. Clique dessus.
+Tu vois une icône d'export à droite du quiz — une flèche vers le bas ou une icône de téléchargement. Clique dessus.
 
-[Le fichier CSV se telecharge]
+[Le fichier CSV se télécharge]
 
-Le quiz se telecharge automatiquement au format CSV sur ton ordinateur. Ce fichier contient toutes les questions, les options de reponse, les bonnes reponses, les points, et les reglages du quiz. Tu peux l'ouvrir dans Excel ou Google Sheets pour verifier le contenu.
+Le quiz se télécharge automatiquement au format CSV sur ton ordinateur. Ce fichier contient toutes les questions, les options de réponse, les bonnes réponses, les points, et les réglages du quiz. Tu peux l'ouvrir dans Excel ou Google Sheets pour vérifier le contenu.
 
-**[ECRAN — screencast import d'un quiz]**
+**[ÉCRAN — screencast import d'un quiz]**
 
-[Ouvre un autre cours en mode edition > section Curriculum]
+[Ouvre un autre cours en mode édition > section Curriculum]
 
 Pour importer, ouvre le cours de destination dans le Course Builder. Dans la section Curriculum, tu as un bouton "Import Quiz".
 
 [Clique sur "Import Quiz"]
 
-Clique dessus. Un gestionnaire de fichiers s'ouvre. Selectionne ton fichier CSV.
+Clique dessus. Un gestionnaire de fichiers s'ouvre. Sélectionne ton fichier CSV.
 
-[Selectionne le fichier CSV > le quiz apparait dans le curriculum]
+[Sélectionne le fichier CSV > le quiz apparaît dans le curriculum]
 
-Le quiz est importe dans ton cours avec toutes ses questions et reglages. Tu peux ensuite l'editer — modifier des questions, en ajouter, en supprimer — sans affecter le quiz original dans l'autre cours.
+Le quiz est importé dans ton cours avec toutes ses questions et réglages. Tu peux ensuite l'éditer — modifier des questions, en ajouter, en supprimer — sans affecter le quiz original dans l'autre cours.
 
 N'oublie pas de cliquer sur "Publish" ou "Update" pour sauvegarder les changements.
 
-**[ECRAN — slide "Cas d'usage"]**
+**[ÉCRAN — slide "Cas d'usage"]**
 
 Quelques cas d'usage concrets.
 
-Reutilisation : tu as un quiz de prerequis que tu veux mettre dans plusieurs cours. Exporte une fois, importe partout.
+Réutilisation : tu as un quiz de prérequis que tu veux mettre dans plusieurs cours. Exporte une fois, importe partout.
 
-Templates : cree des quiz modeles — un quiz de 10 QCM, un quiz de 5 correspondances — et importe-les comme base de travail pour chaque nouveau cours.
+Templates : crée des quiz modèles — un quiz de 10 QCM, un quiz de 5 correspondances — et importe-les comme base de travail pour chaque nouveau cours.
 
-Sauvegarde : exporte tes quiz regulierement comme backup. Si tu reinstalles TutorLMS ou que tu migres de site, tu as tes quiz prets a reimporter.
+Sauvegarde : exporte tes quiz régulièrement comme backup. Si tu réinstalles TutorLMS ou que tu migres de site, tu as tes quiz prêts à réimporter.
 
 Collaboration : tu travailles avec un autre formateur ? Envoie-lui le CSV, il l'importe dans son cours.
 
-**[ECRAN — slide "Limitations"]**
+**[ÉCRAN — slide "Limitations"]**
 
-Deux limitations a connaitre. Un : l'export/import fonctionne uniquement entre des sites qui utilisent TutorLMS. Tu ne peux pas importer un quiz depuis LearnDash ou un autre LMS. Deux : si tes questions contiennent des images uploadees, les images ne sont pas incluses dans le CSV — tu devras les re-uploader manuellement apres l'import.
+Deux limitations à connaître. Un : l'export/import fonctionne uniquement entre des sites qui utilisent TutorLMS. Tu ne peux pas importer un quiz depuis LearnDash ou un autre LMS. Deux : si tes questions contiennent des images uploadées, les images ne sont pas incluses dans le CSV — tu devras les re-uploader manuellement après l'import.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant reutiliser tes quiz entre cours. Dans la prochaine lecon, on decouvre un autre outil d'evaluation : les assignments, les devoirs a rendre, et le systeme de notation.
+Tu sais maintenant réutiliser tes quiz entre cours. Dans la prochaine leçon, on découvre un autre outil d'évaluation : les assignments, les devoirs à rendre, et le système de notation.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Add-on Quiz Export/Import requis (TutorLMS Pro)
-- Export : icone a droite du quiz dans le Curriculum, telecharge un CSV
+- Export : icône à droite du quiz dans le Curriculum, télécharge un CSV
 - Import : bouton "Import Quiz" dans le Curriculum du cours cible
-- Le CSV contient questions, reponses, points et reglages
-- Images non incluses dans le CSV — re-upload necessaire
+- Le CSV contient questions, réponses, points et réglages
+- Images non incluses dans le CSV — re-upload nécessaire
 - Fonctionne uniquement entre sites TutorLMS
 
-**Mots cles SEO** : TutorLMS export quiz, importer quiz TutorLMS, reutiliser quiz LMS WordPress, CSV quiz TutorLMS
+**Mots clés SEO** : TutorLMS export quiz, importer quiz TutorLMS, réutiliser quiz LMS WordPress, CSV quiz TutorLMS
 
 ---
 
-### Lecon 6.6 — Assignments & Systeme de notation
+### Leçon 6.6 — Assignments & Système de notation
 
-**Duree** : 7 min
-**Type** : Video HeyGen (existante — Video #26)
-**Ecran** : Face camera pour intro/conclusion, screencast des assignments
-**Source** : Video #26 + doc assignments
+**Durée** : 7 min
+**Type** : Vidéo HeyGen (existante — Vidéo #26)
+**Écran** : Face caméra pour intro/conclusion, screencast des assignments
+**Source** : Vidéo #26 + doc assignments
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Les quiz evaluent les connaissances theoriques. Les assignments evaluent la mise en pratique. C'est un devoir que l'eleve soumet — un texte, un fichier, un projet — et que tu corriges manuellement avec une note et un feedback. C'est l'outil ideal pour les formations ou l'eleve doit produire quelque chose. On voit comment les creer, les configurer, et les corriger.
+Les quiz évaluent les connaissances théoriques. Les assignments évaluent la mise en pratique. C'est un devoir que l'élève soumet — un texte, un fichier, un projet — et que tu corriges manuellement avec une note et un feedback. C'est l'outil idéal pour les formations où l'élève doit produire quelque chose. On voit comment les créer, les configurer, et les corriger.
 
-**[ECRAN — slide "Prerequis"]**
+**[ÉCRAN — slide "Prérequis"]**
 
-L'add-on Assignments doit etre actif. Va dans WP Admin > Tutor LMS Pro > Addons, et active "Assignments". Une fois active, un nouveau menu "Assignments" apparait sous Tutor LMS Pro dans le menu lateral de WordPress.
+L'add-on Assignments doit être actif. Va dans WP Admin > Tutor LMS Pro > Addons, et active "Assignments". Une fois activé, un nouveau menu "Assignments" apparaît sous Tutor LMS Pro dans le menu latéral de WordPress.
 
-**[ECRAN — screencast Course Builder > Curriculum]**
+**[ÉCRAN — screencast Course Builder > Curriculum]**
 
 [Ouvre un cours > section Curriculum > topic]
 
-Pour creer un assignment, meme logique que pour un quiz. Ouvre ton cours, va dans Curriculum, ouvre un topic, et clique sur le bouton "Assignment" — a cote de "+Lesson" et "+Quiz".
+Pour créer un assignment, même logique que pour un quiz. Ouvre ton cours, va dans Curriculum, ouvre un topic, et clique sur le bouton "Assignment" — à côté de "+Lesson" et "+Quiz".
 
 [Clique sur Assignment]
 
-Un editeur s'ouvre. Donne un titre clair a ton assignment — par exemple "Exercice pratique : configure un formulaire de contact". Utilise l'editeur de contenu pour decrire la consigne en detail. Sois precis sur ce que tu attends : le livrable, le format, les criteres.
+Un éditeur s'ouvre. Donne un titre clair à ton assignment — par exemple "Exercice pratique : configure un formulaire de contact". Utilise l'éditeur de contenu pour décrire la consigne en détail. Sois précis sur ce que tu attends : le livrable, le format, les critères.
 
-Tu peux aussi joindre des fichiers a la consigne — un template, un exemple, un document de reference. L'eleve les telecharge avant de commencer.
+Tu peux aussi joindre des fichiers à la consigne — un template, un exemple, un document de référence. L'élève les télécharge avant de commencer.
 
-**[ECRAN — screencast reglages assignment]**
+**[ÉCRAN — screencast réglages assignment]**
 
-[Montre les reglages a droite de l'editeur]
+[Montre les réglages à droite de l'éditeur]
 
-Les reglages de l'assignment. Premier : Time Limit. Tu definis un delai — en semaines, jours ou heures. Le compte a rebours peut demarrer quand l'eleve ouvre l'assignment, pas quand il s'inscrit au cours. Ca evite que le delai expire avant meme que l'eleve ait atteint cet exercice.
+Les réglages de l'assignment. Premier : Time Limit. Tu définis un délai — en semaines, jours ou heures. Le compte à rebours peut démarrer quand l'élève ouvre l'assignment, pas quand il s'inscrit au cours. Ça évite que le délai expire avant même que l'élève ait atteint cet exercice.
 
-Deuxieme : Total Points. Le nombre maximum de points pour cet assignment. Definit l'echelle de notation.
+Deuxième : Total Points. Le nombre maximum de points pour cet assignment. Définit l'échelle de notation.
 
-Troisieme : Minimum Pass Points. La note minimum pour reussir. Doit etre inferieure ou egale au total de points. Si tu mets 60 sur 100, l'eleve doit obtenir au moins 60 points.
+Troisième : Minimum Pass Points. La note minimum pour réussir. Doit être inférieure ou égale au total de points. Si tu mets 60 sur 100, l'élève doit obtenir au moins 60 points.
 
-Quatrieme : Upload Limit. Le nombre de fichiers que l'eleve peut joindre a sa soumission. Mets 0 si tu veux uniquement une reponse texte, sans upload de fichier.
+Quatrième : Upload Limit. Le nombre de fichiers que l'élève peut joindre à sa soumission. Mets 0 si tu veux uniquement une réponse texte, sans upload de fichier.
 
-Cinquieme : File Size Limit. La taille maximum par fichier en megaoctets.
+Cinquième : File Size Limit. La taille maximum par fichier en mégaoctets.
 
-**[ECRAN — screencast soumission eleve]**
+**[ÉCRAN — screencast soumission élève]**
 
-[Montre la vue eleve sur la page du cours]
+[Montre la vue élève sur la page du cours]
 
-Cote eleve, voila ce qu'il voit. La page de l'assignment affiche le titre, la description, les pieces jointes, la duree restante, et la deadline. L'eleve tape sa reponse dans le champ de soumission, uploade ses fichiers si autorise, et clique sur "Submit".
+Côté élève, voilà ce qu'il voit. La page de l'assignment affiche le titre, la description, les pièces jointes, la durée restante, et la deadline. L'élève tape sa réponse dans le champ de soumission, uploade ses fichiers si autorisé, et clique sur "Submit".
 
-Apres soumission, il voit le statut : date de soumission, note totale, note obtenue (apres correction), et resultat.
+Après soumission, il voit le statut : date de soumission, note totale, note obtenue (après correction), et résultat.
 
-**[ECRAN — screencast correction instructeur]**
+**[ÉCRAN — screencast correction instructeur]**
 
 [Navigation vers WP Admin > Tutor LMS Pro > Assignments]
 
-Pour corriger, va dans WP Admin > Tutor LMS Pro > Assignments. Tu vois la liste de toutes les soumissions avec le nom de l'eleve, la date, et le nombre de points.
+Pour corriger, va dans WP Admin > Tutor LMS Pro > Assignments. Tu vois la liste de toutes les soumissions avec le nom de l'élève, la date, et le nombre de points.
 
 [Clique sur une soumission]
 
-Ouvre une soumission. Tu vois la reponse de l'eleve, tu peux telecharger les fichiers joints. En bas, tu as le panneau d'evaluation.
+Ouvre une soumission. Tu vois la réponse de l'élève, tu peux télécharger les fichiers joints. En bas, tu as le panneau d'évaluation.
 
 [Montre le champ de notation et de feedback]
 
-Tu attribues une note entre 0 et le maximum de points. Tu rediges un feedback — commente les points forts, les points a ameliorer, les erreurs. Et tu cliques sur "Evaluate This Submission".
+Tu attribues une note entre 0 et le maximum de points. Tu rédiges un feedback — commente les points forts, les points à améliorer, les erreurs. Et tu cliques sur "Evaluate This Submission".
 
-L'eleve recoit une notification avec sa note et ton feedback. Si la note est en dessous du seuil de reussite et que tu as configure le cours en Strict Mode, l'eleve est bloque. Pour debloquer, tu peux supprimer la soumission — l'eleve peut alors resoumettre tant que le delai n'est pas expire.
+L'élève reçoit une notification avec sa note et ton feedback. Si la note est en dessous du seuil de réussite et que tu as configuré le cours en Strict Mode, l'élève est bloqué. Pour débloquer, tu peux supprimer la soumission — l'élève peut alors resoumettre tant que le délai n'est pas expiré.
 
-**[ECRAN — slide "Quiz vs Assignment"]**
+**[ÉCRAN — slide "Quiz vs Assignment"]**
 
 Quand utiliser un quiz, quand utiliser un assignment ?
 
-Quiz : connaissances theoriques, correction automatique, feedback instantane, grand nombre d'eleves. Exemple : "Quel est le role d'un plugin de cache ?"
+Quiz : connaissances théoriques, correction automatique, feedback instantané, grand nombre d'élèves. Exemple : "Quel est le rôle d'un plugin de cache ?"
 
-Assignment : mise en pratique, production d'un livrable, correction qualitative, feedback personnalise. Exemple : "Configure WP Rocket sur ton site et partage une capture d'ecran du resultat PageSpeed."
+Assignment : mise en pratique, production d'un livrable, correction qualitative, feedback personnalisé. Exemple : "Configure WP Rocket sur ton site et partage une capture d'écran du résultat PageSpeed."
 
-Les deux sont complementaires. Un bon cours utilise les quiz pour verifier la comprehension et les assignments pour valider la competence.
+Les deux sont complémentaires. Un bon cours utilise les quiz pour vérifier la compréhension et les assignments pour valider la compétence.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu maitrises maintenant les deux outils d'evaluation de TutorLMS — quiz et assignments. Dans l'exercice suivant, tu vas mettre tout ca en pratique en creant un quiz complet.
+Tu maîtrises maintenant les deux outils d'évaluation de TutorLMS — quiz et assignments. Dans l'exercice suivant, tu vas mettre tout ça en pratique en créant un quiz complet.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Add-on Assignments requis (TutorLMS Pro)
-- Creation : Course Builder > Curriculum > topic > bouton Assignment
-- Reglages : Time Limit, Total Points, Minimum Pass Points, Upload Limit, File Size Limit
-- Correction : WP Admin > Tutor LMS Pro > Assignments > evaluer + feedback
-- Re-soumission possible apres suppression par l'instructeur
-- Quiz = theorie (auto-corrige) / Assignment = pratique (correction manuelle)
+- Création : Course Builder > Curriculum > topic > bouton Assignment
+- Réglages : Time Limit, Total Points, Minimum Pass Points, Upload Limit, File Size Limit
+- Correction : WP Admin > Tutor LMS Pro > Assignments > évaluer + feedback
+- Re-soumission possible après suppression par l'instructeur
+- Quiz = théorie (auto-corrigé) / Assignment = pratique (correction manuelle)
 
-**Mots cles SEO** : TutorLMS assignments, devoirs TutorLMS, systeme notation LMS WordPress, evaluer eleves TutorLMS, correction assignments TutorLMS
+**Mots clés SEO** : TutorLMS assignments, devoirs TutorLMS, système notation LMS WordPress, évaluer élèves TutorLMS, correction assignments TutorLMS
 
 ---
 
-### Lecon 6.7 — Exercice : Cree un quiz complet avec 5 types de questions
+### Leçon 6.7 — Exercice : Crée un quiz complet avec 5 types de questions
 
-**Type** : Exercice pratique (consignes ecrites)
-**Duree estimee** : 30-45 min
+**Type** : Exercice pratique (consignes écrites)
+**Durée estimée** : 30-45 min
 
 ---
 
 ## Objectif
 
-Creer un quiz complet dans TutorLMS qui utilise au moins 5 types de questions differents, avec des reglages professionnels et des images. A la fin de cet exercice, tu auras un quiz operationnel, pret a etre utilise dans un cours.
+Créer un quiz complet dans TutorLMS qui utilise au moins 5 types de questions différents, avec des réglages professionnels et des images. À la fin de cet exercice, tu auras un quiz opérationnel, prêt à être utilisé dans un cours.
 
-## Prerequis
+## Prérequis
 
-- TutorLMS Pro installe et actif
-- Un cours existant avec au moins un topic (cree dans l'exercice M4 par exemple)
-- 2-3 images preparees (captures d'ecran, logos ou illustrations — 700x430 px recommande)
-- Acces admin a ton site WordPress
+- TutorLMS Pro installé et actif
+- Un cours existant avec au moins un topic (créé dans l'exercice M4 par exemple)
+- 2-3 images préparées (captures d'écran, logos ou illustrations — 700x430 px recommandé)
+- Accès admin à ton site WordPress
 
-> **Pas d'idee de theme ?** Base ton quiz sur l'un de ces sujets :
-> - "Les bases de WordPress" (debutant)
-> - "Configurer WooCommerce" (intermediaire)
-> - "Securiser son site WordPress" (intermediaire)
-> Choisis celui que tu maitrises le mieux — les questions seront plus naturelles.
+> **Pas d'idée de thème ?** Base ton quiz sur l'un de ces sujets :
+> - "Les bases de WordPress" (débutant)
+> - "Configurer WooCommerce" (intermédiaire)
+> - "Sécuriser son site WordPress" (intermédiaire)
+> Choisis celui que tu maîtrises le mieux — les questions seront plus naturelles.
 
-## Etapes
+## Étapes
 
-### 1. Cree le quiz et configure les reglages
+### 1. Crée le quiz et configure les réglages
 
 - Va dans ton cours > Curriculum > ouvre un topic > clique sur "+Quiz"
-- Configure les reglages :
+- Configure les réglages :
   - [ ] **Titre** : descriptif (ex: "Quiz — Les fondamentaux WordPress")
-  - [ ] **Description** : 2-3 phrases de consignes pour l'eleve
+  - [ ] **Description** : 2-3 phrases de consignes pour l'élève
   - [ ] **Time Limit** : 15 minutes
-  - [ ] **Feedback Mode** : "Default" (correction apres le quiz complet)
+  - [ ] **Feedback Mode** : "Default" (correction après le quiz complet)
   - [ ] **Attempts Allowed** : 3
   - [ ] **Passing Grade** : 70%
 
-### 2. Cree au moins 10 questions en utilisant 5 types differents (minimum)
+### 2. Crée au moins 10 questions en utilisant 5 types différents (minimum)
 
-Tu dois utiliser **au moins 5 types parmi les 8** disponibles. Voici le mix recommande :
+Tu dois utiliser **au moins 5 types parmi les 8** disponibles. Voici le mix recommandé :
 
-- [ ] **2 questions QCM** (Multiple Choice) — 1 avec une seule bonne reponse, 1 avec plusieurs bonnes reponses
-- [ ] **2 questions Vrai/Faux** (True/False) — teste des affirmations precises, pas des evidences
+- [ ] **2 questions QCM** (Multiple Choice) — 1 avec une seule bonne réponse, 1 avec plusieurs bonnes réponses
+- [ ] **2 questions Vrai/Faux** (True/False) — teste des affirmations précises, pas des évidences
 - [ ] **2 questions Remplir les blancs** (Fill in the Blanks) — utilise la syntaxe {dash} et au moins 1 question avec des alternatives (pipe |)
 - [ ] **2 questions Correspondance** (Matching) — au moins 4 paires par question
-- [ ] **1 question Image Answering** — utilise une capture d'ecran pertinente (700x430 px)
-- [ ] **1 question Ordering** — minimum 4 elements a remettre dans l'ordre
+- [ ] **1 question Image Answering** — utilise une capture d'écran pertinente (700x430 px)
+- [ ] **1 question Ordering** — minimum 4 éléments à remettre dans l'ordre
 
 ### 3. Enrichis tes questions
 
 Pour chaque question :
-- [ ] Attribue des **points** (pas tous a 1 — varie : 1, 2 ou 3 points selon la difficulte)
-- [ ] Redige une **Answer Explanation** pour au moins 5 questions
+- [ ] Attribue des **points** (pas tous à 1 — varie : 1, 2 ou 3 points selon la difficulté)
+- [ ] Rédige une **Answer Explanation** pour au moins 5 questions
 - [ ] Active **"Answer Required"** sur toutes les questions
 
 ### 4. Ajoute des images
 
-- [ ] Au moins 1 question de type Image Answering avec une image uploadee
+- [ ] Au moins 1 question de type Image Answering avec une image uploadée
 - [ ] Au moins 1 autre question (QCM ou Matching) avec une image dans la description via TinyMCE
 
-### 5. Teste le quiz en mode eleve
+### 5. Teste le quiz en mode élève
 
-- [ ] Ouvre le quiz en tant qu'eleve (utilise un compte test ou le mode preview)
-- [ ] Verifie que chaque question s'affiche correctement
-- [ ] Reponds a toutes les questions
-- [ ] Verifie que le score est calcule correctement
-- [ ] Verifie que les Answer Explanations s'affichent apres soumission
+- [ ] Ouvre le quiz en tant qu'élève (utilise un compte test ou le mode preview)
+- [ ] Vérifie que chaque question s'affiche correctement
+- [ ] Réponds à toutes les questions
+- [ ] Vérifie que le score est calculé correctement
+- [ ] Vérifie que les Answer Explanations s'affichent après soumission
 
-### 6. Teste le systeme de tentatives
+### 6. Teste le système de tentatives
 
-- [ ] Echoue volontairement au quiz (score < 70%)
-- [ ] Verifie que tu peux retenter (tentative 2/3)
-- [ ] Reussis le quiz (score >= 70%)
-- [ ] Verifie le message de reussite
+- [ ] Échoue volontairement au quiz (score < 70%)
+- [ ] Vérifie que tu peux retenter (tentative 2/3)
+- [ ] Réussis le quiz (score >= 70%)
+- [ ] Vérifie le message de réussite
 
-## Criteres de validation
+## Critères de validation
 
 - [ ] Le quiz contient au moins 10 questions
-- [ ] Au moins 5 types de questions differents sont utilises
-- [ ] Les points sont varies (pas tous a 1)
+- [ ] Au moins 5 types de questions différents sont utilisés
+- [ ] Les points sont variés (pas tous à 1)
 - [ ] Au moins 5 questions ont une Answer Explanation
 - [ ] Au moins 2 questions contiennent des images
-- [ ] Le Time Limit est configure (non nul)
-- [ ] Le Passing Grade est configure (non nul)
-- [ ] Le quiz fonctionne correctement en mode eleve
+- [ ] Le Time Limit est configuré (non nul)
+- [ ] Le Passing Grade est configuré (non nul)
+- [ ] Le quiz fonctionne correctement en mode élève
 
 ## Bonus (optionnel)
 
-- [ ] Active "Max Questions Allowed" a 7 sur les 10 questions pour tester la randomisation
-- [ ] Exporte le quiz en CSV et reimporte-le dans un autre cours
+- [ ] Active "Max Questions Allowed" à 7 sur les 10 questions pour tester la randomisation
+- [ ] Exporte le quiz en CSV et réimporte-le dans un autre cours
 - [ ] Configure le quiz comme obligatoire (Strict Mode + Content Drip + Passing Required)
 - [ ] Ajoute une question Ordering avec des images au lieu de texte
 
 ---
 
-### Lecon 6.8 — Quiz : Valide tes acquis M6
+### Leçon 6.8 — Quiz : Valide tes acquis M6
 
 **Type** : Quiz TutorLMS (8 questions)
-**Seuil de reussite** : 80%
+**Seuil de réussite** : 80%
 
 ---
 
 **Question 1** : Combien de types de questions sont disponibles dans le Quiz Builder de TutorLMS ?
 
 - A) 5
-- B) 8 *(bonne reponse)*
+- B) 8 *(bonne réponse)*
 - C) 10
 - D) 12
 
 ---
 
-**Question 2** : Quelle syntaxe utilise-t-on pour creer un trou dans une question "Remplir les blancs" ?
+**Question 2** : Quelle syntaxe utilise-t-on pour créer un trou dans une question "Remplir les blancs" ?
 
 - A) [blank]
 - B) ___
-- C) {dash} *(bonne reponse)*
+- C) {dash} *(bonne réponse)*
 - D) {{answer}}
 
 ---
 
-**Question 3** : Quel Feedback Mode faut-il activer pour rendre un quiz obligatoire avec possibilite de retenter ?
+**Question 3** : Quel Feedback Mode faut-il activer pour rendre un quiz obligatoire avec possibilité de retenter ?
 
 - A) Default
 - B) Reveal Mode
-- C) Retry Mode *(bonne reponse)*
+- C) Retry Mode *(bonne réponse)*
 - D) Strict Mode
 
 ---
 
-**Question 4** : Quels sont les 3 reglages necessaires pour rendre la reussite d'un quiz obligatoire ?
+**Question 4** : Quels sont les 3 réglages nécessaires pour rendre la réussite d'un quiz obligatoire ?
 
 - A) Time Limit + Passing Grade + Auto Start
-- B) Strict Mode + Content Drip sequentiel + Passing is Required *(bonne reponse)*
+- B) Strict Mode + Content Drip séquentiel + Passing is Required *(bonne réponse)*
 - C) Retry Mode + Max Questions + Prerequisites
 - D) Feedback Mode + Attempts Allowed + Question Layout
 
 ---
 
-**Question 5** : Quel est le probleme si un quiz obligatoire contient des questions ouvertes (Open Ended) ?
+**Question 5** : Quel est le problème si un quiz obligatoire contient des questions ouvertes (Open Ended) ?
 
 - A) Les questions ouvertes ne comptent pas dans le score
-- B) L'eleve ne peut pas soumettre le quiz
-- C) La progression est bloquee jusqu'a la correction manuelle par l'instructeur *(bonne reponse)*
-- D) TutorLMS refuse de creer le quiz
+- B) L'élève ne peut pas soumettre le quiz
+- C) La progression est bloquée jusqu'à la correction manuelle par l'instructeur *(bonne réponse)*
+- D) TutorLMS refuse de créer le quiz
 
 ---
 
-**Question 6** : Dans quel format les quiz sont-ils exportes par l'add-on Quiz Export/Import ?
+**Question 6** : Dans quel format les quiz sont-ils exportés par l'add-on Quiz Export/Import ?
 
 - A) JSON
 - B) XML
-- C) CSV *(bonne reponse)*
+- C) CSV *(bonne réponse)*
 - D) PDF
 
 ---
 
-**Question 7** : Quelle est la difference principale entre un Quiz et un Assignment dans TutorLMS ?
+**Question 7** : Quelle est la différence principale entre un Quiz et un Assignment dans TutorLMS ?
 
 - A) Le quiz est gratuit, l'assignment est payant
-- B) Le quiz a une correction automatique, l'assignment necessite une correction manuelle *(bonne reponse)*
-- C) Le quiz est limite a 10 questions, l'assignment est illimite
-- D) Le quiz est visible par tous, l'assignment est prive
+- B) Le quiz a une correction automatique, l'assignment nécessite une correction manuelle *(bonne réponse)*
+- C) Le quiz est limité à 10 questions, l'assignment est illimité
+- D) Le quiz est visible par tous, l'assignment est privé
 
 ---
 
-**Question 8** : A quoi sert le reglage "Max Questions Allowed" dans les parametres d'un quiz ?
+**Question 8** : À quoi sert le réglage "Max Questions Allowed" dans les paramètres d'un quiz ?
 
-- A) Il limite le nombre de questions que l'instructeur peut creer
-- B) Il selectionne aleatoirement un sous-ensemble de questions a chaque tentative *(bonne reponse)*
-- C) Il definit le nombre minimum de questions auxquelles l'eleve doit repondre
-- D) Il bloque l'ajout de nouvelles questions au-dela de la limite
+- A) Il limite le nombre de questions que l'instructeur peut créer
+- B) Il sélectionne aléatoirement un sous-ensemble de questions à chaque tentative *(bonne réponse)*
+- C) Il définit le nombre minimum de questions auxquelles l'élève doit répondre
+- D) Il bloque l'ajout de nouvelles questions au-delà de la limite

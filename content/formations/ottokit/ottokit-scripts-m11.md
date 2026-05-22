@@ -1,122 +1,122 @@
-# Scripts video — Module 11 : AI Agents et MCP : l'automatisation intelligente
+# Scripts vidéo — Module 11 : AI Agents et MCP : l'automatisation intelligente
 
-**Formation** : Maitriser OttoKit
+**Formation** : Maîtriser OttoKit
 **Module** : M11 — AI Agents et MCP : l'automatisation intelligente
-**Lecons** : 8 videos + 1 quiz
-**Duree totale** : ~55 min de video
+**Leçons** : 8 vidéos + 1 quiz
+**Durée totale** : ~55 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Lecon 11.1 — AI Agents : qu'est-ce que c'est et pourquoi c'est different
+## Leçon 11.1 — AI Agents : qu'est-ce que c'est et pourquoi c'est different
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides comparatifs
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides comparatifs
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Depuis le debut de cette formation, tu construis des workflows. Des etapes fixes, dans un ordre precis, avec des conditions previsibles. Ca fonctionne. Mais certaines situations ne rentrent pas dans un schema fixe. C'est la que les AI Agents entrent en jeu.
+Depuis le debut de cette formation, tu construis des workflows. Des étapes fixes, dans un ordre précis, avec des conditions prévisibles. Ça fonctionne. Mais certaines situations ne rentrent pas dans un schéma fixe. C'est là que les AI Agents entrent en jeu.
 
-**[ECRAN — slide "Workflow vs Agent — la difference fondamentale"]**
+**[ÉCRAN — slide "Workflow vs Agent — la difference fondamentale"]**
 
-Un **workflow**, c'est une recette de cuisine. Tu suis les etapes dans l'ordre. Si l'etape 3 echoue, tout s'arrete. Les decisions sont binaires : oui ou non, vrai ou faux.
+Un **workflow**, c'est une recette de cuisine. Tu suis les étapes dans l'ordre. Si l'étape 3 échoue, tout s'arrete. Les décisions sont binaires : oui ou non, vrai ou faux.
 
-Un **AI Agent**, c'est un assistant qui recoit un objectif et decide seul comment l'atteindre. Il choisit quels outils utiliser, dans quel ordre, et s'adapte en fonction de ce qu'il trouve.
+Un **AI Agent**, c'est un assistant qui reçoit un objectif et décide seul comment l'atteindre. Il choisit quels outils utiliser, dans quel ordre, et s'adapte en fonction de ce qu'il trouve.
 
 | | Workflow | AI Agent |
 |---|---|---|
-| Fonctionnement | Etapes fixes, ordre predefini | Objectif defini, execution flexible |
+| Fonctionnement | Étapes fixes, ordre prédéfini | Objectif défini, exécution flexible |
 | Decisions | Conditions binaires (if/else) | Raisonnement contextuel |
-| Adaptatif | Non — meme chemin a chaque fois | Oui — s'adapte aux donnees recues |
-| Previsibilite | Tres haute | Moderee |
-| Cout en tasks | Faible (1 task par etape) | Plus eleve (1 task par action de l'agent) |
+| Adaptatif | Non — même chemin à chaque fois | Oui — s'adapte aux données reçues |
+| Previsibilite | Très haute | Modérée |
+| Cout en tasks | Faible (1 task par étape) | Plus élevé (1 task par action de l'agent) |
 
-**[ECRAN — slide "Exemple concret"]**
+**[ÉCRAN — slide "Exemple concret"]**
 
-Imagine un etudiant qui envoie un email avec cette question : "Je n'arrive pas a acceder a mon cours, mon paiement est passe mais rien ne s'affiche."
+Imagine un étudiant qui envoie un email avec cette question : "Je n'arrive pas a acceder a mon cours, mon paiement est passe mais rien ne s'affiche."
 
 Avec un **workflow**, tu pourrais :
-- Verifier si le mot "paiement" est present → envoyer une reponse type
+- Verifier si le mot "paiement" est present → envoyer une réponse type
 - Verifier si le mot "cours" est present → envoyer une autre reponse type
 
 Le probleme : la question contient les deux. Le workflow ne sait pas quoi faire — ou envoie la mauvaise reponse.
 
 Avec un **AI Agent** :
 - L'agent lit la question, comprend le contexte
-- Il verifie le statut du paiement dans Stripe
-- Il verifie l'inscription dans TutorLMS
-- Il redige une reponse adaptee au probleme specifique
+- Il vérifie le statut du paiement dans Stripe
+- Il vérifie l'inscription dans TutorLMS
+- Il rédige une réponse adaptée au probleme specifique
 
 L'agent raisonne. Le workflow execute.
 
-**[ECRAN — slide "Quand utiliser un agent"]**
+**[ÉCRAN — slide "Quand utiliser un agent"]**
 
 Utilise un AI Agent quand :
-- Les inputs sont imprevisibles (emails, questions libres, messages varies)
-- La reponse depend du contexte (pas de chemin unique)
-- Plusieurs outils doivent etre interroges avant de decider
+- Les inputs sont imprévisibles (emails, questions libres, messages varies)
+- La réponse dépend du contexte (pas de chemin unique)
+- Plusieurs outils doivent être interrogés avant de décider
 
 Garde un workflow classique quand :
-- Le processus est previsible (nouvelle commande → email de confirmation)
+- Le processus est prévisible (nouvelle commande → email de confirmation)
 - Les etapes sont toujours les memes
-- Tu veux un cout en tasks minimal
+- Tu veux un coût en tasks minimal
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu vois la difference. Un workflow est un automate. Un agent est un assistant. Dans la prochaine lecon, tu vas creer ton premier agent directement dans OttoKit.
+Tu vois la différence. Un workflow est un automate. Un agent est un assistant. Dans la prochaine lecon, tu vas créer ton premier agent directement dans OttoKit.
 
 ---
 
 **Points cles**
-- Un workflow execute des etapes fixes ; un agent decide comment atteindre un objectif
-- L'agent s'adapte au contexte, le workflow suit toujours le meme chemin
+- Un workflow exécute des étapes fixes ; un agent décide comment atteindre un objectif
+- L'agent s'adapte au contexte, le workflow suit toujours le même chemin
 - Les agents consomment plus de tasks que les workflows classiques
-- Utilise un agent quand les inputs sont imprevisibles et le contexte variable
+- Utilise un agent quand les inputs sont imprévisibles et le contexte variable
 
 **Mots-cles SEO**
 - OttoKit AI Agent
-- difference workflow agent IA
+- différence workflow agent IA
 - AI Agent WordPress automatisation
 - OttoKit agent intelligent
 
 ---
 
-## Lecon 11.2 — Cree ton premier AI Agent dans OttoKit
+## Leçon 11.2 — Crée ton premier AI Agent dans OttoKit
 
-**Duree** : 8 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit interface agent
+**Durée** : 8 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit interface agent
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Tu sais ce qu'est un agent. Maintenant, tu en crees un. OttoKit integre les AI Agents directement dans son interface. Pas besoin de code, pas besoin d'un outil externe. Tout se fait depuis le dashboard.
 
-**[ECRAN — screencast OttoKit dashboard]**
+**[ÉCRAN — screencast OttoKit dashboard]**
 
 [Ouvre OttoKit — app.ottokit.com]
 [Dans la barre laterale, clique sur "AI Agents"]
 
 La section AI Agents est separee des workflows. C'est un espace dedie. Tu y retrouves tes agents crees, leur historique et leurs parametres.
 
-**[ECRAN — screencast creation de l'agent]**
+**[ÉCRAN — screencast creation de l'agent]**
 
 [Clique sur "Create Agent" ou "New Agent"]
 [Un formulaire s'ouvre avec plusieurs champs]
 
 Voici les elements a configurer :
 
-**[ECRAN — screencast champ "Name"]**
+**[ÉCRAN — screencast champ "Name"]**
 
 [Tape le nom : "Assistant Support Formation"]
 
 Le nom identifie ton agent dans le dashboard. Choisis quelque chose de clair.
 
-**[ECRAN — screencast champ "Objective" / "Instructions"]**
+**[ÉCRAN — screencast champ "Objective" / "Instructions"]**
 
 [Dans le champ objectif ou instructions, tape :]
 
@@ -130,28 +130,28 @@ Tu es l'assistant support de schoolsWP. Quand un etudiant pose une question :
 
 L'objectif, c'est le prompt de ton agent. C'est ici que tu lui dis ce qu'il doit faire, comment raisonner, et dans quel cadre. Sois precis : plus les instructions sont claires, meilleur sera le resultat.
 
-**[ECRAN — screencast champ "Model"]**
+**[ÉCRAN — screencast champ "Model"]**
 
 [Selectionne le modele : GPT-4o, Claude, ou le modele disponible]
 [Pointe les options disponibles]
 
 Tu choisis le modele de langage. OttoKit supporte plusieurs fournisseurs. Le choix depend de ta cle API et de ton budget. GPT-4o et Claude sont les plus performants pour le raisonnement.
 
-**[ECRAN — screencast section "Tools" / "Actions"]**
+**[ÉCRAN — screencast section "Tools" / "Actions"]**
 
 [Montre la section ou l'on ajoute les outils de l'agent]
 [Pour l'instant, ne connecte aucun outil — on le fait dans la lecon suivante]
 
 Les outils, c'est ce que l'agent peut faire. Pour l'instant, on ne connecte rien. L'agent fonctionnera en mode "reponse uniquement". On ajoutera les outils dans la lecon 11.3.
 
-**[ECRAN — screencast bouton "Save" ou "Create"]**
+**[ÉCRAN — screencast bouton "Save" ou "Create"]**
 
 [Clique sur "Save" ou "Create"]
 [Montre l'agent cree dans la liste]
 
 Ton agent est cree. Il apparait dans la liste.
 
-**[ECRAN — screencast test de l'agent]**
+**[ÉCRAN — screencast test de l'agent]**
 
 [Clique sur l'agent pour l'ouvrir]
 [Montre l'interface de test / chat]
@@ -165,14 +165,14 @@ OttoKit fournit une interface de test. Tu peux discuter avec ton agent pour veri
 
 Deuxieme test. L'agent comprend le contexte et adapte sa reponse. C'est ca la difference avec un workflow : chaque reponse est differente.
 
-**[ECRAN — slide "Bonnes pratiques pour le prompt"]**
+**[ÉCRAN — slide "Bonnes pratiques pour le prompt"]**
 
 - Definis clairement le role de l'agent (support, redacteur, analyste)
 - Liste les etapes de raisonnement (1. Identifie, 2. Cherche, 3. Reponds)
 - Precise le ton et la langue (francais, tutoiement)
 - Indique ce que l'agent ne doit pas faire (pas de promesse de remboursement, pas de donnees personnelles)
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Ton agent existe et il repond. Mais pour l'instant, il ne peut que parler. Dans la prochaine lecon, on lui donne des outils pour qu'il puisse agir : envoyer des emails, consulter des sheets, creer des taches.
 
@@ -192,19 +192,19 @@ Ton agent existe et il repond. Mais pour l'instant, il ne peut que parler. Dans 
 
 ---
 
-## Lecon 11.3 — Donne des outils a ton agent : actions et integrations
+## Leçon 11.3 — Donne des outils a ton agent : actions et integrations
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit interface agent
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit interface agent
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Un agent sans outils, c'est un consultant qui donne des conseils mais ne peut rien faire. Pour que ton agent passe a l'action, tu dois lui donner acces a des outils : envoyer un email, lire un Google Sheet, creer un article WordPress. C'est ce qu'on fait maintenant.
 
-**[ECRAN — slide "Agent + Outils = Action"]**
+**[ÉCRAN — slide "Agent + Outils = Action"]**
 
 L'agent recoit une question ou une demande. Avec ses outils, il peut :
 
@@ -214,7 +214,7 @@ L'agent recoit une question ou une demande. Avec ses outils, il peut :
 
 Sans outils, il ne fait que repondre. Avec des outils, il agit.
 
-**[ECRAN — screencast OttoKit — ouvrir l'agent]**
+**[ÉCRAN — screencast OttoKit — ouvrir l'agent]**
 
 [Ouvre l'agent "Assistant Support Formation" cree dans la lecon 11.2]
 [Clique sur "Edit" ou accede aux parametres]
@@ -222,7 +222,7 @@ Sans outils, il ne fait que repondre. Avec des outils, il agit.
 
 On reprend l'agent de la lecon precedente. Dans la section outils, tu vois la liste des integrations que tu peux connecter.
 
-**[ECRAN — screencast ajout de Gmail]**
+**[ÉCRAN — screencast ajout de Gmail]**
 
 [Clique sur "Add Tool" ou "Add Integration"]
 [Tape "Gmail" dans la recherche]
@@ -233,7 +233,7 @@ On reprend l'agent de la lecon precedente. Dans la section outils, tu vois la li
 
 Premier outil : Gmail. On donne a l'agent la capacite d'envoyer des emails. Quand il decidera qu'un email est necessaire, il pourra le faire.
 
-**[ECRAN — screencast ajout de Google Sheets]**
+**[ÉCRAN — screencast ajout de Google Sheets]**
 
 [Clique sur "Add Tool"]
 [Tape "Google Sheets" dans la recherche]
@@ -244,14 +244,14 @@ Premier outil : Gmail. On donne a l'agent la capacite d'envoyer des emails. Quan
 
 Deuxieme outil : Google Sheets en lecture. L'agent pourra consulter ta FAQ. Tu pointes vers le spreadsheet qui contient les questions et reponses frequentes.
 
-**[ECRAN — screencast resume des outils]**
+**[ÉCRAN — screencast resume des outils]**
 
 [Montre la liste des outils ajoutes a l'agent : Gmail (Send Email) + Google Sheets (Read Row)]
 [Clique sur "Save"]
 
 L'agent a maintenant deux outils. Il peut lire la FAQ dans Google Sheets et envoyer un email si necessaire. Le choix d'utiliser tel ou tel outil, c'est l'agent qui le fait — pas toi.
 
-**[ECRAN — screencast test de l'agent avec outils]**
+**[ÉCRAN — screencast test de l'agent avec outils]**
 
 [Ouvre l'interface de test]
 [Tape : "Je n'arrive pas a acceder a mon cours WordPress, j'ai paye hier"]
@@ -265,7 +265,7 @@ Cette fois, l'agent ne se contente pas d'inventer une reponse. Il consulte d'abo
 
 Et si tu lui demandes d'envoyer un email, il utilise Gmail. L'agent choisit l'outil adapte a la demande.
 
-**[ECRAN — slide "Gerer les permissions"]**
+**[ÉCRAN — slide "Gerer les permissions"]**
 
 Quelques regles importantes :
 
@@ -274,7 +274,7 @@ Quelques regles importantes :
 - Si un outil est sensible (suppression, modification), active le Human-in-the-Loop (lecon suivante).
 - Chaque outil consomme des tasks quand l'agent l'utilise.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Ton agent sait maintenant chercher et agir. Mais lui faire confiance les yeux fermes, c'est risque. Dans la prochaine lecon, on met en place un garde-fou : l'approbation humaine avant chaque action sensible.
 
@@ -294,19 +294,19 @@ Ton agent sait maintenant chercher et agir. Mais lui faire confiance les yeux fe
 
 ---
 
-## Lecon 11.4 — Human-in-the-Loop : garde le controle sur ton agent
+## Leçon 11.4 — Human-in-the-Loop : garde le controle sur ton agent
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit interface agent
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit interface agent
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Un agent qui envoie des emails tout seul, ca peut etre utile. Ca peut aussi etre dangereux. Imagine qu'il reponde a un client avec des informations erronees, ou qu'il supprime un contact par erreur. Le Human-in-the-Loop, c'est ton filet de securite : l'agent propose, tu approuves.
 
-**[ECRAN — slide "Le principe"]**
+**[ÉCRAN — slide "Le principe"]**
 
 Sans Human-in-the-Loop :
 1. L'etudiant pose une question
@@ -322,7 +322,7 @@ Avec Human-in-the-Loop :
 
 La difference : tu restes dans la boucle. L'agent fait le travail, tu valides le resultat.
 
-**[ECRAN — screencast OttoKit — activer le Human-in-the-Loop]**
+**[ÉCRAN — screencast OttoKit — activer le Human-in-the-Loop]**
 
 [Ouvre l'agent "Assistant Support Formation"]
 [Navigue vers les parametres / Settings]
@@ -331,7 +331,7 @@ La difference : tu restes dans la boucle. L'agent fait le travail, tu valides le
 
 L'activation est simple. Tu coches une case dans les parametres de l'agent. A partir de maintenant, chaque action de l'agent sera soumise a ton approbation.
 
-**[ECRAN — screencast configuration de la notification]**
+**[ÉCRAN — screencast configuration de la notification]**
 
 [Montre les options de notification : email, dashboard, webhook]
 [Selectionne "Email notification" — tape ton adresse email]
@@ -339,7 +339,7 @@ L'activation est simple. Tu coches une case dans les parametres de l'agent. A pa
 
 Tu choisis comment etre notifie. Par email, c'est le plus courant. Tu recois un message avec la proposition de l'agent et un lien pour approuver ou rejeter.
 
-**[ECRAN — screencast test avec approbation]**
+**[ÉCRAN — screencast test avec approbation]**
 
 [Ouvre l'interface de test de l'agent]
 [Tape : "Envoie un email de bienvenue a nouvel-eleve@test.com"]
@@ -348,7 +348,7 @@ Tu choisis comment etre notifie. Par email, c'est le plus courant. Tu recois un 
 
 L'agent a prepare l'email. Mais au lieu de l'envoyer, il attend ton approbation. Tu vois le statut "En attente" dans l'interface.
 
-**[ECRAN — screencast approbation dans le dashboard]**
+**[ÉCRAN — screencast approbation dans le dashboard]**
 
 [Montre la notification dans le dashboard OttoKit — ou dans l'email recu]
 [Montre le detail de l'action proposee : destinataire, objet, contenu de l'email]
@@ -361,7 +361,7 @@ Tu vois exactement ce que l'agent veut faire avant qu'il le fasse. Tu peux appro
 
 Si tu rejetes, l'action est annulee. L'agent ne fait rien.
 
-**[ECRAN — slide "Quand activer le Human-in-the-Loop"]**
+**[ÉCRAN — slide "Quand activer le Human-in-the-Loop"]**
 
 | Scenario | Human-in-the-Loop |
 |---|---|
@@ -373,7 +373,7 @@ Si tu rejetes, l'action est annulee. L'agent ne fait rien.
 
 La regle : si l'action est visible par tes clients ou modifie des donnees sensibles, active l'approbation. Tu pourras la desactiver plus tard quand tu seras confiant.
 
-**[ECRAN — slide "L'agent apprend de tes corrections"]**
+**[ÉCRAN — slide "L'agent apprend de tes corrections"]**
 
 Chaque fois que tu approuves ou rejetes une action, tu donnes un signal a l'agent. Avec le temps :
 
@@ -383,7 +383,7 @@ Chaque fois que tu approuves ou rejetes une action, tu donnes un signal a l'agen
 
 C'est une montee en competence progressive. Tu ne passes pas de "controle total" a "confiance aveugle". Tu augmentes la liberte de l'agent graduellement.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Ton agent est sous controle. Tu sais exactement ce qu'il fait avant qu'il le fasse. Dans la prochaine lecon, on passe a un sujet different : le MCP, le protocole qui permet a Claude ou ChatGPT de piloter OttoKit directement.
 
@@ -403,19 +403,19 @@ Ton agent est sous controle. Tu sais exactement ce qu'il fait avant qu'il le fas
 
 ---
 
-## Lecon 11.5 — MCP (Model Context Protocol) : connecte Claude et ChatGPT
+## Leçon 11.5 — MCP (Model Context Protocol) : connecte Claude et ChatGPT
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides explicatifs, schema d'architecture
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides explicatifs, schema d'architecture
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Tu utilises peut-etre Claude, ChatGPT ou Cursor pour travailler. Et tu utilises OttoKit pour automatiser ton WordPress. Jusqu'ici, ce sont deux mondes separes. Le MCP — Model Context Protocol — cree un pont entre les deux. Ton LLM peut appeler OttoKit directement.
 
-**[ECRAN — slide "Le probleme actuel"]**
+**[ÉCRAN — slide "Le probleme actuel"]**
 
 Aujourd'hui, si tu veux publier un article sur WordPress depuis Claude :
 
@@ -428,7 +428,7 @@ Aujourd'hui, si tu veux publier un article sur WordPress depuis Claude :
 
 Six etapes manuelles. Le MCP reduit ca a une seule commande.
 
-**[ECRAN — slide "MCP — le protocole universel"]**
+**[ÉCRAN — slide "MCP — le protocole universel"]**
 
 MCP signifie **Model Context Protocol**. C'est un standard ouvert cree par Anthropic. Son role : permettre a un LLM (Claude, ChatGPT, Cursor) de communiquer avec des outils externes.
 
@@ -439,7 +439,7 @@ Concretement, MCP definit :
 
 C'est un langage commun entre les IA et les outils.
 
-**[ECRAN — schema d'architecture MCP]**
+**[ÉCRAN — schema d'architecture MCP]**
 
 ```
   Claude / ChatGPT / Cursor
@@ -455,7 +455,7 @@ C'est un langage commun entre les IA et les outils.
 
 Le LLM envoie une requete au serveur MCP d'OttoKit. Le serveur MCP traduit cette requete en actions OttoKit. OttoKit execute les actions sur tes apps connectees.
 
-**[ECRAN — slide "Ce que ca change"]**
+**[ÉCRAN — slide "Ce que ca change"]**
 
 Avec MCP, tu peux dire a Claude :
 
@@ -465,7 +465,7 @@ Avec MCP, tu peux dire a Claude :
 
 Et Claude le fait. Pas en copiant-collant. En appelant directement OttoKit.
 
-**[ECRAN — slide "OttoKit comme serveur MCP"]**
+**[ÉCRAN — slide "OttoKit comme serveur MCP"]**
 
 OttoKit propose un serveur MCP natif. Ca signifie :
 
@@ -476,7 +476,7 @@ OttoKit propose un serveur MCP natif. Ca signifie :
 
 Les 1 300+ integrations d'OttoKit deviennent accessibles depuis ton LLM.
 
-**[ECRAN — slide "Qui supporte MCP ?"]**
+**[ÉCRAN — slide "Qui supporte MCP ?"]**
 
 | Outil | Support MCP |
 |---|---|
@@ -488,7 +488,7 @@ Les 1 300+ integrations d'OttoKit deviennent accessibles depuis ton LLM.
 
 Le support s'elargit rapidement. Anthropic a cree MCP comme un standard ouvert — tout le monde peut l'adopter.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Tu comprends ce que MCP apporte : ton IA pilote tes outils directement. Dans la prochaine lecon, on configure le serveur MCP dans OttoKit et on connecte un LLM.
 
@@ -508,19 +508,19 @@ Tu comprends ce que MCP apporte : ton IA pilote tes outils directement. Dans la 
 
 ---
 
-## Lecon 11.6 — Configure un MCP server OttoKit
+## Leçon 11.6 — Configure un MCP server OttoKit
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit + Claude Desktop
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit + Claude Desktop
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 On passe a la pratique. Tu vas activer le serveur MCP dans OttoKit, recuperer l'URL de connexion, et la brancher sur Claude Desktop. A la fin de cette lecon, tu pourras publier sur WordPress directement depuis Claude.
 
-**[ECRAN — screencast OttoKit — activer le Developer Mode]**
+**[ÉCRAN — screencast OttoKit — activer le Developer Mode]**
 
 [Ouvre OttoKit — app.ottokit.com]
 [Va dans Settings / Reglages]
@@ -529,7 +529,7 @@ On passe a la pratique. Tu vas activer le serveur MCP dans OttoKit, recuperer l'
 
 Premiere etape : active le mode developpeur. C'est necessaire pour acceder aux fonctionnalites MCP. Le mode developpeur ne change rien a tes workflows existants — il ajoute des options supplementaires.
 
-**[ECRAN — screencast OttoKit — creation du serveur MCP]**
+**[ÉCRAN — screencast OttoKit — creation du serveur MCP]**
 
 [Navigue vers la section "MCP" ou "MCP Servers"]
 [Clique sur "Create MCP Server" ou "New Server"]
@@ -537,7 +537,7 @@ Premiere etape : active le mode developpeur. C'est necessaire pour acceder aux f
 
 On cree un serveur MCP. C'est ce serveur qui exposera tes actions OttoKit aux LLM.
 
-**[ECRAN — screencast OttoKit — selection des outils]**
+**[ÉCRAN — screencast OttoKit — selection des outils]**
 
 [Montre la liste des outils/actions que tu peux exposer via MCP]
 [Selectionne : "WordPress — Create Post"]
@@ -547,14 +547,14 @@ On cree un serveur MCP. C'est ce serveur qui exposera tes actions OttoKit aux LL
 
 Tu choisis quels outils rendre accessibles. Ne coche pas tout — selectionne uniquement ce que tu veux que le LLM puisse faire. C'est le meme principe que les permissions d'un agent : le minimum necessaire.
 
-**[ECRAN — screencast OttoKit — copie de l'URL MCP]**
+**[ÉCRAN — screencast OttoKit — copie de l'URL MCP]**
 
 [Montre l'URL du serveur MCP generee par OttoKit]
 [Copie l'URL — format : https://app.ottokit.com/mcp/xxx-xxx-xxx]
 
 OttoKit te donne une URL unique. C'est l'adresse de ton serveur MCP. Tu vas la coller dans ton LLM.
 
-**[ECRAN — screencast Claude Desktop — configuration]**
+**[ÉCRAN — screencast Claude Desktop — configuration]**
 
 [Ouvre Claude Desktop]
 [Va dans Settings > MCP Servers (ou le fichier de configuration)]
@@ -574,7 +574,7 @@ OttoKit te donne une URL unique. C'est l'adresse de ton serveur MCP. Tu vas la c
 
 Dans Claude Desktop, tu ajoutes le serveur MCP dans la configuration. Le format est simple : un nom et une URL. Apres redemarrage, Claude voit les outils OttoKit.
 
-**[ECRAN — screencast Claude Desktop — verification]**
+**[ÉCRAN — screencast Claude Desktop — verification]**
 
 [Ouvre une nouvelle conversation dans Claude]
 [Montre l'icone ou l'indicateur MCP qui confirme la connexion]
@@ -582,7 +582,7 @@ Dans Claude Desktop, tu ajoutes le serveur MCP dans la configuration. Le format 
 
 Claude affiche les outils connectes. Tu vois les trois actions qu'on a configurees. Tout est pret.
 
-**[ECRAN — screencast Claude Desktop — test reel]**
+**[ÉCRAN — screencast Claude Desktop — test reel]**
 
 [Tape dans Claude : "Cree un brouillon d'article WordPress avec le titre 'Les 5 meilleurs plugins LMS en 2026' dans la categorie LMS"]
 [Montre Claude qui appelle l'outil OttoKit]
@@ -594,7 +594,7 @@ Claude envoie la commande au serveur MCP. OttoKit cree l'article en brouillon su
 
 Et voila le brouillon dans WordPress. Titre, categorie, tout est la.
 
-**[ECRAN — slide "MCP + Claude Code"]**
+**[ÉCRAN — slide "MCP + Claude Code"]**
 
 Pour les utilisateurs techniques : Claude Code supporte aussi MCP. Tu peux ajouter le serveur OttoKit dans ton fichier `.mcp.json` :
 
@@ -608,7 +608,7 @@ Pour les utilisateurs techniques : Claude Code supporte aussi MCP. Tu peux ajout
 
 Depuis le terminal, tu peux alors dire a Claude Code : "Publie cet article sur WordPress" — et il le fait via OttoKit. C'est exactement ce qu'on utilise chez schoolsWP pour automatiser la publication.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Ton serveur MCP est en place. Claude peut maintenant piloter OttoKit. Dans la prochaine lecon, on explore trois cas d'usage concrets d'AI Agents pour ton business WordPress.
 
@@ -628,19 +628,19 @@ Ton serveur MCP est en place. Claude peut maintenant piloter OttoKit. Dans la pr
 
 ---
 
-## Lecon 11.7 — Cas d'usage AI : agent support, agent contenu, agent SEO
+## Leçon 11.7 — Cas d'usage AI : agent support, agent contenu, agent SEO
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides cas d'usage, screencast rapide
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides cas d'usage, screencast rapide
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Tu sais creer un agent et configurer MCP. Maintenant la question qui compte : qu'est-ce que tu en fais concretement ? Voici trois agents que tu peux deployer des aujourd'hui pour ton business WordPress.
 
-**[ECRAN — slide "Cas 1 : Agent Support Formateur"]**
+**[ÉCRAN — slide "Cas 1 : Agent Support Formateur"]**
 
 **Le probleme** : tes etudiants posent les memes questions par email. Acces au cours, telecharger le certificat, probleme de paiement. Tu passes 2 heures par semaine a repondre manuellement.
 
@@ -652,14 +652,14 @@ Tu sais creer un agent et configurer MCP. Maintenant la question qui compte : qu
 
 **Le resultat** : les questions FAQ sont traitees automatiquement. Tu n'interviens que sur les cas complexes. Tu recuperes 2 heures par semaine.
 
-**[ECRAN — screencast rapide — structure de l'agent support]**
+**[ÉCRAN — screencast rapide — structure de l'agent support]**
 
 [Montre un agent configure avec : Gmail (lecture + envoi), Google Sheets (lecture FAQ), Human-in-the-Loop actif]
 [Montre un exemple de conversation test]
 
 Voici a quoi ressemble l'agent dans OttoKit. Les outils, les permissions, le prompt. Tout ce qu'on a vu dans les lecons precedentes, assemble pour un cas reel.
 
-**[ECRAN — slide "Cas 2 : Agent Contenu"]**
+**[ÉCRAN — slide "Cas 2 : Agent Contenu"]**
 
 **Le probleme** : tu veux publier regulierement sur ton blog, mais la creation de contenu prend du temps. Brief, redaction, mise en forme, publication.
 
@@ -671,7 +671,7 @@ Voici a quoi ressemble l'agent dans OttoKit. Les outils, les permissions, le pro
 
 **Le resultat** : chaque lundi, un brouillon d'article t'attend dans WordPress. Tu relis, tu ajustes, tu publies. Le temps de creation passe de 3 heures a 30 minutes.
 
-**[ECRAN — slide "Cas 3 : Agent SEO"]**
+**[ÉCRAN — slide "Cas 3 : Agent SEO"]**
 
 **Le probleme** : tu ne sais pas quels articles optimiser en priorite. Tu voudrais un assistant qui analyse tes contenus et te dise ou agir.
 
@@ -683,7 +683,7 @@ Voici a quoi ressemble l'agent dans OttoKit. Les outils, les permissions, le pro
 
 **Le resultat** : chaque mois, tu recois un rapport clair avec les 5 articles a optimiser. Tu sais exactement ou concentrer tes efforts.
 
-**[ECRAN — slide "Quel agent pour toi ?"]**
+**[ÉCRAN — slide "Quel agent pour toi ?"]**
 
 | Ton besoin | L'agent recommande |
 |---|---|
@@ -694,7 +694,7 @@ Voici a quoi ressemble l'agent dans OttoKit. Les outils, les permissions, le pro
 
 Commence par un seul agent. Celui qui resout ton plus gros probleme de temps. Ajoute les autres quand le premier est stable.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Trois agents, trois problemes resolus. Mais attention : un agent n'est pas toujours la bonne solution. Dans la prochaine lecon, on voit quand utiliser un agent et quand un simple workflow suffit.
 
@@ -714,19 +714,19 @@ Trois agents, trois problemes resolus. Mais attention : un agent n'est pas toujo
 
 ---
 
-## Lecon 11.8 — Agent vs workflow : quand utiliser lequel
+## Leçon 11.8 — Agent vs workflow : quand utiliser lequel
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides arbre de decision
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides arbre de decision
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
 Les AI Agents sont puissants. Mais ils ne remplacent pas les workflows. Chaque outil a son domaine. Utiliser un agent la ou un workflow suffit, c'est gaspiller des tasks et ajouter de l'imprevisibilite. Utiliser un workflow la ou un agent est necessaire, c'est passer des heures a gerer des cas particuliers. On va clarifier ca.
 
-**[ECRAN — slide "L'arbre de decision"]**
+**[ÉCRAN — slide "L'arbre de decision"]**
 
 Pose-toi ces trois questions :
 
@@ -744,7 +744,7 @@ Pose-toi ces trois questions :
 
 Trois questions, une reponse claire.
 
-**[ECRAN — slide "Exemples — Workflow"]**
+**[ÉCRAN — slide "Exemples — Workflow"]**
 
 Ces cas ne necessitent pas d'agent :
 
@@ -758,7 +758,7 @@ Ces cas ne necessitent pas d'agent :
 
 Le point commun : les etapes sont connues a l'avance. Le resultat est previsible.
 
-**[ECRAN — slide "Exemples — Agent"]**
+**[ÉCRAN — slide "Exemples — Agent"]**
 
 Ces cas necessitent un agent :
 
@@ -772,11 +772,11 @@ Ces cas necessitent un agent :
 
 Le point commun : les inputs varient, et la bonne action depend du contexte.
 
-**[ECRAN — slide "Le cout en tasks"]**
+**[ÉCRAN — slide "Le cout en tasks"]**
 
 Un detail financier important :
 
-- **Workflow** : 1 task par etape executee. Un workflow de 5 etapes = 5 tasks.
+- **Workflow** : 1 task par étape executee. Un workflow de 5 etapes = 5 tasks.
 - **Agent** : 1 task par action de l'agent, mais l'agent peut faire plusieurs tentatives, consulter plusieurs outils. Un agent qui repond a un email peut consommer 3 a 10 tasks.
 
 Sur un plan avec 1 000 tasks par mois :
@@ -785,7 +785,7 @@ Sur un plan avec 1 000 tasks par mois :
 
 Les agents consomment plus. Utilise-les quand la valeur ajoutee le justifie.
 
-**[ECRAN — slide "La regle des 80/20"]**
+**[ÉCRAN — slide "La regle des 80/20"]**
 
 En pratique, pour la plupart des business WordPress :
 
@@ -794,7 +794,7 @@ En pratique, pour la plupart des business WordPress :
 
 Commence par automatiser les 80% avec des workflows. Puis identifie les 20% ou un agent apporte une vraie valeur.
 
-**[ECRAN — slide "Checklist de decision"]**
+**[ÉCRAN — slide "Checklist de decision"]**
 
 Avant de creer un agent, verifie :
 
@@ -806,7 +806,7 @@ Avant de creer un agent, verifie :
 
 Si tu reponds "oui" a tout, cree l'agent. Sinon, reste sur un workflow.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
 Le Module 11 est termine. Tu sais creer des agents, leur donner des outils, garder le controle avec le Human-in-the-Loop, configurer MCP, et surtout choisir le bon outil au bon moment. Passe au quiz pour valider tout ca.
 
@@ -852,11 +852,11 @@ Le Module 11 est termine. Tu sais creer des agents, leur donner des outils, gard
 - Google Sheet "FAQ Support" avec colonnes : Question, Reponse, Categorie (10+ lignes)
 - Compte Gmail connecte a OttoKit
 - Site WordPress schoolsWP avec TutorLMS (au moins 1 cours et 1 etudiant)
-- Claude Desktop installe avec support MCP
-- Fichier de configuration MCP local (`.claude/mcp.json` ou equivalent)
+- Claude Desktop installé avec support MCP
+- Fichier de configuration MCP local (`.claude/mcp.json` ou équivalent)
 
-### Duree estimee par lecon (hors quiz)
-| Lecon | Duree video |
+### Durée estimée par leçon (hors quiz)
+| Leçon | Durée vidéo |
 |-------|-------------|
 | 11.1 | 6 min |
 | 11.2 | 8 min |

@@ -1,61 +1,61 @@
-# Scripts video — Module 13 : Webhooks et connexions externes
+# Scripts vidéo — Module 13 : Webhooks et connexions externes
 
-**Formation** : Maitriser FluentCRM
+**Formation** : Maîtriser FluentCRM
 **Module** : M13 — Webhooks et connexions externes (Premium)
-**Lecons** : 6 videos + 1 exercice + 1 quiz
-**Duree totale** : ~50 min
-**Prerequis** : M6 (automations de base), M7 (automation avancee)
+**Leçons** : 6 vidéos + 1 exercice + 1 quiz
+**Durée totale** : ~50 min
+**Prérequis** : M6 (automations de base), M7 (automation avancée)
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 13.1 — Comprends les webhooks : incoming vs outgoing
+### Leçon 13.1 — Comprends les webhooks : incoming vs outgoing
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu utilises FluentCRM pour gerer tes contacts et tes automations. Mais ton business ne vit pas uniquement dans FluentCRM. Tu as des formulaires sur d'autres plateformes, un outil de paiement, peut-etre un CRM externe ou un tableau de bord Google Sheets. Et ces outils ne se parlent pas entre eux — sauf si tu les connectes. Les webhooks sont le pont entre FluentCRM et le reste de ton ecosysteme. Dans cette lecon, tu comprends ce que c'est, comment ca fonctionne, et la difference entre les deux types : incoming et outgoing.
+Tu utilises FluentCRM pour gérer tes contacts et tes automations. Mais ton business ne vit pas uniquement dans FluentCRM. Tu as des formulaires sur d'autres plateformes, un outil de paiement, peut-être un CRM externe ou un tableau de bord Google Sheets. Et ces outils ne se parlent pas entre eux — sauf si tu les connectes. Les webhooks sont le pont entre FluentCRM et le reste de ton écosystème. Dans cette leçon, tu comprends ce que c'est, comment ça fonctionne, et la différence entre les deux types : incoming et outgoing.
 
-**[ECRAN — slide "Qu'est-ce qu'un webhook ?"]**
+**[ÉCRAN — slide "Qu'est-ce qu'un webhook ?"]**
 
-[Montre un schema simple : Outil A → fleche → Outil B]
+[Montre un schéma simple : Outil A → flèche → Outil B]
 
-Etape 1 : un webhook, c'est un message HTTP envoye automatiquement d'un outil a un autre quand un evenement se produit. Pas de synchronisation periodique, pas de fichier CSV a exporter. L'evenement arrive, le message part instantanement.
+Étape 1 : un webhook, c'est un message HTTP envoyé automatiquement d'un outil à un autre quand un événement se produit. Pas de synchronisation périodique, pas de fichier CSV à exporter. L'événement arrive, le message part instantanément.
 
-Concretement : un client achete sur WooCommerce → WooCommerce envoie un webhook → FluentCRM recoit le message et ajoute le contact avec le bon tag. Tout ca en temps reel, sans intervention manuelle.
+Concrètement : un client achète sur WooCommerce → WooCommerce envoie un webhook → FluentCRM reçoit le message et ajoute le contact avec le bon tag. Tout ça en temps réel, sans intervention manuelle.
 
-**[ECRAN — slide "Incoming vs Outgoing"]**
+**[ÉCRAN — slide "Incoming vs Outgoing"]**
 
-[Montre un schema avec deux fleches : une entrante, une sortante, FluentCRM au centre]
+[Montre un schéma avec deux flèches : une entrante, une sortante, FluentCRM au centre]
 
-Etape 2 : il existe deux types de webhooks dans FluentCRM.
+Étape 2 : il existe deux types de webhooks dans FluentCRM.
 
-Incoming webhook — FluentCRM recoit des donnees. Un outil externe envoie une requete HTTP vers une URL unique generee par FluentCRM. Cas typique : un formulaire Typeform envoie les soumissions a FluentCRM pour creer un contact.
+Incoming webhook — FluentCRM reçoit des données. Un outil externe envoie une requête HTTP vers une URL unique générée par FluentCRM. Cas typique : un formulaire Typeform envoie les soumissions à FluentCRM pour créer un contact.
 
-Outgoing webhook — FluentCRM envoie des donnees. Quand un evenement se produit dans FluentCRM (tag ajoute, automation declenchee), il envoie un payload JSON vers un outil externe. Cas typique : un contact atteint un certain score → FluentCRM envoie ses infos a n8n pour declencher une alerte Telegram.
+Outgoing webhook — FluentCRM envoie des données. Quand un événement se produit dans FluentCRM (tag ajouté, automation déclenchée), il envoie un payload JSON vers un outil externe. Cas typique : un contact atteint un certain score → FluentCRM envoie ses infos à n8n pour déclencher une alerte Telegram.
 
-**[ECRAN — slide "Quand utiliser quoi"]**
+**[ÉCRAN — slide "Quand utiliser quoi"]**
 
-[Montre un tableau avec 3 colonnes : Scenario, Type, Exemple]
+[Montre un tableau avec 3 colonnes : Scénario, Type, Exemple]
 
-Etape 3 : voici comment choisir.
+Étape 3 : voici comment choisir.
 
-Tu veux que des donnees entrent dans FluentCRM depuis un outil externe ? Incoming webhook. Exemples : formulaire externe, plateforme de paiement, outil de scraping.
+Tu veux que des données entrent dans FluentCRM depuis un outil externe ? Incoming webhook. Exemples : formulaire externe, plateforme de paiement, outil de scraping.
 
-Tu veux que FluentCRM notifie un outil externe quand quelque chose se passe ? Outgoing webhook. Exemples : alerte Telegram, mise a jour Google Sheets, creation de tache dans un outil de gestion.
+Tu veux que FluentCRM notifie un outil externe quand quelque chose se passe ? Outgoing webhook. Exemples : alerte Telegram, mise à jour Google Sheets, création de tâche dans un outil de gestion.
 
-Tu veux les deux ? Combine les deux. C'est ce qu'on fait avec n8n dans les lecons suivantes.
+Tu veux les deux ? Combine les deux. C'est ce qu'on fait avec n8n dans les leçons suivantes.
 
-**[ECRAN — slide "Anatomie d'un webhook"]**
+**[ÉCRAN — slide "Anatomie d'un webhook"]**
 
 [Montre un exemple de payload JSON simplifie]
 
-Etape 4 : techniquement, un webhook c'est une requete HTTP POST qui transporte un payload JSON. Voici a quoi ca ressemble :
+Étape 4 : techniquement, un webhook c'est une requête HTTP POST qui transporte un payload JSON. Voici a quoi ca ressemble :
 
 ```json
 {
@@ -66,155 +66,155 @@ Etape 4 : techniquement, un webhook c'est une requete HTTP POST qui transporte u
 }
 ```
 
-Tu n'as pas besoin de coder pour utiliser les webhooks — FluentCRM et les outils comme n8n gerent la partie technique. Mais comprendre cette structure t'aide a debugger quand quelque chose ne fonctionne pas.
+Tu n'as pas besoin de coder pour utiliser les webhooks — FluentCRM et les outils comme n8n gèrent la partie technique. Mais comprendre cette structure t'aide à débugger quand quelque chose ne fonctionne pas.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant ce qu'est un webhook et quand utiliser incoming ou outgoing. Ce sont les deux mecanismes qui permettent a FluentCRM de communiquer avec n'importe quel outil externe. Dans la prochaine lecon, tu configures ton premier incoming webhook — pour recevoir des donnees dans FluentCRM depuis l'exterieur.
-
----
-
-**Points cles** :
-- Webhook = message HTTP automatique envoye quand un evenement se produit
-- Incoming webhook : FluentCRM recoit des donnees depuis un outil externe
-- Outgoing webhook : FluentCRM envoie des donnees vers un outil externe
-- Le payload est au format JSON — structure cle-valeur
-- Pas besoin de coder — les outils gerent la partie technique
-
-**Mots cles SEO** : FluentCRM webhook, incoming webhook FluentCRM, outgoing webhook FluentCRM, connecter FluentCRM outils externes, webhook WordPress CRM
+Tu sais maintenant ce qu'est un webhook et quand utiliser incoming ou outgoing. Ce sont les deux mécanismes qui permettent à FluentCRM de communiquer avec n'importe quel outil externe. Dans la prochaine leçon, tu configures ton premier incoming webhook — pour recevoir des données dans FluentCRM depuis l'extérieur.
 
 ---
 
-### Lecon 13.2 — Configure un incoming webhook (recois des donnees externes)
+**Points clés** :
+- Webhook = message HTTP automatique envoyé quand un événement se produit
+- Incoming webhook : FluentCRM reçoit des données depuis un outil externe
+- Outgoing webhook : FluentCRM envoie des données vers un outil externe
+- Le payload est au format JSON — structure clé-valeur
+- Pas besoin de coder — les outils gèrent la partie technique
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM
+**Mots clés SEO** : FluentCRM webhook, incoming webhook FluentCRM, outgoing webhook FluentCRM, connecter FluentCRM outils externes, webhook WordPress CRM
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 13.2 — Configure un incoming webhook (reçois des données externes)
 
-Un formulaire Typeform, une page de paiement Stripe, un outil de scraping — tous ces outils peuvent envoyer des donnees a FluentCRM. La condition : que FluentCRM expose une URL capable de recevoir ces donnees. C'est exactement ce que fait l'incoming webhook. Dans cette lecon, tu en configures un de A a Z, avec le mapping des champs et la securisation par secret key.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM
 
-**[ECRAN — screencast FluentCRM > Settings > Incoming Webhooks]**
+---
+
+**[INTRO — face caméra]**
+
+Un formulaire Typeform, une page de paiement Stripe, un outil de scraping — tous ces outils peuvent envoyer des données à FluentCRM. La condition : que FluentCRM expose une URL capable de recevoir ces données. C'est exactement ce que fait l'incoming webhook. Dans cette leçon, tu en configures un de A à Z, avec le mapping des champs et la sécurisation par secret key.
+
+**[ÉCRAN — screencast FluentCRM > Settings > Incoming Webhooks]**
 
 [Navigation vers FluentCRM > Settings > Incoming Webhooks]
 
-Etape 1 : va dans FluentCRM, puis Settings, puis cherche la section "Incoming Webhooks" ou "REST API". Selon ta version de FluentCRM, l'emplacement exact peut varier. Tu cherches l'option qui te permet de creer une URL de reception de donnees.
+Étape 1 : va dans FluentCRM, puis Settings, puis cherche la section "Incoming Webhooks" ou "REST API". Selon ta version de FluentCRM, l'emplacement exact peut varier. Tu cherches l'option qui te permet de créer une URL de réception de données.
 
-[Montre le bouton "Create Webhook" ou equivalent]
+[Montre le bouton "Create Webhook" ou équivalent]
 
-Etape 2 : cree un nouveau webhook. Donne-lui un nom descriptif — par exemple "Typeform - Inscription Newsletter" ou "Stripe - Achat Cours LMS". Ce nom est interne, il te sert a identifier quel outil envoie des donnees vers ce point d'entree.
+Étape 2 : crée un nouveau webhook. Donne-lui un nom descriptif — par exemple "Typeform - Inscription Newsletter" ou "Stripe - Achat Cours LMS". Ce nom est interne, il te sert à identifier quel outil envoie des données vers ce point d'entrée.
 
-**[ECRAN — screencast URL du webhook]**
+**[ÉCRAN — screencast URL du webhook]**
 
-[Montre l'URL generee par FluentCRM]
+[Montre l'URL générée par FluentCRM]
 
-Etape 3 : FluentCRM genere une URL unique. Elle ressemble a ca :
+Étape 3 : FluentCRM génère une URL unique. Elle ressemble à ça :
 
 ```
 https://tonsite.com/?fluentcrm=1&route=contact&hash=abc123xyz
 ```
 
-Cette URL est le point d'entree. Tout outil qui envoie une requete POST vers cette URL peut creer ou mettre a jour un contact dans FluentCRM. Note cette URL — tu la colles dans l'outil externe a l'etape suivante.
+Cette URL est le point d'entrée. Tout outil qui envoie une requête POST vers cette URL peut créer ou mettre à jour un contact dans FluentCRM. Note cette URL — tu la colles dans l'outil externe à l'étape suivante.
 
-**[ECRAN — screencast mapping des champs]**
+**[ÉCRAN — screencast mapping des champs]**
 
 [Montre l'interface de mapping]
 
-Etape 4 : configure le mapping des champs. FluentCRM doit savoir a quoi correspond chaque donnee recue. Le champ "email" de l'outil externe correspond au champ "Email" de FluentCRM. Le champ "name" correspond a "First Name". Si l'outil externe envoie des champs personnalises, tu les mappes vers des custom fields FluentCRM.
+Étape 4 : configure le mapping des champs. FluentCRM doit savoir à quoi correspond chaque donnée reçue. Le champ "email" de l'outil externe correspond au champ "Email" de FluentCRM. Le champ "name" correspond à "First Name". Si l'outil externe envoie des champs personnalisés, tu les mappes vers des custom fields FluentCRM.
 
 [Montre le mapping email → Email, name → First Name, phone → Phone]
 
-Les champs standards sont mappes automatiquement si les noms correspondent. Pour les champs non standards, tu fais le mapping manuellement.
+Les champs standards sont mappés automatiquement si les noms correspondent. Pour les champs non standards, tu fais le mapping manuellement.
 
-**[ECRAN — screencast configuration liste et tags]**
+**[ÉCRAN — screencast configuration liste et tags]**
 
 [Montre les options d'assignation automatique]
 
-Etape 5 : configure les actions automatiques. A chaque donnee recue, FluentCRM peut automatiquement assigner le contact a une liste et lui poser des tags. Par exemple : liste "Leads Typeform", tag "source-typeform". Ca te permet de segmenter immediatement les contacts selon leur source d'acquisition.
+Étape 5 : configure les actions automatiques. À chaque donnée reçue, FluentCRM peut automatiquement assigner le contact à une liste et lui poser des tags. Par exemple : liste "Leads Typeform", tag "source-typeform". Ça te permet de segmenter immédiatement les contacts selon leur source d'acquisition.
 
 [Configure la liste et les tags]
 
-**[ECRAN — screencast secret key]**
+**[ÉCRAN — screencast secret key]**
 
 [Montre le champ "Secret Key" ou "Authentication"]
 
-Etape 6 : securise le webhook avec une secret key. Sans cette cle, n'importe qui connaissant ton URL pourrait injecter des contacts dans ta base. La secret key est un parametre supplementaire que l'outil externe doit inclure dans sa requete. Si la cle ne correspond pas, FluentCRM rejette la donnee.
+Étape 6 : sécurise le webhook avec une secret key. Sans cette clé, n'importe qui connaissant ton URL pourrait injecter des contacts dans ta base. La secret key est un paramètre supplémentaire que l'outil externe doit inclure dans sa requête. Si la clé ne correspond pas, FluentCRM rejette la donnée.
 
-[Montre ou copier la secret key]
+[Montre où copier la secret key]
 
-Copie cette cle et ajoute-la dans la configuration du webhook cote outil externe. La plupart des outils (Typeform, Zapier, n8n) ont un champ dedie pour ca.
+Copie cette clé et ajoute-la dans la configuration du webhook côté outil externe. La plupart des outils (Typeform, Zapier, n8n) ont un champ dédié pour ça.
 
-**[ECRAN — screencast test du webhook]**
+**[ÉCRAN — screencast test du webhook]**
 
-[Montre un test avec un outil comme Postman ou le test integre]
+[Montre un test avec un outil comme Postman ou le test intégré]
 
-Etape 7 : teste le webhook avant de le mettre en production. Envoie une requete de test avec des donnees fictives. Verifie que le contact apparait dans FluentCRM avec les bons champs, la bonne liste et les bons tags.
+Étape 7 : teste le webhook avant de le mettre en production. Envoie une requête de test avec des données fictives. Vérifie que le contact apparaît dans FluentCRM avec les bons champs, la bonne liste et les bons tags.
 
-[Montre le contact cree dans FluentCRM apres le test]
+[Montre le contact créé dans FluentCRM après le test]
 
-Si le contact n'apparait pas, verifie trois choses : l'URL est correcte, la secret key est incluse, et le format JSON est valide.
+Si le contact n'apparaît pas, vérifie trois choses : l'URL est correcte, la secret key est incluse, et le format JSON est valide.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Ton incoming webhook est en place. FluentCRM peut maintenant recevoir des donnees depuis n'importe quel outil externe. Dans la prochaine lecon, on fait l'inverse : configurer un outgoing webhook pour que FluentCRM envoie des donnees vers l'exterieur.
+Ton incoming webhook est en place. FluentCRM peut maintenant recevoir des données depuis n'importe quel outil externe. Dans la prochaine leçon, on fait l'inverse : configurer un outgoing webhook pour que FluentCRM envoie des données vers l'extérieur.
 
 ---
 
-**Points cles** :
-- Incoming webhook = URL unique generee par FluentCRM pour recevoir des donnees externes
+**Points clés** :
+- Incoming webhook = URL unique générée par FluentCRM pour recevoir des données externes
 - Mapping des champs : associer les champs de l'outil externe aux champs FluentCRM
-- Actions automatiques : assigner liste et tags a chaque contact recu
-- Secret key : securiser le webhook pour empecher les injections non autorisees
-- Toujours tester avec des donnees fictives avant la mise en production
+- Actions automatiques : assigner liste et tags à chaque contact reçu
+- Secret key : sécuriser le webhook pour empêcher les injections non autorisées
+- Toujours tester avec des données fictives avant la mise en production
 
-**Mots cles SEO** : FluentCRM incoming webhook, recevoir donnees FluentCRM, webhook FluentCRM configuration, connecter Typeform FluentCRM, FluentCRM REST API
-
----
-
-### Lecon 13.3 — Configure un outgoing webhook (envoie des donnees)
-
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM
+**Mots clés SEO** : FluentCRM incoming webhook, recevoir données FluentCRM, webhook FluentCRM configuration, connecter Typeform FluentCRM, FluentCRM REST API
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 13.3 — Configure un outgoing webhook (envoie des données)
 
-FluentCRM sait maintenant recevoir des donnees. L'autre direction est tout aussi importante : envoyer des donnees vers l'exterieur quand un evenement se produit. Un contact atteint un score de 50 points → tu veux une alerte. Un tag "acheteur" est pose → tu veux mettre a jour un Google Sheet. C'est le role de l'outgoing webhook — et il se configure directement dans le builder d'automation.
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM
 
-**[ECRAN — screencast FluentCRM > Automations > Nouveau]**
+---
+
+**[INTRO — face caméra]**
+
+FluentCRM sait maintenant recevoir des données. L'autre direction est tout aussi importante : envoyer des données vers l'extérieur quand un événement se produit. Un contact atteint un score de 50 points → tu veux une alerte. Un tag "acheteur" est posé → tu veux mettre à jour un Google Sheet. C'est le rôle de l'outgoing webhook — et il se configure directement dans le builder d'automation.
+
+**[ÉCRAN — screencast FluentCRM > Automations > Nouveau]**
 
 [Cree une nouvelle automation]
 
-Etape 1 : l'outgoing webhook n'est pas un reglage global — c'est une action dans une automation. Va dans Automations, cree une nouvelle automation. Choisis un trigger adapte a ton cas. Par exemple : "Tag Applied" — quand le tag "lead-qualifie" est pose sur un contact.
+Étape 1 : l'outgoing webhook n'est pas un réglage global — c'est une action dans une automation. Va dans Automations, crée une nouvelle automation. Choisis un trigger adapté à ton cas. Par exemple : "Tag Applied" — quand le tag "lead-qualifié" est posé sur un contact.
 
-[Montre la selection du trigger "Tag Applied"]
+[Montre la sélection du trigger "Tag Applied"]
 
-**[ECRAN — screencast ajout de l'action webhook]**
+**[ÉCRAN — screencast ajout de l'action webhook]**
 
 [Ajoute une action dans le builder]
 
-Etape 2 : dans le builder, ajoute une action. Cherche "Outgoing Webhook" ou "Send HTTP Request" dans la liste des actions disponibles. C'est cette action qui envoie des donnees vers un outil externe.
+Étape 2 : dans le builder, ajoute une action. Cherche "Outgoing Webhook" ou "Send HTTP Request" dans la liste des actions disponibles. C'est cette action qui envoie des données vers un outil externe.
 
 [Montre l'action "Outgoing Webhook" dans la liste]
 
-Etape 3 : configure l'URL de destination. C'est l'URL de l'outil qui va recevoir les donnees — par exemple l'URL d'un webhook n8n, un endpoint Zapier, ou une URL Google Apps Script. Colle l'URL dans le champ prevu.
+Étape 3 : configure l'URL de destination. C'est l'URL de l'outil qui va recevoir les données — par exemple l'URL d'un webhook n8n, un endpoint Zapier, ou une URL Google Apps Script. Colle l'URL dans le champ prévu.
 
 [Montre le champ URL et colle une URL n8n en exemple]
 
-**[ECRAN — screencast configuration du payload]**
+**[ÉCRAN — screencast configuration du payload]**
 
 [Montre les options de payload]
 
-Etape 4 : configure le payload — les donnees que FluentCRM envoie. Par defaut, FluentCRM envoie toutes les informations du contact : email, nom, tags, listes, custom fields, score. Tu peux personnaliser ce payload si tu veux envoyer uniquement certains champs.
+Étape 4 : configure le payload — les données que FluentCRM envoie. Par défaut, FluentCRM envoie toutes les informations du contact : email, nom, tags, listes, custom fields, score. Tu peux personnaliser ce payload si tu veux envoyer uniquement certains champs.
 
-[Montre le payload par defaut avec les champs du contact]
+[Montre le payload par défaut avec les champs du contact]
 
-Voici un exemple de payload envoye par FluentCRM :
+Voici un exemple de payload envoyé par FluentCRM :
 
 ```json
 {
@@ -231,290 +231,290 @@ Voici un exemple de payload envoye par FluentCRM :
 }
 ```
 
-L'outil de destination recoit exactement ces donnees et peut agir en consequence.
+L'outil de destination reçoit exactement ces données et peut agir en conséquence.
 
-**[ECRAN — screencast headers et authentification]**
+**[ÉCRAN — screencast headers et authentification]**
 
-[Montre les options avancees]
+[Montre les options avancées]
 
-Etape 5 : si l'outil de destination exige une authentification, ajoute les headers necessaires. Le plus courant : un header "Authorization" avec un token Bearer, ou un header personnalise avec une API key. Pour n8n en mode webhook basique, aucune authentification n'est necessaire — l'URL suffit.
+Étape 5 : si l'outil de destination exige une authentification, ajoute les headers nécessaires. Le plus courant : un header "Authorization" avec un token Bearer, ou un header personnalisé avec une API key. Pour n8n en mode webhook basique, aucune authentification n'est nécessaire — l'URL suffit.
 
 [Montre l'ajout d'un header Authorization]
 
-**[ECRAN — screencast test de l'automation]**
+**[ÉCRAN — screencast test de l'automation]**
 
 [Active l'automation et teste avec un contact]
 
-Etape 6 : teste l'automation. Prends un contact de test, ajoute-lui le tag declencheur. L'automation doit se declencher, l'outgoing webhook doit envoyer la requete, et l'outil de destination doit recevoir les donnees.
+Étape 6 : teste l'automation. Prends un contact de test, ajoute-lui le tag déclencheur. L'automation doit se déclencher, l'outgoing webhook doit envoyer la requête, et l'outil de destination doit recevoir les données.
 
-[Montre le log de l'automation avec le webhook envoye]
+[Montre le log de l'automation avec le webhook envoyé]
 
-Verifie dans le log de l'automation que l'action webhook a un statut "Success". Si tu vois "Failed", verifie l'URL de destination et les eventuels headers d'authentification.
+Vérifie dans le log de l'automation que l'action webhook a un statut "Success". Si tu vois "Failed", vérifie l'URL de destination et les éventuels headers d'authentification.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-L'outgoing webhook est ton outil pour pousser des donnees depuis FluentCRM vers n'importe quelle destination. Combine-le avec les triggers d'automation et tu peux notifier, synchroniser, alerter en temps reel. Dans la prochaine lecon, on connecte FluentCRM a Zapier via ces memes webhooks.
+L'outgoing webhook est ton outil pour pousser des données depuis FluentCRM vers n'importe quelle destination. Combine-le avec les triggers d'automation et tu peux notifier, synchroniser, alerter en temps réel. Dans la prochaine leçon, on connecte FluentCRM à Zapier via ces mêmes webhooks.
 
 ---
 
-**Points cles** :
-- Outgoing webhook = action dans une automation qui envoie des donnees vers un outil externe
-- Se configure dans le builder d'automation, pas dans les reglages globaux
-- Le payload contient par defaut toutes les infos du contact (email, nom, tags, score)
+**Points clés** :
+- Outgoing webhook = action dans une automation qui envoie des données vers un outil externe
+- Se configure dans le builder d'automation, pas dans les réglages globaux
+- Le payload contient par défaut toutes les infos du contact (email, nom, tags, score)
 - Headers pour l'authentification si l'outil de destination l'exige
-- Toujours verifier le statut "Success" dans les logs d'automation
+- Toujours vérifier le statut "Success" dans les logs d'automation
 
-**Mots cles SEO** : FluentCRM outgoing webhook, envoyer donnees FluentCRM, webhook automation FluentCRM, FluentCRM HTTP request, FluentCRM notification externe
-
----
-
-### Lecon 13.4 — Connecte FluentCRM a Zapier
-
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM + Zapier
+**Mots clés SEO** : FluentCRM outgoing webhook, envoyer données FluentCRM, webhook automation FluentCRM, FluentCRM HTTP request, FluentCRM notification externe
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 13.4 — Connecte FluentCRM à Zapier
 
-Zapier est l'outil d'automatisation le plus connu. Si tu l'utilises deja, tu veux probablement le connecter a FluentCRM. Mauvaise nouvelle : il n'existe pas de connecteur natif FluentCRM dans Zapier. Bonne nouvelle : les webhooks que tu viens de configurer font exactement le meme travail. Dans cette lecon, tu connectes FluentCRM a Zapier dans les deux sens.
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM + Zapier
 
-**[ECRAN — slide "FluentCRM + Zapier : 2 directions"]**
+---
 
-[Montre un schema : FluentCRM ↔ Zapier avec les deux fleches]
+**[INTRO — face caméra]**
 
-Etape 1 : la connexion fonctionne dans les deux sens.
+Zapier est l'outil d'automatisation le plus connu. Si tu l'utilises déjà, tu veux probablement le connecter à FluentCRM. Mauvaise nouvelle : il n'existe pas de connecteur natif FluentCRM dans Zapier. Bonne nouvelle : les webhooks que tu viens de configurer font exactement le même travail. Dans cette leçon, tu connectes FluentCRM à Zapier dans les deux sens.
 
-Zapier vers FluentCRM : Zapier envoie des donnees vers l'incoming webhook de FluentCRM. Cas d'usage : un nouveau lead Calendly → Zapier → FluentCRM.
+**[ÉCRAN — slide "FluentCRM + Zapier : 2 directions"]**
 
-FluentCRM vers Zapier : l'outgoing webhook de FluentCRM envoie des donnees vers un Zap. Cas d'usage : tag "client" pose → FluentCRM → Zapier → ajout dans un Google Sheet.
+[Montre un schéma : FluentCRM ↔ Zapier avec les deux flèches]
 
-**[ECRAN — screencast Zapier > Create Zap > Trigger Webhook]**
+Étape 1 : la connexion fonctionne dans les deux sens.
+
+Zapier vers FluentCRM : Zapier envoie des données vers l'incoming webhook de FluentCRM. Cas d'usage : un nouveau lead Calendly → Zapier → FluentCRM.
+
+FluentCRM vers Zapier : l'outgoing webhook de FluentCRM envoie des données vers un Zap. Cas d'usage : tag "client" posé → FluentCRM → Zapier → ajout dans un Google Sheet.
+
+**[ÉCRAN — screencast Zapier > Create Zap > Trigger Webhook]**
 
 [Cree un nouveau Zap avec le trigger "Webhooks by Zapier"]
 
-Etape 2 : commencons par FluentCRM vers Zapier. Dans Zapier, cree un nouveau Zap. Comme trigger, choisis "Webhooks by Zapier" puis "Catch Hook". Zapier genere une URL unique.
+Étape 2 : commençons par FluentCRM vers Zapier. Dans Zapier, crée un nouveau Zap. Comme trigger, choisis "Webhooks by Zapier" puis "Catch Hook". Zapier génère une URL unique.
 
-[Montre l'URL generee par Zapier]
+[Montre l'URL générée par Zapier]
 
 Copie cette URL. Tu vas la coller dans FluentCRM.
 
-**[ECRAN — screencast FluentCRM > Automation > Outgoing Webhook]**
+**[ÉCRAN — screencast FluentCRM > Automation > Outgoing Webhook]**
 
 [Ouvre l'automation avec l'outgoing webhook]
 
-Etape 3 : dans FluentCRM, ouvre l'automation qui doit envoyer des donnees a Zapier. Ajoute une action "Outgoing Webhook" et colle l'URL Zapier comme destination. Le payload par defaut de FluentCRM suffit — Zapier recevra toutes les infos du contact.
+Étape 3 : dans FluentCRM, ouvre l'automation qui doit envoyer des données à Zapier. Ajoute une action "Outgoing Webhook" et colle l'URL Zapier comme destination. Le payload par défaut de FluentCRM suffit — Zapier recevra toutes les infos du contact.
 
 [Colle l'URL Zapier dans le champ destination]
 
-**[ECRAN — screencast Zapier > Test Trigger]**
+**[ÉCRAN — screencast Zapier > Test Trigger]**
 
 [Teste le trigger dans Zapier]
 
-Etape 4 : retourne dans Zapier et clique sur "Test trigger". Declenche l'automation dans FluentCRM avec un contact de test. Zapier doit capter la requete et afficher les donnees recues. Tu vois l'email, le nom, les tags — tout le payload.
+Étape 4 : retourne dans Zapier et clique sur "Test trigger". Déclenche l'automation dans FluentCRM avec un contact de test. Zapier doit capter la requête et afficher les données reçues. Tu vois l'email, le nom, les tags — tout le payload.
 
-[Montre les donnees recues dans Zapier]
+[Montre les données reçues dans Zapier]
 
-Etape 5 : ajoute l'action de ton choix dans Zapier. Par exemple : "Google Sheets — Create Spreadsheet Row" pour logger chaque nouveau client dans un tableau. Mappe les champs FluentCRM vers les colonnes de ton Sheet.
+Étape 5 : ajoute l'action de ton choix dans Zapier. Par exemple : "Google Sheets — Create Spreadsheet Row" pour logger chaque nouveau client dans un tableau. Mappe les champs FluentCRM vers les colonnes de ton Sheet.
 
 [Montre le mapping des champs dans l'action Zapier]
 
-**[ECRAN — screencast Zapier vers FluentCRM]**
+**[ÉCRAN — screencast Zapier vers FluentCRM]**
 
 [Cree un nouveau Zap avec l'action "Webhooks by Zapier > POST"]
 
-Etape 6 : dans l'autre sens — Zapier vers FluentCRM. Cree un Zap avec le trigger de ton choix (nouveau lead Calendly, nouveau paiement Stripe, etc.). Comme action, choisis "Webhooks by Zapier" puis "POST". Colle l'URL de l'incoming webhook FluentCRM que tu as cree dans la lecon 13.2.
+Étape 6 : dans l'autre sens — Zapier vers FluentCRM. Crée un Zap avec le trigger de ton choix (nouveau lead Calendly, nouveau paiement Stripe, etc.). Comme action, choisis "Webhooks by Zapier" puis "POST". Colle l'URL de l'incoming webhook FluentCRM que tu as créé dans la leçon 13.2.
 
 [Montre la configuration du POST avec l'URL FluentCRM]
 
-Configure le body en JSON avec les champs attendus par FluentCRM : email, first_name, et les eventuels tags. N'oublie pas d'inclure la secret key si tu en as configure une.
+Configure le body en JSON avec les champs attendus par FluentCRM : email, first_name, et les éventuels tags. N'oublie pas d'inclure la secret key si tu en as configuré une.
 
-**[ECRAN — screencast test complet]**
+**[ÉCRAN — screencast test complet]**
 
-[Teste le Zap et verifie dans FluentCRM]
+[Teste le Zap et vérifié dans FluentCRM]
 
-Etape 7 : teste le Zap complet. Declenche l'evenement source, verifie que Zapier envoie la requete, et confirme que le contact apparait dans FluentCRM avec les bons champs et tags.
+Étape 7 : teste le Zap complet. Déclenche l'événement source, vérifie que Zapier envoie la requête, et confirme que le contact apparaît dans FluentCRM avec les bons champs et tags.
 
-[Montre le contact cree dans FluentCRM via Zapier]
+[Montre le contact créé dans FluentCRM via Zapier]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-FluentCRM et Zapier sont connectes. Tu peux envoyer et recevoir des donnees dans les deux sens. C'est une solution qui fonctionne, mais Zapier a une limite : le plan gratuit est vite depasse et chaque Zap supplementaire coute. Dans la prochaine lecon, on voit n8n — l'alternative open source sans limite de workflows.
+FluentCRM et Zapier sont connectés. Tu peux envoyer et recevoir des données dans les deux sens. C'est une solution qui fonctionne, mais Zapier a une limite : le plan gratuit est vite dépassé et chaque Zap supplémentaire coûte. Dans la prochaine leçon, on voit n8n — l'alternative open source sans limite de workflows.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Pas de connecteur natif FluentCRM dans Zapier — les webhooks font le travail
 - FluentCRM → Zapier : outgoing webhook vers "Catch Hook" Zapier
 - Zapier → FluentCRM : action POST vers l'incoming webhook FluentCRM
 - Toujours tester le flux complet avant de mettre en production
-- Limite Zapier : plan gratuit restreint, cout par Zap supplementaire
+- Limite Zapier : plan gratuit restreint, coût par Zap supplémentaire
 
-**Mots cles SEO** : FluentCRM Zapier, connecter FluentCRM Zapier, webhook Zapier FluentCRM, automatisation FluentCRM Zapier, FluentCRM integration Zapier
-
----
-
-### Lecon 13.5 — Connecte FluentCRM a n8n : automatisation sans limites
-
-**Duree** : 8 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM + n8n
+**Mots clés SEO** : FluentCRM Zapier, connecter FluentCRM Zapier, webhook Zapier FluentCRM, automatisation FluentCRM Zapier, FluentCRM intégration Zapier
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 13.5 — Connecte FluentCRM à n8n : automatisation sans limites
 
-n8n est l'outil d'automatisation que j'utilise au quotidien pour schoolsWP. Contrairement a Zapier, il est open source, auto-hebergeable, et surtout : pas de limite de workflows. Tu peux creer autant d'automatisations que tu veux sans payer par execution. Et la connexion avec FluentCRM est bidirectionnelle — n8n recoit des donnees via webhook et en envoie via HTTP Request. Dans cette lecon, tu mets en place les deux sens.
+**Durée** : 8 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM + n8n
 
-**[ECRAN — slide "Architecture FluentCRM + n8n"]**
+---
 
-[Montre un schema : FluentCRM ↔ n8n ↔ (Telegram, Google Sheets, CRM externe, Slack)]
+**[INTRO — face caméra]**
 
-Etape 1 : voici l'architecture cible. FluentCRM est ton hub de contacts et d'automations email. n8n est ton orchestrateur — il recoit les evenements de FluentCRM et declenche des actions dans n'importe quel outil. L'inverse aussi : n8n capte des evenements externes et met a jour FluentCRM. C'est le combo le plus puissant pour un site WordPress.
+n8n est l'outil d'automatisation que j'utilise au quotidien pour schoolsWP. Contrairement à Zapier, il est open source, auto-hébergeable, et surtout : pas de limite de workflows. Tu peux créer autant d'automatisations que tu veux sans payer par exécution. Et la connexion avec FluentCRM est bidirectionnelle — n8n reçoit des données via webhook et en envoie via HTTP Request. Dans cette leçon, tu mets en place les deux sens.
 
-**[ECRAN — screencast n8n > Nouveau workflow > Webhook node]**
+**[ÉCRAN — slide "Architecture FluentCRM + n8n"]**
+
+[Montre un schéma : FluentCRM ↔ n8n ↔ (Telegram, Google Sheets, CRM externe, Slack)]
+
+Étape 1 : voici l'architecture cible. FluentCRM est ton hub de contacts et d'automations email. n8n est ton orchestrateur — il reçoit les événements de FluentCRM et déclenche des actions dans n'importe quel outil. L'inverse aussi : n8n capte des événements externes et met à jour FluentCRM. C'est le combo le plus puissant pour un site WordPress.
+
+**[ÉCRAN — screencast n8n > Nouveau workflow > Webhook node]**
 
 [Cree un nouveau workflow dans n8n]
 
-Etape 2 : dans n8n, cree un nouveau workflow. Ajoute un noeud "Webhook" comme point d'entree. Configure-le en methode POST. n8n genere une URL de production et une URL de test.
+Étape 2 : dans n8n, crée un nouveau workflow. Ajoute un nœud "Webhook" comme point d'entrée. Configure-le en méthode POST. n8n génère une URL de production et une URL de test.
 
-[Montre les deux URLs generees]
+[Montre les deux URLs générées]
 
-Copie l'URL de test pour commencer. Tu passeras a l'URL de production une fois que tout fonctionne. L'URL ressemble a :
+Copie l'URL de test pour commencer. Tu passeras à l'URL de production une fois que tout fonctionne. L'URL ressemble à :
 
 ```
 https://ton-n8n.example.com/webhook-test/fluentcrm-events
 ```
 
-**[ECRAN — screencast FluentCRM > Automation > Outgoing Webhook]**
+**[ÉCRAN — screencast FluentCRM > Automation > Outgoing Webhook]**
 
 [Ouvre une automation FluentCRM]
 
-Etape 3 : dans FluentCRM, ouvre ou cree une automation. Ajoute un outgoing webhook avec l'URL n8n comme destination. Par exemple : trigger "Tag Applied" avec le tag "lead-qualifie" → action "Outgoing Webhook" vers n8n.
+Étape 3 : dans FluentCRM, ouvre ou crée une automation. Ajoute un outgoing webhook avec l'URL n8n comme destination. Par exemple : trigger "Tag Applied" avec le tag "lead-qualifié" → action "Outgoing Webhook" vers n8n.
 
 [Configure l'outgoing webhook avec l'URL n8n]
 
-Etape 4 : dans n8n, clique sur "Listen for test event" sur le noeud Webhook. Puis dans FluentCRM, declenche l'automation avec un contact de test. n8n capte la requete et affiche le payload complet.
+Étape 4 : dans n8n, clique sur "Listen for test event" sur le nœud Webhook. Puis dans FluentCRM, déclenche l'automation avec un contact de test. n8n capte la requête et affiche le payload complet.
 
-[Montre le payload recu dans n8n]
+[Montre le payload reçu dans n8n]
 
-Tu vois toutes les donnees du contact : email, nom, tags, listes, score. A partir de la, tu peux faire ce que tu veux dans n8n.
+Tu vois toutes les données du contact : email, nom, tags, listes, score. À partir de là, tu peux faire ce que tu veux dans n8n.
 
-**[ECRAN — screencast n8n > Ajout de noeuds d'action]**
+**[ÉCRAN — screencast n8n > Ajout de noeuds d'action]**
 
-[Ajoute des noeuds apres le webhook]
+[Ajoute des noeuds après le webhook]
 
-Etape 5 : voici trois actions concretes que tu peux enchainer apres le webhook.
+Étape 5 : voici trois actions concrètes que tu peux enchainer après le webhook.
 
-Action 1 — Alerte Telegram. Ajoute un noeud "Telegram" configure avec ton bot. A chaque lead qualifie, tu recois un message instantane sur ton telephone avec le nom et l'email du contact.
+Action 1 — Alerte Telegram. Ajoute un nœud "Telegram" configuré avec ton bot. À chaque lead qualifié, tu reçois un message instantané sur ton téléphone avec le nom et l'email du contact.
 
-[Montre le noeud Telegram configure]
+[Montre le nœud Telegram configuré]
 
-Action 2 — Ajout Google Sheets. Ajoute un noeud "Google Sheets" pour logger le contact dans un tableau de reporting. Chaque nouvelle ligne = un lead qualifie.
+Action 2 — Ajout Google Sheets. Ajoute un nœud "Google Sheets" pour logger le contact dans un tableau de reporting. Chaque nouvelle ligne = un lead qualifié.
 
-[Montre le noeud Google Sheets configure]
+[Montre le nœud Google Sheets configuré]
 
-Action 3 — Lead scoring avance. Ajoute un noeud "Code" pour calculer un score personnalise base sur les tags et l'historique du contact, puis un noeud "HTTP Request" pour renvoyer le score a FluentCRM via son API REST.
+Action 3 — Lead scoring avancé. Ajoute un nœud "Code" pour calculer un score personnalisé basé sur les tags et l'historique du contact, puis un nœud "HTTP Request" pour renvoyer le score à FluentCRM via son API REST.
 
-[Montre le noeud Code avec le calcul de score]
+[Montre le nœud Code avec le calcul de score]
 
-**[ECRAN — screencast n8n vers FluentCRM via HTTP Request]**
+**[ÉCRAN — screencast n8n vers FluentCRM via HTTP Request]**
 
-[Cree un nouveau workflow avec un HTTP Request vers FluentCRM]
+[Crée un nouveau workflow avec un HTTP Request vers FluentCRM]
 
-Etape 6 : dans l'autre sens — n8n vers FluentCRM. Utilise le noeud "HTTP Request" pour appeler l'API REST de FluentCRM ou envoyer des donnees vers l'incoming webhook. Par exemple : un evenement dans Google Calendar → n8n → creation d'un contact dans FluentCRM avec le tag "rdv-pris".
+Étape 6 : dans l'autre sens — n8n vers FluentCRM. Utilise le nœud "HTTP Request" pour appeler l'API REST de FluentCRM ou envoyer des données vers l'incoming webhook. Par exemple : un événement dans Google Calendar → n8n → création d'un contact dans FluentCRM avec le tag "rdv-pris".
 
 [Montre la configuration du HTTP Request avec l'URL incoming webhook FluentCRM]
 
-Configure la methode POST, le body en JSON avec les champs email, first_name, et les tags. Ajoute la secret key dans les parametres si necessaire.
+Configure la méthode POST, le body en JSON avec les champs email, first_name, et les tags. Ajoute la secret key dans les paramètres si nécessaire.
 
-**[ECRAN — screencast activation du workflow]**
+**[ÉCRAN — screencast activation du workflow]**
 
 [Active le workflow en production]
 
-Etape 7 : une fois tes tests valides, active le workflow. Passe l'URL du webhook de "test" a "production" dans le noeud Webhook. Mets a jour l'URL dans FluentCRM. Le workflow tourne en continu — chaque evenement FluentCRM declenche la chaine d'actions.
+Étape 7 : une fois tes tests validés, active le workflow. Passe l'URL du webhook de "test" à "production" dans le nœud Webhook. Mets à jour l'URL dans FluentCRM. Le workflow tourne en continu — chaque événement FluentCRM déclenche la chaîne d'actions.
 
 [Montre le toggle "Active" du workflow]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-FluentCRM et n8n sont connectes dans les deux sens. Tu as un systeme d'automatisation complet : FluentCRM gere les contacts et les emails, n8n orchestre tout le reste. Alertes, reporting, lead scoring, synchronisation CRM — tout passe par ce duo. Dans la prochaine lecon, on met ca en pratique avec un cas concret : exporter tes contacts vers Google Sheets.
+FluentCRM et n8n sont connectés dans les deux sens. Tu as un système d'automatisation complet : FluentCRM gère les contacts et les emails, n8n orchestre tout le reste. Alertes, reporting, lead scoring, synchronisation CRM — tout passe par ce duo. Dans la prochaine leçon, on met ça en pratique avec un cas concret : exporter tes contacts vers Google Sheets.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - n8n = orchestrateur open source, sans limite de workflows
-- FluentCRM → n8n : outgoing webhook vers un noeud Webhook n8n
+- FluentCRM → n8n : outgoing webhook vers un nœud Webhook n8n
 - n8n → FluentCRM : HTTP Request vers l'API REST ou l'incoming webhook
-- 3 cas d'usage immediats : alerte Telegram, log Google Sheets, lead scoring avance
+- 3 cas d'usage immédiats : alerte Telegram, log Google Sheets, lead scoring avancé
 - Toujours tester avec l'URL de test avant de passer en production
 
-**Mots cles SEO** : FluentCRM n8n, connecter FluentCRM n8n, automatisation FluentCRM n8n, webhook n8n FluentCRM, FluentCRM open source automation
+**Mots clés SEO** : FluentCRM n8n, connecter FluentCRM n8n, automatisation FluentCRM n8n, webhook n8n FluentCRM, FluentCRM open source automation
 
 ---
 
-### Lecon 13.6 — Cas d'usage : exporte tes contacts vers Google Sheets
+### Leçon 13.6 — Cas d'usage : exporter tes contacts vers Google Sheets
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM + n8n + Google Sheets
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM + n8n + Google Sheets
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu veux un tableau de bord de tes contacts FluentCRM dans Google Sheets. Pas un export CSV ponctuel — un flux continu. Chaque nouveau contact qualifie atterrit automatiquement dans une ligne de ton Sheet. C'est un cas d'usage classique et concret pour mettre en pratique la connexion FluentCRM → n8n → Google Sheets.
+Tu veux un tableau de bord de tes contacts FluentCRM dans Google Sheets. Pas un export CSV ponctuel — un flux continu. Chaque nouveau contact qualifié atterrit automatiquement dans une ligne de ton Sheet. C'est un cas d'usage classique et concret pour mettre en pratique la connexion FluentCRM → n8n → Google Sheets.
 
-**[ECRAN — screencast Google Sheets > Preparation du tableau]**
+**[ÉCRAN — screencast Google Sheets > Préparation du tableau]**
 
-[Montre un Google Sheet vide avec les en-tetes]
+[Montre un Google Sheet vide avec les en-têtes]
 
-Etape 1 : prepare ton Google Sheet. Cree un nouveau tableur ou utilise un existant. Ajoute les en-tetes en premiere ligne :
+Étape 1 : prépare ton Google Sheet. Crée un nouveau tableur ou utilise un existant. Ajoute les en-têtes en première ligne :
 
 - A1 : Date
 - B1 : Email
-- C1 : Prenom
+- C1 : Prénom
 - D1 : Nom
 - E1 : Tags
 - F1 : Score
 - G1 : Source
 
-[Montre les en-tetes configurees]
+[Montre les en-têtes configurées]
 
-Ce tableau sera alimente automatiquement. Chaque ligne sera un contact envoye par FluentCRM via n8n.
+Ce tableau sera alimenté automatiquement. Chaque ligne sera un contact envoyé par FluentCRM via n8n.
 
-**[ECRAN — screencast n8n > Nouveau workflow]**
+**[ÉCRAN — screencast n8n > Nouveau workflow]**
 
-[Cree le workflow dans n8n]
+[Crée le workflow dans n8n]
 
-Etape 2 : dans n8n, cree un nouveau workflow. Nomme-le "FluentCRM → Google Sheets — Sync Contacts". Ajoute un noeud Webhook en methode POST. Copie l'URL de test.
+Étape 2 : dans n8n, crée un nouveau workflow. Nomme-le "FluentCRM → Google Sheets — Sync Contacts". Ajoute un nœud Webhook en méthode POST. Copie l'URL de test.
 
-[Montre le noeud Webhook configure]
+[Montre le nœud Webhook configuré]
 
-**[ECRAN — screencast FluentCRM > Automation]**
+**[ÉCRAN — screencast FluentCRM > Automation]**
 
-[Cree l'automation dans FluentCRM]
+[Crée l'automation dans FluentCRM]
 
-Etape 3 : dans FluentCRM, cree une automation. Trigger : "Tag Applied" avec le tag "lead-qualifie" (ou tout autre tag qui marque un contact comme important). Action : "Outgoing Webhook" avec l'URL n8n.
+Étape 3 : dans FluentCRM, crée une automation. Trigger : "Tag Applied" avec le tag "lead-qualifie" (ou tout autre tag qui marque un contact comme important). Action : "Outgoing Webhook" avec l'URL n8n.
 
-[Montre l'automation configuree]
+[Montre l'automation configurée]
 
-Teste : ajoute le tag a un contact de test et verifie que n8n recoit les donnees.
+Teste : ajoute le tag à un contact de test et vérifie que n8n reçoit les données.
 
-**[ECRAN — screencast n8n > Ajout du noeud Google Sheets]**
+**[ÉCRAN — screencast n8n > Ajout du nœud Google Sheets]**
 
-[Ajoute le noeud Google Sheets dans n8n]
+[Ajoute le nœud Google Sheets dans n8n]
 
-Etape 4 : dans n8n, apres le noeud Webhook, ajoute un noeud "Google Sheets". Configure-le en mode "Append Row". Selectionne ton tableur et l'onglet cible.
+Étape 4 : dans n8n, après le nœud Webhook, ajoute un nœud "Google Sheets". Configure-le en mode "Append Row". Sélectionne ton tableur et l'onglet cible.
 
-[Montre la selection du Sheet et de l'onglet]
+[Montre la sélection du Sheet et de l'onglet]
 
-Etape 5 : mappe les champs. Voici le mapping :
+Étape 5 : mappe les champs. Voici le mapping :
 
 - Date → `{{ $now.format('yyyy-MM-dd HH:mm') }}`
 - Email → `{{ $json.contact.email }}`
-- Prenom → `{{ $json.contact.first_name }}`
+- Prénom → `{{ $json.contact.first_name }}`
 - Nom → `{{ $json.contact.last_name }}`
 - Tags → `{{ $json.contact.tags.join(', ') }}`
 - Score → `{{ $json.contact.score }}`
@@ -522,96 +522,96 @@ Etape 5 : mappe les champs. Voici le mapping :
 
 [Montre le mapping champ par champ]
 
-Les expressions exactes dependent de la structure du payload FluentCRM. Utilise le panneau de test de n8n pour explorer le JSON recu et ajuster les chemins.
+Les expressions exactes dépendent de la structure du payload FluentCRM. Utilise le panneau de test de n8n pour explorer le JSON reçu et ajuster les chemins.
 
-**[ECRAN — screencast test complet]**
+**[ÉCRAN — screencast test complet]**
 
 [Teste le flux de bout en bout]
 
-Etape 6 : teste le flux complet. Dans FluentCRM, pose le tag declencheur sur un contact de test. Verifie dans n8n que le webhook est declenche. Verifie dans Google Sheets qu'une nouvelle ligne apparait avec les bonnes donnees.
+Étape 6 : teste le flux complet. Dans FluentCRM, pose le tag déclencheur sur un contact de test. Vérifie dans n8n que le webhook est déclenché. Vérifie dans Google Sheets qu'une nouvelle ligne apparaît avec les bonnes données.
 
-[Montre la ligne ajoutee dans Google Sheets]
+[Montre la ligne ajoutée dans Google Sheets]
 
-Etape 7 : active le workflow en production. Remplace l'URL de test par l'URL de production dans le noeud Webhook. Mets a jour l'URL dans FluentCRM. Desormais, chaque contact qualifie atterrit automatiquement dans ton Google Sheet.
+Étape 7 : active le workflow en production. Remplace l'URL de test par l'URL de production dans le nœud Webhook. Mets à jour l'URL dans FluentCRM. Désormais, chaque contact qualifié atterrit automatiquement dans ton Google Sheet.
 
 [Montre le workflow actif]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu as un pipeline de donnees en temps reel : FluentCRM → n8n → Google Sheets. Tu peux l'adapter — ajouter un filtre dans n8n pour ne logger que certains tags, ajouter une colonne calculee dans Sheets, ou dupliquer le workflow pour d'autres types de contacts. Dans la prochaine lecon, tu passes a la pratique avec un exercice guide.
+Tu as un pipeline de données en temps réel : FluentCRM → n8n → Google Sheets. Tu peux l'adapter — ajouter un filtre dans n8n pour ne logger que certains tags, ajouter une colonne calculée dans Sheets, ou dupliquer le workflow pour d'autres types de contacts. Dans la prochaine leçon, tu passes à la pratique avec un exercice guidé.
 
 ---
 
-**Points cles** :
-- Google Sheet avec en-tetes preparees : Date, Email, Prenom, Nom, Tags, Score, Source
+**Points clés** :
+- Google Sheet avec en-têtes préparées : Date, Email, Prénom, Nom, Tags, Score, Source
 - Workflow n8n : Webhook → Google Sheets (Append Row)
 - Mapping des champs via les expressions n8n (chemins JSON du payload FluentCRM)
 - Tester d'abord en URL de test, puis passer en production
-- Le tableau se remplit automatiquement a chaque contact qualifie
+- Le tableau se remplit automatiquement à chaque contact qualifié
 
-**Mots cles SEO** : FluentCRM Google Sheets, exporter contacts FluentCRM, sync FluentCRM Google Sheets, n8n Google Sheets FluentCRM, reporting contacts WordPress
-
----
-
-### Lecon 13.7 — Exercice : Cree un webhook n8n qui ajoute un contact a l'achat
-
-**Duree** : 7 min
-**Type** : Exercice guide
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM + n8n
+**Mots clés SEO** : FluentCRM Google Sheets, exporter contacts FluentCRM, sync FluentCRM Google Sheets, n8n Google Sheets FluentCRM, reporting contacts WordPress
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 13.7 — Exercice : Crée un webhook n8n qui ajoute un contact à l'achat
 
-Tu sais configurer des webhooks incoming et outgoing, connecter FluentCRM a n8n, et pousser des donnees vers Google Sheets. Maintenant tu combines tout ca dans un scenario reel : un client achete un produit (via WooCommerce, TutorLMS ou n'importe quel outil de paiement), n8n recoit l'evenement et cree automatiquement un contact dans FluentCRM avec le tag correspondant. C'est l'automatisation de base de tout business en ligne.
+**Durée** : 7 min
+**Type** : Exercice guidé
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM + n8n
 
-**[ECRAN — slide "Scenario de l'exercice"]**
+---
 
-[Montre le schema : Achat → n8n Webhook → FluentCRM (contact + tag)]
+**[INTRO — face caméra]**
 
-Voici le scenario. Un client achete le cours "Maitriser FluentCRM". n8n recoit l'information d'achat via un webhook. n8n cree ou met a jour le contact dans FluentCRM avec le tag "acheteur-fluentcrm" et la liste "clients". Pas d'email, pas de formulaire — tout est automatise.
+Tu sais configurer des webhooks incoming et outgoing, connecter FluentCRM à n8n, et pousser des données vers Google Sheets. Maintenant tu combines tout ça dans un scénario réel : un client achète un produit (via WooCommerce, TutorLMS ou n'importe quel outil de paiement), n8n reçoit l'événement et crée automatiquement un contact dans FluentCRM avec le tag correspondant. C'est l'automatisation de base de tout business en ligne.
 
-**[ECRAN — slide "Etapes de l'exercice"]**
+**[ÉCRAN — slide "Scénario de l'exercice"]**
 
-[Montre les 5 etapes numerotees]
+[Montre le schéma : Achat → n8n Webhook → FluentCRM (contact + tag)]
 
-Tu vas suivre ces 5 etapes :
+Voici le scénario. Un client achète le cours "Maîtriser FluentCRM". n8n reçoit l'information d'achat via un webhook. n8n crée ou met à jour le contact dans FluentCRM avec le tag "acheteur-fluentcrm" et la liste "clients". Pas d'email, pas de formulaire — tout est automatisé.
 
-1. Cree un incoming webhook dans FluentCRM (avec secret key)
-2. Cree un workflow n8n avec un noeud Webhook
-3. Ajoute un noeud HTTP Request vers l'incoming webhook FluentCRM
+**[ÉCRAN — slide "Étapes de l'exercice"]**
+
+[Montre les 5 étapes numérotées]
+
+Tu vas suivre ces 5 étapes :
+
+1. Crée un incoming webhook dans FluentCRM (avec secret key)
+2. Crée un workflow n8n avec un nœud Webhook
+3. Ajoute un nœud HTTP Request vers l'incoming webhook FluentCRM
 4. Configure le payload JSON avec les infos du contact
-5. Teste avec un achat simule
+5. Teste avec un achat simulé
 
-**[ECRAN — screencast etape 1 : FluentCRM incoming webhook]**
+**[ÉCRAN — screencast étape 1 : FluentCRM incoming webhook]**
 
 [Navigation vers FluentCRM > Settings > Incoming Webhooks]
 
-Etape 1 : dans FluentCRM, cree un incoming webhook nomme "n8n — Achat Cours". Configure-le pour assigner automatiquement la liste "clients" et le tag "acheteur". Note l'URL et la secret key.
+Étape 1 : dans FluentCRM, crée un incoming webhook nommé "n8n — Achat Cours". Configure-le pour assigner automatiquement la liste "clients" et le tag "acheteur". Note l'URL et la secret key.
 
-[Montre la creation et la copie de l'URL + secret key]
+[Montre la création et la copie de l'URL + secret key]
 
-**[ECRAN — screencast etape 2 : n8n workflow]**
+**[ÉCRAN — screencast étape 2 : n8n workflow]**
 
-[Cree le workflow dans n8n]
+[Crée le workflow dans n8n]
 
-Etape 2 : dans n8n, cree un nouveau workflow "WooCommerce Achat → FluentCRM". Ajoute un noeud Webhook en methode POST. Ce webhook simule l'evenement d'achat — en production, il serait remplace par le trigger WooCommerce ou le webhook de ta plateforme de paiement.
+Étape 2 : dans n8n, crée un nouveau workflow "WooCommerce Achat → FluentCRM". Ajoute un nœud Webhook en méthode POST. Ce webhook simule l'événement d'achat — en production, il serait remplacé par le trigger WooCommerce ou le webhook de ta plateforme de paiement.
 
-[Montre le noeud Webhook configure]
+[Montre le nœud Webhook configuré]
 
-**[ECRAN — screencast etape 3 : HTTP Request vers FluentCRM]**
+**[ÉCRAN — screencast étape 3 : HTTP Request vers FluentCRM]**
 
-[Ajoute le noeud HTTP Request]
+[Ajoute le nœud HTTP Request]
 
-Etape 3 : apres le Webhook, ajoute un noeud "HTTP Request". Configure-le :
+Étape 3 : après le Webhook, ajoute un nœud "HTTP Request". Configure-le :
 
-- Methode : POST
-- URL : l'URL de l'incoming webhook FluentCRM (copiee a l'etape 1)
+- Méthode : POST
+- URL : l'URL de l'incoming webhook FluentCRM (copiée à l'étape 1)
 - Body : JSON
 
 [Montre la configuration du HTTP Request]
 
-Etape 4 : configure le body JSON :
+Étape 4 : configure le body JSON :
 
 ```json
 {
@@ -626,89 +626,89 @@ Etape 4 : configure le body JSON :
 
 [Montre le body JSON configure]
 
-Adapte les expressions `{{ $json.xxx }}` selon la structure du payload que ton systeme de paiement envoie. Si tu simules un achat pour le test, utilise des valeurs en dur.
+Adapte les expressions `{{ $json.xxx }}` selon la structure du payload que ton système de paiement envoie. Si tu simules un achat pour le test, utilise des valeurs en dur.
 
-**[ECRAN — screencast etape 5 : test]**
+**[ÉCRAN — screencast étape 5 : test]**
 
 [Teste le flux complet]
 
-Etape 5 : teste le flux. Envoie une requete de test vers le webhook n8n avec un payload simule :
+Étape 5 : teste le flux. Envoie une requête de test vers le webhook n8n avec un payload simulé :
 
 ```json
 {
   "customer_email": "test-achat@example.com",
   "customer_first_name": "Marie",
   "customer_last_name": "Test",
-  "product": "Maitriser FluentCRM",
+  "product": "Maîtriser FluentCRM",
   "amount": 97
 }
 ```
 
-[Montre l'envoi du test et le resultat dans n8n]
+[Montre l'envoi du test et le résultat dans n8n]
 
-Verifie dans n8n que le HTTP Request retourne un statut 200. Puis va dans FluentCRM > Contacts et cherche "test-achat@example.com". Le contact doit apparaitre avec la liste "clients" et le tag "acheteur-fluentcrm".
+Vérifie dans n8n que le HTTP Request retourne un statut 200. Puis va dans FluentCRM > Contacts et cherche "test-achat@example.com". Le contact doit apparaître avec la liste "clients" et le tag "acheteur-fluentcrm".
 
 [Montre le contact dans FluentCRM avec les bons tags]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Si le contact apparait avec les bons tags et la bonne liste, l'exercice est reussi. Tu as un pipeline d'achat automatise : evenement de paiement → n8n → FluentCRM. En production, il te suffit de remplacer le webhook de test par le vrai trigger de ta plateforme de paiement. Dernier arret : le quiz pour valider tout le module.
+Si le contact apparaît avec les bons tags et la bonne liste, l'exercice est réussi. Tu as un pipeline d'achat automatisé : événement de paiement → n8n → FluentCRM. En production, il te suffit de remplacer le webhook de test par le vrai trigger de ta plateforme de paiement. Dernier arrêt : le quiz pour valider tout le module.
 
 ---
 
-**Points cles** :
-- Scenario reel : achat → n8n → FluentCRM (creation de contact + tag + liste)
-- Incoming webhook FluentCRM avec secret key pour la securite
+**Points clés** :
+- Scénario réel : achat → n8n → FluentCRM (création de contact + tag + liste)
+- Incoming webhook FluentCRM avec secret key pour la sécurité
 - HTTP Request n8n en POST avec body JSON contenant email, nom, tags, liste
-- Toujours tester avec des donnees fictives avant la mise en production
+- Toujours tester avec des données fictives avant la mise en production
 - En production : remplacer le webhook n8n par le vrai trigger de paiement
 
-**Mots cles SEO** : FluentCRM webhook achat, automatiser achat FluentCRM, n8n WooCommerce FluentCRM, webhook achat WordPress, CRM automatisation paiement
+**Mots clés SEO** : FluentCRM webhook achat, automatiser achat FluentCRM, n8n WooCommerce FluentCRM, webhook achat WordPress, CRM automatisation paiement
 
 ---
 
-### Lecon 13.8 — Quiz : Valide tes acquis M13
+### Leçon 13.8 — Quiz : Valide tes acquis M13
 
-**Duree** : 5 min
+**Durée** : 5 min
 **Type** : Quiz TutorLMS (8 QCM)
-**Format** : Questions affichees dans TutorLMS, pas de video
+**Format** : Questions affichées dans TutorLMS, pas de vidéo
 
 ---
 
-**Question 1** : Quelle est la difference entre un incoming webhook et un outgoing webhook dans FluentCRM ?
+**Question 1** : Quelle est la différence entre un incoming webhook et un outgoing webhook dans FluentCRM ?
 
-- A) L'incoming envoie des emails, l'outgoing recoit des emails
-- B) L'incoming recoit des donnees depuis un outil externe, l'outgoing envoie des donnees vers un outil externe ✅
+- A) L'incoming envoie des emails, l'outgoing reçoit des emails
+- B) L'incoming reçoit des données depuis un outil externe, l'outgoing envoie des données vers un outil externe ✅
 - C) L'incoming est gratuit, l'outgoing est payant
-- D) Il n'y a pas de difference — les deux termes sont interchangeables
+- D) Il n'y a pas de différence — les deux termes sont interchangeables
 
-**Explication** : L'incoming webhook est une URL qui recoit des donnees depuis l'exterieur. L'outgoing webhook est une action qui envoie des donnees vers un outil externe quand un evenement se produit dans FluentCRM.
+**Explication** : L'incoming webhook est une URL qui reçoit des données depuis l'extérieur. L'outgoing webhook est une action qui envoie des données vers un outil externe quand un événement se produit dans FluentCRM.
 
 ---
 
-**Question 2** : Ou configures-tu un outgoing webhook dans FluentCRM ?
+**Question 2** : Où configures-tu un outgoing webhook dans FluentCRM ?
 
 - A) Dans Settings > Integrations > Webhooks
 - B) Dans le builder d'automation, comme une action ✅
 - C) Dans Contacts > Export > Webhook
 - D) Dans Email Campaigns > Settings
 
-**Explication** : L'outgoing webhook est une action disponible dans le builder d'automation de FluentCRM. Il se declenche dans le cadre d'une automation, pas comme un reglage global.
+**Explication** : L'outgoing webhook est une action disponible dans le builder d'automation de FluentCRM. Il se déclenche dans le cadre d'une automation, pas comme un réglage global.
 
 ---
 
 **Question 3** : Pourquoi faut-il configurer une secret key sur un incoming webhook ?
 
-- A) Pour chiffrer les emails envoyes par FluentCRM
-- B) Pour empecher des requetes non autorisees de creer des contacts dans ta base ✅
-- C) Pour que FluentCRM puisse se connecter a l'API de l'outil externe
-- D) La secret key est facultative et n'a aucun impact sur la securite
+- A) Pour chiffrer les emails envoyés par FluentCRM
+- B) Pour empêcher des requêtes non autorisées de créer des contacts dans ta base ✅
+- C) Pour que FluentCRM puisse se connecter à l'API de l'outil externe
+- D) La secret key est facultative et n'a aucun impact sur la sécurité
 
-**Explication** : Sans secret key, n'importe qui connaissant l'URL du webhook pourrait envoyer des requetes et injecter des contacts dans ta base FluentCRM. La secret key verifie que la requete provient bien d'une source autorisee.
+**Explication** : Sans secret key, n'importe qui connaissant l'URL du webhook pourrait envoyer des requêtes et injecter des contacts dans ta base FluentCRM. La secret key vérifie que la requête provient bien d'une source autorisée.
 
 ---
 
-**Question 4** : Tu veux connecter FluentCRM a Zapier. Quelle methode utilises-tu ?
+**Question 4** : Tu veux connecter FluentCRM à Zapier. Quelle méthode utilises-tu ?
 
 - A) Le connecteur natif FluentCRM dans Zapier
 - B) L'extension "Zapier for FluentCRM" disponible sur WordPress.org
@@ -719,25 +719,25 @@ Si le contact apparait avec les bons tags et la bonne liste, l'exercice est reus
 
 ---
 
-**Question 5** : Quel noeud n8n utilises-tu pour recevoir des donnees envoyees par FluentCRM ?
+**Question 5** : Quel nœud n8n utilises-tu pour recevoir des données envoyées par FluentCRM ?
 
-- A) Le noeud "HTTP Request"
-- B) Le noeud "Webhook" ✅
-- C) Le noeud "FluentCRM Trigger"
-- D) Le noeud "Email Received"
+- A) Le nœud "HTTP Request"
+- B) Le nœud "Webhook" ✅
+- C) Le nœud "FluentCRM Trigger"
+- D) Le nœud "Email Received"
 
-**Explication** : Le noeud Webhook de n8n expose une URL capable de recevoir des requetes HTTP. FluentCRM envoie ses donnees via outgoing webhook vers cette URL. Le noeud HTTP Request sert a envoyer des requetes, pas a en recevoir.
+**Explication** : Le nœud Webhook de n8n expose une URL capable de recevoir des requêtes HTTP. FluentCRM envoie ses données via outgoing webhook vers cette URL. Le nœud HTTP Request sert à envoyer des requêtes, pas à en recevoir.
 
 ---
 
 **Question 6** : Dans le workflow n8n "FluentCRM → Google Sheets", quel mode configures-tu pour le noeud Google Sheets ?
 
-- A) "Read Rows" — pour lire les donnees existantes
+- A) "Read Rows" — pour lire les données existantes
 - B) "Update Row" — pour modifier une ligne existante
 - C) "Append Row" — pour ajouter une nouvelle ligne a chaque contact ✅
 - D) "Delete Row" — pour supprimer les doublons
 
-**Explication** : Le mode "Append Row" ajoute une nouvelle ligne a chaque execution. Chaque contact envoye par FluentCRM cree une ligne supplementaire dans le Sheet, ce qui constitue un log continu.
+**Explication** : Le mode "Append Row" ajoute une nouvelle ligne à chaque exécution. Chaque contact envoyé par FluentCRM crée une ligne supplémentaire dans le Sheet, ce qui constitue un log continu.
 
 ---
 
@@ -746,25 +746,25 @@ Si le contact apparait avec les bons tags et la bonne liste, l'exercice est reus
 - A) XML avec les balises <contact> et <email>
 - B) Form data (application/x-www-form-urlencoded)
 - C) JSON avec les champs email, first_name, tags et la secret key ✅
-- D) CSV avec les colonnes separees par des virgules
+- D) CSV avec les colonnes séparées par des virgules
 
 **Explication** : Les webhooks FluentCRM attendent un payload au format JSON contenant les champs du contact (email, first_name, last_name, tags, lists) et la secret key pour l'authentification.
 
 ---
 
-**Question 8** : Quel est l'avantage principal de n8n par rapport a Zapier pour les connexions avec FluentCRM ?
+**Question 8** : Quel est l'avantage principal de n8n par rapport à Zapier pour les connexions avec FluentCRM ?
 
 - A) n8n a un connecteur natif FluentCRM, pas Zapier
 - B) n8n est plus rapide que Zapier pour envoyer des webhooks
-- C) n8n est open source et n'impose pas de limite de workflows — tu peux creer autant d'automatisations que necessaire ✅
-- D) n8n ne necessite aucune configuration — tout est automatique
+- C) n8n est open source et n'impose pas de limite de workflows — tu peux créer autant d'automatisations que nécessaire ✅
+- D) n8n ne nécessite aucune configuration — tout est automatique
 
-**Explication** : n8n est open source et auto-hebergeable. Tu peux creer autant de workflows que tu veux sans payer par execution, contrairement a Zapier qui facture par Zap et par execution au-dela du plan gratuit.
+**Explication** : n8n est open source et auto-hébergeable. Tu peux créer autant de workflows que tu veux sans payer par exécution, contrairement à Zapier qui facture par Zap et par exécution au-delà du plan gratuit.
 
 ---
 
-**Seuil de reussite** : 6/8 (75%)
+**Seuil de réussite** : 6/8 (75%)
 
-**Message de reussite** : Module 13 valide. Tu maitrises les webhooks FluentCRM — incoming et outgoing — et tu sais connecter FluentCRM a Zapier, n8n et Google Sheets. Tu as les bases pour automatiser n'importe quelle integration entre FluentCRM et tes outils externes.
+**Message de réussite** : Module 13 valide. Tu maîtrises les webhooks FluentCRM — incoming et outgoing — et tu sais connecter FluentCRM à Zapier, n8n et Google Sheets. Tu as les bases pour automatiser n'importe quelle intégration entre FluentCRM et tes outils externes.
 
-**Message d'echec** : Tu n'as pas atteint le seuil de 75%. Revois les lecons 13.1 a 13.6, en particulier la difference entre incoming et outgoing webhooks, et la connexion FluentCRM-n8n. Tu peux retenter le quiz autant de fois que necessaire.
+**Message d'échec** : Tu n'as pas atteint le seuil de 75%. Revois les leçons 13.1 à 13.6, en particulier la différence entre incoming et outgoing webhooks, et la connexion FluentCRM-n8n. Tu peux retenter le quiz autant de fois que nécessaire.

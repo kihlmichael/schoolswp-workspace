@@ -1,14 +1,14 @@
-# Module 2 — Creer et gerer tes liens
+# Module 2 — Créer et gérer tes liens
 
 > **Formation** : ClickWhale — schoolsWP
-> **Prerequis** : Module 1 termine
-> **Objectif** : Tu sais creer des liens raccourcis, choisir le bon type de redirection, organiser par categories, et importer des liens en masse via CSV.
+> **Prérequis** : Module 1 terminé
+> **Objectif** : Tu sais créer des liens raccourcis, choisir le bon type de redirection, organiser par catégories, et importer des liens en masse via CSV.
 
 ---
 
-## 2.1 — Cree ton premier lien raccourci
+## 2.1 — Crée ton premier lien raccourci
 
-**Duree cible : 5 min**
+**Durée cible : 5 min**
 
 [TALKING HEAD]
 
@@ -16,7 +16,7 @@ Ton premier lien affilié en 2 minutes chrono. C'est ce qu'on va faire dans cett
 
 [SCREENCAST: Dashboard WordPress > ClickWhale > Links]
 
-**Étape 1 — Accede a l'interface de creation**
+**Étape 1 — Accède à l'interface de création**
 
 Rends-toi dans ton dashboard WordPress. Dans le menu latéral gauche, clique sur **ClickWhale**, puis sur **Links**. Tu arrives sur la liste de tous tes liens. Pour l'instant, elle est vide. Clique sur **Add New** en haut de la page.
 
@@ -42,9 +42,9 @@ Clique sur **Save**. Ton lien est créé. Maintenant, ouvre un nouvel onglet dan
 
 ---
 
-## 2.2 — Slug, titre, description : les champs a remplir
+## 2.2 — Slug, titre, description : les champs à remplir
 
-**Duree cible : 5 min**
+**Durée cible : 5 min**
 
 [TALKING HEAD]
 
@@ -87,7 +87,7 @@ Personne ne voit ce champ à part toi dans le dashboard.
 
 **Champ 5 — Category**
 
-On détaillera les catégories dans la leçon 2.5, mais sache que tu peux assigner une catégorie dès la création. Ca t'évitera de devoir y revenir plus tard.
+On détaillera les catégories dans la leçon 2.5, mais sache que tu peux assigner une catégorie dès la création. Ça t'évitera de devoir y revenir plus tard.
 
 [TALKING HEAD]
 
@@ -97,7 +97,7 @@ On détaillera les catégories dans la leçon 2.5, mais sache que tu peux assign
 
 ## 2.3 — Les 5 types de redirection : lequel choisir et pourquoi
 
-**Duree cible : 7 min**
+**Durée cible : 7 min**
 
 [TALKING HEAD]
 
@@ -155,7 +155,7 @@ Le 308 est la version stricte du 301 pour les requêtes POST. C'est un cas techn
 
 ## 2.4 — Nofollow et Sponsored : les attributs SEO essentiels
 
-**Duree cible : 5 min**
+**Durée cible : 5 min**
 
 [TALKING HEAD]
 
@@ -185,19 +185,19 @@ Nofollow est compris par tous les moteurs de recherche depuis des années. Spons
 
 **Ce qui se passe si tu oublies :**
 
-Google peut considérer que tu manipules ton classement en transmettant du jus SEO via des liens commerciaux non déclarés. Résultat possible : une action manuelle dans la Google Search Console. Ca veut dire une pénalité sur ton référencement, que tu devras ensuite corriger et soumettre pour réexamen. Autant faire les choses proprement dès le départ.
+Google peut considérer que tu manipules ton classement en transmettant du jus SEO via des liens commerciaux non déclarés. Résultat possible : une action manuelle dans la Google Search Console. Ça veut dire une pénalité sur ton référencement, que tu devras ensuite corriger et soumettre pour réexamen. Autant faire les choses proprement dès le départ.
 
 [TALKING HEAD]
 
 **Règle schoolsWP à retenir** : lien affilié = nofollow + sponsored. Toujours.
 
-**TRANSITION** : Tes liens sont bien configurés techniquement. Maintenant, il faut les organiser. Parce qu'à 10 liens, ça va. A 50, sans catégories, c'est le chaos. On voit ça dans la leçon suivante.
+**TRANSITION** : Tes liens sont bien configurés techniquement. Maintenant, il faut les organiser. Parce qu'à 10 liens, ça va. À 50, sans catégories, c'est le chaos. On voit ça dans la leçon suivante.
 
 ---
 
-## 2.5 — Organise tes liens par categories
+## 2.5 — Organise tes liens par catégories
 
-**Duree cible : 5 min**
+**Durée cible : 5 min**
 
 [TALKING HEAD]
 
@@ -205,7 +205,7 @@ Google peut considérer que tu manipules ton classement en transmettant du jus S
 
 [SCREENCAST: ClickWhale > Links > Categories]
 
-**Étape 1 — Creer tes categories**
+**Étape 1 — Créer tes catégories**
 
 Dans le menu ClickWhale, va dans **Links**, puis clique sur **Categories**. Tu arrives sur l'interface de gestion des catégories. C'est le même principe que les catégories WordPress classiques : un nom, un slug, et c'est tout.
 
@@ -223,17 +223,17 @@ La convention schoolsWP suit les piliers thématiques du site :
 
 Crée tes catégories en fonction de tes thématiques à toi. L'important, c'est d'avoir une logique cohérente que tu pourras tenir dans la durée.
 
-**Étape 3 — Assigner une categorie a la creation**
+**Étape 3 — Assigner une catégorie à la création**
 
 [SCREENCAST: Formulaire de création de lien > champ Category]
 
 Quand tu crées un nouveau lien, le champ **Category** est disponible directement dans le formulaire. Prends l'habitude de l'assigner immédiatement. Revenir catégoriser 50 liens après coup, c'est une corvée que tu veux éviter.
 
-**Étape 4 — Filtrer par categorie**
+**Étape 4 — Filtrer par catégorie**
 
 [SCREENCAST: Liste des liens > filtre par catégorie]
 
-De retour dans la liste des liens, tu peux filtrer par catégorie. En un coup d'oeil, tu vois tous tes liens LMS, tous tes liens CRM, etc. C'est aussi utile pour vérifier que chaque catégorie est à jour : liens actifs, URLs correctes, rien de cassé.
+De retour dans la liste des liens, tu peux filtrer par catégorie. En un coup d'œil, tu vois tous tes liens LMS, tous tes liens CRM, etc. C'est aussi utile pour vérifier que chaque catégorie est à jour : liens actifs, URLs correctes, rien de cassé.
 
 [TALKING HEAD]
 
@@ -243,7 +243,7 @@ De retour dans la liste des liens, tu peux filtrer par catégorie. En un coup d'
 
 ## 2.6 — Importe tes liens en masse via CSV
 
-**Duree cible : 6 min**
+**Durée cible : 6 min**
 
 [TALKING HEAD]
 
@@ -251,7 +251,7 @@ Si tu pars de zéro, tu peux créer tes liens un par un. Mais si tu as déjà un
 
 [SCREENCAST: Google Sheets ou Excel avec un tableau de liens]
 
-**Étape 1 — Prepare ton fichier CSV**
+**Étape 1 — Prépare ton fichier CSV**
 
 Ouvre ton tableur et crée les colonnes suivantes :
 
@@ -285,13 +285,13 @@ ClickWhale te demande de faire correspondre les colonnes de ton CSV avec les cha
 - Colonne "Target URL" → champ **Target URL**
 - Et ainsi de suite pour Nofollow, Sponsored, Category.
 
-**Étape 4 — Verifie les champs et lance l'import**
+**Étape 4 — Vérifie les champs et lance l'import**
 
 [SCREENCAST: Bouton "Run Importer" + résultat]
 
 Avant de lancer, vérifie l'aperçu. ClickWhale te montre les premières lignes telles qu'elles seront importées. Si tout est bon, clique sur **Run Importer**.
 
-**Étape 5 — Verifie le resultat**
+**Étape 5 — Vérifie le résultat**
 
 [SCREENCAST: Liste des liens après import]
 
@@ -308,9 +308,9 @@ Teste 2 ou 3 liens au hasard en les ouvrant dans un nouvel onglet pour confirmer
 
 ---
 
-## 2.7 — Exercice — Cree 5 liens affilies pour tes outils WordPress preferes
+## 2.7 — Exercice — Crée 5 liens affiliés pour tes outils WordPress préférés
 
-**Format : Exercice pratique (pas de script video)**
+**Format : Exercice pratique (pas de script vidéo)**
 
 ---
 
@@ -318,7 +318,7 @@ Teste 2 ou 3 liens au hasard en les ouvrant dans un nouvel onglet pour confirmer
 
 Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens affiliés complets dans ClickWhale.
 
-### Etapes a suivre
+### Étapes à suivre
 
 1. **Choisis 5 outils ou services WordPress** pour lesquels tu as (ou peux obtenir) un lien affilié. Si tu n'as pas encore de programme d'affiliation, utilise les URLs classiques des outils — tu remplaceras par les vrais liens affiliés plus tard.
 
@@ -338,7 +338,7 @@ Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens 
 
 5. **Vérifie dans la liste** que tes 5 liens sont bien organisés par catégorie.
 
-### Criteres de validation
+### Critères de validation
 
 - [ ] 5 liens créés dans ClickWhale
 - [ ] Chaque lien a un titre explicite et un slug en minuscules
@@ -346,9 +346,9 @@ Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens 
 - [ ] Nofollow ET Sponsored cochés sur les 5 liens
 - [ ] Au moins 2 catégories différentes utilisées
 - [ ] Les 5 liens redirigent correctement vers la destination
-- [ ] Chaque lien a une description avec au moins le taux de commission (ou "A compléter")
+- [ ] Chaque lien a une description avec au moins le taux de commission (ou "À compléter")
 
-### Exemple de resultat attendu
+### Exemple de résultat attendu
 
 | Title | Slug | Target URL | Redirect | Nofollow | Sponsored | Category |
 |-------|------|-----------|----------|----------|-----------|----------|
@@ -362,11 +362,11 @@ Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens 
 
 ## 2.8 — Quiz — Valide tes acquis M2
 
-**Format : QCM 8 questions (pas de script video)**
+**Format : QCM 8 questions (pas de script vidéo)**
 
 ---
 
-### Question 1 — Creation de lien
+### Question 1 — Création de lien
 
 Quels sont les 3 champs obligatoires pour créer un lien dans ClickWhale ?
 
@@ -405,7 +405,7 @@ Quel type de redirection est recommandé pour les liens affiliés et pourquoi ?
 
 ---
 
-### Question 4 — Probleme du 301
+### Question 4 — Problème du 301
 
 Pourquoi le 301 est-il déconseillé pour les liens affiliés ?
 
@@ -431,7 +431,7 @@ Quels attributs SEO doivent être cochés sur un lien affilié ?
 
 ---
 
-### Question 6 — Role de Sponsored
+### Question 6 — Rôle de Sponsored
 
 Que signifie l'attribut `rel="sponsored"` pour Google ?
 
@@ -459,11 +459,11 @@ Dans quel ordre se déroule l'import CSV dans ClickWhale ?
 
 ### Question 8 — Organisation
 
-A partir de combien de liens environ l'organisation par catégories devient-elle vraiment nécessaire ?
+À partir de combien de liens environ l'organisation par catégories devient-elle vraiment nécessaire ?
 
 - A) Dès le premier lien
-- B) A partir de 10 liens
-- C) A partir de 50 liens, sans catégories tu es perdu
+- B) À partir de 10 liens
+- C) À partir de 50 liens, sans catégories tu es perdu
 - D) Les catégories ne sont jamais nécessaires
 
 **Bonne réponse : C**

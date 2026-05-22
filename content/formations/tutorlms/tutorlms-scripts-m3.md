@@ -1,555 +1,555 @@
-# Scripts video -- Module 3 : Reglages complets de TutorLMS
+# Scripts vidéo -- Module 3 : Réglages complets de TutorLMS
 
-**Formation** : Maitriser TutorLMS
-**Module** : M3 -- Reglages complets (Gratuit -- dernier module du lead magnet)
-**Lecons** : 9 videos + 1 quiz
-**Duree totale** : ~55 min
+**Formation** : Maîtriser TutorLMS
+**Module** : M3 -- Réglages complets (Gratuit -- dernier module du lead magnet)
+**Leçons** : 9 vidéos + 1 quiz
+**Durée totale** : ~55 min
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 3.1 -- Reglages generaux (General)
+### Leçon 3.1 -- Réglages généraux (General)
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > General
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > General
 
 ---
 
-**[INTRO -- face camera]**
+**[INTRO -- face caméra]**
 
-Tu viens d'installer TutorLMS. Avant de creer ton premier cours, il y a un passage oblige : les reglages. Ce module couvre les 8 onglets de configuration un par un. On commence par l'onglet General -- c'est la base de tout le reste.
+Tu viens d'installer TutorLMS. Avant de créer ton premier cours, il y a un passage obligé : les réglages. Ce module couvre les 8 onglets de configuration un par un. On commence par l'onglet General -- c'est la base de tout le reste.
 
 **[SCREENCAST: TutorLMS > Settings > General]**
 
 Dans ton admin WordPress, va dans TutorLMS puis Settings. Tu arrives directement sur l'onglet General.
 
-Etape 1 : le mode instructeur. Tu as deux options. Mode unique : toi seul peux creer des cours. Mode multi-instructeur : d'autres personnes peuvent s'inscrire comme formateurs. Si tu geres ta plateforme seul, reste en mode unique. Tu pourras changer plus tard.
+Étape 1 : le mode instructeur. Tu as deux options. Mode unique : toi seul peux créer des cours. Mode multi-instructeur : d'autres personnes peuvent s'inscrire comme formateurs. Si tu gères ta plateforme seul, reste en mode unique. Tu pourras changer plus tard.
 
-Etape 2 : le slug des cours. Par defaut, TutorLMS utilise "courses" dans l'URL. Tu peux le remplacer par "formations" ou "cours" si tu veux des URL en francais. Attention : si tu changes le slug apres avoir publie des cours, les anciennes URL casseront. Choisis maintenant.
+Étape 2 : le slug des cours. Par défaut, TutorLMS utilise "courses" dans l'URL. Tu peux le remplacer par "formations" ou "cours" si tu veux des URL en français. Attention : si tu changes le slug après avoir publié des cours, les anciennes URL casseront. Choisis maintenant.
 
-Etape 3 : la page de listing des cours. TutorLMS cree automatiquement une page "Courses" a l'installation. Verifie que cette page est bien selectionnee ici. C'est la page ou s'affiche le catalogue de tes formations.
+Étape 3 : la page de listing des cours. TutorLMS crée automatiquement une page "Courses" à l'installation. Vérifie que cette page est bien sélectionnée ici. C'est la page où s'affiche le catalogue de tes formations.
 
-Etape 4 : le tableau de bord etudiant. Meme principe -- une page "Dashboard" a ete creee. C'est la page ou tes eleves voient leurs cours en cours, leur progression, et leurs certificats. Verifie qu'elle est bien assignee.
+Étape 4 : le tableau de bord étudiant. Même principe -- une page "Dashboard" a été créée. C'est la page où tes élèves voient leurs cours en cours, leur progression, et leurs certificats. Vérifie qu'elle est bien assignée.
 
-Etape 5 : les options d'inscription. Tu peux activer ou desactiver l'inscription ouverte. Si tu vends des formations, tu veux que les visiteurs puissent creer un compte. Active cette option.
+Étape 5 : les options d'inscription. Tu peux activer ou désactiver l'inscription ouverte. Si tu vends des formations, tu veux que les visiteurs puissent créer un compte. Active cette option.
 
-**[SCREENCAST: section capacites et options supplementaires]**
+**[SCREENCAST: section capacités et options supplémentaires]**
 
-Etape 6 : les capacites de publication. Par defaut, les instructeurs doivent soumettre leurs cours pour approbation. En tant qu'admin, tu peux publier directement. Si tu es seul formateur, active la publication directe pour eviter une etape inutile.
+Étape 6 : les capacités de publication. Par défaut, les instructeurs doivent soumettre leurs cours pour approbation. En tant qu'admin, tu peux publier directement. Si tu es seul formateur, active la publication directe pour éviter une étape inutile.
 
-Etape 7 : la suppression des donnees a la desinstallation. Laisse cette option desactivee. Si tu desinstalles TutorLMS par erreur, tu ne veux pas perdre tous tes cours et tes donnees etudiants.
+Étape 7 : la suppression des données à la désinstallation. Laisse cette option désactivée. Si tu désinstalles TutorLMS par erreur, tu ne veux pas perdre tous tes cours et tes données étudiants.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-L'onglet General est configure. Ce sont des reglages qu'on fait une fois et qu'on ne touche plus. Dans la prochaine lecon, on attaque l'onglet le plus important : les reglages des cours.
+L'onglet General est configuré. Ce sont des réglages qu'on fait une fois et qu'on ne touche plus. Dans la prochaine leçon, on attaque l'onglet le plus important : les réglages des cours.
 
 ---
 
-**Points cles** :
-- Mode instructeur : unique ou multi (choisir des le debut)
-- Slug des cours : a definir avant toute publication (pas de changement apres)
-- Pages listing et dashboard : verifier qu'elles sont bien assignees
+**Points clés** :
+- Mode instructeur : unique ou multi (choisir dès le début)
+- Slug des cours : à définir avant toute publication (pas de changement après)
+- Pages listing et dashboard : vérifier qu'elles sont bien assignées
 - Publication directe : activer si tu es seul formateur
-- Ne jamais activer la suppression de donnees a la desinstallation
+- Ne jamais activer la suppression de données à la désinstallation
 
-**Mots cles SEO** : reglages TutorLMS, configuration TutorLMS WordPress, TutorLMS settings general, parametrer TutorLMS
-
----
-
-### Lecon 3.2 -- Reglages des cours (Course)
-
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Course
+**Mots clés SEO** : réglages TutorLMS, configuration TutorLMS WordPress, TutorLMS settings general, paramétrer TutorLMS
 
 ---
 
-**[INTRO -- face camera]**
+### Leçon 3.2 -- Réglages des cours (Course)
 
-L'onglet Course controle le comportement de tous tes cours : l'affichage, l'acces au contenu, la progression. C'est le coeur de la configuration TutorLMS. Chaque option ici impacte directement l'experience de tes eleves.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Course
+
+---
+
+**[INTRO -- face caméra]**
+
+L'onglet Course contrôle le comportement de tous tes cours : l'affichage, l'accès au contenu, la progression. C'est le cœur de la configuration TutorLMS. Chaque option ici impacte directement l'expérience de tes élèves.
 
 **[SCREENCAST: TutorLMS > Settings > Course]**
 
 On reste dans TutorLMS > Settings. Clique sur l'onglet Course.
 
-Etape 1 : le Content Drip. C'est la diffusion progressive du contenu. Au lieu de donner acces a toutes les lecons d'un coup, tu peux les debloquer une par une. Trois modes disponibles. Sequence : l'eleve doit terminer la lecon 1 avant d'acceder a la lecon 2. Par date : chaque lecon se debloque a une date fixe. Prerequis : une lecon se debloque quand une condition est remplie. Mon conseil : active le mode Sequence. Ca evite que les eleves sautent des etapes et ca ameliore la completion.
+Étape 1 : le Content Drip. C'est la diffusion progressive du contenu. Au lieu de donner accès à toutes les leçons d'un coup, tu peux les débloquer une par une. Trois modes disponibles. Séquence : l'élève doit terminer la leçon 1 avant d'accéder à la leçon 2. Par date : chaque leçon se débloque à une date fixe. Prérequis : une leçon se débloque quand une condition est remplie. Mon conseil : active le mode Séquence. Ça évite que les élèves sautent des étapes et ça améliore la complétion.
 
-Etape 2 : l'affichage du cours. Tu choisis ici ce que les visiteurs non inscrits voient sur la page du cours. Active l'apercu du curriculum. Les visiteurs doivent voir la liste des lecons pour comprendre ce qu'ils achetent. Cache le contenu des lecons payantes -- seuls les titres doivent apparaitre.
+Étape 2 : l'affichage du cours. Tu choisis ici ce que les visiteurs non inscrits voient sur la page du cours. Active l'aperçu du curriculum. Les visiteurs doivent voir la liste des leçons pour comprendre ce qu'ils achètent. Cache le contenu des leçons payantes -- seuls les titres doivent apparaître.
 
-Etape 3 : la barre de progression. Active-la. Elle montre a l'eleve ou il en est dans le cours. C'est un levier de motivation concret -- quand tu vois 60% de progression, tu veux finir.
+Étape 3 : la barre de progression. Active-la. Elle montre à l'élève où il en est dans le cours. C'est un levier de motivation concret -- quand tu vois 60% de progression, tu veux finir.
 
-**[SCREENCAST: section options avancees du cours]**
+**[SCREENCAST: section options avancées du cours]**
 
-Etape 4 : l'autocompletion des lecons. Deux options. Automatique : la lecon est marquee "terminee" quand l'eleve arrive en bas. Manuelle : l'eleve doit cliquer un bouton "Marquer comme termine". Je recommande le mode manuel. Ca force une action consciente et ca donne une donnee de progression plus fiable.
+Étape 4 : l'autocomplétion des leçons. Deux options. Automatique : la leçon est marquée "terminée" quand l'élève arrive en bas. Manuelle : l'élève doit cliquer un bouton "Marquer comme terminé". Je recommande le mode manuel. Ça force une action consciente et ça donne une donnée de progression plus fiable.
 
-Etape 5 : le Player Video. TutorLMS a son propre lecteur video integre. Tu peux afficher les videos depuis YouTube, Vimeo, ou un fichier auto-heberge. Si tu utilises YouTube, le player TutorLMS masque les suggestions YouTube a la fin de la video. C'est un vrai avantage -- tes eleves ne sont pas distraits par des videos de chats.
+Étape 5 : le Player Vidéo. TutorLMS a son propre lecteur vidéo intégré. Tu peux afficher les vidéos depuis YouTube, Vimeo, ou un fichier auto-hébergé. Si tu utilises YouTube, le player TutorLMS masque les suggestions YouTube à la fin de la vidéo. C'est un vrai avantage -- tes élèves ne sont pas distraits par des vidéos de chats.
 
-Etape 6 : la limite de re-tentatives pour les quiz. Tu definis ici combien de fois un eleve peut repasser un quiz. Zero signifie illimite. Pour une formation certifiante, limite a 3 tentatives. Pour un quiz d'auto-evaluation, laisse illimite.
+Étape 6 : la limite de re-tentatives pour les quiz. Tu définis ici combien de fois un élève peut repasser un quiz. Zéro signifie illimité. Pour une formation certifiante, limite à 3 tentatives. Pour un quiz d'auto-évaluation, laisse illimité.
 
-Etape 7 : les avis. Active les avis sur les cours. Les avis positifs servent de preuve sociale sur ta page de vente. Desactive l'option "avis uniquement pour les eleves inscrits" si tu veux aussi permettre les temoignages post-formation.
+Étape 7 : les avis. Active les avis sur les cours. Les avis positifs servent de preuve sociale sur ta page de vente. Désactive l'option "avis uniquement pour les élèves inscrits" si tu veux aussi permettre les témoignages post-formation.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-L'onglet Course est le plus dense de tous les reglages. Prends le temps de tester chaque option sur un cours de test avant de publier. Prochaine lecon : le Design -- on personnalise l'apparence de ta plateforme.
+L'onglet Course est le plus dense de tous les réglages. Prends le temps de tester chaque option sur un cours de test avant de publier. Prochaine leçon : le Design -- on personnalise l'apparence de ta plateforme.
 
 ---
 
-**Points cles** :
-- Content Drip en mode Sequence = meilleure completion
+**Points clés** :
+- Content Drip en mode Séquence = meilleure complétion
 - Afficher le curriculum aux visiteurs, masquer le contenu payant
 - Barre de progression : toujours active (levier de motivation)
-- Autocompletion manuelle = donnees de progression fiables
-- Player video TutorLMS masque les suggestions YouTube
+- Autocomplétion manuelle = données de progression fiables
+- Player vidéo TutorLMS masque les suggestions YouTube
 - Avis actifs = preuve sociale sur la page de vente
 
-**Mots cles SEO** : TutorLMS course settings, content drip TutorLMS, configurer cours TutorLMS, progression TutorLMS WordPress
+**Mots clés SEO** : TutorLMS course settings, content drip TutorLMS, configurer cours TutorLMS, progression TutorLMS WordPress
 
 ---
 
-### Lecon 3.3 -- Design et apparence
+### Leçon 3.3 -- Design et apparence
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Design
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Design
 
 ---
 
-**[INTRO -- face camera]**
+**[INTRO -- face caméra]**
 
-TutorLMS genere automatiquement les pages de tes cours, du catalogue, et du tableau de bord. Dans cet onglet Design, tu controles les couleurs, la mise en page, et l'apparence globale de ta plateforme de formation. Pas besoin de CSS custom -- tout se fait ici.
+TutorLMS génère automatiquement les pages de tes cours, du catalogue, et du tableau de bord. Dans cet onglet Design, tu contrôles les couleurs, la mise en page, et l'apparence globale de ta plateforme de formation. Pas besoin de CSS custom -- tout se fait ici.
 
 **[SCREENCAST: TutorLMS > Settings > Design]**
 
 Dans Settings, clique sur Design.
 
-Etape 1 : la couleur principale. C'est la couleur utilisee pour les boutons, les barres de progression, les liens actifs. Choisis une couleur cohérente avec ta charte graphique. Si tu n'en as pas, reste sur un bleu fonce ou un vert -- ca inspire confiance.
+Étape 1 : la couleur principale. C'est la couleur utilisée pour les boutons, les barres de progression, les liens actifs. Choisis une couleur cohérente avec ta charte graphique. Si tu n'en as pas, reste sur un bleu foncé ou un vert -- ça inspire confiance.
 
-Etape 2 : le layout du catalogue. Tu choisis entre une grille de cartes ou une liste. La grille fonctionne mieux visuellement si tu as des vignettes de cours soignees. La liste convient si tu as beaucoup de cours et que tu veux une navigation rapide.
+Étape 2 : le layout du catalogue. Tu choisis entre une grille de cartes ou une liste. La grille fonctionne mieux visuellement si tu as des vignettes de cours soignées. La liste convient si tu as beaucoup de cours et que tu veux une navigation rapide.
 
-Etape 3 : le nombre de colonnes. Sur la page catalogue, TutorLMS affiche les cours en 3 colonnes par defaut. Si tu as moins de 6 cours, passe a 2 colonnes -- ca evite les espaces vides.
+Étape 3 : le nombre de colonnes. Sur la page catalogue, TutorLMS affiche les cours en 3 colonnes par défaut. Si tu as moins de 6 cours, passe à 2 colonnes -- ça évite les espaces vides.
 
-Etape 4 : les informations affichees sur les cartes. Tu peux montrer ou masquer le nom de l'instructeur, le nombre d'eleves, la duree estimee, la note moyenne. Affiche au minimum la duree et la note. Ce sont les deux informations qui aident le plus a la decision d'achat.
+Étape 4 : les informations affichées sur les cartes. Tu peux montrer ou masquer le nom de l'instructeur, le nombre d'élèves, la durée estimée, la note moyenne. Affiche au minimum la durée et la note. Ce sont les deux informations qui aident le plus à la décision d'achat.
 
 **[SCREENCAST: section page de cours individuelle]**
 
-Etape 5 : le layout de la page de cours. Deux options : sidebar ou pleine largeur. Avec sidebar, le curriculum s'affiche sur le cote pendant la lecture. Sans sidebar, l'eleve a un ecran plus large pour la video. Teste les deux -- ca depend de ton theme WordPress.
+Étape 5 : le layout de la page de cours. Deux options : sidebar ou pleine largeur. Avec sidebar, le curriculum s'affiche sur le côté pendant la lecture. Sans sidebar, l'élève a un écran plus large pour la vidéo. Teste les deux -- ça dépend de ton thème WordPress.
 
-Etape 6 : le design du player. TutorLMS propose un mode "cinema" ou l'en-tete et le footer disparaissent pendant la lecture video. Active-le. Ca reduit les distractions et donne une experience plus immersive.
+Étape 6 : le design du player. TutorLMS propose un mode "cinéma" où l'en-tête et le footer disparaissent pendant la lecture vidéo. Active-le. Ça réduit les distractions et donne une expérience plus immersive.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-Le design est en place. Ta plateforme a maintenant une identite visuelle propre. Dans la prochaine lecon, on configure la monetisation -- comment faire payer tes formations.
-
----
-
-**Points cles** :
-- Couleur principale : alignee sur ta charte graphique
-- Grille pour peu de cours bien illustres, liste pour un gros catalogue
-- Afficher duree et note sur les cartes (aide a la conversion)
-- Mode cinema pour une experience de lecture immersive
-- Tester les layouts avec ton theme avant de publier
-
-**Mots cles SEO** : TutorLMS design settings, personnaliser TutorLMS, apparence plateforme LMS WordPress, TutorLMS layout cours
+Le design est en place. Ta plateforme a maintenant une identité visuelle propre. Dans la prochaine leçon, on configure la monétisation -- comment faire payer tes formations.
 
 ---
 
-### Lecon 3.4 -- Monetisation
+**Points clés** :
+- Couleur principale : alignée sur ta charte graphique
+- Grille pour peu de cours bien illustrés, liste pour un gros catalogue
+- Afficher durée et note sur les cartes (aide à la conversion)
+- Mode cinéma pour une expérience de lecture immersive
+- Tester les layouts avec ton thème avant de publier
 
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Monetization
+**Mots clés SEO** : TutorLMS design settings, personnaliser TutorLMS, apparence plateforme LMS WordPress, TutorLMS layout cours
 
 ---
 
-**[INTRO -- face camera]**
+### Leçon 3.4 -- Monétisation
 
-Tu veux vendre tes formations ? C'est ici que tout se decide. L'onglet Monetization connecte TutorLMS a un systeme de paiement. Pas de monetisation, pas de revenus. On configure ca maintenant.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Monetization
+
+---
+
+**[INTRO -- face caméra]**
+
+Tu veux vendre tes formations ? C'est ici que tout se décide. L'onglet Monetization connecte TutorLMS à un système de paiement. Pas de monétisation, pas de revenus. On configure ça maintenant.
 
 **[SCREENCAST: TutorLMS > Settings > Monetization]**
 
 Dans Settings, onglet Monetization.
 
-Etape 1 : activer la monetisation. Par defaut, elle est desactivee. Active-la. Sans ca, tu ne peux pas mettre de prix sur tes cours.
+Étape 1 : activer la monétisation. Par défaut, elle est désactivée. Active-la. Sans ça, tu ne peux pas mettre de prix sur tes cours.
 
-Etape 2 : choisir le moteur de paiement. TutorLMS propose plusieurs options. WooCommerce : la solution la plus complete. Tu crees un produit WooCommerce pour chaque cours. Ca te donne acces a tout l'ecosysteme WooCommerce -- coupons, abonnements, factures, analytics. C'est ce que j'utilise sur schoolsWP. Easy Digital Downloads (EDD) : plus leger, concu pour les produits numeriques. Convient si tu ne vends que des formations et rien d'autre. Tutor native : le systeme integre de TutorLMS. Paiements Stripe ou PayPal directs, sans plugin supplementaire. Simple, mais moins de fonctionnalites.
+Étape 2 : choisir le moteur de paiement. TutorLMS propose plusieurs options. WooCommerce : la solution la plus complète. Tu crées un produit WooCommerce pour chaque cours. Ça te donne accès à tout l'écosystème WooCommerce -- coupons, abonnements, factures, analytics. C'est ce que j'utilise sur schoolsWP. Easy Digital Downloads (EDD) : plus léger, conçu pour les produits numériques. Convient si tu ne vends que des formations et rien d'autre. Tutor native : le système intégré de TutorLMS. Paiements Stripe ou PayPal directs, sans plugin supplémentaire. Simple, mais moins de fonctionnalités.
 
-**[SCREENCAST: configuration WooCommerce detaillee]**
+**[SCREENCAST: configuration WooCommerce détaillée]**
 
-Etape 3 : si tu choisis WooCommerce -- et c'est ce que je recommande -- voici comment ca fonctionne. TutorLMS ajoute automatiquement un type de produit "Cours" dans WooCommerce. Quand tu crees un cours dans TutorLMS, tu l'associes a un produit WooCommerce. Le prix, les soldes, les coupons -- tout se gere dans WooCommerce.
+Étape 3 : si tu choisis WooCommerce -- et c'est ce que je recommande -- voici comment ça fonctionne. TutorLMS ajoute automatiquement un type de produit "Cours" dans WooCommerce. Quand tu crées un cours dans TutorLMS, tu l'associes à un produit WooCommerce. Le prix, les soldes, les coupons -- tout se gère dans WooCommerce.
 
-Etape 4 : le partage des revenus. Si tu as des instructeurs invites, tu definis ici le pourcentage de commission. Par defaut : 80% pour l'instructeur, 20% pour la plateforme. Ajuste selon ton modele. Si tu es seul formateur, cette option ne te concerne pas.
+Étape 4 : le partage des revenus. Si tu as des instructeurs invités, tu définis ici le pourcentage de commission. Par défaut : 80% pour l'instructeur, 20% pour la plateforme. Ajuste selon ton modèle. Si tu es seul formateur, cette option ne te concerne pas.
 
-Etape 5 : les devises et taxes. Ca se configure dans WooCommerce, pas dans TutorLMS. Va dans WooCommerce > Reglages > General pour definir ta devise (euros) et ta localisation de taxe.
+Étape 5 : les devises et taxes. Ça se configure dans WooCommerce, pas dans TutorLMS. Va dans WooCommerce > Réglages > General pour définir ta devise (euros) et ta localisation de taxe.
 
-**[SCREENCAST: modeles de vente]**
+**[SCREENCAST: modèles de vente]**
 
-Etape 6 : les modeles de monetisation possibles. Vente unitaire : chaque cours a un prix fixe. Abonnement : acces a tous les cours contre un paiement mensuel (necessite WooCommerce Subscriptions). Freemium : certains cours gratuits, d'autres payants. C'est le modele schoolsWP -- les 3 premiers modules gratuits servent de lead magnet. Bundle : regroupe plusieurs cours a prix reduit (necessite un plugin de bundle WooCommerce).
+Étape 6 : les modèles de monétisation possibles. Vente unitaire : chaque cours a un prix fixe. Abonnement : accès à tous les cours contre un paiement mensuel (nécessite WooCommerce Subscriptions). Freemium : certains cours gratuits, d'autres payants. C'est le modèle schoolsWP -- les 3 premiers modules gratuits servent de lead magnet. Bundle : regroupe plusieurs cours à prix réduit (nécessite un plugin de bundle WooCommerce).
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-La monetisation est configuree. Dans le Module 7, on ira plus loin avec WooCommerce -- coupons, abonnements, upsells. Pour l'instant, l'essentiel est en place : tes cours peuvent etre vendus. Prochaine lecon : les reglages avances.
+La monétisation est configurée. Dans le Module 7, on ira plus loin avec WooCommerce -- coupons, abonnements, upsells. Pour l'instant, l'essentiel est en place : tes cours peuvent être vendus. Prochaine leçon : les réglages avancés.
 
 ---
 
-**Points cles** :
-- Activer la monetisation avant de publier un cours payant
-- WooCommerce = choix recommande (coupons, abonnements, factures)
-- Associer chaque cours TutorLMS a un produit WooCommerce
-- Modele freemium : modules gratuits comme lead magnet
+**Points clés** :
+- Activer la monétisation avant de publier un cours payant
+- WooCommerce = choix recommandé (coupons, abonnements, factures)
+- Associer chaque cours TutorLMS à un produit WooCommerce
+- Modèle freemium : modules gratuits comme lead magnet
 - Partage des revenus configurable pour les plateformes multi-instructeurs
 
-**Mots cles SEO** : TutorLMS monetisation, vendre formation TutorLMS, TutorLMS WooCommerce, monetiser cours WordPress LMS
+**Mots clés SEO** : TutorLMS monétisation, vendre formation TutorLMS, TutorLMS WooCommerce, monétiser cours WordPress LMS
 
 ---
 
-### Lecon 3.5 -- Reglages avances (Advanced)
+### Leçon 3.5 -- Réglages avancés (Advanced)
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Advanced
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Advanced
 
 ---
 
-**[INTRO -- face camera]**
+**[INTRO -- face caméra]**
 
-L'onglet Advanced regroupe les options techniques que la plupart des tutos ignorent. Pourtant, certaines de ces options impactent directement la performance et la securite de ta plateforme. On passe tout en revue.
+L'onglet Advanced regroupe les options techniques que la plupart des tutos ignorent. Pourtant, certaines de ces options impactent directement la performance et la sécurité de ta plateforme. On passe tout en revue.
 
 **[SCREENCAST: TutorLMS > Settings > Advanced]**
 
 Dans Settings, onglet Advanced.
 
-Etape 1 : le mode maintenance. Tu peux activer un mode maintenance pour ta plateforme de cours. Utile quand tu fais une grosse mise a jour ou que tu migres du contenu. Les eleves voient un message d'attente au lieu des cours.
+Étape 1 : le mode maintenance. Tu peux activer un mode maintenance pour ta plateforme de cours. Utile quand tu fais une grosse mise à jour ou que tu migres du contenu. Les élèves voient un message d'attente au lieu des cours.
 
-Etape 2 : les permaliens. TutorLMS utilise des slugs personnalisables pour les cours, les lecons, et les quiz. Par defaut : "courses", "lesson", "quiz". Si tu veux tout en francais, change ici : "formations", "lecon", "quiz". Rappel : ne change plus jamais ces slugs apres avoir publie du contenu.
+Étape 2 : les permaliens. TutorLMS utilise des slugs personnalisables pour les cours, les leçons, et les quiz. Par défaut : "courses", "lesson", "quiz". Si tu veux tout en français, change ici : "formations", "leçon", "quiz". Rappel : ne change plus jamais ces slugs après avoir publié du contenu.
 
-Etape 3 : la detection d'inactivite. TutorLMS peut deconnecter automatiquement un eleve apres un temps d'inactivite. Active cette option et mets 30 minutes. Ca libere les licences si tu utilises un systeme de connexion simultanee limitee.
+Étape 3 : la détection d'inactivité. TutorLMS peut déconnecter automatiquement un élève après un temps d'inactivité. Active cette option et mets 30 minutes. Ça libère les licences si tu utilises un système de connexion simultanée limitée.
 
-**[SCREENCAST: section securite et fichiers]**
+**[SCREENCAST: section sécurité et fichiers]**
 
-Etape 4 : la protection des fichiers de cours. TutorLMS peut empecher l'acces direct aux fichiers telechargeables (PDF, documents). Active cette protection. Sans ca, n'importe qui avec le lien direct peut telecharger tes ressources sans etre inscrit.
+Étape 4 : la protection des fichiers de cours. TutorLMS peut empêcher l'accès direct aux fichiers téléchargeables (PDF, documents). Active cette protection. Sans ça, n'importe qui avec le lien direct peut télécharger tes ressources sans être inscrit.
 
-Etape 5 : les limites de telechargement. Tu definis combien de fois un eleve peut telecharger un fichier. Mets 10 par defaut -- c'est largement suffisant et ca evite les abus.
+Étape 5 : les limites de téléchargement. Tu définis combien de fois un élève peut télécharger un fichier. Mets 10 par défaut -- c'est largement suffisant et ça évite les abus.
 
-Etape 6 : l'API REST. TutorLMS expose une API REST pour les developpeurs. Si tu n'integres pas TutorLMS a une application externe, desactive-la. Moins de surface d'attaque.
+Étape 6 : l'API REST. TutorLMS expose une API REST pour les développeurs. Si tu n'intègres pas TutorLMS à une application externe, désactive-la. Moins de surface d'attaque.
 
-Etape 7 : le recaptcha. Active-le sur les formulaires d'inscription et de connexion. Ca bloque les bots qui creent des faux comptes. Tu as besoin d'une cle Google reCAPTCHA v3 -- c'est gratuit.
+Étape 7 : le recaptcha. Active-le sur les formulaires d'inscription et de connexion. Ça bloque les bots qui créent des faux comptes. Tu as besoin d'une clé Google reCAPTCHA v3 -- c'est gratuit.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-Les reglages avances sont en place. Ta plateforme est maintenant plus securisee et plus performante. Prochaine lecon : les emails -- comment TutorLMS communique avec tes eleves.
+Les réglages avancés sont en place. Ta plateforme est maintenant plus sécurisée et plus performante. Prochaine leçon : les emails -- comment TutorLMS communique avec tes élèves.
 
 ---
 
-**Points cles** :
-- Permaliens en francais : a definir avant toute publication
-- Detection d'inactivite : 30 min (libere les sessions)
-- Protection des fichiers : toujours active (empeche l'acces direct)
-- API REST : desactivee si pas d'integration externe
+**Points clés** :
+- Permaliens en français : à définir avant toute publication
+- Détection d'inactivité : 30 min (libère les sessions)
+- Protection des fichiers : toujours active (empêche l'accès direct)
+- API REST : désactivée si pas d'intégration externe
 - reCAPTCHA v3 : actif sur inscription et connexion
 
-**Mots cles SEO** : TutorLMS advanced settings, securite TutorLMS, reglages avances LMS WordPress, TutorLMS API REST
+**Mots clés SEO** : TutorLMS advanced settings, sécurité TutorLMS, réglages avancés LMS WordPress, TutorLMS API REST
 
 ---
 
-### Lecon 3.6 -- Emails
+### Leçon 3.6 -- Emails
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Email
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Email
 
 ---
 
-**[INTRO -- face camera]**
+**[INTRO -- face caméra]**
 
-TutorLMS envoie des emails a chaque etape cle : inscription, achat, completion de cours, resultat de quiz. Si tu ne configures pas ces emails, tes eleves recoivent des messages generiques en anglais. On va tout personnaliser.
+TutorLMS envoie des emails à chaque étape clé : inscription, achat, complétion de cours, résultat de quiz. Si tu ne configures pas ces emails, tes élèves reçoivent des messages génériques en anglais. On va tout personnaliser.
 
 **[SCREENCAST: TutorLMS > Settings > Email]**
 
 Dans Settings, onglet Email.
 
-Etape 1 : activer les notifications email. Par defaut, elles sont actives. Verifie que le toggle global est bien sur ON.
+Étape 1 : activer les notifications email. Par défaut, elles sont actives. Vérifie que le toggle global est bien sur ON.
 
-Etape 2 : l'expediteur. Definis le nom et l'adresse email qui apparaissent comme expediteur. Utilise le nom de ta plateforme et une adresse professionnelle. Exemple : "schoolsWP Formations" et "formations@tondomaine.com". Ne laisse pas l'adresse WordPress par defaut "wordpress@...".
+Étape 2 : l'expéditeur. Définis le nom et l'adresse email qui apparaissent comme expéditeur. Utilise le nom de ta plateforme et une adresse professionnelle. Exemple : "schoolsWP Formations" et "formations@tondomaine.com". Ne laisse pas l'adresse WordPress par défaut "wordpress@...".
 
 **[SCREENCAST: liste des templates d'emails]**
 
-Etape 3 : les templates. TutorLMS propose un template pour chaque evenement. Les principaux :
+Étape 3 : les templates. TutorLMS propose un template pour chaque événement. Les principaux :
 
-Inscription reussie : l'email de bienvenue. C'est le premier contact avec ton eleve. Personnalise-le avec un message d'accueil, un lien vers le tableau de bord, et les etapes suivantes.
+Inscription réussie : l'email de bienvenue. C'est le premier contact avec ton élève. Personnalise-le avec un message d'accueil, un lien vers le tableau de bord, et les étapes suivantes.
 
-Achat confirme : l'email apres paiement. Confirme le nom du cours, la duree estimee, et un lien direct vers la premiere lecon. Plus vite l'eleve commence, moins il y a de demandes de remboursement.
+Achat confirmé : l'email après paiement. Confirme le nom du cours, la durée estimée, et un lien direct vers la première leçon. Plus vite l'élève commence, moins il y a de demandes de remboursement.
 
-Cours termine : l'email de felicitations. Ajoute un lien vers le certificat si tu en as configure un, et une suggestion vers un cours complementaire.
+Cours terminé : l'email de félicitations. Ajoute un lien vers le certificat si tu en as configuré un, et une suggestion vers un cours complémentaire.
 
-Resultat de quiz : l'email avec la note. Personnalise le message selon que l'eleve a reussi ou echoue. Un message encourageant en cas d'echec reduit la frustration.
+Résultat de quiz : l'email avec la note. Personnalise le message selon que l'élève a réussi ou échoué. Un message encourageant en cas d'échec réduit la frustration.
 
 **[SCREENCAST: variables dynamiques dans les templates]**
 
-Etape 4 : les variables dynamiques. Chaque template accepte des variables entre accolades. Les plus utiles : le nom de l'eleve, le nom du cours, la note du quiz, le lien vers le tableau de bord. Utilise au minimum le prenom de l'eleve dans chaque email -- ca fait toute la difference.
+Étape 4 : les variables dynamiques. Chaque template accepte des variables entre accolades. Les plus utiles : le nom de l'élève, le nom du cours, la note du quiz, le lien vers le tableau de bord. Utilise au minimum le prénom de l'élève dans chaque email -- ça fait toute la différence.
 
-Etape 5 : le design des emails. TutorLMS utilise un template HTML basique. Pour un rendu plus professionnel, tu peux connecter TutorLMS a FluentCRM et gerer toutes les notifications depuis FluentCRM. On verra ca dans le Module 10.
+Étape 5 : le design des emails. TutorLMS utilise un template HTML basique. Pour un rendu plus professionnel, tu peux connecter TutorLMS à FluentCRM et gérer toutes les notifications depuis FluentCRM. On verra ça dans le Module 10.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-Tes emails sont configures en francais, personnalises avec le nom de l'eleve et des liens utiles. Prochaine lecon : les certificats -- la preuve tangible de completion.
+Tes emails sont configurés en français, personnalisés avec le nom de l'élève et des liens utiles. Prochaine leçon : les certificats -- la preuve tangible de complétion.
 
 ---
 
-**Points cles** :
-- Personnaliser le nom et l'adresse de l'expediteur (pas "wordpress@...")
-- Emails cles : bienvenue, achat confirme, cours termine, resultat quiz
-- Variables dynamiques : prenom + nom du cours minimum dans chaque email
-- Tous les templates en francais (par defaut en anglais)
+**Points clés** :
+- Personnaliser le nom et l'adresse de l'expéditeur (pas "wordpress@...")
+- Emails clés : bienvenue, achat confirmé, cours terminé, résultat quiz
+- Variables dynamiques : prénom + nom du cours minimum dans chaque email
+- Tous les templates en français (par défaut en anglais)
 - FluentCRM pour un email design plus pro (Module 10)
 
-**Mots cles SEO** : TutorLMS email settings, notifications TutorLMS, personnaliser emails LMS WordPress, TutorLMS email templates
+**Mots clés SEO** : TutorLMS email settings, notifications TutorLMS, personnaliser emails LMS WordPress, TutorLMS email templates
 
 ---
 
-### Lecon 3.7 -- Certificats
+### Leçon 3.7 -- Certificats
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Certificate
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Certificate
 
 ---
 
-**[INTRO -- face camera]**
+**[INTRO -- face caméra]**
 
-Un certificat de completion, ca semble accessoire. En realite, c'est un des leviers les plus puissants de ta plateforme. Un eleve qui recoit un certificat le partage sur LinkedIn. C'est de la publicite gratuite pour ta formation. Voyons comment les configurer.
+Un certificat de complétion, ça semble accessoire. En réalité, c'est un des leviers les plus puissants de ta plateforme. Un élève qui reçoit un certificat le partage sur LinkedIn. C'est de la publicité gratuite pour ta formation. Voyons comment les configurer.
 
 **[SCREENCAST: TutorLMS > Settings > Certificate]**
 
 Dans Settings, onglet Certificate.
 
-Etape 1 : activer les certificats. Le toggle est desactive par defaut. Active-le.
+Étape 1 : activer les certificats. Le toggle est désactivé par défaut. Active-le.
 
-Etape 2 : choisir un template. TutorLMS Pro inclut plusieurs modeles de certificat pre-concus. Paysage, portrait, classique, moderne. Parcours les options et choisis celui qui correspond a ton identite visuelle.
+Étape 2 : choisir un template. TutorLMS Pro inclut plusieurs modèles de certificat pré-conçus. Paysage, portrait, classique, moderne. Parcours les options et choisis celui qui correspond à ton identité visuelle.
 
-**[SCREENCAST: editeur de certificat]**
+**[SCREENCAST: éditeur de certificat]**
 
-Etape 3 : personnaliser le template. Tu peux modifier chaque element du certificat. Le titre : "Certificat de completion" ou "Attestation de formation". Le nom de ta plateforme ou ton logo. La signature : ajoute ton nom et un titre ("Formateur principal" ou "Fondateur"). La date de completion : generee automatiquement.
+Étape 3 : personnaliser le template. Tu peux modifier chaque élément du certificat. Le titre : "Certificat de complétion" ou "Attestation de formation". Le nom de ta plateforme ou ton logo. La signature : ajoute ton nom et un titre ("Formateur principal" ou "Fondateur"). La date de complétion : générée automatiquement.
 
-Etape 4 : les variables dynamiques. Comme pour les emails, tu utilises des variables : nom de l'eleve, nom du cours, date de completion, duree du cours. Le certificat se remplit automatiquement pour chaque eleve.
+Étape 4 : les variables dynamiques. Comme pour les emails, tu utilises des variables : nom de l'élève, nom du cours, date de complétion, durée du cours. Le certificat se remplit automatiquement pour chaque élève.
 
-**[SCREENCAST: certificat genere en preview]**
+**[SCREENCAST: certificat généré en preview]**
 
-Etape 5 : previsualiser. Avant de publier, genere un certificat de test. Verifie que le nom s'affiche correctement, que le logo n'est pas decoupe, que le texte ne deborde pas. Un certificat mal formate, personne ne le partage.
+Étape 5 : prévisualiser. Avant de publier, génère un certificat de test. Vérifie que le nom s'affiche correctement, que le logo n'est pas découpé, que le texte ne déborde pas. Un certificat mal formaté, personne ne le partage.
 
 **[SCREENCAST: conditions d'obtention]**
 
-Etape 6 : les conditions de delivrance. Tu definis quand le certificat est genere. Option 1 : completion de toutes les lecons. Option 2 : completion de toutes les lecons ET reussite de tous les quiz. Option 3 : obtenir une note minimale. Choisis l'option 2 minimum. Un certificat sans validation de connaissances n'a pas de valeur.
+Étape 6 : les conditions de délivrance. Tu définis quand le certificat est généré. Option 1 : complétion de toutes les leçons. Option 2 : complétion de toutes les leçons ET réussite de tous les quiz. Option 3 : obtenir une note minimale. Choisis l'option 2 minimum. Un certificat sans validation de connaissances n'a pas de valeur.
 
-Etape 7 : le partage LinkedIn. TutorLMS Pro permet d'ajouter un bouton "Partager sur LinkedIn" a cote du certificat. Active-le. Chaque partage est une recommandation visible par le reseau professionnel de ton eleve.
+Étape 7 : le partage LinkedIn. TutorLMS Pro permet d'ajouter un bouton "Partager sur LinkedIn" à côté du certificat. Active-le. Chaque partage est une recommandation visible par le réseau professionnel de ton élève.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-Tes certificats sont configures et prets a etre generes. Chaque eleve qui termine un cours repartira avec une preuve tangible -- et toi, tu gagnes en visibilite. Prochaine lecon : les notifications et le Gradebook.
+Tes certificats sont configurés et prêts à être générés. Chaque élève qui termine un cours repartira avec une preuve tangible -- et toi, tu gagnes en visibilité. Prochaine leçon : les notifications et le Gradebook.
 
 ---
 
-**Points cles** :
-- Activer les certificats (desactives par defaut)
+**Points clés** :
+- Activer les certificats (désactivés par défaut)
 - Personnaliser : logo, signature, titre
-- Condition minimale : completion + quiz reussis
-- Previsualiser avant de publier (eviter les problemes de mise en page)
-- Bouton LinkedIn = publicite gratuite par tes eleves
+- Condition minimale : complétion + quiz réussis
+- Prévisualiser avant de publier (éviter les problèmes de mise en page)
+- Bouton LinkedIn = publicité gratuite par tes élèves
 
-**Mots cles SEO** : certificat TutorLMS, attestation formation WordPress, TutorLMS certificate settings, certificat completion LMS
-
----
-
-### Lecon 3.8 -- Notifications et Gradebook
-
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Notifications puis Gradebook
+**Mots clés SEO** : certificat TutorLMS, attestation formation WordPress, TutorLMS certificate settings, certificat complétion LMS
 
 ---
 
-**[INTRO -- face camera]**
+### Leçon 3.8 -- Notifications et Gradebook
 
-Les notifications gardent tes eleves informes. Le Gradebook suit leurs notes. Ces deux outils combines te donnent une vision complete de l'engagement de ta plateforme. On configure les deux dans cette lecon.
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Notifications puis Gradebook
+
+---
+
+**[INTRO -- face caméra]**
+
+Les notifications gardent tes élèves informés. Le Gradebook suit leurs notes. Ces deux outils combinés te donnent une vision complète de l'engagement de ta plateforme. On configure les deux dans cette leçon.
 
 **[SCREENCAST: TutorLMS > Settings > Notifications]**
 
-Premiere partie : les notifications.
+Première partie : les notifications.
 
-Etape 1 : activer les notifications in-app. Ce sont les notifications qui s'affichent dans le tableau de bord de l'eleve -- pas les emails (ca, c'est fait). Quand un quiz est corrige, quand un nouveau cours est publie, quand un message est recu -- tout apparait dans une cloche de notification.
+Étape 1 : activer les notifications in-app. Ce sont les notifications qui s'affichent dans le tableau de bord de l'élève -- pas les emails (ça, c'est fait). Quand un quiz est corrigé, quand un nouveau cours est publié, quand un message est reçu -- tout apparaît dans une cloche de notification.
 
-Etape 2 : choisir les evenements. Tu actives ou desactives chaque type de notification. Les essentielles : nouvelle lecon disponible (si tu utilises le Content Drip), quiz corrige, annonce de l'instructeur, nouveau cours publie. Desactive les notifications inutiles -- trop de notifications, c'est comme pas de notification.
+Étape 2 : choisir les événements. Tu actives ou désactives chaque type de notification. Les essentielles : nouvelle leçon disponible (si tu utilises le Content Drip), quiz corrigé, annonce de l'instructeur, nouveau cours publié. Désactive les notifications inutiles -- trop de notifications, c'est comme pas de notification.
 
-Etape 3 : les notifications push (optionnel). Si tu as installe OneSignal ou un autre service de push, TutorLMS peut envoyer des notifications au navigateur. C'est puissant pour rappeler aux eleves de revenir, mais invasif. A tester avec precaution.
+Étape 3 : les notifications push (optionnel). Si tu as installé OneSignal ou un autre service de push, TutorLMS peut envoyer des notifications au navigateur. C'est puissant pour rappeler aux élèves de revenir, mais invasif. À tester avec précaution.
 
 **[SCREENCAST: TutorLMS > Settings > Gradebook]**
 
-Deuxieme partie : le Gradebook.
+Deuxième partie : le Gradebook.
 
-Etape 4 : activer le Gradebook. C'est le carnet de notes de ta plateforme. Il agrege toutes les notes de quiz d'un eleve en une note globale par cours.
+Étape 4 : activer le Gradebook. C'est le carnet de notes de ta plateforme. Il agrège toutes les notes de quiz d'un élève en une note globale par cours.
 
-Etape 5 : le systeme de notation. TutorLMS propose deux systemes. Pourcentage : une note sur 100. Lettres : A, B, C, D, F avec des seuils personnalisables. Je recommande le pourcentage -- c'est universel et plus precis.
+Étape 5 : le système de notation. TutorLMS propose deux systèmes. Pourcentage : une note sur 100. Lettres : A, B, C, D, F avec des seuils personnalisables. Je recommande le pourcentage -- c'est universel et plus précis.
 
-Etape 6 : les seuils de reussite. Definis a partir de quel pourcentage un eleve "reussit" le cours. Standard : 70%. Exigeant : 80%. Adapte selon le niveau de ta formation. Pour une formation professionnelle, 70% est un minimum raisonnable.
+Étape 6 : les seuils de réussite. Définis à partir de quel pourcentage un élève "réussit" le cours. Standard : 70%. Exigeant : 80%. Adapte selon le niveau de ta formation. Pour une formation professionnelle, 70% est un minimum raisonnable.
 
-Etape 7 : la visibilite. L'eleve peut-il voir ses notes dans son tableau de bord ? Oui, toujours. La transparence motive. Un eleve qui voit sa note de 65% sait qu'il doit retravailler. Un eleve a 90% est conforte dans sa progression.
+Étape 7 : la visibilité. L'élève peut-il voir ses notes dans son tableau de bord ? Oui, toujours. La transparence motive. Un élève qui voit sa note de 65% sait qu'il doit retravailler. Un élève à 90% est conforté dans sa progression.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-Notifications et Gradebook sont en place. Tes eleves sont informes en temps reel et peuvent suivre leurs notes. Derniere lecon de configuration : l'authentification.
+Notifications et Gradebook sont en place. Tes élèves sont informés en temps réel et peuvent suivre leurs notes. Dernière leçon de configuration : l'authentification.
 
 ---
 
-**Points cles** :
-- Notifications in-app : activer les essentielles, desactiver le bruit
-- Push notifications : puissantes mais a utiliser avec moderation
+**Points clés** :
+- Notifications in-app : activer les essentielles, désactiver le bruit
+- Push notifications : puissantes mais à utiliser avec modération
 - Gradebook : note en pourcentage (plus universel que les lettres)
-- Seuil de reussite : 70% minimum pour une formation pro
-- Transparence des notes : toujours visible pour l'eleve
+- Seuil de réussite : 70% minimum pour une formation pro
+- Transparence des notes : toujours visible pour l'élève
 
-**Mots cles SEO** : TutorLMS notifications, gradebook TutorLMS, carnet notes LMS WordPress, TutorLMS notification settings
-
----
-
-### Lecon 3.9 -- Authentification
-
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS > Settings > Authentication
+**Mots clés SEO** : TutorLMS notifications, gradebook TutorLMS, carnet notes LMS WordPress, TutorLMS notification settings
 
 ---
 
-**[INTRO -- face camera]**
+### Leçon 3.9 -- Authentification
 
-L'authentification, c'est la porte d'entree de ta plateforme. Comment tes eleves se connectent, s'inscrivent, et recuperent leur mot de passe. Un formulaire mal configure, c'est des inscriptions perdues. On optimise ca.
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS > Settings > Authentication
+
+---
+
+**[INTRO -- face caméra]**
+
+L'authentification, c'est la porte d'entrée de ta plateforme. Comment tes élèves se connectent, s'inscrivent, et récupèrent leur mot de passe. Un formulaire mal configuré, c'est des inscriptions perdues. On optimise ça.
 
 **[SCREENCAST: TutorLMS > Settings > Authentication]**
 
 Dans Settings, onglet Authentication.
 
-Etape 1 : le formulaire d'inscription. TutorLMS remplace le formulaire WordPress par defaut par son propre formulaire. C'est plus propre et mieux integre. Verifie que cette option est active.
+Étape 1 : le formulaire d'inscription. TutorLMS remplace le formulaire WordPress par défaut par son propre formulaire. C'est plus propre et mieux intégré. Vérifie que cette option est active.
 
-Etape 2 : les champs du formulaire. Par defaut : nom, email, mot de passe. Tu peux ajouter des champs custom : telephone, entreprise, poste. Mon conseil : le minimum. Chaque champ supplementaire reduit le taux d'inscription. Nom, email, mot de passe -- c'est tout ce dont tu as besoin au depart. Tu collecteras le reste plus tard via le profil.
+Étape 2 : les champs du formulaire. Par défaut : nom, email, mot de passe. Tu peux ajouter des champs custom : téléphone, entreprise, poste. Mon conseil : le minimum. Chaque champ supplémentaire réduit le taux d'inscription. Nom, email, mot de passe -- c'est tout ce dont tu as besoin au départ. Tu collecteras le reste plus tard via le profil.
 
-Etape 3 : la connexion sociale. TutorLMS Pro permet la connexion via Google et Facebook. Active au minimum Google. La moitie de tes visiteurs prefere se connecter avec leur compte Google plutot que creer un nouveau mot de passe. Ca accelere l'inscription.
+Étape 3 : la connexion sociale. TutorLMS Pro permet la connexion via Google et Facebook. Active au minimum Google. La moitié de tes visiteurs préfère se connecter avec leur compte Google plutôt que créer un nouveau mot de passe. Ça accélère l'inscription.
 
-**[SCREENCAST: section securite et redirections]**
+**[SCREENCAST: section sécurité et redirections]**
 
-Etape 4 : les redirections apres connexion. Par defaut, WordPress redirige vers le tableau de bord admin. Mauvaise experience. Configure une redirection vers le dashboard TutorLMS de l'eleve. C'est la premiere chose qu'il doit voir apres connexion : ses cours en cours.
+Étape 4 : les redirections après connexion. Par défaut, WordPress redirige vers le tableau de bord admin. Mauvaise expérience. Configure une redirection vers le dashboard TutorLMS de l'élève. C'est la première chose qu'il doit voir après connexion : ses cours en cours.
 
-Etape 5 : la redirection apres inscription. Meme logique. Redirige vers le tableau de bord ou vers la page catalogue des cours. L'eleve vient de s'inscrire -- montre-lui immediatement ce qu'il peut commencer.
+Étape 5 : la redirection après inscription. Même logique. Redirige vers le tableau de bord ou vers la page catalogue des cours. L'élève vient de s'inscrire -- montre-lui immédiatement ce qu'il peut commencer.
 
-Etape 6 : la page de connexion personnalisee. TutorLMS cree une page de connexion dediee avec son design. Utilise-la au lieu de la page wp-login.php par defaut. L'URL est plus propre et l'experience plus coherente avec le reste de ta plateforme.
+Étape 6 : la page de connexion personnalisée. TutorLMS crée une page de connexion dédiée avec son design. Utilise-la au lieu de la page wp-login.php par défaut. L'URL est plus propre et l'expérience plus cohérente avec le reste de ta plateforme.
 
-Etape 7 : la recuperation de mot de passe. Verifie que le lien "Mot de passe oublie" fonctionne et que l'email de reinitialisation arrive bien. Teste-le toi-meme. Un eleve qui ne peut pas recuperer son mot de passe est un eleve perdu.
+Étape 7 : la récupération de mot de passe. Vérifie que le lien "Mot de passe oublié" fonctionne et que l'email de réinitialisation arrive bien. Teste-le toi-même. Un élève qui ne peut pas récupérer son mot de passe est un élève perdu.
 
-**[TRANSITION -- face camera]**
+**[TRANSITION -- face caméra]**
 
-L'authentification est optimisee. Inscription rapide, connexion Google, redirections intelligentes. Et avec ca, on a termine les 9 onglets de reglages de TutorLMS. Ta plateforme est entierement configuree. Il reste le quiz du module pour valider tes connaissances.
+L'authentification est optimisée. Inscription rapide, connexion Google, redirections intelligentes. Et avec ça, on a terminé les 9 onglets de réglages de TutorLMS. Ta plateforme est entièrement configurée. Il reste le quiz du module pour valider tes connaissances.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Formulaire d'inscription : 3 champs max (nom, email, mot de passe)
-- Connexion Google : activer pour accelerer les inscriptions
-- Redirections : vers le dashboard eleve, jamais vers l'admin WordPress
-- Page de connexion TutorLMS : utiliser a la place de wp-login.php
-- Tester la recuperation de mot de passe avant de lancer
+- Connexion Google : activer pour accélérer les inscriptions
+- Redirections : vers le dashboard élève, jamais vers l'admin WordPress
+- Page de connexion TutorLMS : utiliser à la place de wp-login.php
+- Tester la récupération de mot de passe avant de lancer
 
-**Mots cles SEO** : TutorLMS authentification, connexion sociale TutorLMS, formulaire inscription LMS WordPress, TutorLMS login settings
+**Mots clés SEO** : TutorLMS authentification, connexion sociale TutorLMS, formulaire inscription LMS WordPress, TutorLMS login settings
 
 ---
 
-### Lecon 3.10 -- Quiz Module 3
+### Leçon 3.10 -- Quiz Module 3
 
-**Duree** : 10 min (estimation completion)
+**Durée** : 10 min (estimation complétion)
 **Type** : Quiz TutorLMS (10 QCM)
-**Seuil de reussite** : 70% (7/10)
+**Seuil de réussite** : 70% (7/10)
 
 ---
 
-**Titre du quiz** : Quiz -- Reglages complets TutorLMS
+**Titre du quiz** : Quiz -- Réglages complets TutorLMS
 
-**Description affichee a l'eleve** :
+**Description affichée à l'élève** :
 
-Ce quiz couvre les 9 onglets de reglages de TutorLMS. 10 questions, seuil de reussite a 70%. Tu peux le repasser si besoin. Relis les lecons du module si tu hesites sur une reponse.
+Ce quiz couvre les 9 onglets de réglages de TutorLMS. 10 questions, seuil de réussite à 70%. Tu peux le repasser si besoin. Relis les leçons du module si tu hésites sur une réponse.
 
 ---
 
-**Question 1** : Que se passe-t-il si tu changes le slug des cours apres avoir publie du contenu ?
+**Question 1** : Que se passe-t-il si tu changes le slug des cours après avoir publié du contenu ?
 
-- A) Les anciennes URL sont automatiquement redirigees
+- A) Les anciennes URL sont automatiquement redirigées
 - B) Les anciennes URL cassent (erreur 404) **[CORRECTE]**
-- C) TutorLMS met a jour les URL automatiquement
+- C) TutorLMS met à jour les URL automatiquement
 - D) Rien, le slug n'affecte pas les URL
 
-**Explication** : TutorLMS ne cree pas de redirections automatiques. Changer le slug apres publication genere des erreurs 404 sur toutes les URL existantes.
+**Explication** : TutorLMS ne crée pas de redirections automatiques. Changer le slug après publication génère des erreurs 404 sur toutes les URL existantes.
 
 ---
 
-**Question 2** : Quel mode de Content Drip est recommande pour forcer la progression sequentielle ?
+**Question 2** : Quel mode de Content Drip est recommandé pour forcer la progression séquentielle ?
 
 - A) Par date
-- B) Par prerequis
-- C) Sequence **[CORRECTE]**
+- B) Par prérequis
+- C) Séquence **[CORRECTE]**
 - D) Libre
 
-**Explication** : Le mode Sequence oblige l'eleve a terminer chaque lecon avant de passer a la suivante, ce qui ameliore le taux de completion.
+**Explication** : Le mode Séquence oblige l'élève à terminer chaque leçon avant de passer à la suivante, ce qui améliore le taux de complétion.
 
 ---
 
-**Question 3** : Pourquoi activer l'autocompletion manuelle plutot qu'automatique ?
+**Question 3** : Pourquoi activer l'autocomplétion manuelle plutôt qu'automatique ?
 
-- A) C'est plus rapide pour l'eleve
-- B) Ca force une action consciente et donne des donnees de progression fiables **[CORRECTE]**
-- C) Ca desactive la barre de progression
+- A) C'est plus rapide pour l'élève
+- B) Ça force une action consciente et donne des données de progression fiables **[CORRECTE]**
+- C) Ça désactive la barre de progression
 - D) C'est obligatoire pour les certificats
 
-**Explication** : L'autocompletion manuelle oblige l'eleve a cliquer "Marquer comme termine", ce qui donne une donnee plus fiable que le scroll automatique.
+**Explication** : L'autocomplétion manuelle oblige l'élève à cliquer "Marquer comme terminé", ce qui donne une donnée plus fiable que le scroll automatique.
 
 ---
 
-**Question 4** : Quel moteur de paiement est recommande pour sa flexibilite (coupons, abonnements, factures) ?
+**Question 4** : Quel moteur de paiement est recommandé pour sa flexibilité (coupons, abonnements, factures) ?
 
 - A) Stripe natif TutorLMS
 - B) PayPal natif TutorLMS
 - C) WooCommerce **[CORRECTE]**
 - D) Easy Digital Downloads
 
-**Explication** : WooCommerce offre l'ecosysteme le plus complet : coupons, abonnements, factures, analytics. C'est le choix recommande pour une plateforme de formation.
+**Explication** : WooCommerce offre l'écosystème le plus complet : coupons, abonnements, factures, analytics. C'est le choix recommandé pour une plateforme de formation.
 
 ---
 
-**Question 5** : Que faut-il faire avec l'API REST si tu n'as pas d'integration externe ?
+**Question 5** : Que faut-il faire avec l'API REST si tu n'as pas d'intégration externe ?
 
-- A) La laisser activee par defaut
-- B) La desactiver pour reduire la surface d'attaque **[CORRECTE]**
-- C) La configurer avec une cle publique
+- A) La laisser activée par défaut
+- B) La désactiver pour réduire la surface d'attaque **[CORRECTE]**
+- C) La configurer avec une clé publique
 - D) L'activer uniquement en HTTPS
 
-**Explication** : Une API exposee sans utilite est un risque de securite inutile. Desactive-la si tu n'en as pas besoin.
+**Explication** : Une API exposée sans utilité est un risque de sécurité inutile. Désactive-la si tu n'en as pas besoin.
 
 ---
 
-**Question 6** : Quelle information est essentielle a personnaliser dans les emails TutorLMS ?
+**Question 6** : Quelle information est essentielle à personnaliser dans les emails TutorLMS ?
 
-- A) Le footer avec les mentions legales
-- B) Le nom et l'adresse de l'expediteur **[CORRECTE]**
+- A) Le footer avec les mentions légales
+- B) Le nom et l'adresse de l'expéditeur **[CORRECTE]**
 - C) La couleur de fond de l'email
 - D) Le logo dans le header
 
-**Explication** : Un email envoye par "wordpress@..." au lieu de "formations@tondomaine.com" fait amateur et risque d'atterrir en spam.
+**Explication** : Un email envoyé par "wordpress@..." au lieu de "formations@tondomaine.com" fait amateur et risque d'atterrir en spam.
 
 ---
 
-**Question 7** : Quelle condition minimale recommande-t-on pour delivrer un certificat ?
+**Question 7** : Quelle condition minimale recommande-t-on pour délivrer un certificat ?
 
-- A) Completion de toutes les lecons uniquement
-- B) Completion de toutes les lecons ET reussite de tous les quiz **[CORRECTE]**
+- A) Complétion de toutes les leçons uniquement
+- B) Complétion de toutes les leçons ET réussite de tous les quiz **[CORRECTE]**
 - C) Inscription au cours depuis plus de 30 jours
 - D) Paiement du cours
 
-**Explication** : Un certificat sans validation de connaissances (quiz) n'a pas de valeur. La completion seule ne prouve pas l'apprentissage.
+**Explication** : Un certificat sans validation de connaissances (quiz) n'a pas de valeur. La complétion seule ne prouve pas l'apprentissage.
 
 ---
 
@@ -557,39 +557,39 @@ Ce quiz couvre les 9 onglets de reglages de TutorLMS. 10 questions, seuil de reu
 
 - A) 2 (email, mot de passe)
 - B) 3 (nom, email, mot de passe) **[CORRECTE]**
-- C) 5 (nom, prenom, email, telephone, mot de passe)
+- C) 5 (nom, prénom, email, téléphone, mot de passe)
 - D) Autant que possible pour qualifier les leads
 
-**Explication** : Chaque champ supplementaire reduit le taux d'inscription. Nom, email, mot de passe suffisent. Le reste se collecte ensuite via le profil.
+**Explication** : Chaque champ supplémentaire réduit le taux d'inscription. Nom, email, mot de passe suffisent. Le reste se collecte ensuite via le profil.
 
 ---
 
-**Question 9** : Ou rediriger un eleve apres connexion ?
+**Question 9** : Où rediriger un élève après connexion ?
 
 - A) Vers la page d'accueil du site
 - B) Vers le tableau de bord admin WordPress
-- C) Vers le dashboard TutorLMS de l'eleve **[CORRECTE]**
+- C) Vers le dashboard TutorLMS de l'élève **[CORRECTE]**
 - D) Vers la page catalogue des cours
 
-**Explication** : Le dashboard eleve montre les cours en cours et la progression. C'est la page la plus utile apres connexion.
+**Explication** : Le dashboard élève montre les cours en cours et la progression. C'est la page la plus utile après connexion.
 
 ---
 
 **Question 10** : Pourquoi activer le bouton "Partager sur LinkedIn" pour les certificats ?
 
-- A) Pour que l'eleve puisse imprimer son certificat
-- B) Pour generer de la visibilite gratuite aupres du reseau professionnel de l'eleve **[CORRECTE]**
-- C) Pour valider le certificat aupres des employeurs
-- D) Pour synchroniser les donnees avec LinkedIn Learning
+- A) Pour que l'élève puisse imprimer son certificat
+- B) Pour générer de la visibilité gratuite auprès du réseau professionnel de l'élève **[CORRECTE]**
+- C) Pour valider le certificat auprès des employeurs
+- D) Pour synchroniser les données avec LinkedIn Learning
 
-**Explication** : Chaque partage LinkedIn est une recommandation visible par des centaines de contacts professionnels. C'est de la publicite gratuite pour ta formation.
+**Explication** : Chaque partage LinkedIn est une recommandation visible par des centaines de contacts professionnels. C'est de la publicité gratuite pour ta formation.
 
 ---
 
-**Message de reussite** :
+**Message de réussite** :
 
-Bravo, tu maitrises les reglages de TutorLMS. Ta plateforme est entierement configuree et prete a accueillir des eleves. A partir du Module 4, on entre dans le vif du sujet : la creation de cours.
+Bravo, tu maîtrises les réglages de TutorLMS. Ta plateforme est entièrement configurée et prête à accueillir des élèves. À partir du Module 4, on entre dans le vif du sujet : la création de cours.
 
-**Message d'echec** :
+**Message d'échec** :
 
-Certains reglages t'ont echappe. Relis les lecons du module et retente le quiz. Les reglages sont la fondation de ta plateforme -- tu dois les maitriser avant de creer tes premiers cours.
+Certains réglages t'ont échappé. Relis les leçons du module et retente le quiz. Les réglages sont la fondation de ta plateforme -- tu dois les maîtriser avant de créer tes premiers cours.

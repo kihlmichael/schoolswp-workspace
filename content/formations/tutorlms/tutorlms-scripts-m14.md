@@ -1,94 +1,94 @@
-# Scripts video — Module 14 : Content Bank & Shortcodes
+# Scripts vidéo — Module 14 : Content Bank & Shortcodes
 
-**Formation** : Maitriser TutorLMS
+**Formation** : Maîtriser TutorLMS
 **Module** : M14 — Content Bank & Shortcodes (Premium)
-**Lecons** : 6 videos + 1 quiz
-**Duree totale** : ~30 min
+**Leçons** : 6 vidéos + 1 quiz
+**Durée totale** : ~30 min
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 14.1 — Content Bank
+### Leçon 14.1 — Content Bank
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS admin
-**Source** : Video #38 + doc content-bank
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS admin
+**Source** : Vidéo #38 + doc content-bank
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu crees plusieurs cours et tu te retrouves a refaire les memes lecons a chaque fois ? La Content Bank de TutorLMS resout ce probleme. C'est une bibliotheque centralisee ou tu stockes des lecons reutilisables — une seule version, utilisable dans autant de cours que tu veux. Dans cette lecon, on met ca en place.
+Tu crées plusieurs cours et tu te retrouves à refaire les mêmes leçons à chaque fois ? La Content Bank de TutorLMS résout ce problème. C'est une bibliothèque centralisée où tu stockes des leçons réutilisables — une seule version, utilisable dans autant de cours que tu veux. Dans cette leçon, on met ça en place.
 
-**[ECRAN — screencast TutorLMS admin]**
+**[ÉCRAN — screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Settings > Content Bank]
 
-Premiere etape : active la Content Bank. Va dans Tutor LMS, Settings, puis cherche l'option Content Bank. Active-la. A partir de maintenant, un nouveau menu "Content Bank" apparait dans le menu lateral de TutorLMS.
+Première étape : active la Content Bank. Va dans Tutor LMS, Settings, puis cherche l'option Content Bank. Active-la. À partir de maintenant, un nouveau menu "Content Bank" apparaît dans le menu latéral de TutorLMS.
 
-**[ECRAN — screencast Content Bank]**
+**[ÉCRAN — screencast Content Bank]**
 
 [Navigation vers Tutor LMS > Content Bank]
 
-Clique sur Content Bank dans le menu. Tu arrives sur une liste vide pour l'instant. C'est ici que tu vas stocker toutes tes lecons reutilisables.
+Clique sur Content Bank dans le menu. Tu arrives sur une liste vide pour l'instant. C'est ici que tu vas stocker toutes tes leçons réutilisables.
 
-Clique sur "Add New". Tu retrouves l'editeur classique de lecon TutorLMS — titre, contenu, video, pieces jointes. La seule difference : cette lecon n'est rattachee a aucun cours. Elle existe de maniere autonome dans ta bibliotheque.
+Clique sur "Add New". Tu retrouves l'éditeur classique de leçon TutorLMS — titre, contenu, vidéo, pièces jointes. La seule différence : cette leçon n'est rattachée à aucun cours. Elle existe de manière autonome dans ta bibliothèque.
 
-Remplis ta lecon comme d'habitude. Titre, contenu texte, video si besoin. Puis sauvegarde.
+Remplis ta leçon comme d'habitude. Titre, contenu texte, vidéo si besoin. Puis sauvegarde.
 
-**[ECRAN — screencast Course Builder]**
+**[ÉCRAN — screencast Course Builder]**
 
-[Navigation vers un cours > Course Builder > ajout de lecon depuis la Content Bank]
+[Navigation vers un cours > Course Builder > ajout de leçon depuis la Content Bank]
 
-Maintenant, ouvre le Course Builder d'un cours. Quand tu ajoutes une nouvelle lecon a un topic, tu vois un bouton "Import from Content Bank" a cote du bouton classique "Add Lesson".
+Maintenant, ouvre le Course Builder d'un cours. Quand tu ajoutes une nouvelle leçon à un topic, tu vois un bouton "Import from Content Bank" à côté du bouton classique "Add Lesson".
 
-Clique dessus. La liste de tes lecons Content Bank s'affiche. Selectionne celle que tu veux, confirme. La lecon est importee dans ton cours.
+Clique dessus. La liste de tes leçons Content Bank s'affiche. Sélectionne celle que tu veux, confirme. La leçon est importée dans ton cours.
 
-**[ECRAN — screencast montrant la lecon dans deux cours]**
+**[ÉCRAN — screencast montrant la leçon dans deux cours]**
 
-[Ouvre deux cours differents qui partagent la meme lecon]
+[Ouvre deux cours différents qui partagent la même leçon]
 
-Point important : la lecon importee est une copie independante. Si tu modifies la version dans le cours, ca ne change pas la version dans la Content Bank. Et inversement. C'est une copie a l'import, pas un lien dynamique.
+Point important : la leçon importée est une copie indépendante. Si tu modifies la version dans le cours, ça ne change pas la version dans la Content Bank. Et inversement. C'est une copie à l'import, pas un lien dynamique.
 
-Ca veut dire : si tu corriges une erreur dans la lecon source, tu dois reimporter dans les cours concernes. Garde ca en tete.
+Ça veut dire : si tu corriges une erreur dans la leçon source, tu dois réimporter dans les cours concernés. Garde ça en tête.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-La Content Bank prend tout son sens quand tu as des lecons communes entre plusieurs formations. Par exemple, une lecon "Comment naviguer dans l'interface" ou "Les bases de WordPress" — tu la crees une fois, et tu l'importes partout. Pour un formateur qui gere 5 ou 10 cours, c'est un gain de temps enorme.
+La Content Bank prend tout son sens quand tu as des leçons communes entre plusieurs formations. Par exemple, une leçon "Comment naviguer dans l'interface" ou "Les bases de WordPress" — tu la crées une fois, et tu l'importes partout. Pour un formateur qui gère 5 ou 10 cours, c'est un gain de temps énorme.
 
 ---
 
-**Points cles** :
-- Content Bank = bibliotheque centralisee de lecons reutilisables
+**Points clés** :
+- Content Bank = bibliothèque centralisée de leçons réutilisables
 - Activation dans Tutor LMS > Settings
-- Creation de lecons autonomes (pas rattachees a un cours)
+- Création de leçons autonomes (pas rattachées à un cours)
 - Import dans n'importe quel cours via le Course Builder
-- L'import cree une copie independante (pas un lien dynamique)
-- Ideal pour les lecons communes a plusieurs formations
+- L'import crée une copie indépendante (pas un lien dynamique)
+- Idéal pour les leçons communes à plusieurs formations
 
-**Mots cles SEO** : TutorLMS Content Bank, lecons reutilisables TutorLMS, bibliotheque de contenu LMS WordPress, Content Bank Tutor LMS
+**Mots clés SEO** : TutorLMS Content Bank, leçons réutilisables TutorLMS, bibliothèque de contenu LMS WordPress, Content Bank Tutor LMS
 
 ---
 
-### Lecon 14.2 — Shortcodes Tutor LMS
+### Leçon 14.2 — Shortcodes Tutor LMS
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast WordPress + TutorLMS
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast WordPress + TutorLMS
 **Source** : doc shortcodes
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-TutorLMS genere ses pages automatiquement — tableau de bord, liste de cours, panier. Mais parfois, tu veux afficher ces elements ailleurs. Sur ta page d'accueil, dans un article, ou dans une landing page. C'est exactement le role des shortcodes. Dans cette lecon, on passe en revue les shortcodes TutorLMS et on les integre dans des pages WordPress.
+TutorLMS génère ses pages automatiquement — tableau de bord, liste de cours, panier. Mais parfois, tu veux afficher ces éléments ailleurs. Sur ta page d'accueil, dans un article, ou dans une landing page. C'est exactement le rôle des shortcodes. Dans cette leçon, on passe en revue les shortcodes TutorLMS et on les intègre dans des pages WordPress.
 
-**[ECRAN — screencast WordPress editeur]**
+**[ÉCRAN — screencast WordPress éditeur]**
 
-[Montre l'editeur de page WordPress avec le bloc Shortcode]
+[Montre l'éditeur de page WordPress avec le bloc Shortcode]
 
-Un shortcode, c'est un bout de texte entre crochets que WordPress remplace par du contenu dynamique. TutorLMS en fournit plusieurs. Pour les utiliser, ouvre n'importe quelle page dans l'editeur WordPress, ajoute un bloc "Shortcode" et colle le code.
+Un shortcode, c'est un bout de texte entre crochets que WordPress remplace par du contenu dynamique. TutorLMS en fournit plusieurs. Pour les utiliser, ouvre n'importe quelle page dans l'éditeur WordPress, ajoute un bloc "Shortcode" et colle le code.
 
 Premier shortcode — la liste des cours :
 
@@ -96,116 +96,116 @@ Premier shortcode — la liste des cours :
 [tutor_course]
 ```
 
-Ca affiche la grille de tous tes cours publies, avec les miniatures, les titres et les prix. Tu peux l'ajouter sur ta page d'accueil pour mettre tes formations en avant.
+Ça affiche la grille de tous tes cours publiés, avec les miniatures, les titres et les prix. Tu peux l'ajouter sur ta page d'accueil pour mettre tes formations en avant.
 
-**[ECRAN — screencast front-end]**
+**[ÉCRAN — screencast front-end]**
 
 [Montre le rendu du shortcode sur la page]
 
-Voila le rendu. La grille de cours s'affiche exactement comme sur la page catalogue native de TutorLMS.
+Voilà le rendu. La grille de cours s'affiche exactement comme sur la page catalogue native de TutorLMS.
 
-**[ECRAN — screencast WordPress editeur]**
+**[ÉCRAN — screencast WordPress éditeur]**
 
-[Retour a l'editeur, ajout d'autres shortcodes]
+[Retour à l'éditeur, ajout d'autres shortcodes]
 
-Deuxieme shortcode — le tableau de bord eleve :
+Deuxième shortcode — le tableau de bord élève :
 
 ```
 [tutor_dashboard]
 ```
 
-Ca affiche le dashboard complet de l'eleve — cours en cours, progression, certificats. Utile si tu veux integrer le dashboard dans une page personnalisee plutot que la page par defaut.
+Ça affiche le dashboard complet de l'élève — cours en cours, progression, certificats. Utile si tu veux intégrer le dashboard dans une page personnalisée plutôt que la page par défaut.
 
-Troisieme shortcode — le formulaire d'inscription instructeur :
+Troisième shortcode — le formulaire d'inscription instructeur :
 
 ```
 [tutor_instructor_registration_form]
 ```
 
-Si tu acceptes les instructeurs externes, ce shortcode affiche le formulaire d'inscription. Tu peux le placer sur une page dediee "Devenir formateur".
+Si tu acceptes les instructeurs externes, ce shortcode affiche le formulaire d'inscription. Tu peux le placer sur une page dédiée "Devenir formateur".
 
-**[ECRAN — screencast avec parametres]**
+**[ÉCRAN — screencast avec paramètres]**
 
-[Montre l'ajout de parametres au shortcode]
+[Montre l'ajout de paramètres au shortcode]
 
-Certains shortcodes acceptent des parametres. Par exemple, pour afficher uniquement les cours d'une categorie :
+Certains shortcodes acceptent des paramètres. Par exemple, pour afficher uniquement les cours d'une catégorie :
 
 ```
 [tutor_course category="wordpress"]
 ```
 
-Ou pour limiter le nombre de cours affiches :
+Ou pour limiter le nombre de cours affichés :
 
 ```
 [tutor_course count="6"]
 ```
 
-Tu peux combiner les parametres :
+Tu peux combiner les paramètres :
 
 ```
 [tutor_course category="wordpress" count="3" orderby="date"]
 ```
 
-**[ECRAN — screencast liste complete des shortcodes]**
+**[ÉCRAN — screencast liste complète des shortcodes]**
 
 [Montre la documentation TutorLMS avec la liste des shortcodes]
 
 Voici les principaux shortcodes disponibles :
 
 - `[tutor_course]` — grille de cours
-- `[tutor_dashboard]` — tableau de bord eleve
+- `[tutor_dashboard]` — tableau de bord élève
 - `[tutor_instructor_registration_form]` — inscription instructeur
-- `[tutor_student_registration_form]` — inscription eleve
+- `[tutor_student_registration_form]` — inscription élève
 - `[tutor_instructor_list]` — liste des instructeurs
 - `[tutor_course_search]` — barre de recherche de cours
 
-La documentation TutorLMS les liste tous avec leurs parametres.
+La documentation TutorLMS les liste tous avec leurs paramètres.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les shortcodes te donnent une flexibilite totale pour integrer TutorLMS dans tes pages WordPress. La recommandation schoolsWP : utilise `[tutor_course]` sur ta page d'accueil pour afficher tes formations, et `[tutor_dashboard]` sur une page personnalisee si le design par defaut ne te convient pas. Pour tout le reste, les pages natives TutorLMS font le travail.
+Les shortcodes te donnent une flexibilité totale pour intégrer TutorLMS dans tes pages WordPress. La recommandation schoolsWP : utilise `[tutor_course]` sur ta page d'accueil pour afficher tes formations, et `[tutor_dashboard]` sur une page personnalisée si le design par défaut ne te convient pas. Pour tout le reste, les pages natives TutorLMS font le travail.
 
 ---
 
-**Points cles** :
-- Shortcodes = blocs dynamiques TutorLMS a inserer dans n'importe quelle page WordPress
-- `[tutor_course]` — grille de cours (parametres : category, count, orderby)
-- `[tutor_dashboard]` — tableau de bord eleve complet
+**Points clés** :
+- Shortcodes = blocs dynamiques TutorLMS à insérer dans n'importe quelle page WordPress
+- `[tutor_course]` — grille de cours (paramètres : category, count, orderby)
+- `[tutor_dashboard]` — tableau de bord élève complet
 - `[tutor_instructor_registration_form]` — formulaire inscription instructeur
-- `[tutor_student_registration_form]` — formulaire inscription eleve
+- `[tutor_student_registration_form]` — formulaire inscription élève
 - `[tutor_instructor_list]` — liste des instructeurs
-- Utiliser le bloc "Shortcode" dans l'editeur WordPress
+- Utiliser le bloc "Shortcode" dans l'éditeur WordPress
 
-**Mots cles SEO** : shortcodes TutorLMS, integrer TutorLMS page WordPress, tutor_course shortcode, afficher cours TutorLMS page accueil
+**Mots clés SEO** : shortcodes TutorLMS, intégrer TutorLMS page WordPress, tutor_course shortcode, afficher cours TutorLMS page accueil
 
 ---
 
-### Lecon 14.3 — LaTeX dans les cours
+### Leçon 14.3 — LaTeX dans les cours
 
-**Duree** : 4 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS editeur
+**Durée** : 4 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS éditeur
 **Source** : doc tutorials/tutor-lms-latex
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu enseignes les maths, la physique, la chimie, ou n'importe quelle matiere avec des formules ? TutorLMS supporte LaTeX — le standard pour ecrire des equations mathematiques propres. Dans cette lecon, on active LaTeX et on l'utilise dans les lecons et les quiz.
+Tu enseignes les maths, la physique, la chimie, ou n'importe quelle matière avec des formules ? TutorLMS supporte LaTeX — le standard pour écrire des équations mathématiques propres. Dans cette leçon, on active LaTeX et on l'utilise dans les leçons et les quiz.
 
-**[ECRAN — screencast TutorLMS admin]**
+**[ÉCRAN — screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Settings]
 
-Premiere etape : verifie que le support LaTeX est active. Va dans Tutor LMS, Settings, puis cherche l'option liee a LaTeX ou MathJax. TutorLMS utilise MathJax pour le rendu — c'est la bibliotheque standard qui transforme le code LaTeX en formules visuelles.
+Première étape : vérifie que le support LaTeX est activé. Va dans Tutor LMS, Settings, puis cherche l'option liée à LaTeX ou MathJax. TutorLMS utilise MathJax pour le rendu — c'est la bibliothèque standard qui transforme le code LaTeX en formules visuelles.
 
-Active l'option si elle n'est pas deja cochee.
+Active l'option si elle n'est pas déjà cochée.
 
-**[ECRAN — screencast editeur de lecon]**
+**[ÉCRAN — screencast éditeur de leçon]**
 
-[Navigation vers une lecon > editeur de contenu]
+[Navigation vers une leçon > éditeur de contenu]
 
-Maintenant, ouvre l'editeur d'une lecon. Pour ecrire une formule LaTeX, tu utilises la syntaxe standard : entoure ta formule de doubles dollars pour un bloc centre, ou de simples dollars pour une formule en ligne.
+Maintenant, ouvre l'éditeur d'une leçon. Pour écrire une formule LaTeX, tu utilises la syntaxe standard : entoure ta formule de doubles dollars pour un bloc centré, ou de simples dollars pour une formule en ligne.
 
 Exemple — formule en ligne dans un paragraphe :
 
@@ -213,236 +213,236 @@ Exemple — formule en ligne dans un paragraphe :
 L'aire d'un cercle est $A = \pi r^2$ ou r est le rayon.
 ```
 
-Exemple — formule en bloc, centree :
+Exemple — formule en bloc, centrée :
 
 ```
 $$E = mc^2$$
 ```
 
-**[ECRAN — screencast front-end]**
+**[ÉCRAN — screencast front-end]**
 
-[Montre le rendu de la formule cote eleve]
+[Montre le rendu de la formule côté élève]
 
-Cote eleve, MathJax prend le relais et affiche la formule avec un rendu typographique propre. Les fractions, les racines carrees, les integrales — tout est supporte.
+Côté élève, MathJax prend le relais et affiche la formule avec un rendu typographique propre. Les fractions, les racines carrées, les intégrales — tout est supporté.
 
 Quelques formules courantes :
 
 - Fraction : `$\frac{a}{b}$`
-- Racine carree : `$\sqrt{x}$`
+- Racine carrée : `$\sqrt{x}$`
 - Somme : `$\sum_{i=1}^{n} x_i$`
-- Integrale : `$\int_{0}^{1} f(x) dx$`
+- Intégrale : `$\int_{0}^{1} f(x) dx$`
 
-**[ECRAN — screencast editeur de quiz]**
+**[ÉCRAN — screencast éditeur de quiz]**
 
-[Navigation vers un quiz > editeur de question]
+[Navigation vers un quiz > éditeur de question]
 
-LaTeX fonctionne aussi dans les quiz. Quand tu crees une question, tu peux inserer des formules dans l'enonce et dans les choix de reponse. Meme syntaxe : dollars simples ou doubles.
+LaTeX fonctionne aussi dans les quiz. Quand tu crées une question, tu peux insérer des formules dans l'énoncé et dans les choix de réponse. Même syntaxe : dollars simples ou doubles.
 
 Par exemple, pour une question de maths :
 
-Enonce : "Quelle est la derivee de $f(x) = x^3$ ?"
-- Choix A : $f'(x) = 3x^2$ (bonne reponse)
+Énoncé : "Quelle est la dérivée de $f(x) = x^3$ ?"
+- Choix A : $f'(x) = 3x^2$ (bonne réponse)
 - Choix B : $f'(x) = 2x^2$
 - Choix C : $f'(x) = x^2$
 
-Le rendu est propre dans le quiz cote eleve.
+Le rendu est propre dans le quiz côté élève.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-LaTeX dans TutorLMS, c'est indispensable pour les formations scientifiques. Le rendu est professionnel, la syntaxe est standard. Si tu ne connais pas LaTeX, il existe des editeurs visuels en ligne — tape "LaTeX equation editor" dans Google, compose ta formule visuellement, et copie le code genere dans TutorLMS.
+LaTeX dans TutorLMS, c'est indispensable pour les formations scientifiques. Le rendu est professionnel, la syntaxe est standard. Si tu ne connais pas LaTeX, il existe des éditeurs visuels en ligne — tape "LaTeX equation editor" dans Google, compose ta formule visuellement, et copie le code généré dans TutorLMS.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - TutorLMS utilise MathJax pour le rendu LaTeX
 - Activation dans Tutor LMS > Settings
-- Syntaxe : `$formule$` (en ligne) ou `$$formule$$` (bloc centre)
-- Fonctionne dans les lecons ET dans les quiz (enonces + reponses)
-- Supporte fractions, racines, sommes, integrales, matrices
-- Editeurs visuels en ligne disponibles pour les debutants LaTeX
+- Syntaxe : `$formule$` (en ligne) ou `$$formule$$` (bloc centré)
+- Fonctionne dans les leçons ET dans les quiz (énoncés + réponses)
+- Supporte fractions, racines, sommes, intégrales, matrices
+- Éditeurs visuels en ligne disponibles pour les débutants LaTeX
 
-**Mots cles SEO** : LaTeX TutorLMS, formules mathematiques LMS WordPress, MathJax TutorLMS, equations cours en ligne WordPress
+**Mots clés SEO** : LaTeX TutorLMS, formules mathématiques LMS WordPress, MathJax TutorLMS, équations cours en ligne WordPress
 
 ---
 
-### Lecon 14.4 — Embed PDF dans les lecons
+### Leçon 14.4 — Embed PDF dans les leçons
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS + WordPress
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS + WordPress
 **Source** : doc tutorials/embed-pdf
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu as des supports de cours en PDF — fiches de revision, exercices, documents de reference ? Plutot que de mettre un simple lien de telechargement, tu peux integrer le PDF directement dans la lecon. L'eleve le consulte sans quitter la page. Dans cette lecon, on voit comment faire.
+Tu as des supports de cours en PDF — fiches de révision, exercices, documents de référence ? Plutôt que de mettre un simple lien de téléchargement, tu peux intégrer le PDF directement dans la leçon. L'élève le consulte sans quitter la page. Dans cette leçon, on voit comment faire.
 
-**[ECRAN — screencast TutorLMS editeur de lecon]**
+**[ÉCRAN — screencast TutorLMS éditeur de leçon]**
 
-[Navigation vers une lecon > editeur de contenu]
+[Navigation vers une leçon > éditeur de contenu]
 
-Ouvre l'editeur d'une lecon. On a deux approches pour integrer un PDF.
+Ouvre l'éditeur d'une leçon. On a deux approches pour intégrer un PDF.
 
-**Approche 1 : piece jointe TutorLMS**
+**Approche 1 : pièce jointe TutorLMS**
 
-La plus simple. En bas de l'editeur de lecon, tu as une section "Attachments". Clique sur "Upload", selectionne ton PDF. L'eleve verra un bouton de telechargement en bas de la lecon.
+La plus simple. En bas de l'éditeur de leçon, tu as une section "Attachments". Clique sur "Upload", sélectionne ton PDF. L'élève verra un bouton de téléchargement en bas de la leçon.
 
-C'est fonctionnel, mais l'eleve doit telecharger le fichier pour le lire. On peut faire mieux.
+C'est fonctionnel, mais l'élève doit télécharger le fichier pour le lire. On peut faire mieux.
 
 **Approche 2 : embed dans le contenu**
 
-[Montre l'ajout d'un bloc dans l'editeur]
+[Montre l'ajout d'un bloc dans l'éditeur]
 
-Pour afficher le PDF directement dans la lecon, utilise un bloc "File" dans l'editeur WordPress. Ajoute un bloc, cherche "File", selectionne-le. Upload ton PDF ou choisis-le depuis la mediatheque.
+Pour afficher le PDF directement dans la leçon, utilise un bloc "File" dans l'éditeur WordPress. Ajoute un bloc, cherche "File", sélectionne-le. Upload ton PDF ou choisis-le depuis la médiathèque.
 
-Dans les options du bloc, active "Inline Embed". Ca affiche un viewer PDF directement dans la page. L'eleve peut faire defiler les pages, zoomer, et telecharger si besoin.
+Dans les options du bloc, active "Inline Embed". Ça affiche un viewer PDF directement dans la page. L'élève peut faire défiler les pages, zoomer, et télécharger si besoin.
 
-**[ECRAN — screencast front-end]**
+**[ÉCRAN — screencast front-end]**
 
-[Montre le rendu cote eleve avec le PDF integre]
+[Montre le rendu côté élève avec le PDF intégré]
 
-Voila le rendu. Le PDF s'affiche dans un cadre integre a la lecon. L'eleve navigue entre les pages sans quitter le cours. Le bouton de telechargement reste disponible en haut du viewer.
+Voilà le rendu. Le PDF s'affiche dans un cadre intégré à la leçon. L'élève navigue entre les pages sans quitter le cours. Le bouton de téléchargement reste disponible en haut du viewer.
 
-**[ECRAN — screencast editeur]**
+**[ÉCRAN — screencast éditeur]**
 
-[Retour a l'editeur, ajustement de la taille]
+[Retour à l'éditeur, ajustement de la taille]
 
-Tu peux ajuster la hauteur du viewer PDF dans les options du bloc. Par defaut, c'est souvent trop petit. Monte a 600 ou 800 pixels pour un confort de lecture correct.
+Tu peux ajuster la hauteur du viewer PDF dans les options du bloc. Par défaut, c'est souvent trop petit. Monte à 600 ou 800 pixels pour un confort de lecture correct.
 
-**[ECRAN — screencast avec un plugin PDF]**
+**[ÉCRAN — screencast avec un plugin PDF]**
 
 [Montre l'alternative plugin PDF Embedder]
 
-Si le bloc natif ne te convient pas, il existe des plugins dedies comme PDF Embedder. L'avantage : un rendu plus propre avec pagination, zoom, et un mode plein ecran. L'inconvenient : un plugin supplementaire a maintenir.
+Si le bloc natif ne te convient pas, il existe des plugins dédiés comme PDF Embedder. L'avantage : un rendu plus propre avec pagination, zoom, et un mode plein écran. L'inconvénient : un plugin supplémentaire à maintenir.
 
-La recommandation schoolsWP : commence avec le bloc File natif. Si tu as beaucoup de PDF et que le rendu compte pour tes eleves, passe sur PDF Embedder.
+La recommandation schoolsWP : commence avec le bloc File natif. Si tu as beaucoup de PDF et que le rendu compte pour tes élèves, passe sur PDF Embedder.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-L'embed PDF transforme tes lecons en vrais supports de cours. Au lieu d'un lien que personne ne clique, le document est la, visible, consultable immediatement. C'est particulierement utile pour les fiches de synthese, les exercices a remplir, et les documents de reference.
+L'embed PDF transforme tes leçons en vrais supports de cours. Au lieu d'un lien que personne ne clique, le document est là, visible, consultable immédiatement. C'est particulièrement utile pour les fiches de synthèse, les exercices à remplir, et les documents de référence.
 
 ---
 
-**Points cles** :
-- Approche 1 : piece jointe TutorLMS (section Attachments) — telechargement uniquement
-- Approche 2 : bloc "File" WordPress avec "Inline Embed" active — viewer PDF dans la page
-- Ajuster la hauteur du viewer (600-800px recommande)
-- Alternative plugin : PDF Embedder (rendu superieur, plugin supplementaire)
+**Points clés** :
+- Approche 1 : pièce jointe TutorLMS (section Attachments) — téléchargement uniquement
+- Approche 2 : bloc "File" WordPress avec "Inline Embed" activé — viewer PDF dans la page
+- Ajuster la hauteur du viewer (600-800px recommandé)
+- Alternative plugin : PDF Embedder (rendu supérieur, plugin supplémentaire)
 - Recommandation schoolsWP : bloc File natif d'abord, plugin si besoin
-- Ideal pour fiches de revision, exercices, documents de reference
+- Idéal pour fiches de révision, exercices, documents de référence
 
-**Mots cles SEO** : embed PDF TutorLMS, integrer PDF cours en ligne, PDF dans lecon WordPress, viewer PDF LMS
+**Mots clés SEO** : embed PDF TutorLMS, intégrer PDF cours en ligne, PDF dans leçon WordPress, viewer PDF LMS
 
 ---
 
-### Lecon 14.5 — Sous-titres video
+### Leçon 14.5 — Sous-titres vidéo
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast TutorLMS
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast TutorLMS
 **Source** : doc tutorials/video-captions
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Les sous-titres, c'est a la fois une question d'accessibilite et de confort. Certains eleves apprennent mieux en lisant, d'autres sont dans un environnement bruyant, et d'autres encore ne parlent pas ta langue maternelle. TutorLMS supporte les sous-titres sur les videos de cours. Dans cette lecon, on les ajoute.
+Les sous-titres, c'est à la fois une question d'accessibilité et de confort. Certains élèves apprennent mieux en lisant, d'autres sont dans un environnement bruyant, et d'autres encore ne parlent pas ta langue maternelle. TutorLMS supporte les sous-titres sur les vidéos de cours. Dans cette leçon, on les ajoute.
 
-**[ECRAN — screencast preparation du fichier]**
+**[ÉCRAN — screencast préparation du fichier]**
 
-[Montre un fichier .vtt dans un editeur de texte]
+[Montre un fichier .vtt dans un éditeur de texte]
 
-Les sous-titres utilisent le format WebVTT — un fichier texte avec l'extension `.vtt`. Voici a quoi ca ressemble :
+Les sous-titres utilisent le format WebVTT — un fichier texte avec l'extension `.vtt`. Voici à quoi ça ressemble :
 
 ```
 WEBVTT
 
 00:00:00.000 --> 00:00:03.000
-Bienvenue dans cette lecon sur TutorLMS.
+Bienvenue dans cette leçon sur TutorLMS.
 
 00:00:03.500 --> 00:00:07.000
 Aujourd'hui, on configure les certificats.
 ```
 
-Chaque bloc contient un timecode de debut, un timecode de fin, et le texte a afficher. C'est simple a editer manuellement, mais pour une video de 10 minutes, ca prend du temps.
+Chaque bloc contient un timecode de début, un timecode de fin, et le texte à afficher. C'est simple à éditer manuellement, mais pour une vidéo de 10 minutes, ça prend du temps.
 
-**[ECRAN — screencast outil de sous-titrage]**
+**[ÉCRAN — screencast outil de sous-titrage]**
 
-[Montre un outil de generation de sous-titres]
+[Montre un outil de génération de sous-titres]
 
-La methode rapide : utilise un outil de transcription automatique. Des services comme Whisper (gratuit, open source) ou des outils en ligne generent le fichier `.vtt` a partir de ta video. Tu uploades ta video, tu recuperes le fichier de sous-titres, tu corriges les erreurs eventuelles.
+La méthode rapide : utilise un outil de transcription automatique. Des services comme Whisper (gratuit, open source) ou des outils en ligne génèrent le fichier `.vtt` à partir de ta vidéo. Tu uploades ta vidéo, tu récupères le fichier de sous-titres, tu corriges les erreurs éventuelles.
 
-Pour les videos HeyGen, le script que tu as redige pour la voix off est deja ta transcription. Tu n'as qu'a le convertir en format `.vtt` avec les timecodes.
+Pour les vidéos HeyGen, le script que tu as rédigé pour la voix off est déjà ta transcription. Tu n'as qu'à le convertir en format `.vtt` avec les timecodes.
 
-**[ECRAN — screencast TutorLMS editeur de lecon]**
+**[ÉCRAN — screencast TutorLMS éditeur de leçon]**
 
-[Navigation vers une lecon avec video > section sous-titres]
+[Navigation vers une leçon avec vidéo > section sous-titres]
 
-Dans l'editeur de lecon TutorLMS, ouvre une lecon qui contient une video. Tu trouves une section "Video Source" avec les options de la video. Cherche l'option pour ajouter des sous-titres ou captions.
+Dans l'éditeur de leçon TutorLMS, ouvre une leçon qui contient une vidéo. Tu trouves une section "Video Source" avec les options de la vidéo. Cherche l'option pour ajouter des sous-titres ou captions.
 
-Upload ton fichier `.vtt`. Si tu as des sous-titres dans plusieurs langues, tu peux en ajouter plusieurs — un par langue. Donne un label a chaque fichier : "Francais", "English", etc.
+Upload ton fichier `.vtt`. Si tu as des sous-titres dans plusieurs langues, tu peux en ajouter plusieurs — un par langue. Donne un label à chaque fichier : "Français", "English", etc.
 
-**[ECRAN — screencast front-end]**
+**[ÉCRAN — screencast front-end]**
 
-[Montre la video cote eleve avec le bouton CC]
+[Montre la vidéo côté élève avec le bouton CC]
 
-Cote eleve, un bouton "CC" (closed captions) apparait dans le lecteur video. L'eleve clique dessus, choisit la langue, et les sous-titres s'affichent en surimpression sur la video.
+Côté élève, un bouton "CC" (closed captions) apparaît dans le lecteur vidéo. L'élève clique dessus, choisit la langue, et les sous-titres s'affichent en surimpression sur la vidéo.
 
-Si tu as uploade plusieurs langues, l'eleve peut basculer entre elles.
+Si tu as uploadé plusieurs langues, l'élève peut basculer entre elles.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les sous-titres, c'est un effort initial qui beneficie a tous tes eleves. La recommandation schoolsWP : genere tes sous-titres automatiquement avec Whisper ou un service equivalent, corrige les erreurs, et uploade le fichier `.vtt`. Compte 15-20 minutes de travail par video de 10 minutes. Pour les formations multilingues, c'est aussi la porte d'entree vers un public international.
+Les sous-titres, c'est un effort initial qui bénéficie à tous tes élèves. La recommandation schoolsWP : génère tes sous-titres automatiquement avec Whisper ou un service équivalent, corrige les erreurs, et uploade le fichier `.vtt`. Compte 15-20 minutes de travail par vidéo de 10 minutes. Pour les formations multilingues, c'est aussi la porte d'entrée vers un public international.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Format : WebVTT (.vtt) — fichier texte avec timecodes
-- Generation automatique : Whisper (gratuit) ou services de transcription en ligne
-- Upload dans l'editeur de lecon TutorLMS, section video
+- Génération automatique : Whisper (gratuit) ou services de transcription en ligne
+- Upload dans l'éditeur de leçon TutorLMS, section vidéo
 - Support multi-langues (un fichier .vtt par langue)
-- Cote eleve : bouton CC dans le lecteur video
-- Conseil : corriger toujours les sous-titres auto-generes avant publication
+- Côté élève : bouton CC dans le lecteur vidéo
+- Conseil : corriger toujours les sous-titres auto-générés avant publication
 
-**Mots cles SEO** : sous-titres TutorLMS, video captions LMS WordPress, fichier VTT TutorLMS, accessibilite video cours en ligne
+**Mots clés SEO** : sous-titres TutorLMS, vidéo captions LMS WordPress, fichier VTT TutorLMS, accessibilité vidéo cours en ligne
 
 ---
 
-### Lecon 14.6 — Sidebar sticky
+### Leçon 14.6 — Sidebar sticky
 
-**Duree** : 4 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast WordPress + TutorLMS
+**Durée** : 4 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast WordPress + TutorLMS
 **Source** : doc tutorials/sticky-sidebar
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Quand un eleve fait defiler une longue lecon, la sidebar disparait vers le haut. Le curriculum du cours, le bouton "lecon suivante", la progression — tout ca devient inaccessible. La sidebar sticky resout ce probleme : elle reste visible en permanence pendant le scroll. Dans cette lecon, on l'active.
+Quand un élève fait défiler une longue leçon, la sidebar disparaît vers le haut. Le curriculum du cours, le bouton "leçon suivante", la progression — tout ça devient inaccessible. La sidebar sticky résout ce problème : elle reste visible en permanence pendant le scroll. Dans cette leçon, on l'active.
 
-**[ECRAN — screencast front-end sans sticky]**
+**[ÉCRAN — screencast front-end sans sticky]**
 
-[Montre une lecon longue, scroll vers le bas — la sidebar disparait]
+[Montre une leçon longue, scroll vers le bas — la sidebar disparaît]
 
-Voici le probleme en action. On est sur une lecon avec beaucoup de contenu. Quand on scroll, la sidebar avec le curriculum disparait. L'eleve doit remonter tout en haut pour naviguer vers la lecon suivante ou voir sa progression. C'est une mauvaise experience.
+Voici le problème en action. On est sur une leçon avec beaucoup de contenu. Quand on scroll, la sidebar avec le curriculum disparaît. L'élève doit remonter tout en haut pour naviguer vers la leçon suivante ou voir sa progression. C'est une mauvaise expérience.
 
-**[ECRAN — screencast TutorLMS admin]**
+**[ÉCRAN — screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Settings > Design]
 
 TutorLMS propose une option native pour rendre la sidebar sticky. Va dans Tutor LMS, Settings, puis la section Design ou Course. Cherche l'option "Sticky Sidebar" ou "Sidebar Position". Active-la.
 
-**[ECRAN — screencast front-end avec sticky]**
+**[ÉCRAN — screencast front-end avec sticky]**
 
-[Montre la meme lecon apres activation — la sidebar suit le scroll]
+[Montre la même leçon après activation — la sidebar suit le scroll]
 
-Maintenant, regarde la difference. Quand tu scrolles, la sidebar reste fixee en haut de la zone visible. Le curriculum, la progression, le bouton "lecon suivante" — tout reste accessible en permanence.
+Maintenant, regarde la différence. Quand tu scrolles, la sidebar reste fixée en haut de la zone visible. Le curriculum, la progression, le bouton "leçon suivante" — tout reste accessible en permanence.
 
-**[ECRAN — screencast CSS personnalise]**
+**[ÉCRAN — screencast CSS personnalisé]**
 
-[Montre l'editeur de CSS additionnel dans WordPress]
+[Montre l'éditeur de CSS additionnel dans WordPress]
 
 Si l'option native n'est pas disponible dans ta version, ou si le rendu ne te convient pas, tu peux le faire en CSS. Va dans Apparence, Personnaliser, CSS additionnel. Ajoute :
 
@@ -453,35 +453,35 @@ Si l'option native n'est pas disponible dans ta version, ou si le rendu ne te co
 }
 ```
 
-La valeur `top: 80px` correspond a la marge avec le haut de la page. Ajuste-la selon la hauteur de ton header. Si ton menu fixe fait 60px, mets `top: 70px`.
+La valeur `top: 80px` correspond à la marge avec le haut de la page. Ajuste-la selon la hauteur de ton header. Si ton menu fixe fait 60px, mets `top: 70px`.
 
-**[ECRAN — screencast test responsive]**
+**[ÉCRAN — screencast test responsive]**
 
 [Montre le rendu sur mobile et tablette]
 
-Point important : verifie le rendu sur mobile. Sur les petits ecrans, la sidebar passe generalement sous le contenu (pas a cote). Le sticky ne s'applique donc que sur desktop et tablette en mode paysage. C'est le comportement attendu — sur mobile, l'eleve scroll naturellement.
+Point important : vérifie le rendu sur mobile. Sur les petits écrans, la sidebar passe généralement sous le contenu (pas à côté). Le sticky ne s'applique donc que sur desktop et tablette en mode paysage. C'est le comportement attendu — sur mobile, l'élève scroll naturellement.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-La sidebar sticky, c'est un petit ajustement qui ameliore la navigation dans tes cours. C'est particulierement utile pour les lecons longues avec beaucoup de texte ou de contenu multimedia. Active-le une fois, et tous tes cours en beneficient.
+La sidebar sticky, c'est un petit ajustement qui améliore la navigation dans tes cours. C'est particulièrement utile pour les leçons longues avec beaucoup de texte ou de contenu multimédia. Active-le une fois, et tous tes cours en bénéficient.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Sidebar sticky = la sidebar reste visible pendant le scroll
 - Option native dans Tutor LMS > Settings > Design (ou Course)
 - Alternative CSS : `position: sticky; top: 80px;` sur `.tutor-course-sidebar`
 - Ajuster la valeur `top` selon la hauteur du header
 - Fonctionne sur desktop et tablette — sur mobile, la sidebar passe sous le contenu
-- Ameliore la navigation pour les lecons longues
+- Améliore la navigation pour les leçons longues
 
-**Mots cles SEO** : sidebar sticky TutorLMS, navigation cours TutorLMS, sidebar fixe LMS WordPress, UX cours en ligne TutorLMS
+**Mots clés SEO** : sidebar sticky TutorLMS, navigation cours TutorLMS, sidebar fixe LMS WordPress, UX cours en ligne TutorLMS
 
 ---
 
-### Lecon 14.7 — Quiz Module 14
+### Leçon 14.7 — Quiz Module 14
 
-**Duree** : ~3 min
+**Durée** : ~3 min
 **Type** : Quiz TutorLMS (8 QCM)
 **Passage** : 75% (6/8)
 
@@ -489,23 +489,23 @@ La sidebar sticky, c'est un petit ajustement qui ameliore la navigation dans tes
 
 **Question 1** — Qu'est-ce que la Content Bank de TutorLMS ?
 
-- A) Un systeme de paiement integre
-- B) Une bibliotheque centralisee de lecons reutilisables entre cours **[BONNE REPONSE]**
-- C) Un outil de creation de quiz automatise
-- D) Un gestionnaire de fichiers multimedia
+- A) Un système de paiement intégré
+- B) Une bibliothèque centralisée de leçons réutilisables entre cours **[BONNE REPONSE]**
+- C) Un outil de création de quiz automatisé
+- D) Un gestionnaire de fichiers multimédia
 
-**Explication** : La Content Bank permet de creer des lecons autonomes, stockees dans une bibliotheque centrale, et de les importer dans n'importe quel cours.
+**Explication** : La Content Bank permet de créer des leçons autonomes, stockées dans une bibliothèque centrale, et de les importer dans n'importe quel cours.
 
 ---
 
-**Question 2** — Quand tu importes une lecon de la Content Bank dans un cours, que se passe-t-il ?
+**Question 2** — Quand tu importes une leçon de la Content Bank dans un cours, que se passe-t-il ?
 
-- A) Un lien dynamique est cree — toute modification se propage automatiquement
-- B) La lecon originale est deplacee dans le cours
-- C) Une copie independante est creee dans le cours **[BONNE REPONSE]**
-- D) La lecon est partagee en temps reel entre tous les cours
+- A) Un lien dynamique est créé — toute modification se propage automatiquement
+- B) La leçon originale est déplacée dans le cours
+- C) Une copie indépendante est créée dans le cours **[BONNE REPONSE]**
+- D) La leçon est partagée en temps réel entre tous les cours
 
-**Explication** : L'import cree une copie independante. Les modifications dans le cours ne modifient pas la version dans la Content Bank, et inversement.
+**Explication** : L'import crée une copie indépendante. Les modifications dans le cours ne modifient pas la version dans la Content Bank, et inversement.
 
 ---
 
@@ -516,33 +516,33 @@ La sidebar sticky, c'est un petit ajustement qui ameliore la navigation dans tes
 - C) `[tutor_instructor_list]`
 - D) `[tutor_course_search]`
 
-**Explication** : `[tutor_course]` affiche la grille de cours avec miniatures, titres et prix. Il accepte des parametres comme `category`, `count` et `orderby`.
+**Explication** : `[tutor_course]` affiche la grille de cours avec miniatures, titres et prix. Il accepte des paramètres comme `category`, `count` et `orderby`.
 
 ---
 
-**Question 4** — Quelle syntaxe LaTeX utiliser pour afficher une formule centree en bloc dans TutorLMS ?
+**Question 4** — Quelle syntaxe LaTeX utiliser pour afficher une formule centrée en bloc dans TutorLMS ?
 
 - A) `$formule$`
 - B) `\[formule\]`
 - C) `$$formule$$` **[BONNE REPONSE]**
 - D) `{formule}`
 
-**Explication** : Les doubles dollars `$$...$$` affichent la formule en bloc centre. Les simples dollars `$...$` inserent une formule en ligne dans le texte.
+**Explication** : Les doubles dollars `$$...$$` affichent la formule en bloc centré. Les simples dollars `$...$` insèrent une formule en ligne dans le texte.
 
 ---
 
-**Question 5** — Quelle est la methode recommandee par schoolsWP pour integrer un PDF dans une lecon ?
+**Question 5** — Quelle est la méthode recommandée par schoolsWP pour intégrer un PDF dans une leçon ?
 
 - A) Ajouter un lien externe vers le PDF
 - B) Utiliser la section Attachments uniquement
-- C) Utiliser le bloc "File" WordPress avec l'option "Inline Embed" active **[BONNE REPONSE]**
-- D) Convertir le PDF en images et les inserer une par une
+- C) Utiliser le bloc "File" WordPress avec l'option "Inline Embed" activé **[BONNE REPONSE]**
+- D) Convertir le PDF en images et les insérer une par une
 
-**Explication** : Le bloc File avec Inline Embed affiche un viewer PDF directement dans la lecon. L'eleve consulte le document sans quitter la page.
+**Explication** : Le bloc File avec Inline Embed affiche un viewer PDF directement dans la leçon. L'élève consulte le document sans quitter la page.
 
 ---
 
-**Question 6** — Quel format de fichier est utilise pour les sous-titres video dans TutorLMS ?
+**Question 6** — Quel format de fichier est utilisé pour les sous-titres vidéo dans TutorLMS ?
 
 - A) .srt
 - B) .txt
@@ -553,28 +553,28 @@ La sidebar sticky, c'est un petit ajustement qui ameliore la navigation dans tes
 
 ---
 
-**Question 7** — Quel outil gratuit et open source peut generer automatiquement des fichiers de sous-titres ?
+**Question 7** — Quel outil gratuit et open source peut générer automatiquement des fichiers de sous-titres ?
 
 - A) Adobe Premiere
 - B) Whisper **[BONNE REPONSE]**
 - C) Canva
 - D) HeyGen
 
-**Explication** : Whisper (par OpenAI) est un outil gratuit et open source de transcription automatique qui genere des fichiers de sous-titres a partir de fichiers audio ou video.
+**Explication** : Whisper (par OpenAI) est un outil gratuit et open source de transcription automatique qui génère des fichiers de sous-titres à partir de fichiers audio ou vidéo.
 
 ---
 
-**Question 8** — Que fait la propriete CSS `position: sticky` appliquee a la sidebar TutorLMS ?
+**Question 8** — Que fait la propriété CSS `position: sticky` appliquée à la sidebar TutorLMS ?
 
 - A) Elle cache la sidebar sur mobile
 - B) Elle fixe la sidebar en haut de la page en permanence
 - C) Elle garde la sidebar visible pendant le scroll dans sa zone parente **[BONNE REPONSE]**
-- D) Elle deplace la sidebar a gauche du contenu
+- D) Elle déplace la sidebar à gauche du contenu
 
-**Explication** : `position: sticky` maintient la sidebar visible dans la zone d'affichage pendant que l'eleve scroll le contenu de la lecon, sans la fixer de maniere absolue.
+**Explication** : `position: sticky` maintient la sidebar visible dans la zone d'affichage pendant que l'élève scroll le contenu de la leçon, sans la fixer de manière absolue.
 
 ---
 
 **Seuil de passage** : 6/8 (75%)
-**Message de reussite** : Module 14 valide. Tu maitrises les outils de contenu avance de TutorLMS — Content Bank, shortcodes, LaTeX, PDF, sous-titres et sidebar sticky.
-**Message d'echec** : Relis les lecons 14.1 a 14.6 avant de retenter le quiz. Concentre-toi sur les fonctionnalites de la Content Bank et les shortcodes.
+**Message de réussite** : Module 14 validé. Tu maîtrises les outils de contenu avancé de TutorLMS — Content Bank, shortcodes, LaTeX, PDF, sous-titres et sidebar sticky.
+**Message d'échec** : Relis les leçons 14.1 à 14.6 avant de retenter le quiz. Concentre-toi sur les fonctionnalités de la Content Bank et les shortcodes.

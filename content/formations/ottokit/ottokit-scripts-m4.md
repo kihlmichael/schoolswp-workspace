@@ -1,95 +1,95 @@
-# Scripts video — Module 4 : Actions : ce que tes automations executent
+# Scripts vidéo — Module 4 : Actions : ce que tes automations exécutent
 
-**Formation** : Maitriser OttoKit
-**Module** : M4 — Actions : ce que tes automations executent
-**Lecons** : 7 videos + 1 quiz
-**Duree totale** : ~40 min de video
+**Formation** : Maîtriser OttoKit
+**Module** : M4 — Actions : ce que tes automations exécutent
+**Leçons** : 7 vidéos + 1 quiz
+**Durée totale** : ~40 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Lecon 4.1 — Anatomie d'une action : app, evenement, connexion, configuration
+## Leçon 4.1 — Anatomie d'une action : app, événement, connexion, configuration
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Dans le Module 3, tu as appris ce qui declenche un workflow. Maintenant, on passe a ce qui se passe apres : les actions. Une action, c'est la tache concrete que ton workflow execute dans une app.
+Dans le Module 3, tu as appris ce qui déclenche un workflow. Maintenant, on passe à ce qui se passe après : les actions. Une action, c'est la tâche concrète que ton workflow exécute dans une app.
 
-**[ECRAN — slide "Qu'est-ce qu'une action ?"]**
+**[ÉCRAN — slide "Qu'est-ce qu'une action ?"]**
 
-Chaque action dans OttoKit est composee de 4 elements :
+Chaque action dans OttoKit est composée de 4 éléments :
 
 1. **L'app** — dans quelle application tu veux agir (WordPress, Google Sheets, Gmail, Slack...)
-2. **L'evenement** — quelle tache tu veux executer (creer un article, ajouter une ligne, envoyer un email...)
+2. **L'événement** — quelle tâche tu veux exécuter (créer un article, ajouter une ligne, envoyer un email...)
 3. **La connexion** — quel compte utiliser (ta connexion WordPress, ton compte Google...)
-4. **La configuration** — les details : quel titre pour l'article, quel destinataire pour l'email, quelles donnees dans chaque champ
+4. **La configuration** — les détails : quel titre pour l'article, quel destinataire pour l'email, quelles données dans chaque champ
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Ouvre un workflow existant avec un trigger et une action deja configures]
+[Ouvre un workflow existant avec un trigger et une action déjà configurés]
 [Clique sur le bloc action]
-[Pointe chaque element dans le panneau lateral]
+[Pointe chaque élément dans le panneau latéral]
 
-Decomposons une action reelle. Ici, on a un workflow qui detecte une nouvelle commande WooCommerce et envoie un email via Gmail.
+Décomposons une action réelle. Ici, on a un workflow qui détecte une nouvelle commande WooCommerce et envoie un email via Gmail.
 
-[Pointe l'app selectionnee : "Gmail"]
+[Pointe l'app sélectionnée : "Gmail"]
 
 L'app, c'est Gmail.
 
-[Pointe l'evenement : "Send Email"]
+[Pointe l'événement : "Send Email"]
 
-L'evenement, c'est "Send Email".
+L'événement, c'est "Send Email".
 
-[Pointe la connexion : compte Google connecte]
+[Pointe la connexion : compte Google connecté]
 
 La connexion, c'est ton compte Google.
 
 [Pointe les champs de configuration : destinataire, sujet, corps]
 
-Et la configuration, ce sont les champs : a qui, quel sujet, quel contenu.
+Et la configuration, ce sont les champs : à qui, quel sujet, quel contenu.
 
-**[ECRAN — slide "Action vs Trigger — la difference"]**
+**[ÉCRAN — slide "Action vs Trigger — la différence"]**
 
 | | Trigger | Action |
 |---|---|---|
-| Role | Demarre le workflow | Execute une tache |
-| Position | Toujours en premier | Apres le trigger |
-| Quantite | 1 seul par workflow | Autant que tu veux |
-| Donnees | Fournit les donnees | Utilise les donnees |
+| Rôle | Démarre le workflow | Exécute une tâche |
+| Position | Toujours en premier | Après le trigger |
+| Quantité | 1 seul par workflow | Autant que tu veux |
+| Données | Fournit les données | Utilise les données |
 
-Un workflow a toujours un seul trigger. Mais il peut avoir 1, 2, 5, 10 actions. Chaque action utilise les donnees du trigger ou des actions precedentes.
+Un workflow a toujours un seul trigger. Mais il peut avoir 1, 2, 5, 10 actions. Chaque action utilise les données du trigger ou des actions précédentes.
 
-**[ECRAN — slide "Le processus de configuration"]**
+**[ÉCRAN — slide "Le processus de configuration"]**
 
-Pour configurer une action, tu suis toujours le meme processus :
+Pour configurer une action, tu suis toujours le même processus :
 
 1. Choisis l'app
-2. Choisis l'evenement
-3. Selectionne la connexion
+2. Choisis l'événement
+3. Sélectionne la connexion
 4. Remplis les champs (statiques ou dynamiques)
 5. Teste l'action
 6. Enregistre
 
-C'est le meme schema que pour les triggers. Si tu maitrises les triggers du Module 3, tu maitrises deja la moitie du travail.
+C'est le même schéma que pour les triggers. Si tu maîtrises les triggers du Module 3, tu maîtrises déjà la moitié du travail.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Passons a la pratique. Dans la prochaine lecon, tu configures ta premiere action : creer un article WordPress depuis un workflow OttoKit.
+Passons à la pratique. Dans la prochaine leçon, tu configures ta première action : créer un article WordPress depuis un workflow OttoKit.
 
 ---
 
-**Points cles**
-- Une action = app + evenement + connexion + configuration
-- Un workflow peut contenir autant d'actions que necessaire
-- Les actions utilisent les donnees du trigger ou des actions precedentes
-- Le processus de configuration est identique a celui des triggers
+**Points clés**
+- Une action = app + événement + connexion + configuration
+- Un workflow peut contenir autant d'actions que nécessaire
+- Les actions utilisent les données du trigger ou des actions précédentes
+- Le processus de configuration est identique à celui des triggers
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit action definition
 - configurer action OttoKit
 - anatomie action automatisation WordPress
@@ -97,236 +97,236 @@ Passons a la pratique. Dans la prochaine lecon, tu configures ta premiere action
 
 ---
 
-## Lecon 4.2 — Configure une action WordPress (creer un article)
+## Leçon 4.2 — Configure une action WordPress (créer un article)
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Premiere action concrете. On va configurer un workflow qui cree automatiquement un brouillon d'article WordPress quand un trigger se declenche. C'est une des actions les plus courantes pour les createurs de contenu.
+Première action concrète. On va configurer un workflow qui crée automatiquement un brouillon d'article WordPress quand un trigger se déclenche. C'est une des actions les plus courantes pour les créateurs de contenu.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Ouvre un workflow existant avec un trigger deja configure — par exemple un trigger Google Sheets "New Row Added" avec des colonnes Titre, Contenu, Categorie]
+[Ouvre un workflow existant avec un trigger déjà configuré — par exemple un trigger Google Sheets "New Row Added" avec des colonnes Titre, Contenu, Catégorie]
 [Clique sur le bouton "+" pour ajouter une action]
 
-On part d'un trigger deja configure. Ici, Google Sheets detecte une nouvelle ligne avec un titre et un contenu d'article. On va ajouter une action pour creer l'article dans WordPress.
+On part d'un trigger déjà configuré. Ici, Google Sheets détecte une nouvelle ligne avec un titre et un contenu d'article. On va ajouter une action pour créer l'article dans WordPress.
 
-**[ECRAN — screencast selection de l'app]**
+**[ÉCRAN — screencast sélection de l'app]**
 
-[Dans le panneau lateral, tape "WordPress" dans la barre de recherche]
-[Selectionne "WordPress"]
+[Dans le panneau latéral, tape "WordPress" dans la barre de recherche]
+[Sélectionne "WordPress"]
 
-On selectionne WordPress. OttoKit detecte automatiquement les fonctionnalites disponibles grace au plugin installe sur ton site.
+On sélectionne WordPress. OttoKit détecte automatiquement les fonctionnalités disponibles grâce au plugin installé sur ton site.
 
-**[ECRAN — screencast selection de l'evenement]**
+**[ÉCRAN — screencast sélection de l'événement]**
 
-[Scrolle dans la liste des evenements]
-[Montre quelques evenements disponibles : "Create Post", "Create User", "Update Post"...]
-[Selectionne "Create Post"]
+[Scrolle dans la liste des événements]
+[Montre quelques événements disponibles : "Create Post", "Create User", "Update Post"...]
+[Sélectionne "Create Post"]
 
-La liste des evenements WordPress est longue. Creer un article, creer un utilisateur, mettre a jour un article... Ici, on choisit "Create Post".
+La liste des événements WordPress est longue. Créer un article, créer un utilisateur, mettre à jour un article... Ici, on choisit "Create Post".
 
-**[ECRAN — screencast selection de la connexion]**
+**[ÉCRAN — screencast sélection de la connexion]**
 
-[Selectionne la connexion WordPress dans le dropdown]
+[Sélectionne la connexion WordPress dans le dropdown]
 
-On selectionne la connexion WordPress. C'est celle du Module 2 — ton site schoolsWP.
+On sélectionne la connexion WordPress. C'est celle du Module 2 — ton site schoolsWP.
 
-**[ECRAN — screencast configuration des champs]**
+**[ÉCRAN — screencast configuration des champs]**
 
 [Montre les champs de configuration : Post Title, Post Content, Post Status, Post Type, Categories, Tags]
 
-Voici les champs a remplir. Et c'est ici que ca devient interessant : tu peux utiliser des donnees dynamiques.
+Voici les champs à remplir. Et c'est ici que ça devient intéressant : tu peux utiliser des données dynamiques.
 
 [Clique dans le champ "Post Title"]
-[Montre le selecteur de donnees dynamiques — icone ou bouton a cote du champ]
-[Selectionne le champ "Titre" venant du trigger Google Sheets]
+[Montre le sélecteur de données dynamiques — icône ou bouton à côté du champ]
+[Sélectionne le champ "Titre" venant du trigger Google Sheets]
 
-Pour le titre, on ne tape pas un texte fixe. On clique sur le selecteur de donnees et on choisit le champ "Titre" du trigger. Quand une nouvelle ligne arrive dans le Sheet, le titre de cette ligne devient le titre de l'article.
+Pour le titre, on ne tape pas un texte fixe. On clique sur le sélecteur de données et on choisit le champ "Titre" du trigger. Quand une nouvelle ligne arrive dans le Sheet, le titre de cette ligne devient le titre de l'article.
 
-[Fait la meme chose pour "Post Content" — selectionne "Contenu" du trigger]
+[Fait la même chose pour "Post Content" — sélectionne "Contenu" du trigger]
 
 Pareil pour le contenu. On mappe la colonne "Contenu" du Sheet vers le corps de l'article.
 
-[Pour "Post Status", selectionne "Draft" dans le dropdown]
+[Pour "Post Status", sélectionne "Draft" dans le dropdown]
 
 Le statut : "Draft". Toujours commencer par un brouillon. Tu pourras relire avant de publier.
 
-[Pour "Post Type", montre "Post" selectionne par defaut]
-[Pour "Categories", tape ou selectionne une categorie existante]
+[Pour "Post Type", montre "Post" sélectionné par défaut]
+[Pour "Categories", tape ou sélectionne une catégorie existante]
 
-**[ECRAN — screencast test de l'action]**
+**[ÉCRAN — screencast test de l'action]**
 
 [Clique sur le bouton "Test Action" ou "Test Step"]
-[Montre le resultat : "Success" avec l'ID du post cree]
+[Montre le résultat : "Success" avec l'ID du post créé]
 
-On teste. OttoKit cree un brouillon reel sur ton site. Tu vois le resultat : "Success", avec l'ID du post cree.
+On teste. OttoKit crée un brouillon réel sur ton site. Tu vois le résultat : "Success", avec l'ID du post créé.
 
 [Ouvre un nouvel onglet — va dans wp-admin → Articles → Brouillons]
-[Montre l'article cree avec le titre et le contenu du Sheet]
+[Montre l'article créé avec le titre et le contenu du Sheet]
 
-Si tu vas dans ton WordPress, le brouillon est bien la. Titre et contenu correspondent aux donnees du Sheet.
+Si tu vas dans ton WordPress, le brouillon est bien là. Titre et contenu correspondent aux données du Sheet.
 
 [Reviens dans OttoKit — clique sur "Save"]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu viens de creer ta premiere action WordPress. Le processus est toujours le meme : app, evenement, connexion, champs, test. Dans la prochaine lecon, on fait la meme chose avec Google Sheets.
+Tu viens de créer ta première action WordPress. Le processus est toujours le même : app, événement, connexion, champs, test. Dans la prochaine leçon, on fait la même chose avec Google Sheets.
 
 ---
 
-**Points cles**
-- "Create Post" cree un article WordPress avec titre, contenu, statut et categorie
-- Utilise les donnees dynamiques du trigger pour remplir les champs
-- Toujours creer un brouillon ("Draft") par defaut — relire avant de publier
-- Le test cree un article reel : verifie dans wp-admin
+**Points clés**
+- "Create Post" crée un article WordPress avec titre, contenu, statut et catégorie
+- Utilise les données dynamiques du trigger pour remplir les champs
+- Toujours créer un brouillon ("Draft") par défaut — relire avant de publier
+- Le test crée un article réel : vérifie dans wp-admin
 
-**Mots-cles SEO**
-- OttoKit creer article WordPress
+**Mots-clés SEO**
+- OttoKit créer article WordPress
 - automatiser publication WordPress
 - action WordPress OttoKit
-- creer post automatiquement OttoKit
+- créer post automatiquement OttoKit
 
 ---
 
-## Lecon 4.3 — Configure une action SaaS (ajouter une ligne Google Sheets)
+## Leçon 4.3 — Configure une action SaaS (ajouter une ligne Google Sheets)
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Deuxieme type d'action : une action SaaS. On va ajouter automatiquement une ligne dans Google Sheets chaque fois qu'un evenement se produit sur ton site WordPress. C'est l'action la plus utilisee pour le suivi et le reporting.
+Deuxième type d'action : une action SaaS. On va ajouter automatiquement une ligne dans Google Sheets chaque fois qu'un événement se produit sur ton site WordPress. C'est l'action la plus utilisée pour le suivi et le reporting.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Ouvre un workflow avec un trigger WooCommerce "Order Created" deja configure et avec des donnees Fetch Data]
+[Ouvre un workflow avec un trigger WooCommerce "Order Created" déjà configuré et avec des données Fetch Data]
 [Clique sur "+" pour ajouter une action]
 
-On part d'un trigger WooCommerce : chaque nouvelle commande declenche le workflow. On va enregistrer les details de la commande dans un Google Sheet.
+On part d'un trigger WooCommerce : chaque nouvelle commande déclenche le workflow. On va enregistrer les détails de la commande dans un Google Sheet.
 
-**[ECRAN — screencast selection de l'app et de l'evenement]**
+**[ÉCRAN — screencast sélection de l'app et de l'événement]**
 
 [Tape "Google Sheets" dans la barre de recherche]
-[Selectionne "Google Sheets"]
-[Selectionne l'evenement "Add Row" ou "Insert Row"]
+[Sélectionne "Google Sheets"]
+[Sélectionne l'événement "Add Row" ou "Insert Row"]
 
-App : Google Sheets. Evenement : "Add Row". On veut ajouter une ligne, pas modifier une ligne existante.
+App : Google Sheets. Événement : "Add Row". On veut ajouter une ligne, pas modifier une ligne existante.
 
-**[ECRAN — screencast selection de la connexion]**
+**[ÉCRAN — screencast sélection de la connexion]**
 
-[Selectionne la connexion Google dans le dropdown]
+[Sélectionne la connexion Google dans le dropdown]
 
-On selectionne la connexion Google. Si tu ne l'as pas encore, clique sur "Add Connection" et autorise l'acces OAuth.
+On sélectionne la connexion Google. Si tu ne l'as pas encore, clique sur "Add Connection" et autorise l'accès OAuth.
 
-**[ECRAN — screencast selection du spreadsheet et de la feuille]**
+**[ÉCRAN — screencast sélection du spreadsheet et de la feuille]**
 
-[Dans le champ "Spreadsheet", clique et selectionne un tableur existant — par exemple "Suivi commandes schoolsWP"]
-[Dans le champ "Sheet", selectionne la feuille — par exemple "Sheet1" ou "Commandes"]
+[Dans le champ "Spreadsheet", clique et sélectionne un tableur existant — par exemple "Suivi commandes schoolsWP"]
+[Dans le champ "Sheet", sélectionne la feuille — par exemple "Sheet1" ou "Commandes"]
 
 Tu choisis d'abord le spreadsheet, puis la feuille. OttoKit liste tous les tableurs de ton Google Drive.
 
-**[ECRAN — screencast mapping des champs]**
+**[ÉCRAN — screencast mapping des champs]**
 
 [OttoKit affiche les colonnes du Sheet : colonne A (Date), colonne B (Client), colonne C (Email), colonne D (Montant), colonne E (Produit)]
-[Pour la colonne "Date", selectionne la donnee dynamique "order_date" du trigger WooCommerce]
-[Pour "Client", selectionne "billing_first_name" + texte statique " " + "billing_last_name"]
-[Pour "Email", selectionne "billing_email"]
-[Pour "Montant", selectionne "total"]
-[Pour "Produit", selectionne "line_items" ou le premier element]
+[Pour la colonne "Date", sélectionne la donnée dynamique "order_date" du trigger WooCommerce]
+[Pour "Client", sélectionne "billing_first_name" + texte statique " " + "billing_last_name"]
+[Pour "Email", sélectionne "billing_email"]
+[Pour "Montant", sélectionne "total"]
+[Pour "Produit", sélectionne "line_items" ou le premier élément]
 
-C'est le mapping. Pour chaque colonne du Sheet, tu selectionnes la donnee correspondante du trigger. Date de commande, nom du client, email, montant, produit.
+C'est le mapping. Pour chaque colonne du Sheet, tu sélectionnes la donnée correspondante du trigger. Date de commande, nom du client, email, montant, produit.
 
-Remarque le champ "Client" : on combine prenom + espace + nom. C'est un melange de donnees dynamiques et de texte statique. On verra ca en detail dans le Module 5.
+Remarque le champ "Client" : on combine prénom + espace + nom. C'est un mélange de données dynamiques et de texte statique. On verra ça en détail dans le Module 5.
 
-**[ECRAN — screencast test de l'action]**
+**[ÉCRAN — screencast test de l'action]**
 
 [Clique sur "Test Action"]
-[Montre le resultat : "Success"]
+[Montre le résultat : "Success"]
 [Ouvre Google Sheets dans un nouvel onglet]
-[Montre la nouvelle ligne ajoutee avec les donnees de la commande]
+[Montre la nouvelle ligne ajoutée avec les données de la commande]
 
-Le test fonctionne. Si tu ouvres ton Google Sheet, la ligne est ajoutee avec toutes les donnees. Chaque nouvelle commande WooCommerce ajoutera une ligne automatiquement.
+Le test fonctionne. Si tu ouvres ton Google Sheet, la ligne est ajoutée avec toutes les données. Chaque nouvelle commande WooCommerce ajoutera une ligne automatiquement.
 
 [Reviens dans OttoKit — clique sur "Save"]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant mapper des donnees WordPress vers Google Sheets. Prochaine etape : envoyer un email automatique avec Gmail.
+Tu sais maintenant mapper des données WordPress vers Google Sheets. Prochaine étape : envoyer un email automatique avec Gmail.
 
 ---
 
-**Points cles**
-- "Add Row" ajoute une ligne dans Google Sheets avec les donnees du trigger
-- Le mapping associe chaque colonne du Sheet a un champ du trigger
-- On peut combiner donnees dynamiques et texte statique dans un meme champ
-- Toujours verifier dans Google Sheets que la ligne est correctement ajoutee apres le test
+**Points clés**
+- "Add Row" ajoute une ligne dans Google Sheets avec les données du trigger
+- Le mapping associe chaque colonne du Sheet à un champ du trigger
+- On peut combiner données dynamiques et texte statique dans un même champ
+- Toujours vérifier dans Google Sheets que la ligne est correctement ajoutée après le test
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit Google Sheets action
 - ajouter ligne Google Sheets automatiquement
-- mapper donnees OttoKit vers Sheets
+- mapper données OttoKit vers Sheets
 - automatiser suivi commandes Google Sheets
 
 ---
 
-## Lecon 4.4 — Configure une action email (envoyer un Gmail)
+## Leçon 4.4 — Configure une action email (envoyer un Gmail)
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Troisieme type d'action : l'email. Tu vas configurer un envoi automatique de Gmail avec un destinataire, un sujet et un contenu qui s'adaptent a chaque situation. C'est l'action la plus utilisee pour communiquer avec tes clients ou tes eleves.
+Troisième type d'action : l'email. Tu vas configurer un envoi automatique de Gmail avec un destinataire, un sujet et un contenu qui s'adaptent à chaque situation. C'est l'action la plus utilisée pour communiquer avec tes clients ou tes élèves.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow avec un trigger — par exemple "New User Registration" sur WordPress]
 [Clique sur "+" pour ajouter une action]
 
-On part d'un trigger WordPress : un nouvel utilisateur s'inscrit sur ton site. On va lui envoyer un email de bienvenue personnalise.
+On part d'un trigger WordPress : un nouvel utilisateur s'inscrit sur ton site. On va lui envoyer un email de bienvenue personnalisé.
 
-**[ECRAN — screencast selection app et evenement]**
+**[ÉCRAN — screencast sélection app et événement]**
 
 [Tape "Gmail" dans la barre de recherche]
-[Selectionne "Gmail"]
-[Selectionne l'evenement "Send Email"]
+[Sélectionne "Gmail"]
+[Sélectionne l'événement "Send Email"]
 
-App : Gmail. Evenement : "Send Email".
+App : Gmail. Événement : "Send Email".
 
-**[ECRAN — screencast selection de la connexion]**
+**[ÉCRAN — screencast sélection de la connexion]**
 
-[Selectionne la connexion Google/Gmail dans le dropdown]
+[Sélectionne la connexion Google/Gmail dans le dropdown]
 
-Tu utilises la meme connexion Google que pour Sheets. Un seul compte Google donne acces a Gmail, Sheets, Drive, Calendar...
+Tu utilises la même connexion Google que pour Sheets. Un seul compte Google donne accès à Gmail, Sheets, Drive, Calendar...
 
-**[ECRAN — screencast configuration du destinataire]**
+**[ÉCRAN — screencast configuration du destinataire]**
 
-[Dans le champ "To", clique sur le selecteur de donnees dynamiques]
-[Selectionne "user_email" depuis les donnees du trigger WordPress]
+[Dans le champ "To", clique sur le sélecteur de données dynamiques]
+[Sélectionne "user_email" depuis les données du trigger WordPress]
 
-Le destinataire n'est pas une adresse fixe. On utilise le champ dynamique "user_email" du trigger. Chaque inscrit recevra l'email a sa propre adresse.
+Le destinataire n'est pas une adresse fixe. On utilise le champ dynamique "user_email" du trigger. Chaque inscrit recevra l'email à sa propre adresse.
 
-**[ECRAN — screencast configuration du sujet]**
+**[ÉCRAN — screencast configuration du sujet]**
 
 [Dans le champ "Subject", tape le texte : "Bienvenue "]
-[Clique sur le selecteur dynamique et selectionne "display_name" ou "first_name"]
+[Clique sur le sélecteur dynamique et sélectionne "display_name" ou "first_name"]
 [Le champ affiche maintenant : "Bienvenue {display_name}"]
 
-Pour le sujet, on combine texte statique et donnee dynamique. "Bienvenue" + le prenom de l'inscrit. Chaque email aura un sujet personnalise.
+Pour le sujet, on combine texte statique et donnée dynamique. "Bienvenue" + le prénom de l'inscrit. Chaque email aura un sujet personnalisé.
 
-**[ECRAN — screencast configuration du corps]**
+**[ÉCRAN — screencast configuration du corps]**
 
 [Dans le champ "Body" ou "Message", tape :]
 
@@ -335,257 +335,257 @@ Bonjour {first_name},
 
 Merci de rejoindre schoolsWP. Ton compte est maintenant actif.
 
-Voici tes prochaines etapes :
-1. Connecte-toi a ton espace eleve
-2. Decouvre le catalogue de formations
-3. Commence ta premiere lecon
+Voici tes prochaines étapes :
+1. Connecte-toi à ton espace élève
+2. Découvre le catalogue de formations
+3. Commence ta première leçon
 
-A bientot,
-L'equipe schoolsWP
+À bientôt,
+L'équipe schoolsWP
 ```
 
-[Montre comment inserer les tokens dynamiques dans le corps du texte]
-[Remplace {first_name} par le token reel en cliquant sur le selecteur]
+[Montre comment insérer les tokens dynamiques dans le corps du texte]
+[Remplace {first_name} par le token réel en cliquant sur le sélecteur]
 
-Le corps de l'email melange du texte fixe et des donnees dynamiques. Ici, le prenom s'insere automatiquement. Chaque nouvel inscrit recoit un email personnalise.
+Le corps de l'email mélange du texte fixe et des données dynamiques. Ici, le prénom s'insère automatiquement. Chaque nouvel inscrit reçoit un email personnalisé.
 
-**[ECRAN — screencast champs optionnels]**
+**[ÉCRAN — screencast champs optionnels]**
 
 [Montre les champs CC, BCC, Reply-To si disponibles]
 [Montre le champ "From Name" si disponible — taper "schoolsWP"]
 
 Quelques champs optionnels utiles : CC pour mettre quelqu'un en copie, BCC pour une copie invisible, et "From Name" pour que l'email affiche "schoolsWP" au lieu de ton adresse brute.
 
-**[ECRAN — screencast test de l'action]**
+**[ÉCRAN — screencast test de l'action]**
 
 [Clique sur "Test Action"]
-[Montre le resultat : "Success — Email sent"]
+[Montre le résultat : "Success — Email sent"]
 
-On teste. L'email part immediatement. Verifie ta boite de reception — ou celle de l'adresse de test.
+On teste. L'email part immédiatement. Vérifie ta boîte de réception — ou celle de l'adresse de test.
 
-[Ouvre Gmail dans un nouvel onglet — montre l'email recu avec le prenom insere dans le sujet et le corps]
+[Ouvre Gmail dans un nouvel onglet — montre l'email reçu avec le prénom inséré dans le sujet et le corps]
 
-L'email est arrive. Le prenom est bien insere. Le formatage est correct.
+L'email est arrivé. Le prénom est bien inséré. Le formatage est correct.
 
 [Reviens dans OttoKit — clique sur "Save"]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant configurer trois types d'actions : WordPress, Google Sheets et Gmail. Mais un workflow ne se limite pas a une seule action. Dans la prochaine lecon, on enchaine plusieurs actions dans un meme workflow.
+Tu sais maintenant configurer trois types d'actions : WordPress, Google Sheets et Gmail. Mais un workflow ne se limite pas à une seule action. Dans la prochaine leçon, on enchaîne plusieurs actions dans un même workflow.
 
 ---
 
-**Points cles**
-- Le destinataire, le sujet et le corps de l'email acceptent des donnees dynamiques
+**Points clés**
+- Le destinataire, le sujet et le corps de l'email acceptent des données dynamiques
 - Combiner texte statique et tokens pour personnaliser chaque email
-- Utiliser un email de test pendant le developpement, pas ton email personnel
+- Utiliser un email de test pendant le développement, pas ton email personnel
 - Les champs CC, BCC et From Name sont optionnels mais utiles
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit envoyer email Gmail
 - automatiser email WordPress OttoKit
-- email personnalise automatique WordPress
+- email personnalisé automatique WordPress
 - action Gmail OttoKit configuration
 
 ---
 
-## Lecon 4.5 — Multi-actions : enchaine plusieurs actions dans un workflow
+## Leçon 4.5 — Multi-actions : enchaîne plusieurs actions dans un workflow
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Jusqu'ici, chaque workflow avait une seule action. En realite, tu peux en enchainer autant que tu veux. Un trigger, puis action 1, action 2, action 3... C'est la que les workflows deviennent vraiment utiles.
+Jusqu'ici, chaque workflow avait une seule action. En réalité, tu peux en enchaîner autant que tu veux. Un trigger, puis action 1, action 2, action 3... C'est là que les workflows deviennent vraiment utiles.
 
-**[ECRAN — slide "Scenario schoolsWP"]**
+**[ÉCRAN — slide "Scénario schoolsWP"]**
 
 On va construire un workflow complet :
 
-**Trigger** : un eleve s'inscrit sur schoolsWP (WordPress User Registration)
+**Trigger** : un élève s'inscrit sur schoolsWP (WordPress User Registration)
 
-**Action 1** : creer un contact dans FluentCRM avec son nom et son email
+**Action 1** : créer un contact dans FluentCRM avec son nom et son email
 
-**Action 2** : envoyer un email de bienvenue personnalise via Gmail
+**Action 2** : envoyer un email de bienvenue personnalisé via Gmail
 
 **Action 3** : ajouter une ligne dans Google Sheets pour le suivi des inscriptions
 
 Trois actions, un seul trigger. Tout se fait automatiquement.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Ouvre un workflow avec le trigger WordPress "User Registration" deja configure]
+[Ouvre un workflow avec le trigger WordPress "User Registration" déjà configuré]
 
-Le trigger est pret. On va ajouter les trois actions une par une.
+Le trigger est prêt. On va ajouter les trois actions une par une.
 
-**[ECRAN — screencast ajout de l'action 1 — FluentCRM]**
+**[ÉCRAN — screencast ajout de l'action 1 — FluentCRM]**
 
-[Clique sur "+" apres le trigger]
-[Selectionne "FluentCRM" comme app]
-[Selectionne "Create/Update Contact" comme evenement]
-[Selectionne la connexion WordPress]
+[Clique sur "+" après le trigger]
+[Sélectionne "FluentCRM" comme app]
+[Sélectionne "Create/Update Contact" comme événement]
+[Sélectionne la connexion WordPress]
 [Mappe les champs : Email → user_email, First Name → first_name, Last Name → last_name]
-[Selectionne un tag ou une liste : "Nouveaux inscrits"]
+[Sélectionne un tag ou une liste : "Nouveaux inscrits"]
 [Clique sur "Save"]
 
-Action 1 : creer un contact FluentCRM. On mappe l'email, le prenom, le nom. On ajoute le tag "Nouveaux inscrits" pour segmenter tes contacts.
+Action 1 : créer un contact FluentCRM. On mappe l'email, le prénom, le nom. On ajoute le tag "Nouveaux inscrits" pour segmenter tes contacts.
 
-**[ECRAN — screencast ajout de l'action 2 — Gmail]**
+**[ÉCRAN — screencast ajout de l'action 2 — Gmail]**
 
-[Clique sur "+" apres l'action 1]
-[Selectionne "Gmail" → "Send Email"]
-[Selectionne la connexion Google]
+[Clique sur "+" après l'action 1]
+[Sélectionne "Gmail" → "Send Email"]
+[Sélectionne la connexion Google]
 [To : user_email du trigger]
 [Subject : "Bienvenue sur schoolsWP, {first_name}"]
-[Body : message de bienvenue personnalise]
+[Body : message de bienvenue personnalisé]
 [Clique sur "Save"]
 
-Action 2 : envoyer l'email de bienvenue. On reprend le meme schema que la lecon precedente.
+Action 2 : envoyer l'email de bienvenue. On reprend le même schéma que la leçon précédente.
 
-**[ECRAN — screencast ajout de l'action 3 — Google Sheets]**
+**[ÉCRAN — screencast ajout de l'action 3 — Google Sheets]**
 
-[Clique sur "+" apres l'action 2]
-[Selectionne "Google Sheets" → "Add Row"]
-[Selectionne la connexion Google]
-[Selectionne le spreadsheet "Inscriptions schoolsWP"]
+[Clique sur "+" après l'action 2]
+[Sélectionne "Google Sheets" → "Add Row"]
+[Sélectionne la connexion Google]
+[Sélectionne le spreadsheet "Inscriptions schoolsWP"]
 [Mappe les colonnes : Date → date_registered, Nom → display_name, Email → user_email]
 [Clique sur "Save"]
 
-Action 3 : enregistrer dans Sheets. Date, nom, email. Chaque inscription sera tracee.
+Action 3 : enregistrer dans Sheets. Date, nom, email. Chaque inscription sera tracée.
 
-**[ECRAN — screencast vue d'ensemble du workflow]**
+**[ÉCRAN — screencast vue d'ensemble du workflow]**
 
-[Dezoom sur le canvas pour voir le workflow complet]
-[Pointe la sequence : Trigger → Action 1 → Action 2 → Action 3]
+[Dézoom sur le canvas pour voir le workflow complet]
+[Pointe la séquence : Trigger → Action 1 → Action 2 → Action 3]
 
-Voici le workflow complet. Un trigger, trois actions. Elles s'executent dans l'ordre, de haut en bas.
+Voici le workflow complet. Un trigger, trois actions. Elles s'exécutent dans l'ordre, de haut en bas.
 
-**[ECRAN — slide "Ordre d'execution — ce qu'il faut savoir"]**
+**[ÉCRAN — slide "Ordre d'exécution — ce qu'il faut savoir"]**
 
-Trois regles a retenir :
+Trois règles à retenir :
 
-1. **Sequentiel** : les actions s'executent dans l'ordre. Action 1 se termine avant qu'action 2 ne commence.
+1. **Séquentiel** : les actions s'exécutent dans l'ordre. Action 1 se termine avant qu'action 2 ne commence.
 
-2. **Dependances** : action 2 peut utiliser les donnees du trigger ET de l'action 1. Action 3 peut utiliser les donnees du trigger, de l'action 1 ET de l'action 2.
+2. **Dépendances** : action 2 peut utiliser les données du trigger ET de l'action 1. Action 3 peut utiliser les données du trigger, de l'action 1 ET de l'action 2.
 
-3. **Echec** : si une action echoue, les suivantes ne s'executent pas. Si FluentCRM plante, l'email ne part pas et la ligne Sheets n'est pas ajoutee.
+3. **Échec** : si une action échoue, les suivantes ne s'exécutent pas. Si FluentCRM plante, l'email ne part pas et la ligne Sheets n'est pas ajoutée.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu as maintenant un workflow multi-actions fonctionnel. Mais avant de le publier, il faut tester chaque action. C'est le sujet de la prochaine lecon.
+Tu as maintenant un workflow multi-actions fonctionnel. Mais avant de le publier, il faut tester chaque action. C'est le sujet de la prochaine leçon.
 
 ---
 
-**Points cles**
-- Un workflow peut contenir autant d'actions que necessaire
-- Les actions s'executent dans l'ordre, de haut en bas
-- Chaque action peut utiliser les donnees du trigger et des actions precedentes
-- Si une action echoue, les suivantes ne s'executent pas par defaut
+**Points clés**
+- Un workflow peut contenir autant d'actions que nécessaire
+- Les actions s'exécutent dans l'ordre, de haut en bas
+- Chaque action peut utiliser les données du trigger et des actions précédentes
+- Si une action échoue, les suivantes ne s'exécutent pas par défaut
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit multi actions workflow
-- enchainer actions OttoKit
-- workflow plusieurs etapes OttoKit
+- enchaîner actions OttoKit
+- workflow plusieurs étapes OttoKit
 - automatiser inscription WordPress FluentCRM
 
 ---
 
-## Lecon 4.6 — Test d'action : valide AVANT de publier
+## Leçon 4.6 — Test d'action : valide AVANT de publier
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu ne publies jamais un workflow sans l'avoir teste. C'est la regle d'or. Un workflow mal teste, c'est un email qui part a la mauvaise personne, une ligne qui s'ecrit au mauvais endroit, ou un article publie avec un titre vide.
+Tu ne publies jamais un workflow sans l'avoir testé. C'est la règle d'or. Un workflow mal testé, c'est un email qui part à la mauvaise personne, une ligne qui s'écrit au mauvais endroit, ou un article publié avec un titre vide.
 
-**[ECRAN — slide "Pourquoi tester ?"]**
+**[ÉCRAN — slide "Pourquoi tester ?"]**
 
-Tester, c'est verifier trois choses :
+Tester, c'est vérifier trois choses :
 
 1. **La connexion fonctionne** — l'app est bien accessible
-2. **Les donnees sont correctes** — les bons champs arrivent aux bons endroits
-3. **Le resultat est celui attendu** — l'article, l'email, la ligne sont conformes
+2. **Les données sont correctes** — les bons champs arrivent aux bons endroits
+3. **Le résultat est celui attendu** — l'article, l'email, la ligne sont conformes
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
-[Ouvre le workflow multi-actions de la lecon 4.5]
+[Ouvre le workflow multi-actions de la leçon 4.5]
 [Clique sur l'action 1 — FluentCRM]
 
-On reprend notre workflow a trois actions. On va tester chaque action individuellement.
+On reprend notre workflow à trois actions. On va tester chaque action individuellement.
 
-**[ECRAN — screencast test de l'action 1]**
+**[ÉCRAN — screencast test de l'action 1]**
 
 [Montre le bouton "Test Action" ou "Test Step" en bas du panneau]
 [Clique dessus]
-[Montre le resultat : "Success" avec les details du contact cree]
+[Montre le résultat : "Success" avec les détails du contact créé]
 
-Action 1 : FluentCRM. Clique sur "Test Action". OttoKit execute l'action avec les donnees du Fetch Data du trigger. Resultat : "Success". Le contact est cree.
+Action 1 : FluentCRM. Clique sur "Test Action". OttoKit exécute l'action avec les données du Fetch Data du trigger. Résultat : "Success". Le contact est créé.
 
-[Montre les details retournes : contact_id, email, status]
+[Montre les détails retournés : contact_id, email, status]
 
-OttoKit affiche les details du resultat. L'ID du contact, l'email, le statut. Ces donnees deviennent disponibles pour les actions suivantes.
+OttoKit affiche les détails du résultat. L'ID du contact, l'email, le statut. Ces données deviennent disponibles pour les actions suivantes.
 
-**[ECRAN — screencast test de l'action 2]**
+**[ÉCRAN — screencast test de l'action 2]**
 
 [Clique sur l'action 2 — Gmail]
 [Clique sur "Test Action"]
-[Montre le resultat : "Success — Email sent"]
+[Montre le résultat : "Success — Email sent"]
 
-Action 2 : Gmail. Meme processus. "Test Action", resultat "Success". L'email est envoye.
+Action 2 : Gmail. Même processus. "Test Action", résultat "Success". L'email est envoyé.
 
-**[ECRAN — screencast test de l'action 3]**
+**[ÉCRAN — screencast test de l'action 3]**
 
 [Clique sur l'action 3 — Google Sheets]
 [Clique sur "Test Action"]
-[Montre le resultat : "Success — Row added"]
+[Montre le résultat : "Success — Row added"]
 
-Action 3 : Google Sheets. Teste, reussi, ligne ajoutee.
+Action 3 : Google Sheets. Testé, réussi, ligne ajoutée.
 
-**[ECRAN — slide "Que faire si un test echoue ?"]**
+**[ÉCRAN — slide "Que faire si un test échoue ?"]**
 
-Si un test echoue, voici la demarche :
+Si un test échoue, voici la démarche :
 
 1. **Lis le message d'erreur** — OttoKit affiche la raison exacte
-2. **Verifie la connexion** — clique sur "Reconnect" si necessaire
-3. **Verifie les champs** — un champ obligatoire manquant ? un format incorrect ?
-4. **Verifie les donnees source** — le Fetch Data du trigger a-t-il retourne des donnees ?
+2. **Vérifie la connexion** — clique sur "Reconnect" si nécessaire
+3. **Vérifie les champs** — un champ obligatoire manquant ? un format incorrect ?
+4. **Vérifie les données source** — le Fetch Data du trigger a-t-il retourné des données ?
 5. **Re-teste** — corrige et relance le test
 
 Les erreurs les plus courantes :
 
-- **"Connection expired"** — re-autorise l'app dans les connexions
+- **"Connection expired"** — ré-autorise l'app dans les connexions
 - **"Required field missing"** — un champ obligatoire est vide
 - **"Permission denied"** — l'app n'a pas les droits suffisants
-- **"Invalid value"** — le format de la donnee ne correspond pas (ex: texte dans un champ nombre)
+- **"Invalid value"** — le format de la donnée ne correspond pas (ex: texte dans un champ nombre)
 
-**[ECRAN — screencast publication du workflow]**
+**[ÉCRAN — screencast publication du workflow]**
 
-[Apres avoir teste les 3 actions avec succes]
+[Après avoir testé les 3 actions avec succès]
 [Clique sur le toggle "Active" ou "Publish" en haut du workflow]
-[Le workflow passe de "Draft" a "Active"]
+[Le workflow passe de "Draft" à "Active"]
 
-Toutes les actions sont testees avec succes. Maintenant, et seulement maintenant, tu peux publier. Active le workflow. Il est en production.
+Toutes les actions sont testées avec succès. Maintenant, et seulement maintenant, tu peux publier. Active le workflow. Il est en production.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tester individuellement, c'est la methode fiable. Mais que se passe-t-il quand un workflow est publie et qu'une action echoue en conditions reelles ? C'est le sujet de la prochaine lecon.
+Tester individuellement, c'est la méthode fiable. Mais que se passe-t-il quand un workflow est publié et qu'une action échoue en conditions réelles ? C'est le sujet de la prochaine leçon.
 
 ---
 
-**Points cles**
+**Points clés**
 - Tester chaque action individuellement avant de publier le workflow
-- Le test utilise les donnees du Fetch Data du trigger
-- Lire le message d'erreur : OttoKit explique la raison de l'echec
-- Ne jamais publier un workflow sans avoir teste toutes les actions
+- Le test utilise les données du Fetch Data du trigger
+- Lire le message d'erreur : OttoKit explique la raison de l'échec
+- Ne jamais publier un workflow sans avoir testé toutes les actions
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit tester action
 - test workflow OttoKit avant publication
 - debugger action OttoKit
@@ -593,131 +593,131 @@ Tester individuellement, c'est la methode fiable. Mais que se passe-t-il quand u
 
 ---
 
-## Lecon 4.7 — Gerer les erreurs : que se passe-t-il si une action echoue ?
+## Leçon 4.7 — Gérer les erreurs : que se passe-t-il si une action échoue ?
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas + historique
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas + historique
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Ton workflow est publie, il tourne depuis des jours, tout va bien. Et puis un matin, une action echoue. L'API Google est temporairement indisponible, ou un champ arrive vide alors qu'il ne devrait pas. Que se passe-t-il exactement ?
+Ton workflow est publié, il tourne depuis des jours, tout va bien. Et puis un matin, une action échoue. L'API Google est temporairement indisponible, ou un champ arrive vide alors qu'il ne devrait pas. Que se passe-t-il exactement ?
 
-**[ECRAN — slide "Quand une action echoue"]**
+**[ÉCRAN — slide "Quand une action échoue"]**
 
-Quand une action echoue en production, OttoKit applique un comportement precis :
+Quand une action échoue en production, OttoKit applique un comportement précis :
 
-1. **L'action echoue** — OttoKit detecte l'erreur
-2. **Auto-replay** — OttoKit retente automatiquement l'action. 6 tentatives espacees dans le temps.
-3. **Si ca fonctionne a la tentative 3** — le workflow reprend normalement a l'action suivante
-4. **Si ca echoue 6 fois** — OttoKit abandonne et marque l'execution comme echouee
+1. **L'action échoue** — OttoKit détecte l'erreur
+2. **Auto-replay** — OttoKit retente automatiquement l'action. 6 tentatives espacées dans le temps.
+3. **Si ça fonctionne à la tentative 3** — le workflow reprend normalement à l'action suivante
+4. **Si ça échoue 6 fois** — OttoKit abandonne et marque l'exécution comme échouée
 
-**[ECRAN — slide "Impact sur les actions suivantes"]**
+**[ÉCRAN — slide "Impact sur les actions suivantes"]**
 
-Regle par defaut : si une action echoue definitivement (apres 6 tentatives), les actions suivantes ne s'executent pas.
+Règle par défaut : si une action échoue définitivement (après 6 tentatives), les actions suivantes ne s'exécutent pas.
 
-Dans notre workflow a 3 actions :
-- Si l'action 1 (FluentCRM) echoue → l'action 2 (Gmail) et l'action 3 (Sheets) ne se lancent pas
-- Si l'action 2 (Gmail) echoue → l'action 1 est deja terminee avec succes, mais l'action 3 ne se lance pas
+Dans notre workflow à 3 actions :
+- Si l'action 1 (FluentCRM) échoue → l'action 2 (Gmail) et l'action 3 (Sheets) ne se lancent pas
+- Si l'action 2 (Gmail) échoue → l'action 1 est déjà terminée avec succès, mais l'action 3 ne se lance pas
 
-C'est un comportement de securite. Mieux vaut ne pas envoyer un email que d'envoyer un email avec des donnees corrompues.
+C'est un comportement de sécurité. Mieux vaut ne pas envoyer un email que d'envoyer un email avec des données corrompues.
 
-**[ECRAN — screencast OttoKit — historique des executions]**
+**[ÉCRAN — screencast OttoKit — historique des exécutions]**
 
-[Clique sur "History" dans la barre laterale]
-[Montre la liste des executions avec des statuts : Success, Failed, In Progress]
+[Clique sur "History" dans la barre latérale]
+[Montre la liste des exécutions avec des statuts : Success, Failed, In Progress]
 
-L'historique te montre chaque execution. En vert : succes. En rouge : echec. Clique sur une execution echouee pour voir les details.
+L'historique te montre chaque exécution. En vert : succès. En rouge : échec. Clique sur une exécution échouée pour voir les détails.
 
-[Clique sur une execution echouee]
-[Montre le detail etape par etape : trigger OK, action 1 OK, action 2 Failed]
+[Clique sur une exécution échouée]
+[Montre le détail étape par étape : trigger OK, action 1 OK, action 2 Failed]
 [Montre le message d'erreur de l'action 2]
 
-Tu vois exactement ou ca a plante et pourquoi. Ici, l'action 2 a echoue — le message d'erreur t'explique la raison.
+Tu vois exactement où ça a planté et pourquoi. Ici, l'action 2 a échoué — le message d'erreur t'explique la raison.
 
-**[ECRAN — screencast OttoKit — simuler une erreur]**
+**[ÉCRAN — screencast OttoKit — simuler une erreur]**
 
 [Ouvre un workflow de test]
-[Dans une action Google Sheets, modifie le spreadsheet ID pour pointer vers un document supprime ou inaccessible]
-[Active le workflow et declenche-le manuellement]
-[Montre l'erreur dans l'historique : "Spreadsheet not found" ou equivalent]
+[Dans une action Google Sheets, modifie le spreadsheet ID pour pointer vers un document supprimé ou inaccessible]
+[Active le workflow et déclenche-le manuellement]
+[Montre l'erreur dans l'historique : "Spreadsheet not found" ou équivalent]
 
-Pour comprendre le mecanisme, on simule une erreur. On pointe l'action Sheets vers un document inexistant. Le trigger se declenche, l'action echoue, et on voit le comportement dans l'historique.
+Pour comprendre le mécanisme, on simule une erreur. On pointe l'action Sheets vers un document inexistant. Le trigger se déclenche, l'action échoue, et on voit le comportement dans l'historique.
 
 [Montre le compteur de tentatives : 1/6, puis 2/6...]
 
-OttoKit retente automatiquement. Tu n'as rien a faire. Si le probleme est temporaire (API indisponible pendant 5 minutes), l'auto-replay corrige la situation tout seul.
+OttoKit retente automatiquement. Tu n'as rien à faire. Si le problème est temporaire (API indisponible pendant 5 minutes), l'auto-replay corrige la situation tout seul.
 
-**[ECRAN — slide "Bonnes pratiques de gestion d'erreur"]**
+**[ÉCRAN — slide "Bonnes pratiques de gestion d'erreur"]**
 
-1. **Consulte l'historique regulierement** — meme si tout semble fonctionner
-2. **Configure les notifications** — OttoKit peut t'envoyer un email quand un workflow echoue (dans Settings)
-3. **Utilise des donnees de test robustes** — evite les champs optionnels non geres
-4. **Prevois les cas limites** — un email vide, un montant a zero, un nom avec des caracteres speciaux
-5. **Dans le Module 5**, tu apprendras a definir des valeurs par defaut pour eviter les champs vides
+1. **Consulte l'historique régulièrement** — même si tout semble fonctionner
+2. **Configure les notifications** — OttoKit peut t'envoyer un email quand un workflow échoue (dans Settings)
+3. **Utilise des données de test robustes** — évite les champs optionnels non gérés
+4. **Prévois les cas limites** — un email vide, un montant à zéro, un nom avec des caractères spéciaux
+5. **Dans le Module 5**, tu apprendras à définir des valeurs par défaut pour éviter les champs vides
 
-**[ECRAN — slide "Recapitulatif auto-replay"]**
+**[ÉCRAN — slide "Récapitulatif auto-replay"]**
 
 | Situation | Comportement |
 |---|---|
-| Erreur temporaire (API down 2 min) | Auto-replay reussit → workflow continue |
-| Erreur permanente (mauvais ID spreadsheet) | 6 tentatives echouent → workflow stoppe |
-| Action 2 echoue | Actions 3, 4, 5... ne s'executent pas |
-| Action 1 reussit puis action 2 echoue | Action 1 n'est pas annulee (pas de rollback) |
+| Erreur temporaire (API down 2 min) | Auto-replay réussit → workflow continue |
+| Erreur permanente (mauvais ID spreadsheet) | 6 tentatives échouent → workflow stoppe |
+| Action 2 échoue | Actions 3, 4, 5... ne s'exécutent pas |
+| Action 1 réussit puis action 2 échoue | Action 1 n'est pas annulée (pas de rollback) |
 
-Point important : il n'y a pas de rollback. Si l'action 1 a cree un contact FluentCRM et que l'action 2 echoue, le contact reste dans FluentCRM. OttoKit n'annule pas ce qui a deja ete fait.
+Point important : il n'y a pas de rollback. Si l'action 1 a créé un contact FluentCRM et que l'action 2 échoue, le contact reste dans FluentCRM. OttoKit n'annule pas ce qui a déjà été fait.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant comment OttoKit gere les erreurs. Le Module 4 est termine. Passe au quiz pour valider tes acquis avant d'attaquer le Module 5 sur le data mapping et les formatters.
+Tu sais maintenant comment OttoKit gère les erreurs. Le Module 4 est terminé. Passe au quiz pour valider tes acquis avant d'attaquer le Module 5 sur le data mapping et les formatters.
 
 ---
 
-**Points cles**
-- L'auto-replay retente une action echouee 6 fois automatiquement
-- Si une action echoue definitivement, les actions suivantes ne s'executent pas
-- Il n'y a pas de rollback : les actions deja reussies ne sont pas annulees
-- L'historique montre le detail de chaque execution, etape par etape
-- Consulter l'historique regulierement pour detecter les echecs silencieux
+**Points clés**
+- L'auto-replay retente une action échouée 6 fois automatiquement
+- Si une action échoue définitivement, les actions suivantes ne s'exécutent pas
+- Il n'y a pas de rollback : les actions déjà réussies ne sont pas annulées
+- L'historique montre le détail de chaque exécution, étape par étape
+- Consulter l'historique régulièrement pour détecter les échecs silencieux
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit gestion erreur workflow
 - auto-replay OttoKit
 - debugger workflow OttoKit
-- OttoKit historique execution
+- OttoKit historique exécution
 
 ---
 
 ## Notes de production — Module 4
 
-### Captures a preparer
-- Panneau lateral d'une action avec les 4 elements visibles (app, evenement, connexion, champs)
+### Captures à préparer
+- Panneau latéral d'une action avec les 4 éléments visibles (app, événement, connexion, champs)
 - Configuration action "Create Post" WordPress — champs titre, contenu, statut
-- Selecteur de donnees dynamiques dans un champ d'action
+- Sélecteur de données dynamiques dans un champ d'action
 - Configuration action "Add Row" Google Sheets — mapping colonnes
 - Configuration action "Send Email" Gmail — destinataire dynamique, sujet, corps
 - Canvas avec workflow 3 actions (FluentCRM + Gmail + Sheets)
-- Bouton "Test Action" et resultat "Success"
-- Resultat d'un test echoue avec message d'erreur
-- Historique des executions avec statuts succes/echec
-- Detail d'une execution echouee — etape par etape
+- Bouton "Test Action" et résultat "Success"
+- Résultat d'un test échoué avec message d'erreur
+- Historique des exécutions avec statuts succès/échec
+- Détail d'une exécution échouée — étape par étape
 - Toggle publication du workflow (Draft → Active)
 
-### Environnement de demo
+### Environnement de démo
 - Compte OttoKit (plan gratuit ou premium)
 - Site WordPress schoolsWP avec :
-  - WooCommerce installe (au moins 1 commande de test)
-  - FluentCRM installe (pour l'action "Create Contact")
+  - WooCommerce installé (au moins 1 commande de test)
+  - FluentCRM installé (pour l'action "Create Contact")
   - Au moins 1 utilisateur de test inscrit
 - Google Sheet "Suivi commandes schoolsWP" avec colonnes : Date, Client, Email, Montant, Produit
 - Google Sheet "Inscriptions schoolsWP" avec colonnes : Date, Nom, Email
-- Compte Gmail connecte a OttoKit
-- Adresse email de test (ne pas utiliser son email personnel pour les demos)
+- Compte Gmail connecté à OttoKit
+- Adresse email de test (ne pas utiliser son email personnel pour les démos)
 
-### Duree estimee par lecon (hors quiz)
-| Lecon | Duree video |
+### Durée estimée par leçon (hors quiz)
+| Leçon | Durée vidéo |
 |-------|-------------|
 | 4.1 | 5 min |
 | 4.2 | 6 min |

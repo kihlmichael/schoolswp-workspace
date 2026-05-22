@@ -1,621 +1,621 @@
-# Scripts video — Module 10 : TutorLMS + FluentCRM
+# Scripts vidéo — Module 10 : TutorLMS + FluentCRM
 
-**Formation** : Maitriser FluentCRM
+**Formation** : Maîtriser FluentCRM
 **Module** : M10 — TutorLMS + FluentCRM (Premium)
-**Lecons** : 7 videos + 1 exercice + 1 quiz
-**Duree totale** : ~55 min
-**Prerequis** : M6 (automations de base), M7 (automation avancee — goals, conditionals)
+**Leçons** : 7 vidéos + 1 exercice + 1 quiz
+**Durée totale** : ~55 min
+**Prérequis** : M6 (automations de base), M7 (automation avancée — goals, conditionals)
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 10.1 — Active l'integration TutorLMS dans FluentCRM
+### Leçon 10.1 — Active l'intégration TutorLMS dans FluentCRM
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM et TutorLMS
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM et TutorLMS
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu as FluentCRM pour le marketing. Tu as TutorLMS pour tes formations. Mais sans integration entre les deux, ce sont deux mondes separes. Tes etudiants ne recoivent pas les bons emails. Tes automations ne savent pas qui est inscrit a quoi. Et tu fais tout manuellement. Cette lecon connecte les deux. Une activation, quelques reglages, et FluentCRM voit tout ce qui se passe dans TutorLMS — inscriptions, completions, quiz. C'est le duo que personne ne montre. On va corriger ca.
+Tu as FluentCRM pour le marketing. Tu as TutorLMS pour tes formations. Mais sans intégration entre les deux, ce sont deux mondes séparés. Tes étudiants ne reçoivent pas les bons emails. Tes automations ne savent pas qui est inscrit à quoi. Et tu fais tout manuellement. Cette leçon connecte les deux. Une activation, quelques réglages, et FluentCRM voit tout ce qui se passe dans TutorLMS — inscriptions, completions, quiz. C'est le duo que personne ne montre. On va corriger ça.
 
-**[ECRAN — screencast FluentCRM > Settings > Integrations]**
+**[ÉCRAN — screencast FluentCRM > Settings > Integrations]**
 
 [Navigation vers FluentCRM > Settings > Integrations]
 
-Etape 1 : va dans FluentCRM, puis Settings, puis l'onglet Integrations. Tu vois la liste des plugins compatibles. Cherche TutorLMS. Si TutorLMS est installe et actif sur ton WordPress, tu verras un toggle pour activer l'integration.
+Étape 1 : va dans FluentCRM, puis Settings, puis l'onglet Integrations. Tu vois la liste des plugins compatibles. Cherche TutorLMS. Si TutorLMS est installé et actif sur ton WordPress, tu verras un toggle pour activer l'intégration.
 
 [Montre le toggle TutorLMS dans la liste]
 
-Etape 2 : active le toggle. FluentCRM va scanner tes cours TutorLMS et rendre disponibles les triggers, actions et filtres specifiques. Sans cette activation, les blocs TutorLMS n'apparaissent pas dans le builder d'automation.
+Étape 2 : active le toggle. FluentCRM va scanner tes cours TutorLMS et rendre disponibles les triggers, actions et filtres spécifiques. Sans cette activation, les blocs TutorLMS n'apparaissent pas dans le builder d'automation.
 
-**[ECRAN — screencast verification post-activation]**
+**[ÉCRAN — screencast vérification post-activation]**
 
 [Va dans Automations > Nouveau trigger]
 
-Etape 3 : verifie que l'integration fonctionne. Cree une nouvelle automation. Dans la liste des triggers, tu devrais maintenant voir une categorie "TutorLMS" avec plusieurs declencheurs : Student enrolled in a course, Course completed, Lesson completed, Quiz passed, Quiz failed. Si tu vois ces options, l'integration est active.
+Étape 3 : vérifie que l'intégration fonctionne. Crée une nouvelle automation. Dans la liste des triggers, tu devrais maintenant voir une catégorie "TutorLMS" avec plusieurs déclencheurs : Student enrolled in a course, Course completed, Lesson completed, Quiz passed, Quiz failed. Si tu vois ces options, l'intégration est active.
 
 [Montre la liste des triggers TutorLMS]
 
-Etape 4 : verifie aussi les actions. Dans le builder, ajoute une action. Tu devrais voir "Enroll student in a course" et "Remove from course" dans les options TutorLMS.
+Étape 4 : vérifie aussi les actions. Dans le builder, ajoute une action. Tu devrais voir "Enroll student in a course" et "Remove from course" dans les options TutorLMS.
 
 [Montre les actions TutorLMS dans le builder]
 
-**[ECRAN — screencast FluentCRM > Settings > TutorLMS]**
+**[ÉCRAN — screencast FluentCRM > Settings > TutorLMS]**
 
-[Montre les options de configuration specifiques]
+[Montre les options de configuration spécifiques]
 
-Etape 5 : retourne dans Settings > Integrations > TutorLMS. Tu as quelques options supplementaires. La plus importante : la synchronisation automatique. Quand un etudiant s'inscrit a un cours via TutorLMS, FluentCRM peut automatiquement creer ou mettre a jour le contact correspondant. Active cette option. Sans elle, tu devras importer manuellement — ce qu'on voit dans la prochaine lecon.
+Étape 5 : retourne dans Settings > Integrations > TutorLMS. Tu as quelques options supplémentaires. La plus importante : la synchronisation automatique. Quand un étudiant s'inscrit à un cours via TutorLMS, FluentCRM peut automatiquement créer ou mettre à jour le contact correspondant. Active cette option. Sans elle, tu devras importer manuellement — ce qu'on voit dans la prochaine leçon.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-L'integration est active. FluentCRM voit maintenant tout ce qui se passe dans TutorLMS. Dans la prochaine lecon, on importe les etudiants qui existaient deja avant l'activation — pour que ta base soit complete des le depart.
+L'intégration est active. FluentCRM voit maintenant tout ce qui se passe dans TutorLMS. Dans la prochaine leçon, on importe les étudiants qui existaient déjà avant l'activation — pour que ta base soit complète dès le départ.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Activation dans FluentCRM > Settings > Integrations > TutorLMS
-- TutorLMS doit etre installe et actif pour que le toggle apparaisse
-- L'activation debloque les triggers (enrolled, completed, quiz) et les actions (enroll, remove)
+- TutorLMS doit être installé et actif pour que le toggle apparaisse
+- L'activation débloque les triggers (enrolled, completed, quiz) et les actions (enroll, remove)
 - Activer la synchronisation automatique pour les nouvelles inscriptions
 - Sans activation, les blocs TutorLMS sont invisibles dans le builder
 
-**Mots cles SEO** : FluentCRM TutorLMS integration, connecter TutorLMS FluentCRM, automation LMS WordPress, FluentCRM settings integration
+**Mots clés SEO** : FluentCRM TutorLMS intégration, connecter TutorLMS FluentCRM, automation LMS WordPress, FluentCRM settings integration
 
 ---
 
-### Lecon 10.2 — Importe tes etudiants TutorLMS existants
+### Leçon 10.2 — Importe tes étudiants TutorLMS existants
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM import
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM import
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu viens d'activer l'integration. Les nouveaux etudiants seront synchronises automatiquement. Mais ceux qui etaient deja inscrits avant ? Ils existent dans TutorLMS mais pas forcement dans FluentCRM — ou ils y sont sans les bonnes infos. Dans cette lecon, on importe les etudiants existants et on les tag correctement pour que tes automations fonctionnent sur toute ta base.
+Tu viens d'activer l'intégration. Les nouveaux étudiants seront synchronisés automatiquement. Mais ceux qui étaient déjà inscrits avant ? Ils existent dans TutorLMS mais pas forcément dans FluentCRM — ou ils y sont sans les bonnes infos. Dans cette leçon, on importe les étudiants existants et on les tag correctement pour que tes automations fonctionnent sur toute ta base.
 
-**[ECRAN — screencast FluentCRM > Contacts > Import]**
+**[ÉCRAN — screencast FluentCRM > Contacts > Import]**
 
 [Navigation vers FluentCRM > Contacts > Import]
 
-Etape 1 : va dans FluentCRM > Contacts > Import. Tu as plusieurs methodes d'import. Celle qui nous interesse : "Import from TutorLMS" ou, si cette option n'apparait pas, "Import from WordPress Users" avec un filtre par role.
+Étape 1 : va dans FluentCRM > Contacts > Import. Tu as plusieurs méthodes d'import. Celle qui nous intéresse : "Import from TutorLMS" ou, si cette option n'apparaît pas, "Import from WordPress Users" avec un filtre par rôle.
 
 [Montre les options d'import]
 
-Etape 2 : si tu as l'option directe TutorLMS, utilise-la. FluentCRM va lister tous les utilisateurs WordPress qui ont au moins une inscription TutorLMS. Selectionne-les tous ou filtre par cours.
+Étape 2 : si tu as l'option directe TutorLMS, utilise-la. FluentCRM va lister tous les utilisateurs WordPress qui ont au moins une inscription TutorLMS. Sélectionne-les tous ou filtre par cours.
 
-[Montre la liste des etudiants a importer]
+[Montre la liste des étudiants à importer]
 
-**[ECRAN — screencast mapping et tags]**
+**[ÉCRAN — screencast mapping et tags]**
 
-[Montre l'ecran de configuration de l'import]
+[Montre l'écran de configuration de l'import]
 
-Etape 3 : configure le mapping. Le prenom, le nom et l'email sont mappes automatiquement. L'important, c'est ce que tu ajoutes. Assigne une liste — par exemple "etudiants-tutorlms" — et un tag de base — "student".
+Étape 3 : configure le mapping. Le prénom, le nom et l'email sont mappés automatiquement. L'important, c'est ce que tu ajoutes. Assigne une liste — par exemple "etudiants-tutorlms" — et un tag de base — "student".
 
 [Montre l'ajout de liste et tag]
 
-Etape 4 : pour les tags par cours, tu as deux approches. L'approche manuelle : tu importes cours par cours et tu assignes un tag specifique a chaque import. Par exemple, tu importes les inscrits a "Maitriser FluentCRM" avec le tag "enrolled-fluentcrm". Puis les inscrits a "Creer son LMS" avec le tag "enrolled-lms".
+Étape 4 : pour les tags par cours, tu as deux approches. L'approche manuelle : tu importes cours par cours et tu assignes un tag spécifique à chaque import. Par exemple, tu importes les inscrits à "Maîtriser FluentCRM" avec le tag "enrolled-fluentcrm". Puis les inscrits à "Créer son LMS" avec le tag "enrolled-lms".
 
-[Montre un import filtre par cours avec tag specifique]
+[Montre un import filtré par cours avec tag spécifique]
 
-L'approche automatique : tu importes tout le monde avec le tag generique "student", puis tu crees une automation qui pose les tags specifiques selon les cours. On verra cette approche dans la lecon 10.3 avec les triggers.
+L'approche automatique : tu importes tout le monde avec le tag générique "student", puis tu crées une automation qui pose les tags spécifiques selon les cours. On verra cette approche dans la leçon 10.3 avec les triggers.
 
-**[ECRAN — screencast lancement de l'import]**
+**[ÉCRAN — screencast lancement de l'import]**
 
 [Lance l'import et montre la progression]
 
-Etape 5 : lance l'import. FluentCRM traite les contacts par lots. Les contacts existants sont mis a jour — ils ne sont pas dupliques. Les nouveaux contacts sont crees. A la fin, tu as un rapport : X contacts crees, Y contacts mis a jour, Z ignores.
+Étape 5 : lance l'import. FluentCRM traite les contacts par lots. Les contacts existants sont mis à jour — ils ne sont pas dupliqués. Les nouveaux contacts sont créés. À la fin, tu as un rapport : X contacts créés, Y contacts mis à jour, Z ignorés.
 
 [Montre le rapport d'import]
 
-Etape 6 : verifie le resultat. Va dans Contacts, filtre par la liste "etudiants-tutorlms". Tous tes etudiants doivent apparaitre avec les bons tags.
+Étape 6 : vérifie le résultat. Va dans Contacts, filtre par la liste "etudiants-tutorlms". Tous tes étudiants doivent apparaître avec les bons tags.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Ta base est complete. Etudiants existants importes et tagges, nouveaux etudiants synchronises automatiquement. Maintenant on passe aux triggers TutorLMS — les evenements qui vont declencher tes automations.
+Ta base est complète. Étudiants existants importés et taggés, nouveaux étudiants synchronisés automatiquement. Maintenant on passe aux triggers TutorLMS — les événements qui vont déclencher tes automations.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Import via FluentCRM > Contacts > Import (option TutorLMS ou WordPress Users)
-- Toujours assigner une liste et un tag de base a l'import
-- Deux approches pour les tags par cours : import separe par cours ou automation post-import
-- Les contacts existants sont mis a jour, pas dupliques
-- Verifier le rapport d'import et filtrer pour confirmer
+- Toujours assigner une liste et un tag de base à l'import
+- Deux approches pour les tags par cours : import séparé par cours ou automation post-import
+- Les contacts existants sont mis à jour, pas dupliqués
+- Vérifier le rapport d'import et filtrer pour confirmer
 
-**Mots cles SEO** : importer etudiants TutorLMS FluentCRM, synchroniser contacts LMS, import FluentCRM WordPress users, migration TutorLMS
-
----
-
-### Lecon 10.3 — Triggers TutorLMS : enrollment, completion, quiz passed
-
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM automation builder
+**Mots clés SEO** : importer étudiants TutorLMS FluentCRM, synchroniser contacts LMS, import FluentCRM WordPress users, migration TutorLMS
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 10.3 — Triggers TutorLMS : enrollment, completion, quiz passed
 
-Un etudiant s'inscrit a un cours. Un autre termine une lecon. Un troisieme rate un quiz. Trois evenements, trois reactions differentes a automatiser. Les triggers TutorLMS dans FluentCRM detectent ces evenements et declenchent tes automations automatiquement. Dans cette lecon, on configure les cinq triggers principaux avec des cas concrets tires de la formation schoolsWP.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM automation builder
 
-**[ECRAN — screencast FluentCRM > Automations > New]**
+---
 
-[Cree une nouvelle automation, montre la liste des triggers]
+**[INTRO — face caméra]**
 
-Etape 1 : cree une nouvelle automation. A l'etape de selection du trigger, cherche la categorie TutorLMS. Tu as cinq triggers disponibles.
+Un étudiant s'inscrit à un cours. Un autre termine une leçon. Un troisième rate un quiz. Trois événements, trois réactions différentes à automatiser. Les triggers TutorLMS dans FluentCRM détectent ces événements et déclenchent tes automations automatiquement. Dans cette leçon, on configure les cinq triggers principaux avec des cas concrets tirés de la formation schoolsWP.
+
+**[ÉCRAN — screencast FluentCRM > Automations > New]**
+
+[Crée une nouvelle automation, montre la liste des triggers]
+
+Étape 1 : crée une nouvelle automation. À l'étape de sélection du trigger, cherche la catégorie TutorLMS. Tu as cinq triggers disponibles.
 
 [Montre les 5 triggers TutorLMS]
 
-Trigger 1 : "Student Enrolled in a Course". Se declenche quand un etudiant s'inscrit a un cours — que ce soit une inscription gratuite, un achat, ou un enroll manuel. Tu choisis le cours concerne ou "Any Course" pour tous les cours.
+Trigger 1 : "Student Enrolled in a Course". Se déclenche quand un étudiant s'inscrit à un cours — que ce soit une inscription gratuite, un achat, ou un enroll manuel. Tu choisis le cours concerné ou "Any Course" pour tous les cours.
 
-**[ECRAN — screencast configuration trigger Enrolled]**
+**[ÉCRAN — screencast configuration trigger Enrolled]**
 
-[Configure le trigger Enrolled avec un cours specifique]
+[Configure le trigger Enrolled avec un cours spécifique]
 
-Etape 2 : cas concret. Sur schoolsWP, quand un etudiant s'inscrit aux modules gratuits M1-M3, on veut poser le tag "free-student" et demarrer une sequence de nurturing. Selectionne le cours "Maitriser FluentCRM — Modules 1-3", et dans la suite de l'automation, ajoute l'action "Apply Tag > free-student".
+Étape 2 : cas concret. Sur schoolsWP, quand un étudiant s'inscrit aux modules gratuits M1-M3, on veut poser le tag "free-student" et démarrer une séquence de nurturing. Sélectionne le cours "Maîtriser FluentCRM — Modules 1-3", et dans la suite de l'automation, ajoute l'action "Apply Tag > free-student".
 
-[Montre la configuration complete : trigger enrolled + action apply tag]
+[Montre la configuration complète : trigger enrolled + action apply tag]
 
-**[ECRAN — screencast trigger Course Completed]**
+**[ÉCRAN — screencast trigger Course Completed]**
 
-[Selectionne le trigger Course Completed]
+[Sélectionne le trigger Course Completed]
 
-Trigger 2 : "Course Completed". Se declenche quand un etudiant termine toutes les lecons et tous les quiz d'un cours. C'est le trigger le plus strategique pour le marketing — l'etudiant a fini, il est pret pour la suite.
+Trigger 2 : "Course Completed". Se déclenche quand un étudiant termine toutes les leçons et tous les quiz d'un cours. C'est le trigger le plus stratégique pour le marketing — l'étudiant a fini, il est prêt pour la suite.
 
 [Configure avec le cours gratuit M1-M3]
 
-Etape 3 : cas concret. Quand un etudiant termine les modules gratuits, c'est le moment de proposer la formation premium. Le trigger "Course Completed" sur M1-M3 declenche une sequence de vente vers les modules M4-M16.
+Étape 3 : cas concret. Quand un étudiant termine les modules gratuits, c'est le moment de proposer la formation premium. Le trigger "Course Completed" sur M1-M3 déclenche une séquence de vente vers les modules M4-M16.
 
-**[ECRAN — screencast trigger Lesson Completed]**
+**[ÉCRAN — screencast trigger Lesson Completed]**
 
-[Selectionne le trigger Lesson Completed]
+[Sélectionne le trigger Lesson Completed]
 
-Trigger 3 : "Lesson Completed". Plus granulaire — se declenche a chaque lecon terminee. Utile pour le suivi de progression, mais attention : si ton cours a 30 lecons, ce trigger se declenchera 30 fois par etudiant. Utilise-le avec des conditions pour eviter le bruit.
+Trigger 3 : "Lesson Completed". Plus granulaire — se déclenche à chaque leçon terminée. Utile pour le suivi de progression, mais attention : si ton cours a 30 leçons, ce trigger se déclenchera 30 fois par étudiant. Utilise-le avec des conditions pour éviter le bruit.
 
-[Montre la selection d'une lecon specifique]
+[Montre la sélection d'une leçon spécifique]
 
-Etape 4 : cas concret. Tu veux envoyer un email de felicitation quand un etudiant termine la lecon 3.6 "Cree ta premiere automation" — un milestone important. Configure le trigger sur cette lecon specifique, pas sur "Any Lesson".
+Étape 4 : cas concret. Tu veux envoyer un email de félicitation quand un étudiant termine la leçon 3.6 "Crée ta première automation" — un milestone important. Configure le trigger sur cette leçon spécifique, pas sur "Any Lesson".
 
-**[ECRAN — screencast triggers Quiz]**
+**[ÉCRAN — screencast triggers Quiz]**
 
 [Montre les deux triggers quiz]
 
-Trigger 4 : "Quiz Passed". Se declenche quand un etudiant reussit un quiz avec le score minimum requis.
+Trigger 4 : "Quiz Passed". Se déclenche quand un étudiant réussit un quiz avec le score minimum requis.
 
-Trigger 5 : "Quiz Failed". Se declenche quand un etudiant echoue. C'est celui que la plupart des gens oublient — et c'est pourtant le plus utile pour la retention.
+Trigger 5 : "Quiz Failed". Se déclenche quand un étudiant échoue. C'est celui que la plupart des gens oublient — et c'est pourtant le plus utile pour la rétention.
 
 [Configure le trigger Quiz Failed]
 
-Etape 5 : cas concret. Un etudiant echoue au quiz du module 6. Tu declenches un email automatique : "Tu n'as pas obtenu le score minimum sur le quiz M6. Voici les lecons a revoir avant de retenter." Tu ajoutes les liens directs vers les lecons concernees. C'est de l'accompagnement automatise — pas du spam.
+Étape 5 : cas concret. Un étudiant échoue au quiz du module 6. Tu déclenches un email automatique : "Tu n'as pas obtenu le score minimum sur le quiz M6. Voici les leçons à revoir avant de retenter." Tu ajoutes les liens directs vers les leçons concernées. C'est de l'accompagnement automatisé — pas du spam.
 
-**[ECRAN — slide recapitulatif des 5 triggers]**
+**[ÉCRAN — slide récapitulatif des 5 triggers]**
 
-[Tableau : trigger, evenement, cas d'usage]
+[Tableau : trigger, événement, cas d'usage]
 
-Recapitulatif rapide. Enrolled — inscription a un cours — tagging et welcome sequence. Course Completed — cours termine — upsell et certification. Lesson Completed — lecon terminee — suivi de progression et milestones. Quiz Passed — quiz reussi — felicitation et deblocage. Quiz Failed — quiz rate — relance et support.
+Récapitulatif rapide. Enrolled — inscription à un cours — tagging et welcome sequence. Course Completed — cours terminé — upsell et certification. Lesson Completed — leçon terminée — suivi de progression et milestones. Quiz Passed — quiz réussi — félicitation et déblocage. Quiz Failed — quiz raté — relance et support.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu connais les cinq triggers TutorLMS. Chacun detecte un moment precis du parcours etudiant. Dans la prochaine lecon, on passe de l'autre cote — les actions. Tu vas pouvoir inscrire et desinscrire des etudiants de cours directement depuis tes automations FluentCRM.
+Tu connais les cinq triggers TutorLMS. Chacun détecte un moment précis du parcours étudiant. Dans la prochaine leçon, on passe de l'autre côté — les actions. Tu vas pouvoir inscrire et désinscrire des étudiants de cours directement depuis tes automations FluentCRM.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - 5 triggers TutorLMS : Enrolled, Course Completed, Lesson Completed, Quiz Passed, Quiz Failed
-- Chaque trigger peut cibler un cours/lecon/quiz specifique ou "Any"
-- Lesson Completed se declenche a chaque lecon — utiliser avec conditions pour eviter le bruit
-- Quiz Failed = trigger sous-utilise mais strategique pour la retention
+- Chaque trigger peut cibler un cours/leçon/quiz spécifique ou "Any"
+- Lesson Completed se déclenche à chaque leçon — utiliser avec conditions pour éviter le bruit
+- Quiz Failed = trigger sous-utilisé mais stratégique pour la rétention
 - Cas schoolsWP : inscription gratuite M1-M3 → tag "free-student" → nurturing → upsell M4-M16
 
-**Mots cles SEO** : FluentCRM TutorLMS trigger, automation inscription cours, trigger quiz FluentCRM, automatiser LMS WordPress
+**Mots clés SEO** : FluentCRM TutorLMS trigger, automation inscription cours, trigger quiz FluentCRM, automatiser LMS WordPress
 
 ---
 
-### Lecon 10.4 — Actions TutorLMS : enroll in course, remove from course
+### Leçon 10.4 — Actions TutorLMS : enroll in course, remove from course
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM automation builder
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM automation builder
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Dans la lecon precedente, TutorLMS declenchait des automations dans FluentCRM. Maintenant on fait l'inverse : FluentCRM agit sur TutorLMS. Un contact achete ta formation premium ? FluentCRM l'inscrit automatiquement aux modules M4 a M16 sans que tu leves le petit doigt. Un remboursement ? FluentCRM retire l'acces. Deux actions, enormement de temps gagne.
+Dans la leçon précédente, TutorLMS déclenchait des automations dans FluentCRM. Maintenant on fait l'inverse : FluentCRM agit sur TutorLMS. Un contact achète ta formation premium ? FluentCRM l'inscrit automatiquement aux modules M4 à M16 sans que tu lèves le petit doigt. Un remboursement ? FluentCRM retire l'accès. Deux actions, énormément de temps gagné.
 
-**[ECRAN — screencast FluentCRM > Automation builder]**
+**[ÉCRAN — screencast FluentCRM > Automation builder]**
 
 [Ouvre une automation existante, montre les actions disponibles]
 
-Etape 1 : dans le builder d'automation, ajoute une action. Dans la liste, tu trouves deux actions TutorLMS. "Enroll Student in a Course" — inscrit le contact a un cours. "Remove from Course" — retire l'acces.
+Étape 1 : dans le builder d'automation, ajoute une action. Dans la liste, tu trouves deux actions TutorLMS. "Enroll Student in a Course" — inscrit le contact à un cours. "Remove from Course" — retire l'accès.
 
 [Montre les deux actions dans la liste]
 
-**[ECRAN — screencast action Enroll]**
+**[ÉCRAN — screencast action Enroll]**
 
 [Ajoute l'action Enroll et configure-la]
 
-Etape 2 : configure l'action Enroll. Tu selectionnes le cours cible. Un cours par action. Si tu veux inscrire a plusieurs cours, tu enchaines plusieurs actions Enroll.
+Étape 2 : configure l'action Enroll. Tu sélectionnes le cours cible. Un cours par action. Si tu veux inscrire à plusieurs cours, tu enchaînes plusieurs actions Enroll.
 
-[Montre la selection du cours]
+[Montre la sélection du cours]
 
-Etape 3 : cas concret — le funnel schoolsWP. L'automation demarre quand un contact recoit le tag "a-achete-premium" (pose par WooCommerce apres l'achat). L'action Enroll inscrit l'etudiant au cours "Maitriser FluentCRM — Modules 4-16".
+Étape 3 : cas concret — le funnel schoolsWP. L'automation démarre quand un contact reçoit le tag "a-achete-premium" (posé par WooCommerce après l'achat). L'action Enroll inscrit l'étudiant au cours "Maîtriser FluentCRM — Modules 4-16".
 
-[Montre l'automation complete : trigger tag applied > enroll course]
+[Montre l'automation complète : trigger tag applied > enroll course]
 
-Mais on ne s'arrete pas la. Apres l'enroll, on ajoute trois actions supplementaires. Apply tag "premium-student". Remove tag "free-student" — il n'est plus en version gratuite. Et un email de bienvenue avec les liens d'acces directs.
+Mais on ne s'arrête pas là. Après l'enroll, on ajoute trois actions supplémentaires. Apply tag "premium-student". Remove tag "free-student" — il n'est plus en version gratuite. Et un email de bienvenue avec les liens d'accès directs.
 
-[Montre la sequence complete : enroll > apply tag > remove tag > send email]
+[Montre la séquence complète : enroll > apply tag > remove tag > send email]
 
-**[ECRAN — screencast action Remove from Course]**
+**[ÉCRAN — screencast action Remove from Course]**
 
 [Ajoute l'action Remove et configure-la]
 
-Etape 4 : l'action Remove from Course. Meme logique — tu selectionnes le cours concerne.
+Étape 4 : l'action Remove from Course. Même logique — tu sélectionnes le cours concerné.
 
-Etape 5 : cas concret. Un etudiant demande un remboursement. Ton plugin e-commerce pose le tag "refunded". L'automation detecte ce tag, retire l'acces au cours premium, et envoie un email de confirmation de remboursement.
+Étape 5 : cas concret. Un étudiant demande un remboursement. Ton plugin e-commerce pose le tag "refunded". L'automation détecte ce tag, retire l'accès au cours premium, et envoie un email de confirmation de remboursement.
 
 [Montre l'automation : trigger tag "refunded" > remove from course > send email]
 
-**[ECRAN — screencast enchainement multi-cours]**
+**[ÉCRAN — screencast enchaînement multi-cours]**
 
 [Montre une automation avec plusieurs Enroll]
 
-Etape 6 : pour inscrire a plusieurs cours dans la meme automation, enchaine les actions. Attention a l'ordre — TutorLMS traite chaque inscription sequentiellement. Si tu as beaucoup de cours, ajoute un delai de quelques secondes entre chaque Enroll pour eviter de surcharger le serveur.
+Étape 6 : pour inscrire à plusieurs cours dans la même automation, enchaîne les actions. Attention à l'ordre — TutorLMS traite chaque inscription séquentiellement. Si tu as beaucoup de cours, ajoute un délai de quelques secondes entre chaque Enroll pour éviter de surcharger le serveur.
 
-[Montre trois actions Enroll avec des delais de 5 secondes entre chaque]
+[Montre trois actions Enroll avec des délais de 5 secondes entre chaque]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu controles maintenant l'acces aux cours depuis tes automations. Inscription automatique a l'achat, retrait a la desinscription. Dans la prochaine lecon, on combine triggers et actions avec les goals et les conditionals — pour creer des parcours etudiants vraiment intelligents.
+Tu contrôles maintenant l'accès aux cours depuis tes automations. Inscription automatique à l'achat, retrait à la désinscription. Dans la prochaine leçon, on combine triggers et actions avec les goals et les conditionals — pour créer des parcours étudiants vraiment intelligents.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - 2 actions TutorLMS : Enroll Student in a Course, Remove from Course
-- Une action = un cours. Pour plusieurs cours, enchainer les actions
+- Une action = un cours. Pour plusieurs cours, enchaîner les actions
 - Cas principal : achat → tag "a-achete-premium" → enroll automatique + tag "premium-student"
 - Remboursement : tag "refunded" → remove from course + email confirmation
-- Pour multi-enroll : ajouter quelques secondes de delai entre chaque action
+- Pour multi-enroll : ajouter quelques secondes de délai entre chaque action
 
-**Mots cles SEO** : FluentCRM enroll course TutorLMS, inscrire etudiant automatiquement, automation achat formation, FluentCRM action TutorLMS
-
----
-
-### Lecon 10.5 — Goals et conditionals specifiques TutorLMS
-
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM automation builder
+**Mots clés SEO** : FluentCRM enroll course TutorLMS, inscrire étudiant automatiquement, automation achat formation, FluentCRM action TutorLMS
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 10.5 — Goals et conditionals spécifiques TutorLMS
 
-Tu as vu les goals dans le module 7. Maintenant on les utilise avec TutorLMS. Un goal "a termine le cours X" dans une sequence de nurturing. Un conditional "est inscrit au cours Y" pour personnaliser les emails. C'est la que l'integration devient vraiment puissante — tes automations reagissent en temps reel a la progression de chaque etudiant.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM automation builder
 
-**[ECRAN — screencast FluentCRM > Automation builder]**
+---
+
+**[INTRO — face caméra]**
+
+Tu as vu les goals dans le module 7. Maintenant on les utilise avec TutorLMS. Un goal "a terminé le cours X" dans une séquence de nurturing. Un conditional "est inscrit au cours Y" pour personnaliser les emails. C'est là que l'intégration devient vraiment puissante — tes automations réagissent en temps réel à la progression de chaque étudiant.
+
+**[ÉCRAN — screencast FluentCRM > Automation builder]**
 
 [Ouvre une automation de nurturing post-inscription gratuite]
 
-Etape 1 : contexte. On reprend le funnel schoolsWP. Un etudiant s'inscrit aux modules gratuits M1-M3. Il entre dans une automation de nurturing qui envoie des emails de valeur et propose la formation premium. Le probleme : combien de temps dure ce nurturing ?
+Étape 1 : contexte. On reprend le funnel schoolsWP. Un étudiant s'inscrit aux modules gratuits M1-M3. Il entre dans une automation de nurturing qui envoie des emails de valeur et propose la formation premium. Le problème : combien de temps dure ce nurturing ?
 
-[Montre la sequence d'emails de nurturing]
+[Montre la séquence d'emails de nurturing]
 
-Etape 2 : ajoute un goal "Course Completed" sur le cours M1-M3. Place-le dans l'automation. Ce goal detecte quand l'etudiant a termine les modules gratuits.
+Étape 2 : ajoute un goal "Course Completed" sur le cours M1-M3. Place-le dans l'automation. Ce goal détecte quand l'étudiant a terminé les modules gratuits.
 
 [Place le bloc Goal dans l'automation]
 
-**[ECRAN — screencast configuration du Goal TutorLMS]**
+**[ÉCRAN — screencast configuration du Goal TutorLMS]**
 
 [Configure le goal avec la condition Course Completed]
 
-Etape 3 : configure le goal. Condition : le contact a termine le cours "Maitriser FluentCRM — Modules 1-3". Mode : goal optionnel — "Can be achieved at any time". Pourquoi optionnel ? Parce que si l'etudiant ne finit pas le cours, tu veux quand meme qu'il recoive les emails suivants.
+Étape 3 : configure le goal. Condition : le contact a terminé le cours "Maîtriser FluentCRM — Modules 1-3". Mode : goal optionnel — "Can be achieved at any time". Pourquoi optionnel ? Parce que si l'étudiant ne finit pas le cours, tu veux quand même qu'il reçoive les emails suivants.
 
-[Montre les parametres du goal]
+[Montre les paramètres du goal]
 
-Etape 4 : place le goal juste avant ta sequence de vente. Voila ce qui se passe. L'etudiant recoit les emails de nurturing. A n'importe quel moment, s'il termine le cours M1-M3, il saute directement au goal. Apres le goal, tu places ta sequence de vente — "Tu as fini les bases, voici ce que la formation complete t'apporte." Le timing est parfait : l'email de vente arrive au moment ou l'etudiant est le plus engage.
+Étape 4 : place le goal juste avant ta séquence de vente. Voilà ce qui se passe. L'étudiant reçoit les emails de nurturing. À n'importe quel moment, s'il termine le cours M1-M3, il saute directement au goal. Après le goal, tu places ta séquence de vente — "Tu as fini les bases, voici ce que la formation complète t'apporte." Le timing est parfait : l'email de vente arrive au moment où l'étudiant est le plus engagé.
 
-**[ECRAN — screencast conditionals TutorLMS]**
+**[ÉCRAN — screencast conditionals TutorLMS]**
 
 [Ajoute un bloc conditionnel dans l'automation]
 
-Etape 5 : les conditionals. Ajoute un bloc "Conditional" dans ton automation. Dans les conditions disponibles, tu trouves des filtres TutorLMS. "Is enrolled in course X" — verifie si le contact est inscrit a un cours. "Has completed course X" — verifie si le cours est termine.
+Étape 5 : les conditionals. Ajoute un bloc "Conditional" dans ton automation. Dans les conditions disponibles, tu trouves des filtres TutorLMS. "Is enrolled in course X" — vérifie si le contact est inscrit à un cours. "Has completed course X" — vérifie si le cours est terminé.
 
 [Montre les conditions TutorLMS dans le bloc conditionnel]
 
-Etape 6 : cas concret. Apres le goal, tu veux personnaliser l'email de vente. Condition : "Has completed course M1-M3". Branche Oui : email de vente avec angle "Tu as deja vu la puissance de FluentCRM, imagine ce que tu feras avec les modules avances." Branche Non : email avec angle "Tu n'as pas encore explore tous les modules gratuits — termine-les d'abord, puis on en reparle."
+Étape 6 : cas concret. Après le goal, tu veux personnaliser l'email de vente. Condition : "Has completed course M1-M3". Branche Oui : email de vente avec angle "Tu as déjà vu la puissance de FluentCRM, imagine ce que tu feras avec les modules avancés." Branche Non : email avec angle "Tu n'as pas encore exploré tous les modules gratuits — termine-les d'abord, puis on en reparle."
 
-[Montre les deux branches avec des emails differents]
+[Montre les deux branches avec des emails différents]
 
-**[ECRAN — screencast goal essentiel pour prerequis]**
+**[ÉCRAN — screencast goal essentiel pour prérequis]**
 
-[Cree une nouvelle automation avec un goal essentiel]
+[Crée une nouvelle automation avec un goal essentiel]
 
-Etape 7 : deuxieme cas — le goal essentiel. Tu as un parcours ou l'etudiant doit terminer le module 6 (automations de base) avant d'acceder au module 7 (automation avancee). Le goal "Course Completed > Module 6" est en mode essentiel — "Must be achieved to proceed". L'etudiant ne recoit pas les emails du module 7 tant qu'il n'a pas termine le module 6.
+Étape 7 : deuxième cas — le goal essentiel. Tu as un parcours où l'étudiant doit terminer le module 6 (automations de base) avant d'accéder au module 7 (automation avancée). Le goal "Course Completed > Module 6" est en mode essentiel — "Must be achieved to proceed". L'étudiant ne reçoit pas les emails du module 7 tant qu'il n'a pas terminé le module 6.
 
 [Montre la configuration en mode essentiel]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Goals et conditionals transforment tes automations en parcours adaptatifs. Chaque etudiant avance a son rythme, recoit le bon message au bon moment. Dans la prochaine lecon, on va encore plus loin avec les filtres avances — segmentation par cours, progression et instructeur.
+Goals et conditionals transforment tes automations en parcours adaptatifs. Chaque étudiant avance à son rythme, reçoit le bon message au bon moment. Dans la prochaine leçon, on va encore plus loin avec les filtres avancés — segmentation par cours, progression et instructeur.
 
 ---
 
-**Points cles** :
-- Goal "Course Completed" = detecte la fin d'un cours dans l'automation
-- Goal optionnel pour le nurturing (le contact continue meme sans finir le cours)
-- Goal essentiel pour les prerequis (le contact est bloque tant que le cours n'est pas termine)
+**Points clés** :
+- Goal "Course Completed" = détecte la fin d'un cours dans l'automation
+- Goal optionnel pour le nurturing (le contact continue même sans finir le cours)
+- Goal essentiel pour les prérequis (le contact est bloqué tant que le cours n'est pas terminé)
 - Conditionals TutorLMS : "Is enrolled in course X", "Has completed course X"
-- Personnalisation des emails selon la progression reelle de l'etudiant
+- Personnalisation des emails selon la progression réelle de l'étudiant
 
-**Mots cles SEO** : FluentCRM goal TutorLMS, conditional automation LMS, personnaliser email progression cours, funnel etudiant FluentCRM
-
----
-
-### Lecon 10.6 — Filtre avance : segmente par cours, progression, instructeur
-
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM contacts et segments
+**Mots clés SEO** : FluentCRM goal TutorLMS, conditional automation LMS, personnaliser email progression cours, funnel étudiant FluentCRM
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 10.6 — Filtre avancé : segmente par cours, progression, instructeur
 
-Tu as 500 contacts dans FluentCRM. Parmi eux, des etudiants inscrits a differents cours, a differents stades de progression. Tu veux envoyer un email uniquement aux etudiants inscrits au cours FluentCRM qui n'ont pas encore termine le module 3. Les filtres avances TutorLMS dans FluentCRM te permettent ce niveau de precision. Dans cette lecon, on construit des segments dynamiques bases sur les donnees TutorLMS.
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM contacts et segments
 
-**[ECRAN — screencast FluentCRM > Contacts > Filtres]**
+---
+
+**[INTRO — face caméra]**
+
+Tu as 500 contacts dans FluentCRM. Parmi eux, des étudiants inscrits à différents cours, à différents stades de progression. Tu veux envoyer un email uniquement aux étudiants inscrits au cours FluentCRM qui n'ont pas encore terminé le module 3. Les filtres avancés TutorLMS dans FluentCRM te permettent ce niveau de précision. Dans cette leçon, on construit des segments dynamiques basés sur les données TutorLMS.
+
+**[ÉCRAN — screencast FluentCRM > Contacts > Filtres]**
 
 [Ouvre la vue contacts et montre les filtres disponibles]
 
-Etape 1 : va dans FluentCRM > Contacts. Clique sur "Filter". Dans les filtres disponibles, tu trouves une section TutorLMS avec plusieurs criteres.
+Étape 1 : va dans FluentCRM > Contacts. Clique sur "Filter". Dans les filtres disponibles, tu trouves une section TutorLMS avec plusieurs critères.
 
 [Montre les filtres TutorLMS]
 
-Filtre 1 : "Enrolled in Course". Selectionne un cours et FluentCRM affiche uniquement les contacts inscrits a ce cours. Tu peux combiner avec "Is" ou "Is not" — pour cibler les inscrits ou les non-inscrits.
+Filtre 1 : "Enrolled in Course". Sélectionne un cours et FluentCRM affiche uniquement les contacts inscrits à ce cours. Tu peux combiner avec "Is" ou "Is not" — pour cibler les inscrits ou les non-inscrits.
 
-[Applique le filtre et montre les resultats]
+[Applique le filtre et montre les résultats]
 
-**[ECRAN — screencast filtre par progression]**
+**[ÉCRAN — screencast filtre par progression]**
 
 [Ajoute un filtre de progression]
 
-Etape 2 : filtre par progression. "Course Completed" — filtre les contacts qui ont termine ou pas un cours specifique. Combine les deux : "Enrolled in Course X" ET "Course not completed" — tu obtiens les etudiants en cours de formation, ceux qui ont commence mais pas fini.
+Étape 2 : filtre par progression. "Course Completed" — filtre les contacts qui ont terminé ou pas un cours spécifique. Combine les deux : "Enrolled in Course X" ET "Course not completed" — tu obtiens les étudiants en cours de formation, ceux qui ont commencé mais pas fini.
 
 [Montre la combinaison de filtres]
 
-Etape 3 : cas concret. Tu veux relancer les etudiants qui se sont inscrits aux modules gratuits mais ne les ont pas termines. Filtre : "Enrolled in M1-M3" + "Course M1-M3 not completed". Resultat : ta liste de contacts a relancer.
+Étape 3 : cas concret. Tu veux relancer les étudiants qui se sont inscrits aux modules gratuits mais ne les ont pas terminés. Filtre : "Enrolled in M1-M3" + "Course M1-M3 not completed". Résultat : ta liste de contacts à relancer.
 
-[Montre le resultat filtre]
+[Montre le résultat filtré]
 
-**[ECRAN — screencast filtre par instructeur]**
+**[ÉCRAN — screencast filtre par instructeur]**
 
 [Montre le filtre instructeur si disponible]
 
-Etape 4 : filtre par instructeur. Si tu as plusieurs instructeurs sur ton LMS, tu peux filtrer les etudiants d'un instructeur specifique. Utile pour les ecoles avec plusieurs formateurs — chaque instructeur peut avoir ses propres sequences email.
+Étape 4 : filtre par instructeur. Si tu as plusieurs instructeurs sur ton LMS, tu peux filtrer les étudiants d'un instructeur spécifique. Utile pour les écoles avec plusieurs formateurs — chaque instructeur peut avoir ses propres séquences email.
 
-**[ECRAN — screencast creation de segments dynamiques]**
+**[ÉCRAN — screencast création de segments dynamiques]**
 
 [Sauvegarde un filtre comme segment]
 
-Etape 5 : transforme ton filtre en segment dynamique. Une fois tes criteres definis, sauvegarde le filtre. Ce segment se met a jour automatiquement — chaque nouveau contact qui correspond aux criteres y entre, chaque contact qui ne correspond plus en sort.
+Étape 5 : transforme ton filtre en segment dynamique. Une fois tes critères définis, sauvegarde le filtre. Ce segment se met à jour automatiquement — chaque nouveau contact qui correspond aux critères y entre, chaque contact qui ne correspond plus en sort.
 
 [Montre la sauvegarde du segment]
 
-Etape 6 : utilise ces segments dans tes campagnes. Quand tu crees un email ou une campagne, tu peux cibler un segment. "Etudiants M1-M3 non termines" — voila ton audience de relance.
+Étape 6 : utilise ces segments dans tes campagnes. Quand tu crées un email ou une campagne, tu peux cibler un segment. "Étudiants M1-M3 non terminés" — voilà ton audience de relance.
 
-[Montre la selection du segment dans la creation de campagne]
+[Montre la sélection du segment dans la création de campagne]
 
-**[ECRAN — slide combinaisons utiles]**
+**[ÉCRAN — slide combinaisons utiles]**
 
 [Tableau : combinaison de filtres, cas d'usage]
 
-Quelques combinaisons utiles. "Enrolled + Not completed" — relance les inactifs. "Completed course A + Not enrolled course B" — upsell vers le cours suivant. "Quiz failed + Enrolled" — support personnalise pour les etudiants en difficulte. "Not enrolled in any course + Tag newsletter" — prospects pas encore convertis en etudiants.
+Quelques combinaisons utiles. "Enrolled + Not completed" — relance les inactifs. "Completed course A + Not enrolled course B" — upsell vers le cours suivant. "Quiz failed + Enrolled" — support personnalisé pour les étudiants en difficulté. "Not enrolled in any course + Tag newsletter" — prospects pas encore convertis en étudiants.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant segmenter ta base selon les donnees TutorLMS. Des segments precis, dynamiques, qui alimentent des campagnes ciblees. Dans la prochaine lecon, on automatise le cas d'usage le plus strategique : la relance des etudiants inactifs.
+Tu sais maintenant segmenter ta base selon les données TutorLMS. Des segments précis, dynamiques, qui alimentent des campagnes ciblées. Dans la prochaine leçon, on automatise le cas d'usage le plus stratégique : la relance des étudiants inactifs.
 
 ---
 
-**Points cles** :
-- Filtres TutorLMS dans FluentCRM : par cours, par completion, par instructeur
-- Combinaison de filtres pour une segmentation fine (inscrit + pas termine = a relancer)
-- Segments dynamiques : se mettent a jour automatiquement
+**Points clés** :
+- Filtres TutorLMS dans FluentCRM : par cours, par complétion, par instructeur
+- Combinaison de filtres pour une segmentation fine (inscrit + pas terminé = à relancer)
+- Segments dynamiques : se mettent à jour automatiquement
 - Utilisation directe dans les campagnes email
-- 4 combinaisons cles : relance inactifs, upsell, support, conversion prospects
+- 4 combinaisons clés : relance inactifs, upsell, support, conversion prospects
 
-**Mots cles SEO** : FluentCRM segment TutorLMS, filtrer etudiants par cours, segmentation LMS email, segment dynamique FluentCRM
-
----
-
-### Lecon 10.7 — Automatise la relance des etudiants inactifs
-
-**Duree** : 8 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast FluentCRM automation builder
+**Mots clés SEO** : FluentCRM segment TutorLMS, filtrer étudiants par cours, segmentation LMS email, segment dynamique FluentCRM
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 10.7 — Automatise la relance des étudiants inactifs
 
-Un etudiant s'inscrit, suit deux lecons, puis disparait. Deux semaines sans connexion. C'est le scenario le plus courant dans les formations en ligne — et aussi la plus grosse perte de revenus. Parce qu'un etudiant inactif, c'est un etudiant qui ne terminera pas, qui ne recommandera pas, et qui n'achetera pas la suite. Dans cette lecon, on construit une automation de relance complete qui detecte l'inactivite et ramene l'etudiant dans sa formation avec un smart link de connexion automatique.
+**Durée** : 8 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast FluentCRM automation builder
 
-**[ECRAN — screencast FluentCRM > Automations > New]**
+---
 
-[Cree une nouvelle automation]
+**[INTRO — face caméra]**
 
-Etape 1 : la strategie. On va detecter les etudiants qui ne progressent plus depuis 14 jours. Pour ca, on combine un trigger d'inscription avec des delais et des conditions.
+Un étudiant s'inscrit, suit deux leçons, puis disparaît. Deux semaines sans connexion. C'est le scénario le plus courant dans les formations en ligne — et aussi la plus grosse perte de revenus. Parce qu'un étudiant inactif, c'est un étudiant qui ne terminera pas, qui ne recommandera pas, et qui n'achètera pas la suite. Dans cette leçon, on construit une automation de relance complète qui détecte l'inactivité et ramène l'étudiant dans sa formation avec un smart link de connexion automatique.
 
-[Montre le schema de l'automation sur papier ou slide]
+**[ÉCRAN — screencast FluentCRM > Automations > New]**
 
-Le flux : inscription au cours → delai 14 jours → condition "a progresse ?" → si non → email de relance 1 → delai 7 jours → condition "a progresse ?" → si non → email de relance 2 → delai 7 jours → derniere tentative.
+[Crée une nouvelle automation]
 
-**[ECRAN — screencast construction de l'automation]**
+Étape 1 : la stratégie. On va détecter les étudiants qui ne progressent plus depuis 14 jours. Pour ça, on combine un trigger d'inscription avec des délais et des conditions.
 
-[Commence a construire dans le builder]
+[Montre le schéma de l'automation sur papier ou slide]
 
-Etape 2 : trigger — "Student Enrolled in a Course". Selectionne ton cours, ou "Any Course" pour couvrir toute ta base.
+Le flux : inscription au cours → délai 14 jours → condition "a progressé ?" → si non → email de relance 1 → délai 7 jours → condition "a progressé ?" → si non → email de relance 2 → délai 7 jours → dernière tentative.
+
+**[ÉCRAN — screencast construction de l'automation]**
+
+[Commence à construire dans le builder]
+
+Étape 2 : trigger — "Student Enrolled in a Course". Sélectionne ton cours, ou "Any Course" pour couvrir toute ta base.
 
 [Configure le trigger]
 
-Etape 3 : ajoute un delai de 14 jours. C'est la periode de grace. On laisse l'etudiant avancer a son rythme pendant deux semaines avant de verifier.
+Étape 3 : ajoute un délai de 14 jours. C'est la période de grâce. On laisse l'étudiant avancer à son rythme pendant deux semaines avant de vérifier.
 
 [Ajoute le bloc Wait 14 days]
 
-Etape 4 : ajoute un bloc conditionnel. Condition : "Has completed course X" — est-ce que l'etudiant a deja termine ? Si oui, branche Oui — on ne relance pas quelqu'un qui a fini. Remove from automation. Si non, on continue.
+Étape 4 : ajoute un bloc conditionnel. Condition : "Has completed course X" — est-ce que l'étudiant a déjà terminé ? Si oui, branche Oui — on ne relance pas quelqu'un qui a fini. Remove from automation. Si non, on continue.
 
 [Configure le conditionnel avec les deux branches]
 
-**[ECRAN — screencast deuxieme condition et premier email]**
+**[ÉCRAN — screencast deuxième condition et premier email]**
 
 [Ajoute une condition plus fine]
 
-Etape 5 : deuxieme condition sur la branche Non. On verifie la derniere activite. Si l'etudiant a complete une lecon dans les 14 derniers jours, il est encore actif — on attend. Si aucune activite, c'est un inactif confirme.
+Étape 5 : deuxième condition sur la branche Non. On vérifie la dernière activité. Si l'étudiant a complété une leçon dans les 14 derniers jours, il est encore actif — on attend. Si aucune activité, c'est un inactif confirmé.
 
 [Montre la configuration de la condition]
 
-Note : selon ta version de FluentCRM et TutorLMS, cette condition peut etre basee sur un tag pose par une autre automation qui track la progression, ou sur un champ personnalise "last_lesson_date". L'important, c'est d'avoir un signal d'activite.
+Note : selon ta version de FluentCRM et TutorLMS, cette condition peut être basée sur un tag posé par une autre automation qui track la progression, ou sur un champ personnalisé "last_lesson_date". L'important, c'est d'avoir un signal d'activité.
 
-Etape 6 : premier email de relance. Ton objectif : ramener l'etudiant dans le cours sans pression. L'email doit etre court, personnel, et utile.
+Étape 6 : premier email de relance. Ton objectif : ramener l'étudiant dans le cours sans pression. L'email doit être court, personnel, et utile.
 
-[Montre un email type dans l'editeur]
+[Montre un email type dans l'éditeur]
 
-Objet : "Tu en etais ou dans [nom du cours] ?" Corps : rappel de ce qu'il a deja accompli, teaser de ce qui l'attend dans les prochaines lecons, et le lien de connexion direct.
+Objet : "Tu en étais où dans [nom du cours] ?" Corps : rappel de ce qu'il a déjà accompli, teaser de ce qui l'attend dans les prochaines leçons, et le lien de connexion direct.
 
-**[ECRAN — screencast smart link auto-login]**
+**[ÉCRAN — screencast smart link auto-login]**
 
-[Montre la creation du lien]
+[Montre la création du lien]
 
-Etape 7 : le smart link. Au lieu d'envoyer un simple lien vers la page du cours, envoie un lien de connexion automatique. FluentCRM genere des liens personnalises par contact. Combine ca avec l'URL de la lecon ou l'etudiant s'est arrete — il clique, il est connecte, il reprend exactement ou il en etait. Zero friction.
+Étape 7 : le smart link. Au lieu d'envoyer un simple lien vers la page du cours, envoie un lien de connexion automatique. FluentCRM génère des liens personnalisés par contact. Combine ça avec l'URL de la leçon où l'étudiant s'est arrêté — il clique, il est connecté, il reprend exactement où il en était. Zéro friction.
 
 [Montre l'insertion du lien dans l'email]
 
-Format : `{{auto_login_url}}/courses/maitriser-fluentcrm/lecon-suivante/`. Le `{{auto_login_url}}` connecte l'etudiant automatiquement, et le chemin l'amene directement a la bonne lecon.
+Format : `{{auto_login_url}}/courses/maitriser-fluentcrm/lecon-suivante/`. Le `{{auto_login_url}}` connecte l'étudiant automatiquement, et le chemin l'amène directement à la bonne leçon.
 
-**[ECRAN — screencast sequence de relance complete]**
+**[ÉCRAN — screencast séquence de relance complète]**
 
-[Montre l'automation complete dans le builder]
+[Montre l'automation complète dans le builder]
 
-Etape 8 : apres le premier email, ajoute un delai de 7 jours. Puis une condition : a-t-il progresse ? Si oui, fin de la relance. Si non, deuxieme email — cette fois avec un angle different. Par exemple : "3 etudiants sur 5 qui terminent ce module disent que c'est le declic. Tu es a [X]% de completion."
+Étape 8 : après le premier email, ajoute un délai de 7 jours. Puis une condition : a-t-il progressé ? Si oui, fin de la relance. Si non, deuxième email — cette fois avec un angle différent. Par exemple : "3 étudiants sur 5 qui terminent ce module disent que c'est le déclic. Tu es à [X]% de complétion."
 
-[Montre le deuxieme email avec donnees de progression]
+[Montre le deuxième email avec données de progression]
 
-Etape 9 : apres un nouveau delai de 7 jours, un troisieme et dernier email. Plus direct : "Ca fait un mois que tu n'as pas avance. Est-ce que tu es bloque ? Reponds a cet email et je t'aide." Apres ce troisieme email, l'automation s'arrete. Trois relances, pas plus — au-dela, c'est intrusif.
+Étape 9 : après un nouveau délai de 7 jours, un troisième et dernier email. Plus direct : "Ça fait un mois que tu n'as pas avancé. Est-ce que tu es bloqué ? Réponds à cet email et je t'aide." Après ce troisième email, l'automation s'arrête. Trois relances, pas plus — au-delà, c'est intrusif.
 
-**[ECRAN — screencast ajout des tags de suivi]**
+**[ÉCRAN — screencast ajout des tags de suivi]**
 
 [Montre l'ajout de tags dans l'automation]
 
-Etape 10 : ajoute des tags de suivi a chaque etape. Tag "relance-1-envoyee" apres le premier email. Tag "relance-2-envoyee" apres le deuxieme. Tag "inactif-confirme" si l'etudiant ne reagit a aucune relance. Ces tags alimentent tes rapports et tes futures segmentations.
+Étape 10 : ajoute des tags de suivi à chaque étape. Tag "relance-1-envoyee" après le premier email. Tag "relance-2-envoyee" après le deuxième. Tag "inactif-confirme" si l'étudiant ne réagit à aucune relance. Ces tags alimentent tes rapports et tes futures segmentations.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu as maintenant une automation de relance complete. Elle detecte l'inactivite, envoie trois emails progressifs avec des smart links, et tag les contacts pour le suivi. C'est ce type d'automation qui fait la difference entre un LMS qui perd 80% de ses etudiants et un LMS qui les accompagne jusqu'au bout. Dans la prochaine lecon, tu mets tout ca en pratique avec un exercice complet.
-
----
-
-**Points cles** :
-- Detecter l'inactivite apres 14 jours sans progression
-- 3 emails de relance maximum, espaces de 7 jours
-- Smart link auto-login pour zero friction au retour
-- Tags de suivi a chaque etape (relance-1, relance-2, inactif-confirme)
-- Chaque email = un angle different (rappel, social proof, aide directe)
-- Toujours verifier si l'etudiant a termine avant de relancer
-
-**Mots cles SEO** : relance etudiant inactif FluentCRM, automation retention LMS, smart link TutorLMS, email relance formation en ligne
+Tu as maintenant une automation de relance complète. Elle détecte l'inactivité, envoie trois emails progressifs avec des smart links, et tag les contacts pour le suivi. C'est ce type d'automation qui fait la différence entre un LMS qui perd 80% de ses étudiants et un LMS qui les accompagne jusqu'au bout. Dans la prochaine leçon, tu mets tout ça en pratique avec un exercice complet.
 
 ---
 
-### Lecon 10.8 — Exercice : Cree le funnel complet d'un parcours etudiant
+**Points clés** :
+- Détecter l'inactivité après 14 jours sans progression
+- 3 emails de relance maximum, espacés de 7 jours
+- Smart link auto-login pour zéro friction au retour
+- Tags de suivi à chaque étape (relance-1, relance-2, inactif-confirme)
+- Chaque email = un angle différent (rappel, social proof, aide directe)
+- Toujours vérifier si l'étudiant a terminé avant de relancer
 
-**Duree** : 6 min
+**Mots clés SEO** : relance étudiant inactif FluentCRM, automation rétention LMS, smart link TutorLMS, email relance formation en ligne
+
+---
+
+### Leçon 10.8 — Exercice : Crée le funnel complet d'un parcours étudiant
+
+**Durée** : 6 min
 **Type** : Exercice
-**Ecran** : Face camera pour intro et conclusion, slides pour les consignes
+**Écran** : Face caméra pour intro et conclusion, slides pour les consignes
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu as tous les blocs. Triggers, actions, goals, conditionals, filtres, relance. Maintenant tu assembles tout dans un funnel complet — de l'inscription gratuite jusqu'a l'achat de la formation premium, en passant par le nurturing et la relance. C'est exactement le funnel qu'on utilise sur schoolsWP. A toi de le reproduire.
+Tu as tous les blocs. Triggers, actions, goals, conditionals, filtres, relance. Maintenant tu assembles tout dans un funnel complet — de l'inscription gratuite jusqu'à l'achat de la formation premium, en passant par le nurturing et la relance. C'est exactement le funnel qu'on utilise sur schoolsWP. À toi de le reproduire.
 
-**[ECRAN — slide "Contexte de l'exercice"]**
+**[ÉCRAN — slide "Contexte de l'exercice"]**
 
-Voici le scenario. Tu geres un site de formation WordPress. Tu proposes une formation gratuite en 3 modules (M1-M3) et une formation premium en 13 modules (M4-M16). Ton objectif : automatiser tout le parcours etudiant.
+Voici le scénario. Tu gères un site de formation WordPress. Tu proposes une formation gratuite en 3 modules (M1-M3) et une formation premium en 13 modules (M4-M16). Ton objectif : automatiser tout le parcours étudiant.
 
-**[ECRAN — slide "Etape 1 — Inscription et tagging"]**
+**[ÉCRAN — slide "Étape 1 — Inscription et tagging"]**
 
-Etape 1 : cree une automation declenchee par l'inscription au cours gratuit M1-M3. A l'entree, pose le tag "free-student" et ajoute le contact a la liste "etudiants-actifs". Envoie un email de bienvenue avec le lien d'acces au premier module.
+Étape 1 : crée une automation déclenchée par l'inscription au cours gratuit M1-M3. À l'entrée, pose le tag "free-student" et ajoute le contact à la liste "etudiants-actifs". Envoie un email de bienvenue avec le lien d'accès au premier module.
 
-**[ECRAN — slide "Etape 2 — Nurturing pendant la formation"]**
+**[ÉCRAN — slide "Étape 2 — Nurturing pendant la formation"]**
 
-Etape 2 : dans la meme automation ou dans une automation separee, envoie une sequence de 3 emails de valeur espaces de 5 jours. Email 1 — une astuce avancee liee au module 1. Email 2 — un temoignage d'un etudiant qui a termine. Email 3 — un apercu de ce que contient la formation premium.
+Étape 2 : dans la même automation ou dans une automation séparée, envoie une séquence de 3 emails de valeur espacés de 5 jours. Email 1 — une astuce avancée liée au module 1. Email 2 — un témoignage d'un étudiant qui a terminé. Email 3 — un aperçu de ce que contient la formation premium.
 
-**[ECRAN — slide "Etape 3 — Goal completion et upsell"]**
+**[ÉCRAN — slide "Étape 3 — Goal complétion et upsell"]**
 
-Etape 3 : ajoute un goal "Course Completed" sur M1-M3, en mode optionnel. Apres le goal, ajoute un conditionnel. Branche "A termine" : lance la sequence de vente premium (3 emails sur 10 jours). Branche "N'a pas termine" : email d'encouragement puis delai de 7 jours avant la sequence de vente.
+Étape 3 : ajoute un goal "Course Completed" sur M1-M3, en mode optionnel. Après le goal, ajoute un conditionnel. Branche "A terminé" : lance la séquence de vente premium (3 emails sur 10 jours). Branche "N'a pas terminé" : email d'encouragement puis délai de 7 jours avant la séquence de vente.
 
-**[ECRAN — slide "Etape 4 — Achat et enroll automatique"]**
+**[ÉCRAN — slide "Étape 4 — Achat et enroll automatique"]**
 
-Etape 4 : cree une deuxieme automation. Trigger : tag "a-achete-premium" applique. Actions : enroll dans le cours premium M4-M16, apply tag "premium-student", remove tag "free-student", envoyer l'email de bienvenue premium avec les liens d'acces.
+Étape 4 : crée une deuxième automation. Trigger : tag "a-achete-premium" appliqué. Actions : enroll dans le cours premium M4-M16, apply tag "premium-student", remove tag "free-student", envoyer l'email de bienvenue premium avec les liens d'accès.
 
-**[ECRAN — slide "Etape 5 — Relance inactifs"]**
+**[ÉCRAN — slide "Étape 5 — Relance inactifs"]**
 
-Etape 5 : cree une troisieme automation de relance. Trigger : inscription a n'importe quel cours. Delai 14 jours. Condition : a progresse ? Si non, sequence de 3 emails de relance avec smart links (voir lecon 10.7).
+Étape 5 : crée une troisième automation de relance. Trigger : inscription à n'importe quel cours. Délai 14 jours. Condition : a progressé ? Si non, séquence de 3 emails de relance avec smart links (voir leçon 10.7).
 
-**[ECRAN — slide "Criteres de reussite"]**
+**[ÉCRAN — slide "Critères de réussite"]**
 
 [Checklist]
 
-Ton funnel est complet si tu coches ces 6 criteres. Un : l'inscription gratuite pose le tag "free-student" et envoie un email de bienvenue. Deux : le nurturing envoie 3 emails de valeur pendant la formation. Trois : le goal "Course Completed" detecte la fin du cours gratuit. Quatre : la sequence de vente se declenche au bon moment. Cinq : l'achat enroll automatiquement dans le cours premium. Six : les inactifs sont relances apres 14 jours.
+Ton funnel est complet si tu coches ces 6 critères. Un : l'inscription gratuite pose le tag "free-student" et envoie un email de bienvenue. Deux : le nurturing envoie 3 emails de valeur pendant la formation. Trois : le goal "Course Completed" détecte la fin du cours gratuit. Quatre : la séquence de vente se déclenche au bon moment. Cinq : l'achat enroll automatiquement dans le cours premium. Six : les inactifs sont relancés après 14 jours.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Prends 30 a 45 minutes pour construire ce funnel dans ton FluentCRM. Si tu bloques, reviens sur les lecons 10.3 a 10.7 — chaque piece du puzzle y est detaillee. Une fois ton funnel en place, termine ce module avec le quiz pour valider tes acquis.
+Prends 30 à 45 minutes pour construire ce funnel dans ton FluentCRM. Si tu bloques, reviens sur les leçons 10.3 à 10.7 — chaque pièce du puzzle y est détaillée. Une fois ton funnel en place, termine ce module avec le quiz pour valider tes acquis.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - Funnel complet en 3 automations : inscription/nurturing, achat/enroll, relance inactifs
-- Tags cles : "free-student", "premium-student", "a-achete-premium"
-- Goal optionnel pour detecter la completion sans bloquer le flux
+- Tags clés : "free-student", "premium-student", "a-achete-premium"
+- Goal optionnel pour détecter la complétion sans bloquer le flux
 - Conditionnel pour personnaliser l'upsell selon la progression
-- 6 criteres de reussite a cocher
+- 6 critères de réussite à cocher
 
 ---
 
-### Lecon 10.9 — Quiz : Valide tes acquis M10
+### Leçon 10.9 — Quiz : Valide tes acquis M10
 
-**Duree** : 5 min
+**Durée** : 5 min
 **Type** : Quiz (8 QCM)
-**Ecran** : Face camera pour intro et conclusion, slides pour les questions
+**Écran** : Face caméra pour intro et conclusion, slides pour les questions
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Dernier checkpoint du module 10. 8 questions pour verifier que tu maitrises l'integration TutorLMS + FluentCRM. Triggers, actions, goals, segments, relance — tout y passe. Rappel : 75% minimum pour valider.
+Dernier checkpoint du module 10. 8 questions pour vérifier que tu maîtrises l'intégration TutorLMS + FluentCRM. Triggers, actions, goals, segments, relance — tout y passe. Rappel : 75% minimum pour valider.
 
 ---
 
-**Question 1** : Ou active-t-on l'integration TutorLMS dans FluentCRM ?
+**Question 1** : Où active-t-on l'intégration TutorLMS dans FluentCRM ?
 
 - A) FluentCRM > Automations > Settings
 - B) FluentCRM > Settings > Integrations
 - C) WordPress > Settings > Integrations
 - D) TutorLMS > Settings > FluentCRM
 
-**Reponse** : B — FluentCRM > Settings > Integrations. C'est la qu'on active le toggle TutorLMS.
+**Réponse** : B — FluentCRM > Settings > Integrations. C'est là qu'on active le toggle TutorLMS.
 
 ---
 
-**Question 2** : Quels triggers TutorLMS sont disponibles dans FluentCRM ? (Plusieurs reponses possibles)
+**Question 2** : Quels triggers TutorLMS sont disponibles dans FluentCRM ? (Plusieurs réponses possibles)
 
 - A) Student Enrolled in a Course
 - B) Course Completed
@@ -623,83 +623,83 @@ Dernier checkpoint du module 10. 8 questions pour verifier que tu maitrises l'in
 - D) Quiz Passed
 - E) Lesson Completed
 
-**Reponse** : A, B, D, E — Les quatre triggers natifs. "Student Logged In" n'est pas un trigger TutorLMS dans FluentCRM.
+**Réponse** : A, B, D, E — Les quatre triggers natifs. "Student Logged In" n'est pas un trigger TutorLMS dans FluentCRM.
 
 ---
 
-**Question 3** : Tu veux inscrire automatiquement un etudiant a 3 cours apres son achat. Comment fais-tu ?
+**Question 3** : Tu veux inscrire automatiquement un étudiant à 3 cours après son achat. Comment fais-tu ?
 
-- A) Une seule action Enroll avec les 3 cours selectionnes
+- A) Une seule action Enroll avec les 3 cours sélectionnés
 - B) Trois actions Enroll successives, une par cours
 - C) Un webhook vers TutorLMS
 - D) Un import CSV
 
-**Reponse** : B — Une action Enroll = un cours. Pour plusieurs cours, on enchaine les actions.
+**Réponse** : B — Une action Enroll = un cours. Pour plusieurs cours, on enchaîne les actions.
 
 ---
 
-**Question 4** : Un etudiant est dans ton funnel de nurturing. Il termine le cours gratuit apres le deuxieme email. Que se passe-t-il si tu as un goal optionnel "Course Completed" ?
+**Question 4** : Un étudiant est dans ton funnel de nurturing. Il termine le cours gratuit après le deuxième email. Que se passe-t-il si tu as un goal optionnel "Course Completed" ?
 
-- A) Il continue a recevoir les emails de nurturing normalement
-- B) Il saute directement au goal et entre dans la sequence de vente
-- C) Il est retire de l'automation
-- D) Il recoit tous les emails restants puis le goal s'active
+- A) Il continue à recevoir les emails de nurturing normalement
+- B) Il saute directement au goal et entre dans la séquence de vente
+- C) Il est retiré de l'automation
+- D) Il reçoit tous les emails restants puis le goal s'active
 
-**Reponse** : B — Le goal optionnel detecte la completion et fait sauter le contact directement a ce point.
+**Réponse** : B — Le goal optionnel détecte la complétion et fait sauter le contact directement à ce point.
 
 ---
 
-**Question 5** : Tu veux segmenter les etudiants inscrits au cours FluentCRM qui ne l'ont pas encore termine. Quelle combinaison de filtres utilises-tu ?
+**Question 5** : Tu veux segmenter les étudiants inscrits au cours FluentCRM qui ne l'ont pas encore terminé. Quelle combinaison de filtres utilises-tu ?
 
 - A) Tag "student" + liste "actifs"
 - B) Enrolled in Course "FluentCRM" + Course "FluentCRM" not completed
 - C) Tag "enrolled-fluentcrm" uniquement
 - D) Enrolled in any course + No tag
 
-**Reponse** : B — La combinaison de deux filtres TutorLMS donne le segment precis des etudiants en cours.
+**Réponse** : B — La combinaison de deux filtres TutorLMS donne le segment précis des étudiants en cours.
 
 ---
 
-**Question 6** : Apres combien de jours d'inactivite lance-t-on la premiere relance dans l'automation de la lecon 10.7 ?
+**Question 6** : Après combien de jours d'inactivité lance-t-on la première relance dans l'automation de la leçon 10.7 ?
 
 - A) 7 jours
 - B) 14 jours
 - C) 21 jours
 - D) 30 jours
 
-**Reponse** : B — 14 jours. C'est la periode de grace avant la premiere verification.
+**Réponse** : B — 14 jours. C'est la période de grâce avant la première vérification.
 
 ---
 
 **Question 7** : Quel est l'avantage du smart link auto-login dans les emails de relance ?
 
 - A) Il permet de tracker les ouvertures d'email
-- B) Il connecte l'etudiant automatiquement et l'amene a sa lecon en cours
-- C) Il cree un nouveau compte pour l'etudiant
-- D) Il desactive le mot de passe de l'etudiant
+- B) Il connecte l'étudiant automatiquement et l'amène à sa leçon en cours
+- C) Il crée un nouveau compte pour l'étudiant
+- D) Il désactive le mot de passe de l'étudiant
 
-**Reponse** : B — Zero friction : un clic, l'etudiant est connecte et reprend exactement ou il en etait.
+**Réponse** : B — Zéro friction : un clic, l'étudiant est connecté et reprend exactement où il en était.
 
 ---
 
-**Question 8** : Dans le funnel complet schoolsWP, que se passe-t-il quand un contact recoit le tag "a-achete-premium" ?
+**Question 8** : Dans le funnel complet schoolsWP, que se passe-t-il quand un contact reçoit le tag "a-achete-premium" ?
 
-- A) Il est ajoute a une liste d'attente
-- B) Il recoit un email de vente supplementaire
+- A) Il est ajouté à une liste d'attente
+- B) Il reçoit un email de vente supplémentaire
 - C) FluentCRM l'inscrit au cours premium, pose le tag "premium-student" et retire le tag "free-student"
-- D) Il est retire de toutes les automations
+- D) Il est retiré de toutes les automations
 
-**Reponse** : C — L'automation d'achat enchaine enroll + tag "premium-student" + remove tag "free-student" + email de bienvenue.
-
----
-
-**[TRANSITION — face camera]**
-
-Module 10 termine. Tu sais maintenant connecter TutorLMS et FluentCRM, automatiser les inscriptions, segmenter par progression, et relancer les inactifs. C'est la combinaison qui transforme un simple LMS en machine de retention. Dans le module suivant, on passe a un autre sujet. Mais ce que tu as construit ici — le funnel etudiant complet — c'est une base que tu peux dupliquer pour chaque nouvelle formation que tu lances.
+**Réponse** : C — L'automation d'achat enchaîne enroll + tag "premium-student" + remove tag "free-student" + email de bienvenue.
 
 ---
 
-**Points cles du quiz** :
-- 8 questions couvrant les lecons 10.1 a 10.7
+**[TRANSITION — face caméra]**
+
+Module 10 terminé. Tu sais maintenant connecter TutorLMS et FluentCRM, automatiser les inscriptions, segmenter par progression, et relancer les inactifs. C'est la combinaison qui transforme un simple LMS en machine de rétention. Dans le module suivant, on passe à un autre sujet. Mais ce que tu as construit ici — le funnel étudiant complet — c'est une base que tu peux dupliquer pour chaque nouvelle formation que tu lances.
+
+---
+
+**Points clés du quiz** :
+- 8 questions couvrant les leçons 10.1 à 10.7
 - Seuil de validation : 75% (6/8)
-- Questions sur : activation integration, triggers, actions, goals, filtres, relance, smart links, funnel complet
+- Questions sur : activation intégration, triggers, actions, goals, filtres, relance, smart links, funnel complet

@@ -1,549 +1,549 @@
-# Scripts video — Module 5 : Keyword Auto Linker, maillage automatique
+# Scripts vidéo — Module 5 : Keyword Auto Linker, maillage automatique
 
-**Formation** : Maitriser ClickWhale
+**Formation** : Maîtriser ClickWhale
 **Module** : M5 — Keyword Auto Linker : maillage automatique (Premium)
-**Lecons** : 5 videos + 1 exercice + 1 quiz
-**Duree totale** : ~40 min
+**Leçons** : 5 vidéos + 1 exercice + 1 quiz
+**Durée totale** : ~40 min
 **Date** : 2026-03-23
 
 ---
 
-### Lecon 5.1 — Comprends le Keyword Auto Linker : maillage interne en autopilote
+### Leçon 5.1 — Comprends le Keyword Auto Linker : maillage interne en autopilote
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides explicatives, screencast rapide
-
----
-
-**[INTRO — face camera]**
-
-Tu as 50 articles sur ton site WordPress. Dans chacun, tu mentionnes des plugins, des outils, des concepts. Et a chaque fois, tu dois manuellement ajouter les bons liens. Lien affilie ici, lien interne la. Ca prend du temps, tu en oublies, et tes anciens articles ne sont jamais mis a jour. Le Keyword Auto Linker resout ce probleme. Il detecte tes mots-cles et insere les liens automatiquement, partout, tout le temps.
-
-**[ECRAN — slide "Keyword Auto Linker, c'est quoi ?"]**
-
-Le principe est simple. Tu definis un mot-cle — par exemple "TutorLMS" — et tu l'associes a un lien ClickWhale. A partir de la, chaque fois que ce mot-cle apparait dans un article ou une page de ton site, ClickWhale le remplace automatiquement par un lien cliquable.
-
-Tu n'as rien a faire article par article. Le remplacement se fait cote affichage, au moment ou la page est chargee par le visiteur. Ton contenu dans l'editeur WordPress reste intact.
-
-**[ECRAN — slide "Exemple concret"]**
-
-Prenons un exemple. Tu as un lien affilie TutorLMS configure dans ClickWhale. Tu lui associes le mot-cle "TutorLMS". Maintenant, chaque article de ton site qui contient le mot "TutorLMS" affichera automatiquement un lien cliquable vers ton lien affilie. Que l'article date d'hier ou d'il y a deux ans.
-
-C'est la que ca devient puissant. Tu publies 3 articles par semaine, et chaque mention de TutorLMS est automatiquement monetisee. Sans retoucher un seul article.
-
-**[ECRAN — slide "Fonctionnalite Pro"]**
-
-Point important : le Keyword Auto Linker est une fonctionnalite de ClickWhale Pro. Il n'est pas disponible dans la version gratuite. Si tu es sur la version gratuite, tu peux suivre cette lecon pour comprendre le concept, mais tu ne pourras pas le configurer.
-
-**[ECRAN — slide "Avantages et risques"]**
-
-Les avantages sont clairs. Un maillage interne coherent sur tout ton site. Des liens affilies presents partout ou c'est pertinent. Zero maintenance manuelle.
-
-Mais il y a un risque si tu le configures mal : la sur-optimisation. Si tu associes trop de mots-cles, si tu mets la limite trop haute, tu te retrouves avec 10 liens sur une meme page. C'est mauvais pour l'experience utilisateur, et Google n'apprecie pas non plus. On verra dans les lecons suivantes comment eviter ca.
-
-**[TRANSITION — face camera]**
-
-Tu comprends le principe. Dans la prochaine lecon, on passe a la pratique : tu vas configurer tes premiers mots-cles sur un lien existant.
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides explicatives, screencast rapide
 
 ---
 
-**Points cles** :
-- Keyword Auto Linker = remplacement automatique de mots-cles par des liens dans les posts/pages
-- Fonctionnalite ClickWhale Pro uniquement
-- Le remplacement se fait cote affichage, pas dans l'editeur WordPress
+**[INTRO — face caméra]**
+
+Tu as 50 articles sur ton site WordPress. Dans chacun, tu mentionnes des plugins, des outils, des concepts. Et à chaque fois, tu dois manuellement ajouter les bons liens. Lien affilié ici, lien interne là. Ça prend du temps, tu en oublies, et tes anciens articles ne sont jamais mis à jour. Le Keyword Auto Linker résout ce problème. Il détecte tes mots-clés et insère les liens automatiquement, partout, tout le temps.
+
+**[ÉCRAN — slide "Keyword Auto Linker, c'est quoi ?"]**
+
+Le principe est simple. Tu définis un mot-clé — par exemple "TutorLMS" — et tu l'associes à un lien ClickWhale. À partir de là, chaque fois que ce mot-clé apparaît dans un article ou une page de ton site, ClickWhale le remplace automatiquement par un lien cliquable.
+
+Tu n'as rien à faire article par article. Le remplacement se fait côté affichage, au moment où la page est chargée par le visiteur. Ton contenu dans l'éditeur WordPress reste intact.
+
+**[ÉCRAN — slide "Exemple concret"]**
+
+Prenons un exemple. Tu as un lien affilié TutorLMS configuré dans ClickWhale. Tu lui associes le mot-clé "TutorLMS". Maintenant, chaque article de ton site qui contient le mot "TutorLMS" affichera automatiquement un lien cliquable vers ton lien affilié. Que l'article date d'hier ou d'il y a deux ans.
+
+C'est là que ça devient puissant. Tu publies 3 articles par semaine, et chaque mention de TutorLMS est automatiquement monétisée. Sans retoucher un seul article.
+
+**[ÉCRAN — slide "Fonctionnalité Pro"]**
+
+Point important : le Keyword Auto Linker est une fonctionnalité de ClickWhale Pro. Il n'est pas disponible dans la version gratuite. Si tu es sur la version gratuite, tu peux suivre cette leçon pour comprendre le concept, mais tu ne pourras pas le configurer.
+
+**[ÉCRAN — slide "Avantages et risques"]**
+
+Les avantages sont clairs. Un maillage interne cohérent sur tout ton site. Des liens affiliés présents partout où c'est pertinent. Zéro maintenance manuelle.
+
+Mais il y a un risque si tu le configures mal : la sur-optimisation. Si tu associes trop de mots-clés, si tu mets la limite trop haute, tu te retrouves avec 10 liens sur une même page. C'est mauvais pour l'expérience utilisateur, et Google n'apprécie pas non plus. On verra dans les leçons suivantes comment éviter ça.
+
+**[TRANSITION — face caméra]**
+
+Tu comprends le principe. Dans la prochaine leçon, on passe à la pratique : tu vas configurer tes premiers mots-clés sur un lien existant.
+
+---
+
+**Points clés** :
+- Keyword Auto Linker = remplacement automatique de mots-clés par des liens dans les posts/pages
+- Fonctionnalité ClickWhale Pro uniquement
+- Le remplacement se fait côté affichage, pas dans l'éditeur WordPress
 - Couvre les anciens articles sans intervention manuelle
-- Risque principal : sur-optimisation si mal configure
+- Risque principal : sur-optimisation si mal configuré
 
-**Mots cles SEO** : keyword auto linker ClickWhale, maillage interne automatique WordPress, liens automatiques WordPress, auto linking plugin WordPress
-
----
-
-### Lecon 5.2 — Configure tes premiers mots-cles sur un lien
-
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast complet de la configuration
+**Mots-clés SEO** : keyword auto linker ClickWhale, maillage interne automatique WordPress, liens automatiques WordPress, auto linking plugin WordPress
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 5.2 — Configure tes premiers mots-clés sur un lien
 
-On passe a la pratique. Tu vas associer des mots-cles a un lien ClickWhale pour que le Keyword Auto Linker fasse son travail. En 5 minutes, tes premiers remplacements automatiques seront actifs.
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast complet de la configuration
 
-**[ECRAN — screencast WordPress admin]**
+---
+
+**[INTRO — face caméra]**
+
+On passe à la pratique. Tu vas associer des mots-clés à un lien ClickWhale pour que le Keyword Auto Linker fasse son travail. En 5 minutes, tes premiers remplacements automatiques seront actifs.
+
+**[ÉCRAN — screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Links]
 
-Etape 1 : dans le menu WordPress, va dans ClickWhale, puis Links. Tu retrouves la liste de tous tes liens. Choisis un lien existant — je vais prendre mon lien affilie TutorLMS comme exemple.
+Étape 1 : dans le menu WordPress, va dans ClickWhale, puis Links. Tu retrouves la liste de tous tes liens. Choisis un lien existant — je vais prendre mon lien affilié TutorLMS comme exemple.
 
 [Clique sur "Edit" pour le lien TutorLMS]
 
-Etape 2 : clique sur "Edit" pour ouvrir le lien. Tu arrives sur la page d'edition du lien, celle que tu connais deja depuis le Module 2.
+Étape 2 : clique sur "Edit" pour ouvrir le lien. Tu arrives sur la page d'édition du lien, celle que tu connais déjà depuis le Module 2.
 
-**[ECRAN — screencast onglet Keyword Auto Linker]**
+**[ÉCRAN — screencast onglet Keyword Auto Linker]**
 
 [Clique sur l'onglet "Keyword Auto Linker"]
 
-Etape 3 : repere le nouvel onglet "Keyword Auto Linker". C'est un onglet specifique a la version Pro. Clique dessus.
+Étape 3 : repère le nouvel onglet "Keyword Auto Linker". C'est un onglet spécifique à la version Pro. Clique dessus.
 
-[Montre l'interface des mots-cles]
+[Montre l'interface des mots-clés]
 
-Tu vois un champ pour ajouter des mots-cles. Chaque mot-cle que tu ajoutes ici sera detecte dans tes contenus et remplace par un lien vers cette URL.
+Tu vois un champ pour ajouter des mots-clés. Chaque mot-clé que tu ajoutes ici sera détecté dans tes contenus et remplacé par un lien vers cette URL.
 
-Etape 4 : ajoute tes mots-cles. Tu peux en mettre jusqu'a 10 par lien. L'objectif, c'est de couvrir toutes les variantes d'ecriture que tes lecteurs ou toi-meme utilisez dans les articles.
+Étape 4 : ajoute tes mots-clés. Tu peux en mettre jusqu'à 10 par lien. L'objectif, c'est de couvrir toutes les variantes d'écriture que tes lecteurs ou toi-même utilisez dans les articles.
 
-[Tape les mots-cles un par un]
+[Tape les mots-clés un par un]
 
 Pour TutorLMS, je vais ajouter :
-- "TutorLMS" — le nom colle, comme on l'ecrit souvent
+- "TutorLMS" — le nom collé, comme on l'écrit souvent
 - "Tutor LMS" — avec un espace, c'est le nom officiel
-- "tutor lms" — en minuscules, pour les cas ou le texte n'est pas capitalise
-- "plugin LMS" — un terme generique mais assez specifique dans le contexte WordPress
-- "LMS WordPress" — une variante de recherche frequente
+- "tutor lms" — en minuscules, pour les cas où le texte n'est pas capitalisé
+- "plugin LMS" — un terme générique mais assez spécifique dans le contexte WordPress
+- "LMS WordPress" — une variante de recherche fréquente
 
-5 mots-cles, c'est un bon debut. Tu n'es pas oblige d'utiliser les 10 emplacements. Mieux vaut 5 mots-cles pertinents que 10 mots-cles dont 3 sont trop vagues.
+5 mots-clés, c'est un bon début. Tu n'es pas obligé d'utiliser les 10 emplacements. Mieux vaut 5 mots-clés pertinents que 10 mots-clés dont 3 sont trop vagues.
 
-**[ECRAN — screencast sauvegarde et verification]**
+**[ÉCRAN — screencast sauvegarde et vérification]**
 
 [Clique sur "Save" / "Update"]
 
-Etape 5 : sauvegarde le lien. Les mots-cles sont actifs immediatement. Pas besoin de vider un cache ou de relancer quoi que ce soit.
+Étape 5 : sauvegarde le lien. Les mots-clés sont actifs immédiatement. Pas besoin de vider un cache ou de relancer quoi que ce soit.
 
 [Ouvre un nouvel onglet navigateur, va sur un article du site]
 
-Etape 6 : verifions que ca fonctionne. J'ouvre un article de mon site qui contient le mot "TutorLMS". Et voila — le mot est devenu un lien cliquable. Si je passe la souris dessus, je vois qu'il pointe vers mon lien ClickWhale.
+Étape 6 : vérifions que ça fonctionne. J'ouvre un article de mon site qui contient le mot "TutorLMS". Et voilà — le mot est devenu un lien cliquable. Si je passe la souris dessus, je vois qu'il pointe vers mon lien ClickWhale.
 
 [Clique sur le lien pour montrer la redirection]
 
-Le lien redirige bien vers la page affiliee TutorLMS. Le tracking ClickWhale est actif. Tout fonctionne.
+Le lien redirige bien vers la page affiliée TutorLMS. Le tracking ClickWhale est actif. Tout fonctionne.
 
-**[ECRAN — screencast retour admin, verif sur un autre article]**
+**[ÉCRAN — screencast retour admin, vérif sur un autre article]**
 
-Etape 7 : verifie sur 2 ou 3 articles differents. Chaque article contenant un de tes mots-cles doit afficher le lien automatiquement. Si un mot-cle n'est pas detecte, verifie l'orthographe exacte. Le remplacement est sensible a la casse selon les reglages — on verra ca dans la lecon suivante.
+Étape 7 : vérifie sur 2 ou 3 articles différents. Chaque article contenant un de tes mots-clés doit afficher le lien automatiquement. Si un mot-clé n'est pas détecté, vérifie l'orthographe exacte. Le remplacement est sensible à la casse selon les réglages — on verra ça dans la leçon suivante.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tes premiers mots-cles sont en place. Mais il reste des reglages importants a configurer : combien de remplacements par page, dans quel onglet le lien s'ouvre, et sur quels types de contenus. C'est l'objet de la prochaine lecon.
+Tes premiers mots-clés sont en place. Mais il reste des réglages importants à configurer : combien de remplacements par page, dans quel onglet le lien s'ouvre, et sur quels types de contenus. C'est l'objet de la prochaine leçon.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - ClickWhale > Links > Edit > onglet "Keyword Auto Linker"
-- Jusqu'a 10 mots-cles par lien (variantes, synonymes, pluriels)
-- Les mots-cles sont actifs immediatement apres sauvegarde
-- Toujours verifier visuellement sur un article en front-end
-- Privilegier 5 mots-cles pertinents a 10 mots-cles vagues
+- Jusqu'à 10 mots-clés par lien (variantes, synonymes, pluriels)
+- Les mots-clés sont actifs immédiatement après sauvegarde
+- Toujours vérifier visuellement sur un article en front-end
+- Privilégier 5 mots-clés pertinents à 10 mots-clés vagues
 
-**Mots cles SEO** : configurer keyword auto linker, mots-cles auto linking WordPress, ClickWhale auto linker setup
-
----
-
-### Lecon 5.3 — Reglages globaux : limite par page, cible du lien, post types
-
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast complet des reglages
+**Mots-clés SEO** : configurer keyword auto linker, mots-clés auto linking WordPress, ClickWhale auto linker setup
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 5.3 — Réglages globaux : limite par page, cible du lien, post types
 
-Tes mots-cles sont configures, mais le comportement par defaut du Keyword Auto Linker ne convient pas forcement. Combien de liens par page ? Dans quel onglet ils s'ouvrent ? Sur quels contenus ? Ces reglages globaux controlent tout ca, et chaque choix a un impact direct sur ton SEO et l'experience de tes visiteurs.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast complet des réglages
 
-**[ECRAN — screencast WordPress admin]**
+---
+
+**[INTRO — face caméra]**
+
+Tes mots-clés sont configurés, mais le comportement par défaut du Keyword Auto Linker ne convient pas forcément. Combien de liens par page ? Dans quel onglet ils s'ouvrent ? Sur quels contenus ? Ces réglages globaux contrôlent tout ça, et chaque choix a un impact direct sur ton SEO et l'expérience de tes visiteurs.
+
+**[ÉCRAN — screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Settings]
 
-Etape 1 : dans le menu ClickWhale, va dans Settings.
+Étape 1 : dans le menu ClickWhale, va dans Settings.
 
 [Clique sur l'onglet "Keyword Auto Linker"]
 
-Etape 2 : clique sur l'onglet "Keyword Auto Linker". C'est ici que tu controles le comportement global de l'auto-linking pour tout ton site.
+Étape 2 : clique sur l'onglet "Keyword Auto Linker". C'est ici que tu contrôles le comportement global de l'auto-linking pour tout ton site.
 
-**[ECRAN — screencast reglage ON/OFF]**
+**[ÉCRAN — screencast réglage ON/OFF]**
 
-[Montre le toggle Activer/Desactiver]
+[Montre le toggle Activer/Désactiver]
 
-Premier reglage : l'activation globale. C'est un interrupteur on/off. Si tu le desactives, aucun remplacement ne se fera sur ton site, meme si tu as des mots-cles configures sur tes liens. Utile pour faire une pause temporaire sans supprimer ta configuration.
+Premier réglage : l'activation globale. C'est un interrupteur on/off. Si tu le désactives, aucun remplacement ne se fera sur ton site, même si tu as des mots-clés configurés sur tes liens. Utile pour faire une pause temporaire sans supprimer ta configuration.
 
-**[ECRAN — screencast limite par page]**
+**[ÉCRAN — screencast limite par page]**
 
 [Montre le champ "Limit replacements per page"]
 
-Etape 3 : la limite de remplacements par page. C'est le reglage le plus important de tout ce module.
+Étape 3 : la limite de remplacements par page. C'est le réglage le plus important de tout ce module.
 
-Ce nombre definit combien de fois un meme mot-cle sera remplace par un lien sur une seule page. Si tu mets 5, et que le mot "TutorLMS" apparait 8 fois dans un article, seules les 5 premieres occurrences deviendront des liens.
+Ce nombre définit combien de fois un même mot-clé sera remplacé par un lien sur une seule page. Si tu mets 5, et que le mot "TutorLMS" apparaît 8 fois dans un article, seules les 5 premières occurrences deviendront des liens.
 
-[Montre le champ avec la valeur recommandee]
+[Montre le champ avec la valeur recommandée]
 
-Ma recommandation : 1 a 2 remplacements par page maximum. Pourquoi ? Parce qu'un lecteur n'a pas besoin de voir le meme lien 5 fois dans un article. Ca ressemble a du spam. Et Google peut penaliser un maillage trop agressif.
+Ma recommandation : 1 à 2 remplacements par page maximum. Pourquoi ? Parce qu'un lecteur n'a pas besoin de voir le même lien 5 fois dans un article. Ça ressemble à du spam. Et Google peut pénaliser un maillage trop agressif.
 
-Mets 2 si tu publies des articles longs (plus de 2000 mots). Mets 1 si tes articles font moins de 1000 mots. L'idee, c'est que le lien soit present sans etre envahissant.
+Mets 2 si tu publies des articles longs (plus de 2000 mots). Mets 1 si tes articles font moins de 1000 mots. L'idée, c'est que le lien soit présent sans être envahissant.
 
-**[ECRAN — screencast target]**
+**[ÉCRAN — screencast target]**
 
-[Montre le reglage "Link Target"]
+[Montre le réglage "Link Target"]
 
-Etape 4 : la cible du lien, le target. Tu as deux options : _self (meme onglet) ou _blank (nouvel onglet).
+Étape 4 : la cible du lien, le target. Tu as deux options : _self (même onglet) ou _blank (nouvel onglet).
 
-Pour les liens affilies, utilise _blank. Tu veux que le visiteur reste sur ton site. Il clique, un nouvel onglet s'ouvre avec la page du produit affilie, et ton article reste ouvert derriere.
+Pour les liens affiliés, utilise _blank. Tu veux que le visiteur reste sur ton site. Il clique, un nouvel onglet s'ouvre avec la page du produit affilié, et ton article reste ouvert derrière.
 
-Pour les liens internes (vers d'autres pages de ton site), _self est plus naturel. Le visiteur navigue a l'interieur de ton site sans accumuler des onglets.
+Pour les liens internes (vers d'autres pages de ton site), _self est plus naturel. Le visiteur navigue à l'intérieur de ton site sans accumuler des onglets.
 
-Mon conseil : si la majorite de tes liens auto-linkes sont des affilies, mets _blank par defaut.
+Mon conseil : si la majorité de tes liens auto-linkés sont des affiliés, mets _blank par défaut.
 
-**[ECRAN — screencast post types]**
+**[ÉCRAN — screencast post types]**
 
-[Montre les cases a cocher des post types]
+[Montre les cases à cocher des post types]
 
-Etape 5 : les post types concernes. Tu choisis sur quels types de contenus le Keyword Auto Linker va fonctionner.
+Étape 5 : les post types concernés. Tu choisis sur quels types de contenus le Keyword Auto Linker va fonctionner.
 
 [Montre les options : Posts, Pages, Custom Post Types]
 
-Par defaut, Posts et Pages sont coches. C'est le minimum.
+Par défaut, Posts et Pages sont cochés. C'est le minimum.
 
-Mais si tu utilises des custom post types — des cours TutorLMS, des produits WooCommerce, des portfolios — tu peux aussi les activer. Les cours TutorLMS sont particulierement interessants : si tu mentionnes FluentCRM dans une lecon de cours, le lien affilie apparaitra automatiquement.
+Mais si tu utilises des custom post types — des cours TutorLMS, des produits WooCommerce, des portfolios — tu peux aussi les activer. Les cours TutorLMS sont particulièrement intéressants : si tu mentionnes FluentCRM dans une leçon de cours, le lien affilié apparaîtra automatiquement.
 
 [Coche les post types pertinents]
 
-Attention : n'active pas tout par reflexe. Chaque post type active augmente le nombre de pages ou les liens apparaissent. Active uniquement les types de contenus ou des liens ont du sens.
+Attention : n'active pas tout par réflexe. Chaque post type activé augmente le nombre de pages où les liens apparaissent. Active uniquement les types de contenus où des liens ont du sens.
 
-**[ECRAN — screencast sauvegarde]**
+**[ÉCRAN — screencast sauvegarde]**
 
 [Clique sur "Save Changes"]
 
-Etape 6 : sauvegarde. Les reglages s'appliquent immediatement a tout le site.
+Étape 6 : sauvegarde. Les réglages s'appliquent immédiatement à tout le site.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les reglages globaux sont en place. Mais le choix des mots-cles eux-memes est aussi important que leur configuration technique. Dans la prochaine lecon, on voit la strategie : quels termes auto-linker, et lesquels eviter absolument.
+Les réglages globaux sont en place. Mais le choix des mots-clés eux-mêmes est aussi important que leur configuration technique. Dans la prochaine leçon, on voit la stratégie : quels termes auto-linker, et lesquels éviter absolument.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - ClickWhale > Settings > onglet Keyword Auto Linker
-- Limite par page : 1-2 remplacements max (eviter le spam)
-- Target _blank pour les liens affilies, _self pour les liens internes
+- Limite par page : 1-2 remplacements max (éviter le spam)
+- Target _blank pour les liens affiliés, _self pour les liens internes
 - Post types : activer Posts + Pages + custom post types pertinents (cours, produits)
-- Chaque reglage a un impact direct sur le SEO et l'experience utilisateur
+- Chaque réglage a un impact direct sur le SEO et l'expérience utilisateur
 
-**Mots cles SEO** : reglages keyword auto linker, limite liens par page WordPress, configuration auto linking ClickWhale
-
----
-
-### Lecon 5.4 — Strategie de mots-cles : quels termes auto-linker et lesquels eviter
-
-**Duree** : 7 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, slides strategiques, screencast d'exemples
+**Mots-clés SEO** : réglages keyword auto linker, limite liens par page WordPress, configuration auto linking ClickWhale
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 5.4 — Stratégie de mots-clés : quels termes auto-linker et lesquels éviter
 
-Le Keyword Auto Linker est un outil precis. Mais si tu lui donnes des mots-cles trop larges, il devient une mitraillette a liens. Dans cette lecon, on pose la strategie : quels mots-cles meritent d'etre auto-linkes, et lesquels vont ruiner ton maillage.
+**Durée** : 7 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, slides stratégiques, screencast d'exemples
 
-**[ECRAN — slide "La regle d'or"]**
+---
 
-La regle est simple : un mot-cle auto-linke doit etre suffisamment specifique pour que chaque occurrence dans un article soit pertinente.
+**[INTRO — face caméra]**
 
-Si tu auto-linkes le mot "WordPress", tu auras un lien sur chaque page de ton site. C'est du bruit, pas du maillage. Si tu auto-linkes "TutorLMS", chaque occurrence est une mention deliberee d'un produit precis. Le lien a du sens a chaque fois.
+Le Keyword Auto Linker est un outil précis. Mais si tu lui donnes des mots-clés trop larges, il devient une mitraillette à liens. Dans cette leçon, on pose la stratégie : quels mots-clés méritent d'être auto-linkés, et lesquels vont ruiner ton maillage.
 
-**[ECRAN — slide "BONS mots-cles"]**
+**[ÉCRAN — slide "La règle d'or"]**
 
-Voici les mots-cles qui fonctionnent bien avec l'auto-linker. Ce sont des noms de produits ou de plugins specifiques.
+La règle est simple : un mot-clé auto-linké doit être suffisamment spécifique pour que chaque occurrence dans un article soit pertinente.
 
-Quand tu lis "FluentCRM" dans un article, c'est forcement une reference a ce logiciel precis. Le lien affilie est pertinent a 100%. Meme logique pour "RankMath", "WP Rocket", "Cloudways". Chaque mention est intentionnelle.
+Si tu auto-linkes le mot "WordPress", tu auras un lien sur chaque page de ton site. C'est du bruit, pas du maillage. Si tu auto-linkes "TutorLMS", chaque occurrence est une mention délibérée d'un produit précis. Le lien a du sens à chaque fois.
 
-**[ECRAN — slide "MAUVAIS mots-cles"]**
+**[ÉCRAN — slide "BONS mots-clés"]**
 
-Maintenant, les termes a eviter. Les mots generiques : "WordPress", "plugin", "formation", "theme", "hebergement". Ces mots apparaissent des dizaines de fois dans chaque article. Auto-linker "plugin" transformerait ton site en champ de mines de liens.
+Voici les mots-clés qui fonctionnent bien avec l'auto-linker. Ce sont des noms de produits ou de plugins spécifiques.
 
-Autre piege : les mots trop courts. "SEO", "CRM", "LMS" utilises seuls. Ils sont trop ambigus. "LMS" peut apparaitre dans "LMS WordPress", "comparatif LMS", "un LMS performant" — pas toutes ces occurrences meritent un lien affilie.
+Quand tu lis "FluentCRM" dans un article, c'est forcément une référence à ce logiciel précis. Le lien affilié est pertinent à 100%. Même logique pour "RankMath", "WP Rocket", "Cloudways". Chaque mention est intentionnelle.
 
-Privilegier les formes longues : "RankMath" plutot que "SEO", "FluentCRM" plutot que "CRM", "TutorLMS" plutot que "LMS".
+**[ÉCRAN — slide "MAUVAIS mots-clés"]**
 
-**[ECRAN — slide "10 mots-cles ideaux pour un site de formation WordPress"]**
+Maintenant, les termes à éviter. Les mots génériques : "WordPress", "plugin", "formation", "thème", "hébergement". Ces mots apparaissent des dizaines de fois dans chaque article. Auto-linker "plugin" transformerait ton site en champ de mines de liens.
 
-Voici ma liste de 10 mots-cles ideaux, adaptee a un site de formation WordPress comme schoolsWP. C'est un bon modele pour construire ta propre liste.
+Autre piège : les mots trop courts. "SEO", "CRM", "LMS" utilisés seuls. Ils sont trop ambigus. "LMS" peut apparaître dans "LMS WordPress", "comparatif LMS", "un LMS performant" — pas toutes ces occurrences méritent un lien affilié.
 
-[Affiche la liste numerotee]
+Privilégier les formes longues : "RankMath" plutôt que "SEO", "FluentCRM" plutôt que "CRM", "TutorLMS" plutôt que "LMS".
 
-1. TutorLMS — pointe vers ton lien affilie TutorLMS
-2. FluentCRM — lien affilie FluentCRM
-3. RankMath — lien affilie RankMath
-4. WP Rocket — lien affilie WP Rocket
+**[ÉCRAN — slide "10 mots-clés idéaux pour un site de formation WordPress"]**
+
+Voici ma liste de 10 mots-clés idéaux, adaptée à un site de formation WordPress comme schoolsWP. C'est un bon modèle pour construire ta propre liste.
+
+[Affiche la liste numérotée]
+
+1. TutorLMS — pointe vers ton lien affilié TutorLMS
+2. FluentCRM — lien affilié FluentCRM
+3. RankMath — lien affilié RankMath
+4. WP Rocket — lien affilié WP Rocket
 5. ClickWhale — lien vers ta propre page ClickWhale sur ton site
-6. Cloudways — lien affilie Cloudways
-7. Elementor Pro — lien affilie Elementor
-8. Astra Pro — lien affilie Astra
+6. Cloudways — lien affilié Cloudways
+7. Elementor Pro — lien affilié Elementor
+8. Astra Pro — lien affilié Astra
 9. WooCommerce — lien vers ton comparatif e-commerce
 10. Divi — lien vers ton comparatif builders
 
-**[ECRAN — slide "Analyse de la liste"]**
+**[ÉCRAN — slide "Analyse de la liste"]**
 
-Remarque les deux derniers. WooCommerce et Divi ne pointent pas vers des affilies. Ils pointent vers des pages internes du site — un comparatif, un guide. L'auto-linker n'est pas reserve aux affilies. Tu peux l'utiliser pour renforcer ton maillage interne SEO vers tes pages strategiques.
+Remarque les deux derniers. WooCommerce et Divi ne pointent pas vers des affiliés. Ils pointent vers des pages internes du site — un comparatif, un guide. L'auto-linker n'est pas réservé aux affiliés. Tu peux l'utiliser pour renforcer ton maillage interne SEO vers tes pages stratégiques.
 
-Autre point : "Elementor Pro" et pas juste "Elementor". La version "Pro" est plus specifique. Si tu ecris "Elementor" sans "Pro", ca peut etre une reference a la version gratuite — pas forcement pertinent pour un lien affilie vers l'offre payante.
+Autre point : "Elementor Pro" et pas juste "Elementor". La version "Pro" est plus spécifique. Si tu écris "Elementor" sans "Pro", ça peut être une référence à la version gratuite — pas forcément pertinent pour un lien affilié vers l'offre payante.
 
-**[ECRAN — slide "Verifier le maillage existant"]**
+**[ÉCRAN — slide "Vérifier le maillage existant"]**
 
-Derniere etape avant de valider ta liste : verifie que les liens auto-generes ne cassent pas ton maillage interne existant.
+Dernière étape avant de valider ta liste : vérifie que les liens auto-générés ne cassent pas ton maillage interne existant.
 
-Si tu as un article "TutorLMS : avis complet" avec des liens internes vers d'autres articles de ton site, et que l'auto-linker ajoute un lien affilie sur chaque mention de "TutorLMS" dans ce meme article, tu crees une competition entre tes liens internes et tes liens affilies.
+Si tu as un article "TutorLMS : avis complet" avec des liens internes vers d'autres articles de ton site, et que l'auto-linker ajoute un lien affilié sur chaque mention de "TutorLMS" dans ce même article, tu crées une compétition entre tes liens internes et tes liens affiliés.
 
-La solution : utilise la limite par page (lecon precedente) et verifie visuellement tes articles les plus importants apres activation.
+La solution : utilise la limite par page (leçon précédente) et vérifie visuellement tes articles les plus importants après activation.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu as maintenant une strategie claire. Dans la prochaine lecon, on affine les reglages : ou exactement les remplacements doivent se faire — dans le HTML, les archives, la page d'accueil, la page blog.
-
----
-
-**Points cles** :
-- BONS mots-cles : noms de produits specifiques (TutorLMS, FluentCRM, RankMath, WP Rocket)
-- MAUVAIS mots-cles : termes generiques (WordPress, plugin, formation, theme)
-- Regle : chaque occurrence du mot-cle doit meriter un lien
-- L'auto-linker fonctionne aussi pour le maillage interne, pas seulement les affilies
-- Verifier que l'auto-linking ne casse pas le maillage SEO existant
-
-**Mots cles SEO** : strategie mots-cles auto linking, quels mots-cles auto linker WordPress, maillage interne automatique strategie
+Tu as maintenant une stratégie claire. Dans la prochaine leçon, on affine les réglages : où exactement les remplacements doivent se faire — dans le HTML, les archives, la page d'accueil, la page blog.
 
 ---
 
-### Lecon 5.5 — Ou remplacer : HTML, archives, front page, blog page
+**Points clés** :
+- BONS mots-clés : noms de produits spécifiques (TutorLMS, FluentCRM, RankMath, WP Rocket)
+- MAUVAIS mots-clés : termes génériques (WordPress, plugin, formation, thème)
+- Règle : chaque occurrence du mot-clé doit mériter un lien
+- L'auto-linker fonctionne aussi pour le maillage interne, pas seulement les affiliés
+- Vérifier que l'auto-linking ne casse pas le maillage SEO existant
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast des reglages
+**Mots-clés SEO** : stratégie mots-clés auto linking, quels mots-clés auto linker WordPress, maillage interne automatique stratégie
 
 ---
 
-**[INTRO — face camera]**
+### Leçon 5.5 — Où remplacer : HTML, archives, front page, blog page
 
-Tu sais quels mots-cles auto-linker et avec quels reglages. Reste une question : ou exactement les remplacements doivent se faire ? Pas seulement dans les articles. ClickWhale te permet de controler si l'auto-linker agit dans le HTML, les pages d'archives, ta page d'accueil et ta page blog. Chaque option a ses consequences.
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast des réglages
 
-**[ECRAN — screencast WordPress admin]**
+---
+
+**[INTRO — face caméra]**
+
+Tu sais quels mots-clés auto-linker et avec quels réglages. Reste une question : où exactement les remplacements doivent se faire ? Pas seulement dans les articles. ClickWhale te permet de contrôler si l'auto-linker agit dans le HTML, les pages d'archives, ta page d'accueil et ta page blog. Chaque option a ses conséquences.
+
+**[ÉCRAN — screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Settings > onglet Keyword Auto Linker]
 
-On retourne dans ClickWhale > Settings > onglet Keyword Auto Linker. Sous les reglages qu'on a vus dans la lecon 5.3, tu trouves 4 options supplementaires.
+On retourne dans ClickWhale > Settings > onglet Keyword Auto Linker. Sous les réglages qu'on a vus dans la leçon 5.3, tu trouves 4 options supplémentaires.
 
-**[ECRAN — screencast reglage HTML]**
+**[ÉCRAN — screencast réglage HTML]**
 
 [Montre l'option "Replace in HTML"]
 
-Premier reglage : remplacer dans le HTML. C'est active par defaut, et tu dois le laisser active. C'est le fonctionnement de base de l'auto-linker. Si tu le desactives, plus aucun remplacement ne se fera dans le contenu de tes articles et pages.
+Premier réglage : remplacer dans le HTML. C'est activé par défaut, et tu dois le laisser activé. C'est le fonctionnement de base de l'auto-linker. Si tu le désactives, plus aucun remplacement ne se fera dans le contenu de tes articles et pages.
 
-**[ECRAN — screencast reglage Archives]**
+**[ÉCRAN — screencast réglage Archives]**
 
 [Montre l'option "Replace in Archives"]
 
-Deuxieme reglage : remplacer dans les Archives. Les archives, ce sont tes pages de categories, tes pages de tags, tes pages auteur. Ces pages affichent des extraits de tes articles.
+Deuxième réglage : remplacer dans les Archives. Les archives, ce sont tes pages de catégories, tes pages de tags, tes pages auteur. Ces pages affichent des extraits de tes articles.
 
-Si tu actives cette option, les mots-cles dans ces extraits seront aussi remplaces par des liens. Ca peut etre utile si tes pages de categories ont du trafic. Mais en general, les extraits sont courts et les liens y sont moins pertinents.
+Si tu actives cette option, les mots-clés dans ces extraits seront aussi remplacés par des liens. Ça peut être utile si tes pages de catégories ont du trafic. Mais en général, les extraits sont courts et les liens y sont moins pertinents.
 
-Ma recommandation : desactiver. Les archives ne sont pas tes pages strategiques. Garde les liens pour le contenu principal.
+Ma recommandation : désactiver. Les archives ne sont pas tes pages stratégiques. Garde les liens pour le contenu principal.
 
-**[ECRAN — screencast reglage Front page]**
+**[ÉCRAN — screencast réglage Front page]**
 
 [Montre l'option "Replace on Front page"]
 
-Troisieme reglage : remplacer sur la Front page, ta page d'accueil. Attention a celui-la.
+Troisième réglage : remplacer sur la Front page, ta page d'accueil. Attention à celui-là.
 
-Ta page d'accueil contient souvent beaucoup de texte : une section hero, des descriptions de services, des temoignages, des blocs de contenu. Si tu actives l'auto-linker sur la front page, tu risques de voir apparaitre des liens un peu partout — dans le hero, dans les temoignages, dans des endroits ou ils n'ont rien a faire.
+Ta page d'accueil contient souvent beaucoup de texte : une section hero, des descriptions de services, des témoignages, des blocs de contenu. Si tu actives l'auto-linker sur la front page, tu risques de voir apparaître des liens un peu partout — dans le hero, dans les témoignages, dans des endroits où ils n'ont rien à faire.
 
-Ma recommandation : desactiver. Ta page d'accueil a un design precis. Les liens doivent y etre places manuellement, pas generes automatiquement.
+Ma recommandation : désactiver. Ta page d'accueil a un design précis. Les liens doivent y être placés manuellement, pas générés automatiquement.
 
-**[ECRAN — screencast reglage Blog page]**
+**[ÉCRAN — screencast réglage Blog page]**
 
 [Montre l'option "Replace on Blog page"]
 
-Quatrieme reglage : remplacer sur la Blog page. C'est la page qui affiche la liste de tes derniers articles.
+Quatrième réglage : remplacer sur la Blog page. C'est la page qui affiche la liste de tes derniers articles.
 
-Ici, c'est different. Ta page blog est souvent une page a fort trafic, et elle affiche des extraits d'articles. Activer l'auto-linker sur cette page peut generer des clics supplementaires sur tes liens affilies ou internes.
+Ici, c'est différent. Ta page blog est souvent une page à fort trafic, et elle affiche des extraits d'articles. Activer l'auto-linker sur cette page peut générer des clics supplémentaires sur tes liens affiliés ou internes.
 
-Ma recommandation : activer. C'est une source de trafic qui merite des liens.
+Ma recommandation : activer. C'est une source de trafic qui mérite des liens.
 
-**[ECRAN — slide "Resume des recommandations schoolsWP"]**
+**[ÉCRAN — slide "Résumé des recommandations schoolsWP"]**
 
-[Affiche un tableau recapitulatif]
+[Affiche un tableau récapitulatif]
 
-Recapitulatif des recommandations schoolsWP :
+Récapitulatif des recommandations schoolsWP :
 - HTML : activer — c'est le fonctionnement de base
-- Archives : desactiver — peu de valeur ajoutee
-- Front page : desactiver — risque de liens non pertinents sur ta page d'accueil
-- Blog page : activer — page a fort trafic, liens pertinents dans les extraits
+- Archives : désactiver — peu de valeur ajoutée
+- Front page : désactiver — risque de liens non pertinents sur ta page d'accueil
+- Blog page : activer — page à fort trafic, liens pertinents dans les extraits
 
-Ce sont des recommandations, pas des regles absolues. Si ta page d'accueil est un simple blog sans design specifique, tu peux activer la front page. Adapte en fonction de la structure de ton site.
+Ce sont des recommandations, pas des règles absolues. Si ta page d'accueil est un simple blog sans design spécifique, tu peux activer la front page. Adapte en fonction de la structure de ton site.
 
-**[ECRAN — screencast sauvegarde]**
+**[ÉCRAN — screencast sauvegarde]**
 
 [Clique sur "Save Changes"]
 
-Sauvegarde. Les reglages sont actifs immediatement.
+Sauvegarde. Les réglages sont actifs immédiatement.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu maitrises maintenant tous les reglages du Keyword Auto Linker. Dans l'exercice suivant, tu vas mettre tout ca en pratique en configurant l'auto-linker pour 5 liens affilies strategiques.
+Tu maîtrises maintenant tous les réglages du Keyword Auto Linker. Dans l'exercice suivant, tu vas mettre tout ça en pratique en configurant l'auto-linker pour 5 liens affiliés stratégiques.
 
 ---
 
-**Points cles** :
+**Points clés** :
 - 4 zones de remplacement configurables : HTML, Archives, Front page, Blog page
-- Recommandation schoolsWP : HTML + Blog page actives, Front page + Archives desactives
+- Recommandation schoolsWP : HTML + Blog page activés, Front page + Archives désactivés
 - La Front page est sensible : les liens automatiques peuvent casser le design
-- La Blog page est une source de trafic qui merite des liens
-- Adapter les reglages selon la structure de ton site
+- La Blog page est une source de trafic qui mérite des liens
+- Adapter les réglages selon la structure de ton site
 
-**Mots cles SEO** : reglages auto linker WordPress, ou activer auto linking ClickWhale, maillage automatique pages WordPress
+**Mots-clés SEO** : réglages auto linker WordPress, où activer auto linking ClickWhale, maillage automatique pages WordPress
 
 ---
 
-### Lecon 5.6 — Exercice : Configure l'auto-linker pour 5 liens affilies strategiques
+### Leçon 5.6 — Exercice : Configure l'auto-linker pour 5 liens affiliés stratégiques
 
 **Type** : Exercice pratique (autonome)
-**Duree estimee** : 15-20 min
-**Prerequis** : Lecons 5.1 a 5.5, ClickWhale Pro installe, au moins 5 liens crees (Module 2)
+**Durée estimée** : 15-20 min
+**Prérequis** : Leçons 5.1 à 5.5, ClickWhale Pro installé, au moins 5 liens créés (Module 2)
 
 ---
 
 ### Objectif
 
-Configure le Keyword Auto Linker pour 5 liens de ton site. Pour chaque lien, definis des mots-cles pertinents et verifie que les remplacements fonctionnent correctement sur ton site.
+Configure le Keyword Auto Linker pour 5 liens de ton site. Pour chaque lien, définis des mots-clés pertinents et vérifie que les remplacements fonctionnent correctement sur ton site.
 
 ### Consignes
 
 #### 1. Choisis 5 liens existants dans ClickWhale
 
 - Ouvre ClickWhale > Links
-- Selectionne 5 liens strategiques — de preference des liens affilies ou des liens vers tes pages importantes
-- Si tu n'as pas encore 5 liens, cree-les d'abord (revois le Module 2)
+- Sélectionne 5 liens stratégiques — de préférence des liens affiliés ou des liens vers tes pages importantes
+- Si tu n'as pas encore 5 liens, crée-les d'abord (revois le Module 2)
 
-#### 2. Configure les mots-cles pour chaque lien
+#### 2. Configure les mots-clés pour chaque lien
 
-Pour chaque lien, va dans l'onglet "Keyword Auto Linker" et ajoute entre 3 et 5 mots-cles :
+Pour chaque lien, va dans l'onglet "Keyword Auto Linker" et ajoute entre 3 et 5 mots-clés :
 
 - Le nom exact du produit/service (ex : "TutorLMS")
-- Au moins une variante d'ecriture (ex : "Tutor LMS")
+- Au moins une variante d'écriture (ex : "Tutor LMS")
 - Au moins une variante en minuscules (ex : "tutor lms")
-- Optionnel : un terme associe pertinent (ex : "plugin LMS")
+- Optionnel : un terme associé pertinent (ex : "plugin LMS")
 
-Repete pour les 5 liens.
+Répète pour les 5 liens.
 
-#### 3. Configure les reglages globaux
+#### 3. Configure les réglages globaux
 
 - Va dans ClickWhale > Settings > onglet Keyword Auto Linker
-- Regle la limite a 2 remplacements par page
-- Choisis le target _blank pour les liens affilies
+- Règle la limite à 2 remplacements par page
+- Choisis le target _blank pour les liens affiliés
 - Active les post types pertinents (Posts + Pages au minimum)
-- Active HTML et Blog page, desactive Front page et Archives
+- Active HTML et Blog page, désactive Front page et Archives
 
-#### 4. Verifie visuellement sur 3 articles
+#### 4. Vérifie visuellement sur 3 articles
 
-- Ouvre 3 articles differents de ton site en front-end (pas dans l'editeur WordPress)
-- Pour chaque article, verifie que :
-  - Les mots-cles sont bien remplaces par des liens cliquables
-  - Le nombre de liens par page ne depasse pas la limite configuree
+- Ouvre 3 articles différents de ton site en front-end (pas dans l'éditeur WordPress)
+- Pour chaque article, vérifie que :
+  - Les mots-clés sont bien remplacés par des liens cliquables
+  - Le nombre de liens par page ne dépasse pas la limite configurée
   - Les liens s'ouvrent dans un nouvel onglet
   - Les liens redirigent vers la bonne URL
 
-### Criteres de validation
+### Critères de validation
 
-- [ ] 5 liens ont chacun entre 3 et 5 mots-cles configures dans l'onglet Keyword Auto Linker
-- [ ] La limite globale est reglee a 2 remplacements par page
-- [ ] Le target est configure en _blank
-- [ ] HTML et Blog page sont actives, Front page et Archives sont desactivees
-- [ ] Sur 3 articles differents, les liens auto-generes sont presents et fonctionnels
-- [ ] Aucun article ne contient plus de 2 occurrences du meme lien auto-genere
+- [ ] 5 liens ont chacun entre 3 et 5 mots-clés configurés dans l'onglet Keyword Auto Linker
+- [ ] La limite globale est réglée à 2 remplacements par page
+- [ ] Le target est configuré en _blank
+- [ ] HTML et Blog page sont activés, Front page et Archives sont désactivés
+- [ ] Sur 3 articles différents, les liens auto-générés sont présents et fonctionnels
+- [ ] Aucun article ne contient plus de 2 occurrences du même lien auto-généré
 - [ ] Les liens redirigent vers les bonnes URL
 
 ### Exemple de configuration attendue
 
 ```
-Lien 1 : TutorLMS (affilie)
-  Mots-cles : TutorLMS, Tutor LMS, tutor lms, plugin LMS
+Lien 1 : TutorLMS (affilié)
+  Mots-clés : TutorLMS, Tutor LMS, tutor lms, plugin LMS
 
-Lien 2 : FluentCRM (affilie)
-  Mots-cles : FluentCRM, Fluent CRM, fluent crm, CRM WordPress
+Lien 2 : FluentCRM (affilié)
+  Mots-clés : FluentCRM, Fluent CRM, fluent crm, CRM WordPress
 
-Lien 3 : RankMath (affilie)
-  Mots-cles : RankMath, Rank Math, rank math, plugin SEO WordPress
+Lien 3 : RankMath (affilié)
+  Mots-clés : RankMath, Rank Math, rank math, plugin SEO WordPress
 
-Lien 4 : WP Rocket (affilie)
-  Mots-cles : WP Rocket, wp rocket, WPRocket
+Lien 4 : WP Rocket (affilié)
+  Mots-clés : WP Rocket, wp rocket, WPRocket
 
 Lien 5 : ClickWhale (page interne)
-  Mots-cles : ClickWhale, Click Whale, clickwhale, gestionnaire de liens
+  Mots-clés : ClickWhale, Click Whale, clickwhale, gestionnaire de liens
 ```
 
 ### Conseils
 
-- Ne mets pas de mots-cles trop generiques ("WordPress", "plugin", "theme") — revois la lecon 5.4
-- Si tu ne vois pas les liens apparaitre sur un article, verifie que le mot-cle est ecrit exactement comme dans l'article
-- Vide le cache de ton site (si tu utilises WP Rocket ou un autre plugin de cache) apres avoir configure les reglages
-- Verifie aussi sur mobile — les liens doivent etre cliquables sans difficulte sur un ecran tactile
+- Ne mets pas de mots-clés trop génériques ("WordPress", "plugin", "thème") — revois la leçon 5.4
+- Si tu ne vois pas les liens apparaître sur un article, vérifie que le mot-clé est écrit exactement comme dans l'article
+- Vide le cache de ton site (si tu utilises WP Rocket ou un autre plugin de cache) après avoir configuré les réglages
+- Vérifie aussi sur mobile — les liens doivent être cliquables sans difficulté sur un écran tactile
 
 ---
 
-### Lecon 5.7 — Quiz : Valide tes acquis M5
+### Leçon 5.7 — Quiz : Valide tes acquis M5
 
 **Type** : Quiz TutorLMS (8 questions)
-**Seuil de reussite** : 80%
+**Seuil de réussite** : 80%
 
 ---
 
 **Question 1** : Que fait le Keyword Auto Linker de ClickWhale ?
 
-- A) Il cree automatiquement de nouveaux articles sur ton site
-- B) Il remplace automatiquement des mots-cles par des liens dans tes contenus *(bonne reponse)*
-- C) Il genere des mots-cles SEO pour tes articles
-- D) Il supprime les liens casses de tes pages
+- A) Il crée automatiquement de nouveaux articles sur ton site
+- B) Il remplace automatiquement des mots-clés par des liens dans tes contenus *(bonne réponse)*
+- C) Il génère des mots-clés SEO pour tes articles
+- D) Il supprime les liens cassés de tes pages
 
 ---
 
 **Question 2** : Dans quelle version de ClickWhale le Keyword Auto Linker est-il disponible ?
 
 - A) La version gratuite
-- B) La version Pro uniquement *(bonne reponse)*
+- B) La version Pro uniquement *(bonne réponse)*
 - C) Les deux versions
-- D) Uniquement avec un addon supplementaire
+- D) Uniquement avec un addon supplémentaire
 
 ---
 
-**Question 3** : Combien de mots-cles maximum peux-tu associer a un seul lien ?
+**Question 3** : Combien de mots-clés maximum peux-tu associer à un seul lien ?
 
 - A) 3
 - B) 5
-- C) 10 *(bonne reponse)*
-- D) Illimite
+- C) 10 *(bonne réponse)*
+- D) Illimité
 
 ---
 
-**Question 4** : Quelle est la limite de remplacements par page recommandee par schoolsWP ?
+**Question 4** : Quelle est la limite de remplacements par page recommandée par schoolsWP ?
 
 - A) Aucune limite
-- B) 1 a 2 remplacements *(bonne reponse)*
-- C) 5 a 10 remplacements
+- B) 1 à 2 remplacements *(bonne réponse)*
+- C) 5 à 10 remplacements
 - D) 1 remplacement pour 100 mots
 
 ---
 
-**Question 5** : Quel target est recommande pour les liens affilies auto-linkes ?
+**Question 5** : Quel target est recommandé pour les liens affiliés auto-linkés ?
 
-- A) _self (meme onglet)
-- B) _blank (nouvel onglet) *(bonne reponse)*
+- A) _self (même onglet)
+- B) _blank (nouvel onglet) *(bonne réponse)*
 - C) _parent
 - D) _top
 
 ---
 
-**Question 6** : Lequel de ces mots-cles est un MAUVAIS choix pour l'auto-linker ?
+**Question 6** : Lequel de ces mots-clés est un MAUVAIS choix pour l'auto-linker ?
 
 - A) TutorLMS
 - B) FluentCRM
-- C) WordPress *(bonne reponse)*
+- C) WordPress *(bonne réponse)*
 - D) WP Rocket
 
 ---
@@ -551,15 +551,15 @@ Lien 5 : ClickWhale (page interne)
 **Question 7** : Quelle recommandation schoolsWP pour la Front page (page d'accueil) ?
 
 - A) Activer l'auto-linker sur la Front page
-- B) Desactiver l'auto-linker sur la Front page *(bonne reponse)*
+- B) Désactiver l'auto-linker sur la Front page *(bonne réponse)*
 - C) Activer uniquement pour les liens internes
-- D) Activer uniquement pour les liens affilies
+- D) Activer uniquement pour les liens affiliés
 
 ---
 
-**Question 8** : Tu auto-linkes le mot "RankMath" et il apparait 6 fois dans un article. La limite est reglee a 2. Combien de liens auto-generes apparaitront dans cet article ?
+**Question 8** : Tu auto-linkes le mot "RankMath" et il apparaît 6 fois dans un article. La limite est réglée à 2. Combien de liens auto-générés apparaîtront dans cet article ?
 
 - A) 0
-- B) 2 *(bonne reponse)*
+- B) 2 *(bonne réponse)*
 - C) 6
-- D) Ca depend de la longueur de l'article
+- D) Ça dépend de la longueur de l'article

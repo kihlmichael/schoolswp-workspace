@@ -1,162 +1,162 @@
-# Scripts video — Module 5 : Data mapping et formatters : manipuler tes donnees
+# Scripts vidéo — Module 5 : Data mapping et formatters : manipuler tes données
 
-**Formation** : Maitriser OttoKit
-**Module** : M5 — Data mapping et formatters : manipuler tes donnees
-**Lecons** : 7 videos + 1 quiz
-**Duree totale** : ~39 min de video
+**Formation** : Maîtriser OttoKit
+**Module** : M5 — Data mapping et formatters : manipuler tes données
+**Leçons** : 7 vidéos + 1 quiz
+**Durée totale** : ~39 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Lecon 5.1 — Data mapping : passer des donnees d'une etape a l'autre
+## Leçon 5.1 — Data mapping : passer des données d'une étape à l'autre
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu sais configurer des triggers et des actions. Mais la vraie puissance d'OttoKit, c'est ce qui se passe entre les deux : le data mapping. C'est la capacite a prendre une donnee d'une etape et a l'utiliser dans une autre.
+Tu sais configurer des triggers et des actions. Mais la vraie puissance d'OttoKit, c'est ce qui se passe entre les deux : le data mapping. C'est la capacité à prendre une donnée d'une étape et à l'utiliser dans une autre.
 
-**[ECRAN — slide "Qu'est-ce que le data mapping ?"]**
+**[ÉCRAN — slide "Qu'est-ce que le data mapping ?"]**
 
-Le data mapping, c'est le transfert de donnees d'une etape a une autre dans un workflow.
+Le data mapping, c'est le transfert de données d'une étape à une autre dans un workflow.
 
 Exemple concret :
-- Le trigger detecte une nouvelle commande WooCommerce
+- Le trigger détecte une nouvelle commande WooCommerce
 - L'action Gmail utilise le champ `billing_email` du trigger comme destinataire
 - L'action Google Sheets utilise le champ `total` du trigger comme montant
 
-Ce transfert ne se fait pas tout seul. C'est toi qui decides quel champ va ou. C'est ca, le mapping.
+Ce transfert ne se fait pas tout seul. C'est toi qui décides quel champ va où. C'est ça, le mapping.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow avec un trigger WooCommerce et une action Gmail]
 [Clique sur l'action Gmail]
 [Clique dans le champ "To"]
 
-Quand tu cliques dans un champ d'action, tu as deux options : taper un texte fixe ou inserer une donnee dynamique.
+Quand tu cliques dans un champ d'action, tu as deux options : taper un texte fixe ou insérer une donnée dynamique.
 
-**[ECRAN — screencast selecteur de donnees dynamiques]**
+**[ÉCRAN — screencast sélecteur de données dynamiques]**
 
-[Montre le selecteur de donnees — icone ou bouton a cote du champ]
+[Montre le sélecteur de données — icône ou bouton à côté du champ]
 [Clique dessus]
-[Montre la liste des champs disponibles, organises par etape : "Trigger — WooCommerce Order Created" avec tous les champs]
+[Montre la liste des champs disponibles, organisés par étape : "Trigger — WooCommerce Order Created" avec tous les champs]
 
-Le selecteur affiche tous les champs disponibles. Ils sont organises par etape. Ici, tu vois les champs du trigger : `billing_email`, `billing_first_name`, `total`, `order_id`...
+Le sélecteur affiche tous les champs disponibles. Ils sont organisés par étape. Ici, tu vois les champs du trigger : `billing_email`, `billing_first_name`, `total`, `order_id`...
 
-[Selectionne "billing_email"]
-[Le token s'insere dans le champ "To"]
+[Sélectionne "billing_email"]
+[Le token s'insère dans le champ "To"]
 
-Tu cliques sur le champ, et le token s'insere. Ce token sera remplace par la valeur reelle a chaque execution.
+Tu cliques sur le champ, et le token s'insère. Ce token sera remplacé par la valeur réelle à chaque exécution.
 
-**[ECRAN — screencast mapping avec plusieurs etapes]**
+**[ÉCRAN — screencast mapping avec plusieurs étapes]**
 
 [Montre un workflow avec un trigger + action 1 (FluentCRM) + action 2 (Gmail)]
 [Clique sur l'action 2 — Gmail]
-[Montre le selecteur de donnees dynamiques]
+[Montre le sélecteur de données dynamiques]
 [Montre que les champs disponibles viennent du trigger ET de l'action 1]
 
-Quand tu as plusieurs etapes, le selecteur affiche les donnees de toutes les etapes precedentes. L'action 2 peut utiliser les donnees du trigger et de l'action 1. L'action 3 peut utiliser les donnees du trigger, de l'action 1 et de l'action 2.
+Quand tu as plusieurs étapes, le sélecteur affiche les données de toutes les étapes précédentes. L'action 2 peut utiliser les données du trigger et de l'action 1. L'action 3 peut utiliser les données du trigger, de l'action 1 et de l'action 2.
 
-[Selectionne un champ de l'action 1 — par exemple "contact_id" de FluentCRM]
+[Sélectionne un champ de l'action 1 — par exemple "contact_id" de FluentCRM]
 
-Ici, on insere le `contact_id` genere par FluentCRM dans l'etape precedente. C'est une donnee qui n'existait pas avant l'action 1.
+Ici, on insère le `contact_id` généré par FluentCRM dans l'étape précédente. C'est une donnée qui n'existait pas avant l'action 1.
 
-**[ECRAN — slide "La chaine de donnees"]**
+**[ÉCRAN — slide "La chaîne de données"]**
 
 ```
-Trigger (fournit les donnees initiales)
+Trigger (fournit les données initiales)
     ↓
-Action 1 (utilise les donnees du trigger, produit de nouvelles donnees)
+Action 1 (utilise les données du trigger, produit de nouvelles données)
     ↓
-Action 2 (utilise les donnees du trigger + action 1, produit de nouvelles donnees)
+Action 2 (utilise les données du trigger + action 1, produit de nouvelles données)
     ↓
-Action 3 (utilise les donnees du trigger + action 1 + action 2)
+Action 3 (utilise les données du trigger + action 1 + action 2)
 ```
 
-Chaque etape enrichit le flux de donnees. C'est une chaine. Plus ton workflow avance, plus tu as de donnees disponibles.
+Chaque étape enrichit le flux de données. C'est une chaîne. Plus ton workflow avance, plus tu as de données disponibles.
 
-**[ECRAN — slide "Regle d'or du mapping"]**
+**[ÉCRAN — slide "Règle d'or du mapping"]**
 
-Toujours faire un Fetch Data avant de mapper. Si le trigger n'a pas de donnees chargees, le selecteur sera vide. Et tu ne sauras pas quels champs sont disponibles.
+Toujours faire un Fetch Data avant de mapper. Si le trigger n'a pas de données chargées, le sélecteur sera vide. Et tu ne sauras pas quels champs sont disponibles.
 
-Si tu ajoutes une action et que le selecteur n'affiche rien :
+Si tu ajoutes une action et que le sélecteur n'affiche rien :
 1. Retourne au trigger
 2. Fais un Fetch Data
-3. Reviens a l'action — les champs apparaissent
+3. Reviens à l'action — les champs apparaissent
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Le data mapping est le coeur d'OttoKit. Dans la prochaine lecon, on approfondit la difference entre donnees statiques et dynamiques, et comment les combiner.
+Le data mapping est le cœur d'OttoKit. Dans la prochaine leçon, on approfondit la différence entre données statiques et dynamiques, et comment les combiner.
 
 ---
 
-**Points cles**
-- Le data mapping transfere les donnees d'une etape a une autre
-- Le selecteur de donnees dynamiques affiche les champs de toutes les etapes precedentes
-- Chaque action enrichit le flux de donnees pour les actions suivantes
+**Points clés**
+- Le data mapping transfère les données d'une étape à une autre
+- Le sélecteur de données dynamiques affiche les champs de toutes les étapes précédentes
+- Chaque action enrichit le flux de données pour les actions suivantes
 - Toujours faire un Fetch Data avant de configurer le mapping
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit data mapping
-- donnees dynamiques OttoKit
+- données dynamiques OttoKit
 - mapper champs OttoKit workflow
-- transfert donnees entre etapes OttoKit
+- transfert données entre étapes OttoKit
 
 ---
 
-## Lecon 5.2 — Donnees statiques vs dynamiques
+## Leçon 5.2 — Données statiques vs dynamiques
 
-**Duree** : 5 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 5 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Dans chaque champ d'une action OttoKit, tu peux mettre deux types de contenu : du texte fixe que tu tapes toi-meme, ou des tokens qui s'adaptent a chaque execution. Savoir quand utiliser l'un ou l'autre, c'est ce qui rend tes workflows intelligents.
+Dans chaque champ d'une action OttoKit, tu peux mettre deux types de contenu : du texte fixe que tu tapes toi-même, ou des tokens qui s'adaptent à chaque exécution. Savoir quand utiliser l'un ou l'autre, c'est ce qui rend tes workflows intelligents.
 
-**[ECRAN — slide "Statique vs Dynamique"]**
+**[ÉCRAN — slide "Statique vs Dynamique"]**
 
-| | Donnee statique | Donnee dynamique |
+| | Donnée statique | Donnée dynamique |
 |---|---|---|
-| Defini par | Toi, au moment de la configuration | Le trigger ou les actions precedentes |
-| Change a chaque execution | Non | Oui |
+| Défini par | Toi, au moment de la configuration | Le trigger ou les actions précédentes |
+| Change à chaque exécution | Non | Oui |
 | Exemple | "Bienvenue sur schoolsWP" | "{billing_first_name}" |
-| Utilisation | Texte fixe, valeurs constantes | Donnees personnalisees par execution |
+| Utilisation | Texte fixe, valeurs constantes | Données personnalisées par exécution |
 
-**[ECRAN — screencast OttoKit — action Gmail]**
+**[ÉCRAN — screencast OttoKit — action Gmail]**
 
 [Ouvre un workflow avec une action "Send Email"]
 [Clique dans le champ "Subject"]
 
-Prenons le sujet d'un email. Tu veux ecrire : "Merci pour ta commande #12345, Jean".
+Prenons le sujet d'un email. Tu veux écrire : "Merci pour ta commande #12345, Jean".
 
 [Tape "Merci pour ta commande #"]
 
-"Merci pour ta commande #" — c'est du texte statique. Identique a chaque execution.
+"Merci pour ta commande #" — c'est du texte statique. Identique à chaque exécution.
 
-[Clique sur le selecteur dynamique et selectionne "order_id"]
+[Clique sur le sélecteur dynamique et sélectionne "order_id"]
 
-Le numero de commande — c'est dynamique. Il change a chaque commande.
+Le numéro de commande — c'est dynamique. Il change à chaque commande.
 
 [Tape ", "]
 
 La virgule et l'espace — statique.
 
-[Selectionne "billing_first_name"]
+[Sélectionne "billing_first_name"]
 
-Le prenom — dynamique.
+Le prénom — dynamique.
 
 [Le champ affiche maintenant : "Merci pour ta commande #{order_id}, {billing_first_name}"]
 
-Le resultat combine les deux. A l'execution, OttoKit remplacera les tokens par les valeurs reelles : "Merci pour ta commande #12345, Jean".
+Le résultat combine les deux. À l'exécution, OttoKit remplacera les tokens par les valeurs réelles : "Merci pour ta commande #12345, Jean".
 
-**[ECRAN — screencast OttoKit — corps de l'email]**
+**[ÉCRAN — screencast OttoKit — corps de l'email]**
 
 [Clique dans le champ "Body"]
 [Montre un email qui combine texte statique et dynamique :]
@@ -164,72 +164,72 @@ Le resultat combine les deux. A l'execution, OttoKit remplacera les tokens par l
 ```
 Bonjour {first_name},
 
-Ta commande #{order_id} d'un montant de {total} EUR a ete confirmee.
+Ta commande #{order_id} d'un montant de {total} EUR a été confirmée.
 
-Recapitulatif :
+Récapitulatif :
 - Produit : {product_name}
 - Montant : {total} EUR
-- Livraison estimee : sous 48h
+- Livraison estimée : sous 48h
 
 Merci de ta confiance,
-L'equipe schoolsWP
+L'équipe schoolsWP
 ```
 
 [Pointe les parties statiques (texte fixe) et dynamiques (tokens entre accolades)]
 
-Dans le corps du message, le melange est encore plus visible. Le texte structurel est statique : "Bonjour", "Ta commande", "Merci de ta confiance". Les donnees personnalisees sont dynamiques : prenom, numero de commande, montant, produit.
+Dans le corps du message, le mélange est encore plus visible. Le texte structurel est statique : "Bonjour", "Ta commande", "Merci de ta confiance". Les données personnalisées sont dynamiques : prénom, numéro de commande, montant, produit.
 
-**[ECRAN — slide "Quand utiliser quoi ?"]**
+**[ÉCRAN — slide "Quand utiliser quoi ?"]**
 
 **Utilise du statique quand :**
 - Le contenu ne change jamais (nom de ta marque, URL de ton site, signature)
-- Tu veux un texte de remplissage ("Non specifie", "A completer")
-- Tu definis une valeur fixe (statut "Draft", categorie "Blog")
+- Tu veux un texte de remplissage ("Non spécifié", "À compléter")
+- Tu définis une valeur fixe (statut "Draft", catégorie "Blog")
 
 **Utilise du dynamique quand :**
-- Le contenu depend de l'evenement (prenom, email, montant, date)
-- Le contenu vient du trigger ou d'une action precedente
-- Tu veux personnaliser chaque execution
+- Le contenu dépend de l'événement (prénom, email, montant, date)
+- Le contenu vient du trigger ou d'une action précédente
+- Tu veux personnaliser chaque exécution
 
-**[ECRAN — slide "Piege courant"]**
+**[ÉCRAN — slide "Piège courant"]**
 
-Attention : si un token dynamique est vide (le champ n'existe pas ou n'a pas de valeur), OttoKit insere une chaine vide. Tu peux te retrouver avec "Bonjour , ta commande..." au lieu de "Bonjour Jean, ta commande...".
+Attention : si un token dynamique est vide (le champ n'existe pas ou n'a pas de valeur), OttoKit insère une chaîne vide. Tu peux te retrouver avec "Bonjour , ta commande..." au lieu de "Bonjour Jean, ta commande...".
 
-La solution ? Gerer les donnees manquantes. On verra comment dans la lecon 5.7 sur les valeurs par defaut.
+La solution ? Gérer les données manquantes. On verra comment dans la leçon 5.7 sur les valeurs par défaut.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu maitrises maintenant la difference entre statique et dynamique. Dans les prochaines lecons, on passe aux formatters : des outils pour transformer les donnees avant de les utiliser.
+Tu maîtrises maintenant la différence entre statique et dynamique. Dans les prochaines leçons, on passe aux formatters : des outils pour transformer les données avant de les utiliser.
 
 ---
 
-**Points cles**
-- Statique = texte fixe, identique a chaque execution
-- Dynamique = token remplace par une valeur reelle a chaque execution
-- On peut combiner les deux dans un meme champ
-- Un token vide genere une chaine vide — prevoir un fallback
+**Points clés**
+- Statique = texte fixe, identique à chaque exécution
+- Dynamique = token remplacé par une valeur réelle à chaque exécution
+- On peut combiner les deux dans un même champ
+- Un token vide génère une chaîne vide — prévoir un fallback
 
-**Mots-cles SEO**
-- OttoKit donnees statiques dynamiques
+**Mots-clés SEO**
+- OttoKit données statiques dynamiques
 - tokens dynamiques OttoKit
 - personnaliser workflow OttoKit
 - champs dynamiques automatisation WordPress
 
 ---
 
-## Lecon 5.3 — Formatter date et heure : affiche les dates en francais
+## Leçon 5.3 — Formatter date et heure : affiche les dates en français
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Ton trigger envoie "March 30, 2026" et tu veux afficher "30/03/2026" dans ton email. C'est le travail du formatter date. Il transforme les dates dans le format que tu veux, sans toucher aux donnees source.
+Ton trigger envoie "March 30, 2026" et tu veux afficher "30/03/2026" dans ton email. C'est le travail du formatter date. Il transforme les dates dans le format que tu veux, sans toucher aux données source.
 
-**[ECRAN — slide "Le probleme"]**
+**[ÉCRAN — slide "Le problème"]**
 
 Les apps envoient les dates dans leur propre format :
 
@@ -237,170 +237,170 @@ Les apps envoient les dates dans leur propre format :
 - Google Sheets : `3/30/2026`
 - WordPress : `March 30, 2026`
 
-Tes clients francais s'attendent a lire : `30/03/2026` ou `30 mars 2026`.
+Tes clients français s'attendent à lire : `30/03/2026` ou `30 mars 2026`.
 
 Le formatter date fait la conversion automatiquement.
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow existant]
-[Clique sur "+" pour ajouter une etape]
+[Clique sur "+" pour ajouter une étape]
 [Tape "Formatter" dans la barre de recherche des apps]
-[Selectionne "Formatter" ou "Data Formatter"]
+[Sélectionne "Formatter" ou "Data Formatter"]
 
-Le formatter est une app interne a OttoKit. Tu l'ajoutes comme une etape dans ton workflow, entre le trigger et l'action.
+Le formatter est une app interne à OttoKit. Tu l'ajoutes comme une étape dans ton workflow, entre le trigger et l'action.
 
-**[ECRAN — screencast selection du type de formatter]**
+**[ÉCRAN — screencast sélection du type de formatter]**
 
-[Selectionne le type "Date / Time" ou "Format Date"]
+[Sélectionne le type "Date / Time" ou "Format Date"]
 
-On choisit le type "Date / Time". C'est celui qui gere les dates et les heures.
+On choisit le type "Date / Time". C'est celui qui gère les dates et les heures.
 
-**[ECRAN — screencast configuration]**
+**[ÉCRAN — screencast configuration]**
 
-[Dans le champ "Input Date", selectionne un champ date du trigger — par exemple "order_date" de WooCommerce]
+[Dans le champ "Input Date", sélectionne un champ date du trigger — par exemple "order_date" de WooCommerce]
 
-Le champ d'entree, c'est la date brute qui vient du trigger. Ici, la date de commande WooCommerce.
+Le champ d'entrée, c'est la date brute qui vient du trigger. Ici, la date de commande WooCommerce.
 
-[Dans le champ "Input Format" ou "From Format", selectionne ou tape le format d'entree : "YYYY-MM-DDTHH:mm:ss"]
+[Dans le champ "Input Format" ou "From Format", sélectionne ou tape le format d'entrée : "YYYY-MM-DDTHH:mm:ss"]
 
-Le format d'entree — comment la date arrive. OttoKit a souvent besoin de le savoir pour parser correctement.
+Le format d'entrée — comment la date arrive. OttoKit a souvent besoin de le savoir pour parser correctement.
 
-[Dans le champ "Output Format" ou "To Format", tape ou selectionne : "DD/MM/YYYY"]
+[Dans le champ "Output Format" ou "To Format", tape ou sélectionne : "DD/MM/YYYY"]
 
-Le format de sortie — comment tu veux que la date soit affichee. `DD/MM/YYYY` pour le format francais classique.
+Le format de sortie — comment tu veux que la date soit affichée. `DD/MM/YYYY` pour le format français classique.
 
-**[ECRAN — screencast fuseau horaire]**
+**[ÉCRAN — screencast fuseau horaire]**
 
 [Montre le champ "Timezone" ou "Output Timezone"]
-[Selectionne "Europe/Paris"]
+[Sélectionne "Europe/Paris"]
 
-Le fuseau horaire. OttoKit recoit souvent les dates en UTC. Si tu ne changes pas, 14h UTC sera affiche comme 14h au lieu de 15h (heure de Paris en ete) ou 16h (heure d'ete). Selectionne "Europe/Paris" pour que l'heure corresponde a la France.
+Le fuseau horaire. OttoKit reçoit souvent les dates en UTC. Si tu ne changes pas, 14h UTC sera affiché comme 14h au lieu de 15h (heure de Paris en été) ou 16h (heure d'été). Sélectionne "Europe/Paris" pour que l'heure corresponde à la France.
 
-**[ECRAN — screencast test du formatter]**
+**[ÉCRAN — screencast test du formatter]**
 
 [Clique sur "Test Step"]
-[Montre l'entree : "2026-03-30T14:30:00"]
+[Montre l'entrée : "2026-03-30T14:30:00"]
 [Montre la sortie : "30/03/2026"]
 
-Le test confirme la conversion. L'entree brute `2026-03-30T14:30:00` devient `30/03/2026`. C'est cette valeur que tu utiliseras dans tes actions.
+Le test confirme la conversion. L'entrée brute `2026-03-30T14:30:00` devient `30/03/2026`. C'est cette valeur que tu utiliseras dans tes actions.
 
-**[ECRAN — slide "Formats courants"]**
+**[ÉCRAN — slide "Formats courants"]**
 
-| Format | Resultat | Usage |
+| Format | Résultat | Usage |
 |---|---|---|
-| `DD/MM/YYYY` | 30/03/2026 | Date francaise classique |
+| `DD/MM/YYYY` | 30/03/2026 | Date française classique |
 | `DD MMMM YYYY` | 30 mars 2026 | Date en toutes lettres |
 | `DD/MM/YYYY HH:mm` | 30/03/2026 15:30 | Date + heure |
 | `dddd DD MMMM` | lundi 30 mars | Jour de la semaine + date |
 | `YYYY-MM-DD` | 2026-03-30 | Format technique (tri, export) |
 
-**[ECRAN — screencast utilisation dans une action]**
+**[ÉCRAN — screencast utilisation dans une action]**
 
-[Ajoute une action Gmail apres le formatter]
-[Dans le corps de l'email, selectionne la sortie du formatter au lieu de la date brute du trigger]
+[Ajoute une action Gmail après le formatter]
+[Dans le corps de l'email, sélectionne la sortie du formatter au lieu de la date brute du trigger]
 
 Dans ton action email, tu n'utilises plus la date brute du trigger. Tu utilises la sortie du formatter. Ton email affichera "30/03/2026" au lieu de "2026-03-30T14:30:00".
 
 [Clique sur "Save"]
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les dates sont gerees. Dans la prochaine lecon, on passe aux formatters nombre pour arrondir, calculer et formater des prix.
+Les dates sont gérées. Dans la prochaine leçon, on passe aux formatters nombre pour arrondir, calculer et formater des prix.
 
 ---
 
-**Points cles**
-- Le formatter date convertit les dates d'un format a un autre
-- Toujours definir le fuseau horaire (defaut = UTC)
-- Le formatter est une etape du workflow, placee entre le trigger et l'action
+**Points clés**
+- Le formatter date convertit les dates d'un format à un autre
+- Toujours définir le fuseau horaire (défaut = UTC)
+- Le formatter est une étape du workflow, placée entre le trigger et l'action
 - Utiliser la sortie du formatter dans les actions, pas la date brute du trigger
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit formatter date
-- formater date francais OttoKit
+- formater date français OttoKit
 - convertir date automatisation WordPress
 - fuseau horaire OttoKit UTC
 
 ---
 
-## Lecon 5.4 — Formatter nombre : arrondir, calculer, formater des prix
+## Leçon 5.4 — Formatter nombre : arrondir, calculer, formater des prix
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu recois un montant "49.99" depuis WooCommerce et tu veux calculer le prix TTC avec la TVA a 20%. Ou tu veux afficher "50 EUR" au lieu de "49.990000". Le formatter nombre gere tout ca.
+Tu reçois un montant "49.99" depuis WooCommerce et tu veux calculer le prix TTC avec la TVA à 20%. Ou tu veux afficher "50 EUR" au lieu de "49.990000". Le formatter nombre gère tout ça.
 
-**[ECRAN — slide "Cas d'usage concrets"]**
+**[ÉCRAN — slide "Cas d'usage concrets"]**
 
 - Arrondir un prix : `49.9876` → `49.99`
 - Calculer la TVA : `prix HT × 1.20` → prix TTC
 - Formater un prix : `49.99` → `49,99 EUR`
-- Appliquer une remise : `prix × 0.80` → prix avec 20% de reduction
+- Appliquer une remise : `prix × 0.80` → prix avec 20% de réduction
 - Convertir : `100` centimes → `1.00` euro
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow avec un trigger WooCommerce]
-[Ajoute une etape "Formatter"]
-[Selectionne le type "Number" ou "Format Number"]
+[Ajoute une étape "Formatter"]
+[Sélectionne le type "Number" ou "Format Number"]
 
-On ajoute un formatter nombre. Le type est "Number" ou "Math" selon l'operation.
+On ajoute un formatter nombre. Le type est "Number" ou "Math" selon l'opération.
 
-**[ECRAN — screencast operation mathematique — calcul TTC]**
+**[ÉCRAN — screencast opération mathématique — calcul TTC]**
 
-[Selectionne l'operation "Math" ou "Perform Math Operation"]
-[Dans le premier champ, selectionne "total" du trigger WooCommerce — valeur exemple : 83.33]
-[Selectionne l'operateur "Multiply" ou "×"]
+[Sélectionne l'opération "Math" ou "Perform Math Operation"]
+[Dans le premier champ, sélectionne "total" du trigger WooCommerce — valeur exemple : 83.33]
+[Sélectionne l'opérateur "Multiply" ou "×"]
 [Dans le second champ, tape "1.20"]
 
-On va calculer le prix TTC. Le montant HT vient du trigger : 83,33 EUR. On multiplie par 1,20 pour ajouter la TVA a 20%.
+On va calculer le prix TTC. Le montant HT vient du trigger : 83,33 EUR. On multiplie par 1,20 pour ajouter la TVA à 20%.
 
 [Clique sur "Test Step"]
-[Montre le resultat : 99.996]
+[Montre le résultat : 99.996]
 
-Le resultat brut est 99,996. Pas tres propre pour un prix. On va ajouter un arrondi.
+Le résultat brut est 99,996. Pas très propre pour un prix. On va ajouter un arrondi.
 
-**[ECRAN — screencast arrondi]**
+**[ÉCRAN — screencast arrondi]**
 
-[Ajoute une autre etape formatter ou modifie la configuration pour inclure un arrondi]
-[Selectionne l'operation "Round" ou "Round Number"]
-[Selectionne le nombre de decimales : 2]
-[Teste : 99.996 → 99.99 ou 100.00 selon la methode d'arrondi]
+[Ajoute une autre étape formatter ou modifie la configuration pour inclure un arrondi]
+[Sélectionne l'opération "Round" ou "Round Number"]
+[Sélectionne le nombre de décimales : 2]
+[Teste : 99.996 → 99.99 ou 100.00 selon la méthode d'arrondi]
 
-L'arrondi a 2 decimales transforme 99,996 en 100,00. Parfait pour un prix.
+L'arrondi à 2 décimales transforme 99,996 en 100,00. Parfait pour un prix.
 
-**[ECRAN — screencast formatage avec devise]**
+**[ÉCRAN — screencast formatage avec devise]**
 
-[Si disponible, montre l'option de formatage avec symbole monetaire]
-[Configure : 2 decimales, separateur virgule, symbole "EUR" ou " EUR"]
+[Si disponible, montre l'option de formatage avec symbole monétaire]
+[Configure : 2 décimales, séparateur virgule, symbole "EUR" ou " EUR"]
 [Teste : 100 → "100,00 EUR"]
 
-Certaines versions du formatter permettent d'ajouter un symbole monetaire. Sinon, tu combines le resultat du formatter avec du texte statique dans ton action : `{montant_formate} EUR`.
+Certaines versions du formatter permettent d'ajouter un symbole monétaire. Sinon, tu combines le résultat du formatter avec du texte statique dans ton action : `{montant_formate} EUR`.
 
-**[ECRAN — slide "Calculer une remise — cas schoolsWP"]**
+**[ÉCRAN — slide "Calculer une remise — cas schoolsWP"]**
 
-Scenario : tu vends une formation a 197 EUR et tu offres 30% de reduction aux abonnes newsletter.
+Scénario : tu vends une formation à 197 EUR et tu offres 30% de réduction aux abonnés newsletter.
 
 ```
 Prix de base : 197 EUR (statique)
-Coefficient reduction : 0.70 (statique — 100% - 30%)
-Prix reduit : 197 × 0.70 = 137.90 EUR
+Coefficient réduction : 0.70 (statique — 100% - 30%)
+Prix réduit : 197 × 0.70 = 137.90 EUR
 ```
 
-[Montre la configuration dans OttoKit : premier champ = 197, operateur = multiply, second champ = 0.70]
+[Montre la configuration dans OttoKit : premier champ = 197, opérateur = multiply, second champ = 0.70]
 [Teste : 137.90]
 
-Le prix reduit est calcule automatiquement. Tu peux l'inserer dans un email promotionnel ou un coupon WooCommerce.
+Le prix réduit est calculé automatiquement. Tu peux l'insérer dans un email promotionnel ou un coupon WooCommerce.
 
-**[ECRAN — slide "Operations disponibles"]**
+**[ÉCRAN — slide "Opérations disponibles"]**
 
-| Operation | Symbole | Exemple |
+| Opération | Symbole | Exemple |
 |---|---|---|
 | Addition | + | prix + frais de port |
 | Soustraction | - | prix - remise |
@@ -409,19 +409,19 @@ Le prix reduit est calcule automatiquement. Tu peux l'inserer dans un email prom
 | Arrondi | round | 49.996 → 50.00 |
 | Valeur absolue | abs | -15 → 15 |
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les nombres sont maitrises. Prochaine etape : le formatter texte pour extraire, transformer et nettoyer des chaines de caracteres.
+Les nombres sont maîtrisés. Prochaine étape : le formatter texte pour extraire, transformer et nettoyer des chaînes de caractères.
 
 ---
 
-**Points cles**
-- Le formatter nombre gere les calculs, arrondis et formatages
+**Points clés**
+- Le formatter nombre gère les calculs, arrondis et formatages
 - Multiplier par 1.20 pour ajouter 20% de TVA
-- Toujours arrondir a 2 decimales pour les prix
-- Combiner la sortie du formatter avec du texte statique pour le symbole monetaire
+- Toujours arrondir à 2 décimales pour les prix
+- Combiner la sortie du formatter avec du texte statique pour le symbole monétaire
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit formatter nombre
 - calculer prix automatiquement OttoKit
 - TVA automatique WordPress
@@ -429,322 +429,322 @@ Les nombres sont maitrises. Prochaine etape : le formatter texte pour extraire, 
 
 ---
 
-## Lecon 5.5 — Formatter texte : extraire, concatener, transformer
+## Leçon 5.5 — Formatter texte : extraire, concaténer, transformer
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Tu recois "Jean DUPONT" dans un seul champ, mais tu veux seulement le prenom pour personnaliser un email. Ou tu recois "   jean.dupont@gmail.com   " avec des espaces en trop. Le formatter texte resout ces problemes.
+Tu reçois "Jean DUPONT" dans un seul champ, mais tu veux seulement le prénom pour personnaliser un email. Ou tu reçois "   jean.dupont@gmail.com   " avec des espaces en trop. Le formatter texte résout ces problèmes.
 
-**[ECRAN — slide "Operations texte courantes"]**
+**[ÉCRAN — slide "Opérations texte courantes"]**
 
 - **Extraire** : prendre une partie d'un texte ("Jean DUPONT" → "Jean")
-- **Concatener** : assembler plusieurs textes ("Jean" + " " + "DUPONT" → "Jean DUPONT")
+- **Concaténer** : assembler plusieurs textes ("Jean" + " " + "DUPONT" → "Jean DUPONT")
 - **Majuscule/Minuscule** : transformer la casse ("jean dupont" → "Jean Dupont")
 - **Trim** : supprimer les espaces en trop ("  texte  " → "texte")
-- **Remplacer** : changer un mot ou un caractere ("lms wordpress" → "LMS WordPress")
+- **Remplacer** : changer un mot ou un caractère ("lms wordpress" → "LMS WordPress")
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow]
-[Ajoute une etape "Formatter"]
-[Selectionne le type "Text" ou "Format Text"]
+[Ajoute une étape "Formatter"]
+[Sélectionne le type "Text" ou "Format Text"]
 
-On ajoute un formatter texte. Premiere operation : extraire le prenom d'un champ "Nom complet".
+On ajoute un formatter texte. Première opération : extraire le prénom d'un champ "Nom complet".
 
-**[ECRAN — screencast extraction du prenom]**
+**[ÉCRAN — screencast extraction du prénom]**
 
-[Selectionne l'operation "Split Text" ou "Extract"]
-[Dans le champ d'entree, selectionne "display_name" ou "billing_full_name" du trigger — valeur : "Jean DUPONT"]
-[Configure le separateur : espace " "]
-[Selectionne "First segment" ou index 0]
+[Sélectionne l'opération "Split Text" ou "Extract"]
+[Dans le champ d'entrée, sélectionne "display_name" ou "billing_full_name" du trigger — valeur : "Jean DUPONT"]
+[Configure le séparateur : espace " "]
+[Sélectionne "First segment" ou index 0]
 [Teste : "Jean DUPONT" → "Jean"]
 
-On decoupe le texte au niveau de l'espace. Le premier segment, c'est le prenom. "Jean DUPONT" devient "Jean".
+On découpe le texte au niveau de l'espace. Le premier segment, c'est le prénom. "Jean DUPONT" devient "Jean".
 
-**[ECRAN — screencast transformation de casse]**
+**[ÉCRAN — screencast transformation de casse]**
 
-[Ajoute un autre formatter ou modifie l'operation]
-[Selectionne "Capitalize" ou "Title Case"]
-[Champ d'entree : "jean dupont"]
+[Ajoute un autre formatter ou modifie l'opération]
+[Sélectionne "Capitalize" ou "Title Case"]
+[Champ d'entrée : "jean dupont"]
 [Teste : "jean dupont" → "Jean Dupont"]
 
-La transformation "Title Case" met la premiere lettre de chaque mot en majuscule. Utile quand les donnees arrivent en minuscules.
+La transformation "Title Case" met la première lettre de chaque mot en majuscule. Utile quand les données arrivent en minuscules.
 
 [Montre aussi "Uppercase" : "jean" → "JEAN"]
 [Et "Lowercase" : "JEAN" → "jean"]
 
-**[ECRAN — screencast trim — supprimer les espaces]**
+**[ÉCRAN — screencast trim — supprimer les espaces]**
 
-[Selectionne l'operation "Trim"]
-[Champ d'entree : "   jean@email.com   " — valeur avec espaces avant et apres]
-[Teste : "jean@email.com" — espaces supprimes]
+[Sélectionne l'opération "Trim"]
+[Champ d'entrée : "   jean@email.com   " — valeur avec espaces avant et après]
+[Teste : "jean@email.com" — espaces supprimés]
 
-Le trim supprime les espaces au debut et a la fin d'un texte. C'est important pour les adresses email : un espace invisible peut faire echouer un envoi.
+Le trim supprime les espaces au début et à la fin d'un texte. C'est important pour les adresses email : un espace invisible peut faire échouer un envoi.
 
-**[ECRAN — screencast concatenation]**
+**[ÉCRAN — screencast concaténation]**
 
-[Selectionne l'operation "Concatenate" ou "Combine Text"]
+[Sélectionne l'opération "Concatenate" ou "Combine Text"]
 [Premier champ : "Bonjour " (texte statique)]
-[Deuxieme champ : selecteur dynamique → "first_name"]
-[Troisieme champ : ", bienvenue sur schoolsWP !" (texte statique)]
+[Deuxième champ : sélecteur dynamique → "first_name"]
+[Troisième champ : ", bienvenue sur schoolsWP !" (texte statique)]
 [Teste : "Bonjour Jean, bienvenue sur schoolsWP !"]
 
-La concatenation assemble plusieurs morceaux de texte en un seul. Ici, on construit une phrase de bienvenue complete.
+La concaténation assemble plusieurs morceaux de texte en un seul. Ici, on construit une phrase de bienvenue complète.
 
-**[ECRAN — screencast remplacement]**
+**[ÉCRAN — screencast remplacement]**
 
-[Selectionne l'operation "Replace" ou "Find and Replace"]
-[Champ d'entree : "Commande en cours de traitement"]
+[Sélectionne l'opération "Replace" ou "Find and Replace"]
+[Champ d'entrée : "Commande en cours de traitement"]
 [Chercher : "en cours de traitement"]
-[Remplacer par : "confirmee"]
-[Teste : "Commande confirmee"]
+[Remplacer par : "confirmée"]
+[Teste : "Commande confirmée"]
 
-Le remplacement cherche un texte et le remplace par un autre. Utile pour adapter des messages generiques a ton contexte.
+Le remplacement cherche un texte et le remplace par un autre. Utile pour adapter des messages génériques à ton contexte.
 
-**[ECRAN — slide "Recapitulatif des operations"]**
+**[ÉCRAN — slide "Récapitulatif des opérations"]**
 
-| Operation | Entree | Sortie |
+| Opération | Entrée | Sortie |
 |---|---|---|
 | Split + index 0 | "Jean DUPONT" | "Jean" |
 | Title Case | "jean dupont" | "Jean Dupont" |
 | Trim | "  email@test.com  " | "email@test.com" |
 | Concatenate | "Bonjour " + "Jean" | "Bonjour Jean" |
-| Replace | "en cours" → "confirme" | "Commande confirmee" |
+| Replace | "en cours" → "confirmé" | "Commande confirmée" |
 | Lowercase | "URGENT" | "urgent" |
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu maitrises maintenant les trois formatters principaux : date, nombre et texte. Dans la prochaine lecon, on decouvre un formatter un peu special : le generateur de nombres aleatoires.
+Tu maîtrises maintenant les trois formatters principaux : date, nombre et texte. Dans la prochaine leçon, on découvre un formatter un peu spécial : le générateur de nombres aléatoires.
 
 ---
 
-**Points cles**
-- Split extrait une partie d'un texte en le decoupant avec un separateur
+**Points clés**
+- Split extrait une partie d'un texte en le découpant avec un séparateur
 - Title Case, Uppercase, Lowercase transforment la casse
 - Trim supprime les espaces invisibles (important pour les emails)
 - Concatenate assemble plusieurs textes en un seul
 - Replace cherche et remplace un mot ou une expression
 
-**Mots-cles SEO**
+**Mots-clés SEO**
 - OttoKit formatter texte
-- extraire prenom OttoKit
+- extraire prénom OttoKit
 - transformer texte automatisation WordPress
 - OttoKit text operations
 
 ---
 
-## Lecon 5.6 — Generer un nombre aleatoire
+## Leçon 5.6 — Générer un nombre aléatoire
 
-**Duree** : 4 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 4 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Parfois tu as besoin d'un nombre unique : un code promo, un identifiant temporaire, un numero de ticket. Le formatter "Random Number" genere un nombre aleatoire a chaque execution.
+Parfois tu as besoin d'un nombre unique : un code promo, un identifiant temporaire, un numéro de ticket. Le formatter "Random Number" génère un nombre aléatoire à chaque exécution.
 
-**[ECRAN — slide "Cas d'usage"]**
+**[ÉCRAN — slide "Cas d'usage"]**
 
-- **Code promo unique** : generer "PROMO-8347" pour chaque client
-- **Identifiant de ticket** : "TICKET-29481" pour un systeme de support
-- **Code de verification** : un code a 6 chiffres pour valider une action
+- **Code promo unique** : générer "PROMO-8347" pour chaque client
+- **Identifiant de ticket** : "TICKET-29481" pour un système de support
+- **Code de vérification** : un code à 6 chiffres pour valider une action
 - **Variation A/B** : un nombre entre 1 et 2 pour diriger vers la version A ou B
 
-**[ECRAN — screencast OttoKit canvas]**
+**[ÉCRAN — screencast OttoKit canvas]**
 
 [Ouvre un workflow]
-[Ajoute une etape "Formatter"]
-[Selectionne le type "Number" ou "Random Number"]
-[Selectionne l'operation "Generate Random Number"]
+[Ajoute une étape "Formatter"]
+[Sélectionne le type "Number" ou "Random Number"]
+[Sélectionne l'opération "Generate Random Number"]
 
-On ajoute un formatter de type nombre aleatoire.
+On ajoute un formatter de type nombre aléatoire.
 
-**[ECRAN — screencast configuration]**
+**[ÉCRAN — screencast configuration]**
 
 [Configure la plage : minimum = 1000, maximum = 9999]
-[Teste : resultat = 7283 (exemple)]
+[Teste : résultat = 7283 (exemple)]
 
-On definit la plage. Ici, entre 1000 et 9999. A chaque execution, OttoKit genere un nombre different dans cette plage.
+On définit la plage. Ici, entre 1000 et 9999. À chaque exécution, OttoKit génère un nombre différent dans cette plage.
 
-[Teste a nouveau : resultat = 4156 (exemple different)]
+[Teste à nouveau : résultat = 4156 (exemple différent)]
 
-Chaque test donne un resultat different. C'est bien aleatoire.
+Chaque test donne un résultat différent. C'est bien aléatoire.
 
-**[ECRAN — screencast construction d'un code promo]**
+**[ÉCRAN — screencast construction d'un code promo]**
 
-[Ajoute une action apres le formatter]
+[Ajoute une action après le formatter]
 [Dans un champ texte, tape "SCHOOL-" (texte statique)]
-[Insere le resultat du formatter (nombre aleatoire)]
+[Insère le résultat du formatter (nombre aléatoire)]
 [Le champ affiche : "SCHOOL-{random_number}"]
 
-Pour construire un code promo, on combine du texte statique avec le nombre aleatoire. "SCHOOL-" + 7283 = "SCHOOL-7283". Chaque client recoit un code unique.
+Pour construire un code promo, on combine du texte statique avec le nombre aléatoire. "SCHOOL-" + 7283 = "SCHOOL-7283". Chaque client reçoit un code unique.
 
-**[ECRAN — slide "Limites a connaitre"]**
+**[ÉCRAN — slide "Limites à connaître"]**
 
 Deux limites :
 
-1. **Pas garanti unique** — sur une grande plage (1000-9999), la probabilite de doublon est faible mais non nulle. Pour un vrai systeme d'identifiants uniques, utilise un champ auto-incremente dans ta base de donnees.
+1. **Pas garanti unique** — sur une grande plage (1000-9999), la probabilité de doublon est faible mais non nulle. Pour un vrai système d'identifiants uniques, utilise un champ auto-incrémenté dans ta base de données.
 
-2. **Entiers uniquement** — le resultat est un nombre entier. Pas de decimales.
+2. **Entiers uniquement** — le résultat est un nombre entier. Pas de décimales.
 
-Pour reduire les doublons, augmente la plage : 100000 a 999999 donne 900 000 possibilites.
+Pour réduire les doublons, augmente la plage : 100000 à 999999 donne 900 000 possibilités.
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Les nombres aleatoires sont un outil pratique pour les codes et identifiants. Derniere lecon avant le quiz : comment gerer les cas ou une donnee est manquante ou vide.
+Les nombres aléatoires sont un outil pratique pour les codes et identifiants. Dernière leçon avant le quiz : comment gérer les cas où une donnée est manquante ou vide.
 
 ---
 
-**Points cles**
-- Le formatter genere un nombre aleatoire dans une plage definie
-- Combiner avec du texte statique pour creer des codes ("PROMO-8347")
-- Le resultat n'est pas garanti unique — augmenter la plage pour reduire les doublons
-- Utilisation principale : codes promo, identifiants, numeros de ticket
+**Points clés**
+- Le formatter génère un nombre aléatoire dans une plage définie
+- Combiner avec du texte statique pour créer des codes ("PROMO-8347")
+- Le résultat n'est pas garanti unique — augmenter la plage pour réduire les doublons
+- Utilisation principale : codes promo, identifiants, numéros de ticket
 
-**Mots-cles SEO**
-- OttoKit nombre aleatoire
-- generer code promo OttoKit
+**Mots-clés SEO**
+- OttoKit nombre aléatoire
+- générer code promo OttoKit
 - random number automatisation WordPress
 - identifiant unique OttoKit
 
 ---
 
-## Lecon 5.7 — Gerer les donnees manquantes : valeurs par defaut et fallback
+## Leçon 5.7 — Gérer les données manquantes : valeurs par défaut et fallback
 
-**Duree** : 6 min
-**Type** : Video HeyGen
-**Ecran** : Face camera pour intro/conclusion, screencast OttoKit canvas
+**Durée** : 6 min
+**Type** : Vidéo HeyGen
+**Écran** : Face caméra pour intro/conclusion, screencast OttoKit canvas
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO — face caméra]**
 
-Un client passe commande sans renseigner son telephone. Un formulaire est soumis avec le champ "societe" vide. Un trigger envoie un prenom vide parce que le compte n'a pas ete rempli. Que se passe-t-il dans ton workflow ? Si tu n'as rien prevu, tu te retrouves avec des emails qui commencent par "Bonjour ," ou des lignes vides dans ton Google Sheet.
+Un client passe commande sans renseigner son téléphone. Un formulaire est soumis avec le champ "société" vide. Un trigger envoie un prénom vide parce que le compte n'a pas été rempli. Que se passe-t-il dans ton workflow ? Si tu n'as rien prévu, tu te retrouves avec des emails qui commencent par "Bonjour ," ou des lignes vides dans ton Google Sheet.
 
-**[ECRAN — slide "Le probleme des champs vides"]**
+**[ÉCRAN — slide "Le problème des champs vides"]**
 
-Quand un champ dynamique est vide, OttoKit insere une chaine vide. Pas d'erreur, pas d'alerte. Le workflow continue normalement, mais avec des donnees incompletes.
+Quand un champ dynamique est vide, OttoKit insère une chaîne vide. Pas d'erreur, pas d'alerte. Le workflow continue normalement, mais avec des données incomplètes.
 
 Exemples :
-- Email : "Bonjour , ta commande..." (prenom vide)
+- Email : "Bonjour , ta commande..." (prénom vide)
 - Google Sheets : une colonne vide au milieu d'une ligne
-- WordPress : un article cree avec un titre vide
+- WordPress : un article créé avec un titre vide
 
-**[ECRAN — screencast OttoKit canvas — methode 1 : texte par defaut dans le champ]**
+**[ÉCRAN — screencast OttoKit canvas — méthode 1 : texte par défaut dans le champ]**
 
 [Ouvre un workflow avec une action Gmail]
 [Clique dans le champ "Subject"]
 
-La methode la plus simple : combiner un token dynamique avec un texte de remplacement directement dans le champ.
+La méthode la plus simple : combiner un token dynamique avec un texte de remplacement directement dans le champ.
 
 [Montre le champ sujet avec uniquement le token dynamique "first_name"]
 
-Si `first_name` est vide, le sujet affichera juste "Bonjour ,". Pas ideal.
+Si `first_name` est vide, le sujet affichera juste "Bonjour ,". Pas idéal.
 
-**[ECRAN — screencast OttoKit — ajout d'un formatter condition]**
+**[ÉCRAN — screencast OttoKit — ajout d'un formatter condition]**
 
-[Ajoute une etape Formatter avant l'action email]
-[Selectionne le type "Text" ou "Conditional"]
+[Ajoute une étape Formatter avant l'action email]
+[Sélectionne le type "Text" ou "Conditional"]
 [Configure une condition : "Si {first_name} est vide, utiliser 'Ami(e) de schoolsWP'"]
 
-La meilleure methode : utiliser un formatter ou un bloc conditionnel pour definir une valeur de remplacement.
+La meilleure méthode : utiliser un formatter ou un bloc conditionnel pour définir une valeur de remplacement.
 
-Si le prenom existe → on l'utilise.
-Si le prenom est vide → on affiche "Ami(e) de schoolsWP".
+Si le prénom existe → on l'utilise.
+Si le prénom est vide → on affiche "Ami(e) de schoolsWP".
 
-[Teste avec un prenom vide : resultat = "Ami(e) de schoolsWP"]
-[Teste avec un prenom "Jean" : resultat = "Jean"]
+[Teste avec un prénom vide : résultat = "Ami(e) de schoolsWP"]
+[Teste avec un prénom "Jean" : résultat = "Jean"]
 
-**[ECRAN — screencast OttoKit — methode 2 : Filter App]**
+**[ÉCRAN — screencast OttoKit — méthode 2 : Filter App]**
 
 [Montre une alternative : ajouter un Filter avant l'action]
 [Configure le filtre : "first_name is not empty"]
 [Si vrai → le workflow continue]
-[Si faux → le workflow s'arrete]
+[Si faux → le workflow s'arrête]
 
-Deuxieme approche : le Filter App. Au lieu de remplacer la valeur, tu bloques le workflow si la donnee manquante est critique. Par exemple, si l'email du client est vide, mieux vaut ne pas envoyer un email du tout.
+Deuxième approche : le Filter App. Au lieu de remplacer la valeur, tu bloques le workflow si la donnée manquante est critique. Par exemple, si l'email du client est vide, mieux vaut ne pas envoyer un email du tout.
 
-**[ECRAN — slide "Quand utiliser quelle methode ?"]**
+**[ÉCRAN — slide "Quand utiliser quelle méthode ?"]**
 
-| Situation | Methode | Exemple |
+| Situation | Méthode | Exemple |
 |---|---|---|
-| Champ optionnel (prenom, telephone) | Valeur par defaut | "Ami(e)" au lieu de vide |
+| Champ optionnel (prénom, téléphone) | Valeur par défaut | "Ami(e)" au lieu de vide |
 | Champ critique (email) | Filter → stop | Ne pas envoyer sans adresse |
-| Champ calculable (nom complet) | Formatter concatenation | Combiner prenom + nom avec un fallback |
+| Champ calculable (nom complet) | Formatter concaténation | Combiner prénom + nom avec un fallback |
 
-**[ECRAN — screencast OttoKit — cas complet]**
+**[ÉCRAN — screencast OttoKit — cas complet]**
 
 [Montre un workflow complet :]
-[Trigger → Formatter (fallback prenom) → Filter (email non vide) → Gmail → Sheets]
+[Trigger → Formatter (fallback prénom) → Filter (email non vide) → Gmail → Sheets]
 
-Voici un workflow robuste. Le formatter gere le fallback du prenom. Le filtre bloque si l'email est vide. L'email et le Sheet recoivent des donnees propres.
+Voici un workflow robuste. Le formatter gère le fallback du prénom. Le filtre bloque si l'email est vide. L'email et le Sheet reçoivent des données propres.
 
-[Montre le canvas avec toutes les etapes visibles]
+[Montre le canvas avec toutes les étapes visibles]
 
-**[ECRAN — slide "Checklist anti-donnees manquantes"]**
+**[ÉCRAN — slide "Checklist anti-données manquantes"]**
 
 Avant de publier un workflow :
 
-1. Liste tous les champs dynamiques utilises
-2. Pour chaque champ, demande-toi : "est-ce qu'il peut etre vide ?"
-3. Si oui et optionnel → definis une valeur par defaut
+1. Liste tous les champs dynamiques utilisés
+2. Pour chaque champ, demande-toi : "est-ce qu'il peut être vide ?"
+3. Si oui et optionnel → définis une valeur par défaut
 4. Si oui et critique → ajoute un filtre qui bloque le workflow
-5. Teste avec des donnees volontairement incompletes
+5. Teste avec des données volontairement incomplètes
 
-**[TRANSITION — face camera]**
+**[TRANSITION — face caméra]**
 
-Tu sais maintenant gerer les donnees manquantes. Le Module 5 est termine. Passe au quiz pour valider tes acquis avant d'attaquer le Module 6 sur la logique conditionnelle.
+Tu sais maintenant gérer les données manquantes. Le Module 5 est terminé. Passe au quiz pour valider tes acquis avant d'attaquer le Module 6 sur la logique conditionnelle.
 
 ---
 
-**Points cles**
-- Un champ vide ne provoque pas d'erreur — OttoKit insere une chaine vide
-- Methode 1 : valeur par defaut via un formatter conditionnel
-- Methode 2 : Filter App pour bloquer le workflow si une donnee critique manque
-- Toujours tester avec des donnees volontairement incompletes avant de publier
+**Points clés**
+- Un champ vide ne provoque pas d'erreur — OttoKit insère une chaîne vide
+- Méthode 1 : valeur par défaut via un formatter conditionnel
+- Méthode 2 : Filter App pour bloquer le workflow si une donnée critique manque
+- Toujours tester avec des données volontairement incomplètes avant de publier
 
-**Mots-cles SEO**
-- OttoKit donnees manquantes
-- valeur par defaut OttoKit
+**Mots-clés SEO**
+- OttoKit données manquantes
+- valeur par défaut OttoKit
 - fallback workflow OttoKit
-- gerer champs vides automatisation WordPress
+- gérer champs vides automatisation WordPress
 
 ---
 
 ## Notes de production — Module 5
 
-### Captures a preparer
-- Selecteur de donnees dynamiques dans un champ d'action — vue detaillee
-- Selecteur montrant les champs de plusieurs etapes (trigger + action 1)
-- Champ email avec melange texte statique et tokens dynamiques
+### Captures à préparer
+- Sélecteur de données dynamiques dans un champ d'action — vue détaillée
+- Sélecteur montrant les champs de plusieurs étapes (trigger + action 1)
+- Champ email avec mélange texte statique et tokens dynamiques
 - Formatter date : configuration input/output format + timezone
-- Formatter nombre : operation multiplication (calcul TVA)
+- Formatter nombre : opération multiplication (calcul TVA)
 - Formatter texte : split, title case, trim, concatenate, replace
-- Formatter nombre aleatoire : configuration plage min/max
+- Formatter nombre aléatoire : configuration plage min/max
 - Construction d'un code promo "SCHOOL-{random}"
-- Formatter conditionnel : configuration fallback prenom
+- Formatter conditionnel : configuration fallback prénom
 - Filter App : condition "email is not empty"
 - Workflow complet avec formatter + filter avant l'action email
 
-### Environnement de demo
+### Environnement de démo
 - Compte OttoKit (plan gratuit ou premium)
 - Site WordPress schoolsWP avec :
-  - WooCommerce installe (au moins 1 commande avec tous les champs remplis + 1 commande avec des champs vides)
-  - Au moins 2 utilisateurs de test (un avec prenom, un sans)
+  - WooCommerce installé (au moins 1 commande avec tous les champs remplis + 1 commande avec des champs vides)
+  - Au moins 2 utilisateurs de test (un avec prénom, un sans)
 - Google Sheet avec colonnes : Date, Client, Email, Montant
-- Compte Gmail connecte a OttoKit
-- Donnees de test avec des valeurs vides pour tester les fallbacks
+- Compte Gmail connecté à OttoKit
+- Données de test avec des valeurs vides pour tester les fallbacks
 
-### Duree estimee par lecon (hors quiz)
-| Lecon | Duree video |
+### Durée estimée par leçon (hors quiz)
+| Leçon | Durée vidéo |
 |-------|-------------|
 | 5.1 | 6 min |
 | 5.2 | 5 min |
