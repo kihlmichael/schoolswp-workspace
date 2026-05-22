@@ -2,9 +2,9 @@
 name: SOP - Passerelle Obsidian Claude Code
 owner: Michaël KIHL
 project: schoolsWP
-version: 1.1
+version: 1.2
 date_creation: 2026-05-04
-date_maj: 2026-05-05
+date_maj: 2026-05-22
 status: phase-1
 ---
 
@@ -47,12 +47,25 @@ Procédure :
 
 1. Claude Code écrit le draft dans `obsidian-bridge/outbox-to-obsidian/YYYY-MM-DD_type_titre.md`.
 2. Le draft utilise le frontmatter standard et un template (`templates/synthese.md`, `templates/decision.md`).
-3. Tu (Michaël) relis et arbitres.
-4. Si validé, tu copies le fichier dans `00_systeme/claude-code-bridge/outbox-depuis-claude/` du vault.
-5. Si tu décides de le promouvoir en zone stable :
+3. Claude Code lit `index.md` à la racine du vault (lecture autorisée, cf. section 7) et ajoute au draft une section finale `## Carte de propagation` : d'après l'index, les pages du vault liées au sujet, les pages potentiellement contredites, les pages à mettre à jour si le draft est promu. Si l'index ne permet pas de conclure, l'indiquer explicitement plutôt que d'inventer.
+4. Tu (Michaël) relis et arbitres.
+5. Si validé, tu copies le fichier dans `00_systeme/claude-code-bridge/outbox-depuis-claude/` du vault.
+6. Si tu décides de le promouvoir en zone stable :
    - Tu déplaces dans la zone cible (`04_memory/`, `06_decisions/`, `07_projects/...`, etc.).
    - Tu ajoutes une entrée correspondante dans `log.md` du vault (type `validation_memoire`, `decision`, `synthese`, etc.).
    - Tu mets à jour le frontmatter (`status: synthese-stabilisee` ou `memoire-durable`).
+
+## 3bis. Cas d'usage 3 - capitaliser une analyse de session
+
+Claude Code produit en session une analyse stratégique réutilisable (confrontation, comparaison, arbitrage, synthèse de recherche). Sans capture, elle disparaît dans l'historique de chat.
+
+Procédure :
+
+1. Quand une analyse de ce type est produite, Claude Code propose de la capitaliser.
+2. Si tu acceptes, Claude Code écrit l'analyse dans `obsidian-bridge/outbox-to-obsidian/YYYY-MM-DD_type_titre.md` (type `note` ou `synthese`), avec frontmatter standard.
+3. Le draft suit ensuite le cas d'usage 2 à partir de l'étape 3 (carte de propagation, relecture, promotion éventuelle).
+
+Critère de déclenchement : l'analyse a une valeur au-delà de la session courante. Une réponse ponctuelle à une question opérationnelle ne se capitalise pas.
 
 ## 4. Nommage des fichiers transitants
 
