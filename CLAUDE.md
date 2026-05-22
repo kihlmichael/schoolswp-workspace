@@ -140,6 +140,7 @@ Coverage : voir section CI plus bas.
 Résumé : ~28 agents Python héritant de `BaseContentAgent` (async, retourne markdown). Chaque agent = `agent.py` + `cli.py`.
 
 **Détails complets auto-chargés selon le contexte :**
+
 - `core/agents-py/CLAUDE.md` — contrat `BaseContentAgent`, conventions CLI, création d'agent
 - `.claude/rules/python-agents.md` — table complète des modules CLI, pipeline stratégique, Publish Score, namespace `agents.*`
 
@@ -179,11 +180,11 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 
 **Racine polluée à nettoyer** : ~12 scripts de debug VM préfixés .tmp-vm- (extension shell), ~4 scripts Python préfixés tmp-, ~7 fichiers texte de debug (callout.txt, col_*.txt, first40.txt, orig_sample.txt, sc_block.txt, toc_ctx.txt, wp_raw_now.txt), 11 captures slide-*.png + 4 captures iter*-screenshot.png, et 8 transcripts 2026-03-28_youtube_*.md qui appartiennent à content/.
 
-**Mémoire interne Claude Code** : le fichier MEMORY.md du workspace `C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\` approche le plafond de chargement de 24 KB et est tronqué. Garder les entrées d'index sous 200 chars, déporter le détail dans les fichiers topic.
+**Mémoire interne Claude Code** : `MEMORY.md` (dans `C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\`) est sous le plafond de chargement et est maintenu par la routine de lint locale (cf. section Passerelle Obsidian). Le journal chronologique vit dans `LOG.md` du même dossier.
 
 ## Project Sub-Agents (`.claude/agents/`)
 
-27 sub-agents Claude Code dispatchés via le tool Agent (parallélisable, contexte isolé). Différents de la fleet `schoolswp-agents/` (instances autonomes en process séparé) et des agents Python (`core/agents-py/`, scripts CLI).
+28 sub-agents Claude Code dispatchés via le tool Agent (parallélisable, contexte isolé). Différents de la fleet `schoolswp-agents/` (instances autonomes en process séparé) et des agents Python (`core/agents-py/`, scripts CLI).
 
 **Catalogue complet + routing par input** : [.claude/agents/INDEX.md](.claude/agents/INDEX.md). Tables auto-régénérées par [tools/scripts/agents-registry.py](tools/scripts/agents-registry.py) (modes `--sync`, `--check`).
 
@@ -191,7 +192,7 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 
 | Groupe | Agents | Usage |
 | --- | --- | --- |
-| **Éditorial schoolsWP** | `studio`, `radar`, `pulse`, `flow`, `framework-adapter-fr`, `reddit` | Production articles, SEO, social, CRM/automation, adaptation EN→FR |
+| **Éditorial schoolsWP** | `studio`, `radar`, `pulse`, `flow`, `framework-adapter-fr`, `reddit`, `thruuu-article-orchestrator` | Production articles, SEO, social, CRM/automation, adaptation EN→FR, pipeline brief thruuu → article |
 | **YouTube OS** | `youtube-os-orchestrator` + 8 sous-agents (`strategy-scout`, `script-writer`, `seo-packager`, `thumbnail-director`, `clipper`, `publisher-scheduler`, `analytics-learner`, `quality-auditor`) | Pipeline vidéo complet. Livrables dans `content/youtube/`, traces dans `runs/youtube-os/`. **Statut par défaut `REVIEW_REQUIRED`, aucune publication sans validation humaine.** |
 | **Spécialistes domaine** | `seo-specialist`, `pinterest-expert`, `aidesigner-frontend`, `ads-operator`, `skoatch-publisher` | SEO technique, Pinterest, UI/landing via aidesigner, Google Ads, Skoatch + WP draft (**hors schoolswp.com**) |
 | **Code review / qualité (read-only)** | `code-reviewer`, `adr-writer`, `plan-challenger`, `output-evaluator`, `silent-failure-hunter` | Review de code 5 axes, ADR Nygard, review adversariale, LLM-as-Judge, détection silent failures |
@@ -206,6 +207,7 @@ Organisation générale découvrable via `ls`. Pièges à connaître :
 - **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. Pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
 - **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.
 - **`ofm-bot` isolation** : aucun chevauchement avec schoolsWP. Pas de génération d'image standalone (utiliser nano-banana directement).
+- **`thruuu-article-orchestrator` vs `studio`** : l'orchestrateur traite uniquement un pipeline complet à partir d'un brief thruuu `.docx` (gap analysis → rédaction → humanisation → linking → QA editor-in-chief). `studio` reste le défaut pour tout contenu éditorial générique (newsletter, script, brief, article sans brief `.docx`). L'orchestrateur s'appuie sur le skill `thruuu-writer`, il ne le duplique pas. Statut de sortie `REVIEW_REQUIRED`, aucune publication automatique.
 - **Quartet `studio` / `radar` / `pulse` / `flow`** : mirror la fleet `schoolswp-agents/` mais en sub-agents projet (dispatchables en parallèle dans la session courante).
 
 ## Multi-Agent Fleet (`schoolswp-agents/`)
@@ -431,7 +433,13 @@ Canal contrôlé entre le projet schoolsWP et le vault Obsidian schoolsWP (`D:\�
 
 **Règle absolue du vault** : aucune modification durable du wiki sans entrée correspondante dans `log.md` du vault. Toute promotion d'un draft `outbox-depuis-claude/` vers une zone stable passe par Michaël (validation L0). Les actions de consolidation post-transport (exception SOP 8.2) suivent la même règle : Claude doit appender l'entrée log lui-même.
 
-**Procédure complète** : [obsidian-bridge/SOP-claude-obsidian-bridge.md](obsidian-bridge/SOP-claude-obsidian-bridge.md) (v1.1, MAJ 2026-05-05 avec exception 8.2 et 8.3).
+**Réflexes passerelle** :
+
+- Toute synthèse produite vers `outbox-to-obsidian/` inclut une section `## Carte de propagation` fondée sur l'`index.md` du vault (SOP cas d'usage 2).
+- Toute analyse stratégique réutilisable produite en session est proposée à la capitalisation via `outbox-to-obsidian/` (SOP cas d'usage 3).
+- La mémoire interne et les dossiers passerelle sont contrôlés par la routine de lint locale (`tools/scripts/memory-lint-launcher.ps1`, déclenchée au logon, bridée à 1×/jour). Procédure : `obsidian-bridge/SOP-memory-lint.md`.
+
+**Procédure complète** : [obsidian-bridge/SOP-claude-obsidian-bridge.md](obsidian-bridge/SOP-claude-obsidian-bridge.md) (v1.2, MAJ 2026-05-22 : carte de propagation et cas d'usage 3).
 
 ## Reference Docs
 

@@ -2,7 +2,7 @@
 name: Passerelle Obsidian Claude Code
 owner: Michaël KIHL
 project: schoolsWP
-version: 1.0
+version: 1.1
 date_creation: 2026-05-04
 phase: 1
 ---
@@ -31,6 +31,7 @@ obsidian-bridge/
 ├── README.md                       (versionné)
 ├── bridge-config.md                (versionné)
 ├── SOP-claude-obsidian-bridge.md   (versionné)
+├── SOP-memory-lint.md              (versionné)
 ├── .gitignore                      (versionné)
 ├── templates/                      (versionné)
 │   ├── synthese.md
@@ -60,6 +61,7 @@ obsidian-bridge/
 ## 6. Documentation associée
 
 - Procédure complète : [SOP-claude-obsidian-bridge.md](SOP-claude-obsidian-bridge.md)
+- Procédure de lint mémoire : [SOP-memory-lint.md](SOP-memory-lint.md)
 - Configuration humaine : [bridge-config.md](bridge-config.md)
 - Templates : [templates/](templates/)
 - Charte vault (autorité) : `claude.md` à la racine du vault Obsidian
