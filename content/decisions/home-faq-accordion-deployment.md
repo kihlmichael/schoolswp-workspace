@@ -1,19 +1,28 @@
 ---
 title: Déploiement FAQ Kadence Accordion sur la home (FR/EN/DE)
 date: 2026-05-24
-status: TODO
+status: DONE
 owner: Michael
 priority: P1 (rich snippet Google)
 companion_to:
   - tools/wp-mu-plugins/schoolswp-home-schema.php (v1.0.1)
 audit_ref: content/audits/schoolswp-30pts/2026-05-24/audit.md
+deployed_at: 2026-05-24
+deployment_method: Novamira execute-php + wp_update_post (append after existing content)
+post_ids_updated:
+  fr: 6 (slug accueil) plus 6053 chars
+  en: 1315113 (slug en) plus 5912 chars
+  de: 1315109 (slug de) plus 6013 chars
+marker_in_dom: schoolswp-home-faq-accordion-v1 (présent sur les 3 langues, verified via curl)
 ---
 
-# FAQ home — coller dans les 3 pages
+# FAQ home — DEPLOYED via Novamira
 
-Le mu-plugin schoolswp-home-schema.php est en prod et injecte déjà le bloc FAQPage JSON-LD sur les 3 homes FR/EN/DE. **Pour que Google affiche le rich snippet FAQ**, le contenu visible dans la home doit être **pixel-perfect identique** au JSON-LD — sinon pénalité et aucun résultat enrichi.
+> **Mise à jour 2026-05-24** : la pose des 3 accordions (FR/EN/DE) a été automatisée via Novamira execute-php et wp_update_post. Marker schoolswp-home-faq-accordion-v1 ajouté dans le DOM pour identification ultérieure. Les anciens accordions "Comprendre ma mission et mes ressources" sont conservés en l'état (contenu marketing distinct).
 
-Action : coller dans chaque home un bloc **Kadence Accordion** avec exactement ces 6 Q/A par langue.
+Le mu-plugin schoolswp-home-schema.php est en prod (commit 0751aa0) et injecte le bloc FAQPage JSON-LD sur les 3 homes FR/EN/DE. **Pour que Google affiche le rich snippet FAQ**, le contenu visible dans la home doit être **pixel-perfect identique** au JSON-LD — sinon pénalité et aucun résultat enrichi.
+
+Le bloc **Kadence Accordion** "Questions fréquentes / Frequently asked questions / Häufig gestellte Fragen" a été ajouté en fin de chaque home avec les 6 Q/A pixel-perfect par langue, alignées au JSON-LD.
 
 ## Procédure (par page)
 
