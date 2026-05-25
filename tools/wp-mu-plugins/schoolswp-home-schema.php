@@ -2,7 +2,7 @@
 /**
  * Plugin Name: schoolsWP Home Schema
  * Description: Injecte un JSON-LD enrichi sur la home (FR + EN + DE) : Organization, WebSite avec SearchAction, BreadcrumbList, FAQPage. Complémentaire au mu-plugin schoolswp-person-schema (qui couvre Michaël KIHL en tant que personne).
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Michaël KIHL
  * License: GPLv2 or later
  */
@@ -70,6 +70,14 @@ function schoolswp_home_schema_faq($lang = 'fr') {
             [
                 'question' => 'Comment recevoir les nouveaux contenus schoolsWP ?',
                 'answer'   => 'En t’abonnant à la newsletter via le bouton présent sur la home : tu reçois chaque semaine les nouveaux articles, audits et méthodes testées sur WordPress.',
+            ],
+            [
+                'question' => 'Qui est le fondateur de schoolsWP ?',
+                'answer'   => 'schoolsWP a été fondé par moi-même (Michaël KIHL), formateur WordPress passionné par l’optimisation web et la pédagogie numérique.',
+            ],
+            [
+                'question' => 'Comment schoolsWP peut m’aider à améliorer mon site WordPress ?',
+                'answer'   => 'schoolsWP vous aide à améliorer les performances, le SEO et l’automatisation de votre site WordPress grâce à des guides pratiques, des comparatifs de plugins et des tutoriels détaillés. Vous y trouverez aussi des conseils d’optimisation, des formations et une communauté d’entraide pour progresser efficacement.',
             ],
         ],
         'en' => [
