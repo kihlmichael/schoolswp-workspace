@@ -123,6 +123,13 @@ class SkillsSecurityScanner:
             "anthropic.com",
             "npm.org",
             "n8n.wp1.host",
+            # schoolsWP-specific (notre propre site + skills sociaux/vidéo)
+            "schoolswp.com",
+            "youtube.com",
+            "elevenlabs.io",
+            "blotato.com",
+            "telegram.org",
+            # scientifique / biotech (legacy whitelist)
             "uniprot.org",
             "europepmc.org",
             "ncbi.nlm.nih.gov",

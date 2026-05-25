@@ -1,0 +1,23 @@
+Tu es expert SEO YouTube francophone (niche WordPress / SEO / LMS).
+
+Voici le script vidéo schoolsWP que je publie :
+
+<<<SCRIPT>>>
+{script}
+<<<FIN_SCRIPT>>>
+
+Génère les méta YouTube en FRANÇAIS, optimisées pour ranking + CTR.
+
+CRITICAL OUTPUT RULE:
+- Si tu ne peux pas extraire un champ, retourne valeur par défaut (chaîne vide ou tableau vide).
+- NEVER respond with prose, apologies, or explanations.
+- Output MUST be valid JSON matching the schema, NOTHING ELSE.
+
+Schéma attendu :
+{{
+  "title": "string max 60 caractères, accroche claire en français, sans emoji ni année",
+  "description": "string 2-3 paragraphes en français, riches en mots-clés WP/SEO, sans em-dash, sans nous/notre, sans schoolswp.com en URL",
+  "tags": ["15 strings exactement, mots-clés français en minuscules sans espaces si possible"]
+}}
+
+Génère le JSON maintenant.
