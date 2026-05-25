@@ -2,7 +2,7 @@
 /**
  * Plugin Name: schoolsWP Home Schema
  * Description: Injecte un JSON-LD enrichi sur la home (FR + EN + DE) : Organization, WebSite avec SearchAction, BreadcrumbList, FAQPage. Complémentaire au mu-plugin schoolswp-person-schema (qui couvre Michaël KIHL en tant que personne).
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Michaël KIHL
  * License: GPLv2 or later
  */
@@ -65,7 +65,7 @@ function schoolswp_home_schema_faq($lang = 'fr') {
             ],
             [
                 'question' => 'Comment contacter Michaël KIHL ?',
-                'answer'   => 'Par email à contact@michaelkihl.fr, sur LinkedIn (linkedin.com/in/michaelkihl/) ou via les boutons sociaux en bas de chaque article.',
+                'answer'   => 'Le plus rapide passe par le portail d’assistance : schoolswp.com/portail-assistance/. Sinon, écris-moi à contact@michaelkihl.fr.',
             ],
             [
                 'question' => 'Comment recevoir les nouveaux contenus schoolsWP ?',
@@ -91,7 +91,7 @@ function schoolswp_home_schema_faq($lang = 'fr') {
             ],
             [
                 'question' => 'How to contact Michaël KIHL?',
-                'answer'   => 'By email at contact@michaelkihl.fr, on LinkedIn (linkedin.com/in/michaelkihl/) or via the social buttons at the bottom of each article.',
+                'answer'   => 'Quickest path is the support portal: schoolswp.com/portail-assistance/. Otherwise, email me at contact@michaelkihl.fr.',
             ],
             [
                 'question' => 'How to receive new schoolsWP content?',
@@ -117,7 +117,7 @@ function schoolswp_home_schema_faq($lang = 'fr') {
             ],
             [
                 'question' => 'Wie kann man Michaël KIHL kontaktieren?',
-                'answer'   => 'Per E-Mail an contact@michaelkihl.fr, auf LinkedIn (linkedin.com/in/michaelkihl/) oder über die Social-Buttons am Ende jedes Artikels.',
+                'answer'   => 'Am schnellsten geht es über das Support-Portal: schoolswp.com/portail-assistance/. Ansonsten per E-Mail an contact@michaelkihl.fr.',
             ],
             [
                 'question' => 'Wie erhält man neue schoolsWP-Inhalte?',
