@@ -2,7 +2,7 @@
 /**
  * Plugin Name: schoolsWP Home Schema
  * Description: Injecte un JSON-LD enrichi sur la home (FR + EN + DE) : Organization, WebSite avec SearchAction, BreadcrumbList, FAQPage. Complémentaire au mu-plugin schoolswp-person-schema (qui couvre Michaël KIHL en tant que personne).
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Michaël KIHL
  * License: GPLv2 or later
  */
@@ -105,6 +105,14 @@ function schoolswp_home_schema_faq($lang = 'fr') {
                 'question' => 'How to receive new schoolsWP content?',
                 'answer'   => 'By subscribing to the newsletter via the button on the home page: you receive each week the new articles, audits and tested methods on WordPress.',
             ],
+            [
+                'question' => 'Who founded schoolsWP?',
+                'answer'   => 'schoolsWP was founded by me (Michaël KIHL), a WordPress trainer passionate about web optimization and digital pedagogy.',
+            ],
+            [
+                'question' => 'How can schoolsWP help me improve my WordPress site?',
+                'answer'   => 'schoolsWP helps you improve the performance, SEO and automation of your WordPress site through practical guides, plugin comparisons and detailed tutorials. You’ll also find optimization tips, trainings and a mutual help community to progress efficiently.',
+            ],
         ],
         'de' => [
             [
@@ -130,6 +138,14 @@ function schoolswp_home_schema_faq($lang = 'fr') {
             [
                 'question' => 'Wie erhält man neue schoolsWP-Inhalte?',
                 'answer'   => 'Durch Abonnieren des Newsletters über den Button auf der Startseite: Du erhältst wöchentlich die neuen Artikel, Audits und getesteten Methoden zu WordPress.',
+            ],
+            [
+                'question' => 'Wer hat schoolsWP gegründet?',
+                'answer'   => 'schoolsWP wurde von mir selbst (Michaël KIHL) gegründet, einem WordPress-Trainer mit Leidenschaft für Web-Optimierung und digitale Pädagogik.',
+            ],
+            [
+                'question' => 'Wie kann schoolsWP mir helfen, meine WordPress-Seite zu verbessern?',
+                'answer'   => 'schoolsWP hilft dir, die Leistung, das SEO und die Automatisierung deiner WordPress-Seite durch praktische Leitfäden, Plugin-Vergleiche und detaillierte Tutorials zu verbessern. Du findest auch Optimierungstipps, Schulungen und eine Hilfegemeinschaft, um effizient voranzukommen.',
             ],
         ],
     ];

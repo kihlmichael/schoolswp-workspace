@@ -5,19 +5,22 @@ status: DONE
 owner: Michael
 priority: P1 (rich snippet Google)
 companion_to:
-  - tools/wp-mu-plugins/schoolswp-home-schema.php (v1.0.1)
+  - tools/wp-mu-plugins/schoolswp-home-schema.php (v1.0.5)
 audit_ref: content/audits/schoolswp-30pts/2026-05-24/audit.md
-deployed_at: 2026-05-24
-deployment_method: Novamira execute-php + wp_update_post (append after existing content)
+deployed_at: 2026-05-25 (v1.0.5 EN/DE mirror)
+deployment_method: Novamira execute-php (mu-plugin in-place str_replace + wp_update_post FAQ section replace + legacy block removal)
 post_ids_updated:
-  fr: 6 (slug accueil) plus 6053 chars
-  en: 1315113 (slug en) plus 5912 chars
-  de: 1315109 (slug de) plus 6013 chars
-marker_in_dom: schoolswp-home-faq-accordion-v1 (présent sur les 3 langues, verified via curl)
+  fr: 6 (slug accueil) - 8 Q/A pixel-perfect (manual rebuild + v1.0.4)
+  en: 1315113 (slug en) - 8 Q/A pixel-perfect (v1.0.5 mirror FR + legacy 3rd accordion removed)
+  de: 1315109 (slug de) - 8 Q/A pixel-perfect (v1.0.5 mirror FR + legacy 3rd accordion removed)
+marker_in_dom: 2 accordions × 4 panes (8 unique Q/A) per language
+final_validation: 8/8 match JSON-LD ↔ DOM visible, 0 duplicates, all 3 langs ALL GREEN
 ---
 
 # FAQ home — DEPLOYED via Novamira
 
+> **Mise à jour 2026-05-25 (v1.0.5)** : EN et DE remis à plat pour mirorer le layout FR (2 cols × 4 panes = 8 Q/A uniques). Le legacy 3e accordion (6 panes "Frequently asked questions" / "Häufig gestellte Fragen") a été supprimé sur EN+DE. JSON-LD étendu de 6 à 8 Q/A par langue (ajout Q7 fondateur + Q8 comment schoolsWP aide). Validation pixel-perfect 8/8 sur les 3 langues, ALL GREEN. Backup post meta `_backup_faq_section_2026_05_25_v105` + `_backup_legacy_faq_block_2026_05_25`.
+>
 > **Mise à jour 2026-05-24** : la pose des 3 accordions (FR/EN/DE) a été automatisée via Novamira execute-php et wp_update_post. Marker schoolswp-home-faq-accordion-v1 ajouté dans le DOM pour identification ultérieure. Les anciens accordions "Comprendre ma mission et mes ressources" sont conservés en l'état (contenu marketing distinct).
 
 Le mu-plugin schoolswp-home-schema.php est en prod (commit 0751aa0) et injecte le bloc FAQPage JSON-LD sur les 3 homes FR/EN/DE. **Pour que Google affiche le rich snippet FAQ**, le contenu visible dans la home doit être **pixel-perfect identique** au JSON-LD — sinon pénalité et aucun résultat enrichi.
@@ -126,6 +129,35 @@ Pour chaque langue, après pose et update :
 
 ## Sources de vérité (ne pas diverger)
 
-- JSON-LD : tools/wp-mu-plugins/schoolswp-home-schema.php v1.0.1 (commit 0751aa0)
+- JSON-LD : tools/wp-mu-plugins/schoolswp-home-schema.php **v1.0.5** (8 Q/A par langue, source authoritative pour toutes les Q/A déployées)
 - Audit : content/audits/schoolswp-30pts/2026-05-24/audit.md (Action 2.C)
 - BRAND_RULES : tutoiement, schoolsWP toujours, jamais SchoolsWP, jamais d'em-dash dans les réponses
+
+## Évolution v1.0.1 vers v1.0.5
+
+Les Q/A ci-dessus (Q1 à Q6) sont l'**état v1.0.1 initial**. Les versions suivantes ont fait évoluer le contenu. La source de vérité actuelle est le mu-plugin (lire la fonction schoolswp_home_schema_faq dans schoolswp-home-schema.php).
+
+| Version | Date | Changements |
+| --- | --- | --- |
+| v1.0.1 | 2026-05-24 | Initial deploy, 6 Q/A par langue, JSON-LD + accordion DOM |
+| v1.0.2 | 2026-05-25 | Fix apostrophes typographiques U+2019 côté JSON-LD (pixel-perfect FR cassé par wptexturize) |
+| v1.0.3 | 2026-05-25 | Q5 contact réécrit vers portail d'assistance schoolswp.com/portail-assistance/ + email (suppression LinkedIn/social) |
+| v1.0.4 | 2026-05-25 | FR étendu à 8 Q/A : ajout Q7 fondateur + Q8 comment schoolsWP aide |
+| v1.0.5 | 2026-05-25 | EN+DE miroir FR à 8 Q/A + suppression legacy 3e accordion (post 1315113 et 1315109). Validation pixel-perfect 8/8 sur les 3 langues |
+
+## v1.0.5 — État final déployé
+
+- **FR** post 6 : 8 Q/A pixel-perfect (Q1 à Q8), 2 accordions × 4 panes
+- **EN** post 1315113 : 8 Q/A pixel-perfect (mirror FR), 2 accordions × 4 panes (legacy 3e accordion supprimé)
+- **DE** post 1315109 : 8 Q/A pixel-perfect (mirror FR), 2 accordions × 4 panes (legacy 3e accordion supprimé)
+
+Procédure de mirror FR vers EN/DE (workflow technique documenté pour reproduire) :
+
+1. Récupérer FR FAQ section complète (outer rowlayout) via novamira execute-php
+2. Translate H2 + sous-titre + 8 pane titles + 8 pane answers (texte verbatim aligné JSON-LD avec U+2019 partout)
+3. Build EN/DE FAQ section via str.replace Python (1 substitution par chaîne, anti-collision check)
+4. Push : SHA verify old section + backup postmeta + wp_update_post + FlyingPress purge
+5. Remove legacy 3e accordion (H2 swpfaq_X_h + 6-pane accordion suivant)
+6. Validate via le script tmp-validate-schema.py : extract JSON-LD + DOM titles, compare set intersection
+
+Backups postmeta conservés : _backup_faq_section_2026_05_25_v105 et _backup_legacy_faq_block_2026_05_25. Rollback rapide possible via une lecture postmeta puis réinjection dans post_content.
