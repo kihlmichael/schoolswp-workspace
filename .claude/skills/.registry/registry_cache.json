@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-05-20T11:08:13.546814",
+  "last_run": "2026-05-25T14:57:06.067489",
   "skills": {
     "landing-page-factory": {
       "hash": "3c7c0e46",
@@ -77,9 +77,9 @@
       "description": "Workflow complet de rédaction schoolsWP en 3 phases : Intelligence SEO, Rédaction IA, Couche humaine. Prend un mot-clé + données S..."
     },
     "thruuu-writer": {
-      "hash": "3b543533",
-      "last_modified": "2026-05-09",
-      "description": "Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 10 étapes : parsing du brief, détection de langue, ..."
+      "hash": "ad4101cc",
+      "last_modified": "2026-05-21",
+      "description": "Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 12 étapes : parsing du brief, détection de langue, ..."
     },
     "lead-magnet-schoolswp": {
       "hash": "3761b6fc",
@@ -105,11 +105,6 @@
       "hash": "e5f83d8c",
       "last_modified": "2026-05-07",
       "description": "Met en forme du texte brut schoolsWP (notes, transcript, voice note, brouillon, idées en vrac) en contenu court ou intermédiaire p..."
-    },
-    "thruuu-content-strategist": {
-      "hash": "9dcb9c6f",
-      "last_modified": "2026-05-09",
-      "description": "Stratégie de contenu SEO automatisée à partir des exports de clustering thruuu (.xlsx). Analyse les clusters de mots-clés, détermi..."
     },
     "youtube-thumbnails": {
       "hash": "3cc4f97e",
@@ -821,6 +816,11 @@
       "last_modified": "2026-05-09",
       "description": "Squelette de SKILL.md pret a remplir pour créer un nouveau skill schoolsWP. Sert de point de depart pour les conventions du frontm..."
     },
+    "session-recap": {
+      "hash": "aa99a4b7",
+      "last_modified": "2026-05-24",
+      "description": "Transforme la session de travail Claude Code en cours en récapitulatif Markdown structuré, prêt à coller dans Google Docs ou un jo..."
+    },
     "planning-and-task-breakdown": {
       "hash": "9f7a478d",
       "last_modified": "2026-05-09",
@@ -1020,6 +1020,11 @@
       "hash": "5961ee11",
       "last_modified": "2026-05-09",
       "description": "Pilote WhatsApp via le CLI `wacli` : envoie de messages texte/fichier à un destinataire tiers, recherche dans l'historique, synchr..."
+    },
+    "youtube-brief-publisher": {
+      "hash": "17da0f30",
+      "last_modified": "2026-05-25",
+      "description": "Pipeline complet YouTube : transcription d'audio via ElevenLabs (Scribe v2), rédaction de scripts originaux schoolsWP via Claude 3..."
     },
     "telegram-claude": {
       "hash": "98e53437",
@@ -1591,6 +1596,11 @@
       "last_modified": "2026-05-11",
       "description": "Pilote l'API Skoatch (https://skoatch.com/api) via le tool Python `tools/skoatch/` pour generer des articles, lister projets, recu..."
     },
+    "agents-py-error-handling": {
+      "hash": "f1af11de",
+      "last_modified": "2026-05-25",
+      "description": "Patterns FR d'error handling pour les 28 agents Python schoolsWP : typed exceptions, retry exponential backoff, circuit breaker, l..."
+    },
     "csv-excel-report": {
       "hash": "3b1df28e",
       "last_modified": "2026-05-09",
@@ -1751,6 +1761,11 @@
       "last_modified": "2026-03-29",
       "description": "Construit des plans de formation WordPress complets pour freelances, structurés en 10 modules (fondations, éditeur, thèmes/plugins..."
     },
+    "wp-site-audit-30pts": {
+      "hash": "f0d0a64f",
+      "last_modified": "2026-05-24",
+      "description": "Audit WordPress complet noté sur 30 points (5 catégories × 6 points : Sécurité, Performance, SEO, Contenu, Technique) avec données..."
+    },
     "avoid-ai-writing": {
       "hash": "c79a6438",
       "last_modified": "2026-05-09",
@@ -1831,10 +1846,40 @@
       "last_modified": "2026-05-09",
       "description": "Workflow de développement de plugins WordPress couvrant l'architecture du plugin, les hooks, les interfaces admin, REST API, bonne..."
     },
+    "thruuu-content-strategist": {
+      "hash": "eb2698e1",
+      "last_modified": "2026-05-21",
+      "description": "(archivé 2026-05-21 - doublon de thruuu-strategist - ne pas auto-déclencher)"
+    },
     "gateguard": {
       "hash": "dd4b7d28",
       "last_modified": "2026-04-19",
       "description": "Fact-forcing gate that blocks Edit/Write/Bash (including MultiEdit) and demands concrete investigation (importers, data schemas, u..."
+    },
+    "frontend-slides": {
+      "hash": "3bdcc51a",
+      "last_modified": "2026-05-24",
+      "description": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)"
+    },
+    "motion-foundations": {
+      "hash": "92998221",
+      "last_modified": "2026-05-24",
+      "description": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)"
+    },
+    "motion-patterns": {
+      "hash": "cf8609bd",
+      "last_modified": "2026-05-24",
+      "description": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)"
+    },
+    "make-interfaces-feel-better": {
+      "hash": "3975e7b9",
+      "last_modified": "2026-05-24",
+      "description": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)"
+    },
+    "agent-architecture-audit": {
+      "hash": "c420e786",
+      "last_modified": "2026-05-24",
+      "description": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)"
     },
     "cc-design": {
       "hash": "b186013f",

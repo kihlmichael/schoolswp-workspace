@@ -1,10 +1,10 @@
 ---
 name: thruuu-writer
 description: |
-  Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 10 étapes : parsing du brief, détection de langue, recherche URLs, rédaction section par section, placement de liens, checklist finale et sauvegarde markdown. 4 modes : run (pipeline complet), dry-run (diagnostic), audit (faisabilité), guideline-only (GUIDELINE.md). Aussi déclenchable via /thruuu-writer.
+  Transforme un brief thruuu (.docx) en article complet prêt à publier. Pipeline 12 étapes : parsing du brief, détection de langue, recherche URLs + dossier knowledge, gap analysis concurrentielle, rédaction section par section, placement de liens, passe humanisation anti-IA, contrôle editor-in-chief et sauvegarde markdown. 4 modes : run (pipeline complet), dry-run (diagnostic), audit (faisabilité), guideline-only (GUIDELINE.md). Aussi déclenchable via /thruuu-writer.
   Utilise ce skill quand l'utilisateur dit : "rédige cet article", "transforme ce brief en article", "thruuu writer", "article depuis un brief", "lance thruuu-writer sur [brief.docx]", ou fournit un brief thruuu .docx et veut l'article final.
   NE PAS utiliser pour : article depuis un mot-clé + SERP sans brief .docx (utiliser `schoolswp-article-workflow`), construire le brief lui-même (utiliser `thruuu-brief-builder`), draft express (utiliser `brain-lite`), ou audit/score d'article publié (utiliser `article-audit-score`).
-last_reviewed: 2026-04-23
+last_reviewed: 2026-05-21
 review_interval_days: 90
 ---
 
@@ -58,7 +58,7 @@ Tu executes. Tu traces. Tu sauvegardes. Tu n'inventes rien.
 
 ### `run` — Pipeline complet
 
-Guideline → Brief → Parse → Langue → Knowledge base → Redaction → Liens → Checklist → Sauvegarde.
+Guideline → Brief → Parse → Langue → Knowledge base → Gap analysis → Redaction → Liens → Humanisation → Editor-in-chief → Sauvegarde.
 
 ### `dry-run` — Diagnostic sans redaction
 
@@ -128,7 +128,7 @@ Les bullets, notes, sous-points, commentaires, instructions ou URLs sous un head
 
 ---
 
-## Workflow en 10 etapes
+## Workflow en 12 etapes
 
 Suis chaque etape dans l'ordre. Ne saute aucune etape.
 
@@ -249,6 +249,19 @@ Avant de rediger, collecte les informations externes.
 | Articles "read for knowledge" de l'outline | ~800 premiers mots            |
 | Sources expertes (Writer Directive)        | integral si possible          |
 | URLs du bloc Links                         | ~200 premiers mots (contexte) |
+| Dossier knowledge/ (data proprietaire)     | integral                      |
+
+#### Dossier knowledge (optionnel)
+
+Cherche un dossier `knowledge/` dans cet ordre :
+
+1. `tools/thruuu-writer/knowledge/`
+2. `${PROJECT_ROOT}/knowledge/`
+
+S'il existe, lis tous les fichiers `.md` et `.txt` qu'il contient. Cette base regroupe la
+data proprietaire schoolsWP : retours d'experience reels, captures, notes, citations,
+chiffres verifies. Elle prime comme source de verite sur les sources web fetchees. Dossier
+absent ou vide : ce n'est jamais une erreur, continue.
 
 Pour chaque source, retiens : angle principal, info exploitable, exemple/donnee/nuance, section d'insertion possible.
 
@@ -256,9 +269,58 @@ Pour chaque source, retiens : angle principal, info exploitable, exemple/donnee/
 
 ---
 
-### Etape 7 — Rediger section par section
+### Etape 7 — Gap analysis concurrentielle
+
+Avant de rediger, identifie ce que les concurrents couvrent deja et ce qu'ils ratent.
+Cette etape joue le role de "head of research" : elle transforme la recherche brute en
+angle differenciant.
+
+**Quand l'executer** : par defaut pour tout article SEO (Article Type guide, listicle,
+comparatif, avis, tutoriel). La sauter si l'intention est purement navigationnelle ou si
+le Target Word Count est < 800 mots.
+
+Procedure :
+
+1. Reunir les concurrents : champs **Competitors Analysis** et **Competitors Outlines** du
+   brief en priorite. Si le brief n'en contient pas, prendre les 3 a 5 premieres URLs
+   top-ranked disponibles (SERP Insights, bloc Links, Food For Thought).
+2. Pour chaque concurrent retenu, fetcher la page (~800 premiers mots) si elle n'a pas
+   deja ete lue a l'etape 6. URL inaccessible : signaler, ne rien inventer, continuer.
+3. Cartographier sur 4 axes :
+   - **Couverture** : sous-sujets que tous les concurrents traitent — obligatoire de les
+     couvrir aussi, sinon l'article parait incomplet.
+   - **Angle** : angle editorial qui domine la SERP, et celui qui est absent.
+   - **Profondeur** : ou les concurrents restent en surface — opportunite d'aller plus loin.
+   - **Manques** : question reelle non repondue, exemple absent, donnee perimee, etape
+     oubliee, cas d'usage ignore.
+4. Produire une synthese courte (gap brief) :
+
+   ```
+   GAP BRIEF
+   - Couverture obligatoire : [sous-sujets a ne pas rater]
+   - Angle differenciant : [angle retenu pour cet article]
+   - Gaps a exploiter : [2 a 4 manques concrets]
+   - Risque : [ce que les concurrents font mieux et qu'il faut au moins egaler]
+   ```
+
+Ce gap brief oriente la redaction de l'etape 8. Il ne remplace jamais le Content Outline
+du brief : la structure reste celle du brief, le gap brief enrichit le contenu des sections.
+
+**Contexte schoolsWP** : si un pilier et un slug sont identifiables, archiver le gap brief
+dans `content/decisions/[slug].md` pour la tracabilite editoriale. Sinon, le garder inline
+dans le log d'execution.
+
+Regle dure schoolsWP : si l'article n'apporte rien de plus que le top 3 concurrent, le
+signaler clairement dans le log. La decision de publier malgre tout revient a l'humain.
+
+---
+
+### Etape 8 — Rediger section par section
 
 Redige dans la langue detectee en suivant **strictement** le Content Outline.
+
+Garde le gap brief de l'etape 7 sous les yeux : il indique les sous-sujets obligatoires
+et les manques concrets a exploiter dans le contenu des sections.
 
 Pour chaque section :
 
@@ -298,7 +360,7 @@ Si un heading n'a pas de notes, utiliser dans cet ordre :
 
 ---
 
-### Etape 8 — Placer tous les liens
+### Etape 9 — Placer tous les liens
 
 Apres redaction du draft complet :
 
@@ -315,7 +377,45 @@ Lien impossible a placer naturellement → signaler dans la checklist.
 
 ---
 
-### Etape 9 — Checklist finale
+### Etape 10 — Passe humanisation
+
+Apres le placement des liens, relis le draft complet pour retirer les patterns d'ecriture
+IA. Cette etape joue le role de "humanizer" : le texte doit sonner comme un humain qui
+sait de quoi il parle, pas comme un modele.
+
+Traiter dans l'ordre :
+
+1. **Tirets longs** : remplacer tout em-dash (—, U+2014) et en-dash (–, U+2013) par
+   " : ", " - " (tiret court espace), "." ou une reformulation. Aucun tiret long ne doit
+   survivre, nulle part (titres, intertitres, corps, frontmatter).
+2. **AI-isms** : reperer et reformuler les tournures-modele :
+   - Ouvertures vides : "Dans le monde de", "A l'ere du numerique", "Il est important de
+     noter que", "force est de constater".
+   - Hedging mou : "il convient de", "on pourrait dire que", "dans une certaine mesure".
+   - Intensificateurs creux : "veritable", "incontournable", "puissant", "robuste" quand
+     le mot n'apporte aucune information.
+   - Rule of three systematique : trois adjectifs ou trois exemples a la chaine par reflexe.
+   - Conclusions scolaires : "En conclusion", "Pour resumer, nous avons vu que".
+   - Transitions mecaniques : "De plus", "Par ailleurs", "En outre" en debut de paragraphe
+     a repetition.
+3. **Voix** : verifier la voix au singulier. Remplacer tout "nous", "notre", "nos",
+   "on vous" par le "je" ou une formulation directe en "tu". Michael ecrit seul.
+4. **Densite** : supprimer les phrases qui n'apportent aucune information. Une phrase qui
+   pourrait disparaitre sans rien changer au sens doit disparaitre.
+
+Ne pas sur-corriger : garder le sens, les faits et la structure du brief intacts.
+L'humanisation reecrit la forme, jamais le fond.
+
+Apres la passe, signaler en une ligne : nombre de tirets longs retires, nombre d'AI-isms
+reformules, voix au singulier confirmee.
+
+---
+
+### Etape 11 — Controle editor-in-chief
+
+Tu joues maintenant le role d'editor-in-chief : tu controles le draft complet, tu corriges
+ce qui peut l'etre, tu reboucles sur les etapes amont si un defaut majeur l'exige, et tu
+nettoies les fichiers temporaires avant la sauvegarde.
 
 Produis exactement ce tableau :
 
@@ -352,9 +452,47 @@ Apres la checklist, attribue un score sur 10 pour chaque critere :
 Si la moyenne est < 7 : corrige les points faibles et recalcule avant de sauvegarder.
 Ce score complete la checklist binaire et donne une vue synthetique de la qualite du draft.
 
+#### Bouclage editor-in-chief
+
+Si un defaut majeur depasse une simple correction locale, reboucle sur l'etape concernee
+plutot que de rafistoler :
+
+- Section hors-sujet ou structure incoherente → revenir a l'etape 8 (redaction).
+- Liens mal places ou manquants → revenir a l'etape 9 (liens).
+- Patterns IA encore presents, tiret long oublie, voix "nous" residuelle → revenir a
+  l'etape 10 (humanisation).
+- Angle non differenciant alors que le gap brief en signalait un → revenir a l'etape 7.
+
+Maximum deux boucles. Au-dela, sauvegarder le draft en l'etat et lister les reserves dans
+le message final. Ne jamais boucler a l'infini.
+
+#### Brand QA schoolsWP
+
+En contexte schoolsWP, ajouter ce controle final avant la sauvegarde :
+
+| Critere Brand QA                                    | Verdict       |
+| --------------------------------------------------- | ------------- |
+| Casse `schoolsWP` exacte partout                    | ✓ ou ✗        |
+| Tutoiement systematique                             | ✓ ou ✗        |
+| Voix au singulier (aucun "nous", "notre", "nos")    | ✓ ou ✗        |
+| Aucun tiret long (— ni –)                           | ✓ ou ✗        |
+| Aucun mot interdit                                  | ✓ ou ✗        |
+| Aucune promesse non prouvee                         | ✓ ou ✗        |
+| Respect des concurrents (si avis/comparatif)        | ✓ / ✗ / n/a   |
+| Disclosure affiliee presente (si lien affilie)      | ✓ / ✗ / n/a   |
+
+Tout ✗ corrigeable → corriger avant de sauvegarder. Tout ✗ non corrigeable → le lister
+dans le message final.
+
+#### Nettoyage
+
+Avant la sauvegarde, supprimer les fichiers temporaires crees pendant l'execution
+(brouillons intermediaires, notes de travail). Ne jamais supprimer le brief source, le
+GUIDELINE.md, les fichiers de knowledge/, ni le gap brief archive dans content/decisions/.
+
 ---
 
-### Etape 10 — Sauvegarder
+### Etape 12 — Sauvegarder
 
 #### Chemin de sortie
 
@@ -440,15 +578,28 @@ Ne pas forcer ces blocs si le brief est court (<800 mots) ou si l'intention est 
 
 ## Integration schoolsWP
 
-Quand le contexte detecte est schoolsWP, applique automatiquement :
+Quand le contexte detecte est schoolsWP, applique automatiquement ces regles non
+negociables (reference complete : `content/docs/BRAND_RULES.md`) :
 
-- Tutoiement systematique.
-- Casse exacte `schoolsWP`.
-- Ton direct, utile, concret.
-- Phrases courtes.
-- Zero jargon marketing inutile.
+- **Casse exacte `schoolsWP`** partout, y compris en anglais. Jamais schoolswp, SchoolsWP,
+  Schools WP.
+- **Tutoiement systematique**, sans exception.
+- **Voix au singulier** : ecris au "je". Jamais "nous", "notre", "nos", "on vous".
+  Michael est seul derriere schoolsWP.
+- **Aucun tiret long** : ni em-dash (—, U+2014), ni en-dash (–, U+2013), nulle part.
+  Alternatives : " : ", " - " (tiret court espace), ".", "(...)" ou reformulation.
+- **Phrases courtes** : 8-15 mots en moyenne, 20 mots max. Une idee par paragraphe.
+- **Ton direct, utile, concret.** Zero jargon marketing inutile.
+- **Aucune promesse non prouvee** : ancre les claims dans l'experience ("dans mon cas",
+  "d'apres mes tests"), jamais d'affirmation universelle.
+- **Respect des concurrents** : sur un avis ou un comparatif, s'en tenir aux limites
+  factuelles, pas de "X meilleur que Y". Si l'article pivote vers un autre outil, inclure
+  une section "Pour qui [concurrent] reste pertinent".
+- **Disclosure affiliee** : si un lien affilie est present, ajouter la mention "Lien
+  affilie - je recommande uniquement les outils que j'utilise au quotidien." Un seul CTA
+  principal par article.
 
-**Mots interdits** : disruptif, game changer, scalable, hack, revolutionnaire, incroyable, en un clic, sans effort, il suffit de.
+**Mots interdits** : disruptif, game changer, scalable, leverage, hack, revolutionnaire, incroyable, le meilleur du marche, en un clic, sans effort, il suffit de, simplement (quand ce n'est pas simple).
 
 Si aucun GUIDELINE.md n'existe mais qu'un style guide schoolsWP existe → utilise-le comme base.
 Sauvegarder les drafts dans `content/articles/[pilier]/` si un pilier est identifie.
@@ -528,7 +679,7 @@ Chemin par defaut : `${PROJECT_ROOT}/GUIDELINE.md`
 
 ### `run`
 
-Logs → questions bloquantes si necessaire → draft complet → checklist → fichier .md → message final.
+Logs → questions bloquantes si necessaire → gap brief → draft complet → humanisation → controle editor-in-chief → fichier .md → message final.
 
 ### `dry-run`
 

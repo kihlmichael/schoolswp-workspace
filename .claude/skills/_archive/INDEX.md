@@ -21,6 +21,12 @@ Source de vérité pour ce qui était auto-déclenché avant l'archivage.
 | `reddit` | Pas de priorité canal 2026, mis en veille — ré-activable en restaurant le YAML |
 | `schoolswp-branding-studio` (workspace) | Doublonné par `branding` project + modes de création redondants avec skills spécialisés |
 
+## Archivés le 2026-05-21
+
+| Skill | Raison |
+|---|---|
+| `thruuu-content-strategist` | Doublon quasi exact de `thruuu-strategist` (runtime Claude Code complet et autonome). Ancien pont vers le projet externe `thruuu-claude-content-strategist/`. Archivé pour supprimer la collision de déclenchement sur les exports `.xlsx` thruuu. Dossier déplacé dans `_archive/thruuu-content-strategist/` le 2026-05-21. |
+
 ## À supprimer manuellement
 
 | Chemin | Raison |

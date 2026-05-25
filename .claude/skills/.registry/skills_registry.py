@@ -1,8 +1,11 @@
 """
-Skills Registry — scan + cache + sync Google Sheets via n8n webhook
+Skills Registry — scan + cache + sync Google Sheets via n8n webhook + security scan + compile Cursor
 Usage:
-  python skills_registry.py          # scan + rapport + cache
-  python skills_registry.py --sync   # scan + rapport + cache + POST webhook
+  python skills_registry.py                      # scan + rapport + cache + CSV
+  python skills_registry.py --sync               # scan + rapport + cache + POST webhook (unblocked only)
+  python skills_registry.py --compile-cursor     # compile les .mdc de Cursor pour tous les skills OK/WARNING
+  python skills_registry.py --compile-cursor --tier T1
+  python skills_registry.py --compile-cursor --skill branding
 """
 
 import argparse
@@ -21,17 +24,27 @@ except ImportError:
 
 WEBHOOK_URL = "https://schoolswp-n8n.wp1.host/webhook/skills-registry-sync"
 SKILLS_DIRS = [
-    r"D:\VS Code\CLAUDE CODE\projects\schoolswp\.claude\skills",  # source unique (consolidé 2026-04-17)
+    r"D:\VS Code\CLAUDE CODE\projects\schoolswp\.claude\skills",  # source unique
 ]
 CACHE_DIR = os.path.join(SKILLS_DIRS[0], ".registry")
 CACHE_PATH = os.path.join(CACHE_DIR, "registry_cache.json")
+CURSOR_SKILLS_DIR = r"D:\VS Code\CLAUDE CODE\projects\schoolswp\.cursor\skills"
 
 os.makedirs(CACHE_DIR, exist_ok=True)
 
 # ── Parse args ──────────────────────────────────────────────────────────────
 parser = argparse.ArgumentParser()
 parser.add_argument("--sync", action="store_true", help="POST résultats au webhook n8n")
+parser.add_argument("--compile-cursor", action="store_true", help="Compiler les compétences en règles Cursor (.mdc)")
+parser.add_argument("--tier", type=str, help="Filtre par tier pour la compilation Cursor (ex: T1,T2)")
+parser.add_argument("--skill", type=str, help="Filtre par nom de compétence pour la compilation Cursor (ex: branding)")
+parser.add_argument("--pre-commit", action="store_true", help="Exécuter le scan de sécurité ciblé pour Git pre-commit")
+parser.add_argument("--compile-copilot", action="store_true", help="Générer le fichier .github/copilot-instructions.md")
+parser.add_argument(
+    "--copilot-tiers", type=str, default="T1,T2", help="Tiers de compétences à inclure intégralement (default: T1,T2)"
+)
 args = parser.parse_args()
+
 
 # ── Load cache ───────────────────────────────────────────────────────────────
 cache = {}
@@ -96,14 +109,311 @@ def classify(name, rel_path):
     tier = override.get("tier_override") or TIER_MAP.get((usage, impact), "T3")
     return family, subcategory, usage, impact, tier
 
+
+# ── Skills Security Scanner ──────────────────────────────────────────────────
+class SkillsSecurityScanner:
+    def __init__(self):
+        # Whitelisted safe domains
+        self.whitelist_domains = {
+            "google.com",
+            "github.com",
+            "googleapis.com",
+            "microsoft.com",
+            "openai.com",
+            "anthropic.com",
+            "npm.org",
+            "n8n.wp1.host",
+            "uniprot.org",
+            "europepmc.org",
+            "ncbi.nlm.nih.gov",
+            "clinicaltrials.gov",
+            "ebi.ac.uk",
+            "rcsb.org",
+            "ensembl.org",
+            "string-db.org",
+            "wikipathways.org",
+            "reactome.org",
+            "pubchem.ncbi.nlm.nih.gov",
+            "chembl.gitbook.io",
+            "alphafold.ebi.ac.uk",
+            "quickgo.org",
+            "openalex.org",
+            "biorxiv.org",
+            "medrxiv.org",
+            "arxiv.org",
+        }
+
+    def scan_content(self, content: str) -> tuple[str, list[str]]:
+        reasons = []
+
+        self._scan_unicode(content, reasons)
+        self._scan_secrets(content, reasons)
+        self._scan_network(content, reasons)
+        self._scan_injection(content, reasons)
+        self._scan_obfuscation(content, reasons)
+
+        # Determine status
+        status = "OK"
+        for r in reasons:
+            if r.startswith("[BLOCKED]"):
+                status = "BLOCKED"
+                break
+        else:
+            if reasons:
+                status = "WARNING"
+
+        return status, reasons
+
+    def _scan_unicode(self, content: str, reasons: list[str]):
+        # 1. Zero-width spaces / invisible chars
+        invisible_chars = re.findall(r"[\u200b-\u200f\ufeff]", content)
+        if invisible_chars:
+            reasons.append(f"[BLOCKED] Caracteres Unicode invisibles detectes ({len(invisible_chars)} occurrence(s)).")
+
+        # 2. Bidi override characters (RTL/LTR overrides)
+        bidi_chars = re.findall(r"[\u202a-\u202e]", content)
+        if bidi_chars:
+            reasons.append("[BLOCKED] Caracteres d'ecriture bidirectionnelle suspects detectes (RTL/LTR override).")
+
+        # 3. Cyrillic-Latin homoglyphs in same word
+        mixed_words = re.findall(
+            r"\b(?=[a-zA-Z]*[\u0400-\u04FF])(?=[\u0400-\u04FF]*[a-zA-Z])[a-zA-Z\u0400-\u04FF]+\b", content
+        )
+        if mixed_words:
+            reasons.append(
+                f"[BLOCKED] Steganographie/Homoglyphes suspectes : mots melangeant lettres latines et cyrilliques : {', '.join(mixed_words[:3])}"
+            )
+
+    def _scan_secrets(self, content: str, reasons: list[str]):
+        # OpenAI or Anthropic API Keys (or similar sk-...)
+        api_keys = re.findall(r"\bsk-(?:ant-sid01-)?[a-zA-Z0-9_-]{20,}\b", content)
+        if api_keys:
+            reasons.append("[BLOCKED] Cle d'API ou secret d'IA detecte (format sk-...).")
+
+        # Google API Key
+        google_keys = re.findall(r"\bAIza[0-9A-Za-z-_]{35}\b", content)
+        if google_keys:
+            reasons.append("[BLOCKED] Cle d'API Google detectee (format AIza...).")
+
+        # GitHub Token
+        github_tokens = re.findall(r"\bgh[opsr]_[a-zA-Z0-9]{36}\b", content)
+        if github_tokens:
+            reasons.append("[BLOCKED] Jeton d'acces GitHub detecte (format ghp/gho/...).")
+
+        # PEM Private keys
+        if "BEGIN PRIVATE KEY" in content or "BEGIN RSA PRIVATE KEY" in content:
+            reasons.append("[BLOCKED] Cle privee PEM / RSA detectee.")
+
+    def _scan_network(self, content: str, reasons: list[str]):
+        # Extract all URLs
+        urls = re.findall(r"https?://([a-zA-Z0-9.-]+)", content)
+        suspicious_urls = []
+        for url in urls:
+            domain = url.lower()
+            is_whitelisted = False
+            for w in self.whitelist_domains:
+                if domain == w or domain.endswith("." + w):
+                    is_whitelisted = True
+                    break
+            if not is_whitelisted and domain not in suspicious_urls:
+                suspicious_urls.append(domain)
+
+        # Exfiltration patterns: curl / wget referencing non-whitelisted domains or general exfil commands
+        exfil_cmds = ["curl", "wget", "urllib", "requests", "http.client", "socket"]
+        has_network_tool = any(cmd in content.lower() for cmd in exfil_cmds)
+
+        # Check explicit data sending instructions in prompts
+        exfil_prompts = [
+            "exfiltrate",
+            "send the data to",
+            "upload the file to",
+            "post data to",
+            "leak the",
+            "send env to",
+        ]
+        has_exfil_prompt = any(p in content.lower() for p in exfil_prompts)
+
+        if has_exfil_prompt:
+            reasons.append("[BLOCKED] Instructions d'exfiltration de donnees explicites detectees.")
+
+        if suspicious_urls:
+            if (
+                has_network_tool
+                or has_exfil_prompt
+                or any(c in content.lower() for c in ["-f", "-d", "--data", "--post-data"])
+            ):
+                reasons.append(
+                    f"[BLOCKED] Tentative d'exfiltration reseau suspectee vers : {', '.join(suspicious_urls[:3])}"
+                )
+            else:
+                reasons.append(
+                    f"[WARNING] Domaines non listes de confiance detectes : {', '.join(suspicious_urls[:3])}"
+                )
+        elif has_network_tool and any(c in content.lower() for c in ["-f", "-d", "--data", "--post-data"]):
+            reasons.append("[WARNING] Commande curl/wget avec envoi de donnees detectee.")
+
+    def _scan_injection(self, content: str, reasons: list[str]):
+        injection_patterns = [
+            r"ignore\s+(?:all\s+)?previous\s+instructions",
+            r"bypass\s+(?:the\s+)?(?:safety\s+)?rules",
+            r"bypass\s+(?:the\s+)?(?:safety\s+)?restrictions",
+            r"ignore\s+system\s+prompt",
+            r"forget\s+(?:all\s+)?previous\s+instructions",
+            r"you\s+are\s+now\s+unrestricted",
+            r"jailbreak",
+        ]
+
+        found_injections = []
+        for pat in injection_patterns:
+            if re.search(pat, content, re.IGNORECASE):
+                found_injections.append(pat.replace("\\s+", " "))
+
+        if found_injections:
+            reasons.append(f"[BLOCKED] Tentative de prompt injection detectee : {', '.join(found_injections[:3])}")
+
+    def _scan_obfuscation(self, content: str, reasons: list[str]):
+        # Reference to sensitive file reading like .env
+        env_access = re.findall(r"\b(?:cat|open|read|view|load|parse)\s+[\"']?\.env[\"']?", content, re.IGNORECASE)
+        if env_access:
+            reasons.append("[BLOCKED] Tentative suspecte de lecture/acces au fichier .env detectee.")
+
+        # Long base64 or hex blocks (obfuscated code/data)
+        long_strings = re.findall(r"\b[a-zA-Z0-9+/=]{150,}\b", content)
+        if long_strings:
+            for s in long_strings:
+                if len(set(s)) > 10:  # diverse character set
+                    reasons.append(
+                        "[BLOCKED] Obfuscation detectee : bloc de donnees continu suspect (> 150 caracteres)."
+                    )
+                    break
+
+
+def parse_yaml_frontmatter(content):
+    fm_match = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
+    fm_data = {"name": "", "description": "", "paths": []}
+    if not fm_match:
+        return fm_data
+    fm = fm_match.group(1)
+
+    # Extract name
+    nm = re.search(r"^name:\s*(.+)", fm, re.MULTILINE)
+    if nm:
+        fm_data["name"] = nm.group(1).strip().strip('"').strip("'")
+
+    # Extract description
+    dm = re.search(r"^description:\s*[|>]?[+-]?\s*([\s\S]+?)(?=\n\w|\Z)", fm, re.MULTILINE)
+    if dm:
+        desc = re.sub(r"\s+", " ", dm.group(1).strip())
+        if (desc.startswith('"') and desc.endswith('"')) or (desc.startswith("'") and desc.endswith("'")):
+            desc = desc[1:-1].strip()
+        fm_data["description"] = desc
+
+    # Extract paths (supports list styles)
+    pm = re.search(r"^paths:\s*(\[[^\]]*\]|.*)", fm, re.MULTILINE)
+    if pm:
+        paths_raw = pm.group(1).strip()
+        if paths_raw.startswith("[") and paths_raw.endswith("]"):
+            try:
+                paths_list = json.loads(paths_raw.replace("'", '"'))
+                fm_data["paths"] = [p.strip() for p in paths_list]
+            except Exception:
+                pass
+        elif not paths_raw or paths_raw == "|":
+            paths_block_match = re.search(r"^paths:\s*\n((?:\s+-\s*.+\n?)+)", fm, re.MULTILINE)
+            if paths_block_match:
+                block_content = paths_block_match.group(1)
+                paths = re.findall(r"^\s+-\s*(.+)", block_content, re.MULTILINE)
+                fm_data["paths"] = [p.strip().strip('"').strip("'") for p in paths]
+        else:
+            fm_data["paths"] = [paths_raw.strip().strip('"').strip("'")]
+
+    return fm_data
+
+
+# ── Git Pre-Commit Hook Integration ──────────────────────────────────────────
+if args.pre_commit:
+    import subprocess
+    import sys
+
+    print("[pre-commit] running schoolsWP skills security check...")
+    try:
+        # Run git diff to get staged files
+        cmd = ["git", "diff", "--cached", "--name-only", "--diff-filter=ACM"]
+        proc = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        staged_files = proc.stdout.splitlines()
+    except Exception as e:
+        sys.stderr.write(f"[pre-commit] Error running git diff: {e}\n")
+        sys.exit(1)
+
+    # Filter staged files to find SKILL.md under .claude/skills/
+    skill_files = [f for f in staged_files if f.endswith("SKILL.md") and ".claude/skills" in f.replace(os.sep, "/")]
+
+    if not skill_files:
+        print("[pre-commit] No staged schoolsWP SKILL.md files found. Skipping scan.")
+        sys.exit(0)
+
+    print(f"[pre-commit] Found {len(skill_files)} staged skill file(s) to scan.")
+
+    scanner = SkillsSecurityScanner()
+    has_blocked = False
+
+    for fpath in skill_files:
+        # Resolve full path
+        full_path = os.path.abspath(fpath)
+        if not os.path.exists(full_path):
+            full_path = os.path.join(r"D:\VS Code\CLAUDE CODE\projects\schoolswp", fpath)
+
+        if not os.path.exists(full_path):
+            sys.stderr.write(f"[pre-commit] Staged file not found: {fpath}\n")
+            continue
+
+        print(f"  Scanning: {fpath} ...")
+        try:
+            with open(full_path, encoding="utf-8") as f:
+                content = f.read()
+        except Exception as e:
+            sys.stderr.write(f"[pre-commit] Failed to read {fpath}: {e}\n")
+            has_blocked = True
+            continue
+
+        # Strip UTF-8 BOM if present
+        if content.startswith("﻿"):
+            content = content.lstrip("﻿")
+
+        security_status, security_reasons = scanner.scan_content(content)
+        if security_status == "BLOCKED":
+            sys.stderr.write(f"\n[!] SECURITY VIOLATION: Staged skill '{fpath}' is BLOCKED!\n")
+            for reason in security_reasons:
+                sys.stderr.write(f"    - {reason}\n")
+            sys.stderr.write("\n")
+            has_blocked = True
+        elif security_status == "WARNING":
+            print(f"  [WARN] Staged skill '{fpath}' has security warnings:")
+            for reason in security_reasons:
+                print(f"    - {reason}")
+        else:
+            print(f"  [OK] Staged skill '{fpath}' is compliant.")
+
+    if has_blocked:
+        sys.stderr.write("[pre-commit] COMMIT REJECTED. Please fix the security violations above.\n")
+        sys.exit(1)
+
+    print("[pre-commit] schoolsWP skills security compliance: OK.")
+    sys.exit(0)
+
+
 # ── Scan ─────────────────────────────────────────────────────────────────────
 results = []
 seen_names = set()
+scanner = SkillsSecurityScanner()
+
 for skills_dir in SKILLS_DIRS:
     if not os.path.isdir(skills_dir):
         continue
     for root, dirs, files in os.walk(skills_dir):
-        dirs[:] = [d for d in dirs if d not in (".registry", ".archived-workspace-variants", "_to-delete", "node_modules")]
+        dirs[:] = [
+            d for d in dirs if d not in (".registry", ".archived-workspace-variants", "_to-delete", "node_modules")
+        ]
         if "SKILL.md" not in files:
             continue
         path = os.path.join(root, "SKILL.md")
@@ -117,23 +427,13 @@ for skills_dir in SKILLS_DIRS:
         except Exception:
             continue
 
-        # Strip UTF-8 BOM if present so frontmatter regex anchors correctly
+        # Strip UTF-8 BOM if present
         if content.startswith("﻿"):
             content = content.lstrip("﻿")
 
-        fm_match = re.match(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
-        name, desc = folder, ""
-        if fm_match:
-            fm = fm_match.group(1)
-            nm = re.search(r"^name:\s*(.+)", fm, re.MULTILINE)
-            dm = re.search(r"^description:\s*[|>]?[+-]?\s*([\s\S]+?)(?=\n\w|\Z)", fm, re.MULTILINE)
-            if nm:
-                name = nm.group(1).strip().strip('"').strip("'")
-            if dm:
-                desc = re.sub(r"\s+", " ", dm.group(1).strip())
-                # Strip outer YAML quotes (single-line description: "..." or '...')
-                if (desc.startswith('"') and desc.endswith('"')) or (desc.startswith("'") and desc.endswith("'")):
-                    desc = desc[1:-1].strip()
+        fm_data = parse_yaml_frontmatter(content)
+        name = fm_data["name"] or folder
+        desc = fm_data["description"] or ""
 
         desc_short = (desc[:130] + "...") if len(desc) > 130 else desc
         h = hashlib.md5(content.encode()).hexdigest()[:8]
@@ -146,6 +446,10 @@ for skills_dir in SKILLS_DIRS:
             status = "modified"
         else:
             status = "unchanged"
+
+        # Security Scan
+        security_status, security_reasons = scanner.scan_content(content)
+        security_reasons_str = "; ".join(security_reasons)
 
         family, subcategory, usage, impact, tier = classify(name, rel_path)
         results.append(
@@ -162,6 +466,8 @@ for skills_dir in SKILLS_DIRS:
                 "status": status,
                 "hash": h,
                 "detected_at": datetime.now().strftime("%Y-%m-%d"),
+                "security_status": security_status,
+                "security_reasons": security_reasons_str,
             }
         )
 
@@ -185,6 +491,8 @@ for cname in cache:
                 "status": "archived",
                 "hash": "",
                 "detected_at": datetime.now().strftime("%Y-%m-%d"),
+                "security_status": "OK",
+                "security_reasons": "",
             }
         )
 
@@ -214,17 +522,22 @@ with open(CACHE_PATH, "w", encoding="utf-8") as f:
 # ── CSV ───────────────────────────────────────────────────────────────────────
 csv_path = os.path.join(CACHE_DIR, "skills_registry.csv")
 with open(csv_path, "w", encoding="utf-8-sig") as f:
-    f.write("name\tfamily\tsubcategory\tusage\timpact\ttier\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\n")
+    f.write(
+        "name\tfamily\tsubcategory\tusage\timpact\ttier\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\tsecurity_status\tsecurity_reasons\n"
+    )
     for r in sorted(results, key=lambda x: (x["tier"], x["family"], x["subcategory"], x["name"])):
         dc = r["description"].replace("\t", " ").replace("\n", " ")
         f.write(
-            f"{r['name']}\t{r['family']}\t{r['subcategory']}\t{r['usage']}\t{r['impact']}\t{r['tier']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\n"
+            f"{r['name']}\t{r['family']}\t{r['subcategory']}\t{r['usage']}\t{r['impact']}\t{r['tier']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\t{r['security_status']}\t{r['security_reasons']}\n"
         )
 
 # ── Rapport ───────────────────────────────────────────────────────────────────
 counts = {"new": 0, "modified": 0, "unchanged": 0, "archived": 0}
+security_counts = {"OK": 0, "WARNING": 0, "BLOCKED": 0}
 for r in results:
     counts[r["status"]] += 1
+    if r["status"] != "archived":
+        security_counts[r["security_status"]] += 1
 
 now = datetime.now().strftime("%Y-%m-%d %H:%M")
 print(f"\nSKILLS REGISTRY -- {now}")
@@ -234,6 +547,11 @@ print(f"Nouveaux  : {counts['new']}")
 print(f"Modifies  : {counts['modified']}")
 print(f"Inchanges : {counts['unchanged']}")
 print(f"Archives  : {counts['archived']}")
+
+print("\nEtat de securite (hors archives) :")
+print(f"  OK       : {security_counts['OK']}")
+print(f"  WARNING  : {security_counts['WARNING']}")
+print(f"  BLOCKED  : {security_counts['BLOCKED']}")
 
 # Tier breakdown
 tier_counts = {"T1": 0, "T2": 0, "T3": 0, "T4": 0, "Archive": 0}
@@ -252,6 +570,26 @@ for fam in sorted(family_counts.keys()):
     label = fam if fam else "(non classe)"
     print(f"  {label:35s} : {family_counts[fam]}")
 
+# Alerts / Warnings & Blocked skills summary
+blocked_group = sorted(
+    [r for r in results if r.get("security_status") == "BLOCKED" and r["status"] != "archived"], key=lambda x: x["name"]
+)
+warning_group = sorted(
+    [r for r in results if r.get("security_status") == "WARNING" and r["status"] != "archived"], key=lambda x: x["name"]
+)
+
+if blocked_group:
+    print("\n[!] COMPETENCES BLOQUEES (Exclues de la synchronisation et de Cursor) :")
+    for r in blocked_group:
+        print(f"  [BLOCK] {r['name']} ({r['path']})")
+        print(f"          Motif : {r['security_reasons']}")
+
+if warning_group:
+    print("\n[!] AVERTISSEMENTS DE SECURITE :")
+    for r in warning_group:
+        print(f"  [WARN] {r['name']} ({r['path']})")
+        print(f"         Motif : {r['security_reasons']}")
+
 for status_label, status_key in [("NOUVEAUX", "new"), ("MODIFIES", "modified"), ("ARCHIVES", "archived")]:
     group = sorted([r for r in results if r["status"] == status_key], key=lambda x: x["name"])
     if group:
@@ -264,9 +602,197 @@ for status_label, status_key in [("NOUVEAUX", "new"), ("MODIFIES", "modified"), 
 print(f"\nCache : {CACHE_PATH}")
 print(f"CSV   : {csv_path}")
 
+# ── Compile Cursor Rules ──────────────────────────────────────────────────────
+if args.compile_cursor:
+    print("\n" + "=" * 50)
+    print("COMPILATION DES REGLES CURSOR (.mdc)")
+    print("=" * 50)
+
+    os.makedirs(CURSOR_SKILLS_DIR, exist_ok=True)
+
+    # Filter by tier
+    filter_tiers = None
+    if args.tier:
+        filter_tiers = [t.strip() for t in args.tier.split(",")]
+
+    compiled_count = 0
+    for r in results:
+        # Skip archived
+        if r["status"] == "archived":
+            continue
+
+        # Exclude BLOCKED skills
+        if r["security_status"] == "BLOCKED":
+            print(f"  [BLOCK] COMPILATION REJETEE pour {r['name']} (Statut: BLOCKED)")
+            continue
+
+        # Filter by skill name if specified
+        if args.skill and r["name"].lower() != args.skill.lower():
+            continue
+
+        # Filter by tier if specified
+        if filter_tiers and r["tier"] not in filter_tiers:
+            continue
+
+        # Read file
+        path = os.path.join(SKILLS_DIRS[0], r["path"])
+        try:
+            with open(path, encoding="utf-8") as f:
+                content = f.read()
+        except Exception as e:
+            print(f"Erreur de lecture {path} : {e}")
+            continue
+
+        # Strip UTF-8 BOM if present
+        if content.startswith("﻿"):
+            content = content.lstrip("﻿")
+
+        fm_data = parse_yaml_frontmatter(content)
+
+        # Prepare the cursor globs
+        globs_str = "*"
+        if fm_data["paths"]:
+            globs_str = ", ".join(fm_data["paths"])
+
+        # Clean the original frontmatter out of content
+        main_content = re.sub(r"^---\s*\n.*?\n---\s*\n?", "", content, flags=re.DOTALL)
+
+        # Build MDC content with autogen warning
+        mdc_content = f"""---
+description: {fm_data["description"] or r["description"]}
+globs: {globs_str}
+---
+# WARNING: AUTO-GENERATED FILE
+# This file is automatically generated from .claude/skills/{r["path"]}.
+# Do NOT edit this file manually. Any manual changes will be overwritten.
+
+{main_content}"""
+
+        # Output file name (use the skill folder name)
+        skill_folder_name = os.path.basename(os.path.dirname(path))
+        mdc_filename = f"{skill_folder_name}.mdc"
+        mdc_path = os.path.join(CURSOR_SKILLS_DIR, mdc_filename)
+
+        try:
+            with open(mdc_path, "w", encoding="utf-8") as f:
+                f.write(mdc_content)
+            print(f"  -> Genere: {mdc_filename} (Tier: {r['tier']}, Globs: {globs_str})")
+            compiled_count += 1
+        except Exception as e:
+            print(f"Erreur d'ecriture {mdc_path} : {e}")
+
+    print(f"\nCompilation terminee : {compiled_count} regle(s) Cursor (.mdc) generee(s).")
+
+
+# ── Compile Copilot Instructions ──────────────────────────────────────────────
+if args.compile_copilot:
+    print("\n" + "=" * 50)
+    print("COMPILATION DES INSTRUCTIONS COPILOT (.github/copilot-instructions.md)")
+    print("=" * 50)
+
+    github_dir = r"D:\VS Code\CLAUDE CODE\projects\schoolswp\.github"
+    os.makedirs(github_dir, exist_ok=True)
+    copilot_path = os.path.join(github_dir, "copilot-instructions.md")
+
+    allowed_tiers = [t.strip() for t in args.copilot_tiers.split(",")] if args.copilot_tiers else []
+
+    full_compiled_skills = []
+    indexed_skills = []
+
+    for r in results:
+        # Exclude archived and BLOCKED skills
+        if r["status"] == "archived" or r["security_status"] == "BLOCKED":
+            continue
+
+        if r["tier"] in allowed_tiers:
+            full_compiled_skills.append(r)
+        else:
+            indexed_skills.append(r)
+
+    # Build content
+    copilot_content = f"""# schoolsWP AI Agent Instructions (GitHub Copilot & Assistants)
+
+> [!WARNING]
+> WARNING: AUTO-GENERATED FILE
+> This file is automatically generated from the schoolsWP skills registry (.claude/skills/).
+> Do NOT edit this file manually. Any manual changes will be overwritten.
+> Generated at: {datetime.now().strftime("%Y-%m-%d %H:%M")}
+
+Welcome! This document provides global system instructions, rules, and catalog of skills for the schoolsWP ecosystem. Use this context to align your behavior, tone, writing style, and technical decisions with schoolsWP standards.
+
+---
+
+## 🎯 Global Directives & Key Competencies (Tiers: {", ".join(allowed_tiers)})
+
+The following core instructions are loaded in full into your system prompt. Apply them at all times:
+"""
+
+    # Compile major skills in full
+    compiled_count = 0
+    for r in sorted(full_compiled_skills, key=lambda x: (x["tier"], x["family"], x["name"])):
+        path = os.path.join(SKILLS_DIRS[0], r["path"])
+        try:
+            with open(path, encoding="utf-8") as f:
+                content = f.read()
+        except Exception as e:
+            print(f"Erreur de lecture {path} : {e}")
+            continue
+
+        if content.startswith("﻿"):
+            content = content.lstrip("﻿")
+
+        # Clean frontmatter
+        main_content = re.sub(r"^---\s*\n.*?\n---\s*\n?", "", content, flags=re.DOTALL)
+
+        copilot_content += f"""
+### 🛠️ Skill: {r["name"]} ({r["tier"]})
+*   **Family**: {r["family"]}
+*   **Subcategory**: {r["subcategory"]}
+*   **Source File**: `{r["path"]}`
+
+{main_content}
+
+---
+"""
+        compiled_count += 1
+
+    # Append the reference index
+    copilot_content += """
+
+## 📂 schoolsWP Extended Skill Directory (Index of T3, T4 & other skills)
+
+To optimize context window usage, the following skills are not loaded in full. However, they are available in the workspace. If the user request relates to one of these topics, please open and read the **Source File** specified below before answering.
+
+| Skill Name | Family | Subcategory | Description | Source File |
+| :--- | :--- | :--- | :--- | :--- |
+"""
+
+    for r in sorted(indexed_skills, key=lambda x: (x["family"], x["subcategory"], x["name"])):
+        # Strip tab/newlines in description for markdown table formatting
+        desc_clean = r["description"].replace("|", "\\|").replace("\n", " ").strip()
+        copilot_content += f"| `{r['name']}` | {r['family']} | {r['subcategory']} | {desc_clean} | [SKILL.md](file:///d:/VS%20Code/CLAUDE%20CODE/projects/schoolswp/.claude/skills/{r['path']}) |\n"
+
+    try:
+        with open(copilot_path, "w", encoding="utf-8") as f:
+            f.write(copilot_content)
+        print("  -> Genere: .github/copilot-instructions.md")
+        print(f"     - {compiled_count} competence(s) compilee(s) integralement ({', '.join(allowed_tiers)}).")
+        print(f"     - {len(indexed_skills)} competence(s) referencee(s) dans l'index.")
+    except Exception as e:
+        print(f"Erreur d'ecriture du fichier Copilot : {e}")
+
+
 # ── Sync webhook ──────────────────────────────────────────────────────────────
 if args.sync:
-    payload = {"execution_date": datetime.now().isoformat(), "skills": results, "summary": counts}
+    # Exclude BLOCKED skills from webhook sync payload
+    sync_results = [r for r in results if r["security_status"] != "BLOCKED"]
+
+    # Recalculate summary counts for unblocked only
+    sync_counts = {"new": 0, "modified": 0, "unchanged": 0, "archived": 0}
+    for r in sync_results:
+        sync_counts[r["status"]] += 1
+
+    payload = {"execution_date": datetime.now().isoformat(), "skills": sync_results, "summary": sync_counts}
     payload_bytes = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
         WEBHOOK_URL,
@@ -277,7 +803,7 @@ if args.sync:
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             print(f"\nWebhook OK -- {resp.status} {resp.reason}")
-            print(f"URL : {WEBHOOK_URL}")
+            print(f"URL : {WEBHOOK_URL} (Exclusion de {len(results) - len(sync_results)} skill(s) BLOCKED)")
     except Exception as e:
         print(f"\nWebhook ERREUR : {e}")
 else:

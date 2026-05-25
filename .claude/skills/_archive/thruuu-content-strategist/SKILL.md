@@ -1,20 +1,20 @@
 ---
 name: thruuu-content-strategist
-description: |
-  Stratégie de contenu SEO automatisée à partir des exports de clustering thruuu (.xlsx). Analyse les clusters de mots-clés, détermine les actions (créer/optimiser/ignorer), les formats (article, vidéo, forum, outil), la priorité (P1-P3) et génère un rapport stratégie + fichier Excel. Workflow 4 phases avec profil business persistant par domaine.
-  Utilise ce skill quand l'utilisateur dit : "stratégie thruuu", "analyse cet export thruuu", "calendrier éditorial SEO depuis clusters", "plan de contenu thruuu", "priorise mes clusters", ou dépose un .xlsx thruuu dans `thruuu-claude-content-strategist/input/`.
-  NE PAS utiliser pour : remplir UN brief thruuu pour UN mot-clé (utiliser `thruuu-brief-builder`), rédaction d'article depuis un brief (utiliser `thruuu-writer`), ou nouvelle version courante de la stratégie cluster (utiliser `thruuu-strategist` qui est le runtime Claude Code).
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - WebSearch
-  - WebFetch
-  - Agent
+description: (archivé 2026-05-21 - doublon de thruuu-strategist - ne pas auto-déclencher)
 ---
+
+> **SKILL ARCHIVE - 2026-05-21**
+>
+> Doublon quasi exact de `thruuu-strategist`, qui est le runtime Claude Code complet et
+> autonome pour « export clusters thruuu (.xlsx) → stratégie priorisée ». Ce skill-ci
+> était l'ancienne version : un pont vers le projet externe `thruuu-claude-content-strategist/`.
+>
+> **Utiliser `thruuu-strategist` à la place.** Le projet externe `thruuu-claude-content-strategist/`
+> reste utilisable en direct (git séparé, son propre `CLAUDE.md`).
+>
+> Frontmatter neutralisé : ce skill ne se déclenche plus automatiquement. Suppression
+> physique du dossier à faire manuellement via l'explorateur Windows (déplacer vers
+> `.claude/skills/_archive/`). Réversible : restaurer le frontmatter depuis git pour réactiver.
 
 # thruuu Content Strategist
 

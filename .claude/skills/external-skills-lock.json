@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-05-20T09:07:46+00:00",
+  "generated_at": "2026-05-24T21:04:42+00:00",
   "skills": {
     "external-antigravity/avoid-ai-writing": {
       "source": "sickn33/antigravity-awesome-skills",
@@ -116,10 +116,40 @@
       "computed_hash": "sha256:512ad3c1863af02f78dc9013ff4a37ec3e92ee365ef14670ed952f4a3befe073",
       "files_count": 77
     },
+    "external-ecc/agent-architecture-audit": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:780a304991b31409419bbfa2ab13d0b2c1020c8e3b2cb2958030ea1f0ee88ff0",
+      "files_count": 1
+    },
+    "external-ecc/frontend-slides": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:eec2959751a22f31f5922c48c4376c06a6fa5ea42f092602519ee73739f30403",
+      "files_count": 7
+    },
     "external-ecc/gateguard": {
       "source": "affaan-m/everything-claude-code",
       "source_type": "github",
       "computed_hash": "sha256:11ba96b8bf7018fabe2f6cec918f15bdbc6b5be5c2eb00b98446878a8c0829a0",
+      "files_count": 1
+    },
+    "external-ecc/make-interfaces-feel-better": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:d54d8ccfbdbbb4adaaf92e60096c2617a722625a94b794c163d4f4116f28b306",
+      "files_count": 1
+    },
+    "external-ecc/motion-foundations": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:9dee47a4dd7644c4d1ada933eb85f6cea7c98cd1de80f2f767a9c8e322e346b0",
+      "files_count": 1
+    },
+    "external-ecc/motion-patterns": {
+      "source": "affaan-m/everything-claude-code",
+      "source_type": "github",
+      "computed_hash": "sha256:abb7d809b4a7cee903f39ff98885813cc9f3d4cf7e86f813e28a0b56fa238471",
       "files_count": 1
     },
     "external-open-design/docs-page": {
