@@ -2,7 +2,7 @@
 /**
  * Plugin Name: schoolsWP Home Schema
  * Description: Injecte un JSON-LD enrichi sur la home (FR + EN + DE) : Organization, WebSite avec SearchAction, BreadcrumbList, FAQPage. Complémentaire au mu-plugin schoolswp-person-schema (qui couvre Michaël KIHL en tant que personne).
- * Version: 1.0.5
+ * Version: 1.0.6
  * Author: Michaël KIHL
  * License: GPLv2 or later
  */
@@ -187,7 +187,6 @@ function schoolswp_home_schema_build() {
         '@type'    => 'Organization',
         '@id'      => $home_url . '#organization',
         'name'     => $brand_name,
-        'url'      => $home_url,
         'logo'     => [
             '@type' => 'ImageObject',
             'url'   => $logo_url,
