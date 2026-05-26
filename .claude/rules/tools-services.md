@@ -9,6 +9,7 @@ paths: ["tools/**"]
 | --- | --- |
 | `tools/scripts/` | Scripts utilitaires Python : audit/migration Google Drive (`gdrive-*.py`), scripts Notion (`setup-notion-*.js`) |
 | `tools/scripts/legacy/` | Scripts dépréciés et venv legacy — ne pas modifier |
+| `tools/scripts/mcp-sheet-sync/` | Sync du Google Sheet [schoolsWP - MCP Servers](https://docs.google.com/spreadsheets/d/1IAYk6TPU1s8W81lfV4r0mEGH_0VyfwsZo53GkuEwe9k/edit) (inventaire MCP `.mcp.json` + sessions Claude.ai). `push-mcp-sheet.py` (append batché via gws) + `style-mcp-sheet.py` (branding schoolsWP : header dark + vert, zebra, bordures) + `mcp-sheet-rows.json` (43 rows source de vérité). Workflow d'ajout dans le README. |
 | `tools/services/rapidapi-mcp/` | Serveur MCP RapidAPI (`server.py`) — wraps les endpoints RapidAPI |
 | `tools/services/pdf-service/` | Service PDF Node.js (Dockerfile inclus) |
 | `tools/services/schoolsWP-drive-organizer/` | Scripts Google Apps Script pour audit et migration Drive |
@@ -16,6 +17,7 @@ paths: ["tools/**"]
 | `tools/wp-media-upload/` | Upload batch d'images WP avec métadonnées SEO + EXIF (`cli.py upload --article <slug>`) — manifest YAML par article, ExifTool requis pour baker XP* |
 | `tools/html-to-png/` | Convertit `slide-*.html` en PNG via Playwright (Chromium headless). Format par défaut 1080x1350 (Instagram 4:5), options `--width` / `--height` / `--scale` / `--selector`. Lancement : `node tools/html-to-png/capture.mjs <dossier>`. Utilisé pour les carrousels Instagram schoolsWP. |
 | `tools/skoatch/` | Client Python + CLI pour l'API Skoatch (Laravel Sanctum bearer). Genere des articles SEO via Skoatch.com avec polling asynchrone integre. **Isole du pipeline schoolsWP** — destine a un autre site WordPress (BRAND_RULES schoolsWP incompatibles avec output Skoatch). Skill associe : `dev/skoatch-api`. Token dans `tools/skoatch/.env` (gitignored) ou `SKOATCH_TOKEN` au .env racine. |
+| `tools/thruuu_client/` | Client Python pour l'API SERP thruuu v2 (Bearer `THRUUU_API_KEY` du `.env` racine). Réutilisé par le serveur MCP `tools/mcp-servers/thruuu/` et par le workflow n8n `systems/n8n/workflows/thruuu-serp-analysis.json`. Voir [tools/thruuu_client/README.md](../../tools/thruuu_client/README.md) pour les 3 modes (Py / MCP / n8n). 17 tests unitaires dans `tests/test_thruuu_client.py`. |
 
 **Google Drive scripts** (depuis `projects/schoolswp/`) :
 ```bash

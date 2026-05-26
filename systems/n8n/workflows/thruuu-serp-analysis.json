@@ -1,0 +1,197 @@
+{
+  "name": "[Tools] thruuu — SERP Analysis → Sheets + Discord",
+  "nodes": [
+    {
+      "id": "b1000000-0000-0000-0000-000000000001",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [220, 320],
+      "parameters": {},
+      "notes": "Test manuel — remplacer par un Webhook ou Chat Trigger pour declenchement depuis Telegram / Discord / Claude."
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000002",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [440, 320],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "id": "f1", "name": "keyword", "value": "tutor lms vs learndash", "type": "string" },
+            { "id": "f2", "name": "country", "value": "fr", "type": "string" },
+            { "id": "f3", "name": "language", "value": "fr", "type": "string" },
+            { "id": "f4", "name": "device", "value": "desktop", "type": "string" },
+            { "id": "f5", "name": "num", "value": 10, "type": "number" },
+            { "id": "f6", "name": "sheet_id", "value": "REPLACE_WITH_GOOGLE_SHEETS_ID", "type": "string" },
+            { "id": "f7", "name": "discord_channel_id", "value": "REPLACE_WITH_DISCORD_CHANNEL_ID", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "notes": "Inputs centralises. En prod : ces 7 champs viennent du Trigger (Webhook body / Chat message)."
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000003",
+      "name": "thruuu Submit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [660, 320],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.thruuu.com/api/v2/serps",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{$env.THRUUU_API_KEY}}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"keywords\": [\"{{ $json.keyword }}\"],\n  \"parameters\": {\n    \"search_engine\": \"google\",\n    \"country\": \"{{ $json.country }}\",\n    \"language\": \"{{ $json.language }}\",\n    \"device\": \"{{ $json.device }}\",\n    \"num\": {{ $json.num }},\n    \"search_volume\": true,\n    \"analyze_headings\": true,\n    \"analyze_content\": true,\n    \"analyze_top_topics\": true\n  },\n  \"webhook_url\": \"{{ $execution.resumeUrl }}\"\n}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "fullResponse": false,
+              "neverError": false
+            }
+          }
+        }
+      },
+      "notes": "POST asynchrone. webhook_url = URL de resume du node Wait suivant. Necessite THRUUU_API_KEY dans l'env n8n (docker-compose).",
+      "onError": "stopWorkflow",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000004",
+      "name": "Wait for thruuu callback",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [880, 320],
+      "parameters": {
+        "resume": "webhook",
+        "options": {},
+        "limitWaitTime": true,
+        "limitType": "afterTimeInterval",
+        "resumeAmount": 10,
+        "resumeUnit": "minutes"
+      },
+      "webhookId": "thruuu-callback-resume",
+      "notes": "Reprend l'execution quand thruuu POSTe sur $execution.resumeUrl. Timeout 10 min (default thruuu SERP completion ~30-60s)."
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000005",
+      "name": "Extract Brief",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 320],
+      "parameters": {
+        "language": "javaScript",
+        "jsCode": "// Recoit le payload thruuu (callback) et produit un brief editorial flat.\n// Le payload est dans $input.first().json.body (Wait node webhook mode).\nconst payload = $input.first().json.body || $input.first().json;\n\nconst organic = payload.organic || payload.results || payload.organic_results || [];\n\nconst top = organic.slice(0, 10).map((r, i) => ({\n  position: r.position || r.rank || i + 1,\n  title: r.title || null,\n  url: r.url || r.link || null,\n  meta_description: r.description || r.meta_description || null,\n  word_count: r.word_count || r.words || null,\n}));\n\nconst wordCounts = top.map(t => t.word_count).filter(Boolean);\nconst avgWc = wordCounts.length ? Math.round(wordCounts.reduce((a, b) => a + b, 0) / wordCounts.length) : null;\n\nreturn [{\n  json: {\n    keyword: payload.keyword || payload.query || null,\n    country: payload.country || null,\n    language: payload.language || null,\n    device: payload.device || null,\n    target_word_count: avgWc,\n    competitors_count: top.length,\n    top_titles: top.map(t => t.title).filter(Boolean).join(' | '),\n    top_urls: top.map(t => t.url).filter(Boolean).join(' | '),\n    related_searches: (payload.related_searches || []).slice(0, 10).join(' | '),\n    people_also_ask: (payload.people_also_ask || payload.similar_questions || payload.paa || []).slice(0, 10).map(q => typeof q === 'string' ? q : (q.question || q.text || '')).filter(Boolean).join(' | '),\n    top_topics: (payload.top_topics || payload.topics || []).slice(0, 20).map(t => typeof t === 'string' ? t : (t.topic || t.term || '')).filter(Boolean).join(' | '),\n    analyzed_at: new Date().toISOString(),\n    serp_id: payload.id || payload._id || null,\n  }\n}];"
+      },
+      "notes": "Flatten le SERP en brief editorial (1 row Sheets). Tolere plusieurs shapes de payload thruuu."
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000006",
+      "name": "Append to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [1320, 220],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Config').first().json.sheet_id }}",
+          "mode": "id",
+          "cachedResultName": "thruuu logs (dynamic)"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "thruuu-serps",
+          "mode": "name",
+          "cachedResultName": "thruuu-serps"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {
+          "valueInputMode": "USER_ENTERED"
+        }
+      },
+      "onError": "continueRegularOutput",
+      "notes": "Append 1 row par SERP analyse. Premiere ligne de la feuille = headers correspondant aux keys du Extract Brief. Credentials Google Sheets OAuth2 a configurer dans le node."
+    },
+    {
+      "id": "b1000000-0000-0000-0000-000000000007",
+      "name": "Notify Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [1320, 420],
+      "parameters": {
+        "authentication": "webhook",
+        "resource": "message",
+        "operation": "sendLegacy",
+        "content": "=**thruuu SERP analysed**\nKeyword : `{{ $('Extract Brief').first().json.keyword }}`\nCountry/Lang : {{ $('Extract Brief').first().json.country }}/{{ $('Extract Brief').first().json.language }}\nTarget word count : {{ $('Extract Brief').first().json.target_word_count }}\nCompetitors : {{ $('Extract Brief').first().json.competitors_count }}\nPAA : {{ $('Extract Brief').first().json.people_also_ask }}\n\nSheet : https://docs.google.com/spreadsheets/d/{{ $('Config').first().json.sheet_id }}",
+        "options": {}
+      },
+      "notes": "Notification courte. Discord v2 + authentication=webhook + operation=sendLegacy (cf. feedback_n8n_discord_v2_webhook_sendlegacy.md). Credential Discord Webhook a configurer."
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [[{ "node": "Config", "type": "main", "index": 0 }]]
+    },
+    "Config": {
+      "main": [[{ "node": "thruuu Submit", "type": "main", "index": 0 }]]
+    },
+    "thruuu Submit": {
+      "main": [[{ "node": "Wait for thruuu callback", "type": "main", "index": 0 }]]
+    },
+    "Wait for thruuu callback": {
+      "main": [[{ "node": "Extract Brief", "type": "main", "index": 0 }]]
+    },
+    "Extract Brief": {
+      "main": [[
+        { "node": "Append to Sheets", "type": "main", "index": 0 },
+        { "node": "Notify Discord", "type": "main", "index": 0 }
+      ]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Paris",
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all",
+    "saveManualExecutions": true
+  },
+  "_thruuu_workflow_notes": {
+    "version": "v0.1-2026-05-26-initial",
+    "description": "Submit + Wait (resume webhook) + Brief + Sheets + Discord. Wait node remplace le polling : thruuu callback l'URL de resume quand le SERP est pret.",
+    "prerequisites": [
+      "THRUUU_API_KEY dans l'env n8n (docker-compose ou settings)",
+      "Credential Google Sheets OAuth2 actif",
+      "Credential Discord Webhook URL actif",
+      "Sheets : creer un onglet `thruuu-serps` avec headers correspondant aux keys du Extract Brief"
+    ],
+    "headers_sheets": [
+      "keyword", "country", "language", "device", "target_word_count",
+      "competitors_count", "top_titles", "top_urls", "related_searches",
+      "people_also_ask", "top_topics", "analyzed_at", "serp_id"
+    ],
+    "patterns_appliques": [
+      "Wait+webhook au lieu de polling (canon n8n pour API async)",
+      "Discord v2 + authentication=webhook + sendLegacy (memoire feedback_n8n_discord_v2_webhook_sendlegacy.md)",
+      "Sheets append simple (1 ligne par run, jamais update — log append-only)",
+      "Code node parse defensif (multiples shapes de payload thruuu)"
+    ]
+  }
+}
