@@ -18,19 +18,20 @@ Tools exposes :
 
 from __future__ import annotations
 
-import asyncio
 import sys
 from pathlib import Path
 from typing import Any
 
-# tools/mcp-servers/thruuu/server.py -> root = parent.parent.parent
-_ROOT = Path(__file__).resolve().parent.parent.parent
-if str(_ROOT) not in sys.path:
-    sys.path.insert(0, str(_ROOT))
+# tools/mcp-servers/thruuu/server.py -> tools/ = parent.parent
+# On insere tools/ directement dans sys.path car tools/ n'est pas un package
+# (pas de __init__.py au top), donc `from tools.thruuu_client...` ne marche pas
+# de maniere fiable. `from thruuu_client...` resout via thruuu_client/__init__.py.
+_TOOLS = Path(__file__).resolve().parent.parent.parent  # mcp-servers -> tools
+if str(_TOOLS) not in sys.path:
+    sys.path.insert(0, str(_TOOLS))
 
 from fastmcp import FastMCP  # noqa: E402
-
-from tools.thruuu_client.client import (  # noqa: E402
+from thruuu_client.client import (  # noqa: E402
     SerpRequest,
     ThruuuClient,
     ThruuuError,
@@ -237,6 +238,6 @@ async def thruuu_extract_brief(serp_id: str) -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    # Permet python server.py pour debug local, sinon le runtime FastMCP
-    # est invoque via le launcher .mjs depuis Claude Code.
-    asyncio.run(mcp.run_async())  # type: ignore[attr-defined]
+    # FastMCP.run() = stdio transport par defaut, sync.
+    # Invoque par le launcher .mjs (Claude Code) ou en debug local.
+    mcp.run()

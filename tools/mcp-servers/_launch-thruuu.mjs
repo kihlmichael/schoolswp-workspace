@@ -5,9 +5,12 @@
  * Pourquoi : Claude Code ne resout pas la syntaxe ${VAR} dans le bloc env de
  * .mcp.json (cf. feedback_mcp_var_substitution.md). Ce launcher lit
  * THRUUU_API_KEY depuis le .env racine du projet, l'injecte dans process.env,
- * puis spawn `uv run --with fastmcp --with httpx fastmcp run server.py`.
+ * puis spawn le serveur FastMCP via le venv Python projet (.venv/Scripts/python.exe).
  *
- * Pattern aligne sur _launch-dataforseo.mjs (autre MCP a secret cle dans .env).
+ * Historique : version initiale utilisait `uv run --with fastmcp` mais Windows
+ * Smart App Control / WDAC bloquait le binaire fastmcp.exe telecharge par uv
+ * (os error 4551). Solution : pre-install fastmcp dans le venv projet (binaire
+ * trusted) et call direct python server.py (sans wrapper fastmcp CLI).
  */
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -56,22 +59,24 @@ if (!apiKey) {
   process.exit(2);
 }
 
+const venvPython = path.join(projectRoot, '.venv', 'Scripts', 'python.exe');
+if (!fs.existsSync(venvPython)) {
+  console.error(`[thruuu-launcher] venv Python introuvable : ${venvPython}`);
+  console.error('Lancer : pip install uv && uv sync depuis projects/schoolswp/');
+  process.exit(2);
+}
+
 const serverScript = path.join(projectRoot, 'tools', 'mcp-servers', 'thruuu', 'server.py');
 if (!fs.existsSync(serverScript)) {
   console.error(`[thruuu-launcher] server.py introuvable : ${serverScript}`);
   process.exit(2);
 }
 
-const child = spawn(
-  'uv',
-  ['run', '--with', 'fastmcp', '--with', 'httpx', '--with', 'python-dotenv', 'fastmcp', 'run', serverScript],
-  {
-    cwd: projectRoot,
-    env: { ...process.env, THRUUU_API_KEY: apiKey },
-    stdio: 'inherit',
-    shell: process.platform === 'win32',
-  },
-);
+const child = spawn(venvPython, [serverScript], {
+  cwd: projectRoot,
+  env: { ...process.env, THRUUU_API_KEY: apiKey, PYTHONUNBUFFERED: '1' },
+  stdio: 'inherit',
+});
 
 child.on('exit', (code) => process.exit(code ?? 0));
 child.on('error', (err) => {
