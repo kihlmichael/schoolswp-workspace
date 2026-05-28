@@ -13,7 +13,7 @@
 ```
 Salut [prenom|"toi"],
 
-Voilà ton template : [📄 Télécharger la séquence welcome FluentCRM](lien_pdf)
+Voilà ton template : [📄 Télécharger la séquence welcome FluentCRM](https://schoolswp.com/wp-content/uploads/2026/05/welcome-template-fluentcrm.pdf)
 
 (Le lien reste actif, tu peux y revenir quand tu veux.)
 

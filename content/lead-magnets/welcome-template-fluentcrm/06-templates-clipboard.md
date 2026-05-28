@@ -8,7 +8,7 @@ Fichier optimisé pour la création UI des 9 modèles d'e-mail. Pour chaque bloc
 
 Smartcode prénom utilisé : `{{contact.first_name}}` (natif FluentCRM, le fallback se gère via `{{contact.first_name||"toi"}}` si tu préfères).
 
-Lien PDF : remplacer `#REMPLACER_PAR_LIEN_PDF#` dans l'email 1 par l'URL réelle après upload média WP.
+Lien PDF (câblé) : l'email 1 pointe vers `https://schoolswp.com/wp-content/uploads/2026/05/welcome-template-fluentcrm.pdf` (média WP id 2866893).
 
 ---
 
@@ -37,7 +37,7 @@ Clique pour télécharger la séquence welcome FluentCRM
 ```html
 <p>Salut {{contact.first_name}},</p>
 
-<p>Voilà ton template : <a href="#REMPLACER_PAR_LIEN_PDF#" target="_blank" rel="noopener">📄 Télécharger la séquence welcome FluentCRM</a></p>
+<p>Voilà ton template : <a href="https://schoolswp.com/wp-content/uploads/2026/05/welcome-template-fluentcrm.pdf" target="_blank" rel="noopener">📄 Télécharger la séquence welcome FluentCRM</a></p>
 
 <p><em>(Le lien reste actif, tu peux y revenir quand tu veux.)</em></p>
 
