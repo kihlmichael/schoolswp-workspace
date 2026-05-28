@@ -58,7 +58,7 @@ Photo ronde 80×80 +
 
 - **Form name** : `lead-magnet-welcome-template-fluentcrm`
 - **Champs** : `prenom` (optional), `email` (required, email validation)
-- **Intégration FluentCRM** : Add to list `lead_magnet_welcome_template` + Apply tag `source_lm_fluentcrm`
+- **Intégration FluentCRM** : Add to list `FREEBIES schoolsWP` (id 26) + Apply tag `freebie_welcome_template_fluentcrm` (746)
 - **Confirmation type** : Redirect to `/merci-template-welcome-fluentcrm/`
 - **Page de remerciement** : lien de téléchargement direct du PDF (bouton Kadence) + message "Le PDF est aussi dans ta boîte mail"
 - **Failsafe email** : envoi automatique FluentCRM de l'email 1 (séquence) qui contient le lien PDF

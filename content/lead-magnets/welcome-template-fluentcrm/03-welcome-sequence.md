@@ -8,7 +8,7 @@
 
 **Objet** : Ton template est juste ici
 **Pré-header** : Clique pour télécharger la séquence welcome FluentCRM
-**Tag appliqué** : `template_welcome_delivered`
+**Tag appliqué** : `freebie_welcome_template_delivered` (747)
 
 ```
 Salut [prenom|"toi"],
@@ -38,7 +38,7 @@ schoolsWP
 
 **Objet** : Pourquoi j'ai créé ce template
 **Pré-header** : L'histoire de 40 comptes clients vides
-**Tag appliqué** : `story_delivered`
+**Tag appliqué** : `freebie_welcome_template_story_delivered` (748)
 
 ```
 Salut [prenom|"toi"],
@@ -68,7 +68,7 @@ Michaël
 
 **Objet** : L'astuce que j'ajoute à chaque compte client
 **Pré-header** : Goal tracking sur l'email 3 = +30 % de conversions
-**Tag appliqué** : `tip_delivered`
+**Tag appliqué** : `freebie_welcome_template_tip_delivered` (749)
 
 ```
 Salut [prenom|"toi"],
@@ -85,7 +85,7 @@ J'ai écrit un article complet sur les automations FluentCRM
 que j'installe en priorité : [FluentCRM : les 4 automations indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/)
 
 Tu peux tester FluentCRM Pro ici si tu ne l'as pas encore :
-[FluentCRM Pro](https://fluentcrm.com/) (affilié, ça soutient le travail)
+[FluentCRM Pro](https://fluentcrm.com/?ref=723) (affilié, ça soutient le travail)
 
 Michaël
 ```
@@ -96,8 +96,8 @@ Michaël
 
 **Objet** : Ce que tu vas recevoir ensuite
 **Pré-header** : La suite côté FluentCRM
-**Tag appliqué** : `welcome_completed`
-**Bascule** : move to list `affiliate_fluentcrm_sequence`
+**Tag appliqué** : `freebie_welcome_template_completed` (750)
+**Bascule** : Apply tag `sequence_fluentcrm_onboarding` (688) → déclenche le Funnel 2 (séquence affiliation)
 
 ```
 Salut [prenom|"toi"],
@@ -125,27 +125,33 @@ schoolsWP
 
 ## Planning FluentCRM (paramétrage funnel)
 
-- **Funnel name** : `Welcome - LM Welcome Template FluentCRM`
-- **Trigger** : Form submission → `lead-magnet-welcome-template-fluentcrm`
-- **Starting action** : Apply tag `source_lm_fluentcrm` + Add to list `lead_magnet_welcome_template`
-- **Action 1** : Send Email 1 (T+0, immédiat) + Apply tag `template_welcome_delivered`
+> Tags alignés sur la prod (créés via MCP, ids 746-750). Source de vérité : [05-manual-setup-fluentcrm.md](05-manual-setup-fluentcrm.md).
+
+- **Funnel name** : `SEQ - LM Welcome Template FluentCRM`
+- **Trigger** : tag `freebie_welcome_template_fluentcrm` (746) appliqué par l'intégration Fluent Forms
+- **Starting action** : Add to list `FREEBIES schoolsWP` (id 26) [posé par Fluent Forms, pas par le funnel]
+- **Action 1** : Send Email 1 (T+0, immédiat) + Apply tag `freebie_welcome_template_delivered` (747)
 - **Wait** : 1 day
-- **Action 2** : Send Email 2 + Apply tag `story_delivered`
+- **Action 2** : Send Email 2 + Apply tag `freebie_welcome_template_story_delivered` (748)
 - **Wait** : 2 days
-- **Action 3** : Send Email 3 + Apply tag `tip_delivered`
+- **Action 3** : Send Email 3 + Apply tag `freebie_welcome_template_tip_delivered` (749)
 - **Wait** : 4 days
-- **Action 4** : Send Email 4 + Apply tag `welcome_completed`
-- **Action 5** : Move to list `affiliate_fluentcrm_sequence`
+- **Action 4** : Send Email 4 + Apply tag `freebie_welcome_template_completed` (750)
+- **Action 5** : Apply tag `sequence_fluentcrm_onboarding` (688) → déclenche le Funnel 2 (séquence affiliation)
 
 ## Conditions de sortie
 
 - **Unsubscribe** → sortie immédiate (natif FluentCRM)
-- **Clic sur CTA commercial** email 3 → Apply tag `engaged_buyer` (ne sort pas, continue)
+- **Clic sur CTA commercial** email 3 → Apply tag `engaged_lead` (ne sort pas, continue ; optionnel, hors set prod 746-750)
 - **Pas d'ouverture sur 7 jours** → maintien, pas de re-send auto
 
-## Tags FluentCRM à créer
+## Tags FluentCRM
 
-`source_lm_fluentcrm` · `template_welcome_delivered` · `story_delivered` · `tip_delivered` · `welcome_completed` · `engaged_buyer`
+Déjà créés en prod (ids 746-750) : `freebie_welcome_template_fluentcrm` · `freebie_welcome_template_delivered` · `freebie_welcome_template_story_delivered` · `freebie_welcome_template_tip_delivered` · `freebie_welcome_template_completed`
+
+Réutilisés (existants) : `sequence_fluentcrm_onboarding` (688, bascule Funnel 2) · `plugin_fluentcrm` (606, conversion)
+
+Optionnel à créer : `engaged_lead` (goal tracking email 3)
 
 ---
 
@@ -155,6 +161,6 @@ schoolsWP
 2. **Taux d'ouverture email 1** · cible **> 60 %**
 3. **Taux de clic email 1** (téléchargement PDF) · cible **> 40 %**
 4. **Taux de réponse email 2** · cible **> 2 %**
-5. **Taux de bascule vers `affiliate_fluentcrm_sequence`** · cible **> 70 %** des arrivés à email 4
+5. **Taux de bascule vers le Funnel 2** (tag `sequence_fluentcrm_onboarding`) · cible **> 70 %** des arrivés à email 4
 6. **Taux de désinscription cumulé 7 jours** · cible **< 3 %**
 7. **Taux de clic affilié email 3** (FluentCRM Pro) · cible **> 8 %**

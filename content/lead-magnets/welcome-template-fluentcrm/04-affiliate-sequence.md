@@ -1,12 +1,12 @@
 # Séquence affiliation FluentCRM Pro : prise de relais post-welcome
 
-Séquence produite via skill `plugin-email-sequence` le 2026-04-16. Prend le relais de la séquence welcome via la bascule `welcome_completed` → `fluentcrm-sequence`.
+Séquence produite via skill `plugin-email-sequence` le 2026-04-16. Prend le relais de la séquence welcome via la bascule : tag `sequence_fluentcrm_onboarding` (688) appliqué en fin de welcome.
 
 ## Cadrage
 
 - **Plugin** : FluentCRM Pro
 - **Modèle** : Freemium
-- **URL affilié** : `https://fluentcrm.com/` (sans /go/)
+- **URL affilié** : `https://fluentcrm.com/?ref=723` (ref WPManageNinja, sans /go/)
 - **Audience** : freelances WordPress sortant de la séquence welcome lead magnet
 - **Nombre d'emails** : 5
 - **Délai total** : 10 jours (J0 → J10)
@@ -186,7 +186,7 @@ Pas parce que c'est parfait. Parce que c'est simple, efficace, natif WordPress,
 et que tes contacts restent chez toi.
 
 Version gratuite → [wordpress.org/plugins/fluent-crm](https://wordpress.org/plugins/fluent-crm/)
-Version Pro → [fluentcrm.com](https://fluentcrm.com/) (lien affilié)
+Version Pro → [fluentcrm.com](https://fluentcrm.com/?ref=723) (lien affilié)
 
 Michaël
 
@@ -199,55 +199,55 @@ réponds à cet email. Je te file un coup de main.
 ## Automation FluentCRM
 
 **Nom** : `SEQ - FluentCRM Pro Discovery`
-**Trigger upstream** : tag `welcome_completed` appliqué par la séquence welcome → applique `fluentcrm-sequence`
+**Trigger** : tag `sequence_fluentcrm_onboarding` (688) appliqué en fin de séquence welcome (Funnel 1)
 
-### Tags à créer
+### Tags (alignés prod)
 
-| Tag | Rôle | Appliqué quand |
-| --- | --- | --- |
-| `fluentcrm-sequence` | Entrée | Bascule post-welcome |
-| `fluentcrm-converti` | Conversion | Clic sur `fluentcrm.com` (email 4 ou 5) |
-| `fluentcrm-termine` | Fin naturelle | Email 5 envoyé sans conversion |
+| Tag | ID | Rôle | Appliqué quand |
+| --- | --- | --- | --- |
+| `sequence_fluentcrm_onboarding` | 688 | Entrée | Bascule post-welcome (existant) |
+| `plugin_fluentcrm` | 606 | Conversion | Clic sur `fluentcrm.com` (email 4 ou 5) (existant) |
+| `sequence_fluentcrm_termine` | à créer | Fin naturelle | Email 5 envoyé sans conversion |
 
 ### Schéma
 
 ```
-[TRIGGER] Tag "fluentcrm-sequence" appliqué
+[TRIGGER] Tag "sequence_fluentcrm_onboarding" (688) appliqué
     ↓
-[CONDITION] "fluentcrm-converti" OU "fluentcrm-termine" présent ?
+[CONDITION] "plugin_fluentcrm" OU "sequence_fluentcrm_termine" présent ?
     ↓ Non                         ↓ Oui → FIN (anti-doublon)
 [ENVOYER] Email 1 (J0)
     ↓ [ATTENTE 2j]
-[CONDITION] "fluentcrm-converti" ?
+[CONDITION] "plugin_fluentcrm" ?
     ↓ Non                         ↓ Oui → FIN
 [ENVOYER] Email 2 (J2)
     ↓ [ATTENTE 2j]
-[CONDITION] "fluentcrm-converti" ?
+[CONDITION] "plugin_fluentcrm" ?
     ↓ Non                         ↓ Oui → FIN
 [ENVOYER] Email 3 (J4)
     ↓ [ATTENTE 3j]
-[CONDITION] "fluentcrm-converti" ?
+[CONDITION] "plugin_fluentcrm" ?
     ↓ Non                         ↓ Oui → FIN
 [ENVOYER] Email 4 (J7)
     ↓ [ATTENTE 3j]
-[CONDITION] "fluentcrm-converti" ?
+[CONDITION] "plugin_fluentcrm" ?
     ↓ Non                         ↓ Oui → FIN
 [ENVOYER] Email 5 (J10)
     ↓
-[APPLIQUER TAG] fluentcrm-termine
-[RETIRER TAG] fluentcrm-sequence
+[APPLIQUER TAG] sequence_fluentcrm_termine
+[RETIRER TAG] sequence_fluentcrm_onboarding
     ↓
 [FIN]
 ```
 
 ### Tracking de conversion
 
-- **Option A (FluentCRM Pro natif)** : trigger "Link Clicked" sur `fluentcrm.com` → apply tag `fluentcrm-converti`
-- **Option B (FluentCRM gratuit)** : page `/recommande/fluentcrm/` → redirection 301 vers `fluentcrm.com` + webhook OttoKit sur visite → apply tag `fluentcrm-converti`
+- **Option A (FluentCRM Pro natif)** : trigger "Link Clicked" sur `fluentcrm.com` → apply tag `plugin_fluentcrm` (606)
+- **Option B (FluentCRM gratuit)** : page `/recommande/fluentcrm/` → redirection 301 vers `fluentcrm.com` + webhook OttoKit sur visite → apply tag `plugin_fluentcrm` (606)
 
 ### Stratégie post-séquence
 
-- **Relance J+30** : uniquement si nouvelle version majeure FluentCRM Pro, tag temporaire `fluentcrm-relance-30`
+- **Relance J+30** : uniquement si nouvelle version majeure FluentCRM Pro, tag temporaire `sequence_fluentcrm_relance_30`
 - **Cluster "stack WordPress schoolsWP"** : inclusion dans séquence transversale FluentCRM + Fluent Forms + FluentCart
 - **Ne rien faire** : option par défaut (pas de harcèlement)
 
@@ -255,14 +255,14 @@ réponds à cet email. Je te file un coup de main.
 
 ## Checklist pré-lancement
 
-- [ ] Les 3 tags sont créés dans FluentCRM
+- [ ] Tags OK : `sequence_fluentcrm_onboarding` (688) et `plugin_fluentcrm` (606) existent, `sequence_fluentcrm_termine` créé
 - [ ] L'automation `SEQ - FluentCRM Pro Discovery` est en mode brouillon
-- [ ] La bascule depuis `welcome_completed` est testée (pas de gap)
+- [ ] La bascule (tag `sequence_fluentcrm_onboarding`) depuis la fin du welcome est testée (pas de gap)
 - [ ] Les 5 emails sont relus (aucune fonctionnalité inventée, pas de prix non vérifié)
 - [ ] Les liens externes ouvrent en nouvel onglet (`target="_blank" rel="noopener"`)
 - [ ] La page `/recommande/fluentcrm/` redirige correctement (si option B)
-- [ ] Un contact test reçoit les 5 emails et passe bien en `fluentcrm-termine`
-- [ ] Un clic sur `fluentcrm.com` applique `fluentcrm-converti` et sort de la séquence
+- [ ] Un contact test reçoit les 5 emails et passe bien en `sequence_fluentcrm_termine`
+- [ ] Un clic sur `fluentcrm.com` applique `plugin_fluentcrm` et sort de la séquence
 - [ ] L'article `fluentcrm-automations-indispensables` existe sur schoolswp.com
 
 ---

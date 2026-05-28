@@ -133,7 +133,7 @@ Goal tracking sur l'email 3 = +30 % de conversions
 
 <p>Résultat chez mes clients : ~30 % des inscrits déclenchent ce goal. Ça donne une liste ultra-segmentée, prête pour une offre ciblée.</p>
 
-<p>Tu peux tester FluentCRM Pro ici si tu ne l'as pas encore : <a href="https://fluentcrm.com/" target="_blank" rel="noopener">FluentCRM Pro</a> <em>(affilié, ça soutient le travail)</em></p>
+<p>Tu peux tester FluentCRM Pro ici si tu ne l'as pas encore : <a href="https://fluentcrm.com/?ref=723" target="_blank" rel="noopener">FluentCRM Pro</a> <em>(affilié, ça soutient le travail)</em></p>
 
 <p>Michaël</p>
 ```
@@ -428,7 +428,7 @@ Je te laisse décider
 <p>FluentCRM est celui que j'utilise sur schoolsWP et chez tous mes clients. Pas parce que c'est parfait. Parce que c'est simple, efficace, natif WordPress, et que tes contacts restent chez toi.</p>
 
 <p>Version gratuite → <a href="https://wordpress.org/plugins/fluent-crm/" target="_blank" rel="noopener">wordpress.org/plugins/fluent-crm</a><br>
-Version Pro → <a href="https://fluentcrm.com/" target="_blank" rel="noopener">fluentcrm.com</a> <em>(lien affilié)</em></p>
+Version Pro → <a href="https://fluentcrm.com/?ref=723" target="_blank" rel="noopener">fluentcrm.com</a> <em>(lien affilié)</em></p>
 
 <p>Michaël</p>
 

@@ -1,6 +1,8 @@
 # PDF : Template Séquence Welcome FluentCRM
 
-**Format** : 1 page A4 stricte - Inter 11pt min - vert `#00D400` sur titres et flèches - logo schoolsWP top-left - QR code bas-droite vers schoolswp.fr
+> Note : ce fichier était la spec du PDF 1 page d'origine. Le PDF livré est désormais multi-pages : `Template-Welcome-FluentCRM-schoolsWP.pdf`, généré par `_build-pdf.mjs` (source de vérité du contenu rendu). Ce fichier reste comme référence de cadrage.
+
+**Format d'origine** : 1 page A4 - Inter - vert `#00D400` sur titres et flèches - wordmark schoolsWP top-left - QR code bas-droite vers schoolswp.com
 
 ---
 
@@ -24,21 +26,21 @@ Tes clients installent FluentCRM et le compte reste vide. Zéro automation, zér
 
 | # | Délai | Objet | Pré-header | Tag FluentCRM | Condition |
 | --- | --- | --- | --- | --- | --- |
-| 1 | T+0 | Merci + voici ce que tu attendais | On démarre fort | `welcome_sent` | aucune |
-| 2 | T+2j | Pourquoi [entreprise] fait ça | L'histoire derrière | `story_sent` | non désinscrit |
-| 3 | T+4j | Le piège qu'on voit le plus souvent | Et comment l'éviter | `value_sent` | a cliqué email 1 ou 2 |
+| 1 | T+0 | Merci + voici ce que tu attendais | On démarre fort | `welcome_e1_sent` | aucune |
+| 2 | T+1j | Pourquoi [entreprise] fait ça | L'histoire derrière | `welcome_e2_sent` | non désinscrit |
+| 3 | T+3j | Le piège qu'on voit le plus souvent | Et comment l'éviter | `welcome_e3_sent` | non désinscrit |
 | 4 | T+7j | Voilà ce qui arrive maintenant | Newsletter-style | `welcome_completed` | non désinscrit |
 
 **Bascule finale** : tag `welcome_completed` → déplacer vers liste `newsletter_active`.
 **Sortie anticipée** : désinscription = stop complet du funnel.
-**Goal** : clic sur CTA commercial = move to liste `engaged_buyer`.
+**Goal** : clic sur CTA commercial = appliquer le tag `engaged_lead`.
 
 ---
 
 ## Section 3 : Comment l'utiliser en 3 étapes
 
 1. FluentCRM → Automations → New Funnel → Trigger **"New Contact Added"** avec filtre sur la liste cible.
-2. Ajouter **4 actions "Send Email"** avec délais `0 / 2 / 4 / 7 jours`, une action **"Apply Tag"** avant chaque envoi.
+2. Ajouter **4 actions "Send Email"** avec délais `0 / 1 / 3 / 7 jours`, une action **"Apply Tag"** après chaque envoi.
 3. Créer les **4 tags** dans FluentCRM → Tags, puis câbler la **bascule finale** via action "Remove from list" + "Add to list".
 
 ---
@@ -46,4 +48,4 @@ Tes clients installent FluentCRM et le compte reste vide. Zéro automation, zér
 ## Footer
 
 schoolsWP - WordPress. Clair. Structuré. Utile.
-schoolswp.fr
+schoolswp.com
