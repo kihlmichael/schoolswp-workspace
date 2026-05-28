@@ -132,7 +132,7 @@ Score minimum souhaité avant push : 85 sur 100 (bande Prêt). En dessous, corri
 
 | Fichier | Version | Rôle |
 | --- | --- | --- |
-| schoolswp-llms-txt.php | 1.0.0 | Override llms.txt Rank Math (UTF-8 propre, articles par pilier, pages clés, attribution) via hook rank_math/llms_txt/before_output |
+| schoolswp-llms-txt.php | 1.1.1 | Override llms.txt Rank Math (UTF-8 propre, articles par pilier, pages clés, attribution). FR via hook rank_math/llms_txt/before_output ; EN/DE servis sur /en/llms.txt et /de/llms.txt via template_redirect (status_header 200) |
 | schoolswp-affiliate-cloaks.php | 1.1.1 | Cloaks marque plus affiliés (logging WP_DEBUG) |
 | schoolswp-home-schema.php | 1.0.7 | JSON-LD enrichi home (FR plus EN plus DE, logging WP_DEBUG + garde-fous) |
 | schoolswp-ai-summary.php | (voir source) | 5 pills LLM sur articles |
