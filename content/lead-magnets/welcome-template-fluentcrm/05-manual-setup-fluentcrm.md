@@ -4,6 +4,8 @@ Suite aux limites de l'API REST FluentCRM (templates et création d'automations 
 
 > **Diagnostic complet 2026-05-08 (RESOLU + EXECUTE)** : le 500 venait d un payload mal forme. Le controller TemplateController.php ligne 124 attend un body JSON imbrique sous une cle template. Le MCP fluentcrm_template_create envoyait les champs au top level, ce qui produisait null puis fatal Arr::only(). Solution : REST POST direct avec imbrication. Etape 1 effectuee en autonome le 2026-05-08, les 9 templates ont les IDs 2866640 a 2866649 (verifiables dans WP Admin > FluentCRM > E-mails > Modeles d e-mail). Methode debug WP_DEBUG via Novamira execute-php documentee dans sandbox-workspace/wp-debug-toggle/. Voir memory/reference_fluentcrm_mcp_template_create_broken.md.
 
+> **État au 2026-05-28 (audit + corrections)** : tout le tunnel est en place et **publié** (live), pas seulement en brouillon. Composants : Formulaire id 15 (publié, applique liste 26 + tags 746 trigger + 768 `lang_fr`), Funnel welcome id 32 (publié, conforme : délais 0/1/2/4, tags 747→750, bascule tag 688), Funnel affiliation id 33 (publié, délais J0/J2/J4/J7/J10). PDF média 2866893 remplacé par la version finale 10 pages (URL stable inchangée, vérif SHA256). Lien PDF E1 déjà câblé (page merci 2866761 + template E1 2866640 + campaign 183). **Corrigé ce jour** : liens affiliés `fluentcrm.com` → `?ref=723` dans campaigns 185 (welcome E3) et 191 (affiliation E5) + templates 2866642 / 2866649. **Restant (optionnel)** : le Funnel 33 n'a ni conditions d'exit-sur-conversion (clic → tag 606 + sortie) ni tag de fin `sequence_fluentcrm_termine` prévus au brief 04. Les mentions « Draft » et « à remplacer » plus bas sont donc périmées.
+
 ## Déjà fait par API (ne pas refaire)
 
 Les 5 tags ont été créés automatiquement le 2026-04-16 via MCP. Vérification : FluentCRM → Contacts → Étiquettes.
@@ -236,15 +238,16 @@ Pour chaque funnel :
 
 ## Checklist finale
 
-- [ ] 9 modèles d'e-mail créés
-- [ ] Formulaire Fluent Forms créé avec intégration FluentCRM
-- [ ] Landing page publiée (relue + Rank Math configuré)
-- [ ] Page de remerciement créée avec lien PDF
-- [ ] PDF uploadé dans la médiathèque WP
-- [ ] Funnel 1 créé en brouillon
-- [ ] Funnel 2 créé en brouillon
-- [ ] Lien `#REMPLACER_PAR_LIEN_PDF#` remplacé dans l'email 1
+- [x] 9 modèles d'e-mail créés (IDs 2866640-2866649)
+- [x] Formulaire Fluent Forms créé avec intégration FluentCRM (id 15, liste 26 + tags 746/768)
+- [ ] Landing page publiée (id 2867562, à vérifier : status + Rank Math)
+- [x] Page de remerciement créée avec lien PDF (id 2866761, pointe sur l'URL stable)
+- [x] PDF uploadé dans la médiathèque WP (id 2866893, version finale 10 pages)
+- [x] Funnel 1 créé (id 32, publié)
+- [x] Funnel 2 créé (id 33, publié)
+- [x] Lien `#REMPLACER_PAR_LIEN_PDF#` remplacé dans l'email 1
+- [x] Liens affiliés `?ref=723` corrigés (campaigns 185/191 + templates 2866642/2866649)
 - [ ] Tests passés avec contact test
-- [ ] Goal tracking E3 affiliation testé (clic sur fluentcrm.com applique `plugin_fluentcrm`)
-- [ ] Délais remis aux valeurs réelles
-- [ ] Les 2 funnels publiés
+- [ ] Goal tracking / exit-sur-conversion E affiliation (clic `fluentcrm.com` → tag 606 + sortie) — non implémenté (optionnel)
+- [x] Délais aux valeurs réelles (0/1/2/4 + 2/2/3/3)
+- [x] Les 2 funnels publiés
