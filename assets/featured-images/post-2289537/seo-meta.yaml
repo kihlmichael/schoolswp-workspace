@@ -1,0 +1,21 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/learn-wordpress-one-day/
+    title: Is it possible to learn WordPress in a day, the 8-hour action plan
+    subject: "Is it possible to learn WordPress in a day: the honest verdict and the 8-hour plan"
+    description: "Featured image of the schoolsWP guide answering whether you can learn WordPress in a day. Michaël KIHL's honest verdict: in 8 well-organized hours you put a working site online. Action plan by time block: install and settings (hours 1 to 2), pages, post and menu (hours 3 to 4), theme and customization (hours 5 to 6), security and contact form (hours 7 to 8). Basics in a day, mastery through practice."
+    alt: "schoolsWP guide answering if you can learn WordPress in a day, an 8-hour beginner action plan"
+    keywords:
+      [
+        learn wordpress,
+        wordpress in a day,
+        wordpress for beginners,
+        build a wordpress site,
+        wordpress action plan,
+        schoolsWP,
+      ]

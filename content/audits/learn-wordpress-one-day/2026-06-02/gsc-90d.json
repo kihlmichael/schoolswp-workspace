@@ -1,0 +1,9 @@
+{
+  "source": "gsc get_search_by_page_query",
+  "site_url": "https://schoolswp.com/",
+  "page_url": "https://schoolswp.com/en/learn-wordpress-in-a-day/",
+  "days": 90,
+  "date": "2026-06-02",
+  "result": "No search data found for page in the last 90 days.",
+  "interpretation": "Coherent avec 'Discovered - currently not indexed' : 0 impression, 0 clic. La page publiee n'apparait pas dans les SERP. Priorite indexation."
+}

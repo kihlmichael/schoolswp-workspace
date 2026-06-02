@@ -1,0 +1,39 @@
+{
+  "source": "dataforseo_labs_search_intent",
+  "language": "en",
+  "date": "2026-06-02",
+  "items": [
+    {
+      "keyword": "learn wordpress in a day",
+      "intent": "transactional",
+      "probability": 0.968
+    },
+    {
+      "keyword": "can you learn wordpress in a day",
+      "intent": "informational",
+      "probability": 0.984
+    },
+    {
+      "keyword": "how long does it take to learn wordpress",
+      "intent": "informational",
+      "probability": 0.568,
+      "secondary": { "commercial": 0.432 }
+    },
+    {
+      "keyword": "learn wordpress fast",
+      "intent": "informational",
+      "probability": 0.908
+    },
+    {
+      "keyword": "is wordpress hard to learn",
+      "intent": "informational",
+      "probability": 0.971
+    },
+    {
+      "keyword": "wordpress crash course",
+      "intent": "informational",
+      "probability": 0.757
+    }
+  ],
+  "reading": "La requete exacte 'learn wordpress in a day' penche transactionnel (formation/cours), le reste du cluster est informationnel. Mix info + transac = format ideal = guide honnete + CTA formation."
+}

@@ -1,0 +1,82 @@
+{
+  "source": "dataforseo serp_organic_live_advanced",
+  "keyword": "learn wordpress in a day",
+  "location": "United States",
+  "language": "en",
+  "device": "desktop",
+  "date": "2026-06-02",
+  "serp_features": [
+    "ai_overview (rank 1)",
+    "video pack (rank 1) - YouTube full courses 8-10h",
+    "people_also_ask",
+    "discussions_and_forums (Reddit, Quora)",
+    "related_searches"
+  ],
+  "people_also_ask": [
+    "How quickly can I learn WordPress?",
+    "Is WordPress outdated in 2026?",
+    "Can I learn WordPress in 3 days?",
+    "Why are people moving away from WordPress?",
+    "How hard is WordPress for a beginner?",
+    "What is replacing WordPress?",
+    "Is NASA using WordPress?"
+  ],
+  "organic_top": [
+    {
+      "rank": 1,
+      "domain": "quora.com",
+      "title": "Does it really take only 1 day to learn WordPress basics?"
+    },
+    {
+      "rank": 2,
+      "domain": "learn.wordpress.org",
+      "title": "Learn WordPress - There's always more to learn"
+    },
+    {
+      "rank": 3,
+      "domain": "reddit.com",
+      "title": "How do I start learning WordPress?"
+    },
+    {
+      "rank": 4,
+      "domain": "cotswoldwebsites.co.uk",
+      "title": "Learn WordPress In A Day Course (formation payante)"
+    },
+    {
+      "rank": 5,
+      "domain": "wpmudev.com",
+      "title": "How to Learn WordPress: 7-Day Challenge (2016)"
+    },
+    {
+      "rank": 6,
+      "domain": "learn.wordpress.org",
+      "title": "Beginner WordPress User (course)"
+    },
+    {
+      "rank": 7,
+      "domain": "pootlepress.com",
+      "title": "Learn WordPress in 1 day (2015, formation)"
+    }
+  ],
+  "discussions_forums": [
+    "Reddit r/Wordpress: can i learn wordpress in 3 days? (10 posts, 2025-09)",
+    "Quora: Is it possible to become advanced in using WordPress in one day or less?"
+  ],
+  "related_searches": [
+    "learn wordpress in a day reddit",
+    "learn wordpress in a day free",
+    "learn wordpress in a day for beginners",
+    "learn wordpress development free",
+    "best website to learn wordpress for free",
+    "learn wordpress w3schools",
+    "learn wordpress online",
+    "wordpress course with certificate free"
+  ],
+  "insights": [
+    "AI Overview present -> jeu GEO/AEO : la reponse directe en haut d'article (encadre 'Note') est un atout.",
+    "Video pack rank 1 -> intention video forte ; envisager d'embarquer une video.",
+    "Forums (Reddit/Quora) en top -> angle honnete/experientiel valorise (colle au ton verdict).",
+    "2 formations payantes en top (Cotswold, Pootlepress) -> intention transactionnelle ; CTA formation schoolsWP bien aligne.",
+    "Volume exact tres faible (10/mo US) -> jouer le cluster + AI Overview/PAA, pas le volume brut."
+  ]
+}
