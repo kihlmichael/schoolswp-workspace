@@ -77,3 +77,17 @@ Mecanisme choisi : un rappel automatique sur Discord #alerts a chaque checkpoint
 - **Script** : `tools/scripts/linksclub-checkpoint-reminder.ps1` (lit `DISCORD_ROUTINES_WEBHOOK` depuis `.env` au runtime, poste le rappel ; ne collecte aucune donnee). Test manuel : `powershell -File ... -Test`.
 - **Tache planifiee** : `schoolsWP Linksclub Checkpoint` (Task Scheduler local). Declenche le **15 du mois, 09h, juillet -> novembre 2026**. Rattrapage si PC eteint (`StartWhenAvailable`), execution autorisee sur batterie. `EndBoundary` 2026-11-30 = la tache **s'arrete d'elle-meme** apres le bilan de novembre (aucune desactivation manuelle requise).
 - **Quand le ping arrive** : ouvrir une session, recollecter GSC + Ubersuggest sur les 3 pages cibles, remplir la ligne de checkpoint ci-dessus, commit `audit(linksclub): checkpoint <date>`.
+
+## Decision connexe - produit "Liens sur pages positionnees" ECARTE (2026-06-04)
+
+Test du produit Linksgarden "Liens sur pages positionnees" (lien dofollow sur une page externe deja classee) pour booster les pages formation (ZipWP, Tutor LMS, ecosysteme Fluent).
+
+**Conclusion : ecarte pour la niche schoolsWP.** Sur 4 recherches et 3 categories (Web agence & SEO, Logiciel & developpement, Education & formation) :
+
+- Les mots-cles de marque (zipwp, fluentcrm...) = **zero inventaire** (aucun editeur du reseau ne ranke dessus).
+- Les mots-cles larges (creation site internet, wordpress) = uniquement des **pages d'agences locales a 0 top 10**, en position 31-100, a 50-272 EUR. Mauvais ROI.
+- Seul hote correct trouve : e-forma.fr (20 top 10, 78 EUR) sur "formation en ligne", mais **hors-niche** (formation bien-etre) et 94% du solde sur un seul lien -> non retenu.
+
+**Regle de tri retenue** pour ce type de produit : n'acheter qu'un hote avec **Nb Top 10 >= 1 (ideal 3+)**, **Position <= 15**, **Volume >= 100**, thematique alignee, prix raisonnable. Sinon passer.
+
+**Pivot decide** : budget conserve (83 EUR), report sur le **maillage interne** (gratuit, sous controle) -> voir `content/decisions/netlinking/maillage-interne-formations-2026-06.md`.
