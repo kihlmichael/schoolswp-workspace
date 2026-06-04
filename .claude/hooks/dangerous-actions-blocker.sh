@@ -105,6 +105,21 @@ if [[ "$TOOL_NAME" == "Edit" || "$TOOL_NAME" == "Write" ]]; then
         fi
     done
 
+    # Normalize a path for cross-platform comparison:
+    #  - backslashes -> forward slashes
+    #  - leading Windows drive "X:/..." -> git-bash "/x/..." (drive lowercased)
+    # Without this, on Windows the harness sends "C:\Users\..." while the
+    # allowed prefixes are git-bash style ("/c/Users/..."), so they never match
+    # and edits to ~/.claude (memory, plans, settings) get wrongly blocked.
+    normpath() {
+        local p="${1//\\//}"
+        if [[ "$p" =~ ^([A-Za-z]):/(.*)$ ]]; then
+            local drive="${BASH_REMATCH[1],,}"
+            p="/${drive}/${BASH_REMATCH[2]}"
+        fi
+        printf '%s' "$p"
+    }
+
     # Block editing outside project (with configurable exceptions)
     PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(pwd)}"
     CLAUDE_HOME="${HOME}/.claude"
@@ -113,23 +128,29 @@ if [[ "$TOOL_NAME" == "Edit" || "$TOOL_NAME" == "Write" ]]; then
     # Format: colon-separated paths - e.g., ALLOWED_PATHS="/custom/path:/other/path"
     EXTRA_ALLOWED="${ALLOWED_PATHS:-}"
 
+    NORM_FILE=$(normpath "$FILE_PATH")
+
     # Check if path is allowed
     is_allowed=false
 
     # Current project
-    [[ "$FILE_PATH" == "$PROJECT_DIR"* ]] && is_allowed=true
+    [[ "$NORM_FILE" == "$(normpath "$PROJECT_DIR")"* ]] && is_allowed=true
 
     # Claude Code directory (~/.claude/) - plans, logs, settings
-    [[ "$FILE_PATH" == "$CLAUDE_HOME"* ]] && is_allowed=true
+    [[ "$NORM_FILE" == "$(normpath "$CLAUDE_HOME")"* ]] && is_allowed=true
 
     # Temporary files
-    [[ "$FILE_PATH" == "/tmp"* ]] && is_allowed=true
+    [[ "$NORM_FILE" == "/tmp"* ]] && is_allowed=true
 
-    # Additional configured paths
+    # Additional configured paths. Normalize drive letters first
+    # (X:/ -> /x/) so the ':' separator is unambiguous next to Windows
+    # drive colons, then split.
     if [[ -n "$EXTRA_ALLOWED" ]]; then
-        IFS=':' read -ra EXTRA_PATHS <<< "$EXTRA_ALLOWED"
+        EXTRA_NORM="${EXTRA_ALLOWED//\\//}"
+        EXTRA_NORM=$(printf '%s' "$EXTRA_NORM" | sed -E 's#(^|:)([A-Za-z]):/#\1/\L\2/#g')
+        IFS=':' read -ra EXTRA_PATHS <<< "$EXTRA_NORM"
         for allowed_path in "${EXTRA_PATHS[@]}"; do
-            [[ "$FILE_PATH" == "$allowed_path"* ]] && is_allowed=true
+            [[ -n "$allowed_path" && "$NORM_FILE" == "$allowed_path"* ]] && is_allowed=true
         done
     fi
 
