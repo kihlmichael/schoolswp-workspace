@@ -181,20 +181,33 @@ fi
 # Detect nested command substitution via dollar-paren and backtick forms
 # NOTE: backtick literals injected via BT variable to prevent Git Bash parser issue
 BT=$'\x60'
-NESTED_CMD_PATTERNS=(
+DOLLAR_PAREN_PATTERNS=(
     '\$\([^)]*\b(curl|wget|bash|sh|nc|python|ruby|perl|php)\b'
-    "${BT}[^${BT}]*\\b(curl|wget|bash|sh|nc|python|ruby|perl|php)\\b"
     '\$\([^)]*\b(rm|dd|mkfs|chmod|chown)\b'
+)
+# Backtick command substitution is a shell concept. In Write/Edit, backticks are markdown
+# inline code, so scanning file content for them caused false positives on legitimate docs.
+# Keep the dollar-paren check for all tools; scope the backtick check to Bash only.
+BACKTICK_PATTERNS=(
+    "${BT}[^${BT}]*\\b(curl|wget|bash|sh|nc|python|ruby|perl|php)\\b"
     "${BT}[^${BT}]*\\b(rm|dd|mkfs|chmod|chown)\\b"
 )
 
-
-for pattern in "${NESTED_CMD_PATTERNS[@]}"; do
+for pattern in "${DOLLAR_PAREN_PATTERNS[@]}"; do
     if echo "$CONTENT" | grep -qE "$pattern"; then
-        echo "BLOCKED: Nested command execution detected - potential bypass attempt" >&2
+        echo "BLOCKED: Nested command execution detected via command substitution" >&2
         exit 2
     fi
 done
+
+if [[ "$TOOL_NAME" == "Bash" ]]; then
+    for pattern in "${BACKTICK_PATTERNS[@]}"; do
+        if echo "$CONTENT" | grep -qE "$pattern"; then
+            echo "BLOCKED: Nested command execution detected via backticks" >&2
+            exit 2
+        fi
+    done
+fi
 
 # === CONTEXT MANIPULATION ===
 # Attempts to manipulate the conversation context

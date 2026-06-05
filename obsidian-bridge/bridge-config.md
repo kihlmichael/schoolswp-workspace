@@ -10,23 +10,23 @@ date_creation: 2026-05-04
 
 ## 1. Chemins
 
-| Repère | Chemin absolu |
-|--------|---------------|
-| Projet Claude Code | `d:\VS Code\CLAUDE CODE\projects\schoolswp\` |
-| Passerelle projet | `d:\VS Code\CLAUDE CODE\projects\schoolswp\obsidian-bridge\` |
-| Vault Obsidian | `D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\` |
-| Passerelle vault | `D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\` |
-| Mémoire auto Claude Code | `C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\` |
+| Repère                   | Chemin absolu                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| Projet Claude Code       | `d:\VS Code\CLAUDE CODE\projects\schoolswp\`                                         |
+| Passerelle projet        | `d:\VS Code\CLAUDE CODE\projects\schoolswp\obsidian-bridge\`                         |
+| Vault Obsidian           | `D:\MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\`                               |
+| Passerelle vault         | `D:\MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\` |
+| Mémoire auto Claude Code | `C:\Users\conta\.claude\projects\d--VS-Code-CLAUDE-CODE-projects-schoolswp\memory\`  |
 
 > Le chemin du vault contient des espaces, accents et emojis. Tout script doit utiliser `-LiteralPath` côté PowerShell (quand le cmdlet le supporte) ou `-Path` avec guillemets stricts à défaut. Côté Bash, toujours guillemets doubles autour de la variable.
 
 ## 2. Mapping des dossiers
 
-| Côté projet | Côté vault | Sens |
-|-------------|------------|------|
-| `obsidian-bridge/inbox-from-obsidian/` | `00_systeme/claude-code-bridge/inbox-vers-claude/` | Vault -> projet |
-| `obsidian-bridge/outbox-to-obsidian/` | `00_systeme/claude-code-bridge/outbox-depuis-claude/` | Projet -> vault |
-| `obsidian-bridge/logs/` | `00_systeme/claude-code-bridge/logs/` | Miroir |
+| Côté projet                            | Côté vault                                            | Sens            |
+| -------------------------------------- | ----------------------------------------------------- | --------------- |
+| `obsidian-bridge/inbox-from-obsidian/` | `00_systeme/claude-code-bridge/inbox-vers-claude/`    | Vault -> projet |
+| `obsidian-bridge/outbox-to-obsidian/`  | `00_systeme/claude-code-bridge/outbox-depuis-claude/` | Projet -> vault |
+| `obsidian-bridge/logs/`                | `00_systeme/claude-code-bridge/logs/`                 | Miroir          |
 
 ## 3. Conventions de nommage
 

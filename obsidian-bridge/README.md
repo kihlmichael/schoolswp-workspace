@@ -14,7 +14,7 @@ phase: 1
 Canal contrôlé entre le projet Claude Code schoolsWP et le vault Obsidian schoolsWP.
 
 - Projet : `d:\VS Code\CLAUDE CODE\projects\schoolswp\`
-- Vault : `D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\`
+- Vault : `D:\MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\`
 
 Cette passerelle n'est pas une synchronisation. C'est un canal de transit explicite, journalisé, validé manuellement.
 
@@ -32,6 +32,7 @@ obsidian-bridge/
 ├── bridge-config.md                (versionné)
 ├── SOP-claude-obsidian-bridge.md   (versionné)
 ├── SOP-memory-lint.md              (versionné)
+├── promote-to-vault.ps1            (versionné, promotion assistée L0)
 ├── .gitignore                      (versionné)
 ├── templates/                      (versionné)
 │   ├── synthese.md
@@ -44,11 +45,11 @@ obsidian-bridge/
 
 ## 4. Sens de circulation
 
-| De | Vers | Contenu |
-|----|------|---------|
-| Vault | `inbox-from-obsidian/` | Notes que Michaël expose à Claude Code |
-| `outbox-to-obsidian/` | Vault | Drafts produits par Claude Code |
-| Vault `outbox-depuis-claude/` | Zones stables vault | Promotion validée par L0 + log.md |
+| De                            | Vers                   | Contenu                                |
+| ----------------------------- | ---------------------- | -------------------------------------- |
+| Vault                         | `inbox-from-obsidian/` | Notes que Michaël expose à Claude Code |
+| `outbox-to-obsidian/`         | Vault                  | Drafts produits par Claude Code        |
+| Vault `outbox-depuis-claude/` | Zones stables vault    | Promotion validée par L0 + log.md      |
 
 ## 5. Règles essentielles
 
@@ -63,6 +64,7 @@ obsidian-bridge/
 - Procédure complète : [SOP-claude-obsidian-bridge.md](SOP-claude-obsidian-bridge.md)
 - Procédure de lint mémoire : [SOP-memory-lint.md](SOP-memory-lint.md)
 - Configuration humaine : [bridge-config.md](bridge-config.md)
+- Promotion assistée vers zone stable (validation L0 requise, backup + verif intégrés) : [promote-to-vault.ps1](promote-to-vault.ps1)
 - Templates : [templates/](templates/)
 - Charte vault (autorité) : `claude.md` à la racine du vault Obsidian
 - SOP côté vault : `00_systeme/claude-code-bridge/SOP-utilisation.md`
