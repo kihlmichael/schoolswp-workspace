@@ -1,6 +1,6 @@
 ---
-slug: can-clickfunnels-be-useful-for-your-business
-url: https://schoolswp.com/en/?p=1794972
+slug: clickfunnels-review
+url: https://schoolswp.com/en/clickfunnels-review/
 date_snapshot: 2026-06-06
 trigger: Demande Michaël (Audit SEO + Thruuu)
 status: termine
