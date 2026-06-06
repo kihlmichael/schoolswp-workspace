@@ -1,0 +1,29 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/pageradar-avis/
+    title: Avis PageRadar, le monitoring SEO qui anticipe les problèmes
+    subject: "PageRadar, mon avis : la surveillance SEO proactive 24/7"
+    description: "Image à la une de l'avis schoolsWP sur PageRadar, l'outil de monitoring SEO qui surveille tes pages et t'alerte avant que le problème ne coûte du trafic. Tarif dès 29 dollars par mois, 15 jours d'essai gratuit sans carte, alertes e-mail ou Slack."
+    alt: "Avis PageRadar schoolsWP, outil de monitoring SEO proactif, surveillance 24/7 des pages"
+    keywords: [pageradar, avis pageradar, monitoring seo, surveillance seo, core web vitals, alertes seo, schoolsWP]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/pageradar-review/
+    title: PageRadar review, the SEO monitoring tool that anticipates issues
+    subject: "PageRadar, my review: proactive 24/7 SEO monitoring"
+    description: "Featured image of the schoolsWP review of PageRadar, the SEO monitoring tool that watches your pages and warns you before a problem costs you traffic. Pricing from 29 dollars per month, 15-day free trial no card, email or Slack alerts."
+    alt: "schoolsWP PageRadar review, proactive SEO monitoring tool, 24/7 page surveillance"
+    keywords: [pageradar, pageradar review, seo monitoring, seo surveillance, core web vitals, seo alerts, schoolsWP]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/pageradar-bewertung/
+    title: PageRadar Test, das SEO-Monitoring das Probleme voraussieht
+    subject: "PageRadar, mein Fazit: proaktives SEO-Monitoring rund um die Uhr"
+    description: "Beitragsbild der schoolsWP-Bewertung zu PageRadar, dem SEO-Monitoring-Tool, das deine Seiten überwacht und dich warnt, bevor ein Problem Traffic kostet. Preis ab 29 Dollar pro Monat, 15 Tage gratis testen ohne Karte, E-Mail- oder Slack-Warnungen."
+    alt: "schoolsWP PageRadar Test, proaktives SEO-Monitoring-Tool, Seitenüberwachung rund um die Uhr"
+    keywords: [pageradar, pageradar test, seo monitoring, seo überwachung, core web vitals, seo warnungen, schoolsWP]

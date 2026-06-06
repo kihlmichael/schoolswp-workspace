@@ -1,0 +1,99 @@
+{
+  "source": "Ubersuggest serp_analysis",
+  "keyword": "avis booknetic",
+  "locId": 2250,
+  "location": "France",
+  "language": "fr",
+  "collected_at": "2026-06-03",
+  "note": "Apport clef vs DataForSEO : Domain Authority (DA) par resultat. Ubersuggest remonte aussi des resultats hors top-10 DataForSEO (Quicksprout, Trustpilot, CodeCanyon).",
+  "results": [
+    {
+      "position": 1,
+      "domain": "logiciels.pro",
+      "title": "Booknetic: Avis Prix & Alternatives",
+      "type": "featured_snippet"
+    },
+    {
+      "position": 2,
+      "domain": "softwareadvice.fr",
+      "da": 30,
+      "type": "organic"
+    },
+    {
+      "position": 3,
+      "domain": "www3.technologyevaluation.com",
+      "da": 50,
+      "type": "organic"
+    },
+    { "position": 4, "domain": "capterra.fr", "da": 39, "type": "organic" },
+    {
+      "position": 5,
+      "domain": "booknetic.com",
+      "da": 32,
+      "note": "page officielle EN"
+    },
+    {
+      "position": 6,
+      "domain": "comparatif-logiciels.fr",
+      "da": 14,
+      "note": "DA tres faible -> creneau ranking"
+    },
+    { "position": 7, "domain": "facebook.com", "da": 96 },
+    {
+      "position": 8,
+      "domain": "booking-wp-plugin.com",
+      "da": 38,
+      "note": "Bookly vs Booknetic (comparatif)"
+    },
+    {
+      "position": 9,
+      "domain": "booknetic.com",
+      "da": 32,
+      "note": "homepage, 1018 FB shares"
+    },
+    {
+      "position": 10,
+      "domain": "quicksprout.com",
+      "da": 73,
+      "note": "AVIS editorial (EN) qui RANK -> un avis editorial peut se classer"
+    },
+    {
+      "position": 11,
+      "domain": "booknetic.com",
+      "da": 32,
+      "note": "blog officiel: Booknetic Review 2026"
+    },
+    {
+      "position": 12,
+      "domain": "bookingpressplugin.com",
+      "da": 34,
+      "note": "BookingPress vs Booknetic"
+    },
+    { "position": 13, "domain": "trustpilot.com", "da": 93 },
+    {
+      "position": 14,
+      "domain": "booknetic.com",
+      "da": 32,
+      "note": "Bookly PRO vs Booknetic"
+    },
+    {
+      "position": 15,
+      "domain": "codecanyon.net",
+      "da": 84,
+      "note": "page d'achat (cible affiliee), 1896 FB shares"
+    },
+    {
+      "position": 16,
+      "domain": "booknetic.com",
+      "da": 32,
+      "note": "9 Best WP Appointment Booking Plugins 2026"
+    }
+  ],
+  "insights": {
+    "seo_difficulty": "FAIBLE (SD 17 pour 'avis booknetic', SD 13 pour 'booknetic')",
+    "da_concurrents_directs_beatable": "comparatif-logiciels.fr DA 14 (pos 6), booking-wp-plugin DA 38, bookingpress DA 34 -> deloggeables par une page editoriale de qualite",
+    "da_intouchables": "facebook 96, trustpilot 93, codecanyon 84, quicksprout 73 (mais 4 sont annuaires/marques, pas des avis FR concurrents)",
+    "revision_vs_dataforseo": "Un avis editorial PEUT ranker (Quicksprout pos 10, DA 73). Le slot avis editorial FR reste libre. La barriere n'est pas la difficulte (faible) mais le VOLUME (quasi nul).",
+    "longue_traine_codecanyon": "presence de codecanyon en SERP + suggestions 'codecanyon/pricing' confirme l'intention d'achat -> le CTA affilie manquant est d'autant plus critique"
+  }
+}

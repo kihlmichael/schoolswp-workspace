@@ -1,0 +1,2505 @@
+{
+  "id": "05252100-7577-0400-0000-bfb1637bd8ce",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "se_type": "google",
+      "keyword": "fortuneo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-22 19:32:28 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 0.13,
+        "search_volume": 6600,
+        "low_top_of_page_bid": 0.01,
+        "high_top_of_page_bid": 0.05,
+        "monthly_searches": {
+          "2026-04": 5400,
+          "2026-03": 6600,
+          "2026-02": 6600,
+          "2026-01": 8100,
+          "2025-12": 5400,
+          "2025-11": 5400,
+          "2025-10": 6600,
+          "2025-09": 6600,
+          "2025-08": 6600,
+          "2025-07": 6600,
+          "2025-06": 6600,
+          "2025-05": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 9,
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1344.4,
+        "dofollow": 422.7,
+        "referring_pages": 1153.4,
+        "referring_domains": 98.9,
+        "referring_main_domains": 76.2,
+        "rank": 91.1,
+        "main_domain_rank": 520.7,
+        "last_updated_time": "2026-04-12 11:44:02 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 07:43:12 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "opodo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 01:23:10 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 2900,
+        "categories": [
+          10004,
+          10276,
+          11088
+        ],
+        "monthly_searches": {
+          "2026-04": 2400,
+          "2026-03": 2900,
+          "2026-02": 3600,
+          "2026-01": 2900,
+          "2025-12": 1900,
+          "2025-11": 2400,
+          "2025-10": 2400,
+          "2025-09": 2400,
+          "2025-08": 2900,
+          "2025-07": 3600,
+          "2025-06": 2900,
+          "2025-05": 3600
+        },
+        "search_volume_trend": {
+          "monthly": -17,
+          "quarterly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "lt",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 113.4,
+        "dofollow": 82.8,
+        "referring_pages": 99.4,
+        "referring_domains": 37.2,
+        "referring_main_domains": 29.2,
+        "rank": 42.1,
+        "main_domain_rank": 574.1,
+        "last_updated_time": "2026-04-13 05:51:29 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:23:41 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "plinko avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 12:04:50 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 5.33,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 1.76,
+        "high_top_of_page_bid": 6.11,
+        "categories": [
+          10108,
+          11866
+        ],
+        "monthly_searches": {
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 1000,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 1300,
+          "2025-09": 2400,
+          "2025-08": 3600,
+          "2025-07": 8100,
+          "2025-06": 9900,
+          "2025-05": 9900
+        },
+        "search_volume_trend": {
+          "quarterly": -61,
+          "yearly": -97
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "pl",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 114.7,
+        "dofollow": 30.2,
+        "referring_pages": 114.7,
+        "referring_domains": 102.7,
+        "referring_main_domains": 90.2,
+        "rank": 70.5,
+        "main_domain_rank": 605.5,
+        "last_updated_time": "2026-04-12 11:16:56 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 17:41:15 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "aosom avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-25 01:19:18 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 6.58,
+        "search_volume": 2900,
+        "low_top_of_page_bid": 8,
+        "high_top_of_page_bid": 46.73,
+        "categories": [
+          10108,
+          11866
+        ],
+        "monthly_searches": {
+          "2026-04": 3600,
+          "2026-03": 3600,
+          "2026-02": 2400,
+          "2026-01": 2400,
+          "2025-12": 2900,
+          "2025-11": 3600,
+          "2025-10": 1900,
+          "2025-09": 2400,
+          "2025-08": 2400,
+          "2025-07": 2400,
+          "2025-06": 2400,
+          "2025-05": 2900
+        },
+        "search_volume_trend": {
+          "quarterly": 50,
+          "yearly": 24
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "nb",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0,
+        "dofollow": 0,
+        "referring_pages": 0,
+        "referring_domains": 0,
+        "referring_main_domains": 0,
+        "rank": 7.7,
+        "main_domain_rank": 467.4,
+        "last_updated_time": "2026-04-13 10:15:08 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 02:50:27 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kijimea avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 10:16:38 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 1.41,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.23,
+        "high_top_of_page_bid": 1.72,
+        "categories": [
+          10108,
+          13647
+        ],
+        "monthly_searches": {
+          "2026-04": 1300,
+          "2026-03": 1600,
+          "2026-02": 1300,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1300,
+          "2025-09": 1300,
+          "2025-08": 2400,
+          "2025-07": 2400,
+          "2025-06": 1900,
+          "2025-05": 1900
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "nl",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 13.7,
+        "dofollow": 2,
+        "referring_pages": 12.8,
+        "referring_domains": 12.1,
+        "referring_main_domains": 8.5,
+        "rank": 16,
+        "main_domain_rank": 412.4,
+        "last_updated_time": "2026-05-03 18:42:03 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 11:08:32 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "novara avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 04:12:40 +00:00",
+        "competition": 0.43,
+        "competition_level": "MEDIUM",
+        "cpc": 0.93,
+        "search_volume": 1600,
+        "low_top_of_page_bid": 0.21,
+        "high_top_of_page_bid": 1.15,
+        "categories": [
+          10108,
+          13647
+        ],
+        "monthly_searches": {
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 1000,
+          "2026-01": 1300,
+          "2025-12": 1300,
+          "2025-11": 2900,
+          "2025-10": 2400,
+          "2025-09": 1900,
+          "2025-08": 2400,
+          "2025-07": 2900,
+          "2025-06": 1600,
+          "2025-05": 880
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -28,
+          "yearly": 243
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.8,
+        "dofollow": 0.2,
+        "referring_pages": 0.2,
+        "referring_domains": 0.2,
+        "referring_main_domains": 0.2,
+        "rank": 3,
+        "main_domain_rank": 481.7,
+        "last_updated_time": "2026-05-03 18:20:38 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 17:20:15 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "pagani zonda prix",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 21:39:52 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 1000,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 880,
+          "2026-03": 720,
+          "2026-02": 880,
+          "2026-01": 1000,
+          "2025-12": 1300,
+          "2025-11": 1300,
+          "2025-10": 1000,
+          "2025-09": 1000,
+          "2025-08": 1600,
+          "2025-07": 1000,
+          "2025-06": 1000,
+          "2025-05": 1000
+        },
+        "search_volume_trend": {
+          "monthly": 22
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "nl",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 12.3,
+        "dofollow": 12.2,
+        "referring_pages": 12.3,
+        "referring_domains": 1.1,
+        "referring_main_domains": 1.1,
+        "rank": 38.5,
+        "main_domain_rank": 518.3,
+        "last_updated_time": "2026-04-14 12:48:19 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:22:32 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "avis vinatis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 10:03:54 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 3.9,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 0.73,
+        "high_top_of_page_bid": 13.73,
+        "categories": [
+          10002,
+          10028,
+          10222
+        ],
+        "monthly_searches": {
+          "2026-04": 720,
+          "2026-03": 880,
+          "2026-02": 720,
+          "2026-01": 880,
+          "2025-12": 2400,
+          "2025-11": 1300,
+          "2025-10": 880,
+          "2025-09": 1000,
+          "2025-08": 880,
+          "2025-07": 880,
+          "2025-06": 1000,
+          "2025-05": 1000
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": -28
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "vinatis avis",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "es",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0,
+        "dofollow": 0,
+        "referring_pages": 0,
+        "referring_domains": 0,
+        "referring_main_domains": 0,
+        "rank": 4.4,
+        "main_domain_rank": 463.8,
+        "last_updated_time": "2023-09-10 07:18:52 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 08:42:47 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "sanitino avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 17:48:55 +00:00",
+        "competition": 0.83,
+        "competition_level": "HIGH",
+        "cpc": 0.82,
+        "search_volume": 1000,
+        "low_top_of_page_bid": 0.58,
+        "high_top_of_page_bid": 0.59,
+        "categories": [
+          10002,
+          10028
+        ],
+        "monthly_searches": {
+          "2026-04": 1000,
+          "2026-03": 1300,
+          "2026-02": 1000,
+          "2026-01": 1000,
+          "2025-12": 880,
+          "2025-11": 1000,
+          "2025-10": 1000,
+          "2025-09": 880,
+          "2025-08": 880,
+          "2025-07": 880,
+          "2025-06": 880,
+          "2025-05": 880
+        },
+        "search_volume_trend": {
+          "monthly": -23
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "de",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1637.3,
+        "dofollow": 1629.1,
+        "referring_pages": 1629.4,
+        "referring_domains": 4.9,
+        "referring_main_domains": 4.8,
+        "rank": 47.7,
+        "main_domain_rank": 649.6,
+        "last_updated_time": "2026-04-14 10:27:16 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 23:59:57 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "agego avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 02:54:15 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 140,
+          "2026-03": 210,
+          "2026-02": 140,
+          "2026-01": 590,
+          "2025-12": 390,
+          "2025-11": 390,
+          "2025-10": 720,
+          "2025-09": 2400,
+          "2025-08": 6600
+        },
+        "search_volume_trend": {
+          "monthly": -33
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "uk",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 18.7,
+        "dofollow": 11.3,
+        "referring_pages": 16.6,
+        "referring_domains": 5.2,
+        "referring_main_domains": 4.6,
+        "rank": 38.4,
+        "main_domain_rank": 568.6,
+        "last_updated_time": "2026-05-04 15:05:57 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-04 20:29:28 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "aelita code lyoko",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 07:20:18 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          13441,
+          13575
+        ],
+        "monthly_searches": {
+          "2026-04": 880,
+          "2026-03": 720,
+          "2026-02": 880,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 880,
+          "2025-08": 880,
+          "2025-07": 1000,
+          "2025-06": 1000,
+          "2025-05": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "code lyoko aelita",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.7,
+        "dofollow": 0.5,
+        "referring_pages": 0.7,
+        "referring_domains": 0.4,
+        "referring_main_domains": 0.4,
+        "rank": 3.7,
+        "main_domain_rank": 611,
+        "last_updated_time": "2026-05-04 15:11:54 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 05:57:39 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "code lyoko aelita",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 21:11:58 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          13441,
+          13575
+        ],
+        "monthly_searches": {
+          "2026-04": 880,
+          "2026-03": 720,
+          "2026-02": 880,
+          "2026-01": 720,
+          "2025-12": 720,
+          "2025-11": 720,
+          "2025-10": 720,
+          "2025-09": 880,
+          "2025-08": 880,
+          "2025-07": 1000,
+          "2025-06": 1000,
+          "2025-05": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 22,
+          "yearly": -12
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 2.3,
+        "dofollow": 2.2,
+        "referring_pages": 2.2,
+        "referring_domains": 1.3,
+        "referring_main_domains": 1.1,
+        "rank": 18.5,
+        "main_domain_rank": 616.8,
+        "last_updated_time": "2026-05-04 14:23:44 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "navigational",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 11:52:57 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "mikado annecy",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 11:53:38 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 880,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 720,
+          "2026-03": 720,
+          "2026-02": 1000,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 880,
+          "2025-10": 1000,
+          "2025-09": 1000,
+          "2025-08": 480,
+          "2025-07": 590,
+          "2025-06": 1300,
+          "2025-05": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -28
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 7,
+        "detected_language": "eo",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 27.7,
+        "dofollow": 20.7,
+        "referring_pages": 23.1,
+        "referring_domains": 14.2,
+        "referring_main_domains": 13.7,
+        "rank": 54.6,
+        "main_domain_rank": 785.9,
+        "last_updated_time": "2026-04-14 23:27:06 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 17:44:15 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "baumalu avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-22 15:27:44 +00:00",
+        "competition": 0.7,
+        "competition_level": "HIGH",
+        "cpc": 1.01,
+        "search_volume": 720,
+        "low_top_of_page_bid": 0.24,
+        "high_top_of_page_bid": 1.42,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 480,
+          "2026-02": 880,
+          "2026-01": 1900,
+          "2025-12": 880,
+          "2025-11": 720,
+          "2025-10": 480,
+          "2025-09": 1000,
+          "2025-08": 390,
+          "2025-07": 390,
+          "2025-06": 210,
+          "2025-05": 210
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -64
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 22.7,
+        "dofollow": 20.6,
+        "referring_pages": 21.5,
+        "referring_domains": 2.9,
+        "referring_main_domains": 2.4,
+        "rank": 24.9,
+        "main_domain_rank": 417.8,
+        "last_updated_time": "2026-04-05 08:26:03 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 06:17:09 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "azialo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 14:14:48 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 2.17,
+        "search_volume": 720,
+        "low_top_of_page_bid": 1.08,
+        "high_top_of_page_bid": 3.35,
+        "categories": [
+          10108,
+          13647
+        ],
+        "monthly_searches": {
+          "2026-04": 1000,
+          "2026-03": 480,
+          "2026-02": 320,
+          "2026-01": 260,
+          "2025-12": 140,
+          "2025-11": 210,
+          "2025-10": 320,
+          "2025-09": 320,
+          "2025-08": 720,
+          "2025-07": 1300,
+          "2025-06": 1900,
+          "2025-05": 1300
+        },
+        "search_volume_trend": {
+          "monthly": 108,
+          "quarterly": 212,
+          "yearly": 14
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 6,
+        "detected_language": "de",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 25.4,
+        "dofollow": 17.8,
+        "referring_pages": 22,
+        "referring_domains": 11.2,
+        "referring_main_domains": 10.8,
+        "rank": 75.5,
+        "main_domain_rank": 554.2,
+        "last_updated_time": "2026-04-16 16:34:39 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 03:54:51 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "ledkia avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 01:54:59 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 1.27,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.92,
+        "high_top_of_page_bid": 0.94,
+        "categories": [
+          10007,
+          11503,
+          13418
+        ],
+        "monthly_searches": {
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 720,
+          "2026-01": 720,
+          "2025-12": 590,
+          "2025-11": 720,
+          "2025-10": 590,
+          "2025-09": 590,
+          "2025-08": 590,
+          "2025-07": 590,
+          "2025-06": 590,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "quarterly": -18,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "da",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.4,
+        "dofollow": 0.4,
+        "referring_pages": 0.4,
+        "referring_domains": 0.3,
+        "referring_main_domains": 0.3,
+        "rank": 24.4,
+        "main_domain_rank": 517.5,
+        "last_updated_time": "2026-04-16 19:26:18 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:31:04 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kia niro avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 11:30:23 +00:00",
+        "competition": 0.83,
+        "competition_level": "HIGH",
+        "cpc": 0.25,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.17,
+        "high_top_of_page_bid": 0.88,
+        "categories": [
+          10108,
+          13691
+        ],
+        "monthly_searches": {
+          "2026-04": 480,
+          "2026-03": 720,
+          "2026-02": 480,
+          "2026-01": 720,
+          "2025-12": 480,
+          "2025-11": 480,
+          "2025-10": 590,
+          "2025-09": 590,
+          "2025-08": 590,
+          "2025-07": 590,
+          "2025-06": 720,
+          "2025-05": 720
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "eo",
+        "is_another_language": true,
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 3.1,
+        "dofollow": 3,
+        "referring_pages": 3,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.7,
+        "rank": 25.9,
+        "main_domain_rank": 556.9,
+        "last_updated_time": "2026-04-16 19:38:36 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 11:44:52 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kinedo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 15:16:59 +00:00",
+        "competition": 0.49,
+        "competition_level": "MEDIUM",
+        "cpc": 3.56,
+        "search_volume": 590,
+        "low_top_of_page_bid": 1.14,
+        "high_top_of_page_bid": 4.49,
+        "categories": [
+          10011,
+          10091,
+          10508,
+          11783,
+          12936
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 720,
+          "2026-02": 260,
+          "2026-01": 260,
+          "2025-12": 210,
+          "2025-11": 260,
+          "2025-10": 720,
+          "2025-09": 720,
+          "2025-08": 390,
+          "2025-07": 1000,
+          "2025-06": 1000,
+          "2025-05": 1300
+        },
+        "search_volume_trend": {
+          "monthly": -56,
+          "quarterly": 23,
+          "yearly": -75
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.2,
+        "dofollow": 0.1,
+        "referring_pages": 0.2,
+        "referring_domains": 0.2,
+        "referring_main_domains": 0.2,
+        "rank": 3.2,
+        "main_domain_rank": 422,
+        "last_updated_time": "2026-05-04 19:16:05 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 16:13:50 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "akeo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 18:11:47 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 590,
+        "categories": [
+          10108,
+          11866
+        ],
+        "monthly_searches": {
+          "2026-04": 590,
+          "2026-03": 590,
+          "2026-02": 590,
+          "2026-01": 590,
+          "2025-12": 480,
+          "2025-11": 590,
+          "2025-10": 590,
+          "2025-09": 590,
+          "2025-08": 590,
+          "2025-07": 720,
+          "2025-06": 590,
+          "2025-05": 590
+        },
+        "search_volume_trend": {
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "avis akeo",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "nb",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 49.2,
+        "dofollow": 38.9,
+        "referring_pages": 43.1,
+        "referring_domains": 4.2,
+        "referring_main_domains": 3.9,
+        "rank": 48.5,
+        "main_domain_rank": 347.1,
+        "last_updated_time": "2026-05-19 20:48:27 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 08:57:20 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kalista avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 23:20:06 +00:00",
+        "competition": 0.85,
+        "competition_level": "HIGH",
+        "cpc": 0.48,
+        "search_volume": 590,
+        "categories": [
+          10108,
+          13647
+        ],
+        "monthly_searches": {
+          "2026-04": 260,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 880,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 390,
+          "2025-09": 320,
+          "2025-08": 320,
+          "2025-07": 590,
+          "2025-06": 720,
+          "2025-05": 880
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -19,
+          "yearly": -70
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "es",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 11.6,
+        "dofollow": 5.7,
+        "referring_pages": 6.5,
+        "referring_domains": 0.6,
+        "referring_main_domains": 0.6,
+        "rank": 15.5,
+        "main_domain_rank": 432,
+        "last_updated_time": "2026-05-04 19:19:21 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 11:06:10 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "amikado avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 18:50:31 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.47,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.13,
+        "high_top_of_page_bid": 0.66,
+        "categories": [
+          10108,
+          11866
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 1600,
+          "2025-11": 1300,
+          "2025-10": 590,
+          "2025-09": 260,
+          "2025-08": 260,
+          "2025-07": 260,
+          "2025-06": 480,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "avis amikado",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 1,
+        "detected_language": "eo",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1474.4,
+        "dofollow": 1451,
+        "referring_pages": 1463.2,
+        "referring_domains": 17.4,
+        "referring_main_domains": 17.1,
+        "rank": 51.6,
+        "main_domain_rank": 595.7,
+        "last_updated_time": "2026-05-05 15:29:16 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 04:58:13 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "liseuse vivlio avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 21:36:35 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.24,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.04,
+        "high_top_of_page_bid": 0.35,
+        "categories": [
+          10108,
+          11866
+        ],
+        "monthly_searches": {
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 590,
+          "2025-12": 1300,
+          "2025-11": 1000,
+          "2025-10": 590,
+          "2025-09": 480,
+          "2025-08": 590,
+          "2025-07": 480,
+          "2025-06": 320,
+          "2025-05": 320
+        },
+        "search_volume_trend": {
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.1,
+        "dofollow": 0.1,
+        "referring_pages": 0.1,
+        "referring_domains": 0.1,
+        "referring_main_domains": 0.1,
+        "rank": 0.8,
+        "main_domain_rank": 536.6,
+        "last_updated_time": "2026-05-05 08:42:42 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 16:35:22 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "vitaros avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 17:42:55 +00:00",
+        "competition": 0.26,
+        "competition_level": "LOW",
+        "cpc": 1.73,
+        "search_volume": 590,
+        "low_top_of_page_bid": 0.96,
+        "high_top_of_page_bid": 5.63,
+        "categories": [
+          10002,
+          10028,
+          10222
+        ],
+        "monthly_searches": {
+          "2026-04": 390,
+          "2026-03": 480,
+          "2026-02": 480,
+          "2026-01": 590,
+          "2025-12": 480,
+          "2025-11": 720,
+          "2025-10": 880,
+          "2025-09": 720,
+          "2025-08": 590,
+          "2025-07": 720,
+          "2025-06": 880,
+          "2025-05": 720
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -19,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "et",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 5.7,
+        "dofollow": 0.4,
+        "referring_pages": 5.7,
+        "referring_domains": 4.8,
+        "referring_main_domains": 4.7,
+        "rank": 4.9,
+        "main_domain_rank": 484.9,
+        "last_updated_time": "2026-04-16 17:22:21 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 23:44:24 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kiko avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 21:59:28 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 0.75,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.7,
+        "high_top_of_page_bid": 1.44,
+        "categories": [
+          10108,
+          13691
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 390,
+          "2025-09": 390,
+          "2025-08": 390,
+          "2025-07": 320,
+          "2025-06": 320,
+          "2025-05": 590
+        },
+        "search_volume_trend": {
+          "monthly": -46,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.3,
+        "dofollow": 0.3,
+        "referring_pages": 0.3,
+        "referring_domains": 0.2,
+        "referring_main_domains": 0.2,
+        "rank": 11.4,
+        "main_domain_rank": 444.4,
+        "last_updated_time": "2026-04-17 00:06:51 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-28 08:58:22 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "gemmyo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 02:58:56 +00:00",
+        "competition": 0.91,
+        "competition_level": "HIGH",
+        "cpc": 1.79,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.18,
+        "high_top_of_page_bid": 4.7,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 480,
+          "2025-09": 480,
+          "2025-08": 390,
+          "2025-07": 480,
+          "2025-06": 480,
+          "2025-05": 480
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "quarterly": -18,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.1,
+        "dofollow": 0.1,
+        "referring_pages": 0.1,
+        "referring_domains": 0.1,
+        "referring_main_domains": 0.1,
+        "rank": 5.4,
+        "main_domain_rank": 536.6,
+        "last_updated_time": "2026-04-17 00:52:50 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 20:07:08 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "ekoi promo",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 08:53:49 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.17,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.25,
+        "high_top_of_page_bid": 1.09,
+        "categories": [
+          10004,
+          10276,
+          11088
+        ],
+        "monthly_searches": {
+          "2026-04": 480,
+          "2026-03": 480,
+          "2026-02": 320,
+          "2026-01": 590,
+          "2025-12": 590,
+          "2025-11": 590,
+          "2025-10": 390,
+          "2025-09": 320,
+          "2025-08": 480,
+          "2025-07": 590,
+          "2025-06": 390,
+          "2025-05": 260
+        },
+        "search_volume_trend": {
+          "quarterly": 50,
+          "yearly": 85
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 2,
+        "detected_language": "eo",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 310.5,
+        "dofollow": 284.9,
+        "referring_pages": 310.5,
+        "referring_domains": 21.6,
+        "referring_main_domains": 18.2,
+        "rank": 66.1,
+        "main_domain_rank": 498,
+        "last_updated_time": "2026-05-06 06:41:47 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-29 14:51:38 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "kiko promo",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-22 13:19:56 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 0.45,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.17,
+        "high_top_of_page_bid": 0.75,
+        "categories": [
+          10004,
+          10276,
+          11088
+        ],
+        "monthly_searches": {
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 390,
+          "2026-01": 590,
+          "2025-12": 720,
+          "2025-11": 1600,
+          "2025-10": 480,
+          "2025-09": 320,
+          "2025-08": 320,
+          "2025-07": 390,
+          "2025-06": 390,
+          "2025-05": 260
+        },
+        "search_volume_trend": {
+          "yearly": 50
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "es",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.8,
+        "dofollow": 0.8,
+        "referring_pages": 0.8,
+        "referring_domains": 0.3,
+        "referring_main_domains": 0.2,
+        "rank": 7.1,
+        "main_domain_rank": 416.6,
+        "last_updated_time": "2026-02-10 04:24:22 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "last_updated_time": "2026-04-28 07:25:17 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "avis kiko",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-22 09:03:31 +00:00",
+        "competition": 0.15,
+        "competition_level": "LOW",
+        "cpc": 0.75,
+        "search_volume": 480,
+        "low_top_of_page_bid": 0.7,
+        "high_top_of_page_bid": 1.44,
+        "categories": [
+          10108,
+          13691
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 590,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 590,
+          "2025-11": 480,
+          "2025-10": 390,
+          "2025-09": 390,
+          "2025-08": 390,
+          "2025-07": 320,
+          "2025-06": 320,
+          "2025-05": 590
+        },
+        "search_volume_trend": {
+          "monthly": -46,
+          "quarterly": -33,
+          "yearly": -18
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "kiko avis",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.3,
+        "dofollow": 0.3,
+        "referring_pages": 0.3,
+        "referring_domains": 0.2,
+        "referring_main_domains": 0.2,
+        "rank": 11.4,
+        "main_domain_rank": 479.4,
+        "last_updated_time": "2026-04-17 02:51:56 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 00:51:29 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "alarme homiris avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 09:06:34 +00:00",
+        "competition": 0.67,
+        "competition_level": "MEDIUM",
+        "cpc": 3.37,
+        "search_volume": 480,
+        "low_top_of_page_bid": 1.61,
+        "high_top_of_page_bid": 3.46,
+        "categories": [
+          10004,
+          10299,
+          11313,
+          12620
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 720,
+          "2026-02": 480,
+          "2026-01": 480,
+          "2025-12": 390,
+          "2025-11": 720,
+          "2025-10": 390,
+          "2025-09": 320,
+          "2025-08": 320,
+          "2025-07": 480,
+          "2025-06": 590,
+          "2025-05": 720
+        },
+        "search_volume_trend": {
+          "monthly": -56,
+          "quarterly": -33,
+          "yearly": -46
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "homiris alarme avis",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1.4,
+        "dofollow": 1.3,
+        "referring_pages": 1.4,
+        "referring_domains": 1.2,
+        "referring_main_domains": 1.2,
+        "rank": 28.3,
+        "main_domain_rank": 405,
+        "last_updated_time": "2026-05-06 15:55:50 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-25 02:52:42 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "avis sur oqoro",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 00:49:57 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 480,
+        "categories": [
+          10002,
+          10028
+        ],
+        "monthly_searches": {
+          "2026-04": 480,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 480,
+          "2025-09": 590,
+          "2025-08": 480,
+          "2025-07": 590,
+          "2025-06": 720,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "monthly": 23,
+          "quarterly": 50,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "core_keyword": "oqoro avis",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 38.8,
+        "dofollow": 32.9,
+        "referring_pages": 37.6,
+        "referring_domains": 17.3,
+        "referring_main_domains": 15.9,
+        "rank": 54.1,
+        "main_domain_rank": 527.4,
+        "last_updated_time": "2026-05-06 15:35:23 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 04:00:24 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "peinture unikalo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 16:05:24 +00:00",
+        "competition": 0.14,
+        "competition_level": "LOW",
+        "cpc": 0.1,
+        "search_volume": 390,
+        "categories": [
+          10013,
+          13388,
+          13595
+        ],
+        "monthly_searches": {
+          "2026-04": 390,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 260,
+          "2025-11": 320,
+          "2025-10": 480,
+          "2025-09": 480,
+          "2025-08": 480,
+          "2025-07": 480,
+          "2025-06": 390,
+          "2025-05": 590
+        },
+        "search_volume_trend": {
+          "quarterly": 22,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 3
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 0.2,
+        "dofollow": 0.2,
+        "referring_pages": 0.2,
+        "referring_domains": 0.1,
+        "referring_main_domains": 0.1,
+        "rank": 2.1,
+        "main_domain_rank": 398.4,
+        "last_updated_time": "2026-03-06 03:18:06 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 17:16:53 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "olympo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-23 22:11:37 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 50,
+          "2026-03": 90,
+          "2026-02": 140,
+          "2026-01": 170,
+          "2025-12": 140,
+          "2025-11": 170,
+          "2025-10": 140,
+          "2025-09": 170,
+          "2025-08": 320,
+          "2025-07": 1600,
+          "2025-06": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -44,
+          "quarterly": -64
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "fr",
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 1.6,
+        "dofollow": 0.7,
+        "referring_pages": 1.6,
+        "referring_domains": 1.6,
+        "referring_main_domains": 1.5,
+        "rank": 1.4,
+        "main_domain_rank": 582,
+        "last_updated_time": "2026-05-19 21:06:57 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-05-08 09:34:08 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "vesira avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-25 11:55:50 +00:00",
+        "competition": 0.51,
+        "competition_level": "MEDIUM",
+        "cpc": 0.91,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.16,
+        "high_top_of_page_bid": 1.31,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-04": 210,
+          "2026-03": 210,
+          "2026-02": 260,
+          "2026-01": 390,
+          "2025-12": 590,
+          "2025-11": 720,
+          "2025-10": 320,
+          "2025-09": 320,
+          "2025-08": 320,
+          "2025-07": 390,
+          "2025-06": 390,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "quarterly": -19,
+          "yearly": -56
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "ur",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 7.7,
+        "dofollow": 6.4,
+        "referring_pages": 7.4,
+        "referring_domains": 4.9,
+        "referring_main_domains": 4.3,
+        "rank": 18.9,
+        "main_domain_rank": 528,
+        "last_updated_time": "2026-04-17 03:22:58 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 22:59:06 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "lepape avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 23:06:22 +00:00",
+        "competition": 0.42,
+        "competition_level": "MEDIUM",
+        "cpc": 0.28,
+        "search_volume": 390,
+        "categories": [
+          10108,
+          13691
+        ],
+        "monthly_searches": {
+          "2026-04": 110,
+          "2026-03": 110,
+          "2026-02": 210,
+          "2026-01": 170,
+          "2025-12": 390,
+          "2025-11": 720,
+          "2025-10": 480,
+          "2025-09": 390,
+          "2025-08": 390,
+          "2025-07": 390,
+          "2025-06": 720,
+          "2025-05": 880
+        },
+        "search_volume_trend": {
+          "quarterly": -48,
+          "yearly": -88
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "keyword_difficulty": 14,
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 5869.2,
+        "dofollow": 3829.8,
+        "referring_pages": 4156,
+        "referring_domains": 12.7,
+        "referring_main_domains": 11.7,
+        "rank": 108.7,
+        "main_domain_rank": 534.3,
+        "last_updated_time": "2026-05-06 02:05:23 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 15:49:51 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "stremio avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 22:16:48 +00:00",
+        "competition": 0,
+        "competition_level": "LOW",
+        "search_volume": 390,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 210,
+          "2026-03": 210,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 480,
+          "2025-09": 260,
+          "2025-08": 720,
+          "2025-07": 320,
+          "2025-06": 320,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "quarterly": -34,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "it",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 6.2,
+        "dofollow": 5.8,
+        "referring_pages": 6,
+        "referring_domains": 1,
+        "referring_main_domains": 1,
+        "rank": 21.3,
+        "main_domain_rank": 723.8,
+        "last_updated_time": "2026-05-06 23:45:05 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-29 23:00:56 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "diamanta avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-25 03:44:52 +00:00",
+        "competition": 0.56,
+        "competition_level": "MEDIUM",
+        "cpc": 1.81,
+        "search_volume": 390,
+        "low_top_of_page_bid": 0.9,
+        "high_top_of_page_bid": 4.45,
+        "categories": [
+          10021,
+          10171
+        ],
+        "monthly_searches": {
+          "2026-04": 260,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 320,
+          "2025-12": 720,
+          "2025-11": 590,
+          "2025-10": 260,
+          "2025-09": 320,
+          "2025-08": 480,
+          "2025-07": 320,
+          "2025-06": 260,
+          "2025-05": 390
+        },
+        "search_volume_trend": {
+          "monthly": -33,
+          "quarterly": -19,
+          "yearly": -33
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "es",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 2.1,
+        "dofollow": 1.2,
+        "referring_pages": 2,
+        "referring_domains": 1.1,
+        "referring_main_domains": 1,
+        "rank": 19.1,
+        "main_domain_rank": 557.4,
+        "last_updated_time": "2026-04-17 08:16:46 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 14:45:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "faguo avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-24 09:47:57 +00:00",
+        "competition": 0.8,
+        "competition_level": "HIGH",
+        "cpc": 0.97,
+        "search_volume": 390,
+        "categories": [
+          10004,
+          13804
+        ],
+        "monthly_searches": {
+          "2026-04": 210,
+          "2026-03": 320,
+          "2026-02": 590,
+          "2026-01": 590,
+          "2025-12": 480,
+          "2025-11": 390,
+          "2025-10": 320,
+          "2025-09": 320,
+          "2025-08": 260,
+          "2025-07": 480,
+          "2025-06": 260,
+          "2025-05": 260
+        },
+        "search_volume_trend": {
+          "monthly": -34,
+          "quarterly": -64,
+          "yearly": -19
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "en",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 302,
+        "dofollow": 0.4,
+        "referring_pages": 301.4,
+        "referring_domains": 0.4,
+        "referring_main_domains": 0.3,
+        "rank": 33.1,
+        "main_domain_rank": 452.3,
+        "last_updated_time": "2026-05-07 08:12:43 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-27 16:51:38 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "anora avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-19 19:11:04 +00:00",
+        "competition": 0.01,
+        "competition_level": "LOW",
+        "cpc": 0.1,
+        "search_volume": 320,
+        "categories": [
+          10004,
+          10276,
+          11088
+        ],
+        "monthly_searches": {
+          "2026-04": 70,
+          "2026-03": 140,
+          "2026-02": 90,
+          "2026-01": 170,
+          "2025-12": 110,
+          "2025-11": 110,
+          "2025-10": 110,
+          "2025-09": 210,
+          "2025-08": 260,
+          "2025-07": 320,
+          "2025-06": 480,
+          "2025-05": 1600
+        },
+        "search_volume_trend": {
+          "monthly": -50,
+          "quarterly": -22,
+          "yearly": -78
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "pt",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 18.8,
+        "dofollow": 1.6,
+        "referring_pages": 18.7,
+        "referring_domains": 17.4,
+        "referring_main_domains": 17.3,
+        "rank": 12,
+        "main_domain_rank": 556.1,
+        "last_updated_time": "2026-04-17 20:22:28 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-03 02:37:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "lumalea avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-20 20:40:48 +00:00",
+        "competition": 1,
+        "competition_level": "HIGH",
+        "cpc": 1.03,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.73,
+        "high_top_of_page_bid": 10.69,
+        "categories": [
+          10008
+        ],
+        "monthly_searches": {
+          "2026-04": 210,
+          "2026-03": 260,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 320,
+          "2025-11": 320,
+          "2025-10": 320,
+          "2025-09": 260,
+          "2025-08": 320,
+          "2025-07": 320,
+          "2025-06": 210,
+          "2025-05": 260
+        },
+        "search_volume_trend": {
+          "monthly": -19,
+          "quarterly": -34,
+          "yearly": -34
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "de",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 4.3,
+        "dofollow": 1.9,
+        "referring_pages": 2.5,
+        "referring_domains": 0.7,
+        "referring_main_domains": 0.6,
+        "rank": 10.7,
+        "main_domain_rank": 530.2,
+        "last_updated_time": "2026-05-20 02:16:48 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-05-05 03:34:21 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword": "aterno avis",
+      "location_code": 2250,
+      "language_code": "fr",
+      "keyword_info": {
+        "se_type": "google",
+        "last_updated_time": "2026-05-21 10:37:20 +00:00",
+        "competition": 0.04,
+        "competition_level": "LOW",
+        "cpc": 2.41,
+        "search_volume": 320,
+        "low_top_of_page_bid": 0.55,
+        "high_top_of_page_bid": 1.93,
+        "categories": [
+          10108,
+          13647
+        ],
+        "monthly_searches": {
+          "2026-04": 320,
+          "2026-03": 390,
+          "2026-02": 320,
+          "2026-01": 390,
+          "2025-12": 260,
+          "2025-11": 390,
+          "2025-10": 390,
+          "2025-09": 320,
+          "2025-08": 210,
+          "2025-07": 210,
+          "2025-06": 170,
+          "2025-05": 210
+        },
+        "search_volume_trend": {
+          "monthly": -18,
+          "yearly": 23
+        }
+      },
+      "keyword_properties": {
+        "se_type": "google",
+        "synonym_clustering_algorithm": "text_processing",
+        "detected_language": "eo",
+        "is_another_language": true,
+        "words_count": 2
+      },
+      "avg_backlinks_info": {
+        "se_type": "google",
+        "backlinks": 59.3,
+        "dofollow": 58.7,
+        "referring_pages": 59.1,
+        "referring_domains": 0.5,
+        "referring_main_domains": 0.5,
+        "rank": 52.7,
+        "main_domain_rank": 481.9,
+        "last_updated_time": "2026-04-17 20:16:10 +00:00"
+      },
+      "search_intent_info": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "last_updated_time": "2026-04-29 14:05:26 +00:00"
+      }
+    }
+  ]
+}

@@ -128,6 +128,7 @@ class BaseContentAgent:
 
     def __init__(self, model: str | None = None) -> None:
         raw_model = model or os.getenv("MODEL_WRITER", "claude-sonnet-4-6")
+        self.raw_model = raw_model
         self._provider, self.model = resolve_provider(raw_model)
         self._log = logging.getLogger(f"agents.{self.name}")
 

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WordPress-Artikel strukturieren - Infografik DE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-light: #f4f5f7;
+        --bg-dark: #0f1419;
+        --green: #00d400;
+        --black: #0f1419;
+        --grey-text: #5a6470;
+        --line: #d8dce3;
+        --white: #ffffff;
+        --grey-light: #aab2bd;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        background: var(--bg-light);
+      }
+      .slide {
+        width: 1080px;
+        background: var(--bg-light);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .ig-header {
+        background: var(--bg-dark);
+        padding: 70px 72px 74px 72px;
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+      }
+      .ig-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .ig-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--grey-light);
+      }
+      .ig-kicker .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 4px rgba(0, 212, 0, 0.18);
+      }
+      .wordmark {
+        font-weight: 900;
+        letter-spacing: -1px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      .wordmark .s {
+        color: var(--white);
+      }
+      .wordmark .w {
+        color: var(--green);
+      }
+      .ig-header .wordmark {
+        font-size: 30px;
+      }
+      .ig-title {
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 1.04;
+        letter-spacing: -2px;
+        color: var(--white);
+        text-transform: uppercase;
+        max-width: 900px;
+      }
+      .ig-title em {
+        font-style: normal;
+        color: var(--green);
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 40px;
+        padding: 52px 72px;
+        align-items: start;
+      }
+      .step.light {
+        background: var(--bg-light);
+      }
+      .step.dark {
+        background: var(--bg-dark);
+      }
+      .step-num {
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: var(--green);
+      }
+      .step-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .step-title {
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 1.08;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+      }
+      .step.light .step-title {
+        color: var(--black);
+      }
+      .step.dark .step-title {
+        color: var(--white);
+      }
+      .step-desc {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 1.45;
+        max-width: 760px;
+      }
+      .step.light .step-desc {
+        color: var(--grey-text);
+      }
+      .step.dark .step-desc {
+        color: var(--green);
+      }
+      .ig-footer {
+        background: var(--bg-dark);
+        padding: 60px 72px 64px 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        border-top: 4px solid var(--green);
+      }
+      .ig-footer .wordmark {
+        font-size: 92px;
+        letter-spacing: -3px;
+      }
+      .ig-footer .footer-url {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: var(--grey-light);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <div class="ig-header">
+        <div class="ig-header-top">
+          <span class="ig-kicker"
+            ><span class="dot"></span>WordPress · Lesbarkeit</span
+          >
+          <span class="wordmark"
+            ><span class="s">schools</span><span class="w">WP</span></span
+          >
+        </div>
+        <h1 class="ig-title">
+          Wie strukturiert man einen WordPress-Artikel für mehr
+          <em>Lesbarkeit</em>
+        </h1>
+      </div>
+
+      <div class="step light">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Zwischenüberschriften</div>
+          <div class="step-desc">
+            Unterteilen Sie Ihren Text mit Zwischenüberschriften (H2, H3 usw.),
+            um die Leser durch Ihren Artikel zu führen.
+          </div>
+        </div>
+      </div>
+
+      <div class="step dark">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Kurze Absätze</div>
+          <div class="step-desc">
+            Halten Sie Ihre Absätze kurz, idealerweise 2–3 Sätze, um das Lesen
+            auf verschiedenen Geräten zu erleichtern.
+          </div>
+        </div>
+      </div>
+
+      <div class="step light">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Aufzählungen &amp; Listen</div>
+          <div class="step-desc">
+            Verwenden Sie Listen, um Informationen übersichtlich und prägnant
+            darzustellen.
+          </div>
+        </div>
+      </div>
+
+      <div class="step dark">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">Bilder &amp; Videos</div>
+          <div class="step-desc">
+            Fügen Sie zwischen den Textblöcken visuelle Elemente ein, um das
+            Interesse aufrechtzuerhalten und Ihre Punkte zu veranschaulichen.
+          </div>
+        </div>
+      </div>
+
+      <div class="step light">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <div class="step-title">Interne Links</div>
+          <div class="step-desc">
+            Verbinden Sie Ihre Artikel miteinander, um die Navigation zu
+            verbessern und die Autorität Ihrer Website zu stärken.
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-footer">
+        <span class="wordmark"
+          ><span class="s">schools</span><span class="w">WP</span></span
+        >
+        <span class="footer-url">schoolswp.com</span>
+      </div>
+    </div>
+  </body>
+</html>

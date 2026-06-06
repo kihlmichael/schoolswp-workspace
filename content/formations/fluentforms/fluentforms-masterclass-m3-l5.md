@@ -1,9 +1,9 @@
-# Script video — Module 3, Lecon 5 : Save & Resume
+# Script video - Module 3, Lecon 5 : Save & Resume
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 3 — Formulaires avances
-**Lecon** : 5/8 — Save & Resume
+**Module** : 3 - Formulaires avances
+**Lecon** : 5/8 - Save & Resume
 **Duree** : 6 min (~900 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast activation et test
@@ -11,15 +11,15 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Tu as un formulaire long — candidature, inscription, dossier de financement. Le visiteur commence a le remplir, mais il n'a pas toutes les informations sous la main. Son CV est sur un autre ordinateur. Il doit verifier un numero de dossier. Il est interrompu.
+Tu as un formulaire long - candidature, inscription, dossier de financement. Le visiteur commence a le remplir, mais il n'a pas toutes les informations sous la main. Son CV est sur un autre ordinateur. Il doit verifier un numero de dossier. Il est interrompu.
 
-Sans Save and Resume, il perd tout. Il ferme la page, ses reponses disparaissent. Il revient le lendemain, il recommence de zero. Ou pire — il ne revient pas.
+Sans Save and Resume, il perd tout. Il ferme la page, ses reponses disparaissent. Il revient le lendemain, il recommence de zero. Ou pire - il ne revient pas.
 
 Avec Save and Resume, le visiteur sauvegarde sa progression et recoit un lien par email pour reprendre exactement la ou il s'est arrete.
 
-**[ECRAN — screencast "Activer Save & Resume"]**
+**[ECRAN - screencast "Activer Save & Resume"]**
 
 C'est une feature Pro. Voici comment l'activer.
 
@@ -35,7 +35,7 @@ Active le toggle. Quelques options apparaissent.
 
 "Resume Link Expiry" : la duree de validite du lien. Par defaut 7 jours. Pour un formulaire de candidature, 7 jours c'est raisonnable. Pour une inscription urgente, reduis a 48 heures.
 
-**[ECRAN — screencast "L'experience visiteur"]**
+**[ECRAN - screencast "L'experience visiteur"]**
 
 Voyons ce que le visiteur voit.
 
@@ -47,15 +47,15 @@ Un email part immediatement. Le visiteur recoit un message avec un lien unique. 
 
 Le lendemain, il clique sur le lien. Le formulaire s'ouvre avec ses reponses deja en place. Il complete les champs manquants et soumet.
 
-**[ECRAN — screencast "Ce qui est sauvegarde"]**
+**[ECRAN - screencast "Ce qui est sauvegarde"]**
 
-Tout est sauvegarde : les champs texte, les selections, les dates, les checkboxes cochees. Si le formulaire est multi-step, la progression est aussi sauvegardee — le visiteur reprend a l'etape ou il s'est arrete.
+Tout est sauvegarde : les champs texte, les selections, les dates, les checkboxes cochees. Si le formulaire est multi-step, la progression est aussi sauvegardee - le visiteur reprend a l'etape ou il s'est arrete.
 
 Les fichiers uploades sont egalement sauvegardes. Si le visiteur a uploade son CV a l'etape 2 et sauvegarde, le CV est toujours la quand il reprend.
 
 Point important : les reponses sauvegardees ne sont PAS des soumissions completes. Elles n'apparaissent pas dans tes Entries tant que le visiteur n'a pas soumis le formulaire definitivement. Tu ne recevras pas de notification admin tant que la soumission n'est pas finalisee.
 
-**[ECRAN — screencast "Partial Entries"]**
+**[ECRAN - screencast "Partial Entries"]**
 
 FluentForms Pro a une feature complementaire : les Partial Entries.
 
@@ -69,7 +69,7 @@ C'est de l'or pour le suivi commercial. Un visiteur a rempli son nom, son email 
 
 Attention : si tu collectes des emails via partial entries, informe le visiteur dans ta politique de confidentialite que les donnees sont enregistrees meme sans soumission complete.
 
-**[ECRAN — slide "Cas d'usage"]**
+**[ECRAN - slide "Cas d'usage"]**
 
 Quand utiliser Save and Resume.
 
@@ -81,7 +81,7 @@ Formulaires multi-step : surtout ceux de plus de 3 etapes. Le visiteur peut sauv
 
 Quand ne pas l'utiliser : formulaires de contact courts (3-5 champs), formulaires de paiement (le panier doit rester frais), sondages rapides.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Save and Resume et Partial Entries sont deux features qui recuperent des leads que tu aurais autrement perdus. L'une par l'action du visiteur, l'autre automatiquement.
 

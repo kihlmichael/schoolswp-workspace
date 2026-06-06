@@ -1,9 +1,9 @@
-# Script video — Module 7, Lecon 9 : FluentForms vs WPForms vs Gravity Forms
+# Script video - Module 7, Lecon 9 : FluentForms vs WPForms vs Gravity Forms
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 7 — Ecosysteme et integrations
-**Lecon** : 9/9 — FluentForms vs WPForms vs Gravity Forms
+**Module** : 7 - Ecosysteme et integrations
+**Lecon** : 9/9 - FluentForms vs WPForms vs Gravity Forms
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, slides tableaux comparatifs, slide verdict
@@ -11,19 +11,19 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-FluentForms, WPForms, Gravity Forms. Les trois poids lourds des formulaires WordPress. On les compare objectivement — features, prix, performance, ecosysteme. Pour que tu comprennes exactement pourquoi schoolsWP utilise FluentForms.
+FluentForms, WPForms, Gravity Forms. Les trois poids lourds des formulaires WordPress. On les compare objectivement - features, prix, performance, ecosysteme. Pour que tu comprennes exactement pourquoi schoolsWP utilise FluentForms.
 
-**[SECTION 1 — slide "Les 3 candidats"]**
+**[SECTION 1 - slide "Les 3 candidats"]**
 
 WPForms. Le plus populaire. Plus de 6 millions d'installations actives. Interface simple, templates nombreux, marketing agressif. Cree par le fondateur de WPBeginner.
 
-Gravity Forms. Le veteran. Present depuis 2009. Le plus puissant pour les developpeurs — API riche, hooks WordPress partout, ecosystem d'add-ons. Pas de version gratuite.
+Gravity Forms. Le veteran. Present depuis 2009. Le plus puissant pour les developpeurs - API riche, hooks WordPress partout, ecosystem d'add-ons. Pas de version gratuite.
 
 FluentForms. Le challenger. Monte en puissance depuis 2019. Version gratuite genereuse, toutes les features dans tous les plans Pro, ecosysteme WPManageNinja natif.
 
-**[SECTION 2 — slide "Comparatif features"]**
+**[SECTION 2 - slide "Comparatif features"]**
 
 Drag & Drop builder. Les trois l'ont. WPForms est le plus intuitif pour un debutant. FluentForms et Gravity Forms sont comparables. Pas de difference majeure.
 
@@ -37,11 +37,11 @@ Calculs et formules. FluentForms : inclus en Pro. WPForms : add-on calculations 
 
 Quiz. FluentForms : inclus en Pro. WPForms : add-on surveys & polls dans le plan Pro (199$/an). Gravity Forms : add-on quiz payant.
 
-PDF generation. FluentForms : inclus en Pro. WPForms : non natif — plugin tiers necessaire. Gravity Forms : add-on GravityPDF (gratuit mais externe).
+PDF generation. FluentForms : inclus en Pro. WPForms : non natif - plugin tiers necessaire. Gravity Forms : add-on GravityPDF (gratuit mais externe).
 
 Partial entries. FluentForms : inclus en Pro. WPForms : plan Pro (199$/an). Gravity Forms : add-on partiel (payant).
 
-**[SECTION 3 — slide "Comparatif prix"]**
+**[SECTION 3 - slide "Comparatif prix"]**
 
 FluentForms Pro.
 - Single : 59$/an, 1 site. Toutes les features.
@@ -60,11 +60,11 @@ Gravity Forms.
 - Pro : 159$/an, 3 sites. Quiz, partial entries.
 - Elite : 259$/an, illimite. Tous les add-ons.
 
-Le point critique : chez WPForms, les features sont verrouillees par tier. Tu veux les paiements ? Plan Pro a 199$. Les calculations ? Plan Elite a 299$. Chez FluentForms, le plan a 59$ inclut tout. Memes features a 59$ qu'a 279$ — seul le nombre de sites change.
+Le point critique : chez WPForms, les features sont verrouillees par tier. Tu veux les paiements ? Plan Pro a 199$. Les calculations ? Plan Elite a 299$. Chez FluentForms, le plan a 59$ inclut tout. Memes features a 59$ qu'a 279$ - seul le nombre de sites change.
 
 Chez Gravity Forms, c'est intermediaire. Le plan Pro a 159$ donne acces a la plupart des features. L'Elite ajoute les add-ons premium.
 
-**[SECTION 4 — slide "Performance"]**
+**[SECTION 4 - slide "Performance"]**
 
 FluentForms est le plus leger des trois. Le plugin charge moins de scripts et de CSS. Le temps de chargement des pages avec un formulaire est mesurable.
 
@@ -76,9 +76,9 @@ Gravity Forms : ~100-130 KB.
 
 Ca ne semble pas enorme, mais sur un site avec plusieurs formulaires et un objectif Core Web Vitals optimal, chaque KB compte.
 
-FluentForms utilise aussi une approche "load on demand" — les scripts ne se chargent que sur les pages qui contiennent un formulaire. Pas partout sur le site.
+FluentForms utilise aussi une approche "load on demand" - les scripts ne se chargent que sur les pages qui contiennent un formulaire. Pas partout sur le site.
 
-**[SECTION 5 — slide "Ecosysteme"]**
+**[SECTION 5 - slide "Ecosysteme"]**
 
 WPForms. Ecosysteme WPBeginner : SeedProd (pages), RafflePress (concours), MonsterInsights (analytics), OptinMonster (popups). Des plugins complementaires, mais pas de CRM natif, pas de support natif, pas de booking natif.
 
@@ -86,9 +86,9 @@ Gravity Forms. Ecosysteme d'add-ons tiers important. GravityKit, GravityWiz, Gra
 
 FluentForms. Ecosysteme WPManageNinja : FluentCRM (CRM), FluentSMTP (email), FluentBooking (rendez-vous), FluentSupport (tickets), FluentBoards (projets), FluentCart (e-commerce). Tout natif, meme base de donnees, communication directe.
 
-C'est l'avantage decisif de FluentForms. Le CRM natif, l'email natif, le booking natif — sans plugin tiers, sans API externe, sans synchronisation qui casse.
+C'est l'avantage decisif de FluentForms. Le CRM natif, l'email natif, le booking natif - sans plugin tiers, sans API externe, sans synchronisation qui casse.
 
-**[SECTION 6 — slide "Pour qui"]**
+**[SECTION 6 - slide "Pour qui"]**
 
 WPForms est fait pour toi si tu veux la simplicite absolue, si tu as un gros budget, et si tu n'as pas besoin d'un ecosysteme CRM natif. C'est le choix par defaut des debutants grâce au marketing WPBeginner.
 
@@ -96,7 +96,7 @@ Gravity Forms est fait pour toi si tu es developpeur, si tu as besoin de customi
 
 FluentForms est fait pour toi si tu veux le meilleur rapport qualite-prix, si tu as besoin de toutes les features dans un seul plan, et si tu veux un ecosysteme CRM et email natif WordPress.
 
-**[SECTION 7 — slide "Le verdict schoolsWP"]**
+**[SECTION 7 - slide "Le verdict schoolsWP"]**
 
 Sur schoolsWP, on utilise FluentForms. Voici pourquoi.
 
@@ -106,11 +106,11 @@ L'integration FluentCRM est native. Chaque soumission cree un contact CRM sans p
 
 La performance est la meilleure des trois. Sur un site WordPress optimise, chaque KB de script compte.
 
-L'ecosysteme WPManageNinja couvre 90% des besoins sans sortir de WordPress. Formulaires, CRM, email, booking, support — tout dans le meme ecosysteme.
+L'ecosysteme WPManageNinja couvre 90% des besoins sans sortir de WordPress. Formulaires, CRM, email, booking, support - tout dans le meme ecosysteme.
 
 Et le prix est imbattable. Pour 59$ par an, tu as ce que WPForms vend 299$.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Cette lecon conclut le module 7 et la formation FluentForms Masterclass. Tu maitrises les formulaires, les paiements, le CRM, les quiz, les analytics, l'ecosysteme et les integrations.
 
@@ -134,5 +134,5 @@ Tu as toutes les cartes en main pour transformer tes formulaires en systemes de 
 **Notes de production** :
 - Face camera : intro (les 3 poids lourds) + outro (conclusion formation)
 - Slides : 7 slides (candidats, features, prix, performance, ecosysteme, pour qui, verdict)
-- Screencast : aucun — lecon de comparaison pure
-- Ton : objectif, factuel, pas de denigrement — laisser les chiffres parler. Verdict clair a la fin.
+- Screencast : aucun - lecon de comparaison pure
+- Ton : objectif, factuel, pas de denigrement - laisser les chiffres parler. Verdict clair a la fin.

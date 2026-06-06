@@ -1,8 +1,8 @@
-# Lecon 1.5 — Comprendre le Canvas Mode
+# Lecon 1.5 - Comprendre le Canvas Mode
 
 ## Metadata
 - Formation : CartFlows Masterclass Vente (FRM-007, premium)
-- Module : 1 — Fondations
+- Module : 1 - Fondations
 - Duree cible : 8 min
 - Objectif pedagogique : Maitriser l'editeur visuel Canvas Mode de CartFlows Pro pour planifier, structurer et organiser un funnel complet avant de designer les pages
 
@@ -14,17 +14,17 @@ Jusqu'ici, tu as vu tes funnels sous forme de liste. Une etape apres l'autre, de
 
 ---
 
-[SECTION 1 — Qu'est-ce que le Canvas Mode]
+[SECTION 1 - Qu'est-ce que le Canvas Mode]
 
 Le Canvas Mode, c'est une vue drag-and-drop de tout ton funnel. Imagine un tableau blanc ou chaque etape de ton parcours de vente est une carte : Landing, Checkout, Upsell, Downsell, Thank You. Ces cartes sont reliees entre elles par des fleches qui montrent le chemin que le client va suivre.
 
 Au lieu de deviner le parcours en lisant une liste, tu le vois. D'un coup d'oeil, tu sais ou le client arrive, par ou il passe, et ou il termine. Et surtout, tu vois les branches : que se passe-t-il si le client accepte l'upsell ? Et s'il refuse ? Chaque scenario est visible, chaque chemin est trace.
 
-C'est une fonctionnalite CartFlows Pro — si tu es sur la version gratuite, tu n'as pas acces a cette vue. Mais dans cette Masterclass, on travaille avec Pro, donc tu l'as.
+C'est une fonctionnalite CartFlows Pro - si tu es sur la version gratuite, tu n'as pas acces a cette vue. Mais dans cette Masterclass, on travaille avec Pro, donc tu l'as.
 
 ---
 
-[SECTION 2 — Comment acceder au Canvas Mode]
+[SECTION 2 - Comment acceder au Canvas Mode]
 
 Ouvre ton dashboard WordPress. Va dans CartFlows, puis Flows. Clique sur le flow que tu veux visualiser. En haut de la page, tu vois deux boutons : la vue classique en liste, et le bouton "Canvas". Clique dessus.
 
@@ -34,7 +34,7 @@ Premiere chose a remarquer : chaque carte a une couleur et une icone qui corresp
 
 ---
 
-[SECTION 3 — Naviguer dans l'interface]
+[SECTION 3 - Naviguer dans l'interface]
 
 L'interface est simple. Tu as trois zones.
 
@@ -44,11 +44,11 @@ En haut, tu as la barre d'outils. Le bouton "+" pour ajouter une etape, le bouto
 
 Sur chaque carte, tu as le nom de l'etape, son type, et un menu contextuel (les trois petits points) qui te donne acces aux actions : editer la page, configurer les parametres, ou supprimer l'etape.
 
-Les fleches entre les cartes sont automatiques. Quand tu ajoutes une etape, CartFlows la connecte a la precedente. Tu peux aussi les reorganiser par glisser-deposer — les connexions se mettent a jour en temps reel.
+Les fleches entre les cartes sont automatiques. Quand tu ajoutes une etape, CartFlows la connecte a la precedente. Tu peux aussi les reorganiser par glisser-deposer - les connexions se mettent a jour en temps reel.
 
 ---
 
-[SECTION 4 — Ajouter un step depuis le Canvas]
+[SECTION 4 - Ajouter un step depuis le Canvas]
 
 Pour ajouter une etape, clique sur le bouton "+" dans la barre d'outils, ou sur le "+" qui apparait au bout d'une fleche entre deux cartes.
 
@@ -60,13 +60,13 @@ Pour supprimer une etape, ouvre le menu contextuel de la carte et choisis "Suppr
 
 ---
 
-[SECTION 5 — Configurer les conditions : les branches oui/non]
+[SECTION 5 - Configurer les conditions : les branches oui/non]
 
 C'est la ou le Canvas Mode prend tout son sens. Quand tu as un Upsell dans ton funnel, deux chemins sont possibles : le client accepte, ou le client refuse.
 
 Clique sur la carte Upsell. Tu vois deux sorties : "Accepted" et "Rejected". Chaque sortie peut pointer vers une etape differente.
 
-Exemple concret. Si le client accepte l'upsell, tu l'envoies directement vers la page Thank You. S'il refuse, tu lui proposes un Downsell — une offre alternative, moins chere ou differente. Et depuis le Downsell, meme principe : accepte → Thank You, refuse → Thank You quand meme, mais sans le produit supplementaire.
+Exemple concret. Si le client accepte l'upsell, tu l'envoies directement vers la page Thank You. S'il refuse, tu lui proposes un Downsell - une offre alternative, moins chere ou differente. Et depuis le Downsell, meme principe : accepte → Thank You, refuse → Thank You quand meme, mais sans le produit supplementaire.
 
 Sur le canevas, ca donne un arbre avec des branches. Tu vois les deux chemins, tu vois ou ils menent, tu vois la logique complete. En vue liste, ces conditions existent aussi, mais tu dois les imaginer. En Canvas Mode, elles sont dessinees devant toi.
 
@@ -74,15 +74,15 @@ Pour configurer une condition, glisse la sortie "Accepted" de l'Upsell vers la c
 
 ---
 
-[SECTION 6 — Cas concret : construire un funnel complet en Canvas]
+[SECTION 6 - Cas concret : construire un funnel complet en Canvas]
 
 On va construire un funnel ensemble, directement dans le Canvas Mode. L'objectif : Landing → Checkout → Upsell → (oui) Thank You / (non) Downsell → Thank You.
 
-Premiere etape : cree un nouveau flow dans CartFlows. Donne-lui un nom — par exemple "Funnel Formation Premium". Passe en Canvas Mode.
+Premiere etape : cree un nouveau flow dans CartFlows. Donne-lui un nom - par exemple "Funnel Formation Premium". Passe en Canvas Mode.
 
 Tu as un canevas vide. Clique sur "+" et ajoute une Landing. Choisis un template ou pars de zero. La premiere carte apparait.
 
-Clique encore sur "+" — ajoute un Checkout. La fleche se trace automatiquement : Landing → Checkout. Ton client arrive sur la landing, puis passe au checkout.
+Clique encore sur "+" - ajoute un Checkout. La fleche se trace automatiquement : Landing → Checkout. Ton client arrive sur la landing, puis passe au checkout.
 
 Maintenant, ajoute un Upsell. Fleche automatique : Checkout → Upsell. Apres le paiement, le client voit ton offre supplementaire.
 
@@ -90,25 +90,25 @@ Ajoute une page Thank You. Connecte la sortie "Accepted" de l'Upsell vers cette 
 
 Ajoute un Downsell. Connecte la sortie "Rejected" de l'Upsell vers le Downsell. C'est le chemin "non".
 
-Ajoute une deuxieme page Thank You — ou reutilise la premiere si le contenu est le meme. Connecte la sortie du Downsell vers cette Thank You.
+Ajoute une deuxieme page Thank You - ou reutilise la premiere si le contenu est le meme. Connecte la sortie du Downsell vers cette Thank You.
 
 Resultat : tu vois tout le funnel d'un coup. Le chemin principal, les branches, les alternatives. Six etapes, trois chemins possibles, et tout est visible sur un seul ecran.
 
 ---
 
-[SECTION 7 — Avantage par rapport a la vue liste]
+[SECTION 7 - Avantage par rapport a la vue liste]
 
 Pourquoi utiliser le Canvas plutot que la liste ?
 
 Trois raisons. Premiere : tu vois le parcours complet. En liste, tu scrolles de haut en bas. En Canvas, tu vois toutes les etapes et toutes les connexions simultanement. Pour un funnel a cinq ou six etapes avec des branches, c'est la difference entre lire une recette et voir le plat fini.
 
-Deuxieme raison : tu identifies les erreurs de logique. Si une etape n'est connectee a rien, tu le vois immediatement — c'est une carte orpheline sur le canevas. En liste, tu pourrais passer a cote.
+Deuxieme raison : tu identifies les erreurs de logique. Si une etape n'est connectee a rien, tu le vois immediatement - c'est une carte orpheline sur le canevas. En liste, tu pourrais passer a cote.
 
 Troisieme raison : c'est plus rapide pour planifier. Avant de designer tes pages, tu poses la structure. Tu deplace les cartes, tu testes les branches, tu ajustes le parcours. Cinq minutes de planification en Canvas, c'est une heure gagnee en corrections ensuite.
 
 ---
 
-[OUTRO — Conseil pratique]
+[OUTRO - Conseil pratique]
 
 Un conseil avant de passer a la suite. Utilise le Canvas Mode pour planifier avant de designer. D'abord la structure, ensuite le contenu des pages.
 
@@ -143,12 +143,12 @@ Dans la prochaine lecon, on va justement entrer dans le detail de chaque type d'
 | Section | Duree |
 | --- | --- |
 | INTRO | 0:40 |
-| Section 1 — Definition | 0:50 |
-| Section 2 — Acces | 0:45 |
-| Section 3 — Interface | 1:00 |
-| Section 4 — Ajouter un step | 0:50 |
-| Section 5 — Conditions | 1:30 |
-| Section 6 — Cas concret | 1:30 |
-| Section 7 — Avantages | 0:45 |
+| Section 1 - Definition | 0:50 |
+| Section 2 - Acces | 0:45 |
+| Section 3 - Interface | 1:00 |
+| Section 4 - Ajouter un step | 0:50 |
+| Section 5 - Conditions | 1:30 |
+| Section 6 - Cas concret | 1:30 |
+| Section 7 - Avantages | 0:45 |
 | OUTRO | 0:30 |
 | **Total** | **~8:20** |

@@ -1,0 +1,19 @@
+defaults:
+  author: "Michaël KIHL"
+  copyright: "© schoolsWP - Michaël KIHL"
+  url: "https://schoolswp.com/masteriyo-lms-avis/"
+images:
+  - file: slide-00-hero-fr.png
+    title: "Masteriyo LMS avis : mon test du plugin de formation WordPress"
+    subject: "Avis Masteriyo LMS, le plugin de formation en ligne pour WordPress"
+    description: "Avis Masteriyo LMS : le plugin de formation WordPress en React, course builder rapide et paiements Stripe/PayPal sans WooCommerce. Ses forces, ses limites et pourquoi je suis passé à Tutor LMS."
+    alt: "Masteriyo LMS, le plugin de formation WordPress en React : course builder rapide, paiements Stripe et PayPal, content drip en version pro"
+    keywords:
+      [
+        masteriyo lms avis,
+        masteriyo lms,
+        masteriyo,
+        plugin lms wordpress,
+        formation en ligne wordpress,
+        lms wordpress,
+      ]

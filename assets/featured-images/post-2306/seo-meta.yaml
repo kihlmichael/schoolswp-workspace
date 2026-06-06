@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/thot-seo-avis/
+    title: Avis Thot SEO, l'outil SEO sémantique français
+    subject: "Thot SEO, mon avis : l'outil d'optimisation sémantique français"
+    description: "Image à la une de l'avis schoolsWP sur Thot SEO, l'outil SEO sémantique français. Verdict de Michaël KIHL : 4 outils en un (guide sémantique, analyse de la concurrence, éditeur de texte, mode édito), version gratuite limitée à 1 guide par jour et formule payante dès environ 49 euros par mois."
+    alt: "Avis Thot SEO schoolsWP, outil d'optimisation sémantique français pour la rédaction SEO"
+    keywords:
+      [
+        thot seo,
+        avis thot seo,
+        seo sémantique,
+        optimisation sémantique,
+        rédaction seo,
+        outil seo français,
+        schoolsWP,
+      ]

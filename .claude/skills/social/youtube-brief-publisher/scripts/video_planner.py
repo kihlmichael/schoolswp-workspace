@@ -1,15 +1,15 @@
+import json
 import os
 import re
 import sys
+import requests
 from datetime import datetime
 
-import requests
-
 # Force l'encodage UTF-8 de la console sous Windows pour éviter tout UnicodeEncodeError
-if sys.platform.startswith("win"):
+if sys.platform.startswith('win'):
     try:
-        sys.stdout.reconfigure(encoding="utf-8")
-        sys.stderr.reconfigure(encoding="utf-8")
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
     except Exception:
         pass
 
@@ -26,10 +26,11 @@ def get_obsidian_outbox_path():
     path = r"D:\🌐 MES SITES\📋 SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude"
     if os.path.exists(path):
         return path
-
+    
     # Fallback local
     local_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))), "output"
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))),
+        "output"
     )
     os.makedirs(local_path, exist_ok=True)
     return local_path
@@ -40,9 +41,13 @@ def call_ollama_completion(prompt, model_name="qwen2.5:7b"):
     Calls local Ollama server using OpenAI compatible endpoint.
     """
     ollama_url = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434/v1").rstrip("/") + "/chat/completions"
-
-    payload = {"model": model_name, "messages": [{"role": "user", "content": prompt}], "temperature": 0.7}
-
+    
+    payload = {
+        "model": model_name,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7
+    }
+    
     try:
         response = requests.post(ollama_url, json=payload, timeout=600)
         if response.status_code == 200:
@@ -69,16 +74,22 @@ def generate_voiceover_tts(text, output_path, api_key, voice_id):
     Calls ElevenLabs Text-to-Speech API to synthesize the voiceover MP3 file.
     """
     print("[INFO] Lancement de la synthèse vocale via ElevenLabs...")
-
+    
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
-    headers = {"xi-api-key": api_key, "Content-Type": "application/json"}
-
+    headers = {
+        "xi-api-key": api_key,
+        "Content-Type": "application/json"
+    }
+    
     payload = {
         "text": text,
         "model_id": "eleven_multilingual_v2",
-        "voice_settings": {"stability": 0.5, "similarity_boost": 0.75},
+        "voice_settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75
+        }
     }
-
+    
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=300)
         if response.status_code == 200:
@@ -96,49 +107,61 @@ def generate_voiceover_tts(text, output_path, api_key, voice_id):
 def extract_dialogue_from_script(script_markdown):
     """
     Parses the generated script markdown and extracts dialogue.
-    Tries regex for 'Dialogue exact: "..."' first (highly robust against column swapping),
+    Tries regex for 'Dialogue exact: "..."' first (highly robust against column swapping and table pipes),
     then falls back to column-based parsing.
     """
-    # 1. Tentative d'extraction par regex ciblant "Dialogue exact: ..." ou similaire
+    # 1. Tentative d'extraction par regex robuste ciblant les dialogues entre guillemets,
+    # gérant les séparations de colonnes markdown (pipes '|' et espaces).
     dialogue_matches = re.findall(
-        r'(?:Dialogue exact|dialogue exact|Dialogue|dialogue)\s*:\s*["«]([^"»]*?)["»]', script_markdown
+        r'(?:Dialogue exact|dialogue exact|Dialogue|dialogue)\s*:?\s*(?:\|\s*)?["«\']([^"»\']*?)["»\']', 
+        script_markdown
     )
     if dialogue_matches:
         clean_text = " ".join([d.strip() for d in dialogue_matches if d.strip()])
+        # Nettoie les restes de métadonnées s'il y en a
+        clean_text = re.sub(r'Hook\s*:', '', clean_text, flags=re.IGNORECASE)
+        clean_text = re.sub(r'Payoff\s*:', '', clean_text, flags=re.IGNORECASE)
+        clean_text = re.sub(r'CTA\s*:', '', clean_text, flags=re.IGNORECASE)
         if len(clean_text) > 20:
-            return clean_text
+            return clean_text.strip()
 
     # 2. Fallback 1 : Analyse des lignes de tableau (colonne gauche ou droite selon le contenu)
     lines = script_markdown.split("\n")
     dialogue_lines = []
-
+    
     for line in lines:
         line = line.strip()
         if line.startswith("|") and line.endswith("|"):
             # Ignorer les en-têtes et les séparateurs
-            if "---" in line or "notes visuelles" in line.lower() or "rythme" in line.lower():
+            if "---" in line or "notes visuelles" in line.lower() or "rythme" in line.lower() or "objectifs" in line.lower():
                 continue
-
+            
             parts = [p.strip() for p in line.split("|")[1:-1]]
             if len(parts) >= 1:
-                # Si la colonne de droite contient "Dialogue exact", on extrait depuis celle-ci
+                # Si la colonne de droite contient du texte entre guillemets, on l'extrait prioritairement
                 target_col = parts[0]
-                if len(parts) > 1 and "dialogue exact" in parts[1].lower():
-                    # Tente d'extraire la partie dialogue exact dans la colonne de droite
-                    match = re.search(r'["«]([^"»]*?)["»]', parts[1])
+                if len(parts) > 1:
+                    match = re.search(r'["«\']([^"»\']*?)["»\']', parts[1])
                     if match:
                         target_col = match.group(1)
-
-                # Nettoyage
+                else:
+                    match = re.search(r'["«\']([^"»\']*?)["»\']', parts[0])
+                    if match:
+                        target_col = match.group(1)
+                
+                # Nettoyage des balises et IDs
                 spoken_text = re.sub(r"\[.*?\]", "", target_col)
                 spoken_text = re.sub(r"SEG-\d+", "", spoken_text)
-                spoken_text = spoken_text.strip("**").strip()
-                if spoken_text and len(spoken_text) > 3 and spoken_text.lower() not in ("hook", "payoff", "cta"):
+                spoken_text = spoken_text.replace("**", "").strip()
+                
+                # Filtrer les en-têtes évidents
+                lower_text = spoken_text.lower()
+                if spoken_text and len(spoken_text) > 3 and not any(h in lower_text for h in ("hook", "payoff", "cta", "dialogue exact", "segment", "question ouverte", "promesse", "carte de structure")):
                     dialogue_lines.append(spoken_text)
-
+                    
     if dialogue_lines:
         return " ".join(dialogue_lines)
-
+    
     # 3. Fallback 2 : Renvoyer le texte nettoyé sans les blocs d'annotations
     clean_lines = []
     for line in lines:
@@ -154,22 +177,22 @@ def run_interactive_planner(dry_run=False):
     print("=" * 80)
     print("      ASSISTANT DE PRODUCTION VIDÉO INTERACTIF - METHOD SOP (schoolswp)")
     print("=" * 80)
-
+    
     # 1. Charger l'environnement
     load_env_variables()
-
+    
     elevenlabs_key = os.getenv("ELEVENLABS_API_KEY")
     elevenlabs_voice_id = os.getenv("ELEVENLABS_VOICE_ID", "r8Nv8JDxL3hOIt4MZtwT")
-
+    
     obsidian_dir = get_obsidian_outbox_path()
     display_dir = obsidian_dir.replace("🌐", "[SITE]").replace("📋", "[DOCS]")
     print(f"[INFO] Dossier de sortie Obsidian : {display_dir}\n")
-
+    
     # --- ETAPE 1 : GENERATION DE CONCEPTS ---
     print("-" * 80)
-    print(" ETAPE 1 : Génération de Concepts")
+    print(" ETAPE 1 : Génération de Concepts (Ollama)")
     print("-" * 80)
-
+    
     if dry_run:
         print("[DRY-RUN] Simulation de l'étape 1...")
         niche = "WordPress, IA, LMS, n8n"
@@ -179,44 +202,39 @@ def run_interactive_planner(dry_run=False):
         contraintes = "Solo, matériel minimal, format YouTube long, durée visée 10 minutes"
     else:
         niche = input("Niche du contenu [WordPress, IA, LMS, n8n] : ") or "WordPress, IA, LMS, n8n"
-        audience = (
-            input("Audience cible [Créateurs de formations, indépendants, agences WordPress] : ")
-            or "Créateurs de formations, indépendants, agences WordPress"
-        )
-        objectifs = (
-            input("Objectifs [Notoriété, autorité pédagogique, engagement] : ")
-            or "Notoriété, autorité pédagogique, engagement"
-        )
+        audience = input("Audience cible [Créateurs de formations, indépendants, agences WordPress] : ") or "Créateurs de formations, indépendants, agences WordPress"
+        objectifs = input("Objectifs [Notoriété, autorité pédagogique, engagement] : ") or "Notoriété, autorité pédagogique, engagement"
         performants = input("Vidéos les plus performantes [Aucune donnée] : ") or "Aucune donnée"
-        contraintes = (
-            input("Contraintes [Solo, matériel minimal, format YouTube long, durée visée 10 minutes] : ")
-            or "Solo, matériel minimal, format YouTube long, durée visée 10 minutes"
-        )
-
+        contraintes = input("Contraintes [Solo, matériel minimal, format YouTube long, durée visée 10 minutes] : ") or "Solo, matériel minimal, format YouTube long, durée visée 10 minutes"
+    
     print("\n[INFO] Génération des 7 concepts via Ollama local (qwen2.5:7b)...")
     concept_template = read_prompt_template("write_concept_ollama.txt")
     concept_prompt = concept_template.format(
-        niche=niche, audience=audience, objectifs=objectifs, performants=performants, contraintes=contraintes
+        niche=niche,
+        audience=audience,
+        objectifs=objectifs,
+        performants=performants,
+        contraintes=contraintes
     )
-
+    
     if dry_run:
         concepts_out = "### CONCEPT-01: Titre de simulation\nAngle de simulation.\n\n<!-- slide -->\nBLOC DE PASSAGE POUR L'ÉTAPE SUIVANTE\n- Promesse centrale: test"
     else:
         concepts_out = call_ollama_completion(concept_prompt)
-
+        
     print("\n" + "=" * 40 + " CONCEPTS GÉNÉRÉS " + "=" * 40)
     print(concepts_out[:2000] + "\n... (Tronqué pour affichage) ...\n")
-
+    
     concepts_file = os.path.join(obsidian_dir, "01_concepts.md")
     with open(concepts_file, "w", encoding="utf-8") as f:
         f.write(concepts_out)
     print(f"[SUCCESS] Les 7 concepts ont été sauvegardés dans : {concepts_file}")
-
+    
     # --- ETAPE 2 : ARCHITECTURE DE SCRIPT ---
     print("\n" + "-" * 80)
-    print(" ETAPE 2 : Architecture du Script Rétention")
+    print(" ETAPE 2 : Architecture du Script Rétention (Ollama)")
     print("-" * 80)
-
+    
     if dry_run:
         print("[DRY-RUN] Simulation de l'étape 2...")
         chosen_concept = "CONCEPT-01: Titre de simulation\nPromesse centrale: test"
@@ -235,17 +253,12 @@ def run_interactive_planner(dry_run=False):
                 print("[INFO] Utilisation automatique du CONCEPT-01 détecté.")
             else:
                 chosen_concept = "CONCEPT-01 extrait de 01_concepts.md"
-
-        style_parole = (
-            input("Style de parole [Pédagogique, direct, tutoiement] : ") or "Pédagogique, direct, tutoiement"
-        )
+                
+        style_parole = input("Style de parole [Pédagogique, direct, tutoiement] : ") or "Pédagogique, direct, tutoiement"
         longueur = input("Longueur cible [10 minutes] : ") or "10 minutes"
         plateforme = input("Plateforme [YouTube long] : ") or "YouTube long"
-        tournage_contraintes = (
-            input("Contraintes de tournage [Solo, enregistrement d'écran + voix off ElevenLabs] : ")
-            or "Solo, enregistrement d'écran + voix off ElevenLabs"
-        )
-
+        tournage_contraintes = input("Contraintes de tournage [Solo, enregistrement d'écran + voix off ElevenLabs] : ") or "Solo, enregistrement d'écran + voix off ElevenLabs"
+        
     print("\n[INFO] Génération du script de rétention ultra-précis via Ollama local (qwen2.5:7b)...")
     script_template = read_prompt_template("write_script_ollama.txt")
     script_prompt = script_template.format(
@@ -253,9 +266,9 @@ def run_interactive_planner(dry_run=False):
         style_parole=style_parole,
         longueur=longueur,
         plateforme=plateforme,
-        contraintes=tournage_contraintes,
+        contraintes=tournage_contraintes
     )
-
+    
     if dry_run:
         script_out = (
             "| Dialogue exact | Notes visuelles |\n"
@@ -265,51 +278,154 @@ def run_interactive_planner(dry_run=False):
         )
     else:
         script_out = call_ollama_completion(script_prompt)
-
+        
     print("\n" + "=" * 40 + " SCRIPT GÉNÉRÉ " + "=" * 40)
     print(script_out[:2000] + "\n... (Tronqué pour affichage) ...\n")
-
+    
     script_file = os.path.join(obsidian_dir, "02_script.md")
     with open(script_file, "w", encoding="utf-8") as f:
         f.write(script_out)
     print(f"[SUCCESS] Le script complet a été sauvegardé dans : {script_file}")
-
-    # --- ETAPE 3 : SYNTHESE ELEVENLABS ---
+    
+    # --- ETAPE 3 : GENERATEUR DE LISTE DE PLANS ---
     print("\n" + "-" * 80)
-    print(" ETAPE 3 : Synthèse vocale de secours ElevenLabs")
+    print(" ETAPE 3 : Générateur de Liste de Plans (Ollama)")
     print("-" * 80)
+    
+    if dry_run:
+        print("[DRY-RUN] Simulation de l'étape 3...")
+        equipement = "Smartphone, micro cravate, trépied, PC pour captures"
+        lieux = "Bureau de Michael (Lieu 1), Enregistrement d'écran (Lieu 2)"
+        plans_contraintes = "Solo, lumière naturelle"
+    else:
+        equipement = input("Équipement [Smartphone, micro cravate, trépied, PC pour captures] : ") or "Smartphone, micro cravate, trépied, PC pour captures"
+        lieux = input("Lieux de tournage disponibles [Bureau de Michael (Lieu 1), Enregistrement d'écran (Lieu 2)] : ") or "Bureau de Michael (Lieu 1), Enregistrement d'écran (Lieu 2)"
+        plans_contraintes = input("Contraintes [Solo, lumière naturelle] : ") or "Solo, lumière naturelle"
+        
+    print("\n[INFO] Génération de la liste de plans structurée via Ollama local (qwen2.5:7b)...")
+    shotlist_template = read_prompt_template("write_shotlist_ollama.txt")
+    shotlist_prompt = shotlist_template.format(
+        script_complet=script_out,
+        equipement=equipement,
+        lieux=lieux,
+        contraintes=plans_contraintes
+    )
+    
+    if dry_run:
+        shotlist_out = (
+            "### Liste de Plans (Shotlist)\n"
+            "| N° de plan | Segment du script | Type de plan | Notes caméra |\n"
+            "| SHOT-01 | SEG-01 | Facecam moyen | Regard caméra stable |\n"
+            "\nBLOC DE PASSAGE POUR L'ÉTAPE SUIVANTE\n- Promesse centrale: test"
+        )
+    else:
+        shotlist_out = call_ollama_completion(shotlist_prompt)
+        
+    print("\n" + "=" * 40 + " LISTE DE PLANS GÉNÉRÉE " + "=" * 40)
+    print(shotlist_out[:2000] + "\n... (Tronqué pour affichage) ...\n")
+    
+    shotlist_file = os.path.join(obsidian_dir, "03_shot_list.md")
+    with open(shotlist_file, "w", encoding="utf-8") as f:
+        f.write(shotlist_out)
+    print(f"[SUCCESS] La liste de plans a été sauvegardée dans : {shotlist_file}")
 
+    # --- ETAPE 4 : ARCHITECTE DU B-ROLL ---
+    print("\n" + "-" * 80)
+    print(" ETAPE 4 : Architecte du B-roll Strategique (Ollama)")
+    print("-" * 80)
+    
+    print("\n[INFO] Génération du plan de B-roll détaillé via Ollama local (qwen2.5:7b)...")
+    broll_template = read_prompt_template("write_broll_ollama.txt")
+    broll_prompt = broll_template.format(
+        script_complet=script_out,
+        shot_list=shotlist_out
+    )
+    
+    if dry_run:
+        broll_out = (
+            "### Plan de B-roll\n"
+            "| ID du clip | Segment couvert | Type | Description |\n"
+            "| BROLL-01 | SEG-01 | AI-GEN | Une ampoule animée qui s'allume |\n"
+            "\nBLOC DE PASSAGE POUR L'ÉTAPE SUIVANTE\n- Promesse centrale: test"
+        )
+    else:
+        broll_out = call_ollama_completion(broll_prompt)
+        
+    print("\n" + "=" * 40 + " PLAN DE B-ROLL GÉNÉRÉ " + "=" * 40)
+    print(broll_out[:2000] + "\n... (Tronqué pour affichage) ...\n")
+    
+    broll_file = os.path.join(obsidian_dir, "04_broll_plan.md")
+    with open(broll_file, "w", encoding="utf-8") as f:
+        f.write(broll_out)
+    print(f"[SUCCESS] Le plan de B-roll a été sauvegardé dans : {broll_file}")
+
+    # --- ETAPE 5 : PLAN DE MONTAGE ---
+    print("\n" + "-" * 80)
+    print(" ETAPE 5 : Plan de Montage Rétention (Ollama)")
+    print("-" * 80)
+    
+    print("\n[INFO] Génération du plan de montage rythmé via Ollama local (qwen2.5:7b)...")
+    editing_template = read_prompt_template("write_editing_ollama.txt")
+    editing_prompt = editing_template.format(
+        script_complet=script_out,
+        shot_list=shotlist_out,
+        broll_plan=broll_out
+    )
+    
+    if dry_run:
+        editing_out = (
+            "### Plan de Montage\n"
+            "| Timecode | ID montage | Transition | Instructions monteur |\n"
+            "| 00:00 | EDIT-01 | Coupe nette | Commencer fort avec le hook et zoom léger |\n"
+        )
+    else:
+        editing_out = call_ollama_completion(editing_prompt)
+        
+    print("\n" + "=" * 40 + " PLAN DE MONTAGE GÉNÉRÉ " + "=" * 40)
+    print(editing_out[:2000] + "\n... (Tronqué pour affichage) ...\n")
+    
+    editing_file = os.path.join(obsidian_dir, "05_editing_plan.md")
+    with open(editing_file, "w", encoding="utf-8") as f:
+        f.write(editing_out)
+    print(f"[SUCCESS] Le plan de montage a été sauvegardé dans : {editing_file}")
+
+    # --- ETAPE 6 : SYNTHESE ELEVENLABS ---
+    print("\n" + "-" * 80)
+    print(" ETAPE 6 : Synthèse de la Voix Off ElevenLabs")
+    print("-" * 80)
+    
     # Extraire les répliques parlées
     spoken_text = extract_dialogue_from_script(script_out)
     print("\n[INFO] Texte extrait pour la voix off :")
     print(spoken_text[:500] + "\n...")
-
+    
     if dry_run:
         print("[DRY-RUN] Simulation de la synthèse vocale ElevenLabs...")
         print("[SUCCESS] Fichier audio fictif simulé avec succès.")
     else:
         generate_audio = input("\nVoulez-vous générer le fichier MP3 de la voix off ElevenLabs maintenant ? (o/n) : ")
-        if generate_audio.lower() == "o":
+        if generate_audio.lower() == 'o':
             if not elevenlabs_key or elevenlabs_key.startswith("__"):
                 print("[ERROR] Clé ELEVENLABS_API_KEY non configurée ou placeholder dans le .env.")
                 return
-
+            
             output_audio_name = f"voiceover_{datetime.now().strftime('%Y%m%d_%H%M%S')}.mp3"
             output_audio_path = os.path.join(obsidian_dir, output_audio_name)
-
+            
             synthesis_success = generate_voiceover_tts(
-                text=spoken_text, output_path=output_audio_path, api_key=elevenlabs_key, voice_id=elevenlabs_voice_id
+                text=spoken_text,
+                output_path=output_audio_path,
+                api_key=elevenlabs_key,
+                voice_id=elevenlabs_voice_id
             )
             if synthesis_success:
-                print(
-                    f"\n[INFO] Étape 3 terminée avec succès. Votre voix off est stockée dans Obsidian Outbox : {output_audio_path}"
-                )
+                print(f"\n[INFO] Étape 6 terminée avec succès. Votre voix off est stockée dans Obsidian Outbox : {output_audio_path}")
         else:
             print("[INFO] Synthèse vocale ignorée pour l'instant. Vous pourrez la lancer plus tard.")
-
+            
     print("\n" + "=" * 80)
-    print(" WORKFLOW INTERACTIF TERMINE AVEC SUCCÈS")
-    print(" Les livrables sont prêts dans Obsidian Outbox.")
+    print(" WORKFLOW INTERACTIF SOP COMPLET TERMINE AVEC SUCCÈS")
+    print(" Les 5 plans Markdown de production et le fichier audio sont dans votre coffre Obsidian.")
     print("=" * 80)
 
 

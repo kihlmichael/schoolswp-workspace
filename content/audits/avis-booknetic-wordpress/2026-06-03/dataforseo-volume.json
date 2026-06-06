@@ -1,0 +1,118 @@
+{
+  "source": "DataForSEO",
+  "endpoints": [
+    "kw_data_google_ads_search_volume",
+    "dataforseo_labs_google_keyword_overview"
+  ],
+  "location_name": "France",
+  "location_code": 2250,
+  "language_code": "fr",
+  "collected_at": "2026-06-03",
+  "google_ads_search_volume": [
+    {
+      "keyword": "avis booknetic",
+      "search_volume": null,
+      "note": "aucune donnee (sous le seuil de reporting)"
+    },
+    {
+      "keyword": "booknetic avis",
+      "search_volume": null,
+      "note": "aucune donnee (sous le seuil de reporting)"
+    },
+    {
+      "keyword": "booknetic",
+      "search_volume": 90,
+      "competition": "LOW",
+      "competition_index": 14,
+      "cpc": 1.38,
+      "low_top_of_page_bid": 0.77,
+      "high_top_of_page_bid": 2.81,
+      "monthly_searches": {
+        "2026-04": 50,
+        "2026-03": 50,
+        "2026-02": 90,
+        "2026-01": 70,
+        "2025-12": 70,
+        "2025-11": 90,
+        "2025-10": 110,
+        "2025-09": 110,
+        "2025-08": 90,
+        "2025-07": 90,
+        "2025-06": 70,
+        "2025-05": 110
+      },
+      "search_volume_trend": { "quarterly": -44, "yearly": -55 }
+    },
+    { "keyword": "booknetic wordpress", "search_volume": 10 },
+    {
+      "keyword": "amelia booknetic",
+      "search_volume": null,
+      "note": "aucune donnee"
+    },
+    { "keyword": "booknetic alternative", "search_volume": 10 },
+    {
+      "keyword": "plugin prise de rendez-vous wordpress",
+      "search_volume": 10,
+      "competition": "LOW",
+      "competition_index": 29,
+      "cpc": 0.26
+    }
+  ],
+  "keyword_overview": [
+    {
+      "keyword": "booknetic",
+      "search_volume": 90,
+      "competition": 0.14,
+      "competition_level": "LOW",
+      "cpc": 1.38,
+      "main_intent": "navigational",
+      "foreign_intent": ["informational"],
+      "trend_quarterly": -44,
+      "trend_yearly": -55,
+      "avg_referring_domains": 71.5
+    },
+    {
+      "keyword": "booknetic wordpress",
+      "search_volume": 10,
+      "main_intent": "navigational"
+    },
+    {
+      "keyword": "plugin rendez-vous wordpress",
+      "search_volume": 10,
+      "competition": 0.8,
+      "competition_level": "HIGH",
+      "cpc": 0.08,
+      "keyword_difficulty": 49,
+      "main_intent": "navigational"
+    }
+  ],
+  "search_intent_classification": [
+    {
+      "keyword": "avis booknetic",
+      "intent": "informational",
+      "probability": 0.877
+    },
+    {
+      "keyword": "booknetic",
+      "intent": "informational",
+      "probability": 0.478,
+      "secondary": [{ "navigational": 0.295 }]
+    },
+    {
+      "keyword": "booknetic wordpress",
+      "intent": "navigational",
+      "probability": 0.918
+    },
+    {
+      "keyword": "plugin prise de rendez-vous wordpress",
+      "intent": "navigational",
+      "probability": 0.864
+    },
+    {
+      "keyword": "booknetic alternative",
+      "intent": "informational",
+      "probability": 0.546,
+      "secondary": [{ "commercial": 0.383 }]
+    }
+  ]
+}

@@ -1,0 +1,2985 @@
+{
+  "updatedAt": "2026-06-01T17:15:52.469Z",
+  "createdAt": "2026-06-01T13:57:16.487Z",
+  "id": "EpRp4CM03aWJyVyu",
+  "name": "[Prod] schoolsWP Radar Plugins - v0.2 Baseline (W210)",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "n_manual",
+      "name": "Test manuel",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "n_sched",
+      "name": "Lundi 8h Paris",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1040,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "path": "radar-trigger",
+        "options": {}
+      },
+      "id": "n_webhook",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        -1040,
+        100
+      ],
+      "webhookId": "8585cbac-471a-4616-a233-3abbd4d8d861"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "options": {}
+      },
+      "id": "n_read",
+      "name": "Lire sources",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -816,
+        352
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f1",
+              "leftValue": "={{ $json.actif }}",
+              "rightValue": "yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_filter",
+      "name": "Garder actif",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -592,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": 9999
+      },
+      "id": "n_limit",
+      "name": "Limite test",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v2/scrape",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"url\": $json.url, \"formats\": [\"markdown\"], \"onlyMainContent\": true } }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "n_fire",
+      "name": "Firecrawl Scrape",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -144,
+        352
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const rawMarkdown = $json.data?.markdown || $json.markdown || '';\n\nfunction normalizeMarkdown(input = '') {\n  return input\n    .replace(/\\r/g, '\\n')\n    .replace(/[ \\t]+/g, ' ')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .replace(/Last updated:?.*/gi, '')\n    .replace(/Updated on:?.*/gi, '')\n    .replace(/Cookie(s)? .*/gi, '')\n    .trim()\n    .toLowerCase();\n}\n\n$json.normalized_markdown = normalizeMarkdown(rawMarkdown);\nreturn $json;"
+      },
+      "id": "n_normalize",
+      "name": "Normalize Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $json.normalized_markdown }}",
+        "dataPropertyName": "current_hash"
+      },
+      "id": "n_hash",
+      "name": "Hash SHA256",
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 2,
+      "position": [
+        300,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const rawMarkdown = $json.data?.markdown || $json.markdown || '';\nconst currentHash = $json.current_hash || '';\nconst previousHash = $('Limite test').all()[$itemIndex].json.dernier_hash || '';\nconst previousExcerpt = $('Limite test').all()[$itemIndex].json.dernier_excerpt || '';\nconst prevErrors = Number($('Limite test').all()[$itemIndex].json.nb_erreurs_consecutives) || 0;\n\nconst isError = !rawMarkdown || rawMarkdown.length < 500;\nconst isBaseline = !isError && !previousHash;\nconst hasChanged = !isError && !isBaseline && currentHash !== previousHash;\n\nconst status = isError\n  ? 'error'\n  : isBaseline\n    ? 'baseline'\n    : hasChanged\n      ? 'changed'\n      : 'unchanged';\n\nconst consecutiveErrors = isError ? prevErrors + 1 : 0;\n\n$json.current_hash = currentHash;\n$json.previous_hash = previousHash;\n$json.markdown_excerpt = rawMarkdown.slice(0, 8000);\n$json.previous_excerpt = previousExcerpt;\n$json.status = status;\n$json.consecutive_errors = consecutiveErrors;\n$json.should_run_llm = status === 'changed';\n$json.should_snapshot = ['baseline', 'changed', 'error'].includes(status);\n$json.should_update_hash = ['baseline', 'changed'].includes(status);\n$json.should_alert_tech = consecutiveErrors >= 3;\nreturn $json;"
+      },
+      "id": "n_state_engine",
+      "name": "State Engine",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c_changed",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "changed",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_router",
+      "name": "Is Changed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        740,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Tu es l'assistant éditorial de schoolsWP.\nMission : analyser précisément les changements détectés sur une page web WordPress surveillée.\n\nDonnées historiques :\n- Outil : {{ $('Limite test').item.json.outillage }}\n- Catégorie : {{ $('Limite test').item.json.categorie }}\n- URL : {{ $('Limite test').item.json.url }}\n\nANCIEN CONTENU DE RÉFÉRENCE :\n{{ $('Limite test').item.json.dernier_excerpt }}\n\nNOUVEAU CONTENU SCRAPÉ :\n{{ $json.markdown_excerpt }}\n\nTâche : Identifie précisément ce qui a changé (tarifs, options, conditions, changelog). Ne résume pas toute la page, concentre-toi uniquement sur le DIFF.\n\nContraintes :\n- Réponds en français.\n- Sois concret et factuel.\n- N'invente rien.\n- Le score est un entier de 1 à 10 reflétant l'impact de ce changement pour schoolsWP (tarifs en baisse, promo majeure, fin de lifetime = score élevé; simple mise à jour mineure = score bas).\n\nTu DOIS répondre UNIQUEMENT au format JSON valide avec la structure suivante :\n{\n  \"type_changement\": \"Description courte du changement\",\n  \"resume\": \"Résumé détaillé du diff en français\",\n  \"impact_schoolswp\": \"Impact estimé pour les freelances/formateurs\",\n  \"score\": 6,\n  \"action_recommandee\": \"Action recommandée (e.g. publier un deal, modifier un article, ne rien faire)\",\n  \"contenu_suggere\": \"Contenu suggéré ou angle d'article\",\n  \"niveau_confiance\": \"Elevé/Moyen/Faible\",\n  \"a_verifier_manuellement\": \"Oui/Non\"\n}",
+        "batching": {
+          "batchSize": 1,
+          "delayBetweenBatches": 1500
+        }
+      },
+      "id": "n_llm",
+      "name": "Analyse IA LLM",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        960,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {}
+      },
+      "id": "n_gemini",
+      "name": "Gemini 2.5 Flash",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        270
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zit3mMoDN70ZqEIk",
+          "name": "Gemini_Production_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "let text = $json.text || '';\ntext = text.replace(/^```json\\s*/i, '').replace(/```$/, '').trim();\nlet parsed = {};\ntry {\n  parsed = JSON.parse(text);\n} catch (e) {\n  const start = text.indexOf('{');\n  const end = text.lastIndexOf('}');\n  if (start !== -1 && end !== -1) {\n    try {\n      parsed = JSON.parse(text.substring(start, end + 1));\n    } catch (e2) {\n      parsed = {\n        type_changement: \"Erreur de parsing\",\n        resume: \"Impossible de parser le JSON retourné par l'IA. Texte brut : \" + text.slice(0, 200),\n        impact_schoolswp: \"Aucun\",\n        score: 1,\n        action_recommandee: \"Vérifier manuellement\",\n        contenu_suggere: \"\",\n        niveau_confiance: \"Faible\",\n        a_verifier_manuellement: \"Oui\"\n      };\n    }\n  } else {\n    parsed = {\n      type_changement: \"Erreur de parsing\",\n      resume: \"Aucun objet JSON trouvé dans la réponse de l'IA. Texte brut : \" + text.slice(0, 200),\n      impact_schoolswp: \"Aucun\",\n      score: 1,\n      action_recommandee: \"Vérifier manuellement\",\n      contenu_suggere: \"\",\n      niveau_confiance: \"Faible\",\n      a_verifier_manuellement: \"Oui\"\n    };\n  }\n}\n$json.output = parsed;\nreturn $json;"
+      },
+      "id": "n_parse_code",
+      "name": "Analyse IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "snapshots"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "hash": "={{ $json.current_hash }}",
+            "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+            "summary": "={{ $json.output?.resume || 'Changement détecté' }}",
+            "status": "={{ $json.status }}",
+            "run_id": "={{ $execution.id }}",
+            "firecrawl_status": "={{ $json.success !== false ? 'ok' : 'error' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "snapshot_id",
+              "displayName": "snapshot_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_id",
+              "displayName": "source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "outillage",
+              "displayName": "outillage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_check",
+              "displayName": "date_check",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hash",
+              "displayName": "hash",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "markdown_excerpt",
+              "displayName": "markdown_excerpt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "firecrawl_status",
+              "displayName": "firecrawl_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "n_snap_changed",
+      "name": "Append snapshot (changed)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1420,
+        120
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "sa1",
+              "leftValue": "={{ $json.output?.score }}",
+              "rightValue": "={{ Number($json.score_min_alert) || 6 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_ifalert",
+      "name": "Score alert",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1640,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "alerts"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "schema": [],
+          "value": {
+            "alert_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "date": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "type_page": "={{ $('Limite test').item.json.type_page }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "type_changement": "={{ $json.output?.type_changement }}",
+            "resume": "={{ $json.output?.resume }}",
+            "impact_schoolswp": "={{ $json.output?.impact_schoolswp }}",
+            "score": "={{ $json.output?.score }}",
+            "action_recommandee": "={{ $json.output?.action_recommandee }}",
+            "contenu_suggere": "={{ $json.output?.contenu_suggere }}",
+            "niveau_confiance": "={{ $json.output?.niveau_confiance }}",
+            "a_verifier_manuellement": "={{ $json.output?.a_verifier_manuellement }}",
+            "statut": "nouveau",
+            "run_id": "={{ $execution.id }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "n_alert",
+      "name": "Append alert",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1860,
+        40
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "sd1",
+              "leftValue": "={{ $json.output?.score }}",
+              "rightValue": "={{ Number($json.score_min_discord) || 8 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_ifdiscord",
+      "name": "Score discord",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2080,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=🔌 **Radar Plugins — {{ $('Limite test').item.json.outillage }}** ({{ $('Limite test').item.json.type_page }})\nScore {{ $json.output?.score }}/10 · {{ $json.output?.type_changement }}\n\n{{ $json.output?.resume }}\n\n**Impact schoolsWP** : {{ $json.output?.impact_schoolswp }}\n**Action** : {{ $json.output?.action_recommandee }}\n🔗 {{ $('Limite test').item.json.url }}",
+        "options": {}
+      },
+      "id": "n_discord",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        2300,
+        -40
+      ],
+      "webhookId": "25637f16-e72f-4dd2-8cfa-8bdc2afcdece",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "7jPmTW9DQTLNPUxz",
+          "name": "Discord - schoolsWP - ⏐🤖⏐ʙᴏᴛꜱ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "contact@michaelkihl.fr",
+        "subject": "=[Radar Plugins] {{ $('Limite test').item.json.outillage }} — score {{ $json.output?.score }}",
+        "emailType": "text",
+        "message": "=Radar Plugins schoolsWP\n\nOutil : {{ $('Limite test').item.json.outillage }} ({{ $('Limite test').item.json.type_page }})\nType de changement : {{ $json.output?.type_changement }}\nScore : {{ $json.output?.score }}/10\nNiveau de confiance : {{ $json.output?.niveau_confiance }}\n\nRésumé : {{ $json.output?.resume }}\n\nImpact schoolsWP : {{ $json.output?.impact_schoolswp }}\nAction recommandée : {{ $json.output?.action_recommandee }}\nContenu suggéré : {{ $json.output?.contenu_suggere }}\nÀ vérifier manuellement : {{ $json.output?.a_verifier_manuellement }}\n\nURL : {{ $('Limite test').item.json.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "n_email",
+      "name": "Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        2300,
+        120
+      ],
+      "webhookId": "edd3bbfb-3807-44d9-b002-4fff864eec0b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "HiznAUTleb8KrYy8",
+          "name": "Gmail - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_status": "={{ $('State Engine').item.json.status }}",
+            "dernier_hash": "={{ $('State Engine').item.json.current_hash }}",
+            "dernier_excerpt": "={{ $('State Engine').item.json.markdown_excerpt }}",
+            "dernier_resume": "={{ $('Analyse IA').item.json.output?.resume || 'Initialisation baseline' }}",
+            "erreur_derniere_execution": "",
+            "nb_erreurs_consecutives": 0
+          }
+        },
+        "options": {}
+      },
+      "id": "n_maj_changed",
+      "name": "MAJ Source Changed",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2540,
+        40
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c_baseline",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "baseline",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_router_baseline",
+      "name": "Is Baseline?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "snapshots"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "hash": "={{ $json.current_hash }}",
+            "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+            "summary": "Initialisation baseline",
+            "status": "={{ $json.status }}",
+            "run_id": "={{ $execution.id }}",
+            "firecrawl_status": "ok"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "snapshot_id",
+              "displayName": "snapshot_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_id",
+              "displayName": "source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "outillage",
+              "displayName": "outillage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_check",
+              "displayName": "date_check",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hash",
+              "displayName": "hash",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "markdown_excerpt",
+              "displayName": "markdown_excerpt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "firecrawl_status",
+              "displayName": "firecrawl_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "n_snap_baseline",
+      "name": "Append snapshot (baseline)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1200,
+        480
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_status": "={{ $('State Engine').item.json.status }}",
+            "dernier_hash": "={{ $('State Engine').item.json.current_hash }}",
+            "dernier_excerpt": "={{ $('State Engine').item.json.markdown_excerpt }}",
+            "dernier_resume": "Baseline initialisée",
+            "erreur_derniere_execution": "",
+            "nb_erreurs_consecutives": 0
+          }
+        },
+        "options": {}
+      },
+      "id": "n_maj_baseline",
+      "name": "MAJ Source Baseline",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1420,
+        480
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c_unchanged",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "unchanged",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_router_unchanged",
+      "name": "Is Unchanged?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_status": "={{ $json.status }}",
+            "erreur_derniere_execution": "",
+            "nb_erreurs_consecutives": 0
+          }
+        },
+        "options": {}
+      },
+      "id": "n_maj_unchanged",
+      "name": "MAJ Source Unchanged",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1420,
+        640
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "snapshots"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "hash": "={{ $json.current_hash }}",
+            "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+            "summary": "Erreur scraping Firecrawl (taille < 500 ou vide)",
+            "status": "={{ $json.status }}",
+            "run_id": "={{ $execution.id }}",
+            "firecrawl_status": "error"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "snapshot_id",
+              "displayName": "snapshot_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_id",
+              "displayName": "source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "outillage",
+              "displayName": "outillage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_check",
+              "displayName": "date_check",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hash",
+              "displayName": "hash",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "markdown_excerpt",
+              "displayName": "markdown_excerpt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "firecrawl_status",
+              "displayName": "firecrawl_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "n_snap_error",
+      "name": "Append snapshot (error)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1200,
+        800
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_status": "={{ $('State Engine').item.json.status }}",
+            "erreur_derniere_execution": "Erreur scraping Firecrawl (taille < 500 ou vide)",
+            "nb_erreurs_consecutives": "={{ $('State Engine').item.json.consecutive_errors }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "n_maj_error",
+      "name": "MAJ Source Error",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1420,
+        800
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Test manuel": {
+      "main": [
+        [
+          {
+            "node": "Lire sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lundi 8h Paris": {
+      "main": [
+        [
+          {
+            "node": "Lire sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Lire sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lire sources": {
+      "main": [
+        [
+          {
+            "node": "Garder actif",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Garder actif": {
+      "main": [
+        [
+          {
+            "node": "Limite test",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limite test": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Scrape": {
+      "main": [
+        [
+          {
+            "node": "Normalize Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Content": {
+      "main": [
+        [
+          {
+            "node": "Hash SHA256",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hash SHA256": {
+      "main": [
+        [
+          {
+            "node": "State Engine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "State Engine": {
+      "main": [
+        [
+          {
+            "node": "Is Changed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Changed?": {
+      "main": [
+        [
+          {
+            "node": "Analyse IA LLM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Is Baseline?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Baseline?": {
+      "main": [
+        [
+          {
+            "node": "Append snapshot (baseline)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Is Unchanged?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Unchanged?": {
+      "main": [
+        [
+          {
+            "node": "MAJ Source Unchanged",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append snapshot (error)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse IA LLM": {
+      "main": [
+        [
+          {
+            "node": "Analyse IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse IA": {
+      "main": [
+        [
+          {
+            "node": "Append snapshot (changed)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append snapshot (changed)": {
+      "main": [
+        [
+          {
+            "node": "Score alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score alert": {
+      "main": [
+        [
+          {
+            "node": "Append alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MAJ Source Changed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append alert": {
+      "main": [
+        [
+          {
+            "node": "Score discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score discord": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MAJ Source Changed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord": {
+      "main": [
+        [
+          {
+            "node": "MAJ Source Changed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email": {
+      "main": [
+        [
+          {
+            "node": "MAJ Source Changed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append snapshot (baseline)": {
+      "main": [
+        [
+          {
+            "node": "MAJ Source Baseline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append snapshot (error)": {
+      "main": [
+        [
+          {
+            "node": "MAJ Source Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Analyse IA LLM",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Lundi 8h Paris": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": null,
+  "pinData": null,
+  "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+  "activeVersionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+  "versionCounter": 28,
+  "triggerCount": 2,
+  "shared": [
+    {
+      "updatedAt": "2026-06-01T13:57:16.495Z",
+      "createdAt": "2026-06-01T13:57:16.495Z",
+      "role": "workflow:owner",
+      "workflowId": "EpRp4CM03aWJyVyu",
+      "projectId": "VowIPsxG3tIBPRZk",
+      "project": {
+        "updatedAt": "2025-12-12T16:29:40.938Z",
+        "createdAt": "2025-12-12T16:04:53.821Z",
+        "id": "VowIPsxG3tIBPRZk",
+        "name": "Michaël KIHL <contact@michaelkihl.fr>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": {
+    "updatedAt": "2026-06-01T17:15:52.473Z",
+    "createdAt": "2026-06-01T17:15:52.473Z",
+    "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+    "workflowId": "EpRp4CM03aWJyVyu",
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "n_manual",
+        "name": "Test manuel",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          -1040,
+          256
+        ]
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "cronExpression",
+                "expression": "0 8 * * 1"
+              }
+            ]
+          }
+        },
+        "id": "n_sched",
+        "name": "Lundi 8h Paris",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.2,
+        "position": [
+          -1040,
+          448
+        ]
+      },
+      {
+        "parameters": {
+          "path": "radar-trigger",
+          "options": {}
+        },
+        "id": "n_webhook",
+        "name": "Webhook Trigger",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 1.1,
+        "position": [
+          -1040,
+          100
+        ],
+        "webhookId": "8585cbac-471a-4616-a233-3abbd4d8d861"
+      },
+      {
+        "parameters": {
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "sources"
+          },
+          "options": {}
+        },
+        "id": "n_read",
+        "name": "Lire sources",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          -816,
+          352
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": false,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "f1",
+                "leftValue": "={{ $json.actif }}",
+                "rightValue": "yes",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_filter",
+        "name": "Garder actif",
+        "type": "n8n-nodes-base.filter",
+        "typeVersion": 2.2,
+        "position": [
+          -592,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "maxItems": 9999
+        },
+        "id": "n_limit",
+        "name": "Limite test",
+        "type": "n8n-nodes-base.limit",
+        "typeVersion": 1,
+        "position": [
+          -368,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "method": "POST",
+          "url": "https://api.firecrawl.dev/v2/scrape",
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth",
+          "sendBody": true,
+          "specifyBody": "json",
+          "jsonBody": "={{ { \"url\": $json.url, \"formats\": [\"markdown\"], \"onlyMainContent\": true } }}",
+          "options": {
+            "timeout": 60000
+          }
+        },
+        "id": "n_fire",
+        "name": "Firecrawl Scrape",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.2,
+        "position": [
+          -144,
+          352
+        ],
+        "credentials": {
+          "httpHeaderAuth": {
+            "id": "tDpWWa0q2KgN4SwC",
+            "name": "Firecrawl"
+          }
+        },
+        "onError": "continueRegularOutput"
+      },
+      {
+        "parameters": {
+          "mode": "runOnceForEachItem",
+          "jsCode": "const rawMarkdown = $json.data?.markdown || $json.markdown || '';\n\nfunction normalizeMarkdown(input = '') {\n  return input\n    .replace(/\\r/g, '\\n')\n    .replace(/[ \\t]+/g, ' ')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .replace(/Last updated:?.*/gi, '')\n    .replace(/Updated on:?.*/gi, '')\n    .replace(/Cookie(s)? .*/gi, '')\n    .trim()\n    .toLowerCase();\n}\n\n$json.normalized_markdown = normalizeMarkdown(rawMarkdown);\nreturn $json;"
+        },
+        "id": "n_normalize",
+        "name": "Normalize Content",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          80,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "value": "={{ $json.normalized_markdown }}",
+          "dataPropertyName": "current_hash"
+        },
+        "id": "n_hash",
+        "name": "Hash SHA256",
+        "type": "n8n-nodes-base.crypto",
+        "typeVersion": 2,
+        "position": [
+          300,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "runOnceForEachItem",
+          "jsCode": "const rawMarkdown = $json.data?.markdown || $json.markdown || '';\nconst currentHash = $json.current_hash || '';\nconst previousHash = $('Limite test').all()[$itemIndex].json.dernier_hash || '';\nconst previousExcerpt = $('Limite test').all()[$itemIndex].json.dernier_excerpt || '';\nconst prevErrors = Number($('Limite test').all()[$itemIndex].json.nb_erreurs_consecutives) || 0;\n\nconst isError = !rawMarkdown || rawMarkdown.length < 500;\nconst isBaseline = !isError && !previousHash;\nconst hasChanged = !isError && !isBaseline && currentHash !== previousHash;\n\nconst status = isError\n  ? 'error'\n  : isBaseline\n    ? 'baseline'\n    : hasChanged\n      ? 'changed'\n      : 'unchanged';\n\nconst consecutiveErrors = isError ? prevErrors + 1 : 0;\n\n$json.current_hash = currentHash;\n$json.previous_hash = previousHash;\n$json.markdown_excerpt = rawMarkdown.slice(0, 8000);\n$json.previous_excerpt = previousExcerpt;\n$json.status = status;\n$json.consecutive_errors = consecutiveErrors;\n$json.should_run_llm = status === 'changed';\n$json.should_snapshot = ['baseline', 'changed', 'error'].includes(status);\n$json.should_update_hash = ['baseline', 'changed'].includes(status);\n$json.should_alert_tech = consecutiveErrors >= 3;\nreturn $json;"
+        },
+        "id": "n_state_engine",
+        "name": "State Engine",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          520,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "c_changed",
+                "leftValue": "={{ $json.status }}",
+                "rightValue": "changed",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_router",
+        "name": "Is Changed?",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          740,
+          352
+        ]
+      },
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "Tu es l'assistant éditorial de schoolsWP.\nMission : analyser précisément les changements détectés sur une page web WordPress surveillée.\n\nDonnées historiques :\n- Outil : {{ $('Limite test').item.json.outillage }}\n- Catégorie : {{ $('Limite test').item.json.categorie }}\n- URL : {{ $('Limite test').item.json.url }}\n\nANCIEN CONTENU DE RÉFÉRENCE :\n{{ $('Limite test').item.json.dernier_excerpt }}\n\nNOUVEAU CONTENU SCRAPÉ :\n{{ $json.markdown_excerpt }}\n\nTâche : Identifie précisément ce qui a changé (tarifs, options, conditions, changelog). Ne résume pas toute la page, concentre-toi uniquement sur le DIFF.\n\nContraintes :\n- Réponds en français.\n- Sois concret et factuel.\n- N'invente rien.\n- Le score est un entier de 1 à 10 reflétant l'impact de ce changement pour schoolsWP (tarifs en baisse, promo majeure, fin de lifetime = score élevé; simple mise à jour mineure = score bas).\n\nTu DOIS répondre UNIQUEMENT au format JSON valide avec la structure suivante :\n{\n  \"type_changement\": \"Description courte du changement\",\n  \"resume\": \"Résumé détaillé du diff en français\",\n  \"impact_schoolswp\": \"Impact estimé pour les freelances/formateurs\",\n  \"score\": 6,\n  \"action_recommandee\": \"Action recommandée (e.g. publier un deal, modifier un article, ne rien faire)\",\n  \"contenu_suggere\": \"Contenu suggéré ou angle d'article\",\n  \"niveau_confiance\": \"Elevé/Moyen/Faible\",\n  \"a_verifier_manuellement\": \"Oui/Non\"\n}",
+          "batching": {
+            "batchSize": 1,
+            "delayBetweenBatches": 1500
+          }
+        },
+        "id": "n_llm",
+        "name": "Analyse IA LLM",
+        "type": "@n8n/n8n-nodes-langchain.chainLlm",
+        "typeVersion": 1.9,
+        "position": [
+          960,
+          120
+        ]
+      },
+      {
+        "parameters": {
+          "modelName": "models/gemini-2.5-flash",
+          "options": {}
+        },
+        "id": "n_gemini",
+        "name": "Gemini 2.5 Flash",
+        "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+        "typeVersion": 1.1,
+        "position": [
+          1040,
+          270
+        ],
+        "credentials": {
+          "googlePalmApi": {
+            "id": "Zit3mMoDN70ZqEIk",
+            "name": "Gemini_Production_API"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "mode": "runOnceForEachItem",
+          "jsCode": "let text = $json.text || '';\ntext = text.replace(/^```json\\s*/i, '').replace(/```$/, '').trim();\nlet parsed = {};\ntry {\n  parsed = JSON.parse(text);\n} catch (e) {\n  const start = text.indexOf('{');\n  const end = text.lastIndexOf('}');\n  if (start !== -1 && end !== -1) {\n    try {\n      parsed = JSON.parse(text.substring(start, end + 1));\n    } catch (e2) {\n      parsed = {\n        type_changement: \"Erreur de parsing\",\n        resume: \"Impossible de parser le JSON retourné par l'IA. Texte brut : \" + text.slice(0, 200),\n        impact_schoolswp: \"Aucun\",\n        score: 1,\n        action_recommandee: \"Vérifier manuellement\",\n        contenu_suggere: \"\",\n        niveau_confiance: \"Faible\",\n        a_verifier_manuellement: \"Oui\"\n      };\n    }\n  } else {\n    parsed = {\n      type_changement: \"Erreur de parsing\",\n      resume: \"Aucun objet JSON trouvé dans la réponse de l'IA. Texte brut : \" + text.slice(0, 200),\n      impact_schoolswp: \"Aucun\",\n      score: 1,\n      action_recommandee: \"Vérifier manuellement\",\n      contenu_suggere: \"\",\n      niveau_confiance: \"Faible\",\n      a_verifier_manuellement: \"Oui\"\n    };\n  }\n}\n$json.output = parsed;\nreturn $json;"
+        },
+        "id": "n_parse_code",
+        "name": "Analyse IA",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          1200,
+          120
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "snapshots"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+              "source_id": "={{ $('Limite test').item.json.id }}",
+              "outillage": "={{ $('Limite test').item.json.outillage }}",
+              "url": "={{ $('Limite test').item.json.url }}",
+              "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "hash": "={{ $json.current_hash }}",
+              "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+              "summary": "={{ $json.output?.resume || 'Changement détecté' }}",
+              "status": "={{ $json.status }}",
+              "run_id": "={{ $execution.id }}",
+              "firecrawl_status": "={{ $json.success !== false ? 'ok' : 'error' }}"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "snapshot_id",
+                "displayName": "snapshot_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "source_id",
+                "displayName": "source_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "outillage",
+                "displayName": "outillage",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "url",
+                "displayName": "url",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "date_check",
+                "displayName": "date_check",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "hash",
+                "displayName": "hash",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "markdown_excerpt",
+                "displayName": "markdown_excerpt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "summary",
+                "displayName": "summary",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "status",
+                "displayName": "status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "run_id",
+                "displayName": "run_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "firecrawl_status",
+                "displayName": "firecrawl_status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "n_snap_changed",
+        "name": "Append snapshot (changed)",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1420,
+          120
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "sa1",
+                "leftValue": "={{ $json.output?.score }}",
+                "rightValue": "={{ Number($json.score_min_alert) || 6 }}",
+                "operator": {
+                  "type": "number",
+                  "operation": "gte"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_ifalert",
+        "name": "Score alert",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          1640,
+          120
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "alerts"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "schema": [],
+            "value": {
+              "alert_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+              "date": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "source_id": "={{ $('Limite test').item.json.id }}",
+              "outillage": "={{ $('Limite test').item.json.outillage }}",
+              "type_page": "={{ $('Limite test').item.json.type_page }}",
+              "url": "={{ $('Limite test').item.json.url }}",
+              "type_changement": "={{ $json.output?.type_changement }}",
+              "resume": "={{ $json.output?.resume }}",
+              "impact_schoolswp": "={{ $json.output?.impact_schoolswp }}",
+              "score": "={{ $json.output?.score }}",
+              "action_recommandee": "={{ $json.output?.action_recommandee }}",
+              "contenu_suggere": "={{ $json.output?.contenu_suggere }}",
+              "niveau_confiance": "={{ $json.output?.niveau_confiance }}",
+              "a_verifier_manuellement": "={{ $json.output?.a_verifier_manuellement }}",
+              "statut": "nouveau",
+              "run_id": "={{ $execution.id }}"
+            }
+          },
+          "options": {}
+        },
+        "id": "n_alert",
+        "name": "Append alert",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1860,
+          40
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "sd1",
+                "leftValue": "={{ $json.output?.score }}",
+                "rightValue": "={{ Number($json.score_min_discord) || 8 }}",
+                "operator": {
+                  "type": "number",
+                  "operation": "gte"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_ifdiscord",
+        "name": "Score discord",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          2080,
+          40
+        ]
+      },
+      {
+        "parameters": {
+          "authentication": "webhook",
+          "content": "=🔌 **Radar Plugins — {{ $('Limite test').item.json.outillage }}** ({{ $('Limite test').item.json.type_page }})\nScore {{ $json.output?.score }}/10 · {{ $json.output?.type_changement }}\n\n{{ $json.output?.resume }}\n\n**Impact schoolsWP** : {{ $json.output?.impact_schoolswp }}\n**Action** : {{ $json.output?.action_recommandee }}\n🔗 {{ $('Limite test').item.json.url }}",
+          "options": {}
+        },
+        "id": "n_discord",
+        "name": "Discord",
+        "type": "n8n-nodes-base.discord",
+        "typeVersion": 2,
+        "position": [
+          2300,
+          -40
+        ],
+        "webhookId": "25637f16-e72f-4dd2-8cfa-8bdc2afcdece",
+        "credentials": {
+          "discordWebhookApi": {
+            "id": "7jPmTW9DQTLNPUxz",
+            "name": "Discord - schoolsWP - ⏐🤖⏐ʙᴏᴛꜱ"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "sendTo": "contact@michaelkihl.fr",
+          "subject": "=[Radar Plugins] {{ $('Limite test').item.json.outillage }} — score {{ $json.output?.score }}",
+          "emailType": "text",
+          "message": "=Radar Plugins schoolsWP\n\nOutil : {{ $('Limite test').item.json.outillage }} ({{ $('Limite test').item.json.type_page }})\nType de changement : {{ $json.output?.type_changement }}\nScore : {{ $json.output?.score }}/10\nNiveau de confiance : {{ $json.output?.niveau_confiance }}\n\nRésumé : {{ $json.output?.resume }}\n\nImpact schoolsWP : {{ $json.output?.impact_schoolswp }}\nAction recommandée : {{ $json.output?.action_recommandee }}\nContenu suggéré : {{ $json.output?.contenu_suggere }}\nÀ vérifier manuellement : {{ $json.output?.a_verifier_manuellement }}\n\nURL : {{ $('Limite test').item.json.url }}",
+          "options": {
+            "appendAttribution": false
+          }
+        },
+        "id": "n_email",
+        "name": "Email",
+        "type": "n8n-nodes-base.gmail",
+        "typeVersion": 2.1,
+        "position": [
+          2300,
+          120
+        ],
+        "webhookId": "edd3bbfb-3807-44d9-b002-4fff864eec0b",
+        "credentials": {
+          "gmailOAuth2": {
+            "id": "HiznAUTleb8KrYy8",
+            "name": "Gmail - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "appendOrUpdate",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "sources"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "matchingColumns": [
+              "id"
+            ],
+            "schema": [],
+            "value": {
+              "id": "={{ $('Limite test').item.json.id }}",
+              "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "dernier_status": "={{ $('State Engine').item.json.status }}",
+              "dernier_hash": "={{ $('State Engine').item.json.current_hash }}",
+              "dernier_excerpt": "={{ $('State Engine').item.json.markdown_excerpt }}",
+              "dernier_resume": "={{ $('Analyse IA').item.json.output?.resume || 'Initialisation baseline' }}",
+              "erreur_derniere_execution": "",
+              "nb_erreurs_consecutives": 0
+            }
+          },
+          "options": {}
+        },
+        "id": "n_maj_changed",
+        "name": "MAJ Source Changed",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          2540,
+          40
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "c_baseline",
+                "leftValue": "={{ $json.status }}",
+                "rightValue": "baseline",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_router_baseline",
+        "name": "Is Baseline?",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          960,
+          560
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "snapshots"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+              "source_id": "={{ $('Limite test').item.json.id }}",
+              "outillage": "={{ $('Limite test').item.json.outillage }}",
+              "url": "={{ $('Limite test').item.json.url }}",
+              "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "hash": "={{ $json.current_hash }}",
+              "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+              "summary": "Initialisation baseline",
+              "status": "={{ $json.status }}",
+              "run_id": "={{ $execution.id }}",
+              "firecrawl_status": "ok"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "snapshot_id",
+                "displayName": "snapshot_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "source_id",
+                "displayName": "source_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "outillage",
+                "displayName": "outillage",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "url",
+                "displayName": "url",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "date_check",
+                "displayName": "date_check",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "hash",
+                "displayName": "hash",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "markdown_excerpt",
+                "displayName": "markdown_excerpt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "summary",
+                "displayName": "summary",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "status",
+                "displayName": "status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "run_id",
+                "displayName": "run_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "firecrawl_status",
+                "displayName": "firecrawl_status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "n_snap_baseline",
+        "name": "Append snapshot (baseline)",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1200,
+          480
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "appendOrUpdate",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "sources"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "matchingColumns": [
+              "id"
+            ],
+            "schema": [],
+            "value": {
+              "id": "={{ $('Limite test').item.json.id }}",
+              "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "dernier_status": "={{ $('State Engine').item.json.status }}",
+              "dernier_hash": "={{ $('State Engine').item.json.current_hash }}",
+              "dernier_excerpt": "={{ $('State Engine').item.json.markdown_excerpt }}",
+              "dernier_resume": "Baseline initialisée",
+              "erreur_derniere_execution": "",
+              "nb_erreurs_consecutives": 0
+            }
+          },
+          "options": {}
+        },
+        "id": "n_maj_baseline",
+        "name": "MAJ Source Baseline",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1420,
+          480
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "loose",
+              "version": 2
+            },
+            "conditions": [
+              {
+                "id": "c_unchanged",
+                "leftValue": "={{ $json.status }}",
+                "rightValue": "unchanged",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "n_router_unchanged",
+        "name": "Is Unchanged?",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2.2,
+        "position": [
+          1200,
+          680
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "appendOrUpdate",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "sources"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "matchingColumns": [
+              "id"
+            ],
+            "schema": [],
+            "value": {
+              "id": "={{ $('Limite test').item.json.id }}",
+              "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "dernier_status": "={{ $json.status }}",
+              "erreur_derniere_execution": "",
+              "nb_erreurs_consecutives": 0
+            }
+          },
+          "options": {}
+        },
+        "id": "n_maj_unchanged",
+        "name": "MAJ Source Unchanged",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1420,
+          640
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "snapshots"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "value": {
+              "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+              "source_id": "={{ $('Limite test').item.json.id }}",
+              "outillage": "={{ $('Limite test').item.json.outillage }}",
+              "url": "={{ $('Limite test').item.json.url }}",
+              "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "hash": "={{ $json.current_hash }}",
+              "markdown_excerpt": "={{ $json.markdown_excerpt.slice(0, 500) }}",
+              "summary": "Erreur scraping Firecrawl (taille < 500 ou vide)",
+              "status": "={{ $json.status }}",
+              "run_id": "={{ $execution.id }}",
+              "firecrawl_status": "error"
+            },
+            "matchingColumns": [],
+            "schema": [
+              {
+                "id": "snapshot_id",
+                "displayName": "snapshot_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "source_id",
+                "displayName": "source_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "outillage",
+                "displayName": "outillage",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "url",
+                "displayName": "url",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "date_check",
+                "displayName": "date_check",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "hash",
+                "displayName": "hash",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "markdown_excerpt",
+                "displayName": "markdown_excerpt",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "summary",
+                "displayName": "summary",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "status",
+                "displayName": "status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "run_id",
+                "displayName": "run_id",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              },
+              {
+                "id": "firecrawl_status",
+                "displayName": "firecrawl_status",
+                "required": false,
+                "defaultMatch": false,
+                "display": true,
+                "type": "string",
+                "canBeUsedToMatch": true
+              }
+            ],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "n_snap_error",
+        "name": "Append snapshot (error)",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1200,
+          800
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "appendOrUpdate",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "sources"
+          },
+          "columns": {
+            "mappingMode": "defineBelow",
+            "matchingColumns": [
+              "id"
+            ],
+            "schema": [],
+            "value": {
+              "id": "={{ $('Limite test').item.json.id }}",
+              "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+              "dernier_status": "={{ $('State Engine').item.json.status }}",
+              "erreur_derniere_execution": "Erreur scraping Firecrawl (taille < 500 ou vide)",
+              "nb_erreurs_consecutives": "={{ $('State Engine').item.json.consecutive_errors }}"
+            }
+          },
+          "options": {}
+        },
+        "id": "n_maj_error",
+        "name": "MAJ Source Error",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.5,
+        "position": [
+          1420,
+          800
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "id": "4v6PLN0tU8vBlab5",
+            "name": "Google Sheets - schoolsWP v2"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Test manuel": {
+        "main": [
+          [
+            {
+              "node": "Lire sources",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Lundi 8h Paris": {
+        "main": [
+          [
+            {
+              "node": "Lire sources",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webhook Trigger": {
+        "main": [
+          [
+            {
+              "node": "Lire sources",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Lire sources": {
+        "main": [
+          [
+            {
+              "node": "Garder actif",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Garder actif": {
+        "main": [
+          [
+            {
+              "node": "Limite test",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Limite test": {
+        "main": [
+          [
+            {
+              "node": "Firecrawl Scrape",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Firecrawl Scrape": {
+        "main": [
+          [
+            {
+              "node": "Normalize Content",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Normalize Content": {
+        "main": [
+          [
+            {
+              "node": "Hash SHA256",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Hash SHA256": {
+        "main": [
+          [
+            {
+              "node": "State Engine",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "State Engine": {
+        "main": [
+          [
+            {
+              "node": "Is Changed?",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is Changed?": {
+        "main": [
+          [
+            {
+              "node": "Analyse IA LLM",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Is Baseline?",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is Baseline?": {
+        "main": [
+          [
+            {
+              "node": "Append snapshot (baseline)",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Is Unchanged?",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Is Unchanged?": {
+        "main": [
+          [
+            {
+              "node": "MAJ Source Unchanged",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Append snapshot (error)",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Analyse IA LLM": {
+        "main": [
+          [
+            {
+              "node": "Analyse IA",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Analyse IA": {
+        "main": [
+          [
+            {
+              "node": "Append snapshot (changed)",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append snapshot (changed)": {
+        "main": [
+          [
+            {
+              "node": "Score alert",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Score alert": {
+        "main": [
+          [
+            {
+              "node": "Append alert",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "MAJ Source Changed",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append alert": {
+        "main": [
+          [
+            {
+              "node": "Score discord",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Score discord": {
+        "main": [
+          [
+            {
+              "node": "Discord",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Email",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "MAJ Source Changed",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Discord": {
+        "main": [
+          [
+            {
+              "node": "MAJ Source Changed",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Email": {
+        "main": [
+          [
+            {
+              "node": "MAJ Source Changed",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append snapshot (baseline)": {
+        "main": [
+          [
+            {
+              "node": "MAJ Source Baseline",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Append snapshot (error)": {
+        "main": [
+          [
+            {
+              "node": "MAJ Source Error",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Gemini 2.5 Flash": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "Analyse IA LLM",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "Michaël KIHL",
+    "name": null,
+    "description": null,
+    "autosaved": false,
+    "workflowPublishHistory": [
+      {
+        "createdAt": "2026-06-01T17:15:52.590Z",
+        "id": 436,
+        "workflowId": "EpRp4CM03aWJyVyu",
+        "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+        "event": "activated",
+        "userId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      },
+      {
+        "createdAt": "2026-06-01T17:15:58.645Z",
+        "id": 438,
+        "workflowId": "EpRp4CM03aWJyVyu",
+        "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+        "event": "activated",
+        "userId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      },
+      {
+        "createdAt": "2026-06-01T17:15:52.557Z",
+        "id": 435,
+        "workflowId": "EpRp4CM03aWJyVyu",
+        "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+        "event": "deactivated",
+        "userId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      },
+      {
+        "createdAt": "2026-06-01T17:15:57.262Z",
+        "id": 437,
+        "workflowId": "EpRp4CM03aWJyVyu",
+        "versionId": "5a105aed-2a86-48ae-b0dc-7aa10acb3b93",
+        "event": "deactivated",
+        "userId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      }
+    ]
+  }
+}

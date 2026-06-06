@@ -1,0 +1,109 @@
+{
+  "context": "Variantes du mot-cle 'avis booknetic' pour les versions DE et EN de l'article. Double source DataForSEO + Ubersuggest.",
+  "collected_at": "2026-06-03",
+  "equivalents_intention_avis": {
+    "fr": "avis",
+    "en": "review",
+    "de": "erfahrungen / test / bewertung"
+  },
+  "EN": {
+    "market": "United States",
+    "location_code": 2840,
+    "language": "en",
+    "keywords": [
+      {
+        "keyword": "booknetic",
+        "dfs_volume": 170,
+        "uber_volume": 170,
+        "dfs_kd": 13,
+        "uber_sd": 36,
+        "competition": "LOW",
+        "cpc_usd": 4.59,
+        "intent": "navigational",
+        "trend_yearly": -58
+      },
+      {
+        "keyword": "booknetic review",
+        "dfs_volume": 10,
+        "uber_volume": 10,
+        "dfs_kd": 58,
+        "uber_sd": 44,
+        "competition": "HIGH (0.86)",
+        "intent": "informational",
+        "trend_yearly": -50
+      },
+      {
+        "keyword": "booknetic reviews",
+        "dfs_volume": 10,
+        "dfs_kd": 58,
+        "competition": "HIGH (0.86)",
+        "intent": "informational"
+      },
+      {
+        "keyword": "booknetic wordpress",
+        "dfs_volume": 10,
+        "intent": "navigational"
+      },
+      {
+        "keyword": "booknetic wordpress plugin",
+        "dfs_volume": 10,
+        "cpc_usd": 11.77,
+        "competition": "MEDIUM"
+      },
+      {
+        "keyword": "amelia vs booknetic",
+        "dfs_volume": 10,
+        "intent": "informational",
+        "note": "longue traine comparatif"
+      }
+    ],
+    "lecture": "Le mot d'intention 'review' est faible (10/mo) ET difficile (KD 58 / SD 44, comp HIGH). Le seul volume est la marque 'booknetic' (170/mo, KD 13) mais en fort declin (-58%/an). Cibler la marque avec 'Review' en modificateur de titre."
+  },
+  "DE": {
+    "market": "Germany",
+    "location_code": 2276,
+    "language": "de",
+    "keywords": [
+      {
+        "keyword": "booknetic",
+        "dfs_volume": 110,
+        "uber_volume": 110,
+        "dfs_kd": 10,
+        "uber_sd": 36,
+        "competition": "LOW",
+        "cpc_eur": 4.71,
+        "intent": "navigational",
+        "trend_yearly": -18,
+        "note": "MEILLEURE opportunite des 3 marches : KD le plus bas + declin le plus doux"
+      },
+      {
+        "keyword": "booknetic erfahrungen",
+        "dfs_volume": 0,
+        "uber_volume": 0,
+        "uber_sd": 17,
+        "intent": "review (0 volume mesurable)"
+      },
+      { "keyword": "booknetic test", "dfs_volume": 0 },
+      { "keyword": "booknetic bewertung", "dfs_volume": 0 },
+      { "keyword": "booknetic erfahrung", "dfs_volume": 0 },
+      {
+        "keyword": "booknetic alternative",
+        "dfs_volume": 10,
+        "intent": "informational/commercial"
+      },
+      {
+        "keyword": "booknetic kosten",
+        "dfs_volume": 0,
+        "note": "= prix/cout, 0 volume"
+      }
+    ],
+    "lecture": "Aucune variante 'review' allemande (erfahrungen/test/bewertung) n'a de volume. Mais la marque 'booknetic' est ICI la plus facile a ranker (KD 10) et la moins en declin (-18%/an). Cibler 'booknetic' avec 'Erfahrungen' en modificateur de titre."
+  },
+  "synthese_cross_langue": {
+    "constat": "Sur les 3 langues, le mot exact 'avis/review/erfahrungen' est quasi nul (FR 0, DE 0, EN 10) ; toute la valeur est la MARQUE 'booknetic'.",
+    "volumes_marque": { "FR": 90, "DE": 110, "EN_US": 170 },
+    "difficulte_marque_KD": { "FR": "n/d", "DE": 10, "EN_US": 13 },
+    "declin_annuel": { "FR": "-55%", "DE": "-18%", "EN_US": "-58%" },
+    "recommandation": "DE = priorite (KD 10, declin doux). EN = volume mais tres declinant + 'review' difficile. Pattern titre par langue : FR 'Avis Booknetic 2026', EN 'Booknetic Review 2026', DE 'Booknetic Erfahrungen 2026' (mot d'intention en titre, marche reel = la marque)."
+  }
+}

@@ -131,4 +131,6 @@ La refonte complète du brouillon d'article a été exécutée directement dans 
 - **Intégration sémantique** : Les mots-clés stratégiques ont été positionnés de manière naturelle dans les zones d'importance (`Review ClickFunnels`, `ClickFunnels review`, `ClickFunnels pricing` et `ClickFunnels alternative`).
 - **Valorisation de l'écosystème WordPress** : Ajout d'une analyse comparative détaillée mettant en valeur **FunnelKit** et **WP Funnels** comme des solutions plus avantageuses en termes de coût, de contrôle et d'intégration WooCommerce pour les utilisateurs WordPress.
 - **FAQ complète** : Intégration directe des questions de recherche identifiées via les données Thruuu.
+- **Intégration Ninja Tables** : Les deux tableaux comparatifs ont été créés dans le plugin Ninja Tables sous les IDs `2972907` (Tarifs ClickFunnels) et `2972908` (Comparatif ClickFunnels vs WordPress). Ils sont incrustés dans l'article via le bloc Gutenberg natif `ninja-tables/guten-block`.
+
 

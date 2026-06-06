@@ -1,0 +1,6 @@
+drive_credentials.json
+drive_token.json
+manifest.json
+snapshot.log
+__pycache__/
+*.pyc

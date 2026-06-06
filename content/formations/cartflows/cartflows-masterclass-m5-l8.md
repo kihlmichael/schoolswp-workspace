@@ -1,9 +1,9 @@
-# Lecon 5.8 — Cas pratique : funnel complet produit physique + upsell digital
+# Lecon 5.8 - Cas pratique : funnel complet produit physique + upsell digital
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 5 — One-Click Upsells et Downsells
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 5 - One-Click Upsells et Downsells
 - **Duree cible** : 12 min (~1700 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Construire un funnel complet de A a Z en live : produit physique + bump + upsell digital + downsell digital. Calculer l'AOV potentiel. Tester le parcours.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 On a vu la theorie, les configurations, les segments, les Dynamic Offers. Dans cette lecon, on assemble tout dans un cas pratique concret. Un funnel complet, construit en live, du premier clic a la commande finale.
 
@@ -20,9 +20,9 @@ Le scenario : tu vends des produits physiques (t-shirts) et tu veux augmenter ta
 
 ---
 
-**[SECTION 1 — Le funnel qu'on va construire]**
+**[SECTION 1 - Le funnel qu'on va construire]**
 
-**[ECRAN — schema du funnel complet avec prix]**
+**[ECRAN - schema du funnel complet avec prix]**
 
 Voici la structure :
 
@@ -38,9 +38,9 @@ Allons-y.
 
 ---
 
-**[SECTION 2 — Creer les produits WooCommerce]**
+**[SECTION 2 - Creer les produits WooCommerce]**
 
-**[ECRAN — WooCommerce → Products → Add New]**
+**[ECRAN - WooCommerce → Products → Add New]**
 
 Premiere etape : creer les 4 produits dans WooCommerce si ce n'est pas deja fait.
 
@@ -56,22 +56,22 @@ Type : Simple product (ou Virtual + Downloadable). Prix catalogue : 27 euros (on
 **Produit 4 : Wallpaper digital HD.**
 Type : Simple product (Virtual + Downloadable). Prix catalogue : 9 euros (on le proposera a 5 euros en downsell). Upload les fichiers.
 
-**[ECRAN — les 4 produits visibles dans la liste WooCommerce]**
+**[ECRAN - les 4 produits visibles dans la liste WooCommerce]**
 
 Les 4 produits sont en place. Passons au funnel.
 
 ---
 
-**[SECTION 3 — Creer le flow CartFlows]**
+**[SECTION 3 - Creer le flow CartFlows]**
 
-**[ECRAN — CartFlows → Flows → Add New]**
+**[ECRAN - CartFlows → Flows → Add New]**
 
 Va dans CartFlows, Flows, Add New. Nomme-le "Funnel T-shirt + Upsell Digital".
 
 **Step 1 : Landing Page.**
 Add Step → Landing. Choisis un template epure ou pars d'une page vierge. Cette page presente le t-shirt avec un design Kadence : hero image, benefices, CTA "Commander maintenant" qui mene au checkout.
 
-**[ECRAN — page de vente t-shirt dans Gutenberg]**
+**[ECRAN - page de vente t-shirt dans Gutenberg]**
 
 **Step 2 : Checkout.**
 Add Step → Checkout. Configure :
@@ -79,7 +79,7 @@ Add Step → Checkout. Configure :
 - Order Bump : active, connecte le lot de stickers (7 euros)
 - Design Gutenberg + Kadence : formulaire epure, recap commande visible, bump bien positionne
 
-**[ECRAN — checkout avec bump visible]**
+**[ECRAN - checkout avec bump visible]**
 
 Rappel du module precedent : le bump s'affiche comme une case a cocher juste avant le bouton "Payer". Le texte du bump doit etre court et percutant : "Ajoute le lot de 3 stickers exclusifs pour seulement 7 euros".
 
@@ -88,13 +88,13 @@ Add Step → Upsell (Offer). Configure :
 - Produit : Guide de style PDF
 - Offer Price : 17 euros (au lieu de 27 euros catalogue)
 
-**[ECRAN — parametres upsell avec prix d'offre]**
+**[ECRAN - parametres upsell avec prix d'offre]**
 
 ---
 
-**[SECTION 4 — Designer la page upsell]**
+**[SECTION 4 - Designer la page upsell]**
 
-**[ECRAN — editeur Gutenberg de la page upsell]**
+**[ECRAN - editeur Gutenberg de la page upsell]**
 
 La page upsell du guide de style. Construisons-la element par element :
 
@@ -114,7 +114,7 @@ Mockup du guide PDF, ouvert, avec quelques pages visibles.
 - Bonus : checklist des pieces intemporelles
 
 **Prix** (Kadence Advanced Text) :
-"Normalement 27 euros — aujourd'hui seulement 17 euros avec ta commande."
+"Normalement 27 euros - aujourd'hui seulement 17 euros avec ta commande."
 
 **Bouton Oui** : `[cartflows_offer_yes]Oui, j'ajoute le guide pour 17 euros[/cartflows_offer_yes]`
 Style : bouton large, vert, centre.
@@ -125,23 +125,23 @@ Style : texte simple, gris, sous le bouton Oui.
 **Reassurance** (Kadence Advanced Text, petit, centre) :
 "Telechargement immediat. Garantie satisfait ou rembourse 30 jours."
 
-**[ECRAN — apercu de la page upsell complete]**
+**[ECRAN - apercu de la page upsell complete]**
 
 ---
 
-**[SECTION 5 — Designer la page downsell]**
+**[SECTION 5 - Designer la page downsell]**
 
-**[ECRAN — editeur Gutenberg de la page downsell]**
+**[ECRAN - editeur Gutenberg de la page downsell]**
 
 Step 4 : Downsell. Add Step → Downsell (Offer). Produit : Wallpaper digital HD. Offer Price : 5 euros.
 
-La page downsell est plus courte. Le client a deja refuse une offre — ne le surcharge pas.
+La page downsell est plus courte. Le client a deja refuse une offre - ne le surcharge pas.
 
 **Titre** : "Pas besoin du guide complet ? Emporte au moins le wallpaper exclusif."
 
 **Image** : apercu du wallpaper sur un ecran de bureau.
 
-**Prix** : "Seulement 5 euros — disponible nulle part ailleurs."
+**Prix** : "Seulement 5 euros - disponible nulle part ailleurs."
 
 **Bouton Oui** : `[cartflows_offer_yes]Oui, j'ajoute le wallpaper pour 5 euros[/cartflows_offer_yes]`
 
@@ -151,9 +151,9 @@ Pas besoin de longue liste de benefices. A 5 euros, c'est une decision impulsive
 
 ---
 
-**[SECTION 6 — Step Thank You Page]**
+**[SECTION 6 - Step Thank You Page]**
 
-**[ECRAN — editeur de la Thank You Page]**
+**[ECRAN - editeur de la Thank You Page]**
 
 Step 5 : Thank You. Designe une page de confirmation avec :
 
@@ -164,9 +164,9 @@ Step 5 : Thank You. Designe une page de confirmation avec :
 
 ---
 
-**[SECTION 7 — Calculer l'AOV potentiel]**
+**[SECTION 7 - Calculer l'AOV potentiel]**
 
-**[ECRAN — tableau des 4 scenarios avec calcul AOV]**
+**[ECRAN - tableau des 4 scenarios avec calcul AOV]**
 
 Faisons les comptes pour 100 clients qui entrent dans le funnel :
 
@@ -193,9 +193,9 @@ Et ce sont des estimations conservatrices. Avec un bon copywriting et des offres
 
 ---
 
-**[SECTION 8 — Tester le parcours complet]**
+**[SECTION 8 - Tester le parcours complet]**
 
-**[ECRAN — CartFlows → Settings → Test Mode]**
+**[ECRAN - CartFlows → Settings → Test Mode]**
 
 Derniere etape : tester. Active le mode test. Parcours le funnel en entier :
 
@@ -205,7 +205,7 @@ Derniere etape : tester. Active le mode test. Parcours le funnel en entier :
 4. Downsell (apres refus upsell) : teste les deux boutons
 5. Thank You : verifie le recap commande
 
-**[ECRAN — commande WooCommerce avec tous les produits]**
+**[ECRAN - commande WooCommerce avec tous les produits]**
 
 Verifie dans WooCommerce que la commande contient les bons produits et les bons montants. Verifie que les produits digitaux sont bien attaches en telechargement.
 
@@ -213,7 +213,7 @@ Desactive le mode test. Ton funnel est en production.
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Tu viens de construire un funnel complet : produit physique, order bump, upsell digital et downsell digital. C'est la structure type d'un funnel e-commerce rentable.
 

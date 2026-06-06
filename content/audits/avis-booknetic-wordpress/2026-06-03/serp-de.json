@@ -1,0 +1,66 @@
+{
+  "source": "DataForSEO serp_organic_live_advanced + Ubersuggest serp_analysis",
+  "keyword": "booknetic erfahrungen",
+  "market": "Germany",
+  "language": "de",
+  "collected_at": "2026-06-03",
+  "serp_features": ["ai_overview", "related_searches"],
+  "note_mot_cle": "'Erfahrungen' = le bon equivalent allemand de 'avis' (getapp.de, capterra.com.de, softwareadvice.de utilisent tous Erfahrungen/Bewertungen)",
+  "results": [
+    { "pos": 1, "type": "ai_overview" },
+    {
+      "pos": 2,
+      "domain": "booknetic.com",
+      "da": 32,
+      "title": "WordPress Appointment Booking Plugin (/de, temoignages clients DE)"
+    },
+    {
+      "pos": 3,
+      "domain": "getapp.de",
+      "da": 32,
+      "title": "Booknetic Erfahrungen, Kosten & Bewertungen"
+    },
+    {
+      "pos": 4,
+      "domain": "capterra.com.de",
+      "da": 41,
+      "title": "Booknetic Erfahrungen, Vor- und Nachteile"
+    },
+    { "pos": 5, "domain": "facebook.com", "da": 96 },
+    { "pos": 6, "domain": "trustpilot.com", "da": 93 },
+    {
+      "pos": 7,
+      "domain": "fs-code.com",
+      "da": 28,
+      "title": "Booknetic Review (2026) (EN, rank dans la SERP DE)"
+    },
+    {
+      "pos": 8,
+      "domain": "booking-wp-plugin.com",
+      "da": 38,
+      "title": "Bookly vs Booknetic"
+    },
+    {
+      "pos": 9,
+      "domain": "blogvault.net",
+      "da": 44,
+      "title": "Booknetic Review (EN)"
+    },
+    { "pos": 10, "domain": "youtube.com", "da": 100, "title": "video AppSumo" },
+    { "pos": 12, "domain": "wpmayor.com", "da": 48 },
+    {
+      "pos": 13,
+      "domain": "softwareadvice.de",
+      "da": 29,
+      "title": "Booknetic | Bewertungen, Preise und Demos"
+    },
+    { "pos": 14, "domain": "appsumo.com", "da": 63 }
+  ],
+  "related_searches": ["Booknetic saas", "Booknetic demo"],
+  "insights": {
+    "concurrents_directs_beatable": "getapp.de DA 32, capterra.com.de DA 41, softwareadvice.de DA 29 + avis editoriaux EN faible DA (fs-code 28, blogvault 44) qui rankent meme en cross-langue",
+    "opportunite": "Aucun avis editorial ALLEMAND independant -> creneau totalement libre. Marque 'booknetic' DE = KD 10 (le plus facile des 3 marches) + declin doux (-18%/an)",
+    "geo": "AI Overview present -> structurer pour citation",
+    "titre_recommande": "Booknetic Erfahrungen 2026 (mot d'intention 'Erfahrungen' + marque)"
+  }
+}

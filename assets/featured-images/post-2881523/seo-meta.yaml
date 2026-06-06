@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/?p=2881523
+    title: Booster vos ventes FluentCart avec les avis WP Social Ninja
+    subject: "WP Social Ninja et FluentCart : afficher les avis produits pour booster vos ventes"
+    description: "Image à la une du tutoriel schoolsWP pour booster vos ventes FluentCart avec WP Social Ninja. En 4 étapes : connecter les deux extensions, afficher les avis sur vos produits, récolter les témoignages clients et gagner des étoiles dans Google grâce aux données structurées. Transformer vos avis en ventes, directement dans FluentCart."
+    alt: "Tutoriel schoolsWP pour connecter WP Social Ninja à FluentCart et afficher les avis produits afin de booster les ventes"
+    keywords:
+      [
+        wp social ninja,
+        fluentcart,
+        avis produits wordpress,
+        preuve sociale ecommerce,
+        témoignages clients,
+        données structurées avis,
+        schoolsWP,
+      ]

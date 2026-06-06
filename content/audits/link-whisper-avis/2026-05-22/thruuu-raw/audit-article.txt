@@ -1,0 +1,220 @@
+Page Audit
+## URL: https://schoolswp.com/link-whisper-avis
+## Keyword: linkwhisper avis
+## Audit Overview
+
+--- TABLE ---
+Text | Category | Type
+The wordcount is good and in the range of the competitors. | SERP Insights | success
+The number of images is good. | SERP Insights | success
+The competitors are in your Page Rank range. | SERP Insights | success
+The title length is good. | Title & Description | success
+The title pixel width is good. | Title & Description | success
+Here the closest term 'link whisper avis' to the target keyword. Maybe you can improve this and add an exact match. | Title & Description | error
+The description length is good. | Title & Description | success
+Good. Your headings contain (7) questions. The SERP average is 3. | Outline Structure & Headings | success
+Good job, your outline contains some of the most common headings. | Outline Structure & Headings | success
+Excellent job. Your copy have some unique angle. | Outline Structure & Headings | success
+Good job. You are covering most of the frequent terms. | Most Frequent Terms | success
+--- END TABLE ---
+
+## SERP Insights
+
+--- TABLE ---
+Type | Url | Serp
+Word Count | 2567 | 2417
+Image Count | 20 | 20
+Page Rank Score | 28 | 31
+Last Update | 2 months ago | 2 months ago
+--- END TABLE ---
+
+## Recommendation
+
+--- TABLE ---
+The wordcount is good and in the range of the competitors. | success
+The number of images is good. | success
+The competitors are in your Page Rank range. | success
+--- END TABLE ---
+
+## SERP Results
+
+--- TABLE ---
+Position | Title | URL | Page Rank | Words | Images | Type
+1 | Link Whisper : une solution pour améliorer son maillage interne | https://www.blogdumoderateur.com/tools/link-whisper/ | 10217310 | 313 | 15 | article
+2 | 🚀 Link Whisper Avis 2026 : Outil SEO incontournable ? | https://schoolswp.com/link-whisper-avis/?srsltid=AfmBOoqxDNdnlLy_mJQxocNI5n1MsDJ6neQ4s7PaX9UGKppUR2bVxjCw | 7690822 | 2567 | 20 | article
+4 | Link Whisper : Avis, Prix & Alternatives | Appvizer | https://www.appvizer.fr/marketing/redaction-seo/link-whisper | 45281270 | 778 | 6 | internal page
+5 | Link Whisper : Notre avis sur cette extension WordPress pour le maillage interne | https://www.debugbar.com/fr/link-whisper-loutil-de-referencement-qui-vous-permet-de-dominer-votre-marche/ | 66086030 | 1295 | 4 | article
+6 | Link Whisper : Automatiser le maillage interne (Avis 2026) | https://www.netbooster.fr/avis-link-whisper/ | 89310520 | 1359 | 5 | article
+7 | Link Whisper Free – Extension WordPress | WordPress.org Français | https://fr.wordpress.org/plugins/link-whisper/ | 4736 | 7074 | 26 | internal page
+8 | Link Whisper Avis, Prix et Test 2026 - Vaut-il le coup ? | https://busilearn.fr/logiciel/link-whisper-avis-prix/ | 10517022 | 2618 | 17 | ecommerce
+10 | Avis & Test Link Whisper 2026 : un plugin de maillage interne | https://www.webandseo.fr/link-whisper/ | 30290941 | 3084 | 39 | article
+11 | Avis Link Whisper: Tarifs & Fonctionnalités | Comparatif-Logiciels.fr | https://www.comparatif-logiciels.fr/logiciel/avis-link-whisper/ |  | 762 | 17 | ecommerce
+12 | Link Whisper Review: Build Internal Links for SEO Fast | https://linkwhisper.com/link-whisper-review/ | 65719 | 4324 | 54 | article
+13 | Reddit - The heart of the internet | https://www.reddit.com/r/SEO/comments/14o22ze/is_link_whisper_good/ | 279 | 135 | 2 | social
+14 | Link Whisper: Avis Prix & Alternatives | Logiciels.Pro | https://www.logiciels.pro/logiciel-saas/link-whisper/ | 20464634 | 1531 | 20 | ecommerce
+15 | Link Whisper Review: Why It's Not Right for Everyone - uSERP | https://userp.io/link-building/link-whisper-review/ | 943282 | 2133 | 15 | article
+16 | Link Whisper WordPress Plugin Review: Is it Worth the Money? | https://marketinglogiq.com/link-whisper-review/ | 6332793 | 2476 | 26 | article
+17 | Avis Link Whisper : Tarif et Test Plugin Maillage Interne (2022) | https://www.nordigital.fr/test-avis-link-whisper/ |  | 1802 | 6 | article
+18 | Link Whisper Reviews 2026: Details, Pricing, & Features | https://www.g2.com/products/link-whisper/reviews | 1354565 |  |  | 
+--- END TABLE ---
+
+## Title and Description
+Title: 🚀 Link Whisper Avis 2026 : Outil SEO incontournable ? (54 char)
+Description: Découvrez si Link Whisper est le meilleur plugin de maillage interne en 2026. Avis, fonctionnalités et alternatives pour booster votre SEO ! (140 char)
+## Recommendation
+
+--- TABLE ---
+The title length is good. | success
+The title pixel width is good. | success
+Here the closest term 'link whisper avis' to the target keyword. Maybe you can improve this and add an exact match. | error
+The description length is good. | success
+--- END TABLE ---
+
+## AI Recommendations
+Le titre actuel contient des éléments attractifs mais pourrait être amélioré en intégrant davantage de précisions sur les fonctionnalités et bénéfices de Link Whisper. Cela attirera davantage l'intérêt des lecteurs en quête d'évaluations concrètes sur l'outil. De plus, en évitant les mentions d'une année spécifique, le titre pourrait avoir une durée de vie plus longue et rester pertinent.
+Link Whisper Avis : Optimisez votre maillage interne
+Pourquoi choisir Link Whisper ? Avis et analyse 2026
+Link Whisper : Outil clé pour votre SEO ? Notre avis
+Découvrez Link Whisper : Avis et résultats concrets
+Link Whisper en 2026 : Est-il essentiel pour votre SEO ?
+Additionally, below are some examples of meta descriptions:
+Découvrez notre avis sur Link Whisper et ses fonctionnalités ! Améliorez votre SEO dès aujourd'hui avec ce plugin indispensable.
+Link Whisper en 2026 : avis, avantages et caractéristiques. Testez ce plugin pour optimiser votre maillage interne et booster votre site !
+Vous hésitez sur Link Whisper ? Lisez notre avis complet pour découvrir ses atouts et transformez votre stratégie de lien interne !
+Optimisez votre SEO avec Link Whisper ! Lisez notre avis sur ce plugin et apprenez à améliorer votre maillage interne efficacement.
+Link Whisper : la solution idéale pour le maillage interne ! Découvrez notre avis et commencez à optimiser votre site dès maintenant.
+## Outline Structure
+## (h1) Link Whisper : Le Plugin WordPress Ultime pour Votre Maillage Interne ?
+## (h2) Résumé de notre expérience avec Link Whisper ⭐4,5/5
+## (h2) Quel est le prix de Link Whisper ?
+## (h2) Link Whisper, pour qui et pour quoi ?
+## (h2) Quels sont les avantages de Link Whisper ?
+## (h2) Link Whisper peut-il corriger des liens brisés ?
+## (h2) Quelles sont les alternatives à Link Whisper ?
+## (h2) Avis clients sur Link Whisper
+## (h2) Avis final : Link Whisper est-il le plugin ultime pour le maillage interne ?
+## (h2) Publications similaires
+## Most frequent headings (H2/H3) found on SERP
+
+--- TABLE ---
+Heading | Size | Is In Page
+Combien coûte link whisper ? | 3 | Yes
+Quelles sont les principales fonctionnalités de link whisper ? | 3 | No
+Faq | 2 | No
+Logiciels similaires | 2 | No
+Avis clients sur link whisper | 2 | Yes
+Quels sont les avantages de link whisper ? | 2 | Yes
+Will link whisper work with other seo plugins? | 2 | No
+What is link whisper? | 2 | No
+Pourquoi le maillage interne est important ? | 2 | No
+--- END TABLE ---
+
+## Unique headings found on your page
+
+--- TABLE ---
+Heading
+Résumé de notre expérience avec link whisper ⭐4,5/5
+Link whisper, pour qui et pour quoi ?
+Link whisper peut-il corriger des liens brisés ?
+Quelles sont les alternatives à link whisper ?
+Avis final : link whisper est-il le plugin ultime pour le maillage interne ?
+Publications similaires
+Les différentes formules et abonnements
+Notre avis sur le prix de link whisper
+Suggestions automatiques de liens internes
+Détection et correction des liens brisés
+Intégration avec l’écosystème wordpress
+Comment fonctionne la correction des erreurs 404 avec link whisper ?
+Linksclub : avis, tarifs et packs (amorçage, dilution, booster)
+Seokey : le plugin seo essentiel pour wordpress
+Analyse approfondie de thruuu: l’outil de scraping et d’analyse de la serp
+On vous dit tout sur google web stories pour wordpress
+Plugins seo wordpress : seopress vs yoast
+Thot seo : l’outil sémantique n°1 pour dominer google !
+Michaël kihl
+--- END TABLE ---
+
+## Recommendation
+
+--- TABLE ---
+Good. Your headings contain (7) questions. The SERP average is 3. | success
+Good job, your outline contains some of the most common headings. | success
+Excellent job. Your copy have some unique angle. | success
+--- END TABLE ---
+
+## AI Recommendations
+La structure de titres actuelle (page) est bonne, mais pourrait être améliorée pour mieux aligner avec les articles de haut rang (ARTICLES). Par exemple, il serait bénéfique d'ajouter un titre sur les fonctionnalités générales du plugin Link Whisper, ainsi qu'un H2 séparé sur la compatibilité avec d'autres plugins. Cela fournirait des informations supplémentaires qui répondent aux questions courantes que se posent les utilisateurs. De plus, un H2 sur les différences entre les versions gratuite et payante pourrait enrichir le contenu et attirer plus d'attention.
+Fonctionnalités clés de Link Whisper
+Comparaison entre la version gratuite et la version premium
+Guide d'installation et de configuration de Link Whisper
+Frequent asked questions (FAQ) sur Link Whisper
+Comment Link Whisper optimise votre stratégie SEO
+Analyse des performances du maillage interne avec Link Whisper
+Études de cas utilisateurs sur Link Whisper
+Évaluation des mises à jour et améliorations de Link Whisper
+## Most Frequent Terms
+
+--- TABLE ---
+Text | Status
+link (34/6-222) | success
+whisper (33/6-65) | success
+link whisper (33/6-64) | success
+lien (36/4-50) | success
+site (20/4-53) | success
+liens internes (19/4-49) | success
+suggestion (7/3-66) | success
+maillage interne (8/7-24) | success
+seo (19/3-22) | success
+référencement (12/3-12) | success
+détaillé (3/3-3) | success
+google search console (0/2-3) | error
+--- END TABLE ---
+
+## Recommendation
+
+--- TABLE ---
+Good job. You are covering most of the frequent terms. | success
+--- END TABLE ---
+
+## AI Recommendations
+Below are some suggestion for additional topics and keywords:
+avis linkwhisper
+test linkwhisper
+avis sur linkwhisper
+outil maillage interne
+choisir linkwhisper
+linkwhisper guide
+fonctionnalités linkwhisper
+avis utilisateurs linkwhisper
+linkwhisper prix
+comparatif linkwhisper
+meilleur outil seo
+optimisation liens internes
+stratégie maillage interne
+logiciel linkwhisper
+avis sur outils seo
+linkwhisper efficacité
+tutoriel linkwhisper
+linkwhisper review
+plugin pour wordpress
+guide référencement
+analyser liens internes
+avis experts lien
+maillage interne efficace
+seo et linkwhisper
+utiliser linkwhisper
+## Related Searches & PAA
+## Related Searches
+
+--- TABLE ---
+Term | Occurrence | Sentences | Frequent Keywords
+--- END TABLE ---
+
+## PAA
+
+--- TABLE ---
+Question | Occurrence | Sentences
+Quel est le meilleur plugin WordPress ? |  | 
+Est-ce que WordPress est un site fiable ? |  | 
+Est-ce difficile d'utiliser WordPress ? |  | 
+--- END TABLE ---

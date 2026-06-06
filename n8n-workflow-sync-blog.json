@@ -1,0 +1,209 @@
+{
+  "name": "Sync Blog WordPress -> Google Sheets & Wiki GitHub",
+  "nodes": [
+    {
+      "parameters": {
+        "event": [
+          "post.published"
+        ]
+      },
+      "id": "e8a946ad-51a4-4a41-b85f-8f81ef6a75f1",
+      "name": "WordPress Trigger",
+      "type": "n8n-nodes-base.wordpressTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ],
+      "credentials": {
+        "wordpressApi": {
+          "id": "YOUR_WORDPRESS_CREDENTIAL_ID",
+          "name": "schoolsWP WordPress"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const cleanTitle = $json.title.rendered\n  .replace(/&amp;/g, '&')\n  .replace(/&#8211;/g, '-')\n  .replace(/&#8212;/g, '-')\n  .replace(/—/g, ' - ')\n  .replace(/–/g, ' - ')\n  .replace(/\\s+-\\s+/g, ' - ');\n\nreturn {\n  id: $json.id.toString(),\n  title: cleanTitle,\n  slug: $json.slug,\n  date: $json.date.split('T')[0],\n  link: $json.link\n};"
+      },
+      "id": "b182cb20-6d4a-4712-881a-6dfca6a524a8",
+      "name": "Clean Title & Format",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1AXUQlvhFbbCrCex_LZjyh8kVS7KX2jn_TJGaDgtoSwU",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Feuille 1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.id }}",
+            "Titre": "={{ $json.title }}",
+            "Slug": "={{ $json.slug }}",
+            "Date de Publication": "={{ $json.date }}",
+            "Lien Direct": "={{ $json.link }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Slug",
+              "displayName": "Slug",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Date de Publication",
+              "displayName": "Date de Publication",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lien Direct",
+              "displayName": "Lien Direct",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c62cf3af-bf15-4fa2-bf6d-88f5d07077e6",
+      "name": "Add to Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        820,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubOAuth2Api",
+        "resource": "repository",
+        "operation": "createDispatch",
+        "repositoryOwner": {
+          "__rl": true,
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "repositoryName": {
+          "__rl": true,
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "eventType": "sync-blog",
+        "clientPayload": {
+          "parameter": [
+            {
+              "name": "title",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "name": "slug",
+              "value": "={{ $json.slug }}"
+            }
+          ]
+        }
+      },
+      "id": "4e73b22e-13c5-430b-a01b-c6d59b2a75d5",
+      "name": "Trigger GitHub Action",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        240
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "YOUR_GITHUB_CREDENTIAL_ID",
+          "name": "GitHub Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "WordPress Trigger": {
+      "main": [
+        [
+          {
+            "node": "Clean Title & Format",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Title & Format": {
+      "main": [
+        [
+          {
+            "node": "Add to Google Sheet",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Google Sheet": {
+      "main": [
+        [
+          {
+            "node": "Trigger GitHub Action",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f7d75d24-348f-4bf1-a4f6-efb7e4ef4a65",
+  "id": "sync-blog-workflow",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

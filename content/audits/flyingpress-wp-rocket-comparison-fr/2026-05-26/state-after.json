@@ -1,0 +1,93 @@
+{
+  "audit_date": "2026-05-26",
+  "post_id": 52819,
+  "permalink": "https://schoolswp.com/comparaison-flyingpress-wp-rocket/",
+  "patches_applied": {
+    "phase": "P0_complete",
+    "executed_at": "2026-05-26 ~11:25 (cloud agent)",
+    "items": [
+      {
+        "target": "attachment_52829",
+        "type": "metadata",
+        "fields": ["post_title", "post_excerpt", "post_content", "_wp_attachment_image_alt"],
+        "diff": "4 occurrences de '2024' retirees",
+        "before": {
+          "title": "FlyingPress vs WP Rocket : Le guide comparatif 2024 pour les utilisateurs WordPress.",
+          "alt": "Comparaison FlyingPress versus WP Rocket en 2024 par schoolsWP.",
+          "caption": "Decouvrez les avantages de FlyingPress sur WP Rocket dans notre analyse complete de 2024.",
+          "description_2024_count": 1
+        },
+        "after": {
+          "title": "FlyingPress vs WP Rocket : Le guide comparatif pour les utilisateurs WordPress.",
+          "alt": "Comparaison FlyingPress versus WP Rocket par schoolsWP.",
+          "caption": "Decouvrez les avantages de FlyingPress sur WP Rocket dans notre analyse complete.",
+          "description_2024_count": 0
+        }
+      },
+      {
+        "target": "post_52819.post_content",
+        "type": "body_inline_alt",
+        "diff": "1 en-dash (U+2013) remplace par tiret simple dans alt= d'image inline",
+        "before_excerpt": "alt=\"flyingpress avis 2026 – plugin de cache WordPress teste par schoolsWP...\"",
+        "after_excerpt": "alt=\"flyingpress avis 2026 - plugin de cache WordPress teste par schoolsWP...\"",
+        "sha256_before": "e3adf3651cfd4f5a1f2f5c6058fd52eec9417a6bf68dbdcf89e367b6072fdac2",
+        "sha256_after": "0fa586f0892f56af5974a997bbbc8cec7751698315842bd6aa8b71a2ea244d4f",
+        "diff_bytes": -2
+      }
+    ]
+  },
+  "false_positives_documented": [
+    {
+      "category": "em_dash_count",
+      "count": 4,
+      "decision": "DO_NOT_PATCH",
+      "reason": "Artefacts Kadence dans data-attributes + accordion controls + JSON config (non visibles a l'ecran). Patcher casserait les blocs."
+    },
+    {
+      "category": "year_2024_in_body",
+      "count": 2,
+      "decision": "DO_NOT_PATCH",
+      "reason": "datePublished JSON-LD Review (legitime, '2024-06-05' date de publication originale). dateModified deja a 2026. Patcher casserait les rich results."
+    }
+  ],
+  "cache_purges": {
+    "flyingpress_hooks_fired": ["flying_press_purge_url", "flying_press_purge_post", "fp_purge_url"],
+    "flyingpress_disk_files_deleted": ["index.html.gz (94955 bytes)", "index.json.gz (15585 bytes)"],
+    "wp_core": ["clean_post_cache_post", "clean_post_cache_attachment"],
+    "wp_rocket": "not_active"
+  },
+  "verify_prod": {
+    "http_code": 200,
+    "body_length": 433348,
+    "new_alt_present": true,
+    "old_2024_alt_segment_absent": true,
+    "old_en_dash_alt_absent": true,
+    "new_en_dash_replacement_present": true,
+    "fs_zone_protection": {
+      "benchmark_h2_intact": true,
+      "conclusion_h2_intact": true
+    }
+  },
+  "kpis_to_monitor": {
+    "gsc_filter_page": "/comparaison-flyingpress-wp-rocket/",
+    "baseline_2026_05_26": {
+      "position_serp_main_kw": "#1 featured_snippet",
+      "stability_since": "2026-03-27"
+    },
+    "j14_targets": {
+      "position": "maintain #1 featured_snippet",
+      "ctr_min": "5%",
+      "alert_if_ctr_below": "3%"
+    },
+    "j30_target_date": "2026-06-25"
+  },
+  "documentation": {
+    "audit_md": "audit.md",
+    "synthese": "synthese-cross-langues.md",
+    "ranked_kw_csv": "dataforseo-ranked-keywords-fr.csv",
+    "ranked_kw_json": "dataforseo-ranked-keywords-fr.json",
+    "drive_sheet": "https://drive.google.com/file/d/1gomlWLhIcJTajphZupQlN1wDcUf_SyE6y8UVzwwOlwU/view",
+    "thruuu_docx": "Expor_audit_6a1567086d4d2c2ae024950b.docx",
+    "thruuu_xlsx": "thruuu_export_flyingpress vs wp rocket_2026-5-26 (1).xlsx"
+  }
+}

@@ -1,0 +1,18 @@
+defaults:
+  author: "Michaël KIHL"
+  copyright: "© schoolsWP - Michaël KIHL"
+  url: "https://schoolswp.com/spotlight-social-media-feeds/"
+images:
+  - file: slide-00-hero-fr.png
+    title: "SpotlightWP avis : le plugin Instagram pour WordPress"
+    subject: "Test du plugin SpotlightWP pour afficher un feed Instagram sur WordPress"
+    description: "Avis SpotlightWP : le plugin qui affiche tes publications Instagram sur WordPress sans code, avec aperçu en direct, compatible Elementor et Gutenberg."
+    alt: "SpotlightWP, le plugin pour afficher un feed Instagram sur WordPress : version gratuite, aperçu en direct, compatible Elementor et Gutenberg"
+    keywords:
+      [
+        spotlightwp avis,
+        spotlight social media feeds,
+        plugin instagram wordpress,
+        feed instagram wordpress,
+        spotlight social feeds,
+      ]

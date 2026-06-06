@@ -1,9 +1,9 @@
-# Lecon A.1 — Pourquoi un side cart augmente les ventes
+# Lecon A.1 - Pourquoi un side cart augmente les ventes
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : A — Modern Cart
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : A - Modern Cart
 - **Duree cible** : 6 min (~900 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre pourquoi un panier lateral (side cart) reduit la friction d'achat et augmente le panier moyen par rapport a la page panier classique WooCommerce.
@@ -12,23 +12,23 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu connais le parcours d'achat classique sur WooCommerce ? Le client ajoute un produit au panier, il est redirige vers la page panier, il clique sur "Passer commande", et la seulement il arrive au checkout. Trois etapes. Trois occasions de changer d'avis.
 
 Chaque etape supplementaire dans un parcours d'achat, c'est de la friction. Et la friction, c'est des ventes perdues.
 
-Aujourd'hui, on va parler d'un plugin qui supprime cette friction : Modern Cart. Un side cart — un panier lateral glissant — qui change completement l'experience d'achat sur ta boutique.
+Aujourd'hui, on va parler d'un plugin qui supprime cette friction : Modern Cart. Un side cart - un panier lateral glissant - qui change completement l'experience d'achat sur ta boutique.
 
 ---
 
-**[SECTION 1 — Le probleme de la page panier WooCommerce]**
+**[SECTION 1 - Le probleme de la page panier WooCommerce]**
 
-**[ECRAN — page panier WooCommerce par defaut]**
+**[ECRAN - page panier WooCommerce par defaut]**
 
 La page panier de WooCommerce, c'est un heritage des debuts du e-commerce. Le client clique sur "Ajouter au panier", il est projete sur une page separee. Il voit son tableau de produits. Il doit cliquer sur un bouton pour continuer.
 
-Le probleme : a chaque changement de page, le client quitte le contexte de navigation. Il etait en train de regarder des produits, de comparer, de reflechir — et d'un coup il se retrouve sur une page administrative avec un tableau et des boutons.
+Le probleme : a chaque changement de page, le client quitte le contexte de navigation. Il etait en train de regarder des produits, de comparer, de reflechir - et d'un coup il se retrouve sur une page administrative avec un tableau et des boutons.
 
 Les chiffres sont clairs. Le taux d'abandon de panier moyen en e-commerce tourne autour de 70%. Une partie de ces abandons vient directement de cette rupture dans le parcours.
 
@@ -36,23 +36,23 @@ Regarde les grandes plateformes : Amazon, Shopify, les boutiques premium. Aucune
 
 ---
 
-**[SECTION 2 — Le side cart : panier lateral sans quitter la page]**
+**[SECTION 2 - Le side cart : panier lateral sans quitter la page]**
 
-**[ECRAN — animation side cart qui s'ouvre]**
+**[ECRAN - animation side cart qui s'ouvre]**
 
-Le side cart, c'est un panneau qui glisse depuis le cote de l'ecran quand le client ajoute un produit au panier. Il voit immediatement ce qu'il a ajoute, le prix, la quantite. Il peut modifier, supprimer, ou continuer ses achats — le tout sans changer de page.
+Le side cart, c'est un panneau qui glisse depuis le cote de l'ecran quand le client ajoute un produit au panier. Il voit immediatement ce qu'il a ajoute, le prix, la quantite. Il peut modifier, supprimer, ou continuer ses achats - le tout sans changer de page.
 
 L'avantage principal : le client reste dans le flux de navigation. Il ajoute un t-shirt, le side cart s'ouvre, il voit le produit confirme, il ferme le panneau, et il continue a regarder les autres produits. Zero friction.
 
-Deuxieme avantage : la visibilite en temps reel. Le client sait toujours ou il en est. Combien de produits, quel montant total. Cette transparence reduit l'anxiete d'achat — il n'y a pas de surprise au moment du checkout.
+Deuxieme avantage : la visibilite en temps reel. Le client sait toujours ou il en est. Combien de produits, quel montant total. Cette transparence reduit l'anxiete d'achat - il n'y a pas de surprise au moment du checkout.
 
 Troisieme avantage : l'incitation a ajouter plus de produits. Quand le client reste sur la page boutique au lieu d'etre redirige, il continue a naviguer. Et un client qui continue a naviguer, c'est un client qui ajoute potentiellement d'autres articles.
 
 ---
 
-**[SECTION 3 — Impact concret sur les ventes]**
+**[SECTION 3 - Impact concret sur les ventes]**
 
-**[ECRAN — slide chiffres cles]**
+**[ECRAN - slide chiffres cles]**
 
 Les boutiques qui passent d'une page panier classique a un side cart constatent en general deux choses.
 
@@ -64,9 +64,9 @@ En version Pro, Modern Cart va encore plus loin avec des recommandations de prod
 
 ---
 
-**[SECTION 4 — Modern Cart vs le mini-cart du theme]**
+**[SECTION 4 - Modern Cart vs le mini-cart du theme]**
 
-**[ECRAN — comparaison mini-cart theme vs Modern Cart]**
+**[ECRAN - comparaison mini-cart theme vs Modern Cart]**
 
 Tu te dis peut-etre : "Mon theme Kadence a deja un mini-cart dans le header. Pourquoi j'aurais besoin de Modern Cart ?"
 
@@ -78,11 +78,11 @@ La difference, c'est la profondeur de l'experience. Le mini-cart du theme inform
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
 Le side cart, c'est un changement simple qui a un impact reel. Moins de friction, plus de visibilite, plus de produits par commande.
 
-Modern Cart est un plugin de Brainstorm Force — la meme equipe derriere CartFlows. La version gratuite couvre les bases. La version Pro a $69 par an pour 10 sites ajoute des fonctionnalites avancees qu'on va detailler dans les prochaines lecons.
+Modern Cart est un plugin de Brainstorm Force - la meme equipe derriere CartFlows. La version gratuite couvre les bases. La version Pro a $69 par an pour 10 sites ajoute des fonctionnalites avancees qu'on va detailler dans les prochaines lecons.
 
 Dans la lecon suivante, on installe Modern Cart et on le configure ensemble.
 

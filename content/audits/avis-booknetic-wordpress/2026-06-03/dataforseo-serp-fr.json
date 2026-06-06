@@ -1,0 +1,104 @@
+{
+  "source": "DataForSEO serp_organic_live_advanced",
+  "keyword": "avis booknetic",
+  "location_name": "France",
+  "language_code": "fr",
+  "device": "desktop",
+  "collected_at": "2026-06-03",
+  "results": [
+    {
+      "rank_absolute": 1,
+      "type": "featured_snippet",
+      "domain": "www.logiciels.pro",
+      "title": "Booknetic: Avis Prix & Alternatives - Logiciels.Pro",
+      "note": "note affichee 7,8/10",
+      "url": "https://www.logiciels.pro/logiciel-saas/booknetic/"
+    },
+    {
+      "rank_absolute": 2,
+      "type": "organic",
+      "domain": "www.softwareadvice.fr",
+      "title": "Booknetic | Avis, prix et demonstrations",
+      "price_eur": 73.02,
+      "url": "https://www.softwareadvice.fr/software/239463/booknetic"
+    },
+    {
+      "rank_absolute": 3,
+      "type": "organic",
+      "domain": "www3.technologyevaluation.com",
+      "title": "Booknetic - Avis, Prix & Fonctionnalites [2026]",
+      "url": "https://www3.technologyevaluation.com/fr/solutions/59028/booknetic"
+    },
+    {
+      "rank_absolute": 4,
+      "type": "organic",
+      "domain": "www.capterra.fr",
+      "title": "Booknetic - Avis, notes, prix et abonnements",
+      "rating": 4.5,
+      "votes": 103,
+      "price_eur": 73.02,
+      "url": "https://www.capterra.fr/software/1013191/booknetic"
+    },
+    {
+      "rank_absolute": 5,
+      "type": "organic",
+      "domain": "www.booknetic.com",
+      "title": "Wordpress Appointment Booking Plugin with Ratings & Reviews",
+      "note": "page officielle (EN)",
+      "url": "https://www.booknetic.com/feature/wordpress-appointment-booking-plugin-with-ratings-and-reviews"
+    },
+    {
+      "rank_absolute": 6,
+      "type": "organic",
+      "domain": "www.comparatif-logiciels.fr",
+      "title": "Avis Booknetic: Tarifs & Fonctionnalites",
+      "price_eur": 79,
+      "url": "https://www.comparatif-logiciels.fr/logiciel/avis-booknetic/"
+    },
+    {
+      "rank_absolute": 7,
+      "type": "organic",
+      "domain": "www.facebook.com",
+      "title": "Booknetic",
+      "rating": 2.3,
+      "votes": 3,
+      "url": "https://www.facebook.com/booknetic/?locale=fr_FR"
+    },
+    {
+      "rank_absolute": 8,
+      "type": "organic",
+      "domain": "www.booking-wp-plugin.com",
+      "title": "Bookly vs. Booknetic: Which Booking Plugin is Better?",
+      "note": "comparatif (EN)",
+      "url": "https://www.booking-wp-plugin.com/blog/bookly-vs-booknetic/"
+    },
+    {
+      "rank_absolute": 9,
+      "type": "organic",
+      "domain": "www.booknetic.com",
+      "title": "Booknetic - WordPress Appointment Booking Plugin",
+      "note": "homepage officielle (EN)",
+      "url": "https://www.booknetic.com/"
+    },
+    {
+      "rank_absolute": 10,
+      "type": "organic",
+      "domain": "www.bookingpressplugin.com",
+      "title": "BookingPress vs Booknetic: Which One To Choose?",
+      "note": "comparatif concurrent (EN)",
+      "url": "https://www.bookingpressplugin.com/bookingpress-vs-booknetic/"
+    }
+  ],
+  "serp_analysis": {
+    "intent_dominant": "review / commercial-informational",
+    "format_majoritaire": "fiches annuaires d'avis (Capterra, SoftwareAdvice, logiciels.pro, technologyevaluation, comparatif-logiciels) + site officiel + comparatifs concurrents",
+    "rich_elements": [
+      "featured_snippet (logiciels.pro)",
+      "ratings (Capterra 4,5/103, Facebook 2,3/3)",
+      "prix affiches (73,02 EUR / 79 EUR)"
+    ],
+    "blogs_editoriaux_independants_FR_top10": 0,
+    "opportunite": "aucun blog editorial FR independant dans le top 10 : creneau libre pour un avis E-E-A-T concret + comparatif + schema Review/AggregateRating + prix structure",
+    "barriere": "domaines a forte autorite annuaire (Capterra/SoftwareAdvice) difficiles a deloger sur la trust"
+  }
+}

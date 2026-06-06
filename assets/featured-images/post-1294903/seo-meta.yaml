@@ -1,0 +1,39 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/create-training-platform-wordpress/
+    title: Create an online training platform with WordPress, the LMS guide
+    subject: "Build a WordPress training platform: courses, memberships and payments with an LMS"
+    description: "Featured image of the schoolsWP guide on building an online training platform with WordPress. Turn WordPress into a full e-learning ecosystem in 5 steps: install a dedicated LMS plugin (Tutor LMS, LearnDash, LifterLMS), create courses, lessons and quizzes, monetize with sales and memberships, and deliver built-in certificates. Teach, sell and grow, all on WordPress."
+    alt: "schoolsWP guide to building an online training platform with WordPress and a dedicated LMS plugin"
+    keywords:
+      [
+        wordpress lms,
+        online training platform,
+        elearning wordpress,
+        tutor lms,
+        learndash,
+        sell online courses,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/creer-plateforme-formation-wordpress/
+    title: Créer une plateforme de formation en ligne avec WordPress, le guide LMS
+    subject: "Créer une plateforme de formation WordPress : cours, abonnements et paiements avec un LMS"
+    description: "Image à la une du guide schoolsWP pour créer une plateforme de formation en ligne avec WordPress. Transforme WordPress en véritable écosystème e-learning en 5 étapes : installer une extension LMS dédiée (Tutor LMS, LearnDash, LifterLMS), créer des cours, leçons et quiz, monétiser avec des ventes et des abonnements, et délivrer des certificats intégrés. Former, vendre et grandir, sur WordPress."
+    alt: "Guide schoolsWP pour créer une plateforme de formation en ligne avec WordPress et une extension LMS dédiée"
+    keywords:
+      [
+        wordpress lms,
+        plateforme de formation,
+        elearning wordpress,
+        tutor lms,
+        learndash,
+        vendre des formations,
+        schoolsWP,
+      ]

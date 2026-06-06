@@ -1,0 +1,29 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/changer-extension-seo-wordpress/
+    title: Changer de plugin SEO WordPress sans perdre de trafic
+    subject: "Migrer d'extension SEO WordPress en 4 étapes, sans perte de référencement"
+    description: "Image à la une du guide schoolsWP pour changer d'extension SEO sur WordPress sans perdre de trafic. Migration en 4 étapes (métadonnées, indexation et robots, schema et Open Graph, suivi Search Console)."
+    alt: "Guide schoolsWP, changer de plugin SEO WordPress en 4 étapes sans perdre de trafic Google"
+    keywords: [changer plugin seo wordpress, migration plugin seo, extension seo wordpress, perte de trafic seo, migrer rank math yoast, schoolsWP, search console]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/change-wordpress-seo-extension/
+    title: Switch your WordPress SEO plugin without losing traffic
+    subject: "Migrate your WordPress SEO plugin in 4 steps, with no ranking loss"
+    description: "Featured image of the schoolsWP guide to switching your WordPress SEO plugin without losing traffic. A 4-step migration (metadata, indexing and robots, schema and Open Graph, Search Console tracking)."
+    alt: "schoolsWP guide, switch your WordPress SEO plugin in 4 steps without losing Google traffic"
+    keywords: [change wordpress seo plugin, seo plugin migration, switch seo extension, seo traffic loss, migrate rank math yoast, schoolsWP, search console]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/seo-erweiterung-in-wordpress-andern/
+    title: SEO-Plugin in WordPress wechseln ohne Traffic-Verlust
+    subject: "WordPress-SEO-Plugin in 4 Schritten migrieren, ohne Ranking-Verlust"
+    description: "Beitragsbild der schoolsWP-Anleitung zum Wechsel des WordPress-SEO-Plugins ohne Traffic-Verlust. Migration in 4 Schritten (Metadaten, Indexierung und Robots, Schema und Open Graph, Search-Console-Tracking)."
+    alt: "schoolsWP-Anleitung, SEO-Plugin in WordPress in 4 Schritten wechseln ohne Google-Traffic zu verlieren"
+    keywords: [wordpress seo plugin wechseln, seo plugin migration, seo erweiterung andern, traffic verlust seo, rank math yoast migrieren, schoolsWP, search console]

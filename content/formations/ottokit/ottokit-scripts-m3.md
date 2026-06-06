@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 3 : Triggers : les événements qui déclenchent tes automations
+# Scripts vidéo - Module 3 : Triggers : les événements qui déclenchent tes automations
 
 **Formation** : Maîtriser OttoKit
-**Module** : M3 — Triggers : les événements qui déclenchent tes automations
+**Module** : M3 - Triggers : les événements qui déclenchent tes automations
 **Leçons** : 7 vidéos + 1 quiz
 **Durée totale** : ~40 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Leçon 3.1 — Triggers instantanés vs planifiés : comprendre la différence
+## Leçon 3.1 - Triggers instantanés vs planifiés : comprendre la différence
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -16,19 +16,19 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tous les workflows OttoKit commencent par un trigger. Mais tous les triggers ne fonctionnent pas de la même manière. Certains réagissent en temps réel, d'autres vérifient à intervalles réguliers. Comprendre cette différence, c'est comprendre pourquoi ton workflow se déclenche vite — ou pas.
+Tous les workflows OttoKit commencent par un trigger. Mais tous les triggers ne fonctionnent pas de la même manière. Certains réagissent en temps réel, d'autres vérifient à intervalles réguliers. Comprendre cette différence, c'est comprendre pourquoi ton workflow se déclenche vite - ou pas.
 
-**[ÉCRAN — slide "Deux familles de triggers"]**
+**[ÉCRAN - slide "Deux familles de triggers"]**
 
 OttoKit propose deux types de triggers :
 
-1. **Triggers instantanés** — ils se déclenchent en temps réel. Dès que l'événement se produit, le workflow démarre. Aucun délai.
+1. **Triggers instantanés** - ils se déclenchent en temps réel. Dès que l'événement se produit, le workflow démarre. Aucun délai.
 
-2. **Triggers planifiés (schedule)** — ils vérifient à intervalles réguliers si quelque chose a changé. Par défaut, toutes les 60 minutes. Si un nouvel élément est détecté, le workflow se lance.
+2. **Triggers planifiés (schedule)** - ils vérifient à intervalles réguliers si quelque chose a changé. Par défaut, toutes les 60 minutes. Si un nouvel élément est détecté, le workflow se lance.
 
-**[ÉCRAN — slide "Comparaison directe"]**
+**[ÉCRAN - slide "Comparaison directe"]**
 
 | | Instantané | Planifié |
 |---|---|---|
@@ -38,16 +38,16 @@ OttoKit propose deux types de triggers :
 | Icône OttoKit | Éclair | Horloge |
 | Consomme des tasks au repos | Non | Non (seulement quand il détecte) |
 
-**[ÉCRAN — screencast OttoKit]**
+**[ÉCRAN - screencast OttoKit]**
 
 [Ouvre le canvas d'un workflow]
-[Montre un trigger WooCommerce — pointe l'icône éclair "Instant"]
-[Ouvre un second workflow avec Google Sheets — pointe l'icône horloge "Schedule"]
+[Montre un trigger WooCommerce - pointe l'icône éclair "Instant"]
+[Ouvre un second workflow avec Google Sheets - pointe l'icône horloge "Schedule"]
 [Montre l'intervalle de vérification dans les paramètres du trigger planifié]
 
 Comment savoir quel type tu as ? Regarde l'icône à côté du trigger dans le canvas. Un éclair = instantané. Une horloge = planifié. OttoKit l'affiche clairement.
 
-**[ÉCRAN — slide "Quel impact pour toi ?"]**
+**[ÉCRAN - slide "Quel impact pour toi ?"]**
 
 En pratique :
 
@@ -56,7 +56,7 @@ En pratique :
 
 Astuce : certaines apps supportent les deux types. Vérifie toujours dans la liste des événements de l'app.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Maintenant que tu comprends la différence, on passe à la pratique. Dans la prochaine leçon, on configure ensemble un trigger WordPress instantané avec WooCommerce.
 
@@ -76,7 +76,7 @@ Maintenant que tu comprends la différence, on passe à la pratique. Dans la pro
 
 ---
 
-## Leçon 3.2 — Configure un trigger WordPress (nouvelle commande WooCommerce)
+## Leçon 3.2 - Configure un trigger WordPress (nouvelle commande WooCommerce)
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -84,13 +84,13 @@ Maintenant que tu comprends la différence, on passe à la pratique. Dans la pro
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On entre dans le concret. Tu vas configurer ton premier trigger WordPress : détecter une nouvelle commande WooCommerce. C'est l'un des triggers les plus utilisés, et c'est un trigger instantané.
 
-**[ÉCRAN — screencast OttoKit canvas]**
+**[ÉCRAN - screencast OttoKit canvas]**
 
-[Ouvre OttoKit — app.ottokit.com]
+[Ouvre OttoKit - app.ottokit.com]
 [Clique sur "Create Workflow"]
 [Donne un nom au workflow : "Nouvelle commande → notification"]
 
@@ -100,28 +100,28 @@ Première étape : on crée un nouveau workflow. Donne-lui un nom clair. C'est i
 
 Le canvas s'ouvre avec un bloc trigger vide. Clique dessus.
 
-**[ÉCRAN — screencast sélection de l'app]**
+**[ÉCRAN - screencast sélection de l'app]**
 
 [Dans le panneau latéral, tape "WooCommerce" dans la barre de recherche]
 [Sélectionne "WooCommerce"]
 
 Tu choisis d'abord l'app. Ici, WooCommerce. OttoKit affiche la liste de toutes les apps connectées.
 
-**[ÉCRAN — screencast sélection de l'événement]**
+**[ÉCRAN - screencast sélection de l'événement]**
 
 [Dans la liste des événements, scrolle et sélectionne "Order Created"]
 [Pointe le badge "Instant" à côté de l'événement]
 
-Ensuite tu choisis l'événement. "Order Created" — une commande est créée. Tu vois le badge "Instant" : ce trigger se déclenche en temps réel.
+Ensuite tu choisis l'événement. "Order Created" - une commande est créée. Tu vois le badge "Instant" : ce trigger se déclenche en temps réel.
 
-**[ÉCRAN — screencast sélection de la connexion]**
+**[ÉCRAN - screencast sélection de la connexion]**
 
 [Sélectionne la connexion WordPress dans le dropdown]
 [Si aucune connexion n'existe, montre brièvement le bouton "Add Connection"]
 
 Tu sélectionnes ta connexion WordPress. C'est celle que tu as configurée dans le Module 2 quand tu as installé le plugin OttoKit sur ton site.
 
-**[ÉCRAN — screencast configuration et Fetch Data]**
+**[ÉCRAN - screencast configuration et Fetch Data]**
 
 [Si des options supplémentaires apparaissent (status de commande, etc.), montre-les]
 [Clique sur le bouton "Fetch Data"]
@@ -136,7 +136,7 @@ Tu vois les données ? order_id, billing_email, billing_first_name, total... Ce 
 
 On enregistre. Ton trigger est configuré.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu viens de configurer un trigger WordPress instantané. Le processus est toujours le même : app → événement → connexion → Fetch Data → enregistrer. Dans la prochaine leçon, on fait la même chose avec une app SaaS.
 
@@ -156,7 +156,7 @@ Tu viens de configurer un trigger WordPress instantané. Le processus est toujou
 
 ---
 
-## Leçon 3.3 — Configure un trigger SaaS (nouvelle ligne Google Sheets)
+## Leçon 3.3 - Configure un trigger SaaS (nouvelle ligne Google Sheets)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -164,11 +164,11 @@ Tu viens de configurer un trigger WordPress instantané. Le processus est toujou
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Après un trigger WordPress, on passe à un trigger SaaS. On va détecter quand une nouvelle ligne est ajoutée dans un Google Sheet. C'est un trigger planifié — et tu vas voir la différence avec ce qu'on a fait avant.
+Après un trigger WordPress, on passe à un trigger SaaS. On va détecter quand une nouvelle ligne est ajoutée dans un Google Sheet. C'est un trigger planifié - et tu vas voir la différence avec ce qu'on a fait avant.
 
-**[ÉCRAN — screencast OttoKit canvas]**
+**[ÉCRAN - screencast OttoKit canvas]**
 
 [Ouvre OttoKit]
 [Clique sur "Create Workflow"]
@@ -177,29 +177,29 @@ Après un trigger WordPress, on passe à un trigger SaaS. On va détecter quand 
 
 Même démarche : on crée un workflow et on ouvre le bloc trigger.
 
-**[ÉCRAN — screencast sélection de l'app]**
+**[ÉCRAN - screencast sélection de l'app]**
 
 [Tape "Google Sheets" dans la barre de recherche]
 [Sélectionne "Google Sheets"]
 
 On sélectionne Google Sheets.
 
-**[ÉCRAN — screencast sélection de l'événement]**
+**[ÉCRAN - screencast sélection de l'événement]**
 
 [Sélectionne "New Row Added" ou équivalent]
 [Pointe le badge "Schedule" à côté de l'événement]
 
 L'événement c'est "New Row Added". Regarde bien : pas d'éclair ici, mais une horloge. C'est un trigger planifié. OttoKit vérifiera toutes les 60 minutes s'il y a de nouvelles lignes.
 
-**[ÉCRAN — screencast connexion et configuration]**
+**[ÉCRAN - screencast connexion et configuration]**
 
-[Sélectionne la connexion Google — ou montre le bouton "Connect" si c'est la première fois]
+[Sélectionne la connexion Google - ou montre le bouton "Connect" si c'est la première fois]
 [Montre la sélection du spreadsheet dans le dropdown]
 [Montre la sélection de la feuille (sheet/tab)]
 
 Tu sélectionnes ta connexion Google, puis le spreadsheet exact, puis la feuille. OttoKit te guide étape par étape.
 
-**[ÉCRAN — screencast Fetch Data]**
+**[ÉCRAN - screencast Fetch Data]**
 
 [Clique sur "Fetch Data"]
 [Montre les champs retournés : colonnes du sheet avec leurs valeurs]
@@ -208,7 +208,7 @@ Comme avec WooCommerce, on fait un Fetch Data. Ici, OttoKit lit la dernière lig
 
 [Clique sur "Save"]
 
-**[ÉCRAN — slide "Instant vs Schedule — ce qu'on vient de voir"]**
+**[ÉCRAN - slide "Instant vs Schedule - ce qu'on vient de voir"]**
 
 | WooCommerce (leçon 3.2) | Google Sheets (leçon 3.3) |
 |---|---|
@@ -219,7 +219,7 @@ Comme avec WooCommerce, on fait un Fetch Data. Ici, OttoKit lit la dernière lig
 
 Le processus est identique. La seule différence, c'est le timing.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant configurer les deux types de triggers. Mais parfois, tu n'as pas besoin d'un événement externe : tu veux que ton workflow se lance à une heure précise. C'est le Schedule App, et c'est la prochaine leçon.
 
@@ -239,7 +239,7 @@ Tu sais maintenant configurer les deux types de triggers. Mais parfois, tu n'as 
 
 ---
 
-## Leçon 3.4 — Schedule App : déclenche un workflow à heure fixe
+## Leçon 3.4 - Schedule App : déclenche un workflow à heure fixe
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -247,11 +247,11 @@ Tu sais maintenant configurer les deux types de triggers. Mais parfois, tu n'as 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Parfois, tu ne veux pas réagir à un événement. Tu veux que ton workflow se lance automatiquement à une heure précise. Chaque lundi à 9h, envoyer un rapport. Chaque jour à 18h, sauvegarder des données. C'est le rôle du Schedule App.
 
-**[ÉCRAN — screencast OttoKit canvas]**
+**[ÉCRAN - screencast OttoKit canvas]**
 
 [Ouvre OttoKit]
 [Crée un nouveau workflow : "Rapport hebdomadaire"]
@@ -259,9 +259,9 @@ Parfois, tu ne veux pas réagir à un événement. Tu veux que ton workflow se l
 [Tape "Schedule" dans la barre de recherche]
 [Sélectionne "Schedule App"]
 
-Le Schedule App n'est pas lié à un plugin ou à un service. C'est un trigger interne à OttoKit. Il remplace le cron WordPress — en mieux, parce qu'il est fiable et ne dépend pas du trafic sur ton site.
+Le Schedule App n'est pas lié à un plugin ou à un service. C'est un trigger interne à OttoKit. Il remplace le cron WordPress - en mieux, parce qu'il est fiable et ne dépend pas du trafic sur ton site.
 
-**[ÉCRAN — screencast configuration de la récurrence]**
+**[ÉCRAN - screencast configuration de la récurrence]**
 
 [Sélectionne l'événement "Schedule" ou "Recurring Schedule"]
 [Montre les options de récurrence : Daily, Weekly, Monthly]
@@ -271,14 +271,14 @@ Le Schedule App n'est pas lié à un plugin ou à un service. C'est un trigger i
 
 Tu paramètres la fréquence. Ici, chaque lundi à 9h. Tu peux aussi choisir "Daily" pour tous les jours, ou "Monthly" pour une fois par mois à une date précise.
 
-**[ÉCRAN — screencast fuseau horaire]**
+**[ÉCRAN - screencast fuseau horaire]**
 
 [Montre le champ fuseau horaire / timezone]
 [Sélectionne "Europe/Paris"]
 
 Attention au fuseau horaire. Par défaut, OttoKit peut utiliser UTC. Si tu es en France, sélectionne "Europe/Paris" pour que 9h corresponde à 9h chez toi, pas 9h à Londres.
 
-**[ÉCRAN — screencast Fetch Data et save]**
+**[ÉCRAN - screencast Fetch Data et save]**
 
 [Clique sur "Fetch Data"]
 [Montre les données retournées : date, heure, jour de la semaine]
@@ -286,7 +286,7 @@ Attention au fuseau horaire. Par défaut, OttoKit peut utiliser UTC. Si tu es en
 
 Le Fetch Data du Schedule App retourne la date et l'heure d'exécution. Pas grand-chose, mais c'est normal : c'est un déclencheur temporel, pas un événement de données.
 
-**[ÉCRAN — slide "Cas d'usage concrets"]**
+**[ÉCRAN - slide "Cas d'usage concrets"]**
 
 Voici quand utiliser le Schedule App :
 
@@ -296,7 +296,7 @@ Voici quand utiliser le Schedule App :
 - **Sauvegarde** : chaque nuit, exporter des données vers Google Sheets
 - **Veille concurrentielle** : chaque lundi, lancer un workflow de scraping
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le Schedule App est ton cron WordPress fiable et visuel. Dans la prochaine leçon, on passe au trigger le plus flexible : le webhook.
 
@@ -316,7 +316,7 @@ Le Schedule App est ton cron WordPress fiable et visuel. Dans la prochaine leço
 
 ---
 
-## Leçon 3.5 — Webhook trigger : reçois des données de n'importe où
+## Leçon 3.5 - Webhook trigger : reçois des données de n'importe où
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -324,11 +324,11 @@ Le Schedule App est ton cron WordPress fiable et visuel. Dans la prochaine leço
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le webhook, c'est le trigger universel. N'importe quel service capable d'envoyer une requête HTTP peut déclencher ton workflow OttoKit. Tu n'as pas besoin qu'il soit dans la liste des intégrations.
 
-**[ÉCRAN — slide "Comment ça fonctionne"]**
+**[ÉCRAN - slide "Comment ça fonctionne"]**
 
 Le principe est simple :
 
@@ -338,7 +338,7 @@ Le principe est simple :
 
 C'est un trigger instantané. Dès que les données arrivent, le workflow démarre.
 
-**[ÉCRAN — screencast OttoKit canvas]**
+**[ÉCRAN - screencast OttoKit canvas]**
 
 [Crée un nouveau workflow : "Webhook test"]
 [Clique sur le bloc trigger]
@@ -348,16 +348,16 @@ C'est un trigger instantané. Dès que les données arrivent, le workflow démar
 
 On sélectionne le trigger Webhook. OttoKit affiche immédiatement une URL unique.
 
-**[ÉCRAN — screencast copie de l'URL]**
+**[ÉCRAN - screencast copie de l'URL]**
 
 [Montre l'URL générée par OttoKit]
 [Sélectionne et copie l'URL]
 
 Voici ton URL webhook. Copie-la. C'est cette URL que tu vas coller dans le service externe qui doit envoyer les données.
 
-**[ÉCRAN — screencast test avec un outil externe]**
+**[ÉCRAN - screencast test avec un outil externe]**
 
-[Ouvre un nouvel onglet avec Webhook.site ou Postman ou Reqbin — ou utilise curl]
+[Ouvre un nouvel onglet avec Webhook.site ou Postman ou Reqbin - ou utilise curl]
 [Colle l'URL webhook OttoKit]
 [Configure une requête POST avec un payload JSON simple :]
 
@@ -373,7 +373,7 @@ Voici ton URL webhook. Copie-la. C'est cette URL que tu vas coller dans le servi
 
 Pour tester, on va envoyer des données manuellement. Tu peux utiliser un outil comme Postman, Reqbin, ou même la ligne de commande. L'important, c'est d'envoyer une requête POST à l'URL avec un body JSON.
 
-**[ÉCRAN — screencast retour dans OttoKit]**
+**[ÉCRAN - screencast retour dans OttoKit]**
 
 [Reviens dans OttoKit]
 [Clique sur "Fetch Data" ou vérifie que les données sont arrivées]
@@ -382,7 +382,7 @@ Pour tester, on va envoyer des données manuellement. Tu peux utiliser un outil 
 
 De retour dans OttoKit, tu vois les données que tu viens d'envoyer. Les champs "nom", "email" et "action" sont maintenant disponibles pour tes actions.
 
-**[ÉCRAN — slide "Cas d'usage concrets"]**
+**[ÉCRAN - slide "Cas d'usage concrets"]**
 
 Quand utiliser un webhook :
 
@@ -392,7 +392,7 @@ Quand utiliser un webhook :
 - **Zapier vers OttoKit** : combiner deux plateformes d'automatisation
 - **Stripe** : Stripe envoie un événement de paiement directement à OttoKit
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le webhook ouvre des possibilités énormes. Dans la prochaine leçon, on découvre deux triggers plus simples mais très pratiques : le Trigger Button et le RSS Feed.
 
@@ -400,7 +400,7 @@ Le webhook ouvre des possibilités énormes. Dans la prochaine leçon, on décou
 
 **Points clés**
 - Le webhook génère une URL unique qui reçoit des données en POST
-- C'est un trigger instantané — le workflow démarre immédiatement
+- C'est un trigger instantané - le workflow démarre immédiatement
 - N'importe quel service capable d'envoyer une requête HTTP peut déclencher le workflow
 - Toujours tester avec un envoi manuel avant de mettre en production
 
@@ -412,7 +412,7 @@ Le webhook ouvre des possibilités énormes. Dans la prochaine leçon, on décou
 
 ---
 
-## Leçon 3.6 — Trigger Button et RSS Feed : cas d'usage pratiques
+## Leçon 3.6 - Trigger Button et RSS Feed : cas d'usage pratiques
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -420,11 +420,11 @@ Le webhook ouvre des possibilités énormes. Dans la prochaine leçon, on décou
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tous les triggers ne sont pas automatiques. Parfois tu veux déclencher un workflow toi-même, en un clic depuis le dashboard. Et parfois, tu veux surveiller un flux RSS pour réagir à de nouveaux articles. On couvre les deux dans cette leçon.
 
-**[ÉCRAN — screencast OttoKit — Trigger Button]**
+**[ÉCRAN - screencast OttoKit - Trigger Button]**
 
 [Crée un nouveau workflow : "Déclenchement manuel"]
 [Clique sur le bloc trigger]
@@ -433,14 +433,14 @@ Tous les triggers ne sont pas automatiques. Parfois tu veux déclencher un workf
 
 Le Trigger Button te permet de lancer un workflow à la demande, directement depuis le dashboard OttoKit. Pas d'événement externe, pas de planning. Tu cliques, ça se lance.
 
-**[ÉCRAN — screencast configuration du bouton]**
+**[ÉCRAN - screencast configuration du bouton]**
 
-[Montre les options de configuration — champs personnalisés si disponibles]
+[Montre les options de configuration - champs personnalisés si disponibles]
 [Clique sur "Save"]
 
 La configuration est minimale. Tu n'as pas besoin de connexion externe ni de Fetch Data. Le trigger attend simplement que tu appuies sur le bouton.
 
-**[ÉCRAN — screencast exécution manuelle]**
+**[ÉCRAN - screencast exécution manuelle]**
 
 [Reviens sur la liste des workflows]
 [Montre le bouton "Run" ou "Execute" à côté du workflow]
@@ -449,14 +449,14 @@ La configuration est minimale. Tu n'as pas besoin de connexion externe ni de Fet
 
 Pour lancer le workflow, tu cliques sur "Run" depuis le dashboard. Tu vois l'exécution apparaître dans l'historique.
 
-**[ÉCRAN — slide "Quand utiliser le Trigger Button"]**
+**[ÉCRAN - slide "Quand utiliser le Trigger Button"]**
 
 - **Test** : tu construis un workflow et tu veux le tester sans attendre l'événement réel
 - **Action ponctuelle** : envoyer un email de relance à une liste spécifique
 - **Maintenance** : lancer un nettoyage ou une synchronisation à la demande
 - **Démo** : montrer un workflow à un client ou un collègue
 
-**[ÉCRAN — screencast OttoKit — RSS Feed]**
+**[ÉCRAN - screencast OttoKit - RSS Feed]**
 
 [Crée un nouveau workflow : "Veille concurrentielle"]
 [Clique sur le bloc trigger]
@@ -466,9 +466,9 @@ Pour lancer le workflow, tu cliques sur "Run" depuis le dashboard. Tu vois l'ex�
 
 Le trigger RSS surveille un flux RSS. Quand un nouvel article apparaît, le workflow se déclenche.
 
-**[ÉCRAN — screencast configuration RSS]**
+**[ÉCRAN - screencast configuration RSS]**
 
-[Colle une URL de flux RSS — par exemple https://wpmarmite.com/feed/]
+[Colle une URL de flux RSS - par exemple https://wpmarmite.com/feed/]
 [Montre l'intervalle de vérification]
 [Clique sur "Fetch Data"]
 [Montre les champs retournés : title, link, description, pubDate]
@@ -476,13 +476,13 @@ Le trigger RSS surveille un flux RSS. Quand un nouvel article apparaît, le work
 
 Tu colles l'URL du flux RSS et OttoKit le surveille à intervalles réguliers. Le Fetch Data te montre les champs disponibles : titre de l'article, lien, description, date de publication.
 
-**[ÉCRAN — slide "Cas d'usage RSS"]**
+**[ÉCRAN - slide "Cas d'usage RSS"]**
 
 - **Veille concurrentielle** : surveiller les blogs de tes concurrents et recevoir une alerte Slack
 - **Curation** : détecter de nouveaux articles dans ta niche et les ajouter dans un Google Sheet
 - **Réseaux sociaux** : quand ton propre blog publie, partager automatiquement sur Twitter/X
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu connais maintenant tous les types de triggers OttoKit. Dans la prochaine leçon, on plonge dans les données : quand un trigger se déclenche, quelles informations tu reçois exactement ?
 
@@ -502,7 +502,7 @@ Tu connais maintenant tous les types de triggers OttoKit. Dans la prochaine leç
 
 ---
 
-## Leçon 3.7 — Types de données trigger : comprendre ce que tu reçois
+## Leçon 3.7 - Types de données trigger : comprendre ce que tu reçois
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -510,11 +510,11 @@ Tu connais maintenant tous les types de triggers OttoKit. Dans la prochaine leç
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Quand un trigger se déclenche, il ne fait pas que lancer le workflow. Il transporte des données. Et ces données, c'est ce que tu vas utiliser dans toutes tes actions. Comprendre ce que tu reçois, c'est la clé pour construire des workflows qui fonctionnent.
 
-**[ÉCRAN — screencast OttoKit — workflow WooCommerce]**
+**[ÉCRAN - screencast OttoKit - workflow WooCommerce]**
 
 [Ouvre un workflow existant avec un trigger WooCommerce "Order Created"]
 [Clique sur le bloc trigger]
@@ -523,17 +523,17 @@ Quand un trigger se déclenche, il ne fait pas que lancer le workflow. Il transp
 Reprenons notre trigger WooCommerce. Quand une commande arrive, voici ce que tu reçois :
 
 [Pointe les champs un par un]
-- `order_id` — le numéro de commande
-- `status` — le statut (processing, completed...)
-- `total` — le montant
-- `billing_first_name`, `billing_last_name` — le nom du client
-- `billing_email` — son email
-- `billing_phone` — son téléphone
-- `line_items` — les produits commandés
+- `order_id` - le numéro de commande
+- `status` - le statut (processing, completed...)
+- `total` - le montant
+- `billing_first_name`, `billing_last_name` - le nom du client
+- `billing_email` - son email
+- `billing_phone` - son téléphone
+- `line_items` - les produits commandés
 
 Chaque trigger a sa propre structure de données. Un trigger WooCommerce ne renvoie pas les mêmes champs qu'un trigger Google Sheets.
 
-**[ÉCRAN — screencast OttoKit — workflow Google Sheets]**
+**[ÉCRAN - screencast OttoKit - workflow Google Sheets]**
 
 [Ouvre un workflow avec un trigger Google Sheets "New Row Added"]
 [Montre les données du Fetch Data]
@@ -542,16 +542,16 @@ Avec Google Sheets, les champs correspondent aux colonnes de ton tableur. Si ta 
 
 [Pointe les champs : column_a / nom, column_b / email, etc.]
 
-**[ÉCRAN — slide "Le rôle du Fetch Data"]**
+**[ÉCRAN - slide "Le rôle du Fetch Data"]**
 
 Le bouton "Fetch Data" fait deux choses :
 
-1. **Il teste la connexion** — il vérifie que le trigger peut accéder à l'app
-2. **Il charge des données exemples** — il récupère des données réelles pour que tu voies les champs disponibles
+1. **Il teste la connexion** - il vérifie que le trigger peut accéder à l'app
+2. **Il charge des données exemples** - il récupère des données réelles pour que tu voies les champs disponibles
 
 Sans Fetch Data, tu ne sais pas quels champs tu peux utiliser dans tes actions. C'est pour ça qu'il faut toujours le faire.
 
-**[ÉCRAN — screencast OttoKit — utilisation des champs dans une action]**
+**[ÉCRAN - screencast OttoKit - utilisation des champs dans une action]**
 
 [Ajoute une action "Send Email" après le trigger WooCommerce]
 [Dans le champ "To", montre le sélecteur de données dynamiques]
@@ -563,14 +563,14 @@ Voici comment tu utilises les données du trigger. Dans chaque champ d'une actio
 
 "billing_email" pour l'adresse du destinataire. "order_id" pour le numéro de commande dans l'objet. "billing_first_name" pour personnaliser le message.
 
-**[ÉCRAN — slide "Conseils pratiques"]**
+**[ÉCRAN - slide "Conseils pratiques"]**
 
 - Fais toujours un Fetch Data avant de configurer tes actions
 - Si le Fetch Data ne retourne rien, vérifie qu'il y a des données récentes dans l'app source
-- Les noms de champs peuvent varier entre les apps — lis-les attentivement
-- Certains champs sont des objets imbriqués (comme line_items) — tu peux accéder aux sous-champs
+- Les noms de champs peuvent varier entre les apps - lis-les attentivement
+- Certains champs sont des objets imbriqués (comme line_items) - tu peux accéder aux sous-champs
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant comment fonctionnent les triggers, comment les configurer, et comment exploiter les données qu'ils transportent. Le Module 3 est terminé. Passe au quiz pour valider tes acquis avant d'attaquer le Module 4 sur les actions.
 
@@ -590,16 +590,16 @@ Tu sais maintenant comment fonctionnent les triggers, comment les configurer, et
 
 ---
 
-## Notes de production — Module 3
+## Notes de production - Module 3
 
 ### Captures à préparer
-- Canvas OttoKit avec trigger WooCommerce — badge "Instant" visible
-- Canvas OttoKit avec trigger Google Sheets — badge "Schedule" visible
-- Configuration Schedule App — écran récurrence + fuseau horaire
-- URL webhook générée par OttoKit — panneau de configuration
+- Canvas OttoKit avec trigger WooCommerce - badge "Instant" visible
+- Canvas OttoKit avec trigger Google Sheets - badge "Schedule" visible
+- Configuration Schedule App - écran récurrence + fuseau horaire
+- URL webhook générée par OttoKit - panneau de configuration
 - Outil de test webhook (Postman ou Reqbin) avec payload JSON
-- Trigger Button — bouton "Run" sur le dashboard
-- Configuration RSS Feed — URL + Fetch Data
+- Trigger Button - bouton "Run" sur le dashboard
+- Configuration RSS Feed - URL + Fetch Data
 - Panneau Fetch Data avec champs retournés (WooCommerce + Google Sheets)
 - Sélecteur de données dynamiques dans une action email
 

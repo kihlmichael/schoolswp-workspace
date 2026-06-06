@@ -1,0 +1,33 @@
+{
+  "source": "dataforseo_labs_google_keyword_overview",
+  "fetch_date": "2026-05-25",
+  "location": "France",
+  "language": "fr",
+  "keywords_summary": [
+    {
+      "keyword": "linkuma",
+      "search_volume": 2900,
+      "cpc": 6.92,
+      "kd": 18,
+      "intent": "informational",
+      "trend_q": 26
+    },
+    {
+      "keyword": "linkuma avis",
+      "search_volume": 1600,
+      "cpc": 2.5,
+      "kd": 23,
+      "intent": "informational",
+      "trend_q": 126
+    },
+    {
+      "keyword": "avis linkuma",
+      "search_volume": 170,
+      "cpc": null,
+      "kd": 20,
+      "intent": "informational",
+      "trend_q": 40
+    }
+  ],
+  "note": "Full raw JSON fetched via DataForSEO MCP. Detailed history visible in CSV companion file."
+}

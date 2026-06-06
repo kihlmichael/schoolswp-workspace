@@ -1,0 +1,34 @@
+{
+  "repo": "PineDigitalCo/fluentcart-checkout-login",
+  "set_at": "2026-06-02",
+  "default_branch": "main",
+  "pushed_at": "2026-05-28T13:49:15Z",
+  "latest_commit": {
+    "sha": "d6a6dae1f1653ddbbbe3094901e60a69fc1b7696",
+    "date": "2026-05-28T13:49:15Z",
+    "message": "Clarify guest login feature in readme"
+  },
+  "release_count": 0,
+  "latest_release": null,
+  "open_issues_pr_count": 0,
+  "readme_path": "readme.txt",
+  "readme_sha": "5aa30e0870dec40dd206d20bee62d0868634a1e8",
+  "version_readme": "1.0.1",
+  "has_changelog": false,
+  "has_license_file": false,
+  "tree": {
+    "fluent-cart-checkout-login.zip": "888484ae762ee4fd7d7c6e2726c45a67f9bfb83f",
+    "readme.txt": "5aa30e0870dec40dd206d20bee62d0868634a1e8"
+  },
+  "tree_summary": {
+    "js": 0,
+    "zip": [
+      "fluent-cart-checkout-login.zip"
+    ],
+    "total": 2,
+    "css": 0,
+    "php": 0,
+    "source_outside_zip": false
+  },
+  "set_by": "Init/premiere execution"
+}

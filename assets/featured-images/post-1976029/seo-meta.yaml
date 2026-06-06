@@ -1,0 +1,13 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/avis-linksclub/
+    title: Avis LinksClub, la plateforme de netlinking issue de Linksgarden
+    subject: "LinksClub, mon avis : la plateforme de netlinking notée 8,5/10"
+    description: "Image à la une de l'avis schoolsWP sur LinksClub, la plateforme de netlinking issue de Linksgarden. Verdict de Michaël KIHL noté 8,5/10 (tarifs dès 10 euros par lien, réseau de 7 000 sites thématiques, indexation garantie 2 ans, public visé)."
+    alt: "Avis LinksClub schoolsWP, plateforme de netlinking et backlinks, verdict 8,5 sur 10"
+    keywords: [linksclub, avis linksclub, netlinking, backlinks seo, linksgarden, achat de liens, schoolsWP]

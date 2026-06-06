@@ -1,0 +1,19 @@
+defaults:
+  author: "Michaël KIHL"
+  copyright: "© schoolsWP - Michaël KIHL"
+  url: "https://schoolswp.com/core-web-vitals-wordpress/"
+images:
+  - file: slide-00-hero-fr.png
+    title: "Core Web Vitals WordPress : LCP, INP et CLS au vert"
+    subject: "Guide Core Web Vitals WordPress : comprendre, mesurer et améliorer LCP, INP et CLS"
+    description: "Core Web Vitals WordPress : les seuils à viser pour LCP (< 2,5 s), INP (< 200 ms) et CLS (< 0,1), avec les leviers pour faire passer ton score au vert."
+    alt: "Core Web Vitals WordPress, les bons seuils Google à viser : LCP inférieur à 2,5 s, INP inférieur à 200 ms et CLS inférieur à 0,1"
+    keywords:
+      [
+        core web vitals wordpress,
+        core web vitals,
+        lcp inp cls,
+        performance wordpress,
+        pagespeed insights,
+        optimisation vitesse wordpress,
+      ]

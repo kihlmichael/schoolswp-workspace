@@ -1,0 +1,9 @@
+{
+  "repo": "heygen-com/hyperframes-launches",
+  "path": "texture-launch-video",
+  "sha": "8e78344b8a5b",
+  "date": "2026-05-08T17:24:21Z",
+  "set_at": "2026-06-02",
+  "set_by": "creation du watcher",
+  "comment": "Baseline = dernier commit touchant texture-launch-video au moment de la creation. Le watcher alerte quand un commit plus recent apparait sur ce path."
+}

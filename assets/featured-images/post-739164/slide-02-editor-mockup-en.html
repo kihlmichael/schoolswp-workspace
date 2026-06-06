@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WordPress editor mockup - EN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --wp-dark: #1d2327;
+        --wp-darker: #15191c;
+        --wp-blue: #2271b1;
+        --wp-blue-soft: #3582c4;
+        --canvas: #ffffff;
+        --canvas-grey: #f0f0f1;
+        --green: #00d400;
+        --ink: #1e1e1e;
+        --grey: #757575;
+        --grey-light: #a7aaad;
+        --line: #e0e0e0;
+        --panel-line: #e6e6e6;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        background: #c3c4c7;
+      }
+      .slide {
+        width: 1456px;
+        height: 668px;
+        background: var(--canvas-grey);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ===== ADMIN TOP BAR ===== */
+      .adminbar {
+        height: 46px;
+        background: var(--wp-dark);
+        display: flex;
+        align-items: center;
+        color: #c3c4c7;
+        font-size: 14.5px;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+      .adminbar .ab-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 14px;
+        height: 100%;
+      }
+      .adminbar .ab-logo svg {
+        width: 20px;
+        height: 20px;
+        fill: #a7aaad;
+      }
+      .adminbar .ab-brand {
+        font-weight: 700;
+        color: #fff;
+      }
+      .adminbar .ab-spacer {
+        flex: 1;
+      }
+      .adminbar .ab-cta {
+        background: var(--green);
+        color: #07350a;
+        font-weight: 700;
+        border-radius: 4px;
+        padding: 7px 14px;
+        margin-right: 12px;
+        font-size: 14px;
+      }
+      .adminbar .ab-avatar {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00d400, #00a800);
+        margin-right: 16px;
+      }
+      .ab-dot {
+        color: #50575e;
+      }
+
+      /* ===== BODY: sidebar + editor + settings ===== */
+      .wp-body {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 204px 1fr 344px;
+        min-height: 0;
+      }
+
+      /* ----- SIDEBAR ----- */
+      .sidebar {
+        background: var(--wp-dark);
+        padding: 8px 0;
+        overflow: hidden;
+      }
+      .menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 9px 14px;
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #f0f0f1;
+      }
+      .menu-item .mi-ico {
+        width: 19px;
+        height: 19px;
+        flex-shrink: 0;
+        opacity: 0.72;
+        display: inline-flex;
+      }
+      .menu-item .mi-ico svg {
+        width: 19px;
+        height: 19px;
+        fill: #f0f0f1;
+      }
+      .menu-item.active {
+        background: var(--wp-blue);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: inset 4px 0 0 #fff;
+      }
+      .menu-item.active .mi-ico svg {
+        fill: #fff;
+        opacity: 1;
+      }
+      .submenu {
+        background: var(--wp-darker);
+        padding: 6px 0 8px 0;
+      }
+      .submenu .sub {
+        padding: 7px 14px 7px 45px;
+        font-size: 13.5px;
+        color: #c3c4c7;
+      }
+      .submenu .sub.cur {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      /* ----- EDITOR MIDDLE ----- */
+      .editor {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        background: var(--canvas);
+      }
+      .ed-toolbar {
+        height: 56px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+        gap: 6px;
+        flex-shrink: 0;
+        background: var(--canvas);
+      }
+      .tb-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #1e1e1e;
+      }
+      .tb-btn.add {
+        background: var(--wp-blue);
+        color: #fff;
+      }
+      .tb-btn svg {
+        width: 21px;
+        height: 21px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+      .tb-btn.add svg {
+        stroke: #fff;
+      }
+      .tb-switch {
+        margin-left: 14px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #1e1e1e;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .tb-spacer {
+        flex: 1;
+      }
+      .tb-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tb-icon {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #1e1e1e;
+      }
+      .tb-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+      .btn-schedule {
+        background: var(--wp-blue);
+        color: #fff;
+        font-weight: 600;
+        font-size: 14.5px;
+        border-radius: 4px;
+        padding: 9px 18px;
+      }
+      .score-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border-radius: 999px;
+        padding: 6px 13px 6px 10px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .score-pill .pdot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+      .score-green {
+        background: #e4f8e4;
+        color: #0a7d0a;
+      }
+      .score-green .pdot {
+        background: var(--green);
+      }
+      .score-red {
+        background: #fde7e7;
+        color: #c0341a;
+      }
+      .score-red .pdot {
+        background: #e0492a;
+      }
+
+      .ed-canvas {
+        flex: 1;
+        padding: 64px 80px 0 80px;
+        overflow: hidden;
+        position: relative;
+      }
+      .ed-title {
+        font-weight: 800;
+        font-size: 50px;
+        line-height: 1.12;
+        letter-spacing: -1.4px;
+        color: var(--ink);
+        max-width: 720px;
+      }
+      .ed-elementor {
+        margin-top: 44px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--wp-blue);
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 14px 26px;
+      }
+      .ed-elementor svg {
+        width: 18px;
+        height: 18px;
+        fill: #fff;
+      }
+      .ed-block-label {
+        margin-top: 70px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        font-size: 15px;
+        color: var(--grey);
+        font-weight: 500;
+      }
+      .ed-block-label .pill-post {
+        display: inline-block;
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--grey-light);
+        font-weight: 600;
+      }
+
+      /* ----- SETTINGS PANEL ----- */
+      .settings {
+        background: var(--canvas);
+        border-left: 1px solid var(--panel-line);
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      .set-tabs {
+        display: flex;
+        border-bottom: 1px solid var(--panel-line);
+        padding: 0 16px;
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      .set-tab {
+        padding: 16px 12px 13px;
+        font-size: 14.5px;
+        font-weight: 500;
+        color: var(--grey);
+      }
+      .set-tab.on {
+        color: var(--ink);
+        font-weight: 700;
+        box-shadow: inset 0 -3px 0 var(--wp-blue);
+      }
+      .set-section {
+        padding: 16px 20px;
+      }
+      .set-acc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+        padding: 6px 0 14px;
+      }
+      .set-acc svg {
+        width: 16px;
+        height: 16px;
+        stroke: #1e1e1e;
+        fill: none;
+        stroke-width: 2;
+      }
+      .set-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9px 0;
+        font-size: 14px;
+        border-bottom: 1px solid #f2f2f2;
+      }
+      .set-row .k {
+        color: var(--grey);
+        font-weight: 500;
+      }
+      .set-row .v {
+        color: var(--wp-blue);
+        font-weight: 500;
+        max-width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .set-check {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 11px 0;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .set-check .box {
+        width: 18px;
+        height: 18px;
+        border: 1.5px solid #8c8f94;
+        border-radius: 3px;
+        flex-shrink: 0;
+      }
+      .set-label {
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin: 16px 0 8px;
+      }
+      .set-select {
+        border: 1px solid #8c8f94;
+        border-radius: 4px;
+        padding: 9px 12px;
+        font-size: 14px;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .set-select svg {
+        width: 14px;
+        height: 14px;
+        stroke: #1e1e1e;
+        fill: none;
+        stroke-width: 2;
+      }
+      .set-footer {
+        margin-top: auto;
+        border-top: 1px solid var(--panel-line);
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+      }
+      .set-footer .draft {
+        color: var(--wp-blue);
+        font-weight: 500;
+      }
+      .set-footer .trash {
+        color: #b32d2e;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <!-- ADMIN BAR -->
+      <div class="adminbar">
+        <span class="ab-item ab-logo">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.02.2-2 .54-2.9L8.9 18.3C6.06 17 4 14.73 4 12zm8 0c0 .68-.09 1.34-.24 1.97L16 9h1.8c.66 0 1.13.55 1.13 1.2 0 .5-.37.92-.85 1.05L20 14c.3-.62.5-1.3.5-2 0-3.31-2.69-6-6-6s-6 2.69-6 6 2.69 6 6 6c.34 0 .68-.03 1-.08L12.5 20H12z"
+            />
+          </svg>
+        </span>
+        <span class="ab-item ab-brand">schoolsWP</span>
+        <span class="ab-item">Michaël KIHL</span>
+        <span class="ab-item ab-dot">💬 0</span>
+        <span class="ab-item">＋ New</span>
+        <span class="ab-item">View Post</span>
+        <span class="ab-item ab-dot">Rank Math SEO</span>
+        <span class="ab-item ab-dot">WPvivid Plugin</span>
+        <span class="ab-item ab-dot">WP Rocket</span>
+        <span class="ab-spacer"></span>
+        <span class="ab-cta">Search contacts</span>
+        <span class="ab-avatar"></span>
+      </div>
+
+      <div class="wp-body">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M2 2h7v7H2V2zm9 0h7v7h-7V2zM2 11h7v7H2v-7zm9 0h7v7h-7v-7z"
+                /></svg></span
+            >Dashboard
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M10 1L1 5l9 4 9-4-9-4zm0 7L3 5.2V6l7 3 7-3v-.8L10 8zm0 4L3 9.2V10l7 3 7-3v-.8L10 12z"
+                /></svg></span
+            >LMA LearnDash
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path d="M3 3h14v11H8l-4 3v-3H3V3z" /></svg></span
+            >FluentCRM
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <circle cx="7" cy="6" r="3" />
+                <circle cx="14" cy="7" r="2.5" />
+                <path
+                  d="M1 17c0-3 3-5 6-5s6 2 6 5H1zm12 0c0-2-1-3.5-2.5-4.4C12 12 13 12 14 12c3 0 5 2 5 5h-6z"
+                /></svg></span
+            >BuddyBoss
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M2 3h5v14H2V3zm6.5 0h5v9h-5V3zM15 3h3v14h-3V3z"
+                /></svg></span
+            >Fluent Boards
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M3 2h14v16H3V2zm3 4h8v1.5H6V6zm0 4h8v1.5H6V10zm0 4h5v1.5H6V14z"
+                /></svg></span
+            >Fluent Forms PRO
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M10 1l2.5 5.5L18 7l-4 4 1 6-5-3-5 3 1-6L2 7l5.5-.5L10 1z"
+                /></svg></span
+            >Tutorials
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M10 2a6 6 0 016 6c0 4-6 10-6 10S4 12 4 8a6 6 0 016-6zm0 3a3 3 0 100 6 3 3 0 000-6z"
+                /></svg></span
+            >Fluent Support
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path d="M2 5h16v10H2V5zm6 2.5v5l5-2.5-5-2.5z" /></svg></span
+            >YouTube
+          </div>
+          <div class="menu-item active">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M3 2h11l3 3v13H3V2zm9 1.5V6h2.5L12 3.5zM5 9h10v1.5H5V9zm0 3h10v1.5H5V12zm0 3h7v1.5H5V15z"
+                /></svg></span
+            >Posts
+          </div>
+          <div class="submenu">
+            <div class="sub cur">All Posts</div>
+            <div class="sub">Add New</div>
+            <div class="sub">Categories</div>
+            <div class="sub">Tags</div>
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M2 4h16v12H2V4zm2 2v8h12V6H4zm1 1h4v3H5V7z"
+                /></svg></span
+            >Ninja Tables Pro
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M3 3h14v14H3V3zm2 2v10h10V5H5zm2 6l2-2 2 2 3-3v5H7v-2z"
+                /></svg></span
+            >Media
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path
+                  d="M4 2h8l4 4v12H4V2zm7 1.5V7h3.5L11 3.5zM6 10h8v1.5H6V10zm0 3h8v1.5H6V13z"
+                /></svg></span
+            >Pages
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <path d="M3 3h14v10H7l-4 4V3z" /></svg></span
+            >Comments
+          </div>
+          <div class="menu-item">
+            <span class="mi-ico"
+              ><svg viewBox="0 0 20 20">
+                <circle cx="6" cy="6" r="3" />
+                <circle cx="14" cy="14" r="3" />
+                <path
+                  d="M8 8l4 4"
+                  stroke="#f0f0f1"
+                  stroke-width="1.5"
+                /></svg></span
+            >WP Social Ninja
+          </div>
+        </div>
+
+        <!-- EDITOR -->
+        <div class="editor">
+          <div class="ed-toolbar">
+            <span class="tb-btn add"
+              ><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg
+            ></span>
+            <span class="tb-btn"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
+                /></svg
+            ></span>
+            <span class="tb-btn"
+              ><svg viewBox="0 0 24 24">
+                <path d="M9 14L4 9l5-5M4 9h11a5 5 0 010 10h-3" /></svg
+            ></span>
+            <span class="tb-btn"
+              ><svg viewBox="0 0 24 24">
+                <path d="M15 14l5-5-5-5M20 9H9a5 5 0 000 10h3" /></svg
+            ></span>
+            <span class="tb-btn"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"
+                /></svg
+            ></span>
+            <span class="tb-switch">Switch to WordPress editor</span>
+            <span class="tb-spacer"></span>
+            <div class="tb-right">
+              <span class="tb-icon"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="2" y="4" width="20" height="13" rx="1.5" />
+                  <path d="M8 20h8M12 17v3" /></svg
+              ></span>
+              <span class="btn-schedule">Schedule</span>
+              <span class="score-pill score-green"
+                ><span class="pdot"></span>82 / 100</span
+              >
+              <span class="score-pill score-red"
+                ><span class="pdot"></span>40 / 100</span
+              >
+              <span class="tb-icon"
+                ><svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M15 3v18" /></svg
+              ></span>
+              <span class="tb-icon"
+                ><svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="5" r="1.6" />
+                  <circle cx="12" cy="12" r="1.6" />
+                  <circle cx="12" cy="19" r="1.6" /></svg
+              ></span>
+            </div>
+          </div>
+
+          <div class="ed-canvas">
+            <h1 class="ed-title">
+              WordPress.com vs WordPress.org: A Comparison to Make the Right
+              Choice
+            </h1>
+            <span class="ed-elementor">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M5 3h3v18H5V3zm6 0h8v3h-8V3zm0 7.5h8v3h-8v-3zM11 18h8v3h-8v-3z"
+                />
+              </svg>
+              Edit with Elementor
+            </span>
+            <div class="ed-block-label">
+              LearnDash Course Grid Settings
+              <span class="pill-post">Post</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS PANEL -->
+        <div class="settings">
+          <div class="set-tabs">
+            <span class="set-tab on">Post</span>
+            <span class="set-tab">Block</span>
+          </div>
+          <div class="set-section">
+            <div class="set-acc">
+              Summary
+              <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" /></svg>
+            </div>
+            <div class="set-row">
+              <span class="k">Visibility</span><span class="v">Public</span>
+            </div>
+            <div class="set-row">
+              <span class="k">Publish</span
+              ><span class="v">Jun 28, 9:39 am</span>
+            </div>
+            <div class="set-row">
+              <span class="k">Template</span
+              ><span class="v">Default template</span>
+            </div>
+            <div class="set-row">
+              <span class="k">URL</span
+              ><span class="v">schoolswp.com/wordpre…</span>
+            </div>
+            <div class="set-check">
+              <span class="box"></span>Stick to the top of the blog
+            </div>
+            <div class="set-check"><span class="box"></span>Pending review</div>
+            <div class="set-label">Post format</div>
+            <div class="set-select">
+              Standard<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+            </div>
+            <div class="set-label">Author</div>
+            <div class="set-select">
+              Michaël KIHL<svg viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+          <div class="set-footer">
+            <span class="draft">Switch to draft</span>
+            <span class="trash">Move to trash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

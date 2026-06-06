@@ -1,0 +1,1382 @@
+=== DOCX AUDIT FR ===
+  paragraphs: 84, tables: 12
+  [Title] Page Audit
+  [Heading 3] URL: https://schoolswp.com/comparaison-flyingpress-wp-rocket/
+  [Heading 3] Keyword: flyingpress vs wp rocket
+  [Heading 1] Audit Overview
+  [Heading 1] SERP Insights
+  [Heading 2] Recommendation
+  [Heading 1] SERP Results
+  [Heading 1] Title and Description
+  [Normal] Title: FlyingPress vs WP Rocket 2026 : verdict d'un pro WP (+ test) (60 char)
+  [Normal] Description: FlyingPress vs WP Rocket 2026 : benchmark réel, prix, compatibilité. Verdict d'un pro WordPress + guide pour migrer sans casser ton site (5 minutes) (148 char)
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] Le titre actuel est bon, mais il pourrait être plus concis et accrocheur tout en conservant les mots-clés importants. En se concentrant sur l'aspect comparatif, il peut attirer davantage l'attention des lecteurs à la recherche d'une analyse détaillée.
+  [List Paragraph] Comparatif 2026 : FlyingPress ou WP Rocket ?
+  [List Paragraph] Meilleur plugin 2026 : FlyingPress contre WP Rocket
+  [List Paragraph] FlyingPress vs WP Rocket : Le guide ultime 2026
+  [List Paragraph] Quel plugin choisir en 2026 : FlyingPress ou WP Rocket ?
+  [List Paragraph] 2026 : FlyingPress surpasse-t-il WP Rocket ?
+  [Normal] Additionally, below are some examples of meta descriptions:
+  [List Paragraph] Découvrez notre comparatif entre FlyingPress et WP Rocket ! Choisissez le meilleur plugin de cache pour optimiser votre site WordPress. Agissez maintenant !
+  [List Paragraph] FlyingPress ou WP Rocket ? Analyse des performances et des prix pour déterminer la solution idéale pour votre site. Lisez notre article dès aujourd'hui !
+  [List Paragraph] Le duel des plugins de cache : FlyingPress contre WP Rocket ! Explorez leurs avantages, performances et choisissez celui qui vous convient le mieux !
+  [List Paragraph] Comparaison approfondie de FlyingPress et WP Rocket : fonctionnalités, rapidité et tarifs. Trouvez votre plugin de cache parfait en un clic !
+  [List Paragraph] Hésitez entre FlyingPress et WP Rocket ? Plongez dans notre analyse détaillée et faites le meilleur choix pour booster votre site WordPress !
+  [Heading 1] Outline Structure
+  [Heading 1] (h1) FlyingPress vs WP Rocket ⚡ Lequel booste mieux WordPress ?
+  [Heading 2] (h2) Benchmark : Le test de vitesse en conditions réelles
+  [Heading 2] (h2) Fonctionnalités clés : FlyingPress et WP Rocket au banc d’essai
+  [Heading 2] (h2) Compatibilité : S’intègrent-ils bien à ton écosystème WordPress ?
+  [Heading 2] (h2) Tarification : Lequel offre le meilleur rapport qualité/prix ?
+  [Heading 2] (h2) Avantages et inconvénients : Le récapitulatif
+  [Heading 2] (h2) Avantages de FlyingPress
+  [Heading 2] (h2) Inconvénients de FlyingPress
+  [Heading 2] (h2) Points forts de WP Rocket
+  [Heading 2] (h2) Limites de WP Rocket
+  [Heading 2] (h2) Alternatives à FlyingPress et WP Rocket
+  [Heading 2] (h2) FAQ : Questions fréquentes
+  [Heading 2] (h2) Conclusion : Alors, FlyingPress ou WP Rocket pour ton site ?
+  [Heading 2] (h2) Publications similaires
+  [Heading 2] Most frequent headings (H2/H3) found on SERP
+  [Heading 2] Unique headings found on your page
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] La structure des titres actuelle est globale satisfaisante et suit un bon schéma de hiérarchie. Cependant, il serait bénéfique d'intégrer quelques éléments supplémentaires pour renforcer le SEO. Par exemple, ajouter des sections qui répondent directement aux préoccupations des utilisateurs, telles que des témoignages d'utilisateurs, une comparaison directe des performances, ou des recommandations personnelles. Cela peut aider à engager davantage le lecteur et à améliorer le classement dans les résultats de recherche.
+  [List Paragraph] Témoignages d'utilisateurs : Ce que les utilisateurs disent
+  [List Paragraph] Comparaison des performances : Études de cas
+  [List Paragraph] Les meilleures pratiques d'optimisation avec FlyingPress et WP Rocket
+  [List Paragraph] Impact sur le SEO : Qu'est-ce qui est le mieux ?
+  [List Paragraph] Comment choisir entre FlyingPress et WP Rocket ?
+  [List Paragraph] Mise à jour de fonctionnalités : Ce qui a changé récemment
+  [List Paragraph] Comparaison avec d'autres plugins de cache populaires
+  [List Paragraph] Réponses aux préoccupations communes : Les mythes autour de FlyingPress et WP Rocket
+  [Heading 1] Most Frequent Terms
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] Below are some suggestion for additional topics and keywords:
+  [List Paragraph] optimisation performance
+  [List Paragraph] plugin wordpress
+  [List Paragraph] comparatif plugins
+  [List Paragraph] vitesse chargement
+  [List Paragraph] meilleur plugin
+  [List Paragraph] flyingpress avantages
+  [List Paragraph] wp rocket avis
+  [List Paragraph] configuration wp rocket
+  [List Paragraph] flyingpress configuration
+  [List Paragraph] plugin cache
+  [List Paragraph] optimisation images
+  [List Paragraph] performances web
+  [List Paragraph] caching wordpress
+  [List Paragraph] flyingpress test
+  [List Paragraph] wp rocket fonctionnalités
+  [List Paragraph] vitesse wordpress
+  [List Paragraph] analyse vitesse
+  [List Paragraph] plugins de cache
+  [List Paragraph] benchmark flyingpress
+  [List Paragraph] plugin vitesse
+  [List Paragraph] core web performance
+  [List Paragraph] meilleures pratiques wordpress
+  [List Paragraph] flyingpress performance
+  [List Paragraph] wp rocket alternatives
+  [List Paragraph] impact optimisation
+  [Heading 1] Related Searches & PAA
+  [Heading 2] Related Searches
+  [Heading 2] PAA
+
+  TABLE #0 (14 rows x 3 cols):
+    row 0: Text | Category | Type
+    row 1: The wordcount is good and in the range of the competitors. | SERP Insights | success
+    row 2: The number of images is good. | SERP Insights | success
+    row 3: The competitors are in your Page Rank range. | SERP Insights | success
+    row 4: Your page is relatively fresh. | SERP Insights | success
+    row 5: The title length is good. | Title & Description | success
+    row 6: The title pixel width is good. | Title & Description | success
+    row 7: Excellent. The title contains an exact match of the target keyword. | Title & Description | success
+    row 8: The description length is good. | Title & Description | success
+    row 9: Good. Your headings contain (7) questions. The SERP average is 2. | Outline Structure & Headings | success
+    row 10: Excellent job. Your copy have some unique angle. | Outline Structure & Headings | success
+    row 11: Your headings contains no elements from the common ones, you should review your copy. | Outline Structure & Headings | error
+    row 12: Check the less frequent headings (marked with 2x) as inpiration. You could complete your outline with few of them. | Outline Structure & Headings | error
+    row 13: Consider adding more frequent terms to your article. | Most Frequent Terms | error
+
+  TABLE #1 (5 rows x 3 cols):
+    row 0: Type | Url | Serp
+    row 1: Word Count | 2511 | 2142
+    row 2: Image Count | 14 | 14
+    row 3: Page Rank Score | 28 | 35
+    row 4: Last Update | a month ago | 24 days ago
+
+  TABLE #2 (4 rows x 2 cols):
+    row 0: The wordcount is good and in the range of the competitors. | success
+    row 1: The number of images is good. | success
+    row 2: The competitors are in your Page Rank range. | success
+    row 3: Your page is relatively fresh. | success
+
+  TABLE #3 (17 rows x 7 cols):
+    row 0: Position | Title | URL | Page Rank | Words | Images | Type
+    row 1: 1 | FlyingPress vs WP Rocket 2026 : verdict d'un pro WP (+ test) | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es. | 7690822 | 2519 | 14 | article
+    row 2: 2 | Reddit - el corazón de la conversación | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/ | 279 | 77 | 2 | social
+    row 3: 3 | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/ | 3446 | 1248 | 6 | article
+    row 4: 5 | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/ | 8325475 | 2390 | 2 | article
+    row 5: 6 | Avis FlyingPress 2026 : une meilleure alternative à WP Rocket ? | https://www.webandseo.fr/flyingpress/ | 30290941 | 3885 | 44 | article
+    row 6: 7 | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/ | 3072694 | 2867 | 32 | article
+    row 7: 8 | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/ | 22224541 | 1848 | 7 | article
+    row 8: 9 | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | https://sayansamanta.com/flyingpress-review/ | 9589046 | 3790 | 15 | article
+    row 9: 10 | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | 1350657 | 2512 | 10 | article
+    row 10: 11 | Flyingpress Review: How It Compares To Wp Rocket & Nitropack | https://wpalpha.io/flyingpress-review/ | 2945954 | 286 | 5 | article
+    row 11: 12 | FlyingPress vs WP Rocket: Which Is Worth Your Money? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/ | 30615185 | 2773 | 11 | article
+    row 12: 13 | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/ | 169790754 | 588 | 4 | article
+    row 13: 14 | Compare WP Rocket V/S FlyingPress - Which is Best in 2026? | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress | 150579672 | 802 | 24 | internal page
+    row 14: 15 | WP Rocket vs FlyingPress vs LiteSpeed – Which One… | https://www.motocoders.com/wp-rocket-vs-2/ | 69506927 | 3217 | 1 | article
+    row 15: 16 | Which Is Best Wp Rocket vs Flying Press | https://webzeto.com/wp-rocket-vs-flying-press/ | 14460979 | 1932 | 33 | article
+    row 16: 17 | Nitropack vs WP Rocket vs FlyingPress | Which One To Choose? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/ |  | 1597 | 18 | article
+
+  TABLE #4 (4 rows x 2 cols):
+    row 0: The title length is good. | success
+    row 1: The title pixel width is good. | success
+    row 2: Excellent. The title contains an exact match of the target keyword. | success
+    row 3: The description length is good. | success
+
+  TABLE #5 (6 rows x 3 cols):
+    row 0: Heading | Size | Is In Page
+    row 1: Flyingpress vs wp rocket | 4 | No
+    row 2: Wp rocket | 2 | No
+    row 3: Nitropack | 2 | No
+    row 4: Table of contents | 2 | No
+    row 5: Who should use flyingpress | 2 | No
+
+  TABLE #6 (28 rows x 1 cols):
+    row 0: Heading
+    row 1: Benchmark : le test de vitesse en conditions réelles
+    row 2: Fonctionnalités clés : flyingpress et wp rocket au banc d’essai
+    row 3: Compatibilité : s’intègrent-ils bien à ton écosystème wordpress ?
+    row 4: Tarification : lequel offre le meilleur rapport qualité/prix ?
+    row 5: Avantages et inconvénients : le récapitulatif
+    row 6: Avantages de flyingpress
+    row 7: Inconvénients de flyingpress
+    row 8: Points forts de wp rocket
+    row 9: Limites de wp rocket
+    row 10: Alternatives à flyingpress et wp rocket
+    row 11: Faq : questions fréquentes
+    row 12: Conclusion : alors, flyingpress ou wp rocket pour ton site ?
+    row 13: Publications similaires
+    row 14: Optimisation du chargement et core web vitals
+    row 15: Mise en cache avancée
+    row 16: Optimisation des images et vidéos
+    row 17: Base de données et scripts
+    row 18: Interface et configuration
+    row 19: Pour qui est flyingpress ?
+    row 20: Pour qui est wp rocket ?
+    row 21: Flyingpress 5.3 : l’optimisation d’images native est là
+    row 22: Perfmatters, l’optimisation wordpress pour améliorer la vitesse de son site ?
+    row 23: Avis fastpixel : le plugin cloud pour booster wordpress
+    row 24: Flyingpress vs perfmatters : lequel choisir pour optimiser wordpress en 2026 ?
+    row 25: Avis flyingpress : booste tes core web vitals en 2026
+    row 26: Core web vitals wordpress : comprendre, mesurer et améliorer ton score
+    row 27: Michaël kihl
+
+  TABLE #7 (4 rows x 2 cols):
+    row 0: Good. Your headings contain (7) questions. The SERP average is 2. | success
+    row 1: Excellent job. Your copy have some unique angle. | success
+    row 2: Your headings contains no elements from the common ones, you should review your copy. | error
+    row 3: Check the less frequent headings (marked with 2x) as inpiration. You could complete your outline with few of them. | error
+
+  TABLE #8 (28 rows x 2 cols):
+    row 0: Text | Status
+    row 1: flyingpress (43/10-115) | success
+    row 2: wp (30/15-52) | success
+    row 3: rocket (30/15-51) | success
+    row 4: wp rocket (30/13-51) | success
+    row 5: plugin (24/9-41) | success
+    row 6: it (0/3-46) | error
+    row 7: performance (15/11-23) | success
+    row 8: wordpress (17/7-30) | success
+    row 9: page (7/4-35) | success
+    row 10: image (5/3-20) | success
+    row 11: web (16/3-25) | success
+    row 12: if you (0/3-22) | error
+    row 13: core web (13/3-21) | success
+    row 14: web vitals (13/3-21) | success
+    row 15: you can (0/5-16) | error
+    row 16: flyingpress vs (5/3-24) | success
+    row 17: flyingpress vs wp (2/2-24) | success
+    row 18: core web vitals (13/2-21) | success
+    row 19: vs wp rocket (2/2-22) | success
+    row 20: flyingpress is (0/3-14) | error
+    row 21: support (4/3-11) | success
+    row 22: your website (0/3-9) | error
+    row 23: of the (0/3-12) | error
+    row 24: image optimization (0/3-8) | error
+    row 25: rocket is (0/3-6) | error
+    row 26: the best (0/3-5) | error
+    row 27: wp rocket is (0/2-6) | error
+
+  TABLE #9 (1 rows x 2 cols):
+    row 0: Consider adding more frequent terms to your article. | error
+
+  TABLE #10 (9 rows x 4 cols):
+    row 0: Term | Occurrence | Sentences | Frequent Keywords
+    row 1: Flyingpress vs wp rocket reddit | 0 |  | 
+    row 2: FlyingPress pricing | 0 |  | 
+    row 3: Super page Cache vs WP Rocket | 0 |  | 
+    row 4: WP Rocket alternative | 0 |  | 
+    row 5: WP Fastest Cache vs WP Rocket | 0 |  | 
+    row 6: WP Rocket pricing | 0 |  | 
+    row 7: Is WP Rocket worth it | 0 |  | 
+    row 8: SpeedyCache vs LiteSpeed Cache | 0 |  | 
+
+  TABLE #11 (1 rows x 3 cols):
+    row 0: Question | Occurrence | Sentences
+
+
+######################################################################
+
+
+=== DOCX AUDIT DE ===
+  paragraphs: 80, tables: 12
+  [Title] Page Audit
+  [Heading 3] URL: https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/
+  [Heading 3] Keyword: flyingpress vs wp rocket
+  [Heading 1] Audit Overview
+  [Heading 1] SERP Insights
+  [Heading 2] Recommendation
+  [Heading 1] SERP Results
+  [Heading 1] Title and Description
+  [Normal] Title: FlyingPress vs WP Rocket 2026 : Lequel choisir ? Comparatif, Prix & Test (72 char)
+  [Normal] Description: 🚀 FlyingPress ou WP Rocket ? Notre comparatif 2026 analyse les différences, prix, et l'impact sur les Core Web Vitals. Choisis le meilleur plugin de cache pour ton site WordPress, avec nos conseils pour WooCommerce et Elementor (228 char)
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] Le titre actuel est bon, mais il peut être optimisé pour être plus accrocheur et clair. Utiliser un langage direct et convaincant peut aider à attirer plus de clics tout en conservant le mot-clé cible. Éviter les dates spécifiques inutiles peut également rendre le titre plus intemporel.
+  [List Paragraph] FlyingPress oder WP Rocket: Beste Cache-Lösung 2026?
+  [List Paragraph] WP Rocket vs FlyingPress: Welcher ist der Beste?
+  [List Paragraph] Caching im Vergleich: FlyingPress oder WP Rocket?
+  [List Paragraph] FlyingPress & WP Rocket: Tests und Preisvergleiche 2026
+  [List Paragraph] FlyingPress gegen WP Rocket: Die beste Wahl für Websites?
+  [Normal] Additionally, below are some examples of meta descriptions:
+  [List Paragraph] Entscheide zwischen FlyingPress und WP Rocket! Vergleiche Geschwindigkeit, Funktionen und Preise für deine optimale WordPress-Performance.
+  [List Paragraph] FlyingPress oder WP Rocket? Finde heraus, welches Caching-Plugin deine Website schneller macht. Jetzt vergleichen!
+  [List Paragraph] Ladezeiten verbessern und SEO steigern! Vergleiche FlyingPress und WP Rocket für die beste WordPress-Performance.
+  [List Paragraph] FlyingPress vs WP Rocket: Entdecke die Stärken und Schwächen der beiden Top-Caching-Plugins. Jetzt lesen und entscheiden!
+  [List Paragraph] Überlege nicht länger! Finde in unserem Vergleich von FlyingPress und WP Rocket heraus, welches Caching-Plugin zu dir passt.
+  [Heading 1] Outline Structure
+  [Heading 1] (h1) FlyingPress vs WP Rocket 2026 – Le meilleur cache WordPress ?
+  [Heading 2] (h2) Le Verdict Rapide : FlyingPress ou WP Rocket ?
+  [Heading 2] (h2) Fonctionnalités Clés : Le face-à-face
+  [Heading 2] (h2) Quel plugin pour ton projet ? (Cas pratiques)
+  [Heading 2] (h2) Tarifs 2026 : Combien ça coûte vraiment ?
+  [Heading 2] (h2) Avantages et Inconvénients : Le bilan
+  [Heading 2] (h2) Alternatives à FlyingPress et WP Rocket
+  [Heading 2] (h2) FAQ : Tes questions, nos réponses
+  [Heading 2] (h2) Conclusion : Alors, FlyingPress ou WP Rocket ?
+  [Heading 2] (h2) Ähnliche Beiträge
+  [Heading 2] Most frequent headings (H2/H3) found on SERP
+  [Heading 2] Unique headings found on your page
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] Le structure actuelle des titres de la page pourrait être améliorée pour mieux refléter les attentes des utilisateurs et les stratégies SEO. Par rapport aux ARTICLES concurrentiels, il serait bénéfique d'ajouter des titres H2 pour des sections qui comparent les fonctionnalités, les performances et les prix d'une manière plus détaillée. De plus, certaines sections H2 pourraient être consolidées ou reformulées pour améliorer la clarté et l'engagement des utilisateurs.
+  [List Paragraph] Analyse des Performances: FlyingPress vs WP Rocket
+  [List Paragraph] Comparaison des Fonctionnalités Clés
+  [List Paragraph] Études de Cas: Succès des Utilisateurs
+  [List Paragraph] Témoignages et Avis d'Utilisateurs
+  [List Paragraph] Comparaison de la Configuration et de l'Interface Utilisateur
+  [List Paragraph] Évaluation de la Support Client et des Ressources
+  [List Paragraph] Impact sur le Référencement SEO
+  [List Paragraph] Réponses aux Questions Fréquentes
+  [Heading 1] Most Frequent Terms
+  [Heading 2] Recommendation
+  [Heading 2] AI Recommendations
+  [Normal] Below are some suggestion for additional topics and keywords:
+  [List Paragraph] flyingpress vergleich
+  [List Paragraph] wp rocket vorteile
+  [List Paragraph] wp schnellheit
+  [List Paragraph] flyingpress bewertung
+  [List Paragraph] website optimierung
+  [List Paragraph] caching lösungen
+  [List Paragraph] performance verbesserung
+  [List Paragraph] plugin vergleich
+  [List Paragraph] flyingpress features
+  [List Paragraph] wp rocket alternativen
+  [List Paragraph] seitenladegeschwindigkeit
+  [List Paragraph] caching techniken
+  [List Paragraph] flyingpress vs andere
+  [List Paragraph] geschwindigkeitstest
+  [List Paragraph] wp rocket einrichten
+  [List Paragraph] performance messen
+  [List Paragraph] wordpress geschwindigkeit
+  [List Paragraph] flyingpress installation
+  [List Paragraph] wp rocket ergebnisse
+  [List Paragraph] plugin leistungsanalyse
+  [List Paragraph] flyingpress geschwindigkeit
+  [List Paragraph] wp rocket funktionen
+  [List Paragraph] flyingpress nutzen
+  [List Paragraph] caching plugins
+  [List Paragraph] wp optimierungstipps
+  [Heading 1] Related Searches & PAA
+  [Heading 2] Related Searches
+  [Heading 2] PAA
+
+  TABLE #0 (12 rows x 3 cols):
+    row 0: Text | Category | Type
+    row 1: The wordcount is good and in the range of the competitors. | SERP Insights | success
+    row 2: You should add more images, approximately 9 more. | SERP Insights | error
+    row 3: The SERP is very competitive. | SERP Insights | error
+    row 4: Your page is relatively fresh. | SERP Insights | success
+    row 5: Excellent. The title contains an exact match of the target keyword. | Title & Description | success
+    row 6: Your title has too many characters (72). Make sure the title is less than 60 characters. | Title & Description | error
+    row 7: Your title might be truncated on Google Search. It displays too many pixels (656.6). Make sure the title is less than 580 pixel width. | Title & Description | error
+    row 8: Make sure the description is less than 160 characters. | Title & Description | error
+    row 9: Good. Your headings contain (10) questions. The SERP average is 1. | Outline Structure & Headings | success
+    row 10: Excellent job. Your copy have some unique angle. | Outline Structure & Headings | success
+    row 11: Check the less frequent headings (marked with 2x) as inpiration. You could complete your outline with few of them. | Outline Structure & Headings | error
+
+  TABLE #1 (5 rows x 3 cols):
+    row 0: Type | Url | Serp
+    row 1: Word Count | 1742 | 1974
+    row 2: Image Count | 5 | 20
+    row 3: Page Rank Score | 28 | 38
+    row 4: Last Update | 13 days ago | 18 hours ago
+
+  TABLE #2 (4 rows x 2 cols):
+    row 0: The wordcount is good and in the range of the competitors. | success
+    row 1: You should add more images, approximately 9 more. | error
+    row 2: The SERP is very competitive. | error
+    row 3: Your page is relatively fresh. | success
+
+  TABLE #3 (19 rows x 7 cols):
+    row 0: Position | Title | URL | Page Rank | Words | Images | Type
+    row 1: 1 | 12 Best WordPress Cache Plugins For 2026 (Best To Worst) | https://onlinemediamasters.com/best-wordpress-cache-plugins/ | 527448 | 3903 | 80 | article
+    row 2: 2 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/?tl=de | 279 | 67 | 2 | social
+    row 3: 3 | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/ | 3446 | 1248 | 6 | article
+    row 4: 5 | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/ | 8325475 | 2390 | 2 | article
+    row 5: 6 | ✈️FlyingPress Test✨- WordPress Cache & WP Rocket Alternative 🚀 | https://www.techboys.de/flyingpress-review | 159803501 | 2602 | 37 | article
+    row 6: 7 | Totally biased review of FlyingPress cache plugin | https://wpjohnny.com/biased-review-of-flyingpress/ | 3161676 | 1864 | 2 | article
+    row 7: 8 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p9j8p9/is_wp_rocket_worth_it_in_2025/ | 279 | 49 | 2 | social
+    row 8: 10 | FlyingPress Review - An Easy Way to Improve Site Speed - CommerceGurus | https://www.commercegurus.com/flyingpress-review/ | 4425943 | 2237 | 24 | article
+    row 9: 11 | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/ | 3072694 | 2867 | 32 | article
+    row 10: 12 | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | 1350657 | 2512 | 10 | article
+    row 11: 13 | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/ | 22224541 | 1848 | 7 | article
+    row 12: 14 | Die idealen WP Rocket Plugin Einstellungen | https://www.dowebwork.de/wp-rocket-einstellungen/ | 153151125 | 5405 | 65 | article
+    row 13: 15 | WP Rocket vs FlyingPress: WordPress Caching Plugins ... | https://www.linkedin.com/posts/mamun-abdullah88_wp-rocket-vs-flyingpress-which-wordpress-activity-7417919327758200832-biLI | 53 |  |  | 
+    row 14: 16 |  | https://zhuanlan.zhihu.com/p/31836225706 | 5054 | 0 | 0 | internal page
+    row 15: 17 | Extension | https://intelbee.com/compare/flyingpress-vs-wp-rocket | 2943394 | 9 | 7 | internal page
+    row 16: 18 | WP-Rocket im Vergleich: Das beste Caching-Plugin für deine Website? | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich | 2816470 | 671 | 2 | internal page
+    row 17: 19 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p3myuc/wpcompress_real_life_experience_compared_to_wp/?tl=de | 279 | 150 | 2 | social
+    row 18: 20 | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/ | 169790754 | 588 | 4 | article
+
+  TABLE #4 (4 rows x 2 cols):
+    row 0: Excellent. The title contains an exact match of the target keyword. | success
+    row 1: Your title has too many characters (72). Make sure the title is less than 60 characters. | error
+    row 2: Your title might be truncated on Google Search. It displays too many pixels (656.6). Make sure the title is less than 580 pixel width. | error
+    row 3: Make sure the description is less than 160 characters. | error
+
+  TABLE #5 (4 rows x 3 cols):
+    row 0: Heading | Size | Is In Page
+    row 1: Flyingpress pricing | 2 | No
+    row 2: Flyingpress vs wp rocket | 2 | No
+    row 3: Leave a reply cancel reply | 2 | No
+
+  TABLE #6 (29 rows x 1 cols):
+    row 0: Heading
+    row 1: Le verdict rapide : flyingpress ou wp rocket ?
+    row 2: Fonctionnalités clés : le face-à-face
+    row 3: Quel plugin pour ton projet ? (cas pratiques)
+    row 4: Tarifs 2026 : combien ça coûte vraiment ?
+    row 5: Avantages et inconvénients : le bilan
+    row 6: Alternatives à flyingpress et wp rocket
+    row 7: Faq : tes questions, nos réponses
+    row 8: Conclusion : alors, flyingpress ou wp rocket ?
+    row 9: Ähnliche beiträge
+    row 10: Tableau comparatif : flyingpress vs. wp rocket
+    row 11: Optimisation des fichiers (css & javascript)
+    row 12: Gestion du cache et cdn
+    row 13: Optimisation des images
+    row 14: Base de données et compatibilité
+    row 15: Pour un site e-commerce (woocommerce)
+    row 16: Pour un site vitrine avec page builder (elementor, divi…)
+    row 17: ✅ avantages de flyingpress
+    row 18: ❌ inconvénients de flyingpress
+    row 19: ✅ avantages de wp rocket
+    row 20: ❌ limites de wp rocket
+    row 21: Welches plugin ist schneller: flyingpress oder wp rocket?
+    row 22: Ist flyingpress besser als wp rocket?
+    row 23: Bietet flyingpress eine kostenlose version an?
+    row 24: Ist wp rocket umfassender?
+    row 25: Kann ich diese plugins vor dem kauf testen?
+    row 26: Welche kostenlosen konkurrenten gibt es?
+    row 27: Kann man flyingpress und wp rocket zusammen verwenden?
+    row 28: Fastpixel-bewertung: das cloud-plugin zur optimierung von wordpress
+
+  TABLE #7 (3 rows x 2 cols):
+    row 0: Good. Your headings contain (10) questions. The SERP average is 1. | success
+    row 1: Excellent job. Your copy have some unique angle. | success
+    row 2: Check the less frequent headings (marked with 2x) as inpiration. You could complete your outline with few of them. | error
+
+  TABLE #8 (28 rows x 2 cols):
+    row 0: Text | Status
+    row 1: flyingpress (28/11-84) | success
+    row 2: plugin (15/10-56) | success
+    row 3: wp (23/5-52) | success
+    row 4: rocket (23/4-51) | success
+    row 5: wp rocket (23/3-51) | success
+    row 6: feature (0/11-43) | error
+    row 7: cache (17/3-68) | success
+    row 8: performance (2/5-25) | warning
+    row 9: cache plugin (0/4-27) | error
+    row 10: wordpress (8/5-20) | success
+    row 11: speed (0/6-21) | error
+    row 12: flyingpress wp (6/3-29) | success
+    row 13: caching (1/4-28) | warning
+    row 14: website (2/5-14) | warning
+    row 15: page (6/3-17) | success
+    row 16: flyingpress wp rocket (6/2-28) | success
+    row 17: user (0/4-19) | error
+    row 18: web vitals (5/3-13) | success
+    row 19: core web (5/3-12) | success
+    row 20: css (9/3-18) | success
+    row 21: option (8/3-12) | success
+    row 22: image optimization (0/3-11) | error
+    row 23: performance plugin (0/3-9) | error
+    row 24: core web vitals (5/2-12) | success
+    row 25: free (0/3-10) | error
+    row 26: wp rocket offer (0/6-6) | error
+    row 27: wp rocket flyingpress (0/2-5) | error
+
+  TABLE #9 (0 rows x 0 cols):
+
+  TABLE #10 (9 rows x 4 cols):
+    row 0: Term | Occurrence | Sentences | Frequent Keywords
+    row 1: Flyingpress vs wp rocket reddit | 0 |  | 
+    row 2: FlyingPress pricing | 0 |  | 
+    row 3: WP Rocket Alternative | 0 |  | 
+    row 4: Super page Cache vs WP Rocket | 0 |  | 
+    row 5: WP Fastest Cache vs WP Rocket | 0 |  | 
+    row 6: WP Rocket pricing | 0 |  | 
+    row 7: Is WP Rocket worth it | 0 |  | 
+    row 8: WP Rocket Preise | 0 |  | 
+
+  TABLE #11 (5 rows x 3 cols):
+    row 0: Question | Occurrence | Sentences
+    row 1: Was ist die beste Alternative zu WP Rocket? |  | 
+    row 2: Welches ist das beste Cache-Plugin für Divi? |  | 
+    row 3: Was ist WP Rocket? |  | 
+    row 4: Welches ist das beste Cache-Plugin für WooCommerce? |  | 
+
+
+######################################################################
+
+
+=== XLSX SERP_MAIN ===
+
+  SHEET 'Info' (10 rows):
+    r0: Search url | 
+    r1: Query | flyingpress vs wp rocket
+    r2: Device | desktop
+    r3: Language | de
+    r4: Location | 
+    r5: Country | DE
+    r6: Search engine | google.de
+    r7: Number of results | 2
+    r8: Scrape date | 26th May 2026
+    r9: Export date | 26th May 2026
+
+  SHEET 'SERP Overview' (21 rows):
+    r0: Position | Organic Position | Page | SERP Type | Type | SERP Title | Title | URL | SERP Description | Meta Description
+    r1: 1 | 1 | 1 | page | article | 12 Best WordPress Cache Plugins For 2026 (Best To Worst) | 12 Best WordPress Cache Plugins For 2026 (Best To Worst) | https://onlinemediamasters.com/best-wordpress-cache-plugins/ | 18.02.2026 — FlyingPress is usually first to release new features while WP Rocket trails. You can see this by seaching “New:” in the FlyingPress changelog, ... | A list of best cache plugins ranked from best to worst based on things like addressing core web vitals and actual browsing speed
+    r2: 2 | 2 | 1 | page | social | WP Rocket, ist es immer noch die beste Option? | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/ | Ich habe viele Diskussionen über WP Rocket gesehen und ob es immer noch die beste Option ist. Ich habe das Gefühl, dass es mit ihrer neuen Preisstruktur ... | 
+    r3: 3 | 3 | 1 | page | article | FlyingPress vs. WP Rocket: Choose the best option for your ... | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/ | 4 Reasons to Choose WP Rocket over FlyingPress. This is what makes WP Rocket your best option. Free built-in performance hub: You want a clear understanding ... | Struggling to choose between FlyingPress and WP Rocket? Let's figure out which one will bring you more benefits according to your needs
+    r4: 4 | 4 | 1 | video |  |  |  |  |  | 
+    r5: 5 | 5 | 1 | page | article | FlyingPress Vs. WP Rocket (2025 Comparison) | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/ | 02.05.2026 — FlyingPress vs WP Rocket? Compare features, speed, pricing, and real-world results in this 2025 review. Find out which caching plugin works ... | FlyingPress vs WP Rocket? Compare features, speed, pricing, and real-world results in this 2025 review. Find out which caching plugin works best for your WordPress site
+    r6: 6 | 6 | 1 | page | article | ✈️FlyingPress Test✨- WordPress Cache & WP Rocket ... | ✈️FlyingPress Test✨- WordPress Cache & WP Rocket Alternative 🚀 | https://www.techboys.de/flyingpress-review | 13.04.2023 — Mit FlyingPress kannst du zahlreiche Vorteile für deine WordPress-Website erzielen. Eine der wichtigsten Vorteile ist die Verbesserung der ... | Wenn du deine WordPress-Website für bessere Ladezeiten und eine verbesserte SEO-Performance optimieren möchtest, dann ist FlyingPress die Lösung! In diesem
+    r7: 7 | 7 | 1 | page | article | Totally biased review of FlyingPress cache plugin | Totally biased review of FlyingPress cache plugin | https://wpjohnny.com/biased-review-of-flyingpress/ | 07.08.2020 — What does Johnny think FlyingPress will become? I think it will steal WP Rocket's crown and become the easiest hassle-free cache plugin. | 
+    r8: 8 | 8 | 1 | page | social | Is WP Rocket worth it in 2025? : r/Wordpress | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p9j8p9/is_wp_rocket_worth_it_in_2025/ | I'm considering renewing my subscription for WP Rocket but I'm not sure if it's still worth it in 2025 or they may be other lower prices (or even free) ... | 
+    r9: 9 | 9 | 1 | questions |  |  |  |  |  | 
+    r10: 10 | 10 | 1 | page | article | FlyingPress Review - An Easy Way to Improve Site Speed | FlyingPress Review - An Easy Way to Improve Site Speed - CommerceGurus | https://www.commercegurus.com/flyingpress-review/ | 07.08.2024 — Overall, FlyingPress achieved results comparable to those of WP Rocket, based on the tests from our review. In some areas, one plugin performed ... | Find out if FlyingPress is the best caching and performance plugin for your WordPress site or WooCommerce in our FlyingPress review
+    r11: 11 | 11 | 1 | page | article | FlyingPress Review: Best WordPress Performance Plugin? ... | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/ | 10.03.2026 — However, if you're an agency that needs a tool for 50+ sites, WP Rocket is cheaper at $299 for unlimited sites versus FlyingPress at $500 for ... | Our hands-on FlyingPress review has real performance tests and pros / cons to help you decide if it's the best WordPress performance plugin
+    r12: 12 | 12 | 2 | page | article | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | 16.10.2024 — FlyingPress and WP Rocket are two top-tier caching plugins designed to supercharge WordPress performance. While they share a similar goal—making ... | The full comparison of FlyingPress vs WP Rocket includes extensive details about their new features, performance, pricing and discount sales
+    r13: 13 | 13 | 2 | page | article | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin ... | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/ | 01.04.2026 — In this post, we will be comparing the top three speed optimization plugins for WordPress: FlyingPress, WP Rocket, and NitroPack. | In this post, we will be comparing the top three speed optimization plugins for WordPress: FlyingPress, WP Rocket, and NitroPack
+    r14: 14 | 14 | 2 | page | article | Die idealen WP Rocket Plugin Einstellungen | Die idealen WP Rocket Plugin Einstellungen | https://www.dowebwork.de/wp-rocket-einstellungen/ | 01.11.2022 — WP Rocket vs. FlyingPress vs. SG Optimizer. Ich bin von WP Rocket zu FlyingPress gewechselt. Da habe ich einen großen Unterschied beim Klicken ... | Ich habe WP Rocket eine laaange Zeit verwendet und helfe dir WP Rocket bestmöglich zu konfigurieren
+    r15: 15 | 15 | 2 | page |  | WP Rocket vs FlyingPress: WordPress Caching Plugins ... | WP Rocket vs FlyingPress: WordPress Caching Plugins ... | https://www.linkedin.com/posts/mamun-abdullah88_wp-rocket-vs-flyingpress-which-wordpress-activity-7417919327758200832-biLI | Price - WP Rocket: Paid plugin starting at $59/year. Worth it for large or complex sites. - FlyingPress: Paid plugin starting at $49/year. | 
+    r16: 16 | 16 | 2 | page | internal page | WP缓存插件选择：FlyingPress vs. WP Rocket |  | https://zhuanlan.zhihu.com/p/31836225706 | 21.03.2025 — 以下是FlyingPress和WP Rocket这两款WordPress缓存插件的对比： 功能特点缓存和预加载WP Rocket：提供全面的页面缓存和预加载功能。 | 
+    r17: 17 | 17 | 2 | page | website | FlyingPress vs WP Rocket Comparison | Extension | https://intelbee.com/compare/flyingpress-vs-wp-rocket | Compare FlyingPress vs WP Rocket technologies. Market share analysis, usage statistics, pros/cons & which websites use each technology. | Compare FlyingPress vs WP Rocket technologies. Market share analysis, usage statistics, pros/cons & which websites use each technology
+    r18: 18 | 18 | 2 | page | website | WP-Rocket im Vergleich: Das beste Caching-Plugin für ... | WP-Rocket im Vergleich: Das beste Caching-Plugin für deine Website? | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich | Unterschiede: · Serverabhängigkeit: LiteSpeed Cache entfaltet seine volle Stärke nur auf LiteSpeed-Servern, während WP-Rocket serverunabhängig funktioniert. | Vergleiche WP-Rocket mit anderen Caching-Plugins wie W3 Total Cache, LiteSpeed Cache und mehr. Erfahre, warum WP-Rocket die beste Wahl für Performance und Benutzerfreundlichkeit ist!
+    r19: 19 | 19 | 2 | page | social | WPCompress echte Erfahrungen im Vergleich zu WP ... | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p3myuc/wpcompress_real_life_experience_compared_to_wp/ | Hey Community, Ich habe seit etwa zwei Jahren darüber nachgedacht, WP Rocket zu verlassen, aber der Wechsel ist nicht einfach. Auf den ersten Blick ... | 
+    r20: 20 | 20 | 2 | page | article | WP Rocket versus Flying Press | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/ | 07.12.2024 — WP Rocket tends to perform slightly better on more complex sites, thanks to its advanced features, whereas FlyingPress stands out for its ... | Have you ever experienced the annoyance of a slow-loading website? In today's fast-paced online environment, speed is crucial. A slow site can drive
+
+  SHEET 'Search Volume' (2 rows):
+    r0: Keyword | Competition | Competition Index | Search Volume | CPC
+    r1: flyingpress vs wp rocket | LOW | 17 | 10 | 4.68
+
+  SHEET 'Monthly Search Volume' (13 rows):
+    r0: Keyword | Year | Month | Monthly Search Volume
+    r1: flyingpress vs wp rocket | 2025 | 5 | 20
+    r2: flyingpress vs wp rocket | 2025 | 6 | 10
+    r3: flyingpress vs wp rocket | 2025 | 7 | 10
+    r4: flyingpress vs wp rocket | 2025 | 8 | 10
+    r5: flyingpress vs wp rocket | 2025 | 9 | 20
+    r6: flyingpress vs wp rocket | 2025 | 10 | 10
+    r7: flyingpress vs wp rocket | 2025 | 11 | 20
+    r8: flyingpress vs wp rocket | 2025 | 12 | 20
+    r9: flyingpress vs wp rocket | 2026 | 1 | 10
+    r10: flyingpress vs wp rocket | 2026 | 2 | 10
+    r11: flyingpress vs wp rocket | 2026 | 3 | 20
+    r12: flyingpress vs wp rocket | 2026 | 4 | 10
+
+  SHEET 'SERP Organic Title' (19 rows):
+    r0: Page position | Title | URL
+    r1: 1 | 12 Best WordPress Cache Plugins For 2026 (Best To Worst) | https://onlinemediamasters.com/best-wordpress-cache-plugins/
+    r2: 2 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r3: 3 | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r4: 5 | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r5: 6 | ✈️FlyingPress Test✨- WordPress Cache & WP Rocket Alternative 🚀 | https://www.techboys.de/flyingpress-review
+    r6: 7 | Totally biased review of FlyingPress cache plugin | https://wpjohnny.com/biased-review-of-flyingpress/
+    r7: 8 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p9j8p9/is_wp_rocket_worth_it_in_2025/
+    r8: 10 | FlyingPress Review - An Easy Way to Improve Site Speed - CommerceGurus | https://www.commercegurus.com/flyingpress-review/
+    r9: 11 | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/
+    r10: 12 | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r11: 13 | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r12: 14 | Die idealen WP Rocket Plugin Einstellungen | https://www.dowebwork.de/wp-rocket-einstellungen/
+    r13: 15 | WP Rocket vs FlyingPress: WordPress Caching Plugins ... | https://www.linkedin.com/posts/mamun-abdullah88_wp-rocket-vs-flyingpress-which-wordpress-activity-7417919327758200832-biLI
+    r14: 16 |  | https://zhuanlan.zhihu.com/p/31836225706
+    r15: 17 | Extension | https://intelbee.com/compare/flyingpress-vs-wp-rocket
+    r16: 18 | WP-Rocket im Vergleich: Das beste Caching-Plugin für deine Website? | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r17: 19 | Reddit - The heart of the internet | https://www.reddit.com/r/Wordpress/comments/1p3myuc/wpcompress_real_life_experience_compared_to_wp/
+    r18: 20 | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/
+
+  SHEET 'Heading 1 (Organic page only)' (19 rows):
+    r0: Page position | H1 | URL
+    r1: 1 | 12 Best WordPress Cache Plugins Of 2026 Ranked By Features, CDNs, And Optimizing Core Web Vitals [Comparison Spreadsheet] | https://onlinemediamasters.com/best-wordpress-cache-plugins/
+    r2: 2 | WP Rocket, ist es immer noch die beste Option? | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r3: 3 | FlyingPress vs. WP Rocket | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r4: 5 | FlyingPress vs. WP Rocket (2026 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r5: 6 | ✈️FlyingPress Test✨- WordPress Cache & WP Rocket Alternative 🚀 | https://www.techboys.de/flyingpress-review
+    r6: 7 | Totally biased review of FlyingPress cache plugin | https://wpjohnny.com/biased-review-of-flyingpress/
+    r7: 8 | Is WP Rocket worth it in 2025? | https://www.reddit.com/r/Wordpress/comments/1p9j8p9/is_wp_rocket_worth_it_in_2025/
+    r8: 10 | FlyingPress Review – An Easy Way to Improve Site Speed | https://www.commercegurus.com/flyingpress-review/
+    r9: 11 | FlyingPress Review: Is It the Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/
+    r10: 12 | Unleashing the Speed: A Head-to-Head Battle Between FlyingPress and WP Rocket | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r11: 13 | FlyingPress vs WP Rocket vs NitroPack: Comparing The Top WordPress Speed Plugins Of 2026 | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r12: 14 | Die optimalen WP Rocket Plugin Einstellungen (und warum ich zu FlyingPress umgestiegen bin) | https://www.dowebwork.de/wp-rocket-einstellungen/
+    r13: 15 |  | https://www.linkedin.com/posts/mamun-abdullah88_wp-rocket-vs-flyingpress-which-wordpress-activity-7417919327758200832-biLI
+    r14: 16 |  | https://zhuanlan.zhihu.com/p/31836225706
+    r15: 17 |  | https://intelbee.com/compare/flyingpress-vs-wp-rocket
+    r16: 18 | WP-Rocket im Vergleich: Das beste Caching-Plugin für deine Website? | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r17: 19 | WPCompress echte Erfahrungen im Vergleich zu WP Rocket? | https://www.reddit.com/r/Wordpress/comments/1p3myuc/wpcompress_real_life_experience_compared_to_wp/
+    r18: 20 | WP Rocket versus Flying Press | https://www.proactivation.net/wp-rocket-versus-flying-press/
+
+  SHEET 'Heading 2 (Organic page only)' (91 rows):
+    r0: Page position | H2 | URL
+    r1: 2 | Thanks for the feedback! | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r2: 2 | Top Posts | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r3: 3 | 4 Reasons to Choose WP Rocket over FlyingPress | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r4: 3 | The Same PurposeBut Not the Same Plugin | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r5: 3 | A Few Words from Users Who Tried Both Plugins | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r6: 3 | Plugins Comparison at a Glance | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r7: 3 | Don’t Just Take Our Word For It | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r8: 3 | Why So Many Website OwnersHave Said Yes To WP Rocket | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r9: 3 | A Better Performance Starts Here | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r10: 5 | FlyingPress vs WP Rocket | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r11: 5 | Overview of Cache Plugins | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r12: 5 | What is WP Rocket? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r13: 5 | What Is FlyingPress? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r14: 5 | Speed Test Results & Core Web Vitals (Real Example) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r15: 5 | Features Breakdown | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r16: 5 | Caching Mechanism | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r17: 5 | Database Optimization | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r18: 5 | CDN Integration | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r19: 5 | Security Features | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r20: 5 | Pricing Comparison (2025) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r21: 5 | Ease of Use & Interface | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r22: 5 | Support & Community | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r23: 5 | WP Rocket Pros and Cons | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r24: 5 | Winner: FlyingPress or WP Rocket? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r25: 5 | Frequently Asked Questions | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r26: 6 | Die Vorteile von FlyingPress für deine WordPress-Website | https://www.techboys.de/flyingpress-review
+    r27: 6 | FlyingPress Einstellungen | Settings | https://www.techboys.de/flyingpress-review
+    r28: 6 | Noch mehr, damit deine Seite fliegt: FlyingCDN | https://www.techboys.de/flyingpress-review
+    r29: 6 | Erfahrungen und Testergebnisse von FlyingPress für das Jahr 2023 | https://www.techboys.de/flyingpress-review
+    r30: 6 | FlyingPress und WP Rocket im Vergleich (Theorie vs. Praxis) | https://www.techboys.de/flyingpress-review
+    r31: 6 | Preise und Fazit zum FlyingPress Test 2023 | https://www.techboys.de/flyingpress-review
+    r32: 6 | Laut Stiftung Warentest gibt es nur einen Mähroboter, den du 2026 wirklich kaufen kannst | https://www.techboys.de/flyingpress-review
+    r33: 6 | Navimow i208 LiDAR einrichten: Was beim ersten Mal wirklich passiert | https://www.techboys.de/flyingpress-review
+    r34: 6 | Mähroboter-Folgekosten 2026: was nach dem Kauf wirklich übrigbleibt | https://www.techboys.de/flyingpress-review
+    r35: 6 | IKEAs Heizkörper-Thermostat „Liljebagge“ taucht in der App auf. Und verschwindet wieder | https://www.techboys.de/flyingpress-review
+    r36: 6 | EcoFlow Stream regelt sich jetzt nach dem Hausverbrauch. Ohne Cloud, ohne Sicherungskasten | https://www.techboys.de/flyingpress-review
+    r37: 6 | Deine nächsten Beiträge | https://www.techboys.de/flyingpress-review
+    r38: 7 | Don’t listen to anything I say | https://wpjohnny.com/biased-review-of-flyingpress/
+    r39: 7 | My totally honest (but still biased) thoughts about FlyingPress | https://wpjohnny.com/biased-review-of-flyingpress/
+    r40: 7 | Should you use FlyingPress NOW? | https://wpjohnny.com/biased-review-of-flyingpress/
+    r41: 7 | Are you ready to fly? | https://wpjohnny.com/biased-review-of-flyingpress/
+    r42: 7 | Reader Interactions | https://wpjohnny.com/biased-review-of-flyingpress/
+    r43: 7 | Footer | https://wpjohnny.com/biased-review-of-flyingpress/
+    r44: 10 | About FlyingPress | https://www.commercegurus.com/flyingpress-review/
+    r45: 10 | FlyingPress Before and After Comparison | https://www.commercegurus.com/flyingpress-review/
+    r46: 10 | GTMetrix Test Results | https://www.commercegurus.com/flyingpress-review/
+    r47: 10 | Google PageSpeed Insights Test Results | https://www.commercegurus.com/flyingpress-review/
+    r48: 10 | How FlyingPress Improves WordPress Performance | https://www.commercegurus.com/flyingpress-review/
+    r49: 10 | FlyingPress Pricing | https://www.commercegurus.com/flyingpress-review/
+    r50: 10 | Is FlyingPress A Good Option? | https://www.commercegurus.com/flyingpress-review/
+    r51: 10 | Shoptimizer WooCommerce Theme | https://www.commercegurus.com/flyingpress-review/
+    r52: 11 | FlyingPress Performance Tests | https://www.wpkube.com/flyingpress-review/
+    r53: 11 | How to Use FlyingPress + A Look at the Features and Interface | https://www.wpkube.com/flyingpress-review/
+    r54: 11 | FlyingPress Pricing | https://www.wpkube.com/flyingpress-review/
+    r55: 11 | FlyingPress vs WP Rocket vs Perfmatters | https://www.wpkube.com/flyingpress-review/
+    r56: 11 | FlyingPress Pros and Cons | https://www.wpkube.com/flyingpress-review/
+    r57: 11 | FlyingPress Review FAQ | https://www.wpkube.com/flyingpress-review/
+    r58: 11 | FlyingPress Review Final Thoughts: Should You Use It? | https://www.wpkube.com/flyingpress-review/
+    r59: 11 | Cloudways Review (2026): Is This a Good Alternative to Cloud Hosting? | https://www.wpkube.com/flyingpress-review/
+    r60: 11 | Teachable Review (2026): Is It the Best Way to Create an Online Course? | https://www.wpkube.com/flyingpress-review/
+    r61: 11 | Rocket.net Review: Is This a Better Host Than WP Engine? | https://www.wpkube.com/flyingpress-review/
+    r62: 11 | WPX Hosting Coupon | https://www.wpkube.com/flyingpress-review/
+    r63: 11 | KadenceWP Theme Coupon | https://www.wpkube.com/flyingpress-review/
+    r64: 11 | WordPress.com Coupon | https://www.wpkube.com/flyingpress-review/
+    r65: 12 | Table of Contents | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r66: 12 | Overview of FlyingPress and WP Rocket | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r67: 13 | FlyingPress | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r68: 13 | WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r69: 13 | NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r70: 13 | WordPress Speed Plugins Compared: Price, Features, and Performance | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r71: 13 | FlyingPress vs WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r72: 13 | FlyingPress vs NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r73: 13 | Who Should Use FlyingPress | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r74: 13 | Who Should Use WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r75: 13 | Who Should Use NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r76: 13 | The Speed Factor: What Happens Without Optimization | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r77: 13 | Pricing Reality: Value for Your Investment | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r78: 13 | Our Recommendation | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r79: 13 | FlyingPress vs WP Rocket vs NitroPack: Comparing The Top WordPress Speed Plugins Of 2026 | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r80: 14 | Wie kann ich WP-Rocket optimieren? | https://www.dowebwork.de/wp-rocket-einstellungen/
+    r81: 14 | Kann ich WP Rocket mit CloudFlare verwenden? | https://www.dowebwork.de/wp-rocket-einstellungen/
+    r82: 14 | Ist Autoptimize besser als WP Rocket? | https://www.dowebwork.de/wp-rocket-einstellungen/
+    r83: 17 | FlyingPress vs WP Rocket | https://intelbee.com/compare/flyingpress-vs-wp-rocket
+    r84: 17 | Apps | https://intelbee.com/compare/flyingpress-vs-wp-rocket
+    r85: 18 | WP-Rocket vs. W3 Total Cache | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r86: 18 | WP-Rocket vs. LiteSpeed Cache | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r87: 18 | WP-Rocket vs. Autoptimize | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r88: 18 | WP-Rocket vs. WP Super Cache | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r89: 18 | Fazit | https://www.dogado.de/wordpress/seo/wp-rocket-im-vergleich
+    r90: 19 | Thanks for the feedback! | https://www.reddit.com/r/Wordpress/comments/1p3myuc/wpcompress_real_life_experience_compared_to_wp/
+
+  SHEET 'Frequent Questions' (25 rows):
+    r0: Tag | Question | Count
+    r1: H1 | WPCompress echte Erfahrungen im Vergleich zu WP Rocket? | 1
+    r2: H1 | WP-Rocket im Vergleich: Das beste Caching-Plugin für deine Website? | 1
+    r3: H1 | Is WP Rocket worth it in 2025? | 1
+    r4: H1 | WP Rocket, ist es immer noch die beste Option? | 1
+    r5: H2 | Who Should Use WP Rocket | 3
+    r6: H2 | What is WP Rocket? | 2
+    r7: H2 | Warum WP-Rocket? | 1
+    r8: H2 | Ist Autoptimize besser als WP Rocket? | 1
+    r9: H2 | Kann ich WP Rocket mit CloudFlare verwenden? | 1
+    r10: H2 | Wie kann ich WP-Rocket optimieren? | 1
+    r11: H2 | How to Purge and/Or Preload the FlyingPress Cache | 1
+    r12: H2 | Rocket.net Review: Is This a Better Host Than WP Engine? | 1
+    r13: H2 | Teachable Review (2026): Is It the Best Way to Create an Online Course? | 1
+    r14: H2 | Cloudways Review (2026): Is This a Good Alternative to Cloud Hosting? | 1
+    r15: H2 | FlyingPress Review Final Thoughts: Should You Use It? | 1
+    r16: H2 | How to Use FlyingPress + A Look at the Features and Interface | 1
+    r17: H2 | Do you want a whopping $50 off Shoptimizer for WooCommerce? | 1
+    r18: H2 | Is FlyingPress A Good Option? | 1
+    r19: H2 | How FlyingPress Improves WordPress Performance | 1
+    r20: H2 | Are you ready to fly? | 1
+    r21: H2 | Should you use FlyingPress NOW? | 1
+    r22: H2 | Winner: FlyingPress or WP Rocket? | 1
+    r23: H2 | Why So Many Website OwnersHave Said Yes To WP Rocket | 1
+    r24: H2 | Do You Agree? | 1
+
+  SHEET 'FAQ' (10 rows):
+    r0: Page position | URL | Question | Answer
+    r1: 11 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress improve Core Web Vitals? | FlyingPress offers lots of features that will improve your site's Core Web Vitals, especially Largest Contentful Paint and Cumulative Layout Shift. This includes lots of tools to optimize CSS and Java
+    r2: 11 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer caching? | FlyingPress does offer page caching alongside all of its other optimization features, which eliminates the need to use a separate caching plugin.
+    r3: 11 | https://www.wpkube.com/flyingpress-review/ | Is there a free version of FlyingPress? | There is no free version of the FlyingPress plugin, but the FlyingPress developer does offer several useful free performance plugins at WordPress.org. While these free plugins cannot replace FlyingPre
+    r4: 11 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer a renewal discount? | FlyingPress offers a 30% renewal discount on all licenses, which greatly reduces the cost after the first year.
+    r5: 11 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer a money-back guarantee? | All of FlyingPress's plans offer a 14-day money-back guarantee, so you're not risking anything by trying the plugin on your site.
+    r6: 12 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which plugin is better for eCommerce websites? | Both plugins are suitable, but FlyingPress has an edge with faster logged-in user caching, which can be beneficial for eCommerce stores with many returning customers. WP Rocket also offers great suppo
+    r7: 12 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Do these plugins work without a CDN? | Yes, both can be used independently. However, CDN enhances its performance by reducing latency and improving image delivery, and I’d recommend it if you have a broader audience.
+    r8: 12 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which plugin offers better support? | WP Rocket has a larger user base and more established support channels. Their Facebook channel can be very helpful. In my experience so far WP Rocket offers better support than the FlyingPress. Flying
+    r9: 12 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which one should you choose? | Use the one that suits your needs better. If one don’t work well with your website, and you haven’t been able to set it up properly despite supports help — try another. They both have 14-days money gu
+
+  SHEET 'Topic' (176 rows):
+    r0: Keyword | Found in Pages | Total Frequency | Max Count on page | Min count on page | Relevancy | Length
+    r1: cache | 8 | 125 | 68 | 3 | 68.25146705146705 | 1
+    r2: plugin | 8 | 233 | 56 | 10 | 76.11755651755651 | 1
+    r3: feature | 6 | 125 | 43 | 11 | 37.077777777777776 | 1
+    r4: wp | 8 | 197 | 52 | 5 | 56.42481962481963 | 1
+    r5: image | 6 | 77 | 34 | 3 | 26.239249639249643 | 1
+    r6: rocket | 8 | 181 | 51 | 4 | 46.653391053391054 | 1
+    r7: wp rocket | 8 | 178 | 51 | 3 | 92.72958152958152 | 2
+    r8: cache plugin | 3 | 42 | 27 | 4 | 19.580952380952382 | 2
+    r9: flyingpress | 8 | 334 | 84 | 11 | 58.54025974025975 | 1
+    r10: litespeed | 3 | 31 | 20 | 3 | 7.342857142857143 | 1
+    r11: cloudflare | 2 | 24 | 19 | 5 | 4.314814814814815 | 1
+    r12: css | 7 | 46 | 18 | 3 | 16.66077441077441 | 1
+    r13: optimization | 6 | 79 | 20 | 6 | 17.431457431457435 | 1
+    r14: page | 7 | 61 | 17 | 3 | 19.076767676767677 | 1
+    r15: cdn | 5 | 56 | 16 | 8 | 11.597643097643099 | 1
+    r16: litespeed cache | 2 | 20 | 14 | 6 | 6.7555555555555555 | 2
+    r17: vitals | 2 | 22 | 13 | 9 | 3.288888888888889 | 1
+    r18: web | 5 | 39 | 13 | 4 | 9.805555555555552 | 1
+    r19: web vitals | 4 | 28 | 13 | 3 | 13.644444444444446 | 2
+    r20: load | 4 | 38 | 13 | 3 | 7.026262626262626 | 1
+    r21: lazy | 4 | 27 | 12 | 3 | 6.65050505050505 | 1
+    r22: unused | 2 | 16 | 12 | 4 | 2.7474747474747474 | 1
+    r23: caching | 7 | 70 | 28 | 4 | 16.783501683501683 | 1
+    r24: core | 5 | 31 | 12 | 3 | 8.234848484848486 | 1
+    r25: core web | 4 | 28 | 12 | 3 | 12.933333333333334 | 2
+    r26: core web vitals | 6 | 31 | 12 | 2 | 30.396969696969695 | 3
+    r27: image optimization | 4 | 23 | 11 | 3 | 11.004713804713804 | 2
+    r28: site | 6 | 146 | 54 | 7 | 18.575901875901877 | 1
+    r29: issues | 2 | 19 | 11 | 8 | 2.606060606060606 | 1
+    r30: remove | 3 | 17 | 11 | 3 | 3.9575757575757575 | 1
+    r31: unused css | 2 | 15 | 11 | 4 | 5.05050505050505 | 2
+    r32: review | 4 | 40 | 17 | 5 | 5.861471861471861 | 1
+    r33: free | 7 | 36 | 10 | 3 | 10.660101010101009 | 1
+    r34: people | 2 | 18 | 10 | 8 | 2.4761904761904763 | 1
+    r35: preload | 4 | 20 | 10 | 3 | 5.0949494949494945 | 1
+    r36: unique | 2 | 13 | 10 | 3 | 2.282828282828283 | 1
+    r37: pro | 3 | 18 | 9 | 3 | 3.4166666666666665 | 1
+    r38: version | 3 | 19 | 9 | 3 | 3.3373015873015874 | 1
+    r39: website | 7 | 64 | 14 | 5 | 14.197979797979798 | 1
+    r40: add | 3 | 16 | 9 | 3 | 3.221212121212121 | 1
+    r41: lazy load | 2 | 14 | 9 | 5 | 4.444444444444445 | 2
+    r42: faster | 3 | 23 | 10 | 4 | 3.7777777777777777 | 1
+    r43: server | 3 | 17 | 8 | 3 | 3.233333333333333 | 1
+    r44: javascript | 5 | 24 | 8 | 3 | 5.547979797979798 | 1
+    r45: speed | 7 | 82 | 21 | 6 | 14.31161616161616 | 1
+    r46: remove unused css | 2 | 10 | 8 | 2 | 5.454545454545455 | 3
+    r47: support | 5 | 41 | 11 | 6 | 7.034511784511783 | 1
+    r48: font | 2 | 15 | 8 | 7 | 1.911111111111111 | 1
+    r49: html | 2 | 10 | 7 | 3 | 1.6888888888888889 | 1
+    r50: swift | 2 | 10 | 7 | 3 | 1.650793650793651 | 1
+    r51: test | 6 | 46 | 17 | 3 | 7.083838383838383 | 1
+    r52: year | 5 | 25 | 7 | 4 | 4.686147186147186 | 1
+    r53: perfmatters | 2 | 13 | 7 | 6 | 1.474747474747475 | 1
+    r54: work | 4 | 22 | 7 | 3 | 3.751322751322751 | 1
+    r55: similar | 2 | 9 | 6 | 3 | 1.3939393939393938 | 1
+    r56: performance | 7 | 108 | 25 | 5 | 16.494781144781143 | 1
+    r57: compatibility | 2 | 12 | 6 | 6 | 1.7777777777777777 | 1
+    r58: delay | 4 | 22 | 6 | 4 | 3.5838383838383834 | 1
+    r59: delay javascript | 2 | 9 | 6 | 3 | 2.7777777777777777 | 2
+    r60: hosting | 6 | 30 | 8 | 3 | 6.638816738816737 | 1
+    r61: result | 2 | 10 | 5 | 5 | 1.2037037037037037 | 1
+    r62: problem | 2 | 8 | 5 | 3 | 1.2222222222222223 | 1
+    r63: js | 2 | 9 | 5 | 4 | 1.1851851851851851 | 1
+    r64: control | 3 | 22 | 10 | 5 | 2.5277777777777777 | 1
+    r65: host | 3 | 12 | 5 | 3 | 1.8686868686868685 | 1
+    r66: pagespeed | 2 | 9 | 5 | 4 | 1.2000000000000002 | 1
+    r67: loading | 5 | 23 | 8 | 3 | 4.563131313131312 | 1
+    r68: make | 6 | 29 | 6 | 4 | 6.191630591630592 | 1
+    r69: enterprise | 2 | 10 | 5 | 5 | 1.2037037037037037 | 1
+    r70: wordpress | 7 | 84 | 20 | 5 | 13.229461279461278 | 1
+    r71: enable | 3 | 12 | 5 | 3 | 1.8333333333333333 | 1
+    r72: improve | 5 | 28 | 11 | 3 | 3.901515151515151 | 1
+    r73: user | 5 | 44 | 19 | 4 | 5.377946127946128 | 1
+    r74: setup | 4 | 19 | 6 | 4 | 3.088888888888889 | 1
+    r75: google | 5 | 19 | 5 | 3 | 3.3131313131313127 | 1
+    r76: rocketcdn | 2 | 7 | 4 | 3 | 0.9444444444444444 | 1
+    r77: great | 4 | 15 | 4 | 3 | 2.446560846560846 | 1
+    r78: plan | 2 | 9 | 5 | 4 | 0.9898989898989901 | 1
+    r79: guide | 2 | 8 | 4 | 4 | 0.9777777777777779 | 1
+    r80: insights | 2 | 7 | 4 | 3 | 0.9555555555555555 | 1
+    r81: pagespeed insights | 2 | 7 | 4 | 3 | 1.911111111111111 | 2
+    r82: time | 6 | 37 | 11 | 4 | 5.977777777777778 | 1
+    r83: number | 2 | 7 | 4 | 3 | 0.9494949494949494 | 1
+    r84: set | 4 | 17 | 5 | 4 | 2.305723905723906 | 1
+    r85: exclude | 2 | 10 | 6 | 4 | 1.01010101010101 | 1
+    r86: file | 2 | 8 | 4 | 4 | 1.0666666666666667 | 1
+    r87: documentation | 2 | 7 | 4 | 3 | 0.9555555555555555 | 1
+    r88: update | 2 | 9 | 5 | 4 | 1.259259259259259 | 1
+    r89: flying | 2 | 9 | 5 | 4 | 1.0476190476190477 | 1
+    r90: good | 3 | 15 | 6 | 4 | 1.7714285714285716 | 1
+    r91: cloudflare enterprise | 2 | 9 | 5 | 4 | 1.962962962962963 | 2
+    r92: locally | 2 | 7 | 4 | 3 | 0.9444444444444444 | 1
+    r93: optimize | 4 | 18 | 7 | 3 | 2.505050505050505 | 1
+    r94: tab | 2 | 20 | 17 | 3 | 1.01010101010101 | 1
+    r95: advanced | 3 | 16 | 9 | 3 | 1.711111111111111 | 1
+    r96: full | 2 | 7 | 4 | 3 | 0.8444444444444444 | 1
+    r97: month | 2 | 6 | 3 | 3 | 0.7333333333333333 | 1
+    r98: create | 2 | 8 | 5 | 3 | 0.7676767676767677 | 1
+    r99: find | 2 | 6 | 3 | 3 | 0.7222222222222222 | 1
+    r100: theme | 4 | 16 | 6 | 3 | 1.9757575757575756 | 1
+    r101: paid | 3 | 9 | 3 | 3 | 1.2428571428571429 | 1
+    r102: webp | 2 | 6 | 3 | 3 | 0.8 | 1
+    r103: difference | 2 | 6 | 3 | 3 | 0.7272727272727272 | 1
+    r104: visitor | 2 | 12 | 9 | 3 | 1.0666666666666667 | 1
+    r105: rocket flyingpress | 2 | 8 | 5 | 3 | 1.7777777777777777 | 2
+    r106: wp rocket flyingpress | 4 | 12 | 5 | 2 | 6.444444444444445 | 3
+    r107: placeholder | 2 | 6 | 3 | 3 | 0.8 | 1
+    r108: tools | 2 | 6 | 3 | 3 | 0.8 | 1
+    r109: lazy loading | 2 | 7 | 4 | 3 | 1.6888888888888889 | 2
+    r110: automatically | 2 | 7 | 4 | 3 | 0.9629629629629629 | 1
+    r111: critical | 2 | 6 | 3 | 3 | 0.8 | 1
+    r112: option | 6 | 37 | 12 | 3 | 4.960606060606061 | 1
+    r113: effective | 2 | 6 | 3 | 3 | 0.7272727272727272 | 1
+    r114: plugins wp rocket | 2 | 5 | 3 | 2 | 2.2666666666666666 | 3
+    r115: facebook | 2 | 7 | 4 | 3 | 0.7936507936507936 | 1
+    r116: flyingcdn | 4 | 25 | 10 | 3 | 2.292929292929293 | 1
+    r117: optimizing | 2 | 8 | 5 | 3 | 0.8888888888888888 | 1
+    r118: flyingpress wp rocket | 5 | 41 | 28 | 2 | 9.994949494949493 | 3
+    r119: top | 2 | 7 | 4 | 3 | 0.6666666666666666 | 1
+    r120: settings | 5 | 26 | 11 | 3 | 2.3584656084656084 | 1
+    r121: providers | 2 | 8 | 5 | 3 | 0.5037037037037037 | 1
+    r122: configuration | 2 | 14 | 10 | 4 | 0.5185185185185185 | 1
+    r123: offer | 4 | 46 | 16 | 4 | 2.8242424242424238 | 1
+    r124: major | 2 | 8 | 4 | 4 | 0.37037037037037035 | 1
+    r125: technical | 2 | 9 | 5 | 4 | 0.3888888888888889 | 1
+    r126: users | 2 | 9 | 6 | 3 | 0.41269841269841273 | 1
+    r127: updated | 2 | 6 | 3 | 3 | 0.2777777777777778 | 1
+    r128: wp rocket offers | 2 | 5 | 3 | 2 | 0.9333333333333331 | 3
+    r129: solution | 3 | 11 | 4 | 3 | 0.7111111111111111 | 1
+    r130: license | 4 | 18 | 6 | 3 | 1.0424242424242425 | 1
+    r131: simple | 4 | 16 | 7 | 3 | 1.276767676767677 | 1
+    r132: results | 3 | 18 | 12 | 3 | 0.9333333333333333 | 1
+    r133: choose | 4 | 14 | 4 | 3 | 1.0949494949494951 | 1
+    r134: performance plugin | 3 | 18 | 9 | 3 | 1.6121212121212123 | 2
+    r135: improve core web | 2 | 4 | 2 | 2 | 0.7111111111111111 | 3
+    r136: database | 2 | 14 | 9 | 5 | 0.5010101010101011 | 1
+    r137: score | 2 | 12 | 6 | 6 | 0.4000000000000001 | 1
+    r138: experience | 3 | 13 | 6 | 3 | 0.6111111111111112 | 1
+    r139: flyingpress offer | 2 | 10 | 5 | 5 | 0.6464646464646465 | 2
+    r140: updates | 2 | 10 | 5 | 5 | 0.31481481481481477 | 1
+    r141: content | 2 | 8 | 5 | 3 | 0.2828282828282828 | 1
+    r142: wordpress performance | 2 | 10 | 5 | 5 | 0.6464646464646465 | 2
+    r143: fast | 2 | 10 | 5 | 5 | 0.3333333333333333 | 1
+    r144: flyingpress wp | 4 | 41 | 29 | 3 | 3.8047138047138045 | 2
+    r145: pricing | 3 | 14 | 5 | 4 | 0.557070707070707 | 1
+    r146: integration | 2 | 7 | 4 | 3 | 0.23333333333333334 | 1
+    r147: page caching | 2 | 7 | 4 | 3 | 0.4767676767676768 | 2
+    r148: perform | 2 | 7 | 4 | 3 | 0.2383838383838384 | 1
+    r149: mobile | 2 | 9 | 5 | 4 | 0.2888888888888889 | 1
+    r150: including | 2 | 7 | 4 | 3 | 0.24444444444444446 | 1
+    r151: static | 2 | 7 | 4 | 3 | 0.2383838383838384 | 1
+    r152: developer | 3 | 12 | 6 | 3 | 0.5246753246753246 | 1
+    r153: helps | 2 | 6 | 3 | 3 | 0.19393939393939397 | 1
+    r154: key | 2 | 8 | 5 | 3 | 0.22592592592592592 | 1
+    r155: site speed | 2 | 6 | 3 | 3 | 0.4000000000000001 | 2
+    r156: interface | 2 | 9 | 6 | 3 | 0.2545454545454546 | 1
+    r157: default | 2 | 15 | 12 | 3 | 0.4000000000000001 | 1
+    r158: comparison | 2 | 11 | 8 | 3 | 0.28148148148148144 | 1
+    r159: gb | 2 | 8 | 5 | 3 | 0.24579124579124578 | 1
+    r160: fonts | 4 | 16 | 6 | 3 | 0.7535353535353535 | 1
+    r161: flyingpress test | 2 | 8 | 5 | 3 | 0.42424242424242425 | 2
+    r162: speed optimization | 2 | 19 | 10 | 9 | 0.9682539682539681 | 2
+    r163: price | 4 | 18 | 5 | 4 | 0.818951418951419 | 1
+    r164: feel | 2 | 7 | 4 | 3 | 0.18253968253968253 | 1
+    r165: things | 2 | 8 | 4 | 4 | 0.20779220779220778 | 1
+    r166: service | 3 | 12 | 5 | 3 | 0.36313131313131314 | 1
+    r167: vital | 2 | 8 | 4 | 4 | 0.16296296296296298 | 1
+    r168: free plugins | 2 | 7 | 4 | 3 | 0.29494949494949496 | 2
+    r169: premium | 3 | 11 | 4 | 3 | 0.33232323232323235 | 1
+    r170: main | 2 | 6 | 3 | 3 | 0.1272727272727273 | 1
+    r171: end | 2 | 6 | 3 | 3 | 0.12222222222222223 | 1
+    r172: speed site | 2 | 7 | 4 | 3 | 0.29494949494949496 | 2
+    r173: easy | 2 | 7 | 4 | 3 | 0.14747474747474748 | 1
+    r174: flyingpress review | 2 | 13 | 10 | 3 | 0.5373737373737374 | 2
+    r175: unlimited | 2 | 7 | 4 | 3 | 0.13468013468013465 | 1
+
+  SHEET 'Related Search' (8 rows):
+    r0: Flyingpress vs wp rocket reddit | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=Flyingpress+vs+wp+rocket+reddit&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAgpEAE
+    r1: FlyingPress pricing | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=FlyingPress+pricing&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAg5EAE
+    r2: WP Rocket Alternative | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=WP+Rocket+Alternative&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAg3EAE
+    r3: Super page Cache vs WP Rocket | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=Super+page+Cache+vs+WP+Rocket&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAg0EAE
+    r4: WP Fastest Cache vs WP Rocket | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=WP+Fastest+Cache+vs+WP+Rocket&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAgxEAE
+    r5: WP Rocket pricing | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=WP+Rocket+pricing&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAguEAE
+    r6: Is WP Rocket worth it | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=Is+WP+Rocket+worth+it&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAgrEAE
+    r7: WP Rocket Preise | https://www.google.de/search?sca_esv=e9b8a03e27f61160&gl=de&hl=de&q=WP+Rocket+Preise&sa=X&ved=2ahUKEwiXmJrgzNaUAxWbGVkFHVE0Gb8Q1QJ6BAgqEAE
+
+
+######################################################################
+
+
+=== XLSX SERP_DUP ===
+
+  SHEET 'Info' (10 rows):
+    r0: Search url | 
+    r1: Query | flyingpress vs wp rocket
+    r2: Device | desktop
+    r3: Language | fr
+    r4: Location | 
+    r5: Country | FR
+    r6: Search engine | google.fr
+    r7: Number of results | 2
+    r8: Scrape date | 26th May 2026
+    r9: Export date | 26th May 2026
+
+  SHEET 'SERP Overview' (18 rows):
+    r0: Position | Organic Position | Page | SERP Type | Type | SERP Title | Title | URL | SERP Description | Meta Description
+    r1: 1 | 1 | 1 | featured snippet | article | FlyingPress vs WP Rocket Lequel booste mieux WordPress | FlyingPress vs WP Rocket 2026 : verdict d'un pro WP (+ test) | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es. | En résumé : FlyingPress est souvent plus simple à configurer, plus rapide dès l'activation et redoutable sur les Core Web Vitals. De son côté, WP Rocket propose plus de réglages avancés et une meilleu | FlyingPress vs WP Rocket 2026 : benchmark réel, prix, compatibilité. Verdict d'un pro WordPress + guide pour migrer sans casser ton site (5 minutes)
+    r2: 2 | 2 | 1 | page | social | WP Rocket, is it still the best option? : r/Wordpress | Reddit - el corazón de la conversación | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/ | I’ve seen a lot of discussions about WP Rocket and is it still the best option? I feel like with their new pricing structure it’s becoming expensive, ... | 
+    r3: 3 | 3 | 1 | page | article | FlyingPress vs. WP Rocket: Choose the best option for your ... | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/ | 4 Reasons to Choose WP Rocket over FlyingPress. This is what makes WP Rocket your best option. Free built-in performance hub: You want a clear understanding ... | Struggling to choose between FlyingPress and WP Rocket? Let's figure out which one will bring you more benefits according to your needs
+    r4: 4 | 4 | 1 | video |  |  |  |  |  | 
+    r5: 5 | 5 | 1 | page | article | FlyingPress Vs. WP Rocket (2025 Comparison) | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/ | 2 mai 2026 — FlyingPress vs WP Rocket? Compare features, speed, pricing, and real-world results in this 2025 review. Find out which caching plugin works ... | FlyingPress vs WP Rocket? Compare features, speed, pricing, and real-world results in this 2025 review. Find out which caching plugin works best for your WordPress site
+    r6: 6 | 6 | 1 | page | article | Avis FlyingPress 2026 : une meilleure alternative à WP ... | Avis FlyingPress 2026 : une meilleure alternative à WP Rocket ? | https://www.webandseo.fr/flyingpress/ | 10 août 2023 — WP Rocket est selon moi la première alternative à FlyingPress. Cette extension propose une boîte à outils permettant d'optimiser quasiment tous ... | FlyingPress est un plugin avec des fonctions innovantes pour booster les performances d'un site WordPress : cache, CSS, JS, CDN, images... Découvre notre avis !
+    r7: 7 | 7 | 1 | page | article | FlyingPress Review: Best WordPress Performance Plugin? ... | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/ | 10 mars 2026 — However, if you're an agency that needs a tool for 50+ sites, WP Rocket is cheaper at $299 for unlimited sites versus FlyingPress at $500 for ... | Our hands-on FlyingPress review has real performance tests and pros / cons to help you decide if it's the best WordPress performance plugin
+    r8: 8 | 8 | 1 | page | article | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin ... | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/ | 1 avr. 2026 — In this post, we will be comparing the top three speed optimization plugins for WordPress: FlyingPress, WP Rocket, and NitroPack. | In this post, we will be comparing the top three speed optimization plugins for WordPress: FlyingPress, WP Rocket, and NitroPack
+    r9: 9 | 9 | 1 | page | article | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | https://sayansamanta.com/flyingpress-review/ | 10 janv. 2026 — Quick Verdict: FlyingPress delivers the best Core Web Vitals score based on the Chrome UX report, outperforming WP Rocket by a wide margin. | Detailed performance review of FlyingPress vs WP Rocket. I compare features, pricing, and speed tests to help you decide the best caching plugin for your site
+    r10: 10 | 10 | 2 | page | article | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | 16 oct. 2024 — FlyingPress and WP Rocket are two top-tier caching plugins designed to supercharge WordPress performance. While they share a similar goal—making ... | The full comparison of FlyingPress vs WP Rocket includes extensive details about their new features, performance, pricing and discount sales
+    r11: 11 | 11 | 2 | page | article | Flyingpress Review: How It Compares To Wp Rocket ... | Flyingpress Review: How It Compares To Wp Rocket & Nitropack | https://wpalpha.io/flyingpress-review/ | 14 mai 2025 — FlyingPress offers a CDN addon starting at $3/month for 100GB/bandwidth usage. Wp Rocket offers RocketCDN addon for $9/month. Perfmatters 20% ... | Flyingpress main difference from other caching plugins may be their newly released features such as Prioritize Resources which improves the LCP
+    r12: 12 | 12 | 2 | page | article | FlyingPress vs WP Rocket: Which Is Worth Your Money? | FlyingPress vs WP Rocket: Which Is Worth Your Money? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/ | 13 avr. 2026 — FlyingPress starts at about $59/year for a single site, and scales to $99/year (3 sites), $199/year (25 sites), and $249/year (unlimited sites). | I have tested FlyingPress Vs WP Rocket for speed and performance. Check results, pros, cons, and which plugin wins in 2026
+    r13: 13 | 13 | 2 | page | article | WP Rocket versus Flying Press | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/ | 7 déc. 2024 — Both FlyingPress and WP Rocket excel at boosting website speed. While speed test results often show comparable improvements, the exact outcome ... | Have you ever experienced the annoyance of a slow-loading website? In today's fast-paced online environment, speed is crucial. A slow site can drive
+    r14: 14 | 14 | 2 | page | internal page | Compare WP Rocket V/S FlyingPress | Compare WP Rocket V/S FlyingPress - Which is Best in 2026? | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress | Yes, switching to WP Rocket is simple and hassle-free. You simply need to deactivate the caching plugin you're currently using, such as W3 Total Cache or WP ... | Compare WP Rocket V/S FlyingPress - Which is the best Plugins in 2026? Comparison of Features, Plans Pricing, Reviews at HostingCharges.in
+    r15: 15 | 15 | 2 | page | article | WP Rocket vs FlyingPress vs LiteSpeed – Which One… | WP Rocket vs FlyingPress vs LiteSpeed – Which One… | https://www.motocoders.com/wp-rocket-vs-2/ | A: WP Rocket, FlyingPress, and LiteSpeed all improve site speed but work differently. WP Rocket is a pure caching plugin that adds lazy loading, file ... | WP Rocket vs: over 40% of users abandon a site that takes more than three seconds to load, and your choice of caching plugin can make or break that speed.…
+    r16: 16 | 16 | 2 | page | article | Which Is Best Wp Rocket vs Flying Press | Which Is Best Wp Rocket vs Flying Press | https://webzeto.com/wp-rocket-vs-flying-press/ | 29 août 2024 — WP Rocket provides an easy one-click setup for caching, while FlyingPress allows for more advanced cache controls, such as cache preloading and ... | WordPress performance optimization means making your website faster. A faster website improves user experience and can help with better search engine
+    r17: 17 | 17 | 2 | page | article | Nitropack vs WP Rocket vs FlyingPress | Which One To ... | Nitropack vs WP Rocket vs FlyingPress | Which One To Choose? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/ | Summary: FlyingPress is the clear winner when it comes to performance. WP Rockets and NitroPack need powerful hosting like Cloudways and StackPath CDN to ... | Confused Between Nitropack vs WP Rocket vs FlyingPress? Here Is The Clear Comparison Between Nitropack vs WP Rocket vs FlyingPress On Performance | Features | Pricing
+
+  SHEET 'Search Volume' (2 rows):
+    r0: Keyword | Competition | Competition Index | Search Volume | CPC
+    r1: flyingpress vs wp rocket | LOW | 25 | 110 | 
+
+  SHEET 'Monthly Search Volume' (13 rows):
+    r0: Keyword | Year | Month | Monthly Search Volume
+    r1: flyingpress vs wp rocket | 2025 | 5 | 720
+    r2: flyingpress vs wp rocket | 2025 | 6 | 480
+    r3: flyingpress vs wp rocket | 2025 | 7 | 10
+    r4: flyingpress vs wp rocket | 2025 | 8 | 10
+    r5: flyingpress vs wp rocket | 2025 | 9 | 10
+    r6: flyingpress vs wp rocket | 2025 | 10 | 10
+    r7: flyingpress vs wp rocket | 2025 | 11 | 10
+    r8: flyingpress vs wp rocket | 2025 | 12 | 10
+    r9: flyingpress vs wp rocket | 2026 | 1 | 10
+    r10: flyingpress vs wp rocket | 2026 | 2 | 10
+    r11: flyingpress vs wp rocket | 2026 | 3 | 10
+    r12: flyingpress vs wp rocket | 2026 | 4 | 10
+
+  SHEET 'SERP Organic Title' (17 rows):
+    r0: Page position | Title | URL
+    r1: 1 | FlyingPress vs WP Rocket 2026 : verdict d'un pro WP (+ test) | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r2: 2 | Reddit - el corazón de la conversación | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r3: 3 | FlyingPress vs. WP Rocket: Choose the best option for your website | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r4: 5 | FlyingPress Vs. WP Rocket (2025 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r5: 6 | Avis FlyingPress 2026 : une meilleure alternative à WP Rocket ? | https://www.webandseo.fr/flyingpress/
+    r6: 7 | FlyingPress Review: Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/
+    r7: 8 | FlyingPress vs WP Rocket vs NitroPack - Top Speed Plugin Comparison | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r8: 9 | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | https://sayansamanta.com/flyingpress-review/
+    r9: 10 | FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r10: 11 | Flyingpress Review: How It Compares To Wp Rocket & Nitropack | https://wpalpha.io/flyingpress-review/
+    r11: 12 | FlyingPress vs WP Rocket: Which Is Worth Your Money? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r12: 13 | WP Rocket versus Flying Press | ProActivation | https://www.proactivation.net/wp-rocket-versus-flying-press/
+    r13: 14 | Compare WP Rocket V/S FlyingPress - Which is Best in 2026? | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r14: 15 | WP Rocket vs FlyingPress vs LiteSpeed – Which One… | https://www.motocoders.com/wp-rocket-vs-2/
+    r15: 16 | Which Is Best Wp Rocket vs Flying Press | https://webzeto.com/wp-rocket-vs-flying-press/
+    r16: 17 | Nitropack vs WP Rocket vs FlyingPress | Which One To Choose? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+
+  SHEET 'Heading 1 (Organic page only)' (17 rows):
+    r0: Page position | H1 | URL
+    r1: 1 | FlyingPress vs WP Rocket ⚡ Lequel booste mieux WordPress ? | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r2: 2 | WP Rocket, is it still the best option? | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r3: 3 | FlyingPress vs. WP Rocket | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r4: 5 | FlyingPress vs. WP Rocket (2026 Comparison) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r5: 6 | FlyingPress : un plugin de performance à la pointe | https://www.webandseo.fr/flyingpress/
+    r6: 7 | FlyingPress Review: Is It the Best WordPress Performance Plugin? (2026) | https://www.wpkube.com/flyingpress-review/
+    r7: 8 | FlyingPress vs WP Rocket vs NitroPack: Comparing The Top WordPress Speed Plugins Of 2026 | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r8: 9 | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | https://sayansamanta.com/flyingpress-review/
+    r9: 10 | Unleashing the Speed: A Head-to-Head Battle Between FlyingPress and WP Rocket | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r10: 11 | Flyingpress Review: How it compares to Wp Rocket & Nitropack | https://wpalpha.io/flyingpress-review/
+    r11: 12 | FlyingPress Vs WP Rocket: My Honest Experience After Using Both WordPress Plugins | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r12: 13 | WP Rocket versus Flying Press | https://www.proactivation.net/wp-rocket-versus-flying-press/
+    r13: 14 | WP Rocket VS FlyingPress | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r14: 15 | WP Rocket vs FlyingPress vs LiteSpeed – Which One Actually Makes Your Site Faster? | https://www.motocoders.com/wp-rocket-vs-2/
+    r15: 16 | Which Is Best Wp Rocket vs Flying Press | https://webzeto.com/wp-rocket-vs-flying-press/
+    r16: 17 | Nitropack vs WP Rocket vs FlyingPress | Which One Is Best and Why? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+
+  SHEET 'Heading 2 (Organic page only)' (140 rows):
+    r0: Page position | H2 | URL
+    r1: 1 | Benchmark : Le test de vitesse en conditions réelles | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r2: 1 | Fonctionnalités clés : FlyingPress et WP Rocket au banc d’essai | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r3: 1 | Compatibilité : S’intègrent-ils bien à ton écosystème WordPress ? | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r4: 1 | Tarification : Lequel offre le meilleur rapport qualité/prix ? | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r5: 1 | Avantages et inconvénients : Le récapitulatif | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r6: 1 | Avantages de FlyingPress | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r7: 1 | Inconvénients de FlyingPress | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r8: 1 | Points forts de WP Rocket | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r9: 1 | Limites de WP Rocket | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r10: 1 | Alternatives à FlyingPress et WP Rocket | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r11: 1 | FAQ : Questions fréquentes | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r12: 1 | Conclusion : Alors, FlyingPress ou WP Rocket pour ton site ? | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r13: 1 | Publications similaires | https://schoolswp.com/comparaison-flyingpress-wp-rocket/#:~:text=En%20r%C3%A9sum%C3%A9%20%3A%20FlyingPress%20est%20souvent,nettoyer%20ta%20base%20de%20donn%C3%A9es.
+    r14: 2 | Posts más votados | https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/
+    r15: 3 | 4 Reasons to Choose WP Rocket over FlyingPress | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r16: 3 | The Same PurposeBut Not the Same Plugin | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r17: 3 | A Few Words from Users Who Tried Both Plugins | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r18: 3 | Plugins Comparison at a Glance | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r19: 3 | Don’t Just Take Our Word For It | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r20: 3 | Why So Many Website OwnersHave Said Yes To WP Rocket | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r21: 3 | A Better Performance Starts Here | https://wp-rocket.me/flyingpress-vs-wp-rocket/
+    r22: 5 | FlyingPress vs WP Rocket | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r23: 5 | Overview of Cache Plugins | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r24: 5 | What is WP Rocket? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r25: 5 | What Is FlyingPress? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r26: 5 | Speed Test Results & Core Web Vitals (Real Example) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r27: 5 | Features Breakdown | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r28: 5 | Caching Mechanism | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r29: 5 | Database Optimization | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r30: 5 | CDN Integration | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r31: 5 | Security Features | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r32: 5 | Pricing Comparison (2025) | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r33: 5 | Ease of Use & Interface | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r34: 5 | Support & Community | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r35: 5 | WP Rocket Pros and Cons | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r36: 5 | Winner: FlyingPress or WP Rocket? | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r37: 5 | Frequently Asked Questions | https://mcstarters.com/blog/flyingpress-vs-wp-rocket/
+    r38: 6 | Avantages et inconvénients de FlyingPress | https://www.webandseo.fr/flyingpress/
+    r39: 6 | Prix de FlyingPress | https://www.webandseo.fr/flyingpress/
+    r40: 6 | L’utilité d’une extension comme FlyingPress | https://www.webandseo.fr/flyingpress/
+    r41: 6 | La dernière création de Gijo Varghese | https://www.webandseo.fr/flyingpress/
+    r42: 6 | Fonctionnalités de FlyingPress | https://www.webandseo.fr/flyingpress/
+    r43: 6 | FlyingCDN : le CDN intégré à FlyingPress | https://www.webandseo.fr/flyingpress/
+    r44: 6 | Service client de FlyingPress | https://www.webandseo.fr/flyingpress/
+    r45: 6 | Les meilleures alternatives à FlyingPress en 2026 | https://www.webandseo.fr/flyingpress/
+    r46: 6 | Avis d’utilisateurs de FlyingPress | https://www.webandseo.fr/flyingpress/
+    r47: 6 | Avis FlyingPress : le meilleur plugin de performance WP ? | https://www.webandseo.fr/flyingpress/
+    r48: 6 | Interactions du lecteur | https://www.webandseo.fr/flyingpress/
+    r49: 7 | FlyingPress Performance Tests | https://www.wpkube.com/flyingpress-review/
+    r50: 7 | How to Use FlyingPress + A Look at the Features and Interface | https://www.wpkube.com/flyingpress-review/
+    r51: 7 | FlyingPress Pricing | https://www.wpkube.com/flyingpress-review/
+    r52: 7 | FlyingPress vs WP Rocket vs Perfmatters | https://www.wpkube.com/flyingpress-review/
+    r53: 7 | FlyingPress Pros and Cons | https://www.wpkube.com/flyingpress-review/
+    r54: 7 | FlyingPress Review FAQ | https://www.wpkube.com/flyingpress-review/
+    r55: 7 | FlyingPress Review Final Thoughts: Should You Use It? | https://www.wpkube.com/flyingpress-review/
+    r56: 7 | Cloudways Review (2026): Is This a Good Alternative to Cloud Hosting? | https://www.wpkube.com/flyingpress-review/
+    r57: 7 | Teachable Review (2026): Is It the Best Way to Create an Online Course? | https://www.wpkube.com/flyingpress-review/
+    r58: 7 | Rocket.net Review: Is This a Better Host Than WP Engine? | https://www.wpkube.com/flyingpress-review/
+    r59: 7 | WPX Hosting Coupon | https://www.wpkube.com/flyingpress-review/
+    r60: 7 | KadenceWP Theme Coupon | https://www.wpkube.com/flyingpress-review/
+    r61: 7 | WordPress.com Coupon | https://www.wpkube.com/flyingpress-review/
+    r62: 8 | FlyingPress | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r63: 8 | WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r64: 8 | NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r65: 8 | WordPress Speed Plugins Compared: Price, Features, and Performance | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r66: 8 | FlyingPress vs WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r67: 8 | FlyingPress vs NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r68: 8 | Who Should Use FlyingPress | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r69: 8 | Who Should Use WP Rocket | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r70: 8 | Who Should Use NitroPack | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r71: 8 | The Speed Factor: What Happens Without Optimization | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r72: 8 | Pricing Reality: Value for Your Investment | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r73: 8 | Our Recommendation | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r74: 8 | FlyingPress vs WP Rocket vs NitroPack: Comparing The Top WordPress Speed Plugins Of 2026 | https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/
+    r75: 9 | FlyingPress vs WP Rocket: Which one should you use? | https://sayansamanta.com/flyingpress-review/
+    r76: 9 | FlyingPress Performance Test: Is it Better than WP Rocket? | https://sayansamanta.com/flyingpress-review/
+    r77: 9 | FlyingPress Key Features For Core Web Vitals Optimization | https://sayansamanta.com/flyingpress-review/
+    r78: 9 | FlyingPress Pricing: Does FlyingPress offer a free trial? | https://sayansamanta.com/flyingpress-review/
+    r79: 9 | You might also like.. | https://sayansamanta.com/flyingpress-review/
+    r80: 9 | Hosting.com Review 2026: Watch Out For These Hidden Limits | https://sayansamanta.com/flyingpress-review/
+    r81: 9 | Grammarly Pro Review 2026: Why It’s Better Than ChatGPT? | https://sayansamanta.com/flyingpress-review/
+    r82: 9 | Liquid Web Review 2026: 3-Month WooCommerce Stress Test | https://sayansamanta.com/flyingpress-review/
+    r83: 9 | ShortPixel Review 2025: Pricing, Performance, Pros, & Cons | https://sayansamanta.com/flyingpress-review/
+    r84: 9 | Astra Theme Review 2025: Pros & Cons Of Using It | https://sayansamanta.com/flyingpress-review/
+    r85: 9 | Kinsta Hosting Review 2025: Pricing, Performance, Pros, Cons | https://sayansamanta.com/flyingpress-review/
+    r86: 10 | Table of Contents | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r87: 10 | Overview of FlyingPress and WP Rocket | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/
+    r88: 12 | Reality: They Are 85% Similar (But That 15% Matters) | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r89: 12 | FlyingPress Vs WP Rocket – Quick Comparison | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r90: 12 | FlyingPress Or WP Rocket? Which Is The Best WordPress Performance Plugin? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r91: 12 | 1. CSS Optimization: Game Changer | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r92: 12 | 2. JavaScript Handling: Where Most Sites Break | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r93: 12 | 3. Image Optimization: Hidden Cost vs Built-in Advantage | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r94: 12 | 4. Ease of Use: WP Rocket Wins | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r95: 12 | 5. Real-World Performance: Lab vs User Experience | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r96: 12 | 6. Stability & Compatibility: WP Rocket’s Biggest Strength | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r97: 12 | 7. FlyingPress Vs WP Rocket — CDN Comparison | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r98: 12 | Plugin Price Comparison (FlyingPress vs WP Rocket) | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r99: 12 | How I Tested FlyingPress And WP Rocket? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r100: 12 | Testing Blog Homepage | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r101: 12 | After Using WP Rocket | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r102: 12 | After Using FlyingPress | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r103: 12 | What Real Users Are Saying? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r104: 12 | Which Plugin Should You Choose? | https://www.wpglossy.com/flyingpress-vs-wp-rocket/
+    r105: 14 | WP Rocket | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r106: 14 | FlyingPress | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r107: 14 | WP Rocket | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r108: 14 | FlyingPress | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r109: 14 | WP Rocket | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r110: 14 | FlyingPress | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r111: 14 | OverView | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r112: 14 | Features | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r113: 14 | Plans Pricing | https://www.hostingcharges.in/comparisons/wp-rocket-vs-flyingpress
+    r114: 15 | WP Rocket vs: The Three Contenders | https://www.motocoders.com/wp-rocket-vs-2/
+    r115: 15 | The Architecture of Speed | https://www.motocoders.com/wp-rocket-vs-2/
+    r116: 15 | Handling the Code | https://www.motocoders.com/wp-rocket-vs-2/
+    r117: 15 | Image and Asset Delivery | https://www.motocoders.com/wp-rocket-vs-2/
+    r118: 15 | The User Interface | https://www.motocoders.com/wp-rocket-vs-2/
+    r119: 15 | The Verdict of the Clock | https://www.motocoders.com/wp-rocket-vs-2/
+    r120: 15 | Final Words | https://www.motocoders.com/wp-rocket-vs-2/
+    r121: 15 | FAQ | https://www.motocoders.com/wp-rocket-vs-2/
+    r122: 16 | Table of Contents | https://webzeto.com/wp-rocket-vs-flying-press/
+    r123: 16 | WP Rocket | https://webzeto.com/wp-rocket-vs-flying-press/
+    r124: 16 | FlyingPress | https://webzeto.com/wp-rocket-vs-flying-press/
+    r125: 16 | Feature-by-Feature Comparison | https://webzeto.com/wp-rocket-vs-flying-press/
+    r126: 16 | Ease of Use and Setup | https://webzeto.com/wp-rocket-vs-flying-press/
+    r127: 16 | Compatibility with Themes and Plugins | https://webzeto.com/wp-rocket-vs-flying-press/
+    r128: 16 | Pricing and Value for Money | https://webzeto.com/wp-rocket-vs-flying-press/
+    r129: 16 | Launch Your Vision | https://webzeto.com/wp-rocket-vs-flying-press/
+    r130: 17 | NitroPack Vs WP Rocket Vs FlyingPress – Overview | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r131: 17 | FlyingPress Vs NitroPack Vs WP Rocket- Feature | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r132: 17 | FlyingPress Vs NitroPack Vs WP Rocket – Core Web Vitals | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r133: 17 | FlyingPress Vs NitroPack Vs WP Rocket – Pricing | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r134: 17 | FlyingPress Vs NitroPack Vs WP Rocket- Performance | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r135: 17 | Conclusion On – FlyingPress Vs NitroPack Vs WP Rocket | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r136: 17 | Method CRM vs. HubSpot CRM vs. Zoho CRM: Explained All Features, Pricing, and More. | Which CRM Is Right For Your Business in 2024? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r137: 17 | Method CRM vs. Keap CRM vs. Vtiger: Features, Pricing, And More | Which CRM Is Right For You In 2024? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r138: 17 | Salesforce vs. Zoho CRM: Features, Pricing, And More | Which Platform Is Right For You In 2024? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+    r139: 17 | Freshsales vs. Zoho CRM vs. HubSpot CRM: Features, Pricing, and More | Which CRM Is Right For Business In 2024? | https://www.rebellink.com/nitropack-vs-wp-rocket-vs-flyingpress/
+
+  SHEET 'Frequent Questions' (33 rows):
+    r0: Tag | Question | Count
+    r1: H1 | Nitropack vs WP Rocket vs FlyingPress | Which One Is Best and Why? | 1
+    r2: H1 | WP Rocket vs FlyingPress vs LiteSpeed – Which One Actually Makes Your Site Faster? | 1
+    r3: H1 | FlyingPress Review 2026: Why It Is Better Than WP Rocket? | 1
+    r4: H1 | WP Rocket, is it still the best option? | 1
+    r5: H1 | FlyingPress vs WP Rocket ⚡ Lequel booste mieux WordPress ? | 1
+    r6: H2 | What is WP Rocket? | 5
+    r7: H2 | Who Should Use WP Rocket | 4
+    r8: H2 | FlyingPress vs WP Rocket: Which one should you use? | 3
+    r9: H2 | Method CRM vs. Keap CRM vs. Vtiger: Features, Pricing, And More | Which CRM Is Right For You In 2024? | 2
+    r10: H2 | FlyingPress Performance Test: Is it Better than WP Rocket? | 2
+    r11: H2 | Pour qui est WP Rocket ? | 2
+    r12: H2 | Freshsales vs. Zoho CRM vs. HubSpot CRM: Features, Pricing, and More | Which CRM Is Right For Business In 2024? | 1
+    r13: H2 | Salesforce vs. Zoho CRM: Features, Pricing, And More | Which Platform Is Right For You In 2024? | 1
+    r14: H2 | Where Each Plugin Falls Short | 1
+    r15: H2 | How Caching Mechanisms Shape Performance | 1
+    r16: H2 | Which Plugin Should You Choose? | 1
+    r17: H2 | What Real Users Are Saying? | 1
+    r18: H2 | How I Tested FlyingPress And WP Rocket? | 1
+    r19: H2 | Verdict: Is FlyingPress Better Than WP Rocket? | 1
+    r20: H2 | Grammarly Pro Review 2026: Why It’s Better Than ChatGPT? | 1
+    r21: H2 | How to Purge and/Or Preload the FlyingPress Cache | 1
+    r22: H2 | Rocket.net Review: Is This a Better Host Than WP Engine? | 1
+    r23: H2 | Teachable Review (2026): Is It the Best Way to Create an Online Course? | 1
+    r24: H2 | Cloudways Review (2026): Is This a Good Alternative to Cloud Hosting? | 1
+    r25: H2 | How to Use FlyingPress + A Look at the Features and Interface | 1
+    r26: H2 | Avis FlyingPress : le meilleur plugin de performance WP ? | 1
+    r27: H2 | Winner: FlyingPress or WP Rocket? | 1
+    r28: H2 | Why So Many Website OwnersHave Said Yes To WP Rocket | 1
+    r29: H2 | Perfmatters, l’optimisation WordPress pour améliorer la vitesse de son site ? | 1
+    r30: H2 | Conclusion : Alors, FlyingPress ou WP Rocket pour ton site ? | 1
+    r31: H2 | Tarification : Lequel offre le meilleur rapport qualité/prix ? | 1
+    r32: H2 | Compatibilité : S’intègrent-ils bien à ton écosystème WordPress ? | 1
+
+  SHEET 'FAQ' (10 rows):
+    r0: Page position | URL | Question | Answer
+    r1: 7 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress improve Core Web Vitals? | FlyingPress offers lots of features that will improve your site's Core Web Vitals, especially Largest Contentful Paint and Cumulative Layout Shift. This includes lots of tools to optimize CSS and Java
+    r2: 7 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer caching? | FlyingPress does offer page caching alongside all of its other optimization features, which eliminates the need to use a separate caching plugin.
+    r3: 7 | https://www.wpkube.com/flyingpress-review/ | Is there a free version of FlyingPress? | There is no free version of the FlyingPress plugin, but the FlyingPress developer does offer several useful free performance plugins at WordPress.org. While these free plugins cannot replace FlyingPre
+    r4: 7 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer a renewal discount? | FlyingPress offers a 30% renewal discount on all licenses, which greatly reduces the cost after the first year.
+    r5: 7 | https://www.wpkube.com/flyingpress-review/ | Does FlyingPress offer a money-back guarantee? | All of FlyingPress's plans offer a 14-day money-back guarantee, so you're not risking anything by trying the plugin on your site.
+    r6: 10 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which plugin is better for eCommerce websites? | Both plugins are suitable, but FlyingPress has an edge with faster logged-in user caching, which can be beneficial for eCommerce stores with many returning customers. WP Rocket also offers great suppo
+    r7: 10 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Do these plugins work without a CDN? | Yes, both can be used independently. However, CDN enhances its performance by reducing latency and improving image delivery, and I’d recommend it if you have a broader audience.
+    r8: 10 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which plugin offers better support? | WP Rocket has a larger user base and more established support channels. Their Facebook channel can be very helpful. In my experience so far WP Rocket offers better support than the FlyingPress. Flying
+    r9: 10 | https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/ | Which one should you choose? | Use the one that suits your needs better. If one don’t work well with your website, and you haven’t been able to set it up properly despite supports help — try another. They both have 14-days money gu
+
+  SHEET 'Topic' (200 rows):
+    r0: Keyword | Found in Pages | Total Frequency | Max Count on page | Min count on page | Relevancy | Length
+    r1: flyingpress | 9 | 457 | 115 | 10 | 89.9506818181818 | 1
+    r2: rocket | 8 | 249 | 51 | 15 | 52.66095238095238 | 1
+    r3: wp | 8 | 261 | 52 | 15 | 54.198730158730164 | 1
+    r4: wp rocket | 8 | 247 | 51 | 13 | 104.86476190476189 | 2
+    r5: plugin | 9 | 246 | 41 | 9 | 57.228149350649346 | 1
+    r6: site | 7 | 234 | 69 | 7 | 39.30527777777778 | 1
+    r7: optimisation | 3 | 44 | 24 | 3 | 6.390000000000001 | 1
+    r8: wordpress | 8 | 134 | 30 | 7 | 28.25968253968254 | 1
+    r9: cache | 7 | 82 | 29 | 3 | 18.935555555555556 | 1
+    r10: web | 8 | 80 | 25 | 3 | 20.500404040404042 | 1
+    r11: performance | 8 | 135 | 23 | 11 | 27.977460317460316 | 1
+    r12: interface | 3 | 23 | 14 | 3 | 4.637142857142857 | 1
+    r13: vitals | 5 | 50 | 22 | 3 | 8.946085858585858 | 1
+    r14: core | 7 | 58 | 23 | 3 | 13.252297979797982 | 1
+    r15: web vitals | 6 | 52 | 21 | 3 | 21.69727272727273 | 2
+    r16: core web | 6 | 53 | 21 | 3 | 21.937272727272727 | 2
+    r17: core web vitals | 8 | 56 | 21 | 2 | 45.68025974025974 | 3
+    r18: vitesse | 2 | 21 | 11 | 10 | 2.533333333333333 | 1
+    r19: données | 2 | 21 | 12 | 9 | 4.4 | 2
+    r20: base | 2 | 18 | 9 | 9 | 2.1 | 1
+    r21: base données | 2 | 15 | 9 | 6 | 6 | 3
+    r22: réglage | 2 | 18 | 10 | 8 | 3.8666666666666663 | 2
+    r23: français | 2 | 11 | 8 | 3 | 3.4 | 2
+    r24: page | 8 | 99 | 35 | 4 | 17.86539682539682 | 1
+    r25: avis | 2 | 15 | 8 | 7 | 1.6666666666666667 | 1
+    r26: simple | 5 | 26 | 10 | 3 | 5.347619047619047 | 1
+    r27: rapide | 2 | 12 | 7 | 5 | 1.5666666666666667 | 1
+    r28: option | 6 | 49 | 17 | 3 | 7.678571428571428 | 1
+    r29: anglais | 2 | 9 | 6 | 3 | 1.3 | 1
+    r30: perfmatters | 3 | 17 | 7 | 4 | 2.3 | 1
+    r31: css | 7 | 83 | 29 | 3 | 11.760555555555555 | 1
+    r32: prix | 2 | 19 | 13 | 6 | 1.6333333333333333 | 1
+    r33: excellent | 3 | 19 | 8 | 5 | 2.35 | 1
+    r34: images | 3 | 34 | 26 | 3 | 2.881818181818182 | 1
+    r35: flyingpress wp | 2 | 8 | 5 | 3 | 2.15 | 2
+    r36: flyingpress wp rocket | 2 | 8 | 5 | 3 | 3.225 | 3
+    r37: cas | 2 | 9 | 5 | 4 | 1.1333333333333333 | 1
+    r38: test | 5 | 30 | 10 | 3 | 4.164285714285715 | 1
+    r39: améliorer | 2 | 15 | 10 | 5 | 2.6666666666666665 | 2
+    r40: site wordpress | 2 | 10 | 5 | 5 | 2.333333333333333 | 2
+    r41: fonctionne | 2 | 8 | 4 | 4 | 0.9333333333333333 | 1
+    r42: support | 8 | 48 | 11 | 3 | 9.225714285714286 | 1
+    r43: point | 2 | 8 | 4 | 4 | 0.9333333333333333 | 1
+    r44: cloudflare | 4 | 26 | 9 | 4 | 2.7555555555555555 | 1
+    r45: cdn | 7 | 75 | 31 | 4 | 10.411111111111111 | 1
+    r46: mise | 2 | 25 | 21 | 4 | 1.5 | 1
+    r47: fonction | 2 | 11 | 7 | 4 | 1.0333333333333332 | 1
+    r48: lazy | 7 | 36 | 8 | 3 | 6.604722222222222 | 1
+    r49: meilleur | 2 | 15 | 11 | 4 | 1.1666666666666665 | 1
+    r50: verdict | 2 | 8 | 4 | 4 | 0.888888888888889 | 1
+    r51: vs | 5 | 48 | 26 | 4 | 4.6375 | 1
+    r52: bonne | 2 | 7 | 4 | 3 | 0.7333333333333333 | 1
+    r53: nombre | 2 | 11 | 8 | 3 | 0.8666666666666666 | 1
+    r54: documentation | 2 | 6 | 3 | 3 | 0.7 | 1
+    r55: configuration | 4 | 14 | 4 | 3 | 2.061111111111111 | 1
+    r56: uniquement | 2 | 12 | 9 | 3 | 0.9 | 1
+    r57: compatible | 3 | 11 | 5 | 3 | 1.5124999999999997 | 1
+    r58: serveur | 2 | 18 | 15 | 3 | 1.1 | 1
+    r59: exclusion | 2 | 6 | 3 | 3 | 0.8 | 1
+    r60: mise cache | 2 | 14 | 11 | 3 | 1.9333333333333331 | 2
+    r61: js | 4 | 23 | 9 | 3 | 2.2711111111111113 | 1
+    r62: delay | 5 | 27 | 8 | 3 | 3.1301587301587297 | 1
+    r63: scripts | 3 | 14 | 8 | 3 | 1.48 | 1
+    r64: préchargement | 2 | 10 | 7 | 3 | 1.6666666666666665 | 2
+    r65: javascript | 6 | 35 | 13 | 3 | 4.64 | 1
+    r66: chargement | 2 | 17 | 14 | 3 | 1.0666666666666667 | 1
+    r67: lcp | 4 | 26 | 16 | 3 | 2.34020202020202 | 1
+    r68: avis flyingpress | 2 | 7 | 4 | 3 | 1.4666666666666666 | 2
+    r69: améliorer vitesse | 2 | 7 | 4 | 3 | 2.2 | 3
+    r70: propose | 2 | 9 | 6 | 3 | 0.8 | 1
+    r71: activation | 2 | 6 | 3 | 3 | 0.7 | 1
+    r72: booster | 2 | 14 | 11 | 3 | 0.9666666666666666 | 1
+    r73: pagespeed | 3 | 11 | 4 | 3 | 1.2333333333333332 | 1
+    r74: total | 2 | 7 | 4 | 3 | 0.6888888888888889 | 1
+    r75: flyingpress vs | 5 | 42 | 24 | 3 | 7.664285714285714 | 2
+    r76: remove unused css | 3 | 11 | 7 | 2 | 2.757142857142857 | 3
+    r77: largest contentful paint | 3 | 8 | 4 | 2 | 2.514285714285714 | 3
+    r78: vs wp rocket | 5 | 34 | 22 | 2 | 8.480357142857143 | 3
+    r79: flyingpress vs wp | 5 | 36 | 24 | 2 | 8.780357142857143 | 3
+    r80: it | 8 | 182 | 46 | 3 | 20.96135642135642 | 1
+    r81: and | 7 | 369 | 86 | 5 | 40.50068181818182 | 1
+    r82: to | 7 | 275 | 70 | 6 | 30.015151515151512 | 1
+    r83: the | 7 | 302 | 92 | 9 | 31.88883838383839 | 1
+    r84: you | 6 | 240 | 72 | 23 | 21.9397619047619 | 1
+    r85: of | 6 | 151 | 40 | 14 | 14.351904761904757 | 1
+    r86: with | 6 | 138 | 30 | 14 | 12.958333333333332 | 1
+    r87: your | 7 | 145 | 37 | 3 | 15.934797979797981 | 1
+    r88: in | 7 | 124 | 31 | 3 | 13.298964646464649 | 1
+    r89: website | 6 | 69 | 20 | 5 | 6.576904761904762 | 1
+    r90: feature | 7 | 104 | 23 | 6 | 11.625429292929294 | 1
+    r91: for | 7 | 209 | 54 | 3 | 21.117575757575757 | 1
+    r92: the plugin | 2 | 12 | 9 | 3 | 1.3714285714285714 | 2
+    r93: is | 7 | 167 | 38 | 5 | 17.026237373737374 | 1
+    r94: that | 6 | 90 | 25 | 8 | 8.05452380952381 | 1
+    r95: any | 4 | 26 | 9 | 3 | 2.0876190476190475 | 1
+    r96: some | 4 | 24 | 9 | 4 | 1.9453968253968252 | 1
+    r97: themes | 2 | 11 | 7 | 4 | 0.5666666666666667 | 1
+    r98: from | 6 | 45 | 13 | 3 | 4.355952380952381 | 1
+    r99: optimization | 6 | 117 | 43 | 6 | 9.81547619047619 | 1
+    r100: don | 4 | 16 | 6 | 3 | 1.3714285714285714 | 1
+    r101: compatibility | 2 | 14 | 8 | 6 | 0.6 | 1
+    r102: need | 6 | 51 | 11 | 5 | 4.977857142857142 | 1
+    r103: can | 6 | 99 | 28 | 6 | 8.683095238095238 | 1
+    r104: you can | 6 | 52 | 16 | 5 | 9.70952380952381 | 2
+    r105: speed | 7 | 79 | 21 | 3 | 8.165075757575758 | 1
+    r106: my | 3 | 29 | 18 | 5 | 1.3571428571428572 | 1
+    r107: also | 6 | 51 | 16 | 3 | 4.881428571428572 | 1
+    r108: compatible with | 2 | 8 | 5 | 3 | 0.8166666666666667 | 2
+    r109: settings | 3 | 12 | 5 | 3 | 0.8300000000000001 | 1
+    r110: but | 6 | 46 | 12 | 5 | 4.742857142857143 | 1
+    r111: providers | 2 | 8 | 5 | 3 | 0.4533333333333333 | 1
+    r112: hosting | 5 | 37 | 18 | 3 | 2.854761904761905 | 1
+    r113: make | 3 | 14 | 5 | 4 | 0.9714285714285715 | 1
+    r114: re | 3 | 19 | 9 | 5 | 1.1857142857142855 | 1
+    r115: all | 5 | 33 | 13 | 3 | 2.7063492063492065 | 1
+    r116: what | 4 | 17 | 6 | 3 | 1.4680952380952381 | 1
+    r117: this | 7 | 80 | 29 | 3 | 7.890631313131314 | 1
+    r118: provide | 2 | 8 | 4 | 4 | 0.36666666666666664 | 1
+    r119: our | 4 | 22 | 7 | 4 | 1.4133333333333333 | 1
+    r120: for the | 3 | 13 | 5 | 4 | 1.4952380952380953 | 2
+    r121: only | 4 | 28 | 12 | 4 | 1.9123809523809523 | 1
+    r122: issue | 2 | 11 | 7 | 4 | 0.42222222222222217 | 1
+    r123: caching | 7 | 73 | 28 | 3 | 8.20118686868687 | 1
+    r124: are | 6 | 79 | 19 | 4 | 6.770238095238095 | 1
+    r125: offer | 6 | 66 | 16 | 4 | 5.859761904761905 | 1
+    r126: major | 2 | 8 | 4 | 4 | 0.3466666666666667 | 1
+    r127: be | 5 | 24 | 6 | 4 | 1.8551587301587305 | 1
+    r128: technical | 2 | 9 | 5 | 4 | 0.36666666666666664 | 1
+    r129: without | 4 | 18 | 5 | 4 | 1.229047619047619 | 1
+    r130: have | 5 | 21 | 7 | 3 | 1.6573412698412695 | 1
+    r131: setup | 3 | 15 | 6 | 4 | 0.9099999999999999 | 1
+    r132: use | 6 | 69 | 27 | 4 | 5.66 | 1
+    r133: automatically | 3 | 13 | 6 | 3 | 0.7125 | 1
+    r134: themes and | 2 | 7 | 4 | 3 | 0.6833333333333333 | 2
+    r135: time | 6 | 43 | 11 | 4 | 4.096190476190476 | 1
+    r136: you re | 3 | 16 | 8 | 4 | 1.9657142857142857 | 2
+    r137: best | 5 | 21 | 6 | 3 | 1.9779761904761906 | 1
+    r138: your website | 5 | 25 | 9 | 3 | 3.7035714285714283 | 2
+    r139: if | 6 | 67 | 25 | 3 | 5.547857142857142 | 1
+    r140: even | 2 | 7 | 4 | 3 | 0.28888888888888886 | 1
+    r141: if you | 5 | 49 | 22 | 3 | 6.765079365079364 | 2
+    r142: help | 4 | 29 | 12 | 3 | 2.057142857142857 | 1
+    r143: work | 3 | 14 | 7 | 3 | 0.66 | 1
+    r144: starts | 2 | 9 | 6 | 3 | 0.35 | 1
+    r145: to use | 3 | 14 | 8 | 3 | 1.4857142857142858 | 2
+    r146: do | 3 | 11 | 5 | 3 | 0.5952380952380952 | 1
+    r147: need to | 3 | 11 | 5 | 3 | 1.2285714285714284 | 2
+    r148: loading | 6 | 27 | 8 | 3 | 2.716190476190476 | 1
+    r149: top | 3 | 10 | 4 | 3 | 0.6 | 1
+    r150: new | 3 | 11 | 5 | 3 | 0.6300000000000001 | 1
+    r151: updated | 2 | 6 | 3 | 3 | 0.26 | 1
+    r152: most | 5 | 28 | 7 | 3 | 2.3299603174603174 | 1
+    r153: of the | 5 | 25 | 12 | 3 | 3.833730158730159 | 2
+    r154: wp rocket offers | 2 | 5 | 3 | 2 | 0.8399999999999999 | 3
+    r155: may | 2 | 6 | 3 | 3 | 0.26 | 1
+    r156: them | 3 | 11 | 5 | 3 | 0.55 | 1
+    r157: enable | 2 | 7 | 4 | 3 | 0.28888888888888886 | 1
+    r158: has | 4 | 25 | 11 | 3 | 1.528888888888889 | 1
+    r159: between | 3 | 12 | 5 | 3 | 0.6380952380952382 | 1
+    r160: not | 5 | 28 | 8 | 3 | 2.3103174603174605 | 1
+    r161: when | 6 | 36 | 9 | 3 | 3.124285714285714 | 1
+    r162: solution | 5 | 18 | 4 | 3 | 1.6208333333333331 | 1
+    r163: license | 3 | 15 | 6 | 3 | 0.7371428571428572 | 1
+    r164: results | 2 | 6 | 3 | 3 | 0.32 | 1
+    r165: want | 5 | 44 | 15 | 3 | 3.451785714285714 | 1
+    r166: free | 5 | 36 | 18 | 3 | 2.6214285714285714 | 1
+    r167: over | 4 | 16 | 6 | 3 | 0.9733333333333334 | 1
+    r168: choose | 4 | 14 | 4 | 3 | 1.0985714285714285 | 1
+    r169: performance plugin | 2 | 12 | 9 | 3 | 0.9142857142857143 | 2
+    r170: easy to use | 2 | 5 | 3 | 2 | 0.6571428571428571 | 3
+    r171: with wp rocket | 2 | 4 | 2 | 2 | 0.55 | 3
+    r172: improve core web | 2 | 4 | 2 | 2 | 0.64 | 3
+    r173: wp rocket is | 5 | 18 | 6 | 2 | 4.605357142857143 | 3
+    r174: themes and plugins | 2 | 4 | 2 | 2 | 0.55 | 3
+    r175: user | 5 | 65 | 19 | 4 | 4.553769841269841 | 1
+    r176: caching plugin | 3 | 24 | 18 | 3 | 2.548636363636364 | 2
+    r177: more | 4 | 30 | 13 | 3 | 1.819047619047619 | 1
+    r178: load | 5 | 40 | 13 | 3 | 3.118452380952381 | 1
+    r179: image | 5 | 58 | 20 | 3 | 3.9700396825396824 | 1
+    r180: your site | 3 | 49 | 29 | 8 | 4.459047619047619 | 2
+    r181: both | 5 | 37 | 13 | 3 | 2.556547619047619 | 1
+    r182: by | 4 | 35 | 12 | 6 | 1.9533333333333331 | 1
+    r183: better | 4 | 38 | 12 | 5 | 2.09015873015873 | 1
+    r184: wordpress site | 2 | 18 | 11 | 7 | 1.23 | 2
+    r185: control | 3 | 20 | 10 | 3 | 0.9225000000000001 | 1
+    r186: faster | 3 | 19 | 10 | 4 | 0.8866666666666665 | 1
+    r187: database | 3 | 22 | 9 | 5 | 1.0542857142857143 | 1
+    r188: advanced | 3 | 21 | 9 | 4 | 0.96 | 1
+    r189: visitor | 2 | 15 | 9 | 6 | 0.49333333333333335 | 1
+    r190: like | 5 | 35 | 15 | 3 | 2.385119047619048 | 1
+    r191: litespeed | 2 | 12 | 8 | 4 | 0.40888888888888886 | 1
+    r192: or | 5 | 64 | 28 | 6 | 4.155555555555555 | 1
+    r193: which | 5 | 41 | 12 | 3 | 2.7779761904761906 | 1
+    r194: other | 4 | 28 | 10 | 4 | 1.5879942279942278 | 1
+    r195: improve | 3 | 13 | 7 | 3 | 0.6385714285714287 | 1
+    r196: your wordpress | 2 | 12 | 7 | 5 | 0.8100000000000002 | 2
+    r197: your wordpress site | 2 | 11 | 7 | 4 | 1.1400000000000001 | 3
+    r198: score | 2 | 15 | 9 | 6 | 0.44000000000000006 | 1
+    r199: fonts | 3 | 15 | 6 | 3 | 0.7071428571428573 | 1
+
+  SHEET 'Related Search' (8 rows):
+    r0: Flyingpress vs wp rocket reddit | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=Flyingpress+vs+wp+rocket+reddit&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg5EAE
+    r1: FlyingPress pricing | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=FlyingPress+pricing&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAhAEAE
+    r2: Super page Cache vs WP Rocket | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=Super+page+Cache+vs+WP+Rocket&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg_EAE
+    r3: WP Rocket alternative | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=WP+Rocket+alternative&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg-EAE
+    r4: WP Fastest Cache vs WP Rocket | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=WP+Fastest+Cache+vs+WP+Rocket&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg9EAE
+    r5: WP Rocket pricing | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=WP+Rocket+pricing&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg8EAE
+    r6: Is WP Rocket worth it | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=Is+WP+Rocket+worth+it&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg6EAE
+    r7: SpeedyCache vs LiteSpeed Cache | https://www.google.fr/search?sca_esv=e9b8a03e27f61160&gl=fr&hl=fr&q=SpeedyCache+vs+LiteSpeed+Cache&sa=X&ved=2ahUKEwiXiIaEzdaUAxW5XEEAHX5FDSwQ1QJ6BAg7EAE

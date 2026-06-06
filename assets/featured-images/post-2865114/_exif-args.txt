@@ -1,0 +1,14 @@
+-XPTitle=Ninja Tables DataTables 2026: manage large datasets
+-XPSubject=Cover image for a schoolsWP article on Ninja Tables DataTables, WordPress plugin for managing large data tables. schoolsWP branding with prominent title.
+-XPKeywords=ninja tables datatables;ninja tables large dataset;ninja tables ajax;ninja tables review;WordPress table plugin;server-side rendering tables;large data tables WordPress;schoolsWP guide;ninja tables 2026;WordPress data tables
+-XPComment=SEO-optimized cover image for the article "Ninja Tables DataTables" on schoolsWP. Boosts Google Images and Bing Images ranking while reinforcing schoolsWP branding.
+-XPAuthor=Michaël KIHL, schoolsWP
+-Copyright=© 2026 Michaël KIHL. All rights reserved
+-ImageDescription=Visual "Ninja Tables DataTables 2026" for a schoolsWP guide article on the WordPress data tables plugin for managing large datasets with AJAX.
+-Title=Ninja Tables DataTables 2026: data tables guide on schoolsWP
+-Description=Visual "Ninja Tables DataTables 2026" for a schoolsWP guide article on the WordPress data tables plugin for managing large datasets with AJAX.
+-Artist=Michaël KIHL
+-Author=Michaël KIHL
+-Creator=Michaël KIHL, schoolsWP
+-Rights=© 2026 Michaël KIHL. All rights reserved
+-CopyrightNotice=© 2026 Michaël KIHL. All rights reserved

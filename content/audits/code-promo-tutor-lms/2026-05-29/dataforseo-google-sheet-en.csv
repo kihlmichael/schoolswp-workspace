@@ -1,0 +1,11 @@
+Keyword,Volume,Competition,Competition_Level,KD,CPC_USD,Intent_Main,Intent_Probability,Location,Language,Note
+tutor lms coupon code,10,0.89,HIGH,N/A,N/A,commercial,0.382,United States,en,detected_language=de (mismatch)
+tutor lms coupon,10,0.86,HIGH,42,N/A,commercial,0.77,United States,en,detected_language=de (mismatch)
+tutor lms discount code,10,0.18,LOW,N/A,1.01,commercial,0.837,United States,en,Best CPC opportunity
+tutor lms discount,10,0,LOW,N/A,N/A,commercial,0.883,United States,en,Lowest competition
+tutor lms promo code,0,N/A,N/A,N/A,N/A,commercial,0.685,United States,en,Omitted by DataForSEO DB
+tutor lms deal,0,N/A,N/A,N/A,N/A,transactional,0.98,United States,en,Omitted by DataForSEO DB - 98% buy intent
+tutor lms black friday,10,0.71,HIGH,N/A,N/A,navigational,N/A,United States,en,Peak Nov 2025 = 20/mo
+tutorlms coupon,0,N/A,N/A,N/A,N/A,N/A,N/A,United States,en,Omitted
+coupon code tutor lms,0,N/A,N/A,N/A,N/A,N/A,N/A,United States,en,Omitted
+tutor lms pro discount,0,N/A,N/A,N/A,N/A,N/A,N/A,United States,en,Omitted

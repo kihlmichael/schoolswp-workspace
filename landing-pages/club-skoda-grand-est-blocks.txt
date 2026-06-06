@@ -1,0 +1,501 @@
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#1a1a1a","text":"#f5f4f0"},"spacing":{"padding":{"top":"6rem","bottom":"6rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#1a1a1a;color:#f5f4f0;padding-top:6rem;padding-bottom:6rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"3rem","left":"3rem"}}}} -->
+    <div class="wp-block-columns">
+        
+        <!-- wp:column {"width":"55%"} -->
+        <div class="wp-block-column" style="flex-basis:55%">
+            
+            <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+            <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem">Club Skoda Grand Est x Épinal - Membres uniquement</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"clamp(2.5rem, 5vw, 3.8rem)","lineHeight":"1.1","fontWeight":"800","letterSpacing":"-0.03em"}}} -->
+            <h1 class="wp-block-heading" style="font-size:clamp(2.5rem, 5vw, 3.8rem);line-height:1.1;font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem">Roule avec le peloton spinalien.</h1>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.2rem","lineHeight":"1.6"},"color":{"text":"#dcdbd7"}}} -->
+            <p style="color:#dcdbd7;font-size:1.2rem;line-height:1.6;margin-bottom:2.5rem">Rejoins-nous pour notre sortie de niveau intermédiaire à Épinal. Une boucle de caractère de 60 km dessinée à travers les magnifiques routes des Vosges, placée sous le signe de la cohésion, du rythme et du partage.</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","direction":"column"}} -->
+            <div class="wp-block-group">
+                
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem">
+                    <div style="background-color:rgba(197, 232, 75, 0.15);color:#c5e84b;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🗓️</div>
+                    <div>
+                        <p style="margin:0;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:#8a8c8e">Date & Heure</p>
+                        <p style="margin:0;font-size:1.1rem;font-weight:600;color:#f5f4f0">Samedi 4 Juillet 2026 à 09h00 (UTC+2)</p>
+                    </div>
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem">
+                    <div style="background-color:rgba(197, 232, 75, 0.15);color:#c5e84b;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">📍</div>
+                    <div>
+                        <p style="margin:0;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:#8a8c8e">Départ & Retour</p>
+                        <p style="margin:0;font-size:1.1rem;font-weight:600;color:#f5f4f0">40 Avenue du Rose Poirier, 88000 Épinal</p>
+                    </div>
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem">
+                    <div style="background-color:rgba(197, 232, 75, 0.15);color:#c5e84b;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">🚴</div>
+                    <div>
+                        <p style="margin:0;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:#8a8c8e">Données Parcours</p>
+                        <p style="margin:0;font-size:1.1rem;font-weight:600;color:#f5f4f0">59,68 km - 656m D+ (Boucle Skoda Épinal)</p>
+                    </div>
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem">
+                    <div style="background-color:rgba(197, 232, 75, 0.15);color:#c5e84b;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">⚡</div>
+                    <div>
+                        <p style="margin:0;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:#8a8c8e">Groupe & Allure</p>
+                        <p style="margin:0;font-size:1.1rem;font-weight:600;color:#f5f4f0">Niveau Intermédiaire (Allure régulière 24-26 km/h)</p>
+                    </div>
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group" style="display:flex;align-items:center;gap:1rem">
+                    <div style="background-color:rgba(197, 232, 75, 0.15);color:#c5e84b;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0">☕</div>
+                    <div>
+                        <p style="margin:0;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:#8a8c8e">Le Petit Plus</p>
+                        <p style="margin:0;font-size:1.1rem;font-weight:600;color:#f5f4f0">Café de bienvenue & Ravito de mi-parcours offerts</p>
+                    </div>
+                </div>
+                <!-- /wp:group -->
+
+            </div>
+            <!-- /wp:group -->
+
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"45%"} -->
+        <div class="wp-block-column" style="flex-basis:45%">
+            
+            <!-- wp:group {"style":{"color":{"background":"#ffffff","text":"#1a1a1a"},"border":{"radius":"12px"},"spacing":{"padding":{"top":"2.5rem","bottom":"2.5rem","left":"2rem","right":"2rem"}}}} -->
+            <div class="wp-block-group" style="background-color:#ffffff;color:#1a1a1a;border-radius:12px;padding:2.5rem 2rem;box-shadow:0 20px 40px rgba(0,0,0,0.3)">
+                
+                <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontWeight":"700","fontSize":"0.75rem"},"color":{"text":"#7bcfc0"}}} -->
+                <p style="color:#7bcfc0;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;text-align:center">Membres du club uniquement</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"1.8rem","fontWeight":"800","letterSpacing":"-0.02em"}},"textAlign":"center"} -->
+                <h2 class="wp-block-heading has-text-align-center" style="font-size:1.8rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem;text-align:center">Prends ton dossard</h2>
+                <!-- /wp:heading -->
+
+                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.85rem"},"color":{"text":"#13612e"}},"textAlign":"center"} -->
+                <p class="has-text-align-center" style="color:#13612e;font-size:0.85rem;font-weight:600;margin-bottom:1.5rem;text-align:center;background-color:#edfaf1;padding:8px 12px;border-radius:6px">🔥 10 cyclistes déjà inscrits - Plus que 20 places !</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:shortcode -->
+                [fluentform id="5"]
+                <!-- /wp:shortcode -->
+
+                <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem","lineHeight":"1.4"},"color":{"text":"#8a8c8e"}},"textAlign":"center"} -->
+                <p class="has-text-align-center" style="color:#8a8c8e;font-size:0.8rem;line-height:1.4;margin-top:1.5rem;text-align:center">⚠️ <strong>Capacité limitée à 30 athlètes</strong> pour garantir une parfaite sécurité sur la route et un encadrement de qualité.</p>
+                <!-- /wp:paragraph -->
+
+            </div>
+            <!-- /wp:group -->
+
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#ffffff","text":"#1a1a1a"},"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#ffffff;color:#1a1a1a;padding-top:5rem;padding-bottom:5rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="max-width:800px;margin:0 auto 4rem auto;text-align:center">
+        
+        <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+        <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem">Pourquoi nous rejoindre ?</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.02em"}}} -->
+        <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1.5rem">L'esprit de peloton Skoda.</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#555555"}}} -->
+        <p style="color:#555555;font-size:1.1rem">Que tu sois un cyclosportif régulier cherchant à perfectionner ta pratique ou un habitué voulant partager sa passion, tu as ta place à nos côtés.</p>
+        <!-- /wp:paragraph -->
+
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"2rem","left":"2rem"}}}} -->
+    <div class="wp-block-columns">
+        
+        <!-- wp:column -->
+        <div class="wp-block-column" style="background-color:#f5f4f0;border-radius:12px;padding:2.5rem 2rem">
+            <div style="font-size:2.5rem;font-weight:800;color:#c5e84b;line-height:1;margin-bottom:1.5rem">01</div>
+            <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.3rem","fontWeight":"700"}}} -->
+            <h3 class="wp-block-heading" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">La force et l'entraide</h3>
+            <!-- /wp:heading -->
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.6"},"color":{"text":"#555555"}}} -->
+            <p style="color:#555555;font-size:0.95rem;line-height:1.6">La règle d'or est simple : on part ensemble, on s'attend au sommet des bosses et on rentre ensemble. Solidarité totale en cas de coup dur mécanique.</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column -->
+        <div class="wp-block-column" style="background-color:#f5f4f0;border-radius:12px;padding:2.5rem 2rem">
+            <div style="font-size:2.5rem;font-weight:800;color:#c5e84b;line-height:1;margin-bottom:1.5rem">02</div>
+            <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.3rem","fontWeight":"700"}}} -->
+            <h3 class="wp-block-heading" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">Tracés vosgiens & sécu</h3>
+            <!-- /wp:heading -->
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.6"},"color":{"text":"#555555"}}} -->
+            <p style="color:#555555;font-size:0.95rem;line-height:1.6">Des parcours uniques créés par des cyclistes locaux passionnés. Évitement des grands axes routiers, routes calmes autour d'Épinal, et repérage précis des virages délicats.</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column -->
+        <div class="wp-block-column" style="background-color:#f5f4f0;border-radius:12px;padding:2.5rem 2rem">
+            <div style="font-size:2.5rem;font-weight:800;color:#c5e84b;line-height:1;margin-bottom:1.5rem">03</div>
+            <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.3rem","fontWeight":"700"}}} -->
+            <h3 class="wp-block-heading" style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">Le Challenge Régional</h3>
+            <!-- /wp:heading -->
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.6"},"color":{"text":"#555555"}}} -->
+            <p style="color:#555555;font-size:0.95rem;line-height:1.6">Participe activement au classement du Club Skoda Grand Est sur Strava. Chaque kilomètre parcouru ensemble fait grimper notre section au niveau régional.</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#f5f4f0","text":"#1a1a1a"},"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#f5f4f0;color:#1a1a1a;padding-top:5rem;padding-bottom:5rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"3rem","left":"3rem"}}}} -->
+    <div class="wp-block-columns">
+        
+        <!-- wp:column {"width":"45%"} -->
+        <div class="wp-block-column" style="flex-basis:45%">
+            
+            <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+            <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem">L'itinéraire officiel</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.02em"}}} -->
+            <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1.5rem">Boucle Skoda Épinal</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem","lineHeight":"1.6"},"color":{"text":"#333333"}}} -->
+            <p style="color:#333333;font-size:1.1rem;line-height:1.6;margin-bottom:2rem">Un parcours vallonné de <strong>59,68 km</strong> pour <strong>656 mètres de dénivelé positif</strong> à travers la campagne spinalienne. Un tracé dynamique parfait pour un rythme régulier en groupe, avec quelques bosses caractéristiques pour animer la sortie.</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons" style="margin-top:2rem">
+                <!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#1a1a1a","text":"#f5f4f0"}}} -->
+                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://connect.garmin.com/modern/course/455757416" target="_blank" rel="noopener noreferrer" style="background-color:#1a1a1a;color:#f5f4f0;border-radius:8px;font-weight:700;font-size:0.95rem;padding:12px 24px;text-decoration:none;display:inline-block">🗺️ Tracé sur Garmin Connect</a></div>
+                <!-- /wp:button -->
+                <!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#c5e84b","text":"#1a1a1a"}}} -->
+                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.strava.com/clubs/587614/group_events/3484996094857112350/occurrences/FQIWvKyn2fzemN1gHBTUHxQOFAgUEhQAFAAAHBaAtuq-5WcAAA==" target="_blank" rel="noopener noreferrer" style="background-color:#c5e84b;color:#1a1a1a;border-radius:8px;font-weight:700;font-size:0.95rem;padding:12px 24px;text-decoration:none;display:inline-block">🚴 Événement sur Strava</a></div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"55%"} -->
+        <div class="wp-block-column" style="flex-basis:55%">
+            
+            <!-- wp:group {"style":{"color":{"background":"#ffffff","text":"#1a1a1a"},"border":{"radius":"12px"},"spacing":{"padding":{"top":"2rem","bottom":"2rem","left":"2rem","right":"2rem"}}}} -->
+            <div class="wp-block-group" style="background-color:#ffffff;color:#1a1a1a;border-radius:12px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
+                
+                <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.4rem","fontWeight":"700"}}} -->
+                <h3 class="wp-block-heading" style="font-size:1.4rem;font-weight:700;margin-bottom:1.5rem">Segments clés du parcours</h3>
+                <!-- /wp:heading -->
+
+                <div style="font-size:0.95rem;line-height:1.5">
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;gap:1rem">
+                        <span>🏔️ <strong>Côte de Zincourt</strong></span>
+                        <span style="color:#555;text-align:right">1,44 km - 54m D+ - <strong>3,5 %</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;gap:1rem">
+                        <span>⚡ <strong>Zincourt direction Moriville</strong></span>
+                        <span style="color:#555;text-align:right">2,99 km - 90m D+ - <strong>3,0 %</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;gap:1rem">
+                        <span>🔺 <strong>Coup de cul St-Genest ➔ Moyemont</strong></span>
+                        <span style="color:#e53e3e;font-weight:600;text-align:right">0,54 km - 25m D+ - <strong>4,6 %</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;gap:1rem">
+                        <span>🚴 <strong>Côte de Dogneville</strong></span>
+                        <span style="color:#555;text-align:right">1,39 km - 41m D+ - <strong>2,8 %</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid #f0f0f0;gap:1rem">
+                        <span>💨 <strong>Girmont - Pallegney</strong></span>
+                        <span style="color:#555;text-align:right">3,38 km - Plat (0,0%) - <strong>Foncier</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:0.75rem 0;gap:1rem">
+                        <span>🌲 <strong>Route de Dignonville</strong></span>
+                        <span style="color:#555;text-align:right">2,18 km - 38m D+ - <strong>1,3 %</strong></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /wp:group -->
+
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#1a1a1a","text":"#f5f4f0"},"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#1a1a1a;color:#f5f4f0;padding-top:5rem;padding-bottom:5rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="max-width:800px;margin:0 auto 4rem auto;text-align:center">
+        
+        <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+        <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem">Charte de route</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.02em"}}} -->
+        <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1.5rem">Sécurité & Esprit Peloton.</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#dcdbd7"}}} -->
+        <p style="color:#dcdbd7;font-size:1.1rem">Le vélo de route en groupe est un plaisir qui exige discipline et vigilance. Pour que la sortie reste une fête, nous respectons scrupuleusement ces règles :</p>
+        <!-- /wp:paragraph -->
+
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"2rem","left":"2rem"}}}} -->
+    <div class="wp-block-columns">
+        
+        <!-- wp:column {"width":"50%"} -->
+        <div class="wp-block-column" style="flex-basis:50%">
+            
+            <div style="background-color:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem;margin-bottom:2rem">
+                <div style="display:flex;align-items:flex-start;gap:1.2rem">
+                    <div style="font-size:1.5rem;line-height:1;margin-top:0.2rem">🪖</div>
+                    <div>
+                        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
+                        <h3 class="wp-block-heading" style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;color:#f5f4f0">Casque obligatoire</h3>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.5"},"color":{"text":"#a5a7aa"}}} -->
+                        <p style="color:#a5a7aa;font-size:0.95rem;line-height:1.5">Absolument aucun départ ne sera accordé à un cycliste sans casque protecteur ajusté. La base absolue de la sécurité.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+            </div>
+
+            <div style="background-color:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem">
+                <div style="display:flex;align-items:flex-start;gap:1.2rem">
+                    <div style="font-size:1.5rem;line-height:1;margin-top:0.2rem">🛑</div>
+                    <div>
+                        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
+                        <h3 class="wp-block-heading" style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;color:#f5f4f0">Respect du code de la route</h3>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.5"},"color":{"text":"#a5a7aa"}}} -->
+                        <p style="color:#a5a7aa;font-size:0.95rem;line-height:1.5">Arrêt obligatoire aux feux et stops. Deux de front maximum sur les routes, file indienne immédiate dès qu'un véhicule se signale derrière.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"50%"} -->
+        <div class="wp-block-column" style="flex-basis:50%">
+            
+            <div style="background-color:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem;margin-bottom:2rem">
+                <div style="display:flex;align-items:flex-start;gap:1.2rem">
+                    <div style="font-size:1.5rem;line-height:1;margin-top:0.2rem">🔧</div>
+                    <div>
+                        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
+                        <h3 class="wp-block-heading" style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;color:#f5f4f0">Matériel révisé & autonome</h3>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.5"},"color":{"text":"#a5a7aa"}}} -->
+                        <p style="color:#a5a7aa;font-size:0.95rem;line-height:1.5">Freins en parfait état de fonctionnement, pneus gonflés. Chaque participant doit avoir son nécessaire de réparation (chambre à air, démonte-pneus, pompe).</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+            </div>
+
+            <div style="background-color:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:2rem">
+                <div style="display:flex;align-items:flex-start;gap:1.2rem">
+                    <div style="font-size:1.5rem;line-height:1;margin-top:0.2rem">📣</div>
+                    <div>
+                        <!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"1.2rem","fontWeight":"700"}}} -->
+                        <h3 class="wp-block-heading" style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;color:#f5f4f0">Communication en peloton</h3>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem","lineHeight":"1.5"},"color":{"text":"#a5a7aa"}}} -->
+                        <p style="color:#a5a7aa;font-size:0.95rem;line-height:1.5">On annonce à voix haute et avec le geste les obstacles : « TROU ! », « VOITURE ! », « STOP ! ». L'information doit circuler d'avant en arrière.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#f5f4f0","text":"#1a1a1a"},"spacing":{"padding":{"top":"6rem","bottom":"6rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#f5f4f0;color:#1a1a1a;padding-top:6rem;padding-bottom:6rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"3rem","left":"3rem"}}}} -->
+    <div class="wp-block-columns are-vertically-aligned-center">
+        
+        <!-- wp:column {"verticalAlignment":"center","width":"35%"} -->
+        <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:35%">
+            
+            <div style="background-color:#ffffff;border-radius:12px;padding:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.05);text-align:center">
+                <!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"medium","style":{"border":{"radius":"8px"}}} -->
+                <figure class="wp-block-image size-medium" style="margin:0"><img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=400&q=80" alt="Joachim Kihl" style="border-radius:8px;aspect-ratio:1;object-fit:cover;width:100%"/></figure>
+                <!-- /wp:image -->
+                <p style="margin:1rem 0 0.2rem 0;font-weight:700;font-size:1.1rem">Joachim Kihl</p>
+                <p style="margin:0;font-size:0.85rem;color:#8a8c8e;text-transform:uppercase;letter-spacing:0.05em">Co-Capitaine local & Guide</p>
+            </div>
+
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"verticalAlignment":"center","width":"65%"} -->
+        <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:65%">
+            
+            <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+            <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem">Ton Hôte local</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.02em"}}} -->
+            <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1.5rem">En selle avec des passionnés.</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem","lineHeight":"1.6"},"color":{"text":"#333333"}}} -->
+            <p style="color:#333333;font-size:1.1rem;line-height:1.6;margin-bottom:1.5rem">« Animateur de la section locale et amoureux inconditionnel des routes spinaliennes et des Vosges. Mon but est simple : offrir à tous les amateurs de cyclisme un peloton structuré, sécurisant et bienveillant. Ici, on progresse dans la bonne humeur, on partage nos astuces d'entraînement, et on s'offre un bon café de départ. Hâte de rouler avec toi ! »</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons" style="margin-top:2rem">
+                <!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#1a1a1a","text":"#f5f4f0"}}} -->
+                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.strava.com/clubs/587614/group_events/3484996094857112350/occurrences/FQIWvKyn2fzemN1gHBTUHxQOFAgUEhQAFAAAHBaAtuq-5WcAAA==" target="_blank" rel="noopener noreferrer" style="background-color:#1a1a1a;color:#f5f4f0;border-radius:8px;font-weight:700;font-size:1rem;padding:12px 24px;text-decoration:none;display:inline-block;transition:all 0.2s">🔗 Rejoindre l'événement sur Strava</a></div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#ffffff","text":"#1a1a1a"},"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#ffffff;color:#1a1a1a;padding-top:5rem;padding-bottom:5rem;padding-left:2rem;padding-right:2rem">
+    
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"3rem","left":"3rem"}}}} -->
+    <div class="wp-block-columns">
+        
+        <!-- wp:column {"width":"35%"} -->
+        <div class="wp-block-column" style="flex-basis:35%">
+            
+            <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.15em","fontWeight":"700","fontSize":"0.85rem"},"color":{"text":"#7bcfc0"}}} -->
+            <p style="color:#7bcfc0;font-size:0.85rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem">Foire aux questions</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.02em"}}} -->
+            <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem">Levons tes doutes.</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.95rem"},"color":{"text":"#8a8c8e"}}} -->
+            <p style="color:#8a8c8e;font-size:0.95rem">Une question sur la sortie ou sur l'organisation ? Écris-nous directement ou consulte les réponses courantes ci-contre.</p>
+            <!-- /wp:paragraph -->
+
+        </div>
+        <!-- /wp:column -->
+
+        <!-- wp:column {"width":"65%"} -->
+        <div class="wp-block-column" style="flex-basis:65%">
+            
+            <div style="border-top:1px solid #e5e5e5;padding:1.5rem 0">
+                <p style="margin:0 0 0.5rem 0;font-weight:700;font-size:1.1rem">Est-ce que la sortie est gratuite ?</p>
+                <p style="margin:0;font-size:0.95rem;color:#555555;line-height:1.6">Oui, l'événement est 100% gratuit ! C'est une initiative de passionnés sous l'égide du Club Skoda pour faire vivre la communauté cycliste locale. L'inscription est requise pour des raisons de logistique (ravitaillement offert au départ et encadrement).</p>
+            </div>
+
+            <div style="border-top:1px solid #e5e5e5;padding:1.5rem 0">
+                <p style="margin:0 0 0.5rem 0;font-weight:700;font-size:1.1rem">Quel est le niveau physique exigé ?</p>
+                <p style="margin:0;font-size:0.95rem;color:#555555;line-height:1.6">La sortie est de niveau <strong>intermédiaire</strong>. Le tracé fait 59,68 km avec 656m de dénivelé positif. L'allure visée est d'environ 24-26 km/h de moyenne. Il convient d'être à l'aise sur cette distance, mais rassure-toi : on monte à son rythme et on s'attend toujours au sommet.</p>
+            </div>
+
+            <div style="border-top:1px solid #e5e5e5;padding:1.5rem 0">
+                <p style="margin:0 0 0.5rem 0;font-weight:700;font-size:1.1rem">Que faire en cas de mauvaise météo ?</p>
+                <p style="margin:0;font-size:0.95rem;color:#555555;line-height:1.6">En cas de conditions météo jugées trop dangereuses (pluie diluvienne, fortes rafales de vent ou orages), la sécurité prime et nous reporterons la sortie. Tous les participants inscrits recevront une notification par email au moins 12h avant le départ.</p>
+            </div>
+
+            <div style="border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;padding:1.5rem 0">
+                <p style="margin:0 0 0.5rem 0;font-weight:700;font-size:1.1rem">Quel équipement est indispensable ?</p>
+                <p style="margin:0;font-size:0.95rem;color:#555555;line-height:1.6">Ton vélo de route en bon état de fonctionnement, un casque homologué obligatoire, deux bidons d'eau ou boisson énergétique, de quoi t'alimenter (barres, pâtes de fruits) et ton nécessaire de réparation classique (chambre à air de rechange, démonte-pneus et pompe de poche).</p>
+            </div>
+
+        </div>
+        <!-- /wp:column -->
+
+    </div>
+    <!-- /wp:columns -->
+
+</section>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"section","style":{"color":{"background":"#1a1a1a","text":"#f5f4f0"},"spacing":{"padding":{"top":"5rem","bottom":"5rem","left":"2rem","right":"2rem"}}},"align":"full","layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="background-color:#1a1a1a;color:#f5f4f0;padding-top:5rem;padding-bottom:5rem;padding-left:2rem;padding-right:2rem;text-align:center">
+    
+    <!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="max-width:600px;margin:0 auto">
+        
+        <!-- wp:heading {"level":2,"style":{"typography":{"fontSize":"2.4rem","fontWeight":"800","letterSpacing":"-0.03em"}}} -->
+        <h2 class="wp-block-heading" style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem">Rejoins le peloton vosgien</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"1.1rem"},"color":{"text":"#dcdbd7"}}} -->
+        <p style="color:#dcdbd7;font-size:1.1rem;margin-bottom:2rem">Ne manque pas ce rassemblement sous les couleurs du club Skoda Grand Est à Épinal. Viens rouler, partager et repousser tes limites en bonne compagnie.</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons" style="justify-content:center;display:flex">
+            <!-- wp:button {"style":{"border":{"radius":"8px"},"color":{"background":"#c5e84b","text":"#1a1a1a"}}} -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#fluentform_5" style="background-color:#c5e84b;color:#1a1a1a;border-radius:8px;font-weight:800;font-size:1.1rem;padding:16px 32px;text-decoration:none;display:inline-block;transition:all 0.2s">🔥 M'inscrire maintenant</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+
+    </div>
+    <!-- /wp:group -->
+
+</section>
+<!-- /wp:group -->

@@ -1,4 +1,4 @@
-# ZipWP — Plan de formation schoolsWP
+# ZipWP - Plan de formation schoolsWP
 
 ## Architecture globale
 
@@ -17,37 +17,37 @@ ZipWP/
 
 ---
 
-## FRM-009 — ZipWP Quick Start (offerte)
+## FRM-009 - ZipWP Quick Start (offerte)
 
 **Objectif** : Creer un site WordPress complet avec l'IA en 30 min.
 **Role** : Lead magnet → capture email → upsell vers Masterclass.
 **Acces** : 100% gratuit (inscription requise).
 
-### Lecon 1 — ZipWP : ton site WordPress en 60 secondes (5 min)
+### Lecon 1 - ZipWP : ton site WordPress en 60 secondes (5 min)
 - Le probleme : creer un site WordPress prend des jours/semaines
 - ZipWP : decris ton activite, l'IA genere tout (pages, textes, images, design)
 - Ce qu'on va faire dans cette formation : un site complet, pret a publier
 
-### Lecon 2 — Creer ton premier site avec l'IA (8 min)
+### Lecon 2 - Creer ton premier site avec l'IA (8 min)
 - Aller sur zipwp.com, creer un compte (gratuit)
 - Decrire ton activite en francais
 - Choisir le style visuel
 - L'IA genere le site en ~60 secondes
 - Explorer le resultat : pages, menu, contenu
 
-### Lecon 3 — Personnaliser dans WordPress (8 min)
+### Lecon 3 - Personnaliser dans WordPress (8 min)
 - Acceder au dashboard WordPress de ton site ZipWP
 - Tour rapide : Astra (theme) + Spectra (page builder)
 - Modifier les textes : titres, descriptions, CTA
 - Changer les images (Unsplash integre ou tes propres visuels)
 - Ajuster les couleurs et la typographie
 
-### Lecon 4 — Ajouter une page et un formulaire (5 min)
+### Lecon 4 - Ajouter une page et un formulaire (5 min)
 - Creer une page "Contact" ou "A propos"
 - Ajouter un formulaire avec SureForms (inclus)
 - Connecter le formulaire a ton email
 
-### Lecon 5 — Publier ou exporter ton site (4 min)
+### Lecon 5 - Publier ou exporter ton site (4 min)
 - Option 1 : rester sur l'hebergement ZipWP (domaine, SSL inclus)
 - Option 2 : exporter vers ton propre hebergeur
 - Prochaines etapes : SEO, email marketing, funnels → Masterclass
@@ -55,13 +55,13 @@ ZipWP/
 
 ---
 
-## FRM-010 — ZipWP Masterclass Business (premium)
+## FRM-010 - ZipWP Masterclass Business (premium)
 
 **Objectif** : Maitriser ZipWP pour creer des sites WordPress business complets.
 **Role** : Formation premium flagship.
 **Acces** : Payant (ou inclus dans abonnement schoolsWP).
 
-### Module 1 — Fondations ZipWP (6 lecons)
+### Module 1 - Fondations ZipWP (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -72,7 +72,7 @@ ZipWP/
 | 1.5 | Generer un site en francais : prompts qui marchent | 10 min |
 | 1.6 | Les limites de l'IA : ce que ZipWP fait bien et ce que tu dois corriger | 6 min |
 
-### Module 2 — Personnalisation avancee (8 lecons)
+### Module 2 - Personnalisation avancee (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -85,7 +85,7 @@ ZipWP/
 | 2.7 | Responsive : optimiser pour mobile et tablette | 8 min |
 | 2.8 | Performance : vitesse de chargement et Core Web Vitals | 8 min |
 
-### Module 3 — De la demo au site en production (7 lecons)
+### Module 3 - De la demo au site en production (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -97,7 +97,7 @@ ZipWP/
 | 3.6 | AI Troubleshooter : diagnostiquer et corriger les erreurs automatiquement | 6 min |
 | 3.7 | Maintenance : routine hebdomadaire pour garder ton site sain | 6 min |
 
-### Module 4 — Blueprints et workflow professionnel (6 lecons)
+### Module 4 - Blueprints et workflow professionnel (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -108,7 +108,7 @@ ZipWP/
 | 4.5 | Workflow freelance : de la demo client a la livraison en 1 journee | 10 min |
 | 4.6 | White-label et equipes (plan Business) | 8 min |
 
-### Module 5 — Sites business avec ZipWP (8 lecons)
+### Module 5 - Sites business avec ZipWP (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -121,7 +121,7 @@ ZipWP/
 | 5.7 | Landing page de vente : ZipWP + Kadence Blocks | 10 min |
 | 5.8 | One-page website : portfolio, coming soon, evenement | 8 min |
 
-### Module 6 — Ecosysteme et business (10 lecons)
+### Module 6 - Ecosysteme et business (10 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -152,7 +152,7 @@ ZipWP/
 
 1. **Recherche** : terminee (gap analysis)
 2. **Plan** : termine
-3. **Scripts video** : a produire — commencer par Quick Start (5 scripts)
+3. **Scripts video** : a produire - commencer par Quick Start (5 scripts)
 4. **Production video** : HeyGen + ElevenLabs
 5. **Publication** : TutorLMS sur schoolsWP
 

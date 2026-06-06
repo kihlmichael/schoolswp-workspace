@@ -93,7 +93,8 @@ def build_embed(args: argparse.Namespace) -> tuple[str, dict]:
     return markdown, embed
 
 
-def notify_discord(token: str, channel_id: str, embed: dict) -> None:
+def notify_discord(token: str, channel_id: str, embed: dict) -> bool:
+    """Poste via le bot REST API. Retourne True si livré, False sinon."""
     url = f"{DISCORD_API}/channels/{channel_id}/messages"
     headers = {
         "Authorization": f"Bot {token}",
@@ -101,9 +102,28 @@ def notify_discord(token: str, channel_id: str, embed: dict) -> None:
     }
     status, detail = post_json(url, {"embeds": [embed]}, headers=headers)
     if status >= 300:
-        print(f"[notify] Discord KO ({status}): {detail[:200]}", file=sys.stderr)
-    else:
-        print(f"[notify] Discord OK -> channel {channel_id}")
+        print(f"[notify] Discord bot KO ({status}): {detail[:200]}", file=sys.stderr)
+        return False
+    print(f"[notify] Discord bot OK -> channel {channel_id}")
+    return True
+
+
+def notify_discord_webhook(webhook_url: str, embed: dict) -> bool:
+    """Repli sans token : poste l'embed via le webhook #alerts (canal unique).
+
+    Utilisé quand le bot token est absent ou périmé (ex : DISCORD_BOT_TOKEN 401).
+    Le webhook ignore le routing par statut — tout atterrit dans #alerts.
+
+    NB : discord.com est derrière Cloudflare, qui bloque l'UA urllib par défaut
+    (403 error code 1010). On force un UA navigateur pour passer.
+    """
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) schoolsWP-notify/1.0"}
+    status, detail = post_json(webhook_url, {"embeds": [embed]}, headers=headers)
+    if status >= 300:
+        print(f"[notify] Discord webhook KO ({status}): {detail[:200]}", file=sys.stderr)
+        return False
+    print("[notify] Discord webhook OK -> #alerts (repli)")
+    return True
 
 
 def notify_telegram(token: str, chat_id: str, markdown: str) -> None:
@@ -147,13 +167,18 @@ def main() -> int:
     env = {**tg_claude_env, **load_env(PROJECT_ROOT / ".env"), **os.environ}
     markdown, embed = build_embed(args)
 
-    # Discord via bot REST API
+    # Discord : bot REST API (routing par statut) avec repli webhook #alerts.
     discord_token = env.get("DISCORD_BOT_TOKEN", "")
     discord_channel = pick_discord_channel(env, args.status)
+    webhook_url = env.get("DISCORD_ROUTINES_WEBHOOK", "")
+    delivered = False
     if discord_token and discord_channel:
-        notify_discord(discord_token, discord_channel, embed)
-    else:
-        print("[notify] DISCORD_BOT_TOKEN ou channel cible absent — skip Discord")
+        delivered = notify_discord(discord_token, discord_channel, embed)
+    if not delivered:
+        if webhook_url:
+            delivered = notify_discord_webhook(webhook_url, embed)
+        if not delivered:
+            print("[notify] Aucun canal Discord disponible (bot KO + pas de webhook) — skip Discord")
 
     # Telegram : override explicite > fallback STUDIO (content factory)
     tg_token = env.get("TELEGRAM_NOTIF_TOKEN") or env.get("TELEGRAM_TOKEN_STUDIO", "")

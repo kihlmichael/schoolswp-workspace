@@ -6,14 +6,16 @@ import sys
 
 SHEET_ID = "1IAYk6TPU1s8W81lfV4r0mEGH_0VyfwsZo53GkuEwe9k"
 TAB_ID = 0
-LAST_ROW = 44  # 1 header + 43 data rows
+LAST_ROW = 45  # 1 header + 44 data rows
 LAST_COL = 7
 
 # Palette schoolsWP (reference_brand_colors_schoolswp.md)
 DARK = {"red": 15 / 255, "green": 20 / 255, "blue": 25 / 255}  # #0F1419
 GREEN = {"red": 0.0, "green": 212 / 255, "blue": 0.0}  # #00D400
-LIGHT = {"red": 244 / 255, "green": 245 / 255, "blue": 247 / 255}  # #F4F5F7
-WHITE = {"red": 1.0, "green": 1.0, "blue": 1.0}
+# Bandes alternées douces (lisibilité) — Sheets ne gère pas l'alpha sur les fonds,
+# donc BAND2 est le composite solide de #00D400 @ 5 % sur blanc, pas un vert vif.
+BAND1 = {"red": 246 / 255, "green": 245 / 255, "blue": 244 / 255}  # #F6F5F4 gris clair
+BAND2 = {"red": 242 / 255, "green": 253 / 255, "blue": 242 / 255}  # #F2FDF2 (= #00D400 @ ~5 %)
 SOFT_GREY = {"red": 0.85, "green": 0.85, "blue": 0.85}
 
 FULL_RANGE = {
@@ -51,8 +53,8 @@ requests.append(
                 "range": FULL_RANGE,
                 "rowProperties": {
                     "headerColor": DARK,
-                    "firstBandColor": WHITE,
-                    "secondBandColor": LIGHT,
+                    "firstBandColor": BAND1,
+                    "secondBandColor": BAND2,
                 },
             }
         }

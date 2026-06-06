@@ -1,0 +1,40 @@
+C'est un succès total, Michaël ! Ton modèle local vient de rédiger une introduction d'une qualité impressionnante. 
+
+Pour y parvenir, j'ai appliqué une méthode essentielle appelée **Few-Shot Prompting**. J'ai fourni au modèle un exemple de texte rédigé dans le style précis de schoolsWP. 
+
+Voici le résultat de cette génération et ses métriques.
+
+---
+
+### ARTICLE DE RÉFÉRENCE schoolsWP - INTRODUCTION GÉNÉRÉE
+
+Tu as sans doute déjà ressenti ce que l'on peut appeler "la SaaS fatigue". Chaque année, les coûts liés à tes abonnements CRM augmentent, te laissant parfois dubitatif face à leur valeur réelle. Tu n'oses plus souscrire à ces plateformes qui capturent tes données clients dans des silos fermés et te prennent un pourcentage chaque fois qu'un client passe une commande ou se convertit en contact potentiel.
+
+Pourquoi, alors que tu as déjà une base de données SQL locale ultra-performante intégrée à ton site WordPress, stockerais-tu tes leads et clients chez des tiers qui en profitent pour te facturer une part croissante ? La réponse est simple : le contrôle total sur tes données. Un CRM local installé directement dans ton propre espace WordPress t'offre un niveau de sécurité et de confidentialité que les solutions cloud ne peuvent pas égaler, en particulier si tu souhaites respecter la RGPD.
+
+De plus, une fois qu'on a compris l'importance de garder ses données à soi, on réalise combien sont fastidieuses et coûteuses les charges récurrentes liées aux abonnements SaaS. Non seulement elles remettent en question ta liberté d'action, mais elles peuvent aussi freiner ton développement si elles ne sont pas bien gérées.
+
+Maintenant que tu comprends pourquoi un CRM local sur WordPress peut être une solution pertinente, nous allons analyser les avantages qu'il te procure et comment choisir le bon outil pour toi.
+
+---
+
+### MÉTRIQUES DÉTAILLÉES DE GÉNÉRATION GPU
+* **Nombre approximatif de mots** : 230 mots.
+* **Modèle utilisé** : `qwen2.5:7b` (exécuté sur ton GPU local).
+* **Paramètres de génération** : `temperature = 0.7`, `top_p = 0.9`, `num_predict = 1000`.
+* **eval_count (Tokens générés)** : 345 tokens.
+* **done_reason** : `'stop'` (le modèle a fini de rédiger naturellement).
+* **Temps de génération** : 4.55 secondes (temps brut Ollama : 4.53s).
+* **Vitesse de génération** : environ 76 tokens par seconde.
+
+### Analyse Pédagogique
+1. **Le Tutoiement** : Il est respecté à 100%. L'exemple de style (Few-Shot) a totalement corrigé le vouvoiement du premier essai.
+2. **Le Style** : Il est humain, direct et sans fioritures marketing.
+3. **La Vitesse** : Générer 230 mots de cette qualité en seulement 4,5 secondes montre la puissance de ton GPU RTX 5070 Ti.
+
+---
+
+**Décision recommandée** : Intégrer cette technique de Few-Shot Prompting dans la configuration par défaut de tes agents schoolsWP.
+**Raison principale** : Garantir la conformité absolue avec ta charte éditoriale sans consommer d'API payante.
+**Risque principal** : Un prompt légèrement plus long, ce qui augmente très légèrement le temps d'analyse initial (prompt evaluation).
+**Prochaine action** : Dis-moi si tu veux que l'on passe à la rédaction de la première grande partie ou si tu as des questions sur la technique du Few-Shot.

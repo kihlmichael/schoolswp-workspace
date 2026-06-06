@@ -236,21 +236,39 @@ def render_hero(slug: str, eyebrow: str, title_html: str, subtitle: str,
                 illustration_path: Path, out_dir: Path) -> Path:
     template = TEMPLATE_REF.read_text(encoding="utf-8")
 
-    # The reference template hardcodes the FluentCRM content. We surgically replace
-    # the three editable zones rather than re-engineer the template.
+    # The reference template hardcodes the FluentCRM content. We replace the three
+    # editable zones by matching on their class-attributed tags. Regex (not exact
+    # str.replace) so the substitution survives prettier reformatting the template
+    # (which line-wraps tags and would silently break exact-string matches).
     html = template
-    html = html.replace(
-        '<span class="badge"><span class="badge-dot"></span> Guide complet · FluentCRM</span>',
-        f'<span class="badge"><span class="badge-dot"></span> {eyebrow}</span>',
-    )
-    html = html.replace(
-        '<h1 class="title">10 <strong>automatisations</strong> FluentCRM indispensables</h1>',
-        f'<h1 class="title">{title_html}</h1>',
-    )
-    html = html.replace(
-        '<p class="subtitle">Le guide complet des workflows que je fais tourner sur schoolsWP pour transformer WordPress en moteur marketing autonome.</p>',
-        f'<p class="subtitle">{subtitle}</p>',
-    )
+    zones = [
+        # (label, pattern, replacement) — badge keeps its inner badge-dot span.
+        (
+            "badge",
+            r'<span class="badge"\s*>\s*<span class="badge-dot">\s*</span\s*>.*?</span\s*>',
+            f'<span class="badge"><span class="badge-dot"></span> {eyebrow}</span>',
+        ),
+        (
+            "title",
+            r'<h1 class="title"\s*>.*?</h1\s*>',
+            f'<h1 class="title">{title_html}</h1>',
+        ),
+        (
+            "subtitle",
+            r'<p class="subtitle"\s*>.*?</p\s*>',
+            f'<p class="subtitle">{subtitle}</p>',
+        ),
+    ]
+    missing = []
+    for label, pattern, replacement in zones:
+        html, n = re.subn(pattern, lambda _m, r=replacement: r, html, count=1, flags=re.DOTALL)
+        if n == 0:
+            missing.append(label)
+    if missing:
+        raise RuntimeError(
+            f"Hero template zones not substituted: {', '.join(missing)}. "
+            f"The template structure in {TEMPLATE_REF} changed — check the class-attributed tags."
+        )
 
     # Illustration path -> file:// URL
     illu_url = "file:///" + str(illustration_path).replace("\\", "/")

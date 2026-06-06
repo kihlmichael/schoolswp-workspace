@@ -1,4 +1,4 @@
-# CartFlows — Plan de formation schoolsWP
+# CartFlows - Plan de formation schoolsWP
 
 ## Architecture globale
 
@@ -17,34 +17,34 @@ CartFlows/
 
 ---
 
-## FRM-006 — CartFlows Quick Start (offerte)
+## FRM-006 - CartFlows Quick Start (offerte)
 
-**Objectif** : Donner un resultat concret en 45 min — un funnel de vente fonctionnel.
+**Objectif** : Donner un resultat concret en 45 min - un funnel de vente fonctionnel.
 **Role** : Lead magnet → capture email → upsell vers Masterclass.
 **Acces** : 100% gratuit (inscription requise).
 
-### Lecon 1 — Pourquoi un funnel change tout (5 min)
+### Lecon 1 - Pourquoi un funnel change tout (5 min)
 - Le probleme : checkout WooCommerce standard = fuites partout
 - Ce qu'un funnel resout : parcours guide, offres contextuelles, relance
 - Resultat attendu de cette formation : 1 funnel fonctionnel en 45 min
 
-### Lecon 2 — Installer CartFlows en 3 minutes (5 min)
+### Lecon 2 - Installer CartFlows en 3 minutes (5 min)
 - Installer le plugin gratuit depuis WordPress.org
 - Premier lancement : wizard de configuration
 - Verifier la compatibilite WooCommerce + page builder
 
-### Lecon 3 — Creer ton premier funnel avec un template (15 min)
+### Lecon 3 - Creer ton premier funnel avec un template (15 min)
 - Choisir un template dans la bibliotheque
 - Comprendre la structure : Landing → Checkout → Thank You
 - Personnaliser les textes et images
 - Connecter un produit WooCommerce
 
-### Lecon 4 — Personnaliser le checkout (10 min)
+### Lecon 4 - Personnaliser le checkout (10 min)
 - Modifier les champs du formulaire
 - Ajouter le logo et les couleurs de ta marque
 - Tester le parcours complet (front + paiement test)
 
-### Lecon 5 — Publier et mesurer (10 min)
+### Lecon 5 - Publier et mesurer (10 min)
 - Mettre le funnel en ligne
 - Verifier le parcours sur mobile
 - Lire les premieres stats dans CartFlows
@@ -52,13 +52,13 @@ CartFlows/
 
 ---
 
-## FRM-007 — CartFlows Masterclass Vente (premium)
+## FRM-007 - CartFlows Masterclass Vente (premium)
 
 **Objectif** : Maitriser toutes les techniques de vente avec CartFlows Free + Pro.
-**Role** : Formation premium flagship — couvre strategie + technique + optimisation.
+**Role** : Formation premium flagship - couvre strategie + technique + optimisation.
 **Acces** : Payant (ou inclus dans abonnement schoolsWP).
 
-### Module 1 — Fondations (6 lecons)
+### Module 1 - Fondations (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -69,7 +69,7 @@ CartFlows/
 | 1.5 | Comprendre le Canvas Mode (editeur visuel de funnels) | 8 min |
 | 1.6 | Connecter ton page builder (Gutenberg + Kadence Blocks) | 6 min |
 
-### Module 2 — Pages de vente et landing pages (8 lecons)
+### Module 2 - Pages de vente et landing pages (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -82,7 +82,7 @@ CartFlows/
 | 2.7 | Optimisation mobile : ce que la plupart oublient | 8 min |
 | 2.8 | SEO des pages funnel : faut-il indexer ou noindex ? | 6 min |
 
-### Module 3 — Checkout optimise (8 lecons)
+### Module 3 - Checkout optimise (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -95,7 +95,7 @@ CartFlows/
 | 3.7 | Methodes de paiement : Stripe, PayPal, Apple Pay | 8 min |
 | 3.8 | Coupon URL : appliquer une remise automatiquement | 6 min |
 
-### Module 4 — Order Bumps (7 lecons)
+### Module 4 - Order Bumps (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -107,7 +107,7 @@ CartFlows/
 | 4.6 | Order bump pour services vs produits vs formations | 8 min |
 | 4.7 | Mesurer le revenu additionnel des bumps | 6 min |
 
-### Module 5 — One-Click Upsells et Downsells (8 lecons)
+### Module 5 - One-Click Upsells et Downsells (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -120,7 +120,7 @@ CartFlows/
 | 5.7 | Upsell avec PayPal (sans Reference Transactions) | 8 min |
 | 5.8 | Cas pratique : funnel complet produit physique + upsell digital | 12 min |
 
-### Module 6 — A/B Testing et Analytics (7 lecons)
+### Module 6 - A/B Testing et Analytics (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -132,7 +132,7 @@ CartFlows/
 | 6.6 | KPIs a suivre : taux conversion, AOV, revenue par visiteur | 8 min |
 | 6.7 | Connecter Google Analytics 4 + Facebook Pixel | 8 min |
 
-### Module 7 — Tracking et Pixels (6 lecons)
+### Module 7 - Tracking et Pixels (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -143,7 +143,7 @@ CartFlows/
 | 7.5 | Tracking server-side vs client-side | 8 min |
 | 7.6 | RGPD et consentement : gerer les cookies correctement | 8 min |
 
-### Module 8 — Ecosysteme et automatisation (10 lecons)
+### Module 8 - Ecosysteme et automatisation (10 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -162,13 +162,13 @@ CartFlows/
 
 ---
 
-## FRM-008 — CartFlows Add-ons (modules premium)
+## FRM-008 - CartFlows Add-ons (modules premium)
 
 **Objectif** : Former sur chaque add-on independamment.
 **Role** : Modules autonomes, vendus separement ou en pack.
 **Prerequis** : Avoir suivi le Quick Start ou la Masterclass.
 
-### Module A — Modern Cart (8 lecons)
+### Module A - Modern Cart (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -181,7 +181,7 @@ CartFlows/
 | A.7 | Champ coupon integre au side cart | 6 min |
 | A.8 | Modern Cart + CartFlows : le parcours complet | 8 min |
 
-### Module B — Cart Abandonment Recovery (9 lecons)
+### Module B - Cart Abandonment Recovery (9 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -195,7 +195,7 @@ CartFlows/
 | B.8 | Cart Abandonment + FluentCRM : relance CRM avancee | 10 min |
 | B.9 | Objectif : recuperer 20-30% des paniers abandonnes | 8 min |
 
-### Module C — Power Coupons (8 lecons)
+### Module C - Power Coupons (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -224,7 +224,7 @@ CartFlows/
 ## Pipeline de production
 
 1. **Recherche** : terminee (gap analysis + plan)
-2. **Scripts video** : a produire — commencer par Quick Start (5 scripts)
+2. **Scripts video** : a produire - commencer par Quick Start (5 scripts)
 3. **Production video** : HeyGen + ElevenLabs
 4. **Review** : relecture + test parcours apprenant
 5. **Publication** : TutorLMS sur schoolsWP

@@ -1,0 +1,13 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/comparatif-groundhogg-vs-fluentcrm/
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    title: Groundhogg vs FluentCRM, comparatif CRM WordPress
+    subject: Comparatif Groundhogg vs FluentCRM pour WordPress
+    description: Comparatif des deux CRM auto-hébergés Groundhogg et FluentCRM pour WordPress. Groundhogg pour le pipeline de vente visuel et le lead scoring avancé, FluentCRM pour la simplicité et le prix fixe.
+    alt: Comparatif Groundhogg vs FluentCRM, deux CRM auto-hébergés pour WordPress, avec leurs forces respectives
+    keywords: [Groundhogg, FluentCRM, CRM WordPress, marketing automation, comparatif CRM, schoolsWP]

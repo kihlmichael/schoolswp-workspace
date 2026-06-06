@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/thot-seo-avis/
+    title: Avis Thot SEO, l'outil SEO sémantique français
+    subject: "Thot SEO, mon avis : l'outil d'analyse sémantique français"
+    description: "Image à la une de l'avis schoolsWP sur Thot SEO, l'outil SEO sémantique français qui analyse le top 10 Google et liste les mots à intégrer. Verdict de Michaël KIHL : système de crédits avec plan gratuit (3 crédits) et formule payante dès 29 euros HT par mois, 1 crédit égale 1 analyse de mot-clé, outil 100% français."
+    alt: "Avis Thot SEO schoolsWP, outil d'analyse sémantique français pour la rédaction SEO"
+    keywords:
+      [
+        thot seo,
+        avis thot seo,
+        seo sémantique,
+        optimisation sémantique,
+        rédaction seo,
+        outil seo français,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/thot-seo-review/
+    title: Thot SEO review, the French semantic SEO tool
+    subject: "Thot SEO, my review: the French semantic analysis tool"
+    description: "Featured image of the schoolsWP review of Thot SEO, the French semantic SEO tool that analyzes Google's top 10 and lists the words to add. Michaël KIHL's verdict: credit system with a free plan (3 credits) and paid plans from 29 euros excl. VAT per month, 1 credit equals 1 keyword analysis, a 100% French tool."
+    alt: "schoolsWP Thot SEO review, French semantic analysis tool for SEO writing"
+    keywords:
+      [
+        thot seo,
+        thot seo review,
+        semantic seo,
+        content optimization,
+        seo writing,
+        french seo tool,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/thot-seo-bewertung/
+    title: Thot SEO Bewertung, das französische semantische SEO-Tool
+    subject: "Thot SEO, meine Meinung: das französische Tool zur semantischen Analyse"
+    description: "Beitragsbild der schoolsWP-Bewertung zu Thot SEO, dem französischen semantischen SEO-Tool, das die Google Top 10 analysiert und die zu integrierenden Wörter auflistet. Urteil von Michaël KIHL: Credit-System mit Gratis-Plan (3 Credits) und Bezahlplänen ab 29 Euro netto pro Monat, 1 Credit entspricht 1 Keyword-Analyse, ein 100% französisches Tool."
+    alt: "schoolsWP Thot SEO Bewertung, französisches Tool zur semantischen Analyse für SEO-Texte"
+    keywords:
+      [
+        thot seo,
+        thot seo bewertung,
+        semantisches seo,
+        content-optimierung,
+        seo-texte,
+        französisches seo-tool,
+        schoolsWP,
+      ]

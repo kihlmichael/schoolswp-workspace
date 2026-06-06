@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 12 : Intégrations tierces
+# Scripts vidéo - Module 12 : Intégrations tierces
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M12 — Intégrations tierces (Premium)
+**Module** : M12 - Intégrations tierces (Premium)
 **Leçons** : 11 vidéos + 1 quiz
 **Durée totale** : ~55 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 12.1 — Google Meet (cours en direct)
+### Leçon 12.1 : Google Meet (cours en direct)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -17,17 +17,17 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu veux donner des cours en direct à tes élèves ? Google Meet est la solution la plus simple — et la plus économique. C'est gratuit avec un compte Google, intégré nativement dans TutorLMS, et tes élèves n'ont rien à installer. Dans cette leçon, on connecte Google Meet à TutorLMS et on planifie un premier cours en direct.
+Tu veux donner des cours en direct à tes élèves ? Google Meet est la solution la plus simple - et la plus économique. C'est gratuit avec un compte Google, intégré nativement dans TutorLMS, et tes élèves n'ont rien à installer. Dans cette leçon, on connecte Google Meet à TutorLMS et on planifie un premier cours en direct.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Première étape : active l'addon Google Meet. Va dans Tutor LMS, puis Addons. Cherche "Google Meet Integration" et active-le avec le toggle.
 
-**[ÉCRAN — screencast Google Cloud Console]**
+**[ÉCRAN - screencast Google Cloud Console]**
 
 [Navigation vers console.cloud.google.com > APIs & Services > Credentials]
 
@@ -37,13 +37,13 @@ Clique sur "Create Credentials", puis "OAuth 2.0 Client ID". Sélectionne "Web a
 
 Tu obtiens un Client ID et un Client Secret. Copie-les.
 
-**[ÉCRAN — screencast TutorLMS réglages Google Meet]**
+**[ÉCRAN - screencast TutorLMS réglages Google Meet]**
 
 [Navigation vers Tutor LMS > Settings > Google Meet]
 
-Retourne dans TutorLMS, Settings, Google Meet. Colle le Client ID et le Client Secret. Clique sur "Generate token" — ça ouvre une fenêtre d'autorisation Google. Accepte, et le token est généré. La connexion est établie.
+Retourne dans TutorLMS, Settings, Google Meet. Colle le Client ID et le Client Secret. Clique sur "Generate token" - ça ouvre une fenêtre d'autorisation Google. Accepte, et le token est généré. La connexion est établie.
 
-**[ÉCRAN — screencast Course Builder]**
+**[ÉCRAN - screencast Course Builder]**
 
 [Navigation vers un cours > onglet Google Meet]
 
@@ -55,17 +55,17 @@ Remplis :
 - La durée
 - Le fuseau horaire
 
-Tu peux aussi activer l'enregistrement automatique — la session sera enregistrée dans Google Drive.
+Tu peux aussi activer l'enregistrement automatique - la session sera enregistrée dans Google Drive.
 
-**[ÉCRAN — screencast front-end élève]**
+**[ÉCRAN - screencast front-end élève]**
 
 [Montre la page cours côté élève avec le meeting planifié]
 
 Côté élève : le meeting apparaît dans le curriculum du cours avec la date et l'heure. Quand l'heure arrive, un bouton "Join Meeting" s'affiche. L'élève clique et rejoint directement le meeting dans son navigateur.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-La recommandation schoolsWP : Google Meet est le meilleur choix pour les cours en direct. C'est gratuit, ça fonctionne dans le navigateur, et l'intégration TutorLMS est native. Zoom est une alternative si tes élèves l'utilisent déjà — on le voit dans la leçon 12.3. Mais si tu pars de zéro, reste sur Google Meet.
+La recommandation schoolsWP : Google Meet est le meilleur choix pour les cours en direct. C'est gratuit, ça fonctionne dans le navigateur, et l'intégration TutorLMS est native. Zoom est une alternative si tes élèves l'utilisent déjà - on le voit dans la leçon 12.3. Mais si tu pars de zéro, reste sur Google Meet.
 
 ---
 
@@ -81,7 +81,7 @@ La recommandation schoolsWP : Google Meet est le meilleur choix pour les cours e
 
 ---
 
-### Leçon 12.2 — Google Classroom
+### Leçon 12.2 : Google Classroom
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -90,31 +90,31 @@ La recommandation schoolsWP : Google Meet est le meilleur choix pour les cours e
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Google Classroom, c'est l'outil de Google pour gérer des classes en ligne. Si tes élèves sont dans un contexte scolaire ou universitaire, ou si ton établissement utilise déjà Google Workspace, cette intégration a du sens. TutorLMS peut synchroniser tes cours avec Google Classroom — tes élèves retrouvent tout dans leur environnement habituel.
+Google Classroom, c'est l'outil de Google pour gérer des classes en ligne. Si tes élèves sont dans un contexte scolaire ou universitaire, ou si ton établissement utilise déjà Google Workspace, cette intégration a du sens. TutorLMS peut synchroniser tes cours avec Google Classroom - tes élèves retrouvent tout dans leur environnement habituel.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Active l'addon "Google Classroom Integration" dans Tutor LMS > Addons. Le toggle, comme d'habitude.
 
-**[ÉCRAN — screencast Google Cloud Console]**
+**[ÉCRAN - screencast Google Cloud Console]**
 
 [Navigation vers APIs & Services > Library > Google Classroom API]
 
 Dans la Google Cloud Console, active l'API Google Classroom. Va dans APIs & Services, Library, cherche "Google Classroom API" et active-la. Si tu as déjà configuré Google Meet, tu peux utiliser le même projet.
 
-Ensuite, va dans Credentials et crée un nouvel OAuth 2.0 Client ID — ou réutilise celui de Google Meet si l'URI de redirection est la même.
+Ensuite, va dans Credentials et crée un nouvel OAuth 2.0 Client ID - ou réutilise celui de Google Meet si l'URI de redirection est la même.
 
-**[ÉCRAN — screencast TutorLMS réglages Google Classroom]**
+**[ÉCRAN - screencast TutorLMS réglages Google Classroom]**
 
 [Navigation vers Tutor LMS > Settings > Google Classroom]
 
 Dans TutorLMS, Settings, Google Classroom. Colle le Client ID et le Client Secret. Génère le token comme pour Google Meet.
 
-**[ÉCRAN — screencast création d'un classroom]**
+**[ÉCRAN - screencast création d'un classroom]**
 
 [Montre la création d'un classroom depuis le Course Builder]
 
@@ -124,7 +124,7 @@ Pour lier un cours à Google Classroom, ouvre le Course Builder. Un nouvel ongle
 
 Quand tu crées un classroom, TutorLMS génère automatiquement un code d'invitation que tes élèves utilisent pour rejoindre la classe dans Google Classroom.
 
-**[ÉCRAN — screencast synchronisation]**
+**[ÉCRAN - screencast synchronisation]**
 
 [Montre la synchro des devoirs et du matériel]
 
@@ -134,7 +134,7 @@ La synchronisation fonctionne dans les deux sens :
 
 C'est pratique pour les formateurs qui ont des élèves habitués à Google Classroom mais qui veulent la puissance de TutorLMS pour la structure des cours.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Google Classroom, c'est un pont entre TutorLMS et l'écosystème Google Education. Si tes élèves sont déjà dans cet écosystème, l'intégration évite de leur imposer un changement d'habitude. Si ce n'est pas le cas, TutorLMS seul couvre tous les besoins.
 
@@ -153,7 +153,7 @@ Google Classroom, c'est un pont entre TutorLMS et l'écosystème Google Educatio
 
 ---
 
-### Leçon 12.3 — Zoom (cours en direct)
+### Leçon 12.3 : Zoom (cours en direct)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -162,47 +162,47 @@ Google Classroom, c'est un pont entre TutorLMS et l'écosystème Google Educatio
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Zoom est l'autre option pour les cours en direct dans TutorLMS. Si tes élèves utilisent déjà Zoom ou si ton organisation a un compte Zoom Pro, cette intégration est pertinente. La mise en place est un peu plus longue que Google Meet, et Zoom est payant pour les sessions de plus de 40 minutes. Voyons comment le configurer.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Active l'addon "Zoom Integration" dans Tutor LMS > Addons.
 
-**[ÉCRAN — screencast Zoom Marketplace]**
+**[ÉCRAN - screencast Zoom Marketplace]**
 
 [Navigation vers marketplace.zoom.us]
 
 Contrairement à Google Meet, Zoom utilise une app dédiée. Va sur marketplace.zoom.us, connecte-toi avec ton compte Zoom. Clique sur "Develop", puis "Build App". Sélectionne "Server-to-Server OAuth".
 
-Donne un nom à ton app — par exemple "TutorLMS Integration". Zoom te fournit :
+Donne un nom à ton app - par exemple "TutorLMS Integration". Zoom te fournit :
 - Un Account ID
 - Un Client ID
 - Un Client Secret
 
 Copie ces trois valeurs.
 
-**[ÉCRAN — screencast permissions Zoom]**
+**[ÉCRAN - screencast permissions Zoom]**
 
 [Montre l'onglet Scopes de l'app Zoom]
 
 Dans l'onglet Scopes de ton app Zoom, ajoute les permissions nécessaires :
-- meeting:write:admin — pour créer des meetings
-- meeting:read:admin — pour lire les meetings
-- user:read:admin — pour accéder aux infos utilisateur
+- meeting:write:admin - pour créer des meetings
+- meeting:read:admin - pour lire les meetings
+- user:read:admin - pour accéder aux infos utilisateur
 
 Active l'app une fois les scopes configurés.
 
-**[ÉCRAN — screencast TutorLMS réglages Zoom]**
+**[ÉCRAN - screencast TutorLMS réglages Zoom]**
 
 [Navigation vers Tutor LMS > Settings > Zoom]
 
 Retourne dans TutorLMS, Settings, Zoom. Colle l'Account ID, le Client ID et le Client Secret. Enregistre. La connexion est établie si les champs deviennent verts.
 
-**[ÉCRAN — screencast planification meeting]**
+**[ÉCRAN - screencast planification meeting]**
 
 [Navigation vers Course Builder > onglet Zoom]
 
@@ -211,13 +211,13 @@ La planification fonctionne comme Google Meet. Dans le Course Builder, onglet Zo
 - La salle d'attente
 - L'enregistrement automatique (cloud si Zoom Pro, local sinon)
 
-**[ÉCRAN — screencast front-end élève]**
+**[ÉCRAN - screencast front-end élève]**
 
 [Montre le bouton "Join with Zoom" côté élève]
 
-Côté élève : un bouton "Join with Zoom" apparaît dans le curriculum. L'élève clique et rejoint le meeting — soit dans l'app Zoom, soit dans le navigateur.
+Côté élève : un bouton "Join with Zoom" apparaît dans le curriculum. L'élève clique et rejoint le meeting - soit dans l'app Zoom, soit dans le navigateur.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Zoom fonctionne bien mais a deux inconvénients : la limite de 40 minutes en version gratuite et la configuration plus complexe via le Marketplace. Si tu n'as pas de raison spécifique d'utiliser Zoom, Google Meet est le choix le plus simple. Si ton organisation impose Zoom, cette intégration fait le travail.
 
@@ -237,7 +237,7 @@ Zoom fonctionne bien mais a deux inconvénients : la limite de 40 minutes en ver
 
 ---
 
-### Leçon 12.4 — WooCommerce
+### Leçon 12.4 : WooCommerce
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -246,11 +246,11 @@ Zoom fonctionne bien mais a deux inconvénients : la limite de 40 minutes en ver
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-WooCommerce était le seul moyen de vendre des cours avec TutorLMS avant la v3. Depuis, le eCommerce natif le remplace dans la majorité des cas — on l'a vu dans le module 8. Mais WooCommerce reste utile dans deux situations : si tu vends déjà d'autres produits avec WooCommerce, ou si tu as besoin d'extensions WooCommerce spécifiques comme les factures avancées ou les taxes multi-pays. Voyons comment ça fonctionne.
+WooCommerce était le seul moyen de vendre des cours avec TutorLMS avant la v3. Depuis, le eCommerce natif le remplace dans la majorité des cas - on l'a vu dans le module 8. Mais WooCommerce reste utile dans deux situations : si tu vends déjà d'autres produits avec WooCommerce, ou si tu as besoin d'extensions WooCommerce spécifiques comme les factures avancées ou les taxes multi-pays. Voyons comment ça fonctionne.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > eCommerce Engine]
 
@@ -258,27 +258,27 @@ Pour utiliser WooCommerce comme moteur de paiement, va dans Settings, Monetizati
 
 Prérequis : WooCommerce doit être installé et activé sur ton site.
 
-**[ÉCRAN — screencast création produit WooCommerce]**
+**[ÉCRAN - screencast création produit WooCommerce]**
 
 [Navigation vers Products > Add New]
 
 Quand WooCommerce est actif comme moteur, chaque cours TutorLMS a besoin d'un produit WooCommerce associé. Tu peux le créer de deux façons :
-- Automatiquement — TutorLMS crée le produit quand tu définis un prix dans le Course Builder
-- Manuellement — tu crées un produit WooCommerce et tu le lies au cours
+- Automatiquement - TutorLMS crée le produit quand tu définis un prix dans le Course Builder
+- Manuellement - tu crées un produit WooCommerce et tu le lies au cours
 
-**[ÉCRAN — screencast Course Builder pricing]**
+**[ÉCRAN - screencast Course Builder pricing]**
 
 [Montre la section Pricing avec WooCommerce actif]
 
 Dans le Course Builder, la section Pricing change quand WooCommerce est actif. Tu vois un champ pour lier un produit WooCommerce existant ou en créer un nouveau. Le prix, les promotions et les options d'abonnement se gèrent dans WooCommerce, pas dans TutorLMS.
 
-**[ÉCRAN — screencast checkout WooCommerce]**
+**[ÉCRAN - screencast checkout WooCommerce]**
 
 [Montre le parcours d'achat côté élève]
 
 Côté élève : le parcours d'achat passe par le panier et le checkout WooCommerce classique. Toutes les passerelles de paiement configurées dans WooCommerce sont disponibles. Après le paiement, l'élève est automatiquement inscrit au cours.
 
-**[ÉCRAN — screencast avantages WooCommerce]**
+**[ÉCRAN - screencast avantages WooCommerce]**
 
 [Slide récapitulatif]
 
@@ -292,9 +292,9 @@ Les cas où le eCommerce natif est meilleur :
 - Tu veux une configuration simple
 - Tu débutées et tu n'as pas d'historique WooCommerce
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-La recommandation schoolsWP : si tu démarres de zéro, utilise le eCommerce natif. WooCommerce ajoute de la complexité et de la charge sur ton serveur. Ne l'utilise que si tu as une raison concrète — pas par habitude.
+La recommandation schoolsWP : si tu démarres de zéro, utilise le eCommerce natif. WooCommerce ajoute de la complexité et de la charge sur ton serveur. Ne l'utilise que si tu as une raison concrète - pas par habitude.
 
 ---
 
@@ -311,7 +311,7 @@ La recommandation schoolsWP : si tu démarres de zéro, utilise le eCommerce nat
 
 ---
 
-### Leçon 12.5 — Elementor
+### Leçon 12.5 : Elementor
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -320,52 +320,52 @@ La recommandation schoolsWP : si tu démarres de zéro, utilise le eCommerce nat
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Elementor est le page builder le plus utilisé sur WordPress. Si c'est celui que tu utilises pour ton site, bonne nouvelle : TutorLMS s'intègre avec. Tu peux personnaliser les pages de cours, le catalogue, le dashboard élève — tout ça avec l'éditeur visuel d'Elementor. Voyons comment activer l'intégration et quels widgets sont disponibles.
+Elementor est le page builder le plus utilisé sur WordPress. Si c'est celui que tu utilises pour ton site, bonne nouvelle : TutorLMS s'intègre avec. Tu peux personnaliser les pages de cours, le catalogue, le dashboard élève - tout ça avec l'éditeur visuel d'Elementor. Voyons comment activer l'intégration et quels widgets sont disponibles.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Active l'addon "Elementor Addons" dans Tutor LMS > Addons. Prérequis : Elementor (version gratuite ou Pro) doit être installé et actif.
 
-**[ÉCRAN — screencast Elementor editor]**
+**[ÉCRAN - screencast Elementor editor]**
 
 [Ouvre une page de cours avec Elementor]
 
 Une fois l'addon actif, édite une page de cours avec Elementor. Dans le panneau de widgets, une nouvelle catégorie "Tutor LMS" apparaît. Tu y trouves plus de 25 widgets dédiés.
 
-**[ÉCRAN — screencast widgets principaux]**
+**[ÉCRAN - screencast widgets principaux]**
 
 [Montre les widgets dans le panneau Elementor]
 
 Les widgets les plus utiles :
 
-- Course Title, Course Thumbnail, Course Rating — les bases de toute page de cours
-- Course Curriculum — affiche le contenu structuré du cours
-- Course Benefits, Course Requirements — les listes "ce que tu vas apprendre" et "prérequis"
-- Add to Cart / Enroll Button — le bouton d'achat ou d'inscription
-- Course Instructor — affiche le profil de l'instructeur
-- Course Reviews — les avis des élèves
+- Course Title, Course Thumbnail, Course Rating - les bases de toute page de cours
+- Course Curriculum - affiche le contenu structuré du cours
+- Course Benefits, Course Requirements - les listes "ce que tu vas apprendre" et "prérequis"
+- Add to Cart / Enroll Button - le bouton d'achat ou d'inscription
+- Course Instructor - affiche le profil de l'instructeur
+- Course Reviews - les avis des élèves
 
 Tu glisses-déposes ces widgets comme n'importe quel widget Elementor et tu les stylises avec les options habituelles : couleurs, typographie, espacement, responsive.
 
-**[ÉCRAN — screencast template de page cours]**
+**[ÉCRAN - screencast template de page cours]**
 
 [Montre la création d'un template Elementor pour les pages de cours]
 
 Le plus puissant : tu peux créer un template Elementor pour toutes tes pages de cours. Va dans Templates > Theme Builder > Single Course. Construis ton layout une fois, et il s'applique à tous tes cours automatiquement.
 
-**[ÉCRAN — screencast dashboard élève]**
+**[ÉCRAN - screencast dashboard élève]**
 
 [Montre la personnalisation du dashboard avec Elementor]
 
 Tu peux aussi personnaliser le dashboard élève avec Elementor. Les widgets disponibles : Course List, Course Progress, Profile Info, Enrolled Courses. Ça te permet de créer un espace élève qui correspond à l'identité visuelle de ton site.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Si tu utilises déjà Elementor, cette intégration est un must. Tu gardes le contrôle total sur le design sans toucher au code. Si tu n'utilises pas encore de page builder, on voit Divi, Oxygen et Droip dans les prochaines leçons — choisis celui qui correspond à ton workflow.
+Si tu utilises déjà Elementor, cette intégration est un must. Tu gardes le contrôle total sur le design sans toucher au code. Si tu n'utilises pas encore de page builder, on voit Divi, Oxygen et Droip dans les prochaines leçons - choisis celui qui correspond à ton workflow.
 
 ---
 
@@ -381,7 +381,7 @@ Si tu utilises déjà Elementor, cette intégration est un must. Tu gardes le co
 
 ---
 
-### Leçon 12.6 — Divi
+### Leçon 12.6 : Divi
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -390,23 +390,23 @@ Si tu utilises déjà Elementor, cette intégration est un must. Tu gardes le co
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Divi est l'autre grand page builder de WordPress. Si c'est celui que tu utilises, TutorLMS propose une intégration dédiée avec des modules Divi pour personnaliser tes pages de cours. Le principe est le même qu'Elementor — éditeur visuel, drag-and-drop — mais avec l'écosystème Divi.
+Divi est l'autre grand page builder de WordPress. Si c'est celui que tu utilises, TutorLMS propose une intégration dédiée avec des modules Divi pour personnaliser tes pages de cours. Le principe est le même qu'Elementor - éditeur visuel, drag-and-drop - mais avec l'écosystème Divi.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
-Active l'addon "Divi Integration" dans Tutor LMS > Addons. Prérequis : Divi Builder doit être installé et actif — soit via le thème Divi, soit via le plugin Divi Builder standalone.
+Active l'addon "Divi Integration" dans Tutor LMS > Addons. Prérequis : Divi Builder doit être installé et actif - soit via le thème Divi, soit via le plugin Divi Builder standalone.
 
-**[ÉCRAN — screencast Divi Builder]**
+**[ÉCRAN - screencast Divi Builder]**
 
 [Ouvre une page de cours avec le Divi Builder]
 
 Ouvre une page de cours avec le Divi Builder. Dans la bibliothèque de modules, une nouvelle catégorie "Tutor LMS" apparaît avec des modules dédiés.
 
-**[ÉCRAN — screencast modules Divi]**
+**[ÉCRAN - screencast modules Divi]**
 
 [Montre les modules disponibles]
 
@@ -419,21 +419,21 @@ Les modules disponibles sont similaires aux widgets Elementor :
 
 Chaque module se configure avec les options Divi : design, spacing, animation, conditions d'affichage.
 
-**[ÉCRAN — screencast template Divi]**
+**[ÉCRAN - screencast template Divi]**
 
 [Montre la création d'un template dans le Theme Builder Divi]
 
 Comme avec Elementor, tu peux créer un template global dans le Divi Theme Builder. Va dans Divi > Theme Builder, ajoute un nouveau template, assigne-le aux pages de type "Course". Construis ton layout une fois, il s'applique partout.
 
-**[ÉCRAN — screencast résultat front-end]**
+**[ÉCRAN - screencast résultat front-end]**
 
 [Montre le rendu final d'une page de cours personnalisée avec Divi]
 
 Le résultat : une page de cours entièrement personnalisée, cohérente avec le reste de ton site Divi, sans une ligne de code.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Divi ou Elementor — c'est une question de préférence et d'écosystème. Si tu as déjà un site construit avec Divi, utilise l'intégration Divi. Ne change pas de page builder juste pour TutorLMS. Les deux intégrations couvrent les mêmes fonctionnalités.
+Divi ou Elementor - c'est une question de préférence et d'écosystème. Si tu as déjà un site construit avec Divi, utilise l'intégration Divi. Ne change pas de page builder juste pour TutorLMS. Les deux intégrations couvrent les mêmes fonctionnalités.
 
 ---
 
@@ -449,7 +449,7 @@ Divi ou Elementor — c'est une question de préférence et d'écosystème. Si t
 
 ---
 
-### Leçon 12.7 — Oxygen Builder
+### Leçon 12.7 : Oxygen Builder
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -458,48 +458,48 @@ Divi ou Elementor — c'est une question de préférence et d'écosystème. Si t
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Oxygen Builder, c'est le page builder des développeurs. Pas de thème, pas de bloat — tu construis tout de zéro avec un contrôle total sur le HTML et le CSS. Si c'est ton outil, TutorLMS le supporte. L'intégration est un peu différente d'Elementor ou Divi — Oxygen utilise des éléments spécifiques plutôt que des widgets. Voyons comment ça marche.
+Oxygen Builder, c'est le page builder des développeurs. Pas de thème, pas de bloat - tu construis tout de zéro avec un contrôle total sur le HTML et le CSS. Si c'est ton outil, TutorLMS le supporte. L'intégration est un peu différente d'Elementor ou Divi - Oxygen utilise des éléments spécifiques plutôt que des widgets. Voyons comment ça marche.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Active l'addon "Oxygen Builder Integration" dans Tutor LMS > Addons. Oxygen Builder doit être installé et actif.
 
-**[ÉCRAN — screencast Oxygen editor]**
+**[ÉCRAN - screencast Oxygen editor]**
 
 [Ouvre une page de cours avec Oxygen]
 
 Dans l'éditeur Oxygen, ouvre le panneau "Add" et cherche "Tutor". Tu trouves les éléments TutorLMS disponibles.
 
-**[ÉCRAN — screencast éléments TutorLMS]**
+**[ÉCRAN - screencast éléments TutorLMS]**
 
 [Montre les éléments dans le panneau Add]
 
 Les éléments disponibles :
 - Course Title, Course Thumbnail, Course Rating
 - Course Content, Course Curriculum
-- Course Enrollment Box — combine prix, bouton d'achat et infos clés
+- Course Enrollment Box - combine prix, bouton d'achat et infos clés
 - Course Instructor, Course Reviews
-- Course Meta — durée, nombre d'élèves, niveau
+- Course Meta - durée, nombre d'élèves, niveau
 
 La différence avec Elementor et Divi : Oxygen te donne accès au CSS brut de chaque élément. Tu peux modifier chaque sélecteur, ajouter des classes personnalisées, écrire du CSS custom directement dans l'éditeur.
 
-**[ÉCRAN — screencast template Oxygen]**
+**[ÉCRAN - screencast template Oxygen]**
 
 [Montre la création d'un template dans Oxygen]
 
 Pour créer un template global, va dans Oxygen > Templates. Crée un nouveau template, assigne-le au type de post "courses". Construis ton layout avec les éléments TutorLMS. Tous tes cours utiliseront ce template.
 
-**[ÉCRAN — screencast CSS custom]**
+**[ÉCRAN - screencast CSS custom]**
 
 [Montre l'édition CSS sur un élément TutorLMS]
 
 L'avantage Oxygen : tu peux aller plus loin que les options de style. Par exemple, modifier la grille du curriculum, ajouter des animations CSS, ou ajuster le responsive avec des media queries précises. C'est plus technique, mais le résultat est plus maîtrisé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Oxygen Builder, c'est pour ceux qui veulent un contrôle total. Si tu es à l'aise avec le CSS et que tu veux un site léger sans la surcharge des gros page builders, c'est un excellent choix. Sinon, Elementor ou Divi seront plus accessibles.
 
@@ -517,7 +517,7 @@ Oxygen Builder, c'est pour ceux qui veulent un contrôle total. Si tu es à l'ai
 
 ---
 
-### Leçon 12.8 — Droip
+### Leçon 12.8 : Droip
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -526,42 +526,42 @@ Oxygen Builder, c'est pour ceux qui veulent un contrôle total. Si tu es à l'ai
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Droip, c'est le page builder développé par Themeum — la même équipe que TutorLMS. L'intégration est donc native et profonde. Si tu cherches un builder conçu spécifiquement pour fonctionner avec TutorLMS, sans problème de compatibilité, Droip est le candidat. Voyons ce qu'il propose.
+Droip, c'est le page builder développé par Themeum - la même équipe que TutorLMS. L'intégration est donc native et profonde. Si tu cherches un builder conçu spécifiquement pour fonctionner avec TutorLMS, sans problème de compatibilité, Droip est le candidat. Voyons ce qu'il propose.
 
-**[ÉCRAN — screencast installation Droip]**
+**[ÉCRAN - screencast installation Droip]**
 
 [Navigation vers Plugins > Add New > Droip]
 
-Droip s'installe comme un plugin classique. Va dans Plugins, Add New, cherche "Droip" et installe-le. L'intégration TutorLMS est automatique — pas d'addon à activer. Droip détecte TutorLMS et ajoute les éléments de cours directement.
+Droip s'installe comme un plugin classique. Va dans Plugins, Add New, cherche "Droip" et installe-le. L'intégration TutorLMS est automatique - pas d'addon à activer. Droip détecte TutorLMS et ajoute les éléments de cours directement.
 
-**[ÉCRAN — screencast Droip editor]**
+**[ÉCRAN - screencast Droip editor]**
 
 [Ouvre une page de cours avec Droip]
 
-L'éditeur Droip propose une catégorie "TutorLMS" avec tous les éléments de cours : titre, thumbnail, curriculum, prix, bouton d'inscription, avis, instructeur, méta-données. Le fonctionnement est similaire aux autres builders — drag-and-drop, options de style visuelles.
+L'éditeur Droip propose une catégorie "TutorLMS" avec tous les éléments de cours : titre, thumbnail, curriculum, prix, bouton d'inscription, avis, instructeur, méta-données. Le fonctionnement est similaire aux autres builders - drag-and-drop, options de style visuelles.
 
-**[ÉCRAN — screencast avantage intégration native]**
+**[ÉCRAN - screencast avantage intégration native]**
 
 [Montre les options spécifiques TutorLMS dans Droip]
 
-L'avantage de l'intégration native : les éléments TutorLMS dans Droip sont plus détaillés que dans les autres builders. Par exemple, tu peux personnaliser individuellement chaque section du curriculum — leçons, quiz, assignments — avec des styles différents. Les mises à jour de TutorLMS et Droip sont synchronisées, donc moins de risques de conflit.
+L'avantage de l'intégration native : les éléments TutorLMS dans Droip sont plus détaillés que dans les autres builders. Par exemple, tu peux personnaliser individuellement chaque section du curriculum - leçons, quiz, assignments - avec des styles différents. Les mises à jour de TutorLMS et Droip sont synchronisées, donc moins de risques de conflit.
 
-**[ÉCRAN — screencast template Droip]**
+**[ÉCRAN - screencast template Droip]**
 
 [Montre la création d'un template de page cours]
 
 Pour le template global : Droip utilise le même système de templates que les autres builders. Crée un template, assigne-le aux cours, et tous tes cours adoptent le même design.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Droip est un choix cohérent si tu démarres un nouveau site et que TutorLMS est ta priorité. L'intégration native garantit la compatibilité à long terme. Mais si tu as déjà un site construit avec Elementor, Divi ou Oxygen, il n'y a aucune raison de migrer — les intégrations de ces builders sont tout aussi fonctionnelles.
+Droip est un choix cohérent si tu démarres un nouveau site et que TutorLMS est ta priorité. L'intégration native garantit la compatibilité à long terme. Mais si tu as déjà un site construit avec Elementor, Divi ou Oxygen, il n'y a aucune raison de migrer - les intégrations de ces builders sont tout aussi fonctionnelles.
 
 ---
 
 **Points clés** :
-- Pas d'addon à activer — intégration automatique (même éditeur : Themeum)
+- Pas d'addon à activer - intégration automatique (même éditeur : Themeum)
 - Installation classique via Plugins > Add New
 - Éléments TutorLMS plus détaillés que dans les autres builders
 - Personnalisation granulaire du curriculum (leçons, quiz, assignments)
@@ -573,7 +573,7 @@ Droip est un choix cohérent si tu démarres un nouveau site et que TutorLMS est
 
 ---
 
-### Leçon 12.9 — BunnyNet (vidéo hosting)
+### Leçon 12.9 : BunnyNet (vidéo hosting)
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -582,36 +582,36 @@ Droip est un choix cohérent si tu démarres un nouveau site et que TutorLMS est
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Héberger tes vidéos de cours sur ton serveur WordPress, c'est la pire idée possible. Ça ralentit ton site, ça consomme ta bande passante, et la qualité de lecture dépend de ton hébergeur. BunnyNet résout ce problème — c'est un CDN vidéo spécialisé, rapide, et bien moins cher que Vimeo ou Wistia. TutorLMS l'intègre nativement. Voyons comment configurer ça.
+Héberger tes vidéos de cours sur ton serveur WordPress, c'est la pire idée possible. Ça ralentit ton site, ça consomme ta bande passante, et la qualité de lecture dépend de ton hébergeur. BunnyNet résout ce problème - c'est un CDN vidéo spécialisé, rapide, et bien moins cher que Vimeo ou Wistia. TutorLMS l'intègre nativement. Voyons comment configurer ça.
 
-**[ÉCRAN — screencast BunnyNet dashboard]**
+**[ÉCRAN - screencast BunnyNet dashboard]**
 
 [Navigation vers dash.bunny.net > Stream > Video Library]
 
-Première étape : crée un compte BunnyNet si ce n'est pas fait. Dans le dashboard, va dans Stream, puis "Add Video Library". Donne un nom à ta bibliothèque — par exemple "Cours TutorLMS".
+Première étape : crée un compte BunnyNet si ce n'est pas fait. Dans le dashboard, va dans Stream, puis "Add Video Library". Donne un nom à ta bibliothèque - par exemple "Cours TutorLMS".
 
 Note le nom de ta Video Library et ton API Key. Tu les trouves dans Account Settings > API.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Addons]
 
 Côté TutorLMS, active l'addon "BunnyNet Integration" dans Addons.
 
-**[ÉCRAN — screencast TutorLMS réglages BunnyNet]**
+**[ÉCRAN - screencast TutorLMS réglages BunnyNet]**
 
 [Navigation vers Settings > BunnyNet]
 
 Va dans Settings, BunnyNet. Remplis :
-- API Key — ta clé API BunnyNet
-- Library ID — l'identifiant de ta Video Library
-- CDN Hostname — l'URL de ton CDN (fournie par BunnyNet)
+- API Key - ta clé API BunnyNet
+- Library ID - l'identifiant de ta Video Library
+- CDN Hostname - l'URL de ton CDN (fournie par BunnyNet)
 
 Enregistre. La connexion est établie.
 
-**[ÉCRAN — screencast upload vidéo]**
+**[ÉCRAN - screencast upload vidéo]**
 
 [Montre l'upload d'une vidéo dans une leçon]
 
@@ -619,23 +619,23 @@ Maintenant, quand tu ajoutes une vidéo à une leçon dans le Course Builder, un
 - Uploader une vidéo directement depuis TutorLMS vers BunnyNet
 - Ou coller l'URL d'une vidéo déjà présente dans ta bibliothèque BunnyNet
 
-La vidéo est encodée automatiquement en plusieurs résolutions — 360p, 720p, 1080p — et distribuée via le CDN mondial de BunnyNet.
+La vidéo est encodée automatiquement en plusieurs résolutions - 360p, 720p, 1080p - et distribuée via le CDN mondial de BunnyNet.
 
-**[ÉCRAN — screencast lecteur vidéo front-end]**
+**[ÉCRAN - screencast lecteur vidéo front-end]**
 
 [Montre le rendu du player BunnyNet dans une leçon]
 
-Côté élève : le lecteur vidéo est rapide, adaptatif (il ajuste la qualité selon la connexion) et ne porte pas le branding BunnyNet. Tes élèves ne voient pas la différence avec un player auto-hébergé — sauf que ça charge plus vite.
+Côté élève : le lecteur vidéo est rapide, adaptatif (il ajuste la qualité selon la connexion) et ne porte pas le branding BunnyNet. Tes élèves ne voient pas la différence avec un player auto-hébergé - sauf que ça charge plus vite.
 
-**[ÉCRAN — screencast tarification]**
+**[ÉCRAN - screencast tarification]**
 
 [Slide récapitulatif des coûts BunnyNet]
 
 Question coût : BunnyNet facture au stockage et à la bande passante. En moyenne, pour un site de formation avec 50 à 100 vidéos, compte environ 5 à 15 dollars par mois. C'est une fraction du coût de Vimeo Pro ou Wistia.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-La recommandation schoolsWP : dès que tu as plus de 50 vidéos, utilise BunnyNet. En dessous, YouTube en non-listé ou Vimeo gratuit peuvent suffire — mais tu perds le contrôle sur le player et tu risques les pubs. BunnyNet, c'est le meilleur rapport qualité-prix pour l'hébergement vidéo LMS.
+La recommandation schoolsWP : dès que tu as plus de 50 vidéos, utilise BunnyNet. En dessous, YouTube en non-listé ou Vimeo gratuit peuvent suffire - mais tu perds le contrôle sur le player et tu risques les pubs. BunnyNet, c'est le meilleur rapport qualité-prix pour l'hébergement vidéo LMS.
 
 ---
 
@@ -652,7 +652,7 @@ La recommandation schoolsWP : dès que tu as plus de 50 vidéos, utilise BunnyNe
 
 ---
 
-### Leçon 12.10 — Easy Digital Downloads
+### Leçon 12.10 : Easy Digital Downloads
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -661,11 +661,11 @@ La recommandation schoolsWP : dès que tu as plus de 50 vidéos, utilise BunnyNe
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Easy Digital Downloads — EDD — c'est une alternative à WooCommerce spécialisée dans la vente de produits numériques. Si tu utilises déjà EDD pour vendre des ebooks, des templates ou des logiciels, tu peux l'utiliser comme moteur de paiement pour TutorLMS. Voyons comment.
+Easy Digital Downloads - EDD - c'est une alternative à WooCommerce spécialisée dans la vente de produits numériques. Si tu utilises déjà EDD pour vendre des ebooks, des templates ou des logiciels, tu peux l'utiliser comme moteur de paiement pour TutorLMS. Voyons comment.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > eCommerce Engine]
 
@@ -673,25 +673,25 @@ Pour activer EDD comme moteur de paiement, va dans Settings, Monetization, eComm
 
 Prérequis : EDD doit être installé et actif, avec au moins une passerelle de paiement configurée (Stripe ou PayPal dans EDD).
 
-**[ÉCRAN — screencast Course Builder avec EDD]**
+**[ÉCRAN - screencast Course Builder avec EDD]**
 
 [Montre la section Pricing avec EDD actif]
 
 Dans le Course Builder, la section Pricing change. Tu vois un champ pour lier un produit EDD existant ou en créer un nouveau. Le prix se gère dans EDD, comme avec WooCommerce.
 
-**[ÉCRAN — screencast création produit EDD]**
+**[ÉCRAN - screencast création produit EDD]**
 
 [Navigation vers Downloads > Add New]
 
 Si tu crées manuellement : va dans Downloads, Add New. Donne un titre, définis le prix. Ensuite, dans le Course Builder TutorLMS, sélectionne ce produit. L'élève qui achète le "download" est automatiquement inscrit au cours.
 
-**[ÉCRAN — screencast parcours d'achat]**
+**[ÉCRAN - screencast parcours d'achat]**
 
 [Montre le checkout EDD côté élève]
 
-Côté élève : le parcours d'achat passe par le checkout EDD. C'est plus léger que WooCommerce — EDD est conçu pour les produits numériques, donc pas de gestion d'expéditions, de stock ou de produits physiques.
+Côté élève : le parcours d'achat passe par le checkout EDD. C'est plus léger que WooCommerce - EDD est conçu pour les produits numériques, donc pas de gestion d'expéditions, de stock ou de produits physiques.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 EDD a du sens si c'est déjà ton outil de vente. Si tu pars de zéro, le eCommerce natif TutorLMS est plus simple. Et si tu as besoin de produits physiques en plus, WooCommerce reste le choix logique. EDD, c'est le choix de niche pour les vendeurs de produits 100% numériques.
 
@@ -710,7 +710,7 @@ EDD a du sens si c'est déjà ton outil de vente. Si tu pars de zéro, le eComme
 
 ---
 
-### Leçon 12.11 — Loco Translate
+### Leçon 12.11 : Loco Translate
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -719,23 +719,23 @@ EDD a du sens si c'est déjà ton outil de vente. Si tu pars de zéro, le eComme
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-TutorLMS est en anglais par défaut. Même si WordPress est en français, certaines chaînes de texte de TutorLMS restent en anglais — boutons, labels, messages système. Loco Translate permet de tout traduire directement depuis l'admin WordPress, sans toucher aux fichiers de traduction manuellement. Voyons comment faire.
+TutorLMS est en anglais par défaut. Même si WordPress est en français, certaines chaînes de texte de TutorLMS restent en anglais - boutons, labels, messages système. Loco Translate permet de tout traduire directement depuis l'admin WordPress, sans toucher aux fichiers de traduction manuellement. Voyons comment faire.
 
-**[ÉCRAN — screencast installation Loco Translate]**
+**[ÉCRAN - screencast installation Loco Translate]**
 
 [Navigation vers Plugins > Add New > Loco Translate]
 
 Installe et active Loco Translate depuis Plugins > Add New. C'est un plugin gratuit.
 
-**[ÉCRAN — screencast interface Loco Translate]**
+**[ÉCRAN - screencast interface Loco Translate]**
 
 [Navigation vers Loco Translate > Plugins > TutorLMS]
 
-Va dans Loco Translate, puis Plugins. Tu vois la liste de tous tes plugins. Clique sur "Tutor LMS". Tu vois les langues disponibles. Si le français n'apparaît pas, clique sur "New language", sélectionne "French (France)" et choisis l'emplacement "Custom" — ça évite que tes traductions soient écrasées lors des mises à jour.
+Va dans Loco Translate, puis Plugins. Tu vois la liste de tous tes plugins. Clique sur "Tutor LMS". Tu vois les langues disponibles. Si le français n'apparaît pas, clique sur "New language", sélectionne "French (France)" et choisis l'emplacement "Custom" - ça évite que tes traductions soient écrasées lors des mises à jour.
 
-**[ÉCRAN — screencast traduction d'une chaîne]**
+**[ÉCRAN - screencast traduction d'une chaîne]**
 
 [Montre l'éditeur de traduction]
 
@@ -747,27 +747,27 @@ L'éditeur affiche deux colonnes : la chaîne source en anglais à gauche, ta tr
 
 Tu cliques sur une chaîne, tu tapes ta traduction, tu passes à la suivante. Quand tu as fini, clique sur "Save". Les modifications s'appliquent immédiatement sur ton site.
 
-**[ÉCRAN — screencast recherche de chaîne]**
+**[ÉCRAN - screencast recherche de chaîne]**
 
 [Montre la barre de recherche dans Loco Translate]
 
 L'astuce pour aller vite : utilise la barre de recherche. Tu vois un texte en anglais sur ton site ? Copie-le, colle-le dans la recherche Loco Translate, et tu trouves la chaîne à traduire en quelques secondes.
 
-**[ÉCRAN — screencast Tutor LMS Pro]**
+**[ÉCRAN - screencast Tutor LMS Pro]**
 
 [Montre qu'il faut aussi traduire Tutor LMS Pro séparément]
 
-Point important : si tu utilises Tutor LMS Pro, c'est un plugin séparé. Tu dois aussi le traduire dans Loco Translate — les chaînes ne sont pas les mêmes que la version gratuite. Même chose pour les addons actifs — chacun a ses propres chaînes.
+Point important : si tu utilises Tutor LMS Pro, c'est un plugin séparé. Tu dois aussi le traduire dans Loco Translate - les chaînes ne sont pas les mêmes que la version gratuite. Même chose pour les addons actifs - chacun a ses propres chaînes.
 
-**[ÉCRAN — screencast résultat front-end]**
+**[ÉCRAN - screencast résultat front-end]**
 
 [Montre le site en français après traduction]
 
 Le résultat : un site entièrement en français, y compris les éléments de TutorLMS que la traduction officielle ne couvrait pas.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-La traduction complète de TutorLMS prend environ 30 minutes avec Loco Translate. Fais-le une fois, et c'est réglé. Pense à revérifier après chaque mise à jour majeure de TutorLMS — de nouvelles chaînes peuvent apparaître. C'est la dernière leçon de contenu de ce module. On termine avec le quiz.
+La traduction complète de TutorLMS prend environ 30 minutes avec Loco Translate. Fais-le une fois, et c'est réglé. Pense à revérifier après chaque mise à jour majeure de TutorLMS - de nouvelles chaînes peuvent apparaître. C'est la dernière leçon de contenu de ce module. On termine avec le quiz.
 
 ---
 
@@ -784,7 +784,7 @@ La traduction complète de TutorLMS prend environ 30 minutes avec Loco Translate
 
 ---
 
-### Leçon 12.12 — Quiz Module 12
+### Leçon 12.12 : Quiz Module 12
 
 **Durée** : ~5 min (10 questions)
 **Type** : Quiz TutorLMS
@@ -795,8 +795,8 @@ La traduction complète de TutorLMS prend environ 30 minutes avec Loco Translate
 **Question 1**
 Quel est le moyen le plus simple de donner des cours en direct avec TutorLMS ?
 
-- A) Zoom — c'est le plus connu
-- B) Google Meet — gratuit, natif et sans installation côté élève ✓
+- A) Zoom - c'est le plus connu
+- B) Google Meet - gratuit, natif et sans installation côté élève ✓
 - C) Microsoft Teams via un plugin tiers
 - D) YouTube Live via embed
 
@@ -819,7 +819,7 @@ Quelle est la principale différence entre la configuration Google Meet et Zoom 
 **Question 3**
 Dans quel cas WooCommerce est-il préférable au eCommerce natif de TutorLMS ?
 
-- A) Toujours — WooCommerce est plus fiable
+- A) Toujours - WooCommerce est plus fiable
 - B) Quand tu vends aussi des produits physiques ou que tu as besoin d'extensions WooCommerce spécifiques ✓
 - C) Quand tu as moins de 10 cours
 - D) Quand tu utilises Stripe
@@ -836,7 +836,7 @@ Quel page builder est développé par la même équipe que TutorLMS ?
 - C) Oxygen Builder
 - D) Droip ✓
 
-**Explication** : Droip est développé par Themeum, la même équipe que TutorLMS. L'intégration est automatique — pas d'addon à activer.
+**Explication** : Droip est développé par Themeum, la même équipe que TutorLMS. L'intégration est automatique - pas d'addon à activer.
 
 ---
 
@@ -892,7 +892,7 @@ Pourquoi choisir l'emplacement "Custom" dans Loco Translate pour les traductions
 Quelle est la particularité de Easy Digital Downloads par rapport à WooCommerce pour TutorLMS ?
 
 - A) EDD est gratuit, WooCommerce est payant
-- B) EDD est spécialisé produits numériques — pas de gestion physique — donc plus léger ✓
+- B) EDD est spécialisé produits numériques - pas de gestion physique - donc plus léger ✓
 - C) EDD supporte plus de passerelles de paiement
 - D) EDD est plus rapide
 
@@ -903,22 +903,22 @@ Quelle est la particularité de Easy Digital Downloads par rapport à WooCommerc
 **Question 10**
 Quand tu traduis TutorLMS avec Loco Translate, combien de plugins dois-tu traduire si tu utilises Tutor LMS Pro avec des addons ?
 
-- A) Un seul — Tutor LMS
-- B) Deux — Tutor LMS et Tutor LMS Pro
+- A) Un seul - Tutor LMS
+- B) Deux - Tutor LMS et Tutor LMS Pro
 - C) Tutor LMS + Tutor LMS Pro + chaque addon actif séparément ✓
-- D) Aucun — la traduction officielle couvre tout
+- D) Aucun - la traduction officielle couvre tout
 
 **Explication** : Tutor LMS, Tutor LMS Pro et chaque addon actif ont leurs propres chaînes de texte. Il faut les traduire séparément dans Loco Translate.
 
 ---
 
-**Fin du Module 12 — Intégrations tierces**
+**Fin du Module 12 - Intégrations tierces**
 
 Résumé du module :
 - Cours en direct : Google Meet (recommandé, gratuit) ou Zoom (si déjà utilisé)
 - Google Classroom : pont vers l'écosystème Google Education
 - eCommerce : natif (recommandé) > WooCommerce (si produits mixtes) > EDD (si niche numérique)
-- Page builders : Elementor, Divi, Oxygen, Droip — choisir celui déjà en place
+- Page builders : Elementor, Divi, Oxygen, Droip - choisir celui déjà en place
 - Vidéo hosting : BunnyNet recommandé dès 50+ vidéos (5-15$/mois)
 - Traduction : Loco Translate pour franciser complètement l'interface
 

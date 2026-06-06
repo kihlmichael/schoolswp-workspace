@@ -1,14 +1,14 @@
-# Scripts vidéo -- Module 5 : Email séquences et nurturing
+# Scripts vidéo - Module 5 : Email séquences et nurturing
 
 **Formation** : Maîtriser FluentCRM
-**Module** : M5 -- Email séquences et nurturing (Premium)
+**Module** : M5 - Email séquences et nurturing (Premium)
 **Leçons** : 6 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~50 min de vidéo
 **Date** : 2026-03-23
 
 ---
 
-## Leçon 5.1 -- Comprends les séquences : quand les utiliser vs une campagne
+## Leçon 5.1 : Comprends les séquences : quand les utiliser vs une campagne
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Tu sais envoyer des campagnes. Mais une campagne, c'est un envoi ponctuel. Tu l'envoies, c'est fini. Une séquence, c'est différent : c'est une série d'emails envoyés automatiquement dans un ordre précis, avec des délais entre chaque envoi. Et c'est là que ton email marketing devient vraiment efficace.
 
-**[ÉCRAN -- slide "Campagne vs Séquence vs Automation"]**
+**[ÉCRAN - slide "Campagne vs Séquence vs Automation"]**
 
 Posons les bases clairement. Il y a trois outils d'envoi dans FluentCRM, et chacun a un rôle précis.
 
@@ -30,7 +30,7 @@ La séquence : une série d'emails envoyés automatiquement, dans l'ordre, avec 
 
 L'automation : un workflow visuel avec des conditions, des branches, des déclencheurs. C'est plus puissant, mais plus complexe. On le verra dans le Module 6.
 
-**[ÉCRAN -- slide "Quand utiliser quoi ?"]**
+**[ÉCRAN - slide "Quand utiliser quoi ?"]**
 
 Utilise une campagne quand tu envoies un message ponctuel à un groupe de contacts. Un lancement, une newsletter mensuelle, une annonce.
 
@@ -38,7 +38,7 @@ Utilise une séquence quand tu veux qu'un contact reçoive une série d'emails p
 
 Utilise une automation quand tu as besoin de logique conditionnelle. Si le contact ouvre l'email, il va dans la branche A. S'il ne l'ouvre pas, branche B. On n'en est pas encore là.
 
-**[ÉCRAN -- screencast FluentCRM > Email Sequences]**
+**[ÉCRAN - screencast FluentCRM > Email Sequences]**
 
 Dans FluentCRM, va dans Email Sequences dans le menu latéral.
 
@@ -52,7 +52,7 @@ Clique sur "Create New Sequence".
 
 Tu vois l'interface de création. Un titre, et ensuite tu ajoutes tes emails un par un. Chaque email a un délai, un sujet, un contenu. Le premier email part immédiatement quand le contact entre dans la séquence. Les suivants partent après le délai que tu as configuré.
 
-**[ÉCRAN -- slide "Cas d'usage concrets schoolsWP"]**
+**[ÉCRAN - slide "Cas d'usage concrets schoolsWP"]**
 
 Voici les séquences les plus utiles quand tu vends des formations en ligne :
 
@@ -84,7 +84,7 @@ Tu comprends maintenant quand utiliser quoi. Dans la prochaine leçon, on crée 
 
 ---
 
-## Leçon 5.2 -- Crée ta première séquence d'onboarding
+## Leçon 5.2 : Crée ta première séquence d'onboarding
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -92,43 +92,43 @@ Tu comprends maintenant quand utiliser quoi. Dans la prochaine leçon, on crée 
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 On passe à la pratique. On va créer ensemble une séquence d'onboarding pour accueillir les nouveaux inscrits à ta formation gratuite. Cinq emails, sept jours. À la fin de cette leçon, ta séquence sera prête.
 
-**[ÉCRAN -- screencast FluentCRM]**
+**[ÉCRAN - screencast FluentCRM]**
 
 Va dans Email Sequences et clique sur "Create New Sequence".
 
 [Clic sur Create New Sequence]
 
-Donne un nom à ta séquence. Par exemple : "Onboarding -- Nouveau membre". Ce nom est interne, tes contacts ne le verront pas.
+Donne un nom à ta séquence. Par exemple : "Onboarding - Nouveau membre". Ce nom est interne, tes contacts ne le verront pas.
 
 [Saisie du titre]
 
 Tu arrives sur l'interface de la séquence. C'est une liste verticale où chaque ligne est un email. Pour l'instant, c'est vide.
 
-**[ÉCRAN -- slide "Structure de la séquence onboarding"]**
+**[ÉCRAN - slide "Structure de la séquence onboarding"]**
 
 Avant de plonger dans FluentCRM, voici la structure qu'on va suivre. C'est un modèle éprouvé pour les créateurs de formation.
 
-Email 1 -- Jour 0 : Bienvenue. Présente-toi, donne accès au contenu gratuit, fixe les attentes.
+Email 1 - Jour 0 : Bienvenue. Présente-toi, donne accès au contenu gratuit, fixe les attentes.
 
-Email 2 -- Jour 1 : Valeur gratuite. Partage un conseil actionnable ou une ressource complémentaire. Tu montres ton expertise.
+Email 2 - Jour 1 : Valeur gratuite. Partage un conseil actionnable ou une ressource complémentaire. Tu montres ton expertise.
 
-Email 3 -- Jour 3 : Témoignage. Partage le retour d'expérience d'un utilisateur. La preuve sociale fait le travail à ta place.
+Email 3 - Jour 3 : Témoignage. Partage le retour d'expérience d'un utilisateur. La preuve sociale fait le travail à ta place.
 
-Email 4 -- Jour 5 : Contenu avancé. Un aperçu de ce que contient la formation payante. Tu donnes un avant-goût sans tout dévoiler.
+Email 4 - Jour 5 : Contenu avancé. Un aperçu de ce que contient la formation payante. Tu donnes un avant-goût sans tout dévoiler.
 
-Email 5 -- Jour 7 : Offre. Présente ta formation premium avec un appel à l'action clair.
+Email 5 - Jour 7 : Offre. Présente ta formation premium avec un appel à l'action clair.
 
-**[ÉCRAN -- screencast : création du premier email]**
+**[ÉCRAN - screencast : création du premier email]**
 
 Clique sur "Add Email" ou le bouton "+" pour ajouter ton premier email.
 
 [Clic sur Add Email]
 
-Remplis le sujet. Pour le premier email : "Bienvenue {{contact.first_name}} -- ton accès est prêt".
+Remplis le sujet. Pour le premier email : "Bienvenue {{contact.first_name}} - ton accès est prêt".
 
 [Saisie du sujet]
 
@@ -138,7 +138,7 @@ Le délai d'attente : mets 0. Le premier email part immédiatement quand le cont
 
 Maintenant, rédige le contenu. Sois direct. Présente-toi en une phrase, donne le lien d'accès au contenu gratuit, et dis au contact ce qu'il va recevoir dans les prochains jours.
 
-[Rédaction du contenu -- screencast]
+[Rédaction du contenu - screencast]
 
 Exemple de structure :
 
@@ -152,7 +152,7 @@ Dans les prochains jours, je vais te partager des ressources pour aller plus loi
 
 Pas besoin d'en faire trop. Court, clair, utile.
 
-**[ÉCRAN -- screencast : ajout des emails suivants]**
+**[ÉCRAN - screencast : ajout des emails suivants]**
 
 Clique de nouveau sur "Add Email" pour l'email 2.
 
@@ -178,7 +178,7 @@ Email 5 : délai 2 jours. Sujet : "Prêt à passer au niveau suivant ?". C'est t
 
 [Ajout de l'email 5]
 
-**[ÉCRAN -- screencast : vue d'ensemble de la séquence]**
+**[ÉCRAN - screencast : vue d'ensemble de la séquence]**
 
 Ta séquence est complète. Cinq emails, répartis sur 7 jours.
 
@@ -186,7 +186,7 @@ Ta séquence est complète. Cinq emails, répartis sur 7 jours.
 
 Vérifie l'ordre, les délais, les sujets. Si tu veux réorganiser, tu peux glisser-déposer les emails.
 
-**[ÉCRAN -- screencast : paramètres de la séquence]**
+**[ÉCRAN - screencast : paramètres de la séquence]**
 
 Avant de publier, clique sur les paramètres de la séquence en haut.
 
@@ -221,7 +221,7 @@ Ta séquence existe. Mais le timing, c'est ce qui fait la différence entre un e
 
 ---
 
-## Leçon 5.3 -- Configure le timing : délais, jours spécifiques, heures d'envoi
+## Leçon 5.3 : Configure le timing : délais, jours spécifiques, heures d'envoi
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -229,11 +229,11 @@ Ta séquence existe. Mais le timing, c'est ce qui fait la différence entre un e
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Tu as ta séquence. Mais si tes emails partent à 3h du matin un dimanche, personne ne les lira. Le timing, c'est ce qui transforme un bon email en email ouvert. FluentCRM te donne un contrôle précis là-dessus.
 
-**[ÉCRAN -- screencast FluentCRM > Sequence > Settings]**
+**[ÉCRAN - screencast FluentCRM > Sequence > Settings]**
 
 Ouvre ta séquence et clique sur les paramètres en haut.
 
@@ -241,7 +241,7 @@ Ouvre ta séquence et clique sur les paramètres en haut.
 
 Tu vois trois réglages principaux : les jours d'envoi, les heures d'envoi et le fuseau horaire.
 
-**[ÉCRAN -- screencast : jours d'envoi]**
+**[ÉCRAN - screencast : jours d'envoi]**
 
 Premier réglage : les jours d'envoi. Par défaut, FluentCRM envoie tous les jours, du lundi au dimanche.
 
@@ -253,7 +253,7 @@ Pour une séquence professionnelle, désactive le samedi et le dimanche. La plup
 
 Si un email est programmé un samedi, FluentCRM le décale automatiquement au lundi suivant. Pas besoin de recalculer tes délais.
 
-**[ÉCRAN -- screencast : heures d'envoi]**
+**[ÉCRAN - screencast : heures d'envoi]**
 
 Deuxième réglage : la fenêtre horaire. Tu définis une heure de début et une heure de fin.
 
@@ -263,7 +263,7 @@ Règle recommandée : entre 8h et 10h du matin. C'est le moment où la plupart d
 
 Évite les envois après 18h. L'email sera noyé dans les newsletters du soir.
 
-**[ÉCRAN -- screencast : fuseau horaire]**
+**[ÉCRAN - screencast : fuseau horaire]**
 
 Troisième réglage : le fuseau horaire. FluentCRM utilise le fuseau horaire de ton site WordPress.
 
@@ -271,9 +271,9 @@ Troisième réglage : le fuseau horaire. FluentCRM utilise le fuseau horaire de 
 
 Vérifie dans WordPress > Réglages > General que ton fuseau est correct. Si ton audience est en France, assure-toi que c'est bien Europe/Paris.
 
-Si tu as une audience internationale, choisis le fuseau de la majorité de tes contacts. FluentCRM ne gère pas les envois par fuseau horaire individuel -- c'est une limitation à connaître.
+Si tu as une audience internationale, choisis le fuseau de la majorité de tes contacts. FluentCRM ne gère pas les envois par fuseau horaire individuel - c'est une limitation à connaître.
 
-**[ÉCRAN -- slide "Timing optimal par type de séquence"]**
+**[ÉCRAN - slide "Timing optimal par type de séquence"]**
 
 Le bon timing dépend du type de séquence.
 
@@ -283,7 +283,7 @@ Nurturing : J+0, J+3, J+7, J+14, J+21. Plus espacé. Tu construis la relation da
 
 Re-engagement : J+0, J+3, J+7. Trois emails maximum. Si le contact ne réagit pas après trois tentatives, arrête. Insister ne sert à rien.
 
-**[ÉCRAN -- screencast : délai par email]**
+**[ÉCRAN - screencast : délai par email]**
 
 Reviens dans la liste des emails de ta séquence. Chaque email a son propre délai.
 
@@ -316,7 +316,7 @@ Le timing est calé. Dans la prochaine leçon, on construit une séquence plus a
 
 ---
 
-## Leçon 5.4 -- Construis une séquence de nurturing (lead vers acheteur)
+## Leçon 5.4 : Construis une séquence de nurturing (lead vers acheteur)
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -324,31 +324,31 @@ Le timing est calé. Dans la prochaine leçon, on construit une séquence plus a
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 L'onboarding accueille. Le nurturing convertit. Un contact qui télécharge ton lead magnet n'est pas prêt à acheter. Pas encore. La séquence de nurturing, c'est le pont entre "je te découvre" et "je te fais confiance, je passe à l'action".
 
-**[ÉCRAN -- slide "Anatomie d'une séquence de nurturing"]**
+**[ÉCRAN - slide "Anatomie d'une séquence de nurturing"]**
 
 Une bonne séquence de nurturing suit une progression psychologique. Pas une suite d'emails au hasard.
 
-Phase 1 -- Crédibilité (emails 1-2) : tu montres que tu comprends le problème du contact. Tu donnes de la valeur sans rien demander.
+Phase 1 - Crédibilité (emails 1-2) : tu montres que tu comprends le problème du contact. Tu donnes de la valeur sans rien demander.
 
-Phase 2 -- Preuve (emails 3-4) : tu partages des résultats concrets. Témoignages, études de cas, chiffres. Le contact commence à se dire "ça marche vraiment".
+Phase 2 - Preuve (emails 3-4) : tu partages des résultats concrets. Témoignages, études de cas, chiffres. Le contact commence à se dire "ça marche vraiment".
 
-Phase 3 -- Projection (email 5) : tu aides le contact à se projeter. À quoi ressemble sa situation après avoir utilisé ta solution ?
+Phase 3 - Projection (email 5) : tu aides le contact à se projeter. À quoi ressemble sa situation après avoir utilisé ta solution ?
 
-Phase 4 -- Offre (emails 6-7) : tu présentes ton offre avec un appel à l'action clair. Tu lèves les dernières objections.
+Phase 4 - Offre (emails 6-7) : tu présentes ton offre avec un appel à l'action clair. Tu lèves les dernières objections.
 
-**[ÉCRAN -- screencast FluentCRM]**
+**[ÉCRAN - screencast FluentCRM]**
 
-Crée une nouvelle séquence. Nom : "Nurturing -- Lead Magnet LMS".
+Crée une nouvelle séquence. Nom : "Nurturing - Lead Magnet LMS".
 
 [Création de la séquence]
 
-**[ÉCRAN -- screencast : email 1 -- le problème]**
+**[ÉCRAN - screencast : email 1 - le problème]**
 
-Email 1 -- Délai : 0 (immédiat). Sujet : "Le piège dans lequel tombent 80% des créateurs de formation".
+Email 1 - Délai : 0 (immédiat). Sujet : "Le piège dans lequel tombent 80% des créateurs de formation".
 
 [Ajout de l'email 1]
 
@@ -356,61 +356,61 @@ Le contenu identifie le problème principal de ton audience. Pas de solution enc
 
 Ça crée de l'engagement. Les contacts qui se reconnaissent sont plus susceptibles d'ouvrir les emails suivants.
 
-**[ÉCRAN -- screencast : email 2 -- la valeur]**
+**[ÉCRAN - screencast : email 2 - la valeur]**
 
-Email 2 -- Délai : 3 jours. Sujet : "La méthode que j'utilise pour [résultat concret]".
+Email 2 - Délai : 3 jours. Sujet : "La méthode que j'utilise pour [résultat concret]".
 
 [Ajout de l'email 2]
 
 Ici, tu partages une méthode ou un framework. Du contenu concret et actionnable. Le contact applique ton conseil et obtient un premier résultat. Ça renforce ta crédibilité.
 
-**[ÉCRAN -- screencast : email 3 -- le témoignage]**
+**[ÉCRAN - screencast : email 3 - le témoignage]**
 
-Email 3 -- Délai : 4 jours. Sujet : "Comment [Prénom] est passé de [situation A] à [situation B]".
+Email 3 - Délai : 4 jours. Sujet : "Comment [Prénom] est passé de [situation A] à [situation B]".
 
 [Ajout de l'email 3]
 
 Un témoignage détaillé. Pas juste "c'est génial". Le parcours complet : la situation de départ, ce que la personne a fait, le résultat obtenu. Les chiffres rendent le témoignage crédible.
 
-**[ÉCRAN -- screencast : email 4 -- l'erreur courante]**
+**[ÉCRAN - screencast : email 4 - l'erreur courante]**
 
-Email 4 -- Délai : 4 jours. Sujet : "L'erreur qui m'a coûté [X] mois (et comment l'éviter)".
+Email 4 - Délai : 4 jours. Sujet : "L'erreur qui m'a coûté [X] mois (et comment l'éviter)".
 
 [Ajout de l'email 4]
 
 Tu partages une erreur personnelle ou une erreur fréquente chez tes clients. Être vulnérable renforce la confiance. Et la solution à cette erreur, c'est justement ce que ta formation enseigne.
 
-**[ÉCRAN -- screencast : email 5 -- la projection]**
+**[ÉCRAN - screencast : email 5 - la projection]**
 
-Email 5 -- Délai : 7 jours. Sujet : "Imagine si [situation idéale du contact]".
+Email 5 - Délai : 7 jours. Sujet : "Imagine si [situation idéale du contact]".
 
 [Ajout de l'email 5]
 
 Tu peins le tableau de la situation idéale. Pas de vente ici. Juste de la projection. Le contact visualise ce que serait sa vie après avoir résolu son problème. C'est l'email le plus émotionnel de la séquence.
 
-**[ÉCRAN -- screencast : email 6 -- l'offre]**
+**[ÉCRAN - screencast : email 6 - l'offre]**
 
-Email 6 -- Délai : 3 jours. Sujet : "J'ai créé quelque chose pour toi".
+Email 6 - Délai : 3 jours. Sujet : "J'ai créé quelque chose pour toi".
 
 [Ajout de l'email 6]
 
 Première présentation de l'offre. Tu expliques ce que contient ta formation, pour qui c'est fait, et ce que le contact va obtenir concrètement. Un seul lien vers la page de vente. Pas de pression.
 
-**[ÉCRAN -- screencast : email 7 -- la dernière chance]**
+**[ÉCRAN - screencast : email 7 - la dernière chance]**
 
-Email 7 -- Délai : 2 jours. Sujet : "Dernière chose avant qu'on passe à autre chose".
+Email 7 - Délai : 2 jours. Sujet : "Dernière chose avant qu'on passe à autre chose".
 
 [Ajout de l'email 7]
 
 Tu rappelles l'offre. Tu lèves les objections courantes : "Est-ce que c'est fait pour moi ?", "Est-ce que j'ai le temps ?", "Et si ça ne marche pas ?". Et tu ajoutes un élément d'urgence si tu en as un : places limitées, bonus temporaire, fermeture des inscriptions.
 
-**[ÉCRAN -- screencast : vue d'ensemble de la séquence]**
+**[ÉCRAN - screencast : vue d'ensemble de la séquence]**
 
 Sept emails sur environ un mois. Voici la vue complète.
 
 [Affichage de la séquence avec tous les délais]
 
-**[ÉCRAN -- slide "Métriques à surveiller"]**
+**[ÉCRAN - slide "Métriques à surveiller"]**
 
 Les métriques clés de ta séquence de nurturing :
 
@@ -441,7 +441,7 @@ Tu sais convertir des prospects. Mais que fais-tu des contacts qui décrochent ?
 
 ---
 
-## Leçon 5.5 -- Construis une séquence de re-engagement
+## Leçon 5.5 : Construis une séquence de re-engagement
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -449,11 +449,11 @@ Tu sais convertir des prospects. Mais que fais-tu des contacts qui décrochent ?
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Tu as des contacts qui n'ouvrent plus tes emails. Des étudiants qui ont commencé un cours et qui ne l'ont jamais terminé. Ça arrive à tout le monde. La question, c'est : est-ce que tu les laisses partir ou est-ce que tu essaies de les récupérer ? On va construire une séquence de re-engagement.
 
-**[ÉCRAN -- slide "Quand déclencher le re-engagement ?"]**
+**[ÉCRAN - slide "Quand déclencher le re-engagement ?"]**
 
 Première question : quand considérer qu'un contact est "inactif" ?
 
@@ -463,25 +463,25 @@ Pour un étudiant de formation : cours non terminé depuis 14 jours. Si un étud
 
 Le déclenchement de cette séquence se fait via une automation (Module 6). Pour l'instant, on construit les emails. L'automation viendra connecter le tout.
 
-**[ÉCRAN -- screencast FluentCRM]**
+**[ÉCRAN - screencast FluentCRM]**
 
-Crée une nouvelle séquence. Nom : "Re-engagement -- Étudiants inactifs".
+Crée une nouvelle séquence. Nom : "Re-engagement - Étudiants inactifs".
 
 [Création de la séquence]
 
-**[ÉCRAN -- slide "Structure du re-engagement"]**
+**[ÉCRAN - slide "Structure du re-engagement"]**
 
 Règle fondamentale : trois emails maximum. Le re-engagement, c'est une tentative, pas du harcèlement. Si le contact ne réagit pas après trois emails, tu le laisses tranquille.
 
-Email 1 -- Jour 0 : Le rappel bienveillant. Tu rappelles ce que le contact a commencé sans accuser ni culpabiliser.
+Email 1 - Jour 0 : Le rappel bienveillant. Tu rappelles ce que le contact a commencé sans accuser ni culpabiliser.
 
-Email 2 -- Jour 3 : L'incitation. Tu donnes une raison concrète de revenir. Un nouveau contenu, un conseil exclusif, un raccourci.
+Email 2 - Jour 3 : L'incitation. Tu donnes une raison concrète de revenir. Un nouveau contenu, un conseil exclusif, un raccourci.
 
-Email 3 -- Jour 7 : Le dernier email. Tu annonces que c'est le dernier message. Le contact sait que c'est sa dernière chance d'agir.
+Email 3 - Jour 7 : Le dernier email. Tu annonces que c'est le dernier message. Le contact sait que c'est sa dernière chance d'agir.
 
-**[ÉCRAN -- screencast : email 1 -- le rappel]**
+**[ÉCRAN - screencast : email 1 - le rappel]**
 
-Email 1 -- Délai : 0. Sujet : "Tu en étais où avec [nom du cours] ?".
+Email 1 - Délai : 0. Sujet : "Tu en étais où avec [nom du cours] ?".
 
 [Ajout de l'email 1]
 
@@ -489,37 +489,37 @@ Le ton est décontracté. Pas de culpabilisation. Le contenu dit : "J'ai remarqu
 
 Ajoute un lien direct vers la leçon en cours. Pas vers la page d'accueil du cours. Vers la leçon exacte. Moins il y a de friction, plus le contact revient.
 
-**[ÉCRAN -- screencast : email 2 -- l'incitation]**
+**[ÉCRAN - screencast : email 2 - l'incitation]**
 
-Email 2 -- Délai : 3 jours. Sujet : "Un raccourci pour [bénéfice concret]".
+Email 2 - Délai : 3 jours. Sujet : "Un raccourci pour [bénéfice concret]".
 
 [Ajout de l'email 2]
 
 Ici, tu donnes une raison nouvelle de revenir. Quelques approches qui fonctionnent :
 
-"J'ai ajouté une ressource bonus dans le Module 3" -- la curiosité pousse à revenir.
+"J'ai ajouté une ressource bonus dans le Module 3" - la curiosité pousse à revenir.
 
-"Voici un résumé des 3 points clés du cours en 2 minutes" -- tu réduis l'effort perçu.
+"Voici un résumé des 3 points clés du cours en 2 minutes" - tu réduis l'effort perçu.
 
-"Les membres qui ont terminé ce module ont obtenu [résultat]" -- la preuve sociale motive.
+"Les membres qui ont terminé ce module ont obtenu [résultat]" - la preuve sociale motive.
 
 Choisis l'approche qui correspond le mieux à ta formation.
 
-**[ÉCRAN -- screencast : email 3 -- le dernier message]**
+**[ÉCRAN - screencast : email 3 - le dernier message]**
 
-Email 3 -- Délai : 4 jours. Sujet : "Je ne vais pas insister".
+Email 3 - Délai : 4 jours. Sujet : "Je ne vais pas insister".
 
 [Ajout de l'email 3]
 
 C'est l'email le plus important. Tu annonces clairement que c'est ton dernier message sur le sujet. Deux choses à inclure :
 
-Un rappel de ce que le contact perd en ne terminant pas. Pas du chantage, du factuel. "Le Module 4 couvre [compétence clé] -- c'est souvent ce qui fait la différence."
+Un rappel de ce que le contact perd en ne terminant pas. Pas du chantage, du factuel. "Le Module 4 couvre [compétence clé] - c'est souvent ce qui fait la différence."
 
 Un dernier lien d'accès direct.
 
 Et c'est tout. Si le contact ne réagit pas, tu respectes son choix.
 
-**[ÉCRAN -- slide "Après la séquence : que faire des contacts inactifs ?"]**
+**[ÉCRAN - slide "Après la séquence : que faire des contacts inactifs ?"]**
 
 Après les trois emails, deux scénarios.
 
@@ -550,7 +550,7 @@ Tu as trois séquences opérationnelles : onboarding, nurturing, re-engagement. 
 
 ---
 
-## Leçon 5.6 -- A/B testing dans tes séquences : teste tes sujets
+## Leçon 5.6 : A/B testing dans tes séquences : teste tes sujets
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -558,11 +558,11 @@ Tu as trois séquences opérationnelles : onboarding, nurturing, re-engagement. 
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Tu as écrit tes emails. Les sujets te semblent bons. Mais est-ce qu'ils sont vraiment les meilleurs ? La seule façon de le savoir, c'est de tester. L'A/B testing, c'est comparer deux versions du même email pour voir laquelle performe le mieux.
 
-**[ÉCRAN -- slide "A/B testing dans les séquences : ce qui est possible"]**
+**[ÉCRAN - slide "A/B testing dans les séquences : ce qui est possible"]**
 
 Soyons clairs sur ce que FluentCRM permet et ne permet pas dans les séquences.
 
@@ -570,7 +570,7 @@ Dans les campagnes, l'A/B testing est natif. Tu crées deux sujets, FluentCRM en
 
 Dans les séquences, il n'y a pas de bouton A/B testing intégré. Mais tu peux le faire manuellement. Et c'est même plus fiable, parce que tu contrôles la durée du test.
 
-**[ÉCRAN -- slide "Méthode manuelle d'A/B testing"]**
+**[ÉCRAN - slide "Méthode manuelle d'A/B testing"]**
 
 Voici la méthode en quatre étapes.
 
@@ -585,7 +585,7 @@ Version B : "3 étapes pour [résultat] (sans [obstacle])"
 
 Étape 4 : compare les résultats. Après 4 semaines, regarde les taux d'ouverture de chaque version. Le sujet avec le meilleur taux d'ouverture gagne.
 
-**[ÉCRAN -- screencast FluentCRM]**
+**[ÉCRAN - screencast FluentCRM]**
 
 Ouvre ta séquence et clique sur l'email que tu veux tester.
 
@@ -595,7 +595,7 @@ Change le sujet. Note quelque part (un tableur, une note) la date du changement 
 
 [Modification du sujet]
 
-**[ÉCRAN -- screencast : lecture des stats]**
+**[ÉCRAN - screencast : lecture des stats]**
 
 Pour voir les résultats, clique sur le rapport de ta séquence.
 
@@ -607,7 +607,7 @@ Tu vois le taux d'ouverture et le taux de clic pour chaque email. Compare les p�
 
 Attention : il te faut au moins 50 envois par version pour que le test soit significatif. Avec moins, la différence peut être due au hasard.
 
-**[ÉCRAN -- slide "Que tester en priorité ?"]**
+**[ÉCRAN - slide "Que tester en priorité ?"]**
 
 Teste d'abord les sujets. C'est le facteur numéro un du taux d'ouverture.
 
@@ -632,7 +632,7 @@ Tu sais créer, timer et tester tes séquences. Dans la prochaine leçon, c'est 
 ---
 
 **Points clés** :
-- FluentCRM n'a pas d'A/B testing natif dans les séquences -- méthode manuelle en 4 étapes
+- FluentCRM n'a pas d'A/B testing natif dans les séquences - méthode manuelle en 4 étapes
 - Tester un seul élément à la fois (commencer par le sujet)
 - Minimum 50 envois par version pour un résultat fiable
 - Alterner les sujets sur des périodes de 2 semaines chacune
@@ -642,7 +642,7 @@ Tu sais créer, timer et tester tes séquences. Dans la prochaine leçon, c'est 
 
 ---
 
-## Leçon 5.7 -- Exercice : Crée ta séquence d'onboarding en 5 emails
+## Leçon 5.7 : Exercice : Crée ta séquence d'onboarding en 5 emails
 
 **Durée** : 7 min
 **Type** : Exercice guidé
@@ -650,17 +650,17 @@ Tu sais créer, timer et tester tes séquences. Dans la prochaine leçon, c'est 
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 C'est ton tour. Tu vas créer ta propre séquence d'onboarding de A à Z. Pas un copier-coller de ce qu'on a vu. Ta séquence, adaptée à ta formation, à ton audience, à ton ton. Je te guide étape par étape.
 
-**[ÉCRAN -- slide "Consignes de l'exercice"]**
+**[ÉCRAN - slide "Consignes de l'exercice"]**
 
 Voici ce que tu vas produire :
 
 Une séquence de 5 emails répartis sur 7 jours. Chaque email a un objectif précis. Tu dois écrire les sujets et le contenu toi-même.
 
-**[ÉCRAN -- slide "Étape 1 : Définis le contexte"]**
+**[ÉCRAN - slide "Étape 1 : Définis le contexte"]**
 
 Avant d'ouvrir FluentCRM, réponds à ces trois questions :
 
@@ -672,23 +672,23 @@ Avant d'ouvrir FluentCRM, réponds à ces trois questions :
 
 Note tes réponses. Elles vont guider chaque email.
 
-**[ÉCRAN -- slide "Étape 2 : Écris tes 5 sujets"]**
+**[ÉCRAN - slide "Étape 2 : Écris tes 5 sujets"]**
 
 Maintenant, écris les sujets de tes 5 emails en suivant cette structure :
 
-Email 1 (J0) -- Bienvenue : accueille et donne accès au contenu promis. Sujet direct, pas de mystère.
+Email 1 (J0) - Bienvenue : accueille et donne accès au contenu promis. Sujet direct, pas de mystère.
 
-Email 2 (J1) -- Valeur : partage un conseil actionnable. Le sujet doit promettre un bénéfice concret.
+Email 2 (J1) - Valeur : partage un conseil actionnable. Le sujet doit promettre un bénéfice concret.
 
-Email 3 (J3) -- Preuve sociale : témoignage ou étude de cas. Le sujet doit mentionner un résultat chiffré.
+Email 3 (J3) - Preuve sociale : témoignage ou étude de cas. Le sujet doit mentionner un résultat chiffré.
 
-Email 4 (J5) -- Contenu avancé : un aperçu de ton offre premium. Le sujet doit susciter la curiosité.
+Email 4 (J5) - Contenu avancé : un aperçu de ton offre premium. Le sujet doit susciter la curiosité.
 
-Email 5 (J7) -- Offre : appel à l'action. Le sujet doit être clair et direct.
+Email 5 (J7) - Offre : appel à l'action. Le sujet doit être clair et direct.
 
 Écris tes 5 sujets avant de passer à la suite.
 
-**[ÉCRAN -- slide "Étape 3 : Rédige tes emails"]**
+**[ÉCRAN - slide "Étape 3 : Rédige tes emails"]**
 
 Pour chaque email, respecte ces règles :
 
@@ -700,7 +700,7 @@ Personnalisation : utilise au minimum {{contact.first_name}} dans le premier ema
 
 Un seul appel à l'action par email. Pas deux liens, pas trois boutons. Un seul.
 
-**[ÉCRAN -- slide "Étape 4 : Configure dans FluentCRM"]**
+**[ÉCRAN - slide "Étape 4 : Configure dans FluentCRM"]**
 
 Ouvre FluentCRM. Crée ta séquence.
 
@@ -713,7 +713,7 @@ Checklist de configuration :
 - [ ] Fenêtre horaire : 8h-10h
 - [ ] Fuseau horaire correct
 
-**[ÉCRAN -- slide "Étape 5 : Teste"]**
+**[ÉCRAN - slide "Étape 5 : Teste"]**
 
 Avant de publier :
 
@@ -723,7 +723,7 @@ Avant de publier :
 4. Vérifie que les liens fonctionnent
 5. Vérifie que les smart codes s'affichent correctement
 
-**[ÉCRAN -- slide "Grille d'auto-évaluation"]**
+**[ÉCRAN - slide "Grille d'auto-évaluation"]**
 
 Note chaque email sur ces critères :
 
@@ -754,7 +754,7 @@ Prends le temps de bien faire cet exercice. Une bonne séquence d'onboarding tra
 
 ---
 
-## Quiz M5 -- Email séquences et nurturing
+## Quiz M5 - Email séquences et nurturing
 
 **Type** : Quiz TutorLMS (8 questions)
 **Seuil de réussite** : 80%
@@ -768,7 +768,7 @@ Prends le temps de bien faire cet exercice. Une bonne séquence d'onboarding tra
 **Question 2** : Quel délai recommande-t-on pour le premier email d'une séquence d'onboarding ?
 - A) 24 heures
 - B) 1 jour
-- C) 0 -- envoi immédiat *(bonne réponse)*
+- C) 0 - envoi immédiat *(bonne réponse)*
 - D) 2 heures
 
 **Question 3** : Dans la structure de séquence d'onboarding schoolsWP, quel est l'objectif de l'email 3 (J+3) ?

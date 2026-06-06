@@ -1,0 +1,912 @@
+{
+  "updatedAt": "2026-06-01T16:28:33.246Z",
+  "createdAt": "2026-06-01T13:57:16.487Z",
+  "id": "EpRp4CM03aWJyVyu",
+  "name": "[Prod] Sheets > Multi: Radar Plugins schoolsWP (W210)",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "n_manual",
+      "name": "Test manuel",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "n_sched",
+      "name": "Lundi 8h Paris",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1040,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "options": {}
+      },
+      "id": "n_read",
+      "name": "Lire sources",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -816,
+        352
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f1",
+              "leftValue": "={{ $json.actif }}",
+              "rightValue": "yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_filter",
+      "name": "Garder actif",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -592,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": 9999
+      },
+      "id": "n_limit",
+      "name": "Limite test",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -368,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v2/scrape",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"url\": $json.url, \"formats\": [\"markdown\"], \"onlyMainContent\": true } }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "n_fire",
+      "name": "Firecrawl Scrape",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -144,
+        352
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "tDpWWa0q2KgN4SwC",
+          "name": "Firecrawl"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "value": "={{ $json.data && $json.data.markdown ? $json.data.markdown : '' }}",
+        "dataPropertyName": "current_hash"
+      },
+      "id": "n_hash",
+      "name": "Hash SHA256",
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 2,
+      "position": [
+        80,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ch1",
+              "leftValue": "={{ $json.current_hash }}",
+              "rightValue": "={{ $('Limite test').item.json.dernier_hash }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_ifchange",
+      "name": "Changement",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        304,
+        352
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Tu es l'assistant éditorial de schoolsWP.\n\nContexte : schoolsWP est un média WordPress qui aide les freelances, créateurs, formateurs et entrepreneurs à rendre WordPress plus clair, structuré et utile.\n\nMission : analyser le contenu récupéré d'une page web surveillée et produire une alerte éditoriale ou business claire.\n\nDonnées :\n- Outil : {{ $('Limite test').item.json.outillage }}\n- Catégorie : {{ $('Limite test').item.json.categorie }}\n- Type de page : {{ $('Limite test').item.json.type_page }}\n- URL : {{ $('Limite test').item.json.url }}\n- Contenu extrait : {{ ($json.data && $json.data.markdown ? $json.data.markdown : '').slice(0, 6000) }}\n\nContraintes :\n- Réponds en français.\n- Sois concret et factuel.\n- N'invente rien. Si le contenu ne permet pas de conclure, dis-le et baisse le niveau de confiance.\n- Ne propose jamais de publication automatique.\n- Priorise l'intérêt pour schoolsWP (éditorial, SEO, business, affiliation).\n- Le score est un entier de 1 à 10 reflétant l'impact pour schoolsWP.\n\nTu DOIS répondre UNIQUEMENT au format JSON valide avec la structure suivante :\n{\n  \"type_changement\": \"Description courte du changement\",\n  \"resume\": \"Résumé détaillé en français\",\n  \"impact_schoolswp\": \"Impact estimé\",\n  \"score\": 6,\n  \"action_recommandee\": \"Action recommandée\",\n  \"contenu_suggere\": \"Contenu suggéré\",\n  \"niveau_confiance\": \"Elevé/Moyen/Faible\",\n  \"a_verifier_manuellement\": \"Oui/Non\"\n}",
+        "batching": {
+          "batchSize": 1,
+          "delayBetweenBatches": 1500
+        }
+      },
+      "id": "n_llm",
+      "name": "Analyse IA LLM",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        528,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let text = $input.first().json.text || '';\ntext = text.replace(/^```json\\s*/i, '').replace(/```$/, '').trim();\nlet parsed = {};\ntry {\n  parsed = JSON.parse(text);\n} catch (e) {\n  const start = text.indexOf('{');\n  const end = text.lastIndexOf('}');\n  if (start !== -1 && end !== -1) {\n    try {\n      parsed = JSON.parse(text.substring(start, end + 1));\n    } catch (e2) {\n      parsed = {\n        type_changement: \"Erreur de parsing\",\n        resume: \"Impossible de parser le JSON retourné par l'IA. Texte brut : \" + text.slice(0, 200),\n        impact_schoolswp: \"Aucun\",\n        score: 1,\n        action_recommandee: \"Vérifier manuellement\",\n        contenu_suggere: \"\",\n        niveau_confiance: \"Faible\",\n        a_verifier_manuellement: \"Oui\"\n      };\n    }\n  } else {\n    parsed = {\n      type_changement: \"Erreur de parsing\",\n      resume: \"Aucun objet JSON trouvé dans la réponse de l'IA. Texte brut : \" + text.slice(0, 200),\n      impact_schoolswp: \"Aucun\",\n      score: 1,\n      action_recommandee: \"Vérifier manuellement\",\n      contenu_suggere: \"\",\n      niveau_confiance: \"Faible\",\n      a_verifier_manuellement: \"Oui\"\n    };\n  }\n}\nreturn [{ json: { output: parsed } }];"
+      },
+      "id": "n_parse_code",
+      "name": "Analyse IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        768,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "snapshots"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "snapshot_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "date_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "hash": "={{ $('Hash SHA256').item.json.current_hash }}",
+            "markdown_excerpt": "={{ ($('Hash SHA256').item.json.data && $('Hash SHA256').item.json.data.markdown ? $('Hash SHA256').item.json.data.markdown : '').slice(0, 500) }}",
+            "summary": "={{ $json.output.resume }}",
+            "status": "change_detecte",
+            "run_id": "={{ $execution.id }}",
+            "firecrawl_status": "={{ $('Firecrawl Scrape').item.json.success ? 'ok' : 'partiel' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "snapshot_id",
+              "displayName": "snapshot_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_id",
+              "displayName": "source_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "outillage",
+              "displayName": "outillage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url",
+              "displayName": "url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date_check",
+              "displayName": "date_check",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hash",
+              "displayName": "hash",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "markdown_excerpt",
+              "displayName": "markdown_excerpt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "run_id",
+              "displayName": "run_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "firecrawl_status",
+              "displayName": "firecrawl_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "n_snap",
+      "name": "Append snapshot",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        976,
+        48
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "sa1",
+              "leftValue": "={{ $('Analyse IA').item.json.output.score }}",
+              "rightValue": "={{ Number($('Limite test').item.json.score_min_alert) || 6 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_ifalert",
+      "name": "Score alert",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        -48
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "alerts"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "schema": [],
+          "value": {
+            "alert_id": "={{ $now.toMillis() }}-{{ $('Limite test').item.json.id }}",
+            "date": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "source_id": "={{ $('Limite test').item.json.id }}",
+            "outillage": "={{ $('Limite test').item.json.outillage }}",
+            "type_page": "={{ $('Limite test').item.json.type_page }}",
+            "url": "={{ $('Limite test').item.json.url }}",
+            "type_changement": "={{ $('Analyse IA').item.json.output.type_changement }}",
+            "resume": "={{ $('Analyse IA').item.json.output.resume }}",
+            "impact_schoolswp": "={{ $('Analyse IA').item.json.output.impact_schoolswp }}",
+            "score": "={{ $('Analyse IA').item.json.output.score }}",
+            "action_recommandee": "={{ $('Analyse IA').item.json.output.action_recommandee }}",
+            "contenu_suggere": "={{ $('Analyse IA').item.json.output.contenu_suggere }}",
+            "niveau_confiance": "={{ $('Analyse IA').item.json.output.niveau_confiance }}",
+            "a_verifier_manuellement": "={{ $('Analyse IA').item.json.output.a_verifier_manuellement }}",
+            "statut": "nouveau",
+            "run_id": "={{ $execution.id }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "n_alert",
+      "name": "Append alert",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1424,
+        -48
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "sd1",
+              "leftValue": "={{ $('Analyse IA').item.json.output.score }}",
+              "rightValue": "={{ Number($('Limite test').item.json.score_min_discord) || 8 }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "n_ifdiscord",
+      "name": "Score discord",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1648,
+        -48
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "webhook",
+        "content": "=🔌 **Radar Plugins — {{ $('Limite test').item.json.outillage }}** ({{ $('Limite test').item.json.type_page }})\nScore {{ $('Analyse IA').item.json.output.score }}/10 · {{ $('Analyse IA').item.json.output.type_changement }}\n\n{{ $('Analyse IA').item.json.output.resume }}\n\n**Impact schoolsWP** : {{ $('Analyse IA').item.json.output.impact_schoolswp }}\n**Action** : {{ $('Analyse IA').item.json.output.action_recommandee }}\n🔗 {{ $('Limite test').item.json.url }}",
+        "options": {}
+      },
+      "id": "n_discord",
+      "name": "Discord",
+      "type": "n8n-nodes-base.discord",
+      "typeVersion": 2,
+      "position": [
+        1872,
+        -144
+      ],
+      "webhookId": "25637f16-e72f-4dd2-8cfa-8bdc2afcdece",
+      "credentials": {
+        "discordWebhookApi": {
+          "id": "7jPmTW9DQTLNPUxz",
+          "name": "Discord - schoolsWP - ⏐🤖⏐ʙᴏᴛꜱ"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "REMPLACER_CHAT_ID",
+        "text": "=🔌 Radar Plugins — {{ $('Limite test').item.json.outillage }} ({{ $('Limite test').item.json.type_page }})\nScore {{ $('Analyse IA').item.json.output.score }}/10 · {{ $('Analyse IA').item.json.output.type_changement }}\n\n{{ $('Analyse IA').item.json.output.resume }}\n\nImpact schoolsWP : {{ $('Analyse IA').item.json.output.impact_schoolswp }}\nAction : {{ $('Analyse IA').item.json.output.action_recommandee }}\n🔗 {{ $('Limite test').item.json.url }}",
+        "additionalFields": {}
+      },
+      "id": "n_telegram",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1872,
+        48
+      ],
+      "webhookId": "4a71c4d3-4ba3-4c72-a645-d15cc386b404",
+      "credentials": {
+        "telegramApi": {
+          "id": "kBJ7tOqtWLTWmH60",
+          "name": "Telegram - schoolswp_yt_bot"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "sendTo": "contact@michaelkihl.fr",
+        "subject": "=[Radar Plugins] {{ $('Limite test').item.json.outillage }} — score {{ $('Analyse IA').item.json.output.score }}",
+        "emailType": "text",
+        "message": "=Radar Plugins schoolsWP\n\nOutil : {{ $('Limite test').item.json.outillage }} ({{ $('Limite test').item.json.type_page }})\nType de changement : {{ $('Analyse IA').item.json.output.type_changement }}\nScore : {{ $('Analyse IA').item.json.output.score }}/10\nNiveau de confiance : {{ $('Analyse IA').item.json.output.niveau_confiance }}\n\nRésumé : {{ $('Analyse IA').item.json.output.resume }}\n\nImpact schoolsWP : {{ $('Analyse IA').item.json.output.impact_schoolswp }}\nAction recommandée : {{ $('Analyse IA').item.json.output.action_recommandee }}\nContenu suggéré : {{ $('Analyse IA').item.json.output.contenu_suggere }}\nÀ vérifier manuellement : {{ $('Analyse IA').item.json.output.a_verifier_manuellement }}\n\nURL : {{ $('Limite test').item.json.url }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "n_email",
+      "name": "Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1872,
+        240
+      ],
+      "webhookId": "edd3bbfb-3807-44d9-b002-4fff864eec0b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "HiznAUTleb8KrYy8",
+          "name": "Gmail - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_hash": "={{ $('Hash SHA256').item.json.current_hash }}",
+            "dernier_resume": "={{ $('Analyse IA').item.json.output.resume }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "n_majchange",
+      "name": "MAJ source change",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1200,
+        144
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "sources"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [],
+          "value": {
+            "id": "={{ $('Limite test').item.json.id }}",
+            "dernier_check": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "dernier_hash": "={{ $('Hash SHA256').item.json.current_hash }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "n_majnochange",
+      "name": "MAJ source nochange",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        448
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4v6PLN0tU8vBlab5",
+          "name": "Google Sheets - schoolsWP v2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Radar Plugins schoolsWP — PRODUCTION (W210)\n\n**PROD** : Limite réglée à 9999 pour le run complet (~170 sources).\n\nSeuils : `score_min_alert`=6 (onglet alerts) · `score_min_discord`=8 (Discord+Telegram+Email).\n\nGouvernance : Firecrawl collecte · n8n orchestre · IA analyse · Michaël valide. Aucune publication auto.",
+        "height": 200,
+        "width": 520
+      },
+      "id": "n_note",
+      "name": "Note MVP",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        -176
+      ]
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {}
+      },
+      "id": "n_gemini",
+      "name": "Gemini 2.5 Flash",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        608,
+        272
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Zit3mMoDN70ZqEIk",
+          "name": "Gemini_Production_API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Test manuel": {
+      "main": [
+        [
+          {
+            "node": "Lire sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lundi 8h Paris": {
+      "main": [
+        [
+          {
+            "node": "Lire sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lire sources": {
+      "main": [
+        [
+          {
+            "node": "Garder actif",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Garder actif": {
+      "main": [
+        [
+          {
+            "node": "Limite test",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limite test": {
+      "main": [
+        [
+          {
+            "node": "Firecrawl Scrape",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Firecrawl Scrape": {
+      "main": [
+        [
+          {
+            "node": "Hash SHA256",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hash SHA256": {
+      "main": [
+        [
+          {
+            "node": "Changement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Changement": {
+      "main": [
+        [
+          {
+            "node": "Analyse IA LLM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MAJ source nochange",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse IA LLM": {
+      "main": [
+        [
+          {
+            "node": "Analyse IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyse IA": {
+      "main": [
+        [
+          {
+            "node": "Append snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append snapshot": {
+      "main": [
+        [
+          {
+            "node": "Score alert",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "MAJ source change",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score alert": {
+      "main": [
+        [
+          {
+            "node": "Append alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append alert": {
+      "main": [
+        [
+          {
+            "node": "Score discord",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score discord": {
+      "main": [
+        [
+          {
+            "node": "Discord",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Analyse IA LLM",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": null,
+  "versionId": "415cf56a-b281-476f-8c21-af50363a1f66",
+  "activeVersionId": null,
+  "versionCounter": 13,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-06-01T13:57:16.495Z",
+      "createdAt": "2026-06-01T13:57:16.495Z",
+      "role": "workflow:owner",
+      "workflowId": "EpRp4CM03aWJyVyu",
+      "projectId": "VowIPsxG3tIBPRZk",
+      "project": {
+        "updatedAt": "2025-12-12T16:29:40.938Z",
+        "createdAt": "2025-12-12T16:04:53.821Z",
+        "id": "VowIPsxG3tIBPRZk",
+        "name": "Michaël KIHL <contact@michaelkihl.fr>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}

@@ -1,9 +1,9 @@
-# Script video — Module 7, Lecon 1 : L'ecosysteme WPManageNinja
+# Script video - Module 7, Lecon 1 : L'ecosysteme WPManageNinja
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 7 — Ecosysteme et integrations
-**Lecon** : 1/9 — L'ecosysteme WPManageNinja
+**Module** : 7 - Ecosysteme et integrations
+**Lecon** : 1/9 - L'ecosysteme WPManageNinja
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, slides presentation chaque plugin, slide schema ecosysteme
@@ -11,15 +11,15 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-FluentForms ne vit pas tout seul. Il fait partie d'un ecosysteme complet cree par WPManageNinja — une entreprise qui a construit une suite d'outils WordPress qui communiquent nativement entre eux.
+FluentForms ne vit pas tout seul. Il fait partie d'un ecosysteme complet cree par WPManageNinja - une entreprise qui a construit une suite d'outils WordPress qui communiquent nativement entre eux.
 
 Aujourd'hui, on fait le tour de la famille. 10 produits, chacun avec un role precis.
 
-**[SECTION 1 — slide "La suite WPManageNinja"]**
+**[SECTION 1 - slide "La suite WPManageNinja"]**
 
-FluentForms. Les formulaires — c'est notre sujet depuis le debut. Capture de leads, paiements, quiz, surveys.
+FluentForms. Les formulaires - c'est notre sujet depuis le debut. Capture de leads, paiements, quiz, surveys.
 
 FluentCRM. Le CRM. Contacts, listes, tags, sequences email, automations, scoring. On l'a vu en detail au module 5. L'integration avec FluentForms est native et profonde.
 
@@ -37,13 +37,13 @@ FluentCommunity. Les communautes. Forums, groupes, espaces de discussion. Le tou
 
 Ninja Tables. Les tableaux de donnees. Affiche des donnees dynamiques, des comparatifs, des prix dans des tableaux responsives. Ideal pour les pages de comparaison.
 
-WP Social Ninja. La preuve sociale. Affiche les avis Google, les feeds Instagram, les temoignages — directement sur ton site.
+WP Social Ninja. La preuve sociale. Affiche les avis Google, les feeds Instagram, les temoignages - directement sur ton site.
 
-**[SECTION 2 — slide "Comment ils communiquent"]**
+**[SECTION 2 - slide "Comment ils communiquent"]**
 
 Le point fort de cet ecosysteme : la communication native.
 
-FluentForms envoie les donnees a FluentCRM sans plugin intermediaire. FluentCRM declenche des automations basees sur les soumissions FluentForms. FluentSMTP gere l'envoi de tous les emails — notifications FluentForms et campagnes FluentCRM. FluentBooking peut etre connecte a un formulaire FluentForms. FluentSupport recoit les tickets depuis FluentForms.
+FluentForms envoie les donnees a FluentCRM sans plugin intermediaire. FluentCRM declenche des automations basees sur les soumissions FluentForms. FluentSMTP gere l'envoi de tous les emails - notifications FluentForms et campagnes FluentCRM. FluentBooking peut etre connecte a un formulaire FluentForms. FluentSupport recoit les tickets depuis FluentForms.
 
 Tout passe par la meme base de donnees WordPress. Pas d'API externe, pas de webhook, pas de synchronisation qui casse. Un contact dans FluentCRM est le meme contact partout.
 
@@ -51,7 +51,7 @@ C'est la difference fondamentale avec un ecosysteme SaaS. Avec Typeform + Mailch
 
 Avec la suite Fluent, une base de donnees, un ecosysteme. Tes donnees restent chez toi.
 
-**[SECTION 3 — slide "Ce que tu n'as PAS besoin"]**
+**[SECTION 3 - slide "Ce que tu n'as PAS besoin"]**
 
 Avec cet ecosysteme, voici les SaaS que tu peux remplacer.
 
@@ -63,15 +63,15 @@ Trello / Asana → FluentBoards.
 Gumroad / Lemonsqueezy → FluentCart.
 Circle / Mighty Networks → FluentCommunity.
 
-A chaque fois, tu remplaces un abonnement mensuel SaaS par un plugin WordPress — souvent avec une licence annuelle ou lifetime. Le cout est significativement inferieur.
+A chaque fois, tu remplaces un abonnement mensuel SaaS par un plugin WordPress - souvent avec une licence annuelle ou lifetime. Le cout est significativement inferieur.
 
-Et l'avantage data : tes contacts, tes emails, tes tickets, tes paiements — tout est dans ta base de donnees WordPress. Tu en es proprietaire.
+Et l'avantage data : tes contacts, tes emails, tes tickets, tes paiements - tout est dans ta base de donnees WordPress. Tu en es proprietaire.
 
-**[SECTION 4 — slide "La stack schoolsWP"]**
+**[SECTION 4 - slide "La stack schoolsWP"]**
 
 Sur schoolsWP, voici ce qu'on utilise.
 
-FluentForms pour tous les formulaires — contact, opt-in, devis, paiements, quiz.
+FluentForms pour tous les formulaires - contact, opt-in, devis, paiements, quiz.
 FluentCRM pour le CRM et les sequences email.
 FluentSMTP pour l'envoi via Brevo.
 CartFlows pour les funnels de vente (avec WooCommerce).
@@ -83,19 +83,19 @@ FluentBooking, FluentSupport et les autres s'ajoutent quand le besoin se present
 
 Le principe : installe ce dont tu as besoin maintenant. Ajoute le reste quand tu atteins une limite concrete. L'ecosysteme est la, il t'attend.
 
-**[SECTION 5 — slide "Avantage natif WordPress"]**
+**[SECTION 5 - slide "Avantage natif WordPress"]**
 
 Dernier point et pas des moindres.
 
 Toute la suite est native WordPress. Ca veut dire : pas de compte SaaS a creer, pas de donnees qui transitent par des serveurs tiers, pas de dependance a un service externe qui peut changer ses prix ou fermer.
 
-Si tu changes d'hebergeur, tu migres ton WordPress et tout suit. Tes formulaires, ton CRM, tes emails, tes tickets — tout est dans la meme base de donnees.
+Si tu changes d'hebergeur, tu migres ton WordPress et tout suit. Tes formulaires, ton CRM, tes emails, tes tickets - tout est dans la meme base de donnees.
 
 C'est la philosophie schoolsWP : maitriser son infrastructure, posseder ses donnees, ne dependre de personne.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Tu connais maintenant la famille au complet. Dans les prochaines lecons, on explore les integrations concretes — FluentSMTP, FluentBooking, FluentSupport, et les connexions externes comme Brevo, Google Sheets, les webhooks et le RGPD.
+Tu connais maintenant la famille au complet. Dans les prochaines lecons, on explore les integrations concretes - FluentSMTP, FluentBooking, FluentSupport, et les connexions externes comme Brevo, Google Sheets, les webhooks et le RGPD.
 
 On se retrouve dans la lecon suivante.
 
@@ -115,5 +115,5 @@ On se retrouve dans la lecon suivante.
 **Notes de production** :
 - Face camera : intro (l'ecosysteme) + outro (transition integrations)
 - Slides : 5 slides (suite complete, communication, remplacement SaaS, stack schoolsWP, avantage natif)
-- Screencast : aucun — lecon de presentation
-- Ton : enthousiaste mais factuel — montrer la valeur sans survendre
+- Screencast : aucun - lecon de presentation
+- Ton : enthousiaste mais factuel - montrer la valeur sans survendre

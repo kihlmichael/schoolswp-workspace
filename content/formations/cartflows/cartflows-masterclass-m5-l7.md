@@ -1,9 +1,9 @@
-# Lecon 5.7 — Upsell avec PayPal
+# Lecon 5.7 - Upsell avec PayPal
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 5 — One-Click Upsells et Downsells
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 5 - One-Click Upsells et Downsells
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre les limitations de PayPal pour les upsells one-click, connaitre les solutions CartFlows, et savoir comment adapter son funnel selon la methode de paiement du client.
@@ -12,19 +12,19 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tout ce qu'on a construit jusqu'ici fonctionne parfaitement avec Stripe. Un clic, le debit passe, le produit est ajoute. Mais que se passe-t-il quand ton client paie avec PayPal ? C'est une question importante, parce que PayPal represente encore une part significative des paiements en ligne. Et la reponse n'est pas aussi simple qu'avec Stripe.
 
 ---
 
-**[SECTION 1 — Le probleme technique de PayPal]**
+**[SECTION 1 - Le probleme technique de PayPal]**
 
-**[ECRAN — schema comparatif : flux Stripe vs flux PayPal]**
+**[ECRAN - schema comparatif : flux Stripe vs flux PayPal]**
 
 Avec Stripe, quand le client paie au checkout, ses informations de carte sont tokenisees et stockees de maniere securisee. CartFlows peut reutiliser ce token pour debiter un montant supplementaire au moment de l'upsell. C'est instantane et transparent.
 
-Avec PayPal, ca ne fonctionne pas de la meme maniere. PayPal ne supporte pas nativement les "Reference Transactions" — c'est-a-dire la possibilite de faire un deuxieme paiement automatique sans revalidation du client sur PayPal.
+Avec PayPal, ca ne fonctionne pas de la meme maniere. PayPal ne supporte pas nativement les "Reference Transactions" - c'est-a-dire la possibilite de faire un deuxieme paiement automatique sans revalidation du client sur PayPal.
 
 Concretement : quand le client paie avec PayPal au checkout, CartFlows ne peut pas debiter un montant supplementaire en un clic au moment de l'upsell. PayPal exige que le client soit redirige vers PayPal pour valider chaque transaction separement.
 
@@ -32,9 +32,9 @@ Ca casse l'experience one-click. Et ca casse les taux de conversion.
 
 ---
 
-**[SECTION 2 — Les Reference Transactions PayPal]**
+**[SECTION 2 - Les Reference Transactions PayPal]**
 
-**[ECRAN — page PayPal Reference Transactions]**
+**[ECRAN - page PayPal Reference Transactions]**
 
 Il existe une solution PayPal qui s'appelle "Reference Transactions". Ce feature permet exactement ce dont CartFlows a besoin : debiter un client qui a deja autorise un paiement precedent.
 
@@ -46,9 +46,9 @@ Mais pour la majorite des utilisateurs, cette option n'est pas disponible. Voyon
 
 ---
 
-**[SECTION 3 — Solution CartFlows : adapter le flow selon la methode de paiement]**
+**[SECTION 3 - Solution CartFlows : adapter le flow selon la methode de paiement]**
 
-**[ECRAN — CartFlows → Settings → Upsell → PayPal]**
+**[ECRAN - CartFlows → Settings → Upsell → PayPal]**
 
 CartFlows propose des options pour gerer les paiements PayPal dans les upsells :
 
@@ -60,7 +60,7 @@ C'est fonctionnel, mais le taux de conversion chute fortement. Chaque etape supp
 **Option 2 : Proposer un formulaire Stripe sur la page upsell.**
 Au lieu de reutiliser PayPal, tu proposes au client de payer l'upsell par carte via Stripe. La page upsell affiche un mini-formulaire de carte. Ce n'est plus du one-click, mais c'est plus fluide qu'une redirection PayPal complete.
 
-**[ECRAN — page upsell avec formulaire de paiement alternatif]**
+**[ECRAN - page upsell avec formulaire de paiement alternatif]**
 
 **Option 3 : Sauter l'upsell pour les clients PayPal.**
 Si tes upsells sont essentiels a ta marge et que l'experience degradee PayPal nuit a ta marque, tu peux configurer CartFlows pour ne pas afficher l'upsell aux clients qui ont paye en PayPal. Ils passent directement du Checkout a la Thank You Page.
@@ -69,9 +69,9 @@ C'est radical, mais ca evite de casser l'experience.
 
 ---
 
-**[SECTION 4 — Comment detecter la methode de paiement]**
+**[SECTION 4 - Comment detecter la methode de paiement]**
 
-**[ECRAN — CartFlows Pro → Conditional Rules → Payment Method]**
+**[ECRAN - CartFlows Pro → Conditional Rules → Payment Method]**
 
 Dans CartFlows Pro, tu peux creer des regles conditionnelles basees sur la methode de paiement utilisee au checkout.
 
@@ -79,33 +79,33 @@ Configure une regle sur ton step Upsell :
 - SI methode de paiement = Stripe → affiche l'upsell one-click (comportement standard)
 - SI methode de paiement = PayPal → applique le comportement que tu as choisi (redirect, formulaire alternatif, ou skip)
 
-**[ECRAN — configuration de la regle conditionnelle]**
+**[ECRAN - configuration de la regle conditionnelle]**
 
 Cette detection est automatique. CartFlows sait quel moyen de paiement le client a utilise et applique la regle correspondante.
 
 ---
 
-**[SECTION 5 — Conseil strategique : privilegier Stripe]**
+**[SECTION 5 - Conseil strategique : privilegier Stripe]**
 
-**[ECRAN — comparaison Stripe vs PayPal pour les funnels]**
+**[ECRAN - comparaison Stripe vs PayPal pour les funnels]**
 
-Si les upsells sont un pilier de ta strategie de monetisation — et apres ce module, ils devraient l'etre — alors Stripe doit etre ta passerelle de paiement principale.
+Si les upsells sont un pilier de ta strategie de monetisation - et apres ce module, ils devraient l'etre - alors Stripe doit etre ta passerelle de paiement principale.
 
 Ca ne veut pas dire supprimer PayPal. Certains clients preferent PayPal et ne commander pas sans. Mais tu peux influencer le choix :
 
 - **Affiche Stripe en premier** dans l'ordre des methodes de paiement sur ton checkout
 - **Mets en avant la carte bancaire** avec un design plus visible que PayPal
-- **Precise "Paiement securise par carte"** a cote du champ — ca rassure
+- **Precise "Paiement securise par carte"** a cote du champ - ca rassure
 
 L'objectif n'est pas de forcer, mais de guider. Plus de clients sur Stripe = plus de clients eligibles au one-click upsell = plus de revenus additionnels.
 
-**[ECRAN — checkout avec Stripe en premier et PayPal en second]**
+**[ECRAN - checkout avec Stripe en premier et PayPal en second]**
 
 Et pour les clients qui choisissent quand meme PayPal, le comportement de repli que tu as configure prend le relais. Tout le monde est servi.
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 PayPal reste un moyen de paiement incontournable, mais il n'est pas ideal pour les upsells one-click. Maintenant tu connais les limites et les solutions. Mets Stripe en avant, configure un comportement de repli pour PayPal, et tu couvres 100% de tes clients.
 

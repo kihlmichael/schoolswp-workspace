@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 4 : Créer un cours (Backend)
+# Scripts vidéo - Module 4 : Créer un cours (Backend)
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M4 — Créer un cours (Backend) (Premium)
+**Module** : M4 - Créer un cours (Backend) (Premium)
 **Leçons** : 6 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~50 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 4.1 — Vue d'ensemble du Course Builder
+### Leçon 4.1 : Vue d'ensemble du Course Builder
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -17,60 +17,60 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-C'est le module le plus important de cette formation. Créer un cours, c'est l'action numéro un de TutorLMS — tout le reste en découle. Et tout passe par un seul endroit : le Course Builder. Dans cette leçon, je te fais le tour complet de l'interface avant qu'on entre dans le détail de chaque section.
+C'est le module le plus important de cette formation. Créer un cours, c'est l'action numéro un de TutorLMS - tout le reste en découle. Et tout passe par un seul endroit : le Course Builder. Dans cette leçon, je te fais le tour complet de l'interface avant qu'on entre dans le détail de chaque section.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Courses > Add New]
 
 Pour accéder au Course Builder, deux chemins. Premier chemin : dans le menu latéral de WordPress, va dans Tutor LMS, puis Courses, puis clique sur "Add New" en haut de page. Deuxième chemin : depuis le tableau de bord front-end de TutorLMS, clique sur "Create a New Course". Les deux t'amènent au même endroit.
 
-**[ÉCRAN — screencast Course Builder]**
+**[ÉCRAN - screencast Course Builder]**
 
 [Vue d'ensemble du Course Builder avec les différents onglets visibles]
 
 Le Course Builder est organisé en trois sections principales, accessibles via des onglets ou en scrollant.
 
-Première section : "Course Info" — les informations de base. C'est là que tu définis le titre, la description, la catégorie, l'image mise en avant et les réglages de base du cours. On détaillera ça dans la leçon 4.2.
+Première section : "Course Info" - les informations de base. C'est là que tu définis le titre, la description, la catégorie, l'image mise en avant et les réglages de base du cours. On détaillera ça dans la leçon 4.2.
 
-**[ÉCRAN — screencast section Curriculum]**
+**[ÉCRAN - screencast section Curriculum]**
 
 [Scroll vers la section Curriculum]
 
-Deuxième section : "Curriculum". C'est le cœur du cours. Tu y crées tes topics — les grandes parties — et à l'intérieur de chaque topic, tu ajoutes des leçons, des quiz et des assignments. C'est la structure pédagogique de ton cours. On verra ça en détail dans la leçon 4.3.
+Deuxième section : "Curriculum". C'est le cœur du cours. Tu y crées tes topics - les grandes parties - et à l'intérieur de chaque topic, tu ajoutes des leçons, des quiz et des assignments. C'est la structure pédagogique de ton cours. On verra ça en détail dans la leçon 4.3.
 
-**[ÉCRAN — screencast section Additional Settings]**
+**[ÉCRAN - screencast section Additional Settings]**
 
 [Scroll vers Additional Settings]
 
-Troisième section : "Additional Settings" — les réglages complémentaires. Objectifs d'apprentissage, prérequis, durée totale, pièces jointes, certificats, cours en direct via Zoom ou Google Meet. On couvrira ça dans la leçon 4.4.
+Troisième section : "Additional Settings" - les réglages complémentaires. Objectifs d'apprentissage, prérequis, durée totale, pièces jointes, certificats, cours en direct via Zoom ou Google Meet. On couvrira ça dans la leçon 4.4.
 
-**[ÉCRAN — screencast bouton AI Studio]**
+**[ÉCRAN - screencast bouton AI Studio]**
 
 [Montre le bouton "Generate with AI"]
 
 Et un bonus : le bouton "Generate with AI" en haut du Course Builder. C'est l'accès à AI Studio, l'assistant IA de TutorLMS qui peut générer un plan de cours complet, des titres, des descriptions et même des images. On en parlera dans la leçon 4.5.
 
-**[ÉCRAN — slide "Workflow de création"]**
+**[ÉCRAN - slide "Workflow de création"]**
 
 Le workflow typique pour créer un cours, c'est :
 
-1. Remplir les informations de base — titre, description, catégorie, image
-2. Construire le curriculum — topics, leçons, quiz
-3. Configurer les réglages additionnels — objectifs, prérequis, certificat
+1. Remplir les informations de base - titre, description, catégorie, image
+2. Construire le curriculum - topics, leçons, quiz
+3. Configurer les réglages additionnels - objectifs, prérequis, certificat
 4. Publier ou sauvegarder en brouillon
 
-Tu peux avancer dans l'ordre que tu veux — rien n'est verrouillé — mais cet ordre est le plus logique.
+Tu peux avancer dans l'ordre que tu veux - rien n'est verrouillé - mais cet ordre est le plus logique.
 
-**[ÉCRAN — screencast boutons Publish/Draft]**
+**[ÉCRAN - screencast boutons Publish/Draft]**
 
 [Montre les boutons en haut à droite du Course Builder]
 
 En haut à droite du Course Builder, tu retrouves les boutons de publication. "Save as Draft" pour enregistrer sans publier, "Publish" pour mettre le cours en ligne. Tu peux aussi revenir sur un cours publié et le repasser en brouillon à tout moment.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu connais maintenant la géographie du Course Builder. Dans la prochaine leçon, on attaque la première section : les informations de base. C'est la fondation de ton cours.
 
@@ -87,7 +87,7 @@ Tu connais maintenant la géographie du Course Builder. Dans la prochaine leçon
 
 ---
 
-### Leçon 4.2 — Informations de base du cours
+### Leçon 4.2 : Informations de base du cours
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -95,41 +95,41 @@ Tu connais maintenant la géographie du Course Builder. Dans la prochaine leçon
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Un bon cours commence par une bonne fiche. Titre, description, catégorie, image — c'est ce que l'élève voit en premier. Et c'est aussi ce que Google indexe. Dans cette leçon, on remplit ensemble chaque champ de la section "Course Info" du Course Builder.
+Un bon cours commence par une bonne fiche. Titre, description, catégorie, image - c'est ce que l'élève voit en premier. Et c'est aussi ce que Google indexe. Dans cette leçon, on remplit ensemble chaque champ de la section "Course Info" du Course Builder.
 
-**[ÉCRAN — screencast Course Builder > Course Info]**
+**[ÉCRAN - screencast Course Builder > Course Info]**
 
 [Ouvre le Course Builder sur un nouveau cours]
 
 Quand tu crées un nouveau cours, la première section visible, c'est "Course Info". On va prendre chaque champ dans l'ordre.
 
-**[ÉCRAN — screencast champ Title]**
+**[ÉCRAN - screencast champ Title]**
 
 [Clique dans le champ Title]
 
 Premier champ : le titre du cours. C'est le champ le plus important. Il doit être clair, descriptif, et donner envie. Évite les titres vagues comme "Formation WordPress". Préfère quelque chose de précis : "Créer et vendre une formation en ligne avec TutorLMS".
 
-Le titre apparaît dans la liste des cours, dans les résultats de recherche Google, et dans les emails de notification. Choisis-le bien dès le départ — tu pourras le modifier plus tard, mais l'URL du cours sera basée sur le premier titre.
+Le titre apparaît dans la liste des cours, dans les résultats de recherche Google, et dans les emails de notification. Choisis-le bien dès le départ - tu pourras le modifier plus tard, mais l'URL du cours sera basée sur le premier titre.
 
-**[ÉCRAN — screencast champ Description]**
+**[ÉCRAN - screencast champ Description]**
 
 [Clique dans le champ Description]
 
-Deuxième champ : la description du cours. C'est un éditeur de texte complet — tu peux mettre en forme, ajouter des listes, des liens, des images.
+Deuxième champ : la description du cours. C'est un éditeur de texte complet - tu peux mettre en forme, ajouter des listes, des liens, des images.
 
-Cette description apparaît sur la page de vente du cours. C'est ton argumentaire. Structure-la en trois parties : ce que l'élève va apprendre, à qui s'adresse le cours, et ce qu'il saura faire à la fin. Pas besoin de 2000 mots — 150 à 300 mots suffisent.
+Cette description apparaît sur la page de vente du cours. C'est ton argumentaire. Structure-la en trois parties : ce que l'élève va apprendre, à qui s'adresse le cours, et ce qu'il saura faire à la fin. Pas besoin de 2000 mots - 150 à 300 mots suffisent.
 
-**[ÉCRAN — screencast section Catégories et Tags]**
+**[ÉCRAN - screencast section Catégories et Tags]**
 
 [Montre le panneau Categories à droite]
 
-À droite, tu retrouves les catégories et les tags. Les catégories organisent ton catalogue de cours — par exemple "WordPress", "Marketing", "Design". Les tags sont des mots-clés complémentaires plus précis.
+À droite, tu retrouves les catégories et les tags. Les catégories organisent ton catalogue de cours - par exemple "WordPress", "Marketing", "Design". Les tags sont des mots-clés complémentaires plus précis.
 
 Si tu n'as pas encore de catégories, clique sur "Add New Category" pour en créer une directement depuis le Course Builder. Coche la catégorie qui correspond à ton cours. Un cours peut appartenir à plusieurs catégories.
 
-**[ÉCRAN — screencast Featured Image]**
+**[ÉCRAN - screencast Featured Image]**
 
 [Montre le panneau Featured Image]
 
@@ -141,34 +141,34 @@ Taille recommandée : 700x430 pixels minimum. Format 16:10 idéalement. Utilise 
 
 Clique sur "Set Featured Image", uploade ou sélectionne une image depuis ta médiathèque WordPress. Valide.
 
-**[ÉCRAN — screencast Vidéo]**
+**[ÉCRAN - screencast Vidéo]**
 
 [Montre la section Vidéo du Course Builder]
 
 Tu peux ajouter une vidéo d'introduction au cours. Plusieurs sources possibles : upload direct en HTML5, ou URL YouTube, Vimeo, ou embed externe.
 
-Cette vidéo apparaît en haut de la page du cours, avant le curriculum. C'est ta bande-annonce — 1 à 3 minutes pour donner envie de s'inscrire. C'est optionnel, mais ça augmente significativement le taux d'inscription.
+Cette vidéo apparaît en haut de la page du cours, avant le curriculum. C'est ta bande-annonce - 1 à 3 minutes pour donner envie de s'inscrire. C'est optionnel, mais ça augmente significativement le taux d'inscription.
 
-**[ÉCRAN — screencast section Instructor]**
+**[ÉCRAN - screencast section Instructor]**
 
 [Montre le champ Instructor]
 
 Le champ Instructor est pré-rempli avec ton compte. Si tu as plusieurs instructeurs sur ta plateforme, tu peux en assigner un autre ici. Pour un site solo, tu n'as rien à modifier.
 
-**[ÉCRAN — screencast Maximum Students et Difficulty Level]**
+**[ÉCRAN - screencast Maximum Students et Difficulty Level]**
 
 [Montre ces champs]
 
-Deux réglages supplémentaires. "Maximum Students" : le nombre maximum d'élèves autorisés. Laisse à 0 pour illimité — c'est le cas le plus courant. Et "Difficulty Level" : débutant, intermédiaire, expert. C'est un indicateur affiché sur la page du cours pour aider l'élève à se situer.
+Deux réglages supplémentaires. "Maximum Students" : le nombre maximum d'élèves autorisés. Laisse à 0 pour illimité - c'est le cas le plus courant. Et "Difficulty Level" : débutant, intermédiaire, expert. C'est un indicateur affiché sur la page du cours pour aider l'élève à se situer.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta fiche de cours est complète. Titre, description, catégorie, image, vidéo de présentation. Dans la prochaine leçon, on passe au cœur du sujet : le curriculum. C'est là que tu construis le contenu réel de ton cours.
 
 ---
 
 **Points clés** :
-- Title : clair, descriptif, précis — base de l'URL du cours
+- Title : clair, descriptif, précis - base de l'URL du cours
 - Description : 150-300 mots, structurée (apprentissage, public cible, résultats)
 - Catégories et Tags : organisent le catalogue, cumulables
 - Featured Image : 700x430 px minimum, format 16:10
@@ -180,7 +180,7 @@ Ta fiche de cours est complète. Titre, description, catégorie, image, vidéo d
 
 ---
 
-### Leçon 4.3 — Curriculum : topics, leçons et quiz
+### Leçon 4.3 : Curriculum : topics, leçons et quiz
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -188,11 +188,11 @@ Ta fiche de cours est complète. Titre, description, catégorie, image, vidéo d
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le curriculum, c'est la colonne vertébrale de ton cours. C'est là que tu structures le parcours d'apprentissage : les grandes parties, les leçons à l'intérieur, les quiz pour valider. Si ton curriculum est mal organisé, même le meilleur contenu sera difficile à suivre. On va tout construire ensemble, étape par étape.
 
-**[ÉCRAN — screencast Course Builder > Curriculum]**
+**[ÉCRAN - screencast Course Builder > Curriculum]**
 
 [Scroll vers la section Curriculum]
 
@@ -200,7 +200,7 @@ La section Curriculum est divisée en "Topics". Un topic, c'est un chapitre, un 
 
 Pense à un livre. Le topic, c'est le chapitre. La leçon, c'est une page ou un sous-chapitre. Le quiz, c'est l'exercice de fin de chapitre.
 
-**[ÉCRAN — screencast création Topic]**
+**[ÉCRAN - screencast création Topic]**
 
 [Clique sur "+ Add Topic"]
 
@@ -208,11 +208,11 @@ Pour créer ton premier topic, clique sur le bouton "+ Add Topic" en bas de la s
 
 [Remplit le formulaire Topic]
 
-Deux champs : le titre du topic et un résumé optionnel. Le titre est obligatoire — choisis quelque chose de clair. Par exemple : "Module 1 — Prise en main de l'interface". Le résumé apparaît sous le titre dans le curriculum visible par l'élève.
+Deux champs : le titre du topic et un résumé optionnel. Le titre est obligatoire - choisis quelque chose de clair. Par exemple : "Module 1 - Prise en main de l'interface". Le résumé apparaît sous le titre dans le curriculum visible par l'élève.
 
 Clique sur "Ok" pour sauvegarder le topic.
 
-**[ÉCRAN — screencast ajout Lesson]**
+**[ÉCRAN - screencast ajout Lesson]**
 
 [Clique sur "+ Lesson" dans le topic]
 
@@ -220,62 +220,62 @@ Maintenant, on ajoute une leçon dans ce topic. Clique sur "+ Lesson". Une fenê
 
 [Remplit le formulaire Lesson]
 
-Le champ "Lesson Name" — c'est le titre de ta leçon. Ensuite, le champ contenu principal. C'est un éditeur riche — tu peux y mettre du texte formaté, des images, des liens, du code.
+Le champ "Lesson Name" - c'est le titre de ta leçon. Ensuite, le champ contenu principal. C'est un éditeur riche - tu peux y mettre du texte formaté, des images, des liens, du code.
 
-**[ÉCRAN — screencast options Lesson]**
+**[ÉCRAN - screencast options Lesson]**
 
 [Montre les options supplémentaires de la leçon]
 
 Sous le contenu, plusieurs options.
 
-"Featured Image" — une image pour cette leçon spécifique. Optionnel, mais utile si tu veux un visuel différent pour chaque leçon dans le curriculum.
+"Featured Image" - une image pour cette leçon spécifique. Optionnel, mais utile si tu veux un visuel différent pour chaque leçon dans le curriculum.
 
-"Vidéo" — tu peux ajouter une vidéo à la leçon. Upload direct, YouTube, Vimeo. Si ta leçon est une vidéo, c'est ici que tu la mets. Le champ "Video Playback Time" te permet de spécifier la durée manuellement — ça apparaît dans le curriculum pour que l'élève sache combien de temps ça prend.
+"Vidéo" - tu peux ajouter une vidéo à la leçon. Upload direct, YouTube, Vimeo. Si ta leçon est une vidéo, c'est ici que tu la mets. Le champ "Video Playback Time" te permet de spécifier la durée manuellement - ça apparaît dans le curriculum pour que l'élève sache combien de temps ça prend.
 
-"Exercise Files" — des fichiers téléchargeables par l'élève. PDF, documents, templates. Ça nécessite l'add-on Course Attachments.
+"Exercise Files" - des fichiers téléchargeables par l'élève. PDF, documents, templates. Ça nécessite l'add-on Course Attachments.
 
-"Lesson Preview" — si tu actives cette option, cette leçon sera accessible aux visiteurs non inscrits. Utile pour donner un aperçu gratuit de ton cours. Ça nécessite l'add-on Course Preview.
+"Lesson Preview" - si tu actives cette option, cette leçon sera accessible aux visiteurs non inscrits. Utile pour donner un aperçu gratuit de ton cours. Ça nécessite l'add-on Course Preview.
 
 Clique sur "Save" pour enregistrer ta leçon.
 
-**[ÉCRAN — screencast ajout Quiz]**
+**[ÉCRAN - screencast ajout Quiz]**
 
 [Clique sur "+ Quiz" dans le topic]
 
-Pour ajouter un quiz, clique sur "+ Quiz" dans le topic. On ne va pas détailler le Quiz Builder ici — il y a un module entier dédié aux quiz plus loin dans la formation. Pour l'instant, retiens juste que le quiz se crée et se place exactement comme une leçon, dans un topic.
+Pour ajouter un quiz, clique sur "+ Quiz" dans le topic. On ne va pas détailler le Quiz Builder ici - il y a un module entier dédié aux quiz plus loin dans la formation. Pour l'instant, retiens juste que le quiz se crée et se place exactement comme une leçon, dans un topic.
 
-**[ÉCRAN — screencast ajout Assignment]**
+**[ÉCRAN - screencast ajout Assignment]**
 
 [Montre le bouton "+ Assignment"]
 
-Si tu as l'add-on Assignments actif, tu vois aussi un bouton "+ Assignment". Un assignment, c'est un devoir que l'élève soumet et que tu corriges. Titre, consignes, pièces jointes, deadline, points — tout se configure dans la fenêtre modale.
+Si tu as l'add-on Assignments actif, tu vois aussi un bouton "+ Assignment". Un assignment, c'est un devoir que l'élève soumet et que tu corriges. Titre, consignes, pièces jointes, deadline, points - tout se configure dans la fenêtre modale.
 
-**[ÉCRAN — screencast drag-and-drop]**
+**[ÉCRAN - screencast drag-and-drop]**
 
 [Démonstration du glisser-déposer]
 
 Point important : l'ordre de tout dans le curriculum se modifie par glisser-déposer. Tu peux déplacer une leçon d'un topic à un autre, réorganiser l'ordre des quiz, repositionner un topic entier. Attrape l'élément par l'icône de déplacement à gauche, et dépose-le où tu veux.
 
-**[ÉCRAN — screencast création deuxième Topic]**
+**[ÉCRAN - screencast création deuxième Topic]**
 
 [Crée un deuxième topic avec leçons]
 
-On crée un deuxième topic pour voir la structure complète. "+ Add Topic", titre "Module 2 — Configuration avancée", Ok. Puis "+ Lesson" pour ajouter deux leçons dedans.
+On crée un deuxième topic pour voir la structure complète. "+ Add Topic", titre "Module 2 - Configuration avancée", Ok. Puis "+ Lesson" pour ajouter deux leçons dedans.
 
 [Montre le curriculum avec deux topics et plusieurs leçons]
 
 Voilà à quoi ressemble un curriculum structuré : deux topics, chacun avec ses leçons et potentiellement un quiz de fin de module. L'élève voit cette structure sur la page du cours et progresse de haut en bas.
 
-**[ÉCRAN — slide "Bonnes pratiques curriculum"]**
+**[ÉCRAN - slide "Bonnes pratiques curriculum"]**
 
 Quelques règles pour un bon curriculum :
 
 - 3 à 7 topics par cours. Plus de 7, l'élève se sent submergé. Moins de 3, ça manque de structure.
-- 3 à 10 leçons par topic. Garde une granularité fine — une leçon = un concept ou une action.
+- 3 à 10 leçons par topic. Garde une granularité fine - une leçon = un concept ou une action.
 - Un quiz par topic minimum pour valider les acquis.
-- Des titres explicites — l'élève doit comprendre ce qu'il va apprendre rien qu'en lisant le titre.
+- Des titres explicites - l'élève doit comprendre ce qu'il va apprendre rien qu'en lisant le titre.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton curriculum est en place. Dans la prochaine leçon, on configure les réglages additionnels : objectifs, prérequis, certificat. Ce sont les finitions qui font la différence entre un cours amateur et un cours professionnel.
 
@@ -293,7 +293,7 @@ Ton curriculum est en place. Dans la prochaine leçon, on configure les réglage
 
 ---
 
-### Leçon 4.4 — Réglages additionnels du cours
+### Leçon 4.4 : Réglages additionnels du cours
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -301,21 +301,21 @@ Ton curriculum est en place. Dans la prochaine leçon, on configure les réglage
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Les réglages additionnels, c'est ce qui transforme un cours basique en un cours professionnel. Objectifs d'apprentissage, prérequis, certificat, cours en direct — tout se configure dans cette section. La plupart de ces champs sont optionnels, mais les remplir correctement augmente la crédibilité de ton cours et le taux d'inscription.
+Les réglages additionnels, c'est ce qui transforme un cours basique en un cours professionnel. Objectifs d'apprentissage, prérequis, certificat, cours en direct - tout se configure dans cette section. La plupart de ces champs sont optionnels, mais les remplir correctement augmente la crédibilité de ton cours et le taux d'inscription.
 
-**[ÉCRAN — screencast Course Builder > Additional Settings]**
+**[ÉCRAN - screencast Course Builder > Additional Settings]**
 
 [Scroll vers la section Additional Settings]
 
 La section Additional Settings se trouve sous le Curriculum dans le Course Builder. Elle contient plusieurs blocs qu'on va prendre un par un.
 
-**[ÉCRAN — screencast "What Will I Learn?"]**
+**[ÉCRAN - screencast "What Will I Learn?"]**
 
 [Montre le champ "What Will I Learn?"]
 
-Premier bloc : "What Will I Learn?" — ce que l'élève va apprendre. C'est une liste de résultats concrets. Pas des descriptions vagues, mais des compétences précises.
+Premier bloc : "What Will I Learn?" - ce que l'élève va apprendre. C'est une liste de résultats concrets. Pas des descriptions vagues, mais des compétences précises.
 
 Mauvais exemple : "Comprendre WordPress". Bon exemple : "Configurer TutorLMS et publier ton premier cours payant en moins de 2 heures".
 
@@ -323,23 +323,23 @@ Ajoute 3 à 5 points. Chaque point doit répondre à la question : "Après cette
 
 Ce bloc apparaît en bonne place sur la page de vente du cours. C'est un argument de vente direct.
 
-**[ÉCRAN — screencast "Target Audience"]**
+**[ÉCRAN - screencast "Target Audience"]**
 
 [Montre le champ Target Audience]
 
-Deuxième bloc : "Target Audience" — à qui s'adresse ce cours. Sois précis. Pas "tout le monde", mais "les freelances WordPress qui veulent vendre des formations en ligne" ou "les formateurs qui migrent depuis Teachable vers WordPress".
+Deuxième bloc : "Target Audience" - à qui s'adresse ce cours. Sois précis. Pas "tout le monde", mais "les freelances WordPress qui veulent vendre des formations en ligne" ou "les formateurs qui migrent depuis Teachable vers WordPress".
 
 L'élève doit se reconnaître immédiatement. Si ton public cible est flou, l'élève hésite et ne s'inscrit pas.
 
-**[ÉCRAN — screencast "Total Course Duration"]**
+**[ÉCRAN - screencast "Total Course Duration"]**
 
 [Montre les champs Hours et Minutes]
 
-Troisième bloc : la durée totale du cours. Deux champs — heures et minutes. C'est une saisie manuelle — TutorLMS ne calcule pas automatiquement la durée à partir de tes vidéos.
+Troisième bloc : la durée totale du cours. Deux champs - heures et minutes. C'est une saisie manuelle - TutorLMS ne calcule pas automatiquement la durée à partir de tes vidéos.
 
 Indique une estimation réaliste. Si tu as 12 leçons vidéo de 6 minutes chacune, c'est environ 1 heure 12 minutes. L'élève utilise cette information pour évaluer l'investissement en temps avant de s'inscrire.
 
-**[ÉCRAN — screencast "Materials Included"]**
+**[ÉCRAN - screencast "Materials Included"]**
 
 [Montre le champ Materials Included]
 
@@ -347,7 +347,7 @@ Quatrième bloc : matériels inclus. Liste les ressources que l'élève recevra 
 
 Ça ajoute de la valeur perçue au cours. "12 leçons vidéo + 5 templates + 1 checklist de lancement" est plus convaincant que "12 leçons vidéo" seul.
 
-**[ÉCRAN — screencast "Requirements/Instructions"]**
+**[ÉCRAN - screencast "Requirements/Instructions"]**
 
 [Montre le champ Requirements]
 
@@ -355,7 +355,7 @@ Cinquième bloc : prérequis et instructions. Qu'est-ce que l'élève doit savoi
 
 Sois honnête ici. Si ton cours nécessite TutorLMS Pro installé, dis-le. Mieux vaut un élève bien préparé qu'un élève frustré qui ne peut pas suivre.
 
-**[ÉCRAN — screencast "Course Prerequisites"]**
+**[ÉCRAN - screencast "Course Prerequisites"]**
 
 [Montre le champ Course Prerequisites]
 
@@ -365,25 +365,25 @@ Par exemple, ton cours "TutorLMS Avancé" peut exiger la complétion de "TutorLM
 
 Ce bloc nécessite l'add-on Course Prerequisites.
 
-**[ÉCRAN — screencast "Attachments"]**
+**[ÉCRAN - screencast "Attachments"]**
 
 [Montre la section Attachments]
 
-Septième bloc : les pièces jointes au niveau du cours. Des fichiers téléchargeables par les élèves inscrits — PDF, documents, archives. C'est différent des "Exercise Files" qu'on met au niveau de chaque leçon. Ici, c'est pour les ressources globales du cours.
+Septième bloc : les pièces jointes au niveau du cours. Des fichiers téléchargeables par les élèves inscrits - PDF, documents, archives. C'est différent des "Exercise Files" qu'on met au niveau de chaque leçon. Ici, c'est pour les ressources globales du cours.
 
 Ce bloc nécessite l'add-on Course Attachments.
 
-**[ÉCRAN — screencast "Certificates"]**
+**[ÉCRAN - screencast "Certificates"]**
 
 [Montre la section Certificates]
 
 Huitième bloc : les certificats. Si l'add-on Certificate est actif, tu peux associer un modèle de certificat à ton cours. L'élève reçoit le certificat automatiquement quand il termine le cours.
 
-Plusieurs templates sont disponibles — portrait ou paysage. Tu peux aussi créer des certificats personnalisés avec le Certificate Builder.
+Plusieurs templates sont disponibles - portrait ou paysage. Tu peux aussi créer des certificats personnalisés avec le Certificate Builder.
 
 Un certificat, même simple, augmente la valeur perçue du cours et motive l'élève à aller jusqu'au bout.
 
-**[ÉCRAN — screencast "Live Class"]**
+**[ÉCRAN - screencast "Live Class"]**
 
 [Montre la section Schedule Live Classes si disponible]
 
@@ -391,9 +391,9 @@ Dernier bloc : les cours en direct. Si tu as l'add-on Google Meet ou Zoom, tu pe
 
 C'est optionnel, mais ça ouvre la porte au format hybride : contenu enregistré + sessions live de questions-réponses.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Tes réglages additionnels sont configurés. Ton cours a maintenant une fiche complète, un curriculum structuré, et des réglages professionnels. Dans la prochaine leçon, on explore AI Studio — l'assistant IA qui peut générer tout ça pour toi en quelques minutes.
+Tes réglages additionnels sont configurés. Ton cours a maintenant une fiche complète, un curriculum structuré, et des réglages professionnels. Dans la prochaine leçon, on explore AI Studio - l'assistant IA qui peut générer tout ça pour toi en quelques minutes.
 
 ---
 
@@ -412,7 +412,7 @@ Tes réglages additionnels sont configurés. Ton cours a maintenant une fiche co
 
 ---
 
-### Leçon 4.5 — AI Studio : générer un cours avec l'IA
+### Leçon 4.5 : AI Studio : générer un cours avec l'IA
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -420,17 +420,17 @@ Tes réglages additionnels sont configurés. Ton cours a maintenant une fiche co
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Créer un cours complet — titre, description, curriculum, image — ça prend du temps. AI Studio est l'assistant IA intégré à TutorLMS qui peut générer tout ça en quelques minutes. Ce n'est pas un remplacement de ton expertise, c'est un accélérateur. Tu génères une base, tu ajustes, tu publies. On va voir comment ça marche concrètement.
+Créer un cours complet - titre, description, curriculum, image - ça prend du temps. AI Studio est l'assistant IA intégré à TutorLMS qui peut générer tout ça en quelques minutes. Ce n'est pas un remplacement de ton expertise, c'est un accélérateur. Tu génères une base, tu ajustes, tu publies. On va voir comment ça marche concrètement.
 
-**[ÉCRAN — slide "AI Studio — ce qu'il faut"]**
+**[ÉCRAN - slide "AI Studio - ce qu'il faut"]**
 
-Avant de commencer, un point important. AI Studio utilise l'API OpenAI. Ça veut dire qu'il te faut un compte OpenAI avec du crédit API. Pas besoin d'un abonnement ChatGPT Plus — c'est différent. Tu as besoin de crédit sur platform.openai.com, le portail API.
+Avant de commencer, un point important. AI Studio utilise l'API OpenAI. Ça veut dire qu'il te faut un compte OpenAI avec du crédit API. Pas besoin d'un abonnement ChatGPT Plus - c'est différent. Tu as besoin de crédit sur platform.openai.com, le portail API.
 
-Chaque génération consomme un peu de crédit. Le coût est marginal — quelques centimes par génération de texte, un peu plus pour les images. Mais il faut que le solde soit positif, sinon AI Studio ne fonctionnera pas.
+Chaque génération consomme un peu de crédit. Le coût est marginal - quelques centimes par génération de texte, un peu plus pour les images. Mais il faut que le solde soit positif, sinon AI Studio ne fonctionnera pas.
 
-**[ÉCRAN — screencast WordPress admin > Settings]**
+**[ÉCRAN - screencast WordPress admin > Settings]**
 
 [Navigation vers Tutor LMS > Settings > Advanced]
 
@@ -440,13 +440,13 @@ Chaque génération consomme un peu de crédit. Le coût est marginal — quelqu
 
 Si tu n'as pas de clé API, va sur platform.openai.com, connecte-toi, va dans la section "API Keys", et génère une nouvelle clé. Copie-la et colle-la ici.
 
-**[ÉCRAN — screencast Course Builder avec AI Studio actif]**
+**[ÉCRAN - screencast Course Builder avec AI Studio actif]**
 
-[Retour au Course Builder — montre le bouton "Generate with AI"]
+[Retour au Course Builder - montre le bouton "Generate with AI"]
 
 Maintenant que AI Studio est actif, tu vois un bouton "Generate with AI" dans la section Course Info. C'est le point d'entrée principal.
 
-**[ÉCRAN — screencast génération plan de cours]**
+**[ÉCRAN - screencast génération plan de cours]**
 
 [Clique sur "Generate with AI"]
 
@@ -466,7 +466,7 @@ Voilà le résultat. Des topics avec des titres, des leçons dans chaque topic, 
 
 Clique sur "Append the course" pour importer le plan dans ton Course Builder. Les topics et leçons sont créés automatiquement. Tu n'as plus qu'à remplir le contenu de chaque leçon.
 
-**[ÉCRAN — screencast génération titre]**
+**[ÉCRAN - screencast génération titre]**
 
 [Montre l'icône AI à côté du champ Title]
 
@@ -476,7 +476,7 @@ AI Studio ne se limite pas au plan de cours. Tu vois une petite icône AI à cô
 
 Décris ton cours en quelques mots, et AI Studio propose plusieurs titres. Tu peux ajuster la longueur, le ton, la langue. Clique sur "Use this" pour appliquer le titre qui te convient.
 
-**[ÉCRAN — screencast génération description]**
+**[ÉCRAN - screencast génération description]**
 
 [Montre l'icône AI à côté du champ Description]
 
@@ -484,25 +484,25 @@ Même chose pour la description. Clique sur l'icône AI, donne un brief, génèr
 
 Les options de raffinement sont utiles : reformuler, raccourcir, allonger, changer le ton, simplifier, convertir en liste à puces. Tout ça se fait en un clic depuis le résultat généré.
 
-**[ÉCRAN — screencast génération image]**
+**[ÉCRAN - screencast génération image]**
 
 [Montre l'icône AI à côté de Featured Image]
 
-Dernière fonctionnalité : la génération d'image mise en avant. Clique sur l'icône AI à côté de "Featured Image". Décris l'image que tu veux — par exemple "illustration minimaliste d'un écran d'ordinateur avec une interface de cours en ligne, couleurs bleu et blanc".
+Dernière fonctionnalité : la génération d'image mise en avant. Clique sur l'icône AI à côté de "Featured Image". Décris l'image que tu veux - par exemple "illustration minimaliste d'un écran d'ordinateur avec une interface de cours en ligne, couleurs bleu et blanc".
 
 Tu peux choisir un style : photo, peinture, croquis, illustration. Clique sur "Generate Now". AI Studio génère plusieurs propositions. Sélectionne celle qui te convient.
 
-**[ÉCRAN — slide "Limites et bonnes pratiques"]**
+**[ÉCRAN - slide "Limites et bonnes pratiques"]**
 
 Quelques points importants sur AI Studio.
 
 Ce qu'il fait bien : générer une structure de départ, proposer des titres, débloquer la page blanche. C'est un point de départ, pas un produit fini.
 
-Ce qu'il ne fait pas : écrire le contenu détaillé de tes leçons, créer des vidéos, connaître ton expertise spécifique. Le contenu généré est générique — tu dois le personnaliser avec ton expérience et tes exemples.
+Ce qu'il ne fait pas : écrire le contenu détaillé de tes leçons, créer des vidéos, connaître ton expertise spécifique. Le contenu généré est générique - tu dois le personnaliser avec ton expérience et tes exemples.
 
 Mon conseil : utilise AI Studio pour la structure et les métadonnées (titre, description, plan). Rédige le contenu des leçons toi-même. C'est ton expertise qui fait la valeur du cours, pas un texte généré.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais utiliser AI Studio pour accélérer la création de ton cours. Dans la prochaine leçon, on voit comment rendre ton cours payant en le connectant à WooCommerce. C'est là que tu commences à monétiser.
 
@@ -515,13 +515,13 @@ Tu sais utiliser AI Studio pour accélérer la création de ton cours. Dans la p
 - Prompt détaillé = meilleur résultat
 - "Append the course" importe le plan dans le Course Builder
 - Options de raffinement : reformuler, raccourcir, changer le ton, traduire
-- AI Studio = accélérateur, pas remplacement — personnalise toujours le contenu généré
+- AI Studio = accélérateur, pas remplacement - personnalise toujours le contenu généré
 
 **Mots clés SEO** : TutorLMS AI Studio, générer cours avec IA TutorLMS, intelligence artificielle LMS WordPress, TutorLMS OpenAI integration
 
 ---
 
-### Leçon 4.6 — Créer un cours payant (WooCommerce)
+### Leçon 4.6 : Créer un cours payant (WooCommerce)
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -530,20 +530,20 @@ Tu sais utiliser AI Studio pour accélérer la création de ton cours. Dans la p
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as créé ton cours, structuré ton curriculum, configuré tes réglages. Maintenant la question : comment le rendre payant ? TutorLMS s'appuie sur WooCommerce pour gérer les paiements. Dans cette leçon, je te montre comment connecter ton cours à un produit WooCommerce et définir un prix.
 
-**[ÉCRAN — slide "Prérequis"]**
+**[ÉCRAN - slide "Prérequis"]**
 
 Avant de commencer, deux choses doivent être en place :
 
 1. WooCommerce installé et actif sur ton site WordPress
 2. L'intégration WooCommerce activée dans Tutor LMS
 
-Si WooCommerce n'est pas encore installé, fais-le d'abord. C'est gratuit — va dans Extensions > Ajouter, cherche WooCommerce, installe et active.
+Si WooCommerce n'est pas encore installé, fais-le d'abord. C'est gratuit - va dans Extensions > Ajouter, cherche WooCommerce, installe et active.
 
-**[ÉCRAN — screencast WordPress admin > Tutor LMS Settings]**
+**[ÉCRAN - screencast WordPress admin > Tutor LMS Settings]**
 
 [Navigation vers Tutor LMS > Settings > Monetization]
 
@@ -553,21 +553,21 @@ Pour activer l'intégration, va dans Tutor LMS, Settings, puis cherche l'onglet 
 
 Une fois activé, un nouveau champ apparaît dans le Course Builder de chaque cours.
 
-**[ÉCRAN — screencast Course Builder > section prix]**
+**[ÉCRAN - screencast Course Builder > section prix]**
 
 [Ouvre un cours existant dans le Course Builder]
 
 Retourne dans ton cours. Tu vois maintenant une section "Add Product" ou "Course Price" dans les paramètres. C'est le lien entre ton cours TutorLMS et un produit WooCommerce.
 
-**[ÉCRAN — screencast création produit WooCommerce]**
+**[ÉCRAN - screencast création produit WooCommerce]**
 
 [Navigation vers Produits > Ajouter dans WooCommerce]
 
-Deux options. Première option : créer le produit directement depuis WooCommerce. Va dans Produits > Ajouter. Crée un produit simple. Donne-lui le même nom que ton cours. Dans l'onglet "General", définis le prix régulier — par exemple 97 euros. Tu peux aussi ajouter un prix promotionnel pour les offres de lancement.
+Deux options. Première option : créer le produit directement depuis WooCommerce. Va dans Produits > Ajouter. Crée un produit simple. Donne-lui le même nom que ton cours. Dans l'onglet "General", définis le prix régulier - par exemple 97 euros. Tu peux aussi ajouter un prix promotionnel pour les offres de lancement.
 
 Le point clé : dans les données produit, tu verras un onglet ou une option pour lier ce produit à un cours TutorLMS. Sélectionne ton cours dans la liste.
 
-**[ÉCRAN — screencast lien cours-produit]**
+**[ÉCRAN - screencast lien cours-produit]**
 
 [Montre le lien entre le produit WooCommerce et le cours TutorLMS]
 
@@ -577,41 +577,41 @@ Deuxième option, plus rapide : depuis le Course Builder, dans la section prix, 
 
 Définis ton prix. Sauvegarde le cours.
 
-**[ÉCRAN — screencast page du cours côté visiteur]**
+**[ÉCRAN - screencast page du cours côté visiteur]**
 
 [Montre la page du cours avec le bouton d'achat]
 
-Maintenant, quand un visiteur arrive sur la page de ton cours, il voit le prix et un bouton "Add to Cart" ou "Acheter". Le processus d'achat passe par WooCommerce — panier, checkout, paiement.
+Maintenant, quand un visiteur arrive sur la page de ton cours, il voit le prix et un bouton "Add to Cart" ou "Acheter". Le processus d'achat passe par WooCommerce - panier, checkout, paiement.
 
 [Montre le processus d'achat : ajout au panier > checkout]
 
 Une fois le paiement validé, l'élève est automatiquement inscrit au cours. Pas d'action manuelle de ta part. TutorLMS gère l'inscription automatiquement après le paiement WooCommerce.
 
-**[ÉCRAN — slide "Options de prix"]**
+**[ÉCRAN - slide "Options de prix"]**
 
 Quelques options de prix à connaître :
 
 - **Prix unique** : l'élève paie une fois, accès à vie. C'est le modèle le plus simple.
 - **Prix promotionnel** : définis un prix barré dans WooCommerce pour créer une offre limitée.
 - **Abonnement** : avec WooCommerce Subscriptions (payant), tu peux créer un accès mensuel ou annuel.
-- **Gratuit** : ne lie aucun produit WooCommerce au cours — il sera gratuit.
+- **Gratuit** : ne lie aucun produit WooCommerce au cours - il sera gratuit.
 
 Pour débuter, le prix unique est le plus simple et le plus adapté.
 
-**[ÉCRAN — slide "Moyens de paiement"]**
+**[ÉCRAN - slide "Moyens de paiement"]**
 
 Les moyens de paiement dépendent de WooCommerce, pas de TutorLMS. Par défaut, WooCommerce propose le virement bancaire et le chèque. Pour les cartes bancaires, ajoute l'extension Stripe (gratuite). Pour PayPal, ajoute l'extension PayPal (gratuite aussi).
 
-Configure au moins Stripe — c'est le standard pour les paiements en ligne en Europe.
+Configure au moins Stripe - c'est le standard pour les paiements en ligne en Europe.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Ton cours est payant, les paiements sont configurés. Tu as maintenant un cours complet : fiche, curriculum, réglages, prix. Dans la leçon suivante, c'est à toi de jouer — tu vas créer ton premier cours de A à Z.
+Ton cours est payant, les paiements sont configurés. Tu as maintenant un cours complet : fiche, curriculum, réglages, prix. Dans la leçon suivante, c'est à toi de jouer - tu vas créer ton premier cours de A à Z.
 
 ---
 
 **Points clés** :
-- Monétisation via WooCommerce (gratuit) — activer dans Tutor LMS > Settings > Monetization
+- Monétisation via WooCommerce (gratuit) - activer dans Tutor LMS > Settings > Monetization
 - Lier un produit WooCommerce au cours (depuis le Course Builder ou depuis WooCommerce)
 - Inscription automatique après paiement
 - Options : prix unique, promo, abonnement (Subscriptions), gratuit
@@ -622,7 +622,7 @@ Ton cours est payant, les paiements sont configurés. Tu as maintenant un cours 
 
 ---
 
-### Leçon 4.7 — Exercice : Crée ton premier cours complet
+### Leçon 4.7 : Exercice : Crée ton premier cours complet
 
 **Type** : Exercice pratique (consignes écrites)
 **Durée estimée** : 45-60 min
@@ -644,7 +644,7 @@ Créer un cours complet dans TutorLMS, de la fiche d'information à la publicati
 > - "Les bases de WordPress en 30 minutes" (débutant)
 > - "Optimiser la vitesse de son site WordPress" (intermédiaire)
 > - "Créer une landing page qui convertit" (intermédiaire)
-> Choisis celui qui te parle le plus — le contenu des leçons peut être un placeholder pour cet exercice.
+> Choisis celui qui te parle le plus - le contenu des leçons peut être un placeholder pour cet exercice.
 
 ## Étapes
 
@@ -686,7 +686,7 @@ Créer un cours complet dans TutorLMS, de la fiche d'information à la publicati
 ### 4. Définis un prix (si WooCommerce actif)
 
 - [ ] Crée ou sélectionne un produit WooCommerce
-- [ ] Définis un prix (même fictif — 47, 97 ou 197 euros)
+- [ ] Définis un prix (même fictif - 47, 97 ou 197 euros)
 - [ ] Vérifie que le bouton d'achat apparaît sur la page du cours
 
 ### 5. Vérifie le résultat côté visiteur
@@ -722,7 +722,7 @@ Créer un cours complet dans TutorLMS, de la fiche d'information à la publicati
 
 ---
 
-### Leçon 4.8 — Quiz : Valide tes acquis M4
+### Leçon 4.8 : Quiz : Valide tes acquis M4
 
 **Type** : Quiz TutorLMS (8 questions)
 **Seuil de réussite** : 80%

@@ -1,4 +1,4 @@
-# CartFlows — Gap Analysis schoolsWP
+# CartFlows - Gap Analysis schoolsWP
 
 ## Donnees produit
 
@@ -30,7 +30,7 @@
 
 | # | Lacune | Impact |
 |---|---|---|
-| 1 | Zero formation video FR complete | Opportunite #1 — premier arrivant |
+| 1 | Zero formation video FR complete | Opportunite #1 - premier arrivant |
 | 2 | Pas de strategie funnel (quel funnel pour quel business) | Valeur differenciante majeure |
 | 3 | Pas d'integration ecosysteme WP FR (FluentCRM, TutorLMS, OttoKit) | Synergie stack schoolsWP |
 | 4 | Pas de cas concrets marche francophone | Pertinence locale |
@@ -47,7 +47,7 @@
 
 ## Positionnement schoolsWP
 
-**Angle unique** : "CartFlows dans l'ecosysteme WordPress francophone — strategie + technique + automatisation"
+**Angle unique** : "CartFlows dans l'ecosysteme WordPress francophone - strategie + technique + automatisation"
 
 **Stack synergie** : CartFlows (funnels) + FluentCRM (relance/CRM) + OttoKit (automatisation) + TutorLMS (vente formations)
 

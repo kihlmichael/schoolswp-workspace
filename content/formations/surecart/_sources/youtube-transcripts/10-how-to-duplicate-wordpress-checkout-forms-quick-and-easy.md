@@ -1,0 +1,12 @@
+---
+title: "How To Duplicate WordPress Checkout Forms Quick And Easy"
+video_id: 5yA6_5BbBh4
+url: https://www.youtube.com/watch?v=5yA6_5BbBh4
+playlist: SureCart Tutorials
+source: youtube-transcript
+language: en
+---
+
+# How To Duplicate WordPress Checkout Forms Quick And Easy
+
+building the perfect checkout form using sure cart and you thought huh if only I can duplicate that or copy it to another site or another store I'm going to show you how to do that right now it's actually very very simple so let's jump into it now sure card doesn't natively have this as an option so what we're going to do is just built into WordPress it's very simple so say for example this checkout right here it's called free membership and I want to copy this so it's so simple so what we're going to do is we're going to go over here to the very top right corner and there's three dots I'm going to click on that and then we're going to go right here where it says code editor now there's a keyboard shortcut but I never remember those things so I always go this way the three dots and click on code editor now this is all the code that makes up that shirt card form so you can click in it and then select all or I could have you know done this thing where I go right here and I go to the bottom whatever you prefer just go like that and copy it into your clipboard so I now have this in my clipboard so I can there's nothing to update I haven't edited anything so I'll click on the WordPress logo I'll click on add new and I'll just call this copy how about that copy because I'll probably end up deleting it and so it says sure card form I'm going to go there and I'm just going to paste in the copy and then I probably want to get out of this code view so you do it the same way you click on the three dots on the top right and then you go to code editor oh my goodness there is the exact same form and that's how easy it is to do this you can actually copy it to an entirely different website if you want and you can use this for anything you use the WordPress block editor for because it's a feature built into the core of Wordpress I'm just showing you how you can use it here in short cart to copy the forms now you might be thinking man that was so dang easy and it was easy to do and that's why we built your card in this way so that we can leverage all of this coolness and functionality that's built into WordPress so that's it for this video give this a thumbs up if you could and we'll see you in the next one.

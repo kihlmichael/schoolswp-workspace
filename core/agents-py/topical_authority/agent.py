@@ -480,7 +480,7 @@ class TopicalAuthorityAgent(BaseContentAgent):
         Returns:
             Plan cluster markdown (pilier + satellites + maillage + ordre de production).
         """
-        expander = _ClusterExpanderAgent(model=self.model)
+        expander = _ClusterExpanderAgent(model=self.raw_model)
         return await expander.run(
             article=article,
             audit_report=existing_result.report,
@@ -518,7 +518,7 @@ class TopicalAuthorityAgent(BaseContentAgent):
             pillar=pillar,
         )
 
-        expander = _ClusterExpanderAgent(model=self.model)
+        expander = _ClusterExpanderAgent(model=self.raw_model)
         result.cluster_plan = await expander.run(
             article=article,
             audit_report=result.report,

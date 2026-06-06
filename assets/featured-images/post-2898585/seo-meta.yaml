@@ -1,0 +1,23 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © 2026 schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/en/tablepress-3-3-wordpress-update/
+  software: schoolsWP html-to-png pipeline
+
+images:
+  - file: slide-00-hero-en.png
+    title: "TablePress 3.3: the major update for WordPress tables"
+    subject: "TablePress 3.3 - fixed toolbar, keyboard shortcuts and WordPress 7.0. Cover of the schoolsWP article."
+    description: "Visual cover of the schoolsWP article on the major TablePress 3.3 update: fixed toolbar on the editing screen, quick navigation via keyboard shortcuts, readiness for the upcoming WordPress 7.0 and on-demand translations."
+    alt: "TablePress 3.3, the major WordPress update: fixed toolbar, keyboard shortcuts, WordPress 7.0 readiness and on-demand translations. schoolsWP cover."
+    keywords:
+      - TablePress 3.3
+      - TablePress update
+      - TablePress WordPress
+      - WordPress tables
+      - fixed toolbar
+      - keyboard shortcuts
+      - WordPress 7.0
+      - TablePress plugin
+      - schoolsWP
+      - Michael KIHL

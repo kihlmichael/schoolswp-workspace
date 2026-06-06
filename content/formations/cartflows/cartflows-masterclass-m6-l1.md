@@ -1,9 +1,9 @@
-# Lecon 6.1 — Pourquoi tester (et quoi tester en premier)
+# Lecon 6.1 - Pourquoi tester (et quoi tester en premier)
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre pourquoi l'optimisation sans donnees est du hasard. Connaitre la hierarchie des elements a tester et les volumes minimum avant de conclure.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu as ton funnel en place. Landing page, checkout, order bump, upsell. Tout fonctionne. Les ventes arrivent. Et maintenant, tu te poses la question : comment je fais pour ameliorer mes resultats ?
 
@@ -22,9 +22,9 @@ Dans cette lecon, on va poser les bases de l'A/B testing : pourquoi c'est indisp
 
 ---
 
-**[SECTION 1 — Le probleme : optimiser sans donnees = deviner]**
+**[SECTION 1 - Le probleme : optimiser sans donnees = deviner]**
 
-**[ECRAN — schema "intuition vs donnees"]**
+**[ECRAN - schema "intuition vs donnees"]**
 
 Imaginons que tu changes trois choses en meme temps sur ta page checkout : le titre, la couleur du bouton, et le prix. Tes conversions augmentent de 20%. Bonne nouvelle. Mais qu'est-ce qui a provoque cette hausse ? Le titre ? Le prix ? La couleur ? Les trois ensemble ?
 
@@ -36,9 +36,9 @@ L'A/B testing resout ce probleme. Tu crees deux versions de la meme page, identi
 
 ---
 
-**[SECTION 2 — La regle fondamentale : une seule variable a la fois]**
+**[SECTION 2 - La regle fondamentale : une seule variable a la fois]**
 
-**[ECRAN — tableau comparatif "1 variable" vs "multiples variables"]**
+**[ECRAN - tableau comparatif "1 variable" vs "multiples variables"]**
 
 La regle est simple et non negociable : tu ne testes qu'une seule variable a la fois.
 
@@ -50,15 +50,15 @@ Ca demande de la patience. Tu ne peux tester qu'un element a la fois, ce qui sig
 
 ---
 
-**[SECTION 3 — Par quoi commencer : la hierarchie des tests]**
+**[SECTION 3 - Par quoi commencer : la hierarchie des tests]**
 
-**[ECRAN — pyramide des priorites de test]**
+**[ECRAN - pyramide des priorites de test]**
 
 Tous les elements n'ont pas le meme impact sur tes conversions. Voici l'ordre dans lequel tester, du plus impactant au moins impactant :
 
 Numero 1 : le titre de la page checkout. C'est la premiere chose que le visiteur lit. Un titre qui parle du resultat ("Cree ta boutique WooCommerce en 7 jours") convertit differemment d'un titre qui parle du produit ("Formation WooCommerce Complete"). L'impact est souvent entre 10 et 30% de difference de conversion.
 
-Numero 2 : le CTA — le texte du bouton d'achat. "Commander maintenant" vs "Acceder a la formation" vs "Demarrer maintenant". Le CTA est le dernier element que le visiteur lit avant de decider. Quelques mots font une difference mesurable.
+Numero 2 : le CTA - le texte du bouton d'achat. "Commander maintenant" vs "Acceder a la formation" vs "Demarrer maintenant". Le CTA est le dernier element que le visiteur lit avant de decider. Quelques mots font une difference mesurable.
 
 Numero 3 : le prix et la structure de paiement. Prix unique vs paiement en 3 fois. 97 euros vs 87 euros. C'est un levier puissant, mais teste-le apres le titre et le CTA, parce qu'un mauvais titre tue les conversions avant meme que le client voie le prix.
 
@@ -66,9 +66,9 @@ Numero 4 : le design et la mise en page. Nombre de colonnes, position des temoig
 
 ---
 
-**[SECTION 4 — Volume minimum : quand est-ce que le test a du sens ?]**
+**[SECTION 4 - Volume minimum : quand est-ce que le test a du sens ?]**
 
-**[ECRAN — tableau "visiteurs necessaires" par niveau de confiance]**
+**[ECRAN - tableau "visiteurs necessaires" par niveau de confiance]**
 
 Un A/B test ne vaut rien si tu n'as pas assez de trafic. Voici la regle pratique : il te faut minimum 100 a 200 visiteurs par variante avant de pouvoir tirer une conclusion fiable. Ca signifie 200 a 400 visiteurs au total pour un test avec deux variantes.
 
@@ -76,13 +76,13 @@ Si ta page checkout recoit 20 visiteurs par semaine, un test prendra 10 a 20 sem
 
 D'ou le conseil le plus important de cette lecon : si tu as moins de 50 visiteurs uniques par semaine sur ta page de checkout, ne lance pas d'A/B test. Concentre-toi d'abord sur le trafic. Ameliore ton SEO, lance des campagnes, cree du contenu. Le testing viendra quand tu auras le volume necessaire.
 
-C'est contre-intuitif. Tu veux optimiser tout de suite. Mais un test sur un echantillon trop petit ne donne pas des resultats — il donne du bruit statistique. Tu risques de prendre des decisions basees sur du hasard.
+C'est contre-intuitif. Tu veux optimiser tout de suite. Mais un test sur un echantillon trop petit ne donne pas des resultats - il donne du bruit statistique. Tu risques de prendre des decisions basees sur du hasard.
 
 ---
 
-**[SECTION 5 — L'etat d'esprit du testeur]**
+**[SECTION 5 - L'etat d'esprit du testeur]**
 
-**[ECRAN — checklist "avant de lancer un test"]**
+**[ECRAN - checklist "avant de lancer un test"]**
 
 Avant de lancer un A/B test, pose-toi trois questions :
 
@@ -96,7 +96,7 @@ L'A/B testing n'est pas un exercice intellectuel. C'est un outil de decision. Tu
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Retiens ces trois points : une variable a la fois, commence par le titre du checkout, et pas de test sans volume suffisant. C'est avec cette discipline que tu transformes des hypotheses en certitudes et que tu ameliores ton funnel de maniere previsible.
 

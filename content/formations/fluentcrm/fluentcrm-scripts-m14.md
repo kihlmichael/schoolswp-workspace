@@ -1,7 +1,7 @@
-# Scripts vidéo — Module 14 : Event tracking et comportement utilisateur
+# Scripts vidéo - Module 14 : Event tracking et comportement utilisateur
 
 **Formation** : Maîtriser FluentCRM
-**Module** : M14 — Event tracking et comportement utilisateur (Premium)
+**Module** : M14 - Event tracking et comportement utilisateur (Premium)
 **Leçons** : 5 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~40 min
 **Prérequis** : M8 (smart links), M13 (scoring avancé)
@@ -9,7 +9,7 @@
 
 ---
 
-### Leçon 14.1 — Comprends l'event tracking : suivre ce que font tes contacts
+### Leçon 14.1 : Comprends l'event tracking : suivre ce que font tes contacts
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -17,39 +17,39 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu sais qui sont tes contacts. Tu connais leurs tags, leurs listes, leur score. Mais tu ne sais pas ce qu'ils font sur ton site. Est-ce qu'un étudiant gratuit visite ta page de formation premium ? Est-ce qu'un prospect clique sur ton bouton d'inscription sans jamais finaliser ? L'event tracking de FluentCRM répond à ces questions. Il enregistre les actions concrètes de tes contacts — pages visitées, boutons cliqués, formulaires soumis — directement dans leur fiche. Dans cette leçon, tu comprends le principe et tu vois pourquoi c'est différent des smart links que tu connais déjà.
+Tu sais qui sont tes contacts. Tu connais leurs tags, leurs listes, leur score. Mais tu ne sais pas ce qu'ils font sur ton site. Est-ce qu'un étudiant gratuit visite ta page de formation premium ? Est-ce qu'un prospect clique sur ton bouton d'inscription sans jamais finaliser ? L'event tracking de FluentCRM répond à ces questions. Il enregistre les actions concrètes de tes contacts - pages visitées, boutons cliqués, formulaires soumis - directement dans leur fiche. Dans cette leçon, tu comprends le principe et tu vois pourquoi c'est différent des smart links que tu connais déjà.
 
-**[ÉCRAN — slide "Event tracking : définition"]**
+**[ÉCRAN - slide "Event tracking : définition"]**
 
 [Montre un schéma simple : visiteur sur le site > action détectée > event enregistré dans FluentCRM]
 
-Étape 1 : l'event tracking, c'est un système de surveillance comportementale intégré à WordPress. Chaque fois qu'un contact identifié réalise une action sur ton site, FluentCRM l'enregistre comme un événement. L'action, la date, l'heure, l'URL — tout est consigné dans la fiche du contact.
+Étape 1 : l'event tracking, c'est un système de surveillance comportementale intégré à WordPress. Chaque fois qu'un contact identifié réalise une action sur ton site, FluentCRM l'enregistre comme un événement. L'action, la date, l'heure, l'URL - tout est consigné dans la fiche du contact.
 
-**[ÉCRAN — slide "4 types d'événements"]**
+**[ÉCRAN - slide "4 types d'événements"]**
 
 [Montre les 4 types avec une icône pour chacun]
 
 Étape 2 : FluentCRM peut tracker quatre types d'événements.
 
-Page view — le contact visite une page spécifique. Par exemple, ta page de vente formation premium ou ta page tarifs.
+Page view - le contact visite une page spécifique. Par exemple, ta page de vente formation premium ou ta page tarifs.
 
-Button click — le contact clique sur un élément précis. Un bouton "S'inscrire", un CTA dans un article, un lien d'affiliation.
+Button click - le contact clique sur un élément précis. Un bouton "S'inscrire", un CTA dans un article, un lien d'affiliation.
 
-Form submission — le contact soumet un formulaire. Un formulaire de contact, une demande de devis, une inscription à un webinaire.
+Form submission - le contact soumet un formulaire. Un formulaire de contact, une demande de devis, une inscription à un webinaire.
 
-Custom event — un événement sur mesure que tu définis toi-même. Par exemple : "a regardé 80% de la vidéo de démo" ou "a téléchargé le PDF gratuit".
+Custom event - un événement sur mesure que tu définis toi-même. Par exemple : "a regardé 80% de la vidéo de démo" ou "a téléchargé le PDF gratuit".
 
-**[ÉCRAN — slide "Event tracking vs Smart links"]**
+**[ÉCRAN - slide "Event tracking vs Smart links"]**
 
 [Montre un tableau comparatif côte à côte]
 
-Étape 3 : tu as vu les smart links dans le module 8. Ne confonds pas les deux. Les smart links trackent les clics dans tes emails — un contact clique sur un lien dans ta newsletter, tu le sais. L'event tracking, lui, traque ce qui se passe sur ton site WordPress — indépendamment des emails. Un contact peut arriver depuis Google, depuis un favori, depuis un lien partagé sur un forum — l'event tracking le capte quand même.
+Étape 3 : tu as vu les smart links dans le module 8. Ne confonds pas les deux. Les smart links trackent les clics dans tes emails - un contact clique sur un lien dans ta newsletter, tu le sais. L'event tracking, lui, traque ce qui se passe sur ton site WordPress - indépendamment des emails. Un contact peut arriver depuis Google, depuis un favori, depuis un lien partagé sur un forum - l'event tracking le capte quand même.
 
 En résumé : smart links = suivi des clics email. Event tracking = suivi du comportement sur site.
 
-**[ÉCRAN — slide "Cas concret schoolsWP"]**
+**[ÉCRAN - slide "Cas concret schoolsWP"]**
 
 [Montre un scénario avec fleches]
 
@@ -57,9 +57,9 @@ En résumé : smart links = suivi des clics email. Event tracking = suivi du com
 
 C'est la différence entre deviner l'intention d'un contact et la mesurer.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-L'event tracking transforme FluentCRM en outil d'intelligence comportementale. Tu ne te contentes plus de savoir qui sont tes contacts — tu sais ce qu'ils font. Dans la prochaine leçon, tu actives et configures le module.
+L'event tracking transforme FluentCRM en outil d'intelligence comportementale. Tu ne te contentes plus de savoir qui sont tes contacts - tu sais ce qu'ils font. Dans la prochaine leçon, tu actives et configures le module.
 
 ---
 
@@ -74,7 +74,7 @@ L'event tracking transforme FluentCRM en outil d'intelligence comportementale. T
 
 ---
 
-### Leçon 14.2 — Active et configure le module event tracking
+### Leçon 14.2 : Active et configure le module event tracking
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -82,45 +82,45 @@ L'event tracking transforme FluentCRM en outil d'intelligence comportementale. T
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 L'event tracking n'est pas activé par défaut dans FluentCRM. Tu dois l'activer, configurer les paramètres de base et vérifier que tout fonctionne avant de créer tes événements. Six étapes pour mettre le système en place.
 
-**[ÉCRAN — screencast FluentCRM > Settings > Modules]**
+**[ÉCRAN - screencast FluentCRM > Settings > Modules]**
 
 [Navigue vers les settings de FluentCRM]
 
-Étape 1 : va dans FluentCRM, puis Settings, puis Modules. C'est ici que tu actives ou désactives les fonctionnalités optionnelles. Cherche le module "Event Tracking" dans la liste. Il est désactivé par défaut — active-le.
+Étape 1 : va dans FluentCRM, puis Settings, puis Modules. C'est ici que tu actives ou désactives les fonctionnalités optionnelles. Cherche le module "Event Tracking" dans la liste. Il est désactivé par défaut - active-le.
 
 [Active le toggle du module Event Tracking]
 
 Une fois activé, un nouvel onglet apparaît dans les settings : "Event Tracking". C'est là que tu vas configurer le comportement global du suivi.
 
-**[ÉCRAN — screencast FluentCRM > Settings > Event Tracking]**
+**[ÉCRAN - screencast FluentCRM > Settings > Event Tracking]**
 
 [Ouvre l'onglet Event Tracking dans les settings]
 
-Étape 2 : configure le tracking de pages automatique. FluentCRM peut enregistrer automatiquement chaque page visitée par un contact identifié. Active l'option "Auto Page Tracking". Attention : ça génère beaucoup de données si ton site a beaucoup de pages. Pour commencer, active-le — tu pourras filtrer ensuite.
+Étape 2 : configure le tracking de pages automatique. FluentCRM peut enregistrer automatiquement chaque page visitée par un contact identifié. Active l'option "Auto Page Tracking". Attention : ça génère beaucoup de données si ton site a beaucoup de pages. Pour commencer, active-le - tu pourras filtrer ensuite.
 
 [Montre l'option Auto Page Tracking et son toggle]
 
 Étape 3 : définis les pages à tracker. Plutôt que de tracker toutes les pages sans distinction, concentre-toi sur les pages stratégiques. FluentCRM te permet de définir des URLs spécifiques ou des patterns d'URL. Par exemple :
 
-- `/formation-premium/` — ta page de vente
-- `/tarifs/` — ta page de prix
-- `/inscription/` — ta page d'inscription
+- `/formation-premium/` - ta page de vente
+- `/tarifs/` - ta page de prix
+- `/inscription/` - ta page d'inscription
 
 [Montre l'ajout d'URLs spécifiques dans le champ de configuration]
 
-Étape 4 : configure la rétention des données. Les événements prennent de l'espace en base de données. FluentCRM te permet de définir une durée de rétention — 30 jours, 90 jours, 6 mois, illimitée. Pour un site de formation schoolsWP, 90 jours est un bon compromis : assez long pour analyser les parcours de conversion, pas assez pour saturer ta base.
+Étape 4 : configure la rétention des données. Les événements prennent de l'espace en base de données. FluentCRM te permet de définir une durée de rétention - 30 jours, 90 jours, 6 mois, illimitée. Pour un site de formation schoolsWP, 90 jours est un bon compromis : assez long pour analyser les parcours de conversion, pas assez pour saturer ta base.
 
 [Montre le paramètre de rétention]
 
-**[ÉCRAN — screencast FluentCRM > vérification]**
+**[ÉCRAN - screencast FluentCRM > vérification]**
 
 [Ouvre une session privée ou un autre navigateur]
 
-Étape 5 : vérifie que le tracking fonctionne. Ouvre ton site dans un autre navigateur — connecté avec un compte test qui est aussi un contact FluentCRM. Visite une des pages que tu as configurées. Retourne dans FluentCRM, ouvre la fiche du contact test, et va dans l'onglet "Activities" ou "Events". Tu devrais voir l'événement de page view apparaître.
+Étape 5 : vérifie que le tracking fonctionne. Ouvre ton site dans un autre navigateur - connecté avec un compte test qui est aussi un contact FluentCRM. Visite une des pages que tu as configurées. Retourne dans FluentCRM, ouvre la fiche du contact test, et va dans l'onglet "Activities" ou "Events". Tu devrais voir l'événement de page view apparaître.
 
 [Montre la fiche contact avec l'événement enregistré]
 
@@ -128,9 +128,9 @@ Une fois activé, un nouvel onglet apparaît dans les settings : "Event Tracking
 
 [Montre les DevTools > Network avec le script FluentCRM]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Le module est actif, les pages stratégiques sont configurées, le tracking fonctionne. Maintenant, tu peux aller plus loin en créant des événements personnalisés — c'est le sujet de la prochaine leçon.
+Le module est actif, les pages stratégiques sont configurées, le tracking fonctionne. Maintenant, tu peux aller plus loin en créant des événements personnalisés - c'est le sujet de la prochaine leçon.
 
 ---
 
@@ -145,7 +145,7 @@ Le module est actif, les pages stratégiques sont configurées, le tracking fonc
 
 ---
 
-### Leçon 14.3 — Crée des événements personnalisés (page visitée, bouton cliqué)
+### Leçon 14.3 : Crée des événements personnalisés (page visitée, bouton cliqué)
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -153,11 +153,11 @@ Le module est actif, les pages stratégiques sont configurées, le tracking fonc
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le tracking automatique de pages, c'est bien. Mais les événements personnalisés, c'est là où ça devient vraiment utile. Tu définis exactement ce que tu veux surveiller : un clic sur le bouton "Acheter la formation", une visite sur ta page de checkout, un scroll jusqu'au bloc témoignages. Dans cette leçon, tu crées trois types d'événements concrets.
 
-**[ÉCRAN — screencast FluentCRM > Event Tracking > Custom Events]**
+**[ÉCRAN - screencast FluentCRM > Event Tracking > Custom Events]**
 
 [Navigue vers la section Custom Events]
 
@@ -165,15 +165,15 @@ Le tracking automatique de pages, c'est bien. Mais les événements personnalis�
 
 [Montre le formulaire de création d'événement]
 
-Étape 2 : crée un événement "Page de vente visitée". Donne-lui un nom interne clair — `page_vente_premium_visited`. Le nom interne est ce que FluentCRM utilise dans ses automations — pas d'espaces, pas d'accents, tout en minuscules avec des underscores. Ajoute un titre lisible : "A visité la page de vente premium". Sélectionne le type "Page View".
+Étape 2 : crée un événement "Page de vente visitée". Donne-lui un nom interne clair - `page_vente_premium_visited`. Le nom interne est ce que FluentCRM utilise dans ses automations - pas d'espaces, pas d'accents, tout en minuscules avec des underscores. Ajoute un titre lisible : "A visité la page de vente premium". Sélectionne le type "Page View".
 
 [Remplit les champs du formulaire]
 
-Étape 3 : associe l'URL. Indique l'URL de ta page de vente — par exemple `/formation-premium/`. FluentCRM va matcher cette URL. Chaque fois qu'un contact identifié visite cette page, l'événement se déclenche et s'enregistre dans sa fiche.
+Étape 3 : associe l'URL. Indique l'URL de ta page de vente - par exemple `/formation-premium/`. FluentCRM va matcher cette URL. Chaque fois qu'un contact identifié visite cette page, l'événement se déclenche et s'enregistre dans sa fiche.
 
 [Montre le champ URL et la configuration]
 
-**[ÉCRAN — screencast éditeur WordPress + page de vente]**
+**[ÉCRAN - screencast éditeur WordPress + page de vente]**
 
 [Ouvre l'éditeur de la page de vente dans WordPress]
 
@@ -187,30 +187,30 @@ Pour un événement de type clic, tu dois identifier l'élément HTML. FluentCRM
 
 Le code ressemble à ça : `data-fc-event="cta_achat_premium_clicked"`. Quand un contact clique sur ce bouton, FluentCRM enregistre l'événement.
 
-**[ÉCRAN — screencast création du 3e événement]**
+**[ÉCRAN - screencast création du 3e événement]**
 
 [Retour dans FluentCRM > Custom Events]
 
-Étape 5 : crée un événement "Formulaire soumis". Troisième événement : `form_demo_submitted`, titre "A soumis le formulaire de démo", type "Form Submission". Associe-le au formulaire concerné — FluentCRM détecte automatiquement les formulaires FluentForms si tu utilises cette extension.
+Étape 5 : crée un événement "Formulaire soumis". Troisième événement : `form_demo_submitted`, titre "A soumis le formulaire de démo", type "Form Submission". Associe-le au formulaire concerné - FluentCRM détecte automatiquement les formulaires FluentForms si tu utilises cette extension.
 
 [Montre l'association avec un formulaire]
 
-**[ÉCRAN — slide "Convention de nommage"]**
+**[ÉCRAN - slide "Convention de nommage"]**
 
 [Montre un tableau avec les conventions]
 
-Étape 6 : adopte une convention de nommage cohérente. Tes événements vont se multiplier — 10, 20, 50 événements sur un site actif. Sans convention, c'est le chaos.
+Étape 6 : adopte une convention de nommage cohérente. Tes événements vont se multiplier - 10, 20, 50 événements sur un site actif. Sans convention, c'est le chaos.
 
 Structure recommandée : `element_action`. Exemples :
 
-- `page_vente_premium_visited` — page + action
-- `cta_achat_premium_clicked` — élément + action
-- `form_demo_submitted` — formulaire + action
-- `vidéo_demo_watched` — contenu + action
+- `page_vente_premium_visited` - page + action
+- `cta_achat_premium_clicked` - élément + action
+- `form_demo_submitted` - formulaire + action
+- `vidéo_demo_watched` - contenu + action
 
 Préfixe par catégorie si tu as beaucoup d'événements : `lms_page_cours_visited`, `crm_form_contact_submitted`.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Teste les 3 événements en visitant la page, cliquant le bouton, soumettant le formulaire]
 
@@ -218,7 +218,7 @@ Préfixe par catégorie si tu as beaucoup d'événements : `lms_page_cours_visit
 
 [Montre la fiche contact avec les 3 événements]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as trois événements personnalisés en place. Chaque action de tes contacts est maintenant enregistrée. Mais ces données ne servent à rien si tu ne les exploites pas. Dans la prochaine leçon, tu utilises ces événements pour déclencher des automations ciblées.
 
@@ -235,7 +235,7 @@ Tu as trois événements personnalisés en place. Chaque action de tes contacts 
 
 ---
 
-### Leçon 14.4 — Utilise les événements comme triggers d'automation
+### Leçon 14.4 : Utilise les événements comme triggers d'automation
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -243,34 +243,34 @@ Tu as trois événements personnalisés en place. Chaque action de tes contacts 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu enregistres des événements. Tes contacts visitent des pages, cliquent sur des boutons, soumettent des formulaires — tout est dans FluentCRM. Maintenant, tu transformes ces données en actions. L'objectif : quand un contact fait quelque chose de spécifique, une automation se déclenche automatiquement. C'est là que l'event tracking prend toute sa valeur.
+Tu enregistres des événements. Tes contacts visitent des pages, cliquent sur des boutons, soumettent des formulaires - tout est dans FluentCRM. Maintenant, tu transformes ces données en actions. L'objectif : quand un contact fait quelque chose de spécifique, une automation se déclenche automatiquement. C'est là que l'event tracking prend toute sa valeur.
 
-**[ÉCRAN — screencast FluentCRM > Automations > New Automation]**
+**[ÉCRAN - screencast FluentCRM > Automations > New Automation]**
 
 [Crée une nouvelle automation]
 
-Étape 1 : crée une nouvelle automation. Va dans Automations, clique sur "Create Automation". Donne-lui un nom clair — par exemple "Relance visiteur page premium". Dans la liste des triggers disponibles, cherche "Event Tracked" ou "Custom Event".
+Étape 1 : crée une nouvelle automation. Va dans Automations, clique sur "Create Automation". Donne-lui un nom clair - par exemple "Relance visiteur page premium". Dans la liste des triggers disponibles, cherche "Event Tracked" ou "Custom Event".
 
 [Montre le trigger "Event Tracked" dans la liste des triggers]
 
 C'est ce trigger qui fait le lien entre tes événements et tes automations. Sélectionne-le.
 
-**[ÉCRAN — screencast configuration du trigger]**
+**[ÉCRAN - screencast configuration du trigger]**
 
 [Configure le trigger avec l'événement page_vente_premium_visited]
 
-Étape 2 : configure le trigger. Sélectionne l'événement qui doit déclencher l'automation — `page_vente_premium_visited`. FluentCRM te propose aussi des conditions supplémentaires :
+Étape 2 : configure le trigger. Sélectionne l'événement qui doit déclencher l'automation - `page_vente_premium_visited`. FluentCRM te propose aussi des conditions supplémentaires :
 
-- Nombre d'occurrences : déclencher après 1 visite, 2 visites, 3 visites. Par exemple, déclencher uniquement quand le contact a visité la page 2 fois — ça indique un intérêt réel, pas une visite accidentelle.
+- Nombre d'occurrences : déclencher après 1 visite, 2 visites, 3 visites. Par exemple, déclencher uniquement quand le contact a visité la page 2 fois - ça indique un intérêt réel, pas une visite accidentelle.
 - Période : les visites doivent avoir eu lieu dans les 7 derniers jours, les 30 derniers jours.
 
 [Montre les champs de configuration : événement, occurrences, période]
 
 Pour notre scénario schoolsWP : déclenche l'automation quand un contact visite la page de vente premium au moins 2 fois en 7 jours.
 
-**[ÉCRAN — screencast ajout des actions]**
+**[ÉCRAN - screencast ajout des actions]**
 
 [Ajoute les actions dans le workflow de l'automation]
 
@@ -278,35 +278,35 @@ Pour notre scénario schoolsWP : déclenche l'automation quand un contact visite
 
 [Montre le bloc condition avec la vérification du tag]
 
-Étape 4 : ajoute un délai stratégique. Ne réagis pas à la seconde. Le contact vient de visiter ta page — si tu envoies un email dans la minute, ça fait intrusif. Ajoute un délai de 2 heures. Le contact reçoit l'email un peu plus tard, comme une coïncidence bienvenue.
+Étape 4 : ajoute un délai stratégique. Ne réagis pas à la seconde. Le contact vient de visiter ta page - si tu envoies un email dans la minute, ça fait intrusif. Ajoute un délai de 2 heures. Le contact reçoit l'email un peu plus tard, comme une coïncidence bienvenue.
 
 [Ajoute un bloc Wait de 2 heures]
 
-Étape 5 : crée l'email de relance. Ajoute un bloc "Send Email". L'objet : "Ta prochaine étape avec schoolsWP". Le contenu : personnalisé. Tu sais que le contact s'intéresse à la formation premium — parle-lui directement de ce qui l'attend. Inclus un témoignage, un aperçu du programme, et un lien direct vers l'inscription.
+Étape 5 : crée l'email de relance. Ajoute un bloc "Send Email". L'objet : "Ta prochaine étape avec schoolsWP". Le contenu : personnalisé. Tu sais que le contact s'intéresse à la formation premium - parle-lui directement de ce qui l'attend. Inclus un témoignage, un aperçu du programme, et un lien direct vers l'inscription.
 
 [Montre la création de l'email avec contenu personnalisé]
 
-**[ÉCRAN — screencast deuxième automation]**
+**[ÉCRAN - screencast deuxième automation]**
 
 [Crée une deuxième automation]
 
-Étape 6 : crée une deuxième automation basée sur un clic. Nouvelle automation : "Suivi CTA abandonné". Trigger : `cta_achat_premium_clicked`. Condition : le contact n'a PAS le tag "client-premium" (il a cliqué sur acheter mais n'a pas finalisé). Délai : 24 heures. Email : "Tu étais à deux doigts — voici ce que tu rates".
+Étape 6 : crée une deuxième automation basée sur un clic. Nouvelle automation : "Suivi CTA abandonné". Trigger : `cta_achat_premium_clicked`. Condition : le contact n'a PAS le tag "client-premium" (il a cliqué sur acheter mais n'a pas finalisé). Délai : 24 heures. Email : "Tu étais à deux doigts - voici ce que tu rates".
 
 [Montre le workflow complet de la 2e automation]
 
 C'est un abandon de panier sans panier e-commerce. Tu détectes l'intention d'achat grace a l'événement de clic, et tu relances si la conversion n'a pas eu lieu.
 
-**[ÉCRAN — slide "Event + scoring"]**
+**[ÉCRAN - slide "Event + scoring"]**
 
 [Montre un schéma event > points > score total]
 
-Étape 7 : combine événements et scoring. Chaque événement peut ajouter des points au score du contact. Visite page premium : +5 points. Clic CTA achat : +10 points. Soumission formulaire démo : +15 points. Tu configures ça dans les actions de tes automations — ajoute un bloc "Add Contact Score" après le trigger.
+Étape 7 : combine événements et scoring. Chaque événement peut ajouter des points au score du contact. Visite page premium : +5 points. Clic CTA achat : +10 points. Soumission formulaire démo : +15 points. Tu configures ça dans les actions de tes automations - ajoute un bloc "Add Contact Score" après le trigger.
 
 [Montre l'ajout du bloc scoring dans l'automation]
 
-Résultat : un contact qui visite ta page 3 fois et clique sur le CTA accumule 25 points. Quand il dépasse un seuil — par exemple 30 points — une autre automation le qualifie comme "prospect chaud" et alerte ton équipe.
+Résultat : un contact qui visite ta page 3 fois et clique sur le CTA accumule 25 points. Quand il dépasse un seuil - par exemple 30 points - une autre automation le qualifie comme "prospect chaud" et alerte ton équipe.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tes événements ne sont plus de simples lignes dans un historique. Ils déclenchent des emails, ajoutent des scores, qualifient des prospects. C'est de l'automatisation basée sur le comportement réel, pas sur des suppositions. Dans la prochaine leçon, tu apprends à lire l'historique comportemental complet d'un contact.
 
@@ -323,7 +323,7 @@ Tes événements ne sont plus de simples lignes dans un historique. Ils déclenc
 
 ---
 
-### Leçon 14.5 — Consulte l'historique comportemental d'un contact
+### Leçon 14.5 : Consulte l'historique comportemental d'un contact
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -331,15 +331,15 @@ Tes événements ne sont plus de simples lignes dans un historique. Ils déclenc
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu as activé l'event tracking, créé des événements, monté des automations. Tout ça génère des données. Mais où les consulter ? Dans la fiche de chaque contact, FluentCRM affiche une timeline comportementale complète — chaque page visitée, chaque clic, chaque événement, avec la date et l'heure. Dans cette leçon, tu apprends à lire et exploiter cet historique.
+Tu as activé l'event tracking, créé des événements, monté des automations. Tout ça génère des données. Mais où les consulter ? Dans la fiche de chaque contact, FluentCRM affiche une timeline comportementale complète - chaque page visitée, chaque clic, chaque événement, avec la date et l'heure. Dans cette leçon, tu apprends à lire et exploiter cet historique.
 
-**[ÉCRAN — screencast FluentCRM > Contacts > fiche contact]**
+**[ÉCRAN - screencast FluentCRM > Contacts > fiche contact]**
 
 [Ouvre la fiche d'un contact avec des événements enregistrés]
 
-Étape 1 : ouvre la fiche d'un contact. Va dans Contacts, sélectionne un contact qui a de l'activité — ton contact test ou un vrai contact si tu as déjà du trafic. Dans la fiche, cherche l'onglet "Activities", "Events" ou "Timeline" selon la version de FluentCRM.
+Étape 1 : ouvre la fiche d'un contact. Va dans Contacts, sélectionne un contact qui a de l'activité - ton contact test ou un vrai contact si tu as déjà du trafic. Dans la fiche, cherche l'onglet "Activities", "Events" ou "Timeline" selon la version de FluentCRM.
 
 [Montre l'onglet avec la timeline]
 
@@ -347,9 +347,9 @@ Tu as activé l'event tracking, créé des événements, monté des automations.
 
 [Scrolle la timeline en montrant différents types d'événements]
 
-Ce que tu lis ici, c'est le parcours réel du contact sur ton site. Pas ce que tu imagines qu'il fait — ce qu'il fait vraiment.
+Ce que tu lis ici, c'est le parcours réel du contact sur ton site. Pas ce que tu imagines qu'il fait - ce qu'il fait vraiment.
 
-**[ÉCRAN — screencast analyse d'un parcours]**
+**[ÉCRAN - screencast analyse d'un parcours]**
 
 [Montre un contact avec un parcours type : 3 visites page premium, 1 clic CTA, 1 email reçu]
 
@@ -357,15 +357,15 @@ Ce que tu lis ici, c'est le parcours réel du contact sur ton site. Pas ce que t
 
 Tu vois le cheminement : curiosité > exploration > intérêt > intention d'achat. Sans l'event tracking, tu n'aurais vu que l'email envoyé. Avec, tu comprends tout le contexte.
 
-**[ÉCRAN — screencast filtrage de la timeline]**
+**[ÉCRAN - screencast filtrage de la timeline]**
 
 [Montre les filtres disponibles sur la timeline]
 
-Étape 4 : filtre la timeline. Sur un contact actif, la timeline peut contenir des dizaines d'événements. Utilise les filtres pour te concentrer sur ce qui compte. Filtre par type d'événement — uniquement les page views, uniquement les clics. Filtre par période — les 7 derniers jours, le dernier mois. Filtre par événement spécifique — uniquement les visites de la page premium.
+Étape 4 : filtre la timeline. Sur un contact actif, la timeline peut contenir des dizaines d'événements. Utilise les filtres pour te concentrer sur ce qui compte. Filtre par type d'événement - uniquement les page views, uniquement les clics. Filtre par période - les 7 derniers jours, le dernier mois. Filtre par événement spécifique - uniquement les visites de la page premium.
 
 [Applique un filtre et montre le résultat]
 
-**[ÉCRAN — screencast vue globale contacts]**
+**[ÉCRAN - screencast vue globale contacts]**
 
 [Retourne dans la liste des contacts, montre les colonnes de tri]
 
@@ -373,9 +373,9 @@ Tu vois le cheminement : curiosité > exploration > intérêt > intention d'acha
 
 [Montre la création d'un segment avec un filtre événement]
 
-C'est un outil puissant pour identifiér des groupes de contacts par comportement — pas seulement par tags ou listes.
+C'est un outil puissant pour identifiér des groupes de contacts par comportement - pas seulement par tags ou listes.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 L'historique comportemental est la pièce qui relie tout : les événements que tu as créés, les automations que tu as montées, et la compréhension de chaque contact. Tu sais maintenant où regarder et comment lire ces données. Dans l'exercice suivant, tu mets tout en pratique de bout en bout.
 
@@ -392,7 +392,7 @@ L'historique comportemental est la pièce qui relie tout : les événements que 
 
 ---
 
-### Leçon 14.6 — Exercice : configure le tracking de ta page de vente et déclenche une relance
+### Leçon 14.6 : Exercice : configure le tracking de ta page de vente et déclenche une relance
 
 **Durée** : 5 min
 **Type** : Exercice guidé
@@ -400,17 +400,17 @@ L'historique comportemental est la pièce qui relie tout : les événements que 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Exercice pratique. Tu vas configurer le tracking complet de ta page de vente — de l'événement jusqu'à l'email de relance automatique. Cinq étapes. À la fin, un visiteur qui revient deux fois sur ta page de vente reçoit un email personnalisé 2 heures plus tard.
+Exercice pratique. Tu vas configurer le tracking complet de ta page de vente - de l'événement jusqu'à l'email de relance automatique. Cinq étapes. À la fin, un visiteur qui revient deux fois sur ta page de vente reçoit un email personnalisé 2 heures plus tard.
 
-**[ÉCRAN — slide "Objectif de l'exercice"]**
+**[ÉCRAN - slide "Objectif de l'exercice"]**
 
 [Montre le schéma : page visitée 2x > event > automation > délai 2h > email relance]
 
 Voici ce que tu vas construire. Un contact visite ta page de vente (ou une page stratégique de ton site) deux fois en 7 jours. FluentCRM détecte ce comportement, attend 2 heures, et envoie un email de relance personnalisé. Si le contact est déjà client, rien ne se passe.
 
-**[ÉCRAN — screencast étape par étape]**
+**[ÉCRAN - screencast étape par étape]**
 
 [Montre chaque étape avec le résultat attendu]
 
@@ -420,11 +420,11 @@ Voici ce que tu vas construire. Un contact visite ta page de vente (ou une page 
 
 Étape 3 : crée l'automation de relance. Va dans Automations, crée "Relance page de vente". Trigger : "Event Tracked", événement `page_vente_visited`, occurrences minimum : 2, période : 7 jours. Ajoute une condition : si tag "client-premium" existe, sortie. Sinon, délai 2 heures, puis email de relance.
 
-Étape 4 : rédige l'email. Objet : "J'ai remarqué que tu t'intéresses à [nom de ton offre]". Contenu : rappel de la valeur de l'offre, un témoignage, un lien direct vers l'inscription. Garde un ton naturel — pas de pression, pas d'urgence artificielle.
+Étape 4 : rédige l'email. Objet : "J'ai remarqué que tu t'intéresses à [nom de ton offre]". Contenu : rappel de la valeur de l'offre, un témoignage, un lien direct vers l'inscription. Garde un ton naturel - pas de pression, pas d'urgence artificielle.
 
 Étape 5 : teste le parcours complet. Connecte-toi avec ton contact test. Visite ta page de vente deux fois (en espaçant de quelques minutes). Retourne dans FluentCRM : vérifie que les événements apparaissent dans la fiche du contact, et que l'automation s'est déclenchée. Vérifie que l'email est en file d'attente ou envoyé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Si tout fonctionne, tu as un système de relance comportementale complet. Chaque visiteur intéressé reçoit un suivi personnalisé, automatiquement, sans que tu interviennes. C'est exactement le type de système que tu peux dupliquer pour chaque page stratégique de ton site.
 
@@ -441,7 +441,7 @@ Si tout fonctionne, tu as un système de relance comportementale complet. Chaque
 
 ---
 
-### Leçon 14.7 — Quiz : valide tes acquis M14
+### Leçon 14.7 : Quiz : valide tes acquis M14
 
 **Durée** : 5 min
 **Type** : Quiz (8 QCM)
@@ -455,7 +455,7 @@ B) Les smart links trackent les clics dans les emails, l'event tracking suit le 
 C) Les smart links sont plus précis que l'event tracking
 D) Il n'y a pas de différence, ce sont deux noms pour la même fonctionnalité
 
-**Réponse** : B — Les smart links suivent les clics dans tes emails. L'event tracking suit ce que font tes contacts sur ton site WordPress, quelle que soit la source de trafic.
+**Réponse** : B - Les smart links suivent les clics dans tes emails. L'event tracking suit ce que font tes contacts sur ton site WordPress, quelle que soit la source de trafic.
 
 ---
 
@@ -466,7 +466,7 @@ B) Form Submission
 C) Page View
 D) Custom Event
 
-**Réponse** : C — Un événement de type Page View enregistre la visite d'une page spécifique par un contact identifié.
+**Réponse** : C - Un événement de type Page View enregistre la visite d'une page spécifique par un contact identifié.
 
 ---
 
@@ -477,7 +477,7 @@ B) Noms en camelCase : pageVentePremiumVisited
 C) Noms en minuscules avec underscores : page_vente_premium_visited
 D) Noms en majuscules : PAGE_VENTE_PREMIUM_VISITED
 
-**Réponse** : C — Minuscules avec underscores, format `element_action`. Cohérent, lisible, et compatible avec tous les systèmes.
+**Réponse** : C - Minuscules avec underscores, format `element_action`. Cohérent, lisible, et compatible avec tous les systèmes.
 
 ---
 
@@ -488,7 +488,7 @@ B) Pour éviter l'effet surveillance et paraître naturel
 C) Pour laisser le temps au contact de revenir sur la page
 D) C'est le délai minimum imposé par FluentCRM
 
-**Réponse** : B — Un email envoyé dans la minute après une visite donne l'impression d'être surveillé. Un délai de quelques heures rend l'email naturel.
+**Réponse** : B - Un email envoyé dans la minute après une visite donne l'impression d'être surveillé. Un délai de quelques heures rend l'email naturel.
 
 ---
 
@@ -499,7 +499,7 @@ B) `class="fc-track-click"`
 C) `data-fc-event="nom_événement"`
 D) `id="fluentcrm-button"`
 
-**Réponse** : C — L'attribut `data-fc-event` avec le nom de l'événement permet à FluentCRM de détecter le clic sur l'élément.
+**Réponse** : C - L'attribut `data-fc-event` avec le nom de l'événement permet à FluentCRM de détecter le clic sur l'élément.
 
 ---
 
@@ -510,7 +510,7 @@ B) Dans le trigger de l'automation (occurrences et période)
 C) Dans un bloc condition à l'intérieur de l'automation
 D) Dans la fiche du contact, onglet Events
 
-**Réponse** : B — Le trigger "Event Tracked" de l'automation permet de définir le nombre minimum d'occurrences et la période.
+**Réponse** : B - Le trigger "Event Tracked" de l'automation permet de définir le nombre minimum d'occurrences et la période.
 
 ---
 
@@ -521,7 +521,7 @@ B) Quantifier l'engagement réel et qualifier les contacts par comportement
 C) Remplacer les tags et les listes par un système unique
 D) Envoyer plus d'emails automatiques
 
-**Réponse** : B — Chaque événement ajoute des points au score. Un contact qui accumule des points sur des pages strategiques est objectivement plus engage — tu le qualifies par ses actions, pas par des suppositions.
+**Réponse** : B - Chaque événement ajoute des points au score. Un contact qui accumule des points sur des pages strategiques est objectivement plus engage - tu le qualifies par ses actions, pas par des suppositions.
 
 ---
 
@@ -532,7 +532,7 @@ B) Que le contact est bien identifié (connecté à WordPress) et que le module 
 C) Que le contact a un tag "tracking-actif"
 D) Que l'automation associée est en mode "Active"
 
-**Réponse** : B — L'event tracking ne fonctionne que pour les contacts identifiés (connectés). Vérifie aussi que le module est bien activé dans Settings > Modules.
+**Réponse** : B - L'event tracking ne fonctionne que pour les contacts identifiés (connectés). Vérifie aussi que le module est bien activé dans Settings > Modules.
 
 ---
 

@@ -1,0 +1,120 @@
+{
+  "source": "dataforseo_serp_organic_live_advanced",
+  "keyword": "linkuma avis",
+  "fetch_date": "2026-05-25",
+  "location": "France",
+  "language": "fr",
+  "serp_features_top": [
+    {
+      "rank": 1,
+      "type": "images",
+      "dominant_source": "wpmarmite.com (8/9 images)"
+    },
+    {
+      "rank": 4,
+      "type": "video",
+      "items_count": 4,
+      "sources": [
+        "YouTube"
+      ]
+    },
+    {
+      "rank": 7,
+      "type": "people_also_ask",
+      "questions": [
+        "Quels sont les avis des clients sur Linkuma ?",
+        "Quels sont les tarifs de Linkuma ?",
+        "Linkuma c'est quoi ?",
+        "Quels sont les avis sur SEO PowerSuite ?",
+        "Quel est le tarif de Linkuma ?",
+        "Quelle est la meilleure agence SEO en France ?"
+      ]
+    },
+    {
+      "rank": 12,
+      "type": "related_searches",
+      "items": [
+        "Linkuma annecy",
+        "Code promo Linkuma",
+        "Linkuma la talaudiere",
+        "App linkuma",
+        "Semjuice tarif",
+        "Ereferer avis",
+        "Mohamed El GNANI",
+        "Linksclub"
+      ]
+    }
+  ],
+  "organic_top_10": [
+    {
+      "rank": 1,
+      "domain": "fr.trustpilot.com",
+      "url": "https://fr.trustpilot.com/review/www.linkuma.com",
+      "title": "Lisez les avis marchands de www.linkuma.com",
+      "rating": "4.7/5 (128 votes)"
+    },
+    {
+      "rank": 2,
+      "domain": "www.bevisible.fr",
+      "url": "https://www.bevisible.fr/linkuma-avis/",
+      "title": "Avis Linkuma : prix des offres, qualité des spots et ... - BeVisible"
+    },
+    {
+      "rank": 3,
+      "domain": "jucumari-web.com",
+      "url": "https://jucumari-web.com/linkuma-avis/",
+      "title": "Linkuma avis 2026 : test complet de la plateforme netlinking",
+      "rating": "4.6/5 (126 votes)",
+      "price": "7€",
+      "snippet_features": [
+        "extended_snippet"
+      ]
+    },
+    {
+      "rank": 4,
+      "domain": "wpmarmite.com",
+      "url": "https://wpmarmite.com/linkuma/",
+      "title": "Linkuma [Avis 2026] : que vaut cette plateforme de netlinking",
+      "date": "2024-03-12"
+    },
+    {
+      "rank": 5,
+      "domain": "tool-advisor.fr",
+      "url": "https://tool-advisor.fr/outils/linkuma/",
+      "title": "Linkuma : notre avis sur la plateforme de netlinking",
+      "date": "2026-04-16",
+      "sitelinks": [
+        "Présentation",
+        "À qui s'adresse Linkuma ?",
+        "Les tarifs de Linkuma"
+      ]
+    },
+    {
+      "rank": 6,
+      "domain": "www.hugoherve.fr",
+      "url": "https://www.hugoherve.fr/avis-linkuma-que-vaut-cet-outil-de-netlinking/",
+      "title": "Avis Linkuma : Que vaut cet outil de netlinking ?",
+      "date": "il y a 6 jours",
+      "sitelinks": [
+        "Présentation et fonctionnalités",
+        "Évaluation des tarifs",
+        "Conclusion"
+      ]
+    },
+    {
+      "rank": 7,
+      "domain": "www.lafabriquedunet.fr",
+      "url": "https://www.lafabriquedunet.fr/logiciel/linkuma",
+      "title": "Notre avis sur Linkuma en 2026 - Analyse & Test indépendant"
+    },
+    {
+      "rank": 8,
+      "domain": "www.webandseo.fr",
+      "url": "https://www.webandseo.fr/linkuma/",
+      "title": "J'ai testé Linkuma : mon avis sincère + code promo (2026)",
+      "date": "2024-04-11"
+    }
+  ],
+  "schoolswp_position": "absent du top 20 organique",
+  "note_indexation": "Page /avis-sur-linkuma/ NEUTRAL/Crawled-not-indexed selon URL inspect GSC"
+}

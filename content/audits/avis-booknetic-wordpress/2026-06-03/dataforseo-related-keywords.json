@@ -1,0 +1,80 @@
+{
+  "source": "DataForSEO dataforseo_labs_google_related_keywords",
+  "seed": "booknetic",
+  "location_name": "France",
+  "language_code": "fr",
+  "collected_at": "2026-06-03",
+  "note": "Champ semantique tres faible volume. Quasi-totalite des requetes = navigational (login, demo, documentation, shortcodes, changelog, saas) ou marque concurrente. Aucune requete 'avis/review' FR avec volume mesurable.",
+  "keywords": [
+    {
+      "keyword": "bookingpress",
+      "search_volume": 110,
+      "competition_level": "LOW",
+      "cpc": 0.71,
+      "keyword_difficulty": 19,
+      "intent": "navigational",
+      "trend_quarterly": 56,
+      "trend_yearly": -18,
+      "note": "concurrent direct, en hausse"
+    },
+    {
+      "keyword": "booknetic",
+      "search_volume": 90,
+      "competition_level": "LOW",
+      "cpc": 1.38,
+      "intent": "navigational/informational",
+      "trend_yearly": -55
+    },
+    {
+      "keyword": "booknetic login",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "booknetic saas",
+      "search_volume": 10,
+      "intent": "navigational/informational"
+    },
+    {
+      "keyword": "booknetic demo",
+      "search_volume": 10,
+      "intent": "informational"
+    },
+    {
+      "keyword": "booknetic documentation",
+      "search_volume": 10,
+      "intent": "informational"
+    },
+    {
+      "keyword": "booknetic shortcodes",
+      "search_volume": 10,
+      "intent": "informational"
+    },
+    {
+      "keyword": "booknetic changelog",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "bookingpress demo",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "bookingpress shortcode",
+      "search_volume": 10,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "bookingpress lifetime",
+      "search_volume": 10,
+      "intent": "informational/transactional"
+    },
+    {
+      "keyword": "bookingpress lite",
+      "search_volume": 10,
+      "competition_level": "HIGH",
+      "intent": "navigational"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: schoolsWP Affiliate Cloaks
  * Description: Cloaks marque + affiliés (schoolswp.com/<slug>/ -> destination tierce). Couvre profils sociaux Michael KIHL + partenaires affiliés. Single source of truth dans la fonction schoolswp_affiliate_cloaks().
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Michaël KIHL
  * License: GPLv2 or later
  */
@@ -25,6 +25,7 @@ function schoolswp_affiliate_cloaks() {
         // Partenaires affiliés
         'novamira'      => 'https://www.dynamic.ooo?ref=734',
         'rank-math'     => 'https://rankmath.com/?ref=contact1975',
+        'booknetic'     => 'https://www.booknetic.com?ref=aajfwp',
 
         // Profils sociaux Michael KIHL (cloaked pour cohérence marque + traçabilité)
         'linkedin'      => 'https://www.linkedin.com/in/michaelkihl/',

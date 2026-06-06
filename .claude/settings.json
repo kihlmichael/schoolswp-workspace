@@ -260,6 +260,15 @@
         ]
       },
       {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"d:/VS Code/CLAUDE CODE/projects/schoolswp/.claude/hooks/prettier-format.sh\""
+          }
+        ]
+      },
+      {
         "matcher": "",
         "hooks": [
           {

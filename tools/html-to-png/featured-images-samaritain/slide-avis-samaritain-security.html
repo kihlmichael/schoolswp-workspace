@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Avis Samaritain Security : verdict schoolsWP</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, system-ui, sans-serif; background: #F4F5F7; color: #0F1419; }
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    background: #F4F5F7;
+    padding: 80px 96px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #00D400 0%, #00A300 100%);
+  }
+  .slide::after {
+    content: "";
+    position: absolute;
+    bottom: -120px; right: -120px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 0, 0.10) 0%, rgba(0, 212, 0, 0) 70%);
+    pointer-events: none;
+  }
+  .left { display: flex; flex-direction: column; gap: 32px; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0F1419;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 10px;
+    height: 10px;
+    background: #00D400;
+    border-radius: 50%;
+  }
+  .title {
+    font-size: 84px;
+    font-weight: 800;
+    line-height: 1.02;
+    color: #0F1419;
+    letter-spacing: -0.025em;
+  }
+  .title .accent { color: #00D400; }
+  .subtitle {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: #4b5563;
+    max-width: 760px;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .author strong { color: #0F1419; font-weight: 700; }
+  .wordmark { font-weight: 800; letter-spacing: -0.01em; }
+  .wordmark .wp { color: #00D400; }
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .score-card {
+    width: 580px;
+    aspect-ratio: 1 / 1.05;
+    background: #ffffff;
+    border-radius: 36px;
+    border: 1px solid rgba(15, 20, 25, 0.08);
+    box-shadow: 0 32px 80px -20px rgba(15, 20, 25, 0.22),
+                0 10px 28px -6px rgba(15, 20, 25, 0.10);
+    padding: 56px 48px 48px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .score-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #00D400 0%, #00A300 100%);
+  }
+  .score-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6b7280;
+    font-weight: 700;
+  }
+  .score-value {
+    font-size: 220px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: #0F1419;
+    letter-spacing: -0.04em;
+    margin-top: 8px;
+  }
+  .score-value .slash { color: #00D400; }
+  .score-value .max { color: #9ca3af; font-size: 100px; vertical-align: super; }
+  .verdict-name {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0F1419;
+    letter-spacing: -0.01em;
+    margin-top: 12px;
+  }
+  .verdict-tagline {
+    font-size: 17px;
+    color: #4b5563;
+    font-weight: 500;
+    line-height: 1.45;
+    margin-top: 6px;
+  }
+  .verdict-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .tag {
+    background: rgba(0, 212, 0, 0.10);
+    color: #008700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left">
+      <span class="badge"><span class="badge-dot"></span> Avis sécurité · WP hardening</span>
+      <h1 class="title">
+        Samaritain Security :<br>
+        <span class="accent">le verdict</span><br>
+        après test complet
+      </h1>
+      <p class="subtitle">Durcissement du noyau WordPress, licence GPL v2 et zéro renouvellement automatique. Mon retour honnête pour freelances et agences qui gèrent un parc de sites.</p>
+      <div class="author">
+        <span><strong>Michaël KIHL</strong> · <span class="wordmark">schools<span class="wp">WP</span></span></span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="score-card">
+        <div>
+          <div class="score-label">Note schoolsWP</div>
+          <div class="score-value">8,5<span class="slash">/</span><span class="max">10</span></div>
+          <div class="verdict-name">Samaritain Security</div>
+          <div class="verdict-tagline">Hardening WP + licences annuelles sans renouvellement auto, dès 39 € / an</div>
+        </div>
+        <div class="verdict-tags">
+          <span class="tag">GPL v2</span>
+          <span class="tag">pare-feu 8G</span>
+          <span class="tag">support FR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

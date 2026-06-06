@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 9 : Communication & Emails
+# Scripts vidéo - Module 9 : Communication & Emails
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M9 — Communication & Emails (Premium)
+**Module** : M9 - Communication & Emails (Premium)
 **Leçons** : 6 vidéos + 1 quiz
 **Durée totale** : ~35 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 9.1 — Email template builder
+### Leçon 9.1 : Email template builder
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -17,70 +17,70 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 TutorLMS envoie des emails à chaque étape clé : inscription à un cours, complétion, résultat de quiz, nouveau commentaire Q&A. Le problème, c'est que les emails par défaut sont génériques et impersonnels. Dans cette leçon, on va les personnaliser avec le template builder intégré.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Settings > Email]
 
 Va dans Tutor LMS, Settings, puis Email. Tu arrives sur le panneau de configuration des emails. Première chose : vérifie que le toggle "Enable Email Notification" est activé. Sans ça, TutorLMS n'envoie rien.
 
-**[ÉCRAN — screencast panneau Email]**
+**[ÉCRAN - screencast panneau Email]**
 
 [Vue des options globales : Notification From, Sender Address, Footer Text]
 
 En haut, tu as trois réglages globaux :
 
-1. Notification From — le nom d'expéditeur. Mets le nom de ta plateforme, pas "WordPress" ou "admin".
-2. Sender Email Address — l'adresse d'envoi. Utilise une adresse sur ton domaine, pas une adresse Gmail.
-3. Footer Text — le pied de page commun à tous les emails.
+1. Notification From - le nom d'expéditeur. Mets le nom de ta plateforme, pas "WordPress" ou "admin".
+2. Sender Email Address - l'adresse d'envoi. Utilise une adresse sur ton domaine, pas une adresse Gmail.
+3. Footer Text - le pied de page commun à tous les emails.
 
 La recommandation schoolsWP : utilise un expéditeur du type "Formation schoolsWP" avec une adresse noreply@tondomaine.com. Ça fait professionnel et ça évite les filtres anti-spam.
 
-**[ÉCRAN — screencast liste des templates]**
+**[ÉCRAN - screencast liste des templates]**
 
 [Défilement de la liste des événements email]
 
 En dessous, tu as la liste de tous les événements qui déclenchent un email. Chaque événement a un toggle pour l'activer ou le désactiver. Les principaux :
 
 Pour les étudiants :
-- Enrollment — quand un élève s'inscrit à un cours
-- Course Completed — quand il termine le cours
-- Quiz Completed — après chaque quiz
-- Assignment Submitted — confirmation de soumission d'un devoir
+- Enrollment - quand un élève s'inscrit à un cours
+- Course Completed - quand il termine le cours
+- Quiz Completed - après chaque quiz
+- Assignment Submitted - confirmation de soumission d'un devoir
 
 Pour les instructeurs :
-- New Student Enrolled — notification quand un nouvel élève rejoint le cours
-- New Q&A Message — quand un élève pose une question
-- Assignment Submitted — quand un devoir est soumis
+- New Student Enrolled - notification quand un nouvel élève rejoint le cours
+- New Q&A Message - quand un élève pose une question
+- Assignment Submitted - quand un devoir est soumis
 
 Pour les administrateurs :
-- New Instructor Registration — quand un instructeur demande son compte
-- New Course Published — quand un cours est soumis pour relecture
+- New Instructor Registration - quand un instructeur demande son compte
+- New Course Published - quand un cours est soumis pour relecture
 
-**[ÉCRAN — screencast édition d'un template]**
+**[ÉCRAN - screencast édition d'un template]**
 
 [Clique sur un événement, par exemple "Enrollment"]
 
 Clique sur un événement pour le personnaliser. Tu arrives dans l'éditeur de template. Tu as :
 
-- Subject — l'objet de l'email
-- Heading — le titre principal dans le corps de l'email
-- Message — le contenu avec un éditeur visuel
+- Subject - l'objet de l'email
+- Heading - le titre principal dans le corps de l'email
+- Message - le contenu avec un éditeur visuel
 
-L'éditeur supporte le HTML basique et surtout les placeholders — des variables dynamiques qu'on remplacera automatiquement. Par exemple, {student_name} sera remplacé par le prénom de l'élève, {course_name} par le nom du cours. On verra la liste complète des placeholders dans la leçon 9.6.
+L'éditeur supporte le HTML basique et surtout les placeholders - des variables dynamiques qu'on remplacera automatiquement. Par exemple, {student_name} sera remplacé par le prénom de l'élève, {course_name} par le nom du cours. On verra la liste complète des placeholders dans la leçon 9.6.
 
-**[ÉCRAN — screencast preview email]**
+**[ÉCRAN - screencast preview email]**
 
 [Montre le bouton Preview et le rendu]
 
-Avant d'enregistrer, utilise le bouton Preview pour voir le rendu final. Ça t'évite les mauvaises surprises — un placeholder mal fermé, un titre trop long, un lien cassé.
+Avant d'enregistrer, utilise le bouton Preview pour voir le rendu final. Ça t'évite les mauvaises surprises - un placeholder mal fermé, un titre trop long, un lien cassé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Personnalise au minimum les emails d'inscription et de complétion de cours. Ce sont les deux que tes élèves voient le plus. Mets ton nom de marque, un message d'accueil clair, et un lien vers le cours. Dans la prochaine leçon, on passe aux notifications on-site — celles qui apparaissent directement dans l'interface.
+Personnalise au minimum les emails d'inscription et de complétion de cours. Ce sont les deux que tes élèves voient le plus. Mets ton nom de marque, un message d'accueil clair, et un lien vers le cours. Dans la prochaine leçon, on passe aux notifications on-site - celles qui apparaissent directement dans l'interface.
 
 ---
 
@@ -96,7 +96,7 @@ Personnalise au minimum les emails d'inscription et de complétion de cours. Ce 
 
 ---
 
-### Leçon 9.2 — Notifications on-site & push
+### Leçon 9.2 : Notifications on-site & push
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -105,52 +105,52 @@ Personnalise au minimum les emails d'inscription et de complétion de cours. Ce 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Les emails c'est bien, mais tes élèves ne les lisent pas toujours. Les notifications on-site, elles, apparaissent directement dans l'interface TutorLMS — comme sur Facebook ou YouTube. L'élève voit une cloche avec un badge, il clique, il voit ce qui s'est passé. C'est immédiat et ça ne dépend pas de la boîte mail.
+Les emails c'est bien, mais tes élèves ne les lisent pas toujours. Les notifications on-site, elles, apparaissent directement dans l'interface TutorLMS - comme sur Facebook ou YouTube. L'élève voit une cloche avec un badge, il clique, il voit ce qui s'est passé. C'est immédiat et ça ne dépend pas de la boîte mail.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Settings > Notifications]
 
 Va dans Tutor LMS, Settings, puis cherche la section Notifications. Tu as deux blocs : les notifications on-site (dans le navigateur) et les notifications push (optionnelles).
 
-**[ÉCRAN — screencast panneau Notifications]**
+**[ÉCRAN - screencast panneau Notifications]**
 
 [Vue du toggle principal et de la liste des événements]
 
-Active le toggle principal "Enable On-Site Notification". En dessous, tu retrouves une liste d'événements similaire aux emails — mais cette fois, la notification s'affiche dans l'interface du site.
+Active le toggle principal "Enable On-Site Notification". En dessous, tu retrouves une liste d'événements similaire aux emails - mais cette fois, la notification s'affiche dans l'interface du site.
 
 Les événements les plus utiles :
 
 Pour les étudiants :
-- Course Enrollment — confirmation d'inscription
-- Quiz Graded — résultat de quiz disponible
-- Announcement Posted — l'instructeur a publié une annonce (on verra ça en leçon 9.3)
-- Q&A Reply — réponse à sa question
+- Course Enrollment - confirmation d'inscription
+- Quiz Graded - résultat de quiz disponible
+- Announcement Posted - l'instructeur a publié une annonce (on verra ça en leçon 9.3)
+- Q&A Reply - réponse à sa question
 
 Pour les instructeurs :
-- New Q&A Question — un élève a posé une question
-- Assignment to Review — un devoir est en attente de correction
-- New Enrollment — un élève rejoint le cours
+- New Q&A Question - un élève a posé une question
+- Assignment to Review - un devoir est en attente de correction
+- New Enrollment - un élève rejoint le cours
 
-**[ÉCRAN — screencast front-end cloche notification]**
+**[ÉCRAN - screencast front-end cloche notification]**
 
 [Montre la cloche de notification dans le header du site, côté élève]
 
-Côté front-end, l'élève voit une icône cloche dans le header. Le badge affiche le nombre de notifications non lues. Un clic ouvre le panneau avec la liste. Chaque notification contient un lien direct vers le contenu concerné — le cours, le quiz, la discussion Q&A.
+Côté front-end, l'élève voit une icône cloche dans le header. Le badge affiche le nombre de notifications non lues. Un clic ouvre le panneau avec la liste. Chaque notification contient un lien direct vers le contenu concerné - le cours, le quiz, la discussion Q&A.
 
-**[ÉCRAN — screencast paramètres push]**
+**[ÉCRAN - screencast paramètres push]**
 
 [Montre les options push si disponibles]
 
-TutorLMS propose aussi les notifications push via le navigateur. C'est la notification qui apparaît même quand l'élève n'est pas sur ton site — comme une notification de téléphone, mais sur desktop. Pour l'activer, il faut que ton site soit en HTTPS (obligatoire) et que l'élève accepte les notifications dans son navigateur.
+TutorLMS propose aussi les notifications push via le navigateur. C'est la notification qui apparaît même quand l'élève n'est pas sur ton site - comme une notification de téléphone, mais sur desktop. Pour l'activer, il faut que ton site soit en HTTPS (obligatoire) et que l'élève accepte les notifications dans son navigateur.
 
 Mon avis : les notifications on-site sont indispensables, les push sont un bonus. Active les on-site en priorité.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Les notifications on-site et les emails sont complémentaires. L'email confirme, la notification on-site rappelle. Active les deux pour les événements importants — inscription, complétion, Q&A. Dans la prochaine leçon, on découvre les annonces — un outil pour communiquer directement avec les élèves d'un cours spécifique.
+Les notifications on-site et les emails sont complémentaires. L'email confirme, la notification on-site rappelle. Active les deux pour les événements importants - inscription, complétion, Q&A. Dans la prochaine leçon, on découvre les annonces - un outil pour communiquer directement avec les élèves d'un cours spécifique.
 
 ---
 
@@ -160,13 +160,13 @@ Les notifications on-site et les emails sont complémentaires. L'email confirme,
 - Événements principaux : enrollment, quiz graded, announcement, Q&A reply
 - Push notifications disponibles (HTTPS requis + autorisation navigateur)
 - Recommandation : activer on-site en priorité, push en complément
-- Complémentaire aux emails — pas un remplacement
+- Complémentaire aux emails - pas un remplacement
 
 **Mots clés SEO** : TutorLMS notifications, notifications on-site LMS, push notifications TutorLMS, alertes élèves WordPress
 
 ---
 
-### Leçon 9.3 — Annonces
+### Leçon 9.3 : Annonces
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -175,53 +175,53 @@ Les notifications on-site et les emails sont complémentaires. L'email confirme,
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu dois prévenir tes élèves d'une mise à jour de contenu, d'un live prévu la semaine prochaine, ou d'un changement de planning ? Les annonces TutorLMS sont faites pour ça. C'est un système de communication ciblé — tu publies une annonce dans un cours, et seuls les élèves inscrits à ce cours la voient.
+Tu dois prévenir tes élèves d'une mise à jour de contenu, d'un live prévu la semaine prochaine, ou d'un changement de planning ? Les annonces TutorLMS sont faites pour ça. C'est un système de communication ciblé - tu publies une annonce dans un cours, et seuls les élèves inscrits à ce cours la voient.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > un cours > onglet Announcements]
 
 Ouvre n'importe quel cours dans TutorLMS. Dans le menu du cours, tu trouves l'onglet Announcements. C'est ici que tu gères toutes les annonces liées à ce cours.
 
-**[ÉCRAN — screencast création d'une annonce]**
+**[ÉCRAN - screencast création d'une annonce]**
 
 [Clique sur "Add New Announcement"]
 
 Clique sur "Add New Announcement". Tu as deux champs :
 
-1. Titre — l'objet de l'annonce. Sois concis : "Nouveau module disponible", "Live Q&A vendredi 14h", "Mise à jour de la leçon 5".
-2. Contenu — le corps du message. L'éditeur supporte le texte riche, les liens, les images. Tu peux détailler autant que nécessaire.
+1. Titre - l'objet de l'annonce. Sois concis : "Nouveau module disponible", "Live Q&A vendredi 14h", "Mise à jour de la leçon 5".
+2. Contenu - le corps du message. L'éditeur supporte le texte riche, les liens, les images. Tu peux détailler autant que nécessaire.
 
 Publie. L'annonce est immédiatement visible pour tous les élèves inscrits au cours.
 
-**[ÉCRAN — screencast front-end annonce]**
+**[ÉCRAN - screencast front-end annonce]**
 
 [Montre l'onglet Announcements sur la page du cours côté élève]
 
 Côté élève, les annonces apparaissent dans l'onglet "Announcements" sur la page du cours. L'annonce la plus récente est en haut. L'élève voit le titre, la date, et peut cliquer pour lire le contenu complet.
 
-Si les notifications on-site sont activées (leçon précédente), l'élève reçoit aussi une notification dans sa cloche. Et si l'événement email correspondant est activé, il reçoit un email. Trois canaux pour une seule action — c'est la force du système.
+Si les notifications on-site sont activées (leçon précédente), l'élève reçoit aussi une notification dans sa cloche. Et si l'événement email correspondant est activé, il reçoit un email. Trois canaux pour une seule action - c'est la force du système.
 
-**[ÉCRAN — screencast liste des annonces]**
+**[ÉCRAN - screencast liste des annonces]**
 
 [Montre la liste des annonces existantes avec options modifier/supprimer]
 
-Tu retrouves toutes tes annonces dans la liste. Tu peux les modifier ou les supprimer à tout moment. Les annonces sont spécifiques à chaque cours — une annonce publiée dans le cours A n'apparaît pas dans le cours B.
+Tu retrouves toutes tes annonces dans la liste. Tu peux les modifier ou les supprimer à tout moment. Les annonces sont spécifiques à chaque cours - une annonce publiée dans le cours A n'apparaît pas dans le cours B.
 
-**[ÉCRAN — screencast cas d'usage]**
+**[ÉCRAN - screencast cas d'usage]**
 
 [Montre un exemple concret d'annonce bien rédigée]
 
 Quelques bonnes pratiques :
 
-- Un titre clair et actionnable — pas "Information" mais "Nouveau quiz disponible — teste tes connaissances"
-- Un contenu court — l'annonce n'est pas un article de blog, c'est un message ciblé
-- Un lien si nécessaire — vers la leçon concernée, un formulaire, un replay
-- Une fréquence raisonnable — une annonce par semaine maximum, sinon tes élèves décrochent
+- Un titre clair et actionnable - pas "Information" mais "Nouveau quiz disponible - teste tes connaissances"
+- Un contenu court - l'annonce n'est pas un article de blog, c'est un message ciblé
+- Un lien si nécessaire - vers la leçon concernée, un formulaire, un replay
+- Une fréquence raisonnable - une annonce par semaine maximum, sinon tes élèves décrochent
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Les annonces sont parfaites pour maintenir l'engagement dans un cours. Utilise-les pour les mises à jour importantes, pas pour du remplissage. Prochaine leçon : le système de Q&A, qui permet à tes élèves de poser des questions directement dans les leçons.
 
@@ -232,14 +232,14 @@ Les annonces sont parfaites pour maintenir l'engagement dans un cours. Utilise-l
 - Deux champs : titre + contenu (texte riche)
 - Visibles uniquement par les élèves inscrits au cours
 - Déclenchent notification on-site + email si actives
-- Spécifiques à chaque cours — pas de diffusion globale
+- Spécifiques à chaque cours - pas de diffusion globale
 - Bonne pratique : une annonce par semaine max, titre actionnable, contenu court
 
 **Mots clés SEO** : TutorLMS annonces, announcements TutorLMS, communiquer élèves LMS WordPress, annonces cours en ligne
 
 ---
 
-### Leçon 9.4 — Q&A étudiants/instructeurs
+### Leçon 9.4 : Q&A étudiants/instructeurs
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -248,33 +248,33 @@ Les annonces sont parfaites pour maintenir l'engagement dans un cours. Utilise-l
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Quand un élève bloque sur une leçon, il doit pouvoir poser sa question sans quitter la page. C'est exactement ce que fait le Q&A intégré de TutorLMS. Chaque leçon a son propre fil de discussion. L'élève pose sa question, l'instructeur répond, et toute la classe en bénéficie. C'est comme un mini-forum contextuel.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Settings > recherche Q&A]
 
 D'abord, vérifie que le Q&A est activé. Va dans Tutor LMS, Settings, et cherche l'option "Q&A" ou "Enable Q&A for course". Active le toggle. Sans ça, les élèves ne voient pas l'onglet Q&A dans les leçons.
 
-**[ÉCRAN — screencast front-end leçon]**
+**[ÉCRAN - screencast front-end leçon]**
 
 [Montre l'onglet Q&A sous le contenu d'une leçon]
 
 Côté élève, quand le Q&A est activé, un onglet "Q&A" apparaît sous le contenu de chaque leçon. L'élève clique dessus et voit les questions existantes. Il peut poser une nouvelle question ou répondre à une question existante.
 
-**[ÉCRAN — screencast création d'une question]**
+**[ÉCRAN - screencast création d'une question]**
 
 [Montre le formulaire de soumission Q&A]
 
 Pour poser une question, l'élève clique sur "Ask a new question". Il a deux champs :
-- Le titre — la question en une phrase
-- Le contenu — les détails, le contexte, ce qu'il a déjà essayé
+- Le titre - la question en une phrase
+- Le contenu - les détails, le contexte, ce qu'il a déjà essayé
 
-Il peut aussi cocher une option pour rendre la question privée — visible uniquement par l'instructeur. Utile si la question est personnelle ou spécifique.
+Il peut aussi cocher une option pour rendre la question privée - visible uniquement par l'instructeur. Utile si la question est personnelle ou spécifique.
 
-**[ÉCRAN — screencast réponse instructeur]**
+**[ÉCRAN - screencast réponse instructeur]**
 
 [Montre la vue instructeur du Q&A dans le dashboard]
 
@@ -285,26 +285,26 @@ Côté instructeur, tu retrouves toutes les questions dans ton dashboard, sectio
 
 Clique sur une question pour répondre. Ta réponse est publiée immédiatement. L'élève reçoit une notification (on-site + email si actives).
 
-**[ÉCRAN — screencast modération Q&A]**
+**[ÉCRAN - screencast modération Q&A]**
 
 [Montre les options de modération]
 
 En tant qu'instructeur ou admin, tu as des options de modération :
-- Marquer une question comme résolue — ça la signale visuellement dans la liste
+- Marquer une question comme résolue - ça la signale visuellement dans la liste
 - Supprimer une question inappropriée
 - Répondre publiquement ou en privé
 
-Le Q&A fonctionne aussi pour les quiz et les devoirs — pas uniquement les leçons vidéo ou texte.
+Le Q&A fonctionne aussi pour les quiz et les devoirs - pas uniquement les leçons vidéo ou texte.
 
-**[ÉCRAN — screencast vue globale Q&A admin]**
+**[ÉCRAN - screencast vue globale Q&A admin]**
 
 [Montre la page Q&A dans le menu admin Tutor LMS]
 
 En tant qu'admin, tu as aussi une vue globale de toutes les questions Q&A de la plateforme. Ça te permet de surveiller les questions sans réponse, identifier les leçons qui posent problème, et intervenir si un instructeur ne répond pas.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Le Q&A est un outil d'engagement puissant. Un élève qui pose une question est un élève impliqué. Un instructeur qui répond rapidement est un instructeur qui fidélise. Surveille les questions sans réponse — c'est un indicateur de santé de ta formation. Prochaine leçon : le feedback instructeur, un autre canal de communication direct.
+Le Q&A est un outil d'engagement puissant. Un élève qui pose une question est un élève impliqué. Un instructeur qui répond rapidement est un instructeur qui fidélise. Surveille les questions sans réponse - c'est un indicateur de santé de ta formation. Prochaine leçon : le feedback instructeur, un autre canal de communication direct.
 
 ---
 
@@ -321,7 +321,7 @@ Le Q&A est un outil d'engagement puissant. Un élève qui pose une question est 
 
 ---
 
-### Leçon 9.5 — Feedback instructeur
+### Leçon 9.5 : Feedback instructeur
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -330,11 +330,11 @@ Le Q&A est un outil d'engagement puissant. Un élève qui pose une question est 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Le Q&A est public — tout le monde voit les questions et les réponses. Mais parfois, tu as besoin d'un retour individuel et privé. C'est le rôle du feedback instructeur dans TutorLMS. Tu corriges un devoir, tu évalues un quiz à réponse ouverte, tu veux guider un élève personnellement — le feedback est ton outil.
+Le Q&A est public - tout le monde voit les questions et les réponses. Mais parfois, tu as besoin d'un retour individuel et privé. C'est le rôle du feedback instructeur dans TutorLMS. Tu corriges un devoir, tu évalues un quiz à réponse ouverte, tu veux guider un élève personnellement - le feedback est ton outil.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers le dashboard instructeur > Assignments]
 
@@ -342,7 +342,7 @@ Le feedback s'utilise principalement dans deux contextes : les devoirs (assignme
 
 Va dans ton dashboard instructeur, section Assignments. Tu vois la liste des devoirs soumis par tes élèves, avec le statut : en attente, validé, ou rejeté.
 
-**[ÉCRAN — screencast correction d'un devoir]**
+**[ÉCRAN - screencast correction d'un devoir]**
 
 [Clique sur un devoir soumis pour le corriger]
 
@@ -351,35 +351,35 @@ Clique sur un devoir pour le corriger. Tu vois :
 - Les consignes du devoir pour référence
 - La date de soumission
 
-En bas, tu as la zone de feedback. C'est un éditeur texte où tu écris ton retour. Sois précis : ce qui est bien, ce qui doit être amélioré, et comment l'améliorer. Un "bien" tout seul ne sert à rien. Un "ta structure est claire, mais la partie 3 manque d'exemples concrets — ajoute un cas pratique" est utile.
+En bas, tu as la zone de feedback. C'est un éditeur texte où tu écris ton retour. Sois précis : ce qui est bien, ce qui doit être amélioré, et comment l'améliorer. Un "bien" tout seul ne sert à rien. Un "ta structure est claire, mais la partie 3 manque d'exemples concrets - ajoute un cas pratique" est utile.
 
-**[ÉCRAN — screencast notation + feedback]**
+**[ÉCRAN - screencast notation + feedback]**
 
 [Montre le champ de note et le bouton de validation]
 
 Tu attribues une note (sur le barème que tu as défini dans le devoir) et tu choisis :
-- Approve — le devoir est validé
-- Reject — le devoir est refusé, l'élève doit recommencer
+- Approve - le devoir est validé
+- Reject - le devoir est refusé, l'élève doit recommencer
 
-Dans les deux cas, ton feedback est envoyé à l'élève. S'il est refusé, l'élève peut resoumettre — il verra ton feedback pour s'améliorer.
+Dans les deux cas, ton feedback est envoyé à l'élève. S'il est refusé, l'élève peut resoumettre - il verra ton feedback pour s'améliorer.
 
-**[ÉCRAN — screencast feedback sur quiz]**
+**[ÉCRAN - screencast feedback sur quiz]**
 
 [Montre un quiz à correction manuelle dans le dashboard]
 
-Pour les quiz, le feedback fonctionne avec les questions à réponse ouverte — celles qui ne peuvent pas être corrigées automatiquement. Tu retrouves les quiz en attente de correction dans ton dashboard, section Quiz Attempts.
+Pour les quiz, le feedback fonctionne avec les questions à réponse ouverte - celles qui ne peuvent pas être corrigées automatiquement. Tu retrouves les quiz en attente de correction dans ton dashboard, section Quiz Attempts.
 
 Clique sur une tentative. Tu vois les réponses de l'élève question par question. Pour chaque réponse ouverte, tu attribues les points et tu peux ajouter un commentaire.
 
-**[ÉCRAN — screencast vue élève du feedback]**
+**[ÉCRAN - screencast vue élève du feedback]**
 
 [Montre ce que l'élève voit après correction]
 
 Côté élève, le feedback apparaît directement sur la page du devoir ou du quiz. L'élève reçoit une notification quand le feedback est disponible. Il voit ta note, ton commentaire, et si c'est un devoir refusé, le bouton pour resoumettre.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Le feedback est ce qui fait la différence entre une plateforme de cours et une vraie formation. Un retour précis et constructif transforme un cours passif en expérience d'apprentissage. Prends le temps de rédiger des feedbacks utiles — tes élèves s'en souviendront. Dernière leçon du module : les placeholders email, pour automatiser la personnalisation de tes communications.
+Le feedback est ce qui fait la différence entre une plateforme de cours et une vraie formation. Un retour précis et constructif transforme un cours passif en expérience d'apprentissage. Prends le temps de rédiger des feedbacks utiles - tes élèves s'en souviendront. Dernière leçon du module : les placeholders email, pour automatiser la personnalisation de tes communications.
 
 ---
 
@@ -395,7 +395,7 @@ Le feedback est ce qui fait la différence entre une plateforme de cours et une 
 
 ---
 
-### Leçon 9.6 — Placeholders email
+### Leçon 9.6 : Placeholders email
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -404,49 +404,49 @@ Le feedback est ce qui fait la différence entre une plateforme de cours et une 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-En leçon 9.1, on a vu comment personnaliser les templates email. Mais pour aller plus loin, tu dois maîtriser les placeholders — ces variables dynamiques qui insèrent automatiquement le nom de l'élève, le titre du cours, la note d'un quiz. C'est ce qui transforme un email générique en message personnalisé, sans effort manuel.
+En leçon 9.1, on a vu comment personnaliser les templates email. Mais pour aller plus loin, tu dois maîtriser les placeholders - ces variables dynamiques qui insèrent automatiquement le nom de l'élève, le titre du cours, la note d'un quiz. C'est ce qui transforme un email générique en message personnalisé, sans effort manuel.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Settings > Email > un template]
 
-Retourne dans Settings, Email, et ouvre n'importe quel template. Dans l'éditeur, tu vois un bouton ou un lien "Available Placeholders" — clique dessus pour afficher la liste des variables utilisables dans ce template.
+Retourne dans Settings, Email, et ouvre n'importe quel template. Dans l'éditeur, tu vois un bouton ou un lien "Available Placeholders" - clique dessus pour afficher la liste des variables utilisables dans ce template.
 
-**[ÉCRAN — screencast liste des placeholders]**
+**[ÉCRAN - screencast liste des placeholders]**
 
 [Montre la liste des placeholders disponibles pour un template d'inscription]
 
 Chaque template a ses propres placeholders. Voici les plus courants :
 
 Placeholders globaux (disponibles partout) :
-- {site_name} — le nom de ton site WordPress
-- {site_url} — l'URL de ton site
-- {logo} — le logo de ton site (si défini)
+- {site_name} - le nom de ton site WordPress
+- {site_url} - l'URL de ton site
+- {logo} - le logo de ton site (si défini)
 
 Placeholders élève :
-- {student_name} — prénom et nom de l'élève
-- {student_email} — adresse email
-- {student_username} — nom d'utilisateur
+- {student_name} - prénom et nom de l'élève
+- {student_email} - adresse email
+- {student_username} - nom d'utilisateur
 
 Placeholders cours :
-- {course_name} — titre du cours
-- {course_url} — lien direct vers le cours
-- {course_duration} — durée estimée du cours
+- {course_name} - titre du cours
+- {course_url} - lien direct vers le cours
+- {course_duration} - durée estimée du cours
 
 Placeholders quiz :
-- {quiz_name} — titre du quiz
-- {quiz_score} — note obtenue
-- {quiz_passing_grade} — note minimale pour réussir
+- {quiz_name} - titre du quiz
+- {quiz_score} - note obtenue
+- {quiz_passing_grade} - note minimale pour réussir
 
-**[ÉCRAN — screencast exemple concret]**
+**[ÉCRAN - screencast exemple concret]**
 
 [Montre un template d'email de complétion avec placeholders]
 
 Prenons un exemple concret. Pour l'email de complétion de cours, tu pourrais écrire :
 
-Sujet : Bravo {student_name} — tu as terminé {course_name} !
+Sujet : Bravo {student_name} - tu as terminé {course_name} !
 
 Corps :
 "Félicitations {student_name},
@@ -462,38 +462,38 @@ L'équipe {site_name}"
 
 C'est personnalisé, professionnel, et ça prend 30 secondes à configurer.
 
-**[ÉCRAN — screencast placeholders avancés]**
+**[ÉCRAN - screencast placeholders avancés]**
 
 [Montre des placeholders spécifiques aux devoirs et instructeurs]
 
 Pour les templates liés aux devoirs :
-- {assignment_name} — titre du devoir
-- {assignment_comment} — le feedback que tu as rédigé (leçon 9.5)
-- {assignment_score} — la note attribuée
+- {assignment_name} - titre du devoir
+- {assignment_comment} - le feedback que tu as rédigé (leçon 9.5)
+- {assignment_score} - la note attribuée
 
 Pour les templates instructeurs :
-- {instructor_name} — nom de l'instructeur
-- {instructor_email} — email de l'instructeur
+- {instructor_name} - nom de l'instructeur
+- {instructor_email} - email de l'instructeur
 
-**[ÉCRAN — screencast erreurs courantes]**
+**[ÉCRAN - screencast erreurs courantes]**
 
 [Montre un placeholder mal écrit et le résultat]
 
 Attention aux erreurs courantes :
-- Un placeholder mal orthographié — {studen_name} au lieu de {student_name} — s'affiche tel quel dans l'email. L'élève voit la variable brute.
-- Un placeholder utilisé dans le mauvais template — {quiz_score} dans un email d'inscription ne donnera rien, parce qu'il n'y a pas de quiz à ce stade.
-- Les accolades manquantes — student_name sans les {} n'est pas interprété.
+- Un placeholder mal orthographié - {studen_name} au lieu de {student_name} - s'affiche tel quel dans l'email. L'élève voit la variable brute.
+- Un placeholder utilisé dans le mauvais template - {quiz_score} dans un email d'inscription ne donnera rien, parce qu'il n'y a pas de quiz à ce stade.
+- Les accolades manquantes - student_name sans les {} n'est pas interprété.
 
 Toujours utiliser le bouton Preview (leçon 9.1) pour vérifier le rendu avant d'enregistrer.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Les placeholders sont le lien entre tes templates email et les données de ta plateforme. Maîtrise-les, et chaque email que TutorLMS envoie ressemblera à un message rédigé à la main. C'est la fin du Module 9 — tu sais maintenant gérer les emails, les notifications, les annonces, le Q&A, le feedback et les placeholders. Prochaine étape : le quiz du module pour valider tes acquis.
+Les placeholders sont le lien entre tes templates email et les données de ta plateforme. Maîtrise-les, et chaque email que TutorLMS envoie ressemblera à un message rédigé à la main. C'est la fin du Module 9 - tu sais maintenant gérer les emails, les notifications, les annonces, le Q&A, le feedback et les placeholders. Prochaine étape : le quiz du module pour valider tes acquis.
 
 ---
 
 **Points clés** :
-- Chaque template a ses propres placeholders — consulter "Available Placeholders"
+- Chaque template a ses propres placeholders - consulter "Available Placeholders"
 - Placeholders globaux : {site_name}, {site_url}, {logo}
 - Placeholders élève : {student_name}, {student_email}
 - Placeholders cours : {course_name}, {course_url}
@@ -505,7 +505,7 @@ Les placeholders sont le lien entre tes templates email et les données de ta pl
 
 ---
 
-### Leçon 9.7 — Quiz Module 9
+### Leçon 9.7 : Quiz Module 9
 
 **Type** : Quiz TutorLMS
 **Questions** : 8 QCM
@@ -588,7 +588,7 @@ Un élève veut poser une question visible uniquement par l'instructeur. Quelle 
 - C) Poster dans les annonces du cours
 - D) Les questions sont toujours publiques
 
-**Explication** : Le Q&A de TutorLMS offre une option pour rendre une question privée — visible uniquement par l'instructeur.
+**Explication** : Le Q&A de TutorLMS offre une option pour rendre une question privée - visible uniquement par l'instructeur.
 
 ---
 
@@ -612,16 +612,16 @@ Quelle est la recommandation schoolsWP pour l'adresse d'expéditeur des emails T
 - A) Une adresse Gmail personnelle
 - B) admin@wordpress.org
 - C) Une adresse sur ton propre domaine (ex: noreply@tondomaine.com) ✅
-- D) Ne pas mettre d'adresse — TutorLMS gère automatiquement
+- D) Ne pas mettre d'adresse - TutorLMS gère automatiquement
 
-**Explication** : Utiliser une adresse sur ton propre domaine fait professionnel et améliore la délivrabilité — ça évite les filtres anti-spam.
+**Explication** : Utiliser une adresse sur ton propre domaine fait professionnel et améliore la délivrabilité - ça évite les filtres anti-spam.
 
 ---
 
 **Récapitulatif Module 9** :
-- Leçon 9.1 : Email template builder — personnalisation des emails automatiques
-- Leçon 9.2 : Notifications on-site — cloche + push navigateur
-- Leçon 9.3 : Annonces — communication ciblée par cours
-- Leçon 9.4 : Q&A — forum contextuel par leçon
-- Leçon 9.5 : Feedback instructeur — retour privé sur devoirs et quiz
-- Leçon 9.6 : Placeholders email — variables dynamiques pour personnalisation
+- Leçon 9.1 : Email template builder - personnalisation des emails automatiques
+- Leçon 9.2 : Notifications on-site - cloche + push navigateur
+- Leçon 9.3 : Annonces - communication ciblée par cours
+- Leçon 9.4 : Q&A - forum contextuel par leçon
+- Leçon 9.5 : Feedback instructeur - retour privé sur devoirs et quiz
+- Leçon 9.6 : Placeholders email - variables dynamiques pour personnalisation

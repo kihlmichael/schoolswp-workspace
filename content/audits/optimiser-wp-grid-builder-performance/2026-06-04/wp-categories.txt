@@ -1,0 +1,368 @@
+=== HITS (grid/perf/cache) ===
+HIT    2103 | reservierungen-wordpress                 | parent=0 (ROOT) | Buchungen &amp; Dienstleistungen
+HIT    2263 | geschwindigkeit-leistung                 | parent=0 (ROOT) | Geschwindigkeit &amp; Leistung
+HIT    2050 | speed-performance                        | parent=0 (ROOT) | Speed &amp; Performance
+HIT    1838 | performance-wordpress                    | parent=0 (ROOT) | Vitesse &amp; Performance
+HIT    2510 | wp-grid-builder                          | parent=1688 (Design &amp; Constructeurs de pages) | WP Grid Builder
+
+=== AVIS WPGB category ===
+AVIS 2942620 status=publish cats=[2510] link=https://schoolswp.com/avis-wp-grid-builder/
+   avis cat 2510 | WP Grid Builder | parent=1688 (Design &amp; Constructeurs de pages)
+
+=== parent 1838 children ===
+     2399 | fastpixel                                | n=  1 | FastPixel
+     1840 | flyingpress                              | n=  4 | FlyingPress
+     1842 | perfmatters                              | n=  2 | Perfmatters
+     1844 | wp-rocket                                | n=  2 | WP Rocket
+1838 self => {"id": 1838, "count": 8, "name": "Vitesse &amp; Performance", "slug": "performance-wordpress", "parent": 0}
+
+=== parent 1688 (Design FR) children ===
+     1690 | beaver-builder                           | n=  1 | Beaver Builder
+     1692 | crocoblock                               | n=  1 | Crocoblock
+     1694 | divi                                     | n=  2 | Divi
+     1696 | divi-machine                             | n=  1 | Divi Machine
+     1698 | divi-pixel                               | n=  1 | Divi Pixel
+     1700 | divi-toolbox                             | n=  1 | Divi ToolBox
+     1846 | droip                                    | n=  1 | Droip
+     1702 | elementor                                | n=  4 | Elementor &amp; Addons
+     2380 | fluentplayer                             | n=  1 | FluentPlayer
+     1704 | kadence                                  | n=  1 | Kadence (Theme &amp; Blocks)
+     1706 | microthemer                              | n=  1 | Microthemer (éditeur CSS visuel)
+     1710 | presto-player                            | n=  1 | Presto Player
+     2510 | wp-grid-builder                          | n=  1 | WP Grid Builder
+
+=== ALL 334 ===
+   2109 | andere                                         | parent=      0 (ROOT) | n=   0 | Andere
+   1682 | automatisations-wordpress                      | parent=      0 (ROOT) | n=   5 | Automatisations WordPress
+   2115 | automatisierungen-wordpress                    | parent=      0 (ROOT) | n=   1 | WordPress-Automatisierungen
+     49 | autres                                         | parent=      0 (ROOT) | n=  13 | Autres
+   1688 | design-wordpress                               | parent=      0 (ROOT) | n=  19 | Design &amp; Constructeurs de pages
+   2127 | design-wordpress-de                            | parent=      0 (ROOT) | n=   7 | Design &amp; Page Builders
+   1899 | design-wordpress-en                            | parent=      0 (ROOT) | n=  10 | Design &amp; Page builders
+   1712 | ecommerce-wordpress                            | parent=      0 (ROOT) | n=  29 | E-commerce &amp; Tunnels de vente WordPress
+   2147 | ecommerce-wordpress-de                         | parent=      0 (ROOT) | n=   6 | E-Commerce &amp; WordPress-Verkaufstunnel
+   1907 | ecommerce-wordpress-en                         | parent=      0 (ROOT) | n=  10 | E-commerce &amp; WordPress sales tunnels
+   1655 | espaces-membres-wordpress                      | parent=      0 (ROOT) | n=   7 | Adhésion &amp; Espaces membres
+   1780 | formation-en-ligne-lms                         | parent=      0 (ROOT) | n=   5 | Plateformes de formation (LMS)
+   1891 | forms-crm                                      | parent=      0 (ROOT) | n=  11 | WordPress Forms &amp; CRM
+   2111 | forms-crm-de                                   | parent=      0 (ROOT) | n=  10 | WordPress Formulare &amp; CRM
+    343 | formulaires-crm                                | parent=      0 (ROOT) | n=  17 | Formulaires &amp; CRM WordPress
+   2263 | geschwindigkeit-leistung                       | parent=      0 (ROOT) | n=   2 | Geschwindigkeit &amp; Leistung
+   1640 | guides-wordpress                               | parent=      0 (ROOT) | n=  18 | Guides WordPress
+   1927 | guides-wordpress-en                            | parent=      0 (ROOT) | n=  15 | WordPress Guides
+   1746 | hebergement-wordpress                          | parent=      0 (ROOT) | n=   9 | Hébergement WordPress
+   1933 | hosting-wordpress                              | parent=      0 (ROOT) | n=   6 | WordPress hosting
+   2173 | hosting-wordpress-de                           | parent=      0 (ROOT) | n=   5 | WordPress-Hosting
+   1760 | ia-wordpress                                   | parent=      0 (ROOT) | n=   9 | Intelligence Artificielle (IA) &amp; Rédaction
+   1915 | ia-wordpress-en                                | parent=      0 (ROOT) | n=   1 | Artificial Intelligence (AI) &amp; Copywriting
+   2195 | ki-wordpress                                   | parent=      0 (ROOT) | n=   2 | Künstliche Intelligenz (KI) &amp; Redaktion
+   2107 | lernplattformen-lms                            | parent=      0 (ROOT) | n=   3 | Lernplattformen (LMS)
+   1768 | maintenance-securite-wordpress                 | parent=      0 (ROOT) | n=   5 | Maintenance &amp; Sécurité
+   1992 | maintenance-security-wordpress                 | parent=      0 (ROOT) | n=   5 | Maintenance &amp; Security
+   1893 | member-areas-wordpress                         | parent=      0 (ROOT) | n=   7 | Membership &amp; Member areas
+   2343 | mises-a-jour-wordpress                         | parent=      0 (ROOT) | n=   3 | Mises à jour WordPress / Core Updates
+   2085 | mitgliederbereiche-wordpress                   | parent=      0 (ROOT) | n=   7 | Mitgliedschaft &amp; Mitgliederbereiche
+   2097 | monetarisierung-wordpress                      | parent=      0 (ROOT) | n=   2 | Affiliate &amp; Monetarisierung
+   1670 | monetisation-wordpress                         | parent=      0 (ROOT) | n=   8 | Affiliation &amp; Monétisation
+   1889 | monetize-wordpress                             | parent=      0 (ROOT) | n=   5 | Affiliation &amp; Monetization
+    978 | nicht-klassifiziert                            | parent=      0 (ROOT) | n=   6 | Nicht klassifiziert
+   1095 | non-classe                                     | parent=      0 (ROOT) | n=   1 | Non classé
+   1897 | other                                          | parent=      0 (ROOT) | n=   1 | Others
+   1774 | outils-test-wordpress                          | parent=      0 (ROOT) | n=   5 | Outils de test &amp; déploiement WordPress
+   1838 | performance-wordpress                          | parent=      0 (ROOT) | n=   8 | Vitesse &amp; Performance
+   2020 | productivite-organisation                      | parent=      0 (ROOT) | n=   1 | Productivity &amp; Organization WordPress
+   1790 | productivite-wordpress                         | parent=      0 (ROOT) | n=   2 | Productivité &amp; Organisation WordPress
+   2229 | productivity-wordpress                         | parent=      0 (ROOT) | n=   1 | Produktivität &amp; Organisation WordPress
+   1814 | reseaux-sociaux-wordpress                      | parent=      0 (ROOT) | n=   4 | Réseaux sociaux &amp; Preuve sociale
+   2008 | reservations-services                          | parent=      0 (ROOT) | n=   5 | Reservations &amp; Services
+   1820 | reservations-wordpress                         | parent=      0 (ROOT) | n=   6 | Réservations &amp; Prestations
+   2103 | reservierungen-wordpress                       | parent=      0 (ROOT) | n=   5 | Buchungen &amp; Dienstleistungen
+   2000 | search-engine-optimization-seo                 | parent=      0 (ROOT) | n=  14 | Search Engine Optimization &amp; SEO
+   1794 | seo-wordpress                                  | parent=      0 (ROOT) | n=  25 | Référencement &amp; SEO
+   2225 | seo-wordpress-de                               | parent=      0 (ROOT) | n=   9 | Suchmaschinenoptimierung &amp; SEO
+   2002 | social-networking-wordpress                    | parent=      0 (ROOT) | n=   1 | Social networks &amp; Social proof
+   2245 | soziale-netzwerke-wordpress                    | parent=      0 (ROOT) | n=   0 | Soziale Netzwerke &amp; Soziale Beweisführung
+   2050 | speed-performance                              | parent=      0 (ROOT) | n=   4 | Speed &amp; Performance
+   2441 | tableaux-donnees-wordpress                     | parent=      0 (ROOT) | n=   0 | Tableaux &amp; Données WordPress
+   2199 | tools-test-wordpress                           | parent=      0 (ROOT) | n=   3 | Tools zum Testen &amp; Bereitstellen von WordPress
+   1836 | traduction-wordpress                           | parent=      0 (ROOT) | n=   3 | Traduction &amp; Multilingue
+   1990 | training-platforms-lms                         | parent=      0 (ROOT) | n=   4 | Training platforms (LMS)
+   2026 | translation-wordpress                          | parent=      0 (ROOT) | n=   3 | Translation &amp; Multilingual
+   2273 | ubersetzung-wordpress                          | parent=      0 (ROOT) | n=   3 | Übersetzung &amp; Mehrsprachigkeit
+   1219 | uncategorized                                  | parent=      0 (ROOT) | n=   0 | Uncategorized
+   2191 | wartung-sicherheit-wordpress                   | parent=      0 (ROOT) | n=   4 | Wartung &amp; Sicherheit
+   1921 | wordpress-automations                          | parent=      0 (ROOT) | n=   3 | WordPress automations
+   2370 | wordpress-grundlagen                           | parent=      0 (ROOT) | n=   2 | WordPress Grundlagen
+   2083 | wordpress-leitfaden-de                         | parent=      0 (ROOT) | n=   7 | WordPress-Leitfäden
+   2447 | wordpress-tabellen-daten                       | parent=      0 (ROOT) | n=   0 | WordPress Tabellen &amp; Daten
+   2445 | wordpress-tables-data                          | parent=      0 (ROOT) | n=   0 | WordPress Tables &amp; Data
+   1994 | wordpress-testing-deployment-tools             | parent=      0 (ROOT) | n=   6 | WordPress testing &amp; deployment tools
+   2347 | wordpress-updates                              | parent=      0 (ROOT) | n=   1 | WordPress Updates / Core Updates
+   1738 | fluentcrm                                      | parent=    343 (Formulaires &amp; CRM WordPress) | n=   4 | FluentCRM
+   1740 | fluentforms                                    | parent=    343 (Formulaires &amp; CRM WordPress) | n=   4 | FluentForms
+   2286 | fluentsmtp-fr                                  | parent=    343 (Formulaires &amp; CRM WordPress) | n=   1 | FluentSMTP
+   1742 | groundhogg                                     | parent=    343 (Formulaires &amp; CRM WordPress) | n=   2 | Groundhogg
+   2352 | mailerpress                                    | parent=    343 (Formulaires &amp; CRM WordPress) | n=   2 | MailerPress
+   1748 | mailmint                                       | parent=    343 (Formulaires &amp; CRM WordPress) | n=   0 | MailMint
+   1744 | sureforms-fr                                   | parent=    343 (Formulaires &amp; CRM WordPress) | n=   2 | SureForms
+   1657 | armember                                       | parent=   1655 (Adhésion &amp; Espaces membres) | n=   1 | ARMember
+   1659 | buddyboss                                      | parent=   1655 (Adhésion &amp; Espaces membres) | n=   1 | BuddyBoss
+   1661 | fluentcommunity                                | parent=   1655 (Adhésion &amp; Espaces membres) | n=   1 | FluentCommunity
+   1668 | suredash                                       | parent=   1655 (Adhésion &amp; Espaces membres) | n=   0 | SureDash
+   1663 | suremembers                                    | parent=   1655 (Adhésion &amp; Espaces membres) | n=   3 | SureMembers
+   1665 | wishlist-member                                | parent=   1655 (Adhésion &amp; Espaces membres) | n=   2 | Wishlist Member
+   1672 | aawp-fr                                        | parent=   1670 (Affiliation &amp; Monétisation) | n=   1 | AAWP
+   2279 | affiliatepress                                 | parent=   1670 (Affiliation &amp; Monétisation) | n=   1 | AffiliatePress
+   1678 | affiliatewp-fr                                 | parent=   1670 (Affiliation &amp; Monétisation) | n=   1 | AffiliateWP
+   1674 | clickwhale                                     | parent=   1670 (Affiliation &amp; Monétisation) | n=   2 | ClickWhale
+   1680 | fluentaffiliate                                | parent=   1670 (Affiliation &amp; Monétisation) | n=   0 | FluentAffiliate
+   2388 | linkcentral-fr                                 | parent=   1670 (Affiliation &amp; Monétisation) | n=   0 | LinkCentral
+   1676 | solid-affiliate                                | parent=   1670 (Affiliation &amp; Monétisation) | n=   1 | Solid Affiliate
+   1686 | bit-flows                                      | parent=   1682 (Automatisations WordPress) | n=   1 | Bit Flows
+   1684 | ottokit                                        | parent=   1682 (Automatisations WordPress) | n=   4 | OttoKit
+   1690 | beaver-builder                                 | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Beaver Builder
+   1692 | crocoblock                                     | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Crocoblock
+   1694 | divi                                           | parent=   1688 (Design &amp; Constructeurs de pages) | n=   2 | Divi
+   1696 | divi-machine                                   | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Divi Machine
+   1698 | divi-pixel                                     | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Divi Pixel
+   1700 | divi-toolbox                                   | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Divi ToolBox
+   1846 | droip                                          | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Droip
+   1702 | elementor                                      | parent=   1688 (Design &amp; Constructeurs de pages) | n=   4 | Elementor &amp; Addons
+   2380 | fluentplayer                                   | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | FluentPlayer
+   1704 | kadence                                        | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Kadence (Theme &amp; Blocks)
+   1706 | microthemer                                    | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Microthemer (éditeur CSS visuel)
+   1710 | presto-player                                  | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | Presto Player
+   2510 | wp-grid-builder                                | parent=   1688 (Design &amp; Constructeurs de pages) | n=   1 | WP Grid Builder
+   1714 | alidropship                                    | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | AliDropship
+   1716 | barn2                                          | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | Barn2 Plugins
+   1718 | cartflows                                      | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   3 | CartFlows
+   1720 | divi-bodycommerce                              | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | Divi BodyCommerce
+   1734 | fluentcart                                     | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   5 | FluentCart
+   1722 | funnelkit                                      | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   3 | FunnelKit / Autonami
+   1724 | launchflows                                    | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   2 | LaunchFlows
+   1726 | surecart                                       | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   3 | SureCart
+   1728 | systeme-io                                     | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | Systeme.io
+   2300 | virfice                                        | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | Virfice
+   1730 | wp-funnels                                     | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | WP Funnels
+   1732 | wp-marmite                                     | parent=   1712 (E-commerce &amp; Tunnels de vente WordPress) | n=   1 | WP Marmite Pay
+   1750 | copilhost-fr                                   | parent=   1746 (Hébergement WordPress) | n=   1 | ​​​​​​Copilhost
+   1752 | easyhoster                                     | parent=   1746 (Hébergement WordPress) | n=   1 | EasyHoster
+   1758 | hostinger                                      | parent=   1746 (Hébergement WordPress) | n=   0 | Hostinger
+   2393 | netim                                          | parent=   1746 (Hébergement WordPress) | n=   1 | Netim
+   1756 | o2switch                                       | parent=   1746 (Hébergement WordPress) | n=   1 | o2Switch
+   1754 | rapyd-cloud                                    | parent=   1746 (Hébergement WordPress) | n=   3 | Rapyd Cloud
+   1762 | bertha-ai                                      | parent=   1760 (Intelligence Artificielle (IA) &amp; Rédaction) | n=   1 | Bertha AI
+   1764 | getgenie                                       | parent=   1760 (Intelligence Artificielle (IA) &amp; Rédaction) | n=   1 | GetGenie (IA SEO &amp; contenu)
+   2421 | otomatic-ai                                    | parent=   1760 (Intelligence Artificielle (IA) &amp; Rédaction) | n=   1 | Otomatic AI
+   2423 | skoatch                                        | parent=   1760 (Intelligence Artificielle (IA) &amp; Rédaction) | n=   1 | Skoatch
+   1770 | fluent-support                                 | parent=   1768 (Maintenance &amp; Sécurité) | n=   1 | Fluent Support
+   1772 | wp-umbrella                                    | parent=   1768 (Maintenance &amp; Sécurité) | n=   1 | WP Umbrella
+   1776 | instawp                                        | parent=   1774 (Outils de test &amp; déploiement WordPress) | n=   1 | InstaWP
+   1778 | tastewp                                        | parent=   1774 (Outils de test &amp; déploiement WordPress) | n=   1 | TasteWP
+   1766 | zipwp-fr                                       | parent=   1774 (Outils de test &amp; déploiement WordPress) | n=   2 | ZipWP
+   1782 | academy-lms                                    | parent=   1780 (Plateformes de formation (LMS)) | n=   1 | Academy LMS
+   1784 | learndash                                      | parent=   1780 (Plateformes de formation (LMS)) | n=   1 | LearnDash
+   1788 | masteriyo-lms                                  | parent=   1780 (Plateformes de formation (LMS)) | n=   1 | Masteriyo LMS
+   1786 | tutor-lms                                      | parent=   1780 (Plateformes de formation (LMS)) | n=   1 | Tutor LMS
+   1792 | fluentboards                                   | parent=   1790 (Productivité &amp; Organisation WordPress) | n=   1 | FluentBoards
+   1796 | aioseo                                         | parent=   1794 (Référencement &amp; SEO) | n=   1 | AIOSEO (All in One SEO)
+   1798 | link-whisper                                   | parent=   1794 (Référencement &amp; SEO) | n=   1 | Link Whisper
+   2302 | pageradar-io                                   | parent=   1794 (Référencement &amp; SEO) | n=   1 | PageRadar.io
+   1800 | rank-math                                      | parent=   1794 (Référencement &amp; SEO) | n=   2 | Rank Math SEO
+   1810 | schema-pro-fr                                  | parent=   1794 (Référencement &amp; SEO) | n=   0 | Schema Pro
+   1802 | seokey                                         | parent=   1794 (Référencement &amp; SEO) | n=   1 | SEOKEY
+   1804 | seopress                                       | parent=   1794 (Référencement &amp; SEO) | n=   1 | SEOPress
+   1812 | slim-seo                                       | parent=   1794 (Référencement &amp; SEO) | n=   0 | Slim SEO
+   1808 | surerank                                       | parent=   1794 (Référencement &amp; SEO) | n=   1 | SureRank
+   1806 | yoast-seo                                      | parent=   1794 (Référencement &amp; SEO) | n=   1 | Yoast SEO
+   1816 | spotlightwp-fr                                 | parent=   1814 (Réseaux sociaux &amp; Preuve sociale) | n=   1 | SpotlightWP
+   1818 | wp-social-ninja                                | parent=   1814 (Réseaux sociaux &amp; Preuve sociale) | n=   1 | WP Social Ninja
+   1822 | amelia-wp-booking                              | parent=   1820 (Réservations &amp; Prestations) | n=   3 | Amelia WP Booking
+   1828 | bookingpress                                   | parent=   1820 (Réservations &amp; Prestations) | n=   1 | BookingPress
+   1832 | bookly                                         | parent=   1820 (Réservations &amp; Prestations) | n=   1 | Bookly
+   1834 | booknetic-fr                                   | parent=   1820 (Réservations &amp; Prestations) | n=   1 | Booknetic
+   1824 | fluentbooking                                  | parent=   1820 (Réservations &amp; Prestations) | n=   2 | FluentBooking
+   1830 | jetbooking                                     | parent=   1820 (Réservations &amp; Prestations) | n=   0 | JetBooking
+   1826 | latepoint                                      | parent=   1820 (Réservations &amp; Prestations) | n=   2 | LatePoint
+   2399 | fastpixel                                      | parent=   1838 (Vitesse &amp; Performance) | n=   1 | FastPixel
+   1840 | flyingpress                                    | parent=   1838 (Vitesse &amp; Performance) | n=   4 | FlyingPress
+   1842 | perfmatters                                    | parent=   1838 (Vitesse &amp; Performance) | n=   2 | Perfmatters
+   1844 | wp-rocket                                      | parent=   1838 (Vitesse &amp; Performance) | n=   2 | WP Rocket
+   2291 | affiliatepress-en                              | parent=   1889 (Affiliation &amp; Monetization) | n=   0 | AffiliatePress
+   1903 | clickwhale-en                                  | parent=   1889 (Affiliation &amp; Monetization) | n=   2 | ClickWhale
+   2386 | linkcentral                                    | parent=   1889 (Affiliation &amp; Monetization) | n=   1 | LinkCentral
+   1981 | fluentcrm-en                                   | parent=   1891 (WordPress Forms &amp; CRM) | n=   2 | FluentCRM
+   1977 | fluentforms-en                                 | parent=   1891 (WordPress Forms &amp; CRM) | n=   3 | FluentForms
+   2295 | fluentsmtp-en                                  | parent=   1891 (WordPress Forms &amp; CRM) | n=   1 | FluentSMTP-en
+   1937 | groundhogg-en                                  | parent=   1891 (WordPress Forms &amp; CRM) | n=   0 | Groundhogg
+   2360 | mailerpress-en                                 | parent=   1891 (WordPress Forms &amp; CRM) | n=   2 | MailerPress-en
+   1955 | mailmint-en                                    | parent=   1891 (WordPress Forms &amp; CRM) | n=   0 | MailMint
+   1929 | sureforms-en                                   | parent=   1891 (WordPress Forms &amp; CRM) | n=   2 | SureForms
+   2283 | armember-en                                    | parent=   1893 (Membership &amp; Member areas) | n=   0 | ARMember
+   1905 | buddyboss-en                                   | parent=   1893 (Membership &amp; Member areas) | n=   1 | BuddyBoss
+   1953 | fluentcommunity-en                             | parent=   1893 (Membership &amp; Member areas) | n=   1 | FluentCommunity
+   2330 | suredash-en                                    | parent=   1893 (Membership &amp; Member areas) | n=   0 | SureDash
+   1943 | suremembers-en                                 | parent=   1893 (Membership &amp; Member areas) | n=   3 | SureMembers
+   1895 | wishlist-member-en                             | parent=   1893 (Membership &amp; Member areas) | n=   2 | Wishlist Member
+   1901 | beaver-builder-en                              | parent=   1899 (Design &amp; Page builders) | n=   0 | Beaver Builder
+   1919 | crocoblock-en                                  | parent=   1899 (Design &amp; Page builders) | n=   1 | Crocoblock
+   1996 | divi-design-wordpress-en                       | parent=   1899 (Design &amp; Page builders) | n=   0 | Divi-en
+   1913 | divi-en                                        | parent=   1899 (Design &amp; Page builders) | n=   1 | Divi
+   1911 | divi-machine-en                                | parent=   1899 (Design &amp; Page builders) | n=   0 | Divi Machine
+   1957 | divi-pixel-en                                  | parent=   1899 (Design &amp; Page builders) | n=   0 | Divi Pixel
+   1971 | divi-toolbox-en                                | parent=   1899 (Design &amp; Page builders) | n=   0 | Divi ToolBox
+   2072 | droip-en                                       | parent=   1899 (Design &amp; Page builders) | n=   1 | Droip
+   1988 | elementor-en                                   | parent=   1899 (Design &amp; Page builders) | n=   3 | Elementor &amp; Addons
+   1973 | kadence-en                                     | parent=   1899 (Design &amp; Page builders) | n=   0 | Kadence (Theme &amp; Blocks)
+   1949 | microthemer-en                                 | parent=   1899 (Design &amp; Page builders) | n=   1 | Microthemer (visual CSS editor)
+   1961 | presto-player-en                               | parent=   1899 (Design &amp; Page builders) | n=   0 | Presto Player
+   1923 | alidropship-en                                 | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | AliDropship
+   1959 | barn2-en                                       | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   0 | Barn2 Plugins
+   1969 | cartflows-en                                   | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | CartFlows
+   1909 | divi-bodycommerce-en                           | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   0 | Divi BodyCommerce
+   1925 | fluentcart-en                                  | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   3 | FluentCart
+   1979 | funnelkit-en                                   | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   0 | FunnelKit / Autonami
+   1967 | launchflows-en                                 | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | LaunchFlows
+   1986 | surecart-en                                    | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | SureCart
+   1945 | systeme-io-en                                  | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | Systeme.io
+   2307 | virfice-en                                     | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | Virfice
+   1947 | wp-funnels-en                                  | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   0 | WP Funnels
+   1939 | wp-marmite-en                                  | parent=   1907 (E-commerce &amp; WordPress sales tunnels) | n=   1 | WP Marmite Pay
+   1951 | bertha-ai-en                                   | parent=   1915 (Artificial Intelligence (AI) &amp; Copywriting) | n=   0 | Bertha AI
+   1917 | getgenie-ai                                    | parent=   1915 (Artificial Intelligence (AI) &amp; Copywriting) | n=   0 | GetGenie (AI SEO &amp; content)
+   2429 | otomatic-ai-ia-wordpress-en                    | parent=   1915 (Artificial Intelligence (AI) &amp; Copywriting) | n=   0 | Otomatic AI-en
+   2328 | bit-flows-en                                   | parent=   1921 (WordPress automations) | n=   1 | Bit Flows
+   1941 | ottokit-en                                     | parent=   1921 (WordPress automations) | n=   2 | OttoKit
+   1963 | copilhost-en                                   | parent=   1933 (WordPress hosting) | n=   1 | Copilhost
+   1965 | easyhoster-en                                  | parent=   1933 (WordPress hosting) | n=   1 | EasyHoster
+   1935 | hostinger-en                                   | parent=   1933 (WordPress hosting) | n=   0 | Hostinger
+   2395 | netim-en                                       | parent=   1933 (WordPress hosting) | n=   0 | Netim
+   1983 | o2switch-en                                    | parent=   1933 (WordPress hosting) | n=   1 | o2Switch
+   1975 | rapyd-cloud-en                                 | parent=   1933 (WordPress hosting) | n=   2 | Rapyd Cloud
+   2014 | academy-lms-en                                 | parent=   1990 (Training platforms (LMS)) | n=   1 | Academy LMS-en
+   2070 | learndash-en                                   | parent=   1990 (Training platforms (LMS)) | n=   1 | LearnDash-en
+   2018 | masteriyo-lms-en                               | parent=   1990 (Training platforms (LMS)) | n=   0 | Masteriyo LMS-en
+   2038 | tutor-lms-en                                   | parent=   1990 (Training platforms (LMS)) | n=   1 | Tutor LMS-en
+   2012 | fluent-support-en                              | parent=   1992 (Maintenance &amp; Security) | n=   1 | Fluent Support-en
+   1998 | wp-umbrella-en                                 | parent=   1992 (Maintenance &amp; Security) | n=   1 | WP Umbrella-en
+   2004 | instawp-en                                     | parent=   1994 (WordPress testing &amp; deployment tools) | n=   2 | InstaWP-en
+   2022 | tastewp-en                                     | parent=   1994 (WordPress testing &amp; deployment tools) | n=   1 | TasteWP-en
+   2006 | zipwp-en                                       | parent=   1994 (WordPress testing &amp; deployment tools) | n=   2 | ZipWP-en
+   2028 | aioseo-en                                      | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | AIOSEO (All in One SEO)-en
+   2032 | link-whisper-en                                | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   1 | Link Whisper-en
+   2309 | pageradar-io-en                                | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   1 | PageRadar.io-en
+   2048 | rank-math-seo                                  | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | Rank Math SEO-en
+   2052 | schema-pro-en                                  | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | Schema Pro-en
+   2016 | seokey-en                                      | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   1 | SEOKEY-en
+   2030 | seopress-en                                    | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | SEOPress-en
+   2054 | slim-seo-en                                    | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | Slim SEO-en
+   2042 | surerank-en                                    | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | SureRank-en
+   2034 | yoast-seo-en                                   | parent=   2000 (Search Engine Optimization &amp; SEO) | n=   0 | Yoast SEO-en
+   2056 | spotlightwp-en                                 | parent=   2002 (Social networks &amp; Social proof) | n=   0 | SpotlightWP-en
+   2044 | wp-social-ninja-social                         | parent=   2002 (Social networks &amp; Social proof) | n=   1 | WP Social Ninja-en
+   2058 | amelia-wp-booking-en                           | parent=   2008 (Reservations &amp; Services) | n=   3 | Amelia WP Booking-en
+   2010 | bookingpress-en                                | parent=   2008 (Reservations &amp; Services) | n=   1 | BookingPress-en
+   2046 | bookly-en                                      | parent=   2008 (Reservations &amp; Services) | n=   1 | Bookly-en
+   2040 | booknetic-en                                   | parent=   2008 (Reservations &amp; Services) | n=   1 | Booknetic-en
+   2068 | fluentbooking-en                               | parent=   2008 (Reservations &amp; Services) | n=   2 | FluentBooking-en
+   2066 | jetbooking-en                                  | parent=   2008 (Reservations &amp; Services) | n=   0 | JetBooking-en
+   2024 | latepoint-en                                   | parent=   2008 (Reservations &amp; Services) | n=   2 | LatePoint-en
+   2036 | fluentboards-en                                | parent=   2020 (Productivity &amp; Organization WordPress) | n=   1 | FluentBoards-en
+   2406 | fastpixel-en                                   | parent=   2050 (Speed &amp; Performance) | n=   1 | FastPixel
+   2062 | flyingpress-en                                 | parent=   2050 (Speed &amp; Performance) | n=   1 | FlyingPress-en
+   2060 | perfmatters-en                                 | parent=   2050 (Speed &amp; Performance) | n=   1 | Perfmatters-en
+   2064 | wp-rocket-en                                   | parent=   2050 (Speed &amp; Performance) | n=   2 | WP Rocket-en
+   2087 | armember-de                                    | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   1 | ARMember
+   2091 | buddyboss-de                                   | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   1 | BuddyBoss
+   2089 | fluentcommunity-de                             | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   1 | FluentCommunity
+   2101 | suredash-de                                    | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   0 | SureDash
+   2093 | suremembers-de                                 | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   3 | SureMembers
+   2095 | wishlist-member-de                             | parent=   2085 (Mitgliedschaft &amp; Mitgliederbereiche) | n=   2 | Wishlist Member-de
+   2099 | aawp-de                                        | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   0 | AAWP-de
+   2293 | affiliatepress-de                              | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   1 | AffiliatePress
+   2121 | affiliatewp-de                                 | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   0 | AffiliateWP
+   2119 | clickwhale-de                                  | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   1 | ClickWhale
+   2113 | fluentaffiliate-de                             | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   0 | FluentAffiliate
+   2390 | linkcentral-de                                 | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   0 | LinkCentral
+   2117 | solid-affiliate-de                             | parent=   2097 (Affiliate &amp; Monetarisierung) | n=   0 | Solid Affiliate
+   2259 | amelia-wp-booking-de                           | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   2 | Amelia WP Booking
+   2249 | bookingpress-de                                | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   0 | BookingPress
+   2267 | bookly-de                                      | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   0 | Bookly
+   2275 | booknetic-de                                   | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   0 | Booknetic
+   2105 | fluentbooking-de                               | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   3 | FluentBooking-de
+   2261 | jetbooking-de                                  | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   0 | JetBooking
+   2255 | latepoint-de                                   | parent=   2103 (Buchungen &amp; Dienstleistungen) | n=   1 | LatePoint-de
+   2209 | academy-lms-de                                 | parent=   2107 (Lernplattformen (LMS)) | n=   1 | Academy LMS
+   2213 | learndash-de                                   | parent=   2107 (Lernplattformen (LMS)) | n=   1 | LearnDash
+   2211 | masteriyo-lms-de                               | parent=   2107 (Lernplattformen (LMS)) | n=   0 | Masteriyo LMS
+   2219 | tutor-lms-de                                   | parent=   2107 (Lernplattformen (LMS)) | n=   1 | Tutor LMS
+   2167 | fluentcrm-de                                   | parent=   2111 (WordPress Formulare &amp; CRM) | n=   2 | FluentCRM
+   2171 | fluentforms-de                                 | parent=   2111 (WordPress Formulare &amp; CRM) | n=   3 | FluentForms
+   2324 | fluentsmtp-de                                  | parent=   2111 (WordPress Formulare &amp; CRM) | n=   0 | FluentSMTP-de
+   2179 | groundhogg-de                                  | parent=   2111 (WordPress Formulare &amp; CRM) | n=   0 | Groundhogg
+   2364 | mailerpress-de                                 | parent=   2111 (WordPress Formulare &amp; CRM) | n=   2 | MailerPress-de
+   2177 | mailmint-de                                    | parent=   2111 (WordPress Formulare &amp; CRM) | n=   0 | MailMint
+   2185 | sureforms-de                                   | parent=   2111 (WordPress Formulare &amp; CRM) | n=   1 | SureForms
+   2125 | bit-flows-de                                   | parent=   2115 (WordPress-Automatisierungen) | n=   0 | Bit Flows
+   2123 | ottokit-de                                     | parent=   2115 (WordPress-Automatisierungen) | n=   1 | OttoKit
+   2129 | beaver-builder-de                              | parent=   2127 (Design &amp; Page Builders) | n=   0 | Beaver Builder
+   2133 | crocoblock-de                                  | parent=   2127 (Design &amp; Page Builders) | n=   1 | Crocoblock
+   2131 | divi-de                                        | parent=   2127 (Design &amp; Page Builders) | n=   1 | Divi
+   2137 | divi-machine-de                                | parent=   2127 (Design &amp; Page Builders) | n=   0 | Divi Machine
+   2141 | divi-pixel-de                                  | parent=   2127 (Design &amp; Page Builders) | n=   0 | Divi Pixel
+   2145 | divi-toolbox-de                                | parent=   2127 (Design &amp; Page Builders) | n=   0 | Divi ToolBox
+   2269 | droip-de                                       | parent=   2127 (Design &amp; Page Builders) | n=   1 | Droip
+   2139 | elementor-de                                   | parent=   2127 (Design &amp; Page Builders) | n=   2 | Elementor &amp; Addons
+   2135 | kadence-de                                     | parent=   2127 (Design &amp; Page Builders) | n=   0 | Kadence (Theme &amp; Blocks)
+   2143 | microthemer-de                                 | parent=   2127 (Design &amp; Page Builders) | n=   0 | Microthemer (visueller CSS-Editor)
+   2159 | presto-player-de                               | parent=   2127 (Design &amp; Page Builders) | n=   0 | Presto Player
+   2163 | alidropship-de                                 | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | AliDropship
+   2165 | barn2-de                                       | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | Barn2 Plugins
+   2153 | cartflows-de                                   | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | CartFlows
+   2155 | divi-bodycommerce-de                           | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | Divi BodyCommerce
+   2183 | fluentcart-de                                  | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   3 | FluentCart
+   2157 | funnelkit-de                                   | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | FunnelKit / Autonami
+   2161 | launchflows-de                                 | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | LaunchFlows
+   2151 | surecart-de                                    | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   1 | SureCart
+   2169 | systeme-io-de                                  | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | Systeme.io
+   2304 | virfice-de                                     | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   1 | Virfice
+   2175 | wp-funnels-de                                  | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   0 | WP Funnels
+   2181 | wp-marmite-de                                  | parent=   2147 (E-Commerce &amp; WordPress-Verkaufstunnel) | n=   1 | WP Marmite Pay
+   2203 | copilhost-de                                   | parent=   2173 (WordPress-Hosting) | n=   0 | Copilhost
+   2187 | easyhoster-de                                  | parent=   2173 (WordPress-Hosting) | n=   1 | EasyHoster
+   2197 | hostinger-de                                   | parent=   2173 (WordPress-Hosting) | n=   0 | Hostinger
+   2397 | netim-de                                       | parent=   2173 (WordPress-Hosting) | n=   0 | Netim
+   2189 | o2switch-de                                    | parent=   2173 (WordPress-Hosting) | n=   1 | o2Switch
+   2193 | rapyd-cloud-de                                 | parent=   2173 (WordPress-Hosting) | n=   2 | Rapyd Cloud
+   2223 | fluent-support-de                              | parent=   2191 (Wartung &amp; Sicherheit) | n=   0 | Fluent Support
+   2221 | wp-umbrella-de                                 | parent=   2191 (Wartung &amp; Sicherheit) | n=   1 | WP Umbrella
+   2205 | bertha-ai-de                                   | parent=   2195 (Künstliche Intelligenz (KI) &amp; Redaktion) | n=   0 | Bertha AI
+   2207 | getgenie-ai-de                                 | parent=   2195 (Künstliche Intelligenz (KI) &amp; Redaktion) | n=   0 | GetGenie (KI SEO &amp; Inhalt)
+   2457 | otomatic-ai-ki-wordpress                       | parent=   2195 (Künstliche Intelligenz (KI) &amp; Redaktion) | n=   1 | Otomatic AI-de
+   2217 | instawp-de                                     | parent=   2199 (Tools zum Testen &amp; Bereitstellen von WordPress) | n=   0 | InstaWP
+   2215 | tastewp-de                                     | parent=   2199 (Tools zum Testen &amp; Bereitstellen von WordPress) | n=   0 | TasteWP
+   2201 | zipwp-de                                       | parent=   2199 (Tools zum Testen &amp; Bereitstellen von WordPress) | n=   1 | ZipWP
+   2243 | aioseo-de                                      | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | AIOSEO (All in One SEO)
+   2241 | link-whisper-de                                | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   1 | Link Whisper
+   2322 | pageradar-io-de                                | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   1 | PageRadar.io-de
+   2227 | rank-math-de                                   | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | Rank Math SEO
+   2247 | schema-pro                                     | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | Schema Pro
+   2239 | seokey-de                                      | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | SEOKEY
+   2233 | seopress-seo                                   | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | SEOPress
+   2251 | slim-seo-de                                    | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | Slim SEO
+   2237 | surerank-de                                    | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | SureRank
+   2235 | yoast-seo-de                                   | parent=   2225 (Suchmaschinenoptimierung &amp; SEO) | n=   0 | Yoast SEO
+   2231 | fluentboards-de                                | parent=   2229 (Produktivität &amp; Organisation WordPress) | n=   1 | FluentBoards
+   2253 | spotlightwp-de                                 | parent=   2245 (Soziale Netzwerke &amp; Soziale Beweisführung) | n=   0 | SpotlightWP-de
+   2257 | wp-social-ninja-de                             | parent=   2245 (Soziale Netzwerke &amp; Soziale Beweisführung) | n=   0 | WP Social Ninja
+   2403 | fastpixel-de                                   | parent=   2263 (Geschwindigkeit &amp; Leistung) | n=   1 | FastPixel
+   2265 | flyingpress-de                                 | parent=   2263 (Geschwindigkeit &amp; Leistung) | n=   1 | FlyingPress
+   2271 | perfmatters-de                                 | parent=   2263 (Geschwindigkeit &amp; Leistung) | n=   0 | Perfmatters
+   2277 | wp-rocket-de                                   | parent=   2263 (Geschwindigkeit &amp; Leistung) | n=   1 | WP Rocket
+   1708 | ninja-tables                                   | parent=   2441 (Tableaux &amp; Données WordPress) | n=   3 | Ninja Tables
+   2425 | tablepress                                     | parent=   2441 (Tableaux &amp; Données WordPress) | n=   2 | TablePress
+   2443 | wp-table-builder                               | parent=   2441 (Tableaux &amp; Données WordPress) | n=   1 | WP Table Builder
+   1931 | ninja-tables-en                                | parent=   2445 (WordPress Tables &amp; Data) | n=   3 | Ninja Tables
+   2454 | tablepress-wordpress-tables-data               | parent=   2445 (WordPress Tables &amp; Data) | n=   1 | TablePress-en
+   2149 | ninja-tables-de                                | parent=   2447 (WordPress Tabellen &amp; Daten) | n=   2 | Ninja Tables
+   2451 | tablepress-wordpress-tabellen-daten            | parent=   2447 (WordPress Tabellen &amp; Daten) | n=   1 | TablePress-de

@@ -1,0 +1,15 @@
+market,keyword,volume_dfs,volume_uber,kd_dfs,sd_uber,competition,cpc,cpc_currency,intent,trend_yearly
+FR,avis booknetic,0,0,,17,,,EUR,informational,
+FR,booknetic,90,90,,13,LOW,1.38,EUR,navigational/informational,-55
+FR,booknetic alternative,10,,,,,,EUR,informational,
+FR,bookingpress,110,,19,,LOW,0.71,EUR,navigational,-18
+DE,booknetic,110,110,10,36,LOW,4.71,EUR,navigational,-18
+DE,booknetic erfahrungen,0,0,,17,,,EUR,review,
+DE,booknetic test,0,,,,,,EUR,review,
+DE,booknetic bewertung,0,,,,,,EUR,review,
+DE,booknetic alternative,10,,,,,,EUR,informational,
+EN,booknetic,170,170,13,36,LOW,4.59,USD,navigational,-58
+EN,booknetic review,10,10,58,44,HIGH,,USD,informational,-50
+EN,booknetic reviews,10,,58,,HIGH,,USD,informational,
+EN,booknetic wordpress,10,,,,,,USD,navigational,
+EN,amelia vs booknetic,10,,,,,,USD,informational,

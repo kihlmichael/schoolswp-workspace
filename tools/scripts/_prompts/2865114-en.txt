@@ -1,0 +1,22 @@
+Edit this image. Keep the entire layout, composition, colors, decorations and brand identity strictly identical to the source. Do NOT redesign or restyle anything. Only replace the French text with English text exactly as specified below.
+
+Elements to preserve EXACTLY as in the source image:
+- The dark charcoal almost black background, same color and texture
+- The bright vivid green highlight rectangle around the first title line, same position, same size, same green tone
+- The white zigzag decorative line on the left side, same shape and position
+- The two green dot grid patterns: one in the top center area, one in the bottom center area, same dot size and density
+- The schoolsWP logo in the bottom right corner: the word "schoolsWP" in clean condensed sans-serif, "schools" in white, the "W" with a stylized split, the "P" in vivid green, exactly as in the source
+- The exact typography of the title: clean, condensed, ultra-bold sans-serif, ALL CAPS, white color, generous letter spacing
+- The same vertical positioning and line spacing for the title block
+
+Text replacement, character-for-character:
+- First line (inside the green highlight rectangle), replace "NINJA TABLES DATATABLES :" with: NINJA TABLES DATATABLES:
+- Second line (directly on the dark background), replace "GEREZ VOS DONNEES VOLUMINEUSES" with: MANAGE LARGE DATASETS
+
+Important rules:
+- Render every letter perfectly legible and correctly shaped
+- No spelling mistakes, no broken letters, no missing serifs, no double letters
+- The colon character after DATATABLES on the first line must touch the word, no space before it (English typography)
+- The second line is shorter than the original French; recenter it horizontally on the canvas so it stays visually balanced
+- No watermarks, no extra logos, no decorative additions beyond what was in the source
+- Output must remain a 16:9 horizontal banner suitable for a WordPress featured image

@@ -1,0 +1,26 @@
+Mot-cle,Volume/mois,Concurrence,Indice (0-100),CPC (EUR),KD,Intention,Tendance an. (%),2025-05,2025-06,2025-07,2025-08,2025-09,2025-10,2025-11,2025-12,2026-01,2026-02,2026-03,2026-04
+fluentcrm,260,LOW,23,4.15,22,info/comm (mixte),-71,720,590,260,210,210,260,260,210,210,170,170,170
+fluentcrm 3.0 (mot-cle du titre),n.d.,,,,,info/comm (43/43),,,,,,,,,,,,,
+fluentcrm 3,n.d.,,,,,informationnel,,,,,,,,,,,,,
+fluentcrm avis,10,,,,,informationnel,,,,,,,,,,,,,
+fluentcrm sms,10,,,,,navigationnel (77%),,,,,,,,,,,,,
+fluentcrm gutenberg,n.d.,,,,,informationnel,,,,,,,,,,,,,
+fluentcrm pro,10,LOW,9,,,commercial,,,,,,,,,,,,,
+fluentcrm woocommerce,10,,,,,commercial,,,,,,,,,,,,,
+fluentcrm alternative,10,,,,,commercial,,,,,,,,,,,,,
+fluentcrm free vs pro,10,,,,,commercial,,,,,,,,,,,,,
+fluentcrm integrations,10,,,,11,navigationnel,,,,,,,,,,,,,
+groundhogg vs fluentcrm,n.d.,,,,,commercial,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Contexte concurrentiel (CRM / email marketing WordPress FR),,,,,,,,,,,,,,,,,,,
+mailpoet,880,LOW,33,11.83,6,nav/info,-18,880,880,880,590,1000,1000,880,720,880,880,880,720
+mailpoet wordpress,50,MEDIUM,53,12.97,24,navigationnel,,50,40,30,20,30,30,70,50,70,50,70,50
+groundhogg crm,50,MEDIUM,43,,14,navigationnel,-97,320,320,10,10,10,,10,10,,10,,10
+jetpack crm,30,LOW,13,8.86,62,transactionnel,-67,30,20,20,20,30,40,30,40,20,20,30,10
+groundhogg,10,LOW,8,0.05,,informationnel,-50,20,10,10,20,20,10,20,10,10,10,10,10
+,,,,,,,,,,,,,,,,,,,
+Notes,,,,,,,,,,,,,,,,,,,
+Source : DataForSEO Labs (FR / fr) au 2026-05-29,,,,,,,,,,,,,,,,,,,
+Mot-cle principal SEO recommande : fluentcrm (le terme fluentcrm 3.0 n a pas de volume mesurable),,,,,,,,,,,,,,,,,,,
+Variante fluent crm = volume identique (cluster avec fluentcrm),,,,,,,,,,,,,,,,,,,
+Signal : fluentcrm en baisse -71% sur 1 an ; MailPoet (880) domine la recherche FR,,,,,,,,,,,,,,,,,,,

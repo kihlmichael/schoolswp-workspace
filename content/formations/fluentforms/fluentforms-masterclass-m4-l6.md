@@ -1,9 +1,9 @@
-# Script video — Module 4, Lecon 6 : Coupons de reduction
+# Script video - Module 4, Lecon 6 : Coupons de reduction
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 4 — Paiements
-**Lecon** : 6/7 — Coupons de reduction
+**Module** : 4 - Paiements
+**Lecon** : 6/7 - Coupons de reduction
 **Duree** : 6 min (~900 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast creation coupons + formulaire, slide strategie
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Les codes promo, ca marche. Un visiteur hesite, tu lui envoies un code de reduction par email, il revient et il achete. Simple, efficace. FluentForms Pro integre un systeme de coupons directement dans les formulaires de paiement.
 
 On va creer des coupons, les configurer, et les connecter a FluentCRM pour les distribuer automatiquement.
 
-**[SECTION 1 — screencast "Creer un coupon"]**
+**[SECTION 1 - screencast "Creer un coupon"]**
 
 Direction FluentForms, Settings, Payment Settings, onglet Coupons.
 
@@ -25,13 +25,13 @@ Clique sur "Add Coupon". Tu as plusieurs parametres a configurer.
 
 Coupon Code : c'est le code que le client va taper. Choisis quelque chose de memorable. "WELCOME20" pour 20% de reduction. "EARLYBIRD" pour les premiers inscrits.
 
-Discount Type : deux options. Percentage — un pourcentage de reduction. Ou Fixed Amount — un montant fixe en euros.
+Discount Type : deux options. Percentage - un pourcentage de reduction. Ou Fixed Amount - un montant fixe en euros.
 
 Pour "WELCOME20", choisis Percentage et entre 20.
 
 Discount Amount : 20 (pour 20%).
 
-**[SECTION 2 — screencast "Limites et expiration"]**
+**[SECTION 2 - screencast "Limites et expiration"]**
 
 Maintenant les garde-fous. Sans limites, un coupon peut devenir un probleme.
 
@@ -43,7 +43,7 @@ Minimum Purchase Amount : le montant minimum de commande pour que le coupon s'ap
 
 Stackable : est-ce que le client peut utiliser plusieurs coupons sur la meme commande ? En general, non. Desactive cette option.
 
-**[SECTION 3 — screencast "Ajouter le champ coupon au formulaire"]**
+**[SECTION 3 - screencast "Ajouter le champ coupon au formulaire"]**
 
 Retour dans ton formulaire de paiement. Dans Payment Fields, ajoute un champ Coupon.
 
@@ -53,19 +53,19 @@ Si le code est invalide ou expire, un message d'erreur s'affiche. "Ce coupon n'e
 
 Place le champ Coupon juste avant le Payment Summary. L'ordre logique : options de paiement, coupon, recapitulatif, carte bancaire, bouton.
 
-**[SECTION 4 — slide "Strategie coupons + FluentCRM"]**
+**[SECTION 4 - slide "Strategie coupons + FluentCRM"]**
 
 Voici comment combiner coupons et FluentCRM pour automatiser la distribution.
 
 Scenario 1 : email de bienvenue. Un nouveau contact s'inscrit a ta newsletter. FluentCRM envoie un email automatique avec le code "WELCOME20". Le contact revient sur ton formulaire de vente, tape le code, et obtient 20% de reduction.
 
-Scenario 2 : relance panier abandonne. Un visiteur a commence un formulaire de paiement mais ne l'a pas termine (partial entries — on verra ca au module 6). Tu envoies un email via FluentCRM avec un code "COMEBACK10" valable 48h.
+Scenario 2 : relance panier abandonne. Un visiteur a commence un formulaire de paiement mais ne l'a pas termine (partial entries - on verra ca au module 6). Tu envoies un email via FluentCRM avec un code "COMEBACK10" valable 48h.
 
 Scenario 3 : offre de fidelite. Un client a deja achete. FluentCRM lui envoie un code anniversaire ou un code de reduction pour un deuxieme achat.
 
 A chaque fois, le meme principe : FluentCRM distribue le code par email, FluentForms le valide au moment du paiement.
 
-**[SECTION 5 — screencast "Tester le coupon"]**
+**[SECTION 5 - screencast "Tester le coupon"]**
 
 On teste. Ouvre ton formulaire de paiement en preview. Selectionne un produit. Tape "WELCOME20" dans le champ coupon. Clique Apply.
 
@@ -75,9 +75,9 @@ Teste aussi un code invalide. Tape "NIMPORTEQUOI". Le message d'erreur doit appa
 
 Teste un code expire. Cree un coupon avec une date d'expiration dans le passe et essaie de l'utiliser.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Les coupons sont en place. Tu as un levier de conversion supplementaire. Dans la prochaine lecon — la derniere du module — on assemble tout dans un cas pratique complet : un formulaire de reservation avec paiement, options, coupon et confirmation.
+Les coupons sont en place. Tu as un levier de conversion supplementaire. Dans la prochaine lecon - la derniere du module - on assemble tout dans un cas pratique complet : un formulaire de reservation avec paiement, options, coupon et confirmation.
 
 On se retrouve dans la lecon suivante.
 
@@ -98,4 +98,4 @@ On se retrouve dans la lecon suivante.
 - Face camera : intro (pitch codes promo) + outro (transition cas pratique)
 - Screencast : creation coupon + ajout champ + test (~4 min)
 - Slide : 1 slide strategie coupons + FluentCRM
-- Ton : oriente conversion — montrer l'impact business des coupons
+- Ton : oriente conversion - montrer l'impact business des coupons

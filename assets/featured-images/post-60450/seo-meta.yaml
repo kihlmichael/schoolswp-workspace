@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/droip-review/
+    title: Droip review, the WordPress alternative to Webflow without plugins
+    subject: "Droip review: a no-code visual builder that makes WordPress a real Webflow alternative"
+    description: "Featured image of the schoolsWP review of Droip, the no-code visual builder for WordPress. Droip turns WordPress into a real alternative to Webflow with zero extra plugins: design straight from Figma to WordPress, native dynamic content, scalable styling with classes and variables, and a visual interactions and animations builder. Lifetime plan at 299.50 dollars. Design, animate and ship without ever leaving WordPress."
+    alt: "schoolsWP review of Droip, the no-code visual website builder turning WordPress into a Webflow alternative without plugins"
+    keywords:
+      [
+        droip,
+        droip review,
+        wordpress visual builder,
+        webflow alternative wordpress,
+        no-code wordpress builder,
+        figma to wordpress,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/droip-avis/
+    title: Droip avis, l'alternative WordPress à Webflow sans plugins
+    subject: "Avis Droip : un constructeur visuel no-code qui fait de WordPress une vraie alternative à Webflow"
+    description: "Image à la une de l'avis schoolsWP sur Droip, le constructeur visuel no-code pour WordPress. Droip transforme WordPress en véritable alternative à Webflow sans aucune extension supplémentaire : concevoir directement de Figma à WordPress, contenu dynamique natif, styling évolutif avec classes et variables, et un builder visuel d'interactions et d'animations. Offre à vie à 299,50 dollars. Concevoir, animer et publier sans jamais quitter WordPress."
+    alt: "Avis schoolsWP sur Droip, le constructeur visuel no-code qui fait de WordPress une alternative à Webflow sans plugins"
+    keywords:
+      [
+        droip,
+        droip avis,
+        constructeur visuel wordpress,
+        alternative webflow wordpress,
+        builder no-code wordpress,
+        figma vers wordpress,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/droip-meinung/
+    title: Droip Test, die WordPress-Alternative zu Webflow ohne Plugins
+    subject: "Droip Test: ein No-Code-Visual-Builder, der WordPress zur echten Webflow-Alternative macht"
+    description: "Beitragsbild des schoolsWP-Tests zu Droip, dem No-Code-Visual-Builder für WordPress. Droip macht WordPress ganz ohne zusätzliche Plugins zur echten Webflow-Alternative: direkt von Figma nach WordPress gestalten, native dynamische Inhalte, skalierbares Styling mit Klassen und Variablen sowie ein visueller Builder für Interaktionen und Animationen. Lifetime-Plan für 299,50 Dollar. Gestalten, animieren und veröffentlichen, ohne WordPress je zu verlassen."
+    alt: "schoolsWP-Test zu Droip, dem No-Code-Visual-Builder, der WordPress ohne Plugins zur Webflow-Alternative macht"
+    keywords:
+      [
+        droip,
+        droip test,
+        wordpress visual builder,
+        webflow alternative wordpress,
+        no-code wordpress builder,
+        figma zu wordpress,
+        schoolsWP,
+      ]

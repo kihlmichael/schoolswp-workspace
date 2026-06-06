@@ -1,0 +1,39 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/definition-wordpress-theme/
+    title: What is a WordPress theme, complete definition and guide
+    subject: "WordPress theme: the complete definition and how to use it"
+    description: "Featured image of the schoolsWP guide defining what a WordPress theme is: a collection of files that shapes the look and behavior of your whole site, without touching a line of code. Over 12,000 free themes are available in the official WordPress directory. The article explains the theme's role (look and layout), theme versus plugin (design versus features), free versus premium options, and how to update safely with a child theme."
+    alt: "schoolsWP guide defining a WordPress theme, the visual foundation of every WordPress site"
+    keywords:
+      [
+        wordpress theme,
+        what is a wordpress theme,
+        wordpress theme definition,
+        free wordpress themes,
+        child theme,
+        theme vs plugin,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/definition-theme-wordpress/
+    title: C'est quoi un thème WordPress, définition complète et guide
+    subject: "Thème WordPress : la définition complète et son utilisation"
+    description: "Image à la une du guide schoolsWP qui définit ce qu'est un thème WordPress : un ensemble de fichiers qui définit l'apparence et le comportement de tout le site, sans toucher une ligne de code. Plus de 12 000 thèmes gratuits sont disponibles dans le répertoire officiel WordPress. L'article explique le rôle du thème (apparence et mise en page), la différence thème versus extension (design versus fonctions), le choix gratuit versus premium, et la mise à jour sûre grâce au thème enfant."
+    alt: "Guide schoolsWP qui définit un thème WordPress, la base visuelle de tout site WordPress"
+    keywords:
+      [
+        thème wordpress,
+        c'est quoi un thème wordpress,
+        définition thème wordpress,
+        thèmes wordpress gratuits,
+        thème enfant,
+        thème vs extension,
+        schoolsWP,
+      ]

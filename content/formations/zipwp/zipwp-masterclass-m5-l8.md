@@ -1,12 +1,12 @@
-# Lecon 5.8 — One-page website : portfolio, coming soon, evenement
+# Lecon 5.8 - One-page website : portfolio, coming soon, evenement
 
 ## Metadata
 
 - **Formation** : ZipWP Masterclass Business (FRM-010)
-- **Module** : 5 — Sites business avec ZipWP
+- **Module** : 5 - Sites business avec ZipWP
 - **Lecon** : 8/8
 - **Duree cible** : 8 min
-- **Objectif pedagogique** : Creer un site one-page avec ZipWP pour des cas specifiques — portfolio freelance, page coming soon, page evenement, CV en ligne — avec navigation par ancres et design adapte.
+- **Objectif pedagogique** : Creer un site one-page avec ZipWP pour des cas specifiques - portfolio freelance, page coming soon, page evenement, CV en ligne - avec navigation par ancres et design adapte.
 - **Production** : HeyGen (avatar) + voix ElevenLabs (FR)
 
 ---
@@ -21,11 +21,11 @@ Et ZipWP est parfait pour ca. Tu generes, tu ajustes, tu publies. En moins d'une
 
 ---
 
-[SECTION 1 — Quand un one-page suffit]
+[SECTION 1 - Quand un one-page suffit]
 
 Un one-page n'est pas un site au rabais. C'est le bon format pour un objectif precis.
 
-Portfolio freelance : tu es designer, photographe, developpeur. Tu veux montrer tes realisations et permettre aux prospects de te contacter. Pas besoin de pages separees — tout tient sur une page fluide.
+Portfolio freelance : tu es designer, photographe, developpeur. Tu veux montrer tes realisations et permettre aux prospects de te contacter. Pas besoin de pages separees - tout tient sur une page fluide.
 
 Page coming soon : tu lances un produit, un service, une formation. Le site n'est pas pret mais tu veux commencer a capter des emails. Un titre, un visuel, un formulaire d'inscription, et un compte a rebours. C'est tout.
 
@@ -37,7 +37,7 @@ Le point commun : un seul objectif, une seule action attendue du visiteur. Pas d
 
 ---
 
-[SECTION 2 — Generer avec ZipWP]
+[SECTION 2 - Generer avec ZipWP]
 
 Le prompt fait la difference. Quand tu generes un one-page, dis-le explicitement a ZipWP.
 
@@ -45,17 +45,17 @@ Exemple pour un portfolio : "Site one-page pour un graphiste freelance specialis
 
 Exemple pour une coming soon : "Page coming soon pour le lancement d'une application de gestion de projet. Un titre accrocheur, une description en une phrase, un visuel du produit, un formulaire d'inscription email pour etre notifie au lancement, et un compte a rebours vers la date de lancement."
 
-ZipWP va generer un site multi-pages par defaut. Pas de souci — tu vas fusionner tout le contenu sur une seule page. Garde la page d'accueil, supprime les autres du menu, et deplace le contenu pertinent des autres pages vers ta page unique.
+ZipWP va generer un site multi-pages par defaut. Pas de souci - tu vas fusionner tout le contenu sur une seule page. Garde la page d'accueil, supprime les autres du menu, et deplace le contenu pertinent des autres pages vers ta page unique.
 
 ---
 
-[SECTION 3 — Navigation par ancres]
+[SECTION 3 - Navigation par ancres]
 
 Sur un one-page, le menu ne pointe pas vers d'autres pages mais vers des sections de la meme page. C'est la navigation par ancres.
 
 Comment ca marche : chaque section de ta page a un identifiant unique (un "ID HTML"). Le menu contient des liens qui pointent vers ces identifiants. Quand le visiteur clique sur "Portfolio" dans le menu, la page scrolle automatiquement jusqu'a la section portfolio.
 
-Configuration dans Spectra : selectionne le bloc conteneur de chaque section. Dans les reglages avances, ajoute un "HTML Anchor" — par exemple "portfolio", "services", "contact".
+Configuration dans Spectra : selectionne le bloc conteneur de chaque section. Dans les reglages avances, ajoute un "HTML Anchor" - par exemple "portfolio", "services", "contact".
 
 Configuration du menu : va dans Apparence → Menus. Ajoute des "Liens personnalises". L'URL est simplement "#portfolio", "#services", "#contact". Le texte est le nom visible dans le menu. Enregistre.
 
@@ -63,21 +63,21 @@ Resultat : le visiteur clique sur un element du menu, la page scrolle en douceur
 
 ---
 
-[SECTION 4 — Design specifique pour le one-page]
+[SECTION 4 - Design specifique pour le one-page]
 
 Un one-page a ses propres regles de design.
 
 Scroll fluide : dans les reglages Astra (Personnaliser → Performance ou via un snippet CSS), active le smooth scroll. Le defilement entre les sections devient doux au lieu de sauter brutalement. Un detail qui change la perception de qualite.
 
-Sections pleine largeur : chaque section doit occuper toute la largeur de l'ecran. Utilise le bloc "Container" de Spectra en mode "Full Width". Alterne les couleurs de fond entre les sections — blanc, gris clair, couleur de marque — pour creer une separation visuelle nette.
+Sections pleine largeur : chaque section doit occuper toute la largeur de l'ecran. Utilise le bloc "Container" de Spectra en mode "Full Width". Alterne les couleurs de fond entre les sections - blanc, gris clair, couleur de marque - pour creer une separation visuelle nette.
 
-Hauteur des sections : chaque section principale devrait avoir une hauteur minimale — pas necessairement plein ecran, mais suffisamment pour que le contenu respire. Evite les sections ecrasees avec trop de texte. Un one-page, ca se lit en scrollant, pas en plissant les yeux.
+Hauteur des sections : chaque section principale devrait avoir une hauteur minimale - pas necessairement plein ecran, mais suffisamment pour que le contenu respire. Evite les sections ecrasees avec trop de texte. Un one-page, ca se lit en scrollant, pas en plissant les yeux.
 
-Animations au scroll : Spectra propose des animations d'entree pour les blocs — apparition en fondu, glissement depuis la gauche ou la droite. Utilise-les avec parcimonie — une animation par section, pas sur chaque element. L'objectif est de guider l'oeil, pas de donner le tournis.
+Animations au scroll : Spectra propose des animations d'entree pour les blocs - apparition en fondu, glissement depuis la gauche ou la droite. Utilise-les avec parcimonie - une animation par section, pas sur chaque element. L'objectif est de guider l'oeil, pas de donner le tournis.
 
 ---
 
-[SECTION 5 — Publier rapidement]
+[SECTION 5 - Publier rapidement]
 
 L'avantage du one-page : tu peux le mettre en ligne en moins d'une heure.
 
@@ -93,7 +93,7 @@ Le one-page est ideal pour tester une idee rapidement. Tu ne sais pas si ta form
 
 [OUTRO]
 
-Un one-page avec ZipWP, c'est rapide a creer, efficace a lire, et parfait pour un objectif precis. Portfolio, coming soon, evenement, CV — chaque cas a sa structure, mais le principe reste le meme : une page, un objectif, zero distraction.
+Un one-page avec ZipWP, c'est rapide a creer, efficace a lire, et parfait pour un objectif precis. Portfolio, coming soon, evenement, CV - chaque cas a sa structure, mais le principe reste le meme : une page, un objectif, zero distraction.
 
 C'est la derniere lecon du module 5. Tu as maintenant 8 types de sites business dans ta boite a outils : site vitrine, e-commerce, formation, funnels, CRM, automatisation, landing page, et one-page.
 
@@ -105,11 +105,11 @@ Dans le module 6, on prend du recul. L'ecosysteme complet de Brainstorm Force, l
 
 ### Captures d'ecran suggerees
 
-1. **Prompt one-page** — Champ ZipWP avec le prompt portfolio
-2. **Navigation ancres** — Menu avec liens #portfolio, #services, #contact
-3. **HTML Anchor** — Reglages du bloc Spectra avec l'identifiant de section
-4. **Design sections** — Vue pleine page avec sections alternees et animations
-5. **Vue mobile** — Rendu responsive du one-page sur smartphone
+1. **Prompt one-page** - Champ ZipWP avec le prompt portfolio
+2. **Navigation ancres** - Menu avec liens #portfolio, #services, #contact
+3. **HTML Anchor** - Reglages du bloc Spectra avec l'identifiant de section
+4. **Design sections** - Vue pleine page avec sections alternees et animations
+5. **Vue mobile** - Rendu responsive du one-page sur smartphone
 
 ### Transitions
 
@@ -122,7 +122,7 @@ Dans le module 6, on prend du recul. L'ecosysteme complet de Brainstorm Force, l
 
 ### Notes HeyGen / ElevenLabs
 
-- Ton decontracte et efficace — le one-page est un format rapide, le ton doit le refleter
+- Ton decontracte et efficace - le one-page est un format rapide, le ton doit le refleter
 - Section 3 (ancres) : rythme technique mais clair, montrer la manipulation
 - Section 4 (design) : visuellement riche, montrer les animations a l'ecran
-- Conclure le module avec energie — on passe au niveau superieur dans le module 6
+- Conclure le module avec energie - on passe au niveau superieur dans le module 6

@@ -9,7 +9,7 @@ paths: ["tools/**"]
 | --- | --- |
 | `tools/scripts/` | Scripts utilitaires Python : audit/migration Google Drive (`gdrive-*.py`), scripts Notion (`setup-notion-*.js`) |
 | `tools/scripts/legacy/` | Scripts dépréciés et venv legacy — ne pas modifier |
-| `tools/scripts/mcp-sheet-sync/` | Sync du Google Sheet [schoolsWP - MCP Servers](https://docs.google.com/spreadsheets/d/1IAYk6TPU1s8W81lfV4r0mEGH_0VyfwsZo53GkuEwe9k/edit) (inventaire MCP `.mcp.json` + sessions Claude.ai). `push-mcp-sheet.py` (append batché via gws) + `style-mcp-sheet.py` (branding schoolsWP : header dark + vert, zebra, bordures) + `mcp-sheet-rows.json` (43 rows source de vérité). Workflow d'ajout dans le README. |
+| `tools/scripts/mcp-sheet-sync/` | Sync du Google Sheet [schoolsWP - MCP Servers](https://docs.google.com/spreadsheets/d/1IAYk6TPU1s8W81lfV4r0mEGH_0VyfwsZo53GkuEwe9k/edit) (inventaire MCP `.mcp.json` + sessions Claude.ai). `push-mcp-sheet.py` (append batché via gws) + `style-mcp-sheet.py` (branding schoolsWP : header dark + vert, zebra, bordures) + `mcp-sheet-rows.json` (44 rows source de vérité). Workflow d'ajout dans le README. |
 | `tools/services/rapidapi-mcp/` | Serveur MCP RapidAPI (`server.py`) — wraps les endpoints RapidAPI |
 | `tools/services/pdf-service/` | Service PDF Node.js (Dockerfile inclus) |
 | `tools/services/schoolsWP-drive-organizer/` | Scripts Google Apps Script pour audit et migration Drive |
@@ -24,8 +24,14 @@ paths: ["tools/**"]
 .venv/Scripts/python tools/scripts/gdrive-audit.py        # audit structure Drive
 .venv/Scripts/python tools/scripts/gdrive-rename.py       # renommage batch
 .venv/Scripts/python tools/scripts/gdrive-dispatch-docs.py # dispatch Google Docs
+.venv/Scripts/python tools/scripts/gdrive-upload.py FICHIER --folder ID --name NOM --mime MIME  # upload binaire (PDF, image, zip)
+.venv/Scripts/python tools/scripts/gdrive-upload.py FICHIER.md --folder ID --google-doc --name NOM  # convertir markdown/html/txt en Google Doc natif
 ```
 Auth : variables d'env `GOOGLE_WORKSPACE_CLI_CLIENT_ID` / `GOOGLE_WORKSPACE_CLI_CLIENT_SECRET` (ne pas utiliser `client_secret.json`).
+
+gdrive-upload.py s'appuie sur le CLI gws (streaming multipart). Voie à privilégier quand le MCP create_file échoue sur un binaire volumineux (limite base64 inline environ 240 Ko). En cas d'échec, vérifier gws auth status (champ token_valid) et relancer gws auth login si besoin.
+
+L'option `--google-doc` convertit un `.md` / `.html` / `.txt` en Google Doc natif à l'import (source = type réel, cible = `application/vnd.google-apps.document`). Utile pour aligner scripts et docs sur un dossier Drive en Google Docs. Pour envoyer un fichier Drive à la corbeille : `gws drive files update --params "{\"fileId\": \"...\"}" --json "{\"trashed\": true}"` (passer le JSON via Bash, pas PowerShell : cmd.exe retire les guillemets).
 
 ## Fichiers racine ponctuels
 

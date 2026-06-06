@@ -1,9 +1,9 @@
-# Script video — Module 2, Lecon 3 : Notifications conditionnelles
+# Script video - Module 2, Lecon 3 : Notifications conditionnelles
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 2 — Logique conditionnelle
-**Lecon** : 3/7 — Notifications conditionnelles
+**Module** : 2 - Logique conditionnelle
+**Lecon** : 3/7 - Notifications conditionnelles
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast configuration notifications conditionnelles
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Dans la lecon precedente, on a appris a afficher et masquer des champs. Maintenant, on applique la meme logique aux notifications email.
 
 L'objectif : envoyer automatiquement le bon email a la bonne personne selon ce que le visiteur a repondu. Plus de tri manuel, plus de transferts d'emails. Le routage est automatique.
 
-**[ECRAN — screencast "Le cas pratique"]**
+**[ECRAN - screencast "Le cas pratique"]**
 
 Prenons un cas concret. Tu as un formulaire de contact avec un champ Select "Service" qui propose trois options : Commercial, Support technique, Comptabilite.
 
@@ -30,7 +30,7 @@ Quand quelqu'un choisit "Commercial", l'email doit partir a l'equipe commerciale
 
 On va configurer ca.
 
-**[ECRAN — screencast "Creer la premiere notification conditionnelle"]**
+**[ECRAN - screencast "Creer la premiere notification conditionnelle"]**
 
 Dans le builder, va dans Form Settings → Notifications & Confirmations → Email Notifications.
 
@@ -38,11 +38,11 @@ Tu as peut-etre deja une notification admin par defaut. On va la garder comme no
 
 Clique sur "Add Notification".
 
-Name : "Notification Commercial" — ce nom est interne, le visiteur ne le voit pas.
+Name : "Notification Commercial" - ce nom est interne, le visiteur ne le voit pas.
 
 Send To : commercial@tonsite.fr.
 
-Subject : "Nouvelle demande commerciale — {inputs.name}".
+Subject : "Nouvelle demande commerciale - {inputs.name}".
 
 Body : le contenu de l'email avec les merge tags habituels.
 
@@ -52,7 +52,7 @@ Choisis : "Send this notification if" → "Service" → "Equal" → "Commercial"
 
 Sauvegarde. Cette notification ne partira QUE si le visiteur a selectionne "Commercial".
 
-**[ECRAN — screencast "Creer les notifications suivantes"]**
+**[ECRAN - screencast "Creer les notifications suivantes"]**
 
 Meme processus pour les deux autres services.
 
@@ -62,9 +62,9 @@ Troisieme notification : "Notification Comptabilite". Send To = compta@tonsite.f
 
 Trois notifications, trois conditions, trois destinataires. Chaque service recoit uniquement les messages qui le concernent.
 
-**[ECRAN — screencast "Notification generale en complement"]**
+**[ECRAN - screencast "Notification generale en complement"]**
 
-Tu peux garder une notification admin generale sans condition. Elle part a chaque soumission, quel que soit le service choisi. C'est ton filet de securite — si une notification conditionnelle echoue pour une raison technique, l'admin recoit quand meme le message.
+Tu peux garder une notification admin generale sans condition. Elle part a chaque soumission, quel que soit le service choisi. C'est ton filet de securite - si une notification conditionnelle echoue pour une raison technique, l'admin recoit quand meme le message.
 
 Ca donne quatre notifications au total sur le meme formulaire :
 1. Admin generale (pas de condition) → admin@tonsite.fr
@@ -74,7 +74,7 @@ Ca donne quatre notifications au total sur le meme formulaire :
 
 Plus la notification de confirmation au visiteur, ca fait cinq notifications. Chacune independante, chacune avec sa propre logique.
 
-**[ECRAN — screencast "Notifications avec conditions multiples"]**
+**[ECRAN - screencast "Notifications avec conditions multiples"]**
 
 Tu peux aller plus loin. Les notifications supportent les memes conditions multiples que les champs : ALL et ANY.
 
@@ -86,7 +86,7 @@ Mode : ALL.
 
 Le directeur ne recoit que les demandes commerciales a fort potentiel. Les petites demandes vont au commercial standard. C'est du routage intelligent.
 
-**[ECRAN — screencast "Personnaliser le contenu selon la condition"]**
+**[ECRAN - screencast "Personnaliser le contenu selon la condition"]**
 
 Autre possibilite : changer le contenu de l'email selon le service.
 
@@ -98,7 +98,7 @@ Pour la notification support, tu ajoutes : "Probleme signale : {inputs.descripti
 
 Chaque equipe recoit un email adapte a son contexte. Le support n'a pas besoin de voir le budget. Le commercial n'a pas besoin de voir le niveau d'urgence.
 
-**[ECRAN — slide "Ce que ca remplace"]**
+**[ECRAN - slide "Ce que ca remplace"]**
 
 Pour mettre les choses en perspective : les notifications conditionnelles remplacent un systeme de tickets basique.
 
@@ -108,7 +108,7 @@ Avec FluentForms : le visiteur choisit le service, l'email part directement au b
 
 Pour une petite equipe, ca suffit. Tu n'as pas besoin de Zendesk ou Freshdesk pour router 5 a 20 demandes par jour. FluentForms fait le travail.
 
-**[ECRAN — slide "Erreurs courantes"]**
+**[ECRAN - slide "Erreurs courantes"]**
 
 Deux erreurs a eviter.
 
@@ -116,7 +116,7 @@ Premiere erreur : oublier de couvrir tous les cas. Si ton select a 4 options et 
 
 Deuxieme erreur : ne pas tester chaque branche. Soumets le formulaire une fois pour chaque option du select. Verifie que chaque notification arrive au bon endroit avec le bon contenu.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Les notifications conditionnelles, c'est du routage automatique. Le bon email, a la bonne personne, avec le bon contenu. Configuration une fois, execution automatique a chaque soumission.
 

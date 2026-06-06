@@ -1,47 +1,400 @@
 {
   "values": [
-    ["aidesigner", ".mcp.json", "http remote", "api.aidesigner.ai/api/v1/mcp", "Design HTML (génération + refine, OAuth, Pro 25 $/mois = 100 crédits). Préférer pour T0 exploration design.", "generate, refine, render variants", "Actif"],
-    ["apify", ".mcp.json", "stdio — npx @apify/actors-mcp-server", "apify.com", "Marketplace 6000+ actors web scraping et automation.", "call-actor, search-actors, fetch-actor-details, get-dataset-items, get-key-value-store-record", "Actif"],
-    ["chrome-devtools", ".mcp.json", "stdio — npx chrome-devtools-mcp", "local browser", "Inspection navigateur : Lighthouse, console, network, performance trace, screenshots.", "navigate, click, evaluate_script, take_screenshot, list_network_requests, lighthouse_audit, performance_*", "Actif"],
-    ["claude-code-guide", ".mcp.json", "stdio — npx claude-code-ultimate-guide-mcp", "local doc cache", "Doc Claude Code locale (search_guide, official_docs, threats, examples, releases).", "search_guide, search_official_docs, get_example, get_cheatsheet, list_threats, get_release", "Actif"],
-    ["dataforseo", ".mcp.json", "stdio — launcher .mjs", "api.dataforseo.com", "SEO/keyword data, SERP, backlinks, rank tracking, content analysis, AI Optimization (LLM citations).", "serp_organic_*, dataforseo_labs_*, backlinks_*, ai_opt_*, kw_data_*, on_page_*", "Actif"],
-    ["discord", ".mcp.json", "stdio — launcher .mjs", "discord.com", "Messages, channels, webhooks, forum posts, reactions, server admin.", "discord_send, _read_messages, _create_*, _delete_*, _send_webhook_message, _reply_to_forum", "Actif"],
-    ["firecrawl", ".mcp.json", "stdio — npx firecrawl-mcp", "firecrawl.dev", "Scraping web + crawl + extract → Markdown LLM-ready. Préférer à WebFetch pour pages JS-heavy.", "firecrawl_scrape, _search, _crawl, _map, _extract, _monitor_*, _browser_*", "Actif"],
-    ["fluentaffiliate", ".mcp.json", "stdio — launcher .mjs dynamic", "fluentaffiliate plugin (schoolswp.com)", "Programme d'affiliation WP : affiliés, commissions, transactions.", "fluentaffiliate_describe_tools, _execute_tool, _search_tools", "Actif"],
-    ["fluentboards", ".mcp.json", "stdio — launcher .mjs dynamic", "fluentboards plugin (schoolswp.com)", "Kanban / project management WP : boards, tasks, stages, assignations.", "fluentboards_describe_tools, _execute_tool, _search_tools", "Actif"],
-    ["fluentcommunity", ".mcp.json", "stdio — launcher .mjs dynamic", "fluentcommunity plugin (schoolswp.com)", "Communauté WP : spaces, posts, members, courses, badges.", "fluentcommunity_describe_tools, _execute_tool, _search_tools", "Actif"],
-    ["fluentcrm", ".mcp.json", "stdio — launcher .mjs dynamic", "fluentcrm plugin (schoolswp.com)", "CRM + email marketing WP : contacts, lists, tags, campaigns, funnels, smart links.", "fluentcrm_describe_tools, _execute_tool, _search_tools", "Actif"],
-    ["fluentsupport", ".mcp.json", "stdio — launcher .mjs dynamic", "fluentsupport plugin (schoolswp.com)", "Helpdesk WP : tickets, agents, conversations, automation.", "fluentsupport_describe_tools, _execute_tool, _search_tools", "Actif"],
-    ["github", ".mcp.json", "http remote", "api.githubcopilot.com/mcp", "GitHub API officiel via Copilot (issues, PRs, repos, code search).", "Outils GitHub natifs (PR, issues, search, releases)", "Actif"],
-    ["gsc-mcp", ".mcp.json", "stdio — uvx mcp-search-console", "Google Search Console API", "GSC analytics, URL inspection, sitemaps, indexing issues, performance overview.", "list_properties, get_search_analytics, inspect_url_enhanced, manage_sitemaps, batch_url_inspection, compare_search_periods", "Actif"],
-    ["heygen", ".mcp.json", "http remote", "mcp.heygen.com/mcp/v1/", "Avatars + vidéos AI lipsync (digital twin + audioUrl ElevenLabs). OAuth, crédits plan.", "Outils HeyGen (avatars, vidéos, lipsync)", "Actif"],
-    ["higgsfield", ".mcp.json", "http remote", "mcp.higgsfield.ai/mcp", "Génération vidéo/image cinématique (presets, characters, virality predictor).", "generate_image, generate_video, virality_predictor, personal_clipper_*, models_explore", "Actif"],
-    ["missinglettr", ".mcp.json", "stdio — launcher .mjs proxy mcp-remote", "missinglettr.com", "Planning + scheduling social. HTTP remote proxifié en stdio, auth Authorization: Api-Key.", "Outils Missinglettr (drip campaigns, schedule, content)", "Actif"],
-    ["n8n-mcp", ".mcp.json", "stdio — launcher .mjs", "schoolswp-n8n.wp1.host", "Gestion complète workflows n8n schoolsWP (CRUD, exécutions, audit, validation, nodes).", "n8n_create_workflow, _update, _delete, _executions, search_nodes, get_node, validate_workflow", "Actif"],
-    ["nano-banana", ".mcp.json", "stdio — npx nano-banana-mcp@1.0.3", "Gemini API (modèle GA)", "Image generation Gemini (modèle GA en direct, pas le -preview cassé).", "generate_image, edit_image, continue_editing, configure_gemini_token", "Actif"],
-    ["novamira-joachimkihl-fr", ".mcp.json", "stdio — npx wordpress-remote@0.2.21", "joachimkihl.fr", "Novamira REST API (legacy alias). Site secondaire michaelkihl.fr.", "mcp-adapter-discover-abilities, _execute-ability, _get-ability-info", "Actif"],
-    ["novamira-schoolswp-com", ".mcp.json", "stdio — npx wordpress-remote@0.2.21 (pinné)", "schoolswp.com", "Novamira REST API : 36 abilities (15 Core + 21 Pro : ASE CFT/CCT, memory, posts). Voie principale Tutor LMS/WP.", "mcp-adapter-discover-abilities, _execute-ability, _get-ability-info", "Actif"],
-    ["rapidapi-instagram", ".mcp.json", "stdio — launcher .mjs", "instagram120.p.rapidapi.com", "API Instagram via RapidAPI (profil, posts, reels, stories, highlights).", "profile, posts, reels, stories, highlights, mediaByShortcode", "Actif"],
-    ["rapidapi-linkedin", ".mcp.json", "stdio — launcher .mjs", "linkedin-api8.p.rapidapi.com", "API LinkedIn via RapidAPI (profils, posts, recherche, companies).", "Get_Public_Profile_Data, Search_People, Get_Companys_Post, Search_Posts, Get_Job_Details", "Actif"],
-    ["rapidapi-twitter", ".mcp.json", "stdio — launcher .mjs", "twitter154.p.rapidapi.com", "API Twitter/X via RapidAPI (tweets, profils, recherche, hashtags).", "Search, Tweet_Details, User_Details, Users_Followers, Hashtag, Tweet_Replies", "Actif"],
-    ["rapidapi-youtube", ".mcp.json", "stdio — launcher .mjs", "youtube138.p.rapidapi.com", "API YouTube via RapidAPI (vidéos, chaînes, recherche, trending).", "Search, Video_Details, Channel_Details, Channel_Videos, Trending, Video_Comments", "Actif"],
-    ["schoolswp-skills", ".mcp.json", "stdio — python local", "local CSV registry", "Registry des skills schoolsWP (CSV → MCP). Liste/search/get_details skills projet.", "list_all_skills, search_skills, get_skill_details", "Actif"],
-    ["thruuu", ".mcp.json", "stdio — launcher .mjs → uv run fastmcp", "api.thruuu.com/api/v2", "Analyse SERP thruuu : organic top 100, headings, content, NLP topics, related, PAA, LLM citations.", "thruuu_submit_serp, _get_serp, _list_serps, _analyze_serp, _extract_brief", "Actif"],
-    ["wisewand", ".mcp.json", "stdio — npx wisewandtools/mcp-server", "Wisewand SaaS", "Génération contenu service : articles, category pages, product pages, discover, publish multi-CMS.", "create_article, generate_*, list_*, publish_to_wordpress, publish_to_woocommerce", "Actif"],
-    ["wordpress-studio", ".mcp.json", "stdio — studio mcp (CLI Automattic)", "local + WP.com push/pull", "WordPress Studio CLI : sites locaux, preview, push/pull WP.com, WP-CLI managé, screenshots.", "site_create, _list, _start, _stop, _push, _pull, preview_*, wp_cli, take_screenshot", "Actif"],
-    ["Canva", "Claude.ai", "claude.ai session", "claude.ai", "Création et édition designs Canva (generate, export, edit, brand templates).", "generate-design, export, edit, search-designs, brand-templates, comment", "Session"],
-    ["Gmail", "Claude.ai", "claude.ai session", "claude.ai", "Lecture, recherche, draft Gmail. Pas d'envoi direct via MCP (utiliser draft + envoi UI).", "search_threads, get_thread, create_draft, list_drafts, label_*", "Session"],
-    ["Google Calendar", "Claude.ai", "claude.ai session", "claude.ai", "Gestion agenda Google Calendar (events, free time, response).", "list_events, create_event, update_event, delete_event, suggest_time, respond_to_event", "Session"],
-    ["Google Drive", "Claude.ai", "claude.ai session", "claude.ai", "Drive API : search, read, metadata, copy, create. (Lecture-écriture limitée selon WAF.)", "search_files, read_file_content, get_file_metadata, create_file, copy_file, list_recent_files", "Session"],
-    ["Notion", "Claude.ai", "claude.ai session", "claude.ai", "Gestion pages et bases de données Notion (CRUD, search, comments, views).", "notion-create-pages, _update-page, _search, _create-database, _create-comment, _get-users", "Session"],
-    ["Context7", "Claude.ai", "claude.ai session", "claude.ai", "Doc à jour des libs/frameworks (React, Next, Prisma, Django, etc.). Préférer à WebSearch pour la doc tech.", "resolve-library-id, query-docs", "Session"],
-    ["Microsoft Learn", "Claude.ai", "claude.ai session", "claude.ai", "Doc officielle Microsoft / Azure (search, code samples, fetch full pages).", "microsoft_docs_search, microsoft_code_sample_search, microsoft_docs_fetch", "Session"],
-    ["WordPress.com", "Claude.ai", "claude.ai session", "claude.ai", "WP.com API (OAuth Automattic). Sites WP.com hébergés.", "authenticate, complete_authentication", "Session"],
-    ["n8n (Claude.ai)", "Claude.ai", "claude.ai session", "claude.ai", "SDK n8n workflow builder (différent du n8n-mcp local qui pilote l'instance live).", "create_workflow_from_code, search_nodes, get_node_types, validate_workflow, get_sdk_reference", "Session"],
-    ["datagouv", "Claude.ai", "claude.ai session", "data.gouv.fr", "Open data France : datasets, dataservices, organizations, query CSV/JSON.", "search_datasets, get_dataset_info, query_resource_data, search_organizations, get_metrics", "Session"],
-    ["Adobe Journey Optimizer", "Claude.ai", "claude.ai session", "claude.ai", "Adobe AJO : email/notif orchestration.", "authenticate, complete_authentication", "Session"],
-    ["Adobe for creativity", "Claude.ai", "claude.ai session", "claude.ai", "Firefly + Express : image gen, édition, asset management, font/color recommend.", "adobe_mandatory_init, image_*, asset_*, video_*, font_recommend, change_background_color", "Session"],
-    ["Telegram (plugin)", "Claude.ai", "claude.ai session", "Telegram Bot API", "Pont Telegram : reply, react, edit, download attachments. Reçoit messages via channel tag.", "reply, react, edit_message, download_attachment", "Session"],
-    ["MCP_DOCKER", "Claude.ai", "Docker MCP gateway", "local docker", "Aggregator gateway MCP via Docker (multiplexe plusieurs MCP en 1 endpoint).", "mcp-find, mcp-add, mcp-exec, mcp-create-profile, mcp-activate-profile, code-mode", "Session"]
+    [
+      "aidesigner",
+      ".mcp.json",
+      "http remote",
+      "api.aidesigner.ai/api/v1/mcp",
+      "Design HTML (génération + refine, OAuth, Pro 25 $/mois = 100 crédits). Préférer pour T0 exploration design.",
+      "generate, refine, render variants",
+      "Actif"
+    ],
+    [
+      "apify",
+      ".mcp.json",
+      "stdio — npx @apify/actors-mcp-server",
+      "apify.com",
+      "Marketplace 6000+ actors web scraping et automation.",
+      "call-actor, search-actors, fetch-actor-details, get-dataset-items, get-key-value-store-record",
+      "Actif"
+    ],
+    [
+      "chrome-devtools",
+      ".mcp.json",
+      "stdio — npx chrome-devtools-mcp",
+      "local browser",
+      "Inspection navigateur : Lighthouse, console, network, performance trace, screenshots.",
+      "navigate, click, evaluate_script, take_screenshot, list_network_requests, lighthouse_audit, performance_*",
+      "Actif"
+    ],
+    [
+      "claude-code-guide",
+      ".mcp.json",
+      "stdio — npx claude-code-ultimate-guide-mcp",
+      "local doc cache",
+      "Doc Claude Code locale (search_guide, official_docs, threats, examples, releases).",
+      "search_guide, search_official_docs, get_example, get_cheatsheet, list_threats, get_release",
+      "Actif"
+    ],
+    [
+      "dataforseo",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "api.dataforseo.com",
+      "SEO/keyword data, SERP, backlinks, rank tracking, content analysis, AI Optimization (LLM citations).",
+      "serp_organic_*, dataforseo_labs_*, backlinks_*, ai_opt_*, kw_data_*, on_page_*",
+      "Actif"
+    ],
+    [
+      "discord",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "discord.com",
+      "Messages, channels, webhooks, forum posts, reactions, server admin.",
+      "discord_send, _read_messages, _create_*, _delete_*, _send_webhook_message, _reply_to_forum",
+      "Actif"
+    ],
+    [
+      "firecrawl",
+      ".mcp.json",
+      "stdio — npx firecrawl-mcp",
+      "firecrawl.dev",
+      "Scraping web + crawl + extract → Markdown LLM-ready. Préférer à WebFetch pour pages JS-heavy.",
+      "firecrawl_scrape, _search, _crawl, _map, _extract, _monitor_*, _browser_*",
+      "Actif"
+    ],
+    [
+      "fluentaffiliate",
+      ".mcp.json",
+      "stdio — launcher .mjs dynamic",
+      "fluentaffiliate plugin (schoolswp.com)",
+      "Programme d'affiliation WP : affiliés, commissions, transactions.",
+      "fluentaffiliate_describe_tools, _execute_tool, _search_tools",
+      "Actif"
+    ],
+    [
+      "fluentboards",
+      ".mcp.json",
+      "stdio — launcher .mjs dynamic",
+      "fluentboards plugin (schoolswp.com)",
+      "Kanban / project management WP : boards, tasks, stages, assignations.",
+      "fluentboards_describe_tools, _execute_tool, _search_tools",
+      "Actif"
+    ],
+    [
+      "fluentcommunity",
+      ".mcp.json",
+      "stdio — launcher .mjs dynamic",
+      "fluentcommunity plugin (schoolswp.com)",
+      "Communauté WP : spaces, posts, members, courses, badges.",
+      "fluentcommunity_describe_tools, _execute_tool, _search_tools",
+      "Actif"
+    ],
+    [
+      "fluentcrm",
+      ".mcp.json",
+      "stdio — launcher .mjs dynamic",
+      "fluentcrm plugin (schoolswp.com)",
+      "CRM + email marketing WP : contacts, lists, tags, campaigns, funnels, smart links.",
+      "fluentcrm_describe_tools, _execute_tool, _search_tools",
+      "Actif"
+    ],
+    [
+      "fluentsupport",
+      ".mcp.json",
+      "stdio — launcher .mjs dynamic",
+      "fluentsupport plugin (schoolswp.com)",
+      "Helpdesk WP : tickets, agents, conversations, automation.",
+      "fluentsupport_describe_tools, _execute_tool, _search_tools",
+      "Actif"
+    ],
+    [
+      "github",
+      ".mcp.json",
+      "http remote",
+      "api.githubcopilot.com/mcp",
+      "GitHub API officiel via Copilot (issues, PRs, repos, code search).",
+      "Outils GitHub natifs (PR, issues, search, releases)",
+      "Actif"
+    ],
+    [
+      "gsc-mcp",
+      ".mcp.json",
+      "stdio — uvx mcp-search-console",
+      "Google Search Console API",
+      "GSC analytics, URL inspection, sitemaps, indexing issues, performance overview.",
+      "list_properties, get_search_analytics, inspect_url_enhanced, manage_sitemaps, batch_url_inspection, compare_search_periods",
+      "Actif"
+    ],
+    [
+      "heygen",
+      ".mcp.json",
+      "http remote",
+      "mcp.heygen.com/mcp/v1/",
+      "Avatars + vidéos AI lipsync (digital twin + audioUrl ElevenLabs). OAuth, crédits plan.",
+      "Outils HeyGen (avatars, vidéos, lipsync)",
+      "Actif"
+    ],
+    [
+      "higgsfield",
+      ".mcp.json",
+      "http remote",
+      "mcp.higgsfield.ai/mcp",
+      "Génération vidéo/image cinématique (presets, characters, virality predictor).",
+      "generate_image, generate_video, virality_predictor, personal_clipper_*, models_explore",
+      "Actif"
+    ],
+    [
+      "missinglettr",
+      ".mcp.json",
+      "stdio — launcher .mjs proxy mcp-remote",
+      "missinglettr.com",
+      "Planning + scheduling social. HTTP remote proxifié en stdio, auth Authorization: Api-Key.",
+      "Outils Missinglettr (drip campaigns, schedule, content)",
+      "Actif"
+    ],
+    [
+      "n8n-mcp",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "schoolswp-n8n.wp1.host",
+      "Gestion complète workflows n8n schoolsWP (CRUD, exécutions, audit, validation, nodes).",
+      "n8n_create_workflow, _update, _delete, _executions, search_nodes, get_node, validate_workflow",
+      "Actif"
+    ],
+    [
+      "nano-banana",
+      ".mcp.json",
+      "stdio — npx nano-banana-mcp@1.0.3",
+      "Gemini API (modèle GA)",
+      "Image generation Gemini (modèle GA en direct, pas le -preview cassé).",
+      "generate_image, edit_image, continue_editing, configure_gemini_token",
+      "Actif"
+    ],
+    [
+      "novamira-joachimkihl-fr",
+      ".mcp.json",
+      "stdio — npx wordpress-remote@0.2.21",
+      "joachimkihl.fr",
+      "Novamira REST API (legacy alias). Site secondaire michaelkihl.fr.",
+      "mcp-adapter-discover-abilities, _execute-ability, _get-ability-info",
+      "Actif"
+    ],
+    [
+      "novamira-schoolswp-com",
+      ".mcp.json",
+      "stdio — npx wordpress-remote@0.2.21 (pinné)",
+      "schoolswp.com",
+      "Novamira REST API : 36 abilities (15 Core + 21 Pro : ASE CFT/CCT, memory, posts). Voie principale Tutor LMS/WP.",
+      "mcp-adapter-discover-abilities, _execute-ability, _get-ability-info",
+      "Actif"
+    ],
+    [
+      "rapidapi-instagram",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "instagram120.p.rapidapi.com",
+      "API Instagram via RapidAPI (profil, posts, reels, stories, highlights).",
+      "profile, posts, reels, stories, highlights, mediaByShortcode",
+      "Actif"
+    ],
+    [
+      "rapidapi-linkedin",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "linkedin-api8.p.rapidapi.com",
+      "API LinkedIn via RapidAPI (profils, posts, recherche, companies).",
+      "Get_Public_Profile_Data, Search_People, Get_Companys_Post, Search_Posts, Get_Job_Details",
+      "Actif"
+    ],
+    [
+      "rapidapi-twitter",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "twitter154.p.rapidapi.com",
+      "API Twitter/X via RapidAPI (tweets, profils, recherche, hashtags).",
+      "Search, Tweet_Details, User_Details, Users_Followers, Hashtag, Tweet_Replies",
+      "Actif"
+    ],
+    [
+      "rapidapi-youtube",
+      ".mcp.json",
+      "stdio — launcher .mjs",
+      "youtube138.p.rapidapi.com",
+      "API YouTube via RapidAPI (vidéos, chaînes, recherche, trending).",
+      "Search, Video_Details, Channel_Details, Channel_Videos, Trending, Video_Comments",
+      "Actif"
+    ],
+    [
+      "schoolswp-skills",
+      ".mcp.json",
+      "stdio — python local",
+      "local CSV registry",
+      "Registry des skills schoolsWP (CSV → MCP). Liste/search/get_details skills projet.",
+      "list_all_skills, search_skills, get_skill_details",
+      "Actif"
+    ],
+    [
+      "thruuu",
+      ".mcp.json",
+      "stdio — launcher .mjs → uv run fastmcp",
+      "api.thruuu.com/api/v2",
+      "Analyse SERP thruuu : organic top 100, headings, content, NLP topics, related, PAA, LLM citations.",
+      "thruuu_submit_serp, _get_serp, _list_serps, _analyze_serp, _extract_brief",
+      "Actif"
+    ],
+    [
+      "ubersuggest",
+      ".mcp.json",
+      "http remote",
+      "ubersuggest-mcp.neilpatelapi.com/mcp",
+      "39 outils SEO Ubersuggest (Neil Patel), OAuth 2.0 connecté : analyse de domaine, recherche de mots-clés, backlinks, audit de site, contenu, projets, utilitaires. Chevauche dataforseo et gsc-mcp.",
+      "Domaine : domain_overview, domain_keywords, domain_top_pages, domain_top_countries, competitors, page_overview, page_keywords, traffic_value. Mots-clés : keyword_overview, keyword_suggestions, keyword_metrics, serp_analysis, match_keywords, google_suggestions, estimate_serp_clicks. Backlinks : backlinks_overview, backlinks, anchor_texts, linking_domains, backlink_opportunity. Contenu : content_ideas, page_shares. Audit : site_audit, site_audit_status, site_audit_results, site_audit_pages, pagespeed_audit. Projets : list_projects, get_project, project_position_info, seo_opportunities, create_project, add_project_keywords, add_project_competitors. Utils : auth_status, validate_site, location_suggest, location_details, search_neilpatel_blog. Écriture (non read-only) : site_audit, pagespeed_audit, create_project, add_project_keywords, add_project_competitors.",
+      "Actif"
+    ],
+    [
+      "wisewand",
+      ".mcp.json",
+      "stdio — npx wisewandtools/mcp-server",
+      "Wisewand SaaS",
+      "Génération contenu service : articles, category pages, product pages, discover, publish multi-CMS.",
+      "create_article, generate_*, list_*, publish_to_wordpress, publish_to_woocommerce",
+      "Actif"
+    ],
+    [
+      "wordpress-studio",
+      ".mcp.json",
+      "stdio — studio mcp (CLI Automattic)",
+      "local + WP.com push/pull",
+      "WordPress Studio CLI : sites locaux, preview, push/pull WP.com, WP-CLI managé, screenshots.",
+      "site_create, _list, _start, _stop, _push, _pull, preview_*, wp_cli, take_screenshot",
+      "Actif"
+    ],
+    [
+      "Canva",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Création et édition designs Canva (generate, export, edit, brand templates).",
+      "generate-design, export, edit, search-designs, brand-templates, comment",
+      "Session"
+    ],
+    [
+      "Gmail",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Lecture, recherche, draft Gmail. Pas d'envoi direct via MCP (utiliser draft + envoi UI).",
+      "search_threads, get_thread, create_draft, list_drafts, label_*",
+      "Session"
+    ],
+    [
+      "Google Calendar",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Gestion agenda Google Calendar (events, free time, response).",
+      "list_events, create_event, update_event, delete_event, suggest_time, respond_to_event",
+      "Session"
+    ],
+    [
+      "Google Drive",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Drive API : search, read, metadata, copy, create. (Lecture-écriture limitée selon WAF.)",
+      "search_files, read_file_content, get_file_metadata, create_file, copy_file, list_recent_files",
+      "Session"
+    ],
+    [
+      "Notion",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Gestion pages et bases de données Notion (CRUD, search, comments, views).",
+      "notion-create-pages, _update-page, _search, _create-database, _create-comment, _get-users",
+      "Session"
+    ],
+    [
+      "Context7",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Doc à jour des libs/frameworks (React, Next, Prisma, Django, etc.). Préférer à WebSearch pour la doc tech.",
+      "resolve-library-id, query-docs",
+      "Session"
+    ],
+    [
+      "Microsoft Learn",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Doc officielle Microsoft / Azure (search, code samples, fetch full pages).",
+      "microsoft_docs_search, microsoft_code_sample_search, microsoft_docs_fetch",
+      "Session"
+    ],
+    [
+      "WordPress.com",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "WP.com API (OAuth Automattic). Sites WP.com hébergés.",
+      "authenticate, complete_authentication",
+      "Session"
+    ],
+    [
+      "n8n (Claude.ai)",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "SDK n8n workflow builder (différent du n8n-mcp local qui pilote l'instance live).",
+      "create_workflow_from_code, search_nodes, get_node_types, validate_workflow, get_sdk_reference",
+      "Session"
+    ],
+    [
+      "datagouv",
+      "Claude.ai",
+      "claude.ai session",
+      "data.gouv.fr",
+      "Open data France : datasets, dataservices, organizations, query CSV/JSON.",
+      "search_datasets, get_dataset_info, query_resource_data, search_organizations, get_metrics",
+      "Session"
+    ],
+    [
+      "Adobe Journey Optimizer",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Adobe AJO : email/notif orchestration.",
+      "authenticate, complete_authentication",
+      "Session"
+    ],
+    [
+      "Adobe for creativity",
+      "Claude.ai",
+      "claude.ai session",
+      "claude.ai",
+      "Firefly + Express : image gen, édition, asset management, font/color recommend.",
+      "adobe_mandatory_init, image_*, asset_*, video_*, font_recommend, change_background_color",
+      "Session"
+    ],
+    [
+      "Telegram (plugin)",
+      "Claude.ai",
+      "claude.ai session",
+      "Telegram Bot API",
+      "Pont Telegram : reply, react, edit, download attachments. Reçoit messages via channel tag.",
+      "reply, react, edit_message, download_attachment",
+      "Session"
+    ],
+    [
+      "MCP_DOCKER",
+      "Claude.ai",
+      "Docker MCP gateway",
+      "local docker",
+      "Aggregator gateway MCP via Docker (multiplexe plusieurs MCP en 1 endpoint).",
+      "mcp-find, mcp-add, mcp-exec, mcp-create-profile, mcp-activate-profile, code-mode",
+      "Session"
+    ]
   ]
 }

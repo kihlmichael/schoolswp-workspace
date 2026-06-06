@@ -20,6 +20,11 @@
 # Formation FluentBoards — MP4 demos screen non versionnés (trop lourds, restent sur WP + copie locale)
 content/formations/fluentboards/assets/demos/
 
+# Formation WP Social Ninja — médias de prod (audio/vidéo générés, lourds). Les scripts .py restent versionnés.
+content/formations/wpsocialninja/production/*.mp3
+content/formations/wpsocialninja/production/*.mp4
+content/formations/wpsocialninja/production/*.wav
+
 # OAuth tokens & credentials
 *token*.json
 *credentials*.json
@@ -44,6 +49,13 @@ fix_workflow.py
 systems/n8n-backup/
 *backup_deploy*.json
 n8n_workflows_backup_deploy.json
+# Snapshots de l'audit securite : JSON workflows complets (secrets hardcodes possibles) + metadata credentials. Local-only, jamais committer.
+docs/security/09-backup/n8n-snapshot-*/
+# Local n8n workflow exports : peuvent contenir secrets hardcodes (cles API, webhooks).
+# Allowlist explicite ci-dessous des fichiers JSON valides a versionner.
+systems/n8n/workflows/*.json
+!systems/n8n/workflows/audit-monthly.json
+!systems/n8n/workflows/thruuu-serp-analysis.json
 
 # --- Python ---
 __pycache__/
@@ -159,9 +171,31 @@ tools/wp-mu-plugins/.live-check.tmp
 sandbox-workspace/
 # Backup local de .mcp.json (déjà gitignored, le backup l'est aussi)
 .mcp.backup.json
+# Scratch directory : 43+ probes / debug / deploy one-shot, souvent avec secrets hardcodés (JWT n8n). Jamais committer (alerte sécurité 2026-06-01).
+scratch/
 
 # --- HeyGen avatar identity files (IDs HeyGen perso, écrits par le skill heygen-avatar) ---
 AVATAR-*.md
 
 # --- Memory lint staging (transient, recree a chaque run du launcher) ---
 tools/scripts/.lint-staging/
+
+# InsForge & AI agent skills
+.insforge
+.agent
+.agents
+.augment
+.claude
+.cline
+.github/copilot*
+.kilocode
+.qoder
+.qwen
+.roo
+.trae
+.windsurf
+.codex
+
+# --- One-shot n8n sync scripts (contain hardcoded JWTs from local debug sessions) ---
+# Locale-only ; not committed. To version safely, patch each script to read N8N_API_KEY from env first.
+scripts/n8n_sync_blog/

@@ -1,9 +1,9 @@
-# Script video — Module 2, Lecon 5 : Advanced Conditional Groups (Pro)
+# Script video - Module 2, Lecon 5 : Advanced Conditional Groups (Pro)
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 2 — Logique conditionnelle
-**Lecon** : 5/7 — Advanced Conditional Groups (Pro)
+**Module** : 2 - Logique conditionnelle
+**Lecon** : 5/7 - Advanced Conditional Groups (Pro)
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast configuration groupes avances
@@ -11,7 +11,7 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Jusqu'ici, on a travaille avec des conditions simples : si un champ vaut telle valeur, on fait ceci. Avec le mode ALL ou ANY pour combiner plusieurs conditions.
 
@@ -19,7 +19,7 @@ Mais que faire quand ta logique est plus elaboree ? Quand tu as besoin de dire :
 
 C'est la que les groupes de conditions avances de FluentForms Pro entrent en jeu.
 
-**[ECRAN — slide "Logique basique vs groupes avances"]**
+**[ECRAN - slide "Logique basique vs groupes avances"]**
 
 Recap rapide de la logique basique.
 
@@ -31,7 +31,7 @@ Les groupes avances resolvent ca. Tu crees des groupes de conditions, et tu reli
 
 C'est de la logique imbriquee. Et c'est exclusif a la version Pro.
 
-**[ECRAN — screencast "Acceder aux groupes avances"]**
+**[ECRAN - screencast "Acceder aux groupes avances"]**
 
 Dans le builder, ouvre les settings d'un champ. Active la logique conditionnelle.
 
@@ -43,7 +43,7 @@ En version Pro, tu vois un bouton "Add Condition Group" en plus du bouton "Add C
 
 C'est ce deuxieme bouton qui fait toute la difference.
 
-**[ECRAN — screencast "Cas pratique 1 : formulaire de devis"]**
+**[ECRAN - screencast "Cas pratique 1 : formulaire de devis"]**
 
 Construisons le cas que j'ai mentionne en intro.
 
@@ -71,11 +71,11 @@ Liaison entre les groupes : OR (un seul groupe suffit).
 
 La logique complete : (E-commerce ET budget > 3000) OU (Formation ET apprenants > 50).
 
-**[ECRAN — screencast "Test du cas pratique 1"]**
+**[ECRAN - screencast "Test du cas pratique 1"]**
 
 Testons en preview.
 
-Test 1 : type = E-commerce, budget = 2000. Le champ "Accompagnement premium" n'apparait pas. Normal — budget insuffisant.
+Test 1 : type = E-commerce, budget = 2000. Le champ "Accompagnement premium" n'apparait pas. Normal - budget insuffisant.
 
 Test 2 : type = E-commerce, budget = 5000. Le champ apparait. Groupe 1 satisfait.
 
@@ -87,7 +87,7 @@ Test 5 : type = Blog. Le champ n'apparait pas. Aucun groupe satisfait.
 
 Cinq tests, cinq resultats corrects. La logique fonctionne.
 
-**[ECRAN — screencast "Cas pratique 2 : formulaire d'inscription"]**
+**[ECRAN - screencast "Cas pratique 2 : formulaire d'inscription"]**
 
 Deuxieme cas pratique. Formulaire d'inscription a une conference.
 
@@ -97,7 +97,7 @@ On veut afficher le champ "Code reduction etudiant" si :
 - Statut = Etudiant ET Format = Presentiel
 - OU Statut = Etudiant ET Format = En ligne
 
-Attends — ca revient simplement a : Statut = Etudiant. Pas besoin de groupes avances ici. Une seule condition suffit.
+Attends - ca revient simplement a : Statut = Etudiant. Pas besoin de groupes avances ici. Une seule condition suffit.
 
 Mais si on veut afficher "Informations restauration" seulement si :
 - Format = Presentiel ET l'option "Dejeuner networking" est cochee
@@ -116,7 +116,7 @@ Groupe 2 :
 
 Liaison entre groupes : OR.
 
-**[ECRAN — slide "Visualiser la logique"]**
+**[ECRAN - slide "Visualiser la logique"]**
 
 Quand les conditions deviennent complexes, il faut les visualiser. Voici comment je fais.
 
@@ -133,7 +133,7 @@ Ca prend 10 secondes a ecrire. Et ca t'evite de te perdre dans l'interface quand
 
 Note la logique dans un document ou dans un commentaire HTML du formulaire (via le champ Custom HTML). Le toi de dans 6 mois te remerciera.
 
-**[ECRAN — slide "Limites et bonnes pratiques"]**
+**[ECRAN - slide "Limites et bonnes pratiques"]**
 
 Quelques limites a connaitre.
 
@@ -145,7 +145,7 @@ Performance : la logique conditionnelle s'execute en JavaScript cote client. Mem
 
 Bonne pratique : teste CHAQUE combinaison possible. Si tu as 3 groupes avec 2 conditions chacun, tu as potentiellement 8 combinaisons a verifier. Prends le temps de tout tester.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Les groupes de conditions avances, c'est l'arme secrete de FluentForms Pro. Avec ca, tu peux creer des formulaires qui reagissent a des scenarios complexes sans une seule ligne de code.
 
@@ -170,4 +170,4 @@ Dans les deux prochaines lecons, on met tout ca en pratique. D'abord un formulai
 - Screencast : configuration complete des deux cas pratiques
 - Montrer le bouton "Add Condition Group" vs "Add Condition"
 - Slide pseudo-code : afficher la logique avant la configuration
-- Rythme : plus lent que les lecons precedentes — le sujet est dense
+- Rythme : plus lent que les lecons precedentes - le sujet est dense

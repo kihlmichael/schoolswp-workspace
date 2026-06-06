@@ -1,0 +1,19 @@
+defaults:
+  author: "Michaël KIHL"
+  copyright: "© schoolsWP - Michaël KIHL"
+  url: "https://schoolswp.com/dropshipping-shopify-vs-wordpress/"
+images:
+  - file: slide-00-hero-fr.png
+    title: "Shopify ou WooCommerce : le comparatif pour ta boutique et ton dropshipping"
+    subject: "Comparatif Shopify vs WooCommerce pour l'e-commerce et le dropshipping"
+    description: "Comparatif Shopify vs WooCommerce : prix, frais de transaction, SEO et contrôle pour choisir la plateforme de ta boutique e-commerce ou de dropshipping."
+    alt: "Comparatif Shopify vs WooCommerce : prix, frais, SEO et contrôle pour une boutique e-commerce ou de dropshipping"
+    keywords:
+      [
+        shopify vs woocommerce,
+        dropshipping shopify vs wordpress,
+        comparatif e-commerce,
+        woocommerce,
+        shopify,
+        boutique en ligne wordpress,
+      ]

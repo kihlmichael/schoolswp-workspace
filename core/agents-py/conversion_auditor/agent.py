@@ -473,7 +473,7 @@ class ConversionAuditorAgent(BaseContentAgent):
         )
 
         if result.score_conversion < threshold:
-            injector = _CtaInjectorAgent(model=self.model)
+            injector = _CtaInjectorAgent(model=self.raw_model)
             result.article_with_cta = await injector.run(
                 article=article,
                 audit_report=result.report,

@@ -1,0 +1,44 @@
+Created At: 2026-05-22T12:27:56Z
+Completed At: 2026-05-22T12:28:06Z
+
+				The command completed successfully.
+				Output:
+				Step 30 has plugin keywords.
+  Content length: 4042
+    MATCH: Step 35 has plugin keywords.
+  Content length: 2199
+    MATCH: - **Ecosyst�me Fluent** : FluentCRM, Fluent Forms, FluentBooking, FluentCart, FluentBoards et Fluent Support.
+    MATCH: - Interrogation de ta base FluentCRM via le serveur MCP `novamira-schoolswp-com` pour v�rifier les fiches de contact associ�es � ton nom.
+Step 94 has plugin keywords.
+  Content length: 2482
+    MATCH: et puis chercher tutor lms et cliquer sur installer puis activer mais attendez y a
+    MATCH: # Comment installer Tutor LMS sur WordPress (sans faire d'erreurs)
+    MATCH: L'installation de Tutor LMS est tr�s simple, mais il y a des pi�ges importants � �viter pour ne pas transformer ton site en usine � gaz. Voici la marc
+    MATCH: ## 1. Installer et activer l'extension
+    MATCH: - Cherche **Tutor LMS**.
+    MATCH: - Clique sur **Installer**, puis sur **Activer**.
+Step 97 has plugin keywords.
+  Content length: 1915
+    MATCH: et puis chercher tutor lms et cliquer sur installer puis activer mais attendez y a
+    MATCH: # Comment installer Tutor LMS sur WordPress
+    MATCH: 2. **Cherchez Tutor LMS**.
+    MATCH: 3. **Installez puis activez l'extension**.
+Step 99 has plugin keywords.
+  Content length: 848
+    MATCH: # Comment installer Tutor LMS
+    MATCH: 2. Cherchez Tutor LMS.
+    MATCH: 3. Cliquez sur "Installer" puis "Activer".
+Step 117 has plugin keywords.
+  Content length: 4097
+    MATCH: 10:   python -m agents.schoolswp_brain.cli --query "FluentCRM vs ActiveCampaign" --mode plugin-comparator
+Step 160 has plugin keywords.
+  Tool Calls: [{"name": "write_to_file", "args": {"CodeContent": "\"import json\\nimport time\\nimport urllib.request\\nimport urllib.error\\n\\ndef generate_introduction_v2():\\n    url = \\\"http://127.0.0.1:11434/api/generate\\\"\\n    \\n    # Prompt syst\u00e8me et utilisateur combin\u00e9s avec Few-Shot Pro
+Step 187 has plugin keywords.
+  Content length: 3998
+    MATCH: Tu as peut-�tre d�j� entendu parler d'outils comme HubSpot, ActiveCampaign ou autres g�ants du marketing automation. Ces solutions de gestion de relat
+    MATCH: **Prochaine action** : Pr�f�res-tu que j'injecte tes outils favoris de schoolsWP (comme FluentCRM) dans le prompt de la partie suivante pour guider la
+Step 225 has plugin keywords.
+  Tool Calls: [{"name": "write_to_file", "args": {"CodeContent": "\"import json\\nimport os\\n\\ntranscript_path = r\\\"C:\\\\Users\\\\conta\\\\.gemini\\\\antigravity\\\\brain\\\\da237c9e-3c34-4c74-9a5e-bcf40c14d1fd\\\\.system_generated\\\\logs\\\\transcript.jsonl\\\"\\n\\nif not os.path.exists(transcript_path):\
+Step 239 has plugin keywords.
+  Tool Calls: [{"name": "write_to_file", "args": {"CodeContent": "\"import json\\nimport os\\n\\ntranscript_path = r\\\"C:\\\\Users\\\\conta\\\\.gemini\\\\antigravity\\\\brain\\\\da237c9e-3c34-4c74-9a5e-bcf40c14d1fd\\\\.system_generated\\\\logs\\\\transcript.jsonl\\\"\\n\\nwith open(transcript_path, \\\"r\\\", en
+

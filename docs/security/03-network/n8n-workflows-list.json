@@ -1,0 +1,788 @@
+[
+  {
+    "id": "15l8YimrlFeRxZL5",
+    "name": "[InDev] Google Sheets > Notion: Content Ops Pipeline (COP-001)",
+    "active": true,
+    "archived": false,
+    "nodes": 21,
+    "tags": [
+      "schoolswp",
+      "content",
+      "webhook"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "2ZWIaST2nH2FZddQ",
+    "name": "[Offline] Test: Salut Visual Code",
+    "active": false,
+    "archived": true,
+    "nodes": 4,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "2ZaeawddHVOQuapx",
+    "name": "[Offline] HTTP > Bright Data: Web Scraper (Unlocker API)",
+    "active": false,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "infra",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "3JE0YzrhoiusJZ6T",
+    "name": "[InDev] Webhook > Google Sheets: GEO Architect — Bulk Fill",
+    "active": true,
+    "archived": false,
+    "nodes": 19,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "3XWfBCpPmqh4ERZL",
+    "name": "[Offline] Test: My workflow 2",
+    "active": false,
+    "archived": true,
+    "nodes": 1,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "4FpX7DzkOM00BjVD",
+    "name": "[InDev] Sheets > Google Docs: Veille bihebdo draft generator (W102)",
+    "active": false,
+    "archived": false,
+    "nodes": 9,
+    "tags": [],
+    "updatedAt": "2026-04-15"
+  },
+  {
+    "id": "5LRZoMPjOvGtvLsr",
+    "name": "[InTesting] Chat > Claude: schoolsWP Brain",
+    "active": false,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "5jsmzak1wDosjDEy",
+    "name": "[Prod] Error Trigger > Telegram: Webhook Auth Alert",
+    "active": true,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "schoolswp",
+      "infra",
+      "webhook"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "5kqNhwathbPqLL9l",
+    "name": "[InDev] Google Drive: Audit — Liste complète",
+    "active": false,
+    "archived": true,
+    "nodes": 2,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "6pNoSEQrPvm3j6rS",
+    "name": "[Offline] Learning: Les variables dans n8n",
+    "active": false,
+    "archived": true,
+    "nodes": 13,
+    "tags": [],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "6utQzJcmXQczrHag",
+    "name": "[Prod] Claude > Google Sheets: Skills Registry Sync",
+    "active": true,
+    "archived": false,
+    "nodes": 3,
+    "tags": [
+      "schoolswp",
+      "scheduled",
+      "agents"
+    ],
+    "updatedAt": "2026-05-09"
+  },
+  {
+    "id": "8k07aXZWaMJK2pNg",
+    "name": "LinkedIn Carousel Intros",
+    "active": true,
+    "archived": false,
+    "nodes": 11,
+    "tags": [],
+    "updatedAt": "2026-05-07"
+  },
+  {
+    "id": "9bbCZznrXCD9fdz9",
+    "name": "[Prod] Drive Changes > Claude: Auto README New Folder",
+    "active": true,
+    "archived": false,
+    "nodes": 13,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "9iOWZfj8VRrNYmya",
+    "name": "[Prod] Sheets > AI Agents: Veille Locale Grand Est (W208)",
+    "active": true,
+    "archived": false,
+    "nodes": 31,
+    "tags": [
+      "google-sheets",
+      "schoolswp",
+      "veille",
+      "scheduled",
+      "agents"
+    ],
+    "updatedAt": "2026-05-05"
+  },
+  {
+    "id": "9l6QDboR13ksWEWz",
+    "name": "[Prod] Sheets > AI Agents: Veille Concurrents Editoriaux (W207)",
+    "active": true,
+    "archived": false,
+    "nodes": 30,
+    "tags": [
+      "google-sheets",
+      "schoolswp",
+      "veille",
+      "scheduled",
+      "agents"
+    ],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "id": "BStRQkYKRv6VcRsf",
+    "name": "[InDev] LinkedIn Post > Claude: Prospecting Pipeline V4",
+    "active": true,
+    "archived": false,
+    "nodes": 35,
+    "tags": [],
+    "updatedAt": "2026-03-21"
+  },
+  {
+    "id": "BdQe0e7HgJokb5wh",
+    "name": "[InDev] Multi-source > Sheets: Veille editoriale bihebdo ingest (W101)",
+    "active": true,
+    "archived": false,
+    "nodes": 21,
+    "tags": [],
+    "updatedAt": "2026-04-16"
+  },
+  {
+    "id": "CDuKpLL7E6LuaWNT",
+    "name": "[Prod] Hub Drive > Auto Sync README Index",
+    "active": true,
+    "archived": false,
+    "nodes": 15,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "DcbnlLoedzX2lVIJ",
+    "name": "[Staging] WordPress > Google Sheets: Sync & Classify Blog Posts",
+    "active": true,
+    "archived": false,
+    "nodes": 12,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "content",
+      "wordpress",
+      "webhook"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "DuA0mTknpwxl3n7t",
+    "name": "[InDev] Google Sheets: RAG — Base de Connaissances",
+    "active": false,
+    "archived": true,
+    "nodes": 5,
+    "tags": [
+      "schoolswp",
+      "content",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "DvpBgumVBQ4GxN55",
+    "name": "[InDev] Google Sheets > Socials: Shorts Auto-Post",
+    "active": false,
+    "archived": false,
+    "nodes": 23,
+    "tags": [
+      "schoolswp",
+      "youtube",
+      "scheduled",
+      "social"
+    ],
+    "updatedAt": "2026-03-08"
+  },
+  {
+    "id": "FVt4dadONosJBgQQ",
+    "name": "[Offline] Template: Abyssale > Blotato — Multi-format Design",
+    "active": false,
+    "archived": false,
+    "nodes": 53,
+    "tags": [
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "Im1Khan3gJwhJkuu",
+    "name": "[InDev] Webhook > Google Sheets: Thruuu — Monitoring Results",
+    "active": true,
+    "archived": false,
+    "nodes": 6,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "webhook"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "J3bOLPqUQg28VVVR",
+    "name": "[Prod] Schedule > Thruuu: Token Health Check & Alert",
+    "active": true,
+    "archived": false,
+    "nodes": 9,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "infra",
+      "scheduled"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "M30iAIoAm0t5WkTE",
+    "name": "[Offline] Gmail: (template)",
+    "active": false,
+    "archived": true,
+    "nodes": 1,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "McG5eQhjEEvOKdKj",
+    "name": "[Offline] HTTP > Bright Data: Web Scraper (MCP Agent)",
+    "active": false,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "infra",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "MoIYzZ5Sh0NkQZnl",
+    "name": "[Offline] Template: YouTube > Blotato — Video Publishing",
+    "active": false,
+    "archived": false,
+    "nodes": 21,
+    "tags": [
+      "youtube",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "MveNwfDlvVYYZTwz",
+    "name": "[Staging] Webhook: MIGRATION — Créer structure schoolswp",
+    "active": true,
+    "archived": false,
+    "nodes": 8,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "webhook"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "MyzvSuY5ZeqNemKB",
+    "name": "[InDev] Schedule > GSC > Sheets: Rapport GSC quotidien schoolsWP",
+    "active": false,
+    "archived": true,
+    "nodes": 3,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "scheduled"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "NZMJOfiaNPqyAajd",
+    "name": "[Prod] WP Articles > Google Docs: Content Fill v5 (auto-paginate)",
+    "active": true,
+    "archived": false,
+    "nodes": 15,
+    "tags": [],
+    "updatedAt": "2026-05-05"
+  },
+  {
+    "id": "P4riSkL0azBX7rJg",
+    "name": "[InTesting] Chat > Claude: GEO Architect — AIO Pipeline",
+    "active": true,
+    "archived": false,
+    "nodes": 8,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "PkFO7Of9BrMfl8Ed",
+    "name": "[InDev] Google Drive → Drive: Auto-Rename on Move",
+    "active": true,
+    "archived": false,
+    "nodes": 35,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "webhook"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "RCrxLczqjF95kVV8",
+    "name": "[InDev] RapidAPI > Google Sheets: Statistiques Réseaux Sociaux",
+    "active": false,
+    "archived": true,
+    "nodes": 9,
+    "tags": [
+      "schoolswp",
+      "scheduled",
+      "social"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "RQZnUp6C1qC82Q7K",
+    "name": "[InDev] Schedule > Pinterest: Auto-Generate Pins on New Article",
+    "active": true,
+    "archived": false,
+    "nodes": 15,
+    "tags": [],
+    "updatedAt": "2026-03-31"
+  },
+  {
+    "id": "RWAjOFu9YXBZD6px",
+    "name": "[Offline] Test: My workflow 3",
+    "active": false,
+    "archived": true,
+    "nodes": 2,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "RhQO6SxIy7eJs7Bd",
+    "name": "[Offline] Webhook > Google Drive: MIGRATION Niveau 2 Sous-dossiers schoolswp",
+    "active": false,
+    "archived": false,
+    "nodes": 13,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "webhook"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "TMdQtXSe2UG6kfD4",
+    "name": "[Offline] Learning: Les fonctions dans n8n",
+    "active": false,
+    "archived": true,
+    "nodes": 7,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "Vh1ZCmOMW2950fr1",
+    "name": "[Offline] WP Articles > Google Docs: Content Fill v4 (legacy)",
+    "active": false,
+    "archived": false,
+    "nodes": 8,
+    "tags": [],
+    "updatedAt": "2026-05-05"
+  },
+  {
+    "id": "Vk43iCD851XyGJq9",
+    "name": "[Offline] Google Drive: MIGRATION — Créer arborescence schoolsWP",
+    "active": false,
+    "archived": true,
+    "nodes": 5,
+    "tags": [
+      "schoolswp",
+      "google-drive",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "WocLwnUAZPaZFitG",
+    "name": "[InDev] Agent Orchestrator: Callback > Process Result",
+    "active": true,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-03-15"
+  },
+  {
+    "id": "YfP0L8Mc46GyjbsK",
+    "name": "[Offline] RSS > Facebook/Twitter: Plugin Monitor",
+    "active": false,
+    "archived": true,
+    "nodes": 14,
+    "tags": [
+      "schoolswp",
+      "wordpress",
+      "scheduled",
+      "social"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "aW9LzUdmykugYzea",
+    "name": "[Setup] Create Shorts CMS Google Sheet",
+    "active": false,
+    "archived": false,
+    "nodes": 5,
+    "tags": [
+      "schoolswp",
+      "youtube",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-03-08"
+  },
+  {
+    "id": "ddxfxswFsJ90lZvU",
+    "name": "[Setup] Manual > Sheets: Identification Concurrence Locale (W208a)",
+    "active": false,
+    "archived": false,
+    "nodes": 6,
+    "tags": [
+      "google-sheets",
+      "schoolswp",
+      "veille",
+      "manual"
+    ],
+    "updatedAt": "2026-05-05"
+  },
+  {
+    "id": "esMrVGG182Wa0bxr",
+    "name": "[Offline] Google Sheets: Setup — Shorts CMS",
+    "active": false,
+    "archived": true,
+    "nodes": 5,
+    "tags": [
+      "schoolswp",
+      "youtube",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "fK9A2lyv9y8kjHB1",
+    "name": "[Offline] Test: My workflow",
+    "active": false,
+    "archived": true,
+    "nodes": 1,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "gfOOdgck46toZsiK",
+    "name": "[Offline] Template: NanoBanana > Blotato — Video Ads Factory",
+    "active": false,
+    "archived": false,
+    "nodes": 59,
+    "tags": [
+      "youtube",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "iXR2tvSfd5L9zE2t",
+    "name": "[Prod] Schedule > n8n: Workflows Backup",
+    "active": true,
+    "archived": false,
+    "nodes": 6,
+    "tags": [
+      "schoolswp",
+      "infra",
+      "scheduled"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "j0VhysVCZfuuWrQC",
+    "name": "[Offline] Test: Notif Telegram",
+    "active": false,
+    "archived": true,
+    "nodes": 9,
+    "tags": [],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "kgeMDb9hIXwvOzLK",
+    "name": "[InTesting] Sheets > Blotato > YouTube: Auto-Publish (W209a)",
+    "active": true,
+    "archived": false,
+    "nodes": 10,
+    "tags": [],
+    "updatedAt": "2026-05-07"
+  },
+  {
+    "id": "krF2AcxO9sXBimLI",
+    "name": "[InDev] Claude Skills > Google Sheets: Audit & Inventory Sync",
+    "active": true,
+    "archived": false,
+    "nodes": 9,
+    "tags": [
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "ktrlXAI5szH3lr8F",
+    "name": "[Prod] Sheets > AI Agents: Veille Plugins schoolsWP (W206)",
+    "active": true,
+    "archived": false,
+    "nodes": 30,
+    "tags": [
+      "google-sheets",
+      "schoolswp",
+      "veille",
+      "scheduled",
+      "agents"
+    ],
+    "updatedAt": "2026-05-05"
+  },
+  {
+    "id": "l1bkufQrDjkdPHkq",
+    "name": "[Offline] Google Maps: Reviews Analyst",
+    "active": false,
+    "archived": false,
+    "nodes": 19,
+    "tags": [
+      "seo",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "ls46UbBJJuZCobfI",
+    "name": "[InDev] YouTube: schoolsWP — Analyse WordPress",
+    "active": false,
+    "archived": true,
+    "nodes": 17,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "youtube",
+      "manual"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "mOARMmejMqpWVav2",
+    "name": "[InDev] Google Sheets > Google Sheets: Créer post LinkedIn",
+    "active": false,
+    "archived": false,
+    "nodes": 6,
+    "tags": [
+      "schoolswp",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "nV3pipGTnwZq7zCz",
+    "name": "[InDev] Global: Error Handler",
+    "active": false,
+    "archived": true,
+    "nodes": 0,
+    "tags": [
+      "schoolswp",
+      "infra"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "nmXNUqXgmKVcrjsJ",
+    "name": "[InDev] Google Drive > Gemini: Organisateur Photos Vacances",
+    "active": false,
+    "archived": false,
+    "nodes": 23,
+    "tags": [
+      "google-drive",
+      "manual"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "np4OG9UGDCGWaK4H",
+    "name": "[InDev] Webhook > Discord: Tutor LMS Docs Watcher",
+    "active": true,
+    "archived": false,
+    "nodes": 5,
+    "tags": [],
+    "updatedAt": "2026-05-06"
+  },
+  {
+    "id": "nqZCiTjpWnTbmr0o",
+    "name": "[Offline] Template: Image > NanoBanana/Kling — AI Video",
+    "active": false,
+    "archived": false,
+    "nodes": 29,
+    "tags": [
+      "youtube",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-05-07"
+  },
+  {
+    "id": "rfywaXMGBoKQReln",
+    "name": "[InDev] Google Sheets > Socials: Repurpose — LinkedIn Carousel",
+    "active": false,
+    "archived": true,
+    "nodes": 25,
+    "tags": [
+      "schoolswp",
+      "social",
+      "manual"
+    ],
+    "updatedAt": "2026-02-26"
+  },
+  {
+    "id": "sLsPkcU3faV727dM",
+    "name": "[InDev] YouTube > Kie.ai: Thumbnail Generator",
+    "active": true,
+    "archived": false,
+    "nodes": 15,
+    "tags": [
+      "schoolswp",
+      "youtube",
+      "manual"
+    ],
+    "updatedAt": "2026-03-16"
+  },
+  {
+    "id": "tR7J1fteY44eDdke",
+    "name": "[InTesting] Telegram > Sheets: YT Source -> Brief schoolsWP (W209)",
+    "active": true,
+    "archived": false,
+    "nodes": 17,
+    "tags": [],
+    "updatedAt": "2026-05-07"
+  },
+  {
+    "id": "uqH7WJf6y8f1AgAr",
+    "name": "[InDev] Agent Orchestrator: Trigger > Async + Callback",
+    "active": false,
+    "archived": false,
+    "nodes": 4,
+    "tags": [
+      "schoolswp",
+      "webhook",
+      "agents"
+    ],
+    "updatedAt": "2026-02-24"
+  },
+  {
+    "id": "xEkwRNNw9Mm2BUxq",
+    "name": "[InDev] Google Sheets: SEO — Maillage Interne",
+    "active": false,
+    "archived": true,
+    "nodes": 12,
+    "tags": [
+      "seo",
+      "schoolswp",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "xxm6wDQpIL4NCk4s",
+    "name": "[InDev] WordPress > Discord: Alerting SecuPress",
+    "active": false,
+    "archived": true,
+    "nodes": 0,
+    "tags": [
+      "schoolswp",
+      "wordpress",
+      "webhook"
+    ],
+    "updatedAt": "2026-02-25"
+  },
+  {
+    "id": "zcm7RCjuWyyYS9zM",
+    "name": "[InDev] Web > Google Sheets: GROWTH — Email Extractor",
+    "active": false,
+    "archived": true,
+    "nodes": 6,
+    "tags": [
+      "schoolswp",
+      "content",
+      "manual"
+    ],
+    "updatedAt": "2026-02-25"
+  }
+]

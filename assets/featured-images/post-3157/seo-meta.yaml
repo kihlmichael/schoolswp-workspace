@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/ce-que-je-pense-de-divi-pixel/
+    title: Avis Divi Pixel, l'add-on premium du builder Divi
+    subject: "Divi Pixel, mon avis : 40+ modules pour le builder Divi sans CSS"
+    description: "Image à la une de l'avis schoolsWP sur Divi Pixel, l'add-on premium du builder Divi. Verdict de Michaël KIHL : plus de 40 modules personnalisés prêts à l'emploi sans une ligne de CSS, tarifs dès 49 dollars par an (jusqu'à 299 dollars la licence à vie illimitée), avec une réserve honnête : certaines options recoupent le Divi Theme Builder natif."
+    alt: "Avis Divi Pixel schoolsWP, add-on du builder Divi avec 40+ modules sans CSS"
+    keywords:
+      [
+        divi pixel,
+        avis divi pixel,
+        divi,
+        builder divi,
+        modules divi,
+        plugin divi,
+        schoolsWP,
+      ]

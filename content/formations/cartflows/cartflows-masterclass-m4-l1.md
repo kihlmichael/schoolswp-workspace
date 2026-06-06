@@ -1,9 +1,9 @@
-# Lecon 4.1 — Qu'est-ce qu'un order bump et pourquoi ca fonctionne
+# Lecon 4.1 - Qu'est-ce qu'un order bump et pourquoi ca fonctionne
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 4 — Order Bumps
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 4 - Order Bumps
 - **Duree cible** : 6 min (~900 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre ce qu'est un order bump, pourquoi il fonctionne sur le plan psychologique, et quelle difference avec un upsell. Savoir identifier les bons candidats pour un bump.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu as un checkout qui convertit. Le client est pret a payer. Il a sorti sa carte. Et la, juste avant de cliquer sur "Commander", il voit une petite case a cocher avec une offre complementaire. "Ajoute le pack de templates bonus pour seulement 17 euros."
 
@@ -20,9 +20,9 @@ Il coche. Il paie. Tu viens de gagner 17 euros de plus sans un gramme d'effort s
 
 ---
 
-**[SECTION 1 — Definition claire]**
+**[SECTION 1 - Definition claire]**
 
-**[ECRAN — schema d'un checkout avec un order bump visible]**
+**[ECRAN - schema d'un checkout avec un order bump visible]**
 
 Un order bump, c'est une offre complementaire affichee directement sur la page de checkout. Le client la voit pendant qu'il remplit ses informations de paiement. Pas sur une page separee. Pas dans un pop-up. Directement sur le formulaire, sous forme d'une case a cocher.
 
@@ -30,21 +30,21 @@ Le client coche, le produit s'ajoute a la commande. Il decoche, il ne paie que l
 
 ---
 
-**[SECTION 2 — Pourquoi ca fonctionne : la psychologie]**
+**[SECTION 2 - Pourquoi ca fonctionne : la psychologie]**
 
-**[ECRAN — face camera]**
+**[ECRAN - face camera]**
 
-Le moment ou un client arrive sur ton checkout, il a deja pris la decision d'acheter. Son cerveau est en mode "achat". La barriere mentale la plus difficile — sortir la carte, accepter de depenser — elle est deja franchie.
+Le moment ou un client arrive sur ton checkout, il a deja pris la decision d'acheter. Son cerveau est en mode "achat". La barriere mentale la plus difficile - sortir la carte, accepter de depenser - elle est deja franchie.
 
 A ce stade, ajouter 17 euros a une commande de 47 euros, c'est une decision marginale. Le client ne refait pas tout le processus de deliberation. Il se dit : "Tant que j'y suis, autant prendre ca aussi." C'est le meme mecanisme que les chewing-gums a la caisse du supermarche. Le panier est deja plein, un article de plus ne change pas la donne.
 
-En moyenne, un order bump bien configure genere entre 10 et 15 pourcent de revenu additionnel. Sur 100 ventes a 47 euros, ca represente entre 470 et 700 euros de chiffre d'affaires supplementaire — sans trafic supplementaire, sans publicite supplementaire, sans nouveau contenu.
+En moyenne, un order bump bien configure genere entre 10 et 15 pourcent de revenu additionnel. Sur 100 ventes a 47 euros, ca represente entre 470 et 700 euros de chiffre d'affaires supplementaire - sans trafic supplementaire, sans publicite supplementaire, sans nouveau contenu.
 
 ---
 
-**[SECTION 3 — Exemples concrets]**
+**[SECTION 3 - Exemples concrets]**
 
-**[ECRAN — exemples visuels de bumps]**
+**[ECRAN - exemples visuels de bumps]**
 
 Prenons des exemples concrets pour que tu visualises.
 
@@ -58,9 +58,9 @@ Le point commun : le bump complete l'achat. Il ne le remplace pas, il ne le conc
 
 ---
 
-**[SECTION 4 — Order bump vs upsell : la difference]**
+**[SECTION 4 - Order bump vs upsell : la difference]**
 
-**[ECRAN — schema comparatif bump vs upsell sur une timeline du funnel]**
+**[ECRAN - schema comparatif bump vs upsell sur une timeline du funnel]**
 
 C'est une confusion courante, donc clarifions. Un order bump et un upsell, ce n'est pas la meme chose.
 
@@ -68,15 +68,15 @@ L'order bump apparait sur la page de checkout, avant le paiement. Le client le v
 
 L'upsell apparait apres le paiement. Le client a deja paye, il arrive sur une page dediee qui lui propose un produit supplementaire. C'est un deuxieme acte d'achat, une deuxieme decision.
 
-La difference est fondamentale. Le bump profite du momentum d'achat — le client est en train de payer. L'upsell demande une nouvelle decision — le client a deja fini de payer et doit se remotiver.
+La difference est fondamentale. Le bump profite du momentum d'achat - le client est en train de payer. L'upsell demande une nouvelle decision - le client a deja fini de payer et doit se remotiver.
 
 Les deux sont utiles. Les deux generent du revenu supplementaire. Mais ils ne fonctionnent pas au meme moment et pas sur la meme psychologie. Dans CartFlows, tu peux utiliser les deux : bump sur le checkout, upsell sur la page suivante. On verra les upsells dans le module suivant.
 
 ---
 
-**[SECTION 5 — Ce qui fait un bon candidat bump]**
+**[SECTION 5 - Ce qui fait un bon candidat bump]**
 
-**[ECRAN — face camera]**
+**[ECRAN - face camera]**
 
 Avant de creer ton premier bump dans la prochaine lecon, pose-toi cette question : est-ce que le produit que je veux proposer en bump complete naturellement l'achat principal ?
 
@@ -86,7 +86,7 @@ Deuxieme critere : le prix. Un bump doit representer entre 20 et 40 pourcent du 
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 L'order bump, c'est du revenu supplementaire sur chaque vente, sans cout d'acquisition. Pas de publicite, pas de nouveau trafic, pas de contenu supplementaire. Juste une case a cocher bien placee, avec la bonne offre, au bon moment.
 
@@ -99,4 +99,4 @@ Dans la prochaine lecon, on passe a la pratique : creer ton premier order bump d
 - **Captures d'ecran necessaires** : checkout avec un order bump visible (case a cocher), exemples de bumps (formation + templates, produit + garantie)
 - **Schemas** : timeline du funnel avec bump (avant paiement) vs upsell (apres paiement), comparatif visuel bump vs upsell
 - **Timing** : intro (1 min) → definition (1 min) → psychologie (1.5 min) → exemples (1 min) → bump vs upsell (1 min) → outro (0.5 min)
-- **Ton** : pedagogique, chiffres concrets, pas de survente — on explique pourquoi ca marche, pas "ca va exploser ton CA"
+- **Ton** : pedagogique, chiffres concrets, pas de survente - on explique pourquoi ca marche, pas "ca va exploser ton CA"

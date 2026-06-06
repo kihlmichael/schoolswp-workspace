@@ -1,0 +1,25 @@
+{
+  "source": "Google Search Console MCP — inspect_url_enhanced",
+  "page_url": "https://schoolswp.com/link-whisper-avis/",
+  "site_url": "https://schoolswp.com/",
+  "inspected_on": "2026-05-22",
+  "verdict": "PASS",
+  "coverage_state": "Submitted and indexed",
+  "last_crawled": "2026-04-23 08:39",
+  "page_fetch_state": "SUCCESSFUL",
+  "robots_txt_state": "ALLOWED",
+  "indexing_state": "INDEXING_ALLOWED",
+  "google_canonical": "https://schoolswp.com/link-whisper-avis/",
+  "user_canonical": "https://schoolswp.com/link-whisper-avis/",
+  "crawled_as": "MOBILE",
+  "referring_urls": [
+    "https://schoolswp.com/slug-wordpress/",
+    "https://schoolswp.com/seo-wordpress/"
+  ],
+  "rich_results": {
+    "verdict": "PASS",
+    "detected_types": ["Breadcrumbs"],
+    "issues": []
+  },
+  "note": "Seul le schema Breadcrumbs est valide par Google. Aucun rich result FAQPage ni Review/AggregateRating detecte malgre la note 4,5/5 affichee et les 7 titres-questions. Seulement 2 liens internes pointent vers la page. Dernier crawl Googlebot il y a ~1 mois."
+}

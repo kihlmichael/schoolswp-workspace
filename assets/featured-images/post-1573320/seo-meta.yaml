@@ -1,0 +1,39 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/wordpress-6-9-new-features/
+    title: WordPress 6.9 new features, AI and collaboration explained
+    subject: "WordPress 6.9: the full rundown of the major update, from the site editor to the new APIs"
+    description: "Featured image of the schoolsWP guide to WordPress 6.9. The full rundown of the major update: a redesigned site editor that is more flexible, new collaboration tools with notes and drafts, finer and smarter design controls, and under-the-hood performance gains plus new developer APIs. Edit, collaborate and ship, the 6.9 way."
+    alt: "schoolsWP guide to WordPress 6.9 new features, covering the redesigned site editor, collaboration notes, design controls and new APIs"
+    keywords:
+      [
+        wordpress 6.9,
+        wordpress 6.9 new features,
+        wordpress site editor,
+        wordpress collaboration notes,
+        wordpress developer api,
+        wordpress update,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/wordpress-6-9-nouveautes/
+    title: WordPress 6.9 nouveautés, IA et collaboration décryptées
+    subject: "WordPress 6.9 : le point complet sur la mise à jour majeure, de l'éditeur de site aux nouvelles API"
+    description: "Image à la une du guide schoolsWP sur WordPress 6.9. Le point complet sur la mise à jour majeure : un éditeur de site repensé et plus flexible, de nouveaux outils de collaboration avec les notes et les brouillons, des contrôles de design plus fins et plus intelligents, et sous le capot des gains de performance ainsi que de nouvelles API pour les développeurs. Éditer, collaborer et publier, version 6.9."
+    alt: "Guide schoolsWP sur les nouveautés de WordPress 6.9, éditeur de site repensé, notes de collaboration, contrôles de design et nouvelles API"
+    keywords:
+      [
+        wordpress 6.9,
+        wordpress 6.9 nouveautés,
+        éditeur de site wordpress,
+        collaboration wordpress notes,
+        api développeur wordpress,
+        mise à jour wordpress,
+        schoolsWP,
+      ]

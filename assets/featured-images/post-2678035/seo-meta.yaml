@@ -1,0 +1,23 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © 2026 schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/
+  software: schoolsWP html-to-png pipeline
+
+images:
+  - file: slide-00-hero-fr.png
+    title: "TablePress 3.3 : la mise à jour majeure pour les tableaux WordPress"
+    subject: "TablePress 3.3 - barre d'outils fixe, raccourcis clavier et WordPress 7.0. Visuel de couverture de l'article schoolsWP."
+    description: "Visuel de couverture de l'article schoolsWP sur la mise à jour majeure TablePress 3.3 : barre d'outils fixe sur l'écran d'édition, navigation rapide par raccourci clavier, préparation au futur WordPress 7.0 et traductions à la demande."
+    alt: "TablePress 3.3, la mise à jour majeure pour WordPress : barre d'outils fixe, raccourcis clavier, préparation à WordPress 7.0 et traductions à la demande. Couverture schoolsWP."
+    keywords:
+      - TablePress 3.3
+      - TablePress mise à jour
+      - TablePress WordPress
+      - tableaux WordPress
+      - barre d'outils fixe
+      - raccourcis clavier
+      - WordPress 7.0
+      - plugin TablePress
+      - schoolsWP
+      - Michael KIHL

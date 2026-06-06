@@ -1,0 +1,60 @@
+schoolsWP - Audit SEO mots-clés
+Article,"Comment optimiser WP Grid Builder pour les Core Web Vitals (?p=2969994, brouillon FR)"
+Date collecte,2026-06-04
+Marché,France / fr
+Sources,"DataForSEO Labs + Ubersuggest (thruuu à venir)"
+
+■ 1. VOLUMES & DIFFICULTÉ
+Mot-clé,SV DataForSEO,SV Ubersuggest,KD DFS /100,SD UbS /100,Compétition,CPC,Intent
+wp grid builder,210,210,4,21,"LOW (0.20)","0,80 EUR / 0,71 USD",commercial
+wpgb,10,,,,"LOW (0.09)","0,58 EUR",navigational
+wp grid builder core web vitals,0,,,,,,"aucune donnee (hors base FR)"
+optimiser wp grid builder,0,,,,,,"aucune donnee (hors base FR)"
+wp grid builder performance,0,,,,,,"aucune donnee (hors base FR)"
+
+■ 2. LONGUE TRAÎNE & ANGLES
+Mot-clé,Volume FR,Intent,Angle
+wp grid builder vs facetwp,10,informational,comparatif
+wp grid builder alternative,10,commercial,alternative
+facetwp,210,informational,concurrent direct
+postx,110,informational,concurrent direct
+search wp / searchwp,30,navigational,concurrent direct
+essential grid,30,informational,concurrent direct
+wp grid builder elementor,10,navigational,intégration builder
+wp grid builder bricks,10,transactional,intégration builder
+wp grid builder oxygen,10,informational,intégration builder
+wp grid builder acf,10,navigational,intégration data
+wp grid builder free,10,commercial,acquisition
+wp grid builder lifetime,10,informational,acquisition
+wp grid builder coupon,10,commercial,acquisition
+wp grid builder nulled,10,informational,piraterie (ignorer)
+wp grid builder map,10,informational,fonctionnel
+wp grid builder map facet,10,navigational,fonctionnel
+wp grid builder pagination,10,informational,fonctionnel
+wp grid builder facets,10,navigational,fonctionnel
+wordpress search plugin,20,commercial,marché élargi
+wordpress grid plugin,10,commercial,marché élargi
+search & filter wordpress,10,informational,marché élargi
+live search wordpress,10,navigational,marché élargi
+
+■ 3. SERP « wp grid builder » (France)
+Position live (DFS),Domaine / URL,DA (UbS),Clics est. (UbS),Type,Note
+1,wpgridbuilder.com,30,74,organic,Site officiel
+2,YouTube (pack vidéo),,,video,Convology / Whodunit (FR)
+3,wpmarmite.com/en/,45,13,organic,Page EN classée en FR (2022)
+4,wpformation.com,45,7,organic,Article FR 2021 (ancien)
+5,la-webeuse.com,33,2,organic,Article FR 2023
+6,wp-community.fr,11,3,organic,Annuaire
+~6,schoolswp.com/avis-wp-grid-builder/,,,organic,"NOTRE AVIS : page 1, indexé il y a 2j (DFS live)"
+7,blogmarketingacademy.com,44,2,organic,"EN, angle négatif"
+9,weadown.com,15,3,organic,nulled
+10,hustlewp.com,9,3,organic,téléchargement
+13,wpbakery.com,46,0,organic,homonyme « WPBakery Grid Builder »
+
+■ 4. LECTURE
+1,"Angle CWV/perf de l'article = 0 volume (aucun mot-clé en base FR)"
+2,"Seul porteur = head term wp grid builder (210, commercial, KD 4 / SD 21 = très facile)"
+3,"schoolsWP déjà page 1 (~#6) sur le head term avec l'AVIS (2942620), pas l'article CWV"
+4,"SERP 100% commerciale/review, pas d'intent optimisation"
+5,"Vrais angles à demande : comparatif/alternative + intégration builder"
+6,"NOUVEAU (thruuu GEO) : l'angle CWV a une surface IA réelle malgré 0 volume Google, à arbitrer"

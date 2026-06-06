@@ -1,9 +1,9 @@
-# Lecon 5.6 — Segments : cibler par historique d'achat
+# Lecon 5.6 - Segments : cibler par historique d'achat
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 5 — One-Click Upsells et Downsells
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 5 - One-Click Upsells et Downsells
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre les segments CartFlows, configurer des regles basees sur les achats precedents du client, eviter de proposer un produit deja achete, et faire le lien avec FluentCRM.
@@ -12,15 +12,15 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Les Dynamic Offers adaptent ton upsell a la commande en cours. Les Segments vont plus loin : ils adaptent l'offre en fonction de l'historique complet du client. Nouveau client, client fidele, client qui a deja achete un produit specifique — chacun voit une offre differente.
+Les Dynamic Offers adaptent ton upsell a la commande en cours. Les Segments vont plus loin : ils adaptent l'offre en fonction de l'historique complet du client. Nouveau client, client fidele, client qui a deja achete un produit specifique - chacun voit une offre differente.
 
 ---
 
-**[SECTION 1 — Pourquoi l'historique d'achat change tout]**
+**[SECTION 1 - Pourquoi l'historique d'achat change tout]**
 
-**[ECRAN — scenario : client recurrent qui voit un upsell pour un produit qu'il possede deja]**
+**[ECRAN - scenario : client recurrent qui voit un upsell pour un produit qu'il possede deja]**
 
 Imagine : un client a deja achete ta formation premium il y a 3 mois. Il revient aujourd'hui pour acheter un autre produit. Ton upsell lui propose... la formation premium qu'il possede deja. C'est genant. Et ca tue la confiance.
 
@@ -30,9 +30,9 @@ Les Segments CartFlows resolvent ce probleme en ajoutant une couche d'intelligen
 
 ---
 
-**[SECTION 2 — Les segments disponibles dans CartFlows]**
+**[SECTION 2 - Les segments disponibles dans CartFlows]**
 
-**[ECRAN — liste des types de segments]**
+**[ECRAN - liste des types de segments]**
 
 CartFlows Pro propose plusieurs criteres de segmentation pour tes upsells et downsells :
 
@@ -45,9 +45,9 @@ Ces criteres te permettent de creer des parcours differencies. Un nouveau client
 
 ---
 
-**[SECTION 3 — Configuration : Upsell → Segments → Add Rule]**
+**[SECTION 3 - Configuration : Upsell → Segments → Add Rule]**
 
-**[ECRAN — CartFlows → Step Upsell → Segments]**
+**[ECRAN - CartFlows → Step Upsell → Segments]**
 
 Ouvre les parametres de ton step Upsell. Dans la section Segments (ou Conditional Rules selon la version), clique sur "Add Rule".
 
@@ -55,7 +55,7 @@ Ouvre les parametres de ton step Upsell. Dans la section Segments (ou Conditiona
 
 C'est la regle la plus importante. Configure : "If customer has purchased → [nom du produit upsell] → then skip this offer."
 
-**[ECRAN — configuration de la regle "has purchased"]**
+**[ECRAN - configuration de la regle "has purchased"]**
 
 Concretement : si ton upsell propose le "Coaching Premium" et que le client l'a deja achete dans une commande precedente, CartFlows saute l'upsell et passe directement au step suivant (downsell ou Thank You).
 
@@ -63,15 +63,15 @@ Concretement : si ton upsell propose le "Coaching Premium" et que le client l'a 
 
 Add Rule : "If customer order count → equals → 0 → show Offer A." Et une deuxieme regle : "If customer order count → greater than → 0 → show Offer B."
 
-**[ECRAN — deux regles configurees]**
+**[ECRAN - deux regles configurees]**
 
-L'Offer A pourrait etre un guide de demarrage a 27 euros — adapte a quelqu'un qui ne te connait pas encore. L'Offer B pourrait etre un coaching avance a 147 euros — adapte a quelqu'un qui te fait deja confiance.
+L'Offer A pourrait etre un guide de demarrage a 27 euros - adapte a quelqu'un qui ne te connait pas encore. L'Offer B pourrait etre un coaching avance a 147 euros - adapte a quelqu'un qui te fait deja confiance.
 
 ---
 
-**[SECTION 4 — Combiner Segments et Dynamic Offers]**
+**[SECTION 4 - Combiner Segments et Dynamic Offers]**
 
-**[ECRAN — schema : segments + dynamic offers = offre ultra-ciblee]**
+**[ECRAN - schema : segments + dynamic offers = offre ultra-ciblee]**
 
 Les Segments et les Dynamic Offers ne sont pas mutuellement exclusifs. Tu peux les combiner pour un ciblage precis :
 
@@ -84,9 +84,9 @@ C'est puissant parce que chaque client vit un parcours unique, adapte a sa relat
 
 ---
 
-**[SECTION 5 — Le lien avec FluentCRM]**
+**[SECTION 5 - Le lien avec FluentCRM]**
 
-**[ECRAN — schema CartFlows → WooCommerce → FluentCRM]**
+**[ECRAN - schema CartFlows → WooCommerce → FluentCRM]**
 
 Si tu utilises FluentCRM (et si tu suis les formations schoolsWP, tu devrais), les actions CartFlows alimentent automatiquement ton CRM.
 
@@ -98,7 +98,7 @@ Voici comment ca fonctionne :
 
 Par exemple : le client accepte le "Coaching Premium" en upsell → FluentCRM ajoute le tag "coaching-premium" → ce tag declenche une sequence email d'onboarding coaching.
 
-**[ECRAN — FluentCRM → Automations → trigger "Product Purchased"]**
+**[ECRAN - FluentCRM → Automations → trigger "Product Purchased"]**
 
 Pour configurer ca dans FluentCRM : cree une automation avec le trigger "Product Purchased", selectionne le produit upsell, et definis les actions (tag, sequence, notification).
 
@@ -106,9 +106,9 @@ Les donnees de segmentation circulent dans les deux sens. Les segments CartFlows
 
 ---
 
-**[SECTION 6 — Bonnes pratiques]**
+**[SECTION 6 - Bonnes pratiques]**
 
-**[ECRAN — checklist des bonnes pratiques segments]**
+**[ECRAN - checklist des bonnes pratiques segments]**
 
 Trois regles pour bien utiliser les segments :
 
@@ -120,7 +120,7 @@ Trois regles pour bien utiliser les segments :
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Les Segments ajoutent de l'intelligence a tes upsells. Combine-les avec les Dynamic Offers et tu obtiens un systeme ou chaque client voit l'offre la plus pertinente, en fonction de ce qu'il achete maintenant et de ce qu'il a achete avant.
 

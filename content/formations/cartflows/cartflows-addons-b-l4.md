@@ -1,9 +1,9 @@
-# Lecon B.4 — Rediger des emails de relance qui convertissent
+# Lecon B.4 - Rediger des emails de relance qui convertissent
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : B — Cart Abandonment Recovery
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : B - Cart Abandonment Recovery
 - **Duree cible** : 12 min (~1 500 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Rediger le contenu exact des 3 emails de relance (objet + corps) en appliquant les regles de copywriting qui maximisent le taux de conversion.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 La sequence est configuree, les delais sont en place. Maintenant, on ecrit les emails. Et c'est la que la plupart des gens se plantent.
 
@@ -20,9 +20,9 @@ Un email de relance, ce n'est pas un email marketing classique. C'est un message
 
 ---
 
-**[SECTION 1 — Email 1 (15 minutes) : le rappel neutre]**
+**[SECTION 1 - Email 1 (15 minutes) : le rappel neutre]**
 
-**[ECRAN — editeur email avec contenu]**
+**[ECRAN - editeur email avec contenu]**
 
 Le premier email part 15 minutes apres l'abandon. Le client vient de quitter ta page. Il sait ce qu'il faisait. Il n'a pas besoin qu'on lui explique.
 
@@ -50,15 +50,15 @@ Cet email est le plus performant de la sequence. Il convertit a lui seul 40 a 50
 
 ---
 
-**[SECTION 2 — Email 2 (24 heures) : la valeur]**
+**[SECTION 2 - Email 2 (24 heures) : la valeur]**
 
-**[ECRAN — editeur email avec contenu]**
+**[ECRAN - editeur email avec contenu]**
 
 24 heures plus tard. Le client n'a pas reagi au premier email. Il a eu le temps d'oublier, de comparer, de se poser des questions. L'email 2 doit raviver l'interet en rappelant pourquoi le produit vaut le coup.
 
 **Objet** : "Ton panier t'attend toujours"
 
-Leger sentiment de continuite. Le panier "attend" — c'est personnel, pas commercial.
+Leger sentiment de continuite. Le panier "attend" - c'est personnel, pas commercial.
 
 **Corps** :
 
@@ -72,9 +72,9 @@ Voici pourquoi nos clients l'adorent :
 - [Benefice 2 : le gain de temps ou d'argent]
 - [Benefice 3 : ce qui le differencie]
 
-'[Temoignage court d'un client satisfait]' — Prenom, client
+'[Temoignage court d'un client satisfait]' - Prenom, client
 
-[Finaliser ma commande — {{cart.total}}]({{cart.checkout_url}})
+[Finaliser ma commande - {{cart.total}}]({{cart.checkout_url}})
 
 Si tu as une question, reponds directement a cet email."
 
@@ -86,9 +86,9 @@ Adapte les benefices au produit. Si tu vends une formation, parle du gain de com
 
 ---
 
-**[SECTION 3 — Email 3 (3 jours) : l'offre irresistible]**
+**[SECTION 3 - Email 3 (3 jours) : l'offre irresistible]**
 
-**[ECRAN — editeur email avec contenu et coupon]**
+**[ECRAN - editeur email avec contenu et coupon]**
 
 Trois jours. Le client n'a toujours pas finalise. Les deux premiers emails n'ont pas suffi. Il est temps de proposer quelque chose de concret.
 
@@ -104,7 +104,7 @@ Ca fait quelques jours que {{cart.product.name}} t'attend.
 
 Pour t'aider a te decider, voici un code de reduction exclusif :
 
-**{{coupon.code}}** — 10% de reduction sur ta commande
+**{{coupon.code}}** - 10% de reduction sur ta commande
 
 Ce code expire dans 48 heures.
 
@@ -112,15 +112,15 @@ Ce code expire dans 48 heures.
 
 C'est la derniere fois qu'on t'envoie un email pour ce panier. Apres ca, ton panier sera supprime."
 
-Deux leviers d'urgence dans cet email. Le coupon qui expire dans 48 heures — c'est reel, pas une fausse urgence. Et l'annonce que c'est le dernier email — le client sait que l'offre ne se repetera pas.
+Deux leviers d'urgence dans cet email. Le coupon qui expire dans 48 heures - c'est reel, pas une fausse urgence. Et l'annonce que c'est le dernier email - le client sait que l'offre ne se repetera pas.
 
 Le `{{coupon.code}}` est genere automatiquement par le plugin. Chaque client recoit un code unique. On configure ca en detail dans la lecon 5.
 
 ---
 
-**[SECTION 4 — Les regles de copywriting pour les emails de relance]**
+**[SECTION 4 - Les regles de copywriting pour les emails de relance]**
 
-**[ECRAN — slide 5 regles]**
+**[ECRAN - slide 5 regles]**
 
 Cinq regles qui s'appliquent aux trois emails.
 
@@ -136,7 +136,7 @@ Cinq regles qui s'appliquent aux trois emails.
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
 Trois emails, trois tons, trois objectifs. Le rappel neutre, la creation de valeur, l'offre irresistible. Chaque email est court, direct, avec un seul lien d'action.
 

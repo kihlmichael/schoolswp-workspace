@@ -1,0 +1,41 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: 01-wordpress-artikel-strukturieren-lesbarkeit.jpg
+    url: https://schoolswp.com/de/?p=1136071
+    title: Wie strukturiert man einen WordPress-Artikel für Lesbarkeit
+    subject: "schoolsWP Infografik: einen WordPress-Artikel für bessere Lesbarkeit strukturieren"
+    description: "schoolsWP Infografik, die zeigt, wie man einen WordPress-Artikel für bessere Lesbarkeit strukturiert: Zwischenüberschriften (H2, H3) verwenden, Absätze kurz halten, Aufzählungen oder nummerierte Listen einsetzen, Bilder und Videos zwischen Textblöcken einfügen und Beiträge mit internen Links verbinden. Teil des schoolsWP-Leitfadens zum Erstellen eines Blogbeitrags in WordPress."
+    alt: "Infografik zur Strukturierung eines WordPress-Artikels für bessere Lesbarkeit mit Zwischenüberschriften, kurzen Absätzen, Listen, Medien und internen Links, von schoolsWP"
+    keywords:
+      [
+        wordpress artikel strukturieren,
+        lesbarkeit wordpress,
+        blogbeitrag strukturieren,
+        zwischenüberschriften,
+        interne links,
+        gutenberg editor,
+        wordpress tutorial,
+        schoolsWP,
+      ]
+
+  - file: 02-wordpress-beitrag-editor-oberflaeche.jpg
+    url: https://schoolswp.com/de/?p=1136071
+    title: Beitrag im WordPress-Block-Editor bearbeiten
+    subject: "schoolsWP Visual: der WordPress-Block-Editor (Gutenberg) mit einem Beitrag in Bearbeitung"
+    description: "schoolsWP Visual des WordPress-Block-Editors (Gutenberg) mit einem Vergleichsbeitrag zwischen WordPress.com und WordPress.org in Bearbeitung, mit dem Beitragstitel, dem Einstellungsbereich (Sichtbarkeit, Veröffentlichen, Vorlage, Autor) und den Rank Math SEO-Bewertungen. Teil des schoolsWP-Leitfadens zum Erstellen eines Blogbeitrags in WordPress."
+    alt: "WordPress-Block-Editor (Gutenberg) mit einem Vergleichsbeitrag WordPress.com vs. WordPress.org in Bearbeitung, mit Einstellungsbereich und SEO-Bewertungen, von schoolsWP"
+    keywords:
+      [
+        wordpress block editor,
+        gutenberg editor,
+        wordpress beitrag bearbeiten,
+        wordpress dashboard,
+        wordpress.com vs wordpress.org,
+        blogbeitrag erstellen wordpress,
+        wordpress tutorial,
+        schoolsWP,
+      ]

@@ -403,5 +403,9 @@
   "make-interfaces-feel-better": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)",
   "agent-architecture-audit": "(import ECC v2.0.0-rc.1 du 2026-05-24 - manuel only - ne pas auto-declencher - voir bandeau)",
   "youtube-brief-publisher": "Pipeline complet YouTube : transcription d'audio via ElevenLabs (Scribe v2), rédaction de scripts originaux schoolsWP via Claude 3...",
-  "agents-py-error-handling": "Patterns FR d'error handling pour les 28 agents Python schoolsWP : typed exceptions, retry exponential backoff, circuit breaker, l..."
+  "agents-py-error-handling": "Patterns FR d'error handling pour les 28 agents Python schoolsWP : typed exceptions, retry exponential backoff, circuit breaker, l...",
+  "facture-pdf": "Génère une facture PDF professionnelle au nom de schoolsWP (services web / WordPress pour écoles) à partir des infos vendeur, clie...",
+  "cost-llm-monthly": "Suivi mensuel des couts LLM (Anthropic, OpenAI, Gemini, DeepSeek) consommes par les pipelines schoolsWP. 3 voies : estimation depu...",
+  "production-audit-schoolswp": "Check-list pre-deploy schoolsWP base sur evidence locale uniquement : mu-plugin PHP push Novamira, article WP, workflow n8n, merge...",
+  "schoolswp-native-builds": "Standard operating rules and workflow for building native WordPress sites using Gutenberg, theme.json, and the Novamira MCP adapte..."
 }

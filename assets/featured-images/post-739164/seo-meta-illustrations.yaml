@@ -1,0 +1,41 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: 01-how-to-structure-wordpress-article-readability.jpg
+    url: https://schoolswp.com/en/create-blog-post-wordpress/
+    title: How to structure a WordPress article for readability
+    subject: "schoolsWP infographic: structuring a WordPress article to improve readability"
+    description: "schoolsWP infographic showing how to structure a WordPress article to improve readability: use headings (H2, H3) to guide readers, keep paragraphs short, add bulleted or numbered lists, insert images and videos between text blocks, and connect your posts with internal links. Part of the schoolsWP guide on creating a blog post in WordPress."
+    alt: "Infographic on structuring a WordPress article for better readability with headings, short paragraphs, lists, media and internal links, by schoolsWP"
+    keywords:
+      [
+        structure wordpress article,
+        wordpress readability,
+        how to structure a blog post,
+        wordpress headings,
+        internal links,
+        gutenberg editor,
+        wordpress tutorial,
+        schoolsWP,
+      ]
+
+  - file: 02-wordpress-post-editor-interface.jpg
+    url: https://schoolswp.com/en/create-blog-post-wordpress/
+    title: Editing a post in the WordPress block editor
+    subject: "schoolsWP visual: the WordPress block editor (Gutenberg) with a post being edited"
+    description: "schoolsWP visual of the WordPress block editor (Gutenberg) showing a comparative post between WordPress.com and WordPress.org being edited, with the post title, the settings panel (visibility, publish, template, author) and the Rank Math SEO scores. It illustrates the schoolsWP guide on creating a blog post in WordPress."
+    alt: "WordPress block editor (Gutenberg) showing a comparative WordPress.com vs WordPress.org post being edited, with settings panel and SEO scores, by schoolsWP"
+    keywords:
+      [
+        wordpress block editor,
+        gutenberg editor,
+        edit wordpress post,
+        wordpress dashboard,
+        wordpress.com vs wordpress.org,
+        create blog post wordpress,
+        wordpress tutorial,
+        schoolsWP,
+      ]

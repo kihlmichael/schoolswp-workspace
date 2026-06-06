@@ -1,0 +1,27 @@
+{
+  "name": "[InDev] Sheets > Multi: Radar Plugins schoolsWP (W210)",
+  "_meta": {
+    "n8nWorkflowId": "EpRp4CM03aWJyVyu",
+    "instance": "https://schoolswp-n8n.wp1.host",
+    "sheetId": "1FjZgbUdSBVqTuFL2kdHKFKXcO4ZNWehINwfvWpD-vTs",
+    "sheetName": "schoolsWP Radar Plugins - MVP",
+    "exportedAt": "2026-06-01",
+    "status": "InDev (inactive)",
+    "description": "Radar de detection de changement sur les pages pricing/changelog/integrations des plugins WP surveilles. Firecrawl scrape -> SHA256 -> diff vs dernier_hash -> analyse Haiku (JSON strict) -> snapshots + alerts (score>=6) + Discord/Telegram/Email (score>=8). Aucune publication auto. Telegram desactive tant que chatId absent. Limite test=5 sources.",
+    "thresholds": { "score_min_alert": 6, "score_min_discord": 8 },
+    "credentials": {
+      "googleSheets": "4v6PLN0tU8vBlab5 (Google Sheets - schoolsWP v2)",
+      "firecrawl": "tDpWWa0q2KgN4SwC (Firecrawl, httpHeaderAuth)",
+      "anthropic": "gCyMjn0UNkoITkmk (Anthropic account)",
+      "discord": "7jPmTW9DQTLNPUxz (Discord webhook bots)",
+      "telegram": "kBJ7tOqtWLTWmH60 (Telegram schoolswp_yt_bot)",
+      "gmail": "HiznAUTleb8KrYy8 (Gmail - schoolsWP v2)"
+    },
+    "todo": [
+      "Renseigner chatId Telegram + reactiver le node Telegram",
+      "Apres validation du test sur 5 sources: monter Limite test ou supprimer le node pour le run complet (~170 sources)",
+      "Quand stable: renommer en [Prod] et activer le Schedule Trigger",
+      "Cron 0 8 * * 1 = depend du fuseau de l'instance n8n (verifier 8h vs 10h Paris)"
+    ]
+  }
+}

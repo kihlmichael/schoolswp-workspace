@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Formula. — Dashboard prospection michaelkihl.fr · 26 mai 2026</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-elev: #161b22;
+    --bg-elev-2: #1c2230;
+    --border: #2a3240;
+    --text: #e6edf3;
+    --text-dim: #9ba6b4;
+    --accent: #E3A72F;
+    --accent-dim: rgba(227, 167, 47, 0.18);
+    --good: #57c08a;
+    --warn: #d6a92b;
+    --bad: #d96b6b;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  body { padding-bottom: 96px; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px 48px; }
+
+  header.dash-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 32px; }
+  header.dash-head .brand { color: var(--accent); font-weight: 700; letter-spacing: -0.01em; font-size: 14px; text-transform: uppercase; }
+  header.dash-head h1 { margin: 0; font-size: 28px; letter-spacing: -0.02em; font-weight: 700; }
+  header.dash-head .sub { color: var(--text-dim); font-size: 14px; }
+
+  /* KPIs */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 36px; }
+  .kpi { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .kpi .label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+  .kpi .value { font-size: 28px; font-weight: 700; margin-top: 6px; letter-spacing: -0.02em; color: var(--text); }
+  .kpi .value .accent { color: var(--accent); }
+  .kpi .hint { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  @media (max-width: 800px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Sections */
+  section { margin-top: 48px; }
+  section h2 { font-size: 20px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  section .h-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 18px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .filters input, .filters select {
+    background: var(--bg-elev); color: var(--text); border: 1px solid var(--border);
+    padding: 10px 12px; border-radius: 8px; font-size: 14px; font-family: inherit;
+  }
+  .filters input { flex: 1 1 240px; }
+  .filters input::placeholder { color: var(--text-dim); }
+  .filters input:focus, .filters select:focus { outline: none; border-color: var(--accent); }
+
+  /* Table */
+  .table-wrap { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th { background: var(--bg-elev-2); padding: 12px 14px; text-align: left; font-weight: 600; color: var(--text-dim); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: rgba(227, 167, 47, 0.04); }
+  td.name { font-weight: 600; }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  td.todo { color: var(--text-dim); font-style: italic; }
+
+  .score { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .score.hi { background: rgba(87, 192, 138, 0.14); color: var(--good); }
+  .score.md { background: rgba(214, 169, 43, 0.18); color: var(--warn); }
+  .score.lo { background: rgba(217, 107, 107, 0.14); color: var(--bad); }
+
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 500; background: var(--bg-elev-2); color: var(--text-dim); border: 1px solid var(--border); }
+  .pill.new { color: var(--accent); border-color: rgba(227, 167, 47, 0.45); background: var(--accent-dim); }
+  .pill.check { color: var(--warn); border-color: rgba(214, 169, 43, 0.4); }
+
+  .table-meta { padding: 10px 14px; color: var(--text-dim); font-size: 13px; border-top: 1px solid var(--border); background: var(--bg-elev-2); }
+
+  /* Messages */
+  .messages { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .messages { grid-template-columns: 1fr; } }
+  .msg { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px 16px; position: relative; }
+  .msg .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .msg .day { color: var(--accent); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .msg .meta { color: var(--text-dim); font-size: 12px; }
+  .msg .body { color: var(--text); white-space: pre-wrap; font-size: 14px; line-height: 1.6; }
+  .msg .footer { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .msg .count { color: var(--text-dim); font-size: 12px; }
+  button.copy { background: transparent; color: var(--accent); border: 1px solid rgba(227, 167, 47, 0.45); padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.15s; }
+  button.copy:hover { background: var(--accent-dim); }
+  button.copy.done { background: var(--good); color: var(--bg); border-color: var(--good); }
+
+  /* Tips */
+  .tips { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  @media (max-width: 800px) { .tips { grid-template-columns: 1fr; } }
+  .tip { background: var(--bg-elev); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; font-size: 14px; color: var(--text); }
+  .tip strong { color: var(--accent); }
+
+  /* Bandeau */
+  .bandeau { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(13, 17, 23, 0.96); backdrop-filter: blur(10px); border-top: 1px solid var(--border); padding: 14px 24px; text-align: center; z-index: 50; font-size: 14px; }
+  .bandeau a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .bandeau a:hover { text-decoration: underline; }
+
+  /* Notes */
+  .legend { margin-top: 14px; padding: 12px 14px; background: var(--bg-elev); border: 1px dashed var(--border); border-radius: 8px; color: var(--text-dim); font-size: 13px; }
+  .legend strong { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="dash-head">
+    <span class="brand">Formula. · Prospection 24/7</span>
+    <h1>50 prospects qualifiés pour michaelkihl.fr</h1>
+    <div class="sub">Conseil, audit, refonte et structuration WordPress · Cible francophone · Session du 26 mai 2026</div>
+  </header>
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Prospects trouvés</div>
+      <div class="value"><span class="accent">50</span></div>
+      <div class="hint">14 recherches LinkedIn · session 26/05</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Taux de réponse cible</div>
+      <div class="value"><span class="accent">50–60 %</span></div>
+      <div class="hint">Méthode Formula avec offre validée</div>
+    </div>
+    <div class="kpi">
+      <div class="label">RDV par semaine</div>
+      <div class="value"><span class="accent">3–6</span></div>
+      <div class="hint">À envois constants (28 invits/jour)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Envois par jour</div>
+      <div class="value"><span class="accent">28</span></div>
+      <div class="hint">Plafond LinkedIn safe · 8h–18h</div>
+    </div>
+  </div>
+
+  <!-- Tableau -->
+  <section>
+    <h2>Tes 50 prospects</h2>
+    <div class="h-sub">Score basé sur : persona match · audience active · signal d'achat WP / formation / automation · géo francophone.</div>
+
+    <div class="filters">
+      <input id="search" type="text" placeholder="Recherche nom, entreprise, secteur..." />
+      <select id="filterSecteur">
+        <option value="">Tous secteurs</option>
+      </select>
+      <select id="filterStatut">
+        <option value="">Tous statuts</option>
+        <option value="Nouveau">Nouveau</option>
+        <option value="À vérifier">À vérifier</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>LinkedIn</th>
+            <th>Poste</th>
+            <th>Entreprise</th>
+            <th>Secteur</th>
+            <th>Score</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="table-meta" id="tableMeta">50 prospects affichés</div>
+    </div>
+
+    <div class="legend">
+      <strong>Lecture rapide.</strong> Les profils marqués <span class="pill check">À vérifier</span> ont un titre LinkedIn ambigu ou une entreprise non précisée dans le snippet Google — à ouvrir avant de personnaliser le message d'approche. Tout le reste est <span class="pill new">Nouveau</span>, prêt pour J+0.
+    </div>
+  </section>
+
+  <!-- Messages -->
+  <section>
+    <h2>Séquence de 5 messages calibrée</h2>
+    <div class="h-sub">Vouvoiement par défaut, accroche en question ouverte, pas de pitch en J+0. Variables entre crochets à remplacer avant envoi.</div>
+
+    <div class="messages">
+
+      <div class="msg">
+        <div class="head">
+          <div class="day">J+0 · Icebreaker</div>
+          <div class="meta">&lt; 50 mots · question ouverte</div>
+        </div>
+        <div class="body" id="m0">Bonjour [Prénom],
+
+Je suis tombé sur votre publication à propos de [sujet récent / lancement / programme]. Question franche : aujourd'hui, votre site WordPress vous sert vraiment de levier sur [objectif client : conversion, formation, automation] — ou il reste plutôt une vitrine que vous n'utilisez pas à fond ?
+
+Curieux d'avoir votre lecture.
+
+Michaël</div>
+        <div class="footer">
+          <div class="count" id="c0"></div>
+          <button class="copy" data-target="m0">Copier</button>
+        </div>
+      </div>
+
+      <div class="msg">
+        <div class="head">
+          <div class="day">J+5 · Relance valeur</div>
+          <div class="meta">&lt; 40 mots · angle différent</div>
+        </div>
+        <div class="body" id="m1">[Prénom], je relance court.
+
+Quand j'audite un site de [formateur / coach / consultant], 80 % du temps le frein n'est pas la déco mais l'enchaînement plugin → CRM → tunnel. Ça casse silencieusement.
+
+Vous voulez que je vous envoie ma grille d'audit en 1 page ?</div>
+        <div class="footer">
+          <div class="count" id="c1"></div>
+          <button class="copy" data-target="m1">Copier</button>
+        </div>
+      </div>
+
+      <div class="msg">
+        <div class="head">
+          <div class="day">J+11 · Preuve concrète</div>
+          <div class="meta">&lt; 30 mots · résultat chiffré</div>
+        </div>
+        <div class="body" id="m2">[Prénom], un exemple concret : sur un site formation récent, on a divisé la stack par 3 plugins et reconnecté FluentCRM en 2 semaines. Site lisible, parcours clair.
+
+Ça vous parle ?</div>
+        <div class="footer">
+          <div class="count" id="c2"></div>
+          <button class="copy" data-target="m2">Copier</button>
+        </div>
+      </div>
+
+      <div class="msg">
+        <div class="head">
+          <div class="day">J+17 · Direct sans pression</div>
+          <div class="meta">&lt; 20 mots · ouverture nette</div>
+        </div>
+        <div class="body" id="m3">[Prénom], on prend 20 minutes pour regarder votre WordPress ensemble ? Je vous dis quoi garder, quoi remplacer.</div>
+        <div class="footer">
+          <div class="count" id="c3"></div>
+          <button class="copy" data-target="m3">Copier</button>
+        </div>
+      </div>
+
+      <div class="msg">
+        <div class="head">
+          <div class="day">J+23 · Fermeture propre</div>
+          <div class="meta">&lt; 15 mots · sortie franche</div>
+        </div>
+        <div class="body" id="m4">[Prénom], pas le bon moment ? Aucun souci, je referme. Bon mois à vous.</div>
+        <div class="footer">
+          <div class="count" id="c4"></div>
+          <button class="copy" data-target="m4">Copier</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section>
+    <h2>Le saviez-vous ?</h2>
+    <div class="h-sub">Deux leviers à activer dans Formula.</div>
+    <div class="tips">
+      <div class="tip"><strong>Créneau 8h–10h.</strong> Les messages envoyés entre 8h et 10h obtiennent 37 % de réponses en plus. Programme tes premiers swipes avec ton café.</div>
+      <div class="tip"><strong>Fenêtre 48 h.</strong> Un prospect qui a interagi avec ton contenu dans les 48 dernières heures est 4× plus susceptible de répondre. Filtre tes envois sur les "fresh likers".</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Bandeau fixe -->
+<div class="bandeau">
+  <a href="https://www.the-formula.io" target="_blank" rel="noopener">Formula. Prospection, contenu, commentaires. Trois agents IA. Swipe pour valider.</a>
+</div>
+
+<script>
+  // -------------------- DONNÉES PROSPECTS --------------------
+  const prospects = [
+    {n:1,name:"Laurent Brière",url:"https://www.linkedin.com/in/laurentbriere/",role:"Fondateur — formation en ligne, WordPress + LearnDash",company:"BETRAINED & BETRAINED PRODUCTION",sector:"Formation en ligne",score:92,status:"Nouveau"},
+    {n:2,name:"Guillaume Lalanne",url:"https://www.linkedin.com/in/guillaumelalanne/",role:"Aide les formateurs à vendre via newsletter",company:"Indépendant",sector:"Formation en ligne",score:88,status:"Nouveau"},
+    {n:3,name:"Thomas Lesenechal",url:"https://www.linkedin.com/in/thomaslesenechal/",role:"Créateur du podcast Hyperpath · formation",company:"Hyperpath",sector:"Formation / Podcast",score:85,status:"Nouveau"},
+    {n:4,name:"Martin Hauw",url:"https://www.linkedin.com/in/martin-hauw/",role:"Formateur Motion Design · Newsletter · Podcast",company:"Indépendant",sector:"Créateur de contenu",score:84,status:"Nouveau"},
+    {n:5,name:"Soline Vincent",url:"https://www.linkedin.com/in/soline-vincent-21b437203/",role:"Freelance e-commerce · Automation · CRM",company:"Freelance",sector:"E-commerce / Automation",score:84,status:"Nouveau"},
+    {n:6,name:"Laurine Bemer",url:"https://www.linkedin.com/in/laurine-bemer/",role:"Formatrice réseaux sociaux · Newsletter",company:"Indépendante",sector:"Formation en ligne",score:82,status:"Nouveau"},
+    {n:7,name:"Fabien Massavie",url:"https://fr.linkedin.com/in/fabien-massavie-formation-linked-in/en",role:"Formateur LinkedIn · Formations en ligne",company:"Fabien Massavie Formation",sector:"Formation en ligne",score:82,status:"Nouveau"},
+    {n:8,name:"Teddy Guerrier",url:"https://www.linkedin.com/in/teddygr/",role:"Fondateur freelance-acquisition.com · audience freelances",company:"freelance-acquisition.com",sector:"Conseil B2B / Freelances",score:81,status:"Nouveau"},
+    {n:9,name:"David Gos",url:"https://www.linkedin.com/in/david-gos-1793b38/",role:"Architecte de Contenu · formation rédaction web",company:"Indépendant",sector:"Créateur de contenu",score:80,status:"Nouveau"},
+    {n:10,name:"Leslie Prudent",url:"https://www.linkedin.com/in/leslie-prudent-326208148/",role:"Formatrice — assistante freelance en 90 jours",company:"AF Conseil & Formation",sector:"Formation en ligne",score:80,status:"Nouveau"},
+    {n:11,name:"Céline Marotte",url:"https://www.linkedin.com/in/cmarotte/",role:"Coach digital + France Num · formatrice UMIH",company:"CM Coach Digital",sector:"Coaching / Conseil B2B",score:79,status:"Nouveau"},
+    {n:12,name:"Thomas Heil",url:"https://www.linkedin.com/in/thomaspheil/",role:"Créateur de contenu et formateur",company:"Indépendant",sector:"Créateur de contenu",score:79,status:"Nouveau"},
+    {n:13,name:"Aurélien Lévêque",url:"https://www.linkedin.com/in/aurelienleveque/",role:"Consultant croissance/visibilité digitale TPE",company:"STUDIOREAL · Pleyadian",sector:"Conseil B2B",score:79,status:"Nouveau"},
+    {n:14,name:"Antoine Tisserand",url:"https://www.linkedin.com/in/antoinetisserand/",role:"Consultant digital · Fondateur",company:"TESTUDIO",sector:"Conseil B2B",score:78,status:"Nouveau"},
+    {n:15,name:"Solène Chatelain",url:"https://www.linkedin.com/in/solene-chatelain/",role:"Freelance · marketing operations · automation",company:"Freelance",sector:"Automation",score:78,status:"Nouveau"},
+    {n:16,name:"Titouan Leroux",url:"https://www.linkedin.com/in/titouan-leroux/",role:"LinkedIn + webinaires · promo formations",company:"WebiScale",sector:"Formation en ligne",score:78,status:"Nouveau"},
+    {n:17,name:"Maxime Cosson",url:"https://www.linkedin.com/in/maxime-cosson-20108196/",role:"Formateur immo · Podcast COME ON",company:"L'Atelier Immo",sector:"Formation en ligne",score:78,status:"Nouveau"},
+    {n:18,name:"Nadine Gatoux",url:"https://www.linkedin.com/in/nadine-gatoux-volcanoformation/",role:"Formatrice indépendante · reconversion",company:"Volcanoformation",sector:"Formation en ligne",score:78,status:"Nouveau"},
+    {n:19,name:"Dominique Planès Nounga",url:"https://www.linkedin.com/in/planes-dominique-formatrice-made-in-formation/",role:"Formatrice / Fondatrice · lexique réseaux 2026",company:"Made In Formation",sector:"Formation en ligne",score:76,status:"Nouveau"},
+    {n:20,name:"Hugo Veronneau",url:"https://fr.linkedin.com/in/hugo-veronneau",role:"Tunnels de vente · Nantes",company:"Vertigo Media",sector:"E-commerce / Tunnels",score:76,status:"Nouveau"},
+    {n:21,name:"Lycia Diaz",url:"https://www.linkedin.com/in/lycia-diaz-8a057584/",role:"Formatrice",company:"Lycia Diaz Formation",sector:"Formation en ligne",score:76,status:"Nouveau"},
+    {n:22,name:"Adrien Nachury",url:"https://www.linkedin.com/in/anachury/",role:"Consultant indépendant · Fondateur",company:"L'Ami Critique",sector:"Conseil B2B",score:76,status:"Nouveau"},
+    {n:23,name:"Juliette Goemaere",url:"https://www.linkedin.com/in/juliette-goemaere-96b52563/",role:"Aide les OF — admin & Qualiopi",company:"OF Assistante",sector:"Formation en ligne",score:75,status:"Nouveau"},
+    {n:24,name:"Lucie Poisson",url:"https://www.linkedin.com/in/lucie-poisson/",role:"Consultante solopreneurs",company:"Semafor",sector:"Conseil B2B",score:75,status:"Nouveau"},
+    {n:25,name:"Yohan Tsiangana",url:"https://fr.linkedin.com/in/yohan-tsiangana-93259a298",role:"Créateur UGC & Formateur",company:"Indépendant",sector:"Créateur de contenu",score:75,status:"Nouveau"},
+    {n:26,name:"Maria Kirzoglou",url:"https://www.linkedin.com/in/mariakirzoglou/",role:"Formation 1-to-1 solopreneurs · communication",company:"IMV Media",sector:"Formation en ligne",score:74,status:"Nouveau"},
+    {n:27,name:"Lorène Tesei-Paulin",url:"https://www.linkedin.com/in/lor%C3%A8ne-tesei-paulin/",role:"Conseil RH · Coaching pro · Formation",company:"L-connexion",sector:"Coaching / Conseil B2B",score:74,status:"Nouveau"},
+    {n:28,name:"Stella Bissessur",url:"https://www.linkedin.com/in/stellabissessur/",role:"Executive coaching · change mgmt · Paris",company:"TARA — Formation & Accompagnement",sector:"Coaching",score:73,status:"Nouveau"},
+    {n:29,name:"Philippe Wattez",url:"https://www.linkedin.com/in/philippe-wattez-consultant-formateur/",role:"Consultant formateur IT · 15 ans indé",company:"Indépendant",sector:"Conseil B2B / Formation",score:73,status:"Nouveau"},
+    {n:30,name:"Bruno Hochart",url:"https://www.linkedin.com/in/bruno-hochart-02a36633/",role:"Fondateur · Consultant indépendant",company:"F & B Consulting",sector:"Conseil B2B",score:72,status:"Nouveau"},
+    {n:31,name:"Christine Fonoll",url:"https://www.linkedin.com/in/christine-fonoll-coaching-formation-accompagnement-organisation/",role:"Coach certifiée · Consultante · Formatrice",company:"Indépendante",sector:"Coaching",score:72,status:"Nouveau"},
+    {n:32,name:"Luc Maerten",url:"https://www.linkedin.com/in/luc-maerten-0220034b/",role:"Consultant formateur",company:"LM Conseil",sector:"Conseil B2B / Formation",score:72,status:"Nouveau"},
+    {n:33,name:"Damien Michalet",url:"https://www.linkedin.com/in/damien-michalet-a710188b/",role:"Consultant formateur · dev commercial",company:"Indépendant",sector:"Conseil B2B",score:72,status:"Nouveau"},
+    {n:34,name:"Patrice Joulia",url:"https://www.linkedin.com/in/patrice-joulia-4592523b/",role:"Formateur Coach · performance commerciale",company:"Indépendant",sector:"Coaching",score:71,status:"Nouveau"},
+    {n:35,name:"Kady Baldé",url:"https://www.linkedin.com/in/kady-bald%C3%A9-832105118/",role:"Consultante Formatrice Coach RNCP 6",company:"Indépendante",sector:"Coaching",score:70,status:"Nouveau"},
+    {n:36,name:"France Gaspard",url:"https://www.linkedin.com/in/france-gaspard/",role:"Facilitatrice · Coach · Formatrice",company:"Indépendante",sector:"Coaching",score:70,status:"Nouveau"},
+    {n:37,name:"Hervé Coum",url:"https://www.linkedin.com/in/hcoum/",role:"Executive coach",company:"CATW — Coach Around The World",sector:"Coaching",score:70,status:"Nouveau"},
+    {n:38,name:"Nathalie Grignard Vaamonde",url:"https://www.linkedin.com/in/nathalie-grignard-vaamonde-69613055/",role:"Consultante · Coach · Formatrice (CH)",company:"NewStart Genève · OTP Suisse Romande",sector:"Coaching",score:70,status:"Nouveau"},
+    {n:39,name:"Loïc Jeunot",url:"https://www.linkedin.com/in/jeunot-immobilier-formation/",role:"Formation commerciale immobilier",company:"B.Y.T — Boost Your Team",sector:"Formation en ligne",score:70,status:"Nouveau"},
+    {n:40,name:"Anne-Sophie Bianne",url:"https://www.linkedin.com/in/anne-sophie-bianne/",role:"Executive coach leadership · CODIR/COMEX",company:"Indépendante",sector:"Coaching",score:69,status:"Nouveau"},
+    {n:41,name:"Gaïdic Guivarc'h",url:"https://www.linkedin.com/in/ga%C3%AFdic-guivarc-h-47570380/",role:"Coach · accompagnement transformation",company:"Indépendante",sector:"Coaching",score:68,status:"Nouveau"},
+    {n:42,name:"Xavier A. Van Oost",url:"https://be.linkedin.com/in/xaviervanoost",role:"Coaching & Leadership (BE)",company:"Clax.com",sector:"Coaching",score:67,status:"Nouveau"},
+    {n:43,name:"Anne-Gabrielle Planchard",url:"https://www.linkedin.com/in/agplanchardagpcoaching/",role:"Coach professionnelle",company:"IDEIS",sector:"Coaching",score:67,status:"Nouveau"},
+    {n:44,name:"Emmanuelle Le Calvé",url:"https://www.linkedin.com/in/elecalve/",role:"Coach exécutif · transformation · team",company:"CO'EVOLIS",sector:"Coaching",score:65,status:"Nouveau"},
+    {n:45,name:"Yann Pellenard",url:"https://www.linkedin.com/in/yann-pellenard-65339a1a9/",role:"Créateur du podcast Signature",company:"Signature : le podcast",sector:"Créateur de contenu",score:65,status:"À vérifier"},
+    {n:46,name:"Alexandre Arquembourg",url:"https://www.linkedin.com/in/alexandre-arquembourg-7360852b9/",role:"Coach ICF Niv 2 (BE)",company:"Anna Kika et les Autres",sector:"Coaching",score:65,status:"À vérifier"},
+    {n:47,name:"Karine Fleury",url:"https://www.linkedin.com/in/karine-fleury/",role:"Coaching · Parcoursup + santé mentale",company:"DVA Coaching",sector:"Coaching",score:64,status:"À vérifier"},
+    {n:48,name:"Clément Dubois",url:"https://www.linkedin.com/in/cl%C3%A9ment-dubois-cd/",role:"Podcasteur",company:"Changer d'Ère — Podcast",sector:"Créateur de contenu",score:62,status:"À vérifier"},
+    {n:49,name:"Yann Kerolleur",url:"https://www.linkedin.com/in/yann-kerolleur-92581762/",role:"Créateur du podcast On s'engage dans quoi ?",company:"Indépendant",sector:"Créateur de contenu",score:60,status:"À vérifier"},
+    {n:50,name:"Gabi Poegel",url:"https://www.linkedin.com/in/gabi-poegel-8b19312a2/",role:"Coach RNCP · Formatrice traumasensible FR/DE",company:"Indépendante",sector:"Coaching",score:65,status:"À vérifier"}
+  ];
+
+  // -------------------- RENDU --------------------
+  const tbody = document.getElementById('rows');
+  const selectSecteur = document.getElementById('filterSecteur');
+  const selectStatut = document.getElementById('filterStatut');
+  const search = document.getElementById('search');
+  const tableMeta = document.getElementById('tableMeta');
+
+  // Remplit le select secteur
+  const secteurs = [...new Set(prospects.map(p => p.sector))].sort();
+  secteurs.forEach(s => {
+    const o = document.createElement('option');
+    o.value = s; o.textContent = s;
+    selectSecteur.appendChild(o);
+  });
+
+  function scoreClass(s) {
+    if (s >= 80) return 'hi';
+    if (s >= 70) return 'md';
+    return 'lo';
+  }
+
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    const fs = selectSecteur.value;
+    const fst = selectStatut.value;
+    const filtered = prospects.filter(p => {
+      if (fs && p.sector !== fs) return false;
+      if (fst && p.status !== fst) return false;
+      if (q) {
+        const hay = (p.name + ' ' + p.role + ' ' + p.company + ' ' + p.sector).toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    tbody.innerHTML = '';
+    filtered.forEach(p => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${p.n}</td>
+        <td class="name">${p.name}</td>
+        <td><a href="${p.url}" target="_blank" rel="noopener">Ouvrir →</a></td>
+        <td>${p.role}</td>
+        <td>${p.company}</td>
+        <td>${p.sector}</td>
+        <td><span class="score ${scoreClass(p.score)}">${p.score}/100</span></td>
+        <td><span class="pill ${p.status === 'Nouveau' ? 'new' : 'check'}">${p.status}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+    tableMeta.textContent = `${filtered.length} prospect${filtered.length>1?'s':''} affiché${filtered.length>1?'s':''} sur ${prospects.length}`;
+  }
+
+  search.addEventListener('input', render);
+  selectSecteur.addEventListener('change', render);
+  selectStatut.addEventListener('change', render);
+  render();
+
+  // -------------------- COMPTEURS MOTS MESSAGES --------------------
+  ['m0','m1','m2','m3','m4'].forEach((id,i) => {
+    const txt = document.getElementById(id).innerText.trim();
+    const words = txt.split(/\s+/).filter(Boolean).length;
+    document.getElementById('c'+i).textContent = words + ' mots';
+  });
+
+  // -------------------- COPIER MESSAGES --------------------
+  document.querySelectorAll('button.copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      const text = target.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copié ✓';
+        btn.classList.add('done');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 1600);
+      });
+    });
+  });
+</script>
+</body>
+</html>
