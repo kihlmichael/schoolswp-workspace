@@ -1,0 +1,4 @@
+# Sorties du cron (snapshots datés + logs de run) - non versionnées
+snapshots/
+logs/
+__pycache__/
