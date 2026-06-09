@@ -6,7 +6,7 @@ keyword_litteral: suredash vs fluent community
 keyword_realiste: suredash vs fluent community (comparatif de marques, 0 volume FR, intention commerciale)
 date_snapshot: 2026-06-09
 trigger: Demande Michaël (audit pré-publication + recherche mot-clé + classement catégories)
-status: refonte-decidee
+status: refonte-effectuee
 publish_score_estime: 38/100 (avant refonte)
 categories_assignees: Adhésion & Espaces membres (1655) + FluentCommunity (1661) + SureDash (1668)
 decision_strategique: asset GEO/citation + affiliation (confirmé par thruuu). Refonte comparatif head-to-head FR, 1800-2200 mots, schema FAQPage, 2 CTA affiliés, tarifs corrigés. Pas de pari de ranking.
@@ -183,3 +183,25 @@ Les exports thruuu (cf. [thruuu-analysis.md](thruuu-analysis.md)) confirment et 
 - Si refonte publiée : citations IA sur « suredash vs fluent community » / « fluent community avis », position GSC éventuelle sur les sous-requêtes décision (pricing, free vs pro, vs buddyboss).
 - Conversion : clics CTA affiliés Fluent Community + SureDash.
 - Re-audit : 1 mois après publication, puis trimestriel (comparatif = sur sortie de nouvelle version concurrent).
+
+---
+
+## 8. Refonte exécutée (2026-06-09, post 2969375 - statut brouillon)
+
+Angle GEO/citation + affiliation appliqué. Contenu réécrit de zéro (source : `content/articles/suredash-vs-fluent-community/refonte-v1_gutenberg-ready.md` + build `build_content.py`, push WP REST via `tools/scripts/push_2969375_refonte.py`).
+
+- **Titre** : « SureDash vs Fluent Community : quel plugin communauté WordPress choisir ? » - slug `suredash-vs-fluent-community` (inchangé).
+- **~1675 mots** (vs ~1250 avant ; au-dessus du seul concurrent FR wphibou à 1547).
+- **Structure** : encadré réponse-first GEO + intro + sommaire + tableau « en un coup d'œil » (**Ninja Tables id 2974047**, 10 lignes, header vert) + Fluent Community + SureDash + Écosystème (axe de décision) + Performances/app + Tarifs corrigés + Verdict « pour qui » + Alternatives (BuddyBoss/BuddyPress/Circle/Skool/Mighty Networks/MemberPress) + FAQ.
+- **8 bloquants corrigés** : B1 tutoiement intégral, B2 tableau Ninja (plus de `wp:html`), B3 FAQ titres FR, B4 artefacts `<meta charset>` supprimés, B5 tarifs corrigés, B6 2 CTA Kadence verts, B7 citation fabriquée retirée, B8 excerpt réécrit. Zéro em-dash, zéro vouvoiement, zéro code promo (désactivé, confirmé Michaël).
+- **Faits fiabilisés (web 2026-06-09)** : Fluent Community 159 $/an (1 site) / 319 $/an (5 sites) / lifetime dès 399 $ ; SureDash 69 $/an (1 site) / 199 $/an (100 sites) / lifetime 499 $. Les deux ont une version gratuite. Le « 999 $/50 sites » et « 399 $/100 sites » du brouillon étaient faux. Claim « natif vs app isolée » nuancé en « écosystème Sure vs suite Fluent ».
+- **CTA** : Fluent Community = cloak `/fluentcommunity/` (ClickWhale, `?ref=723`, `_blank`, sponsored). **SureDash = lien direct `suredash.com` (pas d'affiliation Brainstorm enregistrée) - à remplacer par un cloak quand Michaël fournit l'aff link.**
+- **Meta** : Rank Math title + description (151c) + focus keyword `suredash vs fluent community` + **schema FAQPage (6 Q/R)**. Catégories Adhésion & Espaces membres (1655) + FluentCommunity (1661) + SureDash (1668).
+- **Intégrité vérifiée** : délimiteurs de blocs équilibrés (102 = 99 + 3), gradient `--` préservé (pas de `var(--` cassé dans les commentaires), Ninja Table rendue en `<table>`, 2 CTA rendus avec gradient vert + `rel=sponsored`, accordéon FAQ rendu, 0 artefact `<meta>`.
+
+### Reste à faire
+
+- **Image à la une** (pipeline brand, sans IA) - attente d'un nod design Michaël (concept cover « vs » + logos).
+- **Lien affilié SureDash** (Brainstorm Force) à fournir -> créer cloak `/suredash/` + swap dans le CTA.
+- **Relecture humaine dans l'éditeur WP puis publication** (reste en brouillon).
+- Note hors-scope : la refonte voisine 2289936 (brouillon) contient encore le code promo `schoolsWP20` (mort) - à nettoyer séparément.

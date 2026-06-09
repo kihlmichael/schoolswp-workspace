@@ -9,7 +9,7 @@
 
 ## Statut courant
 
-`refonte-decidee`. Recherche mot-clé + classement catégories + intégration thruuu faits. **Angle retenu : asset GEO/citation + affiliation** (comparatif head-to-head FR, le 1er du genre). Reste : exécution de la refonte (attente go Michaël). Brief complet en synthese section 6.
+`refonte-effectuee` (brouillon prêt, attente relecture + publication humaine). Refonte GEO/citation + affiliation **exécutée** : comparatif head-to-head FR ~1675 mots, tableau Ninja Tables (2974047), 2 CTA, schema FAQPage, tarifs corrigés, 8 bloquants réglés. Reste : image à la une (attente nod design) + lien affilié SureDash + relecture humaine. Détail en synthese section 8.
 
 ## Historique des snapshots
 
@@ -33,18 +33,21 @@ Comparatif de niche émergente, pas un pari de volume - mais forte opportunité 
 - [x] Recherche Ubersuggest (volume, SD, SERP avec DA).
 - [x] Google Sheet volumes fusionnés (Drive).
 - [x] **Intégration des exports thruuu (GEO + gap SERP)** -> [thruuu-analysis.md](2026-06-09/thruuu-analysis.md). Décision : refonte GEO/citation + affiliation.
-- [ ] Check cannibalisation cluster 1655 (FluentCommunity / SureMembers / espace membre) avant exécution.
-- [ ] **Exécuter la refonte** (attente go Michaël) : plan + brief en synthese section 6.
-- [ ] Corriger B1 vouvoiement -> tutoiement (réécriture complète).
-- [ ] Corriger B2 tableau `wp:html` -> Ninja Tables.
-- [ ] Corriger B3 titres FAQ anglais -> FR.
-- [ ] Corriger B4 artefacts `<meta charset>` FAQ.
-- [ ] Corriger B5 incohérence tarifaire (vérifier paliers réels Fluent Community + SureDash).
-- [ ] Corriger B6 CTA Kadence + lien affilié SureDash (Fluent Community a déjà le cloak).
-- [ ] Corriger B7 citation client fabriquée (retirer/sourcer).
-- [ ] Corriger B8 excerpt clickbait + vouvoiement.
-- [ ] Vérifier claim technique (natif vs app isolée) + code promo `schoolsWP20` réel.
-- [ ] Schema FAQPage Rank Math + verdict « pour qui » + image à la une (pipeline brand).
+- [x] Check cannibalisation cluster 1655 : aucun doublon (pas de comparatif SureDash existant ; `fluentcommunity-avis` = mono-produit, lié).
+- [x] **Refonte exécutée** (push WP REST, brouillon) : plan + détail en synthese section 8.
+- [x] B1 vouvoiement -> tutoiement (réécriture complète).
+- [x] B2 tableau `wp:html` -> Ninja Tables (id 2974047).
+- [x] B3 titres FAQ anglais -> FR.
+- [x] B4 artefacts `<meta charset>` supprimés.
+- [x] B5 tarifs corrigés (Fluent 159/319 $, SureDash 69/199 $ + lifetime ; les 2 ont un free).
+- [x] B6 2 CTA Kadence verts (Fluent cloak `/fluentcommunity/` ; SureDash lien direct, à cloaker).
+- [x] B7 citation client fabriquée retirée.
+- [x] B8 excerpt réécrit (tutoiement + mot-clé).
+- [x] Claim « natif vs app isolée » nuancé. Code promo : retiré (mort, confirmé Michaël).
+- [x] Schema FAQPage Rank Math (6 Q/R) + verdict « pour qui ».
+- [ ] **Image à la une** (pipeline brand) - attente nod design Michaël.
+- [ ] **Lien affilié SureDash** (Brainstorm) -> créer cloak `/suredash/` + swap CTA.
+- [ ] Relecture humaine éditeur WP + publication.
 - [ ] Re-audit 1 mois après publication (citations IA + clics CTA affiliés).
 
 ## Livrables
