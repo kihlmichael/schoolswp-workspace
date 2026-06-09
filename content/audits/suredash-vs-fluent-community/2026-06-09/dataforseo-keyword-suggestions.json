@@ -1,0 +1,82 @@
+{
+  "source": "dataforseo dataforseo_labs_google_keyword_suggestions",
+  "seed": "fluent community",
+  "location": "France (2250)",
+  "language": "fr",
+  "date": "2026-06-09",
+  "constat": "Tout le champ semantique 'fluent community' est brand-navigational, micro-volumes (10), langue EN detectee. Aucune demande informationnelle FR. Les seuls sous-intents 'decision' sont pricing / free vs pro / review / vs buddyboss.",
+  "items": [
+    {
+      "keyword": "fluent community",
+      "search_volume": 110,
+      "intent": "navigational",
+      "trend_year": -56
+    },
+    {
+      "keyword": "fluent community roadmap",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community wordpress plugin",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community pricing",
+      "search_volume": 10,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "fluent community changelog",
+      "search_volume": 10,
+      "intent": "informational"
+    },
+    {
+      "keyword": "fluent community app",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community demo",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community review",
+      "search_volume": 10,
+      "intent": "informational"
+    },
+    {
+      "keyword": "fluent community pro",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community plugin",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community free vs pro",
+      "search_volume": 10,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "fluent community chat",
+      "search_volume": 10,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "fluent community wordpress",
+      "search_volume": 10,
+      "intent": "navigational",
+      "trend_year": -100
+    },
+    {
+      "keyword": "fluent community vs buddyboss",
+      "search_volume": 10,
+      "intent": "navigational"
+    }
+  ]
+}

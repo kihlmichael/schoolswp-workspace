@@ -1,0 +1,72 @@
+{
+  "source": "dataforseo serp_organic_live_advanced",
+  "keyword": "suredash vs fluent community",
+  "location": "France",
+  "language": "fr",
+  "date": "2026-06-09",
+  "constat": "SERP dominee par Reddit (2 des 3 premiers) + forums vendeurs. 1 seul concurrent FR (wphibou, pos 6). Quasi tout EN. schoolsWP absent.",
+  "items": [
+    {
+      "rank": 1,
+      "type": "organic",
+      "domain": "www.reddit.com",
+      "title": "SureDash vs Fluent Community - thoughts/experiences?",
+      "note": "r/Wordpress, 30+ commentaires, il y a 1 an"
+    },
+    {
+      "rank": 2,
+      "type": "organic",
+      "domain": "community.wpmanageninja.com",
+      "title": "FluentCommunity vs SureDash",
+      "note": "forum vendeur, 23/12/2024"
+    },
+    {
+      "rank": 3,
+      "type": "organic",
+      "domain": "www.reddit.com",
+      "title": "SureDash vs FluentCommunity : Which is the best solution...",
+      "note": "r/Wordpress, il y a 8 mois"
+    },
+    {
+      "rank": 4,
+      "type": "organic",
+      "domain": "fluentcommunity.co",
+      "title": "BuddyBoss vs FluentCommunity"
+    },
+    {
+      "rank": 5,
+      "type": "video",
+      "items": [
+        "YouTube WPCrafter - SureDash",
+        "YouTube WP-Tonic - Fluent Community vs BuddyBoss"
+      ]
+    },
+    {
+      "rank": 6,
+      "type": "organic",
+      "domain": "buddyboss.com",
+      "title": "BuddyBoss vs FluentCommunity: The Only Comparison...",
+      "note": "11/05/2026"
+    },
+    {
+      "rank": 7,
+      "type": "organic",
+      "domain": "wphibou.com",
+      "title": "Avis Fluent Community : Transformez votre site WordPress...",
+      "note": "SEUL concurrent editorial FR. 'meilleure extension pour creer un espace membre, tres similaire a skool'"
+    },
+    {
+      "rank": 8,
+      "type": "organic",
+      "domain": "fluentcommunity.co",
+      "title": "Fluentcommunity Free vs Pro"
+    },
+    {
+      "rank": 9,
+      "type": "organic",
+      "domain": "ezycourse.com",
+      "title": "Top 7 FluentCommunity Alternatives in 2026",
+      "note": "04/01/2026"
+    }
+  ]
+}
