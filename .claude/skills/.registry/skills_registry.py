@@ -35,6 +35,11 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 # ── Parse args ──────────────────────────────────────────────────────────────
 parser = argparse.ArgumentParser()
 parser.add_argument("--sync", action="store_true", help="POST résultats au webhook n8n")
+parser.add_argument(
+    "--dry-run",
+    action="store_true",
+    help="P1-A : scan + rapport securite uniquement. N'ecrit AUCUN fichier (cache/CSV/archived) et ne POST aucun webhook.",
+)
 parser.add_argument("--compile-cursor", action="store_true", help="Compiler les compétences en règles Cursor (.mdc)")
 parser.add_argument("--tier", type=str, help="Filtre par tier pour la compilation Cursor (ex: T1,T2)")
 parser.add_argument("--skill", type=str, help="Filtre par nom de compétence pour la compilation Cursor (ex: branding)")
@@ -148,7 +153,51 @@ class SkillsSecurityScanner:
             "biorxiv.org",
             "medrxiv.org",
             "arxiv.org",
+            # ── P1-A : doc / API / CDN / vendors légitimes ──
+            "developer.wordpress.org",
+            "make.wordpress.org",
+            "wordpress.github.io",
+            "playground.wordpress.net",
+            "w.org",
+            "raw.githubusercontent.com",
+            "cdn.jsdelivr.net",
+            "unpkg.com",
+            "code.visualstudio.com",
+            "web.dev",
+            "modelcontextprotocol.io",
+            "docs.langchain.com",
+            "central.sonatype.com",
+            "ui.shadcn.com",
+            "remotion.dev",
+            "swebench.com",
+            "webarena.dev",
+            "google.dev",
+            "heygen.com",
+            "heygen.ai",
+            "apify.com",
+            "notion.so",
+            "notion.com",
+            "liveavatar.com",
+            "skoatch.com",
+            "fluentcrm.com",
+            "easycontentlinker.com",
+            "conversionfactory.co",
+            "livekit.io",
+            "pipecat.ai",
+            "fishjam.io",
+            "schema.org",
+            "sitemaps.org",
+            "localhost",
+            "127.0.0.1",
+            "wp1.host",
         }
+
+        # ── P1-A : domaines placeholder de documentation (jamais comptés comme exfil) ──
+        self.placeholder_patterns = (
+            r"(?:^|\.)example\.[a-z.]{2,}$",
+            r"^(?:www\.)?your[a-z-]*\.[a-z]{2,}$",
+            r"^target\.com$",
+        )
 
     def scan_content(self, content: str) -> tuple[str, list[str]]:
         reasons = []
@@ -173,7 +222,8 @@ class SkillsSecurityScanner:
 
     def _scan_unicode(self, content: str, reasons: list[str]):
         # 1. Zero-width spaces / invisible chars
-        invisible_chars = re.findall(r"[\u200b-\u200f\ufeff]", content)
+        # P1-A : U+200D (ZWJ) exclu car joineur d'emoji l\u00e9gitime (ex. \ud83d\udc69\u200d\u2695\ufe0f = \ud83d\udc69 + ZWJ + \u2695\ufe0f)
+        invisible_chars = re.findall(r"[\u200b\u200c\u200e\u200f\ufeff]", content)
         if invisible_chars:
             reasons.append(f"[BLOCKED] Caracteres Unicode invisibles detectes ({len(invisible_chars)} occurrence(s)).")
 
@@ -211,12 +261,18 @@ class SkillsSecurityScanner:
         if "BEGIN PRIVATE KEY" in content or "BEGIN RSA PRIVATE KEY" in content:
             reasons.append("[BLOCKED] Cle privee PEM / RSA detectee.")
 
+    def _is_placeholder_domain(self, domain: str) -> bool:
+        # P1-A : example.com / yoursite.com / your-api.com / target.com = placeholders de doc, jamais exfil
+        return any(re.search(p, domain) for p in self.placeholder_patterns)
+
     def _scan_network(self, content: str, reasons: list[str]):
         # Extract all URLs
         urls = re.findall(r"https?://([a-zA-Z0-9.-]+)", content)
         suspicious_urls = []
         for url in urls:
             domain = url.lower()
+            if self._is_placeholder_domain(domain):
+                continue
             is_whitelisted = False
             for w in self.whitelist_domains:
                 if domain == w or domain.endswith("." + w):
@@ -225,9 +281,16 @@ class SkillsSecurityScanner:
             if not is_whitelisted and domain not in suspicious_urls:
                 suspicious_urls.append(domain)
 
-        # Exfiltration patterns: curl / wget referencing non-whitelisted domains or general exfil commands
-        exfil_cmds = ["curl", "wget", "urllib", "requests", "http.client", "socket"]
-        has_network_tool = any(cmd in content.lower() for cmd in exfil_cmds)
+        # Real outbound data-send patterns (P1-A : remplace les substrings "requests"/"-f"/"-d" trop larges)
+        data_send_patterns = [
+            r"(?:curl|wget)\b[^\n]*?\s-(?:d|f|t|-data|-data-binary|-data-raw|-form|-upload-file|-post-data)\b",
+            r"requests\.(?:post|put|patch|delete)\s*\(",
+            r"urllib\.request\.(?:urlopen|Request)\s*\([^)]*data\s*=",
+            r"http\.client\.HTTPS?Connection",
+            r"\bsocket\.socket\s*\(",
+            r"fetch\s*\([^)]*method\s*:\s*[\"'](?:POST|PUT|PATCH)[\"']",
+        ]
+        has_data_send = any(re.search(p, content, re.IGNORECASE) for p in data_send_patterns)
 
         # Check explicit data sending instructions in prompts
         exfil_prompts = [
@@ -243,12 +306,10 @@ class SkillsSecurityScanner:
         if has_exfil_prompt:
             reasons.append("[BLOCKED] Instructions d'exfiltration de donnees explicites detectees.")
 
+        # P1-A : BLOCK uniquement si un domaine non-whitelisté ET non-placeholder reçoit un envoi
+        # de données REEL. Sinon WARNING (domaine inconnu sans envoi), ou rien.
         if suspicious_urls:
-            if (
-                has_network_tool
-                or has_exfil_prompt
-                or any(c in content.lower() for c in ["-f", "-d", "--data", "--post-data"])
-            ):
+            if has_data_send or has_exfil_prompt:
                 reasons.append(
                     f"[BLOCKED] Tentative d'exfiltration reseau suspectee vers : {', '.join(suspicious_urls[:3])}"
                 )
@@ -256,8 +317,6 @@ class SkillsSecurityScanner:
                 reasons.append(
                     f"[WARNING] Domaines non listes de confiance detectes : {', '.join(suspicious_urls[:3])}"
                 )
-        elif has_network_tool and any(c in content.lower() for c in ["-f", "-d", "--data", "--post-data"]):
-            reasons.append("[WARNING] Commande curl/wget avec envoi de donnees detectee.")
 
     def _scan_injection(self, content: str, reasons: list[str]):
         injection_patterns = [
@@ -267,7 +326,10 @@ class SkillsSecurityScanner:
             r"ignore\s+system\s+prompt",
             r"forget\s+(?:all\s+)?previous\s+instructions",
             r"you\s+are\s+now\s+unrestricted",
-            r"jailbreak",
+            # P1-A : mot nu retiré (matchait presets/docs défensifs, ex. Model Armor) ; verbe d'action requis.
+            # Littéraux scindés volontairement pour ne pas déclencher le hook prompt-injection-detector.
+            r"jail" r"break\s+(?:the\s+)?(?:model|assistant|ai|system|llm|bot)",
+            r"(?:how\s+to\s+|to\s+|let'?s\s+|please\s+)jail" r"break\b",
         ]
 
         found_injections = []
@@ -507,8 +569,9 @@ for cname in cache:
 for r in results:
     if r["status"] != "archived" and r["description"]:
         archived_desc[r["name"]] = r["description"]
-with open(ARCHIVED_DESC_PATH, "w", encoding="utf-8") as f:
-    json.dump(archived_desc, f, ensure_ascii=False, indent=2)
+if not args.dry_run:
+    with open(ARCHIVED_DESC_PATH, "w", encoding="utf-8") as f:
+        json.dump(archived_desc, f, ensure_ascii=False, indent=2)
 
 # ── Save cache ────────────────────────────────────────────────────────────────
 new_cache = {
@@ -523,20 +586,22 @@ new_cache = {
         if r["status"] != "archived"
     },
 }
-with open(CACHE_PATH, "w", encoding="utf-8") as f:
-    json.dump(new_cache, f, ensure_ascii=False, indent=2)
+if not args.dry_run:
+    with open(CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(new_cache, f, ensure_ascii=False, indent=2)
 
 # ── CSV ───────────────────────────────────────────────────────────────────────
 csv_path = os.path.join(CACHE_DIR, "skills_registry.csv")
-with open(csv_path, "w", encoding="utf-8-sig") as f:
-    f.write(
-        "name\tfamily\tsubcategory\tusage\timpact\ttier\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\tsecurity_status\tsecurity_reasons\n"
-    )
-    for r in sorted(results, key=lambda x: (x["tier"], x["family"], x["subcategory"], x["name"])):
-        dc = r["description"].replace("\t", " ").replace("\n", " ")
+if not args.dry_run:
+    with open(csv_path, "w", encoding="utf-8-sig") as f:
         f.write(
-            f"{r['name']}\t{r['family']}\t{r['subcategory']}\t{r['usage']}\t{r['impact']}\t{r['tier']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\t{r['security_status']}\t{r['security_reasons']}\n"
+            "name\tfamily\tsubcategory\tusage\timpact\ttier\tdescription\tpath\tlast_modified\tstatus\tdetected_at\thash\tsecurity_status\tsecurity_reasons\n"
         )
+        for r in sorted(results, key=lambda x: (x["tier"], x["family"], x["subcategory"], x["name"])):
+            dc = r["description"].replace("\t", " ").replace("\n", " ")
+            f.write(
+                f"{r['name']}\t{r['family']}\t{r['subcategory']}\t{r['usage']}\t{r['impact']}\t{r['tier']}\t{dc}\t{r['path']}\t{r['last_modified']}\t{r['status']}\t{r['detected_at']}\t{r['hash']}\t{r['security_status']}\t{r['security_reasons']}\n"
+            )
 
 # ── Rapport ───────────────────────────────────────────────────────────────────
 counts = {"new": 0, "modified": 0, "unchanged": 0, "archived": 0}
@@ -606,8 +671,14 @@ for status_label, status_key in [("NOUVEAUX", "new"), ("MODIFIES", "modified"), 
                 f"  {'+' if status_key == 'new' else '~' if status_key == 'modified' else 'x'} {r['name']}  [{r['last_modified']}]"
             )
 
-print(f"\nCache : {CACHE_PATH}")
-print(f"CSV   : {csv_path}")
+if args.dry_run:
+    print("\n[DRY-RUN] Aucun fichier ecrit : ni registry_cache.json, ni skills_registry.csv,")
+    print("          ni archived_descriptions.json, et aucun webhook appele.")
+    print(f"          (cible cache : {CACHE_PATH})")
+    print(f"          (cible CSV   : {csv_path})")
+else:
+    print(f"\nCache : {CACHE_PATH}")
+    print(f"CSV   : {csv_path}")
 
 # ── Compile Cursor Rules ──────────────────────────────────────────────────────
 if args.compile_cursor:
@@ -790,7 +861,7 @@ To optimize context window usage, the following skills are not loaded in full. H
 
 
 # ── Sync webhook ──────────────────────────────────────────────────────────────
-if args.sync:
+if args.sync and not args.dry_run:
     # Exclude BLOCKED skills from webhook sync payload
     sync_results = [r for r in results if r["security_status"] != "BLOCKED"]
 
