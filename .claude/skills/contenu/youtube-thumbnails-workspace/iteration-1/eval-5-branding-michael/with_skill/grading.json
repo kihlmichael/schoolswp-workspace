@@ -1,9 +1,0 @@
-{
-  "expectations": [
-    {"text": "Visage central", "passed": true, "evidence": "Les 5 concepts placent Michaël au centre: Le Batisseur (centre), La Revelation (face), L'Authentique (70% image), Le Dashboard (premier plan), Le Voyage (centre plan américain)"},
-    {"text": "Logo schoolsWP proéminent", "passed": true, "evidence": "Les 5 concepts intègrent le logo avec positions précises. Concept 5 le met en barre letterbox (90px, position premium)."},
-    {"text": "Ton personal branding", "passed": true, "evidence": "Analyse mentionne authenticité, coulisses, parcours entrepreneurial. Concepts 3 (selfie pro) et 5 (série) incarnent le personal branding."}
-  ],
-  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
-  "timing": {"total_duration_seconds": 184.8}
-}

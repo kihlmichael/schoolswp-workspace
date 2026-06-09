@@ -9,7 +9,7 @@
 
 ## Statut courant
 
-`refonte-effectuee` (brouillon prêt, attente relecture + publication humaine). Refonte GEO/citation + affiliation **exécutée** : comparatif head-to-head FR ~1675 mots, tableau Ninja Tables (2974047), 2 CTA, schema FAQPage, tarifs corrigés, 8 bloquants réglés. Reste : image à la une (attente nod design) + lien affilié SureDash + relecture humaine. Détail en synthese section 8.
+`refonte-effectuee` (brouillon prêt, attente relecture + publication humaine). Refonte GEO/citation + affiliation **exécutée** : comparatif head-to-head FR ~1675 mots, tableau Ninja Tables (2974047), 2 CTA, schema FAQPage, tarifs corrigés, 8 bloquants réglés. **2e passe 2026-06-09** : tableau comparatif Kadence en boîtes produit (boutons FR + liens + étoiles WP.org + logos officiels), image à la une brand posée, 2 schemas SoftwareApplication, prix vérifiés sur sites officiels. Reste : lien affilié SureDash + relecture humaine. Détail en synthese section 8.
 
 ## Historique des snapshots
 
@@ -45,7 +45,10 @@ Comparatif de niche émergente, pas un pari de volume - mais forte opportunité 
 - [x] B8 excerpt réécrit (tutoiement + mot-clé).
 - [x] Claim « natif vs app isolée » nuancé. Code promo : retiré (mort, confirmé Michaël).
 - [x] Schema FAQPage Rank Math (6 Q/R) + verdict « pour qui ».
-- [ ] **Image à la une** (pipeline brand) - attente nod design Michaël.
+- [x] **Image à la une** (pipeline brand HTML+Playwright) : hero head-to-head « SureDash vs Fluent Community », WebP, posée sur le brouillon (att 2974203, remplace l'ancienne 2970692).
+- [x] **Tableau comparatif Kadence** (boîtes produit ajoutées par Michaël) enrichi : boutons « Voir l'offre » (sites produits ; Fluent cloak sponsored, SureDash direct nofollow) + « Fiche WordPress.org » (repos `fluent-community` / `suredash`), étoiles vraies notes WP.org (SureDash 4,4/5 · 22 avis ; Fluent 4,9/5 · 84 avis), logos officiels à la place des placeholders manette (att 2974176 / 2974177).
+- [x] **Schemas Rank Math `SoftwareApplication`** x2 (SureDash, FluentCommunity) : `operatingSystem` WordPress, `offers` + `aggregateRating` (notes WP.org). Réserve : agrégat tiers, affichage SERP non garanti par Google (à valider au Rich Results Test).
+- [x] **Prix vérifiés sur sites officiels** (suredash.com, fluentcommunity.co) : les 8 lignes du tableau sont exactes (Fluent coupon 159/319/519 + lifetime 399 $ ; SureDash intro 69/149/199 + lifetime 499 $).
 - [ ] **Lien affilié SureDash** (Brainstorm) -> créer cloak `/suredash/` + swap CTA.
 - [ ] Relecture humaine éditeur WP + publication.
 - [ ] Re-audit 1 mois après publication (citations IA + clics CTA affiliés).

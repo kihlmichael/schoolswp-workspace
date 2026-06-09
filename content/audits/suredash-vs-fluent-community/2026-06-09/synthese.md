@@ -199,9 +199,19 @@ Angle GEO/citation + affiliation appliqué. Contenu réécrit de zéro (source :
 - **Meta** : Rank Math title + description (151c) + focus keyword `suredash vs fluent community` + **schema FAQPage (6 Q/R)**. Catégories Adhésion & Espaces membres (1655) + FluentCommunity (1661) + SureDash (1668).
 - **Intégrité vérifiée** : délimiteurs de blocs équilibrés (102 = 99 + 3), gradient `--` préservé (pas de `var(--` cassé dans les commentaires), Ninja Table rendue en `<table>`, 2 CTA rendus avec gradient vert + `rel=sponsored`, accordéon FAQ rendu, 0 artefact `<meta>`.
 
+### 8.1 Enrichissement (2e passe, 2026-06-09)
+
+Après go Michaël : tableau comparatif Kadence en boîtes produit (ajouté par Michaël dans l'éditeur) enrichi + image à la une + schemas + vérif prix.
+
+- **Image à la une** (pipeline brand HTML+Playwright, sans IA) : hero head-to-head « SureDash **vs** Fluent Community » (carte 2 colonnes neutre, accent vert sur « vs », sans date), WebP 59 Ko, posée sur le brouillon (att 2974203, remplace l'ancienne 2970692). Source : `assets/featured-images/post-2969375/slide-00-hero-fr.html`.
+- **Boutons du tableau** : « Buy Now » -> **« Voir l'offre »** (Fluent cloak `/fluentcommunity/` sponsored ; SureDash direct `suredash.com` nofollow) ; « Read Review » -> **« Fiche WordPress.org »** (repos `fluent-community` / `suredash`). Édité in-place via `execute-php` + `$wpdb->update` (garde-fou : abort si une opération ne touche pas exactement 1 cible).
+- **Étoiles** : vraies notes WordPress.org (API) - SureDash ★★★★☆ **4,4/5 (22 avis)**, Fluent ★★★★★ **4,9/5 (84 avis)**. Paragraphes centrés insérés sous chaque label d'équipe.
+- **Logos** : placeholders manette (Xbox/SNES) remplacés par les logos officiels rasterisés (Playwright `executablePath`) puis uploadés (att 2974176 SureDash / 2974177 Fluent). Sources : `assets/featured-images/_logos-2969375/`.
+- **Schemas Rank Math** : 2 entités `SoftwareApplication` (SureDash, FluentCommunity) avec `operatingSystem` WordPress + `applicationCategory` BusinessApplication + `offers` + `aggregateRating` (notes WP.org). Réserve : agrégat tiers, affichage SERP non garanti par Google (à valider au Rich Results Test).
+- **Prix vérifiés (sites officiels)** : les 8 lignes du tableau sont exactes. Fluent (coupon) 159/319/519 $/an + lifetime 399 $ (1 site). SureDash (intro) 69/149/199 $/an + lifetime 499 $ (100 sites). Label « Team Sure » confirmé volontaire par Michaël.
+
 ### Reste à faire
 
-- **Image à la une** (pipeline brand, sans IA) - attente d'un nod design Michaël (concept cover « vs » + logos).
 - **Lien affilié SureDash** (Brainstorm Force) à fournir -> créer cloak `/suredash/` + swap dans le CTA.
 - **Relecture humaine dans l'éditeur WP puis publication** (reste en brouillon).
 - Note hors-scope : la refonte voisine 2289936 (brouillon) contient encore le code promo `schoolsWP20` (mort) - à nettoyer séparément.
