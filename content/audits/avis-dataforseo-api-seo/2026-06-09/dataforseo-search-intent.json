@@ -1,0 +1,61 @@
+{
+  "source": "DataForSEO dataforseo_labs_google_search_intent",
+  "language_code": "fr",
+  "collected_at": "2026-06-09",
+  "result": [
+    {
+      "language_code": "fr",
+      "items_count": 6,
+      "items": [
+        {
+          "keyword": "avis dataforseo",
+          "keyword_intent": {
+            "label": "informational",
+            "probability": 0.7447
+          },
+          "secondary_keyword_intents": null
+        },
+        {
+          "keyword": "dataforseo avis",
+          "keyword_intent": {
+            "label": "informational",
+            "probability": 0.7424
+          },
+          "secondary_keyword_intents": null
+        },
+        {
+          "keyword": "dataforseo",
+          "keyword_intent": {
+            "label": "informational",
+            "probability": 0.8647
+          },
+          "secondary_keyword_intents": null
+        },
+        {
+          "keyword": "dataforseo pricing",
+          "keyword_intent": {
+            "label": "commercial",
+            "probability": 0.9929
+          },
+          "secondary_keyword_intents": null
+        },
+        {
+          "keyword": "api serp",
+          "keyword_intent": {
+            "label": "informational",
+            "probability": 0.5745
+          },
+          "secondary_keyword_intents": null
+        },
+        {
+          "keyword": "dataforseo alternative",
+          "keyword_intent": {
+            "label": "commercial",
+            "probability": 0.8687
+          },
+          "secondary_keyword_intents": null
+        }
+      ]
+    }
+  ]
+}
