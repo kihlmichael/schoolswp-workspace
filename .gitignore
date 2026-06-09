@@ -196,6 +196,12 @@ tools/scripts/.lint-staging/
 .windsurf
 .codex
 
+# --- skill-creator eval scaffolding: reproductible, ne doit jamais etre tracke (P1-C 2026-06-09) ---
+# .claude est deja ignore (ligne 188) ; ces regles documentent l'intention et survivent a un
+# futur affinage du blanket .claude. Elles n'empechent PAS un `git add -f`.
+.claude/skills/**/*-workspace/
+.claude/skills/.archived-workspace-variants/
+
 # --- One-shot n8n sync scripts (contain hardcoded JWTs from local debug sessions) ---
 # Locale-only ; not committed. To version safely, patch each script to read N8N_API_KEY from env first.
 scripts/n8n_sync_blog/
