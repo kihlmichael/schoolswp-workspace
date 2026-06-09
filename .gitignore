@@ -25,6 +25,9 @@ content/formations/wpsocialninja/production/*.mp3
 content/formations/wpsocialninja/production/*.mp4
 content/formations/wpsocialninja/production/*.wav
 
+# seo-audit-tracker — payloads JSON transitoires (reproductibles à chaque audit). Le rapport .md reste versionné.
+content/audits/seo/.payload-*.json
+
 # OAuth tokens & credentials
 *token*.json
 *credentials*.json
