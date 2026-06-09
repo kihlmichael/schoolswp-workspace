@@ -73,7 +73,31 @@ La SERP en France est extrêmement ouverte :
 > [!IMPORTANT]
 > **Aucun site média, blog technique ou affilié francophone ne propose d'avis éditorial complet sur DataForSEO.** Le top 10 est rempli de plateformes génériques (Trustpilot, logiciels.pro), de pages officielles et de fils Reddit. L'article de schoolsWP a 100 % de chances de se positionner dans le top 3 rapidement.
 
-## 6. Insights critiques & Bloquants SEO
+## 6. Analyse de la SERP & Visibilité IA (via thruuu)
+L'analyse approfondie de la SERP via thruuu révèle des insights structurels et de l'optimisation pour les moteurs de recherche IA (GEO / AIE) :
+
+### Profil des concurrents (Taille & Images)
+- **Top concurrent éditorial** : La page `nextgrowth.ai/dataforseo-review/` est le seul véritable article de test complet du top 10 (Rank #8, en anglais, DA 10). Cet article contient **3 782 mots** et **17 images**. Les autres pages bien classées sont très courtes (ex: `logiciels.pro` = 556 mots, `comparatif-logiciels.fr` = 259 mots).
+- **Position de schoolsWP** : Avec **2 044 mots**, notre brouillon est extrêmement robuste et a l'avantage d'être en français. Cependant, pour rivaliser avec la qualité visuelle de `nextgrowth.ai` et sécuriser l'E-E-A-T, l'ajout d'images/captures d'écran est obligatoire.
+
+### Analyse des moteurs de recherche IA (GEO / AIE)
+Les moteurs de recherche génératifs (ChatGPT, Gemini, Perplexity) extraient les données suivantes pour ce sujet :
+- **ChatGPT** : Ne connaît pas directement d'autorité forte sur `avis DataForSEO` en français (demande une clarification), ce qui confirme le manque d'un article francophone de référence.
+- **Gemini** : Synthétise très bien le service :
+  - *Points forts extraits* : Modèle pay-as-you-go (sans abonnement), réduction des coûts jusqu'à 90% par rapport aux outils tout-en-un, support 24/7 hyper réactif, documentation riche pour développeurs (exemples Python/PHP/JS).
+  - *Points faibles extraits* : Pas d'interface utilisateur graphique (JSON brut), ticket d'entrée à 50$ minimum, index de backlinks moins complet que ceux de Semrush ou Ahrefs, politique d'inscription stricte (emails professionnels exigés).
+- **Perplexity** : S'appuie sur Capterra et G2. Il valide la précision des données mais note des ralentissements potentiels sur le site/dashboard et des variations de SLA en période de surcharge.
+
+### Questions fréquentes de la SERP à intégrer (FAQ)
+- *Is DataForSEO hard to use? / DataForSEO est-il difficile à utiliser ?* (5 occurrences dans la SERP)
+- *Comment utiliser DataForSEO ?* (4 occurrences dans la SERP)
+- *Qu'est-ce que DataForSEO ?* (4 occurrences dans la SERP)
+- *How much does DataForSEO cost? / Combien coûte DataForSEO ?* (2 occurrences)
+- *DataForSEO est-il français ?* (2 occurrences)
+
+---
+
+## 7. Insights critiques & Bloquants SEO
 Voici les points à corriger avant la publication :
 
 ### 1. Zéro images/illustrations (Bloquant Majeur)
@@ -92,10 +116,14 @@ Voici les points à corriger avant la publication :
 - **Problème** : Le lien vers PageRadar pointe vers `https://schoolswp.com/pageradar-avis/?srsltid=AfmBOooF1dd1ZGovFjy...` (avec le paramètre de tracking de recherche Google).
 - **Solution** : Nettoyer l'URL pour la rendre propre : `https://schoolswp.com/pageradar-avis/`.
 
-## 7. Décision
+---
+
+## 8. Décision
 - **Ne pas publier en l'état** : Il faut corriger les optimisations SEO on-page et intégrer les images avant le passage en production.
 
-## 8. Plan d'action
+---
+
+## 9. Plan d'action
 
 ### Étape 1 : Optimisations des textes et balises
 - [ ] Nettoyer l'URL PageRadar.
@@ -103,13 +131,16 @@ Voici les points à corriger avant la publication :
 - [ ] Ajouter le mot-clé exact `avis dataforseo` dans un titre H2 (ex: `Verdict et avis final sur DataForSEO`).
 - [ ] Augmenter la densité du mot-clé cible de 1 à 6 occurrences.
 - [ ] Ajouter un tableau comparatif synthétique des prix DataForSEO (pay-as-you-go) vs Semrush/Ahrefs (abonnements) dans la section prix pour un impact visuel direct.
+- [ ] S'assurer que le contenu répond clairement aux questions fréquentes de la SERP (difficulté d'utilisation, comment l'utiliser, coût, origine géographique).
 
 ### Étape 2 : Création et intégration des visuels (Michaël)
 - [ ] Produire et optimiser 3 screenshots réels de l'outil (Dashboard, Sheets addon, API response).
 - [ ] Utiliser le skill `wp-image-metadata-seo` pour optimiser le SEO des images.
 - [ ] Uploader et insérer via `tools/wp-media-upload`.
 
-## 9. Métriques de suivi (Prochain Snapshot)
+---
+
+## 10. Métriques de suivi (Prochain Snapshot)
 - Positionnement initial dans le top 10 FR pour `avis dataforseo`.
 - Positionnement à longue traîne sur les mots-clés de marque liés.
 - Nombre de clics affiliés générés.
