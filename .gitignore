@@ -214,3 +214,6 @@ tools/scripts/.lint-staging/
 # --- One-shot n8n sync scripts (contain hardcoded JWTs from local debug sessions) ---
 # Locale-only ; not committed. To version safely, patch each script to read N8N_API_KEY from env first.
 scripts/n8n_sync_blog/
+
+# Config locale nano-banana (jamais versionnee)
+/.nano-banana-config.json
