@@ -6,8 +6,8 @@
 **Viewport** : desktop 1440×900.
 
 Artefacts :
-- [aidesigner-hero.html](./aidesigner-hero.html) → [screenshot](./.playwright-mcp/aidesigner-hero-desktop.png)
-- [ccdesign-hero.html](./ccdesign-hero.html) → [screenshot](./.playwright-mcp/ccdesign-hero-desktop.png)
+- [aidesigner-hero.html](./aidesigner-hero.html) → [screenshot](./screenshots/aidesigner-hero-desktop.png)
+- [ccdesign-hero.html](./ccdesign-hero.html) → [screenshot](./screenshots/ccdesign-hero-desktop.png)
 
 ---
 
