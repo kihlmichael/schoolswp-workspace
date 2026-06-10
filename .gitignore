@@ -166,6 +166,12 @@ tools/wp-mu-plugins/.live-check.tmp
 # --- Local scratch / sandbox / one-shot probes (jamais committés) ---
 # Throwaway python probes au niveau racine
 /tmp-*.py
+# Fichiers/dossiers temporaires à point initial (.tmp-*.py/.md/.html/.sh/.json + scrapes de doc) — non couverts par /tmp-*.py
+/.tmp-*
+# Dump SERP/scan volumineux et régénérable (~24 Mo) à la racine
+/scan.json
+# Dumps de posts WP régénérables via tools/scripts/ (de_post.json, fr_post.json)
+/*_post.json
 # Texte scratch à la racine (extracts d'articles, raw HTML pris à la pelle, etc.)
 /*.txt
 # Fichiers ad hoc (notes YouTube, etc.)
