@@ -33,6 +33,9 @@ obsidian-bridge/
 ├── SOP-claude-obsidian-bridge.md   (versionné)
 ├── SOP-memory-lint.md              (versionné)
 ├── promote-to-vault.ps1            (versionné, promotion assistée L0)
+├── sync-outbox-to-vault.ps1        (versionné, synchro auto outbox -> vault + index)
+├── register-sync-task.ps1          (versionné, enregistre la tâche planifiée)
+├── INDEX-memos-techniques.md       (versionné, index généré auto - ne pas éditer)
 ├── .gitignore                      (versionné)
 ├── templates/                      (versionné)
 │   ├── synthese.md
@@ -69,21 +72,19 @@ obsidian-bridge/
 - Charte vault (autorité) : `claude.md` à la racine du vault Obsidian
 - SOP côté vault : `00_systeme/claude-code-bridge/SOP-utilisation.md`
 
-## 7. Phase 1 - périmètre actuel
+## 7. Phase 2 - synchronisation automatisée (active depuis 2026-06-11)
 
-Cette phase inclut **uniquement** :
+La passerelle sert de **mémo technique** : les drafts produits par Claude Code sont synchronisés vers le vault et indexés pour être retrouvés facilement, côté repo et côté vault.
 
-- arborescence côté projet et côté vault
-- README, SOP, templates
-- règles Git
-- entrées dans `log.md` du vault
-- documentation dans `CLAUDE.md` du projet
+Automatisation en place :
 
-Cette phase **n'inclut pas** :
+- `sync-outbox-to-vault.ps1` : transport one-way `outbox-to-obsidian/` -> vault `outbox-depuis-claude/`, idempotent, conserve une copie locale (miroir `_archive/deja-transportes/`, gardée indéfiniment et ré-indexée), régénère les index. Journal : `logs/sync.log`. Option `-DryRun`.
+- `register-sync-task.ps1` : enregistre la tâche planifiée `schoolsWP Obsidian Sync` (au logon + quotidien 13:00, compte courant, sans élévation). `-Remove` pour la désactiver.
+- Index : `INDEX-memos-techniques.md` (versionné, repo, findable via git) + `MOC-memos-techniques.md` (vault, navigable Obsidian). Générés automatiquement, ne pas éditer à la main.
 
-- automatisation
-- synchronisation bidirectionnelle
-- sous-skill de verrouillage durci
-- promotion automatique d'information vers le wiki
+Toujours **hors périmètre** :
 
-Une phase 2 sera évaluée si un besoin réel apparaît.
+- synchronisation bidirectionnelle automatique (l'inbox vault -> projet reste manuelle)
+- promotion automatique vers les zones stables du wiki (reste validée par L0 via `promote-to-vault.ps1`)
+
+Règle inchangée : le vault reste l'**autorité finale** ; la synchro n'écrase jamais une note déjà présente dans le vault et ne supprime jamais un draft (déplacé vers le miroir).
