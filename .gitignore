@@ -176,6 +176,8 @@ tools/wp-mu-plugins/.live-check.tmp
 /*.txt
 # Fichiers ad hoc (notes YouTube, etc.)
 /test-yt.md
+# Dumps playlists YouTube aplaties (one-shot scratch, regenerables)
+/PL*_flat.json
 # Sandbox de session (exploration libre, jamais versionné)
 sandbox-workspace/
 # Backup local de .mcp.json (déjà gitignored, le backup l'est aussi)
