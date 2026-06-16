@@ -1,0 +1,44 @@
+"""Load the brain env + allowlist, and compile the .graphifyignore."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Mapping
+
+import yaml
+
+DOC_GLOBS = ("*.md", "*.markdown", "*.mdx", "*.txt", "*.rst", "*.pdf")
+
+
+@dataclass(frozen=True)
+class Root:
+    path: str  # repo-relative, trailing slash e.g. "core/"
+    type: str  # "code" | "content"
+    backend: str  # "offline" | "gemini" (governs markdown egress only)
+
+
+@dataclass(frozen=True)
+class BrainConfig:
+    repo_path: Path
+    obsidian_bridge_path: Path
+    output_path: Path
+    roots: list[Root]
+    exclude: list[str] = field(default_factory=list)
+    gemini_model: str = "gemini-2.5-flash"
+
+
+def load_config(allowlist_file: Path, env: Mapping[str, str]) -> BrainConfig:
+    data = yaml.safe_load(Path(allowlist_file).read_text(encoding="utf-8")) or {}
+    repo = Path(env["SCHOOLSWP_REPO_PATH"]).resolve()
+    obsidian = Path(env.get("OBSIDIAN_BRIDGE_PATH", str(repo / "obsidian-bridge"))).resolve()
+    out = Path(env.get("GRAPHIFY_OUTPUT_PATH", str(repo / "schoolswp-brain" / ".graphify"))).resolve()
+    roots = [Root(r["path"], r["type"], r["backend"]) for r in data.get("roots", [])]
+    return BrainConfig(
+        repo_path=repo,
+        obsidian_bridge_path=obsidian,
+        output_path=out,
+        roots=roots,
+        exclude=list(data.get("exclude", [])),
+        gemini_model=data.get("gemini_model", "gemini-2.5-flash"),
+    )
