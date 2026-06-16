@@ -40,3 +40,22 @@ def test_load_config_defaults_output_under_repo(tmp_path):
     cfg = config.load_config(allow, env)
     assert cfg.output_path == tmp_path / "schoolswp-brain" / ".graphify"
     assert cfg.obsidian_bridge_path == tmp_path / "obsidian-bridge"
+
+
+def test_compile_graphifyignore_whitelists_roots_and_excludes(tmp_path):
+    allow = _write_allowlist(tmp_path)
+    cfg = config.load_config(allow, {"SCHOOLSWP_REPO_PATH": str(tmp_path)})
+    full = config.compile_graphifyignore(cfg, mode="full")
+    lines = full.splitlines()
+    assert "*" in lines  # ignore-all anchor present (whitelist style)
+    assert "!core/" in lines and "!core/**" in lines
+    assert "!docs/" in lines and "!docs/**" in lines
+    assert "**/.env*" in lines  # exclude re-applied after the whitelist
+
+
+def test_compile_graphifyignore_code_only_excludes_markdown(tmp_path):
+    allow = _write_allowlist(tmp_path)
+    cfg = config.load_config(allow, {"SCHOOLSWP_REPO_PATH": str(tmp_path)})
+    code = config.compile_graphifyignore(cfg, mode="code-only")
+    assert "*.md" in code
+    assert "*.pdf" in code
