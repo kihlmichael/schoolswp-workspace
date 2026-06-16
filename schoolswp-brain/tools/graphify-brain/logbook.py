@@ -39,7 +39,9 @@ def read_state(state_file: Path) -> dict:
 
 
 def write_state(state_file: Path, commit: str) -> None:
-    Path(state_file).write_text(
+    p = Path(state_file)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(
         json.dumps({"last_indexed_commit": commit}, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
