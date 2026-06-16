@@ -219,3 +219,7 @@ scripts/n8n_sync_blog/
 
 # Config locale nano-banana (jamais versionnee)
 /.nano-banana-config.json
+
+# schoolsWP second brain (graphify): derived graph output stays local
+schoolswp-brain/.graphify/
+schoolswp-brain/07_graph/.brain-state.json

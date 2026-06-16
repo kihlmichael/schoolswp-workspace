@@ -1,0 +1,24 @@
+# Source of truth for the schoolsWP second brain. Nothing outside `roots` is indexed.
+# backend governs MARKDOWN egress only. Code (.py/.ps1/...) in any root is ALWAYS offline.
+roots:
+  - { path: core/, type: code, backend: offline }
+  - { path: tools/, type: code, backend: offline }
+  - { path: docs/, type: content, backend: gemini }
+  - { path: content/articles/, type: content, backend: gemini }
+  - { path: content/audits/, type: content, backend: gemini }
+  - { path: content/decisions/, type: content, backend: gemini }
+  - { path: schoolswp-agents/, type: content, backend: gemini }
+  - { path: obsidian-bridge/, type: content, backend: gemini }
+exclude:
+  - "**/.env*"
+  - "**/*.key"
+  - "**/*.pem"
+  - ".credentials/**"
+  - "**/_drafts/**"
+  - "**/_workspace/**"
+  - "tmp_*/**"
+  - ".tmp-*/**"
+  - "node_modules/**"
+  - "**/.venv/**"
+  - "obsidian-bridge/logs/**"
+gemini_model: "gemini-2.5-flash"
