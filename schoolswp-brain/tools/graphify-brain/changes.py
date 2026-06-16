@@ -66,3 +66,27 @@ def split_local_vs_egress(changed: ChangedSet, roots: list[Root]) -> tuple[list[
         else:
             local.append(rel)
     return local, egress
+
+
+def gemini_corpus(repo: Path, roots: list[Root], exclude: list[str]) -> list[str]:
+    """All doc/markdown files (repo-relative) under gemini-backed roots, excludes applied.
+
+    This is what a --gemini refresh can egress: graphify re-processes the whole
+    whitelisted markdown corpus and derives community summaries from the full graph,
+    so egress accounting / secret scan / cost must cover this set, not just the git delta.
+    """
+    repo = Path(repo)
+    out: list[str] = []
+    for r in roots:
+        if r.backend != "gemini":
+            continue
+        root_dir = repo / r.path
+        if not root_dir.exists():
+            continue
+        for p in root_dir.rglob("*"):
+            if not p.is_file() or p.suffix.lower() not in DOC_EXT:
+                continue
+            rel = str(p.relative_to(repo)).replace("\\", "/")
+            if not is_excluded(rel, exclude):
+                out.append(rel)
+    return sorted(set(out))

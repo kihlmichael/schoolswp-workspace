@@ -39,24 +39,32 @@ def _log_dir(cfg: config.BrainConfig) -> Path:
     return cfg.repo_path / "schoolswp-brain" / "07_graph" / "logs"
 
 
-def _dry_run(cfg: config.BrainConfig, env: dict) -> tuple[list[str], list[str], cost.CostEstimate]:
+def _dry_run(cfg: config.BrainConfig, env: dict, *, show_files: bool = False):
     since = logbook.read_state(_state_file(cfg)).get("last_indexed_commit")
-    cs = changes.changed_files(cfg.repo_path, since, cfg.roots, cfg.exclude)
-    local, egress = changes.split_local_vs_egress(cs, cfg.roots)
+    delta = changes.changed_files(cfg.repo_path, since, cfg.roots, cfg.exclude)
+    _, egress_changed = changes.split_local_vs_egress(delta, cfg.roots)
+    egress = changes.gemini_corpus(cfg.repo_path, cfg.roots, cfg.exclude)
     est = cost.estimate([cfg.repo_path / p for p in egress], cfg.gemini_model)
     print("=== DRY-RUN (nothing is sent) ===")
-    print(f"new: {len(cs.new)}  modified: {len(cs.modified)}")
-    print(f"stays LOCAL (code AST + md structural): {len(local)} file(s)")
-    print(f"would go to Gemini ({cfg.gemini_model}): {len(egress)} file(s)")
-    for p in egress:
-        print(f"  -> {p}")
+    print(
+        f"changed since last index: {len(delta.new)} new, {len(delta.modified)} modified "
+        f"({len(egress_changed)} Gemini-bound markdown)"
+    )
+    print(
+        f"a --gemini refresh re-processes the FULL Gemini corpus: {len(egress)} "
+        f"markdown file(s) under gemini roots -> {cfg.gemini_model}"
+    )
+    print("code + markdown structure stay LOCAL (always offline)")
     print(f"est. tokens: {est.est_tokens}  est. cost: ${est.est_usd}")
-    return local, egress, est
+    if show_files:
+        for p in egress:
+            print(f"  -> {p}")
+    return egress, est
 
 
 def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
     if args.dry_run:
-        _dry_run(cfg, env)
+        _dry_run(cfg, env, show_files=args.changed)
         return 0
 
     if args.local:
@@ -94,7 +102,7 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
         return 0
 
     if args.gemini:
-        local, egress, est = _dry_run(cfg, env)
+        egress, est = _dry_run(cfg, env, show_files=True)
         if not args.yes:
             print(
                 "\nREFUSED: refresh --gemini requires explicit --yes after reviewing the dry-run.",
@@ -119,7 +127,7 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
             logbook.RefreshLogEntry(
                 date=_now(),
                 command="refresh --gemini",
-                files_analyzed=len(local) + len(egress),
+                files_analyzed=len(egress),
                 files_sent=len(egress),
                 model=cfg.gemini_model,
                 est_cost_usd=est.est_usd,
@@ -127,7 +135,7 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
                 result="ok",
             ),
         )
-        print(f"refresh --gemini done ({len(egress)} file(s) sent to {cfg.gemini_model}).")
+        print(f"refresh --gemini done ({len(egress)} file(s) processed by {cfg.gemini_model}).")
         return 0
 
     print("nothing to do: pass --local, --changed --dry-run, or --gemini --yes", file=sys.stderr)
@@ -155,25 +163,26 @@ def cmd_path(args, cfg, env):
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="brain", description="schoolsWP second brain (graphify wrapper)")
-    p.add_argument("--allowlist", default=str(DEFAULT_ALLOWLIST))
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    r = sub.add_parser("refresh")
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument("--allowlist", default=str(DEFAULT_ALLOWLIST))
+
+    r = sub.add_parser("refresh", parents=[common])
     r.add_argument("--local", action="store_true")
     r.add_argument("--changed", action="store_true")
     r.add_argument("--dry-run", action="store_true")
     r.add_argument("--gemini", action="store_true")
     r.add_argument("--yes", action="store_true")
-    r.add_argument("--allowlist", default=str(DEFAULT_ALLOWLIST))
     r.set_defaults(func=cmd_refresh)
 
-    q = sub.add_parser("query")
+    q = sub.add_parser("query", parents=[common])
     q.add_argument("question")
     q.set_defaults(func=cmd_query)
-    e = sub.add_parser("explain")
+    e = sub.add_parser("explain", parents=[common])
     e.add_argument("node")
     e.set_defaults(func=cmd_explain)
-    pa = sub.add_parser("path")
+    pa = sub.add_parser("path", parents=[common])
     pa.add_argument("a")
     pa.add_argument("b")
     pa.set_defaults(func=cmd_path)

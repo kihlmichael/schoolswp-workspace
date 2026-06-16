@@ -22,6 +22,6 @@ python schoolswp-brain/tools/graphify-brain/brain.py path "A" "B"
 
 - `refresh --local`: offline code AST (graphify) + local markdown structural index. Zero egress, no confirmation.
 - `refresh --changed --dry-run`: lists new/modified files, what stays local vs what would go to Gemini, with a token/cost estimate. Sends nothing.
-- `refresh --gemini`: replays the dry-run, runs a pre-send secret scan, requires `--yes`, then sends gemini-tagged markdown to `gemini-2.5-flash`.
+- `refresh --gemini`: replays the dry-run, runs a pre-send secret scan over the FULL Gemini corpus (all markdown under gemini roots, not just changed files), requires `--yes`, then re-processes that corpus with `gemini-2.5-flash`.
 
 What is indexed is defined solely by `allowlist.yml`. Code is always extracted offline regardless of a root's `backend` tag; only markdown under a `gemini` root can ever egress, and only after an explicit `--yes`.

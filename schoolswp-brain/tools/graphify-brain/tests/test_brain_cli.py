@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 
 import brain
+import logbook
 import pytest
 
 
@@ -81,3 +82,45 @@ def test_refresh_local_runs_offline_zero_token_cost(tmp_path):
     report = repo / "schoolswp-brain" / ".graphify" / "graphify-out" / "GRAPH_REPORT.md"
     assert report.exists()
     assert "Token cost: 0 input" in report.read_text(encoding="utf-8")
+
+
+def test_dry_run_egress_is_full_corpus_not_delta(tmp_path, capsys):
+    env = _setup(tmp_path)
+    (tmp_path / "docs" / "b.md").write_text("# B\n", encoding="utf-8")
+    subprocess.run(["git", "add", "-A"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "commit", "-m", "b"], cwd=tmp_path, check=True, capture_output=True)
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=tmp_path, capture_output=True, text=True).stdout.strip()
+    logbook.write_state(tmp_path / "schoolswp-brain" / "07_graph" / ".brain-state.json", head)
+    rc = brain.main(["refresh", "--dry-run", "--allowlist", str(tmp_path / "allowlist.yml")], env=env)
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "0 new, 0 modified" in out  # the git delta is empty
+    assert "FULL Gemini corpus: 2" in out  # but a --gemini refresh would re-process both docs
+
+
+def test_gemini_aborts_on_secret_in_unchanged_doc(tmp_path, monkeypatch):
+    env = _setup(tmp_path)
+    (tmp_path / "docs" / "leak.md").write_text(
+        "GEMINI_API_KEY=AIzaSyABCDEF1234567890abcdefABCDEF12345\n", encoding="utf-8"
+    )
+    subprocess.run(["git", "add", "-A"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "commit", "-m", "leak"], cwd=tmp_path, check=True, capture_output=True)
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=tmp_path, capture_output=True, text=True).stdout.strip()
+    logbook.write_state(tmp_path / "schoolswp-brain" / "07_graph" / ".brain-state.json", head)
+    # delta is now empty, but the secret lives in a committed (unchanged) doc inside the gemini corpus
+    monkeypatch.setattr(
+        brain.graphify_runner,
+        "run_extract",
+        lambda *a, **k: (_ for _ in ()).throw(AssertionError("must not send")),
+    )
+    rc = brain.main(["refresh", "--gemini", "--yes", "--allowlist", str(tmp_path / "allowlist.yml")], env=env)
+    assert rc == 3  # secret-scan abort, even though the secret was in an unchanged file
+
+
+def test_allowlist_after_subcommand_is_used(tmp_path):
+    env = _setup(tmp_path)
+    # a second allowlist with NO gemini roots -> corpus would be empty if this file is the one loaded
+    alt = tmp_path / "alt.yml"
+    alt.write_text("roots:\n  - { path: core/, type: code, backend: offline }\nexclude: []\n", encoding="utf-8")
+    cfg = brain.config.load_config(alt, env)
+    assert [r.path for r in cfg.roots] == ["core/"]
