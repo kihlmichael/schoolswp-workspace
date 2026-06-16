@@ -28,10 +28,10 @@ graphify (CLI knowledge-graph, package `graphifyy`, déjà installé en 0.8.40) 
 
 ```
 schoolswp-brain/
+├── .graphify/             # sortie brute graphify (graph.json/html, cache, GRAPH_REPORT.md) - GITIGNORED
 ├── 07_graph/
-│   ├── graphify-index/    # graph.json, graph.html, GRAPH_REPORT.md (gitignored)
-│   ├── logs/              # journal de chaque refresh
-│   └── exports/           # vues exportées (callflow, tree, synthèses)
+│   ├── logs/              # journal de chaque refresh (commité, auditable)
+│   └── exports/           # vues curées / publiées (callflow, tree, synthèses)
 ├── tools/graphify-brain/  # le wrapper garde-fou
 │   ├── allowlist.yml
 │   ├── brain.py
@@ -41,7 +41,7 @@ schoolswp-brain/
 └── 03_synthesis/          # synthèses transversales (net-neuf, zéro doublon)
 ```
 
-graphify indexe en place, via l'allowlist : `core/`, `tools/` (curé), `docs/`, `content/articles|audits|decisions`, `schoolswp-agents/` (memory + shared + soul), notes curées du vault Obsidian. L'allowlist est le seul endroit qui définit "ce qui est dans le cerveau".
+graphify indexe en place, via l'allowlist : `core/`, `tools/` (curé), `docs/`, `content/articles|audits|decisions`, `schoolswp-agents/` (memory + shared + soul), et `obsidian-bridge/` en lecture seule. L'allowlist est le seul endroit qui définit "ce qui est dans le cerveau".
 
 ## 5. Le wrapper `tools/graphify-brain/`
 
@@ -58,7 +58,7 @@ roots:
   - { path: content/audits/, type: content, backend: gemini }
   - { path: content/decisions/, type: content, backend: gemini }
   - { path: schoolswp-agents/, type: content, backend: gemini }
-  - { path: obsidian-bridge/outbox-to-vault/, type: content, backend: gemini }
+  - { path: obsidian-bridge/, type: content, backend: gemini } # lecture seule (pont local, pas le vault complet)
 exclude: # compilé vers .graphifyignore
   - "**/.env*"
   - "**/*.key"
@@ -70,9 +70,20 @@ exclude: # compilé vers .graphifyignore
   - ".tmp-*/**"
   - "node_modules/**"
   - "**/.venv/**"
+  - "obsidian-bridge/logs/**"
 ```
 
-Règle : rien hors allowlist n'entre ; rien marqué `offline` ne sort jamais.
+Règle : rien hors allowlist n'entre ; rien marqué `offline` ne sort jamais. Le `backend` d'une racine ne gouverne QUE son markdown : le code (`.py`, `.ps1`, ...) de n'importe quelle racine est TOUJOURS extrait en AST local, jamais envoyé.
+
+### Configuration (env)
+
+```env
+SCHOOLSWP_REPO_PATH="D:\VS Code\CLAUDE CODE\projects\schoolswp"
+OBSIDIAN_BRIDGE_PATH="D:\VS Code\CLAUDE CODE\projects\schoolswp\obsidian-bridge"
+GRAPHIFY_OUTPUT_PATH="D:\VS Code\CLAUDE CODE\projects\schoolswp\schoolswp-brain\.graphify"
+```
+
+`obsidian-bridge/` est lu en LECTURE SEULE : graphify ne déplace, ne renomme, ne duplique rien. Toutes les sorties vont dans `GRAPHIFY_OUTPUT_PATH` (gitignored ; graphify y crée un sous-dossier `graphify-out/`). On nomme la source `OBSIDIAN_BRIDGE_PATH` (et non `OBSIDIAN_VAULT_PATH`) car ce dossier est le pont local, pas le vault Obsidian complet.
 
 ### Composants
 
@@ -112,7 +123,7 @@ Note importante : la couche structurelle markdown n'est PAS l'extraction sémant
 - `exclude` compilé vers `.graphifyignore` (secrets, credentials, brouillons, tmp, vendored, fichiers clients).
 - Frontière d'egress : le code ne sort jamais (AST offline) ; seul le contenu des racines `gemini` peut sortir, après dry-run + GO. Le dry-run affiche la liste exacte des fichiers qui partiraient.
 - Scan secrets pré-envoi (défense en profondeur) : avant tout envoi Gemini, `brain.py` scanne le lot sortant (patterns clés/tokens/emails clients) et avorte si détection.
-- Sortie du graphe : `07_graph/graphify-index/` gitignored par défaut (dérive du contenu, reste local). `allowlist.yml` + logs sont commités (auditable).
+- Sortie du graphe : `schoolswp-brain/.graphify/` (= `GRAPHIFY_OUTPUT_PATH`) gitignored par défaut (dérive du contenu, reste local). `allowlist.yml` + `07_graph/logs/` sont commités (auditable).
 
 ## 9. Périmètre MVP vs plus tard
 
@@ -139,7 +150,7 @@ Note importante : la couche structurelle markdown n'est PAS l'extraction sémant
 
 ## 12. Questions ouvertes (à trancher au plan ou plus tard)
 
-- Chemin exact du vault Obsidian à indexer (`outbox-to-vault/` vs emplacement réel du vault).
-- Le graphe doit-il un jour être commité (défaut : non) ?
+- [RÉSOLU 2026-06-16] Source Obsidian = `obsidian-bridge/` (pont local, lecture seule) via `OBSIDIAN_BRIDGE_PATH` ; pas le vault complet. Sortie = `schoolswp-brain/.graphify/` (`GRAPHIFY_OUTPUT_PATH`).
+- [RÉSOLU 2026-06-16] Le graphe n'est PAS commité (gitignored sous `.graphify/`).
 - Modèle Gemini précis pour graphify (défaut auto vs pin d'un modèle).
 - Position finale du wrapper : `schoolswp-brain/tools/graphify-brain/` (auto-contenu, retenu) vs `tools/` racine (convention repo).
