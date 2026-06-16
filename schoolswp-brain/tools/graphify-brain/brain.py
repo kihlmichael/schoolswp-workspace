@@ -39,6 +39,15 @@ def _log_dir(cfg: config.BrainConfig) -> Path:
     return cfg.repo_path / "schoolswp-brain" / "07_graph" / "logs"
 
 
+def _mode_dir(cfg: config.BrainConfig, mode: str) -> Path:
+    """Per-mode graphify output dir: offline AST ('code') vs gemini semantic ('semantic').
+
+    Separate dirs keep graphify's incremental per-file cache from conflating the two
+    modes (a shared graphify-out/cache would serve stale cross-mode results).
+    """
+    return cfg.output_path / mode
+
+
 def _dry_run(cfg: config.BrainConfig, env: dict, *, show_files: bool = False):
     since = logbook.read_state(_state_file(cfg)).get("last_indexed_commit")
     delta = changes.changed_files(cfg.repo_path, since, cfg.roots, cfg.exclude)
@@ -72,16 +81,25 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
         ignore = config.compile_graphifyignore(cfg, mode="code-only")
         (cfg.repo_path / ".graphifyignore").write_text(ignore, encoding="utf-8")
         oenv = graphify_runner.offline_env(env)
-        graphify_runner.run_extract(cfg.repo_path, cfg.output_path, oenv)
-        graphify_runner.run_cluster(cfg.output_path, oenv, label=False, backend=None, model=None)
+        code_out = _mode_dir(cfg, "code")
+        proc = graphify_runner.run_extract(cfg.repo_path, code_out, oenv)
+        if not (code_out / "graphify-out" / "graph.json").exists():
+            print("ERROR: graphify produced no graph (offline extract failed).", file=sys.stderr)
+            stderr = (getattr(proc, "stderr", "") or "").strip()
+            if stderr:
+                print(stderr, file=sys.stderr)
+            return 4
+        graphify_runner.run_cluster(code_out, oenv, label=False, backend=None, model=None)
         docs = []
         for r in cfg.roots:
             root_dir = cfg.repo_path / r.path
             if root_dir.exists():
                 docs.extend(md_local_index.scan_tree(root_dir, cfg.exclude))
         cfg.output_path.mkdir(parents=True, exist_ok=True)
+        # default=str coerces YAML-native frontmatter scalars (date/datetime) to ISO strings.
         (cfg.output_path / "md-local-index.json").write_text(
-            json.dumps([asdict(d) for d in docs], ensure_ascii=False, indent=2), encoding="utf-8"
+            json.dumps([asdict(d) for d in docs], ensure_ascii=False, indent=2, default=str),
+            encoding="utf-8",
         )
         commit = _head(cfg.repo_path)
         logbook.write_state(_state_file(cfg), commit)
@@ -118,8 +136,9 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
         ignore = config.compile_graphifyignore(cfg, mode="full")
         (cfg.repo_path / ".graphifyignore").write_text(ignore, encoding="utf-8")
         genv = graphify_runner.gemini_env(env)
-        graphify_runner.run_extract(cfg.repo_path, cfg.output_path, genv)
-        graphify_runner.run_cluster(cfg.output_path, genv, label=True, backend="gemini", model=cfg.gemini_model)
+        sem_out = _mode_dir(cfg, "semantic")
+        graphify_runner.run_extract(cfg.repo_path, sem_out, genv)
+        graphify_runner.run_cluster(sem_out, genv, label=True, backend="gemini", model=cfg.gemini_model)
         commit = _head(cfg.repo_path)
         logbook.write_state(_state_file(cfg), commit)
         logbook.append_log(
@@ -143,7 +162,11 @@ def cmd_refresh(args, cfg: config.BrainConfig, env: dict) -> int:
 
 
 def _graph_path(cfg: config.BrainConfig) -> Path:
-    return cfg.output_path / "graphify-out" / "graph.json"
+    # Query the richest graph available: the gemini semantic build if present,
+    # otherwise the offline code build.
+    semantic = _mode_dir(cfg, "semantic") / "graphify-out" / "graph.json"
+    code = _mode_dir(cfg, "code") / "graphify-out" / "graph.json"
+    return semantic if semantic.exists() else code
 
 
 def cmd_query(args, cfg, env):

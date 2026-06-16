@@ -59,3 +59,17 @@ def test_compile_graphifyignore_code_only_excludes_markdown(tmp_path):
     code = config.compile_graphifyignore(cfg, mode="code-only")
     assert "*.md" in code
     assert "*.pdf" in code
+
+
+def test_compile_graphifyignore_code_only_excludes_non_code_assets(tmp_path):
+    # graphify routes images/data/office/media to LLM semantic extraction; offline
+    # mode must re-ignore them all so a code-only corpus needs no API key.
+    allow = _write_allowlist(tmp_path)
+    cfg = config.load_config(allow, {"SCHOOLSWP_REPO_PATH": str(tmp_path)})
+    code = config.compile_graphifyignore(cfg, mode="code-only").splitlines()
+    for glob in ("*.png", "*.jpg", "*.svg", "*.json", "*.csv", "*.html", "*.xlsx", "*.docx", "*.mp4", "*.yaml"):
+        assert glob in code, f"{glob} must be re-ignored in code-only mode"
+    # the full (gemini) mode keeps them so semantic extraction can run
+    full = config.compile_graphifyignore(cfg, mode="full").splitlines()
+    assert "*.png" not in full
+    assert "*.json" not in full

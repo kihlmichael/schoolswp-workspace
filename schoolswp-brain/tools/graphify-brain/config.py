@@ -10,6 +10,46 @@ import yaml
 
 DOC_GLOBS = ("*.md", "*.markdown", "*.mdx", "*.txt", "*.rst", "*.pdf")
 
+# Non-code assets graphify routes to LLM semantic extraction. In code-only (offline)
+# mode they are re-ignored so the corpus is pure code and needs no API key.
+NONCODE_GLOBS = (
+    # images
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif",
+    "*.webp",
+    "*.svg",
+    "*.bmp",
+    "*.ico",
+    "*.tiff",
+    "*.avif",
+    "*.b64",
+    # data / config
+    "*.json",
+    "*.csv",
+    "*.yaml",
+    "*.yml",
+    "*.xml",
+    "*.xlsx",
+    "*.xls",
+    # office / web docs
+    "*.html",
+    "*.htm",
+    "*.docx",
+    "*.doc",
+    "*.ipynb",
+    "*.pptx",
+    # media
+    "*.mp4",
+    "*.mov",
+    "*.webm",
+    "*.mp3",
+    "*.wav",
+    "*.avi",
+    "*.mkv",
+)
+
 
 @dataclass(frozen=True)
 class Root:
@@ -61,4 +101,5 @@ def compile_graphifyignore(cfg: BrainConfig, mode: str) -> str:
     lines.extend(cfg.exclude)
     if mode == "code-only":
         lines.extend(DOC_GLOBS)
+        lines.extend(NONCODE_GLOBS)
     return "\n".join(lines) + "\n"
