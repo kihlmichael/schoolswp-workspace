@@ -1,7 +1,7 @@
 # Second cerveau schoolsWP - graphify comme moteur de cartographie
 
-Spec de design - 2026-06-16
-Statut : validé (brainstorming), prêt pour plan d'implémentation.
+Spec de design - 2026-06-16 (MAJ 2026-06-17 : sortie per-mode)
+Statut : implémenté et validé. `refresh --local` tourne offline (graphe code 3270 nœuds, 0 egress) + 1758 docs markdown indexés (commit `639eecd`). Le `refresh --gemini` réel reste une acceptation manuelle non encore exécutée.
 
 ## 1. Contexte & objectif
 
@@ -28,7 +28,10 @@ graphify (CLI knowledge-graph, package `graphifyy`, déjà installé en 0.8.40) 
 
 ```
 schoolswp-brain/
-├── .graphify/             # sortie brute graphify (graph.json/html, cache, GRAPH_REPORT.md) - GITIGNORED
+├── .graphify/             # sorties brutes graphify - GITIGNORED
+│   ├── code/              # graphe OFFLINE (AST) -> code/graphify-out/graph.json
+│   ├── semantic/          # graphe GEMINI (sémantique) -> semantic/graphify-out/graph.json
+│   └── md-local-index.json # index markdown structurel (local, sans LLM)
 ├── 07_graph/
 │   ├── logs/              # journal de chaque refresh (commité, auditable)
 │   └── exports/           # vues curées / publiées (callflow, tree, synthèses)
@@ -75,6 +78,8 @@ exclude: # compilé vers .graphifyignore
 
 Règle : rien hors allowlist n'entre ; rien marqué `offline` ne sort jamais. Le `backend` d'une racine ne gouverne QUE son markdown : le code (`.py`, `.ps1`, ...) de n'importe quelle racine est TOUJOURS extrait en AST local, jamais envoyé.
 
+Le mode offline (`refresh --local`) compile un `.graphifyignore` "code-only" qui re-ignore TOUTES les familles non-code (markdown + images + data json/csv/yaml/xml + office html/docx/xlsx + média) via `DOC_GLOBS` + `NONCODE_GLOBS`. Indispensable : graphify route tout fichier non-code vers l'extraction sémantique LLM et avorte offline (`error: no LLM API key found`) si le corpus n'est pas purement du code.
+
 ### Configuration (env)
 
 ```env
@@ -83,7 +88,7 @@ OBSIDIAN_BRIDGE_PATH="D:\VS Code\CLAUDE CODE\projects\schoolswp\obsidian-bridge"
 GRAPHIFY_OUTPUT_PATH="D:\VS Code\CLAUDE CODE\projects\schoolswp\schoolswp-brain\.graphify"
 ```
 
-`obsidian-bridge/` est lu en LECTURE SEULE : graphify ne déplace, ne renomme, ne duplique rien. Toutes les sorties vont dans `GRAPHIFY_OUTPUT_PATH` (gitignored ; graphify y crée un sous-dossier `graphify-out/`). On nomme la source `OBSIDIAN_BRIDGE_PATH` (et non `OBSIDIAN_VAULT_PATH`) car ce dossier est le pont local, pas le vault Obsidian complet.
+`obsidian-bridge/` est lu en LECTURE SEULE : graphify ne déplace, ne renomme, ne duplique rien. Toutes les sorties vont dans `GRAPHIFY_OUTPUT_PATH` (gitignored), réparties par mode : `code/` (extraction offline AST) et `semantic/` (extraction gemini), chacun avec son `graphify-out/`. **Dirs séparés obligatoires** : `graphify extract` n'a aucun flag `--force`/`--no-cache` et son cache incrémental (`graphify-out/cache/`) confond AST et sémantique ; un `graphify-out` partagé servirait un graphe périmé cross-mode. On nomme la source `OBSIDIAN_BRIDGE_PATH` (et non `OBSIDIAN_VAULT_PATH`) car ce dossier est le pont local, pas le vault Obsidian complet.
 
 ### Composants
 
@@ -123,7 +128,9 @@ Note importante : la couche structurelle markdown n'est PAS l'extraction sémant
 - `exclude` compilé vers `.graphifyignore` (secrets, credentials, brouillons, tmp, vendored, fichiers clients).
 - Frontière d'egress : le code ne sort jamais (AST offline) ; seul le contenu des racines `gemini` peut sortir, après dry-run + GO. Le dry-run affiche la liste exacte des fichiers qui partiraient.
 - Scan secrets pré-envoi (défense en profondeur) : avant tout envoi Gemini, `brain.py` scanne le lot sortant (patterns clés/tokens/emails clients) et avorte si détection.
-- Sortie du graphe : `schoolswp-brain/.graphify/` (= `GRAPHIFY_OUTPUT_PATH`) gitignored par défaut (dérive du contenu, reste local). `allowlist.yml` + `07_graph/logs/` sont commités (auditable).
+- Sortie du graphe : `schoolswp-brain/.graphify/{code,semantic}/` (= `GRAPHIFY_OUTPUT_PATH` + sous-dossier de mode) gitignored par défaut (dérive du contenu, reste local). `allowlist.yml` + `07_graph/logs/` sont commités (auditable).
+- Garde anti-échec-silencieux : après l'extract offline, `brain.py` vérifie que `code/graphify-out/graph.json` existe ; sinon il échoue (rc 4) au lieu de logger un faux "done".
+- Hygiène de diagnostic : lancer `graphify` brut depuis un shell où une clé LLM est présente DÉCLENCHE un envoi à Google (le wrapper protège, pas le binaire). Tout diagnostic graphify se fait clés coupées. Voir [[reference_graphify_cli_installed]].
 
 ## 9. Périmètre MVP vs plus tard
 
@@ -150,7 +157,9 @@ Note importante : la couche structurelle markdown n'est PAS l'extraction sémant
 
 ## 12. Questions ouvertes (à trancher au plan ou plus tard)
 
-- [RÉSOLU 2026-06-16] Source Obsidian = `obsidian-bridge/` (pont local, lecture seule) via `OBSIDIAN_BRIDGE_PATH` ; pas le vault complet. Sortie = `schoolswp-brain/.graphify/` (`GRAPHIFY_OUTPUT_PATH`).
+- [RÉSOLU 2026-06-16] Source Obsidian = `obsidian-bridge/` (pont local, lecture seule) via `OBSIDIAN_BRIDGE_PATH` ; pas le vault complet.
+- [RÉSOLU 2026-06-17] Sortie per-mode : `schoolswp-brain/.graphify/code/` (offline) et `.graphify/semantic/` (gemini), sous `GRAPHIFY_OUTPUT_PATH`. Dirs séparés car le cache incrémental de graphify confond AST et sémantique.
+- [RÉSOLU 2026-06-17] Mode offline = corpus 100% code : `code-only` re-ignore tout le non-code (`DOC_GLOBS` + `NONCODE_GLOBS`), sinon graphify exige une clé LLM et avorte.
 - [RÉSOLU 2026-06-16] Le graphe n'est PAS commité (gitignored sous `.graphify/`).
-- Modèle Gemini précis pour graphify (défaut auto vs pin d'un modèle).
+- [RÉSOLU 2026-06-16] Modèle Gemini pinné : `gemini-2.5-flash` dans `allowlist.yml`.
 - Position finale du wrapper : `schoolswp-brain/tools/graphify-brain/` (auto-contenu, retenu) vs `tools/` racine (convention repo).
