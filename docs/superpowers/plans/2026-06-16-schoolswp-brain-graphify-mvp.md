@@ -16,29 +16,29 @@
 
 ```
 schoolswp-brain/
-├── .graphify/                              # graphify output (GITIGNORED); graphify creates graphify-out/ inside
-├── 07_graph/
-│   ├── logs/.gitkeep                       # refresh logs (committed dir)
-│   └── (.brain-state.json at runtime)      # last indexed commit (gitignored)
-└── tools/graphify-brain/
-    ├── allowlist.yml                       # roots + excludes (source of truth)
-    ├── config.py                           # env + allowlist load; .graphifyignore compilation
-    ├── md_local_index.py                   # local markdown structural scan (no LLM)
-    ├── changes.py                          # git changed-files since last indexed commit
-    ├── secrets_scan.py                     # pre-send secret pattern scan
-    ├── cost.py                             # token/cost heuristic estimate
-    ├── logbook.py                          # append-only refresh log + state file
-    ├── graphify_runner.py                  # subprocess wrappers around the graphify CLI
-    ├── brain.py                            # CLI entry point (argparse)
-    └── tests/
-        ├── conftest.py
-        ├── test_config.py
-        ├── test_md_local_index.py
-        ├── test_changes.py
-        ├── test_secrets_scan.py
-        ├── test_cost.py
-        ├── test_logbook.py
-        └── test_brain_cli.py
+â”œâ”€â”€ .graphify/                              # graphify output (GITIGNORED); graphify creates graphify-out/ inside
+â”œâ”€â”€ 07_graph/
+â”‚   â”œâ”€â”€ logs/.gitkeep                       # refresh logs (committed dir)
+â”‚   â””â”€â”€ (.brain-state.json at runtime)      # last indexed commit (gitignored)
+â””â”€â”€ tools/graphify-brain/
+    â”œâ”€â”€ allowlist.yml                       # roots + excludes (source of truth)
+    â”œâ”€â”€ config.py                           # env + allowlist load; .graphifyignore compilation
+    â”œâ”€â”€ md_local_index.py                   # local markdown structural scan (no LLM)
+    â”œâ”€â”€ changes.py                          # git changed-files since last indexed commit
+    â”œâ”€â”€ secrets_scan.py                     # pre-send secret pattern scan
+    â”œâ”€â”€ cost.py                             # token/cost heuristic estimate
+    â”œâ”€â”€ logbook.py                          # append-only refresh log + state file
+    â”œâ”€â”€ graphify_runner.py                  # subprocess wrappers around the graphify CLI
+    â”œâ”€â”€ brain.py                            # CLI entry point (argparse)
+    â””â”€â”€ tests/
+        â”œâ”€â”€ conftest.py
+        â”œâ”€â”€ test_config.py
+        â”œâ”€â”€ test_md_local_index.py
+        â”œâ”€â”€ test_changes.py
+        â”œâ”€â”€ test_secrets_scan.py
+        â”œâ”€â”€ test_cost.py
+        â”œâ”€â”€ test_logbook.py
+        â””â”€â”€ test_brain_cli.py
 ```
 
 Root-level change: `.gitignore` gains `schoolswp-brain/.graphify/` and `schoolswp-brain/07_graph/.brain-state.json`.
@@ -654,7 +654,7 @@ def test_detects_private_key_and_api_keys(tmp_path):
     leak = tmp_path / "leak.md"
     leak.write_text(
         "intro\n"
-        "GEMINI_API_KEY=AIzaSyABCDEF1234567890abcdefABCDEF12345\n"
+        "GEMINI_API_KEY=[GOOGLE_API_KEY_REDACTED]\n"
         "-----BEGIN PRIVATE KEY-----\n",
         encoding="utf-8",
     )
