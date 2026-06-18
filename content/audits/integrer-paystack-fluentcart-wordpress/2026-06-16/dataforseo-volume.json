@@ -1,0 +1,80 @@
+{
+  "source": "DataForSEO",
+  "location": "France",
+  "language": "French",
+  "date": "2026-06-16",
+  "keywords_data": [
+    {
+      "keyword": "paystack",
+      "search_volume": 390,
+      "cpc": 5.31,
+      "competition": 0.1,
+      "competition_level": "LOW",
+      "keyword_difficulty": 13,
+      "search_intent": "informational"
+    },
+    {
+      "keyword": "fluentcart",
+      "search_volume": 70,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": "informational"
+    },
+    {
+      "keyword": "paystack wordpress",
+      "search_volume": 10,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    },
+    {
+      "keyword": "paystack integration",
+      "search_volume": 10,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    },
+    {
+      "keyword": "paystack woocommerce",
+      "search_volume": 10,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    },
+    {
+      "keyword": "paystack shopify",
+      "search_volume": 10,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    },
+    {
+      "keyword": "paystack fluentcart",
+      "search_volume": 0,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    },
+    {
+      "keyword": "fluentcart wordpress",
+      "search_volume": 0,
+      "cpc": null,
+      "competition": null,
+      "competition_level": null,
+      "keyword_difficulty": null,
+      "search_intent": null
+    }
+  ]
+}
