@@ -1,7 +1,7 @@
 # schoolsWP Project Sub-Agents — Index complet
 
 <!-- AUTO:HEADER:START -->
-**Total** : 28 sub-agents | **Mis à jour** : 2026-05-21
+**Total** : 29 sub-agents | **Mis à jour** : 2026-06-18
 <!-- AUTO:HEADER:END -->
 
 **Structure** : un fichier `.md` par agent dans `.claude/agents/`, frontmatter YAML (`name`, `description`, `model`, `tools`)
@@ -17,6 +17,14 @@
 ## Routing Priority — quel agent pour quelle demande
 
 Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (section « Règles de conflit »).
+
+### Stratégie / pilotage marketing
+
+| Input utilisateur | Agent à dispatcher |
+|---|---|
+| Diagnostic marketing global, choix des canaux prioritaires, arbitrage « quel agent lancer », revue COMEX, décision GO/FIX/WAIT/STOP sur un chantier marketing | `directeur-marketing-ia` |
+
+> **Posture** : manager stratégique, pas exécutant. Repo-first par défaut, données live uniquement sur validation humaine, aucune autopublication, aucun déclenchement d'agent en autonomie. Livrable = Note de COMEX marketing (diagnostic + décisions + file de dispatch) dans `output/`.
 
 ### Production éditoriale schoolsWP
 
@@ -103,6 +111,12 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 ## Tables détaillées par groupe
 
 <!-- AUTO:TABLES:START -->
+
+### Stratégie / COMEX (orchestration)
+
+| Agent | Modèle | Outils | Description |
+| --- | --- | --- | --- |
+| `directeur-marketing-ia` | opus | Read, Write, Edit, Glob, Grep | Use this agent as the marketing director / COMEX of schoolsWP : strategic pilot, not a content executor. |
 
 ### Contenu éditorial schoolsWP
 
