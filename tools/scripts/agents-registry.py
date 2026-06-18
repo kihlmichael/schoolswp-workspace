@@ -38,6 +38,8 @@ INDEX_PATH = AGENTS_DIR / "INDEX.md"
 # le script alerte. C'est volontaire : pas d'auto-classification silencieuse.
 
 GROUPS: dict[str, str] = {
+    # Stratégie / COMEX (orchestration, ne publie pas)
+    "directeur-marketing-ia": "strategy",
     # Contenu éditorial schoolsWP
     "studio": "editorial",
     "radar": "editorial",
@@ -74,9 +76,19 @@ GROUPS: dict[str, str] = {
     "ofm-bot": "personal",
 }
 
-GROUP_ORDER = ["editorial", "youtube-os", "specialists", "code-review", "harness", "personal", "unclassified"]
+GROUP_ORDER = [
+    "strategy",
+    "editorial",
+    "youtube-os",
+    "specialists",
+    "code-review",
+    "harness",
+    "personal",
+    "unclassified",
+]
 
 GROUP_LABELS = {
+    "strategy": "Stratégie / COMEX (orchestration)",
     "editorial": "Contenu éditorial schoolsWP",
     "youtube-os": "YouTube OS",
     "specialists": "Spécialistes domaine",
@@ -293,7 +305,9 @@ def main() -> int:
         norm_current = re.sub(r"\*\*Mis à jour\*\* : \d{4}-\d{2}-\d{2}", "DATE", current)
         norm_regen = re.sub(r"\*\*Mis à jour\*\* : \d{4}-\d{2}-\d{2}", "DATE", regenerated)
         if norm_current != norm_regen:
-            print("\n❌ INDEX.md désynchronisé. Lancer : python tools/scripts/agents-registry.py --sync", file=sys.stderr)
+            print(
+                "\n❌ INDEX.md désynchronisé. Lancer : python tools/scripts/agents-registry.py --sync", file=sys.stderr
+            )
             return 1
         print("\n✓ INDEX.md à jour")
         return 0
