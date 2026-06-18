@@ -1,9 +1,9 @@
-# Script video — Module 3, Lecon 1 : Multi-step forms
+# Script video - Module 3, Lecon 1 : Multi-step forms
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 3 — Formulaires avances
-**Lecon** : 1/8 — Multi-step forms
+**Module** : 3 - Formulaires avances
+**Lecon** : 1/8 - Multi-step forms
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast construction multi-step complet
@@ -11,15 +11,15 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Un formulaire de 15 champs sur une seule page, ca fait fuir. Le visiteur arrive, voit le mur de champs, et ferme l'onglet. Taux d'abandon : catastrophique.
 
-La solution : decouper le formulaire en etapes. Le visiteur voit 4 ou 5 champs, repond, clique sur "Suivant", et decouvre la suite. Chaque etape est digeste. L'engagement est progressif. Et une fois qu'il a rempli la premiere etape, il a investi du temps — il va jusqu'au bout.
+La solution : decouper le formulaire en etapes. Le visiteur voit 4 ou 5 champs, repond, clique sur "Suivant", et decouvre la suite. Chaque etape est digeste. L'engagement est progressif. Et une fois qu'il a rempli la premiere etape, il a investi du temps - il va jusqu'au bout.
 
 C'est ce qu'on construit dans cette lecon.
 
-**[ECRAN — slide "Pourquoi le multi-step fonctionne"]**
+**[ECRAN - slide "Pourquoi le multi-step fonctionne"]**
 
 Les donnees sont claires. Un formulaire multi-etapes obtient un taux de completion significativement superieur a un formulaire long sur une seule page. La raison psychologique : l'engagement progressif. A chaque etape completee, le visiteur s'est investi un peu plus. Abandonner apres l'etape 2 sur 3, ca lui coute psychologiquement.
 
@@ -27,19 +27,19 @@ C'est aussi meilleur en termes d'experience. Le visiteur ne voit que ce qui est 
 
 FluentForms Pro rend ca simple a implementer.
 
-**[ECRAN — screencast "Creer le formulaire multi-step"]**
+**[ECRAN - screencast "Creer le formulaire multi-step"]**
 
 On va construire un formulaire de candidature emploi en 3 etapes.
 
 Etape 1 : Informations personnelles. Etape 2 : Experience professionnelle. Etape 3 : Motivation.
 
-Nouveau formulaire vierge : "Candidature — Poste Developeur WordPress".
+Nouveau formulaire vierge : "Candidature - Poste Developeur WordPress".
 
 J'ajoute les champs de l'etape 1 : Name, Email, Phone, Date Picker "Date de naissance".
 
-Maintenant, le point cle. J'ajoute un champ "Step Break" depuis la sidebar — categorie Container. Ce champ cree la separation entre l'etape 1 et l'etape 2. Tout ce qui est au-dessus du Step Break = etape 1. Tout ce qui est en dessous = etape 2.
+Maintenant, le point cle. J'ajoute un champ "Step Break" depuis la sidebar - categorie Container. Ce champ cree la separation entre l'etape 1 et l'etape 2. Tout ce qui est au-dessus du Step Break = etape 1. Tout ce qui est en dessous = etape 2.
 
-**[ECRAN — screencast "Ajouter les etapes"]**
+**[ECRAN - screencast "Ajouter les etapes"]**
 
 Apres le premier Step Break, j'ajoute les champs de l'etape 2.
 
@@ -53,15 +53,15 @@ J'ajoute un deuxieme Step Break.
 
 Apres, les champs de l'etape 3.
 
-Textarea "Pourquoi ce poste t'interesse" — champ obligatoire.
+Textarea "Pourquoi ce poste t'interesse" - champ obligatoire.
 
-File Upload "CV" — types autorises : PDF, DOC, DOCX. Taille max : 5 Mo.
+File Upload "CV" - types autorises : PDF, DOC, DOCX. Taille max : 5 Mo.
 
-File Upload "Lettre de motivation" — optionnel. Memes types.
+File Upload "Lettre de motivation" - optionnel. Memes types.
 
-Checkbox "J'accepte que mes donnees soient traitees dans le cadre de ce recrutement" — obligatoire. RGPD.
+Checkbox "J'accepte que mes donnees soient traitees dans le cadre de ce recrutement" - obligatoire. RGPD.
 
-**[ECRAN — screencast "Configurer la barre de progression"]**
+**[ECRAN - screencast "Configurer la barre de progression"]**
 
 Cliquons sur le premier Step Break pour le configurer.
 
@@ -73,7 +73,7 @@ Progress Bar Style : plusieurs styles disponibles.
 
 "Steps" : des pastilles numerotees 1, 2, 3. Plus visuel.
 
-"None" : pas d'indicateur de progression. A eviter — le visiteur a besoin de savoir ou il en est.
+"None" : pas d'indicateur de progression. A eviter - le visiteur a besoin de savoir ou il en est.
 
 Je choisis "Steps" avec les labels personnalises.
 
@@ -81,15 +81,15 @@ Step 1 Label : "Informations". Step 2 Label : "Experience". Step 3 Label : "Moti
 
 Ces labels s'affichent au-dessus du formulaire. Le visiteur sait exactement ou il en est et ce qui l'attend.
 
-**[ECRAN — screencast "Navigation — boutons Suivant/Precedent"]**
+**[ECRAN - screencast "Navigation - boutons Suivant/Precedent"]**
 
 Chaque Step Break genere automatiquement un bouton "Suivant" et un bouton "Precedent".
 
 Tu peux personnaliser le texte des boutons. Au lieu de "Next" et "Previous", mets "Continuer" et "Retour". Ou "Etape suivante" et "Revenir".
 
-Option importante : "Enable auto-scroll to top". Quand le visiteur clique sur Suivant, la page scroll automatiquement vers le haut du formulaire. Active-le — sinon le visiteur se retrouve au milieu de la page et ne voit pas les champs de l'etape suivante.
+Option importante : "Enable auto-scroll to top". Quand le visiteur clique sur Suivant, la page scroll automatiquement vers le haut du formulaire. Active-le - sinon le visiteur se retrouve au milieu de la page et ne voit pas les champs de l'etape suivante.
 
-**[ECRAN — screencast "Validation par etape"]**
+**[ECRAN - screencast "Validation par etape"]**
 
 Un point crucial : la validation par etape.
 
@@ -99,7 +99,7 @@ Ca evite que le visiteur arrive a l'etape 3 et doive revenir corriger un champ d
 
 Verifie que tes champs obligatoires sont bien marques comme "Required" dans chaque etape.
 
-**[ECRAN — screencast "Design des indicateurs"]**
+**[ECRAN - screencast "Design des indicateurs"]**
 
 Le design de la barre de progression est personnalisable dans Input Customization.
 
@@ -107,7 +107,7 @@ Couleur de l'etape active, couleur de l'etape completee, couleur de l'etape a ve
 
 Mon conseil : utilise les couleurs de ton site. L'etape active en couleur principale, les etapes completees en vert ou en gris fonce, les etapes a venir en gris clair.
 
-**[ECRAN — screencast "Test complet"]**
+**[ECRAN - screencast "Test complet"]**
 
 Testons le formulaire.
 
@@ -121,7 +121,7 @@ Confirmation : "Merci pour ta candidature. On te recontacte sous une semaine."
 
 Le parcours est fluide. Trois etapes courtes au lieu d'un formulaire interminable.
 
-**[ECRAN — screencast "Cas pratique — candidature emploi"]**
+**[ECRAN - screencast "Cas pratique - candidature emploi"]**
 
 En recap : voici le formulaire complet.
 
@@ -129,7 +129,7 @@ En recap : voici le formulaire complet.
 
 Ce meme schema fonctionne pour n'importe quel formulaire long : inscription a un programme, demande de financement, onboarding client, questionnaire medical.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Le multi-step, c'est la difference entre un formulaire que les gens remplissent et un formulaire que les gens abandonnent. Chaque fois que ton formulaire depasse 6 ou 7 champs, pose-toi la question : est-ce que je devrais le decouper en etapes ?
 
@@ -153,4 +153,4 @@ Prochaine lecon : les conversational forms. L'alternative Typeform, integree dan
 - Screencast : construction complete du formulaire 3 etapes
 - Montrer la barre de progression en action (etapes qui changent de couleur)
 - Montrer la validation qui bloque le passage si champ obligatoire vide
-- Rythme : moderement rapide — le viewer peut suivre en parallele
+- Rythme : moderement rapide - le viewer peut suivre en parallele

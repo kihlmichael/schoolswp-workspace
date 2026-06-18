@@ -1,0 +1,82 @@
+{
+  "source": "dataforseo kw_data_google_ads_search_volume",
+  "location": "United States (2840)",
+  "language": "en",
+  "date": "2026-06-02",
+  "note": "Volumes US (proxy marché anglophone). Le marché EN mondial est plus large. La cible exacte 'learn wordpress in a day' = 10/mo (faible) ; la valeur SEO vient du cluster sémantique + AI Overview/PAA.",
+  "items": [
+    {
+      "keyword": "learn wordpress",
+      "search_volume": 480,
+      "competition": "MEDIUM",
+      "competition_index": 45,
+      "cpc": 7.13
+    },
+    {
+      "keyword": "how to learn wordpress",
+      "search_volume": 480,
+      "competition": "MEDIUM",
+      "competition_index": 45,
+      "cpc": 7.13
+    },
+    {
+      "keyword": "wordpress for beginners",
+      "search_volume": 320,
+      "competition": "MEDIUM",
+      "competition_index": 46,
+      "cpc": 4.28
+    },
+    {
+      "keyword": "is wordpress hard to learn",
+      "search_volume": 90,
+      "competition": "LOW",
+      "competition_index": 11,
+      "cpc": 19.76
+    },
+    {
+      "keyword": "how long does it take to learn wordpress",
+      "search_volume": 40,
+      "competition": "LOW",
+      "competition_index": 10,
+      "cpc": null
+    },
+    {
+      "keyword": "wordpress crash course",
+      "search_volume": 40,
+      "competition": "MEDIUM",
+      "competition_index": 44,
+      "cpc": 1.33
+    },
+    {
+      "keyword": "learn wordpress fast",
+      "search_volume": 20,
+      "competition": "LOW",
+      "competition_index": 21,
+      "cpc": 2.11
+    },
+    {
+      "keyword": "learn wordpress in a day",
+      "search_volume": 10,
+      "competition": "MEDIUM",
+      "competition_index": 57,
+      "cpc": null
+    },
+    {
+      "keyword": "can i learn wordpress in a day",
+      "search_volume": 10,
+      "competition": null,
+      "trend_yearly": -100,
+      "note": "en déclin, quasi mort"
+    },
+    {
+      "keyword": "learn wordpress in one day",
+      "search_volume": null,
+      "note": "<10/mo"
+    },
+    {
+      "keyword": "can you learn wordpress in a day",
+      "search_volume": null,
+      "note": "<10/mo"
+    }
+  ]
+}

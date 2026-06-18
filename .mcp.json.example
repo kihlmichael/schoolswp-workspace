@@ -99,6 +99,12 @@
     "heygen": {
       "type": "http",
       "url": "https://mcp.heygen.com/mcp/v1/"
+    },
+    "thruuu": {
+      "command": "node",
+      "args": [
+        "tools/mcp-servers/_launch-thruuu.mjs"
+      ]
     }
   }
 }

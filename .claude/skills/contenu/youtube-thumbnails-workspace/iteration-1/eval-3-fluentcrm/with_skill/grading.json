@@ -1,9 +1,0 @@
-{
-  "expectations": [
-    {"text": "5 concepts présents", "passed": true, "evidence": "5 concepts complets: La liberation, Le versus decisif, Le solopreneur equipe, L'erreur fatale, Le secret de l'initie"},
-    {"text": "Pertinence CRM", "passed": true, "evidence": "Tous les concepts référencent CRM/email/automatisation: Mailchimp, ActiveCampaign, HubSpot, dashboard CRM, tunnel de vente"},
-    {"text": "Émotions diversifiées", "passed": true, "evidence": "5 émotions différentes: Soulagement, Curiosité, Désir, Peur, Surprise"}
-  ],
-  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
-  "timing": {"total_duration_seconds": 204.1}
-}

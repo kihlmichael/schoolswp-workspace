@@ -1,0 +1,7 @@
+Editorial flat illustration, 16:9 aspect ratio, cinematic horizontal composition. Dark slate background, a deep near-black charcoal with a subtle hint of cool blue-grey, smooth even tone without noise. Centered composition.
+
+Two abstract speed traces shoot horizontally from left to right across the canvas, like long light streaks captured in motion. The upper streak is thin, elegant, soft pure white with a faint feather-like trailing wisp, suggesting light weight and aerodynamic flow. The lower streak is thicker, bolder, soft pure white with a denser flame-like exhaust tail, suggesting raw thrust and propulsion. Both streaks are clean geometric vector shapes, no photorealism, no lens flares, no shadows.
+
+A single vibrant pure grass green diagonal accent slash sits exactly in the visual center, separating the upper and lower streaks. The green is a saturated, clean, bright signature green, the kind used as a brand accent color. The slash is short, crisp, geometric, with sharp edges, and is the only chromatic element in the entire composition.
+
+No text, no letters, no numbers, no logos, no brand marks, no rocket silhouette, no feather silhouette. Strict vector style, completely flat, no 3D, no shadows, no gradients on the background. Generous negative space around the elements. The main visual elements occupy roughly 70 percent of canvas width and are centered both horizontally and vertically. Safe-zone aware so the composition stays readable when cropped to 1024 by 576 or 624 by 351 for thumbnail sizes.

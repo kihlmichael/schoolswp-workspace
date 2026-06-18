@@ -1,9 +1,9 @@
-# Lecon 6.2 — Creer un split test sur une page checkout
+# Lecon 6.2 - Creer un split test sur une page checkout
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 10 min (~1400 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Savoir creer un A/B test sur une page checkout dans CartFlows Pro. Configurer la repartition du trafic, lancer le test, lire les premiers resultats et declarer un gagnant.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu connais maintenant la theorie : une variable a la fois, volume suffisant, et commencer par le titre du checkout. Maintenant, on va le faire pour de vrai dans CartFlows.
 
@@ -20,21 +20,21 @@ Dans cette lecon, tu vas creer ton premier split test. On va cloner ta page chec
 
 ---
 
-**[SECTION 1 — Acceder a la fonction A/B Test]**
+**[SECTION 1 - Acceder a la fonction A/B Test]**
 
-**[ECRAN — CartFlows > Flows > ton flow > step Checkout]**
+**[ECRAN - CartFlows > Flows > ton flow > step Checkout]**
 
-Ouvre ton tableau de bord WordPress. Va dans CartFlows, puis Flows. Ouvre le flow que tu veux tester — par exemple ton funnel de vente principal.
+Ouvre ton tableau de bord WordPress. Va dans CartFlows, puis Flows. Ouvre le flow que tu veux tester - par exemple ton funnel de vente principal.
 
 Clique sur le step Checkout. C'est la page de paiement de ton funnel. En haut de la page, tu vois un onglet ou un bouton "A/B Test". C'est la que tout se passe.
 
-Clique dessus. CartFlows t'affiche ton checkout actuel comme "Variante A" — c'est ta version de reference, celle qui est deja en ligne.
+Clique dessus. CartFlows t'affiche ton checkout actuel comme "Variante A" - c'est ta version de reference, celle qui est deja en ligne.
 
 ---
 
-**[SECTION 2 — Creer la variante B]**
+**[SECTION 2 - Creer la variante B]**
 
-**[ECRAN — interface de creation de variante]**
+**[ECRAN - interface de creation de variante]**
 
 Clique sur "Add New Variation" ou "Ajouter une variante". CartFlows clone ta page checkout existante. Tu obtiens une copie exacte : meme design, meme contenu, meme formulaire.
 
@@ -46,9 +46,9 @@ Enregistre et ferme l'editeur. Tu as maintenant deux versions de ta page checkou
 
 ---
 
-**[SECTION 3 — Configurer la repartition du trafic]**
+**[SECTION 3 - Configurer la repartition du trafic]**
 
-**[ECRAN — reglages de repartition du trafic]**
+**[ECRAN - reglages de repartition du trafic]**
 
 De retour dans les reglages A/B Test, tu vois les deux variantes avec un curseur de repartition du trafic.
 
@@ -56,13 +56,13 @@ La recommandation : 50/50. La moitie des visiteurs voit la variante A, l'autre m
 
 CartFlows utilise un systeme de cookies pour s'assurer qu'un meme visiteur voit toujours la meme variante. Si un client visite ta page checkout lundi et revient mercredi, il verra la meme version les deux fois. C'est important pour la fiabilite des resultats.
 
-Tu peux ajuster la repartition — 70/30 par exemple — si tu veux limiter le risque en exposant moins de visiteurs a la nouvelle variante. Mais sauf raison specifique, reste sur 50/50. C'est le standard.
+Tu peux ajuster la repartition - 70/30 par exemple - si tu veux limiter le risque en exposant moins de visiteurs a la nouvelle variante. Mais sauf raison specifique, reste sur 50/50. C'est le standard.
 
 ---
 
-**[SECTION 4 — Lancer le test]**
+**[SECTION 4 - Lancer le test]**
 
-**[ECRAN — activation du test]**
+**[ECRAN - activation du test]**
 
 Une fois la repartition configuree, active le test. CartFlows commence immediatement a distribuer le trafic entre les deux variantes.
 
@@ -72,21 +72,21 @@ Le test tourne. Les visiteurs arrivent. CartFlows enregistre les conversions de 
 
 ---
 
-**[SECTION 5 — Combien de temps attendre ?]**
+**[SECTION 5 - Combien de temps attendre ?]**
 
-**[ECRAN — tableau de resultats en cours avec indicateur de confiance]**
+**[ECRAN - tableau de resultats en cours avec indicateur de confiance]**
 
 La tentation est forte de regarder les resultats au bout de 24 heures. Resiste. Les premiers resultats sont du bruit statistique. Avec 15 visiteurs par variante, un ecart de 20% ne signifie rien.
 
-Attends d'avoir au minimum 100 visiteurs par variante. Idealement 200. CartFlows affiche un indicateur de signification statistique — un code couleur. Tant que l'indicateur n'est pas vert, les resultats ne sont pas conclusifs.
+Attends d'avoir au minimum 100 visiteurs par variante. Idealement 200. CartFlows affiche un indicateur de signification statistique - un code couleur. Tant que l'indicateur n'est pas vert, les resultats ne sont pas conclusifs.
 
 En pratique, selon ton volume de trafic, un test dure entre 1 et 4 semaines. Si tu as 50 visiteurs par jour sur ton checkout, le test sera conclusif en une semaine. Si tu en as 10 par jour, compte un mois.
 
 ---
 
-**[SECTION 6 — Declarer le gagnant et archiver]**
+**[SECTION 6 - Declarer le gagnant et archiver]**
 
-**[ECRAN — declaration du gagnant dans CartFlows]**
+**[ECRAN - declaration du gagnant dans CartFlows]**
 
 L'indicateur est vert. La variante B convertit a 4.2% contre 3.1% pour la variante A. L'ecart est statistiquement significatif. Tu as ton gagnant.
 
@@ -98,9 +98,9 @@ Note ce que tu as teste et le resultat. "Titre checkout : variante B (+35% conve
 
 ---
 
-**[SECTION 7 — Et si les resultats sont similaires ?]**
+**[SECTION 7 - Et si les resultats sont similaires ?]**
 
-**[ECRAN — resultats serres sans vainqueur clair]**
+**[ECRAN - resultats serres sans vainqueur clair]**
 
 Ca arrive. Variante A : 3.5%. Variante B : 3.6%. L'indicateur reste orange meme apres 400 visiteurs. La difference n'est pas significative.
 
@@ -110,7 +110,7 @@ Un test sans vainqueur n'est pas un echec. C'est une information : ce levier spe
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Tu sais maintenant creer un split test complet dans CartFlows : cloner le checkout, modifier une variable, repartir le trafic, attendre la signification statistique, et declarer le gagnant. C'est un processus que tu vas repeter a chaque optimisation.
 
@@ -121,7 +121,7 @@ Dans la prochaine lecon, on applique la meme methode aux order bumps et aux upse
 ## Notes de production
 
 - **Visuels** : captures d'ecran CartFlows (onglet A/B Test, creation variante, repartition trafic, indicateur statistique, declaration gagnant)
-- **Captures d'ecran** : CartFlows Pro interface — flow > step Checkout > A/B Test (6 captures minimum)
+- **Captures d'ecran** : CartFlows Pro interface - flow > step Checkout > A/B Test (6 captures minimum)
 - **Ton** : pratique et pas-a-pas, oriente action
 - **Duree estimee** : ~10 min a debit normal
 - **Transition** : enchaine directement sur L6.3 (tester bumps et upsells)

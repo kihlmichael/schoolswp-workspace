@@ -1,0 +1,100 @@
+# Manifest - article avis-booknetic-wordpress (post 2969996)
+#
+# 00 = logo officiel (DEJA UPLOADE, media 2971580, sans EXIF auteur car tierce partie).
+# 01-05 = captures back-office Michael (EXIF auteur legitime). Toutes stagees.
+#
+# Upload final :  python cli.py upload --article avis-booknetic-wordpress
+# (le logo 00 est deja "processed" -> skippe automatiquement)
+
+article:
+  id: 2969996
+  slug: avis-booknetic-wordpress
+
+images:
+  # ---- 00 : LOGO (deja uploade) ----
+  - file: 00-booknetic-logo.png
+    title: "Logo officiel Booknetic - plugin de réservation WordPress"
+    alt_text: "Logo officiel du plugin Booknetic, solution de réservation et de prise de rendez-vous en ligne pour les sites WordPress"
+    caption: "Booknetic, le plugin de réservation et de prise de rendez-vous pour WordPress."
+    description: "Logo officiel de Booknetic, plugin WordPress de réservation et de prise de rendez-vous."
+    featured: false
+
+  # ---- 01 : Tableau de bord -> H2 "Liste des fonctionnalités" ----
+  - file: 01-booknetic-tableau-de-bord.jpg
+    title: "Tableau de bord Booknetic dans WordPress - schoolsWP"
+    alt_text: "Tableau de bord du plugin Booknetic dans WordPress avec les réservations à venir, l'agenda et les statistiques d'activité"
+    caption: "Le tableau de bord Booknetic centralise réservations, agenda et statistiques directement dans WordPress."
+    description: "Vue du tableau de bord Booknetic sur une installation WordPress réelle : compteurs de rendez-vous, revenu, statistiques rapides et calendrier d'activité. Capture réalisée par schoolsWP lors du test du plugin."
+    featured: false
+    exif:
+      XPTitle: "Tableau de bord Booknetic dans WordPress"
+      XPSubject: "Avis Booknetic - schoolsWP"
+      XPKeywords: "Booknetic, tableau de bord, réservation WordPress, prise de rendez-vous, statistiques, schoolsWP"
+      XPComment: "Tableau de bord Booknetic teste sur WordPress"
+      XPAuthor: "Michael KIHL - schoolsWP"
+      Copyright: "(c) 2026 Michael KIHL - Tous droits reserves"
+      ImageDescription: "Tableau de bord Booknetic dans WordPress"
+
+  # ---- 02 : Ajout membre du personnel -> H3 "Simplifie la gestion de ton équipe et de tes lieux" ----
+  - file: 02-booknetic-gestion-equipe-services.jpg
+    title: "Ajout d'un membre du personnel dans Booknetic - schoolsWP"
+    alt_text: "Formulaire d'ajout d'un membre du personnel dans Booknetic avec profession, emplacements, services et calendrier hebdomadaire"
+    caption: "Chaque membre du personnel reçoit profession, emplacements, services et calendrier dans Booknetic."
+    description: "Ajout d'un membre du personnel dans Booknetic : nom, profession, emplacements, services rattachés et calendrier hebdomadaire individuel. Capture réalisée par schoolsWP lors du test du plugin."
+    featured: false
+    exif:
+      XPTitle: "Ajout d'un membre du personnel dans Booknetic"
+      XPSubject: "Avis Booknetic - schoolsWP"
+      XPKeywords: "Booknetic, membre du personnel, employés, services, emplacements, calendrier, schoolsWP"
+      XPComment: "Ajout d'un membre du personnel dans Booknetic"
+      XPAuthor: "Michael KIHL - schoolsWP"
+      Copyright: "(c) 2026 Michael KIHL - Tous droits reserves"
+      ImageDescription: "Ajout d'un membre du personnel dans Booknetic"
+
+  # ---- 03 : Workflow / rappels -> H3 "Automatise tes rappels pour réduire les absences" ----
+  - file: 03-booknetic-workflow-rappels.jpg
+    title: "Création d'un workflow d'automatisation Booknetic - schoolsWP"
+    alt_text: "Création d'un workflow d'automatisation dans Booknetic déclenchant des rappels de rendez-vous automatiques par email et SMS"
+    caption: "Les workflows Booknetic automatisent rappels et notifications selon l'événement de réservation."
+    description: "Création d'un workflow dans Booknetic : on choisit l'événement déclencheur (When this happens) puis l'action (Do this) pour automatiser rappels et notifications. Capture réalisée par schoolsWP pendant le test."
+    featured: false
+    exif:
+      XPTitle: "Workflow d'automatisation dans Booknetic"
+      XPSubject: "Avis Booknetic - schoolsWP"
+      XPKeywords: "Booknetic, workflow, automatisation, rappels automatiques, notifications, réservation WordPress, schoolsWP"
+      XPComment: "Creation d'un workflow d'automatisation dans Booknetic"
+      XPAuthor: "Michael KIHL - schoolsWP"
+      Copyright: "(c) 2026 Michael KIHL - Tous droits reserves"
+      ImageDescription: "Workflow d'automatisation dans Booknetic"
+
+  # ---- 04 : Paramètres de paiement -> H3 "Connecte tes outils favoris et encaisse tes paiements" ----
+  - file: 04-booknetic-parametres-paiement.jpg
+    title: "Paramètres de paiement Booknetic dans WordPress - schoolsWP"
+    alt_text: "Paramètres de paiement de Booknetic dans WordPress : devise, format des prix et statuts de réservation selon l'encaissement"
+    caption: "Booknetic gère devise, format des prix, acompte et statuts de réservation à l'encaissement."
+    description: "Paramètres de paiement de Booknetic : choix de la devise, format d'affichage des prix, délai d'attente et statuts de réservation selon le succès ou l'échec du paiement. Capture issue de l'avis schoolsWP."
+    featured: false
+    exif:
+      XPTitle: "Paramètres de paiement de Booknetic"
+      XPSubject: "Avis Booknetic - schoolsWP"
+      XPKeywords: "Booknetic, paiement, devise, Stripe, PayPal, statuts réservation, WordPress, schoolsWP"
+      XPComment: "Parametres de paiement de Booknetic dans WordPress"
+      XPAuthor: "Michael KIHL - schoolsWP"
+      Copyright: "(c) 2026 Michael KIHL - Tous droits reserves"
+      ImageDescription: "Parametres de paiement de Booknetic"
+
+  # ---- 05 : Preuve sociale -> H2 "Avis clients" (note REELLE de la capture : 4,90/5 sur 472 avis) ----
+  - file: 05-booknetic-note-codecanyon.jpg
+    title: "Note 4,90 sur 5 de Booknetic sur CodeCanyon - schoolsWP"
+    alt_text: "Note de 4,90 sur 5 de Booknetic sur CodeCanyon, basée sur 472 avis clients vérifiés et plus de 10 700 ventes réalisées"
+    caption: "Booknetic affiche 4,90/5 sur CodeCanyon sur la base de 472 avis et plus de 10 700 ventes."
+    description: "Page CodeCanyon (Envato Market) de Booknetic affichant la note de 4,90/5 sur 472 avis et 10 777 ventes, preuve de la satisfaction des utilisateurs. Capture réalisée par schoolsWP pour la section Avis clients."
+    featured: false
+    exif:
+      XPTitle: "Note 4,90 sur 5 de Booknetic sur CodeCanyon"
+      XPSubject: "Avis Booknetic - schoolsWP"
+      XPKeywords: "Booknetic, CodeCanyon, note 4,90, 472 avis, preuve sociale, réservation WordPress, schoolsWP"
+      XPComment: "Note CodeCanyon de Booknetic, 472 avis"
+      XPAuthor: "Michael KIHL - schoolsWP"
+      Copyright: "(c) 2026 Michael KIHL - Tous droits reserves"
+      ImageDescription: "Note 4,90 sur 5 de Booknetic sur CodeCanyon"

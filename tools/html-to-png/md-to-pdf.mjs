@@ -230,7 +230,9 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(
+  process.env.PW_EXEC ? { executablePath: process.env.PW_EXEC } : {}
+);
 const context = await browser.newContext();
 const page = await context.newPage();
 

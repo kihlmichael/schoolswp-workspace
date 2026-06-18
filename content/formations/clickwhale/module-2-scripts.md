@@ -1,12 +1,12 @@
-# Module 2 — Créer et gérer tes liens
+# Module 2 - Créer et gérer tes liens
 
-> **Formation** : ClickWhale — schoolsWP
+> **Formation** : ClickWhale - schoolsWP
 > **Prérequis** : Module 1 terminé
 > **Objectif** : Tu sais créer des liens raccourcis, choisir le bon type de redirection, organiser par catégories, et importer des liens en masse via CSV.
 
 ---
 
-## 2.1 — Crée ton premier lien raccourci
+## 2.1 - Crée ton premier lien raccourci
 
 **Durée cible : 5 min**
 
@@ -16,11 +16,11 @@ Ton premier lien affilié en 2 minutes chrono. C'est ce qu'on va faire dans cett
 
 [SCREENCAST: Dashboard WordPress > ClickWhale > Links]
 
-**Étape 1 — Accède à l'interface de création**
+**Étape 1 - Accède à l'interface de création**
 
 Rends-toi dans ton dashboard WordPress. Dans le menu latéral gauche, clique sur **ClickWhale**, puis sur **Links**. Tu arrives sur la liste de tous tes liens. Pour l'instant, elle est vide. Clique sur **Add New** en haut de la page.
 
-**Étape 2 — Remplis les champs essentiels**
+**Étape 2 - Remplis les champs essentiels**
 
 [SCREENCAST: Formulaire de création de lien ClickWhale]
 
@@ -30,7 +30,7 @@ Tu as trois champs à remplir :
 - **Slug** : c'est la partie qui apparaît dans l'URL. Si tu tapes "tutorlms", ton lien sera `tonsite.com/go/tutorlms`. Le préfixe `/go/` dépend de ce que tu as configuré dans le Module 1. Choisis un slug court et lisible.
 - **Target URL** : colle ici l'URL de destination. C'est le vrai lien affilié, celui que tu as récupéré sur la plateforme d'affiliation.
 
-**Étape 3 — Sauvegarde et teste**
+**Étape 3 - Sauvegarde et teste**
 
 [SCREENCAST: Bouton Save + test du lien dans un nouvel onglet]
 
@@ -38,11 +38,11 @@ Clique sur **Save**. Ton lien est créé. Maintenant, ouvre un nouvel onglet dan
 
 [TALKING HEAD]
 
-**TRANSITION** : Ton lien fonctionne, mais on a survolé les champs. Dans la leçon suivante, on va détailler chaque champ — slug, titre, description, catégorie — pour que tu comprennes exactement quoi mettre et pourquoi.
+**TRANSITION** : Ton lien fonctionne, mais on a survolé les champs. Dans la leçon suivante, on va détailler chaque champ - slug, titre, description, catégorie - pour que tu comprennes exactement quoi mettre et pourquoi.
 
 ---
 
-## 2.2 — Slug, titre, description : les champs à remplir
+## 2.2 - Slug, titre, description : les champs à remplir
 
 **Durée cible : 5 min**
 
@@ -52,13 +52,13 @@ Quand tu crées un lien dans ClickWhale, tu as plusieurs champs devant toi. Cert
 
 [SCREENCAST: Formulaire de création de lien ClickWhale, champs visibles]
 
-**Champ 1 — Title**
+**Champ 1 - Title**
 
 Le titre, c'est ton repère interne. Tes visiteurs ne le voient jamais. Il sert uniquement à toi pour retrouver tes liens dans la liste.
 
-Sois explicite. "Lien 1" ne t'aidera pas quand tu auras 50 liens. Préfère quelque chose comme "Affilié TutorLMS — page pricing" ou "Affilié Elementor — lien footer".
+Sois explicite. "Lien 1" ne t'aidera pas quand tu auras 50 liens. Préfère quelque chose comme "Affilié TutorLMS - page pricing" ou "Affilié Elementor - lien footer".
 
-**Champ 2 — Slug**
+**Champ 2 - Slug**
 
 Le slug, c'est la partie visible dans l'URL. Si ton préfixe est `/go/` et que ton slug est `tutorlms`, l'URL sera `tonsite.com/go/tutorlms`.
 
@@ -69,15 +69,15 @@ La convention schoolsWP : `/go/nom-outil`. Tout en minuscules, pas d'espaces, pa
 - `fluentcrm` pour FluentCRM
 - `rankmath` pour RankMath
 
-Si tu as plusieurs liens pour le même outil — par exemple un lien vers la page pricing et un vers la page features — ajoute un suffixe : `tutorlms-pricing`, `tutorlms-features`.
+Si tu as plusieurs liens pour le même outil - par exemple un lien vers la page pricing et un vers la page features - ajoute un suffixe : `tutorlms-pricing`, `tutorlms-features`.
 
-**Champ 3 — Target URL**
+**Champ 3 - Target URL**
 
 C'est l'URL de destination. Le vrai lien affilié brut, celui que tu récupères sur la plateforme d'affiliation. Tu le colles ici, point.
 
 Vérifie toujours que l'URL fonctionne avant de la coller. Un lien cassé dès le départ, c'est du trafic perdu.
 
-**Champ 4 — Description**
+**Champ 4 - Description**
 
 [SCREENCAST: Champ description dans le formulaire]
 
@@ -85,7 +85,7 @@ Optionnel, mais utile. C'est une note interne. Tu peux y mettre le taux de commi
 
 Personne ne voit ce champ à part toi dans le dashboard.
 
-**Champ 5 — Category**
+**Champ 5 - Category**
 
 On détaillera les catégories dans la leçon 2.5, mais sache que tu peux assigner une catégorie dès la création. Ça t'évitera de devoir y revenir plus tard.
 
@@ -95,7 +95,7 @@ On détaillera les catégories dans la leçon 2.5, mais sache que tu peux assign
 
 ---
 
-## 2.3 — Les 5 types de redirection : lequel choisir et pourquoi
+## 2.3 - Les 5 types de redirection : lequel choisir et pourquoi
 
 **Durée cible : 7 min**
 
@@ -105,33 +105,33 @@ Quand quelqu'un clique sur ton lien `tonsite.com/go/tutorlms`, le serveur doit r
 
 [SCREENCAST: Formulaire de lien ClickWhale > menu déroulant "Redirect Type"]
 
-**Type 1 — 301 Moved Permanently**
+**Type 1 - 301 Moved Permanently**
 
 Le 301 dit au navigateur : "cette page a déménagé pour de bon, ne reviens plus ici." Le navigateur met le résultat en cache. Google aussi. C'est le bon choix quand tu changes définitivement l'URL d'une page de ton site.
 
 Pour l'affiliation ? Mauvaise idée. Le navigateur met en cache la destination, ce qui veut dire que les clics suivants ne passent plus par ClickWhale. Ton tracking devient faux.
 
-**Type 2 — 302 Found (Temporarily Moved)**
+**Type 2 - 302 Found (Temporarily Moved)**
 
 Le 302 dit : "cette page est temporairement ailleurs." Le navigateur ne met pas systématiquement en cache, mais certains le font quand même. Utilisé classiquement pour des pages de maintenance ou des redirections de test.
 
 Pour l'affiliation, c'est mieux que le 301, mais pas optimal.
 
-**Type 3 — 303 See Other**
+**Type 3 - 303 See Other**
 
 Le 303 est spécifique : il dit "va voir cette autre page avec une requête GET." On l'utilise principalement après la soumission d'un formulaire, pour rediriger vers une page de confirmation.
 
 Pour les liens affiliés, tu n'en as pas besoin. Passe.
 
-**Type 4 — 307 Temporarily Redirect**
+**Type 4 - 307 Temporarily Redirect**
 
 [SCREENCAST: Sélection du 307 dans le menu déroulant]
 
-Le 307, c'est la version stricte du 302. Il garantit que la méthode HTTP est préservée et — point clé — le navigateur ne met jamais le résultat en cache. Chaque clic repasse par ClickWhale. Chaque clic est compté.
+Le 307, c'est la version stricte du 302. Il garantit que la méthode HTTP est préservée et - point clé - le navigateur ne met jamais le résultat en cache. Chaque clic repasse par ClickWhale. Chaque clic est compté.
 
 C'est le choix recommandé pour tes liens affiliés.
 
-**Type 5 — 308 Permanent Redirect**
+**Type 5 - 308 Permanent Redirect**
 
 Le 308 est la version stricte du 301 pour les requêtes POST. C'est un cas technique très rare. Tu n'en auras probablement jamais besoin pour de l'affiliation.
 
@@ -141,19 +141,19 @@ Le 308 est la version stricte du 301 pour les requêtes POST. C'est un cas techn
 
 | Type | Usage | Pour l'affiliation ? |
 |------|-------|---------------------|
-| 301 | Déménagement permanent | Non — cache = tracking cassé |
-| 302 | Redirection temporaire | Bof — cache possible |
-| 303 | Post-formulaire | Non — pas le bon usage |
-| **307** | **Redirection temporaire stricte** | **Oui — recommandé** |
-| 308 | Permanent strict (POST) | Non — cas rare |
+| 301 | Déménagement permanent | Non - cache = tracking cassé |
+| 302 | Redirection temporaire | Bof - cache possible |
+| 303 | Post-formulaire | Non - pas le bon usage |
+| **307** | **Redirection temporaire stricte** | **Oui - recommandé** |
+| 308 | Permanent strict (POST) | Non - cas rare |
 
 **La recommandation schoolsWP : utilise le 307 pour tous tes liens affiliés.** Pas de cache navigateur, tracking précis, chaque clic est comptabilisé.
 
-**TRANSITION** : Le type de redirection, c'est fait. Mais il y a deux attributs SEO à cocher systématiquement sur tes liens affiliés. Nofollow et Sponsored — on voit ça tout de suite.
+**TRANSITION** : Le type de redirection, c'est fait. Mais il y a deux attributs SEO à cocher systématiquement sur tes liens affiliés. Nofollow et Sponsored - on voit ça tout de suite.
 
 ---
 
-## 2.4 — Nofollow et Sponsored : les attributs SEO essentiels
+## 2.4 - Nofollow et Sponsored : les attributs SEO essentiels
 
 **Durée cible : 5 min**
 
@@ -161,7 +161,7 @@ Le 308 est la version stricte du 301 pour les requêtes POST. C'est un cas techn
 
 Quand tu crées un lien affilié, Google attend de toi que tu le signales. Si tu ne le fais pas, tu risques une pénalité manuelle. Deux attributs existent pour ça : nofollow et sponsored. Dans ClickWhale, c'est deux cases à cocher. Mais encore faut-il comprendre ce qu'elles font.
 
-**Attribut 1 — Nofollow**
+**Attribut 1 - Nofollow**
 
 [SCREENCAST: Formulaire de lien > case "Nofollow"]
 
@@ -169,7 +169,7 @@ Quand tu ajoutes `rel="nofollow"` à un lien, tu dis à Google : "ne suis pas ce
 
 Pour les liens affiliés, c'est obligatoire. Tu ne veux pas que ton site distribue du PageRank vers des pages commerciales externes.
 
-**Attribut 2 — Sponsored**
+**Attribut 2 - Sponsored**
 
 [SCREENCAST: Formulaire de lien > case "Sponsored"]
 
@@ -181,7 +181,7 @@ Nofollow est compris par tous les moteurs de recherche depuis des années. Spons
 
 [SCREENCAST: Création d'un lien avec les deux cases cochées]
 
-**Dans ClickWhale, c'est simple** : à chaque création de lien affilié, coche les deux cases — **Nofollow** et **Sponsored**. Pas de réflexion à avoir, c'est systématique.
+**Dans ClickWhale, c'est simple** : à chaque création de lien affilié, coche les deux cases - **Nofollow** et **Sponsored**. Pas de réflexion à avoir, c'est systématique.
 
 **Ce qui se passe si tu oublies :**
 
@@ -195,7 +195,7 @@ Google peut considérer que tu manipules ton classement en transmettant du jus S
 
 ---
 
-## 2.5 — Organise tes liens par catégories
+## 2.5 - Organise tes liens par catégories
 
 **Durée cible : 5 min**
 
@@ -205,31 +205,31 @@ Google peut considérer que tu manipules ton classement en transmettant du jus S
 
 [SCREENCAST: ClickWhale > Links > Categories]
 
-**Étape 1 — Créer tes catégories**
+**Étape 1 - Créer tes catégories**
 
 Dans le menu ClickWhale, va dans **Links**, puis clique sur **Categories**. Tu arrives sur l'interface de gestion des catégories. C'est le même principe que les catégories WordPress classiques : un nom, un slug, et c'est tout.
 
-**Étape 2 — Choisir ta convention de nommage**
+**Étape 2 - Choisir ta convention de nommage**
 
 La convention schoolsWP suit les piliers thématiques du site :
 
-- **LMS** — tous les liens liés à la formation en ligne (TutorLMS, LearnDash, etc.)
-- **CRM** — les outils de relation client (FluentCRM, FluentSupport, etc.)
-- **SEO** — les outils de référencement (RankMath, etc.)
-- **Automatisation** — les outils d'automatisation (n8n, FluentCRM Automations, etc.)
-- **Hébergement** — les hébergeurs WordPress
+- **LMS** - tous les liens liés à la formation en ligne (TutorLMS, LearnDash, etc.)
+- **CRM** - les outils de relation client (FluentCRM, FluentSupport, etc.)
+- **SEO** - les outils de référencement (RankMath, etc.)
+- **Automatisation** - les outils d'automatisation (n8n, FluentCRM Automations, etc.)
+- **Hébergement** - les hébergeurs WordPress
 
 [SCREENCAST: Création de 3-4 catégories dans l'interface]
 
 Crée tes catégories en fonction de tes thématiques à toi. L'important, c'est d'avoir une logique cohérente que tu pourras tenir dans la durée.
 
-**Étape 3 — Assigner une catégorie à la création**
+**Étape 3 - Assigner une catégorie à la création**
 
 [SCREENCAST: Formulaire de création de lien > champ Category]
 
 Quand tu crées un nouveau lien, le champ **Category** est disponible directement dans le formulaire. Prends l'habitude de l'assigner immédiatement. Revenir catégoriser 50 liens après coup, c'est une corvée que tu veux éviter.
 
-**Étape 4 — Filtrer par catégorie**
+**Étape 4 - Filtrer par catégorie**
 
 [SCREENCAST: Liste des liens > filtre par catégorie]
 
@@ -241,17 +241,17 @@ De retour dans la liste des liens, tu peux filtrer par catégorie. En un coup d'
 
 ---
 
-## 2.6 — Importe tes liens en masse via CSV
+## 2.6 - Importe tes liens en masse via CSV
 
 **Durée cible : 6 min**
 
 [TALKING HEAD]
 
-Si tu pars de zéro, tu peux créer tes liens un par un. Mais si tu as déjà un tableur avec tes liens affiliés — ou si tu migres depuis un autre plugin — l'import CSV va te faire gagner un temps considérable.
+Si tu pars de zéro, tu peux créer tes liens un par un. Mais si tu as déjà un tableur avec tes liens affiliés - ou si tu migres depuis un autre plugin - l'import CSV va te faire gagner un temps considérable.
 
 [SCREENCAST: Google Sheets ou Excel avec un tableau de liens]
 
-**Étape 1 — Prépare ton fichier CSV**
+**Étape 1 - Prépare ton fichier CSV**
 
 Ouvre ton tableur et crée les colonnes suivantes :
 
@@ -268,13 +268,13 @@ Quelques règles :
 
 Exporte en format CSV (séparateur virgule, encodage UTF-8).
 
-**Étape 2 — Lance l'import dans ClickWhale**
+**Étape 2 - Lance l'import dans ClickWhale**
 
 [SCREENCAST: ClickWhale > Tools > Import]
 
 Va dans **ClickWhale > Tools > Import**. Clique sur **Choose File** et sélectionne ton fichier CSV.
 
-**Étape 3 — Fais le mapping des colonnes**
+**Étape 3 - Fais le mapping des colonnes**
 
 [SCREENCAST: Interface de mapping des colonnes]
 
@@ -285,13 +285,13 @@ ClickWhale te demande de faire correspondre les colonnes de ton CSV avec les cha
 - Colonne "Target URL" → champ **Target URL**
 - Et ainsi de suite pour Nofollow, Sponsored, Category.
 
-**Étape 4 — Vérifie les champs et lance l'import**
+**Étape 4 - Vérifie les champs et lance l'import**
 
 [SCREENCAST: Bouton "Run Importer" + résultat]
 
 Avant de lancer, vérifie l'aperçu. ClickWhale te montre les premières lignes telles qu'elles seront importées. Si tout est bon, clique sur **Run Importer**.
 
-**Étape 5 — Vérifie le résultat**
+**Étape 5 - Vérifie le résultat**
 
 [SCREENCAST: Liste des liens après import]
 
@@ -308,7 +308,7 @@ Teste 2 ou 3 liens au hasard en les ouvrant dans un nouvel onglet pour confirmer
 
 ---
 
-## 2.7 — Exercice — Crée 5 liens affiliés pour tes outils WordPress préférés
+## 2.7 - Exercice - Crée 5 liens affiliés pour tes outils WordPress préférés
 
 **Format : Exercice pratique (pas de script vidéo)**
 
@@ -320,12 +320,12 @@ Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens 
 
 ### Étapes à suivre
 
-1. **Choisis 5 outils ou services WordPress** pour lesquels tu as (ou peux obtenir) un lien affilié. Si tu n'as pas encore de programme d'affiliation, utilise les URLs classiques des outils — tu remplaceras par les vrais liens affiliés plus tard.
+1. **Choisis 5 outils ou services WordPress** pour lesquels tu as (ou peux obtenir) un lien affilié. Si tu n'as pas encore de programme d'affiliation, utilise les URLs classiques des outils - tu remplaceras par les vrais liens affiliés plus tard.
 
 2. **Crée une catégorie** pour chaque thématique si ce n'est pas déjà fait (ex : LMS, CRM, SEO, Hébergement).
 
 3. **Pour chaque lien, remplis tous les champs** :
-   - Title : nom explicite (ex : "Affilié TutorLMS — page pricing")
+   - Title : nom explicite (ex : "Affilié TutorLMS - page pricing")
    - Slug : convention `/go/nom-outil` (ex : `tutorlms`)
    - Target URL : l'URL de destination
    - Redirection : **307**
@@ -360,13 +360,13 @@ Mettre en pratique tout ce que tu as appris dans le Module 2 en créant 5 liens 
 
 ---
 
-## 2.8 — Quiz — Valide tes acquis M2
+## 2.8 - Quiz - Valide tes acquis M2
 
 **Format : QCM 8 questions (pas de script vidéo)**
 
 ---
 
-### Question 1 — Création de lien
+### Question 1 - Création de lien
 
 Quels sont les 3 champs obligatoires pour créer un lien dans ClickWhale ?
 
@@ -379,7 +379,7 @@ Quels sont les 3 champs obligatoires pour créer un lien dans ClickWhale ?
 
 ---
 
-### Question 2 — Convention de slug
+### Question 2 - Convention de slug
 
 Selon la convention schoolsWP, quel slug est correct pour un lien affilié TutorLMS ?
 
@@ -392,20 +392,20 @@ Selon la convention schoolsWP, quel slug est correct pour un lien affilié Tutor
 
 ---
 
-### Question 3 — Type de redirection
+### Question 3 - Type de redirection
 
 Quel type de redirection est recommandé pour les liens affiliés et pourquoi ?
 
-- A) 301 — car il est permanent et bon pour le SEO
-- B) 302 — car il est le plus courant
-- C) 307 — car le navigateur ne met pas en cache, donc chaque clic est compté
-- D) 308 — car il préserve la méthode HTTP
+- A) 301 - car il est permanent et bon pour le SEO
+- B) 302 - car il est le plus courant
+- C) 307 - car le navigateur ne met pas en cache, donc chaque clic est compté
+- D) 308 - car il préserve la méthode HTTP
 
 **Bonne réponse : C**
 
 ---
 
-### Question 4 — Problème du 301
+### Question 4 - Problème du 301
 
 Pourquoi le 301 est-il déconseillé pour les liens affiliés ?
 
@@ -418,7 +418,7 @@ Pourquoi le 301 est-il déconseillé pour les liens affiliés ?
 
 ---
 
-### Question 5 — Attributs SEO
+### Question 5 - Attributs SEO
 
 Quels attributs SEO doivent être cochés sur un lien affilié ?
 
@@ -431,7 +431,7 @@ Quels attributs SEO doivent être cochés sur un lien affilié ?
 
 ---
 
-### Question 6 — Rôle de Sponsored
+### Question 6 - Rôle de Sponsored
 
 Que signifie l'attribut `rel="sponsored"` pour Google ?
 
@@ -444,7 +444,7 @@ Que signifie l'attribut `rel="sponsored"` pour Google ?
 
 ---
 
-### Question 7 — Import CSV
+### Question 7 - Import CSV
 
 Dans quel ordre se déroule l'import CSV dans ClickWhale ?
 
@@ -457,7 +457,7 @@ Dans quel ordre se déroule l'import CSV dans ClickWhale ?
 
 ---
 
-### Question 8 — Organisation
+### Question 8 - Organisation
 
 À partir de combien de liens environ l'organisation par catégories devient-elle vraiment nécessaire ?
 

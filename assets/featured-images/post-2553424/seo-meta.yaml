@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/wordpress-7-nouveautes-guide-complet/
+    title: WordPress 7.0, le guide complet de la phase 3 de Gutenberg
+    subject: "WordPress 7.0 : la phase 3 de Gutenberg, collaboration en temps réel, DataViews et migration"
+    description: "Image à la une du guide complet schoolsWP sur WordPress 7.0, la phase 3 de Gutenberg. Au programme : l'édition collaborative en temps réel avec édition multi-utilisateurs et commentaires intégrés, la nouvelle interface DataViews pour gérer contenus et médias, de nouveaux blocs natifs comme le fil d'Ariane, et une migration guidée en 5 étapes. Prérequis technique : PHP 7.4. Collaborer, gérer et migrer dans WordPress 7.0."
+    alt: "Guide schoolsWP de WordPress 7.0 et la phase 3 de Gutenberg, collaboration temps réel, interface DataViews et migration guidée"
+    keywords:
+      [
+        wordpress 7.0,
+        gutenberg phase 3,
+        collaboration wordpress temps réel,
+        dataviews wordpress,
+        migration wordpress 7,
+        nouveautés wordpress 7,
+        schoolsWP,
+      ]

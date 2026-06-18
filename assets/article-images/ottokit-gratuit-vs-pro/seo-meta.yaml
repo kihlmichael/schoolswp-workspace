@@ -1,0 +1,59 @@
+defaults:
+  author: "Michaël KIHL"
+  copyright: "© 2026 Michaël KIHL - Tous droits réservés"
+  url: "https://schoolswp.com/ottokit-gratuit-vs-pro/"
+images:
+  - file: "ottokit-dashboard-automatisation.webp"
+    title: "Tableau de bord OttoKit - automatisation WordPress"
+    subject: "Capture du tableau de bord OttoKit, plugin d'automatisation WordPress, pour un article schoolsWP."
+    description: "Le tableau de bord OttoKit : tu décris ton automatisation en langage naturel, l'outil construit le workflow. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Tableau de bord OttoKit avec la zone de création d'automatisation en langage naturel et le menu latéral Workflows, Tables, Forms"
+    keywords: ["OttoKit", "tableau de bord OttoKit", "automatisation WordPress", "OttoKit Gratuit vs Pro", "plugin automatisation", "schoolsWP"]
+  - file: "ottokit-recipes-modeles-automatisation.webp"
+    title: "Recettes OttoKit - modèles d'automatisation WordPress"
+    subject: "Capture de la bibliothèque de recettes OttoKit pour un article schoolsWP."
+    description: "La bibliothèque de recettes OttoKit : des modèles d'automatisation prêts à l'emploi, classés par cas d'usage. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Bibliothèque de recettes OttoKit classées par cas d'usage IA, e-commerce, e-mail et leads, avec des modèles d'automatisation prêts à l'emploi"
+    keywords: ["OttoKit", "recettes OttoKit", "modèles automatisation", "automatisation WordPress", "OttoKit Gratuit vs Pro", "schoolsWP"]
+  - file: "ottokit-editeur-workflow-visuel.webp"
+    title: "Éditeur de workflow visuel OttoKit avec agent IA"
+    subject: "Capture de l'éditeur de workflow visuel OttoKit pour un article schoolsWP."
+    description: "L'éditeur visuel d'OttoKit : un agent IA Otto orchestre la publication sur Slack, Facebook, X et Discord. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Éditeur de workflow visuel OttoKit montrant un agent IA Otto connecté à Slack, Facebook, X et Discord pour publier du contenu"
+    keywords: ["OttoKit", "éditeur workflow OttoKit", "agent IA OttoKit", "workflow visuel", "automatisation WordPress", "schoolsWP"]
+  - file: "ottokit-bibliotheque-integrations.webp"
+    title: "Intégrations OttoKit - applications connectables WordPress"
+    subject: "Capture de la bibliothèque d'intégrations OttoKit pour un article schoolsWP."
+    description: "La bibliothèque d'intégrations OttoKit : des centaines d'applications connectables, classées par catégorie. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Bibliothèque d'intégrations OttoKit avec les catégories d'applications IA, Business, Commerce et des apps comme Airtable, Brevo et Claude"
+    keywords: ["OttoKit", "intégrations OttoKit", "applications OttoKit", "automatisation WordPress", "OttoKit Gratuit vs Pro", "schoolsWP"]
+  - file: "ottokit-plan-gratuit-details.webp"
+    title: "Plan gratuit OttoKit - ce qui est inclus à 0 dollar"
+    subject: "Capture du détail du plan gratuit OttoKit pour un article schoolsWP."
+    description: "Le plan gratuit OttoKit à 0 dollar : 20 workflows, 1 connexion WordPress et toutes les intégrations disponibles. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Détail du plan gratuit OttoKit à 0 dollar avec 20 workflows, 1 connexion WordPress, toutes les intégrations et un support standard"
+    keywords: ["OttoKit gratuit", "plan gratuit OttoKit", "OttoKit Free", "OttoKit Gratuit vs Pro", "automatisation WordPress", "schoolsWP"]
+  - file: "ottokit-usage-limites-taches.webp"
+    title: "Suivi des quotas OttoKit - panneau Usage et Limit"
+    subject: "Capture du panneau Usage & Limit d'OttoKit pour un article schoolsWP."
+    description: "Le panneau Usage & Limit d'OttoKit suit la consommation de tâches en temps réel, ici sur un plan Business. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Panneau Usage et Limit d'OttoKit affichant la consommation de tâches, de workflows et de membres pour le plan en cours"
+    keywords: ["OttoKit", "quotas OttoKit", "tâches OttoKit", "limites OttoKit", "OttoKit Gratuit vs Pro", "schoolsWP"]
+  - file: "ottokit-ajout-action-workflow.webp"
+    title: "Ajout d'une action dans un workflow OttoKit"
+    subject: "Capture du panneau d'ajout d'action dans l'éditeur OttoKit pour un article schoolsWP."
+    description: "L'ajout d'une action dans un workflow OttoKit : applications, Webhooks entrants, Formatter ou appel API. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Panneau d'ajout d'action dans l'éditeur OttoKit avec les options Apps, OttoKit Tables, Webhook, Formatter et API"
+    keywords: ["OttoKit", "action workflow OttoKit", "webhook OttoKit", "automatisation WordPress", "OttoKit Gratuit vs Pro", "schoolsWP"]
+  - file: "ottokit-historique-executions.webp"
+    title: "Historique d'exécution OttoKit - journal des workflows"
+    subject: "Capture de l'historique d'exécution OttoKit pour un article schoolsWP."
+    description: "L'historique d'exécution d'OttoKit : chaque workflow lancé, son statut et les tâches consommées. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Historique d'exécution OttoKit listant les workflows lancés, leur titre et le nombre de tâches consommées par exécution"
+    keywords: ["OttoKit", "historique OttoKit", "logs OttoKit", "débogage OttoKit", "OttoKit Gratuit vs Pro", "schoolsWP"]
+  - file: "ottokit-tarifs-plans-payants.webp"
+    title: "Tarifs OttoKit - plans payants Pro, Business, Business Plus"
+    subject: "Capture de la page tarifs OttoKit pour un article schoolsWP."
+    description: "La grille tarifaire OttoKit : les plans payants Pro, Business et Business Plus, en facturation annuelle ou à vie. Capture pour l'article schoolsWP OttoKit Gratuit vs Pro."
+    alt: "Page tarifs OttoKit avec les plans payants Pro, Business et Business Plus et le sélecteur de facturation annuelle ou à vie"
+    keywords: ["OttoKit prix", "tarifs OttoKit", "OttoKit Pro", "plans OttoKit", "OttoKit Gratuit vs Pro", "schoolsWP"]

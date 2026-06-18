@@ -1,0 +1,253 @@
+# schoolsWP
+
+> Communauté et ressources pour apprendre à maîtriser WordPress simplement. Conseils concrets, tutoriels, comparatifs et avis d'outils testés sur le terrain par Michaël KIHL, pour gagner en clarté, en méthode et en autonomie sur tes projets web. Pour débutants comme pour utilisateurs avancés.
+
+schoolsWP couvre l'écosystème WordPress complet : SEO, performance, CRM et marketing automation, e-commerce, LMS et formation, design, hébergement, automatisation. Chaque avis repose sur un test réel par un opérateur WordPress, jamais sur une fiche revendeur.
+
+- **Auteur / entité** : Michaël KIHL, formateur et opérateur WordPress. Contact : contact@michaelkihl.fr
+- **Marque** : écrire toujours "schoolsWP" (cette graphie exacte).
+- **Structure des URLs** : articles à `https://schoolswp.com/{slug}/` ; pages catégorie (thème ou outil) à `https://schoolswp.com/{pilier}/{outil}/` (ex. `https://schoolswp.com/performance-wordpress/flyingpress/`).
+
+## Sitemaps
+- [XML Sitemap](https://schoolswp.com/sitemap_index.xml) : toutes les pages crawlables et indexables.
+
+## Articles - SEO & visibilité
+- [Avis Rank Math : le plugin SEO incontournable en 2026](https://schoolswp.com/avis-rank-math/) : mon avis détaillé sur le plugin SEO WordPress : Content AI, Schema, tarifs, version gratuite et limites.
+- [Avis SureRank : le plugin SEO gratuit, simple et rapide](https://schoolswp.com/surerank-avis-plugin-seo/) : faut-il installer ce plugin SEO 100% gratuit ? Avantages, limites et verdict.
+- [SEOKEY : le plugin SEO essentiel pour WordPress](https://schoolswp.com/seokey-plugin-seo-wordpress/) : booster son trafic organique avec SEOKEY, mode d'emploi.
+- [Changer d'extension SEO : résoudre les problèmes de trafic](https://schoolswp.com/changer-extension-seo-wordpress/) : migrer ses données SEO sans risque, sécuriser l'indexation et nettoyer la base.
+- [Avis ChatSEO : test de l'assistant SEO IA en 2026](https://schoolswp.com/avis-chatseo-test-complet/) : l'IA qui simplifie la Search Console pour développer son trafic.
+- [PageRadar avis : l'outil SEO qui anticipe les problèmes](https://schoolswp.com/pageradar-avis/) : monitoring SEO continu : Core Web Vitals, 404, liens affiliés, AI Overviews, alertes temps réel.
+- [Link Whisper : le plugin qui automatise ton maillage interne](https://schoolswp.com/link-whisper-avis/) : gagner du temps et booster son référencement via le maillage interne automatisé.
+- [Thot SEO : l'outil sémantique pour optimiser tes contenus](https://schoolswp.com/thot-seo-avis/) : analyse sémantique de la concurrence pour savoir quels mots utiliser. Fonctionnalités, tarifs, usage.
+- [Meilleures plateformes de netlinking pour WordPress en 2026](https://schoolswp.com/plateforme-netlinking-wordpress/) : comparatif Linkuma, LinksGarden et SemJuice pour des backlinks de qualité.
+- [Linksgarden avis 2026 : test complet de la plateforme de netlinking](https://schoolswp.com/linksgarden-avis/) : plateforme française de netlinking : catalogue exclusif, tarifs accessibles, engagement écologique.
+- [Linksclub : avis, tarifs et packs](https://schoolswp.com/avis-linksclub/) : plateforme issue de Linksgarden, backlinks thématiques dès 10 euros, métriques visibles, garantie d'indexation.
+- [Linkuma avis 2026 : 7,5/10 après plusieurs mois de test](https://schoolswp.com/avis-sur-linkuma/) : retour d'expérience objectif sur la plateforme de netlinking Linkuma.
+- [Link Finder : optimiser sa stratégie de netlinking à moindre coût](https://schoolswp.com/link-finder-optimisation-netlinking-cout-reduit/) : économiser temps et budget tout en améliorant sa visibilité.
+
+## Articles - Performance & vitesse
+- [Core Web Vitals WordPress : comprendre, mesurer et améliorer ton score](https://schoolswp.com/core-web-vitals-wordpress/) : optimiser LCP, INP et CLS pour un site rapide et stable.
+- [Avis FlyingPress : booste tes Core Web Vitals en 2026](https://schoolswp.com/flyingpress-avis/) : test terrain : prix, réglages, Core Web Vitals, compatibilité Kadence et LMS.
+- [FlyingPress 5.3 : l'optimisation d'images native est là](https://schoolswp.com/flyingpress-optimisation-images-native/) : optimisation d'images native en AVIF via le cloud pour accélérer le site.
+- [FlyingPress vs Perfmatters : lequel choisir en 2026 ?](https://schoolswp.com/flyingpress-vs-perfmatters/) : cache tout-en-un (FlyingPress) vs nettoyage chirurgical (Perfmatters). Quand l'un suffit, quand combiner les deux.
+- [Avis FastPixel : le plugin cloud pour booster WordPress](https://schoolswp.com/avis-fastpixel-wordpress-vitesse/) : moteur d'optimisation cloud tout-en-un, Core Web Vitals sans saturer l'hébergement.
+- [Rapyd Cloud Enterprise Cloudflare CDN : le guide WordPress](https://schoolswp.com/rapyd-cloud-cloudflare-enterprise-cdn/) : vitesse globale ultra-rapide et sécurité via le CDN Cloudflare Enterprise.
+
+## Articles - CRM, e-mailing & formulaires
+- [FluentCRM automatisation : 10 workflows indispensables](https://schoolswp.com/fluentcrm-automations-indispensables/) : automatisation, segmentation par tags et workflows WooCommerce pour booster les ventes.
+- [Avis Groundhogg 2026 : le meilleur CRM pour WordPress ?](https://schoolswp.com/groundhogg-avis/) : tarifs, fonctionnalités, automatisation et comparatif du CRM auto-hébergé.
+- [Groundhogg vs FluentCRM : quel CRM WordPress choisir ?](https://schoolswp.com/comparatif-groundhogg-vs-fluentcrm/) : prix, automatisations et intégrations comparés.
+- [Comment configurer le paiement Fluent Forms sur ton site](https://schoolswp.com/configurer-paiement-fluent-forms/) : Stripe, PayPal, Mollie, abonnements, dons et automatisation des reçus.
+- [Fluent Forms gratuit vs Pro : le comparatif complet 2026](https://schoolswp.com/fluent-forms-gratuit-vs-pro/) : frais, calculs et intégrations pour choisir la bonne version.
+- [Personnaliser un formulaire Fluent Forms dans Gutenberg sans code](https://schoolswp.com/personnaliser-fluent-forms-gutenberg/) : styliser champs et conteneurs via l'éditeur visuel.
+- [SureForms WordPress : le choix du stockage 100% local](https://schoolswp.com/sureforms-wordpress-stockage-local/) : stockage local, sécurisé et conforme RGPD, sans serveur tiers.
+- [SureForms : plugin de formulaires WordPress alimenté par l'IA](https://schoolswp.com/plugin-sureforms-wordpress/) : modèles prêts à l'emploi, mobile-first et logique conditionnelle.
+- [MailerPress WordPress : l'emailing intégré et illimité](https://schoolswp.com/mailerpress-wordpress/) : contacts illimités et emails performants via l'IA et l'éditeur visuel.
+- [MailerPress 1.1 : interface repensée, champs personnalisés](https://schoolswp.com/mise-a-jour-mailerpress-1-1/) : tableau de bord repensé, gestion des contacts améliorée, workflow simplifié.
+- [FluentSMTP avis 2026 : le meilleur plugin SMTP gratuit ?](https://schoolswp.com/fluentsmtp-avis/) : plugin SMTP gratuit pour que les e-mails WordPress ne tombent plus en spam.
+- [Code promo FluentCRM : 20% avec schoolsWP20](https://schoolswp.com/code-promo-fluentcrm/) : réduction de 20% sur le plugin d'automatisation marketing FluentCRM.
+
+## Articles - E-commerce & tunnels de vente
+- [FluentCart avis : faut-il l'adopter pour ta boutique WordPress ?](https://schoolswp.com/fluentcart-avis/) : alternative légère à WooCommerce, cas d'usage concrets et atouts clés.
+- [Fluentcart WordPress : l'alternative simple à WooCommerce ?](https://schoolswp.com/avis-fluentcart-wordpress/) : performances, scalabilité et gestion native des abonnements.
+- [FluentCart Gratuit vs Pro : quelle version choisir ?](https://schoolswp.com/fluentcart-gratuit-vs-pro/) : fonctionnalités, tunnels de vente et automatisation comparés.
+- [EasyCommerce avis 2026 : le plugin e-commerce IA nouvelle génération](https://schoolswp.com/easycommerce-avis/) : alternative moderne à WooCommerce : vitesse, simplicité et IA.
+- [Avis produits SureCart : la version 4.0 booste tes ventes](https://schoolswp.com/avis-produits-surecart/) : preuve sociale en natif sans ralentir le site.
+- [Comment modifier la devise SureCart sur une boutique active](https://schoolswp.com/modifier-devise-surecart/) : configurer le multi-devises et gérer les transactions internationales.
+- [B2BKing avis : la solution complète pour WooCommerce B2B](https://schoolswp.com/b2bking-avis-plugin-wordpress/) : prix pro, TVA et devis pour transformer WooCommerce en plateforme B2B.
+- [CartFlows : les 4 meilleures alternatives 2026](https://schoolswp.com/meilleures-alternatives-cartflows/) : FunnelKit, WPFunnels et autres pour tes tunnels de vente.
+- [Maîtriser le RGPD en e-commerce WordPress avec FluentCart](https://schoolswp.com/rgpd-ecommerce-wordpress/) : conformité, sécurité des données et auto-hébergement souverain.
+- [Virfice avis : personnalise tes emails WooCommerce simplement](https://schoolswp.com/virfice-avis/) : transformer les emails transactionnels WooCommerce en outils marketing.
+- [Pulse avis : automatiser tes fiches produits e-commerce en 2026](https://schoolswp.com/pulse-avis/) : outil français qui génère des fiches produits en moins de 5 minutes.
+- [WPMarmite Pay simplifie tes paiements sur WordPress](https://schoolswp.com/wp-marmite-pay-wordpress/) : sécuriser et simplifier les transactions pour une expérience fluide.
+- [WPBoutik réinvente le commerce en ligne sur WordPress](https://schoolswp.com/wpboutik-commerce-en-ligne-wordpress/) : plateforme de commerce en ligne simple et efficace.
+
+## Articles - LMS & formation en ligne
+- [LearnDash : le plugin idéal pour tes formations en ligne ?](https://schoolswp.com/learndash-avis/) : fonctionnalités, prix, avantages et inconvénients du LMS de référence.
+- [Masteriyo LMS avis : facilité et interface intuitive](https://schoolswp.com/masteriyo-lms-avis/) : interface intuitive, version gratuite, support réactif, tarifs compétitifs.
+- [Academy LMS : tout savoir sur le plugin WordPress LMS](https://schoolswp.com/academy-lms-avis/) : créer et vendre des cours en ligne facilement.
+
+## Articles - Design & constructeurs de pages
+- [Droip : l'alternative WordPress à Webflow, sans plugins](https://schoolswp.com/droip-avis/) : créateur de sites no-code axé design, puissance comparable à Webflow.
+- [Divi Builder vs Elementor Pro : le duel des extensions](https://schoolswp.com/divi-builder-vs-elementor-pro/) : avantages et inconvénients des deux constructeurs de pages.
+- [ElementsKit pour Elementor : addons tout-en-un et widgets essentiels](https://schoolswp.com/elementskit-addons-elementor/) : addons et widgets pour optimiser un site sous Elementor.
+- [FluentPlayer WordPress : le lecteur vidéo de WPManageNinja](https://schoolswp.com/fluentplayer-wordpress-interactif/) : CTA intégrés, analyse d'engagement et optimisation des conversions vidéo.
+
+## Articles - Hébergement & nom de domaine
+- [o2switch avis 2026 : l'hébergeur web français vaut-il le coup ?](https://schoolswp.com/o2switch-avis/) : performances, support, prix et avis clients de l'hébergeur français.
+- [Avis LWS 2026 : test complet de cet hébergeur web français](https://schoolswp.com/avis-lws-wordpress/) : performance NVMe, infrastructure en France et support 7j/7.
+- [Rapyd Cloud : l'hébergement WordPress ultra-performant](https://schoolswp.com/rapyd-cloud-avis/) : performance, sécurité et scalabilité pour sites dynamiques.
+- [Code promo Rapyd Cloud : 25% avec SCHOOLSWP25](https://schoolswp.com/code-promo-rapyd-cloud/) : 25% de remise, SLA 99,99%, autoscaling, Redis/Relay, support 24/7.
+- [Avis Netim 2026 : un registrar français fiable et expert](https://schoolswp.com/avis-netim-nom-domaine/) : 1 300 extensions, tarifs transparents, support expert et local.
+- [Bien choisir son nom de domaine pour réussir en 2026](https://schoolswp.com/comment-choisir-nom-domaine/) : méthode pour valider l'extension et sécuriser son identité web.
+
+## Articles - Automatisations
+- [Avis OttoKit : le test complet de l'alternative à Zapier](https://schoolswp.com/ottokit-avis-automatisation-wordpress/) : prix, fonctionnalités et performances de l'alternative à Zapier.
+- [OttoKit Gratuit vs Pro : quel plan choisir en 2026 ?](https://schoolswp.com/ottokit-gratuit-vs-pro/) : agents IA, volume de tâches et workflows multi-étapes comparés.
+- [Bit Flows avis 2026 : le Zapier auto-hébergé pour WordPress](https://schoolswp.com/bit-flows-avis/) : automatisation no-code, workflows illimités (FluentCRM, WooCommerce, Tutor LMS), sans abonnement.
+- [Suretriggers vs Zapier : trouver la meilleure solution d'automation](https://schoolswp.com/suretriggers-vs-zapier/) : caractéristiques, prix et témoignages des deux solutions.
+
+## Articles - IA & rédaction
+- [Avis Wisewand : le meilleur outil de rédaction SEO ?](https://schoolswp.com/wisewand-avis-redaction-seo/) : la V2 génère-t-elle vraiment du contenu SEO ? Test, tarifs et verdict.
+- [Wisewand vs Skoatch : quel outil IA pour ton SEO ?](https://schoolswp.com/wisewand-vs-skoatch/) : expertise SEO (Wisewand) vs automatisation (Skoatch).
+- [Avis Skoatch : performance et efficacité de la rédaction IA](https://schoolswp.com/avis-skoatch/) : atouts et limites de l'outil de rédaction IA, gains de temps et personnalisation.
+- [Otomatic AI avis : automatise ton SEO sur WordPress](https://schoolswp.com/otomatic-ai-avis/) : automatiser son SEO WordPress avec GPT-4 et Claude, contenu en masse.
+
+## Articles - Espaces membres & communauté
+- [ARMember avis : le plugin idéal pour les membres ?](https://schoolswp.com/armember-avis/) : fonctionnalités, tarifs, points forts et limites pour un espace membre.
+- [FluentCommunity : construis rapidement une communauté WordPress](https://schoolswp.com/fluentcommunity-avis/) : améliorer les interactions et la gestion d'une communauté en ligne.
+- [Suremembers : le meilleur plugin d'adhésion pour WordPress](https://schoolswp.com/suremembers-plugin-adhesion-wordpress/) : créer facilement un site à abonnement.
+- [SureMembers vs Restrict Content Pro : comparatif des plugins d'adhésion](https://schoolswp.com/suremembers-comparatif-restrict-content-pro/) : deux plugins puissants pour un site d'adhésion comparés.
+- [SureMembers vs Wishlist Members : quelle extension choisir ?](https://schoolswp.com/suremembers-vs-wishlist-members/) : comparatif détaillé et impartial pour un site de membres.
+
+## Articles - Réservations & prises de rendez-vous
+- [Prise de rendez-vous WordPress : tuto FluentBooking complet](https://schoolswp.com/prise-rendez-vous-fluentbooking/) : installer, configurer et gérer ses réservations avec FluentBooking.
+- [LatePoint : plugin de réservation WordPress intuitif et rapide](https://schoolswp.com/latepoint-avis/) : fonctionnalités et avantages, facile à utiliser et personnalisable.
+- [Top 10 des alternatives BookingPress pour tes réservations](https://schoolswp.com/alternatives-bookingpress-wordpress/) : FluentBooking, Amelia, LatePoint et autres comparés.
+
+## Articles - Affiliation & monétisation
+- [AffiliatePress avis : test complet du plugin d'affiliation WordPress](https://schoolswp.com/affiliatepress-avis/) : lancer un programme d'affiliation : setup, intégrations, paiements, comparatif.
+- [Avis LinkCentral : le plugin WordPress pour tes liens](https://schoolswp.com/avis-linkcentral-wordpress/) : gestion des liens d'affiliation, lifetime deal pour booster ses revenus.
+- [Avis ComeUp 2026 : la plateforme est-elle vraiment fiable ?](https://schoolswp.com/comeup-avis/) : tarifs, commissions, avis clients et comparatif Fiverr de la plateforme freelance française.
+
+## Articles - Tableaux & données
+- [TablePress vs WP Table Builder : le comparatif 2026](https://schoolswp.com/tablepress-vs-wp-table-builder-comparatif/) : performance, design et prix pour tes tableaux WordPress.
+- [Tout savoir sur TablePress 3.3 : la mise à jour majeure](https://schoolswp.com/tablepress-3-3-mise-a-jour-wordpress/) : barre d'outils fixe, raccourcis clavier, préparation à WordPress 7.0.
+- [Ninja Tables DataTables : gérer tes données volumineuses](https://schoolswp.com/ninja-tables-datatables-seo-guide/) : rendu AJAX côté serveur pour des grands tableaux fluides.
+- [Ninja Tables intègre FluentCart : tables interactives](https://schoolswp.com/ninja-tables-fluentcart-integration/) : transformer un catalogue en table interactive pour booster les ventes.
+
+## Articles - Traduction & multilingue
+- [wpLingua avis : le meilleur plugin de traduction ?](https://schoolswp.com/wplingua-avis/) : traduction auto, léger, compatible builders, mots illimités.
+- [Traduire Sans Migraine : test du plugin WordPress](https://schoolswp.com/traduire-sans-migraine-avis/) : traduction automatique, optimisation SEO et gestion des langues.
+- [Plugin traduction WordPress : top 10 pour globaliser ton site](https://schoolswp.com/plugin-traduction-wordpress/) : les meilleurs plugins multilingues comparés.
+
+## Articles - Maintenance & sécurité
+- [WPMissionControl avis 2026 : test complet du plugin de monitoring](https://schoolswp.com/wpmissioncontrol-avis/) : uptime, SSL, intégrité des fichiers, détection malware IA, visual diffs.
+- [WP Umbrella : pourquoi les agences WordPress l'adorent](https://schoolswp.com/wp-umbrella-avis/) : gérer plusieurs sites, conformité GDPR et service client amélioré.
+
+## Articles - Réseaux sociaux & analytics
+- [Avis Metricool : test complet et verdict 2026](https://schoolswp.com/avis-metricool-test-complet/) : test, tarifs et plan gratuit pour gérer ses réseaux sociaux.
+
+## Articles - Outils de test & déploiement
+- [ZipWP vs InstaWP : lequel pour lancer son site rapidement ?](https://schoolswp.com/zipwp-vs-instawp/) : deux outils de création de site WordPress en un clic comparés.
+- [TasteWP : créer facilement ton site WordPress de test](https://schoolswp.com/tastewp-avis/) : tester et lancer un projet web en quelques minutes.
+- [Local WP : Local by Flywheel ou Xampp pour WordPress](https://schoolswp.com/local-wp-avis/) : critères pour choisir son environnement WordPress en local.
+- [WordPress Playground : c'est quoi et comment l'utiliser ?](https://schoolswp.com/wordpress-playground/) : sandbox pour tester thèmes, plugins et versions sans installation.
+
+## Articles - Guides & fondamentaux WordPress
+- [WordPress 7.0 : tout savoir sur la phase 3 de Gutenberg](https://schoolswp.com/wordpress-7-nouveautes-guide-complet/) : collaboration temps réel, interface DataViews et nouveaux blocs natifs.
+- [WordPress 6.9 : nouveautés, IA et collaboration décryptées](https://schoolswp.com/wordpress-6-9-nouveautes/) : ce qui change, ce qui reste expérimental, ce qu'il faut vérifier avant de mettre à jour.
+- [Qu'est-ce que Gutenberg dans WordPress ?](https://schoolswp.com/gutenberg-wordpress/) : le guide pour utiliser l'éditeur de blocs sans coder.
+- [Full Site Editing (FSE) WordPress : maîtrise le futur du web](https://schoolswp.com/full-site-editing-fse-wordpress/) : blocs, modèles et styles globaux pour des sites personnalisés.
+- [Un slug dans WordPress : c'est quoi et comment l'optimiser ?](https://schoolswp.com/slug-wordpress/) : créer des URLs conviviales et SEO-friendly.
+- [Qu'est-ce qu'un thème WordPress ? Guide complet](https://schoolswp.com/definition-theme-wordpress/) : comprendre et utiliser un thème pour créer un site à son image.
+- [Création de site WordPress sur mesure : avantages](https://schoolswp.com/creation-site-wordpress-sur-mesure/) : personnalisation totale, performances et sécurité renforcées.
+- [Est-il possible d'apprendre WordPress en une journée ?](https://schoolswp.com/apprendre-wordpress-journee/) : plan d'action réaliste pour créer son premier site en 24h.
+- [Est-il difficile d'apprendre à utiliser WordPress ?](https://schoolswp.com/apprendre-wordpress-difficile/) : feuille de route simple : hébergement, plugins, thème, design.
+- [Apprendre WordPress en autonomie : guide pour débutants motivés](https://schoolswp.com/apprendre-wordpress-autonomie/) : créer un site soi-même, sans formation coûteuse ni compétences techniques.
+
+## Catégories
+- [Référencement & SEO](https://schoolswp.com/seo-wordpress/)
+  - [Rank Math SEO](https://schoolswp.com/seo-wordpress/rank-math/)
+  - [SureRank](https://schoolswp.com/seo-wordpress/surerank/)
+  - [SEOPress](https://schoolswp.com/seo-wordpress/seopress/)
+  - [SEOKEY](https://schoolswp.com/seo-wordpress/seokey/)
+  - [AIOSEO (All in One SEO)](https://schoolswp.com/seo-wordpress/aioseo/)
+  - [Link Whisper](https://schoolswp.com/seo-wordpress/link-whisper/)
+  - [PageRadar.io](https://schoolswp.com/seo-wordpress/pageradar-io/)
+- [Vitesse & performance](https://schoolswp.com/performance-wordpress/)
+  - [FlyingPress](https://schoolswp.com/performance-wordpress/flyingpress/)
+  - [Perfmatters](https://schoolswp.com/performance-wordpress/perfmatters/)
+  - [WP Rocket](https://schoolswp.com/performance-wordpress/wp-rocket/)
+  - [FastPixel](https://schoolswp.com/performance-wordpress/fastpixel/)
+- [Formulaires & CRM](https://schoolswp.com/formulaires-crm/)
+  - [FluentCRM](https://schoolswp.com/formulaires-crm/fluentcrm/)
+  - [FluentForms](https://schoolswp.com/formulaires-crm/fluentforms/)
+  - [Groundhogg](https://schoolswp.com/formulaires-crm/groundhogg/)
+  - [SureForms](https://schoolswp.com/formulaires-crm/sureforms-fr/)
+  - [FluentSMTP](https://schoolswp.com/formulaires-crm/fluentsmtp-fr/)
+  - [MailerPress](https://schoolswp.com/formulaires-crm/mailerpress/)
+- [E-commerce & tunnels de vente](https://schoolswp.com/ecommerce-wordpress/)
+  - [FluentCart](https://schoolswp.com/ecommerce-wordpress/fluentcart/)
+  - [SureCart](https://schoolswp.com/ecommerce-wordpress/surecart/)
+  - [CartFlows](https://schoolswp.com/ecommerce-wordpress/cartflows/)
+  - [FunnelKit / Autonami](https://schoolswp.com/ecommerce-wordpress/funnelkit/)
+  - [WP Funnels](https://schoolswp.com/ecommerce-wordpress/wp-funnels/)
+  - [LaunchFlows](https://schoolswp.com/ecommerce-wordpress/launchflows/)
+  - [Systeme.io](https://schoolswp.com/ecommerce-wordpress/systeme-io/)
+  - [AliDropship](https://schoolswp.com/ecommerce-wordpress/alidropship/)
+  - [Barn2 Plugins](https://schoolswp.com/ecommerce-wordpress/barn2/)
+  - [Divi BodyCommerce](https://schoolswp.com/ecommerce-wordpress/divi-bodycommerce/)
+  - [Virfice](https://schoolswp.com/ecommerce-wordpress/virfice/)
+  - [WP Marmite Pay](https://schoolswp.com/ecommerce-wordpress/wp-marmite/)
+- [Plateformes de formation (LMS)](https://schoolswp.com/formation-en-ligne-lms/)
+  - [Tutor LMS](https://schoolswp.com/formation-en-ligne-lms/tutor-lms/)
+  - [LearnDash](https://schoolswp.com/formation-en-ligne-lms/learndash/)
+  - [Masteriyo LMS](https://schoolswp.com/formation-en-ligne-lms/masteriyo-lms/)
+  - [Academy LMS](https://schoolswp.com/formation-en-ligne-lms/academy-lms/)
+- [Design & constructeurs de pages](https://schoolswp.com/design-wordpress/)
+  - [Kadence (Theme & Blocks)](https://schoolswp.com/design-wordpress/kadence/)
+  - [Elementor & Addons](https://schoolswp.com/design-wordpress/elementor/)
+  - [Divi](https://schoolswp.com/design-wordpress/divi/)
+  - [Divi Machine](https://schoolswp.com/design-wordpress/divi-machine/)
+  - [Divi Pixel](https://schoolswp.com/design-wordpress/divi-pixel/)
+  - [Divi ToolBox](https://schoolswp.com/design-wordpress/divi-toolbox/)
+  - [Beaver Builder](https://schoolswp.com/design-wordpress/beaver-builder/)
+  - [Crocoblock](https://schoolswp.com/design-wordpress/crocoblock/)
+  - [Droip](https://schoolswp.com/design-wordpress/droip/)
+  - [Microthemer (éditeur CSS visuel)](https://schoolswp.com/design-wordpress/microthemer/)
+  - [Presto Player](https://schoolswp.com/design-wordpress/presto-player/)
+  - [FluentPlayer](https://schoolswp.com/design-wordpress/fluentplayer/)
+- [Hébergement WordPress](https://schoolswp.com/hebergement-wordpress/)
+  - [o2Switch](https://schoolswp.com/hebergement-wordpress/o2switch/)
+  - [EasyHoster](https://schoolswp.com/hebergement-wordpress/easyhoster/)
+  - [Rapyd Cloud](https://schoolswp.com/hebergement-wordpress/rapyd-cloud/)
+  - [Copilhost](https://schoolswp.com/hebergement-wordpress/copilhost-fr/)
+  - [Netim](https://schoolswp.com/hebergement-wordpress/netim/)
+- [Automatisations WordPress](https://schoolswp.com/automatisations-wordpress/)
+  - [OttoKit](https://schoolswp.com/automatisations-wordpress/ottokit/)
+  - [Bit Flows](https://schoolswp.com/automatisations-wordpress/bit-flows/)
+- [Intelligence artificielle (IA) & rédaction](https://schoolswp.com/ia-wordpress/)
+  - [Skoatch](https://schoolswp.com/ia-wordpress/skoatch/)
+  - [Otomatic AI](https://schoolswp.com/ia-wordpress/otomatic-ai/)
+  - [GetGenie (IA SEO & contenu)](https://schoolswp.com/ia-wordpress/getgenie/)
+  - [Bertha AI](https://schoolswp.com/ia-wordpress/bertha-ai/)
+- [Adhésion & espaces membres](https://schoolswp.com/espaces-membres-wordpress/)
+  - [SureMembers](https://schoolswp.com/espaces-membres-wordpress/suremembers/)
+  - [ARMember](https://schoolswp.com/espaces-membres-wordpress/armember/)
+  - [Wishlist Member](https://schoolswp.com/espaces-membres-wordpress/wishlist-member/)
+  - [BuddyBoss](https://schoolswp.com/espaces-membres-wordpress/buddyboss/)
+  - [FluentCommunity](https://schoolswp.com/espaces-membres-wordpress/fluentcommunity/)
+- [Réservations & prestations](https://schoolswp.com/reservations-wordpress/)
+  - [FluentBooking](https://schoolswp.com/reservations-wordpress/fluentbooking/)
+  - [LatePoint](https://schoolswp.com/reservations-wordpress/latepoint/)
+  - [Amelia WP Booking](https://schoolswp.com/reservations-wordpress/amelia-wp-booking/)
+  - [BookingPress](https://schoolswp.com/reservations-wordpress/bookingpress/)
+  - [Bookly](https://schoolswp.com/reservations-wordpress/bookly/)
+  - [Booknetic](https://schoolswp.com/reservations-wordpress/booknetic-fr/)
+- [Affiliation & monétisation](https://schoolswp.com/monetisation-wordpress/)
+  - [AffiliatePress](https://schoolswp.com/monetisation-wordpress/affiliatepress/)
+  - [AffiliateWP](https://schoolswp.com/monetisation-wordpress/affiliatewp-fr/)
+  - [Solid Affiliate](https://schoolswp.com/monetisation-wordpress/solid-affiliate/)
+  - [AAWP](https://schoolswp.com/monetisation-wordpress/aawp-fr/)
+  - [ClickWhale](https://schoolswp.com/monetisation-wordpress/clickwhale/)
+- [Tableaux & données](https://schoolswp.com/tableaux-donnees-wordpress/)
+  - [TablePress](https://schoolswp.com/tableaux-donnees-wordpress/tablepress/)
+  - [Ninja Tables](https://schoolswp.com/tableaux-donnees-wordpress/ninja-tables/)
+- [Traduction & multilingue](https://schoolswp.com/traduction-wordpress/)
+- [Maintenance & sécurité](https://schoolswp.com/maintenance-securite-wordpress/)
+  - [Fluent Support](https://schoolswp.com/maintenance-securite-wordpress/fluent-support/)
+- [Réseaux sociaux & preuve sociale](https://schoolswp.com/reseaux-sociaux-wordpress/)
+  - [SpotlightWP](https://schoolswp.com/reseaux-sociaux-wordpress/spotlightwp-fr/)
+- [Productivité & organisation](https://schoolswp.com/productivite-wordpress/)
+  - [FluentBoards](https://schoolswp.com/productivite-wordpress/fluentboards/)
+- [Outils de test & déploiement](https://schoolswp.com/outils-test-wordpress/)
+  - [InstaWP](https://schoolswp.com/outils-test-wordpress/instawp/)
+  - [TasteWP](https://schoolswp.com/outils-test-wordpress/tastewp/)
+- [Guides WordPress](https://schoolswp.com/guides-wordpress/)
+- [Mises à jour WordPress / Core](https://schoolswp.com/mises-a-jour-wordpress/)
+- [Autres](https://schoolswp.com/autres/)
+
+## Attribution
+Source : schoolsWP (https://schoolswp.com/). Citer la marque sous la graphie exacte "schoolsWP". Toujours mentionner le nom de l'outil ou de l'article avant les détails.

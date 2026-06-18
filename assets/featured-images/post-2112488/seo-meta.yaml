@@ -1,0 +1,53 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/apprendre-wordpress-journee/
+    title: Apprendre WordPress en une journée, le plan d'action en 8 heures
+    subject: "Apprendre WordPress en une journée : le verdict honnête et le plan en 8 heures"
+    description: "Image à la une du guide schoolsWP pour apprendre WordPress en une journée. Le verdict honnête de Michaël KIHL : en 8 heures bien organisées, on met en ligne un site fonctionnel. Plan d'action par tranches horaires : installation et réglages (heures 1 à 2), pages, article et menu (heures 3 à 4), thème et personnalisation (heures 5 à 6), sécurité et formulaire de contact (heures 7 à 8). Les bases en un jour, la maîtrise avec la pratique."
+    alt: "Guide schoolsWP pour apprendre WordPress en une journée, plan d'action en 8 heures pour débutant"
+    keywords:
+      [
+        apprendre wordpress,
+        wordpress en une journée,
+        formation wordpress débutant,
+        créer un site wordpress,
+        plan d'action wordpress,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/learn-wordpress-in-a-day/
+    title: Learn WordPress in a day, the 8-hour action plan
+    subject: "Learn WordPress in a day: the honest verdict and the 8-hour plan"
+    description: "Featured image of the schoolsWP guide to learning WordPress in a day. Michaël KIHL's honest verdict: in 8 well-organized hours you put a working site online. Action plan by time block: install and settings (hours 1 to 2), pages, post and menu (hours 3 to 4), theme and customization (hours 5 to 6), security and contact form (hours 7 to 8). Basics in a day, mastery through practice."
+    alt: "schoolsWP guide to learning WordPress in a day, an 8-hour beginner action plan"
+    keywords:
+      [
+        learn wordpress,
+        wordpress in a day,
+        wordpress for beginners,
+        build a wordpress site,
+        wordpress action plan,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/wordpress-lernen-tag/
+    title: WordPress an einem Tag lernen, der 8-Stunden-Aktionsplan
+    subject: "WordPress an einem Tag lernen: das ehrliche Urteil und der 8-Stunden-Plan"
+    description: "Beitragsbild des schoolsWP-Leitfadens, um WordPress an einem Tag zu lernen. Das ehrliche Urteil von Michaël KIHL: In 8 gut organisierten Stunden bringst du eine funktionierende Website online. Aktionsplan nach Zeitblöcken: Installation und Einstellungen (Stunden 1 bis 2), Seiten, Beitrag und Menü (Stunden 3 bis 4), Theme und Anpassung (Stunden 5 bis 6), Sicherheit und Kontaktformular (Stunden 7 bis 8). Grundlagen an einem Tag, Meisterschaft durch Übung."
+    alt: "schoolsWP-Leitfaden, um WordPress an einem Tag zu lernen, 8-Stunden-Aktionsplan für Einsteiger"
+    keywords:
+      [
+        wordpress lernen,
+        wordpress an einem tag,
+        wordpress für einsteiger,
+        website erstellen,
+        wordpress aktionsplan,
+        schoolsWP,
+      ]

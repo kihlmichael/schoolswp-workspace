@@ -1,14 +1,14 @@
-# Scripts vidéo — FPL-012 Module 1 : Fondations, poser des vidéos rapides et pro
+# Scripts vidéo - FPL-012 Module 1 : Fondations, poser des vidéos rapides et pro
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : M1 — Fondations (Masterclass, premium)
+**Module** : M1 - Fondations (Masterclass, premium)
 **Leçons** : 6 vidéos + 1 fiche PDF + 1 quiz
 **Durée totale** : ~52 min de vidéo
 **Date** : 2026-05-22
 
 ---
 
-## Leçon 1.1 — FluentPlayer Free vs Pro : quoi débloquer, et quand
+## Leçon 1.1 - FluentPlayer Free vs Pro : quoi débloquer, et quand
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 FluentPlayer existe en deux versions : une gratuite, une Pro. La question n'est pas « laquelle est la meilleure », mais « de quoi as-tu besoin, et quand ». Cette leçon te donne un cadre clair pour décider, sans payer trop tôt ni te bloquer trop tard.
 
-**[ÉCRAN — tableau "Ce que fait la version gratuite"]**
+**[ÉCRAN - tableau "Ce que fait la version gratuite"]**
 
 La version gratuite n'est pas une démo. Elle est utilisable en production. Elle te donne :
 
@@ -31,7 +31,7 @@ La version gratuite n'est pas une démo. Elle est utilisable en production. Elle
 
 Avec ça, tu peux déjà mettre en ligne des vidéos à ta marque qui capturent des emails. C'est ce qu'on a fait dans le Quick Start.
 
-**[ÉCRAN — tableau "Ce que débloque la version Pro"]**
+**[ÉCRAN - tableau "Ce que débloque la version Pro"]**
 
 La version Pro ajoute les outils qui transforment une vidéo en système :
 
@@ -44,7 +44,7 @@ La version Pro ajoute les outils qui transforment une vidéo en système :
 - les sources BunnyCDN, Mux et HLS
 - les intégrations Mailchimp, Webhook et Google Analytics
 
-**[ÉCRAN — slide "Quand passer à Pro"]**
+**[ÉCRAN - slide "Quand passer à Pro"]**
 
 Voici comment décider :
 
@@ -53,7 +53,7 @@ Voici comment décider :
 - Tu veux des playlists, des analytics, ou vendre depuis la vidéo ? Pro obligatoire.
 - Tu montes un vrai cours en ligne en vidéos ? Pro, sans hésiter.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Cette Masterclass enseigne les deux versions. Quand une fonction demande Pro, je te le dis. Et je te le recommande honnêtement quand ça en vaut la peine. Dans la prochaine leçon, on attaque une décision que beaucoup négligent : où héberger tes vidéos.
 
@@ -73,7 +73,7 @@ Cette Masterclass enseigne les deux versions. Quand une fonction demande Pro, je
 
 ---
 
-## Leçon 1.2 — Choisir sa source vidéo
+## Leçon 1.2 - Choisir sa source vidéo
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -81,11 +81,11 @@ Cette Masterclass enseigne les deux versions. Quand une fonction demande Pro, je
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Où vit ta vidéo, ça change tout : la vitesse de ta page, le coût, et le contrôle que tu gardes. FluentPlayer accepte plusieurs sources. On va les passer en revue pour que tu choisisses en connaissance de cause.
 
-**[ÉCRAN — slide "Les sources disponibles"]**
+**[ÉCRAN - slide "Les sources disponibles"]**
 
 FluentPlayer lit des vidéos depuis :
 
@@ -99,7 +99,7 @@ FluentPlayer lit des vidéos depuis :
 
 Les trois premières sont en version gratuite. BunnyCDN, Mux et HLS demandent Pro.
 
-**[ÉCRAN — slide "Self-hosted"]**
+**[ÉCRAN - slide "Self-hosted"]**
 
 Self-hosted : tu téléverses la vidéo dans ta médiathèque WordPress.
 
@@ -108,13 +108,13 @@ Self-hosted : tu téléverses la vidéo dans ta médiathèque WordPress.
 
 Bon pour quelques courtes vidéos. Mauvais pour une bibliothèque entière.
 
-**[ÉCRAN — slide "YouTube et Vimeo"]**
+**[ÉCRAN - slide "YouTube et Vimeo"]**
 
 YouTube : gratuit et rapide, mais YouTube garde la main, comme on l'a vu dans le Quick Start. Acceptable si ça ne te dérange pas.
 
 Vimeo : plus sobre que YouTube, sans vidéos suggérées parasites, mais payant sur les bons plans.
 
-**[ÉCRAN — slide "BunnyCDN, Mux, HLS"]**
+**[ÉCRAN - slide "BunnyCDN, Mux, HLS"]**
 
 BunnyCDN : un réseau de diffusion vidéo économique. Tes vidéos sont servies vite, partout, sans charger ton serveur. C'est le meilleur rapport qualité-prix pour un cours sérieux.
 
@@ -122,14 +122,14 @@ Mux : du streaming haut de gamme, avec des analytics vidéo natifs. Plus cher, p
 
 HLS : un flux adaptatif, la qualité s'ajuste à la connexion du spectateur.
 
-**[ÉCRAN — slide "Quelle source pour quel besoin"]**
+**[ÉCRAN - slide "Quelle source pour quel besoin"]**
 
 - Quelques vidéos légères ? Self-hosted ou YouTube.
 - Une chaîne publique en parallèle ? YouTube, et tu réutilises dans FluentPlayer.
 - Un vrai cours, plusieurs heures de vidéo ? BunnyCDN.
 - Un produit vidéo premium ? Mux.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as ta source. Mais quelle que soit ton choix, il y a une règle à ne jamais oublier : ne pas plomber la vitesse de ton site. C'est la prochaine leçon.
 
@@ -149,7 +149,7 @@ Tu as ta source. Mais quelle que soit ton choix, il y a une règle à ne jamais 
 
 ---
 
-## Leçon 1.3 — Hébergement vidéo et vitesse de page
+## Leçon 1.3 - Hébergement vidéo et vitesse de page
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -157,11 +157,11 @@ Tu as ta source. Mais quelle que soit ton choix, il y a une règle à ne jamais 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Une vidéo mal hébergée, c'est un site lent. Et un site lent, c'est des visiteurs qui partent et un référencement qui baisse. Cette leçon t'évite l'erreur la plus coûteuse du marketing vidéo sur WordPress.
 
-**[ÉCRAN — slide "Le piège du self-hosting lourd"]**
+**[ÉCRAN - slide "Le piège du self-hosting lourd"]**
 
 Quand tu héberges une grosse vidéo sur ton propre serveur :
 
@@ -171,13 +171,13 @@ Quand tu héberges une grosse vidéo sur ton propre serveur :
 
 Ton serveur WordPress n'est pas fait pour diffuser de la vidéo en masse.
 
-**[ÉCRAN — slide "La solution : décharger la vidéo"]**
+**[ÉCRAN - slide "La solution : décharger la vidéo"]**
 
 La règle : ton serveur sert ton site, un service spécialisé sert tes vidéos.
 
 C'est exactement le rôle d'un CDN vidéo comme BunnyCDN. La vidéo est diffusée depuis son réseau, pas depuis ton hébergement. Ton site reste léger et rapide.
 
-**[ÉCRAN — slide "L'image d'attente, ton meilleur allié"]**
+**[ÉCRAN - slide "L'image d'attente, ton meilleur allié"]**
 
 Deuxième levier : l'image d'attente, le poster.
 
@@ -185,7 +185,7 @@ Tant que le spectateur ne clique pas sur play, la vidéo ne se charge pas. Seule
 
 Définis toujours un poster sur tes médias FluentPlayer.
 
-**[ÉCRAN — slide "Les bons réflexes"]**
+**[ÉCRAN - slide "Les bons réflexes"]**
 
 Pour des vidéos rapides :
 
@@ -194,7 +194,7 @@ Pour des vidéos rapides :
 - utilise un CDN vidéo dès que ta bibliothèque grandit
 - garde toujours un poster
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais où héberger et comment garder ton site rapide. On peut maintenant entrer dans l'outil. Prochaine leçon : le tour complet de l'interface FluentPlayer.
 
@@ -214,7 +214,7 @@ Tu sais où héberger et comment garder ton site rapide. On peut maintenant entr
 
 ---
 
-## Leçon 1.4 — L'interface FluentPlayer : menu, Media List et bloc
+## Leçon 1.4 - L'interface FluentPlayer : menu, Media List et bloc
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -222,11 +222,11 @@ Tu sais où héberger et comment garder ton site rapide. On peut maintenant entr
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Avant de construire, tu dois savoir où sont les choses. On fait le tour complet de l'interface FluentPlayer pour que tu te repères les yeux fermés.
 
-**[ÉCRAN — screencast : le menu FluentPlayer]**
+**[ÉCRAN - screencast : le menu FluentPlayer]**
 
 Après l'installation, FluentPlayer ajoute son menu dans la barre latérale WordPress. Il a quatre entrées.
 
@@ -238,7 +238,7 @@ Après l'installation, FluentPlayer ajoute son menu dans la barre latérale Word
 - Analytics : tes statistiques de visionnage
 - Settings : les réglages globaux du plugin
 
-**[ÉCRAN — screencast : la Media List]**
+**[ÉCRAN - screencast : la Media List]**
 
 Clique sur Media. Tu arrives sur la Media List, la liste de tous tes médias.
 
@@ -247,7 +247,7 @@ Clique sur Media. Tu arrives sur la Media List, la liste de tous tes médias.
 
 Chaque ligne est un média, avec son titre, sa source, ses tags, son statut et son code court. En haut, des filtres : All, Public, Private, Draft. Et un bouton Add Media pour en créer un nouveau.
 
-**[ÉCRAN — screencast : ouvrir un média dans l'éditeur de blocs]**
+**[ÉCRAN - screencast : ouvrir un média dans l'éditeur de blocs]**
 
 C'est le point important à comprendre. Quand tu ouvres un média, il s'ouvre dans l'éditeur de blocs WordPress, l'éditeur Gutenberg habituel.
 
@@ -256,7 +256,7 @@ C'est le point important à comprendre. Quand tu ouvres un média, il s'ouvre da
 
 Le média contient un bloc FluentPlayer. Tu le sélectionnes, et toute sa configuration apparaît dans la barre latérale, sous l'onglet Bloc.
 
-**[ÉCRAN — screencast : les panneaux du bloc FluentPlayer]**
+**[ÉCRAN - screencast : les panneaux du bloc FluentPlayer]**
 
 Le bloc FluentPlayer a huit panneaux de réglage.
 
@@ -273,7 +273,7 @@ Le bloc FluentPlayer a huit panneaux de réglage.
 
 On reviendra en détail sur chacun dans les modules suivants.
 
-**[ÉCRAN — screencast : la zone Settings]**
+**[ÉCRAN - screencast : la zone Settings]**
 
 Dernière zone : Settings, les réglages globaux. Elle a huit onglets.
 
@@ -282,7 +282,7 @@ Dernière zone : Settings, les réglages globaux. Elle a huit onglets.
 
 General, Branding, Integrations, Storage, YouTube, Analytics, Export, Migration. C'est ici que tu poses les réglages valables pour tout le plugin, pas pour un média précis.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu connais le terrain : un menu à quatre entrées, des médias éditables dans Gutenberg, un bloc à huit panneaux. Passons à un réflexe qui fait gagner un temps fou : les presets.
 
@@ -302,7 +302,7 @@ Tu connais le terrain : un menu à quatre entrées, des médias éditables dans 
 
 ---
 
-## Leçon 1.5 — Presets : configurer une fois, réutiliser partout
+## Leçon 1.5 - Presets : configurer une fois, réutiliser partout
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -310,17 +310,17 @@ Tu connais le terrain : un menu à quatre entrées, des médias éditables dans 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Régler l'habillage de chaque vidéo à la main, c'est une perte de temps et une source d'incohérence. Les presets règlent ça : tu configures ton style une fois, tu l'appliques partout.
 
-**[ÉCRAN — slide "Ce qu'est un preset"]**
+**[ÉCRAN - slide "Ce qu'est un preset"]**
 
 Un preset, c'est un style de lecteur enregistré : couleurs, comportements, apparence des contrôles. Au lieu de tout refaire à chaque vidéo, tu choisis ton preset et c'est réglé.
 
 FluentPlayer fournit des presets de départ. En version Pro, tu crées et enregistres les tiens.
 
-**[ÉCRAN — screencast : le panneau Preset]**
+**[ÉCRAN - screencast : le panneau Preset]**
 
 Ouvre un média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer, et déplie le panneau Preset.
 
@@ -330,20 +330,20 @@ Ouvre un média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer, et 
 
 FluentPlayer fournit des presets de départ. Pour démarrer, l'un d'eux suffit souvent.
 
-**[ÉCRAN — screencast : créer ton preset de marque]**
+**[ÉCRAN - screencast : créer ton preset de marque]**
 
 Avec la version Pro, tu peux enregistrer ta propre configuration comme preset. Tu règles le lecteur à tes couleurs et à ton style, puis tu sauvegardes ce réglage en preset, sous un nom clair, par exemple le nom de ta marque.
 
 [Configure le lecteur aux couleurs de la marque]
 [Enregistre la configuration comme preset]
 
-**[ÉCRAN — screencast : appliquer le preset]**
+**[ÉCRAN - screencast : appliquer le preset]**
 
 Sur chaque nouvelle vidéo, tu sélectionnes ce preset dans le panneau Preset. Ton lecteur est à ta marque immédiatement. Tous tes médias deviennent cohérents, sans répéter les réglages.
 
 [Ouvre un autre média, applique le preset de marque]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le preset porte ton style. Dans la dernière leçon de ce module, on entre dans le détail du branding : logo, couleurs, poster, et titre en surimpression.
 
@@ -365,7 +365,7 @@ Le preset porte ton style. Dans la dernière leçon de ce module, on entre dans 
 
 ---
 
-## Leçon 1.6 — Branding : logo, couleurs, poster, ratio, titre
+## Leçon 1.6 - Branding : logo, couleurs, poster, ratio, titre
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -373,11 +373,11 @@ Le preset porte ton style. Dans la dernière leçon de ce module, on entre dans 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On termine ce module par l'habillage fin. Un lecteur à ta marque inspire confiance, et la confiance fait cliquer sur play. On passe en revue chaque réglage.
 
-**[ÉCRAN — screencast : branding global ou par-média]**
+**[ÉCRAN - screencast : branding global ou par-média]**
 
 Le branding existe à deux niveaux. Dans Settings, l'onglet Branding pose ton branding par défaut, valable pour tous tes médias. Et dans le bloc FluentPlayer, le panneau Branding ajuste le branding d'un média précis.
 
@@ -386,37 +386,37 @@ Le branding existe à deux niveaux. Dans Settings, l'onglet Branding pose ton br
 
 Règle ton branding par défaut une fois dans Settings, ajuste au cas par cas dans le bloc.
 
-**[ÉCRAN — screencast : le logo]**
+**[ÉCRAN - screencast : le logo]**
 
 [Dans le panneau Branding, active l'option logo]
 [Téléverse un logo PNG transparent]
 
 Le logo s'affiche sur le lecteur. Où que ta vidéo soit vue, ta marque voyage avec elle. Utilise un PNG transparent, lisible même en petit.
 
-**[ÉCRAN — screencast : les couleurs]**
+**[ÉCRAN - screencast : les couleurs]**
 
 [Dans le panneau Branding, règle la couleur d'accent et la barre de contrôle]
 
 Reprends la couleur principale de ta charte pour la couleur d'accent et la barre de contrôle. Le lecteur cesse d'être générique : il devient le tien.
 
-**[ÉCRAN — screencast : l'image d'attente]**
+**[ÉCRAN - screencast : l'image d'attente]**
 
 [Définis l'image d'attente du média]
 
 Le poster, c'est la vignette avant le clic. On l'a vu, il protège la vitesse de ta page. Mais il fait aussi vendre la vidéo : choisis une image nette, avec un visage ou un titre clair. C'est elle qui donne envie de lancer la lecture.
 
-**[ÉCRAN — screencast : ratio et titre]**
+**[ÉCRAN - screencast : ratio et titre]**
 
 [Règle le ratio d'affichage]
 [Active le titre en surimpression]
 
 Le ratio, en général seize/neuf, garde un affichage propre sur tous les écrans. Le titre en surimpression rappelle le sujet de la vidéo dès l'ouverture.
 
-**[ÉCRAN — slide "Cohérence avant tout"]**
+**[ÉCRAN - slide "Cohérence avant tout"]**
 
 Le vrai secret du branding vidéo, ce n'est pas un réglage, c'est la constance. Mêmes couleurs, même logo, même style sur toutes tes vidéos. Enregistre tout ça dans un preset, et tu n'y penses plus.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant poser des vidéos rapides, à ta marque, sur une base saine. C'est le projet de ce module. Dans le Module 2, on s'attaque à la suite : structurer tes vidéos pour qu'on les regarde jusqu'au bout.
 
@@ -436,7 +436,7 @@ Tu sais maintenant poser des vidéos rapides, à ta marque, sur une base saine. 
 
 ---
 
-## Notes de production — Module 1
+## Notes de production - Module 1
 
 ### Captures à préparer
 - Tableau comparatif FluentPlayer Free vs Pro

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FlyingPress vs WP Rocket — WordPress caching plugin comparison</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', -apple-system, system-ui, sans-serif; background: #F4F5F7; color: #0F1419; }
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    background: #F4F5F7;
+    padding: 80px 96px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #00D400 0%, #00A300 100%);
+  }
+  .slide::after {
+    content: "";
+    position: absolute;
+    bottom: -160px; right: -160px;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 0, 0.12) 0%, rgba(0, 212, 0, 0) 70%);
+    pointer-events: none;
+  }
+
+  .left { display: flex; flex-direction: column; gap: 32px; position: relative; z-index: 2; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0F1419;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 10px;
+    height: 10px;
+    background: #00D400;
+    border-radius: 50%;
+  }
+  .title {
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 1.02;
+    color: #0F1419;
+    letter-spacing: -0.025em;
+  }
+  .title .vs {
+    color: #00D400;
+    font-style: italic;
+    font-weight: 800;
+  }
+  .subtitle {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: #4b5563;
+    max-width: 760px;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .author strong { color: #0F1419; font-weight: 700; }
+  .wordmark { font-weight: 800; letter-spacing: -0.01em; }
+  .wordmark .wp { color: #00D400; }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .plugin-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(15, 20, 25, 0.08);
+    box-shadow: 0 18px 40px -10px rgba(15, 20, 25, 0.14),
+                0 6px 16px -3px rgba(15, 20, 25, 0.06);
+    padding: 26px 32px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 22px;
+    position: relative;
+  }
+  .plugin-card.featured {
+    border: 2px solid #00D400;
+    box-shadow: 0 22px 56px -12px rgba(0, 212, 0, 0.28),
+                0 8px 20px -3px rgba(15, 20, 25, 0.10);
+  }
+
+  .plugin-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: #F4F5F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 30px;
+    font-weight: 900;
+    color: #0F1419;
+    letter-spacing: -0.04em;
+  }
+  .plugin-card.featured .plugin-icon {
+    background: linear-gradient(135deg, #00D400 0%, #00A300 100%);
+    color: #ffffff;
+  }
+
+  .plugin-info { display: flex; flex-direction: column; gap: 6px; }
+  .plugin-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0F1419;
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .plugin-points {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .point {
+    background: rgba(15, 20, 25, 0.06);
+    color: #374151;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .plugin-card.featured .point {
+    background: rgba(0, 212, 0, 0.12);
+    color: #006d00;
+  }
+
+  .plugin-tag {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    text-align: right;
+    line-height: 1.2;
+    flex-shrink: 0;
+    min-width: 88px;
+  }
+  .plugin-card.featured .plugin-tag {
+    color: #00A300;
+  }
+
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 12px;
+  }
+  .vs-divider .line {
+    flex: 1;
+    height: 1px;
+    background: rgba(15, 20, 25, 0.1);
+  }
+  .vs-divider .vs-pill {
+    background: #0F1419;
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left">
+      <span class="badge"><span class="badge-dot"></span> Speed · Caching</span>
+      <h1 class="title">
+        FlyingPress<br>
+        <span class="vs">vs</span> WP Rocket
+      </h1>
+      <p class="subtitle">Which caching plugin actually wins on Core Web Vitals? Honest comparison for WordPress site owners and freelancers.</p>
+      <div class="author">
+        <span><strong>Michaël KIHL</strong> · <span class="wordmark">schools<span class="wp">WP</span></span></span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="plugin-card featured">
+        <div class="plugin-icon">FP</div>
+        <div class="plugin-info">
+          <div class="plugin-name">FlyingPress</div>
+          <div class="plugin-points">
+            <span class="point">RUCSS</span>
+            <span class="point">Bunny CDN</span>
+            <span class="point">Lean defaults</span>
+          </div>
+        </div>
+        <div class="plugin-tag">Core Web<br>Vitals</div>
+      </div>
+
+      <div class="vs-divider">
+        <span class="line"></span>
+        <span class="vs-pill">VS</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="plugin-card">
+        <div class="plugin-icon">WP</div>
+        <div class="plugin-info">
+          <div class="plugin-name">WP Rocket</div>
+          <div class="plugin-points">
+            <span class="point">Advanced caching</span>
+            <span class="point">Multisite</span>
+            <span class="point">DB cleanup</span>
+          </div>
+        </div>
+        <div class="plugin-tag">Power<br>user</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

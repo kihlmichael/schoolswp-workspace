@@ -1,0 +1,211 @@
+1
+00:00:00,000 --> 00:00:08,590
+Tu as un site WordPress et tu veux le sécuriser, mais tu n'as ni le temps ni l'envie de devenir expert en cybersécurité.
+
+2
+00:00:08,590 --> 00:00:18,112
+Dans les quatre prochaines minutes, je te montre comment installer Samaritain Security et te mettre à l'abri, en deux minutes chrono.
+
+3
+00:00:18,112 --> 00:00:25,379
+Premier réflexe avant d'installer Samaritain Security : un seul plugin de sécurité actif à la fois.
+
+4
+00:00:25,379 --> 00:00:31,692
+Si tu utilises Wordfence, SecuPress, iThemes Security ou Solid Security, désactive-le.
+
+5
+00:00:31,692 --> 00:00:41,749
+Samaritain détecte les conflits, mais autant éviter le double filtrage qui peut alourdir ton site ou produire des comportements imprévus.
+
+6
+00:00:41,749 --> 00:00:45,173
+Direction Extensions, Ajouter, Téléverser.
+
+7
+00:00:45,173 --> 00:00:49,085
+Tu sélectionnes le fichier ZIP qu'on t'a envoyé.
+
+8
+00:00:49,085 --> 00:00:51,693
+Tu cliques Installer maintenant.
+
+9
+00:00:51,693 --> 00:00:52,834
+Et tu actives.
+
+10
+00:00:52,834 --> 00:00:59,843
+Un nouveau menu Samaritain apparaît à gauche, dans ta barre latérale d'administration.
+
+11
+00:00:59,843 --> 00:01:02,369
+C'est tout pour l'installation.
+
+12
+00:01:02,369 --> 00:01:06,363
+Maintenant on passe à l'activation de la licence.
+
+13
+00:01:06,363 --> 00:01:08,828
+Tu vas dans Samaritain, Licence.
+
+14
+00:01:08,828 --> 00:01:13,836
+Tu colles la clé qui t'a été envoyée par email lors de ton achat.
+
+15
+00:01:13,836 --> 00:01:16,610
+Tu cliques sur Activer la licence...
+
+16
+00:01:16,610 --> 00:01:17,303
+et voilà.
+
+17
+00:01:17,303 --> 00:01:27,859
+Le récapitulatif apparaît avec ton nom, ton email, ta date d'expiration et même une clé de récupération qui est déjà configurée pour toi.
+
+18
+00:01:27,859 --> 00:01:28,707
+C'est fait.
+
+19
+00:01:28,707 --> 00:01:33,484
+Tu as maintenant accès à toutes les fonctionnalités du plugin.
+
+20
+00:01:33,484 --> 00:01:36,876
+Maintenant, attention, c'est important.
+
+21
+00:01:36,876 --> 00:01:43,401
+La première chose à savoir : Samaritain a déjà changé ton URL de connexion.
+
+22
+00:01:43,401 --> 00:01:45,836
+Elle est affichée juste ici.
+
+23
+00:01:45,836 --> 00:01:50,882
+Note-la dans ton gestionnaire de mots de passe maintenant.
+
+24
+00:01:50,882 --> 00:01:52,622
+Vraiment maintenant.
+
+25
+00:01:52,622 --> 00:01:59,581
+Parce qu'à partir de cet instant, l'ancienne adresse wp-login.php n'existe plus.
+
+26
+00:01:59,581 --> 00:02:09,846
+Si tu fermes ce navigateur sans avoir noté la nouvelle URL, tu risques de te retrouver bloqué hors de ton propre site.
+
+27
+00:02:09,846 --> 00:02:12,436
+Tu veux la preuve que ça marche ?
+
+28
+00:02:12,436 --> 00:02:13,064
+Regarde.
+
+29
+00:02:13,064 --> 00:02:18,481
+Je tape michaelkihl point fr slash wp-login.php en navigation privée.
+
+30
+00:02:18,481 --> 00:02:23,426
+Et là, je tombe sur une page 404, comme si elle n'existait pas.
+
+31
+00:02:23,426 --> 00:02:32,688
+Les milliers de robots qui scrutent Internet à la recherche de cette URL bien connue ne trouveront plus rien chez toi.
+
+32
+00:02:32,688 --> 00:02:36,456
+C'est déjà une énorme partie du travail de fait.
+
+33
+00:02:36,456 --> 00:02:41,786
+Et avec ta nouvelle URL personnalisée, j'arrive bien sur l'écran de connexion normal.
+
+34
+00:02:41,786 --> 00:02:42,350
+Tu vois ?
+
+35
+00:02:42,350 --> 00:02:44,231
+Toujours en navigation privée.
+
+36
+00:02:44,231 --> 00:02:51,317
+À retenir : note cette URL avant de fermer ton navigateur, et conserve-la dans ton gestionnaire de mots de passe.
+
+37
+00:02:51,317 --> 00:02:55,071
+Et juste au cas où tu perdrais ta nouvelle URL...
+
+38
+00:02:55,071 --> 00:03:02,657
+Samaritain te fournit aussi une URL de secours, avec un paramètre samaritain rescue dans l'adresse.
+
+39
+00:03:02,657 --> 00:03:05,493
+Tu la trouves sur cette page Licence.
+
+40
+00:03:05,493 --> 00:03:09,860
+Note-la également dans ton gestionnaire de mots de passe.
+
+41
+00:03:09,860 --> 00:03:12,006
+C'est ta bouée de sauvetage.
+
+42
+00:03:12,006 --> 00:03:18,902
+En cas de problème, elle te permet de débloquer ton IP et de te reconnecter en 15 minutes.
+
+43
+00:03:18,902 --> 00:03:21,006
+Direction le tableau de bord.
+
+44
+00:03:21,006 --> 00:03:24,126
+Premier coup d'œil : ton score de sécurité.
+
+45
+00:03:24,126 --> 00:03:34,427
+Là moi je suis à 96 sur cent avec une note A, parce que je vais utiliser ce site pour cette formation et que j'ai déjà fait pas mal de choses.
+
+46
+00:03:34,427 --> 00:03:40,086
+Toi, tu vas probablement démarrer entre 75 et 85, et c'est tout à fait normal.
+
+47
+00:03:40,086 --> 00:03:41,392
+Ne t'inquiète pas.
+
+48
+00:03:41,392 --> 00:03:46,906
+On va voir ensemble, dans les modules suivants, comment monter à un score A.
+
+49
+00:03:46,906 --> 00:03:48,066
+Étape par étape.
+
+50
+00:03:48,066 --> 00:03:49,836
+Voilà pour le module 1.
+
+51
+00:03:49,836 --> 00:03:58,759
+Tu as ton plugin installé, ta licence activée, ta nouvelle URL de connexion notée et ton URL de secours en sécurité.
+
+52
+00:03:58,759 --> 00:04:04,529
+Dans le module 2, on rentre dans le tableau de bord pour décoder ton score.
+
+53
+00:04:04,529 --> 00:04:05,760
+À tout de suite.

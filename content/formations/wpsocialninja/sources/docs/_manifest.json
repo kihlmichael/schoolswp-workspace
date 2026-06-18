@@ -1,0 +1,462 @@
+[
+  {
+    "slug": "guide__advanced-features__add-testimonials",
+    "url": "https://docs.wpsocialninja.com/guide/advanced-features/add-testimonials",
+    "title": "How to Add Testimonials with WP Social Ninja"
+  },
+  {
+    "slug": "guide__advanced-features__collect-testimonials-fluent-forms",
+    "url": "https://docs.wpsocialninja.com/guide/advanced-features/collect-testimonials-fluent-forms.html",
+    "title": "How to Collect Testimonials with Fluent Forms"
+  },
+  {
+    "slug": "guide__advanced-features__notification-popup",
+    "url": "https://docs.wpsocialninja.com/guide/advanced-features/notification-popup",
+    "title": "Notification Popup | WP Social Ninja"
+  },
+  {
+    "slug": "guide__ai-integration__openai-integration-for-review",
+    "url": "https://docs.wpsocialninja.com/guide/ai-integration/openai-integration-for-review.html",
+    "title": "OpenAI Integration for Review | WP Social Ninja"
+  },
+  {
+    "slug": "guide__ai-integration__openrouter-integration-for-review",
+    "url": "https://docs.wpsocialninja.com/guide/ai-integration/openrouter-integration-for-review.html",
+    "title": "OpenRouter Integration for Review | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/",
+    "title": "Business Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__airbnb-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/airbnb-configuration",
+    "title": "Airbnb Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__aliexpress-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/aliexpress-configuration",
+    "title": "AliExpress Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__booking-com-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/booking-com-configuration",
+    "title": "Booking.com Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__collect-woocommerce-custom-reviews-with-fluent-forms",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/collect-woocommerce-custom-reviews-with-fluent-forms.html",
+    "title": "Collect WooCommerce/Custom Reviews with Fluent Forms"
+  },
+  {
+    "slug": "guide__business-reviews__configure-schema",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/configure-schema",
+    "title": "How to Configure Schema Snippet with WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__create-template",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/create-template",
+    "title": "Create A Template | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__facebook-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/facebook-configuration",
+    "title": "Facebook Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__facebook-reviews-access-token",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/facebook-reviews-access-token.html",
+    "title": "Facebook Reviews (Using Access Token)"
+  },
+  {
+    "slug": "guide__business-reviews__fluent-forms-review",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/fluent-forms-review",
+    "title": "How to Add Fluent Forms Reviews with WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__fluentcart-product-review",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/fluentcart-product-review.html",
+    "title": "FluentCart Product Review | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__generate-qr-code-for-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/generate-qr-code-for-reviews",
+    "title": "Generate QR Code for Reviews"
+  },
+  {
+    "slug": "guide__business-reviews__global-review-settings",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/global-review-settings.html",
+    "title": "Global Review Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__google-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/google-configuration",
+    "title": "Google Business Profile Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__native-review-forms",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/native-review-forms.html",
+    "title": "Collect Feedback with Native Review Forms"
+  },
+  {
+    "slug": "guide__business-reviews__template-style-connection",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/template-style-connection.html",
+    "title": "Template Styling & Connection | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__tripadvisor-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/tripadvisor-configuration",
+    "title": "Tripadvisor Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__trustpilot-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/trustpilot-configuration",
+    "title": "Trustpilot Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__woocommerce-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/woocommerce-reviews",
+    "title": "WooCommerce Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__business-reviews__yelp-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/business-reviews/yelp-configuration",
+    "title": "Yelp Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__custom-source__custom-source-overview",
+    "url": "https://docs.wpsocialninja.com/guide/custom-source/custom-source-overview.html",
+    "title": "Custom Source Overview | WP Social Ninja"
+  },
+  {
+    "slug": "guide__custom-source__export-your-old-custom-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/custom-source/export-your-old-custom-reviews.html",
+    "title": "Export Your Old Custom Reviews"
+  },
+  {
+    "slug": "guide__custom-source__fluent-forms-custom-source",
+    "url": "https://docs.wpsocialninja.com/guide/custom-source/fluent-forms-custom-source.html",
+    "title": "How to Collect Reviews with a Fluent Forms Custom Source"
+  },
+  {
+    "slug": "guide__custom-source__manually-add-or-import-custom-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/custom-source/manually-add-or-import-custom-reviews",
+    "title": "How to Manually Add or Import Custom Reviews"
+  },
+  {
+    "slug": "guide__customization-design__website-styling-for-feeds-and-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/customization-design/website-styling-for-feeds-and-reviews.html",
+    "title": "Style | Feeds & Reviews"
+  },
+  {
+    "slug": "guide__getting-started__all-platforms-of-wp-social-ninja",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/all-platforms-of-wp-social-ninja.html",
+    "title": "Platforms | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__getting-started-with-the-user-interface-of-wp-social-ninja",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/getting-started-with-the-user-interface-of-wp-social-ninja.html",
+    "title": "User Interface | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__getting-started-with-wp-social-ninja",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/getting-started-with-wp-social-ninja.html",
+    "title": "WP Social Ninja Introduction | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__install-upgrade-activate-license",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/install-upgrade-activate-license.html",
+    "title": "How to Install, Upgrade and Activate License"
+  },
+  {
+    "slug": "guide__getting-started__onboarding-setup-wizard",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/onboarding-setup-wizard.html",
+    "title": "Onboarding Setup Wizard | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__reviews",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/reviews.html",
+    "title": "Reviews | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__templates-overview",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/templates-overview",
+    "title": "Templates Overview | WP Social Ninja"
+  },
+  {
+    "slug": "guide__getting-started__wp-social-ninja-glossary",
+    "url": "https://docs.wpsocialninja.com/guide/getting-started/wp-social-ninja-glossary.html",
+    "title": "WP Social Ninja Glossary | WP Social Ninja"
+  },
+  {
+    "slug": "guide__import-export-migration__export-import-custom-reviews",
+    "url": "https://docs.wpsocialninja.com/guide/import-export-migration/export-import-custom-reviews.html",
+    "title": "How to Export/Import | WP Social Ninja"
+  },
+  {
+    "slug": "guide__import-export-migration__migrate-from-judge-me",
+    "url": "https://docs.wpsocialninja.com/guide/import-export-migration/migrate-from-judge-me.html",
+    "title": "Migrate from Judge.me | WP Social Ninja"
+  },
+  {
+    "slug": "guide__integrations__beaver-page-builder",
+    "url": "https://docs.wpsocialninja.com/guide/integrations/beaver-page-builder.html",
+    "title": "How to Embed WP Social Ninja Template with Beaver Page Builder"
+  },
+  {
+    "slug": "guide__integrations__elementor-integration",
+    "url": "https://docs.wpsocialninja.com/guide/integrations/elementor-integration.html",
+    "title": "How to Embed WP Social Ninja Template with Elementor Page Builder"
+  },
+  {
+    "slug": "guide__integrations__integrations-overview",
+    "url": "https://docs.wpsocialninja.com/guide/integrations/integrations-overview.html",
+    "title": "Integrations Overview | WP Social Ninja"
+  },
+  {
+    "slug": "guide__integrations__oxygen-integration",
+    "url": "https://docs.wpsocialninja.com/guide/integrations/oxygen-integration.html",
+    "title": "How to Embed WP Social Ninja Template with Oxygen Page Builder"
+  },
+  {
+    "slug": "guide__integrations__shortcode-usage",
+    "url": "https://docs.wpsocialninja.com/guide/integrations/shortcode-usage.html",
+    "title": "How to use a Shortcode"
+  },
+  {
+    "slug": "guide__management-settings__advanced-settings",
+    "url": "https://docs.wpsocialninja.com/guide/management-settings/advanced-settings.html",
+    "title": "Advanced Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__management-settings__configure-cloudflare-turnstile",
+    "url": "https://docs.wpsocialninja.com/guide/management-settings/configure-cloudflare-turnstile.html",
+    "title": "Configure Cloudflare Turnstile | WP Social Ninja"
+  },
+  {
+    "slug": "guide__management-settings__manager",
+    "url": "https://docs.wpsocialninja.com/guide/management-settings/manager.html",
+    "title": "Manager | WP Social Ninja"
+  },
+  {
+    "slug": "guide__management-settings__translation",
+    "url": "https://docs.wpsocialninja.com/guide/management-settings/translation.html",
+    "title": "Translate Option | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-chat",
+    "url": "https://docs.wpsocialninja.com/guide/social-chat/",
+    "title": "Social Chat Overview | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-chat__add-custom-button-chat-widget",
+    "url": "https://docs.wpsocialninja.com/guide/social-chat/add-custom-button-chat-widget.html",
+    "title": "How to Add Custom Button Chat Widget on Your Website"
+  },
+  {
+    "slug": "guide__social-chat__chat-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-chat/chat-settings.html",
+    "title": "How to change Settings of Social Chat"
+  },
+  {
+    "slug": "guide__social-chat__chat-styling",
+    "url": "https://docs.wpsocialninja.com/guide/social-chat/chat-styling.html",
+    "title": "Style Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-chat__chat-widget-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/social-chat/chat-widget-configuration",
+    "title": "Social Chat Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/",
+    "title": "Social Feeds | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__convert-your-instagram-personal-account-into-professional-account",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/convert-your-instagram-personal-account-into-professional-account.html",
+    "title": "Convert Your Instagram Personal Account into Professional/Creator Account"
+  },
+  {
+    "slug": "guide__social-feeds__display-facebook-events",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/display-facebook-events.html",
+    "title": "How to Display Facebook Events Feed with WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-customization",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-customization.html",
+    "title": "Facebook Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-events-access-token",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-events-access-token.html",
+    "title": "Facebook Events Access Token | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-feed-access-token",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-feed-access-token.html",
+    "title": "Connecting A Facebook Page Using Access Token | Social Feed"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-feed-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-feed-settings.html",
+    "title": "Facebook Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-integration",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-integration",
+    "title": "Facebook Feed Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-layout-styling",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-layout-styling.html",
+    "title": "Facebook Feed Layout Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-single-album-feed",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-single-album-feed.html",
+    "title": "Facebook Single Album Feed | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__facebook-specific-video-playlist-feed",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/facebook-specific-video-playlist-feed.html",
+    "title": "Facebook Specific Video Playlist Feed"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-business-basic",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-business-basic.html",
+    "title": "Instagram Business Basic | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-configuration",
+    "title": "Instagram Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-email-report",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-email-report.html",
+    "title": "Instagram Feed Issue Email Report"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-feed-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-feed-settings.html",
+    "title": "Instagram Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-feed-template-styling-connection",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-feed-template-styling-connection.html",
+    "title": "Instagram Feed Template Styling & Connection"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-gdpr-compliance",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-gdpr-compliance.html",
+    "title": "Instagram Feed GDPR Compliance | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-setup",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-setup.html",
+    "title": "Customiz Instagram Feed Template: General Settings"
+  },
+  {
+    "slug": "guide__social-feeds__instagram-shoppable-feed",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/instagram-shoppable-feed",
+    "title": "Instagram Shoppable Feed | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__reauthorize-instagram-facebook",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/reauthorize-instagram-facebook.html",
+    "title": "WP Social Ninja's Instagram/Facebook Reauthorize App | Social Feeds | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__style-connection-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/style-&-connection-settings.html",
+    "title": "YouTube Feed Template: Style & Connection Settings"
+  },
+  {
+    "slug": "guide__social-feeds__tiktok-feed-activation",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/tiktok-feed-activation.html",
+    "title": "TikTok Feed Activation | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__tiktok-feed-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/tiktok-feed-configuration",
+    "title": "TikTok Feed Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__tiktok-feed-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/tiktok-feed-settings.html",
+    "title": "TikTok Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__tiktok-feed-template",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/tiktok-feed-template.html",
+    "title": "TikTok Feed Template | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__twitter-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/twitter-configuration",
+    "title": "Twitter Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__twitter-feed-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/twitter-feed-settings.html",
+    "title": "X (Twitter) Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__twitter-feed-template-styling-connection",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/twitter-feed-template-styling-connection.html",
+    "title": "X (Twitter) Feed Template Styling & Connection"
+  },
+  {
+    "slug": "guide__social-feeds__twitter-template-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/twitter-template-settings.html",
+    "title": "Twitter Template Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__youtube-configuration",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/youtube-configuration",
+    "title": "YouTube Configuration | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__youtube-feed-template-general-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/youtube-feed-template-general-settings.html",
+    "title": "YouTube Feed Template: General Settings"
+  },
+  {
+    "slug": "guide__social-feeds__youtube-feed-types",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/youtube-feed-types.html",
+    "title": "YouTube Feed Type | WP Social Ninja"
+  },
+  {
+    "slug": "guide__social-feeds__youtube-settings",
+    "url": "https://docs.wpsocialninja.com/guide/social-feeds/youtube-settings.html",
+    "title": "YouTube Feed Settings | WP Social Ninja"
+  },
+  {
+    "slug": "guide__troubleshooting-support__change-log",
+    "url": "https://docs.wpsocialninja.com/guide/troubleshooting-support/change-log.html",
+    "title": "Change Log | WP Social Ninja"
+  },
+  {
+    "slug": "guide__troubleshooting-support__facebook-feeds-not-updating",
+    "url": "https://docs.wpsocialninja.com/guide/troubleshooting-support/facebook-feeds-not-updating.html",
+    "title": "Facebook Feeds Not Updating or Missing Posts"
+  },
+  {
+    "slug": "guide__troubleshooting-support__fixing-access-token-decryption",
+    "url": "https://docs.wpsocialninja.com/guide/troubleshooting-support/fixing-access-token-decryption.html",
+    "title": "Fixing Access Token Decryption Failed in WP Social Ninja"
+  },
+  {
+    "slug": "guide__troubleshooting-support__get-support",
+    "url": "https://docs.wpsocialninja.com/guide/troubleshooting-support/get-support.html",
+    "title": "How to Get Support | WP Social Ninja"
+  },
+  {
+    "slug": "index",
+    "url": "https://docs.wpsocialninja.com/",
+    "title": "WP Social Ninja"
+  }
+]

@@ -347,10 +347,10 @@ class PublishReadyAgent(BaseContentAgent):
             dashboard markdown et (optionnellement) fixed_article.
         """
         # 4 audits en parallèle
-        seo_agent = SeoAuditorAgent(model=self.model)
-        llm_agent = LlmSeoAgent(model=self.model)
-        conv_agent = ConversionAuditorAgent(model=self.model)
-        auth_agent = TopicalAuthorityAgent(model=self.model)
+        seo_agent = SeoAuditorAgent(model=self.raw_model)
+        llm_agent = LlmSeoAgent(model=self.raw_model)
+        conv_agent = ConversionAuditorAgent(model=self.raw_model)
+        auth_agent = TopicalAuthorityAgent(model=self.raw_model)
 
         seo_res, llm_res, conv_res, auth_res = await asyncio.gather(
             seo_agent.run(article=article, keyword=keyword, intent=intent),
@@ -394,7 +394,7 @@ class PublishReadyAgent(BaseContentAgent):
         )
 
         # Synthèse plan d'action cross-modules
-        synth = _SynthesisAgent(model=self.model)
+        synth = _SynthesisAgent(model=self.raw_model)
         result.action_plan = await synth.run(
             seo_report=seo_res.report,
             llm_report=llm_res.report,
@@ -439,7 +439,7 @@ class PublishReadyAgent(BaseContentAgent):
         if weakest_name == "SEO Structure":
             from agents.seo_auditor.agent import SeoAuditorAgent as _SA
 
-            agent = _SA(model=self.model)
+            agent = _SA(model=self.raw_model)
             fix_result = await agent.audit_and_fix(article=article, keyword=keyword, intent=intent, threshold=90)
             return fix_result.v2 if fix_result.fixed else ""
 
@@ -447,7 +447,7 @@ class PublishReadyAgent(BaseContentAgent):
         if weakest_name == "Conversion & CTA":
             from agents.conversion_auditor.agent import ConversionAuditorAgent as _CA
 
-            agent = _CA(model=self.model)
+            agent = _CA(model=self.raw_model)
             inject_result = await agent.audit_and_inject(
                 article=article, keyword=keyword, intent=intent, objective=objective
             )
@@ -457,7 +457,7 @@ class PublishReadyAgent(BaseContentAgent):
         if weakest_name == "Citabilité IA":
             from agents.llm_seo.agent import LlmSeoAgent as _LA
 
-            agent = _LA(model=self.model)
+            agent = _LA(model=self.raw_model)
             opt_result = await agent.optimize(article=article, keyword=keyword, intent=intent)
             return opt_result.article_optimized if opt_result.optimized else ""
 

@@ -1,0 +1,5 @@
+Suggestion,Volume FR (DFS),Intention,Type d'intention reelle
+paystack login,10,navigational,Recherche utilisateur (accès direct)
+paystack api,10,informational,Intégration développeur
+paystack terminal,10,navigational,Recherche terminal de paiement
+paystack ceo,10,informational,Recherche institutionnelle

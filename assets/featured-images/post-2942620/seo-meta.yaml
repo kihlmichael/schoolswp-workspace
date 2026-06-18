@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/?p=2942620
+    title: Avis WP Grid Builder, le test complet du constructeur de grilles
+    subject: "Avis WP Grid Builder : grilles, cartes et filtres Ajax pour WordPress, testé sous tous les angles"
+    description: "Image à la une de l'avis schoolsWP sur WP Grid Builder, noté 9 sur 10. Le test complet du constructeur de grilles, cartes et facettes pour WordPress : création de grilles et de cartes en glisser-déposer, filtrage Ajax et recherche en temps réel, intégrations avec ACF, WooCommerce et le multilingue, et un soin porté aux Core Web Vitals. Idéal pour les annuaires, les portails immobiliers et les boutiques."
+    alt: "Avis schoolsWP sur WP Grid Builder, constructeur de grilles, cartes et filtres Ajax pour WordPress noté 9 sur 10"
+    keywords:
+      [
+        wp grid builder,
+        avis wp grid builder,
+        constructeur de grilles wordpress,
+        filtrage ajax wordpress,
+        annuaire wordpress,
+        facettes acf woocommerce,
+        schoolsWP,
+      ]

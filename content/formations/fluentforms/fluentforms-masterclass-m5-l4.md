@@ -1,9 +1,9 @@
-# Script video — Module 5, Lecon 4 : Tags dynamiques selon les reponses
+# Script video - Module 5, Lecon 4 : Tags dynamiques selon les reponses
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 5 — FluentForms + FluentCRM
-**Lecon** : 4/7 — Tags dynamiques selon les reponses
+**Module** : 5 - FluentForms + FluentCRM
+**Lecon** : 4/7 - Tags dynamiques selon les reponses
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast config conditional tags, slide schema
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Jusqu'ici, chaque formulaire assigne les memes tags a tous les contacts. Que le visiteur soit un freelance avec un budget de 500 euros ou un directeur marketing avec 50 000 euros, il recoit les memes tags.
 
 Ca, c'est insuffisant. Les tags dynamiques resolvent ce probleme. Le tag change selon ce que le visiteur a repondu. Et ca change tout pour la qualification commerciale.
 
-**[SECTION 1 — slide "Le principe"]**
+**[SECTION 1 - slide "Le principe"]**
 
 Le principe est simple.
 
@@ -31,7 +31,7 @@ Si "plus de 5000 euros" → tag "budget-enterprise".
 
 Le commercial qui recoit la notification sait immediatement la valeur du lead sans avoir a lire les details du formulaire.
 
-**[SECTION 2 — screencast "Configurer le conditional tag"]**
+**[SECTION 2 - screencast "Configurer le conditional tag"]**
 
 Ouvre ton formulaire dans FluentForms. On va prendre un formulaire de devis avec un champ Select "Budget" et un champ Select "Type de projet".
 
@@ -41,7 +41,7 @@ Dans la section Tags, au lieu de selectionner des tags fixes, clique sur "Enable
 
 La methode la plus flexible : creer plusieurs feeds FluentCRM pour le meme formulaire, chacun avec une condition differente.
 
-**[SECTION 3 — screencast "Methode multi-feeds"]**
+**[SECTION 3 - screencast "Methode multi-feeds"]**
 
 Voici comment ca marche. Au lieu d'un seul feed, tu en crees trois.
 
@@ -53,7 +53,7 @@ Feed 3 : condition "Budget IS More than 5000 euros". Tags : "budget-enterprise",
 
 Chaque feed a une condition. Seul le feed dont la condition est remplie s'execute. Si le visiteur choisit "plus de 5000 euros", seul le feed 3 s'active. Le contact recoit les tags "budget-enterprise" et "status-prospect-premium".
 
-**[SECTION 4 — screencast "Cas pratique : qualifier un lead"]**
+**[SECTION 4 - screencast "Cas pratique : qualifier un lead"]**
 
 On va construire un cas complet. Formulaire de demande de devis pour un site WordPress.
 
@@ -82,7 +82,7 @@ Au total, 6 feeds. Le feed principal s'execute toujours. Les autres s'activent s
 
 C'est un lead premium. Tu le vois immediatement dans FluentCRM.
 
-**[SECTION 5 — slide "Impact commercial"]**
+**[SECTION 5 - slide "Impact commercial"]**
 
 Voici ce que ca change pour ton business.
 
@@ -94,7 +94,7 @@ Scoring. Dans FluentCRM Pro, tu peux attribuer des points selon les tags. "budge
 
 Les tags dynamiques sont le pont entre les donnees brutes du formulaire et l'intelligence commerciale de ton CRM.
 
-**[SECTION 6 — screencast "Tester"]**
+**[SECTION 6 - screencast "Tester"]**
 
 Teste le formulaire avec differentes combinaisons.
 
@@ -104,9 +104,9 @@ Soumission 2 : budget enterprise, e-commerce, urgent. Verifie : tags "source-for
 
 Si les tags ne s'appliquent pas, verifie les conditions de chaque feed. L'erreur la plus courante : la valeur dans la condition ne correspond pas exactement a la valeur de l'option du champ. Attention aux espaces, aux accents et a la casse.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Tes formulaires qualifient maintenant chaque lead automatiquement. Dans la prochaine lecon, on utilise ces tags pour declencher des automations FluentCRM — des sequences email qui partent toutes seules.
+Tes formulaires qualifient maintenant chaque lead automatiquement. Dans la prochaine lecon, on utilise ces tags pour declencher des automations FluentCRM - des sequences email qui partent toutes seules.
 
 On se retrouve dans la lecon suivante.
 
@@ -128,4 +128,4 @@ On se retrouve dans la lecon suivante.
 - Face camera : intro (probleme des tags fixes) + outro (transition automations)
 - Screencast : creation des feeds conditionnels + test (~7 min)
 - Slides : 2 slides (principe + impact commercial)
-- Ton : oriente business — montrer la valeur commerciale des tags dynamiques
+- Ton : oriente business - montrer la valeur commerciale des tags dynamiques

@@ -1,9 +1,9 @@
-# Lecon 6.3 — Tester les order bumps et upsells
+# Lecon 6.3 - Tester les order bumps et upsells
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Savoir appliquer l'A/B testing aux order bumps et aux upsells. Comprendre comment isoler les variables quand on teste plusieurs etapes du funnel.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu sais tester ta page checkout. Maintenant, on s'attaque aux deux autres leviers de ton funnel : les order bumps et les upsells. Ce sont les etapes qui augmentent ta valeur par commande. Et elles se testent aussi.
 
@@ -20,11 +20,11 @@ La methode est la meme : une variable a la fois, volume suffisant, et patience. 
 
 ---
 
-**[SECTION 1 — A/B tester un order bump]**
+**[SECTION 1 - A/B tester un order bump]**
 
-**[ECRAN — CartFlows > Checkout > Order Bump settings]**
+**[ECRAN - CartFlows > Checkout > Order Bump settings]**
 
-L'order bump, c'est cette petite case a cocher sur la page de paiement — l'offre complementaire que le client ajoute en un clic avant de valider sa commande.
+L'order bump, c'est cette petite case a cocher sur la page de paiement - l'offre complementaire que le client ajoute en un clic avant de valider sa commande.
 
 Pour le tester, tu vas creer deux variantes de ton checkout. Variante A avec le bump actuel, variante B avec un bump different. Meme methode que la lecon precedente : CartFlows > step Checkout > A/B Test > ajouter une variante.
 
@@ -36,9 +36,9 @@ Ce que tu mesures : le taux d'acceptation du bump et le revenu genere par le bum
 
 ---
 
-**[SECTION 2 — A/B tester un upsell]**
+**[SECTION 2 - A/B tester un upsell]**
 
-**[ECRAN — CartFlows > Flow > step Upsell > A/B Test]**
+**[ECRAN - CartFlows > Flow > step Upsell > A/B Test]**
 
 L'upsell post-achat se teste de la meme maniere. Tu accedes au step Upsell dans ton flow, tu actives l'A/B Test, et tu crees une variante.
 
@@ -46,15 +46,15 @@ Ici, le levier principal a tester est le prix. Exemple : ton upsell actuel est u
 
 Variante A : upsell coaching a 97 euros. Variante B : upsell coaching a 67 euros.
 
-Scenario possible : la variante A a 97 euros est acceptee par 8% des acheteurs. La variante B a 67 euros est acceptee par 14%. Calcul rapide : 97 x 0.08 = 7.76 euros de revenu moyen par acheteur. 67 x 0.14 = 9.38 euros. La variante B gagne — meme si le prix unitaire est plus bas.
+Scenario possible : la variante A a 97 euros est acceptee par 8% des acheteurs. La variante B a 67 euros est acceptee par 14%. Calcul rapide : 97 x 0.08 = 7.76 euros de revenu moyen par acheteur. 67 x 0.14 = 9.38 euros. La variante B gagne - meme si le prix unitaire est plus bas.
 
 C'est pour ca qu'on teste. L'intuition aurait dit "le prix plus haut rapporte plus". Les donnees disent le contraire.
 
 ---
 
-**[SECTION 3 — Isoler les variables : la regle sequentielle]**
+**[SECTION 3 - Isoler les variables : la regle sequentielle]**
 
-**[ECRAN — schema "ordre de test" : checkout > bump > upsell]**
+**[ECRAN - schema "ordre de test" : checkout > bump > upsell]**
 
 Voici la question que tu te poses surement : est-ce que je peux tester le checkout, le bump et l'upsell en meme temps ?
 
@@ -64,7 +64,7 @@ Si tu testes le titre du checkout et le prix du bump en meme temps, tu ne sais p
 
 La bonne approche est sequentielle :
 
-Etape 1 : teste le checkout d'abord. C'est la page la plus importante — si le client ne passe pas le checkout, il ne verra jamais le bump ni l'upsell. Optimise d'abord l'entree du funnel.
+Etape 1 : teste le checkout d'abord. C'est la page la plus importante - si le client ne passe pas le checkout, il ne verra jamais le bump ni l'upsell. Optimise d'abord l'entree du funnel.
 
 Etape 2 : une fois le checkout optimise, teste l'order bump. Le volume de trafic sur le bump depend directement du taux de conversion du checkout. Un checkout optimise te donne plus de donnees pour le test du bump.
 
@@ -74,9 +74,9 @@ Cette sequence respecte la logique du funnel : du haut vers le bas, du plus larg
 
 ---
 
-**[SECTION 4 — Cas pratique : quand le bump et l'upsell interagissent]**
+**[SECTION 4 - Cas pratique : quand le bump et l'upsell interagissent]**
 
-**[ECRAN — tableau d'interaction bump/upsell]**
+**[ECRAN - tableau d'interaction bump/upsell]**
 
 Il y a un cas specifique a connaitre. Le prix du bump peut influencer l'acceptation de l'upsell. Si le client vient d'ajouter un bump a 27 euros, sa commande totale est plus elevee. Il peut etre moins enclin a accepter un upsell a 97 euros ensuite.
 
@@ -88,9 +88,9 @@ Si tu optimises le bump de maniere isolee mais que ca fait chuter l'upsell, le g
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-La regle est claire : teste dans l'ordre du funnel — checkout d'abord, bump ensuite, upsell en dernier. Ne teste jamais deux etapes simultanement. Et une fois que chaque etape est optimisee, verifie le revenu par visiteur global pour confirmer que les pieces fonctionnent ensemble.
+La regle est claire : teste dans l'ordre du funnel - checkout d'abord, bump ensuite, upsell en dernier. Ne teste jamais deux etapes simultanement. Et une fois que chaque etape est optimisee, verifie le revenu par visiteur global pour confirmer que les pieces fonctionnent ensemble.
 
 Dans la prochaine lecon, on va apprendre a lire les resultats correctement. Parce que la signification statistique, c'est le gardien qui t'empeche de prendre des decisions sur du bruit.
 
@@ -99,7 +99,7 @@ Dans la prochaine lecon, on va apprendre a lire les resultats correctement. Parc
 ## Notes de production
 
 - **Visuels** : captures CartFlows (bump settings, upsell A/B Test), schema ordre de test, tableau interaction bump/upsell
-- **Captures d'ecran** : CartFlows Pro — Order Bump config, Upsell step A/B Test (4 captures minimum)
+- **Captures d'ecran** : CartFlows Pro - Order Bump config, Upsell step A/B Test (4 captures minimum)
 - **Ton** : pratique et methodique, avec exemples chiffres
 - **Duree estimee** : ~8 min a debit normal
 - **Transition** : enchaine directement sur L6.4 (signification statistique)

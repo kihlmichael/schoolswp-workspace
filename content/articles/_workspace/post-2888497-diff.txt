@@ -1,0 +1,12 @@
+# Patch report for post 2888497
+original content length: 43093 chars
+
+OK x2: '"text":"Get my discount"'  ->  '"text":"Ninja Tables Pro testen"'
+OK x2: '"link":"https://schoolswp.com/fluentcrm"'  ->  '"link":"https://schoolswp.com/ninja-tables/"'
+OK x0: 'href="https://schoolswp.com/fluentcrm"'  ->  'href="https://schoolswp.com/ninja-tables/"'
+OK x1: 'Nachdem wir uns mit den Grundlagen von Ninja Tables befasst '  ->  'Nachdem ich Ihnen die Grundlagen von Ninja Tables gezeigt ha'
+OK x1: 'Nachdem wir nun die technische Überlegenheit festgestellt ha'  ->  'Nachdem die technische Überlegenheit klar ist, zeige ich Ihn'
+OK x1: 'dem Import – ein gewaltiger'  ->  'dem Import: ein gewaltiger'
+OK TOC inserted at offset 6093 (before first H2 wp-block)
+
+patched length: 43394 chars (delta +301)

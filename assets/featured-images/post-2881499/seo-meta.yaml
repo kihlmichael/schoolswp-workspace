@@ -1,0 +1,22 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/tablepress-vs-wp-table-builder-comparatif/
+    title: TablePress vs WP Table Builder, le comparatif des tableaux WordPress
+    subject: "TablePress vs WP Table Builder : tableur classique ou constructeur visuel pour vos tableaux WordPress"
+    description: "Image à la une du comparatif schoolsWP entre TablePress et WP Table Builder. Deux philosophies pour vos tableaux WordPress : TablePress mise sur le tableur classique, idéal pour les données massives, l'import-export et l'extensibilité par add-ons ; WP Table Builder mise sur le glisser-déposer visuel, pensé pour les débutants, la mise en page et les conversions. Données massives ou design : le choix se fait au cas par cas."
+    alt: "Comparatif schoolsWP TablePress vs WP Table Builder, tableur classique contre constructeur visuel pour les tableaux WordPress"
+    keywords:
+      [
+        tablepress vs wp table builder,
+        tablepress,
+        wp table builder,
+        tableaux wordpress,
+        plugin tableau wordpress,
+        comparatif tableaux wordpress,
+        schoolsWP,
+      ]

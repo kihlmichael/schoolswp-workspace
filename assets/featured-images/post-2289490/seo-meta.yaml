@@ -1,0 +1,14 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/avis-chatseo-test-complet/
+    title: Avis ChatSEO, l'assistant SEO IA connecté à la Search Console
+    subject: "ChatSEO, mon avis : l'assistant SEO IA noté 9/10"
+    description: "Image à la une de l'avis schoolsWP sur ChatSEO, l'assistant SEO IA connecté nativement à la Google Search Console. Verdict de Michaël KIHL noté 9/10 (prix dès 29 euros par mois, gain de temps, et ses limites côté backlinks)."
+    alt: "Avis ChatSEO schoolsWP, assistant SEO IA connecté à la Search Console, verdict 9 sur 10"
+    keywords: [chatseo, avis chatseo, assistant seo ia, seo intelligence artificielle, google search console, schoolsWP, quick wins seo]
+# Pas de version EN/DE pour cet article (Polylang ne retourne que fr). Hero EN non publié.

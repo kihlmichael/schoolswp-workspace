@@ -1,0 +1,74 @@
+﻿Nom d'affichage;Slug;Catégorie;Version;Type/Statut;Mise à Jour Disponible;Description / Utilité schoolsWP
+Fluent Affiliate;fluent-affiliate;Écosystème Fluent;1.4.0;Actif;Non;Gestion de l'affiliation en local (version gratuite)
+Fluent Affiliate Pro;fluent-affiliate-pro;Écosystème Fluent;1.4.0;Actif;Non;Système d'affiliation pro complet, suivi des commissions et portails affiliés
+Fluent Boards;fluent-boards;Écosystème Fluent;1.95;Actif;Non;Gestionnaire de projets et de tâches visuel (type Trello) local
+Fluent Boards Pro;fluent-boards-pro;Écosystème Fluent;1.91.2;Actif;Non;Fonctionnalités pro pour la gestion de tâches et de projets en équipe
+Fluent Booking;fluent-booking;Écosystème Fluent;2.1.1;Actif;Non;Planificateur de rendez-vous local (alternative Cal.com/Calendly)
+Fluent Booking Pro;fluent-booking-pro;Écosystème Fluent;2.1.1;Actif;Non;Intégrations avancées de calendrier, SMS, et visioconférences
+Fluent Forms;fluentform;Écosystème Fluent;6.2.3;Actif;Non;Créateur de formulaires dynamique et hautement performant
+Fluent Forms PDF;fluentforms-pdf;Écosystème Fluent;2.1.1;Actif;Non;Génération automatique de fichiers PDF à partir des formulaires
+Fluent Forms Pro;fluentformpro;Écosystème Fluent;6.2.2;Actif;6.2.3;Logique conditionnelle avancée, calculs et intégrations profondes
+Fluent Player;fluent-player;Écosystème Fluent;1.0.5;Actif;Non;Lecteur vidéo léger optimisé (version standard)
+Fluent Player Pro;fluent-player-pro;Écosystème Fluent;1.0.5;Actif;Non;Lecteur vidéo pro avec fonctionnalités d'apprentissage et analytics
+Fluent Roadmap;fluent-roadmap;Écosystème Fluent;1.80;Actif;Non;Gestion et publication de feuilles de route produit publiques/privées
+Fluent Support;fluent-support;Écosystème Fluent;2.2.0;Actif;Non;Système de ticket de support client intégré en local
+Fluent Support Pro;fluent-support-pro;Écosystème Fluent;2.2.0;Actif;Non;Règles d'affectation automatique, portails pro, et réponses pré-enregistrées
+Fluent Toolkit;fluent-toolkit;Écosystème Fluent;2.0.4;Actif;Non;Outils d'optimisation et d'intégration transversaux pour l'écosystème Fluent
+FluentCRM;fluent-crm;Écosystème Fluent;3.0.7;Actif;Non;Gestionnaire de relation client local au cœur du système
+FluentCRM Campaign Pro;fluentcampaign-pro;Écosystème Fluent;3.0.7;Actif;Non;Fonctionnalités avancées de marketing automation et séquences d'emails
+FluentCart;fluent-cart;Écosystème Fluent;1.3.28;Actif;Non;Moteur de vente de produits et tunnels de conversion local
+FluentCart Pro;fluent-cart-pro;Écosystème Fluent;1.3.28;Actif;Non;Tunnels pro, codes promos avancés et abonnements complexes
+FluentSMTP;fluent-smtp;Écosystème Fluent;2.2.95;Actif;Non;Routage d'emails sécurisé et ultra-rapide avec rapports de délivrabilité
+Tutor LMS;tutor;LMS & E-learning;3.9.11;Actif;Non;Moteur de cours en ligne, gestion de leçons et d'étudiants (version gratuite)
+Tutor LMS Pro;tutor-pro;LMS & E-learning;3.9.9;Actif;Non;Gestion des quiz complexes, rapports d'apprentissage et certificats personnalisés
+Easy Content Linker Premium;easy-content-linker-premium;SEO & Performance;2.14.2;Actif;Non;Génération automatique et maillage interne sémantique de liens contextuels
+FlyingPress;flying-press;SEO & Performance;5.4.5;Actif;Non;Extension de cache et d'optimisation de vitesse (Core Web Vitals)
+FreshRank AI Pro;freshrank-ai-pro;SEO & Performance;1.0.0;Actif;Non;Optimisation sémantique et IA pour le classement Google
+Instant Indexing (Fast Indexing API);fast-indexing-api;SEO & Performance;1.1.22;Actif;Non;Indexation instantanée des articles sur Google et Bing via API
+Link Whisper Premium;link-whisper-premium;SEO & Performance;2.8.9;Actif;Non;Suggestions de liens internes intelligentes et automatisées pour le SEO
+Rank Math SEO;seo-by-rank-math;SEO & Performance;1.0.270;Actif;Non;Extension de base d'optimisation pour les moteurs de recherche
+Rank Math SEO PRO;seo-by-rank-math-pro;SEO & Performance;3.0.113;Actif;Non;Gestionnaire de schémas avancés, suivi de positions et SEO local
+Make (Integromat) Connector;integromat-connector;Automatisation & Webhooks;1.6.6;Actif;Non;Pont officiel d'intégration avec les scénarios de Make.com
+OttoKit (SureTriggers);suretriggers;Automatisation & Webhooks;1.1.27;Actif;Non;Plateforme d'automatisation locale connectant WordPress aux APIs externes
+WP Webhooks;wp-webhooks;Automatisation & Webhooks;3.4.2;Actif;Non;Création et gestion de webhooks (triggers et actions) avancés en direct
+Divi Lover / Custom LG Blocks;lg;Design & Constructeurs;1.2.2;Actif;Non;Intégrations esthétiques et blocs sur-mesure de Divi Lover
+Kadence Blocks;kadence-blocks;Design & Constructeurs;3.7.2;Actif;Non;Bibliothèque de blocs Gutenberg de haute performance (Gratuit)
+Kadence Blocks Pro;kadence-blocks-pro;Design & Constructeurs;2.8.14;Actif;Non;Blocs avancés, animations et templates premium
+Kadence Pro;kadence-pro;Design & Constructeurs;1.2.2;Actif;Non;Fonctionnalités avancées du thème Kadence (headers/footers customs)
+Presto Player;presto-player;Design & Constructeurs;4.2.0;Actif;Non;Lecteur vidéo moderne et optimisé pour WordPress (Gratuit)
+Presto Player Pro;presto-player-pro;Design & Constructeurs;3.2.0;Actif;Non;Vidéos privées, intégration LMS et CRM avec analytics précis
+Bit Social;bit-social;Réseaux Sociaux & Liens;1.13.10;Actif;Non;Planification et publication automatique de contenus sur les réseaux (Gratuit)
+Bit Social Pro;bit-social-pro;Réseaux Sociaux & Liens;1.13.10;Actif;Non;Publication multi-comptes, hashtags automatiques et rapports de clics
+ClickWhale Pro;clickwhale-pro;Réseaux Sociaux & Liens;2.6.2;Actif;Non;Gestionnaire de liens d'affiliation courts et bio pages premium
+Custom Feed for TikTok;custom-feed-for-tiktok;Réseaux Sociaux & Liens;1.2.3;Actif;Non;Affichage fluide de flux vidéo TikTok sur le site
+WP Social Ninja;wp-social-reviews;Réseaux Sociaux & Liens;4.2.1;Actif;4.2.2;Agrégateur de témoignages clients et de réseaux sociaux (Gratuit)
+WP Social Ninja Pro;wp-social-ninja-pro;Réseaux Sociaux & Liens;4.2.1;Actif;Non;Intégration multi-plateformes de avis (Google, FB, Yelp) et chats
+Admin Site Enhancements (ASE) PRO;admin-site-enhancements-pro;Utilitaires & Sécurité;8.8.0;Actif;Non;Le couteau suisse d'optimisation de l'administration WordPress
+Cookie Law Info (GDPR Consent);cookie-law-info;Utilitaires & Sécurité;3.5.0;Actif;Non;Gestionnaire de consentement aux cookies et conformité RGPD
+Loco Translate;loco-translate;Utilitaires & Sécurité;2.8.4;Actif;Non;Traduction d'extensions et thèmes directement depuis l'administration
+Ninja Tables;ninja-tables;Utilitaires & Sécurité;5.2.8;Actif;Non;Créateur de tableaux de données réactifs et performants (Gratuit)
+Ninja Tables Pro;ninja-tables-pro;Utilitaires & Sécurité;5.2.8;Actif;Non;Tableaux connectés aux bases de données, requêtes customs et imports
+Polylang;polylang;Utilitaires & Sécurité;3.8.4;Actif;Non;Gestion fine du multilinguisme sur les pages, articles et taxonomies
+Safe SVG;safe-svg;Utilitaires & Sécurité;2.4.0;Actif;Non;Permet le téléversement sécurisé de fichiers vectoriels SVG
+SecuPress Pro;secupress-pro;Utilitaires & Sécurité;2.6.1;Actif;Non;Scanner de sécurité complet, pare-feu et protection du site
+Traduire Sans Migraine;traduire-sans-migraine;Utilitaires & Sécurité;2.4.33;Actif;Non;Outil de traduction automatique intelligent pour articles WordPress
+NovaMira Core;novamira;Gestion Technique & Monitoring;1.3.0;Actif;Non;Cerveau d'intégration technique et d'optimisation
+NovaMira Pro;novamira-pro;Gestion Technique & Monitoring;1.1.1;Actif;Non;Fonctionnalités avancées de contrôle technique et d'API
+WP Health (WP-Umbrella);wp-health;Gestion Technique & Monitoring;2.24.2;Actif;Non;Extension de surveillance et de monitoring global du site
+BuddyBoss Performance API;buddyboss-performance-api;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Optimisation de l'API REST de BuddyBoss pour soulager le serveur
+Init Umbrella MU;InitUmbrella;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Initialisation prioritaire des agents de monitoring WP-Umbrella
+SecuPress Cookie Hash Helper;(secupress_cookiehash_697bbac42d5bd);MU-Plugins Custom schoolsWP;2.3.16;Must-Use;Non;Sécurisation et salage des cookies administratifs
+SecuPress Salt Keys Rotation;(secupress_salt_keys_6978cc00f0697);MU-Plugins Custom schoolsWP;2.3.17;Must-Use;Non;Rotation automatique des clés de salage du site
+WP Health Handler MU;_WPHealthHandlerMU;MU-Plugins Custom schoolsWP;;Must-Use;Non;Gestionnaire prioritaire de santé système
+schoolsWP AI Summary;schoolswp-ai-summary;MU-Plugins Custom schoolsWP;2.1.0;Must-Use;Non;Moteur d'automatisation des résumés d'articles générés par l'IA
+schoolsWP AI Summary Languages;schoolswp-ai-summary-langs;MU-Plugins Custom schoolsWP;1.1.0;Must-Use;Non;Support multilingue pour les synthèses IA schoolsWP
+schoolsWP Affiliate Cloaks;schoolswp-affiliate-cloaks;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Masquage et redirection avancée des liens affiliés de schoolsWP
+schoolsWP FluentCart FR Overrides;schoolswp-fluentcart-fr-overrides;MU-Plugins Custom schoolsWP;1.2.0;Must-Use;Non;Ajustements linguistiques et corrections de taxes françaises pour FluentCart
+schoolsWP Header Button i18n;schoolswp-header-button-i18n;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Internationalisation dynamique des boutons d'en-tête
+schoolsWP List Cleanup Cron;schoolswp-list-cleanup-cron;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Tâche cron de nettoyage automatique de la base de données et des contacts obsolètes
+schoolsWP Person Schema;schoolswp-person-schema;MU-Plugins Custom schoolsWP;1.2.0;Must-Use;Non;Injection dynamique des métadonnées Schema.org (Person) de Michaël KIHL
+schoolsWP Tutor FR Overrides;schoolswp-tutor-fr-overrides;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Ajustements linguistiques français pour Tutor LMS
+schoolsWP Tutor-FluentCart Bridge;schoolswp-tutor-fluentcart-bridge;MU-Plugins Custom schoolsWP;1.0.0;Must-Use;Non;Liaison directe : inscription automatique à un cours Tutor LMS après achat FluentCart
+Advanced Cache Drop-in;advanced-cache.php;Drop-ins (Prioritaires);;Drop-in;Non;Cache de page hautement performant (géré par FlyingPress)
+DB Error Handler Drop-in;db-error.php;Drop-ins (Prioritaires);;Drop-in;Non;Page d'erreur de base de données stylisée et personnalisée
+Maintenance Page Drop-in;maintenance.php;Drop-ins (Prioritaires);;Drop-in;Non;Page de maintenance automatique et stylisée

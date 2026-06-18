@@ -1,4 +1,4 @@
-# FluentForms — Gap Analysis schoolsWP
+# FluentForms - Gap Analysis schoolsWP
 
 ## Donnees produit
 
@@ -18,7 +18,7 @@
 
 ### YouTube FR : quasi-desert
 - COM 64 (Cedric Dintimille) : 1 video contact form (56 min, seule formation longue)
-- SylvestreUi : 3 videos (page capture, paiement, Zapier) — anciennes
+- SylvestreUi : 3 videos (page capture, paiement, Zapier) - anciennes
 - DigiSelling : 1 video conversational forms (2022, obsolete)
 - "WP Fluent avec Thibaut FR" : 44 videos ecosysteme Fluent mais quasi rien sur les formulaires
 
@@ -54,7 +54,7 @@
 
 ## Positionnement schoolsWP
 
-**Angle unique** : "FluentForms — le formulaire intelligent qui nourrit ton CRM, tes ventes et tes automations"
+**Angle unique** : "FluentForms - le formulaire intelligent qui nourrit ton CRM, tes ventes et tes automations"
 
 **Stack synergie** : FluentForms (capture) + FluentCRM (nurturing) + CartFlows (conversion) + OttoKit (automation) + TutorLMS (formation)
 

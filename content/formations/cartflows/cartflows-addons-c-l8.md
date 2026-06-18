@@ -1,9 +1,9 @@
-# Lecon C.8 — Remises par quantite : paliers degressifs
+# Lecon C.8 - Remises par quantite : paliers degressifs
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : C — Power Coupons
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : C - Power Coupons
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Configurer des paliers de prix degressifs avec Power Coupons, afficher le tableau des paliers sur la page produit, et comprendre pourquoi cette strategie augmente le volume par commande.
@@ -12,9 +12,9 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Plus le client achete, moins il paye par unite. C'est le principe des paliers degressifs, et c'est un mecanisme que tu retrouves partout — du grossiste au supermarche.
+Plus le client achete, moins il paye par unite. C'est le principe des paliers degressifs, et c'est un mecanisme que tu retrouves partout - du grossiste au supermarche.
 
 En e-commerce, les paliers degressifs ont un effet direct : le client achete plus en une seule commande. Au lieu de prendre 2 sachets de cafe, il en prend 6 parce que le prix unitaire passe de 12€ a 8€. Tu augmentes le volume et le montant de la commande en meme temps.
 
@@ -22,9 +22,9 @@ Power Coupons te permet de creer ces paliers directement dans WooCommerce. On va
 
 ---
 
-**[SECTION 1 — Le concept des paliers degressifs]**
+**[SECTION 1 - Le concept des paliers degressifs]**
 
-**[ECRAN — slide tableau de paliers]**
+**[ECRAN - slide tableau de paliers]**
 
 Le principe est simple. Tu definis des seuils de quantite avec un prix unitaire different pour chaque seuil.
 
@@ -38,9 +38,9 @@ Le client voit l'economie augmenter a chaque palier. La question n'est plus "est
 
 ---
 
-**[SECTION 2 — Configurer les paliers dans Power Coupons]**
+**[SECTION 2 - Configurer les paliers dans Power Coupons]**
 
-**[ECRAN — WordPress admin → Power Coupons → Quantity Discount]**
+**[ECRAN - WordPress admin → Power Coupons → Quantity Discount]**
 
 Dans Power Coupons, va dans la section "Quantity Discount" ou "Remises par quantite".
 
@@ -54,15 +54,15 @@ Palier 2 : quantite 3 a 5. Remise : -17% (equivalent de 10€ au lieu de 12€).
 
 Palier 3 : quantite 6 et plus. Remise : -33% (equivalent de 8€ au lieu de 12€).
 
-Tu peux definir la remise en pourcentage ou en montant fixe par unite. Le pourcentage est plus flexible — si tu changes le prix de base, les paliers s'ajustent automatiquement.
+Tu peux definir la remise en pourcentage ou en montant fixe par unite. Le pourcentage est plus flexible - si tu changes le prix de base, les paliers s'ajustent automatiquement.
 
 Active l'option "Auto Apply" pour que la remise s'applique automatiquement quand le client atteint le palier. Pas de code a taper.
 
 ---
 
-**[SECTION 3 — Afficher le tableau des paliers]**
+**[SECTION 3 - Afficher le tableau des paliers]**
 
-**[ECRAN — page produit front-end avec tableau de paliers]**
+**[ECRAN - page produit front-end avec tableau de paliers]**
 
 Le point crucial : le client doit voir les paliers avant d'ajouter au panier. S'il ne sait pas que le prix baisse a partir de 3 unites, il ne va pas en commander 3.
 
@@ -70,11 +70,11 @@ Power Coupons affiche un tableau des paliers directement sur la page produit. Le
 
 | Quantite | Prix unitaire | Economie |
 |----------|--------------|----------|
-| 1-2 | 12€ | — |
+| 1-2 | 12€ | - |
 | 3-5 | 10€ | -17% |
 | 6+ | 8€ | -33% |
 
-Ce tableau est genere automatiquement par Power Coupons. Tu peux personnaliser son emplacement sur la page produit — au-dessus du bouton "Ajouter au panier", c'est le meilleur endroit.
+Ce tableau est genere automatiquement par Power Coupons. Tu peux personnaliser son emplacement sur la page produit - au-dessus du bouton "Ajouter au panier", c'est le meilleur endroit.
 
 Dans le checkout et dans le panier, le client voit le prix ajuste. S'il a 4 sachets dans le panier, le prix unitaire affiche est 10€, avec une mention de l'economie realisee.
 
@@ -82,9 +82,9 @@ Affiche toujours le tableau des paliers sur la page produit. Le client doit voir
 
 ---
 
-**[SECTION 4 — Cas pratique et strategie]**
+**[SECTION 4 - Cas pratique et strategie]**
 
-**[ECRAN — slide strategie paliers]**
+**[ECRAN - slide strategie paliers]**
 
 Le cas du cafe est un classique. Mais les paliers degressifs fonctionnent pour beaucoup de types de produits.
 
@@ -98,31 +98,31 @@ La cle : choisis le bon ecart entre les paliers. Si le palier 1 est a 12€ et l
 
 ---
 
-**[SECTION 5 — Power Coupons vs les plugins de volume discount]**
+**[SECTION 5 - Power Coupons vs les plugins de volume discount]**
 
-**[ECRAN — slide comparaison]**
+**[ECRAN - slide comparaison]**
 
 Il existe des plugins dedies aux remises par quantite sur WordPress.org. Pourquoi utiliser Power Coupons plutot qu'un plugin separe ?
 
 L'integration native. Power Coupons est dans le meme ecosysteme que CartFlows et Modern Cart. Les paliers fonctionnent avec l'auto-application, avec les conditions avancees, avec le side cart. Un plugin separe ne communique pas avec le reste de ta stack promotionnelle.
 
-La centralisation. Tous tes coupons — auto-apply, BOGO, fidelite, quantite — sont geres au meme endroit. Un seul plugin, une seule interface, un seul systeme de conditions.
+La centralisation. Tous tes coupons - auto-apply, BOGO, fidelite, quantite - sont geres au meme endroit. Un seul plugin, une seule interface, un seul systeme de conditions.
 
 Moins de plugins. Chaque plugin supplementaire ajoute du poids, des risques de conflit, et de la maintenance. Si tu peux tout faire dans Power Coupons, tu evites un plugin de plus.
 
 ---
 
-**[CONCLUSION — face camera et recap Module C]**
+**[CONCLUSION - face camera et recap Module C]**
 
 Tu as configure des paliers degressifs qui poussent le client a acheter en volume. Le tableau des paliers sur la page produit, combine a l'auto-application, fait tout le travail.
 
-Et avec ca, on termine le Module C — Power Coupons. On a couvert les six grandes fonctionnalites : auto-application, conditions avancees, BOGO, livraison gratuite conditionnelle, programme de fidelite, et remises par quantite.
+Et avec ca, on termine le Module C - Power Coupons. On a couvert les six grandes fonctionnalites : auto-application, conditions avancees, BOGO, livraison gratuite conditionnelle, programme de fidelite, et remises par quantite.
 
 On fait aussi le bilan de la formation complete CartFlows Add-ons. En trois modules, tu as installe et configure Modern Cart pour le side cart et l'experience panier, Cart Abandonment Recovery pour recuperer les ventes perdues, et Power Coupons pour des promotions intelligentes qui augmentent le panier moyen et la fidelisation.
 
-Ces trois plugins, c'est un systeme complet. Modern Cart reduit la friction. Cart Abandonment Recovery recupere les abandons. Power Coupons augmente l'AOV et la retention. Ensemble, ils couvrent tout le parcours d'achat — de la navigation au rachat.
+Ces trois plugins, c'est un systeme complet. Modern Cart reduit la friction. Cart Abandonment Recovery recupere les abandons. Power Coupons augmente l'AOV et la retention. Ensemble, ils couvrent tout le parcours d'achat - de la navigation au rachat.
 
-Merci d'avoir suivi cette formation. Mets en place ce que tu as appris, mesure les resultats, et ajuste. Les outils sont la — c'est l'execution qui fait la difference.
+Merci d'avoir suivi cette formation. Mets en place ce que tu as appris, mesure les resultats, et ajuste. Les outils sont la - c'est l'execution qui fait la difference.
 
 ---
 

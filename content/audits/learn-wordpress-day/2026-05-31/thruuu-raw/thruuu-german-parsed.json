@@ -1,0 +1,1124 @@
+{
+  "info": {
+    "Search url": null,
+    "Query": "WordPress an einem Tag lernen",
+    "Device": "desktop",
+    "Language": "de",
+    "Location": null,
+    "Country": "DE",
+    "Search engine": "google.de",
+    "Number of results": 2,
+    "Scrape date": "31st May 2026",
+    "Export date": "31st May 2026"
+  },
+  "serp_overview": [
+    {
+      "Position": 1,
+      "Organic Position": 1,
+      "Page": 1,
+      "SERP Type": "video",
+      "Type": null,
+      "SERP Title": null,
+      "Title": null,
+      "URL": null,
+      "SERP Description": null,
+      "Meta Description": null,
+      "Hostname": null,
+      "TLD": "",
+      "Page Rank": null,
+      "Word Count": null,
+      "Image Count": null,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 2,
+      "Organic Position": 2,
+      "Page": 1,
+      "SERP Type": "questions",
+      "Type": null,
+      "SERP Title": null,
+      "Title": null,
+      "URL": null,
+      "SERP Description": null,
+      "Meta Description": null,
+      "Hostname": null,
+      "TLD": "",
+      "Page Rank": null,
+      "Word Count": null,
+      "Image Count": null,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 3,
+      "Organic Position": 3,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress Homepage Training - Lernen Sie ... - XMouse",
+      "Title": "WordPress Homepage Training - Lernen Sie WordPress an 1 Tag",
+      "URL": "https://www.xmouse.de/leistungen/wordpress-homepage-training/",
+      "SERP Description": "Durch das WordPress Homepage Training erlernen Sie an einem Tag, wie Sie eine Homepage erstellen und damit alle Ihre Inhalte selbst ändern können.",
+      "Meta Description": "Durch das WordPress Homepage Training erlernen Sie an einem Tag, wie Sie eine Homepage erstellen und damit alle Ihre Inhalte selbst ändern können",
+      "Hostname": "xmouse.de",
+      "TLD": "de",
+      "Page Rank": 0,
+      "Word Count": 650,
+      "Image Count": 1,
+      "Publication Date": "28 November 2016",
+      "Modification Date": "22 August 2019",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "WebPage,ImageObject,BreadcrumbList,WebSite,Organization"
+    },
+    {
+      "Position": 4,
+      "Organic Position": 4,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "social",
+      "SERP Title": "Wie lange brauche ich, um WP so gut zu lernen, dass ich ...",
+      "Title": "Reddit - The heart of the internet",
+      "URL": "https://www.reddit.com/r/Wordpress/comments/1q0j9nw/how_long_do_i_need_to_learn_wp_enough_to_be_able/",
+      "SERP Description": "Wenn du ein Webdev bist, um sowas mit WordPress zu bauen, denke ich, sind das nicht mehr als 40 Stunden (lernen und bauen). ... Wie fange ich an, ...",
+      "Meta Description": null,
+      "Hostname": "reddit.com",
+      "TLD": "com",
+      "Page Rank": 60,
+      "Word Count": 160,
+      "Image Count": 3,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 5,
+      "Organic Position": 5,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress lernen (2026): Kostenlose Anleitungen & ...",
+      "Title": "WordPress lernen (2026): Kostenlose Anleitungen & Tutorials",
+      "URL": "https://wperfolg.de/wordpress-lernen/",
+      "SERP Description": "ᐅ WordPress lernen in 2026 ✓ Schnell & einfach ✓ Ideal für Einsteiger ✓ Basics von A-Z verstehen ✓ Vom Profi erklärt ✓ Jetzt kostenlos WP lernen.",
+      "Meta Description": "ᐅ WordPress lernen in 2026 ✓ Schnell & einfach ✓ Ideal für Einsteiger ✓ Basics von A-Z verstehen ✓ Vom Profi erklärt ✓ Jetzt kostenlos WP lernen",
+      "Hostname": "wperfolg.de",
+      "TLD": "de",
+      "Page Rank": 27,
+      "Word Count": 2044,
+      "Image Count": 14,
+      "Publication Date": "06 November 2021",
+      "Modification Date": "20 November 2024",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "Organization,WebSite,ImageObject,WebPage,Person,Article"
+    },
+    {
+      "Position": 6,
+      "Organic Position": 6,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "Tagesseminar WordPress CMS",
+      "Title": "Tagesseminar WordPress CMS",
+      "URL": "https://www.wildner.de/tagesseminare/tagesseminar-wordpress.html",
+      "SERP Description": "Mit unserem WordPress Tagesseminar durchstarten: Gutenberg nutzen, relevante Plug-Ins finden, SEO Stellschrauben verstehen, Ladezeiten reduzieren.",
+      "Meta Description": "Mit unserem WordPress Tagesseminar durchstarten: Gutenberg nutzen, relevante Plug-Ins finden, SEO Stellschrauben verstehen, Ladezeiten reduzieren",
+      "Hostname": "wildner.de",
+      "TLD": "de",
+      "Page Rank": 0,
+      "Word Count": 371,
+      "Image Count": 2,
+      "Publication Date": "10 September 2020",
+      "Modification Date": "10 February 2025",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "Article,WebPage,ImageObject,BreadcrumbList,WebSite,Organization (2),Person,EducationalOrganization"
+    },
+    {
+      "Position": 7,
+      "Organic Position": 7,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "internal page",
+      "SERP Title": "WordPress lernen an einem Tag | Website erstellen",
+      "Title": "WordPress lernen an einem Tag | Website erstellen; Webshop Kosten; WordPress Wartung",
+      "URL": "https://mybusiness.onoco.at/wordpress-do-it-yourself-workshop/",
+      "SERP Description": "Sie möchten Ihre Homepage mit WordPress erstellen aber es fehlt an Zeit zum Lernen? Der MyBusiness WordPress Starter Workshop bringt Sie an einem Tag zum Ziel.",
+      "Meta Description": "Sie möchten Ihre Homepage mit WordPress erstellen aber es fehlt an Zeit zum Lernen? Der MyBusiness WordPress Starter Workshop bringt Sie an einem Tag zum Ziel",
+      "Hostname": "mybusiness.onoco.at",
+      "TLD": "at",
+      "Page Rank": 0,
+      "Word Count": 223,
+      "Image Count": 1,
+      "Publication Date": "08 August 2018",
+      "Modification Date": "19 September 2018",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "BreadcrumbList,Organization,WebPage,WebSite"
+    },
+    {
+      "Position": 8,
+      "Organic Position": 8,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "website",
+      "SERP Title": "Learn WordPress - There's always more to learn",
+      "Title": "Learn WordPress - There's always more to learn | Learn WordPress",
+      "URL": "https://learn.wordpress.org/",
+      "SERP Description": "Erste Schritte · Hervorgehobene Kurse · Hervorgehobene Lektionen · Bevorstehende Online-Workshops · Teile dein WordPress-Fachwissen · Weitere hilfreiche Ressourcen.",
+      "Meta Description": "Whether you’re a first-time blogger or seasoned developer, there’s always more to learn. From community members all over the world, these vast resources will help you learn more about WordPress and share it with others",
+      "Hostname": "learn.wordpress.org",
+      "TLD": "org",
+      "Page Rank": 49,
+      "Word Count": 607,
+      "Image Count": 12,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 9,
+      "Organic Position": 9,
+      "Page": 1,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress lernen: Tutorials, Anleitungen und Online-Kurse",
+      "Title": "WordPress lernen: Tutorials, Anleitungen und Online-Kurse - COMPUTER BILD",
+      "URL": "https://www.computerbild.de/artikel/Tipps-Internet-WordPress-lernen-Tutorial-Anleitung-Schulung-Hilfe-38348057.html",
+      "SERP Description": "04.01.2026 — WordPress für Anfänger: Die besten Tutorials und Anleitungen auf Deutsch. Hier finden Einsteiger und Fortgeschrittene WordPress-Hilfe!",
+      "Meta Description": "WordPress für Anfänger: Die besten Tutorials und Anleitungen auf Deutsch. Hier finden Einsteiger und Fortgeschrittene WordPress-Hilfe!",
+      "Hostname": "computerbild.de",
+      "TLD": "de",
+      "Page Rank": 29,
+      "Word Count": 1159,
+      "Image Count": 17,
+      "Publication Date": "19 May 2024",
+      "Modification Date": "04 January 2026",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "BreadcrumbList,NewsArticle,Organization"
+    },
+    {
+      "Position": 10,
+      "Organic Position": 10,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "social",
+      "SERP Title": "Bester Kurs, um Wordpress zu lernen?",
+      "Title": "Reddit - The heart of the internet",
+      "URL": "https://www.reddit.com/r/Wordpress/comments/16ye0ai/best_course_to_learn_wordpress/",
+      "SERP Description": "Was ist der beste Kurs, um Wordpress zu lernen? Ich habe jahrelange Erfahrung als Frontend- und ein Jahr Erfahrung als Backend-Entwickler, aber ich habe ...",
+      "Meta Description": null,
+      "Hostname": "reddit.com",
+      "TLD": "com",
+      "Page Rank": 60,
+      "Word Count": 88,
+      "Image Count": 2,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 11,
+      "Organic Position": 11,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress Online-Kurs: Eigene Website erstellen mit ...",
+      "Title": "WordPress Online-Kurs: Eigene Website erstellen mit WordPress",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1",
+      "SERP Description": "In diesem praxisorientierten Kurs lernen Sie, wie Sie eine professionelle Website mit WordPress erstellen und eigenständig pflegen - ohne Programmierkenntnisse.",
+      "Meta Description": "Erstellen Sie Ihre Website mit WordPress – gleich bei einem Hoster. Tipps zu Hosting, SEO und DSGVO. 08.03.2021– 12.03.2021",
+      "Hostname": "anjamorsch.de",
+      "TLD": "de",
+      "Page Rank": 0,
+      "Word Count": 1384,
+      "Image Count": 1,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": ""
+    },
+    {
+      "Position": 12,
+      "Organic Position": 12,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "internal page",
+      "SERP Title": "Wordpress Grundlagen kompakt [1425]",
+      "Title": "Kurs: WebDesign mit WordPress. Was Sie für einen gelungenen Start mit WordPress wissen müssen",
+      "URL": "https://www.bitmap-gmbh.de/seminare/webdesign/schulung_kurs_seminar_webdesign_wordpress.html",
+      "SERP Description": "... . Seminardauer: 1 Tag (9:00 - 16:00 Uhr). Kursart: Live-Online-Training, bis max. 6 Teilnehmer. Seminarleiter (WordPress) - Kurzprofil. Studium ...",
+      "Meta Description": "WebDesign mit WordPress Was Sie für einen gelungenen Start mit WordPress wissen müssen",
+      "Hostname": "bitmap-gmbh.de",
+      "TLD": "de",
+      "Page Rank": 15,
+      "Word Count": 1008,
+      "Image Count": 2,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "BreadcrumbList"
+    },
+    {
+      "Position": 13,
+      "Organic Position": 13,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "website",
+      "SERP Title": "WordPress & Elementor lernen - Online Einzeltraining",
+      "Title": "WordPress & Elementor lernen - Online Einzeltraining | WP Consultant",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/",
+      "SERP Description": "WORDPRESS LERNEN: Von 0 auf 100 in nur 5 Stunden ... Nach der Buchung suchen wir gemeinsam 2 passende Termine (5 Stunden) für das online Einzeltraining.",
+      "Meta Description": "Lerne WordPress & Elementor im effektiven Einzelcoaching - Flexible Online Termine für Einzeltraining, erfahrener Online Dozent mit über 5.000 Teilnehmern",
+      "Hostname": "wpconsultant.de",
+      "TLD": "de",
+      "Page Rank": 28,
+      "Word Count": 797,
+      "Image Count": 6,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": true,
+      "Schema Type": "WebSite,WebPage,FAQPage"
+    },
+    {
+      "Position": 14,
+      "Organic Position": 14,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress lernen — wie lange dauert das wirklich?",
+      "Title": "WordPress lernen — wie lange dauert das wirklich? | wptraining.at",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es",
+      "SERP Description": "14.05.2026 — Autodidaktisch wird's an dieser Stelle deutlich teurer: 60–120 Stunden sind realistisch, weil Sie hier in jedes Teilthema einzeln eintauchen ...",
+      "Meta Description": null,
+      "Hostname": "wptraining.at",
+      "TLD": "at",
+      "Page Rank": 9,
+      "Word Count": 1356,
+      "Image Count": 4,
+      "Publication Date": null,
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "WebSite"
+    },
+    {
+      "Position": 15,
+      "Organic Position": 15,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "Wie man WordPress-Grundlagen kostenlos lernt (Schritt für ...",
+      "Title": "How to Learn WordPress Basics for Free (Step by Step)",
+      "URL": "https://www.wpbeginner.com/de/beginners-guide/how-to-learn-wordpress-for-free-in-a-week-or-less/",
+      "SERP Description": "03.11.2025 — Dieser Leitfaden ist sehr nützlich, wenn Sie ernsthaft daran interessiert sind, WordPress in kurzer Zeit zu lernen. Er enthält alle ...",
+      "Meta Description": "Möchten Sie die Grundlagen von WordPress lernen, haben aber Angst, dass es zu viel Geld und Zeit kostet? Hier erfahren Sie, wie Sie WordPress in einer Woche (oder weniger) kostenlos lernen können",
+      "Hostname": "wpbeginner.com",
+      "TLD": "com",
+      "Page Rank": 42,
+      "Word Count": 3657,
+      "Image Count": 21,
+      "Publication Date": "19 March 2020",
+      "Modification Date": "27 May 2026",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "Article,BreadcrumbList,FAQPage,HowTo,ItemList,Organization,WebPage,WebSite"
+    },
+    {
+      "Position": 16,
+      "Organic Position": 16,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "website",
+      "SERP Title": "WordPress Schulung | medienreich Training",
+      "Title": "🎨 WordPress Schulung | medienreich Training",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender",
+      "SERP Description": "Diese WordPress Schulung zeigt Dir den Teil von WordPress, der im Alltag zählt: Inhalte anlegen, Beiträge und Seiten bearbeiten, Medien richtig einsetzen, ...",
+      "Meta Description": "Lerne in unserer WordPress Schulung für Anwender, wie Du Seiten, Beiträge, Medien und SEO-Grundlagen sicher pflegst. Jetzt Training buchen oder individuell anfragen",
+      "Hostname": "medienreich.de",
+      "TLD": "de",
+      "Page Rank": 19,
+      "Word Count": 1573,
+      "Image Count": 16,
+      "Publication Date": "No Publication Date Found",
+      "Modification Date": "No Modification Date Found",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "WebSite,Event (114),FAQPage,Organization"
+    },
+    {
+      "Position": 17,
+      "Organic Position": 17,
+      "Page": 2,
+      "SERP Type": "page",
+      "Type": "article",
+      "SERP Title": "WordPress Grundlagen - Seminar",
+      "Title": "Seminar: WordPress Grundlagen | PCS Akademie",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/",
+      "SERP Description": "Wir bieten Ihnen eine professionelle Anleitung, um WordPress von Grund auf zu erlernen. Das Seminar umfasst verschiedene Themenbereiche, wie das Erstellen von ...",
+      "Meta Description": "Entdecken Sie in diesem Seminar WordPress! Wir zeigen Ihnen, wie Sie Ihre Webseite professionell gestalten",
+      "Hostname": "pcs-akademie.de",
+      "TLD": "de",
+      "Page Rank": 0,
+      "Word Count": 690,
+      "Image Count": 6,
+      "Publication Date": "28 October 2024",
+      "Modification Date": "28 May 2026",
+      "Is Organic": true,
+      "Is AMP": null,
+      "Has SERP FAQ": false,
+      "Has On Page FAQ": false,
+      "Schema Type": "WebPage,ImageObject,BreadcrumbList,WebSite,Organization"
+    }
+  ],
+  "search_volume": [
+    {
+      "Keyword": "WordPress an einem Tag lernen",
+      "Competition": null,
+      "Competition Index": null,
+      "Search Volume": null,
+      "CPC": null
+    }
+  ],
+  "topics": [
+    {
+      "Keyword": "wordpress",
+      "Found in Pages": 9,
+      "Total Frequency": 210,
+      "Max Count on page": 85,
+      "Min count on page": 3,
+      "Relevancy": 30.843538961038963,
+      "Length": 1
+    },
+    {
+      "Keyword": "website",
+      "Found in Pages": 5,
+      "Total Frequency": 65,
+      "Max Count on page": 31,
+      "Min count on page": 6,
+      "Relevancy": 5.8992424242424235,
+      "Length": 1
+    },
+    {
+      "Keyword": "plugins",
+      "Found in Pages": 4,
+      "Total Frequency": 18,
+      "Max Count on page": 6,
+      "Min count on page": 3,
+      "Relevancy": 1.4047619047619047,
+      "Length": 1
+    },
+    {
+      "Keyword": "themes",
+      "Found in Pages": 2,
+      "Total Frequency": 9,
+      "Max Count on page": 5,
+      "Min count on page": 4,
+      "Relevancy": 0.39999999999999997,
+      "Length": 1
+    },
+    {
+      "Keyword": "erstellen",
+      "Found in Pages": 6,
+      "Total Frequency": 46,
+      "Max Count on page": 17,
+      "Min count on page": 3,
+      "Relevancy": 4.4516883116883115,
+      "Length": 1
+    },
+    {
+      "Keyword": "inhalte",
+      "Found in Pages": 4,
+      "Total Frequency": 17,
+      "Max Count on page": 5,
+      "Min count on page": 3,
+      "Relevancy": 1.0818181818181818,
+      "Length": 1
+    },
+    {
+      "Keyword": "kurs",
+      "Found in Pages": 3,
+      "Total Frequency": 20,
+      "Max Count on page": 11,
+      "Min count on page": 4,
+      "Relevancy": 0.8666666666666666,
+      "Length": 1
+    },
+    {
+      "Keyword": "installation",
+      "Found in Pages": 4,
+      "Total Frequency": 15,
+      "Max Count on page": 5,
+      "Min count on page": 3,
+      "Relevancy": 0.9043290043290042,
+      "Length": 1
+    },
+    {
+      "Keyword": "nutzen",
+      "Found in Pages": 2,
+      "Total Frequency": 6,
+      "Max Count on page": 3,
+      "Min count on page": 3,
+      "Relevancy": 0.25,
+      "Length": 1
+    },
+    {
+      "Keyword": "plugin",
+      "Found in Pages": 3,
+      "Total Frequency": 44,
+      "Max Count on page": 23,
+      "Min count on page": 5,
+      "Relevancy": 1.983030303030303,
+      "Length": 1
+    },
+    {
+      "Keyword": "theme",
+      "Found in Pages": 4,
+      "Total Frequency": 43,
+      "Max Count on page": 17,
+      "Min count on page": 5,
+      "Relevancy": 2.441313131313131,
+      "Length": 1
+    },
+    {
+      "Keyword": "seo",
+      "Found in Pages": 3,
+      "Total Frequency": 22,
+      "Max Count on page": 12,
+      "Min count on page": 3,
+      "Relevancy": 1.010909090909091,
+      "Length": 1
+    },
+    {
+      "Keyword": "lernen",
+      "Found in Pages": 4,
+      "Total Frequency": 25,
+      "Max Count on page": 9,
+      "Min count on page": 3,
+      "Relevancy": 1.3854545454545453,
+      "Length": 1
+    },
+    {
+      "Keyword": "tutorial",
+      "Found in Pages": 2,
+      "Total Frequency": 13,
+      "Max Count on page": 7,
+      "Min count on page": 6,
+      "Relevancy": 0.4133333333333334,
+      "Length": 1
+    },
+    {
+      "Keyword": "wordpress lernen",
+      "Found in Pages": 2,
+      "Total Frequency": 11,
+      "Max Count on page": 7,
+      "Min count on page": 4,
+      "Relevancy": 0.7377777777777779,
+      "Length": 2
+    },
+    {
+      "Keyword": "installieren",
+      "Found in Pages": 3,
+      "Total Frequency": 12,
+      "Max Count on page": 5,
+      "Min count on page": 3,
+      "Relevancy": 0.4818181818181818,
+      "Length": 1
+    },
+    {
+      "Keyword": "dsgvo",
+      "Found in Pages": 2,
+      "Total Frequency": 8,
+      "Max Count on page": 4,
+      "Min count on page": 4,
+      "Relevancy": 0.22666666666666666,
+      "Length": 1
+    },
+    {
+      "Keyword": "hilfe",
+      "Found in Pages": 2,
+      "Total Frequency": 7,
+      "Max Count on page": 4,
+      "Min count on page": 3,
+      "Relevancy": 0.22666666666666666,
+      "Length": 1
+    },
+    {
+      "Keyword": "grundlagen",
+      "Found in Pages": 2,
+      "Total Frequency": 8,
+      "Max Count on page": 4,
+      "Min count on page": 4,
+      "Relevancy": 0.24888888888888888,
+      "Length": 1
+    },
+    {
+      "Keyword": "tipps",
+      "Found in Pages": 2,
+      "Total Frequency": 6,
+      "Max Count on page": 3,
+      "Min count on page": 3,
+      "Relevancy": 0.17,
+      "Length": 1
+    },
+    {
+      "Keyword": "blog",
+      "Found in Pages": 2,
+      "Total Frequency": 8,
+      "Max Count on page": 5,
+      "Min count on page": 3,
+      "Relevancy": 0.19090909090909092,
+      "Length": 1
+    },
+    {
+      "Keyword": "design",
+      "Found in Pages": 2,
+      "Total Frequency": 10,
+      "Max Count on page": 7,
+      "Min count on page": 3,
+      "Relevancy": 0.19393939393939394,
+      "Length": 1
+    },
+    {
+      "Keyword": "möchten",
+      "Found in Pages": 2,
+      "Total Frequency": 6,
+      "Max Count on page": 3,
+      "Min count on page": 3,
+      "Relevancy": 0.24242424242424238,
+      "Length": 2
+    },
+    {
+      "Keyword": "finden",
+      "Found in Pages": 2,
+      "Total Frequency": 6,
+      "Max Count on page": 3,
+      "Min count on page": 3,
+      "Relevancy": 0.11666666666666665,
+      "Length": 1
+    },
+    {
+      "Keyword": "customizer",
+      "Found in Pages": 2,
+      "Total Frequency": 7,
+      "Max Count on page": 4,
+      "Min count on page": 3,
+      "Relevancy": 0.12272727272727273,
+      "Length": 1
+    }
+  ],
+  "frequent_questions": [
+    {
+      "Tag": "H1",
+      "Question": "Wie man WordPress-Grundlagen kostenlos lernt (Schritt für Schritt)",
+      "Count": 1
+    },
+    {
+      "Tag": "H1",
+      "Question": "WordPress lernen — wie lange dauert das wirklich?",
+      "Count": 1
+    },
+    {
+      "Tag": "H1",
+      "Question": "Bester Kurs, um Wordpress zu lernen?",
+      "Count": 1
+    },
+    {
+      "Tag": "H1",
+      "Question": "Wie lange brauche ich, um WP so gut zu lernen, dass ich eine Website wie diese hier erstellen kann?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Was Dich in Deiner Schulung erwartet",
+      "Count": 2
+    },
+    {
+      "Tag": "H2",
+      "Question": "Fragen zur Schulung?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Du hast Fragen?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Warum Du sicher buchen kannst",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Bereit anzufangen?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Was die Lernkurve typischerweise blockiert",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Was sagen die Teilnehmer?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Für wen ist die WPC WordPress Einzel-Schulung am besten geeignet?",
+      "Count": 1
+    },
+    {
+      "Tag": "H2",
+      "Question": "Bist Du kompletter WordPress Einsteiger?",
+      "Count": 1
+    }
+  ],
+  "heading2_serp": [
+    {
+      "Page position": 3,
+      "H2": "Das WordPress-Training bringt Ihnen an nur einem Tag das notwendige Wissen zur Erstellung einer großartigen Homepage",
+      "URL": "https://www.xmouse.de/leistungen/wordpress-homepage-training/"
+    },
+    {
+      "Page position": 4,
+      "H2": "Thanks for the feedback!",
+      "URL": "https://www.reddit.com/r/Wordpress/comments/1q0j9nw/how_long_do_i_need_to_learn_wp_enough_to_be_able/"
+    },
+    {
+      "Page position": 5,
+      "H2": "Bist Du kompletter WordPress Einsteiger?",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "Was Du in den WordPress Tutorials lernst",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "Inhaltsverzeichnis - Starte jetzt",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress lernen (aber richtig) - Schnelle Einführung",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "Hier das kostenlose WordPress Buch herunterladen & eine Top Website erstellen!",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress Grundlagen lernen",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress Themes",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress Plugins",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress Sicherheit",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress Ladezeit",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress SEO",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress - Rechtliches & DSGVO*",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress lernen mit Büchern",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "WordPress lernen mit Online-Kursen",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 5,
+      "H2": "Starte jetzt noch mehr mit WordPress durch. Lade Dir hier unser 32+ Seiten WordPress eBook (PDF) komplett kostenfrei herunter",
+      "URL": "https://wperfolg.de/wordpress-lernen/"
+    },
+    {
+      "Page position": 6,
+      "H2": "Nächster Seminar-Termin | WordPress Schulung",
+      "URL": "https://www.wildner.de/tagesseminare/tagesseminar-wordpress.html"
+    },
+    {
+      "Page position": 6,
+      "H2": "Inhalte des Seminars | WordPress Schulung",
+      "URL": "https://www.wildner.de/tagesseminare/tagesseminar-wordpress.html"
+    },
+    {
+      "Page position": 6,
+      "H2": "Fragen Sie Mia, unsere KI-Beraterin",
+      "URL": "https://www.wildner.de/tagesseminare/tagesseminar-wordpress.html"
+    },
+    {
+      "Page position": 7,
+      "H2": "DEN MYBUSINESS \"WORDPRESS STARTER WORKSHOP\"",
+      "URL": "https://mybusiness.onoco.at/wordpress-do-it-yourself-workshop/"
+    },
+    {
+      "Page position": 7,
+      "H2": "Lernabschnitte",
+      "URL": "https://mybusiness.onoco.at/wordpress-do-it-yourself-workshop/"
+    },
+    {
+      "Page position": 7,
+      "H2": "So macht sich lernen bezahlt!",
+      "URL": "https://mybusiness.onoco.at/wordpress-do-it-yourself-workshop/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Erste Schritte",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Hervorgehobene Kurse",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Hervorgehobene Lektionen",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Bevorstehende Online-Workshops",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Teile dein WordPress-Fachwissen",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Weitere hilfreiche Ressourcen",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 8,
+      "H2": "Neuigkeiten abonnieren",
+      "URL": "https://learn.wordpress.org/"
+    },
+    {
+      "Page position": 9,
+      "H2": "WordPress-Tutorial auf Deutsch",
+      "URL": "https://www.computerbild.de/artikel/Tipps-Internet-WordPress-lernen-Tutorial-Anleitung-Schulung-Hilfe-38348057.html"
+    },
+    {
+      "Page position": 10,
+      "H2": "Thanks for the feedback!",
+      "URL": "https://www.reddit.com/r/Wordpress/comments/16ye0ai/best_course_to_learn_wordpress/"
+    },
+    {
+      "Page position": 11,
+      "H2": "Ihre eigene Website – Schritt für Schritt, mit KI an Ihrer Seite",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "WordPress als Blog und als Unternehmenswebsite",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "Hosting der Kurswebsite",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "Voraussetzungen",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "So lernen Sie im Online-Kurs",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "Bildungszeit",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 11,
+      "H2": "Kurskonzept",
+      "URL": "https://www.anjamorsch.de/en/current-news/article/wordpress-online-kurs-vhs-pankow-2-1"
+    },
+    {
+      "Page position": 13,
+      "H2": "Das neue WordPress Schulungskonzept von WPC",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "Das neue WordPress Online Training von WPC bringt dir viele Vorteile",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "Nach dem WordPress Einzeltraining wirst du..",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "Für wen ist die WPC WordPress Einzel-Schulung am besten geeignet?",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "Was sagen die Teilnehmer?",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "WordPress FAQs - Häufige User Fragen",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 13,
+      "H2": "Das WordPress Training mit maximalem Lern-Erfolg und viel Spaß!",
+      "URL": "https://wpconsultant.de/wordpress-lernen-online/"
+    },
+    {
+      "Page position": 14,
+      "H2": "Die kurze Antwort: Es kommt drauf an",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Stufe 1 — Basis-Website live (8–16 Stunden)",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Stufe 2 — Sicher administrieren (20–40 Stunden)",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Stufe 3 — Kommerziell für Kunden (200+ Stunden)",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Autodidakt vs. Kurs: was schneller geht (und was tiefer sitzt)",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Was die Lernkurve typischerweise blockiert",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Bereit anzufangen?",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 14,
+      "H2": "Verwandte Beiträge",
+      "URL": "https://wptraining.at/blog/wordpress-lernen-wie-lange-dauert-es"
+    },
+    {
+      "Page position": 15,
+      "H2": "Leserinteraktionen",
+      "URL": "https://www.wpbeginner.com/de/beginners-guide/how-to-learn-wordpress-for-free-in-a-week-or-less/"
+    },
+    {
+      "Page position": 16,
+      "H2": "Schulungsinhalte",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Das solltest Du mitbringen",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "So sieht Deine offene Schulung aus",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Was Dich in Deiner Schulung erwartet",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Warum Du sicher buchen kannst",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Individuelle Schulungen für Dein Unternehmen",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Unsere Schulungsorte",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Kundenbewertungen",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Ähnliche Trainings",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Individuelle Schulungen - passend zu Deinen Anforderungen",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Unsere Schulungsorte für WordPress - Inhalte, Layouts und SEO",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Deutschland",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Österreich",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Jetzt Deine perfekte IT-Schulung finden",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Du hast Fragen?",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 16,
+      "H2": "Weiterbildung & Digitalkompetenzen für Unternehmen",
+      "URL": "https://www.medienreich.de/training/wordpress-fuer-anwender"
+    },
+    {
+      "Page position": 17,
+      "H2": "Seminarinhalt",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Teilnehmerkreis",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Seminarleitung",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Methoden",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Das erwartet Sie",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Das nehmen Sie mit",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Seminarformate",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    },
+    {
+      "Page position": 17,
+      "H2": "Abonnieren Sie jetzt den PCS Newsletter",
+      "URL": "https://www.pcs-akademie.de/seminar/wordpress-grundlagen/"
+    }
+  ]
+}

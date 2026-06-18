@@ -1,9 +1,9 @@
-# Lecon 6.5 — Le tableau de bord Analytics CartFlows
+# Lecon 6.5 - Le tableau de bord Analytics CartFlows
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Naviguer dans le tableau de bord Analytics de CartFlows. Lire les metriques par flow et par step. Identifier les fuites dans le funnel et exporter les donnees.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu as des funnels en place. Tu fais des A/B tests. Mais comment tu vois la performance globale de tes parcours de vente ? Comment tu identifies quel step perd le plus de visiteurs ? Comment tu compares les performances d'un mois sur l'autre ?
 
@@ -20,9 +20,9 @@ C'est le role du tableau de bord Analytics de CartFlows. Et dans cette lecon, on
 
 ---
 
-**[SECTION 1 — Acceder au tableau de bord]**
+**[SECTION 1 - Acceder au tableau de bord]**
 
-**[ECRAN — CartFlows > Analytics]**
+**[ECRAN - CartFlows > Analytics]**
 
 Dans ton tableau de bord WordPress, va dans CartFlows puis Analytics. Tu arrives sur une vue d'ensemble qui resume la performance de tous tes flows.
 
@@ -32,9 +32,9 @@ En haut, tu as un filtre par date. Par defaut, CartFlows affiche les 30 derniers
 
 ---
 
-**[SECTION 2 — Metriques par flow]**
+**[SECTION 2 - Metriques par flow]**
 
-**[ECRAN — liste des flows avec metriques]**
+**[ECRAN - liste des flows avec metriques]**
 
 En dessous de la vue globale, tu vois la liste de tes flows avec les metriques individuelles de chacun.
 
@@ -46,17 +46,17 @@ Les conversions : combien ont finalise un achat. C'est le resultat.
 
 Le revenu : le chiffre d'affaires genere par ce flow specifique.
 
-L'AOV — Average Order Value : la valeur moyenne de chaque commande. C'est le revenu divise par le nombre de commandes. Si ton AOV augmente, ca signifie que tes bumps et upsells fonctionnent.
+L'AOV - Average Order Value : la valeur moyenne de chaque commande. C'est le revenu divise par le nombre de commandes. Si ton AOV augmente, ca signifie que tes bumps et upsells fonctionnent.
 
-Si tu as plusieurs flows — un pour chaque produit, ou un pour chaque campagne — tu peux comparer directement lequel performe le mieux. Un flow avec moins de visiteurs mais un meilleur taux de conversion et un AOV plus eleve peut generer plus de revenu qu'un flow avec beaucoup de trafic.
+Si tu as plusieurs flows - un pour chaque produit, ou un pour chaque campagne - tu peux comparer directement lequel performe le mieux. Un flow avec moins de visiteurs mais un meilleur taux de conversion et un AOV plus eleve peut generer plus de revenu qu'un flow avec beaucoup de trafic.
 
 ---
 
-**[SECTION 3 — Metriques par step : la vraie mine d'or]**
+**[SECTION 3 - Metriques par step : la vraie mine d'or]**
 
-**[ECRAN — detail d'un flow avec metriques par step]**
+**[ECRAN - detail d'un flow avec metriques par step]**
 
-Clique sur un flow. Tu accedes au detail par step — etape par etape. C'est la que tu trouves les informations les plus utiles.
+Clique sur un flow. Tu accedes au detail par step - etape par etape. C'est la que tu trouves les informations les plus utiles.
 
 CartFlows te montre le taux de passage entre chaque etape du funnel :
 
@@ -70,9 +70,9 @@ Ce que tu lis ici, c'est le comportement reel de tes clients a chaque etape. Tu 
 
 ---
 
-**[SECTION 4 — Identifier les fuites]**
+**[SECTION 4 - Identifier les fuites]**
 
-**[ECRAN — entonnoir avec fleches montrant les abandons]**
+**[ECRAN - entonnoir avec fleches montrant les abandons]**
 
 Le tableau de bord par step te revele les fuites de ton funnel. Une fuite, c'est une etape ou tu perds un pourcentage anormalement eleve de visiteurs.
 
@@ -86,9 +86,9 @@ Ne passe pas ton temps a optimiser un upsell qui a deja un bon taux d'acceptatio
 
 ---
 
-**[SECTION 5 — Filtrer par date, par flow, par step]**
+**[SECTION 5 - Filtrer par date, par flow, par step]**
 
-**[ECRAN — filtres du tableau de bord Analytics]**
+**[ECRAN - filtres du tableau de bord Analytics]**
 
 CartFlows permet de filtrer les donnees de plusieurs manieres.
 
@@ -102,9 +102,9 @@ Combine les filtres pour repondre a des questions precises. "Comment mon checkou
 
 ---
 
-**[SECTION 6 — Exporter les donnees]**
+**[SECTION 6 - Exporter les donnees]**
 
-**[ECRAN — bouton export et fichier CSV]**
+**[ECRAN - bouton export et fichier CSV]**
 
 CartFlows permet d'exporter les donnees au format CSV. Tu trouveras un bouton d'export dans le tableau de bord Analytics.
 
@@ -118,9 +118,9 @@ Conseil : exporte une fois par mois. Cree un dossier "Analytics CartFlows" dans 
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Le tableau de bord Analytics de CartFlows est ton cockpit. Il te dit ce qui fonctionne, ce qui ne fonctionne pas, et ou concentrer tes efforts. Prends l'habitude de le consulter chaque semaine — cinq minutes suffisent pour reperer une anomalie ou confirmer une tendance.
+Le tableau de bord Analytics de CartFlows est ton cockpit. Il te dit ce qui fonctionne, ce qui ne fonctionne pas, et ou concentrer tes efforts. Prends l'habitude de le consulter chaque semaine - cinq minutes suffisent pour reperer une anomalie ou confirmer une tendance.
 
 Dans la prochaine lecon, on va definir les trois KPIs que tu dois suivre en priorite : taux de conversion, AOV et RPV.
 
@@ -129,7 +129,7 @@ Dans la prochaine lecon, on va definir les trois KPIs que tu dois suivre en prio
 ## Notes de production
 
 - **Visuels** : captures CartFlows Analytics (vue globale, metriques par flow, detail par step, filtres, export), schema entonnoir avec abandons
-- **Captures d'ecran** : CartFlows Pro — Analytics dashboard (6 captures minimum)
+- **Captures d'ecran** : CartFlows Pro - Analytics dashboard (6 captures minimum)
 - **Ton** : guide pratique, navigation ecran par ecran
 - **Duree estimee** : ~8 min a debit normal
 - **Transition** : enchaine directement sur L6.6 (KPIs essentiels)

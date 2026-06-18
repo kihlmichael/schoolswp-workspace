@@ -1,0 +1,60 @@
+{
+  "source": "dataforseo dataforseo_labs_search_intent",
+  "language": "fr",
+  "date": "2026-06-09",
+  "items": [
+    {
+      "keyword": "suredash vs fluent community",
+      "intent": "commercial",
+      "probability": 0.763
+    },
+    { "keyword": "suredash", "intent": "navigational", "probability": 0.714 },
+    {
+      "keyword": "fluent community",
+      "intent": "informational",
+      "probability": 0.8
+    },
+    {
+      "keyword": "fluentcommunity",
+      "intent": "navigational",
+      "probability": 0.88
+    },
+    {
+      "keyword": "plugin communauté wordpress",
+      "intent": "navigational",
+      "probability": 0.712
+    },
+    {
+      "keyword": "créer une communauté wordpress",
+      "intent": "transactional",
+      "probability": 0.89
+    },
+    {
+      "keyword": "communauté wordpress",
+      "intent": "navigational",
+      "probability": 0.951
+    },
+    {
+      "keyword": "espace membre wordpress",
+      "intent": "navigational",
+      "probability": 0.99
+    },
+    { "keyword": "buddyboss", "intent": "informational", "probability": 0.471 },
+    {
+      "keyword": "buddyboss alternative",
+      "intent": "informational",
+      "probability": 0.573,
+      "secondary": [{ "label": "commercial", "probability": 0.379 }]
+    },
+    {
+      "keyword": "réseau social wordpress",
+      "intent": "navigational",
+      "probability": 0.978
+    },
+    {
+      "keyword": "plugin membre wordpress",
+      "intent": "navigational",
+      "probability": 0.61
+    }
+  ]
+}

@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 1 : Démarrage & Installation
+# Scripts vidéo - Module 1 : Démarrage & Installation
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M1 — Démarrage & Installation (Gratuit)
+**Module** : M1 - Démarrage & Installation (Gratuit)
 **Leçons** : 7 vidéos + 1 quiz
 **Durée totale** : ~35 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 1.1 — Pré-requis système
+### Leçon 1.1 : Pré-requis système
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Avant d'installer TutorLMS, il faut vérifier que ton hébergement WordPress est prêt. Si tu installes le plugin sur un serveur trop lent ou une version de PHP obsolète, tu vas avoir des problèmes. Dans cette leçon, je te donne la checklist exacte des pré-requis.
 
-**[ÉCRAN — slide "Pré-requis techniques TutorLMS"]**
+**[ÉCRAN - slide "Pré-requis techniques TutorLMS"]**
 
 TutorLMS a besoin de quatre choses pour fonctionner correctement.
 
@@ -28,21 +28,21 @@ Première chose : WordPress 5.3 minimum. En pratique, utilise toujours la derni�
 
 Deuxième chose : PHP 7.4 minimum. Là encore, je te recommande PHP 8.1 ou 8.2. C'est plus rapide, plus sécurisé, et tous les plugins modernes le supportent. Si tu es encore en PHP 7.4, c'est le moment de demander à ton hébergeur de monter la version.
 
-**[ÉCRAN — slide "Mémoire & Serveur"]**
+**[ÉCRAN - slide "Mémoire & Serveur"]**
 
-Troisième chose : une limite mémoire PHP de 256 Mo minimum. Par défaut, beaucoup d'hébergeurs mettent 128 Mo. C'est insuffisant pour un LMS. Tu vas charger des cours, des vidéos, des quiz — ça consomme de la mémoire. 256 Mo est le minimum, 512 Mo est confortable.
+Troisième chose : une limite mémoire PHP de 256 Mo minimum. Par défaut, beaucoup d'hébergeurs mettent 128 Mo. C'est insuffisant pour un LMS. Tu vas charger des cours, des vidéos, des quiz - ça consomme de la mémoire. 256 Mo est le minimum, 512 Mo est confortable.
 
-Quatrième chose : un hébergement WordPress de qualité. TutorLMS génère beaucoup de requêtes en base de données — chaque cours, chaque leçon, chaque quiz est un Custom Post Type avec des métadonnées. Un hébergement mutualisé à 3 euros par mois ne tiendra pas la charge avec 50 étudiants connectés en même temps.
+Quatrième chose : un hébergement WordPress de qualité. TutorLMS génère beaucoup de requêtes en base de données - chaque cours, chaque leçon, chaque quiz est un Custom Post Type avec des métadonnées. Un hébergement mutualisé à 3 euros par mois ne tiendra pas la charge avec 50 étudiants connectés en même temps.
 
-**[ÉCRAN — screencast du dashboard hébergement]**
+**[ÉCRAN - screencast du dashboard hébergement]**
 
-[Montre le panneau de contrôle d'un hébergeur — section PHP et mémoire]
+[Montre le panneau de contrôle d'un hébergeur - section PHP et mémoire]
 
-Pour vérifier ta version de PHP et ta limite mémoire, va dans le panneau de contrôle de ton hébergeur. Chez la plupart des hébergeurs — OVH, o2switch, Infomaniak, Cloudways — tu trouveras ces infos dans la section PHP ou configuration du serveur.
+Pour vérifier ta version de PHP et ta limite mémoire, va dans le panneau de contrôle de ton hébergeur. Chez la plupart des hébergeurs - OVH, o2switch, Infomaniak, Cloudways - tu trouveras ces infos dans la section PHP ou configuration du serveur.
 
 Si tu ne trouves pas, installe le plugin "Site Health" de WordPress. Va dans Outils, puis Santé du site, puis Informations. Tu verras la version PHP, la limite mémoire, et la version de WordPress.
 
-**[ÉCRAN — slide "Hébergements recommandés"]**
+**[ÉCRAN - slide "Hébergements recommandés"]**
 
 Pour un site LMS avec TutorLMS, je recommande trois types d'hébergement.
 
@@ -54,9 +54,9 @@ Au-delà de 1000 étudiants actifs : un serveur dédié ou un hébergement spéc
 
 Sur schoolsWP, j'utilise Starter Starter avec Cloudways. Ça me permet de gérer les formations, le blog, et le trafic SEO sans souci de performance.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Récapitulons. WordPress 5.3 ou plus récent, PHP 7.4 ou plus récent — idéalement 8.1 ou 8.2 — et 256 Mo de mémoire minimum. Si ton hébergement coche ces trois cases, tu es prêt pour l'installation. C'est ce qu'on fait dans la prochaine leçon.
+Récapitulons. WordPress 5.3 ou plus récent, PHP 7.4 ou plus récent - idéalement 8.1 ou 8.2 - et 256 Mo de mémoire minimum. Si ton hébergement coche ces trois cases, tu es prêt pour l'installation. C'est ce qu'on fait dans la prochaine leçon.
 
 ---
 
@@ -71,22 +71,22 @@ Récapitulons. WordPress 5.3 ou plus récent, PHP 7.4 ou plus récent — idéal
 
 ---
 
-### Leçon 1.2 — Installation Tutor LMS Free + Pro
+### Leçon 1.2 : Installation Tutor LMS Free + Pro
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
 **Écran** : Face caméra pour intro/conclusion, screencast complet de l'installation
-**Source** : Vidéos #2, #30 (TutorLMS Academy) — script original schoolsWP
+**Source** : Vidéos #2, #30 (TutorLMS Academy) - script original schoolsWP
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Dans cette leçon, tu installes TutorLMS sur ton site WordPress. D'abord la version gratuite depuis le répertoire officiel, puis le plugin Pro si tu as une licence. En 5 minutes, ton LMS est opérationnel.
 
-Petit détail qui fait la différence : la formation que tu suis en ce moment tourne sur TutorLMS Pro. Mon site schoolsWP utilise exactement le même outil pour héberger ces cours. Ce n'est pas de la théorie — c'est ce que j'utilise au quotidien.
+Petit détail qui fait la différence : la formation que tu suis en ce moment tourne sur TutorLMS Pro. Mon site schoolsWP utilise exactement le même outil pour héberger ces cours. Ce n'est pas de la théorie - c'est ce que j'utilise au quotidien.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Extensions > Ajouter]
 
@@ -94,7 +94,7 @@ Petit détail qui fait la différence : la formation que tu suis en ce moment to
 
 [Tape "TutorLMS" dans la barre de recherche]
 
-Étape 2 : dans la barre de recherche, tape "Tutor LMS". Le premier résultat devrait être "Tutor LMS — eLearning and online course solution" par Themeum. Vérifie que c'est bien l'éditeur Themeum — il existe des plugins avec des noms similaires.
+Étape 2 : dans la barre de recherche, tape "Tutor LMS". Le premier résultat devrait être "Tutor LMS - eLearning and online course solution" par Themeum. Vérifie que c'est bien l'éditeur Themeum - il existe des plugins avec des noms similaires.
 
 [Clique sur Installer maintenant]
 
@@ -104,7 +104,7 @@ Petit détail qui fait la différence : la formation que tu suis en ce moment to
 
 Étape 4 : une fois installé, clique sur "Activer".
 
-**[ÉCRAN — screencast assistant de configuration]**
+**[ÉCRAN - screencast assistant de configuration]**
 
 [Montre l'assistant de bienvenue TutorLMS]
 
@@ -116,7 +116,7 @@ Première étape : le type de site. Choisis si tu veux un marketplace multi-inst
 
 [Étape 2 de l'assistant]
 
-Deuxième étape : les pages. L'assistant propose de créer automatiquement les pages nécessaires — page des cours, page du tableau de bord étudiant, page du tableau de bord instructeur. Laisse tout coché. Ces pages sont indispensables au fonctionnement du LMS.
+Deuxième étape : les pages. L'assistant propose de créer automatiquement les pages nécessaires - page des cours, page du tableau de bord étudiant, page du tableau de bord instructeur. Laisse tout coché. Ces pages sont indispensables au fonctionnement du LMS.
 
 [Étape 3 de l'assistant]
 
@@ -126,7 +126,7 @@ Troisième étape : la passerelle de paiement. Si tu veux vendre des cours, tu c
 
 Étape 5 : clique sur Terminer. L'assistant crée les pages et configure les réglages de base.
 
-**[ÉCRAN — screencast installation Pro]**
+**[ÉCRAN - screencast installation Pro]**
 
 [Montre le site TutorLMS.com > Mon compte > Téléchargements]
 
@@ -140,15 +140,15 @@ Maintenant, si tu as acheté une licence TutorLMS Pro, voici comment installer l
 
 [Clique sur Installer puis Activer]
 
-Étape 8 : clique sur "Installer maintenant", puis sur "Activer". Le plugin Pro s'ajoute à côté du plugin gratuit — les deux fonctionnent ensemble.
+Étape 8 : clique sur "Installer maintenant", puis sur "Activer". Le plugin Pro s'ajoute à côté du plugin gratuit - les deux fonctionnent ensemble.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Montre le menu TutorLMS dans la sidebar WordPress]
 
 Vérifions que tout est en place. Dans le menu latéral de WordPress, tu devrais voir "Tutor LMS" avec ses sous-menus : Cours, Catégories, Tags, Étudiants, Réglages, et si tu as le Pro, des options supplémentaires comme les Certificats et les Rapports.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 TutorLMS est installé. Le plugin gratuit donne accès à la création de cours, leçons, quiz et gestion des étudiants. Le Pro ajoute les certificats, les rapports avancés, les types de questions supplémentaires, et les addons. Dans la prochaine leçon, on active la licence Pro pour débloquer toutes les fonctionnalités.
 
@@ -165,28 +165,28 @@ TutorLMS est installé. Le plugin gratuit donne accès à la création de cours,
 
 ---
 
-### Leçon 1.3 — Activation de licence
+### Leçon 1.3 : Activation de licence
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
 **Écran** : Face caméra pour intro/conclusion, screencast de l'activation
-**Source** : Vidéos #2, #30 (TutorLMS Academy) — script original schoolsWP
+**Source** : Vidéos #2, #30 (TutorLMS Academy) - script original schoolsWP
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as installé TutorLMS Pro, mais sans activer ta licence, tu n'auras pas accès aux mises à jour automatiques ni au support. L'activation prend 2 minutes. Je te montre exactement où aller et quoi faire.
 
-**[ÉCRAN — screencast site TutorLMS.com]**
+**[ÉCRAN - screencast site TutorLMS.com]**
 
 [Navigation vers Mon Compte > Licences]
 
-Étape 1 : commence par récupérer ta clé de licence. Va sur tutorlms.com, connecte-toi à ton compte, et ouvre la section Licences. Tu y trouveras ta clé — une longue chaîne de caractères. Copie-la.
+Étape 1 : commence par récupérer ta clé de licence. Va sur tutorlms.com, connecte-toi à ton compte, et ouvre la section Licences. Tu y trouveras ta clé - une longue chaîne de caractères. Copie-la.
 
 Un détail important : chaque licence a un nombre limité d'activations. Le plan basique permet une activation sur un seul site. Le plan Business en permet cinq. Vérifie que tu n'as pas dépassé ta limite avant d'activer.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Licence ou Settings > Licence]
 
@@ -200,13 +200,13 @@ Un détail important : chaque licence a un nombre limité d'activations. Le plan
 
 Si tout est correct, tu verras un message de confirmation en vert : "License activated successfully" ou équivalent. Le statut passe de "Inactive" à "Active".
 
-**[ÉCRAN — screencast vérification des mises à jour]**
+**[ÉCRAN - screencast vérification des mises à jour]**
 
 [Navigation vers Extensions > Extensions installées]
 
 Étape 4 : vérifions que les mises à jour automatiques fonctionnent. Va dans Extensions, puis Extensions installées. À côté de "Tutor LMS Pro", tu devrais voir un lien "Vérifier les mises à jour" ou une notification si une mise à jour est disponible. Si tu ne vois pas d'erreur de licence, c'est bon.
 
-**[ÉCRAN — slide "Problèmes courants"]**
+**[ÉCRAN - slide "Problèmes courants"]**
 
 Trois problèmes fréquents lors de l'activation.
 
@@ -216,7 +216,7 @@ Deuxième problème : "Invalid license key". Vérifie que tu as copié la clé c
 
 Troisième problème : les mises à jour ne s'affichent pas. Vide le cache de ton site et celui de WordPress. Va dans Extensions installées, clique sur "Vérifier les mises à jour" pour forcer la vérification.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta licence est activée. Tu as accès aux mises à jour automatiques et au support Themeum. Avant de commencer à créer des cours, il reste un réglage technique important à faire : les permalinks. C'est la prochaine leçon.
 
@@ -233,7 +233,7 @@ Ta licence est activée. Tu as accès aux mises à jour automatiques et au suppo
 
 ---
 
-### Leçon 1.4 — Réglages Permalinks
+### Leçon 1.4 : Réglages Permalinks
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -241,11 +241,11 @@ Ta licence est activée. Tu as accès aux mises à jour automatiques et au suppo
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Les permalinks, c'est la structure des URLs de ton site. Si tu ne les configures pas correctement, les pages de tes cours, les leçons et les quiz vont afficher des erreurs 404. C'est un réglage de 30 secondes, mais beaucoup de débutants l'oublient. On le fait maintenant.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Réglages > Permaliens]
 
@@ -253,15 +253,15 @@ Les permalinks, c'est la structure des URLs de ton site. Si tu ne les configures
 
 [Montre les différentes options de structure]
 
-Tu as plusieurs structures disponibles. "Simple" utilise des numéros — c'est mauvais pour le SEO et incompatible avec TutorLMS. "Date et titre" ajoute la date dans l'URL — inutile pour des cours. "Nom de l'article" — c'est celle qu'il te faut.
+Tu as plusieurs structures disponibles. "Simple" utilise des numéros - c'est mauvais pour le SEO et incompatible avec TutorLMS. "Date et titre" ajoute la date dans l'URL - inutile pour des cours. "Nom de l'article" - c'est celle qu'il te faut.
 
 Étape 2 : sélectionne "Nom de l'article". Ça donne des URLs propres du type tonsite.com/mon-cours/ au lieu de tonsite.com/?p=123.
 
 [Clique sur Enregistrer les modifications]
 
-Étape 3 : clique sur "Enregistrer les modifications". Même si la bonne option était déjà sélectionnée, clique quand même. WordPress régénère les règles de réécriture à chaque sauvegarde. Après l'installation d'un plugin qui crée des Custom Post Types — comme TutorLMS — c'est indispensable.
+Étape 3 : clique sur "Enregistrer les modifications". Même si la bonne option était déjà sélectionnée, clique quand même. WordPress régénère les règles de réécriture à chaque sauvegarde. Après l'installation d'un plugin qui crée des Custom Post Types - comme TutorLMS - c'est indispensable.
 
-**[ÉCRAN — slide "Pourquoi c'est important pour TutorLMS"]**
+**[ÉCRAN - slide "Pourquoi c'est important pour TutorLMS"]**
 
 Pourquoi ce réglage est critique pour TutorLMS ?
 
@@ -269,25 +269,25 @@ TutorLMS crée plusieurs types de contenu personnalisés : les cours, les leçon
 
 Si les permalinks sont en mode "Simple", WordPress ne sait pas interpréter ces URLs. Résultat : des pages 404 partout. C'est le problème numéro un rapporté par les débutants sur le forum TutorLMS.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Ouvre un cours en front-end]
 
-Étape 4 : vérifions que tout fonctionne. Ouvre un cours en front-end — si tu as importé les données démo, utilise un des cours d'exemple. L'URL devrait être propre, sans point d'interrogation ni numéro.
+Étape 4 : vérifions que tout fonctionne. Ouvre un cours en front-end - si tu as importé les données démo, utilise un des cours d'exemple. L'URL devrait être propre, sans point d'interrogation ni numéro.
 
 [Montre l'URL dans la barre d'adresse]
 
 L'URL affiche bien tonsite.com/courses/nom-du-cours/. Si tu vois une erreur 404, retourne dans Réglages > Permaliens et clique encore une fois sur "Enregistrer les modifications". Ça résout le problème dans 90% des cas.
 
-**[ÉCRAN — slide "Personnalisation des slugs TutorLMS"]**
+**[ÉCRAN - slide "Personnalisation des slugs TutorLMS"]**
 
 Bonus : tu peux personnaliser les slugs de TutorLMS. Va dans Tutor LMS > Réglages > General, et cherche la section "URL Slugs" ou "Permalinks". Par défaut, les cours sont sous /courses/. Tu peux changer ça en /formations/ ou /cours/ si tu veux des URLs en français.
 
 Attention : si tu changes les slugs après avoir publié des cours, toutes les URLs existantes vont changer. Pense à mettre en place des redirections 301 si tu fais ça.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Tes permalinks sont configurés. Les URLs de tes cours, leçons et quiz fonctionnent correctement. Dans la prochaine leçon, on regarde quels plugins sont compatibles avec TutorLMS — et lesquels éviter.
+Tes permalinks sont configurés. Les URLs de tes cours, leçons et quiz fonctionnent correctement. Dans la prochaine leçon, on regarde quels plugins sont compatibles avec TutorLMS - et lesquels éviter.
 
 ---
 
@@ -302,7 +302,7 @@ Tes permalinks sont configurés. Les URLs de tes cours, leçons et quiz fonction
 
 ---
 
-### Leçon 1.5 — Plugins compatibles
+### Leçon 1.5 : Plugins compatibles
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -310,11 +310,11 @@ Tes permalinks sont configurés. Les URLs de tes cours, leçons et quiz fonction
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-TutorLMS ne fonctionne pas seul. Tu vas avoir besoin de plugins pour les paiements, le SEO, le cache, les formulaires. Le problème, c'est que certains plugins créent des conflits avec TutorLMS. Dans cette leçon, je te donne la liste des plugins testés et compatibles — et ceux à éviter.
+TutorLMS ne fonctionne pas seul. Tu vas avoir besoin de plugins pour les paiements, le SEO, le cache, les formulaires. Le problème, c'est que certains plugins créent des conflits avec TutorLMS. Dans cette leçon, je te donne la liste des plugins testés et compatibles - et ceux à éviter.
 
-**[ÉCRAN — slide "Plugins compatibles — Paiements"]**
+**[ÉCRAN - slide "Plugins compatibles - Paiements"]**
 
 Commençons par les plugins de paiement. C'est souvent la première question : comment vendre mes cours ?
 
@@ -322,33 +322,33 @@ WooCommerce est le choix principal. TutorLMS s'intègre nativement avec WooComme
 
 Easy Digital Downloads fonctionne aussi, avec un addon dédié.
 
-TutorLMS a également son propre système de monétisation intégré — sans WooCommerce. Si tu veux garder les choses simples et que tu n'as pas besoin d'un panier complet, c'est une option viable.
+TutorLMS a également son propre système de monétisation intégré - sans WooCommerce. Si tu veux garder les choses simples et que tu n'as pas besoin d'un panier complet, c'est une option viable.
 
-**[ÉCRAN — slide "Plugins compatibles — SEO"]**
+**[ÉCRAN - slide "Plugins compatibles - SEO"]**
 
 Pour le SEO. RankMath est entièrement compatible avec TutorLMS. Il détecte automatiquement les cours comme des types de contenu et te permet d'optimiser les meta titles, descriptions et le schéma markup. C'est ce que j'utilise sur schoolsWP.
 
 Yoast SEO fonctionne aussi. Les deux sont testés et validés par Themeum.
 
-**[ÉCRAN — slide "Plugins compatibles — Performance"]**
+**[ÉCRAN - slide "Plugins compatibles - Performance"]**
 
 Pour la performance et le cache. WP Rocket est compatible. LiteSpeed Cache aussi. W3 Total Cache fonctionne, mais demande plus de configuration.
 
-Un point d'attention : si tu utilises un plugin de cache, assure-toi d'exclure les pages dynamiques de TutorLMS du cache. Le tableau de bord étudiant, la page de progression, la page de quiz — ces pages doivent afficher du contenu personnalisé à chaque utilisateur. Si elles sont cachées, un étudiant verra la progression d'un autre.
+Un point d'attention : si tu utilises un plugin de cache, assure-toi d'exclure les pages dynamiques de TutorLMS du cache. Le tableau de bord étudiant, la page de progression, la page de quiz - ces pages doivent afficher du contenu personnalisé à chaque utilisateur. Si elles sont cachées, un étudiant verra la progression d'un autre.
 
-**[ÉCRAN — slide "Plugins compatibles — Page Builders"]**
+**[ÉCRAN - slide "Plugins compatibles - Page Builders"]**
 
-Pour les page builders. Elementor est officiellement supporté. TutorLMS fournit des widgets Elementor pour afficher les cours, les catégories, les instructeurs. Gutenberg fonctionne nativement — TutorLMS fournit ses propres blocs.
+Pour les page builders. Elementor est officiellement supporté. TutorLMS fournit des widgets Elementor pour afficher les cours, les catégories, les instructeurs. Gutenberg fonctionne nativement - TutorLMS fournit ses propres blocs.
 
 Divi et Beaver Builder fonctionnent, mais sans widgets dédiés. Tu utiliseras des shortcodes à la place.
 
-**[ÉCRAN — slide "Plugins compatibles — Email & CRM"]**
+**[ÉCRAN - slide "Plugins compatibles - Email & CRM"]**
 
-Pour l'email et le CRM. FluentCRM est compatible — et c'est ce que j'utilise sur schoolsWP pour les séquences automatisées. Tu peux déclencher des emails quand un étudiant s'inscrit à un cours, termine une leçon, ou échoue à un quiz.
+Pour l'email et le CRM. FluentCRM est compatible - et c'est ce que j'utilise sur schoolsWP pour les séquences automatisées. Tu peux déclencher des emails quand un étudiant s'inscrit à un cours, termine une leçon, ou échoue à un quiz.
 
 MailChimp et ConvertKit fonctionnent aussi via des intégrateurs comme AutomateWP ou des webhooks.
 
-**[ÉCRAN — slide "Plugins à éviter ou à surveiller"]**
+**[ÉCRAN - slide "Plugins à éviter ou à surveiller"]**
 
 Maintenant, les plugins à surveiller.
 
@@ -358,7 +358,7 @@ Les plugins de membership comme MemberPress ou Restrict Content Pro : ils peuven
 
 Les plugins de sécurité trop agressifs : Wordfence ou iThemes Security avec des règles de pare-feu strictes peuvent bloquer les requêtes AJAX de TutorLMS. Si tu rencontres des problèmes de chargement dans l'éditeur de cours, vérifie les règles de ton plugin de sécurité.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant une vision claire des plugins compatibles. Retiens l'essentiel : WooCommerce pour les paiements, RankMath pour le SEO, WP Rocket pour le cache, et exclus toujours les pages dynamiques du cache. Dans la prochaine leçon, on parle des thèmes compatibles.
 
@@ -367,7 +367,7 @@ Tu as maintenant une vision claire des plugins compatibles. Retiens l'essentiel 
 **Points clés** :
 - Paiements : WooCommerce (natif), EDD (addon), ou monétisation intégrée
 - SEO : RankMath et Yoast SEO validés
-- Cache : WP Rocket, LiteSpeed — exclure les pages dynamiques TutorLMS
+- Cache : WP Rocket, LiteSpeed - exclure les pages dynamiques TutorLMS
 - Page builders : Elementor (widgets dédiés), Gutenberg (blocs natifs)
 - Email/CRM : FluentCRM, MailChimp, ConvertKit
 - À éviter : autres LMS simultanés, membership plugins en conflit, sécurité trop agressive
@@ -376,7 +376,7 @@ Tu as maintenant une vision claire des plugins compatibles. Retiens l'essentiel 
 
 ---
 
-### Leçon 1.6 — Thèmes compatibles
+### Leçon 1.6 : Thèmes compatibles
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -384,17 +384,17 @@ Tu as maintenant une vision claire des plugins compatibles. Retiens l'essentiel 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le thème que tu choisis impacte directement l'apparence de tes cours, la vitesse de ton site, et la compatibilité avec TutorLMS. Certains thèmes fonctionnent parfaitement, d'autres causent des problèmes d'affichage. Dans cette leçon, je te montre lesquels choisir et pourquoi.
 
-**[ÉCRAN — slide "Compatibilité thème + LMS : ce qu'il faut savoir"]**
+**[ÉCRAN - slide "Compatibilité thème + LMS : ce qu'il faut savoir"]**
 
 TutorLMS utilise ses propres templates pour afficher les pages de cours, les leçons, le tableau de bord étudiant, et les quiz. Ton thème doit respecter ces templates sans les écraser.
 
 Concrètement, un thème compatible avec TutorLMS, c'est un thème qui ne casse pas la mise en page des cours, qui supporte les Custom Post Types, et qui ne surcharge pas les templates TutorLMS avec ses propres layouts.
 
-**[ÉCRAN — slide "Thèmes officiels Themeum"]**
+**[ÉCRAN - slide "Thèmes officiels Themeum"]**
 
 Premier choix : les thèmes Themeum. C'est le même éditeur que TutorLMS, donc la compatibilité est garantie.
 
@@ -402,7 +402,7 @@ TutorStarter est le thème gratuit officiel. Il est léger, optimisé pour Tutor
 
 Flavstarter est le thème premium de Themeum. Plus de fonctionnalités de design, plus d'options de personnalisation, toujours 100% compatible.
 
-**[ÉCRAN — slide "Thèmes tiers compatibles"]**
+**[ÉCRAN - slide "Thèmes tiers compatibles"]**
 
 Deuxième choix : les thèmes tiers testés et compatibles.
 
@@ -416,35 +416,35 @@ OceanWP : compatible, avec beaucoup d'extensions gratuites.
 
 Hello Elementor : si tu utilises Elementor comme page builder, c'est le thème le plus léger possible. Il laisse toute la mise en page à Elementor et ne crée pas de conflit avec les templates TutorLMS.
 
-**[ÉCRAN — screencast démo d'un cours]**
+**[ÉCRAN - screencast démo d'un cours]**
 
-[Montre la page d'un cours avec un thème compatible — ex: Astra]
+[Montre la page d'un cours avec un thème compatible - ex: Astra]
 
-Voici à quoi ressemble un cours avec un thème bien configuré. La page de cours affiche la description, le curriculum, les avis, le prix — tout est en place. Le design est propre, la navigation fonctionne.
+Voici à quoi ressemble un cours avec un thème bien configuré. La page de cours affiche la description, le curriculum, les avis, le prix - tout est en place. Le design est propre, la navigation fonctionne.
 
 [Montre la même page avec un thème problématique]
 
 Et voici ce qui arrive avec un thème qui n'est pas prévu pour les LMS. La sidebar écrase le contenu du cours. Les boutons d'inscription ne sont pas alignés. Le curriculum ne s'affiche pas correctement. C'est le genre de problème qu'on évite en choisissant un thème compatible.
 
-**[ÉCRAN — slide "Thèmes à éviter"]**
+**[ÉCRAN - slide "Thèmes à éviter"]**
 
 Les thèmes à éviter avec TutorLMS.
 
-Les thèmes "all-in-one" surchargés : les thèmes qui intègrent leur propre système de cours — comme Flavor LMS ou EduPro — vont entrer en conflit avec TutorLMS. Ne combine jamais un thème LMS avec un plugin LMS.
+Les thèmes "all-in-one" surchargés : les thèmes qui intègrent leur propre système de cours - comme Flavor LMS ou EduPro - vont entrer en conflit avec TutorLMS. Ne combine jamais un thème LMS avec un plugin LMS.
 
 Les thèmes anciens non mis à jour depuis plus de 2 ans. S'ils ne supportent pas PHP 8+ et les derniers standards WordPress, ils vont poser des problèmes.
 
 Les thèmes avec des mises en page très rigides qui ne supportent pas les Custom Post Types. Si le thème force un layout spécifique sur toutes les pages, les templates TutorLMS ne s'afficheront pas correctement.
 
-**[ÉCRAN — slide "Critères de sélection"]**
+**[ÉCRAN - slide "Critères de sélection"]**
 
 Pour résumer, voici tes critères de sélection.
 
-Le thème doit être activement maintenu — dernière mise à jour il y a moins de 3 mois. Il doit supporter PHP 8+. Il doit être compatible avec les Custom Post Types. Il ne doit pas inclure son propre système LMS. Et idéalement, il doit avoir des retours positifs d'utilisateurs TutorLMS.
+Le thème doit être activement maintenu - dernière mise à jour il y a moins de 3 mois. Il doit supporter PHP 8+. Il doit être compatible avec les Custom Post Types. Il ne doit pas inclure son propre système LMS. Et idéalement, il doit avoir des retours positifs d'utilisateurs TutorLMS.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Mon conseil : si tu débutes, prends Astra ou TutorStarter. Si tu veux un contrôle total avec Elementor, utilise Hello Elementor. Ne perds pas des heures à chercher le thème parfait — choisis un thème compatible, et concentre-toi sur le contenu de tes cours. C'est le contenu qui fait la différence, pas le thème. Prochaine leçon : on importe les données de démonstration pour avoir des cours d'exemple sur ton site.
+Mon conseil : si tu débutes, prends Astra ou TutorStarter. Si tu veux un contrôle total avec Elementor, utilise Hello Elementor. Ne perds pas des heures à chercher le thème parfait - choisis un thème compatible, et concentre-toi sur le contenu de tes cours. C'est le contenu qui fait la différence, pas le thème. Prochaine leçon : on importe les données de démonstration pour avoir des cours d'exemple sur ton site.
 
 ---
 
@@ -459,7 +459,7 @@ Mon conseil : si tu débutes, prends Astra ou TutorStarter. Si tu veux un contr�
 
 ---
 
-### Leçon 1.7 — Import des données démo
+### Leçon 1.7 : Import des données démo
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -467,11 +467,11 @@ Mon conseil : si tu débutes, prends Astra ou TutorStarter. Si tu veux un contr�
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Plutôt que de partir d'un site vide, TutorLMS te permet d'importer des données de démonstration : des cours d'exemple, des leçons, des quiz. C'est la meilleure façon de comprendre comment le plugin est structuré avant de créer ton propre contenu. On fait l'import ensemble.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Tools ou Tutor LMS > Add-ons]
 
@@ -481,7 +481,7 @@ Plutôt que de partir d'un site vide, TutorLMS te permet d'importer des données
 
 Étape 2 : tu devrais voir un bouton "Import Sample Data" ou "Import Demo Content". Clique dessus.
 
-**[ÉCRAN — screencast du processus d'import]**
+**[ÉCRAN - screencast du processus d'import]**
 
 [Montre la barre de progression de l'import]
 
@@ -493,7 +493,7 @@ Des cours d'exemple avec descriptions, images, et catégories. Des leçons avec 
 
 Étape 3 : une fois l'import terminé, tu verras un message de confirmation. L'import a créé tous les contenus démo.
 
-**[ÉCRAN — screencast exploration des données]**
+**[ÉCRAN - screencast exploration des données]**
 
 [Navigation vers Tutor LMS > Cours]
 
@@ -501,33 +501,33 @@ Des cours d'exemple avec descriptions, images, et catégories. Des leçons avec 
 
 [Ouvre un cours démo]
 
-Cliquons sur un cours pour voir sa structure. Tu as le titre, la description, les paramètres du cours — durée, nombre maximum d'étudiants, niveau de difficulté. Et en dessous, le curriculum : les sections, les leçons, et les quiz.
+Cliquons sur un cours pour voir sa structure. Tu as le titre, la description, les paramètres du cours - durée, nombre maximum d'étudiants, niveau de difficulté. Et en dessous, le curriculum : les sections, les leçons, et les quiz.
 
 [Montre le curriculum avec sections, leçons, quiz]
 
-Regarde comment c'est organisé. Un cours est divisé en sections — aussi appelées "Topics". Chaque section contient des leçons et des quiz. C'est cette hiérarchie que tu reproduiras quand tu créeras tes propres cours.
+Regarde comment c'est organisé. Un cours est divisé en sections - aussi appelées "Topics". Chaque section contient des leçons et des quiz. C'est cette hiérarchie que tu reproduiras quand tu créeras tes propres cours.
 
 [Ouvre une leçon démo en front-end]
 
-Étape 5 : ouvre une leçon en front-end pour voir l'expérience étudiant. Tu vois le contenu de la leçon à gauche et la navigation du cours à droite — ou en bas selon le thème. Le bouton "Marquer comme complète" permet à l'étudiant de suivre sa progression.
+Étape 5 : ouvre une leçon en front-end pour voir l'expérience étudiant. Tu vois le contenu de la leçon à gauche et la navigation du cours à droite - ou en bas selon le thème. Le bouton "Marquer comme complète" permet à l'étudiant de suivre sa progression.
 
-**[ÉCRAN — screencast d'un quiz démo]**
+**[ÉCRAN - screencast d'un quiz démo]**
 
 [Ouvre un quiz démo]
 
 Jetons un œil à un quiz. TutorLMS propose plusieurs types de questions : QCM, vrai/faux, texte libre, correspondance, et d'autres avec le Pro. Les données démo incluent des exemples de chaque type. On verra tout ça en détail dans le module dédié aux quiz.
 
-**[ÉCRAN — slide "Après l'import"]**
+**[ÉCRAN - slide "Après l'import"]**
 
 Que faire après l'import ?
 
-Explore les cours démo pour comprendre la structure. Regarde comment les sections, leçons et quiz sont organisés. Note les réglages de chaque cours — prix, accès, pré-requis.
+Explore les cours démo pour comprendre la structure. Regarde comment les sections, leçons et quiz sont organisés. Note les réglages de chaque cours - prix, accès, pré-requis.
 
 Quand tu seras prêt à créer ton propre contenu, tu pourras supprimer les données démo. Retourne dans Tutor LMS > Tools et utilise l'option "Remove Sample Data" pour nettoyer.
 
-Ne publie jamais ton site avec les données démo encore visibles. Tes visiteurs verraient des cours factices avec du contenu Lorem Ipsum — pas la meilleure première impression.
+Ne publie jamais ton site avec les données démo encore visibles. Tes visiteurs verraient des cours factices avec du contenu Lorem Ipsum - pas la meilleure première impression.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant un site TutorLMS fonctionnel avec des données d'exemple. Prends le temps d'explorer les cours démo, de cliquer sur les leçons, de tester les quiz. C'est la meilleure façon de comprendre comment tout s'articule avant de créer ton propre contenu. Le Module 1 se termine avec un quiz rapide pour vérifier que tu as bien retenu l'essentiel. On se retrouve tout de suite.
 
@@ -544,14 +544,14 @@ Tu as maintenant un site TutorLMS fonctionnel avec des données d'exemple. Prend
 
 ---
 
-### Leçon 1.8 — Quiz Module 1
+### Leçon 1.8 : Quiz Module 1
 
 **Durée** : ~5 min (auto-évalué)
 **Type** : Quiz TutorLMS (8 QCM)
 
 ---
 
-**Question 1 — Pré-requis serveur**
+**Question 1 - Pré-requis serveur**
 
 Quelle est la version minimum de PHP requise pour TutorLMS ?
 
@@ -565,7 +565,7 @@ Explication : TutorLMS requiert PHP 7.4 minimum, mais PHP 8.1 ou 8.2 est recomma
 
 ---
 
-**Question 2 — Mémoire PHP**
+**Question 2 - Mémoire PHP**
 
 Quelle limite mémoire PHP est recommandée pour un site TutorLMS ?
 
@@ -579,7 +579,7 @@ Explication : 256 Mo est le minimum recommandé pour TutorLMS. 512 Mo est confor
 
 ---
 
-**Question 3 — Installation**
+**Question 3 - Installation**
 
 Comment s'installe TutorLMS Pro ?
 
@@ -593,7 +593,7 @@ Explication : TutorLMS Free s'installe depuis le répertoire WordPress, mais Tut
 
 ---
 
-**Question 4 — Permalinks**
+**Question 4 - Permalinks**
 
 Quelle structure de permaliens est recommandée pour TutorLMS ?
 
@@ -607,7 +607,7 @@ Explication : "Nom de l'article" donne des URLs propres et lisibles, essentielle
 
 ---
 
-**Question 5 — Plugins de paiement**
+**Question 5 - Plugins de paiement**
 
 Quel plugin de paiement s'intègre nativement avec TutorLMS ?
 
@@ -621,7 +621,7 @@ Explication : WooCommerce est la passerelle de paiement principale de TutorLMS. 
 
 ---
 
-**Question 6 — Cache et pages dynamiques**
+**Question 6 - Cache et pages dynamiques**
 
 Pourquoi faut-il exclure certaines pages TutorLMS du cache ?
 
@@ -635,7 +635,7 @@ Explication : Le tableau de bord étudiant, la page de progression et les quiz a
 
 ---
 
-**Question 7 — Thèmes compatibles**
+**Question 7 - Thèmes compatibles**
 
 Parmi ces thèmes, lequel est créé par Themeum (l'éditeur de TutorLMS) ?
 
@@ -649,7 +649,7 @@ Explication : TutorStarter est le thème gratuit officiel de Themeum, entièreme
 
 ---
 
-**Question 8 — Structure d'un cours**
+**Question 8 - Structure d'un cours**
 
 Comment est organisée la hiérarchie de contenu dans TutorLMS ?
 

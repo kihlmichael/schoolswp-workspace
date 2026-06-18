@@ -138,6 +138,4 @@ Given a diff that adds a new API endpoint:
 ## Integration
 
 Use with:
-- `/validate-changes` command - Invoke before commits
-- `pre-commit-evaluator.sh` hook - Automatic git integration
 - Manual invocation for significant changes

@@ -1,4 +1,4 @@
-# FluentPlayer — Plan de formation schoolsWP
+# FluentPlayer - Plan de formation schoolsWP
 
 > Statut : plan validé, 40 scripts produits et vérifiés contre le plugin installé (2026-05-22). Étape suivante : production vidéo.
 > Angle : outcome « la vidéo qui convertit ». Cible : formateurs et créateurs de cours.
@@ -37,7 +37,7 @@ Pas de documentation officielle publique à ce jour : la formation s'appuie sur 
 
 ---
 
-## FPL-011 — FluentPlayer Quick Start (offerte)
+## FPL-011 - FluentPlayer Quick Start (offerte)
 
 **Objectif** : embarquer sa première vidéo FluentPlayer propre et capturer un email dans la vidéo, en environ 30 minutes.
 **Rôle** : lead magnet qui nourrit la liste, puis upsell vers la Masterclass.
@@ -65,13 +65,13 @@ Pas de documentation officielle publique à ce jour : la formation s'appuie sur 
 
 ---
 
-## FPL-012 — Masterclass « La vidéo qui convertit avec FluentPlayer » (premium)
+## FPL-012 - Masterclass « La vidéo qui convertit avec FluentPlayer » (premium)
 
 Structure par **système de conversion** : chaque module fait progresser la vidéo d'un cran vers le résultat business, et se termine par un **projet concret** pour le créateur de cours.
 
 Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable réutilisable (preset, template, grille), 1 quiz de validation qui débloque le module suivant.
 
-### Module 1 — Fondations : poser des vidéos rapides et pro (6 leçons, 52 min)
+### Module 1 - Fondations : poser des vidéos rapides et pro (6 leçons, 52 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -86,7 +86,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 **Livrable** : preset FluentPlayer aux couleurs de ta marque, prêt à importer.
 **Projet** : poser une vidéo de présentation 100% à ta marque, légère et rapide.
 
-### Module 2 — Structurer pour qu'on regarde jusqu'au bout (6 leçons, 46 min)
+### Module 2 - Structurer pour qu'on regarde jusqu'au bout (6 leçons, 46 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -101,7 +101,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 **Livrable** : template de structuration de playlist ou de cours (Sheets).
 **Projet** : transformer une vidéo longue en parcours chapitré, et une série en playlist de mini-cours.
 
-### Module 3 — Capturer des leads dans la vidéo (5 leçons, 44 min)
+### Module 3 - Capturer des leads dans la vidéo (5 leçons, 44 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -115,7 +115,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 **Livrable** : convention de tags FluentCRM et checklist de couche de capture.
 **Projet** : une vidéo-aimant gratuite qui capture des emails et les tague dans FluentCRM.
 
-### Module 4 — Pousser à l'action : CTA, hotspots, ventes (6 leçons, 46 min)
+### Module 4 - Pousser à l'action : CTA, hotspots, ventes (6 leçons, 46 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -130,7 +130,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 **Livrable** : 3 templates de bannière CTA et un script de vidéo de vente.
 **Projet** : une vidéo de vente avec CTA et paiement intégré, sans sortir l'acheteur de la page.
 
-### Module 5 — Mesurer et décider avec les analytics (5 leçons, 42 min)
+### Module 5 - Mesurer et décider avec les analytics (5 leçons, 42 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -144,7 +144,7 @@ Chaque module comprend : leçons vidéo de 4 à 10 min, 1 fiche PDF, 1 livrable 
 **Livrable** : grille d'audit vidéo (Sheets).
 **Projet** : audit chiffré d'une de tes vidéos et plan d'amélioration.
 
-### Module 6 — Automatiser avec l'écosystème Fluent (6 leçons, 54 min)
+### Module 6 - Automatiser avec l'écosystème Fluent (6 leçons, 54 min)
 
 | # | Leçon | Durée |
 |---|---|---|
@@ -178,7 +178,7 @@ Détail des durées Masterclass : M1 52 min · M2 46 min · M3 44 min · M4 46 m
 | Étape | Objet | Pricing indicatif |
 |---|---|---|
 | Lead magnet | FPL-011 Quick Start contre email | Gratuit |
-| Séquence welcome | 6 emails sur 6 jours, 1 par étape, push achat à J5-J6 | — |
+| Séquence welcome | 6 emails sur 6 jours, 1 par étape, push achat à J5-J6 | - |
 | Offre de fond | Masterclass FPL-012 | 127 à 167 € |
 | Upsell post-achat | Audit vidéo perso 30 min | 47 à 67 € |
 | Cross-sell J+14 | Pack presets et templates CTA seul | 17 à 27 € |
@@ -187,15 +187,15 @@ Détail des durées Masterclass : M1 52 min · M2 46 min · M3 44 min · M4 46 m
 
 **Tags FluentCRM** :
 
-- `abonne_lead_magnet_fluentplayer` — déclencheur de la séquence welcome
-- `acheteur_formation_fluentplayer` — déclencheur de la séquence onboarding élève
-- `lang_fr` — langue (décliner en `lang_en` / `lang_de` si la formation est traduite)
+- `abonne_lead_magnet_fluentplayer` - déclencheur de la séquence welcome
+- `acheteur_formation_fluentplayer` - déclencheur de la séquence onboarding élève
+- `lang_fr` - langue (décliner en `lang_en` / `lang_de` si la formation est traduite)
 
 **Affiliation** : la Masterclass recommande honnêtement FluentPlayer Pro. Lien cloaké via le mu-plugin d'affiliation (`schoolswp.com/fluentplayer/` redirige vers WPManageNinja avec `?ref=723`). Placement : module 1 (Free vs Pro) et chaque module qui enseigne une fonction Pro.
 
 ---
 
-## Annexe — Kit de marque FluentPlayer (pour vignettes et montages)
+## Annexe - Kit de marque FluentPlayer (pour vignettes et montages)
 
 Assets téléchargés dans [brand-kit/](brand-kit/). À utiliser pour les vignettes de cours, les miniatures vidéo et les montages image.
 
@@ -239,7 +239,7 @@ Sur les vignettes de la formation, la marque **schoolsWP** reste dominante (vert
 
 1. **Recherche** : terminée (site officiel, features, free vs pro, intégrations, brand resources) puis vérification contre le plugin installé.
 2. **Plan** : ce document.
-3. **Scripts** : produits et vérifiés — Quick Start (6 leçons) et Masterclass (34 leçons), 8 fichiers dans ce dossier.
+3. **Scripts** : produits et vérifiés - Quick Start (6 leçons) et Masterclass (34 leçons), 8 fichiers dans ce dossier.
 4. **Production vidéo** : HeyGen + ElevenLabs (français, tutoiement).
 5. **Fiches PDF et livrables** : pipeline PDF brand schoolsWP, templates Sheets et Notion publics et dupliquables.
 6. **Publication** : TutorLMS sur schoolsWP, quiz et drip configurés, certificat.

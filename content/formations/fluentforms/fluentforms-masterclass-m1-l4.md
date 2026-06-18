@@ -1,9 +1,9 @@
-# Script video — Module 1, Lecon 4 : Notifications email
+# Script video - Module 1, Lecon 4 : Notifications email
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 1 — Fondations
-**Lecon** : 4/6 — Notifications email
+**Module** : 1 - Fondations
+**Lecon** : 4/6 - Notifications email
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast configuration notifications
@@ -11,15 +11,15 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Un formulaire qui ne notifie personne, c'est un formulaire inutile. Le visiteur remplit tout, clique sur envoyer — et rien ne se passe. Pas de confirmation pour lui, pas d'alerte pour toi. Le lead est la, dans ta base, mais personne ne le sait.
+Un formulaire qui ne notifie personne, c'est un formulaire inutile. Le visiteur remplit tout, clique sur envoyer - et rien ne se passe. Pas de confirmation pour lui, pas d'alerte pour toi. Le lead est la, dans ta base, mais personne ne le sait.
 
 Dans cette lecon, on configure les notifications email. Admin, utilisateur, et conditionnelles.
 
-**[ECRAN — screencast "Notification admin"]**
+**[ECRAN - screencast "Notification admin"]**
 
-On commence par la notification admin — celle que toi ou ton equipe recevez.
+On commence par la notification admin - celle que toi ou ton equipe recevez.
 
 Dans le builder, va dans l'onglet Form Settings, puis Notifications & Confirmations, puis Email Notifications.
 
@@ -27,7 +27,7 @@ Tu as deja une notification par defaut. Ouvrons-la.
 
 Send To : l'adresse email qui recoit la notification. Par defaut, c'est l'email admin de WordPress. Tu peux en mettre plusieurs, separees par des virgules. Si tu veux que ton commercial recoive aussi le message : ajoute son adresse ici.
 
-Subject : le sujet de l'email. Par defaut "New Form Submission". Change-le en quelque chose d'utile : "Nouveau contact depuis le site — {inputs.name}". Le merge tag {inputs.name} insere automatiquement le nom du visiteur.
+Subject : le sujet de l'email. Par defaut "New Form Submission". Change-le en quelque chose d'utile : "Nouveau contact depuis le site - {inputs.name}". Le merge tag {inputs.name} insere automatiquement le nom du visiteur.
 
 Email Body : le contenu de l'email. C'est ici que les merge tags sont essentiels. Tu cliques sur le bouton "Merge Tags" et tu inseres les champs du formulaire.
 
@@ -47,15 +47,15 @@ Les merge tags suivent le format {inputs.nom_du_champ}. Pour les donnees systeme
 
 Reply-To : mets {inputs.email}. Comme ca, quand tu reponds a la notification, ca part directement au visiteur. Pas besoin de copier-coller son adresse.
 
-**[ECRAN — screencast "Notification utilisateur"]**
+**[ECRAN - screencast "Notification utilisateur"]**
 
 Deuxieme notification : la confirmation pour le visiteur.
 
 Clique sur "Add Notification" pour en creer une nouvelle.
 
-Send To : ici tu mets {inputs.email}. C'est l'email du visiteur — il recevra la confirmation automatiquement.
+Send To : ici tu mets {inputs.email}. C'est l'email du visiteur - il recevra la confirmation automatiquement.
 
-Subject : "Merci pour ton message — schoolsWP" ou "Confirmation de ta demande".
+Subject : "Merci pour ton message - schoolsWP" ou "Confirmation de ta demande".
 
 Email Body : personnalise le message. Confirme ce qu'il a envoye, indique le delai de reponse, ajoute un lien utile.
 
@@ -74,7 +74,7 @@ L'equipe schoolsWP
 
 Cette confirmation fait deux choses : elle rassure le visiteur (son message est bien parti) et elle met ton email dans sa boite de reception (utile pour la deliverabilite future).
 
-**[ECRAN — screencast "Notifications conditionnelles"]**
+**[ECRAN - screencast "Notifications conditionnelles"]**
 
 Troisieme niveau : les notifications conditionnelles. C'est la que ca devient puissant.
 
@@ -92,7 +92,7 @@ Chaque departement recoit uniquement les messages qui le concernent. Pas de tri 
 
 Pour activer la condition : dans la notification, active "Conditional Logic", choisis le champ "Service", l'operateur "Equal", et la valeur "Commercial" (ou Support, ou Comptabilite).
 
-**[ECRAN — screencast "Plusieurs notifications sur un meme formulaire"]**
+**[ECRAN - screencast "Plusieurs notifications sur un meme formulaire"]**
 
 Tu peux empiler autant de notifications que tu veux sur un seul formulaire.
 
@@ -102,7 +102,7 @@ Chaque notification est independante. Tu peux activer ou desactiver chacune sans
 
 Le seul point d'attention : plus tu as de notifications, plus tu generes d'emails. Assure-toi que ton serveur SMTP est fiable. FluentSMTP, du meme editeur, est un bon choix pour ca.
 
-**[ECRAN — slide "Les erreurs a eviter"]**
+**[ECRAN - slide "Les erreurs a eviter"]**
 
 Quelques erreurs classiques.
 
@@ -112,9 +112,9 @@ Oublier le Reply-To. Sans Reply-To correctement configure, ta reponse part dans 
 
 Ne pas tester. Configurer trois notifications et ne jamais envoyer un test. Va dans Form Settings, utilise la preview, soumets le formulaire toi-meme, et verifie chaque email.
 
-Mettre trop d'informations dans le sujet. Le sujet doit etre lisible dans une boite de reception mobile. "Nouveau contact — {inputs.name}" suffit. Pas besoin de coller toute la soumission dans le subject.
+Mettre trop d'informations dans le sujet. Le sujet doit etre lisible dans une boite de reception mobile. "Nouveau contact - {inputs.name}" suffit. Pas besoin de coller toute la soumission dans le subject.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Les notifications sont le systeme nerveux de ton formulaire. Sans elles, les soumissions restent invisibles. Avec elles, chaque lead est traite, chaque visiteur est confirme, chaque departement est notifie.
 

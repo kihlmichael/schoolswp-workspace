@@ -1,0 +1,19 @@
+{
+  "source": "gsc inspect_url_enhanced",
+  "date": "2026-06-02",
+  "site_url": "https://schoolswp.com/",
+  "inspected_published_en": {
+    "page_url": "https://schoolswp.com/en/learn-wordpress-in-a-day/",
+    "verdict": "NEUTRAL",
+    "coverage_state": "Discovered - currently not indexed",
+    "last_crawled": null,
+    "google_canonical": null,
+    "user_canonical": null,
+    "rich_results": null,
+    "referring_urls": [
+      "https://schoolswp.com/post-sitemap1.xml",
+      "https://schoolswp.com/en/fastpixel-review-wordpress-speed/"
+    ]
+  },
+  "note_draft": "Le brouillon audite (2289537, /en/?p=2289537) n'est pas indexable (statut draft). Le sibling EN PUBLIE (2274708) est lui-meme 'Discovered - currently not indexed' : Google connait l'URL (via sitemap + 1 lien interne) mais ne l'a pas encore indexee. Aucune traction GSC sur le sujet EN."
+}

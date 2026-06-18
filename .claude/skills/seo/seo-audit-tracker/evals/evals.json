@@ -1,0 +1,43 @@
+{
+  "skill_name": "seo-audit-tracker",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Rédige moi un audit SEO complet de mon article https://schoolswp.com/[URL-ARTICLE-DE-TEST]. Vérifie la data pour le mot clé cible avec DataForSEO et Ubersuggest. Enregistre les données dans un Google Sheet sur mon Google Drive.",
+      "expected_output": "Un rapport Markdown ton schoolsWP sauvé dans content/audits/seo/audit-seo-[slug]-fr.md (verdict, 5 scores /100, table DataForSEO vs Ubersuggest, SERP top 10, audit on-page, problèmes, recommandations, Sources & ressources, Brand QA), ET une seule ligne de synthèse écrite dans l'onglet FR du tracker SEO_AUDIT_SHEET_ID. Pas de --detailed pour le test léger.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Le rapport Markdown est sauvé dans content/audits/seo/audit-seo-<slug>-fr.md (slug evergreen, sans date dans le nom)",
+          "passed": null,
+          "evidence": ""
+        },
+        {
+          "text": "Le rapport contient une table avec les 5 scores /100 (SEO on-page, Contenu, Intention, Maillage, Opportunité IA)",
+          "passed": null,
+          "evidence": ""
+        },
+        {
+          "text": "Le rapport présente la data mot-clé des DEUX sources côte à côte (DataForSEO ET Ubersuggest), pas une seule",
+          "passed": null,
+          "evidence": ""
+        },
+        {
+          "text": "Le rapport se termine par une section ## Sources & ressources puis un bloc Brand QA noté sur 5 par critère",
+          "passed": null,
+          "evidence": ""
+        },
+        {
+          "text": "Aucun tiret long (— U+2014) ni demi-cadratin (– U+2013) dans le rapport ; pas de mot interdit ; 'schoolsWP' bien écrit ; voix au singulier (pas de 'nous/notre/nos')",
+          "passed": null,
+          "evidence": ""
+        },
+        {
+          "text": "Exactement UNE ligne ajoutée au tracker, dans l'onglet FR, avec les 15 colonnes dans l'ordre fixe",
+          "passed": null,
+          "evidence": ""
+        }
+      ]
+    }
+  ]
+}

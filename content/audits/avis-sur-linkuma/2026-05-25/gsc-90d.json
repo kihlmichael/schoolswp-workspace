@@ -1,0 +1,179 @@
+{
+  "source": "gsc-mcp get_search_by_page_query",
+  "page_url": "https://schoolswp.com/avis-sur-linkuma/",
+  "fetch_date": "2026-05-25",
+  "date_range": {
+    "start": "2026-02-24",
+    "end": "2026-05-25",
+    "days": 90
+  },
+  "totals": {
+    "clicks": 0,
+    "impressions": 966,
+    "avg_ctr": 0.0
+  },
+  "row_count": 23,
+  "rows": [
+    {
+      "query": "=linkuma",
+      "clicks": 0,
+      "impressions": 17,
+      "ctr": 0,
+      "position": 38.1
+    },
+    {
+      "query": "achat backlinks linkuma",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "query": "avis linkuma",
+      "clicks": 0,
+      "impressions": 167,
+      "ctr": 0,
+      "position": 43.9
+    },
+    {
+      "query": "avis sur linkuma",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 29.3
+    },
+    {
+      "query": "backlinks pas chers linkuma",
+      "clicks": 0,
+      "impressions": 20,
+      "ctr": 0,
+      "position": 18.2
+    },
+    {
+      "query": "bewertung von linkuma",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 13.5
+    },
+    {
+      "query": "linkuma",
+      "clicks": 0,
+      "impressions": 291,
+      "ctr": 0,
+      "position": 36.2
+    },
+    {
+      "query": "linkuma avis",
+      "clicks": 0,
+      "impressions": 43,
+      "ctr": 0,
+      "position": 33.6
+    },
+    {
+      "query": "linkuma backlinks",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 33
+    },
+    {
+      "query": "linkuma backlinks pas cher",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 12.2
+    },
+    {
+      "query": "linkuma backlinks pas chers",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 19
+    },
+    {
+      "query": "linkuma blog",
+      "clicks": 0,
+      "impressions": 96,
+      "ctr": 0,
+      "position": 38.2
+    },
+    {
+      "query": "linkuma logo",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 29
+    },
+    {
+      "query": "linkuma plateforme backlinks",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 38.1
+    },
+    {
+      "query": "linkuma prix",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "query": "linkuma redacteur",
+      "clicks": 0,
+      "impressions": 126,
+      "ctr": 0,
+      "position": 38.5
+    },
+    {
+      "query": "linkuma review",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 25
+    },
+    {
+      "query": "linkuma rédacteur",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 35.8
+    },
+    {
+      "query": "linkuma tarif",
+      "clicks": 0,
+      "impressions": 136,
+      "ctr": 0,
+      "position": 26.4
+    },
+    {
+      "query": "linkuma test",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 43.1
+    },
+    {
+      "query": "linkuma.com",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 56
+    },
+    {
+      "query": "review linkuma",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "site:https://schoolswp.com/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 67.6
+    }
+  ]
+}

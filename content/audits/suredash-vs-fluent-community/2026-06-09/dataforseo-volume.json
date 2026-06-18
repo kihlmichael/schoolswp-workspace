@@ -1,0 +1,71 @@
+{
+  "source": "dataforseo kw_data_google_ads_search_volume",
+  "location": "France (2250)",
+  "language": "fr",
+  "date": "2026-06-09",
+  "items": [
+    {
+      "keyword": "suredash vs fluent community",
+      "search_volume": null,
+      "note": "sous seuil / pas de donnee"
+    },
+    {
+      "keyword": "suredash",
+      "search_volume": null,
+      "note": "voir keyword_overview: 20"
+    },
+    { "keyword": "suredash avis", "search_volume": null },
+    {
+      "keyword": "fluent community",
+      "competition": "LOW",
+      "competition_index": 14,
+      "search_volume": 110,
+      "cpc": 14.76,
+      "low_top_of_page_bid": 2.1,
+      "high_top_of_page_bid": 9.69,
+      "monthly_searches": {
+        "2026-04": 40,
+        "2026-03": 70,
+        "2026-02": 110,
+        "2026-01": 110,
+        "2025-12": 90,
+        "2025-11": 170,
+        "2025-10": 170,
+        "2025-09": 140,
+        "2025-08": 90,
+        "2025-07": 140,
+        "2025-06": 110,
+        "2025-05": 110
+      }
+    },
+    { "keyword": "fluentcommunity", "search_volume": null },
+    { "keyword": "fluent community avis", "search_volume": null },
+    {
+      "keyword": "fluent community wordpress",
+      "search_volume": null,
+      "note": "voir suggestions: 10, -100%"
+    },
+    { "keyword": "plugin communauté wordpress", "search_volume": null },
+    { "keyword": "créer une communauté wordpress", "search_volume": null },
+    {
+      "keyword": "communauté wordpress",
+      "competition": "LOW",
+      "competition_index": 11,
+      "search_volume": 70,
+      "monthly_searches": {
+        "2026-04": 10,
+        "2026-03": 10,
+        "2026-02": 10,
+        "2026-01": 10,
+        "2025-12": 10,
+        "2025-11": 10,
+        "2025-10": 20,
+        "2025-09": 10,
+        "2025-08": 50,
+        "2025-07": 110,
+        "2025-06": 320,
+        "2025-05": 320
+      }
+    }
+  ]
+}

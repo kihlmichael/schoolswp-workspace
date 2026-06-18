@@ -1,14 +1,14 @@
-# Scripts vidéo — FPL-012 Module 2 : Structurer pour qu'on regarde jusqu'au bout
+# Scripts vidéo - FPL-012 Module 2 : Structurer pour qu'on regarde jusqu'au bout
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : M2 — Structurer pour qu'on regarde jusqu'au bout (Masterclass, premium)
+**Module** : M2 - Structurer pour qu'on regarde jusqu'au bout (Masterclass, premium)
 **Leçons** : 6 vidéos + 1 fiche PDF + 1 quiz
 **Durée totale** : ~46 min de vidéo
 **Date** : 2026-05-22
 
 ---
 
-## Leçon 2.1 — Pourquoi la complétion est ta vraie métrique
+## Leçon 2.1 - Pourquoi la complétion est ta vraie métrique
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -16,17 +16,17 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 La plupart des créateurs regardent le nombre de vues. C'est la mauvaise métrique. Ce qui compte vraiment, c'est la complétion : combien de personnes regardent ta vidéo jusqu'au bout.
 
-**[ÉCRAN — slide "Vue contre complétion"]**
+**[ÉCRAN - slide "Vue contre complétion"]**
 
 Une vue, ça veut dire qu'on a cliqué sur play. Rien de plus. La personne a pu partir au bout de cinq secondes.
 
 La complétion, elle, te dit si ton message est passé. Et surtout : tes éléments de conversion, ta capture d'email, ton CTA, sont posés à un moment précis de la vidéo. Si personne ne va jusque-là, ils ne servent à rien.
 
-**[ÉCRAN — slide "Ce qui fait décrocher"]**
+**[ÉCRAN - slide "Ce qui fait décrocher"]**
 
 Les gens décrochent pour des raisons simples :
 
@@ -35,7 +35,7 @@ Les gens décrochent pour des raisons simples :
 - ils sont interrompus et ne savent pas comment reprendre
 - le contenu n'est pas dans leur langue
 
-**[ÉCRAN — slide "Le plan de ce module"]**
+**[ÉCRAN - slide "Le plan de ce module"]**
 
 Ce module règle chacun de ces points :
 
@@ -44,7 +44,7 @@ Ce module règle chacun de ces points :
 - la reprise de lecture, pour ne jamais perdre quelqu'un qui s'est arrêté
 - les playlists, pour organiser une série ou un cours
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 On commence par l'outil le plus rentable pour la complétion : les chapitres.
 
@@ -64,7 +64,7 @@ On commence par l'outil le plus rentable pour la complétion : les chapitres.
 
 ---
 
-## Leçon 2.2 — Chapitres : découper une vidéo longue
+## Leçon 2.2 - Chapitres : découper une vidéo longue
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -72,11 +72,11 @@ On commence par l'outil le plus rentable pour la complétion : les chapitres.
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Une vidéo longue sans repère, c'est un mur. Les chapitres la transforment en parcours clair. Et bonne nouvelle : les chapitres sont disponibles dès la version gratuite.
 
-**[ÉCRAN — slide "Ce que font les chapitres"]**
+**[ÉCRAN - slide "Ce que font les chapitres"]**
 
 Les chapitres servent trois choses :
 
@@ -86,7 +86,7 @@ Les chapitres servent trois choses :
 
 Résultat direct : on regarde plus longtemps.
 
-**[ÉCRAN — screencast : créer des chapitres]**
+**[ÉCRAN - screencast : créer des chapitres]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Chapters]
@@ -98,20 +98,20 @@ Un chapitre, c'est un horodatage de départ et un titre.
 [Ajoute un chapitre : 05:30, "La méthode étape par étape"]
 [Ajoute un chapitre : 11:00, "Récapitulatif"]
 
-**[ÉCRAN — slide "Bien titrer ses chapitres"]**
+**[ÉCRAN - slide "Bien titrer ses chapitres"]**
 
 Un bon titre de chapitre est concret. Évite "Partie 2". Préfère "Configurer la couche de capture". Le spectateur doit comprendre ce qu'il va voir, et donc avoir envie d'y aller.
 
 Prépare tes horodatages pendant que tu montes ta vidéo, c'est le plus simple.
 
-**[ÉCRAN — screencast : le rendu côté spectateur]**
+**[ÉCRAN - screencast : le rendu côté spectateur]**
 
 [Montre la barre de progression avec les marqueurs de chapitres]
 [Clique sur un chapitre pour sauter à la section]
 
 La barre de progression est découpée et nommée. Ta vidéo longue devient facile à parcourir.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Les chapitres aident ceux qui parlent ta langue. Dans la prochaine leçon, on élargit l'audience avec les sous-titres.
 
@@ -131,7 +131,7 @@ Les chapitres aident ceux qui parlent ta langue. Dans la prochaine leçon, on é
 
 ---
 
-## Leçon 2.3 — Sous-titres et langues : élargir ton audience
+## Leçon 2.3 - Sous-titres et langues : élargir ton audience
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -139,11 +139,11 @@ Les chapitres aident ceux qui parlent ta langue. Dans la prochaine leçon, on é
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Beaucoup de gens regardent les vidéos sans le son : dans les transports, au bureau, le soir à côté de quelqu'un. Sans sous-titres, tu les perds. Les sous-titres, c'est une fonction Pro, et ça en vaut la peine.
 
-**[ÉCRAN — slide "Pourquoi les sous-titres"]**
+**[ÉCRAN - slide "Pourquoi les sous-titres"]**
 
 Les sous-titres servent plusieurs publics :
 
@@ -152,14 +152,14 @@ Les sous-titres servent plusieurs publics :
 - ceux qui ne maîtrisent pas parfaitement ta langue
 - et, si tu fournis plusieurs langues, une audience internationale
 
-**[ÉCRAN — screencast : ajouter un fichier de sous-titres]**
+**[ÉCRAN - screencast : ajouter un fichier de sous-titres]**
 
 [Ouvre un média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer]
 [Ajoute un fichier de sous-titres dans les réglages du média]
 
 FluentPlayer accepte un fichier de sous-titres standard. Tu peux en ajouter plusieurs, un par langue.
 
-**[ÉCRAN — slide "Où trouver tes sous-titres"]**
+**[ÉCRAN - slide "Où trouver tes sous-titres"]**
 
 Tu as deux chemins :
 
@@ -168,14 +168,14 @@ Tu as deux chemins :
 
 Dans les deux cas, relis. Une faute dans les sous-titres se voit autant qu'une faute à l'écran.
 
-**[ÉCRAN — screencast : plusieurs langues]**
+**[ÉCRAN - screencast : plusieurs langues]**
 
 [Ajoute un deuxième fichier de sous-titres dans une autre langue]
 [Montre le sélecteur de langue côté spectateur]
 
 Avec plusieurs fichiers, le spectateur choisit sa langue dans le lecteur. Une seule vidéo, plusieurs audiences.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tes vidéos sont chapitrées et sous-titrées. Reste un cas fréquent : la personne qui s'arrête en plein milieu. On règle ça avec la reprise de lecture.
 
@@ -195,7 +195,7 @@ Tes vidéos sont chapitrées et sous-titrées. Reste un cas fréquent : la perso
 
 ---
 
-## Leçon 2.4 — Reprise de lecture : repartir où on s'est arrêté
+## Leçon 2.4 - Reprise de lecture : repartir où on s'est arrêté
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -203,22 +203,22 @@ Tes vidéos sont chapitrées et sous-titrées. Reste un cas fréquent : la perso
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Un élève regarde la moitié de ta leçon, ferme l'ordinateur, revient le lendemain. S'il doit chercher où il en était, il abandonne. La reprise de lecture supprime ce frottement.
 
-**[ÉCRAN — slide "Le problème de la reprise manuelle"]**
+**[ÉCRAN - slide "Le problème de la reprise manuelle"]**
 
 Sans reprise de lecture, celui qui revient sur une vidéo doit la relancer du début et faire avancer la barre à la main, à l'aveugle. C'est pénible. Beaucoup ne le font pas et passent à autre chose.
 
-**[ÉCRAN — screencast : activer la reprise de lecture]**
+**[ÉCRAN - screencast : activer la reprise de lecture]**
 
 [Sélectionne le bloc FluentPlayer, déplie le panneau General Settings]
 [Active l'option de reprise de lecture]
 
 La reprise de lecture, une fonction Pro, mémorise où chaque spectateur s'est arrêté.
 
-**[ÉCRAN — screencast : la démonstration]**
+**[ÉCRAN - screencast : la démonstration]**
 
 [Lance une vidéo, avance jusqu'au milieu, ferme]
 [Rouvre la page]
@@ -226,11 +226,11 @@ La reprise de lecture, une fonction Pro, mémorise où chaque spectateur s'est a
 
 Quand la personne revient, le lecteur lui propose de reprendre exactement là où elle s'était arrêtée. Zéro effort, zéro frottement.
 
-**[ÉCRAN — slide "Pourquoi c'est décisif pour un cours"]**
+**[ÉCRAN - slide "Pourquoi c'est décisif pour un cours"]**
 
 Pour une vidéo isolée, c'est un confort. Pour un cours en ligne, c'est essentiel. Un élève qui retrouve sa place revient plus souvent, et finit le cours. Et un cours terminé, c'est un élève satisfait qui en parle.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tes vidéos individuelles sont solides. Il est temps de les organiser entre elles. Prochaine leçon : les playlists.
 
@@ -250,7 +250,7 @@ Tes vidéos individuelles sont solides. Il est temps de les organiser entre elle
 
 ---
 
-## Leçon 2.5 — Playlists : organiser une bibliothèque ou un cours
+## Leçon 2.5 - Playlists : organiser une bibliothèque ou un cours
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -258,11 +258,11 @@ Tes vidéos individuelles sont solides. Il est temps de les organiser entre elle
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Une vidéo seule, c'est une vidéo. Plusieurs vidéos organisées, c'est un parcours. Les playlists FluentPlayer, une fonction Pro, transforment une collection de vidéos en expérience guidée.
 
-**[ÉCRAN — slide "À quoi sert une playlist"]**
+**[ÉCRAN - slide "À quoi sert une playlist"]**
 
 Une playlist, c'est utile pour :
 
@@ -272,31 +272,31 @@ Une playlist, c'est utile pour :
 
 Le spectateur enchaîne les vidéos sans quitter la page.
 
-**[ÉCRAN — screencast : créer une playlist]**
+**[ÉCRAN - screencast : créer une playlist]**
 
 [Va dans le menu FluentPlayer, Playlists]
 [Crée une nouvelle playlist]
 [Donne un titre à la playlist]
 
-**[ÉCRAN — screencast : ajouter et ordonner les vidéos]**
+**[ÉCRAN - screencast : ajouter et ordonner les vidéos]**
 
 [Ajoute plusieurs médias à la playlist]
 [Réordonne les vidéos par glisser-déposer]
 
 L'ordre compte. Range tes vidéos dans la logique d'apprentissage : du plus simple au plus avancé, ou dans l'ordre des étapes.
 
-**[ÉCRAN — screencast : insérer la playlist]**
+**[ÉCRAN - screencast : insérer la playlist]**
 
 [Ajoute la playlist dans une page via le bloc FluentPlayer]
 [Montre le rendu : lecteur + liste des vidéos]
 
 Sur la page, le spectateur voit le lecteur et la liste des vidéos à côté. Il clique d'une leçon à l'autre, ou laisse l'enchaînement se faire.
 
-**[ÉCRAN — slide "Playlist contre cours LMS"]**
+**[ÉCRAN - slide "Playlist contre cours LMS"]**
 
 Une précision : une playlist FluentPlayer organise des vidéos sur une page. Ce n'est pas un LMS complet avec progression notée et certificats. Pour ça, on connectera FluentPlayer à un vrai outil de cours, ce qu'on verra au Module 6. La playlist, c'est le bon outil pour un mini-cours gratuit ou une série.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta playlist existe. Dans la dernière leçon du module, on soigne son apparence.
 
@@ -316,7 +316,7 @@ Ta playlist existe. Dans la dernière leçon du module, on soigne son apparence.
 
 ---
 
-## Leçon 2.6 — Layouts et apparence de playlist
+## Leçon 2.6 - Layouts et apparence de playlist
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -324,36 +324,36 @@ Ta playlist existe. Dans la dernière leçon du module, on soigne son apparence.
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Une playlist bien rangée mais mal présentée perd le spectateur. Cette leçon règle l'apparence pour que ta playlist soit aussi claire à l'œil qu'elle l'est dans la structure.
 
-**[ÉCRAN — screencast : choisir un layout]**
+**[ÉCRAN - screencast : choisir un layout]**
 
 [Ouvre les réglages d'apparence de la playlist]
 [Montre les différents layouts disponibles]
 
 FluentPlayer propose plusieurs dispositions pour la playlist : la liste des vidéos peut se placer à côté du lecteur, ou en dessous. Choisis selon l'espace de ta page.
 
-**[ÉCRAN — slide "Quel layout choisir"]**
+**[ÉCRAN - slide "Quel layout choisir"]**
 
 - Liste à côté du lecteur : pratique sur une page large, on voit tout le parcours d'un coup.
 - Liste en dessous : adapté à une page étroite ou à un affichage mobile.
 
 Regarde toujours le rendu sur téléphone, c'est là que la majorité de tes spectateurs sont.
 
-**[ÉCRAN — screencast : soigner les vignettes et les titres]**
+**[ÉCRAN - screencast : soigner les vignettes et les titres]**
 
 [Montre les vignettes des vidéos dans la playlist]
 [Vérifie les titres affichés]
 
 Chaque vidéo de la playlist affiche une vignette et un titre. Soigne-les : une vignette nette et un titre clair donnent envie de passer à la vidéo suivante. C'est ce qui maintient le spectateur dans le parcours.
 
-**[ÉCRAN — slide "La cohérence, encore"]**
+**[ÉCRAN - slide "La cohérence, encore"]**
 
 Comme pour le branding du lecteur, applique le même style à toutes tes playlists. Le spectateur doit reconnaître ton univers d'une page à l'autre.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tes vidéos sont à ta marque, structurées et organisées en parcours. On a posé des fondations solides. Dans le Module 3, on passe à l'étape qui change ton activité : capturer des leads à l'intérieur de la vidéo.
 
@@ -373,7 +373,7 @@ Tes vidéos sont à ta marque, structurées et organisées en parcours. On a pos
 
 ---
 
-## Notes de production — Module 2
+## Notes de production - Module 2
 
 ### Captures à préparer
 - Slides vue contre complétion, causes de décrochage

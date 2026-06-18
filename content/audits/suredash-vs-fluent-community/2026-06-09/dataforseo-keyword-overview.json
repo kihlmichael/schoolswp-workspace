@@ -1,0 +1,79 @@
+{
+  "source": "dataforseo dataforseo_labs_google_keyword_overview",
+  "location": "France (2250)",
+  "language": "fr",
+  "date": "2026-06-09",
+  "items": [
+    {
+      "keyword": "fluent community",
+      "search_volume": 110,
+      "competition_level": "LOW",
+      "cpc": 14.76,
+      "keyword_difficulty": 28,
+      "main_intent": "navigational",
+      "trend": { "monthly": -43, "quarterly": -64, "yearly": -56 }
+    },
+    {
+      "keyword": "suredash",
+      "search_volume": 20,
+      "competition_level": "LOW",
+      "cpc": 46.21,
+      "keyword_difficulty": null,
+      "main_intent": "navigational",
+      "trend": { "monthly": -67, "yearly": -50 }
+    },
+    {
+      "keyword": "buddyboss",
+      "search_volume": 320,
+      "competition_level": "MEDIUM",
+      "cpc": 1.05,
+      "keyword_difficulty": 18,
+      "main_intent": "informational",
+      "trend": { "monthly": -19, "yearly": -83 }
+    },
+    {
+      "keyword": "buddyboss alternative",
+      "search_volume": 10,
+      "keyword_difficulty": null,
+      "main_intent": "informational",
+      "trend": { "monthly": -100, "yearly": -100 }
+    },
+    {
+      "keyword": "communauté wordpress",
+      "search_volume": 70,
+      "competition_level": "LOW",
+      "keyword_difficulty": 46,
+      "main_intent": "navigational",
+      "trend": { "yearly": -97 }
+    },
+    {
+      "keyword": "espace membre wordpress",
+      "search_volume": 50,
+      "competition_level": "LOW",
+      "cpc": 1.52,
+      "main_intent": "navigational",
+      "trend": { "quarterly": -25, "yearly": -57 }
+    },
+    {
+      "keyword": "plugin membre wordpress",
+      "search_volume": 10,
+      "main_intent": "navigational",
+      "trend": { "monthly": -100, "yearly": -100 }
+    },
+    {
+      "keyword": "plugin communauté wordpress",
+      "search_volume": null,
+      "main_intent": "navigational"
+    },
+    {
+      "keyword": "créer une communauté wordpress",
+      "search_volume": null,
+      "main_intent": "transactional"
+    },
+    {
+      "keyword": "réseau social wordpress",
+      "search_volume": null,
+      "note": "pas de donnee retournee"
+    }
+  ]
+}

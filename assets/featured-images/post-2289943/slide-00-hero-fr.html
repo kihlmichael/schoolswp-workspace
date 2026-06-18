@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Avis Rank Math - Hero FR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4f5f7;
+        --card-bg: #ffffff;
+        --green: #00d400;
+        --green-soft: #d4f7d4;
+        --black: #0f1419;
+        --grey-text: #5a6470;
+        --line: #d8dce3;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { font-family: "Inter", -apple-system, sans-serif; background: var(--bg); }
+      .slide {
+        width: 1920px; height: 1080px; background: var(--bg);
+        display: grid; grid-template-columns: 1080px 1fr;
+        align-items: center; padding: 0 110px; gap: 80px;
+        position: relative; overflow: hidden;
+      }
+      .text-block { display: flex; flex-direction: column; gap: 38px; }
+      .pill {
+        display: inline-flex; align-items: center; gap: 14px; align-self: flex-start;
+        padding: 12px 22px 12px 18px; border-radius: 999px; background: #ffffff;
+        border: 1.5px solid var(--line); font-size: 18px; font-weight: 700;
+        letter-spacing: 2px; text-transform: uppercase; color: var(--black);
+      }
+      .pill .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(0, 212, 0, 0.18); }
+      .pill .sep { color: var(--line); font-weight: 400; }
+      .title { font-family: "Inter", sans-serif; font-weight: 900; font-size: 104px; line-height: 0.96; letter-spacing: -4px; color: var(--black); }
+      .title span { display: block; }
+      .title em { font-style: normal; color: var(--green); }
+      .baseline { font-size: 30px; font-weight: 500; color: var(--grey-text); line-height: 1.4; max-width: 920px; }
+      .signature { font-size: 20px; font-weight: 600; color: var(--black); letter-spacing: 0.3px; margin-top: 18px; }
+      .signature .sep { color: var(--line); margin: 0 14px; }
+      .signature .schools { color: var(--black); }
+      .signature .wp { color: var(--green); }
+      .visual {
+        width: 620px; height: 720px; background: var(--card-bg); border-radius: 32px;
+        box-shadow: 0 32px 70px -20px rgba(15, 20, 25, 0.18), 0 4px 12px -4px rgba(15, 20, 25, 0.06);
+        position: relative; overflow: hidden; display: flex; flex-direction: column;
+      }
+      .visual::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 8px;
+        background: linear-gradient(90deg, var(--green) 0%, var(--green) 35%, transparent 35%, transparent 100%);
+      }
+      .v-header { display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--grey-text); }
+      .v-header .icon-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--green-soft); display: inline-flex; align-items: center; justify-content: center; color: var(--green); }
+      .v-header .icon-circle svg { width: 20px; height: 20px; display: block; }
+      .visual-inner { padding: 56px 56px 48px 56px; display: flex; flex-direction: column; gap: 26px; height: 100%; }
+      .verdict-card {
+        border: 2px solid #a3e8a3; background: #f4fdf4; border-radius: 22px;
+        padding: 26px 24px 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+      }
+      .score { display: flex; align-items: baseline; justify-content: center; }
+      .score .num { font-weight: 900; font-size: 104px; line-height: 1; letter-spacing: -3px; color: var(--green); }
+      .score .den { font-weight: 800; font-size: 44px; color: var(--grey-text); margin-left: 2px; }
+      .stars { display: flex; gap: 6px; }
+      .stars svg { width: 30px; height: 30px; display: block; }
+      .verdict-label { font-size: 21px; font-weight: 800; color: var(--black); letter-spacing: 1px; }
+      .stats { display: flex; flex-direction: column; gap: 8px; width: 100%; flex: 1; justify-content: center; }
+      .stat { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 4px; border-bottom: 1px dashed var(--line); font-size: 21px; }
+      .stat:last-child { border-bottom: none; }
+      .stat-key { color: var(--grey-text); font-weight: 500; }
+      .stat-val { color: var(--black); font-weight: 800; }
+      .visual-footer { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 17px; font-weight: 600; color: var(--grey-text); margin-top: 2px; text-align: center; }
+      .visual-footer .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    </style>
+  </head>
+  <body>
+    <div class="slide">
+      <div class="text-block">
+        <div class="pill">
+          <span class="dot"></span>
+          <span>Rank Math</span>
+          <span class="sep">|</span>
+          <span>Avis</span>
+        </div>
+        <div class="title"><span><em>Avis</em></span><span>Rank Math</span></div>
+        <div class="baseline">Le plugin SEO que j'utilise sur schoolsWP. Fonctions, assistant IA, tarifs et limites : mon test complet.</div>
+        <div class="signature">
+          Micha&euml;l KIHL <span class="sep">|</span>
+          <span class="schools">schools</span><span class="wp">WP</span>.com
+        </div>
+      </div>
+      <div class="visual">
+        <div class="visual-inner">
+          <div class="v-header">
+            <span class="icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </span>
+            <span>Mon verdict</span>
+          </div>
+          <div class="verdict-card">
+            <div class="score"><span class="num">5</span><span class="den">/5</span></div>
+            <div class="stars"><svg viewBox="0 0 24 24" fill="#00d400" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#00d400" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#00d400" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#00d400" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="#00d400" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="verdict-label">EXCELLENT, SANS R&Eacute;SERVE</div>
+          </div>
+          <div class="stats">
+            <div class="stat"><span class="stat-key">Note WordPress.org</span><span class="stat-val">4,8 / 5</span></div>
+            <div class="stat"><span class="stat-key">Sites actifs</span><span class="stat-val">4 M+</span></div>
+            <div class="stat"><span class="stat-key">Version gratuite</span><span class="stat-val">Compl&egrave;te</span></div>
+            <div class="stat"><span class="stat-key">Assistant IA</span><span class="stat-val">Inclus</span></div>
+          </div>
+          <div class="visual-footer">
+            <span class="dot"></span>
+            <span>Le plugin SEO de r&eacute;f&eacute;rence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

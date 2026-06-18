@@ -1,0 +1,115 @@
+{
+  "source": "DataForSEO serp_organic_live_advanced + Ubersuggest serp_analysis",
+  "keyword": "booknetic review",
+  "market": "United States",
+  "language": "en",
+  "collected_at": "2026-06-03",
+  "serp_features": [
+    "ai_overview",
+    "video_pack (YouTube)",
+    "people_also_ask",
+    "related_searches"
+  ],
+  "results": [
+    {
+      "pos": 1,
+      "domain": "trustpilot.com",
+      "da": 93,
+      "title": "Customer Service Reviews of booknetic.com",
+      "rating": "3.2/22"
+    },
+    { "pos": 2, "type": "ai_overview" },
+    {
+      "pos": 3,
+      "domain": "booknetic.com",
+      "da": 32,
+      "title": "Appointment Booking Plugin with Ratings & Reviews (officiel)"
+    },
+    {
+      "pos": 4,
+      "type": "video_pack",
+      "note": "YouTube WPGlob, AppSumo, SaaS Master"
+    },
+    { "pos": 5, "domain": "facebook.com", "da": 96, "rating": "2.3/3" },
+    {
+      "pos": 6,
+      "domain": "capterra.com",
+      "da": 80,
+      "title": "Booknetic Reviews 2026. Verified Reviews, Pros & Cons",
+      "rating": "4.5/103"
+    },
+    {
+      "pos": 8,
+      "domain": "fs-code.com",
+      "da": 28,
+      "title": "Booknetic Review (2026): Features, Pricing & a Hands-On test",
+      "note": "AVIS editorial DA 28 qui RANK"
+    },
+    {
+      "pos": 9,
+      "domain": "wpmayor.com",
+      "da": 48,
+      "title": "Booknetic Review: A Polished WordPress Appointment...",
+      "note": "avis editorial"
+    },
+    {
+      "pos": 10,
+      "domain": "booknetic.com",
+      "da": 32,
+      "title": "Amelia vs Booknetic"
+    },
+    {
+      "pos": 11,
+      "domain": "booking-wp-plugin.com",
+      "da": 38,
+      "title": "Bookly vs Booknetic"
+    },
+    { "pos": 12, "domain": "appsumo.com", "da": 63 },
+    { "pos": 14, "domain": "getapp.com", "da": 60 },
+    {
+      "pos": 15,
+      "domain": "reddit.com",
+      "da": 92,
+      "title": "r/Wordpress: Booknetic Booking Plugin Please Help"
+    },
+    {
+      "pos": 16,
+      "domain": "blogvault.net",
+      "da": 44,
+      "title": "Booknetic Review: Everything You Need To Know"
+    }
+  ],
+  "people_also_ask": [
+    "How much does Booknetic cost?",
+    "What is the best free booking plugin for WordPress?",
+    "Is bookit.com legit?",
+    "What are the pros and cons of bookly?"
+  ],
+  "related_searches": [
+    "Booknetic review complaints",
+    "Booknetic review saas",
+    "Booknetic login",
+    "Booknetic shortcodes",
+    "Booknetic Addons",
+    "Booknetic mobile app",
+    "Booknetic demo"
+  ],
+  "DONNEES_FACTUELLES_REUTILISABLES": {
+    "note": "Extraites de la SERP (PAA booknetic.com + blog officiel) - corrigent les incoherences de l'article FR (bloquants B4 prix + B5 note)",
+    "prix_reels_annuels": {
+      "Basic": "45 $/an",
+      "Standard": "99 $/an",
+      "Premium": "199 $/an",
+      "Elite": "299 $/an",
+      "source": "Google PAA via booknetic.com (booknetic-vs-simply-schedule)"
+    },
+    "licence_a_vie": "99 $ (plan Basic lifetime) - source blogvault.net",
+    "note_reelle": "4,93/5 sur 444 avis CodeCanyon (source booknetic.com/blog/amelia-vs-booknetic, 2026-05) ; Capterra 4,5/103 ; Trustpilot 3,2/22"
+  },
+  "insights": {
+    "intent": "review/commercial, SERP riche (AI Overview + video + PAA)",
+    "editorial_rank": "Les avis editoriaux a faible DA rankent (fs-code DA 28, wpmayor DA 48, blogvault DA 44) -> creneau atteignable",
+    "barriere": "volume 10/mo + KD 58 (HIGH) sur 'booknetic review' ; viser la marque 'booknetic' (170/mo, KD 13) + GEO (AI Overview) + video",
+    "geo": "AI Overview present -> structurer pour citation (TL;DR, prix, note, pros/cons clairs)"
+  }
+}

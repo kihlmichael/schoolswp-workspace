@@ -9,6 +9,7 @@ URL : https://schoolswp.com/en/?p=2274708 (futur : https://schoolswp.com/en/lear
 | Date | Trigger | Statut sortie | Synthèse |
 | --- | --- | --- | --- |
 | [2026-05-16](2026-05-16/synthese.md) | Demande Michael (audit pré-publication) | refonte-effectuee | 5 phases de corrections appliquées byte-perfect (anchors, FAQ, voix, 8-hour, Rank Math) |
+| [2026-05-31](2026-05-31/synthese.md) | Audit sémantique complet DE (DataForSEO + Thruuu) | refonte-effectuee | Audit complet DataForSEO DE, nouvelle infographie Premium design Osmose Light, correction des IDs allemands et links Polylang |
 
 ## Statut courant
 

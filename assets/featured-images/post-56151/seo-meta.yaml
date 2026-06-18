@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/link-finder-optimisation-netlinking-cout-reduit/
+    title: Avis Link Finder, le moteur de recherche de backlinks
+    subject: "Link Finder, mon avis : centraliser le netlinking au meilleur prix"
+    description: "Image à la une de l'avis schoolsWP sur Link Finder, le moteur de recherche de backlinks qui réunit plus de 20 plateformes de netlinking et compare les prix d'un même spot pour acheter au meilleur tarif. Verdict de Michaël KIHL : base de centaines de milliers de spots, économie jusqu'à 40% sur un même lien, et 30% de réduction avec le code promo FP30."
+    alt: "Avis Link Finder schoolsWP, moteur de recherche de backlinks qui centralise plus de 20 plateformes de netlinking"
+    keywords:
+      [
+        link finder,
+        avis link finder,
+        netlinking,
+        backlinks,
+        achat de liens,
+        plateforme netlinking,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/link-finder-netlinking-optimization-low-cost/
+    title: Link Finder review, the backlink search engine
+    subject: "Link Finder, my review: centralize netlinking at the best price"
+    description: "Featured image of the schoolsWP review of Link Finder, the backlink search engine that brings together 20+ netlinking platforms and compares prices for the same spot so you buy at the best rate. Michaël KIHL's verdict: a database of hundreds of thousands of spots, savings of up to 40% on a single link, and 30% off with the FP30 promo code."
+    alt: "schoolsWP Link Finder review, backlink search engine that centralizes 20+ netlinking platforms"
+    keywords:
+      [
+        link finder,
+        link finder review,
+        netlinking,
+        backlinks,
+        link building,
+        netlinking platform,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/link-finder-optimierung-netlinking-reduzierte-kosten/
+    title: Link Finder Bewertung, die Backlink-Suchmaschine
+    subject: "Link Finder, meine Meinung: Netlinking zum besten Preis zentralisieren"
+    description: "Beitragsbild der schoolsWP-Bewertung zu Link Finder, der Backlink-Suchmaschine, die über 20 Netlinking-Plattformen vereint und die Preise für denselben Spot vergleicht, damit du zum besten Tarif kaufst. Urteil von Michaël KIHL: eine Datenbank mit Hunderttausenden Spots, Ersparnis von bis zu 40% bei einem einzelnen Link und 30% Rabatt mit dem Gutscheincode FP30."
+    alt: "schoolsWP Link Finder Bewertung, Backlink-Suchmaschine, die über 20 Netlinking-Plattformen zentralisiert"
+    keywords:
+      [
+        link finder,
+        link finder bewertung,
+        netlinking,
+        backlinks,
+        linkaufbau,
+        netlinking-plattform,
+        schoolsWP,
+      ]

@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/fluentcommunity-review/
+    title: FluentCommunity review, build a WordPress community fast
+    subject: "FluentCommunity review: forums, groups and events to build a WordPress community"
+    description: "Featured image of the schoolsWP review of FluentCommunity, the all-in-one community plugin by WPManageNinja. Turn your WordPress site into an interactive space with three kinds of spaces: forums, groups and events, all in one place. Manage members with tags and custom fields, integrate with WooCommerce and the Fluent suite, and customize the design and pages. Build your community without leaving WordPress."
+    alt: "schoolsWP review of FluentCommunity, the all-in-one WordPress community plugin with forums, groups and events"
+    keywords:
+      [
+        fluentcommunity,
+        fluentcommunity review,
+        wordpress community plugin,
+        forum wordpress,
+        wpmanageninja,
+        fluent suite,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/fluentcommunity-avis/
+    title: Avis FluentCommunity, créer une communauté WordPress rapidement
+    subject: "Avis FluentCommunity : forum, groupes et événements pour créer une communauté WordPress"
+    description: "Image à la une de l'avis schoolsWP sur FluentCommunity, le plugin de communauté tout-en-un de WPManageNinja. Transforme ton site WordPress en espace interactif avec trois types d'espaces : forum, groupes et événements, réunis au même endroit. Gère tes membres avec des tags et des champs personnalisés, intègre WooCommerce et la suite Fluent, et personnalise le design et les pages. Construire sa communauté sans jamais quitter WordPress."
+    alt: "Avis schoolsWP sur FluentCommunity, le plugin de communauté WordPress tout-en-un avec forum, groupes et événements"
+    keywords:
+      [
+        fluentcommunity,
+        avis fluentcommunity,
+        plugin communauté wordpress,
+        forum wordpress,
+        wpmanageninja,
+        suite fluent,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/fluentcommunity-bewertung/
+    title: FluentCommunity Test, schnell eine WordPress-Community aufbauen
+    subject: "FluentCommunity Test: Foren, Gruppen und Events für eine WordPress-Community"
+    description: "Beitragsbild des schoolsWP-Tests zu FluentCommunity, dem All-in-one-Community-Plugin von WPManageNinja. Verwandle deine WordPress-Site in einen interaktiven Raum mit drei Arten von Bereichen: Foren, Gruppen und Events, vereint an einem Ort. Verwalte Mitglieder mit Tags und eigenen Feldern, integriere WooCommerce und die Fluent-Suite und passe Design und Seiten an. Community aufbauen, ohne WordPress je zu verlassen."
+    alt: "schoolsWP-Test zu FluentCommunity, dem All-in-one-WordPress-Community-Plugin mit Foren, Gruppen und Events"
+    keywords:
+      [
+        fluentcommunity,
+        fluentcommunity test,
+        wordpress community plugin,
+        forum wordpress,
+        wpmanageninja,
+        fluent suite,
+        schoolsWP,
+      ]

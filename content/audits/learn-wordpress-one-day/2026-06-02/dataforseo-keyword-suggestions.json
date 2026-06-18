@@ -1,0 +1,23 @@
+{
+  "source": "dataforseo_labs_google_keyword_suggestions",
+  "seed": "learn wordpress in a day",
+  "location": "United States",
+  "language": "en",
+  "filter": "search_volume > 0",
+  "date": "2026-06-02",
+  "note": "Le full-text sur la phrase exacte 'learn wordpress in a day' ne renvoie que 2 suggestions avec volume >0 (la longue traine exacte est quasi vide). Le potentiel est dans les variantes du cluster (voir dataforseo-volume.json), pas dans la phrase exacte.",
+  "items": [
+    {
+      "keyword": "learn wordpress in a day",
+      "search_volume": 10,
+      "competition_level": "MEDIUM",
+      "main_intent": "informational"
+    },
+    {
+      "keyword": "can i learn wordpress in a day",
+      "search_volume": 10,
+      "trend_yearly": -100,
+      "main_intent": "informational"
+    }
+  ]
+}

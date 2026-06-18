@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/personnaliser-fluent-forms-gutenberg/
+    title: Personnaliser un formulaire Fluent Forms dans Gutenberg sans code
+    subject: "Fluent Forms : styliser ses formulaires dans Gutenberg sans code"
+    description: "Image à la une du tutoriel schoolsWP pour personnaliser un formulaire Fluent Forms directement dans l'éditeur Gutenberg, sans écrire une ligne de code. Le Gutenberg Block Styler permet de tout régler en visuel : appliquer des styles prédéfinis en un clic, modifier les étiquettes et les champs, soigner le bouton de soumission, et gérer le conteneur (fond, bordures, espacements)."
+    alt: "Tutoriel schoolsWP, styliser un formulaire Fluent Forms dans Gutenberg avec le Block Styler sans code"
+    keywords:
+      [
+        fluent forms,
+        gutenberg,
+        block styler,
+        personnaliser formulaire,
+        formulaire wordpress,
+        sans code,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/customize-fluent-forms-gutenberg/
+    title: Customize a Fluent Forms form in Gutenberg without code
+    subject: "Fluent Forms: style your forms in Gutenberg without code"
+    description: "Featured image of the schoolsWP tutorial to customize a Fluent Forms form directly in the Gutenberg editor, without writing a single line of code. The Gutenberg Block Styler lets you set everything visually: apply preset styles in one click, edit labels and fields, polish the submit button, and manage the container (background, borders, spacing)."
+    alt: "schoolsWP tutorial, style a Fluent Forms form in Gutenberg with the Block Styler without code"
+    keywords:
+      [
+        fluent forms,
+        gutenberg,
+        block styler,
+        customize form,
+        wordpress form,
+        no code,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/fluent-forms-gutenberg-anpassen/
+    title: Ein Fluent Forms Formular in Gutenberg ohne Code anpassen
+    subject: "Fluent Forms: Formulare in Gutenberg ohne Code gestalten"
+    description: "Beitragsbild der schoolsWP-Anleitung, um ein Fluent Forms Formular direkt im Gutenberg-Editor anzupassen, ohne eine einzige Zeile Code zu schreiben. Der Gutenberg Block Styler stellt alles visuell ein: Vorlagen mit einem Klick anwenden, Beschriftungen und Felder bearbeiten, den Absende-Button verfeinern und den Container verwalten (Hintergrund, Rahmen, Abstände)."
+    alt: "schoolsWP-Anleitung, ein Fluent Forms Formular in Gutenberg mit dem Block Styler ohne Code gestalten"
+    keywords:
+      [
+        fluent forms,
+        gutenberg,
+        block styler,
+        formular anpassen,
+        wordpress formular,
+        ohne code,
+        schoolsWP,
+      ]

@@ -1,4 +1,4 @@
-# FluentForms — Plan de formation schoolsWP
+# FluentForms - Plan de formation schoolsWP
 
 ## Architecture globale
 
@@ -14,24 +14,24 @@ FluentForms/
 
 ---
 
-## FRM-011 — FluentForms Quick Start (offerte)
+## FRM-011 - FluentForms Quick Start (offerte)
 
 **Objectif** : Creer un formulaire de contact professionnel + capture d'email en 30 min.
 **Role** : Lead magnet → upsell Masterclass.
 **Acces** : 100% gratuit.
 
-### Lecon 1 — Pourquoi tes formulaires WordPress sont nuls (et comment les reparer) (5 min)
+### Lecon 1 - Pourquoi tes formulaires WordPress sont nuls (et comment les reparer) (5 min)
 - Le probleme : Contact Form 7 basique, pas de design, pas d'integrations, pas de donnees
 - FluentForms : drag-and-drop, 35+ champs gratuits, logique conditionnelle, anti-spam, integrations
 - Ce qu'on va faire : 2 formulaires pro en 30 min (contact + capture email)
 
-### Lecon 2 — Installer FluentForms en 2 minutes (5 min)
+### Lecon 2 - Installer FluentForms en 2 minutes (5 min)
 - Extensions → Ajouter → "fluent forms"
 - Activer, tour du dashboard
 - Les formulaires pre-configures (templates)
 - Conseil : "La version gratuite suffit pour 90% des besoins"
 
-### Lecon 3 — Creer un formulaire de contact pro (8 min)
+### Lecon 3 - Creer un formulaire de contact pro (8 min)
 - Nouveau formulaire → template "Contact Form" ou page blanche
 - Drag-and-drop : nom, email, sujet (select), message (textarea)
 - Anti-spam : Honeypot + reCAPTCHA/Turnstile
@@ -39,14 +39,14 @@ FluentForms/
 - Message de confirmation personnalise
 - Inserer dans une page avec le shortcode ou le bloc Gutenberg
 
-### Lecon 4 — Creer un formulaire de capture d'email (8 min)
+### Lecon 4 - Creer un formulaire de capture d'email (8 min)
 - Formulaire minimaliste : prenom + email + bouton "Je m'inscris"
 - Connecter a FluentCRM (si installe) ou afficher les soumissions dans le dashboard
 - Design inline (horizontal) vs vertical
 - Ou placer le formulaire : sidebar, footer, popup, page dediee
 - Conseil : "Moins de champs = plus d'inscriptions. Prenom + email, c'est tout."
 
-### Lecon 5 — Personnaliser le design et publier (4 min)
+### Lecon 5 - Personnaliser le design et publier (4 min)
 - Styler le formulaire : couleurs, bordures, boutons (via le styler integre ou CSS custom basique)
 - Preview sur mobile
 - Recap : 2 formulaires pro, en ligne, en 30 min
@@ -54,9 +54,9 @@ FluentForms/
 
 ---
 
-## FRM-012 — FluentForms Masterclass Formulaires (premium)
+## FRM-012 - FluentForms Masterclass Formulaires (premium)
 
-### Module 1 — Fondations (6 lecons)
+### Module 1 - Fondations (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -67,7 +67,7 @@ FluentForms/
 | 1.5 | Anti-spam : Honeypot, reCAPTCHA, hCaptcha, Turnstile | 6 min |
 | 1.6 | Import/Export et migration depuis CF7, WPForms, Gravity Forms | 8 min |
 
-### Module 2 — Logique conditionnelle (7 lecons)
+### Module 2 - Logique conditionnelle (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -79,7 +79,7 @@ FluentForms/
 | 2.6 | Cas pratique : formulaire de devis automatique | 10 min |
 | 2.7 | Cas pratique : formulaire d'inscription evenement avec options | 8 min |
 
-### Module 3 — Formulaires avances (8 lecons)
+### Module 3 - Formulaires avances (8 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -92,7 +92,7 @@ FluentForms/
 | 3.7 | Enregistrement utilisateur via formulaire | 8 min |
 | 3.8 | AI Form Builder : creer un formulaire par prompt | 6 min |
 
-### Module 4 — Paiements (7 lecons)
+### Module 4 - Paiements (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -104,7 +104,7 @@ FluentForms/
 | 4.6 | Coupons de reduction dans les formulaires | 6 min |
 | 4.7 | Cas pratique : formulaire de reservation avec paiement | 10 min |
 
-### Module 5 — FluentForms + FluentCRM (7 lecons)
+### Module 5 - FluentForms + FluentCRM (7 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -116,7 +116,7 @@ FluentForms/
 | 5.6 | Cas pratique : lead magnet → tag → sequence email → upsell | 12 min |
 | 5.7 | Cas pratique : formulaire inscription formation → FluentCRM → TutorLMS | 10 min |
 
-### Module 6 — Quiz, surveys et analytics (6 lecons)
+### Module 6 - Quiz, surveys et analytics (6 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -127,7 +127,7 @@ FluentForms/
 | 6.5 | PDF generator : transformer les soumissions en PDF | 8 min |
 | 6.6 | Partial entries : analyser les abandons de formulaire | 6 min |
 
-### Module 7 — Ecosysteme et integrations (9 lecons)
+### Module 7 - Ecosysteme et integrations (9 lecons)
 
 | # | Lecon | Duree |
 |---|---|---|
@@ -157,6 +157,6 @@ FluentForms/
 
 1. **Recherche** : terminee
 2. **Plan** : termine
-3. **Scripts** : a produire — Quick Start (5) puis Masterclass (50)
+3. **Scripts** : a produire - Quick Start (5) puis Masterclass (50)
 4. **Production video** : HeyGen + ElevenLabs
 5. **Publication** : TutorLMS sur schoolsWP

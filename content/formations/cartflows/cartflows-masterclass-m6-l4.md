@@ -1,9 +1,9 @@
-# Lecon 6.4 — Lire les resultats : signification statistique
+# Lecon 6.4 - Lire les resultats : signification statistique
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Comprendre la signification statistique sans mathematiques. Savoir quand un test est conclusif, eviter les deux erreurs classiques (conclure trop tot, ne jamais conclure), et appliquer la regle pratique des 200 visiteurs par variante.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Ton test tourne depuis une semaine. Tu ouvres CartFlows et tu vois : variante A 3.2%, variante B 4.1%. La variante B a l'air meilleure. Tu es tente de la declarer gagnante tout de suite.
 
@@ -22,9 +22,9 @@ Pas de panique. On ne va pas faire de maths. On va raisonner simplement.
 
 ---
 
-**[SECTION 1 — La signification statistique, en clair]**
+**[SECTION 1 - La signification statistique, en clair]**
 
-**[ECRAN — analogie piece de monnaie]**
+**[ECRAN - analogie piece de monnaie]**
 
 Imagine que tu lances une piece de monnaie 10 fois. Tu obtiens 7 fois face et 3 fois pile. Est-ce que la piece est truquee ? Probablement pas. Avec 10 lancers, un ecart de 70/30 peut arriver par pur hasard.
 
@@ -38,9 +38,9 @@ En A/B testing, on considere qu'un resultat est significatif quand il y a au moi
 
 ---
 
-**[SECTION 2 — L'indicateur CartFlows]**
+**[SECTION 2 - L'indicateur CartFlows]**
 
-**[ECRAN — tableau de bord A/B Test avec indicateur couleur]**
+**[ECRAN - tableau de bord A/B Test avec indicateur couleur]**
 
 CartFlows simplifie tout ca avec un indicateur visuel. Pas besoin de calculer quoi que ce soit.
 
@@ -52,9 +52,9 @@ C'est tout. Vert = decision. Orange = patience.
 
 ---
 
-**[SECTION 3 — Erreur numero 1 : conclure trop tot]**
+**[SECTION 3 - Erreur numero 1 : conclure trop tot]**
 
-**[ECRAN — graphique de convergence des resultats dans le temps]**
+**[ECRAN - graphique de convergence des resultats dans le temps]**
 
 C'est l'erreur la plus frequente. Tu as lance ton test il y a trois jours. Tu as 47 visiteurs sur la variante A et 52 sur la variante B. La variante B convertit a 5.8% contre 2.1% pour A. L'ecart est enorme. Tu veux declarer B gagnante.
 
@@ -68,13 +68,13 @@ Regle pratique : ne regarde meme pas les resultats avant d'avoir au moins 100 vi
 
 ---
 
-**[SECTION 4 — Erreur numero 2 : ne jamais conclure]**
+**[SECTION 4 - Erreur numero 2 : ne jamais conclure]**
 
-**[ECRAN — test qui tourne depuis 6 mois sans decision]**
+**[ECRAN - test qui tourne depuis 6 mois sans decision]**
 
 L'erreur inverse existe aussi. Tu lances un test, les resultats sont serres, l'indicateur reste orange, et tu laisses tourner. Des semaines passent. Des mois. Le test tourne toujours. Tu ne prends aucune decision.
 
-Le probleme : pendant que ce test tourne, tu ne peux pas en lancer un autre sur la meme page. Tu bloques ton processus d'optimisation. Et plus un test dure longtemps, plus il est expose a des facteurs externes qui polluent les resultats — changement de saison, promotion concurrente, mise a jour de Google.
+Le probleme : pendant que ce test tourne, tu ne peux pas en lancer un autre sur la meme page. Tu bloques ton processus d'optimisation. Et plus un test dure longtemps, plus il est expose a des facteurs externes qui polluent les resultats - changement de saison, promotion concurrente, mise a jour de Google.
 
 Fixe une limite de temps. Si apres 4 a 6 semaines (ou 500 visiteurs par variante), l'indicateur est toujours orange, arrete le test. Les deux variantes sont equivalentes. Garde l'originale et passe au test suivant.
 
@@ -82,9 +82,9 @@ Un test qui ne conclut pas est une information utile : ce levier n'a pas d'impac
 
 ---
 
-**[SECTION 5 — La regle pratique : 200 visiteurs, indicateur vert]**
+**[SECTION 5 - La regle pratique : 200 visiteurs, indicateur vert]**
 
-**[ECRAN — checklist de decision]**
+**[ECRAN - checklist de decision]**
 
 Voici la regle que tu vas appliquer a chaque test :
 
@@ -96,11 +96,11 @@ Si apres 500 visiteurs par variante l'indicateur est toujours orange, arrete le 
 
 Et la derniere question : que faire si pas de difference significative ? C'est simple. Tu gardes la version originale. Elle fonctionne. Elle est en place. Elle est testee. Il n'y a aucune raison de la remplacer par une version qui ne fait pas mieux.
 
-Note le resultat ("Test titre checkout : pas de difference significative — 520 visiteurs total, 4 semaines") et passe au test suivant dans ta hierarchie : CTA, prix, ou design.
+Note le resultat ("Test titre checkout : pas de difference significative - 520 visiteurs total, 4 semaines") et passe au test suivant dans ta hierarchie : CTA, prix, ou design.
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 La signification statistique n'est pas un concept abstrait. C'est ton garde-fou. Elle t'empeche de prendre des decisions sur du bruit et de confondre le hasard avec une amelioration reelle.
 
@@ -113,7 +113,7 @@ Dans la prochaine lecon, on va explorer le tableau de bord Analytics de CartFlow
 ## Notes de production
 
 - **Visuels** : analogie piece de monnaie (schema), indicateur couleur CartFlows (capture), graphique de convergence, checklist de decision
-- **Captures d'ecran** : CartFlows Pro — tableau de bord A/B Test avec indicateurs vert et orange (3 captures minimum)
+- **Captures d'ecran** : CartFlows Pro - tableau de bord A/B Test avec indicateurs vert et orange (3 captures minimum)
 - **Ton** : pedagogique, desacralise les stats sans simplifier a l'exces
 - **Duree estimee** : ~8 min a debit normal
 - **Transition** : enchaine directement sur L6.5 (tableau de bord Analytics)

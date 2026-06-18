@@ -1,9 +1,9 @@
-# Script video — Module 6, Lecon 2 : Personality quiz
+# Script video - Module 6, Lecon 2 : Personality quiz
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 6 — Quiz, surveys et analytics
-**Lecon** : 2/6 — Personality quiz
+**Module** : 6 - Quiz, surveys et analytics
+**Lecon** : 2/6 - Personality quiz
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast quiz builder mode personality, slide resultats
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Un quiz de personnalite, c'est different d'un quiz de connaissances. Il n'y a pas de bonne ou de mauvaise reponse. Chaque reponse oriente vers un profil — et chaque profil a un resultat different.
+Un quiz de personnalite, c'est different d'un quiz de connaissances. Il n'y a pas de bonne ou de mauvaise reponse. Chaque reponse oriente vers un profil - et chaque profil a un resultat different.
 
 C'est un format viral. Les gens adorent decouvrir "quel type de X" ils sont. Et pour toi, c'est un outil de segmentation puissant.
 
-**[SECTION 1 — slide "Le concept"]**
+**[SECTION 1 - slide "Le concept"]**
 
 Le principe : chaque reponse attribue des points a une categorie. A la fin du quiz, la categorie avec le plus de points determine le profil du participant.
 
@@ -31,9 +31,9 @@ Notre cas pratique : "Quel type de site WordPress te correspond ?"
 
 Chaque question a 4 reponses, chacune associee a un profil.
 
-**[SECTION 2 — screencast "Configurer le quiz"]**
+**[SECTION 2 - screencast "Configurer le quiz"]**
 
-Cree un nouveau formulaire. "Quiz — Quel site WordPress te correspond ?".
+Cree un nouveau formulaire. "Quiz - Quel site WordPress te correspond ?".
 
 Active le Quiz Module dans les settings. Mais cette fois, au lieu du scoring classique, on va utiliser un systeme de categories.
 
@@ -41,7 +41,7 @@ La methode : chaque option de reponse donne des points dans une categorie specif
 
 Methode la plus simple dans FluentForms : cree 4 champs Hidden. Nomme-les "score-blog", "score-ecommerce", "score-formation", "score-portfolio". Valeur initiale : 0.
 
-**[SECTION 3 — screencast "Les questions"]**
+**[SECTION 3 - screencast "Les questions"]**
 
 Question 1 : "Qu'est-ce qui te motive le plus en ligne ?" Options :
 - "Partager mes idees et mon expertise" → +1 Blog
@@ -65,7 +65,7 @@ Continue avec 4 a 6 questions supplementaires. Plus il y a de questions, plus le
 
 Pour chaque question, utilise un champ Radio Button. Dans les settings avances, attribue la valeur numerique correspondante a chaque option.
 
-**[SECTION 4 — screencast "Calculer le profil dominant"]**
+**[SECTION 4 - screencast "Calculer le profil dominant"]**
 
 A la fin du quiz, on compare les scores des 4 categories.
 
@@ -77,7 +77,7 @@ Repete pour chaque profil.
 
 Chaque resultat a son propre message personnalise.
 
-**[SECTION 5 — slide "Les 4 resultats"]**
+**[SECTION 5 - slide "Les 4 resultats"]**
 
 Resultat Blog : "Tu es un createur de contenu ne. Un blog WordPress avec un bon SEO est ton terrain de jeu ideal. Commence par un theme oriente contenu et installe Rank Math."
 
@@ -89,7 +89,7 @@ Resultat Portfolio : "Tu es un freelance. Un site portfolio avec Kadence et des 
 
 Chaque resultat inclut un CTA adapte. Le blogueur recoit un lien vers ton guide SEO. Le vendeur vers ton guide WooCommerce. Le formateur vers ta formation TutorLMS. Le freelance vers ton guide freelance WordPress.
 
-**[SECTION 6 — screencast "Segmentation FluentCRM"]**
+**[SECTION 6 - screencast "Segmentation FluentCRM"]**
 
 Connecte les resultats a FluentCRM avec des feeds conditionnels.
 
@@ -100,11 +100,11 @@ Resultat Portfolio → tag "profile-freelance" + liste "leads-portfolio"
 
 Chaque profil entre dans une sequence email differente. Le blogueur recoit des contenus sur le SEO et le content marketing. Le vendeur recoit des contenus sur WooCommerce et la conversion. Personnalisation totale.
 
-Le quiz ne collecte pas juste un email — il collecte un profil complet du visiteur.
+Le quiz ne collecte pas juste un email - il collecte un profil complet du visiteur.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Les personality quiz sont des machines a leads qualifies. Dans la prochaine lecon, on passe aux surveys et sondages — pour collecter des donnees structurees aupres de tes clients existants.
+Les personality quiz sont des machines a leads qualifies. Dans la prochaine lecon, on passe aux surveys et sondages - pour collecter des donnees structurees aupres de tes clients existants.
 
 On se retrouve dans la lecon suivante.
 
@@ -127,4 +127,4 @@ On se retrouve dans la lecon suivante.
 - Face camera : intro (format viral) + outro (transition surveys)
 - Screencast : creation du quiz avec 3-4 questions et resultats (~5 min)
 - Slides : 2 slides (concept + 4 resultats)
-- Ton : fun et engage — le quiz doit donner envie d'etre pris
+- Ton : fun et engage - le quiz doit donner envie d'etre pris

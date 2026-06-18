@@ -1,9 +1,9 @@
-# Lecon B.3 — Configurer la sequence de relance (15 min, 1 jour, 3 jours)
+# Lecon B.3 - Configurer la sequence de relance (15 min, 1 jour, 3 jours)
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : B — Cart Abandonment Recovery
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : B - Cart Abandonment Recovery
 - **Duree cible** : 10 min (~1 300 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Configurer les 3 emails de la sequence de relance par defaut (delais, objets, contenus, variables dynamiques) et comprendre la logique de chaque etape.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Le plugin est installe. Il capture les emails. Maintenant, la vraie question : qu'est-ce qu'on envoie, et quand ?
 
@@ -20,9 +20,9 @@ Cart Abandonment Recovery fonctionne avec une sequence de 3 emails automatiques.
 
 ---
 
-**[SECTION 1 — La logique de la sequence en 3 temps]**
+**[SECTION 1 - La logique de la sequence en 3 temps]**
 
-**[ECRAN — schema timeline 15 min → 24h → 3 jours]**
+**[ECRAN - schema timeline 15 min → 24h → 3 jours]**
 
 La sequence par defaut suit une escalade progressive.
 
@@ -36,15 +36,15 @@ Cette escalade est testee et eprouvee. Le premier email convertit le plus (les g
 
 ---
 
-**[SECTION 2 — Configurer l'email 1 (15 minutes)]**
+**[SECTION 2 - Configurer l'email 1 (15 minutes)]**
 
-**[ECRAN — Cart Abandonment → Follow-Up Emails → Email 1]**
+**[ECRAN - Cart Abandonment → Follow-Up Emails → Email 1]**
 
 Va dans WooCommerce → Cart Abandonment → Follow-Up Emails. Tu vois la liste des 3 emails preconfigures.
 
 Clique sur le premier email. Voici les champs a configurer.
 
-**Delai d'envoi** : 15 minutes. C'est la valeur par defaut et c'est le bon timing. Pas avant — le client est peut-etre encore en train de chercher sa carte bancaire. Pas apres — la memoire du panier est encore fraiche a 15 minutes.
+**Delai d'envoi** : 15 minutes. C'est la valeur par defaut et c'est le bon timing. Pas avant - le client est peut-etre encore en train de chercher sa carte bancaire. Pas apres - la memoire du panier est encore fraiche a 15 minutes.
 
 **Objet de l'email** : l'objet par defaut est generique. Remplace-le par quelque chose de direct et personnel. Exemple : "Tu as oublie quelque chose dans ton panier". Pas de point d'exclamation, pas de majuscules, pas de spam words.
 
@@ -54,9 +54,9 @@ Assure-toi que l'email est en statut "Active".
 
 ---
 
-**[SECTION 3 — Configurer l'email 2 (24 heures)]**
+**[SECTION 3 - Configurer l'email 2 (24 heures)]**
 
-**[ECRAN — Cart Abandonment → Follow-Up Emails → Email 2]**
+**[ECRAN - Cart Abandonment → Follow-Up Emails → Email 2]**
 
 Clique sur le deuxieme email.
 
@@ -70,9 +70,9 @@ L'email 2 est plus long que le 1, mais reste concis. Cinq a sept phrases, pas un
 
 ---
 
-**[SECTION 4 — Configurer l'email 3 (3 jours)]**
+**[SECTION 4 - Configurer l'email 3 (3 jours)]**
 
-**[ECRAN — Cart Abandonment → Follow-Up Emails → Email 3]**
+**[ECRAN - Cart Abandonment → Follow-Up Emails → Email 3]**
 
 Le troisieme email, c'est la derniere chance.
 
@@ -84,18 +84,18 @@ Le troisieme email, c'est la derniere chance.
 
 ---
 
-**[SECTION 5 — Les variables dynamiques]**
+**[SECTION 5 - Les variables dynamiques]**
 
-**[ECRAN — liste des variables dans l'editeur d'email]**
+**[ECRAN - liste des variables dans l'editeur d'email]**
 
 Cart Abandonment Recovery propose des variables dynamiques que tu peux inserer dans tes emails. C'est ce qui rend chaque email personnalise automatiquement.
 
 Les variables essentielles :
 
-- `{{customer.firstname}}` — le prenom du client. Indispensable pour personnaliser l'accroche.
-- `{{cart.product.name}}` — le nom du produit abandonne. Le client voit exactement ce qu'il a laisse.
-- `{{cart.total}}` — le montant total du panier. Rappelle l'engagement financier.
-- `{{cart.checkout_url}}` — le lien magique. Ce lien ramene le client directement a son panier pre-rempli avec tous les produits deja selectionnes. Il n'a qu'a entrer ses infos de paiement.
+- `{{customer.firstname}}` - le prenom du client. Indispensable pour personnaliser l'accroche.
+- `{{cart.product.name}}` - le nom du produit abandonne. Le client voit exactement ce qu'il a laisse.
+- `{{cart.total}}` - le montant total du panier. Rappelle l'engagement financier.
+- `{{cart.checkout_url}}` - le lien magique. Ce lien ramene le client directement a son panier pre-rempli avec tous les produits deja selectionnes. Il n'a qu'a entrer ses infos de paiement.
 
 Le `{{cart.checkout_url}}` est la variable la plus importante. Sans elle, le client devrait retourner sur ta boutique, retrouver le produit, l'ajouter au panier, et recommencer le checkout. Avec elle, un clic et il est de retour exactement ou il en etait. Zero friction.
 
@@ -103,9 +103,9 @@ Utilise ces variables dans chaque email. Un email qui dit "Hey Jean, tu as laiss
 
 ---
 
-**[SECTION 6 — Activer et desactiver individuellement]**
+**[SECTION 6 - Activer et desactiver individuellement]**
 
-**[ECRAN — toggle active/inactive sur chaque email]**
+**[ECRAN - toggle active/inactive sur chaque email]**
 
 Chaque email de la sequence peut etre active ou desactive independamment. Tu peux par exemple :
 
@@ -117,11 +117,11 @@ Mon conseil : commence avec les 3 actifs. Teste pendant 30 jours. Analyse les re
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
 Ta sequence de relance est configuree. Trois emails, trois moments, trois approches. Le rappel immediat, l'argumentation, et l'offre speciale.
 
-Mais configurer c'est une chose — bien rediger ces emails, c'en est une autre. Dans la prochaine lecon, on va ecrire le contenu exact de chaque email pour maximiser les conversions.
+Mais configurer c'est une chose - bien rediger ces emails, c'en est une autre. Dans la prochaine lecon, on va ecrire le contenu exact de chaque email pour maximiser les conversions.
 
 ---
 

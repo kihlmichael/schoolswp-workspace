@@ -1,14 +1,14 @@
-# Scripts vidéo — FPL-012 Module 3 : Capturer des leads dans la vidéo
+# Scripts vidéo - FPL-012 Module 3 : Capturer des leads dans la vidéo
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : M3 — Capturer des leads dans la vidéo (Masterclass, premium)
+**Module** : M3 - Capturer des leads dans la vidéo (Masterclass, premium)
 **Leçons** : 5 vidéos + 1 fiche PDF + 1 quiz
 **Durée totale** : ~44 min de vidéo
 **Date** : 2026-05-22
 
 ---
 
-## Leçon 3.1 — La couche interactive : le concept qui change tout
+## Leçon 3.1 - La couche interactive : le concept qui change tout
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -16,17 +16,17 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Jusqu'ici, tes vidéos se regardent. À partir de maintenant, elles travaillent. Le concept qui rend ça possible, c'est la couche interactive. C'est le cœur de FluentPlayer.
 
-**[ÉCRAN — slide "Une couche, c'est quoi"]**
+**[ÉCRAN - slide "Une couche, c'est quoi"]**
 
 Une couche interactive, c'est un élément qui apparaît par-dessus la vidéo, à un moment précis que tu choisis. Pendant que la vidéo joue, ou en la mettant en pause, la couche s'affiche et propose une action.
 
 Ce n'est pas un lien dans la description. Ce n'est pas un bouton sous la vidéo. C'est dans la vidéo, au moment où l'attention est maximale.
 
-**[ÉCRAN — slide "Les types de couches"]**
+**[ÉCRAN - slide "Les types de couches"]**
 
 FluentPlayer propose plusieurs types de couches :
 
@@ -35,7 +35,7 @@ FluentPlayer propose plusieurs types de couches :
 
 Ce module se concentre sur la capture de leads : couche Capture d'email et couche Formulaire.
 
-**[ÉCRAN — slide "Pourquoi capturer dans la vidéo"]**
+**[ÉCRAN - slide "Pourquoi capturer dans la vidéo"]**
 
 Capturer un email dans la vidéo, plutôt qu'ailleurs sur la page, change tout :
 
@@ -45,7 +45,7 @@ Capturer un email dans la vidéo, plutôt qu'ailleurs sur la page, change tout :
 
 C'est le moment le plus propice de toute la page.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le concept est posé. Dans la prochaine leçon, on construit une vraie capture d'email, et on parle surtout du moment où la déclencher.
 
@@ -65,7 +65,7 @@ Le concept est posé. Dans la prochaine leçon, on construit une vraie capture d
 
 ---
 
-## Leçon 3.2 — Capture email in-video : le bon déclencheur au bon moment
+## Leçon 3.2 - Capture email in-video : le bon déclencheur au bon moment
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -73,11 +73,11 @@ Le concept est posé. Dans la prochaine leçon, on construit une vraie capture d
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On construit une capture d'email à l'intérieur de la vidéo. La technique est simple. Le vrai sujet de cette leçon, c'est le timing : le moment où la couche apparaît décide de tout.
 
-**[ÉCRAN — screencast : ajouter une couche de capture]**
+**[ÉCRAN - screencast : ajouter une couche de capture]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
@@ -85,7 +85,7 @@ On construit une capture d'email à l'intérieur de la vidéo. La technique est 
 
 FluentPlayer te demande trois choses : quand la couche apparaît, quel message elle affiche, et où vont les emails collectés.
 
-**[ÉCRAN — slide "Les 5 moments possibles"]**
+**[ÉCRAN - slide "Les 5 moments possibles"]**
 
 Tu peux poser ta capture à cinq moments types :
 
@@ -95,25 +95,25 @@ Tu peux poser ta capture à cinq moments types :
 - à la fin : tu captures les plus motivés, mais tu en perds en route
 - en pause : la couche s'affiche si la personne met la vidéo en pause
 
-**[ÉCRAN — slide "La règle du bon moment"]**
+**[ÉCRAN - slide "La règle du bon moment"]**
 
 La règle : pose la capture juste après ton meilleur moment de valeur. Quand la personne pense « ça, c'est vraiment utile », elle est prête à laisser son email pour en avoir plus.
 
 Trop tôt, elle n'est pas convaincue. Trop tard, elle est déjà partie.
 
-**[ÉCRAN — screencast : régler le moment]**
+**[ÉCRAN - screencast : régler le moment]**
 
 [Règle l'horodatage d'apparition de la couche]
 
 Repère ton meilleur passage à l'avance, note son horodatage, et place la couche juste après.
 
-**[ÉCRAN — screencast : rédiger le message]**
+**[ÉCRAN - screencast : rédiger le message]**
 
 [Saisit un titre et un texte de couche]
 
 Le message doit promettre quelque chose de concret. Évite "Inscris-toi à la newsletter". Préfère une promesse claire : la suite de la méthode, un modèle à télécharger, un guide complet. On donne son email pour recevoir, pas pour s'abonner.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as une capture d'email simple. Parfois, tu as besoin de plus qu'un email : un prénom, une attente, un choix. C'est là qu'interviennent les formulaires. Prochaine leçon.
 
@@ -133,7 +133,7 @@ Tu as une capture d'email simple. Parfois, tu as besoin de plus qu'un email : un
 
 ---
 
-## Leçon 3.3 — Formulaires Fluent Forms dans la vidéo
+## Leçon 3.3 - Formulaires Fluent Forms dans la vidéo
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -141,11 +141,11 @@ Tu as une capture d'email simple. Parfois, tu as besoin de plus qu'un email : un
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Un email seul, c'est bien. Mais parfois tu veux en savoir plus : un prénom pour personnaliser, une question pour segmenter, un choix pour orienter. Pour ça, FluentPlayer affiche un formulaire complet dans la vidéo, grâce à Fluent Forms.
 
-**[ÉCRAN — slide "Capture simple ou formulaire"]**
+**[ÉCRAN - slide "Capture simple ou formulaire"]**
 
 Choisis selon ton besoin :
 
@@ -154,14 +154,14 @@ Choisis selon ton besoin :
 
 Plus tu demandes, moins de gens répondent. Ne demande que ce que tu vas vraiment utiliser.
 
-**[ÉCRAN — screencast : créer le formulaire dans Fluent Forms]**
+**[ÉCRAN - screencast : créer le formulaire dans Fluent Forms]**
 
 [Ouvre Fluent Forms]
 [Crée un formulaire court : prénom, email, et une question de segmentation]
 
 Fluent Forms est le plugin de formulaires de l'écosystème Fluent. Crée un formulaire court. Pour une couche vidéo, trois champs maximum.
 
-**[ÉCRAN — screencast : ajouter la couche Formulaire]**
+**[ÉCRAN - screencast : ajouter la couche Formulaire]**
 
 [Retourne dans le média, panneau Interactive Layers du bloc FluentPlayer]
 [Ajoute une couche, choisit Formulaire]
@@ -170,7 +170,7 @@ Fluent Forms est le plugin de formulaires de l'écosystème Fluent. Crée un for
 
 La couche affiche ton formulaire Fluent Forms directement sur la vidéo, au moment choisi.
 
-**[ÉCRAN — slide "Un bon formulaire in-video"]**
+**[ÉCRAN - slide "Un bon formulaire in-video"]**
 
 Pour qu'un formulaire dans la vidéo fonctionne :
 
@@ -179,14 +179,14 @@ Pour qu'un formulaire dans la vidéo fonctionne :
 - une question de segmentation utile, par exemple le niveau ou l'objectif
 - un bouton d'envoi explicite
 
-**[ÉCRAN — screencast : le test]**
+**[ÉCRAN - screencast : le test]**
 
 [Lance la vidéo, atteint la couche]
 [Remplit le formulaire de test, valide]
 
 Teste toujours ton formulaire avant de publier. Une couche qui bugue, c'est un lead perdu.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais capturer un email et un formulaire complet. Maintenant, la question clé : où vont ces contacts, et comment les exploiter. Prochaine leçon, on les connecte à FluentCRM.
 
@@ -206,7 +206,7 @@ Tu sais capturer un email et un formulaire complet. Maintenant, la question clé
 
 ---
 
-## Leçon 3.4 — Connecter les leads à FluentCRM : tags, listes, segmentation
+## Leçon 3.4 - Connecter les leads à FluentCRM : tags, listes, segmentation
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -214,15 +214,15 @@ Tu sais capturer un email et un formulaire complet. Maintenant, la question clé
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Capturer un email, ce n'est que la moitié du travail. L'autre moitié, c'est de l'envoyer au bon endroit, avec la bonne étiquette, pour pouvoir lui parler ensuite. Cet endroit, c'est FluentCRM.
 
-**[ÉCRAN — slide "Pourquoi FluentCRM"]**
+**[ÉCRAN - slide "Pourquoi FluentCRM"]**
 
 FluentCRM est le CRM de l'écosystème Fluent. FluentPlayer s'y connecte directement, sans outil intermédiaire et sans coût supplémentaire. C'est l'intégration la plus simple et la plus complète.
 
-**[ÉCRAN — screencast : connecter la couche à FluentCRM]**
+**[ÉCRAN - screencast : connecter la couche à FluentCRM]**
 
 [Ouvre ta couche de capture dans le panneau Interactive Layers]
 [Sélectionne l'intégration FluentCRM comme destination]
@@ -230,17 +230,17 @@ FluentCRM est le CRM de l'écosystème Fluent. FluentPlayer s'y connecte directe
 
 Chaque email capturé arrive maintenant dans FluentCRM, dans la liste que tu as choisie.
 
-**[ÉCRAN — slide "Le tag, ton information clé"]**
+**[ÉCRAN - slide "Le tag, ton information clé"]**
 
 Une liste te dit où ranger le contact. Un tag te dit d'où il vient et ce qu'il veut.
 
 Pose toujours un tag sur les contacts capturés par une couche vidéo. Par exemple, un tag qui identifie la vidéo source, ou le sujet traité. C'est cette étiquette qui te permettra plus tard d'envoyer le bon message au bon segment.
 
-**[ÉCRAN — screencast : ajouter un tag]**
+**[ÉCRAN - screencast : ajouter un tag]**
 
 [Ajoute un tag à la couche, par exemple lié à la vidéo]
 
-**[ÉCRAN — slide "Une convention de tags"]**
+**[ÉCRAN - slide "Une convention de tags"]**
 
 Ne tague pas au hasard. Décide d'une convention, et tiens-t'y :
 
@@ -250,14 +250,14 @@ Ne tague pas au hasard. Décide d'une convention, et tiens-t'y :
 
 Cette convention, tu la formalises dans le livrable du module.
 
-**[ÉCRAN — screencast : le résultat dans FluentCRM]**
+**[ÉCRAN - screencast : le résultat dans FluentCRM]**
 
 [Ouvre FluentCRM]
 [Montre un contact arrivé, dans sa liste, avec son tag]
 
 Le contact est là, rangé et étiqueté. Tu sais qui il est, d'où il vient, et ce qui l'intéresse. Tu pourras lui envoyer une séquence adaptée.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 FluentCRM est l'intégration idéale. Mais si tu utilises déjà un autre outil email, FluentPlayer sait s'y connecter aussi. C'est la dernière leçon du module.
 
@@ -277,7 +277,7 @@ FluentCRM est l'intégration idéale. Mais si tu utilises déjà un autre outil 
 
 ---
 
-## Leçon 3.5 — Connecter à Mailchimp ou un autre outil via webhook
+## Leçon 3.5 - Connecter à Mailchimp ou un autre outil via webhook
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -285,11 +285,11 @@ FluentCRM est l'intégration idéale. Mais si tu utilises déjà un autre outil 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tout le monde n'utilise pas FluentCRM. Si ton email marketing tourne sur Mailchimp ou un autre outil, FluentPlayer sait s'y brancher. Ces intégrations sont en version Pro.
 
-**[ÉCRAN — slide "Les options de destination"]**
+**[ÉCRAN - slide "Les options de destination"]**
 
 Quand tu configures une couche de capture, tu peux envoyer les leads vers :
 
@@ -297,7 +297,7 @@ Quand tu configures une couche de capture, tu peux envoyer les leads vers :
 - Mailchimp, via l'intégration Pro
 - n'importe quel autre service, via un webhook
 
-**[ÉCRAN — screencast : connecter Mailchimp]**
+**[ÉCRAN - screencast : connecter Mailchimp]**
 
 [Ouvre Settings, onglet Integrations]
 [Configure l'intégration Mailchimp]
@@ -305,26 +305,26 @@ Quand tu configures une couche de capture, tu peux envoyer les leads vers :
 
 Une fois Mailchimp connecté, il apparaît comme destination dans tes couches, exactement comme FluentCRM.
 
-**[ÉCRAN — slide "Le webhook, le passe-partout"]**
+**[ÉCRAN - slide "Le webhook, le passe-partout"]**
 
 Si ton outil n'est pas dans la liste, il reste le webhook.
 
 Un webhook, c'est une adresse que FluentPlayer appelle à chaque capture, en lui envoyant les données du lead. À l'autre bout, ton outil, ou un automatiseur comme n8n, reçoit ces données et en fait ce que tu veux.
 
-**[ÉCRAN — screencast : configurer un webhook]**
+**[ÉCRAN - screencast : configurer un webhook]**
 
 [Dans une couche de capture, sélectionne Webhook]
 [Renseigne l'URL du webhook]
 
 Avec un webhook, tu n'es jamais bloqué. Tout service capable de recevoir des données peut être branché.
 
-**[ÉCRAN — slide "Quel choix pour toi"]**
+**[ÉCRAN - slide "Quel choix pour toi"]**
 
 - Tu es dans l'écosystème Fluent ? FluentCRM, en direct, le plus simple.
 - Tu utilises Mailchimp ? L'intégration Pro dédiée.
 - Un autre outil, ou un besoin sur mesure ? Le webhook.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tes vidéos capturent des leads et les envoient au bon endroit, bien étiquetés. C'est déjà une machine à contacts. Dans le Module 4, on monte d'un cran : on pousse le spectateur à l'action, jusqu'à la vente.
 
@@ -344,7 +344,7 @@ Tes vidéos capturent des leads et les envoient au bon endroit, bien étiquetés
 
 ---
 
-## Notes de production — Module 3
+## Notes de production - Module 3
 
 ### Captures à préparer
 - Slides : concept de couche interactive, les 5 moments de capture

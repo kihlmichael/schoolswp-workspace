@@ -1,9 +1,9 @@
-# Lecon C.7 — Programme de fidelite et credits
+# Lecon C.7 - Programme de fidelite et credits
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : C — Power Coupons
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : C - Power Coupons
 - **Duree cible** : 10 min (~1400 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Configurer un programme de fidelite par points avec Power Coupons, definir les regles de gain et de conversion, et comprendre l'impact sur la LTV et la retention client.
@@ -12,19 +12,19 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Acquerir un nouveau client coute cinq a sept fois plus cher que de faire racheter un client existant. C'est une statistique classique du marketing, et elle reste vraie pour les boutiques WooCommerce.
 
-Le probleme : WooCommerce n'a aucun mecanisme natif pour inciter un client a revenir. Chaque commande est traitee comme une transaction isolee. Le client achete, il recoit son produit, et tu n'as aucun levier pour le faire revenir — a part envoyer des emails promotionnels.
+Le probleme : WooCommerce n'a aucun mecanisme natif pour inciter un client a revenir. Chaque commande est traitee comme une transaction isolee. Le client achete, il recoit son produit, et tu n'as aucun levier pour le faire revenir - a part envoyer des emails promotionnels.
 
 Power Coupons propose un systeme de points et de credits qui change la donne. Le client accumule des points a chaque achat et les convertit en remise. On va le configurer ensemble.
 
 ---
 
-**[SECTION 1 — Le concept : points par achat]**
+**[SECTION 1 - Le concept : points par achat]**
 
-**[ECRAN — slide schema points → credits → remise]**
+**[ECRAN - slide schema points → credits → remise]**
 
 Le principe est simple. A chaque commande, le client gagne des points proportionnels au montant depense. Quand il atteint un certain seuil de points, il peut les convertir en un coupon de remise.
 
@@ -36,9 +36,9 @@ C'est un cercle vertueux. Plus le client achete, plus il accumule. Plus il accum
 
 ---
 
-**[SECTION 2 — Configurer le programme dans Power Coupons]**
+**[SECTION 2 - Configurer le programme dans Power Coupons]**
 
-**[ECRAN — WordPress admin → Power Coupons → Loyalty Settings]**
+**[ECRAN - WordPress admin → Power Coupons → Loyalty Settings]**
 
 Dans les reglages Power Coupons, va dans la section "Loyalty" ou "Fidelite".
 
@@ -50,25 +50,25 @@ Deuxieme etape : definir le seuil de conversion. Combien de points pour combien 
 
 Tu peux aussi definir un minimum de points pour convertir. Si tu mets 100, le client doit attendre d'avoir au moins 100 points avant de pouvoir convertir. Ca l'incite a faire plusieurs achats pour atteindre le seuil.
 
-Troisieme etape : definir l'expiration. Les points expirent-ils ? Tu peux definir une duree — par exemple 12 mois apres le dernier achat. Ca cree de l'urgence : "Utilise tes points avant qu'ils expirent."
+Troisieme etape : definir l'expiration. Les points expirent-ils ? Tu peux definir une duree - par exemple 12 mois apres le dernier achat. Ca cree de l'urgence : "Utilise tes points avant qu'ils expirent."
 
 ---
 
-**[SECTION 3 — Affichage dans le compte client]**
+**[SECTION 3 - Affichage dans le compte client]**
 
-**[ECRAN — front-end, page "Mon compte" WooCommerce]**
+**[ECRAN - front-end, page "Mon compte" WooCommerce]**
 
 Le client voit ses points directement dans son espace "Mon compte" WooCommerce. Power Coupons ajoute une section dediee.
 
-Il voit son solde de points actuel. L'historique de ses gains : "+80 points — commande #1234 du 15 mars". Le seuil de conversion : "100 points = 10€ de remise". Et un bouton pour convertir ses points quand le seuil est atteint.
+Il voit son solde de points actuel. L'historique de ses gains : "+80 points - commande #1234 du 15 mars". Le seuil de conversion : "100 points = 10€ de remise". Et un bouton pour convertir ses points quand le seuil est atteint.
 
 La transparence est cle. Le client doit voir a tout moment ou il en est et combien il lui manque pour la prochaine remise. Un client qui voit "85 points sur 100" sait qu'une commande de 15€ lui suffit pour debloquer 10€ de credit.
 
 ---
 
-**[SECTION 4 — Emails automatiques]**
+**[SECTION 4 - Emails automatiques]**
 
-**[ECRAN — reglages notifications]**
+**[ECRAN - reglages notifications]**
 
 Power Coupons peut envoyer des emails automatiques a des moments cles.
 
@@ -82,9 +82,9 @@ Ces emails sont configures dans les reglages de notification Power Coupons. Tu p
 
 ---
 
-**[SECTION 5 — Le calcul economique]**
+**[SECTION 5 - Le calcul economique]**
 
-**[ECRAN — slide calcul LTV]**
+**[ECRAN - slide calcul LTV]**
 
 Reprenons notre exemple. 1 point par euro, 100 points = 10€ de remise. Ca represente un retour de 10% au client.
 
@@ -98,11 +98,11 @@ Cas pratique complet. Client sans programme : 1 commande de 80€ = 80€ de CA.
 
 ---
 
-**[SECTION 6 — Points d'attention]**
+**[SECTION 6 - Points d'attention]**
 
-**[ECRAN — slide conseils]**
+**[ECRAN - slide conseils]**
 
-Ne sois pas trop genereux au depart. 1 point par euro et 100 points = 10€, c'est un bon equilibre. Tu peux toujours augmenter la generosite plus tard — baisser est plus difficile sans frustrer les clients.
+Ne sois pas trop genereux au depart. 1 point par euro et 100 points = 10€, c'est un bon equilibre. Tu peux toujours augmenter la generosite plus tard - baisser est plus difficile sans frustrer les clients.
 
 Communique clairement le programme. Un lien visible dans le header "Programme fidelite", une mention sur les pages produits "Gagne X points avec cet achat", une section dans les emails de confirmation de commande.
 
@@ -110,11 +110,11 @@ Surveille les metriques. Taux de conversion des points, frequence de retour des 
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
-Le programme de fidelite Power Coupons transforme des acheteurs ponctuels en clients reguliers. Points, credits, emails automatiques — le systeme travaille pour toi entre les commandes.
+Le programme de fidelite Power Coupons transforme des acheteurs ponctuels en clients reguliers. Points, credits, emails automatiques - le systeme travaille pour toi entre les commandes.
 
-Dans la derniere lecon du module, on va configurer les remises par quantite — les paliers degressifs qui incitent le client a acheter plus en une seule commande.
+Dans la derniere lecon du module, on va configurer les remises par quantite - les paliers degressifs qui incitent le client a acheter plus en une seule commande.
 
 ---
 

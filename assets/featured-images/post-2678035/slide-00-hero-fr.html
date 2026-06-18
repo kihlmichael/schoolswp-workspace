@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TablePress 3.3 - Hero FR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F5F7;
+      --card-bg: #FFFFFF;
+      --green: #00D400;
+      --green-soft: #D4F7D4;
+      --black: #0F1419;
+      --grey-text: #5A6470;
+      --line: #D8DCE3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1080px 1fr;
+      align-items: center;
+      padding: 0 110px;
+      gap: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      align-self: flex-start;
+      padding: 12px 22px 12px 18px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--line);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .pill .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(0,212,0,0.18);
+    }
+    .pill .sep { color: var(--line); font-weight: 400; }
+
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 104px;
+      line-height: 0.97;
+      letter-spacing: -4px;
+      color: var(--black);
+    }
+    .title span { display: block; }
+    .title em { font-style: normal; color: var(--green); }
+
+    .baseline {
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--grey-text);
+      line-height: 1.45;
+      max-width: 940px;
+    }
+
+    .signature {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.3px;
+      margin-top: 18px;
+    }
+    .signature .sep { color: var(--line); margin: 0 14px; }
+    .signature .schools { color: var(--black); }
+    .signature .wp { color: var(--green); }
+
+    /* Visual right side */
+    .visual {
+      width: 620px;
+      height: 720px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 32px 70px -20px rgba(15, 20, 25, 0.18), 0 4px 12px -4px rgba(15, 20, 25, 0.06);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .visual::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--green) 35%, transparent 35%, transparent 100%);
+    }
+
+    .visual-inner {
+      padding: 64px 52px 52px 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      height: 100%;
+    }
+
+    .v-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+    }
+    .v-header .icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .v-header .icon-circle svg { width: 19px; height: 19px; fill: var(--green); }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 21px 4px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .feature:last-child { border-bottom: none; }
+    .f-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 15px;
+      background: var(--green-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .f-icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--green);
+      stroke-width: 2.3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .f-text { display: flex; flex-direction: column; gap: 4px; }
+    .f-label {
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.3px;
+    }
+    .f-desc {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--grey-text);
+      line-height: 1.3;
+    }
+
+    .visual-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--grey-text);
+      margin-top: 2px;
+    }
+    .visual-footer .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="text-block">
+      <div class="pill">
+        <span class="dot"></span>
+        <span>TablePress</span>
+        <span class="sep">|</span>
+        <span>Mise &agrave; jour majeure</span>
+      </div>
+
+      <div class="title">
+        <span>TablePress <em>3.3</em></span>
+        <span>La mise &agrave; jour majeure</span>
+      </div>
+
+      <div class="baseline">
+        Barre d'outils fixe, raccourcis clavier et WordPress 7.0.<br>
+        G&egrave;re enfin tes grands tableaux l'esprit tranquille.
+      </div>
+
+      <div class="signature">
+        Michael KIHL <span class="sep">|</span> <span class="schools">schools</span><span class="wp">WP</span>.com
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="visual-inner">
+        <div class="v-header">
+          <span class="icon-circle">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>
+          </span>
+          <span>Nouveau dans la version 3.3</span>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="f-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9.5h18"/><path d="M6 7.3h3.4"/></svg>
+            </div>
+            <div class="f-text">
+              <div class="f-label">Barre d'outils fixe</div>
+              <div class="f-desc">Boutons d'&eacute;dition toujours visibles</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="f-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>
+            </div>
+            <div class="f-text">
+              <div class="f-label">Raccourcis clavier</div>
+              <div class="f-desc">Navigation rapide via Cmd / Ctrl + J</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="f-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.8-3 7.8-7 9.5-4-1.7-7-4.7-7-9.5V6z"/><path d="M9 12l2.2 2.2L15 9.6"/></svg>
+            </div>
+            <div class="f-text">
+              <div class="f-label">WordPress 7.0</div>
+              <div class="f-desc">Pr&eacute;par&eacute; pour la prochaine version</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="f-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.7 2.7 2.7 15.3 0 18M12 3c-2.7 2.7-2.7 15.3 0 18"/></svg>
+            </div>
+            <div class="f-text">
+              <div class="f-label">Traductions</div>
+              <div class="f-desc">Packs de langue charg&eacute;s &agrave; la demande</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-footer">
+          <span class="dot"></span>
+          <span>Moins de scroll, plus de clart&eacute; &agrave; l'&eacute;dition</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

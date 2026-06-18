@@ -1,0 +1,74 @@
+# Liste des piliers schoolsWP suivis chaque mois par le routine gsc-monitor.
+# 10 piliers confirmés au 2026-05-28 (tous validés terrain GSC + WP).
+# Édite ce fichier puis re-trigger la routine pour un re-scan.
+
+site: https://schoolswp.com/
+pillars:
+  - id: lms-pilier
+    label: "LMS - pilier"
+    url: https://schoolswp.com/creer-plateforme-formation-wordpress/
+    confirmed: true   # post 52944, optimisé v4 le 2026-04-23
+
+  - id: crm-pilier
+    label: "CRM - automatisations indispensables"
+    url: https://schoolswp.com/fluentcrm-automations-indispensables/
+    confirmed: true   # validé terrain 2026-05-28 (slug "automations", pas "automatisations")
+
+  - id: perf-flyingpress
+    label: "Perf - FlyingPress vs WP Rocket"
+    url: https://schoolswp.com/comparaison-flyingpress-wp-rocket/
+    confirmed: true   # présent dans GSC top 20 (22 clics/90j)
+
+  - id: perf-cwv
+    label: "Perf - Core Web Vitals"
+    url: https://schoolswp.com/core-web-vitals-wordpress/
+    confirmed: true   # validé terrain 2026-05-28
+
+  - id: hebergement
+    label: "Hébergement WordPress"
+    url: https://schoolswp.com/hebergement-wordpress/
+    confirmed: true   # validé terrain 2026-05-28
+
+  - id: automatisation-ottokit
+    label: "Automatisation - OttoKit vs Zapier"
+    url: https://schoolswp.com/suretriggers-vs-zapier/
+    confirmed: true   # vrai slug = suretriggers-vs-zapier (post 54309). ottokit-vs-zapier n'existe pas. Validé 2026-05-28
+
+  - id: lms-tutor
+    label: "LMS - Tutor LMS plateforme"
+    url: https://schoolswp.com/creer-sa-plateforme-de-formation-en-ligne-avec-tutor-lms/
+    confirmed: true   # présent dans GSC top 20 (14 clics/90j)
+
+  - id: stack-kadence
+    label: "Stack - Kadence"
+    url: https://schoolswp.com/mon-avis-sur-kadence-wp/
+    confirmed: true   # présent dans GSC top 20 (63 clics/90j)
+
+  - id: seo-hub
+    label: "SEO - hub catégorie"
+    url: https://schoolswp.com/seo-wordpress/
+    confirmed: true   # hub catégorie, 14 impressions/90j (pos 34-93), validé 2026-05-28
+
+  - id: ecommerce-hub
+    label: "Ecommerce - hub catégorie"
+    url: https://schoolswp.com/ecommerce-wordpress/
+    confirmed: true   # hub catégorie, 7 impressions/90j (tunnels/CartFlows), validé 2026-05-28
+
+# Canaux de notification
+notifications:
+  discord:
+    enabled: true
+    webhook_env: DISCORD_WEBHOOK_ROUTINES
+  telegram:
+    enabled: true
+    bot: "@schoolswp_bot"
+    chat_id_env: TELEGRAM_CHAT_ID_MICHAEL
+  markdown_archive:
+    enabled: true
+    path: content/audits/gsc-monthly/
+
+# Seuils d'alerte (notification ROUGE si dépassé sur un pilier)
+alerts:
+  position_drop: 3       # alerte si position perd 3+ rangs
+  clicks_drop_pct: 30    # alerte si clics M-1 baissent de 30%+
+  impressions_drop_pct: 40

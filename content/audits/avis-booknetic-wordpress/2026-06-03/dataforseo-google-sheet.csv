@@ -1,0 +1,10 @@
+keyword,search_volume_FR,competition_level,competition_index,cpc_eur,keyword_difficulty,intent,intent_probability,trend_quarterly,trend_yearly,2025-05,2025-06,2025-07,2025-08,2025-09,2025-10,2025-11,2025-12,2026-01,2026-02,2026-03,2026-04
+avis booknetic,0,,,,,informational,0.877,,,,,,,,,,,,,,
+booknetic avis,0,,,,,,,,,,,,,,,,,,,,
+booknetic,90,LOW,14,1.38,,navigational/informational,,-44,-55,110,70,90,90,110,110,90,70,70,90,50,50
+booknetic wordpress,10,,,,,navigational,0.918,,,,,,,,,,,,,,
+booknetic alternative,10,,,,,informational,0.546,,,,,,,,,,,,,,
+amelia booknetic,0,,,,,,,,,,,,,,,,,,,,
+plugin rendez-vous wordpress,10,HIGH,80,0.08,49,navigational,,,,,,,,,,,,,,,
+plugin prise de rendez-vous wordpress,10,LOW,29,0.26,,navigational,0.864,,,,,,,,,,,,,,
+bookingpress,110,LOW,16,0.71,19,navigational,,56,-18,140,140,140,110,110,140,140,70,90,90,140,140

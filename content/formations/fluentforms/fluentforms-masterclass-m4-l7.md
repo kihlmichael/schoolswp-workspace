@@ -1,9 +1,9 @@
-# Script video — Module 4, Lecon 7 : Cas pratique — reservation avec paiement
+# Script video - Module 4, Lecon 7 : Cas pratique - reservation avec paiement
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 4 — Paiements
-**Lecon** : 7/7 — Cas pratique : reservation avec paiement
+**Module** : 4 - Paiements
+**Lecon** : 7/7 - Cas pratique : reservation avec paiement
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast construction complete, slide recapitulatif
@@ -11,29 +11,29 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 On a vu les passerelles, les paiements simples, les abonnements, la tarification conditionnelle, l'inventaire et les coupons. Maintenant on assemble tout dans un cas concret.
 
 On va construire un formulaire de reservation pour un atelier WordPress. Le client choisit sa date, son creneau, le nombre de personnes, des options payantes, applique un coupon, et paie par carte. Le tout en un seul formulaire.
 
-**[SECTION 1 — screencast "Structure du formulaire"]**
+**[SECTION 1 - screencast "Structure du formulaire"]**
 
 Cree un nouveau formulaire. "Reservation Atelier WordPress".
 
 Voici les champs qu'on va ajouter, dans l'ordre :
 
-Etape 1 — Informations personnelles : Name, Email, Phone.
+Etape 1 - Informations personnelles : Name, Email, Phone.
 
-Etape 2 — Choix de la reservation : Date Picker, Select (creneau), Number (nombre de personnes).
+Etape 2 - Choix de la reservation : Date Picker, Select (creneau), Number (nombre de personnes).
 
-Etape 3 — Options et paiement : Checkbox Payment Items (options), Coupon, Payment Summary, Stripe Card Element.
+Etape 3 - Options et paiement : Checkbox Payment Items (options), Coupon, Payment Summary, Stripe Card Element.
 
 Si tu veux en faire un formulaire multi-etapes, c'est le moment d'utiliser les Form Steps qu'on a vus au module precedent. Sinon, un formulaire long avec des sections bien separees fonctionne aussi.
 
-**[SECTION 2 — screencast "Champs de reservation"]**
+**[SECTION 2 - screencast "Champs de reservation"]**
 
-Date Picker. Label : "Date de l'atelier". Configure les dates disponibles — desactive les jours feries et les week-ends si necessaire. Tu peux aussi definir une date minimum (pas de reservation pour demain) et une date maximum.
+Date Picker. Label : "Date de l'atelier". Configure les dates disponibles - desactive les jours feries et les week-ends si necessaire. Tu peux aussi definir une date minimum (pas de reservation pour demain) et une date maximum.
 
 Select conditionnel. Label : "Creneau horaire". Options : "Matin (9h-12h)", "Apres-midi (14h-17h)".
 
@@ -41,7 +41,7 @@ Pour aller plus loin, tu peux rendre les creneaux conditionnels selon la date. S
 
 Number. Label : "Nombre de personnes". Minimum 1, maximum 5. Chaque personne supplementaire ajoute au prix. On va connecter ca au paiement.
 
-**[SECTION 3 — screencast "Paiement avec options"]**
+**[SECTION 3 - screencast "Paiement avec options"]**
 
 Payment Item. Label : "Tarif par personne". Prix : 97 euros. Ajoute un champ Item Quantity lie au champ "Nombre de personnes". Comme ca, si le client reserve pour 3 personnes, le total passe a 291 euros.
 
@@ -50,9 +50,9 @@ Checkbox Payment Items pour les options supplementaires :
 - "Dejeuner inclus" : 18 euros
 - "Support post-atelier (1 mois)" : 49 euros
 
-Chaque option cochee s'ajoute au total. Et ces options sont par personne ou forfaitaires — a toi de decider. Pour simplifier, on les met en forfaitaire.
+Chaque option cochee s'ajoute au total. Et ces options sont par personne ou forfaitaires - a toi de decider. Pour simplifier, on les met en forfaitaire.
 
-**[SECTION 4 — screencast "Coupon et recapitulatif"]**
+**[SECTION 4 - screencast "Coupon et recapitulatif"]**
 
 Ajoute le champ Coupon. Le client peut taper un code promo si tu en as distribue.
 
@@ -67,15 +67,15 @@ Le client voit exactement le detail avant de payer. Transparence totale.
 
 Ajoute le Stripe Card Element. Et modifie le label du bouton : "Confirmer et payer".
 
-**[SECTION 5 — screencast "Notifications"]**
+**[SECTION 5 - screencast "Notifications"]**
 
 Configure deux notifications.
 
-Notification 1 — Confirmation client. Destinataire : {inputs.email}. Objet : "Confirmation de reservation — Atelier WordPress". Corps : recap de la reservation (date, creneau, nombre de personnes, options, montant paye). Ajoute l'adresse du lieu, les consignes d'acces, et un lien pour ajouter l'evenement au calendrier.
+Notification 1 - Confirmation client. Destinataire : {inputs.email}. Objet : "Confirmation de reservation - Atelier WordPress". Corps : recap de la reservation (date, creneau, nombre de personnes, options, montant paye). Ajoute l'adresse du lieu, les consignes d'acces, et un lien pour ajouter l'evenement au calendrier.
 
-Notification 2 — Alerte admin. Destinataire : ton email. Objet : "Nouvelle reservation atelier". Corps : toutes les infos du client + details de la reservation. Tu vois chaque reservation en temps reel dans ta boite mail.
+Notification 2 - Alerte admin. Destinataire : ton email. Objet : "Nouvelle reservation atelier". Corps : toutes les infos du client + details de la reservation. Tu vois chaque reservation en temps reel dans ta boite mail.
 
-**[SECTION 6 — screencast "Confirmation conditionnelle"]**
+**[SECTION 6 - screencast "Confirmation conditionnelle"]**
 
 Pour la page de confirmation, on va utiliser une confirmation conditionnelle.
 
@@ -87,7 +87,7 @@ Configure ca dans Settings, Confirmations. Ajoute une condition : IF "Creneau ho
 
 Si aucune condition n'est remplie, le message de confirmation par defaut s'affiche.
 
-**[SECTION 7 — screencast "Test complet"]**
+**[SECTION 7 - screencast "Test complet"]**
 
 On teste le formulaire de bout en bout. Stripe en mode test.
 
@@ -97,11 +97,11 @@ Verifie : la page de confirmation du matin s'affiche. L'email client arrive avec
 
 Si tout est bon, tu as un formulaire de reservation professionnel.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Voila. Tu as un systeme de reservation complet — date, creneaux, options, coupon, paiement, confirmations. Tout dans un seul formulaire FluentForms.
+Voila. Tu as un systeme de reservation complet - date, creneaux, options, coupon, paiement, confirmations. Tout dans un seul formulaire FluentForms.
 
-Le module 4 est termine. Tu maitrises les paiements. Dans le prochain module, on connecte FluentForms a FluentCRM — et la, les formulaires deviennent de vrais outils de croissance.
+Le module 4 est termine. Tu maitrises les paiements. Dans le prochain module, on connecte FluentForms a FluentCRM - et la, les formulaires deviennent de vrais outils de croissance.
 
 On se retrouve au module 5.
 
@@ -123,5 +123,5 @@ On se retrouve au module 5.
 **Notes de production** :
 - Face camera : intro (on assemble tout) + outro (transition module 5)
 - Screencast : construction complete du formulaire (~8 min)
-- Slide : aucune — tout en screencast pour ce cas pratique
-- Ton : rythme soutenu mais clair — beaucoup de champs a configurer, garder le fil
+- Slide : aucune - tout en screencast pour ce cas pratique
+- Ton : rythme soutenu mais clair - beaucoup de champs a configurer, garder le fil

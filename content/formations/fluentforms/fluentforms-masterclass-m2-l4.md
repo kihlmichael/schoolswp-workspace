@@ -1,9 +1,9 @@
-# Script video — Module 2, Lecon 4 : Messages de confirmation conditionnels
+# Script video - Module 2, Lecon 4 : Messages de confirmation conditionnels
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 2 — Logique conditionnelle
-**Lecon** : 4/7 — Messages de confirmation conditionnels
+**Module** : 2 - Logique conditionnelle
+**Lecon** : 4/7 - Messages de confirmation conditionnels
 **Duree** : 6 min (~900 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast configuration confirmations
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Le visiteur remplit ton formulaire, clique sur "Envoyer". Que voit-il ensuite ? La plupart du temps, un message generique : "Merci, votre message a ete envoye." Pareil pour tout le monde, quelle que soit la reponse.
 
-Avec les confirmations conditionnelles, tu personnalises ce qui se passe apres la soumission. Un message different, une redirection vers une page differente — tout depend de ce que le visiteur a repondu.
+Avec les confirmations conditionnelles, tu personnalises ce qui se passe apres la soumission. Un message different, une redirection vers une page differente - tout depend de ce que le visiteur a repondu.
 
-**[ECRAN — screencast "Confirmation par defaut"]**
+**[ECRAN - screencast "Confirmation par defaut"]**
 
 Voyons d'abord la confirmation standard.
 
@@ -33,7 +33,7 @@ Tu as trois types de confirmation :
 
 Par defaut, c'est "Same Page" avec le message "Merci pour votre soumission." On va rendre ca plus intelligent.
 
-**[ECRAN — screencast "Cas pratique : confirmation selon le budget"]**
+**[ECRAN - screencast "Cas pratique : confirmation selon le budget"]**
 
 Prenons un formulaire de demande de devis avec un champ Radio "Budget" : moins de 5000 euros, entre 5000 et 15000 euros, plus de 15000 euros.
 
@@ -43,7 +43,7 @@ Si le budget est "plus de 15000 euros" : rediriger vers une page de prise de ren
 
 Si le budget est inferieur : afficher un message de remerciement classique. "Merci pour ta demande. On te recontacte sous 48h avec une proposition."
 
-**[ECRAN — screencast "Configurer la confirmation conditionnelle"]**
+**[ECRAN - screencast "Configurer la confirmation conditionnelle"]**
 
 Dans Form Settings → Confirmation Settings, tu vas voir un bouton "Add Confirmation" ou "Other Confirmations".
 
@@ -59,17 +59,17 @@ Active la logique conditionnelle : "Budget" Equal "Plus de 15 000 euros".
 
 Cette confirmation ne s'applique que pour les prospects a gros budget. Tous les autres voient la confirmation par defaut.
 
-**[ECRAN — screencast "Message conditionnel sur la meme page"]**
+**[ECRAN - screencast "Message conditionnel sur la meme page"]**
 
 Autre scenario. Formulaire d'inscription a un evenement. Le visiteur choisit entre "Presentiel" et "En ligne".
 
-Confirmation 1 (defaut) : message "Same Page" — "Inscription confirmee. Tu recevras les informations d'acces par email."
+Confirmation 1 (defaut) : message "Same Page" - "Inscription confirmee. Tu recevras les informations d'acces par email."
 
-Confirmation 2 (conditionnelle) : "Presentiel" → message different — "Inscription confirmee. L'evenement a lieu au 15 rue des Lilas, Paris 11e. Plan d'acces en piece jointe dans l'email de confirmation."
+Confirmation 2 (conditionnelle) : "Presentiel" → message different - "Inscription confirmee. L'evenement a lieu au 15 rue des Lilas, Paris 11e. Plan d'acces en piece jointe dans l'email de confirmation."
 
 Meme page, mais le message change. Le participant en presentiel recoit l'adresse immediatement. Le participant en ligne recoit le lien d'acces par email.
 
-**[ECRAN — screencast "Redirection vers des pages differentes"]**
+**[ECRAN - screencast "Redirection vers des pages differentes"]**
 
 Tu peux aussi rediriger vers des pages WordPress differentes.
 
@@ -83,7 +83,7 @@ Confirmation 3 : si "Niveau" = "Expert" → redirect vers /formation-expert/.
 
 Chaque repondant est redirige vers le contenu adapte a son profil. C'est un entonnoir de qualification automatique.
 
-**[ECRAN — slide "Combinaisons puissantes"]**
+**[ECRAN - slide "Combinaisons puissantes"]**
 
 Les confirmations conditionnelles prennent tout leur sens quand tu les combines avec les notifications conditionnelles.
 
@@ -97,7 +97,7 @@ Le visiteur repond "Budget < 5 000 euros" :
 
 Deux parcours completement differents, geres par un seul formulaire. Le visiteur a l'impression d'une experience sur mesure. Toi, tu n'as rien a faire manuellement.
 
-**[ECRAN — slide "Idees d'utilisation"]**
+**[ECRAN - slide "Idees d'utilisation"]**
 
 Quelques cas d'usage courants.
 
@@ -111,7 +111,7 @@ Inscription evenement : message avec les informations pratiques specifiques au f
 
 Enquete de satisfaction : message de remerciement avec un coupon de reduction si la note est basse (retention client).
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 La confirmation, c'est le dernier point de contact avec le visiteur. C'est ta derniere chance de l'impressionner, de le diriger vers la bonne ressource, ou de le convertir.
 
@@ -135,4 +135,4 @@ Prochaine lecon : les groupes de conditions avances en version Pro. On monte en 
 - Face camera : intro (15 sec) + outro (15 sec)
 - Screencast : configuration des confirmations conditionnelles
 - Montrer le test en preview (deux soumissions avec des reponses differentes)
-- Ton : strategic — montrer la valeur business de la personnalisation
+- Ton : strategic - montrer la valeur business de la personnalisation

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette - Vidéos (WP Social Ninja) | schoolsWP</title>
+<style>
+  :root{
+    --green:#00D400; --ink:#0F1419; --bg:#F4F5F7; --card:#ffffff;
+    --muted:#5b6470; --line:#e4e7eb; --radius:14px; --yt:#ff0033;
+    --shadow:0 1px 2px rgba(15,20,25,.06),0 8px 24px rgba(15,20,25,.06);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .mock{background:var(--ink);color:#fff;text-align:center;font-size:13px;padding:8px;letter-spacing:.02em}
+  .mock b{color:var(--green)}
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-weight:800;font-size:22px;letter-spacing:-.02em}
+  .brand .wp{color:var(--green)}
+  .menu{display:flex;gap:26px;font-size:15px;color:var(--muted);font-weight:500}
+  .menu .active{color:var(--ink);font-weight:700;position:relative}
+  .menu .active::after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:3px;background:var(--green);border-radius:3px}
+  .cta{background:var(--green);color:#06230a;font-weight:700;padding:9px 16px;border-radius:10px;font-size:14px}
+  .hero{padding:54px 0 26px;text-align:center}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,0,.12);color:#0a7a16;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:42px;line-height:1.1;margin:0 0 14px;letter-spacing:-.03em}
+  .hero p{font-size:18px;color:var(--muted);max-width:620px;margin:0 auto}
+  .stats{display:flex;gap:30px;justify-content:center;margin-top:24px;color:var(--muted);font-size:14px;flex-wrap:wrap}
+  .stats b{color:var(--ink);font-size:20px;display:block}
+  .filters{position:sticky;top:64px;background:rgba(244,245,247,.92);backdrop-filter:blur(8px);z-index:20;padding:16px 0;border-bottom:1px solid var(--line)}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .pill{border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:600;font-size:14px;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.15s}
+  .pill:hover{border-color:var(--green)}
+  .pill.on{background:var(--green);border-color:var(--green);color:#06230a}
+  section.theme{padding:36px 0 6px}
+  .theme-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .theme-head h2{font-size:24px;margin:0;letter-spacing:-.02em}
+  .theme-head .count{color:var(--muted);font-size:14px;font-weight:600}
+  .bar{width:34px;height:4px;background:var(--green);border-radius:4px;margin:6px 0 10px}
+  .feednote{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:var(--muted);background:#eef0f3;border:1px solid var(--line);border-radius:8px;padding:6px 10px;display:inline-block;margin-bottom:18px}
+  .feednote b{color:#0a7a16}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.18s;cursor:pointer;display:block}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,20,25,.12);border-color:#d4dae0}
+  .thumb{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}
+  .card:hover .thumb img{transform:scale(1.05)}
+  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .play span{width:56px;height:40px;border-radius:10px;background:var(--yt);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.4);transition:.18s}
+  .card:hover .play span{transform:scale(1.1);background:#ff1a47}
+  .play svg{width:20px;height:20px;margin-left:2px;fill:#fff}
+  .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.82);color:#fff;font-size:12px;font-weight:600;padding:3px 7px;border-radius:6px}
+  .meta{padding:13px 14px 14px}
+  .meta h3{font-size:14.5px;line-height:1.35;margin:0 0 10px;font-weight:700}
+  .chan{display:flex;align-items:center;gap:8px}
+  .ava{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#00D400,#0a7a16);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .chan .who{font-size:12.5px;color:var(--muted);font-weight:600}
+  .chan .yt{margin-left:auto;width:18px;height:18px;fill:var(--yt)}
+  footer{margin-top:56px;background:#fff;border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer .brand{font-size:18px;color:var(--ink);margin-bottom:6px}
+  .pwr{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font-size:12.5px;color:var(--muted);background:#eef0f3;border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .pwr b{color:var(--ink)}
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center}
+  .lightbox[hidden]{display:none}
+  .lb-backdrop{position:absolute;inset:0;background:rgba(8,12,16,.86)}
+  .lb-frame{position:relative;width:min(900px,92vw)}
+  .lb-video{position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .lb-video iframe{width:100%;height:100%;border:0;display:block}
+  .lb-close{position:absolute;top:-46px;right:0;width:38px;height:38px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;font-weight:700}
+</style>
+</head>
+<body>
+  <div class="mock">MAQUETTE - page « Vidéos » construite avec <b>WP Social Ninja</b> : 4 feeds YouTube (type Specific Videos, layout Grid). Lecture en lightbox = comportement réel du plugin.</div>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">schools<span class="wp">WP</span></div>
+      <nav class="menu">
+        <span>Accueil</span><span>Blog</span><span>Plugins</span>
+        <span class="active">Vidéos</span><span>Formations</span>
+      </nav>
+      <a class="cta" href="#">S'abonner</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="eyebrow">▶ Chaîne YouTube @michaelkihl</span>
+      <h1>Mes tutoriels WordPress en vidéo</h1>
+      <p>Apprends WordPress, WooCommerce et les plugins pas à pas. Des tutos courts et concrets, classés par thème.</p>
+      <div class="stats">
+        <div><b>20</b>tutoriels</div>
+        <div><b>4</b>feeds WP Social Ninja</div>
+        <div><b>100 % FR</b>en français</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filters">
+    <div class="wrap pills">
+      <button class="pill on" data-f="all">Tout voir</button>
+      <button class="pill" data-f="wordpress">WordPress &amp; Divi</button>
+      <button class="pill" data-f="woocommerce">WooCommerce</button>
+      <button class="pill" data-f="plugins">Plugins</button>
+      <button class="pill" data-f="seo">SEO &amp; web</button>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <section class="theme" data-theme="wordpress">
+      <div class="theme-head"><h2>WordPress &amp; Divi</h2><span class="count">5 vidéos</span></div>
+      <div class="bar"></div>
+      <div class="feednote">Feed WP Social Ninja • YouTube • Specific Videos • Grid • <b>[wp_social_ninja id="101" platform="youtube"]</b></div>
+      <div class="grid">
+        <a class="card" data-vid="6CwIiZNzimQ" href="https://www.youtube.com/watch?v=6CwIiZNzimQ"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/6CwIiZNzimQ/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">6:44</span></div><div class="meta"><h3>Vider le cache WordPress avec Divi</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="PznWFDqB8uo" href="https://www.youtube.com/watch?v=PznWFDqB8uo"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/PznWFDqB8uo/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">10:40</span></div><div class="meta"><h3>Installer un thème WordPress</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="UUWXx5Fryic" href="https://www.youtube.com/watch?v=UUWXx5Fryic"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/UUWXx5Fryic/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">8:56</span></div><div class="meta"><h3>Divi : effet de survol d'élément</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="TH8cR0OPXUA" href="https://www.youtube.com/watch?v=TH8cR0OPXUA"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/TH8cR0OPXUA/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">13:24</span></div><div class="meta"><h3>Animation de cœurs sur un site WordPress</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="5d6Q4o_T1OQ" href="https://www.youtube.com/watch?v=5d6Q4o_T1OQ"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/5d6Q4o_T1OQ/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">27:37</span></div><div class="meta"><h3>Découverte du thème Monstroid²</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+      </div>
+    </section>
+
+    <section class="theme" data-theme="woocommerce">
+      <div class="theme-head"><h2>WooCommerce</h2><span class="count">7 vidéos</span></div>
+      <div class="bar"></div>
+      <div class="feednote">Feed WP Social Ninja • YouTube • Specific Videos • Grid • <b>[wp_social_ninja id="102" platform="youtube"]</b></div>
+      <div class="grid">
+        <a class="card" data-vid="hRo5khs3eLw" href="https://www.youtube.com/watch?v=hRo5khs3eLw"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/hRo5khs3eLw/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">21:33</span></div><div class="meta"><h3>Ajouter un produit variable à WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="K2kkrJTiUOc" href="https://www.youtube.com/watch?v=K2kkrJTiUOc"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/K2kkrJTiUOc/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">16:57</span></div><div class="meta"><h3>Ajouter un produit groupé à WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="pLXmhv411Wc" href="https://www.youtube.com/watch?v=pLXmhv411Wc"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/pLXmhv411Wc/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">8:05</span></div><div class="meta"><h3>Ajouter un produit apparenté à WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="XRbie2H2K7s" href="https://www.youtube.com/watch?v=XRbie2H2K7s"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/XRbie2H2K7s/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">8:54</span></div><div class="meta"><h3>Ajouter un produit externe / affilié</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="5o1M4Bl6M3g" href="https://www.youtube.com/watch?v=5o1M4Bl6M3g"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/5o1M4Bl6M3g/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">16:30</span></div><div class="meta"><h3>Ajouter un produit simple à WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="FlLVtITJGiQ" href="https://www.youtube.com/watch?v=FlLVtITJGiQ"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/FlLVtITJGiQ/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">6:42</span></div><div class="meta"><h3>Créer un code promo WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="cy37XlZhTso" href="https://www.youtube.com/watch?v=cy37XlZhTso"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/cy37XlZhTso/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">5:40</span></div><div class="meta"><h3>BodyCommerce : design WooCommerce + Divi</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+      </div>
+    </section>
+
+    <section class="theme" data-theme="plugins">
+      <div class="theme-head"><h2>Plugins WordPress</h2><span class="count">4 vidéos</span></div>
+      <div class="bar"></div>
+      <div class="feednote">Feed WP Social Ninja • YouTube • Specific Videos • Grid • <b>[wp_social_ninja id="103" platform="youtube"]</b></div>
+      <div class="grid">
+        <a class="card" data-vid="toyKsSY91UI" href="https://www.youtube.com/watch?v=toyKsSY91UI"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/toyKsSY91UI/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">22:32</span></div><div class="meta"><h3>WP Social Ninja : avis, feeds &amp; chat</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="9TLtjcKIurc" href="https://www.youtube.com/watch?v=9TLtjcKIurc"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/9TLtjcKIurc/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">14:23</span></div><div class="meta"><h3>WishList Member + BuddyBoss</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="nmdukyy0fdg" href="https://www.youtube.com/watch?v=nmdukyy0fdg"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/nmdukyy0fdg/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">10:48</span></div><div class="meta"><h3>WishList Member : onboarding WooCommerce</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="b06x6zKWpa4" href="https://www.youtube.com/watch?v=b06x6zKWpa4"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/b06x6zKWpa4/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">10:15</span></div><div class="meta"><h3>ConvertKit : formulaire pour un blog WP</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+      </div>
+    </section>
+
+    <section class="theme" data-theme="seo">
+      <div class="theme-head"><h2>SEO &amp; web</h2><span class="count">4 vidéos</span></div>
+      <div class="bar"></div>
+      <div class="feednote">Feed WP Social Ninja • YouTube • Specific Videos • Grid • <b>[wp_social_ninja id="104" platform="youtube"]</b></div>
+      <div class="grid">
+        <a class="card" data-vid="NbnSSa4Wlwg" href="https://www.youtube.com/watch?v=NbnSSa4Wlwg"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/NbnSSa4Wlwg/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">12:36</span></div><div class="meta"><h3>JPEG ou PNG : quel format choisir ?</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="m0tz1NTdLUw" href="https://www.youtube.com/watch?v=m0tz1NTdLUw"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/m0tz1NTdLUw/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">4:14</span></div><div class="meta"><h3>Créer un favicon gratuitement en ligne</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="Djtk3R2-4Yg" href="https://www.youtube.com/watch?v=Djtk3R2-4Yg"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/Djtk3R2-4Yg/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">6:29</span></div><div class="meta"><h3>Épingles enrichies Pinterest sur WordPress</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+        <a class="card" data-vid="CzYuQpXGe94" href="https://www.youtube.com/watch?v=CzYuQpXGe94"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/CzYuQpXGe94/hqdefault.jpg" alt=""><div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div><span class="dur">2:48</span></div><div class="meta"><h3>Installer le pixel Pinterest sur un blog WP</h3><div class="chan"><span class="ava">MK</span><span class="who">@michaelkihl</span><svg class="yt" viewBox="0 0 24 24"><path d="M23 12s0-3.8-.5-5.6a3 3 0 0 0-2.1-2.1C18.6 3.8 12 3.8 12 3.8s-6.6 0-8.4.5A3 3 0 0 0 1.5 6.4C1 8.2 1 12 1 12s0 3.8.5 5.6a3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1C23 15.8 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></div></div></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="brand">schools<span style="color:var(--green)">WP</span></div>
+    Maquette générée pour validation - couleurs et structure indicatives.
+    <div><span class="pwr">Propulsé par <b>WP Social Ninja</b> - feeds YouTube</span></div>
+  </footer>
+
+  <div id="lb" class="lightbox" hidden>
+    <div class="lb-backdrop" data-close></div>
+    <div class="lb-frame">
+      <button class="lb-close" data-close aria-label="Fermer">×</button>
+      <div class="lb-video"><iframe id="lbiframe" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+<script>
+  var lb=document.getElementById("lb"), ifr=document.getElementById("lbiframe");
+  function closeLb(){ lb.hidden=true; ifr.setAttribute("src",""); document.body.style.overflow=""; }
+  document.querySelectorAll(".card").forEach(function(c){
+    c.addEventListener("click", function(e){
+      e.preventDefault();
+      var v=c.getAttribute("data-vid");
+      ifr.setAttribute("src","https://www.youtube.com/embed/"+v+"?autoplay=1&rel=0");
+      lb.hidden=false; document.body.style.overflow="hidden";
+    });
+  });
+  document.querySelectorAll("[data-close]").forEach(function(x){ x.addEventListener("click", closeLb); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && !lb.hidden) closeLb(); });
+  document.querySelectorAll(".pill").forEach(function(p){
+    p.addEventListener("click", function(){
+      document.querySelectorAll(".pill").forEach(function(x){x.classList.remove("on");});
+      p.classList.add("on");
+      var f=p.dataset.f;
+      document.querySelectorAll("section.theme").forEach(function(s){
+        s.style.display=(f==="all"||s.dataset.theme===f)?"":"none";
+      });
+    });
+  });
+</script>
+</body>
+</html>

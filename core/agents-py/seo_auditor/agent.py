@@ -397,7 +397,7 @@ class SeoAuditorAgent(BaseContentAgent):
         result = await self.run(article=article, keyword=keyword, intent=intent)
 
         if result.score_global < threshold:
-            fixer = _FixerAgent(model=self.model)
+            fixer = _FixerAgent(model=self.raw_model)
             result.v2 = await fixer.run(
                 article=article,
                 audit_report=result.report,

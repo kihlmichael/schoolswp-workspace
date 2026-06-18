@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 14 : OttoKit vs n8n vs Zapier : choisir le bon outil
+# Scripts vidéo - Module 14 : OttoKit vs n8n vs Zapier : choisir le bon outil
 
 **Formation** : Maîtriser OttoKit
-**Module** : M14 — OttoKit vs n8n vs Zapier : choisir le bon outil
+**Module** : M14 - OttoKit vs n8n vs Zapier : choisir le bon outil
 **Leçons** : 6 vidéos + 1 quiz (10 questions)
 **Durée totale** : ~40 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Leçon 14.1 — Le paysage des outils d'automatisation en 2026
+## Leçon 14.1 - Le paysage des outils d'automatisation en 2026
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu connais OttoKit. Mais OttoKit n'est pas le seul outil d'automatisation. En 2026, il en existe des dizaines. Certains sont génériques, d'autres sont spécialisés WordPress. Certains sont gratuits, d'autres coûtent des centaines d'euros par mois. Pour faire le bon choix, tu dois d'abord connaître le terrain.
 
-**[ÉCRAN — slide "Les 6 acteurs principaux"]**
+**[ÉCRAN - slide "Les 6 acteurs principaux"]**
 
 Voici les 6 outils que tu vas rencontrer le plus souvent :
 
@@ -34,7 +34,7 @@ Voici les 6 outils que tu vas rencontrer le plus souvent :
 **2. Zapier**
 - Le leader historique de l'automatisation no-code
 - Cloud pur, pas de plugin WordPress natif
-- 7 000+ intégrations — le catalogue le plus large
+- 7 000+ intégrations - le catalogue le plus large
 - À partir de 20$/mois, mais monte vite (100$+ pour du volume)
 
 **3. Make** (anciennement Integromat)
@@ -60,7 +60,7 @@ Voici les 6 outils que tu vas rencontrer le plus souvent :
 - Connecte formulaires et CRM
 - Plus limité, mais gratuit pour les bases
 
-**[ÉCRAN — slide "La carte du marche"]**
+**[ÉCRAN - slide "La carte du marche"]**
 
 [Matrice 2 axes : Simplicité (vertical) vs Puissance (horizontal)]
 [Placement des 6 outils sur la matrice]
@@ -75,9 +75,9 @@ Simplicite ↑
             +------------------------→ Puissance
 ```
 
-En bas à droite : puissant mais complexe (n8n). En haut à gauche : simple mais limité (Uncanny Automator, Bit Flows). OttoKit, Zapier et Make sont au milieu — un compromis entre accessibilité et capacités.
+En bas à droite : puissant mais complexe (n8n). En haut à gauche : simple mais limité (Uncanny Automator, Bit Flows). OttoKit, Zapier et Make sont au milieu - un compromis entre accessibilité et capacités.
 
-**[ÉCRAN — slide "Les questions a se poser"]**
+**[ÉCRAN - slide "Les questions a se poser"]**
 
 Avant de comparer, pose-toi ces 5 questions :
 
@@ -89,7 +89,7 @@ Avant de comparer, pose-toi ces 5 questions :
 
 Les réponses à ces questions orientent directement vers le bon outil.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Maintenant qu'on a la vue d'ensemble, on va comparer OttoKit face à face avec chaque concurrent. On commence par le plus connu : Zapier.
 
@@ -99,7 +99,7 @@ Maintenant qu'on a la vue d'ensemble, on va comparer OttoKit face à face avec c
 - 6 outils principaux en 2026 : OttoKit, Zapier, Make, n8n, Uncanny Automator, Bit Flows
 - Chaque outil a un positionnement différent (simplicité vs puissance, générique vs WordPress)
 - 5 questions guident le choix : volume, écosystème, budget, hébergement, niveau technique
-- Il n'y a pas d'outil parfait — il y a l'outil adapte a ton contexte
+- Il n'y a pas d'outil parfait - il y a l'outil adapte a ton contexte
 
 **Mots-clés SEO**
 - comparatif automatisation WordPress 2026
@@ -109,7 +109,7 @@ Maintenant qu'on a la vue d'ensemble, on va comparer OttoKit face à face avec c
 
 ---
 
-## Leçon 14.2 — OttoKit vs Zapier : coût, intégrations, WordPress
+## Leçon 14.2 - OttoKit vs Zapier : coût, intégrations, WordPress
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -117,33 +117,33 @@ Maintenant qu'on a la vue d'ensemble, on va comparer OttoKit face à face avec c
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Zapier est la référence du marché. Plus de 7 000 intégrations, une marque connue, des millions d'utilisateurs. Mais est-ce le meilleur choix quand ton écosystème est centré sur WordPress ? Comparons point par point.
 
-**[ÉCRAN — slide "Comparatif sur 5 criteres"]**
+**[ÉCRAN - slide "Comparatif sur 5 criteres"]**
 
 | Critère | OttoKit | Zapier |
 |---|---|---|
-| **Intégration WordPress** | Native (plugin) — accès direct aux hooks WP, WooCommerce, LMS, CRM | Via API/webhook — pas de plugin, pas d'accès natif aux hooks |
+| **Intégration WordPress** | Native (plugin) - accès direct aux hooks WP, WooCommerce, LMS, CRM | Via API/webhook - pas de plugin, pas d'accès natif aux hooks |
 | **Nombre d'intégrations** | 1 310+ | 7 000+ |
 | **AI intégrée** | AI Agents + MCP | AI Actions (beta) |
-| **Pricing (entrée)** | 39$/mois (annuel) | 20$/mois (Starter — 750 tasks) |
+| **Pricing (entrée)** | 39$/mois (annuel) | 20$/mois (Starter - 750 tasks) |
 | **Pricing (volume)** | 99$/mois (50K tasks) | 100$+/mois des 2 000 tasks |
 
-**[ÉCRAN — slide "Critère 1 : Intégration WordPress"]**
+**[ÉCRAN - slide "Critère 1 : Intégration WordPress"]**
 
 C'est la différence fondamentale. OttoKit a un plugin installé sur ton WordPress. Ce plugin donne un accès direct aux événements internes : un utilisateur s'inscrit, un formulaire est soumis, un cours est terminé, un tag CRM est ajouté.
 
 Zapier n'a pas de plugin WordPress. Pour connecter WordPress à Zapier, tu passes par des plugins tiers (WP Webhooks, Zapier for WooCommerce) ou par l'API REST. Ça fonctionne, mais c'est un intermédiaire supplémentaire. Et chaque intermédiaire est un point de fragilité.
 
-**[ÉCRAN — slide "Critère 2 : Catalogue d'intégrations"]**
+**[ÉCRAN - slide "Critère 2 : Catalogue d'intégrations"]**
 
-Zapier a clairement l'avantage ici. 7 000 intégrations contre 1 310. Si tu as besoin de connecter des apps de niche — un CRM spécifique, un outil de comptabilité exotique, un logiciel métier — Zapier a plus de chances de le supporter.
+Zapier a clairement l'avantage ici. 7 000 intégrations contre 1 310. Si tu as besoin de connecter des apps de niche - un CRM spécifique, un outil de comptabilité exotique, un logiciel métier - Zapier a plus de chances de le supporter.
 
 Mais pose-toi la question : combien d'apps connectes-tu réellement ? La plupart des utilisateurs WordPress en utilisent 5 à 10. Et ces 5 à 10 sont presque toujours supportées par OttoKit.
 
-**[ÉCRAN — slide "Critère 3 : Coût à volume"]**
+**[ÉCRAN - slide "Critère 3 : Coût à volume"]**
 
 C'est ici que la différence se creuse. Calculons pour 10 000 tasks par mois :
 
@@ -152,13 +152,13 @@ C'est ici que la différence se creuse. Calculons pour 10 000 tasks par mois :
 
 Sur un an, ça représente une différence de 1 200 à 2 400$. Pour un freelance ou une petite entreprise, c'est significatif.
 
-**[ÉCRAN — slide "Critere 4 : Experience utilisateur"]**
+**[ÉCRAN - slide "Critere 4 : Experience utilisateur"]**
 
 Les deux interfaces sont visuelles. Zapier utilise un éditeur linéaire (étape par étape). OttoKit utilise un canvas (drag-and-drop). Le canvas est plus flexible pour les workflows avec des branches et des conditions.
 
 Question de préférence : si tu aimes la linéarité, Zapier. Si tu préfères voir l'ensemble du workflow d'un coup, OttoKit.
 
-**[ÉCRAN — slide "Verdict"]**
+**[ÉCRAN - slide "Verdict"]**
 
 **Choisis OttoKit si** :
 - Ton écosystème est centré sur WordPress
@@ -169,9 +169,9 @@ Question de préférence : si tu aimes la linéarité, Zapier. Si tu préfères 
 **Choisis Zapier si** :
 - Tu connectes beaucoup d'apps non-WordPress
 - Tu as besoin d'une app de niche que seul Zapier supporte
-- Le volume de tasks est faible (< 750/mois — le plan Starter suffit)
+- Le volume de tasks est faible (< 750/mois - le plan Starter suffit)
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Zapier est fort sur le catalogue universel. Mais pour WordPress, OttoKit est plus pertinent et moins cher. Comparons maintenant avec un outil très différent : n8n.
 
@@ -191,7 +191,7 @@ Zapier est fort sur le catalogue universel. Mais pour WordPress, OttoKit est plu
 
 ---
 
-## Leçon 14.3 — OttoKit vs n8n : cloud vs self-hosted, simple vs puissant
+## Leçon 14.3 - OttoKit vs n8n : cloud vs self-hosted, simple vs puissant
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -199,11 +199,11 @@ Zapier est fort sur le catalogue universel. Mais pour WordPress, OttoKit est plu
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 n8n, c'est l'outil des développeurs et des tech-savvy. Open-source, self-hosted, avec la possibilité d'écrire du code dans les workflows. Chez schoolsWP, on utilise les deux : OttoKit pour les automatisations WordPress, n8n pour les pipelines de contenu et les traitements complexes. Comparons.
 
-**[ÉCRAN — slide "Comparatif sur 5 criteres"]**
+**[ÉCRAN - slide "Comparatif sur 5 criteres"]**
 
 | Critère | OttoKit | n8n |
 |---|---|---|
@@ -214,7 +214,7 @@ n8n, c'est l'outil des développeurs et des tech-savvy. Open-source, self-hosted
 | **WordPress** | Plugin natif (hooks directs) | Via webhook ou API REST |
 | **Coût** | 39$/mois (annuel) | Gratuit (self-hosted) ou 20€+/mois (cloud) |
 
-**[ÉCRAN — slide "Architecture : cloud vs self-hosted"]**
+**[ÉCRAN - slide "Architecture : cloud vs self-hosted"]**
 
 C'est la différence la plus importante.
 
@@ -224,15 +224,15 @@ C'est la différence la plus importante.
 
 Si tu n'as pas de serveur et que tu ne veux pas en gérer un, OttoKit. Si tu as déjà un VPS et que tu es à l'aise avec Docker, n8n self-hosted peut être gratuit à vie.
 
-**[ÉCRAN — slide "Complexite : no-code vs low-code"]**
+**[ÉCRAN - slide "Complexite : no-code vs low-code"]**
 
 **OttoKit** est no-code. Tu sélectionnes des apps, tu mappes des champs, tu publies. Pas de code à écrire. C'est accessible à quelqu'un qui n'a jamais programmé.
 
-**n8n** est low-code. Tu peux faire beaucoup sans coder, mais les nœuds Code (JavaScript, Python) sont ce qui rend n8n vraiment puissant. Transformer des données, appeler des API custom, gérer des boucles complexes — c'est là que n8n brille.
+**n8n** est low-code. Tu peux faire beaucoup sans coder, mais les nœuds Code (JavaScript, Python) sont ce qui rend n8n vraiment puissant. Transformer des données, appeler des API custom, gérer des boucles complexes - c'est là que n8n brille.
 
 Si tu ne codes pas → OttoKit. Si tu es à l'aise avec JavaScript ou Python → n8n débloque des possibilités qu'OttoKit n'offre pas.
 
-**[ÉCRAN — slide "WordPress natif vs webhook"]**
+**[ÉCRAN - slide "WordPress natif vs webhook"]**
 
 OttoKit se connecte a WordPress via un plugin. Il accede directement aux hooks WordPress, WooCommerce, FluentCRM, TutorLMS. Le trigger "un utilisateur complete un cours" est un evenement natif.
 
@@ -240,13 +240,13 @@ n8n se connecte à WordPress via webhook ou API REST. Ça fonctionne, mais tu do
 
 Pour les automatisations purement WordPress, OttoKit est plus rapide a configurer.
 
-**[ÉCRAN — slide "AI et agents"]**
+**[ÉCRAN - slide "AI et agents"]**
 
 OttoKit a intégré les AI Agents et le protocole MCP directement dans la plateforme. Tu peux créer des agents qui utilisent tes workflows comme outils.
 
 n8n n'a pas d'AI Agents natif. Tu peux appeler des API d'IA (OpenAI, Claude) via des nœuds HTTP ou Code, mais il n'y a pas de système d'agents intégré. C'est plus manuel.
 
-**[ÉCRAN — slide "Verdict"]**
+**[ÉCRAN - slide "Verdict"]**
 
 **Choisis OttoKit si** :
 - Tu veux du no-code pur
@@ -260,7 +260,7 @@ n8n n'a pas d'AI Agents natif. Tu peux appeler des API d'IA (OpenAI, Claude) via
 - Tu as des pipelines complexes (transformation de données, boucles, API custom)
 - Tu veux zéro coût d'outil (self-hosted)
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ce n'est pas OttoKit ou n8n. C'est souvent OttoKit et n8n. On verra comment les combiner à la fin du module. Avant ça, comparons OttoKit avec Make.
 
@@ -270,7 +270,7 @@ Ce n'est pas OttoKit ou n8n. C'est souvent OttoKit et n8n. On verra comment les 
 - OttoKit = cloud, no-code, WordPress natif, AI Agents
 - n8n = self-hosted possible, code possible, plus de contrôle, pas d'AI Agents
 - OttoKit pour les automatisations WordPress ; n8n pour les pipelines complexes
-- Les deux ne sont pas concurrents — ils sont complémentaires
+- Les deux ne sont pas concurrents - ils sont complémentaires
 
 **Mots-clés SEO**
 - OttoKit vs n8n
@@ -280,7 +280,7 @@ Ce n'est pas OttoKit ou n8n. C'est souvent OttoKit et n8n. On verra comment les 
 
 ---
 
-## Leçon 14.4 — OttoKit vs Make : interface, pricing, performance
+## Leçon 14.4 - OttoKit vs Make : interface, pricing, performance
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -288,11 +288,11 @@ Ce n'est pas OttoKit ou n8n. C'est souvent OttoKit et n8n. On verra comment les 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Make — anciennement Integromat — est un concurrent direct d'OttoKit et Zapier. Interface visuelle, tarification au volume, bonne gestion des API. Voyons où chacun se positionne.
+Make - anciennement Integromat - est un concurrent direct d'OttoKit et Zapier. Interface visuelle, tarification au volume, bonne gestion des API. Voyons où chacun se positionne.
 
-**[ÉCRAN — slide "Comparatif sur 5 criteres"]**
+**[ÉCRAN - slide "Comparatif sur 5 criteres"]**
 
 | Critère | OttoKit | Make |
 |---|---|---|
@@ -302,7 +302,7 @@ Make — anciennement Integromat — est un concurrent direct d'OttoKit et Zapie
 | **AI** | AI Agents + MCP | AI (modules ChatGPT, etc.) |
 | **Pricing** | 39$/mois (annuel) | 9$/mois (10K ops) à 16$/mois (40K ops) |
 
-**[ÉCRAN — slide "Interface et experience"]**
+**[ÉCRAN - slide "Interface et experience"]**
 
 Les deux outils utilisent un canvas visuel. Mais l'approche est différente.
 
@@ -312,7 +312,7 @@ Les deux outils utilisent un canvas visuel. Mais l'approche est différente.
 
 Les deux sont visuels et accessibles. Question de préférence personnelle.
 
-**[ÉCRAN — slide "Pricing : opérations vs tasks"]**
+**[ÉCRAN - slide "Pricing : opérations vs tasks"]**
 
 Attention, les unites ne sont pas les memes :
 
@@ -323,7 +323,7 @@ Un scénario Make avec 5 modules peut consommer 5 opérations pour un seul run. 
 
 En entrée de gamme, Make est moins cher (9$/mois pour 10K opérations). Mais compare bien : 10K opérations Make ne correspondent pas à 10K tasks OttoKit.
 
-**[ÉCRAN — slide "WordPress : le point de bascule"]**
+**[ÉCRAN - slide "WordPress : le point de bascule"]**
 
 C'est la même histoire qu'avec Zapier. Make n'a pas de plugin WordPress natif. Tu connectes WordPress via HTTP requests, webhooks ou modules génériques.
 
@@ -331,13 +331,13 @@ OttoKit a le plugin. Les events WordPress, WooCommerce, FluentCRM, TutorLMS sont
 
 Si WordPress est ton écosystème principal, OttoKit a un avantage structurel.
 
-**[ÉCRAN — slide "API et scénarios complexes"]**
+**[ÉCRAN - slide "API et scénarios complexes"]**
 
 Make a un point fort : la gestion des API. Les modules HTTP, JSON, et les fonctions de transformation de données sont robustes. Si tu fais beaucoup d'appels API custom, de parsing de données, ou de scénarios avec des branches complexes, Make est bien équipé.
 
 OttoKit couvre ces cas mais avec moins de granularité. Pour des scénarios purement API, Make est souvent plus confortable.
 
-**[ÉCRAN — slide "Verdict"]**
+**[ÉCRAN - slide "Verdict"]**
 
 **Choisis OttoKit si** :
 - Tu es centre sur WordPress
@@ -350,7 +350,7 @@ OttoKit couvre ces cas mais avec moins de granularité. Pour des scénarios pure
 - Tu veux un pricing d'entrée très bas
 - Tes automatisations ne sont pas centrées sur WordPress
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant les éléments pour comparer OttoKit avec Zapier, n8n et Make. Mais au lieu de choisir en théorie, utilisons un arbre de décision. C'est ce qu'on fait dans la prochaine leçon.
 
@@ -358,7 +358,7 @@ Tu as maintenant les éléments pour comparer OttoKit avec Zapier, n8n et Make. 
 
 **Points clés**
 - Make et OttoKit ont des interfaces visuelles similaires (canvas)
-- Pricing : Make compte en opérations, OttoKit en tasks — comparer avec prudence
+- Pricing : Make compte en opérations, OttoKit en tasks - comparer avec prudence
 - Make excelle sur les API custom et les scénarios complexes
 - OttoKit excelle sur l'intégration WordPress native et les AI Agents
 
@@ -370,7 +370,7 @@ Tu as maintenant les éléments pour comparer OttoKit avec Zapier, n8n et Make. 
 
 ---
 
-## Leçon 14.5 — Arbre de décision : quel outil pour quel besoin
+## Leçon 14.5 - Arbre de décision : quel outil pour quel besoin
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -378,11 +378,11 @@ Tu as maintenant les éléments pour comparer OttoKit avec Zapier, n8n et Make. 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu connais les forces et faiblesses de chaque outil. Mais quand un client te demande "je dois automatiser ça, qu'est-ce que tu recommandes ?", il faut une réponse rapide et fondée. Voici l'arbre de décision que j'utilise.
 
-**[ÉCRAN — slide "Arbre de décision — 5 questions"]**
+**[ÉCRAN - slide "Arbre de décision - 5 questions"]**
 
 ```
 Question 1 : Ton ecosysteme est-il centre sur WordPress ?
@@ -406,52 +406,52 @@ Question 5 : Le volume de tasks est-il eleve (> 5000/mois) ?
 └── NON → Zapier (plan Starter) ou Make
 ```
 
-**[ÉCRAN — slide "Matrice de décision visuelle"]**
+**[ÉCRAN - slide "Matrice de décision visuelle"]**
 
 | Besoin | Meilleur choix | Alternative |
 |---|---|---|
 | WordPress pur (plugins entre eux) | Uncanny Automator | OttoKit |
 | WordPress + apps SaaS | OttoKit | Make |
-| WordPress + AI Agents + MCP | OttoKit | — |
-| Multi-plateforme, pas de WordPress | Zapier ou Make | — |
+| WordPress + AI Agents + MCP | OttoKit | - |
+| Multi-plateforme, pas de WordPress | Zapier ou Make | - |
 | Pipelines complexes, code custom | n8n | Make |
-| Budget zero, self-hosted | n8n (self-hosted) | — |
+| Budget zero, self-hosted | n8n (self-hosted) | - |
 | Volume élevé, coût maîtrisé | OttoKit ou n8n | Make |
 
-**[ÉCRAN — slide "Scénario 1 : Sophie, formatrice en ligne"]**
+**[ÉCRAN - slide "Scénario 1 : Sophie, formatrice en ligne"]**
 
 Appliquons l'arbre à 3 scénarios réels.
 
 **Sophie** vend des formations sur WordPress avec TutorLMS. Elle veut automatiser l'inscription, l'email de bienvenue et l'ajout dans FluentCRM.
 
 - Écosystème centré sur WordPress ? **Oui.**
-- Apps externes ? **Non** — tout est dans WordPress.
-- AI Agents ? **Non** — pas besoin pour l'instant.
+- Apps externes ? **Non** - tout est dans WordPress.
+- AI Agents ? **Non** - pas besoin pour l'instant.
 
 Recommandation : **OttoKit**. Intégration native avec TutorLMS et FluentCRM. Pas besoin de Zapier pour ça.
 
-**[ÉCRAN — slide "Scénario 2 : Marc, e-commerçant multi-canal"]**
+**[ÉCRAN - slide "Scénario 2 : Marc, e-commerçant multi-canal"]**
 
 **Marc** vend sur WooCommerce, Amazon et Shopify. Il veut synchroniser les stocks entre les 3 plateformes et envoyer les commandes dans son ERP.
 
-- Écosystème centré sur WordPress ? **Partiellement** — il a WooCommerce mais aussi Amazon et Shopify.
-- Apps externes ? **Oui** — Amazon, Shopify, ERP.
-- Code nécessaire ? **Probablement** — la synchronisation de stocks est complexe.
+- Écosystème centré sur WordPress ? **Partiellement** - il a WooCommerce mais aussi Amazon et Shopify.
+- Apps externes ? **Oui** - Amazon, Shopify, ERP.
+- Code nécessaire ? **Probablement** - la synchronisation de stocks est complexe.
 
 Recommandation : **n8n** pour le pipeline de synchronisation (code + API custom). **OttoKit** pour les automatisations WooCommerce internes. Deux outils, chacun dans son domaine.
 
-**[ÉCRAN — slide "Scénario 3 : Julie, coach avec peu de budget"]**
+**[ÉCRAN - slide "Scénario 3 : Julie, coach avec peu de budget"]**
 
 **Julie** est coach. Elle a un site WordPress avec un formulaire de contact. Elle veut que chaque formulaire soumis arrive dans Google Sheets et déclenche un email.
 
 - Écosystème centré sur WordPress ? **Oui.**
-- Apps externes ? **Oui** — Google Sheets.
-- Volume ? **Faible** — 50 formulaires par mois.
+- Apps externes ? **Oui** - Google Sheets.
+- Volume ? **Faible** - 50 formulaires par mois.
 - Budget ? **Le moins possible.**
 
 Recommandation : **OttoKit** (plan gratuit si disponible) ou **Make** (9$/mois). Pour 50 tasks par mois, les deux font le travail. OttoKit a l'avantage du plugin WordPress natif.
 
-**[ÉCRAN — slide "Le calcul ROI : Zapier vs OttoKit pour 10K tasks/mois"]**
+**[ÉCRAN - slide "Le calcul ROI : Zapier vs OttoKit pour 10K tasks/mois"]**
 
 Pour finir, un calcul concret :
 
@@ -460,11 +460,11 @@ Pour finir, un calcul concret :
 | Tasks/mois | 50 000 | ~10 000 |
 | Coût mensuel | 99$ | ~200-300$ |
 | Coût annuel | 1 188$ | 2 400-3 600$ |
-| Économie OttoKit | — | 1 200 à 2 400$/an |
+| Économie OttoKit | - | 1 200 à 2 400$/an |
 
 Pour un créateur de cours en ligne qui génère 10 000 tasks par mois (inscriptions, emails, CRM, notifications), OttoKit coûte 2 à 3 fois moins cher que Zapier. L'économie annuelle paye largement l'investissement en configuration.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 L'arbre de décision te donne une réponse en 30 secondes. Mais la réponse la plus puissante, c'est souvent de combiner deux outils. C'est exactement ce qu'on fait chez schoolsWP. On en parle dans la prochaine leçon.
 
@@ -485,7 +485,7 @@ L'arbre de décision te donne une réponse en 30 secondes. Mais la réponse la p
 
 ---
 
-## Leçon 14.6 — Combiner OttoKit + n8n : le meilleur des deux mondes
+## Leçon 14.6 - Combiner OttoKit + n8n : le meilleur des deux mondes
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -493,11 +493,11 @@ L'arbre de décision te donne une réponse en 30 secondes. Mais la réponse la p
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Chez schoolsWP, on ne choisit pas entre OttoKit et n8n. On utilise les deux. OttoKit gère tout ce qui touche à WordPress. n8n gère les pipelines de contenu, les appels API complexes et les traitements de données. Les deux communiquent par webhook. Voici comment ça marche.
 
-**[ÉCRAN — slide "Le principe : chacun dans son domaine"]**
+**[ÉCRAN - slide "Le principe : chacun dans son domaine"]**
 
 ```
 WordPress (OttoKit)          Pipelines (n8n)
@@ -513,7 +513,7 @@ Tags et segments CRM         Synchronisation externe
 
 OttoKit reste dans WordPress. n8n fait tout ce qui dépasse WordPress. Le webhook est le pont entre les deux.
 
-**[ÉCRAN — slide "Exemple 1 : Inscription → Pipeline de bienvenue"]**
+**[ÉCRAN - slide "Exemple 1 : Inscription → Pipeline de bienvenue"]**
 
 Voici un flux reel :
 
@@ -526,7 +526,7 @@ Voici un flux reel :
 
 Chaque outil fait ce qu'il fait de mieux. OttoKit n'essaie pas de faire du traitement API complexe. n8n n'essaie pas de gérer les hooks WordPress.
 
-**[ÉCRAN — slide "Exemple 2 : Publication automatique de contenu"]**
+**[ÉCRAN - slide "Exemple 2 : Publication automatique de contenu"]**
 
 Un autre flux schoolsWP :
 
@@ -537,7 +537,7 @@ Un autre flux schoolsWP :
 
 n8n produit. OttoKit distribue.
 
-**[ÉCRAN — slide "Comment configurer le webhook pont"]**
+**[ÉCRAN - slide "Comment configurer le webhook pont"]**
 
 Le webhook est simple a configurer :
 
@@ -557,7 +557,7 @@ Le webhook est simple a configurer :
 
 Ça prend 5 minutes à configurer. Et ça fonctionne de façon fiable.
 
-**[ÉCRAN — slide "Architecture hybride schoolsWP"]**
+**[ÉCRAN - slide "Architecture hybride schoolsWP"]**
 
 Voici l'architecture complete :
 
@@ -592,7 +592,7 @@ Voici l'architecture complete :
 └─────────────────────────────┘
 ```
 
-**[ÉCRAN — slide "Quand combiner, quand choisir un seul"]**
+**[ÉCRAN - slide "Quand combiner, quand choisir un seul"]**
 
 Tu n'as pas toujours besoin des deux. Voici le guide :
 
@@ -601,7 +601,7 @@ Tu n'as pas toujours besoin des deux. Voici le guide :
 - **WordPress + pipelines complexes** → OttoKit + n8n combinés
 - **Budget zero** → n8n self-hosted pour tout (avec webhook WordPress)
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 OttoKit et n8n ensemble, c'est ce qui fait tourner schoolsWP au quotidien. Chaque outil dans son domaine, reliés par un pont webhook. C'est la dernière leçon de contenu de cette formation. On valide tout ça dans le quiz final.
 
@@ -621,17 +621,17 @@ OttoKit et n8n ensemble, c'est ce qui fait tourner schoolsWP au quotidien. Chaqu
 
 ---
 
-## Leçon 14.7 — Quiz final M14 — 10 questions
+## Leçon 14.7 - Quiz final M14 - 10 questions
 
 **Durée** : 5 min
 **Type** : Quiz
-**Note production** : Quiz interactif — 10 questions. Pas de script vidéo. Questions générées dans le LMS.
+**Note production** : Quiz interactif - 10 questions. Pas de script vidéo. Questions générées dans le LMS.
 
 ---
 
-# Notes de production — Module 14
+# Notes de production - Module 14
 
-**Angle schoolsWP** : Module ancré dans l'expérience réelle — schoolsWP utilise OttoKit (WordPress) ET n8n (pipelines contenu). L'arbre de décision est calibré pour les créateurs de cours en ligne. Le calcul ROI compare Zapier et OttoKit sur 10K tasks/mois — le cœur de cible schoolsWP.
+**Angle schoolsWP** : Module ancré dans l'expérience réelle - schoolsWP utilise OttoKit (WordPress) ET n8n (pipelines contenu). L'arbre de décision est calibré pour les créateurs de cours en ligne. Le calcul ROI compare Zapier et OttoKit sur 10K tasks/mois - le cœur de cible schoolsWP.
 
 **Faits clés intégrés dans les scripts** :
 - OttoKit : 1 310+ intégrations, AI Agents + MCP, 39$/mois annuel, par Brainstorm Force
@@ -655,7 +655,7 @@ OttoKit et n8n ensemble, c'est ce qui fait tourner schoolsWP au quotidien. Chaqu
 - 14.4 → 14.5 : des comparaisons à la décision (synthèse)
 - 14.5 → 14.6 : de la décision à l'action (combiner les outils)
 
-**Quiz final M14 — 10 questions suggérées** (à générer dans le LMS) :
+**Quiz final M14 - 10 questions suggérées** (à générer dans le LMS) :
 1. Combien d'intégrations propose OttoKit ? (1 310+)
 2. Quelle est la différence principale entre OttoKit et Zapier pour WordPress ? (plugin natif)
 3. n8n est-il gratuit ? (oui en self-hosted, payant en cloud)
@@ -664,5 +664,5 @@ OttoKit et n8n ensemble, c'est ce qui fait tourner schoolsWP au quotidien. Chaqu
 6. Make compte en opérations ou en tasks ? (opérations)
 7. Quel outil recommander pour des automatisations purement WordPress sans apps externes ? (Uncanny Automator ou OttoKit)
 8. Quel outil permet d'écrire du code JavaScript dans les workflows ? (n8n)
-9. OttoKit propose des AI Agents natifs — vrai ou faux ? (vrai)
+9. OttoKit propose des AI Agents natifs - vrai ou faux ? (vrai)
 10. Quel est le cas d'usage idéal pour combiner OttoKit + n8n ? (WordPress + pipelines complexes)

@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 2 : Interface & Navigation
+# Scripts vidéo - Module 2 : Interface & Navigation
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M2 — Interface & Navigation (Gratuit)
+**Module** : M2 - Interface & Navigation (Gratuit)
 **Leçons** : 7 vidéos + 1 quiz
 **Durée totale** : ~35 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 2.1 — Dashboard frontend : ce que voient tes utilisateurs
+### Leçon 2.1 : Dashboard frontend : ce que voient tes utilisateurs
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Quand un étudiant se connecte à ta plateforme, qu'est-ce qu'il voit ? Pas le back-office WordPress. Il voit le dashboard frontend de TutorLMS. C'est sa page d'accueil, son espace personnel. Dans cette leçon, je te montre chaque section de ce dashboard pour que tu comprennes exactement l'expérience de tes utilisateurs.
 
-**[ÉCRAN — screencast frontend dashboard]**
+**[ÉCRAN - screencast frontend dashboard]**
 
 [Navigation vers le dashboard frontend en tant qu'étudiant]
 
@@ -30,7 +30,7 @@ Le dashboard frontend est accessible depuis l'URL /dashboard de ton site. C'est 
 
 Première chose que tu vois : un résumé en haut de page. Le nombre de cours auxquels l'étudiant est inscrit, le nombre de cours actifs, et le nombre de cours terminés. C'est un aperçu rapide de sa progression.
 
-**[ÉCRAN — screencast section "Mes cours"]**
+**[ÉCRAN - screencast section "Mes cours"]**
 
 [Montre la liste des cours inscrits]
 
@@ -38,7 +38,7 @@ Première chose que tu vois : un résumé en haut de page. Le nombre de cours au
 
 Si l'étudiant n'est inscrit à aucun cours, cette zone est vide avec un message d'invitation à découvrir le catalogue.
 
-**[ÉCRAN — screencast menu latéral]**
+**[ÉCRAN - screencast menu latéral]**
 
 [Montre le menu latéral du dashboard]
 
@@ -48,7 +48,7 @@ Si l'étudiant n'est inscrit à aucun cours, cette zone est vide avec un message
 
 Chaque onglet donne accès à une partie spécifique de l'expérience étudiant. On va voir les plus importants.
 
-**[ÉCRAN — screencast Wishlist + Reviews]**
+**[ÉCRAN - screencast Wishlist + Reviews]**
 
 [Montre la Wishlist]
 
@@ -58,22 +58,22 @@ La Wishlist permet à l'étudiant de mettre des cours en favoris avant de s'insc
 
 L'onglet Reviews affiche tous les avis que l'étudiant a laissés sur tes cours. Il peut les modifier ou les supprimer depuis cet écran.
 
-**[ÉCRAN — screencast Settings]**
+**[ÉCRAN - screencast Settings]**
 
 [Montre l'onglet Settings]
 
-Étape 3 : les Settings. L'étudiant peut modifier sa photo de profil, son nom affiché, sa bio, et son mot de passe. Tout se fait depuis le frontend — il n'a jamais besoin d'aller dans le back-office WordPress.
+Étape 3 : les Settings. L'étudiant peut modifier sa photo de profil, son nom affiché, sa bio, et son mot de passe. Tout se fait depuis le frontend - il n'a jamais besoin d'aller dans le back-office WordPress.
 
 C'est un point important. Tes étudiants ne voient jamais l'admin WordPress. Ils restent dans cette interface dédiée.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant ce que voit un étudiant quand il se connecte. Le dashboard frontend est son espace central. Dans la prochaine leçon, on passe de l'autre côté : le dashboard instructeur et admin, là où tu gères tout.
 
 ---
 
 **Points clés** :
-- Le dashboard frontend est accessible via /dashboard — généré automatiquement par TutorLMS
+- Le dashboard frontend est accessible via /dashboard - généré automatiquement par TutorLMS
 - Vue d'ensemble : cours inscrits, actifs, terminés
 - Menu latéral : Enrolled Courses, Wishlist, Reviews, Quiz Attempts, Order History, Settings
 - L'étudiant ne voit jamais le back-office WordPress
@@ -83,7 +83,7 @@ Tu sais maintenant ce que voit un étudiant quand il se connecte. Le dashboard f
 
 ---
 
-### Leçon 2.2 — Dashboard instructeur et admin : ton centre de commande
+### Leçon 2.2 : Dashboard instructeur et admin : ton centre de commande
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -91,11 +91,11 @@ Tu sais maintenant ce que voit un étudiant quand il se connecte. Le dashboard f
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le dashboard étudiant, tu l'as vu. Maintenant on passe au tien. Que tu sois instructeur ou admin, TutorLMS te donne un dashboard frontend différent avec des outils de gestion. Dans cette leçon, je te montre les deux vues et ce qui les différencie.
 
-**[ÉCRAN — screencast dashboard instructeur frontend]**
+**[ÉCRAN - screencast dashboard instructeur frontend]**
 
 [Connexion en tant qu'instructeur, navigation vers /dashboard]
 
@@ -105,7 +105,7 @@ Le dashboard étudiant, tu l'as vu. Maintenant on passe au tien. Que tu sois ins
 
 Ces chiffres se mettent à jour en temps réel. C'est ton tableau de bord de performance.
 
-**[ÉCRAN — screencast menu instructeur]**
+**[ÉCRAN - screencast menu instructeur]**
 
 [Montre le menu latéral instructeur]
 
@@ -115,13 +115,13 @@ Ces chiffres se mettent à jour en temps réel. C'est ton tableau de bord de per
 
 Dans My Courses, chaque cours affiche son statut : publié, en brouillon, ou en attente de validation. Tu peux aussi créer un nouveau cours directement depuis le frontend avec le bouton "Add a New Course".
 
-**[ÉCRAN — screencast création de cours frontend]**
+**[ÉCRAN - screencast création de cours frontend]**
 
 [Montre le bouton "Add a New Course"]
 
 C'est un des gros avantages de TutorLMS. Un instructeur peut créer, éditer et gérer ses cours sans jamais accéder au back-office WordPress. Tout se fait depuis cette interface frontend.
 
-**[ÉCRAN — screencast dashboard admin backend]**
+**[ÉCRAN - screencast dashboard admin backend]**
 
 [Passage dans l'admin WordPress > TutorLMS]
 
@@ -131,15 +131,15 @@ C'est un des gros avantages de TutorLMS. Un instructeur peut créer, éditer et 
 
 Le dashboard admin affiche des graphiques de revenus, les inscriptions récentes, les cours populaires, et un aperçu global de l'activité de ta plateforme. C'est plus détaillé que le dashboard instructeur.
 
-**[ÉCRAN — screencast comparaison]**
+**[ÉCRAN - screencast comparaison]**
 
 [Montre un tableau comparatif]
 
 Récapitulons la différence entre les deux. L'instructeur gère ses propres cours depuis le frontend. Il voit ses stats personnelles. L'admin voit tout : tous les cours, tous les instructeurs, tous les étudiants, et les réglages de la plateforme. L'admin a aussi accès au back-office WordPress, ce qui donne le contrôle total.
 
-Si tu es seul sur ta plateforme — ce qui est le cas pour la plupart des utilisateurs de schoolsWP — tu cumules les deux rôles. Tu as donc les deux vues à ta disposition.
+Si tu es seul sur ta plateforme - ce qui est le cas pour la plupart des utilisateurs de schoolsWP - tu cumules les deux rôles. Tu as donc les deux vues à ta disposition.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu connais maintenant les deux tableaux de bord principaux. À partir de la prochaine leçon, on plonge dans les menus du back-office WordPress, un par un, en commençant par le menu Cours.
 
@@ -156,7 +156,7 @@ Tu connais maintenant les deux tableaux de bord principaux. À partir de la proc
 
 ---
 
-### Leçon 2.3 — Menu Cours : le cœur de ta plateforme
+### Leçon 2.3 : Menu Cours : le cœur de ta plateforme
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -164,11 +164,11 @@ Tu connais maintenant les deux tableaux de bord principaux. À partir de la proc
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le menu Cours dans TutorLMS, c'est là où tout commence. C'est la liste de toutes tes formations, avec les outils pour les trier, les filtrer et les gérer en masse. Dans cette leçon, je te fais le tour complet de ce menu.
 
-**[ÉCRAN — screencast admin WordPress > Tutor LMS > Courses]**
+**[ÉCRAN - screencast admin WordPress > Tutor LMS > Courses]**
 
 [Navigation vers Tutor LMS > Courses]
 
@@ -178,7 +178,7 @@ Le menu Cours dans TutorLMS, c'est là où tout commence. C'est la liste de tout
 
 La liste affiche chaque cours avec plusieurs colonnes. Le titre du cours, l'instructeur assigné, les catégories, le nombre d'étudiants inscrits et la date de publication.
 
-**[ÉCRAN — screencast filtres et tri]**
+**[ÉCRAN - screencast filtres et tri]**
 
 [Montre la barre de filtres en haut]
 
@@ -188,13 +188,13 @@ La liste affiche chaque cours avec plusieurs colonnes. Le titre du cours, l'inst
 
 Tu peux aussi trier par colonne en cliquant sur les en-têtes. Trier par date pour voir les plus récents, ou par nombre d'étudiants pour identifier tes cours les plus populaires.
 
-**[ÉCRAN — screencast actions en masse]**
+**[ÉCRAN - screencast actions en masse]**
 
 [Montre les cases à cocher et le menu d'actions groupées]
 
 Étape 3 : les actions en masse. Coche plusieurs cours, puis utilise le menu déroulant "Bulk Actions". Tu peux mettre en brouillon, publier, ou supprimer plusieurs cours d'un coup. Pratique quand tu réorganises ton catalogue.
 
-**[ÉCRAN — screencast édition rapide]**
+**[ÉCRAN - screencast édition rapide]**
 
 [Survole un cours pour montrer les liens rapides]
 
@@ -202,15 +202,15 @@ Tu peux aussi trier par colonne en cliquant sur les en-têtes. Trier par date po
 
 [Clique sur Quick Edit]
 
-Le Quick Edit est rapide pour corriger un titre ou changer de catégorie. Pour modifier le contenu du cours — leçons, quiz, chapitres — il faut passer par Edit.
+Le Quick Edit est rapide pour corriger un titre ou changer de catégorie. Pour modifier le contenu du cours - leçons, quiz, chapitres - il faut passer par Edit.
 
-**[ÉCRAN — screencast vue d'un cours]**
+**[ÉCRAN - screencast vue d'un cours]**
 
 [Clique sur Edit pour ouvrir un cours]
 
-Étape 5 : quand tu cliques sur Edit, tu ouvres l'éditeur de cours complet. On ne va pas détailler l'éditeur ici — c'est l'objet du Module 3 entier. Ce qu'il faut retenir pour l'instant, c'est que tout part de cette liste dans le menu Cours.
+Étape 5 : quand tu cliques sur Edit, tu ouvres l'éditeur de cours complet. On ne va pas détailler l'éditeur ici - c'est l'objet du Module 3 entier. Ce qu'il faut retenir pour l'instant, c'est que tout part de cette liste dans le menu Cours.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant naviguer dans le menu Cours, filtrer tes formations et utiliser les actions rapides. Prochaine leçon : les catégories et les tags, pour organiser ton catalogue proprement.
 
@@ -228,7 +228,7 @@ Tu sais maintenant naviguer dans le menu Cours, filtrer tes formations et utilis
 
 ---
 
-### Leçon 2.4 — Catégories & Tags : organise ton catalogue
+### Leçon 2.4 : Catégories & Tags : organise ton catalogue
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -236,11 +236,11 @@ Tu sais maintenant naviguer dans le menu Cours, filtrer tes formations et utilis
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Si tu as 3 cours, tu peux t'en sortir sans organisation. À partir de 5 ou 10, c'est le chaos sans catégories. Les catégories et les tags dans TutorLMS fonctionnent comme ceux de WordPress, mais pour tes cours. Je te montre comment les configurer correctement.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Categories]**
+**[ÉCRAN - screencast admin > Tutor LMS > Categories]**
 
 [Navigation vers Tutor LMS > Categories]
 
@@ -250,7 +250,7 @@ Si tu as 3 cours, tu peux t'en sortir sans organisation. À partir de 5 ou 10, c
 
 Étape 2 : pour créer une catégorie, remplis trois champs. Le nom : c'est ce qui s'affiche publiquement. Par exemple "WordPress", "Marketing Email", ou "LMS". Le slug : généré automatiquement depuis le nom, c'est la partie de l'URL. La description : optionnelle, mais utile pour le SEO si ton thème l'affiche.
 
-**[ÉCRAN — screencast catégories parentes]**
+**[ÉCRAN - screencast catégories parentes]**
 
 [Montre le champ "Parent Category"]
 
@@ -260,7 +260,7 @@ Si tu as 3 cours, tu peux t'en sortir sans organisation. À partir de 5 ou 10, c
 
 Mon conseil : ne dépasse pas deux niveaux de profondeur. Parent et enfant, pas plus. Sinon la navigation devient confuse.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Tags]**
+**[ÉCRAN - screencast admin > Tutor LMS > Tags]**
 
 [Navigation vers Tutor LMS > Tags]
 
@@ -270,17 +270,17 @@ Mon conseil : ne dépasse pas deux niveaux de profondeur. Parent et enfant, pas 
 
 Les tags servent à ajouter des mots-clés transversaux. Un cours "Maîtriser FluentCRM" pourrait avoir la catégorie "Marketing Email" et les tags "automatisation", "segmentation", "newsletters". Les tags permettent de retrouver des cours par thème, indépendamment de la catégorie.
 
-**[ÉCRAN — screencast assignation sur un cours]**
+**[ÉCRAN - screencast assignation sur un cours]**
 
 [Ouvre l'éditeur d'un cours, montre les metaboxes catégorie et tags]
 
 Étape 5 : pour assigner une catégorie ou un tag à un cours, tu le fais dans l'éditeur du cours. Dans la colonne de droite, tu trouves les metaboxes "Course Categories" et "Course Tags". Coche les catégories, tape les tags. Simple.
 
-**[ÉCRAN — slide bonnes pratiques]**
+**[ÉCRAN - slide bonnes pratiques]**
 
 Quelques règles pour rester organisé. Limite-toi à une catégorie principale par cours. Utilise 3 à 5 tags maximum par cours. Choisis des noms de catégories courts et clairs. Pense à tes étudiants : ils doivent trouver le bon cours en 2 clics dans ton catalogue.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Catégories et tags sont en place. Ton catalogue est structuré. Dans la prochaine leçon, on passe aux menus Étudiants et Instructeurs pour gérer les personnes sur ta plateforme.
 
@@ -297,7 +297,7 @@ Catégories et tags sont en place. Ton catalogue est structuré. Dans la prochai
 
 ---
 
-### Leçon 2.5 — Étudiants & Instructeurs : gère tes utilisateurs
+### Leçon 2.5 : Étudiants & Instructeurs : gère tes utilisateurs
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -305,11 +305,11 @@ Catégories et tags sont en place. Ton catalogue est structuré. Dans la prochai
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tes cours sont créés, ton catalogue est organisé. Maintenant, les personnes. TutorLMS ajoute deux rôles WordPress spécifiques : étudiant et instructeur. Dans cette leçon, je te montre où les trouver et comment les gérer depuis le back-office.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Students]**
+**[ÉCRAN - screencast admin > Tutor LMS > Students]**
 
 [Navigation vers Tutor LMS > Students]
 
@@ -319,7 +319,7 @@ Tes cours sont créés, ton catalogue est organisé. Maintenant, les personnes. 
 
 Étape 2 : la barre de recherche en haut te permet de trouver un étudiant par nom ou email. Pratique quand tu as des dizaines ou des centaines d'inscrits.
 
-**[ÉCRAN — screencast profil étudiant]**
+**[ÉCRAN - screencast profil étudiant]**
 
 [Clique sur un étudiant pour voir son profil]
 
@@ -327,7 +327,7 @@ Tes cours sont créés, ton catalogue est organisé. Maintenant, les personnes. 
 
 Tu peux aussi inscrire manuellement un étudiant à un cours depuis cette vue. Utile si tu veux offrir un accès VIP ou corriger une inscription manquante.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Instructors]**
+**[ÉCRAN - screencast admin > Tutor LMS > Instructors]**
 
 [Navigation vers Tutor LMS > Instructors]
 
@@ -337,21 +337,21 @@ Tu peux aussi inscrire manuellement un étudiant à un cours depuis cette vue. U
 
 Pour chaque instructeur, tu peux voir ses cours, approuver ou bloquer son compte, et ajuster ses permissions.
 
-**[ÉCRAN — screencast ajout d'un instructeur]**
+**[ÉCRAN - screencast ajout d'un instructeur]**
 
 [Montre le processus d'ajout]
 
-Étape 5 : pour ajouter un instructeur, deux options. Soit tu changes le rôle d'un utilisateur existant depuis la page Users de WordPress — tu sélectionnes "Instructor". Soit tu actives l'inscription instructeur dans les réglages TutorLMS, et les utilisateurs peuvent postuler depuis le frontend.
+Étape 5 : pour ajouter un instructeur, deux options. Soit tu changes le rôle d'un utilisateur existant depuis la page Users de WordPress - tu sélectionnes "Instructor". Soit tu actives l'inscription instructeur dans les réglages TutorLMS, et les utilisateurs peuvent postuler depuis le frontend.
 
 Si tu actives la candidature instructeur, chaque demande passe par une validation admin. Tu décides qui peut enseigner sur ta plateforme.
 
-**[ÉCRAN — slide "Étudiant vs Instructeur vs Admin"]**
+**[ÉCRAN - slide "Étudiant vs Instructeur vs Admin"]**
 
 Récapitulons les trois rôles. L'étudiant peut s'inscrire à des cours, suivre les leçons, passer les quiz, et laisser des avis. L'instructeur peut tout ça, plus créer et gérer ses propres cours, envoyer des annonces et répondre aux Q&A. L'admin a le contrôle total : tous les cours, tous les utilisateurs, tous les réglages.
 
 Si tu es seul sur ta plateforme, tu es admin et instructeur en même temps. Tu n'as pas besoin de créer un compte instructeur séparé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant où trouver et gérer tes étudiants et instructeurs. Prochaine leçon : les annonces et le système de Q&A, deux outils de communication directe avec tes étudiants.
 
@@ -368,7 +368,7 @@ Tu sais maintenant où trouver et gérer tes étudiants et instructeurs. Prochai
 
 ---
 
-### Leçon 2.6 — Annonces & Q&A : communique avec tes étudiants
+### Leçon 2.6 : Annonces & Q&A : communique avec tes étudiants
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -376,25 +376,25 @@ Tu sais maintenant où trouver et gérer tes étudiants et instructeurs. Prochai
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tes étudiants suivent tes cours. Mais comment tu communiques avec eux ? TutorLMS intègre deux outils : les annonces et le système de questions-réponses. Les annonces pour les messages importants, le Q&A pour les échanges dans chaque cours. Je te montre comment les utiliser.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Announcements]**
+**[ÉCRAN - screencast admin > Tutor LMS > Announcements]**
 
 [Navigation vers Tutor LMS > Announcements]
 
-Étape 1 : va dans Tutor LMS puis Announcements. Tu arrives sur la liste de toutes les annonces publiées. Chaque annonce est liée à un cours spécifique. Tu ne peux pas envoyer une annonce globale à tous tes étudiants — c'est toujours cours par cours.
+Étape 1 : va dans Tutor LMS puis Announcements. Tu arrives sur la liste de toutes les annonces publiées. Chaque annonce est liée à un cours spécifique. Tu ne peux pas envoyer une annonce globale à tous tes étudiants - c'est toujours cours par cours.
 
 [Montre la liste des annonces]
 
 L'affichage montre le titre de l'annonce, le cours concerné, la date, et le nombre d'étudiants qui la verront.
 
-**[ÉCRAN — screencast création d'annonce]**
+**[ÉCRAN - screencast création d'annonce]**
 
 [Clique sur "Add New"]
 
-Étape 2 : pour créer une annonce, clique sur "Add New". Tu remplis le titre, le contenu — un éditeur classique WordPress — et tu sélectionnes le cours concerné dans le menu déroulant.
+Étape 2 : pour créer une annonce, clique sur "Add New". Tu remplis le titre, le contenu - un éditeur classique WordPress - et tu sélectionnes le cours concerné dans le menu déroulant.
 
 [Montre la rédaction d'une annonce]
 
@@ -404,13 +404,13 @@ Exemple concret : tu viens d'ajouter 3 nouvelles leçons à ton cours. Tu crées
 
 Étape 3 : clique sur Publier. L'annonce apparaît immédiatement dans le dashboard frontend des étudiants inscrits au cours.
 
-**[ÉCRAN — screencast vue étudiant de l'annonce]**
+**[ÉCRAN - screencast vue étudiant de l'annonce]**
 
 [Montre l'annonce côté frontend]
 
 Voici ce que voit l'étudiant. L'annonce s'affiche dans la section Announcements de la page du cours. Le plus récent en haut. L'étudiant peut aussi recevoir une notification par email si tu as activé cette option dans les réglages.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Q&A]**
+**[ÉCRAN - screencast admin > Tutor LMS > Q&A]**
 
 [Navigation vers Tutor LMS > Q&A]
 
@@ -420,7 +420,7 @@ Voici ce que voit l'étudiant. L'annonce s'affiche dans la section Announcements
 
 Chaque entrée affiche la question, l'étudiant qui l'a posée, le cours concerné, et le statut : en attente de réponse, répondu, ou résolu.
 
-**[ÉCRAN — screencast réponse à une question]**
+**[ÉCRAN - screencast réponse à une question]**
 
 [Clique sur une question pour répondre]
 
@@ -430,20 +430,20 @@ Chaque entrée affiche la question, l'étudiant qui l'a posée, le cours concern
 
 Le Q&A est visible par tous les étudiants du cours. C'est public, pas privé. Un étudiant qui pose une question aide les autres qui avaient la même. Pense-le comme un mini-forum intégré à chaque cours.
 
-**[ÉCRAN — screencast côté étudiant]**
+**[ÉCRAN - screencast côté étudiant]**
 
 [Montre l'onglet Q&A dans un cours côté frontend]
 
 Côté étudiant, le Q&A est accessible depuis la page du cours. L'étudiant clique sur l'onglet "Q&A", pose sa question, et attend ta réponse. Il peut aussi lire les questions des autres étudiants.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Annonces pour les messages importants, Q&A pour les échanges du quotidien. Ces deux outils gardent le lien avec tes étudiants sans quitter TutorLMS. Prochaine leçon : les quiz attempts et les outils complémentaires.
 
 ---
 
 **Points clés** :
-- Annonces : liées à un cours, pas globales — visibles dans le dashboard étudiant
+- Annonces : liées à un cours, pas globales - visibles dans le dashboard étudiant
 - Création : titre + contenu + sélection du cours
 - Notification email possible si activée dans les réglages
 - Q&A : questions-réponses publiques, par cours, visibles par tous les étudiants
@@ -454,7 +454,7 @@ Annonces pour les messages importants, Q&A pour les échanges du quotidien. Ces 
 
 ---
 
-### Leçon 2.7 — Quiz Attempts & Outils : surveille et optimise
+### Leçon 2.7 : Quiz Attempts & Outils : surveille et optimise
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -462,11 +462,11 @@ Annonces pour les messages importants, Q&A pour les échanges du quotidien. Ces 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Dernière leçon avant le quiz du module. On couvre deux menus que tu vas utiliser régulièrement : Quiz Attempts pour suivre les résultats de tes étudiants, et Tools pour les fonctions utilitaires de TutorLMS. Deux menus, une leçon, on va droit au but.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Quiz Attempts]**
+**[ÉCRAN - screencast admin > Tutor LMS > Quiz Attempts]**
 
 [Navigation vers Tutor LMS > Quiz Attempts]
 
@@ -476,7 +476,7 @@ Dernière leçon avant le quiz du module. On couvre deux menus que tu vas utilis
 
 C'est ton tableau de bord d'évaluation. D'un coup d'œil, tu vois qui a passé quoi, avec quel résultat.
 
-**[ÉCRAN — screencast filtres Quiz Attempts]**
+**[ÉCRAN - screencast filtres Quiz Attempts]**
 
 [Montre les filtres disponibles]
 
@@ -486,7 +486,7 @@ C'est ton tableau de bord d'évaluation. D'un coup d'œil, tu vois qui a passé 
 
 Ce filtre est particulièrement utile pour identifier les leçons problématiques. Si 80% de tes étudiants échouent au même quiz, c'est probablement le contenu de la leçon qui doit être revu, pas les étudiants.
 
-**[ÉCRAN — screencast détail d'une tentative]**
+**[ÉCRAN - screencast détail d'une tentative]**
 
 [Clique sur une tentative pour voir le détail]
 
@@ -496,7 +496,7 @@ Ce filtre est particulièrement utile pour identifier les leçons problématique
 
 Si ton quiz contient des questions à réponse libre, elles restent en "pending" jusqu'à ta correction. Tu peux approuver, ajuster le score, et valider.
 
-**[ÉCRAN — screencast admin > Tutor LMS > Tools]**
+**[ÉCRAN - screencast admin > Tutor LMS > Tools]**
 
 [Navigation vers Tutor LMS > Tools]
 
@@ -510,7 +510,7 @@ Le premier onglet, Pages, te montre quelles pages WordPress sont assignées aux 
 
 Le deuxième onglet important : Import/Export. Tu peux exporter tes cours au format JSON et les réimporter sur un autre site. Utile si tu migres ta plateforme ou si tu veux dupliquer un cours sur un site de test.
 
-**[ÉCRAN — screencast onglet Status]**
+**[ÉCRAN - screencast onglet Status]**
 
 [Montre l'onglet Status/System Info]
 
@@ -520,7 +520,7 @@ L'onglet Status affiche les informations système. Version de TutorLMS, version 
 
 Si un paramètre serveur n'est pas optimal, TutorLMS affiche un avertissement en rouge. Par exemple, une limite de mémoire PHP trop basse ou une version PHP obsolète.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as fait le tour complet de l'interface TutorLMS. Dashboard frontend et backend, menus Cours, Catégories, Tags, Étudiants, Instructeurs, Annonces, Q&A, Quiz Attempts et Outils. Tu sais où tout se trouve. Place au quiz du module pour vérifier que c'est bien ancré.
 
@@ -538,7 +538,7 @@ Tu as fait le tour complet de l'interface TutorLMS. Dashboard frontend et backen
 
 ---
 
-### Leçon 2.8 — Quiz Module 2
+### Leçon 2.8 : Quiz Module 2
 
 **Type** : Quiz QCM (8 questions)
 **Seuil de réussite** : 75% (6/8)
@@ -614,8 +614,8 @@ Comment ajouter un instructeur sur ta plateforme TutorLMS ?
 **Question 6**
 Les annonces dans TutorLMS sont-elles globales ou liées à un cours ?
 
-- A) Globales — tous les étudiants les voient
-- B) Liées à un cours — seuls les étudiants inscrits au cours les voient
+- A) Globales - tous les étudiants les voient
+- B) Liées à un cours - seuls les étudiants inscrits au cours les voient
 - C) Envoyées par email uniquement
 - D) Visibles uniquement dans le back-office
 
@@ -627,8 +627,8 @@ Les annonces dans TutorLMS sont-elles globales ou liées à un cours ?
 **Question 7**
 Le système Q&A de TutorLMS est-il public ou privé ?
 
-- A) Privé — seul l'étudiant et l'instructeur voient les échanges
-- B) Public — tous les étudiants du cours peuvent voir les questions et réponses
+- A) Privé - seul l'étudiant et l'instructeur voient les échanges
+- B) Public - tous les étudiants du cours peuvent voir les questions et réponses
 - C) Visible uniquement par l'admin
 - D) Accessible uniquement par email
 

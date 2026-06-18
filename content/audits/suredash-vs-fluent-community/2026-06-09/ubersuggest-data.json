@@ -1,0 +1,112 @@
+{
+  "source": "ubersuggest (tier2, michaelkihlpro@gmail.com)",
+  "location": "France (locId 2250)",
+  "language": "fr",
+  "date": "2026-06-09",
+  "keyword_overview": [
+    {
+      "keyword": "fluent community",
+      "volume": 110,
+      "sd": 23,
+      "pd": 28,
+      "cpc_usd": 5.29,
+      "competition": 0.28,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "suredash",
+      "volume": 20,
+      "sd": 34,
+      "pd": 7,
+      "cpc_usd": 0,
+      "competition": 0.07
+    },
+    {
+      "keyword": "communauté wordpress",
+      "volume": 140,
+      "sd": 35,
+      "pd": 5,
+      "competition": 0.05,
+      "note": "pic 480 en mars 2025, effondre depuis"
+    },
+    {
+      "keyword": "espace membre wordpress",
+      "volume": 90,
+      "sd": 18,
+      "pd": 14,
+      "cpc_usd": 4.05,
+      "competition": 0.14
+    },
+    {
+      "keyword": "buddyboss",
+      "volume": 320,
+      "sd": 35,
+      "pd": 36,
+      "cpc_usd": 1.05,
+      "competition": 0.36
+    },
+    {
+      "keyword": "créer une communauté wordpress",
+      "volume": 0,
+      "sd": 4,
+      "pd": 1
+    }
+  ],
+  "serp_analysis": {
+    "keyword": "fluent community",
+    "updated_at": "2026-05-18",
+    "top": [
+      {
+        "position": 1,
+        "domain": "fluentcommunity.co",
+        "domainAuthority": 28,
+        "clicks": 59
+      },
+      {
+        "position": 2,
+        "domain": "community.wpmanageninja.com",
+        "domainAuthority": 35,
+        "clicks": 14
+      },
+      {
+        "position": 3,
+        "domain": "wordpress.org",
+        "domainAuthority": 99,
+        "clicks": 10,
+        "url": "/plugins/fluent-community/"
+      },
+      {
+        "position": 5,
+        "domain": "play.google.com",
+        "domainAuthority": 98,
+        "clicks": 8,
+        "note": "app Fluent Community"
+      },
+      {
+        "position": 6,
+        "domain": "wpmanageninja.com",
+        "domainAuthority": 35,
+        "clicks": 5
+      },
+      {
+        "position": 8,
+        "domain": "fluentsupport.com",
+        "domainAuthority": 31,
+        "clicks": 2
+      },
+      {
+        "position": 11,
+        "domain": "fluentbooking.com",
+        "domainAuthority": 32,
+        "clicks": 2
+      },
+      {
+        "position": 12,
+        "domain": "wordpress.com",
+        "domainAuthority": 94,
+        "clicks": 1
+      }
+    ],
+    "constat": "SERP 'fluent community' = 100% brand/vendeur (proprietes WPManageNinja + repos officiels WP). Aucun editorial tiers FR dans le top. La requete est purement navigationnelle."
+  }
+}

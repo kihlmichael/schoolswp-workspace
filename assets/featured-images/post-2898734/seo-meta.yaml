@@ -1,0 +1,23 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © 2026 schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/de/ottokit-free-vs-pro/
+  software: schoolsWP html-to-png pipeline
+
+images:
+  - file: slide-00-hero-de.png
+    title: "OttoKit Free vs. Pro: Tarif-Vergleich 2026"
+    subject: "OttoKit Free vs. Pro - Welchen Tarif sollten Sie 2026 wählen ?"
+    description: "Visueller Vergleich zwischen OttoKit Free und OttoKit Pro im Jahr 2026 für WordPress-Automatisierungen : Aufgabenvolumen, Workflows, Multi-Site-Verwaltung und KI-Agenten. Cover des schoolsWP-Artikels über die Wahl des richtigen OttoKit-Tarifs."
+    alt: "OttoKit Free vs. Pro - Tarif-Vergleich 2026 : 1 000 Aufgaben, 5 Workflows, 1 Site (Free) gegen 5 000 Aufgaben, unbegrenzte Workflows, Multi-Site und KI-Agenten (Pro). schoolsWP Cover."
+    keywords:
+      - OttoKit
+      - OttoKit Free vs Pro
+      - OttoKit Tarif
+      - WordPress Automatisierung
+      - KI-Agenten
+      - SureTriggers
+      - WordPress Workflows
+      - Multi-Site
+      - schoolsWP
+      - Michael KIHL

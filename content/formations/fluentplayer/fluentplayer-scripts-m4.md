@@ -1,14 +1,14 @@
-# Scripts vidéo — FPL-012 Module 4 : Pousser à l'action, CTA, hotspots, ventes
+# Scripts vidéo - FPL-012 Module 4 : Pousser à l'action, CTA, hotspots, ventes
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : M4 — Pousser à l'action (Masterclass, premium)
+**Module** : M4 - Pousser à l'action (Masterclass, premium)
 **Leçons** : 6 vidéos + 1 fiche PDF + 1 quiz
 **Durée totale** : ~46 min de vidéo
 **Date** : 2026-05-22
 
 ---
 
-## Leçon 4.1 — Bannières CTA : guider sans interrompre
+## Leçon 4.1 - Bannières CTA : guider sans interrompre
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -16,24 +16,24 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Capturer un email, c'était le Module 3. Maintenant, on passe à l'action directe : amener le spectateur à cliquer, à acheter, à s'inscrire. Le premier outil, c'est la bannière CTA. Ces couches sont en version Pro.
 
-**[ÉCRAN — slide "Une bannière CTA, c'est quoi"]**
+**[ÉCRAN - slide "Une bannière CTA, c'est quoi"]**
 
 Une bannière CTA, c'est un appel à l'action qui apparaît sur la vidéo : un message court et un bouton. Elle pousse vers une page, une offre, une inscription.
 
 La différence avec la capture d'email du Module 3 : la capture collecte une donnée, le CTA envoie vers une destination.
 
-**[ÉCRAN — screencast : ajouter une bannière CTA]**
+**[ÉCRAN - screencast : ajouter une bannière CTA]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Text/Button Overlays]
 [Ajoute une bannière : texte, bouton et URL de destination]
 [Règle le moment d'apparition]
 
-**[ÉCRAN — slide "Guider sans interrompre"]**
+**[ÉCRAN - slide "Guider sans interrompre"]**
 
 Le piège du CTA, c'est de couper l'élan du spectateur. Quelques règles :
 
@@ -41,7 +41,7 @@ Le piège du CTA, c'est de couper l'élan du spectateur. Quelques règles :
 - un seul message à la fois, un seul bouton
 - un texte qui prolonge la vidéo, pas qui la contredit
 
-**[ÉCRAN — slide "Le bon moment pour un CTA"]**
+**[ÉCRAN - slide "Le bon moment pour un CTA"]**
 
 Comme pour la capture, le moment compte :
 
@@ -49,7 +49,7 @@ Comme pour la capture, le moment compte :
 - à la fin : la prochaine étape logique
 - à un pic d'intérêt : quand tu viens de montrer un résultat
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 La bannière CTA pousse vers une destination. Mais parfois tu veux rendre la vidéo elle-même cliquable. C'est le rôle des hotspots, prochaine leçon.
 
@@ -69,7 +69,7 @@ La bannière CTA pousse vers une destination. Mais parfois tu veux rendre la vid
 
 ---
 
-## Leçon 4.2 — Hotspots cliquables : rendre la vidéo explorable
+## Leçon 4.2 - Hotspots cliquables : rendre la vidéo explorable
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -77,11 +77,11 @@ La bannière CTA pousse vers une destination. Mais parfois tu veux rendre la vid
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Un hotspot, c'est une zone cliquable posée sur la vidéo. Au lieu d'une bannière imposée, c'est le spectateur qui choisit de cliquer. La vidéo devient explorable.
 
-**[ÉCRAN — slide "Hotspot contre bannière"]**
+**[ÉCRAN - slide "Hotspot contre bannière"]**
 
 La bannière CTA s'impose, le hotspot s'offre.
 
@@ -90,7 +90,7 @@ La bannière CTA s'impose, le hotspot s'offre.
 
 Le hotspot est plus doux, plus respectueux de l'attention. Il convertit ceux qui sont vraiment curieux.
 
-**[ÉCRAN — screencast : ajouter un hotspot]**
+**[ÉCRAN - screencast : ajouter un hotspot]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
@@ -99,7 +99,7 @@ Le hotspot est plus doux, plus respectueux de l'attention. Il convertit ceux qui
 
 Tu choisis où le hotspot se place sur l'image, à partir de quand il apparaît, et vers quoi il pointe.
 
-**[ÉCRAN — slide "Des cas d'usage concrets"]**
+**[ÉCRAN - slide "Des cas d'usage concrets"]**
 
 Le hotspot brille dans plusieurs situations :
 
@@ -108,11 +108,11 @@ Le hotspot brille dans plusieurs situations :
 - offrir un raccourci vers un chapitre ou une autre vidéo
 - mettre en avant un produit visible dans le cadre
 
-**[ÉCRAN — slide "Ne pas en abuser"]**
+**[ÉCRAN - slide "Ne pas en abuser"]**
 
 Un hotspot, c'est utile. Dix hotspots en même temps, c'est une vidéo illisible. Un, parfois deux à l'écran, pas plus. Le spectateur doit pouvoir suivre la vidéo sans être distrait.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Bannières et hotspots posent des éléments visuels. La prochaine couche va plus loin : afficher un vrai bloc de contenu WordPress au bon moment.
 
@@ -132,7 +132,7 @@ Bannières et hotspots posent des éléments visuels. La prochaine couche va plu
 
 ---
 
-## Leçon 4.3 — Contenu minuté : afficher un bloc Gutenberg au bon moment
+## Leçon 4.3 - Contenu minuté : afficher un bloc Gutenberg au bon moment
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -140,17 +140,17 @@ Bannières et hotspots posent des éléments visuels. La prochaine couche va plu
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Jusqu'ici, les couches affichent un message ou un bouton. Le contenu minuté va plus loin : il affiche un vrai bloc de contenu WordPress, synchronisé avec la vidéo.
 
-**[ÉCRAN — slide "Le contenu minuté, c'est quoi"]**
+**[ÉCRAN - slide "Le contenu minuté, c'est quoi"]**
 
 Le contenu minuté, c'est un bloc Gutenberg qui apparaît à côté ou autour de la vidéo, à un horodatage précis, et change au fil de la lecture.
 
 Pendant que tu parles d'une étape, le bloc correspondant s'affiche. Tu passes à l'étape suivante, le bloc change.
 
-**[ÉCRAN — slide "Des cas d'usage"]**
+**[ÉCRAN - slide "Des cas d'usage"]**
 
 C'est puissant pour :
 
@@ -159,7 +159,7 @@ C'est puissant pour :
 - une présentation : les points clés se synchronisent avec ton discours
 - une offre : les détails du produit s'affichent quand tu le présentes
 
-**[ÉCRAN — screencast : configurer du contenu minuté]**
+**[ÉCRAN - screencast : configurer du contenu minuté]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Timed Content Area]
@@ -167,11 +167,11 @@ C'est puissant pour :
 
 Tu construis ton contenu en blocs Gutenberg, comme une page normale, et tu associes chaque bloc à un moment de la vidéo.
 
-**[ÉCRAN — slide "Pourquoi ça aide la complétion"]**
+**[ÉCRAN - slide "Pourquoi ça aide la complétion"]**
 
 Le contenu minuté garde le spectateur actif. Il ne fait pas que regarder, il a un contenu qui évolue sous les yeux, qu'il peut lire et relire. Une vidéo passive devient une expérience suivie.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le contenu minuté enrichit la vidéo. La prochaine couche, elle, sert à monétiser un emplacement : la couche Ad.
 
@@ -191,7 +191,7 @@ Le contenu minuté enrichit la vidéo. La prochaine couche, elle, sert à monét
 
 ---
 
-## Leçon 4.4 — Couche Ad et sponsor : monétiser un emplacement
+## Leçon 4.4 - Couche Ad et sponsor : monétiser un emplacement
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -199,11 +199,11 @@ Le contenu minuté enrichit la vidéo. La prochaine couche, elle, sert à monét
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Si tu as des sponsors, ou si tu veux monétiser tes vidéos directement, FluentPlayer a une couche dédiée : la couche Ad. Elle affiche un emplacement publicitaire ou sponsor à un moment choisi.
 
-**[ÉCRAN — slide "À quoi sert la couche Ad"]**
+**[ÉCRAN - slide "À quoi sert la couche Ad"]**
 
 La couche Ad sert à :
 
@@ -211,7 +211,7 @@ La couche Ad sert à :
 - mettre en avant ta propre offre, comme une publicité interne
 - proposer un partenaire pertinent au bon moment
 
-**[ÉCRAN — screencast : configurer une couche Ad]**
+**[ÉCRAN - screencast : configurer une couche Ad]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
@@ -220,13 +220,13 @@ La couche Ad sert à :
 
 Tu choisis ce qui s'affiche, où, et quand. Comme pour les autres couches, le moment se règle à l'horodatage.
 
-**[ÉCRAN — slide "L'usage honnête de la couche Ad"]**
+**[ÉCRAN - slide "L'usage honnête de la couche Ad"]**
 
 Un conseil de méthode schoolsWP : la couche Ad fonctionne mieux quand elle reste pertinente. Un sponsor en rapport avec le sujet de la vidéo passe bien. Une publicité hors sujet casse la confiance.
 
 Si tu n'as pas de sponsor, utilise la couche Ad pour ta propre offre. C'est un emplacement de plus pour parler de ce que tu vends.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais afficher un emplacement sponsor. Mais le vrai sujet de ce module, c'est de vendre. Prochaine leçon : encaisser un paiement directement depuis la vidéo.
 
@@ -246,7 +246,7 @@ Tu sais afficher un emplacement sponsor. Mais le vrai sujet de ce module, c'est 
 
 ---
 
-## Leçon 4.5 — Vendre depuis la vidéo : paiement Fluent Forms in-video
+## Leçon 4.5 - Vendre depuis la vidéo : paiement Fluent Forms in-video
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -254,23 +254,23 @@ Tu sais afficher un emplacement sponsor. Mais le vrai sujet de ce module, c'est 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Voici la leçon qui justifie à elle seule cette Masterclass. Tu vas encaisser un paiement directement depuis la vidéo, sans que l'acheteur quitte la page.
 
-**[ÉCRAN — slide "Le problème du parcours d'achat"]**
+**[ÉCRAN - slide "Le problème du parcours d'achat"]**
 
 Le parcours classique fait perdre des ventes : on regarde une vidéo de vente, on clique vers une page, on attend qu'elle charge, on cherche le bouton, on remplit un formulaire. À chaque étape, des gens abandonnent.
 
 Vendre depuis la vidéo supprime ces étapes.
 
-**[ÉCRAN — slide "Comment ça marche"]**
+**[ÉCRAN - slide "Comment ça marche"]**
 
 FluentPlayer affiche une couche Formulaire. Fluent Forms permet d'ajouter un champ de paiement à un formulaire. En combinant les deux, tu obtiens un formulaire de paiement qui s'affiche dans la vidéo.
 
 L'acheteur paie sans jamais quitter la page de la vidéo.
 
-**[ÉCRAN — screencast : créer le formulaire de paiement]**
+**[ÉCRAN - screencast : créer le formulaire de paiement]**
 
 [Ouvre Fluent Forms]
 [Crée un formulaire avec un champ de paiement]
@@ -278,26 +278,26 @@ L'acheteur paie sans jamais quitter la page de la vidéo.
 
 Fluent Forms gère le champ de paiement et la connexion à ta passerelle. Tu définis le produit et le prix.
 
-**[ÉCRAN — screencast : poser la couche de vente]**
+**[ÉCRAN - screencast : poser la couche de vente]**
 
 [Retourne dans le média, panneau Interactive Layers du bloc FluentPlayer]
 [Ajoute une couche Formulaire]
 [Sélectionne le formulaire de paiement]
 [Règle le moment : après l'argumentaire]
 
-**[ÉCRAN — slide "Le moment de la vente"]**
+**[ÉCRAN - slide "Le moment de la vente"]**
 
 Le placement est décisif. La couche de paiement apparaît après ton argumentaire complet : une fois que tu as présenté le problème, la solution, et la preuve. Pas avant.
 
 C'est le script de ta vidéo de vente qui prépare ce moment. La couche ne fait que recueillir la décision.
 
-**[ÉCRAN — screencast : le test d'achat]**
+**[ÉCRAN - screencast : le test d'achat]**
 
 [Lance la vidéo, atteint la couche, effectue un paiement de test]
 
 Teste toujours un achat complet avant de publier. Une vente, ça ne se rate pas pour un bug.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais vendre depuis la vidéo. Il reste une couche, la plus flexible de toutes : le shortcode.
 
@@ -317,7 +317,7 @@ Tu sais vendre depuis la vidéo. Il reste une couche, la plus flexible de toutes
 
 ---
 
-## Leçon 4.6 — Shortcodes : intégrer n'importe quoi dans la vidéo
+## Leçon 4.6 - Shortcodes : intégrer n'importe quoi dans la vidéo
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -325,15 +325,15 @@ Tu sais vendre depuis la vidéo. Il reste une couche, la plus flexible de toutes
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On termine le tour des couches par la plus flexible : la couche Shortcode. Elle te permet d'insérer dans la vidéo presque tout ce que ton site WordPress sait afficher.
 
-**[ÉCRAN — slide "Le shortcode, rappel"]**
+**[ÉCRAN - slide "Le shortcode, rappel"]**
 
 Un shortcode, c'est un petit code entre crochets que beaucoup de plugins WordPress fournissent. Il affiche un élément : un formulaire, une grille de produits, un compte à rebours, un tableau.
 
-**[ÉCRAN — slide "Ce que la couche Shortcode débloque"]**
+**[ÉCRAN - slide "Ce que la couche Shortcode débloque"]**
 
 La couche Shortcode affiche le résultat d'un shortcode sur la vidéo, à un moment choisi. Concrètement, tu peux faire apparaître :
 
@@ -342,18 +342,18 @@ La couche Shortcode affiche le résultat d'un shortcode sur la vidéo, à un mom
 - un élément d'un plugin que FluentPlayer ne gère pas en natif
 - tout ce dont tu as un shortcode
 
-**[ÉCRAN — screencast : ajouter une couche Shortcode]**
+**[ÉCRAN - screencast : ajouter une couche Shortcode]**
 
 [Ouvre un média dans l'éditeur de blocs]
 [Sélectionne le bloc FluentPlayer, déplie le panneau Interactive Layers]
 [Ajoute une couche, choisit Shortcode]
 [Colle le shortcode, règle le moment d'apparition]
 
-**[ÉCRAN — slide "La couche de secours"]**
+**[ÉCRAN - slide "La couche de secours"]**
 
 Pense à la couche Shortcode comme à ta couche de secours. Quand aucune couche dédiée ne fait exactement ce que tu veux, il y a presque toujours un shortcode qui le fait. C'est ce qui rend FluentPlayer ouvert : tu n'es jamais coincé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu maîtrises maintenant toutes les couches : CTA, hotspot, contenu minuté, Ad, paiement, shortcode. Tes vidéos poussent à l'action et savent vendre. Dans le Module 5, on apprend à mesurer tout ça avec les analytics.
 
@@ -373,7 +373,7 @@ Tu maîtrises maintenant toutes les couches : CTA, hotspot, contenu minuté, Ad,
 
 ---
 
-## Notes de production — Module 4
+## Notes de production - Module 4
 
 ### Captures à préparer
 - Panneau Text/Button Overlays : configuration d'une bannière CTA

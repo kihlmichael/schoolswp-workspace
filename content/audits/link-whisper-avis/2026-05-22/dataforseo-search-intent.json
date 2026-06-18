@@ -1,0 +1,151 @@
+{
+  "version": "0.1.20260520",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.1783 sec.",
+  "cost": 0.002,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "05221530-7577-0541-0000-376a1a96a9df",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.1152 sec.",
+      "cost": 0.002,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "dataforseo_labs",
+        "google",
+        "search_intent",
+        "live"
+      ],
+      "data": {
+        "api": "dataforseo_labs",
+        "function": "search_intent",
+        "se_type": "google",
+        "keywords": [
+          "linkwhisper avis",
+          "link whisper avis",
+          "link whisper",
+          "linkwhisper",
+          "link whisper prix",
+          "link whisper avis 2026",
+          "link whisper review",
+          "link whisper alternative",
+          "plugin maillage interne",
+          "maillage interne wordpress"
+        ],
+        "language_code": "fr"
+      },
+      "result": [
+        {
+          "language_code": "fr",
+          "items_count": 10,
+          "items": [
+            {
+              "keyword": "linkwhisper avis",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.4895
+              },
+              "secondary_keyword_intents": [
+                {
+                  "label": "informational",
+                  "probability": 0.4578
+                }
+              ]
+            },
+            {
+              "keyword": "link whisper avis",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.678
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "link whisper",
+              "keyword_intent": {
+                "label": "informational",
+                "probability": 0.7208
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "linkwhisper",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.7531
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "link whisper prix",
+              "keyword_intent": {
+                "label": "commercial",
+                "probability": 0.8881
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "link whisper avis 2026",
+              "keyword_intent": {
+                "label": "transactional",
+                "probability": 0.4208
+              },
+              "secondary_keyword_intents": [
+                {
+                  "label": "informational",
+                  "probability": 0.2553
+                },
+                {
+                  "label": "commercial",
+                  "probability": 0.2409
+                }
+              ]
+            },
+            {
+              "keyword": "link whisper review",
+              "keyword_intent": {
+                "label": "informational",
+                "probability": 0.578
+              },
+              "secondary_keyword_intents": [
+                {
+                  "label": "commercial",
+                  "probability": 0.376
+                }
+              ]
+            },
+            {
+              "keyword": "link whisper alternative",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.6283
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "plugin maillage interne",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.7496
+              },
+              "secondary_keyword_intents": null
+            },
+            {
+              "keyword": "maillage interne wordpress",
+              "keyword_intent": {
+                "label": "navigational",
+                "probability": 0.9574
+              },
+              "secondary_keyword_intents": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

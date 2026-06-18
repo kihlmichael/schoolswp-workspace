@@ -1,0 +1,143 @@
+{
+  "audit_date": "2026-05-26",
+  "post_id": 343161,
+  "permalink": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+  "patches_applied": {
+    "phase": "P0_complete",
+    "executed_at": "2026-05-26 ~14:00 (cloud agent, push final après reconnexion Novamira)",
+    "items": [
+      {
+        "target": "post_343161.post_title",
+        "before": "FlyingPress vs WP Rocket 2026 – Le meilleur cache WordPress ?",
+        "after": "FlyingPress vs WP Rocket 2026 : Welches Cache-Plugin für WordPress?",
+        "language_change": "FR → DE native",
+        "en_dash_removed": true
+      },
+      {
+        "target": "post_343161 meta rank_math_title",
+        "before": "FlyingPress vs WP Rocket 2026 : Lequel choisir ? Comparatif, Prix & Test",
+        "after": "FlyingPress vs WP Rocket 2026: Welches WordPress Cache-Plugin ist besser?",
+        "language_change": "FR → DE native",
+        "length_chars": 75
+      },
+      {
+        "target": "post_343161 meta rank_math_description",
+        "before": "🚀 FlyingPress ou WP Rocket ? Notre comparatif 2026 analyse les différences, prix, et l'impact sur les Core Web Vitals. Choisis le meilleur plugin de cache pour ton site WordPress, avec nos conseils pour WooCommerce et Elementor.",
+        "after": "FlyingPress oder WP Rocket? Vergleich 2026 mit Core Web Vitals, Preisen und Empfehlungen für WooCommerce und Elementor. Finde das beste WordPress Cache-Plugin für deine Seite.",
+        "language_change": "FR → DE native",
+        "length_chars": 176
+      },
+      {
+        "target": "attachment_350864",
+        "fields": ["post_title", "post_content", "_wp_attachment_image_alt"],
+        "before": {
+          "title": "FlyingPress vs WP Rocket 2025 – WordPress Cache Plugin Vergleich",
+          "alt": "FlyingPress vs WP Rocket 2025 – Vergleich der besten WordPress Cache Plugins zur Performance-Optimierung.",
+          "description_2025_count": 2
+        },
+        "after": {
+          "title": "FlyingPress vs WP Rocket : WordPress Cache Plugin Vergleich",
+          "alt": "FlyingPress vs WP Rocket : Vergleich der besten WordPress Cache Plugins zur Performance-Optimierung.",
+          "description_2025_count": 1,
+          "en_dash_count": 0
+        },
+        "note": "1 occurrence '2025' résiduelle dans description (non SEO-critique, à finir P1)"
+      },
+      {
+        "target": "post_343161.post_content",
+        "type": "body_refonte_complete",
+        "method": "novamira/write-file sandbox b64 + execute-php base64_decode + wpdb->update",
+        "diff": {
+          "sha256_before": "7fd4d998dc40edd00098bb1ba1bad162d4313e20b91bcb6bc4dc480a70bcc447",
+          "sha256_after": "e1dc5666c12010606d927bebb56ecb644ca842b0bd77f989b504a1c198c3ebe5",
+          "bytes_before": 13010,
+          "bytes_after": 18737,
+          "delta_bytes": 5727
+        },
+        "improvements": [
+          "Langue body : score DE=297 / FR=27 (inversion totale vs DE=4/FR=197 avant refonte)",
+          "13 H2 + 12 H3 traduits en allemand natif",
+          "Nouvelle section H2 'Optimale Einstellungen für WP Rocket und FlyingPress' (insight thruuu/dowebwork pos 14)",
+          "2 boutons Kadence brand-strict (advancedbtn, palette9, gradient #00D400) remplacent les has-surecart-background-color",
+          "Image lead avec cloak /flyingpress/ (au lieu du lien affilié direct flyingpress.com/?ref=fodc)",
+          "Lien interne recâblé : /nettoyer-base-donnees-wordpress/ → /de/wordpress-datenbank-reinigen/",
+          "Ninja table 349277 préservée (déjà multilingue DE)",
+          "Shortcode rank_math_rich_snippet FAQ conservé",
+          "[CTA_STANDARD] placeholder retiré",
+          "0 em-dash / 0 en-dash dans body",
+          "0 mention '2024'/'2025' dans body (sauf 1 dans URL upload /2024/06/ du logo SVG, légitime)",
+          "Tutoiement DE (du/dein/deine) cohérent BRAND_RULES"
+        ]
+      }
+    ]
+  },
+  "verify_prod": {
+    "sha_roundtrip_match": true,
+    "http_code_de_page": 200,
+    "body_length": 289865,
+    "has_optimale_einstellungen": true,
+    "has_das_schnelle_urteil": true,
+    "old_le_verdict_rapide_absent": true,
+    "has_fazit": true,
+    "has_kadence_button_flyingpress": true,
+    "new_post_title_in_html": true,
+    "old_post_title_absent": true,
+    "cta_standard_placeholder_absent": true
+  },
+  "cache_purges": {
+    "flyingpress_hooks_fired": ["flying_press_purge_url", "flying_press_purge_post", "fp_purge_url"],
+    "flyingpress_disk_files_deleted": ["index.html.gz (77395 b)", "index.json.gz (12073 b)"],
+    "fp_caching_refresh_cache": "called",
+    "wp_core_clean_post_cache": true,
+    "sandbox_b64_cleanup": "deleted"
+  },
+  "ninja_table_349277_verified_multilingual": {
+    "title": "FlyingPress vs. WP Rocket: Welches ist das beste WordPress-Cache-Plugin?",
+    "rows_de": [
+      {"plugin": "FlyingPress", "jahrespreis_1_standort": "49 $ (42 $ bei Verlängerung)", "kostenlose_version": "Keine kostenlose Version", "ruckerstattung": "14 Tage"},
+      {"plugin": "WP Rocket", "jahrespreis_1_standort": "59 $", "kostenlose_version": "Keine kostenlose Version", "ruckerstattung": "14 Tage"}
+    ]
+  },
+  "cloak_routing_audit": {
+    "schoolswp.com/flyingpress/": {"code": 307, "location": "https://flyingpress.com?aff=fodc", "verdict": "ok_universal"},
+    "schoolswp.com/wp-rocket/": {"code": 307, "location": "https://wp-rocket.me/?ref=69f9e3e7", "verdict": "ok_universal"},
+    "schoolswp.com/de/flyingpress/": {"code": 301, "location": "https://schoolswp.com/flyingpress-avis/", "verdict": "BROKEN_routes_to_FR_review"},
+    "schoolswp.com/de/wp-rocket/": {"code": 301, "location": "https://schoolswp.com/en/wp-rocket-review/", "verdict": "BROKEN_routes_to_EN_review"},
+    "decision_taken": "Body DE utilise cloaks universels sans préfixe /de/ (qui marchent depuis n'importe quelle langue). Bug Polylang-aware du mu-plugin schoolswp-affiliate-cloaks à corriger en P2 séparé."
+  },
+  "remaining_residuals_p1": [
+    "1 occurrence '2025' dans attachment 350864 description (non SEO-critique, dernière phrase de la description)",
+    "1 occurrence '2024' dans le body via URL d'upload du logo FlyingPress SVG /2024/06/flyingpress-logo-1755763372.svg (chemin upload légitime, à laisser)"
+  ],
+  "kpis_to_monitor_post_refonte": {
+    "gsc_filter_page": "/de/vergleich-flyingpress-wp-rocket/",
+    "baseline_2026_05_26": {
+      "position_serp_main_kw": "absent_top_20",
+      "ranked_keywords_de_count": 0,
+      "lang_body_score": "FR=197/DE=4"
+    },
+    "post_refonte_2026_05_26": {
+      "lang_body_score": "DE=297/FR=27",
+      "body_word_count_target": "~2200 mots DE"
+    },
+    "j14_target_date": "2026-06-09",
+    "j14_target_metric": "émerger sur ≥ 1 keyword DE rank_group ≤ 30",
+    "j30_target_date": "2026-06-25",
+    "j30_target_metric": "re-audit complet + nouveau state-after-v2.json + comparer SERP DE"
+  },
+  "next_actions_michael": [
+    "GSC Inspect URL https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/ + Request Indexing — DONE 2026-05-26 (URL ajoutée à la file d'attente d'exploration prioritaire)",
+    "Monitorer position de_DE sur 'flyingpress vs wp rocket' à J+7 (2026-06-02) — Calendar event id=dnaouu6on9grrnq4d2ajo6gv3o (popup 30 min avant + email J-1)",
+    "Re-audit complet J+30 (2026-06-25) — Calendar event id=tohb12hl4ilfhphgctsjqimkqg (popup 60 min avant + email J-1)"
+  ],
+  "documentation": {
+    "audit_md": "audit.md",
+    "synthese": "../../flyingpress-wp-rocket-comparison-fr/2026-05-26/synthese-cross-langues.md",
+    "ranked_kw_csv": "dataforseo-ranked-keywords-de.csv",
+    "ranked_kw_json": "dataforseo-ranked-keywords-de.json",
+    "drive_sheet": "https://drive.google.com/file/d/11U6bIHuVXMQxEKUykJyTEi86_n0Y8tmdvqMHLSyWeDA/view",
+    "thruuu_docx": "Expor_audit_6a1566e96d4d2c2ae02494c5.docx",
+    "thruuu_xlsx": "thruuu_export_flyingpress vs wp rocket_2026-5-26.xlsx",
+    "body_pushed": "body-de-ready-to-push.html (sha256 e1dc5666...)"
+  }
+}

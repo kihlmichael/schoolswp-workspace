@@ -1,0 +1,56 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/fluent-forms-meilleur-plugin-formulaires-wordpress/
+    title: Fluent Forms, mon avis sur le meilleur plugin de formulaires WordPress
+    subject: "Fluent Forms : le constructeur de formulaires WordPress le plus léger"
+    description: "Image à la une de l'avis schoolsWP sur Fluent Forms, le plugin de formulaires WordPress que recommande Michaël KIHL. Constructeur ultra-léger (moins de 20 Ko de CSS/JS), plus de 30 types de champs dans la version gratuite, plus de 45 intégrations CRM et outils, bloc Gutenberg natif en glisser-déposer, et paiements Stripe ou PayPal sans WooCommerce (avec la version Pro)."
+    alt: "Avis Fluent Forms schoolsWP, le constructeur de formulaires WordPress le plus léger, ultra-rapide et complet"
+    keywords:
+      [
+        fluent forms,
+        avis fluent forms,
+        plugin formulaire wordpress,
+        formulaire wordpress,
+        plugin leger,
+        gutenberg,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/fluent-forms-best-wordpress-forms-plugin/
+    title: Fluent Forms, my review of the best WordPress forms plugin
+    subject: "Fluent Forms: the lightest WordPress form builder"
+    description: "Featured image of the schoolsWP review of Fluent Forms, the WordPress forms plugin recommended by Michaël KIHL. An ultra-lightweight builder (under 20 KB of CSS/JS), 30+ field types in the free version, 45+ CRM and tool integrations, a native drag-and-drop Gutenberg block, and Stripe or PayPal payments without WooCommerce (with the Pro version)."
+    alt: "schoolsWP Fluent Forms review, the lightest, fastest and most complete WordPress form builder"
+    keywords:
+      [
+        fluent forms,
+        fluent forms review,
+        wordpress form plugin,
+        wordpress form,
+        lightweight plugin,
+        gutenberg,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/fluent-forms-bestes-wordpress-forms-plugin/
+    title: Fluent Forms, meine Meinung zum besten WordPress-Formular-Plugin
+    subject: "Fluent Forms: der leichteste Formular-Builder für WordPress"
+    description: "Beitragsbild der schoolsWP-Bewertung zu Fluent Forms, dem WordPress-Formular-Plugin, das Michaël KIHL empfiehlt. Ein ultraleichter Builder (unter 20 KB CSS/JS), über 30 Feldtypen in der kostenlosen Version, über 45 CRM- und Tool-Integrationen, ein nativer Gutenberg-Block per Drag-and-drop und Stripe- oder PayPal-Zahlungen ohne WooCommerce (mit der Pro-Version)."
+    alt: "schoolsWP Fluent Forms Bewertung, der leichteste, schnellste und kompletteste Formular-Builder für WordPress"
+    keywords:
+      [
+        fluent forms,
+        fluent forms bewertung,
+        wordpress formular plugin,
+        wordpress formular,
+        leichtes plugin,
+        gutenberg,
+        schoolsWP,
+      ]

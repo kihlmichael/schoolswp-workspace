@@ -1,14 +1,14 @@
-# Scripts vidéo -- Module 6 : Automation funnels -- fondamentaux
+# Scripts vidéo - Module 6 : Automation funnels - fondamentaux
 
 **Formation** : Maîtriser FluentCRM
-**Module** : M6 -- Automation funnels : fondamentaux (Premium)
+**Module** : M6 - Automation funnels : fondamentaux (Premium)
 **Leçons** : 7 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~55 min de vidéo
 **Date** : 2026-03-23
 
 ---
 
-## Leçon 6.1 -- Comprends le vocabulaire : triggers, actions, goals, conditionals
+## Leçon 6.1 : Comprends le vocabulaire : triggers, actions, goals, conditionals
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Tu vas construire tes premiers funnels d'automation. Mais avant de toucher à l'éditeur, tu dois maîtriser quatre mots. Quatre concepts qui reviennent partout. Si tu les comprends bien, tout le reste devient logique.
 
-**[ÉCRAN -- slide "Les 4 piliers d'une automation"]**
+**[ÉCRAN - slide "Les 4 piliers d'une automation"]**
 
 Une automation FluentCRM, c'est un enchaînement de quatre types d'éléments.
 
@@ -32,7 +32,7 @@ Troisième élément : le goal. C'est ton objectif. Le point d'arrivée souhait�
 
 Quatrième élément : le conditional. C'est un embranchement. Tu poses une question à laquelle la réponse est oui ou non. "Le contact a-t-il le tag premium ?" Oui : chemin A. Non : chemin B. C'est le "si".
 
-**[ÉCRAN -- screencast : éditeur automation FluentCRM]**
+**[ÉCRAN - screencast : éditeur automation FluentCRM]**
 
 Voyons ces quatre éléments dans l'éditeur.
 
@@ -48,7 +48,7 @@ Et le conditional crée deux branches visuelles : une branche "oui" à gauche, u
 
 [Survol de chaque type de bloc dans l'éditeur]
 
-**[ÉCRAN -- slide "Analogie : le GPS"]**
+**[ÉCRAN - slide "Analogie : le GPS"]**
 
 Pour retenir : pense à un GPS.
 
@@ -81,7 +81,7 @@ Maintenant que tu as le vocabulaire, on va découvrir l'éditeur visuel où tout
 
 ---
 
-## Leçon 6.2 -- Découvre l'éditeur d'automation visuel
+## Leçon 6.2 : Découvre l'éditeur d'automation visuel
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -89,11 +89,11 @@ Maintenant que tu as le vocabulaire, on va découvrir l'éditeur visuel où tout
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 L'éditeur d'automation de FluentCRM est visuel. Tu construis ton funnel en glissant des blocs les uns après les autres, comme un organigramme. On va faire le tour complet de l'interface.
 
-**[ÉCRAN -- screencast : FluentCRM > Automations]**
+**[ÉCRAN - screencast : FluentCRM > Automations]**
 
 Va dans FluentCRM, puis Automations dans le menu latéral.
 
@@ -109,11 +109,11 @@ Sélectionne "Start from Scratch".
 
 [Clic sur Start from Scratch]
 
-**[ÉCRAN -- screencast : nommage et organisation]**
+**[ÉCRAN - screencast : nommage et organisation]**
 
 Première chose : donne un nom à ton automation. Ce nom est interne, tes contacts ne le verront pas.
 
-Mon conseil : utilise un préfixe par catégorie. Par exemple : "ONBOARD -- Bienvenue formation gratuite" ou "VENTE -- Upsell premium J+7". Ça te permet de retrouver tes automations quand tu en auras 20 ou 30.
+Mon conseil : utilise un préfixe par catégorie. Par exemple : "ONBOARD - Bienvenue formation gratuite" ou "VENTE - Upsell premium J+7". Ça te permet de retrouver tes automations quand tu en auras 20 ou 30.
 
 [Saisie du nom de l'automation]
 
@@ -121,7 +121,7 @@ Tu peux aussi ajouter un label. Les labels sont des étiquettes colorées pour o
 
 [Sélection d'un label]
 
-**[ÉCRAN -- screencast : choix du trigger]**
+**[ÉCRAN - screencast : choix du trigger]**
 
 Maintenant, tu choisis ton trigger. FluentCRM te propose une liste.
 
@@ -137,7 +137,7 @@ Configure le tag. Par exemple : "inscrit-gratuit".
 
 Clique sur "Save Settings". Ton trigger est en place.
 
-**[ÉCRAN -- screencast : ajout d'actions]**
+**[ÉCRAN - screencast : ajout d'actions]**
 
 En dessous du trigger, tu vois un bouton "+". C'est par là que tu ajoutes des actions.
 
@@ -157,7 +157,7 @@ Tu arrives sur l'éditeur d'email intégré. Tu rédiges ton email directement d
 
 Sauvegarde et ferme. Ton premier bloc action apparaît dans le funnel.
 
-**[ÉCRAN -- screencast : navigation dans l'éditeur]**
+**[ÉCRAN - screencast : navigation dans l'éditeur]**
 
 Quelques raccourcis pour naviguer.
 
@@ -171,7 +171,7 @@ Et chaque bloc est cliquable. Un clic ouvre ses paramètres dans le panneau lat�
 
 [Démonstration zoom, déplacement, clic sur un bloc]
 
-**[ÉCRAN -- screencast : statut Draft vs Published]**
+**[ÉCRAN - screencast : statut Draft vs Published]**
 
 Dernier point important. Une automation nouvellement créée est en mode "Draft". Elle ne fait rien.
 
@@ -205,7 +205,7 @@ On commence par les triggers. C'est le point de départ de toute automation.
 
 ---
 
-## Leçon 6.3 -- Les triggers CRM : form submitted, tag applied, list added
+## Leçon 6.3 : Les triggers CRM : form submitted, tag applied, list added
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -213,11 +213,11 @@ On commence par les triggers. C'est le point de départ de toute automation.
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Le trigger, c'est la porte d'entrée de ton automation. FluentCRM en propose une vingtaine, répartis en trois catégories. On va les voir une par une pour que tu saches exactement quand utiliser lequel.
 
-**[ÉCRAN -- slide "3 catégories de triggers"]**
+**[ÉCRAN - slide "3 catégories de triggers"]**
 
 Première catégorie : les triggers CRM. Ce sont les plus utilisés. Ils se déclenchent sur des actions liées à tes contacts dans FluentCRM.
 
@@ -225,7 +225,7 @@ Deuxième catégorie : les triggers WordPress. Ils se déclenchent sur des évé
 
 Troisième catégorie : les triggers d'intégration. Ils se déclenchent quand un événement se produit dans un plugin tiers : WooCommerce, TutorLMS, LearnDash, MemberPress.
 
-**[ÉCRAN -- screencast : triggers CRM dans l'éditeur]**
+**[ÉCRAN - screencast : triggers CRM dans l'éditeur]**
 
 Commençons par les triggers CRM. Ouvre l'éditeur d'automation et clique sur le bloc trigger.
 
@@ -247,7 +247,7 @@ Par exemple : tu appliques le tag "lead-chaud" manuellement ou via un formulaire
 
 **Contact Created.** L'automation démarre dès qu'un nouveau contact est créé dans FluentCRM, quelle que soit la source : import, formulaire, API.
 
-**[ÉCRAN -- slide "Triggers WordPress"]**
+**[ÉCRAN - slide "Triggers WordPress"]**
 
 Maintenant, les triggers WordPress. Ceux-là sont disponibles avec FluentCRM Pro.
 
@@ -255,7 +255,7 @@ Maintenant, les triggers WordPress. Ceux-là sont disponibles avec FluentCRM Pro
 
 **User Login.** L'automation démarre quand un utilisateur se connecte à WordPress. Utile pour déclencher un message de bienvenue après la première connexion.
 
-**[ÉCRAN -- slide "Triggers d'intégration"]**
+**[ÉCRAN - slide "Triggers d'intégration"]**
 
 Enfin, les triggers d'intégration. Ils dépendent des plugins installés.
 
@@ -267,7 +267,7 @@ Avec **Fluent Forms** : "Form Submitted". C'est le trigger que tu utiliseras le 
 
 [Affichage de quelques triggers d'intégration]
 
-**[ÉCRAN -- screencast : configuration avancée d'un trigger]**
+**[ÉCRAN - screencast : configuration avancée d'un trigger]**
 
 Un point important sur la configuration. Chaque trigger a une option "Run For" :
 
@@ -300,7 +300,7 @@ Tu sais comment démarrer une automation. Maintenant, on va voir ce que tu peux 
 
 ---
 
-## Leçon 6.4 -- Les actions : send email, apply tag, wait, create WP user
+## Leçon 6.4 : Les actions : send email, apply tag, wait, create WP user
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -308,11 +308,11 @@ Tu sais comment démarrer une automation. Maintenant, on va voir ce que tu peux 
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Le trigger fait entrer le contact dans l'automation. Les actions définissent ce qui lui arrive ensuite. FluentCRM en propose une quinzaine. On va voir les plus importantes et celles que tu utiliseras au quotidien.
 
-**[ÉCRAN -- screencast : panneau des actions dans l'éditeur]**
+**[ÉCRAN - screencast : panneau des actions dans l'éditeur]**
 
 Dans l'éditeur d'automation, clique sur le "+" pour voir les actions disponibles.
 
@@ -320,7 +320,7 @@ Dans l'éditeur d'automation, clique sur le "+" pour voir les actions disponible
 
 On va les parcourir par ordre de fréquence d'utilisation.
 
-**[ÉCRAN -- screencast : Send Custom Email]**
+**[ÉCRAN - screencast : Send Custom Email]**
 
 **Send Custom Email.** C'est l'action numéro un. Tu crées un email directement dans l'automation. Tu as le même éditeur que pour les campagnes : sujet, pré-header, contenu avec blocs Gutenberg, smart codes.
 
@@ -330,7 +330,7 @@ La différence avec une campagne : cet email est envoyé automatiquement, au mom
 
 Tu peux aussi utiliser "Send Sequence Email" si tu veux envoyer un email qui fait partie d'une séquence existante. Mais pour les automations, le Custom Email offre plus de flexibilité.
 
-**[ÉCRAN -- screencast : Wait]**
+**[ÉCRAN - screencast : Wait]**
 
 **Wait.** C'est l'action de temporisation. Tu définis un délai avant l'action suivante.
 
@@ -340,7 +340,7 @@ Les options : minutes, heures, jours. Tu peux aussi programmer à un jour et une
 
 La question que tout le monde pose : quel délai mettre entre deux emails ? Il n'y a pas de règle absolue. Mais voici un repère : pour une séquence de bienvenue, 1 à 2 jours entre chaque email. Pour une séquence de vente, 2 à 3 jours. Si tu espaces trop, ton contact t'oublie. Si tu enchaînes trop vite, tu passes pour du spam.
 
-**[ÉCRAN -- screencast : Apply Tag / Remove Tag]**
+**[ÉCRAN - screencast : Apply Tag / Remove Tag]**
 
 **Apply Tag.** Ajoute un tag au contact. C'est là pour la segmentation automatique. Par exemple : après avoir ouvert l'email 3, tu appliques le tag "engagé-séquence-welcome".
 
@@ -348,13 +348,13 @@ La question que tout le monde pose : quel délai mettre entre deux emails ? Il n
 
 **Remove Tag.** Retire un tag. Utile pour nettoyer les segments. Par exemple : une fois que le contact a terminé la séquence, tu retires le tag "en-onboarding".
 
-**[ÉCRAN -- screencast : Apply List / Remove List]**
+**[ÉCRAN - screencast : Apply List / Remove List]**
 
 **Apply to List / Remove from List.** Même principe, mais pour les listes. Tu ajoutes ou retires le contact d'une liste spécifique.
 
 Combine avec les tags, ça te donne un système de segmentation puissant. Le tag pour le comportement ("a-cliqué-upsell"), la liste pour le statut ("Clients premium").
 
-**[ÉCRAN -- screencast : Create WordPress User]**
+**[ÉCRAN - screencast : Create WordPress User]**
 
 **Create WordPress User.** C'est une action spécifique à FluentCRM Pro.
 
@@ -366,7 +366,7 @@ Cas d'usage concret dans le contexte schoolsWP : un visiteur s'inscrit à ta for
 
 [Affichage de la configuration complète]
 
-**[ÉCRAN -- screencast : autres actions utiles]**
+**[ÉCRAN - screencast : autres actions utiles]**
 
 Quelques actions supplémentaires à connaître.
 
@@ -400,7 +400,7 @@ Tu as les triggers et les actions. Il manque une pièce : comment créer des che
 
 ---
 
-## Leçon 6.5 -- Les conditionnels : crée des chemins oui/non
+## Leçon 6.5 : Les conditionnels : crée des chemins oui/non
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -408,11 +408,11 @@ Tu as les triggers et les actions. Il manque une pièce : comment créer des che
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Jusqu'ici, tes automations suivent un chemin linéaire. Le contact entre, il reçoit les actions les unes après les autres. Mais dans la vraie vie, tous tes contacts ne se comportent pas pareil. Les conditionals te permettent de créer des embranchements : un chemin pour ceux qui font X, un autre pour ceux qui ne le font pas.
 
-**[ÉCRAN -- screencast : ajout d'un conditional dans l'éditeur]**
+**[ÉCRAN - screencast : ajout d'un conditional dans l'éditeur]**
 
 Dans l'éditeur d'automation, clique sur "+" et sélectionne "If/Else (Has Tag)".
 
@@ -424,7 +424,7 @@ Tu vois deux branches apparaître. À gauche, la branche "Yes". À droite, la br
 
 C'est aussi simple que ça. Tu poses une condition, et le contact suit le chemin correspondant.
 
-**[ÉCRAN -- screencast : types de conditionals]**
+**[ÉCRAN - screencast : types de conditionals]**
 
 FluentCRM propose plusieurs types de conditions.
 
@@ -440,7 +440,7 @@ FluentCRM propose plusieurs types de conditions.
 
 [Configuration Email Activity : "Has opened email step 2"]
 
-**[ÉCRAN -- slide "Exemple concret : conditional après un email"]**
+**[ÉCRAN - slide "Exemple concret : conditional après un email"]**
 
 Voici un cas réel. Tu envoies un email avec un lien vers ton offre premium.
 
@@ -454,7 +454,7 @@ Branche Non : tu envoies un email de relance avec un angle différent. Peut-êtr
 
 [Affichage du funnel complet avec les deux branches]
 
-**[ÉCRAN -- screencast : imbrication de conditionals]**
+**[ÉCRAN - screencast : imbrication de conditionals]**
 
 Tu peux imbriquer des conditionals. Un conditional dans une branche d'un autre conditional.
 
@@ -462,7 +462,7 @@ Tu peux imbriquer des conditionals. Un conditional dans une branche d'un autre c
 
 Mais attention : ne surcharge pas. Deux niveaux d'imbrication, c'est le maximum raisonnable. Au-delà, ton funnel devient illisible et difficile à maintenir. Si tu as besoin de plus de branches, découpe en plusieurs automations séparées.
 
-**[ÉCRAN -- screencast : convergence des branches]**
+**[ÉCRAN - screencast : convergence des branches]**
 
 Après un conditional, tu peux faire converger les deux branches vers la même suite d'actions. Pour ça, tu ajoutes les mêmes actions à la fin de chaque branche.
 
@@ -491,7 +491,7 @@ Tu as les triggers, les actions, les conditionals. Tu as tous les ingrédients. 
 
 ---
 
-## Leçon 6.6 -- Construis ton premier funnel : inscription → bienvenue → upsell
+## Leçon 6.6 : Construis ton premier funnel : inscription → bienvenue → upsell
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -499,11 +499,11 @@ Tu as les triggers, les actions, les conditionals. Tu as tous les ingrédients. 
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 On passe à la pratique. Tu vas construire un funnel complet de A à Z. Le scénario : un visiteur s'inscrit à ta formation gratuite. Il reçoit une séquence de bienvenue. Puis, au bout de quelques jours, une proposition pour passer en premium. C'est le funnel freemium classique de schoolsWP.
 
-**[ÉCRAN -- slide "Architecture du funnel"]**
+**[ÉCRAN - slide "Architecture du funnel"]**
 
 Voici le plan du funnel avant de le construire.
 
@@ -523,7 +523,7 @@ Trigger : formulaire d'inscription soumis.
 
 Étape 7 : attendre 2 jours.
 
-Étape 8 : conditional -- le contact a-t-il cliqué sur le lien de l'offre ?
+Étape 8 : conditional - le contact a-t-il cliqué sur le lien de l'offre ?
 
 Branche Oui : envoyer un email de rappel avec un lien direct.
 
@@ -531,13 +531,13 @@ Branche Non : envoyer un email de relance avec un témoignage.
 
 Fin du funnel.
 
-**[ÉCRAN -- screencast : création de l'automation]**
+**[ÉCRAN - screencast : création de l'automation]**
 
 Allons-y. Va dans Automations > Create a New Automation > Start from Scratch.
 
 [Clic Create > Start from Scratch]
 
-Nomme-la : "ONBOARD -- Inscription formation gratuite → upsell premium".
+Nomme-la : "ONBOARD - Inscription formation gratuite → upsell premium".
 
 [Saisie du nom]
 
@@ -545,7 +545,7 @@ Ajoute le label "Onboarding".
 
 [Sélection du label]
 
-**[ÉCRAN -- screencast : trigger]**
+**[ÉCRAN - screencast : trigger]**
 
 Pour le trigger, sélectionne "Form Submitted" (si tu utilises Fluent Forms). Choisis ton formulaire d'inscription à la formation gratuite.
 
@@ -555,7 +555,7 @@ Option "Run For" : sélectionne "New" pour éviter les doublons.
 
 Sauvegarde.
 
-**[ÉCRAN -- screencast : étape 1 -- tag + liste]**
+**[ÉCRAN - screencast : étape 1 - tag + liste]**
 
 Clique sur "+". Sélectionne "Apply Tag". Choisis le tag "inscrit-gratuit".
 
@@ -567,13 +567,13 @@ Clique encore sur "+". Sélectionne "Apply to List". Choisis la liste "Formation
 
 Ces deux actions se déclenchent instantanément, l'une après l'autre. Pas besoin de délai entre elles.
 
-**[ÉCRAN -- screencast : étape 2 -- email de bienvenue]**
+**[ÉCRAN - screencast : étape 2 - email de bienvenue]**
 
 Clique sur "+". Sélectionne "Send Custom Email".
 
 [Ouverture de l'éditeur d'email]
 
-Sujet : "Bienvenue dans la formation -- tes accès sont prêts"
+Sujet : "Bienvenue dans la formation - tes accès sont prêts"
 
 Pré-header : "Tout est en place. Connecte-toi et commence maintenant."
 
@@ -583,7 +583,7 @@ Corps de l'email : un message court. Le lien de connexion. Les instructions pour
 
 Sauvegarde.
 
-**[ÉCRAN -- screencast : étape 3 -- délai + email de valeur]**
+**[ÉCRAN - screencast : étape 3 - délai + email de valeur]**
 
 Clique sur "+". Sélectionne "Wait". Configure : 2 jours.
 
@@ -599,7 +599,7 @@ C'est ton email de valeur. Tu ne vends rien. Tu donnes un conseil utile. Tu cré
 
 Sauvegarde.
 
-**[ÉCRAN -- screencast : étape 4 -- délai + email upsell]**
+**[ÉCRAN - screencast : étape 4 - délai + email upsell]**
 
 Clique sur "+". Sélectionne "Wait". Configure : 3 jours.
 
@@ -615,21 +615,21 @@ C'est ton email d'upsell. Tu présentes la formation premium. Les bénéfices co
 
 Sauvegarde.
 
-**[ÉCRAN -- screencast : étape 5 -- conditional + branches]**
+**[ÉCRAN - screencast : étape 5 - conditional + branches]**
 
 Clique sur "+". Sélectionne "Wait". Configure : 2 jours.
 
-Clique sur "+". Sélectionne "If/Else (Email Activity)". Configure : "Has clicked in step" -- et sélectionne l'email d'upsell.
+Clique sur "+". Sélectionne "If/Else (Email Activity)". Configure : "Has clicked in step" - et sélectionne l'email d'upsell.
 
 [Configuration du conditional Email Activity]
 
-Branche Oui : clique sur le "+" sous la branche Yes. Ajoute "Send Custom Email". Sujet : "Une question sur la formation premium ?" -- un email de relance douce avec un lien direct vers le paiement.
+Branche Oui : clique sur le "+" sous la branche Yes. Ajoute "Send Custom Email". Sujet : "Une question sur la formation premium ?" - un email de relance douce avec un lien direct vers le paiement.
 
-Branche Non : clique sur le "+" sous la branche No. Ajoute "Send Custom Email". Sujet : "Ce qu'en dit Thomas, formateur WordPress depuis 5 ans" -- un email avec un témoignage ou un cas concret.
+Branche Non : clique sur le "+" sous la branche No. Ajoute "Send Custom Email". Sujet : "Ce qu'en dit Thomas, formateur WordPress depuis 5 ans" - un email avec un témoignage ou un cas concret.
 
 [Construction des deux branches]
 
-**[ÉCRAN -- screencast : finalisation]**
+**[ÉCRAN - screencast : finalisation]**
 
 À la fin de chaque branche, ajoute "End This Funnel" si tu ne veux pas continuer après.
 
@@ -637,7 +637,7 @@ Et ajoute "Apply Tag" avec "onboarding-terminé" dans chaque branche pour marque
 
 [Ajout des actions finales]
 
-**[ÉCRAN -- screencast : vérification et publication]**
+**[ÉCRAN - screencast : vérification et publication]**
 
 Avant de publier, vérifie chaque étape en cliquant dessus. Relis les emails. Vérifie les délais. Vérifie les tags.
 
@@ -659,7 +659,7 @@ Ton funnel tourne. Mais comment savoir s'il fonctionne ? Dans la prochaine leço
 
 **Points clés** :
 - Funnel freemium : inscription gratuit → séquence valeur → offre premium → relance
-- Nommage : préfixe + description (ONBOARD -- Inscription formation gratuite → upsell premium)
+- Nommage : préfixe + description (ONBOARD - Inscription formation gratuite → upsell premium)
 - Délais recommandés : 2 jours (bienvenue → valeur), 3 jours (valeur → upsell), 2 jours (upsell → relance)
 - Conditional Email Activity pour adapter la relance selon le comportement
 - Toujours ajouter un tag de fin pour marquer le parcours complet
@@ -669,7 +669,7 @@ Ton funnel tourne. Mais comment savoir s'il fonctionne ? Dans la prochaine leço
 
 ---
 
-## Leçon 6.7 -- Lis les rapports d'automation
+## Leçon 6.7 : Lis les rapports d'automation
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -677,11 +677,11 @@ Ton funnel tourne. Mais comment savoir s'il fonctionne ? Dans la prochaine leço
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 Ton funnel tourne depuis quelques jours. Des contacts entrent, reçoivent des emails. Mais est-ce que ça marche ? FluentCRM te donne des rapports détaillés pour chaque automation. On va apprendre à les lire.
 
-**[ÉCRAN -- screencast : FluentCRM > Automations > liste]**
+**[ÉCRAN - screencast : FluentCRM > Automations > liste]**
 
 Retourne dans Automations. Sur la liste, tu vois déjà des chiffres à côté de chaque automation.
 
@@ -693,7 +693,7 @@ Le nombre de contacts "Completed" : ceux qui ont atteint la fin du funnel.
 
 Ces deux chiffres te donnent un aperçu rapide sans même ouvrir l'automation.
 
-**[ÉCRAN -- screencast : vue interne du funnel]**
+**[ÉCRAN - screencast : vue interne du funnel]**
 
 Ouvre ton automation. Sur chaque bloc, tu vois le nombre de contacts qui ont passé cette étape.
 
@@ -701,7 +701,7 @@ Ouvre ton automation. Sur chaque bloc, tu vois le nombre de contacts qui ont pas
 
 C'est là que tu détectes les problèmes. Si 100 contacts entrent par le trigger et que seulement 60 passent l'étape "Email de bienvenue", il y a un souci. Peut-être que 40 contacts avaient un email invalide. Peut-être que le délai est trop long et ils se désabonnent avant.
 
-**[ÉCRAN -- screencast : stats d'un email dans l'automation]**
+**[ÉCRAN - screencast : stats d'un email dans l'automation]**
 
 Clique sur un bloc "Send Custom Email". Dans les paramètres, tu trouves un onglet "Stats" ou "Report".
 
@@ -711,7 +711,7 @@ Tu retrouves les mêmes métriques que pour une campagne : emails envoyés, taux
 
 Compare les taux entre les différents emails de ton funnel. Si le premier email a 45% d'ouverture et le troisième seulement 15%, c'est normal : l'engagement diminue au fil de la séquence. Mais si la chute est brutale entre deux emails consécutifs, revois le contenu ou le délai.
 
-**[ÉCRAN -- screencast : vue des contacts dans le funnel]**
+**[ÉCRAN - screencast : vue des contacts dans le funnel]**
 
 En haut de l'automation, clique sur "Subscribers" ou "Contacts".
 
@@ -725,7 +725,7 @@ Tu peux filtrer par statut. Les contacts "Cancelled" méritent une attention par
 
 Sur la fiche du contact, tu vois exactement à quelle étape il se trouve et quand il est passé par chaque bloc.
 
-**[ÉCRAN -- slide "Les 4 métriques à surveiller"]**
+**[ÉCRAN - slide "Les 4 métriques à surveiller"]**
 
 Récapitulons les quatre métriques à surveiller.
 
@@ -759,7 +759,7 @@ Tu maîtrises les fondamentaux des automations. Dans la prochaine leçon, tu pas
 
 ---
 
-## Leçon 6.8 -- Exercice : crée un funnel de bienvenue pour ta formation gratuite
+## Leçon 6.8 : Exercice : crée un funnel de bienvenue pour ta formation gratuite
 
 **Durée** : 6 min
 **Type** : Exercice guidé
@@ -767,11 +767,11 @@ Tu maîtrises les fondamentaux des automations. Dans la prochaine leçon, tu pas
 
 ---
 
-**[INTRO -- face caméra]**
+**[INTRO - face caméra]**
 
 C'est l'heure de pratiquer. Tu vas créer un funnel de bienvenue complet par toi-même. Je te donne le cahier des charges, tu construis. Puis je te montre la solution.
 
-**[ÉCRAN -- slide "Cahier des charges"]**
+**[ÉCRAN - slide "Cahier des charges"]**
 
 Voici ton exercice.
 
@@ -805,7 +805,7 @@ Voici ton exercice.
 
 **Temps estimé** : 15-20 minutes.
 
-**[ÉCRAN -- slide "Checklist avant de vérifier"]**
+**[ÉCRAN - slide "Checklist avant de vérifier"]**
 
 Avant de regarder la solution, coche cette liste.
 
@@ -823,7 +823,7 @@ Mets la vidéo en pause et construis ton funnel. Prends ton temps. Reviens quand
 
 [Pause de 3 secondes]
 
-**[ÉCRAN -- screencast : solution commentée]**
+**[ÉCRAN - screencast : solution commentée]**
 
 Voici la solution. Je vais parcourir chaque étape rapidement.
 
@@ -833,7 +833,7 @@ Le trigger : Tag Applied, tag "inscrit-gratuit", Run For "New". Correct.
 
 Les actions immédiates : Apply Tag "en-onboarding", Apply to List "Formation Gratuite". Deux blocs enchaînés sans délai.
 
-Email 1 : sujet "Bienvenue -- tes accès sont prêts". Pré-header rempli. Contenu avec un lien d'accès bien visible.
+Email 1 : sujet "Bienvenue - tes accès sont prêts". Pré-header rempli. Contenu avec un lien d'accès bien visible.
 
 Wait 2 jours.
 
@@ -876,7 +876,7 @@ Dernier arrêt pour ce module : un quiz pour valider tes acquis.
 
 ---
 
-## Quiz M6 -- Automation funnels : fondamentaux
+## Quiz M6 - Automation funnels : fondamentaux
 
 **Type** : Quiz TutorLMS (8 questions)
 **Seuil de réussite** : 80%

@@ -1,6 +1,0 @@
-{
-  "eval_id": 2,
-  "eval_name": "wprocket-court",
-  "prompt": "Fais-moi une séquence courte (3 emails) pour WP Rocket. Plugin de cache WordPress, freemium (version gratuite limitée, Pro à 49€/an). Fonctionnalités clés : cache page, lazy loading, minification CSS/JS. Pro : CDN intégré, preloading, optimisation base de données. Mon expérience : temps de chargement divisé par 2 en 10 minutes. Lien : schoolswp.com/recommande/wp-rocket",
-  "assertions": []
-}

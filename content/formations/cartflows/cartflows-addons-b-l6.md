@@ -1,9 +1,9 @@
-# Lecon B.6 — Analyser le tableau de bord : taux de recuperation
+# Lecon B.6 - Analyser le tableau de bord : taux de recuperation
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : B — Cart Abandonment Recovery
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : B - Cart Abandonment Recovery
 - **Duree cible** : 8 min (~1 100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Lire et interpreter le tableau de bord Cart Abandonment Recovery (metriques cles, taux objectifs) et identifier quel email de la sequence performe le mieux.
@@ -12,15 +12,15 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Ta sequence de relance tourne. Les emails partent automatiquement. Mais est-ce que ca fonctionne ? Combien de paniers tu recuperes ? Quel email convertit le plus ? Le tableau de bord de Cart Abandonment Recovery te donne toutes les reponses.
 
 ---
 
-**[SECTION 1 — Acceder au tableau de bord]**
+**[SECTION 1 - Acceder au tableau de bord]**
 
-**[ECRAN — WooCommerce → Cart Abandonment → Reports]**
+**[ECRAN - WooCommerce → Cart Abandonment → Reports]**
 
 Va dans WooCommerce → Cart Abandonment → Reports. C'est le centre de controle de ta recuperation de paniers.
 
@@ -35,9 +35,9 @@ C'est le revenu recupere qui te donne la reponse a la question la plus important
 
 ---
 
-**[SECTION 2 — Le taux de recuperation : objectif 20-30%]**
+**[SECTION 2 - Le taux de recuperation : objectif 20-30%]**
 
-**[ECRAN — slide taux de recuperation]**
+**[ECRAN - slide taux de recuperation]**
 
 Le taux de recuperation, c'est le ratio paniers recuperes / paniers abandonnes. C'est ta metrique numero un.
 
@@ -54,15 +54,15 @@ Ne te compare pas aux benchmarks des grandes plateformes (Amazon, Zalando). Elle
 
 ---
 
-**[SECTION 3 — Taux d'ouverture et taux de clic]**
+**[SECTION 3 - Taux d'ouverture et taux de clic]**
 
-**[ECRAN — metriques email par email]**
+**[ECRAN - metriques email par email]**
 
 En dessous du dashboard global, tu as les metriques par email.
 
 **Taux d'ouverture** : le pourcentage de destinataires qui ouvrent l'email. Objectif : plus de 40%.
 
-Les emails de relance ont des taux d'ouverture naturellement eleves parce qu'ils sont pertinents — le client reconnait le contexte. C'est pas une newsletter aleatoire, c'est un rappel de quelque chose qu'il a fait il y a quelques heures.
+Les emails de relance ont des taux d'ouverture naturellement eleves parce qu'ils sont pertinents - le client reconnait le contexte. C'est pas une newsletter aleatoire, c'est un rappel de quelque chose qu'il a fait il y a quelques heures.
 
 Si ton taux d'ouverture est en dessous de 30%, le probleme est dans l'objet de l'email. Teste des variantes. Remplace "Ton panier t'attend" par "Tu as oublie {{cart.product.name}}". L'objet avec le nom du produit performe souvent mieux.
 
@@ -74,15 +74,15 @@ Un bon reflexe : place le lien `{{cart.checkout_url}}` en haut de l'email ET en 
 
 ---
 
-**[SECTION 4 — Analyser par email : quel email convertit le plus]**
+**[SECTION 4 - Analyser par email : quel email convertit le plus]**
 
-**[ECRAN — tableau comparatif email 1 vs 2 vs 3]**
+**[ECRAN - tableau comparatif email 1 vs 2 vs 3]**
 
 Le tableau de bord te permet de voir les performances de chaque email individuellement. C'est crucial pour optimiser ta sequence.
 
 Pattern typique :
 
-- **Email 1 (15 min)** : le plus gros volume de recuperation. 50-60% des paniers recuperes viennent de cet email. Normal — c'est le plus proche de l'abandon, et beaucoup d'abandons sont des accidents.
+- **Email 1 (15 min)** : le plus gros volume de recuperation. 50-60% des paniers recuperes viennent de cet email. Normal - c'est le plus proche de l'abandon, et beaucoup d'abandons sont des accidents.
 - **Email 2 (24h)** : recuperation moderee. 20-30% des recuperations. Les clients qui avaient besoin de reflechir.
 - **Email 3 (3 jours)** : le coupon fait la difference. 10-20% des recuperations, mais le montant moyen est souvent plus eleve (les clients qui attendent le coupon ont souvent des paniers plus gros).
 
@@ -90,9 +90,9 @@ Si l'email 1 ne convertit pas du tout, verifie que le delai de 15 minutes est re
 
 ---
 
-**[SECTION 5 — Frequence d'analyse]**
+**[SECTION 5 - Frequence d'analyse]**
 
-**[ECRAN — calendrier de suivi]**
+**[ECRAN - calendrier de suivi]**
 
 Ne regarde pas le tableau de bord tous les jours. Les donnees sur 24 heures ne sont pas significatives.
 
@@ -107,7 +107,7 @@ Si la reponse est oui aux trois, ta sequence fonctionne. Tu peux passer a l'opti
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
 Le tableau de bord te dit exactement ce qui fonctionne et ce qui ne fonctionne pas. Paniers recuperes, revenu genere, performance par email. Pas de devinettes, des donnees.
 

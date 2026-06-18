@@ -1,0 +1,46 @@
+{
+  "source": "dataforseo_labs_google_keyword_overview (intent_info)",
+  "fetch_date": "2026-05-25",
+  "items": [
+    {
+      "keyword": "linkuma",
+      "main_intent": "informational",
+      "foreign_intent": null
+    },
+    {
+      "keyword": "linkuma avis",
+      "main_intent": "informational",
+      "foreign_intent": null
+    },
+    {
+      "keyword": "avis linkuma",
+      "main_intent": "informational",
+      "foreign_intent": [
+        "commercial"
+      ]
+    },
+    {
+      "keyword": "linkuma prix",
+      "main_intent": "commercial"
+    },
+    {
+      "keyword": "linkuma review",
+      "main_intent": "commercial",
+      "foreign_intent": [
+        "informational"
+      ]
+    },
+    {
+      "keyword": "linkuma code promo",
+      "main_intent": "commercial"
+    },
+    {
+      "keyword": "linkuma annecy",
+      "main_intent": "navigational"
+    },
+    {
+      "keyword": "linkuma recrutement",
+      "main_intent": "navigational"
+    }
+  ]
+}

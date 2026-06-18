@@ -38,15 +38,15 @@ content/audits/
 
 ## Convention de nommage
 
-| Élément | Format | Exemple |
-| --- | --- | --- |
-| Slug article | slug WordPress strict (sans année, sans "schoolswp") | `masteriyo-lms-avis` |
-| Date snapshot | `YYYY-MM-DD` (jour de l'audit, pas date Rank Math) | `2026-05-07` |
-| Synthèse | `synthese.md` (toujours ce nom) | - |
-| Snapshot article | `article-current-snapshot.md` | - |
-| Dumps APIs | `<source>-<scope>.json` | `gsc-90d.json`, `dataforseo-serp-fr.json` |
-| Raw thruuu | sous-dossier `thruuu-raw/` | - |
-| Diff inter-snapshots | `_diff.md` (préfixe underscore = méta-fichier) | - |
+| Élément              | Format                                               | Exemple                                   |
+| -------------------- | ---------------------------------------------------- | ----------------------------------------- |
+| Slug article         | slug WordPress strict (sans année, sans "schoolswp") | `masteriyo-lms-avis`                      |
+| Date snapshot        | `YYYY-MM-DD` (jour de l'audit, pas date Rank Math)   | `2026-05-07`                              |
+| Synthèse             | `synthese.md` (toujours ce nom)                      | -                                         |
+| Snapshot article     | `article-current-snapshot.md`                        | -                                         |
+| Dumps APIs           | `<source>-<scope>.json`                              | `gsc-90d.json`, `dataforseo-serp-fr.json` |
+| Raw thruuu           | sous-dossier `thruuu-raw/`                           | -                                         |
+| Diff inter-snapshots | `_diff.md` (préfixe underscore = méta-fichier)       | -                                         |
 
 ## Contenu attendu de `synthese.md`
 
@@ -81,6 +81,7 @@ Sections types (adapter selon contexte) :
 3. **Collecte données** :
    - GSC 90j queries + URL inspect
    - DataForSEO volume + SERP FR + suggestions + intent
+   - **Ubersuggest (obligatoire, recoupement)** volume + SERP (avec Domain Authority) + suggestions + difficulté SEO (SD) — `locId` France = 2250, `language` fr
    - thruuu SERP + audit article (export raw → `thruuu-raw/`). ⚠️ thruuu ne sait PAS scraper un article en **brouillon** : il récupère la page 404 du site (titre « 404 », ~30 mots). Pour un audit pré-publication, seul l'export **SERP** est exploitable ; l'audit page thruuu est à ignorer.
    - defuddle parse de l'URL → `article-current-snapshot.md` (ou `post_content` via Novamira si brouillon)
 4. **Rédaction `synthese.md`** : analyse + décision + plan
@@ -105,10 +106,13 @@ Trois niveaux de comparaison possibles :
 
 ## Tableau Google Sheets des volumes (livrable systématique)
 
-À **chaque audit d'article**, créer un Google Sheet sur le Drive de Michael avec les données DataForSEO du champ sémantique : volumes FR, concurrence, CPC, difficulté SEO (KD), intention, tendance annuelle + historique mensuel 12 mois. Le CSV source est colocalisé dans le snapshot (`dataforseo-google-sheet.csv`).
+À **chaque audit d'article**, créer un Google Sheet sur le Drive de Michael avec **les données des DEUX sources fusionnées (DataForSEO + Ubersuggest)** sur le champ sémantique : volumes FR (DFS + Ubersuggest côte à côte), concurrence, CPC, difficulté SEO (KD DataForSEO + SD Ubersuggest), intention, tendance + historique mensuel 12 mois. Le CSV source fusionné est colocalisé dans le snapshot (`seo-volumes-google-sheet.csv` ; le dump DFS brut reste dans `dataforseo-google-sheet.csv`).
+
+> **Règle permanente (2026-06-03)** : Ubersuggest n'est PAS optionnel. Toujours lancer l'analyse Ubersuggest (`locId` France = 2250, `language` fr) en plus de DataForSEO, et **fusionner les deux dans le même Sheet** (jamais un fichier séparé). Ubersuggest apporte la Domain Authority des concurrents + la difficulté SEO, absentes de DataForSEO. Cf. mémoire `feedback_audit_dual_source_ubersuggest`.
 
 - **Création** : via le connecteur Google Drive de claude.ai (`text/csv` → conversion auto en Sheet). La CLI `gws` est une alternative quand son auth fonctionne.
 - **Nommage** : `schoolsWP - Volumes SEO - <sujet> - <YYYY-MM-DD>`.
+- **Audit multilingue : un onglet par marché, jamais de table à plat.** Si l'article a plusieurs marchés (FR / DE / EN), NE PAS mélanger les marchés dans une seule table avec colonne `marche` (illisible pour comparer des séries mensuelles). Créer **un onglet par marché dans le même fichier**. Méthode : générer un `.xlsx` à N feuilles avec `openpyxl`, puis uploader+convertir en Sheet natif via `gws drive files create --upload <xlsx> --upload-content-type "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" --json '{"name":"...","mimeType":"application/vnd.google-apps.spreadsheet"}'`. Le connecteur Drive CSV ne crée qu'un seul onglet, d'où le passage par xlsx + gws. CSV par marché colocalisés (`volumes-fr.csv`, `volumes-de.csv`, `volumes-en.csv`) + script `build-xlsx.py` reproductible. Cf. mémoire `feedback_audit_dual_source_ubersuggest`.
 - **Objectif final** : centraliser les données de tous les articles audités dans un **tableau commun de surveillance SEO** (une ligne ou un onglet par article). Pour l'instant : un Sheet par audit ; la consolidation viendra ensuite.
 
 ## Règle git

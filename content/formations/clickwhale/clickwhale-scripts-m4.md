@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 4 : Tracking, analytics et QR codes
+# Scripts vidéo - Module 4 : Tracking, analytics et QR codes
 
 **Formation** : Maîtriser ClickWhale
-**Module** : M4 — Tracking, analytics et QR codes (Premium)
+**Module** : M4 - Tracking, analytics et QR codes (Premium)
 **Leçons** : 6 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~45 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 4.1 — Comprends le tracking ClickWhale : ce qui est suivi et comment
+### Leçon 4.1 : Comprends le tracking ClickWhale : ce qui est suivi et comment
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,55 +16,55 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as créé tes liens, tes pages de liens. Maintenant la question : est-ce que quelqu'un clique dessus ? Et sur lesquels ? Dans cette leçon, je t'explique exactement ce que ClickWhale suit, comment il le fait, et où tu retrouves ces données.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Statistics dans le menu latéral]
 
 Première bonne nouvelle : le tracking est actif par défaut dès l'installation de ClickWhale. Tu n'as rien à configurer, rien à activer manuellement. Dès que tu crées un lien et que quelqu'un clique dessus, ClickWhale enregistre l'information.
 
-**[ÉCRAN — slide "Ce qui est tracké"]**
+**[ÉCRAN - slide "Ce qui est tracké"]**
 
 Qu'est-ce qui est enregistré exactement à chaque clic ?
 
-Trois choses. Le timestamp — la date et l'heure exacte du clic. Le referrer — d'où vient le visiteur qui a cliqué (Google, un article de ton site, un réseau social). Et le user agent — le type de navigateur et d'appareil utilisé.
+Trois choses. Le timestamp - la date et l'heure exacte du clic. Le referrer - d'où vient le visiteur qui a cliqué (Google, un article de ton site, un réseau social). Et le user agent - le type de navigateur et d'appareil utilisé.
 
 Ces trois données te permettent de répondre à trois questions : quand est-ce que les gens cliquent, d'où ils viennent, et sur quel type d'appareil.
 
-**[ÉCRAN — screencast du dashboard Statistics]**
+**[ÉCRAN - screencast du dashboard Statistics]**
 
 [Montre le menu ClickWhale > Statistics]
 
 Pour accéder à tes statistiques, va dans le menu latéral de WordPress, clique sur ClickWhale, puis sur Statistics. C'est ton tableau de bord de tracking. On va le détailler dans la leçon 4.3.
 
-**[ÉCRAN — slide "RGPD et respect de la vie privée"]**
+**[ÉCRAN - slide "RGPD et respect de la vie privée"]**
 
 Point important sur la vie privée. ClickWhale ne dépose aucun cookie sur le navigateur du visiteur. Pas de fingerprinting, pas de suivi entre les sessions. Chaque clic est enregistré de manière isolée, sans identification du visiteur.
 
 Ça veut dire quoi concrètement ? Pas besoin de bandeau cookies supplémentaire pour le tracking ClickWhale. Pas besoin de consentement spécifique. Le tracking est conforme au RGPD de base.
 
-Attention — ça ne te dispense pas d'avoir une politique de confidentialité sur ton site. Mais le tracking ClickWhale en lui-même ne pose pas de problème de conformité.
+Attention - ça ne te dispense pas d'avoir une politique de confidentialité sur ton site. Mais le tracking ClickWhale en lui-même ne pose pas de problème de conformité.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Tu sais maintenant ce que ClickWhale suit et comment. Dans la prochaine leçon, je te montre comment activer ou désactiver ce tracking — et surtout dans quels cas tu voudrais le désactiver.
+Tu sais maintenant ce que ClickWhale suit et comment. Dans la prochaine leçon, je te montre comment activer ou désactiver ce tracking - et surtout dans quels cas tu voudrais le désactiver.
 
 ---
 
 **Points clés** :
-- Tracking actif par défaut — aucune configuration nécessaire
+- Tracking actif par défaut - aucune configuration nécessaire
 - Données collectées : timestamp, referrer, user agent
-- Pas de cookies, pas de fingerprinting — conforme RGPD de base
+- Pas de cookies, pas de fingerprinting - conforme RGPD de base
 - Dashboard accessible via ClickWhale > Statistics
 
 **Mots-clés SEO** : tracking ClickWhale, statistiques clics WordPress, tracking liens affiliés, ClickWhale analytics RGPD
 
 ---
 
-### Leçon 4.2 — Active ou désactive le tracking (et pourquoi tu voudrais désactiver)
+### Leçon 4.2 : Active ou désactive le tracking (et pourquoi tu voudrais désactiver)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -72,11 +72,11 @@ Tu sais maintenant ce que ClickWhale suit et comment. Dans la prochaine leçon, 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le tracking est actif par défaut, et dans 90% des cas tu vas le laisser comme ça. Mais il y a des situations où tu veux le couper. Dans cette leçon, je te montre où se trouve le réglage, comment l'utiliser, et surtout quand c'est pertinent de désactiver.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Settings > onglet Tracking]
 
@@ -90,17 +90,17 @@ Le tracking est actif par défaut, et dans 90% des cas tu vas le laisser comme �
 
 C'est tout. Un seul réglage, une seule case.
 
-**[ÉCRAN — slide "Quand désactiver ?"]**
+**[ÉCRAN - slide "Quand désactiver ?"]**
 
 Dans quels cas tu voudrais désactiver le tracking ?
 
 Premier cas : tu es sur un site de staging. Un site de staging, c'est une copie de ton site que tu utilises pour tester des modifications avant de les mettre en production. Sur ce site, tes propres clics de test pollueraient les statistiques. Désactive le tracking sur le staging.
 
-Deuxième cas : tu es sur un site de développement local. Même logique — les clics que tu fais pendant le dev ne sont pas des vrais clics utilisateurs.
+Deuxième cas : tu es sur un site de développement local. Même logique - les clics que tu fais pendant le dev ne sont pas des vrais clics utilisateurs.
 
-Troisième cas : conformité RGPD stricte. Si tu opères dans un contexte très réglementé — santé, éducation, secteur public — et que ton DPO exige zéro collecte de données de navigation, désactive le tracking. C'est rare, mais ça existe.
+Troisième cas : conformité RGPD stricte. Si tu opères dans un contexte très réglementé - santé, éducation, secteur public - et que ton DPO exige zéro collecte de données de navigation, désactive le tracking. C'est rare, mais ça existe.
 
-**[ÉCRAN — slide "Attention : conséquences"]**
+**[ÉCRAN - slide "Attention : conséquences"]**
 
 Un point critique à comprendre. Quand le tracking est désactivé, aucune donnée n'est collectée. Zéro. Et il n'y a pas de retour en arrière.
 
@@ -108,17 +108,17 @@ Si tu désactives le tracking pendant trois mois et que tu le réactives ensuite
 
 Le tracking ne fonctionne pas comme un enregistrement en pause. C'est plutôt comme une caméra de surveillance : quand elle est éteinte, ce qui se passe n'est pas enregistré. Point.
 
-**[ÉCRAN — slide "Recommandation"]**
+**[ÉCRAN - slide "Recommandation"]**
 
 Ma recommandation est simple.
 
-En production — le site que tes visiteurs voient — laisse le tracking actif. Toujours.
+En production - le site que tes visiteurs voient - laisse le tracking actif. Toujours.
 
-Sur staging ou en dev — désactive-le pour ne pas polluer tes données.
+Sur staging ou en dev - désactive-le pour ne pas polluer tes données.
 
 Si tu as plusieurs installations WordPress (prod, staging, dev), vérifie le réglage sur chacune indépendamment.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le tracking est en place. Dans la prochaine leçon, on rentre dans le vif : je te montre comment lire tes statistiques, identifier tes liens les plus performants, et repérer les pics d'activité.
 
@@ -135,7 +135,7 @@ Le tracking est en place. Dans la prochaine leçon, on rentre dans le vif : je t
 
 ---
 
-### Leçon 4.3 — Lis les statistiques : total clics, activité, top liens
+### Leçon 4.3 : Lis les statistiques : total clics, activité, top liens
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -143,17 +143,17 @@ Le tracking est en place. Dans la prochaine leçon, on rentre dans le vif : je t
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as des liens, le tracking tourne. Maintenant il faut lire les données. Dans cette leçon, je te guide écran par écran dans le dashboard Statistics de ClickWhale. Tu vas apprendre à repérer tes liens les plus cliqués, identifier les pics d'activité, et filtrer par période.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Statistics]
 
 Va dans ClickWhale, puis Statistics. C'est ton tableau de bord principal.
 
-**[ÉCRAN — screencast vue d'ensemble]**
+**[ÉCRAN - screencast vue d'ensemble]**
 
 [Montre le chiffre "Total Clicks"]
 
@@ -161,7 +161,7 @@ En haut, tu vois le total de clics sur la période sélectionnée. C'est le nomb
 
 Ce chiffre seul ne dit pas grand-chose. Ce qui compte, c'est son évolution dans le temps et sa répartition par lien. C'est ce qu'on va voir maintenant.
 
-**[ÉCRAN — screencast timeline]**
+**[ÉCRAN - screencast timeline]**
 
 [Montre le graphique d'activité jour par jour]
 
@@ -175,7 +175,7 @@ Les creux. Si tu vois des jours à zéro clic, ça peut signifier que tes articl
 
 Les tendances. Est-ce que tes clics augmentent semaine après semaine ? Stagnent ? Diminuent ? La tendance sur 30 jours est plus fiable qu'un chiffre quotidien.
 
-**[ÉCRAN — screencast top liens]**
+**[ÉCRAN - screencast top liens]**
 
 [Montre le classement des liens les plus cliqués]
 
@@ -183,7 +183,7 @@ En dessous de la timeline, tu as le classement de tes liens les plus cliqués. C
 
 Ce classement te dit exactement quels liens attirent le plus de clics. Si ton lien affilié TutorLMS a 150 clics et ton lien WP Rocket en a 8, la conclusion est claire : TutorLMS intéresse beaucoup plus ton audience.
 
-**[ÉCRAN — screencast filtres de période]**
+**[ÉCRAN - screencast filtres de période]**
 
 [Montre les filtres : 7 jours, 30 jours, custom]
 
@@ -191,7 +191,7 @@ Tu peux filtrer les statistiques par période. Trois options : les 7 derniers jo
 
 Pour une lecture hebdomadaire, utilise les 7 derniers jours. Pour un bilan mensuel, les 30 derniers jours. Et pour comparer deux mois entre eux, utilise la période custom.
 
-**[ÉCRAN — slide "Comment lire ses stats"]**
+**[ÉCRAN - slide "Comment lire ses stats"]**
 
 Voici comment je te recommande de lire tes statistiques.
 
@@ -201,7 +201,7 @@ Une fois par mois, passe sur les 30 derniers jours. Compare avec le mois précé
 
 C'est cette routine qui transforme tes données en décisions. On va approfondir l'analyse dans la leçon suivante.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais lire tes statistiques. Dans la prochaine leçon, on va plus loin : je te montre comment croiser tes clics ClickWhale avec tes conversions réelles pour savoir quels liens affiliés rapportent vraiment.
 
@@ -219,7 +219,7 @@ Tu sais lire tes statistiques. Dans la prochaine leçon, on va plus loin : je te
 
 ---
 
-### Leçon 4.4 — Analyse tes liens affiliés : lesquels convertissent
+### Leçon 4.4 : Analyse tes liens affiliés : lesquels convertissent
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -227,17 +227,17 @@ Tu sais lire tes statistiques. Dans la prochaine leçon, on va plus loin : je te
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Un lien qui reçoit beaucoup de clics mais zéro conversion, ça ne rapporte rien. Dans cette leçon — contenu original schoolsWP, pas dans la doc officielle — je te montre comment croiser tes clics ClickWhale avec tes conversions réelles pour savoir quels liens affiliés fonctionnent et lesquels sont à revoir.
+Un lien qui reçoit beaucoup de clics mais zéro conversion, ça ne rapporte rien. Dans cette leçon - contenu original schoolsWP, pas dans la doc officielle - je te montre comment croiser tes clics ClickWhale avec tes conversions réelles pour savoir quels liens affiliés fonctionnent et lesquels sont à revoir.
 
-**[ÉCRAN — slide "Clics vs Conversions"]**
+**[ÉCRAN - slide "Clics vs Conversions"]**
 
 Première distinction fondamentale. Un clic, c'est quelqu'un qui clique sur ton lien. Une conversion, c'est quelqu'un qui achète, s'inscrit ou réalise l'action souhaitée chez l'affilieur. Ce sont deux choses différentes.
 
 ClickWhale te donne les clics. L'affilieur te donne les conversions. Pour avoir une vue complète, tu dois croiser les deux.
 
-**[ÉCRAN — slide "Le taux de conversion"]**
+**[ÉCRAN - slide "Le taux de conversion"]**
 
 Le taux de conversion, c'est le ratio entre les deux. La formule est simple :
 
@@ -245,7 +245,7 @@ Taux de conversion = nombre de conversions divisé par nombre de clics, multipli
 
 Exemple concret. Ton lien TutorLMS a reçu 200 clics ce mois-ci dans ClickWhale. Sur le dashboard de l'affilieur TutorLMS, tu vois 4 ventes. Ton taux de conversion est de 2%.
 
-**[ÉCRAN — slide "Benchmarks affiliation WordPress"]**
+**[ÉCRAN - slide "Benchmarks affiliation WordPress"]**
 
 Est-ce que 2%, c'est bien ? Voici les repères pour l'affiliation dans la niche WordPress.
 
@@ -255,7 +255,7 @@ Au-dessus de 3%, c'est bon. Ton contenu est bien ciblé, ton audience fait confi
 
 En dessous de 1%, il y a un problème à investiguer. On va voir lesquels.
 
-**[ÉCRAN — slide "Dashboard mensuel du créateur"]**
+**[ÉCRAN - slide "Dashboard mensuel du créateur"]**
 
 Voici la méthode que j'utilise pour mon propre suivi mensuel. C'est un tableau simple avec quatre colonnes.
 
@@ -263,7 +263,7 @@ Colonne 1 : le nom du lien affilié. Colonne 2 : le nombre de clics ClickWhale s
 
 Tu peux faire ça dans un tableur, dans Notion, ou même sur papier. L'important c'est de le faire chaque mois.
 
-**[ÉCRAN — slide "Diagnostic : beaucoup de clics, 0 conversion"]**
+**[ÉCRAN - slide "Diagnostic : beaucoup de clics, 0 conversion"]**
 
 Premier scénario problématique : tu as beaucoup de clics sur un lien mais zéro conversion.
 
@@ -271,9 +271,9 @@ Vérification numéro 1 : le lien est-il correct ? Clique dessus toi-même. Est-
 
 Vérification numéro 2 : la landing page de l'affilieur fonctionne-t-elle ? Parfois, l'affilieur modifie sa page, change ses offres, ou désactive un produit. Ton lien marche, mais la page de destination ne convertit plus.
 
-Vérification numéro 3 : le tracking affiliation est-il actif ? Vérifie que ton tag d'affilié est bien dans l'URL. Si le paramètre d'affiliation a sauté — par exemple après une modification du lien — tes ventes ne te sont pas attribuées.
+Vérification numéro 3 : le tracking affiliation est-il actif ? Vérifie que ton tag d'affilié est bien dans l'URL. Si le paramètre d'affiliation a sauté - par exemple après une modification du lien - tes ventes ne te sont pas attribuées.
 
-**[ÉCRAN — slide "Diagnostic : 0 clics"]**
+**[ÉCRAN - slide "Diagnostic : 0 clics"]**
 
 Deuxième scénario : un lien à zéro clic ou presque.
 
@@ -281,7 +281,7 @@ Deux causes principales. Le lien est mal placé dans l'article. S'il est tout en
 
 Ou bien l'article lui-même n'a pas de trafic. Un lien dans un article que personne ne lit ne recevra aucun clic. Vérifie le trafic de l'article dans Google Search Console ou ton outil analytics.
 
-**[ÉCRAN — slide "Actions correctives"]**
+**[ÉCRAN - slide "Actions correctives"]**
 
 Pour résumer, voici tes actions correctives en fonction du diagnostic.
 
@@ -291,7 +291,7 @@ Zéro clics : repositionne le lien dans l'article ou travaille le trafic SEO de 
 
 Taux de conversion faible mais pas zéro : le système fonctionne, optimise le contexte autour du lien. Un meilleur call-to-action, un argument plus concret, un témoignage.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant une méthode pour analyser tes liens affiliés au-delà du simple comptage de clics. Dans la prochaine leçon, on change de sujet : je te montre comment générer un QR code pour n'importe lequel de tes liens ClickWhale.
 
@@ -309,7 +309,7 @@ Tu as maintenant une méthode pour analyser tes liens affiliés au-delà du simp
 
 ---
 
-### Leçon 4.5 — Génère un QR code pour n'importe quel lien
+### Leçon 4.5 : Génère un QR code pour n'importe quel lien
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -317,11 +317,11 @@ Tu as maintenant une méthode pour analyser tes liens affiliés au-delà du simp
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu veux mettre un de tes liens sur un support physique — carte de visite, flyer, slide de présentation ? Il te faut un QR code. ClickWhale en génère un pour chacun de tes liens, directement depuis l'interface. Et l'avantage, c'est que les scans passent par ton lien ClickWhale, donc les clics sont trackés.
+Tu veux mettre un de tes liens sur un support physique - carte de visite, flyer, slide de présentation ? Il te faut un QR code. ClickWhale en génère un pour chacun de tes liens, directement depuis l'interface. Et l'avantage, c'est que les scans passent par ton lien ClickWhale, donc les clics sont trackés.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Links]
 
@@ -329,9 +329,9 @@ Tu veux mettre un de tes liens sur un support physique — carte de visite, flye
 
 [Clique sur "Edit" d'un lien existant]
 
-Étape 2 : clique sur "Edit" pour ouvrir un lien existant. N'importe lequel — chaque lien peut avoir son QR code.
+Étape 2 : clique sur "Edit" pour ouvrir un lien existant. N'importe lequel - chaque lien peut avoir son QR code.
 
-**[ÉCRAN — screencast éditeur de lien]**
+**[ÉCRAN - screencast éditeur de lien]**
 
 [Montre l'onglet General du lien]
 
@@ -339,7 +339,7 @@ Tu veux mettre un de tes liens sur un support physique — carte de visite, flye
 
 [Clique sur "Generate QR Code"]
 
-**[ÉCRAN — screencast modal QR code]**
+**[ÉCRAN - screencast modal QR code]**
 
 [Montre la modal avec le QR code généré]
 
@@ -351,7 +351,7 @@ Le QR code apparaît dans une fenêtre modale. C'est une image vectorielle que t
 
 Le fichier est au format PNG. Tu peux l'utiliser directement dans tes supports : Canva, PowerPoint, InDesign, ou n'importe quel outil de mise en page.
 
-**[ÉCRAN — slide "Ce que pointe le QR code"]**
+**[ÉCRAN - slide "Ce que pointe le QR code"]**
 
 Détail important : le QR code pointe vers ton lien ClickWhale, pas vers l'URL de destination finale. Ça veut dire que quand quelqu'un scanne le QR code, le clic passe d'abord par ClickWhale avant d'être redirigé.
 
@@ -359,7 +359,7 @@ Conséquence : chaque scan est comptabilisé dans tes statistiques, exactement c
 
 Et si tu changes l'URL de destination du lien plus tard, le QR code continue de fonctionner. Pas besoin de régénérer un nouveau QR code. C'est l'un des avantages majeurs d'utiliser des liens ClickWhale plutôt que des QR codes génériques.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais générer un QR code. Mais un QR code mal imprimé ou mal dimensionné, personne ne le scannera. Dans la prochaine leçon, je te donne les bonnes pratiques pour que tes QR codes fonctionnent à tous les coups.
 
@@ -376,7 +376,7 @@ Tu sais générer un QR code. Mais un QR code mal imprimé ou mal dimensionné, 
 
 ---
 
-### Leçon 4.6 — Bonnes pratiques QR codes : taille, contraste, test multi-devices
+### Leçon 4.6 : Bonnes pratiques QR codes : taille, contraste, test multi-devices
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -384,17 +384,17 @@ Tu sais générer un QR code. Mais un QR code mal imprimé ou mal dimensionné, 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Un QR code que personne n'arrive à scanner, c'est du gaspillage. Dans cette leçon, je te donne les règles concrètes pour que tes QR codes fonctionnent systématiquement — que ce soit sur une carte de visite, un flyer ou un écran de présentation.
+Un QR code que personne n'arrive à scanner, c'est du gaspillage. Dans cette leçon, je te donne les règles concrètes pour que tes QR codes fonctionnent systématiquement - que ce soit sur une carte de visite, un flyer ou un écran de présentation.
 
-**[ÉCRAN — slide "Règle 1 : la taille minimum"]**
+**[ÉCRAN - slide "Règle 1 : la taille minimum"]**
 
 Première règle : la taille. Un QR code imprimé doit faire au minimum 2 centimètres par 2 centimètres. En dessous, les caméras de smartphones anciens ou de mauvaise qualité ne pourront pas le lire.
 
-Pour un support vu de loin — un roll-up, une affiche, un écran de conférence — augmente la taille proportionnellement. Sur un roll-up, vise au moins 10 centimètres de côté. La règle simple : plus le support est grand et vu de loin, plus le QR code doit être grand.
+Pour un support vu de loin - un roll-up, une affiche, un écran de conférence - augmente la taille proportionnellement. Sur un roll-up, vise au moins 10 centimètres de côté. La règle simple : plus le support est grand et vu de loin, plus le QR code doit être grand.
 
-**[ÉCRAN — slide "Règle 2 : le contraste"]**
+**[ÉCRAN - slide "Règle 2 : le contraste"]**
 
 Deuxième règle : le contraste. Le QR code doit être sombre sur fond clair. Noir sur blanc, c'est le standard. Bleu foncé sur blanc, ça marche aussi.
 
@@ -402,21 +402,21 @@ Ce qui ne marche pas : blanc sur fond sombre, couleurs claires sur couleurs clai
 
 Si tu veux intégrer les couleurs de ta marque, garde le motif du QR code dans une couleur foncée et le fond dans une couleur très claire. Ne fais jamais l'inverse.
 
-**[ÉCRAN — slide "Règle 3 : la zone de silence"]**
+**[ÉCRAN - slide "Règle 3 : la zone de silence"]**
 
 Troisième règle : la zone de silence. C'est l'espace blanc autour du QR code. Il doit être d'au moins 4 modules de large. Un module, c'est un petit carré noir du QR code.
 
 Concrètement, ne colle pas de texte, de logo ou de bord de page directement contre le QR code. Laisse respirer. Si tu rognes la zone de silence, certains lecteurs de QR code ne détecteront pas le code.
 
-**[ÉCRAN — slide "Règle 4 : le support d'impression"]**
+**[ÉCRAN - slide "Règle 4 : le support d'impression"]**
 
-Quatrième règle : le support. Évite les surfaces réfléchissantes — papier glacé, plastification brillante, supports métalliques. Le reflet de la lumière peut empêcher la caméra de lire le QR code.
+Quatrième règle : le support. Évite les surfaces réfléchissantes - papier glacé, plastification brillante, supports métalliques. Le reflet de la lumière peut empêcher la caméra de lire le QR code.
 
 Préfère les surfaces mates ou satinées. Pour les cartes de visite, un papier mat ou légèrement texturé fonctionne parfaitement.
 
-**[ÉCRAN — slide "Règle 5 : tester"]**
+**[ÉCRAN - slide "Règle 5 : tester"]**
 
-Cinquième règle — et la plus importante : teste toujours avant de diffuser.
+Cinquième règle - et la plus importante : teste toujours avant de diffuser.
 
 Teste sur au moins deux appareils différents. Un iPhone et un Android, idéalement. Les caméras et les applications de scan varient entre les appareils.
 
@@ -424,7 +424,7 @@ Teste dans les conditions réelles. Si ton QR code sera sur un roll-up dans une 
 
 Teste après impression. Un QR code parfait à l'écran peut devenir illisible une fois imprimé si la qualité d'impression est basse ou si le papier absorbe trop d'encre.
 
-**[ÉCRAN — slide "Cas d'usage concrets"]**
+**[ÉCRAN - slide "Cas d'usage concrets"]**
 
 Où utiliser tes QR codes concrètement ?
 
@@ -434,11 +434,11 @@ Roll-up ou banner pour une conférence : un QR code vers ta page d'inscription o
 
 Flyer de formation : un QR code vers la page de vente ou un formulaire d'inscription.
 
-Slides de présentation : un QR code en dernière slide — ou même pendant la présentation — pour que les participants accèdent à une ressource complémentaire.
+Slides de présentation : un QR code en dernière slide - ou même pendant la présentation - pour que les participants accèdent à une ressource complémentaire.
 
 Dans tous les cas, ajoute un texte à côté du QR code qui explique ce que la personne va trouver en scannant. "Scanne pour accéder à la formation gratuite" est plus efficace qu'un QR code seul sans contexte.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as les règles pour des QR codes qui marchent à chaque fois. Dans la prochaine leçon, c'est à toi de jouer : tu vas analyser tes 5 liens les plus cliqués et en tirer 3 conclusions actionnables.
 
@@ -456,7 +456,7 @@ Tu as les règles pour des QR codes qui marchent à chaque fois. Dans la prochai
 
 ---
 
-### Leçon 4.7 — Exercice : Analyse tes 5 liens les plus cliqués et tire 3 conclusions
+### Leçon 4.7 : Exercice : Analyse tes 5 liens les plus cliqués et tire 3 conclusions
 
 **Type** : Exercice pratique (consignes écrites)
 **Durée estimée** : 20-30 min
@@ -516,9 +516,9 @@ Formule 3 conclusions sous cette forme :
 
 ### Exemple de conclusions
 
-- "Le lien TutorLMS est mon meilleur convertisseur (3.2%) — je dois le mettre en avant dans au moins 3 articles supplémentaires ce mois-ci"
-- "Le lien WP Rocket a 85 clics mais 0 conversion — je vérifie que mon tag affilié est toujours actif et que la landing page fonctionne"
-- "Mon lien vers la page Contact est dans le top 5 — mes lecteurs veulent me contacter, je devrais ajouter un formulaire de capture email sur cette page"
+- "Le lien TutorLMS est mon meilleur convertisseur (3.2%) - je dois le mettre en avant dans au moins 3 articles supplémentaires ce mois-ci"
+- "Le lien WP Rocket a 85 clics mais 0 conversion - je vérifie que mon tag affilié est toujours actif et que la landing page fonctionne"
+- "Mon lien vers la page Contact est dans le top 5 - mes lecteurs veulent me contacter, je devrais ajouter un formulaire de capture email sur cette page"
 
 ## Données fictives (si pas assez de données réelles)
 
@@ -526,9 +526,9 @@ Formule 3 conclusions sous cette forme :
 |------|------|-------------|-------------|
 | 1 | TutorLMS (affilié) | 245 | 6 |
 | 2 | FluentCRM (affilié) | 180 | 0 |
-| 3 | Guide WordPress LMS (interne) | 156 | — |
+| 3 | Guide WordPress LMS (interne) | 156 | - |
 | 4 | RankMath Pro (affilié) | 98 | 3 |
-| 5 | Page Contact (interne) | 72 | — |
+| 5 | Page Contact (interne) | 72 | - |
 
 ## Critères de validation
 
@@ -541,7 +541,7 @@ Formule 3 conclusions sous cette forme :
 
 ---
 
-### Leçon 4.8 — Quiz : Valide tes acquis M4
+### Leçon 4.8 : Quiz : Valide tes acquis M4
 
 **Type** : Quiz TutorLMS (8 questions)
 **Seuil de réussite** : 80%

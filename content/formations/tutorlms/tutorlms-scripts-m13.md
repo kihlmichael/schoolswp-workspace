@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 13 : Migration
+# Scripts vidéo - Module 13 : Migration
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M13 — Migration (Premium)
+**Module** : M13 - Migration (Premium)
 **Leçons** : 6 vidéos + 1 quiz
 **Durée totale** : ~35 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 13.1 — Migration LearnDash
+### Leçon 13.1 : Migration LearnDash
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -17,47 +17,47 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu es sur LearnDash et tu veux passer à TutorLMS ? Bonne nouvelle : TutorLMS intègre un outil de migration qui transfère tes cours, leçons, quiz et inscriptions étudiants. Pas besoin de tout reconstruire à la main. Mais avant de toucher à quoi que ce soit — on fait un backup complet. C'est la règle numéro un de toute migration.
+Tu es sur LearnDash et tu veux passer à TutorLMS ? Bonne nouvelle : TutorLMS intègre un outil de migration qui transfère tes cours, leçons, quiz et inscriptions étudiants. Pas besoin de tout reconstruire à la main. Mais avant de toucher à quoi que ce soit - on fait un backup complet. C'est la règle numéro un de toute migration.
 
-**[ÉCRAN — screencast admin WordPress]**
+**[ÉCRAN - screencast admin WordPress]**
 
-[Navigation vers l'outil de backup — UpdraftPlus ou équivalent]
+[Navigation vers l'outil de backup - UpdraftPlus ou équivalent]
 
-Avant de commencer, sauvegarde tout. Base de données et fichiers. Utilise UpdraftPlus, WPVivid ou ton outil habituel. Télécharge la sauvegarde en local — pas juste sur le serveur. Si la migration tourne mal, tu veux pouvoir revenir à l'état exact d'avant.
+Avant de commencer, sauvegarde tout. Base de données et fichiers. Utilise UpdraftPlus, WPVivid ou ton outil habituel. Télécharge la sauvegarde en local - pas juste sur le serveur. Si la migration tourne mal, tu veux pouvoir revenir à l'état exact d'avant.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Tools > Migration]
 
 Une fois le backup fait, va dans Tutor LMS, puis Tools, puis Migration. Tu vois la section "LearnDash". TutorLMS détecte automatiquement si LearnDash est installé et affiche le nombre de cours, leçons et quiz disponibles pour la migration.
 
-**[ÉCRAN — screencast processus de migration]**
+**[ÉCRAN - screencast processus de migration]**
 
 [Montre le bouton de migration et la progression]
 
-Clique sur "Migrate". Le processus se lance. Selon le volume de contenu, ça peut prendre de quelques secondes à plusieurs minutes. Ne ferme pas la fenêtre — laisse le processus terminer.
+Clique sur "Migrate". Le processus se lance. Selon le volume de contenu, ça peut prendre de quelques secondes à plusieurs minutes. Ne ferme pas la fenêtre - laisse le processus terminer.
 
 Ce qui est migré :
 - Les cours avec leur structure (sections, leçons)
 - Les quiz et leurs questions
-- Les inscriptions étudiants — chaque élève garde ses cours
-- La progression des élèves — ce qui a été complété reste complété
+- Les inscriptions étudiants - chaque élève garde ses cours
+- La progression des élèves - ce qui a été complété reste complété
 
-**[ÉCRAN — screencast vérification post-migration]**
+**[ÉCRAN - screencast vérification post-migration]**
 
-[Navigation vers Tutor LMS > Courses — vérification d'un cours migré]
+[Navigation vers Tutor LMS > Courses - vérification d'un cours migré]
 
 Une fois terminé, vérifie. Ouvre Tutor LMS, Courses. Tes cours LearnDash doivent apparaître. Ouvre-en un, vérifie la structure : sections, leçons, quiz. Passe côté front-end pour confirmer que l'affichage est correct.
 
 Vérifie aussi les inscriptions : va dans un cours, onglet Students. Les élèves doivent être là avec leur progression.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Points importants : certains éléments ne migrent pas automatiquement. Les certificats LearnDash, les badges et les réglages spécifiques de LearnDash — comme les timer de quiz avancés — devront être reconfigurés dans TutorLMS. Pareil pour les shortcodes LearnDash dans tes pages — il faudra les remplacer par les shortcodes TutorLMS.
+Points importants : certains éléments ne migrent pas automatiquement. Les certificats LearnDash, les badges et les réglages spécifiques de LearnDash - comme les timer de quiz avancés - devront être reconfigurés dans TutorLMS. Pareil pour les shortcodes LearnDash dans tes pages - il faudra les remplacer par les shortcodes TutorLMS.
 
-La recommandation schoolsWP : fais la migration sur un environnement de staging d'abord. Vérifie tout, puis reproduis sur la production. Et garde LearnDash installé mais désactivé pendant quelques semaines — au cas où tu aurais besoin de vérifier un détail.
+La recommandation schoolsWP : fais la migration sur un environnement de staging d'abord. Vérifie tout, puis reproduis sur la production. Et garde LearnDash installé mais désactivé pendant quelques semaines - au cas où tu aurais besoin de vérifier un détail.
 
 ---
 
@@ -73,7 +73,7 @@ La recommandation schoolsWP : fais la migration sur un environnement de staging 
 
 ---
 
-### Leçon 13.2 — Migration LifterLMS
+### Leçon 13.2 : Migration LifterLMS
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -82,23 +82,23 @@ La recommandation schoolsWP : fais la migration sur un environnement de staging 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu utilises LifterLMS et tu veux migrer vers TutorLMS ? Le processus est similaire à la migration LearnDash — TutorLMS détecte LifterLMS et propose un transfert automatique. Comme toujours, on commence par un backup.
+Tu utilises LifterLMS et tu veux migrer vers TutorLMS ? Le processus est similaire à la migration LearnDash - TutorLMS détecte LifterLMS et propose un transfert automatique. Comme toujours, on commence par un backup.
 
-**[ÉCRAN — screencast admin WordPress]**
+**[ÉCRAN - screencast admin WordPress]**
 
 [Navigation vers l'outil de backup]
 
 Même réflexe qu'avant : backup complet. Base de données et fichiers. Sauvegarde locale. On ne lance jamais une migration sans filet de sécurité.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Tools > Migration]
 
 Va dans Tutor LMS, Tools, Migration. Cette fois, c'est la section "LifterLMS" qui nous intéresse. TutorLMS détecte les cours LifterLMS installés et affiche un résumé du contenu à migrer.
 
-**[ÉCRAN — screencast processus de migration]**
+**[ÉCRAN - screencast processus de migration]**
 
 [Montre la migration en cours]
 
@@ -111,17 +111,17 @@ Clique sur "Migrate". Le processus transfère :
 
 La structure LifterLMS est proche de celle de TutorLMS, donc la correspondance est assez directe. Les sections deviennent des topics, les leçons restent des leçons.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
-[Vérification d'un cours migré — structure et front-end]
+[Vérification d'un cours migré - structure et front-end]
 
-Vérification : ouvre un cours migré dans le Course Builder. Vérifie que les topics contiennent les bonnes leçons. Ouvre un quiz — vérifie les questions. Va en front-end pour vérifier l'affichage.
+Vérification : ouvre un cours migré dans le Course Builder. Vérifie que les topics contiennent les bonnes leçons. Ouvre un quiz - vérifie les questions. Va en front-end pour vérifier l'affichage.
 
 Côté étudiants : vérifie qu'un élève inscrit a bien ses cours et sa progression intacte.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Les éléments spécifiques à LifterLMS qui ne migrent pas : les Access Plans (les offres de vente LifterLMS), les memberships, les certificats et les achievements. Tu devras reconfigurer la monétisation dans TutorLMS — soit en mode natif, soit via WooCommerce si tu l'utilisais déjà.
+Les éléments spécifiques à LifterLMS qui ne migrent pas : les Access Plans (les offres de vente LifterLMS), les memberships, les certificats et les achievements. Tu devras reconfigurer la monétisation dans TutorLMS - soit en mode natif, soit via WooCommerce si tu l'utilisais déjà.
 
 Même conseil : staging d'abord, production ensuite. Et garde LifterLMS désactivé quelques semaines en sécurité.
 
@@ -139,7 +139,7 @@ Même conseil : staging d'abord, production ensuite. Et garde LifterLMS désacti
 
 ---
 
-### Leçon 13.3 — Migration LearnPress
+### Leçon 13.3 : Migration LearnPress
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -148,23 +148,23 @@ Même conseil : staging d'abord, production ensuite. Et garde LifterLMS désacti
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-LearnPress est le LMS gratuit le plus utilisé sur WordPress. Si tu as commencé avec et que tu veux passer à TutorLMS pour ses fonctionnalités avancées, la migration est possible. LearnPress a une structure simple — cours, leçons, quiz — et TutorLMS sait la récupérer.
+LearnPress est le LMS gratuit le plus utilisé sur WordPress. Si tu as commencé avec et que tu veux passer à TutorLMS pour ses fonctionnalités avancées, la migration est possible. LearnPress a une structure simple - cours, leçons, quiz - et TutorLMS sait la récupérer.
 
-**[ÉCRAN — screencast admin WordPress]**
+**[ÉCRAN - screencast admin WordPress]**
 
 [Backup]
 
 Tu connais la musique : backup complet avant tout. Base de données, fichiers, copie locale. Pas de raccourci.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Tools > Migration]
 
 Direction Tutor LMS, Tools, Migration. La section "LearnPress" apparaît si le plugin est installé. Tu vois le nombre de cours détectés.
 
-**[ÉCRAN — screencast migration]**
+**[ÉCRAN - screencast migration]**
 
 [Lancement de la migration]
 
@@ -176,17 +176,17 @@ Clique sur "Migrate". LearnPress a une architecture plus simple que LearnDash ou
 
 La progression des étudiants est aussi migrée quand elle est disponible.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Vérification cours migré]
 
 Vérifie comme d'habitude : structure des cours dans le Course Builder, contenu des leçons, questions des quiz. Front-end pour l'affichage. Inscriptions étudiants.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-LearnPress utilise des addons payants pour des fonctions que TutorLMS intègre nativement — certificats, prérequis, drip content. Une fois la migration faite, explore les réglages TutorLMS : tu auras probablement accès à des fonctions que tu payais en addon sur LearnPress.
+LearnPress utilise des addons payants pour des fonctions que TutorLMS intègre nativement - certificats, prérequis, drip content. Une fois la migration faite, explore les réglages TutorLMS : tu auras probablement accès à des fonctions que tu payais en addon sur LearnPress.
 
-Les shortcodes LearnPress dans tes pages sont à remplacer. Et les templates custom que tu aurais modifiés dans LearnPress ne s'appliquent pas à TutorLMS — il faudra adapter le design via ton page builder ou les templates TutorLMS.
+Les shortcodes LearnPress dans tes pages sont à remplacer. Et les templates custom que tu aurais modifiés dans LearnPress ne s'appliquent pas à TutorLMS - il faudra adapter le design via ton page builder ou les templates TutorLMS.
 
 ---
 
@@ -202,7 +202,7 @@ Les shortcodes LearnPress dans tes pages sont à remplacer. Et les templates cus
 
 ---
 
-### Leçon 13.4 — Migration Zoom JWT vers OAuth
+### Leçon 13.4 : Migration Zoom JWT vers OAuth
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -211,52 +211,52 @@ Les shortcodes LearnPress dans tes pages sont à remplacer. Et les templates cus
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Si tu utilises l'intégration Zoom dans TutorLMS, tu as peut-être configuré la connexion avec une app JWT. Problème : Zoom a déprécié les apps JWT. Elles ne fonctionnent plus. Tu dois migrer vers une app OAuth — c'est le nouveau standard. Cette leçon te montre comment faire la transition sans perdre tes meetings planifiés.
+Si tu utilises l'intégration Zoom dans TutorLMS, tu as peut-être configuré la connexion avec une app JWT. Problème : Zoom a déprécié les apps JWT. Elles ne fonctionnent plus. Tu dois migrer vers une app OAuth - c'est le nouveau standard. Cette leçon te montre comment faire la transition sans perdre tes meetings planifiés.
 
-**[ÉCRAN — screencast Zoom Marketplace]**
+**[ÉCRAN - screencast Zoom Marketplace]**
 
 [Navigation vers marketplace.zoom.us > Develop > Build App]
 
-Va sur marketplace.zoom.us. Connecte-toi avec ton compte Zoom. Clique sur "Develop" puis "Build App". Tu vas créer une nouvelle app de type "General App" — c'est le type qui remplace JWT pour les connexions serveur.
+Va sur marketplace.zoom.us. Connecte-toi avec ton compte Zoom. Clique sur "Develop" puis "Build App". Tu vas créer une nouvelle app de type "General App" - c'est le type qui remplace JWT pour les connexions serveur.
 
-**[ÉCRAN — screencast configuration app OAuth]**
+**[ÉCRAN - screencast configuration app OAuth]**
 
 [Configuration de l'app dans le Zoom Marketplace]
 
 Dans la configuration de l'app :
-- Donne-lui un nom — par exemple "TutorLMS Integration"
+- Donne-lui un nom - par exemple "TutorLMS Integration"
 - Note le Client ID et le Client Secret qui sont générés
 - Dans Redirect URL, entre l'URL que TutorLMS affiche dans ses réglages Zoom
 - Dans les Scopes, ajoute les permissions nécessaires : meeting:read, meeting:write, user:read
 
 Valide l'app. Elle passe en mode "activated".
 
-**[ÉCRAN — screencast TutorLMS réglages Zoom]**
+**[ÉCRAN - screencast TutorLMS réglages Zoom]**
 
 [Navigation vers Tutor LMS > Settings > Zoom]
 
 Retourne dans TutorLMS, Settings, Zoom. Tu vois les champs pour la connexion. Remplace les anciennes valeurs JWT par le nouveau Client ID et Client Secret de ton app OAuth.
 
-Clique sur "Connect" ou "Generate Token" — une fenêtre d'autorisation Zoom s'ouvre. Accepte les permissions. Le token est généré et la connexion est active.
+Clique sur "Connect" ou "Generate Token" - une fenêtre d'autorisation Zoom s'ouvre. Accepte les permissions. Le token est généré et la connexion est active.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Vérification d'un meeting existant + création d'un nouveau]
 
-Vérifie que tes meetings existants fonctionnent toujours. Ouvre un cours qui avait un meeting Zoom planifié — il doit toujours apparaître. Crée un nouveau meeting pour confirmer que la connexion fonctionne dans les deux sens.
+Vérifie que tes meetings existants fonctionnent toujours. Ouvre un cours qui avait un meeting Zoom planifié - il doit toujours apparaître. Crée un nouveau meeting pour confirmer que la connexion fonctionne dans les deux sens.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-La migration JWT vers OAuth est obligatoire — les apps JWT ne fonctionnent plus. Si tu avais une app JWT, elle est déjà désactivée par Zoom. La bonne nouvelle : une fois la migration faite, OAuth est plus sécurisé et plus stable. Tu n'auras plus à te soucier de tokens qui expirent sans prévenir.
+La migration JWT vers OAuth est obligatoire - les apps JWT ne fonctionnent plus. Si tu avais une app JWT, elle est déjà désactivée par Zoom. La bonne nouvelle : une fois la migration faite, OAuth est plus sécurisé et plus stable. Tu n'auras plus à te soucier de tokens qui expirent sans prévenir.
 
-Si tu n'utilisais pas encore Zoom avec TutorLMS, cette leçon te sert de guide de configuration initiale — c'est exactement la même procédure.
+Si tu n'utilisais pas encore Zoom avec TutorLMS, cette leçon te sert de guide de configuration initiale - c'est exactement la même procédure.
 
 ---
 
 **Points clés** :
-- Zoom a déprécié les apps JWT — migration OAuth obligatoire
+- Zoom a déprécié les apps JWT - migration OAuth obligatoire
 - Créer une "General App" sur marketplace.zoom.us
 - Scopes nécessaires : meeting:read, meeting:write, user:read
 - Remplacer Client ID/Secret dans Tutor LMS > Settings > Zoom
@@ -267,7 +267,7 @@ Si tu n'utilisais pas encore Zoom avec TutorLMS, cette leçon te sert de guide d
 
 ---
 
-### Leçon 13.5 — Migration WooCommerce vers natif
+### Leçon 13.5 : Migration WooCommerce vers natif
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -276,25 +276,25 @@ Si tu n'utilisais pas encore Zoom avec TutorLMS, cette leçon te sert de guide d
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-TutorLMS a longtemps nécessité WooCommerce pour vendre des cours. Ce n'est plus le cas — le système de monétisation natif de TutorLMS gère les paiements directement, avec Stripe ou PayPal, sans passer par WooCommerce. Moins de plugins, moins de complexité, moins de problèmes de compatibilité. Dans cette leçon, on migre d'une configuration WooCommerce vers le mode natif.
+TutorLMS a longtemps nécessité WooCommerce pour vendre des cours. Ce n'est plus le cas - le système de monétisation natif de TutorLMS gère les paiements directement, avec Stripe ou PayPal, sans passer par WooCommerce. Moins de plugins, moins de complexité, moins de problèmes de compatibilité. Dans cette leçon, on migre d'une configuration WooCommerce vers le mode natif.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Settings > Monetization]
 
-Première étape : comprendre ta situation actuelle. Va dans Tutor LMS, Settings, Monetization. Tu vois le mode actif — normalement "WooCommerce". On va passer en mode natif, mais pas tout de suite. Il faut d'abord préparer la transition.
+Première étape : comprendre ta situation actuelle. Va dans Tutor LMS, Settings, Monetization. Tu vois le mode actif - normalement "WooCommerce". On va passer en mode natif, mais pas tout de suite. Il faut d'abord préparer la transition.
 
-**[ÉCRAN — screencast WooCommerce]**
+**[ÉCRAN - screencast WooCommerce]**
 
-[Navigation vers WooCommerce > Orders — liste des commandes]
+[Navigation vers WooCommerce > Orders - liste des commandes]
 
 Avant de désactiver WooCommerce, fais l'inventaire. Va dans WooCommerce, Orders. Note le nombre de commandes actives, les abonnements en cours si tu en as, et les produits liés à tes cours. Ces informations sont importantes pour la transition.
 
-Exporte tes commandes en CSV — ça te sert de référence. Si tu utilises WooCommerce Subscriptions pour des abonnements récurrents, c'est le point le plus délicat. Le mode natif TutorLMS gère les paiements récurrents via Stripe, mais il faudra reconfigurer les abonnements.
+Exporte tes commandes en CSV - ça te sert de référence. Si tu utilises WooCommerce Subscriptions pour des abonnements récurrents, c'est le point le plus délicat. Le mode natif TutorLMS gère les paiements récurrents via Stripe, mais il faudra reconfigurer les abonnements.
 
-**[ÉCRAN — screencast configuration mode natif]**
+**[ÉCRAN - screencast configuration mode natif]**
 
 [Navigation vers Tutor LMS > Settings > Monetization > Native]
 
@@ -309,7 +309,7 @@ Pour PayPal :
 - Entre ton Client ID et ton Secret
 - Même logique : mode test d'abord
 
-**[ÉCRAN — screencast tarification des cours]**
+**[ÉCRAN - screencast tarification des cours]**
 
 [Navigation vers un cours > Settings > Prix]
 
@@ -320,21 +320,21 @@ Ensuite, configure les prix de tes cours. Ouvre chaque cours dans le Course Buil
 
 Avec WooCommerce, le prix était sur le produit WooCommerce. En mode natif, il est directement dans le cours TutorLMS. Plus simple.
 
-**[ÉCRAN — screencast test d'achat]**
+**[ÉCRAN - screencast test d'achat]**
 
 [Test front-end : achat d'un cours en mode test Stripe]
 
 Teste un achat. Passe en mode test Stripe, ouvre un cours en front-end, clique sur "Enroll" ou "Buy Now". Le formulaire de paiement Stripe apparaît. Utilise la carte de test (4242 4242 4242 4242). Vérifie que l'inscription au cours se fait automatiquement après le paiement.
 
-**[ÉCRAN — screencast désactivation WooCommerce]**
+**[ÉCRAN - screencast désactivation WooCommerce]**
 
 [Navigation vers Plugins > désactivation WooCommerce]
 
-Une fois tout vérifié en mode test, puis en mode live avec un vrai achat test, tu peux désactiver WooCommerce. Va dans Plugins, désactive WooCommerce. Vérifie que ton site fonctionne normalement — pas d'erreurs, pas de pages cassées.
+Une fois tout vérifié en mode test, puis en mode live avec un vrai achat test, tu peux désactiver WooCommerce. Va dans Plugins, désactive WooCommerce. Vérifie que ton site fonctionne normalement - pas d'erreurs, pas de pages cassées.
 
 Ne supprime pas WooCommerce tout de suite. Désactive-le et laisse-le quelques semaines. Si tout roule, tu pourras le supprimer proprement.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 La recommandation schoolsWP : le mode natif est le meilleur choix pour la majorité des formateurs. C'est plus léger, plus rapide, et tu élimines une couche de complexité. Garde WooCommerce uniquement si tu vends aussi des produits physiques ou si tu as besoin de fonctions avancées comme les coupons complexes ou les bundles.
 
@@ -348,14 +348,14 @@ Point d'attention : les étudiants déjà inscrits via WooCommerce gardent leur 
 - Configurer Stripe et/ou PayPal dans Tutor LMS > Settings > Monetization
 - Prix définis directement dans chaque cours (plus dans WooCommerce)
 - Tester en mode test avant de passer en production
-- Inscriptions existantes préservées — seuls les nouveaux achats changent
+- Inscriptions existantes préservées - seuls les nouveaux achats changent
 - Garder WooCommerce désactivé (pas supprimé) quelques semaines
 
 **Mots clés SEO** : migration WooCommerce TutorLMS natif, TutorLMS sans WooCommerce, monétisation native TutorLMS, Stripe TutorLMS
 
 ---
 
-### Leçon 13.6 — Import/Export de cours
+### Leçon 13.6 : Import/Export de cours
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -364,15 +364,15 @@ Point d'attention : les étudiants déjà inscrits via WooCommerce gardent leur 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu veux dupliquer un cours d'un site à un autre ? Ou créer un backup de tes cours indépendant de la base de données ? TutorLMS intègre un système d'import/export qui transfère la structure complète d'un cours — contenu, leçons, quiz, questions. C'est aussi utile pour partager un modèle de cours avec un collègue ou un client.
+Tu veux dupliquer un cours d'un site à un autre ? Ou créer un backup de tes cours indépendant de la base de données ? TutorLMS intègre un système d'import/export qui transfère la structure complète d'un cours - contenu, leçons, quiz, questions. C'est aussi utile pour partager un modèle de cours avec un collègue ou un client.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Tools > Export]
 
-Pour exporter, va dans Tutor LMS, Tools, puis Export. Tu vois la liste de tous tes cours. Sélectionne ceux que tu veux exporter — tu peux en choisir plusieurs.
+Pour exporter, va dans Tutor LMS, Tools, puis Export. Tu vois la liste de tous tes cours. Sélectionne ceux que tu veux exporter - tu peux en choisir plusieurs.
 
 Clique sur "Export". TutorLMS génère un fichier JSON ou ZIP qui contient :
 - La structure du cours (topics, leçons)
@@ -382,34 +382,34 @@ Clique sur "Export". TutorLMS génère un fichier JSON ou ZIP qui contient :
 
 Ce qui n'est pas exporté : les inscriptions étudiants, les médias (images, vidéos) qui restent sur le serveur d'origine, et les réglages globaux de TutorLMS.
 
-**[ÉCRAN — screencast import sur un autre site]**
+**[ÉCRAN - screencast import sur un autre site]**
 
 [Navigation vers Tutor LMS > Tools > Import sur un deuxième site]
 
 Sur le site de destination, va dans Tutor LMS, Tools, Import. Uploade le fichier exporté. TutorLMS lit le fichier et affiche un aperçu du contenu à importer.
 
-Clique sur "Import". Les cours sont créés avec toute leur structure. Les leçons, quiz, questions — tout est là.
+Clique sur "Import". Les cours sont créés avec toute leur structure. Les leçons, quiz, questions - tout est là.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Ouverture d'un cours importé dans le Course Builder]
 
-Vérifie le cours importé dans le Course Builder. La structure doit correspondre à l'original. Ouvre quelques leçons — le contenu texte est là. Les quiz ont leurs questions.
+Vérifie le cours importé dans le Course Builder. La structure doit correspondre à l'original. Ouvre quelques leçons - le contenu texte est là. Les quiz ont leurs questions.
 
 Ce qu'il faut ajuster après import :
-- Les images et médias — re-uploade-les ou pointe vers les bonnes URLs
+- Les images et médias - re-uploade-les ou pointe vers les bonnes URLs
 - Les liens internes qui pointaient vers l'ancien site
-- Les instructeurs — assigne le bon profil instructeur sur le nouveau site
-- Les prix — reconfigure-les si tu vends le cours
+- Les instructeurs - assigne le bon profil instructeur sur le nouveau site
+- Les prix - reconfigure-les si tu vends le cours
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-L'export/import TutorLMS est pratique pour trois cas : migrer des cours entre sites, créer des templates de cours réutilisables, et faire des backups ciblés. Pour un backup complet du site, utilise toujours un outil de backup classique en complément — l'export TutorLMS ne couvre que le contenu des cours, pas la config globale.
+L'export/import TutorLMS est pratique pour trois cas : migrer des cours entre sites, créer des templates de cours réutilisables, et faire des backups ciblés. Pour un backup complet du site, utilise toujours un outil de backup classique en complément - l'export TutorLMS ne couvre que le contenu des cours, pas la config globale.
 
 ---
 
 **Points clés** :
-- Export : Tutor LMS > Tools > Export — sélectionner les cours
+- Export : Tutor LMS > Tools > Export - sélectionner les cours
 - Fichier JSON/ZIP avec structure, contenu, quiz et réglages du cours
 - Import : Tutor LMS > Tools > Import sur le site de destination
 - Médias, inscriptions et réglages globaux non inclus
@@ -420,7 +420,7 @@ L'export/import TutorLMS est pratique pour trois cas : migrer des cours entre si
 
 ---
 
-### Leçon 13.7 — Quiz Module 13
+### Leçon 13.7 : Quiz Module 13
 
 **Type** : Quiz TutorLMS
 **Questions** : 8 QCM
@@ -470,7 +470,7 @@ Pourquoi faut-il migrer de Zoom JWT vers OAuth ?
 
 - A) OAuth est gratuit, JWT est payant
 - B) JWT offre moins de fonctionnalités
-- C) Zoom a déprécié les apps JWT — elles ne fonctionnent plus ✓
+- C) Zoom a déprécié les apps JWT - elles ne fonctionnent plus ✓
 - D) OAuth permet plus de participants
 
 **Explication** : Zoom a déprécié et désactivé les apps JWT. La migration vers OAuth est obligatoire pour continuer à utiliser l'intégration Zoom.
@@ -506,7 +506,7 @@ Après une migration WooCommerce vers le mode natif TutorLMS, que se passe-t-il 
 
 - A) Ils perdent leur accès aux cours
 - B) Ils doivent racheter les cours
-- C) Ils gardent leur accès — seuls les nouveaux achats changent ✓
+- C) Ils gardent leur accès - seuls les nouveaux achats changent ✓
 - D) Ils doivent créer un nouveau compte
 
 **Explication** : Les inscriptions existantes sont préservées. La migration affecte uniquement le système de paiement pour les futurs achats.
@@ -525,7 +525,7 @@ Quelle est la recommandation schoolsWP pour tester une migration de LMS ?
 
 ---
 
-**Fin du Module 13 — Migration**
+**Fin du Module 13 - Migration**
 
 Résumé du module :
 - Migration LearnDash/LifterLMS/LearnPress : outil intégré Tutor LMS > Tools > Migration

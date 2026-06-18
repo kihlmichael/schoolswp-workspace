@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 2 : Installation et premier workflow
+# Scripts vidéo - Module 2 : Installation et premier workflow
 
 **Formation** : Maîtriser OttoKit
-**Module** : M2 — Installation et premier workflow
+**Module** : M2 - Installation et premier workflow
 **Leçons** : 7 vidéos + 1 quiz
 **Durée totale** : ~40 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Leçon 2.1 — Crée ton compte OttoKit (gratuit)
+## Leçon 2.1 - Crée ton compte OttoKit (gratuit)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,11 +16,11 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Avant de créer ton premier workflow, tu as besoin d'un compte OttoKit. La bonne nouvelle : c'est gratuit et ça prend moins de 2 minutes.
 
-**[ÉCRAN — screencast navigateur sur ottokit.com]**
+**[ÉCRAN - screencast navigateur sur ottokit.com]**
 
 [Ouvre ottokit.com dans le navigateur]
 [Clique sur le bouton "Sign Up" ou "Get Started Free" en haut à droite]
@@ -36,7 +36,7 @@ Tu arrives sur la page d'inscription. Trois options :
 
 En quelques secondes, ton compte est créé.
 
-**[ÉCRAN — screencast dashboard OttoKit]**
+**[ÉCRAN - screencast dashboard OttoKit]**
 
 Tu atterris directement sur le tableau de bord. Prenons une minute pour repérer les zones importantes.
 
@@ -57,7 +57,7 @@ En haut, tu vois ton quota de tasks. C'est ton compteur mensuel. On a vu dans le
 
 Tu es sur le plan gratuit. C'est parfait pour commencer. Tu pourras upgrader plus tard si tu en as besoin.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton compte est prêt. Maintenant, on va installer le plugin WordPress pour faire le lien entre ton site et la plateforme cloud.
 
@@ -77,7 +77,7 @@ Ton compte est prêt. Maintenant, on va installer le plugin WordPress pour faire
 
 ---
 
-## Leçon 2.2 — Installe le plugin WordPress OttoKit
+## Leçon 2.2 - Installe le plugin WordPress OttoKit
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -85,11 +85,11 @@ Ton compte est prêt. Maintenant, on va installer le plugin WordPress pour faire
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as ton compte OttoKit. Maintenant, il faut installer le plugin sur ton site WordPress. C'est le pont entre ton site et la plateforme cloud. Sans lui, OttoKit ne peut pas voir tes plugins ni réagir aux événements de ton site.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Montre le menu latéral WordPress]
 [Clique sur Extensions > Ajouter une extension]
@@ -99,7 +99,7 @@ Dans la barre de recherche, tape "OttoKit".
 [Tape "OttoKit" dans le champ de recherche]
 [Montre le résultat : "OttoKit: All-in-One Automation Platform" par Brainstorm Force]
 
-Tu vas voir le plugin apparaître. Vérifie bien : c'est par Brainstorm Force, l'équipe derrière Astra et Spectra. Le slug technique reste "suretriggers" — c'est l'ancien nom, mais c'est bien le bon plugin.
+Tu vas voir le plugin apparaître. Vérifie bien : c'est par Brainstorm Force, l'équipe derrière Astra et Spectra. Le slug technique reste "suretriggers" - c'est l'ancien nom, mais c'est bien le bon plugin.
 
 [Pointe le nombre d'installations actives et la note]
 
@@ -111,7 +111,7 @@ Plus de 100 000 installations et une note de 4.9/5. C'est solide.
 
 Le plugin est activé. Tu vas être redirigé automatiquement vers la page de configuration OttoKit.
 
-**[ÉCRAN — screencast page de réglages OttoKit dans WordPress]**
+**[ÉCRAN - screencast page de réglages OttoKit dans WordPress]**
 
 [Montre la page de réglages avec le bouton "Connect"]
 
@@ -127,7 +127,7 @@ Avant de continuer, vérifie deux choses :
 [Clique sur Extensions > Extensions installées]
 [Montre OttoKit actif dans la liste]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le plugin est en place. Dans la prochaine étape, on va le connecter à ton compte OttoKit pour que tout communique.
 
@@ -147,7 +147,7 @@ Le plugin est en place. Dans la prochaine étape, on va le connecter à ton comp
 
 ---
 
-## Leçon 2.3 — Connecte ton site WordPress à la plateforme
+## Leçon 2.3 - Connecte ton site WordPress à la plateforme
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -155,11 +155,11 @@ Le plugin est en place. Dans la prochaine étape, on va le connecter à ton comp
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Le plugin est installé. Maintenant, on va connecter ton site WordPress à la plateforme cloud OttoKit. C'est cette connexion qui permet à OttoKit de détecter tes plugins, tes formulaires, tes produits WooCommerce — tout ce qui existe sur ton site.
+Le plugin est installé. Maintenant, on va connecter ton site WordPress à la plateforme cloud OttoKit. C'est cette connexion qui permet à OttoKit de détecter tes plugins, tes formulaires, tes produits WooCommerce - tout ce qui existe sur ton site.
 
-**[ÉCRAN — screencast page de réglages OttoKit dans WordPress]**
+**[ÉCRAN - screencast page de réglages OttoKit dans WordPress]**
 
 [Montre la page de réglages OttoKit]
 [Pointe le bouton "Connect" ou "Connect with OttoKit"]
@@ -176,7 +176,7 @@ Une fenêtre s'ouvre pour te connecter à ton compte OttoKit. Si tu es déjà co
 
 La connexion s'établit. OttoKit va maintenant scanner ton site WordPress pour détecter les plugins compatibles.
 
-**[ÉCRAN — screencast app.ottokit.com > Connections]**
+**[ÉCRAN - screencast app.ottokit.com > Connections]**
 
 [Ouvre app.ottokit.com dans un nouvel onglet]
 [Clique sur "Connections" dans la barre latérale]
@@ -195,7 +195,7 @@ OttoKit a trouvé automatiquement les plugins compatibles installés sur ton sit
 
 C'est grâce à cette détection que tu pourras utiliser des triggers et des actions spécifiques à chaque plugin.
 
-**[ÉCRAN — screencast vérification de la connexion]**
+**[ÉCRAN - screencast vérification de la connexion]**
 
 Pour vérifier que tout fonctionne, fais un test simple :
 
@@ -207,7 +207,7 @@ Le statut affiche "Connected". C'est bon.
 
 Si tu vois "Disconnected" ou un message d'erreur, pas de panique. On traitera les problèmes courants dans la leçon 2.7.
 
-**[ÉCRAN — slide "Prérequis techniques"]**
+**[ÉCRAN - slide "Prérequis techniques"]**
 
 Un rappel important : la connexion nécessite :
 
@@ -218,7 +218,7 @@ Un rappel important : la connexion nécessite :
 
 Si un de ces prérequis manque, la connexion échouera ou sera instable.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton site et ton compte OttoKit communiquent. Prochaine étape : connecter ta première app externe. On va commencer par Google Sheets.
 
@@ -238,7 +238,7 @@ Ton site et ton compte OttoKit communiquent. Prochaine étape : connecter ta pre
 
 ---
 
-## Leçon 2.4 — Connecte ta première app externe (Google Sheets)
+## Leçon 2.4 - Connecte ta première app externe (Google Sheets)
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -246,11 +246,11 @@ Ton site et ton compte OttoKit communiquent. Prochaine étape : connecter ta pre
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Ton site WordPress est connecté. Maintenant, on va connecter une app externe : Google Sheets. C'est un bon premier choix parce que tu vas pouvoir voir le résultat de tes workflows directement dans un tableur.
 
-**[ÉCRAN — screencast app.ottokit.com]**
+**[ÉCRAN - screencast app.ottokit.com]**
 
 [Ouvre le dashboard OttoKit]
 [Clique sur "Connections" dans la barre latérale]
@@ -262,9 +262,9 @@ Tu arrives sur la liste des apps disponibles. La recherche est ton amie ici.
 [Montre le résultat Google Sheets avec le logo]
 [Clique sur Google Sheets]
 
-OttoKit te demande de t'authentifier avec ton compte Google. C'est un flux OAuth standard — le même que quand tu connectes une app à Gmail ou Drive.
+OttoKit te demande de t'authentifier avec ton compte Google. C'est un flux OAuth standard - le même que quand tu connectes une app à Gmail ou Drive.
 
-**[ÉCRAN — screencast Google OAuth]**
+**[ÉCRAN - screencast Google OAuth]**
 
 [Montre la fenêtre de connexion Google qui s'ouvre]
 [Sélectionne le compte Google]
@@ -279,7 +279,7 @@ C'est normal. OttoKit a besoin de lire et écrire dans tes Sheets pour que tes w
 
 [Clique sur "Autoriser" / "Allow"]
 
-**[ÉCRAN — screencast retour sur OttoKit]**
+**[ÉCRAN - screencast retour sur OttoKit]**
 
 [Montre la redirection vers OttoKit]
 [Montre Google Sheets dans la liste des connexions avec un statut "Connected"]
@@ -289,9 +289,9 @@ Google Sheets est connecté. Tu peux vérifier en cliquant dessus.
 [Clique sur la connexion Google Sheets]
 [Montre les détails : compte Google utilisé, statut actif]
 
-Un conseil : donne un nom clair à ta connexion si tu utilises plusieurs comptes Google. Par exemple : "Google Sheets — Michael" ou "Google Sheets — équipe".
+Un conseil : donne un nom clair à ta connexion si tu utilises plusieurs comptes Google. Par exemple : "Google Sheets - Michael" ou "Google Sheets - équipe".
 
-**[ÉCRAN — slide "Le flux OAuth en résumé"]**
+**[ÉCRAN - slide "Le flux OAuth en résumé"]**
 
 Le processus est le même pour toutes les apps SaaS :
 
@@ -301,9 +301,9 @@ Le processus est le même pour toutes les apps SaaS :
 4. Tu autorises les permissions
 5. Tu reviens sur OttoKit avec la connexion active
 
-Que ce soit Slack, Stripe, Mailchimp ou n'importe quelle autre app — c'est toujours ce même processus en 5 étapes.
+Que ce soit Slack, Stripe, Mailchimp ou n'importe quelle autre app - c'est toujours ce même processus en 5 étapes.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Google Sheets est prêt. Tu as un site WordPress connecté et une app externe connectée. Tout est en place pour créer ton premier workflow.
 
@@ -323,7 +323,7 @@ Google Sheets est prêt. Tu as un site WordPress connecté et une app externe co
 
 ---
 
-## Leçon 2.5 — Crée ton premier workflow : formulaire → Google Sheets
+## Leçon 2.5 - Crée ton premier workflow : formulaire → Google Sheets
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen (démo)
@@ -331,11 +331,11 @@ Google Sheets est prêt. Tu as un site WordPress connecté et une app externe co
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 C'est le moment. Tu vas créer ton premier workflow de A à Z. L'objectif : chaque fois qu'un visiteur remplit un formulaire sur ton site, ses informations sont automatiquement ajoutées dans un Google Sheets. Zéro copier-coller, zéro oubli.
 
-**[ÉCRAN — screencast app.ottokit.com]**
+**[ÉCRAN - screencast app.ottokit.com]**
 
 [Clique sur "Workflows" dans la barre latérale]
 [Clique sur "Create Workflow" ou le bouton "+"]
@@ -349,16 +349,16 @@ Première chose : donne un nom clair à ton workflow.
 [Clique sur le titre du workflow]
 [Tape : "Formulaire contact → Google Sheets"]
 
-Un bon nom décrit ce que fait le workflow. Tu vas en créer des dizaines — si tu les appelles "Workflow 1", "Test", "Sans titre", tu seras perdu dans une semaine.
+Un bon nom décrit ce que fait le workflow. Tu vas en créer des dizaines - si tu les appelles "Workflow 1", "Test", "Sans titre", tu seras perdu dans une semaine.
 
-**[ÉCRAN — screencast workflow builder : ajout du trigger]**
+**[ÉCRAN - screencast workflow builder : ajout du trigger]**
 
 Tu es dans le canvas builder. C'est l'éditeur visuel d'OttoKit.
 
 [Montre le canvas vide avec le bouton "Add Trigger"]
 [Clique sur "Add Trigger"]
 
-On va configurer le trigger — l'événement déclencheur. Cherche le plugin de formulaire que tu utilises.
+On va configurer le trigger - l'événement déclencheur. Cherche le plugin de formulaire que tu utilises.
 
 [Tape "Fluent Forms" dans la recherche (ou Gravity Forms, WPForms selon le site)]
 [Sélectionne le plugin]
@@ -379,7 +379,7 @@ OttoKit a récupéré la structure de ton formulaire. Tu vois les champs : nom, 
 
 [Clique sur "Save" pour valider le trigger]
 
-**[ÉCRAN — screencast workflow builder : ajout de l'action]**
+**[ÉCRAN - screencast workflow builder : ajout de l'action]**
 
 Le trigger est en place. Maintenant, on ajoute l'action : envoyer les données dans Google Sheets.
 
@@ -417,7 +417,7 @@ Chaque colonne de ton tableur est associée à un champ du formulaire. C'est ce 
 
 [Clique sur "Save" pour valider l'action]
 
-**[ÉCRAN — screencast vue d'ensemble du workflow]**
+**[ÉCRAN - screencast vue d'ensemble du workflow]**
 
 [Montre le workflow complet dans le canvas : trigger en haut, action en dessous, flèche entre les deux]
 
@@ -429,7 +429,7 @@ Voilà ton premier workflow. Il fait exactement ce qu'on voulait :
 
 Deux blocs. Une connexion. C'est tout.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton workflow est configuré, mais il n'est pas encore actif. Dans la prochaine leçon, on va le tester avec de vraies données et le publier.
 
@@ -451,7 +451,7 @@ Ton workflow est configuré, mais il n'est pas encore actif. Dans la prochaine l
 
 ---
 
-## Leçon 2.6 — Teste et publie ton workflow
+## Leçon 2.6 - Teste et publie ton workflow
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -459,11 +459,11 @@ Ton workflow est configuré, mais il n'est pas encore actif. Dans la prochaine l
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Ton workflow est construit, mais il ne fonctionne pas encore. Avant de le publier, tu dois le tester. C'est une étape obligatoire. Publier un workflow sans le tester, c'est comme envoyer un email sans le relire.
 
-**[ÉCRAN — screencast app.ottokit.com workflow builder]**
+**[ÉCRAN - screencast app.ottokit.com workflow builder]**
 
 Ouvre ton workflow "Formulaire contact → Google Sheets".
 
@@ -507,7 +507,7 @@ Dans l'historique, tu vois l'exécution de ton workflow. Chaque étape est déta
 
 Parfait. Le workflow fonctionne de bout en bout.
 
-**[ÉCRAN — screencast publication du workflow]**
+**[ÉCRAN - screencast publication du workflow]**
 
 Maintenant, on publie.
 
@@ -521,14 +521,14 @@ Le workflow est maintenant actif. Chaque soumission de formulaire ajoutera autom
 
 Un dernier point : tu peux désactiver un workflow à tout moment sans le supprimer. Le toggle permet de le mettre en pause.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton premier workflow est en production. Si tout s'est bien passé, bravo. Mais parfois, ça ne marche pas du premier coup. Dans la prochaine leçon, on voit les 5 erreurs les plus courantes et comment les corriger.
 
 ---
 
 **Points clés**
-- Toujours tester avant de publier — c'est une règle absolue
+- Toujours tester avant de publier - c'est une règle absolue
 - Test action par action pour vérifier chaque étape isolément
 - Test en conditions réelles pour valider le flux complet
 - L'historique (History) montre chaque exécution avec son statut
@@ -543,7 +543,7 @@ Ton premier workflow est en production. Si tout s'est bien passé, bravo. Mais p
 
 ---
 
-## Leçon 2.7 — Troubleshooting : les 5 erreurs les plus courantes à l'installation
+## Leçon 2.7 - Troubleshooting : les 5 erreurs les plus courantes à l'installation
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -551,11 +551,11 @@ Ton premier workflow est en production. Si tout s'est bien passé, bravo. Mais p
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 L'installation s'est bien passée pour toi ? Tant mieux. Mais si tu es bloqué, ou si un élève te pose la question, voici les 5 problèmes les plus fréquents et leurs solutions.
 
-**[ÉCRAN — slide "Erreur 1 : Connexion échouée — SSL manquant"]**
+**[ÉCRAN - slide "Erreur 1 : Connexion échouée - SSL manquant"]**
 
 **Problème** : tu cliques sur "Connect" mais rien ne se passe, ou tu obtiens une erreur "SSL required".
 
@@ -563,13 +563,13 @@ L'installation s'est bien passée pour toi ? Tant mieux. Mais si tu es bloqué, 
 
 **Solution** :
 
-[Montre la barre d'adresse du navigateur — HTTP vs HTTPS]
+[Montre la barre d'adresse du navigateur - HTTP vs HTTPS]
 
 - Vérifie que ton hébergeur a activé le certificat SSL
 - Force HTTPS dans les réglages WordPress : Réglages > Général > remplace http:// par https://
 - Si tu utilises Cloudflare, active "Always Use HTTPS"
 
-**[ÉCRAN — slide "Erreur 2 : Le plugin ne détecte pas les plugins WP"]**
+**[ÉCRAN - slide "Erreur 2 : Le plugin ne détecte pas les plugins WP"]**
 
 **Problème** : tu connectes ton site, mais OttoKit ne voit aucun plugin compatible.
 
@@ -584,11 +584,11 @@ L'installation s'est bien passée pour toi ? Tant mieux. Mais si tu es bloqué, 
 - Déconnecte et reconnecte ton site dans OttoKit
 - Attends 2-3 minutes : la détection n'est pas toujours instantanée
 
-**[ÉCRAN — slide "Erreur 3 : Timeout à la connexion"]**
+**[ÉCRAN - slide "Erreur 3 : Timeout à la connexion"]**
 
 **Problème** : la connexion démarre mais tourne en boucle, puis échoue avec un timeout.
 
-**Cause** : ton serveur met trop de temps à répondre — souvent un hébergement mutualisé trop lent.
+**Cause** : ton serveur met trop de temps à répondre - souvent un hébergement mutualisé trop lent.
 
 **Solution** :
 
@@ -601,7 +601,7 @@ set_time_limit(300);
 
 - Contacte ton hébergeur pour vérifier que les requêtes REST API ne sont pas bloquées
 
-**[ÉCRAN — slide "Erreur 4 : Pare-feu ou plugin de sécurité qui bloque"]**
+**[ÉCRAN - slide "Erreur 4 : Pare-feu ou plugin de sécurité qui bloque"]**
 
 **Problème** : la connexion échoue avec une erreur 403 ou "Forbidden".
 
@@ -616,7 +616,7 @@ set_time_limit(300);
 - Vérifie les règles du pare-feu de ton hébergeur (ModSecurity, etc.)
 - Si ça fonctionne avec le firewall désactivé, réactive-le et ajoute les exceptions
 
-**[ÉCRAN — slide "Erreur 5 : WP-Cron désactivé ou défaillant"]**
+**[ÉCRAN - slide "Erreur 5 : WP-Cron désactivé ou défaillant"]**
 
 **Problème** : la connexion fonctionne, mais les triggers ne se déclenchent pas ou avec un gros retard.
 
@@ -639,7 +639,7 @@ define('DISABLE_WP_CRON', true);
 
 - Va dans Outils > Santé du site > Info. Vérifie que le cron est marqué comme actif.
 
-**[ÉCRAN — slide "Résumé des 5 erreurs"]**
+**[ÉCRAN - slide "Résumé des 5 erreurs"]**
 
 | Erreur | Cause | Solution rapide |
 |--------|-------|-----------------|
@@ -649,7 +649,7 @@ define('DISABLE_WP_CRON', true);
 | Erreur 403 | Pare-feu bloque | Ajouter IPs en whitelist |
 | Triggers en retard | WP-Cron désactivé | Vérifier wp-config.php |
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Si tu rencontres un problème qui n'est pas dans cette liste, la première chose à faire : va dans l'historique OttoKit et lis le message d'erreur. Il est souvent explicite. Sinon, le support Brainstorm Force est réactif.
 
@@ -673,7 +673,7 @@ Tu as terminé le Module 2. Tu sais installer OttoKit, connecter ton site, ajout
 
 ---
 
-## Notes de production — Module 2
+## Notes de production - Module 2
 
 ### Captures à préparer
 - Page d'inscription ottokit.com (bouton Sign Up)

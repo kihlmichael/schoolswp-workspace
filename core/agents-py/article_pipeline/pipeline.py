@@ -89,7 +89,7 @@ class ArticlePipeline(BaseContentAgent):
         # Étape 1 — Rédaction
         from agents.seo_writer.agent import SeoWriterAgent
 
-        writer = SeoWriterAgent(model=self.model)
+        writer = SeoWriterAgent(model=self.raw_model)
         result.draft = await writer.run(topic=topic, keyword=keyword, intent=intent, angle=angle)
         result.v1 = result.draft
 
@@ -97,8 +97,8 @@ class ArticlePipeline(BaseContentAgent):
         from agents.llm_seo.agent import LlmSeoAgent
         from agents.seo_auditor.agent import SeoAuditorAgent
 
-        auditor = SeoAuditorAgent(model=self.model)
-        llm_agent = LlmSeoAgent(model=self.model)
+        auditor = SeoAuditorAgent(model=self.raw_model)
+        llm_agent = LlmSeoAgent(model=self.raw_model)
 
         result.audit, result.llm_seo = await asyncio.gather(
             auditor.run(article=result.draft, keyword=keyword),
@@ -109,7 +109,7 @@ class ArticlePipeline(BaseContentAgent):
         try:
             from agents.seo_auditor.agent import SeoEditorAgent  # type: ignore[attr-defined]
 
-            editor = SeoEditorAgent(model=self.model)
+            editor = SeoEditorAgent(model=self.raw_model)
             result.final = await editor.run(
                 draft=result.draft,
                 audit=result.audit,
@@ -123,7 +123,7 @@ class ArticlePipeline(BaseContentAgent):
         # Étape 4 — Cluster sémantique
         from agents.cluster_architect.agent import ClusterArchitectAgent
 
-        cluster = ClusterArchitectAgent(model=self.model)
+        cluster = ClusterArchitectAgent(model=self.raw_model)
         result.cluster = await cluster.run(thematique=keyword, objectif=pillar or keyword)
 
         result.publish_score = result.compute_publish_score()
@@ -142,20 +142,20 @@ class ArticlePipeline(BaseContentAgent):
 
         from agents.schoolswp_brain.agent import SchoolswpBrainAgent
 
-        brain = SchoolswpBrainAgent(model=self.model)
+        brain = SchoolswpBrainAgent(model=self.raw_model)
         strategy = await brain.run(query=keyword, intent=intent)
 
         from agents.seo_writer.agent import SeoWriterAgent
 
-        writer = SeoWriterAgent(model=self.model)
+        writer = SeoWriterAgent(model=self.raw_model)
         result.draft = await writer.run(topic=keyword, keyword=keyword, intent=intent, angle=strategy[:500])
         result.v1 = result.draft
 
         from agents.llm_seo.agent import LlmSeoAgent
         from agents.seo_auditor.agent import SeoAuditorAgent
 
-        auditor = SeoAuditorAgent(model=self.model)
-        llm_agent = LlmSeoAgent(model=self.model)
+        auditor = SeoAuditorAgent(model=self.raw_model)
+        llm_agent = LlmSeoAgent(model=self.raw_model)
 
         result.audit, result.llm_seo = await asyncio.gather(
             auditor.run(article=result.draft, keyword=keyword),
@@ -167,7 +167,7 @@ class ArticlePipeline(BaseContentAgent):
 
         from agents.cluster_architect.agent import ClusterArchitectAgent
 
-        cluster = ClusterArchitectAgent(model=self.model)
+        cluster = ClusterArchitectAgent(model=self.raw_model)
         result.cluster = await cluster.run(thematique=keyword, objectif=pilier or keyword)
 
         return result

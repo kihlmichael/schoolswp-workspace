@@ -1,9 +1,9 @@
-# Script video — Module 5, Lecon 3 : Listes et tags automatiques
+# Script video - Module 5, Lecon 3 : Listes et tags automatiques
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 5 — FluentForms + FluentCRM
-**Lecon** : 3/7 — Listes et tags automatiques
+**Module** : 5 - FluentForms + FluentCRM
+**Lecon** : 3/7 - Listes et tags automatiques
 **Duree** : 10 min (~1300 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast FluentCRM + FluentForms, slides strategie
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Tu sais connecter FluentForms a FluentCRM. Maintenant, la question importante : comment organiser tes listes et tes tags pour ne pas te retrouver avec un bazar inutilisable dans six mois ?
 
 On va mettre en place une convention de nommage claire et configurer chaque formulaire pour qu'il assigne automatiquement la bonne segmentation.
 
-**[SECTION 1 — slide "Listes vs Tags — la difference"]**
+**[SECTION 1 - slide "Listes vs Tags - la difference"]**
 
 Rappel rapide.
 
@@ -29,7 +29,7 @@ Un contact est dans une ou deux listes maximum. Mais il peut avoir des dizaines 
 
 Les listes servent a la gestion globale. Les tags servent a la segmentation fine et au ciblage.
 
-**[SECTION 2 — slide "Convention de nommage"]**
+**[SECTION 2 - slide "Convention de nommage"]**
 
 Voici la convention que j'utilise sur schoolsWP et que je te recommande.
 
@@ -54,19 +54,19 @@ Pour les tags, utilise un prefixe qui indique la categorie :
 - bought-formation-lms
 - bought-ebook-seo
 
-Le prefixe te permet de filtrer rapidement. Dans FluentCRM, tu peux trier les tags par nom — les prefixes regroupent les tags par categorie.
+Le prefixe te permet de filtrer rapidement. Dans FluentCRM, tu peux trier les tags par nom - les prefixes regroupent les tags par categorie.
 
-**[SECTION 3 — screencast "Creer les listes dans FluentCRM"]**
+**[SECTION 3 - screencast "Creer les listes dans FluentCRM"]**
 
 Direction FluentCRM, Contacts, Lists. Cree les listes de base :
-- newsletter — tous les abonnes newsletter
-- leads-seo — contacts interesses par le SEO
-- leads-formation — contacts interesses par les formations
-- clients — contacts qui ont achete
+- newsletter - tous les abonnes newsletter
+- leads-seo - contacts interesses par le SEO
+- leads-formation - contacts interesses par les formations
+- clients - contacts qui ont achete
 
 Chaque liste a un titre et une description optionnelle. La description t'aide a te rappeler l'usage dans 6 mois.
 
-**[SECTION 4 — screencast "Creer les tags dans FluentCRM"]**
+**[SECTION 4 - screencast "Creer les tags dans FluentCRM"]**
 
 FluentCRM, Contacts, Tags. Cree les tags de base :
 - source-formulaire-contact
@@ -78,7 +78,7 @@ FluentCRM, Contacts, Tags. Cree les tags de base :
 
 Tu n'as pas besoin de tout creer maintenant. Cree les tags au fur et a mesure que tu ajoutes des formulaires. Mais respecte toujours la convention de nommage.
 
-**[SECTION 5 — screencast "Configurer chaque formulaire"]**
+**[SECTION 5 - screencast "Configurer chaque formulaire"]**
 
 Maintenant, la regle d'or : chaque formulaire a sa propre combinaison liste + tags.
 
@@ -94,7 +94,7 @@ Ouvre chaque formulaire, va dans Settings, Marketing & CRM, FluentCRM Feed, et c
 
 En 30 secondes par formulaire, tu as une segmentation propre. Et chaque nouveau contact qui arrive est immediatement qualifie.
 
-**[SECTION 6 — screencast "Verifier la segmentation"]**
+**[SECTION 6 - screencast "Verifier la segmentation"]**
 
 Apres quelques semaines, va dans FluentCRM et regarde tes contacts.
 
@@ -106,7 +106,7 @@ Tu peux combiner les filtres. Montre-moi tous les contacts qui sont dans la list
 
 C'est la puissance de la segmentation. Un formulaire collecte. Le CRM organise. Et toi, tu cibles.
 
-**[SECTION 7 — slide "Cas pratique complet"]**
+**[SECTION 7 - slide "Cas pratique complet"]**
 
 Cas pratique : formulaire "Guide SEO gratuit".
 
@@ -119,11 +119,11 @@ FluentForms enregistre la soumission. Le feed FluentCRM s'execute :
 
 Le contact est maintenant segmente. Tu sais d'ou il vient (lead magnet), ce qui l'interesse (SEO), et ou il en est (lead, pas encore client).
 
-Et ca, c'est la base pour la prochaine etape — les tags dynamiques qui changent selon les reponses du formulaire. On voit ca dans la lecon suivante.
+Et ca, c'est la base pour la prochaine etape - les tags dynamiques qui changent selon les reponses du formulaire. On voit ca dans la lecon suivante.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Tes listes et tags sont organises. Chaque formulaire alimente FluentCRM avec une segmentation propre. Dans la prochaine lecon, on va encore plus loin : les tags dynamiques — le tag change selon ce que le visiteur a repondu dans le formulaire.
+Tes listes et tags sont organises. Chaque formulaire alimente FluentCRM avec une segmentation propre. Dans la prochaine lecon, on va encore plus loin : les tags dynamiques - le tag change selon ce que le visiteur a repondu dans le formulaire.
 
 On se retrouve dans la lecon suivante.
 
@@ -145,4 +145,4 @@ On se retrouve dans la lecon suivante.
 - Face camera : intro (le risque du bazar) + outro (transition tags dynamiques)
 - Screencast : creation listes/tags + config formulaires (~6 min)
 - Slides : 3 slides (listes vs tags, convention nommage, cas pratique)
-- Ton : structure, methodique — poser les bases proprement
+- Ton : structure, methodique - poser les bases proprement

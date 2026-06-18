@@ -1,0 +1,57 @@
+# Source of truth for the schoolsWP second brain. Nothing outside `roots` is indexed.
+# backend governs MARKDOWN egress only. Code (.py/.ps1/...) in any root is ALWAYS offline.
+roots:
+  - { path: core/, type: code, backend: offline }
+  - { path: tools/, type: code, backend: offline }
+  - { path: docs/, type: content, backend: gemini }
+  - { path: content/articles/, type: content, backend: gemini }
+  - { path: content/audits/, type: content, backend: gemini }
+  - { path: content/decisions/, type: content, backend: gemini }
+  - { path: schoolswp-agents/, type: content, backend: gemini }
+  - { path: obsidian-bridge/, type: content, backend: gemini }
+exclude:
+  - "**/.env*"
+  - "**/*.key"
+  - "**/*.pem"
+  - ".credentials/**"
+  - "**/_drafts/**"
+  - "**/_workspace/**"
+  - "tmp_*/**"
+  - ".tmp-*/**"
+  - "node_modules/**"
+  - "**/.venv/**"
+  - "obsidian-bridge/logs/**"
+  # --- editorial pipeline intermediates (brain.bat scratch, not knowledge) ---
+  # Keep final.md / article.md / named articles / audit synthese.md; drop the cuisine.
+  - "**/v1.md"
+  - "**/v2.md"
+  - "**/v3.md"
+  - "**/audit-seo.md"
+  - "**/audit-llm.md"
+  - "**/audit-conversion.md"
+  - "**/audit-topical.md"
+  - "**/seo-audit.md"
+  - "**/citation-audit.md"
+  - "**/conversion-audit.md"
+  - "**/topical-audit.md"
+  - "**/*-audit/**"
+  - "**/strategy.md"
+  - "**/cluster.md"
+  - "**/cluster-plan.md"
+  - "**/meta.md"
+  - "**/links.md"
+  - "**/brief.md"
+  - "**/cta.md"
+  - "**/article-cta.md"
+  - "**/brain-report.md"
+  - "**/publish-ready.md"
+  - "**/publish-dashboard.md"
+  - "**/serp-comp.md"
+  - "**/serp-sim.md"
+  - "**/SIMULATION-SERP-6MOIS.md"
+  - "**/image-prompts.md"
+  - "**/rank-math-values.md"
+  - "**/*PUSH-GUIDE.md"
+  - "**/*rankmath-tags-to-paste.md"
+  - "**/*-diff.md"
+gemini_model: "gemini-2.5-flash"

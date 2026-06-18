@@ -491,7 +491,7 @@ class LlmSeoAgent(BaseContentAgent):
         result = await self.audit(article=article, keyword=keyword, intent=intent)
 
         # Étape 2 — Optimisation (même si score élevé — pour injection signaux manquants)
-        optimizer = _OptimizerAgent(model=self.model)
+        optimizer = _OptimizerAgent(model=self.raw_model)
         result.article_optimized = await optimizer.run(
             article=article,
             audit_report=result.report,

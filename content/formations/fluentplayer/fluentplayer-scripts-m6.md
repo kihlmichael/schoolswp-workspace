@@ -1,14 +1,14 @@
-# Scripts vidéo — FPL-012 Module 6 : Automatiser avec l'écosystème Fluent
+# Scripts vidéo - FPL-012 Module 6 : Automatiser avec l'écosystème Fluent
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : M6 — Automatiser avec l'écosystème Fluent (Masterclass, premium)
+**Module** : M6 - Automatiser avec l'écosystème Fluent (Masterclass, premium)
 **Leçons** : 6 vidéos + 1 fiche PDF + 1 quiz
 **Durée totale** : ~54 min de vidéo
 **Date** : 2026-05-22
 
 ---
 
-## Leçon 6.1 — FluentPlayer et FluentCRM : déclencher une automation depuis une vidéo
+## Leçon 6.1 - FluentPlayer et FluentCRM : déclencher une automation depuis une vidéo
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -16,17 +16,17 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Au Module 3, tu as appris à capturer un email dans la vidéo. Maintenant, on va plus loin : faire en sorte que cette capture déclenche toute une suite d'actions automatiques. La vidéo devient le point de départ d'un système.
 
-**[ÉCRAN — slide "De la capture à l'automation"]**
+**[ÉCRAN - slide "De la capture à l'automation"]**
 
 Rappel : quand une couche capture un email, le contact arrive dans FluentCRM avec un tag. Ce tag, ce n'est pas qu'une étiquette de rangement. C'est un déclencheur.
 
 Dans FluentCRM, une automation peut démarrer dès qu'un contact reçoit un tag donné.
 
-**[ÉCRAN — slide "L'enchaînement complet"]**
+**[ÉCRAN - slide "L'enchaînement complet"]**
 
 Voici l'enchaînement :
 
@@ -37,13 +37,13 @@ Voici l'enchaînement :
 
 Tu publies la vidéo une fois. Elle travaille ensuite toute seule.
 
-**[ÉCRAN — screencast : créer l'automation]**
+**[ÉCRAN - screencast : créer l'automation]**
 
 [Ouvre FluentCRM, section Automations]
 [Crée une automation avec comme déclencheur l'ajout du tag de la vidéo]
 [Ajoute une séquence de quelques emails espacés]
 
-**[ÉCRAN — slide "Une séquence simple qui marche"]**
+**[ÉCRAN - slide "Une séquence simple qui marche"]**
 
 Pas besoin de complexité. Une séquence de bienvenue efficace tient en trois ou quatre emails :
 
@@ -52,12 +52,12 @@ Pas besoin de complexité. Une séquence de bienvenue efficace tient en trois ou
 - email 3, à quatre jours : une preuve, un exemple, un résultat
 - email 4, à six jours : la proposition, ton offre
 
-**[ÉCRAN — screencast : le test de bout en bout]**
+**[ÉCRAN - screencast : le test de bout en bout]**
 
 [Capture un email de test via la couche vidéo]
 [Vérifie dans FluentCRM que le tag est posé et que l'automation démarre]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta vidéo déclenche une automation. C'est le cœur du système. Dans la prochaine leçon, on voit comment FluentPlayer s'intègre à un espace communautaire avec FluentCommunity.
 
@@ -77,7 +77,7 @@ Ta vidéo déclenche une automation. C'est le cœur du système. Dans la prochai
 
 ---
 
-## Leçon 6.2 — FluentPlayer et FluentCommunity : la vidéo dans un espace communautaire
+## Leçon 6.2 - FluentPlayer et FluentCommunity : la vidéo dans un espace communautaire
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -85,11 +85,11 @@ Ta vidéo déclenche une automation. C'est le cœur du système. Dans la prochai
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 FluentCommunity, c'est l'outil d'espace communautaire de l'écosystème Fluent. Si tu animes une communauté ou un espace membres, FluentPlayer y a toute sa place.
 
-**[ÉCRAN — slide "Pourquoi la vidéo dans une communauté"]**
+**[ÉCRAN - slide "Pourquoi la vidéo dans une communauté"]**
 
 Une communauté vit de contenu. La vidéo y est précieuse :
 
@@ -99,24 +99,24 @@ Une communauté vit de contenu. La vidéo y est précieuse :
 
 Avec FluentPlayer, ces vidéos restent à ta marque, mesurées, et interactives.
 
-**[ÉCRAN — screencast : insérer une vidéo dans FluentCommunity]**
+**[ÉCRAN - screencast : insérer une vidéo dans FluentCommunity]**
 
 [Ouvre un espace FluentCommunity]
 [Insère une vidéo FluentPlayer dans une publication ou une leçon]
 
 La vidéo s'affiche dans l'espace communautaire comme sur n'importe quelle page, avec son lecteur, ses chapitres et ses couches.
 
-**[ÉCRAN — slide "Vidéo réservée aux membres"]**
+**[ÉCRAN - slide "Vidéo réservée aux membres"]**
 
 L'intérêt principal : la vidéo profite des règles d'accès de FluentCommunity. Une vidéo placée dans un espace réservé n'est visible que par les membres de cet espace.
 
 Tu obtiens du contenu vidéo protégé, sans plugin supplémentaire de restriction.
 
-**[ÉCRAN — slide "Garder la cohérence"]**
+**[ÉCRAN - slide "Garder la cohérence"]**
 
 Même dans une communauté, applique ton preset de marque et tes bonnes pratiques : poster soigné, chapitres, branding. Tes membres doivent reconnaître ton univers, dedans comme dehors.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 La vidéo dans une communauté, c'est puissant. Mais pour un vrai cours structuré, avec progression, il faut un outil de cours. Prochaine leçon.
 
@@ -136,7 +136,7 @@ La vidéo dans une communauté, c'est puissant. Mais pour un vrai cours structur
 
 ---
 
-## Leçon 6.3 — FluentPlayer pour un cours en ligne : structurer un cours en vidéos
+## Leçon 6.3 - FluentPlayer pour un cours en ligne : structurer un cours en vidéos
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -144,25 +144,25 @@ La vidéo dans une communauté, c'est puissant. Mais pour un vrai cours structur
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Beaucoup de gens veulent une réponse claire : peut-on faire un cours en ligne avec FluentPlayer ? La réponse honnête est nuancée. On la regarde en face.
 
-**[ÉCRAN — slide "Ce que FluentPlayer fait, et ne fait pas"]**
+**[ÉCRAN - slide "Ce que FluentPlayer fait, et ne fait pas"]**
 
 FluentPlayer est un lecteur vidéo, pas un LMS.
 
 - Il gère : la vidéo, les chapitres, les playlists, la reprise de lecture, les couches, les analytics.
 - Il ne gère pas : la progression notée, les quiz évalués, les certificats, l'inscription structurée à un cursus.
 
-**[ÉCRAN — slide "Deux scénarios"]**
+**[ÉCRAN - slide "Deux scénarios"]**
 
 Selon ton projet, deux chemins :
 
 - Un mini-cours gratuit ou une série : une playlist FluentPlayer suffit. Reprise de lecture, chapitres, couches de capture. Simple et efficace.
 - Un cours payant complet, avec suivi et certificat : FluentPlayer devient le lecteur à l'intérieur d'un outil de cours dédié.
 
-**[ÉCRAN — slide "FluentPlayer comme lecteur du cours"]**
+**[ÉCRAN - slide "FluentPlayer comme lecteur du cours"]**
 
 Dans le deuxième cas, le partage des rôles est clair :
 
@@ -171,15 +171,15 @@ Dans le deuxième cas, le partage des rôles est clair :
 
 Tu as le meilleur des deux : un vrai LMS pour la structure, un vrai lecteur pour la vidéo.
 
-**[ÉCRAN — screencast : une vidéo FluentPlayer dans une leçon de cours]**
+**[ÉCRAN - screencast : une vidéo FluentPlayer dans une leçon de cours]**
 
 [Insère une vidéo FluentPlayer dans une leçon d'un outil de cours]
 
-**[ÉCRAN — slide "Le conseil schoolsWP"]**
+**[ÉCRAN - slide "Le conseil schoolsWP"]**
 
 Ne force pas FluentPlayer à être un LMS. Utilise-le pour ce qu'il fait le mieux : une vidéo qui convertit. Pour la structure de cours, prends un outil de cours. Les deux se complètent, ils ne se remplacent pas.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais où placer FluentPlayer dans un projet de cours. Dans la prochaine leçon, on ouvre FluentPlayer vers l'extérieur avec les webhooks et les intégrations avancées.
 
@@ -199,7 +199,7 @@ Tu sais où placer FluentPlayer dans un projet de cours. Dans la prochaine leço
 
 ---
 
-## Leçon 6.4 — Webhooks et intégrations avancées
+## Leçon 6.4 - Webhooks et intégrations avancées
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -207,15 +207,15 @@ Tu sais où placer FluentPlayer dans un projet de cours. Dans la prochaine leço
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 FluentPlayer s'intègre nativement à l'écosystème Fluent. Mais ton activité utilise sûrement d'autres outils. Les webhooks ouvrent FluentPlayer sur tout le reste.
 
-**[ÉCRAN — slide "Le webhook, rappel"]**
+**[ÉCRAN - slide "Le webhook, rappel"]**
 
 On l'a croisé au Module 3. Un webhook, c'est une adresse que FluentPlayer appelle quand quelque chose se passe, en envoyant les données. À l'autre bout, un outil reçoit et agit.
 
-**[ÉCRAN — slide "Le webhook avec un automatiseur"]**
+**[ÉCRAN - slide "Le webhook avec un automatiseur"]**
 
 Le webhook prend toute sa puissance avec un automatiseur comme n8n.
 
@@ -223,7 +223,7 @@ Le webhook prend toute sa puissance avec un automatiseur comme n8n.
 - l'automatiseur reçoit ces données
 - et il fait ce que tu veux : remplir un tableur, prévenir une équipe, créer une tâche, appeler une autre application
 
-**[ÉCRAN — slide "Des exemples concrets"]**
+**[ÉCRAN - slide "Des exemples concrets"]**
 
 Quelques automatisations utiles :
 
@@ -232,7 +232,7 @@ Quelques automatisations utiles :
 - un lead à fort potentiel déclenche une alerte personnelle
 - les données partent vers un outil que FluentPlayer ne connaît pas
 
-**[ÉCRAN — slide "Quand utiliser quoi"]**
+**[ÉCRAN - slide "Quand utiliser quoi"]**
 
 Garde une règle simple :
 
@@ -240,7 +240,7 @@ Garde une règle simple :
 - destination courante hors Fluent ? Intégration dédiée si elle existe, comme Mailchimp.
 - besoin sur mesure ou outil exotique ? Webhook plus automatiseur.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 FluentPlayer peut se connecter à tout. Avant le verdict final, une question pratique : comment migrer tes vidéos existantes vers FluentPlayer. Prochaine leçon.
 
@@ -260,7 +260,7 @@ FluentPlayer peut se connecter à tout. Avant le verdict final, une question pra
 
 ---
 
-## Leçon 6.5 — Migration : passer tes anciennes vidéos sur FluentPlayer
+## Leçon 6.5 - Migration : passer tes anciennes vidéos sur FluentPlayer
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -268,17 +268,17 @@ FluentPlayer peut se connecter à tout. Avant le verdict final, une question pra
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as déjà des vidéos sur ton site : des embeds YouTube, le lecteur par défaut de WordPress, peut-être un autre plugin. Comment passer tout ça sur FluentPlayer sans tout casser. On fait ça avec méthode.
 
-**[ÉCRAN — slide "Ne pas tout migrer d'un coup"]**
+**[ÉCRAN - slide "Ne pas tout migrer d'un coup"]**
 
 La première règle : ne migre pas tout le même jour. Une migration en masse, c'est le risque de tout casser sans le voir.
 
 Migre par lots, en commençant par les vidéos qui comptent le plus.
 
-**[ÉCRAN — slide "L'ordre de priorité"]**
+**[ÉCRAN - slide "L'ordre de priorité"]**
 
 Migre dans cet ordre :
 
@@ -286,7 +286,7 @@ Migre dans cet ordre :
 - ensuite tes pages de vente et tes pages d'inscription
 - enfin le reste, au fil de l'eau
 
-**[ÉCRAN — screencast : l'outil de migration intégré]**
+**[ÉCRAN - screencast : l'outil de migration intégré]**
 
 Si tes vidéos viennent d'un autre lecteur, comme Presto Player, FluentPlayer a un outil de migration intégré. Va dans Settings, onglet Migration.
 
@@ -295,7 +295,7 @@ Si tes vidéos viennent d'un autre lecteur, comme Presto Player, FluentPlayer a 
 
 L'outil importe automatiquement les presets, les réglages, les médias et les analytics de l'ancien lecteur. C'est la voie rapide quand tu changes de plugin vidéo.
 
-**[ÉCRAN — screencast : migrer un embed à la main]**
+**[ÉCRAN - screencast : migrer un embed à la main]**
 
 Pour des embeds YouTube ou le lecteur WordPress par défaut, pas d'outil automatique : tu remplaces à la main.
 
@@ -306,7 +306,7 @@ Pour des embeds YouTube ou le lecteur WordPress par défaut, pas d'outil automat
 
 Migrer une vidéo, ce n'est pas juste la déplacer. C'est l'occasion de lui ajouter ce que cette formation t'a appris : branding, chapitres, capture.
 
-**[ÉCRAN — slide "La checklist par vidéo migrée"]**
+**[ÉCRAN - slide "La checklist par vidéo migrée"]**
 
 Pour chaque vidéo migrée, vérifie :
 
@@ -316,11 +316,11 @@ Pour chaque vidéo migrée, vérifie :
 - au moins une couche de conversion est en place
 - la page s'affiche bien sur mobile
 
-**[ÉCRAN — slide "La migration comme amélioration"]**
+**[ÉCRAN - slide "La migration comme amélioration"]**
 
 Vois la migration non comme une corvée technique, mais comme une vague d'amélioration. Chaque ancienne vidéo passive devient une vidéo qui convertit. C'est du travail déjà publié qui se met enfin à rapporter.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais migrer proprement. Dernière leçon de la Masterclass : le verdict honnête de schoolsWP, FluentPlayer face aux alternatives.
 
@@ -340,7 +340,7 @@ Tu sais migrer proprement. Dernière leçon de la Masterclass : le verdict honn�
 
 ---
 
-## Leçon 6.6 — FluentPlayer face aux alternatives : le verdict schoolsWP
+## Leçon 6.6 - FluentPlayer face aux alternatives : le verdict schoolsWP
 
 **Durée** : 10 min
 **Type** : Vidéo HeyGen
@@ -348,11 +348,11 @@ Tu sais migrer proprement. Dernière leçon de la Masterclass : le verdict honn�
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On termine par une question franche : FluentPlayer est-il le bon choix pour toi ? Pour répondre honnêtement, il faut le situer face aux alternatives. Pas de discours commercial ici, juste un verdict utile.
 
-**[ÉCRAN — slide "Les alternatives sérieuses"]**
+**[ÉCRAN - slide "Les alternatives sérieuses"]**
 
 Sur le créneau de la vidéo qui convertit, trois noms reviennent :
 
@@ -362,19 +362,19 @@ Sur le créneau de la vidéo qui convertit, trois noms reviennent :
 
 Ce sont de bons outils. Le but n'est pas de les démolir, mais de voir où chacun brille.
 
-**[ÉCRAN — slide "Pour qui Presto Player reste pertinent"]**
+**[ÉCRAN - slide "Pour qui Presto Player reste pertinent"]**
 
 Presto Player est un excellent lecteur WordPress, mûr et riche. Si tu n'utilises pas l'écosystème Fluent et que tu cherches un lecteur interactif autonome, Presto Player est un choix solide. C'est un concurrent direct sérieux et respectable.
 
-**[ÉCRAN — slide "Pour qui Vimeo reste pertinent"]**
+**[ÉCRAN - slide "Pour qui Vimeo reste pertinent"]**
 
 Vimeo brille quand l'hébergement vidéo professionnel est ta priorité : qualité de diffusion, fiabilité, outils de production. Si la vidéo est ton métier principal et que WordPress n'est qu'une vitrine, Vimeo garde tout son sens.
 
-**[ÉCRAN — slide "Pour qui Wistia reste pertinent"]**
+**[ÉCRAN - slide "Pour qui Wistia reste pertinent"]**
 
 Wistia est taillé pour les équipes marketing qui veulent une plateforme vidéo dédiée, hors WordPress, avec des analytics poussés. Pour une entreprise dont la vidéo dépasse largement le site WordPress, Wistia reste pertinent.
 
-**[ÉCRAN — slide "Où FluentPlayer gagne"]**
+**[ÉCRAN - slide "Où FluentPlayer gagne"]**
 
 FluentPlayer est le meilleur choix dans un cas précis, et c'est sans doute le tien :
 
@@ -385,11 +385,11 @@ FluentPlayer est le meilleur choix dans un cas précis, et c'est sans doute le t
 
 Dans ce cas, l'intégration native à l'écosystème Fluent fait la différence. Aucune autre solution ne relie aussi simplement la vidéo, le CRM, les formulaires et la communauté.
 
-**[ÉCRAN — slide "Le verdict honnête"]**
+**[ÉCRAN - slide "Le verdict honnête"]**
 
 Le verdict schoolsWP : FluentPlayer n'est pas le meilleur lecteur pour tout le monde. Il est le meilleur pour qui construit son activité sur WordPress avec l'écosystème Fluent. Si c'est ton cas, c'est un choix évident. Si tu es ailleurs, une des alternatives te servira peut-être mieux, et c'est très bien.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant une vision complète et honnête. Il ne reste qu'à assembler tout ce que tu as appris dans un système. C'est ton projet final.
 
@@ -409,7 +409,7 @@ Tu as maintenant une vision complète et honnête. Il ne reste qu'à assembler t
 
 ---
 
-## Projet final — Ton mini-tunnel vidéo
+## Projet final - Ton mini-tunnel vidéo
 
 **Durée** : intégrée à la leçon 6.6 et aux notes de production
 **Type** : exercice guidé
@@ -427,7 +427,7 @@ Le projet final assemble toute la Masterclass en un système. Tu construis un mi
 
 ---
 
-## Notes de production — Module 6
+## Notes de production - Module 6
 
 ### Captures à préparer
 - FluentCRM : création d'une automation déclenchée par un tag

@@ -1,4 +1,4 @@
-# ZipWP — Gap Analysis schoolsWP
+# ZipWP - Gap Analysis schoolsWP
 
 ## Donnees produit
 
@@ -33,7 +33,7 @@
 | WEB MARKETING TUTO | 1 | Tuto A-Z basique |
 | Autres (WPmarket, Mohamed KANE, etc.) | 6 | Demos superficielles |
 
-**Constat** : les tutos FR sont TOUS superficiels — demos "wow" de 10-15 min. Aucune formation structuree.
+**Constat** : les tutos FR sont TOUS superficiels - demos "wow" de 10-15 min. Aucune formation structuree.
 
 ## 13 lacunes identifiees (opportunites schoolsWP)
 
@@ -55,7 +55,7 @@
 
 ## Positionnement schoolsWP
 
-**Angle unique** : "ZipWP dans l'ecosysteme WordPress business francophone — de la demo au site qui genere du revenu"
+**Angle unique** : "ZipWP dans l'ecosysteme WordPress business francophone - de la demo au site qui genere du revenu"
 
 **Stack synergie** : ZipWP (generation) + Astra/Spectra (theme/builder) + CartFlows (funnels) + FluentCRM (CRM) + OttoKit (automatisation) + TutorLMS (formations)
 

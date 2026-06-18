@@ -1,9 +1,9 @@
-# Script video — Module 1, Lecon 1 : Free vs Pro — tout debloquer ou rester gratuit ?
+# Script video - Module 1, Lecon 1 : Free vs Pro - tout debloquer ou rester gratuit ?
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 1 — Fondations
-**Lecon** : 1/6 — Free vs Pro : tout debloquer ou rester gratuit ?
+**Module** : 1 - Fondations
+**Lecon** : 1/6 - Free vs Pro : tout debloquer ou rester gratuit ?
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, slides comparatifs, screencast pricing page
@@ -11,31 +11,31 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 La premiere question que tout le monde se pose avec FluentForms : est-ce que la version gratuite suffit, ou est-ce qu'il faut passer Pro ?
 
-La reponse courte : ca depend de ce que tu veux faire. Mais pour te donner une vraie reponse, il faut qu'on regarde ensemble ce que chaque version contient. Pas les promesses marketing — les features reelles.
+La reponse courte : ca depend de ce que tu veux faire. Mais pour te donner une vraie reponse, il faut qu'on regarde ensemble ce que chaque version contient. Pas les promesses marketing - les features reelles.
 
-**[ECRAN — slide "Ce que la version gratuite inclut"]**
+**[ECRAN - slide "Ce que la version gratuite inclut"]**
 
 Commencons par ce qui est gratuit.
 
 FluentForms Free, c'est deja un plugin serieux. Tu as plus de 35 types de champs : texte, email, telephone, select, checkbox, radio, nombre, date, upload basique, champs caches, section HTML, et d'autres.
 
-Tu as la logique conditionnelle basique. Afficher ou masquer un champ selon une reponse — ca marche en gratuit.
+Tu as la logique conditionnelle basique. Afficher ou masquer un champ selon une reponse - ca marche en gratuit.
 
 Tu as le Honeypot anti-spam, actif par defaut. Pas besoin de configurer quoi que ce soit.
 
-Tu as Stripe en version basique — avec 1.9% de frais de transaction en plus des frais Stripe. C'est suffisant pour un paiement simple, mais pas ideal pour du volume.
+Tu as Stripe en version basique - avec 1.9% de frais de transaction en plus des frais Stripe. C'est suffisant pour un paiement simple, mais pas ideal pour du volume.
 
 Et tu as une quinzaine d'integrations : email, Slack, webhooks basiques, et quelques connecteurs.
 
 Toutes les soumissions sont enregistrees dans WordPress. Tu as un tableau de bord, des statistiques de base, des notifications email configurables.
 
-C'est honnete. Pour un formulaire de contact, un formulaire de capture d'email, ou un sondage simple — la version gratuite fait le travail.
+C'est honnete. Pour un formulaire de contact, un formulaire de capture d'email, ou un sondage simple - la version gratuite fait le travail.
 
-**[ECRAN — slide "Ce que la version Pro debloque"]**
+**[ECRAN - slide "Ce que la version Pro debloque"]**
 
 Maintenant, la version Pro.
 
@@ -47,9 +47,9 @@ Les partial entries. Si un visiteur abandonne le formulaire a mi-chemin, tu recu
 
 L'upload de fichiers avance. Types de fichiers configurables, taille maximum, upload multiple avec preview.
 
-La generation de PDF. Chaque soumission peut generer un PDF automatique — devis, recapitulatif, bon de commande.
+La generation de PDF. Chaque soumission peut generer un PDF automatique - devis, recapitulatif, bon de commande.
 
-Le styling avance. Tu controles les couleurs, les tailles, les espacements, les bordures — sans ecrire de CSS.
+Le styling avance. Tu controles les couleurs, les tailles, les espacements, les bordures - sans ecrire de CSS.
 
 La tarification conditionnelle. Le prix change selon les options cochees. Ideal pour un formulaire de devis ou une commande personnalisee.
 
@@ -59,7 +59,7 @@ L'AI Form Builder. Tu decris ton formulaire en langage naturel, l'IA genere les 
 
 Et les paiements complets. Stripe sans frais supplementaires, PayPal, plus d'options de paiement.
 
-**[ECRAN — slide "Plans Pro — la bonne nouvelle"]**
+**[ECRAN - slide "Plans Pro - la bonne nouvelle"]**
 
 Voici le point important que beaucoup ratent.
 
@@ -71,9 +71,9 @@ Agency : 159 dollars par an, cinq sites. Toutes les features Pro.
 
 Unlimited : 279 dollars par an, sites illimites. Toutes les features Pro.
 
-Et il existe une option Lifetime — un paiement unique, pas d'abonnement annuel. Si tu sais que tu vas utiliser FluentForms longtemps, c'est un investissement malin.
+Et il existe une option Lifetime - un paiement unique, pas d'abonnement annuel. Si tu sais que tu vas utiliser FluentForms longtemps, c'est un investissement malin.
 
-**[ECRAN — slide "Arbre de decision"]**
+**[ECRAN - slide "Arbre de decision"]**
 
 Alors, comment choisir ?
 
@@ -83,15 +83,15 @@ Passe en Pro si tu as besoin de formulaires multi-etapes, de paiements sans frai
 
 En resume : commence gratuit. Teste. Et passe Pro quand tu atteins une limite concrete. Pas avant.
 
-**[ECRAN — screencast rapide de la page pricing]**
+**[ECRAN - screencast rapide de la page pricing]**
 
 Laisse-moi te montrer la page pricing rapidement pour que tu voies par toi-meme.
 
-Tu vois les trois plans. Les features sont identiques — seul le nombre de sites change. Regarde bien : il n'y a pas de petite etoile qui cache des limitations. C'est le meme produit.
+Tu vois les trois plans. Les features sont identiques - seul le nombre de sites change. Regarde bien : il n'y a pas de petite etoile qui cache des limitations. C'est le meme produit.
 
 Si tu geres un seul site, le plan Single a 59 dollars par an c'est 5 dollars par mois. Moins cher qu'un abonnement Typeform ou JotForm.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Maintenant que tu sais exactement ce que chaque version propose, on va passer aux choses serieuses. Dans la prochaine lecon, on fait le tour complet de l'interface du builder. Tu vas voir ou tout se trouve et comment naviguer efficacement.
 
@@ -114,4 +114,4 @@ On se retrouve dans la lecon suivante.
 - Face camera : intro (la question) + outro (transition lecon 2)
 - Slides : 4 slides (gratuit, pro, plans, arbre de decision)
 - Screencast : page pricing FluentForms (30 sec)
-- Ton : factuel, pas de survente — laisser les features parler d'elles-memes
+- Ton : factuel, pas de survente - laisser les features parler d'elles-memes

@@ -1,9 +1,9 @@
-# Lecon B.8 — Cart Abandonment + FluentCRM : relance CRM avancee
+# Lecon B.8 - Cart Abandonment + FluentCRM : relance CRM avancee
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : B — Cart Abandonment Recovery
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : B - Cart Abandonment Recovery
 - **Duree cible** : 10 min (~1 300 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Connecter Cart Abandonment Recovery a FluentCRM pour combiner la relance court terme (emails automatiques) et la strategie long terme (sequences CRM, nurturing, re-engagement).
@@ -12,9 +12,9 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Cart Abandonment Recovery envoie 3 emails en 3 jours. C'est efficace pour le court terme — le rappel immediat, l'argumentation, le coupon. Mais que se passe-t-il apres 3 jours si le client n'a toujours pas converti ?
+Cart Abandonment Recovery envoie 3 emails en 3 jours. C'est efficace pour le court terme - le rappel immediat, l'argumentation, le coupon. Mais que se passe-t-il apres 3 jours si le client n'a toujours pas converti ?
 
 Avec Cart Abandonment Recovery seul : rien. Le client disparait.
 
@@ -22,9 +22,9 @@ Avec FluentCRM en plus : tu continues la relation. Et c'est la que la combinaiso
 
 ---
 
-**[SECTION 1 — Pourquoi connecter les deux]**
+**[SECTION 1 - Pourquoi connecter les deux]**
 
-**[ECRAN — schema Cart Abandonment Recovery + FluentCRM]**
+**[ECRAN - schema Cart Abandonment Recovery + FluentCRM]**
 
 Cart Abandonment Recovery est specialise : il detecte les abandons, envoie des emails de relance, genere des coupons. Il fait ca tres bien, mais il s'arrete apres la sequence de 3 emails.
 
@@ -36,9 +36,9 @@ L'idee n'est pas de remplacer l'un par l'autre. C'est d'utiliser chacun pour ce 
 
 ---
 
-**[SECTION 2 — Le pont : tag "panier-abandonne" dans FluentCRM]**
+**[SECTION 2 - Le pont : tag "panier-abandonne" dans FluentCRM]**
 
-**[ECRAN — FluentCRM → Automatisations]**
+**[ECRAN - FluentCRM → Automatisations]**
 
 Pour connecter les deux, il faut creer un pont. Voici comment.
 
@@ -46,7 +46,7 @@ Pour connecter les deux, il faut creer un pont. Voici comment.
 
 **Etape 2 : configurer l'automatisation.** Cart Abandonment Recovery enregistre les adresses email des paniers abandonnes. FluentCRM peut detecter quand un nouveau contact WooCommerce est cree ou mis a jour.
 
-Cree une automatisation FluentCRM avec comme declencheur "New Order — WooCommerce" en statut "failed" ou "cancelled". Quand le declencheur se declenche, l'action est : appliquer le tag "panier-abandonne" au contact.
+Cree une automatisation FluentCRM avec comme declencheur "New Order - WooCommerce" en statut "failed" ou "cancelled". Quand le declencheur se declenche, l'action est : appliquer le tag "panier-abandonne" au contact.
 
 Alternative plus simple : utilise le webhook Cart Abandonment Recovery (disponible en version Pro) pour envoyer directement les donnees a FluentCRM via une automatisation n8n. On a vu dans les modules precedents comment connecter les outils entre eux.
 
@@ -54,9 +54,9 @@ Alternative plus simple : utilise le webhook Cart Abandonment Recovery (disponib
 
 ---
 
-**[SECTION 3 — Sequences FluentCRM avancees]**
+**[SECTION 3 - Sequences FluentCRM avancees]**
 
-**[ECRAN — FluentCRM → editeur de sequence]**
+**[ECRAN - FluentCRM → editeur de sequence]**
 
 Une fois le pont en place, tu peux creer des sequences FluentCRM dediees aux paniers abandonnes. Voici trois scenarios.
 
@@ -64,9 +64,9 @@ Une fois le pont en place, tu peux creer des sequences FluentCRM dediees aux pan
 
 La sequence Cart Abandonment Recovery s'arrete a J+3. FluentCRM prend le relais a J+7 :
 
-- J+7 : email de valeur — un article de blog, un guide, une video liee au produit abandonne. Pas de vente, juste du contenu utile.
-- J+10 : email temoignage — une etude de cas ou un retour client detaille sur le produit.
-- J+14 : email offre speciale — une promotion differente du coupon initial (bundle, upgrade, acces anticipe).
+- J+7 : email de valeur - un article de blog, un guide, une video liee au produit abandonne. Pas de vente, juste du contenu utile.
+- J+10 : email temoignage - une etude de cas ou un retour client detaille sur le produit.
+- J+14 : email offre speciale - une promotion differente du coupon initial (bundle, upgrade, acces anticipe).
 
 Cette sequence ne met pas de pression. Elle maintient la relation et rappelle regulierement la valeur du produit.
 
@@ -74,28 +74,28 @@ Cette sequence ne met pas de pression. Elle maintient la relation et rappelle re
 
 Si le client n'a toujours pas converti apres 14 jours, il entre dans une sequence de re-engagement :
 
-- J+30 : email "On pense a toi" — nouveau produit, nouvelle offre, ou simple rappel que la boutique existe.
-- J+45 : email enquete — "Qu'est-ce qui t'a freine ?" avec un lien vers un formulaire court. Les reponses sont de l'or pour ameliorer ta boutique.
+- J+30 : email "On pense a toi" - nouveau produit, nouvelle offre, ou simple rappel que la boutique existe.
+- J+45 : email enquete - "Qu'est-ce qui t'a freine ?" avec un lien vers un formulaire court. Les reponses sont de l'or pour ameliorer ta boutique.
 
 **Scenario 3 : Relance multi-produit**
 
-Si le client a abandonne un produit A, FluentCRM peut lui proposer un produit B dans la meme categorie. Parfois, le probleme n'est pas la boutique — c'est le produit specifique qui ne correspondait pas.
+Si le client a abandonne un produit A, FluentCRM peut lui proposer un produit B dans la meme categorie. Parfois, le probleme n'est pas la boutique - c'est le produit specifique qui ne correspondait pas.
 
 ---
 
-**[SECTION 4 — Le cas concret : timeline complete]**
+**[SECTION 4 - Le cas concret : timeline complete]**
 
-**[ECRAN — timeline complete J+0 a J+45]**
+**[ECRAN - timeline complete J+0 a J+45]**
 
 Voici la timeline complete d'un abandon de panier avec les deux outils :
 
 | Moment | Outil | Action |
 |---|---|---|
-| J+0 (15 min) | Cart Abandonment Recovery | Email 1 — rappel simple |
-| J+1 (24h) | Cart Abandonment Recovery | Email 2 — rappel + arguments |
-| J+3 (72h) | Cart Abandonment Recovery | Email 3 — coupon unique |
+| J+0 (15 min) | Cart Abandonment Recovery | Email 1 - rappel simple |
+| J+1 (24h) | Cart Abandonment Recovery | Email 2 - rappel + arguments |
+| J+3 (72h) | Cart Abandonment Recovery | Email 3 - coupon unique |
 | J+3 | FluentCRM | Tag "panier-abandonne" applique |
-| J+7 | FluentCRM | Email nurturing — contenu de valeur |
+| J+7 | FluentCRM | Email nurturing - contenu de valeur |
 | J+10 | FluentCRM | Email temoignage client |
 | J+14 | FluentCRM | Offre speciale differente |
 | J+30 | FluentCRM | Email re-engagement |
@@ -107,9 +107,9 @@ Cette combinaison couvre le court terme (reflexe d'achat, 0-3 jours), le moyen t
 
 ---
 
-**[SECTION 5 — Conseil strategique]**
+**[SECTION 5 - Conseil strategique]**
 
-**[ECRAN — slide recapitulatif]**
+**[ECRAN - slide recapitulatif]**
 
 Cart Abandonment Recovery pour le court terme. FluentCRM pour le long terme. Les deux ensemble pour un maximum de recuperation.
 
@@ -123,7 +123,7 @@ Le resultat : au lieu de perdre definitivement un client apres 3 jours, tu maint
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
 La combinaison Cart Abandonment Recovery + FluentCRM transforme un outil de relance basique en un systeme de recuperation complet. Le court terme automatise, le long terme personnalise.
 

@@ -1,0 +1,17 @@
+defaults:
+  author: TablePress - Tobias Bäthge
+  copyright: © TablePress - Tobias Bäthge. All rights reserved.
+  url: https://tablepress.org/
+  software: schoolsWP html-to-png pipeline
+
+images:
+  - file: slide-logo.png
+    title: "TablePress logo - the official WordPress table plugin"
+    subject: "Official logo of the TablePress WordPress table plugin."
+    description: "Official logo of TablePress, the most popular and highest-rated WordPress table plugin, created by Tobias Bäthge."
+    alt: "Official logo of the TablePress WordPress table plugin."
+    keywords:
+      - TablePress
+      - TablePress logo
+      - WordPress table plugin
+      - Tobias Bäthge

@@ -1,0 +1,4066 @@
+{
+  "id": "05261202-7577-0381-0000-99aaf59ee5b2",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "o2switch",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-18 10:47:12 +00:00",
+          "competition": 0.05,
+          "competition_level": "LOW",
+          "cpc": 1.13,
+          "search_volume": 110,
+          "low_top_of_page_bid": 0.93,
+          "high_top_of_page_bid": 8.79,
+          "categories": [
+            10011,
+            10085,
+            10446,
+            12849
+          ],
+          "monthly_searches": {
+            "2026-03": 110,
+            "2026-02": 110,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 110,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 110,
+            "2025-07": 140,
+            "2025-06": 110,
+            "2025-05": 90,
+            "2025-04": 90
+          },
+          "search_volume_trend": {
+            "yearly": -35
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 27,
+          "detected_language": "fr",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=o2switch&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "related_searches",
+            "knowledge_graph"
+          ],
+          "se_results_count": 1800000,
+          "last_updated_time": "2026-05-12 11:32:00 +00:00",
+          "previous_updated_time": "2026-03-31 04:49:15 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 5702,
+          "dofollow": 2197.4,
+          "referring_pages": 2901.5,
+          "referring_domains": 155.7,
+          "referring_main_domains": 141.4,
+          "rank": 155.4,
+          "main_domain_rank": 570.2,
+          "last_updated_time": "2026-05-12 11:32:01 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "transactional",
+          "last_updated_time": "2026-04-29 19:46:50 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 2,
+          "rank_absolute": 2,
+          "domain": "schoolswp.com",
+          "title": "o2switch Meinungen 2026: Webhosting aus Frankreich top?",
+          "url": "https://schoolswp.com/de/o2switch-meinungen/",
+          "breadcrumb": "https://schoolswp.com › WordPress-Hosting",
+          "website_name": "schoolswp.com",
+          "description": "Schon bei den ersten Tests zeigt o2switch, dass es das SharedWebhosting gut beherrscht. Sein Versprechen? Ein einmaliges All-Inclusive-Angebot, eine zu 100 % ...",
+          "highlighted": [
+            "o2switch"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/o2switch-meinungen/",
+          "etv": 17.82,
+          "estimated_paid_traffic_cost": 20.137,
+          "rank_changes": {
+            "previous_rank_absolute": 2
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=o2switch&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "related_searches",
+          "knowledge_graph"
+        ],
+        "se_results_count": 1800000,
+        "keyword_difficulty": 27,
+        "last_updated_time": "2026-05-12 11:32:00 +00:00",
+        "previous_updated_time": "2026-03-31 04:49:15 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wp zip",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-13 20:17:30 +00:00",
+          "competition": 0.39,
+          "competition_level": "MEDIUM",
+          "cpc": 4.19,
+          "search_volume": 140,
+          "low_top_of_page_bid": 1.79,
+          "high_top_of_page_bid": 6.62,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12210
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 170,
+            "2026-01": 140,
+            "2025-12": 110,
+            "2025-11": 140,
+            "2025-10": 140,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 140,
+            "2025-04": 170
+          },
+          "search_volume_trend": {
+            "monthly": -18,
+            "yearly": -33
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "zip wp",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 15,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wp%20zip&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 146000000,
+          "last_updated_time": "2026-04-17 01:39:00 +00:00",
+          "previous_updated_time": "2026-01-28 08:38:07 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 316.4,
+          "dofollow": 190.2,
+          "referring_pages": 283.4,
+          "referring_domains": 108,
+          "referring_main_domains": 68.9,
+          "rank": 87.1,
+          "main_domain_rank": 603,
+          "last_updated_time": "2026-04-17 01:46:28 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "transactional"
+          ],
+          "last_updated_time": "2026-04-30 06:27:24 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 2,
+          "rank_absolute": 3,
+          "domain": "schoolswp.com",
+          "title": "ZipWP: Erstellen Sie eine WordPress-Website in Rekordzeit ...",
+          "url": "https://schoolswp.com/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "breadcrumb": "https://schoolswp.com › zipwp-wordpress-seiten-erstellu...",
+          "website_name": "schoolswp.com",
+          "description": "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI. Erstellen Sie in wenigen Minuten eine Profi-Website, ohne technische Kenntnisse.",
+          "highlighted": [
+            "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "etv": 22.68,
+          "estimated_paid_traffic_cost": 95.029,
+          "rank_changes": {
+            "previous_rank_absolute": 5,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 210
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wp%20zip&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 146000000,
+        "keyword_difficulty": 15,
+        "last_updated_time": "2026-04-17 01:39:00 +00:00",
+        "previous_updated_time": "2026-01-28 08:38:07 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "zip wp",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-19 18:56:45 +00:00",
+          "competition": 0.39,
+          "competition_level": "MEDIUM",
+          "cpc": 4.19,
+          "search_volume": 140,
+          "low_top_of_page_bid": 1.79,
+          "high_top_of_page_bid": 6.62,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12210
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 170,
+            "2026-01": 140,
+            "2025-12": 110,
+            "2025-11": 140,
+            "2025-10": 140,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 140,
+            "2025-04": 170
+          },
+          "search_volume_trend": {
+            "monthly": -18,
+            "yearly": -33
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 5,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=zip%20wp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 351000000,
+          "last_updated_time": "2026-05-11 11:59:22 +00:00",
+          "previous_updated_time": "2026-03-30 05:04:58 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 277.9,
+          "dofollow": 155.9,
+          "referring_pages": 247.1,
+          "referring_domains": 93,
+          "referring_main_domains": 67.9,
+          "rank": 68.4,
+          "main_domain_rank": 597.6,
+          "last_updated_time": "2026-05-11 11:59:22 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "last_updated_time": "2026-04-30 04:20:52 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 2,
+          "rank_absolute": 4,
+          "domain": "schoolswp.com",
+          "title": "ZipWP: Erstellen Sie eine WordPress-Website in Rekordzeit ...",
+          "url": "https://schoolswp.com/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "breadcrumb": "https://schoolswp.com › zipwp-wordpress-seiten-erstellu...",
+          "website_name": "schoolswp.com",
+          "description": "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI. Erstellen Sie in wenigen Minuten eine Profi-Website, ohne technische Kenntnisse.",
+          "highlighted": [
+            "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "etv": 22.68,
+          "estimated_paid_traffic_cost": 95.029,
+          "rank_changes": {
+            "previous_rank_absolute": 4
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=zip%20wp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 351000000,
+        "keyword_difficulty": 5,
+        "last_updated_time": "2026-05-11 11:59:22 +00:00",
+        "previous_updated_time": "2026-03-30 05:04:58 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "latepoint",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-12 14:15:41 +00:00",
+          "competition": 0.23,
+          "competition_level": "LOW",
+          "cpc": 12.57,
+          "search_volume": 90,
+          "low_top_of_page_bid": 1.79,
+          "high_top_of_page_bid": 11.13,
+          "categories": [
+            10004,
+            10290,
+            11220
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 90,
+            "2025-12": 90,
+            "2025-11": 110,
+            "2025-10": 110,
+            "2025-09": 90,
+            "2025-08": 90,
+            "2025-07": 70,
+            "2025-06": 70,
+            "2025-05": 70,
+            "2025-04": 90
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 16,
+          "detected_language": "pt",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=latepoint&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 113,
+          "last_updated_time": "2026-05-19 23:15:39 +00:00",
+          "previous_updated_time": "2026-04-07 02:32:55 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 248.3,
+          "dofollow": 110.7,
+          "referring_pages": 175.5,
+          "referring_domains": 81.2,
+          "referring_main_domains": 45.8,
+          "rank": 108.9,
+          "main_domain_rank": 592.8,
+          "last_updated_time": "2026-05-19 23:18:51 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "last_updated_time": "2026-04-29 19:07:50 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 3,
+          "rank_absolute": 4,
+          "domain": "schoolswp.com",
+          "title": "LatePoint: Intuitives & schnelles WordPress-Buchungs-Plugin!",
+          "url": "https://schoolswp.com/de/latepoint-meinung/",
+          "breadcrumb": "https://schoolswp.com › latepoint-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Boosten Sie Ihre Buchungen mit LatePoint ! Ein schnelles, intuitives WordPress-Plugin, das ideal für dein Geschäft ist. Testen Sie es 7 Tage lang ...",
+          "highlighted": [
+            "Boosten Sie Ihre Buchungen mit LatePoint"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/latepoint-meinung/",
+          "etv": 8.757,
+          "estimated_paid_traffic_cost": 110.075,
+          "rank_changes": {
+            "previous_rank_absolute": 8,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=latepoint&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 113,
+        "keyword_difficulty": 16,
+        "last_updated_time": "2026-05-19 23:15:39 +00:00",
+        "previous_updated_time": "2026-04-07 02:32:55 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "sureforms",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-14 16:33:27 +00:00",
+          "competition": 0.03,
+          "competition_level": "LOW",
+          "search_volume": 70,
+          "categories": [
+            10004,
+            13804
+          ],
+          "monthly_searches": {
+            "2026-03": 70,
+            "2026-02": 50,
+            "2026-01": 70,
+            "2025-12": 70,
+            "2025-11": 70,
+            "2025-10": 70,
+            "2025-09": 50,
+            "2025-08": 40,
+            "2025-07": 70,
+            "2025-06": 40,
+            "2025-05": 70,
+            "2025-04": 70
+          },
+          "search_volume_trend": {
+            "monthly": 40,
+            "yearly": 40
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "sureform",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 11,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=sureforms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 78400,
+          "last_updated_time": "2026-04-19 15:15:46 +00:00",
+          "previous_updated_time": "2026-03-08 21:57:42 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 509.6,
+          "dofollow": 331.6,
+          "referring_pages": 377.4,
+          "referring_domains": 146.4,
+          "referring_main_domains": 126.9,
+          "rank": 90.8,
+          "main_domain_rank": 597.7,
+          "last_updated_time": "2026-04-19 15:15:47 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "last_updated_time": "2026-04-30 01:23:41 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 3,
+          "rank_absolute": 5,
+          "domain": "schoolswp.com",
+          "title": "SureForms : AI-Powered WordPress Forms Plugin - schoolsWP",
+          "url": "https://schoolswp.com/en/sureforms-wordpress-plugin/",
+          "breadcrumb": "https://schoolswp.com › surefor...",
+          "website_name": "schoolswp.com",
+          "description": "Create attractive, personalized WordPress forms with SureForms! Drag-and-drop, AI, and advanced options for an optimized site.",
+          "highlighted": [
+            "Create attractive",
+            "personalized WordPress forms"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/sureforms-wordpress-plugin/",
+          "etv": 6.811,
+          "rank_changes": {
+            "previous_rank_absolute": 13,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 210
+          }
+        },
+        "check_url": "https://www.google.com/search?q=sureforms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 78400,
+        "keyword_difficulty": 11,
+        "last_updated_time": "2026-04-19 15:15:46 +00:00",
+        "previous_updated_time": "2026-03-08 21:57:42 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "zipwp",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-08 21:53:35 +00:00",
+          "competition": 0.41,
+          "competition_level": "MEDIUM",
+          "cpc": 3.95,
+          "search_volume": 590,
+          "low_top_of_page_bid": 1.6,
+          "high_top_of_page_bid": 5.43,
+          "categories": [
+            10019,
+            10168,
+            10885
+          ],
+          "monthly_searches": {
+            "2026-03": 720,
+            "2026-02": 720,
+            "2026-01": 590,
+            "2025-12": 480,
+            "2025-11": 590,
+            "2025-10": 590,
+            "2025-09": 480,
+            "2025-08": 480,
+            "2025-07": 480,
+            "2025-06": 590,
+            "2025-05": 590,
+            "2025-04": 720
+          },
+          "search_volume_trend": {
+            "quarterly": 22
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=zipwp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 55500,
+          "last_updated_time": "2026-04-10 08:50:17 +00:00",
+          "previous_updated_time": "2026-02-28 03:31:34 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 290.6,
+          "dofollow": 165.4,
+          "referring_pages": 258.2,
+          "referring_domains": 91.6,
+          "referring_main_domains": 68,
+          "rank": 53.5,
+          "main_domain_rank": 534.6,
+          "last_updated_time": "2026-04-10 08:52:45 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "last_updated_time": "2026-04-30 04:08:49 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 3,
+          "rank_absolute": 5,
+          "domain": "schoolswp.com",
+          "title": "ZipWP: Erstellen Sie eine WordPress-Website in Rekordzeit ...",
+          "url": "https://schoolswp.com/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "breadcrumb": "https://schoolswp.com › zipwp-wordpress-seiten-erstellu...",
+          "website_name": "schoolswp.com",
+          "description": "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI. Erstellen Sie in wenigen Minuten eine Profi-Website, ohne technische Kenntnisse.",
+          "highlighted": [
+            "ZipWP revolutioniert die Erstellung von WordPress-Seiten mithilfe von KI"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/zipwp-wordpress-seiten-erstellung-mit-ki/",
+          "etv": 57.407,
+          "estimated_paid_traffic_cost": 226.758,
+          "rank_changes": {
+            "previous_rank_absolute": 5
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=zipwp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 55500,
+        "last_updated_time": "2026-04-10 08:50:17 +00:00",
+        "previous_updated_time": "2026-02-28 03:31:34 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "fluentcart",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-13 06:38:51 +00:00",
+          "competition": 0.07,
+          "competition_level": "LOW",
+          "search_volume": 90,
+          "low_top_of_page_bid": 3.63,
+          "high_top_of_page_bid": 15.2,
+          "categories": [
+            10016
+          ],
+          "monthly_searches": {
+            "2026-03": 70,
+            "2026-02": 70,
+            "2026-01": 70,
+            "2025-12": 70,
+            "2025-11": 110,
+            "2025-10": 260,
+            "2025-09": 70,
+            "2025-08": 70,
+            "2025-07": 40,
+            "2025-06": 170,
+            "2025-04": 10
+          },
+          "search_volume_trend": {
+            "yearly": 600
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 3,
+          "detected_language": "ta",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=fluentcart&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 40500,
+          "last_updated_time": "2026-04-07 18:05:15 +00:00",
+          "previous_updated_time": "2026-02-24 15:53:06 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 855.9,
+          "dofollow": 570.5,
+          "referring_pages": 653,
+          "referring_domains": 40.7,
+          "referring_main_domains": 19.1,
+          "rank": 78.8,
+          "main_domain_rank": 405.6,
+          "last_updated_time": "2026-04-07 18:05:16 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-05-03 02:48:00 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 4,
+          "rank_absolute": 6,
+          "domain": "schoolswp.com",
+          "title": "FluentCart Erfahrung: E-Commerce ohne WooCommerce?",
+          "url": "https://schoolswp.com/de/fluentcart-meinung/",
+          "breadcrumb": "https://schoolswp.com › fluentcart-meinung",
+          "website_name": "schoolswp.com",
+          "description": "FluentCart ist ein Plugin, das auf den Punkt gebracht werden soll: einen schnellen, schlanken und zu 100 % in WordPress integrierten Shop zu erstellen. Keine ...",
+          "highlighted": [
+            "FluentCart"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/fluentcart-meinung/",
+          "etv": 5.931,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=fluentcart&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 40500,
+        "keyword_difficulty": 3,
+        "last_updated_time": "2026-04-07 18:05:15 +00:00",
+        "previous_updated_time": "2026-02-24 15:53:06 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wp umbrella",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-11 19:30:00 +00:00",
+          "competition": 0.03,
+          "competition_level": "LOW",
+          "cpc": 6.65,
+          "search_volume": 390,
+          "low_top_of_page_bid": 2.74,
+          "high_top_of_page_bid": 10.39,
+          "categories": [
+            10021,
+            13354,
+            13355
+          ],
+          "monthly_searches": {
+            "2026-03": 390,
+            "2026-02": 390,
+            "2026-01": 390,
+            "2025-12": 390,
+            "2025-11": 480,
+            "2025-10": 320,
+            "2025-09": 320,
+            "2025-08": 320,
+            "2025-07": 390,
+            "2025-06": 390,
+            "2025-05": 260,
+            "2025-04": 260
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 6,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wp%20umbrella&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 91600000,
+          "last_updated_time": "2026-05-07 10:43:00 +00:00",
+          "previous_updated_time": "2026-03-27 06:50:10 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 158.7,
+          "dofollow": 78.8,
+          "referring_pages": 88.5,
+          "referring_domains": 46.6,
+          "referring_main_domains": 15.2,
+          "rank": 71.5,
+          "main_domain_rank": 584.7,
+          "last_updated_time": "2026-05-07 10:43:00 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "transactional",
+          "last_updated_time": "2026-04-30 06:32:10 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 4,
+          "rank_absolute": 5,
+          "domain": "schoolswp.com",
+          "title": "WP Umbrella: Verwalten Sie Ihre WordPress-Websites ganz ...",
+          "url": "https://schoolswp.com/de/wp-umbrella-meinung/",
+          "breadcrumb": "https://schoolswp.com › Wartung & Sicherheit",
+          "website_name": "schoolswp.com",
+          "description": "Vereinfachen Sie die Wartung Ihrer WordPress-Websites mit WP Umbrella: automatische Updates, sichere Backups und kontinuierliche Überwachung.",
+          "highlighted": [
+            "WP Umbrella"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/wp-umbrella-meinung/",
+          "etv": 25.701,
+          "estimated_paid_traffic_cost": 170.912,
+          "rank_changes": {
+            "previous_rank_absolute": 7,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wp%20umbrella&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 91600000,
+        "keyword_difficulty": 6,
+        "last_updated_time": "2026-05-07 10:43:00 +00:00",
+        "previous_updated_time": "2026-03-27 06:50:10 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "a tutor lms",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-08 18:58:30 +00:00",
+          "competition": 0.47,
+          "competition_level": "MEDIUM",
+          "cpc": 2.6,
+          "search_volume": 390,
+          "low_top_of_page_bid": 0.7,
+          "high_top_of_page_bid": 6.26,
+          "categories": [
+            10016,
+            10141,
+            10761
+          ],
+          "monthly_searches": {
+            "2026-03": 390,
+            "2026-02": 390,
+            "2026-01": 390,
+            "2025-12": 320,
+            "2025-11": 390,
+            "2025-10": 320,
+            "2025-09": 320,
+            "2025-08": 320,
+            "2025-07": 390,
+            "2025-06": 390,
+            "2025-05": 390,
+            "2025-04": 390
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 40,
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=a%20tutor%20lms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 14100000,
+          "last_updated_time": "2026-04-14 23:11:10 +00:00",
+          "previous_updated_time": "2026-03-05 13:51:26 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1620.8,
+          "dofollow": 1106.2,
+          "referring_pages": 1378.7,
+          "referring_domains": 224.7,
+          "referring_main_domains": 159.8,
+          "rank": 209.4,
+          "main_domain_rank": 546.8,
+          "last_updated_time": "2026-04-14 23:12:40 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "foreign_intent": [
+            "commercial",
+            "informational"
+          ],
+          "last_updated_time": "2026-04-29 07:11:24 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 5,
+          "rank_absolute": 7,
+          "domain": "schoolswp.com",
+          "title": "Tutor LMS Bewertungen 2026: Das beste WordPress LMS?",
+          "url": "https://schoolswp.com/de/tutor-lms-meinungen/",
+          "breadcrumb": "https://schoolswp.com › Lernplattformen (LMS)",
+          "website_name": "schoolswp.com",
+          "description": "Tutor LMS ist eine effiziente, intuitive und erschwingliche Erweiterung zur Erstellung einer E-Learning-Plattform in WordPress. Es ist ideal für Ausbilder und ...",
+          "highlighted": [
+            "Tutor LMS"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/tutor-lms-meinungen/",
+          "etv": 18.291,
+          "estimated_paid_traffic_cost": 47.557,
+          "rank_changes": {
+            "previous_rank_absolute": 9,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 209
+          }
+        },
+        "check_url": "https://www.google.com/search?q=a%20tutor%20lms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 14100000,
+        "keyword_difficulty": 40,
+        "last_updated_time": "2026-04-14 23:11:10 +00:00",
+        "previous_updated_time": "2026-03-05 13:51:26 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "buddyboss",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-11 06:30:32 +00:00",
+          "competition": 0.37,
+          "competition_level": "MEDIUM",
+          "cpc": 0.8,
+          "search_volume": 390,
+          "low_top_of_page_bid": 0.16,
+          "high_top_of_page_bid": 4.44,
+          "categories": [
+            10008
+          ],
+          "monthly_searches": {
+            "2026-03": 320,
+            "2026-02": 320,
+            "2026-01": 320,
+            "2025-12": 320,
+            "2025-11": 390,
+            "2025-10": 320,
+            "2025-09": 320,
+            "2025-08": 320,
+            "2025-07": 390,
+            "2025-06": 390,
+            "2025-05": 390,
+            "2025-04": 480
+          },
+          "search_volume_trend": {
+            "yearly": -33
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 25,
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=buddyboss&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 132,
+          "last_updated_time": "2026-05-08 00:17:05 +00:00",
+          "previous_updated_time": "2026-03-27 03:40:23 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1559.6,
+          "dofollow": 1509.6,
+          "referring_pages": 1544.5,
+          "referring_domains": 89.3,
+          "referring_main_domains": 41.2,
+          "rank": 141.4,
+          "main_domain_rank": 628.4,
+          "last_updated_time": "2026-05-08 00:21:34 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "navigational",
+            "transactional"
+          ],
+          "last_updated_time": "2026-04-29 05:10:56 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 5,
+          "rank_absolute": 7,
+          "domain": "schoolswp.com",
+          "title": "BuddyBoss für WordPress: Community & Kurse einfach starten",
+          "url": "https://schoolswp.com/de/buddyboss-meinung/",
+          "breadcrumb": "https://schoolswp.com › buddyboss-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Das BuddyBoss-Thema ist ideal, wenn Sie BuddyPress einfach nur mit einem moderneren, mobilfreundlicheren und mit Elementor kompatiblen Layout aufwerten möchten.",
+          "highlighted": [
+            "BuddyBoss-Thema"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/buddyboss-meinung/",
+          "etv": 18.291,
+          "estimated_paid_traffic_cost": 14.633,
+          "rank_changes": {
+            "previous_rank_absolute": 21,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=buddyboss&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 132,
+        "keyword_difficulty": 25,
+        "last_updated_time": "2026-05-08 00:17:05 +00:00",
+        "previous_updated_time": "2026-03-27 03:40:23 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "fluentcrm",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-15 07:41:26 +00:00",
+          "competition": 0.27,
+          "competition_level": "LOW",
+          "cpc": 1.02,
+          "search_volume": 320,
+          "low_top_of_page_bid": 0.11,
+          "high_top_of_page_bid": 8.82,
+          "categories": [
+            10004,
+            10276
+          ],
+          "monthly_searches": {
+            "2026-03": 210,
+            "2026-02": 260,
+            "2026-01": 320,
+            "2025-12": 260,
+            "2025-11": 390,
+            "2025-10": 320,
+            "2025-09": 260,
+            "2025-08": 210,
+            "2025-07": 260,
+            "2025-06": 320,
+            "2025-05": 320,
+            "2025-04": 390
+          },
+          "search_volume_trend": {
+            "monthly": -19,
+            "quarterly": -34,
+            "yearly": -46
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "fluent crm",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 12,
+          "detected_language": "ms",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=fluentcrm&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "knowledge_graph",
+            "images"
+          ],
+          "se_results_count": 97,
+          "last_updated_time": "2026-05-08 16:46:39 +00:00",
+          "previous_updated_time": "2026-03-27 16:36:21 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1665.2,
+          "dofollow": 1053.5,
+          "referring_pages": 1165.2,
+          "referring_domains": 173.4,
+          "referring_main_domains": 149.3,
+          "rank": 91.5,
+          "main_domain_rank": 621.8,
+          "last_updated_time": "2026-05-08 16:46:39 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "commercial",
+          "last_updated_time": "2026-04-29 10:51:11 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 5,
+          "rank_absolute": 7,
+          "domain": "schoolswp.com",
+          "title": "FluentCRM WordPress 2026 – E-Mail & Automatisierung",
+          "url": "https://schoolswp.com/de/ist-fluentcrm-das-beste-wordpress-crm/",
+          "breadcrumb": "https://schoolswp.com › ist-fluentcrm-das-beste-wordpr...",
+          "website_name": "schoolswp.com",
+          "description": "19.01.2024 — Was kann FluentCRM? · Verwaltung von Kontakten · Listen, Tags und Segmente · Versenden von E-Mails und Kampagnen · Anmeldeformulare und ...",
+          "pre_snippet": "01/19/2024 00:00:00",
+          "highlighted": [
+            "FluentCRM"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/ist-fluentcrm-das-beste-wordpress-crm/",
+          "etv": 15.008,
+          "estimated_paid_traffic_cost": 15.308,
+          "rank_changes": {
+            "previous_rank_absolute": 8,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=fluentcrm&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "knowledge_graph",
+          "images"
+        ],
+        "se_results_count": 97,
+        "keyword_difficulty": 12,
+        "last_updated_time": "2026-05-08 16:46:39 +00:00",
+        "previous_updated_time": "2026-03-27 16:36:21 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "link whisper",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-10 23:15:50 +00:00",
+          "competition": 0.26,
+          "competition_level": "LOW",
+          "cpc": 3.81,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.68,
+          "high_top_of_page_bid": 6.56,
+          "categories": [
+            10019,
+            10168,
+            10883,
+            12184
+          ],
+          "monthly_searches": {
+            "2026-03": 110,
+            "2026-02": 110,
+            "2026-01": 90,
+            "2025-12": 110,
+            "2025-11": 110,
+            "2025-10": 110,
+            "2025-09": 210,
+            "2025-08": 110,
+            "2025-07": 110,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "quarterly": 22,
+            "yearly": -48
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 1,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=link%20whisper&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "video",
+            "images",
+            "related_searches"
+          ],
+          "se_results_count": 227000000,
+          "last_updated_time": "2026-05-11 20:36:21 +00:00",
+          "previous_updated_time": "2026-03-30 13:50:45 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 672.7,
+          "dofollow": 435,
+          "referring_pages": 554.5,
+          "referring_domains": 213.9,
+          "referring_main_domains": 206.8,
+          "rank": 58.3,
+          "main_domain_rank": 515.7,
+          "last_updated_time": "2026-05-11 20:36:21 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "navigational"
+          ],
+          "last_updated_time": "2026-04-29 17:31:38 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 5,
+          "rank_absolute": 8,
+          "domain": "schoolswp.com",
+          "title": "Link Whisper Bewertungen 2026: Unumgängliches SEO-Tool?",
+          "url": "https://schoolswp.com/de/link-whisper-erfahrungsbericht/",
+          "breadcrumb": "https://schoolswp.com › link-whisper-erfahrungsbericht",
+          "website_name": "schoolswp.com",
+          "description": "Link Whisper zeichnet sich durch seine intelligente Kontextanalyse aus, die Empfehlungen für interne Links ausspricht, die mit Ihren Inhalten übereinstimmen.",
+          "highlighted": [
+            "Link Whisper"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/link-whisper-erfahrungsbericht/",
+          "etv": 6.566,
+          "estimated_paid_traffic_cost": 25.016,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=link%20whisper&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "ai_overview",
+          "organic",
+          "people_also_ask",
+          "video",
+          "images",
+          "related_searches"
+        ],
+        "se_results_count": 227000000,
+        "keyword_difficulty": 1,
+        "last_updated_time": "2026-05-11 20:36:21 +00:00",
+        "previous_updated_time": "2026-03-30 13:50:45 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wp amelia",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-15 08:04:57 +00:00",
+          "competition": 0.46,
+          "competition_level": "MEDIUM",
+          "cpc": 0.88,
+          "search_volume": 70,
+          "low_top_of_page_bid": 0.4,
+          "high_top_of_page_bid": 4.53,
+          "categories": [
+            10008
+          ],
+          "monthly_searches": {
+            "2026-03": 70,
+            "2026-02": 70,
+            "2026-01": 70,
+            "2025-12": 50,
+            "2025-11": 70,
+            "2025-10": 50,
+            "2025-09": 40,
+            "2025-08": 50,
+            "2025-07": 90,
+            "2025-06": 70,
+            "2025-05": 70,
+            "2025-04": 90
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 15,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wp%20amelia&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "paid",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 141,
+          "last_updated_time": "2026-04-27 11:37:12 +00:00",
+          "previous_updated_time": "2026-03-17 07:52:39 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 2392.5,
+          "dofollow": 1069.3,
+          "referring_pages": 1574.1,
+          "referring_domains": 80.3,
+          "referring_main_domains": 44.5,
+          "rank": 124.1,
+          "main_domain_rank": 431.7,
+          "last_updated_time": "2026-04-27 11:37:13 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "navigational"
+          ],
+          "last_updated_time": "2026-04-30 07:15:16 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 5,
+          "rank_absolute": 7,
+          "domain": "schoolswp.com",
+          "title": "Amelia: Buchungen & Events in WordPress managen",
+          "url": "https://schoolswp.com/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "breadcrumb": "https://schoolswp.com › amelia-wp-booking-de",
+          "website_name": "schoolswp.com",
+          "description": "16.10.2025 — Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia: Terminformulare, Kartenverkauf, automatische Erinnerungen und ...",
+          "pre_snippet": "10/16/2025 00:00:00",
+          "highlighted": [
+            "Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "etv": 2.988,
+          "estimated_paid_traffic_cost": 2.629,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wp%20amelia&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "paid",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 141,
+        "keyword_difficulty": 15,
+        "last_updated_time": "2026-04-27 11:37:12 +00:00",
+        "previous_updated_time": "2026-03-17 07:52:39 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "amelia wordpress",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-16 05:08:46 +00:00",
+          "competition": 0.08,
+          "competition_level": "LOW",
+          "cpc": 4.04,
+          "search_volume": 170,
+          "low_top_of_page_bid": 0.69,
+          "high_top_of_page_bid": 2.11,
+          "categories": [
+            10007,
+            11494,
+            13418
+          ],
+          "monthly_searches": {
+            "2026-03": 170,
+            "2026-02": 210,
+            "2026-01": 210,
+            "2025-12": 140,
+            "2025-11": 110,
+            "2025-10": 170,
+            "2025-09": 170,
+            "2025-08": 210,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 140,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "monthly": -19,
+            "quarterly": -19
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "keyword_metrics",
+          "keyword_difficulty": 7,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=amelia%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 4060000,
+          "last_updated_time": "2026-04-21 07:35:31 +00:00",
+          "previous_updated_time": "2026-03-11 04:01:01 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 898.3,
+          "dofollow": 449.7,
+          "referring_pages": 510.7,
+          "referring_domains": 64.8,
+          "referring_main_domains": 45.1,
+          "rank": 88.3,
+          "main_domain_rank": 460.4,
+          "last_updated_time": "2026-04-21 07:35:32 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-29 08:24:51 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 6,
+          "rank_absolute": 8,
+          "domain": "schoolswp.com",
+          "title": "Amelia: Buchungen & Events in WordPress managen",
+          "url": "https://schoolswp.com/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "breadcrumb": "https://schoolswp.com › amelia-wp-booking-de",
+          "website_name": "schoolswp.com",
+          "description": "16.10.2025 — Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia: Terminformulare, Kartenverkauf, automatische Erinnerungen und ...",
+          "pre_snippet": "10/16/2025 00:00:00",
+          "highlighted": [
+            "Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "etv": 5.746,
+          "estimated_paid_traffic_cost": 23.214,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 210
+          }
+        },
+        "check_url": "https://www.google.com/search?q=amelia%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 4060000,
+        "keyword_difficulty": 7,
+        "last_updated_time": "2026-04-21 07:35:31 +00:00",
+        "previous_updated_time": "2026-03-11 04:01:01 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wordpress academy",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-15 14:44:59 +00:00",
+          "competition": 0.43,
+          "competition_level": "MEDIUM",
+          "cpc": 2.69,
+          "search_volume": 70,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12204,
+            13404
+          ],
+          "monthly_searches": {
+            "2026-03": 10,
+            "2026-02": 10,
+            "2026-01": 20,
+            "2025-12": 10,
+            "2025-11": 10,
+            "2025-10": 50,
+            "2025-09": 590,
+            "2025-08": 10,
+            "2025-07": 10,
+            "2025-06": 10,
+            "2025-05": 70,
+            "2025-04": 170
+          },
+          "search_volume_trend": {
+            "quarterly": -50,
+            "yearly": -95
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 38,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wordpress%20academy&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "people_also_search",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 103000000,
+          "last_updated_time": "2026-04-06 21:47:36 +00:00",
+          "previous_updated_time": "2026-02-23 17:54:40 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 2874009,
+          "dofollow": 2856562,
+          "referring_pages": 2857362.75,
+          "referring_domains": 3193.1,
+          "referring_main_domains": 1973.9,
+          "rank": 218.3,
+          "main_domain_rank": 427.1,
+          "last_updated_time": "2026-04-06 21:47:37 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "commercial",
+          "foreign_intent": [
+            "informational"
+          ],
+          "last_updated_time": "2026-04-30 16:13:56 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 6,
+          "rank_absolute": 9,
+          "domain": "schoolswp.com",
+          "title": "Academy LMS : Alles über das WordPress-Plugin LMS",
+          "url": "https://schoolswp.com/de/academy-lms-meinung/",
+          "breadcrumb": "https://schoolswp.com › Lernplattformen (LMS)",
+          "website_name": "schoolswp.com",
+          "description": "Mit Academy LMS können Sie mühelos Online-Kurse erstellen, verwalten und verkaufen. Egal, ob Sie ein einzelner Lehrer, eine Schule oder eine Agentur sind, ...",
+          "highlighted": [
+            "Online-Kurse erstellen",
+            "verwalten und verkaufen"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/academy-lms-meinung/",
+          "etv": 2.366,
+          "estimated_paid_traffic_cost": 6.365,
+          "rank_changes": {
+            "previous_rank_absolute": 10,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wordpress%20academy&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "people_also_search",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 103000000,
+        "keyword_difficulty": 38,
+        "last_updated_time": "2026-04-06 21:47:36 +00:00",
+        "previous_updated_time": "2026-02-23 17:54:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "tutor lms",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-05-19 20:01:10 +00:00",
+          "competition": 0.54,
+          "competition_level": "MEDIUM",
+          "cpc": 1.84,
+          "search_volume": 390,
+          "low_top_of_page_bid": 1.05,
+          "high_top_of_page_bid": 5.64,
+          "categories": [
+            10016,
+            10141
+          ],
+          "monthly_searches": {
+            "2026-04": 260,
+            "2026-03": 390,
+            "2026-02": 390,
+            "2026-01": 390,
+            "2025-12": 320,
+            "2025-11": 390,
+            "2025-10": 320,
+            "2025-09": 320,
+            "2025-08": 320,
+            "2025-07": 390,
+            "2025-06": 390,
+            "2025-05": 390
+          },
+          "search_volume_trend": {
+            "monthly": -33,
+            "quarterly": -33,
+            "yearly": -33
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 24,
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=tutor%20lms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 15800000,
+          "last_updated_time": "2026-05-07 12:33:47 +00:00",
+          "previous_updated_time": "2026-03-27 01:13:11 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1582.4,
+          "dofollow": 1086.7,
+          "referring_pages": 1359.2,
+          "referring_domains": 222.8,
+          "referring_main_domains": 172.5,
+          "rank": 151.3,
+          "main_domain_rank": 529.2,
+          "last_updated_time": "2026-05-07 12:33:48 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "foreign_intent": [
+            "informational"
+          ],
+          "last_updated_time": "2026-04-30 01:01:23 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 7,
+          "rank_absolute": 9,
+          "domain": "schoolswp.com",
+          "title": "Tutor LMS Bewertungen 2026: Das beste WordPress LMS?",
+          "url": "https://schoolswp.com/de/tutor-lms-meinungen/",
+          "breadcrumb": "https://schoolswp.com › Lernplattformen (LMS)",
+          "website_name": "schoolswp.com",
+          "description": "Tutor LMS ist eine effiziente, intuitive und erschwingliche Erweiterung zur Erstellung einer E-Learning-Plattform in WordPress. Es ist ideal für Ausbilder und ...",
+          "highlighted": [
+            "Tutor LMS"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/tutor-lms-meinungen/",
+          "etv": 9.984,
+          "estimated_paid_traffic_cost": 18.371,
+          "rank_changes": {
+            "previous_rank_absolute": 9
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=tutor%20lms&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 15800000,
+        "keyword_difficulty": 24,
+        "last_updated_time": "2026-05-07 12:33:47 +00:00",
+        "previous_updated_time": "2026-03-27 01:13:11 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wp local",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-15 08:35:34 +00:00",
+          "competition": 0.08,
+          "competition_level": "LOW",
+          "cpc": 4.04,
+          "search_volume": 110,
+          "low_top_of_page_bid": 1.51,
+          "high_top_of_page_bid": 5.43,
+          "categories": [
+            10007,
+            11504,
+            13418
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 140,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 110,
+            "2025-10": 140,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 70,
+            "2025-06": 110,
+            "2025-05": 110,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "quarterly": 27
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "localwp",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 14,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wp%20local&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 1370000000,
+          "last_updated_time": "2026-04-13 10:47:36 +00:00",
+          "previous_updated_time": "2026-03-03 08:03:17 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 27367.9,
+          "dofollow": 16806.4,
+          "referring_pages": 17208.1,
+          "referring_domains": 445.7,
+          "referring_main_domains": 405.6,
+          "rank": 115.3,
+          "main_domain_rank": 491,
+          "last_updated_time": "2026-04-13 10:56:57 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-30 06:57:03 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 7,
+          "rank_absolute": 10,
+          "domain": "schoolswp.com",
+          "title": "Local by Flywheel vs. Xampp: WordPress lokal installieren",
+          "url": "https://schoolswp.com/de/local-wp-meinung/",
+          "breadcrumb": "https://schoolswp.com › local-wp-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Vergleichen Sie Local by Flywheel und Xampp, um WordPress lokal zu installieren. Benutzerfreundlichkeit, Leistung und Sicherheit: Finden Sie das perfekte ...",
+          "highlighted": [
+            "WordPress lokal"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/local-wp-meinung/",
+          "etv": 2.816,
+          "estimated_paid_traffic_cost": 11.377,
+          "rank_changes": {
+            "previous_rank_absolute": 8,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 209
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wp%20local&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 1370000000,
+        "keyword_difficulty": 14,
+        "last_updated_time": "2026-04-13 10:47:36 +00:00",
+        "previous_updated_time": "2026-03-03 08:03:17 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "amelia booking",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-11 23:30:55 +00:00",
+          "competition": 0.53,
+          "competition_level": "MEDIUM",
+          "cpc": 2.69,
+          "search_volume": 140,
+          "low_top_of_page_bid": 1.96,
+          "high_top_of_page_bid": 7.98,
+          "categories": [
+            10017
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 110,
+            "2026-01": 110,
+            "2025-12": 110,
+            "2025-11": 140,
+            "2025-10": 170,
+            "2025-09": 140,
+            "2025-08": 170,
+            "2025-07": 170,
+            "2025-06": 140,
+            "2025-05": 140,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "monthly": 27,
+            "quarterly": 27
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 35,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=amelia%20booking&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "people_also_search",
+            "related_searches"
+          ],
+          "se_results_count": 14200000,
+          "last_updated_time": "2026-03-30 21:46:48 +00:00",
+          "previous_updated_time": "2026-02-17 21:11:39 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 2148.3,
+          "dofollow": 1684.8,
+          "referring_pages": 1760.5,
+          "referring_domains": 67.4,
+          "referring_main_domains": 46.4,
+          "rank": 166.8,
+          "main_domain_rank": 779.4,
+          "last_updated_time": "2026-03-30 21:46:51 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-29 09:38:45 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 13,
+          "domain": "schoolswp.com",
+          "title": "Amelia: Buchungen & Events in WordPress managen",
+          "url": "https://schoolswp.com/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "breadcrumb": "https://schoolswp.com › amelia-wp-booking-de",
+          "website_name": "schoolswp.com",
+          "description": "16.10.2025 — Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia: Terminformulare, Kartenverkauf, automatische Erinnerungen und ...",
+          "pre_snippet": "10/16/2025 00:00:00",
+          "highlighted": [
+            "Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "etv": 2.1,
+          "estimated_paid_traffic_cost": 5.649,
+          "rank_changes": {
+            "previous_rank_absolute": 12,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=amelia%20booking&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "people_also_search",
+          "related_searches"
+        ],
+        "se_results_count": 14200000,
+        "keyword_difficulty": 35,
+        "last_updated_time": "2026-03-30 21:46:48 +00:00",
+        "previous_updated_time": "2026-02-17 21:11:39 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "bit flows",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-09 04:51:37 +00:00",
+          "competition": 0.04,
+          "competition_level": "LOW",
+          "cpc": 11.16,
+          "search_volume": 110,
+          "categories": [
+            10004,
+            10302,
+            11359,
+            12684,
+            13464
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 70,
+            "2025-12": 90,
+            "2025-11": 140,
+            "2025-10": 110,
+            "2025-09": 140,
+            "2025-08": 110,
+            "2025-07": 90,
+            "2025-06": 90,
+            "2025-05": 90,
+            "2025-04": 90
+          },
+          "search_volume_trend": {
+            "quarterly": 29,
+            "yearly": -18
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 6,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=bit%20flows&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches",
+            "knowledge_graph",
+            "images"
+          ],
+          "se_results_count": 1370000000,
+          "last_updated_time": "2026-04-23 14:26:31 +00:00",
+          "previous_updated_time": "2026-03-13 19:53:40 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 278.7,
+          "dofollow": 97.4,
+          "referring_pages": 235.7,
+          "referring_domains": 66,
+          "referring_main_domains": 33.9,
+          "rank": 61.9,
+          "main_domain_rank": 670.6,
+          "last_updated_time": "2026-04-23 14:29:51 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "last_updated_time": "2026-04-29 05:08:32 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 12,
+          "domain": "schoolswp.com",
+          "title": "Bit Flows Review 2026: WordPress automation without limits",
+          "url": "https://schoolswp.com/en/bit-flows-review/",
+          "breadcrumb": "https://schoolswp.com › bit-flow...",
+          "website_name": "schoolswp.com",
+          "description": "11.11.2025 — Automate WordPress without limits with Bit Flows AI plugin No-code, lifetime plan & 200+ integrations Try it now on schoolsWP !",
+          "pre_snippet": "11/11/2025 00:00:00",
+          "highlighted": [
+            "Automate WordPress without limits with Bit Flows AI plugin"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/bit-flows-review/",
+          "etv": 1.65,
+          "estimated_paid_traffic_cost": 18.414,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 211
+          }
+        },
+        "check_url": "https://www.google.com/search?q=bit%20flows&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches",
+          "knowledge_graph",
+          "images"
+        ],
+        "se_results_count": 1370000000,
+        "keyword_difficulty": 6,
+        "last_updated_time": "2026-04-23 14:26:31 +00:00",
+        "previous_updated_time": "2026-03-13 19:53:40 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "crocoblock",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-13 23:04:34 +00:00",
+          "competition": 0.3,
+          "competition_level": "LOW",
+          "cpc": 0.37,
+          "search_volume": 480,
+          "low_top_of_page_bid": 1.51,
+          "high_top_of_page_bid": 1.51,
+          "categories": [
+            10015,
+            10130,
+            13878
+          ],
+          "monthly_searches": {
+            "2026-03": 320,
+            "2026-02": 480,
+            "2026-01": 480,
+            "2025-12": 480,
+            "2025-11": 590,
+            "2025-10": 590,
+            "2025-09": 480,
+            "2025-08": 480,
+            "2025-07": 590,
+            "2025-06": 590,
+            "2025-05": 590,
+            "2025-04": 480
+          },
+          "search_volume_trend": {
+            "monthly": -33,
+            "quarterly": -33,
+            "yearly": -56
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 13,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=crocoblock&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 326000,
+          "last_updated_time": "2026-04-10 15:54:10 +00:00",
+          "previous_updated_time": "2026-02-28 23:59:24 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 23928.5,
+          "dofollow": 14480.1,
+          "referring_pages": 18650.1,
+          "referring_domains": 281.3,
+          "referring_main_domains": 244.7,
+          "rank": 113.3,
+          "main_domain_rank": 466.2,
+          "last_updated_time": "2026-04-10 15:54:10 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "transactional",
+          "foreign_intent": [
+            "informational"
+          ],
+          "last_updated_time": "2026-04-29 05:52:25 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 12,
+          "domain": "schoolswp.com",
+          "title": "Crocoblock: Der ultimative Werkzeugkasten für WordPress ...",
+          "url": "https://schoolswp.com/de/crocoblock-erfahrungsbericht/",
+          "breadcrumb": "https://schoolswp.com › Design & Page Builders",
+          "website_name": "schoolswp.com",
+          "description": "Verbessern Sie Ihre WordPress-Seiten mit Crocoblock! Leistungsstarke Plugins, Skins und Magic Button für eine schnelle und einfache Erstellung.",
+          "highlighted": [
+            "Crocoblock"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/crocoblock-erfahrungsbericht/",
+          "etv": 7.2,
+          "estimated_paid_traffic_cost": 2.664,
+          "rank_changes": {
+            "previous_rank_absolute": 7,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=crocoblock&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 326000,
+        "keyword_difficulty": 13,
+        "last_updated_time": "2026-04-10 15:54:10 +00:00",
+        "previous_updated_time": "2026-02-28 23:59:24 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "fluent community",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-18 15:48:43 +00:00",
+          "competition": 0.32,
+          "competition_level": "LOW",
+          "cpc": 13.03,
+          "search_volume": 110,
+          "low_top_of_page_bid": 1.79,
+          "high_top_of_page_bid": 9.92,
+          "categories": [
+            10016,
+            10141,
+            10757
+          ],
+          "monthly_searches": {
+            "2026-03": 110,
+            "2026-02": 90,
+            "2026-01": 90,
+            "2025-12": 90,
+            "2025-11": 140,
+            "2025-10": 140,
+            "2025-09": 90,
+            "2025-08": 90,
+            "2025-07": 90,
+            "2025-06": 110,
+            "2025-05": 140,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "monthly": 22,
+            "quarterly": 22,
+            "yearly": -48
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 21,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=fluent%20community&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 80500000,
+          "last_updated_time": "2026-04-23 06:14:37 +00:00",
+          "previous_updated_time": "2026-03-13 10:36:48 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1121.3,
+          "dofollow": 700.7,
+          "referring_pages": 883,
+          "referring_domains": 77.1,
+          "referring_main_domains": 27.2,
+          "rank": 153.5,
+          "main_domain_rank": 384.9,
+          "last_updated_time": "2026-04-23 06:14:40 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-29 13:11:42 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 11,
+          "domain": "schoolswp.com",
+          "title": "Erstelle deine WordPress-Community mit FluentCommunity .",
+          "url": "https://schoolswp.com/de/fluentcommunity-bewertung/",
+          "breadcrumb": "https://schoolswp.com › fluentcommunity-bewertung",
+          "website_name": "schoolswp.com",
+          "description": "Verwandeln Sie Ihre WordPress-Website mit FluentCommunity in eine dynamische und interaktive Plattform. Boosten Sie Engagement und Zusammenarbeit noch ...",
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/fluentcommunity-bewertung/",
+          "etv": 1.65,
+          "estimated_paid_traffic_cost": 21.5,
+          "rank_changes": {
+            "previous_rank_absolute": 13,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 211
+          }
+        },
+        "check_url": "https://www.google.com/search?q=fluent%20community&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 80500000,
+        "keyword_difficulty": 21,
+        "last_updated_time": "2026-04-23 06:14:37 +00:00",
+        "previous_updated_time": "2026-03-13 10:36:48 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "local wp",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-11 16:45:45 +00:00",
+          "competition": 0.13,
+          "competition_level": "LOW",
+          "cpc": 4.71,
+          "search_volume": 880,
+          "low_top_of_page_bid": 0.85,
+          "high_top_of_page_bid": 6.84,
+          "categories": [
+            10007,
+            11504,
+            13418
+          ],
+          "monthly_searches": {
+            "2026-03": 1000,
+            "2026-02": 1000,
+            "2026-01": 1000,
+            "2025-12": 720,
+            "2025-11": 720,
+            "2025-10": 720,
+            "2025-09": 880,
+            "2025-08": 720,
+            "2025-07": 720,
+            "2025-06": 590,
+            "2025-05": 720,
+            "2025-04": 720
+          },
+          "search_volume_trend": {
+            "yearly": 39
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "localwp",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 13,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=local%20wp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 2670000,
+          "last_updated_time": "2026-05-06 09:08:24 +00:00",
+          "previous_updated_time": "2026-03-27 01:18:27 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 26519.6,
+          "dofollow": 17006.801,
+          "referring_pages": 17419.9,
+          "referring_domains": 446.8,
+          "referring_main_domains": 407.1,
+          "rank": 110.6,
+          "main_domain_rank": 470.2,
+          "last_updated_time": "2026-05-06 09:08:25 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "foreign_intent": [
+            "informational"
+          ],
+          "last_updated_time": "2026-04-28 17:17:12 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 12,
+          "domain": "schoolswp.com",
+          "title": "Local by Flywheel vs. Xampp: WordPress lokal installieren",
+          "url": "https://schoolswp.com/de/local-wp-meinung/",
+          "breadcrumb": "https://schoolswp.com › local-wp-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Local WP : Wählen Sie zwischen Local by Flywheel oder Xampp für WordPress · Allgemeiner Vergleich der Funktionen · Vor- und Nachteile von Local by Flywheel · Vor- ...",
+          "highlighted": [
+            "Local WP"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/local-wp-meinung/",
+          "etv": 13.2,
+          "estimated_paid_traffic_cost": 62.172,
+          "rank_changes": {
+            "previous_rank_absolute": 8,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=local%20wp&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 2670000,
+        "keyword_difficulty": 13,
+        "last_updated_time": "2026-05-06 09:08:24 +00:00",
+        "previous_updated_time": "2026-03-27 01:18:27 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "surecart",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-10 22:05:26 +00:00",
+          "competition": 0.08,
+          "competition_level": "LOW",
+          "cpc": 2.52,
+          "search_volume": 210,
+          "low_top_of_page_bid": 1.64,
+          "high_top_of_page_bid": 11.26,
+          "categories": [
+            10008
+          ],
+          "monthly_searches": {
+            "2026-03": 210,
+            "2026-02": 140,
+            "2026-01": 170,
+            "2025-12": 140,
+            "2025-11": 260,
+            "2025-10": 260,
+            "2025-09": 170,
+            "2025-08": 170,
+            "2025-07": 210,
+            "2025-06": 210,
+            "2025-05": 210,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "monthly": 50,
+            "quarterly": 24,
+            "yearly": -19
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 8,
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=surecart&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 90300,
+          "last_updated_time": "2026-05-09 20:08:58 +00:00",
+          "previous_updated_time": "2026-03-28 18:22:12 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 790.1,
+          "dofollow": 561,
+          "referring_pages": 671,
+          "referring_domains": 96.6,
+          "referring_main_domains": 56.5,
+          "rank": 76.8,
+          "main_domain_rank": 598,
+          "last_updated_time": "2026-05-09 20:08:58 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-30 02:59:02 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 9,
+          "rank_absolute": 12,
+          "domain": "schoolswp.com",
+          "title": "SureCart: Das ideale E-Commerce-Plugin für digitale Produkte",
+          "url": "https://schoolswp.com/de/surecart-das-plugin-das-mit-woocommerce-konkurriert/",
+          "breadcrumb": "https://schoolswp.com › surecart-das-plugin-das-mit-wo...",
+          "website_name": "schoolswp.com",
+          "description": "SureCart bietet eine kostenlose Version mit dem Namen « Launch Plan », mit der Sie ohne monatliche Gebühren einen Online-Shop eröffnen können, allerdings mit ...",
+          "highlighted": [
+            "SureCart"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/surecart-das-plugin-das-mit-woocommerce-konkurriert/",
+          "etv": 3.15,
+          "estimated_paid_traffic_cost": 7.938,
+          "rank_changes": {
+            "previous_rank_absolute": 8,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=surecart&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 90300,
+        "keyword_difficulty": 8,
+        "last_updated_time": "2026-05-09 20:08:58 +00:00",
+        "previous_updated_time": "2026-03-28 18:22:12 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "amelia plugin",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-13 12:31:37 +00:00",
+          "competition": 0.52,
+          "competition_level": "MEDIUM",
+          "cpc": 1.35,
+          "search_volume": 110,
+          "low_top_of_page_bid": 0.4,
+          "high_top_of_page_bid": 6.85,
+          "categories": [
+            10008
+          ],
+          "monthly_searches": {
+            "2026-03": 110,
+            "2026-02": 110,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 110,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 110,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 110,
+            "2025-04": 110
+          },
+          "search_volume_trend": {
+            "yearly": -21
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "keyword_difficulty": 14,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=amelia%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 2970000,
+          "last_updated_time": "2026-04-06 20:36:30 +00:00",
+          "previous_updated_time": "2026-02-23 23:11:34 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 1492.4,
+          "dofollow": 448.9,
+          "referring_pages": 1097.7,
+          "referring_domains": 62.8,
+          "referring_main_domains": 43.1,
+          "rank": 100.3,
+          "main_domain_rank": 614.4,
+          "last_updated_time": "2026-04-06 20:36:33 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "transactional",
+          "foreign_intent": [
+            "informational",
+            "navigational"
+          ],
+          "last_updated_time": "2026-04-29 05:54:35 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 13,
+          "rank_absolute": 16,
+          "domain": "schoolswp.com",
+          "title": "Amelia: Buchungen & Events in WordPress managen",
+          "url": "https://schoolswp.com/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "breadcrumb": "https://schoolswp.com › amelia-wp-booking-de",
+          "website_name": "schoolswp.com",
+          "description": "16.10.2025 — Verwalten Sie Ihre Buchungen und Veranstaltungen ganz einfach mit Amelia: Terminformulare, Kartenverkauf, automatische Erinnerungen und ...",
+          "pre_snippet": "10/16/2025 00:00:00",
+          "highlighted": [
+            "Amelia"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/reservierungen-wordpress/amelia-wp-booking-de/",
+          "etv": 0.649,
+          "estimated_paid_traffic_cost": 0.876,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=amelia%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 2970000,
+        "keyword_difficulty": 14,
+        "last_updated_time": "2026-04-06 20:36:30 +00:00",
+        "previous_updated_time": "2026-02-23 23:11:34 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "amelia bookings",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-08 06:28:28 +00:00",
+          "competition": 0.53,
+          "competition_level": "MEDIUM",
+          "cpc": 2.69,
+          "search_volume": 140,
+          "low_top_of_page_bid": 1.96,
+          "high_top_of_page_bid": 7.98,
+          "categories": [
+            10017
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 110,
+            "2026-01": 110,
+            "2025-12": 110,
+            "2025-11": 140,
+            "2025-10": 170,
+            "2025-09": 140,
+            "2025-08": 170,
+            "2025-07": 170,
+            "2025-06": 140,
+            "2025-05": 140,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "monthly": 27,
+            "quarterly": 27
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "amelia booking",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 16,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=amelia%20bookings&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 8840000,
+          "last_updated_time": "2026-03-05 02:27:04 +00:00",
+          "previous_updated_time": "2026-01-21 21:04:24 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 692.3,
+          "dofollow": 629.8,
+          "referring_pages": 651.2,
+          "referring_domains": 21.8,
+          "referring_main_domains": 6.3,
+          "rank": 102.1,
+          "main_domain_rank": 652.7,
+          "last_updated_time": "2026-03-05 02:27:16 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-29 07:38:27 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 14,
+          "rank_absolute": 17,
+          "domain": "schoolswp.com",
+          "title": "Amelia WP Review 2026: The Best WordPress Booking Plugin?",
+          "url": "https://schoolswp.com/en/amelia-wp-review/",
+          "breadcrumb": "https://schoolswp.com › amelia-...",
+          "website_name": "schoolswp.com",
+          "description": "Amelia is a comprehensive booking and appointment scheduling system. With this booking plugin, you can turn any WordPress website into a fully functional ...",
+          "highlighted": [
+            "Amelia is a comprehensive booking and appointment scheduling system"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/amelia-wp-review/",
+          "etv": 0.784,
+          "estimated_paid_traffic_cost": 2.109,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 201
+          }
+        },
+        "check_url": "https://www.google.com/search?q=amelia%20bookings&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 8840000,
+        "keyword_difficulty": 16,
+        "last_updated_time": "2026-03-05 02:27:04 +00:00",
+        "previous_updated_time": "2026-01-21 21:04:24 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "local wordpress",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-10 00:14:52 +00:00",
+          "competition": 0.17,
+          "competition_level": "LOW",
+          "cpc": 1.67,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.71,
+          "high_top_of_page_bid": 7.44,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12204,
+            13404
+          ],
+          "monthly_searches": {
+            "2026-03": 210,
+            "2026-02": 170,
+            "2026-01": 170,
+            "2025-12": 110,
+            "2025-11": 170,
+            "2025-10": 140,
+            "2025-09": 110,
+            "2025-08": 110,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "monthly": 24,
+            "quarterly": 24,
+            "yearly": 24
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 5,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=local%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 120000,
+          "last_updated_time": "2026-04-21 16:09:35 +00:00",
+          "previous_updated_time": "2026-03-11 13:25:10 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 26779.6,
+          "dofollow": 16908.4,
+          "referring_pages": 17324.199,
+          "referring_domains": 440.1,
+          "referring_main_domains": 400.4,
+          "rank": 80.1,
+          "main_domain_rank": 463.5,
+          "last_updated_time": "2026-04-21 16:09:35 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-28 13:35:08 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 15,
+          "rank_absolute": 18,
+          "domain": "schoolswp.com",
+          "title": "Local by Flywheel vs. Xampp: WordPress lokal installieren",
+          "url": "https://schoolswp.com/de/local-wp-meinung/",
+          "breadcrumb": "https://schoolswp.com › local-wp-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Vous êtes ici : schoolsWP > Tools zum Testen & Bereitstellen von WordPress > Local WP: Wählen Sie zwischen Local by Flywheel oder Xampp für WordPress.",
+          "highlighted": [
+            "WordPress",
+            "Local"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/local-wp-meinung/",
+          "etv": 0.714,
+          "estimated_paid_traffic_cost": 1.192,
+          "rank_changes": {
+            "previous_rank_absolute": 13,
+            "is_down": true
+          },
+          "rank_info": {
+            "main_domain_rank": 210
+          }
+        },
+        "check_url": "https://www.google.com/search?q=local%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 120000,
+        "keyword_difficulty": 5,
+        "last_updated_time": "2026-04-21 16:09:35 +00:00",
+        "previous_updated_time": "2026-03-11 13:25:10 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "translate wordpress plugin",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-14 10:16:38 +00:00",
+          "competition": 0.46,
+          "competition_level": "MEDIUM",
+          "cpc": 7.14,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.47,
+          "high_top_of_page_bid": 13.4,
+          "categories": [
+            10019,
+            10108,
+            10168,
+            10756,
+            10885,
+            12209,
+            13432,
+            13817
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 90,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "quarterly": -18,
+            "yearly": -57
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "wordpress translate plugin",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 69,
+          "detected_language": "id",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=translate%20wordpress%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 128,
+          "last_updated_time": "2026-05-18 10:15:05 +00:00",
+          "previous_updated_time": "2026-04-05 23:34:29 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 520307.313,
+          "dofollow": 468039.5,
+          "referring_pages": 511378.594,
+          "referring_domains": 2416.8,
+          "referring_main_domains": 2176.3,
+          "rank": 312.9,
+          "main_domain_rank": 656.1,
+          "last_updated_time": "2026-05-18 10:15:06 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "transactional",
+          "foreign_intent": [
+            "commercial",
+            "informational"
+          ],
+          "last_updated_time": "2026-04-29 01:58:21 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 23,
+          "rank_absolute": 26,
+          "domain": "schoolswp.com",
+          "title": "WordPress Translation Plugin: Top 10 for Globalizing your ...",
+          "url": "https://schoolswp.com/en/wordpress-translation-plugin/",
+          "breadcrumb": "https://schoolswp.com › wordpr...",
+          "website_name": "schoolswp.com",
+          "description": "The 10 best translation plugins for WordPress · WPML : The most complete solution for multilingual management · Polylang : A free alternative with premium options.",
+          "highlighted": [
+            "WPML"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/wordpress-translation-plugin/",
+          "etv": 0.294,
+          "estimated_paid_traffic_cost": 2.099,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=translate%20wordpress%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 128,
+        "keyword_difficulty": 69,
+        "last_updated_time": "2026-05-18 10:15:05 +00:00",
+        "previous_updated_time": "2026-04-05 23:34:29 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "translation plugin wordpress",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-19 18:39:35 +00:00",
+          "competition": 0.46,
+          "competition_level": "MEDIUM",
+          "cpc": 7.14,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.47,
+          "high_top_of_page_bid": 13.4,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12209,
+            13817
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 90,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "quarterly": -18,
+            "yearly": -57
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "translation wordpress plugin",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 65,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=translation%20plugin%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "related_searches"
+          ],
+          "se_results_count": 8080000,
+          "last_updated_time": "2026-03-10 16:56:21 +00:00",
+          "previous_updated_time": "2025-10-29 13:10:17 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 575263.125,
+          "dofollow": 516426.313,
+          "referring_pages": 565191.188,
+          "referring_domains": 2329.9,
+          "referring_main_domains": 2103.1,
+          "rank": 300.5,
+          "main_domain_rank": 619.2,
+          "last_updated_time": "2026-03-10 16:56:54 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "commercial",
+          "foreign_intent": [
+            "transactional"
+          ],
+          "last_updated_time": "2026-04-30 01:02:50 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 24,
+          "rank_absolute": 26,
+          "domain": "schoolswp.com",
+          "title": "WordPress Translation Plugin: Top 10 for Globalizing your ...",
+          "url": "https://schoolswp.com/en/wordpress-translation-plugin/",
+          "breadcrumb": "https://schoolswp.com › wordpr...",
+          "website_name": "schoolswp.com",
+          "description": "The 10 best translation plugins for WordPress · WPML : The most complete solution for multilingual management · Polylang : A free alternative with premium options.",
+          "highlighted": [
+            "WPML"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/wordpress-translation-plugin/",
+          "etv": 0.294,
+          "estimated_paid_traffic_cost": 2.099,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=translation%20plugin%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "related_searches"
+        ],
+        "se_results_count": 8080000,
+        "keyword_difficulty": 65,
+        "last_updated_time": "2026-03-10 16:56:21 +00:00",
+        "previous_updated_time": "2025-10-29 13:10:17 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wordpress plugins for translation",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-13 10:41:37 +00:00",
+          "competition": 0.46,
+          "competition_level": "MEDIUM",
+          "cpc": 7.14,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.47,
+          "high_top_of_page_bid": 13.4,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12209,
+            13817
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 90,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "quarterly": -18,
+            "yearly": -57
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "translation plugin for wordpress",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 69,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wordpress%20plugins%20for%20translation&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "featured_snippet",
+            "organic",
+            "video",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 11800000,
+          "last_updated_time": "2026-05-03 13:24:43 +00:00",
+          "previous_updated_time": "2026-01-27 10:55:27 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 538357.813,
+          "dofollow": 484911.688,
+          "referring_pages": 529412.375,
+          "referring_domains": 2284.4,
+          "referring_main_domains": 2069.1,
+          "rank": 321.3,
+          "main_domain_rank": 605.1,
+          "last_updated_time": "2026-05-03 13:24:44 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "commercial",
+          "last_updated_time": "2026-04-30 02:41:09 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 24,
+          "rank_absolute": 29,
+          "domain": "schoolswp.com",
+          "title": "WordPress Translation Plugin: Top 10 for Globalizing your ...",
+          "url": "https://schoolswp.com/en/wordpress-translation-plugin/",
+          "breadcrumb": "https://schoolswp.com › wordpr...",
+          "website_name": "schoolswp.com",
+          "description": "The 10 best translation plugins for WordPress · WPML : The most complete solution for multilingual management · Polylang : A free alternative with premium options.",
+          "highlighted": [
+            "WPML"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/wordpress-translation-plugin/",
+          "etv": 0.294,
+          "estimated_paid_traffic_cost": 2.099,
+          "rank_changes": {
+            "previous_rank_absolute": 95,
+            "is_up": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wordpress%20plugins%20for%20translation&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "featured_snippet",
+          "organic",
+          "video",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 11800000,
+        "keyword_difficulty": 69,
+        "last_updated_time": "2026-05-03 13:24:43 +00:00",
+        "previous_updated_time": "2026-01-27 10:55:27 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wordpress translation plugin",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-16 15:59:13 +00:00",
+          "competition": 0.46,
+          "competition_level": "MEDIUM",
+          "cpc": 7.14,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.47,
+          "high_top_of_page_bid": 13.4,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12209,
+            13817
+          ],
+          "monthly_searches": {
+            "2026-03": 90,
+            "2026-02": 90,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 90,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 140,
+            "2025-07": 140,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 210
+          },
+          "search_volume_trend": {
+            "quarterly": -18,
+            "yearly": -57
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "translation wordpress plugin",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 57,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wordpress%20translation%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 135,
+          "last_updated_time": "2026-05-18 09:30:56 +00:00",
+          "previous_updated_time": "2026-04-05 22:10:48 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 519080.813,
+          "dofollow": 467491.813,
+          "referring_pages": 510376,
+          "referring_domains": 2208.7,
+          "referring_main_domains": 2010.5,
+          "rank": 271,
+          "main_domain_rank": 598.4,
+          "last_updated_time": "2026-05-18 09:30:57 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "commercial",
+          "foreign_intent": [
+            "transactional"
+          ],
+          "last_updated_time": "2026-04-30 11:42:13 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 30,
+          "rank_absolute": 33,
+          "domain": "schoolswp.com",
+          "title": "WordPress Translation Plugin: Top 10 for Globalizing your ...",
+          "url": "https://schoolswp.com/en/wordpress-translation-plugin/",
+          "breadcrumb": "https://schoolswp.com › wordpr...",
+          "website_name": "schoolswp.com",
+          "description": "The 10 best translation plugins for WordPress · WPML : The most complete solution for multilingual management · Polylang : A free alternative with premium options.",
+          "highlighted": [
+            "WPML"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/en/wordpress-translation-plugin/",
+          "etv": 0.294,
+          "estimated_paid_traffic_cost": 2.099,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wordpress%20translation%20plugin&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 135,
+        "keyword_difficulty": 57,
+        "last_updated_time": "2026-05-18 09:30:56 +00:00",
+        "previous_updated_time": "2026-04-05 22:10:48 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wordpress local",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-19 18:36:44 +00:00",
+          "competition": 0.38,
+          "competition_level": "MEDIUM",
+          "cpc": 9.86,
+          "search_volume": 110,
+          "low_top_of_page_bid": 0.63,
+          "high_top_of_page_bid": 4.38,
+          "categories": [
+            10019,
+            10168,
+            10885,
+            12204,
+            13404
+          ],
+          "monthly_searches": {
+            "2026-03": 140,
+            "2026-02": 110,
+            "2026-01": 110,
+            "2025-12": 90,
+            "2025-11": 90,
+            "2025-10": 110,
+            "2025-09": 90,
+            "2025-08": 90,
+            "2025-07": 110,
+            "2025-06": 90,
+            "2025-05": 90,
+            "2025-04": 110
+          },
+          "search_volume_trend": {
+            "monthly": 27,
+            "quarterly": 27,
+            "yearly": 27
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "local wordpress",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 3,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wordpress%20local&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 202000000,
+          "last_updated_time": "2026-05-12 05:44:39 +00:00",
+          "previous_updated_time": "2026-03-30 23:07:56 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 25919.199,
+          "dofollow": 16611.1,
+          "referring_pages": 17008.4,
+          "referring_domains": 434.5,
+          "referring_main_domains": 396.4,
+          "rank": 80.2,
+          "main_domain_rank": 403.4,
+          "last_updated_time": "2026-05-12 05:44:40 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "last_updated_time": "2026-04-30 04:27:48 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 38,
+          "rank_absolute": 43,
+          "domain": "schoolswp.com",
+          "title": "Local by Flywheel vs. Xampp: WordPress lokal installieren",
+          "url": "https://schoolswp.com/de/local-wp-meinung/",
+          "breadcrumb": "https://schoolswp.com › local-wp-meinung",
+          "website_name": "schoolswp.com",
+          "description": "Vergleichen Sie Local by Flywheel und Xampp, um WordPress lokal zu installieren. Benutzerfreundlichkeit, Leistung und Sicherheit: Finden Sie das perfekte ...",
+          "highlighted": [
+            "WordPress lokal"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/local-wp-meinung/",
+          "etv": 0.231,
+          "estimated_paid_traffic_cost": 2.278,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 212
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wordpress%20local&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 202000000,
+        "keyword_difficulty": 3,
+        "last_updated_time": "2026-05-12 05:44:39 +00:00",
+        "previous_updated_time": "2026-03-30 23:07:56 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "wordpress datenbanken",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-19 10:44:57 +00:00",
+          "competition": 0.31,
+          "competition_level": "LOW",
+          "cpc": 3.31,
+          "search_volume": 90,
+          "low_top_of_page_bid": 1.47,
+          "high_top_of_page_bid": 6.16,
+          "categories": [
+            10007,
+            11494,
+            13418
+          ],
+          "monthly_searches": {
+            "2026-03": 70,
+            "2026-02": 70,
+            "2026-01": 70,
+            "2025-12": 70,
+            "2025-11": 90,
+            "2025-10": 90,
+            "2025-09": 90,
+            "2025-08": 110,
+            "2025-07": 110,
+            "2025-06": 110,
+            "2025-05": 140,
+            "2025-04": 140
+          },
+          "search_volume_trend": {
+            "yearly": -50
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "wordpress datenbank",
+          "synonym_clustering_algorithm": "text_processing",
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=wordpress%20datenbanken&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches"
+          ],
+          "se_results_count": 124000000,
+          "last_updated_time": "2026-04-24 05:56:04 +00:00",
+          "previous_updated_time": "2026-03-12 06:01:48 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 15.5,
+          "dofollow": 15.5,
+          "referring_pages": 15.5,
+          "referring_domains": 15.5,
+          "referring_main_domains": 0.1,
+          "rank": 12.4,
+          "main_domain_rank": 537.2,
+          "last_updated_time": "2026-04-24 05:58:06 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "commercial"
+          ],
+          "last_updated_time": "2026-04-30 04:17:56 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 45,
+          "rank_absolute": 52,
+          "domain": "schoolswp.com",
+          "title": "WordPress-Datenbank bereinigen Complete Guide + Plugins",
+          "url": "https://schoolswp.com/de/wordpress-datenbank-reinigen/",
+          "breadcrumb": "https://schoolswp.com › Wartung & Sicherheit",
+          "website_name": "schoolswp.com",
+          "description": "Boosten Sie Ihre Website! Lernen Sie mit unserer ausführlichen Anleitung und effektiven Plugins, wie Sie die WordPress-Datenbank bereinigen.",
+          "highlighted": [
+            "WordPress",
+            "Datenbank"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/wordpress-datenbank-reinigen/",
+          "etv": 0.189,
+          "estimated_paid_traffic_cost": 0.626,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 211
+          }
+        },
+        "check_url": "https://www.google.com/search?q=wordpress%20datenbanken&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "ai_overview",
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches"
+        ],
+        "se_results_count": 124000000,
+        "last_updated_time": "2026-04-24 05:56:04 +00:00",
+        "previous_updated_time": "2026-03-12 06:01:48 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "gutenberg editor wordpress",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-04-16 07:18:08 +00:00",
+          "competition": 0.22,
+          "competition_level": "LOW",
+          "cpc": 1.4,
+          "search_volume": 140,
+          "low_top_of_page_bid": 0.3,
+          "high_top_of_page_bid": 1.93,
+          "categories": [
+            10108,
+            11867
+          ],
+          "monthly_searches": {
+            "2026-03": 260,
+            "2026-02": 260,
+            "2026-01": 210,
+            "2025-12": 140,
+            "2025-11": 110,
+            "2025-10": 110,
+            "2025-09": 110,
+            "2025-08": 90,
+            "2025-07": 110,
+            "2025-06": 140,
+            "2025-05": 170,
+            "2025-04": 110
+          },
+          "search_volume_trend": {
+            "quarterly": 24,
+            "yearly": 24
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "synonym_clustering_algorithm": "text_processing",
+          "keyword_difficulty": 33,
+          "detected_language": "en",
+          "is_another_language": true
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=gutenberg%20editor%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "organic",
+            "people_also_ask",
+            "video",
+            "related_searches",
+            "images"
+          ],
+          "se_results_count": 2660000,
+          "last_updated_time": "2026-03-11 19:08:19 +00:00",
+          "previous_updated_time": "2026-01-30 01:46:22 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 15308.4,
+          "dofollow": 14478.9,
+          "referring_pages": 14690,
+          "referring_domains": 573.3,
+          "referring_main_domains": 522.2,
+          "rank": 181.9,
+          "main_domain_rank": 566.9,
+          "last_updated_time": "2026-03-11 19:09:53 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "navigational",
+          "foreign_intent": [
+            "informational"
+          ],
+          "last_updated_time": "2026-04-27 23:43:06 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 54,
+          "rank_absolute": 62,
+          "domain": "schoolswp.com",
+          "title": "Entdecken Sie Gutenberg: Der WordPress-Editor, der Ihre ...",
+          "url": "https://schoolswp.com/de/gutenberg/",
+          "breadcrumb": "https://schoolswp.com › Design & Page Builders",
+          "website_name": "schoolswp.com",
+          "description": "Gutenberg wurde von WordPress eingeführt und nach Johannes Gutenberg, dem Erfinder der Druckerpresse, benannt. Dieser neue Editor stellt eine echte Revolution ...",
+          "highlighted": [
+            "Gutenberg",
+            "WordPress",
+            "Editor"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/gutenberg/",
+          "etv": 0.294,
+          "estimated_paid_traffic_cost": 0.412,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 200
+          }
+        },
+        "check_url": "https://www.google.com/search?q=gutenberg%20editor%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "organic",
+          "people_also_ask",
+          "video",
+          "related_searches",
+          "images"
+        ],
+        "se_results_count": 2660000,
+        "keyword_difficulty": 33,
+        "last_updated_time": "2026-03-11 19:08:19 +00:00",
+        "previous_updated_time": "2026-01-30 01:46:22 +00:00"
+      }
+    },
+    {
+      "se_type": "google",
+      "keyword_data": {
+        "se_type": "google",
+        "keyword": "datenbank für wordpress",
+        "location_code": 2276,
+        "language_code": "de",
+        "keyword_info": {
+          "se_type": "google",
+          "last_updated_time": "2026-05-20 07:14:57 +00:00",
+          "competition": 0.37,
+          "competition_level": "MEDIUM",
+          "cpc": 6.14,
+          "search_volume": 90,
+          "low_top_of_page_bid": 0.94,
+          "high_top_of_page_bid": 5.67,
+          "categories": [
+            10002,
+            10031,
+            10239,
+            10240
+          ],
+          "monthly_searches": {
+            "2026-04": 50,
+            "2026-03": 70,
+            "2026-02": 70,
+            "2026-01": 70,
+            "2025-12": 70,
+            "2025-11": 90,
+            "2025-10": 90,
+            "2025-09": 90,
+            "2025-08": 110,
+            "2025-07": 110,
+            "2025-06": 110,
+            "2025-05": 140
+          },
+          "search_volume_trend": {
+            "monthly": -29,
+            "quarterly": -29,
+            "yearly": -64
+          }
+        },
+        "keyword_properties": {
+          "se_type": "google",
+          "core_keyword": "wordpress datenbank",
+          "synonym_clustering_algorithm": "text_processing",
+          "detected_language": "de"
+        },
+        "serp_info": {
+          "se_type": "google",
+          "check_url": "https://www.google.com/search?q=datenbank%20f%C3%BCr%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+          "serp_item_types": [
+            "ai_overview",
+            "organic",
+            "people_also_ask",
+            "related_searches"
+          ],
+          "se_results_count": 1880000,
+          "last_updated_time": "2026-04-17 16:20:03 +00:00",
+          "previous_updated_time": "2026-03-05 18:16:16 +00:00"
+        },
+        "avg_backlinks_info": {
+          "se_type": "google",
+          "backlinks": 15.5,
+          "dofollow": 15.5,
+          "referring_pages": 15.5,
+          "referring_domains": 15.5,
+          "referring_main_domains": 0.1,
+          "rank": 12.4,
+          "main_domain_rank": 460.5,
+          "last_updated_time": "2026-04-17 16:24:49 +00:00"
+        },
+        "search_intent_info": {
+          "se_type": "google",
+          "main_intent": "informational",
+          "foreign_intent": [
+            "commercial"
+          ],
+          "last_updated_time": "2026-04-27 19:17:40 +00:00"
+        }
+      },
+      "ranked_serp_element": {
+        "se_type": "google",
+        "serp_item": {
+          "se_type": "google",
+          "type": "organic",
+          "rank_group": 74,
+          "rank_absolute": 83,
+          "domain": "schoolswp.com",
+          "title": "WordPress-Datenbank bereinigen Complete Guide + Plugins",
+          "url": "https://schoolswp.com/de/wordpress-datenbank-reinigen/",
+          "breadcrumb": "https://schoolswp.com › Wartung & Sicherheit",
+          "website_name": "schoolswp.com",
+          "description": "Die WordPress-Datenbank enthält alle wichtigen Informationen über Ihre Website, wie Artikel, Seiten, Kommentare und Konfigurationen. Im Laufe der Zeit kann sich ...",
+          "highlighted": [
+            "WordPress",
+            "Datenbank"
+          ],
+          "main_domain": "schoolswp.com",
+          "relative_url": "/de/wordpress-datenbank-reinigen/",
+          "etv": 0.189,
+          "estimated_paid_traffic_cost": 1.16,
+          "rank_changes": {
+            "is_new": true
+          },
+          "rank_info": {
+            "main_domain_rank": 210
+          }
+        },
+        "check_url": "https://www.google.com/search?q=datenbank%20f%C3%BCr%20wordpress&hl=de&gl=DE&ie=UTF-8&uule=w+CAIQIFISCWu-scIecppHEVvlkY5rXeh1",
+        "serp_item_types": [
+          "ai_overview",
+          "organic",
+          "people_also_ask",
+          "related_searches"
+        ],
+        "se_results_count": 1880000,
+        "last_updated_time": "2026-04-17 16:20:03 +00:00",
+        "previous_updated_time": "2026-03-05 18:16:16 +00:00"
+      }
+    }
+  ]
+}

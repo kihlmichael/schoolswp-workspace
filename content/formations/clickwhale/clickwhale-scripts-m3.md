@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 3 : Bio Link Pages, ta page de liens
+# Scripts vidéo - Module 3 : Bio Link Pages, ta page de liens
 
 **Formation** : Maîtriser ClickWhale
-**Module** : M3 — Bio Link Pages : ta page de liens (Gratuit)
+**Module** : M3 - Bio Link Pages : ta page de liens (Gratuit)
 **Leçons** : 6 vidéos + 1 exercice + 1 quiz
 **Durée totale** : ~45 min
 **Date** : 2026-03-21
 
 ---
 
-### Leçon 3.1 — Comprends les Bio Link Pages : ton Linktree auto-hébergé
+### Leçon 3.1 : Comprends les Bio Link Pages : ton Linktree auto-hébergé
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,17 +16,17 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Tu utilises Linktree pour mettre un lien dans ta bio Instagram ou LinkedIn ? Tu paies un abonnement mensuel pour afficher 5 liens sur une page avec le logo d'un autre. Dans cette leçon, je te montre pourquoi une Bio Link Page ClickWhale est une meilleure solution — gratuite, hébergée chez toi, et bonne pour ton SEO.
+Tu utilises Linktree pour mettre un lien dans ta bio Instagram ou LinkedIn ? Tu paies un abonnement mensuel pour afficher 5 liens sur une page avec le logo d'un autre. Dans cette leçon, je te montre pourquoi une Bio Link Page ClickWhale est une meilleure solution - gratuite, hébergée chez toi, et bonne pour ton SEO.
 
-**[ÉCRAN — slide "Bio Link Page, c'est quoi ?"]**
+**[ÉCRAN - slide "Bio Link Page, c'est quoi ?"]**
 
 Une Bio Link Page, c'est une page qui regroupe tous tes liens importants sur une seule URL. Tu la partages dans ta bio Instagram, ton profil LinkedIn, ta chaîne YouTube, ou même sur une carte de visite.
 
 La différence avec Linktree, Koji ou Beacons ? Ta Bio Link Page ClickWhale est hébergée directement sur ton site WordPress. C'est une page de ton domaine. Pas un sous-domaine d'un service tiers.
 
-**[ÉCRAN — slide comparatif "Linktree vs ClickWhale Bio Link Page"]**
+**[ÉCRAN - slide comparatif "Linktree vs ClickWhale Bio Link Page"]**
 
 Comparons concrètement.
 
@@ -34,19 +34,19 @@ Le coût. Linktree gratuit est très limité. Le plan Pro coûte 5 dollars par m
 
 Le branding. Linktree gratuit affiche son logo en bas de ta page. Avec ClickWhale, aucun branding forcé. Ta page, ton design, ton domaine.
 
-Le SEO. C'est le point le plus important. Une page Linktree vit sur linktr.ee. Les liens, le trafic, l'autorité — tout ça profite à Linktree, pas à toi. Avec ClickWhale, ta bio link page est sur tonsite.com/links. Google peut l'indexer. Les visites comptent pour ton domaine.
+Le SEO. C'est le point le plus important. Une page Linktree vit sur linktr.ee. Les liens, le trafic, l'autorité - tout ça profite à Linktree, pas à toi. Avec ClickWhale, ta bio link page est sur tonsite.com/links. Google peut l'indexer. Les visites comptent pour ton domaine.
 
 Les données. Linktree collecte les données de tes visiteurs. Avec ClickWhale, tout reste dans ta base de données WordPress.
 
-**[ÉCRAN — screencast d'une bio link page exemple]**
+**[ÉCRAN - screencast d'une bio link page exemple]**
 
 [Montre une bio link page ClickWhale en front-end]
 
 Voici à quoi ça ressemble. Une page simple, épurée, avec tes liens principaux. Chaque bouton renvoie vers une URL de ton choix. Le visiteur clique, il est redirigé.
 
-Tu peux ajouter jusqu'à 10 liens par page. C'est largement suffisant pour une bio link page. L'objectif n'est pas d'avoir 50 liens — c'est de diriger tes visiteurs vers les pages qui comptent.
+Tu peux ajouter jusqu'à 10 liens par page. C'est largement suffisant pour une bio link page. L'objectif n'est pas d'avoir 50 liens - c'est de diriger tes visiteurs vers les pages qui comptent.
 
-**[ÉCRAN — slide "Pour qui ?"]**
+**[ÉCRAN - slide "Pour qui ?"]**
 
 À qui ça sert concrètement ?
 
@@ -58,7 +58,7 @@ Pour YouTube, tu peux l'ajouter dans la description de tes vidéos ou dans la se
 
 Et pour le monde physique : imprime un QR code de ta bio link page sur ta carte de visite. On verra comment générer un QR code dans le Module 4.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu comprends maintenant ce qu'est une Bio Link Page et pourquoi c'est mieux qu'un Linktree. Dans la prochaine leçon, on passe à la pratique : tu crées ta première page de liens dans ClickWhale.
 
@@ -75,7 +75,7 @@ Tu comprends maintenant ce qu'est une Bio Link Page et pourquoi c'est mieux qu'u
 
 ---
 
-### Leçon 3.2 — Crée ta première page de liens
+### Leçon 3.2 : Crée ta première page de liens
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -83,11 +83,11 @@ Tu comprends maintenant ce qu'est une Bio Link Page et pourquoi c'est mieux qu'u
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On passe à la pratique. Dans cette leçon, tu crées ta première Bio Link Page dans ClickWhale. En 5 minutes, tu auras une page de liens fonctionnelle, prête à être partagée.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers ClickWhale > Link Pages]
 
@@ -97,7 +97,7 @@ On passe à la pratique. Dans cette leçon, tu crées ta première Bio Link Page
 
 Étape 2 : clique sur "Add New" pour créer une nouvelle page.
 
-**[ÉCRAN — screencast éditeur Link Page]**
+**[ÉCRAN - screencast éditeur Link Page]**
 
 [Montre les champs titre et slug]
 
@@ -105,13 +105,13 @@ On passe à la pratique. Dans cette leçon, tu crées ta première Bio Link Page
 
 Étape 4 : choisis ton slug. C'est la partie de l'URL après ton nom de domaine. Je recommande quelque chose de court : "links", "bio", ou "liens". Ton URL finale sera tonsite.com/links.
 
-**[ÉCRAN — screencast des 3 onglets]**
+**[ÉCRAN - screencast des 3 onglets]**
 
 [Montre les 3 onglets : Contents, Styles, SEO]
 
 L'éditeur s'ouvre avec trois onglets. Contents pour ajouter tes liens et tes blocs. Styles pour personnaliser les couleurs et le design. SEO pour optimiser le titre et la méta description. On va voir chaque onglet en détail dans les prochaines leçons.
 
-**[ÉCRAN — screencast onglet Contents]**
+**[ÉCRAN - screencast onglet Contents]**
 
 [Clique sur l'onglet Contents]
 
@@ -125,7 +125,7 @@ Le bloc Heading : c'est un titre ou un séparateur visuel. Ça te permet d'organ
 
 Le bloc Post : il affiche un lien vers un article WordPress existant de ton site. Le titre et un extrait de l'article sont affichés automatiquement.
 
-**[ÉCRAN — screencast ajout d'un premier lien]**
+**[ÉCRAN - screencast ajout d'un premier lien]**
 
 [Ajoute un bloc Link avec une URL et un texte]
 
@@ -135,7 +135,7 @@ Le bloc Post : il affiche un lien vers un article WordPress existant de ton site
 
 Ajoute un deuxième lien de la même manière. Par exemple : "Lis mon dernier article".
 
-**[ÉCRAN — screencast sauvegarde et preview]**
+**[ÉCRAN - screencast sauvegarde et preview]**
 
 [Clique sur Save puis Preview]
 
@@ -145,9 +145,9 @@ Ajoute un deuxième lien de la même manière. Par exemple : "Lis mon dernier ar
 
 Voilà. Ta première bio link page est en ligne. Deux boutons cliquables, sur ton domaine, sans branding forcé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Ta page existe. Dans la prochaine leçon, on va explorer en détail les trois types de blocs — liens, headings et posts — pour construire une page complète et bien organisée.
+Ta page existe. Dans la prochaine leçon, on va explorer en détail les trois types de blocs - liens, headings et posts - pour construire une page complète et bien organisée.
 
 ---
 
@@ -162,7 +162,7 @@ Ta page existe. Dans la prochaine leçon, on va explorer en détail les trois ty
 
 ---
 
-### Leçon 3.3 — L'éditeur drag-and-drop : liens, headings et posts
+### Leçon 3.3 : L'éditeur drag-and-drop : liens, headings et posts
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -170,23 +170,23 @@ Ta page existe. Dans la prochaine leçon, on va explorer en détail les trois ty
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu as créé ta page dans la leçon précédente. Maintenant, on va maîtriser les trois types de blocs de l'éditeur et apprendre à organiser ta page intelligemment. Parce que 10 liens maximum, ça veut dire que chaque lien doit compter.
 
-**[ÉCRAN — screencast éditeur, onglet Contents]**
+**[ÉCRAN - screencast éditeur, onglet Contents]**
 
 [Ouvre une bio link page existante, onglet Contents]
 
 Reprenons l'éditeur. Tu es dans l'onglet Contents. Tu vois tes blocs existants et le bouton pour en ajouter.
 
-**[ÉCRAN — screencast bloc Link]**
+**[ÉCRAN - screencast bloc Link]**
 
 [Ajoute un bloc Link]
 
 Premier type : le bloc Link. C'est le plus utilisé. Deux champs à remplir.
 
-Le champ URL : l'adresse de destination. Ça peut être n'importe quoi — une page de ton site, un lien externe, un lien affilié ClickWhale, une vidéo YouTube, un profil de réseau social.
+Le champ URL : l'adresse de destination. Ça peut être n'importe quoi - une page de ton site, un lien externe, un lien affilié ClickWhale, une vidéo YouTube, un profil de réseau social.
 
 Le champ texte : le libellé qui apparaît sur le bouton. Sois précis. "Clique ici" ne dit rien. "Découvre la formation gratuite ClickWhale" dit exactement où le visiteur va atterrir.
 
@@ -194,11 +194,11 @@ Le champ texte : le libellé qui apparaît sur le bouton. Sois précis. "Clique 
 
 Le visiteur voit un bouton avec ton texte. Il clique, il est redirigé vers l'URL. Simple.
 
-**[ÉCRAN — screencast bloc Heading]**
+**[ÉCRAN - screencast bloc Heading]**
 
 [Ajoute un bloc Heading]
 
-Deuxième type : le bloc Heading. C'est un titre ou un séparateur visuel. Il ne renvoie nulle part — il organise ta page en sections.
+Deuxième type : le bloc Heading. C'est un titre ou un séparateur visuel. Il ne renvoie nulle part - il organise ta page en sections.
 
 [Tape "Mes formations" dans le champ texte]
 
@@ -206,7 +206,7 @@ Par exemple, tu mets un heading "Mes formations" suivi de tes liens de formation
 
 Sans headings, ta page est une liste de boutons sans structure. Avec des headings, le visiteur comprend immédiatement ce qui est disponible.
 
-**[ÉCRAN — screencast bloc Post]**
+**[ÉCRAN - screencast bloc Post]**
 
 [Ajoute un bloc Post]
 
@@ -216,7 +216,7 @@ Troisième type : le bloc Post. Tu sélectionnes un article WordPress existant d
 
 C'est utile pour mettre en avant ton dernier article de blog ou un contenu phare. Le visiteur voit le titre, l'extrait, et clique pour lire l'article complet.
 
-**[ÉCRAN — screencast drag-and-drop]**
+**[ÉCRAN - screencast drag-and-drop]**
 
 [Réorganise les blocs en drag-and-drop]
 
@@ -224,9 +224,9 @@ Tous ces blocs sont réordonnables par drag-and-drop. Clique sur un bloc, mainti
 
 [Montre la réorganisation en temps réel]
 
-Mon conseil : mets en premier le lien le plus important. Celui qui génère le plus de valeur pour toi — ta formation, ta newsletter, ton produit principal. Les visiteurs cliquent majoritairement sur les deux premiers liens.
+Mon conseil : mets en premier le lien le plus important. Celui qui génère le plus de valeur pour toi - ta formation, ta newsletter, ton produit principal. Les visiteurs cliquent majoritairement sur les deux premiers liens.
 
-**[ÉCRAN — slide "10 liens max : comment prioriser"]**
+**[ÉCRAN - slide "10 liens max : comment prioriser"]**
 
 [Affiche la slide avec les critères de priorisation]
 
@@ -242,7 +242,7 @@ Catégorie 3 : les liens de suivi. Tes réseaux sociaux, ton podcast, ta chaîne
 
 Si un lien n'entre dans aucune de ces catégories, il n'a probablement pas sa place sur ta bio link page.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant utiliser les trois types de blocs et organiser ta page. Dans la prochaine leçon, on personnalise le style : couleurs, boutons, arrière-plan.
 
@@ -259,7 +259,7 @@ Tu sais maintenant utiliser les trois types de blocs et organiser ta page. Dans 
 
 ---
 
-### Leçon 3.4 — Personnalise le style : couleurs, boutons, background
+### Leçon 3.4 : Personnalise le style : couleurs, boutons, background
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -267,17 +267,17 @@ Tu sais maintenant utiliser les trois types de blocs et organiser ta page. Dans 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Ta page de liens fonctionne, mais elle ressemble à toutes les autres. Dans cette leçon, tu la personnalises pour qu'elle reflète ta marque. Couleurs, boutons, arrière-plan — tout se configure dans l'onglet Styles.
+Ta page de liens fonctionne, mais elle ressemble à toutes les autres. Dans cette leçon, tu la personnalises pour qu'elle reflète ta marque. Couleurs, boutons, arrière-plan - tout se configure dans l'onglet Styles.
 
-**[ÉCRAN — screencast éditeur, onglet Styles]**
+**[ÉCRAN - screencast éditeur, onglet Styles]**
 
 [Ouvre une bio link page, clique sur l'onglet Styles]
 
 Étape 1 : ouvre ta bio link page dans l'éditeur et clique sur l'onglet Styles. Tu vas trouver quatre réglages principaux.
 
-**[ÉCRAN — screencast Background Color]**
+**[ÉCRAN - screencast Background Color]**
 
 [Clique sur le sélecteur Background Color]
 
@@ -289,17 +289,17 @@ Tu peux choisir n'importe quelle couleur via le sélecteur ou entrer un code hex
 
 Mon conseil : reste sur des couleurs claires pour le fond. Un fond sombre peut fonctionner, mais assure-toi que le texte reste lisible.
 
-**[ÉCRAN — screencast Text Color]**
+**[ÉCRAN - screencast Text Color]**
 
 [Clique sur le sélecteur Text Color]
 
-Deuxième réglage : Text Color. C'est la couleur du texte sur ta page — les headings, les descriptions.
+Deuxième réglage : Text Color. C'est la couleur du texte sur ta page - les headings, les descriptions.
 
 [Change la couleur]
 
-Règle de base : le contraste entre le texte et le fond doit être fort. Texte sombre sur fond clair, ou texte clair sur fond sombre. Pas de gris clair sur blanc — personne ne pourra lire.
+Règle de base : le contraste entre le texte et le fond doit être fort. Texte sombre sur fond clair, ou texte clair sur fond sombre. Pas de gris clair sur blanc - personne ne pourra lire.
 
-**[ÉCRAN — screencast Button Color]**
+**[ÉCRAN - screencast Button Color]**
 
 [Clique sur le sélecteur Button Color]
 
@@ -307,19 +307,19 @@ Troisième réglage : Button Color. C'est la couleur de tes boutons de lien. C'e
 
 [Change la couleur et montre le rendu]
 
-Choisis une couleur qui ressort par rapport au fond. Si ton fond est clair, utilise une couleur vive pour les boutons. C'est ta couleur d'action — celle qui attire l'œil.
+Choisis une couleur qui ressort par rapport au fond. Si ton fond est clair, utilise une couleur vive pour les boutons. C'est ta couleur d'action - celle qui attire l'œil.
 
-**[ÉCRAN — screencast Hover Color]**
+**[ÉCRAN - screencast Hover Color]**
 
 [Clique sur le sélecteur Hover Color]
 
-Quatrième réglage : Hover Color. C'est la couleur du bouton quand le visiteur passe la souris dessus. Ça donne un retour visuel — le visiteur comprend que c'est cliquable.
+Quatrième réglage : Hover Color. C'est la couleur du bouton quand le visiteur passe la souris dessus. Ça donne un retour visuel - le visiteur comprend que c'est cliquable.
 
 [Passe la souris sur un bouton pour montrer le changement]
 
 En général, utilise une version plus foncée ou plus claire de ta couleur de bouton. L'idée c'est un changement subtil mais visible.
 
-**[ÉCRAN — slide "Cohérence avec ta charte graphique"]**
+**[ÉCRAN - slide "Cohérence avec ta charte graphique"]**
 
 [Affiche la slide avec un exemple avant/après]
 
@@ -333,23 +333,23 @@ Les couleurs à avoir sous la main avant de personnaliser :
 
 Si tu n'as pas de charte graphique définie, choisis deux couleurs maximum et reste sobre. Mieux vaut une page simple et propre qu'un sapin de Noël.
 
-**[ÉCRAN — screencast CSS custom]**
+**[ÉCRAN - screencast CSS custom]**
 
 [Montre rapidement le champ CSS custom s'il existe]
 
-Pour aller plus loin, ClickWhale permet d'ajouter du CSS personnalisé. Tu peux modifier les polices, les bordures, les espacements, les ombres — tout ce que le CSS permet.
+Pour aller plus loin, ClickWhale permet d'ajouter du CSS personnalisé. Tu peux modifier les polices, les bordures, les espacements, les ombres - tout ce que le CSS permet.
 
 Je ne vais pas faire un cours de CSS ici. Mais sache que l'option existe. Si tu connais le CSS ou si tu travailles avec un développeur, c'est un levier de personnalisation avancé.
 
-**[ÉCRAN — screencast sauvegarde et preview finale]**
+**[ÉCRAN - screencast sauvegarde et preview finale]**
 
 [Sauvegarde et montre la page personnalisée en front-end]
 
 Voilà le résultat. Même page, mêmes liens, mais maintenant elle a ton identité visuelle.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Ta page est belle et cohérente avec ta marque. Dans la prochaine leçon, on s'attaque au SEO — parce que oui, ta bio link page peut se positionner sur Google.
+Ta page est belle et cohérente avec ta marque. Dans la prochaine leçon, on s'attaque au SEO - parce que oui, ta bio link page peut se positionner sur Google.
 
 ---
 
@@ -364,7 +364,7 @@ Ta page est belle et cohérente avec ta marque. Dans la prochaine leçon, on s'a
 
 ---
 
-### Leçon 3.5 — Optimise le SEO de ta page (titre, méta description, slug)
+### Leçon 3.5 : Optimise le SEO de ta page (titre, méta description, slug)
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -372,17 +372,17 @@ Ta page est belle et cohérente avec ta marque. Dans la prochaine leçon, on s'a
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 C'est là que ta bio link page prend un vrai avantage sur Linktree. Elle est hébergée sur ton domaine, donc Google peut l'indexer. Encore faut-il configurer correctement le SEO. C'est ce qu'on fait dans cette leçon.
 
-**[ÉCRAN — screencast éditeur, onglet SEO]**
+**[ÉCRAN - screencast éditeur, onglet SEO]**
 
 [Ouvre une bio link page, clique sur l'onglet SEO]
 
 Étape 1 : ouvre ta bio link page et clique sur l'onglet SEO. Tu vas trouver trois champs.
 
-**[ÉCRAN — screencast champ Title]**
+**[ÉCRAN - screencast champ Title]**
 
 [Montre le champ Title]
 
@@ -390,15 +390,15 @@ Premier champ : Title tag. C'est le titre qui apparaît dans l'onglet du navigat
 
 [Tape un exemple de titre]
 
-Écris un titre clair et descriptif. Par exemple : "Tous les liens schoolsWP — formations, articles, contact". Ou plus court : "Liens schoolsWP".
+Écris un titre clair et descriptif. Par exemple : "Tous les liens schoolsWP - formations, articles, contact". Ou plus court : "Liens schoolsWP".
 
 La règle : entre 50 et 60 caractères. Au-delà, Google tronque le titre dans les résultats de recherche.
 
-**[ÉCRAN — screencast champ Meta Description]**
+**[ÉCRAN - screencast champ Meta Description]**
 
 [Montre le champ Meta Description]
 
-Deuxième champ : Méta description. C'est le texte qui apparaît sous le titre dans les résultats Google. C'est ce qui donne envie de cliquer — ou pas.
+Deuxième champ : Méta description. C'est le texte qui apparaît sous le titre dans les résultats Google. C'est ce qui donne envie de cliquer - ou pas.
 
 [Tape un exemple de méta description]
 
@@ -406,9 +406,9 @@ Exemple : "Retrouve toutes les ressources schoolsWP : formation WordPress gratui
 
 La règle : entre 140 et 160 caractères. Sois précis sur ce que le visiteur va trouver sur la page.
 
-**[ÉCRAN — screencast champ Slug]**
+**[ÉCRAN - screencast champ Slug]**
 
-[Montre le champ Slug — déjà configuré en 3.2]
+[Montre le champ Slug - déjà configuré en 3.2]
 
 Troisième champ : le slug. Tu l'as déjà configuré dans la leçon 3.2. C'est la partie de l'URL après ton domaine.
 
@@ -416,17 +416,17 @@ Les bons slugs pour une bio link page : /links, /bio, /liens, /go. Court, mémor
 
 Évite les slugs longs ou avec des caractères spéciaux. "tonsite.com/links" est mieux que "tonsite.com/ma-page-de-tous-mes-liens-importants".
 
-**[ÉCRAN — slide "Pourquoi c'est important"]**
+**[ÉCRAN - slide "Pourquoi c'est important"]**
 
 [Affiche la slide avec le comparatif SEO]
 
 Pourquoi prendre le temps de configurer ça ?
 
-Parce qu'une page Linktree ne t'appartient pas. L'URL est linktr.ee/tonnom. Le trafic, l'autorité, les signaux SEO — tout ça profite à Linktree.
+Parce qu'une page Linktree ne t'appartient pas. L'URL est linktr.ee/tonnom. Le trafic, l'autorité, les signaux SEO - tout ça profite à Linktree.
 
-Ta bio link page ClickWhale est sur tonsite.com/links. Chaque visite renforce l'autorité de ton domaine. Si quelqu'un cherche ton nom ou ta marque sur Google, ta bio link page peut apparaître dans les résultats. Avec Linktree, c'est la page de Linktree qui apparaît — pas la tienne.
+Ta bio link page ClickWhale est sur tonsite.com/links. Chaque visite renforce l'autorité de ton domaine. Si quelqu'un cherche ton nom ou ta marque sur Google, ta bio link page peut apparaître dans les résultats. Avec Linktree, c'est la page de Linktree qui apparaît - pas la tienne.
 
-**[ÉCRAN — screencast analytics]**
+**[ÉCRAN - screencast analytics]**
 
 [Montre la section analytics de la link page dans le dashboard ClickWhale]
 
@@ -434,9 +434,9 @@ Dernier point : les analytics. ClickWhale tracke automatiquement les vues de pag
 
 [Montre les statistiques de vues et de clics]
 
-Tu peux voir combien de personnes ont visité ta page et sur quels liens elles ont cliqué. Ces données sont précieuses pour optimiser — si un lien n'est jamais cliqué, remplace-le ou déplace-le plus haut.
+Tu peux voir combien de personnes ont visité ta page et sur quels liens elles ont cliqué. Ces données sont précieuses pour optimiser - si un lien n'est jamais cliqué, remplace-le ou déplace-le plus haut.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton SEO est configuré, tes analytics tournent. Dans la prochaine leçon, on va ajouter un formulaire directement sur ta bio link page pour capturer des emails.
 
@@ -453,7 +453,7 @@ Ton SEO est configuré, tes analytics tournent. Dans la prochaine leçon, on va 
 
 ---
 
-### Leçon 3.6 — Ajoute un formulaire sur ta link page (CF7, Fluent Forms, Ninja Forms, WPForms)
+### Leçon 3.6 : Ajoute un formulaire sur ta link page (CF7, Fluent Forms, Ninja Forms, WPForms)
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -461,17 +461,17 @@ Ton SEO est configuré, tes analytics tournent. Dans la prochaine leçon, on va 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Ta bio link page redirige tes visiteurs vers d'autres pages. Mais si tu pouvais capturer leur email directement sur la page, sans les faire partir ? C'est possible avec le bloc Forms de ClickWhale Pro. Dans cette leçon, je te montre comment l'ajouter.
 
-**[ÉCRAN — slide "Fonctionnalité Pro"]**
+**[ÉCRAN - slide "Fonctionnalité Pro"]**
 
 [Affiche la slide]
 
 Premier point important : le bloc Forms est une fonctionnalité Pro. Si tu utilises la version gratuite de ClickWhale, tu ne verras pas ce bloc dans l'éditeur. C'est l'une des raisons pour lesquelles passer en Pro vaut le coup si tu fais de la capture de leads.
 
-**[ÉCRAN — screencast éditeur, onglet Contents]**
+**[ÉCRAN - screencast éditeur, onglet Contents]**
 
 [Ouvre une bio link page, onglet Contents]
 
@@ -481,7 +481,7 @@ Premier point important : le bloc Forms est une fonctionnalité Pro. Si tu utili
 
 Étape 2 : clique sur "Add Element". Tu vois maintenant un quatrième type de bloc : "Forms". Clique dessus pour l'ajouter.
 
-**[ÉCRAN — screencast configuration du bloc Forms]**
+**[ÉCRAN - screencast configuration du bloc Forms]**
 
 [Montre le dropdown de sélection de formulaire]
 
@@ -497,7 +497,7 @@ Contact Form 7, Fluent Forms, Ninja Forms et WPForms. Si tu utilises un de ces p
 
 Voilà. Le formulaire apparaît directement sur ta bio link page, entre tes liens. Le visiteur peut remplir le formulaire sans quitter la page.
 
-**[ÉCRAN — slide "Cas d'usage concrets"]**
+**[ÉCRAN - slide "Cas d'usage concrets"]**
 
 [Affiche la slide]
 
@@ -505,19 +505,19 @@ Quand utiliser un formulaire sur ta bio link page ?
 
 Scénario 1 : capture d'emails. Tu partages ta bio link page sur Instagram. Un visiteur arrive, voit ton formulaire "Reçois la formation gratuite", entre son email. Tu as un nouveau lead. Il n'a même pas eu besoin de visiter ton site complet.
 
-Scénario 2 : contact direct. Un formulaire de contact simple — nom, email, message. Les gens qui découvrent ton profil LinkedIn peuvent te contacter en deux champs.
+Scénario 2 : contact direct. Un formulaire de contact simple - nom, email, message. Les gens qui découvrent ton profil LinkedIn peuvent te contacter en deux champs.
 
 Scénario 3 : inscription newsletter. Un champ email avec un bouton "S'abonner". Direct, sans friction.
 
-**[ÉCRAN — screencast personnalisation]**
+**[ÉCRAN - screencast personnalisation]**
 
 [Montre les options de style du formulaire]
 
-Le formulaire hérite des styles de ta page par défaut — couleurs de fond, couleurs de texte. Tu peux ajuster via l'onglet Styles ou avec du CSS custom si tu veux un rendu spécifique.
+Le formulaire hérite des styles de ta page par défaut - couleurs de fond, couleurs de texte. Tu peux ajuster via l'onglet Styles ou avec du CSS custom si tu veux un rendu spécifique.
 
 L'essentiel : le formulaire doit rester visuellement cohérent avec le reste de ta page. Pas de formulaire blanc sur fond bleu qui casse l'harmonie.
 
-**[ÉCRAN — slide "Stack recommandée"]**
+**[ÉCRAN - slide "Stack recommandée"]**
 
 [Affiche la slide]
 
@@ -527,7 +527,7 @@ Fluent Forms gratuit + ClickWhale Pro = capture de leads directement depuis ta b
 
 Si tu utilises déjà FluentCRM pour ton email marketing, les contacts capturés via Fluent Forms sont automatiquement ajoutés à ta base. Tout reste dans WordPress.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu sais maintenant ajouter un formulaire sur ta bio link page. Dans la prochaine leçon, c'est à toi de jouer : tu vas créer ta propre page bio link complète avec 5 liens et un formulaire.
 
@@ -544,14 +544,14 @@ Tu sais maintenant ajouter un formulaire sur ta bio link page. Dans la prochaine
 
 ---
 
-### Leçon 3.7 — Exercice : Crée ta page bio link schoolsWP avec 5 liens + 1 formulaire
+### Leçon 3.7 : Exercice : Crée ta page bio link schoolsWP avec 5 liens + 1 formulaire
 
 **Durée** : 7 min
 **Type** : Exercice (pas de vidéo)
 
 ---
 
-## Exercice M3 — Crée ta bio link page complète
+## Exercice M3 - Crée ta bio link page complète
 
 ### Objectif
 
@@ -594,7 +594,7 @@ Ajoute des blocs Heading pour structurer la page :
 
 #### 5. Configure le SEO
 
-- Title tag : "[Ton nom/marque] — Tous mes liens" (50-60 caractères)
+- Title tag : "[Ton nom/marque] - Tous mes liens" (50-60 caractères)
 - Méta description : description claire de ce que le visiteur trouvera (140-160 caractères)
 - Slug : vérifie qu'il est court et mémorisable
 
@@ -612,7 +612,7 @@ Ajoute des blocs Heading pour structurer la page :
 ### Exemple de résultat attendu
 
 ```
-[Background : #F8F9FA — gris clair]
+[Background : #F8F9FA - gris clair]
 
         Liens schoolsWP
 
@@ -637,12 +637,12 @@ Ajoute des blocs Heading pour structurer la page :
 
 - Teste chaque lien en cliquant dessus depuis la preview
 - Vérifie que le formulaire envoie bien les données (fais un test avec ton propre email)
-- Regarde ta page sur mobile — la majorité de tes visiteurs viendront d'Instagram ou LinkedIn, donc depuis un téléphone
+- Regarde ta page sur mobile - la majorité de tes visiteurs viendront d'Instagram ou LinkedIn, donc depuis un téléphone
 - Si tu n'as pas ClickWhale Pro, fais l'exercice sans le formulaire (4 liens + 1 bloc Post)
 
 ---
 
-### Leçon 3.8 — Quiz : Valide tes acquis M3
+### Leçon 3.8 : Quiz : Valide tes acquis M3
 
 **Type** : Quiz TutorLMS (8 questions)
 **Seuil de réussite** : 80%

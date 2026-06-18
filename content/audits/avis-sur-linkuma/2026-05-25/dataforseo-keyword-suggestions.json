@@ -1,0 +1,111 @@
+{
+  "source": "dataforseo_labs_google_keyword_suggestions",
+  "seed_keyword": "linkuma",
+  "fetch_date": "2026-05-25",
+  "location": "France",
+  "language": "fr",
+  "filter": "search_volume >= 10",
+  "count": 14,
+  "items": [
+    {
+      "keyword": "linkuma",
+      "volume": 2900,
+      "kd": 18,
+      "cpc": 6.92,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linkuma avis",
+      "volume": 1600,
+      "kd": 23,
+      "cpc": 2.5,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linkuma prix",
+      "volume": 480,
+      "kd": 23,
+      "cpc": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "linkuma review",
+      "volume": 390,
+      "kd": 16,
+      "cpc": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "avis linkuma",
+      "volume": 170,
+      "kd": 20,
+      "cpc": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linkuma annecy",
+      "volume": 170,
+      "kd": 1,
+      "cpc": null,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "linkuma recrutement",
+      "volume": 140,
+      "kd": 11,
+      "cpc": null,
+      "intent": "navigational"
+    },
+    {
+      "keyword": "linkuma tarif",
+      "volume": 110,
+      "kd": 5,
+      "cpc": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linkuma code promo",
+      "volume": 70,
+      "kd": null,
+      "cpc": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "code promo linkuma",
+      "volume": 50,
+      "kd": null,
+      "cpc": null,
+      "intent": "commercial"
+    },
+    {
+      "keyword": "avis sur linkuma",
+      "volume": 20,
+      "kd": 23,
+      "cpc": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "veronika linkuma",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "intent": "informational"
+    },
+    {
+      "keyword": "linkuma affiliation",
+      "volume": 10,
+      "kd": null,
+      "cpc": 4.39,
+      "intent": "informational"
+    },
+    {
+      "keyword": "plateforme backlinks linkuma",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "intent": "navigational"
+    }
+  ],
+  "total_volume_seo_intent": 4520,
+  "total_volume_brand_all": 6160
+}

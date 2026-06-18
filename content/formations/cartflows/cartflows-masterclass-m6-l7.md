@@ -1,9 +1,9 @@
-# Lecon 6.7 — Connecter Google Analytics 4 + Facebook Pixel
+# Lecon 6.7 - Connecter Google Analytics 4 + Facebook Pixel
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 6 — A/B Testing et Analytics
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 6 - A/B Testing et Analytics
 - **Duree cible** : 8 min (~1100 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Connecter GA4 et le Facebook Pixel a CartFlows. Verifier que les events e-commerce remontent correctement. Configurer le consentement cookies pour la conformite RGPD.
@@ -12,17 +12,17 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-CartFlows a son propre tableau de bord Analytics. C'est utile, mais limite. Pour avoir une vision complete de ton funnel — source du trafic, comportement des visiteurs, attribution des ventes — tu as besoin de connecter des outils externes.
+CartFlows a son propre tableau de bord Analytics. C'est utile, mais limite. Pour avoir une vision complete de ton funnel - source du trafic, comportement des visiteurs, attribution des ventes - tu as besoin de connecter des outils externes.
 
 Dans cette lecon, on connecte Google Analytics 4 et le Facebook Pixel a CartFlows. Et on le fait proprement, en respectant le RGPD.
 
 ---
 
-**[SECTION 1 — Acceder aux reglages integrations CartFlows]**
+**[SECTION 1 - Acceder aux reglages integrations CartFlows]**
 
-**[ECRAN — CartFlows > Settings > Integrations]**
+**[ECRAN - CartFlows > Settings > Integrations]**
 
 Dans ton tableau de bord WordPress, va dans CartFlows, puis Settings, puis l'onglet Integrations. C'est ici que tu vas configurer les connexions avec GA4 et Facebook.
 
@@ -30,9 +30,9 @@ CartFlows offre une integration native avec ces deux outils. Pas besoin de plugi
 
 ---
 
-**[SECTION 2 — Connecter Google Analytics 4]**
+**[SECTION 2 - Connecter Google Analytics 4]**
 
-**[ECRAN — champ GA4 Measurement ID dans CartFlows]**
+**[ECRAN - champ GA4 Measurement ID dans CartFlows]**
 
 Pour GA4, tu as besoin de ton Measurement ID. C'est un identifiant qui commence par "G-" suivi de caracteres alphanumeriques. Exemple : G-ABC123DEF4.
 
@@ -50,9 +50,9 @@ Ces events suivent le standard e-commerce GA4. Tu les retrouveras dans GA4 sous 
 
 ---
 
-**[SECTION 3 — Connecter le Facebook Pixel]**
+**[SECTION 3 - Connecter le Facebook Pixel]**
 
-**[ECRAN — champ Facebook Pixel ID dans CartFlows]**
+**[ECRAN - champ Facebook Pixel ID dans CartFlows]**
 
 Pour le Facebook Pixel, tu as besoin de ton Pixel ID. C'est un numero a 15-16 chiffres.
 
@@ -71,23 +71,23 @@ Ces events alimentent directement tes audiences Facebook. Tu pourras creer des a
 
 ---
 
-**[SECTION 4 — Verifier avec Tag Assistant et Pixel Helper]**
+**[SECTION 4 - Verifier avec Tag Assistant et Pixel Helper]**
 
-**[ECRAN — extension Tag Assistant dans Chrome]**
+**[ECRAN - extension Tag Assistant dans Chrome]**
 
 La configuration est en place. Maintenant, on verifie que ca fonctionne reellement.
 
-Pour GA4, installe l'extension Chrome "Google Tag Assistant". Ouvre ta page checkout. Clique sur l'extension. Elle te montre les tags detectes sur la page. Tu dois voir ton Measurement ID et les events envoyes. Si le tag apparait en vert, tout fonctionne. En rouge, il y a un probleme — verifie que l'ID est correct et que la page est bien dans un flow CartFlows.
+Pour GA4, installe l'extension Chrome "Google Tag Assistant". Ouvre ta page checkout. Clique sur l'extension. Elle te montre les tags detectes sur la page. Tu dois voir ton Measurement ID et les events envoyes. Si le tag apparait en vert, tout fonctionne. En rouge, il y a un probleme - verifie que l'ID est correct et que la page est bien dans un flow CartFlows.
 
-Pour le Facebook Pixel, installe l'extension Chrome "Meta Pixel Helper". Meme principe : ouvre ta page checkout, clique sur l'extension. Elle affiche les events detectes. Tu dois voir "PageView" et "InitiateCheckout". Navigue dans ton funnel jusqu'a la page de remerciement — tu dois voir "Purchase" avec le montant.
+Pour le Facebook Pixel, installe l'extension Chrome "Meta Pixel Helper". Meme principe : ouvre ta page checkout, clique sur l'extension. Elle affiche les events detectes. Tu dois voir "PageView" et "InitiateCheckout". Navigue dans ton funnel jusqu'a la page de remerciement - tu dois voir "Purchase" avec le montant.
 
 Fais un test complet : place une commande de test (avec un coupon 100% ou un produit a 0 euro) et verifie que tous les events remontent dans GA4 (temps reel > evenements) et dans le Meta Events Manager (onglet Test Events).
 
 ---
 
-**[SECTION 5 — RGPD : le bandeau cookies est obligatoire]**
+**[SECTION 5 - RGPD : le bandeau cookies est obligatoire]**
 
-**[ECRAN — plugin bandeau cookies WordPress]**
+**[ECRAN - plugin bandeau cookies WordPress]**
 
 Avant d'activer les pixels sur ton site en production, il y a une obligation legale a respecter. Le RGPD impose que tu obtiennes le consentement de tes visiteurs avant de poser des cookies de tracking.
 
@@ -97,13 +97,13 @@ Des plugins WordPress comme Complianz ou CookieYes gerent ca proprement. Ils aff
 
 L'installation detaillee d'un bandeau cookies depasse le cadre de cette lecon, mais la regle est non negociable : pas de bandeau, pas de pixels. Configure le consentement d'abord, active les pixels ensuite.
 
-Note : certains visiteurs refuseront les cookies. Tes donnees Analytics seront donc partielles — typiquement 60 a 80% des visiteurs acceptent le tracking. C'est normal. Tes donnees CartFlows internes ne sont pas affectees par le consentement cookies puisqu'elles ne passent pas par des cookies tiers.
+Note : certains visiteurs refuseront les cookies. Tes donnees Analytics seront donc partielles - typiquement 60 a 80% des visiteurs acceptent le tracking. C'est normal. Tes donnees CartFlows internes ne sont pas affectees par le consentement cookies puisqu'elles ne passent pas par des cookies tiers.
 
 ---
 
-**[SECTION 6 — Recapitulatif de la configuration]**
+**[SECTION 6 - Recapitulatif de la configuration]**
 
-**[ECRAN — checklist de configuration]**
+**[ECRAN - checklist de configuration]**
 
 Pour resumer la configuration complete :
 
@@ -118,7 +118,7 @@ Six etapes. En 30 minutes, c'est fait.
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Tu as maintenant trois sources de donnees : le tableau de bord CartFlows pour le suivi quotidien, GA4 pour comprendre d'ou vient ton trafic et comment il se comporte, et le Facebook Pixel pour le retargeting et la mesure de tes campagnes publicitaires.
 

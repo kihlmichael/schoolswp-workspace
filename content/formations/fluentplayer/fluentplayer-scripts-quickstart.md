@@ -1,7 +1,7 @@
-# Scripts vidéo — FPL-011 : FluentPlayer Quick Start (formation offerte)
+# Scripts vidéo - FPL-011 : FluentPlayer Quick Start (formation offerte)
 
 **Formation** : La vidéo qui convertit avec FluentPlayer
-**Module** : FPL-011 — Quick Start (offerte, lead magnet)
+**Module** : FPL-011 - Quick Start (offerte, lead magnet)
 **Leçons** : 6 vidéos + 1 quiz
 **Durée totale** : ~35 min de vidéo
 **Date** : 2026-05-22
@@ -9,7 +9,7 @@
 
 ---
 
-## Leçon 1 — Pourquoi un vrai lecteur vidéo change tout
+## Leçon 1 - Pourquoi un vrai lecteur vidéo change tout
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -17,13 +17,13 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu mets une vidéo sur ton site WordPress. Tu fais comme tout le monde : tu copies le lien YouTube, tu le colles dans ta page. Ça marche, la vidéo se lance.
 
 Mais regarde bien ce qui se passe vraiment.
 
-**[ÉCRAN — slide "Ce que tu offres à YouTube"]**
+**[ÉCRAN - slide "Ce que tu offres à YouTube"]**
 
 Quand tu embarques une vidéo YouTube sur ta page :
 
@@ -34,7 +34,7 @@ Quand tu embarques une vidéo YouTube sur ta page :
 
 Ta vidéo travaille pour YouTube. Pas pour toi.
 
-**[ÉCRAN — slide "Ce que fait un vrai lecteur"]**
+**[ÉCRAN - slide "Ce que fait un vrai lecteur"]**
 
 Un lecteur vidéo comme FluentPlayer change le rapport de force :
 
@@ -43,13 +43,13 @@ Un lecteur vidéo comme FluentPlayer change le rapport de force :
 - Tu peux capturer un email, afficher un bouton, poser une action pendant la lecture.
 - La vidéo redevient un outil au service de ton activité.
 
-**[ÉCRAN — slide "FluentPlayer en un mot"]**
+**[ÉCRAN - slide "FluentPlayer en un mot"]**
 
 FluentPlayer, c'est un lecteur vidéo pour WordPress édité par WPManageNinja, la même équipe que FluentCRM et Fluent Forms.
 
 Son idée tient en une phrase : une vidéo ne doit pas seulement se lire, elle doit faire avancer celui qui la regarde. Vers une inscription, un achat, une prochaine leçon.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Dans cette formation offerte, tu vas mettre en ligne ta première vidéo FluentPlayer, à ta marque, avec une capture d'email intégrée. En trente minutes. On commence par l'installation.
 
@@ -69,7 +69,7 @@ Dans cette formation offerte, tu vas mettre en ligne ta première vidéo FluentP
 
 ---
 
-## Leçon 2 — Installer FluentPlayer et créer ton premier média
+## Leçon 2 - Installer FluentPlayer et créer ton premier média
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -77,11 +77,11 @@ Dans cette formation offerte, tu vas mettre en ligne ta première vidéo FluentP
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 On passe à la pratique. Tu vas installer FluentPlayer et créer ton premier média. C'est rapide, et il n'y a rien à coder.
 
-**[ÉCRAN — screencast : installer FluentPlayer]**
+**[ÉCRAN - screencast : installer FluentPlayer]**
 
 Première étape : installer le plugin. Dans ton administration WordPress, va dans Extensions, puis Ajouter une extension, et cherche FluentPlayer.
 
@@ -90,7 +90,7 @@ Première étape : installer le plugin. Dans ton administration WordPress, va da
 
 FluentPlayer est installé. Un nouveau menu, FluentPlayer, apparaît dans ta barre latérale.
 
-**[ÉCRAN — screencast : le menu FluentPlayer]**
+**[ÉCRAN - screencast : le menu FluentPlayer]**
 
 Le menu FluentPlayer a quatre entrées.
 
@@ -104,7 +104,7 @@ Le menu FluentPlayer a quatre entrées.
 
 Pour le Quick Start, on travaille dans Media. Chaque vidéo que tu ajoutes y devient un média : un objet réutilisable, avec son propre code court, que tu pourras insérer où tu veux.
 
-**[ÉCRAN — screencast : créer ton premier média]**
+**[ÉCRAN - screencast : créer ton premier média]**
 
 Va dans Media, puis clique sur Add Media.
 
@@ -123,7 +123,7 @@ Ton média s'ouvre dans l'éditeur de blocs WordPress, l'éditeur Gutenberg que 
 
 Enregistre. Ta première vidéo FluentPlayer existe, et elle reçoit son propre code court.
 
-**[ÉCRAN — screencast : insérer la vidéo dans une page]**
+**[ÉCRAN - screencast : insérer la vidéo dans une page]**
 
 Pour l'afficher sur ton site, ouvre une page ou un article, et ajoute le bloc FluentPlayer. Tu peux aussi coller directement le code court du média.
 
@@ -132,7 +132,7 @@ Pour l'afficher sur ton site, ouvre une page ou un article, et ajoute le bloc Fl
 
 Publie la page. Ta vidéo est en ligne, dans ton lecteur.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta vidéo s'affiche, mais elle ressemble encore à un lecteur standard. Dans la prochaine leçon, on l'habille à ta marque.
 
@@ -155,7 +155,7 @@ Ta vidéo s'affiche, mais elle ressemble encore à un lecteur standard. Dans la 
 
 ---
 
-## Leçon 3 — Habiller le player à ta marque
+## Leçon 3 - Habiller le player à ta marque
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -163,18 +163,18 @@ Ta vidéo s'affiche, mais elle ressemble encore à un lecteur standard. Dans la 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Ta vidéo est en ligne. Maintenant, on s'occupe de son allure. Un lecteur à ta marque inspire confiance, et la confiance, ça veut dire plus de gens qui cliquent sur play.
 
-**[ÉCRAN — screencast : ouvrir le bloc FluentPlayer]**
+**[ÉCRAN - screencast : ouvrir le bloc FluentPlayer]**
 
 Ouvre ton média dans l'éditeur de blocs et sélectionne le bloc FluentPlayer. Dans la barre latérale, tu retrouves tous ses panneaux de réglage : Branding, General Settings, Preset, Chapters, et les autres.
 
 [Sélectionne le bloc FluentPlayer]
 [Montre les panneaux de la barre latérale]
 
-**[ÉCRAN — screencast : choisir un preset]**
+**[ÉCRAN - screencast : choisir un preset]**
 
 Déplie le panneau Preset. Un preset, c'est un style de lecteur prêt à l'emploi.
 
@@ -183,7 +183,7 @@ Déplie le panneau Preset. Un preset, c'est un style de lecteur prêt à l'emplo
 
 Choisis celui qui colle le mieux à ton site. Un style sobre passe partout, un style plus marqué attire l'œil.
 
-**[ÉCRAN — screencast : couleurs et logo]**
+**[ÉCRAN - screencast : couleurs et logo]**
 
 Déplie le panneau Branding. C'est là que tu rends le lecteur reconnaissable.
 
@@ -193,7 +193,7 @@ Déplie le panneau Branding. C'est là que tu rends le lecteur reconnaissable.
 
 Reprends la couleur principale de ta charte, et pose ton logo. Le lecteur cesse d'être générique : il devient le tien, et ta marque voyage avec la vidéo partout où elle est partagée.
 
-**[ÉCRAN — screencast : l'image d'attente]**
+**[ÉCRAN - screencast : l'image d'attente]**
 
 L'image d'attente, le poster, c'est la vignette affichée avant le clic sur play.
 
@@ -201,14 +201,14 @@ L'image d'attente, le poster, c'est la vignette affichée avant le clic sur play
 
 Choisis une image nette et lisible. C'est elle qui donne envie de lancer la vidéo, soigne-la autant que la vidéo elle-même.
 
-**[ÉCRAN — screencast : ratio et titre]**
+**[ÉCRAN - screencast : ratio et titre]**
 
 Deux derniers réglages utiles : le ratio d'affichage, en général seize/neuf, et le titre en surimpression, qui rappelle le sujet de la vidéo dès l'ouverture.
 
 [Règle le ratio]
 [Active le titre en surimpression]
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ton lecteur est à ta marque. Mais si ta vidéo est longue, le spectateur a besoin de se repérer. C'est le rôle des chapitres, qu'on voit tout de suite.
 
@@ -228,7 +228,7 @@ Ton lecteur est à ta marque. Mais si ta vidéo est longue, le spectateur a beso
 
 ---
 
-## Leçon 4 — Découper ta vidéo en chapitres
+## Leçon 4 - Découper ta vidéo en chapitres
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -236,11 +236,11 @@ Ton lecteur est à ta marque. Mais si ta vidéo est longue, le spectateur a beso
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Une vidéo de dix minutes sans repère, c'est un mur. Le spectateur ne sait pas où il va, et au moindre doute il quitte. Les chapitres règlent ça.
 
-**[ÉCRAN — slide "Pourquoi les chapitres"]**
+**[ÉCRAN - slide "Pourquoi les chapitres"]**
 
 Les chapitres servent trois choses :
 
@@ -250,7 +250,7 @@ Les chapitres servent trois choses :
 
 Résultat : on regarde plus longtemps, et on revient.
 
-**[ÉCRAN — screencast : créer des chapitres]**
+**[ÉCRAN - screencast : créer des chapitres]**
 
 Ouvre ton média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer et déplie le panneau Chapters.
 
@@ -265,7 +265,7 @@ Un chapitre, c'est deux choses : un horodatage de départ et un titre.
 
 Note les horodatages pendant que tu prépares ta vidéo, c'est le plus simple.
 
-**[ÉCRAN — screencast : le rendu côté spectateur]**
+**[ÉCRAN - screencast : le rendu côté spectateur]**
 
 Voici ce que voit le spectateur.
 
@@ -274,7 +274,7 @@ Voici ce que voit le spectateur.
 
 La barre de progression est découpée, chaque section est nommée. Ta vidéo longue devient facile à suivre.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ta vidéo est à ta marque et facile à parcourir. Il manque l'essentiel : la transformer en outil qui te ramène des contacts. Prochaine leçon, on capture des emails dans la vidéo.
 
@@ -294,7 +294,7 @@ Ta vidéo est à ta marque et facile à parcourir. Il manque l'essentiel : la tr
 
 ---
 
-## Leçon 5 — Capturer ton premier email dans la vidéo
+## Leçon 5 - Capturer ton premier email dans la vidéo
 
 **Durée** : 8 min
 **Type** : Vidéo HeyGen
@@ -302,11 +302,11 @@ Ta vidéo est à ta marque et facile à parcourir. Il manque l'essentiel : la tr
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 C'est la leçon qui change tout. Jusqu'ici, ta vidéo se regarde. Maintenant, elle va te ramener des contacts. On va poser une capture d'email à l'intérieur de la vidéo elle-même.
 
-**[ÉCRAN — slide "La couche interactive"]**
+**[ÉCRAN - slide "La couche interactive"]**
 
 FluentPlayer permet d'ajouter des couches interactives : des éléments qui apparaissent par-dessus la vidéo, à un moment précis que tu choisis.
 
@@ -317,7 +317,7 @@ En version gratuite, tu disposes de deux couches très utiles :
 
 Aujourd'hui, on utilise la capture d'email.
 
-**[ÉCRAN — screencast : ajouter une couche de capture]**
+**[ÉCRAN - screencast : ajouter une couche de capture]**
 
 Ouvre ton média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer et déplie le panneau Interactive Layers.
 
@@ -326,7 +326,7 @@ Ouvre ton média dans l'éditeur de blocs, sélectionne le bloc FluentPlayer et 
 
 FluentPlayer te demande trois choses : un moment d'apparition, un message, et où envoyer l'email collecté.
 
-**[ÉCRAN — screencast : choisir le bon moment]**
+**[ÉCRAN - screencast : choisir le bon moment]**
 
 Le moment d'apparition est décisif. Trop tôt, le spectateur n'est pas convaincu. Trop tard, il est déjà parti.
 
@@ -334,7 +334,7 @@ Le moment d'apparition est décisif. Trop tôt, le spectateur n'est pas convainc
 
 La bonne règle : pose la capture juste après ton meilleur moment. Une fois que tu as donné de la valeur, que la personne pense "ça, c'est utile". C'est là qu'elle accepte de laisser son email.
 
-**[ÉCRAN — screencast : rédiger le message]**
+**[ÉCRAN - screencast : rédiger le message]**
 
 Le message doit promettre quelque chose de concret.
 
@@ -342,7 +342,7 @@ Le message doit promettre quelque chose de concret.
 
 Évite "Inscris-toi à la newsletter". Préfère une promesse claire : la suite de la méthode, un modèle à télécharger, un guide. On donne son email pour recevoir, pas pour s'abonner.
 
-**[ÉCRAN — screencast : connecter à FluentCRM]**
+**[ÉCRAN - screencast : connecter à FluentCRM]**
 
 Maintenant, où vont les emails collectés. Si tu utilises FluentCRM, FluentPlayer s'y connecte directement, sans outil intermédiaire.
 
@@ -352,7 +352,7 @@ Maintenant, où vont les emails collectés. Si tu utilises FluentCRM, FluentPlay
 
 Chaque email capturé arrive dans FluentCRM, dans la bonne liste, avec un tag. Tu sais que ce contact vient d'une vidéo, et tu pourras lui parler en conséquence.
 
-**[ÉCRAN — screencast : le test]**
+**[ÉCRAN - screencast : le test]**
 
 On teste. Ouvre la page, lance la vidéo, et avance jusqu'au moment de la couche.
 
@@ -362,7 +362,7 @@ On teste. Ouvre la page, lance la vidéo, et avance jusqu'au moment de la couche
 
 Le contact est là. Ta vidéo vient de faire son premier travail de conversion.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as une vidéo à ta marque, chapitrée, qui capture des emails. C'est déjà une vidéo qui convertit. Dernière leçon : on fait le point, et je te montre jusqu'où tu peux pousser.
 
@@ -382,7 +382,7 @@ Tu as une vidéo à ta marque, chapitrée, qui capture des emails. C'est déjà 
 
 ---
 
-## Leçon 6 — Récap et ce que débloque la Masterclass
+## Leçon 6 - Récap et ce que débloque la Masterclass
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -390,11 +390,11 @@ Tu as une vidéo à ta marque, chapitrée, qui capture des emails. C'est déjà 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 En trente minutes, tu as fait quelque chose que la plupart des sites WordPress ne font jamais. On récapitule.
 
-**[ÉCRAN — slide "Ce que tu as construit"]**
+**[ÉCRAN - slide "Ce que tu as construit"]**
 
 Tu as :
 
@@ -405,7 +405,7 @@ Tu as :
 
 Ta vidéo ne se contente plus de se lire. Elle te ramène des contacts.
 
-**[ÉCRAN — slide "Ce que tu n'as pas encore"]**
+**[ÉCRAN - slide "Ce que tu n'as pas encore"]**
 
 Et tu n'as utilisé que la version gratuite. Il te manque encore les outils qui font vraiment décoller une vidéo :
 
@@ -415,13 +415,13 @@ Et tu n'as utilisé que la version gratuite. Il te manque encore les outils qui 
 - les analytics, pour voir où les gens décrochent et corriger
 - les automations connectées à tout ton écosystème Fluent
 
-**[ÉCRAN — slide "La Masterclass"]**
+**[ÉCRAN - slide "La Masterclass"]**
 
 C'est exactement le programme de la Masterclass : La vidéo qui convertit avec FluentPlayer. Six modules pour transformer tes vidéos en véritable système de leads et de ventes.
 
 Si cette formation offerte t'a été utile, la Masterclass est la suite logique.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Bravo pour ces trente minutes. Tu as maintenant une vidéo qui travaille pour toi. À toi de jouer, et à très vite dans la Masterclass.
 
@@ -441,7 +441,7 @@ Bravo pour ces trente minutes. Tu as maintenant une vidéo qui travaille pour to
 
 ---
 
-## Notes de production — FPL-011
+## Notes de production - FPL-011
 
 ### Captures à préparer
 - Installation depuis le répertoire WordPress.org (Extensions, Ajouter une extension)

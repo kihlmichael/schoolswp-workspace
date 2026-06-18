@@ -259,7 +259,7 @@ class ContentFactoryAgent(BaseContentAgent):
         # ── Étape 1 : Stratégie (BrainLiteAgent) ──────────────────────
         if on_step:
             on_step("Brain", "")
-        brain = BrainLiteAgent(model=self.model)
+        brain = BrainLiteAgent(model=self.raw_model)
         strategy = await brain.run(keyword=keyword, intent=intent, pilier=pillar or "")
 
         result.topic = strategy.get("topic") or keyword.title()
@@ -273,7 +273,7 @@ class ContentFactoryAgent(BaseContentAgent):
             return result
 
         # ── Étape 2 : Génération (ArticlePipeline) ────────────────────
-        pipeline = ArticlePipeline(model=self.model)
+        pipeline = ArticlePipeline(model=self.raw_model)
         pipe_result = await pipeline.run(
             topic=result.topic,
             keyword=keyword,
@@ -397,7 +397,7 @@ class ContentFactoryAgent(BaseContentAgent):
     ) -> ContentFactoryResult:
         """Audit 4 modules + cluster — partagé entre generate_and_audit et audit_only."""
 
-        publish_agent = PublishReadyAgent(model=self.model)
+        publish_agent = PublishReadyAgent(model=self.raw_model)
         publish_result = await publish_agent.run(
             article=article,
             keyword=keyword,
@@ -411,7 +411,7 @@ class ContentFactoryAgent(BaseContentAgent):
         if expand_cluster and publish_result.authority_result.report:
             if on_step:
                 on_step("Cluster", "")
-            auth_agent = TopicalAuthorityAgent(model=self.model)
+            auth_agent = TopicalAuthorityAgent(model=self.raw_model)
             result.cluster_plan = await auth_agent.expand_cluster(
                 article=article,
                 existing_result=publish_result.authority_result,

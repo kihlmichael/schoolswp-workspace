@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 1 : Découverte : OttoKit et l'automatisation WordPress
+# Scripts vidéo - Module 1 : Découverte : OttoKit et l'automatisation WordPress
 
 **Formation** : Maîtriser OttoKit
-**Module** : M1 — Découverte : OttoKit et l'automatisation WordPress
+**Module** : M1 - Découverte : OttoKit et l'automatisation WordPress
 **Leçons** : 6 vidéos + 1 quiz
 **Durée totale** : ~35 min de vidéo
 **Date** : 2026-03-30
 
 ---
 
-## Leçon 1.1 — Pourquoi automatiser ton WordPress
+## Leçon 1.1 - Pourquoi automatiser ton WordPress
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -16,13 +16,13 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tu gères un site WordPress. Chaque jour, tu fais des dizaines de petites tâches : tu copies des infos d'un formulaire dans un tableur, tu envoies des emails de bienvenue, tu mets à jour ton CRM. Maintenant, imagine que tout ça se fasse tout seul.
 
 C'est exactement ce qu'on va voir dans cette formation.
 
-**[ÉCRAN — slide "Le coût du manuel"]**
+**[ÉCRAN - slide "Le coût du manuel"]**
 
 Prenons un exemple concret. Tu vends une formation en ligne. Quand quelqu'un achète :
 
@@ -34,13 +34,13 @@ Prenons un exemple concret. Tu vends une formation en ligne. Quand quelqu'un ach
 
 Fait manuellement, ça prend 10 minutes par vente. À 10 ventes par jour, c'est presque 2 heures de travail répétitif. Par semaine, ça fait une journée entière perdue.
 
-**[ÉCRAN — slide "L'automatisation change la donne"]**
+**[ÉCRAN - slide "L'automatisation change la donne"]**
 
 Avec l'automatisation, toutes ces étapes se déclenchent automatiquement à chaque vente. Zéro intervention. Zéro oubli. Zéro retard.
 
 Et le mieux : tu n'as pas besoin de savoir coder. C'est exactement le rôle d'OttoKit.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Dans la prochaine leçon, on va voir ce qu'est OttoKit exactement et comment il fonctionne.
 
@@ -59,7 +59,7 @@ Dans la prochaine leçon, on va voir ce qu'est OttoKit exactement et comment il 
 
 ---
 
-## Leçon 1.2 — OttoKit : plateforme cloud + plugin WordPress
+## Leçon 1.2 - OttoKit : plateforme cloud + plugin WordPress
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -67,13 +67,13 @@ Dans la prochaine leçon, on va voir ce qu'est OttoKit exactement et comment il 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 OttoKit, c'est un outil d'automatisation conçu spécifiquement pour WordPress. Mais attention, ce n'est pas juste un plugin. C'est une plateforme cloud avec un plugin WordPress.
 
 Laisse-moi t'expliquer pourquoi c'est important.
 
-**[ÉCRAN — slide "Architecture cloud + plugin"]**
+**[ÉCRAN - slide "Architecture cloud + plugin"]**
 
 Voici comment OttoKit fonctionne :
 
@@ -82,7 +82,7 @@ Voici comment OttoKit fonctionne :
 
 Pourquoi c'est malin ? Parce que ton site WordPress ne fait rien de lourd. Pas de files d'attente, pas de cron surchargé, pas de base de données gonflée. Ton site reste rapide.
 
-**[ÉCRAN — screencast app.ottokit.com]**
+**[ÉCRAN - screencast app.ottokit.com]**
 
 Quand tu te connectes à OttoKit, tu arrives sur ce tableau de bord.
 
@@ -91,7 +91,7 @@ Quand tu te connectes à OttoKit, tu arrives sur ce tableau de bord.
 
 C'est ici que tu vas créer tes automations. L'interface est visuelle : tu glisses des blocs, tu connectes des apps, et tu publies.
 
-**[ÉCRAN — slide "Ce que OttoKit connecte"]**
+**[ÉCRAN - slide "Ce que OttoKit connecte"]**
 
 OttoKit connecte 3 types d'outils :
 
@@ -101,7 +101,7 @@ OttoKit connecte 3 types d'outils :
 
 Au total, plus de 1 310 intégrations. Et ça augmente chaque semaine.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Maintenant que tu vois la vue d'ensemble, on va clarifier le vocabulaire. Dans la prochaine leçon, on pose les termes que tu vas utiliser tout au long de cette formation.
 
@@ -121,7 +121,7 @@ Maintenant que tu vois la vue d'ensemble, on va clarifier le vocabulaire. Dans l
 
 ---
 
-## Leçon 1.3 — Le glossaire indispensable : workflow, trigger, action, task
+## Leçon 1.3 - Le glossaire indispensable : workflow, trigger, action, task
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -129,11 +129,11 @@ Maintenant que tu vois la vue d'ensemble, on va clarifier le vocabulaire. Dans l
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Avant de construire quoi que ce soit, tu dois connaître 4 termes. C'est le vocabulaire de base d'OttoKit. Si tu as déjà utilisé Zapier ou n8n, tu vas reconnaître des concepts similaires.
 
-**[ÉCRAN — slide "Les 4 termes clés"]**
+**[ÉCRAN - slide "Les 4 termes clés"]**
 
 **Workflow** : c'est une automatisation complète. Un workflow commence par un événement et exécute une ou plusieurs actions. Dans Zapier, on appelle ça un "Zap". Dans n8n, un "workflow".
 
@@ -143,7 +143,7 @@ Avant de construire quoi que ce soit, tu dois connaître 4 termes. C'est le voca
 
 **Task** : c'est l'unité de mesure d'OttoKit. Chaque action exécutée = 1 task. C'est ce que tu paies (ou qui est limité dans le plan gratuit).
 
-**[ÉCRAN — slide "Un workflow en image"]**
+**[ÉCRAN - slide "Un workflow en image"]**
 
 Voici un workflow simple :
 
@@ -156,9 +156,9 @@ Trigger: Nouvelle commande WooCommerce
 
 Ce workflow consomme 3 tasks à chaque exécution (1 par action).
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Avec ces 4 termes en tête, tu es prêt. Dans la prochaine leçon, on va parler de l'histoire d'OttoKit — parce que si tu as entendu parler de "SureTriggers", c'est le même outil.
+Avec ces 4 termes en tête, tu es prêt. Dans la prochaine leçon, on va parler de l'histoire d'OttoKit - parce que si tu as entendu parler de "SureTriggers", c'est le même outil.
 
 ---
 
@@ -176,7 +176,7 @@ Avec ces 4 termes en tête, tu es prêt. Dans la prochaine leçon, on va parler 
 
 ---
 
-## Leçon 1.4 — De SureTriggers à OttoKit : ce qui a changé
+## Leçon 1.4 - De SureTriggers à OttoKit : ce qui a changé
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -184,14 +184,14 @@ Avec ces 4 termes en tête, tu es prêt. Dans la prochaine leçon, on va parler 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Si tu cherches "SureTriggers" sur Google, tu vas tomber sur OttoKit. C'est normal : c'est le même outil, avec un nouveau nom. Voici ce qui s'est passé et ce que ça change pour toi.
 
-**[ÉCRAN — slide "L'évolution"]**
+**[ÉCRAN - slide "L'évolution"]**
 
 - **2023** : Brainstorm Force (l'équipe derrière Astra, Spectra, CartFlows) lance SureTriggers
-- **Avril 2025** : SureTriggers devient OttoKit — nouveau nom, nouvelle identité
+- **Avril 2025** : SureTriggers devient OttoKit - nouveau nom, nouvelle identité
 - **2026** : OttoKit ajoute les AI Agents, le MCP, le Human-in-the-Loop
 
 Le nom change, mais :
@@ -200,7 +200,7 @@ Le nom change, mais :
 - Tes connexions ne bougent pas
 - Le plugin WordPress se met à jour automatiquement
 
-**[ÉCRAN — slide "Ce qui est nouveau"]**
+**[ÉCRAN - slide "Ce qui est nouveau"]**
 
 Avec le rebranding, OttoKit a ajouté :
 
@@ -210,11 +210,11 @@ Avec le rebranding, OttoKit a ajouté :
 - **Canvas Builder** : éditeur visuel repensé
 - **Organisations et Workspaces** : gestion multi-clients
 
-**[ÉCRAN — slide "Le slug WordPress"]**
+**[ÉCRAN - slide "Le slug WordPress"]**
 
 Sur WordPress.org, le plugin s'appelle toujours `suretriggers` dans l'URL. C'est normal. Le slug ne change pas. Mais le nom affiché est bien "OttoKit: All-in-One Automation Platform".
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Maintenant tu sais d'où vient OttoKit. Dans la prochaine leçon, on va parler argent : est-ce que le plan gratuit suffit ?
 
@@ -234,7 +234,7 @@ Maintenant tu sais d'où vient OttoKit. Dans la prochaine leçon, on va parler a
 
 ---
 
-## Leçon 1.5 — Free vs Premium : le verdict honnête
+## Leçon 1.5 - Free vs Premium : le verdict honnête
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -242,11 +242,11 @@ Maintenant tu sais d'où vient OttoKit. Dans la prochaine leçon, on va parler a
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 OttoKit a un plan gratuit. Mais est-ce qu'il suffit pour ton usage ? Je vais être honnête : ça dépend. Voici comment savoir.
 
-**[ÉCRAN — slide "Ce que le plan gratuit inclut"]**
+**[ÉCRAN - slide "Ce que le plan gratuit inclut"]**
 
 Le plan gratuit te donne :
 - Un nombre limité de tasks par mois (vérifie le chiffre exact sur ottokit.com/pricing)
@@ -256,7 +256,7 @@ Le plan gratuit te donne :
 - Pas de MCP
 - Support standard
 
-**[ÉCRAN — slide "Les plans premium"]**
+**[ÉCRAN - slide "Les plans premium"]**
 
 OttoKit propose des plans annuels et lifetime :
 
@@ -265,7 +265,7 @@ OttoKit propose des plans annuels et lifetime :
 
 Le plan change selon ton volume. La question clé : combien de tasks par mois tu vas consommer.
 
-**[ÉCRAN — slide "Calcule tes tasks"]**
+**[ÉCRAN - slide "Calcule tes tasks"]**
 
 Voici comment estimer :
 
@@ -275,7 +275,7 @@ Voici comment estimer :
 
 Additionne tous tes workflows. Si tu es sous la limite gratuite, reste en gratuit. Si tu la dépasses, passe en premium.
 
-**[ÉCRAN — slide "Mon arbre de décision"]**
+**[ÉCRAN - slide "Mon arbre de décision"]**
 
 - Tu découvres OttoKit ? → **Gratuit** (teste pendant 1 mois)
 - Tu as moins de 10 workflows simples ? → **Gratuit** peut suffire
@@ -283,7 +283,7 @@ Additionne tous tes workflows. Si tu es sous la limite gratuite, reste en gratui
 - Tu gères des clients en agence ? → **Business Plus** (workspaces)
 - Tu veux un coût fixe à vie ? → **Lifetime** si l'offre est disponible
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le plan gratuit est un vrai plan utilisable, pas juste un essai déguisé. Mais si tu veux l'IA et le multi-client, il faudra passer en premium. Dans la prochaine leçon, on fait le tour des 1 310 intégrations disponibles.
 
@@ -303,7 +303,7 @@ Le plan gratuit est un vrai plan utilisable, pas juste un essai déguisé. Mais 
 
 ---
 
-## Leçon 1.6 — 1 310 intégrations : tour d'horizon des possibilités
+## Leçon 1.6 - 1 310 intégrations : tour d'horizon des possibilités
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -311,17 +311,17 @@ Le plan gratuit est un vrai plan utilisable, pas juste un essai déguisé. Mais 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 OttoKit se connecte à plus de 1 310 apps et plugins. Mais tu n'as pas besoin de toutes les connaître. On va faire le tour des catégories pour que tu repères ce qui est utile pour toi.
 
-**[ÉCRAN — screencast ottokit.com/integrations]**
+**[ÉCRAN - screencast ottokit.com/integrations]**
 
 [Montre la page intégrations]
 [Scrolle pour montrer le volume]
 [Utilise la recherche pour trouver rapidement un outil]
 
-**[ÉCRAN — slide "Plugins WordPress supportés"]**
+**[ÉCRAN - slide "Plugins WordPress supportés"]**
 
 Les plus utilisés :
 - **E-commerce** : WooCommerce, SureCart, Easy Digital Downloads
@@ -332,7 +332,7 @@ Les plus utilisés :
 - **Communauté** : BuddyBoss
 - **Page builders** : Elementor, Beaver Builder, Divi, Bricks, Spectra
 
-**[ÉCRAN — slide "Apps SaaS populaires"]**
+**[ÉCRAN - slide "Apps SaaS populaires"]**
 
 - **Productivité** : Google Sheets, Google Drive, Google Calendar, Notion
 - **Communication** : Slack, Gmail, WhatsApp, Telegram
@@ -343,14 +343,14 @@ Les plus utilisés :
 - **Social** : Twitter/X, LinkedIn
 - **AI** : OpenAI, Claude (via MCP)
 
-**[ÉCRAN — slide "Et si mon outil n'est pas dans la liste ?"]**
+**[ÉCRAN - slide "Et si mon outil n'est pas dans la liste ?"]**
 
 3 solutions :
 1. **Webhooks** : connecte n'importe quel service qui supporte les webhooks
 2. **API App** : appelle directement l'API REST de ton service
 3. **App Builder** : crée ta propre intégration (pour les développeurs)
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Tu as maintenant une vue d'ensemble complète d'OttoKit. Dans le module suivant, on passe à la pratique : installation, connexion, et ton premier workflow.
 
@@ -371,13 +371,13 @@ Tu as maintenant une vue d'ensemble complète d'OttoKit. Dans le module suivant,
 
 ---
 
-## Notes de production — Module 1
+## Notes de production - Module 1
 
 ### Captures à préparer
-- Dashboard OttoKit (app.ottokit.com) — vue globale
-- Page intégrations ottokit.com — scroll + recherche
-- Page pricing ottokit.com — tableau des plans
-- WordPress.org/plugins/suretriggers — fiche plugin
+- Dashboard OttoKit (app.ottokit.com) - vue globale
+- Page intégrations ottokit.com - scroll + recherche
+- Page pricing ottokit.com - tableau des plans
+- WordPress.org/plugins/suretriggers - fiche plugin
 - Schéma architecture : site WP ↔ plugin ↔ cloud OttoKit ↔ apps
 
 ### Environnement de démo

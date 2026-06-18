@@ -1,0 +1,39 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/create-blog-post-wordpress/
+    title: How to create a blog post in WordPress, the complete workflow
+    subject: "Create a blog post in WordPress: the complete step-by-step workflow"
+    description: "Featured image of the schoolsWP tutorial on how to create a blog post in WordPress. More than filling a text field: the full 6-step workflow to write, structure, publish and optimize a post readers actually read. Write with Gutenberg blocks, structure with headings, lists and internal links, add optimized images with alt text, and publish live or scheduled."
+    alt: "schoolsWP tutorial on creating a blog post in WordPress, the complete posting workflow from draft to publish"
+    keywords:
+      [
+        create blog post wordpress,
+        wordpress blog post,
+        gutenberg editor,
+        publish wordpress post,
+        wordpress tutorial,
+        wordpress for beginners,
+        schoolsWP,
+      ]
+
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/creer-article-blog-wordpress/
+    title: Créer un article de blog WordPress, le workflow complet
+    subject: "Créer un article de blog WordPress : le workflow complet étape par étape"
+    description: "Image à la une du tutoriel schoolsWP pour créer un article de blog sur WordPress. Bien plus que remplir un champ de texte : le workflow complet en 6 étapes pour rédiger, structurer, publier et optimiser un article qu'on lit vraiment. Rédiger avec les blocs Gutenberg, structurer avec les titres, listes et liens internes, ajouter des images optimisées avec leur texte alternatif, et publier en direct ou de façon planifiée."
+    alt: "Tutoriel schoolsWP pour créer un article de blog WordPress, le workflow complet du brouillon à la publication"
+    keywords:
+      [
+        créer un article wordpress,
+        article de blog wordpress,
+        éditeur gutenberg,
+        publier un article wordpress,
+        tutoriel wordpress,
+        wordpress débutant,
+        schoolsWP,
+      ]

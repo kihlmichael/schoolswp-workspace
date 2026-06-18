@@ -1,9 +1,9 @@
-# Lecon 7.4 — Pinterest et Snapchat Pixel
+# Lecon 7.4 - Pinterest et Snapchat Pixel
 
 ## Metadata
 
-- **Formation** : CartFlows Masterclass Vente (premium — FRM-007)
-- **Module** : 7 — Tracking et Pixels
+- **Formation** : CartFlows Masterclass Vente (premium - FRM-007)
+- **Module** : 7 - Tracking et Pixels
 - **Duree cible** : 6 min (~900 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Savoir quand configurer les pixels Pinterest et Snapchat, les installer dans CartFlows, et comprendre pourquoi il ne faut pas installer des pixels inutiles.
@@ -12,7 +12,7 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Facebook et Google, c'est fait. Maintenant, on va voir deux pixels supplementaires que CartFlows supporte nativement : Pinterest Tag et Snapchat Pixel.
 
@@ -22,15 +22,15 @@ Ceci etant dit, si tu fais de la pub sur ces plateformes, le tracking est indisp
 
 ---
 
-**[SECTION 1 — Pinterest Tag : pour les niches visuelles]**
+**[SECTION 1 - Pinterest Tag : pour les niches visuelles]**
 
-**[ECRAN — Pinterest Ads Manager > Conversions > Create Tag]**
+**[ECRAN - Pinterest Ads Manager > Conversions > Create Tag]**
 
 Le Pinterest Tag est le pixel de conversion de Pinterest. Il fonctionne exactement comme le Facebook Pixel : tu le poses sur ton site, et il remonte les actions des visiteurs a Pinterest pour que la plateforme puisse optimiser la diffusion de tes epingles sponsorisees.
 
-Pinterest est particulierement pertinent pour certaines niches. Si tu vends dans la decoration, la mode, la cuisine, le DIY, le mariage, le fitness, ou tout sujet visuel — Pinterest est un canal d'acquisition a prendre au serieux. Les utilisateurs Pinterest sont en mode decouverte et achat. L'intention commerciale y est naturellement plus elevee que sur d'autres reseaux.
+Pinterest est particulierement pertinent pour certaines niches. Si tu vends dans la decoration, la mode, la cuisine, le DIY, le mariage, le fitness, ou tout sujet visuel - Pinterest est un canal d'acquisition a prendre au serieux. Les utilisateurs Pinterest sont en mode decouverte et achat. L'intention commerciale y est naturellement plus elevee que sur d'autres reseaux.
 
-Pour creer ton tag, va dans Pinterest Ads Manager > Conversions > Create Tag. Pinterest va te donner un Tag ID — un numero a 13 chiffres.
+Pour creer ton tag, va dans Pinterest Ads Manager > Conversions > Create Tag. Pinterest va te donner un Tag ID - un numero a 13 chiffres.
 
 Dans CartFlows, va dans Settings > Integrations (ou Pinterest selon ta version). Colle ton Tag ID. Active. Sauvegarde. C'est la meme logique que pour Facebook : CartFlows injecte le code automatiquement sur les pages de tes funnels.
 
@@ -38,9 +38,9 @@ Les events remontes sont similaires : page view, checkout, purchase. Pinterest l
 
 ---
 
-**[SECTION 2 — Snapchat Pixel : pour les audiences jeunes]**
+**[SECTION 2 - Snapchat Pixel : pour les audiences jeunes]**
 
-**[ECRAN — Snapchat Ads Manager > Snap Pixel]**
+**[ECRAN - Snapchat Ads Manager > Snap Pixel]**
 
 Le Snapchat Pixel cible un segment specifique : les 18-35 ans. Si ton audience est majoritairement dans cette tranche d'age et que tu fais de la publicite sur Snapchat, ce pixel est pertinent.
 
@@ -52,9 +52,9 @@ Snapchat utilise ces donnees pour optimiser la diffusion de tes pubs et pour cre
 
 ---
 
-**[SECTION 3 — Quand ca vaut le coup (et quand ca n'en vaut pas)]**
+**[SECTION 3 - Quand ca vaut le coup (et quand ca n'en vaut pas)]**
 
-**[ECRAN — arbre de decision : installer le pixel ou non]**
+**[ECRAN - arbre de decision : installer le pixel ou non]**
 
 Voici la regle simple pour decider si tu dois installer un pixel.
 
@@ -68,9 +68,9 @@ En revanche, chaque pixel inutile a un cout : du JavaScript supplementaire qui r
 
 ---
 
-**[SECTION 4 — Configuration propre : la checklist]**
+**[SECTION 4 - Configuration propre : la checklist]**
 
-**[ECRAN — checklist installation pixels]**
+**[ECRAN - checklist installation pixels]**
 
 Avant de passer a la suite, voici la checklist pour une configuration propre de tes pixels.
 
@@ -84,9 +84,9 @@ Un site rapide avec 2 pixels utiles vaut mieux qu'un site lent avec 5 pixels don
 
 ---
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
-Pinterest Tag et Snapchat Pixel sont en place — si tu en as besoin. Rappelle-toi : le tracking doit servir tes decisions, pas alourdir ton site.
+Pinterest Tag et Snapchat Pixel sont en place - si tu en as besoin. Rappelle-toi : le tracking doit servir tes decisions, pas alourdir ton site.
 
 Dans la prochaine lecon, on va aborder un sujet technique important : la difference entre le tracking client-side et server-side, et pourquoi ca impacte directement la precision de tes donnees.
 

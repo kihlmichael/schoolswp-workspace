@@ -1,0 +1,54 @@
+Created At: 2026-05-22T12:28:36Z
+Completed At: 2026-05-22T12:28:37Z
+File Path: `file:///d:/ANTIGRAVITY/drafts/step30.txt`
+Total Lines: 53
+Total Bytes: 4172
+Showing lines 1 to 53
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: Created At: 2026-05-22T09:21:33Z
+2: Completed At: 2026-05-22T09:21:44Z
+3: 
+4: 				The command completed successfully.
+5: 				Output:
+6: 				<truncated 84 lines>
+7: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\README.md:3:owner: Micha�l KIHL
+8: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\SOP-utilisation.md:3:owner: 
+9: Micha�l KIHL
+10: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\SOP-utilisation.md:32:3. Mets � 
+11: jour le frontmatter du fichier (`status: synthese-stabilisee` ou `memoire-durable`, `date_validation`, `validated_by: 
+12: Micha�l KIHL`).
+13: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\phase-1-bilan.md:6:validated_by: 
+14: Micha�l KIHL
+15: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\2026-05-04_test-
+16: bridge-001.md:9:auteur: Micha�l KIHL
+17: D:\?? MES SITES\?? 
+18: SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\note-001.md:4:auteur: Micha�l KIHL
+19: D:\?? MES SITES\?? 
+20: SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\note-002.md:4:auteur: Micha�l KIHL
+21: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude\2026-05-05_ou
+22: tils-recommandes-backup-pre-promotion.md:94:| Divi Lover | `michaelkihl10` | Design / Divi | � rattacher � Design & 
+23: Constructeurs. |
+24: D:\?? MES SITES\?
+<truncated 782 bytes>
+ME.md:3:owner: Micha�l KIHL
+34: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\08_sources\plugins-wordpress\README.md:3:owner: Micha�l KIHL
+35: D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\08_sources\plugins-wordpress\tutor-lms\docs\2026-05-04_tutor-lms
+36: -doc_13-advanced-customization_auto-approving-tutor-lms-instructors.md:23:> **Synth�se FR** : snippet PHP pour 
+37: **d�sactiver la mod�ration admin** sur les inscriptions instructeurs. Code 15 lignes dans functions.php du child theme 
+38: - hook tutor_new_instructor_after d�clenche update_user_meta(_tutor_instructor_status = approved) + 
+39: add_role(instructor_role) automatiquement. Compatible Tutor LMS v1.6.0+. **AVERTISSEMENT EXPLICITE Themeum** : "This 
+40: will practically allow anyone to sign up and submit courses. So please use **caution** while using this code." **Pour 
+41: ta formation FluentBoards / TutorLMS schoolsWP** : � NE PAS utiliser sur schoolswp.com. Tu es **single-instructor par 
+42: design** (autorit� personnelle E-E-A-T = Michael KIHL seul). Activer ce snippet ouvre la porte � : (a) signups 
+43: bot/spam massifs (cf. m�moire `feedback_voice_singular_solo.md` - tu �cris au "je", pas en "on"), (b) cours 
+44: non-mod�r�s visibles publiquement = risque l�gal + dilution brand, (c) revenue share marketplace = complexit� 
+45: comptable que FluentCart/Native ne couvrent pas. **Use case l�gitime du snippet** : marketplace LMS multi-instructeurs 
+46: (type Udemy/Teachable concurrent) o� la mod�ration manuelle est impossible � scale. � 1000+ inscriptions/jour, ce 
+47: snippet �conomise un FTE mod�rateur. **Hook angle SEO** : "Marketplace LMS WordPress automatique" est low-volume mais 
+48: conversion forte (audience cherchant � scale Udemy-like sans dev custom). Article tutorial � publier UNIQUEMENT apr�s 
+49: mise en garde s�curit� claire.
+50: 
+51: 
+52: 
+53: 
+The above content shows the entire, complete file contents of the requested file.

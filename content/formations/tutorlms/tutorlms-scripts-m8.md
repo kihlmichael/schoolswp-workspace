@@ -1,14 +1,14 @@
-# Scripts vidéo — Module 8 : eCommerce & Monétisation
+# Scripts vidéo - Module 8 : eCommerce & Monétisation
 
 **Formation** : Maîtriser TutorLMS
-**Module** : M8 — eCommerce & Monétisation (Premium)
+**Module** : M8 - eCommerce & Monétisation (Premium)
 **Leçons** : 15 vidéos + 1 quiz
 **Durée totale** : ~85 min
 **Date** : 2026-03-23
 
 ---
 
-### Leçon 8.1 — Vue d'ensemble eCommerce natif
+### Leçon 8.1 : Vue d'ensemble eCommerce natif
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -17,50 +17,50 @@
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Si tu vends des cours en ligne, tu as besoin d'un système de paiement. Avant la version 3, TutorLMS dépendait de WooCommerce pour ça. Depuis la v3, tout est intégré nativement. Plus besoin de plugin externe, plus de configuration complexe. Dans cette leçon, je te montre ce que le eCommerce natif propose et comment l'activer.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS > Settings > Monetization]
 
 Pour activer le eCommerce natif, va dans Tutor LMS, puis Settings, puis Monetization. Dans le menu déroulant "eCommerce Engine", sélectionne "Native". Enregistre. C'est fait.
 
-**[ÉCRAN — screencast panneau Monetization]**
+**[ÉCRAN - screencast panneau Monetization]**
 
 [Vue d'ensemble des sous-menus qui apparaissent]
 
 Une fois activé, de nouvelles sections apparaissent sous Monetization :
-- Payment Methods — pour configurer tes passerelles de paiement
-- Coupons — pour créer des codes de réduction
-- Tax — pour gérer la TVA et les taxes
-- Orders — pour suivre les commandes
-- Checkout — pour paramétrer la page de paiement
+- Payment Methods - pour configurer tes passerelles de paiement
+- Coupons - pour créer des codes de réduction
+- Tax - pour gérer la TVA et les taxes
+- Orders - pour suivre les commandes
+- Checkout - pour paramétrer la page de paiement
 
-**[ÉCRAN — screencast liste des passerelles]**
+**[ÉCRAN - screencast liste des passerelles]**
 
 [Montre la page Payment Methods avec les passerelles disponibles]
 
 TutorLMS supporte dix passerelles de paiement :
-- Stripe et PayPal — les deux principales, celles que je recommande
+- Stripe et PayPal - les deux principales, celles que je recommande
 - Paddle, Razorpay, Mollie, Klarna, Alipay, Paystack, 2Checkout, Authorize.net
-- Plus la possibilité d'ajouter un paiement manuel — virement bancaire, chèque, ce que tu veux
+- Plus la possibilité d'ajouter un paiement manuel - virement bancaire, chèque, ce que tu veux
 
 Chaque passerelle s'installe en un clic depuis cette page. On les verra en détail dans les prochaines leçons.
 
-**[ÉCRAN — screencast section Pricing d'un cours]**
+**[ÉCRAN - screencast section Pricing d'un cours]**
 
 [Ouvre le Course Builder, section Pricing]
 
 Côté cours, la section Pricing du Course Builder te permet de définir :
 - Un prix unique pour un achat ponctuel
 - Un abonnement avec facturation récurrente
-- Ou les deux — l'élève choisit
+- Ou les deux - l'élève choisit
 
 Tu peux aussi marquer un cours comme gratuit. On verra les abonnements et memberships dans la leçon 8.4.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 La recommandation schoolsWP : pour un site qui vend en Europe, configure Stripe en passerelle principale et PayPal en complément. C'est la combinaison qui couvre le plus de cas. On commence par Stripe dans la prochaine leçon.
 
@@ -77,7 +77,7 @@ La recommandation schoolsWP : pour un site qui vend en Europe, configure Stripe 
 
 ---
 
-### Leçon 8.2 — Configuration Stripe
+### Leçon 8.2 : Configuration Stripe
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -86,40 +86,40 @@ La recommandation schoolsWP : pour un site qui vend en Europe, configure Stripe 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Stripe est la passerelle de paiement numéro un pour vendre des cours en ligne en Europe. Cartes bancaires, Apple Pay, Google Pay — tout passe par Stripe. Dans cette leçon, on configure Stripe dans TutorLMS de A à Z, mode test inclus.
+Stripe est la passerelle de paiement numéro un pour vendre des cours en ligne en Europe. Cartes bancaires, Apple Pay, Google Pay - tout passe par Stripe. Dans cette leçon, on configure Stripe dans TutorLMS de A à Z, mode test inclus.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Payment Methods]
 
 Première étape : installer Stripe. Va dans Settings, Monetization, Payment Methods. Clique sur "Add new gateway", sélectionne Stripe dans la liste, puis clique sur Install. Active-le avec le toggle, puis clique sur l'icône de configuration.
 
-**[ÉCRAN — screencast champs de configuration Stripe]**
+**[ÉCRAN - screencast champs de configuration Stripe]**
 
 [Montre les champs : Environment, Publishable Key, Secret Key, Webhook Secret]
 
 Tu as quatre champs à remplir :
 
-1. Environment — choisis "Test" pour commencer. Tu passeras en "Live" quand tout sera validé.
-2. Publishable Key — ta clé publique
-3. Secret Key — ta clé secrète
-4. Webhook Secret — la clé du webhook
+1. Environment - choisis "Test" pour commencer. Tu passeras en "Live" quand tout sera validé.
+2. Publishable Key - ta clé publique
+3. Secret Key - ta clé secrète
+4. Webhook Secret - la clé du webhook
 
 On va chercher ces trois clés dans le dashboard Stripe.
 
-**[ÉCRAN — screencast Stripe Dashboard]**
+**[ÉCRAN - screencast Stripe Dashboard]**
 
 [Navigation vers Developers > API keys]
 
 Connecte-toi à ton compte Stripe. Va dans Developers, puis API keys. Tu y trouves deux clés :
-- La Publishable key — elle commence par "pk_test" en mode test ou "pk_live" en production
-- La Secret key — elle commence par "sk_test" ou "sk_live"
+- La Publishable key - elle commence par "pk_test" en mode test ou "pk_live" en production
+- La Secret key - elle commence par "sk_test" ou "sk_live"
 
 Copie chacune et colle-la dans le champ correspondant de TutorLMS.
 
-**[ÉCRAN — screencast Stripe Webhooks]**
+**[ÉCRAN - screencast Stripe Webhooks]**
 
 [Navigation vers Developers > Webhooks > Add destination]
 
@@ -132,21 +132,21 @@ Ensuite, sélectionne les trois événements obligatoires :
 - charge.updated
 - payment_intent.canceled
 
-Valide. Stripe génère un Webhook Secret — copie-le et colle-le dans le dernier champ de TutorLMS.
+Valide. Stripe génère un Webhook Secret - copie-le et colle-le dans le dernier champ de TutorLMS.
 
-**[ÉCRAN — screencast TutorLMS — Save]**
+**[ÉCRAN - screencast TutorLMS - Save]**
 
 [Montre le bouton Save Changes]
 
 Enregistre les réglages dans TutorLMS. Stripe est maintenant connecté.
 
-**[ÉCRAN — screencast test d'achat]**
+**[ÉCRAN - screencast test d'achat]**
 
 [Montre un achat test sur le front-end]
 
 Avant de passer en production, teste un achat. En mode test Stripe, utilise la carte 4242 4242 4242 4242, n'importe quelle date future, n'importe quel CVC. Tu devrais voir la commande apparaître dans TutorLMS et dans Stripe.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Quand tes tests sont concluants, repasse l'environnement sur "Live", remplace les clés test par les clés de production, et mets à jour le webhook. Stripe est prêt. Prochaine leçon : PayPal.
 
@@ -158,13 +158,13 @@ Quand tes tests sont concluants, repasse l'environnement sur "Live", remplace le
 - Webhook : 3 événements obligatoires (payment_intent.payment_failed, charge.updated, payment_intent.canceled)
 - Toujours tester en mode Test avant de passer en Live
 - Carte test : 4242 4242 4242 4242
-- Clés test : préfixe pk_test / sk_test — clés live : pk_live / sk_live
+- Clés test : préfixe pk_test / sk_test - clés live : pk_live / sk_live
 
 **Mots clés SEO** : TutorLMS Stripe, configurer Stripe LMS WordPress, paiement Stripe TutorLMS, webhook Stripe TutorLMS
 
 ---
 
-### Leçon 8.3 — Configuration PayPal
+### Leçon 8.3 : Configuration PayPal
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -173,38 +173,38 @@ Quand tes tests sont concluants, repasse l'environnement sur "Live", remplace le
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 PayPal reste incontournable. Beaucoup d'élèves préfèrent payer avec leur compte PayPal plutôt que de saisir une carte bancaire. C'est pour ça que je recommande de l'ajouter en complément de Stripe. Voyons comment le configurer dans TutorLMS.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Payment Methods]
 
-Bonne nouvelle : PayPal est déjà dans la liste des passerelles disponibles — pas besoin de l'installer. Active-le avec le toggle, puis clique sur l'icône de configuration.
+Bonne nouvelle : PayPal est déjà dans la liste des passerelles disponibles - pas besoin de l'installer. Active-le avec le toggle, puis clique sur l'icône de configuration.
 
-**[ÉCRAN — screencast champs PayPal dans TutorLMS]**
+**[ÉCRAN - screencast champs PayPal dans TutorLMS]**
 
 [Montre les champs : Environment, Client ID, Client Secret, Merchant Email, Webhook ID]
 
 Tu as cinq champs :
-1. Environment — Test (Sandbox) ou Live
+1. Environment - Test (Sandbox) ou Live
 2. Client ID
 3. Client Secret Key
-4. Merchant Email — l'adresse email de ton compte PayPal
+4. Merchant Email - l'adresse email de ton compte PayPal
 5. Webhook ID
 
 On commence en mode Sandbox pour tester.
 
-**[ÉCRAN — screencast PayPal Developer]**
+**[ÉCRAN - screencast PayPal Developer]**
 
 [Navigation vers developer.paypal.com > Apps & Credentials]
 
-Va sur developer.paypal.com. Connecte-toi, puis va dans Apps & Credentials. Assure-toi d'être en mode Sandbox. Clique sur "Create App", donne-lui un nom — par exemple "TutorLMS" — et valide.
+Va sur developer.paypal.com. Connecte-toi, puis va dans Apps & Credentials. Assure-toi d'être en mode Sandbox. Clique sur "Create App", donne-lui un nom - par exemple "TutorLMS" - et valide.
 
 Une fois l'app créée, tu vois le Client ID et le Client Secret. Copie-les dans TutorLMS.
 
-**[ÉCRAN — screencast PayPal Webhooks]**
+**[ÉCRAN - screencast PayPal Webhooks]**
 
 [Navigation vers la section Webhooks de l'app]
 
@@ -212,26 +212,26 @@ Pour le webhook, dans les réglages de ton app PayPal, va dans la section Webhoo
 - Checkout order approved
 - Payment capture completed
 
-Valide. PayPal te donne un Webhook ID — copie-le et colle-le dans TutorLMS.
+Valide. PayPal te donne un Webhook ID - copie-le et colle-le dans TutorLMS.
 
-**[ÉCRAN — screencast TutorLMS — Save]**
+**[ÉCRAN - screencast TutorLMS - Save]**
 
 N'oublie pas d'ajouter l'adresse email de ton compte PayPal dans le champ Merchant Email. Enregistre.
 
-**[ÉCRAN — screencast test]**
+**[ÉCRAN - screencast test]**
 
 [Montre un achat test via PayPal Sandbox]
 
 Teste un achat en Sandbox. PayPal te fournit des comptes test dans le Developer Dashboard pour simuler un achat sans vrai paiement.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Quand c'est validé, passe en Live, remets les clés de production et le Webhook ID live. Vérifie que PayPal est bien disponible dans ton pays et ta devise. Tu as maintenant deux passerelles actives : Stripe et PayPal. Pour la plupart des sites, c'est suffisant.
 
 ---
 
 **Points clés** :
-- PayPal déjà pré-installé dans TutorLMS — juste à activer
+- PayPal déjà pré-installé dans TutorLMS - juste à activer
 - 5 champs : Environment, Client ID, Client Secret, Merchant Email, Webhook ID
 - App à créer sur developer.paypal.com > Apps & Credentials
 - Webhook : 2 événements (Checkout order approved, Payment capture completed)
@@ -242,7 +242,7 @@ Quand c'est validé, passe en Live, remets les clés de production et le Webhook
 
 ---
 
-### Leçon 8.4 — Abonnements & Memberships
+### Leçon 8.4 : Abonnements & Memberships
 
 **Durée** : 7 min
 **Type** : Vidéo HeyGen
@@ -251,51 +251,51 @@ Quand c'est validé, passe en Live, remets les clés de production et le Webhook
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Vendre un cours à l'unité, c'est bien. Proposer un abonnement mensuel ou une membership qui donne accès à tous tes cours, c'est un revenu récurrent. TutorLMS gère les deux nativement depuis la v3.5. Voyons comment ça marche.
 
-**[ÉCRAN — screencast WordPress admin]**
+**[ÉCRAN - screencast WordPress admin]**
 
 [Navigation vers Tutor LMS Pro > Addons]
 
 Première étape : activer l'addon Subscriptions. Va dans Tutor LMS Pro, puis Addons. Cherche "Subscriptions" et active-le. C'est cet addon qui débloque à la fois les abonnements par cours et les memberships globales.
 
-**PARTIE 1 — Abonnements par cours**
+**PARTIE 1 - Abonnements par cours**
 
-**[ÉCRAN — screencast Course Builder > Pricing]**
+**[ÉCRAN - screencast Course Builder > Pricing]**
 
 [Ouvre un cours, section Pricing]
 
 Pour ajouter un abonnement à un cours, ouvre le Course Builder et va dans la section Pricing. Passe le cours en "Paid" si ce n'est pas déjà fait. Tu vois maintenant le bouton "Add Subscription".
 
-**[ÉCRAN — screencast création abonnement]**
+**[ÉCRAN - screencast création abonnement]**
 
 [Clique sur Add Subscription, montre les champs]
 
 Clique dessus. Tu configures :
-- Le nom du plan — par exemple "Accès mensuel"
+- Le nom du plan - par exemple "Accès mensuel"
 - Le prix récurrent
-- L'intervalle de facturation — jour, semaine, mois ou année
-- Le nombre de cycles — un nombre fixe ou "Until Cancelled" pour un abonnement continu
-- Des frais d'inscription optionnels — un montant additionnel à la première facturation
+- L'intervalle de facturation - jour, semaine, mois ou année
+- Le nombre de cycles - un nombre fixe ou "Until Cancelled" pour un abonnement continu
+- Des frais d'inscription optionnels - un montant additionnel à la première facturation
 - Un prix barré pour les promotions
 - Le statut "Featured" pour mettre en avant un plan
 
-**[ÉCRAN — screencast options d'achat]**
+**[ÉCRAN - screencast options d'achat]**
 
 [Montre les options : Subscription only, One-time only, Both]
 
 Tu peux proposer trois modes :
-- Abonnement uniquement — l'élève paie tant qu'il veut accéder
-- Achat unique — paiement une fois, accès à vie
-- Les deux — l'élève choisit
+- Abonnement uniquement - l'élève paie tant qu'il veut accéder
+- Achat unique - paiement une fois, accès à vie
+- Les deux - l'élève choisit
 
 Mon conseil : propose les deux. Ça laisse le choix et ça convient à tous les profils.
 
-**PARTIE 2 — Memberships**
+**PARTIE 2 - Memberships**
 
-**[ÉCRAN — screencast Settings > Subscriptions]**
+**[ÉCRAN - screencast Settings > Subscriptions]**
 
 [Navigation vers Tutor LMS Pro > Settings > Subscriptions]
 
@@ -303,27 +303,27 @@ Les memberships, c'est un niveau au-dessus. Au lieu de gérer des abonnements co
 
 Va dans Tutor LMS Pro, Settings, Subscriptions. Clique sur "New Membership Plan".
 
-**[ÉCRAN — screencast création membership]**
+**[ÉCRAN - screencast création membership]**
 
 [Montre les champs du formulaire]
 
-Tu retrouves les mêmes champs que pour un abonnement — nom, prix, intervalle, cycles — plus deux options spécifiques :
+Tu retrouves les mêmes champs que pour un abonnement - nom, prix, intervalle, cycles - plus deux options spécifiques :
 
-Première option : le type d'accès. "Full Site Membership" donne accès à tous les cours du site. "Category-wise Membership" restreint l'accès à certaines catégories — par exemple "Tous les cours WordPress" ou "Tous les cours Marketing".
+Première option : le type d'accès. "Full Site Membership" donne accès à tous les cours du site. "Category-wise Membership" restreint l'accès à certaines catégories - par exemple "Tous les cours WordPress" ou "Tous les cours Marketing".
 
 Deuxième option : la période d'essai. Tu peux offrir un essai gratuit ou à prix réduit avant la première facturation. Et avec l'option "Skip Payment for Free Trials", l'élève n'a même pas besoin d'entrer sa carte bancaire pour commencer.
 
-**[ÉCRAN — screencast shortcode]**
+**[ÉCRAN - screencast shortcode]**
 
 [Montre le shortcode tutor_membership_pricing sur une page]
 
 Pour afficher tes plans sur une page, utilise le shortcode `[tutor_membership_pricing]`. Ça génère un tableau de prix propre avec tes différents plans.
 
-**[ÉCRAN — screencast option Membership-only]**
+**[ÉCRAN - screencast option Membership-only]**
 
-Si tu veux aller plus loin, dans Settings > Subscriptions, active "Membership-only site". Ça désactive l'achat de cours individuels — tout passe par la membership. Utile si tu as un catalogue fourni et que tu veux simplifier ton offre.
+Si tu veux aller plus loin, dans Settings > Subscriptions, active "Membership-only site". Ça désactive l'achat de cours individuels - tout passe par la membership. Utile si tu as un catalogue fourni et que tu veux simplifier ton offre.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Abonnements par cours pour commencer, membership globale quand ton catalogue grandit. C'est une stratégie progressive. Dans la prochaine leçon, on voit comment booster tes ventes avec les coupons de réduction.
 
@@ -332,7 +332,7 @@ Abonnements par cours pour commencer, membership globale quand ton catalogue gra
 **Points clés** :
 - Addon Subscriptions à activer dans Tutor LMS Pro > Addons
 - Abonnement par cours : configurable dans le Course Builder > Pricing
-- Intervalles : jour, semaine, mois, année — cycles fixes ou illimités
+- Intervalles : jour, semaine, mois, année - cycles fixes ou illimités
 - Membership : Full Site ou Category-wise, avec essai gratuit possible
 - Shortcode `[tutor_membership_pricing]` pour afficher les plans
 - Mode "Membership-only site" pour désactiver les achats individuels
@@ -342,7 +342,7 @@ Abonnements par cours pour commencer, membership globale quand ton catalogue gra
 
 ---
 
-### Leçon 8.5 — Coupons de réduction
+### Leçon 8.5 : Coupons de réduction
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -351,31 +351,31 @@ Abonnements par cours pour commencer, membership globale quand ton catalogue gra
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Les coupons de réduction, c'est un levier de vente classique. Lancement, Black Friday, parrainage — tu as toujours besoin d'un code promo à un moment ou un autre. TutorLMS intègre un système de coupons complet dans son eCommerce natif. Voyons comment créer et gérer tes codes.
+Les coupons de réduction, c'est un levier de vente classique. Lancement, Black Friday, parrainage - tu as toujours besoin d'un code promo à un moment ou un autre. TutorLMS intègre un système de coupons complet dans son eCommerce natif. Voyons comment créer et gérer tes codes.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Coupons]
 
 Prérequis : le eCommerce natif doit être activé. Ensuite, va dans Tutor LMS, puis l'onglet Coupons. Clique sur "Create Coupon".
 
-**[ÉCRAN — screencast formulaire de création]**
+**[ÉCRAN - screencast formulaire de création]**
 
 [Montre les champs du formulaire coupon]
 
-Premier bloc : les informations de base. Tu définis un titre interne — pour toi, pas visible par l'élève — et un code coupon. Tu peux le taper manuellement ou laisser TutorLMS en générer un automatiquement.
+Premier bloc : les informations de base. Tu définis un titre interne - pour toi, pas visible par l'élève - et un code coupon. Tu peux le taper manuellement ou laisser TutorLMS en générer un automatiquement.
 
-**[ÉCRAN — screencast type de réduction]**
+**[ÉCRAN - screencast type de réduction]**
 
 [Montre les options Percentage / Fixed]
 
 Deuxième bloc : le type de réduction. Deux choix :
-- Pourcentage — par exemple 20% de réduction
-- Montant fixe — par exemple 10 euros de réduction
+- Pourcentage - par exemple 20% de réduction
+- Montant fixe - par exemple 10 euros de réduction
 
-**[ÉCRAN — screencast portée du coupon]**
+**[ÉCRAN - screencast portée du coupon]**
 
 [Montre les options All Courses, All Bundles, Specific...]
 
@@ -385,35 +385,35 @@ Troisième bloc : la portée. Tu choisis sur quoi le coupon s'applique :
 - Les deux
 - Ou des cours spécifiques, des bundles spécifiques, ou une catégorie spécifique
 
-Ça te permet de créer des promos ciblées — par exemple un coupon valable uniquement sur les cours WordPress.
+Ça te permet de créer des promos ciblées - par exemple un coupon valable uniquement sur les cours WordPress.
 
-**[ÉCRAN — screencast limites d'utilisation]**
+**[ÉCRAN - screencast limites d'utilisation]**
 
 [Montre les champs de restriction]
 
 Quatrième bloc : les restrictions. Tu définis :
-- Le nombre total d'utilisations du coupon — par exemple 100 utilisations maximum
-- Le nombre d'utilisations par client — par exemple 1 par personne
+- Le nombre total d'utilisations du coupon - par exemple 100 utilisations maximum
+- Le nombre d'utilisations par client - par exemple 1 par personne
 - Un montant minimum d'achat
 - Un nombre minimum d'articles dans le panier
 
-**[ÉCRAN — screencast dates de validité]**
+**[ÉCRAN - screencast dates de validité]**
 
 [Montre les champs Start/End date]
 
 Cinquième bloc : la période de validité. Date et heure de début, date et heure de fin. Si tu ne mets pas de date de fin, le coupon reste actif indéfiniment.
 
-**[ÉCRAN — screencast type Code vs Automatique]**
+**[ÉCRAN - screencast type Code vs Automatique]**
 
 [Montre l'option coupon automatique]
 
-Et un détail important : le type de coupon. "Code-based" — l'élève doit saisir le code au checkout. "Automatic" — la réduction s'applique automatiquement, sans code. Pratique pour les promos sitewide.
+Et un détail important : le type de coupon. "Code-based" - l'élève doit saisir le code au checkout. "Automatic" - la réduction s'applique automatiquement, sans code. Pratique pour les promos sitewide.
 
-**[ÉCRAN — screencast Settings > Checkout]**
+**[ÉCRAN - screencast Settings > Checkout]**
 
 Dernière chose : dans Settings > Checkout, vérifie que l'option "Enable Coupon Code" est activée. Sans ça, le champ de saisie du code n'apparaît pas sur la page de paiement.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Les coupons sont prêts. Pense à définir des dates de validité et des limites d'utilisation pour éviter les mauvaises surprises. Prochaine leçon : la configuration des taxes.
 
@@ -432,7 +432,7 @@ Les coupons sont prêts. Pense à définir des dates de validité et des limites
 
 ---
 
-### Leçon 8.6 — Configuration taxes
+### Leçon 8.6 : Configuration taxes
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -441,45 +441,45 @@ Les coupons sont prêts. Pense à définir des dates de validité et des limites
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 La TVA, c'est pas la partie la plus excitante, mais c'est obligatoire. Si tu vends des cours en ligne depuis la France ou l'Europe, tu dois collecter et déclarer la TVA. TutorLMS te permet de configurer les taxes directement dans son eCommerce natif. Voyons ça.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Taxes]
 
 Va dans Tutor LMS, Settings, Monetization. La section "Taxes" apparaît quand le eCommerce natif est activé.
 
-**[ÉCRAN — screencast ajout région fiscale]**
+**[ÉCRAN - screencast ajout région fiscale]**
 
 [Clique sur "Add tax region"]
 
-Clique sur "Add tax region" pour créer ta première zone fiscale. Tu sélectionnes un pays — par exemple France — et tu définis le taux de TVA. Pour la France, c'est 20% sur les formations en ligne.
+Clique sur "Add tax region" pour créer ta première zone fiscale. Tu sélectionnes un pays - par exemple France - et tu définis le taux de TVA. Pour la France, c'est 20% sur les formations en ligne.
 
-Tu peux appliquer un taux unique à tout le pays, ou définir des taux différents par région ou province. Utile si tu vends dans des pays avec des taux variables selon les états — comme les USA ou le Canada.
+Tu peux appliquer un taux unique à tout le pays, ou définir des taux différents par région ou province. Utile si tu vends dans des pays avec des taux variables selon les états - comme les USA ou le Canada.
 
-**[ÉCRAN — screencast réglages globaux]**
+**[ÉCRAN - screencast réglages globaux]**
 
 [Montre les trois options globales]
 
 Ensuite, trois réglages globaux importants :
 
-Premier réglage : "Tax Already Included in Prices". Active-le si tes prix affichent déjà la TVA incluse — ce qui est la norme en France pour le B2C. L'élève voit le prix final, pas de surprise au checkout.
+Premier réglage : "Tax Already Included in Prices". Active-le si tes prix affichent déjà la TVA incluse - ce qui est la norme en France pour le B2C. L'élève voit le prix final, pas de surprise au checkout.
 
 Deuxième réglage : "Tax Calculated at Checkout". La taxe s'affiche uniquement au moment du paiement. Utile pour le B2B ou les marchés où les prix sont affichés HT.
 
-Troisième réglage : "Display Prices Inclusive of Tax". Quand c'est activé, les prix affichés sur le site incluent la taxe partout — page cours, catalogue, checkout.
+Troisième réglage : "Display Prices Inclusive of Tax". Quand c'est activé, les prix affichés sur le site incluent la taxe partout - page cours, catalogue, checkout.
 
-**[ÉCRAN — screencast réglage par cours]**
+**[ÉCRAN - screencast réglage par cours]**
 
 [Montre l'option dans le Course Builder]
 
 Bonus : tu peux aussi gérer la taxe cours par cours. Dans le Course Builder, section Pricing, des options apparaissent pour activer ou désactiver la taxe sur les achats ponctuels et sur les abonnements. Ces options n'apparaissent que quand le cours a un prix défini.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Pour un site français, la configuration typique, c'est : une région France à 20%, prix TTC affichés. Adapte selon ton pays. Si tu utilises Paddle comme passerelle, note que Paddle gère ses propres calculs de taxes — les réglages TutorLMS ne s'appliquent pas. Dans la prochaine leçon, on parle de la gestion des commandes.
+Pour un site français, la configuration typique, c'est : une région France à 20%, prix TTC affichés. Adapte selon ton pays. Si tu utilises Paddle comme passerelle, note que Paddle gère ses propres calculs de taxes - les réglages TutorLMS ne s'appliquent pas. Dans la prochaine leçon, on parle de la gestion des commandes.
 
 ---
 
@@ -495,7 +495,7 @@ Pour un site français, la configuration typique, c'est : une région France à 
 
 ---
 
-### Leçon 8.7 — Gestion des commandes
+### Leçon 8.7 : Gestion des commandes
 
 **Durée** : 5 min
 **Type** : Vidéo HeyGen
@@ -504,11 +504,11 @@ Pour un site français, la configuration typique, c'est : une région France à 
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Chaque vente génère une commande. Suivi des paiements, remboursements, problèmes de transaction — tout se passe dans le gestionnaire de commandes de TutorLMS. Voyons comment l'utiliser au quotidien.
+Chaque vente génère une commande. Suivi des paiements, remboursements, problèmes de transaction - tout se passe dans le gestionnaire de commandes de TutorLMS. Voyons comment l'utiliser au quotidien.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Orders]
 
@@ -520,39 +520,39 @@ Va dans Tutor LMS, puis Orders. Tu retrouves la liste de toutes les commandes av
 - La date
 - Le statut
 
-**[ÉCRAN — screencast filtres et statuts]**
+**[ÉCRAN - screencast filtres et statuts]**
 
 [Montre les filtres disponibles]
 
 Les statuts possibles :
-- Completed — paiement reçu et validé
-- Pending — en attente de confirmation du paiement
-- Cancelled — annulée
-- Refunded — remboursée
+- Completed - paiement reçu et validé
+- Pending - en attente de confirmation du paiement
+- Cancelled - annulée
+- Refunded - remboursée
 
-Tu peux filtrer par statut pour retrouver rapidement les commandes qui posent problème. Les commandes en "Pending" sont celles à surveiller — ça signifie que la passerelle de paiement n'a pas confirmé la transaction.
+Tu peux filtrer par statut pour retrouver rapidement les commandes qui posent problème. Les commandes en "Pending" sont celles à surveiller - ça signifie que la passerelle de paiement n'a pas confirmé la transaction.
 
-**[ÉCRAN — screencast détail d'une commande]**
+**[ÉCRAN - screencast détail d'une commande]**
 
 [Clique sur une commande pour voir le détail]
 
 En cliquant sur une commande, tu vois le détail complet : informations de l'élève, méthode de paiement utilisée, coupon appliqué le cas échéant, montant HT, taxe, total.
 
-**[ÉCRAN — screencast commande bloquée]**
+**[ÉCRAN - screencast commande bloquée]**
 
 [Montre une commande en Pending]
 
-Si une commande reste en "Pending", deux causes possibles. Première : la passerelle de paiement n'a pas envoyé la confirmation — vérifie que ton webhook est correctement configuré. Deuxième : le paiement a échoué côté banque — l'élève doit réessayer.
+Si une commande reste en "Pending", deux causes possibles. Première : la passerelle de paiement n'a pas envoyé la confirmation - vérifie que ton webhook est correctement configuré. Deuxième : le paiement a échoué côté banque - l'élève doit réessayer.
 
-Dans les deux cas, ne valide jamais manuellement une commande sans avoir vérifié le paiement dans le dashboard de ta passerelle — Stripe ou PayPal.
+Dans les deux cas, ne valide jamais manuellement une commande sans avoir vérifié le paiement dans le dashboard de ta passerelle - Stripe ou PayPal.
 
-**[ÉCRAN — screencast remboursement]**
+**[ÉCRAN - screencast remboursement]**
 
 [Montre le processus de remboursement]
 
 Pour un remboursement, le processus dépend de ta passerelle. En général, tu lances le remboursement depuis le dashboard Stripe ou PayPal, et le statut se met à jour automatiquement dans TutorLMS via le webhook. L'élève perd l'accès au cours après remboursement.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le gestionnaire de commandes est ton tableau de bord financier dans TutorLMS. Consulte-le régulièrement, surtout les premiers jours après un lancement. Dans la prochaine leçon, on optimise l'expérience d'achat avec la configuration du checkout.
 
@@ -570,7 +570,7 @@ Le gestionnaire de commandes est ton tableau de bord financier dans TutorLMS. Co
 
 ---
 
-### Leçon 8.8 — Configuration checkout
+### Leçon 8.8 : Configuration checkout
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -579,29 +579,29 @@ Le gestionnaire de commandes est ton tableau de bord financier dans TutorLMS. Co
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Le checkout, c'est la dernière étape avant le paiement. C'est là où tu perds des ventes si l'expérience est mauvaise. TutorLMS propose trois réglages clés pour optimiser cette page. Voyons-les.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Checkout]
 
 Va dans Settings, Monetization, puis Checkout. Trois options t'attendent.
 
-**[ÉCRAN — screencast option Coupon Code]**
+**[ÉCRAN - screencast option Coupon Code]**
 
 [Montre le toggle Enable Coupon Code]
 
-Première option : "Enable Coupon Code". Active-la si tu utilises des coupons — on les a configurés dans la leçon 8.5. Si tu ne proposes pas de coupons, désactive-la pour ne pas afficher un champ vide qui fait douter l'élève ("est-ce que je rate une promo ?").
+Première option : "Enable Coupon Code". Active-la si tu utilises des coupons - on les a configurés dans la leçon 8.5. Si tu ne proposes pas de coupons, désactive-la pour ne pas afficher un champ vide qui fait douter l'élève ("est-ce que je rate une promo ?").
 
-**[ÉCRAN — screencast option Buy Now]**
+**[ÉCRAN - screencast option Buy Now]**
 
 [Montre le toggle Buy Now]
 
 Deuxième option : "Buy Now". Quand c'est activé, le bouton "Add to Cart" sur la page du cours est remplacé par un bouton "Buy Now". L'élève va directement au paiement sans passer par un panier. Moins d'étapes, moins d'abandon. Je recommande de l'activer si tu vends des cours à l'unité.
 
-**[ÉCRAN — screencast option Guest Checkout]**
+**[ÉCRAN - screencast option Guest Checkout]**
 
 [Montre le toggle Guest Checkout]
 
@@ -611,7 +611,7 @@ C'est un bon compromis : tu réduis la friction à l'achat sans perdre la créat
 
 Quand le Guest Checkout est actif, un bouton de connexion apparaît aussi sur la page checkout pour les clients existants.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ma recommandation : active "Buy Now" et "Guest Checkout" pour maximiser tes conversions. Désactive le champ coupon si tu n'en utilises pas. Simple et efficace. Prochaine leçon : Paddle, une passerelle alternative qui gère la TVA à ta place.
 
@@ -620,7 +620,7 @@ Ma recommandation : active "Buy Now" et "Guest Checkout" pour maximiser tes conv
 **Points clés** :
 - Checkout dans Settings > Monetization > Checkout
 - 3 options : Enable Coupon Code, Buy Now, Guest Checkout
-- Buy Now : supprime le panier, achat direct — réduit l'abandon
+- Buy Now : supprime le panier, achat direct - réduit l'abandon
 - Guest Checkout : achat sans compte, création automatique + email mot de passe
 - Désactiver le champ coupon si pas de promos (évite le doute)
 - Recommandation : Buy Now + Guest Checkout actifs
@@ -629,7 +629,7 @@ Ma recommandation : active "Buy Now" et "Guest Checkout" pour maximiser tes conv
 
 ---
 
-### Leçon 8.9 — Paddle
+### Leçon 8.9 : Paddle
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -638,27 +638,27 @@ Ma recommandation : active "Buy Now" et "Guest Checkout" pour maximiser tes conv
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Paddle, c'est différent des autres passerelles. Paddle agit comme "Merchant of Record" — ça veut dire que c'est Paddle qui vend ton cours à ta place, gère la TVA, les factures et la conformité fiscale dans chaque pays. Si tu vends à l'international et que tu ne veux pas te prendre la tête avec la TVA par pays, Paddle est une option sérieuse.
+Paddle, c'est différent des autres passerelles. Paddle agit comme "Merchant of Record" - ça veut dire que c'est Paddle qui vend ton cours à ta place, gère la TVA, les factures et la conformité fiscale dans chaque pays. Si tu vends à l'international et que tu ne veux pas te prendre la tête avec la TVA par pays, Paddle est une option sérieuse.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Payment Methods > Add new gateway > Paddle]
 
 Installation classique : Settings, Monetization, Payment Methods, Add new gateway, sélectionne Paddle, Install, active le toggle.
 
-**[ÉCRAN — screencast champs de configuration]**
+**[ÉCRAN - screencast champs de configuration]**
 
 [Montre les champs : Environment, API Key, Client-side Token, Webhook Secret]
 
 Trois clés à récupérer dans ton dashboard Paddle :
 
-1. API Key — dans Developer Tools > Authentication. Génère une nouvelle clé avec les permissions adéquates.
-2. Client-side Token — généré séparément, utilisé pour les transactions front-end.
-3. Webhook Secret — configuré dans Developer Tools > Notifications.
+1. API Key - dans Developer Tools > Authentication. Génère une nouvelle clé avec les permissions adéquates.
+2. Client-side Token - généré séparément, utilisé pour les transactions front-end.
+3. Webhook Secret - configuré dans Developer Tools > Notifications.
 
-**[ÉCRAN — screencast Paddle Webhooks]**
+**[ÉCRAN - screencast Paddle Webhooks]**
 
 [Navigation vers Developer Tools > Notifications > Create webhook]
 
@@ -673,13 +673,13 @@ Sélectionne trois événements :
 
 Copie le Secret généré et colle-le dans TutorLMS.
 
-**[ÉCRAN — screencast approbation domaine]**
+**[ÉCRAN - screencast approbation domaine]**
 
 [Montre Checkout > Website Approval dans Paddle]
 
-Étape supplémentaire avec Paddle : tu dois faire approuver ton domaine. Dans Paddle, va dans Checkout, Website Approval, et soumets ton domaine — juste le domaine, sans https://. Configure aussi ton URL comme lien de paiement par défaut dans les réglages Checkout.
+Étape supplémentaire avec Paddle : tu dois faire approuver ton domaine. Dans Paddle, va dans Checkout, Website Approval, et soumets ton domaine - juste le domaine, sans https://. Configure aussi ton URL comme lien de paiement par défaut dans les réglages Checkout.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Point important : quand tu utilises Paddle, les réglages de taxes de TutorLMS ne s'appliquent pas. C'est Paddle qui gère tout le calcul fiscal. Pratique, mais tu perds le contrôle sur l'affichage des prix. À toi de voir si ça correspond à ton modèle.
 
@@ -697,7 +697,7 @@ Point important : quand tu utilises Paddle, les réglages de taxes de TutorLMS n
 
 ---
 
-### Leçon 8.10 — Razorpay
+### Leçon 8.10 : Razorpay
 
 **Durée** : 3 min
 **Type** : Vidéo HeyGen
@@ -706,17 +706,17 @@ Point important : quand tu utilises Paddle, les réglages de taxes de TutorLMS n
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Razorpay, c'est la passerelle de référence en Inde. Si ton audience est indienne ou si tu veux accepter UPI, net banking ou les portefeuilles numériques indiens, c'est la passerelle qu'il te faut. Configuration rapide.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Installation Razorpay : Add new gateway > Razorpay > Install]
 
 Même processus : Settings, Monetization, Payment Methods, Add new gateway, Razorpay, Install, active le toggle.
 
-**[ÉCRAN — screencast champs de configuration]**
+**[ÉCRAN - screencast champs de configuration]**
 
 [Montre les champs : Environment, Key ID, Key Secret, Webhook Secret]
 
@@ -726,7 +726,7 @@ Trois informations à récupérer dans ton dashboard Razorpay, section Account &
 
 Clique sur "Generate Test Key" pour les clés de test. Tu peux télécharger les deux clés en CSV.
 
-**[ÉCRAN — screencast Razorpay Webhooks]**
+**[ÉCRAN - screencast Razorpay Webhooks]**
 
 [Navigation vers Account & Settings > Webhooks]
 
@@ -738,11 +738,11 @@ Sélectionne deux événements :
 - Payment Failed
 - Payment Captured
 
-Définis un Webhook Secret — attention, tu dois saisir le même secret manuellement dans TutorLMS. Ce n'est pas généré automatiquement comme avec Stripe.
+Définis un Webhook Secret - attention, tu dois saisir le même secret manuellement dans TutorLMS. Ce n'est pas généré automatiquement comme avec Stripe.
 
 Enregistre des deux côtés et c'est opérationnel.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Razorpay est spécifique au marché indien. Si tu ne vises pas cette audience, passe à la leçon suivante. Sinon, c'est une passerelle fiable avec un bon support des méthodes de paiement locales.
 
@@ -759,7 +759,7 @@ Razorpay est spécifique au marché indien. Si tu ne vises pas cette audience, p
 
 ---
 
-### Leçon 8.11 — Mollie / Klarna / Alipay
+### Leçon 8.11 : Mollie / Klarna / Alipay
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -768,13 +768,13 @@ Razorpay est spécifique au marché indien. Si tu ne vises pas cette audience, p
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Trois passerelles dans une seule leçon : Mollie, Klarna et Alipay. Chacune couvre un marché spécifique. Mollie pour les Pays-Bas et l'Europe du Nord, Klarna pour le paiement fractionné en Scandinavie et en Allemagne, Alipay pour la Chine. Voyons la configuration de chacune.
 
-**PARTIE 1 — Mollie**
+**PARTIE 1 - Mollie**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation Mollie : Add new gateway > Mollie > Install]
 
@@ -784,36 +784,36 @@ Pour la trouver, dans ton compte Mollie, va dans Organization, puis More, Develo
 
 Mollie supporte iDEAL, Bancontact, SOFORT, les cartes bancaires et d'autres méthodes européennes. C'est un bon choix si ton audience est au Benelux ou en Europe du Nord.
 
-**PARTIE 2 — Klarna**
+**PARTIE 2 - Klarna**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation Klarna : Add new gateway > Klarna > Install]
 
-Klarna permet le paiement en plusieurs fois — "Pay Later" ou "Slice it". Populaire en Suède, Allemagne, Pays-Bas.
+Klarna permet le paiement en plusieurs fois - "Pay Later" ou "Slice it". Populaire en Suède, Allemagne, Pays-Bas.
 
-Deux champs à remplir : Username et Password. Tu les génères dans le Klarna Merchant Portal, section Settings, Klarna API Keys. Clique sur "Generate new Klarna API key" et télécharge les identifiants. Important : tu dois les télécharger pour fermer la fenêtre — ils ne s'affichent qu'une fois.
+Deux champs à remplir : Username et Password. Tu les génères dans le Klarna Merchant Portal, section Settings, Klarna API Keys. Clique sur "Generate new Klarna API key" et télécharge les identifiants. Important : tu dois les télécharger pour fermer la fenêtre - ils ne s'affichent qu'une fois.
 
 Colle-les dans TutorLMS, choisis l'environnement, enregistre.
 
-**PARTIE 3 — Alipay**
+**PARTIE 3 - Alipay**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation Alipay : Add new gateway > Alipay > Install]
 
 Alipay, c'est le portefeuille numérique dominant en Chine. Si tu as des élèves chinois, c'est incontournable. La configuration suit le même schéma : installation, clés API depuis ton compte Alipay, configuration dans TutorLMS.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Ces trois passerelles sont complémentaires aux principales. Ajoute-les uniquement si ton audience le justifie. Pour la plupart des sites francophones, Stripe et PayPal suffisent. Mollie peut être un ajout pertinent si tu vises le Benelux.
 
 ---
 
 **Points clés** :
-- Mollie : 1 clé API, supporte iDEAL/Bancontact/SOFORT — idéal pour le Benelux
-- Klarna : Username + Password, paiement fractionné — Scandinavie/Allemagne
-- Alipay : portefeuille numérique — marché chinois
+- Mollie : 1 clé API, supporte iDEAL/Bancontact/SOFORT - idéal pour le Benelux
+- Klarna : Username + Password, paiement fractionné - Scandinavie/Allemagne
+- Alipay : portefeuille numérique - marché chinois
 - Les trois suivent le même schéma d'installation dans TutorLMS
 - À activer uniquement si ton audience est sur ces marchés
 - Toutes nécessitent Tutor LMS Pro
@@ -822,7 +822,7 @@ Ces trois passerelles sont complémentaires aux principales. Ajoute-les uniqueme
 
 ---
 
-### Leçon 8.12 — Paystack / 2Checkout / Authorize.net
+### Leçon 8.12 : Paystack / 2Checkout / Authorize.net
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -831,17 +831,17 @@ Ces trois passerelles sont complémentaires aux principales. Ajoute-les uniqueme
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Trois autres passerelles secondaires : Paystack pour l'Afrique, 2Checkout pour la couverture mondiale, Authorize.net pour les États-Unis. Même format que la leçon précédente — on va à l'essentiel.
+Trois autres passerelles secondaires : Paystack pour l'Afrique, 2Checkout pour la couverture mondiale, Authorize.net pour les États-Unis. Même format que la leçon précédente - on va à l'essentiel.
 
-**PARTIE 1 — Paystack**
+**PARTIE 1 - Paystack**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation Paystack : Add new gateway > Paystack > Install]
 
-Paystack est la passerelle de référence en Afrique — Nigeria, Ghana, Afrique du Sud, Kenya. Installation classique, un seul champ principal : ta Secret Key.
+Paystack est la passerelle de référence en Afrique - Nigeria, Ghana, Afrique du Sud, Kenya. Installation classique, un seul champ principal : ta Secret Key.
 
 Dans ton dashboard Paystack, va dans Settings, API Keys & Webhooks. Copie ta Secret Key et colle-la dans TutorLMS.
 
@@ -851,30 +851,30 @@ Pour le webhook, ajoute cette URL dans Paystack :
 
 Choisis l'environnement Test ou Live, enregistre.
 
-**PARTIE 2 — 2Checkout**
+**PARTIE 2 - 2Checkout**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation 2Checkout : Add new gateway > 2Checkout > Install]
 
-2Checkout — aussi connu sous le nom Verifone — couvre plus de 200 pays. C'est une alternative si tu veux une couverture géographique maximale avec une seule passerelle. Configuration : clés API depuis ton compte 2Checkout, même schéma.
+2Checkout - aussi connu sous le nom Verifone - couvre plus de 200 pays. C'est une alternative si tu veux une couverture géographique maximale avec une seule passerelle. Configuration : clés API depuis ton compte 2Checkout, même schéma.
 
-**PARTIE 3 — Authorize.net**
+**PARTIE 3 - Authorize.net**
 
-**[ÉCRAN — screencast TutorLMS]**
+**[ÉCRAN - screencast TutorLMS]**
 
 [Installation Authorize.net : Add new gateway > Authorize.net > Install]
 
 Authorize.net, c'est le vétéran des passerelles aux États-Unis. Si ton audience est américaine et que tu as déjà un compte Authorize.net, la configuration suit le même processus : clés API, environnement, webhook.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Comme pour la leçon précédente : ces passerelles sont là pour des besoins spécifiques. Paystack si tu vises l'Afrique, 2Checkout pour une couverture mondiale, Authorize.net pour le marché américain. Ne les ajoute pas "au cas où" — chaque passerelle active est un point de maintenance supplémentaire.
+Comme pour la leçon précédente : ces passerelles sont là pour des besoins spécifiques. Paystack si tu vises l'Afrique, 2Checkout pour une couverture mondiale, Authorize.net pour le marché américain. Ne les ajoute pas "au cas où" - chaque passerelle active est un point de maintenance supplémentaire.
 
 ---
 
 **Points clés** :
-- Paystack : Secret Key + webhook — référence en Afrique
+- Paystack : Secret Key + webhook - référence en Afrique
 - 2Checkout (Verifone) : couverture 200+ pays
 - Authorize.net : marché américain
 - Webhook Paystack : URL format /wp-json/tutor/v1/ecommerce-webhook?payment_method=paystack
@@ -885,7 +885,7 @@ Comme pour la leçon précédente : ces passerelles sont là pour des besoins sp
 
 ---
 
-### Leçon 8.13 — Paiement manuel
+### Leçon 8.13 : Paiement manuel
 
 **Durée** : 3 min
 **Type** : Vidéo HeyGen
@@ -894,29 +894,29 @@ Comme pour la leçon précédente : ces passerelles sont là pour des besoins sp
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Tous tes élèves n'ont pas une carte bancaire ou un compte PayPal. Le paiement manuel, c'est la solution pour accepter les virements bancaires, les chèques, ou n'importe quelle méthode hors ligne. Tu reçois le paiement, tu valides manuellement la commande. Voyons comment ça marche.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Settings > Monetization > Payment Methods > Add manual payment]
 
 Va dans Settings, Monetization, Payment Methods. Cette fois, clique sur "Add manual payment" au lieu de "Add new gateway".
 
-**[ÉCRAN — screencast formulaire de configuration]**
+**[ÉCRAN - screencast formulaire de configuration]**
 
 [Montre les champs : Title, Icon, Payment Instructions]
 
 Trois champs à remplir :
 
-1. Title — le nom de ta méthode de paiement. Par exemple "Virement bancaire" ou "Chèque". C'est ce que l'élève verra au checkout.
+1. Title - le nom de ta méthode de paiement. Par exemple "Virement bancaire" ou "Chèque". C'est ce que l'élève verra au checkout.
 
-2. Icon — optionnel. Tu peux uploader une icône pour rendre la méthode plus visuelle.
+2. Icon - optionnel. Tu peux uploader une icône pour rendre la méthode plus visuelle.
 
-3. Payment Instructions — les instructions de paiement. C'est le champ le plus important. Détaille précisément ce que l'élève doit faire : à quel IBAN envoyer le virement, quelle référence indiquer, quel est le délai de traitement. Sois précis — plus tes instructions sont claires, moins tu auras de questions.
+3. Payment Instructions - les instructions de paiement. C'est le champ le plus important. Détaille précisément ce que l'élève doit faire : à quel IBAN envoyer le virement, quelle référence indiquer, quel est le délai de traitement. Sois précis - plus tes instructions sont claires, moins tu auras de questions.
 
-**[ÉCRAN — screencast exemple d'instructions]**
+**[ÉCRAN - screencast exemple d'instructions]**
 
 [Montre un exemple d'instructions rédigées]
 
@@ -927,15 +927,15 @@ BIC : XXXXXXXX
 Référence : ton numéro de commande
 Délai : ton accès sera activé sous 48h après réception du virement."
 
-**[ÉCRAN — screencast gestion commande manuelle]**
+**[ÉCRAN - screencast gestion commande manuelle]**
 
 [Montre une commande en Pending dans Orders]
 
 Quand un élève choisit le paiement manuel, sa commande apparaît en "Pending" dans le gestionnaire de commandes. À toi de vérifier la réception du paiement sur ton compte bancaire, puis de valider manuellement la commande pour donner accès au cours.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
-Le paiement manuel demande un suivi humain — ce n'est pas automatisé. Utilise-le comme complément, pas comme méthode principale. Prochaine leçon : comment migrer de WooCommerce vers le eCommerce natif.
+Le paiement manuel demande un suivi humain - ce n'est pas automatisé. Utilise-le comme complément, pas comme méthode principale. Prochaine leçon : comment migrer de WooCommerce vers le eCommerce natif.
 
 ---
 
@@ -944,14 +944,14 @@ Le paiement manuel demande un suivi humain — ce n'est pas automatisé. Utilise
 - 3 champs : Title, Icon (optionnel), Payment Instructions
 - Instructions claires = moins de questions (IBAN, référence, délai)
 - Commandes en Pending jusqu'à validation manuelle
-- Méthode complémentaire, pas principale — nécessite un suivi humain
+- Méthode complémentaire, pas principale - nécessite un suivi humain
 - Tu peux créer plusieurs méthodes manuelles (virement, chèque, espèces...)
 
 **Mots clés SEO** : TutorLMS paiement manuel, virement bancaire LMS WordPress, paiement hors ligne TutorLMS
 
 ---
 
-### Leçon 8.14 — Migration WooCommerce vers natif
+### Leçon 8.14 : Migration WooCommerce vers natif
 
 **Durée** : 6 min
 **Type** : Vidéo HeyGen
@@ -960,70 +960,70 @@ Le paiement manuel demande un suivi humain — ce n'est pas automatisé. Utilise
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
 Si tu utilisais WooCommerce avec TutorLMS avant la v3, tu as probablement des commandes, des coupons et peut-être des abonnements dans WooCommerce. TutorLMS fournit un outil de migration pour tout transférer vers le eCommerce natif. Mais attention : c'est une opération sensible. Voyons comment la faire proprement.
 
-**[ÉCRAN — slide "Avant de migrer"]**
+**[ÉCRAN - slide "Avant de migrer"]**
 
 Avant toute chose : fais une sauvegarde complète de ta base de données. C'est non négociable. Si quelque chose se passe mal pendant la migration, tu dois pouvoir revenir en arrière. Utilise un plugin de backup comme UpdraftPlus ou fais un export MySQL.
 
-**[ÉCRAN — screencast prérequis]**
+**[ÉCRAN - screencast prérequis]**
 
 [Montre les plugins nécessaires]
 
 Les prérequis :
 - TutorLMS et Tutor LMS Pro installés et actifs
 - L'outil de migration TutorLMS installé
-- WooCommerce toujours actif — ne le désactive pas avant la migration
+- WooCommerce toujours actif - ne le désactive pas avant la migration
 - Si tu as des abonnements : WooCommerce Subscriptions doit aussi être actif
 
-**[ÉCRAN — screencast activation eCommerce natif]**
+**[ÉCRAN - screencast activation eCommerce natif]**
 
 [Navigation vers Settings > Monetization > eCommerce Engine > Native]
 
 Première étape : active le eCommerce natif dans Settings, Monetization, eCommerce Engine, sélectionne "Native". Enregistre.
 
-**[ÉCRAN — screencast outil de migration]**
+**[ÉCRAN - screencast outil de migration]**
 
 [Navigation vers Tutor LMS Pro > Tools > WooCommerce Migration]
 
 Deuxième étape : va dans Tutor LMS Pro, Tools, onglet WooCommerce Migration. Tu as deux options.
 
-**[ÉCRAN — screencast migration automatique]**
+**[ÉCRAN - screencast migration automatique]**
 
 [Montre le bouton "Migrate Now"]
 
-Option 1 : Migration automatique. Clique sur "Migrate Now". TutorLMS transfère tout en une fois — commandes, coupons et abonnements. C'est la méthode la plus rapide si tu veux tout migrer.
+Option 1 : Migration automatique. Clique sur "Migrate Now". TutorLMS transfère tout en une fois - commandes, coupons et abonnements. C'est la méthode la plus rapide si tu veux tout migrer.
 
-**[ÉCRAN — screencast migration personnalisée]**
+**[ÉCRAN - screencast migration personnalisée]**
 
 [Montre les checkboxes de sélection]
 
-Option 2 : Migration personnalisée. Tu coches ce que tu veux migrer — commandes, coupons, abonnements — indépendamment. Utile si tu veux migrer par étapes ou si tu n'as pas besoin de tout transférer.
+Option 2 : Migration personnalisée. Tu coches ce que tu veux migrer - commandes, coupons, abonnements - indépendamment. Utile si tu veux migrer par étapes ou si tu n'as pas besoin de tout transférer.
 
-**[ÉCRAN — screencast résultats de migration]**
+**[ÉCRAN - screencast résultats de migration]**
 
 [Montre l'écran de résultats]
 
 Après la migration, trois résultats possibles :
-- Succès — tout est transféré sans erreur
-- Terminé avec erreurs — la migration est faite mais certains éléments ont échoué
-- Échec — rien n'a été transféré, souvent à cause d'un timeout serveur ou d'un conflit de plugin
+- Succès - tout est transféré sans erreur
+- Terminé avec erreurs - la migration est faite mais certains éléments ont échoué
+- Échec - rien n'a été transféré, souvent à cause d'un timeout serveur ou d'un conflit de plugin
 
 TutorLMS garde un historique des migrations avec le détail : type de données, nombre d'éléments, date.
 
-**[ÉCRAN — screencast vérification]**
+**[ÉCRAN - screencast vérification]**
 
 [Montre la vérification dans Orders et Coupons]
 
 Après migration, vérifie :
-- Les commandes dans Tutor LMS > Orders — compare le nombre avec WooCommerce
+- Les commandes dans Tutor LMS > Orders - compare le nombre avec WooCommerce
 - Les coupons dans Tutor LMS > Coupons
 - Les abonnements dans Tutor LMS > Subscriptions
-- Les accès des élèves — connecte-toi avec un compte test pour vérifier
+- Les accès des élèves - connecte-toi avec un compte test pour vérifier
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Une fois la migration validée et testée, tu peux désactiver WooCommerce. Mais garde-le en réserve quelques semaines au cas où tu découvres un problème. Et rappelle-toi : la sauvegarde de base de données, c'est ton filet de sécurité. Ne lance jamais une migration sans.
 
@@ -1042,7 +1042,7 @@ Une fois la migration validée et testée, tu peux désactiver WooCommerce. Mais
 
 ---
 
-### Leçon 8.15 — Gift Course
+### Leçon 8.15 : Gift Course
 
 **Durée** : 4 min
 **Type** : Vidéo HeyGen
@@ -1051,29 +1051,29 @@ Une fois la migration validée et testée, tu peux désactiver WooCommerce. Mais
 
 ---
 
-**[INTRO — face caméra]**
+**[INTRO - face caméra]**
 
-Offrir un cours en cadeau — c'est une fonctionnalité que peu de LMS proposent, et pourtant c'est un levier de vente puissant. Noël, anniversaires, cadeaux d'entreprise... TutorLMS intègre ça nativement. Voyons comment l'activer et comment ça fonctionne pour l'acheteur et le destinataire.
+Offrir un cours en cadeau - c'est une fonctionnalité que peu de LMS proposent, et pourtant c'est un levier de vente puissant. Noël, anniversaires, cadeaux d'entreprise... TutorLMS intègre ça nativement. Voyons comment l'activer et comment ça fonctionne pour l'acheteur et le destinataire.
 
-**[ÉCRAN — screencast TutorLMS admin]**
+**[ÉCRAN - screencast TutorLMS admin]**
 
 [Navigation vers Tutor LMS > Settings > Course]
 
 Pour activer le gifting, va dans Tutor LMS, Settings, Course. Active l'option "Enable Course Gifting". Enregistre. Un bouton "Gift this Course" apparaît maintenant sur toutes les pages de cours.
 
-**[ÉCRAN — screencast front-end — acheteur]**
+**[ÉCRAN - screencast front-end - acheteur]**
 
 [Montre le bouton "Gift this Course" sur une page cours]
 
 Côté acheteur : sur la page du cours, un bouton "Gift this Course" apparaît à côté du bouton d'achat classique. En cliquant, l'acheteur remplit :
 - Le nom du destinataire
 - Son adresse email
-- Une date et heure de livraison — optionnel, pour programmer l'envoi
-- Un message personnel — optionnel aussi
+- Une date et heure de livraison - optionnel, pour programmer l'envoi
+- Un message personnel - optionnel aussi
 
 Ça fonctionne pour les cours individuels et les bundles. Ensuite, l'acheteur passe au checkout normalement et paie.
 
-**[ÉCRAN — screencast front-end — destinataire]**
+**[ÉCRAN - screencast front-end - destinataire]**
 
 [Montre l'email reçu et le dashboard élève]
 
@@ -1081,19 +1081,19 @@ Côté destinataire : il reçoit un email avec le cadeau. Si le destinataire n'a
 
 Une fois connecté, le cours offert apparaît dans une section dédiée du dashboard. Le destinataire clique sur "Reveal Gift" pour débloquer l'inscription. Le cours passe alors dans sa section "My Courses" classique.
 
-**[ÉCRAN — screencast politique de remboursement]**
+**[ÉCRAN - screencast politique de remboursement]**
 
 [Montre l'info remboursement]
 
 Point important sur les remboursements : l'acheteur peut demander un remboursement uniquement avant que le destinataire ait révélé le cadeau. Une fois que le destinataire a cliqué sur "Reveal Gift", le remboursement n'est plus possible.
 
-**[ÉCRAN — screencast personnalisation emails]**
+**[ÉCRAN - screencast personnalisation emails]**
 
 [Navigation vers Settings > Email]
 
 Tu peux personnaliser les emails de cadeau dans Settings > Email. Deux templates sont modifiables : la confirmation d'achat pour l'acheteur et la notification de livraison pour le destinataire. Ça nécessite l'addon Email activé.
 
-**[TRANSITION — face caméra]**
+**[TRANSITION - face caméra]**
 
 Le gifting, c'est une source de revenus complémentaire qui ne demande aucun effort de maintenance. Active-le et laisse-le travailler. C'est la dernière leçon de contenu de ce module. On termine avec le quiz.
 
@@ -1112,7 +1112,7 @@ Le gifting, c'est une source de revenus complémentaire qui ne demande aucun eff
 
 ---
 
-### Leçon 8.16 — Quiz Module 8
+### Leçon 8.16 : Quiz Module 8
 
 **Durée** : ~5 min (10 questions)
 **Type** : Quiz TutorLMS
@@ -1164,7 +1164,7 @@ Quel est l'avantage principal de Paddle par rapport aux autres passerelles ?
 - C) Paddle agit comme Merchant of Record et gère la TVA automatiquement ✓
 - D) Paddle est plus rapide
 
-**Explication** : Paddle agit comme Merchant of Record — il gère la collecte de TVA, les factures et la conformité fiscale dans chaque pays.
+**Explication** : Paddle agit comme Merchant of Record - il gère la collecte de TVA, les factures et la conformité fiscale dans chaque pays.
 
 ---
 
@@ -1176,7 +1176,7 @@ Que fait l'option "Buy Now" dans les réglages Checkout ?
 - C) Elle envoie un email de relance automatique
 - D) Elle active le paiement en un clic
 
-**Explication** : "Buy Now" supprime l'étape du panier — l'élève va directement au paiement, ce qui réduit l'abandon.
+**Explication** : "Buy Now" supprime l'étape du panier - l'élève va directement au paiement, ce qui réduit l'abandon.
 
 ---
 
@@ -1210,7 +1210,7 @@ Pour un site vendant des formations en France, quel taux de TVA configurer ?
 - A) 5.5%
 - B) 10%
 - C) 20% ✓
-- D) 0% — les formations en ligne sont exonérées
+- D) 0% - les formations en ligne sont exonérées
 
 **Explication** : En France, les formations en ligne sont soumises au taux normal de TVA à 20%.
 
@@ -1240,7 +1240,7 @@ Quelle combinaison de passerelles schoolsWP recommande-t-il pour un site europé
 
 ---
 
-**Fin du Module 8 — eCommerce & Monétisation**
+**Fin du Module 8 - eCommerce & Monétisation**
 
 Résumé du module :
 - Le eCommerce natif TutorLMS (v3+) remplace WooCommerce pour la majorité des cas

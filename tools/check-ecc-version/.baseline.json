@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0-rc.1",
+  "commit": "1e8c7e7",
+  "set_at": "2026-05-24",
+  "set_by": "ECC passe 2 cherry-pick",
+  "ga_target_quarter": "2026-Q3",
+  "comment": "Baseline ECC fixee a la fin de la passe 2. Le watcher detecte la transition rc vers GA pour declencher la passe 3."
+}

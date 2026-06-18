@@ -1,0 +1,20 @@
+{
+  "source": "gsc-mcp inspect_url_enhanced",
+  "page_url": "https://schoolswp.com/avis-sur-linkuma/",
+  "fetch_date": "2026-05-25",
+  "verdict": "NEUTRAL",
+  "coverage_state": "Crawled - currently not indexed",
+  "last_crawled": "2026-05-19 18:30",
+  "page_fetch_state": "SUCCESSFUL",
+  "robots_txt_state": "ALLOWED",
+  "indexing_state": "INDEXING_ALLOWED",
+  "google_canonical": "https://schoolswp.com/avis-sur-linkuma/",
+  "user_canonical": "https://schoolswp.com/avis-sur-linkuma/",
+  "crawled_as": "MOBILE",
+  "referring_urls": [
+    "https://schoolswp.com/auteur/michael-kihl/page/5/",
+    "https://schoolswp.com/de/bewertung-von-linkuma/"
+  ],
+  "rich_results": null,
+  "interpretation": "Page techniquement saine mais Google refuse de l'indexer. Signal qualité/autorité. 2 referring URLs internes uniquement."
+}

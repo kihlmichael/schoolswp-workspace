@@ -1,0 +1,29 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © schoolsWP - Michaël KIHL
+  software: schoolsWP html-to-png
+
+images:
+  - file: slide-00-hero-fr.png
+    url: https://schoolswp.com/linksgarden-avis/
+    title: Avis Linksgarden, la marketplace de netlinking française
+    subject: "Linksgarden, mon avis : la marketplace de netlinking notée 8,5/10"
+    description: "Image à la une de l'avis schoolsWP sur Linksgarden, la marketplace de netlinking française lancée en 2021. Verdict de Michaël KIHL noté 8,5/10 (tarifs dès 10 euros le spot, 100 euros le backlink avec rédaction d'article incluse, catalogue de 6000 spots français sélectionnés, 1 arbre planté tous les 10 liens, et sa limite : peu de sites DA 80+)."
+    alt: "Avis Linksgarden schoolsWP, marketplace de netlinking française, verdict 8,5 sur 10"
+    keywords: [linksgarden, avis linksgarden, netlinking, backlinks seo, achat de liens, marketplace netlinking, schoolsWP]
+
+  - file: slide-00-hero-en.png
+    url: https://schoolswp.com/en/linksgarden-review/
+    title: Linksgarden review, the French netlinking marketplace
+    subject: "Linksgarden, my review: the netlinking marketplace rated 8.5/10"
+    description: "Featured image of the schoolsWP review of Linksgarden, the French netlinking marketplace launched in 2021. Michaël KIHL's verdict rated 8.5/10 (pricing from 10 euros per spot, 100 euros per backlink with article writing included, catalog of 6000 hand-picked French spots, one tree planted per 10 links, and its limit: few DA 80+ sites)."
+    alt: "schoolsWP Linksgarden review, French netlinking marketplace, verdict 8.5 out of 10"
+    keywords: [linksgarden, linksgarden review, netlinking, seo backlinks, buy links, netlinking marketplace, schoolsWP]
+
+  - file: slide-00-hero-de.png
+    url: https://schoolswp.com/de/linksgarden-meinung/
+    title: Linksgarden Meinung, der französische Netlinking-Marktplatz
+    subject: "Linksgarden, meine Meinung: der Netlinking-Marktplatz mit 8,5/10 bewertet"
+    description: "Beitragsbild der schoolsWP-Meinung zu Linksgarden, dem französischen Netlinking-Marktplatz, gestartet 2021. Urteil von Michaël KIHL mit 8,5/10 bewertet (Preise ab 10 Euro pro Spot, 100 Euro pro Backlink inklusive Artikelerstellung, Katalog mit 6000 handverlesenen französischen Spots, 1 Baum pro 10 Links, und seine Grenze: wenige Seiten mit DA 80+)."
+    alt: "schoolsWP Linksgarden Meinung, französischer Netlinking-Marktplatz, Urteil 8,5 von 10"
+    keywords: [linksgarden, linksgarden meinung, netlinking, seo backlinks, links kaufen, netlinking marktplatz, schoolsWP]

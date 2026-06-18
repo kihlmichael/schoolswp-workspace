@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oser augmenter tes tarifs sans perdre tes clients - schoolsWP</title>
+<meta name="description" content="Formation 2 h 15 + 6 livrables pour freelances WordPress et agences solo en service récurrent. Méthode segmentation + scripts + objections. 197 €.">
+<style>
+/* ============================================================
+   Landing page schoolsWP - Oser augmenter tes tarifs
+   Vanilla CSS scopé sous .swp-landing pour intégration Kadence
+   Brand strict : vert #00D400 en accents uniquement
+   ============================================================ */
+
+.swp-landing,
+.swp-landing * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.swp-landing {
+  --green: #00D400;
+  --green-hover: #00B800;
+  --ink: #12111F;
+  --gray: #57556D;
+  --gray-soft: #8a8896;
+  --bg: #F4F6FB;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+  --border-soft: #EFF0F3;
+
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.swp-landing ::selection {
+  background: var(--green);
+  color: #fff;
+}
+
+.swp-landing a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.swp-landing img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.swp-landing button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* ====== Layout ====== */
+
+.swp-landing__header {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.swp-landing__logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.swp-landing__logo span {
+  color: var(--green);
+}
+
+.swp-landing__main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__main {
+    gap: 80px;
+    padding: 0 20px 60px;
+  }
+}
+
+/* ====== Hero ====== */
+
+.swp-landing__hero {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.swp-landing__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+  margin-bottom: 24px;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--green);
+}
+
+.swp-landing__h1 {
+  font-size: clamp(36px, 5.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.swp-landing__subh1 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gray);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  line-height: 1.4;
+}
+
+.swp-landing__lead {
+  font-size: 19px;
+  max-width: 580px;
+  margin: 0 auto 40px;
+  color: var(--ink);
+}
+
+.swp-landing__cta-primary {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 32px;
+  border-radius: 10px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.swp-landing__cta-primary:hover {
+  background: var(--green-hover);
+}
+
+.swp-landing__cta-primary:active {
+  transform: scale(0.98);
+}
+
+.swp-landing__hero-visual {
+  margin-top: 64px;
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.swp-landing__hero-visual__placeholder {
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 212, 0, 0.06), transparent 40%),
+    var(--bg);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+
+.swp-landing__hero-visual__placeholder::before {
+  content: "Visuel hero à insérer";
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-soft);
+  font-weight: 600;
+}
+
+.swp-landing__hero-visual__placeholder::after {
+  content: "Mockup composite : calculateur Google Sheets + fiche 7 objections imprimée + table de travail";
+  font-size: 14px;
+  color: var(--gray);
+  text-align: center;
+  max-width: 480px;
+}
+
+/* ====== Problème ====== */
+
+.swp-landing__h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+.swp-landing__h2--centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swp-landing__prose {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.swp-landing__prose p {
+  margin-bottom: 24px;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.swp-landing__prose p:last-child {
+  margin-bottom: 0;
+}
+
+.swp-landing__pullquote {
+  margin: 48px 0;
+  padding: 8px 0 8px 28px;
+  border-left: 4px solid var(--green);
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* ====== Pour qui ====== */
+
+.swp-landing__criteria {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__criteria {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.swp-landing__criteria-block h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-soft);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.swp-landing__criteria-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.swp-landing__criteria-list li {
+  padding-left: 32px;
+  position: relative;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.swp-landing__criteria-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.swp-landing__criteria-list--check li::before {
+  content: "✓";
+  background: var(--green);
+  color: #fff;
+}
+
+.swp-landing__criteria-list--cross li {
+  color: var(--gray);
+}
+
+.swp-landing__criteria-list--cross li::before {
+  content: "✗";
+  background: transparent;
+  color: var(--gray-soft);
+  border: 1.5px solid var(--gray-soft);
+  font-size: 11px;
+}
+
+/* ====== Programme - Timeline modules ====== */
+
+.swp-landing__timeline {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+}
+
+.swp-landing__timeline::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 32px;
+  bottom: 32px;
+  width: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__timeline::before {
+    left: 18px;
+  }
+}
+
+.swp-landing__module {
+  display: flex;
+  gap: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__module {
+    gap: 20px;
+  }
+}
+
+.swp-landing__module-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__module-num {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+}
+
+.swp-landing__module--featured .swp-landing__module-num {
+  background: var(--bg);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.swp-landing__module-body {
+  padding-top: 6px;
+  flex: 1;
+}
+
+.swp-landing__module-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+}
+
+.swp-landing__module-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.swp-landing__module-duration {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-soft);
+}
+
+.swp-landing__module-pitch {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.swp-landing__module-deliv {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--gray);
+  display: block;
+}
+
+/* ====== Livrables ====== */
+
+.swp-landing__deliv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__deliv-card {
+    padding: 28px;
+  }
+}
+
+.swp-landing__deliv-card > p {
+  margin-bottom: 28px;
+}
+
+.swp-landing__deliv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.swp-landing__deliv-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.swp-landing__deliv-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 2px;
+}
+
+/* ====== Résultats ====== */
+
+.swp-landing__roi {
+  max-width: 800px;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__roi {
+    grid-template-columns: 1fr;
+  }
+}
+
+.swp-landing__roi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: left;
+}
+
+.swp-landing__roi-card--feature {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.swp-landing__roi-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-soft);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.swp-landing__roi-card--feature .swp-landing__roi-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.swp-landing__roi-amount {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.swp-landing__roi-amount span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-soft);
+}
+
+.swp-landing__roi-base {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  min-height: 40px;
+}
+
+.swp-landing__roi-card--feature .swp-landing__roi-base {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.swp-landing__roi-pill {
+  display: inline-block;
+  background: rgba(0, 212, 0, 0.1);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.swp-landing__roi-card--feature .swp-landing__roi-pill {
+  background: var(--green);
+  color: var(--ink);
+}
+
+.swp-landing__roi-note {
+  max-width: 600px;
+  margin: 28px auto 0;
+  font-size: 14px;
+  color: var(--gray);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ====== Qui je suis ====== */
+
+.swp-landing__bio {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__bio {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+}
+
+.swp-landing__bio-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--gray-soft);
+  font-weight: 600;
+  text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__bio-photo {
+    margin: 0 auto;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.swp-landing__bio h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* ====== Pricing ====== */
+
+.swp-landing__pricing-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.swp-landing__pricing-intro h2 {
+  margin-bottom: 16px;
+}
+
+.swp-landing__pricing-intro p {
+  color: var(--gray);
+  font-size: 18px;
+}
+
+.swp-landing__pricing-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.swp-landing__pricing-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.swp-landing__pricing-card--main {
+  border: 2px solid var(--green);
+  position: relative;
+}
+
+.swp-landing__pricing-card--main::before {
+  content: "Formation complète";
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.swp-landing__pricing-card--secondary {
+  border: 1px solid var(--border);
+}
+
+.swp-landing__pricing-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.swp-landing__pricing-amount {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.swp-landing__pricing-card--secondary .swp-landing__pricing-amount {
+  font-size: 32px;
+  color: var(--gray);
+}
+
+.swp-landing__pricing-card--secondary .swp-landing__pricing-amount span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.swp-landing__pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.swp-landing__pricing-features li {
+  padding-left: 28px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.swp-landing__pricing-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.swp-landing__pricing-cta {
+  display: block;
+  text-align: center;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 16px 24px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.swp-landing__pricing-cta:hover {
+  background: var(--green-hover);
+}
+
+.swp-landing__pricing-cta--secondary {
+  background: var(--ink);
+}
+
+.swp-landing__pricing-cta--secondary:hover {
+  background: #000;
+}
+
+.swp-landing__pricing-desc {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 20px;
+  line-height: 1.55;
+}
+
+/* ====== Garantie ====== */
+
+.swp-landing__guarantee {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__guarantee {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.swp-landing__guarantee-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 212, 0, 0.1);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.swp-landing__guarantee h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.swp-landing__guarantee p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+/* ====== FAQ ====== */
+
+.swp-landing__faq {
+  max-width: 720px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+
+.swp-landing__faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+
+.swp-landing__faq details > summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  transition: color 0.15s ease;
+}
+
+.swp-landing__faq details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.swp-landing__faq details > summary::after {
+  content: "+";
+  font-weight: 400;
+  color: var(--green);
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.swp-landing__faq details[open] > summary::after {
+  content: "−";
+}
+
+.swp-landing__faq details[open] > summary {
+  color: var(--green);
+}
+
+.swp-landing__faq-answer {
+  margin-top: 16px;
+  font-size: 17px;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+/* ====== CTA final pleine largeur ====== */
+
+.swp-landing__final-cta {
+  background: var(--green);
+  color: #fff;
+  padding: 96px 24px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.swp-landing__final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.swp-landing__final-cta h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.swp-landing__final-cta p {
+  font-size: 20px;
+  line-height: 1.55;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swp-landing__final-cta__btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 700;
+  padding: 20px 40px;
+  border-radius: 10px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.swp-landing__final-cta__btn:hover {
+  background: #f3f3f3;
+}
+
+.swp-landing__final-cta__btn:active {
+  transform: scale(0.98);
+}
+
+.swp-landing__final-cta__email {
+  display: block;
+  margin-top: 24px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.swp-landing__final-cta__email a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ====== Footer ====== */
+
+.swp-landing__footer {
+  background: var(--ink);
+  color: #8a8896;
+  padding: 40px 24px;
+  font-size: 14px;
+}
+
+.swp-landing__footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.swp-landing__footer-logo {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.swp-landing__footer-logo span {
+  color: var(--green);
+}
+
+.swp-landing__footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.swp-landing__footer-links a {
+  transition: color 0.15s ease;
+}
+
+.swp-landing__footer-links a:hover {
+  color: #fff;
+}
+
+/* ====== Sticky CTA ====== */
+
+.swp-landing__sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(18, 17, 31, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 24px;
+  z-index: 1000;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.swp-landing__sticky--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.swp-landing__sticky-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.swp-landing__sticky-text {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .swp-landing__sticky-text {
+    display: none;
+  }
+  .swp-landing__sticky-inner {
+    justify-content: center;
+  }
+}
+
+.swp-landing__sticky-btn {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.swp-landing__sticky-btn:hover {
+  background: var(--green-hover);
+}
+</style>
+</head>
+<body>
+
+<div class="swp-landing">
+
+  <!-- HEADER -->
+  <header class="swp-landing__header">
+    <a href="#" class="swp-landing__logo">schools<span>WP</span></a>
+  </header>
+
+  <main class="swp-landing__main">
+
+    <!-- 1. HERO -->
+    <section class="swp-landing__hero" id="hero">
+      <span class="swp-landing__eyebrow">Formation 2 h 15 + 6 livrables</span>
+      <h1 class="swp-landing__h1">Augmente tes tarifs sans perdre tes clients.</h1>
+      <p class="swp-landing__subh1">Et sans avoir mal au ventre la veille de l'envoi.</p>
+      <p class="swp-landing__lead">La méthode complète pour les freelances WordPress et agences solo qui font de la maintenance, du care plan ou de l'accompagnement récurrent.</p>
+      <a href="#pricing" class="swp-landing__cta-primary">J'accède à la formation : 197 €</a>
+      <div class="swp-landing__hero-visual">
+        <div class="swp-landing__hero-visual__placeholder"></div>
+      </div>
+    </section>
+
+    <!-- 2. PROBLÈME -->
+    <section>
+      <h2 class="swp-landing__h2">Tu sais que tu devrais augmenter. Mais tu n'y arrives pas.</h2>
+      <div class="swp-landing__prose">
+        <p>Ton hébergement a augmenté. Tes plugins Pro aussi. Ton temps facturé par client n'a jamais été aussi élevé. Pendant ce temps, ton tarif n'a pas bougé depuis 2, 3, peut-être 4 ans.</p>
+        <p>Tu fais le calcul de temps en temps. Tu te dis "je devrais passer à 49 €", ou "il serait temps de monter à 99 €". Et puis tu repenses à Marc, ton client depuis 2021, qui te paie ponctuellement et qui ne demande jamais rien. Tu te dis "lui, je ne peux pas". Tu repenses à Sophie, qui t'a recommandé 3 fois cette année. "Elle non plus". Et finalement, tu ne dis rien à personne.</p>
+        <p>Résultat : tu travailles plus, tu gagnes pareil, et tu accumules la frustration en silence.</p>
+        <blockquote class="swp-landing__pullquote">Ce qui te bloque, ce n'est pas le manque de courage. C'est le manque de méthode.</blockquote>
+      </div>
+    </section>
+
+    <!-- 3. POUR QUI -->
+    <section>
+      <h2 class="swp-landing__h2">Cette formation est pour toi si...</h2>
+      <div class="swp-landing__prose">
+        <p>J'ai construit cette méthode pour les indépendants qui ont bâti une activité autour de la récurrence. Maintenance WordPress, care plan, accompagnement WooCommerce, suivi SEO mensuel, hébergement managé. Si ton modèle économique repose sur des clients qui te paient chaque mois ou chaque trimestre, tu es exactement là où il faut.</p>
+        <div class="swp-landing__criteria">
+          <div class="swp-landing__criteria-block">
+            <h3>C'est pour toi</h3>
+            <ul class="swp-landing__criteria-list swp-landing__criteria-list--check">
+              <li>Tu fais de la maintenance ou du care plan WordPress</li>
+              <li>Tu accompagnes des clients en récurrent (10 ou 1 500 €/mois)</li>
+              <li>Tu gères entre 5 et 80 clients récurrents</li>
+              <li>Tu n'as pas revu tes tarifs depuis au moins 18 mois</li>
+              <li>Tu redoutes la conversation, pas la décision</li>
+            </ul>
+          </div>
+          <div class="swp-landing__criteria-block">
+            <h3>Passe ton chemin si</h3>
+            <ul class="swp-landing__criteria-list swp-landing__criteria-list--cross">
+              <li>Tu cherches une formule magique sans effort</li>
+              <li>Tu fais uniquement du one-shot sans suivi client</li>
+              <li>Tu veux juste 3 templates copier-coller</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROGRAMME - TIMELINE 7 MODULES -->
+    <section>
+      <h2 class="swp-landing__h2 swp-landing__h2--centered">Le programme. 6 modules. 22 leçons. 2 h 15.</h2>
+      <p class="swp-landing__prose" style="text-align:center; color: var(--gray); margin: 0 auto;">Chaque leçon dure 4 à 8 minutes. Tu peux tout faire en 1 après-midi, ou étaler sur 1 semaine.</p>
+
+      <div class="swp-landing__timeline">
+
+        <div class="swp-landing__module swp-landing__module--featured">
+          <div class="swp-landing__module-num">0</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Pourquoi tu n'oses pas (et pourquoi c'est faux)</h3>
+              <span class="swp-landing__module-duration">12 min : 3 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">Les 3 peurs universelles (perdre, paraître cupide, conversation qui tourne mal) et le coût caché de ne pas augmenter, chiffré sur 3 ans.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : un déclic mental et un calculateur Excel.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">1</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Segmenter ton portefeuille client</h3>
+              <span class="swp-landing__module-duration">25 min : 4 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">Les 3 profils clients (nouveaux, récents, fidèles) et comment les classer. Parce qu'envoyer le même email à tout le monde, c'est froisser les uns et te compliquer la vie avec les autres.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : un template Google Sheets prêt à remplir.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">2</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Choisir le bon canal et le bon moment</h3>
+              <span class="swp-landing__module-duration">20 min : 3 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">Email ou appel ? Quel mois ? Quel espacement entre deux hausses ? Les bons timings, les pièges à éviter, et la phrase qui change tout en début d'appel.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : une fiche grille décision 1 page.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">3</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Les 3 scripts d'annonce, mot pour mot</h3>
+              <span class="swp-landing__module-duration">30 min : 5 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">Augmentation, réorganisation de forfait, tarif maintenu. Trois scénarios, trois scripts validés. Plus l'email récap post-appel et la relance J+7.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : 3 scripts PDF imprimables et 2 emails types.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">4</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Tenir le choc : 7 objections + 5 erreurs</h3>
+              <span class="swp-landing__module-duration">35 min : 6 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">"C'est trop cher", "Je vais résilier", "Vous augmentez tous les ans ?" Sept objections fréquentes, sept réponses qui ne te font pas plier. Et la carte "résiliation" enfin décodée.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : la fiche recto-verso à coller à côté du téléphone.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">5</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Passer à l'action cette semaine</h3>
+              <span class="swp-landing__module-duration">15 min : 3 leçons</span>
+            </div>
+            <p class="swp-landing__module-pitch">L'action n°1 à faire aujourd'hui (30 minutes max). Le planning d'annonces sur 6 semaines. Et le récap des 5 réflexes à garder en tête.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : un template planning prêt à dupliquer.</span>
+          </div>
+        </div>
+
+        <div class="swp-landing__module">
+          <div class="swp-landing__module-num">B</div>
+          <div class="swp-landing__module-body">
+            <div class="swp-landing__module-head">
+              <h3 class="swp-landing__module-title">Bonus : cas pratiques + Q&amp;R</h3>
+              <span class="swp-landing__module-duration">30 à 60 min</span>
+            </div>
+            <p class="swp-landing__module-pitch">Quatre cas tordus dont on me parle souvent : client en plein lancement, menace de résiliation, deux associés en désaccord, restructuration complète d'offres. Plus le replay des Q&amp;R live.</p>
+            <span class="swp-landing__module-deliv">Tu repars avec : des fiches synthèse cas par cas.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. LIVRABLES -->
+    <section>
+      <div class="swp-landing__deliv-card">
+        <h2 class="swp-landing__h2">Ce que tu repars avec, dès le lendemain.</h2>
+        <p>Tu n'auras pas à improviser. Six outils concrets pour appliquer la méthode sans réfléchir à la mise en page.</p>
+        <ul class="swp-landing__deliv-list">
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">XL</span>
+            <span><strong>Le calculateur coût caché 3 ans.</strong> Un Google Sheets pré-rempli qui te montre, en chiffres, combien tu laisses sur la table en ne bougeant pas tes tarifs.</span>
+          </li>
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">CL</span>
+            <span><strong>Le template segmentation portefeuille.</strong> Une feuille Sheets avec compteurs automatiques pour classer tes clients en 3 profils et décider leur sort en 30 minutes.</span>
+          </li>
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">FT</span>
+            <span><strong>La grille décision canal + timing.</strong> Une page PDF imprimable avec les 3 bons moments, les 3 pièges à éviter, et la checklist pré-appel.</span>
+          </li>
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">SC</span>
+            <span><strong>Le kit 3 scripts d'annonce.</strong> Trois PDF imprimables (un par scénario) plus l'email récap post-appel et l'email relance J+7. Tu n'écris plus rien depuis zéro.</span>
+          </li>
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">OB</span>
+            <span><strong>La fiche 7 objections recto-verso.</strong> À côté de ton téléphone pendant tes appels. Sept objections fréquentes, sept réponses mot pour mot, plus les 5 erreurs à ne jamais faire.</span>
+          </li>
+          <li class="swp-landing__deliv-item">
+            <span class="swp-landing__deliv-icon">PL</span>
+            <span><strong>Le template planning 6 semaines.</strong> Sheets avec frise pré-remplie, compteurs par statut, et instructions pour porter vers Notion si tu préfères.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. RÉSULTATS CHIFFRÉS -->
+    <section>
+      <h2 class="swp-landing__h2 swp-landing__h2--centered">Combien ça te rapporte concrètement.</h2>
+      <div class="swp-landing__roi">
+        <div class="swp-landing__roi-card">
+          <div class="swp-landing__roi-label">Freelance solo</div>
+          <div class="swp-landing__roi-amount">+ 2 400 € <span>/ an</span></div>
+          <p class="swp-landing__roi-base">20 clients à 39 €/mois, hausse de 10 €.</p>
+          <span class="swp-landing__roi-pill">ROI : 1 117 %</span>
+        </div>
+        <div class="swp-landing__roi-card swp-landing__roi-card--feature">
+          <div class="swp-landing__roi-label">Agence solo haut de gamme</div>
+          <div class="swp-landing__roi-amount">+ 4 800 € <span>/ an</span></div>
+          <p class="swp-landing__roi-base">8 clients à 350 €/mois, hausse de 50 €.</p>
+          <span class="swp-landing__roi-pill">ROI : 2 336 %</span>
+        </div>
+        <div class="swp-landing__roi-card">
+          <div class="swp-landing__roi-label">Mix volume + premium</div>
+          <div class="swp-landing__roi-amount">+ 6 200 € <span>/ an</span></div>
+          <p class="swp-landing__roi-base">35 clients, hausse pondérée selon profils.</p>
+          <span class="swp-landing__roi-pill">ROI : 3 047 %</span>
+        </div>
+      </div>
+      <p class="swp-landing__roi-note">Ces chiffres supposent zéro client perdu. Dans la réalité, tu peux perdre 1 à 2 clients par dizaine. Tu restes très largement gagnant. Le module 0 fait ce calcul honnête avec toi.</p>
+    </section>
+
+    <!-- 7. QUI JE SUIS -->
+    <section>
+      <div class="swp-landing__bio">
+        <div class="swp-landing__bio-photo">Photo Michael KIHL à insérer</div>
+        <div>
+          <h3>Salut, je suis Michael KIHL.</h3>
+          <div class="swp-landing__prose" style="margin: 0; max-width: 100%;">
+            <p>Je fais du WordPress depuis 12 ans. Aujourd'hui je gère schoolsWP, où je teste, je décortique et je partage tout ce qui marche (et ce qui ne marche pas) pour les freelances et les agences solo.</p>
+            <p>J'ai augmenté mes tarifs 4 fois en 10 ans. Les 2 premières fois, j'ai mal géré. J'ai perdu des clients que j'aurais pu garder. J'ai eu mal au ventre pendant 3 semaines à chaque fois. La 3e fois, j'ai construit une méthode. La 4e, je l'ai affinée. Aujourd'hui, je la partage telle quelle dans cette formation.</p>
+            <p>Cette formation, c'est la version que j'aurais voulu acheter il y a 8 ans pour m'éviter mes erreurs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PRICING -->
+    <section id="pricing">
+      <div class="swp-landing__pricing-intro">
+        <h2 class="swp-landing__h2 swp-landing__h2--centered" style="margin-bottom: 16px;">Un prix unique. Pas d'abonnement. Accès à vie.</h2>
+        <p>Tu choisis aujourd'hui, tu utilises pour toujours.</p>
+      </div>
+
+      <div class="swp-landing__pricing-grid">
+        <div class="swp-landing__pricing-card swp-landing__pricing-card--main">
+          <div class="swp-landing__pricing-name">Formation complète</div>
+          <div class="swp-landing__pricing-amount">197 €</div>
+          <ul class="swp-landing__pricing-features">
+            <li>6 modules vidéo (2 h 15)</li>
+            <li>Module bonus + Q&amp;R live à venir</li>
+            <li>6 livrables (Sheets et PDF)</li>
+            <li>Accès à vie et mises à jour gratuites</li>
+            <li>Garantie 14 jours satisfait ou remboursé</li>
+          </ul>
+          <a href="#" class="swp-landing__pricing-cta">J'accède à la formation : 197 €</a>
+        </div>
+
+        <div class="swp-landing__pricing-card swp-landing__pricing-card--secondary">
+          <div class="swp-landing__pricing-name">Open office 30 min</div>
+          <div class="swp-landing__pricing-amount"><span>+</span> 97 €</div>
+          <p class="swp-landing__pricing-desc">Un appel visio avec moi (30 min) pour qu'on regarde ton portefeuille ensemble et qu'on construise ton plan d'action concret. À ajouter à ta commande.</p>
+          <a href="#" class="swp-landing__pricing-cta swp-landing__pricing-cta--secondary">Ajouter à ma commande : 97 €</a>
+        </div>
+      </div>
+
+      <div class="swp-landing__guarantee">
+        <div class="swp-landing__guarantee-icon">✓</div>
+        <div>
+          <h4>Garantie 14 jours. Sans condition.</h4>
+          <p>Tu suis la formation. Tu utilises les livrables. Si dans les 14 jours tu estimes que ça ne t'apporte rien, tu m'écris à michaelkihlpro@gmail.com, et je te rembourse intégralement. Sans question. Sans formulaire à 12 pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section>
+      <h2 class="swp-landing__h2 swp-landing__h2--centered">Les questions qu'on me pose le plus souvent.</h2>
+      <div class="swp-landing__faq">
+        <details open>
+          <summary>Je viens de démarrer mon activité, c'est pour moi ?</summary>
+          <p class="swp-landing__faq-answer">Si tu as déjà 5 à 10 clients récurrents, oui. Si tu en es à 0 ou 1, cette formation t'aidera à fixer ton premier tarif correctement, mais le ROI immédiat sera plus faible.</p>
+        </details>
+        <details>
+          <summary>Je ne fais que du one-shot, pas du récurrent.</summary>
+          <p class="swp-landing__faq-answer">La méthode "augmentation" pure n'est pas adaptée. Mais le module sur les objections est valable pour tout devis. À toi de voir.</p>
+        </details>
+        <details>
+          <summary>Combien de temps avant de voir des résultats ?</summary>
+          <p class="swp-landing__faq-answer">L'action n°1 (mettre à jour tes tarifs pour les nouveaux clients) se fait en 30 minutes. Le premier euro de hausse rentre dès ta prochaine signature. Pour les clients existants, tu vois les résultats sur 6 semaines.</p>
+        </details>
+        <details>
+          <summary>Et si je perds des clients ?</summary>
+          <p class="swp-landing__faq-answer">Tu vas peut-être en perdre 1 ou 2 sur 10 à 20. Le calculateur Excel du module 0 fait le calcul honnête avec toi : tu es presque toujours gagnant, même avec 15 à 25 % de perte. Les clients qui partent à la première hausse sont rarement tes meilleurs.</p>
+        </details>
+        <details>
+          <summary>Les scripts sont en français uniquement ?</summary>
+          <p class="swp-landing__faq-answer">Oui. Pour l'instant. Les exemples sont calibrés freelance WordPress français et belge francophone.</p>
+        </details>
+        <details>
+          <summary>C'est compatible avec mon contrat type existant ?</summary>
+          <p class="swp-landing__faq-answer">Oui. La méthode te dit comment annoncer, pas comment contracter. Tu gardes ton contrat actuel et tu ajoutes un simple avenant.</p>
+        </details>
+        <details>
+          <summary>Je peux acheter pour mon équipe ?</summary>
+          <p class="swp-landing__faq-answer">Pour 2 à 3 personnes, contacte-moi directement par mail, je te fais un tarif équipe.</p>
+        </details>
+        <details>
+          <summary>Tu acceptes CB, virement, SEPA ?</summary>
+          <p class="swp-landing__faq-answer">Oui pour CB et SEPA via FluentCart. Virement sur demande.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 10. FINAL CTA PLEINE LARGEUR -->
+  <section class="swp-landing__final-cta">
+    <div class="swp-landing__final-cta__inner">
+      <h2>Tu veux y aller ?</h2>
+      <p>Le pire scénario, c'est de fermer cette page et de continuer à facturer le tarif d'il y a 3 ans pendant encore 12 mois. Le meilleur scénario, c'est que tu termines la formation cet après-midi, et que tu envoies ton premier message de prise de contact ce soir.</p>
+      <a href="#pricing" class="swp-landing__final-cta__btn">Je démarre : 197 €</a>
+      <span class="swp-landing__final-cta__email">Une question avant d'acheter ? Écris-moi : <a href="mailto:michaelkihlpro@gmail.com">michaelkihlpro@gmail.com</a></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="swp-landing__footer">
+    <div class="swp-landing__footer-inner">
+      <div class="swp-landing__footer-logo">schools<span>WP</span></div>
+      <div>© 2026 schoolsWP, édité par Michael KIHL. Tous droits réservés.</div>
+      <div class="swp-landing__footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="swp-landing__sticky" id="sticky-cta">
+    <div class="swp-landing__sticky-inner">
+      <span class="swp-landing__sticky-text">Augmente tes tarifs sans perdre tes clients.</span>
+      <a href="#pricing" class="swp-landing__sticky-btn">Rejoindre la formation : 197 €</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Sticky CTA bar : visible après scroll au-delà du hero
+(function() {
+  var hero = document.getElementById('hero');
+  var sticky = document.getElementById('sticky-cta');
+  if (!hero || !sticky) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        sticky.classList.add('swp-landing__sticky--visible');
+      } else {
+        sticky.classList.remove('swp-landing__sticky--visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(hero);
+
+  // Accordéon FAQ : ferme les autres quand on en ouvre un
+  var faqDetails = document.querySelectorAll('.swp-landing__faq details');
+  faqDetails.forEach(function(detail) {
+    detail.addEventListener('toggle', function() {
+      if (detail.open) {
+        faqDetails.forEach(function(other) {
+          if (other !== detail) other.open = false;
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

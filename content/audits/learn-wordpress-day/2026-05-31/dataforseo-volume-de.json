@@ -1,0 +1,827 @@
+{
+  "version": "0.1.20260525",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.1940 sec.",
+  "cost": 0.075,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "05312140-7577-0367-0000-7dc55cb3b619",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "3.0555 sec.",
+      "cost": 0.075,
+      "result_count": 12,
+      "path": [
+        "v3",
+        "keywords_data",
+        "google_ads",
+        "search_volume",
+        "live"
+      ],
+      "data": {
+        "api": "keywords_data",
+        "function": "search_volume",
+        "se": "google_ads",
+        "keywords": [
+          "wordpress an einem tag lernen",
+          "wordpress lernen an einem tag",
+          "wordpress lernen",
+          "wordpress lernen kostenlos",
+          "wordpress grundlagen",
+          "wordpress schulung",
+          "wordpress für anfänger",
+          "wordpress handbuch",
+          "wordpress tutorial",
+          "wordpress tutorial deutsch",
+          "wordpresskurs",
+          "wordpress seminar"
+        ],
+        "location_name": "Germany",
+        "language_name": "German"
+      },
+      "result": [
+        {
+          "keyword": "wordpress an einem tag lernen",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": null,
+          "competition_index": null,
+          "search_volume": null,
+          "low_top_of_page_bid": null,
+          "high_top_of_page_bid": null,
+          "cpc": null,
+          "monthly_searches": null
+        },
+        {
+          "keyword": "wordpress lernen an einem tag",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": null,
+          "competition_index": null,
+          "search_volume": null,
+          "low_top_of_page_bid": null,
+          "high_top_of_page_bid": null,
+          "cpc": null,
+          "monthly_searches": null
+        },
+        {
+          "keyword": "wordpress lernen",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 59,
+          "search_volume": 260,
+          "low_top_of_page_bid": 1.09,
+          "high_top_of_page_bid": 2.81,
+          "cpc": 2.9,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 260
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 210
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 260
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 170
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 590
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 320
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress lernen kostenlos",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "HIGH",
+          "competition_index": 73,
+          "search_volume": 40,
+          "low_top_of_page_bid": 0.39,
+          "high_top_of_page_bid": 2.38,
+          "cpc": 2.16,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 20
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 30
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 30
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 20
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 10
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 40
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress grundlagen",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "HIGH",
+          "competition_index": 71,
+          "search_volume": 40,
+          "low_top_of_page_bid": 0.84,
+          "high_top_of_page_bid": 2.5,
+          "cpc": 2.75,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 10
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 30
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 40
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 40
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 20
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 40
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 70
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress schulung",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 63,
+          "search_volume": 390,
+          "low_top_of_page_bid": 1.39,
+          "high_top_of_page_bid": 4.24,
+          "cpc": 4.34,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 170
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 260
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 390
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 320
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 320
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 320
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 590
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress für anfänger",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 64,
+          "search_volume": 140,
+          "low_top_of_page_bid": 1.06,
+          "high_top_of_page_bid": 4.01,
+          "cpc": 2.06,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 70
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 90
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 90
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 110
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 140
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 210
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress handbuch",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "HIGH",
+          "competition_index": 100,
+          "search_volume": 50,
+          "low_top_of_page_bid": 0.42,
+          "high_top_of_page_bid": 1.25,
+          "cpc": 0.98,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 40
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 40
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 50
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 40
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 40
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 40
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 30
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 50
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress tutorial",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 41,
+          "search_volume": 720,
+          "low_top_of_page_bid": 0.42,
+          "high_top_of_page_bid": 2.39,
+          "cpc": 1.97,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 720
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 590
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 480
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 720
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 590
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 720
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 1300
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 480
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 590
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 590
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 880
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress tutorial deutsch",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 49,
+          "search_volume": 110,
+          "low_top_of_page_bid": 0.37,
+          "high_top_of_page_bid": 2.64,
+          "cpc": 1.91,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 110
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 110
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 140
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 110
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 90
+            }
+          ]
+        },
+        {
+          "keyword": "wordpresskurs",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "HIGH",
+          "competition_index": 74,
+          "search_volume": 320,
+          "low_top_of_page_bid": 1.15,
+          "high_top_of_page_bid": 3.72,
+          "cpc": 3.65,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 170
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 210
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 260
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 170
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 170
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 170
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 720
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 210
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 320
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 260
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 480
+            }
+          ]
+        },
+        {
+          "keyword": "wordpress seminar",
+          "spell": null,
+          "location_code": 2276,
+          "language_code": "de",
+          "search_partners": false,
+          "competition": "MEDIUM",
+          "competition_index": 47,
+          "search_volume": 70,
+          "low_top_of_page_bid": 1.34,
+          "high_top_of_page_bid": 5.67,
+          "cpc": 5.32,
+          "monthly_searches": [
+            {
+              "year": 2026,
+              "month": 4,
+              "search_volume": 40
+            },
+            {
+              "year": 2026,
+              "month": 3,
+              "search_volume": 70
+            },
+            {
+              "year": 2026,
+              "month": 2,
+              "search_volume": 90
+            },
+            {
+              "year": 2026,
+              "month": 1,
+              "search_volume": 90
+            },
+            {
+              "year": 2025,
+              "month": 12,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 11,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 10,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 9,
+              "search_volume": 50
+            },
+            {
+              "year": 2025,
+              "month": 8,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 7,
+              "search_volume": 70
+            },
+            {
+              "year": 2025,
+              "month": 6,
+              "search_volume": 110
+            },
+            {
+              "year": 2025,
+              "month": 5,
+              "search_volume": 170
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+defaults:
+  author: Michaël KIHL
+  copyright: © 2026 schoolsWP - Michaël KIHL
+  url: https://schoolswp.com/de/tablepress-3-3-wordpress-update/
+  software: schoolsWP html-to-png pipeline
+
+images:
+  - file: slide-00-hero-de.png
+    title: "TablePress 3.3: das große Update für WordPress-Tabellen"
+    subject: "TablePress 3.3 - feste Symbolleiste, Tastaturkürzel und WordPress 7.0. Cover des schoolsWP-Artikels."
+    description: "Visuelle Cover des schoolsWP-Artikels über das große TablePress-3.3-Update: feste Symbolleiste auf dem Bearbeitungsbildschirm, Schnellnavigation per Tastaturkürzel, Vorbereitung auf WordPress 7.0 und Übersetzungen auf Abruf."
+    alt: "TablePress 3.3 - das große WordPress-Update: feste Symbolleiste, Tastaturkürzel, WordPress-7.0-Bereitschaft und Übersetzungen auf Abruf. schoolsWP Cover."
+    keywords:
+      - TablePress 3.3
+      - TablePress Update
+      - TablePress WordPress
+      - WordPress Tabellen
+      - feste Symbolleiste
+      - Tastaturkürzel
+      - WordPress 7.0
+      - TablePress Plugin
+      - schoolsWP
+      - Michael KIHL

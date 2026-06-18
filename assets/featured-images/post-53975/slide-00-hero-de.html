@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 10 Uebersetzungs-Plugins WordPress - Hero DE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F5F7;
+      --card-bg: #FFFFFF;
+      --green: #00D400;
+      --green-soft: #D4F7D4;
+      --black: #0F1419;
+      --grey-text: #5A6470;
+      --line: #D8DCE3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1080px 1fr;
+      align-items: center;
+      padding: 0 110px;
+      gap: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text-block { display: flex; flex-direction: column; gap: 36px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      align-self: flex-start;
+      padding: 12px 22px 12px 18px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--line);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .pill .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(0,212,0,0.18);
+    }
+    .pill .sep { color: var(--line); font-weight: 400; }
+
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 122px;
+      line-height: 0.97;
+      letter-spacing: -4px;
+      color: var(--black);
+    }
+    .title span { display: block; }
+    .title em { font-style: normal; color: var(--green); }
+
+    .baseline {
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--grey-text);
+      line-height: 1.4;
+      max-width: 940px;
+    }
+
+    .signature {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.3px;
+      margin-top: 16px;
+    }
+    .signature .sep { color: var(--line); margin: 0 14px; }
+    .signature .schools { color: var(--black); }
+    .signature .wp { color: var(--green); }
+
+    .visual {
+      width: 620px;
+      height: 720px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 32px 70px -20px rgba(15, 20, 25, 0.18), 0 4px 12px -4px rgba(15, 20, 25, 0.06);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--green) 35%, transparent 35%, transparent 100%);
+    }
+
+    .visual-inner {
+      padding: 64px 56px 52px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
+    }
+
+    .v-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+    }
+    .v-header .icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+    }
+    .v-header .icon-circle svg { display: block; }
+
+    .rating-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0 2px;
+    }
+    .rating-score {
+      font-weight: 900;
+      font-size: 118px;
+      line-height: 1;
+      letter-spacing: -4px;
+      color: var(--green);
+    }
+    .rating-score .unit {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--grey-text);
+      letter-spacing: 0;
+    }
+    .rating-sub {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+    }
+
+    .stats { display: flex; flex-direction: column; gap: 10px; width: 100%; flex: 1; justify-content: center; }
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 13px 4px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 21px;
+    }
+    .stat:last-child { border-bottom: none; }
+    .stat-key { color: var(--grey-text); font-weight: 500; }
+    .stat-val { color: var(--black); font-weight: 800; }
+
+    .visual-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--grey-text);
+      margin-top: 2px;
+    }
+    .visual-footer .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="text-block">
+      <div class="pill">
+        <span class="dot"></span>
+        <span>WordPress &Uuml;bersetzung</span>
+        <span class="sep">|</span>
+        <span>Top 10</span>
+      </div>
+
+      <div class="title">
+        <span>Die besten</span>
+        <span>&Uuml;bersetzungs-</span>
+        <span><em>Plugins</em></span>
+      </div>
+
+      <div class="baseline">
+        WPML, Polylang, Weglot, TranslatePress&hellip; die 10 besten Plugins, um deine
+        WordPress-Website mehrsprachig zu machen, im Vergleich.
+      </div>
+
+      <div class="signature">
+        Micha&euml;l KIHL <span class="sep">|</span> <span class="schools">schools</span><span class="wp">WP</span>.com
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="visual-inner">
+        <div class="v-header">
+          <span class="icon-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.9 6.1 4 9.5 -0.1 3.4 -1.5 6.8 -4 9.5 -2.5 -2.7 -3.9 -6.1 -4 -9.5 0.1 -3.4 1.5 -6.8 4 -9.5z"/></svg>
+          </span>
+          <span>Der Vergleich</span>
+        </div>
+
+        <div class="rating-block">
+          <div class="rating-score">10<span class="unit">&nbsp;Plugins</span></div>
+          <div class="rating-sub">von gratis bis Pro</div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span class="stat-key">WPML</span><span class="stat-val">Pro</span></div>
+          <div class="stat"><span class="stat-key">Polylang</span><span class="stat-val">Gratis</span></div>
+          <div class="stat"><span class="stat-key">Weglot</span><span class="stat-val">Auto</span></div>
+          <div class="stat"><span class="stat-key">TranslatePress</span><span class="stat-val">Visuell</span></div>
+        </div>
+
+        <div class="visual-footer">
+          <span class="dot"></span>
+          <span>Finde das passende f&uuml;r dein Projekt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

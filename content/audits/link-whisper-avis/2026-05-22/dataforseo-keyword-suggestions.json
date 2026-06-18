@@ -1,0 +1,2145 @@
+{
+  "version": "0.1.20260520",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "1.1124 sec.",
+  "cost": 0.0119,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "05221530-7577-0399-0000-d5634dd76884",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "1.0596 sec.",
+      "cost": 0.0119,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "dataforseo_labs",
+        "google",
+        "keyword_suggestions",
+        "live"
+      ],
+      "data": {
+        "api": "dataforseo_labs",
+        "function": "keyword_suggestions",
+        "se_type": "google",
+        "keyword": "link whisper",
+        "language_code": "fr",
+        "location_code": 2250,
+        "limit": 100
+      },
+      "result": [
+        {
+          "se_type": "google",
+          "seed_keyword": "link whisper",
+          "seed_keyword_data": null,
+          "location_code": 2250,
+          "language_code": "fr",
+          "total_count": 19,
+          "items_count": 19,
+          "offset": 0,
+          "offset_token": "eyJDdXJyZW50T2Zmc2V0IjoxOSwiUmVxdWVzdERhdGEiOnsia2V5d29yZCI6Imxpbmsgd2hpc3BlciIsImluY2x1ZGVfc2VlZF9rZXl3b3JkIjpmYWxzZSwiZnVsbF9tYXRjaCI6ZmFsc2UsImxvYWRfc2VycF9pbmZvIjpmYWxzZSwic2VhcmNoX2FmdGVyX3Rva2VuIjpudWxsLCJpZ25vcmVfc3lub255bXMiOmZhbHNlLCJsYW5ndWFnZSI6ImZyIiwic2VhcmNoX2VuZ2luZSI6Imdvb2dsZSIsImxvY2F0aW9uIjoyMjUwLCJ1c2VfbmV3X2NhdGVnb3JpZXMiOnRydWUsIm9yZGVyX2J5Ijp7Im9yZGVyX2ZpZWxkIjoia2V5d29yZF9pbmZvLnNlYXJjaF92b2x1bWUiLCJvcmRlcl90eXBlIjoiRGVzYyIsIm5leHQiOm51bGx9LCJsaW1pdCI6MTAwLCJvZmZzZXQiOjAsImFpZCI6NzU3NzMsInVzZV9jYWNoZSI6dHJ1ZSwidGFza19pZCI6IjA1MjIxNTMwLTc1NzctMDM5OS0wMDAwLWQ1NjM0ZGQ3Njg4NCIsImZsYWdzIjpudWxsfSwiUmF3UXVlcnkiOm51bGwsIklkIjoiZjYwMGRjMjktYTFiZS00ODZkLTk4MWQtZDYxM2RlNmViMTA0IiwiU2VhcmNoQWZ0ZXJEYXRhIjpbLTkyMjMzNzIwMzY4NTQ3NzU4MDgsIjY1MmIwZmQ3LTFhNmEtYzczNy1mMjQ4LTgzMTdmYTNkZDM2MyJdLCJFeGVjdXRvciI6LTkxODQ0MDU5NDA0NDQ1MTc2MzN9",
+          "items": [
+            {
+              "se_type": "google",
+              "keyword": "link whisper",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-22 03:52:16 +00:00",
+                "competition": 0.06,
+                "competition_level": "LOW",
+                "cpc": 1.54,
+                "search_volume": 390,
+                "low_top_of_page_bid": 0.5,
+                "high_top_of_page_bid": 6.48,
+                "categories": [
+                  10019,
+                  10168,
+                  10883,
+                  12184
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 170
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 480
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 480
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 90
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 140
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 110
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 90
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 260
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 260
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 480
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 880
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 1300
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": -65,
+                  "quarterly": -65,
+                  "yearly": -87
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": "text_processing",
+                "keyword_difficulty": 7,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 2
+              },
+              "serp_info": null,
+              "avg_backlinks_info": {
+                "se_type": "google",
+                "backlinks": 814.8,
+                "dofollow": 508.8,
+                "referring_pages": 647.4,
+                "referring_domains": 269.9,
+                "referring_main_domains": 234.1,
+                "rank": 86.3,
+                "main_domain_rank": 508.2,
+                "last_updated_time": "2026-04-16 23:38:13 +00:00"
+              },
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "informational",
+                "foreign_intent": [
+                  "navigational"
+                ],
+                "last_updated_time": "2026-04-29 14:31:38 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper alternative",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-20 02:34:34 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10883,
+                  12184,
+                  13060
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": -100
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": [
+                  "informational",
+                  "navigational"
+                ],
+                "last_updated_time": "2026-04-29 14:31:38 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper pro",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 05:43:46 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10883,
+                  12184
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": -100,
+                  "quarterly": -100,
+                  "yearly": -100
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "transactional",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 16:32:27 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper discount code",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-18 06:10:53 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  13441,
+                  13575
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": -100
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 4
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 16:50:53 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper plugin",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 22:46:55 +00:00",
+                "competition": 0.29,
+                "competition_level": "LOW",
+                "cpc": 7.45,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10885,
+                  11368,
+                  12703
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": null,
+                  "yearly": null
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "informational",
+                "foreign_intent": [
+                  "navigational",
+                  "transactional"
+                ],
+                "last_updated_time": "2026-04-28 12:55:56 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper coupon code",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-19 01:15:08 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  13441,
+                  13575
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": -100,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 4
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-28 09:49:51 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper shopify",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-17 05:23:31 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10004,
+                  10276,
+                  13854
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": -100,
+                  "quarterly": -100,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 14:50:24 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper free",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-18 13:09:36 +00:00",
+                "competition": 0,
+                "competition_level": "LOW",
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10885,
+                  13816
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": null,
+                  "yearly": null
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "informational",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-28 17:55:48 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper affiliate program",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-20 19:05:17 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10004,
+                  10276,
+                  11088,
+                  12376,
+                  13153
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 4
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 13:15:50 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper premium",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 18:30:57 +00:00",
+                "competition": 0,
+                "competition_level": "LOW",
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10008
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-28 15:26:52 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper wordpress",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 20:58:45 +00:00",
+                "competition": 0.1,
+                "competition_level": "LOW",
+                "cpc": 0.07,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10007,
+                  11494,
+                  13418
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": null,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": "wordpress link whisper",
+                "synonym_clustering_algorithm": "text_processing",
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": [
+                  "informational"
+                ],
+                "last_updated_time": "2026-04-29 13:20:58 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper appsumo",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 15:31:47 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10007,
+                  10878,
+                  13378,
+                  13381
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": -100,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": "text_processing",
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": [
+                  "transactional"
+                ],
+                "last_updated_time": "2026-04-29 15:47:22 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper changelog",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-22 12:09:04 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10885,
+                  13114
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": -100
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "informational",
+                "foreign_intent": [
+                  "navigational"
+                ],
+                "last_updated_time": "2026-04-28 14:24:53 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper review",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-21 01:07:44 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10883,
+                  12184
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 10
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "informational",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-28 11:13:41 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper black friday",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-16 06:13:49 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  13441,
+                  13575
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 4
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 17:50:27 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "wordpress link whisper",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-22 07:27:55 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 10,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10885,
+                  12204,
+                  13404
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 10
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": -100,
+                  "quarterly": -100,
+                  "yearly": -100
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": "text_processing",
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": [
+                  "informational"
+                ],
+                "last_updated_time": "2026-04-30 02:20:55 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper affiliate",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-05-21 08:47:45 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 0,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10004,
+                  10276,
+                  11088,
+                  12376,
+                  13153
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "commercial",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-29 14:31:38 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "appsumo link whisper",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-04-18 11:29:23 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": 0,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10007,
+                  10878,
+                  13378,
+                  13381
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 3,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": "link whisper appsumo",
+                "synonym_clustering_algorithm": "text_processing",
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": [
+                  "transactional",
+                  "informational"
+                ],
+                "last_updated_time": "2026-04-29 04:26:44 +00:00"
+              }
+            },
+            {
+              "se_type": "google",
+              "keyword": "link whisper settings",
+              "location_code": 2250,
+              "language_code": "fr",
+              "keyword_info": {
+                "se_type": "google",
+                "last_updated_time": "2026-03-11 21:09:31 +00:00",
+                "competition": null,
+                "competition_level": null,
+                "cpc": null,
+                "search_volume": null,
+                "low_top_of_page_bid": null,
+                "high_top_of_page_bid": null,
+                "categories": [
+                  10019,
+                  10168,
+                  10883,
+                  12184,
+                  13060
+                ],
+                "monthly_searches": [
+                  {
+                    "year": 2026,
+                    "month": 2,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2026,
+                    "month": 1,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 12,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 11,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 10,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 9,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 8,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 7,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 6,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 5,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 4,
+                    "search_volume": 0
+                  },
+                  {
+                    "year": 2025,
+                    "month": 3,
+                    "search_volume": 0
+                  }
+                ],
+                "search_volume_trend": {
+                  "monthly": 0,
+                  "quarterly": 0,
+                  "yearly": 0
+                }
+              },
+              "keyword_info_normalized_with_bing": null,
+              "keyword_info_normalized_with_clickstream": null,
+              "clickstream_keyword_info": null,
+              "keyword_properties": {
+                "se_type": "google",
+                "core_keyword": null,
+                "synonym_clustering_algorithm": null,
+                "keyword_difficulty": null,
+                "detected_language": "en",
+                "is_another_language": true,
+                "words_count": 3
+              },
+              "serp_info": null,
+              "avg_backlinks_info": null,
+              "search_intent_info": {
+                "se_type": "google",
+                "main_intent": "navigational",
+                "foreign_intent": null,
+                "last_updated_time": "2026-04-28 13:54:10 +00:00"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

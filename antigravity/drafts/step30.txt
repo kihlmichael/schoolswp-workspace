@@ -1,0 +1,52 @@
+Created At: 2026-05-22T09:21:33Z
+Completed At: 2026-05-22T09:21:44Z
+
+				The command completed successfully.
+				Output:
+				<truncated 84 lines>
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\README.md:3:owner: Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\SOP-utilisation.md:3:owner: 
+Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\SOP-utilisation.md:32:3. Mets � 
+jour le frontmatter du fichier (`status: synthese-stabilisee` ou `memoire-durable`, `date_validation`, `validated_by: 
+Micha�l KIHL`).
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\phase-1-bilan.md:6:validated_by: 
+Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\2026-05-04_test-
+bridge-001.md:9:auteur: Micha�l KIHL
+D:\?? MES SITES\?? 
+SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\note-001.md:4:auteur: Micha�l KIHL
+D:\?? MES SITES\?? 
+SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\inbox-vers-claude\note-002.md:4:auteur: Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude\2026-05-05_ou
+tils-recommandes-backup-pre-promotion.md:94:| Divi Lover | `michaelkihl10` | Design / Divi | � rattacher � Design & 
+Constructeurs. |
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude\2026-05-05_no
+te-004-outils-recommandes-version-revisee.md:211:| Divi Lover | `michaelkihl10` | Design / Divi | A rattacher a Design 
+et Constructeurs. |
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude\2026-05-10_sk
+ill-schoolswp-v4-2.md:124:## Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\00_systeme\claude-code-bridge\outbox-depuis-claude\2026-05-10_s
+<truncated 4182 bytes>
+6-05-04`, `validation: oui`, 
+`validated_by: Micha�l KIHL`, `phase: phase-1`, `systeme: claude-code-bridge`.
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\08_sources\README.md:3:owner: Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\08_sources\plugins-wordpress\README.md:3:owner: Micha�l KIHL
+D:\?? MES SITES\?? SCHOOLSWP.COM\12_Obsidian\schoolsWP\08_sources\plugins-wordpress\tutor-lms\docs\2026-05-04_tutor-lms
+-doc_13-advanced-customization_auto-approving-tutor-lms-instructors.md:23:> **Synth�se FR** : snippet PHP pour 
+**d�sactiver la mod�ration admin** sur les inscriptions instructeurs. Code 15 lignes dans functions.php du child theme 
+- hook tutor_new_instructor_after d�clenche update_user_meta(_tutor_instructor_status = approved) + 
+add_role(instructor_role) automatiquement. Compatible Tutor LMS v1.6.0+. **AVERTISSEMENT EXPLICITE Themeum** : "This 
+will practically allow anyone to sign up and submit courses. So please use **caution** while using this code." **Pour 
+ta formation FluentBoards / TutorLMS schoolsWP** : � NE PAS utiliser sur schoolswp.com. Tu es **single-instructor par 
+design** (autorit� personnelle E-E-A-T = Michael KIHL seul). Activer ce snippet ouvre la porte � : (a) signups 
+bot/spam massifs (cf. m�moire `feedback_voice_singular_solo.md` - tu �cris au "je", pas en "on"), (b) cours 
+non-mod�r�s visibles publiquement = risque l�gal + dilution brand, (c) revenue share marketplace = complexit� 
+comptable que FluentCart/Native ne couvrent pas. **Use case l�gitime du snippet** : marketplace LMS multi-instructeurs 
+(type Udemy/Teachable concurrent) o� la mod�ration manuelle est impossible � scale. � 1000+ inscriptions/jour, ce 
+snippet �conomise un FTE mod�rateur. **Hook angle SEO** : "Marketplace LMS WordPress automatique" est low-volume mais 
+conversion forte (audience cherchant � scale Udemy-like sans dev custom). Article tutorial � publier UNIQUEMENT apr�s 
+mise en garde s�curit� claire.
+
+
+

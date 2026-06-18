@@ -1,9 +1,0 @@
-{
-  "expectations": [
-    {"text": "5 concepts présents", "passed": true, "evidence": "6 concepts fournis (plus que demandé): avant/après, élimination, prix choc, tableau de bord, solopreneur détendu, secret WordPress"},
-    {"text": "Pertinence CRM", "passed": true, "evidence": "Concepts référencent HubSpot, Mailchimp, ActiveCampaign, dashboard FluentCRM, tunnel de vente"},
-    {"text": "Émotions diversifiées", "passed": false, "evidence": "Émotions nommées mais pas formellement identifiées comme déclencheurs. Structure sans section 'déclencheur émotionnel' formelle."}
-  ],
-  "summary": {"passed": 2, "failed": 1, "total": 3, "pass_rate": 0.67},
-  "timing": {"total_duration_seconds": 104.0}
-}

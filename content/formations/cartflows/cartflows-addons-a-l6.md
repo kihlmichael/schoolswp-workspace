@@ -1,9 +1,9 @@
-# Lecon A.6 — Recommandations in-cart : upsells dans le panier
+# Lecon A.6 - Recommandations in-cart : upsells dans le panier
 
 ## Metadata
 
-- **Formation** : CartFlows Add-ons (premium — FRM-008)
-- **Module** : A — Modern Cart
+- **Formation** : CartFlows Add-ons (premium - FRM-008)
+- **Module** : A - Modern Cart
 - **Duree cible** : 10 min (~1300 mots)
 - **Type** : Video HeyGen + voix ElevenLabs
 - **Objectif pedagogique** : Configurer les recommandations de produits dans le side cart (upsells et cross-sells) pour augmenter le nombre d'articles par commande.
@@ -12,23 +12,23 @@
 
 ## Script narration
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
-Le client a ouvert le side cart. Il voit ses produits. Et juste en dessous, il voit d'autres produits qui pourraient l'interesser. Pas une page de pub, pas un popup — des suggestions discretes, pertinentes, au bon moment.
+Le client a ouvert le side cart. Il voit ses produits. Et juste en dessous, il voit d'autres produits qui pourraient l'interesser. Pas une page de pub, pas un popup - des suggestions discretes, pertinentes, au bon moment.
 
 C'est ce que font les recommandations in-cart de Modern Cart Pro. Et c'est un des moyens les plus naturels d'augmenter le panier moyen sans aucune pression commerciale.
 
 ---
 
-**[SECTION 1 — Upsell vs cross-sell : la difference]**
+**[SECTION 1 - Upsell vs cross-sell : la difference]**
 
-**[ECRAN — slide definitions upsell / cross-sell]**
+**[ECRAN - slide definitions upsell / cross-sell]**
 
 Avant de configurer, clarifions les termes.
 
-**Upsell** : tu proposes un produit superieur a celui que le client a dans son panier. Il a choisi le t-shirt basique a 25 euros — tu lui suggeres le t-shirt premium a 39 euros. L'objectif : faire monter en gamme.
+**Upsell** : tu proposes un produit superieur a celui que le client a dans son panier. Il a choisi le t-shirt basique a 25 euros - tu lui suggeres le t-shirt premium a 39 euros. L'objectif : faire monter en gamme.
 
-**Cross-sell** : tu proposes un produit complementaire. Le client a un t-shirt dans son panier — tu lui suggeres une casquette assortie ou une ceinture. L'objectif : ajouter des articles a la commande.
+**Cross-sell** : tu proposes un produit complementaire. Le client a un t-shirt dans son panier - tu lui suggeres une casquette assortie ou une ceinture. L'objectif : ajouter des articles a la commande.
 
 Dans le contexte du side cart, les cross-sells fonctionnent generalement mieux que les upsells. Pourquoi ? Parce que le client a deja choisi son produit et l'a mis dans le panier. Lui proposer de le remplacer par un autre est moins naturel que lui proposer un complement.
 
@@ -36,11 +36,11 @@ Modern Cart affiche les deux, mais en pratique, concentre-toi sur les cross-sell
 
 ---
 
-**[SECTION 2 — Comment WooCommerce gere les recommandations]**
+**[SECTION 2 - Comment WooCommerce gere les recommandations]**
 
-**[ECRAN — edition produit WooCommerce, onglet Produits lies]**
+**[ECRAN - edition produit WooCommerce, onglet Produits lies]**
 
-Les recommandations dans Modern Cart s'appuient sur les produits lies que tu configures dans WooCommerce. C'est un point important : Modern Cart affiche ce que WooCommerce connait — il ne genere pas de recommandations automatiques par IA.
+Les recommandations dans Modern Cart s'appuient sur les produits lies que tu configures dans WooCommerce. C'est un point important : Modern Cart affiche ce que WooCommerce connait - il ne genere pas de recommandations automatiques par IA.
 
 Va dans Produits → selectionne un produit → onglet Produits lies (ou "Linked Products" en anglais).
 
@@ -55,9 +55,9 @@ Exemple concret : tu vends des formations WordPress. Un client ajoute la formati
 
 ---
 
-**[SECTION 3 — Activer les recommandations dans Modern Cart Pro]**
+**[SECTION 3 - Activer les recommandations dans Modern Cart Pro]**
 
-**[ECRAN — Modern Cart Pro → Settings → Upsells / Recommendations]**
+**[ECRAN - Modern Cart Pro → Settings → Upsells / Recommendations]**
 
 Dans Modern Cart, va dans Settings → Upsells (ou Recommendations selon la version).
 
@@ -67,15 +67,15 @@ Dans Modern Cart, va dans Settings → Upsells (ou Recommendations selon la vers
 
 **Nombre de produits affiches** : entre 2 et 3. C'est le bon equilibre. Un seul produit donne peu de choix. Quatre ou cinq produits encombrent le side cart et diluent l'attention. Deux ou trois, c'est optimal.
 
-**Position** : en dessous de la liste de produits, au-dessus du total. C'est l'emplacement naturel — le client a vu ce qu'il a, et avant de passer au total, il decouvre des suggestions.
+**Position** : en dessous de la liste de produits, au-dessus du total. C'est l'emplacement naturel - le client a vu ce qu'il a, et avant de passer au total, il decouvre des suggestions.
 
 **Titre de la section** : "Tu pourrais aussi aimer", "Completer ta commande", ou "Produits complementaires". Choisis une formulation naturelle, pas vendeuse.
 
 ---
 
-**[SECTION 4 — Le design des recommandations]**
+**[SECTION 4 - Le design des recommandations]**
 
-**[ECRAN — side cart avec carrousel de recommandations]**
+**[ECRAN - side cart avec carrousel de recommandations]**
 
 Les recommandations s'affichent generalement en carrousel horizontal dans le side cart. Chaque produit montre :
 
@@ -84,17 +84,17 @@ Les recommandations s'affichent generalement en carrousel horizontal dans le sid
 - Le prix
 - Un bouton "Ajouter"
 
-Le design doit rester coherent avec le reste du side cart. Memes couleurs de bouton, meme style. Le client ne doit pas avoir l'impression de passer d'une zone a une autre — tout doit etre fluide.
+Le design doit rester coherent avec le reste du side cart. Memes couleurs de bouton, meme style. Le client ne doit pas avoir l'impression de passer d'une zone a une autre - tout doit etre fluide.
 
 Un point sur les images : assure-toi que tes miniatures de produits sont propres et lisibles a petite taille. Dans un side cart de 380 pixels de large, les images de recommandation sont petites. Une image floue ou mal cadree donne une impression de mauvaise qualite.
 
-Si tu as plus de 3 recommandations configurees pour un produit, le carrousel permet de scroller horizontalement. Mais ne compte pas sur le scroll — la plupart des clients ne scrolleront pas dans un carrousel a l'interieur d'un side cart. Les 2-3 premiers produits visibles sont ceux qui comptent.
+Si tu as plus de 3 recommandations configurees pour un produit, le carrousel permet de scroller horizontalement. Mais ne compte pas sur le scroll - la plupart des clients ne scrolleront pas dans un carrousel a l'interieur d'un side cart. Les 2-3 premiers produits visibles sont ceux qui comptent.
 
 ---
 
-**[SECTION 5 — Cas pratique : t-shirt + accessoires]**
+**[SECTION 5 - Cas pratique : t-shirt + accessoires]**
 
-**[ECRAN — demonstration complete ajout produit + recommandations]**
+**[ECRAN - demonstration complete ajout produit + recommandations]**
 
 On va simuler un parcours complet.
 
@@ -105,9 +105,9 @@ En haut : la barre de livraison gratuite. "Plus que 20 euros pour la livraison g
 Au milieu : le t-shirt ajoute, avec quantite et prix.
 
 En dessous : section "Complete ta commande" avec trois suggestions :
-- Casquette assortie — 15 euros → bouton "Ajouter"
-- Ceinture en cuir — 22 euros → bouton "Ajouter"
-- Pack de 3 paires de chaussettes — 12 euros → bouton "Ajouter"
+- Casquette assortie - 15 euros → bouton "Ajouter"
+- Ceinture en cuir - 22 euros → bouton "Ajouter"
+- Pack de 3 paires de chaussettes - 12 euros → bouton "Ajouter"
 
 Le client clique sur "Ajouter" pour la casquette. La casquette apparait dans la liste du panier. Le total passe a 44 euros. La barre de livraison gratuite se met a jour : "Plus que 5 euros !"
 
@@ -117,15 +117,15 @@ Resultat : le client est venu pour un t-shirt a 29 euros. Il repart avec 56 euro
 
 ---
 
-**[SECTION 6 — Bonnes pratiques]**
+**[SECTION 6 - Bonnes pratiques]**
 
-**[ECRAN — slide "regles d'or recommandations in-cart"]**
+**[ECRAN - slide "regles d'or recommandations in-cart"]**
 
 Quelques regles pour que les recommandations fonctionnent.
 
 **Pertinence absolue.** Ne recommande jamais un produit sans rapport. Un client qui achete une formation WordPress ne veut pas voir une coque de telephone. Les recommandations non pertinentes degradent la confiance.
 
-**Prix coherent.** Les cross-sells dans le side cart doivent etre moins chers que le produit principal. Le client a pris un produit a 29 euros — propose des complements a 10-20 euros, pas un accessoire a 89 euros.
+**Prix coherent.** Les cross-sells dans le side cart doivent etre moins chers que le produit principal. Le client a pris un produit a 29 euros - propose des complements a 10-20 euros, pas un accessoire a 89 euros.
 
 **Pas de doublons.** Si le client a deja un produit dans le panier, ne le montre pas en recommandation. Modern Cart gere ca automatiquement dans la plupart des cas, mais verifie.
 
@@ -133,9 +133,9 @@ Quelques regles pour que les recommandations fonctionnent.
 
 ---
 
-**[CONCLUSION — face camera]**
+**[CONCLUSION - face camera]**
 
-Les recommandations in-cart transforment le side cart en outil de vente. Le client decouvre des produits complementaires au moment exact ou il est en mode achat — sans popup, sans redirection, sans friction.
+Les recommandations in-cart transforment le side cart en outil de vente. Le client decouvre des produits complementaires au moment exact ou il est en mode achat - sans popup, sans redirection, sans friction.
 
 Prochaine lecon : le champ coupon integre au side cart. Encore une fonctionnalite Pro qui reduit les abandons.
 

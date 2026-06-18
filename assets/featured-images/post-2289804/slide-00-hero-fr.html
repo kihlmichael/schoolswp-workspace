@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fluent Forms Gratuit vs Pro - Hero FR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4F5F7;
+      --card-bg: #FFFFFF;
+      --green: #00D400;
+      --green-soft: #D4F7D4;
+      --black: #0F1419;
+      --grey-text: #5A6470;
+      --line: #D8DCE3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1080px 1fr;
+      align-items: center;
+      padding: 0 110px;
+      gap: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      align-self: flex-start;
+      padding: 12px 22px 12px 18px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--line);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .pill .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(0,212,0,0.18);
+    }
+    .pill .sep { color: var(--line); font-weight: 400; }
+
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 140px;
+      line-height: 0.95;
+      letter-spacing: -5px;
+      color: var(--black);
+    }
+    .title span { display: block; }
+    .title em { font-style: normal; color: var(--green); }
+
+    .baseline {
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--grey-text);
+      line-height: 1.4;
+      max-width: 920px;
+    }
+
+    .signature {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.3px;
+      margin-top: 18px;
+    }
+    .signature .sep { color: var(--line); margin: 0 14px; }
+    .signature .schools { color: var(--black); }
+    .signature .wp { color: var(--green); }
+
+    .visual {
+      width: 620px;
+      height: 720px;
+      background: var(--card-bg);
+      border-radius: 32px;
+      box-shadow: 0 32px 70px -20px rgba(15, 20, 25, 0.18), 0 4px 12px -4px rgba(15, 20, 25, 0.06);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .visual::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--green) 35%, transparent 35%, transparent 100%);
+    }
+
+    .visual-inner {
+      padding: 72px 56px 56px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      height: 100%;
+    }
+
+    .v-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--grey-text);
+    }
+    .v-header .icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 24px;
+      align-items: stretch;
+      flex: 1;
+    }
+    .col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--line);
+    }
+    .col.pro {
+      border-color: var(--green);
+      background: #F8FFF8;
+    }
+    .col-tag {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .col.pro .col-tag { color: var(--green); }
+
+    .col-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: #F4F5F7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .col.pro .col-icon { background: var(--green-soft); }
+
+    .stats { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 8px 4px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 15px;
+    }
+    .stat:last-child { border-bottom: none; }
+    .stat-key { color: var(--grey-text); font-weight: 500; }
+    .stat-val { color: var(--black); font-weight: 700; }
+    .col.pro .stat-val { color: var(--green); }
+
+    .vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--grey-text);
+      letter-spacing: 1px;
+      align-self: center;
+      padding: 0 4px;
+    }
+
+    .visual-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--grey-text);
+      margin-top: 4px;
+    }
+    .visual-footer .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .icon-free {
+      width: 48px;
+      height: 48px;
+      stroke: var(--black);
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .icon-pro {
+      width: 48px;
+      height: 48px;
+      stroke: var(--green);
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="text-block">
+      <div class="pill">
+        <span class="dot"></span>
+        <span>Fluent Forms</span>
+        <span class="sep">|</span>
+        <span>Comparatif</span>
+      </div>
+
+      <div class="title">
+        <span>Fluent Forms</span>
+        <span>Gratuit vs <em>Pro</em></span>
+      </div>
+
+      <div class="baseline">
+        Gratuit pour collecter, Pro pour vendre&nbsp;: frais Stripe, passerelles,
+        calculs et 60+ int&eacute;grations, compar&eacute;s sans d&eacute;tour.
+      </div>
+
+      <div class="signature">
+        Micha&euml;l KIHL <span class="sep">|</span> <span class="schools">schools</span><span class="wp">WP</span>.com
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="visual-inner">
+        <div class="v-header">
+          <span class="icon-circle">i</span>
+          <span>Gratuit vs Pro en un coup d&rsquo;&oelig;il</span>
+        </div>
+
+        <div class="cols">
+          <div class="col">
+            <div class="col-tag">Gratuit</div>
+            <div class="col-icon">
+              <svg class="icon-free" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <path d="M3 8h18"/>
+                <circle cx="7" cy="6" r="0.5" fill="currentColor"/>
+                <circle cx="9" cy="6" r="0.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="stats">
+              <div class="stat"><span class="stat-key">Frais Stripe</span><span class="stat-val">+1,9&nbsp;%</span></div>
+              <div class="stat"><span class="stat-key">Passerelles</span><span class="stat-val">Stripe</span></div>
+              <div class="stat"><span class="stat-key">Multi-&eacute;tapes</span><span class="stat-val">&ndash;</span></div>
+              <div class="stat"><span class="stat-key">Int&eacute;grations</span><span class="stat-val">~15</span></div>
+            </div>
+          </div>
+
+          <div class="vs">vs</div>
+
+          <div class="col pro">
+            <div class="col-tag">Pro</div>
+            <div class="col-icon">
+              <svg class="icon-pro" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 3v2"/>
+                <path d="M12 19v2"/>
+                <path d="M3 12h2"/>
+                <path d="M19 12h2"/>
+                <path d="M5.6 5.6l1.4 1.4"/>
+                <path d="M17 17l1.4 1.4"/>
+                <path d="M5.6 18.4l1.4-1.4"/>
+                <path d="M17 7l1.4-1.4"/>
+              </svg>
+            </div>
+            <div class="stats">
+              <div class="stat"><span class="stat-key">Frais Stripe</span><span class="stat-val">0&nbsp;%</span></div>
+              <div class="stat"><span class="stat-key">Passerelles</span><span class="stat-val">Multi</span></div>
+              <div class="stat"><span class="stat-key">Multi-&eacute;tapes</span><span class="stat-val">Oui</span></div>
+              <div class="stat"><span class="stat-key">Int&eacute;grations</span><span class="stat-val">60+</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-footer">
+          <span class="dot"></span>
+          <span>Passe Pro d&egrave;s que tu vends en ligne</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

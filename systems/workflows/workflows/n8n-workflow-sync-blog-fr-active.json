@@ -1,0 +1,182 @@
+{
+  "updatedAt": "2026-05-24T19:53:30.539Z",
+  "createdAt": "2026-05-24T19:53:30.539Z",
+  "id": "mPWJTce80mIoU1vi",
+  "name": "Sync Blog WordPress -> Google Sheets",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "event": [
+          "post.published"
+        ]
+      },
+      "id": "e8a946ad-51a4-4a41-b85f-8f81ef6a75f1",
+      "name": "WordPress Trigger",
+      "type": "n8n-nodes-base.wordpressTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ],
+      "credentials": {
+        "wordpressApi": {
+          "id": "YOUR_WORDPRESS_CREDENTIAL_ID",
+          "name": "schoolsWP WordPress"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const cleanTitle = $json.title.rendered\n  .replace(/&amp;/g, '&')\n  .replace(/&#8211;/g, '-')\n  .replace(/&#8212;/g, '-')\n  .replace(/\u2014/g, ' - ')\n  .replace(/\u2013/g, ' - ')\n  .replace(/\\s+-\\s+/g, ' - ');\n\nreturn {\n  id: $json.id.toString(),\n  title: cleanTitle,\n  slug: $json.slug,\n  date: $json.date.split('T')[0],\n  link: $json.link\n};"
+      },
+      "id": "b182cb20-6d4a-4712-881a-6dfca6a524a8",
+      "name": "Clean Title & Format",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1AXUQlvhFbbCrCex_LZjyh8kVS7KX2jn_TJGaDgtoSwU",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Feuille 1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.id }}",
+            "Titre": "={{ $json.title }}",
+            "Slug": "={{ $json.slug }}",
+            "Date de Publication": "={{ $json.date }}",
+            "Lien Direct": "={{ $json.link }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Titre",
+              "displayName": "Titre",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Slug",
+              "displayName": "Slug",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Date de Publication",
+              "displayName": "Date de Publication",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lien Direct",
+              "displayName": "Lien Direct",
+              "required": false,
+              "default": "",
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c62cf3af-bf15-4fa2-bf6d-88f5d07077e6",
+      "name": "Add to Google Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        820,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "WordPress Trigger": {
+      "main": [
+        [
+          {
+            "node": "Clean Title & Format",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Title & Format": {
+      "main": [
+        [
+          {
+            "node": "Add to Google Sheet",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": null,
+  "versionId": "31584438-c977-4dc0-864f-f24c6c1dd243",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2026-05-24T19:53:30.542Z",
+      "createdAt": "2026-05-24T19:53:30.542Z",
+      "role": "workflow:owner",
+      "workflowId": "mPWJTce80mIoU1vi",
+      "projectId": "VowIPsxG3tIBPRZk",
+      "project": {
+        "updatedAt": "2025-12-12T16:29:40.938Z",
+        "createdAt": "2025-12-12T16:04:53.821Z",
+        "id": "VowIPsxG3tIBPRZk",
+        "name": "Micha\u00ebl KIHL <contact@michaelkihl.fr>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "fecfed64-c809-48e6-baeb-be7d437f463d"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}

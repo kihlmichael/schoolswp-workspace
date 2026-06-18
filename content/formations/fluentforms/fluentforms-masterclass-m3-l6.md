@@ -1,9 +1,9 @@
-# Script video — Module 3, Lecon 6 : Creation de posts WordPress
+# Script video - Module 3, Lecon 6 : Creation de posts WordPress
 
 **Formation** : FluentForms Masterclass Formulaires
 **Code** : FRM-012 (premium)
-**Module** : 3 — Formulaires avances
-**Lecon** : 6/8 — Creation de posts WordPress
+**Module** : 3 - Formulaires avances
+**Lecon** : 6/8 - Creation de posts WordPress
 **Duree** : 8 min (~1100 mots)
 **Type** : Video HeyGen + voix ElevenLabs
 **Ecran** : Face camera intro/outro, screencast configuration Post Feed
@@ -11,13 +11,13 @@
 
 ---
 
-**[INTRO — face camera]**
+**[INTRO - face camera]**
 
 Et si tes visiteurs pouvaient publier du contenu directement depuis un formulaire ? Un article pour un blog collaboratif, un temoignage client, une annonce pour un repertoire, une fiche produit pour un catalogue.
 
 FluentForms Pro permet de transformer chaque soumission en post WordPress. Le visiteur remplit le formulaire, et un article, une page ou un custom post type se cree automatiquement.
 
-**[ECRAN — screencast "Configurer le Post Feed"]**
+**[ECRAN - screencast "Configurer le Post Feed"]**
 
 Ouvre un formulaire dans le builder. Va dans Form Settings → Post/CPT Feed.
 
@@ -29,9 +29,9 @@ Premiere option : "Post Type". Tu choisis le type de contenu a creer.
 
 "Page" : une page WordPress.
 
-Ou n'importe quel Custom Post Type enregistre sur ton site. Si tu as un CPT "Temoignage", "Annonce", "Recette", "Bien immobilier" — il apparait dans la liste.
+Ou n'importe quel Custom Post Type enregistre sur ton site. Si tu as un CPT "Temoignage", "Annonce", "Recette", "Bien immobilier" - il apparait dans la liste.
 
-**[ECRAN — screencast "Mapper les champs"]**
+**[ECRAN - screencast "Mapper les champs"]**
 
 Le mapping, c'est la correspondance entre les champs du formulaire et les elements du post.
 
@@ -45,13 +45,13 @@ Post Excerpt : optionnel. Mappe vers un champ Textarea "Resume" si tu en as un.
 
 Post Status : tu decides si le post est publie immediatement ou place en brouillon.
 
-"Draft" : le post est cree en brouillon. Tu le relis, tu le valides, tu le publies manuellement. C'est la configuration recommandee pour un blog collaboratif — tu gardes le controle editorial.
+"Draft" : le post est cree en brouillon. Tu le relis, tu le valides, tu le publies manuellement. C'est la configuration recommandee pour un blog collaboratif - tu gardes le controle editorial.
 
 "Pending Review" : le post est en attente de relecture. Le contributeur voit son statut, l'editeur recoit une notification.
 
 "Publish" : le post est publie immediatement. A utiliser uniquement si tu fais confiance aux contributeurs ou si le contenu ne necessite pas de validation.
 
-**[ECRAN — screencast "Taxonomies et meta"]**
+**[ECRAN - screencast "Taxonomies et meta"]**
 
 Tu peux aussi mapper des taxonomies.
 
@@ -61,13 +61,13 @@ Tags : mappe vers un champ Text Input ou Checkbox. Les tags du visiteur devienne
 
 Custom Fields (meta) : si ton CPT a des champs personnalises (via ACF, MetaBox ou natif), tu peux les mapper aussi. Le champ "Prix" du formulaire remplit le custom field "prix" du CPT.
 
-**[ECRAN — screencast "Cas pratique — blog collaboratif"]**
+**[ECRAN - screencast "Cas pratique - blog collaboratif"]**
 
 Construisons un formulaire de soumission d'article pour un blog collaboratif.
 
 Champs du formulaire :
 
-Name "Ton nom" — sera affiche comme auteur.
+Name "Ton nom" - sera affiche comme auteur.
 
 Email "Ton email".
 
@@ -75,13 +75,13 @@ Text Input "Titre de l'article".
 
 Select "Categorie" : Tutoriel, Avis, Guide, Actualite.
 
-Rich Text Editor "Contenu de l'article" — le visiteur peut formater son texte.
+Rich Text Editor "Contenu de l'article" - le visiteur peut formater son texte.
 
-Image Upload "Image mise en avant" — optionnel.
+Image Upload "Image mise en avant" - optionnel.
 
-Textarea "Bio courte" — 2-3 lignes sur l'auteur.
+Textarea "Bio courte" - 2-3 lignes sur l'auteur.
 
-Checkbox "J'autorise la publication et la modification editoriale de mon article" — obligatoire.
+Checkbox "J'autorise la publication et la modification editoriale de mon article" - obligatoire.
 
 Post Feed configuration :
 
@@ -99,7 +99,7 @@ Post Status : Draft.
 
 Le visiteur soumet. Un brouillon d'article est cree dans WordPress avec le titre, le contenu formate, l'image, et la categorie. L'editeur du site n'a plus qu'a relire et publier.
 
-**[ECRAN — screencast "Notification et workflow"]**
+**[ECRAN - screencast "Notification et workflow"]**
 
 Pour completer le workflow :
 
@@ -109,7 +109,7 @@ Notification a l'editeur : "Nouvel article soumis par {inputs.name}. Titre : {in
 
 Tu peux meme ajouter un lien direct vers le brouillon dans la notification si tu utilises le merge tag {post.edit_link}.
 
-**[ECRAN — slide "Autres cas d'usage"]**
+**[ECRAN - slide "Autres cas d'usage"]**
 
 Ce meme mecanisme fonctionne pour bien d'autres usages.
 
@@ -123,11 +123,11 @@ Recettes de cuisine : formulaire avec ingredients, etapes, photo → CPT "Recett
 
 La cle : ton formulaire devient une interface de saisie pour tes contributeurs. Ils n'ont pas besoin d'acceder au back-office WordPress.
 
-**[OUTRO — face camera]**
+**[OUTRO - face camera]**
 
 Transformer un formulaire en interface de publication, c'est ouvrir ton site aux contributions sans donner acces au dashboard. Le visiteur soumet, tu controles.
 
-Prochaine lecon : l'enregistrement d'utilisateur. On va creer des comptes WordPress a la soumission d'un formulaire — avec connexion a TutorLMS pour l'acces aux cours. A tout de suite.
+Prochaine lecon : l'enregistrement d'utilisateur. On va creer des comptes WordPress a la soumission d'un formulaire - avec connexion a TutorLMS pour l'acces aux cours. A tout de suite.
 
 ---
 
