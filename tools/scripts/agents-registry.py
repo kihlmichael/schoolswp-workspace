@@ -60,6 +60,7 @@ GROUPS: dict[str, str] = {
     "youtube-quality-auditor": "youtube-os",
     # Spécialistes domaine
     "seo-specialist": "specialists",
+    "google-business-expert": "specialists",
     "pinterest-expert": "specialists",
     "aidesigner-frontend": "specialists",
     "ads-operator": "specialists",

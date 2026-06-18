@@ -1,7 +1,7 @@
 # schoolsWP Project Sub-Agents — Index complet
 
 <!-- AUTO:HEADER:START -->
-**Total** : 29 sub-agents | **Mis à jour** : 2026-06-18
+**Total** : 30 sub-agents | **Mis à jour** : 2026-06-18
 <!-- AUTO:HEADER:END -->
 
 **Structure** : un fichier `.md` par agent dans `.claude/agents/`, frontmatter YAML (`name`, `description`, `model`, `tools`)
@@ -71,6 +71,14 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | Input utilisateur | Agent à dispatcher |
 |---|---|
 | Frontend, landing page, dashboard, marketing page via MCP aidesigner | `aidesigner-frontend` |
+
+### SEO local / Google Business Profile
+
+| Input utilisateur | Agent à dispatcher |
+|---|---|
+| Audit fiche GBP, catégories, description, services, posts, photos, Q&A, stratégie et réponses aux avis, cohérence NAP, citations locales, optimisation local pack, UTM | `google-business-expert` |
+
+> **Posture** : expert GBP + SEO local, opérationnel mais prudent. Repo-first, zéro MCP, ne publie jamais, ne répond jamais directement à un avis, ne modifie jamais une fiche, ne récupère aucune donnée live sans validation. Livrable = Note Google Business (9 sections, décision GO/FIX/WAIT/STOP) dans `output/`.
 
 ### Acquisition payante
 
@@ -150,6 +158,7 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | --- | --- | --- | --- |
 | `ads-operator` | opus | Read, Grep, Glob, Bash | Opérateur SEA schoolsWP / michaelkihl.fr. À utiliser pour audits Google Ads Search, plans d'acquisition, landing ads, budget, mots-clés, négatifs, tracking, Quality Score, conversions hors-ligne, et d… |
 | `aidesigner-frontend` | (défaut) | (par défaut) | Use this skill when the user wants to create or redesign a frontend, landing page, dashboard, marketing page, or other UI with AIDesigner. |
+| `google-business-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for Google Business Profile (GBP) + local SEO for schoolsWP / michaelkihl.fr. |
 | `pinterest-expert` | opus | (par défaut) | Agent Pinterest expert base sur les enseignements de Luc Bermond (1606 unites, 215 videos). |
 | `seo-specialist` | sonnet | Read, Grep, Glob, Bash, WebSearch, WebFetch | SEO specialist for technical SEO audits, on-page optimization, structured data, Core Web Vitals, and content/keyword mapping. |
 | `skoatch-publisher` | sonnet | Read, Write, Edit, Bash, Glob, Grep | Use this agent when the user wants to generate articles via Skoatch API and push them as WordPress drafts on michaelkihl.fr or another connected non-schoolsWP site. |
@@ -189,6 +198,7 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 - **`pulse` vs `pinterest-expert`** : `pulse` rédige le texte pin (titre + description). `pinterest-expert` audite / scale / pilote Ads / SEO Pinterest organique.
 - **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. La pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
 - **`radar` vs `seo-specialist`** : `radar` = SEO éditorial schoolsWP (cocons, briefs, maillage). `seo-specialist` = SEO technique générique (schema, Core Web Vitals, sitemap, audit serveur).
+- **`google-business-expert` vs `seo-specialist` / `radar` / `ads-operator`** : `google-business-expert` = SEO local + fiche Google Business Profile (catégories, avis, NAP, citations, local pack, posts GBP). `seo-specialist` reste le SEO technique on-site, `radar` le SEO éditorial, `ads-operator` l'acquisition payante Google Ads. Le local et la fiche GBP n'appartiennent qu'à `google-business-expert`. Il ne publie jamais et ne modifie jamais la fiche.
 - **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.
 - **`ofm-bot` isolation** : aucun chevauchement avec schoolsWP (utiliser `studio` / `radar` / `pulse` / `flow`). Pas de génération d'image standalone (utiliser nano-banana directement).
 - **Quartet `studio` / `radar` / `pulse` / `flow`** : mirror la fleet `schoolswp-agents/` (instances autonomes) mais en sub-agents projet dispatchables en parallèle dans la session courante.
