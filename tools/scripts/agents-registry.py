@@ -65,6 +65,11 @@ GROUPS: dict[str, str] = {
     "aidesigner-frontend": "specialists",
     "ads-operator": "specialists",
     "skoatch-publisher": "specialists",
+    # Réseaux sociaux (experts plateforme, organique)
+    "x-expert": "social",
+    "threads-expert": "social",
+    "instagram-expert": "social",
+    "facebook-expert": "social",
     # Code review / qualité — read-only
     "code-reviewer": "code-review",
     "adr-writer": "code-review",
@@ -82,6 +87,7 @@ GROUP_ORDER = [
     "editorial",
     "youtube-os",
     "specialists",
+    "social",
     "code-review",
     "harness",
     "personal",
@@ -93,6 +99,7 @@ GROUP_LABELS = {
     "editorial": "Contenu éditorial schoolsWP",
     "youtube-os": "YouTube OS",
     "specialists": "Spécialistes domaine",
+    "social": "Réseaux sociaux (experts plateforme, organique)",
     "code-review": "Code review / qualité — read-only",
     "harness": "Harness / infra",
     "personal": "Hors schoolsWP (projets personnels)",

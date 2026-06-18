@@ -1,7 +1,7 @@
 # schoolsWP Project Sub-Agents — Index complet
 
 <!-- AUTO:HEADER:START -->
-**Total** : 30 sub-agents | **Mis à jour** : 2026-06-18
+**Total** : 34 sub-agents | **Mis à jour** : 2026-06-18
 <!-- AUTO:HEADER:END -->
 
 **Structure** : un fichier `.md` par agent dans `.claude/agents/`, frontmatter YAML (`name`, `description`, `model`, `tools`)
@@ -53,6 +53,17 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | Audit livrable avant validation (clarté, ton, crédibilité, risques) | `youtube-quality-auditor` |
 
 > **Règle fondatrice YouTube OS** : statut par défaut `REVIEW_REQUIRED`, aucune publication publique sans validation humaine explicite. Livrables dans `content/youtube/`, traces de pipeline dans `runs/youtube-os/`.
+
+### Réseaux sociaux organiques (experts plateforme)
+
+| Input utilisateur | Agent à dispatcher |
+|---|---|
+| Tweets, threads X, bio/profil X, stratégie reply/quote | `x-expert` |
+| Posts Threads, fils conversationnels, articulation cross-post Instagram | `threads-expert` |
+| Reels, carrousels, Stories, captions, hashtags/SEO IG, bio/highlights, link-in-bio | `instagram-expert` |
+| Posts de Page Facebook, stratégie de Groupes, événements, portée organique | `facebook-expert` |
+
+> **Posture commune** : organique uniquement (les Ads = futurs agents dédiés), repo-first, zéro MCP, ne publient jamais, ne programment jamais, ne récupèrent aucune donnée live sans validation. Décisions GO/FIX/WAIT/STOP. Livrables dans `output/`. `instagram-expert` délègue le rendu image à `tools/html-to-png` + la config metricool-carousel (il ne génère pas les visuels).
 
 ### SEO / techniques
 
@@ -163,6 +174,15 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | `seo-specialist` | sonnet | Read, Grep, Glob, Bash, WebSearch, WebFetch | SEO specialist for technical SEO audits, on-page optimization, structured data, Core Web Vitals, and content/keyword mapping. |
 | `skoatch-publisher` | sonnet | Read, Write, Edit, Bash, Glob, Grep | Use this agent when the user wants to generate articles via Skoatch API and push them as WordPress drafts on michaelkihl.fr or another connected non-schoolsWP site. |
 
+### Réseaux sociaux (experts plateforme, organique)
+
+| Agent | Modèle | Outils | Description |
+| --- | --- | --- | --- |
+| `facebook-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Facebook content and strategy for schoolsWP. |
+| `instagram-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Instagram content and strategy for schoolsWP. |
+| `threads-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Threads (Meta) content and strategy for schoolsWP. |
+| `x-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic X (Twitter) content and strategy for schoolsWP. |
+
 ### Code review / qualité — read-only
 
 | Agent | Modèle | Outils | Description |
@@ -197,6 +217,7 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 - **`pulse` vs YouTube OS** : `pulse` produit la description / titre d'une vidéo YouTube ponctuelle. `youtube-seo-packager` produit le package SEO complet (5 titres, description, chapitres, tags, hashtags, commentaire épinglé) dans le cadre d'un pipeline.
 - **`pulse` vs `pinterest-expert`** : `pulse` rédige le texte pin (titre + description). `pinterest-expert` audite / scale / pilote Ads / SEO Pinterest organique.
 - **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. La pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
+- **`pulse` vs experts réseaux (`x-expert` / `threads-expert` / `instagram-expert` / `facebook-expert`)** : `pulse` garde LinkedIn, Bluesky, texte Pinterest, descriptions YouTube et la coordination communautaire transverse (calendrier, Discord, Substack). X, Threads, Instagram et Facebook appartiennent désormais à leur expert dédié (stratégie + format + algo + contenu de la plateforme). Tous organiques : les Ads relèveront d'agents Ads séparés (Meta Ads, TikTok Ads). `instagram-expert` ne génère pas les visuels (délégués à `tools/html-to-png` + metricool-carousel).
 - **`radar` vs `seo-specialist`** : `radar` = SEO éditorial schoolsWP (cocons, briefs, maillage). `seo-specialist` = SEO technique générique (schema, Core Web Vitals, sitemap, audit serveur).
 - **`google-business-expert` vs `seo-specialist` / `radar` / `ads-operator`** : `google-business-expert` = SEO local + fiche Google Business Profile (catégories, avis, NAP, citations, local pack, posts GBP). `seo-specialist` reste le SEO technique on-site, `radar` le SEO éditorial, `ads-operator` l'acquisition payante Google Ads. Le local et la fiche GBP n'appartiennent qu'à `google-business-expert`. Il ne publie jamais et ne modifie jamais la fiche.
 - **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.
