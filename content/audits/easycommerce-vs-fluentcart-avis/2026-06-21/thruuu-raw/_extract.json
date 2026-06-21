@@ -1,0 +1,1621 @@
+{
+  "Info": [
+    [
+      "Search url",
+      ""
+    ],
+    [
+      "Query",
+      "EasyCommerce vs FluentCart"
+    ],
+    [
+      "Device",
+      "desktop"
+    ],
+    [
+      "Language",
+      "fr"
+    ],
+    [
+      "Location",
+      ""
+    ],
+    [
+      "Country",
+      "FR"
+    ],
+    [
+      "Search engine",
+      "google.fr"
+    ],
+    [
+      "Number of results",
+      2
+    ],
+    [
+      "Scrape date",
+      "21st June 2026"
+    ],
+    [
+      "Export date",
+      "21st June 2026"
+    ]
+  ],
+  "SERP Overview": [
+    [
+      "Position",
+      "Organic Position",
+      "Page",
+      "SERP Type",
+      "Type",
+      "SERP Title",
+      "Title",
+      "URL",
+      "SERP Description",
+      "Meta Description",
+      "Hostname",
+      "TLD",
+      "Page Rank",
+      "Word Count",
+      "Image Count",
+      "Publication Date",
+      "Modification Date",
+      "Is Organic",
+      "Is AMP",
+      "Has SERP FAQ",
+      "Has On Page FAQ",
+      "Schema Type"
+    ],
+    [
+      1,
+      1,
+      1,
+      "video",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      2,
+      2,
+      1,
+      "page",
+      "article",
+      "FluentCart vs SureCart",
+      "FluentCart vs SureCart - FluentCart",
+      "https://fluentcart.com/fluentcart-vs-surecart/",
+      "FluentCart lives inside your WordPress install. There's no cloud dependency, no backend calls to proprietary servers. No chance of your store being turned off ...",
+      "Compare FluentCart vs. SureCart: self-hosted freedom vs. SaaS lock-in. Choose what's right for your business",
+      "fluentcart.com",
+      "com",
+      41,
+      617,
+      25,
+      "03 June 2025",
+      "19 May 2026",
+      true,
+      "",
+      false,
+      false,
+      "WebPage,ImageObject,BreadcrumbList,WebSite,Organization"
+    ],
+    [
+      3,
+      3,
+      1,
+      "page",
+      "article",
+      "Easy Digital Downloads vs. FluentCart for Digital Products",
+      "Easy Digital Downloads vs. FluentCart pour les produits numériques",
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "7 juin 2026 — FluentCart est un plugin eCommerce généraliste. EDD est spécialement conçu pour les produits numériques, avec chaque fonctionnalité et outil ...",
+      "Vous cherchez une alternative à FluentCart ? Comparez Easy Digital Downloads et FluentCart pour vendre des produits numériques sur WordPress",
+      "easydigitaldownloads.com",
+      "com",
+      51,
+      2344,
+      23,
+      "11 May 2026",
+      "26 May 2026",
+      true,
+      "",
+      false,
+      true,
+      "BreadcrumbList,FAQPage (2),Organization,WebPage,WebSite"
+    ],
+    [
+      4,
+      4,
+      1,
+      "page",
+      "social",
+      "FluentCart just got released! What are your thoughts?",
+      "Reddit - The heart of the internet",
+      "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentcart_just_got_released_what_are_your/",
+      "It looks like WooCommerce is facing some competition. We already had the Shopify plugin, and now there's FluentCart. What do you think about Woo's future? ...",
+      "",
+      "reddit.com",
+      "com",
+      60,
+      125,
+      3,
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      5,
+      5,
+      1,
+      "page",
+      "article",
+      "FluentCart Review: The All-in-One Alternative to ... - Leokoo.com",
+      "FluentCart Review: The All-in-One Alternative to WooCommerce & Shopify?",
+      "https://leokoo.com/reviews/fluentcart-review-woocommerce-shopify-alternative/",
+      "22 juin 2025 — FluentCart will be as extensible as WooCommerce, ensuring an ecosystem of third-party plugins will be built around it, making FluentCart more ...",
+      "Tired of expensive addons? Our in-depth FluentCart review explores its built-in subscription engine, transparent pricing, and why it offers incredible value compared to the costly ecosystems of WooCommerce and Shopify",
+      "leokoo.com",
+      "com",
+      22,
+      1467,
+      10,
+      "",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      "BreadcrumbList"
+    ],
+    [
+      6,
+      6,
+      1,
+      "page",
+      "",
+      "A Smarter, AI-First Alternative to FluentCart",
+      "A Smarter, AI-First Alternative to FluentCart",
+      "https://easycommerce.dev/compare/fluentcart",
+      "10 juin 2026 — FluentCart is a capable modern cart, but EasyCommerce goes further, with built-in AI agents, generative content tools, and support for physical, ...",
+      "",
+      "easycommerce.dev",
+      "dev",
+      40,
+      "",
+      "",
+      "",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      7,
+      7,
+      1,
+      "page",
+      "article",
+      "Introducing FluentCart: Fast, Flexible, and Feature-Packed ...",
+      "Introducing FluentCart: Fast, Flexible, and Feature-Packed for eCommerce - FluentCommunity",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/",
+      "14 oct. 2025 — Know about FluentCart, the all-in-one WordPress eCommerce solution. Simplify store management, boost sales, and scale your online business.",
+      "Know about FluentCart, the all-in-one WordPress eCommerce solution. Simplify store management, boost sales, and scale your online business",
+      "fluentcommunity.co",
+      "co",
+      41,
+      2414,
+      25,
+      "14 October 2025",
+      "14 October 2025",
+      true,
+      "",
+      false,
+      false,
+      "Article,BlogPosting,WebPage,ImageObject,BreadcrumbList,WebSite,Organization,Person"
+    ],
+    [
+      8,
+      8,
+      1,
+      "page",
+      "article",
+      "FluentCart WordPress : l'alternative rapide à WooCommerce",
+      "FluentCart WordPress : l'alternative rapide à WooCommerce",
+      "https://schoolswp.com/avis-fluentcart-wordpress/",
+      "FluentCart vs WooCommerce : le match vitesse contre exhaustivité ; Coût (hors hébergement), Tarif fixe transparent (pas de frais de transaction), Gratuit, mais ...",
+      "Analyse de FluentCart pour WordPress : la nouvelle référence e-commerce ? Découvrez ses performances, sa scalabilité et sa gestion native des abonnements",
+      "schoolswp.com",
+      "com",
+      28,
+      3224,
+      14,
+      "24 November 2025",
+      "29 March 2026",
+      true,
+      "",
+      false,
+      false,
+      "Place,EducationalOrganization,Organization,WebSite,ImageObject,BreadcrumbList,WebPage,Person,BlogPosting"
+    ],
+    [
+      9,
+      9,
+      1,
+      "page",
+      "website",
+      "FluentCart A New Era of eCommerce - WordPress - Occitan",
+      "FluentCart A New Era of eCommerce – Faster, Lighter, and Simpler – WordPress plugin | WordPress.org Occitan",
+      "https://oci.wordpress.org/plugins/fluent-cart/",
+      "FluentCart supports a variety of sales models, all in the same store. Offer one-time products or digital downloads, manage subscriptions with flexible billing ...",
+      "Sell Subscriptions, Physical Products, Digital Downloads easier than ever. Built for performance, scalability, and flexibility",
+      "oci.wordpress.org",
+      "org",
+      41,
+      5630,
+      20,
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      10,
+      10,
+      2,
+      "page",
+      "home page",
+      "FluentCart: A New Era of eCommerce with WordPress",
+      "FluentCart: A New Era of eCommerce with WordPress",
+      "https://fluentcart.com/",
+      "FluentCart combines performance, scalability, flexibility, and insight—all in one WordPress plugin. It empowers eCommerce stores, plugin sellers, and digital ...",
+      "FluentCart brings a new era of eCommerce with WordPress, fast, lightweight, and effortless for modern online stores",
+      "fluentcart.com",
+      "com",
+      41,
+      2167,
+      67,
+      "03 June 2025",
+      "14 May 2026",
+      true,
+      "",
+      false,
+      false,
+      "WebPage,ImageObject,BreadcrumbList,WebSite,Organization"
+    ],
+    [
+      11,
+      11,
+      2,
+      "page",
+      "",
+      "Can Fluentcart challenge Woocommerce?",
+      "Can Fluentcart challenge Woocommerce?",
+      "https://www.facebook.com/groups/316428489851834/posts/1374219157406090/",
+      "23 oct. 2025 — But recently, a new player called FluentCart has stepped into the game. Can it really challenge WooCommerce? Find out in this video — the link ...",
+      "",
+      "facebook.com",
+      "com",
+      76,
+      "",
+      "",
+      "",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      12,
+      12,
+      2,
+      "page",
+      "article",
+      "WooCommerce vs FluentCart: Which eCommerce Plugin Wins ...",
+      "WooCommerce vs FluentCart: Which eCommerce Plugin Wins in 2026? - Woo Custom Development",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/",
+      "5 janv. 2026 — In this comprehensive WooCommerce vs FluentCart comparison, we'll dive deep into performance benchmarks, feature sets, developer ecosystems, ...",
+      "The WooCommerce vs FluentCart debate is heating up as the WordPress eCommerce landscape witnesses its most significant disruption in over a decade",
+      "woocustomdev.com",
+      "com",
+      23,
+      1567,
+      6,
+      "05 January 2026",
+      "05 January 2026",
+      true,
+      "",
+      false,
+      false,
+      "Person (2),Organization,WebSite,ImageObject,BreadcrumbList,WebPage,BlogPosting"
+    ],
+    [
+      13,
+      13,
+      2,
+      "page",
+      "article",
+      "FluentCart: Cutting Through Complexity with Self-Hosted E ...",
+      "FluentCart: Cutting Through Complexity with Self-Hosted E-Commerce by WordPress Ninjas – Atmostfear Entertainment",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/",
+      "6 juin 2025 — FluentCart is a new self-hosted e-commerce plugin by WPManageNinja, designed for WordPress users who value simplicity, performance, ...",
+      "FluentCart is a new self-hosted e-commerce plugin by WPManageNinja, designed for WordPress users who value simplicity, performance, and full data ownership. It supports digital goods, subscriptions, licensing, and native block integration—without external dependencies",
+      "atmostfear-entertainment.com",
+      "com",
+      0,
+      2580,
+      7,
+      "06 June 2025",
+      "06 June 2025",
+      true,
+      "",
+      false,
+      false,
+      "Place,EntertainmentBusiness,Organization,WebSite,ImageObject,WebPage,Person,NewsArticle"
+    ],
+    [
+      14,
+      14,
+      2,
+      "page",
+      "article",
+      "FluentCart, StoreEngine, or EasyCommerce? - DaisyWP",
+      "WordPress eCommerce: FluentCart, StoreEngine, or EasyCommerce? - DaisyWP",
+      "https://daisywp.com/fluentcart-storeengine-or-easycommerce-finding-your-perfect-wordpress-ecommerce-solution",
+      "Think of FluentCart as the precision-engineered engine of a high-performance sports car. It's built for those who demand ultimate control, blistering speed, and ...",
+      "The great news is that the landscape has evolved beyond a one-size-fits-all solution. Instead, we have three standout platforms—FluentCart, StoreEngine, and",
+      "daisywp.com",
+      "com",
+      22,
+      734,
+      7,
+      "25 October 2025",
+      "05 February 2026",
+      true,
+      "",
+      false,
+      false,
+      "Organization,WebSite,ImageObject,BreadcrumbList,WebPage,Person,BlogPosting"
+    ],
+    [
+      15,
+      15,
+      2,
+      "page",
+      "social",
+      "Fluentcart... anyone tried it yet? : r/Wordpress",
+      "Reddit - The heart of the internet",
+      "https://www.reddit.com/r/Wordpress/comments/1pdpywk/fluentcart_anyone_tried_it_yet/",
+      "I know it's pretty new.. touted as a good alternative to WooCommerece etc.. I'm in the process of setting up a store.. Just wanted to know if it's worth ...",
+      "",
+      "reddit.com",
+      "com",
+      60,
+      103,
+      3,
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      16,
+      16,
+      2,
+      "page",
+      "",
+      "Compare EasyCommerce: How It Stacks Up",
+      "Compare EasyCommerce: How It Stacks Up",
+      "https://easycommerce.dev/compare",
+      "EasyCommerce vs FluentCart. A smarter, AI-first alternative with agentic AI and physical, digital, and hybrid selling. See comparison ...",
+      "",
+      "easycommerce.dev",
+      "dev",
+      40,
+      "",
+      "",
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      17,
+      17,
+      2,
+      "page",
+      "",
+      "EasyCommerce vs. WP EasyCart Comparison",
+      "EasyCommerce vs. WP EasyCart Comparison",
+      "https://sourceforge.net/software/compare/EasyCommerce-vs-WP-EasyCart/",
+      "Compare EasyCommerce vs. WP EasyCart using this comparison chart. Compare price, features, and reviews of the software side-by-side to make the best choice ...",
+      "",
+      "sourceforge.net",
+      "net",
+      62,
+      "",
+      "",
+      "No Publication Date Found",
+      "No Modification Date Found",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ],
+    [
+      18,
+      18,
+      2,
+      "page",
+      "article",
+      "A Modern, Fast, and User-Friendly eCommerce Solution",
+      "FluentCart – A Modern, Fast, and User-Friendly eCommerce Solution - [FluentCart A New Era of eCommerce - Faster, Lighter, and Simpler] Review | WordPress.org",
+      "https://wordpress.org/support/topic/fluentcart-a-modern-fast-and-user-friendly-ecommerce-solution/",
+      "I recently started using FluentCart for my online store, and I must say it's an outstanding plugin. The interface is clean, fast, and far more advanced ...",
+      "[This thread is closed.] I recently started using FluentCart for my online store, and I must say it’s an outstanding plugin. The interface is clean,…",
+      "wordpress.org",
+      "org",
+      76,
+      156,
+      1,
+      "26 October 2025",
+      "26 October 2025",
+      true,
+      "",
+      false,
+      false,
+      ""
+    ]
+  ],
+  "Frequent Questions": [
+    [
+      "Tag",
+      "Question",
+      "Count"
+    ],
+    [
+      "H1",
+      "Fluentcart WordPress : l’alternative simple à WooCommerce ?",
+      2
+    ],
+    [
+      "H1",
+      "Fluentcart... anyone tried it yet?",
+      1
+    ],
+    [
+      "H1",
+      "WordPress eCommerce: FluentCart, StoreEngine, or EasyCommerce?",
+      1
+    ],
+    [
+      "H1",
+      "WooCommerce vs FluentCart: Which eCommerce Plugin Wins in 2026?",
+      1
+    ],
+    [
+      "H1",
+      "FluentCart just got released! What are your thoughts?",
+      1
+    ],
+    [
+      "H2",
+      "How to Use Fluent Forms Integration with FluentCommunity",
+      4
+    ],
+    [
+      "H2",
+      "Can I customize FluentCart to match my brand?",
+      2
+    ],
+    [
+      "H2",
+      "Can I sell physical and digital products together?",
+      2
+    ],
+    [
+      "H2",
+      "How to Use the FluentCommunity Leaderboard to Drive Real Member Engagement",
+      2
+    ],
+    [
+      "H2",
+      "Who Should get SureCart",
+      2
+    ],
+    [
+      "H2",
+      "How to Implement Split Payments in WooCommerce Marketplaces Using Stripe Connect",
+      1
+    ],
+    [
+      "H2",
+      "How to Set Up WooCommerce for Food Delivery with Zone-Based Ordering and Time Slots",
+      1
+    ],
+    [
+      "H2",
+      "Who Should Choose Which Platform WooCommerce or FluentCart",
+      1
+    ],
+    [
+      "H2",
+      "Interested in development?",
+      1
+    ],
+    [
+      "H2",
+      "Will store development be expensive with FluentCart?",
+      1
+    ],
+    [
+      "H2",
+      "Do I need any paid services to use FluentCart?",
+      1
+    ],
+    [
+      "H2",
+      "Will FluentCart Charge Fees?",
+      1
+    ],
+    [
+      "H2",
+      "What payment methods are supported?",
+      1
+    ],
+    [
+      "H2",
+      "Is FluentCart compatible with my current WordPress theme?",
+      1
+    ],
+    [
+      "H2",
+      "Does FluentCart support subscriptions and recurring billing?",
+      1
+    ],
+    [
+      "H2",
+      "How easy is it to set up and use?",
+      1
+    ],
+    [
+      "H2",
+      "Comment booster tes ventes avec WP Social Ninja FluentCart",
+      1
+    ],
+    [
+      "H2",
+      "Pulse avis – Faut-il adopter cet outil pour vos fiches produits e-commerce en 2026 ?",
+      1
+    ],
+    [
+      "H2",
+      "FunnelKit : le meilleur plugin pour créer des tunnels de vente ?",
+      1
+    ],
+    [
+      "H2",
+      "Le verdict : pour qui FluentCart est-il une évidence ?",
+      1
+    ],
+    [
+      "H2",
+      "Et les produits physiques dans tout ça ?",
+      1
+    ],
+    [
+      "H2",
+      "Alors, faut-il passer à FluentCart pour votre boutique WordPress ?",
+      1
+    ],
+    [
+      "H2",
+      "FluentCart : la nouvelle référence e-commerce pour WordPress ?",
+      1
+    ],
+    [
+      "H2",
+      "Why FluentCart could be a game-changer?",
+      1
+    ],
+    [
+      "H2",
+      "What is FluentCart?",
+      1
+    ],
+    [
+      "H2",
+      "EDD vs. FluentCart : Lequel convient le mieux à votre boutique ?",
+      1
+    ],
+    [
+      "H2",
+      "Pourquoi plus de 50 000 créateurs choisissent EDD plutôt que FluentCart pour la vente de produits numériques",
+      1
+    ],
+    [
+      "H2",
+      "What Sets Us Apart from SaaS",
+      1
+    ]
+  ],
+  "FAQ": [
+    [
+      "Page position",
+      "URL",
+      "Question",
+      "Answer"
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Qu'est-ce qui différencie EDD de FluentCart pour la vente de produits numériques ?",
+      "EDD is built specifically for digital products and has been for over 15 years. Every feature, from automated file delivery to software licensing to subscription management, was designed with digital sellers in mind. FluentCart is a newer general-purpose eCommerce plugin that supports physical, digital, and hybrid products. For sellers focused on digital products, EDD’s purpose-built approach means a better fit and less complexity."
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Qui devrait utiliser Easy Digital Downloads à la place de FluentCart ?",
+      "Easy Digital Downloads is the better choice for anyone who sells digital products exclusively, needs proven software licensing tools, wants transparent and predictable pricing, or relies on a mature ecosystem of integrations. It’s especially well-suited for WordPress plugin developers, theme authors, course creators, musicians, photographers, and any creator who wants a platform built specifically for their business."
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Puis-je obtenir le plugin WordPress Easy Digital Downloads gratuitement ?",
+      "Yes, the free version of Easy Digital Downloads is available to download in the WordPress Plugin Directory. With over 50,000 active installations, it’s a trusted and highly-rated choice. It’s also the perfect entry-level option if you’re just getting started with selling digital products, giving you all the essential tools to launch your digital eCommerce store without upfront costs."
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Quels types de produits numériques puis-je vendre avec EDD ?",
+      "EDD vous permet de vendre une large gamme de produits de commerce électronique numériques, y compris des plugins et thèmes WordPress, des e-books, des cours en ligne, des logiciels, de la musique, et plus encore. Tout ce que vous pouvez imaginer, vous pouvez probablement le vendre avec EDD."
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Puis-je migrer ma boutique de FluentCart vers EDD ?",
+      "Oui, EDD vous permet de migrer rapidement et facilement depuis d'autres plateformes comme FluentCart. Notre équipe de support peut vous aider à rendre la transition fluide et sans tracas."
+    ],
+    [
+      3,
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "Comment EDD gère-t-il la licence logicielle pour la vente de produits numériques ?",
+      "EDD automatically generates and manages software license keys, controls activations, and handles updates. It’s perfect for selling WordPress plugins, themes, desktop software, or any licensed digital product."
+    ]
+  ],
+  "Heading 2": [
+    [
+      "Page position",
+      "H2",
+      "URL"
+    ],
+    [
+      2,
+      "FluentCart Free vs. SureCart Free",
+      "https://fluentcart.com/fluentcart-vs-surecart/"
+    ],
+    [
+      2,
+      "What Sets Us Apart from SaaS",
+      "https://fluentcart.com/fluentcart-vs-surecart/"
+    ],
+    [
+      2,
+      "FluentCart vs. SureCart",
+      "https://fluentcart.com/fluentcart-vs-surecart/"
+    ],
+    [
+      2,
+      "Bringing the Change for WordPress",
+      "https://fluentcart.com/fluentcart-vs-surecart/"
+    ],
+    [
+      3,
+      "La meilleure alternative à FluentCart conçue spécifiquement pour les produits numériques",
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+    ],
+    [
+      3,
+      "Pourquoi plus de 50 000 créateurs choisissent EDD plutôt que FluentCart pour la vente de produits numériques",
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+    ],
+    [
+      3,
+      "EDD vs. FluentCart : Lequel convient le mieux à votre boutique ?",
+      "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+    ],
+    [
+      4,
+      "Top Posts",
+      "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentcart_just_got_released_what_are_your/"
+    ],
+    [
+      5,
+      "Leo Koo",
+      "https://leokoo.com/reviews/fluentcart-review-woocommerce-shopify-alternative/"
+    ],
+    [
+      5,
+      "Share",
+      "https://leokoo.com/reviews/fluentcart-review-woocommerce-shopify-alternative/"
+    ],
+    [
+      7,
+      "Subscribe To Get",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "What is FluentCart?",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Key features of FluentCart",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Store management",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Product handling",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Checkout & payments",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Customer management",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Orders & fulfillment",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Marketing & growth",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Licensing & subscriptions",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Business-grade reporting & analytics",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Advanced tools",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Design & customization",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Why FluentCart could be a game-changer?",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Potential use cases",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Comparing FluentCart to other options",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Conclusion",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      7,
+      "Prema Anjum",
+      "https://fluentcommunity.co/blog/introducing-fluentcart/"
+    ],
+    [
+      8,
+      "FluentCart : la nouvelle référence e-commerce pour WordPress ?",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "Une architecture pensée pour la vitesse et la scalabilité",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "Une polyvalence native : vendre plus que des produits physiques",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "L’écosystème Fluent : une puissance décuplée",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "FluentCart face à la concurrence : le comparatif",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "Alors, faut-il passer à FluentCart pour votre boutique WordPress ?",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "Des questions ? J’ai les réponses",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      8,
+      "Publications similaires",
+      "https://schoolswp.com/avis-fluentcart-wordpress/"
+    ],
+    [
+      9,
+      "Descripcion",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "Screenshots",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "Installacion",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "FAQ",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "Reviews",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "Contributors & Developers",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      9,
+      "Changelog",
+      "https://oci.wordpress.org/plugins/fluent-cart/"
+    ],
+    [
+      10,
+      "An eCommerce Plugin Engineered to Perform",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Sell Digital and Physical Products From One Platform",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Built for Large-Scale eCommerce Growth",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Here’s What Everyone Thinks So Far",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Create, Manage, Sell.It’s That Simple",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Real-Time BusinessInsights, Built In",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Develop Fast, Sell Faster",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Flexible Payments & SubscriptionsNo Platform Fees!",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Innovation Paired with Familiarity",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Unlock Exclusive Lifetime Deal",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Comprehensive eCommerce Toolkit",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "From the makers of award-winning plugins",
+      "https://fluentcart.com/"
+    ],
+    [
+      10,
+      "Frequently Asked Questions",
+      "https://fluentcart.com/"
+    ],
+    [
+      12,
+      "The Contenders at a Glance",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Performance: Where FluentCart Shines",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Feature Comparison WooCommerce vs FluentCart : Built-in vs Extensions",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Developer Experience and Documentation",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Third-Party Ecosystem of WooCommerce vs FluentCart : The Great Divide",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Pricing Reality Check",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "WooCommerce vs FluentCart: Pros and Cons",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Who Should Choose Which Platform WooCommerce or FluentCart",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "The Verdict",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Take Action",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      12,
+      "Related Posts",
+      "https://woocustomdev.com/woocommerce-vs-fluentcart/"
+    ],
+    [
+      13,
+      "About WPManageNinja and Their Plugin Ecosystem",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ],
+    [
+      13,
+      "Subscribe",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ],
+    [
+      13,
+      "Developer Architecture",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ],
+    [
+      13,
+      "Open Source and Accessibility",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ],
+    [
+      13,
+      "Contribution Model",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ],
+    [
+      13,
+      "Andean Culture",
+      "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluentcart-cutting-through-complexity-with-self-hosted-e-commerce-by-wordpress-ninjas/"
+    ]
+  ],
+  "Related Search": [
+    [
+      "SureCart vs WooCommerce",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=SureCart+vs+WooCommerce&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg3EAE"
+    ],
+    [
+      "SureCart vs FluentCart",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=SureCart+vs+FluentCart&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg_EAE"
+    ],
+    [
+      "Fluent cart vs woocommerce",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=Fluent+cart+vs+woocommerce&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg6EAE"
+    ],
+    [
+      "Fluentcart subscriptions",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=Fluentcart+subscriptions&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg9EAE"
+    ],
+    [
+      "FluentCart demo",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=FluentCart+demo&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg7EAE"
+    ],
+    [
+      "FluentCart roadmap",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=FluentCart+roadmap&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg5EAE"
+    ],
+    [
+      "FluentCart changelog",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=FluentCart+changelog&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg4EAE"
+    ],
+    [
+      "Fluentcart integrations",
+      "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&hl=fr&q=Fluentcart+integrations&sa=X&ved=2ahUKEwjqi-OKipiVAxU5lP0HHT1SASUQ1QJ6BAg2EAE"
+    ]
+  ],
+  "Topic_top": [
+    [
+      "Keyword",
+      "Found in Pages",
+      "Total Frequency",
+      "Max Count on page",
+      "Min count on page",
+      "Relevancy",
+      "Length"
+    ],
+    [
+      "to",
+      5,
+      200,
+      60,
+      15,
+      20.25,
+      1
+    ],
+    [
+      "your",
+      5,
+      118,
+      37,
+      6,
+      11.97,
+      1
+    ],
+    [
+      "with",
+      5,
+      146,
+      50,
+      13,
+      14.72,
+      1
+    ],
+    [
+      "and",
+      5,
+      351,
+      154,
+      12,
+      30.58,
+      1
+    ],
+    [
+      "the",
+      6,
+      161,
+      42,
+      3,
+      20.53,
+      1
+    ],
+    [
+      "surecart",
+      2,
+      15,
+      12,
+      3,
+      1.59,
+      1
+    ],
+    [
+      "fluentcart",
+      8,
+      237,
+      51,
+      3,
+      38.69,
+      1
+    ],
+    [
+      "wordpress",
+      7,
+      104,
+      34,
+      6,
+      17.92,
+      1
+    ],
+    [
+      "store",
+      5,
+      101,
+      37,
+      7,
+      10.06,
+      1
+    ],
+    [
+      "you",
+      6,
+      127,
+      38,
+      3,
+      14.52,
+      1
+    ],
+    [
+      "for",
+      5,
+      197,
+      117,
+      8,
+      17.03,
+      1
+    ],
+    [
+      "we",
+      3,
+      15,
+      8,
+      3,
+      1.92,
+      1
+    ],
+    [
+      "or",
+      5,
+      81,
+      29,
+      7,
+      7.99,
+      1
+    ],
+    [
+      "free",
+      2,
+      13,
+      7,
+      6,
+      1.04,
+      1
+    ],
+    [
+      "in",
+      5,
+      98,
+      59,
+      5,
+      8.72,
+      1
+    ],
+    [
+      "are",
+      5,
+      32,
+      12,
+      3,
+      4.04,
+      1
+    ],
+    [
+      "of",
+      6,
+      96,
+      29,
+      6,
+      11.94,
+      1
+    ],
+    [
+      "get",
+      4,
+      21,
+      7,
+      3,
+      2.35,
+      1
+    ],
+    [
+      "re",
+      4,
+      18,
+      6,
+      3,
+      2.02,
+      1
+    ],
+    [
+      "our",
+      2,
+      9,
+      5,
+      4,
+      0.74,
+      1
+    ],
+    [
+      "no",
+      3,
+      34,
+      21,
+      5,
+      2.11,
+      1
+    ],
+    [
+      "it",
+      5,
+      94,
+      28,
+      5,
+      9.62,
+      1
+    ],
+    [
+      "is",
+      5,
+      98,
+      29,
+      5,
+      9.58,
+      1
+    ],
+    [
+      "not",
+      3,
+      31,
+      21,
+      5,
+      2.19,
+      1
+    ],
+    [
+      "if",
+      4,
+      16,
+      5,
+      3,
+      1.95,
+      1
+    ],
+    [
+      "all",
+      4,
+      37,
+      15,
+      4,
+      2.86,
+      1
+    ],
+    [
+      "their",
+      4,
+      20,
+      7,
+      3,
+      2.3,
+      1
+    ],
+    [
+      "your store",
+      4,
+      29,
+      11,
+      4,
+      4.79,
+      2
+    ],
+    [
+      "what",
+      4,
+      18,
+      6,
+      4,
+      2.09,
+      1
+    ],
+    [
+      "support",
+      6,
+      77,
+      45,
+      3,
+      8.99,
+      1
+    ],
+    [
+      "just",
+      4,
+      19,
+      6,
+      4,
+      1.88,
+      1
+    ],
+    [
+      "will",
+      3,
+      9,
+      3,
+      3,
+      0.91,
+      1
+    ],
+    [
+      "clients",
+      2,
+      7,
+      4,
+      3,
+      0.71,
+      1
+    ],
+    [
+      "that",
+      5,
+      42,
+      15,
+      3,
+      4.65,
+      1
+    ],
+    [
+      "using",
+      3,
+      13,
+      6,
+      3,
+      0.96,
+      1
+    ],
+    [
+      "real",
+      2,
+      7,
+      4,
+      3,
+      0.52,
+      1
+    ],
+    [
+      "be",
+      5,
+      22,
+      6,
+      3,
+      2.58,
+      1
+    ],
+    [
+      "from",
+      4,
+      38,
+      14,
+      3,
+      2.86,
+      1
+    ],
+    [
+      "only",
+      2,
+      7,
+      4,
+      3,
+      0.49,
+      1
+    ],
+    [
+      "more",
+      5,
+      32,
+      10,
+      3,
+      3.22,
+      1
+    ],
+    [
+      "one",
+      3,
+      14,
+      8,
+      3,
+      1.02,
+      1
+    ],
+    [
+      "numérique",
+      2,
+      62,
+      48,
+      14,
+      8.88,
+      2
+    ],
+    [
+      "produits numériques",
+      2,
+      40,
+      27,
+      13,
+      7.97,
+      3
+    ],
+    [
+      "plugin",
+      6,
+      90,
+      27,
+      7,
+      12.06,
+      1
+    ],
+    [
+      "boutique",
+      2,
+      38,
+      20,
+      18,
+      2.12,
+      1
+    ],
+    [
+      "vente",
+      2,
+      33,
+      17,
+      16,
+      1.92,
+      1
+    ],
+    [
+      "gestion",
+      2,
+      26,
+      15,
+      11,
+      1.59,
+      1
+    ],
+    [
+      "vendre",
+      2,
+      20,
+      14,
+      6,
+      1.35,
+      1
+    ],
+    [
+      "vendeur",
+      2,
+      16,
+      12,
+      4,
+      1.12,
+      1
+    ],
+    [
+      "conçu",
+      2,
+      15,
+      11,
+      4,
+      2.08,
+      2
+    ],
+    [
+      "outil",
+      2,
+      17,
+      10,
+      7,
+      1.05,
+      1
+    ],
+    [
+      "logicielle",
+      2,
+      13,
+      9,
+      4,
+      0.88,
+      1
+    ],
+    [
+      "fonctionnalité",
+      2,
+      16,
+      8,
+      8,
+      0.92,
+      1
+    ],
+    [
+      "ecommerce",
+      4,
+      40,
+      12,
+      8,
+      3.19,
+      1
+    ]
+  ]
+}

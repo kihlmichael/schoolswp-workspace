@@ -1,0 +1,22 @@
+type,nom,total_moteurs,google_organic,chatgpt,gemini,google_ai_mode,note
+marque,EasyCommerce,3,-,oui,oui,oui,co-citee partout (mais Gemini/Google AI la confondent avec un ecosysteme mature type Woo = ambiguite a lever)
+marque,FluentCart,3,-,oui,oui,oui,
+marque,WooCommerce,3,-,oui,oui,oui,reference systematique du comparatif
+marque,FluentCRM,2,-,oui,non,oui,ecosysteme Fluent
+marque,WordPress,1,-,oui,non,non,
+marque,Fluent Forms,1,-,oui,non,non,ecosysteme Fluent
+marque,Gutenberg,1,-,non,oui,non,
+marque,Bricks,1,-,non,oui,non,page builder / headless
+marque,Easy Digital Downloads,1,-,non,non,oui,
+marque,SureCart,1,-,non,non,oui,concurrent direct
+domaine,easycommerce.dev,3,2x,3x,4x,non,LE concurrent domine le narratif LLM (sa page /compare/fluentcart)
+domaine,fluentcart.com,3,2x,non,3x,2x,site officiel
+domaine,schoolswp.com,2,1x,non,non,2x,CITE par Google AI Mode (2x) + Google Organic mais ABSENT ChatGPT & Gemini
+domaine,easydigitaldownloads.com,2,1x,2x,non,non,page /fr/compare/fluentcart avec FAQPage schema
+domaine,reddit.com,2,2x,non,non,1x,preuve sociale
+domaine,fluentcommunity.co,2,1x,non,non,1x,
+domaine,sourceforge.net,2,1x,1x,non,non,"EasyCommerce vs WP EasyCart = AUTRE produit (ambiguite easycommerce)"
+domaine,easycommerce.tech,1,non,2x,non,non,autre entite easycommerce citee par ChatGPT
+domaine,wpmanageninja.com,1,non,1x,non,non,editeur FluentCart
+domaine,youtube.com,1,non,non,non,3x,pack video (Google AI Mode)
+domaine,daisywp.com,1,1x,non,non,non,"comparatif 3-way FluentCart/StoreEngine/EasyCommerce (734 mots, thin)"

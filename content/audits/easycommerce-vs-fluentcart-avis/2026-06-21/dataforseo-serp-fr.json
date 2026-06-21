@@ -1,0 +1,86 @@
+{
+  "keyword": "easycommerce vs fluentcart",
+  "location": "France",
+  "language": "fr",
+  "device": "desktop",
+  "snapshot_date": "2026-06-21",
+  "note": "Pas de SERP propre au terme exact : Google retourne une SERP large FluentCart (pas de page editoriale FR 'vs' etablie = opportunite first-mover).",
+  "results": [
+    {
+      "rank_absolute": 1,
+      "type": "video_pack",
+      "items": [
+        "YouTube Alexis FH - FluentCart Revolution e-commerce",
+        "YouTube WPManageNinja - Switched from WooCommerce to FluentCart",
+        "YouTube WPDev - Is FluentCart the Next WooCommerce?"
+      ]
+    },
+    {
+      "rank_absolute": 2,
+      "type": "organic",
+      "domain": "fluentcart.com",
+      "url": "https://fluentcart.com/fluentcart-vs-surecart/",
+      "title": "FluentCart vs SureCart"
+    },
+    {
+      "rank_absolute": 3,
+      "type": "organic",
+      "domain": "easydigitaldownloads.com",
+      "url": "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+      "title": "Easy Digital Downloads vs. FluentCart for Digital Products"
+    },
+    {
+      "rank_absolute": 4,
+      "type": "organic",
+      "domain": "easycommerce.dev",
+      "url": "https://easycommerce.dev/compare/fluentcart",
+      "title": "A Smarter, AI-First Alternative to FluentCart"
+    },
+    {
+      "rank_absolute": 5,
+      "type": "organic",
+      "domain": "leokoo.com",
+      "url": "https://leokoo.com/reviews/fluentcart-review-woocommerce-shopify-alternative/",
+      "title": "FluentCart Review: The All-in-One Alternative"
+    },
+    {
+      "rank_absolute": 6,
+      "type": "organic",
+      "domain": "reddit.com",
+      "url": "https://www.reddit.com/r/Wordpress/comments/1o68lu4/",
+      "title": "FluentCart just got released! What are your thoughts?"
+    },
+    {
+      "rank_absolute": 7,
+      "type": "organic",
+      "domain": "schoolswp.com",
+      "url": "https://schoolswp.com/avis-fluentcart-wordpress/",
+      "title": "FluentCart WordPress : l'alternative rapide a WooCommerce",
+      "note": "schoolsWP deja page 1 via un AUTRE article que le brouillon audite"
+    },
+    {
+      "rank_absolute": 8,
+      "type": "organic",
+      "domain": "wpmanageninja.com",
+      "url": "https://wpmanageninja.com/fluentcart-review/",
+      "title": "FluentCart: The Performance-focused eCommerce Plugin"
+    },
+    {
+      "rank_absolute": 9,
+      "type": "organic",
+      "domain": "fluentcart.com",
+      "url": "https://fluentcart.com/",
+      "title": "FluentCart: A New Era of eCommerce with WordPress"
+    }
+  ],
+  "related_searches": [
+    "SureCart vs WooCommerce",
+    "SureCart vs FluentCart",
+    "Fluent cart vs woocommerce",
+    "Fluentcart subscriptions",
+    "Fluentcart integrations",
+    "FluentCart changelog",
+    "FluentCart demo",
+    "FluentCart roadmap"
+  ]
+}

@@ -1,0 +1,26 @@
+critere,constat,valeur,statut,priorite,reco
+Title tag,rank_math_title,EasyCommerce vs FluentCart : IA ou controle ?,OK,-,kw cible en debut / ~44 car
+H1,post_title,EasyCommerce vs FluentCart : quel plugin choisir en 2026 ?,OK,-,kw + annee en debut
+Meta description,rank_math_description,emoji + pas de match exact du kw,A_AMELIORER,P1,inclure "EasyCommerce vs FluentCart" exact / retirer l'emoji (option)
+Slug,post_name,easycommerce-vs-fluentcart-avis,OK,-,propre et avec kw
+Longueur,word_count,3261 mots,OK,-,solide pour un comparatif
+Structure Hn,h2/h3,8 H2 / 10 H3,OK,-,arborescence logique
+Heading FAQ,langue,Questions? We Have Answers. (EN),KO,P0,traduire en FR (artefact de template)
+Anchor interne,langue,WordPress guides reviews and comparisons (EN),A_AMELIORER,P1,ancre FR
+Table comparative,table,1 table / ~5 lignes,OK,-,bon pour comparatif + GEO
+Images,img,0,KO,P0,featured image marque schoolsWP + >=1 visuel comparatif + alt SEO
+Schema JSON-LD,structured data,0 bloc,KO,P0,ajouter FAQPage + SoftwareApplication x2 via Rank Math (GEO-critique)
+Categorie,taxonomie,Non classe,KO,P0,assigner categorie reelle (E-commerce) ; primary_category meta=1095 incoherent
+Tags,taxonomie,0,A_AMELIORER,P1,ajouter tags (EasyCommerce / FluentCart / e-commerce WordPress)
+Liens internes,a href,14 vers le cluster,OK,-,bon maillage
+Liens externes,a href,0,A_AMELIORER,P1,ajouter sources officielles easycommerce.dev + fluentcart.com (rel noopener)
+Focus kw,occurrences,exact x4 / easycommerce 37 / fluentcart 36,OK,-,equilibre sain
+Em/En dash,typo,0,OK,-,conforme charte
+Naming schoolsWP,casse,3 OK / 0 faute,OK,-,conforme
+Tutoiement,vous vs tu,20 vous / 8 tu (74 phrases vous-votre-vos),KO,P0,convertir tout en tutoiement + retirer nous/notre/nos
+Mots interdits,sans effort,2,KO,P0,reformuler (mot banni)
+Mot a verifier,simplement,1,A_VERIFIER,P2,verifier le contexte (banni si pas reellement simple)
+Disclosure affilies,mention,absente,KO,P1,ajouter la formule standard (liens cloaks /EasyCommerce/ et /fluentcart/ presents)
+Sources/webographie,section,absente,KO,P1,sourcer le stat "7% conversion par seconde" ou le retirer
+Respect concurrent,section pour qui,partielle,A_AMELIORER,P1,section explicite "pour qui chacun reste pertinent" + verdict = choix Michael (pas universel) / eviter "Le meilleur choix"
+Rank Math SEO score,meta,75/100,A_AMELIORER,P1,montera avec kw dans description + alt images + schema

@@ -1,0 +1,1390 @@
+{
+  "Info": {
+    "dims": [
+      10,
+      2
+    ],
+    "preview": [
+      [
+        "Search url",
+        ""
+      ],
+      [
+        "Query",
+        "EasyCommerce vs FluentCart"
+      ],
+      [
+        "Device",
+        "desktop"
+      ],
+      [
+        "Language",
+        "fr"
+      ],
+      [
+        "Location",
+        ""
+      ],
+      [
+        "Country",
+        "FR"
+      ]
+    ]
+  },
+  "SERP Overview": {
+    "dims": [
+      19,
+      22
+    ],
+    "preview": [
+      [
+        "Position",
+        "Organic Position",
+        "Page",
+        "SERP Type",
+        "Type",
+        "SERP Title",
+        "Title",
+        "URL",
+        "SERP Description",
+        "Meta Description",
+        "Hostname",
+        "TLD"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "video",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "2",
+        "1",
+        "page",
+        "article",
+        "FluentCart vs SureCart",
+        "FluentCart vs SureCart - FluentCart",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "FluentCart lives inside your WordPress install. There's no c",
+        "Compare FluentCart vs. SureCart: self-hosted freedom vs. Saa",
+        "fluentcart.com",
+        "com"
+      ],
+      [
+        "3",
+        "3",
+        "1",
+        "page",
+        "article",
+        "Easy Digital Downloads vs. FluentCart for Digital Products",
+        "Easy Digital Downloads vs. FluentCart pour les produits numé",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "7 juin 2026 — FluentCart est un plugin eCommerce généraliste",
+        "Vous cherchez une alternative à FluentCart ? Comparez Easy D",
+        "easydigitaldownloads.com",
+        "com"
+      ],
+      [
+        "4",
+        "4",
+        "1",
+        "page",
+        "social",
+        "FluentCart just got released! What are your thoughts?",
+        "Reddit - The heart of the internet",
+        "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentca",
+        "It looks like WooCommerce is facing some competition. We alr",
+        "",
+        "reddit.com",
+        "com"
+      ],
+      [
+        "5",
+        "5",
+        "1",
+        "page",
+        "article",
+        "FluentCart Review: The All-in-One Alternative to ... - Leoko",
+        "FluentCart Review: The All-in-One Alternative to WooCommerce",
+        "https://leokoo.com/reviews/fluentcart-review-woocommerce-sho",
+        "22 juin 2025 — FluentCart will be as extensible as WooCommer",
+        "Tired of expensive addons? Our in-depth FluentCart review ex",
+        "leokoo.com",
+        "com"
+      ]
+    ]
+  },
+  "Search Volume": {
+    "dims": [
+      2,
+      5
+    ],
+    "preview": [
+      [
+        "Keyword",
+        "Competition",
+        "Competition Index",
+        "Search Volume",
+        "CPC"
+      ],
+      [
+        "EasyCommerce vs FluentCart",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Monthly Search Volume": {
+    "dims": [
+      1,
+      4
+    ],
+    "preview": [
+      [
+        "Keyword",
+        "Year",
+        "Month",
+        "Monthly Search Volume"
+      ]
+    ]
+  },
+  "SERP Organic Title": {
+    "dims": [
+      18,
+      3
+    ],
+    "preview": [
+      [
+        "Page position",
+        "Title",
+        "URL"
+      ],
+      [
+        "2",
+        "FluentCart vs SureCart - FluentCart",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "3",
+        "Easy Digital Downloads vs. FluentCart pour les produits numé",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+      ],
+      [
+        "4",
+        "Reddit - The heart of the internet",
+        "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentca"
+      ],
+      [
+        "5",
+        "FluentCart Review: The All-in-One Alternative to WooCommerce",
+        "https://leokoo.com/reviews/fluentcart-review-woocommerce-sho"
+      ],
+      [
+        "6",
+        "A Smarter, AI-First Alternative to FluentCart",
+        "https://easycommerce.dev/compare/fluentcart"
+      ]
+    ]
+  },
+  "Topic": {
+    "dims": [
+      263,
+      7
+    ],
+    "preview": [
+      [
+        "Keyword",
+        "Found in Pages",
+        "Total Frequency",
+        "Max Count on page",
+        "Min count on page",
+        "Relevancy",
+        "Length"
+      ],
+      [
+        "to",
+        "5",
+        "200",
+        "60",
+        "15",
+        "20.246031746031747",
+        "1"
+      ],
+      [
+        "your",
+        "5",
+        "118",
+        "37",
+        "6",
+        "11.966269841269842",
+        "1"
+      ],
+      [
+        "with",
+        "5",
+        "146",
+        "50",
+        "13",
+        "14.722222222222223",
+        "1"
+      ],
+      [
+        "and",
+        "5",
+        "351",
+        "154",
+        "12",
+        "30.578373015873016",
+        "1"
+      ],
+      [
+        "the",
+        "6",
+        "161",
+        "42",
+        "3",
+        "20.532738095238095",
+        "1"
+      ]
+    ]
+  },
+  "Heading 1 (Organic page only)": {
+    "dims": [
+      18,
+      3
+    ],
+    "preview": [
+      [
+        "Page position",
+        "H1",
+        "URL"
+      ],
+      [
+        "2",
+        "WordPress First, Not Just WordPress Compatible",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "3",
+        "Easy Digital Downloads vs. FluentCart",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+      ],
+      [
+        "4",
+        "FluentCart just got released! What are your thoughts?",
+        "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentca"
+      ],
+      [
+        "5",
+        "FluentCart Review: The All-in-One Alternative to WooCommerce",
+        "https://leokoo.com/reviews/fluentcart-review-woocommerce-sho"
+      ],
+      [
+        "6",
+        "",
+        "https://easycommerce.dev/compare/fluentcart"
+      ]
+    ]
+  },
+  "Heading 2 (Organic page only)": {
+    "dims": [
+      74,
+      3
+    ],
+    "preview": [
+      [
+        "Page position",
+        "H2",
+        "URL"
+      ],
+      [
+        "2",
+        "FluentCart Free vs. SureCart Free",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "What Sets Us Apart from SaaS",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "FluentCart vs. SureCart",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "Bringing the Change for WordPress",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "3",
+        "La meilleure alternative à FluentCart conçue spécifiquement ",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/"
+      ]
+    ]
+  },
+  "Heading 3 (Organic page only)": {
+    "dims": [
+      165,
+      3
+    ],
+    "preview": [
+      [
+        "Page position",
+        "H3",
+        "URL"
+      ],
+      [
+        "2",
+        "With FluentCart,Free means Free!",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "Not renting, Own your Store front",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "Built to be extended, without asking",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "Transparent Pricing, Forever",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ],
+      [
+        "2",
+        "Real World Case Study with WPManageNinja",
+        "https://fluentcart.com/fluentcart-vs-surecart/"
+      ]
+    ]
+  },
+  "Frequent Questions": {
+    "dims": [
+      34,
+      3
+    ],
+    "preview": [
+      [
+        "Tag",
+        "Question",
+        "Count"
+      ],
+      [
+        "H1",
+        "Fluentcart WordPress : l’alternative simple à WooCommerce ?",
+        "2"
+      ],
+      [
+        "H1",
+        "Fluentcart... anyone tried it yet?",
+        "1"
+      ],
+      [
+        "H1",
+        "WordPress eCommerce: FluentCart, StoreEngine, or EasyCommerc",
+        "1"
+      ],
+      [
+        "H1",
+        "WooCommerce vs FluentCart: Which eCommerce Plugin Wins in 20",
+        "1"
+      ],
+      [
+        "H1",
+        "FluentCart just got released! What are your thoughts?",
+        "1"
+      ]
+    ]
+  },
+  "FAQ": {
+    "dims": [
+      7,
+      4
+    ],
+    "preview": [
+      [
+        "Page position",
+        "URL",
+        "Question",
+        "Answer"
+      ],
+      [
+        "3",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "Qu'est-ce qui différencie EDD de FluentCart pour la vente de",
+        "EDD is built specifically for digital products and has been "
+      ],
+      [
+        "3",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "Qui devrait utiliser Easy Digital Downloads à la place de Fl",
+        "Easy Digital Downloads is the better choice for anyone who s"
+      ],
+      [
+        "3",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "Puis-je obtenir le plugin WordPress Easy Digital Downloads g",
+        "Yes, the free version of Easy Digital Downloads is available"
+      ],
+      [
+        "3",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "Quels types de produits numériques puis-je vendre avec EDD ?",
+        "EDD vous permet de vendre une large gamme de produits de com"
+      ],
+      [
+        "3",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "Puis-je migrer ma boutique de FluentCart vers EDD ?",
+        "Oui, EDD vous permet de migrer rapidement et facilement depu"
+      ]
+    ]
+  },
+  "Links": {
+    "dims": [
+      2504,
+      7
+    ],
+    "preview": [
+      [
+        "Page position",
+        "Page URL",
+        "Label",
+        "URL",
+        "Domain",
+        "REL",
+        "Is Outbound"
+      ],
+      [
+        "2",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Videos - Pos 1": {
+    "dims": [
+      4,
+      5
+    ],
+    "preview": [
+      [
+        "Carousel Position",
+        "Title",
+        "URL",
+        "Source",
+        "date"
+      ],
+      [
+        "1",
+        "FluentCart : Révolution e-commerce pour WordPress ?",
+        "https://www.youtube.com/watch?v=ECmcRHEcLS0",
+        "",
+        ""
+      ],
+      [
+        "2",
+        "I Switched from WooCommerce to FluentCart (Here's Why)",
+        "https://www.youtube.com/watch?v=o1Yk7aOc9UI",
+        "",
+        ""
+      ],
+      [
+        "3",
+        "Is FluentCart the Next WooCommerce?",
+        "https://www.youtube.com/watch?v=md8TSmCKhRY&vl=fr-FR",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 2": {
+    "dims": [
+      80,
+      3
+    ],
+    "preview": [
+      [
+        "Position",
+        "2",
+        ""
+      ],
+      [
+        "Organic Position",
+        "2",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart vs SureCart",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart vs SureCart - FluentCart",
+        ""
+      ],
+      [
+        "URL",
+        "https://fluentcart.com/fluentcart-vs-surecart/",
+        ""
+      ],
+      [
+        "Hostname",
+        "fluentcart.com",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 3": {
+    "dims": [
+      200,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "3",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "3",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "Easy Digital Downloads vs. FluentCart for Digital Products",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "Easy Digital Downloads vs. FluentCart pour les produits numé",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://easydigitaldownloads.com/fr/compare/fluentcart/",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "easydigitaldownloads.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 4": {
+    "dims": [
+      47,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "4",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "4",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart just got released! What are your thoughts?",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "Reddit - The heart of the internet",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://www.reddit.com/r/Wordpress/comments/1o68lu4/fluentca",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "reddit.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 5": {
+    "dims": [
+      277,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "5",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "5",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart Review: The All-in-One Alternative to ... - Leoko",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart Review: The All-in-One Alternative to WooCommerce",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://leokoo.com/reviews/fluentcart-review-woocommerce-sho",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "leokoo.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 6": {
+    "dims": [
+      15,
+      2
+    ],
+    "preview": [
+      [
+        "Position",
+        "6"
+      ],
+      [
+        "Organic Position",
+        "6"
+      ],
+      [
+        "SERP Title",
+        "A Smarter, AI-First Alternative to FluentCart"
+      ],
+      [
+        "Title",
+        "A Smarter, AI-First Alternative to FluentCart"
+      ],
+      [
+        "URL",
+        "https://easycommerce.dev/compare/fluentcart"
+      ],
+      [
+        "Hostname",
+        "easycommerce.dev"
+      ]
+    ]
+  },
+  "Organic Page 7": {
+    "dims": [
+      384,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "7",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "7",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "Introducing FluentCart: Fast, Flexible, and Feature-Packed .",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "Introducing FluentCart: Fast, Flexible, and Feature-Packed f",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://fluentcommunity.co/blog/introducing-fluentcart/",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "fluentcommunity.co",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 8": {
+    "dims": [
+      238,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "8",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "8",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart WordPress : l'alternative rapide à WooCommerce",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart WordPress : l'alternative rapide à WooCommerce",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://schoolswp.com/avis-fluentcart-wordpress/",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "schoolswp.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 9": {
+    "dims": [
+      759,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "9",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "9",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart A New Era of eCommerce - WordPress - Occitan",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart A New Era of eCommerce – Faster, Lighter, and Sim",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://oci.wordpress.org/plugins/fluent-cart/",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "oci.wordpress.org",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 10": {
+    "dims": [
+      310,
+      3
+    ],
+    "preview": [
+      [
+        "Position",
+        "10",
+        ""
+      ],
+      [
+        "Organic Position",
+        "10",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart: A New Era of eCommerce with WordPress",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart: A New Era of eCommerce with WordPress",
+        ""
+      ],
+      [
+        "URL",
+        "https://fluentcart.com/",
+        ""
+      ],
+      [
+        "Hostname",
+        "fluentcart.com",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 11": {
+    "dims": [
+      15,
+      2
+    ],
+    "preview": [
+      [
+        "Position",
+        "11"
+      ],
+      [
+        "Organic Position",
+        "11"
+      ],
+      [
+        "SERP Title",
+        "Can Fluentcart challenge Woocommerce?"
+      ],
+      [
+        "Title",
+        "Can Fluentcart challenge Woocommerce?"
+      ],
+      [
+        "URL",
+        "https://www.facebook.com/groups/316428489851834/posts/137421"
+      ],
+      [
+        "Hostname",
+        "facebook.com"
+      ]
+    ]
+  },
+  "Organic Page 12": {
+    "dims": [
+      220,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "12",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "12",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "WooCommerce vs FluentCart: Which eCommerce Plugin Wins ...",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "WooCommerce vs FluentCart: Which eCommerce Plugin Wins in 20",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://woocustomdev.com/woocommerce-vs-fluentcart/",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "woocustomdev.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 13": {
+    "dims": [
+      362,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "13",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "13",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart: Cutting Through Complexity with Self-Hosted E ..",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart: Cutting Through Complexity with Self-Hosted E-Co",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://www.atmostfear-entertainment.com/blogs/wpcoven/fluen",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "atmostfear-entertainment.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 14": {
+    "dims": [
+      96,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "14",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "14",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "FluentCart, StoreEngine, or EasyCommerce? - DaisyWP",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "WordPress eCommerce: FluentCart, StoreEngine, or EasyCommerc",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://daisywp.com/fluentcart-storeengine-or-easycommerce-f",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "daisywp.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 15": {
+    "dims": [
+      35,
+      6
+    ],
+    "preview": [
+      [
+        "Position",
+        "15",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Organic Position",
+        "15",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "SERP Title",
+        "Fluentcart... anyone tried it yet? : r/Wordpress",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Title",
+        "Reddit - The heart of the internet",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "URL",
+        "https://www.reddit.com/r/Wordpress/comments/1pdpywk/fluentca",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Hostname",
+        "reddit.com",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "Organic Page 16": {
+    "dims": [
+      15,
+      2
+    ],
+    "preview": [
+      [
+        "Position",
+        "16"
+      ],
+      [
+        "Organic Position",
+        "16"
+      ],
+      [
+        "SERP Title",
+        "Compare EasyCommerce: How It Stacks Up"
+      ],
+      [
+        "Title",
+        "Compare EasyCommerce: How It Stacks Up"
+      ],
+      [
+        "URL",
+        "https://easycommerce.dev/compare"
+      ],
+      [
+        "Hostname",
+        "easycommerce.dev"
+      ]
+    ]
+  },
+  "Organic Page 17": {
+    "dims": [
+      15,
+      2
+    ],
+    "preview": [
+      [
+        "Position",
+        "17"
+      ],
+      [
+        "Organic Position",
+        "17"
+      ],
+      [
+        "SERP Title",
+        "EasyCommerce vs. WP EasyCart Comparison"
+      ],
+      [
+        "Title",
+        "EasyCommerce vs. WP EasyCart Comparison"
+      ],
+      [
+        "URL",
+        "https://sourceforge.net/software/compare/EasyCommerce-vs-WP-"
+      ],
+      [
+        "Hostname",
+        "sourceforge.net"
+      ]
+    ]
+  },
+  "Organic Page 18": {
+    "dims": [
+      31,
+      3
+    ],
+    "preview": [
+      [
+        "Position",
+        "18",
+        ""
+      ],
+      [
+        "Organic Position",
+        "18",
+        ""
+      ],
+      [
+        "SERP Title",
+        "A Modern, Fast, and User-Friendly eCommerce Solution",
+        ""
+      ],
+      [
+        "Title",
+        "FluentCart – A Modern, Fast, and User-Friendly eCommerce Sol",
+        ""
+      ],
+      [
+        "URL",
+        "https://wordpress.org/support/topic/fluentcart-a-modern-fast",
+        ""
+      ],
+      [
+        "Hostname",
+        "wordpress.org",
+        ""
+      ]
+    ]
+  },
+  "Related Search": {
+    "dims": [
+      8,
+      2
+    ],
+    "preview": [
+      [
+        "SureCart vs WooCommerce",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ],
+      [
+        "SureCart vs FluentCart",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ],
+      [
+        "Fluent cart vs woocommerce",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ],
+      [
+        "Fluentcart subscriptions",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ],
+      [
+        "FluentCart demo",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ],
+      [
+        "FluentCart roadmap",
+        "https://www.google.fr/search?sca_esv=a0d0194811dc720d&gl=fr&"
+      ]
+    ]
+  }
+}
