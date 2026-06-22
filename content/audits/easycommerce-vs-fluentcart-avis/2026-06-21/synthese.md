@@ -4,7 +4,7 @@ url: https://schoolswp.com/?p=2978852 (brouillon - non publie)
 post_id: 2978852
 date_snapshot: 2026-06-21
 trigger: Demande Michael (audit SEO pre-publication + mot-cle, thruuu SERP+GEO en parallele)
-status: refonte-decidee
+status: refonte-appliquee-live
 mot_cle_cible: easycommerce vs fluentcart
 ---
 
@@ -157,3 +157,47 @@ Plan (avant publication) :
 - Citations IA (suivi GEO thruuu : schoolsWP cite ou non sur la question vs).
 - Rich results (FAQPage / SoftwareApplication valides).
 - CTR + impressions ; eventuelle cannibalisation avec `/avis-fluentcart-wordpress/`.
+
+## 10. Execution live appliquee (2026-06-21)
+
+Refonte appliquee sur le brouillon (post 2978852) en 4 paliers, chacun avec backup postmeta base64 (reversible).
+
+- **Palier 1 - taxonomie + meta** : categorie passee de "Non classe" (1095) a "E-commerce & Tunnels de vente WordPress" (1712, primary alignee), 4 tags ajoutes, meta description reecrite (kw exact + sans emoji).
+- **Palier 2 - tutoiement + langue** : 90 remplacements. vous 20->0, votre 42->1 (ancre du titre lie, gardee), vos 28->0, "sans effort" 2->0, heading FAQ EN->FR, ancre EN->FR. Backup `_schoolswp_content_backup_palier2_20260621`.
+- **Palier 2.5 - corrections factuelles** : 13 corrections (faits verifies sur sites officiels). Retrait "4,7 etoiles WordPress.org" (non verifiable), "132 API REST"->"API REST complete + webhooks", "100 credits IA mensuels"->"credits IA inclus", "25 %"/"7 %"/"trois fois"/"5 min chrono" softes, "3-5x" attribue a EasyCommerce. Backup `..._palier25_...`.
+- **Palier 3 - sections marque** : desambiguisation EasyCommerce (=easycommerce.dev AI-first), 2 disclosures affilies (formule standard), section "Pour qui chacun reste pertinent", section "Sources & ressources". Backup `..._palier3_...`.
+- **Palier 4 - schema GEO** : 3 blocs JSON-LD (FAQPage 5 Q/R + SoftwareApplication EasyCommerce + FluentCart, donnees verifiees, sans aggregateRating invente ; survivent au kses). Backup `..._palier4_...`.
+
+**Image a la une** : deja posee le 21/06 (attachment 2979807, hero marque, alt SEO renseigne). Pas de regeneration (doublon evite).
+
+**Decisions Michael** : code promo schoolsWP20 conserve (reel) ; corrections factuelles appliquees d'office ; GO execution live.
+
+**Etat final** : 3395 mots, 9 H2 / 10 H3, tutoiement complet, 0 em-dash, 3 schemas, categorie OK, hero featured + alt OK.
+
+**Reste (optionnel / a la publication)** : images inline dans le corps (0 ; le hero + la table comparative couvrent l'essentiel) ; ouvrir dans Rank Math pour recalcul du score (75 fige tant que non ouvert) ; retirer le noindex a la publication (draft). Quick win cluster FAQPage : **FAIT 2026-06-22** (cf. section 11). Le hero featured affiche "Vitesse 3x WooCommerce" (revendication EasyCommerce, coherent avec le corps apres attribution). Restauration possible via les 4 backups postmeta base64.
+
+## 11. Quick win cluster - FAQPage sur /avis-fluentcart-wordpress/ (2026-06-22)
+
+Action de cluster decidee dans l'audit (section 8) : la page `/avis-fluentcart-wordpress/` (post **1505872**, `publish`, ranke #8 organique) avait une section FAQ visible ("Des questions ? J'ai les reponses." - double accordeon Kadence, **4 Q/R**) mais **aucun schema FAQ** (Rank Math n'emettait qu'un `BlogPosting` par defaut). EDD (#3) en a un -> ajout = avantage differenciant + levier GEO.
+
+- **Applique** : 1 bloc JSON-LD `FAQPage` (4 questions) injecte en fin de `post_content` via un bloc `<!-- wp:html -->`. Les 4 Q/R refletent **mot pour mot** le texte visible de l'accordeon (exigence Google : le schema FAQ doit correspondre au contenu affiche). Ton vouvoiement conserve tel quel pour matcher la page (pas de refonte de ton ici, hors perimetre).
+- **Methode** : meme pipeline que les paliers (build local + verif round-trip -> base64 -> execute-php). Backup postmeta `_schoolswp_faqschema_backup_20260622` (base64 du contenu original, 43005 chars). Trace reproductible : `_build_faqschema_fluentcart.py` + `_faqschema_fluentcart.b64`.
+- **Piege rencontre et resolu** : `wp_update_post()` applique `wp_unslash()` -> les guillemets echappes `\"` du JSON (`"meilleur"`, `"tout-en-un"`) sautaient -> JSON invalide cote rendu. Fix : passer le contenu via `wp_slash()` avant `wp_update_post`. Verifie ensuite valide **stocke ET rendu** (`the_content`).
+- **Verif finale** : `FAQPage`, `@context` schema.org, 4 `Question`/`acceptedAnswer`, JSON valide, 0 backslash parasite, accents OK. `clean_post_cache` fait (aucun plugin de cache page detecte ; reste un eventuel cache hote/CDN qui s'auto-purgera).
+- **Reste** : tester l'URL live dans le Rich Results Test de Google apres propagation du cache.
+
+## 12. Pass brand complet sur /avis-fluentcart-wordpress/ (2026-06-22)
+
+Suite a la section 11, Michael demande de respecter pleinement le brand schoolsWP sur cette page live. Pass brand complet applique sur le post **1505872** (publish).
+
+- **Bilan avant** : vous 38, votre 30, vos 19, nous 1, notre 1, "sans effort" 2, em-dash 2, "scalabilite" 6 (visibles).
+- **Applique** : **62 remplacements** (tutoiement complet conjugue : vous->tu/te/toi, votre->ton/ta selon genre, vos->tes ; imperatifs Decouvrez/Plongez/Imaginez/Pensez/Connectez/Lancez/Obtenez/utilisez -> tutoiement ; nous/notre neutralises ; "Soyons honnetes"->"Honnetement", "Soyons directs"->"Sans detour", "Voyons"->"Voici" ; "sans effort" supprime ; em-dash -> parentheses ; "scalabilite" -> "montee en charge" car famille du mot interdit "scalable").
+- **Schema FAQPage regenere** depuis l'accordeon converti (les 4 reponses passent au tutoiement) pour rester strictement aligne sur le texte visible. JSON revalide stocke ET rendu.
+- **Methode** : remplacements verifies en local sur le contenu reel (zero re-saisie de old), gate sur le **texte visible** (les `votre`/`scalabilite` dans les slugs d'ancre invisibles sont laisses pour ne pas casser la ToC / ancres internes). Application serveur = 62 paires + preg vos/Vos + re-attache du nouveau bloc schema, `wp_slash` pour survivre a `wp_unslash` (cf. [[reference_novamira_wp_update_post_unslash_json]]). Resultat live byte-identique a la version verifiee en local (46459 octets).
+- **Verif finale live** : texte visible vous/votre/vos/nous/notre/sans-effort/em-dash/scalab = **0** ; schema valide stocke+rendu ; backup `_schoolswp_brand_backup_20260622` (reversible). Trace reproductible : `_build_brand_pass_fluentcart.py` + `_brand_pairs.b64` + `_brand_schemablock.b64` + `_verify_brand.py`.
+
+## 13. Verification Google + alerte de suivi (2026-06-22)
+
+- **Rich Results Test** (lance par Michael) : **3 elements valides** detectes sur l'URL live - Article, Fil d'Ariane (BreadcrumbList), Organisation (tous Rank Math), **0 erreur**. Exploration + indexation OK.
+- **FAQPage non liste = normal** : depuis aout 2023, Google ne montre les FAQ rich results qu'aux sites gouvernementaux/sante ; le Rich Results Test ne liste donc plus FAQPage meme valide. Confirme present en live par fetch du HTML rendu (`wp_remote_get` loopback, HTTP 200) : **2 blocs JSON-LD**, dont le FAQPage (question Q1 presente). Le schema reste lu par les LLM (objectif GEO). Cf. [[reference_faqpage_no_rich_result_2023]].
+- **Alerte de suivi mensuelle posee** : workflow n8n **`uxCImeo2jFONMk5O`** "[Prod] Schedule mensuel > Telegram: Suivi SEO FluentCart", actif sur schoolswp-n8n.wp1.host. Schedule Trigger cron `17 9 22 * *` (le 22 de chaque mois, 09h17 Europe/Paris) -> message Telegram sur le canal de la veille FluentCart (chat `1020689775`, bot @schoolswp_fluentcart_bot, cred `Juj7Y2RQgc54DPvY`). Contenu : rappel de verifier position GSC + indexation + citation GEO (ChatGPT/Gemini/AI Mode) vs baseline de juin. Aucun cron local n'existait avant (CronList vide, pas de scheduled_tasks.json). Note : un rappel via le planificateur Claude Code local n'etait pas viable (session-only / expiration 7 jours), d'ou le choix du cloud n8n.
