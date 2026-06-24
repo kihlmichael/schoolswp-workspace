@@ -1,0 +1,14 @@
+{
+  "_note": "DataForSEO Labs google_ranked_keywords pour la PAGE https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/ (location Germany, language de). Capture 2026-06-24 (J+29). Reponse VIDE = 0 keyword indexe pour cette URL dans la base Labs de DataForSEO. ATTENTION : ceci est le lag de la base d'index Labs (mot-cle ultra-niche 10/mois, pas encore re-crawle dans leur DB), PAS la realite SERP. Le SERP live temps reel (voir serp-live-de.json) montre schoolswp.com en POSITION #1 sur 'flyingpress vs wp rocket'. Baseline 2026-05-26 : egalement [] (0). La verite terrain = serp-live-de.json.",
+  "request": {
+    "target": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+    "location_name": "Germany",
+    "language_code": "de",
+    "item_types": ["organic", "featured_snippet", "ai_overview_reference"],
+    "limit": 100
+  },
+  "id": "06241250-7577-0381-0000-7e2b1b474cbd",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": []
+}

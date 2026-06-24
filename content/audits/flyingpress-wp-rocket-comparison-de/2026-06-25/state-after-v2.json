@@ -1,0 +1,152 @@
+{
+  "audit_phase": "J30_re_audit",
+  "milestone_date": "2026-06-25",
+  "data_capture_date": "2026-06-24",
+  "capture_note": "Lancement J-1 (veille du jalon J+30). Positions SERP materiellement identiques a un jour pres.",
+  "post_id": 343161,
+  "permalink": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+  "compare_against": "../2026-05-26/state-after.json",
+  "verdict": "SUCCESS - de absent_top_30 (J+7) a #1 organique (J+30) sur 'flyingpress vs wp rocket' de_DE",
+
+  "serp_live_de": {
+    "keyword": "flyingpress vs wp rocket",
+    "location": "Germany",
+    "language": "de",
+    "schoolswp_rank_group": 1,
+    "schoolswp_rank_absolute": 1,
+    "schoolswp_url": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+    "snippet_source_date": "2026-05-26",
+    "ai_overview_observed": false,
+    "baseline_2026_05_26": "absent_top_12",
+    "j7_2026_06_01": "absent_top_30",
+    "delta": "absent -> #1",
+    "competitors_below": [
+      "reddit.com #2",
+      "wp-rocket.me(EN) #3",
+      "wpservice.pro(EN) #4",
+      "mcstarters.com(EN) #6",
+      "dowebwork.de(DE 2023) #8"
+    ]
+  },
+
+  "ranked_keywords_labs": {
+    "target": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+    "items_count": 0,
+    "baseline_count": 0,
+    "interpretation": "Lag de la base d'index Labs DataForSEO (keyword ultra-niche 10/mois, pas encore re-crawle). N'est PAS la realite SERP. La verite terrain = serp_live_de (#1). A confirmer au prochain re-audit quand la DB Labs aura rattrape."
+  },
+
+  "onpage_verify_live": {
+    "post_title": "FlyingPress vs WP Rocket 2026 : Welches Cache-Plugin fuer WordPress?",
+    "post_status": "publish",
+    "post_modified": "2026-05-26 17:34:29",
+    "sha256_body": "e1dc5666c12010606d927bebb56ecb644ca842b0bd77f989b504a1c198c3ebe5",
+    "sha256_matches_j0_push": true,
+    "bytes_body": 18737,
+    "lang_markers_de": 276,
+    "lang_markers_fr": 0,
+    "has_das_schnelle_urteil": true,
+    "has_optimale_einstellungen": true,
+    "has_fazit": true,
+    "old_le_verdict_rapide_absent": true,
+    "emdash_body": 0,
+    "endash_body": 0,
+    "y2025_body": 0,
+    "y2024_body": 1,
+    "y2024_note": "URL upload SVG logo /2024/06/ - chemin legitime, laisse",
+    "internal_schoolswp_links": 7,
+    "flyingpress_cloak_count": 3,
+    "wprocket_cloak_count": 2,
+    "kadence_advancedbtn_occurrences": 4,
+    "rank_math_title": "FlyingPress vs WP Rocket 2026: welches Cache-Plugin?",
+    "rank_math_title_len": 50,
+    "rank_math_title_note": "Raccourci depuis le push J+0 (etait 75 car.). Corrige le defaut title-too-long de thruuu. = titre affiche en SERP #1.",
+    "rank_math_description": "FlyingPress oder WP Rocket? Vergleich 2026 mit Core Web Vitals, Preisen und Empfehlungen fuer WooCommerce und Elementor. Finde das beste WordPress Cache-Plugin fuer deine Seite.",
+    "rank_math_robots": "index,follow",
+    "polylang_translations": { "de": 343161, "fr": 52819, "en": 343156 },
+    "regression_vs_j0": "none"
+  },
+
+  "p1_applied": {
+    "target": "attachment_350864.post_content (description)",
+    "issue": "1 occurrence '2025'",
+    "before": "...nach dem besten WordPress Cache Plugin 2025 suchen.",
+    "after": "...nach dem besten WordPress Cache Plugin suchen.",
+    "y2025_before": 1,
+    "y2025_after": 0,
+    "method": "wpdb->update wp_posts.post_content + clean_post_cache",
+    "backup_meta": "_schoolswp_bak_att_desc_20260624",
+    "status": "done_verified"
+  },
+
+  "p2_applied": {
+    "target": "mu-plugins/schoolswp-affiliate-cloaks.php",
+    "version": "1.1.1 -> 1.2.0",
+    "root_cause": "flyingpress/wp-rocket sont des cloaks ClickWhale (307 + nofollow/sponsored + tracking), PAS dans le mu-plugin. Les variantes localisees /de|en|fr/<slug>/ ne sont pas enregistrees par ClickWhale et tombaient dans le devinage 404 WP -> 301 vers review FR/EN.",
+    "fix_design": "Normaliser les variantes localisees vers le slug canonique /<slug>/ (302) pour rendre la main a ClickWhale. Forme nue jamais interceptee (tracking + rel preserves). Cible construite via parse_url(home_url(), PHP_URL_HOST) pour eviter boucle Polylang.",
+    "added_function": "schoolswp_clickwhale_localized_slugs() = ['flyingpress','wp-rocket']",
+    "sha256_original": "82e6b419663c3bd296e2337cc4b0d2960ca59a085a81d68bdbcdc949b8879984",
+    "sha256_new": "225ae16555fc42b1bbe22b848a1ea529a0f60a8bae999eca0203d77fdc9b9265",
+    "backup_option": "schoolswp_bak_mu_affiliate_cloaks_20260624",
+    "write_safety": {
+      "php_l_lint": "No syntax errors",
+      "opcache_invalidated": true,
+      "homepage_smoke_test": 200,
+      "rolled_back": false
+    },
+    "routing_verify": {
+      "/de/flyingpress/": {
+        "before": "301 -> /flyingpress-avis/",
+        "after": "302 -> /flyingpress/"
+      },
+      "/de/wp-rocket/": {
+        "before": "301 -> /en/wp-rocket-review/",
+        "after": "302 -> /wp-rocket/"
+      },
+      "/en/flyingpress/": {
+        "before": "301 broken",
+        "after": "302 -> /flyingpress/"
+      },
+      "/fr/wp-rocket/": {
+        "before": "301 broken",
+        "after": "302 -> /wp-rocket/"
+      },
+      "/flyingpress/": {
+        "before": "307 -> flyingpress.com?aff=fodc",
+        "after": "307 -> flyingpress.com?aff=fodc (unchanged)"
+      },
+      "/wp-rocket/": {
+        "before": "307 -> wp-rocket.me/?ref=69f9e3e7",
+        "after": "307 -> wp-rocket.me/?ref=69f9e3e7 (unchanged)"
+      },
+      "/de/novamira/": {
+        "after": "302 -> dynamic.ooo?ref=734 (existing cloak intact)"
+      },
+      "/de/flyingpress-avis/": {
+        "after": "301 -> /flyingpress-avis/ (real page, no over-match)"
+      }
+    },
+    "status": "done_verified"
+  },
+
+  "thruuu": {
+    "condition_top30_met": true,
+    "decision": "skip",
+    "rationale": "Deja #1 ; valeur marginale faible (thruuu sert a monter, pas a tenir le #1). On-page deja valide. Disponible sur demande."
+  },
+
+  "kpis_closed_loop": {
+    "objective_j30": "emerger sur >= 1 keyword DE rank_group <= 30",
+    "result": "#1 sur le keyword principal - objectif depasse"
+  },
+
+  "next_review": {
+    "j60_target_date": "2026-07-25",
+    "j60_checks": [
+      "tenue du #1",
+      "base Labs DataForSEO a rattrape (ranked_keywords != [])",
+      "GSC clics/impressions reels",
+      "AI Overview de_DE"
+    ]
+  }
+}

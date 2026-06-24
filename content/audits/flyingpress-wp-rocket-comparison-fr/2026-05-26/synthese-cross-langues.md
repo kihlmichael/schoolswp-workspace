@@ -9,13 +9,38 @@
 
 ---
 
+## 0. Mise à jour J+30 (2026-06-25) - bilan tri-langues live
+
+> Bloc ajouté le 2026-06-25 (re-audit J+30 DE, capture 2026-06-24). Tout ce qui suit ce bloc est le snapshot d'origine du 2026-05-26, conservé tel quel. SERP live refaite sur les 3 langues (action P3 #15 de ce document).
+
+**Position live `flyingpress vs wp rocket` au 2026-06-24 (DataForSEO serp_organic_live_advanced)** :
+
+| Langue   | Position schoolsWP au 2026-05-26 | **Position au 2026-06-24 (live)**                                                    | Lecture                                                                                                                                     |
+| -------- | -------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🇫🇷 fr_FR | 🏆 #1 featured snippet           | 🏆 **#1 organique** (devant wp-rocket.me)                                            | Maintenu. Pas d'AI Overview observé.                                                                                                        |
+| 🇩🇪 de_DE | 🔴 Absent top 12                 | 🏆 **#1 organique** (devant wp-rocket.me + tous les EN)                              | **Gain majeur** : la refonte DE native a converti. Détail : [audit DE J+30](../../flyingpress-wp-rocket-comparison-de/2026-06-25/audit.md). |
+| 🇬🇧 en_US | ~pos 4-5 (J+14)                  | 🔴 **Absent de la page 1 (top ~11)** + **AI Overview actif sans citation schoolsWP** | À creuser dans un re-audit EN dédié (régression possible ou pos 12-30). Gap GEO EN.                                                         |
+
+**Lecture stratégique** :
+
+- L'hypothèse du 2026-05-26 (« 9/12 du top SERP DE est en anglais : opportunité réelle pour un contenu DE natif frais ») est **validée** : le contenu DE natif a pris la #1 sur une SERP anglo-dominée et vieillissante.
+- **FR et DE tiennent tous les deux la #1.** L'asymétrie de performance suit toujours l'asymétrie de qualité produit, mais DE a rattrapé FR.
+- **Point de vigilance EN** : schoolsWP n'est plus visible en page 1 EN et l'AI Overview en_US (actif) cite wp-rocket.me, commercegurus, onlinemediamasters, wpservice, Reddit, LinkedIn mais **pas schoolsWP**. C'est le seul des 3 marchés où l'AIO est servi, et schoolsWP n'y est pas éligible. Recommandation : programmer un re-audit EN dédié (position exacte + travail GEO pour viser la citation AIO).
+
+**Correctifs DE appliqués au J+30** (decision Michael, capture J-1) :
+
+- P1 : retrait du résiduel evergreen « 2025 » dans la description de l'attachment 350864 (backup postmeta `_schoolswp_bak_att_desc_20260624`).
+- P2 : mu-plugin `schoolswp-affiliate-cloaks.php` v1.1.1 -> v1.2.0 : les variantes localisées `/de|en|fr/flyingpress/` et `/wp-rocket/` (auparavant 301 cassé vers une review) sont normalisées vers le slug canonique pour que ClickWhale gère le redirect (tracking + nofollow/sponsored préservés). **Cela résout le risque transversal n°4 de la section 6 ci-dessous** (« Cloak affiliate : vérifier que /flyingpress/ et /wp-rocket/ routent correctement depuis /de/... Polylang-aware »). Backup wp_option `schoolswp_bak_mu_affiliate_cloaks_20260624`.
+
+---
+
 ## 1. État SERP comparé
 
-| Langue | Volume keyword principal | Position schoolsWP | Visibilité top 10 | AI Overview |
-|---|---|---|---|---|
-| 🇫🇷 fr_FR | 110/mois (-99% YoY) | **🏆 #1 featured snippet** stable depuis 2026-03-27 | ✅ Présent | Non observé live |
-| 🇬🇧 en_US | (à mesurer J+14 post-refonte) | (en cours de monitoring J+14, baseline ~pos 4-5) | ✅ Présent | À monitorer |
-| 🇩🇪 de_DE | 10/mois (-50% YoY) | 🔴 **Absent top 12** | 🔴 Absent | ⚠ AI Overview asynch actif |
+| Langue   | Volume keyword principal      | Position schoolsWP                                  | Visibilité top 10 | AI Overview                |
+| -------- | ----------------------------- | --------------------------------------------------- | ----------------- | -------------------------- |
+| 🇫🇷 fr_FR | 110/mois (-99% YoY)           | **🏆 #1 featured snippet** stable depuis 2026-03-27 | ✅ Présent        | Non observé live           |
+| 🇬🇧 en_US | (à mesurer J+14 post-refonte) | (en cours de monitoring J+14, baseline ~pos 4-5)    | ✅ Présent        | À monitorer                |
+| 🇩🇪 de_DE | 10/mois (-50% YoY)            | 🔴 **Absent top 12**                                | 🔴 Absent         | ⚠ AI Overview asynch actif |
 
 **Lecture** :
 
@@ -26,24 +51,24 @@
 
 ## 2. État on-page comparé
 
-| Axe | FR (52819) | DE (343161) | EN (343156) |
-|---|---|---|---|
-| Status | publish | publish | publish |
-| Word count | 2 095 | 1 304 (mais FR pur) | (~équivalent EN traduit) |
-| Last modified | 2026-04-28 | 2026-05-13 | 2026-05-26 |
-| Langue body | ✅ FR natif | 🔴 **FR (déclaré DE)** | ✅ EN natif (post-refonte) |
-| Post title langue | ✅ FR | 🔴 FR | ✅ EN |
-| RM title langue | ✅ FR | 🔴 FR | ✅ EN |
-| RM meta langue | ✅ FR | 🔴 FR | ✅ EN |
-| Headings 19 | ✅ FR | 🔴 FR | ✅ EN |
-| FAQ schema | ✅ 7 Q&A FR | ✅ 7 Q&A DE (seule partie traduite) | ✅ 7 Q&A EN (Q5 patché 2026-05-26) |
-| Schemas (Video / Blog / FAQ) | ✅✅✅ | ✅✅✅ | ✅✅✅ |
-| Featured image | 🔴 metadata « 2024 » | 🔴 metadata « 2025 » + en-dash | ✅ patché 2026-05-26 (sans année, sans dash) |
-| Internal links count | 9 (vers FR) | 4 (3 vers FR + 1 affilié externe ancre vide) | (à recompter) |
-| Kadence buttons (CTA) | 2 | **0** | (à recompter) |
-| Em-dash dans body | 4 🔴 | 0 ✅ | 0 ✅ (patché) |
-| En-dash | 1 body 🔴 | 1 title 🔴 | 0 ✅ |
-| Cloak affiliate `/go/` | 0 ✅ | 0 ✅ (mais 1 lien direct externe) | 0 ✅ |
+| Axe                          | FR (52819)           | DE (343161)                                  | EN (343156)                                  |
+| ---------------------------- | -------------------- | -------------------------------------------- | -------------------------------------------- |
+| Status                       | publish              | publish                                      | publish                                      |
+| Word count                   | 2 095                | 1 304 (mais FR pur)                          | (~équivalent EN traduit)                     |
+| Last modified                | 2026-04-28           | 2026-05-13                                   | 2026-05-26                                   |
+| Langue body                  | ✅ FR natif          | 🔴 **FR (déclaré DE)**                       | ✅ EN natif (post-refonte)                   |
+| Post title langue            | ✅ FR                | 🔴 FR                                        | ✅ EN                                        |
+| RM title langue              | ✅ FR                | 🔴 FR                                        | ✅ EN                                        |
+| RM meta langue               | ✅ FR                | 🔴 FR                                        | ✅ EN                                        |
+| Headings 19                  | ✅ FR                | 🔴 FR                                        | ✅ EN                                        |
+| FAQ schema                   | ✅ 7 Q&A FR          | ✅ 7 Q&A DE (seule partie traduite)          | ✅ 7 Q&A EN (Q5 patché 2026-05-26)           |
+| Schemas (Video / Blog / FAQ) | ✅✅✅               | ✅✅✅                                       | ✅✅✅                                       |
+| Featured image               | 🔴 metadata « 2024 » | 🔴 metadata « 2025 » + en-dash               | ✅ patché 2026-05-26 (sans année, sans dash) |
+| Internal links count         | 9 (vers FR)          | 4 (3 vers FR + 1 affilié externe ancre vide) | (à recompter)                                |
+| Kadence buttons (CTA)        | 2                    | **0**                                        | (à recompter)                                |
+| Em-dash dans body            | 4 🔴                 | 0 ✅                                         | 0 ✅ (patché)                                |
+| En-dash                      | 1 body 🔴            | 1 title 🔴                                   | 0 ✅                                         |
+| Cloak affiliate `/go/`       | 0 ✅                 | 0 ✅ (mais 1 lien direct externe)            | 0 ✅                                         |
 
 ---
 
@@ -86,11 +111,11 @@ Le pipeline brand existe déjà : `tools/html-to-png/featured-images-flyingpress
 
 ### 4.4 Conversion CTA
 
-| Langue | Boutons Kadence |
-|---|---|
-| FR | 2 ✅ |
-| EN | (à recompter post-refonte) |
-| DE | **0** 🔴 |
+| Langue | Boutons Kadence            |
+| ------ | -------------------------- |
+| FR     | 2 ✅                       |
+| EN     | (à recompter post-refonte) |
+| DE     | **0** 🔴                   |
 
 **Action P0 DE** : ajouter 2 boutons Kadence brand-strict (palette9/1, gradient #00D400 vert) vers `/flyingpress/` et `/wp-rocket/`. Pattern : [reference_kadence_email_button_pattern.md](../../../../C:/Users/conta/.claude/projects/d--VS-Code-CLAUDE-CODE-projects-schoolswp/memory/feedback_kadence_cta_template.md).
 
@@ -162,17 +187,17 @@ Les audits thruuu (lancés sur les deux URLs en cours d'audit) **confirment ind�
 
 ### 6 bis.1 Asymétrie SERP confirmée par thruuu
 
-| Métrique thruuu | FR | DE |
-|---|---|---|
-| Position détectée | **#1 featured_snippet** ✅ | Absent top 20 (✘ sur la page 1 google.de) |
-| Word count schoolsWP | 2 511 mots (SERP avg 2 142) ✓ | 1 742 mots (SERP avg 1 974) borderline |
-| Image count | 14 (SERP avg 14) ✓ | **5 (SERP avg 20)** 🔴 |
-| Title length | 60 chars ✓ | 72 chars 🔴 (cible <60) |
-| Title pixel | OK | 656.6 px 🔴 (cible <580) |
-| Meta desc length | 148 ✓ | 228 🔴 (cible <160) |
-| Questions in headings | 7 (SERP avg 2) ✓ | 10 (SERP avg 1) ✓ |
-| Page Rank Score | 28 vs SERP 35 — sous mais OK | 28 vs SERP 38 — sous |
-| « SERP very competitive » | non flagué | **oui** 🔴 |
+| Métrique thruuu           | FR                            | DE                                        |
+| ------------------------- | ----------------------------- | ----------------------------------------- |
+| Position détectée         | **#1 featured_snippet** ✅    | Absent top 20 (✘ sur la page 1 google.de) |
+| Word count schoolsWP      | 2 511 mots (SERP avg 2 142) ✓ | 1 742 mots (SERP avg 1 974) borderline    |
+| Image count               | 14 (SERP avg 14) ✓            | **5 (SERP avg 20)** 🔴                    |
+| Title length              | 60 chars ✓                    | 72 chars 🔴 (cible <60)                   |
+| Title pixel               | OK                            | 656.6 px 🔴 (cible <580)                  |
+| Meta desc length          | 148 ✓                         | 228 🔴 (cible <160)                       |
+| Questions in headings     | 7 (SERP avg 2) ✓              | 10 (SERP avg 1) ✓                         |
+| Page Rank Score           | 28 vs SERP 35 — sous mais OK  | 28 vs SERP 38 — sous                      |
+| « SERP very competitive » | non flagué                    | **oui** 🔴                                |
 
 → thruuu valide le verdict opérationnel : **FR à polir / DE à refondre**. Les 4 erreurs critiques DE (title trop long, meta trop longue, images sous-couvertes, SERP très compétitif) sont objectivement mesurables.
 
@@ -258,14 +283,14 @@ content/audits/
 
 ## 8. Decision required de Michaël
 
-| # | Question | Options | Recommandation |
-|---|---|---|---|
-| 1 | Patcher FR P0 (image + dashes + 2024 résiduels) ? | GO / SKIP | **GO** — risque bas, protège FS |
-| 2 | Refondre DE en allemand natif ? | A (refondre) / B (noindex) / C (delete) | **A** — cohérent avec marché DE (34 keywords ranked schoolswp.com) |
-| 3 | Régénérer visuel brand cross-langues ? | GO / SKIP | **GO P1** — pipeline existant, faible coût |
-| 4 | Enrichir FR avec H2 cas pratiques ? | GO / SKIP | **GO P1** — bénéfice longue traîne |
-| 5 | Re-audit J+30 (2026-06-25) ? | GO / SKIP | **GO** — verrouille la boucle |
+| #   | Question                                          | Options                                 | Recommandation                                                     |
+| --- | ------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------ |
+| 1   | Patcher FR P0 (image + dashes + 2024 résiduels) ? | GO / SKIP                               | **GO** — risque bas, protège FS                                    |
+| 2   | Refondre DE en allemand natif ?                   | A (refondre) / B (noindex) / C (delete) | **A** — cohérent avec marché DE (34 keywords ranked schoolswp.com) |
+| 3   | Régénérer visuel brand cross-langues ?            | GO / SKIP                               | **GO P1** — pipeline existant, faible coût                         |
+| 4   | Enrichir FR avec H2 cas pratiques ?               | GO / SKIP                               | **GO P1** — bénéfice longue traîne                                 |
+| 5   | Re-audit J+30 (2026-06-25) ?                      | GO / SKIP                               | **GO** — verrouille la boucle                                      |
 
 ---
 
-*Synthèse produite 2026-05-26 par Claude Code (cloud agent). Source de vérité = les 3 audits référencés en tête.*
+_Synthèse produite 2026-05-26 par Claude Code (cloud agent). Source de vérité = les 3 audits référencés en tête._

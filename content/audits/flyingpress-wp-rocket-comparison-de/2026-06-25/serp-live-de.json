@@ -1,0 +1,128 @@
+{
+  "_note": "SERP organic live (DataForSEO serp_organic_live_advanced) pour 'flyingpress vs wp rocket', location Germany, language de, depth 100. Capture 2026-06-24 (J+29). RESULTAT CLE : schoolswp.com/de/vergleich-flyingpress-wp-rocket/ est en rank_absolute 1 (position #1 organique), au-dessus de wp-rocket.me et de tous les concurrents EN. Baseline 2026-05-26 + monitoring J+7 (2026-06-01) : ABSENT du top 30. Snippet Google date du 26.05.2026 (jour de la refonte) = le contenu DE refondu est bien celui qui rank.",
+  "request": {
+    "keyword": "flyingpress vs wp rocket",
+    "location_name": "Germany",
+    "language_code": "de",
+    "depth": 100,
+    "device": "desktop",
+    "search_engine": "google"
+  },
+  "id": "06241250-7577-0139-0000-1f6def8b9f97",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "items": [
+    {
+      "type": "organic",
+      "rank_group": 1,
+      "rank_absolute": 1,
+      "domain": "schoolswp.com",
+      "title": "FlyingPress vs WP Rocket 2026: welches Cache-Plugin?",
+      "url": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+      "snippet_date": "26.05.2026",
+      "description": "Das haengt von Ihren Beduerfnissen ab: FlyingPress besticht durch seine Einfachheit und sofortige Effizienz, waehrend WP Rocket fortgeschrittenen ..."
+    },
+    {
+      "type": "organic",
+      "rank_group": 2,
+      "rank_absolute": 2,
+      "domain": "www.reddit.com",
+      "title": "WP Rocket, ist es immer noch die beste Option?",
+      "url": "https://www.reddit.com/r/Wordpress/comments/1mtq0bi/wp_rocket_is_it_still_the_best_option/?tl=de"
+    },
+    {
+      "type": "organic",
+      "rank_group": 3,
+      "rank_absolute": 3,
+      "domain": "wp-rocket.me",
+      "title": "FlyingPress vs. WP Rocket: Choose the best option for your ... (EN)",
+      "url": "https://wp-rocket.me/flyingpress-vs-wp-rocket/"
+    },
+    {
+      "type": "organic",
+      "rank_group": 4,
+      "rank_absolute": 4,
+      "domain": "wpservice.pro",
+      "title": "FlyingPress Vs WP Rocket: Expert Head 2 Head Comparison (EN, 2024)",
+      "url": "https://wpservice.pro/tools-of-the-trade/flyingpress-vs-wp-rocket-compare/"
+    },
+    {
+      "type": "video",
+      "rank_absolute": 5,
+      "items": [
+        "YouTube Ask Simon! (EN)",
+        "YouTube Amit Tiwari (EN, 2023)",
+        "YouTube WEB General (EN, 2025)"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 5,
+      "rank_absolute": 6,
+      "domain": "mcstarters.com",
+      "title": "FlyingPress vs. WP Rocket (2026 Comparison) (EN)",
+      "url": "https://mcstarters.com/blog/flyingpress-vs-wp-rocket/"
+    },
+    {
+      "type": "people_also_ask",
+      "rank_absolute": 7,
+      "questions_de": [
+        "Was macht WP Rocket?",
+        "Haelt sich WP Rocket an die DSGVO?",
+        "Ist WP Rocket kostenlos?"
+      ]
+    },
+    {
+      "type": "organic",
+      "rank_group": 6,
+      "rank_absolute": 8,
+      "domain": "www.dowebwork.de",
+      "title": "Top WordPress Cache Plugins (Max Pagespeed) - DoWebWork (DE, 2023)",
+      "url": "https://www.dowebwork.de/wordpress-cache-plugins/"
+    },
+    {
+      "type": "organic",
+      "rank_group": 7,
+      "rank_absolute": 9,
+      "domain": "wpjohnny.com",
+      "title": "Totally biased review of FlyingPress cache plugin (EN, 2020)",
+      "url": "https://wpjohnny.com/biased-review-of-flyingpress/"
+    },
+    {
+      "type": "organic",
+      "rank_group": 8,
+      "rank_absolute": 10,
+      "domain": "wpdiscounts.io",
+      "title": "FlyingPress vs WP Rocket vs NitroPack (EN, 2026)",
+      "url": "https://wpdiscounts.io/blog/flyingpress-vs-wp-rocket-vs-nitropack/"
+    },
+    {
+      "type": "organic",
+      "rank_group": 9,
+      "rank_absolute": 11,
+      "domain": "www.linkedin.com",
+      "title": "WP Rocket vs FlyingPress: WordPress Caching Plugins (EN)",
+      "url": "https://www.linkedin.com/posts/mamun-abdullah88_wp-rocket-vs-flyingpress-which-wordpress-activity-7417919327758200832-biLI"
+    },
+    {
+      "type": "related_searches",
+      "rank_absolute": 12,
+      "items": [
+        "Flyingpress vs wp rocket reddit",
+        "FlyingPress pricing",
+        "WP Rocket alternative",
+        "WP Rocket pricing",
+        "Super page cache vs wp rocket",
+        "Is WP Rocket worth it",
+        "Wp fastest cache vs wp rocket",
+        "Litespeed cache vs flyingpress"
+      ]
+    }
+  ],
+  "ai_overview_observed": false,
+  "schoolswp_position": {
+    "rank_group": 1,
+    "rank_absolute": 1,
+    "delta_vs_baseline": "absent_top_30 -> #1"
+  }
+}
