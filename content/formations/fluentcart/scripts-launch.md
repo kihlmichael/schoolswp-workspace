@@ -1,10 +1,10 @@
-# Scripts vidéo — Module LAUNCH (6 leçons)
+# Scripts vidéo — Module LAUNCH (7 leçons)
 
 Formation FluentCart schoolsWP. Promesse du module : ouvrir ta boutique FluentCart en 7 jours, de zéro à première vente, sans toucher à WooCommerce.
 Format tournage : avatar HeyGen (digital twin) + voix ElevenLabs, overlay capture d'écran FluentCart.
 Convention : VO = texte parlé (ce que dit l'avatar). ECRAN = ce qu'on montre à l'image. Voix « je », tutoiement.
 
-Statut : DRAFT v1 à valider avant tournage. UI à vérifier sur FluentCart 1.3.28 (les libellés peuvent bouger).
+Statut : DRAFT v1 à valider avant tournage. UI à vérifier sur FluentCart 1.5.1 (les libellés peuvent bouger). FluentCart est passé de 1.3.28 à 1.5.1 en juin 2026 : la 1.5.0 a fait entrer les variations avancées dans la version gratuite (voir leçon 01.07 et le dossier veille/).
 
 ---
 
@@ -13,9 +13,11 @@ Statut : DRAFT v1 à valider avant tournage. UI à vérifier sur FluentCart 1.3.
 **Durée cible** : 10 min. **Objectif** : FluentCart installé, activé, Setup Wizard terminé, tableau de bord accessible. **Prérequis** : un WordPress qui tourne, accès admin.
 
 ### [ACCROCHE]
+
 VO : Si tu veux vendre sur WordPress sans te battre avec WooCommerce, tu es au bon endroit. Dans les 10 prochaines minutes, on installe FluentCart et on configure les bases avec le Setup Wizard. À la fin, ta boutique existe. On y va.
 
 ### [CORPS]
+
 ECRAN : Tableau de bord WordPress, menu Extensions.
 VO : Direction Extensions, Ajouter. Tu cherches FluentCart. C'est gratuit pour démarrer, tu n'as pas besoin de la version Pro tout de suite. Tu installes, puis tu actives.
 
@@ -29,9 +31,11 @@ ECRAN : Le tableau de bord FluentCart dans le menu.
 VO : Une fois l'assistant terminé, tu vois apparaître le tableau de bord FluentCart dans ton menu WordPress. C'est ton poste de pilotage. On va le remplir au fil des leçons.
 
 ### [RÉCAP]
+
 VO : Récap : FluentCart est installé, activé, l'assistant est passé, et tes quatre pages existent. Vérifie une chose avant de continuer : ouvre tes Pages WordPress et confirme que boutique, panier, checkout et compte sont bien là.
 
 ### [TRANSITION]
+
 VO : Ta boutique a un squelette, mais pas encore d'identité. Dans la prochaine leçon, on configure le socle : devise, adresse, taxes. C'est ce qui évite que tes premières factures sortent fausses.
 
 ---
@@ -41,9 +45,11 @@ VO : Ta boutique a un squelette, mais pas encore d'identité. Dans la prochaine 
 **Durée cible** : 20 min. **Objectif** : devise, adresse entreprise, taxes de base et pages système réglées correctement. **Prérequis** : leçon 01.01.
 
 ### [ACCROCHE]
+
 VO : Cette leçon n'est pas la plus spectaculaire, mais c'est la plus importante. Une devise ou une adresse mal réglée ici, et toutes tes factures partent fausses. On pose le socle proprement, une bonne fois.
 
 ### [CORPS]
+
 ECRAN : Réglages FluentCart, section générale.
 VO : On commence par la devise. Choisis ta devise principale, et vérifie le symbole et sa position. Un détail, mais c'est ce que ton client voit au moment de payer.
 
@@ -60,9 +66,11 @@ ECRAN : Assignation des pages système.
 VO : Dernier point, vérifie que tes pages système, panier, checkout, compte client, sont bien assignées dans les réglages. L'assistant les a créées, on confirme juste que FluentCart pointe sur les bonnes.
 
 ### [RÉCAP]
+
 VO : Test de vérification : ouvre une fiche produit en navigation privée, ajoute au panier, et regarde si la devise s'affiche correctement et si les pages s'enchaînent. Si oui, ton socle est bon.
 
 ### [TRANSITION]
+
 VO : Le socle est posé. Maintenant, on crée la chose qui va te rapporter de l'argent : ton premier produit.
 
 ---
@@ -72,9 +80,11 @@ VO : Le socle est posé. Maintenant, on crée la chose qui va te rapporter de l'
 **Durée cible** : 25 min. **Objectif** : un produit complet publié, visible en boutique. **Prérequis** : leçon 01.02.
 
 ### [ACCROCHE]
+
 VO : On passe au concret. On va créer un produit propre et complet, qui te servira de modèle pour tous les suivants. Fais celui-là bien, et tu dupliqueras la méthode à l'infini.
 
 ### [CORPS]
+
 ECRAN : Création d'un nouveau produit FluentCart.
 VO : Tu crées un nouveau produit. Première décision : digital ou physique. Un fichier à télécharger, un accès, une licence, c'est digital. Un objet à expédier, c'est physique. Choisis selon ton offre.
 
@@ -94,9 +104,11 @@ ECRAN : Publication.
 VO : Tu vérifies le stock, illimité pour du digital, et tu publies.
 
 ### [RÉCAP]
+
 VO : Vérification : va sur ta boutique côté visiteur. Ton produit doit apparaître, avec son prix et son bouton d'ajout au panier. S'il est là, tu as une vitrine.
 
 ### [TRANSITION]
+
 VO : Tu as un produit en vitrine. Mais pour l'instant, personne ne peut payer. La prochaine leçon, c'est la plus sensible de tout le module : les paiements.
 
 ---
@@ -106,9 +118,11 @@ VO : Tu as un produit en vitrine. Mais pour l'instant, personne ne peut payer. L
 **Durée cible** : 25 min. **Objectif** : au moins deux moyens de paiement actifs, en mode test. **Prérequis** : leçon 01.03, un compte Stripe.
 
 ### [ACCROCHE]
+
 VO : C'est la leçon où la plupart des gens se plantent. Pas parce que c'est dur, mais parce qu'ils zappent une étape invisible : les webhooks. On va tout faire dans le bon ordre, et tu n'auras jamais de commande bloquée.
 
 ### [CORPS]
+
 ECRAN : Section paiements FluentCart, Stripe.
 VO : On connecte Stripe d'abord. Selon ta version, c'est soit une connexion en un clic, soit tes clés API à coller. Et point important : tu passes Stripe en mode test pour l'instant. On ne joue pas avec du vrai argent tant qu'on n'a pas tout vérifié.
 
@@ -125,9 +139,11 @@ ECRAN : Choix du gateway par défaut.
 VO : Pour finir, tu choisis le moyen de paiement proposé par défaut au checkout.
 
 ### [RÉCAP]
+
 VO : Vérification : ouvre ta page checkout en mode test. Tes deux moyens de paiement doivent s'afficher et être sélectionnables. Si c'est le cas, ta caisse est prête à être testée.
 
 ### [TRANSITION]
+
 VO : Tout est branché. Il est temps de faire ce qu'aucune boutique ne devrait lancer sans l'avoir fait : une vraie vente test, de bout en bout.
 
 ---
@@ -137,9 +153,11 @@ VO : Tout est branché. Il est temps de faire ce qu'aucune boutique ne devrait l
 **Durée cible** : 20 min. **Objectif** : une commande test complète, comprendre les statuts, valider le remboursement, passer en mode réel. **Prérequis** : leçon 01.04.
 
 ### [ACCROCHE]
+
 VO : On va acheter dans ta propre boutique. C'est le seul moyen de savoir si tout marche vraiment, avant qu'un vrai client ne le découvre à ta place.
 
 ### [CORPS]
+
 ECRAN : Checkout avec une carte de test Stripe.
 VO : Avec une carte de test Stripe, tu passes une commande complète, du panier jusqu'au paiement. Tu vis exactement ce que ton client vivra.
 
@@ -156,9 +174,11 @@ ECRAN : Passage de Stripe en mode live.
 VO : Tout est validé ? Tu repasses Stripe en mode réel. Ta boutique peut maintenant encaisser de vrais paiements.
 
 ### [RÉCAP]
+
 VO : Vérification : ta commande test est terminée, le téléchargement marche, et ton remboursement a bien fait basculer la commande en remboursée. Si les trois sont vrais, ta mécanique de vente tourne.
 
 ### [TRANSITION]
+
 VO : Ta boutique encaisse. Dernière étape avant de la lancer : les emails. Parce qu'une boutique qui ne confirme rien, c'est une boutique qui génère des tickets de support.
 
 ---
@@ -168,9 +188,11 @@ VO : Ta boutique encaisse. Dernière étape avant de la lancer : les emails. Par
 **Durée cible** : 15 min. **Objectif** : confirmations client et admin actives, reçu PDF en place, contrôle final avant lancement. **Prérequis** : leçon 01.05.
 
 ### [ACCROCHE]
+
 VO : On termine par ce qui rassure ton client et t'évite des heures de support : les emails. Une confirmation propre, un reçu, et ton acheteur sait qu'il peut te faire confiance.
 
 ### [CORPS]
+
 ECRAN : Réglages des notifications email FluentCart.
 VO : Tu actives d'abord l'email de confirmation de commande pour le client. C'est le minimum vital : quand quelqu'un paie, il reçoit une confirmation.
 
@@ -187,10 +209,57 @@ ECRAN : Achat test final.
 VO : Et on fait un dernier achat test pour confirmer, côté client, que l'email arrive bien avec son reçu.
 
 ### [RÉCAP]
+
 VO : Vérification finale du module : tu reçois l'email admin, et le client reçoit sa confirmation avec son reçu. Si oui, ta boutique est complète.
 
 ### [TRANSITION]
-VO : Félicitations. Tu es parti de zéro, et tu as une boutique FluentCart fonctionnelle, qui encaisse de vrais paiements et confirme chaque vente. Tu viens d'ouvrir ta boutique en suivant exactement la checklist. La suite, produire un vrai catalogue et le rendre irrésistible, c'est le module SHIP. On s'y retrouve.
+
+VO : Félicitations. Tu es parti de zéro, et tu as une boutique FluentCart fonctionnelle, qui encaisse de vrais paiements et confirme chaque vente. Tu viens d'ouvrir ta boutique en suivant exactement la checklist. Avant de passer au module SHIP, on ajoute une brique que FluentCart vient d'offrir dans sa version gratuite et qui change beaucoup de choses : les variations avancées.
+
+---
+
+## Leçon 01.07 — Variations avancées (nouveau en version gratuite)
+
+**Durée cible** : 20 min. **Objectif** : créer un produit à variations avancées (couleur x taille), gérer prix, SKU, image et stock par variante, et le tester côté client. **Prérequis** : leçon 01.03. **Version** : nouveauté FluentCart 1.5.0 (juin 2026), désormais incluse dans la version gratuite.
+
+### [ACCROCHE]
+
+VO : Voici la nouveauté qui rebat les cartes pour FluentCart. Depuis la version 1.5, les variations avancées sont dans la version gratuite. Concrètement, tu peux vendre un même produit en plusieurs couleurs et plusieurs tailles, avec un prix, un code et un stock pour chaque combinaison. C'est exactement ce qui manquait pour rivaliser avec WooCommerce, et c'est maintenant gratuit.
+
+### [CORPS]
+
+ECRAN : Liste des produits, avec les libellés "variations avancées", "variations simples", "produit simple".
+VO : Dans ta liste de produits, FluentCart affiche désormais le type de chaque produit : produit simple, variations simples, ou variations avancées. C'est ce dernier mode qui nous intéresse ici.
+
+ECRAN : Création d'un nouveau produit, sélection du mode variations avancées.
+VO : Le plus propre, c'est de partir d'un produit neuf et de choisir directement les variations avancées. Si tu convertis un produit qui avait déjà des variations simples, FluentCart te prévient que tu vas les perdre, et te demande de taper "proceed" pour confirmer. Sur un produit neuf, tu n'as pas cet avertissement.
+
+ECRAN : Attribute Manager, choix d'un attribut (couleur) parmi les jeux prédéfinis.
+VO : FluentCart te propose huit jeux d'attributs prêts à l'emploi : couleur, taille, matière, stockage, mémoire, poids, style, motif. Tu choisis un nom d'option, par exemple la couleur, puis tu sélectionnes ou tu ajoutes tes valeurs. Restons simples : rouge, bleu, vert. Tu sauvegardes, et FluentCart crée tes premières variantes.
+
+ECRAN : Ajout d'un second attribut (taille) et génération automatique des combinaisons.
+VO : Maintenant, on ajoute un second attribut. On prend la taille : small, medium, large, et extra large. Au moment de sauvegarder, FluentCart calcule automatiquement toutes les combinaisons. Trois couleurs fois quatre tailles, ça fait douze variantes, créées d'un coup. Tu n'as rien à faire à la main.
+
+ECRAN : Panneau d'une variante : prix, prix comparatif, SKU auto-généré, image, stock.
+VO : Pour chaque variante, tu peux poser un prix, un prix barré, et surtout un code SKU. Le SKU, c'est l'identifiant unique de la variante : une chaussure rouge en small n'a pas le même code qu'une rouge en medium. Tu peux le saisir, ou demander à FluentCart d'en générer un automatiquement. Tu ajoutes aussi une image par variante, depuis ta médiathèque ou un nouvel upload, et tu ajustes le stock.
+
+ECRAN : Menu trois points d'une variante : dupliquer, lien de checkout direct.
+VO : Sur chaque variante, le menu trois points te donne deux options utiles : dupliquer la variante, et créer un lien de checkout direct. Ce lien de paiement, accessible même sans compte, est parfait à partager sur tes réseaux ou par message.
+
+ECRAN : Aperçu côté client, sélecteur couleur puis taille, prix qui se met à jour.
+VO : Côté client, le résultat est propre : l'acheteur choisit sa couleur, puis sa taille, et le prix se met à jour en temps réel. Le SKU et le stock suivent la combinaison choisie.
+
+### [POINT DE VIGILANCE]
+
+VO : Une limite à connaître au moment où on filme. Dans le panneau de variante, certains champs ressemblent à des champs éditables mais ne le sont pas. Les compteurs disponible, en attente et livré sont calculés à partir des commandes, c'est normal. En revanche, le titre et le code SKU de la variante ne sont pas encore modifiables à cet endroit précis. L'éditeur de FluentCart en est conscient et l'a noté pour une prochaine version. Si tu regardes cette leçon plus tard, vérifie si c'est devenu éditable.
+
+### [RÉCAP]
+
+VO : Vérification : ouvre ton produit côté boutique, choisis une couleur et une taille, et confirme que le prix, le code et le stock changent bien selon la combinaison. Si oui, tu sais vendre des produits à variantes, gratuitement, avec FluentCart.
+
+### [TRANSITION]
+
+VO : Tu as maintenant un produit simple et un produit à variantes, tous les deux prêts à vendre. Dans le module SHIP, on passe à l'échelle : un vrai catalogue, des attributs réutilisables sur toute ta boutique, et une mise en page qui donne envie d'acheter. On s'y retrouve.
 
 ---
 
@@ -198,6 +267,6 @@ VO : Félicitations. Tu es parti de zéro, et tu as une boutique FluentCart fonc
 
 - Voix off ElevenLabs : ton posé, rythme naturel, phrases courtes. Pas de débit commercial agressif.
 - Avatar HeyGen (digital twin) : plans d'accroche, récap et transition face caméra ; corps de leçon en voix off sur capture d'écran.
-- Captures d'écran à enregistrer sur une instance FluentCart 1.3.28 propre (la même tout au long du module pour la cohérence visuelle).
+- Captures d'écran à enregistrer sur une instance FluentCart 1.5.1 propre (la même tout au long du module pour la cohérence visuelle).
 - Versioning : annoncer la version FluentCart en intro de module + addendum "Mises à jour" si l'UI bouge (cf. risque obsolescence du brief).
 - Chaque leçon se termine sur sa ligne Vérification : c'est le fil rouge pédagogique repris de la checklist (lead magnet).
