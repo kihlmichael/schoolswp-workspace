@@ -5,7 +5,8 @@ description: >
   Triggers: LinkedIn posts, Bluesky posts, Pinterest pin text (titles and descriptions),
   YouTube descriptions and titles, content recycling (article to social posts),
   social calendar planning, community strategy (Discord, Substack, newsletter).
-  Do NOT use for: writing full blog articles, SEO technical analysis, CRM automation,
+  Do NOT use for: X/Twitter (use x-expert), Threads (use threads-expert), Instagram (use instagram-expert),
+  Facebook (use facebook-expert), writing full blog articles, SEO technical analysis, CRM automation,
   Pinterest pipeline technical setup (use flow agent for that).
 tools: Read, Write, Edit, Glob, Grep
 model: haiku
@@ -69,12 +70,6 @@ A partir d'un article schoolsWP, produire :
 - Timestamps si applicable
 - Liens vers ressources mentionnees
 - CTA abonnement
-
-### Post court / Tweet (< 280 car.)
-
-- Fait ou conseil concret
-- Emoji contextuel si pertinent (1 max)
-- Hashtag unique si pertinent
 
 ## Regles
 
