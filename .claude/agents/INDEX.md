@@ -1,7 +1,7 @@
 # schoolsWP Project Sub-Agents — Index complet
 
 <!-- AUTO:HEADER:START -->
-**Total** : 36 sub-agents | **Mis à jour** : 2026-06-28
+**Total** : 38 sub-agents | **Mis à jour** : 2026-06-28
 <!-- AUTO:HEADER:END -->
 
 **Structure** : un fichier `.md` par agent dans `.claude/agents/`, frontmatter YAML (`name`, `description`, `model`, `tools`)
@@ -93,11 +93,15 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 
 > **Posture** : expert GBP + SEO local, opérationnel mais prudent. Repo-first, zéro MCP, ne publie jamais, ne répond jamais directement à un avis, ne modifie jamais une fiche, ne récupère aucune donnée live sans validation. Livrable = Note Google Business (9 sections, décision GO/FIX/WAIT/STOP) dans `output/`.
 
-### Acquisition payante
+### Acquisition payante / Paid Media
 
 | Input utilisateur | Agent à dispatcher |
 |---|---|
-| Audit Google Ads Search, plans d'acquisition, landing ads, mots-clés, tracking, QS, décisions GO/FIX/PAUSE/STOP | `ads-operator` |
+| Audit Google Ads Search, plans d'acquisition SEA, landing ads, mots-clés, tracking, QS, décisions | `ads-operator` |
+| Meta Ads (Facebook + Instagram) : structure, audiences, créas, pixel/CAPI, budget, ROAS, décisions | `meta-ads-operator` |
+| TikTok Ads : Spark Ads, audiences, créas natives, pixel/Events API, budget, rotation créa, décisions | `tiktok-ads-operator` |
+
+> **Posture commune** : opérateurs d'acquisition payante (pattern `ads-operator`), repo-first, ne publient ni ne modifient aucune campagne, aucun accès live autonome. Format de réponse Situation/Diagnostic/Priorités/Action plan/Devil's advocate/Decision/Next test. Vocabulaire de décision : GO / FIX THEN GO / PAUSE / STOP / WAIT_MORE_DATA. Michael exécute manuellement.
 
 ### Publication externe (hors schoolsWP)
 
@@ -169,7 +173,6 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 
 | Agent | Modèle | Outils | Description |
 | --- | --- | --- | --- |
-| `ads-operator` | opus | Read, Grep, Glob, Bash | Opérateur SEA schoolsWP / michaelkihl.fr. À utiliser pour audits Google Ads Search, plans d'acquisition, landing ads, budget, mots-clés, négatifs, tracking, Quality Score, conversions hors-ligne, et d… |
 | `aidesigner-frontend` | (défaut) | (par défaut) | Use this skill when the user wants to create or redesign a frontend, landing page, dashboard, marketing page, or other UI with AIDesigner. |
 | `google-business-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for Google Business Profile (GBP) + local SEO for schoolsWP / michaelkihl.fr. |
 | `pinterest-expert` | opus | (par défaut) | Agent Pinterest expert base sur les enseignements de Luc Bermond (1606 unites, 215 videos). |
@@ -186,6 +189,14 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | `tiktok-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic TikTok content and strategy for schoolsWP. |
 | `tiktok-trends-watch` | opus | Read, Write, Edit, Glob, Grep | Use this agent for TikTok trends watch and analysis for schoolsWP. |
 | `x-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic X (Twitter) content and strategy for schoolsWP. |
+
+### Acquisition payante / Paid Media
+
+| Agent | Modèle | Outils | Description |
+| --- | --- | --- | --- |
+| `ads-operator` | opus | Read, Grep, Glob, Bash | Opérateur SEA schoolsWP / michaelkihl.fr. À utiliser pour audits Google Ads Search, plans d'acquisition, landing ads, budget, mots-clés, négatifs, tracking, Quality Score, conversions hors-ligne, et d… |
+| `meta-ads-operator` | opus | Read, Grep, Glob, Bash | Opérateur Meta Ads (Facebook + Instagram) schoolsWP / michaelkihl.fr. |
+| `tiktok-ads-operator` | opus | Read, Grep, Glob, Bash | Opérateur TikTok Ads schoolsWP / michaelkihl.fr. À utiliser pour audits de comptes TikTok Ads, plans d'acquisition payante, Spark Ads (boost de contenu organique), structure de campagnes, audiences, c… |
 
 ### Code review / qualité — read-only
 
@@ -223,6 +234,7 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 - **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. La pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
 - **`pulse` vs experts réseaux (`x-expert` / `threads-expert` / `instagram-expert` / `facebook-expert`)** : `pulse` garde LinkedIn, Bluesky, texte Pinterest, descriptions YouTube et la coordination communautaire transverse (calendrier, Discord, Substack). X, Threads, Instagram et Facebook appartiennent désormais à leur expert dédié (stratégie + format + algo + contenu de la plateforme). Tous organiques : les Ads relèveront d'agents Ads séparés (Meta Ads, TikTok Ads). `instagram-expert` ne génère pas les visuels (délégués à `tools/html-to-png` + metricool-carousel).
 - **`tiktok-expert` vs `youtube-clipper` vs `tiktok-trends-watch`** : `youtube-clipper` découpe une vidéo longue YouTube en Shorts/clips + sous-titres (production). `tiktok-expert` fait la stratégie + le contenu natif TikTok (et peut consommer ces clips) mais ne produit pas la vidéo lui-même. La veille et le scoring des trends TikTok appartiennent à `tiktok-trends-watch`, qui n'écrit aucun contenu et passe le relais à `tiktok-expert`. `tiktok-trends-watch` n'est pas le schoolsWP Plugin Radar (trends TikTok ≠ sorties de plugins).
+- **Paid vs organique (`meta-ads-operator` / `tiktok-ads-operator` vs `facebook-expert` / `instagram-expert` / `tiktok-expert`)** : les agents Ads gèrent l'acquisition payante (budget, audiences, pixel, créas sponsorisées, décisions GO/FIX THEN GO/PAUSE/STOP/WAIT_MORE_DATA) ; les experts réseaux gèrent l'organique (contenu natif gratuit). `meta-ads-operator` = Facebook + Instagram Ads ; `tiktok-ads-operator` = TikTok Ads (les Spark Ads boostent un contenu organique validé par `tiktok-expert`). Aucun ne publie ni ne modifie de campagne : décision seulement, exécution manuelle par Michael.
 - **`radar` vs `seo-specialist`** : `radar` = SEO éditorial schoolsWP (cocons, briefs, maillage). `seo-specialist` = SEO technique générique (schema, Core Web Vitals, sitemap, audit serveur).
 - **`google-business-expert` vs `seo-specialist` / `radar` / `ads-operator`** : `google-business-expert` = SEO local + fiche Google Business Profile (catégories, avis, NAP, citations, local pack, posts GBP). `seo-specialist` reste le SEO technique on-site, `radar` le SEO éditorial, `ads-operator` l'acquisition payante Google Ads. Le local et la fiche GBP n'appartiennent qu'à `google-business-expert`. Il ne publie jamais et ne modifie jamais la fiche.
 - **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.

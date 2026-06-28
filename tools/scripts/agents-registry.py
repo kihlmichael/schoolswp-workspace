@@ -63,7 +63,6 @@ GROUPS: dict[str, str] = {
     "google-business-expert": "specialists",
     "pinterest-expert": "specialists",
     "aidesigner-frontend": "specialists",
-    "ads-operator": "specialists",
     "skoatch-publisher": "specialists",
     # Réseaux sociaux (experts plateforme, organique)
     "x-expert": "social",
@@ -72,6 +71,10 @@ GROUPS: dict[str, str] = {
     "facebook-expert": "social",
     "tiktok-expert": "social",
     "tiktok-trends-watch": "social",
+    # Acquisition payante / Paid Media
+    "ads-operator": "ads",
+    "meta-ads-operator": "ads",
+    "tiktok-ads-operator": "ads",
     # Code review / qualité — read-only
     "code-reviewer": "code-review",
     "adr-writer": "code-review",
@@ -90,6 +93,7 @@ GROUP_ORDER = [
     "youtube-os",
     "specialists",
     "social",
+    "ads",
     "code-review",
     "harness",
     "personal",
@@ -102,6 +106,7 @@ GROUP_LABELS = {
     "youtube-os": "YouTube OS",
     "specialists": "Spécialistes domaine",
     "social": "Réseaux sociaux (experts plateforme, organique)",
+    "ads": "Acquisition payante / Paid Media",
     "code-review": "Code review / qualité — read-only",
     "harness": "Harness / infra",
     "personal": "Hors schoolsWP (projets personnels)",
