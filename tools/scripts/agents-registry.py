@@ -70,6 +70,8 @@ GROUPS: dict[str, str] = {
     "threads-expert": "social",
     "instagram-expert": "social",
     "facebook-expert": "social",
+    "tiktok-expert": "social",
+    "tiktok-trends-watch": "social",
     # Code review / qualité — read-only
     "code-reviewer": "code-review",
     "adr-writer": "code-review",

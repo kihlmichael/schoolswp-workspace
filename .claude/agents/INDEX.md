@@ -1,7 +1,7 @@
 # schoolsWP Project Sub-Agents — Index complet
 
 <!-- AUTO:HEADER:START -->
-**Total** : 34 sub-agents | **Mis à jour** : 2026-06-18
+**Total** : 36 sub-agents | **Mis à jour** : 2026-06-28
 <!-- AUTO:HEADER:END -->
 
 **Structure** : un fichier `.md` par agent dans `.claude/agents/`, frontmatter YAML (`name`, `description`, `model`, `tools`)
@@ -62,8 +62,10 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | Posts Threads, fils conversationnels, articulation cross-post Instagram | `threads-expert` |
 | Reels, carrousels, Stories, captions, hashtags/SEO IG, bio/highlights, link-in-bio | `instagram-expert` |
 | Posts de Page Facebook, stratégie de Groupes, événements, portée organique | `facebook-expert` |
+| Scripts/hooks TikTok, formats natifs, sons, séries, captions + texte à l'écran | `tiktok-expert` |
+| Veille et scoring des trends TikTok (sons, hashtags, formats, challenges) | `tiktok-trends-watch` |
 
-> **Posture commune** : organique uniquement (les Ads = futurs agents dédiés), repo-first, zéro MCP, ne publient jamais, ne programment jamais, ne récupèrent aucune donnée live sans validation. Décisions GO/FIX/WAIT/STOP. Livrables dans `output/`. `instagram-expert` délègue le rendu image à `tools/html-to-png` + la config metricool-carousel (il ne génère pas les visuels).
+> **Posture commune** : organique uniquement (les Ads = futurs agents dédiés), repo-first, zéro MCP, ne publient jamais, ne programment jamais, ne récupèrent aucune donnée live sans validation. Décisions GO/FIX/WAIT/STOP. Livrables dans `output/`. `instagram-expert` délègue le rendu image à `tools/html-to-png` + la config metricool-carousel ; `tiktok-expert` délègue la production vidéo (`youtube-clipper` + stack HeyGen/montage/ElevenLabs) et la veille des trends à `tiktok-trends-watch`.
 
 ### SEO / techniques
 
@@ -181,6 +183,8 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 | `facebook-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Facebook content and strategy for schoolsWP. |
 | `instagram-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Instagram content and strategy for schoolsWP. |
 | `threads-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic Threads (Meta) content and strategy for schoolsWP. |
+| `tiktok-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic TikTok content and strategy for schoolsWP. |
+| `tiktok-trends-watch` | opus | Read, Write, Edit, Glob, Grep | Use this agent for TikTok trends watch and analysis for schoolsWP. |
 | `x-expert` | opus | Read, Write, Edit, Glob, Grep | Use this agent for organic X (Twitter) content and strategy for schoolsWP. |
 
 ### Code review / qualité — read-only
@@ -218,6 +222,7 @@ Tables d'arbitrage anti-collision. Les règles fines de conflit sont en bas (sec
 - **`pulse` vs `pinterest-expert`** : `pulse` rédige le texte pin (titre + description). `pinterest-expert` audite / scale / pilote Ads / SEO Pinterest organique.
 - **`flow` vs `pulse`** : `flow` = mécanique CRM/automation/n8n. `pulse` = copy social. La pipeline Pinterest technique (n8n + Placid + Tailwind) reste `flow`.
 - **`pulse` vs experts réseaux (`x-expert` / `threads-expert` / `instagram-expert` / `facebook-expert`)** : `pulse` garde LinkedIn, Bluesky, texte Pinterest, descriptions YouTube et la coordination communautaire transverse (calendrier, Discord, Substack). X, Threads, Instagram et Facebook appartiennent désormais à leur expert dédié (stratégie + format + algo + contenu de la plateforme). Tous organiques : les Ads relèveront d'agents Ads séparés (Meta Ads, TikTok Ads). `instagram-expert` ne génère pas les visuels (délégués à `tools/html-to-png` + metricool-carousel).
+- **`tiktok-expert` vs `youtube-clipper` vs `tiktok-trends-watch`** : `youtube-clipper` découpe une vidéo longue YouTube en Shorts/clips + sous-titres (production). `tiktok-expert` fait la stratégie + le contenu natif TikTok (et peut consommer ces clips) mais ne produit pas la vidéo lui-même. La veille et le scoring des trends TikTok appartiennent à `tiktok-trends-watch`, qui n'écrit aucun contenu et passe le relais à `tiktok-expert`. `tiktok-trends-watch` n'est pas le schoolsWP Plugin Radar (trends TikTok ≠ sorties de plugins).
 - **`radar` vs `seo-specialist`** : `radar` = SEO éditorial schoolsWP (cocons, briefs, maillage). `seo-specialist` = SEO technique générique (schema, Core Web Vitals, sitemap, audit serveur).
 - **`google-business-expert` vs `seo-specialist` / `radar` / `ads-operator`** : `google-business-expert` = SEO local + fiche Google Business Profile (catégories, avis, NAP, citations, local pack, posts GBP). `seo-specialist` reste le SEO technique on-site, `radar` le SEO éditorial, `ads-operator` l'acquisition payante Google Ads. Le local et la fiche GBP n'appartiennent qu'à `google-business-expert`. Il ne publie jamais et ne modifie jamais la fiche.
 - **`skoatch-publisher` isolation** : **interdit sur schoolswp.com** (BRAND_RULES incompatibles). michaelkihl.fr uniquement, ou autre site WP non-schoolsWP sur demande explicite.
