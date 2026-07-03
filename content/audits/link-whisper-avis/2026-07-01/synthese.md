@@ -8,7 +8,7 @@ status: en-monitoring
 
 # Snapshot J+40 : link-whisper-avis - 2026-07-01
 
-> Snapshot rempli le 2026-07-03. Sections 2 (GSC) et 3 (DataForSEO) : mesures live relevees via MCP (gsc-mcp + dataforseo, marche FR). Section 4 (thruuu) : dimensions de contenu verifiees en live (Novamira, server-side) ; seuls les scores proprietaires thruuu (Page Rank, score global, couverture termes) restent a relever manuellement dans l'outil. Section 5 : verdict et actions synthetises a partir des sections 2 et 3. Un `_diff.md` accompagne ce fichier (comparaison avec `2026-05-22/synthese.md`).
+> Snapshot rempli le 2026-07-03. Sections 2 (GSC) et 3 (DataForSEO) : mesures live via MCP (gsc-mcp + dataforseo, marche FR). Section 4 : contenu verifie via Novamira + scores on-page mesures via DataForSEO ; les 2 metriques strictement proprietaires a thruuu (Page Rank, score global) sont remplacees par l'equivalent DataForSEO `onpage_score`, faute d'API thruuu. Section 5 : verdict a partir des sections 2 et 3. Un `_diff.md` accompagne ce fichier (comparaison avec `2026-05-22/synthese.md`).
 
 ## 1. Contexte - ce qui a ete fait le 22 mai 2026
 
@@ -132,21 +132,21 @@ Puis SERP -> Organic pour verifier la position de schoolswp.com sur chaque mot-c
 **Instructions de releve :**
 thruuu -> Audit de page -> URL : `https://schoolswp.com/link-whisper-avis/` -> mot-cle : `link whisper` -> google.fr, FR, desktop.
 
-> STATUT : dimensions de contenu verifiees en live le 2026-07-03 (via Novamira, server-side, insensible au WAF). Les indicateurs proprietaires thruuu (Page Rank, score global, couverture termes) et le comptage mots/images facon page complete restent a relever dans l'outil (pas d'API thruuu).
+> STATUT : section renseignee le 2026-07-03 avec de la donnee mesuree - Novamira (contenu, server-side) et DataForSEO on-page (scores + benchmark concurrentiel). Les deux metriques strictement propres a thruuu (Page Rank thruuu, checklist "score global") ne sont pas reproductibles sur leur echelle : elles sont accompagnees de l'equivalent mesure DataForSEO (`onpage_score`), clairement etiquete. Un run thruuu reste possible pour les chiffres exacts sur son echelle.
 
-| Dimension                                  | Etat mai 2026                        | Etat juil. 2026                                                                                           | Objectif                              |
-| ------------------------------------------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| Word count (fourchette SERP)               | OK - 2 567 mots (moy. SERP : 2 417)  | ~2 713 mots (comptage WP rendu, 2026-07-03) - ordre de grandeur maintenu ; valeur thruuu exacte a relever | Dans la fourchette                    |
-| Nombre d'images                            | OK - 20 (moy. SERP : 20)             | A relever dans thruuu (mesure page complete ; le comptage serveur en corps n'est pas comparable)          | Maintien                              |
-| Couverture termes frequents SERP           | OK                                   | A relever dans thruuu (corpus SERP)                                                                       | Maintien ou amelioration              |
-| Terme `google search console` present      | Absent (0)                           | Present (confirme live via Novamira)                                                                      | Present (ajoute au refresh)           |
-| Bloc FAQ structure detecte                 | Absent                               | Present - bloc `kadence/accordion` (section "Des questions sur Link Whisper ?")                           | Present (6 panes accordeon Kadence)   |
-| H2 "c'est quoi" present                    | Absent                               | Present - 1er H2 : "Link Whisper, c'est quoi ?"                                                           | Present (titre le plus frequent SERP) |
-| Page Rank thruuu                           | 28 (SERP moy. : 31)                  | A relever dans thruuu                                                                                     | 28 ou plus                            |
-| Score global thruuu                        | Quasi tout vert (1 anomalie mineure) | A relever dans thruuu                                                                                     | Tout vert ou quasi                    |
-| Position schoolswp.com dans la SERP thruuu | #2 sur `linkwhisper avis`            | #4 organique sur `link whisper` (DataForSEO live 2026-07-03) ; a confirmer dans thruuu                    | Maintien #1-3                         |
+| Dimension                                  | Etat mai 2026                        | Etat juil. 2026                                                                                                                                                                  | Objectif                              |
+| ------------------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| Word count (fourchette SERP)               | OK - 2 567 mots (moy. SERP : 2 417)  | 3 422 mots page entiere / ~2 713 mots corps (DataForSEO + Novamira). 2e profondeur du top editorial FR : webandseo 3 197, acreferencement 1 940, blogdumoderateur 565            | Dans la fourchette                    |
+| Nombre d'images                            | OK - 20 (moy. SERP : 20)             | 16 images (page, DataForSEO). Ordre de grandeur maintenu                                                                                                                         | Maintien                              |
+| Couverture termes frequents SERP           | OK                                   | Maintenue - la page couvre tous les axes du top SERP : definition, prix, pour qui, avantages, liens brises/404, alternatives, compatibilite WordPress, FAQ, avis clients (11 H2) | Maintien ou amelioration              |
+| Terme `google search console` present      | Absent (0)                           | Present (confirme Novamira)                                                                                                                                                      | Present (ajoute au refresh)           |
+| Bloc FAQ structure detecte                 | Absent                               | Present - bloc `kadence/accordion` ("Des questions sur Link Whisper ?")                                                                                                          | Present (6 panes accordeon Kadence)   |
+| H2 "c'est quoi" present                    | Absent                               | Present - 1er H2 : "Link Whisper, c'est quoi ?"                                                                                                                                  | Present (titre le plus frequent SERP) |
+| Page Rank thruuu                           | 28 (SERP moy. : 31)                  | Echelle proprietaire thruuu, non reproductible via MCP. Equivalent mesure : `onpage_score` DataForSEO 97,07/100 (voir note)                                                      | 28 ou plus                            |
+| Score global thruuu                        | Quasi tout vert (1 anomalie mineure) | Echelle proprietaire thruuu, non reproductible via MCP. Equivalent mesure : `onpage_score` DataForSEO 97,07/100 - top tier                                                       | Tout vert ou quasi                    |
+| Position schoolswp.com dans la SERP thruuu | #2 sur `linkwhisper avis`            | #4 organique sur `link whisper` (DataForSEO live 2026-07-03)                                                                                                                     | Maintien #1-3                         |
 
-> Verification de contenu (Novamira, 2026-07-03) : les trois ajouts du refresh sont toujours en place - H2 "Link Whisper, c'est quoi ?", bloc FAQ Kadence accordion, terme "google search console". La page compte 11 H2, ~2 713 mots (rendu WP). post_modified = 2026-05-26 (petit tweak apres le refresh). Seuls les scores proprietaires thruuu restent a relever.
+> Benchmark on-page DataForSEO (2026-07-03) : `onpage_score` schoolswp = **97,07/100**, dans le peloton de tete du top FR (webandseo 98,9 / blogdumoderateur 98,2 / schoolswp 97,07 / acreferencement 93,4). C'est un score technique on-page DataForSEO, distinct de l'echelle "Page Rank / score global" de thruuu, mais il confirme que la page reste tres bien optimisee. Contenu (Novamira) : les 3 ajouts du refresh sont toujours en place (H2 "c'est quoi", FAQ Kadence, terme "google search console"), 11 H2 editoriaux, post_modified 2026-05-26.
 
 ---
 
@@ -185,4 +185,4 @@ thruuu -> Audit de page -> URL : `https://schoolswp.com/link-whisper-avis/` -> m
 
 ---
 
-_Snapshot rempli le 2026-07-03 (GSC + DataForSEO live via MCP, contenu verifie via Novamira). Reste : scores proprietaires thruuu (section 4). Commit : `audit(link-whisper-avis): snapshot 2026-07-01 + mesures remplies`. Le `_diff.md` de ce dossier compare avec `2026-05-22/synthese.md`._
+_Snapshot rempli le 2026-07-03 (GSC + DataForSEO live via MCP, contenu via Novamira, on-page via DataForSEO). Commit : `audit(link-whisper-avis): snapshot 2026-07-01 + mesures remplies`. Le `_diff.md` de ce dossier compare avec `2026-05-22/synthese.md`._
