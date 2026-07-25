@@ -1,0 +1,117 @@
+{
+  "_comment": "PLACEHOLDER - données live à remplir en session interactive le 2026-07-25. Ce fichier est un squelette produit par cloud agent. Compléter les champs TODO et null avec les valeurs réelles tirées de SERP live, DataForSEO Labs, GSC et inspections techniques.",
+  "audit_date": "2026-07-25",
+  "audit_type": "j60_reaudit",
+  "post_id": 343161,
+  "permalink": "https://schoolswp.com/de/vergleich-flyingpress-wp-rocket/",
+  "skeleton_produced_by": "cloud_agent_routine",
+  "skeleton_produced_at": "2026-07-25",
+  "status": "TODO",
+
+  "baseline_j30_reference": {
+    "date": "2026-06-25",
+    "serp_live_de_de_position": 1,
+    "serp_live_de_de_keyword": "flyingpress vs wp rocket",
+    "dataforseo_labs_ranked_keywords_count": 0,
+    "dataforseo_labs_note": "Lag d'index documenté - SERP live = #1 mais Labs = 0 au J+30. Vérifier au J+60 si Labs a rattrapé.",
+    "body_sha256": "e1dc5666c12010606d927bebb56ecb644ca842b0bd77f989b504a1c198c3ebe5",
+    "body_bytes": 18737,
+    "patches_already_applied": [
+      "P1: residuel 2025 image attach 350864 - applique J+30",
+      "P2: mu-plugin schoolswp-affiliate-cloaks v1.2.0 Polylang-aware /de/ - applique J+30"
+    ]
+  },
+
+  "j60_live_data": {
+    "serp_live_de_de": {
+      "keyword": "flyingpress vs wp rocket",
+      "location": "de_DE",
+      "schoolswp_position": "TODO",
+      "schoolswp_url_found": "TODO",
+      "top_10_results": "TODO",
+      "verified_at": null,
+      "screenshot_path": null
+    },
+    "dataforseo_labs": {
+      "ranked_keywords_count": null,
+      "schoolswp_de_url_rank_for_main_kw": null,
+      "rank_group": null,
+      "labs_lag_j60": "TODO",
+      "note": "Si 0 encore: confirmer via SERP live avant de conclure. Ne pas conclure depuis Labs seul."
+    },
+    "gsc": {
+      "filter_page": "/de/vergleich-flyingpress-wp-rocket/",
+      "period_start": "2026-05-26",
+      "period_end": "2026-07-25",
+      "clicks_total": null,
+      "impressions_total": null,
+      "ctr_avg": null,
+      "position_avg": null,
+      "top_queries": "TODO",
+      "last_crawl_date": null,
+      "indexation_status": null
+    },
+    "ai_overview_de_de": {
+      "active": null,
+      "schoolswp_cited": null,
+      "citation_extract": null,
+      "paa_questions_active": "TODO",
+      "verified_from_browser": null
+    }
+  },
+
+  "technical_verifications": {
+    "body_sha256_current": null,
+    "body_sha256_expected": "e1dc5666c12010606d927bebb56ecb644ca842b0bd77f989b504a1c198c3ebe5",
+    "body_sha_stable": null,
+    "cloak_de_flyingpress": {
+      "url_tested": "https://schoolswp.com/de/flyingpress/",
+      "http_code": null,
+      "location_header": null,
+      "verdict": null,
+      "test_ua": "Chrome navigateur (pas curl - risque 500 Imunify360 sur UA bot)"
+    },
+    "cloak_de_wp_rocket": {
+      "url_tested": "https://schoolswp.com/de/wp-rocket/",
+      "http_code": null,
+      "location_header": null,
+      "verdict": null,
+      "test_ua": "Chrome navigateur (pas curl - risque 500 Imunify360 sur UA bot)"
+    },
+    "p1_attach_350864_residuel_2025": {
+      "verified": null,
+      "occurrences_2025_remaining": null,
+      "verdict": null
+    }
+  },
+
+  "cross_langue_status": {
+    "fr_comparaison_post": {
+      "url": "https://schoolswp.com/comparaison-flyingpress-wp-rocket/",
+      "position_fr_fr": "TODO",
+      "baseline_j30": "#1"
+    },
+    "en_comparison_post": {
+      "post_id": 343156,
+      "url": "https://schoolswp.com/en/flyingpress-wp-rocket-comparison/",
+      "position_en_us": "TODO",
+      "baseline_j30": "Absent page 1",
+      "ai_overview_en_us_cites_schoolswp": null,
+      "dedicated_en_reaudit_folder": "content/audits/flyingpress-wp-rocket-comparison-en/2026-07-25/"
+    }
+  },
+
+  "verdict_j60": {
+    "de_ranking_maintained": null,
+    "de_labs_lag_resolved": null,
+    "action_required": "TODO",
+    "next_reaudit_date": null,
+    "close_active_monitoring": null
+  },
+
+  "documentation": {
+    "audit_md": "audit.md",
+    "baseline_j0_state": "../2026-05-26/state-after.json",
+    "baseline_j0_audit": "../2026-05-26/audit.md"
+  }
+}
