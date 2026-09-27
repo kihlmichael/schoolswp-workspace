@@ -2,12 +2,13 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { spawn } from "node:child_process";
 import { ffprobeDuration } from "../lib/ffmpeg.mjs";
 import { preflightProject } from "./preflight.mjs";
 
 const root = path.resolve(process.argv[2] || "fixtures/swp-video-smoke");
-const scriptDir = path.dirname(new URL(import.meta.url).pathname);
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 
 function runNode(script, args = []) {
   return new Promise((resolve, reject) => {
