@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.1",
+  "project_id": "SWP-FIXTURE-001",
+  "source": {
+    "asset_id": "SOURCE_MEDIA",
+    "sha256": "",
+    "duration": 4,
+    "fps": 30
+  },
+  "edited_duration": 3.4,
+  "keeps": [
+    { "sourceStart": 0.2, "sourceEnd": 0.6, "start": 0, "end": 0.4 },
+    { "sourceStart": 1.0, "sourceEnd": 4.0, "start": 0.4, "end": 3.4 }
+  ],
+  "cuts": [
+    { "sourceStart": 0, "sourceEnd": 0.2, "type": "silence", "reason": "fixture head", "approved": true },
+    { "sourceStart": 0.6, "sourceEnd": 1.0, "type": "silence", "reason": "fixture pause", "approved": true }
+  ],
+  "revision": 1
+}
