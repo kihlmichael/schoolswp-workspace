@@ -34,7 +34,13 @@ From this directory:
 
     npm test
     npm run preflight
+
+To install/update the canonical v1.1 skills into the local Claude/Codex mirrors:
+
+    npm run skills:sync
     npm run skills:check
+
+The mirrors are deliberately generated from the canonical skills rather than maintained by hand.
 
 Optional media smoke test (requires FFmpeg):
 
