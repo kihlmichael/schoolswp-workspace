@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schoolswp.com/schemas/video/transcript-v1.1.json",
+  "title": "schoolsWP canonical word transcript",
+  "type": "object",
+  "required": ["schema_version", "duration", "words"],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "duration": { "type": "number", "minimum": 0 },
+    "text": { "type": "string" },
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "start", "end"],
+        "properties": {
+          "text": { "type": "string" },
+          "start": { "type": "number", "minimum": 0 },
+          "end": { "type": "number", "minimum": 0 },
+          "sourceStart": { "type": "number", "minimum": 0 },
+          "sourceEnd": { "type": "number", "minimum": 0 },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "type": { "type": "string" }
+        }
+      }
+    }
+  }
+}
