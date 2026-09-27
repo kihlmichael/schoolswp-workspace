@@ -1,0 +1,44 @@
+name: Video Production System v1.1
+
+on:
+  push:
+    paths:
+      - "apps/hyperframes/execution-layer/**"
+      - ".github/workflows/video-production-system-v1-1.yml"
+  pull_request:
+    paths:
+      - "apps/hyperframes/execution-layer/**"
+      - "apps/hyperframes/index.html"
+      - "apps/hyperframes/hyperframes.json"
+      - ".github/workflows/video-production-system-v1-1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: apps/hyperframes/execution-layer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run preflight
+
+  hyperframes-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lint current schoolsWP HyperFrames project
+        working-directory: apps/hyperframes
+        run: npx --yes hyperframes@latest lint
