@@ -1,0 +1,3 @@
+fixtures/**/assets/*.mp4
+fixtures/**/assets/*.wav
+fixtures/**/smoke-output/
