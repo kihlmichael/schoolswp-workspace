@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { fileURLToPath } from "node:url";
 import { normalizeTranscript, buildInitialEdl, retimeTranscript } from "../lib/timeline.mjs";
 import { planSilenceCuts } from "../lib/silence.mjs";
 import { renderKeeps } from "../lib/ffmpeg.mjs";
@@ -20,7 +21,8 @@ if (!input) {
 }
 
 const transcript = normalizeTranscript(JSON.parse(fs.readFileSync(input, "utf8")));
-const profilePath = value("--profile", new URL("../profiles/educational.json", import.meta.url).pathname);
+const defaultProfilePath = fileURLToPath(new URL("../profiles/educational.json", import.meta.url));
+const profilePath = value("--profile", defaultProfilePath);
 const profile = JSON.parse(fs.readFileSync(profilePath, "utf8"));
 const outDir = path.resolve(value("--out-dir", path.dirname(input)));
 fs.mkdirSync(outDir, { recursive: true });
