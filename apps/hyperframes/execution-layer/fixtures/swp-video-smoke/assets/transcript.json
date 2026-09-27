@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.1",
+  "duration": 3.4,
+  "text": "Je teste WordPress avec schoolsWP maintenant",
+  "words": [
+    { "text": "Je", "start": 0, "end": 0.15, "sourceStart": 0.2, "sourceEnd": 0.35 },
+    { "text": "teste", "start": 0.2, "end": 0.4, "sourceStart": 0.4, "sourceEnd": 0.6 },
+    { "text": "WordPress", "start": 0.4, "end": 0.8, "sourceStart": 1.0, "sourceEnd": 1.4 },
+    { "text": "avec", "start": 0.9, "end": 1.1, "sourceStart": 1.5, "sourceEnd": 1.7 },
+    { "text": "schoolsWP", "start": 1.2, "end": 1.7, "sourceStart": 1.8, "sourceEnd": 2.3 },
+    { "text": "maintenant", "start": 2.0, "end": 2.4, "sourceStart": 2.6, "sourceEnd": 3.0 }
+  ]
+}

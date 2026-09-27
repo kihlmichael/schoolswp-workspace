@@ -1,0 +1,20 @@
+{
+  "name": "@schoolswp/video-production-execution-layer",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate:transcript": "node scripts/validate-transcript.mjs fixtures/swp-video-smoke/assets/transcript.json",
+    "validate:edl": "node scripts/validate-edl.mjs fixtures/swp-video-smoke/assets/edit-decisions.json",
+    "validate:footage": "node scripts/validate-footage.mjs fixtures/swp-video-smoke",
+    "preflight": "node scripts/preflight.mjs fixtures/swp-video-smoke",
+    "fixture:generate": "node scripts/generate-fixture.mjs fixtures/swp-video-smoke",
+    "smoke": "node scripts/smoke.mjs fixtures/swp-video-smoke",
+    "skills:sync": "node scripts/sync-agent-skills.mjs",
+    "skills:check": "node scripts/sync-agent-skills.mjs --check"
+  }
+}

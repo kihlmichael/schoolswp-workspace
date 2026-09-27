@@ -1,0 +1,10 @@
+{
+  "id": "schoolswp-educational-v1",
+  "gapThreshold": 0.55,
+  "headPad": 0.22,
+  "tailPad": 0.34,
+  "normalBreath": 0.14,
+  "sentenceBreath": 0.2,
+  "longPauseBreath": 0.24,
+  "longPauseThreshold": 2.0
+}

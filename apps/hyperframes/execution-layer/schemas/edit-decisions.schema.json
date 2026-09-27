@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schoolswp.com/schemas/video/edit-decisions-v1.1.json",
+  "title": "schoolsWP canonical edit decision ledger",
+  "type": "object",
+  "required": ["schema_version", "project_id", "source", "edited_duration", "keeps", "cuts", "revision"],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "edited_duration": { "type": "number", "minimum": 0 },
+    "revision": { "type": "integer", "minimum": 1 },
+    "source": {
+      "type": "object",
+      "required": ["duration"],
+      "properties": {
+        "asset_id": { "type": "string" },
+        "sha256": { "type": "string" },
+        "duration": { "type": "number", "minimum": 0 },
+        "fps": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "keeps": { "type": "array" },
+    "cuts": { "type": "array" }
+  }
+}

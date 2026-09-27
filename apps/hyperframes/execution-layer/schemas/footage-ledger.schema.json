@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schoolswp.com/schemas/video/footage-ledger-v1.1.json",
+  "title": "schoolsWP footage ledger",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["scene", "sourceSceneId", "asset", "sha256", "sourceStart", "sourceEnd"],
+    "properties": {
+      "scene": { "type": "string" },
+      "sourceSceneId": { "type": "string" },
+      "asset": { "type": "string" },
+      "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+      "sourceStart": { "type": "number", "minimum": 0 },
+      "sourceEnd": { "type": "number", "minimum": 0 },
+      "production_mode": {
+        "enum": ["UI_CAPTURE", "DETERMINISTIC_RENDER", "GENERATIVE", "FOOTAGE", "SPEAKER"]
+      },
+      "provenance": { "type": "object" },
+      "framing": { "type": "object" }
+    }
+  }
+}
