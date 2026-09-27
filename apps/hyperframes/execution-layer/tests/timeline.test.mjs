@@ -8,6 +8,14 @@ import {
   validateEdl
 } from "../lib/timeline.mjs";
 
+const EPS = 1e-6;
+const closeTo = (actual, expected, epsilon = EPS) => {
+  assert.ok(
+    Math.abs(actual - expected) <= epsilon,
+    `expected ${actual} to be within ${epsilon} of ${expected}`
+  );
+};
+
 const source = normalizeTranscript({
   audio_duration_secs: 4,
   words: [
@@ -27,13 +35,13 @@ test("initial EDL is contiguous and retimes words with provenance", () => {
       { start: 0.6, end: 1.0, type: "silence" }
     ]
   });
-  assert.equal(edl.edited_duration, 3.4);
+  closeTo(edl.edited_duration, 3.4);
   assert.equal(validateEdl(edl).ok, true);
 
   const tx = retimeTranscript(source, edl);
-  assert.equal(tx.words[0].start, 0);
-  assert.equal(tx.words[0].sourceStart, 0.2);
-  assert.equal(tx.words[2].start, 0.4);
+  closeTo(tx.words[0].start, 0);
+  closeTo(tx.words[0].sourceStart, 0.2);
+  closeTo(tx.words[2].start, 0.4);
 });
 
 test("second-stage cuts compose back to original source time", () => {
@@ -47,5 +55,5 @@ test("second-stage cuts compose back to original source time", () => {
   assert.equal(validateEdl(second).ok, true);
   const mapped = second.cuts.find((c) => c.type === "mistake");
   assert.ok(mapped);
-  assert.ok(mapped.sourceStart >= 0.2 - 0.001);
+  closeTo(mapped.sourceStart, 0.2, 0.001);
 });
