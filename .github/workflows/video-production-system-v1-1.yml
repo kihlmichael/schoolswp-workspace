@@ -32,6 +32,20 @@ jobs:
       - run: npm test
       - run: npm run preflight
 
+  media-smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/hyperframes/execution-layer
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify FFmpeg availability
+        run: ffmpeg -version
+      - run: npm run smoke
+
   hyperframes-lint:
     runs-on: ubuntu-latest
     steps:
@@ -41,4 +55,4 @@ jobs:
           node-version: 22
       - name: Lint current schoolsWP HyperFrames project
         working-directory: apps/hyperframes
-        run: npx --yes hyperframes@latest lint
+        run: npx --yes hyperframes@0.7.109 lint
